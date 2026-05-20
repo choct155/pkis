@@ -1,7 +1,17 @@
 # PKIS Wiki Index
 
+## Sources
+
 ## Concepts
 
-## Sources
+## Techniques
+
+## Results
+
+## Frameworks
+
+## Problems
+
+## Principles
 
 ## Reading Queue
