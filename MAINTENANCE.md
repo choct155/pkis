@@ -140,6 +140,15 @@ of the Maintenance agent.
 - If so, flag the ordering issue: "Source A should be read before Source B because
   [[concept-x]] is prerequisite-of [[concept-y]]"
 
+### Check 11: Unresolved Classification Reviews
+
+- Scan all source entries for `## Awaiting Classification` sections
+- List every unresolved item with its candidate types and the Librarian's reasoning
+- Flag items that have been awaiting review for more than 14 days
+- If additional sources ingested since the original flag shed light on the classification
+  (e.g., a second source clearly treats the object as a technique), note this as
+  evidence that may help the human decide
+
 ---
 
 ## Report Format
@@ -156,7 +165,7 @@ Write to `wiki/maintenance_report_[YYYY-MM-DD].md`:
 
 ### Critical
 [Dead links not auto-resolvable, contradiction flags from Check 4,
-classification mismatches from Check 7]
+classification mismatches from Check 7, unresolved classification reviews]
 
 ### Normal
 [Orphans, stale queue items, tag hygiene issues, prerequisite ordering]

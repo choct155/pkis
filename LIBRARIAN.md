@@ -127,6 +127,16 @@ Quote or near-quote when precision matters. Attribute clearly.
 Existing nodes this might connect to. Brief note on the nature of each
 potential connection and the likely predicate. These are proposals for
 the Synthesizer.
+
+## Awaiting Classification
+(Include this section ONLY if any knowledge objects scored low confidence.
+Otherwise omit entirely.)
+
+For each low-confidence object:
+- **[object name]** — candidate types: [type-a] or [type-b]
+  - Case for [type-a]: [reasoning]
+  - Case for [type-b]: [reasoning]
+  - What makes this hard: [the specific ambiguity]
 ```
 
 ### Step 4: Classify and create knowledge node stubs
@@ -137,17 +147,36 @@ For each knowledge object identified in **Key Knowledge Objects**:
    (technique)? A proven claim (result)? A coherent system (framework)? A motivating
    challenge (problem)? A guiding constraint (principle)?
 
-2. **Check for existing nodes.** Search ALL 6 knowledge folders for an existing slug
+2. **Assess classification confidence.** Rate your confidence in the type assignment:
+
+   | Confidence | Meaning | Action |
+   |---|---|---|
+   | **high** | The type is unambiguous — the source clearly presents this as a procedure, a theorem, etc. | Assign the type. Create the stub. No flag needed. |
+   | **moderate** | One type is most likely, but a reasonable case exists for another. | Assign the most likely type. Populate `also_type` with the alternative. Note the reasoning in the stub body. |
+   | **low** | Genuinely marginal — the object straddles types or the source is ambiguous about what it's presenting. | Do NOT create the stub yet. Add the object to the source entry's `## Awaiting Classification` section for human review. |
+
+   Include the confidence assessment in the source entry's **Key Knowledge Objects**
+   section (see Step 3):
+   ```
+   - [[mcmc]] (technique, high) — Markov chain Monte Carlo sampling
+   - [[exchangeability]] (principle, moderate — could be concept) — de Finetti's symmetry assumption
+   - posterior-predictive-checking (low — technique or principle?) — using model predictions to assess fit
+   ```
+
+   Objects at **low** confidence are listed by name only (no wikilink, no stub created)
+   and appear in `## Awaiting Classification` with the agent's reasoning about what
+   makes the call difficult.
+
+3. **Check for existing nodes.** Search ALL 6 knowledge folders for an existing slug
    that matches or nearly matches. Also check existing tags for near-duplicates.
    If a node exists, add this source to its `sources:` frontmatter list and update
    `date_updated`. Do not modify the body.
 
-3. **Create the stub** in the appropriate folder with the correct frontmatter template
-   (see SCHEMA.md § Frontmatter Templates). The body is one sentence: what is this
-   knowledge object?
-
-4. **If unsure about type,** default to `concept` and add your best alternate guess
-   to `also_type`. The Synthesizer will reclassify during deepening if needed.
+4. **Create the stub** (high and moderate confidence only) in the appropriate folder
+   with the correct frontmatter template (see SCHEMA.md § Frontmatter Templates).
+   The body is one sentence: what is this knowledge object? For moderate confidence,
+   add a second sentence: "Classification note: assigned as [type] but may be [alt-type]
+   because [reason]."
 
 ### Step 5: Update index.md
 
@@ -179,7 +208,8 @@ Add to `wiki/queue.md`:
 ```markdown
 ## [YYYY-MM-DD] ingest | [source title]
 - Created wiki/sources/[slug].md
-- Created stubs: [[x]] (technique), [[y]] (concept), [[z]] (result)
+- Created stubs: [[x]] (technique, high), [[y]] (concept, moderate), [[z]] (result, high)
+- Awaiting classification: [object-name] (technique or principle?)
 - Updated existing nodes: [[a]], [[b]]
 - Updated: wiki/index.md, wiki/queue.md
 ```
@@ -193,8 +223,9 @@ Add to `wiki/queue.md`:
   confirm and note the limitation in the Summary.
 - **Slug uniqueness.** Check ALL 7 wiki subdirectories before creating a slug. No
   two files across the entire wiki may share a slug.
-- **Type accuracy matters but isn't precious.** Get it right when it's clear. Default
-  to `concept` with `also_type` when it's ambiguous. The Synthesizer will fix it.
+- **Type accuracy matters.** Assign with confidence at high/moderate; escalate at low.
+  Do not default to `concept` as a catch-all — if you can't tell, say so and let the
+  human make the call. Over time the resolved classifications will calibrate your judgment.
 - **Domain coverage.** Every node must have at least one domain tag.
 - **Drive ID is mandatory.** If the source came from Drive, `drive_id` must be populated.
 - **No invention.** If you cannot locate a Drive file, say so rather than guessing an ID.
