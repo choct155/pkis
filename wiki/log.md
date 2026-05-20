@@ -1,5 +1,26 @@
 # PKIS Wiki Log
 
+## [2026-05-20] ingest | 8 books in parallel (Applied Probability, Causal Inference Mixtape, Groups/Matrices/Vector Spaces, DES, Neural Networks/DL, Ontology-Based NL Interpretation, Statistical Modeling/Computation, Semantic Web Working Ontologist)
+- Created wiki/sources/lange-applied-probability.md + ch01–ch16 (16 chapter stubs); ISBN 978-1-0716-4171-2; Drive ID 1_a-RSQ0DDSN1oMfsNyDJMrVTUDiWasVt
+- Created stubs: [[markov-chains]] (concept, high), [[poisson-process]] (concept, high), [[martingales]] (concept, high), [[diffusion-processes]] (concept, high), [[branching-processes]] (concept, high), [[entropy]] (concept, high), [[mm-algorithm]] (technique, high), [[mcmc]] (technique, high), [[generating-functions]] (technique, moderate)
+- Created wiki/sources/carrell-groups-matrices-vectors.md + ch01–ch12 (12 chapter stubs); ISBN 978-0-387-79427-3; Drive ID 1IFA64ySqNkZc7zWRfxlKYsuNzec4VKmQ
+- Created stubs: [[group-theory]] (concept, high), [[symmetry-groups]] (concept, high), [[abstract-algebra-fields]] (concept, high), [[quotient-groups]] (concept, high), [[linear-algebraic-groups]] (concept, moderate), [[jordan-canonical-form]] (technique, high)
+- Created wiki/sources/cassandras-des-intro.md + ch01–ch11 (11 chapter stubs); Drive ID 1dSYKjRi76A9-XYGBdIuGDisoxUFWvraG
+- Created stubs: [[discrete-event-systems]] (concept, high), [[finite-automata]] (concept, high), [[controllability]] (concept, high), [[generalized-semi-markov-process]] (concept, high), [[temporal-logic]] (concept, moderate), [[supervisory-control]] (framework, high), [[petri-nets]] (framework, high), [[timed-automata]] (framework, high), [[markov-decision-processes]] (framework, high), [[queueing-theory]] (framework, high), [[perturbation-analysis]] (technique, high), [[discrete-event-simulation]] (technique, high), [[model-checking]] (technique, high)
+- Introduced new domains: formal-methods, systems-theory
+- Created wiki/sources/nielsen-nndl.md + ch01–ch06 + appA (7 stubs); no ISBN (online book); Drive ID 159i65pXLqrDPrGD-sTIvU1pskIgUy8mb
+- Created stubs: [[convolutional-neural-networks]] (technique, high), [[dropout]] (technique, high), [[weight-initialization]] (technique, moderate), [[cross-entropy-loss]] (concept, high), [[activation-functions]] (concept, high), [[universal-approximation-theorem]] (result, high), [[vanishing-gradient-problem]] (problem, high)
+- Created wiki/sources/cimiano-ontology-nlp.md + ch01–ch10 (10 chapter stubs); ISBN 978-3-031-01026-2; Drive ID 1QFL9U6fE9zo8jOAILFwqvs4xjDYags-w
+- Created stubs: [[formal-ontology]] (concept, high), [[description-logic]] (concept, high), [[ontology-lexicon]] (concept, high), [[semantic-parsing]] (technique, high), [[discourse-representation-theory]] (framework, high), [[lexicalized-tree-adjoining-grammar]] (framework, moderate)
+- Created wiki/sources/cunningham-causal-inference-mixtape.md + ch01–ch12 (12 chapter stubs); ISBN 978-0-300-25168-5; Drive ID 1OAZSDDbVNCPumzvalpKXVcPBSkUB8PZ2
+- Created stubs: [[potential-outcomes-framework]] (framework, high), [[average-treatment-effect]] (concept, high), [[local-average-treatment-effect]] (concept, high), [[selection-bias]] (concept, high), [[identification-strategy]] (concept, high), [[propensity-score]] (concept, high), [[collider-bias]] (concept, high), [[omitted-variable-bias]] (concept, high), [[regression-discontinuity]] (technique, high), [[instrumental-variables]] (technique, high), [[difference-in-differences]] (technique, high), [[synthetic-control]] (technique, high), [[matching-estimators]] (technique, high), [[fixed-effects-estimator]] (technique, high), [[parallel-trends]] (principle, high)
+- Created wiki/sources/allemang-semantic-web.md + ch01–ch16 (16 chapter stubs); ISBN 978-0-12-385965-5; Drive ID 1YB14A7mQMjx2HbTcNVX33TUCmPRjMSu1
+- Created stubs: [[rdfs]] (concept, high), [[owl]] (framework, high), [[skos]] (framework, high), [[semantic-web]] (framework, moderate), [[open-world-assumption]] (principle, high), [[linked-data-principles]] (principle, high)
+- Created wiki/sources/kroese-statistical-modeling.md + ch01–ch13 (13 chapter stubs); Drive ID 109dpIRkznPIGw7zv4SBfu3bNMnmgxInp
+- Created stubs: [[maximum-likelihood-estimation]] (technique, high), [[bootstrap]] (technique, high), [[generalized-linear-models]] (technique, high), [[kernel-density-estimation]] (technique, high), [[gaussian-process-regression]] (technique, high), [[hypothesis-testing]] (technique, high), [[ridge-regression]] (technique, high)
+- Deleted duplicate: wiki/techniques/markov-chain-monte-carlo.md (slug collision with [[mcmc]])
+- Updated existing nodes: [[gibbs-sampler]] (→3), [[metropolis-algorithm]] (→3), [[em-algorithm]] (→10), [[importance-sampling]] (→3), [[laplace-approximation]] (→2), [[convex-optimization]] (→2), [[probability-theory]] (→3), [[kl-divergence]] (→4), [[analytic-geometry]] (→2), [[linear-algebra]] (→2), [[matrix-decompositions]] (→3), [[eigendecomposition]] (→2), [[singular-value-decomposition]] (→3), [[rdf]] (→3), [[sparql]] (→3), [[linked-open-data]] (→3), [[ontology-reasoning]] (→3), [[neurosymbolic-ai]] (→3), [[knowledge-graph]] (→10), [[knowledge-graph-question-answering]] (→3), [[markov-chains]] (→2), [[counterfactuals]] (→2), [[confounding]] (→2), [[directed-graphical-models]] (→5), [[structural-causal-models]] (→2), [[d-separation]] (→2), [[neural-networks]] (→2), [[backpropagation]] (→3), [[regularization]] (→3), [[lasso]] (→3), [[cross-validation]] (→2), [[logistic-regression]] (→2), [[kalman-filter]] (→5), [[bayesian-linear-regression]] (→4), [[state-space-models]] (→4), [[gaussian-mixture-models]] (→4), [[conjugate-prior]] (→2), [[bias-variance-tradeoff]] (→4), [[description-logic]] (→2)
+
 ## [2026-05-20] ingest | GraphRAG / KR / Neurosymbolic cluster (6 papers)
 - Created wiki/sources/: banf-tripartite-graphrag, barron-legal-rag-nmf, cheng-cograg, hamilton-graphsage, baldazzi-soft-ontological-reasoning, liu-symagent
 - Created stubs: [[node-embedding]] (concept), [[inductive-representation-learning]] (technique), [[graph-sage]] (technique), [[neurosymbolic-ai]] (framework), [[ontology-reasoning]] (technique), [[non-negative-matrix-factorization]] (technique), [[knowledge-graph-question-answering]] (problem)
@@ -96,6 +117,15 @@
 - Created framework stubs: [[empirical-risk-minimization]] (high), [[directed-graphical-models]] (high)
 - Updated existing nodes: [[backpropagation]] (coverage 1→2, new related_concepts), [[principal-component-analysis]] (coverage 1→2, new related_concepts), [[support-vector-machines]] (coverage 1→2, new related_concepts), [[em-algorithm]] (coverage 1→2)
 - Copied source to PKIS/sources/books/ in Drive (ID: 1pd0ziFWZBYPaAGefEewmYZqhGcD5udYV)
+- Updated: wiki/index.md, wiki/queue.md
+
+## [2026-05-20] ingest | Semantic Web for the Working Ontologist, 2nd Ed. (Allemang & Hendler, 2011)
+- Created wiki/sources/allemang-semantic-web.md (Drive ID: 1YB14A7mQMjx2HbTcNVX33TUCmPRjMSu1); toc_source: openlibrary
+- Created 16 chapter stubs: [[allemang-semantic-web-ch01]] through [[allemang-semantic-web-ch16]]
+- Created concept stubs: [[rdfs]] (high), [[description-logic]] — NOTE: already existed from cimiano-ontology-nlp; updated only
+- Created framework stubs: [[owl]] (high, also_type: concept), [[skos]] (high, also_type: concept), [[semantic-web]] (moderate, also_type: concept)
+- Created principle stubs: [[open-world-assumption]] (high), [[linked-data-principles]] (high)
+- Updated existing nodes: [[rdf]] (coverage 1→2, Reading Path added), [[sparql]] (coverage 1→2, Reading Path added), [[linked-open-data]] (coverage 1→2, Reading Path added), [[knowledge-graph]] (coverage +1, Reading Path entries added), [[ontology-reasoning]] (coverage 1→2, Reading Path added), [[description-logic]] (coverage 1→2, Reading Path added)
 - Updated: wiki/index.md, wiki/queue.md
 
 ## [2026-05-20] ingest-update | ESL — additional stubs

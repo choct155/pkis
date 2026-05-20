@@ -5,10 +5,10 @@ also_type: []
 domain: [bayesian-stats]
 tags: [probability-theory, approximate-inference, variational-methods]
 related_concepts: ["[[variational-inference]]", "[[probability-theory]]", "[[directed-graphical-models]]"]
-sources: ["[[blei-vi-review]]", "[[ganguly-intro-vi]]", "[[sjolund-parametric-vi]]"]
+sources: ["[[blei-vi-review]]", "[[ganguly-intro-vi]]", "[[sjolund-parametric-vi]]", "[[kroese-statistical-modeling]]"]
 date_created: 2026-05-20
 date_updated: 2026-05-20
-coverage: 3
+coverage: 4
 understanding: 0
 maturity: settled
 ---
@@ -27,3 +27,4 @@ The core challenge of Bayesian statistics: computing the posterior p(z|x) = p(x,
 - [[blei-vi-review]] (unread) — Section 2.1; precise statement of the approximate inference problem; MCMC vs. VI comparison
 - [[ganguly-intro-vi]] (unread) — Section 2; problem statement for latent variable models; why exact inference is NP-hard on arbitrary graphical models
 - [[sjolund-parametric-vi]] (unread) — Introduction; concise framing: the marginal likelihood integral is intractable, VI replaces it with a tractable lower bound
+- [[kroese-statistical-modeling-ch07]] (unread) — motivates MCMC as the computational response to intractable posteriors; complementary to VI treatments above

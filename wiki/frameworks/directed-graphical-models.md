@@ -5,10 +5,10 @@ also_type: []
 domain: [bayesian-stats, knowledge-representation, causal-analysis]
 tags: [probability-theory, graph-theory]
 related_concepts: ["[[probability-theory]]", "[[undirected-graphical-models]]", "[[structural-causal-models]]", "[[d-separation]]"]
-sources: ["[[deisenroth-mml]]", "[[pearl-causality]]", "[[blei-vi-review]]"]
+sources: ["[[deisenroth-mml]]", "[[pearl-causality]]", "[[blei-vi-review]]", "[[cunningham-causal-inference-mixtape]]", "[[kroese-statistical-modeling]]"]
 date_created: 2026-05-20
 date_updated: 2026-05-20
-coverage: 3
+coverage: 5
 understanding: 0
 maturity: settled
 ---
@@ -17,5 +17,7 @@ maturity: settled
 - [[deisenroth-mml]] (unread) — probabilistic treatment; DAG factorization and Bayesian network inference
 - [[pearl-causality-ch01]] (unread) — Pearl's treatment; d-separation and the bridge from probability to causal DAGs
 - [[blei-vi-review]] (unread) — Section 4.2: conditional conjugacy expressed through DGM structure; factorization exploited in CAVI coordinate updates
+- [[cunningham-causal-inference-mixtape-ch04]] (unread) — practitioner DAG tutorial: nodes, directed edges, confounders, colliders, backdoor criterion for econometric identification
+- [[kroese-statistical-modeling-ch08]] (unread) — Bayesian networks as graphical representations of conditional independence in hierarchical Bayesian models; §8.3
 
 Framework for representing joint probability distributions as directed acyclic graphs (DAGs) where edges encode conditional dependencies; the joint factors as $p(x_{1:n}) = \prod_i p(x_i | \text{pa}(x_i))$ where $\text{pa}(x_i)$ are the parents of node $i$ — the probabilistic counterpart to causal DAGs and the structural backbone of Bayesian networks and many generative models. Pearl's SCMs extend this framework to the interventional and counterfactual layers by adding structural equations to the probabilistic skeleton.

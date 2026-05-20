@@ -5,10 +5,10 @@ also_type: []
 domain: [statistical-learning, bayesian-stats]
 tags: [optimization, probability-theory]
 related_concepts: []
-sources: ["[[hastie-esl]]", "[[deisenroth-mml]]", "[[sargent-sims-business-cycle-1977]]", "[[blei-vi-review]]", "[[ganguly-intro-vi]]", "[[sjolund-parametric-vi]]", "[[yellapragada-variational-bayes]]", "[[tanner-tools-statistical-inference]]"]
+sources: ["[[hastie-esl]]", "[[deisenroth-mml]]", "[[sargent-sims-business-cycle-1977]]", "[[blei-vi-review]]", "[[ganguly-intro-vi]]", "[[sjolund-parametric-vi]]", "[[yellapragada-variational-bayes]]", "[[tanner-tools-statistical-inference]]", "[[kroese-statistical-modeling]]", "[[lange-applied-probability]]"]
 date_created: 2026-05-20
 date_updated: 2026-05-20
-coverage: 8
+coverage: 10
 understanding: 0
 maturity: settled
 ---
@@ -24,3 +24,5 @@ Iterative technique for maximum likelihood estimation in latent variable models,
 - [[sjolund-parametric-vi]] (unread) — parametric VI as generalization of EM to non-conjugate models via reparameterization
 - [[yellapragada-variational-bayes]] (unread) — MDL loss formulation connects VI to EM for Bayesian neural networks
 - [[tanner-tools-statistical-inference-ch04]] (unread) — most thorough treatment in wiki; five standard-error methods including missing information principle; Monte Carlo E-step (MCEM)
+- [[kroese-statistical-modeling-ch06]] (unread) — EM as likelihood maximization for latent variable models; Jensen's inequality convergence proof; mixture model examples
+- [[lange-applied-probability-ch16]] (unread) — EM reinterpreted as entropy maximization; information-theoretic perspective

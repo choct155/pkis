@@ -5,10 +5,10 @@ also_type: [framework]
 domain: [knowledge-representation]
 tags: [rdf, linked-data, semantic-web, graph-databases, ontology]
 related_concepts: []
-sources: ["[[papadaki-rdf-analytics-survey]]", "[[zhang-graphrag-survey]]", "[[banf-tripartite-graphrag]]", "[[barron-legal-rag-nmf]]", "[[cheng-cograg]]", "[[baldazzi-soft-ontological-reasoning]]", "[[liu-symagent]]", "[[hamilton-graphsage]]"]
+sources: ["[[papadaki-rdf-analytics-survey]]", "[[zhang-graphrag-survey]]", "[[banf-tripartite-graphrag]]", "[[barron-legal-rag-nmf]]", "[[cheng-cograg]]", "[[baldazzi-soft-ontological-reasoning]]", "[[liu-symagent]]", "[[hamilton-graphsage]]", "[[allemang-semantic-web]]", "[[cimiano-ontology-nlp]]"]
 date_created: 2026-05-20
 date_updated: 2026-05-20
-coverage: 5
+coverage: 10
 understanding: 0
 maturity: evolving
 ---
@@ -24,3 +24,6 @@ A graph-structured data model that aggregates and integrates heterogeneous data 
 - [[baldazzi-soft-ontological-reasoning]] (unread) — KG as base data layer for Datalog-based ontological reasoning with soft chase
 - [[liu-symagent]] (unread) — KG as dynamic environment for neural-symbolic agent; symbolic rules derived from KG structure
 - [[hamilton-graphsage]] (unread) — node embedding generation over large KG-scale graphs via inductive neighborhood aggregation
+- [[allemang-semantic-web-ch03]] (unread) — RDF as the formal data model underlying KGs; URI-based merging of heterogeneous sources
+- [[allemang-semantic-web-ch13]] (unread) — real-world KG deployments (Good Relations, Open Graph Protocol, OBO) as integration case studies
+- [[cimiano-ontology-nlp-ch09]] (unread) — RDF triplestore as the knowledge graph targeted by the NL QA system

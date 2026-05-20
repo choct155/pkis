@@ -5,10 +5,10 @@ also_type: []
 domain: [bayesian-stats]
 tags: [mcmc, posterior-sampling, markov-chains, acceptance-rejection, bayesian-computation, metropolis-hastings]
 related_concepts: ["[[gibbs-sampler]]", "[[data-augmentation]]", "[[probability-theory]]", "[[directed-graphical-models]]"]
-sources: ["[[tanner-tools-statistical-inference]]"]
+sources: ["[[tanner-tools-statistical-inference]]", "[[kroese-statistical-modeling]]", "[[lange-applied-probability]]"]
 date_created: 2026-05-20
 date_updated: 2026-05-20
-coverage: 1
+coverage: 3
 understanding: 0
 maturity: settled
 ---
@@ -20,3 +20,5 @@ Unlike the Gibbs sampler, the Metropolis algorithm is a non-augmentation method 
 ## Reading Path
 - [[tanner-tools-statistical-inference]] (unread) — primary treatment in second edition (1993); Section 6.5 covers discrete-space Markov chain theory, Metropolis method, and Metropolis subchains; convergence assessment methods
 - [[tanner-tools-statistical-inference-ch06]] (unread) — primary chapter
+- [[kroese-statistical-modeling-ch07]] (unread) — Metropolis-Hastings in Monte Carlo chapter; presents as the general MCMC algorithm of which Metropolis is the symmetric-proposal special case
+- [[lange-applied-probability-ch07]] (unread) — foundational Hastings-Metropolis treatment with convergence of independence sampler

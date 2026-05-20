@@ -5,10 +5,10 @@ also_type: []
 domain: [time-series, state-space-models, bayesian-stats]
 tags: [latent-variables, dynamic-linear-models, hidden-markov-models, linear-gaussian, sequential-inference]
 related_concepts: ["[[kalman-filter]]", "[[structural-time-series]]", "[[dynamic-factor-models]]", "[[directed-graphical-models]]"]
-sources: ["[[duncan-mskf-seemingly-unrelated-1993]]", "[[scott-varian-nowcasting-2013a]]", "[[scott-varian-bsts-2014]]"]
+sources: ["[[duncan-mskf-seemingly-unrelated-1993]]", "[[scott-varian-nowcasting-2013a]]", "[[scott-varian-bsts-2014]]", "[[kroese-statistical-modeling]]"]
 date_created: 2026-05-20
 date_updated: 2026-05-20
-coverage: 3
+coverage: 4
 understanding: 0
 maturity: settled
 ---
@@ -21,3 +21,4 @@ State-space models can be viewed as dynamic Bayesian networks: the latent state 
 - [[duncan-mskf-seemingly-unrelated-1993]] (unread) — presents the DLM as the formal backbone of the MSKF; gives explicit recursive Kalman filter equations for the linear-Gaussian case
 - [[scott-varian-bsts-2014]] (unread) — shows state-space modularity: any combination of components (trend, seasonal, regression) can be composed by concatenating observation vectors and arranging model matrices block-diagonally
 - [[scott-varian-nowcasting-2013a]] (unread) — introduces state-space form for the BSTS nowcasting model; motivates the framework as encompassing ARIMA, structural decompositions, and regression components
+- [[kroese-statistical-modeling-ch13]] (unread) — unobserved components model, time-varying parameter model, and stochastic volatility with both frequentist (Kalman filter) and Bayesian (MCMC) estimation

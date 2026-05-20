@@ -5,10 +5,10 @@ also_type: []
 domain: [bayesian-stats, statistical-learning]
 tags: [monte-carlo, posterior-inference, likelihood, non-iterative, variance-reduction, sir-algorithm]
 related_concepts: ["[[data-augmentation]]", "[[gibbs-sampler]]", "[[probability-theory]]", "[[bayesian-linear-regression]]"]
-sources: ["[[tanner-tools-statistical-inference]]"]
+sources: ["[[tanner-tools-statistical-inference]]", "[[kroese-statistical-modeling]]", "[[lange-applied-probability]]"]
 date_created: 2026-05-20
 date_updated: 2026-05-20
-coverage: 1
+coverage: 3
 understanding: 0
 maturity: settled
 ---
@@ -21,3 +21,5 @@ Sampling/Importance Resampling (SIR) extends this to approximate iid posterior s
 - [[tanner-tools-statistical-inference]] (unread) — primary treatment; Chapter 3 covers importance sampling and rejection-acceptance in the likelihood/posterior context; Chapter 5 covers SIR and sequential imputation
 - [[tanner-tools-statistical-inference-ch03]] (unread) — primary chapter
 - [[tanner-tools-statistical-inference-ch05]] (unread) — SIR treatment
+- [[kroese-statistical-modeling-ch07]] (unread) — importance sampling in the context of Monte Carlo methods alongside bootstrap and MCMC
+- [[lange-applied-probability-ch12]] (unread) — asymptotic methods context including importance-weighted approximations

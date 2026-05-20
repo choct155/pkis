@@ -1,10 +1,32 @@
 # Reading Queue
 
 ### High
+- [ ] [[allemang-semantic-web-ch03]] — primary RDF treatment; deepens [[rdf]], [[linked-data-principles]], and forms the foundation for all downstream Semantic Web chapters; needed before reading any OWL/RDFS chapters
+- [ ] [[allemang-semantic-web-ch07]] — RDFS primary treatment; deepens [[rdfs]] and [[ontology-reasoning]]; prerequisite reading for ch08 and ch11
+- [ ] [[allemang-semantic-web-ch05]] — SPARQL comprehensive treatment; deepens [[sparql]] with CONSTRUCT rules and federation; directly relevant to [[ontology-reasoning]] and [[knowledge-graph]] work
 - [ ] [[hastie-esl-ch08]] — bridges frequentist and Bayesian inference; covers EM, MCMC, bagging, and model averaging. Highest cross-domain connectivity to bayesian-stats.
 - [ ] [[hastie-esl-ch17]] — Markov random fields, graph structure estimation. Connects to knowledge-representation and causal-analysis domains.
 - [ ] [[pearl-causality-ch03]] — back-door criterion, front-door criterion, and full do-calculus derivation; required reading to deepen [[do-calculus]] and [[confounding]]
 - [ ] [[pearl-causality-ch07]] — SCM-based counterfactuals and twin-network construction; required reading to deepen [[counterfactuals]]
+- [ ] [[lange-applied-probability-ch07]] — primary applied MCMC treatment (Hastings-Metropolis + Gibbs + simulated annealing); deepens [[mcmc]], [[gibbs-sampler]], [[metropolis-algorithm]]
+- [ ] [[lange-applied-probability-ch03]] — introduces MM algorithm and majorization framing; deepens [[mm-algorithm]], [[convex-optimization]], [[em-algorithm]]
+- [ ] [[carrell-groups-matrices-vectors-ch02]] — primary source for [[group-theory]], [[quotient-groups]], and [[abstract-algebra-fields]]; three new nodes depend on this chapter
+- [ ] [[carrell-groups-matrices-vectors-ch08]] — deepens [[eigendecomposition]] (Principal Axis Theorem / Spectral Theorem) and introduces [[symmetry-groups]] via Platonic solids
+- [ ] [[carrell-groups-matrices-vectors-ch10]] — sole source for [[jordan-canonical-form]]; Jordan–Chevalley decomposition foundational for structure theory of linear maps
+- [ ] [[cassandras-des-intro-ch03]] — Supervisory Control chapter; grounds [[supervisory-control]], [[controllability]], and bridges to reinforcement learning via control-theoretic framing
+- [ ] [[cassandras-des-intro-ch09]] — Controlled Markov Chains; deepens [[markov-decision-processes]] and connects [[discrete-event-systems]] to reinforcement learning via shared MDP substrate
+- [ ] [[cassandras-des-intro-ch11]] — Sensitivity Analysis / IPA; unique gradient-estimation approach; deepens [[perturbation-analysis]]
+- [ ] [[nielsen-nndl-ch02]] — primary derivation of backpropagation from first principles; deepens [[backpropagation]] and [[automatic-differentiation]]
+- [ ] [[nielsen-nndl-ch03]] — practical training chapter covering dropout, cross-entropy, weight initialization; deepens [[neural-networks]], [[regularization]], [[gradient-descent]]
+- [ ] [[nielsen-nndl-ch05]] — vanishing gradient diagnosis; deepens [[vanishing-gradient-problem]] and motivates [[convolutional-neural-networks]]
+- [ ] [[cimiano-ontology-nlp-ch09]] — primary treatment of SPARQL-based semantic parsing as NL-to-KG interface; deepens [[sparql]], [[knowledge-graph-question-answering]], [[semantic-parsing]]
+- [ ] [[cimiano-ontology-nlp-ch02]] — primary treatment of OWL/OWL 2 DL; deepens [[formal-ontology]], [[description-logic]], [[ontology-reasoning]]
+- [ ] [[cunningham-causal-inference-mixtape-ch05]] — potential outcomes chapter; deepens [[potential-outcomes-framework]], [[average-treatment-effect]], [[selection-bias]]
+- [ ] [[cunningham-causal-inference-mixtape-ch04]] — DAG chapter; deepens [[collider-bias]], [[confounding]], [[structural-causal-models]], [[d-separation]] from practitioner angle
+- [ ] [[cunningham-causal-inference-mixtape-ch08]] — IV/LATE chapter; deepens [[instrumental-variables]], [[local-average-treatment-effect]]
+- [ ] [[kroese-statistical-modeling-ch07]] — deepens [[mcmc]], [[gibbs-sampler]], [[metropolis-algorithm]], [[bootstrap]], [[kernel-density-estimation]] in unified Monte Carlo treatment
+- [ ] [[kroese-statistical-modeling-ch06]] — primary treatment of [[maximum-likelihood-estimation]] with Fisher information and Cramér-Rao; deepens [[em-algorithm]]
+- [ ] [[kroese-statistical-modeling-ch10]] — primary treatment of [[generalized-linear-models]] with logit/probit/Poisson
 
 ### Normal
 - [ ] [[gulli-agentic-design-patterns-ch14]] — covers standard RAG, GraphRAG, and Agentic RAG; directly deepens [[retrieval-augmented-generation]] and [[graph-rag]] with practical pattern framing
@@ -26,3 +48,11 @@
 - [ ] [[sargent-sims-business-cycle-1977]] — foundational VAR paper; deepens [[var-models]], [[dynamic-factor-models]]; cited by Stock-Watson; foundational to modern macroeconometrics
 - [ ] [[castle-model-selection-algorithms]] — systematic Monte Carlo benchmark of 21 MSAs; deepens [[model-selection-problem]], [[information-criteria]], [[bias-variance-tradeoff]]
 - [ ] [[friedman-rulefit-2005]] — deepens [[gradient-boosting]], [[decision-trees]], [[lasso]], [[ensemble-learning]]; introduces interpretability toolkit ([[partial-dependence]], [[rule-ensembles]])
+- [ ] [[lange-applied-probability-ch16]] — entropy chapter; deepens [[entropy]], [[em-algorithm]], [[kl-divergence]]; connects information theory to Bayesian computation
+- [ ] [[cassandras-des-intro-ch02]] — Languages and Automata; foundations for [[finite-automata]], [[model-checking]], [[temporal-logic]]
+- [ ] [[cassandras-des-intro-ch07]] — Markov Chains in DES context; deepens [[markov-chains]] and connects to [[state-space-models]]
+- [ ] [[cassandras-des-intro-ch08]] — Queueing Theory; primary source for [[queueing-theory]]; practical application domain for stochastic DES
+- [ ] [[cimiano-ontology-nlp-ch07]] — DL reasoning for NL ambiguity resolution; deepens [[ontology-reasoning]] beyond Datalog chase
+- [ ] [[cunningham-causal-inference-mixtape-ch10]] — DiD chapter; deepens [[difference-in-differences]], [[parallel-trends]]; Card-Krueger canonical application
+- [ ] [[cunningham-causal-inference-mixtape-ch11]] — Synthetic control; deepens [[synthetic-control]]; Abadie methodology and Prop 99 application
+- [ ] [[kroese-statistical-modeling-ch11]] — primary treatment of [[gaussian-process-regression]] and [[kernel-density-estimation]]; covers regression splines and RKHS connection

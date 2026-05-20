@@ -5,10 +5,10 @@ also_type: []
 domain: [bayesian-stats]
 tags: [posterior-approximation, normal-approximation, saddle-point, marginalization, asymptotic-methods]
 related_concepts: ["[[probability-theory]]", "[[gaussian-distribution]]", "[[importance-sampling]]", "[[em-algorithm]]", "[[bayesian-linear-regression]]"]
-sources: ["[[tanner-tools-statistical-inference]]"]
+sources: ["[[tanner-tools-statistical-inference]]", "[[lange-applied-probability]]"]
 date_created: 2026-05-20
 date_updated: 2026-05-20
-coverage: 1
+coverage: 2
 understanding: 0
 maturity: settled
 ---
@@ -20,3 +20,4 @@ The Laplace approximation enables non-normal corrections to basic normal-based i
 ## Reading Path
 - [[tanner-tools-statistical-inference]] (unread) — primary treatment; Chapter 3 covers Laplace's method for posterior moments and marginalization; motivates MCMC alternatives for non-ellipsoidal posteriors
 - [[tanner-tools-statistical-inference-ch03]] (unread) — primary chapter
+- [[lange-applied-probability-ch12]] (unread) — Laplace's method and Watson's Lemma for integral approximation
