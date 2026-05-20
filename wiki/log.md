@@ -9,3 +9,9 @@
 - Introduced new domain tag: `statistical-learning`
 - Updated: wiki/index.md, wiki/queue.md
 - Queue: 5 chapter-level reading items added (2 High, 3 Normal)
+
+## [2026-05-20] ingest-update | ESL — additional stubs
+- Created technique stubs: [[neural-networks]] (high, also_type: framework), [[backpropagation]] (high), [[logistic-regression]] (high), [[decision-trees]] (high), [[principal-component-analysis]] (high)
+- Created framework stub: [[undirected-graphical-models]] (high)
+- Updated wiki/sources/hastie-esl.md concepts list and Key Knowledge Objects
+- Updated: wiki/index.md

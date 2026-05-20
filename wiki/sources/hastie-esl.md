@@ -22,6 +22,12 @@ concepts:
   - "[[ensemble-learning]]"
   - "[[model-selection-problem]]"
   - "[[em-algorithm]]"
+  - "[[neural-networks]]"
+  - "[[backpropagation]]"
+  - "[[logistic-regression]]"
+  - "[[decision-trees]]"
+  - "[[principal-component-analysis]]"
+  - "[[undirected-graphical-models]]"
 ---
 
 ## Summary
@@ -45,6 +51,12 @@ Hastie, Tibshirani, and Friedman are co-developers of several methods covered (n
 - [[em-algorithm]] (technique, high) — expectation-maximization for latent variable models
 - [[ensemble-learning]] (framework, moderate — could be concept) — the organizing idea behind bagging, boosting, random forests, and stacking
 - [[model-selection-problem]] (problem, moderate — could be concept) — how to choose model complexity; Ch. 7's central question
+- [[neural-networks]] (technique, high — also_type: framework) — feedforward networks, backprop, Bayesian neural nets; entire Ch. 11
+- [[backpropagation]] (technique, high) — gradient computation via reverse-mode chain rule; core training algorithm for neural nets
+- [[logistic-regression]] (technique, high) — linear classification via logistic link; Ch. 4 foundational treatment
+- [[decision-trees]] (technique, high) — CART: recursive binary partitioning; base learner for ensemble methods
+- [[principal-component-analysis]] (technique, high) — linear dimensionality reduction via eigenvectors of covariance; Ch. 14
+- [[undirected-graphical-models]] (framework, high) — Markov random fields, Gaussian graphical models; Ch. 17
 
 ## Key Extractions
 
