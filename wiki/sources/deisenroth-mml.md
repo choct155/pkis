@@ -8,6 +8,8 @@ tags: [linear-algebra, probability-theory, calculus, optimization, dimensionalit
 source_url: "https://mml-book.com"
 drive_id: "1pd0ziFWZBYPaAGefEewmYZqhGcD5udYV"
 drive_path: "PKIS/sources/books/Mathematics for Machine Learning - Deisenroth Faisal Ong.pdf"
+isbn: "978-1-108-47004-9"
+toc_source: "manual"
 status: unread
 date_added: 2026-05-20
 concepts:
@@ -89,20 +91,20 @@ The book is complementary to ESL — where ESL gives broad coverage of methods, 
 
 ## Chapters
 
-| Ch. | Title | Key topics |
+| Ch | Stub | Title |
 |---|---|---|
-| 1 | Introduction and Motivation | Two reading paths: bottom-up (math first) vs top-down (ML first) |
-| 2 | Linear Algebra | Vector spaces, linear independence, basis, linear maps, affine spaces |
-| 3 | Analytic Geometry | Norms, inner products, projections, orthogonality, rotations |
-| 4 | Matrix Decompositions | Eigenvalues/vectors, Cholesky, eigendecomposition, SVD, matrix approximation |
-| 5 | Vector Calculus | Gradients, Jacobians, Hessians, backprop as reverse-mode AD, Taylor series |
-| 6 | Probability and Distributions | Probability spaces, Bayes' theorem, Gaussian, conjugate priors, exponential family |
-| 7 | Continuous Optimization | Gradient descent, Lagrange multipliers, convex optimization, KKT |
-| 8 | When Models Meet Data | ERM, MLE, probabilistic modeling, directed graphical models, model selection |
-| 9 | Linear Regression | OLS, MLE as orthogonal projection, Bayesian linear regression |
-| 10 | Dimensionality Reduction with PCA | Variance maximization and reconstruction error views; SVD connection |
-| 11 | Density Estimation with Gaussian Mixture Models | EM for GMMs; soft assignment; model selection |
-| 12 | Classification with Support Vector Machines | Margin maximization, dual problem, kernel trick, KKT conditions |
+| 1 | [[deisenroth-mml-ch01]] | Introduction and Motivation |
+| 2 | [[deisenroth-mml-ch02]] | Linear Algebra |
+| 3 | [[deisenroth-mml-ch03]] | Analytic Geometry |
+| 4 | [[deisenroth-mml-ch04]] | Matrix Decompositions |
+| 5 | [[deisenroth-mml-ch05]] | Vector Calculus |
+| 6 | [[deisenroth-mml-ch06]] | Probability and Distributions |
+| 7 | [[deisenroth-mml-ch07]] | Continuous Optimization |
+| 8 | [[deisenroth-mml-ch08]] | When Models Meet Data |
+| 9 | [[deisenroth-mml-ch09]] | Linear Regression |
+| 10 | [[deisenroth-mml-ch10]] | Dimensionality Reduction with PCA |
+| 11 | [[deisenroth-mml-ch11]] | Density Estimation with Gaussian Mixture Models |
+| 12 | [[deisenroth-mml-ch12]] | Classification with Support Vector Machines |
 
 ## Connection Candidates
 

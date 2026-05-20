@@ -46,6 +46,20 @@ without explicit approval.
 ### 1. Gather context
 
 - Read the stub node and identify its `knowledge_type`
+- **Reading gap check:** Scan the `## Reading Path` section (if present). Count entries
+  marked `(unread)` vs. `(read)` or `(reading)`. If all listed sources are unread, emit
+  a warning before proceeding:
+
+  > ⚠️ Reading gap: [[node-slug]] has no confirmed-read primary sources.
+  > Unread: [[source-a]] (unread), [[source-b]] (unread)
+  > Deepening without read sources risks hallucinated or superficial content.
+  > Recommend reading the highest-priority source first, or confirm the user
+  > authorizes proceeding from structural/secondary knowledge only.
+
+  If the user authorizes proceeding despite unread sources, note the gap in the
+  drafted node's `## Open Questions` section: "Primary sources not yet read —
+  this entry should be revised after reading [[source-slug]]."
+
 - Read all source entries listed in `sources:` frontmatter
 - Read all related nodes listed in `related_concepts:` frontmatter
 - If any source has a Drive ID and the stub is thin, use `download_file_content`
@@ -99,6 +113,11 @@ Consult SCHEMA.md § Interpretation Table to select the correct predicate for th
 node types involved. Cross-domain connections are the highest-value output — flag
 them explicitly.
 
+## Reading Path
+Sources relevant to this node, ordered by recommended reading sequence. Populated
+and maintained by the Librarian; status updated by the user.
+- [[source-slug]] (unread | reading | read) — brief relevance note
+
 ## Open Questions
 What is not yet understood or resolved — either in the literature or in the user's
 own understanding. Honest and personal.
@@ -133,6 +152,10 @@ When does this technique break down? Be specific:
 - What are the observable symptoms of failure?
 - What diagnostic checks detect the failure?
 
+## Reading Path
+Sources relevant to this node, ordered by recommended reading sequence.
+- [[source-slug]] (unread | reading | read) — brief relevance note
+
 ## Connections
 Typed relationships per the predicate interpretation table.
 
@@ -161,6 +184,10 @@ is relaxed?
 ## Implications
 What does this result enable or constrain? Link to Technique or Framework nodes
 that depend on it.
+
+## Reading Path
+Sources relevant to this node, ordered by recommended reading sequence.
+- [[source-slug]] (unread | reading | read) — brief relevance note
 
 ## Connections
 Typed relationships per the predicate interpretation table.
@@ -192,6 +219,10 @@ for thinking within this framework.
 What is this framework good at? Where does it break down? What classes of problems
 does it not address? Be specific — "has limitations" is not useful.
 
+## Reading Path
+Sources relevant to this node, ordered by recommended reading sequence.
+- [[source-slug]] (unread | reading | read) — brief relevance note
+
 ## Connections
 Typed relationships. Pay special attention to `contrasts-with` edges to rival
 frameworks — these are high-value for the user's integration work.
@@ -222,6 +253,10 @@ same problem is attacked differently in different fields.
 What remains unsolved? What would a better solution look like? What's blocking
 progress?
 
+## Reading Path
+Sources relevant to this node, ordered by recommended reading sequence.
+- [[source-slug]] (unread | reading | read) — brief relevance note
+
 ## Connections
 Typed relationships.
 
@@ -249,6 +284,10 @@ Use the `grounds` predicate for these connections.
 ## Where It Breaks
 When does this principle lead you astray? What are its failure modes?
 Every principle has boundary conditions — document them.
+
+## Reading Path
+Sources relevant to this node, ordered by recommended reading sequence.
+- [[source-slug]] (unread | reading | read) — brief relevance note
 
 ## Connections
 Typed relationships. Principles connect broadly — look for `grounds` edges

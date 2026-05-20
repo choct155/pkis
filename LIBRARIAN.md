@@ -79,13 +79,57 @@ Proceed directly to Step 2.
 | Type | Action |
 |---|---|
 | Paper (≤50 pages) | Single source node, full ingest |
-| Book chapter | Single source node, note parent book in summary |
-| Full book | Book-level index entry + stub entries for each chapter. NO deep ingest. |
+| Book chapter | Single source node with `parent_book` link; note parent book in summary |
+| Full book | Book-level entry + individual chapter stub source files + ToC enrichment |
 | Article / talk | Single source node, full ingest |
 
-For full books: create `wiki/sources/[book-slug].md` with chapter stubs listed in a
-`## Chapters` section. Do not create separate source files for each chapter — wait
-until a chapter is specifically requested for ingestion.
+**For full books:**
+
+1. Create `wiki/sources/[book-slug].md` (the book-level entry) with `isbn:` and
+   `toc_source:` in frontmatter.
+
+2. **ToC enrichment.** Use the ISBN to fetch chapter metadata. Try in order:
+   - OpenLibrary: `https://openlibrary.org/isbn/{isbn}.json`
+     (check the `table_of_contents` key; or follow `works` → edition for richer data)
+   - Google Books: `https://www.googleapis.com/books/v1/volumes?q=isbn:{isbn}`
+     (check `volumeInfo.tableOfContents` if present)
+   - If neither API yields a chapter list, extract chapter titles from the document
+     itself and note `toc_source: "manual"`
+   - Record the source: `toc_source: "openlibrary"` | `"google-books"` | `"manual"`
+
+3. **Create a chapter stub source file** for each chapter at
+   `wiki/sources/[book-slug]-chNN.md` (two-digit zero-padded: ch01, ch02, ...).
+   Each stub carries:
+
+   ```yaml
+   ---
+   title: "Ch. N — [Chapter Title]"
+   authors: "[same as parent book]"
+   year: [same as parent book]
+   type: book-chapter
+   domain: []
+   tags: []
+   drive_id: "[same Drive ID as parent book]"
+   drive_path: "[same as parent book]"
+   parent_book: "[[book-slug]]"
+   chapter: N
+   status: unread
+   date_added: YYYY-MM-DD
+   concepts: []
+   ---
+
+   [One sentence describing the chapter's topic based on ToC title.]
+   ```
+
+4. **Update `## Chapters`** in the book-level entry to use wikilinks to each chapter stub:
+
+   ```markdown
+   ## Chapters
+   | Ch | Stub | Title |
+   |---|---|---|
+   | 1 | [[book-slug-ch01]] | Chapter Title |
+   | 2 | [[book-slug-ch02]] | Chapter Title |
+   ```
 
 ### Step 3: Create the source entry
 
@@ -102,6 +146,10 @@ tags: []
 source_url: ""
 drive_id: ""
 drive_path: ""
+isbn: ""                # books only; ISBN-13 preferred
+toc_source: ""          # books only: "openlibrary" | "google-books" | "manual"
+parent_book: ""         # book-chapter only; wikilink to parent book entry
+chapter:                # book-chapter only; integer chapter number
 status: unread
 date_added: YYYY-MM-DD
 concepts: []
@@ -169,14 +217,20 @@ For each knowledge object identified in **Key Knowledge Objects**:
 
 3. **Check for existing nodes.** Search ALL 6 knowledge folders for an existing slug
    that matches or nearly matches. Also check existing tags for near-duplicates.
-   If a node exists, add this source to its `sources:` frontmatter list and update
-   `date_updated`. Do not modify the body.
+   If a node exists, add this source to its `sources:` frontmatter list, update
+   `date_updated`, and append the source to its `## Reading Path` section (create
+   the section if absent). Do not modify any other body content.
 
 4. **Create the stub** (high and moderate confidence only) in the appropriate folder
    with the correct frontmatter template (see SCHEMA.md § Frontmatter Templates).
    The body is one sentence: what is this knowledge object? For moderate confidence,
    add a second sentence: "Classification note: assigned as [type] but may be [alt-type]
-   because [reason]."
+   because [reason]." Append a `## Reading Path` section with the current source
+   (status: unread) as its first entry:
+   ```markdown
+   ## Reading Path
+   - [[current-source-slug]] (unread) — brief note on what this source says about the node
+   ```
 
 ### Step 5: Update index.md
 

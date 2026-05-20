@@ -8,6 +8,8 @@ tags: [linear-algebra, probability-theory, regularization, model-selection, supe
 source_url: "https://hastie.su.domains/ElemStatLearn/"
 drive_id: "1wlBseTrcttH-uTEV9Oiq3x3lv8PFNcEo"
 drive_path: "PKIS/sources/books/Elements of Statistical Learning - Hastie Tibshirani Friedman.pdf"
+isbn: "978-0-387-84857-0"
+toc_source: "manual"
 status: unread
 date_added: 2026-05-20
 concepts:
@@ -76,26 +78,26 @@ Hastie, Tibshirani, and Friedman are co-developers of several methods covered (n
 
 ## Chapters
 
-| Ch. | Title | Key topics |
+| Ch | Stub | Title |
 |---|---|---|
-| 1 | Introduction | Motivating examples |
-| 2 | Overview of Supervised Learning | Statistical decision theory, bias-variance, curse of dimensionality |
-| 3 | Linear Methods for Regression | OLS, ridge, lasso, LAR, elastic net, Gauss-Markov |
-| 4 | Linear Methods for Classification | LDA, logistic regression, separating hyperplanes, perceptron |
-| 5 | Basis Expansions and Regularization | Splines, RKHS, wavelets |
-| 6 | Kernel Smoothing Methods | Local regression, kernel density estimation, naive Bayes |
-| 7 | Model Assessment and Selection | CV, AIC, BIC, VC dimension, bootstrap methods |
-| 8 | Model Inference and Averaging | Bootstrap, MLE, Bayesian methods, EM, MCMC, bagging, stacking |
-| 9 | Additive Models, Trees, and Related Methods | GAMs, CART, MARS, hierarchical mixtures of experts |
-| 10 | Boosting and Additive Trees | AdaBoost, gradient boosting, loss functions, regularization paths |
-| 11 | Neural Networks | Feedforward networks, backpropagation, Bayesian neural nets |
-| 12 | Support Vector Machines and Flexible Discriminants | SVMs, kernels, flexible/penalized/mixture discriminant analysis |
-| 13 | Prototype Methods and Nearest-Neighbors | K-means, LVQ, KNN, tangent distance |
-| 14 | Unsupervised Learning | Clustering, PCA, ICA, spectral methods, NMF, MDS |
-| 15 | Random Forests | Definition, OOB error, variable importance, variance analysis |
-| 16 | Ensemble Learning | Boosting as regularization paths, "bet on sparsity", rule ensembles |
-| 17 | Undirected Graphical Models | Markov random fields, Gaussian graphical models, graph estimation |
-| 18 | High-Dimensional Problems: p >> N | Regularized classification, supervised PCA, false discovery rate |
+| 1 | [[hastie-esl-ch01]] | Introduction |
+| 2 | [[hastie-esl-ch02]] | Overview of Supervised Learning |
+| 3 | [[hastie-esl-ch03]] | Linear Methods for Regression |
+| 4 | [[hastie-esl-ch04]] | Linear Methods for Classification |
+| 5 | [[hastie-esl-ch05]] | Basis Expansions and Regularization |
+| 6 | [[hastie-esl-ch06]] | Kernel Smoothing Methods |
+| 7 | [[hastie-esl-ch07]] | Model Assessment and Selection |
+| 8 | [[hastie-esl-ch08]] | Model Inference and Averaging |
+| 9 | [[hastie-esl-ch09]] | Additive Models, Trees, and Related Methods |
+| 10 | [[hastie-esl-ch10]] | Boosting and Additive Trees |
+| 11 | [[hastie-esl-ch11]] | Neural Networks |
+| 12 | [[hastie-esl-ch12]] | Support Vector Machines and Flexible Discriminants |
+| 13 | [[hastie-esl-ch13]] | Prototype Methods and Nearest-Neighbors |
+| 14 | [[hastie-esl-ch14]] | Unsupervised Learning |
+| 15 | [[hastie-esl-ch15]] | Random Forests |
+| 16 | [[hastie-esl-ch16]] | Ensemble Learning |
+| 17 | [[hastie-esl-ch17]] | Undirected Graphical Models |
+| 18 | [[hastie-esl-ch18]] | High-Dimensional Problems: p >> N |
 
 ## Connection Candidates
 

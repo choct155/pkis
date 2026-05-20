@@ -5,10 +5,10 @@ also_type: [framework]
 domain: [knowledge-representation]
 tags: [rdf, linked-data, semantic-web, graph-databases, ontology]
 related_concepts: []
-sources: ["[[papadaki-rdf-analytics-survey]]"]
+sources: ["[[papadaki-rdf-analytics-survey]]", "[[zhang-graphrag-survey]]"]
 date_created: 2026-05-20
 date_updated: 2026-05-20
-coverage: 1
+coverage: 2
 understanding: 0
 maturity: evolving
 ---

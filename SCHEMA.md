@@ -296,6 +296,10 @@ tags: []
 source_url: ""          # arXiv URL, DOI, or similar; omit if not web-available
 drive_id: ""            # Google Drive file ID — primary reference
 drive_path: ""          # human-readable Drive path for orientation only
+isbn: ""                # books only; ISBN-13 preferred
+toc_source: ""          # books only: "openlibrary" | "google-books" | "manual"
+parent_book: ""         # book-chapter only; wikilink to parent book entry
+chapter:                # book-chapter only; integer chapter number
 status: unread | reading | completed | paused
 date_added: YYYY-MM-DD
 concepts: []            # wikilinks to knowledge nodes this source covers
@@ -415,6 +419,25 @@ understanding: 0
 maturity: settled | evolving | contested | historical
 ---
 ```
+
+### Reading Path Convention
+
+All knowledge nodes may include a `## Reading Path` body section listing the most
+relevant sources (chapters or papers) ordered by recommended reading sequence:
+
+```markdown
+## Reading Path
+- [[hastie-esl-ch10]] (unread) — primary treatment; covers loss functions and regularization paths
+- [[deisenroth-mml-ch06]] (unread) — optimization geometry prerequisites
+- [[zhang-graphrag-survey]] (unread) — application context in retrieval systems
+```
+
+**Format:** `- [[source-slug]] (read | unread | reading)` — brief relevance note
+
+The Librarian populates this section when creating stubs or updating existing nodes.
+The user updates status annotations as reading progresses. The Synthesizer checks this
+section before deepening and flags unread primary sources rather than deepening from
+zero confirmed evidence.
 
 ---
 
