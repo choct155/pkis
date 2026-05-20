@@ -5,10 +5,10 @@ also_type: [framework]
 domain: [knowledge-representation, symbolic-subsymbolic]
 tags: [logic, datalog, knowledge-graphs, rule-based, inference, chase-procedure, explainability, ontology]
 related_concepts: [knowledge-graph, neurosymbolic-ai, directed-graphical-models]
-sources: ["[[baldazzi-soft-ontological-reasoning]]", "[[allemang-semantic-web]]", "[[cimiano-ontology-nlp]]"]
+sources: ["[[baldazzi-soft-ontological-reasoning]]", "[[allemang-semantic-web]]", "[[cimiano-ontology-nlp]]", "[[kg-evaluation-bloomberg-2024]]"]
 date_created: 2026-05-20
 date_updated: 2026-05-20
-coverage: 3
+coverage: 4
 understanding: 0
 maturity: settled
 ---
@@ -24,3 +24,4 @@ Classification note: assigned as technique (a procedure with inputs/outputs: rul
 - [[allemang-semantic-web-ch11]] (unread) — OWL inference: property restrictions, individual identity under OWA
 - [[allemang-semantic-web-ch15]] (unread) — OWL 2 profiles and tractable reasoning regimes (EL, QL, RL)
 - [[cimiano-ontology-nlp-ch07]] (unread) — extends ontological reasoning to DL-based OWL reasoning for NL ambiguity resolution; contrasts with Datalog/chase approach in [[baldazzi-soft-ontological-reasoning]]
+- [[kg-evaluation-bloomberg-2024]] (unread) — HermiT and Pellet used as supply-side quality control validators for the Bloomberg BSM; reasoning used to detect logical inconsistencies rather than to derive new facts

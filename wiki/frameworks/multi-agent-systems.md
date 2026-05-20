@@ -5,10 +5,10 @@ also_type: [technique]
 domain: [deep-learning, symbolic-subsymbolic]
 tags: [llm, agentic-ai, multi-agent-systems, agent-coordination, distributed-ai]
 related_concepts: []
-sources: ["[[gulli-agentic-design-patterns]]"]
+sources: ["[[gulli-agentic-design-patterns]]", "[[miehling-agentic-systems-theory-2025]]"]
 date_created: 2026-05-20
 date_updated: 2026-05-20
-coverage: 1
+coverage: 2
 understanding: 0
 maturity: evolving
 ---
@@ -20,3 +20,4 @@ Classification note: assigned as framework because multi-agent coordination defi
 ## Reading Path
 - [[gulli-agentic-design-patterns-ch07]] (unread) — multi-agent collaboration patterns with code examples
 - [[gulli-agentic-design-patterns-ch15]] (unread) — inter-agent communication (A2A) protocol
+- [[miehling-agentic-systems-theory-2025]] (unread) — systems-theoretic treatment: agent-agent interaction as mechanism of emergence; subgoal delegation, trust transfer, and cooperative/competitive interaction dynamics

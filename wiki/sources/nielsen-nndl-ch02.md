@@ -5,7 +5,7 @@ year: 2015
 type: book-chapter
 domain: [deep-learning, optimization]
 tags: [backpropagation, chain-rule, linear-algebra, calculus]
-drive_id: "159i65pXLqrDPrGD-sTIvU1pskIgUy8mb"
+drive_id: "1OvaRAM8W_QPmYOVaeZDMVbNTBBI-7txZ"
 drive_path: "PKIS/sources/books/Neural Networks and Deep Learning"
 parent_book: "[[nielsen-nndl]]"
 chapter: 2

@@ -5,7 +5,7 @@ year: 2015
 type: book-chapter
 domain: [deep-learning, optimization]
 tags: [regularization, dropout, cross-entropy, weight-initialization, sgd, overfitting]
-drive_id: "159i65pXLqrDPrGD-sTIvU1pskIgUy8mb"
+drive_id: "1OvaRAM8W_QPmYOVaeZDMVbNTBBI-7txZ"
 drive_path: "PKIS/sources/books/Neural Networks and Deep Learning"
 parent_book: "[[nielsen-nndl]]"
 chapter: 3

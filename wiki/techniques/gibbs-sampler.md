@@ -5,7 +5,7 @@ also_type: []
 domain: [bayesian-stats]
 tags: [mcmc, posterior-sampling, markov-chains, conditional-distributions, bayesian-computation]
 related_concepts: ["[[data-augmentation]]", "[[metropolis-algorithm]]", "[[directed-graphical-models]]", "[[conjugate-prior]]", "[[probability-theory]]"]
-sources: ["[[tanner-tools-statistical-inference]]", "[[kroese-statistical-modeling]]", "[[lange-applied-probability]]"]
+sources: ["[[tanner-tools-statistical-inference]]", "[[kroese-statistical-modeling]]", "[[lange-applied-probability]]", "[[kurz-hybrid-modeling-2022]]"]
 date_created: 2026-05-20
 date_updated: 2026-05-20
 coverage: 3
@@ -22,3 +22,4 @@ The Gibbs sampler is the multi-component generalization of data augmentation (tw
 - [[tanner-tools-statistical-inference-ch06]] (unread) — primary chapter
 - [[kroese-statistical-modeling-ch07]] (unread) — integrated treatment within Monte Carlo chapter; presents Gibbs as special case of Metropolis-Hastings
 - [[lange-applied-probability-ch07]] (unread) — Gibbs sampling treated as special case of Hastings-Metropolis; convergence analysis
+- [[kurz-hybrid-modeling-2022]] (unread) — Gibbs sampling from joint posterior p(ν,d|y) for CERN magnet field reconstruction; blockwise sampling alternating between BEM state vector and mechanical perturbation vectors

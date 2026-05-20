@@ -6,7 +6,7 @@ type: paper
 domain: [time-series, forecasting, bayesian-stats]
 tags: [kalman-filter, state-space-models, hierarchical-models, local-government, cross-sectional-pooling]
 source_url: "https://www.jstor.org/stable/2632644"
-drive_id: "1pZs8S1uVRUkYrpcSiLlisl5VKS1SjEml"
+drive_id: "1vdVJ3jKwoB-773H01pZpjn1pttAp9wqX"
 drive_path: "PKIS/sources/papers/duncan-mskf-seemingly-unrelated-1993.pdf"
 status: unread
 date_added: 2026-05-20

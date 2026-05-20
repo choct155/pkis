@@ -5,7 +5,7 @@ year: 2025
 type: book-chapter
 domain: [deep-learning]
 tags: []
-drive_id: "1BRC09kdXT7AtbhsUrTBTsRanXWw2Yx41"
+drive_id: "1_ODFqJ10y3xF1JFUcyDGOZljFJhDaRop"
 drive_path: "PKIS/sources/books/AgenticDesignPatterns.pdf"
 parent_book: "[[gulli-agentic-design-patterns]]"
 chapter: 10

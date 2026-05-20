@@ -6,7 +6,7 @@ type: paper
 domain: [statistical-learning, optimization]
 tags: [ensemble-methods, decision-trees, lasso, interpretability, interaction-effects, variable-importance, rule-learning]
 source_url: ""
-drive_id: "17LBAq5ugoDTTQcP_vjn6_TCdCuvYOe7G"
+drive_id: "16S_LFakU-FyqwFpxouahsAbsbL9XA60b"
 drive_path: "PKIS/sources/papers/friedman-rulefit-2005.pdf"
 status: unread
 date_added: 2026-05-20

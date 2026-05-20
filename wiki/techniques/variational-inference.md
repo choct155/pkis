@@ -5,7 +5,7 @@ also_type: [framework]
 domain: [bayesian-stats, optimization]
 tags: [variational-methods, approximate-inference, probability-theory, optimization]
 related_concepts: ["[[elbo]]", "[[mean-field-approximation]]", "[[kl-divergence]]", "[[directed-graphical-models]]", "[[em-algorithm]]"]
-sources: ["[[blei-vi-review]]", "[[ganguly-intro-vi]]", "[[sjolund-parametric-vi]]", "[[yellapragada-variational-bayes]]"]
+sources: ["[[blei-vi-review]]", "[[ganguly-intro-vi]]", "[[sjolund-parametric-vi]]", "[[yellapragada-variational-bayes]]", "[[pearl-reverend-bayes-1982]]"]
 date_created: 2026-05-20
 date_updated: 2026-05-20
 coverage: 4
@@ -32,3 +32,4 @@ Classification note: assigned as technique (it is a procedure with inputs — mo
 - [[ganguly-intro-vi]] (unread) — accessible introduction; strong ELBO derivation, mean-field CAVI example, VAE and VAE-GAN applications
 - [[sjolund-parametric-vi]] (unread) — parametric/neural-network perspective; reparameterization trick, amortized inference, BBVI gradient estimation
 - [[yellapragada-variational-bayes]] (unread) — application survey; Bayesian neural networks, normalizing flows, RL exploration, continual learning
+- [[pearl-reverend-bayes-1982]] (unread) — predecessor: exact belief propagation on trees; VI contrasts as approximate inference for general DAGs where exact BP is intractable

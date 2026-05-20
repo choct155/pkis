@@ -5,10 +5,10 @@ also_type: [framework]
 domain: [knowledge-representation]
 tags: [rdf, linked-data, semantic-web, graph-databases, ontology]
 related_concepts: []
-sources: ["[[papadaki-rdf-analytics-survey]]", "[[zhang-graphrag-survey]]", "[[banf-tripartite-graphrag]]", "[[barron-legal-rag-nmf]]", "[[cheng-cograg]]", "[[baldazzi-soft-ontological-reasoning]]", "[[liu-symagent]]", "[[hamilton-graphsage]]", "[[allemang-semantic-web]]", "[[cimiano-ontology-nlp]]"]
+sources: ["[[papadaki-rdf-analytics-survey]]", "[[zhang-graphrag-survey]]", "[[banf-tripartite-graphrag]]", "[[barron-legal-rag-nmf]]", "[[cheng-cograg]]", "[[baldazzi-soft-ontological-reasoning]]", "[[liu-symagent]]", "[[hamilton-graphsage]]", "[[allemang-semantic-web]]", "[[cimiano-ontology-nlp]]", "[[kg-evaluation-bloomberg-2024]]", "[[sequeda-kg-benchmark-llm-2023]]", "[[sequeda-kg-trust-llm-2025]]", "[[sheth-neurosymbolic-why-2023]]", "[[delong-nsai-kg-survey-2024]]", "[[belle-future-neurosymbolic-2025]]", "[[lenat-marcus-cyc-trustworthy-2023]]", "[[radhakrishnan-datagemma-2024]]"]
 date_created: 2026-05-20
 date_updated: 2026-05-20
-coverage: 10
+coverage: 17
 understanding: 0
 maturity: evolving
 ---
@@ -27,3 +27,11 @@ A graph-structured data model that aggregates and integrates heterogeneous data 
 - [[allemang-semantic-web-ch03]] (unread) — RDF as the formal data model underlying KGs; URI-based merging of heterogeneous sources
 - [[allemang-semantic-web-ch13]] (unread) — real-world KG deployments (Good Relations, Open Graph Protocol, OBO) as integration case studies
 - [[cimiano-ontology-nlp-ch09]] (unread) — RDF triplestore as the knowledge graph targeted by the NL QA system
+- [[kg-evaluation-bloomberg-2024]] (unread) — enterprise KG (Bloomberg BSM/BSR) as a data product; multi-dimensional quality evaluation framework; structural metrics, usage metrics, maturity model
+- [[sequeda-kg-benchmark-llm-2023]] (unread) — KG as semantic virtualization layer over enterprise SQL: OWL ontology + R2RML mappings define a KG that raises LLM QA accuracy 3x over raw SQL
+- [[sequeda-kg-trust-llm-2025]] (unread) — KG as trust infrastructure for enterprise LLM QA: formal query validation, explainability, governed data access
+- [[sheth-neurosymbolic-why-2023]] (unread) — KGs recommended as preferred symbolic structure for NSAI (dynamic, scalable, standards-based); contrasted with brittle static FOL
+- [[delong-nsai-kg-survey-2024]] (unread) — KG as reasoning domain; three-category neurosymbolic KGC taxonomy; ontologies as KG schemas
+- [[belle-future-neurosymbolic-2025]] (unread) — KGs as one of seven NSAI research directions; learning and reasoning over protein databases, social networks, common-sense KBs
+- [[lenat-marcus-cyc-trustworthy-2023]] (unread) — KGs characterized as "fast but much less expressive" than full HOL; Cyc's CycL as more expressive alternative
+- [[radhakrishnan-datagemma-2024]] (unread) — Data Commons as a collection of interoperable KGs (2.5 trillion triples, Schema.org normalized) serving as ground-truth data source for LLM statistical grounding

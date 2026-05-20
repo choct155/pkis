@@ -5,7 +5,7 @@ year: 2020
 type: book-chapter
 domain: [statistical-learning, optimization]
 tags: []
-drive_id: "1pd0ziFWZBYPaAGefEewmYZqhGcD5udYV"
+drive_id: "1oBPtabdYp4X_-Fo4Tgfd4e6wAwRtCeXS"
 drive_path: "PKIS/sources/books/Mathematics for Machine Learning - Deisenroth Faisal Ong.pdf"
 parent_book: "[[deisenroth-mml]]"
 chapter: 12

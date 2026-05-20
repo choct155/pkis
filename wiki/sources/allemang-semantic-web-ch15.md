@@ -5,7 +5,7 @@ year: 2011
 type: book-chapter
 domain: [knowledge-representation]
 tags: [owl, owl2, description-logic, qudt, obo, advanced-ontology, sparql-rules, semantic-web]
-drive_id: "1YB14A7mQMjx2HbTcNVX33TUCmPRjMSu1"
+drive_id: "1w9NmGv55cBYLxVG4L32t5uWYXZY3KTTV"
 drive_path: "PKIS/sources/books/Semantic Web for the Working Ontologist 2nd Ed"
 parent_book: "[[allemang-semantic-web]]"
 chapter: 15

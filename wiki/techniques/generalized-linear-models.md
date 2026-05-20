@@ -5,7 +5,7 @@ also_type: [framework]
 domain: [statistical-learning, bayesian-stats]
 tags: [glm, regression, link-function, exponential-family, logistic-regression, poisson-regression]
 related_concepts: ["[[logistic-regression]]", "[[regularization]]", "[[em-algorithm]]", "[[maximum-likelihood-estimation]]"]
-sources: ["[[kroese-statistical-modeling]]"]
+sources: ["[[kroese-statistical-modeling]]", "[[capretto-bambi-2022]]"]
 date_created: 2026-05-20
 date_updated: 2026-05-20
 coverage: 1
@@ -23,3 +23,4 @@ Generalized Linear Models (GLMs) extend the normal linear model to non-Gaussian 
 ## Reading Path
 - [[kroese-statistical-modeling-ch10]] (unread) — primary treatment: GLM framework, logit model, probit model with latent-variable representation, Poisson regression
 - [[hastie-esl-ch04]] (unread) — classification methods including logistic regression as a GLM
+- [[capretto-bambi-2022]] (unread) — Bambi implements GLMMs (GLMs with group-specific random effects) using Bayesian inference; formula interface supporting Gaussian, Binomial, Poisson and other families

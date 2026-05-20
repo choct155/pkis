@@ -6,7 +6,7 @@ type: book
 domain: [bayesian-stats, optimization, information-theory]
 tags: [probability-theory, stochastic-processes, combinatorics, markov-chains, measure-theory, simulation, information-theory]
 source_url: "https://doi.org/10.1007/978-1-0716-4172-9"
-drive_id: "1_a-RSQ0DDSN1oMfsNyDJMrVTUDiWasVt"
+drive_id: "1wZuwtmVeq5cZcvd-QiSPVsMIzMoWaCld"
 drive_path: "PKIS/sources/books/Applied Probability - Lange.pdf"
 isbn: "978-1-0716-4171-2"
 toc_source: "manual"

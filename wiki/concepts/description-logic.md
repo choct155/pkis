@@ -5,10 +5,10 @@ also_type: []
 domain: [knowledge-representation]
 tags: [logic, ontology, owl, description-logic, formal-semantics, decidability, knowledge-representation]
 related_concepts: [formal-ontology, ontology-reasoning, rdf, knowledge-graph]
-sources: ["[[cimiano-ontology-nlp]]", "[[allemang-semantic-web]]"]
+sources: ["[[cimiano-ontology-nlp]]", "[[allemang-semantic-web]]", "[[delong-nsai-kg-survey-2024]]", "[[luong-ontology-constrained-neural-2026]]"]
 date_created: 2026-05-20
 date_updated: 2026-05-20
-coverage: 2
+coverage: 4
 understanding: 0
 maturity: settled
 ---
@@ -20,3 +20,5 @@ Description Logics (DLs) are a family of decidable fragments of first-order logi
 - [[allemang-semantic-web-ch11]] (unread) — practitioner introduction to DL as motivation for OWL's property restrictions and individual identity
 - [[allemang-semantic-web-ch12]] (unread) — cardinality and set operations as the DL constructs with highest practical modeling impact
 - [[allemang-semantic-web-ch15]] (unread) — OWL 2 DL profiles (EL, QL, RL) corresponding to tractable DL sub-languages
+- [[delong-nsai-kg-survey-2024]] (unread) — DL-based ontologies (OWL, OWL 2 EL) as semantic framework for KG reasoning; EL fragment for polynomial-time inference in biomedical KGs
+- [[luong-ontology-constrained-neural-2026]] (unread) — three-layer enterprise ontology grounded in DL semantics; formal constraints on LLM agent inputs

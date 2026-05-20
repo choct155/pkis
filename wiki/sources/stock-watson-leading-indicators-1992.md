@@ -6,7 +6,7 @@ type: paper
 domain: [time-series, forecasting]
 tags: [leading-indicators, recession-forecasting, dynamic-factor-models, kalman-filter, business-cycles, recession-index]
 source_url: ""
-drive_id: "1MV7OHMvQYpZZMhaZm4QJTJgW_hQ-gdN4"
+drive_id: "1O1iQk0v9h_uE-AHm059KlbhOZ100f3b8"
 drive_path: "PKIS/sources/papers/stock-watson-leading-indicators-1992.pdf"
 status: unread
 date_added: 2026-05-20

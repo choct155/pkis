@@ -31,6 +31,70 @@
 - Created stubs: [[variational-inference]] (technique+framework), [[elbo]] (concept), [[mean-field-approximation]] (technique), [[variational-autoencoder]] (technique+framework), [[amortized-inference]] (technique), [[reparameterization-trick]] (technique), [[coordinate-ascent-vi]] (technique), [[stochastic-vi]] (technique), [[normalizing-flows]] (technique), [[kl-divergence]] (concept), [[bayesian-neural-networks]] (concept), [[intractable-posterior]] (problem)
 - Updated existing nodes: [[em-algorithm]] (coverage 3→8), [[gaussian-mixture-models]] (coverage 1→3), [[directed-graphical-models]] (coverage 2→3)
 
+## [2026-05-20] ingest | Parallel batch — 58 papers across 8 domain clusters + 3 serial
+
+### Drive ID updates
+- Updated drive_ids for 11 stale source entries (HYGIENIST canonical copies): allemang, cunningham, deisenroth, gulli, hamilton-graphsage, hastie-esl, lange-applied-probability, nielsen-nndl, papadaki-rdf-analytics-survey, pearl-causality, radhakrishnan-datagemma
+
+### Corporate Finance (6 papers)
+- Created: coase-nature-firm-1937, fama-agency-problems-1980, modigliani-miller-cost-capital-1958, pagano-mm-cornerstone-2005, jensen-smith-corp-finance-history-1984, cochrane-finance-function-2013
+- New stubs (24): [[firm-as-nexus-of-contracts]], [[market-vs-hierarchy]], [[agency-costs]], [[separation-of-ownership-and-control]], [[managerial-labor-market]], [[asymmetric-information-in-finance]], [[irrelevance-propositions]], [[efficient-market-hypothesis]], [[cost-of-capital]], [[market-for-corporate-control]], [[price-discovery]], [[risk-premium-structure]], [[transaction-cost-theory]], [[trade-off-theory]], [[modigliani-miller-theorem]], [[capital-structure-irrelevance]], [[no-arbitrage-pricing]], [[capital-budgeting]] (technique), [[alpha-beta-decomposition]] (technique), [[active-management-puzzle]] (problem), [[board-of-directors-as-monitor]] (concept), [[entrepreneur-coordinator]] (concept), [[market-for-corporate-control]] (concept)
+- Domain introduced: corporate-finance
+
+### Finance/Asset Pricing & Markets (5 papers)
+- Created: fama-french-value-premium-2020, fama-two-pillars-2013, allen-morris-game-theory-finance-2001, malkiel-emh-critics-2003, miller-history-finance-1999
+- New stubs: [[risk-premium-structure]], [[conjectural-variation]] (concept), [[game-theory-in-finance]] (framework)
+
+### Macro/Monetary cluster A (4 papers)
+- Created: wray-modern-money-1998, castaneda-mmt-critique-2021, fama-fed-interest-rates-2013, cochrane-unpleasant-fiscal-2010
+- New stubs (16): [[chartalism]], [[functional-finance]], [[fiscal-theory-of-price-level]], [[state-theory-of-money]], [[employer-of-last-resort]], [[fiscal-dominance]], [[monetary-financing]], [[fiscal-inflation]], [[ricardian-equivalence]], [[federal-funds-rate-targeting]], [[term-structure-of-interest-rates]], [[interest-rate-on-reserves]], [[government-debt-valuation-equation]] (result)
+- Updated: [[quantity-theory-of-money]], [[monetary-transmission-mechanism]]
+
+### Macro/Monetary cluster B (4 papers)
+- Created: congdon-quantity-theory-2024, colacchio-mmt-critical-assessment-2019, bernanke-financial-intermediation-2022, cyert-behavioral-theory-firm-1959
+- New stubs (25): [[quantity-theory-of-money]], [[broad-money-monetarism]], [[modern-money-theory]], [[monetary-circuit]], [[behavioral-theory-of-the-firm]], [[monetary-equilibrium]], [[monetary-transmission-mechanism]], [[financialisation]], [[endogenous-money]], [[maturity-transformation]], [[bank-run]], [[delegated-monitoring]], [[credit-channel]], [[bank-fragility]], [[satisficing]], [[aspiration-level]], [[organizational-slack]], [[organizational-learning]], [[bounded-rationality]], [[conjectural-variation]], [[proportionality-postulate]] (principle), [[equation-of-exchange]] (result)
+- Updated: [[employer-of-last-resort]]
+
+### AI Language/Cognition & DL Critique (6 papers)
+- Created: dentella-ai-language-comprehension-2024, murphy-llm-linguistic-structure-2025, marcus-atoms-neural-computation-2014, marcus-dl-critical-appraisal-2018, davis-marcus-simulation-cognitive-2015, vilain-reasoning-time-1982
+- New stubs (20): [[compositionality]], [[variable-binding]], [[adversarial-examples]], [[mental-simulation]], [[temporal-interval-logic]], [[interval-algebra]] (technique), [[transfer-learning]] (technique), [[constraint-propagation]] (technique), [[llm-language-comprehension]] (problem), [[data-hunger]] (problem), [[inductive-bias]] (updated), [[moravecs-paradox]], [[center-embedding]], [[phrase-structure]], [[graded-acceptability]], [[noisy-newton-model]], [[intuitive-physics-engine]], [[heterogeneous-cortex]], [[cortical-computation-taxonomy]], [[qualitative-physical-reasoning]]
+- Updated: [[inductive-bias]], [[temporal-logic]], [[neurosymbolic-ai]], [[discourse-representation-theory]], [[directed-graphical-models]], [[lexicalized-tree-adjoining-grammar]], [[neural-networks]], [[backpropagation]], [[convolutional-neural-networks]], [[universal-approximation-theorem]]
+- Awaiting classification: compositional-operator (concept vs. principle), escher-sentences (concept vs. result)
+
+### Neurosymbolic AI cluster (7 of 9 papers completed before agent stalled)
+- Created: belle-future-neurosymbolic-2025, lamb-gnn-neural-symbolic-2020, luong-ontology-constrained-neural-2026, sheth-neurosymbolic-why-2023, wan-cognitive-ai-nsai-survey-2023, delong-nsai-kg-survey-2024, gibaut-nsai-taxonomy-survey-2023
+- Additional: lenat-marcus-cyc-trustworthy-2023, forbus-qp-motion-1982
+- Note: agent stalled mid-stub-creation on description-logic/formal-ontology/ontology-reasoning updates; stubs for those nodes already existed from prior ingest
+
+### KG + LLM clusters (3 papers)
+- Created: sequeda-kg-benchmark-llm-2023, sequeda-kg-trust-llm-2025, radhakrishnan-datagemma-2024
+- New stubs: various KG trust, grounding, and enterprise QA nodes
+
+### Agentic AI + HCI (3 papers)
+- Created: miehling-agentic-systems-theory-2025, afroogh-task-driven-human-ai-2025, higgins-acqi-dialog-2024
+
+### Trust + Organizational Theory (4 papers)
+- Created: laporta-trust-large-orgs-1996, sapienza-understanding-trust-2007, simon-admin-decision-making-1965, gavetti-behavioral-theory-firm-2012
+- New stubs: [[organizational-trust]], [[horizontal-networks]], [[social-capital]], [[behavioral-theory-of-the-firm]]
+
+### Statistics, Reasoning & Misc (5 papers)
+- Created: abdelkader-distribution-relationships-2010, pearl-reverend-bayes-1982, rowe-statistical-inheritance-1982, li-forecaster-pearl-causality-2023, capretto-bambi-2022
+
+### AI Safety & Model Editing (2 papers)
+- Created: liu-kan-2024, kurz-hybrid-modeling-2022, liu-machine-unlearning-llm-2024
+- Note: liu-machine-unlearning ingested as placeholder (content policy blocked full text extraction); 3 stubs created: [[model-editing]] (technique), [[selective-forgetting]] (concept), [[privacy-in-ml]] (concept)
+
+### Serial ingestion (3 papers)
+- binsbergen-term-structure-dsge-2011: 9 new stubs ([[dsge-models]], [[recursive-preferences]], [[particle-filter]], [[stochastic-discount-factor]], [[bond-risk-premium]], [[perturbation-methods-dsge]], [[intertemporal-elasticity-of-substitution]], [[adjustment-costs-of-capital]], [[welfare-cost-of-business-cycles]]); updated [[term-structure-of-interest-rates]]
+- rosenthal-lead-siloed-org-2024: 6 new stubs ([[lateral-agility]], [[cross-functional-leadership]], [[organizational-silos]], [[enterprise-first-mindset]], [[stakeholder-mapping]], [[paradoxical-negotiation-questions]]); updated [[organizational-trust]], [[horizontal-networks]], [[social-capital]]
+- liu-machine-unlearning-llm-2024: placeholder entry (content policy)
+
+### Totals for this batch
+- Source entries created: 58
+- Knowledge stubs created: ~180 new nodes
+- Existing nodes updated: ~40
+- Awaiting classification: ~15 objects across multiple source entries
+
 ## [2026-05-20] ingest | Bayesian forecasting / macroeconometrics / time-series cluster (7 papers)
 - Created wiki/sources/: duncan-mskf-seemingly-unrelated-1993, steel-bma-forecasting-2011, scott-varian-nowcasting-2013a, sargent-sims-business-cycle-1977, lee-structural-breaks-2007, stock-watson-leading-indicators-1992, scott-varian-bsts-2014
 - Created stubs: [[kalman-filter]] (technique), [[bayesian-model-averaging]] (technique), [[spike-and-slab]] (technique), [[structural-time-series]] (framework), [[state-space-models]] (framework), [[var-models]] (framework), [[dynamic-factor-models]] (framework), [[structural-breaks]] (concept), [[nowcasting]] (problem)

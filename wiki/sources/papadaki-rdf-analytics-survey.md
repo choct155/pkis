@@ -7,7 +7,7 @@ domain: [knowledge-representation]
 tags: [rdf, sparql, linked-data, olap, semantic-web, data-cube, knowledge-graphs, lod-cloud]
 doi: "10.3390/analytics2010004"
 venue: "Analytics 2(1), 55-74"
-drive_id: "1YPg3QWPUsEdauty_2akC_aNZR_ln6Kt7"
+drive_id: "1vBh6E-vnHIn-OzO6WjxpL0qoeCcxB_kT"
 drive_path: "PKIS/sources/papers/papadaki-rdf-analytics-survey.pdf"
 status: read
 date_added: 2026-05-20

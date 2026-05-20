@@ -5,7 +5,7 @@ year: 2024
 type: book-chapter
 domain: [optimization, bayesian-stats]
 tags: [convex-optimization, inequalities, mm-algorithm, jensen-inequality]
-drive_id: "1_a-RSQ0DDSN1oMfsNyDJMrVTUDiWasVt"
+drive_id: "1wZuwtmVeq5cZcvd-QiSPVsMIzMoWaCld"
 drive_path: "PKIS/sources/books/Applied Probability - Lange.pdf"
 parent_book: "[[lange-applied-probability]]"
 chapter: 3

@@ -5,10 +5,10 @@ also_type: [framework]
 domain: [knowledge-representation, deep-learning, symbolic-subsymbolic]
 tags: [rag, knowledge-graphs, llm, graph-theory, multi-hop, information-retrieval]
 related_concepts: [retrieval-augmented-generation, knowledge-graph, multi-hop-reasoning, graph-neural-networks, knowledge-graph-construction, in-context-learning]
-sources: ["[[zhang-graphrag-survey]]", "[[gulli-agentic-design-patterns]]", "[[banf-tripartite-graphrag]]", "[[cheng-cograg]]", "[[barron-legal-rag-nmf]]"]
+sources: ["[[zhang-graphrag-survey]]", "[[gulli-agentic-design-patterns]]", "[[banf-tripartite-graphrag]]", "[[cheng-cograg]]", "[[barron-legal-rag-nmf]]", "[[sequeda-kg-benchmark-llm-2023]]"]
 date_created: 2026-05-20
 date_updated: 2026-05-20
-coverage: 5
+coverage: 6
 understanding: 0
 maturity: evolving
 ---
@@ -19,6 +19,7 @@ maturity: evolving
 - [[banf-tripartite-graphrag]] (unread) — tripartite variant with concept-anchored graph construction; formulates prompt assembly as node classification via Markov Random Fields
 - [[cheng-cograg]] (unread) — CogGRAG: cognitive decomposition, dual-level retrieval, and self-verification for KGQA
 - [[barron-legal-rag-nmf]] (unread) — legal domain instantiation combining VS, KG, and NMF-based latent topic retrieval
+- [[sequeda-kg-benchmark-llm-2023]] (unread) — structured KG-as-schema RAG variant: OWL ontology injected as context enables SPARQL generation; contrasts with graph-traversal GraphRAG in that query is formal (SPARQL) rather than generative
 
 A specialization of RAG that replaces flat vector-database retrieval with graph-structured knowledge organization, enabling multi-hop reasoning, explicit entity-relation retrieval, and structure-aware knowledge integration into LLM generation.
 

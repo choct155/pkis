@@ -5,10 +5,10 @@ also_type: [framework]
 domain: [formal-methods, systems-theory]
 tags: [temporal-logic, ltl, ctl, formal-verification, model-checking, specification]
 related_concepts: [discrete-event-systems, finite-automata, model-checking]
-sources: ["[[cassandras-des-intro]]"]
+sources: ["[[cassandras-des-intro]]", "[[vilain-reasoning-time-1982]]"]
 date_created: 2026-05-20
 date_updated: 2026-05-20
-coverage: 1
+coverage: 2
 understanding: 0
 maturity: settled
 ---
@@ -19,3 +19,4 @@ Classification note: assigned as concept but also_type framework because tempora
 
 ## Reading Path
 - [[cassandras-des-intro-ch02]] (unread) — temporal logic in the context of DES formal verification and model checking
+- [[vilain-reasoning-time-1982]] (unread) — alternative, interval-based approach to temporal reasoning; the 13 primitive interval relations and composition rules represent a qualitative temporal algebra that pre-dates but complements propositional temporal logics; highlights the choice between point-based TL and interval-based relational approaches

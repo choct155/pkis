@@ -8,7 +8,7 @@ domain: [causal-analysis, bayesian-stats, knowledge-representation]
 tags: [causality, causal-inference, structural-causal-models, counterfactuals, bayesian-networks, interventions, identification]
 isbn: "978-0-521-89560-6"
 toc_source: "manual"
-drive_id: "1PK_71YU0x1o_j9uTCjYhgDdTY7crj4Pi"
+drive_id: "1M2uZzooDz_AAR3LT4UNBUmAk_nb5OMpW"
 status: unread
 date_added: 2026-05-20
 date_updated: 2026-05-20

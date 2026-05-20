@@ -6,7 +6,7 @@ type: book
 domain: [statistical-learning, bayesian-stats, deep-learning, optimization]
 tags: [linear-algebra, probability-theory, regularization, model-selection, supervised-learning, unsupervised-learning, ensemble-methods, dimensionality-reduction, high-dimensional-statistics]
 source_url: "https://hastie.su.domains/ElemStatLearn/"
-drive_id: "1wlBseTrcttH-uTEV9Oiq3x3lv8PFNcEo"
+drive_id: "1qtM6CyieSim2tBtI4WySd-R25ItOzOiy"
 drive_path: "PKIS/sources/books/Elements of Statistical Learning - Hastie Tibshirani Friedman.pdf"
 isbn: "978-0-387-84857-0"
 toc_source: "manual"

@@ -6,7 +6,7 @@ type: book
 domain: [deep-learning, symbolic-subsymbolic, knowledge-representation]
 tags: [llm, agentic-ai, design-patterns, multi-agent-systems, rag, prompt-engineering, tool-use, safety]
 source_url: "https://doi.org/10.1007/978-3-032-01402-3"
-drive_id: "1BRC09kdXT7AtbhsUrTBTsRanXWw2Yx41"
+drive_id: "1_ODFqJ10y3xF1JFUcyDGOZljFJhDaRop"
 drive_path: "PKIS/sources/books/AgenticDesignPatterns.pdf"
 isbn: "978-3-032-01401-6"
 toc_source: "manual"

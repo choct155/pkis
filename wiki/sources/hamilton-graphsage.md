@@ -6,7 +6,7 @@ type: paper
 domain: [deep-learning, knowledge-representation]
 tags: [graph-theory, node-embedding, graph-neural-networks, inductive-learning, neighborhood-aggregation, representation-learning, node-classification]
 source_url: "https://arxiv.org/abs/1706.02216"
-drive_id: "1sl_v52OkKEyPQj2vwTYsOo0jgM7ys75_"
+drive_id: "1ARpHZ0-mUhPaN-ztaOulrpR8xDhPNIsw"
 drive_path: "PKIS/sources/papers/hamilton-graphsage.pdf"
 status: unread
 date_added: 2026-05-20

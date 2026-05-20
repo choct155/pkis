@@ -5,7 +5,7 @@ year: 2024
 type: book-chapter
 domain: [information-theory, bayesian-stats]
 tags: [entropy, information-theory, maximum-entropy, em-algorithm]
-drive_id: "1_a-RSQ0DDSN1oMfsNyDJMrVTUDiWasVt"
+drive_id: "1wZuwtmVeq5cZcvd-QiSPVsMIzMoWaCld"
 drive_path: "PKIS/sources/books/Applied Probability - Lange.pdf"
 parent_book: "[[lange-applied-probability]]"
 chapter: 16

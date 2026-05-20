@@ -5,10 +5,10 @@ also_type: [concept]
 domain: [knowledge-representation]
 tags: [semantic-web, ontology, description-logic, owl2, rdfs, w3c-standard, reasoning, expressivity]
 related_concepts: ["[[rdfs]]", "[[rdf]]", "[[description-logic]]", "[[ontology-reasoning]]", "[[sparql]]", "[[skos]]"]
-sources: ["[[allemang-semantic-web]]"]
+sources: ["[[allemang-semantic-web]]", "[[sequeda-kg-benchmark-llm-2023]]", "[[sequeda-kg-trust-llm-2025]]"]
 date_created: 2026-05-20
 date_updated: 2026-05-20
-coverage: 1
+coverage: 3
 understanding: 0
 maturity: settled
 ---
@@ -30,3 +30,5 @@ Classification note: assigned as framework because OWL is a coherent system that
 - [[allemang-semantic-web-ch11]] (unread) — Basic OWL: property restrictions, individual identity
 - [[allemang-semantic-web-ch12]] (unread) — Counting and sets in OWL: cardinality, set operations
 - [[allemang-semantic-web-ch15]] (unread) — Expert modeling: OWL 2 profiles, QUDT and OBO case studies
+- [[sequeda-kg-benchmark-llm-2023]] (unread) — OWL ontology as business context layer injected into GPT-4 prompt; suppresses class/property hallucinations; drives SPARQL generation accuracy to 54.2% vs. 16.7% for SQL DDL
+- [[sequeda-kg-trust-llm-2025]] (unread) — OWL as formal validation schema for LLM-generated queries in enterprise QA; enables query correctness checking

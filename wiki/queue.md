@@ -56,3 +56,25 @@
 - [ ] [[cunningham-causal-inference-mixtape-ch10]] — DiD chapter; deepens [[difference-in-differences]], [[parallel-trends]]; Card-Krueger canonical application
 - [ ] [[cunningham-causal-inference-mixtape-ch11]] — Synthetic control; deepens [[synthetic-control]]; Abadie methodology and Prop 99 application
 - [ ] [[kroese-statistical-modeling-ch11]] — primary treatment of [[gaussian-process-regression]] and [[kernel-density-estimation]]; covers regression splines and RKHS connection
+
+### High (new — from batch ingest 2026-05-20)
+- [ ] [[coase-nature-firm-1937]] — foundational: introduces [[transaction-cost-theory]] and [[market-vs-hierarchy]]; 4+ nodes depend on this paper
+- [ ] [[modigliani-miller-cost-capital-1958]] — foundational: establishes [[modigliani-miller-theorem]] and [[irrelevance-propositions]]; cornerstone of corporate finance
+- [ ] [[sargent-sims-business-cycle-1977]] — already ingested in prior session; foundational VAR paper; deepens [[var-models]] and [[dynamic-factor-models]]
+- [ ] [[binsbergen-term-structure-dsge-2011]] — deepens [[dsge-models]], [[recursive-preferences]], [[stochastic-discount-factor]], [[bond-risk-premium]]
+- [ ] [[belle-future-neurosymbolic-2025]] — broad survey deepening [[neurosymbolic-ai]] with historical and prospective framing
+- [ ] [[dentella-ai-language-comprehension-2024]] — empirical challenge to LLM language understanding; deepens [[compositionality]], [[llm-language-comprehension]]
+- [ ] [[lenat-marcus-cyc-trustworthy-2023]] — deepens [[neurosymbolic-ai]], [[formal-ontology]], [[knowledge-graph]]; trustworthy AI framing
+
+### Normal (new — from batch ingest 2026-05-20)
+- [ ] [[fama-two-pillars-2013]] — Nobel lecture: deepens [[efficient-market-hypothesis]], [[risk-premium-structure]], [[stochastic-discount-factor]]
+- [ ] [[bernanke-financial-intermediation-2022]] — Nobel lecture: deepens [[bank-run]], [[maturity-transformation]], [[credit-channel]], [[delegated-monitoring]]
+- [ ] [[wray-modern-money-1998]] — deepens [[modern-money-theory]], [[chartalism]], [[employer-of-last-resort]], [[state-theory-of-money]]
+- [ ] [[cochrane-unpleasant-fiscal-2010]] — deepens [[fiscal-theory-of-price-level]], [[ricardian-equivalence]], [[government-debt-valuation-equation]]
+- [ ] [[cyert-behavioral-theory-firm-1959]] — foundational: deepens [[behavioral-theory-of-the-firm]], [[bounded-rationality]], [[satisficing]]
+- [ ] [[gavetti-behavioral-theory-firm-2012]] — retrospective on Cyert-March: deepens [[organizational-learning]], [[aspiration-level]], [[organizational-slack]]
+- [ ] [[wan-cognitive-ai-nsai-survey-2023]] — comprehensive NSAI survey; deepens [[neurosymbolic-ai]] with cognitive AI framing
+- [ ] [[vilain-reasoning-time-1982]] — foundational temporal interval calculus; deepens [[interval-algebra]], [[temporal-interval-logic]]
+- [ ] [[marcus-dl-critical-appraisal-2018]] — deepens [[inductive-bias]], [[compositionality]], [[adversarial-examples]]; important critique of deep learning
+- [ ] [[capretto-bambi-2022]] — deepens [[bayesian-linear-regression]], Bambi API; practical Bayesian workflow paper
+- [ ] [[sequeda-kg-benchmark-llm-2023]] — enterprise KG+LLM evaluation; deepens [[knowledge-graph-question-answering]]

@@ -6,7 +6,7 @@ type: paper
 domain: [time-series, forecasting]
 tags: [macroeconometrics, var-models, factor-models, index-models, identification, business-cycles]
 source_url: ""
-drive_id: "1Sd1AuBVZjJdOOrd8n--NBKnveyoZcVa2"
+drive_id: "1-G9Ig4PaNgYM7WS2c3jFSbd-70u5g2Ps"
 drive_path: "PKIS/sources/papers/sargent-sims-business-cycle-1977.pdf"
 status: unread
 date_added: 2026-05-20

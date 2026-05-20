@@ -5,10 +5,10 @@ also_type: [concept]
 domain: [knowledge-representation]
 tags: [semantic-web, controlled-vocabulary, thesaurus, taxonomy, rdfs, w3c-standard, knowledge-organization]
 related_concepts: ["[[rdf]]", "[[rdfs]]", "[[owl]]", "[[linked-open-data]]", "[[ontology-reasoning]]"]
-sources: ["[[allemang-semantic-web]]"]
+sources: ["[[allemang-semantic-web]]", "[[kg-evaluation-bloomberg-2024]]"]
 date_created: 2026-05-20
 date_updated: 2026-05-20
-coverage: 1
+coverage: 2
 understanding: 0
 maturity: settled
 ---
@@ -27,3 +27,4 @@ Classification note: assigned as framework because SKOS is a coherent system for
 ## Reading Path
 - [[allemang-semantic-web-ch10]] (unread) — primary treatment: SKOS vocabulary, ConceptScheme, hierarchical/associative relations, labeling
 - [[allemang-semantic-web-ch09]] (unread) — context from RDFS-Plus in the wild that motivates SKOS's design
+- [[kg-evaluation-bloomberg-2024]] (unread) — SKOS as Bloomberg's formalization-phase target in the KG maturity model; lightweight taxonomies with hierarchical and similarity relations as intermediate between folksonomy tags and full OWL specification

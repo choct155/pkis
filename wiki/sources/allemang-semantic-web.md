@@ -6,7 +6,7 @@ type: book
 domain: [knowledge-representation]
 tags: [semantic-web, rdf, rdfs, owl, skos, ontology, linked-data, sparql, w3c-standard]
 source_url: ""
-drive_id: "1YB14A7mQMjx2HbTcNVX33TUCmPRjMSu1"
+drive_id: "1w9NmGv55cBYLxVG4L32t5uWYXZY3KTTV"
 drive_path: "PKIS/sources/books/Semantic Web for the Working Ontologist 2nd Ed"
 isbn: "978-0-12-385965-5"
 toc_source: "openlibrary"

@@ -5,7 +5,7 @@ also_type: []
 domain: [bayesian-stats, statistical-learning]
 tags: [gaussian-process, nonparametric, bayesian-inference, kernel-functions, regression]
 related_concepts: ["[[gaussian-distribution]]", "[[conjugate-prior]]", "[[kernel-density-estimation]]", "[[bayesian-linear-regression]]"]
-sources: ["[[kroese-statistical-modeling]]"]
+sources: ["[[kroese-statistical-modeling]]", "[[kurz-hybrid-modeling-2022]]"]
 date_created: 2026-05-20
 date_updated: 2026-05-20
 coverage: 1
@@ -23,3 +23,4 @@ Gaussian Process Regression (GPR) is a nonparametric Bayesian regression method 
 
 ## Reading Path
 - [[kroese-statistical-modeling-ch11]] (unread) — primary treatment: GP regression, kernel functions, smoothing splines, connection to RKHS
+- [[kurz-hybrid-modeling-2022]] (unread) — GP used as surrogate model in Bayesian optimization for free-shape trace pair design; provides mean and uncertainty for Expected Improvement acquisition

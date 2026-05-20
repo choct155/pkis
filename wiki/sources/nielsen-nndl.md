@@ -6,7 +6,7 @@ type: book
 domain: [deep-learning, optimization]
 tags: [neural-networks, gradient-descent, backpropagation, convolutional-networks, regularization]
 source_url: "http://neuralnetworksanddeeplearning.com"
-drive_id: "159i65pXLqrDPrGD-sTIvU1pskIgUy8mb"
+drive_id: "1OvaRAM8W_QPmYOVaeZDMVbNTBBI-7txZ"
 drive_path: "PKIS/sources/books/Neural Networks and Deep Learning"
 isbn: ""
 toc_source: "manual"

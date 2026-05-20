@@ -13,6 +13,8 @@ related_concepts:
 sources:
   - "[[lange-applied-probability]]"
   - "[[kroese-statistical-modeling]]"
+  - "[[capretto-bambi-2022]]"
+  - "[[kurz-hybrid-modeling-2022]]"
 date_created: 2026-05-20
 date_updated: 2026-05-20
 coverage: 2
@@ -33,3 +35,5 @@ Classification note: assigned as technique but also_type framework because MCMC 
 ## Reading Path
 - [[lange-applied-probability-ch07]] (unread) — Hastings-Metropolis, Gibbs sampling, convergence of independence sampler, simulated annealing
 - [[kroese-statistical-modeling-ch07]] (unread) — unified Monte Carlo chapter: MCMC fundamentals, Metropolis-Hastings, and Gibbs sampler alongside bootstrap and KDE
+- [[capretto-bambi-2022]] (unread) — Bambi uses PyMC's NUTS (adaptive dynamic HMC) as default sampler; R-hat and ESS diagnostics via ArviZ
+- [[kurz-hybrid-modeling-2022]] (unread) — Gibbs sampling used for joint posterior p(ν,d|y) in magnet characterization; blockwise sampling by move

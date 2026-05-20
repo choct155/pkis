@@ -6,7 +6,7 @@ type: book
 domain: [statistical-learning, bayesian-stats, optimization]
 tags: [linear-algebra, probability-theory, calculus, optimization, dimensionality-reduction, mathematical-foundations]
 source_url: "https://mml-book.com"
-drive_id: "1pd0ziFWZBYPaAGefEewmYZqhGcD5udYV"
+drive_id: "1oBPtabdYp4X_-Fo4Tgfd4e6wAwRtCeXS"
 drive_path: "PKIS/sources/books/Mathematics for Machine Learning - Deisenroth Faisal Ong.pdf"
 isbn: "978-1-108-47004-9"
 toc_source: "manual"

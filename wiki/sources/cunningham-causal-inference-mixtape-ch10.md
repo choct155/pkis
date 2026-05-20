@@ -5,7 +5,7 @@ year: 2021
 type: book-chapter
 domain: [causal-analysis]
 tags: [difference-in-differences, did, parallel-trends, two-way-fixed-effects, card-krueger, pre-trends-test]
-drive_id: "1OAZSDDbVNCPumzvalpKXVcPBSkUB8PZ2"
+drive_id: "1J37BkobL19FmHZvmV8GSRzH9gHmy4QtP"
 drive_path: "PKIS/sources/books/cunningham-causal-inference-mixtape.pdf"
 parent_book: "[[cunningham-causal-inference-mixtape]]"
 chapter: 10
