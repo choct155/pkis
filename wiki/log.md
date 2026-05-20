@@ -1,5 +1,33 @@
 # PKIS Wiki Log
 
+## [2026-05-20] ingest | A Few Useful Things to Know About Machine Learning (Domingos, 2012)
+- Created wiki/sources/domingos-useful-things.md (Drive ID: 1bCkseO06512PFQyuBevRIAPy8BU3APCc)
+- Created concept stub: [[inductive-bias]] (high) — no free lunch; the knowledge lever
+- Created technique stub: [[feature-engineering]] (high) — most important factor in ML project success
+- Updated existing nodes: [[bias-variance-tradeoff]] (sources +1, coverage 1→2, Reading Path added), [[curse-of-dimensionality]] (sources +1, coverage 1→2, Reading Path added), [[ensemble-learning]] (sources +1, coverage 1→2, Reading Path added), [[empirical-risk-minimization]] (sources +1, coverage 1→2, Reading Path added, related_concepts expanded)
+- No chapter stubs (paper, not book); source added directly to queue as Normal
+- Updated: wiki/index.md, wiki/queue.md
+
+## [2026-05-20] ingest | Causality: Models, Reasoning, and Inference (Pearl, 2009)
+- Created wiki/sources/pearl-causality.md (Drive ID: 1PK_71YU0x1o_j9uTCjYhgDdTY7crj4Pi)
+- Created framework stub: [[structural-causal-models]] (high) — functional-equation DAGs; book's central formal system
+- Created technique stubs: [[do-calculus]] (high, also_type: result), [[d-separation]] (high, also_type: result)
+- Created concept stubs: [[counterfactuals]] (high), [[confounding]] (high)
+- Updated existing node: [[directed-graphical-models]] (sources +1, coverage 1→2, Reading Path added, related_concepts expanded)
+- Created 12 chapter stubs: [[pearl-causality-ch01]] through [[pearl-causality-ch11]] and [[pearl-causality-epilogue]] (toc_source: manual)
+- Introduced first entries in `causal-analysis` domain
+- Note: OpenLibrary had no ToC for this ISBN; Google Books 429; ToC extracted from PDF via read_file_content
+- Updated: wiki/index.md, wiki/queue.md
+
+## [2026-05-20] ingest | Agentic Design Patterns (Gullí, 2025)
+- Created wiki/sources/gulli-agentic-design-patterns.md (Drive ID: 1BRC09kdXT7AtbhsUrTBTsRanXWw2Yx41)
+- Created framework stubs: [[agentic-systems]] (high, also_type: concept), [[multi-agent-systems]] (high, also_type: technique)
+- Created technique stubs: [[prompt-chaining]] (high), [[tool-use]] (high), [[human-in-the-loop]] (moderate, also_type: principle)
+- Updated existing nodes: [[retrieval-augmented-generation]] (sources +1, coverage 1→2, Reading Path added), [[graph-rag]] (sources +1, coverage 1→2, Reading Path added)
+- Created 29 chapter stubs: [[gulli-agentic-design-patterns-ch01]] through [[gulli-agentic-design-patterns-ch29]] (toc_source: manual)
+- Note: Google Books returned 429; OpenLibrary returned 404 (book too new); ToC extracted directly from PDF via read_file_content
+- Updated: wiki/index.md, wiki/queue.md
+
 ## [2026-05-20] toc-enrichment | Chapter stub source files for ESL and MML
 - Created 18 chapter stubs: [[hastie-esl-ch01]] through [[hastie-esl-ch18]] (toc_source: manual)
 - Created 12 chapter stubs: [[deisenroth-mml-ch01]] through [[deisenroth-mml-ch12]] (toc_source: manual)

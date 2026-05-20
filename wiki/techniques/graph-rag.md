@@ -5,13 +5,17 @@ also_type: [framework]
 domain: [knowledge-representation, deep-learning, symbolic-subsymbolic]
 tags: [rag, knowledge-graphs, llm, graph-theory, multi-hop, information-retrieval]
 related_concepts: [retrieval-augmented-generation, knowledge-graph, multi-hop-reasoning, graph-neural-networks, knowledge-graph-construction, in-context-learning]
-sources: ["[[zhang-graphrag-survey]]"]
+sources: ["[[zhang-graphrag-survey]]", "[[gulli-agentic-design-patterns]]"]
 date_created: 2026-05-20
 date_updated: 2026-05-20
-coverage: 1
+coverage: 2
 understanding: 0
 maturity: evolving
 ---
+
+## Reading Path
+- [[zhang-graphrag-survey]] (unread) — primary theoretical treatment; full taxonomy and retrieval technique survey
+- [[gulli-agentic-design-patterns-ch14]] (unread) — practical coverage; GraphRAG within the agentic knowledge retrieval pattern
 
 A specialization of RAG that replaces flat vector-database retrieval with graph-structured knowledge organization, enabling multi-hop reasoning, explicit entity-relation retrieval, and structure-aware knowledge integration into LLM generation.
 
