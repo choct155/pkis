@@ -1,5 +1,14 @@
 # PKIS Wiki Log
 
+## [2026-05-20] ingest | A Brief Survey of Methods for Analytics over RDF Knowledge Graphs (Papadaki, Tzitzikas, Mountantonakis)
+- Created wiki/sources/papadaki-rdf-analytics-survey.md (paper-level entry, 6 sections cataloged)
+- Created concept stubs: [[knowledge-graph]] (high, also_type: framework), [[rdf]] (high, also_type: framework), [[linked-open-data]] (high)
+- Created technique stubs: [[sparql]] (high), [[olap]] (high, also_type: framework), [[faceted-search]] (moderate)
+- Introduced first entries in `knowledge-representation` domain
+- Key contribution: 5-category taxonomy (C1-C5) of RDF analytics approaches; two query categories (domain-specific A, quality-related B)
+- Copied source to PKIS/sources/papers/ in Drive (ID: 1YPg3QWPUsEdauty_2akC_aNZR_ln6Kt7)
+- Updated: wiki/index.md
+
 ## [2026-05-20] ingest | The Elements of Statistical Learning (Hastie, Tibshirani, Friedman)
 - Created wiki/sources/hastie-esl.md (book-level entry, 18 chapters cataloged)
 - Created concept stubs: [[bias-variance-tradeoff]] (high), [[regularization]] (high), [[curse-of-dimensionality]] (high)

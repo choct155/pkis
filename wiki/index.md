@@ -3,6 +3,7 @@
 ## Sources
 - [[hastie-esl]] — The Elements of Statistical Learning, 2nd ed. (statistical-learning, bayesian-stats, deep-learning, optimization) (2026-05-20)
 - [[deisenroth-mml]] — Mathematics for Machine Learning (mathematical foundations for ML) (statistical-learning, bayesian-stats, optimization) (2026-05-20)
+- [[papadaki-rdf-analytics-survey]] — A Brief Survey of Methods for Analytics over RDF Knowledge Graphs (knowledge-representation) (2026-05-20)
 
 ## Concepts
 - [[linear-algebra]] — Vector spaces, linear maps, matrices; substrate for all ML computation (statistical-learning) (2026-05-20)
@@ -17,6 +18,9 @@
 - [[bias-variance-tradeoff]] — Decomposition of prediction error into bias, variance, and irreducible noise (statistical-learning) (2026-05-20)
 - [[regularization]] — Penalizing complexity to trade bias for variance; cross-domain disambiguation (statistical-learning, optimization) (2026-05-20)
 - [[curse-of-dimensionality]] — Breakdown of local methods in high-dimensional spaces (statistical-learning) (2026-05-20)
+- [[knowledge-graph]] — Graph structure integrating heterogeneous data for unified querying and analytics (knowledge-representation) (2026-05-20)
+- [[rdf]] — W3C triple-based graph data model; foundation for Semantic Web and Linked Data (knowledge-representation) (2026-05-20)
+- [[linked-open-data]] — Linked Data publishing paradigm; LOD Cloud as global RDF dataset network (knowledge-representation) (2026-05-20)
 
 ## Techniques
 - [[lasso]] — L1-penalized regression with automatic variable selection (statistical-learning) (2026-05-20)
@@ -37,6 +41,9 @@
 - [[lagrange-multipliers]] — Constrained optimization via duality; foundation for SVM and KKT conditions (optimization) (2026-05-20)
 - [[bayesian-linear-regression]] — Full posterior over regression weights via Gaussian conjugacy (bayesian-stats) (2026-05-20)
 - [[gaussian-mixture-models]] — Density estimation as weighted sum of Gaussians, fit via EM (bayesian-stats) (2026-05-20)
+- [[sparql]] — Standard query language for RDF; graph pattern matching with aggregation and federation (knowledge-representation) (2026-05-20)
+- [[olap]] — Multidimensional data cube framework: roll-up, drill-down, slice, dice, pivot (knowledge-representation, statistical-learning) (2026-05-20)
+- [[faceted-search]] — Interactive progressive filtering via classification facets; RDF exploration without SPARQL (knowledge-representation) (2026-05-20)
 
 ## Results
 
