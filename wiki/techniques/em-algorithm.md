@@ -5,10 +5,10 @@ also_type: []
 domain: [statistical-learning, bayesian-stats]
 tags: [optimization, probability-theory]
 related_concepts: []
-sources: ["[[hastie-esl]]"]
+sources: ["[[hastie-esl]]", "[[deisenroth-mml]]"]
 date_created: 2026-05-20
 date_updated: 2026-05-20
-coverage: 1
+coverage: 2
 understanding: 0
 maturity: settled
 ---

@@ -4,11 +4,11 @@ knowledge_type: technique
 also_type: [framework]
 domain: [statistical-learning]
 tags: [optimization, linear-algebra, regularization]
-related_concepts: ["[[regularization]]"]
-sources: ["[[hastie-esl]]"]
+related_concepts: ["[[regularization]]", "[[convex-optimization]]", "[[lagrange-multipliers]]", "[[analytic-geometry]]"]
+sources: ["[[hastie-esl]]", "[[deisenroth-mml]]"]
 date_created: 2026-05-20
 date_updated: 2026-05-20
-coverage: 1
+coverage: 2
 understanding: 0
 maturity: settled
 ---

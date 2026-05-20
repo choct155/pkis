@@ -4,11 +4,11 @@ knowledge_type: technique
 also_type: []
 domain: [deep-learning, statistical-learning]
 tags: [optimization, linear-algebra]
-related_concepts: ["[[neural-networks]]"]
-sources: ["[[hastie-esl]]"]
+related_concepts: ["[[neural-networks]]", "[[automatic-differentiation]]", "[[vector-calculus]]"]
+sources: ["[[hastie-esl]]", "[[deisenroth-mml]]"]
 date_created: 2026-05-20
 date_updated: 2026-05-20
-coverage: 1
+coverage: 2
 understanding: 0
 maturity: settled
 ---

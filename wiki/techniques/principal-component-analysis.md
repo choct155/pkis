@@ -4,11 +4,11 @@ knowledge_type: technique
 also_type: []
 domain: [statistical-learning]
 tags: [linear-algebra, dimensionality-reduction]
-related_concepts: ["[[curse-of-dimensionality]]"]
-sources: ["[[hastie-esl]]"]
+related_concepts: ["[[curse-of-dimensionality]]", "[[singular-value-decomposition]]", "[[matrix-decompositions]]", "[[analytic-geometry]]"]
+sources: ["[[hastie-esl]]", "[[deisenroth-mml]]"]
 date_created: 2026-05-20
 date_updated: 2026-05-20
-coverage: 1
+coverage: 2
 understanding: 0
 maturity: settled
 ---

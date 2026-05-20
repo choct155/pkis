@@ -1,0 +1,16 @@
+---
+title: "Conjugate Prior"
+knowledge_type: concept
+also_type: []
+domain: [bayesian-stats]
+tags: [probability-theory]
+related_concepts: ["[[probability-theory]]", "[[gaussian-distribution]]", "[[bayesian-linear-regression]]"]
+sources: ["[[deisenroth-mml]]"]
+date_created: 2026-05-20
+date_updated: 2026-05-20
+coverage: 1
+understanding: 0
+maturity: settled
+---
+
+A prior distribution that, combined with a given likelihood, yields a posterior in the same distributional family — enabling closed-form Bayesian updating; arises naturally from the exponential family structure where the natural parameters of the prior and posterior match.
