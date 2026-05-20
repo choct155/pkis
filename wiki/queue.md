@@ -18,3 +18,11 @@
 - [ ] [[pearl-causality-ch01]] — d-separation foundations; deepens [[d-separation]] and [[directed-graphical-models]] with Pearl's original treatment
 - [ ] [[pearl-causality-ch06]] — Simpson's paradox resolution; deepens [[confounding]] with the canonical worked example
 - [ ] [[domingos-useful-things]] — short paper (~8 pages); §4 deepens [[inductive-bias]], §10 clarifies BMA vs. ensembles distinction in [[ensemble-learning]]; §13 connects statistical ML to [[confounding]] and [[do-calculus]]
+- [ ] [[blei-vi-review]] — canonical statistical treatment of VI; complete CAVI derivation, exponential family theory, SVI; deepens [[em-algorithm]], [[gaussian-mixture-models]], [[directed-graphical-models]]
+- [ ] [[scott-varian-bsts-2014]] — full BSTS paper; deepens [[kalman-filter]], [[spike-and-slab]], [[structural-time-series]], [[bayesian-model-averaging]] with complete derivations and two worked examples
+- [ ] [[hamilton-graphsage]] — foundational inductive GNN; deepens [[graph-neural-networks]], [[node-embedding]], [[graph-rag]]; high cross-domain connectivity
+- [ ] [[liu-symagent]] — neurosymbolic self-learning agent; deepens [[neurosymbolic-ai]], [[agentic-systems]], [[knowledge-graph-question-answering]]
+- [ ] [[tanner-tools-statistical-inference-ch06]] — primary treatment of Gibbs sampler and Metropolis algorithm; deepens [[gibbs-sampler]], [[metropolis-algorithm]], [[data-augmentation]], [[em-algorithm]]
+- [ ] [[sargent-sims-business-cycle-1977]] — foundational VAR paper; deepens [[var-models]], [[dynamic-factor-models]]; cited by Stock-Watson; foundational to modern macroeconometrics
+- [ ] [[castle-model-selection-algorithms]] — systematic Monte Carlo benchmark of 21 MSAs; deepens [[model-selection-problem]], [[information-criteria]], [[bias-variance-tradeoff]]
+- [ ] [[friedman-rulefit-2005]] — deepens [[gradient-boosting]], [[decision-trees]], [[lasso]], [[ensemble-learning]]; introduces interpretability toolkit ([[partial-dependence]], [[rule-ensembles]])

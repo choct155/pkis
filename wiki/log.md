@@ -1,5 +1,26 @@
 # PKIS Wiki Log
 
+## [2026-05-20] ingest | GraphRAG / KR / Neurosymbolic cluster (6 papers)
+- Created wiki/sources/: banf-tripartite-graphrag, barron-legal-rag-nmf, cheng-cograg, hamilton-graphsage, baldazzi-soft-ontological-reasoning, liu-symagent
+- Created stubs: [[node-embedding]] (concept), [[inductive-representation-learning]] (technique), [[graph-sage]] (technique), [[neurosymbolic-ai]] (framework), [[ontology-reasoning]] (technique), [[non-negative-matrix-factorization]] (technique), [[knowledge-graph-question-answering]] (problem)
+- Updated existing nodes: [[graph-rag]] (coverage 2→5), [[retrieval-augmented-generation]] (coverage 2→6), [[knowledge-graph]] (coverage 2→5), [[multi-hop-reasoning]] (coverage 1→4), [[graph-neural-networks]] (coverage 1→2), [[knowledge-graph-construction]] (coverage 1→3), [[agentic-systems]] (coverage 1→2)
+
+## [2026-05-20] ingest | Variational Inference cluster (4 papers)
+- Created wiki/sources/: ganguly-intro-vi, sjolund-parametric-vi, yellapragada-variational-bayes, blei-vi-review
+- Created stubs: [[variational-inference]] (technique+framework), [[elbo]] (concept), [[mean-field-approximation]] (technique), [[variational-autoencoder]] (technique+framework), [[amortized-inference]] (technique), [[reparameterization-trick]] (technique), [[coordinate-ascent-vi]] (technique), [[stochastic-vi]] (technique), [[normalizing-flows]] (technique), [[kl-divergence]] (concept), [[bayesian-neural-networks]] (concept), [[intractable-posterior]] (problem)
+- Updated existing nodes: [[em-algorithm]] (coverage 3→8), [[gaussian-mixture-models]] (coverage 1→3), [[directed-graphical-models]] (coverage 2→3)
+
+## [2026-05-20] ingest | Bayesian forecasting / macroeconometrics / time-series cluster (7 papers)
+- Created wiki/sources/: duncan-mskf-seemingly-unrelated-1993, steel-bma-forecasting-2011, scott-varian-nowcasting-2013a, sargent-sims-business-cycle-1977, lee-structural-breaks-2007, stock-watson-leading-indicators-1992, scott-varian-bsts-2014
+- Created stubs: [[kalman-filter]] (technique), [[bayesian-model-averaging]] (technique), [[spike-and-slab]] (technique), [[structural-time-series]] (framework), [[state-space-models]] (framework), [[var-models]] (framework), [[dynamic-factor-models]] (framework), [[structural-breaks]] (concept), [[nowcasting]] (problem)
+- Introduced domain tags: time-series, forecasting
+- Updated existing nodes: [[model-selection-problem]] (coverage 1→2), [[bayesian-linear-regression]] (coverage 1→3), [[em-algorithm]] (coverage 2→3 per agent; merged in VI update above)
+
+## [2026-05-20] ingest | Model selection / rule ensembles / structured matrices / Bayesian computation cluster (4 papers)
+- Created wiki/sources/: castle-model-selection-algorithms (paper), friedman-rulefit-2005 (paper), benzi-hidden-structure-matrices (book) + ch01–ch05, tanner-tools-statistical-inference (book) + ch01–ch06
+- Created stubs: [[information-criteria]] (concept), [[general-to-specific-modeling]] (technique), [[model-averaging]] (technique+framework), [[rule-ensembles]] (technique), [[partial-dependence]] (technique), [[structured-matrices]] (concept), [[tensor-decompositions]] (technique), [[hierarchical-low-rank-matrices]] (concept), [[toeplitz-matrices]] (concept), [[data-augmentation]] (technique), [[gibbs-sampler]] (technique), [[metropolis-algorithm]] (technique), [[importance-sampling]] (technique), [[laplace-approximation]] (technique)
+- Updated existing nodes: [[model-selection-problem]] (coverage 2→3), [[bias-variance-tradeoff]] (coverage 2→3, also fixed duplicate related_concepts key), [[gradient-boosting]] (coverage 1→2), [[decision-trees]] (coverage 1→2), [[lasso]] (coverage 1→2), [[ensemble-learning]] (coverage 2→4), [[matrix-decompositions]] (coverage 1→2), [[singular-value-decomposition]] (coverage 1→2)
+
 ## [2026-05-20] ingest | A Few Useful Things to Know About Machine Learning (Domingos, 2012)
 - Created wiki/sources/domingos-useful-things.md (Drive ID: 1bCkseO06512PFQyuBevRIAPy8BU3APCc)
 - Created concept stub: [[inductive-bias]] (high) — no free lunch; the knowledge lever

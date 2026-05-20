@@ -5,10 +5,10 @@ also_type: [concept]
 domain: [deep-learning, symbolic-subsymbolic]
 tags: [llm, agentic-ai, autonomous-agents, multi-agent-systems]
 related_concepts: []
-sources: ["[[gulli-agentic-design-patterns]]"]
+sources: ["[[gulli-agentic-design-patterns]]", "[[liu-symagent]]"]
 date_created: 2026-05-20
 date_updated: 2026-05-20
-coverage: 1
+coverage: 2
 understanding: 0
 maturity: evolving
 ---
@@ -19,3 +19,4 @@ Classification note: assigned as framework because agentic systems define an arc
 
 ## Reading Path
 - [[gulli-agentic-design-patterns]] (unread) — primary treatment; defines the concept and catalogs 21 architectural patterns
+- [[liu-symagent]] (unread) — SymAgent: neural-symbolic agent with KG as dynamic environment; self-learning framework via online exploration and offline iterative policy updating
