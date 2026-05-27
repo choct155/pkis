@@ -1,4 +1,6 @@
 ---
+id: "pkis:concept:market-vs-hierarchy"
+aliases: []
 title: "Market vs. Hierarchy"
 knowledge_type: concept
 also_type: [framework]

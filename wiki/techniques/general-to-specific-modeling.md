@@ -1,4 +1,6 @@
 ---
+id: "pkis:technique:general-to-specific-modeling"
+aliases: []
 title: "General-to-Specific Modeling"
 knowledge_type: technique
 also_type: []

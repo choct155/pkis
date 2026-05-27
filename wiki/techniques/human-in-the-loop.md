@@ -1,4 +1,6 @@
 ---
+id: "pkis:technique:human-in-the-loop"
+aliases: []
 title: "Human-in-the-Loop"
 knowledge_type: technique
 also_type: [principle]

@@ -1,4 +1,6 @@
 ---
+id: "pkis:source:lange-applied-probability-ch08"
+aliases: []
 title: "Ch. 8 — Continuous-Time Markov Chains"
 authors: "Kenneth Lange"
 year: 2024

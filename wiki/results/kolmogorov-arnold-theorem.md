@@ -1,4 +1,6 @@
 ---
+id: "pkis:result:kolmogorov-arnold-theorem"
+aliases: []
 title: "Kolmogorov-Arnold Representation Theorem"
 knowledge_type: result
 also_type: []

@@ -1,4 +1,6 @@
 ---
+id: "pkis:concept:common-sense-reasoning"
+aliases: []
 title: "Common-Sense Reasoning"
 knowledge_type: concept
 also_type: []

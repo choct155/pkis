@@ -1,4 +1,6 @@
 ---
+id: "pkis:source:castle-model-selection-algorithms"
+aliases: []
 title: "How To Pick The Best Regression Equation: A Review And Comparison Of Model Selection Algorithms"
 authors: ["Jennifer L. Castle", "Xiaochuan Qin", "W. Robert Reed"]
 year: 2009

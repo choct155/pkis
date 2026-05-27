@@ -1,4 +1,6 @@
 ---
+id: "pkis:source:radhakrishnan-datagemma-2024"
+aliases: []
 title: "Knowing When to Ask — Bridging Large Language Models and Data (DataGemma)"
 authors: "Prashanth Radhakrishnan, Jennifer Chen, Bo Xu, Prem Ramaswami, Hannah Pho, Adriana Olmos, James Manyika, R. V. Guha"
 year: 2024

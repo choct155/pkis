@@ -1,4 +1,6 @@
 ---
+id: "pkis:technique:model-editing"
+aliases: []
 knowledge_type: technique
 slug: model-editing
 title: Model Editing

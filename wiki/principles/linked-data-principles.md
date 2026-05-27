@@ -1,4 +1,6 @@
 ---
+id: "pkis:principle:linked-data-principles"
+aliases: []
 title: "Linked Data Principles"
 knowledge_type: principle
 also_type: []

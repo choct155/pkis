@@ -1,4 +1,6 @@
 ---
+id: "pkis:concept:preference-based-trust"
+aliases: []
 title: "Preference-Based Trust"
 knowledge_type: concept
 also_type: []

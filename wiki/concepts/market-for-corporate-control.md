@@ -1,4 +1,6 @@
 ---
+id: "pkis:concept:market-for-corporate-control"
+aliases: []
 title: "Market for Corporate Control"
 knowledge_type: concept
 also_type: []

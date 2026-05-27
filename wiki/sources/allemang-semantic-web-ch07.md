@@ -1,4 +1,6 @@
 ---
+id: "pkis:source:allemang-semantic-web-ch07"
+aliases: []
 title: "Ch. 7 — RDF schema"
 authors: "Dean Allemang, Jim Hendler"
 year: 2011

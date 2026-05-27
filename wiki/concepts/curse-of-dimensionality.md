@@ -1,4 +1,6 @@
 ---
+id: "pkis:concept:curse-of-dimensionality"
+aliases: []
 title: "Curse of Dimensionality"
 knowledge_type: concept
 also_type: []

@@ -1,4 +1,6 @@
 ---
+id: "pkis:framework:structural-causal-models"
+aliases: []
 title: "Structural Causal Models"
 knowledge_type: framework
 also_type: []

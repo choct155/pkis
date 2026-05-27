@@ -1,4 +1,6 @@
 ---
+id: "pkis:source:gibaut-nsai-taxonomy-survey-2023"
+aliases: []
 title: "Neurosymbolic AI and Its Taxonomy: A Survey"
 authors: "Wandemberg Gibaut, Leonardo Pereira, Fabio Grassiotto, Alexandre Osorio, Eder Gadioli, Amparo Munoz, Sildolfo Gomes, Claudio Filipi Goncalves do Santos"
 year: 2023

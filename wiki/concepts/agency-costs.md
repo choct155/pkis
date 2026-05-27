@@ -1,4 +1,6 @@
 ---
+id: "pkis:concept:agency-costs"
+aliases: []
 title: "Agency Costs"
 knowledge_type: concept
 also_type: []

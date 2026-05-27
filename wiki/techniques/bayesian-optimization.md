@@ -1,4 +1,6 @@
 ---
+id: "pkis:technique:bayesian-optimization"
+aliases: []
 title: "Bayesian Optimization"
 knowledge_type: technique
 also_type: []

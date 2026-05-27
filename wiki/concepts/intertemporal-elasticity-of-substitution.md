@@ -1,4 +1,6 @@
 ---
+id: "pkis:concept:intertemporal-elasticity-of-substitution"
+aliases: ["IES"]
 title: "Intertemporal Elasticity of Substitution (IES)"
 knowledge_type: concept
 also_type: []

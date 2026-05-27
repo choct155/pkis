@@ -1,4 +1,6 @@
 ---
+id: "pkis:technique:dropout"
+aliases: []
 title: "Dropout"
 knowledge_type: technique
 also_type: []

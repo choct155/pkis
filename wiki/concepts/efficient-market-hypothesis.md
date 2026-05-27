@@ -1,4 +1,6 @@
 ---
+id: "pkis:concept:efficient-market-hypothesis"
+aliases: []
 title: "Efficient Market Hypothesis"
 knowledge_type: concept
 also_type: [result]

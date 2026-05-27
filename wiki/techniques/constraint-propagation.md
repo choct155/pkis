@@ -1,4 +1,6 @@
 ---
+id: "pkis:technique:constraint-propagation"
+aliases: []
 title: "Constraint Propagation"
 knowledge_type: technique
 also_type: []

@@ -1,4 +1,6 @@
 ---
+id: "pkis:source:liu-machine-unlearning-llm-2024"
+aliases: []
 title: "Rethinking Machine Unlearning for Large Language Models"
 authors: ["Sijia Liu", "Yuanshun Yao", "Jinghan Jia", "Stephen Casper", "Nathalie Baracaldo", "Peter Hase", "Xiaojun Xu", "Yuguang Yao", "Anil Aakash", "Hang Li", "Kush R. Varshney", "Shuai Tang", "Ding Zhao", "Jeffrey Bilmes", "Yang Liu"]
 year: 2024

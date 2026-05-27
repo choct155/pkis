@@ -1,4 +1,6 @@
 ---
+id: "pkis:technique:stakeholder-mapping"
+aliases: []
 title: "Stakeholder Mapping"
 knowledge_type: technique
 also_type: []

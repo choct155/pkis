@@ -1,4 +1,6 @@
 ---
+id: "pkis:source:vilain-reasoning-time-1982"
+aliases: []
 title: "A System for Reasoning About Time"
 authors: "Marc B. Vilain"
 year: 1982

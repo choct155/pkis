@@ -1,4 +1,6 @@
 ---
+id: "pkis:concept:quotient-groups"
+aliases: []
 title: "Quotient Groups"
 knowledge_type: concept
 also_type: []

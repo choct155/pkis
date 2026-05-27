@@ -1,4 +1,6 @@
 ---
+id: "pkis:source:lange-applied-probability-ch10"
+aliases: []
 title: "Ch. 10 — Martingales"
 authors: "Kenneth Lange"
 year: 2024

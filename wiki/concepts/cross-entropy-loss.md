@@ -1,4 +1,6 @@
 ---
+id: "pkis:concept:cross-entropy-loss"
+aliases: []
 title: "Cross-Entropy Loss"
 knowledge_type: concept
 also_type: []

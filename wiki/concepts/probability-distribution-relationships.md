@@ -1,4 +1,6 @@
 ---
+id: "pkis:concept:probability-distribution-relationships"
+aliases: []
 title: "Probability Distribution Relationships"
 knowledge_type: concept
 also_type: []

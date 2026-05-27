@@ -1,4 +1,6 @@
 ---
+id: "pkis:framework:dsge-models"
+aliases: ["DSGE"]
 title: "Dynamic Stochastic General Equilibrium (DSGE) Models"
 knowledge_type: framework
 also_type: []

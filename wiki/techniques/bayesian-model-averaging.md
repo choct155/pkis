@@ -1,4 +1,6 @@
 ---
+id: "pkis:technique:bayesian-model-averaging"
+aliases: []
 title: "Bayesian Model Averaging"
 knowledge_type: technique
 also_type: []

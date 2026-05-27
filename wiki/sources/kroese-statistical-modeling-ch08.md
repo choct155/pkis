@@ -1,4 +1,6 @@
 ---
+id: "pkis:source:kroese-statistical-modeling-ch08"
+aliases: []
 title: "Ch. 8 — Bayesian Inference"
 authors: ["Joshua C.C. Chan", "Dirk P. Kroese"]
 year: 2025

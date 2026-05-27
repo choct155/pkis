@@ -1,4 +1,6 @@
 ---
+id: "pkis:concept:aspiration-level"
+aliases: []
 title: "Aspiration Level"
 knowledge_type: concept
 also_type: []

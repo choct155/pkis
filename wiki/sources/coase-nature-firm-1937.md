@@ -1,4 +1,6 @@
 ---
+id: "pkis:source:coase-nature-firm-1937"
+aliases: []
 title: "The Nature of the Firm"
 authors: "R. H. Coase"
 year: 1937

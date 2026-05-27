@@ -1,4 +1,6 @@
 ---
+id: "pkis:source:lenat-marcus-cyc-trustworthy-2023"
+aliases: []
 title: "Getting from Generative AI to Trustworthy AI: What LLMs Might Learn from Cyc"
 authors: "Doug Lenat, Gary Marcus"
 year: 2023

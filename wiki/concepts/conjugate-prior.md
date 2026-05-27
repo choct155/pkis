@@ -1,4 +1,6 @@
 ---
+id: "pkis:concept:conjugate-prior"
+aliases: []
 title: "Conjugate Prior"
 knowledge_type: concept
 also_type: []

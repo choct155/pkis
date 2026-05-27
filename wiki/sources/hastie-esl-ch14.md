@@ -1,4 +1,6 @@
 ---
+id: "pkis:source:hastie-esl-ch14"
+aliases: []
 title: "Ch. 14 — Unsupervised Learning"
 authors: "Trevor Hastie, Robert Tibshirani, Jerome Friedman"
 year: 2009

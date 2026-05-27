@@ -1,4 +1,6 @@
 ---
+id: "pkis:concept:compositionality"
+aliases: []
 title: "Compositionality"
 knowledge_type: concept
 also_type: []

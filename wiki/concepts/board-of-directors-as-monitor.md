@@ -1,4 +1,6 @@
 ---
+id: "pkis:concept:board-of-directors-as-monitor"
+aliases: []
 title: "Board of Directors as Monitor"
 knowledge_type: concept
 also_type: [framework]

@@ -1,4 +1,6 @@
 ---
+id: "pkis:result:capital-asset-pricing-model"
+aliases: ["CAPM"]
 title: "Capital Asset Pricing Model (CAPM)"
 knowledge_type: result
 also_type: [framework]

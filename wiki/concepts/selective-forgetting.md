@@ -1,4 +1,6 @@
 ---
+id: "pkis:concept:selective-forgetting"
+aliases: []
 knowledge_type: concept
 slug: selective-forgetting
 title: Selective Forgetting

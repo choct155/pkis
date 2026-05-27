@@ -1,4 +1,6 @@
 ---
+id: "pkis:technique:d-separation"
+aliases: []
 title: "d-Separation"
 knowledge_type: technique
 also_type: [result]

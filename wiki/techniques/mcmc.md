@@ -1,4 +1,6 @@
 ---
+id: "pkis:technique:mcmc"
+aliases: ["MCMC"]
 title: "Markov Chain Monte Carlo (MCMC)"
 knowledge_type: technique
 also_type: [framework]

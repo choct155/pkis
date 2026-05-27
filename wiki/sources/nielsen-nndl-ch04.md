@@ -1,4 +1,6 @@
 ---
+id: "pkis:source:nielsen-nndl-ch04"
+aliases: []
 title: "Ch. 4 — A visual proof that neural nets can compute any function"
 authors: "Michael A. Nielsen"
 year: 2015

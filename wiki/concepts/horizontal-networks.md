@@ -1,4 +1,6 @@
 ---
+id: "pkis:concept:horizontal-networks"
+aliases: []
 title: "Horizontal Networks"
 knowledge_type: concept
 also_type: [principle]

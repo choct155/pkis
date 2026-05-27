@@ -1,4 +1,6 @@
 ---
+id: "pkis:result:leverage-risk-premium"
+aliases: []
 title: "Leverage Risk Premium (MM Proposition II)"
 knowledge_type: result
 also_type: []

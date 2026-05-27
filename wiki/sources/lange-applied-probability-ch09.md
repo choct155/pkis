@@ -1,4 +1,6 @@
 ---
+id: "pkis:source:lange-applied-probability-ch09"
+aliases: []
 title: "Ch. 9 — Branching Processes"
 authors: "Kenneth Lange"
 year: 2024

@@ -1,4 +1,6 @@
 ---
+id: "pkis:technique:competency-questions"
+aliases: []
 title: "Competency Questions"
 knowledge_type: technique
 also_type: []

@@ -1,4 +1,6 @@
 ---
+id: "pkis:source:carrell-groups-matrices-vectors-ch01"
+aliases: []
 title: "Ch. 1 — Preliminaries"
 authors: "James B. Carrell"
 year: 2017

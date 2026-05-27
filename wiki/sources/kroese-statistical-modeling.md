@@ -1,4 +1,6 @@
 ---
+id: "pkis:source:kroese-statistical-modeling"
+aliases: ["Statistical Modeling and Simulation (Kroese)"]
 title: "Statistical Modeling and Computation, 2nd ed."
 authors: ["Joshua C.C. Chan", "Dirk P. Kroese"]
 year: 2025

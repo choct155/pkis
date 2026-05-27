@@ -1,4 +1,6 @@
 ---
+id: "pkis:concept:statistical-inheritance"
+aliases: []
 title: "Statistical Inheritance"
 knowledge_type: concept
 also_type: [technique]

@@ -1,4 +1,6 @@
 ---
+id: "pkis:source:modigliani-miller-cost-capital-1958"
+aliases: []
 title: "The Cost of Capital, Corporation Finance and the Theory of Investment"
 authors: "Franco Modigliani, Merton H. Miller"
 year: 1958

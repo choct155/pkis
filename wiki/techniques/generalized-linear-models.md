@@ -1,4 +1,6 @@
 ---
+id: "pkis:technique:generalized-linear-models"
+aliases: []
 title: "Generalized Linear Models"
 knowledge_type: technique
 also_type: [framework]

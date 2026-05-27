@@ -1,4 +1,6 @@
 ---
+id: "pkis:source:cunningham-causal-inference-mixtape-ch10"
+aliases: []
 title: "Ch. 10 — Differences-in-Differences"
 authors: "Scott Cunningham"
 year: 2021

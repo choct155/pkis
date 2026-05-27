@@ -1,4 +1,6 @@
 ---
+id: "pkis:concept:risk-premium-structure"
+aliases: []
 title: "Risk Premium Structure"
 knowledge_type: concept
 also_type: [framework]

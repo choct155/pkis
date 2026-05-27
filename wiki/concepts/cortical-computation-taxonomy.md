@@ -1,4 +1,6 @@
 ---
+id: "pkis:concept:cortical-computation-taxonomy"
+aliases: []
 title: "Cortical Computation Taxonomy"
 knowledge_type: concept
 also_type: [framework]

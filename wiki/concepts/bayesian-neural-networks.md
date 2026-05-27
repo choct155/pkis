@@ -1,4 +1,6 @@
 ---
+id: "pkis:concept:bayesian-neural-networks"
+aliases: []
 title: "Bayesian Neural Networks"
 knowledge_type: concept
 also_type: []

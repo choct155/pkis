@@ -1,4 +1,6 @@
 ---
+id: "pkis:technique:eigendecomposition"
+aliases: []
 title: "Eigendecomposition"
 knowledge_type: technique
 also_type: [result]

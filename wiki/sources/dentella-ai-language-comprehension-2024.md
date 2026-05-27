@@ -1,4 +1,6 @@
 ---
+id: "pkis:source:dentella-ai-language-comprehension-2024"
+aliases: []
 title: "Testing AI on Language Comprehension Tasks Reveals Insensitivity to Underlying Meaning"
 authors: "Vittoria Dentella, Fritz Günther, Elliot Murphy, Gary Marcus, Evelina Leivada"
 year: 2024

@@ -1,4 +1,6 @@
 ---
+id: "pkis:concept:entrepreneur-coordinator"
+aliases: []
 title: "Entrepreneur as Coordinator"
 knowledge_type: concept
 also_type: [principle]

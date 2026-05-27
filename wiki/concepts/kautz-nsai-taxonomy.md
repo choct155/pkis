@@ -1,4 +1,6 @@
 ---
+id: "pkis:concept:kautz-nsai-taxonomy"
+aliases: []
 title: "Kautz NSAI Taxonomy"
 knowledge_type: concept
 also_type: [framework]

@@ -1,4 +1,6 @@
 ---
+id: "pkis:concept:managerial-labor-market"
+aliases: []
 title: "Managerial Labor Market"
 knowledge_type: concept
 also_type: []

@@ -1,4 +1,6 @@
 ---
+id: "pkis:technique:ontology-reasoning"
+aliases: []
 title: "Ontological Reasoning"
 knowledge_type: technique
 also_type: [framework]

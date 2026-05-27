@@ -1,4 +1,6 @@
 ---
+id: "pkis:source:nielsen-nndl-ch05"
+aliases: []
 title: "Ch. 5 — Why are deep neural networks hard to train?"
 authors: "Michael A. Nielsen"
 year: 2015

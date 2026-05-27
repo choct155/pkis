@@ -1,4 +1,6 @@
 ---
+id: "pkis:source:allemang-semantic-web-ch13"
+aliases: []
 title: "Ch. 13 — Ontologies on the Web — Putting it all together"
 authors: "Dean Allemang, Jim Hendler"
 year: 2011

@@ -1,4 +1,6 @@
 ---
+id: "pkis:framework:dynamic-factor-models"
+aliases: []
 title: "Dynamic Factor Models"
 knowledge_type: framework
 also_type: []

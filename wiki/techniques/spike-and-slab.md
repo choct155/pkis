@@ -1,4 +1,6 @@
 ---
+id: "pkis:technique:spike-and-slab"
+aliases: []
 title: "Spike-and-Slab Priors"
 knowledge_type: technique
 also_type: []

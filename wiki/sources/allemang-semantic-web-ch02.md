@@ -1,4 +1,6 @@
 ---
+id: "pkis:source:allemang-semantic-web-ch02"
+aliases: []
 title: "Ch. 2 — Semantic modeling"
 authors: "Dean Allemang, Jim Hendler"
 year: 2011

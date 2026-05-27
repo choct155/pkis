@@ -1,4 +1,6 @@
 ---
+id: "pkis:source:deisenroth-mml-ch12"
+aliases: []
 title: "Ch. 12 — Classification with Support Vector Machines"
 authors: "Marc Peter Deisenroth, A. Aldo Faisal, Cheng Soon Ong"
 year: 2020

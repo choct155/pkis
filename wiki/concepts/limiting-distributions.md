@@ -1,4 +1,6 @@
 ---
+id: "pkis:concept:limiting-distributions"
+aliases: []
 title: "Limiting Distributions"
 knowledge_type: concept
 also_type: []

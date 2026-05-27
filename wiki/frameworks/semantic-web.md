@@ -1,4 +1,6 @@
 ---
+id: "pkis:framework:semantic-web"
+aliases: []
 title: "Semantic Web"
 knowledge_type: framework
 also_type: [concept]

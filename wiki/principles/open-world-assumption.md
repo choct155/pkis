@@ -1,4 +1,6 @@
 ---
+id: "pkis:principle:open-world-assumption"
+aliases: []
 title: "Open World Assumption"
 knowledge_type: principle
 also_type: []

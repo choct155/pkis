@@ -1,4 +1,6 @@
 ---
+id: "pkis:source:cimiano-ontology-nlp-ch09"
+aliases: []
 title: "Ch. 9 — Ontology-Based Interpretation for Question Answering"
 authors: "Philipp Cimiano, Christina Unger, John McCrae"
 year: 2014

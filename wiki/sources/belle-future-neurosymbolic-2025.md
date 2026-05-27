@@ -1,4 +1,6 @@
 ---
+id: "pkis:source:belle-future-neurosymbolic-2025"
+aliases: []
 title: "The Future Is Neuro-Symbolic: Where Has It Been, and Where Is It Going?"
 authors: "Vaishak Belle, Gary Marcus"
 year: 2025

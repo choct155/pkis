@@ -1,4 +1,6 @@
 ---
+id: "pkis:technique:coordinate-ascent-vi"
+aliases: ["CAVI"]
 title: "Coordinate Ascent Variational Inference (CAVI)"
 knowledge_type: technique
 also_type: []

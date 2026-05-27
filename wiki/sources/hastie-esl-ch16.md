@@ -1,4 +1,6 @@
 ---
+id: "pkis:source:hastie-esl-ch16"
+aliases: []
 title: "Ch. 16 — Ensemble Learning"
 authors: "Trevor Hastie, Robert Tibshirani, Jerome Friedman"
 year: 2009

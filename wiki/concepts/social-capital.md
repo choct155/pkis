@@ -1,4 +1,6 @@
 ---
+id: "pkis:concept:social-capital"
+aliases: []
 title: "Social Capital"
 knowledge_type: concept
 also_type: []

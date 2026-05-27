@@ -1,4 +1,6 @@
 ---
+id: "pkis:concept:toeplitz-matrices"
+aliases: []
 title: "Toeplitz Matrices"
 knowledge_type: concept
 also_type: []

@@ -1,4 +1,6 @@
 ---
+id: "pkis:framework:ensemble-learning"
+aliases: []
 title: "Ensemble Learning"
 knowledge_type: framework
 also_type: [concept]

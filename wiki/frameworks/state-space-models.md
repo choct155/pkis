@@ -1,4 +1,6 @@
 ---
+id: "pkis:framework:state-space-models"
+aliases: []
 title: "State-Space Models"
 knowledge_type: framework
 also_type: []

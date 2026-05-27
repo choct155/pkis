@@ -1,4 +1,6 @@
 ---
+id: "pkis:concept:bias-variance-tradeoff"
+aliases: []
 title: "Bias-Variance Tradeoff"
 knowledge_type: concept
 also_type: []

@@ -1,4 +1,6 @@
 ---
+id: "pkis:source:fama-french-value-premium-2020"
+aliases: []
 title: "The Value Premium"
 authors: "Eugene F. Fama and Kenneth R. French"
 year: 2020

@@ -1,4 +1,6 @@
 ---
+id: "pkis:source:fama-banking-theory-finance-1980"
+aliases: []
 title: "Banking in the Theory of Finance"
 authors: "Eugene F. Fama"
 year: 1980

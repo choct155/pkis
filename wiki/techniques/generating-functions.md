@@ -1,4 +1,6 @@
 ---
+id: "pkis:technique:generating-functions"
+aliases: []
 title: "Generating Functions"
 knowledge_type: technique
 also_type: [concept]

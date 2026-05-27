@@ -1,4 +1,6 @@
 ---
+id: "pkis:technique:logistic-regression"
+aliases: []
 title: "Logistic Regression"
 knowledge_type: technique
 also_type: []

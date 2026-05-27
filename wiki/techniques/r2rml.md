@@ -1,4 +1,6 @@
 ---
+id: "pkis:technique:r2rml"
+aliases: ["RDB-to-RDF Mapping Language"]
 title: "R2RML (RDB-to-RDF Mapping Language)"
 knowledge_type: technique
 also_type: []

@@ -1,4 +1,6 @@
 ---
+id: "pkis:principle:expressiveness-tractability-tradeoff"
+aliases: []
 title: "Expressiveness-Tractability Tradeoff"
 knowledge_type: principle
 also_type: []

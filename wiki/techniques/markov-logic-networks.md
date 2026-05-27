@@ -1,4 +1,6 @@
 ---
+id: "pkis:technique:markov-logic-networks"
+aliases: []
 title: "Markov Logic Networks"
 knowledge_type: technique
 also_type: [framework]

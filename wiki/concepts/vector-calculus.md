@@ -1,4 +1,6 @@
 ---
+id: "pkis:concept:vector-calculus"
+aliases: []
 title: "Vector Calculus"
 knowledge_type: concept
 also_type: []

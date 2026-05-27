@@ -1,4 +1,6 @@
 ---
+id: "pkis:result:equation-of-exchange"
+aliases: []
 title: "Equation of Exchange"
 knowledge_type: result
 also_type: []

@@ -1,4 +1,6 @@
 ---
+id: "pkis:framework:quantity-theory-of-money"
+aliases: []
 title: "Quantity Theory of Money"
 knowledge_type: framework
 also_type: [concept]

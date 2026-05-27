@@ -1,4 +1,6 @@
 ---
+id: "pkis:source:scott-varian-nowcasting-2013a"
+aliases: []
 title: "Bayesian Variable Selection for Nowcasting Economic Time Series"
 authors: ["Steven L. Scott", "Hal R. Varian"]
 year: 2013

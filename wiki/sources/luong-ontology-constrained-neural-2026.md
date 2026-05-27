@@ -1,4 +1,6 @@
 ---
+id: "pkis:source:luong-ontology-constrained-neural-2026"
+aliases: []
 title: "Ontology-Constrained Neural Reasoning in Enterprise Agentic Systems: A Neurosymbolic Architecture for Domain-Grounded AI Agents"
 authors: "Thanh Luong Tuan"
 year: 2026

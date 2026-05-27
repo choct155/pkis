@@ -1,4 +1,6 @@
 ---
+id: "pkis:technique:weight-initialization"
+aliases: []
 title: "Weight Initialization"
 knowledge_type: technique
 also_type: [principle]

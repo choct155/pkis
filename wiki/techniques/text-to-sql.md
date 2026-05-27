@@ -1,4 +1,6 @@
 ---
+id: "pkis:technique:text-to-sql"
+aliases: []
 title: "Text-to-SQL"
 knowledge_type: technique
 also_type: []

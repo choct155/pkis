@@ -1,4 +1,6 @@
 ---
+id: "pkis:framework:hierarchical-bayesian-models"
+aliases: []
 title: "Hierarchical Bayesian Models"
 knowledge_type: framework
 also_type: []

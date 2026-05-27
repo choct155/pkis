@@ -1,4 +1,6 @@
 ---
+id: "pkis:technique:alpha-beta-decomposition"
+aliases: []
 title: "Alpha-Beta Decomposition"
 knowledge_type: technique
 also_type: []

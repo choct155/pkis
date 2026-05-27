@@ -1,4 +1,6 @@
 ---
+id: "pkis:source:hastie-esl-ch06"
+aliases: []
 title: "Ch. 6 — Kernel Smoothing Methods"
 authors: "Trevor Hastie, Robert Tibshirani, Jerome Friedman"
 year: 2009

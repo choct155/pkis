@@ -1,4 +1,6 @@
 ---
+id: "pkis:concept:price-discovery"
+aliases: []
 title: "Price Discovery"
 knowledge_type: concept
 also_type: []

@@ -1,4 +1,6 @@
 ---
+id: "pkis:problem:knowledge-graph-question-answering"
+aliases: ["KGQA"]
 title: "Knowledge Graph Question Answering (KGQA)"
 knowledge_type: problem
 also_type: []

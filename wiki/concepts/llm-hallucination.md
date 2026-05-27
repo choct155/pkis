@@ -1,4 +1,6 @@
 ---
+id: "pkis:concept:llm-hallucination"
+aliases: []
 title: "LLM Hallucination"
 knowledge_type: concept
 also_type: []

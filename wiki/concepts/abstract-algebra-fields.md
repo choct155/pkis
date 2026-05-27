@@ -1,4 +1,6 @@
 ---
+id: "pkis:concept:abstract-algebra-fields"
+aliases: []
 title: "Fields (Abstract Algebra)"
 knowledge_type: concept
 also_type: []

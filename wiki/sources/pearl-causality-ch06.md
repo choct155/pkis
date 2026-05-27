@@ -1,4 +1,6 @@
 ---
+id: "pkis:source:pearl-causality-ch06"
+aliases: []
 title: "Causality Ch. 6: Simpson's Paradox, Confounding, and Collapsibility"
 knowledge_type: source
 source_type: book-chapter

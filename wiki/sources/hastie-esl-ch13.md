@@ -1,4 +1,6 @@
 ---
+id: "pkis:source:hastie-esl-ch13"
+aliases: []
 title: "Ch. 13 — Prototype Methods and Nearest-Neighbors"
 authors: "Trevor Hastie, Robert Tibshirani, Jerome Friedman"
 year: 2009

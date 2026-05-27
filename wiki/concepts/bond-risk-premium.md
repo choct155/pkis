@@ -1,4 +1,6 @@
 ---
+id: "pkis:concept:bond-risk-premium"
+aliases: []
 title: "Bond Risk Premium"
 knowledge_type: concept
 also_type: []

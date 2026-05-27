@@ -1,4 +1,6 @@
 ---
+id: "pkis:concept:omitted-variable-bias"
+aliases: []
 title: "Omitted Variable Bias"
 knowledge_type: concept
 also_type: []

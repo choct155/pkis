@@ -1,4 +1,6 @@
 ---
+id: "pkis:source:carrell-groups-matrices-vectors-ch05"
+aliases: []
 title: "Ch. 5 — An Introduction to the Theory of Determinants"
 authors: "James B. Carrell"
 year: 2017

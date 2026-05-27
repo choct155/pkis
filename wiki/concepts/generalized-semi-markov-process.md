@@ -1,4 +1,6 @@
 ---
+id: "pkis:concept:generalized-semi-markov-process"
+aliases: []
 title: "Generalized Semi-Markov Process"
 knowledge_type: concept
 also_type: []

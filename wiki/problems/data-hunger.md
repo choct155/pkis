@@ -1,4 +1,6 @@
 ---
+id: "pkis:problem:data-hunger"
+aliases: []
 title: "Data Hunger"
 knowledge_type: problem
 also_type: []

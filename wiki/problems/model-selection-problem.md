@@ -1,4 +1,6 @@
 ---
+id: "pkis:problem:model-selection-problem"
+aliases: []
 title: "The Model Selection Problem"
 knowledge_type: problem
 also_type: [concept]

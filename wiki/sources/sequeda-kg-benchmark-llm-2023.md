@@ -1,4 +1,6 @@
 ---
+id: "pkis:source:sequeda-kg-benchmark-llm-2023"
+aliases: []
 title: "A Benchmark to Understand the Role of Knowledge Graphs on Large Language Model's Accuracy for Question Answering on Enterprise SQL Databases"
 authors: "Juan F. Sequeda, Dean Allemang, Bryon Jacob"
 year: 2023

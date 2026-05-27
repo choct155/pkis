@@ -1,4 +1,6 @@
 ---
+id: "pkis:result:welfare-cost-of-business-cycles"
+aliases: []
 title: "Welfare Cost of Business Cycles"
 knowledge_type: result
 also_type: [concept]

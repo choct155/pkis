@@ -1,4 +1,6 @@
 ---
+id: "pkis:source:deisenroth-mml-ch05"
+aliases: []
 title: "Ch. 5 — Vector Calculus"
 authors: "Marc Peter Deisenroth, A. Aldo Faisal, Cheng Soon Ong"
 year: 2020

@@ -1,4 +1,6 @@
 ---
+id: "pkis:concept:average-treatment-effect"
+aliases: []
 title: "Average Treatment Effect"
 knowledge_type: concept
 also_type: []

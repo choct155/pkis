@@ -1,4 +1,6 @@
 ---
+id: "pkis:result:government-debt-valuation-equation"
+aliases: []
 title: "Government Debt Valuation Equation"
 knowledge_type: result
 also_type: []

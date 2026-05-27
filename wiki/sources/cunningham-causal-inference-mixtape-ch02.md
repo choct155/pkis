@@ -1,4 +1,6 @@
 ---
+id: "pkis:source:cunningham-causal-inference-mixtape-ch02"
+aliases: []
 title: "Ch. 2 — Probability Theory and Statistics Review"
 authors: "Scott Cunningham"
 year: 2021

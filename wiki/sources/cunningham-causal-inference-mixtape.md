@@ -1,4 +1,6 @@
 ---
+id: "pkis:source:cunningham-causal-inference-mixtape"
+aliases: ["Causal Inference: The Mixtape", "Mixtape"]
 title: "Causal Inference: The Mixtape"
 authors: "Scott Cunningham"
 year: 2021

@@ -1,4 +1,6 @@
 ---
+id: "pkis:concept:asymmetric-information-in-finance"
+aliases: []
 title: "Asymmetric Information in Finance"
 knowledge_type: concept
 also_type: []

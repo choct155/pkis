@@ -1,4 +1,6 @@
 ---
+id: "pkis:concept:activation-functions"
+aliases: []
 title: "Activation Functions"
 knowledge_type: concept
 also_type: []

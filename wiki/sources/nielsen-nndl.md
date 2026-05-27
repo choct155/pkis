@@ -1,4 +1,6 @@
 ---
+id: "pkis:source:nielsen-nndl"
+aliases: ["NNDL", "Neural Networks and Deep Learning"]
 title: "Neural Networks and Deep Learning"
 authors: "Michael A. Nielsen"
 year: 2015

@@ -1,4 +1,6 @@
 ---
+id: "pkis:technique:kernel-density-estimation"
+aliases: []
 title: "Kernel Density Estimation"
 knowledge_type: technique
 also_type: []

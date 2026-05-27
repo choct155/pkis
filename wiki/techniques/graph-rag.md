@@ -1,4 +1,6 @@
 ---
+id: "pkis:technique:graph-rag"
+aliases: []
 title: "Graph Retrieval-Augmented Generation"
 knowledge_type: technique
 also_type: [framework]

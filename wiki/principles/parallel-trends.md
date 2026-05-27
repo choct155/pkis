@@ -1,4 +1,6 @@
 ---
+id: "pkis:principle:parallel-trends"
+aliases: []
 title: "Parallel Trends"
 knowledge_type: principle
 also_type: []

@@ -1,4 +1,6 @@
 ---
+id: "pkis:source:marcus-atoms-neural-computation-2014"
+aliases: []
 title: "Frequently Asked Questions for: The Atoms of Neural Computation"
 authors: "Gary Marcus, Adam Marblestone, Tom Dean"
 year: 2014

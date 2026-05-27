@@ -1,4 +1,6 @@
 ---
+id: "pkis:source:gulli-agentic-design-patterns-ch18"
+aliases: []
 title: "Ch. 18 — Guardrails/Safety Patterns"
 authors: "Antonio Gullí"
 year: 2025

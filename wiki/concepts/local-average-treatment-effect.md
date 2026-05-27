@@ -1,4 +1,6 @@
 ---
+id: "pkis:concept:local-average-treatment-effect"
+aliases: []
 title: "Local Average Treatment Effect"
 knowledge_type: concept
 also_type: []

@@ -1,4 +1,6 @@
 ---
+id: "pkis:framework:trade-off-theory"
+aliases: []
 title: "Trade-Off Theory of Capital Structure"
 knowledge_type: framework
 also_type: []

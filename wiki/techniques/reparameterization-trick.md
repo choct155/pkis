@@ -1,4 +1,6 @@
 ---
+id: "pkis:technique:reparameterization-trick"
+aliases: []
 title: "Reparameterization Trick"
 knowledge_type: technique
 also_type: []

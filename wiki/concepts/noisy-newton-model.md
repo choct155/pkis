@@ -1,4 +1,6 @@
 ---
+id: "pkis:concept:noisy-newton-model"
+aliases: []
 title: "Noisy Newton Model"
 knowledge_type: concept
 also_type: []

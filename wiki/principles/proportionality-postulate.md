@@ -1,4 +1,6 @@
 ---
+id: "pkis:principle:proportionality-postulate"
+aliases: []
 title: "Proportionality Postulate"
 knowledge_type: principle
 also_type: [result]

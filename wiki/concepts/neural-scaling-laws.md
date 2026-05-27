@@ -1,4 +1,6 @@
 ---
+id: "pkis:concept:neural-scaling-laws"
+aliases: []
 title: "Neural Scaling Laws"
 knowledge_type: concept
 also_type: []

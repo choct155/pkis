@@ -1,4 +1,6 @@
 ---
+id: "pkis:concept:poisson-process"
+aliases: []
 title: "Poisson Process"
 knowledge_type: concept
 also_type: []

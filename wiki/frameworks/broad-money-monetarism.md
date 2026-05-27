@@ -1,4 +1,6 @@
 ---
+id: "pkis:framework:broad-money-monetarism"
+aliases: []
 title: "Broad-Money Monetarism"
 knowledge_type: framework
 also_type: [concept]

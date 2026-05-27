@@ -1,4 +1,6 @@
 ---
+id: "pkis:technique:automatic-priors"
+aliases: []
 title: "Automatic Prior Construction"
 knowledge_type: technique
 also_type: []

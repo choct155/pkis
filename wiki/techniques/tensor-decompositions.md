@@ -1,4 +1,6 @@
 ---
+id: "pkis:technique:tensor-decompositions"
+aliases: []
 title: "Tensor Decompositions"
 knowledge_type: technique
 also_type: []

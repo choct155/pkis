@@ -1,4 +1,6 @@
 ---
+id: "pkis:source:deisenroth-mml-ch02"
+aliases: []
 title: "Ch. 2 — Linear Algebra"
 authors: "Marc Peter Deisenroth, A. Aldo Faisal, Cheng Soon Ong"
 year: 2020

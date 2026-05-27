@@ -1,4 +1,6 @@
 ---
+id: "pkis:concept:ricardian-equivalence"
+aliases: []
 title: "Ricardian Equivalence"
 knowledge_type: concept
 also_type: [result]

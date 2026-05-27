@@ -1,4 +1,6 @@
 ---
+id: "pkis:technique:automatic-differentiation"
+aliases: []
 title: "Automatic Differentiation"
 knowledge_type: technique
 also_type: []

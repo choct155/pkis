@@ -1,4 +1,6 @@
 ---
+id: "pkis:source:castaneda-mmt-critique-2021"
+aliases: []
 title: "Modern Monetary Theory: Why it can't provide sustained economic growth and low inflation"
 authors: "Juan E. Castañeda"
 year: 2021

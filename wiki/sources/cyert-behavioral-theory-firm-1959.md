@@ -1,4 +1,6 @@
 ---
+id: "pkis:source:cyert-behavioral-theory-firm-1959"
+aliases: []
 title: "Models in a Behavioral Theory of the Firm"
 authors: "R. M. Cyert; E. A. Feigenbaum; J. G. March"
 year: 1959

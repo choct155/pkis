@@ -1,4 +1,6 @@
 ---
+id: "pkis:framework:timed-automata"
+aliases: []
 title: "Timed Automata"
 knowledge_type: framework
 also_type: [concept]

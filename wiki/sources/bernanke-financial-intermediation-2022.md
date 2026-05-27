@@ -1,4 +1,6 @@
 ---
+id: "pkis:source:bernanke-financial-intermediation-2022"
+aliases: []
 title: "Financial Intermediation and the Economy"
 authors: "Royal Swedish Academy of Sciences Nobel Committee"
 year: 2022

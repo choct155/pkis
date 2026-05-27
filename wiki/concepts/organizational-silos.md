@@ -1,4 +1,6 @@
 ---
+id: "pkis:concept:organizational-silos"
+aliases: []
 title: "Organizational Silos"
 knowledge_type: concept
 also_type: []

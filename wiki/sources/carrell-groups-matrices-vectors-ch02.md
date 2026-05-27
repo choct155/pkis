@@ -1,4 +1,6 @@
 ---
+id: "pkis:source:carrell-groups-matrices-vectors-ch02"
+aliases: []
 title: "Ch. 2 — Groups and Fields: The Two Fundamental Notions of Algebra"
 authors: "James B. Carrell"
 year: 2017

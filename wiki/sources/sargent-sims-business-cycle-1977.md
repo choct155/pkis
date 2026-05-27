@@ -1,4 +1,6 @@
 ---
+id: "pkis:source:sargent-sims-business-cycle-1977"
+aliases: []
 title: "Business Cycle Modeling Without Pretending to Have Too Much A Priori Economic Theory"
 authors: ["Thomas J. Sargent", "Christopher A. Sims"]
 year: 1977

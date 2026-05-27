@@ -1,4 +1,6 @@
 ---
+id: "pkis:source:miller-history-finance-1999"
+aliases: []
 title: "History of Finance: An Eyewitness Account"
 authors: "Merton H. Miller"
 year: 1999

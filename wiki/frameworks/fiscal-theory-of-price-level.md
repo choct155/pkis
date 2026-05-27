@@ -1,4 +1,6 @@
 ---
+id: "pkis:framework:fiscal-theory-of-price-level"
+aliases: []
 title: "Fiscal Theory of the Price Level"
 knowledge_type: framework
 also_type: []

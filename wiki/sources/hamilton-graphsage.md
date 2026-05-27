@@ -1,4 +1,6 @@
 ---
+id: "pkis:source:hamilton-graphsage"
+aliases: ["GraphSAGE paper"]
 title: "Inductive Representation Learning on Large Graphs (GraphSAGE)"
 authors: ["William L. Hamilton", "Rex Ying", "Jure Leskovec"]
 year: 2017

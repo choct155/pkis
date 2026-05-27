@@ -1,4 +1,6 @@
 ---
+id: "pkis:principle:no-arbitrage-pricing"
+aliases: []
 title: "No-Arbitrage Pricing"
 knowledge_type: principle
 also_type: [result]

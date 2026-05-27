@@ -1,4 +1,6 @@
 ---
+id: "pkis:source:deisenroth-mml-ch10"
+aliases: []
 title: "Ch. 10 — Dimensionality Reduction with PCA"
 authors: "Marc Peter Deisenroth, A. Aldo Faisal, Cheng Soon Ong"
 year: 2020

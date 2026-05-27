@@ -1,4 +1,6 @@
 ---
+id: "pkis:source:fama-two-pillars-2013"
+aliases: []
 title: "Two Pillars of Asset Pricing"
 authors: "Eugene F. Fama"
 year: 2013

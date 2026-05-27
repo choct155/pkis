@@ -1,4 +1,6 @@
 ---
+id: "pkis:source:forbus-qp-motion-1982"
+aliases: []
 title: "Modeling Motion with Qualitative Process Theory"
 authors: "Kenneth D. Forbus"
 year: 1982

@@ -1,4 +1,6 @@
 ---
+id: "pkis:source:stock-watson-leading-indicators-1992"
+aliases: []
 title: "A Procedure for Predicting Recessions with Leading Indicators: Econometric Issues and Recent Experience"
 authors: ["James H. Stock", "Mark W. Watson"]
 year: 1992

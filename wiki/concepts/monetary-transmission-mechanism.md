@@ -1,4 +1,6 @@
 ---
+id: "pkis:concept:monetary-transmission-mechanism"
+aliases: []
 title: "Monetary Transmission Mechanism"
 knowledge_type: concept
 also_type: []

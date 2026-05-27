@@ -1,4 +1,6 @@
 ---
+id: "pkis:source:zhang-graphrag-survey"
+aliases: []
 title: "A Survey of Graph Retrieval-Augmented Generation for Customized Large Language Models"
 authors: "Qinggang Zhang, Shengyuan Chen, Yuanchen Bei, Zheng Yuan, Huachi Zhou, Zijin Hong, Junnan Dong, Hao Chen, Yi Chang, Xiao Huang"
 year: 2025

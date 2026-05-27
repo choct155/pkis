@@ -1,4 +1,6 @@
 ---
+id: "pkis:technique:kolmogorov-arnold-networks"
+aliases: ["KANs"]
 title: "Kolmogorov-Arnold Networks (KANs)"
 knowledge_type: technique
 also_type: [framework]

@@ -1,4 +1,6 @@
 ---
+id: "pkis:framework:markov-decision-processes"
+aliases: []
 title: "Markov Decision Processes"
 knowledge_type: framework
 also_type: []

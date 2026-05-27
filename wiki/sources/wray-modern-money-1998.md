@@ -1,4 +1,6 @@
 ---
+id: "pkis:source:wray-modern-money-1998"
+aliases: []
 title: "Modern Money"
 authors: "L. Randall Wray"
 year: 1998

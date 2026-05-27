@@ -1,4 +1,6 @@
 ---
+id: "pkis:concept:employer-of-last-resort"
+aliases: []
 title: "Employer of Last Resort"
 knowledge_type: concept
 also_type: [framework]

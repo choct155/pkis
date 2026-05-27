@@ -1,4 +1,6 @@
 ---
+id: "pkis:principle:scaling-hypothesis"
+aliases: []
 title: "Scaling Hypothesis"
 knowledge_type: principle
 also_type: []

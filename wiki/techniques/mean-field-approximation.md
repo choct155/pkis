@@ -1,4 +1,6 @@
 ---
+id: "pkis:technique:mean-field-approximation"
+aliases: []
 title: "Mean-Field Variational Approximation"
 knowledge_type: technique
 also_type: []

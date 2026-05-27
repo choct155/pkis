@@ -1,4 +1,6 @@
 ---
+id: "pkis:concept:elbo"
+aliases: ["ELBO"]
 title: "Evidence Lower Bound (ELBO)"
 knowledge_type: concept
 also_type: []

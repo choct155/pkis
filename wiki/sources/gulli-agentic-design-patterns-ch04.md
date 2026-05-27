@@ -1,4 +1,6 @@
 ---
+id: "pkis:source:gulli-agentic-design-patterns-ch04"
+aliases: []
 title: "Ch. 4 — Reflection"
 authors: "Antonio Gullí"
 year: 2025

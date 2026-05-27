@@ -1,4 +1,6 @@
 ---
+id: "pkis:technique:in-context-learning"
+aliases: []
 title: "In-Context Learning"
 knowledge_type: technique
 also_type: [concept]

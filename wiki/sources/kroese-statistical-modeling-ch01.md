@@ -1,4 +1,6 @@
 ---
+id: "pkis:source:kroese-statistical-modeling-ch01"
+aliases: []
 title: "Ch. 1 — Probability Models"
 authors: ["Joshua C.C. Chan", "Dirk P. Kroese"]
 year: 2025

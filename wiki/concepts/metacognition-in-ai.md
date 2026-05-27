@@ -1,4 +1,6 @@
 ---
+id: "pkis:concept:metacognition-in-ai"
+aliases: []
 title: "Metacognition in AI"
 knowledge_type: concept
 also_type: [problem]

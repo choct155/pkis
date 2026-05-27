@@ -1,4 +1,6 @@
 ---
+id: "pkis:source:tanner-tools-statistical-inference-ch04"
+aliases: []
 title: "Ch. 4 — The EM Algorithm"
 authors: ["Martin A. Tanner"]
 year: 1993

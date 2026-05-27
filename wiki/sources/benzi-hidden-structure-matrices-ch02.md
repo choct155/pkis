@@ -1,4 +1,6 @@
 ---
+id: "pkis:source:benzi-hidden-structure-matrices-ch02"
+aliases: []
 title: "Ch. 2 — Matrix Structures in Queuing Models"
 authors: ["Dario A. Bini"]
 year: 2016

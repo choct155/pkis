@@ -1,4 +1,6 @@
 ---
+id: "pkis:problem:nowcasting"
+aliases: []
 title: "Nowcasting"
 knowledge_type: problem
 also_type: []

@@ -1,4 +1,6 @@
 ---
+id: "pkis:result:capital-structure-irrelevance"
+aliases: []
 title: "Capital Structure Irrelevance"
 knowledge_type: result
 also_type: []

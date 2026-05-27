@@ -1,4 +1,6 @@
 ---
+id: "pkis:framework:behavioral-theory-of-the-firm"
+aliases: []
 title: "Behavioral Theory of the Firm"
 knowledge_type: framework
 also_type: []

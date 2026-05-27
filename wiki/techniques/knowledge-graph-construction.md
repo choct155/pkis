@@ -1,4 +1,6 @@
 ---
+id: "pkis:technique:knowledge-graph-construction"
+aliases: []
 title: "Knowledge Graph Construction"
 knowledge_type: technique
 also_type: []

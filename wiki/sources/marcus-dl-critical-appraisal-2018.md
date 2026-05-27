@@ -1,4 +1,6 @@
 ---
+id: "pkis:source:marcus-dl-critical-appraisal-2018"
+aliases: []
 title: "Deep Learning: A Critical Appraisal"
 authors: "Gary Marcus"
 year: 2018

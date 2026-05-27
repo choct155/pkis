@@ -1,4 +1,6 @@
 ---
+id: "pkis:source:fama-fed-interest-rates-2013"
+aliases: []
 title: "Does the Fed Control Interest Rates?"
 authors: "Eugene F. Fama"
 year: 2013

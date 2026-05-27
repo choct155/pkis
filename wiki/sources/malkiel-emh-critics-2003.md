@@ -1,4 +1,6 @@
 ---
+id: "pkis:source:malkiel-emh-critics-2003"
+aliases: []
 title: "The Efficient Market Hypothesis and Its Critics"
 authors: "Burton G. Malkiel"
 year: 2003

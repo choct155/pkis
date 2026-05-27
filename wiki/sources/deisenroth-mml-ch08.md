@@ -1,4 +1,6 @@
 ---
+id: "pkis:source:deisenroth-mml-ch08"
+aliases: []
 title: "Ch. 8 — When Models Meet Data"
 authors: "Marc Peter Deisenroth, A. Aldo Faisal, Cheng Soon Ong"
 year: 2020

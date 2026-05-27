@@ -1,4 +1,6 @@
 ---
+id: "pkis:concept:irrelevance-propositions"
+aliases: []
 title: "Irrelevance Propositions"
 knowledge_type: concept
 also_type: []

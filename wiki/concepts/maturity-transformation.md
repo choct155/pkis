@@ -1,4 +1,6 @@
 ---
+id: "pkis:concept:maturity-transformation"
+aliases: []
 title: "Maturity Transformation"
 knowledge_type: concept
 also_type: []

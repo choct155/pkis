@@ -1,4 +1,6 @@
 ---
+id: "pkis:source:rowe-statistical-inheritance-1982"
+aliases: []
 title: "Inheritance of Statistical Properties"
 authors: "Neil C. Rowe"
 year: 1982

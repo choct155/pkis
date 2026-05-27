@@ -1,4 +1,6 @@
 ---
+id: "pkis:framework:multi-agent-systems"
+aliases: []
 title: "Multi-Agent Systems"
 knowledge_type: framework
 also_type: [technique]

@@ -1,4 +1,6 @@
 ---
+id: "pkis:source:cunningham-causal-inference-mixtape-ch01"
+aliases: []
 title: "Ch. 1 — Introduction"
 authors: "Scott Cunningham"
 year: 2021

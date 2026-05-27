@@ -1,4 +1,6 @@
 ---
+id: "pkis:source:afroogh-task-driven-human-ai-2025"
+aliases: []
 title: "A Task-Driven Human-AI Collaboration: When to Automate, When to Collaborate, When to Challenge"
 authors: "Saleh Afroogh, Kush R. Varshney, Jason D'Cruz"
 year: 2025

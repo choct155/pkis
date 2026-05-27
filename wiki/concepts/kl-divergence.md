@@ -1,4 +1,6 @@
 ---
+id: "pkis:concept:kl-divergence"
+aliases: []
 title: "Kullback-Leibler Divergence"
 knowledge_type: concept
 also_type: []

@@ -1,4 +1,6 @@
 ---
+id: "pkis:concept:system-1-system-2-thinking"
+aliases: []
 title: "System 1 / System 2 Thinking"
 knowledge_type: concept
 also_type: []

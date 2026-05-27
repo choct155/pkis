@@ -1,4 +1,6 @@
 ---
+id: "pkis:framework:supervisory-control"
+aliases: []
 title: "Supervisory Control Theory"
 knowledge_type: framework
 also_type: []

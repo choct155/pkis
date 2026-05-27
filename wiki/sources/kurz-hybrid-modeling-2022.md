@@ -1,4 +1,6 @@
 ---
+id: "pkis:source:kurz-hybrid-modeling-2022"
+aliases: []
 title: "Hybrid Modeling: Towards the Next Level of Scientific Computing in Engineering"
 authors: "Stefan Kurz, Herbert De Gersem, Armin Galetzka, Andreas Klaedtke, Melvin Liebsch, Dimitrios Loukrezis, Stephan Russenschuck, Manuel Schmidt"
 year: 2022

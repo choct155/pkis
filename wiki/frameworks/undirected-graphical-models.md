@@ -1,4 +1,6 @@
 ---
+id: "pkis:framework:undirected-graphical-models"
+aliases: []
 title: "Undirected Graphical Models"
 knowledge_type: framework
 also_type: []

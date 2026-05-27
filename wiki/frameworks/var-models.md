@@ -1,4 +1,6 @@
 ---
+id: "pkis:framework:var-models"
+aliases: ["VAR"]
 title: "Vector Autoregression (VAR) Models"
 knowledge_type: framework
 also_type: []

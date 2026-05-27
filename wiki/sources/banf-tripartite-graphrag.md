@@ -1,4 +1,6 @@
 ---
+id: "pkis:source:banf-tripartite-graphrag"
+aliases: []
 title: "A Tripartite Perspective on GraphRAG"
 authors: ["Michael Banf", "Johannes Kuhn"]
 year: 2025

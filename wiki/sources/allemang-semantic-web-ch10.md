@@ -1,4 +1,6 @@
 ---
+id: "pkis:source:allemang-semantic-web-ch10"
+aliases: []
 title: "Ch. 10 — SKOS — Managing vocabularies with RDFS-Plus"
 authors: "Dean Allemang, Jim Hendler"
 year: 2011

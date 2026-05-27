@@ -1,4 +1,6 @@
 ---
+id: "pkis:concept:ontology-quality-dimensions"
+aliases: []
 title: "Ontology Quality Dimensions"
 knowledge_type: concept
 also_type: []

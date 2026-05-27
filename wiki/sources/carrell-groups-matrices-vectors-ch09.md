@@ -1,4 +1,6 @@
 ---
+id: "pkis:source:carrell-groups-matrices-vectors-ch09"
+aliases: []
 title: "Ch. 9 — Unitary Diagonalization and Quadratic Forms"
 authors: "James B. Carrell"
 year: 2017

@@ -1,4 +1,6 @@
 ---
+id: "pkis:concept:differentiable-fuzzy-logic"
+aliases: []
 title: "Differentiable Fuzzy Logic"
 knowledge_type: concept
 also_type: []

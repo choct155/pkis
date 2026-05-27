@@ -1,4 +1,6 @@
 ---
+id: "pkis:concept:lateral-agility"
+aliases: []
 title: "Lateral Agility"
 knowledge_type: concept
 also_type: []

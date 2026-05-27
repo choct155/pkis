@@ -1,4 +1,6 @@
 ---
+id: "pkis:framework:empirical-risk-minimization"
+aliases: ["ERM"]
 title: "Empirical Risk Minimization (ERM)"
 knowledge_type: framework
 also_type: []

@@ -1,4 +1,6 @@
 ---
+id: "pkis:concept:adjustment-costs-of-capital"
+aliases: []
 title: "Adjustment Costs of Capital"
 knowledge_type: concept
 also_type: [technique]

@@ -1,4 +1,6 @@
 ---
+id: "pkis:source:cassandras-des-intro"
+aliases: ["Introduction to Discrete Event Systems", "Cassandras DES"]
 title: "Introduction to Discrete Event Systems (Third Edition)"
 authors: "Christos G. Cassandras, Stéphane Lafortune"
 year: 2021

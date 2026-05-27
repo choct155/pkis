@@ -1,4 +1,6 @@
 ---
+id: "pkis:source:allemang-semantic-web"
+aliases: ["Semantic Web for the Working Ontologist"]
 title: "Semantic Web for the Working Ontologist, 2nd Ed."
 authors: "Dean Allemang, Jim Hendler"
 year: 2011

@@ -1,4 +1,6 @@
 ---
+id: "pkis:concept:analytic-geometry"
+aliases: []
 title: "Analytic Geometry"
 knowledge_type: concept
 also_type: []

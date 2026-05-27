@@ -1,4 +1,6 @@
 ---
+id: "pkis:source:sheth-neurosymbolic-why-2023"
+aliases: []
 title: "Neurosymbolic AI - Why, What, and How"
 authors: "Amit Sheth, Kaushik Roy, Manas Gaur"
 year: 2023

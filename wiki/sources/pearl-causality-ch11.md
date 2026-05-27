@@ -1,4 +1,6 @@
 ---
+id: "pkis:source:pearl-causality-ch11"
+aliases: []
 title: "Causality Ch. 11: Reflections, Elaborations, and Discussions with Readers"
 knowledge_type: source
 source_type: book-chapter

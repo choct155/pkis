@@ -1,4 +1,6 @@
 ---
+id: "pkis:concept:heterogeneous-cortex"
+aliases: []
 title: "Heterogeneous Cortex"
 knowledge_type: concept
 also_type: [result]

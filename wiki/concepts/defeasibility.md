@@ -1,4 +1,6 @@
 ---
+id: "pkis:concept:defeasibility"
+aliases: []
 title: "Defeasibility"
 knowledge_type: concept
 also_type: []

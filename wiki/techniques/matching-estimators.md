@@ -1,4 +1,6 @@
 ---
+id: "pkis:technique:matching-estimators"
+aliases: []
 title: "Matching Estimators"
 knowledge_type: technique
 also_type: []

@@ -1,4 +1,6 @@
 ---
+id: "pkis:source:kroese-statistical-modeling-ch04"
+aliases: []
 title: "Ch. 4 — Common Statistical Models"
 authors: ["Joshua C.C. Chan", "Dirk P. Kroese"]
 year: 2025

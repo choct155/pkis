@@ -1,4 +1,6 @@
 ---
+id: "pkis:source:pearl-causality"
+aliases: ["Causality (Pearl)", "Pearl Causality"]
 title: "Causality: Models, Reasoning, and Inference (2nd ed.)"
 knowledge_type: source
 source_type: book

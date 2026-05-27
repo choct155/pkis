@@ -1,4 +1,6 @@
 ---
+id: "pkis:technique:semantic-parsing"
+aliases: []
 title: "Semantic Parsing"
 knowledge_type: technique
 also_type: []

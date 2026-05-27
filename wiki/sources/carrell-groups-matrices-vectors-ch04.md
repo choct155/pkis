@@ -1,4 +1,6 @@
 ---
+id: "pkis:source:carrell-groups-matrices-vectors-ch04"
+aliases: []
 title: "Ch. 4 — Matrix Inverses, Matrix Groups and the LPDU Decomposition"
 authors: "James B. Carrell"
 year: 2017

@@ -1,4 +1,6 @@
 ---
+id: "pkis:framework:transaction-cost-theory"
+aliases: []
 title: "Transaction Cost Theory"
 knowledge_type: framework
 also_type: []

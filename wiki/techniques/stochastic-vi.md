@@ -1,4 +1,6 @@
 ---
+id: "pkis:technique:stochastic-vi"
+aliases: ["SVI"]
 title: "Stochastic Variational Inference (SVI)"
 knowledge_type: technique
 also_type: []

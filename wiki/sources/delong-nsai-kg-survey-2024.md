@@ -1,4 +1,6 @@
 ---
+id: "pkis:source:delong-nsai-kg-survey-2024"
+aliases: []
 title: "Neurosymbolic AI for Reasoning over Knowledge Graphs: A Survey"
 authors: "Lauren Nicole DeLong, Ramon Fernández Mir, Jacques D. Fleuriot"
 year: 2024

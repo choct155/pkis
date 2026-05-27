@@ -1,4 +1,6 @@
 ---
+id: "pkis:source:kim-financial-statement-llm-2024"
+aliases: []
 title: "Financial Statement Analysis with Large Language Models"
 authors: "Alex G. Kim, Maximilian Muhn, Valeri V. Nikolaev"
 year: 2024

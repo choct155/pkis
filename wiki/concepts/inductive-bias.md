@@ -1,4 +1,6 @@
 ---
+id: "pkis:concept:inductive-bias"
+aliases: []
 title: "Inductive Bias"
 knowledge_type: concept
 also_type: []

@@ -1,4 +1,6 @@
 ---
+id: "pkis:concept:fiscal-dominance"
+aliases: []
 title: "Fiscal Dominance"
 knowledge_type: concept
 also_type: []

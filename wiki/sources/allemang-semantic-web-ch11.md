@@ -1,4 +1,6 @@
 ---
+id: "pkis:source:allemang-semantic-web-ch11"
+aliases: []
 title: "Ch. 11 — Basic OWL"
 authors: "Dean Allemang, Jim Hendler"
 year: 2011

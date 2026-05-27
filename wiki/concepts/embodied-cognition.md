@@ -1,4 +1,6 @@
 ---
+id: "pkis:concept:embodied-cognition"
+aliases: []
 title: "Embodied Cognition"
 knowledge_type: concept
 also_type: []

@@ -1,4 +1,6 @@
 ---
+id: "pkis:source:ganguly-intro-vi"
+aliases: []
 title: "An Introduction to Variational Inference"
 knowledge_type: source
 source_type: paper

@@ -1,4 +1,6 @@
 ---
+id: "pkis:technique:model-averaging"
+aliases: []
 title: "Model Averaging"
 knowledge_type: technique
 also_type: [framework]

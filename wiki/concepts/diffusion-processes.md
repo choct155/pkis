@@ -1,4 +1,6 @@
 ---
+id: "pkis:concept:diffusion-processes"
+aliases: []
 title: "Diffusion Processes"
 knowledge_type: concept
 also_type: [framework]

@@ -1,4 +1,6 @@
 ---
+id: "pkis:source:steel-bma-forecasting-2011"
+aliases: []
 title: "Bayesian Model Averaging and Forecasting"
 authors: ["Mark F.J. Steel"]
 year: 2011

@@ -1,4 +1,6 @@
 ---
+id: "pkis:concept:variable-binding"
+aliases: []
 title: "Variable Binding"
 knowledge_type: concept
 also_type: []

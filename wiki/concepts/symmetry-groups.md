@@ -1,4 +1,6 @@
 ---
+id: "pkis:concept:symmetry-groups"
+aliases: []
 title: "Symmetry Groups"
 knowledge_type: concept
 also_type: []

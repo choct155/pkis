@@ -1,4 +1,6 @@
 ---
+id: "pkis:framework:queueing-theory"
+aliases: []
 title: "Queueing Theory"
 knowledge_type: framework
 also_type: []

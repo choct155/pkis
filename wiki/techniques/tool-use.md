@@ -1,4 +1,6 @@
 ---
+id: "pkis:technique:tool-use"
+aliases: []
 title: "Tool Use (Function Calling)"
 knowledge_type: technique
 also_type: []

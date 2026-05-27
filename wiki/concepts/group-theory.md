@@ -1,4 +1,6 @@
 ---
+id: "pkis:concept:group-theory"
+aliases: []
 title: "Group Theory"
 knowledge_type: concept
 also_type: []

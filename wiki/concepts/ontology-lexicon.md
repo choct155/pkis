@@ -1,4 +1,6 @@
 ---
+id: "pkis:concept:ontology-lexicon"
+aliases: []
 title: "Ontology Lexicon"
 knowledge_type: concept
 also_type: []

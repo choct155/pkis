@@ -1,4 +1,6 @@
 ---
+id: "pkis:technique:regression-discontinuity"
+aliases: []
 title: "Regression Discontinuity"
 knowledge_type: technique
 also_type: []

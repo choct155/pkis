@@ -1,4 +1,6 @@
 ---
+id: "pkis:technique:singular-value-decomposition"
+aliases: ["SVD"]
 title: "Singular Value Decomposition (SVD)"
 knowledge_type: technique
 also_type: [result]

@@ -1,4 +1,6 @@
 ---
+id: "pkis:concept:dividend-policy"
+aliases: []
 title: "Dividend Policy"
 knowledge_type: concept
 also_type: []

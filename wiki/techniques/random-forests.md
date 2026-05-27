@@ -1,4 +1,6 @@
 ---
+id: "pkis:technique:random-forests"
+aliases: []
 title: "Random Forests"
 knowledge_type: technique
 also_type: []

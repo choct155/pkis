@@ -1,4 +1,6 @@
 ---
+id: "pkis:concept:conditional-independence"
+aliases: []
 title: "Conditional Independence"
 knowledge_type: concept
 also_type: []

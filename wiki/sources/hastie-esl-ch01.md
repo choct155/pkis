@@ -1,4 +1,6 @@
 ---
+id: "pkis:source:hastie-esl-ch01"
+aliases: []
 title: "Ch. 1 — Introduction"
 authors: "Trevor Hastie, Robert Tibshirani, Jerome Friedman"
 year: 2009

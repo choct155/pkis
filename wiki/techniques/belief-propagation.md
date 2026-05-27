@@ -1,4 +1,6 @@
 ---
+id: "pkis:technique:belief-propagation"
+aliases: []
 title: "Belief Propagation"
 knowledge_type: technique
 also_type: []

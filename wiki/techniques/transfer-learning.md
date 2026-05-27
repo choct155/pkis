@@ -1,4 +1,6 @@
 ---
+id: "pkis:technique:transfer-learning"
+aliases: []
 title: "Transfer Learning"
 knowledge_type: technique
 also_type: []

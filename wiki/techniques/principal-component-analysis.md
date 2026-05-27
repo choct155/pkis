@@ -1,4 +1,6 @@
 ---
+id: "pkis:technique:principal-component-analysis"
+aliases: ["PCA"]
 title: "Principal Component Analysis (PCA)"
 knowledge_type: technique
 also_type: []

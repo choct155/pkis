@@ -1,4 +1,6 @@
 ---
+id: "pkis:source:lange-applied-probability"
+aliases: ["Applied Probability (Lange)"]
 title: "Applied Probability (Third Edition)"
 authors: "Kenneth Lange"
 year: 2024

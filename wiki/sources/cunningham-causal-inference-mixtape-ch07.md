@@ -1,4 +1,6 @@
 ---
+id: "pkis:source:cunningham-causal-inference-mixtape-ch07"
+aliases: []
 title: "Ch. 7 — Regression Discontinuity"
 authors: "Scott Cunningham"
 year: 2021

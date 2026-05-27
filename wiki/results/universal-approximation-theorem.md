@@ -1,4 +1,6 @@
 ---
+id: "pkis:result:universal-approximation-theorem"
+aliases: []
 title: "Universal Approximation Theorem"
 knowledge_type: result
 also_type: []

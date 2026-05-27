@@ -1,4 +1,6 @@
 ---
+id: "pkis:source:deisenroth-mml-ch06"
+aliases: []
 title: "Ch. 6 — Probability and Distributions"
 authors: "Marc Peter Deisenroth, A. Aldo Faisal, Cheng Soon Ong"
 year: 2020

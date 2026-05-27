@@ -1,4 +1,6 @@
 ---
+id: "pkis:technique:bootstrap"
+aliases: []
 title: "Bootstrap"
 knowledge_type: technique
 also_type: []

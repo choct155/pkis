@@ -1,4 +1,6 @@
 ---
+id: "pkis:technique:lagrange-multipliers"
+aliases: []
 title: "Lagrange Multipliers"
 knowledge_type: technique
 also_type: [result]

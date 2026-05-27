@@ -1,4 +1,6 @@
 ---
+id: "pkis:source:jensen-smith-corp-finance-history-1984"
+aliases: []
 title: "The Theory of Corporate Finance: A Historical Overview"
 authors: "Michael C. Jensen, Clifford W. Smith"
 year: 1984

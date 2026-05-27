@@ -1,4 +1,6 @@
 ---
+id: "pkis:source:lange-applied-probability-ch05"
+aliases: []
 title: "Ch. 5 — Combinatorial Optimization"
 authors: "Kenneth Lange"
 year: 2024

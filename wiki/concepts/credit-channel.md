@@ -1,4 +1,6 @@
 ---
+id: "pkis:concept:credit-channel"
+aliases: []
 title: "Credit Channel"
 knowledge_type: concept
 also_type: []

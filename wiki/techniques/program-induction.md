@@ -1,4 +1,6 @@
 ---
+id: "pkis:technique:program-induction"
+aliases: []
 title: "Program Induction"
 knowledge_type: technique
 also_type: []

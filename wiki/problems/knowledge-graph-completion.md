@@ -1,4 +1,6 @@
 ---
+id: "pkis:problem:knowledge-graph-completion"
+aliases: []
 title: "Knowledge Graph Completion"
 knowledge_type: problem
 also_type: []

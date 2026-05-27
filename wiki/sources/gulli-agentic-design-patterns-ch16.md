@@ -1,4 +1,6 @@
 ---
+id: "pkis:source:gulli-agentic-design-patterns-ch16"
+aliases: []
 title: "Ch. 16 — Resource-Aware Optimization"
 authors: "Antonio Gullí"
 year: 2025

@@ -1,4 +1,6 @@
 ---
+id: "pkis:concept:linear-algebra"
+aliases: []
 title: "Linear Algebra"
 knowledge_type: concept
 also_type: [framework]

@@ -1,4 +1,6 @@
 ---
+id: "pkis:framework:task-driven-human-ai-framework"
+aliases: []
 title: "Task-Driven Human-AI Framework"
 knowledge_type: framework
 also_type: []

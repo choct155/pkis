@@ -1,4 +1,6 @@
 ---
+id: "pkis:technique:amortized-inference"
+aliases: []
 title: "Amortized Variational Inference"
 knowledge_type: technique
 also_type: []

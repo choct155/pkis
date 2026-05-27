@@ -1,4 +1,6 @@
 ---
+id: "pkis:source:laporta-trust-large-orgs-1996"
+aliases: []
 title: "Trust in Large Organizations"
 authors: "Rafael La Porta, Florencio Lopez-de-Silanes, Andrei Shleifer, Robert W. Vishny"
 year: 1996

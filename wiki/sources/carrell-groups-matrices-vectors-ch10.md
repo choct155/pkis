@@ -1,4 +1,6 @@
 ---
+id: "pkis:source:carrell-groups-matrices-vectors-ch10"
+aliases: []
 title: "Ch. 10 — The Structure Theory of Linear Mappings"
 authors: "James B. Carrell"
 year: 2017

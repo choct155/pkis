@@ -1,4 +1,6 @@
 ---
+id: "pkis:source:nielsen-nndl-ch01"
+aliases: []
 title: "Ch. 1 — Using neural nets to recognize handwritten digits"
 authors: "Michael A. Nielsen"
 year: 2015

@@ -1,4 +1,6 @@
 ---
+id: "pkis:source:carrell-groups-matrices-vectors"
+aliases: ["Groups, Matrices, and Vector Spaces"]
 title: "Groups, Matrices, and Vector Spaces: A Group Theoretic Approach to Linear Algebra"
 authors: "James B. Carrell"
 year: 2017

@@ -1,4 +1,6 @@
 ---
+id: "pkis:concept:organizational-trust"
+aliases: []
 title: "Organizational Trust"
 knowledge_type: concept
 also_type: []

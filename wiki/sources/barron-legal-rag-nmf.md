@@ -1,4 +1,6 @@
 ---
+id: "pkis:source:barron-legal-rag-nmf"
+aliases: []
 title: "Bridging Legal Knowledge and AI: RAG with Vector Stores, Knowledge Graphs, and Hierarchical NMF"
 authors: ["Ryan C. Barron", "Maksim E. Eren", "Olga M. Serafimova", "Cynthia Matuszek", "Boian S. Alexandrov"]
 year: 2025

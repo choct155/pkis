@@ -1,4 +1,6 @@
 ---
+id: "pkis:source:hastie-esl-ch18"
+aliases: []
 title: "Ch. 18 — High-Dimensional Problems: p >> N"
 authors: "Trevor Hastie, Robert Tibshirani, Jerome Friedman"
 year: 2009

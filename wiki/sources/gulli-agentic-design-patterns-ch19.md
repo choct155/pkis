@@ -1,4 +1,6 @@
 ---
+id: "pkis:source:gulli-agentic-design-patterns-ch19"
+aliases: []
 title: "Ch. 19 — Evaluation and Monitoring"
 authors: "Antonio Gullí"
 year: 2025
