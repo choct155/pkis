@@ -265,6 +265,52 @@ Example:
 
 ---
 
+## IRI Identity
+
+Every node in the PKIS wiki carries a stable, canonical IRI that makes it
+addressable across systems — including the PKIS MCP server and the Mnemon
+operational graph that holds references into this wiki.
+
+**Format:** `pkis:{knowledge_type}:{slug}`
+
+where `{health_type}` is the singular form of the node's canonical type:
+
+| Folder | `knowledge_type` value | IRI prefix |
+|---|---|---|
+| `sources/` | `source` | `pkis:source:` |
+| `concepts/` | `concept` | `pkis:concept:` |
+| `techniques/` | `technique` | `pkis:technique:` |
+| `results/` | `result` | `pkis:result:` |
+| `frameworks/` | `framework` | `pkis:framework:` |
+| `problems/` | `problem` | `pkis:problem:` |
+| `principles/` | `principle` | `pkis:principle:` |
+
+**Examples:**
+- `pkis:concept:variational-inference`
+- `pkis:technique:mcmc`
+- `pkis:framework:structural-causal-models`
+- `pkis:result:bayes-theorem`
+- `pkis:source:hastie-esl-ch10`
+
+**Properties:**
+- Generated deterministically from node type and slug at creation time
+- Stored in the `id` field of every node's YAML frontmatter
+- Assigned once and never changed — even if the node is restructured
+- If a node must be retired or merged, add a `deprecated_in_favor_of:` field
+  pointing to the replacement IRI; do not reuse the old `id`
+
+**Aliases registry:** Every node also carries an `aliases` list in its
+frontmatter. This is the full set of known surface forms for the concept —
+abbreviations, synonyms, alternative names across domains. The MCP server
+builds a flat `alias → IRI` registry from all frontmatter at startup.
+This registry enables string-based concept resolution without LLM involvement.
+
+**Schema violation:** Any node missing an `id` field in frontmatter is a
+schema violation. The Librarian must assign an IRI at node creation time.
+The Maintenance agent flags any node without `id`.
+
+---
+
 ## Google Drive — Source of Truth for Binaries
 
 No PDFs or binary files are committed to git. All binaries live in Google Drive under:
@@ -287,6 +333,8 @@ Source entries reference Drive files by **file ID**, not by path. Paths change; 
 
 ```yaml
 ---
+id: "pkis:source:{slug}"       # assigned at creation; never changed
+aliases: []                    # known alternative titles or short names
 title: ""
 authors: ""
 year:
@@ -310,6 +358,8 @@ concepts: []            # wikilinks to knowledge nodes this source covers
 
 ```yaml
 ---
+id: "pkis:concept:{slug}"      # assigned at creation; never changed
+aliases: []                    # abbreviations, synonyms, domain-specific alternative names
 title: ""
 knowledge_type: concept
 also_type: []
@@ -329,6 +379,8 @@ maturity: settled | evolving | contested | historical
 
 ```yaml
 ---
+id: "pkis:technique:{slug}"    # assigned at creation; never changed
+aliases: []                    # abbreviations, synonyms, domain-specific alternative names
 title: ""
 knowledge_type: technique
 also_type: []
@@ -348,6 +400,8 @@ maturity: settled | evolving | contested | historical
 
 ```yaml
 ---
+id: "pkis:result:{slug}"       # assigned at creation; never changed
+aliases: []                    # abbreviations, synonyms, domain-specific alternative names
 title: ""
 knowledge_type: result
 also_type: []
@@ -367,6 +421,8 @@ maturity: settled | evolving | contested | historical
 
 ```yaml
 ---
+id: "pkis:framework:{slug}"    # assigned at creation; never changed
+aliases: []                    # abbreviations, synonyms, domain-specific alternative names
 title: ""
 knowledge_type: framework
 also_type: []
@@ -386,6 +442,8 @@ maturity: settled | evolving | contested | historical
 
 ```yaml
 ---
+id: "pkis:problem:{slug}"      # assigned at creation; never changed
+aliases: []                    # abbreviations, synonyms, domain-specific alternative names
 title: ""
 knowledge_type: problem
 also_type: []
@@ -405,6 +463,8 @@ maturity: settled | evolving | contested | historical
 
 ```yaml
 ---
+id: "pkis:principle:{slug}"    # assigned at creation; never changed
+aliases: []                    # abbreviations, synonyms, domain-specific alternative names
 title: ""
 knowledge_type: principle
 also_type: []
