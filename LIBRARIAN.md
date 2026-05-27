@@ -103,6 +103,8 @@ Proceed directly to Step 2.
 
    ```yaml
    ---
+   id: "pkis:source:[book-slug]-chNN"
+   aliases: []
    title: "Ch. N — [Chapter Title]"
    authors: "[same as parent book]"
    year: [same as parent book]
@@ -133,10 +135,17 @@ Proceed directly to Step 2.
 
 ### Step 3: Create the source entry
 
-Create `wiki/sources/[slug].md` with:
+Create `wiki/sources/[slug].md`. **First line of frontmatter must be the IRI:**
+`id: "pkis:source:[slug]"` — assign deterministically at creation time; never change it.
+
+Populate `aliases:` with any well-known alternative titles, common short names, or
+acronyms for this source (e.g., `["ESL", "Elements of Statistical Learning"]`).
+If none are known, leave as `[]`.
 
 ```markdown
 ---
+id: "pkis:source:[slug]"
+aliases: []
 title: ""
 authors: ""
 year:
@@ -223,6 +232,22 @@ For each knowledge object identified in **Key Knowledge Objects**:
 
 4. **Create the stub** (high and moderate confidence only) in the appropriate folder
    with the correct frontmatter template (see SCHEMA.md § Frontmatter Templates).
+
+   **IRI assignment is mandatory.** Every stub must have `id` as its first frontmatter
+   field, set to `pkis:{knowledge_type}:{slug}` using the singular type name:
+   `concept`, `technique`, `result`, `framework`, `problem`, or `principle`.
+
+   Examples:
+   - A concept stub at `wiki/concepts/variational-inference.md` → `id: "pkis:concept:variational-inference"`
+   - A technique stub at `wiki/techniques/mcmc.md` → `id: "pkis:technique:mcmc"`
+   - A result stub at `wiki/results/bayes-theorem.md` → `id: "pkis:result:bayes-theorem"`
+
+   **Aliases.** Populate `aliases:` with known surface forms: abbreviations ("MCMC"),
+   common shorthand ("Bayes net"), domain-specific synonyms, and alternative names.
+   If the concept is only known by its canonical name, leave as `[]`. Aliases are
+   used by the MCP server's concept resolution registry — better coverage here
+   makes automatic concept detection more accurate.
+
    The body is one sentence: what is this knowledge object? For moderate confidence,
    add a second sentence: "Classification note: assigned as [type] but may be [alt-type]
    because [reason]." Append a `## Reading Path` section with the current source
@@ -283,6 +308,14 @@ Add to `wiki/queue.md`:
 - **Domain coverage.** Every node must have at least one domain tag.
 - **Drive ID is mandatory.** If the source came from Drive, `drive_id` must be populated.
 - **No invention.** If you cannot locate a Drive file, say so rather than guessing an ID.
+- **IRI is mandatory.** Every node — source entry and every knowledge stub — must have
+  `id: "pkis:{type}:{slug}"` as its first frontmatter field. A node without `id` is
+  a schema violation. Use the singular type names: `source`, `concept`, `technique`,
+  `result`, `framework`, `problem`, `principle`. Assign at creation; never modify.
+- **Aliases add value.** Populate `aliases:` thoughtfully — abbreviations, alternative
+  names, and synonyms improve the MCP server's concept resolution accuracy. Do not
+  leave `aliases: []` for well-known concepts that have common abbreviations or
+  synonyms (e.g., MCMC should list `["Markov chain Monte Carlo", "MCMC sampling"]`).
 
 ## Session End
 
