@@ -1,4 +1,6 @@
 ---
+id: "pkis:framework:neurosymbolic-ai"
+aliases: []
 title: "Neurosymbolic AI"
 knowledge_type: framework
 also_type: []

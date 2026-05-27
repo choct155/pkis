@@ -1,4 +1,6 @@
 ---
+id: "pkis:source:fama-agency-problems-1980"
+aliases: []
 title: "Agency Problems and the Theory of the Firm"
 authors: "Eugene F. Fama"
 year: 1980

@@ -1,4 +1,6 @@
 ---
+id: "pkis:source:allemang-semantic-web-ch03"
+aliases: []
 title: "Ch. 3 — RDF — The basis of the Semantic Web"
 authors: "Dean Allemang, Jim Hendler"
 year: 2011

@@ -1,4 +1,6 @@
 ---
+id: "pkis:technique:perturbation-analysis"
+aliases: []
 title: "Perturbation Analysis"
 knowledge_type: technique
 also_type: []

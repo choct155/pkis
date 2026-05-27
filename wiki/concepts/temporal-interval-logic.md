@@ -1,4 +1,6 @@
 ---
+id: "pkis:concept:temporal-interval-logic"
+aliases: []
 title: "Temporal Interval Logic"
 knowledge_type: concept
 also_type: [framework]

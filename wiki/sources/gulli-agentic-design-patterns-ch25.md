@@ -1,4 +1,6 @@
 ---
+id: "pkis:source:gulli-agentic-design-patterns-ch25"
+aliases: []
 title: "Ch. 25 — Building an Agent with AgentSpace"
 authors: "Antonio Gullí"
 year: 2025

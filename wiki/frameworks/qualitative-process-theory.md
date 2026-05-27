@@ -1,4 +1,6 @@
 ---
+id: "pkis:framework:qualitative-process-theory"
+aliases: []
 title: "Qualitative Process Theory"
 knowledge_type: framework
 also_type: []

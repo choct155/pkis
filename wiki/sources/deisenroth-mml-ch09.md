@@ -1,4 +1,6 @@
 ---
+id: "pkis:source:deisenroth-mml-ch09"
+aliases: []
 title: "Ch. 9 — Linear Regression"
 authors: "Marc Peter Deisenroth, A. Aldo Faisal, Cheng Soon Ong"
 year: 2020

@@ -1,4 +1,6 @@
 ---
+id: "pkis:framework:directed-graphical-models"
+aliases: []
 title: "Directed Graphical Models (Bayesian Networks)"
 knowledge_type: framework
 also_type: []

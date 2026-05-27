@@ -1,4 +1,6 @@
 ---
+id: "pkis:source:carrell-groups-matrices-vectors-ch08"
+aliases: []
 title: "Ch. 8 — Eigentheory"
 authors: "James B. Carrell"
 year: 2017

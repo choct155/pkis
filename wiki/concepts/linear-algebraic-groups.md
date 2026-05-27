@@ -1,4 +1,6 @@
 ---
+id: "pkis:concept:linear-algebraic-groups"
+aliases: []
 title: "Linear Algebraic Groups"
 knowledge_type: concept
 also_type: [framework]

@@ -1,4 +1,6 @@
 ---
+id: "pkis:source:benzi-hidden-structure-matrices-ch05"
+aliases: []
 title: "Ch. 5 — Groups and Symmetries in Numerical Linear Algebra"
 authors: ["Hans Z. Munthe-Kaas"]
 year: 2016

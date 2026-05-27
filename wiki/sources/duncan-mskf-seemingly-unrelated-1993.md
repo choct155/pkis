@@ -1,4 +1,6 @@
 ---
+id: "pkis:source:duncan-mskf-seemingly-unrelated-1993"
+aliases: []
 title: "Bayesian Forecasting for Seemingly Unrelated Time Series: Application to Local Government Revenue Forecasting"
 authors: ["George Duncan", "Wilpen Gorr", "Janusz Szczypula"]
 year: 1993

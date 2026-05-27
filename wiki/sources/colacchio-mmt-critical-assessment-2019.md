@@ -1,4 +1,6 @@
 ---
+id: "pkis:source:colacchio-mmt-critical-assessment-2019"
+aliases: []
 title: "Modern Money Theory: A Critical Assessment and a Proposal for the State as Innovator of First Resort"
 authors: "Giorgio Colacchio; Guglielmo Forges Davanzati"
 year: 2019

@@ -1,4 +1,6 @@
 ---
+id: "pkis:source:friedman-rulefit-2005"
+aliases: []
 title: "Predictive Learning via Rule Ensembles"
 authors: ["Jerome H. Friedman", "Bogdan E. Popescu"]
 year: 2005

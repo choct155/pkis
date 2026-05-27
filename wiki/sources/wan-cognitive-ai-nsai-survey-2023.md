@@ -1,4 +1,6 @@
 ---
+id: "pkis:source:wan-cognitive-ai-nsai-survey-2023"
+aliases: []
 title: "Towards Cognitive AI Systems: A Survey and Prospective on Neuro-Symbolic AI"
 authors: "Zishen Wan, Che-Kai Liu, Hanchen Yang, Chaojian Li, Haoran You, Yonggan Fu, Cheng Wan, Tushar Krishna, Yingyan Lin, Arijit Raychowdhury"
 year: 2023

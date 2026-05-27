@@ -1,4 +1,6 @@
 ---
+id: "pkis:technique:maximum-likelihood-estimation"
+aliases: []
 title: "Maximum Likelihood Estimation"
 knowledge_type: technique
 also_type: []

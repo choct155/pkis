@@ -1,4 +1,6 @@
 ---
+id: "pkis:source:lange-applied-probability-ch12"
+aliases: []
 title: "Ch. 12 — Asymptotic Methods"
 authors: "Kenneth Lange"
 year: 2024

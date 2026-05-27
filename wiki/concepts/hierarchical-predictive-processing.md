@@ -1,4 +1,6 @@
 ---
+id: "pkis:concept:hierarchical-predictive-processing"
+aliases: []
 title: "Hierarchical Predictive Processing"
 knowledge_type: concept
 also_type: [framework]

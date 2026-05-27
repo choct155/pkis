@@ -1,4 +1,6 @@
 ---
+id: "pkis:framework:modern-money-theory"
+aliases: []
 title: "Modern Money Theory"
 knowledge_type: framework
 also_type: []

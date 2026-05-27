@@ -1,4 +1,6 @@
 ---
+id: "pkis:source:cunningham-causal-inference-mixtape-ch08"
+aliases: []
 title: "Ch. 8 — Instrumental Variables"
 authors: "Scott Cunningham"
 year: 2021

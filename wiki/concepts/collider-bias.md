@@ -1,4 +1,6 @@
 ---
+id: "pkis:concept:collider-bias"
+aliases: []
 title: "Collider Bias"
 knowledge_type: concept
 also_type: []

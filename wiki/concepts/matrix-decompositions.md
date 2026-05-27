@@ -1,4 +1,6 @@
 ---
+id: "pkis:concept:matrix-decompositions"
+aliases: []
 title: "Matrix Decompositions"
 knowledge_type: concept
 also_type: [framework]

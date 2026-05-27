@@ -1,4 +1,6 @@
 ---
+id: "pkis:concept:regularization"
+aliases: []
 title: "Regularization"
 knowledge_type: concept
 also_type: []

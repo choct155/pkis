@@ -1,4 +1,6 @@
 ---
+id: "pkis:source:hastie-esl-ch08"
+aliases: []
 title: "Ch. 8 — Model Inference and Averaging"
 authors: "Trevor Hastie, Robert Tibshirani, Jerome Friedman"
 year: 2009

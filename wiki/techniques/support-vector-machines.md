@@ -1,4 +1,6 @@
 ---
+id: "pkis:technique:support-vector-machines"
+aliases: []
 title: "Support Vector Machines"
 knowledge_type: technique
 also_type: [framework]

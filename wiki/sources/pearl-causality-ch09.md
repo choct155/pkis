@@ -1,4 +1,6 @@
 ---
+id: "pkis:source:pearl-causality-ch09"
+aliases: []
 title: "Causality Ch. 9: Probability of Causation: Interpretation and Identification"
 knowledge_type: source
 source_type: book-chapter

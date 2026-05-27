@@ -1,4 +1,6 @@
 ---
+id: "pkis:source:liu-symagent"
+aliases: []
 title: "SymAgent: Neural-Symbolic Self-Learning Agent over Knowledge Graphs"
 authors: ["Ben Liu", "Jihai Zhang", "Fangquan Lin", "Cheng Yang", "Min Peng", "Wotao Yin"]
 year: 2025

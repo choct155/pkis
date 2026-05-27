@@ -1,4 +1,6 @@
 ---
+id: "pkis:concept:controllability"
+aliases: []
 title: "Controllability (DES)"
 knowledge_type: concept
 also_type: []

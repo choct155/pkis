@@ -1,4 +1,6 @@
 ---
+id: "pkis:source:cochrane-finance-function-2013"
+aliases: []
 title: "Finance: Function Matters, Not Size"
 authors: "John H. Cochrane"
 year: 2013

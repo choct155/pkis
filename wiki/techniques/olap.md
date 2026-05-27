@@ -1,4 +1,6 @@
 ---
+id: "pkis:technique:olap"
+aliases: ["Online Analytical Processing"]
 title: "OLAP (Online Analytical Processing)"
 knowledge_type: technique
 also_type: [framework]

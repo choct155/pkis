@@ -1,4 +1,6 @@
 ---
+id: "pkis:technique:ridge-regression"
+aliases: []
 title: "Ridge Regression"
 knowledge_type: technique
 also_type: []

@@ -1,4 +1,6 @@
 ---
+id: "pkis:concept:separation-of-ownership-and-control"
+aliases: []
 title: "Separation of Ownership and Control"
 knowledge_type: concept
 also_type: []

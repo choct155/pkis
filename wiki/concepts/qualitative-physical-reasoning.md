@@ -1,4 +1,6 @@
 ---
+id: "pkis:concept:qualitative-physical-reasoning"
+aliases: []
 title: "Qualitative Physical Reasoning"
 knowledge_type: concept
 also_type: [technique]

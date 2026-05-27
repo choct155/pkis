@@ -1,4 +1,6 @@
 ---
+id: "pkis:technique:particle-filter"
+aliases: []
 title: "Particle Filter (Sequential Monte Carlo)"
 knowledge_type: technique
 also_type: []

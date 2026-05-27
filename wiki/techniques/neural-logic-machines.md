@@ -1,4 +1,6 @@
 ---
+id: "pkis:technique:neural-logic-machines"
+aliases: []
 title: "Neural Logic Machines"
 knowledge_type: technique
 also_type: []

@@ -1,4 +1,6 @@
 ---
+id: "pkis:source:hastie-esl-ch12"
+aliases: []
 title: "Ch. 12 — Support Vector Machines and Flexible Discriminants"
 authors: "Trevor Hastie, Robert Tibshirani, Jerome Friedman"
 year: 2009

@@ -1,4 +1,6 @@
 ---
+id: "pkis:source:cheng-cograg"
+aliases: []
 title: "Human Cognition Inspired RAG with Knowledge Graph for Complex Problem Solving"
 authors: ["Yao Cheng", "Yibo Zhao", "Jiapeng Zhu", "Yao Liu", "Xing Sun", "Xiang Li"]
 year: 2025

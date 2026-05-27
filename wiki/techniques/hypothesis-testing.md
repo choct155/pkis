@@ -1,4 +1,6 @@
 ---
+id: "pkis:technique:hypothesis-testing"
+aliases: []
 title: "Hypothesis Testing"
 knowledge_type: technique
 also_type: []

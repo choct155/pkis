@@ -1,4 +1,6 @@
 ---
+id: "pkis:technique:normalizing-flows"
+aliases: []
 title: "Normalizing Flows"
 knowledge_type: technique
 also_type: []

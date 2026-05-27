@@ -1,4 +1,6 @@
 ---
+id: "pkis:framework:kg-maturity-model"
+aliases: []
 title: "KG Maturity Model"
 knowledge_type: framework
 also_type: [concept]

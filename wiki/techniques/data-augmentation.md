@@ -1,4 +1,6 @@
 ---
+id: "pkis:technique:data-augmentation"
+aliases: []
 title: "Data Augmentation"
 knowledge_type: technique
 also_type: []

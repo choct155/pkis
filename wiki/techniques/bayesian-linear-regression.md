@@ -1,4 +1,6 @@
 ---
+id: "pkis:technique:bayesian-linear-regression"
+aliases: []
 title: "Bayesian Linear Regression"
 knowledge_type: technique
 also_type: []

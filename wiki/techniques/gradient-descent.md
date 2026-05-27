@@ -1,4 +1,6 @@
 ---
+id: "pkis:technique:gradient-descent"
+aliases: []
 title: "Gradient Descent"
 knowledge_type: technique
 also_type: []

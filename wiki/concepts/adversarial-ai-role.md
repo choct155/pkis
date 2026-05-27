@@ -1,4 +1,6 @@
 ---
+id: "pkis:concept:adversarial-ai-role"
+aliases: []
 title: "Adversarial AI Role"
 knowledge_type: concept
 also_type: []

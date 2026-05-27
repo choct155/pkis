@@ -1,4 +1,6 @@
 ---
+id: "pkis:source:gulli-agentic-design-patterns-ch10"
+aliases: []
 title: "Ch. 10 — Model Context Protocol"
 authors: "Antonio Gullí"
 year: 2025

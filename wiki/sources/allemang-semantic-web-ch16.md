@@ -1,4 +1,6 @@
 ---
+id: "pkis:source:allemang-semantic-web-ch16"
+aliases: []
 title: "Ch. 16 — Conclusions"
 authors: "Dean Allemang, Jim Hendler"
 year: 2011

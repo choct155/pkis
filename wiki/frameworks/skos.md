@@ -1,4 +1,6 @@
 ---
+id: "pkis:framework:skos"
+aliases: ["Simple Knowledge Organization System"]
 title: "SKOS (Simple Knowledge Organization System)"
 knowledge_type: framework
 also_type: [concept]

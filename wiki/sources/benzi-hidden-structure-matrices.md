@@ -1,4 +1,6 @@
 ---
+id: "pkis:source:benzi-hidden-structure-matrices"
+aliases: []
 title: "Exploiting Hidden Structure in Matrix Computations: Algorithms and Applications"
 authors: ["Michele Benzi", "Dario Bini", "Daniel Kressner", "Hans Munthe-Kaas", "Charles Van Loan"]
 year: 2016

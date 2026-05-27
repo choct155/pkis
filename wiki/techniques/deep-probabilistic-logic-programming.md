@@ -1,4 +1,6 @@
 ---
+id: "pkis:technique:deep-probabilistic-logic-programming"
+aliases: []
 title: "Deep Probabilistic Logic Programming"
 knowledge_type: technique
 also_type: []

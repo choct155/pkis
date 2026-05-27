@@ -1,4 +1,6 @@
 ---
+id: "pkis:source:hastie-esl-ch11"
+aliases: []
 title: "Ch. 11 — Neural Networks"
 authors: "Trevor Hastie, Robert Tibshirani, Jerome Friedman"
 year: 2009

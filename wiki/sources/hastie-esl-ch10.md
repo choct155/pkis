@@ -1,4 +1,6 @@
 ---
+id: "pkis:source:hastie-esl-ch10"
+aliases: []
 title: "Ch. 10 — Boosting and Additive Trees"
 authors: "Trevor Hastie, Robert Tibshirani, Jerome Friedman"
 year: 2009

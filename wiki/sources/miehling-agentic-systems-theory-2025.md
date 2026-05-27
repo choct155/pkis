@@ -1,4 +1,6 @@
 ---
+id: "pkis:source:miehling-agentic-systems-theory-2025"
+aliases: []
 title: "Agentic AI Needs a Systems Theory"
 authors: "Erik Miehling, Karthikeyan Natesan Ramamurthy, Kush R. Varshney, Matthew Riemer, Djallel Bouneffouf, John T. Richards, Amit Dhurandhar, Elizabeth M. Daly, Michael Hind, Prasanna Sattigeri, Dennis Wei, Ambrish Rawat, Jasmina Gajcin, Werner Geyer"
 year: 2025

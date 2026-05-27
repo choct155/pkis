@@ -1,4 +1,6 @@
 ---
+id: "pkis:concept:gaussian-distribution"
+aliases: []
 title: "Gaussian Distribution"
 knowledge_type: concept
 also_type: []

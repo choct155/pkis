@@ -1,4 +1,6 @@
 ---
+id: "pkis:technique:instrumental-variables"
+aliases: []
 title: "Instrumental Variables"
 knowledge_type: technique
 also_type: []

@@ -1,4 +1,6 @@
 ---
+id: "pkis:source:gulli-agentic-design-patterns-ch02"
+aliases: []
 title: "Ch. 2 — Routing"
 authors: "Antonio Gullí"
 year: 2025

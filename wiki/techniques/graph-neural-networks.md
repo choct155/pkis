@@ -1,4 +1,6 @@
 ---
+id: "pkis:technique:graph-neural-networks"
+aliases: []
 title: "Graph Neural Networks"
 knowledge_type: technique
 also_type: []

@@ -1,4 +1,6 @@
 ---
+id: "pkis:source:pearl-causality-ch08"
+aliases: []
 title: "Causality Ch. 8: Imperfect Experiments: Bounding Effects and Counterfactuals"
 knowledge_type: source
 source_type: book-chapter

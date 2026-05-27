@@ -1,4 +1,6 @@
 ---
+id: "pkis:technique:lasso"
+aliases: []
 title: "Lasso (Least Absolute Shrinkage and Selection Operator)"
 knowledge_type: technique
 also_type: []

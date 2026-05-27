@@ -1,4 +1,6 @@
 ---
+id: "pkis:technique:backpropagation"
+aliases: []
 title: "Backpropagation"
 knowledge_type: technique
 also_type: []

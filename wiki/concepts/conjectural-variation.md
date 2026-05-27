@@ -1,4 +1,6 @@
 ---
+id: "pkis:concept:conjectural-variation"
+aliases: []
 title: "Conjectural Variation"
 knowledge_type: concept
 also_type: []

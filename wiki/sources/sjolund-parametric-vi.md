@@ -1,4 +1,6 @@
 ---
+id: "pkis:source:sjolund-parametric-vi"
+aliases: []
 title: "A Tutorial on Parametric Variational Inference"
 knowledge_type: source
 source_type: paper

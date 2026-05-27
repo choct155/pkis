@@ -1,4 +1,6 @@
 ---
+id: "pkis:source:cimiano-ontology-nlp-ch05"
+aliases: []
 title: "Ch. 5 — Grammar Generation"
 authors: "Philipp Cimiano, Christina Unger, John McCrae"
 year: 2014

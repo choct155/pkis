@@ -1,4 +1,6 @@
 ---
+id: "pkis:source:pagano-mm-cornerstone-2005"
+aliases: []
 title: "The Modigliani-Miller Theorems: A Cornerstone of Finance"
 authors: "Marco Pagano"
 year: 2005

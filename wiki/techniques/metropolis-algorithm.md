@@ -1,4 +1,6 @@
 ---
+id: "pkis:technique:metropolis-algorithm"
+aliases: []
 title: "Metropolis Algorithm"
 knowledge_type: technique
 also_type: []

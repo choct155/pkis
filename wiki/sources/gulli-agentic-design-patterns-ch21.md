@@ -1,4 +1,6 @@
 ---
+id: "pkis:source:gulli-agentic-design-patterns-ch21"
+aliases: []
 title: "Ch. 21 — Exploration and Discovery"
 authors: "Antonio Gullí"
 year: 2025

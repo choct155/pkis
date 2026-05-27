@@ -1,4 +1,6 @@
 ---
+id: "pkis:source:cunningham-causal-inference-mixtape-ch03"
+aliases: []
 title: "Ch. 3 — Properties of Regression"
 authors: "Scott Cunningham"
 year: 2021

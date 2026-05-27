@@ -1,4 +1,6 @@
 ---
+id: "pkis:framework:discourse-representation-theory"
+aliases: []
 title: "Discourse Representation Theory"
 knowledge_type: framework
 also_type: [concept]

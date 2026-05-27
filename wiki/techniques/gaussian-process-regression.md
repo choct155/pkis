@@ -1,4 +1,6 @@
 ---
+id: "pkis:technique:gaussian-process-regression"
+aliases: []
 title: "Gaussian Process Regression"
 knowledge_type: technique
 also_type: []

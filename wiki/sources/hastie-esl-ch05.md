@@ -1,4 +1,6 @@
 ---
+id: "pkis:source:hastie-esl-ch05"
+aliases: []
 title: "Ch. 5 — Basis Expansions and Regularization"
 authors: "Trevor Hastie, Robert Tibshirani, Jerome Friedman"
 year: 2009

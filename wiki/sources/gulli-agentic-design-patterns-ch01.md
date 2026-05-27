@@ -1,4 +1,6 @@
 ---
+id: "pkis:source:gulli-agentic-design-patterns-ch01"
+aliases: []
 title: "Ch. 1 — Prompt Chaining"
 authors: "Antonio Gullí"
 year: 2025

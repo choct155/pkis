@@ -1,4 +1,6 @@
 ---
+id: "pkis:source:cunningham-causal-inference-mixtape-ch11"
+aliases: []
 title: "Ch. 11 — Synthetic Control"
 authors: "Scott Cunningham"
 year: 2021

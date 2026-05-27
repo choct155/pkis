@@ -1,4 +1,6 @@
 ---
+id: "pkis:source:scott-varian-bsts-2014"
+aliases: ["BSTS paper", "Scott-Varian 2014"]
 title: "Predicting the Present with Bayesian Structural Time Series"
 authors: ["Steven L. Scott", "Hal Varian"]
 year: 2014

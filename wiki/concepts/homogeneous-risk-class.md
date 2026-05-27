@@ -1,4 +1,6 @@
 ---
+id: "pkis:concept:homogeneous-risk-class"
+aliases: []
 title: "Homogeneous Risk Class"
 knowledge_type: concept
 also_type: [framework]

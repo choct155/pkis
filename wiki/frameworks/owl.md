@@ -1,4 +1,6 @@
 ---
+id: "pkis:framework:owl"
+aliases: ["Web Ontology Language"]
 title: "OWL (Web Ontology Language)"
 knowledge_type: framework
 also_type: [concept]

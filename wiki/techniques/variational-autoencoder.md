@@ -1,4 +1,6 @@
 ---
+id: "pkis:technique:variational-autoencoder"
+aliases: ["VAE"]
 title: "Variational Autoencoder (VAE)"
 knowledge_type: technique
 also_type: [framework]

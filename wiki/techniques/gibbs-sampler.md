@@ -1,4 +1,6 @@
 ---
+id: "pkis:technique:gibbs-sampler"
+aliases: []
 title: "Gibbs Sampler"
 knowledge_type: technique
 also_type: []

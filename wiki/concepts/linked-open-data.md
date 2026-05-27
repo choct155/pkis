@@ -1,4 +1,6 @@
 ---
+id: "pkis:concept:linked-open-data"
+aliases: ["LOD"]
 title: "Linked Open Data (LOD)"
 knowledge_type: concept
 also_type: []

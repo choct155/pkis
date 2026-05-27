@@ -1,4 +1,6 @@
 ---
+id: "pkis:principle:enterprise-first-mindset"
+aliases: []
 title: "Enterprise-First Mindset"
 knowledge_type: principle
 also_type: []

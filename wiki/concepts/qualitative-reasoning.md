@@ -1,4 +1,6 @@
 ---
+id: "pkis:concept:qualitative-reasoning"
+aliases: []
 title: "Qualitative Reasoning"
 knowledge_type: concept
 also_type: []

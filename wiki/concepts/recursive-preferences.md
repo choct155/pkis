@@ -1,4 +1,6 @@
 ---
+id: "pkis:concept:recursive-preferences"
+aliases: []
 title: "Recursive Preferences (Epstein-Zin)"
 knowledge_type: concept
 also_type: []

@@ -1,4 +1,6 @@
 ---
+id: "pkis:concept:rdf"
+aliases: ["RDF"]
 title: "Resource Description Framework (RDF)"
 knowledge_type: concept
 also_type: [framework]

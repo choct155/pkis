@@ -1,4 +1,6 @@
 ---
+id: "pkis:source:congdon-quantity-theory-2024"
+aliases: []
 title: "The Quantity Theory of Money: A New Restatement"
 authors: "Tim Congdon"
 year: 2024

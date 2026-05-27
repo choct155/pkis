@@ -1,4 +1,6 @@
 ---
+id: "pkis:concept:cost-of-capital"
+aliases: []
 title: "Cost of Capital"
 knowledge_type: concept
 also_type: []

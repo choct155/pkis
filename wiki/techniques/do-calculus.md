@@ -1,4 +1,6 @@
 ---
+id: "pkis:technique:do-calculus"
+aliases: []
 title: "do-Calculus"
 knowledge_type: technique
 also_type: [result]

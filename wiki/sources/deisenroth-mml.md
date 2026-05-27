@@ -1,4 +1,6 @@
 ---
+id: "pkis:source:deisenroth-mml"
+aliases: ["MML", "Mathematics for Machine Learning"]
 title: "Mathematics for Machine Learning"
 authors: "Marc Peter Deisenroth, A. Aldo Faisal, Cheng Soon Ong"
 year: 2020

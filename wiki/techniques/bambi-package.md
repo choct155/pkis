@@ -1,4 +1,6 @@
 ---
+id: "pkis:technique:bambi-package"
+aliases: []
 title: "Bambi (BAyesian Model Building Interface)"
 knowledge_type: technique
 also_type: []

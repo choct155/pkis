@@ -1,4 +1,6 @@
 ---
+id: "pkis:technique:faceted-search"
+aliases: []
 title: "Faceted Search"
 knowledge_type: technique
 also_type: []

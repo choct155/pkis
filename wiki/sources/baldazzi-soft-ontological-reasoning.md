@@ -1,4 +1,6 @@
 ---
+id: "pkis:source:baldazzi-soft-ontological-reasoning"
+aliases: []
 title: "Softening Ontological Reasoning with Large Language Models"
 authors: ["Teodoro Baldazzi", "Davide Benedetto", "Luigi Bellomarini", "Emanuel Sallinger", "Adriano Vlad"]
 year: 2024

@@ -1,4 +1,6 @@
 ---
+id: "pkis:technique:knowledge-graph-embedding"
+aliases: []
 title: "Knowledge Graph Embedding"
 knowledge_type: technique
 also_type: []

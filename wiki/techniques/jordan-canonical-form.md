@@ -1,4 +1,6 @@
 ---
+id: "pkis:technique:jordan-canonical-form"
+aliases: []
 title: "Jordan Canonical Form"
 knowledge_type: technique
 also_type: []

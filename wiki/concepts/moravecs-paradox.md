@@ -1,4 +1,6 @@
 ---
+id: "pkis:concept:moravecs-paradox"
+aliases: []
 title: "Moravec's Paradox"
 knowledge_type: concept
 also_type: []

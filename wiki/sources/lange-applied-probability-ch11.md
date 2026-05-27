@@ -1,4 +1,6 @@
 ---
+id: "pkis:source:lange-applied-probability-ch11"
+aliases: []
 title: "Ch. 11 — Diffusion Processes"
 authors: "Kenneth Lange"
 year: 2024

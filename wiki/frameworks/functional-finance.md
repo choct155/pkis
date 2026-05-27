@@ -1,4 +1,6 @@
 ---
+id: "pkis:framework:functional-finance"
+aliases: []
 title: "Functional Finance"
 knowledge_type: framework
 also_type: []

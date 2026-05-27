@@ -1,4 +1,6 @@
 ---
+id: "pkis:source:carrell-groups-matrices-vectors-ch03"
+aliases: []
 title: "Ch. 3 — Matrices"
 authors: "James B. Carrell"
 year: 2017

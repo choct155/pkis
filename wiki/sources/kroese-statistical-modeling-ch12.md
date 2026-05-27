@@ -1,4 +1,6 @@
 ---
+id: "pkis:source:kroese-statistical-modeling-ch12"
+aliases: []
 title: "Ch. 12 — Dependent Data Models"
 authors: ["Joshua C.C. Chan", "Dirk P. Kroese"]
 year: 2025

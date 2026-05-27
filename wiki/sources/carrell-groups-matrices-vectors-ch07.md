@@ -1,4 +1,6 @@
 ---
+id: "pkis:source:carrell-groups-matrices-vectors-ch07"
+aliases: []
 title: "Ch. 7 — Linear Mappings"
 authors: "James B. Carrell"
 year: 2017

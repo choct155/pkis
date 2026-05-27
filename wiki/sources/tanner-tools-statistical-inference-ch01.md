@@ -1,4 +1,6 @@
 ---
+id: "pkis:source:tanner-tools-statistical-inference-ch01"
+aliases: []
 title: "Ch. 1 — Introduction"
 authors: ["Martin A. Tanner"]
 year: 1993

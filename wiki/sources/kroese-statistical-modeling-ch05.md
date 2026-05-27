@@ -1,4 +1,6 @@
 ---
+id: "pkis:source:kroese-statistical-modeling-ch05"
+aliases: []
 title: "Ch. 5 — Statistical Inference"
 authors: ["Joshua C.C. Chan", "Dirk P. Kroese"]
 year: 2025

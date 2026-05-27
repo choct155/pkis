@@ -1,4 +1,6 @@
 ---
+id: "pkis:technique:gradient-boosting"
+aliases: []
 title: "Gradient Boosting"
 knowledge_type: technique
 also_type: []

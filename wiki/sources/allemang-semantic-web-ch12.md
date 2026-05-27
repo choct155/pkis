@@ -1,4 +1,6 @@
 ---
+id: "pkis:source:allemang-semantic-web-ch12"
+aliases: []
 title: "Ch. 12 — Counting and sets in OWL"
 authors: "Dean Allemang, Jim Hendler"
 year: 2011

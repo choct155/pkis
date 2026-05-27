@@ -1,4 +1,6 @@
 ---
+id: "pkis:concept:discrete-event-systems"
+aliases: []
 title: "Discrete Event Systems"
 knowledge_type: concept
 also_type: [framework]

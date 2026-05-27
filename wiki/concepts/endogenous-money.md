@@ -1,4 +1,6 @@
 ---
+id: "pkis:concept:endogenous-money"
+aliases: []
 title: "Endogenous Money"
 knowledge_type: concept
 also_type: []

@@ -1,4 +1,6 @@
 ---
+id: "pkis:concept:monetary-financing"
+aliases: []
 title: "Monetary Financing"
 knowledge_type: concept
 also_type: []

@@ -1,4 +1,6 @@
 ---
+id: "pkis:source:higgins-acqi-dialog-2024"
+aliases: []
 title: "Actionable Conversational Quality Indicators for Improving Task-Oriented Dialog Systems"
 authors: "Michael Higgins, Dominic Widdows, Beth Ann Hockey, Akshay Hazare, Kristen Howell, Gwen Christian, Sujit Mathi, Chris Brew, Andrew Maurer, George Bonev, Matthew Dunn, Joseph Bradley"
 year: 2024

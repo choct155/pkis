@@ -1,4 +1,6 @@
 ---
+id: "pkis:concept:bank-run"
+aliases: []
 title: "Bank Run"
 knowledge_type: concept
 also_type: []

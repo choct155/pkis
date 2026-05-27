@@ -1,4 +1,6 @@
 ---
+id: "pkis:technique:em-algorithm"
+aliases: ["EM"]
 title: "Expectation-Maximization (EM) Algorithm"
 knowledge_type: technique
 also_type: []

@@ -1,4 +1,6 @@
 ---
+id: "pkis:concept:stochastic-discount-factor"
+aliases: []
 title: "Stochastic Discount Factor"
 knowledge_type: concept
 also_type: []

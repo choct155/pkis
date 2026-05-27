@@ -1,4 +1,6 @@
 ---
+id: "pkis:concept:term-structure-of-interest-rates"
+aliases: []
 title: "Term Structure of Interest Rates"
 knowledge_type: concept
 also_type: []

@@ -1,4 +1,6 @@
 ---
+id: "pkis:technique:sparql"
+aliases: []
 title: "SPARQL"
 knowledge_type: technique
 also_type: []

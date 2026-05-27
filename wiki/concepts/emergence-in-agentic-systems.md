@@ -1,4 +1,6 @@
 ---
+id: "pkis:concept:emergence-in-agentic-systems"
+aliases: []
 title: "Emergence in Agentic Systems"
 knowledge_type: concept
 also_type: []

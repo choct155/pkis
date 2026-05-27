@@ -1,4 +1,6 @@
 ---
+id: "pkis:source:gulli-agentic-design-patterns-ch17"
+aliases: []
 title: "Ch. 17 — Reasoning Techniques"
 authors: "Antonio Gullí"
 year: 2025

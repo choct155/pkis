@@ -1,4 +1,6 @@
 ---
+id: "pkis:source:abdelkader-distribution-relationships-2010"
+aliases: []
 title: "Probability Distribution Relationships"
 authors: "Y.H. Abdelkader, Z.A. Al-Marzouq"
 year: 2010

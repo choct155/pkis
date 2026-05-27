@@ -1,4 +1,6 @@
 ---
+id: "pkis:source:rosenthal-lead-siloed-org-2024"
+aliases: []
 title: "How to Lead Across a Siloed Organization"
 authors: "Jeff Rosenthal, Molly Rosen"
 year: 2024

@@ -1,4 +1,6 @@
 ---
+id: "pkis:technique:cross-validation"
+aliases: []
 title: "Cross-Validation"
 knowledge_type: technique
 also_type: []

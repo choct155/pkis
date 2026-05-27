@@ -1,4 +1,6 @@
 ---
+id: "pkis:source:capretto-bambi-2022"
+aliases: []
 title: "Bambi: A Simple Interface for Fitting Bayesian Linear Models in Python"
 authors: "Tomás Capretto, Camen Piho, Ravin Kumar, Jacob Westfall, Tal Yarkoni, Osvaldo A. Martin"
 year: 2022

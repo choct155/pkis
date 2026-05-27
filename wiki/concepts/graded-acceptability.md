@@ -1,4 +1,6 @@
 ---
+id: "pkis:concept:graded-acceptability"
+aliases: []
 title: "Graded Acceptability"
 knowledge_type: concept
 also_type: [principle]

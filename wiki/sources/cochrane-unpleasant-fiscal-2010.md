@@ -1,4 +1,6 @@
 ---
+id: "pkis:source:cochrane-unpleasant-fiscal-2010"
+aliases: []
 title: "Understanding Policy in the Great Recession: Some Unpleasant Fiscal Arithmetic"
 authors: "John H. Cochrane"
 year: 2010

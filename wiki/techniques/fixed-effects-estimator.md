@@ -1,4 +1,6 @@
 ---
+id: "pkis:technique:fixed-effects-estimator"
+aliases: []
 title: "Fixed Effects Estimator"
 knowledge_type: technique
 also_type: []

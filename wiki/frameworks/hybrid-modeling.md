@@ -1,4 +1,6 @@
 ---
+id: "pkis:framework:hybrid-modeling"
+aliases: []
 title: "Hybrid Modeling"
 knowledge_type: framework
 also_type: []

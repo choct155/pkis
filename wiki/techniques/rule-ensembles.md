@@ -1,4 +1,6 @@
 ---
+id: "pkis:technique:rule-ensembles"
+aliases: []
 title: "Rule Ensembles"
 knowledge_type: technique
 also_type: []

@@ -1,4 +1,6 @@
 ---
+id: "pkis:source:gulli-agentic-design-patterns-ch14"
+aliases: []
 title: "Ch. 14 — Knowledge Retrieval (RAG)"
 authors: "Antonio Gullí"
 year: 2025

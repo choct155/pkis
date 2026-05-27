@@ -1,4 +1,6 @@
 ---
+id: "pkis:technique:execution-accuracy"
+aliases: []
 title: "Execution Accuracy"
 knowledge_type: technique
 also_type: [result]

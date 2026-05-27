@@ -1,4 +1,6 @@
 ---
+id: "pkis:concept:organizational-slack"
+aliases: []
 title: "Organizational Slack"
 knowledge_type: concept
 also_type: []

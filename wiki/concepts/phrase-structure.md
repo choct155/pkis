@@ -1,4 +1,6 @@
 ---
+id: "pkis:concept:phrase-structure"
+aliases: []
 title: "Phrase Structure"
 knowledge_type: concept
 also_type: []

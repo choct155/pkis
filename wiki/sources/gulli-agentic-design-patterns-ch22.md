@@ -1,4 +1,6 @@
 ---
+id: "pkis:source:gulli-agentic-design-patterns-ch22"
+aliases: []
 title: "Ch. 22 — Advanced Prompting Techniques"
 authors: "Antonio Gullí"
 year: 2025

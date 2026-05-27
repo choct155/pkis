@@ -1,4 +1,6 @@
 ---
+id: "pkis:framework:agentic-systems"
+aliases: []
 title: "Agentic Systems"
 knowledge_type: framework
 also_type: [concept]

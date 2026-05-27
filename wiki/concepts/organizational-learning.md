@@ -1,4 +1,6 @@
 ---
+id: "pkis:concept:organizational-learning"
+aliases: []
 title: "Organizational Learning"
 knowledge_type: concept
 also_type: []

@@ -1,4 +1,6 @@
 ---
+id: "pkis:source:tanner-tools-statistical-inference-ch06"
+aliases: []
 title: "Ch. 6 — Markov Chain Monte Carlo: The Gibbs Sampler and the Metropolis Algorithm"
 authors: ["Martin A. Tanner"]
 year: 1993

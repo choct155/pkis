@@ -1,4 +1,6 @@
 ---
+id: "pkis:source:cimiano-ontology-nlp-ch06"
+aliases: []
 title: "Ch. 6 — Putting Everything Together"
 authors: "Philipp Cimiano, Christina Unger, John McCrae"
 year: 2014

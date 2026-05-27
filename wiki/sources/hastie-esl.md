@@ -1,4 +1,6 @@
 ---
+id: "pkis:source:hastie-esl"
+aliases: ["ESL", "Elements of Statistical Learning"]
 title: "The Elements of Statistical Learning: Data Mining, Inference, and Prediction (2nd Edition)"
 authors: "Trevor Hastie, Robert Tibshirani, Jerome Friedman"
 year: 2009

@@ -1,4 +1,6 @@
 ---
+id: "pkis:concept:asymmetric-neurosymbolic-coupling"
+aliases: []
 title: "Asymmetric Neurosymbolic Coupling"
 knowledge_type: concept
 also_type: []

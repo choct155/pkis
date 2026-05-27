@@ -1,4 +1,6 @@
 ---
+id: "pkis:source:cunningham-causal-inference-mixtape-ch09"
+aliases: []
 title: "Ch. 9 — Panel Data"
 authors: "Scott Cunningham"
 year: 2021

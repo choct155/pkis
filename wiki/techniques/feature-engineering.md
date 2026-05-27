@@ -1,4 +1,6 @@
 ---
+id: "pkis:technique:feature-engineering"
+aliases: []
 title: "Feature Engineering"
 knowledge_type: technique
 also_type: []

@@ -1,4 +1,6 @@
 ---
+id: "pkis:source:cassandras-des-intro-ch02"
+aliases: []
 title: "Ch. 2 — Languages and Automata"
 authors: "Christos G. Cassandras, Stéphane Lafortune"
 year: 2021

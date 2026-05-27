@@ -1,4 +1,6 @@
 ---
+id: "pkis:concept:finite-automata"
+aliases: []
 title: "Finite Automata"
 knowledge_type: concept
 also_type: [framework]

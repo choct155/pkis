@@ -1,4 +1,6 @@
 ---
+id: "pkis:source:hastie-esl-ch15"
+aliases: []
 title: "Ch. 15 — Random Forests"
 authors: "Trevor Hastie, Robert Tibshirani, Jerome Friedman"
 year: 2009

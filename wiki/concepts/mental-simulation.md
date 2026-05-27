@@ -1,4 +1,6 @@
 ---
+id: "pkis:concept:mental-simulation"
+aliases: []
 title: "Mental Simulation"
 knowledge_type: concept
 also_type: []

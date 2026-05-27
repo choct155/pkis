@@ -1,4 +1,6 @@
 ---
+id: "pkis:source:pearl-causality-ch04"
+aliases: []
 title: "Causality Ch. 4: Actions, Plans, and Direct Effects"
 knowledge_type: source
 source_type: book-chapter

@@ -1,4 +1,6 @@
 ---
+id: "pkis:source:carrell-groups-matrices-vectors-ch06"
+aliases: []
 title: "Ch. 6 — Vector Spaces"
 authors: "James B. Carrell"
 year: 2017

@@ -1,4 +1,6 @@
 ---
+id: "pkis:concept:knowledge-graph"
+aliases: []
 title: "Knowledge Graph"
 knowledge_type: concept
 also_type: [framework]

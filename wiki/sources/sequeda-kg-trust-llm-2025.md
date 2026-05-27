@@ -1,4 +1,6 @@
 ---
+id: "pkis:source:sequeda-kg-trust-llm-2025"
+aliases: []
 title: "Knowledge Graphs as a Source of Trust for LLM-Powered Enterprise Question Answering"
 authors: "Juan Sequeda, Dean Allemang, Bryon Jacob"
 year: 2025

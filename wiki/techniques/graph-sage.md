@@ -1,4 +1,6 @@
 ---
+id: "pkis:technique:graph-sage"
+aliases: []
 title: "GraphSAGE (Sample and Aggregate)"
 knowledge_type: technique
 also_type: []

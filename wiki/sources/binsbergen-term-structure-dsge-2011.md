@@ -1,4 +1,6 @@
 ---
+id: "pkis:source:binsbergen-term-structure-dsge-2011"
+aliases: []
 title: "The Term Structure of Interest Rates in a DSGE Model with Recursive Preferences"
 authors: "Jules H. van Binsbergen, Jesús Fernández-Villaverde, Ralph S.J. Koijen, Juan F. Rubio-Ramírez"
 year: 2011

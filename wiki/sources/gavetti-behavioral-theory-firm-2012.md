@@ -1,4 +1,6 @@
 ---
+id: "pkis:source:gavetti-behavioral-theory-firm-2012"
+aliases: []
 title: "The Behavioral Theory of the Firm: Assessment and Prospects"
 authors: "Giovanni Gavetti, Henrich R. Greve, Daniel A. Levinthal, William Ocasio"
 year: 2012

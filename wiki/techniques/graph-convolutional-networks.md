@@ -1,4 +1,6 @@
 ---
+id: "pkis:technique:graph-convolutional-networks"
+aliases: []
 title: "Graph Convolutional Networks"
 knowledge_type: technique
 also_type: []

@@ -1,4 +1,6 @@
 ---
+id: "pkis:technique:kalman-filter"
+aliases: []
 title: "Kalman Filter"
 knowledge_type: technique
 also_type: []

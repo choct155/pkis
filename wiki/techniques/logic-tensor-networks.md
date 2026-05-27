@@ -1,4 +1,6 @@
 ---
+id: "pkis:technique:logic-tensor-networks"
+aliases: []
 title: "Logic Tensor Networks"
 knowledge_type: technique
 also_type: []

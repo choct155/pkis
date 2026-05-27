@@ -1,4 +1,6 @@
 ---
+id: "pkis:source:tanner-tools-statistical-inference"
+aliases: []
 title: "Tools for Statistical Inference: Methods for the Exploration of Posterior Distributions and Likelihood Functions"
 authors: ["Martin A. Tanner"]
 year: 1993

@@ -1,4 +1,6 @@
 ---
+id: "pkis:source:nielsen-nndl-appA"
+aliases: []
 title: "Appendix A — Is there a simple algorithm for intelligence?"
 authors: "Michael A. Nielsen"
 year: 2015

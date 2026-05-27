@@ -1,4 +1,6 @@
 ---
+id: "pkis:framework:statistical-relational-learning"
+aliases: []
 title: "Statistical Relational Learning"
 knowledge_type: framework
 also_type: []

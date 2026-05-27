@@ -1,4 +1,6 @@
 ---
+id: "pkis:source:allemang-semantic-web-ch15"
+aliases: []
 title: "Ch. 15 — Expert modeling in OWL"
 authors: "Dean Allemang, Jim Hendler"
 year: 2011

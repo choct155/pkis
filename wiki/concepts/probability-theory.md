@@ -1,4 +1,6 @@
 ---
+id: "pkis:concept:probability-theory"
+aliases: []
 title: "Probability Theory"
 knowledge_type: concept
 also_type: [framework]

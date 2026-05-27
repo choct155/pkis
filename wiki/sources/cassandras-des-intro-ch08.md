@@ -1,4 +1,6 @@
 ---
+id: "pkis:source:cassandras-des-intro-ch08"
+aliases: []
 title: "Ch. 8 — Introduction to Queueing Theory"
 authors: "Christos G. Cassandras, Stéphane Lafortune"
 year: 2021

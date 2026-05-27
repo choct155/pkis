@@ -1,4 +1,6 @@
 ---
+id: "pkis:concept:propensity-score"
+aliases: []
 title: "Propensity Score"
 knowledge_type: concept
 also_type: []

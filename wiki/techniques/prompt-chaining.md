@@ -1,4 +1,6 @@
 ---
+id: "pkis:technique:prompt-chaining"
+aliases: []
 title: "Prompt Chaining"
 knowledge_type: technique
 also_type: []

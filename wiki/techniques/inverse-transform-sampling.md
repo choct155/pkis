@@ -1,4 +1,6 @@
 ---
+id: "pkis:technique:inverse-transform-sampling"
+aliases: []
 title: "Inverse Transform Sampling"
 knowledge_type: technique
 also_type: []

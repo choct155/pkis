@@ -1,4 +1,6 @@
 ---
+id: "pkis:source:gulli-agentic-design-patterns-ch06"
+aliases: []
 title: "Ch. 6 — Planning"
 authors: "Antonio Gullí"
 year: 2025

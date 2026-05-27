@@ -1,4 +1,6 @@
 ---
+id: "pkis:concept:temporal-logic"
+aliases: []
 title: "Temporal Logic"
 knowledge_type: concept
 also_type: [framework]

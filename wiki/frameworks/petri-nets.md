@@ -1,4 +1,6 @@
 ---
+id: "pkis:framework:petri-nets"
+aliases: []
 title: "Petri Nets"
 knowledge_type: framework
 also_type: [concept]

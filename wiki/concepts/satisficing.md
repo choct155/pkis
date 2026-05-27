@@ -1,4 +1,6 @@
 ---
+id: "pkis:concept:satisficing"
+aliases: []
 title: "Satisficing"
 knowledge_type: concept
 also_type: []

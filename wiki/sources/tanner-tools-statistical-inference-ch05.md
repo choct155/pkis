@@ -1,4 +1,6 @@
 ---
+id: "pkis:source:tanner-tools-statistical-inference-ch05"
+aliases: []
 title: "Ch. 5 — The Data Augmentation Algorithm"
 authors: ["Martin A. Tanner"]
 year: 1993

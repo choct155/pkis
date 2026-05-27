@@ -1,4 +1,6 @@
 ---
+id: "pkis:source:hastie-esl-ch03"
+aliases: []
 title: "Ch. 3 — Linear Methods for Regression"
 authors: "Trevor Hastie, Robert Tibshirani, Jerome Friedman"
 year: 2009

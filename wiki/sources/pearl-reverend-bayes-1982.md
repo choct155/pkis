@@ -1,4 +1,6 @@
 ---
+id: "pkis:source:pearl-reverend-bayes-1982"
+aliases: []
 title: "Reverend Bayes on Inference Engines: A Distributed Hierarchical Approach"
 authors: "Judea Pearl"
 year: 1982

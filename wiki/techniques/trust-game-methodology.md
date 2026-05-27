@@ -1,4 +1,6 @@
 ---
+id: "pkis:technique:trust-game-methodology"
+aliases: []
 title: "Trust Game Methodology"
 knowledge_type: technique
 also_type: []

@@ -1,4 +1,6 @@
 ---
+id: "pkis:concept:hierarchical-low-rank-matrices"
+aliases: []
 title: "Hierarchical Low-Rank Matrices"
 knowledge_type: concept
 also_type: []

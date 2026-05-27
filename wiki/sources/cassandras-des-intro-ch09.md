@@ -1,4 +1,6 @@
 ---
+id: "pkis:source:cassandras-des-intro-ch09"
+aliases: []
 title: "Ch. 9 — Controlled Markov Chains"
 authors: "Christos G. Cassandras, Stéphane Lafortune"
 year: 2021

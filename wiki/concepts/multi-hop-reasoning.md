@@ -1,4 +1,6 @@
 ---
+id: "pkis:concept:multi-hop-reasoning"
+aliases: []
 title: "Multi-Hop Reasoning"
 knowledge_type: concept
 also_type: []

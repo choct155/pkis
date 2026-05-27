@@ -1,4 +1,6 @@
 ---
+id: "pkis:source:yellapragada-variational-bayes"
+aliases: []
 title: "Variational Bayes: A Report on Approaches and Applications"
 knowledge_type: source
 source_type: paper

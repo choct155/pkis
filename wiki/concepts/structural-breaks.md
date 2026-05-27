@@ -1,4 +1,6 @@
 ---
+id: "pkis:concept:structural-breaks"
+aliases: []
 title: "Structural Breaks"
 knowledge_type: concept
 also_type: []

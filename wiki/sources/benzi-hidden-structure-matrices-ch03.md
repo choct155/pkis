@@ -1,4 +1,6 @@
 ---
+id: "pkis:source:benzi-hidden-structure-matrices-ch03"
+aliases: []
 title: "Ch. 3 — Matrices with Hierarchical Low-Rank Structures"
 authors: ["Jonas Ballani", "Daniel Kressner"]
 year: 2016

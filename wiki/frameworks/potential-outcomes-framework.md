@@ -1,4 +1,6 @@
 ---
+id: "pkis:framework:potential-outcomes-framework"
+aliases: []
 title: "Potential Outcomes Framework"
 knowledge_type: framework
 also_type: [concept]

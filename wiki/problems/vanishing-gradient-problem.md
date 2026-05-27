@@ -1,4 +1,6 @@
 ---
+id: "pkis:problem:vanishing-gradient-problem"
+aliases: []
 title: "Vanishing Gradient Problem"
 knowledge_type: problem
 also_type: []

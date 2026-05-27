@@ -1,4 +1,6 @@
 ---
+id: "pkis:framework:monetary-circuit"
+aliases: []
 title: "Monetary Circuit"
 knowledge_type: framework
 also_type: [concept]

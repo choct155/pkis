@@ -1,4 +1,6 @@
 ---
+id: "pkis:concept:human-ai-collaboration-failure"
+aliases: []
 title: "Human-AI Collaboration Failure"
 knowledge_type: concept
 also_type: [problem]

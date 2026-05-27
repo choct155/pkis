@@ -1,4 +1,6 @@
 ---
+id: "pkis:concept:martingales"
+aliases: []
 title: "Martingales"
 knowledge_type: concept
 also_type: []

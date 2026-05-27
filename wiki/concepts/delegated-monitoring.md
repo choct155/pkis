@@ -1,4 +1,6 @@
 ---
+id: "pkis:concept:delegated-monitoring"
+aliases: []
 title: "Delegated Monitoring"
 knowledge_type: concept
 also_type: []

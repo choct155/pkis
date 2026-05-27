@@ -1,4 +1,6 @@
 ---
+id: "pkis:technique:inductive-representation-learning"
+aliases: []
 title: "Inductive Representation Learning"
 knowledge_type: technique
 also_type: []

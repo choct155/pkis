@@ -1,4 +1,6 @@
 ---
+id: "pkis:concept:selection-bias"
+aliases: []
 title: "Selection Bias"
 knowledge_type: concept
 also_type: []

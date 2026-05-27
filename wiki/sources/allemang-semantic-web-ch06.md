@@ -1,4 +1,6 @@
 ---
+id: "pkis:source:allemang-semantic-web-ch06"
+aliases: []
 title: "Ch. 6 — RDF and inferencing"
 authors: "Dean Allemang, Jim Hendler"
 year: 2011

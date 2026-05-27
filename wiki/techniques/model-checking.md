@@ -1,4 +1,6 @@
 ---
+id: "pkis:technique:model-checking"
+aliases: []
 title: "Model Checking"
 knowledge_type: technique
 also_type: []

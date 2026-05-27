@@ -1,4 +1,6 @@
 ---
+id: "pkis:technique:importance-sampling"
+aliases: []
 title: "Importance Sampling"
 knowledge_type: technique
 also_type: []

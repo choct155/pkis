@@ -1,4 +1,6 @@
 ---
+id: "pkis:technique:neural-networks"
+aliases: []
 title: "Neural Networks (Feedforward)"
 knowledge_type: technique
 also_type: [framework]

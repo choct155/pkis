@@ -1,4 +1,6 @@
 ---
+id: "pkis:source:lange-applied-probability-ch13"
+aliases: []
 title: "Ch. 13 — Numerical Methods"
 authors: "Kenneth Lange"
 year: 2024

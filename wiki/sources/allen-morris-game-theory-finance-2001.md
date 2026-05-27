@@ -1,4 +1,6 @@
 ---
+id: "pkis:source:allen-morris-game-theory-finance-2001"
+aliases: []
 title: "Game Theory Models in Finance"
 authors: "Franklin Allen and Stephen Morris"
 year: 2001

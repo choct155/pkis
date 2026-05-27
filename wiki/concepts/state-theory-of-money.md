@@ -1,4 +1,6 @@
 ---
+id: "pkis:concept:state-theory-of-money"
+aliases: []
 title: "State Theory of Money"
 knowledge_type: concept
 also_type: []

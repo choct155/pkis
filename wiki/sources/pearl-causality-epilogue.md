@@ -1,4 +1,6 @@
 ---
+id: "pkis:source:pearl-causality-epilogue"
+aliases: []
 title: "Causality Epilogue: The Art and Science of Cause and Effect"
 knowledge_type: source
 source_type: book-chapter

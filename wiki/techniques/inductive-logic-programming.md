@@ -1,4 +1,6 @@
 ---
+id: "pkis:technique:inductive-logic-programming"
+aliases: []
 title: "Inductive Logic Programming"
 knowledge_type: technique
 also_type: []

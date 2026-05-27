@@ -1,4 +1,6 @@
 ---
+id: "pkis:technique:decision-trees"
+aliases: ["CART"]
 title: "Decision Trees (CART)"
 knowledge_type: technique
 also_type: []

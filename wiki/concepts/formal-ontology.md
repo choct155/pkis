@@ -1,4 +1,6 @@
 ---
+id: "pkis:concept:formal-ontology"
+aliases: []
 title: "Formal Ontology"
 knowledge_type: concept
 also_type: []

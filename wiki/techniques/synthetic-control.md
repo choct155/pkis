@@ -1,4 +1,6 @@
 ---
+id: "pkis:technique:synthetic-control"
+aliases: []
 title: "Synthetic Control"
 knowledge_type: technique
 also_type: []

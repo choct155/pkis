@@ -1,4 +1,6 @@
 ---
+id: "pkis:source:tanner-tools-statistical-inference-ch02"
+aliases: []
 title: "Ch. 2 — Normal Approximations to Likelihoods and to Posteriors"
 authors: ["Martin A. Tanner"]
 year: 1993

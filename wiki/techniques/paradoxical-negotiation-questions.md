@@ -1,4 +1,6 @@
 ---
+id: "pkis:technique:paradoxical-negotiation-questions"
+aliases: []
 title: "Paradoxical Negotiation Questions"
 knowledge_type: technique
 also_type: [principle]

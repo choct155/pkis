@@ -1,4 +1,6 @@
 ---
+id: "pkis:technique:variational-inference"
+aliases: []
 title: "Variational Inference"
 knowledge_type: technique
 also_type: [framework]

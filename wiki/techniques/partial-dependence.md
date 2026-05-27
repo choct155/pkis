@@ -1,4 +1,6 @@
 ---
+id: "pkis:technique:partial-dependence"
+aliases: []
 title: "Partial Dependence"
 knowledge_type: technique
 also_type: []

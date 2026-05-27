@@ -1,4 +1,6 @@
 ---
+id: "pkis:concept:structured-matrices"
+aliases: []
 title: "Structured Matrices"
 knowledge_type: concept
 also_type: []

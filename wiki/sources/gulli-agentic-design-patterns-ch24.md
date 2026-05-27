@@ -1,4 +1,6 @@
 ---
+id: "pkis:source:gulli-agentic-design-patterns-ch24"
+aliases: []
 title: "Ch. 24 — A Quick Overview of Agentic Frameworks"
 authors: "Antonio Gullí"
 year: 2025

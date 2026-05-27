@@ -1,4 +1,6 @@
 ---
+id: "pkis:source:gulli-agentic-design-patterns"
+aliases: ["Agentic Design Patterns"]
 title: "Agentic Design Patterns: A Hands-On Guide to Building Intelligent Systems"
 authors: "Antonio Gullí"
 year: 2025

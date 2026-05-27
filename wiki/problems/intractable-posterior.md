@@ -1,4 +1,6 @@
 ---
+id: "pkis:problem:intractable-posterior"
+aliases: []
 title: "Intractable Posterior Inference"
 knowledge_type: problem
 also_type: []

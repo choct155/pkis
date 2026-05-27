@@ -1,4 +1,6 @@
 ---
+id: "pkis:source:gulli-agentic-design-patterns-ch23"
+aliases: []
 title: "Ch. 23 — AI Agentic Interactions: From GUI to Real World Environment"
 authors: "Antonio Gullí"
 year: 2025

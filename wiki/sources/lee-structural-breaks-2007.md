@@ -1,4 +1,6 @@
 ---
+id: "pkis:source:lee-structural-breaks-2007"
+aliases: []
 title: "Forecasting with Structural Breaks: The District of Columbia Before and After the Financial Crisis"
 authors: ["Fitzroy Lee"]
 year: 2007

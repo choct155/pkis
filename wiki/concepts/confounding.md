@@ -1,4 +1,6 @@
 ---
+id: "pkis:concept:confounding"
+aliases: []
 title: "Confounding"
 knowledge_type: concept
 also_type: []

@@ -1,4 +1,6 @@
 ---
+id: "pkis:technique:gaussian-mixture-models"
+aliases: ["GMM"]
 title: "Gaussian Mixture Models (GMM)"
 knowledge_type: technique
 also_type: [framework]

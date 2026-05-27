@@ -1,4 +1,6 @@
 ---
+id: "pkis:result:modigliani-miller-theorem"
+aliases: []
 title: "Modigliani-Miller Theorem"
 knowledge_type: result
 also_type: []

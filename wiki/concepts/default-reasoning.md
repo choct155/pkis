@@ -1,4 +1,6 @@
 ---
+id: "pkis:concept:default-reasoning"
+aliases: []
 title: "Default Reasoning"
 knowledge_type: concept
 also_type: []

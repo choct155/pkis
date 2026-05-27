@@ -1,4 +1,6 @@
 ---
+id: "pkis:concept:description-logic"
+aliases: []
 title: "Description Logic"
 knowledge_type: concept
 also_type: []

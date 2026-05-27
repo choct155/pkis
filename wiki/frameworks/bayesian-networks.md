@@ -1,4 +1,6 @@
 ---
+id: "pkis:framework:bayesian-networks"
+aliases: []
 title: "Bayesian Networks"
 knowledge_type: framework
 also_type: []

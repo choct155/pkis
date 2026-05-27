@@ -1,4 +1,6 @@
 ---
+id: "pkis:concept:monetary-equilibrium"
+aliases: []
 title: "Monetary Equilibrium"
 knowledge_type: concept
 also_type: []

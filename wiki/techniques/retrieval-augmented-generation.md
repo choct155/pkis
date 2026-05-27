@@ -1,4 +1,6 @@
 ---
+id: "pkis:technique:retrieval-augmented-generation"
+aliases: []
 title: "Retrieval-Augmented Generation"
 knowledge_type: technique
 also_type: [framework]

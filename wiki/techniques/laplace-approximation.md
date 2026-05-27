@@ -1,4 +1,6 @@
 ---
+id: "pkis:technique:laplace-approximation"
+aliases: []
 title: "Laplace Approximation"
 knowledge_type: technique
 also_type: []

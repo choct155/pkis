@@ -1,4 +1,6 @@
 ---
+id: "pkis:source:lamb-gnn-neural-symbolic-2020"
+aliases: []
 title: "Graph Neural Networks Meet Neural-Symbolic Computing: A Survey and Perspective"
 authors: "Luis C. Lamb, Artur d'Avila Garcez, Marco Gori, Marcelo O.R. Prates, Pedro H.C. Avelar, Moshe Y. Vardi"
 year: 2020

@@ -1,4 +1,6 @@
 ---
+id: "pkis:concept:federal-funds-rate-targeting"
+aliases: []
 title: "Federal Funds Rate Targeting"
 knowledge_type: concept
 also_type: []

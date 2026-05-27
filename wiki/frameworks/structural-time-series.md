@@ -1,4 +1,6 @@
 ---
+id: "pkis:framework:structural-time-series"
+aliases: []
 title: "Structural Time Series Models"
 knowledge_type: framework
 also_type: []

@@ -1,4 +1,6 @@
 ---
+id: "pkis:concept:functional-agency"
+aliases: []
 title: "Functional Agency"
 knowledge_type: concept
 also_type: []

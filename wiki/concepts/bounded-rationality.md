@@ -1,4 +1,6 @@
 ---
+id: "pkis:concept:bounded-rationality"
+aliases: []
 title: "Bounded Rationality"
 knowledge_type: concept
 also_type: []

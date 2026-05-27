@@ -1,4 +1,6 @@
 ---
+id: "pkis:concept:continuous-optimization"
+aliases: []
 title: "Continuous Optimization"
 knowledge_type: concept
 also_type: [framework]

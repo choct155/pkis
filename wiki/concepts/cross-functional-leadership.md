@@ -1,4 +1,6 @@
 ---
+id: "pkis:concept:cross-functional-leadership"
+aliases: []
 title: "Cross-Functional Leadership"
 knowledge_type: concept
 also_type: []

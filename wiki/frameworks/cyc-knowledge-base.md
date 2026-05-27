@@ -1,4 +1,6 @@
 ---
+id: "pkis:framework:cyc-knowledge-base"
+aliases: []
 title: "Cyc Knowledge Base"
 knowledge_type: framework
 also_type: []

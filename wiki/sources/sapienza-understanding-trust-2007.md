@@ -1,4 +1,6 @@
 ---
+id: "pkis:source:sapienza-understanding-trust-2007"
+aliases: []
 title: "Understanding Trust"
 authors: "Paola Sapienza, Anna Toldra, Luigi Zingales"
 year: 2007

@@ -1,4 +1,6 @@
 ---
+id: "pkis:source:deisenroth-mml-ch04"
+aliases: []
 title: "Ch. 4 — Matrix Decompositions"
 authors: "Marc Peter Deisenroth, A. Aldo Faisal, Cheng Soon Ong"
 year: 2020

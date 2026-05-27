@@ -1,4 +1,6 @@
 ---
+id: "pkis:technique:capital-budgeting"
+aliases: []
 title: "Capital Budgeting"
 knowledge_type: technique
 also_type: []

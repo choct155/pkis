@@ -1,4 +1,6 @@
 ---
+id: "pkis:concept:intuitive-physics-engine"
+aliases: []
 title: "Intuitive Physics Engine"
 knowledge_type: concept
 also_type: []

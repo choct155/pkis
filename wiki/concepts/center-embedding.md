@@ -1,4 +1,6 @@
 ---
+id: "pkis:concept:center-embedding"
+aliases: []
 title: "Center-Embedding"
 knowledge_type: concept
 also_type: []

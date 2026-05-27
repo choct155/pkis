@@ -1,4 +1,6 @@
 ---
+id: "pkis:problem:active-management-puzzle"
+aliases: []
 title: "Active Management Puzzle"
 knowledge_type: problem
 also_type: []

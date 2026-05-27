@@ -1,4 +1,6 @@
 ---
+id: "pkis:concept:firm-as-nexus-of-contracts"
+aliases: []
 title: "Firm as Nexus of Contracts"
 knowledge_type: concept
 also_type: []

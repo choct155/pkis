@@ -1,4 +1,6 @@
 ---
+id: "pkis:technique:perturbation-methods-dsge"
+aliases: []
 title: "Perturbation Methods for DSGE Models"
 knowledge_type: technique
 also_type: []

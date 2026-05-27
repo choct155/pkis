@@ -1,4 +1,6 @@
 ---
+id: "pkis:source:murphy-llm-linguistic-structure-2025"
+aliases: []
 title: "Fundamental Principles of Linguistic Structure Are Not Represented by o3"
 authors: "Elliot Murphy, Evelina Leivada, Vittoria Dentella, Fritz Günther, Gary Marcus"
 year: 2025

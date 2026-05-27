@@ -1,4 +1,6 @@
 ---
+id: "pkis:concept:rdfs"
+aliases: ["RDFS"]
 title: "RDF Schema (RDFS)"
 knowledge_type: concept
 also_type: []

@@ -1,4 +1,6 @@
 ---
+id: "pkis:source:cunningham-causal-inference-mixtape-ch06"
+aliases: []
 title: "Ch. 6 — Matching and Subclassification"
 authors: "Scott Cunningham"
 year: 2021

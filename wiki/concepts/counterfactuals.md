@@ -1,4 +1,6 @@
 ---
+id: "pkis:concept:counterfactuals"
+aliases: []
 title: "Counterfactuals"
 knowledge_type: concept
 also_type: []

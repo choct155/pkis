@@ -1,4 +1,6 @@
 ---
+id: "pkis:source:cunningham-causal-inference-mixtape-ch05"
+aliases: []
 title: "Ch. 5 — Potential Outcomes Causal Model"
 authors: "Scott Cunningham"
 year: 2021

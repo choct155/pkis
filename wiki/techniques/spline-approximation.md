@@ -1,4 +1,6 @@
 ---
+id: "pkis:technique:spline-approximation"
+aliases: []
 title: "Spline Approximation"
 knowledge_type: technique
 also_type: []

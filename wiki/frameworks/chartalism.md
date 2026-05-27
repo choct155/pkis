@@ -1,4 +1,6 @@
 ---
+id: "pkis:framework:chartalism"
+aliases: []
 title: "Chartalism"
 knowledge_type: framework
 also_type: []

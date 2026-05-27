@@ -1,4 +1,6 @@
 ---
+id: "pkis:concept:entropy"
+aliases: []
 title: "Entropy"
 knowledge_type: concept
 also_type: []

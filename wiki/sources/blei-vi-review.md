@@ -1,4 +1,6 @@
 ---
+id: "pkis:source:blei-vi-review"
+aliases: ["Blei VI review", "Variational Inference Review"]
 title: "Variational Inference: A Review for Statisticians"
 knowledge_type: source
 source_type: paper

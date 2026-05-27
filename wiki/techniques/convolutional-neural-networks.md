@@ -1,4 +1,6 @@
 ---
+id: "pkis:technique:convolutional-neural-networks"
+aliases: []
 title: "Convolutional Neural Networks"
 knowledge_type: technique
 also_type: [framework]

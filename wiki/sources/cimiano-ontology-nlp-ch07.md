@@ -1,4 +1,6 @@
 ---
+id: "pkis:source:cimiano-ontology-nlp-ch07"
+aliases: []
 title: "Ch. 7 — Ontological Reasoning for Ambiguity Resolution"
 authors: "Philipp Cimiano, Christina Unger, John McCrae"
 year: 2014

@@ -1,4 +1,6 @@
 ---
+id: "pkis:concept:trust-decomposition"
+aliases: []
 title: "Trust Decomposition"
 knowledge_type: concept
 also_type: []

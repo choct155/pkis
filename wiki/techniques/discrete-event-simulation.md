@@ -1,4 +1,6 @@
 ---
+id: "pkis:technique:discrete-event-simulation"
+aliases: []
 title: "Discrete-Event Simulation"
 knowledge_type: technique
 also_type: []

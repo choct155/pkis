@@ -1,4 +1,6 @@
 ---
+id: "pkis:concept:bank-fragility"
+aliases: []
 title: "Bank Fragility"
 knowledge_type: concept
 also_type: []

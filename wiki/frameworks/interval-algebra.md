@@ -1,4 +1,6 @@
 ---
+id: "pkis:framework:interval-algebra"
+aliases: []
 title: "Interval Algebra"
 knowledge_type: framework
 also_type: [concept]

@@ -1,4 +1,6 @@
 ---
+id: "pkis:concept:adversarial-examples"
+aliases: []
 title: "Adversarial Examples"
 knowledge_type: concept
 also_type: []

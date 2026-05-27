@@ -1,4 +1,6 @@
 ---
+id: "pkis:source:liu-kan-2024"
+aliases: []
 title: "KAN: Kolmogorov-Arnold Networks"
 authors: "Ziming Liu, Yixuan Wang, Sachin Vaidya, Fabian Ruehle, James Halverson, Marin Soljacic, Thomas Y. Hou, Max Tegmark"
 year: 2024

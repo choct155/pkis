@@ -1,4 +1,6 @@
 ---
+id: "pkis:concept:belief-based-trust"
+aliases: []
 title: "Belief-Based Trust"
 knowledge_type: concept
 also_type: []

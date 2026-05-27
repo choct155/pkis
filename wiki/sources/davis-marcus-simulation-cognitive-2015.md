@@ -1,4 +1,6 @@
 ---
+id: "pkis:source:davis-marcus-simulation-cognitive-2015"
+aliases: []
 title: "The Scope and Limits of Simulation in Cognitive Models"
 authors: "Ernest Davis, Gary Marcus"
 year: 2015

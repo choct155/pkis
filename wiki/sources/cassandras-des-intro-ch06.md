@@ -1,4 +1,6 @@
 ---
+id: "pkis:source:cassandras-des-intro-ch06"
+aliases: []
 title: "Ch. 6 — Stochastic Timed Automata"
 authors: "Christos G. Cassandras, Stéphane Lafortune"
 year: 2021

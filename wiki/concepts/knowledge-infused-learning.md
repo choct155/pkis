@@ -1,4 +1,6 @@
 ---
+id: "pkis:concept:knowledge-infused-learning"
+aliases: []
 title: "Knowledge-Infused Learning"
 knowledge_type: concept
 also_type: [technique]

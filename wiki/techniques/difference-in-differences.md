@@ -1,4 +1,6 @@
 ---
+id: "pkis:technique:difference-in-differences"
+aliases: []
 title: "Difference-in-Differences"
 knowledge_type: technique
 also_type: []

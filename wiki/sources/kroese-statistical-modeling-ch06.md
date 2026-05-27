@@ -1,4 +1,6 @@
 ---
+id: "pkis:source:kroese-statistical-modeling-ch06"
+aliases: []
 title: "Ch. 6 — Likelihood"
 authors: ["Joshua C.C. Chan", "Dirk P. Kroese"]
 year: 2025

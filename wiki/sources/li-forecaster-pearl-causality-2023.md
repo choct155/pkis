@@ -1,4 +1,6 @@
 ---
+id: "pkis:source:li-forecaster-pearl-causality-2023"
+aliases: []
 title: "A Forecaster's Review of Judea Pearl's Causality: Models, Reasoning and Inference, Second Edition"
 authors: "Feng Li"
 year: 2023

@@ -1,4 +1,6 @@
 ---
+id: "pkis:source:papadaki-rdf-analytics-survey"
+aliases: []
 title: "A Brief Survey of Methods for Analytics over RDF Knowledge Graphs"
 authors: "Maria-Evangelia Papadaki, Yannis Tzitzikas, Michalis Mountantonakis"
 year: 2023

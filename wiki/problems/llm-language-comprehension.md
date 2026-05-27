@@ -1,4 +1,6 @@
 ---
+id: "pkis:problem:llm-language-comprehension"
+aliases: []
 title: "LLM Language Comprehension"
 knowledge_type: problem
 also_type: []

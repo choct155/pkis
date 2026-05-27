@@ -1,4 +1,6 @@
 ---
+id: "pkis:technique:mm-algorithm"
+aliases: []
 title: "MM Algorithm"
 knowledge_type: technique
 also_type: [framework]

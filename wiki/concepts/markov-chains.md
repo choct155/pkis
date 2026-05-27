@@ -1,4 +1,6 @@
 ---
+id: "pkis:concept:markov-chains"
+aliases: []
 title: "Markov Chains"
 knowledge_type: concept
 also_type: [framework]

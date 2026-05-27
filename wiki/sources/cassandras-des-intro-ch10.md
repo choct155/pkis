@@ -1,4 +1,6 @@
 ---
+id: "pkis:source:cassandras-des-intro-ch10"
+aliases: []
 title: "Ch. 10 — Introduction to Discrete-Event Simulation"
 authors: "Christos G. Cassandras, Stéphane Lafortune"
 year: 2021

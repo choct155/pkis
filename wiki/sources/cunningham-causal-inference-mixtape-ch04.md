@@ -1,4 +1,6 @@
 ---
+id: "pkis:source:cunningham-causal-inference-mixtape-ch04"
+aliases: []
 title: "Ch. 4 — Directed Acyclical Graphs"
 authors: "Scott Cunningham"
 year: 2021

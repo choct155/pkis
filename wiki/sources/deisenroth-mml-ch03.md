@@ -1,4 +1,6 @@
 ---
+id: "pkis:source:deisenroth-mml-ch03"
+aliases: []
 title: "Ch. 3 — Analytic Geometry"
 authors: "Marc Peter Deisenroth, A. Aldo Faisal, Cheng Soon Ong"
 year: 2020

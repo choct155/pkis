@@ -1,4 +1,6 @@
 ---
+id: "pkis:technique:logical-neural-networks"
+aliases: []
 title: "Logical Neural Networks"
 knowledge_type: technique
 also_type: []

@@ -1,4 +1,6 @@
 ---
+id: "pkis:technique:non-negative-matrix-factorization"
+aliases: ["NMF"]
 title: "Non-Negative Matrix Factorization (NMF)"
 knowledge_type: technique
 also_type: []

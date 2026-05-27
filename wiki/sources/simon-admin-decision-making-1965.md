@@ -1,4 +1,6 @@
 ---
+id: "pkis:source:simon-admin-decision-making-1965"
+aliases: []
 title: "Administrative Decision Making"
 authors: "Herbert A. Simon"
 year: 1965

@@ -1,4 +1,6 @@
 ---
+id: "pkis:concept:fiscal-inflation"
+aliases: []
 title: "Fiscal Inflation"
 knowledge_type: concept
 also_type: []

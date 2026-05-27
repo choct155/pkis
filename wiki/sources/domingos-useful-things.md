@@ -1,4 +1,6 @@
 ---
+id: "pkis:source:domingos-useful-things"
+aliases: ["A Few Useful Things to Know About Machine Learning"]
 title: "A Few Useful Things to Know About Machine Learning"
 knowledge_type: source
 source_type: paper

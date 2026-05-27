@@ -1,4 +1,6 @@
 ---
+id: "pkis:source:cassandras-des-intro-ch11"
+aliases: []
 title: "Ch. 11 — Sensitivity Analysis and Concurrent Estimation"
 authors: "Christos G. Cassandras, Stéphane Lafortune"
 year: 2021

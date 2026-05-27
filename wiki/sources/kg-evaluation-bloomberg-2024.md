@@ -1,4 +1,6 @@
 ---
+id: "pkis:source:kg-evaluation-bloomberg-2024"
+aliases: []
 title: "Knowledge Graph Evaluation: Measuring Current State and Improvements"
 authors: "Bloomberg B-FAIR Team"
 year: 2024

@@ -1,4 +1,6 @@
 ---
+id: "pkis:concept:convex-optimization"
+aliases: []
 title: "Convex Optimization"
 knowledge_type: concept
 also_type: [framework]

@@ -1,4 +1,6 @@
 ---
+id: "pkis:technique:physics-informed-neural-networks"
+aliases: ["PINNs"]
 title: "Physics-Informed Neural Networks (PINNs)"
 knowledge_type: technique
 also_type: []

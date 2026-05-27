@@ -1,4 +1,6 @@
 ---
+id: "pkis:concept:information-criteria"
+aliases: []
 title: "Information Criteria"
 knowledge_type: concept
 also_type: []

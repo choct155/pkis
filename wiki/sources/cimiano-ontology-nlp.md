@@ -1,4 +1,6 @@
 ---
+id: "pkis:source:cimiano-ontology-nlp"
+aliases: ["Ontology-Based Interpretation of Natural Language"]
 title: "Ontology-Based Interpretation of Natural Language"
 authors: "Philipp Cimiano, Christina Unger, John McCrae"
 year: 2014

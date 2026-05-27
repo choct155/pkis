@@ -1,4 +1,6 @@
 ---
+id: "pkis:concept:node-embedding"
+aliases: []
 title: "Node Embedding"
 knowledge_type: concept
 also_type: []

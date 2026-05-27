@@ -1,4 +1,6 @@
 ---
+id: "pkis:concept:naive-physics"
+aliases: []
 title: "Naive Physics"
 knowledge_type: concept
 also_type: []

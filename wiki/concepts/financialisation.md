@@ -1,4 +1,6 @@
 ---
+id: "pkis:concept:financialisation"
+aliases: []
 title: "Financialisation"
 knowledge_type: concept
 also_type: []

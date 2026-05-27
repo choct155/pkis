@@ -1,4 +1,6 @@
 ---
+id: "pkis:framework:lexicalized-tree-adjoining-grammar"
+aliases: []
 title: "Lexicalized Tree Adjoining Grammar"
 knowledge_type: framework
 also_type: [technique]

@@ -1,4 +1,6 @@
 ---
+id: "pkis:source:allemang-semantic-web-ch01"
+aliases: []
 title: "Ch. 1 — What is the Semantic Web?"
 authors: "Dean Allemang, Jim Hendler"
 year: 2011
