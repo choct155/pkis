@@ -406,7 +406,8 @@ def hybrid_search(query: str, domains=None, node_types=None, max_results=10) -> 
         if node_types and node.get("node_type") not in node_types:
             continue
         # Anatomy assessment counts for component_scores
-        node_type_key = node["node_type"]
+        # node["node_type"] is the folder name; map to singular for COMPONENT_SCORES_BY_TYPE
+        node_type_key = FOLDER_TO_TYPE.get(node["node_type"], node["node_type"])
         components = COMPONENT_SCORES_BY_TYPE.get(node_type_key)
         anatomy_total = len(components) if components else 0
         anatomy_assessed = 0
@@ -586,7 +587,8 @@ def tool_get_node(iri: str) -> dict:
                 })
 
     # Build component_scores: return from frontmatter if present, else null-dict for known types
-    node_type_key = node["node_type"]
+    # node["node_type"] is the folder name (e.g. "techniques"); map to singular for COMPONENT_SCORES_BY_TYPE
+    node_type_key = FOLDER_TO_TYPE.get(node["node_type"], node["node_type"])
     fm_component_scores = node["frontmatter"].get("component_scores")
     components = COMPONENT_SCORES_BY_TYPE.get(node_type_key)
     if fm_component_scores is not None:
