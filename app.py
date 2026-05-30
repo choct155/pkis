@@ -881,24 +881,31 @@ def tool_get_reading_graph(
         keep = set(nodes.keys())
 
     # ── apply concept / domain focus ─────────────────────────────────────
+    # Focus starts from the *full* nodes dict so 1-hop expansion can surface
+    # out-of-scope sources worth adding.  We annotate those with out_of_scope=True.
     if focus_concept:
-        # Keep sources that cover the concept, plus their 1-hop neighbours
-        seed = {s for s in keep if focus_concept in nodes[s].get("concepts", [])}
+        seed = {s for s in nodes if focus_concept in nodes[s].get("concepts", [])}
         neighbours = set()
         for e in edges:
             if e["from"] in seed: neighbours.add(e["to"])
             if e["to"]   in seed: neighbours.add(e["from"])
-        keep &= seed | neighbours
+        focus_set = seed | neighbours
+        # Annotate nodes outside the original scope
+        for s in focus_set - keep:
+            nodes[s]["out_of_scope"] = True
+        keep = focus_set  # replace keep with focused set
 
     if focus_domain:
-        domain_set = {s for s in keep
-                      if focus_domain in (nodes[s].get("domain") or [])}
-        # Expand one hop
+        seed = {s for s in nodes
+                if focus_domain in (nodes[s].get("domain") or [])}
         neighbours = set()
         for e in edges:
-            if e["from"] in domain_set: neighbours.add(e["to"])
-            if e["to"]   in domain_set: neighbours.add(e["from"])
-        keep &= domain_set | neighbours
+            if e["from"] in seed: neighbours.add(e["to"])
+            if e["to"]   in seed: neighbours.add(e["from"])
+        focus_set = seed | neighbours
+        for s in focus_set - keep:
+            nodes[s]["out_of_scope"] = True
+        keep = focus_set
 
     # ── filter edges ─────────────────────────────────────────────────────
     filtered_edges = [
