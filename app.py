@@ -1729,24 +1729,110 @@ def _arxiv_url_to_pdf_url(url_or_id: str) -> tuple[str, str]:
     return "", ""
 
 
+def _is_file_url(url: str) -> bool:
+    """True when the URL path ends with a storable file extension."""
+    path = urllib.parse.urlparse(url).path.lower()
+    return any(path.endswith(ext) for ext in ALLOWED_DOC_EXTENSIONS)
+
+
+def _detect_readwise_category(url: str) -> str:
+    """Infer the best Readwise category from URL patterns."""
+    u = url.lower()
+    if any(d in u for d in ("youtube.com/watch", "youtu.be/", "vimeo.com/")):
+        return "video"
+    if any(d in u for d in ("twitter.com/", "x.com/")):
+        return "tweet"
+    if any(d in u for d in ("substack.com", "mailchimp.com", "beehiiv.com")):
+        return "email"
+    return "article"
+
+
+# Maps Readwise category → PKIS wiki source type
+_CATEGORY_TO_WIKI_TYPE = {
+    "article": "article",
+    "video":   "talk",
+    "tweet":   "article",
+    "email":   "article",
+    "pdf":     "paper",
+    "epub":    "book",
+}
+
+
+def _fetch_url_metadata(url: str) -> dict:
+    """
+    Best-effort title/author extraction from a URL.
+    Tries YouTube oEmbed first; falls back to HTML <title> and Open Graph tags.
+    Returns dict with keys: title, author, source_type (maps to wiki type).
+    """
+    # YouTube oEmbed
+    if "youtube.com/watch" in url or "youtu.be/" in url:
+        try:
+            oembed = (f"https://www.youtube.com/oembed"
+                      f"?url={urllib.parse.quote(url, safe='')}&format=json")
+            req = urllib.request.Request(oembed, headers={"User-Agent": "PKIS/1.0"})
+            with urllib.request.urlopen(req, timeout=10) as r:
+                data = json.loads(r.read())
+            return {
+                "title":       data.get("title", ""),
+                "author":      data.get("author_name", ""),
+                "source_type": "talk",
+            }
+        except Exception:
+            pass
+
+    # Generic HTML meta / Open Graph
+    try:
+        req = urllib.request.Request(url, headers={"User-Agent": "PKIS/1.0"})
+        with urllib.request.urlopen(req, timeout=10) as r:
+            html = r.read(30_000).decode("utf-8", errors="replace")
+
+        title = ""
+        author = ""
+
+        # OG title → <title> fallback
+        m = re.search(
+            r'<meta[^>]+property=["\']og:title["\'][^>]+content=["\']([^"\'<]+)',
+            html, re.I)
+        if m:
+            title = m.group(1).strip()
+        if not title:
+            m = re.search(r'<title[^>]*>([^<]+)</title>', html, re.I)
+            if m:
+                title = re.sub(r'\s+', ' ', m.group(1)).strip()
+
+        # meta author → OG site_name fallback
+        m = re.search(
+            r'<meta[^>]+name=["\']author["\'][^>]+content=["\']([^"\'<]+)',
+            html, re.I)
+        if m:
+            author = m.group(1).strip()
+        if not author:
+            m = re.search(
+                r'<meta[^>]+property=["\']og:site_name["\'][^>]+content=["\']([^"\'<]+)',
+                html, re.I)
+            if m:
+                author = m.group(1).strip()
+
+        return {"title": title, "author": author, "source_type": "article"}
+    except Exception:
+        pass
+
+    return {"title": "", "author": "", "source_type": "article"}
+
+
 def _readwise_save(doc_url: str, title: str = "", author: str = "",
                    slug: str = "", abstract: str = "",
-                   year: int = None, arxiv_id: str = "") -> dict:
+                   year: int = None, arxiv_id: str = "",
+                   category: str = "") -> dict:
     """
     Push a document to Readwise Reader. Returns Readwise response dict.
 
-    For arXiv papers (arxiv_id provided):
-      - Pushes https://ar5iv.org/abs/{id} so Reader gets full article view
-        with TTS, proper typography, and highlight support.
-      - Records the VPS PDF URL in the document notes for traceability.
-      - category: article (not pdf — avoids the embedded viewer)
+    Priority order for push_url / category:
+      1. arxiv_id provided → ar5iv HTML URL, category: article
+      2. category explicitly provided → doc_url pushed as-is with that category
+      3. fallback → doc_url, category: pdf
 
-    For all other documents:
-      - Pushes the VPS PDF URL directly.
-      - category: pdf
-
-    Full metadata (title, author, summary, published_date) is sent in both
-    cases to populate Readwise's document record correctly.
+    Full metadata (title, author, summary, published_date) is sent in all cases.
     """
     if not READWISE_TOKEN:
         return {"error": "READWISE_TOKEN not configured"}
@@ -1754,13 +1840,16 @@ def _readwise_save(doc_url: str, title: str = "", author: str = "",
     tags = [f"pkis:source:{slug}"] if slug else []
 
     if arxiv_id:
-        push_url = f"https://ar5iv.org/abs/{arxiv_id}"
-        category = "article"
-        notes    = f"VPS copy: {doc_url}"
+        push_url      = f"https://ar5iv.org/abs/{arxiv_id}"
+        category      = "article"
+        notes         = f"VPS copy: {doc_url}" if doc_url else ""
+    elif category:
+        push_url      = doc_url
+        notes         = ""
     else:
-        push_url = doc_url
-        category = "pdf"
-        notes    = ""
+        push_url      = doc_url
+        category      = "pdf"
+        notes         = ""
 
     payload: dict = {
         "url":      push_url,
@@ -2182,6 +2271,120 @@ def tool_upload_document(
     }
 
 
+def tool_save_url_source(
+    url: str,
+    slug: str = "",
+    push_to_readwise: bool = True,
+) -> dict:
+    """
+    Save a URL-only source (article, blog, video, tweet, newsletter, etc.)
+    to the wiki. No file is stored on the VPS — the URL is the canonical ref.
+
+    Workflow:
+      1. Detect Readwise category from URL pattern
+      2. Fetch title / author via oEmbed (YouTube) or HTML meta tags
+      3. Auto-compute slug from metadata if not provided
+      4. Write wiki/sources/{slug}.md
+      5. Push to Readwise Reader with the correct category
+    """
+    if not url:
+        raise ValueError("url is required")
+
+    category    = _detect_readwise_category(url)
+    metadata    = _fetch_url_metadata(url)
+    title       = metadata.get("title", "") or url
+    author      = metadata.get("author", "")
+    wiki_type   = _CATEGORY_TO_WIKI_TYPE.get(category, "article")
+
+    # ── Slug ─────────────────────────────────────────────────────────────────
+    if not slug:
+        if title and title != url and author:
+            slug = _compute_slug(title, author, None)
+        elif title and title != url:
+            # no author — use domain + key title word
+            domain = re.sub(r'^www\.', '', urllib.parse.urlparse(url).netloc).split(".")[0]
+            words  = re.sub(r"[^a-z0-9\s]", "", title.lower()).split()
+            key    = next((w for w in words if w not in _SLUG_STOP_WORDS and len(w) > 2), words[0] if words else "source")
+            base   = f"{domain}-{key}"[:55]
+            slug   = base
+            n = 1
+            while find_node_path(slug) or (STAGING_DIR / f"{slug}.md").exists():
+                slug = f"{base}-{n}"; n += 1
+        else:
+            # fall back to domain + path fragment
+            parsed    = urllib.parse.urlparse(url)
+            domain    = re.sub(r'^www\.', '', parsed.netloc).split(".")[0]
+            path_frag = re.sub(r'[^a-z0-9]+', '-', parsed.path.lower()).strip('-')[:30]
+            base      = f"{domain}-{path_frag}".strip('-')[:55] or "url-source"
+            slug      = base
+            n = 1
+            while find_node_path(slug) or (STAGING_DIR / f"{slug}.md").exists():
+                slug = f"{base}-{n}"; n += 1
+
+    # ── Wiki node ─────────────────────────────────────────────────────────────
+    now   = datetime.now(timezone.utc)
+    today = now.strftime("%Y-%m-%d")
+    fm = {
+        "id":          f"pkis:source:{slug}",
+        "aliases":     [],
+        "title":       title,
+        "authors":     author,
+        "year":        None,
+        "type":        wiki_type,
+        "domain":      [],
+        "tags":        [],
+        "source_url":  url,
+        "drive_id":    "",
+        "drive_path":  "",
+        "doc_path":    "",          # URL-only: no local file
+        "readwise_id": "",
+        "isbn":        "",
+        "toc_source":  "",
+        "parent_book": "",
+        "chapter":     None,
+        "status":      "unread",
+        "date_added":  today,
+        "date_read":   "",
+        "concepts":    [],
+    }
+    body = (
+        "## Summary\n[To be filled by Librarian ingest]\n\n"
+        "## Key Knowledge Objects\n[To be identified during Librarian ingest]\n\n"
+        "## Key Extractions\n[To be identified during Librarian ingest]\n\n"
+        "## Connection Candidates\n[To be identified during Librarian ingest]\n"
+    )
+    dest = WIKI_DIR / "sources" / f"{slug}.md"
+    dest.write_text(
+        f"---\n{yaml.dump(fm, default_flow_style=False, allow_unicode=True)}---\n\n{body}"
+    )
+    global _node_cache
+    _node_cache = {}
+
+    # ── Readwise push ─────────────────────────────────────────────────────────
+    readwise_result: dict = {}
+    if push_to_readwise and READWISE_TOKEN:
+        readwise_result = _readwise_save(
+            doc_url=url, title=title, author=author,
+            slug=slug, category=category,
+        )
+        if readwise_result.get("id"):
+            _update_source_frontmatter(slug, {"readwise_id": readwise_result["id"]})
+
+    # ── Git commit ────────────────────────────────────────────────────────────
+    _git_commit_files([dest], f"[doc-store] save url source: {slug}")
+
+    return {
+        "slug":            slug,
+        "type":            wiki_type,
+        "category":        category,
+        "title":           title,
+        "source_url":      url,
+        "readwise_pushed": bool(readwise_result.get("id")),
+        "readwise_url":    readwise_result.get("url", ""),
+        "readwise_id":     readwise_result.get("id", ""),
+    }
+
+
 def tool_list_documents(slug: str = None) -> list:
     """List stored documents, optionally filtered to a single source slug."""
     sources_dir = DOCS_DIR / "sources"
@@ -2295,14 +2498,31 @@ def docs_upload():
                 if src_url_val:
                     arxiv_id, pdf_url = _arxiv_url_to_pdf_url(src_url_val)
                     if pdf_url:
+                        # arXiv → fetch PDF from arXiv
                         fetch_url = pdf_url
                         filename  = f"{arxiv_id}.pdf"
-                    elif src_url_val.lower().endswith(tuple(ALLOWED_DOC_EXTENSIONS)):
+                    elif _is_file_url(src_url_val):
+                        # Direct file URL (PDF, EPUB, …)
                         fetch_url = src_url_val
                         filename  = Path(urllib.parse.urlparse(src_url_val).path).name
-                    else:
-                        raise ValueError(
-                            f"URL not recognised as arXiv or a direct document link: {src_url_val}"
+                    elif not has_file:
+                        # URL-only source — article, video, tweet, etc.
+                        result = tool_save_url_source(
+                            url=src_url_val,
+                            slug=slug_val or "",
+                            push_to_readwise=push_rw and bool(READWISE_TOKEN),
+                        )
+                        cat_label = result["category"].capitalize()
+                        rw_note   = (f" · <a href='{result['readwise_url']}'>Open in Reader</a>"
+                                     if result.get("readwise_url") else "")
+                        msg = (f'<div class="msg ok">{cat_label} saved as '
+                               f'<strong>{result["slug"]}</strong>: '
+                               f'{result.get("title","")[:60] or src_url_val[:60]}'
+                               f'{rw_note}</div>')
+                        slug_val = src_url_val = ""
+                        return _UPLOAD_FORM.format(
+                            msg=msg, slug=slug_val,
+                            source_url=src_url_val, rw_checked=rw_checked
                         )
 
                 # File takes priority over URL-derived filename if both given
@@ -2698,6 +2918,20 @@ def _get_tools_list():
                     "slug": {"type": "string", "description": "Filter to a specific source slug"}
                 }
             }
+        },
+        {
+            "name": "save_url_source",
+            "description": "Save a URL-only source (article, blog post, video, tweet, newsletter, etc.) to the wiki. No file stored on VPS — the URL is the canonical reference. Auto-detects Readwise category (article/video/tweet/email) and fetches title/author from the page.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "url":             {"type": "string", "description": "Full URL of the source"},
+                    "slug":            {"type": "string", "description": "Source slug (auto-computed from metadata if omitted)"},
+                    "push_to_readwise":{"type": "boolean", "default": True,
+                                       "description": "Push to Readwise Reader after saving"}
+                },
+                "required": ["url"]
+            }
         }
     ]
 
@@ -2899,6 +3133,11 @@ def dispatch_tool(tool_name: str, params: dict, req) -> any:
             filename=p["filename"],
             fetch_url=p.get("fetch_url", ""),
             content_b64=p.get("content_b64", ""),
+            push_to_readwise=p.get("push_to_readwise", True),
+        ),
+        "save_url_source": lambda p: tool_save_url_source(
+            url=p["url"],
+            slug=p.get("slug", ""),
             push_to_readwise=p.get("push_to_readwise", True),
         ),
     }
