@@ -12,7 +12,7 @@ drive_path: ''
 id: pkis:source:betancourt-bayeshist
 isbn: ''
 parent_book: ''
-readwise_id: 01ksx3dndzh7vwjgkvh9qe171x
+readwise_id: 01ksx59pnc5g6401p1twszdasz
 source_url: https://arxiv.org/abs/1009.5604
 status: unread
 tags: []
