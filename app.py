@@ -2075,10 +2075,9 @@ def readwise_webhook():
     readwise.highlight.created
       → route by highlight tags (#bridge / #stub / #concept:X / default)
     """
-    try:
-        payload = request.json or {}
-    except Exception:
-        return jsonify({"error": "invalid JSON"}), 400
+    # force=True: parse regardless of Content-Type header
+    # silent=True: return None instead of raising on bad/empty body
+    payload = request.get_json(force=True, silent=True) or {}
 
     # Verify shared secret (Readwise includes it in the payload body)
     if READWISE_WEBHOOK_SECRET:
