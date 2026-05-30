@@ -1851,9 +1851,13 @@ def tool_upload_document(
     Store a document in the doc store for a given source slug.
     Provide either fetch_url (VPS fetches the file) or content_b64 (base64 payload).
     Optionally pushes the served URL to Readwise Reader.
+
+    Duplicate detection (content-hash):
+    - Same content + different filename → rejected with name of existing file
+    - Same filename + same content     → rejected as already uploaded (no-op)
+    - Same filename + different content → allowed (annotated replacement workflow)
     """
     import base64 as _b64
-    import mimetypes
 
     if not slug:
         raise ValueError("slug is required")
@@ -1861,18 +1865,45 @@ def tool_upload_document(
     if ext not in ALLOWED_DOC_EXTENSIONS:
         raise ValueError(f"Extension {ext} not allowed. Permitted: {ALLOWED_DOC_EXTENSIONS}")
 
+    # ── Fetch bytes into memory first (needed for hash check) ────────────────
+    if fetch_url:
+        req = urllib.request.Request(fetch_url, headers={"User-Agent": "PKIS/1.0"})
+        with urllib.request.urlopen(req, timeout=60) as resp:
+            file_bytes = resp.read()
+    elif content_b64:
+        file_bytes = _b64.b64decode(content_b64)
+    else:
+        raise ValueError("Either fetch_url or content_b64 must be provided")
+
+    # ── Content-hash duplicate check ─────────────────────────────────────────
+    incoming_hash = hashlib.sha256(file_bytes).hexdigest()
     dest_dir = DOCS_DIR / "sources" / slug
     dest_dir.mkdir(parents=True, exist_ok=True)
     dest_path = dest_dir / filename
 
-    if fetch_url:
-        req = urllib.request.Request(fetch_url, headers={"User-Agent": "PKIS/1.0"})
-        with urllib.request.urlopen(req, timeout=60) as resp:
-            dest_path.write_bytes(resp.read())
-    elif content_b64:
-        dest_path.write_bytes(_b64.b64decode(content_b64))
-    else:
-        raise ValueError("Either fetch_url or content_b64 must be provided")
+    if dest_dir.exists():
+        for existing in dest_dir.iterdir():
+            if existing.suffix.lower() not in ALLOWED_DOC_EXTENSIONS:
+                continue
+            try:
+                existing_hash = hashlib.sha256(existing.read_bytes()).hexdigest()
+            except OSError:
+                continue
+            if existing_hash == incoming_hash:
+                if existing.name == filename:
+                    raise ValueError(
+                        f"'{filename}' is already stored for source '{slug}' "
+                        f"(identical content). Upload skipped."
+                    )
+                else:
+                    raise ValueError(
+                        f"Duplicate content: this file is identical to "
+                        f"'{existing.name}' already stored for source '{slug}'. "
+                        f"Upload rejected."
+                    )
+
+    # ── Write ────────────────────────────────────────────────────────────────
+    dest_path.write_bytes(file_bytes)
 
     doc_url  = f"{DOCS_BASE_URL}/sources/{slug}/{filename}"
     doc_path = f"sources/{slug}/{filename}"
