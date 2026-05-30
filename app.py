@@ -1678,15 +1678,50 @@ def _require_docs_auth(f):
 
 
 def _readwise_save(doc_url: str, title: str = "", author: str = "",
-                   slug: str = "") -> dict:
-    """Push a document URL to Readwise Reader. Returns Readwise response dict."""
+                   slug: str = "", abstract: str = "",
+                   year: int = None, arxiv_id: str = "") -> dict:
+    """
+    Push a document to Readwise Reader. Returns Readwise response dict.
+
+    For arXiv papers (arxiv_id provided):
+      - Pushes https://ar5iv.org/abs/{id} so Reader gets full article view
+        with TTS, proper typography, and highlight support.
+      - Records the VPS PDF URL in the document notes for traceability.
+      - category: article (not pdf — avoids the embedded viewer)
+
+    For all other documents:
+      - Pushes the VPS PDF URL directly.
+      - category: pdf
+
+    Full metadata (title, author, summary, published_date) is sent in both
+    cases to populate Readwise's document record correctly.
+    """
     if not READWISE_TOKEN:
         return {"error": "READWISE_TOKEN not configured"}
+
     tags = [f"pkis:source:{slug}"] if slug else []
-    payload = {"url": doc_url, "location": "later", "category": "pdf"}
-    if title:  payload["title"]  = title
-    if author: payload["author"] = author
-    if tags:   payload["tags"]   = tags
+
+    if arxiv_id:
+        push_url = f"https://ar5iv.org/abs/{arxiv_id}"
+        category = "article"
+        notes    = f"VPS copy: {doc_url}"
+    else:
+        push_url = doc_url
+        category = "pdf"
+        notes    = ""
+
+    payload: dict = {
+        "url":      push_url,
+        "location": "later",
+        "category": category,
+    }
+    if title:    payload["title"]          = title
+    if author:   payload["author"]         = author
+    if tags:     payload["tags"]           = tags
+    if abstract: payload["summary"]        = abstract[:600]
+    if year:     payload["published_date"] = f"{year}-01-01T00:00:00+00:00"
+    if notes:    payload["notes"]          = notes
+
     try:
         data = json.dumps(payload).encode()
         req = urllib.request.Request(
@@ -1929,7 +1964,8 @@ def _auto_create_source_node(slug: str, filename: str,
 
     enrichment = "arxiv" if arxiv_id and metadata.get("title") else "minimal"
     logger.info(f"Auto-created source node {slug} (enrichment={enrichment})")
-    return {**fm, "_enrichment": enrichment}
+    return {**fm, "_enrichment": enrichment,
+            "_arxiv_id": arxiv_id, "_abstract": abstract}
 
 
 # ── MCP tool functions ────────────────────────────────────────────────────────
@@ -2013,13 +2049,33 @@ def tool_upload_document(
     node    = load_node(node_path) if node_path else None
     title   = node["title"]                          if node else ""
     authors = node["frontmatter"].get("authors", "") if node else ""
+    year    = node["frontmatter"].get("year")        if node else None
+
+    # ── Resolve arXiv ID + abstract for enriched Readwise push ──────────────
+    if auto_created:
+        arxiv_id = auto_fm.get("_arxiv_id", "")
+        abstract = auto_fm.get("_abstract", "")
+    else:
+        # Existing node — try to extract arXiv ID from source_url or filename
+        arxiv_id = _arxiv_id_from_filename(filename)
+        if not arxiv_id and node:
+            src_url = node["frontmatter"].get("source_url", "")
+            m = re.search(r'arxiv\.org/(?:abs|pdf)/([0-9]{4}\.[0-9]+)', src_url)
+            if m:
+                arxiv_id = m.group(1)
+        abstract = ""
+        if arxiv_id:
+            meta = _fetch_arxiv_metadata(arxiv_id)
+            abstract = meta.get("abstract", "")
 
     # ── Readwise push ────────────────────────────────────────────────────────
     readwise_result = {}
     fm_updates: dict = {"doc_path": doc_path}
     if push_to_readwise and READWISE_TOKEN:
-        readwise_result = _readwise_save(doc_url, title=title,
-                                         author=authors, slug=slug)
+        readwise_result = _readwise_save(
+            doc_url, title=title, author=authors, slug=slug,
+            abstract=abstract, year=year, arxiv_id=arxiv_id,
+        )
         if readwise_result.get("id"):
             fm_updates["readwise_id"] = readwise_result["id"]
 
