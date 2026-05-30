@@ -1462,7 +1462,8 @@ def tool_get_staged_nodes(
             fm = post.metadata
             if fm.get("staged_id") is None:
                 continue
-            if node_type and fm.get("knowledge_type") != node_type:
+            effective_type = fm.get("knowledge_type") or fm.get("type") or "unknown"
+            if node_type and effective_type != node_type:
                 continue
             if staged_by and fm.get("staged_by") != staged_by:
                 continue
@@ -1470,7 +1471,7 @@ def tool_get_staged_nodes(
             results.append({
                 "staged_id": fm.get("staged_id"),
                 "slug": staged_file.stem,
-                "node_type": fm.get("knowledge_type", "unknown"),
+                "node_type": fm.get("knowledge_type") or fm.get("type") or "unknown",
                 "staged_at": fm.get("staged_at", ""),
                 "staged_by": fm.get("staged_by", ""),
                 "title": fm.get("title", staged_file.stem),
