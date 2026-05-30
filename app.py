@@ -29,7 +29,8 @@ import frontmatter
 import networkx as nx
 import numpy as np
 from rank_bm25 import BM25Okapi
-from flask import Flask, request, jsonify, Response
+from functools import wraps
+from flask import Flask, request, jsonify, Response, send_from_directory
 from anthropic import Anthropic
 
 # ============================================================
@@ -92,6 +93,14 @@ TRUSTED_TOKEN = os.environ.get("PKIS_TRUSTED_TOKEN", "")
 
 # Write endpoint key — separate from read token; required for write operations
 WRITE_KEY = os.environ.get("PKIS_MCP_WRITE_KEY", "")
+
+# Document store + Readwise integration
+DOCS_DIR          = Path(os.environ.get("DOCS_DIR", "/home/pkis/docs"))
+DOCS_BASE_URL     = os.environ.get("DOCS_BASE_URL", "https://pkis.dev/docs")
+READWISE_TOKEN    = os.environ.get("READWISE_TOKEN", "")
+READWISE_WEBHOOK_SECRET = os.environ.get("READWISE_WEBHOOK_SECRET", "")
+DOCS_USERNAME     = os.environ.get("DOCS_USERNAME", "")
+DOCS_PASSWORD     = os.environ.get("DOCS_PASSWORD", "")
 
 # MCP JSON-RPC 2.0 Streamable HTTP transport constants
 JSONRPC_VERSION = "2.0"
@@ -1632,6 +1641,469 @@ def tool_get_staged_nodes(
 
 
 # ============================================================
+# Document store helpers
+# ============================================================
+
+ALLOWED_DOC_EXTENSIONS = {".pdf", ".epub", ".md", ".html", ".txt", ".docx"}
+
+
+def _require_docs_auth(f):
+    """
+    Flask decorator: HTTP Basic Auth gated on DOCS_USERNAME / DOCS_PASSWORD env vars.
+    If neither is set, the route is unprotected (dev/local mode).
+    Applied to /docs/upload, /docs/list, and /docs/sources/<path>.
+    /readwise/webhook is intentionally NOT wrapped — Readwise needs public access.
+    """
+    @wraps(f)
+    def _decorated(*args, **kwargs):
+        if not DOCS_USERNAME:
+            return f(*args, **kwargs)   # no credentials configured — open
+        import base64 as _b64
+        auth = request.headers.get("Authorization", "")
+        if auth.startswith("Basic "):
+            try:
+                decoded = _b64.b64decode(auth[6:]).decode("utf-8", errors="replace")
+                username, _, password = decoded.partition(":")
+                if username == DOCS_USERNAME and password == DOCS_PASSWORD:
+                    return f(*args, **kwargs)
+            except Exception:
+                pass
+        return Response(
+            "Authentication required",
+            401,
+            {"WWW-Authenticate": 'Basic realm="PKIS Docs"'},
+        )
+    return _decorated
+
+
+def _readwise_save(doc_url: str, title: str = "", author: str = "",
+                   slug: str = "") -> dict:
+    """Push a document URL to Readwise Reader. Returns Readwise response dict."""
+    if not READWISE_TOKEN:
+        return {"error": "READWISE_TOKEN not configured"}
+    tags = [f"pkis:source:{slug}"] if slug else []
+    payload = {"url": doc_url, "location": "later", "category": "pdf"}
+    if title:  payload["title"]  = title
+    if author: payload["author"] = author
+    if tags:   payload["tags"]   = tags
+    try:
+        data = json.dumps(payload).encode()
+        req = urllib.request.Request(
+            "https://readwise.io/api/v3/save/",
+            data=data,
+            headers={
+                "Authorization": f"Token {READWISE_TOKEN}",
+                "Content-Type":  "application/json",
+            },
+            method="POST",
+        )
+        with urllib.request.urlopen(req, timeout=15) as resp:
+            return json.loads(resp.read())
+    except Exception as e:
+        logger.error(f"Readwise save failed: {e}")
+        return {"error": str(e)}
+
+
+def _find_source_by_readwise_id(readwise_id: str) -> Optional[str]:
+    """Find a source node's slug given its Readwise document ID."""
+    if not readwise_id:
+        return None
+    for node in load_all_nodes():
+        if node.get("node_type") == "sources":
+            if node.get("frontmatter", {}).get("readwise_id") == readwise_id:
+                return node["slug"]
+    return None
+
+
+def _update_source_frontmatter(slug: str, updates: dict) -> bool:
+    """Apply field-level updates to a source node's frontmatter in place."""
+    path = find_node_path(slug)
+    if not path:
+        return False
+    try:
+        post = frontmatter.load(str(path))
+        for key, value in updates.items():
+            post.metadata[key] = value
+        path.write_text(frontmatter.dumps(post))
+        global _node_cache
+        _node_cache = {}
+        return True
+    except Exception as e:
+        logger.error(f"Frontmatter update failed for {slug}: {e}")
+        return False
+
+
+def _git_commit_files(files: list, message: str) -> str:
+    """Stage, commit, and push a list of file paths. Returns SHA or ''."""
+    git_sha = ""
+    try:
+        subprocess.run(
+            ["git", "-C", str(REPO_DIR), "add"] + [str(f) for f in files],
+            check=True, capture_output=True
+        )
+        result = subprocess.run(
+            ["git", "-C", str(REPO_DIR), "commit", "-m", message],
+            check=True, capture_output=True, text=True
+        )
+        m = re.search(r'\[.+? ([a-f0-9]{7,})\]', result.stdout)
+        git_sha = m.group(1) if m else result.stdout.strip()[:12]
+        subprocess.run(
+            ["git", "-C", str(REPO_DIR), "push"],
+            check=True, capture_output=True, timeout=30
+        )
+    except Exception as e:
+        logger.error(f"Git commit failed: {e}")
+    return git_sha
+
+
+def _append_reading_notes(source_slug: str, text: str, note: str,
+                           highlight_id: str) -> Path:
+    """
+    Append an untagged highlight to a per-source reading-notes staging file.
+    Creates the file if it doesn't exist.
+    """
+    STAGING_DIR.mkdir(parents=True, exist_ok=True)
+    notes_path = STAGING_DIR / f"{source_slug}-reading-notes.md"
+    ts = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
+
+    if not notes_path.exists():
+        fm = {
+            "knowledge_type":  "reading-notes",
+            "source":          source_slug,
+            "staged_at":       ts,
+            "staged_by":       "readwise-webhook",
+            "review_status":   "pending",
+        }
+        notes_path.write_text(
+            f"---\n{yaml.dump(fm, default_flow_style=False, allow_unicode=True)}---\n\n"
+            f"# Reading Notes — {source_slug}\n\n"
+        )
+
+    with open(notes_path, "a", encoding="utf-8") as f:
+        f.write(f"\n## Highlight `{highlight_id[:8]}`\n")
+        f.write(f"> {text}\n")
+        if note:
+            f.write(f"\n**Note:** {note}\n")
+        f.write(f"\n*{ts}*\n")
+
+    return notes_path
+
+
+def _route_highlight(payload: dict, source_slug: str) -> dict:
+    """
+    Route a Readwise highlight based on its tags:
+      #bridge      → staged bridge note
+      #stub        → append to reading-notes with stub flag
+      #concept:X   → append to reading-notes with concept tag
+      (none)       → append to reading-notes for Librarian review
+    """
+    text         = (payload.get("text") or payload.get("content") or "").strip()
+    note         = (payload.get("note") or "").strip()
+    highlight_id = str(payload.get("id", ""))
+    raw_tags     = payload.get("tags") or []
+    tags         = [t["name"] if isinstance(t, dict) else str(t) for t in raw_tags]
+
+    if not text:
+        return {"action": "skipped", "reason": "empty highlight"}
+
+    # ── #bridge → staged bridge note ─────────────────────────────────────
+    if "bridge" in tags:
+        rationale = note if note else text
+        result = tool_create_bridge_note(
+            rationale=rationale,
+            title=text[:80] if note else "",
+            source_context=source_slug,
+            origin="reading",
+        )
+        return {"action": "bridge_note", "staged_id": result.get("staged_id")}
+
+    # ── #stub → reading-notes with stub flag ─────────────────────────────
+    if "stub" in tags:
+        path = _append_reading_notes(source_slug, text, f"[STUB CANDIDATE] {note}", highlight_id)
+        return {"action": "stub_candidate", "notes_file": path.name}
+
+    # ── #concept:X → reading-notes with concept annotation ───────────────
+    concept_tags = [t[len("concept:"):] for t in tags if t.startswith("concept:")]
+    if concept_tags:
+        path = _append_reading_notes(
+            source_slug, text,
+            f"[CONCEPT: {', '.join(concept_tags)}] {note}",
+            highlight_id
+        )
+        return {"action": "concept_enrichment",
+                "concepts": concept_tags, "notes_file": path.name}
+
+    # ── default → reading-notes ───────────────────────────────────────────
+    path = _append_reading_notes(source_slug, text, note, highlight_id)
+    return {"action": "reading_note", "notes_file": path.name}
+
+
+# ── MCP tool functions ────────────────────────────────────────────────────────
+
+def tool_upload_document(
+    slug: str,
+    filename: str,
+    fetch_url: str = "",
+    content_b64: str = "",
+    push_to_readwise: bool = True,
+) -> dict:
+    """
+    Store a document in the doc store for a given source slug.
+    Provide either fetch_url (VPS fetches the file) or content_b64 (base64 payload).
+    Optionally pushes the served URL to Readwise Reader.
+    """
+    import base64 as _b64
+    import mimetypes
+
+    if not slug:
+        raise ValueError("slug is required")
+    ext = Path(filename).suffix.lower()
+    if ext not in ALLOWED_DOC_EXTENSIONS:
+        raise ValueError(f"Extension {ext} not allowed. Permitted: {ALLOWED_DOC_EXTENSIONS}")
+
+    dest_dir = DOCS_DIR / "sources" / slug
+    dest_dir.mkdir(parents=True, exist_ok=True)
+    dest_path = dest_dir / filename
+
+    if fetch_url:
+        req = urllib.request.Request(fetch_url, headers={"User-Agent": "PKIS/1.0"})
+        with urllib.request.urlopen(req, timeout=60) as resp:
+            dest_path.write_bytes(resp.read())
+    elif content_b64:
+        dest_path.write_bytes(_b64.b64decode(content_b64))
+    else:
+        raise ValueError("Either fetch_url or content_b64 must be provided")
+
+    doc_url  = f"{DOCS_BASE_URL}/sources/{slug}/{filename}"
+    doc_path = f"sources/{slug}/{filename}"
+
+    # Update source frontmatter with doc_path
+    node = load_node(find_node_path(slug)) if find_node_path(slug) else None
+    fm_updates: dict = {"doc_path": doc_path}
+    title   = node["title"]   if node else ""
+    authors = node["frontmatter"].get("authors", "") if node else ""
+
+    readwise_result = {}
+    if push_to_readwise and READWISE_TOKEN:
+        readwise_result = _readwise_save(doc_url, title=title,
+                                         author=authors, slug=slug)
+        if readwise_result.get("id"):
+            fm_updates["readwise_id"] = readwise_result["id"]
+
+    if node:
+        _update_source_frontmatter(slug, fm_updates)
+        source_path = find_node_path(slug)
+        if source_path:
+            _git_commit_files(
+                [source_path],
+                f"[doc-store] add doc: {slug}/{filename}"
+            )
+
+    return {
+        "slug":            slug,
+        "filename":        filename,
+        "doc_url":         doc_url,
+        "readwise_pushed": bool(readwise_result.get("id")),
+        "readwise_url":    readwise_result.get("url", ""),
+        "readwise_id":     readwise_result.get("id", ""),
+    }
+
+
+def tool_list_documents(slug: str = None) -> list:
+    """List stored documents, optionally filtered to a single source slug."""
+    sources_dir = DOCS_DIR / "sources"
+    if not sources_dir.exists():
+        return []
+    results = []
+    search_dirs = [sources_dir / slug] if slug else sorted(sources_dir.iterdir())
+    for d in search_dirs:
+        if not d.is_dir():
+            continue
+        for f in sorted(d.iterdir()):
+            if f.suffix.lower() in ALLOWED_DOC_EXTENSIONS:
+                results.append({
+                    "slug":     d.name,
+                    "filename": f.name,
+                    "url":      f"{DOCS_BASE_URL}/sources/{d.name}/{f.name}",
+                    "size_kb":  round(f.stat().st_size / 1024, 1),
+                    "modified": datetime.fromtimestamp(
+                        f.stat().st_mtime, tz=timezone.utc
+                    ).strftime("%Y-%m-%dT%H:%M:%SZ"),
+                })
+    return results
+
+
+# ============================================================
+# Flask routes — Document store + Readwise webhook
+# ============================================================
+
+_UPLOAD_FORM = """<!DOCTYPE html>
+<html><head>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>PKIS Upload</title>
+<style>
+  body {{ font-family: system-ui, sans-serif; max-width: 480px;
+          margin: 40px auto; padding: 0 16px; }}
+  label {{ display: block; margin: 12px 0 4px; font-weight: 600; }}
+  input, select {{ width: 100%; padding: 8px; box-sizing: border-box;
+                   font-size: 16px; border: 1px solid #ccc; border-radius: 4px; }}
+  button {{ margin-top: 16px; width: 100%; padding: 12px;
+            background: #1a56db; color: white; border: none;
+            border-radius: 4px; font-size: 16px; cursor: pointer; }}
+  .msg {{ margin-top: 16px; padding: 12px; border-radius: 4px; }}
+  .ok  {{ background: #d1fae5; color: #065f46; }}
+  .err {{ background: #fee2e2; color: #991b1b; }}
+</style></head><body>
+<h2>PKIS Doc Upload</h2>
+{msg}
+<form method="POST" enctype="multipart/form-data">
+  <label>Source slug</label>
+  <input name="slug" placeholder="hastie-esl-ch08" required value="{slug}">
+  <label>File</label>
+  <input type="file" name="file" required
+         accept=".pdf,.epub,.md,.html,.txt,.docx">
+  <label><input type="checkbox" name="push_readwise" value="1" {rw_checked}>
+    Push to Readwise Reader</label>
+  <button type="submit">Upload</button>
+</form>
+</body></html>"""
+
+
+@app.route("/docs/upload", methods=["GET", "POST"])
+@_require_docs_auth
+def docs_upload():
+    """HTML upload form — protected by HTTP Basic Auth (DOCS_USERNAME/DOCS_PASSWORD)."""
+    msg = ""
+    slug_val = ""
+    rw_checked = "checked" if READWISE_TOKEN else ""
+
+    if request.method == "POST":
+        slug_val = request.form.get("slug", "").strip()
+        push_rw  = bool(request.form.get("push_readwise"))
+        file     = request.files.get("file")
+
+        if not slug_val or not file or not file.filename:
+            msg = '<div class="msg err">Slug and file are required.</div>'
+        else:
+            try:
+                filename = Path(file.filename).name  # strip any path
+                result   = tool_upload_document(
+                    slug=slug_val,
+                    filename=filename,
+                    content_b64=__import__("base64").b64encode(file.read()).decode(),
+                    push_to_readwise=push_rw and bool(READWISE_TOKEN),
+                )
+                rw_note = (f" · <a href='{result['readwise_url']}'>Open in Reader</a>"
+                           if result.get("readwise_url") else "")
+                msg = (f'<div class="msg ok">Stored: '
+                       f'<a href="{result["doc_url"]}">{filename}</a>{rw_note}</div>')
+                slug_val = ""
+            except Exception as e:
+                msg = f'<div class="msg err">Error: {e}</div>'
+
+    return _UPLOAD_FORM.format(
+        msg=msg, slug=slug_val, rw_checked=rw_checked
+    )
+
+
+@app.route("/docs/list", methods=["GET"])
+@_require_docs_auth
+def docs_list():
+    """JSON listing of stored documents — protected by Basic Auth."""
+    slug = request.args.get("slug")
+    return jsonify(tool_list_documents(slug))
+
+
+@app.route("/docs/sources/<path:filepath>")
+def docs_serve(filepath: str):
+    """
+    Serve files from the document store (NO auth — Readwise must be able to fetch).
+    URL pattern: /docs/sources/<slug>/<filename>
+    Maps to DOCS_DIR/sources/<slug>/<filename> on disk.
+
+    The management endpoints (/docs/upload, /docs/list) are auth-protected;
+    the file URLs themselves are public-but-opaque (slug + filename required).
+    If we ever need stronger file security, replace with a signed-token scheme.
+
+    send_from_directory handles path-traversal protection automatically.
+    """
+    sources_dir = DOCS_DIR / "sources"
+    return send_from_directory(str(sources_dir), filepath)
+
+
+# ── Readwise webhook ──────────────────────────────────────────────────────────
+
+@app.route("/readwise/webhook", methods=["POST"])
+def readwise_webhook():
+    """
+    Receive Readwise webhook events and route them:
+
+    reader.document.finished / .archived
+      → update source status: read + date_read + git commit
+
+    readwise.highlight.created
+      → route by highlight tags (#bridge / #stub / #concept:X / default)
+    """
+    try:
+        payload = request.json or {}
+    except Exception:
+        return jsonify({"error": "invalid JSON"}), 400
+
+    # Verify shared secret (Readwise includes it in the payload body)
+    if READWISE_WEBHOOK_SECRET:
+        if payload.get("secret") != READWISE_WEBHOOK_SECRET:
+            logger.warning("Readwise webhook: invalid secret")
+            return jsonify({"error": "invalid secret"}), 401
+
+    event_type = payload.get("event_type", "")
+    logger.info(f"Readwise webhook: {event_type}")
+
+    # ── document finished / archived → mark read ─────────────────────────
+    if event_type in ("reader.document.finished", "reader.document.archived"):
+        doc_id   = payload.get("id", "")
+        # Try readwise_id lookup first, fall back to pkis tag in document tags
+        slug = _find_source_by_readwise_id(doc_id)
+        if not slug:
+            for tag in (payload.get("tags") or []):
+                name = tag["name"] if isinstance(tag, dict) else str(tag)
+                if name.startswith("pkis:source:"):
+                    slug = name[len("pkis:source:"):]
+                    break
+
+        if slug:
+            date_read = datetime.now(timezone.utc).strftime("%Y-%m-%d")
+            if _update_source_frontmatter(slug, {"status": "read", "date_read": date_read}):
+                source_path = find_node_path(slug)
+                if source_path:
+                    sha = _git_commit_files(
+                        [source_path],
+                        f"[readwise] mark read: {slug}"
+                    )
+                    logger.info(f"Marked {slug} read (commit {sha})")
+                return jsonify({"status": "marked_read", "slug": slug})
+        else:
+            logger.warning(f"Readwise webhook: no PKIS source found for id={doc_id}")
+        return jsonify({"status": "no_match"})
+
+    # ── highlight created → route by tags ────────────────────────────────
+    if event_type == "readwise.highlight.created":
+        book_id = payload.get("book_id", "")
+        slug    = _find_source_by_readwise_id(book_id)
+        if not slug:
+            # Fall back: check if source slug is in the document URL
+            logger.warning(f"Readwise webhook: no source for book_id={book_id}")
+            return jsonify({"status": "no_source_match"})
+
+        result = _route_highlight(payload, slug)
+        logger.info(f"Highlight routed: {result.get('action')} for {slug}")
+        return jsonify({"status": "ok", "route": result})
+
+    # ── other events — log and acknowledge ───────────────────────────────
+    logger.info(f"Readwise webhook: unhandled event {event_type!r}")
+    return jsonify({"status": "acknowledged", "event_type": event_type})
+
+
+# ============================================================
 # Flask routes — MCP HTTP transport
 # ============================================================
 
@@ -1854,6 +2326,32 @@ def _get_tools_list():
             "name": "rebuild_source_graph",
             "description": "Rebuild wiki/source_graph.json from current wiki state. Call after ingesting new sources or marking sources as read. Returns updated graph metadata.",
             "inputSchema": {"type": "object", "properties": {}}
+        },
+        {
+            "name": "upload_document",
+            "description": "Store a source document in the PKIS doc store and optionally push it to Readwise Reader. Provide either fetch_url (VPS fetches the file) or content_b64 (base64-encoded bytes).",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "slug":             {"type": "string", "description": "Source slug, e.g. hastie-esl-ch08"},
+                    "filename":         {"type": "string", "description": "Filename to store as, e.g. hastie-esl-ch08.pdf"},
+                    "fetch_url":        {"type": "string", "description": "URL the VPS should fetch the file from"},
+                    "content_b64":      {"type": "string", "description": "Base64-encoded file content"},
+                    "push_to_readwise": {"type": "boolean", "default": True,
+                                        "description": "Push the doc URL to Readwise Reader after storing"}
+                },
+                "required": ["slug", "filename"]
+            }
+        },
+        {
+            "name": "list_documents",
+            "description": "List documents stored in the PKIS doc store, optionally filtered to a single source slug.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "slug": {"type": "string", "description": "Filter to a specific source slug"}
+                }
+            }
         }
     ]
 
@@ -2049,6 +2547,14 @@ def dispatch_tool(tool_name: str, params: dict, req) -> any:
             limit=p.get("limit", 20),
         ),
         "rebuild_source_graph": lambda p: tool_rebuild_source_graph(),
+        "upload_document": lambda p: tool_upload_document(
+            slug=p["slug"],
+            filename=p["filename"],
+            fetch_url=p.get("fetch_url", ""),
+            content_b64=p.get("content_b64", ""),
+            push_to_readwise=p.get("push_to_readwise", True),
+        ),
+        "list_documents": lambda p: tool_list_documents(p.get("slug")),
     }
 
     if tool_name in read_tools:

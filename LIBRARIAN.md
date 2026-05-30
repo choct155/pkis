@@ -199,14 +199,17 @@ type: paper | book | book-chapter | article | talk
 domain: []
 tags: []
 source_url: ""
-drive_id: ""
-drive_path: ""
+drive_id: ""            # legacy Google Drive file ID
+drive_path: ""          # legacy Drive path
+doc_path: ""            # relative path under DOCS_BASE_URL once uploaded to VPS
+readwise_id: ""         # set automatically when doc is pushed to Readwise
 isbn: ""                # books only; ISBN-13 preferred
 toc_source: ""          # books only: "openlibrary" | "google-books" | "manual"
 parent_book: ""         # book-chapter only; wikilink to parent book entry
 chapter:                # book-chapter only; integer chapter number
-status: unread
+status: unread          # unread | in-progress | read
 date_added: YYYY-MM-DD
+date_read: ""           # set automatically by Readwise webhook on finish/archive
 concepts: []
 ---
 

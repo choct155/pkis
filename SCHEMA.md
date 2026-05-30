@@ -394,14 +394,17 @@ type: paper | book | book-chapter | article | talk
 domain: []
 tags: []
 source_url: ""          # arXiv URL, DOI, or similar; omit if not web-available
-drive_id: ""            # Google Drive file ID — primary reference
-drive_path: ""          # human-readable Drive path for orientation only
+drive_id: ""            # Google Drive file ID — legacy pristine store
+drive_path: ""          # human-readable Drive path — legacy
+doc_path: ""            # path under DOCS_BASE_URL, e.g. sources/hastie-esl/hastie-esl.pdf
+readwise_id: ""         # Readwise Reader document ID (set on upload; used for webhook routing)
 isbn: ""                # books only; ISBN-13 preferred
 toc_source: ""          # books only: "openlibrary" | "google-books" | "manual"
 parent_book: ""         # book-chapter only; wikilink to parent book entry
 chapter:                # book-chapter only; integer chapter number
-status: unread | reading | completed | paused
+status: unread          # unread | in-progress | read
 date_added: YYYY-MM-DD
+date_read: ""           # YYYY-MM-DD — set automatically by Readwise webhook on finish/archive
 concepts: []            # wikilinks to knowledge nodes this source covers
 ---
 ```
