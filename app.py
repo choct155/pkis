@@ -2020,6 +2020,44 @@ def _auto_create_source_node(slug: str, filename: str,
             "_arxiv_id": arxiv_id, "_abstract": abstract}
 
 
+# ── Cross-store duplicate detection ──────────────────────────────────────────
+
+def _find_duplicate_doc(file_bytes: bytes,
+                        exclude_path: Path = None) -> Optional[tuple[str, str]]:
+    """
+    Scan every file in DOCS_DIR/sources/ for content identical to file_bytes.
+    Uses file-size as a pre-filter so only same-size files are hashed.
+    exclude_path: skip this exact path (allows same-slug/same-name overwrites
+                  with different content — the annotated replacement workflow).
+    Returns (slug, filename) of the first match, or None.
+    """
+    incoming_size = len(file_bytes)
+    incoming_hash: str = ""           # computed lazily on first size match
+
+    sources_dir = DOCS_DIR / "sources"
+    if not sources_dir.exists():
+        return None
+
+    for slug_dir in sources_dir.iterdir():
+        if not slug_dir.is_dir():
+            continue
+        for f in slug_dir.iterdir():
+            if f.suffix.lower() not in ALLOWED_DOC_EXTENSIONS:
+                continue
+            if exclude_path and f.resolve() == exclude_path.resolve():
+                continue
+            try:
+                if f.stat().st_size != incoming_size:
+                    continue
+                if not incoming_hash:
+                    incoming_hash = hashlib.sha256(file_bytes).hexdigest()
+                if hashlib.sha256(f.read_bytes()).hexdigest() == incoming_hash:
+                    return (slug_dir.name, f.name)
+            except OSError:
+                continue
+    return None
+
+
 # ── MCP tool functions ────────────────────────────────────────────────────────
 
 def tool_upload_document(
@@ -2057,32 +2095,26 @@ def tool_upload_document(
     else:
         raise ValueError("Either fetch_url or content_b64 must be provided")
 
-    # ── Content-hash duplicate check ─────────────────────────────────────────
-    incoming_hash = hashlib.sha256(file_bytes).hexdigest()
-    dest_dir = DOCS_DIR / "sources" / slug
+    # ── Cross-store duplicate check ───────────────────────────────────────────
+    dest_dir  = DOCS_DIR / "sources" / slug
     dest_dir.mkdir(parents=True, exist_ok=True)
     dest_path = dest_dir / filename
 
-    if dest_dir.exists():
-        for existing in dest_dir.iterdir():
-            if existing.suffix.lower() not in ALLOWED_DOC_EXTENSIONS:
-                continue
-            try:
-                existing_hash = hashlib.sha256(existing.read_bytes()).hexdigest()
-            except OSError:
-                continue
-            if existing_hash == incoming_hash:
-                if existing.name == filename:
-                    raise ValueError(
-                        f"'{filename}' is already stored for source '{slug}' "
-                        f"(identical content). Upload skipped."
-                    )
-                else:
-                    raise ValueError(
-                        f"Duplicate content: this file is identical to "
-                        f"'{existing.name}' already stored for source '{slug}'. "
-                        f"Upload rejected."
-                    )
+    # exclude_path = dest_path so same-slug/same-name with NEW content is allowed
+    # (annotated PDF replacing pristine copy)
+    dup = _find_duplicate_doc(file_bytes, exclude_path=dest_path)
+    if dup:
+        dup_slug, dup_file = dup
+        if dup_slug == slug:
+            raise ValueError(
+                f"Duplicate: identical content already stored as "
+                f"'{dup_file}' under source '{slug}'. Upload rejected."
+            )
+        else:
+            raise ValueError(
+                f"Duplicate: identical content already stored as "
+                f"'{dup_file}' under source '{dup_slug}'. Upload rejected."
+            )
 
     # ── Write ────────────────────────────────────────────────────────────────
     dest_path.write_bytes(file_bytes)
@@ -2220,8 +2252,19 @@ _UPLOAD_FORM = """<!DOCTYPE html>
     <input type="checkbox" name="push_readwise" value="1" {rw_checked}>
     Push to Readwise Reader
   </label>
-  <button type="submit">Upload</button>
+  <button type="submit" id="submitBtn">Upload</button>
 </form>
+<script>
+document.getElementById('submitBtn').addEventListener('click', function() {{
+  var f = this.form;
+  var hasInput = f.source_url.value.trim() || f.file.files.length > 0;
+  if (hasInput) {{
+    var btn = this;
+    // defer so the click event + form submit fire before the button is disabled
+    setTimeout(function() {{ btn.disabled = true; btn.textContent = 'Uploading…'; }}, 0);
+  }}
+}});
+</script>
 </body></html>"""
 
 
