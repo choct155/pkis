@@ -1712,7 +1712,7 @@ def _readwise_save(doc_url: str, title: str = "", author: str = "",
 
     payload: dict = {
         "url":      push_url,
-        "location": "later",
+        "location": "new",   # "new" = Inbox; "later" = Later shelf (not visible in inbox)
         "category": category,
     }
     if title:    payload["title"]          = title
