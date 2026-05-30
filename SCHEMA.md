@@ -1,5 +1,5 @@
 # PKIS Wiki Schema
-Version: 2.0
+Version: 3.0
 
 ## Purpose
 
@@ -30,9 +30,18 @@ wiki/
   frameworks/     # coherent systems of concepts and methods: structural causal models, MDPs
   problems/       # motivating challenges: credit assignment, exploration-exploitation
   principles/     # guiding constraints: exchangeability, parsimony, falsifiability
+  hypotheses/     # open questions requiring analytical resolution [infrastructure]
+  clusters/       # research cluster nodes organizing hypothesis families [infrastructure]
+  assets/         # durable learner-produced outputs: code, derivations, analyses [infrastructure]
+  bridge-notes/   # ephemeral cross-domain connection captures [infrastructure]
+  staging/        # two-phase write staging area — agent-written, human-reviewed [infrastructure]
 ```
 
 ### Node Type Descriptions
+
+The wiki has two categories of node types.
+
+**Knowledge nodes** — the seven original types, in production since launch:
 
 | Type | What it represents | Distinguishing question |
 |---|---|---|
@@ -43,6 +52,17 @@ wiki/
 | **Framework** | A coherent system that organizes concepts, techniques, and results | "How does this field THINK about problems?" |
 | **Problem** | A well-defined challenge that motivates methods | "What are we TRYING to solve?" |
 | **Principle** | A guiding idea that constrains or evaluates other knowledge | "What SHOULD guide our choices?" |
+
+**Infrastructure nodes** — four types added in v3.0:
+
+| Type | What it represents | Distinguishing question |
+|---|---|---|
+| **Hypothesis** | An open question or claim requiring analytical resolution | "What do I need to find out?" |
+| **Research Cluster** | An organizing unit grouping related hypotheses into a research agenda | "What family of questions is this part of?" |
+| **Asset** | A durable output produced by the learner evidencing understanding | "What have I built that demonstrates this?" |
+| **Bridge Note** | An ephemeral cross-domain connection capture awaiting integration | "What connection did I just notice?" |
+
+Infrastructure nodes carry `id` and follow IRI conventions but do not carry `component_scores`. Bridge notes are created only by the MCP `create_bridge_note` endpoint, never manually.
 
 ### Boundary Cases
 
@@ -114,7 +134,7 @@ about things it labels), that's a signal it may deserve its own concept node.
 
 ## Epistemic Status
 
-Every knowledge node (not sources) carries three independent status dimensions:
+Every knowledge node carries three independent status dimensions plus component-level anatomy scores.
 
 ```yaml
 coverage: 0          # 0=stub, 1=one source, 2=two sources, 3=several, 4=well-sourced, 5=exhaustive
@@ -127,6 +147,34 @@ maturity: settled    # settled | evolving | contested | historical
   Agents never modify this field.
 - **maturity** — agent-proposed, human-confirmed. Reflects the state of the concept
   in the literature, not the user's grasp of it.
+
+### Component Scores (v3.0)
+
+All six non-source knowledge node types (concept, technique, result, framework, problem,
+principle) additionally carry a `component_scores` dictionary. This replaces the single
+undifferentiated confidence score with anatomy-specific dimensions per node type.
+
+**Rules:**
+- Human-maintained only — agents never write to `component_scores`
+- Scoring rubric: `null` = unassessed; `1` = aware; `2` = partial; `3` = working; `4` = solid; `5` = deeply integrated
+- Lazy population: existing nodes have all components set to `null` at migration; scores
+  are populated as depth-creation sessions happen
+- New nodes created after v3.0 carry the full `component_scores` block with all nulls
+
+**Component names by node type:**
+
+| Concept | Technique | Framework | Result | Problem | Principle |
+|---|---|---|---|---|---|
+| definition | operational_mechanism | structure | statement | formulation | statement |
+| prerequisites | principled_mechanism | purpose | proof_sketch | why_hard | justification |
+| boundary | conditions | primitives | conditions | solution_landscape | implications |
+| scope | implementation | scope | implications | instances | violations |
+| application | diagnostics | application | limitations | | |
+| formal_statement | alternatives | limits | | | |
+| dependents | failure_modes | | | | |
+| transfer | | | | | |
+
+Source nodes do not carry `component_scores` — sources are references, not subjects of mastery.
 
 ---
 
@@ -284,6 +332,10 @@ where `{health_type}` is the singular form of the node's canonical type:
 | `frameworks/` | `framework` | `pkis:framework:` |
 | `problems/` | `problem` | `pkis:problem:` |
 | `principles/` | `principle` | `pkis:principle:` |
+| `hypotheses/` | `hypothesis` | `pkis:hypothesis:` |
+| `clusters/` | `research-cluster` | `pkis:research-cluster:` |
+| `assets/` | `asset` | `pkis:asset:` |
+| `bridge-notes/` | `bridge-note` | `pkis:bridge-note:` |
 
 **Examples:**
 - `pkis:concept:variational-inference`
@@ -372,6 +424,15 @@ date_updated: YYYY-MM-DD
 coverage: 0
 understanding: 0
 maturity: settled | evolving | contested | historical
+component_scores:              # human-maintained only — agents never write this
+  definition: null             # 1-5: precise statement of what the concept is
+  prerequisites: null          # 1-5: demonstrated understanding of dependencies
+  boundary: null               # 1-5: distinguishes from adjacent/confused concepts (the foil)
+  scope: null                  # 1-5: knows applicability and where it breaks down
+  application: null            # 1-5: can apply correctly in novel contexts
+  formal_statement: null       # 1-5: can engage with mathematical/logical formulation
+  dependents: null             # 1-5: understands what this concept unlocks downstream
+  transfer: null               # 1-5: can apply outside original domain — expect null early
 ---
 ```
 
@@ -393,6 +454,14 @@ date_updated: YYYY-MM-DD
 coverage: 0
 understanding: 0
 maturity: settled | evolving | contested | historical
+component_scores:              # human-maintained only — agents never write this
+  operational_mechanism: null  # 1-5: can trace through what it does step by step
+  principled_mechanism: null   # 1-5: understands why it works — objective, mathematical basis
+  conditions: null             # 1-5: knows when to apply and when not to
+  implementation: null         # 1-5: can instantiate in code or math from scratch
+  diagnostics: null            # 1-5: can assess whether it's working on a given problem
+  alternatives: null           # 1-5: knows competing approaches and when to prefer this one
+  failure_modes: null          # 1-5: understands what goes wrong and why
 ---
 ```
 
@@ -414,6 +483,12 @@ date_updated: YYYY-MM-DD
 coverage: 0
 understanding: 0
 maturity: settled | evolving | contested | historical
+component_scores:              # human-maintained only — agents never write this
+  statement: null              # 1-5: can state the result precisely
+  proof_sketch: null           # 1-5: understands the core argument, not necessarily full proof
+  conditions: null             # 1-5: knows the assumptions required for the result to hold
+  implications: null           # 1-5: understands what follows from the result
+  limitations: null            # 1-5: knows where the result does not apply
 ---
 ```
 
@@ -435,6 +510,13 @@ date_updated: YYYY-MM-DD
 coverage: 0
 understanding: 0
 maturity: settled | evolving | contested | historical
+component_scores:              # human-maintained only — agents never write this
+  structure: null              # 1-5: can articulate components and how they relate
+  purpose: null                # 1-5: understands what problem the framework was designed to solve
+  primitives: null             # 1-5: knows foundational concepts the framework is built from
+  scope: null                  # 1-5: knows what it applies to and what it does not
+  application: null            # 1-5: can use it to organize and reason about a novel problem
+  limits: null                 # 1-5: knows where it breaks down or misleads
 ---
 ```
 
@@ -456,6 +538,11 @@ date_updated: YYYY-MM-DD
 coverage: 0
 understanding: 0
 maturity: settled | evolving | contested | historical
+component_scores:              # human-maintained only — agents never write this
+  formulation: null            # 1-5: can state the problem precisely
+  why_hard: null               # 1-5: understands the structural source of difficulty
+  solution_landscape: null     # 1-5: knows the space of approaches and their tradeoffs
+  instances: null              # 1-5: can recognize this problem in novel contexts
 ---
 ```
 
@@ -477,6 +564,11 @@ date_updated: YYYY-MM-DD
 coverage: 0
 understanding: 0
 maturity: settled | evolving | contested | historical
+component_scores:              # human-maintained only — agents never write this
+  statement: null              # 1-5: can articulate the principle precisely
+  justification: null          # 1-5: understands why this principle should hold
+  implications: null           # 1-5: knows what follows if the principle is accepted
+  violations: null             # 1-5: can identify when and why the principle is violated
 ---
 ```
 
@@ -492,7 +584,17 @@ relevant sources (chapters or papers) ordered by recommended reading sequence:
 - [[zhang-graphrag-survey]] (unread) — application context in retrieval systems
 ```
 
-**Format:** `- [[source-slug]] (read | unread | reading)` — brief relevance note
+**Format (v3.0):** each entry carries a read status, an edge type, and a rationale string:
+
+```markdown
+## Reading Path
+- [[hastie-esl-ch10]] (unread) [integration] — primary treatment; must read before node can be considered well-sourced
+- [[bishop-prml-ch09]] (unread) [orientation] — provides field-level context before deeper engagement
+```
+
+Edge types:
+- **orientation** — source provides context, background, or framing; useful before deep engagement
+- **integration** — source must be read deeply before the dependent concept can be considered mature
 
 The Librarian populates this section when creating stubs or updating existing nodes.
 The user updates status annotations as reading progresses. The Synthesizer checks this
@@ -506,7 +608,7 @@ zero confirmed evidence.
 Use standard Obsidian wikilink format: `[[filename-without-extension]]`
 
 Slugs are unique across ALL folders. Before creating a new slug, the Librarian
-checks all 7 wiki subdirectories for collisions. Slugs are always lowercase-hyphenated:
+checks all 11 wiki subdirectories for collisions. Slugs are always lowercase-hyphenated:
 `variational-inference`, not `VariationalInference`.
 
 No folder prefix in wikilinks — `[[mcmc]]` not `[[techniques/mcmc]]`.
@@ -515,18 +617,22 @@ No folder prefix in wikilinks — `[[mcmc]]` not `[[techniques/mcmc]]`.
 
 ## Slug Conventions
 
-| Source type | Pattern | Example |
+| Node type | Pattern | Example |
 |---|---|---|
 | Paper | `author-shortitle-year` | `neal-mcmc-using-hamiltonian-2011` |
 | Book | `author-shortitle` | `pearl-causality` |
 | Book chapter | `author-book-chNN` | `bishop-prml-ch10` |
 | Knowledge node | descriptive, lowercase-hyphenated | `variational-inference`, `credit-assignment-problem` |
+| Hypothesis | descriptive, lowercase-hyphenated | `ontological-supervision-improves-embeddings` |
+| Research cluster | descriptive, lowercase-hyphenated | `intensional-grounding`, `embedding-ontology-alignment` |
+| Asset | descriptive with optional tool suffix | `em-algorithm-implementation-pymc`, `calibration-explainer` |
+| Bridge note | `bn-YYYYMMDD-brief-descriptor` (auto-generated) | `bn-20260530-em-mcmc-vi-same-problem` |
 
 ---
 
 ## index.md Convention
 
-Single file with 8 sections. Each entry on one line:
+Single file with sections per node type. Each entry on one line:
 
 ```markdown
 # PKIS Wiki Index
@@ -551,6 +657,19 @@ Single file with 8 sections. Each entry on one line:
 
 ## Principles
 - [[principle-slug]] — one-line description (domain-tag) (YYYY-MM-DD)
+
+## Hypotheses
+- [[hypothesis-slug]] — one-line description (cluster) (YYYY-MM-DD)
+
+## Research Clusters
+- [[cluster-slug]] — one-line thesis summary (YYYY-MM-DD)
+
+## Assets
+- [[asset-slug]] — one-line description (asset_type) (YYYY-MM-DD)
+
+## Bridge Notes
+Bridge notes count: N pending review
+(Bridge notes are too ephemeral for full listing — check wiki/bridge-notes/ or use get_staged_nodes)
 
 ## Reading Queue
 ```
@@ -580,6 +699,159 @@ Prioritized list. Agent adds items; user checks them off when read.
 ### Normal
 - [ ] [[source-slug]] — reason for priority
 ```
+
+---
+
+## Infrastructure Node Templates
+
+### Hypothesis Node (`wiki/hypotheses/`)
+
+```yaml
+---
+id: "pkis:hypothesis:{slug}"   # assigned at creation; never changed
+aliases: []
+title: ""
+knowledge_type: hypothesis
+domain: []
+tags: []
+date_created: YYYY-MM-DD
+date_updated: YYYY-MM-DD
+status: open | partially-addressed | resolved | superseded
+origin: iks-fact-pattern | research-program | work-observation | operational-need | spontaneous
+research_program_cluster: ""   # slug of parent Research Cluster node; null if independent
+research_program_role: direct-test | boundary-condition | scaling-foil | enabling-hypothesis | independent
+iks_link: ""                   # IKS fact pattern ID if origin is iks-fact-pattern; otherwise null
+cluster_membership: []         # list of Research Cluster slugs — many-to-many
+dependent_nodes: []            # PKIS knowledge node IRIs only; IKS operational deps go in body
+evidence_nodes: []             # wikilinks to assets, sessions, or sources bearing on this
+---
+```
+
+**dependent_nodes format** — each entry is an object with rationale:
+```yaml
+dependent_nodes:
+  - node: "[[mcmc]]"
+    node_type: technique
+    rationale: "Requires understanding MCMC to evaluate it as alternative inference engine"
+```
+
+**Body sections:** `## Formal Statement`, `## Motivation`, `## Current Evidence`,
+`## Open Questions`, `## Platform Requirements` (IKS deps only), `## Connections`
+
+---
+
+### Research Cluster Node (`wiki/clusters/`)
+
+```yaml
+---
+id: "pkis:research-cluster:{slug}"  # assigned at creation; never changed
+aliases: []
+title: ""
+knowledge_type: research-cluster
+domain: []
+tags: []
+date_created: YYYY-MM-DD
+date_updated: YYYY-MM-DD
+status: active | dormant | resolved | superseded
+origin: research-program | organic | iks-derived
+hypotheses: []              # list of hypothesis node slugs — many-to-many
+cross_cluster_dependencies: []  # slugs of clusters this one depends on
+frontier_hypotheses: []     # computed by Maintenance agent — hypotheses addressable given current PKIS coverage
+---
+```
+
+**Body sections:** `## Thesis`, `## Summary`, `## Research Program Context`,
+`## Constituent Hypotheses`, `## Current Frontier`, `## Connections`
+
+---
+
+### Asset Node (`wiki/assets/`)
+
+```yaml
+---
+id: "pkis:asset:{slug}"        # assigned at creation; never changed
+aliases: []
+title: ""
+knowledge_type: asset
+asset_type: code | derivation | interactive-artifact | synthesis-note | worked-analysis
+generative_level: descriptive | constructive | generative
+  # descriptive: summarizing existing knowledge
+  # constructive: implementing or deriving from established procedures
+  # generative: applying to novel problems or producing original analysis
+domain: []
+tags: []
+date_created: YYYY-MM-DD
+audience: self | team | external
+hosted_url: ""          # URL if hosted; null otherwise
+repo_path: ""           # path in a git repo if version-controlled; null otherwise
+durable: true | false   # true if hosted or version-controlled and retrievable
+ars_link: ""            # ARS concept ID or question ID if this seeds ARS content; null otherwise
+nodes_evidenced: []     # see format below
+---
+```
+
+**nodes_evidenced format:**
+```yaml
+nodes_evidenced:
+  - node: "[[em-algorithm]]"
+    node_type: technique
+    components: [operational_mechanism, implementation, principled_mechanism]
+    notes: "Full from-scratch implementation including E-step and M-step"
+```
+
+**Body sections:** `## Description`, `## What It Demonstrates`, `## Production Notes`,
+`## ARS Potential`
+
+---
+
+### Bridge Note Node (`wiki/bridge-notes/`)
+
+Bridge notes are created only by the MCP `create_bridge_note` endpoint — never manually.
+They are explicitly temporary: intended to be integrated into proper node connections or
+discarded. No `component_scores`.
+
+```yaml
+---
+id: "pkis:bridge-note:{slug}"  # auto-assigned at creation
+aliases: []
+title: ""
+knowledge_type: bridge-note
+date_created: YYYY-MM-DD
+status: unreviewed | reviewed | integrated | discarded
+origin: voice-capture | conversation | reading | spontaneous
+source_context: ""      # fuzzy reference to what prompted this
+linked_nodes: []        # wikilinks to nodes this connection spans
+proposed_edge_type: ""  # proposed relationship predicate; null if unknown
+rationale: ""           # the connection or insight being captured
+integration_target: ""  # wikilink to target node for promotion; null if unknown
+---
+```
+
+**Body sections:** `## Connection`, `## Nodes Involved`, `## Integration Notes`
+
+---
+
+## Staging Area
+
+The staging area (`wiki/staging/`) is the two-phase write buffer. All MCP write endpoint
+outputs land here before promotion to the live graph. Staged nodes are standard markdown
+files with additional staging frontmatter prepended:
+
+```yaml
+---
+staged_at: YYYY-MM-DDTHH:MM:SSZ
+staged_by: mcp-create-bridge-note | mcp-create-source-stub
+staged_id: uuid4          # handle for commit_staged_node
+review_status: pending | approved | rejected
+proposed_edges: []        # edges proposed at staging time, written to live nodes at commit
+---
+```
+
+**Rules:**
+- The MCP server never writes directly to `wiki/<node_type>/` — only to `wiki/staging/`
+- Only `commit_staged_node` promotes a staged file to the live graph
+- The staging area is never indexed by the MCP's search or node-retrieval operations
+- Staged files that are discarded are deleted; the discard event is logged to `log.md`
 
 ---
 

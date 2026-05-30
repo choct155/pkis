@@ -16,6 +16,10 @@ import glob
 import uuid
 import hashlib
 import logging
+import subprocess
+import urllib.request
+import urllib.parse
+import xml.etree.ElementTree as ET
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Optional
@@ -39,8 +43,37 @@ ANTHROPIC_API_KEY = os.environ.get("ANTHROPIC_API_KEY", "")
 
 KNOWLEDGE_DIRS = [
     "concepts", "techniques", "results",
-    "frameworks", "problems", "principles", "sources"
+    "frameworks", "problems", "principles", "sources",
+    "hypotheses", "clusters", "assets", "bridge-notes"
 ]
+
+FOLDER_TO_TYPE = {
+    "concepts":    "concept",
+    "techniques":  "technique",
+    "results":     "result",
+    "frameworks":  "framework",
+    "problems":    "problem",
+    "principles":  "principle",
+    "sources":     "source",
+    "hypotheses":  "hypothesis",
+    "clusters":    "research-cluster",
+    "assets":      "asset",
+    "bridge-notes": "bridge-note",
+}
+
+TYPE_TO_FOLDER = {v: k for k, v in FOLDER_TO_TYPE.items()}
+
+# Component names per node type — used to compute anatomy_assessed / anatomy_total
+COMPONENT_SCORES_BY_TYPE = {
+    "concept":   ["definition", "prerequisites", "boundary", "scope", "application", "formal_statement", "dependents", "transfer"],
+    "technique": ["operational_mechanism", "principled_mechanism", "conditions", "implementation", "diagnostics", "alternatives", "failure_modes"],
+    "framework": ["structure", "purpose", "primitives", "scope", "application", "limits"],
+    "result":    ["statement", "proof_sketch", "conditions", "implications", "limitations"],
+    "problem":   ["formulation", "why_hard", "solution_landscape", "instances"],
+    "principle": ["statement", "justification", "implications", "violations"],
+}
+
+STAGING_DIR = Path(os.environ.get("WIKI_DIR", "/home/pkis/pkis-wiki/wiki")) / "staging"
 
 # Edge type weights for structural ranking (prerequisite-of highest)
 EDGE_WEIGHTS = {
@@ -56,6 +89,9 @@ EDGE_WEIGHTS = {
 
 # Trusted client token — set via env var in production
 TRUSTED_TOKEN = os.environ.get("PKIS_TRUSTED_TOKEN", "")
+
+# Write endpoint key — separate from read token; required for write operations
+WRITE_KEY = os.environ.get("PKIS_MCP_WRITE_KEY", "")
 
 # MCP JSON-RPC 2.0 Streamable HTTP transport constants
 JSONRPC_VERSION = "2.0"
@@ -114,9 +150,10 @@ def find_node_path_by_iri(iri: str) -> Optional[Path]:
     _, node_type, slug = parse_iri(iri)
     if not slug:
         return None
-    # Try the typed directory first
-    if node_type and node_type in KNOWLEDGE_DIRS:
-        p = WIKI_DIR / node_type / f"{slug}.md"
+    # Try the typed directory first (using TYPE_TO_FOLDER for correct mapping)
+    folder = TYPE_TO_FOLDER.get(node_type, node_type) if node_type else None
+    if folder:
+        p = WIKI_DIR / folder / f"{slug}.md"
         if p.exists():
             return p
     # Fall back to searching all dirs
@@ -368,6 +405,15 @@ def hybrid_search(query: str, domains=None, node_types=None, max_results=10) -> 
             continue
         if node_types and node.get("node_type") not in node_types:
             continue
+        # Anatomy assessment counts for component_scores
+        node_type_key = node["node_type"]
+        components = COMPONENT_SCORES_BY_TYPE.get(node_type_key)
+        anatomy_total = len(components) if components else 0
+        anatomy_assessed = 0
+        if components:
+            cs = node.get("frontmatter", {}).get("component_scores") or {}
+            anatomy_assessed = sum(1 for c in components if cs.get(c) is not None)
+
         results.append({
             "iri": iri,
             "canonical_title": node["title"],
@@ -377,6 +423,8 @@ def hybrid_search(query: str, domains=None, node_types=None, max_results=10) -> 
             "excerpt": node["content"][:300] if node.get("content") else "",
             "coverage": node["coverage"],
             "understanding": node["understanding"],
+            "anatomy_assessed": anatomy_assessed,
+            "anatomy_total": anatomy_total,
         })
         if len(results) >= max_results:
             break
@@ -390,6 +438,14 @@ def is_trusted(req) -> bool:
         return False
     auth = req.headers.get("Authorization", "")
     return auth == f"Bearer {TRUSTED_TOKEN}"
+
+
+def is_write_authorized(req) -> bool:
+    """Check if request carries the write endpoint key."""
+    if not WRITE_KEY:
+        return False
+    auth = req.headers.get("Authorization", "")
+    return auth == f"Bearer {WRITE_KEY}"
 
 
 # ============================================================
@@ -529,12 +585,24 @@ def tool_get_node(iri: str) -> dict:
                     "direction": "inbound"
                 })
 
+    # Build component_scores: return from frontmatter if present, else null-dict for known types
+    node_type_key = node["node_type"]
+    fm_component_scores = node["frontmatter"].get("component_scores")
+    components = COMPONENT_SCORES_BY_TYPE.get(node_type_key)
+    if fm_component_scores is not None:
+        component_scores = fm_component_scores
+    elif components:
+        component_scores = {c: None for c in components}
+    else:
+        component_scores = None
+
     return {
         "iri": iri,
         "frontmatter": node["frontmatter"],
         "content": node["content"],
         "related_nodes": related,
-        "reading_path": node["frontmatter"].get("reading_path", [])
+        "reading_path": node["frontmatter"].get("reading_path", []),
+        "component_scores": component_scores,
     }
 
 
@@ -907,6 +975,503 @@ def tool_get_concept_operational_load(iri: str) -> dict:
 
 
 # ============================================================
+# Write tool helpers — metadata enrichment
+# ============================================================
+
+def _fetch_arxiv_metadata(arxiv_id: str) -> dict:
+    """Fetch paper metadata from arXiv Atom API."""
+    url = f"http://export.arxiv.org/api/query?id_list={arxiv_id}&max_results=1"
+    try:
+        req = urllib.request.Request(url, headers={"User-Agent": "PKIS-Wiki/1.0"})
+        with urllib.request.urlopen(req, timeout=10) as resp:
+            xml_data = resp.read()
+        root = ET.fromstring(xml_data)
+        ns = {"atom": "http://www.w3.org/2005/Atom"}
+        entry = root.find("atom:entry", ns)
+        if entry is None:
+            return {}
+        title = entry.findtext("atom:title", namespaces=ns) or ""
+        abstract = entry.findtext("atom:summary", namespaces=ns) or ""
+        published = entry.findtext("atom:published", namespaces=ns) or ""
+        year = int(published[:4]) if published and len(published) >= 4 else None
+        authors = [
+            a.findtext("atom:name", namespaces=ns) or ""
+            for a in entry.findall("atom:author", ns)
+        ]
+        return {
+            "title": title.strip().replace("\n", " "),
+            "authors": ", ".join(authors),
+            "year": year,
+            "abstract": abstract.strip().replace("\n", " "),
+            "venue": "arXiv",
+            "source_type": "paper",
+        }
+    except Exception as e:
+        logger.error(f"arXiv fetch failed for {arxiv_id}: {e}")
+        return {}
+
+
+def _fetch_crossref_metadata(doi: str) -> dict:
+    """Fetch paper metadata from CrossRef API."""
+    encoded_doi = urllib.parse.quote(doi, safe="")
+    url = f"https://api.crossref.org/works/{encoded_doi}"
+    try:
+        req = urllib.request.Request(url, headers={"User-Agent": "PKIS-Wiki/1.0 (mailto:pkis@pkis.dev)"})
+        with urllib.request.urlopen(req, timeout=10) as resp:
+            data = json.loads(resp.read())
+        msg = data.get("message", {})
+        title = (msg.get("title") or [""])[0]
+        authors = ", ".join(
+            f"{a.get('given', '')} {a.get('family', '')}".strip()
+            for a in msg.get("author", [])
+        )
+        year = None
+        for date_field in ("published-print", "published-online", "created"):
+            if date_field in msg:
+                parts = msg[date_field].get("date-parts", [[]])
+                if parts and parts[0]:
+                    year = parts[0][0]
+                    break
+        abstract = msg.get("abstract", "")
+        venue = (msg.get("container-title") or [""])[0]
+        return {
+            "title": title,
+            "authors": authors,
+            "year": year,
+            "abstract": abstract,
+            "venue": venue,
+            "source_type": "paper",
+        }
+    except Exception as e:
+        logger.error(f"CrossRef fetch failed for {doi}: {e}")
+        return {}
+
+
+# ============================================================
+# Write tool implementations
+# ============================================================
+
+def tool_create_bridge_note(
+    rationale: str,
+    source_context: str = "",
+    linked_node_refs: list = None,
+    proposed_edge_type: str = "",
+    origin: str = "conversation"
+) -> dict:
+    """Create a bridge note in the staging area."""
+    if not rationale:
+        raise ValueError("rationale is required")
+
+    staged_id = str(uuid.uuid4())
+    now = datetime.now(timezone.utc)
+    date_str = now.strftime("%Y%m%d")
+    ts_str = now.strftime("%Y-%m-%dT%H:%M:%SZ")
+
+    # Generate a descriptor from the rationale (first 5 meaningful words)
+    descriptor_words = re.sub(r'[^a-z0-9\s]', '', rationale.lower()).split()[:5]
+    descriptor = "-".join(descriptor_words)
+    slug = f"bn-{date_str}-{descriptor}"[:60]
+
+    # Resolve fuzzy references
+    resolution_candidates = {}
+    linked_nodes = []
+    if linked_node_refs:
+        for ref in (linked_node_refs or []):
+            path = find_node_path_by_iri(ref)
+            if path:
+                node = load_node(path)
+                linked_nodes.append(f"[[{node['slug']}]]")
+            else:
+                results = hybrid_search(ref, max_results=3)
+                if results:
+                    resolution_candidates[ref] = [r["iri"] for r in results]
+                linked_nodes.append(f"[[{ref}]]")
+
+    fm = {
+        "staged_at": ts_str,
+        "staged_by": "mcp-create-bridge-note",
+        "staged_id": staged_id,
+        "review_status": "pending",
+        "proposed_edges": [],
+        "title": rationale[:80],
+        "knowledge_type": "bridge-note",
+        "date_created": now.strftime("%Y-%m-%d"),
+        "status": "unreviewed",
+        "origin": origin,
+        "source_context": source_context,
+        "linked_nodes": linked_nodes,
+        "proposed_edge_type": proposed_edge_type or "",
+        "rationale": rationale,
+        "integration_target": "",
+    }
+    if resolution_candidates:
+        fm["resolution_candidates"] = resolution_candidates
+
+    body = f"""## Connection
+{rationale}
+
+## Nodes Involved
+{chr(10).join(f'- {n}' for n in linked_nodes) if linked_nodes else '_To be determined_'}
+
+## Integration Notes
+Pending review.
+"""
+
+    STAGING_DIR.mkdir(parents=True, exist_ok=True)
+    staged_path = STAGING_DIR / f"{slug}.md"
+    counter = 1
+    while staged_path.exists():
+        staged_path = STAGING_DIR / f"{slug}-{counter}.md"
+        counter += 1
+
+    staged_path.write_text(f"---\n{yaml.dump(fm, default_flow_style=False, allow_unicode=True)}---\n\n{body}")
+
+    log_path = WIKI_DIR / "log.md"
+    with open(log_path, "a") as lf:
+        lf.write(f"\n## [{now.strftime('%Y-%m-%d')}] staged | bridge-note\n- Staged: {staged_path.stem} (id: {staged_id})\n- Rationale: {rationale[:100]}\n")
+
+    return {
+        "staged_id": staged_id,
+        "staged_at": ts_str,
+        "slug": staged_path.stem,
+        "resolution_candidates": resolution_candidates,
+        "review_url": f"https://github.com/choct155/pkis/blob/main/wiki/staging/{staged_path.name}",
+    }
+
+
+def tool_create_source_stub(
+    title: str = "",
+    url: str = "",
+    doi: str = "",
+    authors: str = "",
+    year: int = None,
+    notes: str = "",
+    priority: str = "normal"
+) -> dict:
+    """Create a source stub in staging with automated metadata enrichment."""
+    if not any([title, url, doi]):
+        raise ValueError("At least one of title, url, or doi must be provided")
+
+    # ---- Enrichment ----
+    metadata = {}
+    enrichment_status = "minimal"
+
+    # Detect arXiv
+    arxiv_id = None
+    if url and "arxiv.org" in url:
+        m = re.search(r'arxiv\.org/(?:abs|pdf)/([0-9]{4}\.[0-9]+v?[0-9]*)', url)
+        if m:
+            arxiv_id = m.group(1)
+    if arxiv_id:
+        metadata = _fetch_arxiv_metadata(arxiv_id)
+        if metadata.get("title"):
+            enrichment_status = "full" if metadata.get("abstract") else "partial"
+
+    # CrossRef fallback
+    if not metadata.get("title") and doi:
+        metadata = _fetch_crossref_metadata(doi)
+        if metadata.get("title"):
+            enrichment_status = "full" if metadata.get("abstract") else "partial"
+
+    # Merge caller-provided fields (override enriched values)
+    if title:
+        metadata["title"] = title
+    if authors:
+        metadata["authors"] = authors
+    if year:
+        metadata["year"] = year
+
+    # ---- Slug generation ----
+    final_title = metadata.get("title") or title or doi or url or "unknown"
+    final_authors = metadata.get("authors") or authors or ""
+    final_year = metadata.get("year") or year
+
+    first_author_last = ""
+    if final_authors:
+        first_author = final_authors.split(",")[0].strip()
+        first_author_last = re.sub(r'[^a-z0-9]', '', first_author.split()[-1].lower()) if first_author else ""
+
+    title_words = re.sub(r'[^a-z0-9\s]', '', final_title.lower()).split()
+    key_word = title_words[0] if title_words else "source"
+    year_str = str(final_year) if final_year else ""
+
+    slug_parts = [p for p in [first_author_last, key_word, year_str] if p]
+    base_slug = "-".join(slug_parts)[:55] if slug_parts else "source-stub"
+    slug = base_slug
+    counter = 1
+    while (STAGING_DIR / f"{slug}.md").exists() or find_node_path(slug):
+        slug = f"{base_slug}-{counter}"
+        counter += 1
+
+    # ---- Connection candidates ----
+    search_text = f"{final_title} {metadata.get('abstract', '')[:400]}"
+    connection_candidates = []
+    try:
+        results = hybrid_search(search_text, max_results=8)
+        connection_candidates = [r["iri"] for r in results if r["node_type"] != "sources"]
+    except Exception:
+        pass
+
+    # ---- Build staged file ----
+    staged_id = str(uuid.uuid4())
+    now = datetime.now(timezone.utc)
+    ts_str = now.strftime("%Y-%m-%dT%H:%M:%SZ")
+
+    fields_populated = [k for k, v in {
+        "title": metadata.get("title"),
+        "authors": metadata.get("authors") or authors,
+        "year": metadata.get("year") or year,
+        "abstract": metadata.get("abstract"),
+        "venue": metadata.get("venue"),
+    }.items() if v]
+
+    fm = {
+        "staged_at": ts_str,
+        "staged_by": "mcp-create-source-stub",
+        "staged_id": staged_id,
+        "review_status": "pending",
+        "proposed_edges": [],
+        "id": f"pkis:source:{slug}",
+        "aliases": [],
+        "title": metadata.get("title") or title or "",
+        "authors": metadata.get("authors") or authors or "",
+        "year": final_year,
+        "type": metadata.get("source_type", "paper"),
+        "domain": [],
+        "tags": [],
+        "source_url": url or "",
+        "doi": doi or "",
+        "drive_id": "",
+        "drive_path": "",
+        "status": "unread",
+        "date_added": now.strftime("%Y-%m-%d"),
+        "concepts": [],
+        "connection_candidates": connection_candidates[:8],
+        "priority": priority,
+    }
+
+    abstract = metadata.get("abstract", "")
+    body = f"""## Summary
+{abstract[:500] if abstract else '[To be filled during ingest]'}
+
+## Key Knowledge Objects
+[To be identified during ingest]
+
+## Key Extractions
+[To be identified during ingest]
+
+## Connection Candidates
+{chr(10).join(f'- {iri}' for iri in connection_candidates[:5]) if connection_candidates else '[None identified]'}
+{f'{chr(10)}## Notes{chr(10)}{notes}' if notes else ''}
+"""
+
+    STAGING_DIR.mkdir(parents=True, exist_ok=True)
+    staged_path = STAGING_DIR / f"{slug}.md"
+    staged_path.write_text(f"---\n{yaml.dump(fm, default_flow_style=False, allow_unicode=True)}---\n\n{body}")
+
+    log_path = WIKI_DIR / "log.md"
+    with open(log_path, "a") as lf:
+        lf.write(
+            f"\n## [{now.strftime('%Y-%m-%d')}] staged | source-stub\n"
+            f"- Staged: {slug} (id: {staged_id})\n"
+            f"- Title: {metadata.get('title') or title or '(unknown)'}\n"
+            f"- Enrichment: {enrichment_status}\n"
+        )
+
+    return {
+        "staged_id": staged_id,
+        "staged_at": ts_str,
+        "slug": slug,
+        "enrichment_status": enrichment_status,
+        "fields_populated": fields_populated,
+        "connection_candidates": connection_candidates[:5],
+        "review_url": f"https://github.com/choct155/pkis/blob/main/wiki/staging/{staged_path.name}",
+    }
+
+
+def tool_commit_staged_node(
+    staged_id: str,
+    edits: dict = None,
+    confirmed_links: dict = None,
+    action: str = "commit"
+) -> dict:
+    """Promote a reviewed staged node from staging to the live graph."""
+    STAGING_DIR.mkdir(parents=True, exist_ok=True)
+
+    # Find staged file by staged_id
+    staged_file = None
+    for f in STAGING_DIR.glob("*.md"):
+        try:
+            post = frontmatter.load(str(f))
+            if post.metadata.get("staged_id") == staged_id:
+                staged_file = f
+                break
+        except Exception:
+            continue
+
+    if not staged_file:
+        raise ValueError(f"No staged node found with staged_id: {staged_id}")
+
+    post = frontmatter.load(str(staged_file))
+    fm = dict(post.metadata)
+    body_content = post.content
+
+    if action == "discard":
+        staged_file.unlink()
+        log_path = WIKI_DIR / "log.md"
+        with open(log_path, "a") as lf:
+            lf.write(
+                f"\n## [{datetime.now(timezone.utc).strftime('%Y-%m-%d')}] discarded | {fm.get('knowledge_type', 'unknown')}\n"
+                f"- Discarded: {staged_file.stem} (id: {staged_id})\n"
+            )
+        return {"status": "discarded", "staged_id": staged_id}
+
+    # Apply field-level edits
+    if edits:
+        for key, value in edits.items():
+            fm[key] = value
+
+    # Apply confirmed_links: replace fuzzy refs with canonical wikilinks
+    if confirmed_links:
+        for fuzzy_ref, confirmed_iri in confirmed_links.items():
+            _, _nt, slug_part = parse_iri(confirmed_iri)
+            if slug_part:
+                wikilink = f"[[{slug_part}]]"
+                linked = fm.get("linked_nodes", [])
+                fm["linked_nodes"] = [wikilink if ref == f"[[{fuzzy_ref}]]" else ref for ref in linked]
+                body_content = body_content.replace(fuzzy_ref, wikilink)
+
+    # Remove staging-only fields
+    for field in ["staged_at", "staged_by", "staged_id", "review_status", "proposed_edges",
+                  "resolution_candidates", "connection_candidates", "priority"]:
+        fm.pop(field, None)
+
+    # Determine knowledge type and target folder
+    knowledge_type = fm.get("knowledge_type") or fm.get("type") or "source"
+    # Map paper/book/article/talk/video → source
+    if knowledge_type in ("paper", "book", "article", "talk", "video"):
+        fm["type"] = knowledge_type
+        fm.pop("knowledge_type", None)
+        knowledge_type = "source"
+
+    folder = TYPE_TO_FOLDER.get(knowledge_type, "sources")
+    target_dir = WIKI_DIR / folder
+    target_dir.mkdir(parents=True, exist_ok=True)
+
+    slug = staged_file.stem
+    target_path = target_dir / f"{slug}.md"
+
+    # Ensure IRI is set
+    if "id" not in fm:
+        fm["id"] = f"pkis:{knowledge_type}:{slug}"
+
+    # Write promoted file
+    new_post = frontmatter.Post(body_content, **fm)
+    target_path.write_text(frontmatter.dumps(new_post))
+    staged_file.unlink()
+
+    # Invalidate node cache
+    global _node_cache
+    _node_cache = {}
+
+    # Update index.md
+    section_map = {
+        "concept": "## Concepts", "technique": "## Techniques",
+        "result": "## Results", "framework": "## Frameworks",
+        "problem": "## Problems", "principle": "## Principles",
+        "source": "## Sources", "hypothesis": "## Hypotheses",
+        "research-cluster": "## Research Clusters", "asset": "## Assets",
+        "bridge-note": "## Bridge Notes",
+    }
+    index_path = WIKI_DIR / "index.md"
+    if index_path.exists():
+        idx_content = index_path.read_text()
+        node_domain = fm.get("domain", [])
+        domain_str = ", ".join(node_domain) if isinstance(node_domain, list) else str(node_domain)
+        now_date = datetime.now(timezone.utc).strftime("%Y-%m-%d")
+        new_entry = f"- [[{slug}]] — {fm.get('title', slug)} ({domain_str}) ({now_date})\n"
+        section = section_map.get(knowledge_type, "## Sources")
+        if section in idx_content:
+            idx_content = idx_content.replace(section + "\n", section + "\n" + new_entry)
+        else:
+            idx_content += f"\n{section}\n{new_entry}"
+        index_path.write_text(idx_content)
+
+    # Append to log.md
+    iri = fm.get("id", f"pkis:{knowledge_type}:{slug}")
+    log_path = WIKI_DIR / "log.md"
+    with open(log_path, "a") as lf:
+        lf.write(
+            f"\n## [{datetime.now(timezone.utc).strftime('%Y-%m-%d')}] committed | {knowledge_type}\n"
+            f"- Committed: {slug} → {folder}/{slug}.md\n"
+            f"- IRI: {iri}\n"
+        )
+
+    # Git commit and push
+    git_sha = ""
+    try:
+        repo_dir = str(REPO_DIR)
+        files_to_add = [str(target_path), str(index_path), str(log_path)]
+        subprocess.run(["git", "-C", repo_dir, "add"] + files_to_add, check=True, capture_output=True)
+        result = subprocess.run(
+            ["git", "-C", repo_dir, "commit", "-m",
+             f"[mcp-commit] {knowledge_type}: {fm.get('title', slug)[:60]}"],
+            check=True, capture_output=True, text=True
+        )
+        sha_match = re.search(r'\[.+? ([a-f0-9]{7,})\]', result.stdout)
+        git_sha = sha_match.group(1) if sha_match else ""
+        subprocess.run(["git", "-C", repo_dir, "push"], check=True, capture_output=True)
+        logger.info(f"Git committed and pushed: {git_sha}")
+    except subprocess.CalledProcessError as e:
+        logger.error(f"Git operation failed: {e.stderr if hasattr(e, 'stderr') else e}")
+
+    return {
+        "status": "committed",
+        "iri": iri,
+        "git_commit": git_sha,
+        "url": f"https://github.com/choct155/pkis/blob/main/wiki/{folder}/{slug}.md",
+    }
+
+
+def tool_get_staged_nodes(
+    node_type: str = None,
+    staged_by: str = None,
+    limit: int = 20
+) -> list:
+    """List all pending staged nodes awaiting review."""
+    STAGING_DIR.mkdir(parents=True, exist_ok=True)
+    results = []
+    staged_files = sorted(STAGING_DIR.glob("*.md"), key=lambda f: f.stat().st_mtime, reverse=True)
+    for staged_file in staged_files:
+        try:
+            post = frontmatter.load(str(staged_file))
+            fm = post.metadata
+            if fm.get("staged_id") is None:
+                continue
+            if node_type and fm.get("knowledge_type") != node_type:
+                continue
+            if staged_by and fm.get("staged_by") != staged_by:
+                continue
+            first_line = post.content.strip().split("\n")[0].lstrip("#").strip()[:200] if post.content.strip() else ""
+            results.append({
+                "staged_id": fm.get("staged_id"),
+                "slug": staged_file.stem,
+                "node_type": fm.get("knowledge_type", "unknown"),
+                "staged_at": fm.get("staged_at", ""),
+                "staged_by": fm.get("staged_by", ""),
+                "title": fm.get("title", staged_file.stem),
+                "review_status": fm.get("review_status", "pending"),
+                "description": first_line,
+                "review_url": f"https://github.com/choct155/pkis/blob/main/wiki/staging/{staged_file.name}",
+            })
+        except Exception as e:
+            logger.error(f"Error reading staged file {staged_file}: {e}")
+        if len(results) >= limit:
+            break
+    return results
+
+
+# ============================================================
 # Flask routes — MCP HTTP transport
 # ============================================================
 
@@ -1033,6 +1598,63 @@ def _get_tools_list():
             "name": "get_health_metrics",
             "description": "Get summary health statistics for the wiki.",
             "inputSchema": {"type": "object", "properties": {}}
+        },
+        {
+            "name": "get_staged_nodes",
+            "description": "List all staged nodes awaiting review. Use to check what's pending in the two-phase write queue.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "node_type": {"type": "string"},
+                    "staged_by": {"type": "string"},
+                    "limit": {"type": "integer", "default": 20}
+                }
+            }
+        },
+        {
+            "name": "create_bridge_note",
+            "description": "Capture an epiphany or cross-domain connection. Creates a staged bridge note for later review. Accepts fuzzy node references — they are resolved to candidates automatically.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "rationale": {"type": "string", "description": "The insight or connection being captured"},
+                    "source_context": {"type": "string", "description": "Fuzzy reference to what prompted this"},
+                    "linked_node_refs": {"type": "array", "items": {"type": "string"}, "description": "Node IRIs or fuzzy text references"},
+                    "proposed_edge_type": {"type": "string", "description": "One of the 8 relationship predicates"},
+                    "origin": {"type": "string", "enum": ["voice-capture", "conversation", "reading", "spontaneous"], "default": "conversation"}
+                },
+                "required": ["rationale"]
+            }
+        },
+        {
+            "name": "create_source_stub",
+            "description": "Register a new source from any identifying fragment. Enriches metadata from arXiv, CrossRef, or Semantic Scholar. Creates a staged stub for Librarian review.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "title": {"type": "string"},
+                    "url": {"type": "string", "description": "arXiv URL, DOI URL, blog URL, etc."},
+                    "doi": {"type": "string"},
+                    "authors": {"type": "string"},
+                    "year": {"type": "integer"},
+                    "notes": {"type": "string"},
+                    "priority": {"type": "string", "enum": ["high", "normal"], "default": "normal"}
+                }
+            }
+        },
+        {
+            "name": "commit_staged_node",
+            "description": "Promote a reviewed staged node to the live wiki graph. Commits and pushes to git. Use after reviewing a staged node via get_staged_nodes.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "staged_id": {"type": "string", "description": "UUID from create_bridge_note or create_source_stub"},
+                    "edits": {"type": "object", "description": "Field-level edits to apply before committing"},
+                    "confirmed_links": {"type": "object", "description": "Resolution of fuzzy refs: {fuzzy_ref: confirmed_iri}"},
+                    "action": {"type": "string", "enum": ["commit", "discard"], "default": "commit"}
+                },
+                "required": ["staged_id"]
+            }
         }
     ]
 
@@ -1174,7 +1796,7 @@ def dispatch_tool(tool_name: str, params: dict, req) -> any:
         "get_concept_operational_load": lambda p: tool_get_concept_operational_load(p["iri"]),
     }
 
-    # Trusted-only tools — require Bearer token
+    # Trusted-only tools — require PKIS_TRUSTED_TOKEN
     trusted_tools = {
         "register_operational_reference": lambda p: tool_register_operational_reference(
             p["operational_node_id"],
@@ -1190,12 +1812,47 @@ def dispatch_tool(tool_name: str, params: dict, req) -> any:
         ),
     }
 
+    # Write tools — require PKIS_MCP_WRITE_KEY
+    write_tools = {
+        "create_bridge_note": lambda p: tool_create_bridge_note(
+            rationale=p["rationale"],
+            source_context=p.get("source_context", ""),
+            linked_node_refs=p.get("linked_node_refs"),
+            proposed_edge_type=p.get("proposed_edge_type", ""),
+            origin=p.get("origin", "conversation"),
+        ),
+        "create_source_stub": lambda p: tool_create_source_stub(
+            title=p.get("title", ""),
+            url=p.get("url", ""),
+            doi=p.get("doi", ""),
+            authors=p.get("authors", ""),
+            year=p.get("year"),
+            notes=p.get("notes", ""),
+            priority=p.get("priority", "normal"),
+        ),
+        "commit_staged_node": lambda p: tool_commit_staged_node(
+            staged_id=p["staged_id"],
+            edits=p.get("edits"),
+            confirmed_links=p.get("confirmed_links"),
+            action=p.get("action", "commit"),
+        ),
+        "get_staged_nodes": lambda p: tool_get_staged_nodes(
+            node_type=p.get("node_type"),
+            staged_by=p.get("staged_by"),
+            limit=p.get("limit", 20),
+        ),
+    }
+
     if tool_name in read_tools:
         return read_tools[tool_name](params)
     elif tool_name in trusted_tools:
         if not is_trusted(req):
             raise PermissionError(f"Tool '{tool_name}' requires trusted client token")
         return trusted_tools[tool_name](params)
+    elif tool_name in write_tools:
+        if not is_write_authorized(req):
+            raise PermissionError(f"Tool '{tool_name}' requires write authorization key")
+        return write_tools[tool_name](params)
     else:
         raise ValueError(f"Unknown tool: {tool_name}")
 

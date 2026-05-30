@@ -197,3 +197,17 @@
 - Created framework stub: [[undirected-graphical-models]] (high)
 - Updated wiki/sources/hastie-esl.md concepts list and Key Knowledge Objects
 - Updated: wiki/index.md
+
+## [2026-05-30] schema-init | SCHEMA.md v3.0 + infrastructure node initialization
+- Updated SCHEMA.md from v2.0 to v3.0: added 4 infrastructure node types (hypothesis, research-cluster, asset, bridge-note); added component_scores anatomy dicts to all 6 knowledge node templates; added orientation/integration edge classification to Reading Path convention; added staging area two-phase write architecture; updated slug conventions and index.md convention
+- Created new wiki directories: wiki/hypotheses/, wiki/clusters/, wiki/assets/, wiki/bridge-notes/, wiki/staging/ (each with .gitkeep)
+- Created 12 research cluster nodes in wiki/clusters/ from Research_Program_KR_ML_Complementarity_v0_1.md:
+  - [[intensional-grounding]], [[learned-symbol-grounding]], [[compositional-query-grounding]], [[ontological-coverage-planning]]
+  - [[structured-validation-truth-discovery]], [[embedding-ontology-alignment]], [[model-evolution]]
+  - [[parsed-intent-calibration]], [[retrieval-inference-tradeoff]], [[composite-credibility]]
+  - [[research-instrumentation]], [[evaluation-infrastructure]]
+- Created 3 hypothesis nodes in wiki/hypotheses/:
+  - [[intensional-grounding-ned-accuracy]], [[intensional-grounding-vs-scale]], [[scaling-foil-null-hypothesis]]
+- All new nodes include id (pkis:research-cluster:* and pkis:hypothesis:*) and aliases fields
+- Updated wiki/index.md: added ## Research Clusters and ## Hypotheses sections
+- Source: PKIS_Research_Cluster_Hypothesis_Init.md (Research_Program_KR_ML_Complementarity_v0_1.md)

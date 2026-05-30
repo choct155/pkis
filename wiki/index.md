@@ -517,4 +517,23 @@
 - [[enterprise-first-mindset]] — Principle that effective cross-functional leaders prioritize enterprise outcomes over departmental interests (organizational-theory) (2026-05-20)
 - [[functional-finance]] — Lerner's principle: fiscal policy should target economic outcomes, not budget balance (macroeconomics, monetary-economics) (2026-05-20)
 
+## Research Clusters
+- [[intensional-grounding]] — Intensional Grounding: ontological class structure enabling entity identity and category membership (knowledge-representation, symbolic-subsymbolic, deep-learning) (2026-05-30)
+- [[learned-symbol-grounding]] — Learned Symbol Grounding: learning discrete symbolic abstractions aligned to ontological concepts (knowledge-representation, deep-learning, symbolic-subsymbolic) (2026-05-30)
+- [[compositional-query-grounding]] — Compositional Query Grounding: ontological decomposition of NL queries with implicit expansion and cross-store alignment (knowledge-representation, deep-learning) (2026-05-30)
+- [[ontological-coverage-planning]] — Ontological Coverage Planning: formal coverage model enabling systematic knowledge gap identification (knowledge-representation) (2026-05-30)
+- [[structured-validation-truth-discovery]] — Structured Validation & Truth Discovery: ontological property constraints for semantic validation and probabilistic conflict resolution (knowledge-representation, bayesian-stats) (2026-05-30)
+- [[embedding-ontology-alignment]] — Embedding-Ontology Alignment: ontologically-supervised embeddings that preserve ontological relationships in vector space (knowledge-representation, deep-learning) (2026-05-30)
+- [[model-evolution]] — Model Evolution: LLM-assisted ontology authoring with drift and fragmentation detection (knowledge-representation) (2026-05-30)
+- [[parsed-intent-calibration]] — Parsed Intent Calibration: distributional query parsing with uncertainty propagation through retrieval (bayesian-stats, knowledge-representation) (2026-05-30)
+- [[retrieval-inference-tradeoff]] — Retrieval-Inference Tradeoff: cost × error rate analysis of ontology-backed retrieval vs. model inference (knowledge-representation, bayesian-stats) (2026-05-30)
+- [[composite-credibility]] — Composite Credibility: ontological provenance enabling principled conflict resolution and confidence communication (bayesian-stats, knowledge-representation) (2026-05-30)
+- [[research-instrumentation]] — Research Instrumentation: observability architecture co-designed with experimental program requirements (knowledge-representation) (2026-05-30)
+- [[evaluation-infrastructure]] — Evaluation Infrastructure: domain-specific benchmark construction for ontology-augmented NED/NER and composite result quality (knowledge-representation) (2026-05-30)
+
+## Hypotheses
+- [[intensional-grounding-ned-accuracy]] — Token-to-Ontological-Class Distance Predicts NED/NER Accuracy (knowledge-representation, deep-learning) (2026-05-30)
+- [[intensional-grounding-vs-scale]] — Ontological Type Constraints Reduce Entity Resolution Errors More Than Equivalent Compute Scaling (knowledge-representation, deep-learning) (2026-05-30)
+- [[scaling-foil-null-hypothesis]] — Scaling Foil — Can Sufficiently Large LLMs Subsume Each Cluster's Task Without Ontological Scaffolding? (knowledge-representation, deep-learning, symbolic-subsymbolic) (2026-05-30)
+
 ## Reading Queue

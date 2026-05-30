@@ -23,13 +23,18 @@ from pathlib import Path
 WIKI_DIR = Path(__file__).parent.parent / "wiki"
 
 FOLDER_TO_TYPE = {
-    "concepts":   "concept",
-    "techniques": "technique",
-    "results":    "result",
-    "frameworks": "framework",
-    "problems":   "problem",
-    "principles": "principle",
-    "sources":    "source",
+    "concepts":    "concept",
+    "techniques":  "technique",
+    "results":     "result",
+    "frameworks":  "framework",
+    "problems":    "problem",
+    "principles":  "principle",
+    "sources":     "source",
+    "hypotheses":  "hypothesis",
+    "clusters":    "research-cluster",
+    "assets":      "asset",
+    "bridge-notes": "bridge-note",
+    # staging/ is intentionally excluded — auto-generated slugs, not IRI-backfilled
 }
 
 # Hand-curated aliases for well-known source works (slug → alias list).

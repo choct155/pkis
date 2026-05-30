@@ -1,11 +1,16 @@
 # Librarian Agent — Operating Procedure
-Version: 2.0
+Version: 3.0
 
 ## Role
 
-The Librarian ingests new source materials into the wiki. It creates structured
+The Librarian operates in two modes:
+
+**Ingest Mode** — ingests new source materials into the wiki. Creates structured
 source entries, classifies knowledge objects by type, creates stubs in the appropriate
 folders, updates the index and log, and populates the reading queue.
+
+**Interrogation Mode** — answers structural questions about the source dependency
+graph in natural language. Read-only; does not write to the graph.
 
 ## Trigger
 
@@ -47,11 +52,52 @@ paths are not.
 | `wiki/frameworks/` | Yes — stub creation only |
 | `wiki/problems/` | Yes — stub creation only |
 | `wiki/principles/` | Yes — stub creation only |
+| `wiki/hypotheses/` | Yes — stub creation only |
+| `wiki/clusters/` | Yes — stub creation only |
+| `wiki/assets/` | Yes — stub creation only |
+| `wiki/bridge-notes/` | No — created by MCP write endpoint only |
+| `wiki/staging/` | No — written by MCP server only |
 | `wiki/index.md` | Yes — add new entries |
 | `wiki/log.md` | Yes — append only |
 | `wiki/queue.md` | Yes — add items only |
 | `raw/clippings/` | Yes — save web-clipped markdown |
 | Existing non-stub nodes | No — Synthesizer's domain |
+
+---
+
+## Interrogation Mode
+
+Triggered conversationally at any time: `Librarian, [question]`
+
+This mode answers structural questions about the source dependency graph in natural
+language. It is **read-only** and does not write to the graph.
+
+**Supported queries:**
+
+- **"Why are [[node-a]] and [[node-b]] connected?"**
+  → Retrieve both nodes, read their Connections sections, synthesize the rationale
+
+- **"What is blocked if I skip [[source-slug]]?"**
+  → Find all nodes that list this source in their Reading Path; identify which have
+  no other unread sources covering the same concepts as integration edges
+
+- **"What is the minimal subgraph for hypothesis [[hypothesis-slug]]?"**
+  → Load the hypothesis node; traverse `dependent_nodes`; for each, check coverage
+  and Reading Path; return the set of unread integration-edge sources that would
+  address the gaps
+
+- **"What should I read for orientation vs. integration on [[concept-slug]]?"**
+  → Return sources tagged `orientation` vs. `integration` in the node's Reading Path,
+  sorted by blocking count
+
+- **"Which sources on the frontier are blocking the most downstream nodes?"**
+  → Compute blocking count across all unread sources in `queue.md` whose Reading Path
+  entries include integration edges; sort descending and return top 10
+
+- **"Resolve unlinked bridge notes"**
+  → Load all bridge notes with `status: unreviewed`; for each, run `search_wiki`
+  against the rationale text; propose top 3 linked node candidates; present for
+  human confirmation before updating the bridge note
 
 ---
 
@@ -235,7 +281,8 @@ For each knowledge object identified in **Key Knowledge Objects**:
 
    **IRI assignment is mandatory.** Every stub must have `id` as its first frontmatter
    field, set to `pkis:{knowledge_type}:{slug}` using the singular type name:
-   `concept`, `technique`, `result`, `framework`, `problem`, or `principle`.
+   `concept`, `technique`, `result`, `framework`, `problem`, `principle`, `hypothesis`,
+   `research-cluster`, or `asset`.
 
    Examples:
    - A concept stub at `wiki/concepts/variational-inference.md` → `id: "pkis:concept:variational-inference"`
@@ -251,11 +298,21 @@ For each knowledge object identified in **Key Knowledge Objects**:
    The body is one sentence: what is this knowledge object? For moderate confidence,
    add a second sentence: "Classification note: assigned as [type] but may be [alt-type]
    because [reason]." Append a `## Reading Path` section with the current source
-   (status: unread) as its first entry:
+   (status: unread) as its first entry, with an edge type classification and rationale:
+
    ```markdown
    ## Reading Path
-   - [[current-source-slug]] (unread) — brief note on what this source says about the node
+   - [[current-source-slug]] (unread) [orientation|integration] — brief note on what this source says about the node; rationale for edge type
    ```
+
+   **Edge type classification:**
+   - `orientation` — the source provides field-level context, historical background, or
+     conceptual framing before deeper engagement; useful but not prerequisite
+   - `integration` — the source must be read deeply before the node can be considered
+     well-sourced; it contains the primary definition, proof, or working explanation
+
+   Include a rationale string explaining why the dependency exists. This enables the
+   Interrogation Mode query "What should I read for orientation vs. integration?"
 
 ### Step 5: Update index.md
 
@@ -271,15 +328,19 @@ its `knowledge_type`:
 Scan nodes linked from this source. For each linked node, check whether its `sources:`
 list contains other sources that are unread and not yet in `queue.md`.
 
-Priority rules:
-- **High**: sources that are referenced by 3+ existing nodes (high connectivity value)
-- **High**: book chapters that are stubs and directly relevant to nodes appearing in
-  multiple source entries
-- **Normal**: everything else that's unread and plausibly relevant
+**Priority is determined by blocking count** — how many downstream nodes depend on
+this source being read as an integration edge.
+
+For each unread source being added to `queue.md`:
+1. Find all knowledge nodes that list this source in their Reading Path as an
+   `integration` edge
+2. Count total downstream dependencies (nodes that depend on those concept nodes)
+3. Assign **High** priority if `blocking_count > 5`, **Normal** otherwise
+4. Include the blocking count in the queue entry
 
 Add to `wiki/queue.md`:
 ```
-- [ ] [[source-slug]] — one sentence explaining relevance
+- [ ] [[source-slug]] — [blocking: N nodes] one sentence explaining relevance
 ```
 
 ### Step 7: Append to log.md
@@ -300,8 +361,11 @@ Add to `wiki/queue.md`:
 - **Never hallucinate.** Every claim in Key Extractions must be traceable to the source.
 - **Faithfulness over completeness.** If extraction quality is poor, write what you can
   confirm and note the limitation in the Summary.
-- **Slug uniqueness.** Check ALL 7 wiki subdirectories before creating a slug. No
-  two files across the entire wiki may share a slug.
+- **Slug uniqueness.** Check ALL 11 wiki subdirectories before creating a slug. No
+  two files across the entire wiki may share a slug. The 11 directories are:
+  sources, concepts, techniques, results, frameworks, problems, principles,
+  hypotheses, clusters, assets, bridge-notes (staging is excluded — slugs there
+  are auto-generated and not subject to this constraint).
 - **Type accuracy matters.** Assign with confidence at high/moderate; escalate at low.
   Do not default to `concept` as a catch-all — if you can't tell, say so and let the
   human make the call. Over time the resolved classifications will calibrate your judgment.
@@ -311,7 +375,8 @@ Add to `wiki/queue.md`:
 - **IRI is mandatory.** Every node — source entry and every knowledge stub — must have
   `id: "pkis:{type}:{slug}"` as its first frontmatter field. A node without `id` is
   a schema violation. Use the singular type names: `source`, `concept`, `technique`,
-  `result`, `framework`, `problem`, `principle`. Assign at creation; never modify.
+  `result`, `framework`, `problem`, `principle`, `hypothesis`, `research-cluster`,
+  `asset`, `bridge-note`. Assign at creation; never modify.
 - **Aliases add value.** Populate `aliases:` thoughtfully — abbreviations, alternative
   names, and synonyms improve the MCP server's concept resolution accuracy. Do not
   leave `aliases: []` for well-known concepts that have common abbreviations or
