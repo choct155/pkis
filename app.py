@@ -1839,6 +1839,99 @@ def _route_highlight(payload: dict, source_slug: str) -> dict:
     return {"action": "reading_note", "notes_file": path.name}
 
 
+# ── Auto source node creation on upload ──────────────────────────────────────
+
+def _arxiv_id_from_filename(filename: str) -> str:
+    """
+    Extract an arXiv ID from a filename like '1701.02434v2.pdf' or
+    '2301.07041.pdf'.  Returns '' if no arXiv ID pattern is found.
+    """
+    stem = Path(filename).stem          # e.g. '1701.02434v2'
+    m = re.match(r'^(\d{4}\.\d{4,5})(v\d+)?$', stem)
+    return m.group(1) if m else ""
+
+
+def _auto_create_source_node(slug: str, filename: str,
+                              fetch_url: str = "") -> dict:
+    """
+    Create a live wiki/sources/{slug}.md entry automatically when a document
+    is uploaded for an unknown slug.  Tries arXiv enrichment first (from the
+    filename pattern); falls back to a bare stub.
+
+    Returns the frontmatter dict of the newly created node so the caller can
+    proceed with a Readwise push without reloading from disk.
+    """
+    now  = datetime.now(timezone.utc)
+    today = now.strftime("%Y-%m-%d")
+
+    # ── Try metadata enrichment ───────────────────────────────────────────
+    metadata: dict = {}
+    source_url = ""
+
+    arxiv_id = _arxiv_id_from_filename(filename)
+    if not arxiv_id and fetch_url and "arxiv.org" in fetch_url:
+        m = re.search(r'arxiv\.org/(?:abs|pdf)/([0-9]{4}\.[0-9]+)', fetch_url)
+        if m:
+            arxiv_id = m.group(1)
+
+    if arxiv_id:
+        metadata   = _fetch_arxiv_metadata(arxiv_id)
+        source_url = f"https://arxiv.org/abs/{arxiv_id}"
+
+    title   = metadata.get("title")   or slug.replace("-", " ").title()
+    authors = metadata.get("authors") or ""
+    year    = metadata.get("year")
+    abstract = metadata.get("abstract", "")
+
+    doc_path = f"sources/{slug}/{filename}"
+
+    # ── Build source file ─────────────────────────────────────────────────
+    fm = {
+        "id":          f"pkis:source:{slug}",
+        "aliases":     [],
+        "title":       title,
+        "authors":     authors,
+        "year":        year,
+        "type":        metadata.get("source_type", "paper"),
+        "domain":      [],
+        "tags":        [],
+        "source_url":  source_url,
+        "drive_id":    "",
+        "drive_path":  "",
+        "doc_path":    doc_path,
+        "readwise_id": "",
+        "isbn":        "",
+        "toc_source":  "",
+        "parent_book": "",
+        "chapter":     None,
+        "status":      "unread",
+        "date_added":  today,
+        "date_read":   "",
+        "concepts":    [],
+    }
+    body_summary = (abstract[:600] + "…") if len(abstract) > 600 else abstract
+    body = (
+        f"## Summary\n"
+        f"{body_summary if body_summary else '[To be filled by Librarian ingest]'}\n\n"
+        f"## Key Knowledge Objects\n[To be identified during Librarian ingest]\n\n"
+        f"## Key Extractions\n[To be identified during Librarian ingest]\n\n"
+        f"## Connection Candidates\n[To be identified during Librarian ingest]\n"
+    )
+
+    dest = WIKI_DIR / "sources" / f"{slug}.md"
+    dest.write_text(
+        f"---\n{yaml.dump(fm, default_flow_style=False, allow_unicode=True)}---\n\n{body}"
+    )
+
+    # Invalidate node cache so subsequent lookups see the new node
+    global _node_cache
+    _node_cache = {}
+
+    enrichment = "arxiv" if arxiv_id and metadata.get("title") else "minimal"
+    logger.info(f"Auto-created source node {slug} (enrichment={enrichment})")
+    return {**fm, "_enrichment": enrichment}
+
+
 # ── MCP tool functions ────────────────────────────────────────────────────────
 
 def tool_upload_document(
@@ -1909,35 +2002,43 @@ def tool_upload_document(
     doc_url  = f"{DOCS_BASE_URL}/sources/{slug}/{filename}"
     doc_path = f"sources/{slug}/{filename}"
 
-    # Update source frontmatter with doc_path
-    node = load_node(find_node_path(slug)) if find_node_path(slug) else None
-    fm_updates: dict = {"doc_path": doc_path}
-    title   = node["title"]   if node else ""
+    # ── Ensure a wiki source node exists ────────────────────────────────────
+    node_path = find_node_path(slug)
+    auto_created = False
+    if not node_path:
+        auto_fm = _auto_create_source_node(slug, filename, fetch_url=fetch_url)
+        node_path = find_node_path(slug)
+        auto_created = True
+
+    node    = load_node(node_path) if node_path else None
+    title   = node["title"]                          if node else ""
     authors = node["frontmatter"].get("authors", "") if node else ""
 
+    # ── Readwise push ────────────────────────────────────────────────────────
     readwise_result = {}
+    fm_updates: dict = {"doc_path": doc_path}
     if push_to_readwise and READWISE_TOKEN:
         readwise_result = _readwise_save(doc_url, title=title,
                                          author=authors, slug=slug)
         if readwise_result.get("id"):
             fm_updates["readwise_id"] = readwise_result["id"]
 
-    if node:
+    # ── Persist frontmatter + commit ─────────────────────────────────────────
+    if node_path:
         _update_source_frontmatter(slug, fm_updates)
-        source_path = find_node_path(slug)
-        if source_path:
-            _git_commit_files(
-                [source_path],
-                f"[doc-store] add doc: {slug}/{filename}"
-            )
+        _git_commit_files(
+            [node_path],
+            f"[doc-store] {'auto-create + ' if auto_created else ''}add doc: {slug}/{filename}"
+        )
 
     return {
-        "slug":            slug,
-        "filename":        filename,
-        "doc_url":         doc_url,
-        "readwise_pushed": bool(readwise_result.get("id")),
-        "readwise_url":    readwise_result.get("url", ""),
-        "readwise_id":     readwise_result.get("id", ""),
+        "slug":              slug,
+        "filename":          filename,
+        "doc_url":           doc_url,
+        "source_auto_created": auto_created,
+        "readwise_pushed":   bool(readwise_result.get("id")),
+        "readwise_url":      readwise_result.get("url", ""),
+        "readwise_id":       readwise_result.get("id", ""),
     }
 
 
@@ -2027,8 +2128,9 @@ def docs_upload():
                 )
                 rw_note = (f" · <a href='{result['readwise_url']}'>Open in Reader</a>"
                            if result.get("readwise_url") else "")
+                new_node = " · source node auto-created" if result.get("source_auto_created") else ""
                 msg = (f'<div class="msg ok">Stored: '
-                       f'<a href="{result["doc_url"]}">{filename}</a>{rw_note}</div>')
+                       f'<a href="{result["doc_url"]}">{filename}</a>{rw_note}{new_node}</div>')
                 slug_val = ""
             except Exception as e:
                 msg = f'<div class="msg err">Error: {e}</div>'
