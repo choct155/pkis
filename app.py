@@ -1677,6 +1677,58 @@ def _require_docs_auth(f):
     return _decorated
 
 
+_SLUG_STOP_WORDS = {
+    'a', 'an', 'the', 'to', 'of', 'in', 'on', 'at', 'for', 'with',
+    'and', 'or', 'but', 'is', 'are', 'was', 'be', 'as', 'by', 'from',
+    'into', 'via', 'its', 'this', 'that', 'some', 'how', 'why', 'when',
+    'using', 'toward', 'towards', 'about', 'beyond', 'through',
+}
+
+
+def _compute_slug(title: str, authors: str, year) -> str:
+    """
+    Derive a slug from paper metadata: {last_name}-{key_title_word}-{year}.
+    Skips stop-words and short words when picking the key title word so
+    'A Conceptual Introduction…' → 'conceptual', not 'a'.
+    Returns a collision-free slug (appends -2, -3, … if needed).
+    """
+    first_author = (authors or "").split(",")[0].strip()
+    last_name = ""
+    if first_author:
+        last_name = re.sub(r"[^a-z0-9]", "", first_author.split()[-1].lower())
+
+    words = re.sub(r"[^a-z0-9\s]", "", (title or "").lower()).split()
+    key_words = [w for w in words if w not in _SLUG_STOP_WORDS and len(w) > 2]
+    key_word  = key_words[0] if key_words else (words[0] if words else "source")
+
+    year_str  = str(year) if year else ""
+    parts     = [p for p in [last_name, key_word, year_str] if p]
+    base      = "-".join(parts)[:55] or "source"
+
+    slug, n = base, 1
+    while find_node_path(slug) or (STAGING_DIR / f"{slug}.md").exists():
+        slug = f"{base}-{n}"
+        n   += 1
+    return slug
+
+
+def _arxiv_url_to_pdf_url(url_or_id: str) -> tuple[str, str]:
+    """
+    Given an arXiv URL (abs, pdf, html) or bare ID like '1701.02434',
+    return (arxiv_id, pdf_fetch_url).
+    Returns ('', '') if not recognised as arXiv.
+    """
+    # Bare ID pattern
+    m = re.match(r'^(\d{4}\.\d{4,5})(v\d+)?$', url_or_id.strip())
+    if m:
+        return m.group(1), f"https://arxiv.org/pdf/{m.group(1)}"
+    # URL pattern
+    m = re.search(r'arxiv\.org/(?:abs|pdf|html)/([0-9]{4}\.[0-9]+)(v\d+)?', url_or_id)
+    if m:
+        return m.group(1), f"https://arxiv.org/pdf/{m.group(1)}"
+    return "", ""
+
+
 def _readwise_save(doc_url: str, title: str = "", author: str = "",
                    slug: str = "", abstract: str = "",
                    year: int = None, arxiv_id: str = "") -> dict:
@@ -2131,11 +2183,14 @@ _UPLOAD_FORM = """<!DOCTYPE html>
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>PKIS Upload</title>
 <style>
-  body {{ font-family: system-ui, sans-serif; max-width: 480px;
+  body {{ font-family: system-ui, sans-serif; max-width: 520px;
           margin: 40px auto; padding: 0 16px; }}
   label {{ display: block; margin: 12px 0 4px; font-weight: 600; }}
-  input, select {{ width: 100%; padding: 8px; box-sizing: border-box;
-                   font-size: 16px; border: 1px solid #ccc; border-radius: 4px; }}
+  input {{ width: 100%; padding: 8px; box-sizing: border-box;
+           font-size: 16px; border: 1px solid #ccc; border-radius: 4px; }}
+  .hint {{ font-size: 13px; color: #666; margin: 2px 0 0; }}
+  .divider {{ text-align: center; color: #999; margin: 16px 0 4px;
+              font-size: 13px; font-style: italic; }}
   button {{ margin-top: 16px; width: 100%; padding: 12px;
             background: #1a56db; color: white; border: none;
             border-radius: 4px; font-size: 16px; cursor: pointer; }}
@@ -2146,13 +2201,25 @@ _UPLOAD_FORM = """<!DOCTYPE html>
 <h2>PKIS Doc Upload</h2>
 {msg}
 <form method="POST" enctype="multipart/form-data">
-  <label>Source slug</label>
-  <input name="slug" placeholder="hastie-esl-ch08" required value="{slug}">
-  <label>File</label>
-  <input type="file" name="file" required
-         accept=".pdf,.epub,.md,.html,.txt,.docx">
-  <label><input type="checkbox" name="push_readwise" value="1" {rw_checked}>
-    Push to Readwise Reader</label>
+  <label>arXiv URL / ID or direct PDF URL <span style="font-weight:400">(optional)</span></label>
+  <input name="source_url" placeholder="https://arxiv.org/abs/1701.02434  or  1701.02434"
+         value="{source_url}" autocomplete="off">
+  <p class="hint">arXiv papers: PDF fetched automatically, Reader gets the HTML version.</p>
+
+  <div class="divider">— or attach a file —</div>
+
+  <label>File <span style="font-weight:400">(optional when URL given)</span></label>
+  <input type="file" name="file" accept=".pdf,.epub,.md,.html,.txt,.docx">
+
+  <label>Slug <span style="font-weight:400">(leave blank to auto-compute)</span></label>
+  <input name="slug" placeholder="auto-computed from metadata" value="{slug}"
+         autocomplete="off">
+  <p class="hint">Override only if you want a specific identifier, e.g. betancourt-hmc.</p>
+
+  <label style="margin-top:14px">
+    <input type="checkbox" name="push_readwise" value="1" {rw_checked}>
+    Push to Readwise Reader
+  </label>
   <button type="submit">Upload</button>
 </form>
 </body></html>"""
@@ -2162,37 +2229,84 @@ _UPLOAD_FORM = """<!DOCTYPE html>
 @_require_docs_auth
 def docs_upload():
     """HTML upload form — protected by HTTP Basic Auth (DOCS_USERNAME/DOCS_PASSWORD)."""
-    msg = ""
-    slug_val = ""
+    msg        = ""
+    slug_val   = ""
+    src_url_val = ""
     rw_checked = "checked" if READWISE_TOKEN else ""
 
     if request.method == "POST":
-        slug_val = request.form.get("slug", "").strip()
-        push_rw  = bool(request.form.get("push_readwise"))
-        file     = request.files.get("file")
+        slug_val    = request.form.get("slug", "").strip()
+        src_url_val = request.form.get("source_url", "").strip()
+        push_rw     = bool(request.form.get("push_readwise"))
+        file        = request.files.get("file")
+        has_file    = bool(file and file.filename)
 
-        if not slug_val or not file or not file.filename:
-            msg = '<div class="msg err">Slug and file are required.</div>'
+        if not src_url_val and not has_file:
+            msg = '<div class="msg err">Provide a URL or a file (or both).</div>'
         else:
             try:
-                filename = Path(file.filename).name  # strip any path
-                result   = tool_upload_document(
+                # ── Resolve fetch_url and filename ───────────────────────────
+                fetch_url = ""
+                filename  = ""
+
+                if src_url_val:
+                    arxiv_id, pdf_url = _arxiv_url_to_pdf_url(src_url_val)
+                    if pdf_url:
+                        fetch_url = pdf_url
+                        filename  = f"{arxiv_id}.pdf"
+                    elif src_url_val.lower().endswith(tuple(ALLOWED_DOC_EXTENSIONS)):
+                        fetch_url = src_url_val
+                        filename  = Path(urllib.parse.urlparse(src_url_val).path).name
+                    else:
+                        raise ValueError(
+                            f"URL not recognised as arXiv or a direct document link: {src_url_val}"
+                        )
+
+                # File takes priority over URL-derived filename if both given
+                content_b64 = ""
+                if has_file:
+                    import base64 as _b64
+                    content_b64 = _b64.b64encode(file.read()).decode()
+                    filename    = Path(file.filename).name
+                    fetch_url   = ""   # don't double-fetch
+
+                if not filename:
+                    raise ValueError("Could not determine filename.")
+
+                # ── Auto-compute slug if not provided ────────────────────────
+                if not slug_val:
+                    # Try arXiv metadata first
+                    arxiv_id_for_slug, _ = _arxiv_url_to_pdf_url(src_url_val) if src_url_val else ("", "")
+                    if not arxiv_id_for_slug:
+                        arxiv_id_for_slug = _arxiv_id_from_filename(filename)
+                    if arxiv_id_for_slug:
+                        meta = _fetch_arxiv_metadata(arxiv_id_for_slug)
+                        slug_val = _compute_slug(
+                            meta.get("title", ""), meta.get("authors", ""), meta.get("year")
+                        )
+                    else:
+                        # Fallback: clean filename stem
+                        stem = re.sub(r'[^a-z0-9]+', '-', Path(filename).stem.lower()).strip('-')
+                        slug_val = stem[:55] or "source"
+
+                result = tool_upload_document(
                     slug=slug_val,
                     filename=filename,
-                    content_b64=__import__("base64").b64encode(file.read()).decode(),
+                    fetch_url=fetch_url,
+                    content_b64=content_b64,
                     push_to_readwise=push_rw and bool(READWISE_TOKEN),
                 )
-                rw_note = (f" · <a href='{result['readwise_url']}'>Open in Reader</a>"
-                           if result.get("readwise_url") else "")
-                new_node = " · source node auto-created" if result.get("source_auto_created") else ""
-                msg = (f'<div class="msg ok">Stored: '
+                rw_note  = (f" · <a href='{result['readwise_url']}'>Open in Reader</a>"
+                            if result.get("readwise_url") else "")
+                new_node = " · wiki node created" if result.get("source_auto_created") else ""
+                msg = (f'<div class="msg ok">Stored as <strong>{result["slug"]}</strong>: '
                        f'<a href="{result["doc_url"]}">{filename}</a>{rw_note}{new_node}</div>')
-                slug_val = ""
+                slug_val = src_url_val = ""
             except Exception as e:
                 msg = f'<div class="msg err">Error: {e}</div>'
 
     return _UPLOAD_FORM.format(
-        msg=msg, slug=slug_val, rw_checked=rw_checked
+        msg=msg, slug=slug_val, source_url=src_url_val, rw_checked=rw_checked
     )
 
 
