@@ -831,6 +831,144 @@ def tool_get_concept_frontier() -> list:
     return sorted(results, key=lambda x: x["priority_score"], reverse=True)[:20]
 
 
+def tool_get_reading_graph(
+    scope: str = "all_unread",
+    focus_concept: str = None,
+    focus_domain: str = None,
+    min_edge_weight: int = 2,
+    max_nodes: int = 100,
+) -> dict:
+    """
+    Return the source dependency graph.
+
+    scope:
+      "queue_only"  — only the 70 actively-tracked sources
+      "all_unread"  — all unread sources (default)
+      "full"        — all sources including already-read
+
+    focus_concept / focus_domain: return the subgraph reachable from
+    sources that cover the given concept slug or domain tag.
+
+    Returns nodes, edges, clusters, gateway_nodes, suggested_sequence.
+    """
+    graph_path = WIKI_DIR / "source_graph.json"
+
+    # Auto-build if missing
+    if not graph_path.exists():
+        try:
+            import subprocess as _sp
+            script = Path(__file__).parent.parent / "scripts" / "build_source_graph.py"
+            if script.exists():
+                _sp.run([sys.executable, str(script)], check=True, capture_output=True)
+        except Exception as e:
+            logger.warning(f"Could not auto-build source graph: {e}")
+            return {"error": "source_graph.json not found — run scripts/build_source_graph.py"}
+
+    try:
+        graph = json.loads(graph_path.read_text())
+    except Exception as e:
+        return {"error": f"Could not read source_graph.json: {e}"}
+
+    nodes: dict = graph.get("nodes", {})
+    edges: list = graph.get("edges", [])
+
+    # ── apply scope filter ────────────────────────────────────────────────
+    if scope == "queue_only":
+        keep = {s for s, n in nodes.items() if n.get("in_queue")}
+    elif scope == "all_unread":
+        keep = {s for s, n in nodes.items() if n.get("status") == "unread"}
+    else:  # "full"
+        keep = set(nodes.keys())
+
+    # ── apply concept / domain focus ─────────────────────────────────────
+    if focus_concept:
+        # Keep sources that cover the concept, plus their 1-hop neighbours
+        seed = {s for s in keep if focus_concept in nodes[s].get("concepts", [])}
+        neighbours = set()
+        for e in edges:
+            if e["from"] in seed: neighbours.add(e["to"])
+            if e["to"]   in seed: neighbours.add(e["from"])
+        keep &= seed | neighbours
+
+    if focus_domain:
+        domain_set = {s for s in keep
+                      if focus_domain in (nodes[s].get("domain") or [])}
+        # Expand one hop
+        neighbours = set()
+        for e in edges:
+            if e["from"] in domain_set: neighbours.add(e["to"])
+            if e["to"]   in domain_set: neighbours.add(e["from"])
+        keep &= domain_set | neighbours
+
+    # ── filter edges ─────────────────────────────────────────────────────
+    filtered_edges = [
+        e for e in edges
+        if e["from"] in keep and e["to"] in keep
+        and e["weight"] >= min_edge_weight
+    ]
+
+    # ── trim to max_nodes (highest lb_score first) ────────────────────────
+    if len(keep) > max_nodes:
+        keep = set(sorted(keep, key=lambda s: nodes[s].get("lb_score", 0), reverse=True)[:max_nodes])
+        filtered_edges = [e for e in filtered_edges if e["from"] in keep and e["to"] in keep]
+
+    filtered_nodes = {s: nodes[s] for s in keep}
+
+    # ── recalculate gateway nodes for this subgraph ──────────────────────
+    has_prereq_inbound = {e["to"] for e in filtered_edges if e["direction"] == "prerequisite"}
+    lb_vals = sorted([n.get("lb_score", 0) for n in filtered_nodes.values() if n.get("lb_score", 0) > 0])
+    q3 = lb_vals[int(len(lb_vals) * 0.75)] if lb_vals else 0
+    gateway_nodes = sorted(
+        [s for s, n in filtered_nodes.items()
+         if n.get("lb_score", 0) >= q3 and s not in has_prereq_inbound],
+        key=lambda s: -filtered_nodes[s].get("lb_score", 0)
+    )[:20]
+
+    # ── cluster info for retained nodes ──────────────────────────────────
+    cluster_ids_in_view = {n.get("cluster_id") for n in filtered_nodes.values()}
+    clusters = {
+        str(cid): graph["clusters"].get(str(cid), {})
+        for cid in cluster_ids_in_view
+        if str(cid) in graph.get("clusters", {})
+    }
+
+    # ── suggested sequence (queue items in topological order) ─────────────
+    sequence = [s for s in graph.get("suggested_sequence", []) if s in keep]
+
+    return {
+        "meta": {
+            **graph.get("meta", {}),
+            "scope":          scope,
+            "nodes_returned": len(filtered_nodes),
+            "edges_returned": len(filtered_edges),
+            "min_edge_weight": min_edge_weight,
+        },
+        "nodes":              filtered_nodes,
+        "edges":              filtered_edges,
+        "clusters":           clusters,
+        "gateway_nodes":      gateway_nodes,
+        "suggested_sequence": sequence[:30],
+    }
+
+
+def tool_rebuild_source_graph() -> dict:
+    """Rebuild wiki/source_graph.json from current wiki state. Run after ingest."""
+    try:
+        import subprocess as _sp
+        script = Path(__file__).parent.parent / "scripts" / "build_source_graph.py"
+        result = _sp.run(
+            [sys.executable, str(script)],
+            capture_output=True, text=True, timeout=120
+        )
+        if result.returncode != 0:
+            return {"status": "error", "detail": result.stderr[:500]}
+        graph_path = WIKI_DIR / "source_graph.json"
+        meta = json.loads(graph_path.read_text()).get("meta", {})
+        return {"status": "rebuilt", **meta}
+    except Exception as e:
+        return {"status": "error", "detail": str(e)}
+
+
 def tool_get_index(domain=None, node_type=None) -> list:
     nodes = load_all_nodes()
     results = []
@@ -1615,6 +1753,39 @@ def _get_tools_list():
             "inputSchema": {"type": "object", "properties": {}}
         },
         {
+            "name": "get_reading_graph",
+            "description": "Return the source dependency graph — nodes are sources, edges encode conceptual overlap and inferred prerequisite order. Use to answer: what should I read first? what is load-bearing? what does reading X unlock? Supports scoping to queue items, all unread, or the full corpus; can focus on a concept or domain.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "scope": {
+                        "type": "string",
+                        "enum": ["queue_only", "all_unread", "full"],
+                        "default": "all_unread",
+                        "description": "queue_only: 70 actively tracked sources; all_unread: full unread corpus; full: everything"
+                    },
+                    "focus_concept": {
+                        "type": "string",
+                        "description": "Concept slug — return subgraph of sources covering this concept plus 1-hop neighbours"
+                    },
+                    "focus_domain": {
+                        "type": "string",
+                        "description": "Domain tag (e.g. 'knowledge-representation') — restrict to sources in that domain"
+                    },
+                    "min_edge_weight": {
+                        "type": "integer",
+                        "default": 2,
+                        "description": "Minimum shared concepts to show an edge. Higher = sparser, more confident connections"
+                    },
+                    "max_nodes": {
+                        "type": "integer",
+                        "default": 100,
+                        "description": "Cap on nodes returned (highest load-bearing first)"
+                    }
+                }
+            }
+        },
+        {
             "name": "get_staged_nodes",
             "description": "List all staged nodes awaiting review. Use to check what's pending in the two-phase write queue.",
             "inputSchema": {
@@ -1671,6 +1842,11 @@ def _get_tools_list():
                 },
                 "required": ["staged_id"]
             }
+        },
+        {
+            "name": "rebuild_source_graph",
+            "description": "Rebuild wiki/source_graph.json from current wiki state. Call after ingesting new sources or marking sources as read. Returns updated graph metadata.",
+            "inputSchema": {"type": "object", "properties": {}}
         }
     ]
 
@@ -1802,6 +1978,13 @@ def dispatch_tool(tool_name: str, params: dict, req) -> any:
             priority=p.get("priority", "normal")
         ),
         "get_concept_frontier": lambda p: tool_get_concept_frontier(),
+        "get_reading_graph": lambda p: tool_get_reading_graph(
+            scope=p.get("scope", "all_unread"),
+            focus_concept=p.get("focus_concept"),
+            focus_domain=p.get("focus_domain"),
+            min_edge_weight=p.get("min_edge_weight", 2),
+            max_nodes=p.get("max_nodes", 100),
+        ),
         "get_index": lambda p: tool_get_index(
             domain=p.get("domain"),
             node_type=p.get("node_type")
@@ -1858,6 +2041,7 @@ def dispatch_tool(tool_name: str, params: dict, req) -> any:
             staged_by=p.get("staged_by"),
             limit=p.get("limit", 20),
         ),
+        "rebuild_source_graph": lambda p: tool_rebuild_source_graph(),
     }
 
     if tool_name in read_tools:
