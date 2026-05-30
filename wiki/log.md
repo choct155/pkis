@@ -211,3 +211,16 @@
 - All new nodes include id (pkis:research-cluster:* and pkis:hypothesis:*) and aliases fields
 - Updated wiki/index.md: added ## Research Clusters and ## Hypotheses sections
 - Source: PKIS_Research_Cluster_Hypothesis_Init.md (Research_Program_KR_ML_Complementarity_v0_1.md)
+
+## [2026-05-30] staged | bridge-note
+- Staged: bn-20260530-em-mcmc-and-variational-inference (id: 73bc9b05-e39b-46a5-8f92-43a48e57d6c9)
+- Rationale: EM, MCMC, and variational inference are alternative inference engines for the same generative model 
+
+## [2026-05-30] staged | source-stub
+- Staged: kingma-autoencoding-2013 (id: a16b503e-056c-43e9-9fb8-fbbb223cab13)
+- Title: Auto-Encoding Variational Bayes
+- Enrichment: full
+
+## [2026-05-30] committed | bridge-note
+- Committed: bn-20260530-em-mcmc-and-variational-inference → bridge-notes/bn-20260530-em-mcmc-and-variational-inference.md
+- IRI: pkis:bridge-note:bn-20260530-em-mcmc-and-variational-inference

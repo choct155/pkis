@@ -537,3 +537,6 @@
 - [[scaling-foil-null-hypothesis]] — Scaling Foil — Can Sufficiently Large LLMs Subsume Each Cluster's Task Without Ontological Scaffolding? (knowledge-representation, deep-learning, symbolic-subsymbolic) (2026-05-30)
 
 ## Reading Queue
+
+## Bridge Notes
+- [[bn-20260530-em-mcmc-and-variational-inference]] — EM vs MCMC vs VI: alternative inference engines for latent variable models () (2026-05-30)
