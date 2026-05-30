@@ -110,6 +110,7 @@ logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
 app = Flask(__name__)
+app.config["MAX_CONTENT_LENGTH"] = 200 * 1024 * 1024  # 200 MB — matches nginx client_max_body_size
 anthropic_client = Anthropic(api_key=ANTHROPIC_API_KEY)
 
 # ============================================================
