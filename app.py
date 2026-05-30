@@ -2526,6 +2526,7 @@ def dispatch_tool(tool_name: str, params: dict, req) -> any:
             node_type=p.get("node_type")
         ),
         "get_health_metrics": lambda p: tool_get_health_metrics(),
+        "list_documents": lambda p: tool_list_documents(p.get("slug")),
         "check_alias_collision": lambda p: tool_check_alias_collision(p["surface_form"]),
         "get_operational_references": lambda p: tool_get_operational_references(p["iri"]),
         "get_concept_operational_load": lambda p: tool_get_concept_operational_load(p["iri"]),
@@ -2585,7 +2586,6 @@ def dispatch_tool(tool_name: str, params: dict, req) -> any:
             content_b64=p.get("content_b64", ""),
             push_to_readwise=p.get("push_to_readwise", True),
         ),
-        "list_documents": lambda p: tool_list_documents(p.get("slug")),
     }
 
     if tool_name in read_tools:
