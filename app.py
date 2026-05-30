@@ -982,7 +982,7 @@ def tool_get_concept_operational_load(iri: str) -> dict:
 
 def _fetch_arxiv_metadata(arxiv_id: str) -> dict:
     """Fetch paper metadata from arXiv Atom API."""
-    url = f"http://export.arxiv.org/api/query?id_list={arxiv_id}&max_results=1"
+    url = f"https://export.arxiv.org/api/query?id_list={arxiv_id}&max_results=1"
     try:
         req = urllib.request.Request(url, headers={"User-Agent": "PKIS-Wiki/1.0"})
         with urllib.request.urlopen(req, timeout=10) as resp:
@@ -1058,7 +1058,8 @@ def tool_create_bridge_note(
     source_context: str = "",
     linked_node_refs: list = None,
     proposed_edge_type: str = "",
-    origin: str = "conversation"
+    origin: str = "conversation",
+    title: str = ""
 ) -> dict:
     """Create a bridge note in the staging area."""
     if not rationale:
@@ -1075,6 +1076,8 @@ def tool_create_bridge_note(
     slug = f"bn-{date_str}-{descriptor}"[:60]
 
     # Resolve fuzzy references
+    # linked_nodes stores plain slugs/refs (no wikilink brackets) for clean YAML frontmatter.
+    # The body section wraps them in [[...]] for Obsidian wikilink rendering.
     resolution_candidates = {}
     linked_nodes = []
     if linked_node_refs:
@@ -1082,12 +1085,12 @@ def tool_create_bridge_note(
             path = find_node_path_by_iri(ref)
             if path:
                 node = load_node(path)
-                linked_nodes.append(f"[[{node['slug']}]]")
+                linked_nodes.append(node["slug"])
             else:
                 results = hybrid_search(ref, max_results=3)
                 if results:
                     resolution_candidates[ref] = [r["iri"] for r in results]
-                linked_nodes.append(f"[[{ref}]]")
+                linked_nodes.append(ref)
 
     fm = {
         "staged_at": ts_str,
@@ -1095,7 +1098,7 @@ def tool_create_bridge_note(
         "staged_id": staged_id,
         "review_status": "pending",
         "proposed_edges": [],
-        "title": rationale[:80],
+        "title": title or (", ".join(linked_nodes[:3]) + " connection" if linked_nodes else rationale[:80]),
         "knowledge_type": "bridge-note",
         "date_created": now.strftime("%Y-%m-%d"),
         "status": "unreviewed",
@@ -1113,7 +1116,7 @@ def tool_create_bridge_note(
 {rationale}
 
 ## Nodes Involved
-{chr(10).join(f'- {n}' for n in linked_nodes) if linked_nodes else '_To be determined_'}
+{chr(10).join(f'- [[{n}]]' for n in linked_nodes) if linked_nodes else '_To be determined_'}
 
 ## Integration Notes
 Pending review.
@@ -1333,15 +1336,17 @@ def tool_commit_staged_node(
         for key, value in edits.items():
             fm[key] = value
 
-    # Apply confirmed_links: replace fuzzy refs with canonical wikilinks
+    # Apply confirmed_links: replace fuzzy refs with canonical slug.
+    # linked_nodes stores plain refs (no brackets); body has [[ref]] wikilinks.
     if confirmed_links:
         for fuzzy_ref, confirmed_iri in confirmed_links.items():
             _, _nt, slug_part = parse_iri(confirmed_iri)
             if slug_part:
-                wikilink = f"[[{slug_part}]]"
                 linked = fm.get("linked_nodes", [])
-                fm["linked_nodes"] = [wikilink if ref == f"[[{fuzzy_ref}]]" else ref for ref in linked]
-                body_content = body_content.replace(fuzzy_ref, wikilink)
+                # Update frontmatter list: plain ref → plain confirmed slug
+                fm["linked_nodes"] = [slug_part if ref == fuzzy_ref else ref for ref in linked]
+                # Update body: [[fuzzy_ref]] → [[confirmed-slug]]
+                body_content = body_content.replace(f"[[{fuzzy_ref}]]", f"[[{slug_part}]]")
 
     # Remove staging-only fields
     for field in ["staged_at", "staged_by", "staged_id", "review_status", "proposed_edges",
@@ -1411,6 +1416,7 @@ def tool_commit_staged_node(
 
     # Git commit and push
     git_sha = ""
+    git_pushed = False
     try:
         repo_dir = str(REPO_DIR)
         files_to_add = [str(target_path), str(index_path), str(log_path)]
@@ -1421,16 +1427,22 @@ def tool_commit_staged_node(
             check=True, capture_output=True, text=True
         )
         sha_match = re.search(r'\[.+? ([a-f0-9]{7,})\]', result.stdout)
-        git_sha = sha_match.group(1) if sha_match else ""
-        subprocess.run(["git", "-C", repo_dir, "push"], check=True, capture_output=True)
-        logger.info(f"Git committed and pushed: {git_sha}")
+        git_sha = sha_match.group(1) if sha_match else result.stdout.strip()[:12]
+        logger.info(f"Git committed locally: {git_sha}")
+        try:
+            subprocess.run(["git", "-C", repo_dir, "push"], check=True, capture_output=True, timeout=30)
+            git_pushed = True
+            logger.info(f"Git pushed: {git_sha}")
+        except (subprocess.CalledProcessError, subprocess.TimeoutExpired) as push_err:
+            logger.warning(f"Git push failed (local commit retained): {push_err}")
     except subprocess.CalledProcessError as e:
-        logger.error(f"Git operation failed: {e.stderr if hasattr(e, 'stderr') else e}")
+        logger.error(f"Git commit failed: {e.stderr.decode() if isinstance(e.stderr, bytes) else e.stderr}")
 
     return {
         "status": "committed",
         "iri": iri,
         "git_commit": git_sha,
+        "git_pushed": git_pushed,
         "url": f"https://github.com/choct155/pkis/blob/main/wiki/{folder}/{slug}.md",
     }
 
@@ -1620,6 +1632,7 @@ def _get_tools_list():
                 "type": "object",
                 "properties": {
                     "rationale": {"type": "string", "description": "The insight or connection being captured"},
+                    "title": {"type": "string", "description": "Short title for the bridge note (auto-generated from linked nodes if omitted)"},
                     "source_context": {"type": "string", "description": "Fuzzy reference to what prompted this"},
                     "linked_node_refs": {"type": "array", "items": {"type": "string"}, "description": "Node IRIs or fuzzy text references"},
                     "proposed_edge_type": {"type": "string", "description": "One of the 8 relationship predicates"},
@@ -1818,6 +1831,7 @@ def dispatch_tool(tool_name: str, params: dict, req) -> any:
     write_tools = {
         "create_bridge_note": lambda p: tool_create_bridge_note(
             rationale=p["rationale"],
+            title=p.get("title", ""),
             source_context=p.get("source_context", ""),
             linked_node_refs=p.get("linked_node_refs"),
             proposed_edge_type=p.get("proposed_edge_type", ""),
