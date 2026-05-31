@@ -15,7 +15,7 @@ export default function StagedView({ onSelectNode }: Props) {
 
   const load = () => {
     setLoading(true)
-    getStagedNodes({ limit: 20 }).then((s) => {
+    getStagedNodes({ limit: 20 }).then((s: StagedNode[]) => {
       setNodes(s); setLoading(false)
     }).catch(() => setLoading(false))
   }

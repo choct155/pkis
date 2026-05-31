@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { getHealth, getFrontier, getReadingQueue, getStagedNodes } from '../lib/api'
-import type { HealthMetrics, FrontierNode, QueueItem, SearchResult, NodeType, View } from '../types'
+import type { HealthMetrics, FrontierNode, QueueItem, SearchResult, NodeType, View, StagedNode } from '../types'
 import NodeCard from '../components/NodeCard'
 
 interface Props {
@@ -21,7 +21,7 @@ export default function BrowseView({ typeFilter, searchResults, onSelectNode, on
     let cancelled = false
     setLoadingMain(true)
     Promise.all([getHealth(), getFrontier(), getReadingQueue(), getStagedNodes({ limit: 1 })])
-      .then(([h, f, q, s]) => {
+      .then(([h, f, q, s]: [HealthMetrics, FrontierNode[], QueueItem[], StagedNode[]]) => {
         if (cancelled) return
         setHealth(h)
         setFrontier(f)

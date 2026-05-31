@@ -13,7 +13,7 @@ export default function QueueView({ onSelectNode }: Props) {
   useEffect(() => {
     let cancelled = false
     setLoading(true)
-    getReadingQueue().then((q) => {
+    getReadingQueue().then((q: QueueItem[]) => {
       if (!cancelled) { setQueue(q); setLoading(false) }
     }).catch(() => { if (!cancelled) setLoading(false) })
     return () => { cancelled = true }

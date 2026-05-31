@@ -38,14 +38,14 @@ export default function EditSheet({ iri, onClose }: Props) {
   useEffect(() => {
     let cancelled = false
     setLoading(true)
-    getNode(iri).then((n) => {
+    getNode(iri).then((n: FullNode) => {
       if (cancelled) return
       setNode(n)
       setUnderstanding(n.frontmatter.understanding ?? 0)
       setBody(n.content ?? '')
       setVizSlug(n.frontmatter.viz ?? '')
       setLoading(false)
-    }).catch((e) => {
+    }).catch((e: unknown) => {
       if (!cancelled) { setError(String(e)); setLoading(false) }
     })
     return () => { cancelled = true }

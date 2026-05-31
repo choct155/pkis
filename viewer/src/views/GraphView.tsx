@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
-import type { RelatedEntry } from '../types'
+import type { RelatedEntry, FrontierNode } from '../types'
 import { getRelated, getFrontier } from '../lib/api'
 
 // Lazy-load Cytoscape to avoid bundling it on initial load
@@ -106,7 +106,7 @@ export default function GraphView({ focusIri, onSelectNode }: Props) {
         const frontier = await getFrontier()
         const nodeSet = new Set<string>()
 
-        frontier.slice(0, 30).forEach((n) => {
+        frontier.slice(0, 30).forEach((n: FrontierNode) => {
           if (!nodeSet.has(n.iri)) {
             nodeSet.add(n.iri)
             elements.push({
@@ -124,7 +124,7 @@ export default function GraphView({ focusIri, onSelectNode }: Props) {
         // If we have a focusIri, also load its neighborhood
         if (focusIri) {
           const related = await getRelated(focusIri, { max_hops: 1 })
-          related.forEach((r) => {
+          related.forEach((r: RelatedEntry) => {
             if (!nodeSet.has(r.iri)) {
               nodeSet.add(r.iri)
               elements.push({

@@ -154,7 +154,7 @@ export default function GraphMini({ focusIri, focusTitle, focusType, onNavigate 
     })
     observer.observe(canvas.parentElement!)
 
-    getRelated(focusIri, { max_hops: 1 }).then((related) => {
+    getRelated(focusIri, { max_hops: 1 }).then((related: RelatedEntry[]) => {
       if (cancelled) return
       const { nodes, edges } = buildLayout(focusIri, focusTitle, focusType, related)
       nodesRef.current = nodes
