@@ -11,19 +11,40 @@ interface NodeCardData {
   description?: string
 }
 
+// FrontierNode has priority_score; SearchResult has one_line_summary
+function isFrontier(n: SearchResult | FrontierNode): n is FrontierNode {
+  return 'priority_score' in n
+}
+
+// Extract node type from IRI when the field isn't present
+// e.g. "pkis:framework:directed-graphical-models" → "framework"
+function nodeTypeFromIri(iri: string): string {
+  const parts = iri.split(':')
+  return parts.length >= 2 ? parts[1] : ''
+}
+
 function toCardData(n: SearchResult | FrontierNode): NodeCardData {
-  const isSearch = 'canonical_title' in n
+  if (isFrontier(n)) {
+    return {
+      iri: n.iri,
+      title: n.canonical_title,
+      nodeType: n.node_type ?? nodeTypeFromIri(n.iri),
+      domain: n.domain ?? [],
+      coverage: n.coverage,
+      understanding: n.understanding,
+      maturity: n.maturity,
+      description: undefined,
+    }
+  }
   return {
     iri: n.iri,
-    title: isSearch ? (n as SearchResult).canonical_title : (n as FrontierNode).canonical_title,
-    nodeType: isSearch ? (n as SearchResult).node_type : ((n as FrontierNode).node_type ?? ''),
-    domain: isSearch ? (n as SearchResult).domain : ((n as FrontierNode).domain ?? []),
+    title: n.canonical_title,
+    nodeType: n.node_type,
+    domain: n.domain ?? [],
     coverage: n.coverage,
     understanding: n.understanding,
-    maturity: isSearch ? (n as SearchResult).maturity : (n as FrontierNode).maturity,
-    description: isSearch
-      ? (n as SearchResult).one_line_summary
-      : undefined,
+    maturity: n.maturity,
+    description: n.one_line_summary,
   }
 }
 
