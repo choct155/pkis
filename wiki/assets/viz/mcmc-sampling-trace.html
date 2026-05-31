@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Metropolis–Hastings sampling trace</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { width: 100%; height: 100%; background: #0d0f11; overflow: hidden; }
+canvas { display: block; width: 100%; height: 100%; }
+#info {
+  position: absolute; top: 6px; left: 8px;
+  font-family: 'IBM Plex Mono', monospace; font-size: 9px;
+  color: rgba(107,114,128,0.9); pointer-events: none;
+}
+</style>
+</head>
+<body>
+<canvas id="mcmcCanvas"></canvas>
+<div id="info"></div>
+<script>
+// ── Simulation state ──────────────────────────────────────────────────────
+let canvas, ctx, W, H, animId = null, running = false;
+let sigma = 0.6, speed = 4;
+let chain = [], rejected = [];
+const MAX_TRAIL = 200;
+
+// Target: correlated 2D Gaussian
+function logTarget(x, y) {
+  const sx = 0.3, sy = 0.2, rho = 0.6;
+  const z = ((x*x)/(sx*sx) - 2*rho*(x*y)/(sx*sy) + (y*y)/(sy*sy)) / (2*(1-rho*rho));
+  return -z;
+}
+
+function worldToCanvas(wx, wy) {
+  return [W/2 + wx*(W*0.32), H/2 - wy*(H*0.45)];
+}
+
+function init() {
+  canvas = document.getElementById('mcmcCanvas');
+  W = canvas.parentElement.clientWidth;
+  H = canvas.parentElement.clientHeight;
+  canvas.width = W;
+  canvas.height = H;
+  ctx = canvas.getContext('2d');
+  chain = [{x: 0, y: 0}];
+  rejected = [];
+  drawFrame();
+}
+
+function drawFrame() {
+  ctx.clearRect(0, 0, W, H);
+
+  // Density heatmap
+  const step = 4;
+  for (let px = 0; px < W; px += step) {
+    for (let py = 0; py < H; py += step) {
+      const wx = (px - W/2) / (W*0.32);
+      const wy = (H/2 - py) / (H*0.45);
+      const v = Math.exp(logTarget(wx, wy));
+      ctx.fillStyle = `rgba(79,142,247,${Math.min(1, v*1.2)*0.25})`;
+      ctx.fillRect(px, py, step, step);
+    }
+  }
+
+  // Rejected proposals
+  rejected.slice(-80).forEach(r => {
+    const [cx, cy] = worldToCanvas(r.x, r.y);
+    ctx.beginPath();
+    ctx.arc(cx, cy, 2, 0, Math.PI*2);
+    ctx.fillStyle = 'rgba(232,92,92,0.5)';
+    ctx.fill();
+  });
+
+  // Chain trail
+  if (chain.length > 1) {
+    for (let i = 1; i < chain.length; i++) {
+      const [x0, y0] = worldToCanvas(chain[i-1].x, chain[i-1].y);
+      const [x1, y1] = worldToCanvas(chain[i].x,   chain[i].y);
+      const alpha = i / chain.length;
+      ctx.beginPath();
+      ctx.moveTo(x0, y0);
+      ctx.lineTo(x1, y1);
+      ctx.strokeStyle = `rgba(79,142,247,${alpha*0.6})`;
+      ctx.lineWidth = 1;
+      ctx.stroke();
+    }
+  }
+
+  // Current position
+  if (chain.length > 0) {
+    const cur = chain[chain.length - 1];
+    const [cx, cy] = worldToCanvas(cur.x, cur.y);
+    ctx.beginPath();
+    ctx.arc(cx, cy, 5, 0, Math.PI*2);
+    ctx.fillStyle = '#4f8ef7';
+    ctx.shadowColor = '#4f8ef7';
+    ctx.shadowBlur = 8;
+    ctx.fill();
+    ctx.shadowBlur = 0;
+  }
+
+  // Stats overlay
+  const total = chain.length + rejected.length - 1;
+  if (total > 0) {
+    const rate = ((chain.length - 1) / total * 100).toFixed(0);
+    document.getElementById('info').textContent =
+      `accept ${rate}%  n=${chain.length}  σ=${sigma.toFixed(2)}`;
+  }
+}
+
+let stepAccum = 0;
+function simLoop() {
+  if (!running) return;
+  stepAccum += speed;
+  const steps = Math.floor(stepAccum);
+  stepAccum -= steps;
+  for (let i = 0; i < steps; i++) mcmcStep();
+  drawFrame();
+  animId = requestAnimationFrame(simLoop);
+}
+
+function mcmcStep() {
+  const cur = chain[chain.length - 1];
+  const px = cur.x + sigma * (Math.random()*2 - 1);
+  const py = cur.y + sigma * (Math.random()*2 - 1);
+  const logA = logTarget(px, py) - logTarget(cur.x, cur.y);
+  if (Math.log(Math.random()) < logA) {
+    chain.push({x: px, y: py});
+    if (chain.length > MAX_TRAIL) chain.shift();
+  } else {
+    rejected.push({x: px, y: py});
+    if (rejected.length > MAX_TRAIL) rejected.shift();
+  }
+}
+
+function startSim() {
+  running = true;
+  animId = requestAnimationFrame(simLoop);
+}
+
+function stopSim() {
+  running = false;
+  if (animId) { cancelAnimationFrame(animId); animId = null; }
+}
+
+// ── postMessage API ───────────────────────────────────────────────────────
+window.addEventListener('message', (e) => {
+  const msg = e.data;
+  if (!msg || typeof msg !== 'object') return;
+  switch (msg.type) {
+    case 'pause':
+      stopSim();
+      break;
+    case 'resume':
+      if (!running) startSim();
+      break;
+    case 'reset':
+      stopSim();
+      chain = [{x: 0, y: 0}];
+      rejected = [];
+      drawFrame();
+      startSim();
+      break;
+    case 'setSigma':
+      sigma = Number(msg.value) || 0.6;
+      break;
+    case 'setSpeed':
+      speed = Number(msg.value) || 4;
+      break;
+  }
+});
+
+// ── Handle resize ─────────────────────────────────────────────────────────
+window.addEventListener('resize', () => {
+  W = canvas.parentElement.clientWidth;
+  H = canvas.parentElement.clientHeight;
+  canvas.width = W;
+  canvas.height = H;
+  drawFrame();
+});
+
+// ── Boot ──────────────────────────────────────────────────────────────────
+init();
+startSim();
+
+// Notify parent that we're ready
+window.parent.postMessage(
+  { type: 'viz-ready', title: 'Metropolis–Hastings sampling trace' },
+  '*'
+);
+</script>
+</body>
+</html>

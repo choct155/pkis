@@ -102,6 +102,12 @@ READWISE_WEBHOOK_SECRET = os.environ.get("READWISE_WEBHOOK_SECRET", "")
 DOCS_USERNAME     = os.environ.get("DOCS_USERNAME", "")
 DOCS_PASSWORD     = os.environ.get("DOCS_PASSWORD", "")
 
+# Podcast transcript lookup APIs
+PODCAST_INDEX_KEY    = os.environ.get("PODCAST_INDEX_KEY", "")
+PODCAST_INDEX_SECRET = os.environ.get("PODCAST_INDEX_SECRET", "")
+LISTEN_NOTES_KEY     = os.environ.get("LISTEN_NOTES_KEY", "")
+PODCHASER_KEY        = os.environ.get("PODCHASER_KEY", "")
+
 # MCP JSON-RPC 2.0 Streamable HTTP transport constants
 JSONRPC_VERSION = "2.0"
 MCP_PROTOCOL_VERSION = "2024-11-05"
@@ -1823,7 +1829,7 @@ def _fetch_url_metadata(url: str) -> dict:
 def _readwise_save(doc_url: str, title: str = "", author: str = "",
                    slug: str = "", abstract: str = "",
                    year: int = None, arxiv_id: str = "",
-                   category: str = "") -> dict:
+                   category: str = "", html: str = "") -> dict:
     """
     Push a document to Readwise Reader. Returns Readwise response dict.
 
@@ -1862,6 +1868,9 @@ def _readwise_save(doc_url: str, title: str = "", author: str = "",
     if abstract: payload["summary"]        = abstract[:600]
     if year:     payload["published_date"] = f"{year}-01-01T00:00:00+00:00"
     if notes:    payload["notes"]          = notes
+    if html:
+        payload["html"]             = html[:50_000]  # Readwise cap ~50 KB
+        payload["should_clean_html"] = False
 
     try:
         data = json.dumps(payload).encode()
@@ -2385,6 +2394,755 @@ def tool_save_url_source(
     }
 
 
+# ── Podcast transcript lookup pipeline ───────────────────────────────────────
+
+_PODCAST_URL_PATTERNS = (
+    "open.spotify.com/episode", "open.spotify.com/show",
+    "podcasts.apple.com", "anchor.fm", "podcastaddict.com",
+    "overcast.fm", "pocketcasts.com", "castro.fm", "castbox.fm",
+    "stitcher.com", "iheart.com/podcast", "buzzsprout.com",
+    "simplecast.com", "transistor.fm", "podbean.com", "spreaker.com",
+    "acast.com", "blubrry.com", "libsyn.com",
+)
+
+# Podcast Index RSS namespace
+_PI_NS = "https://podcastindex.org/namespace/1.0"
+
+
+def _is_podcast_url(url: str) -> bool:
+    """True when URL points to a known podcast platform episode or show."""
+    u = url.lower()
+    return any(p in u for p in _PODCAST_URL_PATTERNS)
+
+
+def _podcast_index_auth_headers() -> dict:
+    """Generate Podcast Index API authentication headers (HMAC-SHA1)."""
+    if not PODCAST_INDEX_KEY or not PODCAST_INDEX_SECRET:
+        return {}
+    import hashlib, time
+    ts        = str(int(time.time()))
+    auth_hash = hashlib.sha1(
+        (PODCAST_INDEX_KEY + PODCAST_INDEX_SECRET + ts).encode("utf-8")
+    ).hexdigest()
+    return {
+        "User-Agent":    "PKIS/1.0 (+https://pkis.dev)",
+        "X-Auth-Key":    PODCAST_INDEX_KEY,
+        "X-Auth-Date":   ts,
+        "Authorization": auth_hash,
+    }
+
+
+def _extract_youtube_id(url: str) -> str:
+    """Extract YouTube video ID from any YouTube URL format."""
+    for pattern in (
+        r'youtu\.be/([^?&/]+)',
+        r'youtube\.com/watch\?.*v=([^&]+)',
+        r'youtube\.com/embed/([^?&/]+)',
+        r'youtube\.com/v/([^?&/]+)',
+    ):
+        m = re.search(pattern, url)
+        if m:
+            return m.group(1)
+    return ""
+
+
+def _youtube_get_transcript(url: str) -> list:
+    """
+    Fetch YouTube transcript via youtube-transcript-api.
+    Returns [{start, text}] or [].
+    Install: pip install youtube-transcript-api
+    """
+    video_id = _extract_youtube_id(url)
+    if not video_id:
+        return []
+    try:
+        from youtube_transcript_api import YouTubeTranscriptApi
+        segs = YouTubeTranscriptApi.get_transcript(video_id)
+        return [{"start": s.get("start", 0), "text": s.get("text", "")} for s in segs]
+    except ImportError:
+        logger.warning("youtube-transcript-api not installed; run: pip install youtube-transcript-api")
+        return []
+    except Exception as e:
+        logger.warning(f"YouTube transcript fetch failed ({video_id}): {e}")
+        return []
+
+
+def _fetch_podcast_page_metadata(url: str) -> dict:
+    """
+    Extract basic metadata from a podcast episode page via Open Graph tags.
+    Returns {title, show, description}.
+    """
+    try:
+        req = urllib.request.Request(url, headers={
+            "User-Agent": "Mozilla/5.0 (compatible; PKIS/1.0)"
+        })
+        with urllib.request.urlopen(req, timeout=10) as r:
+            html = r.read(60_000).decode("utf-8", errors="replace")
+    except Exception as e:
+        logger.warning(f"Could not fetch podcast page {url}: {e}")
+        return {}
+
+    def og(prop):
+        m = re.search(
+            rf'<meta[^>]+property=["\']og:{prop}["\'][^>]+content=["\']([^"\'<]+)',
+            html, re.I)
+        if not m:
+            m = re.search(
+                rf'<meta[^>]+content=["\']([^"\'<]+)["\'][^>]+property=["\']og:{prop}["\']',
+                html, re.I)
+        return m.group(1).strip() if m else ""
+
+    raw_title   = og("title") or ""
+    description = og("description") or ""
+
+    # Normalise: "Episode Title | Show Name" / "Episode · Show" etc.
+    title, show = raw_title, ""
+    for sep in (" | ", " · ", " — ", " - "):
+        if sep in raw_title:
+            parts = raw_title.split(sep, 1)
+            title = parts[0].strip()
+            show  = parts[1].strip()
+            # Drop trailing platform name: "| Spotify", "| Podcast on Spotify"
+            show = re.sub(
+                r'\s*[\|·\-—]\s*(Spotify|Apple Podcasts|Podcasts?.*)?$',
+                '', show, flags=re.I
+            ).strip()
+            break
+
+    return {"title": title, "show": show, "description": description}
+
+
+def _parse_vtt(vtt: str) -> list:
+    """Parse WebVTT into [{start, text}] segments."""
+    segments, i = [], 0
+    lines = vtt.split("\n")
+    while i < len(lines):
+        m = re.match(r'(\d{1,2}:\d{2}:\d{2}[.,]\d{3})\s*-->', lines[i].strip())
+        if m:
+            t     = m.group(1).replace(",", ".").split(":")
+            h, mi, s = int(t[0]), int(t[1]), float(t[2])
+            start = h * 3600 + mi * 60 + s
+            i += 1
+            texts = []
+            while i < len(lines) and lines[i].strip():
+                texts.append(lines[i].strip())
+                i += 1
+            text = re.sub(r'<[^>]+>', '', " ".join(texts)).strip()
+            if text:
+                segments.append({"start": start, "text": text})
+        i += 1
+    return segments
+
+
+def _parse_srt(srt: str) -> list:
+    """Parse SRT subtitle format into [{start, text}] segments."""
+    segments = []
+    for block in re.split(r'\n\n+', srt.strip()):
+        lines = block.strip().split("\n")
+        if len(lines) < 3:
+            continue
+        m = re.match(r'(\d{2}:\d{2}:\d{2}[,.]\d{3})\s*-->', lines[1])
+        if not m:
+            continue
+        t     = m.group(1).replace(",", ".").split(":")
+        h, mi, s = int(t[0]), int(t[1]), float(t[2])
+        start = h * 3600 + mi * 60 + s
+        text  = " ".join(lines[2:]).strip()
+        if text:
+            segments.append({"start": start, "text": text})
+    return segments
+
+
+def _fetch_transcript_url(url: str) -> list:
+    """
+    Fetch a transcript from a URL and parse it.
+    Handles JSON (Podcast Index / Whisper), WebVTT, SRT, and plain text.
+    Returns [{start, text}] or [].
+    """
+    try:
+        req = urllib.request.Request(url, headers={"User-Agent": "PKIS/1.0"})
+        with urllib.request.urlopen(req, timeout=15) as r:
+            raw = r.read().decode("utf-8", errors="replace")
+    except Exception as e:
+        logger.warning(f"Transcript URL fetch failed ({url}): {e}")
+        return []
+
+    low      = url.lower()
+    stripped = raw.lstrip()
+
+    # JSON
+    if low.endswith(".json") or stripped.startswith("{") or stripped.startswith("["):
+        try:
+            data = json.loads(raw)
+            if isinstance(data, list):
+                return [{"start": s.get("start", 0), "text": s.get("text", "")} for s in data]
+            if "segments" in data:
+                return [{"start": s.get("start", 0), "text": s.get("text", "")}
+                        for s in data["segments"]]
+            if "transcript" in data:
+                return [{"start": t.get("startTime", t.get("start", 0)),
+                         "text":  t.get("body",      t.get("text", ""))}
+                        for t in data["transcript"]]
+        except json.JSONDecodeError:
+            pass
+
+    # VTT
+    if low.endswith(".vtt") or stripped.startswith("WEBVTT"):
+        return _parse_vtt(raw)
+
+    # SRT
+    if low.endswith(".srt") or re.match(r'^\d+\s*\n\d{2}:\d{2}', stripped):
+        return _parse_srt(raw)
+
+    # Plain text fallback — one line per segment
+    lines = [l.strip() for l in raw.split("\n") if l.strip()]
+    return [{"start": float(i * 5), "text": ln} for i, ln in enumerate(lines)]
+
+
+def _podcast_index_search_episode(show_name: str = "", episode_title: str = "",
+                                   feed_url: str = "") -> dict:
+    """
+    Search Podcast Index for the best-matching episode.
+    Returns episode data dict (with 'transcripts' list) or {}.
+    """
+    if not PODCAST_INDEX_KEY:
+        return {}
+    headers = _podcast_index_auth_headers()
+
+    # Resolve feed URL from show name if needed
+    if not feed_url and show_name:
+        try:
+            q   = urllib.parse.quote(show_name)
+            req = urllib.request.Request(
+                f"https://api.podcastindex.org/api/1.0/search/byterm?q={q}&max=5",
+                headers=headers,
+            )
+            with urllib.request.urlopen(req, timeout=10) as r:
+                feeds = json.loads(r.read()).get("feeds", [])
+            if not feeds:
+                return {}
+            feed_url = feeds[0].get("url", "")
+        except Exception as e:
+            logger.warning(f"Podcast Index show search failed: {e}")
+            return {}
+
+    if not feed_url:
+        return {}
+
+    try:
+        enc = urllib.parse.quote(feed_url, safe="")
+        req = urllib.request.Request(
+            f"https://api.podcastindex.org/api/1.0/episodes/byfeedurl?url={enc}&max=50",
+            headers=headers,
+        )
+        with urllib.request.urlopen(req, timeout=10) as r:
+            items = json.loads(r.read()).get("items", [])
+        if not items:
+            return {}
+    except Exception as e:
+        logger.warning(f"Podcast Index episode fetch failed: {e}")
+        return {}
+
+    if episode_title:
+        q_words = set(episode_title.lower().split())
+        scored = sorted(
+            [(len(q_words & set((it.get("title") or "").lower().split())) / max(len(q_words), 1), it)
+             for it in items],
+            reverse=True,
+        )
+        if scored and scored[0][0] > 0.25:
+            return scored[0][1]
+
+    return items[0]  # most recent if no title match
+
+
+def _podcast_index_get_transcript(show_name: str = "", episode_title: str = "",
+                                   feed_url: str = "") -> tuple:
+    """
+    Returns (segments, episode_meta_dict).
+    segments: [{start, text}] if transcript found, else [].
+    """
+    episode = _podcast_index_search_episode(show_name, episode_title, feed_url)
+    if not episode:
+        return [], {}
+
+    meta = {
+        "title":          episode.get("title", ""),
+        "show":           episode.get("feedTitle", show_name),
+        "description":    (episode.get("description") or "")[:600],
+        "pub_date":       episode.get("datePublishedPretty", ""),
+        "feed_url":       episode.get("feedUrl", feed_url),
+        "episode_url":    episode.get("link", ""),
+        "transcript_url": "",
+    }
+
+    t_url = ""
+    for t in (episode.get("transcripts") or []):
+        t_type = (t.get("type") or "").lower()
+        t_u    = t.get("url") or ""
+        if not t_u:
+            continue
+        if any(x in t_type for x in ("json", "vtt", "srt", "txt", "plain")):
+            t_url = t_u
+            break
+        if not t_url:
+            t_url = t_u
+
+    meta["transcript_url"] = t_url
+    if not t_url:
+        return [], meta
+
+    return _fetch_transcript_url(t_url), meta
+
+
+def _apple_podcasts_get_transcript(show_name: str = "",
+                                    episode_title: str = "") -> tuple:
+    """
+    Search iTunes for a show's RSS feed, parse it for podcast:transcript elements.
+    Returns (segments, meta_dict).
+    """
+    if not show_name:
+        return [], {}
+    try:
+        q   = urllib.parse.quote(show_name)
+        req = urllib.request.Request(
+            f"https://itunes.apple.com/search?term={q}&entity=podcast&limit=3",
+            headers={"User-Agent": "PKIS/1.0"},
+        )
+        with urllib.request.urlopen(req, timeout=10) as r:
+            results = json.loads(r.read()).get("results", [])
+        if not results:
+            return [], {}
+        feed_url = results[0].get("feedUrl", "")
+        if not feed_url:
+            return [], {}
+    except Exception as e:
+        logger.warning(f"iTunes search failed: {e}")
+        return [], {}
+
+    try:
+        req = urllib.request.Request(feed_url, headers={"User-Agent": "PKIS/1.0"})
+        with urllib.request.urlopen(req, timeout=15) as r:
+            rss_data = r.read()
+        root    = ET.fromstring(rss_data)
+        channel = root.find("channel")
+        items   = channel.findall("item") if channel is not None else []
+    except Exception as e:
+        logger.warning(f"RSS feed parse failed ({feed_url}): {e}")
+        return [], {}
+
+    best_item, best_score = None, 0.0
+    if episode_title:
+        q_words = set(episode_title.lower().split())
+        for item in items:
+            t_el = item.find("title")
+            if t_el is None or not t_el.text:
+                continue
+            overlap = len(q_words & set(t_el.text.lower().split())) / max(len(q_words), 1)
+            if overlap > best_score:
+                best_score, best_item = overlap, item
+    if not best_item and items:
+        best_item = items[0]
+    if not best_item or (episode_title and best_score < 0.2):
+        return [], {}
+
+    t_el = best_item.find(f"{{{_PI_NS}}}transcript")
+    if t_el is None:
+        return [], {}
+    t_url = t_el.get("url", "")
+    if not t_url:
+        return [], {}
+
+    title_el = best_item.find("title")
+    date_el  = best_item.find("pubDate")
+    meta = {
+        "title":          title_el.text.strip() if title_el is not None and title_el.text else episode_title,
+        "show":           show_name,
+        "feed_url":       feed_url,
+        "pub_date":       date_el.text.strip() if date_el is not None and date_el.text else "",
+        "transcript_url": t_url,
+    }
+    return _fetch_transcript_url(t_url), meta
+
+
+def _listen_notes_get_metadata(show_name: str = "", episode_title: str = "") -> dict:
+    """Fetch episode metadata from Listen Notes API (fallback when no transcript found)."""
+    if not LISTEN_NOTES_KEY:
+        return {}
+    try:
+        q   = urllib.parse.quote(f"{episode_title} {show_name}".strip())
+        req = urllib.request.Request(
+            f"https://listen-api.listennotes.com/api/v2/search?q={q}&type=episode&offset=0&len_min=0",
+            headers={"X-ListenAPI-Key": LISTEN_NOTES_KEY, "User-Agent": "PKIS/1.0"},
+        )
+        with urllib.request.urlopen(req, timeout=10) as r:
+            results = json.loads(r.read()).get("results", [])
+        if not results:
+            return {}
+        ep = results[0]
+        return {
+            "title":       ep.get("title_original", ""),
+            "show":        (ep.get("podcast") or {}).get("title_original", show_name),
+            "description": ep.get("description_original", ""),
+            "pub_date":    str(ep.get("pub_date_ms", "")),
+        }
+    except Exception as e:
+        logger.warning(f"Listen Notes metadata fetch failed: {e}")
+        return {}
+
+
+def _podchaser_get_metadata(show_name: str = "", episode_title: str = "") -> dict:
+    """Fetch episode metadata from Podchaser GraphQL API (fallback)."""
+    if not PODCHASER_KEY:
+        return {}
+    gql = (
+        "query SearchEpisodes($q: String!) {"
+        "  searchEpisodes(searchTerm: $q, first: 3) {"
+        "    edges { node { title description airDate podcast { title } } }"
+        "  }"
+        "}"
+    )
+    try:
+        payload = json.dumps({
+            "query":     gql,
+            "variables": {"q": f"{episode_title} {show_name}".strip()},
+        }).encode()
+        req = urllib.request.Request(
+            "https://api.podchaser.com/graphql",
+            data=payload,
+            headers={
+                "Authorization": f"Bearer {PODCHASER_KEY}",
+                "Content-Type":  "application/json",
+                "User-Agent":    "PKIS/1.0",
+            },
+            method="POST",
+        )
+        with urllib.request.urlopen(req, timeout=10) as r:
+            edges = (json.loads(r.read())
+                     .get("data", {})
+                     .get("searchEpisodes", {})
+                     .get("edges", []))
+        if not edges:
+            return {}
+        node = edges[0]["node"]
+        return {
+            "title":       node.get("title", ""),
+            "show":        (node.get("podcast") or {}).get("title", show_name),
+            "description": node.get("description", ""),
+            "pub_date":    node.get("airDate", ""),
+        }
+    except Exception as e:
+        logger.warning(f"Podchaser metadata fetch failed: {e}")
+        return {}
+
+
+def _segments_to_markdown(segments: list, title: str = "", show: str = "",
+                           source: str = "", episode_url: str = "") -> str:
+    """Convert [{start, text}] transcript segments to markdown."""
+    lines = [f"# Transcript: {title}"]
+    if show:        lines.append(f"**Show:** {show}")
+    if source:      lines.append(f"**Source:** {source}")
+    if episode_url: lines.append(f"**Episode:** {episode_url}")
+    lines.append(f"**Retrieved:** {datetime.now(timezone.utc).strftime('%Y-%m-%d')}")
+    lines += ["\n---\n"]
+    for seg in segments:
+        if isinstance(seg, dict):
+            start = seg.get("start", 0)
+            text  = (seg.get("text") or "").strip()
+            m_, s_ = int(start // 60), int(start % 60)
+            if text:
+                lines.append(f"[{m_:02d}:{s_:02d}] {text}")
+        elif str(seg).strip():
+            lines.append(str(seg))
+    return "\n".join(lines)
+
+
+def _segments_to_html(segments: list, title: str = "") -> str:
+    """Convert [{start, text}] transcript segments to HTML for Readwise Reader."""
+    parts = [f"<h1>{title}</h1>"] if title else []
+    for seg in segments:
+        text = ((seg.get("text") if isinstance(seg, dict) else str(seg)) or "").strip()
+        if text:
+            parts.append(f"<p>{text}</p>")
+    return "\n".join(parts)
+
+
+def _append_transcript_queue(entry: dict) -> None:
+    """Append a podcast episode to wiki/transcript-queue.md for Whisper processing."""
+    queue_path = WIKI_DIR / "transcript-queue.md"
+    if not queue_path.exists():
+        queue_path.write_text(
+            "# Transcript Queue\n\n"
+            "Episodes awaiting transcription. "
+            "Run Whisper locally and save output to "
+            "`raw/clippings/{slug}-transcript.md`.\n\n"
+            "## Pending\n"
+        )
+    slug        = entry.get("slug", "")
+    title       = entry.get("title", "")
+    show        = entry.get("show", "")
+    url         = entry.get("url", "")
+    youtube_url = entry.get("youtube_url", "")
+    ts          = datetime.now(timezone.utc).strftime("%Y-%m-%d")
+
+    lines = [f"\n### {slug} | pending"]
+    if title:       lines.append(f"- **Episode**: {title}")
+    if show:        lines.append(f"- **Show**: {show}")
+    if url:         lines.append(f"- **URL**: {url}")
+    if youtube_url: lines.append(f"- **YouTube**: {youtube_url}")
+    lines.append(f"- **Added**: {ts}")
+
+    with open(queue_path, "a", encoding="utf-8") as f:
+        f.write("\n".join(lines) + "\n")
+
+
+def tool_get_transcript_queue() -> list:
+    """List pending entries in the podcast transcript queue."""
+    queue_path = WIKI_DIR / "transcript-queue.md"
+    if not queue_path.exists():
+        return []
+    entries, current = [], {}
+    for line in queue_path.read_text().split("\n"):
+        m = re.match(r'^### (.+?) \| (.+)$', line)
+        if m:
+            if current.get("slug"):
+                entries.append(current)
+            current = {"slug": m.group(1).strip(), "status": m.group(2).strip()}
+        elif line.startswith("- **Episode**: "):
+            current["title"] = line[len("- **Episode**: "):].strip()
+        elif line.startswith("- **Show**: "):
+            current["show"] = line[len("- **Show**: "):].strip()
+        elif line.startswith("- **URL**: "):
+            current["url"] = line[len("- **URL**: "):].strip()
+        elif line.startswith("- **YouTube**: "):
+            current["youtube_url"] = line[len("- **YouTube**: "):].strip()
+        elif line.startswith("- **Added**: "):
+            current["added"] = line[len("- **Added**: "):].strip()
+    if current.get("slug"):
+        entries.append(current)
+    return entries
+
+
+def tool_save_podcast_source(
+    url: str,
+    push_to_readwise: bool = True,
+) -> dict:
+    """
+    Save a podcast episode as a PKIS source with automatic transcript lookup.
+
+    Resolution order:
+      1. YouTube (if URL is YouTube)  → youtube-transcript-api
+      2. Podcast Index API            → podcast:transcript in RSS feed
+      3. Apple Podcasts RSS           → podcast:transcript in feed
+    Falls back to Listen Notes + Podchaser for metadata enrichment, then
+    adds episode to wiki/transcript-queue.md for Whisper processing.
+
+    Env vars:
+      PODCAST_INDEX_KEY / PODCAST_INDEX_SECRET  (api.podcastindex.org — free)
+      LISTEN_NOTES_KEY                          (listennotes.com — free tier)
+      PODCHASER_KEY                             (podchaser.com — free tier)
+    """
+    if not url:
+        raise ValueError("url is required")
+
+    now   = datetime.now(timezone.utc)
+    today = now.strftime("%Y-%m-%d")
+
+    transcript_segments: list = []
+    transcript_source:   str  = ""
+    episode_meta:        dict = {}
+
+    # ── Page metadata ────────────────────────────────────────────────────────
+    page_meta   = _fetch_podcast_page_metadata(url)
+    title       = page_meta.get("title", "")
+    show        = page_meta.get("show", "")
+    description = page_meta.get("description", "")
+
+    is_youtube  = bool(_extract_youtube_id(url))
+    youtube_url = url if is_youtube else ""
+
+    # ── 1. YouTube ───────────────────────────────────────────────────────────
+    if is_youtube:
+        segs = _youtube_get_transcript(url)
+        if segs:
+            transcript_segments = segs
+            transcript_source   = "youtube"
+            episode_meta        = {"title": title, "show": show,
+                                   "episode_url": url, "youtube_url": url}
+
+    # ── 2. Podcast Index ─────────────────────────────────────────────────────
+    if not transcript_segments:
+        segs, pi_meta = _podcast_index_get_transcript(
+            show_name=show, episode_title=title
+        )
+        if segs:
+            transcript_segments = segs
+            transcript_source   = "podcast-index"
+            episode_meta        = pi_meta
+        elif pi_meta.get("title") or pi_meta.get("show"):
+            episode_meta = pi_meta
+            if not title: title = pi_meta.get("title", "")
+            if not show:  show  = pi_meta.get("show", "")
+
+    # ── 3. Apple Podcasts RSS ─────────────────────────────────────────────────
+    if not transcript_segments and (show or title):
+        segs, ap_meta = _apple_podcasts_get_transcript(
+            show_name=show, episode_title=title
+        )
+        if segs:
+            transcript_segments = segs
+            transcript_source   = "apple"
+            episode_meta        = ap_meta
+
+    # ── Metadata fallback (Listen Notes + Podchaser) ──────────────────────────
+    if not transcript_segments:
+        for fb in (_listen_notes_get_metadata(show, title),
+                   _podchaser_get_metadata(show, title)):
+            for k in ("title", "show", "description", "pub_date"):
+                if fb.get(k) and not episode_meta.get(k):
+                    episode_meta[k] = fb[k]
+
+    # Final field resolution
+    if not title:       title       = episode_meta.get("title", "") or url
+    if not show:        show        = episode_meta.get("show", "")
+    if not description: description = episode_meta.get("description", "")
+
+    # ── Slug ──────────────────────────────────────────────────────────────────
+    if show:
+        slug = _compute_slug(title, show, None)
+    elif title and title != url:
+        words = re.sub(r"[^a-z0-9\s]", "", title.lower()).split()
+        key   = next((w for w in words if w not in _SLUG_STOP_WORDS and len(w) > 2),
+                     words[0] if words else "podcast")
+        dom   = re.sub(r'^www\.', '', urllib.parse.urlparse(url).netloc).split(".")[0]
+        base  = f"{dom}-{key}"[:55]
+        slug, n = base, 1
+        while find_node_path(slug) or (STAGING_DIR / f"{slug}.md").exists():
+            slug = f"{base}-{n}"; n += 1
+    else:
+        parsed = urllib.parse.urlparse(url)
+        dom    = re.sub(r'^www\.', '', parsed.netloc).split(".")[0]
+        frag   = re.sub(r'[^a-z0-9]+', '-', parsed.path.lower()).strip('-')[:30]
+        base   = f"{dom}-{frag}".strip('-')[:55] or "podcast"
+        slug, n = base, 1
+        while find_node_path(slug) or (STAGING_DIR / f"{slug}.md").exists():
+            slug = f"{base}-{n}"; n += 1
+
+    # ── Store transcript ──────────────────────────────────────────────────────
+    doc_path_fm     = ""
+    transcript_path = ""
+    if transcript_segments:
+        md = _segments_to_markdown(
+            transcript_segments, title=title, show=show,
+            source=transcript_source, episode_url=url,
+        )
+        clips_dir = RAW_DIR / "clippings"
+        clips_dir.mkdir(parents=True, exist_ok=True)
+        t_file = clips_dir / f"{slug}-transcript.md"
+        t_file.write_text(md, encoding="utf-8")
+        transcript_path = str(t_file)
+        doc_path_fm     = f"clippings/{slug}-transcript.md"
+
+    # ── Wiki source node ──────────────────────────────────────────────────────
+    pub_date = episode_meta.get("pub_date", "")
+    year     = None
+    if pub_date:
+        ym = re.search(r'\b(19|20)\d{2}\b', str(pub_date))
+        if ym: year = int(ym.group(0))
+
+    fm: dict = {
+        "id":                f"pkis:source:{slug}",
+        "aliases":           [],
+        "title":             title,
+        "authors":           show,
+        "year":              year,
+        "type":              "talk",
+        "domain":            [],
+        "tags":              [],
+        "source_url":        url,
+        "drive_id":          "",
+        "drive_path":        "",
+        "doc_path":          doc_path_fm,
+        "readwise_id":       "",
+        "isbn":              "",
+        "toc_source":        "",
+        "parent_book":       "",
+        "chapter":           None,
+        "status":            "unread",
+        "date_added":        today,
+        "date_read":         "",
+        "concepts":          [],
+        "transcript_status": "found" if transcript_segments else "queued",
+        "transcript_source": transcript_source,
+    }
+    if youtube_url and youtube_url != url:
+        fm["youtube_url"] = youtube_url
+
+    body = (
+        f"## Summary\n{description[:500] if description else '[To be filled by Librarian ingest]'}\n\n"
+        "## Key Knowledge Objects\n[To be identified during Librarian ingest]\n\n"
+        "## Key Extractions\n[To be identified during Librarian ingest]\n\n"
+        "## Connection Candidates\n[To be identified during Librarian ingest]\n"
+    )
+    dest = WIKI_DIR / "sources" / f"{slug}.md"
+    dest.write_text(
+        f"---\n{yaml.dump(fm, default_flow_style=False, allow_unicode=True)}---\n\n{body}"
+    )
+    global _node_cache
+    _node_cache = {}
+
+    # ── Whisper queue if no transcript ────────────────────────────────────────
+    if not transcript_segments:
+        _append_transcript_queue({
+            "slug":        slug,
+            "title":       title,
+            "show":        show,
+            "url":         url,
+            "youtube_url": youtube_url,
+        })
+
+    # ── Readwise push ─────────────────────────────────────────────────────────
+    readwise_result: dict = {}
+    if push_to_readwise and READWISE_TOKEN:
+        html_content = (
+            _segments_to_html(transcript_segments, title=title)
+            if transcript_segments else ""
+        )
+        readwise_result = _readwise_save(
+            doc_url=url, title=title, author=show, slug=slug,
+            category="article",
+            abstract=description[:600] if description else "",
+            year=year,
+            html=html_content,
+        )
+        if readwise_result.get("id"):
+            _update_source_frontmatter(slug, {"readwise_id": readwise_result["id"]})
+
+    # ── Git commit ────────────────────────────────────────────────────────────
+    files_to_commit = [dest]
+    if transcript_path:
+        files_to_commit.append(Path(transcript_path))
+    q_path = WIKI_DIR / "transcript-queue.md"
+    if not transcript_segments and q_path.exists():
+        files_to_commit.append(q_path)
+    _git_commit_files(files_to_commit, f"[podcast] save episode: {slug}")
+
+    return {
+        "slug":                slug,
+        "type":                "talk",
+        "title":               title,
+        "show":                show,
+        "source_url":          url,
+        "transcript_found":    bool(transcript_segments),
+        "transcript_source":   transcript_source,
+        "transcript_segments": len(transcript_segments),
+        "transcript_queued":   not bool(transcript_segments),
+        "readwise_pushed":     bool(readwise_result.get("id")),
+        "readwise_url":        readwise_result.get("url", ""),
+        "readwise_id":         readwise_result.get("id", ""),
+    }
+
+
 def tool_list_documents(slug: str = None) -> list:
     """List stored documents, optionally filtered to a single source slug."""
     sources_dir = DOCS_DIR / "sources"
@@ -2436,10 +3194,10 @@ _UPLOAD_FORM = """<!DOCTYPE html>
 <h2>PKIS Doc Upload</h2>
 {msg}
 <form method="POST" enctype="multipart/form-data">
-  <label>arXiv URL / ID or direct PDF URL <span style="font-weight:400">(optional)</span></label>
-  <input name="source_url" placeholder="https://arxiv.org/abs/1701.02434  or  1701.02434"
+  <label>URL <span style="font-weight:400">(arXiv, article, podcast, video, etc. — optional)</span></label>
+  <input name="source_url" placeholder="https://arxiv.org/abs/1701.02434  ·  Spotify/Apple episode  ·  blog post"
          value="{source_url}" autocomplete="off">
-  <p class="hint">arXiv papers: PDF fetched automatically, Reader gets the HTML version.</p>
+  <p class="hint">arXiv → PDF fetched + HTML in Reader. Podcast platforms (Spotify, Apple, etc.) → transcript lookup + Whisper queue if needed. Articles/videos → URL saved.</p>
 
   <div class="divider">— or attach a file —</div>
 
@@ -2506,6 +3264,26 @@ def docs_upload():
                         fetch_url = src_url_val
                         filename  = Path(urllib.parse.urlparse(src_url_val).path).name
                     elif not has_file:
+                        # Podcast episode → transcript lookup pipeline
+                        if _is_podcast_url(src_url_val):
+                            result = tool_save_podcast_source(
+                                url=src_url_val,
+                                push_to_readwise=push_rw and bool(READWISE_TOKEN),
+                            )
+                            t_note = (" · transcript found"
+                                      if result.get("transcript_found")
+                                      else " · queued for Whisper")
+                            rw_note = (f" · <a href='{result['readwise_url']}'>Open in Reader</a>"
+                                       if result.get("readwise_url") else "")
+                            msg = (f'<div class="msg ok">Podcast saved as '
+                                   f'<strong>{result["slug"]}</strong>: '
+                                   f'{result.get("title","")[:60] or src_url_val[:60]}'
+                                   f'{t_note}{rw_note}</div>')
+                            slug_val = src_url_val = ""
+                            return _UPLOAD_FORM.format(
+                                msg=msg, slug=slug_val,
+                                source_url=src_url_val, rw_checked=rw_checked
+                            )
                         # URL-only source — article, video, tweet, etc.
                         result = tool_save_url_source(
                             url=src_url_val,
@@ -2932,6 +3710,24 @@ def _get_tools_list():
                 },
                 "required": ["url"]
             }
+        },
+        {
+            "name": "save_podcast_source",
+            "description": "Save a podcast episode as a PKIS source with automatic transcript lookup. Tries YouTube → Podcast Index → Apple Podcasts RSS (in that order). Falls back to Listen Notes + Podchaser for metadata and queues the episode for Whisper transcription if no transcript is found. Stores transcript in raw/clippings/ and pushes full text to Readwise for highlighting.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "url":             {"type": "string", "description": "Podcast episode URL (Spotify, Apple Podcasts, YouTube, RSS, etc.)"},
+                    "push_to_readwise":{"type": "boolean", "default": True,
+                                       "description": "Push to Readwise Reader after saving"}
+                },
+                "required": ["url"]
+            }
+        },
+        {
+            "name": "get_transcript_queue",
+            "description": "List podcast episodes queued for Whisper transcription — no transcript was automatically found when they were saved.",
+            "inputSchema": {"type": "object", "properties": {}}
         }
     ]
 
@@ -3076,6 +3872,7 @@ def dispatch_tool(tool_name: str, params: dict, req) -> any:
         ),
         "get_health_metrics": lambda p: tool_get_health_metrics(),
         "list_documents": lambda p: tool_list_documents(p.get("slug")),
+        "get_transcript_queue": lambda p: tool_get_transcript_queue(),
         "check_alias_collision": lambda p: tool_check_alias_collision(p["surface_form"]),
         "get_operational_references": lambda p: tool_get_operational_references(p["iri"]),
         "get_concept_operational_load": lambda p: tool_get_concept_operational_load(p["iri"]),
@@ -3140,6 +3937,10 @@ def dispatch_tool(tool_name: str, params: dict, req) -> any:
             slug=p.get("slug", ""),
             push_to_readwise=p.get("push_to_readwise", True),
         ),
+        "save_podcast_source": lambda p: tool_save_podcast_source(
+            url=p["url"],
+            push_to_readwise=p.get("push_to_readwise", True),
+        ),
     }
 
     if tool_name in read_tools:
@@ -3169,6 +3970,238 @@ def mcp_manifest():
         "version": "1.0.0",
         "tools": _get_tools_list()
     })
+
+
+# ============================================================
+# Flask routes — Viewer REST API  (/pkis-api/*)
+# Called directly by the React PWA in viewer/.
+# No separate proxy process needed — these call tool functions in-process.
+# ============================================================
+
+def _api_json():
+    """Parse request JSON body, return empty dict on failure."""
+    return request.get_json(force=True, silent=True) or {}
+
+
+def _api_ok(result):
+    """Wrap a tool result in a JSON response."""
+    return jsonify(result)
+
+
+def _api_err(e, code=400):
+    return jsonify({"error": str(e)}), code
+
+
+@app.route("/pkis-api/search", methods=["POST"])
+def pkis_api_search():
+    b = _api_json()
+    try:
+        return _api_ok(tool_search_wiki(
+            query=b.get("query", ""),
+            domains=b.get("domains"),
+            node_types=b.get("node_types"),
+            max_results=b.get("max_results", 10),
+        ))
+    except Exception as e:
+        return _api_err(e, 500)
+
+
+@app.route("/pkis-api/node", methods=["POST"])
+def pkis_api_node():
+    b = _api_json()
+    iri = b.get("iri", "")
+    if not iri:
+        return _api_err("iri is required")
+    try:
+        return _api_ok(tool_get_node(iri))
+    except Exception as e:
+        return _api_err(e, 500)
+
+
+@app.route("/pkis-api/related", methods=["POST"])
+def pkis_api_related():
+    b = _api_json()
+    iri = b.get("iri", "")
+    if not iri:
+        return _api_err("iri is required")
+    try:
+        return _api_ok(tool_get_related(
+            iri=iri,
+            edge_types=b.get("edge_types"),
+            direction=b.get("direction", "both"),
+            max_hops=b.get("max_hops", 2),
+        ))
+    except Exception as e:
+        return _api_err(e, 500)
+
+
+@app.route("/pkis-api/health", methods=["POST"])
+def pkis_api_health():
+    try:
+        return _api_ok(tool_get_health_metrics())
+    except Exception as e:
+        return _api_err(e, 500)
+
+
+@app.route("/pkis-api/frontier", methods=["POST"])
+def pkis_api_frontier():
+    try:
+        return _api_ok(tool_get_concept_frontier())
+    except Exception as e:
+        return _api_err(e, 500)
+
+
+@app.route("/pkis-api/reading-graph", methods=["POST"])
+def pkis_api_reading_graph():
+    b = _api_json()
+    try:
+        return _api_ok(tool_get_reading_graph(
+            scope=b.get("scope", "all_unread"),
+            focus_concept=b.get("focus_concept"),
+            focus_domain=b.get("focus_domain"),
+            min_edge_weight=b.get("min_edge_weight", 2),
+            max_nodes=b.get("max_nodes", 100),
+        ))
+    except Exception as e:
+        return _api_err(e, 500)
+
+
+@app.route("/pkis-api/staged", methods=["POST"])
+def pkis_api_staged():
+    b = _api_json()
+    try:
+        return _api_ok(tool_get_staged_nodes(
+            node_type=b.get("node_type"),
+            limit=b.get("limit", 20),
+        ))
+    except Exception as e:
+        return _api_err(e, 500)
+
+
+@app.route("/pkis-api/staged/commit", methods=["POST"])
+def pkis_api_staged_commit():
+    b = _api_json()
+    staged_id = b.get("staged_id", "")
+    if not staged_id:
+        return _api_err("staged_id is required")
+    try:
+        return _api_ok(tool_commit_staged_node(
+            staged_id=staged_id,
+            action=b.get("action", "commit"),
+            edits=b.get("edits"),
+            confirmed_links=b.get("confirmed_links"),
+        ))
+    except ValueError as e:
+        return _api_err(e, 404)
+    except Exception as e:
+        return _api_err(e, 500)
+
+
+@app.route("/pkis-api/bridge-note", methods=["POST"])
+def pkis_api_bridge_note():
+    b = _api_json()
+    try:
+        return _api_ok(tool_create_bridge_note(
+            rationale=b.get("rationale", ""),
+            linked_node_refs=b.get("linked_node_refs", []),
+            proposed_edge_type=b.get("proposed_edge_type", ""),
+            origin=b.get("origin", "viewer"),
+            title=b.get("title", ""),
+        ))
+    except ValueError as e:
+        return _api_err(e)
+    except Exception as e:
+        return _api_err(e, 500)
+
+
+@app.route("/pkis-api/source-stub", methods=["POST"])
+def pkis_api_source_stub():
+    b = _api_json()
+    try:
+        return _api_ok(tool_create_source_stub(
+            title=b.get("title", ""),
+            url=b.get("url", ""),
+            doi=b.get("doi", ""),
+            authors=b.get("authors", ""),
+            year=b.get("year"),
+            notes=b.get("notes", ""),
+            priority=b.get("priority", "normal"),
+        ))
+    except ValueError as e:
+        return _api_err(e)
+    except Exception as e:
+        return _api_err(e, 500)
+
+
+@app.route("/pkis-api/queue", methods=["POST"])
+def pkis_api_queue_get():
+    b = _api_json()
+    try:
+        return _api_ok(tool_get_reading_queue(priority=b.get("priority")))
+    except Exception as e:
+        return _api_err(e, 500)
+
+
+@app.route("/pkis-api/queue/add", methods=["POST"])
+def pkis_api_queue_add():
+    b = _api_json()
+    try:
+        return _api_ok(tool_add_to_queue(
+            source_iri=b.get("source_iri"),
+            reference=b.get("reference"),
+            reason=b.get("reason", ""),
+            priority=b.get("priority", "normal"),
+        ))
+    except Exception as e:
+        return _api_err(e, 500)
+
+
+@app.route("/pkis-api/save-url", methods=["POST"])
+def pkis_api_save_url():
+    b = _api_json()
+    url = b.get("url", "")
+    if not url:
+        return _api_err("url is required")
+    try:
+        return _api_ok(tool_save_url_source(
+            url=url,
+            slug=b.get("slug"),
+            push_to_readwise=b.get("push_to_readwise", True),
+        ))
+    except Exception as e:
+        return _api_err(e, 500)
+
+
+@app.route("/pkis-api/rebuild-graph", methods=["POST"])
+def pkis_api_rebuild_graph():
+    try:
+        return _api_ok(tool_rebuild_source_graph())
+    except Exception as e:
+        return _api_err(e, 500)
+
+
+@app.route("/pkis-api/detect-concepts", methods=["POST"])
+def pkis_api_detect_concepts():
+    b = _api_json()
+    text = b.get("text", "")
+    if not text:
+        return _api_err("text is required")
+    try:
+        return _api_ok(tool_detect_concepts(
+            text=text,
+            threshold=b.get("threshold", 0.7),
+        ))
+    except Exception as e:
+        return _api_err(e, 500)
+
+
+@app.route("/pkis-api/viz/<path:filename>")
+def pkis_api_viz(filename):
+    """Serve standalone HTML viz assets from wiki/assets/viz/."""
+    if ".." in filename:
+        return _api_err("Invalid path"), 400
+    viz_dir = WIKI_DIR / "assets" / "viz"
+    return send_from_directory(str(viz_dir), filename)
 
 
 # ============================================================
