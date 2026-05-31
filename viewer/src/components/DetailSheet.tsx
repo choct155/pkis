@@ -124,9 +124,9 @@ export default function DetailSheet({ iri, onClose, onNavigate, onEdit, onGraph 
     setLoading(true)
     setError(null)
     setNode(null)
-    getNode(iri).then((n) => {
+    getNode(iri).then((n: FullNode) => {
       if (!cancelled) { setNode(n); setLoading(false) }
-    }).catch((e) => {
+    }).catch((e: unknown) => {
       if (!cancelled) { setError(String(e)); setLoading(false) }
     })
     return () => { cancelled = true }
