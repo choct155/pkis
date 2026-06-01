@@ -694,3 +694,12 @@
 ## [2026-06-01] committed | hypothesis
 - Committed: learned-symbol-ontology-alignment → hypotheses/learned-symbol-ontology-alignment.md
 - IRI: pkis:hypothesis:learned-symbol-ontology-alignment
+
+## [2026-06-01] staged | hypothesis
+- Staged: concept-bottleneck-auditability (id: 0fcfa71a-28e8-4884-98e6-c9035db64694)
+- Title: Concept Bottleneck Architectures Provide Sufficient Audit Trail for Production QA Workflows
+- Cluster: learned-symbol-grounding
+
+## [2026-06-01] committed | hypothesis
+- Committed: concept-bottleneck-auditability → hypotheses/concept-bottleneck-auditability.md
+- IRI: pkis:hypothesis:concept-bottleneck-auditability
