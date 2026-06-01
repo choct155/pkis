@@ -408,3 +408,7 @@
 ## [2026-06-01] committed | concept
 - Committed: calibration → concepts/calibration.md
 - IRI: pkis:concept:calibration
+
+## [2026-06-01] committed | technique
+- Committed: knowledge-graph-traversal → techniques/knowledge-graph-traversal.md
+- IRI: pkis:technique:knowledge-graph-traversal

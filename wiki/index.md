@@ -375,6 +375,7 @@
 - [[market-vs-hierarchy]] — Coase/Williamson: transactions governed by price signals (markets) vs. managerial direction (firms) (corporate-finance) (2026-05-20)
 
 ## Techniques
+- [[knowledge-graph-traversal]] — Knowledge Graph Traversal (knowledge-representation) (2026-06-01)
 - [[named-entity-disambiguation]] — Named Entity Disambiguation (knowledge-representation, deep-learning) (2026-06-01)
 - [[transformer-attention-mechanisms]] — Transformer Attention Mechanisms (deep-learning) (2026-06-01)
 - [[lasso]] — L1-penalized regression with automatic variable selection (statistical-learning) (2026-05-20)
