@@ -428,3 +428,7 @@
 ## [2026-06-01] committed | technique
 - Committed: vector-quantization → techniques/vector-quantization.md
 - IRI: pkis:technique:vector-quantization
+
+## [2026-06-01] committed | technique
+- Committed: concept-bottleneck-models → techniques/concept-bottleneck-models.md
+- IRI: pkis:technique:concept-bottleneck-models

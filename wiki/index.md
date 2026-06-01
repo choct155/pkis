@@ -377,6 +377,7 @@
 - [[market-vs-hierarchy]] — Coase/Williamson: transactions governed by price signals (markets) vs. managerial direction (firms) (corporate-finance) (2026-05-20)
 
 ## Techniques
+- [[concept-bottleneck-models]] — Concept Bottleneck Models (deep-learning, knowledge-representation) (2026-06-01)
 - [[vector-quantization]] — Vector Quantization (deep-learning) (2026-06-01)
 - [[knowledge-graph-embeddings]] — Knowledge Graph Embeddings (knowledge-representation, deep-learning) (2026-06-01)
 - [[knowledge-graph-traversal]] — Knowledge Graph Traversal (knowledge-representation) (2026-06-01)
