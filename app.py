@@ -829,9 +829,10 @@ def _active_frontier_anchors(nodes) -> set:
     reading should gravitate toward. Resolves each cluster's frontier_hypotheses slugs to IRIs."""
     anchors = set()
     for node in nodes:
-        if node.get("node_type") != "research-cluster":
-            continue
         fm = node.get("frontmatter", {})
+        # node_type is the folder name ("clusters"); knowledge_type is the authoritative type.
+        if fm.get("knowledge_type") != "research-cluster":
+            continue
         if fm.get("status") != "active":
             continue
         for h_slug in fm.get("frontier_hypotheses", []) or []:
