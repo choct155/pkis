@@ -564,3 +564,12 @@
 
 ## [2026-06-01] edit | edit_node
 - pkis:research-cluster:structured-validation-truth-discovery: fields=['frontier_hypotheses'] sections=['Current Frontier']
+
+## [2026-06-01] staged | hypothesis
+- Staged: distributional-intent-parsing-calibration (id: 42240e83-db41-40bf-bfbf-e84f320402d6)
+- Title: Distributional Query Parsing With Ontological Type Constraints Is Better Calibrated Than Point-Estimate Parsing
+- Cluster: parsed-intent-calibration
+
+## [2026-06-01] committed | hypothesis
+- Committed: distributional-intent-parsing-calibration → hypotheses/distributional-intent-parsing-calibration.md
+- IRI: pkis:hypothesis:distributional-intent-parsing-calibration
