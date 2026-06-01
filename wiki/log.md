@@ -448,3 +448,7 @@
 ## [2026-06-01] committed | concept
 - Committed: expected-loss → concepts/expected-loss.md
 - IRI: pkis:concept:expected-loss
+
+## [2026-06-01] committed | concept
+- Committed: decision-theory-foundations → concepts/decision-theory-foundations.md
+- IRI: pkis:concept:decision-theory-foundations

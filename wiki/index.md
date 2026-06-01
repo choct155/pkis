@@ -273,6 +273,7 @@
 - [[liu-machine-unlearning-llm-2024]] — Rethinking Machine Unlearning for LLMs: post-training knowledge editing survey (deep-learning, ai-safety) (2026-05-20)
 
 ## Concepts
+- [[decision-theory-foundations]] — Decision Theory Foundations (bayesian-stats) (2026-06-01)
 - [[expected-loss]] — Expected Loss (bayesian-stats) (2026-06-01)
 - [[uncertainty-quantification]] — Uncertainty Quantification (bayesian-stats, deep-learning) (2026-06-01)
 - [[information-theory]] — Information Theory (bayesian-stats) (2026-06-01)
