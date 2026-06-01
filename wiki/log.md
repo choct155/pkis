@@ -703,3 +703,13 @@
 ## [2026-06-01] committed | hypothesis
 - Committed: concept-bottleneck-auditability → hypotheses/concept-bottleneck-auditability.md
 - IRI: pkis:hypothesis:concept-bottleneck-auditability
+
+## [2026-06-01] edges | add_connections
+- pkis:research-cluster:learned-symbol-grounding —uses→ vector-quantization
+- pkis:research-cluster:learned-symbol-grounding —uses→ concept-bottleneck-models
+- pkis:hypothesis:learned-symbol-ontology-alignment —uses→ vector-quantization
+- pkis:hypothesis:learned-symbol-ontology-alignment —uses→ formal-ontology
+- pkis:hypothesis:concept-bottleneck-auditability —uses→ concept-bottleneck-models
+
+## [2026-06-01] edit | edit_node
+- pkis:research-cluster:learned-symbol-grounding: fields=['frontier_hypotheses'] sections=['Current Frontier']

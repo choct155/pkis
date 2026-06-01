@@ -5,12 +5,13 @@ cross_cluster_dependencies:
 - embedding-ontology-alignment
 - evaluation-infrastructure
 date_created: 2026-05-30
-date_updated: 2026-05-30
+date_updated: '2026-06-01'
 domain:
 - knowledge-representation
 - deep-learning
 - symbolic-subsymbolic
-frontier_hypotheses: []
+frontier_hypotheses:
+- learned-symbol-ontology-alignment
 hypotheses:
 - concept-bottleneck-auditability
 - learned-symbol-ontology-alignment
@@ -43,7 +44,7 @@ Straddles Theme 1 (science of complementarity) and Theme 2 (operational implicat
 - **learned-symbol-ontology-alignment** — Learned discrete symbols from VQ-VAE style approaches can be reliably aligned to formal ontological concepts
 
 ## Current Frontier
-To be computed by Maintenance agent.
+Anchored to `vector-quantization` and `concept-bottleneck-models`. Lead hypothesis **`learned-symbol-ontology-alignment`**: VQ-VAE-style discrete symbols can be reliably aligned to formal ontological concepts, closing the loop between statistical learning and symbolic maintenance. Supporting: **`concept-bottleneck-auditability`** (concept-bottleneck architectures give a sufficient audit trail for production QA). Coverage gaps: `vector-quantization`, `concept-bottleneck-models` are sourceless stubs.
 
 ## Connections
 - [[concept-bottleneck-models]] — uses: near-term production instantiation of the cluster
