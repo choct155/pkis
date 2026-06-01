@@ -511,3 +511,12 @@
 ## [2026-06-01] committed | hypothesis
 - Committed: ontological-provenance-enables-conflict-resolution → hypotheses/ontological-provenance-enables-conflict-resolution.md
 - IRI: pkis:hypothesis:ontological-provenance-enables-conflict-resolution
+
+## [2026-06-01] staged | hypothesis
+- Staged: source-credibility-as-latent-variable (id: d34542e2-433a-4f46-bd68-6df330726d85)
+- Title: Treating Source Credibility as a Latent Variable Produces Better-Calibrated Resolution Than Static Weights
+- Cluster: composite-credibility
+
+## [2026-06-01] committed | hypothesis
+- Committed: source-credibility-as-latent-variable → hypotheses/source-credibility-as-latent-variable.md
+- IRI: pkis:hypothesis:source-credibility-as-latent-variable
