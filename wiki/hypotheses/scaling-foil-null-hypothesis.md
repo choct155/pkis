@@ -1,38 +1,51 @@
 ---
-id: "pkis:hypothesis:scaling-foil-null-hypothesis"
 aliases: []
-title: "Scaling Foil — Can Sufficiently Large LLMs Subsume Each Cluster's Task Without Ontological Scaffolding?"
-knowledge_type: hypothesis
-domain: [knowledge-representation, deep-learning, symbolic-subsymbolic]
-tags: [scaling-laws, null-hypothesis, compute-efficiency, ontology]
+cluster_membership:
+- intensional-grounding
+- learned-symbol-grounding
+- compositional-query-grounding
+- ontological-coverage-planning
+- structured-validation-truth-discovery
+- embedding-ontology-alignment
+- model-evolution
+- parsed-intent-calibration
+- retrieval-inference-tradeoff
+- composite-credibility
+- research-instrumentation
+- evaluation-infrastructure
+contrasts-with:
+- knowledge-representation
 date_created: 2026-05-30
 date_updated: 2026-05-30
-status: open
+dependent_nodes:
+- node: '[[scaling-laws]]'
+  node_type: result
+  rationale: The null hypothesis is grounded in scaling law predictions
+- node: '[[transformer-attention-mechanisms]]'
+  node_type: technique
+  rationale: Understanding attention mechanisms is required to assess whether architectural
+    limitations prevent scaling from subsuming symbolic tasks
+domain:
+- knowledge-representation
+- deep-learning
+- symbolic-subsymbolic
+evidence_nodes: []
+id: pkis:hypothesis:scaling-foil-null-hypothesis
+iks_link: null
+knowledge_type: hypothesis
 origin: research-program
 research_program_cluster: null
 research_program_role: scaling-foil
-iks_link: null
-cluster_membership:
-  - intensional-grounding
-  - learned-symbol-grounding
-  - compositional-query-grounding
-  - ontological-coverage-planning
-  - structured-validation-truth-discovery
-  - embedding-ontology-alignment
-  - model-evolution
-  - parsed-intent-calibration
-  - retrieval-inference-tradeoff
-  - composite-credibility
-  - research-instrumentation
-  - evaluation-infrastructure
-dependent_nodes:
-  - node: "[[scaling-laws]]"
-    node_type: result
-    rationale: "The null hypothesis is grounded in scaling law predictions"
-  - node: "[[transformer-attention-mechanisms]]"
-    node_type: technique
-    rationale: "Understanding attention mechanisms is required to assess whether architectural limitations prevent scaling from subsuming symbolic tasks"
-evidence_nodes: []
+status: open
+tags:
+- scaling-laws
+- null-hypothesis
+- compute-efficiency
+- ontology
+title: Scaling Foil — Can Sufficiently Large LLMs Subsume Each Cluster's Task Without
+  Ontological Scaffolding?
+uses:
+- scaling-laws
 ---
 
 ## Formal Statement
@@ -48,4 +61,6 @@ Literature suggests the null is false for architectural reasons in cases requiri
 Per-cluster: the null hypothesis is not uniformly true or false across all clusters. Each cluster requires its own experimental refutation.
 
 ## Connections
+- [[knowledge-representation]] — contrasts-with: The scaling foil is the antithesis to the program's ontological-scaffolding thesis — it asks whether scaling removes the need for explicit knowledge representation.
+- [[scaling-laws]] — uses: The null hypothesis rests on neural scaling laws: whether sufficiently large models subsume each cluster's task.
 - [[all-clusters]] — belongs-to: this hypothesis is a constituent of every cluster
