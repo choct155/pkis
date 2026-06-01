@@ -292,3 +292,7 @@
 ## [2026-06-01] committed | technique
 - Committed: named-entity-disambiguation → techniques/named-entity-disambiguation.md
 - IRI: pkis:technique:named-entity-disambiguation
+
+## [2026-06-01] committed | result
+- Committed: scaling-laws → results/scaling-laws.md
+- IRI: pkis:result:scaling-laws

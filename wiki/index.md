@@ -463,6 +463,7 @@
 - [[constraint-propagation]] — Reducing a constraint satisfaction problem by iteratively eliminating inconsistent values from variable domains (knowledge-representation) (2026-05-20)
 
 ## Results
+- [[scaling-laws]] — Scaling Laws (deep-learning) (2026-06-01)
 - [[universal-approximation-theorem]] — A single hidden layer of sigmoid neurons can approximate any continuous function (deep-learning) (2026-05-20)
 - [[modigliani-miller-theorem]] — In perfect capital markets, firm value is independent of capital structure (corporate-finance) (2026-05-20)
 - [[capital-structure-irrelevance]] — MM Proposition I: leverage does not affect firm value absent taxes, bankruptcy costs, or asymmetric info (corporate-finance) (2026-05-20)
