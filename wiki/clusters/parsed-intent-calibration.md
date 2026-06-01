@@ -1,22 +1,32 @@
 ---
-id: "pkis:research-cluster:parsed-intent-calibration"
 aliases: []
-title: "Parsed Intent Calibration"
-knowledge_type: research-cluster
-domain: [bayesian-stats, knowledge-representation]
-tags: [query-understanding, uncertainty-quantification, distributional-semantics, calibration]
+cross_cluster_dependencies:
+- compositional-query-grounding
+- retrieval-inference-tradeoff
+- evaluation-infrastructure
 date_created: 2026-05-30
 date_updated: 2026-05-30
-status: active
-origin: research-program
-hypotheses:
-  - distributional-intent-parsing-calibration
-  - uncertainty-propagation-through-retrieval
-cross_cluster_dependencies:
-  - compositional-query-grounding
-  - retrieval-inference-tradeoff
-  - evaluation-infrastructure
+domain:
+- bayesian-stats
+- knowledge-representation
 frontier_hypotheses: []
+hypotheses:
+- distributional-intent-parsing-calibration
+- uncertainty-propagation-through-retrieval
+id: pkis:research-cluster:parsed-intent-calibration
+knowledge_type: research-cluster
+origin: research-program
+status: active
+tags:
+- query-understanding
+- uncertainty-quantification
+- distributional-semantics
+- calibration
+title: Parsed Intent Calibration
+uses:
+- calibration
+- bayesian-inference
+- uncertainty-quantification
 ---
 
 ## Thesis
@@ -36,6 +46,9 @@ This cluster is the clearest intersection between the research program and the P
 To be computed by Maintenance agent.
 
 ## Connections
+- [[uncertainty-quantification]] — uses: measuring and propagating uncertainty requires UQ
+- [[bayesian-inference]] — uses: the parsed intent is a posterior over query meaning
+- [[calibration]] — uses: calibration of the parsed intent distribution is the primary evaluation criterion
 - [[calibration]] — uses: calibration of the parsed intent distribution is the primary evaluation criterion
 - [[bayesian-inference]] — uses: the parsed intent is a posterior over query meaning
 - [[uncertainty-quantification]] — prerequisite-of: measuring and propagating uncertainty requires understanding UQ formally

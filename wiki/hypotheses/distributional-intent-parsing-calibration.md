@@ -31,6 +31,10 @@ tags:
 - distributional
 title: Distributional Query Parsing With Ontological Type Constraints Is Better Calibrated
   Than Point-Estimate Parsing
+uses:
+- calibration
+- bayesian-inference
+- formal-ontology
 ---
 
 ## Formal Statement
@@ -46,4 +50,7 @@ A point estimate discards the uncertainty that downstream stages need; a typed d
 How to elicit a faithful distribution from an LLM parser? What calibration metric over structured objects?
 
 ## Connections
+- [[formal-ontology]] — uses: type constraints come from the ontology
+- [[bayesian-inference]] — uses: the parse is a posterior over meaning
+- [[calibration]] — uses: calibration is the criterion
 - [[parsed-intent-calibration]] — belongs-to: constituent hypothesis of the parsed-intent-calibration cluster

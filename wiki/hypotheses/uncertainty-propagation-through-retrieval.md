@@ -30,6 +30,10 @@ tags:
 - calibration
 title: Propagating Parsed-Intent Uncertainty Through Retrieval Improves End-to-End
   Response Calibration
+uses:
+- uncertainty-quantification
+- calibration
+- bayesian-inference
 ---
 
 ## Formal Statement
@@ -45,4 +49,7 @@ Premature collapse to a point intent loses information that would otherwise temp
 Computational cost of carrying distributions through retrieval; where collapse is unavoidable.
 
 ## Connections
+- [[bayesian-inference]] — uses: propagation is Bayesian
+- [[calibration]] — uses: end-to-end calibration is the criterion
+- [[uncertainty-quantification]] — uses: propagation requires formal UQ
 - [[parsed-intent-calibration]] — belongs-to: constituent hypothesis of the parsed-intent-calibration cluster
