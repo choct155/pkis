@@ -1,30 +1,44 @@
 ---
-id: "pkis:hypothesis:intensional-grounding-ood-membership"
 aliases: []
-title: "Category Membership for Out-of-Distribution Instances Improves With Explicit Intensional Grounding"
-knowledge_type: hypothesis
-domain: [knowledge-representation, deep-learning]
-tags: [named-entity-disambiguation, ontology, intensional-grounding, out-of-distribution, category-membership]
+cluster_membership:
+- intensional-grounding
 date_created: 2026-06-01
 date_updated: 2026-06-01
-status: open
+dependent_nodes:
+- node: '[[named-entity-disambiguation]]'
+  node_type: technique
+  rationale: Category membership for novel instances is evaluated through the same
+    entity identity / classification machinery as NED
+- node: '[[ontology]]'
+  node_type: concept
+  rationale: Explicit intensional grounding is supplied as ontological class definitions
+    with necessary and sufficient membership conditions — the independent variable
+- node: '[[transformer-attention-mechanisms]]'
+  node_type: technique
+  rationale: The claimed mechanism for membership generalization is attention over
+    intensional structure rather than distributional proximity
+domain:
+- knowledge-representation
+- deep-learning
+evidence_nodes: []
+id: pkis:hypothesis:intensional-grounding-ood-membership
+iks_link: null
+knowledge_type: hypothesis
 origin: research-program
 research_program_cluster: intensional-grounding
 research_program_role: generalization-test
-iks_link: null
-cluster_membership:
-  - intensional-grounding
-dependent_nodes:
-  - node: "[[named-entity-disambiguation]]"
-    node_type: technique
-    rationale: "Category membership for novel instances is evaluated through the same entity identity / classification machinery as NED"
-  - node: "[[ontology]]"
-    node_type: concept
-    rationale: "Explicit intensional grounding is supplied as ontological class definitions with necessary and sufficient membership conditions — the independent variable"
-  - node: "[[transformer-attention-mechanisms]]"
-    node_type: technique
-    rationale: "The claimed mechanism for membership generalization is attention over intensional structure rather than distributional proximity"
-evidence_nodes: []
+status: open
+tags:
+- named-entity-disambiguation
+- ontology
+- intensional-grounding
+- out-of-distribution
+- category-membership
+title: Category Membership for Out-of-Distribution Instances Improves With Explicit
+  Intensional Grounding
+uses:
+- named-entity-disambiguation
+- formal-ontology
 ---
 
 ## Formal Statement
@@ -40,4 +54,6 @@ Indirect. Think-on-Graph (Sun et al., ICLR 2024; Wu et al. 2025) shows that grou
 How to operationalize "out-of-distribution" for category membership in a way that is independent of the model under test (corpus frequency? embedding density? held-out novel classes?). Whether the differential benefit holds for fine-grained categories where intensional conditions are themselves hard to specify. How to separate the contribution of the ontology's class definitions from the contribution of the retrieval step that surfaces them.
 
 ## Connections
+- [[formal-ontology]] — uses: Explicit intensional grounding is supplied as ontological class definitions with necessary/sufficient membership conditions; [[ontology]] resolves to formal-ontology.
+- [[named-entity-disambiguation]] — uses: Out-of-distribution category membership is evaluated through the same entity identity / classification machinery as NED.
 - [[intensional-grounding]] — belongs-to: this is a constituent hypothesis of the Intensional Grounding cluster, testing it at the out-of-distribution generalization frontier
