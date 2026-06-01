@@ -685,3 +685,12 @@
 
 ## [2026-06-01] edit | edit_node
 - pkis:research-cluster:embedding-ontology-alignment: fields=['frontier_hypotheses'] sections=['Current Frontier']
+
+## [2026-06-01] staged | hypothesis
+- Staged: learned-symbol-ontology-alignment (id: 171b2b59-6ab7-4a23-aa0c-fdb4a950b22e)
+- Title: Learned Discrete Symbols From VQ-VAE-Style Approaches Can Be Reliably Aligned to Formal Ontological Concepts
+- Cluster: learned-symbol-grounding
+
+## [2026-06-01] committed | hypothesis
+- Committed: learned-symbol-ontology-alignment → hypotheses/learned-symbol-ontology-alignment.md
+- IRI: pkis:hypothesis:learned-symbol-ontology-alignment

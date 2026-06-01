@@ -550,6 +550,7 @@
 - [[evaluation-infrastructure]] — Evaluation Infrastructure: domain-specific benchmark construction for ontology-augmented NED/NER and composite result quality (knowledge-representation) (2026-05-30)
 
 ## Hypotheses
+- [[learned-symbol-ontology-alignment]] — Learned Discrete Symbols From VQ-VAE-Style Approaches Can Be Reliably Aligned to Formal Ontological Concepts (deep-learning, knowledge-representation) (2026-06-01)
 - [[architectural-boundary-hypothesis]] — The Property-Graph / Relational / Vector-Index Trichotomy Maps Predictably to Query-Pattern Types (knowledge-representation) (2026-06-01)
 - [[ontological-supervision-improves-embeddings]] — Training Embeddings With Ontological Structure as Supervision Improves Downstream Retrieval and Classification (deep-learning, knowledge-representation) (2026-06-01)
 - [[cross-store-referential-alignment]] — An Ontological Backbone Enables Cross-Store Entity Alignment That Reduces Referential Errors (knowledge-representation) (2026-06-01)
