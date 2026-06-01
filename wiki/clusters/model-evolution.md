@@ -5,10 +5,11 @@ cross_cluster_dependencies:
 - ontological-coverage-planning
 - evaluation-infrastructure
 date_created: 2026-05-30
-date_updated: 2026-05-30
+date_updated: '2026-06-01'
 domain:
 - knowledge-representation
-frontier_hypotheses: []
+frontier_hypotheses:
+- llm-assisted-ontology-authoring-cost
 hypotheses:
 - llm-assisted-ontology-authoring-cost
 - concept-drift-detection
@@ -43,7 +44,7 @@ Stage 5 (Model Maintenance) primary cluster. A largely Theme 2 (operational impl
 - **shadow-fragmentation-detection** — Embedding similarity plus structural comparison detects near-duplicate concept creation before fragmentation compounds
 
 ## Current Frontier
-To be computed by Maintenance agent.
+Anchored to `distribution-shift` and `formal-ontology`. Lead hypothesis **`llm-assisted-ontology-authoring-cost`**: LLM-assisted authoring with human-review gates lowers ontology-maintenance cost vs human authorship while preserving integrity. Supporting: **`concept-drift-detection`** (distributional monitoring of concept usage catches drift early) and **`shadow-fragmentation-detection`** (embedding similarity + structural comparison catches near-duplicate concepts). Coverage gap: `distribution-shift` is a sourceless stub.
 
 ## Connections
 - [[formal-ontology]] — uses: the cluster is about ontology maintenance specifically

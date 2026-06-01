@@ -740,3 +740,15 @@
 ## [2026-06-01] committed | hypothesis
 - Committed: shadow-fragmentation-detection → hypotheses/shadow-fragmentation-detection.md
 - IRI: pkis:hypothesis:shadow-fragmentation-detection
+
+## [2026-06-01] edges | add_connections
+- pkis:research-cluster:model-evolution —uses→ distribution-shift
+- pkis:research-cluster:model-evolution —uses→ formal-ontology
+- pkis:hypothesis:llm-assisted-ontology-authoring-cost —uses→ formal-ontology
+- pkis:hypothesis:concept-drift-detection —uses→ distribution-shift
+- pkis:hypothesis:concept-drift-detection —uses→ formal-ontology
+- pkis:hypothesis:shadow-fragmentation-detection —uses→ knowledge-graph-embeddings
+- pkis:hypothesis:shadow-fragmentation-detection —uses→ formal-ontology
+
+## [2026-06-01] edit | edit_node
+- pkis:research-cluster:model-evolution: fields=['frontier_hypotheses'] sections=['Current Frontier']
