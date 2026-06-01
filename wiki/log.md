@@ -416,3 +416,7 @@
 ## [2026-06-01] committed | concept
 - Committed: word-embeddings → concepts/word-embeddings.md
 - IRI: pkis:concept:word-embeddings
+
+## [2026-06-01] committed | technique
+- Committed: knowledge-graph-embeddings → techniques/knowledge-graph-embeddings.md
+- IRI: pkis:technique:knowledge-graph-embeddings
