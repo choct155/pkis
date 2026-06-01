@@ -28,6 +28,9 @@ tags:
 - query
 title: A Lightweight Query Routing Classifier Can Reliably Distinguish Retrieval vs
   Inference vs Hybrid Paths
+uses:
+- decision-theory-foundations
+- calibration
 ---
 
 ## Formal Statement
@@ -43,4 +46,6 @@ The dominance result is only actionable if queries can be cheaply classified int
 Feature set for routing; cost of misroute vs cost of the classifier itself.
 
 ## Connections
+- [[calibration]] — uses: route confidence must be calibrated
+- [[decision-theory-foundations]] — uses: routing is a decision under uncertainty
 - [[retrieval-inference-tradeoff]] — belongs-to: constituent hypothesis of the retrieval-inference-tradeoff cluster

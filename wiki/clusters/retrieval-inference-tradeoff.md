@@ -1,23 +1,34 @@
 ---
-id: "pkis:research-cluster:retrieval-inference-tradeoff"
 aliases: []
-title: "Retrieval-Inference Tradeoff"
-knowledge_type: research-cluster
-domain: [knowledge-representation, bayesian-stats]
-tags: [retrieval, inference-cost, error-propagation, routing, cost-modeling]
+cross_cluster_dependencies:
+- compositional-query-grounding
+- parsed-intent-calibration
+- composite-credibility
+- evaluation-infrastructure
 date_created: 2026-05-30
 date_updated: 2026-05-30
-status: active
-origin: research-program
-hypotheses:
-  - retrieval-dominates-inference-high-stakes-queries
-  - routing-classifier-hypothesis
-cross_cluster_dependencies:
-  - compositional-query-grounding
-  - parsed-intent-calibration
-  - composite-credibility
-  - evaluation-infrastructure
+domain:
+- knowledge-representation
+- bayesian-stats
 frontier_hypotheses: []
+hypotheses:
+- retrieval-dominates-inference-high-stakes-queries
+- routing-classifier-hypothesis
+id: pkis:research-cluster:retrieval-inference-tradeoff
+knowledge_type: research-cluster
+origin: research-program
+status: active
+tags:
+- retrieval
+- inference-cost
+- error-propagation
+- routing
+- cost-modeling
+title: Retrieval-Inference Tradeoff
+uses:
+- expected-loss
+- decision-theory-foundations
+- calibration
 ---
 
 ## Thesis
@@ -37,6 +48,9 @@ Stage 7 (Routing & Retrieval) primary cluster. The expected-cost modeling framew
 To be computed by Maintenance agent.
 
 ## Connections
+- [[calibration]] — uses: retrieval dominance depends on calibrated error rate estimates
+- [[decision-theory-foundations]] — uses: the routing decision is a decision-theoretic problem
+- [[expected-loss]] — uses: the cost model is an expected loss calculation
 - [[expected-loss]] — uses: the cost model is an expected loss calculation
 - [[decision-theory-foundations]] — uses: the routing decision is a decision-theoretic problem
 - [[calibration]] — uses: retrieval dominance claim depends on calibrated error rate estimates

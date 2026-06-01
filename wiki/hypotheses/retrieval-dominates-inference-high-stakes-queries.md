@@ -32,6 +32,10 @@ tags:
 - decision-theory
 title: Ontology-Backed Retrieval Dominates Model Inference on Cost x Error Rate for
   a Well-Defined Query Class
+uses:
+- expected-loss
+- decision-theory-foundations
+- calibration
 ---
 
 ## Formal Statement
@@ -47,4 +51,7 @@ Production systems need reliability where it is cheapest to provide; retrieval o
 How to delimit the 'retrieval-answerable' query class operationally? How to price inference error in high-stakes settings?
 
 ## Connections
+- [[calibration]] — uses: depends on calibrated error-rate estimates
+- [[decision-theory-foundations]] — uses: dominance is a decision-theoretic claim
+- [[expected-loss]] — uses: cost x error is an expected-loss calculation
 - [[retrieval-inference-tradeoff]] — belongs-to: constituent hypothesis of the retrieval-inference-tradeoff cluster
