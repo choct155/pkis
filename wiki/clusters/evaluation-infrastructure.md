@@ -1,18 +1,25 @@
 ---
-id: "pkis:research-cluster:evaluation-infrastructure"
 aliases: []
-title: "Evaluation Infrastructure"
-knowledge_type: research-cluster
-domain: [knowledge-representation]
-tags: [benchmarking, evaluation-methodology, domain-specific-evaluation, nlp-benchmarks]
+cross_cluster_dependencies: []
 date_created: 2026-05-30
 date_updated: 2026-05-30
-status: active
-origin: research-program
-hypotheses:
-  - domain-specific-benchmark-gap
-cross_cluster_dependencies: []
+domain:
+- knowledge-representation
 frontier_hypotheses: []
+hypotheses:
+- domain-specific-benchmark-gap
+id: pkis:research-cluster:evaluation-infrastructure
+knowledge_type: research-cluster
+origin: research-program
+status: active
+tags:
+- benchmarking
+- evaluation-methodology
+- domain-specific-evaluation
+- nlp-benchmarks
+title: Evaluation Infrastructure
+uses:
+- causal-analysis
 ---
 
 ## Thesis
@@ -31,4 +38,5 @@ Cross-cutting. A prerequisite for all experimental work. Building the benchmark 
 To be computed by Maintenance agent.
 
 ## Connections
+- [[causal-analysis]] — uses: valid experimental design requires understanding identification and confounding
 - [[causal-analysis]] — uses: valid experimental design requires understanding identification and confounding

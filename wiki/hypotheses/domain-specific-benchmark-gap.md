@@ -27,6 +27,8 @@ tags:
 - financial-data
 title: Standard NLP Benchmarks Do Not Adequately Evaluate Ontology-Augmented NED/NER
   and Composite Result Quality
+uses:
+- causal-analysis
 ---
 
 ## Formal Statement
@@ -42,4 +44,5 @@ Every other cluster's claims are only testable against measurements this cluster
 What gold-standard construction is feasible for financial entities? How to isolate ontology contribution from base-model capability?
 
 ## Connections
+- [[causal-analysis]] — uses: benchmark validity rests on sound experimental design and attribution
 - [[evaluation-infrastructure]] — belongs-to: constituent hypothesis of the evaluation-infrastructure cluster
