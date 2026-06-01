@@ -326,3 +326,77 @@
 
 ## [2026-06-01] edit | edit_node
 - pkis:research-cluster:intensional-grounding: fields=[] sections=['Current Frontier']
+
+## [2026-06-01] staged | node-stub (concept)
+- Staged: bayesian-inference (id: 914ac4c0-d3f0-410e-b337-fe62f839204b)
+- Title: Bayesian Inference
+- needs_canonical_source: True
+
+## [2026-06-01] staged | node-stub (concept)
+- Staged: probabilistic-graphical-models (id: 20a7dc43-a7ad-466d-a1ce-a25113088462)
+- Title: Probabilistic Graphical Models
+- needs_canonical_source: True
+
+## [2026-06-01] staged | node-stub (concept)
+- Staged: calibration (id: 05d535f1-87b5-4027-9031-6393454ade34)
+- Title: Calibration
+- needs_canonical_source: True
+
+## [2026-06-01] staged | node-stub (technique)
+- Staged: knowledge-graph-traversal (id: 1d304ff7-5cd2-479a-8296-7ad59d0832b7)
+- Title: Knowledge Graph Traversal
+- needs_canonical_source: False
+
+## [2026-06-01] staged | node-stub (concept)
+- Staged: word-embeddings (id: 54a87fae-193f-4e73-af14-4ac25ef40d03)
+- Title: Word Embeddings
+- needs_canonical_source: True
+
+## [2026-06-01] staged | node-stub (technique)
+- Staged: knowledge-graph-embeddings (id: de2986fe-161c-46ef-88fd-1ba027108405)
+- Title: Knowledge Graph Embeddings
+- needs_canonical_source: True
+
+## [2026-06-01] staged | node-stub (concept)
+- Staged: causal-analysis (id: 72c0ce94-ec32-45fa-8799-acb31d0ce9f2)
+- Title: Causal Analysis
+- needs_canonical_source: True
+
+## [2026-06-01] staged | node-stub (technique)
+- Staged: vector-quantization (id: 5505a1da-d785-445a-8d8b-cc0851d9ab1b)
+- Title: Vector Quantization
+- needs_canonical_source: True
+
+## [2026-06-01] staged | node-stub (technique)
+- Staged: concept-bottleneck-models (id: 7cbb1628-9483-4152-93de-db723ef04f38)
+- Title: Concept Bottleneck Models
+- needs_canonical_source: True
+
+## [2026-06-01] staged | node-stub (concept)
+- Staged: distribution-shift (id: e9113a3a-2279-4942-a086-9157f45980b5)
+- Title: Distribution Shift
+- needs_canonical_source: True
+
+## [2026-06-01] staged | node-stub (concept)
+- Staged: information-theory (id: 4c4e5686-b5ec-4ce2-bc4f-ff1b7f74a55b)
+- Title: Information Theory
+- needs_canonical_source: True
+
+## [2026-06-01] staged | node-stub (concept)
+- Staged: uncertainty-quantification (id: 457144e4-6a3c-4c28-aebc-97f569ee46c5)
+- Title: Uncertainty Quantification
+- needs_canonical_source: True
+
+## [2026-06-01] staged | node-stub (concept)
+- Staged: expected-loss (id: e372648d-07a3-49a1-af80-05c3d394c821)
+- Title: Expected Loss
+- needs_canonical_source: True
+
+## [2026-06-01] staged | node-stub (concept)
+- Staged: decision-theory-foundations (id: 5eabf1c1-b99d-4da0-af68-5f69762c448e)
+- Title: Decision Theory Foundations
+- needs_canonical_source: True
+
+## [2026-06-01] committed | concept
+- Committed: bayesian-inference → concepts/bayesian-inference.md
+- IRI: pkis:concept:bayesian-inference
