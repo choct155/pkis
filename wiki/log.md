@@ -440,3 +440,7 @@
 ## [2026-06-01] committed | concept
 - Committed: information-theory → concepts/information-theory.md
 - IRI: pkis:concept:information-theory
+
+## [2026-06-01] committed | concept
+- Committed: uncertainty-quantification → concepts/uncertainty-quantification.md
+- IRI: pkis:concept:uncertainty-quantification
