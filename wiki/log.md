@@ -300,3 +300,29 @@
 ## [2026-06-01] committed | concept
 - Committed: knowledge-representation → concepts/knowledge-representation.md
 - IRI: pkis:concept:knowledge-representation
+
+## [2026-06-01] edges | add_connections
+- pkis:research-cluster:intensional-grounding —uses→ knowledge-representation
+- pkis:research-cluster:intensional-grounding —uses→ transformer-attention-mechanisms
+- pkis:hypothesis:intensional-grounding-ned-accuracy —uses→ named-entity-disambiguation
+- pkis:hypothesis:intensional-grounding-ned-accuracy —uses→ transformer-attention-mechanisms
+- pkis:hypothesis:intensional-grounding-ned-accuracy —uses→ formal-ontology
+- pkis:hypothesis:intensional-grounding-vs-scale —uses→ named-entity-disambiguation
+- pkis:hypothesis:intensional-grounding-vs-scale —contrasts-with→ scaling-laws
+
+## [2026-06-01] edges | add_connections
+
+## [2026-06-01] edges | add_connections
+- pkis:hypothesis:intensional-grounding-ood-membership —uses→ named-entity-disambiguation
+- pkis:hypothesis:intensional-grounding-ood-membership —uses→ formal-ontology
+
+## [2026-06-01] staged | hypothesis
+- Staged: smoke-test-delete-me (id: a9de0dba-9cb7-4c8f-b2ab-53172ac35174)
+- Title: SMOKE TEST DELETE ME
+- Cluster: intensional-grounding
+
+## [2026-06-01] discarded | hypothesis
+- Discarded: smoke-test-delete-me (id: a9de0dba-9cb7-4c8f-b2ab-53172ac35174)
+
+## [2026-06-01] edit | edit_node
+- pkis:research-cluster:intensional-grounding: fields=[] sections=['Current Frontier']

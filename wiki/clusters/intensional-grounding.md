@@ -4,7 +4,7 @@ cross_cluster_dependencies:
 - evaluation-infrastructure
 - research-instrumentation
 date_created: 2026-05-30
-date_updated: 2026-06-01
+date_updated: '2026-06-01'
 domain:
 - knowledge-representation
 - symbolic-subsymbolic
@@ -53,6 +53,8 @@ Node coverage assessed 2026-06-01 (de-orphaning pilot). The cluster's task and m
 `intensional-grounding-ood-membership` is held off the immediate frontier: it reuses the same task machinery, but its core measure — a model-independent operationalization of "out-of-distribution" — is unresolved and is best defined once the ned-accuracy distance metric exists.
 
 **Coverage gaps blocking instrumentation:** `knowledge-representation` is a sourceless stub (needs a canonical source — see `get_sourceless_stubs`); `named-entity-disambiguation` and `transformer-attention-mechanisms` are stubs needing deeper coverage before experiments can be designed.
+
+**Reading prioritization:** As of 2026-06-01, `get_concept_frontier` adds a cluster-proximity term, so these frontier hypotheses and their dependency subgraph receive a reading-priority boost — reading is now driven by the research agenda, not citation count alone.
 
 ## Connections
 - [[knowledge-representation]] — uses: The cluster draws on knowledge representation to design experiments — intensional class definitions and membership conditions are KR constructs.
