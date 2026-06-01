@@ -404,3 +404,7 @@
 ## [2026-06-01] committed | concept
 - Committed: probabilistic-graphical-models → concepts/probabilistic-graphical-models.md
 - IRI: pkis:concept:probabilistic-graphical-models
+
+## [2026-06-01] committed | concept
+- Committed: calibration → concepts/calibration.md
+- IRI: pkis:concept:calibration
