@@ -24,6 +24,8 @@ tags:
 - query-patterns
 title: The Property-Graph / Relational / Vector-Index Trichotomy Maps Predictably
   to Query-Pattern Types
+uses:
+- knowledge-graph-embeddings
 ---
 
 ## Formal Statement
@@ -39,4 +41,5 @@ Misaligned storage is a common source of avoidable cost and error; a predictable
 Where do hybrid query patterns break the trichotomy? Cost of maintaining multiple stores.
 
 ## Connections
+- [[knowledge-graph-embeddings]] — uses: the vector-index leg of the trichotomy
 - [[embedding-ontology-alignment]] — belongs-to: constituent hypothesis of the embedding-ontology-alignment cluster

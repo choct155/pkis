@@ -18,6 +18,8 @@ domain:
 - deep-learning
 - knowledge-representation
 evidence_nodes: []
+extends:
+- word-embeddings
 id: pkis:hypothesis:ontological-supervision-improves-embeddings
 iks_link: null
 knowledge_type: hypothesis
@@ -31,6 +33,9 @@ tags:
 - retrieval
 title: Training Embeddings With Ontological Structure as Supervision Improves Downstream
   Retrieval and Classification
+uses:
+- knowledge-graph-embeddings
+- formal-ontology
 ---
 
 ## Formal Statement
@@ -46,4 +51,7 @@ Distributional embeddings systematically misrepresent ontological relationships;
 What supervision objective best injects ontological structure? Which downstream tasks benefit most?
 
 ## Connections
+- [[formal-ontology]] — uses: the supervision signal is the ontology
+- [[knowledge-graph-embeddings]] — uses: injects structure via KG embeddings
+- [[word-embeddings]] — extends: extends distributional embeddings with ontological supervision
 - [[embedding-ontology-alignment]] — belongs-to: constituent hypothesis of the embedding-ontology-alignment cluster

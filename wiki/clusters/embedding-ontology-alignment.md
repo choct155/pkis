@@ -1,22 +1,32 @@
 ---
-id: "pkis:research-cluster:embedding-ontology-alignment"
 aliases: []
-title: "Embedding-Ontology Alignment"
-knowledge_type: research-cluster
-domain: [knowledge-representation, deep-learning]
-tags: [entity-embeddings, ontological-supervision, graph-aware-representation, vector-store]
+cross_cluster_dependencies:
+- intensional-grounding
+- learned-symbol-grounding
+- evaluation-infrastructure
 date_created: 2026-05-30
 date_updated: 2026-05-30
-status: active
-origin: research-program
-hypotheses:
-  - ontological-supervision-improves-embeddings
-  - architectural-boundary-hypothesis
-cross_cluster_dependencies:
-  - intensional-grounding
-  - learned-symbol-grounding
-  - evaluation-infrastructure
+domain:
+- knowledge-representation
+- deep-learning
+extends:
+- word-embeddings
 frontier_hypotheses: []
+hypotheses:
+- ontological-supervision-improves-embeddings
+- architectural-boundary-hypothesis
+id: pkis:research-cluster:embedding-ontology-alignment
+knowledge_type: research-cluster
+origin: research-program
+specializes:
+- knowledge-graph-embeddings
+status: active
+tags:
+- entity-embeddings
+- ontological-supervision
+- graph-aware-representation
+- vector-store
+title: Embedding-Ontology Alignment
 ---
 
 ## Thesis
@@ -36,5 +46,7 @@ Stage 4 (Model Fitting & Schema Alignment) primary cluster. The architectural bo
 To be computed by Maintenance agent.
 
 ## Connections
+- [[knowledge-graph-embeddings]] — specializes: this cluster addresses alignment between embedding space and ontological structure
+- [[word-embeddings]] — extends: ontologically-supervised embeddings extend standard distributional embeddings
 - [[word-embeddings]] — extends: ontologically-supervised embeddings extend standard distributional embeddings
 - [[knowledge-graph-embeddings]] — specializes: this cluster specifically addresses alignment between embedding space and ontological structure
