@@ -420,3 +420,7 @@
 ## [2026-06-01] committed | technique
 - Committed: knowledge-graph-embeddings → techniques/knowledge-graph-embeddings.md
 - IRI: pkis:technique:knowledge-graph-embeddings
+
+## [2026-06-01] committed | concept
+- Committed: causal-analysis → concepts/causal-analysis.md
+- IRI: pkis:concept:causal-analysis

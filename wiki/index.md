@@ -273,6 +273,7 @@
 - [[liu-machine-unlearning-llm-2024]] — Rethinking Machine Unlearning for LLMs: post-training knowledge editing survey (deep-learning, ai-safety) (2026-05-20)
 
 ## Concepts
+- [[causal-analysis]] — Causal Analysis (bayesian-stats) (2026-06-01)
 - [[word-embeddings]] — Word Embeddings (deep-learning) (2026-06-01)
 - [[calibration]] — Calibration (bayesian-stats, deep-learning) (2026-06-01)
 - [[probabilistic-graphical-models]] — Probabilistic Graphical Models (bayesian-stats) (2026-06-01)
