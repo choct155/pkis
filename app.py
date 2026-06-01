@@ -1029,6 +1029,7 @@ def tool_get_health_metrics() -> dict:
     )
 
     stubs = [n for n in nodes if n.get("coverage", 0) <= 1]
+    missing_source = [n for n in nodes if n.get("frontmatter", {}).get("needs_canonical_source")]
     queue_items = tool_get_reading_queue()
 
     return {
@@ -1040,8 +1041,31 @@ def tool_get_health_metrics() -> dict:
         "cross_domain_connections": cross_domain_edges,
         "queue_depth": len(queue_items),
         "stubs_awaiting_deepening": len(stubs),
+        "stubs_missing_source": len(missing_source),
         "total_edges": G.number_of_edges()
     }
+
+
+def tool_get_sourceless_stubs() -> list:
+    """List live knowledge nodes flagged needs_canonical_source: true.
+
+    These are nodes that were stubbed before a canonical source was attached.
+    Each entry carries any reference suggestions captured at creation time so a
+    source can be found and attached."""
+    out = []
+    for n in load_all_nodes():
+        fm = n.get("frontmatter", {})
+        if not fm.get("needs_canonical_source"):
+            continue
+        out.append({
+            "iri": n.get("iri"),
+            "title": n.get("title", ""),
+            "knowledge_type": fm.get("knowledge_type") or n.get("node_type"),
+            "domain": n.get("domain", []),
+            "date_created": fm.get("date_created", ""),
+            "suggested_sources": fm.get("suggested_sources", {}),
+        })
+    return sorted(out, key=lambda x: x.get("date_created", ""), reverse=True)
 
 
 def tool_check_alias_collision(surface_form: str) -> dict:
@@ -1208,6 +1232,42 @@ def _fetch_crossref_metadata(doi: str) -> dict:
     except Exception as e:
         logger.error(f"CrossRef fetch failed for {doi}: {e}")
         return {}
+
+
+def _search_semantic_scholar(query: str, limit: int = 5) -> list:
+    """Search Semantic Scholar for candidate papers by title/keywords.
+
+    Used to suggest canonical references for sourceless node stubs. Returns a
+    list of {title, year, url, doi, arxiv} dicts ready to feed create_source_stub.
+    """
+    q = urllib.parse.quote(query)
+    url = (
+        "https://api.semanticscholar.org/graph/v1/paper/search"
+        f"?query={q}&limit={limit}&fields=title,year,externalIds,url"
+    )
+    try:
+        req = urllib.request.Request(url, headers={"User-Agent": "PKIS-Wiki/1.0 (mailto:pkis@pkis.dev)"})
+        with urllib.request.urlopen(req, timeout=10) as resp:
+            data = json.loads(resp.read())
+        out = []
+        for p in data.get("data", []):
+            ext = p.get("externalIds") or {}
+            ref_url = p.get("url") or ""
+            if ext.get("ArXiv"):
+                ref_url = f"https://arxiv.org/abs/{ext['ArXiv']}"
+            elif ext.get("DOI"):
+                ref_url = f"https://doi.org/{ext['DOI']}"
+            out.append({
+                "title": p.get("title", ""),
+                "year": p.get("year"),
+                "url": ref_url,
+                "doi": ext.get("DOI", ""),
+                "arxiv": ext.get("ArXiv", ""),
+            })
+        return out
+    except Exception as e:
+        logger.error(f"Semantic Scholar search failed for '{query[:40]}': {e}")
+        return []
 
 
 # ============================================================
@@ -1455,6 +1515,274 @@ def tool_create_source_stub(
     }
 
 
+# component_scores schema per knowledge node type (SCHEMA.md v3.0)
+NODE_COMPONENT_SCORES = {
+    "concept":   ["definition", "prerequisites", "boundary", "scope", "application", "formal_statement", "dependents", "transfer"],
+    "technique": ["operational_mechanism", "principled_mechanism", "conditions", "implementation", "diagnostics", "alternatives", "failure_modes"],
+    "framework": ["structure", "purpose", "primitives", "scope", "application", "limits"],
+    "result":    ["statement", "proof_sketch", "conditions", "implications", "limitations"],
+    "problem":   ["formulation", "why_hard", "solution_landscape", "instances"],
+    "principle": ["statement", "justification", "implications", "violations"],
+}
+
+
+def tool_create_node_stub(
+    knowledge_type: str,
+    title: str,
+    definition: str = "",
+    domain: list = None,
+    tags: list = None,
+    aliases: list = None,
+    also_type: list = None,
+    sources: list = None,
+    slug: str = "",
+    suggest_sources: bool = True,
+) -> dict:
+    """Create a knowledge-node stub of any of the six knowledge types in staging,
+    BEFORE a canonical source exists. If no source is supplied, flags the node with
+    needs_canonical_source and (optionally) suggests references from the corpus and
+    Semantic Scholar so the gap can be closed."""
+    if knowledge_type not in NODE_COMPONENT_SCORES:
+        raise ValueError(
+            f"knowledge_type must be one of {sorted(NODE_COMPONENT_SCORES)}; got '{knowledge_type}'"
+        )
+    if not title:
+        raise ValueError("title is required")
+
+    domain = domain or []
+    tags = tags or []
+    aliases = aliases or []
+    also_type = also_type or []
+    sources = sources or []
+
+    # ---- Slug generation ----
+    base = slug or title
+    base_slug = re.sub(r'[^a-z0-9]+', '-', base.lower()).strip('-')[:55] or "node-stub"
+    slug = base_slug
+    counter = 1
+    while (STAGING_DIR / f"{slug}.md").exists() or find_node_path(slug):
+        slug = f"{base_slug}-{counter}"
+        counter += 1
+
+    # ---- Normalize source refs to plain slugs ----
+    norm_sources = []
+    for s in sources:
+        if isinstance(s, str) and s.startswith("pkis:"):
+            _, _nt, sp = parse_iri(s)
+            norm_sources.append(sp or s)
+        else:
+            norm_sources.append(str(s).strip("[]"))
+
+    needs_source = len(norm_sources) == 0
+
+    # ---- Reference suggestions for sourceless stubs ----
+    internal_suggestions, external_suggestions = [], []
+    if needs_source and suggest_sources:
+        try:
+            results = hybrid_search(f"{title} {definition}".strip(), max_results=6)
+            internal_suggestions = [
+                {"iri": r["iri"], "title": r.get("canonical_title", r["iri"])}
+                for r in results if r.get("node_type") == "sources"
+            ][:5]
+        except Exception as e:
+            logger.error(f"internal suggestion search failed: {e}")
+        try:
+            external_suggestions = _search_semantic_scholar(title, limit=5)
+        except Exception as e:
+            logger.error(f"external suggestion search failed: {e}")
+
+    # ---- Frontmatter ----
+    staged_id = str(uuid.uuid4())
+    now = datetime.now(timezone.utc)
+    ts_str = now.strftime("%Y-%m-%dT%H:%M:%SZ")
+    date_str = now.strftime("%Y-%m-%d")
+
+    fm = {
+        "staged_at": ts_str,
+        "staged_by": "mcp-create-node-stub",
+        "staged_id": staged_id,
+        "review_status": "pending",
+        "proposed_edges": [],
+        "id": f"pkis:{knowledge_type}:{slug}",
+        "aliases": aliases,
+        "title": title,
+        "knowledge_type": knowledge_type,
+        "also_type": also_type,
+        "domain": domain,
+        "tags": tags,
+        "related_concepts": [],
+        "sources": norm_sources,
+        "date_created": date_str,
+        "date_updated": date_str,
+        "coverage": 1 if norm_sources else 0,
+        "understanding": 0,
+        "maturity": "evolving",
+        "component_scores": {k: None for k in NODE_COMPONENT_SCORES[knowledge_type]},
+        "needs_canonical_source": needs_source,
+    }
+    if needs_source and (internal_suggestions or external_suggestions):
+        fm["suggested_sources"] = {
+            "internal": internal_suggestions,
+            "external": external_suggestions,
+        }
+
+    body = f"""## Definition
+{definition if definition else '[To be filled during deepening]'}
+
+## Reading Path
+[To be populated when a canonical source is attached]
+
+## Connections
+[To be populated during integration]
+"""
+    if needs_source:
+        int_lines = "\n".join(f"- {s['iri']} — {s['title']}" for s in internal_suggestions) or "[none in corpus]"
+        ext_lines = "\n".join(
+            f"- {s['title']} ({s.get('year') or '?'}) — {s.get('url') or ''}".rstrip(" —")
+            for s in external_suggestions
+        ) or "[none found]"
+        body += (
+            "\n## Needs Canonical Source\n"
+            "This stub was created without a source. Suggested references:\n\n"
+            f"**Already in corpus:**\n{int_lines}\n\n"
+            f"**External candidates (Semantic Scholar):**\n{ext_lines}\n"
+        )
+
+    STAGING_DIR.mkdir(parents=True, exist_ok=True)
+    staged_path = STAGING_DIR / f"{slug}.md"
+    staged_path.write_text(f"---\n{yaml.dump(fm, default_flow_style=False, allow_unicode=True)}---\n\n{body}")
+
+    log_path = WIKI_DIR / "log.md"
+    with open(log_path, "a") as lf:
+        lf.write(
+            f"\n## [{date_str}] staged | node-stub ({knowledge_type})\n"
+            f"- Staged: {slug} (id: {staged_id})\n"
+            f"- Title: {title}\n"
+            f"- needs_canonical_source: {needs_source}\n"
+        )
+
+    return {
+        "staged_id": staged_id,
+        "staged_at": ts_str,
+        "slug": slug,
+        "iri": f"pkis:{knowledge_type}:{slug}",
+        "knowledge_type": knowledge_type,
+        "needs_canonical_source": needs_source,
+        "sources": norm_sources,
+        "suggested_sources": {
+            "internal": internal_suggestions,
+            "external": external_suggestions,
+        } if needs_source else {},
+        "review_url": f"https://github.com/choct155/pkis/blob/main/wiki/staging/{staged_path.name}",
+    }
+
+
+def tool_add_connections(edges: list, commit_message: str = "") -> dict:
+    """Add typed, graph-visible edges between existing live nodes, in one batch + a single
+    git commit. Each edge is a dict {subject, target, predicate, note}. The predicate is
+    written into the SUBJECT node's frontmatter (so build_graph emits a weighted typed edge,
+    subject -> target) and a readable line is appended to its ## Connections section.
+
+    Idempotent per (subject, predicate, target). Targets must already be live. Invalid edges
+    are reported in the results, not fatal to the batch."""
+    if not edges:
+        raise ValueError("edges must be a non-empty list")
+
+    results = []
+    modified_paths = set()
+
+    for e in edges:
+        subject = (e.get("subject") or "").strip()
+        target = (e.get("target") or "").strip()
+        predicate = (e.get("predicate") or "").strip()
+        note = e.get("note", "") or ""
+        try:
+            if predicate not in EDGE_WEIGHTS:
+                raise ValueError(f"invalid predicate '{predicate}'; must be one of {sorted(EDGE_WEIGHTS)}")
+            subj_path = (find_node_path_by_iri(subject) if subject.startswith("pkis:")
+                         else find_node_path(subject))
+            if not subj_path:
+                raise ValueError(f"subject not found: {subject}")
+            if target.startswith("pkis:"):
+                _, _nt, tslug = parse_iri(target)
+            else:
+                tslug = target.strip("[]").split("|")[0]
+            if not find_node_path(tslug):
+                raise ValueError(f"target not found (must be live): {target}")
+
+            post = frontmatter.load(str(subj_path))
+            fm = dict(post.metadata)
+            body = post.content
+
+            existing = fm.get(predicate, [])
+            if isinstance(existing, str):
+                existing = [existing]
+            norm_existing = [str(x).strip("[]").split("|")[0] for x in existing]
+            if tslug in norm_existing:
+                results.append({"subject": subject, "target": tslug,
+                                "predicate": predicate, "status": "already-present"})
+                continue
+            existing.append(tslug)
+            fm[predicate] = existing
+
+            line = f"- [[{tslug}]] — {predicate}: {note}".rstrip().rstrip(":").rstrip()
+            if "## Connections" in body:
+                body = body.replace("## Connections\n", f"## Connections\n{line}\n", 1)
+            else:
+                body = body.rstrip() + f"\n\n## Connections\n{line}\n"
+
+            subj_path.write_text(frontmatter.dumps(frontmatter.Post(body, **fm)))
+            modified_paths.add(str(subj_path))
+            results.append({"subject": subject, "target": tslug, "predicate": predicate,
+                            "weight": EDGE_WEIGHTS[predicate], "status": "added"})
+        except Exception as ex:
+            results.append({"subject": subject, "target": target,
+                            "predicate": predicate, "status": "error", "error": str(ex)})
+
+    # Invalidate caches so the next graph read reflects the new edges
+    global _node_cache, _graph
+    _node_cache = {}
+    _graph = None
+
+    added = [r for r in results if r["status"] == "added"]
+    git_sha, git_pushed = "", False
+    if modified_paths:
+        try:
+            repo_dir = str(REPO_DIR)
+            subprocess.run(["git", "-C", repo_dir, "add"] + list(modified_paths),
+                           check=True, capture_output=True)
+            msg = commit_message or f"[mcp-edge] add {len(added)} connection(s)"
+            result = subprocess.run(["git", "-C", repo_dir, "commit", "-m", msg],
+                                    check=True, capture_output=True, text=True)
+            m = re.search(r'\[.+? ([a-f0-9]{7,})\]', result.stdout)
+            git_sha = m.group(1) if m else result.stdout.strip()[:12]
+            try:
+                subprocess.run(["git", "-C", repo_dir, "push"], check=True,
+                               capture_output=True, timeout=30)
+                git_pushed = True
+            except (subprocess.CalledProcessError, subprocess.TimeoutExpired) as pe:
+                logger.warning(f"edge push failed (local commit retained): {pe}")
+        except subprocess.CalledProcessError as e:
+            logger.error(f"edge commit failed: {e.stderr}")
+
+    try:
+        with open(WIKI_DIR / "log.md", "a") as lf:
+            lf.write(f"\n## [{datetime.now(timezone.utc).strftime('%Y-%m-%d')}] edges | add_connections\n")
+            for r in added:
+                lf.write(f"- {r['subject']} —{r['predicate']}→ {r['target']}\n")
+    except Exception:
+        pass
+
+    return {
+        "added": len(added),
+        "skipped": len([r for r in results if r["status"] == "already-present"]),
+        "errors": len([r for r in results if r["status"] == "error"]),
+        "git_commit": git_sha,
+        "git_pushed": git_pushed,
+        "results": results,
+    }
+
+
 def tool_commit_staged_node(
     staged_id: str,
     edits: dict = None,
@@ -1511,7 +1839,7 @@ def tool_commit_staged_node(
 
     # Remove staging-only fields
     for field in ["staged_at", "staged_by", "staged_id", "review_status", "proposed_edges",
-                  "resolution_candidates", "connection_candidates", "priority"]:
+                  "resolution_candidates", "connection_candidates", "suggested_sources", "priority"]:
         fm.pop(field, None)
 
     # Determine knowledge type and target folder
@@ -3576,6 +3904,11 @@ def _get_tools_list():
             "inputSchema": {"type": "object", "properties": {}}
         },
         {
+            "name": "get_sourceless_stubs",
+            "description": "List live knowledge nodes flagged needs_canonical_source — stubs created before a canonical source was attached. Each carries any reference suggestions captured at creation so a source can be found and attached.",
+            "inputSchema": {"type": "object", "properties": {}}
+        },
+        {
             "name": "get_reading_graph",
             "description": "Return the source dependency graph — nodes are sources, edges encode conceptual overlap and inferred prerequisite order. Use to answer: what should I read first? what is load-bearing? what does reading X unlock? Supports scoping to queue items, all unread, or the full corpus; can focus on a concept or domain.",
             "inputSchema": {
@@ -3650,6 +3983,50 @@ def _get_tools_list():
                     "notes": {"type": "string"},
                     "priority": {"type": "string", "enum": ["high", "normal"], "default": "normal"}
                 }
+            }
+        },
+        {
+            "name": "create_node_stub",
+            "description": "Create a knowledge-node stub (concept, technique, result, framework, problem, or principle) BEFORE a canonical source exists. If no source is supplied, the node is flagged needs_canonical_source and reference suggestions are gathered from the corpus and Semantic Scholar. Creates a staged stub for review.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "knowledge_type": {"type": "string", "enum": ["concept", "technique", "result", "framework", "problem", "principle"]},
+                    "title": {"type": "string"},
+                    "definition": {"type": "string", "description": "Body text for the node's Definition section"},
+                    "domain": {"type": "array", "items": {"type": "string"}},
+                    "tags": {"type": "array", "items": {"type": "string"}},
+                    "aliases": {"type": "array", "items": {"type": "string"}},
+                    "also_type": {"type": "array", "items": {"type": "string"}, "description": "Secondary knowledge types"},
+                    "sources": {"type": "array", "items": {"type": "string"}, "description": "Source slugs or IRIs backing this node; omit to flag needs_canonical_source"},
+                    "slug": {"type": "string", "description": "Optional explicit slug; derived from title if omitted"},
+                    "suggest_sources": {"type": "boolean", "default": True, "description": "When sourceless, gather reference suggestions from corpus + Semantic Scholar"}
+                },
+                "required": ["knowledge_type", "title"]
+            }
+        },
+        {
+            "name": "add_connections",
+            "description": "Add typed, graph-visible edges between existing live nodes in one batch + a single git commit. Each edge {subject, target, predicate, note}: the predicate is written into the SUBJECT node's frontmatter (build_graph emits a weighted typed edge subject->target) and a line is appended to its ## Connections. Idempotent per (subject, predicate, target). Predicate must be one of: prerequisite-of, uses, specializes, generalizes, extends, applies, instantiates, contrasts-with.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "edges": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "subject": {"type": "string", "description": "IRI or slug of the node the edge originates from"},
+                                "target": {"type": "string", "description": "IRI or slug of the node the edge points to (must be live)"},
+                                "predicate": {"type": "string", "enum": ["prerequisite-of", "uses", "specializes", "generalizes", "extends", "applies", "instantiates", "contrasts-with"]},
+                                "note": {"type": "string", "description": "One-sentence rationale for the connection"}
+                            },
+                            "required": ["subject", "target", "predicate"]
+                        }
+                    },
+                    "commit_message": {"type": "string", "description": "Optional git commit message for the batch"}
+                },
+                "required": ["edges"]
             }
         },
         {
@@ -3871,6 +4248,7 @@ def dispatch_tool(tool_name: str, params: dict, req) -> any:
             node_type=p.get("node_type")
         ),
         "get_health_metrics": lambda p: tool_get_health_metrics(),
+        "get_sourceless_stubs": lambda p: tool_get_sourceless_stubs(),
         "list_documents": lambda p: tool_list_documents(p.get("slug")),
         "get_transcript_queue": lambda p: tool_get_transcript_queue(),
         "check_alias_collision": lambda p: tool_check_alias_collision(p["surface_form"]),
@@ -3912,6 +4290,22 @@ def dispatch_tool(tool_name: str, params: dict, req) -> any:
             year=p.get("year"),
             notes=p.get("notes", ""),
             priority=p.get("priority", "normal"),
+        ),
+        "create_node_stub": lambda p: tool_create_node_stub(
+            knowledge_type=p["knowledge_type"],
+            title=p["title"],
+            definition=p.get("definition", ""),
+            domain=p.get("domain"),
+            tags=p.get("tags"),
+            aliases=p.get("aliases"),
+            also_type=p.get("also_type"),
+            sources=p.get("sources"),
+            slug=p.get("slug", ""),
+            suggest_sources=p.get("suggest_sources", True),
+        ),
+        "add_connections": lambda p: tool_add_connections(
+            edges=p["edges"],
+            commit_message=p.get("commit_message", ""),
         ),
         "commit_staged_node": lambda p: tool_commit_staged_node(
             staged_id=p["staged_id"],
