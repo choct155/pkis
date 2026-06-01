@@ -25,6 +25,8 @@ tags:
 - authoring-cost
 title: LLM-Assisted Ontology Authoring With Human Review Gates Reduces Maintenance
   Cost vs Human Authorship
+uses:
+- formal-ontology
 ---
 
 ## Formal Statement
@@ -40,4 +42,5 @@ Ontology maintenance cost is the main objection to ontological scaffolding; if L
 How to measure integrity preservation? Review-gate throughput vs authoring-from-scratch.
 
 ## Connections
+- [[formal-ontology]] — uses: the artifact being authored is the ontology
 - [[model-evolution]] — belongs-to: constituent hypothesis of the model-evolution cluster

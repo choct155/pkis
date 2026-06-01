@@ -28,6 +28,9 @@ tags:
 - distribution-shift
 title: Distributional Monitoring of Ontological Concept Usage Detects Semantic Drift
   Before Downstream Errors
+uses:
+- distribution-shift
+- formal-ontology
 ---
 
 ## Formal Statement
@@ -43,4 +46,6 @@ Concept drift is a special case of distribution shift; catching it early prevent
 Detection latency vs false-alarm rate; what usage signal is most drift-sensitive.
 
 ## Connections
+- [[formal-ontology]] — uses: the monitored concepts are ontological
+- [[distribution-shift]] — uses: drift is a special case of distribution shift
 - [[model-evolution]] — belongs-to: constituent hypothesis of the model-evolution cluster

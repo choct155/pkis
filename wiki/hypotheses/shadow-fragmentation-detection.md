@@ -28,6 +28,9 @@ tags:
 - embeddings
 title: Embedding Similarity Plus Structural Comparison Detects Near-Duplicate Concept
   Creation Before Fragmentation Compounds
+uses:
+- knowledge-graph-embeddings
+- formal-ontology
 ---
 
 ## Formal Statement
@@ -43,4 +46,6 @@ Unchecked near-duplicate concepts fragment the ontology and corrupt downstream a
 Similarity threshold vs false-merge risk; structural-comparison features.
 
 ## Connections
+- [[formal-ontology]] — uses: structural comparison is over the ontology
+- [[knowledge-graph-embeddings]] — uses: embedding similarity over concepts
 - [[model-evolution]] — belongs-to: constituent hypothesis of the model-evolution cluster

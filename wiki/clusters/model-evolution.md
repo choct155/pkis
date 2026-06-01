@@ -1,23 +1,31 @@
 ---
-id: "pkis:research-cluster:model-evolution"
 aliases: []
-title: "Model Evolution"
-knowledge_type: research-cluster
-domain: [knowledge-representation]
-tags: [ontology-maintenance, concept-drift, shadow-fragmentation, llm-assisted-authoring]
+cross_cluster_dependencies:
+- learned-symbol-grounding
+- ontological-coverage-planning
+- evaluation-infrastructure
 date_created: 2026-05-30
 date_updated: 2026-05-30
-status: active
-origin: research-program
-hypotheses:
-  - llm-assisted-ontology-authoring-cost
-  - concept-drift-detection
-  - shadow-fragmentation-detection
-cross_cluster_dependencies:
-  - learned-symbol-grounding
-  - ontological-coverage-planning
-  - evaluation-infrastructure
+domain:
+- knowledge-representation
 frontier_hypotheses: []
+hypotheses:
+- llm-assisted-ontology-authoring-cost
+- concept-drift-detection
+- shadow-fragmentation-detection
+id: pkis:research-cluster:model-evolution
+knowledge_type: research-cluster
+origin: research-program
+status: active
+tags:
+- ontology-maintenance
+- concept-drift
+- shadow-fragmentation
+- llm-assisted-authoring
+title: Model Evolution
+uses:
+- distribution-shift
+- formal-ontology
 ---
 
 ## Thesis
@@ -38,5 +46,7 @@ Stage 5 (Model Maintenance) primary cluster. A largely Theme 2 (operational impl
 To be computed by Maintenance agent.
 
 ## Connections
+- [[formal-ontology]] — uses: the cluster is about ontology maintenance specifically
+- [[distribution-shift]] — uses: concept drift detection is a special case of distribution shift monitoring
 - [[distribution-shift]] — uses: concept drift detection is a special case of distribution shift monitoring
 - [[ontology]] — uses: the cluster is about ontology maintenance specifically
