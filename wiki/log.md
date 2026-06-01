@@ -484,3 +484,12 @@
 
 ## [2026-06-01] edit | edit_node
 - pkis:research-cluster:research-instrumentation: fields=['frontier_hypotheses'] sections=['Current Frontier']
+
+## [2026-06-01] staged | hypothesis
+- Staged: formal-coverage-model-sourcing-efficiency (id: 79934f51-3d43-4d82-927f-3e19cfae95d6)
+- Title: Formal Ontological Coverage Models Reduce Redundant Sourcing and Raise Marginal Coverage Yield
+- Cluster: ontological-coverage-planning
+
+## [2026-06-01] committed | hypothesis
+- Committed: formal-coverage-model-sourcing-efficiency → hypotheses/formal-coverage-model-sourcing-efficiency.md
+- IRI: pkis:hypothesis:formal-coverage-model-sourcing-efficiency
