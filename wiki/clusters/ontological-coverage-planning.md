@@ -4,10 +4,11 @@ cross_cluster_dependencies:
 - model-evolution
 - evaluation-infrastructure
 date_created: 2026-05-30
-date_updated: 2026-05-30
+date_updated: '2026-06-01'
 domain:
 - knowledge-representation
-frontier_hypotheses: []
+frontier_hypotheses:
+- formal-coverage-model-sourcing-efficiency
 hypotheses:
 - formal-coverage-model-sourcing-efficiency
 id: pkis:research-cluster:ontological-coverage-planning
@@ -37,7 +38,7 @@ Primarily a Theme 2 (operational implications) cluster. Directly relevant to IKS
 - **formal-coverage-model-sourcing-efficiency** — Organizations with formal ontological coverage models exhibit lower redundant source acquisition and higher marginal coverage yield per new source
 
 ## Current Frontier
-To be computed by Maintenance agent.
+Anchored to `formal-ontology` (the coverage model's input) and `information-theory` (completeness measure). Lead (and only) hypothesis **`formal-coverage-model-sourcing-efficiency`**: a formal coverage model lowers redundant source acquisition and raises marginal coverage yield per source — converting sourcing from opinion-driven to hypothesis-driven (the meta-goal this whole de-orphaning effort serves). Coverage gap: `information-theory` is a sourceless stub.
 
 ## Connections
 - [[information-theory]] — uses: coverage completeness is an information-theoretic concept

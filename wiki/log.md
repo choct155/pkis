@@ -493,3 +493,12 @@
 ## [2026-06-01] committed | hypothesis
 - Committed: formal-coverage-model-sourcing-efficiency → hypotheses/formal-coverage-model-sourcing-efficiency.md
 - IRI: pkis:hypothesis:formal-coverage-model-sourcing-efficiency
+
+## [2026-06-01] edges | add_connections
+- pkis:research-cluster:ontological-coverage-planning —uses→ formal-ontology
+- pkis:research-cluster:ontological-coverage-planning —uses→ information-theory
+- pkis:hypothesis:formal-coverage-model-sourcing-efficiency —uses→ formal-ontology
+- pkis:hypothesis:formal-coverage-model-sourcing-efficiency —uses→ information-theory
+
+## [2026-06-01] edit | edit_node
+- pkis:research-cluster:ontological-coverage-planning: fields=['frontier_hypotheses'] sections=['Current Frontier']
