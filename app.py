@@ -821,7 +821,35 @@ def tool_add_to_queue(source_iri=None, reference=None, reason="", priority="norm
 # How strongly proximity to an active research-cluster frontier boosts reading priority.
 # A node directly used by a frontier hypothesis (1 hop, proximity 0.5) gains ~1.0 — about
 # two extra inbound refs' worth; a frontier hypothesis itself (proximity 1.0) gains the full weight.
-CLUSTER_PROXIMITY_WEIGHT = 2.0
+# This is the BUILT-IN default; the live default can be overridden per-call (get_concept_frontier
+# cluster_proximity_weight=...) or globally via set_priority_config (persisted to a config file
+# so it survives restarts and is shared across gunicorn workers, which don't share module globals).
+DEFAULT_CLUSTER_PROXIMITY_WEIGHT = 2.0
+PRIORITY_CONFIG_PATH = Path(os.environ.get("PRIORITY_CONFIG", str(REPO_DIR / "priority_config.json")))
+
+
+def _priority_config() -> dict:
+    """Read the persisted priority config (worker-safe: read per call rather than cached in a
+    module global, since gunicorn workers don't share memory). Empty dict if unset/unreadable."""
+    try:
+        if PRIORITY_CONFIG_PATH.exists():
+            import json as _json
+            return _json.loads(PRIORITY_CONFIG_PATH.read_text()) or {}
+    except Exception as ex:
+        logger.warning(f"priority config read failed: {ex}")
+    return {}
+
+
+def _effective_proximity_weight(override=None):
+    """Resolve the cluster-proximity weight to use and report where it came from.
+    Returns (weight: float, source: str)."""
+    if override is not None:
+        return float(override), "call-override"
+    cfg = _priority_config()
+    w = cfg.get("cluster_proximity_weight")
+    if isinstance(w, (int, float)):
+        return float(w), "config-default"
+    return DEFAULT_CLUSTER_PROXIMITY_WEIGHT, "built-in-default"
 
 
 def _active_frontier_anchors(nodes) -> set:
@@ -869,12 +897,18 @@ def _cluster_proximity_map(G, anchors) -> dict:
     return {iri: 1.0 / (1.0 + (d - 1)) for iri, d in lengths.items() if iri != SUPER}
 
 
-def tool_get_concept_frontier() -> list:
+def tool_get_concept_frontier(cluster_proximity_weight: float = None) -> dict:
     """Return concepts that need attention most urgently. Priority blends centrality
     (inbound refs), coverage/understanding gaps, and proximity to the frontier hypotheses of
     active research-clusters — so reading is driven by the research agenda, not just citation
     count. The cluster-proximity term is 0 until a cluster's frontier_hypotheses are set and its
-    membership edges are materialized (see add_connections)."""
+    membership edges are materialized (see add_connections).
+
+    cluster_proximity_weight overrides the proximity weight for THIS call only; if omitted, the
+    persisted default (set_priority_config) or the built-in default is used. The returned object
+    reports the effective weight and its source under `params`."""
+    eff_weight, weight_source = _effective_proximity_weight(cluster_proximity_weight)
+
     nodes = load_all_nodes()
     G = get_graph()
 
@@ -896,7 +930,7 @@ def tool_get_concept_frontier() -> list:
             (inbound_count * 0.5)
             + ((5 - coverage) * 0.3)
             + ((5 - understanding) * 0.2)
-            + (cluster_proximity * CLUSTER_PROXIMITY_WEIGHT)
+            + (cluster_proximity * eff_weight)
         )
 
         results.append({
@@ -909,7 +943,46 @@ def tool_get_concept_frontier() -> list:
             "priority_score": round(priority_score, 3),
         })
 
-    return sorted(results, key=lambda x: x["priority_score"], reverse=True)[:20]
+    ranked = sorted(results, key=lambda x: x["priority_score"], reverse=True)[:20]
+    return {
+        "params": {
+            "cluster_proximity_weight": eff_weight,
+            "weight_source": weight_source,
+            "built_in_default": DEFAULT_CLUSTER_PROXIMITY_WEIGHT,
+            "frontier_anchors": len(anchors),
+        },
+        "results": ranked,
+    }
+
+
+def tool_set_priority_config(cluster_proximity_weight: float = None, reset: bool = False) -> dict:
+    """Set, reset, or report the DEFAULT cluster-proximity weight used by get_concept_frontier for
+    every call that does not pass an explicit override.
+    - reset=True restores the built-in default (removes the persisted config).
+    - cluster_proximity_weight=<n> persists <n> as the new default for all calls.
+    - neither: report the current effective default without changing it.
+    Persisted to a config file so it survives restarts and is shared across gunicorn workers."""
+    import json as _json
+    if reset:
+        try:
+            if PRIORITY_CONFIG_PATH.exists():
+                PRIORITY_CONFIG_PATH.unlink()
+        except Exception as ex:
+            logger.warning(f"priority config reset failed: {ex}")
+        return {
+            "status": "reset",
+            "cluster_proximity_weight": DEFAULT_CLUSTER_PROXIMITY_WEIGHT,
+            "weight_source": "built-in-default",
+            "built_in_default": DEFAULT_CLUSTER_PROXIMITY_WEIGHT,
+        }
+    if cluster_proximity_weight is None:
+        w, src = _effective_proximity_weight(None)
+        return {"status": "unchanged", "cluster_proximity_weight": w, "weight_source": src,
+                "built_in_default": DEFAULT_CLUSTER_PROXIMITY_WEIGHT}
+    w = float(cluster_proximity_weight)
+    PRIORITY_CONFIG_PATH.write_text(_json.dumps({"cluster_proximity_weight": w}))
+    return {"status": "set", "cluster_proximity_weight": w, "weight_source": "config-default",
+            "built_in_default": DEFAULT_CLUSTER_PROXIMITY_WEIGHT}
 
 
 def tool_get_reading_graph(
@@ -4185,8 +4258,18 @@ def _get_tools_list():
         },
         {
             "name": "get_concept_frontier",
-            "description": "Get the concepts that most need attention — low coverage, high centrality, or high operational load.",
-            "inputSchema": {"type": "object", "properties": {}}
+            "description": "Get the concepts that most need attention. Priority blends centrality (inbound refs), coverage/understanding gaps, and proximity to active research-cluster frontier hypotheses (so reading follows the research agenda). Returns {params, results}: params reports the effective cluster_proximity_weight and its source (call-override / config-default / built-in-default). Pass cluster_proximity_weight to override the weight for THIS call only.",
+            "inputSchema": {"type": "object", "properties": {
+                "cluster_proximity_weight": {"type": "number", "description": "Override the cluster-proximity weight for THIS call only; if omitted, the persisted default or built-in 2.0 is used"}
+            }}
+        },
+        {
+            "name": "set_priority_config",
+            "description": "Set, reset, or report the DEFAULT cluster-proximity weight used by get_concept_frontier for every call without an explicit override. reset=true restores the built-in default (2.0); cluster_proximity_weight=<n> persists <n> as the new default for all calls; passing neither reports the current default. Persisted to a config file (survives restarts, shared across workers). Returns the resulting weight and its source.",
+            "inputSchema": {"type": "object", "properties": {
+                "cluster_proximity_weight": {"type": "number", "description": "New default weight to persist for all calls"},
+                "reset": {"type": "boolean", "default": False, "description": "Restore the built-in default (2.0) by removing the persisted config"}
+            }}
         },
         {
             "name": "get_health_metrics",
@@ -4561,7 +4644,8 @@ def dispatch_tool(tool_name: str, params: dict, req) -> any:
             reason=p.get("reason", ""),
             priority=p.get("priority", "normal")
         ),
-        "get_concept_frontier": lambda p: tool_get_concept_frontier(),
+        "get_concept_frontier": lambda p: tool_get_concept_frontier(
+            cluster_proximity_weight=p.get("cluster_proximity_weight")),
         "get_reading_graph": lambda p: tool_get_reading_graph(
             scope=p.get("scope", "all_unread"),
             focus_concept=p.get("focus_concept"),
@@ -4649,6 +4733,10 @@ def dispatch_tool(tool_name: str, params: dict, req) -> any:
             frontmatter_updates=p.get("frontmatter_updates"),
             section_updates=p.get("section_updates"),
             commit_message=p.get("commit_message", ""),
+        ),
+        "set_priority_config": lambda p: tool_set_priority_config(
+            cluster_proximity_weight=p.get("cluster_proximity_weight"),
+            reset=p.get("reset", False),
         ),
         "add_connections": lambda p: tool_add_connections(
             edges=p["edges"],
@@ -4786,8 +4874,11 @@ def pkis_api_health():
 
 @app.route("/pkis-api/frontier", methods=["POST"])
 def pkis_api_frontier():
+    b = _api_json()
     try:
-        return _api_ok(tool_get_concept_frontier())
+        # Viewer expects a list; return just the ranked results (params are MCP-only).
+        return _api_ok(tool_get_concept_frontier(
+            cluster_proximity_weight=b.get("cluster_proximity_weight"))["results"])
     except Exception as e:
         return _api_err(e, 500)
 

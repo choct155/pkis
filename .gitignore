@@ -219,3 +219,6 @@ node_modules/
 *.bak
 *.bak.*
 app.py.bak.*
+
+# Runtime config (server-side state, not source)
+priority_config.json
