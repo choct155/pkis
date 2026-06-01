@@ -5,13 +5,14 @@ cross_cluster_dependencies:
 - learned-symbol-grounding
 - evaluation-infrastructure
 date_created: 2026-05-30
-date_updated: 2026-05-30
+date_updated: '2026-06-01'
 domain:
 - knowledge-representation
 - deep-learning
 extends:
 - word-embeddings
-frontier_hypotheses: []
+frontier_hypotheses:
+- ontological-supervision-improves-embeddings
 hypotheses:
 - ontological-supervision-improves-embeddings
 - architectural-boundary-hypothesis
@@ -43,7 +44,7 @@ Stage 4 (Model Fitting & Schema Alignment) primary cluster. The architectural bo
 - **architectural-boundary-hypothesis** — The property graph / relational store / vector index trichotomy maps predictably to query pattern types
 
 ## Current Frontier
-To be computed by Maintenance agent.
+Anchored to `word-embeddings` (extends) and `knowledge-graph-embeddings` (specializes). Lead hypothesis **`ontological-supervision-improves-embeddings`**: ontological structure as a supervision signal yields representations that better support downstream retrieval/classification. Supporting: **`architectural-boundary-hypothesis`** (property-graph / relational / vector-index choice maps predictably to query-pattern types). Coverage gaps: `word-embeddings`, `knowledge-graph-embeddings` are sourceless stubs.
 
 ## Connections
 - [[knowledge-graph-embeddings]] — specializes: this cluster addresses alignment between embedding space and ontological structure

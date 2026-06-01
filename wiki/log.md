@@ -674,3 +674,14 @@
 ## [2026-06-01] committed | hypothesis
 - Committed: architectural-boundary-hypothesis → hypotheses/architectural-boundary-hypothesis.md
 - IRI: pkis:hypothesis:architectural-boundary-hypothesis
+
+## [2026-06-01] edges | add_connections
+- pkis:research-cluster:embedding-ontology-alignment —extends→ word-embeddings
+- pkis:research-cluster:embedding-ontology-alignment —specializes→ knowledge-graph-embeddings
+- pkis:hypothesis:ontological-supervision-improves-embeddings —extends→ word-embeddings
+- pkis:hypothesis:ontological-supervision-improves-embeddings —uses→ knowledge-graph-embeddings
+- pkis:hypothesis:ontological-supervision-improves-embeddings —uses→ formal-ontology
+- pkis:hypothesis:architectural-boundary-hypothesis —uses→ knowledge-graph-embeddings
+
+## [2026-06-01] edit | edit_node
+- pkis:research-cluster:embedding-ontology-alignment: fields=['frontier_hypotheses'] sections=['Current Frontier']
