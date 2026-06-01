@@ -722,3 +722,12 @@
 ## [2026-06-01] committed | hypothesis
 - Committed: llm-assisted-ontology-authoring-cost → hypotheses/llm-assisted-ontology-authoring-cost.md
 - IRI: pkis:hypothesis:llm-assisted-ontology-authoring-cost
+
+## [2026-06-01] staged | hypothesis
+- Staged: concept-drift-detection (id: 659817c9-ff61-4d54-a241-79a2f439a12f)
+- Title: Distributional Monitoring of Ontological Concept Usage Detects Semantic Drift Before Downstream Errors
+- Cluster: model-evolution
+
+## [2026-06-01] committed | hypothesis
+- Committed: concept-drift-detection → hypotheses/concept-drift-detection.md
+- IRI: pkis:hypothesis:concept-drift-detection
