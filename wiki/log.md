@@ -444,3 +444,7 @@
 ## [2026-06-01] committed | concept
 - Committed: uncertainty-quantification → concepts/uncertainty-quantification.md
 - IRI: pkis:concept:uncertainty-quantification
+
+## [2026-06-01] committed | concept
+- Committed: expected-loss → concepts/expected-loss.md
+- IRI: pkis:concept:expected-loss
