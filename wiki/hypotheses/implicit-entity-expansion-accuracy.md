@@ -27,6 +27,9 @@ tags:
 - ontology
 title: Ontological Inference Improves Implicit Entity Expansion Accuracy Over Stochastic
   Generation
+uses:
+- knowledge-graph-traversal
+- formal-ontology
 ---
 
 ## Formal Statement
@@ -42,4 +45,6 @@ Implicit scope expansion is where statistical query understanding fails on the m
 How to evaluate 'correct' expansion without a gold expansion set? Interaction with query ambiguity.
 
 ## Connections
+- [[formal-ontology]] — uses: the expansion rules are ontological
+- [[knowledge-graph-traversal]] — uses: expansion walks ontological relations
 - [[compositional-query-grounding]] — belongs-to: constituent hypothesis of the compositional-query-grounding cluster

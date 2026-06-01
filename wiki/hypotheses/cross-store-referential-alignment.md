@@ -27,6 +27,9 @@ tags:
 - referential-integrity
 title: An Ontological Backbone Enables Cross-Store Entity Alignment That Reduces Referential
   Errors
+uses:
+- knowledge-graph-traversal
+- formal-ontology
 ---
 
 ## Formal Statement
@@ -42,4 +45,6 @@ Heterogeneous stores fragment entity identity; an ontological backbone is the sh
 Alignment under conflicting store schemas; maintenance cost of the backbone.
 
 ## Connections
+- [[formal-ontology]] — uses: the backbone is an ontology
+- [[knowledge-graph-traversal]] — uses: alignment traverses the KG backbone
 - [[compositional-query-grounding]] — belongs-to: constituent hypothesis of the compositional-query-grounding cluster

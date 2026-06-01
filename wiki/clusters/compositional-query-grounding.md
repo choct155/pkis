@@ -1,23 +1,32 @@
 ---
-id: "pkis:research-cluster:compositional-query-grounding"
 aliases: []
-title: "Compositional Query Grounding"
-knowledge_type: research-cluster
-domain: [knowledge-representation, deep-learning]
-tags: [query-understanding, implicit-expansion, cross-store-alignment, rag]
+cross_cluster_dependencies:
+- intensional-grounding
+- retrieval-inference-tradeoff
+- parsed-intent-calibration
+- evaluation-infrastructure
 date_created: 2026-05-30
 date_updated: 2026-05-30
-status: active
-origin: research-program
-hypotheses:
-  - implicit-entity-expansion-accuracy
-  - cross-store-referential-alignment
-cross_cluster_dependencies:
-  - intensional-grounding
-  - retrieval-inference-tradeoff
-  - parsed-intent-calibration
-  - evaluation-infrastructure
+domain:
+- knowledge-representation
+- deep-learning
 frontier_hypotheses: []
+hypotheses:
+- implicit-entity-expansion-accuracy
+- cross-store-referential-alignment
+id: pkis:research-cluster:compositional-query-grounding
+knowledge_type: research-cluster
+origin: research-program
+status: active
+tags:
+- query-understanding
+- implicit-expansion
+- cross-store-alignment
+- rag
+title: Compositional Query Grounding
+uses:
+- knowledge-graph-traversal
+- bayesian-inference
 ---
 
 ## Thesis
@@ -37,5 +46,7 @@ Spans the most stages of the value chain (6, 7, 8) and has the most cross-cluste
 To be computed by Maintenance agent.
 
 ## Connections
+- [[bayesian-inference]] — uses: Bayesian framing of the query intent posterior
+- [[knowledge-graph-traversal]] — uses: cross-store alignment requires KG as the alignment backbone
 - [[knowledge-graph-traversal]] — uses: cross-store alignment requires KG as the alignment backbone
 - [[probabilistic-inference]] — prerequisite-of: Bayesian framing of query intent posterior requires understanding probabilistic inference
