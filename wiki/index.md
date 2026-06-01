@@ -550,6 +550,7 @@
 - [[evaluation-infrastructure]] — Evaluation Infrastructure: domain-specific benchmark construction for ontology-augmented NED/NER and composite result quality (knowledge-representation) (2026-05-30)
 
 ## Hypotheses
+- [[ontological-provenance-enables-conflict-resolution]] — Ontological Provenance Enables More Accurate Cross-Source Conflict Resolution Than Heuristic Credibility Weighting (knowledge-representation, bayesian-stats) (2026-06-01)
 - [[formal-coverage-model-sourcing-efficiency]] — Formal Ontological Coverage Models Reduce Redundant Sourcing and Raise Marginal Coverage Yield (knowledge-representation) (2026-06-01)
 - [[observability-co-design-hypothesis]] — Co-Designing Observability With the Experimental Program Yields More Testable Hypotheses Than Retrofitting (knowledge-representation, deep-learning) (2026-06-01)
 - [[domain-specific-benchmark-gap]] — Standard NLP Benchmarks Do Not Adequately Evaluate Ontology-Augmented NED/NER and Composite Result Quality (knowledge-representation, deep-learning) (2026-06-01)

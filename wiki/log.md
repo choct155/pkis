@@ -502,3 +502,12 @@
 
 ## [2026-06-01] edit | edit_node
 - pkis:research-cluster:ontological-coverage-planning: fields=['frontier_hypotheses'] sections=['Current Frontier']
+
+## [2026-06-01] staged | hypothesis
+- Staged: ontological-provenance-enables-conflict-resolution (id: 26adb044-7d08-4293-a61a-3eef92c13905)
+- Title: Ontological Provenance Enables More Accurate Cross-Source Conflict Resolution Than Heuristic Credibility Weighting
+- Cluster: composite-credibility
+
+## [2026-06-01] committed | hypothesis
+- Committed: ontological-provenance-enables-conflict-resolution → hypotheses/ontological-provenance-enables-conflict-resolution.md
+- IRI: pkis:hypothesis:ontological-provenance-enables-conflict-resolution
