@@ -656,3 +656,12 @@
 
 ## [2026-06-01] edit | edit_node
 - pkis:research-cluster:compositional-query-grounding: fields=['frontier_hypotheses'] sections=['Current Frontier']
+
+## [2026-06-01] staged | hypothesis
+- Staged: ontological-supervision-improves-embeddings (id: 83a74c17-a34e-43f7-80f3-09b1c86a3b0c)
+- Title: Training Embeddings With Ontological Structure as Supervision Improves Downstream Retrieval and Classification
+- Cluster: embedding-ontology-alignment
+
+## [2026-06-01] committed | hypothesis
+- Committed: ontological-supervision-improves-embeddings → hypotheses/ontological-supervision-improves-embeddings.md
+- IRI: pkis:hypothesis:ontological-supervision-improves-embeddings
