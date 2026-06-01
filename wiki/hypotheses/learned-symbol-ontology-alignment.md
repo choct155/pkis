@@ -28,6 +28,9 @@ tags:
 - ontology-alignment
 title: Learned Discrete Symbols From VQ-VAE-Style Approaches Can Be Reliably Aligned
   to Formal Ontological Concepts
+uses:
+- vector-quantization
+- formal-ontology
 ---
 
 ## Formal Statement
@@ -43,4 +46,6 @@ If learned symbols align to ontology concepts, statistical learning can feed sym
 How stable is the learned codebook across retraining? What alignment metric to ontology concepts?
 
 ## Connections
+- [[formal-ontology]] — uses: the alignment target is the ontology
+- [[vector-quantization]] — uses: the discrete-symbol learner
 - [[learned-symbol-grounding]] — belongs-to: constituent hypothesis of the learned-symbol-grounding cluster

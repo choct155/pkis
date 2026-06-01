@@ -24,6 +24,8 @@ tags:
 - production
 title: Concept Bottleneck Architectures Provide Sufficient Audit Trail for Production
   QA Workflows
+uses:
+- concept-bottleneck-models
 ---
 
 ## Formal Statement
@@ -39,4 +41,5 @@ The near-term production instantiation of learned symbol grounding stands or fal
 Sufficiency relative to which QA tasks? Accuracy cost of the bottleneck.
 
 ## Connections
+- [[concept-bottleneck-models]] — uses: the architecture under test
 - [[learned-symbol-grounding]] — belongs-to: constituent hypothesis of the learned-symbol-grounding cluster

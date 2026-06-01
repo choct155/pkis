@@ -1,22 +1,32 @@
 ---
-id: "pkis:research-cluster:learned-symbol-grounding"
 aliases: []
-title: "Learned Symbol Grounding"
-knowledge_type: research-cluster
-domain: [knowledge-representation, deep-learning, symbolic-subsymbolic]
-tags: [vector-quantization, concept-bottleneck, neurosymbolic, discrete-representation]
+cross_cluster_dependencies:
+- intensional-grounding
+- embedding-ontology-alignment
+- evaluation-infrastructure
 date_created: 2026-05-30
 date_updated: 2026-05-30
-status: active
-origin: research-program
-hypotheses:
-  - concept-bottleneck-auditability
-  - learned-symbol-ontology-alignment
-cross_cluster_dependencies:
-  - intensional-grounding
-  - embedding-ontology-alignment
-  - evaluation-infrastructure
+domain:
+- knowledge-representation
+- deep-learning
+- symbolic-subsymbolic
 frontier_hypotheses: []
+hypotheses:
+- concept-bottleneck-auditability
+- learned-symbol-ontology-alignment
+id: pkis:research-cluster:learned-symbol-grounding
+knowledge_type: research-cluster
+origin: research-program
+status: active
+tags:
+- vector-quantization
+- concept-bottleneck
+- neurosymbolic
+- discrete-representation
+title: Learned Symbol Grounding
+uses:
+- vector-quantization
+- concept-bottleneck-models
 ---
 
 ## Thesis
@@ -36,5 +46,7 @@ Straddles Theme 1 (science of complementarity) and Theme 2 (operational implicat
 To be computed by Maintenance agent.
 
 ## Connections
+- [[concept-bottleneck-models]] — uses: near-term production instantiation of the cluster
+- [[vector-quantization]] — uses: VQ-VAE is the foundational technique for discrete representation learning
 - [[vector-quantization]] — uses: VQ-VAE is the foundational technique for discrete representation learning
 - [[concept-bottleneck-models]] — uses: near-term production instantiation of the cluster
