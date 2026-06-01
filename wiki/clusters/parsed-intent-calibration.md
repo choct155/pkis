@@ -5,11 +5,12 @@ cross_cluster_dependencies:
 - retrieval-inference-tradeoff
 - evaluation-infrastructure
 date_created: 2026-05-30
-date_updated: 2026-05-30
+date_updated: '2026-06-01'
 domain:
 - bayesian-stats
 - knowledge-representation
-frontier_hypotheses: []
+frontier_hypotheses:
+- distributional-intent-parsing-calibration
 hypotheses:
 - distributional-intent-parsing-calibration
 - uncertainty-propagation-through-retrieval
@@ -43,7 +44,7 @@ This cluster is the clearest intersection between the research program and the P
 - **uncertainty-propagation-through-retrieval** — Propagating parsed intent uncertainty through retrieval improves end-to-end response calibration
 
 ## Current Frontier
-To be computed by Maintenance agent.
+Anchored to `calibration`, `bayesian-inference`, and `uncertainty-quantification`. Lead hypothesis **`distributional-intent-parsing-calibration`**: a typed distribution over intent is better-calibrated than a point-estimate parse. Supporting: **`uncertainty-propagation-through-retrieval`** (carrying that uncertainty through retrieval improves end-to-end calibration). Coverage gaps: `calibration`, `bayesian-inference`, `uncertainty-quantification` are sourceless stubs.
 
 ## Connections
 - [[uncertainty-quantification]] — uses: measuring and propagating uncertainty requires UQ

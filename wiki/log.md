@@ -582,3 +582,17 @@
 ## [2026-06-01] committed | hypothesis
 - Committed: uncertainty-propagation-through-retrieval → hypotheses/uncertainty-propagation-through-retrieval.md
 - IRI: pkis:hypothesis:uncertainty-propagation-through-retrieval
+
+## [2026-06-01] edges | add_connections
+- pkis:research-cluster:parsed-intent-calibration —uses→ calibration
+- pkis:research-cluster:parsed-intent-calibration —uses→ bayesian-inference
+- pkis:research-cluster:parsed-intent-calibration —uses→ uncertainty-quantification
+- pkis:hypothesis:distributional-intent-parsing-calibration —uses→ calibration
+- pkis:hypothesis:distributional-intent-parsing-calibration —uses→ bayesian-inference
+- pkis:hypothesis:distributional-intent-parsing-calibration —uses→ formal-ontology
+- pkis:hypothesis:uncertainty-propagation-through-retrieval —uses→ uncertainty-quantification
+- pkis:hypothesis:uncertainty-propagation-through-retrieval —uses→ calibration
+- pkis:hypothesis:uncertainty-propagation-through-retrieval —uses→ bayesian-inference
+
+## [2026-06-01] edit | edit_node
+- pkis:research-cluster:parsed-intent-calibration: fields=['frontier_hypotheses'] sections=['Current Frontier']
