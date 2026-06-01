@@ -614,3 +614,16 @@
 ## [2026-06-01] committed | hypothesis
 - Committed: routing-classifier-hypothesis → hypotheses/routing-classifier-hypothesis.md
 - IRI: pkis:hypothesis:routing-classifier-hypothesis
+
+## [2026-06-01] edges | add_connections
+- pkis:research-cluster:retrieval-inference-tradeoff —uses→ expected-loss
+- pkis:research-cluster:retrieval-inference-tradeoff —uses→ decision-theory-foundations
+- pkis:research-cluster:retrieval-inference-tradeoff —uses→ calibration
+- pkis:hypothesis:retrieval-dominates-inference-high-stakes-queries —uses→ expected-loss
+- pkis:hypothesis:retrieval-dominates-inference-high-stakes-queries —uses→ decision-theory-foundations
+- pkis:hypothesis:retrieval-dominates-inference-high-stakes-queries —uses→ calibration
+- pkis:hypothesis:routing-classifier-hypothesis —uses→ decision-theory-foundations
+- pkis:hypothesis:routing-classifier-hypothesis —uses→ calibration
+
+## [2026-06-01] edit | edit_node
+- pkis:research-cluster:retrieval-inference-tradeoff: fields=['frontier_hypotheses'] sections=['Current Frontier']

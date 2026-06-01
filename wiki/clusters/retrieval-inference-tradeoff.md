@@ -6,11 +6,12 @@ cross_cluster_dependencies:
 - composite-credibility
 - evaluation-infrastructure
 date_created: 2026-05-30
-date_updated: 2026-05-30
+date_updated: '2026-06-01'
 domain:
 - knowledge-representation
 - bayesian-stats
-frontier_hypotheses: []
+frontier_hypotheses:
+- retrieval-dominates-inference-high-stakes-queries
 hypotheses:
 - retrieval-dominates-inference-high-stakes-queries
 - routing-classifier-hypothesis
@@ -45,7 +46,7 @@ Stage 7 (Routing & Retrieval) primary cluster. The expected-cost modeling framew
 - **routing-classifier-hypothesis** — A lightweight query routing classifier trained on query characteristics can reliably distinguish retrieval vs. inference vs. hybrid paths
 
 ## Current Frontier
-To be computed by Maintenance agent.
+Anchored to `expected-loss`, `decision-theory-foundations`, and `calibration`. Lead hypothesis **`retrieval-dominates-inference-high-stakes-queries`**: for a well-defined query class, ontology-backed retrieval dominates inference on cost x error rate, sharpest at high-frequency high-stakes queries. Supporting: **`routing-classifier-hypothesis`** (a lightweight classifier reliably routes retrieval vs inference vs hybrid). Coverage gaps: `expected-loss`, `decision-theory-foundations`, `calibration` are sourceless stubs.
 
 ## Connections
 - [[calibration]] — uses: retrieval dominance depends on calibrated error rate estimates
