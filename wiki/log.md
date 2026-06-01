@@ -596,3 +596,12 @@
 
 ## [2026-06-01] edit | edit_node
 - pkis:research-cluster:parsed-intent-calibration: fields=['frontier_hypotheses'] sections=['Current Frontier']
+
+## [2026-06-01] staged | hypothesis
+- Staged: retrieval-dominates-inference-high-stakes-queries (id: fc873dd5-e5c3-4316-954d-78e17a9c0136)
+- Title: Ontology-Backed Retrieval Dominates Model Inference on Cost x Error Rate for a Well-Defined Query Class
+- Cluster: retrieval-inference-tradeoff
+
+## [2026-06-01] committed | hypothesis
+- Committed: retrieval-dominates-inference-high-stakes-queries → hypotheses/retrieval-dominates-inference-high-stakes-queries.md
+- IRI: pkis:hypothesis:retrieval-dominates-inference-high-stakes-queries
