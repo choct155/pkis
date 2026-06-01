@@ -550,6 +550,7 @@
 - [[evaluation-infrastructure]] — Evaluation Infrastructure: domain-specific benchmark construction for ontology-augmented NED/NER and composite result quality (knowledge-representation) (2026-05-30)
 
 ## Hypotheses
+- [[semantic-validation-beyond-syntactic]] — Ontological Property Constraints Detect Semantically Invalid Content That Syntactic Validation Misses (knowledge-representation) (2026-06-01)
 - [[source-credibility-as-latent-variable]] — Treating Source Credibility as a Latent Variable Produces Better-Calibrated Resolution Than Static Weights (bayesian-stats) (2026-06-01)
 - [[ontological-provenance-enables-conflict-resolution]] — Ontological Provenance Enables More Accurate Cross-Source Conflict Resolution Than Heuristic Credibility Weighting (knowledge-representation, bayesian-stats) (2026-06-01)
 - [[formal-coverage-model-sourcing-efficiency]] — Formal Ontological Coverage Models Reduce Redundant Sourcing and Raise Marginal Coverage Yield (knowledge-representation) (2026-06-01)

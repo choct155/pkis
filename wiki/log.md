@@ -534,3 +534,12 @@
 
 ## [2026-06-01] edit | edit_node
 - pkis:research-cluster:composite-credibility: fields=['frontier_hypotheses'] sections=['Current Frontier']
+
+## [2026-06-01] staged | hypothesis
+- Staged: semantic-validation-beyond-syntactic (id: 82ce2da8-455c-4424-bb36-6bba724e46ea)
+- Title: Ontological Property Constraints Detect Semantically Invalid Content That Syntactic Validation Misses
+- Cluster: structured-validation-truth-discovery
+
+## [2026-06-01] committed | hypothesis
+- Committed: semantic-validation-beyond-syntactic → hypotheses/semantic-validation-beyond-syntactic.md
+- IRI: pkis:hypothesis:semantic-validation-beyond-syntactic
