@@ -468,3 +468,12 @@
 
 ## [2026-06-01] edit | edit_node
 - pkis:research-cluster:evaluation-infrastructure: fields=['frontier_hypotheses'] sections=['Current Frontier']
+
+## [2026-06-01] staged | hypothesis
+- Staged: observability-co-design-hypothesis (id: a002fc7e-c782-4796-97f8-4ef0ecb2d4fb)
+- Title: Co-Designing Observability With the Experimental Program Yields More Testable Hypotheses Than Retrofitting
+- Cluster: research-instrumentation
+
+## [2026-06-01] committed | hypothesis
+- Committed: observability-co-design-hypothesis → hypotheses/observability-co-design-hypothesis.md
+- IRI: pkis:hypothesis:observability-co-design-hypothesis
