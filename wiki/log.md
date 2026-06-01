@@ -552,3 +552,15 @@
 ## [2026-06-01] committed | hypothesis
 - Committed: probabilistic-truth-discovery-calibration → hypotheses/probabilistic-truth-discovery-calibration.md
 - IRI: pkis:hypothesis:probabilistic-truth-discovery-calibration
+
+## [2026-06-01] edges | add_connections
+- pkis:research-cluster:structured-validation-truth-discovery —uses→ bayesian-inference
+- pkis:research-cluster:structured-validation-truth-discovery —uses→ probabilistic-graphical-models
+- pkis:hypothesis:semantic-validation-beyond-syntactic —uses→ formal-ontology
+- pkis:hypothesis:semantic-validation-beyond-syntactic —uses→ bayesian-inference
+- pkis:hypothesis:probabilistic-truth-discovery-calibration —uses→ bayesian-inference
+- pkis:hypothesis:probabilistic-truth-discovery-calibration —uses→ probabilistic-graphical-models
+- pkis:hypothesis:probabilistic-truth-discovery-calibration —uses→ calibration
+
+## [2026-06-01] edit | edit_node
+- pkis:research-cluster:structured-validation-truth-discovery: fields=['frontier_hypotheses'] sections=['Current Frontier']

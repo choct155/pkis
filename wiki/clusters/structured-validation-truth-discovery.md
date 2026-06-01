@@ -5,11 +5,12 @@ cross_cluster_dependencies:
 - composite-credibility
 - evaluation-infrastructure
 date_created: 2026-05-30
-date_updated: 2026-05-30
+date_updated: '2026-06-01'
 domain:
 - knowledge-representation
 - bayesian-stats
-frontier_hypotheses: []
+frontier_hypotheses:
+- semantic-validation-beyond-syntactic
 hypotheses:
 - semantic-validation-beyond-syntactic
 - probabilistic-truth-discovery-calibration
@@ -42,7 +43,7 @@ Stage 3 (Validation & Enrichment) primary cluster. Has significant overlap with 
 - **probabilistic-truth-discovery-calibration** — Probabilistic truth discovery outperforms heuristic source credibility weights on calibration
 
 ## Current Frontier
-To be computed by Maintenance agent.
+Anchored to `bayesian-inference` and `probabilistic-graphical-models`. Lead hypothesis **`semantic-validation-beyond-syntactic`**: ontological property constraints catch semantically invalid content that syntactic/statistical validation misses. Supporting: **`probabilistic-truth-discovery-calibration`** (probabilistic truth discovery beats heuristic credibility weights on calibration). Coverage gaps: `bayesian-inference`, `probabilistic-graphical-models`, `calibration` are sourceless stubs.
 
 ## Connections
 - [[probabilistic-graphical-models]] — uses: the truth-discovery literature is rooted in PGMs
