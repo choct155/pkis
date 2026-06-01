@@ -550,6 +550,7 @@
 - [[evaluation-infrastructure]] — Evaluation Infrastructure: domain-specific benchmark construction for ontology-augmented NED/NER and composite result quality (knowledge-representation) (2026-05-30)
 
 ## Hypotheses
+- [[cross-store-referential-alignment]] — An Ontological Backbone Enables Cross-Store Entity Alignment That Reduces Referential Errors (knowledge-representation) (2026-06-01)
 - [[implicit-entity-expansion-accuracy]] — Ontological Inference Improves Implicit Entity Expansion Accuracy Over Stochastic Generation (knowledge-representation) (2026-06-01)
 - [[routing-classifier-hypothesis]] — A Lightweight Query Routing Classifier Can Reliably Distinguish Retrieval vs Inference vs Hybrid Paths (deep-learning, bayesian-stats) (2026-06-01)
 - [[retrieval-dominates-inference-high-stakes-queries]] — Ontology-Backed Retrieval Dominates Model Inference on Cost x Error Rate for a Well-Defined Query Class (knowledge-representation, bayesian-stats) (2026-06-01)

@@ -636,3 +636,12 @@
 ## [2026-06-01] committed | hypothesis
 - Committed: implicit-entity-expansion-accuracy → hypotheses/implicit-entity-expansion-accuracy.md
 - IRI: pkis:hypothesis:implicit-entity-expansion-accuracy
+
+## [2026-06-01] staged | hypothesis
+- Staged: cross-store-referential-alignment (id: cd1bb259-3cce-40b8-9aad-089b88990fb6)
+- Title: An Ontological Backbone Enables Cross-Store Entity Alignment That Reduces Referential Errors
+- Cluster: compositional-query-grounding
+
+## [2026-06-01] committed | hypothesis
+- Committed: cross-store-referential-alignment → hypotheses/cross-store-referential-alignment.md
+- IRI: pkis:hypothesis:cross-store-referential-alignment
