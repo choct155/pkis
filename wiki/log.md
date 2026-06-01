@@ -288,3 +288,7 @@
 ## [2026-06-01] committed | technique
 - Committed: transformer-attention-mechanisms → techniques/transformer-attention-mechanisms.md
 - IRI: pkis:technique:transformer-attention-mechanisms
+
+## [2026-06-01] committed | technique
+- Committed: named-entity-disambiguation → techniques/named-entity-disambiguation.md
+- IRI: pkis:technique:named-entity-disambiguation
