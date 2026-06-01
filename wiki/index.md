@@ -273,6 +273,7 @@
 - [[liu-machine-unlearning-llm-2024]] — Rethinking Machine Unlearning for LLMs: post-training knowledge editing survey (deep-learning, ai-safety) (2026-05-20)
 
 ## Concepts
+- [[information-theory]] — Information Theory (bayesian-stats) (2026-06-01)
 - [[distribution-shift]] — Distribution Shift (deep-learning, bayesian-stats) (2026-06-01)
 - [[causal-analysis]] — Causal Analysis (bayesian-stats) (2026-06-01)
 - [[word-embeddings]] — Word Embeddings (deep-learning) (2026-06-01)

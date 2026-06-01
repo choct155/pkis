@@ -436,3 +436,7 @@
 ## [2026-06-01] committed | concept
 - Committed: distribution-shift → concepts/distribution-shift.md
 - IRI: pkis:concept:distribution-shift
+
+## [2026-06-01] committed | concept
+- Committed: information-theory → concepts/information-theory.md
+- IRI: pkis:concept:information-theory
