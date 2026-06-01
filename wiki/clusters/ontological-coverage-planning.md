@@ -1,20 +1,27 @@
 ---
-id: "pkis:research-cluster:ontological-coverage-planning"
 aliases: []
-title: "Ontological Coverage Planning"
-knowledge_type: research-cluster
-domain: [knowledge-representation]
-tags: [coverage-completeness, source-acquisition, ontology-gap-analysis]
+cross_cluster_dependencies:
+- model-evolution
+- evaluation-infrastructure
 date_created: 2026-05-30
 date_updated: 2026-05-30
-status: active
-origin: research-program
-hypotheses:
-  - formal-coverage-model-sourcing-efficiency
-cross_cluster_dependencies:
-  - model-evolution
-  - evaluation-infrastructure
+domain:
+- knowledge-representation
 frontier_hypotheses: []
+hypotheses:
+- formal-coverage-model-sourcing-efficiency
+id: pkis:research-cluster:ontological-coverage-planning
+knowledge_type: research-cluster
+origin: research-program
+status: active
+tags:
+- coverage-completeness
+- source-acquisition
+- ontology-gap-analysis
+title: Ontological Coverage Planning
+uses:
+- formal-ontology
+- information-theory
 ---
 
 ## Thesis
@@ -33,5 +40,7 @@ Primarily a Theme 2 (operational implications) cluster. Directly relevant to IKS
 To be computed by Maintenance agent.
 
 ## Connections
+- [[information-theory]] — uses: coverage completeness is an information-theoretic concept
+- [[formal-ontology]] — uses: coverage planning requires a formal ontological model as input
 - [[ontology]] — uses: coverage planning requires a formal ontological model as input
 - [[information-theory]] — uses: coverage completeness is an information-theoretic concept

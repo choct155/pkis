@@ -28,6 +28,9 @@ tags:
 - information-theory
 title: Formal Ontological Coverage Models Reduce Redundant Sourcing and Raise Marginal
   Coverage Yield
+uses:
+- formal-ontology
+- information-theory
 ---
 
 ## Formal Statement
@@ -43,4 +46,6 @@ This is the meta-hypothesis behind hypothesis-driven sourcing: an explicit cover
 How to operationalize 'coverage' over an open domain ontology? What is the right information-theoretic completeness measure?
 
 ## Connections
+- [[information-theory]] — uses: marginal coverage yield is an information-theoretic measure
+- [[formal-ontology]] — uses: the coverage model is expressed over a formal ontology
 - [[ontological-coverage-planning]] — belongs-to: constituent hypothesis of the ontological-coverage-planning cluster
