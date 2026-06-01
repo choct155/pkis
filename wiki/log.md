@@ -731,3 +731,12 @@
 ## [2026-06-01] committed | hypothesis
 - Committed: concept-drift-detection → hypotheses/concept-drift-detection.md
 - IRI: pkis:hypothesis:concept-drift-detection
+
+## [2026-06-01] staged | hypothesis
+- Staged: shadow-fragmentation-detection (id: f9b069d4-1fe5-4962-a1b6-2ad8df0825f3)
+- Title: Embedding Similarity Plus Structural Comparison Detects Near-Duplicate Concept Creation Before Fragmentation Compounds
+- Cluster: model-evolution
+
+## [2026-06-01] committed | hypothesis
+- Committed: shadow-fragmentation-detection → hypotheses/shadow-fragmentation-detection.md
+- IRI: pkis:hypothesis:shadow-fragmentation-detection

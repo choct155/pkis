@@ -550,6 +550,7 @@
 - [[evaluation-infrastructure]] — Evaluation Infrastructure: domain-specific benchmark construction for ontology-augmented NED/NER and composite result quality (knowledge-representation) (2026-05-30)
 
 ## Hypotheses
+- [[shadow-fragmentation-detection]] — Embedding Similarity Plus Structural Comparison Detects Near-Duplicate Concept Creation Before Fragmentation Compounds (deep-learning, knowledge-representation) (2026-06-01)
 - [[concept-drift-detection]] — Distributional Monitoring of Ontological Concept Usage Detects Semantic Drift Before Downstream Errors (deep-learning, bayesian-stats) (2026-06-01)
 - [[llm-assisted-ontology-authoring-cost]] — LLM-Assisted Ontology Authoring With Human Review Gates Reduces Maintenance Cost vs Human Authorship (knowledge-representation, deep-learning) (2026-06-01)
 - [[concept-bottleneck-auditability]] — Concept Bottleneck Architectures Provide Sufficient Audit Trail for Production QA Workflows (deep-learning) (2026-06-01)
