@@ -400,3 +400,7 @@
 ## [2026-06-01] committed | concept
 - Committed: bayesian-inference → concepts/bayesian-inference.md
 - IRI: pkis:concept:bayesian-inference
+
+## [2026-06-01] committed | concept
+- Committed: probabilistic-graphical-models → concepts/probabilistic-graphical-models.md
+- IRI: pkis:concept:probabilistic-graphical-models
