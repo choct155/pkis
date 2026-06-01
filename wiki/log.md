@@ -296,3 +296,7 @@
 ## [2026-06-01] committed | result
 - Committed: scaling-laws → results/scaling-laws.md
 - IRI: pkis:result:scaling-laws
+
+## [2026-06-01] committed | concept
+- Committed: knowledge-representation → concepts/knowledge-representation.md
+- IRI: pkis:concept:knowledge-representation

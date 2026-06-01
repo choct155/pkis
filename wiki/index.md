@@ -273,6 +273,7 @@
 - [[liu-machine-unlearning-llm-2024]] — Rethinking Machine Unlearning for LLMs: post-training knowledge editing survey (deep-learning, ai-safety) (2026-05-20)
 
 ## Concepts
+- [[knowledge-representation]] — Knowledge Representation (knowledge-representation) (2026-06-01)
 - [[linear-algebra]] — Vector spaces, linear maps, matrices; substrate for all ML computation (statistical-learning) (2026-05-20)
 - [[analytic-geometry]] — Inner products, norms, projections, orthogonality (statistical-learning) (2026-05-20)
 - [[matrix-decompositions]] — Organizing framework for eigendecomp, SVD, Cholesky (statistical-learning) (2026-05-20)
