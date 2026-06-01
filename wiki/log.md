@@ -477,3 +477,10 @@
 ## [2026-06-01] committed | hypothesis
 - Committed: observability-co-design-hypothesis → hypotheses/observability-co-design-hypothesis.md
 - IRI: pkis:hypothesis:observability-co-design-hypothesis
+
+## [2026-06-01] edges | add_connections
+- pkis:research-cluster:research-instrumentation —uses→ causal-analysis
+- pkis:hypothesis:observability-co-design-hypothesis —uses→ causal-analysis
+
+## [2026-06-01] edit | edit_node
+- pkis:research-cluster:research-instrumentation: fields=['frontier_hypotheses'] sections=['Current Frontier']

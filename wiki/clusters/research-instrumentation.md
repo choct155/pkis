@@ -2,10 +2,11 @@
 aliases: []
 cross_cluster_dependencies: []
 date_created: 2026-05-30
-date_updated: 2026-05-30
+date_updated: '2026-06-01'
 domain:
 - knowledge-representation
-frontier_hypotheses: []
+frontier_hypotheses:
+- observability-co-design-hypothesis
 hypotheses:
 - observability-co-design-hypothesis
 id: pkis:research-cluster:research-instrumentation
@@ -35,7 +36,7 @@ Cross-cutting. A prerequisite for all experimental work. The observability requi
 - **observability-co-design-hypothesis** — Co-designing observability requirements with experimental program produces more testable hypotheses than retrofitting
 
 ## Current Frontier
-To be computed by Maintenance agent.
+Anchored to `causal-analysis`. Lead (and only) hypothesis **`observability-co-design-hypothesis`**: instrumenting observability from inception (token-level attention, entity-resolution decisions, retrieval-path choices, composition events) yields more testable hypotheses than retrofitting. Coverage gap: `causal-analysis` is a sourceless stub.
 
 ## Connections
 - [[causal-analysis]] — uses: valid experimental inference requires understanding confounding and identification
