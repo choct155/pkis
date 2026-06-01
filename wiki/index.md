@@ -550,6 +550,7 @@
 - [[evaluation-infrastructure]] — Evaluation Infrastructure: domain-specific benchmark construction for ontology-augmented NED/NER and composite result quality (knowledge-representation) (2026-05-30)
 
 ## Hypotheses
+- [[llm-assisted-ontology-authoring-cost]] — LLM-Assisted Ontology Authoring With Human Review Gates Reduces Maintenance Cost vs Human Authorship (knowledge-representation, deep-learning) (2026-06-01)
 - [[concept-bottleneck-auditability]] — Concept Bottleneck Architectures Provide Sufficient Audit Trail for Production QA Workflows (deep-learning) (2026-06-01)
 - [[learned-symbol-ontology-alignment]] — Learned Discrete Symbols From VQ-VAE-Style Approaches Can Be Reliably Aligned to Formal Ontological Concepts (deep-learning, knowledge-representation) (2026-06-01)
 - [[architectural-boundary-hypothesis]] — The Property-Graph / Relational / Vector-Index Trichotomy Maps Predictably to Query-Pattern Types (knowledge-representation) (2026-06-01)

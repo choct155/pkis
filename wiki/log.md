@@ -713,3 +713,12 @@
 
 ## [2026-06-01] edit | edit_node
 - pkis:research-cluster:learned-symbol-grounding: fields=['frontier_hypotheses'] sections=['Current Frontier']
+
+## [2026-06-01] staged | hypothesis
+- Staged: llm-assisted-ontology-authoring-cost (id: c88e87f7-713f-44ee-9b42-e70bd36c5976)
+- Title: LLM-Assisted Ontology Authoring With Human Review Gates Reduces Maintenance Cost vs Human Authorship
+- Cluster: model-evolution
+
+## [2026-06-01] committed | hypothesis
+- Committed: llm-assisted-ontology-authoring-cost → hypotheses/llm-assisted-ontology-authoring-cost.md
+- IRI: pkis:hypothesis:llm-assisted-ontology-authoring-cost
