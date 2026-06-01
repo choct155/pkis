@@ -424,3 +424,7 @@
 ## [2026-06-01] committed | concept
 - Committed: causal-analysis → concepts/causal-analysis.md
 - IRI: pkis:concept:causal-analysis
+
+## [2026-06-01] committed | technique
+- Committed: vector-quantization → techniques/vector-quantization.md
+- IRI: pkis:technique:vector-quantization
