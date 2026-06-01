@@ -818,10 +818,67 @@ def tool_add_to_queue(source_iri=None, reference=None, reason="", priority="norm
     return {"success": True, "entry": entry, "priority": priority}
 
 
+# How strongly proximity to an active research-cluster frontier boosts reading priority.
+# A node directly used by a frontier hypothesis (1 hop, proximity 0.5) gains ~1.0 — about
+# two extra inbound refs' worth; a frontier hypothesis itself (proximity 1.0) gains the full weight.
+CLUSTER_PROXIMITY_WEIGHT = 2.0
+
+
+def _active_frontier_anchors(nodes) -> set:
+    """IRIs of the hypotheses on the frontier of *active* research-clusters — the targets
+    reading should gravitate toward. Resolves each cluster's frontier_hypotheses slugs to IRIs."""
+    anchors = set()
+    for node in nodes:
+        if node.get("node_type") != "research-cluster":
+            continue
+        fm = node.get("frontmatter", {})
+        if fm.get("status") != "active":
+            continue
+        for h_slug in fm.get("frontier_hypotheses", []) or []:
+            hp = find_node_path(h_slug)
+            if hp:
+                hn = load_node(hp)
+                if hn:
+                    anchors.add(hn["iri"])
+    return anchors
+
+
+def _cluster_proximity_map(G, anchors) -> dict:
+    """Map {iri: 1/(1+hops)} where hops is the undirected distance to the nearest frontier
+    anchor over DELIBERATE typed edges only (raw `related` wikilinks excluded, so the signal
+    reflects cluster/hypothesis/concept structure rather than incidental co-mention).
+    Nodes unreachable from any anchor are absent (treated as proximity 0)."""
+    if not anchors:
+        return {}
+    UG = nx.Graph()
+    UG.add_nodes_from(G.nodes())
+    for u, v, d in G.edges(data=True):
+        if d.get("edge_type") != "related":
+            UG.add_edge(u, v)
+    present = [a for a in anchors if a in UG]
+    if not present:
+        return {}
+    # Virtual super-source linked to every anchor → one BFS gives multi-source distance.
+    SUPER = "__frontier_super__"
+    UG.add_node(SUPER)
+    for a in present:
+        UG.add_edge(SUPER, a)
+    lengths = nx.single_source_shortest_path_length(UG, SUPER)
+    # distance from SUPER is 1 + hops-to-nearest-anchor; an anchor sits at distance 1.
+    return {iri: 1.0 / (1.0 + (d - 1)) for iri, d in lengths.items() if iri != SUPER}
+
+
 def tool_get_concept_frontier() -> list:
-    """Return concepts that need attention most urgently."""
+    """Return concepts that need attention most urgently. Priority blends centrality
+    (inbound refs), coverage/understanding gaps, and proximity to the frontier hypotheses of
+    active research-clusters — so reading is driven by the research agenda, not just citation
+    count. The cluster-proximity term is 0 until a cluster's frontier_hypotheses are set and its
+    membership edges are materialized (see add_connections)."""
     nodes = load_all_nodes()
     G = get_graph()
+
+    anchors = _active_frontier_anchors(nodes)
+    proximity = _cluster_proximity_map(G, anchors)
 
     results = []
     for node in nodes:
@@ -831,9 +888,15 @@ def tool_get_concept_frontier() -> list:
 
         # Count inbound edges as proxy for centrality
         inbound_count = G.in_degree(iri) if iri in G else 0
+        cluster_proximity = proximity.get(iri, 0.0)
 
-        # Simple priority score: low coverage + high centrality = high priority
-        priority_score = (inbound_count * 0.5) + ((5 - coverage) * 0.3) + ((5 - understanding) * 0.2)
+        # Priority: centrality + coverage/understanding gaps + cluster-frontier proximity
+        priority_score = (
+            (inbound_count * 0.5)
+            + ((5 - coverage) * 0.3)
+            + ((5 - understanding) * 0.2)
+            + (cluster_proximity * CLUSTER_PROXIMITY_WEIGHT)
+        )
 
         results.append({
             "iri": iri,
@@ -841,7 +904,8 @@ def tool_get_concept_frontier() -> list:
             "coverage": coverage,
             "understanding": understanding,
             "inbound_refs": inbound_count,
-            "priority_score": priority_score
+            "cluster_proximity": round(cluster_proximity, 3),
+            "priority_score": round(priority_score, 3),
         })
 
     return sorted(results, key=lambda x: x["priority_score"], reverse=True)[:20]
@@ -1674,6 +1738,231 @@ def tool_create_node_stub(
             "external": external_suggestions,
         } if needs_source else {},
         "review_url": f"https://github.com/choct155/pkis/blob/main/wiki/staging/{staged_path.name}",
+    }
+
+
+def tool_create_hypothesis(
+    title: str,
+    cluster: str = "",
+    role: str = "direct-test",
+    domain: list = None,
+    tags: list = None,
+    formal_statement: str = "",
+    motivation: str = "",
+    current_evidence: str = "",
+    open_questions: str = "",
+    dependent_nodes: list = None,
+    aliases: list = None,
+    slug: str = "",
+) -> dict:
+    """Stage a hypothesis node — the one knowledge type create_node_stub does not cover.
+    Hypotheses are research-program artifacts that belong to a research-cluster; this stages
+    one with the standard hypothesis frontmatter + body sections (Formal Statement, Motivation,
+    Current Evidence, Open Questions, Connections). Promote to the live graph via
+    commit_staged_node (lands in wiki/hypotheses/)."""
+    if not title:
+        raise ValueError("title is required")
+
+    domain = domain or []
+    tags = tags or []
+    aliases = aliases or []
+    dependent_nodes = dependent_nodes or []
+
+    # ---- Slug generation (same convention as create_node_stub) ----
+    base = slug or title
+    base_slug = re.sub(r'[^a-z0-9]+', '-', base.lower()).strip('-')[:55] or "hypothesis-stub"
+    slug = base_slug
+    counter = 1
+    while (STAGING_DIR / f"{slug}.md").exists() or find_node_path(slug):
+        slug = f"{base_slug}-{counter}"
+        counter += 1
+
+    # ---- Normalize cluster ref to a plain slug ----
+    cluster_slug = ""
+    if cluster:
+        if cluster.startswith("pkis:"):
+            _, _nt, cluster_slug = parse_iri(cluster)
+        else:
+            cluster_slug = cluster.strip("[]")
+
+    staged_id = str(uuid.uuid4())
+    now = datetime.now(timezone.utc)
+    ts_str = now.strftime("%Y-%m-%dT%H:%M:%SZ")
+    date_str = now.strftime("%Y-%m-%d")
+
+    fm = {
+        "staged_at": ts_str,
+        "staged_by": "mcp-create-hypothesis",
+        "staged_id": staged_id,
+        "review_status": "pending",
+        "proposed_edges": [],
+        "id": f"pkis:hypothesis:{slug}",
+        "aliases": aliases,
+        "title": title,
+        "knowledge_type": "hypothesis",
+        "domain": domain,
+        "tags": tags,
+        "status": "open",
+        "origin": "research-program",
+        "research_program_cluster": cluster_slug or None,
+        "research_program_role": role,
+        "iks_link": None,
+        "cluster_membership": [cluster_slug] if cluster_slug else [],
+        "dependent_nodes": dependent_nodes,
+        "evidence_nodes": [],
+        "date_created": date_str,
+        "date_updated": date_str,
+    }
+
+    conn_line = (
+        f"- [[{cluster_slug}]] — belongs-to: constituent hypothesis of the {cluster_slug} cluster"
+        if cluster_slug else "[To be populated during integration]"
+    )
+    body = f"""## Formal Statement
+{formal_statement or '[To be filled]'}
+
+## Motivation
+{motivation or '[To be filled]'}
+
+## Current Evidence
+{current_evidence or '[To be filled]'}
+
+## Open Questions
+{open_questions or '[To be filled]'}
+
+## Connections
+{conn_line}
+"""
+
+    STAGING_DIR.mkdir(parents=True, exist_ok=True)
+    staged_path = STAGING_DIR / f"{slug}.md"
+    staged_path.write_text(f"---\n{yaml.dump(fm, default_flow_style=False, allow_unicode=True)}---\n\n{body}")
+
+    log_path = WIKI_DIR / "log.md"
+    with open(log_path, "a") as lf:
+        lf.write(
+            f"\n## [{date_str}] staged | hypothesis\n"
+            f"- Staged: {slug} (id: {staged_id})\n"
+            f"- Title: {title}\n"
+            f"- Cluster: {cluster_slug or '(none)'}\n"
+        )
+
+    return {
+        "staged_id": staged_id,
+        "staged_at": ts_str,
+        "slug": slug,
+        "iri": f"pkis:hypothesis:{slug}",
+        "knowledge_type": "hypothesis",
+        "cluster": cluster_slug,
+        "review_url": f"https://github.com/choct155/pkis/blob/main/wiki/staging/{staged_path.name}",
+    }
+
+
+def _replace_section(content: str, section_title: str, new_body: str) -> str:
+    """Replace the body under a `## section_title` heading (up to the next `## ` or EOF).
+    Append the section if it does not already exist."""
+    pattern = re.compile(
+        r'(^##\s+' + re.escape(section_title) + r'\s*\n)(.*?)(?=^##\s|\Z)',
+        re.DOTALL | re.MULTILINE,
+    )
+    new_content, n = pattern.subn(
+        lambda m: m.group(1) + new_body.rstrip() + "\n\n", content
+    )
+    if n == 0:
+        new_content = content.rstrip() + f"\n\n## {section_title}\n{new_body.rstrip()}\n"
+    return new_content
+
+
+def tool_edit_node(
+    iri: str = "",
+    slug: str = "",
+    frontmatter_updates: dict = None,
+    section_updates: dict = None,
+    commit_message: str = "",
+) -> dict:
+    """Edit a LIVE node's frontmatter fields and/or named body sections, then commit + push.
+    - frontmatter_updates: {field: value} merged into frontmatter (a null value deletes the field).
+    - section_updates: {"Section Title": "new markdown body"} — replaces the body under that
+      `## Section Title` heading, or appends the section if absent.
+    Covers what add_connections cannot (e.g. a cluster's frontier_hypotheses + Current Frontier).
+    date_updated is bumped automatically."""
+    frontmatter_updates = frontmatter_updates or {}
+    section_updates = section_updates or {}
+    if not frontmatter_updates and not section_updates:
+        raise ValueError("nothing to edit: provide frontmatter_updates and/or section_updates")
+
+    path = None
+    if iri:
+        path = find_node_path_by_iri(iri)
+    if not path and slug:
+        path = find_node_path(slug)
+    if not path:
+        raise ValueError(f"node not found: {iri or slug}")
+
+    post = frontmatter.load(str(path))
+    fm = dict(post.metadata)
+    content = post.content
+
+    for k, v in frontmatter_updates.items():
+        if v is None:
+            fm.pop(k, None)
+        else:
+            fm[k] = v
+
+    for title, body_text in section_updates.items():
+        content = _replace_section(content, title, body_text)
+
+    fm["date_updated"] = datetime.now(timezone.utc).strftime("%Y-%m-%d")
+
+    new_post = frontmatter.Post(content, **fm)
+    path.write_text(frontmatter.dumps(new_post))
+
+    # Invalidate caches so the next read/graph reflects the edit
+    global _node_cache, _graph
+    _node_cache = {}
+    _graph = None
+
+    iri_final = fm.get("id") or iri or iri_from_slug(path.parent.name, path.stem)
+    rel = path.relative_to(WIKI_DIR)
+
+    log_path = WIKI_DIR / "log.md"
+    try:
+        with open(log_path, "a") as lf:
+            lf.write(
+                f"\n## [{datetime.now(timezone.utc).strftime('%Y-%m-%d')}] edit | edit_node\n"
+                f"- {iri_final}: fields={list(frontmatter_updates)} sections={list(section_updates)}\n"
+            )
+    except Exception:
+        pass
+
+    git_sha, git_pushed = "", False
+    try:
+        repo_dir = str(REPO_DIR)
+        subprocess.run(["git", "-C", repo_dir, "add", str(path), str(log_path)],
+                       check=True, capture_output=True)
+        msg = commit_message or f"[mcp-edit] {iri_final}"
+        result = subprocess.run(["git", "-C", repo_dir, "commit", "-m", msg],
+                                check=True, capture_output=True, text=True)
+        m = re.search(r'\[.+? ([a-f0-9]{7,})\]', result.stdout)
+        git_sha = m.group(1) if m else result.stdout.strip()[:12]
+        try:
+            subprocess.run(["git", "-C", repo_dir, "push"], check=True,
+                           capture_output=True, timeout=30)
+            git_pushed = True
+        except (subprocess.CalledProcessError, subprocess.TimeoutExpired) as pe:
+            logger.warning(f"edit_node push failed (local commit retained): {pe}")
+    except subprocess.CalledProcessError as e:
+        logger.error(f"edit_node commit failed: {e.stderr}")
+
+    return {
+        "status": "edited",
+        "iri": iri_final,
+        "path": str(rel),
+        "frontmatter_updated": list(frontmatter_updates),
+        "sections_updated": list(section_updates),
+        "git_commit": git_sha,
+        "git_pushed": git_pushed,
+        "url": f"https://github.com/choct155/pkis/blob/main/wiki/{rel}",
     }
 
 
@@ -4006,6 +4295,42 @@ def _get_tools_list():
             }
         },
         {
+            "name": "create_hypothesis",
+            "description": "Stage a hypothesis node — the research-program knowledge type create_node_stub does not cover. Creates standard hypothesis frontmatter (status, research_program_cluster/role, cluster_membership, dependent_nodes) plus body sections (Formal Statement, Motivation, Current Evidence, Open Questions, Connections). Promote with commit_staged_node; lands in wiki/hypotheses/.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "title": {"type": "string"},
+                    "cluster": {"type": "string", "description": "Research-cluster slug or IRI this hypothesis belongs to (e.g. intensional-grounding)"},
+                    "role": {"type": "string", "description": "research_program_role, e.g. direct-test, boundary-condition, generalization-test, scaling-foil", "default": "direct-test"},
+                    "domain": {"type": "array", "items": {"type": "string"}},
+                    "tags": {"type": "array", "items": {"type": "string"}},
+                    "formal_statement": {"type": "string", "description": "Body for the Formal Statement section"},
+                    "motivation": {"type": "string"},
+                    "current_evidence": {"type": "string"},
+                    "open_questions": {"type": "string"},
+                    "dependent_nodes": {"type": "array", "items": {"type": "object"}, "description": "List of {node, node_type, rationale} dependency descriptors"},
+                    "aliases": {"type": "array", "items": {"type": "string"}},
+                    "slug": {"type": "string", "description": "Optional explicit slug; derived from title if omitted"}
+                },
+                "required": ["title"]
+            }
+        },
+        {
+            "name": "edit_node",
+            "description": "Edit a LIVE node's frontmatter fields and/or named body sections, then commit + push. frontmatter_updates merges {field: value} into frontmatter (null value deletes a field); section_updates replaces the body under each `## Section Title` (or appends the section if absent). Covers what add_connections cannot — e.g. setting a cluster's frontier_hypotheses and rewriting its Current Frontier. date_updated is bumped automatically.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "iri": {"type": "string", "description": "IRI of the node to edit (preferred)"},
+                    "slug": {"type": "string", "description": "Slug of the node to edit (used if iri omitted)"},
+                    "frontmatter_updates": {"type": "object", "description": "{field: value} merged into frontmatter; a null value deletes the field"},
+                    "section_updates": {"type": "object", "description": "{\"Section Title\": \"new markdown body\"} replacing that section's body (appended if absent)"},
+                    "commit_message": {"type": "string", "description": "Optional git commit message"}
+                }
+            }
+        },
+        {
             "name": "add_connections",
             "description": "Add typed, graph-visible edges between existing live nodes in one batch + a single git commit. Each edge {subject, target, predicate, note}: the predicate is written into the SUBJECT node's frontmatter (build_graph emits a weighted typed edge subject->target) and a line is appended to its ## Connections. Idempotent per (subject, predicate, target). Predicate must be one of: prerequisite-of, uses, specializes, generalizes, extends, applies, instantiates, contrasts-with.",
             "inputSchema": {
@@ -4302,6 +4627,27 @@ def dispatch_tool(tool_name: str, params: dict, req) -> any:
             sources=p.get("sources"),
             slug=p.get("slug", ""),
             suggest_sources=p.get("suggest_sources", True),
+        ),
+        "create_hypothesis": lambda p: tool_create_hypothesis(
+            title=p["title"],
+            cluster=p.get("cluster", ""),
+            role=p.get("role", "direct-test"),
+            domain=p.get("domain"),
+            tags=p.get("tags"),
+            formal_statement=p.get("formal_statement", ""),
+            motivation=p.get("motivation", ""),
+            current_evidence=p.get("current_evidence", ""),
+            open_questions=p.get("open_questions", ""),
+            dependent_nodes=p.get("dependent_nodes"),
+            aliases=p.get("aliases"),
+            slug=p.get("slug", ""),
+        ),
+        "edit_node": lambda p: tool_edit_node(
+            iri=p.get("iri", ""),
+            slug=p.get("slug", ""),
+            frontmatter_updates=p.get("frontmatter_updates"),
+            section_updates=p.get("section_updates"),
+            commit_message=p.get("commit_message", ""),
         ),
         "add_connections": lambda p: tool_add_connections(
             edges=p["edges"],
