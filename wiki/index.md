@@ -550,6 +550,7 @@
 - [[evaluation-infrastructure]] — Evaluation Infrastructure: domain-specific benchmark construction for ontology-augmented NED/NER and composite result quality (knowledge-representation) (2026-05-30)
 
 ## Hypotheses
+- [[domain-specific-benchmark-gap]] — Standard NLP Benchmarks Do Not Adequately Evaluate Ontology-Augmented NED/NER and Composite Result Quality (knowledge-representation, deep-learning) (2026-06-01)
 - [[intensional-grounding-ned-accuracy]] — Token-to-Ontological-Class Distance Predicts NED/NER Accuracy (knowledge-representation, deep-learning) (2026-05-30)
 - [[intensional-grounding-vs-scale]] — Ontological Type Constraints Reduce Entity Resolution Errors More Than Equivalent Compute Scaling (knowledge-representation, deep-learning) (2026-05-30)
 - [[scaling-foil-null-hypothesis]] — Scaling Foil — Can Sufficiently Large LLMs Subsume Each Cluster's Task Without Ontological Scaffolding? (knowledge-representation, deep-learning, symbolic-subsymbolic) (2026-05-30)

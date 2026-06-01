@@ -452,3 +452,12 @@
 ## [2026-06-01] committed | concept
 - Committed: decision-theory-foundations → concepts/decision-theory-foundations.md
 - IRI: pkis:concept:decision-theory-foundations
+
+## [2026-06-01] staged | hypothesis
+- Staged: domain-specific-benchmark-gap (id: ab76c42e-fe2c-4862-9caf-26beb4204b9f)
+- Title: Standard NLP Benchmarks Do Not Adequately Evaluate Ontology-Augmented NED/NER and Composite Result Quality
+- Cluster: evaluation-infrastructure
+
+## [2026-06-01] committed | hypothesis
+- Committed: domain-specific-benchmark-gap → hypotheses/domain-specific-benchmark-gap.md
+- IRI: pkis:hypothesis:domain-specific-benchmark-gap
