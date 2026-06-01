@@ -211,3 +211,11 @@ __marimo__/
 
 # Claude Code local session files
 .claude/
+
+# Node / JS viewer dependencies (never track installed deps — platform-specific churn)
+node_modules/
+
+# Backup files
+*.bak
+*.bak.*
+app.py.bak.*
