@@ -543,3 +543,12 @@
 ## [2026-06-01] committed | hypothesis
 - Committed: semantic-validation-beyond-syntactic → hypotheses/semantic-validation-beyond-syntactic.md
 - IRI: pkis:hypothesis:semantic-validation-beyond-syntactic
+
+## [2026-06-01] staged | hypothesis
+- Staged: probabilistic-truth-discovery-calibration (id: eafaf3c5-97b6-4714-b05b-88f92936a40c)
+- Title: Probabilistic Truth Discovery Outperforms Heuristic Source Credibility Weights on Calibration
+- Cluster: structured-validation-truth-discovery
+
+## [2026-06-01] committed | hypothesis
+- Committed: probabilistic-truth-discovery-calibration → hypotheses/probabilistic-truth-discovery-calibration.md
+- IRI: pkis:hypothesis:probabilistic-truth-discovery-calibration

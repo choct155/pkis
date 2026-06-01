@@ -550,6 +550,7 @@
 - [[evaluation-infrastructure]] — Evaluation Infrastructure: domain-specific benchmark construction for ontology-augmented NED/NER and composite result quality (knowledge-representation) (2026-05-30)
 
 ## Hypotheses
+- [[probabilistic-truth-discovery-calibration]] — Probabilistic Truth Discovery Outperforms Heuristic Source Credibility Weights on Calibration (bayesian-stats) (2026-06-01)
 - [[semantic-validation-beyond-syntactic]] — Ontological Property Constraints Detect Semantically Invalid Content That Syntactic Validation Misses (knowledge-representation) (2026-06-01)
 - [[source-credibility-as-latent-variable]] — Treating Source Credibility as a Latent Variable Produces Better-Calibrated Resolution Than Static Weights (bayesian-stats) (2026-06-01)
 - [[ontological-provenance-enables-conflict-resolution]] — Ontological Provenance Enables More Accurate Cross-Source Conflict Resolution Than Heuristic Credibility Weighting (knowledge-representation, bayesian-stats) (2026-06-01)
