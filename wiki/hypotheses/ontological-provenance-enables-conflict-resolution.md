@@ -29,6 +29,10 @@ tags:
 - credibility
 title: Ontological Provenance Enables More Accurate Cross-Source Conflict Resolution
   Than Heuristic Credibility Weighting
+uses:
+- bayesian-inference
+- formal-ontology
+- calibration
 ---
 
 ## Formal Statement
@@ -44,4 +48,7 @@ Composite responses draw from sources of varying reliability; ontological proven
 How to represent provenance at component granularity? How to evaluate resolution accuracy without a gold composite?
 
 ## Connections
+- [[calibration]] — uses: resolution quality is judged by calibration
+- [[formal-ontology]] — uses: provenance relationships are ontological
+- [[bayesian-inference]] — uses: resolution is Bayesian inference over the true value
 - [[composite-credibility]] — belongs-to: constituent hypothesis of the composite-credibility cluster

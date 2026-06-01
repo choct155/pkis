@@ -27,6 +27,10 @@ tags:
 - calibration
 title: Treating Source Credibility as a Latent Variable Produces Better-Calibrated
   Resolution Than Static Weights
+uses:
+- bayesian-inference
+- probabilistic-graphical-models
+- calibration
 ---
 
 ## Formal Statement
@@ -42,4 +46,7 @@ Static weights cannot adapt to per-claim reliability; a latent-variable formulat
 Identifiability of credibility vs. truth when both are latent; cold-start for new sources.
 
 ## Connections
+- [[calibration]] — uses: the comparison criterion is calibration
+- [[probabilistic-graphical-models]] — uses: latent-variable credibility model is a PGM
+- [[bayesian-inference]] — uses: latent credibility estimated via Bayesian inference
 - [[composite-credibility]] — belongs-to: constituent hypothesis of the composite-credibility cluster

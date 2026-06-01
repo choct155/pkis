@@ -1,22 +1,33 @@
 ---
-id: "pkis:research-cluster:composite-credibility"
 aliases: []
-title: "Composite Credibility"
-knowledge_type: research-cluster
-domain: [bayesian-stats, knowledge-representation]
-tags: [provenance, source-credibility, conflict-resolution, confidence-calibration, auditability]
+cross_cluster_dependencies:
+- structured-validation-truth-discovery
+- retrieval-inference-tradeoff
+- evaluation-infrastructure
 date_created: 2026-05-30
 date_updated: 2026-05-30
-status: active
-origin: research-program
-hypotheses:
-  - ontological-provenance-enables-conflict-resolution
-  - source-credibility-as-latent-variable
-cross_cluster_dependencies:
-  - structured-validation-truth-discovery
-  - retrieval-inference-tradeoff
-  - evaluation-infrastructure
+domain:
+- bayesian-stats
+- knowledge-representation
 frontier_hypotheses: []
+hypotheses:
+- ontological-provenance-enables-conflict-resolution
+- source-credibility-as-latent-variable
+id: pkis:research-cluster:composite-credibility
+knowledge_type: research-cluster
+origin: research-program
+status: active
+tags:
+- provenance
+- source-credibility
+- conflict-resolution
+- confidence-calibration
+- auditability
+title: Composite Credibility
+uses:
+- bayesian-inference
+- probabilistic-graphical-models
+- calibration
 ---
 
 ## Thesis
@@ -36,6 +47,9 @@ Stage 8 (Result Construction) primary cluster. Strong overlap with Structured Va
 To be computed by Maintenance agent.
 
 ## Connections
+- [[calibration]] — uses: evaluating resolution quality requires calibration assessment
+- [[probabilistic-graphical-models]] — uses: the truth-discovery literature is rooted in PGMs
+- [[bayesian-inference]] — uses: conflict resolution is formalized as Bayesian inference over the true value
 - [[bayesian-inference]] — uses: conflict resolution is formalized as Bayesian inference over the true value
 - [[probabilistic-graphical-models]] — uses: the truth discovery literature is rooted in PGMs
 - [[calibration]] — uses: evaluating resolution quality requires calibration assessment
