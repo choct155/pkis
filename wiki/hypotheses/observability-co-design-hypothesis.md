@@ -26,6 +26,8 @@ tags:
 - experimental-design
 title: Co-Designing Observability With the Experimental Program Yields More Testable
   Hypotheses Than Retrofitting
+uses:
+- causal-analysis
 ---
 
 ## Formal Statement
@@ -41,4 +43,5 @@ Measurements that don't exist at inference time cannot be reconstructed later; t
 What is the minimal instrumentation set that covers all clusters' measurement needs without prohibitive overhead?
 
 ## Connections
+- [[causal-analysis]] — uses: instrumentation must capture what causal attribution requires
 - [[research-instrumentation]] — belongs-to: constituent hypothesis of the research-instrumentation cluster

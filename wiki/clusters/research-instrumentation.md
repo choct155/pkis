@@ -1,18 +1,25 @@
 ---
-id: "pkis:research-cluster:research-instrumentation"
 aliases: []
-title: "Research Instrumentation"
-knowledge_type: research-cluster
-domain: [knowledge-representation]
-tags: [observability, experimental-design, measurement, telemetry]
+cross_cluster_dependencies: []
 date_created: 2026-05-30
 date_updated: 2026-05-30
-status: active
-origin: research-program
-hypotheses:
-  - observability-co-design-hypothesis
-cross_cluster_dependencies: []
+domain:
+- knowledge-representation
 frontier_hypotheses: []
+hypotheses:
+- observability-co-design-hypothesis
+id: pkis:research-cluster:research-instrumentation
+knowledge_type: research-cluster
+origin: research-program
+status: active
+tags:
+- observability
+- experimental-design
+- measurement
+- telemetry
+title: Research Instrumentation
+uses:
+- causal-analysis
 ---
 
 ## Thesis
@@ -31,4 +38,5 @@ Cross-cutting. A prerequisite for all experimental work. The observability requi
 To be computed by Maintenance agent.
 
 ## Connections
+- [[causal-analysis]] — uses: valid experimental inference requires understanding confounding and identification
 - [[causal-analysis]] — uses: valid experimental inference requires understanding confounding and identification
