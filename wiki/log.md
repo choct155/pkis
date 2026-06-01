@@ -645,3 +645,14 @@
 ## [2026-06-01] committed | hypothesis
 - Committed: cross-store-referential-alignment → hypotheses/cross-store-referential-alignment.md
 - IRI: pkis:hypothesis:cross-store-referential-alignment
+
+## [2026-06-01] edges | add_connections
+- pkis:research-cluster:compositional-query-grounding —uses→ knowledge-graph-traversal
+- pkis:research-cluster:compositional-query-grounding —uses→ bayesian-inference
+- pkis:hypothesis:implicit-entity-expansion-accuracy —uses→ knowledge-graph-traversal
+- pkis:hypothesis:implicit-entity-expansion-accuracy —uses→ formal-ontology
+- pkis:hypothesis:cross-store-referential-alignment —uses→ knowledge-graph-traversal
+- pkis:hypothesis:cross-store-referential-alignment —uses→ formal-ontology
+
+## [2026-06-01] edit | edit_node
+- pkis:research-cluster:compositional-query-grounding: fields=['frontier_hypotheses'] sections=['Current Frontier']

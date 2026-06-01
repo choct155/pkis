@@ -6,11 +6,12 @@ cross_cluster_dependencies:
 - parsed-intent-calibration
 - evaluation-infrastructure
 date_created: 2026-05-30
-date_updated: 2026-05-30
+date_updated: '2026-06-01'
 domain:
 - knowledge-representation
 - deep-learning
-frontier_hypotheses: []
+frontier_hypotheses:
+- implicit-entity-expansion-accuracy
 hypotheses:
 - implicit-entity-expansion-accuracy
 - cross-store-referential-alignment
@@ -43,7 +44,7 @@ Spans the most stages of the value chain (6, 7, 8) and has the most cross-cluste
 - **cross-store-referential-alignment** — Ontological backbone enables cross-store entity alignment that reduces referential errors
 
 ## Current Frontier
-To be computed by Maintenance agent.
+Anchored to `knowledge-graph-traversal` (sourced to Think-on-Graph) and `bayesian-inference`. Lead hypothesis **`implicit-entity-expansion-accuracy`**: ontological inference beats stochastic generation for implicit entity/field expansion. Supporting: **`cross-store-referential-alignment`** (an ontological backbone reduces cross-store referential errors). Coverage gap: `bayesian-inference` is a sourceless stub.
 
 ## Connections
 - [[bayesian-inference]] — uses: Bayesian framing of the query intent posterior
