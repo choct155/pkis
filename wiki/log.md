@@ -432,3 +432,7 @@
 ## [2026-06-01] committed | technique
 - Committed: concept-bottleneck-models → techniques/concept-bottleneck-models.md
 - IRI: pkis:technique:concept-bottleneck-models
+
+## [2026-06-01] committed | concept
+- Committed: distribution-shift → concepts/distribution-shift.md
+- IRI: pkis:concept:distribution-shift
