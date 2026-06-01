@@ -627,3 +627,12 @@
 
 ## [2026-06-01] edit | edit_node
 - pkis:research-cluster:retrieval-inference-tradeoff: fields=['frontier_hypotheses'] sections=['Current Frontier']
+
+## [2026-06-01] staged | hypothesis
+- Staged: implicit-entity-expansion-accuracy (id: b66eeaf5-6993-4a73-af63-7c2367485586)
+- Title: Ontological Inference Improves Implicit Entity Expansion Accuracy Over Stochastic Generation
+- Cluster: compositional-query-grounding
+
+## [2026-06-01] committed | hypothesis
+- Committed: implicit-entity-expansion-accuracy → hypotheses/implicit-entity-expansion-accuracy.md
+- IRI: pkis:hypothesis:implicit-entity-expansion-accuracy
