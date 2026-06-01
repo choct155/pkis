@@ -665,3 +665,12 @@
 ## [2026-06-01] committed | hypothesis
 - Committed: ontological-supervision-improves-embeddings → hypotheses/ontological-supervision-improves-embeddings.md
 - IRI: pkis:hypothesis:ontological-supervision-improves-embeddings
+
+## [2026-06-01] staged | hypothesis
+- Staged: architectural-boundary-hypothesis (id: 95407b40-7db4-4389-8475-8750de0c58fe)
+- Title: The Property-Graph / Relational / Vector-Index Trichotomy Maps Predictably to Query-Pattern Types
+- Cluster: embedding-ontology-alignment
+
+## [2026-06-01] committed | hypothesis
+- Committed: architectural-boundary-hypothesis → hypotheses/architectural-boundary-hypothesis.md
+- IRI: pkis:hypothesis:architectural-boundary-hypothesis
