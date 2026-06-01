@@ -605,3 +605,12 @@
 ## [2026-06-01] committed | hypothesis
 - Committed: retrieval-dominates-inference-high-stakes-queries → hypotheses/retrieval-dominates-inference-high-stakes-queries.md
 - IRI: pkis:hypothesis:retrieval-dominates-inference-high-stakes-queries
+
+## [2026-06-01] staged | hypothesis
+- Staged: routing-classifier-hypothesis (id: 1422a52d-1c06-4c1b-a398-71a4d6e35467)
+- Title: A Lightweight Query Routing Classifier Can Reliably Distinguish Retrieval vs Inference vs Hybrid Paths
+- Cluster: retrieval-inference-tradeoff
+
+## [2026-06-01] committed | hypothesis
+- Committed: routing-classifier-hypothesis → hypotheses/routing-classifier-hypothesis.md
+- IRI: pkis:hypothesis:routing-classifier-hypothesis

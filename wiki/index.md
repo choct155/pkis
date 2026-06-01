@@ -550,6 +550,7 @@
 - [[evaluation-infrastructure]] — Evaluation Infrastructure: domain-specific benchmark construction for ontology-augmented NED/NER and composite result quality (knowledge-representation) (2026-05-30)
 
 ## Hypotheses
+- [[routing-classifier-hypothesis]] — A Lightweight Query Routing Classifier Can Reliably Distinguish Retrieval vs Inference vs Hybrid Paths (deep-learning, bayesian-stats) (2026-06-01)
 - [[retrieval-dominates-inference-high-stakes-queries]] — Ontology-Backed Retrieval Dominates Model Inference on Cost x Error Rate for a Well-Defined Query Class (knowledge-representation, bayesian-stats) (2026-06-01)
 - [[uncertainty-propagation-through-retrieval]] — Propagating Parsed-Intent Uncertainty Through Retrieval Improves End-to-End Response Calibration (bayesian-stats) (2026-06-01)
 - [[distributional-intent-parsing-calibration]] — Distributional Query Parsing With Ontological Type Constraints Is Better Calibrated Than Point-Estimate Parsing (knowledge-representation, bayesian-stats) (2026-06-01)
