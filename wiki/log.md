@@ -461,3 +461,10 @@
 ## [2026-06-01] committed | hypothesis
 - Committed: domain-specific-benchmark-gap → hypotheses/domain-specific-benchmark-gap.md
 - IRI: pkis:hypothesis:domain-specific-benchmark-gap
+
+## [2026-06-01] edges | add_connections
+- pkis:research-cluster:evaluation-infrastructure —uses→ causal-analysis
+- pkis:hypothesis:domain-specific-benchmark-gap —uses→ causal-analysis
+
+## [2026-06-01] edit | edit_node
+- pkis:research-cluster:evaluation-infrastructure: fields=['frontier_hypotheses'] sections=['Current Frontier']

@@ -2,10 +2,11 @@
 aliases: []
 cross_cluster_dependencies: []
 date_created: 2026-05-30
-date_updated: 2026-05-30
+date_updated: '2026-06-01'
 domain:
 - knowledge-representation
-frontier_hypotheses: []
+frontier_hypotheses:
+- domain-specific-benchmark-gap
 hypotheses:
 - domain-specific-benchmark-gap
 id: pkis:research-cluster:evaluation-infrastructure
@@ -35,7 +36,7 @@ Cross-cutting. A prerequisite for all experimental work. Building the benchmark 
 - **domain-specific-benchmark-gap** — Standard NLP benchmarks do not adequately evaluate ontology-augmented NED/NER and composite result quality in financial data manufacturing
 
 ## Current Frontier
-To be computed by Maintenance agent.
+Anchored to `causal-analysis` (experimental-design foundation). Lead (and only) hypothesis **`domain-specific-benchmark-gap`**: standard NLP benchmarks don't evaluate ontology-augmented NED/NER or composite-result quality for financial data manufacturing, so building evaluation methodology is a prerequisite for the whole program. This cluster is a dependency of every other cluster, so it leads the program. Coverage gap: `causal-analysis` is a sourceless stub (needs a canonical source).
 
 ## Connections
 - [[causal-analysis]] — uses: valid experimental design requires understanding identification and confounding
