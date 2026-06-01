@@ -573,3 +573,12 @@
 ## [2026-06-01] committed | hypothesis
 - Committed: distributional-intent-parsing-calibration → hypotheses/distributional-intent-parsing-calibration.md
 - IRI: pkis:hypothesis:distributional-intent-parsing-calibration
+
+## [2026-06-01] staged | hypothesis
+- Staged: uncertainty-propagation-through-retrieval (id: d5853f2d-a127-4a5a-9ba7-7147944946eb)
+- Title: Propagating Parsed-Intent Uncertainty Through Retrieval Improves End-to-End Response Calibration
+- Cluster: parsed-intent-calibration
+
+## [2026-06-01] committed | hypothesis
+- Committed: uncertainty-propagation-through-retrieval → hypotheses/uncertainty-propagation-through-retrieval.md
+- IRI: pkis:hypothesis:uncertainty-propagation-through-retrieval

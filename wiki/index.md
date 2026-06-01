@@ -550,6 +550,7 @@
 - [[evaluation-infrastructure]] — Evaluation Infrastructure: domain-specific benchmark construction for ontology-augmented NED/NER and composite result quality (knowledge-representation) (2026-05-30)
 
 ## Hypotheses
+- [[uncertainty-propagation-through-retrieval]] — Propagating Parsed-Intent Uncertainty Through Retrieval Improves End-to-End Response Calibration (bayesian-stats) (2026-06-01)
 - [[distributional-intent-parsing-calibration]] — Distributional Query Parsing With Ontological Type Constraints Is Better Calibrated Than Point-Estimate Parsing (knowledge-representation, bayesian-stats) (2026-06-01)
 - [[probabilistic-truth-discovery-calibration]] — Probabilistic Truth Discovery Outperforms Heuristic Source Credibility Weights on Calibration (bayesian-stats) (2026-06-01)
 - [[semantic-validation-beyond-syntactic]] — Ontological Property Constraints Detect Semantically Invalid Content That Syntactic Validation Misses (knowledge-representation) (2026-06-01)
