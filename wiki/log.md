@@ -520,3 +520,17 @@
 ## [2026-06-01] committed | hypothesis
 - Committed: source-credibility-as-latent-variable → hypotheses/source-credibility-as-latent-variable.md
 - IRI: pkis:hypothesis:source-credibility-as-latent-variable
+
+## [2026-06-01] edges | add_connections
+- pkis:research-cluster:composite-credibility —uses→ bayesian-inference
+- pkis:research-cluster:composite-credibility —uses→ probabilistic-graphical-models
+- pkis:research-cluster:composite-credibility —uses→ calibration
+- pkis:hypothesis:ontological-provenance-enables-conflict-resolution —uses→ bayesian-inference
+- pkis:hypothesis:ontological-provenance-enables-conflict-resolution —uses→ formal-ontology
+- pkis:hypothesis:ontological-provenance-enables-conflict-resolution —uses→ calibration
+- pkis:hypothesis:source-credibility-as-latent-variable —uses→ bayesian-inference
+- pkis:hypothesis:source-credibility-as-latent-variable —uses→ probabilistic-graphical-models
+- pkis:hypothesis:source-credibility-as-latent-variable —uses→ calibration
+
+## [2026-06-01] edit | edit_node
+- pkis:research-cluster:composite-credibility: fields=['frontier_hypotheses'] sections=['Current Frontier']

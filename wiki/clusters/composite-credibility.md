@@ -5,11 +5,12 @@ cross_cluster_dependencies:
 - retrieval-inference-tradeoff
 - evaluation-infrastructure
 date_created: 2026-05-30
-date_updated: 2026-05-30
+date_updated: '2026-06-01'
 domain:
 - bayesian-stats
 - knowledge-representation
-frontier_hypotheses: []
+frontier_hypotheses:
+- ontological-provenance-enables-conflict-resolution
 hypotheses:
 - ontological-provenance-enables-conflict-resolution
 - source-credibility-as-latent-variable
@@ -44,7 +45,7 @@ Stage 8 (Result Construction) primary cluster. Strong overlap with Structured Va
 - **source-credibility-as-latent-variable** — Treating source credibility as a latent variable estimated from agreement patterns produces better-calibrated resolution than static weights
 
 ## Current Frontier
-To be computed by Maintenance agent.
+Anchored to `bayesian-inference`, `probabilistic-graphical-models`, and `calibration`. Lead hypothesis **`ontological-provenance-enables-conflict-resolution`**: ontological provenance beats heuristic credibility weighting for cross-source conflict resolution. Supporting: **`source-credibility-as-latent-variable`** (credibility as a latent variable from agreement patterns → better calibration than static weights). Coverage gaps: `bayesian-inference`, `probabilistic-graphical-models`, `calibration` are sourceless stubs.
 
 ## Connections
 - [[calibration]] — uses: evaluating resolution quality requires calibration assessment
