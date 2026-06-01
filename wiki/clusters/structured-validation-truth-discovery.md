@@ -1,22 +1,31 @@
 ---
-id: "pkis:research-cluster:structured-validation-truth-discovery"
 aliases: []
-title: "Structured Validation & Truth Discovery"
-knowledge_type: research-cluster
-domain: [knowledge-representation, bayesian-stats]
-tags: [semantic-validation, truth-discovery, cross-source-reconciliation, probabilistic-graphical-models]
+cross_cluster_dependencies:
+- intensional-grounding
+- composite-credibility
+- evaluation-infrastructure
 date_created: 2026-05-30
 date_updated: 2026-05-30
-status: active
-origin: research-program
-hypotheses:
-  - semantic-validation-beyond-syntactic
-  - probabilistic-truth-discovery-calibration
-cross_cluster_dependencies:
-  - intensional-grounding
-  - composite-credibility
-  - evaluation-infrastructure
+domain:
+- knowledge-representation
+- bayesian-stats
 frontier_hypotheses: []
+hypotheses:
+- semantic-validation-beyond-syntactic
+- probabilistic-truth-discovery-calibration
+id: pkis:research-cluster:structured-validation-truth-discovery
+knowledge_type: research-cluster
+origin: research-program
+status: active
+tags:
+- semantic-validation
+- truth-discovery
+- cross-source-reconciliation
+- probabilistic-graphical-models
+title: Structured Validation & Truth Discovery
+uses:
+- bayesian-inference
+- probabilistic-graphical-models
 ---
 
 ## Thesis
@@ -36,5 +45,7 @@ Stage 3 (Validation & Enrichment) primary cluster. Has significant overlap with 
 To be computed by Maintenance agent.
 
 ## Connections
+- [[probabilistic-graphical-models]] — uses: the truth-discovery literature is rooted in PGMs
+- [[bayesian-inference]] — uses: truth discovery is a Bayesian latent variable estimation problem
 - [[bayesian-inference]] — uses: truth discovery is a Bayesian latent variable estimation problem
 - [[probabilistic-graphical-models]] — uses: the truth discovery literature is rooted in PGMs

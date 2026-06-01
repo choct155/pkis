@@ -27,6 +27,9 @@ tags:
 - property-constraints
 title: Ontological Property Constraints Detect Semantically Invalid Content That Syntactic
   Validation Misses
+uses:
+- formal-ontology
+- bayesian-inference
 ---
 
 ## Formal Statement
@@ -42,4 +45,6 @@ Syntactic validity does not imply semantic validity; ontology supplies the const
 Which constraint classes yield the most catch per authoring cost? False-positive rate on valid edge cases?
 
 ## Connections
+- [[bayesian-inference]] — uses: validation confidence is probabilistic
+- [[formal-ontology]] — uses: property constraints are ontological axioms
 - [[structured-validation-truth-discovery]] — belongs-to: constituent hypothesis of the structured-validation-truth-discovery cluster

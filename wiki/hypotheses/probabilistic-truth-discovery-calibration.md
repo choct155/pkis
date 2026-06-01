@@ -30,6 +30,10 @@ tags:
 - credibility
 title: Probabilistic Truth Discovery Outperforms Heuristic Source Credibility Weights
   on Calibration
+uses:
+- bayesian-inference
+- probabilistic-graphical-models
+- calibration
 ---
 
 ## Formal Statement
@@ -45,4 +49,7 @@ Truth discovery is a Bayesian latent-variable estimation problem; principled inf
 How does the advantage scale with source count and overlap? Sensitivity to prior misspecification.
 
 ## Connections
+- [[calibration]] — uses: the comparison criterion is calibration
+- [[probabilistic-graphical-models]] — uses: the truth-discovery model is a PGM
+- [[bayesian-inference]] — uses: truth discovery is Bayesian latent-variable estimation
 - [[structured-validation-truth-discovery]] — belongs-to: constituent hypothesis of the structured-validation-truth-discovery cluster
