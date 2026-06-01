@@ -371,6 +371,7 @@
 - [[market-vs-hierarchy]] — Coase/Williamson: transactions governed by price signals (markets) vs. managerial direction (firms) (corporate-finance) (2026-05-20)
 
 ## Techniques
+- [[transformer-attention-mechanisms]] — Transformer Attention Mechanisms (deep-learning) (2026-06-01)
 - [[lasso]] — L1-penalized regression with automatic variable selection (statistical-learning) (2026-05-20)
 - [[gradient-boosting]] — Functional gradient descent via sequential weak learners (statistical-learning, optimization) (2026-05-20)
 - [[random-forests]] — Ensemble of decorrelated bootstrap trees with random feature subsetting (statistical-learning) (2026-05-20)

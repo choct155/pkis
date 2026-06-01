@@ -224,3 +224,67 @@
 ## [2026-05-30] committed | bridge-note
 - Committed: bn-20260530-em-mcmc-and-variational-inference → bridge-notes/bn-20260530-em-mcmc-and-variational-inference.md
 - IRI: pkis:bridge-note:bn-20260530-em-mcmc-and-variational-inference
+
+## [2026-05-31] staged | bridge-note
+- Staged: bn-20260531-nedner-is-the-task-under (id: e4c43f09-ec71-4a3e-8379-e8249faa8a84)
+- Rationale: NED/NER is THE task under test for this cluster — both hypotheses name it as a dependent node and th
+
+## [2026-05-31] staged | bridge-note
+- Staged: bn-20260531-the-umbrella-thesis-claims-ontological (id: 5339d6eb-3a10-4a63-9808-b8484bab9785)
+- Rationale: The umbrella thesis claims ontological structure operates through attention-weight redistribution; t
+
+## [2026-05-31] staged | bridge-note
+- Staged: bn-20260531-explicit-intensional-structure-ontological-class (id: d3ab5ce5-ecf1-47a3-9433-3f48d5c64aca)
+- Rationale: Explicit intensional structure — ontological class definitions, property restrictions, necessary-and
+
+## [2026-05-31] staged | bridge-note
+- Staged: bn-20260531-knowledgegraphconstruction-is-the-existing-techn (id: d18d93f2-ff1d-430d-b2a8-6cc0b9aaa8b2)
+- Rationale: Knowledge-graph-construction is the existing technique node covering entity recognition, relation ex
+
+## [2026-05-31] staged | bridge-note
+- Staged: bn-20260531-the-vsscale-hypothesis-is-a (id: ee21f599-f58b-471f-ab74-5444c13176a4)
+- Rationale: The vs-scale hypothesis is a direct challenge to the scaling-laws prediction: it claims ontological 
+
+## [2026-05-31] staged | bridge-note
+- Staged: bn-20260531-luong-et-al-present-a (id: 46d35fee-7e85-430a-a0a1-21e4092b0309)
+- Rationale: Luong et al. present a neurosymbolic architecture applying ontology type constraints at inference ti
+
+## [2026-05-31] staged | bridge-note
+- Staged: bn-20260531-banf-tripartitegraphrag-ontology-concepts-entity (id: e1ea1bb7-71e1-4855-b313-756fc1ac82c4)
+- Rationale: Banf (Tripartite-GraphRAG: ontology concepts ↔ entity extraction ↔ text chunks) and Cimiano (ontolog
+
+## [2026-05-31] staged | bridge-note
+- Staged: bn-20260531-thinkongraph-sun-et-al-iclr (id: dc2fede4-0103-42cb-8460-eff1a4213f98)
+- Rationale: Think-on-Graph (Sun et al., ICLR 2024) is the source the ned-accuracy hypothesis names as indirect e
+
+## [2026-05-31] staged | node-stub (technique)
+- Staged: transformer-attention-mechanisms (id: 0cc19aa9-321e-49c9-828e-0fe9f2ab43a9)
+- Title: Transformer Attention Mechanisms
+- needs_canonical_source: False
+
+## [2026-05-31] staged | node-stub (technique)
+- Staged: named-entity-disambiguation (id: 2600eb9e-57c8-4874-8c48-50f9b9d7610b)
+- Title: Named Entity Disambiguation
+- needs_canonical_source: False
+
+## [2026-06-01] staged | node-stub (technique)
+- Staged: transformer-attention-mechanisms-1 (id: 33fda052-9de1-4fb7-b3fe-e2a9ee181547)
+- Title: Transformer Attention Mechanisms
+- needs_canonical_source: False
+
+## [2026-06-01] staged | node-stub (result)
+- Staged: scaling-laws (id: c9cb70e6-d284-4502-9c6c-9ae4be6df060)
+- Title: Scaling Laws
+- needs_canonical_source: False
+
+## [2026-06-01] staged | node-stub (concept)
+- Staged: knowledge-representation (id: 0dd4f699-98d2-4c0c-a534-37a15034a707)
+- Title: Knowledge Representation
+- needs_canonical_source: True
+
+## [2026-06-01] discarded | technique
+- Discarded: transformer-attention-mechanisms-1 (id: 33fda052-9de1-4fb7-b3fe-e2a9ee181547)
+
+## [2026-06-01] committed | technique
+- Committed: transformer-attention-mechanisms → techniques/transformer-attention-mechanisms.md
+- IRI: pkis:technique:transformer-attention-mechanisms
