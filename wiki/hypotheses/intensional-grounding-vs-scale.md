@@ -1,28 +1,39 @@
 ---
-id: "pkis:hypothesis:intensional-grounding-vs-scale"
 aliases: []
-title: "Ontological Type Constraints Reduce Entity Resolution Errors More Than Equivalent Compute Scaling"
-knowledge_type: hypothesis
-domain: [knowledge-representation, deep-learning]
-tags: [named-entity-disambiguation, scaling-foil, compute-efficiency]
+cluster_membership:
+- intensional-grounding
+- scaling-foil
+contrasts-with:
+- scaling-laws
 date_created: 2026-05-30
 date_updated: 2026-05-30
-status: open
+dependent_nodes:
+- node: '[[named-entity-disambiguation]]'
+  node_type: technique
+  rationale: NED is the task being evaluated
+- node: '[[scaling-laws]]'
+  node_type: result
+  rationale: The hypothesis is a direct challenge to scaling law predictions — requires
+    understanding what scaling laws predict for NED tasks
+domain:
+- knowledge-representation
+- deep-learning
+evidence_nodes: []
+id: pkis:hypothesis:intensional-grounding-vs-scale
+iks_link: null
+knowledge_type: hypothesis
 origin: research-program
 research_program_cluster: intensional-grounding
 research_program_role: boundary-condition
-iks_link: null
-cluster_membership:
-  - intensional-grounding
-  - scaling-foil
-dependent_nodes:
-  - node: "[[named-entity-disambiguation]]"
-    node_type: technique
-    rationale: "NED is the task being evaluated"
-  - node: "[[scaling-laws]]"
-    node_type: result
-    rationale: "The hypothesis is a direct challenge to scaling law predictions — requires understanding what scaling laws predict for NED tasks"
-evidence_nodes: []
+status: open
+tags:
+- named-entity-disambiguation
+- scaling-foil
+- compute-efficiency
+title: Ontological Type Constraints Reduce Entity Resolution Errors More Than Equivalent
+  Compute Scaling
+uses:
+- named-entity-disambiguation
 ---
 
 ## Formal Statement
@@ -38,5 +49,7 @@ Neurosymbolic AI as an Antithesis to Scaling Laws (PNAS Nexus 2025) provides emp
 How to equate compute costs across the ontological maintenance + query path vs. the additional model parameters path. Whether the result generalizes beyond the specific entity types in the financial domain.
 
 ## Connections
+- [[scaling-laws]] — contrasts-with: The hypothesis is a direct challenge to scaling-law predictions: ontological scaffolding beats compute-equivalent scaling.
+- [[named-entity-disambiguation]] — uses: Entity resolution / NED is the task on which ontological constraints are compared against compute scaling.
 - [[intensional-grounding]] — belongs-to: constituent hypothesis
 - [[scaling-foil]] — belongs-to: also a direct test of the scaling foil null hypothesis

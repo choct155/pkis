@@ -1,22 +1,32 @@
 ---
-id: "pkis:research-cluster:intensional-grounding"
 aliases: []
-title: "Intensional Grounding"
-knowledge_type: research-cluster
-domain: [knowledge-representation, symbolic-subsymbolic, deep-learning]
-tags: [named-entity-disambiguation, ontology, intension-extension, transformer-attention]
+cross_cluster_dependencies:
+- evaluation-infrastructure
+- research-instrumentation
 date_created: 2026-05-30
 date_updated: 2026-05-30
-status: active
-origin: research-program
-hypotheses:
-  - intensional-grounding-ned-accuracy
-  - intensional-grounding-vs-scale
-  - intensional-grounding-ood-membership
-cross_cluster_dependencies:
-  - evaluation-infrastructure
-  - research-instrumentation
+domain:
+- knowledge-representation
+- symbolic-subsymbolic
+- deep-learning
 frontier_hypotheses: []
+hypotheses:
+- intensional-grounding-ned-accuracy
+- intensional-grounding-vs-scale
+- intensional-grounding-ood-membership
+id: pkis:research-cluster:intensional-grounding
+knowledge_type: research-cluster
+origin: research-program
+status: active
+tags:
+- named-entity-disambiguation
+- ontology
+- intension-extension
+- transformer-attention
+title: Intensional Grounding
+uses:
+- knowledge-representation
+- transformer-attention-mechanisms
 ---
 
 ## Thesis
@@ -37,5 +47,7 @@ Primary test of the umbrella thesis at the extraction and query parsing stages. 
 To be computed by Maintenance agent after PKIS node coverage is assessed.
 
 ## Connections
+- [[transformer-attention-mechanisms]] — uses: The umbrella thesis claims ontological structure operates through attention weight redistribution.
+- [[knowledge-representation]] — uses: The cluster draws on knowledge representation to design experiments — intensional class definitions and membership conditions are KR constructs.
 - [[knowledge-representation]] — prerequisite-of: the cluster requires deep understanding of KR to design experiments
 - [[transformer-attention-mechanisms]] — uses: the umbrella thesis claims ontological structure operates through attention weight redistribution

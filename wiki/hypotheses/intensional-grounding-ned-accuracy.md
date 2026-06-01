@@ -1,30 +1,40 @@
 ---
-id: "pkis:hypothesis:intensional-grounding-ned-accuracy"
 aliases: []
-title: "Token-to-Ontological-Class Distance Predicts NED/NER Accuracy"
-knowledge_type: hypothesis
-domain: [knowledge-representation, deep-learning]
-tags: [named-entity-disambiguation, ontology, intensional-grounding]
+cluster_membership:
+- intensional-grounding
 date_created: 2026-05-30
 date_updated: 2026-05-30
-status: open
+dependent_nodes:
+- node: '[[named-entity-disambiguation]]'
+  node_type: technique
+  rationale: Addressing this hypothesis requires implementing and evaluating NED systems
+- node: '[[transformer-attention-mechanisms]]'
+  node_type: technique
+  rationale: The umbrella thesis claims ontological structure operates through attention
+    redistribution — testing this requires understanding attention mechanisms
+- node: '[[ontology]]'
+  node_type: concept
+  rationale: Ontological class definitions are the independent variable in this hypothesis
+domain:
+- knowledge-representation
+- deep-learning
+evidence_nodes: []
+id: pkis:hypothesis:intensional-grounding-ned-accuracy
+iks_link: null
+knowledge_type: hypothesis
 origin: research-program
 research_program_cluster: intensional-grounding
 research_program_role: direct-test
-iks_link: null
-cluster_membership:
-  - intensional-grounding
-dependent_nodes:
-  - node: "[[named-entity-disambiguation]]"
-    node_type: technique
-    rationale: "Addressing this hypothesis requires implementing and evaluating NED systems"
-  - node: "[[transformer-attention-mechanisms]]"
-    node_type: technique
-    rationale: "The umbrella thesis claims ontological structure operates through attention redistribution — testing this requires understanding attention mechanisms"
-  - node: "[[ontology]]"
-    node_type: concept
-    rationale: "Ontological class definitions are the independent variable in this hypothesis"
-evidence_nodes: []
+status: open
+tags:
+- named-entity-disambiguation
+- ontology
+- intensional-grounding
+title: Token-to-Ontological-Class Distance Predicts NED/NER Accuracy
+uses:
+- named-entity-disambiguation
+- transformer-attention-mechanisms
+- formal-ontology
 ---
 
 ## Formal Statement
@@ -40,4 +50,7 @@ Indirect support from Think-on-Graph (Sun et al., ICLR 2024) showing KG traversa
 How to operationalize token-to-ontological-class distance in a way that is independent of the NED system being evaluated. What distance metric is most appropriate in the embedding space.
 
 ## Connections
+- [[formal-ontology]] — uses: Ontological class definitions are the independent variable; the [[ontology]] reference resolves to the materialized formal-ontology node.
+- [[transformer-attention-mechanisms]] — uses: Token-to-class distance is operationalized through the attention mechanism the hypothesis claims as the channel.
+- [[named-entity-disambiguation]] — uses: NED/NER is the task whose accuracy the hypothesis predicts from token-to-class distance.
 - [[intensional-grounding]] — belongs-to: this is a constituent hypothesis of the Intensional Grounding cluster
