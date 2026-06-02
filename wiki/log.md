@@ -810,3 +810,12 @@
 ## [2026-06-02] committed | source
 - Committed: mackay-information-2003 → sources/mackay-information-2003.md
 - IRI: pkis:source:mackay-information-2003
+
+## [2026-06-02] staged | source-stub
+- Staged: berger-statistical-1985 (id: 8ef9d0cd-1625-4994-b4a7-c5c3fbf7fe7e)
+- Title: Statistical Decision Theory and Bayesian Analysis
+- Enrichment: partial
+
+## [2026-06-02] committed | source
+- Committed: berger-statistical-1985 → sources/berger-statistical-1985.md
+- IRI: pkis:source:berger-statistical-1985
