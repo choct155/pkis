@@ -9,18 +9,19 @@ component_scores:
   implementation: null
   operational_mechanism: null
   principled_mechanism: null
-coverage: 0
+coverage: 1
 date_created: '2026-06-01'
-date_updated: '2026-06-01'
+date_updated: '2026-06-02'
 domain:
 - knowledge-representation
 - deep-learning
 id: pkis:technique:knowledge-graph-embeddings
 knowledge_type: technique
 maturity: evolving
-needs_canonical_source: true
+needs_canonical_source: false
 related_concepts: []
-sources: []
+sources:
+- '[[hamilton-graphsage]]'
 tags:
 - knowledge-graph
 - embeddings
@@ -33,16 +34,10 @@ understanding: 0
 Methods that embed the entities and relations of a knowledge graph into a vector space (TransE and successors) to support link prediction, similarity, and alignment between embedding space and ontological structure.
 
 ## Reading Path
-[To be populated when a canonical source is attached]
+- [[hamilton-graphsage]] — canonical source
 
 ## Connections
 [To be populated during integration]
 
 ## Needs Canonical Source
-This stub was created without a source. Suggested references:
-
-**Already in corpus:**
-[none in corpus]
-
-**External candidates (Semantic Scholar):**
-[none found]
+Resolved — canonical source(s) attached above.
