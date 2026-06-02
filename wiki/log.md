@@ -752,3 +752,16 @@
 
 ## [2026-06-01] edit | edit_node
 - pkis:research-cluster:model-evolution: fields=['frontier_hypotheses'] sections=['Current Frontier']
+
+## [2026-06-01] edges | add_connections
+- pkis:hypothesis:scaling-foil-null-hypothesis —uses→ scaling-laws
+- pkis:hypothesis:scaling-foil-null-hypothesis —contrasts-with→ knowledge-representation
+
+## [2026-06-02] staged | source-stub
+- Staged: guo-on-2017 (id: afeda93a-53f5-4be5-875b-389caec3fe2d)
+- Title: On Calibration of Modern Neural Networks
+- Enrichment: full
+
+## [2026-06-02] committed | source
+- Committed: guo-on-2017 → sources/guo-on-2017.md
+- IRI: pkis:source:guo-on-2017
