@@ -10,17 +10,18 @@ component_scores:
   prerequisites: null
   scope: null
   transfer: null
-coverage: 0
+coverage: 1
 date_created: '2026-06-01'
-date_updated: '2026-06-01'
+date_updated: '2026-06-02'
 domain:
 - bayesian-stats
 id: pkis:concept:expected-loss
 knowledge_type: concept
 maturity: evolving
-needs_canonical_source: true
+needs_canonical_source: false
 related_concepts: []
-sources: []
+sources:
+- '[[berger-statistical-1985]]'
 tags:
 - expected-loss
 - risk
@@ -33,16 +34,10 @@ understanding: 0
 The probability-weighted average loss of a decision under a loss function — the quantity minimized in statistical decision theory and the basis of the retrieval-vs-inference cost model.
 
 ## Reading Path
-[To be populated when a canonical source is attached]
+- [[berger-statistical-1985]] — canonical source
 
 ## Connections
 [To be populated during integration]
 
 ## Needs Canonical Source
-This stub was created without a source. Suggested references:
-
-**Already in corpus:**
-[none in corpus]
-
-**External candidates (Semantic Scholar):**
-[none found]
+Resolved — canonical source(s) attached above.
