@@ -849,3 +849,6 @@
 
 ## [2026-06-02] edit | edit_node
 - pkis:concept:information-theory: fields=['sources', 'needs_canonical_source', 'coverage'] sections=['Reading Path', 'Needs Canonical Source']
+
+## [2026-06-02] edit | edit_node
+- pkis:concept:knowledge-representation: fields=['sources', 'needs_canonical_source', 'coverage'] sections=['Reading Path', 'Needs Canonical Source']
