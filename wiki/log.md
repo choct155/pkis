@@ -858,3 +858,6 @@
 
 ## [2026-06-02] edit | edit_node
 - pkis:concept:uncertainty-quantification: fields=['sources', 'needs_canonical_source', 'coverage'] sections=['Reading Path', 'Needs Canonical Source']
+
+## [2026-06-02] edit | edit_node
+- pkis:concept:word-embeddings: fields=['sources', 'needs_canonical_source', 'coverage'] sections=['Reading Path', 'Needs Canonical Source']

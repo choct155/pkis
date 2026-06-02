@@ -10,17 +10,18 @@ component_scores:
   prerequisites: null
   scope: null
   transfer: null
-coverage: 0
+coverage: 1
 date_created: '2026-06-01'
-date_updated: '2026-06-01'
+date_updated: '2026-06-02'
 domain:
 - deep-learning
 id: pkis:concept:word-embeddings
 knowledge_type: concept
 maturity: evolving
-needs_canonical_source: true
+needs_canonical_source: false
 related_concepts: []
-sources: []
+sources:
+- '[[mikolov-efficient-2013]]'
 tags:
 - embeddings
 - distributional-semantics
@@ -33,16 +34,10 @@ understanding: 0
 Dense vector representations of words/tokens learned from distributional co-occurrence, placing semantically related terms near each other. The baseline that ontologically-supervised embeddings aim to extend.
 
 ## Reading Path
-[To be populated when a canonical source is attached]
+- [[mikolov-efficient-2013]] — canonical source
 
 ## Connections
 [To be populated during integration]
 
 ## Needs Canonical Source
-This stub was created without a source. Suggested references:
-
-**Already in corpus:**
-[none in corpus]
-
-**External candidates (Semantic Scholar):**
-[none found]
+Resolved — canonical source(s) attached above.
