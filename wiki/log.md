@@ -774,3 +774,12 @@
 ## [2026-06-02] committed | source
 - Committed: mikolov-efficient-2013 → sources/mikolov-efficient-2013.md
 - IRI: pkis:source:mikolov-efficient-2013
+
+## [2026-06-02] staged | source-stub
+- Staged: oord-neural-2017 (id: 04f0b62f-682d-4ebc-bec2-b51cb52470b6)
+- Title: Neural Discrete Representation Learning (VQ-VAE)
+- Enrichment: full
+
+## [2026-06-02] committed | source
+- Committed: oord-neural-2017 → sources/oord-neural-2017.md
+- IRI: pkis:source:oord-neural-2017

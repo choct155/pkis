@@ -1,6 +1,7 @@
 # PKIS Wiki Index
 
 ## Sources
+- [[oord-neural-2017]] — Neural Discrete Representation Learning (VQ-VAE) () (2026-06-02)
 - [[mikolov-efficient-2013]] — Efficient Estimation of Word Representations in Vector Space () (2026-06-02)
 - [[guo-on-2017]] — On Calibration of Modern Neural Networks () (2026-06-02)
 - [[hastie-esl]] — The Elements of Statistical Learning, 2nd ed. (statistical-learning, bayesian-stats, deep-learning, optimization) (2026-05-20)
