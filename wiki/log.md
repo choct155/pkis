@@ -819,3 +819,12 @@
 ## [2026-06-02] committed | source
 - Committed: berger-statistical-1985 → sources/berger-statistical-1985.md
 - IRI: pkis:source:berger-statistical-1985
+
+## [2026-06-02] staged | source-stub
+- Staged: kendall-what-2017 (id: 85bd2817-d983-4844-9b1c-08fc9e7bbd6a)
+- Title: What Uncertainties Do We Need in Bayesian Deep Learning for Computer Vision?
+- Enrichment: full
+
+## [2026-06-02] committed | source
+- Committed: kendall-what-2017 → sources/kendall-what-2017.md
+- IRI: pkis:source:kendall-what-2017

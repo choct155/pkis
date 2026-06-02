@@ -1,6 +1,7 @@
 # PKIS Wiki Index
 
 ## Sources
+- [[kendall-what-2017]] — What Uncertainties Do We Need in Bayesian Deep Learning for Computer Vision? () (2026-06-02)
 - [[berger-statistical-1985]] — Statistical Decision Theory and Bayesian Analysis () (2026-06-02)
 - [[mackay-information-2003]] — Information Theory, Inference, and Learning Algorithms () (2026-06-02)
 - [[morenotorres-a-2012]] — A Unifying View on Dataset Shift in Classification () (2026-06-02)
