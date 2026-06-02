@@ -10,18 +10,19 @@ component_scores:
   prerequisites: null
   scope: null
   transfer: null
-coverage: 0
+coverage: 1
 date_created: '2026-06-01'
-date_updated: '2026-06-01'
+date_updated: '2026-06-02'
 domain:
 - bayesian-stats
 - deep-learning
 id: pkis:concept:uncertainty-quantification
 knowledge_type: concept
 maturity: evolving
-needs_canonical_source: true
+needs_canonical_source: false
 related_concepts: []
-sources: []
+sources:
+- '[[kendall-what-2017]]'
 tags:
 - uncertainty
 - aleatoric
@@ -34,16 +35,10 @@ understanding: 0
 Methods for representing and propagating uncertainty in model outputs (aleatoric vs epistemic), including predictive distributions and intervals — prerequisite for propagating parsed-intent uncertainty through retrieval.
 
 ## Reading Path
-[To be populated when a canonical source is attached]
+- [[kendall-what-2017]] — canonical source
 
 ## Connections
 [To be populated during integration]
 
 ## Needs Canonical Source
-This stub was created without a source. Suggested references:
-
-**Already in corpus:**
-[none in corpus]
-
-**External candidates (Semantic Scholar):**
-[none found]
+Resolved — canonical source(s) attached above.
