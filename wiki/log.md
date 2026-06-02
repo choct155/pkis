@@ -840,3 +840,6 @@
 
 ## [2026-06-02] edit | edit_node
 - pkis:concept:decision-theory-foundations: fields=['sources', 'needs_canonical_source', 'coverage'] sections=['Reading Path', 'Needs Canonical Source']
+
+## [2026-06-02] edit | edit_node
+- pkis:concept:distribution-shift: fields=['sources', 'needs_canonical_source', 'coverage'] sections=['Reading Path', 'Needs Canonical Source']

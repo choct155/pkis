@@ -10,18 +10,19 @@ component_scores:
   prerequisites: null
   scope: null
   transfer: null
-coverage: 0
+coverage: 1
 date_created: '2026-06-01'
-date_updated: '2026-06-01'
+date_updated: '2026-06-02'
 domain:
 - deep-learning
 - bayesian-stats
 id: pkis:concept:distribution-shift
 knowledge_type: concept
 maturity: evolving
-needs_canonical_source: true
+needs_canonical_source: false
 related_concepts: []
-sources: []
+sources:
+- '[[morenotorres-a-2012]]'
 tags:
 - distribution-shift
 - concept-drift
@@ -34,16 +35,10 @@ understanding: 0
 Change between training and deployment data distributions (covariate, label, or concept shift) that degrades performance; concept drift detection is a special case applied to ontological concept usage.
 
 ## Reading Path
-[To be populated when a canonical source is attached]
+- [[morenotorres-a-2012]] — canonical source
 
 ## Connections
 [To be populated during integration]
 
 ## Needs Canonical Source
-This stub was created without a source. Suggested references:
-
-**Already in corpus:**
-[none in corpus]
-
-**External candidates (Semantic Scholar):**
-[none found]
+Resolved — canonical source(s) attached above.
