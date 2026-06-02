@@ -792,3 +792,12 @@
 ## [2026-06-02] committed | source
 - Committed: koh-concept-2020 → sources/koh-concept-2020.md
 - IRI: pkis:source:koh-concept-2020
+
+## [2026-06-02] staged | source-stub
+- Staged: morenotorres-a-2012 (id: 5d798384-b63c-4f70-b649-574658bc145b)
+- Title: A Unifying View on Dataset Shift in Classification
+- Enrichment: partial
+
+## [2026-06-02] committed | source
+- Committed: morenotorres-a-2012 → sources/morenotorres-a-2012.md
+- IRI: pkis:source:morenotorres-a-2012

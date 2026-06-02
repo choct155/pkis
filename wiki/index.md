@@ -1,6 +1,7 @@
 # PKIS Wiki Index
 
 ## Sources
+- [[morenotorres-a-2012]] — A Unifying View on Dataset Shift in Classification () (2026-06-02)
 - [[koh-concept-2020]] — Concept Bottleneck Models () (2026-06-02)
 - [[oord-neural-2017]] — Neural Discrete Representation Learning (VQ-VAE) () (2026-06-02)
 - [[mikolov-efficient-2013]] — Efficient Estimation of Word Representations in Vector Space () (2026-06-02)
