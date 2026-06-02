@@ -10,17 +10,18 @@ component_scores:
   prerequisites: null
   scope: null
   transfer: null
-coverage: 0
+coverage: 1
 date_created: '2026-06-01'
-date_updated: '2026-06-01'
+date_updated: '2026-06-02'
 domain:
 - bayesian-stats
 id: pkis:concept:information-theory
 knowledge_type: concept
 maturity: evolving
-needs_canonical_source: true
+needs_canonical_source: false
 related_concepts: []
-sources: []
+sources:
+- '[[mackay-information-2003]]'
 tags:
 - entropy
 - information
@@ -33,16 +34,10 @@ understanding: 0
 The quantitative study of information, entropy, and channel capacity (Shannon). Underlies coverage-completeness measures, compression, and uncertainty quantification.
 
 ## Reading Path
-[To be populated when a canonical source is attached]
+- [[mackay-information-2003]] — canonical source
 
 ## Connections
 [To be populated during integration]
 
 ## Needs Canonical Source
-This stub was created without a source. Suggested references:
-
-**Already in corpus:**
-[none in corpus]
-
-**External candidates (Semantic Scholar):**
-[none found]
+Resolved — canonical source(s) attached above.
