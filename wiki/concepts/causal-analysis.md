@@ -10,17 +10,18 @@ component_scores:
   prerequisites: null
   scope: null
   transfer: null
-coverage: 0
+coverage: 1
 date_created: '2026-06-01'
-date_updated: '2026-06-01'
+date_updated: '2026-06-02'
 domain:
 - bayesian-stats
 id: pkis:concept:causal-analysis
 knowledge_type: concept
 maturity: evolving
-needs_canonical_source: true
+needs_canonical_source: false
 related_concepts: []
-sources: []
+sources:
+- '[[pearl-causality-ch03]]'
 tags:
 - causal-inference
 - identification
@@ -33,16 +34,10 @@ understanding: 0
 The study of cause–effect relationships through identification strategies, confounding control, and counterfactual reasoning — the basis for valid experimental design in the research program, distinct from correlation.
 
 ## Reading Path
-[To be populated when a canonical source is attached]
+- [[pearl-causality-ch03]] — canonical source
 
 ## Connections
 [To be populated during integration]
 
 ## Needs Canonical Source
-This stub was created without a source. Suggested references:
-
-**Already in corpus:**
-[none in corpus]
-
-**External candidates (Semantic Scholar):**
-[none found]
+Resolved — canonical source(s) attached above.
