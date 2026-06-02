@@ -1,6 +1,7 @@
 # PKIS Wiki Index
 
 ## Sources
+- [[mackay-information-2003]] — Information Theory, Inference, and Learning Algorithms () (2026-06-02)
 - [[morenotorres-a-2012]] — A Unifying View on Dataset Shift in Classification () (2026-06-02)
 - [[koh-concept-2020]] — Concept Bottleneck Models () (2026-06-02)
 - [[oord-neural-2017]] — Neural Discrete Representation Learning (VQ-VAE) () (2026-06-02)

@@ -801,3 +801,12 @@
 ## [2026-06-02] committed | source
 - Committed: morenotorres-a-2012 → sources/morenotorres-a-2012.md
 - IRI: pkis:source:morenotorres-a-2012
+
+## [2026-06-02] staged | source-stub
+- Staged: mackay-information-2003 (id: 49e3414e-3d7e-4ce8-9a52-73806d064783)
+- Title: Information Theory, Inference, and Learning Algorithms
+- Enrichment: minimal
+
+## [2026-06-02] committed | source
+- Committed: mackay-information-2003 → sources/mackay-information-2003.md
+- IRI: pkis:source:mackay-information-2003
