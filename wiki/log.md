@@ -867,3 +867,6 @@
 
 ## [2026-06-02] edit | edit_node
 - pkis:technique:knowledge-graph-embeddings: fields=['sources', 'needs_canonical_source', 'coverage'] sections=['Reading Path', 'Needs Canonical Source']
+
+## [2026-06-02] edit | edit_node
+- pkis:technique:vector-quantization: fields=['sources', 'needs_canonical_source', 'coverage'] sections=['Reading Path', 'Needs Canonical Source']

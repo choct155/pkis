@@ -9,17 +9,18 @@ component_scores:
   implementation: null
   operational_mechanism: null
   principled_mechanism: null
-coverage: 0
+coverage: 1
 date_created: '2026-06-01'
-date_updated: '2026-06-01'
+date_updated: '2026-06-02'
 domain:
 - deep-learning
 id: pkis:technique:vector-quantization
 knowledge_type: technique
 maturity: evolving
-needs_canonical_source: true
+needs_canonical_source: false
 related_concepts: []
-sources: []
+sources:
+- '[[oord-neural-2017]]'
 tags:
 - vq-vae
 - discrete-representations
@@ -32,16 +33,10 @@ understanding: 0
 Mapping continuous vectors to a finite learned codebook of discrete codes (VQ-VAE), enabling discrete representation learning — the foundational technique for learning symbolic abstractions from data.
 
 ## Reading Path
-[To be populated when a canonical source is attached]
+- [[oord-neural-2017]] — canonical source
 
 ## Connections
 [To be populated during integration]
 
 ## Needs Canonical Source
-This stub was created without a source. Suggested references:
-
-**Already in corpus:**
-[none in corpus]
-
-**External candidates (Semantic Scholar):**
-[none found]
+Resolved — canonical source(s) attached above.
