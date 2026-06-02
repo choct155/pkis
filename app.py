@@ -434,7 +434,9 @@ def hybrid_search(query: str, domains=None, node_types=None, max_results=10) -> 
         results.append({
             "iri": iri,
             "canonical_title": node["title"],
-            "node_type": node["node_type"],
+            # singular knowledge type (folder name is plural) — keeps the viewer's
+            # type filtering + colored badges consistent across search/index/frontier.
+            "node_type": FOLDER_TO_TYPE.get(node["node_type"], node["node_type"]),
             "domain": node["domain"],
             "score": score,
             "excerpt": node["content"][:300] if node.get("content") else "",
@@ -1244,15 +1246,17 @@ def tool_get_index(domain=None, node_type=None) -> list:
     nodes = load_all_nodes()
     results = []
     for node in nodes:
+        singular = FOLDER_TO_TYPE.get(node["node_type"], node["node_type"])
         if domain and domain not in node.get("domain", []):
             continue
-        if node_type and node["node_type"] != node_type:
+        # accept singular type ("concept") or the raw folder name ("concepts")
+        if node_type and singular != node_type and node["node_type"] != node_type:
             continue
         results.append({
             "iri": node["iri"],
             "canonical_title": node["title"],
             "domain": node["domain"],
-            "node_type": node["node_type"],
+            "node_type": singular,
             "coverage": node["coverage"],
             "understanding": node["understanding"],
             "date_updated": node.get("date_updated", "")
@@ -5000,6 +5004,15 @@ def pkis_api_frontier():
 def pkis_api_clusters():
     try:
         return _api_ok(tool_get_clusters())
+    except Exception as e:
+        return _api_err(e, 500)
+
+
+@app.route("/pkis-api/index", methods=["POST"])
+def pkis_api_index():
+    b = _api_json()
+    try:
+        return _api_ok(tool_get_index(domain=b.get("domain"), node_type=b.get("node_type")))
     except Exception as e:
         return _api_err(e, 500)
 
