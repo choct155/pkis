@@ -1,6 +1,7 @@
 # PKIS Wiki Index
 
 ## Sources
+- [[mikolov-efficient-2013]] — Efficient Estimation of Word Representations in Vector Space () (2026-06-02)
 - [[guo-on-2017]] — On Calibration of Modern Neural Networks () (2026-06-02)
 - [[hastie-esl]] — The Elements of Statistical Learning, 2nd ed. (statistical-learning, bayesian-stats, deep-learning, optimization) (2026-05-20)
 - [[hastie-esl-ch01]] — ESL Ch. 1: Introduction (statistical-learning) (2026-05-20)

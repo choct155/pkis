@@ -765,3 +765,12 @@
 ## [2026-06-02] committed | source
 - Committed: guo-on-2017 → sources/guo-on-2017.md
 - IRI: pkis:source:guo-on-2017
+
+## [2026-06-02] staged | source-stub
+- Staged: mikolov-efficient-2013 (id: 6cb8b5c4-93e2-4e85-83da-4e92c2b79efc)
+- Title: Efficient Estimation of Word Representations in Vector Space
+- Enrichment: full
+
+## [2026-06-02] committed | source
+- Committed: mikolov-efficient-2013 → sources/mikolov-efficient-2013.md
+- IRI: pkis:source:mikolov-efficient-2013
