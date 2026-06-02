@@ -941,6 +941,11 @@ def tool_get_concept_frontier(cluster_proximity_weight: float = None) -> dict:
             "inbound_refs": inbound_count,
             "cluster_proximity": round(cluster_proximity, 3),
             "priority_score": round(priority_score, 3),
+            # node_type: singular knowledge type (frontmatter), falling back to folder→type.
+            # Needed so the viewer can filter the frontier by type (folder name would be plural).
+            "node_type": node.get("frontmatter", {}).get("knowledge_type")
+                         or FOLDER_TO_TYPE.get(node.get("node_type", ""), node.get("node_type", "")),
+            "domain": node.get("domain", []),
         })
 
     ranked = sorted(results, key=lambda x: x["priority_score"], reverse=True)[:20]
@@ -983,6 +988,111 @@ def tool_set_priority_config(cluster_proximity_weight: float = None, reset: bool
     PRIORITY_CONFIG_PATH.write_text(_json.dumps({"cluster_proximity_weight": w}))
     return {"status": "set", "cluster_proximity_weight": w, "weight_source": "config-default",
             "built_in_default": DEFAULT_CLUSTER_PROXIMITY_WEIGHT}
+
+
+def _extract_section(content: str, section_title: str) -> str:
+    """Return the body text under a `## section_title` heading (up to the next `## ` or EOF), or ''."""
+    m = re.search(
+        r'^##\s+' + re.escape(section_title) + r'\s*\n(.*?)(?=^##\s|\Z)',
+        content, re.DOTALL | re.MULTILINE,
+    )
+    return m.group(1).strip() if m else ""
+
+
+def tool_get_clusters() -> list:
+    """List all research-clusters with their thesis, constituent hypotheses (resolved titles +
+    frontier flag), current-frontier prose, and the concept/technique nodes each cluster depends on.
+    Powers the viewer's Clusters tab."""
+    nodes = load_all_nodes()
+    G = get_graph()
+    by_iri = {n["iri"]: n for n in nodes}
+    clusters = [n for n in nodes if n.get("frontmatter", {}).get("knowledge_type") == "research-cluster"]
+    out = []
+    for c in clusters:
+        fm = c["frontmatter"]
+        frontier = fm.get("frontier_hypotheses") or []
+        hyps = []
+        for h_slug in fm.get("hypotheses", []) or []:
+            hp = find_node_path(h_slug)
+            if hp:
+                hn = load_node(hp); hfm = hn.get("frontmatter", {})
+                hyps.append({"slug": h_slug, "iri": hn["iri"], "title": hfm.get("title", h_slug),
+                             "status": hfm.get("status", "open"), "role": hfm.get("research_program_role", ""),
+                             "is_frontier": h_slug in frontier})
+            else:
+                hyps.append({"slug": h_slug, "iri": None, "title": h_slug,
+                             "status": "missing", "role": "", "is_frontier": h_slug in frontier})
+        deps = []
+        for _u, v, d in G.edges(c["iri"], data=True):
+            if d.get("edge_type") == "related":
+                continue
+            tn = by_iri.get(v)
+            deps.append({
+                "iri": v,
+                "title": tn["title"] if tn else v.split(":")[-1],
+                "type": (tn.get("frontmatter", {}).get("knowledge_type") if tn else v.split(":")[1]),
+                "predicate": d.get("edge_type"),
+                "coverage": tn.get("coverage", 0) if tn else 0,
+            })
+        out.append({
+            "iri": c["iri"], "slug": c["slug"], "title": fm.get("title", c["slug"]),
+            "domain": fm.get("domain", []), "status": fm.get("status", "active"),
+            "thesis": _extract_section(c.get("content", ""), "Thesis"),
+            "current_frontier": _extract_section(c.get("content", ""), "Current Frontier"),
+            "hypotheses": hyps, "frontier_hypotheses": frontier, "deps": deps,
+        })
+    return sorted(out, key=lambda x: x["slug"])
+
+
+def tool_get_cluster_priorities() -> dict:
+    """Concept-centric reading priority: for each ACTIVE cluster, the concept/technique/result
+    nodes its frontier hypotheses depend on (coverage gaps surface first), plus the source reading
+    queue. Powers the viewer's Priority tab. Reports the effective cluster-proximity weight."""
+    nodes = load_all_nodes()
+    G = get_graph()
+    by_iri = {n["iri"]: n for n in nodes}
+    eff_w, src = _effective_proximity_weight(None)
+    clusters = [n for n in nodes
+                if n.get("frontmatter", {}).get("knowledge_type") == "research-cluster"
+                and n.get("frontmatter", {}).get("status") == "active"]
+    groups = []
+    for c in clusters:
+        fm = c["frontmatter"]
+        frontier = fm.get("frontier_hypotheses") or []
+        if not frontier:
+            continue
+        gapset = {}
+        for h_slug in frontier:
+            hp = find_node_path(h_slug)
+            if not hp:
+                continue
+            hn = load_node(hp)
+            for _u, v, d in G.edges(hn["iri"], data=True):
+                if d.get("edge_type") == "related":
+                    continue
+                tn = by_iri.get(v)
+                if not tn:
+                    continue
+                kt = tn.get("frontmatter", {}).get("knowledge_type", "")
+                if kt in ("research-cluster", "hypothesis"):
+                    continue
+                gapset[v] = {
+                    "iri": v, "title": tn["title"],
+                    "type": kt or FOLDER_TO_TYPE.get(tn.get("node_type", ""), tn.get("node_type", "")),
+                    "coverage": tn.get("coverage", 0), "understanding": tn.get("understanding", 0),
+                }
+        gaps = sorted(gapset.values(), key=lambda x: (x["coverage"], x["understanding"]))
+        groups.append({
+            "cluster_slug": c["slug"], "cluster_iri": c["iri"],
+            "cluster_title": fm.get("title", c["slug"]),
+            "lead_hypothesis": frontier[0] if frontier else None,
+            "frontier_hypotheses": frontier, "gaps": gaps,
+        })
+    return {
+        "params": {"cluster_proximity_weight": eff_w, "weight_source": src},
+        "clusters": sorted(groups, key=lambda x: x["cluster_slug"]),
+        "reading_queue": tool_get_reading_queue(),
+    }
 
 
 def tool_get_reading_graph(
@@ -2302,9 +2412,10 @@ def tool_commit_staged_node(
 def tool_get_staged_nodes(
     node_type: str = None,
     staged_by: str = None,
-    limit: int = 20
+    limit: int = 200
 ) -> list:
-    """List all pending staged nodes awaiting review."""
+    """List all pending staged nodes awaiting review (all types — bridge notes, node stubs,
+    source stubs). Default limit raised so source stubs aren't truncated behind newer bridge notes."""
     STAGING_DIR.mkdir(parents=True, exist_ok=True)
     results = []
     staged_files = sorted(STAGING_DIR.glob("*.md"), key=lambda f: f.stat().st_mtime, reverse=True)
@@ -4646,6 +4757,8 @@ def dispatch_tool(tool_name: str, params: dict, req) -> any:
         ),
         "get_concept_frontier": lambda p: tool_get_concept_frontier(
             cluster_proximity_weight=p.get("cluster_proximity_weight")),
+        "get_clusters": lambda p: tool_get_clusters(),
+        "get_cluster_priorities": lambda p: tool_get_cluster_priorities(),
         "get_reading_graph": lambda p: tool_get_reading_graph(
             scope=p.get("scope", "all_unread"),
             focus_concept=p.get("focus_concept"),
@@ -4879,6 +4992,22 @@ def pkis_api_frontier():
         # Viewer expects a list; return just the ranked results (params are MCP-only).
         return _api_ok(tool_get_concept_frontier(
             cluster_proximity_weight=b.get("cluster_proximity_weight"))["results"])
+    except Exception as e:
+        return _api_err(e, 500)
+
+
+@app.route("/pkis-api/clusters", methods=["POST"])
+def pkis_api_clusters():
+    try:
+        return _api_ok(tool_get_clusters())
+    except Exception as e:
+        return _api_err(e, 500)
+
+
+@app.route("/pkis-api/cluster-priorities", methods=["POST"])
+def pkis_api_cluster_priorities():
+    try:
+        return _api_ok(tool_get_cluster_priorities())
     except Exception as e:
         return _api_err(e, 500)
 
