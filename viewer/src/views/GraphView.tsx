@@ -177,12 +177,36 @@ export default function GraphView({ focusIri, onSelectNode }: Props) {
 
       cyRef.current = cy
       setLoading(false)
+
+      // The container can have zero dimensions at mount (esp. on mobile / when the
+      // tab was hidden), leaving Cytoscape's canvas blank. Re-measure and refit once
+      // layout settles, and again shortly after as a fallback.
+      const refit = () => {
+        try { cy.resize(); cy.fit(undefined, 30) } catch { /* noop */ }
+      }
+      requestAnimationFrame(refit)
+      setTimeout(refit, 250)
     }
 
     initCy()
     return () => { cancelled = true }
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [focusIri])
+
+  // Keep the canvas sized to its container (orientation change, viewport resize,
+  // late layout). Without this the graph renders empty when dims were 0 at mount.
+  useEffect(() => {
+    const el = containerRef.current
+    if (!el || typeof ResizeObserver === 'undefined') return
+    const ro = new ResizeObserver(() => {
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      const cy = cyRef.current as any
+      if (!cy) return
+      try { cy.resize(); cy.fit(undefined, 30) } catch { /* noop */ }
+    })
+    ro.observe(el)
+    return () => ro.disconnect()
+  }, [])
 
   // Apply edge filter
   useEffect(() => {

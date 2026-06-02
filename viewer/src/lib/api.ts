@@ -6,6 +6,8 @@ import type {
   FrontierNode,
   QueueItem,
   StagedNode,
+  Cluster,
+  ClusterPriorities,
 } from '../types';
 
 const BASE = '/pkis-api';
@@ -65,6 +67,16 @@ export async function getReadingGraph(
   } = {}
 ): Promise<unknown> {
   return post('/reading-graph', options);
+}
+
+// ── Research clusters ─────────────────────────────────────────────────────
+export async function getClusters(): Promise<Cluster[]> {
+  return post<Cluster[]>('/clusters');
+}
+
+// ── Cluster priorities (frontier gaps grouped by cluster) ─────────────────
+export async function getClusterPriorities(): Promise<ClusterPriorities> {
+  return post<ClusterPriorities>('/cluster-priorities');
 }
 
 // ── Staged nodes ──────────────────────────────────────────────────────────

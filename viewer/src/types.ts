@@ -9,7 +9,7 @@ export type NodeType =
 
 export type Maturity = 'settled' | 'evolving' | 'contested' | 'historical';
 
-export type View = 'browse' | 'graph' | 'queue' | 'staged';
+export type View = 'browse' | 'clusters' | 'priority' | 'graph' | 'staged';
 
 // ── Search result (from search_wiki / search_wiki_index) ──────────────────
 export interface SearchResult {
@@ -118,6 +118,61 @@ export interface StagedNode {
   review_status: string;
   description: string;
   review_url: string;
+}
+
+// ── Research clusters (from get_clusters) ─────────────────────────────────
+export interface ClusterHypothesis {
+  slug: string;
+  iri: string | null;
+  title: string;
+  status: string;
+  role: string;
+  is_frontier: boolean;
+}
+
+export interface ClusterDep {
+  iri: string;
+  title: string;
+  type: string;
+  predicate: string;
+  coverage: number;
+}
+
+export interface Cluster {
+  iri: string;
+  slug: string;
+  title: string;
+  domain: string[];
+  status: string;
+  thesis: string;
+  current_frontier: string;
+  hypotheses: ClusterHypothesis[];
+  frontier_hypotheses: string[];
+  deps: ClusterDep[];
+}
+
+// ── Cluster priorities (from get_cluster_priorities) ──────────────────────
+export interface GapNode {
+  iri: string;
+  title: string;
+  type: string;
+  coverage: number;
+  understanding: number;
+}
+
+export interface ClusterPriorityGroup {
+  cluster_slug: string;
+  cluster_iri: string;
+  cluster_title: string;
+  lead_hypothesis: string | null;
+  frontier_hypotheses: string[];
+  gaps: GapNode[];
+}
+
+export interface ClusterPriorities {
+  params: { cluster_proximity_weight: number; weight_source: string };
+  clusters: ClusterPriorityGroup[];
+  reading_queue: QueueItem[];
 }
 
 // ── App context ───────────────────────────────────────────────────────────

@@ -1,10 +1,11 @@
 import type { View } from '../types'
 
 const NAV_ITEMS: { view: View; icon: string; label: string }[] = [
-  { view: 'browse',  icon: '◈', label: 'browse' },
-  { view: 'graph',   icon: '⬡', label: 'graph' },
-  { view: 'queue',   icon: '▤', label: 'queue' },
-  { view: 'staged',  icon: '⊞', label: 'staged' },
+  { view: 'browse',   icon: '◈', label: 'browse' },
+  { view: 'clusters', icon: '◎', label: 'clusters' },
+  { view: 'priority', icon: '▲', label: 'priority' },
+  { view: 'graph',    icon: '⬡', label: 'graph' },
+  { view: 'staged',   icon: '⊞', label: 'staged' },
 ]
 
 interface Props {

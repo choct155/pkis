@@ -7,9 +7,11 @@ import Fab from './components/Fab'
 import DetailSheet from './components/DetailSheet'
 import CaptureSheet from './components/CaptureSheet'
 import EditSheet from './components/EditSheet'
+import SearchResults from './components/SearchResults'
 import BrowseView from './views/BrowseView'
+import ClustersView from './views/ClustersView'
+import PriorityView from './views/PriorityView'
 import GraphView from './views/GraphView'
-import QueueView from './views/QueueView'
 import StagedView from './views/StagedView'
 
 export default function App() {
@@ -20,14 +22,17 @@ export default function App() {
   const [typeFilter, setTypeFilter]   = useState<NodeType | 'all'>('all')
   const [searchResults, setSearchResults] = useState<SearchResult[] | null>(null)
 
-  const handleSelectNode = (iri: string) => {
-    setSelectedIri(iri)
-  }
+  const handleSelectNode = (iri: string) => setSelectedIri(iri)
 
   const handleNavigateToGraph = () => {
     setView('graph')
     setSelectedIri(null)
   }
+
+  // Search is global: when there are results, show them over any view.
+  const showSearch = searchResults !== null
+  // The type filter is only meaningful for Browse and search results.
+  const showFilter = view === 'browse' || showSearch
 
   return (
     <>
@@ -36,28 +41,37 @@ export default function App() {
         onNavigate={setView}
         activeView={view}
       />
-      <FilterStrip active={typeFilter} onChange={setTypeFilter} />
+      {showFilter && <FilterStrip active={typeFilter} onChange={setTypeFilter} />}
 
       <div className="main">
-        {view === 'browse' && (
-          <BrowseView
+        {showSearch ? (
+          <SearchResults
+            results={searchResults!}
             typeFilter={typeFilter}
-            searchResults={searchResults}
-            onSelectNode={handleSelectNode}
-            onNavigate={setView}
-          />
-        )}
-        {view === 'graph' && (
-          <GraphView
-            focusIri={selectedIri}
             onSelectNode={handleSelectNode}
           />
-        )}
-        {view === 'queue' && (
-          <QueueView onSelectNode={handleSelectNode} />
-        )}
-        {view === 'staged' && (
-          <StagedView onSelectNode={handleSelectNode} />
+        ) : (
+          <>
+            {view === 'browse' && (
+              <BrowseView
+                typeFilter={typeFilter}
+                onSelectNode={handleSelectNode}
+                onNavigate={setView}
+              />
+            )}
+            {view === 'clusters' && (
+              <ClustersView onSelectNode={handleSelectNode} />
+            )}
+            {view === 'priority' && (
+              <PriorityView onSelectNode={handleSelectNode} />
+            )}
+            {view === 'graph' && (
+              <GraphView focusIri={selectedIri} onSelectNode={handleSelectNode} />
+            )}
+            {view === 'staged' && (
+              <StagedView onSelectNode={handleSelectNode} />
+            )}
+          </>
         )}
       </div>
 

@@ -36,9 +36,16 @@ export default function TopBar({ onResults, onNavigate, activeView }: Props) {
     [onResults]
   )
 
+  const handleHome = () => {
+    setQuery('')
+    if (debounceRef.current) clearTimeout(debounceRef.current)
+    onResults(null)
+    onNavigate('browse')
+  }
+
   return (
     <div className="topbar">
-      <div className="topbar-logo">PKIS</div>
+      <div className="topbar-logo" onClick={handleHome} title="Home" role="button">PKIS</div>
       <div className="search-wrap">
         <span className="search-icon">{searching ? '⟳' : '⌕'}</span>
         <input
