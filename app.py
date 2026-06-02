@@ -1264,6 +1264,17 @@ def tool_get_index(domain=None, node_type=None) -> list:
     return sorted(results, key=lambda x: x["canonical_title"])
 
 
+def tool_get_domains() -> list:
+    """Aggregate the domains across all nodes with counts — powers the viewer's domain facet."""
+    from collections import Counter
+    c = Counter()
+    for n in load_all_nodes():
+        for d in (n.get("domain") or []):
+            if d:
+                c[d] += 1
+    return [{"domain": k, "count": v} for k, v in sorted(c.items(), key=lambda x: (-x[1], x[0]))]
+
+
 def tool_get_health_metrics() -> dict:
     nodes = load_all_nodes()
     G = get_graph()
@@ -5013,6 +5024,14 @@ def pkis_api_index():
     b = _api_json()
     try:
         return _api_ok(tool_get_index(domain=b.get("domain"), node_type=b.get("node_type")))
+    except Exception as e:
+        return _api_err(e, 500)
+
+
+@app.route("/pkis-api/domains", methods=["POST"])
+def pkis_api_domains():
+    try:
+        return _api_ok(tool_get_domains())
     except Exception as e:
         return _api_err(e, 500)
 
