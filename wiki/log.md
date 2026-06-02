@@ -828,3 +828,6 @@
 ## [2026-06-02] committed | source
 - Committed: kendall-what-2017 → sources/kendall-what-2017.md
 - IRI: pkis:source:kendall-what-2017
+
+## [2026-06-02] edit | edit_node
+- pkis:concept:bayesian-inference: fields=['sources', 'needs_canonical_source', 'coverage'] sections=['Reading Path', 'Needs Canonical Source']
