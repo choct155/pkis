@@ -782,3 +782,15 @@ body {
   font-family: var(--mono); font-size: 10px; color: var(--dim);
   letter-spacing: 0.04em; padding: 8px 2px 4px; text-align: center;
 }
+
+/* ── DOMAIN FACET ─────────────────────────────────────────────────────── */
+.domain-strip { padding-top: 0; }
+.chip-domain { border-color: var(--muted); color: var(--text); }
+.chip-domain.active-type {
+  border-color: var(--accent); color: var(--accent); background: rgba(79,142,247,0.08);
+}
+.chip-count { color: var(--dim); font-size: 9px; margin-left: 2px; }
+.group-label {
+  font-family: var(--mono); font-size: 10px; letter-spacing: 0.1em;
+  color: var(--accent); text-transform: uppercase; margin: 14px 0 6px;
+}

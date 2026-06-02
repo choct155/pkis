@@ -9,6 +9,7 @@ import type {
   Cluster,
   ClusterPriorities,
   IndexNode,
+  DomainCount,
 } from '../types';
 
 const BASE = '/pkis-api';
@@ -76,6 +77,11 @@ export async function getIndex(
   domain?: string
 ): Promise<IndexNode[]> {
   return post<IndexNode[]>('/index', { node_type, domain });
+}
+
+// ── Domains (facet) ───────────────────────────────────────────────────────
+export async function getDomains(): Promise<DomainCount[]> {
+  return post<DomainCount[]>('/domains');
 }
 
 // ── Research clusters ─────────────────────────────────────────────────────

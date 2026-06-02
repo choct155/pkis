@@ -7,24 +7,23 @@ import NodeCard from '../components/NodeCard'
 
 interface Props {
   typeFilter: NodeType | 'all'
+  domainFilter: string
   onSelectNode: (iri: string) => void
   onNavigate: (v: View) => void
 }
 
-// Adapt an IndexNode to the SearchResult shape NodeCard renders.
+const TYPE_ORDER = ['concept', 'technique', 'result', 'framework', 'problem',
+  'principle', 'hypothesis', 'research-cluster', 'source']
+
 function asCard(n: IndexNode): SearchResult {
   return {
-    iri: n.iri,
-    canonical_title: n.canonical_title,
-    domain: n.domain,
-    node_type: n.node_type,
-    coverage: n.coverage,
-    understanding: n.understanding,
+    iri: n.iri, canonical_title: n.canonical_title, domain: n.domain,
+    node_type: n.node_type, coverage: n.coverage, understanding: n.understanding,
     one_line_summary: '',
   }
 }
 
-export default function BrowseView({ typeFilter, onSelectNode, onNavigate }: Props) {
+export default function BrowseView({ typeFilter, domainFilter, onSelectNode, onNavigate }: Props) {
   const [health, setHealth]   = useState<HealthMetrics | null>(null)
   const [frontier, setFrontier] = useState<FrontierNode[]>([])
   const [queue, setQueue]     = useState<QueueItem[]>([])
@@ -32,6 +31,8 @@ export default function BrowseView({ typeFilter, onSelectNode, onNavigate }: Pro
   const [loadingMain, setLoadingMain] = useState(true)
   const [indexNodes, setIndexNodes] = useState<IndexNode[]>([])
   const [loadingIndex, setLoadingIndex] = useState(false)
+
+  const faceted = typeFilter !== 'all' || domainFilter !== 'all'
 
   useEffect(() => {
     let cancelled = false
@@ -46,36 +47,55 @@ export default function BrowseView({ typeFilter, onSelectNode, onNavigate }: Pro
     return () => { cancelled = true }
   }, [])
 
-  // When a type filter is active, browse ALL nodes of that type (not just the frontier).
+  // Faceted browse: all nodes matching the active type and/or domain.
   useEffect(() => {
-    if (typeFilter === 'all') { setIndexNodes([]); return }
+    if (!faceted) { setIndexNodes([]); return }
     let cancelled = false
     setLoadingIndex(true)
-    getIndex(typeFilter)
+    getIndex(
+      typeFilter === 'all' ? undefined : typeFilter,
+      domainFilter === 'all' ? undefined : domainFilter,
+    )
       .then((nodes) => { if (!cancelled) { setIndexNodes(nodes); setLoadingIndex(false) } })
       .catch(() => { if (!cancelled) setLoadingIndex(false) })
     return () => { cancelled = true }
-  }, [typeFilter])
+  }, [typeFilter, domainFilter, faceted])
 
-  // ── Filtered (browse-all) mode ──────────────────────────────────────────
-  if (typeFilter !== 'all') {
+  // ── Faceted mode ────────────────────────────────────────────────────────
+  if (faceted) {
+    const label = [
+      domainFilter !== 'all' ? domainFilter : null,
+      typeFilter !== 'all' ? typeFilter : null,
+    ].filter(Boolean).join(' / ') || 'all'
+
+    // Group by type when a domain is selected with no specific type chosen.
+    const groupByType = domainFilter !== 'all' && typeFilter === 'all'
+    const groups: [string, IndexNode[]][] = groupByType
+      ? TYPE_ORDER
+          .map((t) => [t, indexNodes.filter((n) => n.node_type === t)] as [string, IndexNode[]])
+          .filter(([, ns]) => ns.length > 0)
+      : [['', indexNodes]]
+
     return (
       <div>
-        <div className="section-label">
-          {typeFilter} · {loadingIndex ? '…' : indexNodes.length}
-        </div>
+        <div className="section-label">{label} · {loadingIndex ? '…' : indexNodes.length}</div>
         {loadingIndex ? (
-          <div className="loading-row"><div className="loading-spinner" /> loading {typeFilter}s…</div>
+          <div className="loading-row"><div className="loading-spinner" /> loading…</div>
         ) : indexNodes.length === 0 ? (
-          <div className="empty-state">no {typeFilter} nodes</div>
+          <div className="empty-state">no matching nodes</div>
         ) : (
-          indexNodes.map((n) => <NodeCard key={n.iri} node={asCard(n)} onClick={onSelectNode} />)
+          groups.map(([type, ns]) => (
+            <div key={type || 'flat'}>
+              {type && <div className="group-label">{type} · {ns.length}</div>}
+              {ns.map((n) => <NodeCard key={n.iri} node={asCard(n)} onClick={onSelectNode} />)}
+            </div>
+          ))
         )}
       </div>
     )
   }
 
-  // ── Default (all) mode: frontier + queue ────────────────────────────────
+  // ── Default (home) mode: frontier + queue ───────────────────────────────
   const prioritizedQueue = [...queue].sort((a, b) =>
     a.priority === 'high' && b.priority !== 'high' ? -1 :
     b.priority === 'high' && a.priority !== 'high' ? 1 : 0
@@ -107,7 +127,7 @@ export default function BrowseView({ typeFilter, onSelectNode, onNavigate }: Pro
         frontier.slice(0, 8).map((n) => <NodeCard key={n.iri} node={n} onClick={onSelectNode} />)
       )}
 
-      <div className="browse-hint">tap a type chip above to browse all nodes of that type</div>
+      <div className="browse-hint">tap a type or domain chip above to browse all matching nodes</div>
 
       {prioritizedQueue.length > 0 && (
         <>

@@ -2,6 +2,7 @@ import { useState } from 'react'
 import type { View, NodeType, SearchResult } from './types'
 import TopBar from './components/TopBar'
 import FilterStrip from './components/FilterStrip'
+import DomainStrip from './components/DomainStrip'
 import BottomNav from './components/BottomNav'
 import Fab from './components/Fab'
 import DetailSheet from './components/DetailSheet'
@@ -20,6 +21,7 @@ export default function App() {
   const [captureOpen, setCaptureOpen] = useState(false)
   const [editIri, setEditIri]         = useState<string | null>(null)
   const [typeFilter, setTypeFilter]   = useState<NodeType | 'all'>('all')
+  const [domainFilter, setDomainFilter] = useState<string>('all')
   const [searchResults, setSearchResults] = useState<SearchResult[] | null>(null)
 
   const handleSelectNode = (iri: string) => setSelectedIri(iri)
@@ -42,6 +44,9 @@ export default function App() {
         activeView={view}
       />
       {showFilter && <FilterStrip active={typeFilter} onChange={setTypeFilter} />}
+      {view === 'browse' && !showSearch && (
+        <DomainStrip active={domainFilter} onChange={setDomainFilter} />
+      )}
 
       <div className={view === 'graph' && !showSearch ? 'main main-graph' : 'main'}>
         {showSearch ? (
@@ -55,6 +60,7 @@ export default function App() {
             {view === 'browse' && (
               <BrowseView
                 typeFilter={typeFilter}
+                domainFilter={domainFilter}
                 onSelectNode={handleSelectNode}
                 onNavigate={setView}
               />

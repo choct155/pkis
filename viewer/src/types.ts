@@ -186,6 +186,12 @@ export interface IndexNode {
   date_updated: string;
 }
 
+// ── Domain counts (from get_domains) ──────────────────────────────────────
+export interface DomainCount {
+  domain: string;
+  count: number;
+}
+
 // ── App context ───────────────────────────────────────────────────────────
 export interface AppState {
   view: View;
