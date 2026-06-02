@@ -783,3 +783,12 @@
 ## [2026-06-02] committed | source
 - Committed: oord-neural-2017 → sources/oord-neural-2017.md
 - IRI: pkis:source:oord-neural-2017
+
+## [2026-06-02] staged | source-stub
+- Staged: koh-concept-2020 (id: f035a5a4-1afd-4000-a0c7-b51b36ae5257)
+- Title: Concept Bottleneck Models
+- Enrichment: full
+
+## [2026-06-02] committed | source
+- Committed: koh-concept-2020 → sources/koh-concept-2020.md
+- IRI: pkis:source:koh-concept-2020

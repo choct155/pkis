@@ -1,6 +1,7 @@
 # PKIS Wiki Index
 
 ## Sources
+- [[koh-concept-2020]] — Concept Bottleneck Models () (2026-06-02)
 - [[oord-neural-2017]] — Neural Discrete Representation Learning (VQ-VAE) () (2026-06-02)
 - [[mikolov-efficient-2013]] — Efficient Estimation of Word Representations in Vector Space () (2026-06-02)
 - [[guo-on-2017]] — On Calibration of Modern Neural Networks () (2026-06-02)
