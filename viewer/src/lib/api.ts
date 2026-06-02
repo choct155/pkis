@@ -8,6 +8,7 @@ import type {
   StagedNode,
   Cluster,
   ClusterPriorities,
+  IndexNode,
 } from '../types';
 
 const BASE = '/pkis-api';
@@ -67,6 +68,14 @@ export async function getReadingGraph(
   } = {}
 ): Promise<unknown> {
   return post('/reading-graph', options);
+}
+
+// ── Index (browse all nodes of a type) ────────────────────────────────────
+export async function getIndex(
+  node_type?: string,
+  domain?: string
+): Promise<IndexNode[]> {
+  return post<IndexNode[]>('/index', { node_type, domain });
 }
 
 // ── Research clusters ─────────────────────────────────────────────────────

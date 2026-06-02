@@ -756,3 +756,29 @@ body {
   /* Two-column card flow on wide screens — sectioned lists stay readable */
   .stats-row { max-width: 520px; }
 }
+
+/* ── GRAPH HEIGHT FIX ─────────────────────────────────────────────────── */
+/* .main is a block scroll container, so the graph wrap's flex:1 collapsed to 0
+   (blank canvas). Give the graph its own full-height main with no padding. */
+.main-graph { padding: 0 0 52px; }
+.main-graph .graph-view-wrap { height: 100%; }
+
+/* ── SOURCE CITATION / LINKS (DetailSheet) ────────────────────────────── */
+.citation {
+  font-size: 12px; line-height: 1.5; color: var(--text);
+  background: var(--raised); border: 1px solid var(--border);
+  border-radius: var(--radius); padding: 10px 12px; margin-bottom: 8px;
+}
+.source-links { display: flex; flex-wrap: wrap; gap: 6px; }
+.source-link {
+  font-family: var(--mono); font-size: 11px; color: var(--accent);
+  text-decoration: none; border: 1px solid var(--border); border-radius: var(--radius);
+  padding: 5px 10px; background: var(--surface); cursor: pointer; transition: border-color .15s;
+}
+.source-link:hover { border-color: var(--accent); }
+.source-link.as-btn { color: var(--muted); }
+
+.browse-hint {
+  font-family: var(--mono); font-size: 10px; color: var(--dim);
+  letter-spacing: 0.04em; padding: 8px 2px 4px; text-align: center;
+}

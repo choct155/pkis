@@ -106,6 +106,68 @@ function ReadingPath({ items }: { items: ReadingPathItem[] }) {
   )
 }
 
+function wikilinkSlug(ref: string): string {
+  return ref.replace(/^\[\[/, '').replace(/\]\]$/, '').split('|')[0].trim()
+}
+
+// Citation + open-this-source links, shown when the node IS a source.
+function SourceBlock({ fm, title }: { fm: Record<string, unknown>; title: string }) {
+  const sourceUrl = (fm.source_url as string) || (fm.url as string) || ''
+  const docPath   = (fm.doc_path as string) || ''
+  const readwise  = (fm.readwise_id as string) || ''
+  const authors   = (fm.authors as string) || ''
+  const year      = (fm.year as string | number) ?? ''
+  const doi       = (fm.doi as string) || ''
+  const [copied, setCopied] = useState(false)
+
+  const citation = [
+    authors,
+    year ? `(${year}).` : '',
+    `${title}.`,
+    doi ? `doi:${doi}` : (sourceUrl || ''),
+  ].filter(Boolean).join(' ')
+
+  const fileUrl = docPath ? `/docs/${docPath.replace(/^\/+/, '')}` : ''
+  const readwiseUrl = readwise ? `https://read.readwise.io/read/${readwise}` : ''
+
+  const copy = () => {
+    navigator.clipboard?.writeText(citation).then(() => {
+      setCopied(true); setTimeout(() => setCopied(false), 1500)
+    }).catch(() => { /* noop */ })
+  }
+
+  return (
+    <div className="body-section">
+      <div className="body-section-title">source</div>
+      <div className="citation">{citation}</div>
+      <div className="source-links">
+        {sourceUrl && <a className="source-link" href={sourceUrl} target="_blank" rel="noreferrer">↗ open url</a>}
+        {fileUrl && <a className="source-link" href={fileUrl} target="_blank" rel="noreferrer">⤓ open file</a>}
+        {readwiseUrl && <a className="source-link" href={readwiseUrl} target="_blank" rel="noreferrer">▤ readwise</a>}
+        <span className="source-link as-btn" onClick={copy}>{copied ? '✓ copied' : '⎘ copy citation'}</span>
+      </div>
+    </div>
+  )
+}
+
+// Sources this (non-source) node cites — navigable to each source node.
+function SourcesList({ sources, onNavigate }: { sources: string[]; onNavigate: (iri: string) => void }) {
+  return (
+    <div className="body-section">
+      <div className="body-section-title">sources to read</div>
+      {sources.map((ref) => {
+        const slug = wikilinkSlug(ref)
+        return (
+          <div key={slug} className="conn-item" onClick={() => onNavigate(`pkis:source:${slug}`)}>
+            <span className="conn-predicate">source</span>
+            <div className="conn-detail"><div className="conn-target">{slug}</div></div>
+          </div>
+        )
+      })}
+    </div>
+  )
+}
+
 interface Props {
   iri: string
   onClose: () => void
@@ -143,6 +205,8 @@ export default function DetailSheet({ iri, onClose, onNavigate, onEdit, onGraph 
   const content = node?.content ?? ''
   const connections = node?.related_nodes ?? []
   const readingPath = node?.reading_path ?? []
+  const isSource = iri.startsWith('pkis:source:')
+  const sources = Array.isArray(fm?.sources) ? (fm!.sources as string[]) : []
 
   // Split content into sections by ## headings
   function extractSection(md: string, heading: RegExp): string {
@@ -204,6 +268,9 @@ export default function DetailSheet({ iri, onClose, onNavigate, onEdit, onGraph 
                 </div>
               )}
 
+              {/* Source citation + links (when this node is a source) */}
+              {isSource && fm && <SourceBlock fm={fm as Record<string, unknown>} title={title} />}
+
               {/* Visualization */}
               {viz && (
                 <div className="body-section">
@@ -229,6 +296,11 @@ export default function DetailSheet({ iri, onClose, onNavigate, onEdit, onGraph 
                   <div className="body-section-title">intuition</div>
                   <MarkdownBody md={intuitionMd} />
                 </div>
+              )}
+
+              {/* Sources to read (when this node cites sources) */}
+              {!isSource && sources.length > 0 && (
+                <SourcesList sources={sources} onNavigate={onNavigate} />
               )}
 
               {/* Connections */}

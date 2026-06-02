@@ -175,6 +175,17 @@ export interface ClusterPriorities {
   reading_queue: QueueItem[];
 }
 
+// ── Index node (from get_index) ───────────────────────────────────────────
+export interface IndexNode {
+  iri: string;
+  canonical_title: string;
+  domain: string[];
+  node_type: string;
+  coverage: number;
+  understanding: number;
+  date_updated: string;
+}
+
 // ── App context ───────────────────────────────────────────────────────────
 export interface AppState {
   view: View;

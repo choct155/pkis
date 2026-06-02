@@ -43,7 +43,7 @@ export default function App() {
       />
       {showFilter && <FilterStrip active={typeFilter} onChange={setTypeFilter} />}
 
-      <div className="main">
+      <div className={view === 'graph' && !showSearch ? 'main main-graph' : 'main'}>
         {showSearch ? (
           <SearchResults
             results={searchResults!}

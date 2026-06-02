@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
-import type { RelatedEntry, FrontierNode } from '../types'
-import { getRelated, getFrontier } from '../lib/api'
+import type { RelatedEntry } from '../types'
+import { getRelated, getClusters } from '../lib/api'
 
 // Lazy-load Cytoscape to avoid bundling it on initial load
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -8,13 +8,23 @@ type CyFactory = (opts: any) => any
 let cytoscapeLib: CyFactory | null = null
 
 const TYPE_COLORS: Record<string, string> = {
-  concept:   '#4f8ef7',
-  technique: '#34c97a',
-  result:    '#f5a623',
-  framework: '#b06af5',
-  problem:   '#e85c5c',
-  principle: '#4ecdc4',
-  source:    '#a8b3be',
+  concept:        '#4f8ef7',
+  technique:      '#34c97a',
+  result:         '#f5a623',
+  framework:      '#b06af5',
+  problem:        '#e85c5c',
+  principle:      '#4ecdc4',
+  source:         '#a8b3be',
+  'research-cluster': '#eef0f2',
+  hypothesis:     '#e8c15c',
+}
+
+function typeFromIri(iri: string): string {
+  const p = iri.split(':')
+  return p.length >= 2 ? p[1] : 'concept'
+}
+function shortLabel(t: string): string {
+  return t.split(' ').slice(0, 2).join('\n')
 }
 
 const EDGE_PREDICATES = [
@@ -100,51 +110,42 @@ export default function GraphView({ focusIri, onSelectNode }: Props) {
 
       setLoading(true)
 
-      // Load graph data: frontier nodes + their edges
-      let elements: { data: Record<string, unknown> }[] = []
+      const elements: { data: Record<string, unknown> }[] = []
+      const nodeSet = new Set<string>()
+      const addNode = (id: string, label: string, color: string, size: number, type: string) => {
+        if (nodeSet.has(id)) return
+        nodeSet.add(id)
+        elements.push({ data: { id, label, color, size, type } })
+      }
       try {
-        const frontier = await getFrontier()
-        const nodeSet = new Set<string>()
-
-        frontier.slice(0, 30).forEach((n: FrontierNode) => {
-          if (!nodeSet.has(n.iri)) {
-            nodeSet.add(n.iri)
-            elements.push({
-              data: {
-                id: n.iri,
-                label: n.canonical_title.split(' ').slice(0, 2).join('\n'),
-                color: TYPE_COLORS[n.node_type ?? 'concept'] ?? '#6b7280',
-                size: 30 + (n.inbound_refs ?? 0) * 2,
-                type: n.node_type ?? 'concept',
-              },
-            })
-          }
-        })
-
-        // If we have a focusIri, also load its neighborhood
         if (focusIri) {
+          // Ego-network: the focused node + its 1-hop neighbourhood.
+          const ft = typeFromIri(focusIri)
+          addNode(focusIri, shortLabel(focusIri.split(':').pop() ?? focusIri),
+                  TYPE_COLORS[ft] ?? '#6b7280', 44, ft)
           const related = await getRelated(focusIri, { max_hops: 1 })
           related.forEach((r: RelatedEntry) => {
-            if (!nodeSet.has(r.iri)) {
-              nodeSet.add(r.iri)
-              elements.push({
-                data: {
-                  id: r.iri,
-                  label: r.canonical_title.split(' ').slice(0, 2).join('\n'),
-                  color: '#6b7280',
-                  size: 26,
-                  type: 'concept',
-                },
-              })
-            }
-            elements.push({
-              data: {
-                id: `${focusIri}-${r.iri}`,
-                source: r.direction === 'outbound' ? focusIri : r.iri,
-                target: r.direction === 'outbound' ? r.iri : focusIri,
-                label: r.edge_type,
-                edgeType: r.edge_type,
-              },
+            const rt = typeFromIri(r.iri)
+            addNode(r.iri, shortLabel(r.canonical_title), TYPE_COLORS[rt] ?? '#6b7280', 28, rt)
+            elements.push({ data: {
+              id: `${focusIri}-${r.iri}`,
+              source: r.direction === 'outbound' ? focusIri : r.iri,
+              target: r.direction === 'outbound' ? r.iri : focusIri,
+              label: r.edge_type, edgeType: r.edge_type,
+            } })
+          })
+        } else {
+          // Default: the research-program graph — clusters → frontier hypotheses + concept deps.
+          const clusters = await getClusters()
+          clusters.forEach((c) => {
+            addNode(c.iri, shortLabel(c.title), TYPE_COLORS['research-cluster'], 40, 'research-cluster')
+            c.hypotheses.filter((h) => h.iri && h.is_frontier).forEach((h) => {
+              addNode(h.iri!, shortLabel(h.title), TYPE_COLORS.hypothesis, 26, 'hypothesis')
+              elements.push({ data: { id: `${c.iri}-${h.iri}`, source: c.iri, target: h.iri, label: 'tests', edgeType: 'tests' } })
+            })
+            c.deps.forEach((d) => {
+              addNode(d.iri, shortLabel(d.title), TYPE_COLORS[d.type] ?? '#6b7280', 26, d.type)
+              elements.push({ data: { id: `${c.iri}-${d.iri}`, source: c.iri, target: d.iri, label: d.predicate, edgeType: d.predicate } })
             })
           })
         }

@@ -1,6 +1,8 @@
 import { useEffect, useState } from 'react'
-import { getHealth, getFrontier, getReadingQueue, getStagedNodes } from '../lib/api'
-import type { HealthMetrics, FrontierNode, QueueItem, NodeType, View, StagedNode } from '../types'
+import { getHealth, getFrontier, getReadingQueue, getStagedNodes, getIndex } from '../lib/api'
+import type {
+  HealthMetrics, FrontierNode, QueueItem, NodeType, View, StagedNode, IndexNode, SearchResult,
+} from '../types'
 import NodeCard from '../components/NodeCard'
 
 interface Props {
@@ -9,12 +11,17 @@ interface Props {
   onNavigate: (v: View) => void
 }
 
-// Frontier rows may omit node_type; fall back to the IRI segment so the type
-// filter *filters* the cards rather than hiding all of them.
-function typeOf(n: FrontierNode): string {
-  if (n.node_type) return n.node_type
-  const parts = n.iri.split(':')
-  return parts.length >= 2 ? parts[1] : ''
+// Adapt an IndexNode to the SearchResult shape NodeCard renders.
+function asCard(n: IndexNode): SearchResult {
+  return {
+    iri: n.iri,
+    canonical_title: n.canonical_title,
+    domain: n.domain,
+    node_type: n.node_type,
+    coverage: n.coverage,
+    understanding: n.understanding,
+    one_line_summary: '',
+  }
 }
 
 export default function BrowseView({ typeFilter, onSelectNode, onNavigate }: Props) {
@@ -23,6 +30,8 @@ export default function BrowseView({ typeFilter, onSelectNode, onNavigate }: Pro
   const [queue, setQueue]     = useState<QueueItem[]>([])
   const [stagedCount, setStagedCount] = useState(0)
   const [loadingMain, setLoadingMain] = useState(true)
+  const [indexNodes, setIndexNodes] = useState<IndexNode[]>([])
+  const [loadingIndex, setLoadingIndex] = useState(false)
 
   useEffect(() => {
     let cancelled = false
@@ -30,22 +39,43 @@ export default function BrowseView({ typeFilter, onSelectNode, onNavigate }: Pro
     Promise.all([getHealth(), getFrontier(), getReadingQueue(), getStagedNodes({ limit: 500 })])
       .then(([h, f, q, s]: [HealthMetrics, FrontierNode[], QueueItem[], StagedNode[]]) => {
         if (cancelled) return
-        setHealth(h)
-        setFrontier(f)
-        setQueue(q)
-        setStagedCount(s.length)   // live count, not a limit:1 placeholder
+        setHealth(h); setFrontier(f); setQueue(q); setStagedCount(s.length)
         setLoadingMain(false)
       })
       .catch(() => { if (!cancelled) setLoadingMain(false) })
     return () => { cancelled = true }
   }, [])
 
-  // Type filter applies ONLY to the frontier cards. The reading queue is sources
-  // and is intentionally left unaffected by the node-type filter.
-  const filteredFrontier = typeFilter === 'all'
-    ? frontier
-    : frontier.filter((f) => typeOf(f) === typeFilter)
+  // When a type filter is active, browse ALL nodes of that type (not just the frontier).
+  useEffect(() => {
+    if (typeFilter === 'all') { setIndexNodes([]); return }
+    let cancelled = false
+    setLoadingIndex(true)
+    getIndex(typeFilter)
+      .then((nodes) => { if (!cancelled) { setIndexNodes(nodes); setLoadingIndex(false) } })
+      .catch(() => { if (!cancelled) setLoadingIndex(false) })
+    return () => { cancelled = true }
+  }, [typeFilter])
 
+  // ── Filtered (browse-all) mode ──────────────────────────────────────────
+  if (typeFilter !== 'all') {
+    return (
+      <div>
+        <div className="section-label">
+          {typeFilter} · {loadingIndex ? '…' : indexNodes.length}
+        </div>
+        {loadingIndex ? (
+          <div className="loading-row"><div className="loading-spinner" /> loading {typeFilter}s…</div>
+        ) : indexNodes.length === 0 ? (
+          <div className="empty-state">no {typeFilter} nodes</div>
+        ) : (
+          indexNodes.map((n) => <NodeCard key={n.iri} node={asCard(n)} onClick={onSelectNode} />)
+        )}
+      </div>
+    )
+  }
+
+  // ── Default (all) mode: frontier + queue ────────────────────────────────
   const prioritizedQueue = [...queue].sort((a, b) =>
     a.priority === 'high' && b.priority !== 'high' ? -1 :
     b.priority === 'high' && a.priority !== 'high' ? 1 : 0
@@ -53,7 +83,6 @@ export default function BrowseView({ typeFilter, onSelectNode, onNavigate }: Pro
 
   return (
     <div>
-      {/* Staged nodes badge */}
       {stagedCount > 0 && (
         <div className="staged-badge" onClick={() => onNavigate('staged')}>
           <div className="staged-dot" />
@@ -61,41 +90,25 @@ export default function BrowseView({ typeFilter, onSelectNode, onNavigate }: Pro
         </div>
       )}
 
-      {/* Stats row */}
       {loadingMain ? (
-        <div className="loading-row">
-          <div className="loading-spinner" /> loading stats…
-        </div>
+        <div className="loading-row"><div className="loading-spinner" /> loading stats…</div>
       ) : health && (
         <div className="stats-row">
-          <div className="stat-card">
-            <span className="stat-value">{health.total_nodes}</span>
-            <span className="stat-label">nodes</span>
-          </div>
-          <div className="stat-card">
-            <span className="stat-value">{health.total_sources}</span>
-            <span className="stat-label">sources</span>
-          </div>
-          <div className="stat-card">
-            <span className="stat-value">{health.queue_depth}</span>
-            <span className="stat-label">queue</span>
-          </div>
+          <div className="stat-card"><span className="stat-value">{health.total_nodes}</span><span className="stat-label">nodes</span></div>
+          <div className="stat-card"><span className="stat-value">{health.total_sources}</span><span className="stat-label">sources</span></div>
+          <div className="stat-card"><span className="stat-value">{health.queue_depth}</span><span className="stat-label">queue</span></div>
         </div>
       )}
 
-      {/* Frontier */}
       <div className="section-label">frontier — needs attention</div>
-      {filteredFrontier.length === 0 ? (
-        <div className="empty-state">
-          {typeFilter === 'all' ? 'nothing on the frontier' : `no ${typeFilter} nodes on the frontier`}
-        </div>
+      {frontier.length === 0 ? (
+        <div className="empty-state">nothing on the frontier</div>
       ) : (
-        filteredFrontier.slice(0, 8).map((n) => (
-          <NodeCard key={n.iri} node={n} onClick={onSelectNode} />
-        ))
+        frontier.slice(0, 8).map((n) => <NodeCard key={n.iri} node={n} onClick={onSelectNode} />)
       )}
 
-      {/* Reading queue (unaffected by type filter) */}
+      <div className="browse-hint">tap a type chip above to browse all nodes of that type</div>
+
       {prioritizedQueue.length > 0 && (
         <>
           <div className="section-label">reading queue</div>
