@@ -218,8 +218,13 @@ export default function DetailSheet({ iri, onClose, onNavigate, onEdit, onGraph 
     return nextHeading ? rest.slice(0, nextHeading.index).trim() : rest.trim()
   }
 
+  const hasDefinition = /^## Definition\s*/m.test(content)
   const definitionMd = extractSection(content, /^## Definition\s*/m) || content.split('\n\n')[0]
   const intuitionMd  = extractSection(content, /^## Intuition\s*/m)
+  // Hypotheses, clusters, sources use other section headings (Formal Statement,
+  // Thesis, Summary…). When there's no Definition, render the full body (minus the
+  // Connections prose, which is shown structurally below) so those nodes aren't blank.
+  const fullBody = content.replace(/\n##\s+Connections[\s\S]*?(?=\n##\s|$)/i, '').trim()
 
   return (
     <div className="sheet-overlay open">
@@ -260,12 +265,21 @@ export default function DetailSheet({ iri, onClose, onNavigate, onEdit, onGraph 
 
           {!loading && node && (
             <>
-              {/* Definition */}
-              {definitionMd && (
-                <div className="body-section">
-                  <div className="body-section-title">definition</div>
-                  <MarkdownBody md={definitionMd} />
-                </div>
+              {/* Definition (concepts) or full body (hypotheses, clusters, sources, …) */}
+              {hasDefinition ? (
+                definitionMd && (
+                  <div className="body-section">
+                    <div className="body-section-title">definition</div>
+                    <MarkdownBody md={definitionMd} />
+                  </div>
+                )
+              ) : (
+                fullBody && (
+                  <div className="body-section">
+                    <div className="body-section-title">details</div>
+                    <MarkdownBody md={fullBody} />
+                  </div>
+                )
               )}
 
               {/* Source citation + links (when this node is a source) */}
