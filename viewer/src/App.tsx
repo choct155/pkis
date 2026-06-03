@@ -14,6 +14,7 @@ import ClustersView from './views/ClustersView'
 import PriorityView from './views/PriorityView'
 import GraphView from './views/GraphView'
 import StagedView from './views/StagedView'
+import ReaderView from './views/ReaderView'
 
 export default function App() {
   const [view, setView]               = useState<View>('browse')
@@ -23,6 +24,7 @@ export default function App() {
   const [typeFilter, setTypeFilter]   = useState<NodeType | 'all'>('all')
   const [domainFilter, setDomainFilter] = useState<string>('all')
   const [searchResults, setSearchResults] = useState<SearchResult[] | null>(null)
+  const [readerSlug, setReaderSlug] = useState<string | null>(null)
 
   const handleSelectNode = (iri: string) => setSelectedIri(iri)
 
@@ -91,7 +93,12 @@ export default function App() {
           onNavigate={(iri) => setSelectedIri(iri)}
           onEdit={() => setEditIri(selectedIri)}
           onGraph={handleNavigateToGraph}
+          onListen={(slug) => setReaderSlug(slug)}
         />
+      )}
+
+      {readerSlug && (
+        <ReaderView slug={readerSlug} onClose={() => setReaderSlug(null)} />
       )}
 
       {captureOpen && (

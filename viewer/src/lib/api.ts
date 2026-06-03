@@ -10,6 +10,7 @@ import type {
   ClusterPriorities,
   IndexNode,
   DomainCount,
+  ReaderPayload,
 } from '../types';
 
 const BASE = '/pkis-api';
@@ -77,6 +78,17 @@ export async function getIndex(
   domain?: string
 ): Promise<IndexNode[]> {
   return post<IndexNode[]>('/index', { node_type, domain });
+}
+
+// ── Reader (read+listen) ──────────────────────────────────────────────────
+export async function getReader(slug: string): Promise<ReaderPayload> {
+  return post<ReaderPayload>(`/reader/${slug}`);
+}
+
+export async function saveReaderAnnotation(a: {
+  slug: string; section_id: string; text: string; note?: string; kind?: 'note' | 'bridge';
+}): Promise<unknown> {
+  return post('/reader-annotate', a);
 }
 
 // ── Domains (facet) ───────────────────────────────────────────────────────

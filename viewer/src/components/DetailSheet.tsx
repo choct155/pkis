@@ -174,9 +174,10 @@ interface Props {
   onNavigate: (iri: string) => void
   onEdit: () => void
   onGraph: () => void
+  onListen: (slug: string) => void
 }
 
-export default function DetailSheet({ iri, onClose, onNavigate, onEdit, onGraph }: Props) {
+export default function DetailSheet({ iri, onClose, onNavigate, onEdit, onGraph, onListen }: Props) {
   const [node, setNode] = useState<FullNode | null>(null)
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
@@ -337,6 +338,9 @@ export default function DetailSheet({ iri, onClose, onNavigate, onEdit, onGraph 
         {/* ── ACTIONS ── */}
         <div className="sheet-actions">
           <div className="action-btn" onClick={onClose}>← back</div>
+          {isSource && (
+            <div className="action-btn" onClick={() => onListen(iri.split(':').pop() || '')}>▶ listen</div>
+          )}
           <div className="action-btn" onClick={onGraph}>⬡ graph</div>
           <div className="action-btn primary" onClick={onEdit}>✎ edit</div>
         </div>

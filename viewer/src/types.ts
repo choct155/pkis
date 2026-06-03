@@ -192,6 +192,25 @@ export interface DomainCount {
   count: number;
 }
 
+// ── Reader (read+listen slice) ────────────────────────────────────────────
+export interface ReaderSection {
+  id: string;
+  title: string;
+  paper_md: string;
+  narration: string;
+  t_start: number;
+  t_end: number;
+}
+
+export interface ReaderPayload {
+  slug: string;
+  title: string;
+  source_iri: string;
+  audio_url: string;
+  total_duration: number;
+  sections: ReaderSection[];
+}
+
 // ── App context ───────────────────────────────────────────────────────────
 export interface AppState {
   view: View;
