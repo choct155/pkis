@@ -175,15 +175,31 @@ def concat_wavs(paths, out):
                 o.writeframes(w.readframes(w.getnframes()))
 
 
+def encode_mp3(wav_path, mp3_path, bitrate=64):
+    """Encode a wav to mp3 with lameenc (no ffmpeg). ~64 kbps mono speech ≈ 0.5 MB/min."""
+    import lameenc
+    with wave.open(wav_path, "rb") as w:
+        ch, sr = w.getnchannels(), w.getframerate()
+        pcm = w.readframes(w.getnframes())
+    enc = lameenc.Encoder()
+    enc.set_bit_rate(bitrate)
+    enc.set_in_sample_rate(sr)
+    enc.set_channels(ch)
+    enc.set_quality(3)
+    with open(mp3_path, "wb") as f:
+        f.write(enc.encode(pcm) + enc.flush())
+
+
 def main():
     if len(sys.argv) < 3:
         print(__doc__); sys.exit(1)
     arxiv_id, slug = sys.argv[1], sys.argv[2]
     stage = sys.argv[3] if len(sys.argv) > 3 else "extract"
-    max_seg = int(sys.argv[4]) if len(sys.argv) > 4 else 12
+    max_seg = int(sys.argv[4]) if len(sys.argv) > 4 else 40  # default: cover the whole paper
 
     print(f"fetching ar5iv {arxiv_id} …")
-    segs = extract_segments(fetch_ar5iv(arxiv_id), max_seg)
+    htmltext = fetch_ar5iv(arxiv_id)
+    segs = extract_segments(htmltext, max_seg)
     print(f"extracted {len(segs)} segments")
     for s in segs:
         print(f"  [{s['id']}] {s['title']}  ({len(s['paper_md'])} chars)")
@@ -226,12 +242,16 @@ def main():
                          "narration": s["narration"], "t_start": round(t, 2), "t_end": round(t + d, 2)})
             t += d
             print(f"  tts [{s['id']}] {d:.1f}s -> {t:.1f}s")
-        concat_wavs(wavs, os.path.join(outdir, "audio.wav"))
-        soup = BeautifulSoup(fetch_ar5iv(arxiv_id), "html.parser")
-        title_el = soup.find("h1")
+        tmp_wav = os.path.join(tmp, "full.wav")
+        concat_wavs(wavs, tmp_wav)
+        encode_mp3(tmp_wav, os.path.join(outdir, "audio.mp3"))
+        stale = os.path.join(outdir, "audio.wav")
+        if os.path.exists(stale):
+            os.remove(stale)
+        title_el = BeautifulSoup(htmltext, "html.parser").find("h1")
         payload = {
             "slug": slug, "title": _collapse(title_el.get_text(" ", strip=True)) if title_el else slug,
-            "source_iri": source_iri, "audio_url": f"/pkis-api/reader/{slug}/audio.wav",
+            "source_iri": source_iri, "audio_url": f"/pkis-api/reader/{slug}/audio.mp3",
             "total_duration": round(t, 2), "sections": meta,
         }
         with open(os.path.join(outdir, "payload.json"), "w") as f:

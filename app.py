@@ -4866,6 +4866,7 @@ def dispatch_tool(tool_name: str, params: dict, req) -> any:
             cluster_proximity_weight=p.get("cluster_proximity_weight"),
             reset=p.get("reset", False),
         ),
+        "build_reader": lambda p: tool_build_reader(slug=p["slug"], arxiv_id=p.get("arxiv_id")),
         "add_connections": lambda p: tool_add_connections(
             edges=p["edges"],
             commit_message=p.get("commit_message", ""),
@@ -5059,12 +5060,73 @@ def pkis_api_reader(slug):
         return _api_err(e, 500)
 
 
-@app.route("/pkis-api/reader/<slug>/audio.wav", methods=["GET"])
-def pkis_api_reader_audio(slug):
+@app.route("/pkis-api/reader/<slug>/<audiofile>", methods=["GET"])
+def pkis_api_reader_audio(slug, audiofile):
+    if audiofile not in ("audio.mp3", "audio.wav"):
+        return _api_err("not found", 404)
     d = READER_DIR / slug
-    if not (d / "audio.wav").exists():
+    if not (d / audiofile).exists():
         return _api_err("no audio", 404)
-    return send_from_directory(str(d), "audio.wav")
+    return send_from_directory(str(d), audiofile)
+
+
+@app.route("/pkis-api/reader/<slug>/status", methods=["GET"])
+def pkis_api_reader_status(slug):
+    d = READER_DIR / slug
+    if (d / "payload.json").exists():
+        return _api_ok({"state": "ready"})
+    sp = d / "status.json"
+    if sp.exists():
+        try:
+            return _api_ok(json.loads(sp.read_text()))
+        except Exception:
+            pass
+    return _api_ok({"state": "none"})
+
+
+def tool_build_reader(slug: str, arxiv_id: str = None) -> dict:
+    """Kick off a background build of the read+listen payload for a source. Derives the arXiv id
+    from the source node's source_url if not given. Returns immediately; poll
+    /pkis-api/reader/<slug>/status (or get the payload) for completion."""
+    if not arxiv_id:
+        p = find_node_path_by_iri(f"pkis:source:{slug}")
+        if not p:
+            raise ValueError(f"no source node for slug '{slug}'")
+        fm = load_node(p).get("frontmatter", {})
+        url = str(fm.get("source_url", "") or fm.get("url", ""))
+        m = re.search(r'arxiv\.org/(?:abs|pdf)/([0-9]+\.[0-9]+)', url)
+        if not m:
+            raise ValueError(f"no arXiv id in source_url for '{slug}': {url!r}")
+        arxiv_id = m.group(1)
+    d = READER_DIR / slug
+    d.mkdir(parents=True, exist_ok=True)
+    (d / "status.json").write_text(json.dumps({"state": "building", "arxiv_id": arxiv_id}))
+    script = str(REPO_DIR / "tools" / "reader_build.py")
+    py = os.environ.get("READER_PYTHON", "/home/pkis/venv/bin/python")
+    env = dict(os.environ)
+    env["PYTHONPATH"] = str(REPO_DIR) + ":" + env.get("PYTHONPATH", "")
+    env.setdefault("PIPER", "/home/pkis/piper_dist/piper/piper")
+    env.setdefault("PIPER_MODEL", "/home/pkis/piper_dist/voices/en_US-lessac-medium.onnx")
+    env["LD_LIBRARY_PATH"] = "/home/pkis/piper_dist/piper:" + env.get("LD_LIBRARY_PATH", "")
+    env["OUTDIR"] = str(d)
+    cmd = (f'{py} {script} {arxiv_id} {slug} full > {d}/build.log 2>&1 '
+           f'&& echo \'{{"state":"ready"}}\' > {d}/status.json '
+           f'|| echo \'{{"state":"error"}}\' > {d}/status.json')
+    subprocess.Popen(["bash", "-c", cmd], env=env, start_new_session=True,
+                     stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+    return {"status": "building", "slug": slug, "arxiv_id": arxiv_id}
+
+
+@app.route("/pkis-api/reader-build", methods=["POST"])
+def pkis_api_reader_build():
+    b = _api_json()
+    slug = b.get("slug")
+    if not slug:
+        return _api_err("slug required")
+    try:
+        return _api_ok(tool_build_reader(slug, b.get("arxiv_id")))
+    except Exception as e:
+        return _api_err(e, 400)
 
 
 @app.route("/pkis-api/reader/<slug>/annotations", methods=["GET"])
