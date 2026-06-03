@@ -5044,6 +5044,75 @@ def pkis_api_cluster_priorities():
         return _api_err(e, 500)
 
 
+# ── Read+listen reader (slice 1) ──────────────────────────────────────────
+READER_DIR = Path(os.environ.get("READER_DIR", str(WIKI_DIR / "reader")))
+
+
+@app.route("/pkis-api/reader/<slug>", methods=["GET", "POST"])
+def pkis_api_reader(slug):
+    p = READER_DIR / slug / "payload.json"
+    if not p.exists():
+        return _api_err(f"no reader payload for {slug}", 404)
+    try:
+        return _api_ok(json.loads(p.read_text()))
+    except Exception as e:
+        return _api_err(e, 500)
+
+
+@app.route("/pkis-api/reader/<slug>/audio.wav", methods=["GET"])
+def pkis_api_reader_audio(slug):
+    d = READER_DIR / slug
+    if not (d / "audio.wav").exists():
+        return _api_err("no audio", 404)
+    return send_from_directory(str(d), "audio.wav")
+
+
+@app.route("/pkis-api/reader/<slug>/annotations", methods=["GET"])
+def pkis_api_reader_annotations(slug):
+    p = READER_DIR / slug / "annotations.jsonl"
+    if not p.exists():
+        return _api_ok([])
+    items = [json.loads(l) for l in p.read_text().splitlines() if l.strip()]
+    return _api_ok(items)
+
+
+@app.route("/pkis-api/reader-annotate", methods=["POST"])
+def pkis_api_reader_annotate():
+    """Save a position-anchored annotation from the reader; optionally drop a bridge note
+    into the graph when the user flags it (kind='bridge')."""
+    b = _api_json()
+    slug = b.get("slug")
+    if not slug:
+        return _api_err("slug required")
+    d = READER_DIR / slug
+    d.mkdir(parents=True, exist_ok=True)
+    rec = {
+        "id": str(uuid.uuid4()),
+        "slug": slug,
+        "section_id": b.get("section_id", ""),
+        "text": b.get("text", ""),
+        "note": b.get("note", ""),
+        "kind": b.get("kind", "note"),
+        "created": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
+    }
+    with open(d / "annotations.jsonl", "a") as f:
+        f.write(json.dumps(rec) + "\n")
+    result = {"status": "saved", "annotation": rec}
+    if rec["kind"] == "bridge":
+        try:
+            note = (rec["note"] or rec["text"] or "")[:300]
+            br = tool_create_bridge_note(
+                rationale=f"[reading {slug} · {rec['section_id']}] {note}",
+                linked_node_refs=[f"pkis:source:{slug}"],
+                proposed_edge_type="related",
+                origin="reading",
+            )
+            result["bridge_staged_id"] = br.get("staged_id")
+        except Exception as e:
+            result["bridge_error"] = str(e)
+    return _api_ok(result)
+
+
 @app.route("/pkis-api/reading-graph", methods=["POST"])
 def pkis_api_reading_graph():
     b = _api_json()

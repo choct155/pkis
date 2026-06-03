@@ -222,3 +222,6 @@ app.py.bak.*
 
 # Runtime config (server-side state, not source)
 priority_config.json
+
+# Generated reader payloads (audio + json)
+wiki/reader/
