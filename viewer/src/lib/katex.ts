@@ -1,32 +1,24 @@
-// KaTeX auto-render integration
-// Uses the CDN-loaded auto-render since vite-plugin-pwa caches it
-
-declare global {
-  interface Window {
-    renderMathInElement?: (el: Element, opts?: unknown) => void
-  }
-}
+// KaTeX auto-render integration.
+// NOTE: the previous version used `import(/* @vite-ignore */ 'katex/dist/contrib/auto-render.js')`,
+// a bare specifier the browser can't resolve at runtime — so math never rendered. Import the
+// auto-render contrib statically so Vite bundles it; the KaTeX CSS is imported globally in index.css.
+import renderMathInElement from 'katex/contrib/auto-render'
 
 const KATEX_OPTS = {
   delimiters: [
     { left: '$$', right: '$$', display: true },
+    { left: '\\[', right: '\\]', display: true },
     { left: '$', right: '$', display: false },
+    { left: '\\(', right: '\\)', display: false },
   ],
   throwOnError: false,
 }
 
 export function renderMath(el: HTMLElement | null): void {
   if (!el) return
-  // Use dynamic import with string literal to bypass TS module resolution for sub-path
-  // Falls back to window global if not available
-  const autoRenderPath = 'katex/dist/contrib/auto-render.js'
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  ;(import(/* @vite-ignore */ autoRenderPath) as Promise<any>)
-    .then((mod) => {
-      const render = mod.default ?? mod
-      if (typeof render === 'function') render(el, KATEX_OPTS)
-    })
-    .catch(() => {
-      window.renderMathInElement?.(el, KATEX_OPTS)
-    })
+  try {
+    renderMathInElement(el, KATEX_OPTS)
+  } catch {
+    /* best effort */
+  }
 }
