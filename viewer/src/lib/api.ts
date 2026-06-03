@@ -91,6 +91,20 @@ export async function saveReaderAnnotation(a: {
   return post('/reader-annotate', a);
 }
 
+export async function buildReader(slug: string): Promise<{ status: string; slug: string; arxiv_id?: string }> {
+  return post('/reader-build', { slug });
+}
+
+export async function getReaderStatus(slug: string): Promise<{ state: string }> {
+  try {
+    const r = await fetch(`/pkis-api/reader/${slug}/status`);
+    if (!r.ok) return { state: 'none' };
+    return (await r.json()) as { state: string };
+  } catch {
+    return { state: 'none' };
+  }
+}
+
 // ── Domains (facet) ───────────────────────────────────────────────────────
 export async function getDomains(): Promise<DomainCount[]> {
   return post<DomainCount[]>('/domains');

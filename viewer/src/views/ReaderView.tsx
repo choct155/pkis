@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
-import { getReader, saveReaderAnnotation } from '../lib/api'
+import { getReader, saveReaderAnnotation, buildReader, getReaderStatus } from '../lib/api'
 import { renderMarkdown } from '../lib/markdown'
 import { renderMath } from '../lib/katex'
 import type { ReaderPayload } from '../types'
@@ -16,7 +16,7 @@ function fmt(t: number): string {
 
 export default function ReaderView({ slug, onClose }: Props) {
   const [payload, setPayload] = useState<ReaderPayload | null>(null)
-  const [err, setErr] = useState<string | null>(null)
+  const [phase, setPhase] = useState<'loading' | 'ready' | 'absent' | 'building' | 'error'>('loading')
   const [curId, setCurId] = useState('')
   const [playing, setPlaying] = useState(false)
   const [rate, setRate] = useState(1)
@@ -29,19 +29,53 @@ export default function ReaderView({ slug, onClose }: Props) {
 
   const showToast = (m: string) => { setToast(m); setTimeout(() => setToast(null), 1800) }
 
-  // Load payload; fall back to a localStorage copy when offline.
+  const loadPayload = async () => {
+    try {
+      const p = await getReader(slug)
+      setPayload(p)
+      localStorage.setItem(`reader:${slug}`, JSON.stringify(p))
+      setPhase('ready')
+      return true
+    } catch { return false }
+  }
+
+  // Load payload; if absent, check build status; fall back to a localStorage copy offline.
   useEffect(() => {
     let cancelled = false
-    const key = `reader:${slug}`
-    getReader(slug)
-      .then((p) => { if (!cancelled) { setPayload(p); localStorage.setItem(key, JSON.stringify(p)) } })
-      .catch(() => {
-        const c = localStorage.getItem(key)
-        if (c && !cancelled) setPayload(JSON.parse(c))
-        else if (!cancelled) setErr('could not load reader (offline and not cached)')
-      })
+    ;(async () => {
+      if (await loadPayload()) return
+      const s = await getReaderStatus(slug)
+      if (cancelled) return
+      if (s.state === 'building') setPhase('building')
+      else if (s.state === 'error') setPhase('error')
+      else {
+        const c = localStorage.getItem(`reader:${slug}`)
+        if (c) { setPayload(JSON.parse(c)); setPhase('ready') }
+        else setPhase('absent')
+      }
+    })()
     return () => { cancelled = true }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [slug])
+
+  // Poll while a build is in progress.
+  useEffect(() => {
+    if (phase !== 'building') return
+    let cancelled = false
+    const iv = setInterval(async () => {
+      const s = await getReaderStatus(slug)
+      if (cancelled) return
+      if (s.state === 'ready') { clearInterval(iv); await loadPayload() }
+      else if (s.state === 'error') { clearInterval(iv); setPhase('error') }
+    }, 4000)
+    return () => { cancelled = true; clearInterval(iv) }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [phase, slug])
+
+  const startBuild = async () => {
+    setPhase('building')
+    try { await buildReader(slug) } catch { setPhase('error') }
+  }
 
   // Resolve audio source: prefer a cached blob (offline), else stream from the network.
   useEffect(() => {
@@ -124,19 +158,37 @@ export default function ReaderView({ slug, onClose }: Props) {
     setSel(null); window.getSelection?.()?.removeAllRanges()
   }
 
-  if (err) {
+  if (phase !== 'ready' || !payload) {
     return (
       <div className="reader-overlay">
-        <div className="reader-bar"><span className="reader-back" onClick={onClose}>← back</span></div>
-        <div className="empty-state">{err}</div>
-      </div>
-    )
-  }
-  if (!payload) {
-    return (
-      <div className="reader-overlay">
-        <div className="reader-bar"><span className="reader-back" onClick={onClose}>← back</span></div>
-        <div className="loading-row"><div className="loading-spinner" /> loading reader…</div>
+        <div className="reader-bar">
+          <span className="reader-back" onClick={onClose}>← back</span>
+          <span className="reader-title">{slug}</span>
+        </div>
+        <div className="reader-gate">
+          {phase === 'loading' && <div className="loading-row"><div className="loading-spinner" /> loading…</div>}
+          {phase === 'building' && (
+            <>
+              <div className="loading-row"><div className="loading-spinner" /> generating narration…</div>
+              <div className="reader-gate-note">
+                This paper is being narrated (a few minutes — Claude writes it, then it's voiced).
+                It'll appear here when ready; you can leave and come back.
+              </div>
+            </>
+          )}
+          {phase === 'absent' && (
+            <>
+              <div className="reader-gate-note">This paper hasn't been narrated yet.</div>
+              <button className="cap-submit" onClick={startBuild}>build narration →</button>
+            </>
+          )}
+          {phase === 'error' && (
+            <>
+              <div className="reader-gate-note">Narration build failed (is this an arXiv source?).</div>
+              <button className="cap-submit" onClick={startBuild}>retry build →</button>
+            </>
+          )}
+        </div>
       </div>
     )
   }
