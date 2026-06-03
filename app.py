@@ -5073,14 +5073,17 @@ def pkis_api_reader_audio(slug, audiofile):
 @app.route("/pkis-api/reader/<slug>/status", methods=["GET"])
 def pkis_api_reader_status(slug):
     d = READER_DIR / slug
-    if (d / "payload.json").exists():
-        return _api_ok({"state": "ready"})
     sp = d / "status.json"
+    # An in-progress/failed build takes precedence over a (possibly stale) existing payload.
     if sp.exists():
         try:
-            return _api_ok(json.loads(sp.read_text()))
+            st = json.loads(sp.read_text())
+            if st.get("state") in ("building", "error"):
+                return _api_ok(st)
         except Exception:
             pass
+    if (d / "payload.json").exists():
+        return _api_ok({"state": "ready"})
     return _api_ok({"state": "none"})
 
 
