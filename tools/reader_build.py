@@ -229,22 +229,75 @@ EXTRACT_SYSTEM = (
 )
 
 
-# ── route 2: PDF document-block extraction (single call) ────────────────────
+# ── route 2: PDF document-block extraction (page-chunked) ───────────────────
+# A PDF block costs ~2.5k input tokens/page (text + a rendered image per page), so a long
+# document in ONE request exceeds the org's 30k tokens/minute tier. Split into small page
+# ranges, vision-extract each (math fidelity preserved), and stitch sections across chunks.
+CHUNK_PAGES = 6
+
+
+def _split_pdf(data, chunk_pages):
+    import io, pypdf
+    reader = pypdf.PdfReader(io.BytesIO(data))
+    n = len(reader.pages)
+    chunks = []
+    for start in range(0, n, chunk_pages):
+        end = min(start + chunk_pages, n)
+        w = pypdf.PdfWriter()
+        for i in range(start, end):
+            w.add_page(reader.pages[i])
+        buf = io.BytesIO(); w.write(buf)
+        chunks.append((start + 1, end, buf.getvalue()))
+    return n, chunks
+
+
+def _extract_pdf_doc(b64, instr):
+    resp = _create(
+        model=MODEL, max_tokens=12000, system=EXTRACT_SYSTEM,
+        messages=[{"role": "user", "content": [
+            {"type": "document", "source": {"type": "base64", "media_type": "application/pdf", "data": b64}},
+            {"type": "text", "text": instr + " Return ONLY the JSON object."}]}])
+    if getattr(resp, "stop_reason", "") == "max_tokens":
+        print("  WARNING: a chunk hit max_tokens — its tail may be truncated")
+    return _parse_json(_resp_text(resp))
+
+
+def _norm_title(s):
+    return re.sub(r"[^a-z0-9]+", "", (s or "").lower())
+
+
 def pdf_route(pdf_path, max_seg):
     print(f"  route=pdf {pdf_path}")
     data = open(pdf_path, "rb").read()
-    if len(data) > 30 * 1024 * 1024:
-        raise SystemExit("PDF too large (>30MB) for single-request extraction; split it first")
-    b64 = base64.standard_b64encode(data).decode()
-    resp = _create(
-        model=MODEL, max_tokens=16000, system=EXTRACT_SYSTEM,
-        messages=[{"role": "user", "content": [
-            {"type": "document", "source": {"type": "base64", "media_type": "application/pdf", "data": b64}},
-            {"type": "text", "text": "Extract this document per the rules. Return ONLY the JSON object."}]}])
-    if getattr(resp, "stop_reason", "") == "max_tokens":
-        print("  WARNING: extraction hit max_tokens — a very long document may be truncated")
-    obj = _parse_json(_resp_text(resp))
-    return _segs_from_sections(obj.get("sections", []), max_seg), _collapse(obj.get("title") or "")
+    if len(data) > 40 * 1024 * 1024:
+        raise SystemExit("PDF too large (>40MB); split it first")
+    npages, chunks = _split_pdf(data, CHUNK_PAGES)
+    print(f"  pdf: {npages} pages -> {len(chunks)} chunk(s) of <= {CHUNK_PAGES}p")
+    if len(chunks) == 1:
+        obj = _extract_pdf_doc(base64.standard_b64encode(data).decode(),
+                               "Extract this document per the rules.")
+        return _segs_from_sections(obj.get("sections", []), max_seg), _collapse(obj.get("title") or "")
+    title, merged = "", []
+    for idx, (lo, hi, cdata) in enumerate(chunks):
+        instr = (f"This is pages {lo}-{hi} of a {npages}-page document. Extract the sections that "
+                 "appear on these pages. A section may begin before or continue past this chunk — "
+                 "extract whatever of it is present here.")
+        obj = _extract_pdf_doc(base64.standard_b64encode(cdata).decode(), instr)
+        if idx == 0:
+            title = _collapse(obj.get("title") or "")
+        added = 0
+        for sec in obj.get("sections", []):
+            st = _collapse(str(sec.get("title") or ""))
+            md = (sec.get("markdown") or "").strip()
+            if not md:
+                continue
+            # stitch a section that spanned the chunk boundary back onto the previous one
+            if merged and (not st or _norm_title(st) == _norm_title(merged[-1]["title"])):
+                merged[-1]["markdown"] += "\n\n" + md
+            else:
+                merged.append({"title": st, "markdown": md}); added += 1
+        print(f"  chunk p{lo}-{hi}: +{added} new sections (total {len(merged)})")
+    return _segs_from_sections(merged, max_seg), title
 
 
 # ── route 3: web HTML extraction (single call) ──────────────────────────────
