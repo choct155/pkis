@@ -5088,22 +5088,31 @@ def pkis_api_reader_status(slug):
 
 
 def tool_build_reader(slug: str, arxiv_id: str = None) -> dict:
-    """Kick off a background build of the read+listen payload for a source. Derives the arXiv id
-    from the source node's source_url if not given. Returns immediately; poll
-    /pkis-api/reader/<slug>/status (or get the payload) for completion."""
-    if not arxiv_id:
-        p = find_node_path_by_iri(f"pkis:source:{slug}")
-        if not p:
-            raise ValueError(f"no source node for slug '{slug}'")
-        fm = load_node(p).get("frontmatter", {})
-        url = str(fm.get("source_url", "") or fm.get("url", ""))
-        m = re.search(r'arxiv\.org/(?:abs|pdf)/([0-9]+\.[0-9]+)', url)
-        if not m:
-            raise ValueError(f"no arXiv id in source_url for '{slug}': {url!r}")
+    """Kick off a background build of the read+listen payload for a source. The builder is
+    slug-driven and routes by available input: arXiv id in source_url → ar5iv; else a doc-store
+    PDF → Claude PDF extraction; else an http source_url → web extraction. Returns immediately;
+    poll /pkis-api/reader/<slug>/status (or get the payload) for completion."""
+    p = find_node_path_by_iri(f"pkis:source:{slug}")
+    if not p:
+        raise ValueError(f"no source node for slug '{slug}'")
+    fm = load_node(p).get("frontmatter", {})
+    url = str(fm.get("source_url", "") or fm.get("url", ""))
+    # detect route for status reporting + early validation (the builder re-routes the same way)
+    m = re.search(r'arxiv\.org/(?:abs|pdf)/([0-9]+\.[0-9]+)', url)
+    if not arxiv_id and m:
         arxiv_id = m.group(1)
+    pdf_glob = sorted((DOCS_DIR / "sources" / slug).glob("*.pdf")) if (DOCS_DIR / "sources" / slug).is_dir() else []
+    if arxiv_id:
+        route = "arxiv"
+    elif pdf_glob:
+        route = "pdf"
+    elif url.startswith("http"):
+        route = "html"
+    else:
+        raise ValueError(f"no narratable input for '{slug}' (no arXiv id, no doc-store PDF, no http source_url)")
     d = READER_DIR / slug
     d.mkdir(parents=True, exist_ok=True)
-    (d / "status.json").write_text(json.dumps({"state": "building", "arxiv_id": arxiv_id}))
+    (d / "status.json").write_text(json.dumps({"state": "building", "route": route, "arxiv_id": arxiv_id}))
     script = str(REPO_DIR / "tools" / "reader_build.py")
     py = os.environ.get("READER_PYTHON", "/home/pkis/venv/bin/python")
     env = dict(os.environ)
@@ -5112,12 +5121,13 @@ def tool_build_reader(slug: str, arxiv_id: str = None) -> dict:
     env.setdefault("PIPER_MODEL", "/home/pkis/piper_dist/voices/en_US-lessac-medium.onnx")
     env["LD_LIBRARY_PATH"] = "/home/pkis/piper_dist/piper:" + env.get("LD_LIBRARY_PATH", "")
     env["OUTDIR"] = str(d)
-    cmd = (f'{py} {script} {arxiv_id} {slug} full > {d}/build.log 2>&1 '
+    # slug-driven: the builder loads the source node and routes internally
+    cmd = (f'{py} {script} {slug} full > {d}/build.log 2>&1 '
            f'&& echo \'{{"state":"ready"}}\' > {d}/status.json '
            f'|| echo \'{{"state":"error"}}\' > {d}/status.json')
     subprocess.Popen(["bash", "-c", cmd], env=env, start_new_session=True,
                      stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
-    return {"status": "building", "slug": slug, "arxiv_id": arxiv_id}
+    return {"status": "building", "slug": slug, "route": route, "arxiv_id": arxiv_id}
 
 
 @app.route("/pkis-api/reader-build", methods=["POST"])

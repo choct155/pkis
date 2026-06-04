@@ -1,17 +1,25 @@
 #!/usr/bin/env python3
 """Generalized reader-payload builder for the PKIS read+listen tool.
 
-  reader_build.py <arxiv_id> <slug> [extract|narrate|full] [max_segments]
+  reader_build.py <slug> [extract|narrate|full] [max_segments]
+  reader_build.py <arxiv_id> <slug> [stage] [max_segments]   # back-compat
+
+The builder is SLUG-DRIVEN: it loads the source node and routes by what input exists:
+  • arXiv id in source_url     → ar5iv HTML  (best quality: real LaTeX from alttext)
+  • PDF in the doc store        → Claude PDF document-block extraction (prompt-cached)
+  • http(s) source_url          → fetch + bs4 strip + Claude extraction
+All three routes emit the same [{id,title,paper_md}] segment shape, then share the
+narrate → Piper TTS → mp3 backend.
 
 Stages:
-  extract  — fetch ar5iv, segment, print paper_md per section (no Claude/TTS).
+  extract  — route + segment, print paper_md per section (no narration/TTS).
   narrate  — extract + Claude narration; print narration per section (no TTS).
-  full     — extract + narrate + Piper TTS -> audio.wav + payload.json.
+  full     — extract + narrate + Piper TTS -> audio.mp3 + payload.json.
 
 Runs on the VPS in the app venv (imports `app` to reuse the Anthropic client + graph tools).
 Env for full: PIPER, PIPER_MODEL, LD_LIBRARY_PATH, OUTDIR (defaults to WIKI_DIR/reader/<slug>).
 """
-import os, sys, re, json, html, subprocess, tempfile, shutil, wave, urllib.request
+import os, sys, re, json, html, base64, glob, subprocess, tempfile, shutil, wave, urllib.request
 
 # Load the service's env (ANTHROPIC_API_KEY etc.) BEFORE importing app — app builds the
 # Anthropic client at import time, so the key must be present first.
@@ -25,24 +33,64 @@ if os.path.exists(_envfile):
 
 from bs4 import BeautifulSoup, NavigableString, Tag
 
-import app  # reuse anthropic_client, tool_get_related, load_node, find_node_path_by_iri
+import app  # reuse anthropic_client, tool_get_related, load_node, find_node_path_by_iri, WIKI_DIR, DOCS_DIR
 
 MODEL = "claude-sonnet-4-6"
 SKIP_TITLES = ("references", "acknowledg", "appendix", "bibliography", "supplementary")
+ARXIV_RE = re.compile(r"arxiv\.org/(?:abs|pdf)/([0-9]+\.[0-9]+)")
 
 
-# ── ar5iv fetch + segmentation ────────────────────────────────────────────
-def fetch_ar5iv(arxiv_id):
-    url = f"https://ar5iv.labs.arxiv.org/html/{arxiv_id}"
-    req = urllib.request.Request(url, headers={"User-Agent": "PKIS-Reader/1.0 (pkis@pkis.dev)"})
-    return urllib.request.urlopen(req, timeout=45).read().decode("utf-8", "replace")
-
-
+# ── small helpers ─────────────────────────────────────────────────────────
 def _collapse(s):
     s = re.sub(r"[ \t]+", " ", s)
     s = re.sub(r" *\n *", "\n", s)
     s = re.sub(r"\n{3,}", "\n\n", s)
     return s.strip()
+
+
+def _resp_text(resp):
+    return "".join(b.text for b in resp.content if getattr(b, "type", "") == "text").strip()
+
+
+def _parse_json(t):
+    """Tolerant JSON extraction from a model response (strips code fences / prose)."""
+    t = t.strip()
+    if t.startswith("```"):
+        t = re.sub(r"^```[a-zA-Z]*\n", "", t)
+        t = re.sub(r"\n```\s*$", "", t)
+    i, j = t.find("{"), t.rfind("}")
+    if i == -1 or j == -1:
+        raise ValueError("no JSON object in response")
+    return json.loads(t[i:j + 1])
+
+
+def _slugify(title, i):
+    s = re.sub(r"[^a-z0-9]+", "-", (title or "").lower()).strip("-")[:24]
+    return s or f"s{i}"
+
+
+def _segs_from_sections(sections, max_seg):
+    """Build segments from a list of {title, markdown} dicts (PDF/HTML routes)."""
+    segs = []
+    for sec in sections:
+        title = _collapse(str(sec.get("title") or ""))
+        md = (sec.get("markdown") or sec.get("paper_md") or "").strip()
+        if len(md) < 60:
+            continue
+        if title and any(k in title.lower() for k in SKIP_TITLES):
+            continue
+        segs.append({"id": _slugify(title, len(segs)),
+                     "title": title or f"Section {len(segs) + 1}", "paper_md": md})
+        if len(segs) >= max_seg:
+            break
+    return segs
+
+
+# ── route 1: ar5iv HTML (arXiv) ────────────────────────────────────────────
+def fetch_ar5iv(arxiv_id):
+    url = f"https://ar5iv.labs.arxiv.org/html/{arxiv_id}"
+    req = urllib.request.Request(url, headers={"User-Agent": "PKIS-Reader/1.0 (pkis@pkis.dev)"})
+    return urllib.request.urlopen(req, timeout=45).read().decode("utf-8", "replace")
 
 
 def render_md(node):
@@ -84,7 +132,7 @@ def render_md(node):
     return _collapse("".join(parts))
 
 
-def extract_segments(htmltext, max_segments=12):
+def extract_segments(htmltext, max_segments=40):
     soup = BeautifulSoup(htmltext, "html.parser")
     article = soup.find("article") or soup.body or soup
     segs = []
@@ -104,6 +152,175 @@ def extract_segments(htmltext, max_segments=12):
         if len(segs) >= max_segments:
             break
     return segs
+
+
+def fetch_arxiv_pdf(arxiv_id, dest):
+    url = f"https://arxiv.org/pdf/{arxiv_id}"
+    req = urllib.request.Request(url, headers={"User-Agent": "PKIS-Reader/1.0 (pkis@pkis.dev)"})
+    data = urllib.request.urlopen(req, timeout=60).read()
+    with open(dest, "wb") as f:
+        f.write(data)
+    return dest
+
+
+def arxiv_route(arxiv_id, max_seg):
+    print(f"  route=arxiv ar5iv {arxiv_id}")
+    try:
+        htmltext = fetch_ar5iv(arxiv_id)
+        segs = extract_segments(htmltext, max_seg)
+    except Exception as e:
+        print(f"  ar5iv fetch failed: {e}")
+        segs, htmltext = [], ""
+    if segs:
+        title_el = BeautifulSoup(htmltext, "html.parser").find("h1")
+        title = _collapse(title_el.get_text(" ", strip=True)) if title_el else ""
+        return segs, title
+    # ar5iv gave us nothing (no HTML render for this paper) → fall back to the arXiv PDF
+    print(f"  ar5iv yielded 0 segments; falling back to arXiv PDF for {arxiv_id}")
+    tmp = tempfile.mkdtemp()
+    try:
+        pdf = fetch_arxiv_pdf(arxiv_id, os.path.join(tmp, f"{arxiv_id}.pdf"))
+        return pdf_route(pdf, max_seg)
+    finally:
+        shutil.rmtree(tmp, ignore_errors=True)
+
+
+# ── route 2: PDF document-block extraction (prompt-cached) ──────────────────
+OUTLINE_SYSTEM = (
+    "You map the STRUCTURE of an attached document (a book chapter or paper) for a read-along "
+    "listening tool. Identify the ordered top-level sections that hold substantive content. Skip "
+    "front-matter, running heads/footers, page numbers, reference lists, acknowledgments, and "
+    "pure figure/table pages."
+)
+OUTLINE_PROMPT = (
+    'Return ONLY JSON: {"title": "<document or chapter title>", '
+    '"sections": [{"title": "<section heading exactly as printed>"}, ...]} in reading order.'
+)
+SECTION_SYSTEM = (
+    "You transcribe ONE named section of the attached document into FAITHFUL markdown for a "
+    "read-along + listening tool.\n"
+    "RULES:\n"
+    "1. Preserve the author's ACTUAL wording verbatim where it is prose — do NOT summarize or "
+    "paraphrase. This text is read alongside the audio, so it must match the page.\n"
+    "2. Render mathematics as inline $LaTeX$ or display $$LaTeX$$, reconstructing each equation "
+    "faithfully from the page.\n"
+    "3. Drop page numbers, running heads/footers, and footnote-marker noise; KEEP figure/table "
+    "captions as plain text.\n"
+    "4. Output ONLY the section's markdown — no JSON, no headings beyond the section's own, no "
+    "preamble or commentary."
+)
+
+
+def _pdf_doc_block(b64):
+    return {"type": "document",
+            "source": {"type": "base64", "media_type": "application/pdf", "data": b64},
+            "cache_control": {"type": "ephemeral"}}
+
+
+def pdf_route(pdf_path, max_seg):
+    print(f"  route=pdf {pdf_path}")
+    data = open(pdf_path, "rb").read()
+    if len(data) > 30 * 1024 * 1024:
+        raise SystemExit("PDF too large (>30MB) for single-request extraction; split it first")
+    b64 = base64.standard_b64encode(data).decode()
+    doc = _pdf_doc_block(b64)  # cache_control → PDF input is cached across the section calls
+    # phase 1 — outline
+    r1 = app.anthropic_client.messages.create(
+        model=MODEL, max_tokens=1500, system=OUTLINE_SYSTEM,
+        messages=[{"role": "user", "content": [doc, {"type": "text", "text": OUTLINE_PROMPT}]}])
+    outline = _parse_json(_resp_text(r1))
+    title = _collapse(outline.get("title") or "")
+    raw_secs = outline.get("sections", []) or []
+    print(f"  outline: {len(raw_secs)} sections — {title!r}")
+    # phase 2 — faithful transcription per section (PDF cached, so cheap input)
+    sections = []
+    for sec in raw_secs:
+        st = sec.get("title") if isinstance(sec, dict) else str(sec)
+        if st and any(k in st.lower() for k in SKIP_TITLES):
+            continue
+        r2 = app.anthropic_client.messages.create(
+            model=MODEL, max_tokens=8000, system=SECTION_SYSTEM,
+            messages=[{"role": "user", "content": [
+                doc, {"type": "text", "text": f'Transcribe the section titled "{st}". Output only its markdown.'}]}])
+        md = _resp_text(r2)
+        print(f"    extracted [{st[:48]}] ({len(md)} chars)")
+        sections.append({"title": st, "markdown": md})
+        if len(sections) >= max_seg:
+            break
+    return _segs_from_sections(sections, max_seg), title
+
+
+# ── route 3: web HTML extraction ───────────────────────────────────────────
+EXTRACT_SYSTEM = (
+    "You extract the FAITHFUL full text of a web article into ordered sections for a read-along "
+    "listening tool.\n"
+    "RULES:\n"
+    "1. Preserve the author's ACTUAL wording — do NOT summarize or paraphrase the prose.\n"
+    "2. Render mathematics as inline $LaTeX$ or display $$LaTeX$$.\n"
+    "3. Split at the article's natural section headings; drop site chrome, nav, related-links, "
+    "comment sections, reference lists, and acknowledgments.\n"
+    '4. Output ONLY JSON: {"title": "<article title>", "sections": [{"title": "...", "markdown": "..."}, ...]}.'
+)
+
+
+def fetch_html(url):
+    req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0 (compatible; PKIS-Reader/1.0)"})
+    return urllib.request.urlopen(req, timeout=45).read().decode("utf-8", "replace")
+
+
+def html_route(url, max_seg):
+    print(f"  route=html {url}")
+    soup = BeautifulSoup(fetch_html(url), "html.parser")
+    for t in soup(["script", "style", "nav", "header", "footer", "aside", "form", "noscript", "svg"]):
+        t.decompose()
+    main = soup.find("article") or soup.find("main") or soup.body or soup
+    text = _collapse(main.get_text("\n", strip=True))[:60000]
+    if len(text) < 400:
+        raise SystemExit("HTML extraction yielded too little text (paywalled or JS-rendered?)")
+    resp = app.anthropic_client.messages.create(
+        model=MODEL, max_tokens=8000, system=EXTRACT_SYSTEM,
+        messages=[{"role": "user", "content":
+                   f"ARTICLE TEXT (extracted from {url}):\n\n{text}\n\nReturn ONLY the JSON object."}])
+    obj = _parse_json(_resp_text(resp))
+    return _segs_from_sections(obj.get("sections", []), max_seg), _collapse(obj.get("title") or "")
+
+
+# ── router ─────────────────────────────────────────────────────────────────
+def load_source_node(slug):
+    iri = f"pkis:source:{slug}"
+    try:
+        path = app.find_node_path_by_iri(iri)
+    except Exception:
+        path = None
+    if not path:
+        cand = str(app.WIKI_DIR / "sources" / f"{slug}.md")
+        path = cand if os.path.exists(cand) else None
+    return app.load_node(path) if path else {}
+
+
+def find_docstore_pdf(slug):
+    d = os.path.join(str(app.DOCS_DIR), "sources", slug)
+    pdfs = sorted(glob.glob(os.path.join(d, "*.pdf")))
+    return pdfs[0] if pdfs else None
+
+
+def route_segments(slug, max_seg, forced_arxiv=None):
+    node = load_source_node(slug)
+    url = str(node.get("source_url") or "")
+    arx = forced_arxiv or (ARXIV_RE.search(url).group(1) if ARXIV_RE.search(url) else None)
+    if arx:
+        segs, title = arxiv_route(arx, max_seg)
+    else:
+        pdf = find_docstore_pdf(slug)
+        if pdf:
+            segs, title = pdf_route(pdf, max_seg)
+        elif url.startswith("http"):
+            segs, title = html_route(url, max_seg)
+        else:
+            raise SystemExit(f"no narratable input for {slug} "
+                             "(no arXiv id, no doc-store PDF, no http source_url)")
+    title = title or _collapse(str(node.get("title") or "")) or slug
+    return segs, title
 
 
 # ── PKIS consolidation context ────────────────────────────────────────────
@@ -191,16 +408,24 @@ def encode_mp3(wav_path, mp3_path, bitrate=64):
 
 
 def main():
-    if len(sys.argv) < 3:
+    args = sys.argv[1:]
+    if not args:
         print(__doc__); sys.exit(1)
-    arxiv_id, slug = sys.argv[1], sys.argv[2]
-    stage = sys.argv[3] if len(sys.argv) > 3 else "extract"
-    max_seg = int(sys.argv[4]) if len(sys.argv) > 4 else 40  # default: cover the whole paper
+    STAGES = ("extract", "narrate", "full")
+    # back-compat: <arxiv_id> <slug> [stage] [max]
+    forced_arxiv = None
+    if re.match(r"^\d+\.\d+$", args[0]) and len(args) >= 2 and args[1] not in STAGES:
+        forced_arxiv, slug = args[0], args[1]
+        rest = args[2:]
+    else:
+        slug = args[0]
+        rest = args[1:]
+    stage = rest[0] if rest else "extract"
+    max_seg = int(rest[1]) if len(rest) > 1 else 40
 
-    print(f"fetching ar5iv {arxiv_id} …")
-    htmltext = fetch_ar5iv(arxiv_id)
-    segs = extract_segments(htmltext, max_seg)
-    print(f"extracted {len(segs)} segments")
+    print(f"routing {slug} …")
+    segs, title = route_segments(slug, max_seg, forced_arxiv=forced_arxiv)
+    print(f"extracted {len(segs)} segments — title={title!r}")
     for s in segs:
         print(f"  [{s['id']}] {s['title']}  ({len(s['paper_md'])} chars)")
 
@@ -209,6 +434,9 @@ def main():
         for s in segs[:3]:
             print(f"\n### {s['title']}\n{s['paper_md'][:600]}")
         return
+
+    if not segs:
+        raise SystemExit("no segments extracted — nothing to narrate")
 
     source_iri = f"pkis:source:{slug}"
     ctx = pkis_context(source_iri)
@@ -248,9 +476,8 @@ def main():
         stale = os.path.join(outdir, "audio.wav")
         if os.path.exists(stale):
             os.remove(stale)
-        title_el = BeautifulSoup(htmltext, "html.parser").find("h1")
         payload = {
-            "slug": slug, "title": _collapse(title_el.get_text(" ", strip=True)) if title_el else slug,
+            "slug": slug, "title": title,
             "source_iri": source_iri, "audio_url": f"/pkis-api/reader/{slug}/audio.mp3",
             "total_duration": round(t, 2), "sections": meta,
         }
