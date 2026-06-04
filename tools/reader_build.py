@@ -306,7 +306,8 @@ def find_docstore_pdf(slug):
 
 def route_segments(slug, max_seg, forced_arxiv=None):
     node = load_source_node(slug)
-    url = str(node.get("source_url") or "")
+    fm = node.get("frontmatter", {}) if isinstance(node, dict) else {}
+    url = str(fm.get("source_url") or fm.get("url") or "")
     arx = forced_arxiv or (ARXIV_RE.search(url).group(1) if ARXIV_RE.search(url) else None)
     if arx:
         segs, title = arxiv_route(arx, max_seg)
