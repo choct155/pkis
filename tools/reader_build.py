@@ -211,8 +211,11 @@ def arxiv_route(arxiv_id, max_seg):
 
 
 # ── shared faithful-extraction prompt (PDF + HTML routes) ───────────────────
-# Single-call extraction: the document is sent ONCE (re-sending a big PDF per section
-# blows past the org's 30k input-tokens/minute limit). Faithful, sectioned, JSON out.
+# Output is SENTINEL-DELIMITED, not JSON: faithful markdown is full of LaTeX backslashes,
+# quotes, and newlines that routinely break JSON string escaping. Raw text between sentinels
+# sidesteps all of that. (The document is also sent once per call to respect the 30k ITPM tier.)
+SEC = "<<<SECTION>>>"
+TIT = "<<<TITLE>>>"
 EXTRACT_SYSTEM = (
     "You extract the FAITHFUL full text of a document (a paper, book chapter, or article) into "
     "ordered sections for a read-along listening tool.\n"
@@ -224,9 +227,27 @@ EXTRACT_SYSTEM = (
     "3. Split at the document's natural section/subsection headings, in reading order. Drop "
     "front-matter, running heads/footers, page numbers, site chrome/nav, reference lists, and "
     "acknowledgments; KEEP figure/table captions as plain text.\n"
-    '4. Output ONLY JSON: {"title": "<document title>", "sections": '
-    '[{"title": "<heading>", "markdown": "<faithful section text>"}, ...]}.'
+    "4. OUTPUT FORMAT (not JSON): first line is exactly '" + TIT + " <document title>'. Then for "
+    "each section, a line that is exactly '" + SEC + " <section heading>' followed by the "
+    "section's faithful markdown on the lines beneath it. Output nothing else — no JSON, no fences."
 )
+
+
+def _parse_sections(text):
+    """Parse the sentinel-delimited extraction format into (title, [{title, markdown}])."""
+    title = ""
+    parts = text.split(SEC)
+    m = re.search(re.escape(TIT) + r"\s*(.+)", parts[0])
+    if m:
+        title = m.group(1).strip()
+    sections = []
+    for p in parts[1:]:
+        p = p.strip()
+        if not p:
+            continue
+        head, _, body = p.partition("\n")
+        sections.append({"title": head.strip().lstrip("#").strip(), "markdown": body.strip()})
+    return title, sections
 
 
 # ── route 2: PDF document-block extraction (page-chunked) ───────────────────
@@ -256,10 +277,10 @@ def _extract_pdf_doc(b64, instr):
         model=MODEL, max_tokens=12000, system=EXTRACT_SYSTEM,
         messages=[{"role": "user", "content": [
             {"type": "document", "source": {"type": "base64", "media_type": "application/pdf", "data": b64}},
-            {"type": "text", "text": instr + " Return ONLY the JSON object."}]}])
+            {"type": "text", "text": instr + " Output ONLY the delimited text."}]}])
     if getattr(resp, "stop_reason", "") == "max_tokens":
         print("  WARNING: a chunk hit max_tokens — its tail may be truncated")
-    return _parse_json(_resp_text(resp))
+    return _parse_sections(_resp_text(resp))  # (title, sections)
 
 
 def _norm_title(s):
@@ -274,19 +295,19 @@ def pdf_route(pdf_path, max_seg):
     npages, chunks = _split_pdf(data, CHUNK_PAGES)
     print(f"  pdf: {npages} pages -> {len(chunks)} chunk(s) of <= {CHUNK_PAGES}p")
     if len(chunks) == 1:
-        obj = _extract_pdf_doc(base64.standard_b64encode(data).decode(),
-                               "Extract this document per the rules.")
-        return _segs_from_sections(obj.get("sections", []), max_seg), _collapse(obj.get("title") or "")
+        ctitle, sections = _extract_pdf_doc(base64.standard_b64encode(data).decode(),
+                                            "Extract this document per the rules.")
+        return _segs_from_sections(sections, max_seg), _collapse(ctitle)
     title, merged = "", []
     for idx, (lo, hi, cdata) in enumerate(chunks):
         instr = (f"This is pages {lo}-{hi} of a {npages}-page document. Extract the sections that "
                  "appear on these pages. A section may begin before or continue past this chunk — "
                  "extract whatever of it is present here.")
-        obj = _extract_pdf_doc(base64.standard_b64encode(cdata).decode(), instr)
+        ctitle, sections = _extract_pdf_doc(base64.standard_b64encode(cdata).decode(), instr)
         if idx == 0:
-            title = _collapse(obj.get("title") or "")
+            title = _collapse(ctitle)
         added = 0
-        for sec in obj.get("sections", []):
+        for sec in sections:
             st = _collapse(str(sec.get("title") or ""))
             md = (sec.get("markdown") or "").strip()
             if not md:
@@ -322,9 +343,9 @@ def html_route(url, max_seg):
     resp = _create(
         model=MODEL, max_tokens=12000, system=EXTRACT_SYSTEM,
         messages=[{"role": "user", "content":
-                   f"DOCUMENT TEXT (extracted from {url}):\n\n{text}\n\nReturn ONLY the JSON object."}])
-    obj = _parse_json(_resp_text(resp))
-    return _segs_from_sections(obj.get("sections", []), max_seg), _collapse(obj.get("title") or "")
+                   f"DOCUMENT TEXT (extracted from {url}):\n\n{text}\n\nOutput ONLY the delimited text."}])
+    ctitle, sections = _parse_sections(_resp_text(resp))
+    return _segs_from_sections(sections, max_seg), _collapse(ctitle)
 
 
 # ── router ─────────────────────────────────────────────────────────────────
