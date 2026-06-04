@@ -19,7 +19,7 @@ Stages:
 Runs on the VPS in the app venv (imports `app` to reuse the Anthropic client + graph tools).
 Env for full: PIPER, PIPER_MODEL, LD_LIBRARY_PATH, OUTDIR (defaults to WIKI_DIR/reader/<slug>).
 """
-import os, sys, re, json, html, base64, glob, subprocess, tempfile, shutil, wave, urllib.request
+import os, sys, re, json, html, time, base64, glob, subprocess, tempfile, shutil, wave, urllib.request
 
 # Load the service's env (ANTHROPIC_API_KEY etc.) BEFORE importing app — app builds the
 # Anthropic client at import time, so the key must be present first.
@@ -50,6 +50,31 @@ def _collapse(s):
 
 def _resp_text(resp):
     return "".join(b.text for b in resp.content if getattr(b, "type", "") == "text").strip()
+
+
+def _create(**kw):
+    """messages.create with backoff on 429 — the org's input-tokens-per-minute limit is low,
+    so a big PDF/extraction call can transiently exceed it; sleep and retry rather than crash."""
+    last = None
+    for attempt in range(7):
+        try:
+            return app.anthropic_client.messages.create(**kw)
+        except Exception as e:
+            last = e
+            msg = str(e).lower()
+            if "rate_limit" in msg or "429" in msg or getattr(e, "status_code", None) == 429:
+                wait = 20 * (attempt + 1)
+                try:
+                    ra = e.response.headers.get("retry-after")
+                    if ra:
+                        wait = max(wait, int(float(ra)) + 2)
+                except Exception:
+                    pass
+                print(f"  rate-limited; sleeping {wait}s (attempt {attempt + 1}/7)")
+                time.sleep(wait)
+                continue
+            raise
+    raise RuntimeError(f"rate-limit retries exhausted: {last}")
 
 
 def _parse_json(t):
@@ -185,84 +210,44 @@ def arxiv_route(arxiv_id, max_seg):
         shutil.rmtree(tmp, ignore_errors=True)
 
 
-# ── route 2: PDF document-block extraction (prompt-cached) ──────────────────
-OUTLINE_SYSTEM = (
-    "You map the STRUCTURE of an attached document (a book chapter or paper) for a read-along "
-    "listening tool. Identify the ordered top-level sections that hold substantive content. Skip "
-    "front-matter, running heads/footers, page numbers, reference lists, acknowledgments, and "
-    "pure figure/table pages."
-)
-OUTLINE_PROMPT = (
-    'Return ONLY JSON: {"title": "<document or chapter title>", '
-    '"sections": [{"title": "<section heading exactly as printed>"}, ...]} in reading order.'
-)
-SECTION_SYSTEM = (
-    "You transcribe ONE named section of the attached document into FAITHFUL markdown for a "
-    "read-along + listening tool.\n"
+# ── shared faithful-extraction prompt (PDF + HTML routes) ───────────────────
+# Single-call extraction: the document is sent ONCE (re-sending a big PDF per section
+# blows past the org's 30k input-tokens/minute limit). Faithful, sectioned, JSON out.
+EXTRACT_SYSTEM = (
+    "You extract the FAITHFUL full text of a document (a paper, book chapter, or article) into "
+    "ordered sections for a read-along listening tool.\n"
     "RULES:\n"
     "1. Preserve the author's ACTUAL wording verbatim where it is prose — do NOT summarize or "
-    "paraphrase. This text is read alongside the audio, so it must match the page.\n"
+    "paraphrase. The text is read alongside the audio, so it must match the source.\n"
     "2. Render mathematics as inline $LaTeX$ or display $$LaTeX$$, reconstructing each equation "
-    "faithfully from the page.\n"
-    "3. Drop page numbers, running heads/footers, and footnote-marker noise; KEEP figure/table "
-    "captions as plain text.\n"
-    "4. Output ONLY the section's markdown — no JSON, no headings beyond the section's own, no "
-    "preamble or commentary."
+    "faithfully.\n"
+    "3. Split at the document's natural section/subsection headings, in reading order. Drop "
+    "front-matter, running heads/footers, page numbers, site chrome/nav, reference lists, and "
+    "acknowledgments; KEEP figure/table captions as plain text.\n"
+    '4. Output ONLY JSON: {"title": "<document title>", "sections": '
+    '[{"title": "<heading>", "markdown": "<faithful section text>"}, ...]}.'
 )
 
 
-def _pdf_doc_block(b64):
-    return {"type": "document",
-            "source": {"type": "base64", "media_type": "application/pdf", "data": b64},
-            "cache_control": {"type": "ephemeral"}}
-
-
+# ── route 2: PDF document-block extraction (single call) ────────────────────
 def pdf_route(pdf_path, max_seg):
     print(f"  route=pdf {pdf_path}")
     data = open(pdf_path, "rb").read()
     if len(data) > 30 * 1024 * 1024:
         raise SystemExit("PDF too large (>30MB) for single-request extraction; split it first")
     b64 = base64.standard_b64encode(data).decode()
-    doc = _pdf_doc_block(b64)  # cache_control → PDF input is cached across the section calls
-    # phase 1 — outline
-    r1 = app.anthropic_client.messages.create(
-        model=MODEL, max_tokens=1500, system=OUTLINE_SYSTEM,
-        messages=[{"role": "user", "content": [doc, {"type": "text", "text": OUTLINE_PROMPT}]}])
-    outline = _parse_json(_resp_text(r1))
-    title = _collapse(outline.get("title") or "")
-    raw_secs = outline.get("sections", []) or []
-    print(f"  outline: {len(raw_secs)} sections — {title!r}")
-    # phase 2 — faithful transcription per section (PDF cached, so cheap input)
-    sections = []
-    for sec in raw_secs:
-        st = sec.get("title") if isinstance(sec, dict) else str(sec)
-        if st and any(k in st.lower() for k in SKIP_TITLES):
-            continue
-        r2 = app.anthropic_client.messages.create(
-            model=MODEL, max_tokens=8000, system=SECTION_SYSTEM,
-            messages=[{"role": "user", "content": [
-                doc, {"type": "text", "text": f'Transcribe the section titled "{st}". Output only its markdown.'}]}])
-        md = _resp_text(r2)
-        print(f"    extracted [{st[:48]}] ({len(md)} chars)")
-        sections.append({"title": st, "markdown": md})
-        if len(sections) >= max_seg:
-            break
-    return _segs_from_sections(sections, max_seg), title
+    resp = _create(
+        model=MODEL, max_tokens=16000, system=EXTRACT_SYSTEM,
+        messages=[{"role": "user", "content": [
+            {"type": "document", "source": {"type": "base64", "media_type": "application/pdf", "data": b64}},
+            {"type": "text", "text": "Extract this document per the rules. Return ONLY the JSON object."}]}])
+    if getattr(resp, "stop_reason", "") == "max_tokens":
+        print("  WARNING: extraction hit max_tokens — a very long document may be truncated")
+    obj = _parse_json(_resp_text(resp))
+    return _segs_from_sections(obj.get("sections", []), max_seg), _collapse(obj.get("title") or "")
 
 
-# ── route 3: web HTML extraction ───────────────────────────────────────────
-EXTRACT_SYSTEM = (
-    "You extract the FAITHFUL full text of a web article into ordered sections for a read-along "
-    "listening tool.\n"
-    "RULES:\n"
-    "1. Preserve the author's ACTUAL wording — do NOT summarize or paraphrase the prose.\n"
-    "2. Render mathematics as inline $LaTeX$ or display $$LaTeX$$.\n"
-    "3. Split at the article's natural section headings; drop site chrome, nav, related-links, "
-    "comment sections, reference lists, and acknowledgments.\n"
-    '4. Output ONLY JSON: {"title": "<article title>", "sections": [{"title": "...", "markdown": "..."}, ...]}.'
-)
-
-
+# ── route 3: web HTML extraction (single call) ──────────────────────────────
 def fetch_html(url):
     req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0 (compatible; PKIS-Reader/1.0)"})
     return urllib.request.urlopen(req, timeout=45).read().decode("utf-8", "replace")
@@ -270,17 +255,21 @@ def fetch_html(url):
 
 def html_route(url, max_seg):
     print(f"  route=html {url}")
-    soup = BeautifulSoup(fetch_html(url), "html.parser")
+    try:
+        raw = fetch_html(url)
+    except Exception as e:
+        raise SystemExit(f"HTML fetch failed ({e}) — likely paywalled or blocked")
+    soup = BeautifulSoup(raw, "html.parser")
     for t in soup(["script", "style", "nav", "header", "footer", "aside", "form", "noscript", "svg"]):
         t.decompose()
     main = soup.find("article") or soup.find("main") or soup.body or soup
     text = _collapse(main.get_text("\n", strip=True))[:60000]
     if len(text) < 400:
-        raise SystemExit("HTML extraction yielded too little text (paywalled or JS-rendered?)")
-    resp = app.anthropic_client.messages.create(
-        model=MODEL, max_tokens=8000, system=EXTRACT_SYSTEM,
+        raise SystemExit("HTML extraction yielded too little text (landing page, paywall, or JS-rendered?)")
+    resp = _create(
+        model=MODEL, max_tokens=12000, system=EXTRACT_SYSTEM,
         messages=[{"role": "user", "content":
-                   f"ARTICLE TEXT (extracted from {url}):\n\n{text}\n\nReturn ONLY the JSON object."}])
+                   f"DOCUMENT TEXT (extracted from {url}):\n\n{text}\n\nReturn ONLY the JSON object."}])
     obj = _parse_json(_resp_text(resp))
     return _segs_from_sections(obj.get("sections", []), max_seg), _collapse(obj.get("title") or "")
 
@@ -369,12 +358,12 @@ def narrate(seg, ctx):
     nodes = "\n".join(f"- {n['title']} — {n['type']} — coverage {n['coverage']}/5" for n in ctx) or "(none)"
     user = (f"SECTION TITLE: {seg['title']}\n\nSECTION CONTENT (paper text + LaTeX):\n{seg['paper_md']}\n\n"
             f"LISTENER'S EXISTING RELATED NODES:\n{nodes}")
-    resp = app.anthropic_client.messages.create(
+    resp = _create(
         model=MODEL, max_tokens=1200,
         system=NARRATION_SYSTEM,
         messages=[{"role": "user", "content": user}],
     )
-    return "".join(b.text for b in resp.content if getattr(b, "type", "") == "text").strip()
+    return _resp_text(resp)
 
 
 # ── TTS (Piper) ───────────────────────────────────────────────────────────
