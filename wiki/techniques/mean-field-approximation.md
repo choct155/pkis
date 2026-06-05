@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+contrasts-with:
+- transformer-attention-mechanisms
 coverage: 3
 date_created: 2026-05-20
 date_updated: '2026-06-05'
@@ -9,6 +11,10 @@ domain:
 - deep-learning
 - statistical-learning
 - optimization
+extends:
+- weight-initialization
+- gaussian-process-regression
+- belief-propagation
 id: pkis:technique:mean-field-approximation
 knowledge_type: technique
 maturity: settled
@@ -34,6 +40,10 @@ understanding: 0
 A variational inference approach that assumes the variational posterior fully factorizes over the latent variables: q(z) = ∏_j q_j(z_j), with each factor governed independently; this independence assumption makes ELBO optimization tractable via coordinate ascent but can systematically underestimate posterior variance.
 
 ## Connections
+- [[transformer-attention-mechanisms]] — contrasts-with: Attention is architecturally designed to recover inter-token correlations that mean field discards; see bridge note
+- [[belief-propagation]] — extends: Loopy belief propagation makes an implicit mean field approximation when applied to graphs with cycles
+- [[gaussian-process-regression]] — extends: Infinite-width networks converge to GPs under the mean field argument that layer outputs are approximately independent Gaussians
+- [[weight-initialization]] — extends: Mean field independence assumption at initialization is the theoretical basis for variance propagation analysis underlying Xavier and He initialization schemes
 
 - [[variational-inference]] — specializes: mean-field is the classical and most studied sub-family of VI
 - [[elbo]] — uses: mean-field CAVI iteratively maximizes the ELBO by optimizing each factor q_j in closed form
