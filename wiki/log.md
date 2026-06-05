@@ -870,3 +870,6 @@
 
 ## [2026-06-02] edit | edit_node
 - pkis:technique:vector-quantization: fields=['sources', 'needs_canonical_source', 'coverage'] sections=['Reading Path', 'Needs Canonical Source']
+
+## [2026-06-05] edit | edit_node
+- pkis:technique:mean-field-approximation: fields=['domain', 'tags'] sections=['Cross-Domain Principle', 'Open Questions']
