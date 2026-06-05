@@ -876,3 +876,11 @@
 
 ## [2026-06-05] edit | edit_node
 - pkis:technique:coordinate-ascent-vi: fields=[] sections=['Intuition']
+
+## [2026-06-05] staged | bridge-note
+- Staged: bn-20260605-mean-field-approximation-achieves-tractability (id: c172ce53-2d50-4efb-a7d9-40d788810347)
+- Rationale: Mean field approximation achieves tractability by assuming components are independent — each unit re
+
+## [2026-06-05] committed | bridge-note
+- Committed: bn-20260605-mean-field-approximation-achieves-tractability → bridge-notes/bn-20260605-mean-field-approximation-achieves-tractability.md
+- IRI: pkis:bridge-note:bn-20260605-mean-field-approximation-achieves-tractability

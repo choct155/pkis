@@ -585,4 +585,5 @@
 ## Reading Queue
 
 ## Bridge Notes
+- [[bn-20260605-mean-field-approximation-achieves-tractability]] — Attention as deliberate recovery of correlations that mean field discards () (2026-06-05)
 - [[bn-20260530-em-mcmc-and-variational-inference]] — EM vs MCMC vs VI: alternative inference engines for latent variable models () (2026-05-30)
