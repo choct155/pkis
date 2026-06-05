@@ -489,6 +489,7 @@ def main():
 
     print(f"routing {slug} …")
     segs, title = route_segments(slug, max_seg, forced_arxiv=forced_arxiv)
+    title = os.environ.get("READER_TITLE") or title  # per-chapter title override for book splits
     print(f"extracted {len(segs)} segments — title={title!r}")
     for s in segs:
         print(f"  [{s['id']}] {s['title']}  ({len(s['paper_md'])} chars)")
