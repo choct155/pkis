@@ -35,7 +35,8 @@ from bs4 import BeautifulSoup, NavigableString, Tag
 
 import app  # reuse anthropic_client, tool_get_related, load_node, find_node_path_by_iri, WIKI_DIR, DOCS_DIR
 
-MODEL = "claude-sonnet-4-6"
+MODEL = "claude-sonnet-4-6"               # narration: quality-critical
+EXTRACT_MODEL = os.environ.get("EXTRACT_MODEL", "claude-haiku-4-5")  # PDF/HTML transcription: cheap, mechanical
 SKIP_TITLES = ("references", "acknowledg", "appendix", "bibliography", "supplementary")
 ARXIV_RE = re.compile(r"arxiv\.org/(?:abs|pdf)/([0-9]+\.[0-9]+)")
 
@@ -52,13 +53,36 @@ def _resp_text(resp):
     return "".join(b.text for b in resp.content if getattr(b, "type", "") == "text").strip()
 
 
+# per-model token accounting (in, out) for a cost estimate at the end of a build
+_USAGE = {}
+_PRICE = {"claude-sonnet-4-6": (3.0, 15.0), "claude-haiku-4-5": (1.0, 5.0)}
+
+
+def _cost_summary():
+    total = 0.0
+    lines = []
+    for m, (ti, to) in _USAGE.items():
+        pin, pout = _PRICE.get(m, (3.0, 15.0))
+        c = ti / 1e6 * pin + to / 1e6 * pout
+        total += c
+        lines.append(f"  {m}: in={ti:,} out={to:,} -> ${c:.3f}")
+    return "\n".join(lines) + f"\n  TOTAL ~${total:.3f}"
+
+
 def _create(**kw):
     """messages.create with backoff on 429 — the org's input-tokens-per-minute limit is low,
     so a big PDF/extraction call can transiently exceed it; sleep and retry rather than crash."""
     last = None
     for attempt in range(7):
         try:
-            return app.anthropic_client.messages.create(**kw)
+            resp = app.anthropic_client.messages.create(**kw)
+            try:
+                u = resp.usage
+                acc = _USAGE.setdefault(kw.get("model"), [0, 0])
+                acc[0] += getattr(u, "input_tokens", 0); acc[1] += getattr(u, "output_tokens", 0)
+            except Exception:
+                pass
+            return resp
         except Exception as e:
             last = e
             msg = str(e).lower()
@@ -274,7 +298,7 @@ def _split_pdf(data, chunk_pages):
 
 def _extract_pdf_doc(b64, instr):
     resp = _create(
-        model=MODEL, max_tokens=12000, system=EXTRACT_SYSTEM,
+        model=EXTRACT_MODEL, max_tokens=12000, system=EXTRACT_SYSTEM,
         messages=[{"role": "user", "content": [
             {"type": "document", "source": {"type": "base64", "media_type": "application/pdf", "data": b64}},
             {"type": "text", "text": instr + " Output ONLY the delimited text."}]}])
@@ -341,7 +365,7 @@ def html_route(url, max_seg):
     if len(text) < 400:
         raise SystemExit("HTML extraction yielded too little text (landing page, paywall, or JS-rendered?)")
     resp = _create(
-        model=MODEL, max_tokens=12000, system=EXTRACT_SYSTEM,
+        model=EXTRACT_MODEL, max_tokens=12000, system=EXTRACT_SYSTEM,
         messages=[{"role": "user", "content":
                    f"DOCUMENT TEXT (extracted from {url}):\n\n{text}\n\nOutput ONLY the delimited text."}])
     ctitle, sections = _parse_sections(_resp_text(resp))
@@ -498,6 +522,7 @@ def main():
         print("\n--- first 3 segments (paper_md preview) ---")
         for s in segs[:3]:
             print(f"\n### {s['title']}\n{s['paper_md'][:600]}")
+        print("\n=== token usage (extract) ===\n" + _cost_summary())
         return
 
     if not segs:
@@ -549,6 +574,7 @@ def main():
         with open(os.path.join(outdir, "payload.json"), "w") as f:
             json.dump(payload, f, indent=2)
         print(f"DONE: {outdir}  ({t:.1f}s, {len(meta)} sections)")
+        print("=== token usage (full build) ===\n" + _cost_summary())
     finally:
         shutil.rmtree(tmp, ignore_errors=True)
 
