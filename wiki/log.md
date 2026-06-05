@@ -873,3 +873,6 @@
 
 ## [2026-06-05] edit | edit_node
 - pkis:technique:mean-field-approximation: fields=['domain', 'tags'] sections=['Cross-Domain Principle', 'Open Questions']
+
+## [2026-06-05] edit | edit_node
+- pkis:technique:coordinate-ascent-vi: fields=[] sections=['Intuition']
