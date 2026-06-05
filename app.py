@@ -3086,6 +3086,9 @@ def tool_upload_document(
             f"[doc-store] {'auto-create + ' if auto_created else ''}add doc: {slug}/{filename}"
         )
 
+    # ── Auto-build reader (uploaded paper PDF) ───────────────────────────────
+    _maybe_autobuild_reader(slug)
+
     return {
         "slug":              slug,
         "filename":          filename,
@@ -3198,6 +3201,9 @@ def tool_save_url_source(
 
     # ── Git commit ────────────────────────────────────────────────────────────
     _git_commit_files([dest], f"[doc-store] save url source: {slug}")
+
+    # ── Auto-build reader for papers (arXiv / PDF) ───────────────────────────
+    _maybe_autobuild_reader(slug)
 
     return {
         "slug":            slug,
@@ -5085,6 +5091,30 @@ def pkis_api_reader_status(slug):
     if (d / "payload.json").exists():
         return _api_ok({"state": "ready"})
     return _api_ok({"state": "none"})
+
+
+def _maybe_autobuild_reader(slug: str) -> None:
+    """Auto-build a reader when a *paper* lands in the source directory (frontier-driven intent).
+    Papers process immediately; books are on-demand. Gate: arXiv URL or an uploaded doc-store PDF
+    only — random saved URLs (video/tweet/paywall) and book-chapter splits (-chNN) are skipped.
+    Best-effort: never let a reader build break ingestion."""
+    if os.environ.get("READER_AUTOBUILD", "1") != "1":
+        return
+    if re.search(r"-ch\d+$", slug):          # book chapters are built on demand, not on ingest
+        return
+    if (READER_DIR / slug / "payload.json").exists():
+        return
+    try:
+        p = find_node_path_by_iri(f"pkis:source:{slug}")
+        fm = load_node(p).get("frontmatter", {}) if p else {}
+        url = str(fm.get("source_url", "") or "")
+        has_arxiv = bool(re.search(r'arxiv\.org/(?:abs|pdf)/[0-9]+\.[0-9]+', url))
+        sdir = DOCS_DIR / "sources" / slug
+        has_pdf = sdir.is_dir() and any(sdir.glob("*.pdf"))
+        if has_arxiv or has_pdf:
+            tool_build_reader(slug)
+    except Exception:
+        pass
 
 
 def tool_build_reader(slug: str, arxiv_id: str = None) -> dict:
