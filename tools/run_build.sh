@@ -8,7 +8,7 @@ else
 fi
 d="/home/pkis/pkis-wiki/wiki/reader/$slug"
 export PIPER=/home/pkis/piper_dist/piper/piper
-export PIPER_MODEL=/home/pkis/piper_dist/voices/en_US-lessac-medium.onnx
+export PIPER_MODEL=/home/pkis/piper_dist/voices/en_GB-cori-high.onnx
 export LD_LIBRARY_PATH=/home/pkis/piper_dist/piper
 export OUTDIR="$d"
 mkdir -p "$d"

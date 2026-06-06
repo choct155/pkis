@@ -15,9 +15,12 @@ Stages:
   extract  — route + segment, print paper_md per section (no narration/TTS).
   narrate  — extract + Claude narration; print narration per section (no TTS).
   full     — extract + narrate + Piper TTS -> audio.mp3 + payload.json.
+  revoice  — re-TTS an already-built reader from payload.json's saved narration
+             with the current PIPER_MODEL (no extraction, no Claude calls);
+             overwrites audio.mp3 + recomputes timestamps. Use to switch voices.
 
 Runs on the VPS in the app venv (imports `app` to reuse the Anthropic client + graph tools).
-Env for full: PIPER, PIPER_MODEL, LD_LIBRARY_PATH, OUTDIR (defaults to WIKI_DIR/reader/<slug>).
+Env for full/revoice: PIPER, PIPER_MODEL, LD_LIBRARY_PATH, OUTDIR (defaults to WIKI_DIR/reader/<slug>).
 """
 import os, sys, re, json, html, time, base64, glob, subprocess, tempfile, shutil, wave, urllib.request
 
@@ -495,11 +498,50 @@ def encode_mp3(wav_path, mp3_path, bitrate=64):
         f.write(enc.encode(pcm) + enc.flush())
 
 
+def revoice(slug):
+    """Re-render an already-built reader's audio with the current PIPER_MODEL,
+    reusing the saved narration in payload.json — no extraction, no Claude calls.
+    Recomputes per-section timestamps (durations shift with a new voice) and
+    overwrites audio.mp3 + payload.json in place."""
+    piper = os.environ.get("PIPER", "piper")
+    model = os.environ["PIPER_MODEL"]
+    outdir = os.environ.get("OUTDIR", str(app.WIKI_DIR / "reader" / slug))
+    payload_path = os.path.join(outdir, "payload.json")
+    with open(payload_path) as f:
+        payload = json.load(f)
+    secs = payload.get("sections", [])
+    if not secs:
+        raise SystemExit(f"no sections in {payload_path} — nothing to revoice")
+    print(f"revoicing {slug}: {len(secs)} sections with {os.path.basename(model)}")
+    tmp = tempfile.mkdtemp()
+    try:
+        wavs, t = [], 0.0
+        for s in secs:
+            wav = os.path.join(tmp, f"{s['id']}.wav")
+            p = subprocess.run([piper, "--model", model, "--output_file", wav],
+                               input=s["narration"], text=True, capture_output=True)
+            if p.returncode != 0:
+                raise RuntimeError(f"piper failed {s['id']}: {p.stderr[:300]}")
+            d = wav_duration(wav); wavs.append(wav)
+            s["t_start"] = round(t, 2); s["t_end"] = round(t + d, 2)
+            t += d
+            print(f"  tts [{s['id']}] -> {t:.1f}s")
+        tmp_wav = os.path.join(tmp, "full.wav")
+        concat_wavs(wavs, tmp_wav)
+        encode_mp3(tmp_wav, os.path.join(outdir, "audio.mp3"))
+        payload["total_duration"] = round(t, 2)
+        with open(payload_path, "w") as f:
+            json.dump(payload, f, indent=2)
+        print(f"revoiced {slug}: {t:.1f}s total -> {outdir}/audio.mp3")
+    finally:
+        shutil.rmtree(tmp, ignore_errors=True)
+
+
 def main():
     args = sys.argv[1:]
     if not args:
         print(__doc__); sys.exit(1)
-    STAGES = ("extract", "narrate", "full")
+    STAGES = ("extract", "narrate", "full", "revoice")
     # back-compat: <arxiv_id> <slug> [stage] [max]
     forced_arxiv = None
     if re.match(r"^\d+\.\d+$", args[0]) and len(args) >= 2 and args[1] not in STAGES:
@@ -510,6 +552,10 @@ def main():
         rest = args[1:]
     stage = rest[0] if rest else "extract"
     max_seg = int(rest[1]) if len(rest) > 1 else 40
+
+    if stage == "revoice":
+        revoice(slug)
+        return
 
     print(f"routing {slug} …")
     segs, title = route_segments(slug, max_seg, forced_arxiv=forced_arxiv)

@@ -5148,7 +5148,7 @@ def tool_build_reader(slug: str, arxiv_id: str = None) -> dict:
     env = dict(os.environ)
     env["PYTHONPATH"] = str(REPO_DIR) + ":" + env.get("PYTHONPATH", "")
     env.setdefault("PIPER", "/home/pkis/piper_dist/piper/piper")
-    env.setdefault("PIPER_MODEL", "/home/pkis/piper_dist/voices/en_US-lessac-medium.onnx")
+    env.setdefault("PIPER_MODEL", "/home/pkis/piper_dist/voices/en_GB-cori-high.onnx")
     env["LD_LIBRARY_PATH"] = "/home/pkis/piper_dist/piper:" + env.get("LD_LIBRARY_PATH", "")
     env["OUTDIR"] = str(d)
     # slug-driven: the builder loads the source node and routes internally
