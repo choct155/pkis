@@ -1175,3 +1175,18 @@
 
 ## [2026-06-07] edit | edit_node
 - pkis:technique:laplace-approximation: fields=['understanding', 'score_date', 'component_scores'] sections=[]
+
+## [2026-06-07] edges | add_connections
+- pkis:framework:understanding-assessment-protocol —applies→ mcmc
+- pkis:technique:ablation-study —applies→ variational-graph-traversal
+- pkis:technique:ablation-study —specializes→ evaluation-infrastructure
+- pkis:concept:graph-schema-expressivity —applies→ variational-graph-traversal
+- pkis:concept:graph-schema-expressivity —uses→ owl
+- pkis:concept:graph-schema-expressivity —applies→ intensional-grounding
+- pkis:problem:graceful-degradation-graph-incompleteness —applies→ variational-graph-traversal
+- pkis:problem:graceful-degradation-graph-incompleteness —uses→ graph-schema-expressivity
+- pkis:problem:graceful-degradation-graph-incompleteness —contrasts-with→ transformer-attention-mechanisms
+- pkis:source:sun-thinkongraph-2023 —applies→ knowledge-graph-question-answering
+
+## [2026-06-07] edit | edit_node
+- pkis:framework:understanding-assessment-protocol: fields=[] sections=['Session Log Convention']

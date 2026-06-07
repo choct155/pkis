@@ -155,3 +155,66 @@ This stub was created without a source. Suggested references:
 
 **External candidates (Semantic Scholar):**
 [none found]
+
+## Session Log Convention
+Session logs are persistent artifacts capturing the narrative of each working session. They serve two functions: continuity (enabling a future Claude instance or the user to resume productively) and knowledge archaeology (explaining why nodes have the structure they do).
+
+## Node Type and Slug Convention
+
+knowledge_type: result
+also_type: ["session-log"]
+slug: session-YYYY-MM-DD (e.g. session-2026-06-07)
+If multiple sessions occur on one day: session-YYYY-MM-DD-2, session-YYYY-MM-DD-3
+
+## Required Frontmatter Fields
+
+title: "Session Log — YYYY-MM-DD"
+knowledge_type: result
+also_type: ["session-log"]
+domain: list of domains touched
+tags: ["session-log", session_type, ...domain tags]
+maturity: settled (logs are fixed after the session closes)
+
+Custom frontmatter fields (set via edit_node after commit):
+- session_type: depth | quiz | design | build | review
+- duration_estimate: short | medium | long
+
+## Required Body Sections
+
+### Summary
+Two to four sentences. What was the session about and what was the primary outcome. Not a list of topics covered — a characterization of what moved.
+
+### Key Insights
+Free-form prose. The moments where something clicked, an analogy that resolved confusion, a question that reframed a problem, a connection that was not in any node before. Reference relevant nodes and sources using [[wikilink]] syntax. This section captures the reasoning path, not the conclusions — conclusions belong in the nodes themselves.
+
+### Nodes Created
+Bulleted list. IRI and one-line description for each new node created this session.
+
+### Nodes Modified
+Bulleted list. IRI and what changed (content, scores, connections).
+
+### Calibration Updates
+For each node where understanding scores changed: node IRI, old score, new score, and the behavioral evidence that warranted the change (one sentence).
+
+### Open Questions
+Numbered list. Things that came up and were not resolved. These are high-value — they are the seeds of future sessions. Include enough context that a future instance can reconstruct why the question matters.
+
+### Deferred Items
+Numbered list. Things explicitly flagged for a future session with a clear answer that was not reached. Distinct from open questions — these have a known resolution path, we just did not execute it.
+
+### Recommended Next Session
+One to three sentences. What topic, what the entry point is, what prerequisite reading would help. Written as a direct instruction to the next Claude instance.
+
+## Edge Convention
+
+Session logs connect to touched nodes via the `applies` predicate:
+  subject: session log IRI
+  target: node IRI
+  predicate: applies
+  note: brief description of how the session touched this node (e.g. "created", "anatomy filled", "calibrated", "generative discussion")
+
+This makes the graph queryable: "which sessions touched node X" and "what did session Y create or modify."
+
+## Timing
+
+Session logs are written at the end of the session, before the context closes. They are written by Claude, reviewed briefly by the user, then pushed via Code. They are not edited after the session closes — they are historical records.
