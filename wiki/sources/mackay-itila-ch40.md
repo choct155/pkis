@@ -1,0 +1,25 @@
+---
+aliases: []
+authors: David J. C. MacKay
+coverage: 0
+domain:
+- deep-learning
+- statistical-learning
+id: pkis:source:mackay-itila-ch40
+maturity: stub
+parent_book: pkis:source:mackay-itila
+status: unread
+tags:
+- information-theory
+- mackay-itila
+title: Ch. 40 — Capacity of a Single Neuron
+type: chapter
+understanding: 0
+year: 2003
+---
+
+## Summary
+[Chapter stub — MacKay ITILA Ch. 40: Capacity of a Single Neuron. To be deepened from the chapter reader extraction.]
+
+## Reading Path
+- Parent: [[mackay-itila]]
