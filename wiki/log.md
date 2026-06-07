@@ -1017,3 +1017,11 @@
 ## [2026-06-07] committed | bridge-note
 - Committed: bn-20260607-every-inference-algorithm-targeting-a → bridge-notes/bn-20260607-every-inference-algorithm-targeting-a.md
 - IRI: pkis:bridge-note:bn-20260607-every-inference-algorithm-targeting-a
+
+## [2026-06-07] staged | bridge-note
+- Staged: bn-20260607-a-recurring-failure-mode-across (id: 334d361a-aadb-412c-a826-ebf8316a4229)
+- Rationale: A recurring failure mode across Bayesian inference, generative modeling, graph traversal, and reinfo
+
+## [2026-06-07] committed | bridge-note
+- Committed: bn-20260607-a-recurring-failure-mode-across → bridge-notes/bn-20260607-a-recurring-failure-mode-across.md
+- IRI: pkis:bridge-note:bn-20260607-a-recurring-failure-mode-across
