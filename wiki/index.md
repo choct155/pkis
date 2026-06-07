@@ -284,7 +284,6 @@
 - [[liu-machine-unlearning-llm-2024]] — Rethinking Machine Unlearning for LLMs: post-training knowledge editing survey (deep-learning, ai-safety) (2026-05-20)
 
 ## Concepts
-- [[cache-freshness-probe]] — Cache Freshness Probe XYZZYPROBE () (2026-06-07)
 - [[posterior-geometry-coordinate-systems]] — Posterior Geometry and Coordinate Systems (bayesian-stats, optimization, deep-learning) (2026-06-07)
 - [[hamiltonian-classical-mechanics]] — Hamiltonian (Classical Mechanics) (bayesian-stats, optimization) (2026-06-07)
 - [[decision-theory-foundations]] — Decision Theory Foundations (bayesian-stats) (2026-06-01)
