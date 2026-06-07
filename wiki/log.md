@@ -893,3 +893,6 @@
 
 ## [2026-06-07] edit | edit_node
 - pkis:technique:mcmc: fields=[] sections=['Operational Mechanism', 'Principled Mechanism', 'Burn-in and Mixing', 'Effective Sample Size', 'Diagnostics', 'Proposal Distribution', 'Failure Modes']
+
+## [2026-06-07] edit | edit_node
+- pkis:technique:gibbs-sampler: fields=[] sections=['Operational Mechanism', 'Why Analytic Closure is Load-Bearing', 'Relationship to CAVI']

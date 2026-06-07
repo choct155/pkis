@@ -1,18 +1,33 @@
 ---
-id: "pkis:technique:gibbs-sampler"
 aliases: []
-title: "Gibbs Sampler"
-knowledge_type: technique
 also_type: []
-domain: [bayesian-stats]
-tags: [mcmc, posterior-sampling, markov-chains, conditional-distributions, bayesian-computation]
-related_concepts: ["[[data-augmentation]]", "[[metropolis-algorithm]]", "[[directed-graphical-models]]", "[[conjugate-prior]]", "[[probability-theory]]"]
-sources: ["[[tanner-tools-statistical-inference]]", "[[kroese-statistical-modeling]]", "[[lange-applied-probability]]", "[[kurz-hybrid-modeling-2022]]"]
-date_created: 2026-05-20
-date_updated: 2026-05-20
 coverage: 3
-understanding: 0
+date_created: 2026-05-20
+date_updated: '2026-06-07'
+domain:
+- bayesian-stats
+id: pkis:technique:gibbs-sampler
+knowledge_type: technique
 maturity: settled
+related_concepts:
+- '[[data-augmentation]]'
+- '[[metropolis-algorithm]]'
+- '[[directed-graphical-models]]'
+- '[[conjugate-prior]]'
+- '[[probability-theory]]'
+sources:
+- '[[tanner-tools-statistical-inference]]'
+- '[[kroese-statistical-modeling]]'
+- '[[lange-applied-probability]]'
+- '[[kurz-hybrid-modeling-2022]]'
+tags:
+- mcmc
+- posterior-sampling
+- markov-chains
+- conditional-distributions
+- bayesian-computation
+title: Gibbs Sampler
+understanding: 0
 ---
 
 An iterative MCMC algorithm for sampling from a multivariate posterior p(θ_1, ..., θ_d | Y) by cycling through the full conditional distributions: at step t+1, draw θ_i^{(t+1)} from p(θ_i | θ_{-i}^{(t)}, Y) for each i in sequence. Under regularity conditions, the generated chain is ergodic with the joint posterior as its stationary distribution.
@@ -25,3 +40,59 @@ The Gibbs sampler is the multi-component generalization of data augmentation (tw
 - [[kroese-statistical-modeling-ch07]] (unread) — integrated treatment within Monte Carlo chapter; presents Gibbs as special case of Metropolis-Hastings
 - [[lange-applied-probability-ch07]] (unread) — Gibbs sampling treated as special case of Hastings-Metropolis; convergence analysis
 - [[kurz-hybrid-modeling-2022]] (unread) — Gibbs sampling from joint posterior p(ν,d|y) for CERN magnet field reconstruction; blockwise sampling alternating between BEM state vector and mechanical perturbation vectors
+
+## Operational Mechanism
+Gibbs sampling updates one parameter at a time by drawing exactly from its full conditional distribution — the distribution of that parameter given the current values of all others and the data. For a model with parameters θ_1, ..., θ_d, one iteration cycles through:
+
+  Draw θ_1^(t+1) ~ p(θ_1 | θ_2^(t), ..., θ_d^(t), y)
+  Draw θ_2^(t+1) ~ p(θ_2 | θ_1^(t+1), θ_3^(t), ..., θ_d^(t), y)
+  ...
+  Draw θ_d^(t+1) ~ p(θ_d | θ_1^(t+1), ..., θ_{d-1}^(t+1), y)
+
+Every draw is accepted — no rejection step required when full conditionals are exact.
+
+Worked example — Normal-Gamma model:
+Observations y={2.1, 2.4, 1.9, 2.3, 2.0}, ȳ=2.14, n=5
+Priors: μ₀=0, κ₀=1, α₀=1, β₀=1 (weakly informative)
+Initialize: μ^(0)=0, τ^(0)=1
+
+Full conditional for μ given τ (conjugate Gaussian):
+  κₙ = κ₀ + n = 6
+  μₙ = (κ₀μ₀ + nȳ) / κₙ = (0 + 5×2.14)/6 = 1.783
+  Draw μ^(t+1) ~ N(1.783, 1/(6τ^(t)))
+
+Full conditional for τ given μ (conjugate Gamma):
+  αₙ = α₀ + n/2 = 3.5
+  βₙ = β₀ + (1/2)Σᵢ(yᵢ - μ^(t+1))²
+  Draw τ^(t+1) ~ Gamma(αₙ, βₙ)
+
+Iteration 1 with μ^(0)=0, τ^(0)=1:
+  μₙ = 1.783 → draw μ^(1) ≈ 1.71
+  βₙ = 1 + (1/2)[0.152+0.476+0.036+0.348+0.084] = 1.548
+  Draw τ^(1) ~ Gamma(3.5, 1.548) ≈ 2.31
+
+The parameters chase each other — μ's conditional depends on τ and vice versa. Neither converges independently; they converge together as the chain explores the joint posterior.
+
+## Why Analytic Closure is Load-Bearing
+Gibbs requires exact draws from full conditional distributions. Unlike CAVI, which has the ELBO as an external objective that corrects for approximate gradient steps, Gibbs has no correction mechanism. The correctness of the stationary distribution is entirely load-bearing on each draw being exact.
+
+If conditionals are approximated — say a Gaussian approximation to a skewed conditional — the chain's stationary distribution is the stationary distribution of the approximate chain, not the true joint posterior. The error does not average out. It accumulates into systematic bias that is silent and undetectable from standard diagnostics.
+
+The CAVI contrast makes this precise: the ELBO is a third-party reference that keeps optimization on track even when gradient steps are approximate. Gibbs has no such reference. The only guardrail is the exactness of each conditional draw. Remove that and there is nothing to correct the drift.
+
+This is why Metropolis-within-Gibbs exists: for parameters whose conditionals are not tractable, a Metropolis step is inserted. The acceptance ratio re-introduces a correction mechanism — the likelihood ratio — that tolerates approximate proposals by enforcing detailed balance at each step.
+
+## Relationship to CAVI
+Gibbs and CAVI share identical coordinate-wise structure: update one variable at a time, conditioning on the current values of all others, cycling until convergence.
+
+The difference is what each coordinate update does:
+- CAVI: moves the variational factor q_j(z_j) to its optimal value under the current other factors — an optimization step targeting the ELBO
+- Gibbs: draws a sample from the exact conditional p(θ_j | θ_{-j}, y) — a sampling step
+
+CAVI finds the best factorized approximation to the posterior.
+Gibbs constructs samples from the true joint posterior.
+
+CAVI tolerates approximation because the ELBO provides correction.
+Gibbs does not tolerate approximation because there is no correction mechanism.
+
+Both degrade when variables are highly correlated — updating one coordinate at a time while holding others fixed produces small effective moves along the ridge of correlation. HMC addresses this by using gradient information to construct proposals that move along the posterior surface rather than across it.
