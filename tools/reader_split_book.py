@@ -80,7 +80,9 @@ def calibrate_offset(reader, chapters, ptexts):
     for num, title, pg in chapters[:6]:
         target = _norm(title)
         for i in range(15, len(reader.pages)):
-            head = _norm(ptexts.get(i, "")[:200])
+            # Search a wide window: some PDFs (e.g. MacKay) prefix every page with a
+            # recurring copyright/watermark line that pushes the title past a short slice.
+            head = _norm(ptexts.get(i, "")[:800])
             if target and target[:18] in head:
                 offsets.append(i - pg)
                 break
@@ -96,6 +98,8 @@ def main():
     import pypdf
     slug = sys.argv[1]
     mode = sys.argv[2] if len(sys.argv) > 2 else "plan"
+    # Optional manual printed->PDF page offset override for PDFs the heuristic can't calibrate.
+    manual_offset = int(sys.argv[3]) if len(sys.argv) > 3 else None
     path = os.path.join(BOOKS, slug + ".pdf")
     reader = pypdf.PdfReader(path)
     n = len(reader.pages)
@@ -103,9 +107,9 @@ def main():
     if not chapters:
         print("no chapters parsed from TOC"); sys.exit(2)
     ptexts = page_texts(reader, 0, n)
-    offset = calibrate_offset(reader, chapters, ptexts)
+    offset = manual_offset if manual_offset is not None else calibrate_offset(reader, chapters, ptexts)
     if offset is None:
-        print("could not calibrate page offset"); sys.exit(3)
+        print("could not calibrate page offset (pass a manual offset as the 3rd arg)"); sys.exit(3)
     # back-matter boundary: cap the last chapter before References/Bibliography
     back_pdf = (back_page + offset) if back_page else None
     if back_pdf is None:
