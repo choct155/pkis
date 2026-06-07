@@ -937,3 +937,6 @@
 ## [2026-06-07] committed | source
 - Committed: sutton-policy-2018 → sources/sutton-policy-2018.md
 - IRI: pkis:source:sutton-policy-2018
+
+## [2026-06-07] edit | edit_node
+- pkis:source:sutton-policy-2018: fields=['domain', 'parent_book', 'tags'] sections=['Summary', 'Reading Notes']
