@@ -961,3 +961,12 @@
 ## [2026-06-07] committed | concept
 - Committed: hamiltonian-classical-mechanics → concepts/hamiltonian-classical-mechanics.md
 - IRI: pkis:concept:hamiltonian-classical-mechanics
+
+## [2026-06-07] staged | node-stub (concept)
+- Staged: posterior-geometry-coordinate-systems (id: 00442abc-ad61-4010-b084-3f6209ce1ef3)
+- Title: Posterior Geometry and Coordinate Systems
+- needs_canonical_source: True
+
+## [2026-06-07] committed | concept
+- Committed: posterior-geometry-coordinate-systems → concepts/posterior-geometry-coordinate-systems.md
+- IRI: pkis:concept:posterior-geometry-coordinate-systems
