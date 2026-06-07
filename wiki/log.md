@@ -1139,3 +1139,6 @@
 
 ## [2026-06-07] edit | edit_node
 - pkis:source:feng-cypherbench-2024: fields=['domain', 'tags'] sections=[]
+
+## [2026-06-07] edit | edit_node
+- pkis:hypothesis:variational-graph-traversal: fields=[] sections=['Task Grounding', 'Scope Conditions']

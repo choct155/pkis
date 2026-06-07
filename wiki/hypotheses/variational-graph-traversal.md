@@ -98,3 +98,21 @@ The formulation reveals that the learning problem for the traversal scoring matr
 - [[mean-field-approximation]] — contrasts-with: Traversal aims to preserve path correlations that mean field discards
 - [[variational-inference]] — instantiates: Graph traversal recast as approximate posterior inference over paths
 [To be populated during integration]
+
+## Task Grounding
+The variational graph traversal hypothesis is not a claim about traversal efficiency as an end in itself. It is a claim about downstream task performance.
+
+Mechanism claim: replacing heuristic LLM relevance scoring with a principled ELBO-based traversal objective produces more accurate and efficient retrieval of task-relevant graph subgraphs.
+
+Task outcome claim: more accurate subgraph retrieval improves performance on target tasks — question answering, entity screening, monitoring, synthesis — measured by task-level metrics (answer accuracy, screening precision/recall, alert reliability, synthesis fidelity), not traversal metrics alone.
+
+Deployment context: investment knowledge systems processing private markets documents, where ground truth is sparse and delayed, and where the cost of false confidence in retrieved structure is high.
+
+Why the scale foil fails at the task level: The argument that "making the model big enough will find it" operates at the mechanism level. It does not address: (1) auditability — parametric retrieval cannot be inspected or traced; (2) updatability — parametric knowledge requires retraining to update; (3) gap detectability — parametric systems cannot distinguish between "not in the graph" and "in the graph but not retrieved"; (4) organizational alignment — curation teams cannot maintain parametric representations. These are task and deployment arguments that hold regardless of model scale.
+
+## Scope Conditions
+This hypothesis applies to LLM⊗KG tight-coupling paradigms, where the LLM participates at every step of graph traversal. It does not apply to LLM⊕KG loose-coupling paradigms, where the graph is used for static upfront retrieval and the LLM generates from the retrieved subgraph without further graph interaction.
+
+In the loose-coupling paradigm, the traversal objective governs a one-shot retrieval rather than an iterative beam search, and the ELBO formulation does not naturally apply.
+
+The hybrid deployment strategy (zero-shot LLM for new content, learned scoring matrix for mature content) applies to the tight-coupling paradigm. The graph hardening threshold — when to transition — is an open design question.
