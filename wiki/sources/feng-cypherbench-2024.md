@@ -3,14 +3,24 @@ aliases: []
 authors: Yanlin Feng, Simone Papicchio, Sajjadur Rahman
 concepts: []
 date_added: '2026-06-07'
+date_updated: '2026-06-07'
 doi: ''
-domain: []
+domain:
+- knowledge-representation
+- deep-learning
 drive_id: ''
 drive_path: ''
 id: pkis:source:feng-cypherbench-2024
 source_url: https://arxiv.org/abs/2412.18702
 status: unread
-tags: []
+tags:
+- benchmark
+- cypher
+- property-graph
+- neo4j
+- text-to-query
+- kgqa
+- evaluation
 title: 'CypherBench: Towards Precise Retrieval over Full-scale Modern Knowledge Graphs
   in the LLM Era'
 type: paper
