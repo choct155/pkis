@@ -28,3 +28,8 @@ year: 1992
 ## Chapters
 - [[resnick-stochastic-processes-ch01]] — Preliminaries: Discrete Index Sets and/or Discrete State Spaces
 - [[resnick-stochastic-processes-ch02]] — Markov Chains
+- [[resnick-stochastic-processes-ch03]] — Renewal Theory
+- [[resnick-stochastic-processes-ch04]] — Point Processes
+- [[resnick-stochastic-processes-ch05]] — Continuous Time Markov Chains
+- [[resnick-stochastic-processes-ch06]] — Brownian Motion
+- [[resnick-stochastic-processes-ch07]] — The General Random Walk
