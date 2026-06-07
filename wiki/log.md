@@ -1034,3 +1034,27 @@
 ## [2026-06-07] committed | concept
 - Committed: cache-freshness-probe → concepts/cache-freshness-probe.md
 - IRI: pkis:concept:cache-freshness-probe
+
+## [2026-06-07] staged | node-stub (framework)
+- Staged: understanding-assessment-protocol (id: 28433be1-8f1a-4af4-bb90-e5c2ee867ede)
+- Title: Understanding Assessment Protocol
+- needs_canonical_source: True
+
+## [2026-06-07] staged | node-stub (technique)
+- Staged: ablation-study (id: 0a978c44-8300-4925-af5e-66b9099654dd)
+- Title: Ablation Study
+- needs_canonical_source: True
+
+## [2026-06-07] staged | node-stub (concept)
+- Staged: graph-schema-expressivity (id: fd8479c3-2245-4a64-88e9-5270f61732c3)
+- Title: Graph Schema Expressivity
+- needs_canonical_source: True
+
+## [2026-06-07] staged | node-stub (problem)
+- Staged: graceful-degradation-graph-incompleteness (id: 4d2263fb-4174-49c6-b216-1faada31e540)
+- Title: Graceful Degradation Under Graph Incompleteness
+- needs_canonical_source: True
+
+## [2026-06-07] committed | framework
+- Committed: understanding-assessment-protocol → frameworks/understanding-assessment-protocol.md
+- IRI: pkis:framework:understanding-assessment-protocol
