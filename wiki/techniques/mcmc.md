@@ -3,6 +3,14 @@ aliases:
 - MCMC
 also_type:
 - framework
+component_scores:
+  alternatives: 4
+  conditions: 2
+  diagnostics: 3
+  failure_modes: 3
+  implementation: 3
+  operational_mechanism: 4
+  principled_mechanism: 4
 coverage: 2
 date_created: 2026-05-20
 date_updated: '2026-06-07'
@@ -17,6 +25,7 @@ related_concepts:
 - '[[metropolis-algorithm]]'
 - '[[probability-theory]]'
 - '[[intractable-posterior]]'
+score_date: '2026-06-07'
 sources:
 - '[[lange-applied-probability]]'
 - '[[kroese-statistical-modeling]]'
@@ -29,7 +38,7 @@ tags:
 - bayesian-computation
 - sampling
 title: Markov Chain Monte Carlo (MCMC)
-understanding: 0
+understanding: 2
 uses:
 - posterior-geometry-coordinate-systems
 ---

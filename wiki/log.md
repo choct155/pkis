@@ -1154,3 +1154,6 @@
 
 ## [2026-06-07] edit | edit_node
 - pkis:source:sun-thinkongraph-2023: fields=[] sections=['Summary', 'LLM-KG Paradigm Distinction', 'Contamination Risk', 'ToG-R Significance', 'Gaps Addressed by VGT Hypothesis']
+
+## [2026-06-07] edit | edit_node
+- pkis:technique:mcmc: fields=['understanding', 'score_date', 'component_scores'] sections=[]
