@@ -952,3 +952,12 @@
 ## [2026-06-07] committed | technique
 - Committed: hmc → techniques/hmc.md
 - IRI: pkis:technique:hmc
+
+## [2026-06-07] staged | node-stub (concept)
+- Staged: hamiltonian-classical-mechanics (id: f526a8ae-c6fe-48ef-afbb-ca7eba30802d)
+- Title: Hamiltonian (Classical Mechanics)
+- needs_canonical_source: True
+
+## [2026-06-07] committed | concept
+- Committed: hamiltonian-classical-mechanics → concepts/hamiltonian-classical-mechanics.md
+- IRI: pkis:concept:hamiltonian-classical-mechanics
