@@ -1025,3 +1025,12 @@
 ## [2026-06-07] committed | bridge-note
 - Committed: bn-20260607-a-recurring-failure-mode-across → bridge-notes/bn-20260607-a-recurring-failure-mode-across.md
 - IRI: pkis:bridge-note:bn-20260607-a-recurring-failure-mode-across
+
+## [2026-06-07] staged | node-stub (concept)
+- Staged: cache-freshness-probe (id: e6ee15f7-c153-4f3f-bab6-fd0f2f952da1)
+- Title: Cache Freshness Probe XYZZYPROBE
+- needs_canonical_source: True
+
+## [2026-06-07] committed | concept
+- Committed: cache-freshness-probe → concepts/cache-freshness-probe.md
+- IRI: pkis:concept:cache-freshness-probe
