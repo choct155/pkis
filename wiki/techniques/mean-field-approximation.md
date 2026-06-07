@@ -1,11 +1,19 @@
 ---
 aliases: []
 also_type: []
+component_scores:
+  alternatives: 4
+  conditions: 4
+  diagnostics: 4
+  failure_modes: 4
+  implementation: 3
+  operational_mechanism: 5
+  principled_mechanism: 4
 contrasts-with:
 - transformer-attention-mechanisms
 coverage: 3
 date_created: 2026-05-20
-date_updated: '2026-06-05'
+date_updated: '2026-06-07'
 domain:
 - bayesian-stats
 - deep-learning
@@ -22,6 +30,7 @@ related_concepts:
 - '[[variational-inference]]'
 - '[[elbo]]'
 - '[[coordinate-ascent-vi]]'
+score_date: '2026-06-07'
 sources:
 - '[[blei-vi-review]]'
 - '[[ganguly-intro-vi]]'
@@ -34,7 +43,7 @@ tags:
 - independence-assumption
 - tractability
 title: Mean-Field Variational Approximation
-understanding: 0
+understanding: 3
 ---
 
 A variational inference approach that assumes the variational posterior fully factorizes over the latent variables: q(z) = ∏_j q_j(z_j), with each factor governed independently; this independence assumption makes ELBO optimization tractable via coordinate ascent but can systematically underestimate posterior variance.
