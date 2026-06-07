@@ -1,18 +1,44 @@
 ---
-id: "pkis:technique:variational-inference"
 aliases: []
-title: "Variational Inference"
-knowledge_type: technique
-also_type: [framework]
-domain: [bayesian-stats, optimization]
-tags: [variational-methods, approximate-inference, probability-theory, optimization]
-related_concepts: ["[[elbo]]", "[[mean-field-approximation]]", "[[kl-divergence]]", "[[directed-graphical-models]]", "[[em-algorithm]]"]
-sources: ["[[blei-vi-review]]", "[[ganguly-intro-vi]]", "[[sjolund-parametric-vi]]", "[[yellapragada-variational-bayes]]", "[[pearl-reverend-bayes-1982]]"]
-date_created: 2026-05-20
-date_updated: 2026-05-20
+also_type:
+- framework
+component_scores:
+  alternatives: 4
+  conditions: 3
+  diagnostics: 3
+  failure_modes: 3
+  implementation: 3
+  operational_mechanism: 4
+  principled_mechanism: 4
 coverage: 4
-understanding: 0
+date_created: 2026-05-20
+date_updated: '2026-06-07'
+domain:
+- bayesian-stats
+- optimization
+id: pkis:technique:variational-inference
+knowledge_type: technique
 maturity: evolving
+related_concepts:
+- '[[elbo]]'
+- '[[mean-field-approximation]]'
+- '[[kl-divergence]]'
+- '[[directed-graphical-models]]'
+- '[[em-algorithm]]'
+score_date: '2026-06-07'
+sources:
+- '[[blei-vi-review]]'
+- '[[ganguly-intro-vi]]'
+- '[[sjolund-parametric-vi]]'
+- '[[yellapragada-variational-bayes]]'
+- '[[pearl-reverend-bayes-1982]]'
+tags:
+- variational-methods
+- approximate-inference
+- probability-theory
+- optimization
+title: Variational Inference
+understanding: 3
 ---
 
 A family of algorithms for approximating intractable posterior distributions in Bayesian models by casting inference as optimization: given a family Q of tractable distributions, find the member q*(z) that minimizes KL(q(z)‖p(z|x)), equivalently maximizing the Evidence Lower Bound (ELBO).
