@@ -970,3 +970,14 @@
 ## [2026-06-07] committed | concept
 - Committed: posterior-geometry-coordinate-systems → concepts/posterior-geometry-coordinate-systems.md
 - IRI: pkis:concept:posterior-geometry-coordinate-systems
+
+## [2026-06-07] staged | node-stub (concept)
+- Staged: particle-filter-1 (id: 5c661960-a242-44e1-aba4-f95694623d9f)
+- Title: Particle Filter
+- needs_canonical_source: False
+
+## [2026-06-07] discarded | concept
+- Discarded: particle-filter-1 (id: 5c661960-a242-44e1-aba4-f95694623d9f)
+
+## [2026-06-07] edit | edit_node
+- pkis:technique:particle-filter: fields=[] sections=['Distinction from Beam Search', 'Relationship to MCMC']
