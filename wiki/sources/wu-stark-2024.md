@@ -4,14 +4,24 @@ authors: Shirley Wu, Shiyu Zhao, Michihiro Yasunaga, Kexin Huang, Kaidi Cao, Qia
   Huang, Vassilis N. Ioannidis, Karthik Subbian, James Zou, Jure Leskovec
 concepts: []
 date_added: '2026-06-07'
+date_updated: '2026-06-07'
 doi: ''
-domain: []
+domain:
+- knowledge-representation
+- deep-learning
 drive_id: ''
 drive_path: ''
 id: pkis:source:wu-stark-2024
 source_url: https://arxiv.org/abs/2404.13207
 status: unread
-tags: []
+tags:
+- benchmark
+- retrieval
+- knowledge-graphs
+- hybrid-retrieval
+- kgqa
+- evaluation
+- semi-structured
 title: 'STaRK: Benchmarking LLM Retrieval on Textual and Relational Knowledge Bases'
 type: paper
 year: 2024

@@ -1133,3 +1133,6 @@
 ## [2026-06-07] committed | source
 - Committed: yang-hotpotqa-2018 → sources/yang-hotpotqa-2018.md
 - IRI: pkis:source:yang-hotpotqa-2018
+
+## [2026-06-07] edit | edit_node
+- pkis:source:wu-stark-2024: fields=['domain', 'tags'] sections=[]
