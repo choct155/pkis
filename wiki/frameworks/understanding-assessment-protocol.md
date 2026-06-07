@@ -3,6 +3,8 @@ aliases:
 - UAP
 - calibration protocol
 also_type: []
+applies:
+- mcmc
 component_scores:
   application: null
   limits: null
@@ -142,6 +144,7 @@ This protocol applies to all node types in the PKIS wiki. It is the authoritativ
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[mcmc]] — applies: Protocol governs understanding score assessment for the MCMC node
 [To be populated during integration]
 
 ## Needs Canonical Source

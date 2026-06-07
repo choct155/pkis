@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- variational-graph-traversal
 component_scores:
   alternatives: null
   conditions: null
@@ -21,6 +23,8 @@ maturity: evolving
 needs_canonical_source: true
 related_concepts: []
 sources: []
+specializes:
+- evaluation-infrastructure
 tags:
 - experimental-design
 - evaluation
@@ -66,6 +70,8 @@ Each ablation isolates one specific claim of the hypothesis.
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[evaluation-infrastructure]] — specializes: Ablation study is a specific evaluation methodology within experimental design
+- [[variational-graph-traversal]] — applies: Three targeted ablations defined for VGT hypothesis evaluation
 [To be populated during integration]
 
 ## Needs Canonical Source

@@ -1,11 +1,15 @@
 ---
 aliases: []
 also_type: []
+applies:
+- variational-graph-traversal
 component_scores:
   formulation: null
   instances: null
   solution_landscape: null
   why_hard: null
+contrasts-with:
+- transformer-attention-mechanisms
 coverage: 0
 date_created: '2026-06-07'
 date_updated: '2026-06-07'
@@ -27,6 +31,8 @@ tags:
 - IKS
 title: Graceful Degradation Under Graph Incompleteness
 understanding: 0
+uses:
+- graph-schema-expressivity
 ---
 
 ## Definition
@@ -72,6 +78,9 @@ The graph hardening threshold — when to transition from zero-shot to learned s
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[transformer-attention-mechanisms]] — contrasts-with: Attention degrades gracefully via softmax; graph traversal does not without explicit handling
+- [[graph-schema-expressivity]] — uses: OWL schema enables ontology-guided gap detection as the IKS-specific strategy
+- [[variational-graph-traversal]] — applies: Incomplete graphs are the primary practical obstacle for VGT deployment
 [To be populated during integration]
 
 ## Needs Canonical Source

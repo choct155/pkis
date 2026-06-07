@@ -1,5 +1,7 @@
 ---
 aliases: []
+applies:
+- knowledge-graph-question-answering
 authors: Jiashuo Sun, Chengjin Xu, Lumingyuan Tang, Saizhuo Wang, Chen Lin, Yeyun
   Gong, Lionel M. Ni, Heung-Yeung Shum, Jian Guo
 chapter: null
@@ -75,3 +77,6 @@ The empirical finding that ToG-R performs comparably to full ToG validates the t
 (3) Beam search collapses the ELBO entropy term to a constant (log k), making traversal purely fit-driven.
 (4) No connection to particle filter literature or approximate posterior inference.
 (5) ToG-R is identified as tractable but not connected to a learning objective.
+
+## Connections
+- [[knowledge-graph-question-answering]] — applies: ToG is evaluated on KGQA benchmarks; primary baseline for the VGT hypothesis

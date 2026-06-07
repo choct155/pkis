@@ -1,6 +1,9 @@
 ---
 aliases: []
 also_type: []
+applies:
+- variational-graph-traversal
+- intensional-grounding
 component_scores:
   application: null
   boundary: null
@@ -33,6 +36,8 @@ tags:
 - LLM-grounding
 title: Graph Schema Expressivity
 understanding: 0
+uses:
+- owl
 ---
 
 ## Definition
@@ -72,6 +77,9 @@ Higher schema expressivity facilitates traversal but does not guarantee better t
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[intensional-grounding]] — applies: Schema expressivity is a testable dimension of the intensional grounding thesis
+- [[owl]] — uses: OWL represents maximum schema expressivity on the axis
+- [[variational-graph-traversal]] — applies: Schema expressivity axis is a key variable for VGT hypothesis evaluation
 [To be populated during integration]
 
 ## Needs Canonical Source
