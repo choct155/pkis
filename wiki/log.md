@@ -1058,3 +1058,7 @@
 ## [2026-06-07] committed | framework
 - Committed: understanding-assessment-protocol → frameworks/understanding-assessment-protocol.md
 - IRI: pkis:framework:understanding-assessment-protocol
+
+## [2026-06-07] committed | technique
+- Committed: ablation-study → techniques/ablation-study.md
+- IRI: pkis:technique:ablation-study

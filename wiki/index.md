@@ -395,6 +395,7 @@
 - [[market-vs-hierarchy]] — Coase/Williamson: transactions governed by price signals (markets) vs. managerial direction (firms) (corporate-finance) (2026-05-20)
 
 ## Techniques
+- [[ablation-study]] — Ablation Study (deep-learning, knowledge-representation) (2026-06-07)
 - [[hmc]] — Hamiltonian Monte Carlo (HMC) (bayesian-stats, optimization) (2026-06-07)
 - [[concept-bottleneck-models]] — Concept Bottleneck Models (deep-learning, knowledge-representation) (2026-06-01)
 - [[vector-quantization]] — Vector Quantization (deep-learning) (2026-06-01)
