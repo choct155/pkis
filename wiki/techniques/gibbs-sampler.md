@@ -1,6 +1,14 @@
 ---
 aliases: []
 also_type: []
+component_scores:
+  alternatives: 4
+  conditions: 2
+  diagnostics: 2
+  failure_modes: 3
+  implementation: 3
+  operational_mechanism: 4
+  principled_mechanism: 3
 coverage: 3
 date_created: 2026-05-20
 date_updated: '2026-06-07'
@@ -15,6 +23,7 @@ related_concepts:
 - '[[directed-graphical-models]]'
 - '[[conjugate-prior]]'
 - '[[probability-theory]]'
+score_date: '2026-06-07'
 sources:
 - '[[tanner-tools-statistical-inference]]'
 - '[[kroese-statistical-modeling]]'
@@ -27,7 +36,7 @@ tags:
 - conditional-distributions
 - bayesian-computation
 title: Gibbs Sampler
-understanding: 0
+understanding: 2
 ---
 
 An iterative MCMC algorithm for sampling from a multivariate posterior p(θ_1, ..., θ_d | Y) by cycling through the full conditional distributions: at step t+1, draw θ_i^{(t+1)} from p(θ_i | θ_{-i}^{(t)}, Y) for each i in sequence. Under regularity conditions, the generated chain is ergodic with the joint posterior as its stationary distribution.
