@@ -884,3 +884,12 @@
 ## [2026-06-05] committed | bridge-note
 - Committed: bn-20260605-mean-field-approximation-achieves-tractability → bridge-notes/bn-20260605-mean-field-approximation-achieves-tractability.md
 - IRI: pkis:bridge-note:bn-20260605-mean-field-approximation-achieves-tractability
+
+## [2026-06-05] edges | add_connections
+- pkis:technique:mean-field-approximation —extends→ weight-initialization
+- pkis:technique:mean-field-approximation —extends→ gaussian-process-regression
+- pkis:technique:mean-field-approximation —extends→ belief-propagation
+- pkis:technique:mean-field-approximation —contrasts-with→ transformer-attention-mechanisms
+
+## [2026-06-07] edit | edit_node
+- pkis:technique:mcmc: fields=[] sections=['Operational Mechanism', 'Principled Mechanism', 'Burn-in and Mixing', 'Effective Sample Size', 'Diagnostics', 'Proposal Distribution', 'Failure Modes']
