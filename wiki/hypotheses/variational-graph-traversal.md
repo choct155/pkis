@@ -1,5 +1,7 @@
 ---
 aliases: []
+analogous-to:
+- coordinate-ascent-vi
 cluster_membership: []
 contrasts-with:
 - mean-field-approximation
@@ -88,6 +90,7 @@ The formulation reveals that the learning problem for the traversal scoring matr
 - How does the relation-type-level simplification interact with graphs that have fine-grained relation taxonomies?
 
 ## Connections
+- [[coordinate-ascent-vi]] — analogous-to: Traversal depth maps to CAVI coordinate updates; same iterative structure, different domain
 - [[particle-filter]] — uses: Particle filter approximates the path distribution Q(pi), preserving entropy
 - [[sun-thinkongraph-2023]] — extends: Hypothesis extends Think-on-Graph's heuristic beam-search traversal with a variational objective
 - [[belief-propagation]] — contrasts-with: Both do graph inference; BP is exact message-passing, VGT is variational path inference
