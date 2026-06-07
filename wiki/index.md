@@ -1,6 +1,7 @@
 # PKIS Wiki Index
 
 ## Sources
+- [[yang-hotpotqa-2018]] — HotpotQA: A Dataset for Diverse, Explainable Multi-hop Question Answering () (2026-06-07)
 - [[ho-constructing-2020]] — Constructing A Multi-hop QA Dataset for Comprehensive Evaluation of Reasoning Steps (2WikiMultiHopQA) () (2026-06-07)
 - [[zhang-variational-2018]] — Variational Reasoning for Question Answering with Knowledge Graphs (MetaQA) () (2026-06-07)
 - [[talmor-the-2018]] — The Web as a Knowledge-Base for Answering Complex Questions (ComplexWebQuestions) () (2026-06-07)

@@ -1129,3 +1129,7 @@
 ## [2026-06-07] committed | source
 - Committed: ho-constructing-2020 → sources/ho-constructing-2020.md
 - IRI: pkis:source:ho-constructing-2020
+
+## [2026-06-07] committed | source
+- Committed: yang-hotpotqa-2018 → sources/yang-hotpotqa-2018.md
+- IRI: pkis:source:yang-hotpotqa-2018
