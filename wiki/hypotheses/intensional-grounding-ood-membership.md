@@ -3,7 +3,7 @@ aliases: []
 cluster_membership:
 - intensional-grounding
 date_created: 2026-06-01
-date_updated: 2026-06-01
+date_updated: '2026-06-07'
 dependent_nodes:
 - node: '[[named-entity-disambiguation]]'
   node_type: technique
@@ -57,3 +57,12 @@ How to operationalize "out-of-distribution" for category membership in a way tha
 - [[formal-ontology]] — uses: Explicit intensional grounding is supplied as ontological class definitions with necessary/sufficient membership conditions; [[ontology]] resolves to formal-ontology.
 - [[named-entity-disambiguation]] — uses: Out-of-distribution category membership is evaluated through the same entity identity / classification machinery as NED.
 - [[intensional-grounding]] — belongs-to: this is a constituent hypothesis of the Intensional Grounding cluster, testing it at the out-of-distribution generalization frontier
+
+## Task Grounding
+Mechanism claim: explicit intensional structure improves category membership determination for out-of-distribution instances.
+
+Task outcome claim: OOD entity classification accuracy improves on private markets entities not well-represented in pre-training, measured by classification precision on held-out entity sets with low pre-training corpus frequency.
+
+Deployment context: financial data manufacturing where new fund structures, GP entities, and portfolio companies continuously appear and must be classified into the existing ontological schema.
+
+Why the scale foil fails at the task level: For genuinely OOD instances, scale provides no improvement over smaller models because the distributional signal is absent by definition. Explicit necessary and sufficient conditions for class membership provide a classification path that does not depend on pre-training exposure.

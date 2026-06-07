@@ -1145,3 +1145,6 @@
 
 ## [2026-06-07] edit | edit_node
 - pkis:hypothesis:intensional-grounding-ned-accuracy: fields=[] sections=['Task Grounding']
+
+## [2026-06-07] edit | edit_node
+- pkis:hypothesis:intensional-grounding-ood-membership: fields=[] sections=['Task Grounding']
