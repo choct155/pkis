@@ -1109,3 +1109,7 @@
 ## [2026-06-07] committed | source
 - Committed: wu-stark-2024 → sources/wu-stark-2024.md
 - IRI: pkis:source:wu-stark-2024
+
+## [2026-06-07] committed | source
+- Committed: feng-cypherbench-2024 → sources/feng-cypherbench-2024.md
+- IRI: pkis:source:feng-cypherbench-2024
