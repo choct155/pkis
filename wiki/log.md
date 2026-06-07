@@ -905,3 +905,6 @@
 ## [2026-06-07] committed | source
 - Committed: mohamed-monte-2020 → sources/mohamed-monte-2020.md
 - IRI: pkis:source:mohamed-monte-2020
+
+## [2026-06-07] edit | edit_node
+- pkis:source:mohamed-monte-2020: fields=['domain', 'tags'] sections=['Summary', 'Reading Notes']
