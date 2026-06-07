@@ -1,6 +1,11 @@
 # Reading Queue
 
 ### High
+- [ ] [[betancourt-hmc]] — Conceptual introduction to HMC. Focus: typical-set motivation, geometric argument for why HMC beats random-walk samplers. Directly supports the new hmc technique node; prereq for understanding divergent transitions + non-centered parameterization formally.
+- [ ] [[kroese-statistical-modeling-ch07]] — Covers MCMC + Gibbs (presents Gibbs as a special case of MH — supports the epistemological-anchors bridge note). Formal treatment to elevate understanding on mcmc and gibbs-sampler after today's session.
+- [ ] [[blei-vi-review]] — Gateway node for the VI cluster (highest lb). Formal VI treatment needed to elevate understanding on variational-inference, coordinate-ascent-vi, mean-field-approximation after today's intuition-level session. Read alongside Mohamed et al.
+- [ ] [[sutton-policy-2018]] — IMMEDIATE after Mohamed et al. Policy gradient theorem + REINFORCE are the RL-side foundation for variational-graph-traversal. Prereq: ELBO mechanics (solid) + Mohamed score function estimator. Unlocks actor-critic, maximum-entropy RL.
+- [ ] [[mohamed-monte-2020]] — IMMEDIATE. Score function estimator is the mathematical bridge between the VI cluster and the new RL cluster. Prerequisite for Sutton-Barto Ch13; unblocks the RL side of the variational-graph-traversal hypothesis. Resolves the RL-foundations gap from the 2026-06-07 session.
 - [ ] [[allemang-semantic-web-ch03]] — primary RDF treatment; deepens [[rdf]], [[linked-data-principles]], and forms the foundation for all downstream Semantic Web chapters; needed before reading any OWL/RDFS chapters
 - [ ] [[allemang-semantic-web-ch07]] — RDFS primary treatment; deepens [[rdfs]] and [[ontology-reasoning]]; prerequisite reading for ch08 and ch11
 - [ ] [[allemang-semantic-web-ch05]] — SPARQL comprehensive treatment; deepens [[sparql]] with CONSTRUCT rules and federation; directly relevant to [[ontology-reasoning]] and [[knowledge-graph]] work
@@ -29,6 +34,8 @@
 - [ ] [[kroese-statistical-modeling-ch10]] — primary treatment of [[generalized-linear-models]] with logit/probit/Poisson
 
 ### Normal
+- [ ] [[betancourt-hmcgeometric]] — Formal geometric (symplectic) treatment of HMC. Read after the conceptual intro. Supports the hamiltonian-classical-mechanics concept node and why leapfrog (symplecticity) is the right integrator. Not blocking.
+- [ ] [[sun-thinkongraph-2023]] — Empirical baseline for the variational-graph-traversal hypothesis. Read after policy-gradient foundations. Not blocking — hypothesis can be formalized first — but required before empirical comparison.
 - [ ] [[gulli-agentic-design-patterns-ch14]] — covers standard RAG, GraphRAG, and Agentic RAG; directly deepens [[retrieval-augmented-generation]] and [[graph-rag]] with practical pattern framing
 - [ ] [[gulli-agentic-design-patterns-ch07]] — multi-agent collaboration patterns; seeds [[multi-agent-systems]] node
 - [ ] [[zhang-graphrag-survey]] — deep-read: survey is ingested as stub; retrieval techniques taxonomy (§V) and integration methods (§VI) connect directly to [[graph-neural-networks]], [[in-context-learning]], and [[knowledge-graph-construction]] nodes that need fleshing out
@@ -57,7 +64,12 @@
 - [ ] [[cunningham-causal-inference-mixtape-ch11]] — Synthetic control; deepens [[synthetic-control]]; Abadie methodology and Prop 99 application
 - [ ] [[kroese-statistical-modeling-ch11]] — primary treatment of [[gaussian-process-regression]] and [[kernel-density-estimation]]; covers regression splines and RKHS connection
 
-### High (new — from batch ingest 2026-05-20)
+### High
+- [ ] [[betancourt-hmc]] — Conceptual introduction to HMC. Focus: typical-set motivation, geometric argument for why HMC beats random-walk samplers. Directly supports the new hmc technique node; prereq for understanding divergent transitions + non-centered parameterization formally.
+- [ ] [[kroese-statistical-modeling-ch07]] — Covers MCMC + Gibbs (presents Gibbs as a special case of MH — supports the epistemological-anchors bridge note). Formal treatment to elevate understanding on mcmc and gibbs-sampler after today's session.
+- [ ] [[blei-vi-review]] — Gateway node for the VI cluster (highest lb). Formal VI treatment needed to elevate understanding on variational-inference, coordinate-ascent-vi, mean-field-approximation after today's intuition-level session. Read alongside Mohamed et al.
+- [ ] [[sutton-policy-2018]] — IMMEDIATE after Mohamed et al. Policy gradient theorem + REINFORCE are the RL-side foundation for variational-graph-traversal. Prereq: ELBO mechanics (solid) + Mohamed score function estimator. Unlocks actor-critic, maximum-entropy RL.
+- [ ] [[mohamed-monte-2020]] — IMMEDIATE. Score function estimator is the mathematical bridge between the VI cluster and the new RL cluster. Prerequisite for Sutton-Barto Ch13; unblocks the RL side of the variational-graph-traversal hypothesis. Resolves the RL-foundations gap from the 2026-06-07 session. (new — from batch ingest 2026-05-20)
 - [ ] [[coase-nature-firm-1937]] — foundational: introduces [[transaction-cost-theory]] and [[market-vs-hierarchy]]; 4+ nodes depend on this paper
 - [ ] [[modigliani-miller-cost-capital-1958]] — foundational: establishes [[modigliani-miller-theorem]] and [[irrelevance-propositions]]; cornerstone of corporate finance
 - [ ] [[sargent-sims-business-cycle-1977]] — already ingested in prior session; foundational VAR paper; deepens [[var-models]] and [[dynamic-factor-models]]
@@ -66,7 +78,9 @@
 - [ ] [[dentella-ai-language-comprehension-2024]] — empirical challenge to LLM language understanding; deepens [[compositionality]], [[llm-language-comprehension]]
 - [ ] [[lenat-marcus-cyc-trustworthy-2023]] — deepens [[neurosymbolic-ai]], [[formal-ontology]], [[knowledge-graph]]; trustworthy AI framing
 
-### Normal (new — from batch ingest 2026-05-20)
+### Normal
+- [ ] [[betancourt-hmcgeometric]] — Formal geometric (symplectic) treatment of HMC. Read after the conceptual intro. Supports the hamiltonian-classical-mechanics concept node and why leapfrog (symplecticity) is the right integrator. Not blocking.
+- [ ] [[sun-thinkongraph-2023]] — Empirical baseline for the variational-graph-traversal hypothesis. Read after policy-gradient foundations. Not blocking — hypothesis can be formalized first — but required before empirical comparison. (new — from batch ingest 2026-05-20)
 - [ ] [[fama-two-pillars-2013]] — Nobel lecture: deepens [[efficient-market-hypothesis]], [[risk-premium-structure]], [[stochastic-discount-factor]]
 - [ ] [[bernanke-financial-intermediation-2022]] — Nobel lecture: deepens [[bank-run]], [[maturity-transformation]], [[credit-channel]], [[delegated-monitoring]]
 - [ ] [[wray-modern-money-1998]] — deepens [[modern-money-theory]], [[chartalism]], [[employer-of-last-resort]], [[state-theory-of-money]]
