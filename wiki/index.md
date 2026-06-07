@@ -1,6 +1,7 @@
 # PKIS Wiki Index
 
 ## Sources
+- [[sutton-policy-2018]] — Policy Gradient Methods (Sutton & Barto Ch. 13) () (2026-06-07)
 - [[sutton-reinforcement-2018]] — Reinforcement Learning: An Introduction (2nd ed.) () (2026-06-07)
 - [[mohamed-monte-2020]] — Monte Carlo Gradient Estimation in Machine Learning () (2026-06-07)
 - [[kendall-what-2017]] — What Uncertainties Do We Need in Bayesian Deep Learning for Computer Vision? () (2026-06-02)

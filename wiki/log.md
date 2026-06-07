@@ -920,3 +920,20 @@
 
 ## [2026-06-07] edit | edit_node
 - pkis:source:sutton-reinforcement-2018: fields=['domain', 'tags'] sections=['Summary']
+
+## [2026-06-07] staged | source-stub
+- Staged: sutton-sutton-2018 (id: 10f23326-1f2f-4112-ab4b-352eb3e7db9f)
+- Title: Sutton & Barto Ch. 13 — Policy Gradient Methods
+- Enrichment: minimal
+
+## [2026-06-07] discarded | unknown
+- Discarded: sutton-sutton-2018 (id: 10f23326-1f2f-4112-ab4b-352eb3e7db9f)
+
+## [2026-06-07] staged | source-stub
+- Staged: sutton-policy-2018 (id: ce42786f-66bd-4a8a-ad26-b16f5aaf671c)
+- Title: Policy Gradient Methods (Sutton & Barto Ch. 13)
+- Enrichment: minimal
+
+## [2026-06-07] committed | source
+- Committed: sutton-policy-2018 → sources/sutton-policy-2018.md
+- IRI: pkis:source:sutton-policy-2018
