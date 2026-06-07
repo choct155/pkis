@@ -536,6 +536,7 @@
 - [[broad-money-monetarism]] — Congdon's updated monetarism: broad money (M3/M4) drives nominal spending; emphasis on credit and asset prices (macroeconomics, monetary-economics) (2026-05-20)
 
 ## Problems
+- [[graceful-degradation-graph-incompleteness]] — Graceful Degradation Under Graph Incompleteness (knowledge-representation, deep-learning) (2026-06-07)
 - [[model-selection-problem]] — Choosing model complexity given finite data (statistical-learning, bayesian-stats) (2026-05-20)
 - [[intractable-posterior]] — Core challenge of Bayesian statistics: marginal likelihood integral is computationally infeasible for most models (bayesian-stats) (2026-05-20)
 - [[knowledge-graph-question-answering]] — Multi-hop QA over structured KGs requiring entity linking, relational traversal, and KG-incompleteness tolerance (knowledge-representation, deep-learning) (2026-05-20)

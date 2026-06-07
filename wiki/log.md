@@ -1066,3 +1066,7 @@
 ## [2026-06-07] committed | concept
 - Committed: graph-schema-expressivity → concepts/graph-schema-expressivity.md
 - IRI: pkis:concept:graph-schema-expressivity
+
+## [2026-06-07] committed | problem
+- Committed: graceful-degradation-graph-incompleteness → problems/graceful-degradation-graph-incompleteness.md
+- IRI: pkis:problem:graceful-degradation-graph-incompleteness
