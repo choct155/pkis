@@ -131,6 +131,52 @@ _bm25_index = None
 _bm25_corpus: list = []
 _bm25_slugs: list = []
 
+# Cross-worker cache freshness. Each gunicorn worker holds its own in-memory
+# caches, so a write handled by one worker leaves the others stale (and writes
+# never rebuilt the BM25 index at all) — new nodes were invisible to search until
+# a restart. We use the git HEAD commit sha as a content signature: every live
+# write commits, so HEAD changes; a worker rebuilds its caches lazily when its
+# built generation falls behind. Result: writes are searchable everywhere with no
+# restart. (Staged-only creates don't commit, so they don't trigger a rebuild.)
+_cache_gen: Optional[str] = None
+
+
+def _content_signature() -> str:
+    """Live-content signature = git HEAD sha of REPO_DIR (changes on every
+    committed write). Empty string if it can't be read — in which case we leave
+    caches as-is rather than rebuild on every call."""
+    try:
+        head = (REPO_DIR / ".git" / "HEAD").read_text().strip()
+        if head.startswith("ref:"):
+            ref = head.split(" ", 1)[1].strip()
+            ref_path = REPO_DIR / ".git" / ref
+            if ref_path.exists():
+                return ref_path.read_text().strip()
+            packed = REPO_DIR / ".git" / "packed-refs"
+            if packed.exists():
+                for line in packed.read_text().splitlines():
+                    parts = line.split()
+                    if len(parts) == 2 and parts[1] == ref:
+                        return parts[0]
+            return ""
+        return head  # detached HEAD: the line itself is the sha
+    except Exception:
+        return ""
+
+
+def ensure_fresh():
+    """Rebuild this worker's caches if live content changed since it last built
+    (cross-worker invalidation via the git HEAD signature). Cheap when unchanged
+    (one small file read + string compare)."""
+    global _cache_gen
+    sig = _content_signature()
+    if sig and sig != _cache_gen:
+        try:
+            refresh_caches()
+            _cache_gen = sig
+        except Exception as e:
+            logger.warning(f"ensure_fresh rebuild failed: {e}")
+
 
 # ============================================================
 # Core helpers
@@ -4838,6 +4884,10 @@ def mcp_endpoint():
 
 def dispatch_tool(tool_name: str, params: dict, req) -> any:
     """Dispatch tool call to implementation."""
+
+    # Rebuild caches if another worker committed a write since this one last built,
+    # so search/discovery reflects new content without a service restart.
+    ensure_fresh()
 
     # Read-only tools — available to all clients
     read_tools = {
