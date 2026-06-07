@@ -1,6 +1,7 @@
 # PKIS Wiki Index
 
 ## Sources
+- [[ho-constructing-2020]] — Constructing A Multi-hop QA Dataset for Comprehensive Evaluation of Reasoning Steps (2WikiMultiHopQA) () (2026-06-07)
 - [[zhang-variational-2018]] — Variational Reasoning for Question Answering with Knowledge Graphs (MetaQA) () (2026-06-07)
 - [[talmor-the-2018]] — The Web as a Knowledge-Base for Answering Complex Questions (ComplexWebQuestions) () (2026-06-07)
 - [[yih-the-2016]] — The Value of Semantic Parse Labeling for Knowledge Base Question Answering (WebQuestionsSP) () (2026-06-07)

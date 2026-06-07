@@ -1125,3 +1125,7 @@
 ## [2026-06-07] committed | source
 - Committed: zhang-variational-2018 → sources/zhang-variational-2018.md
 - IRI: pkis:source:zhang-variational-2018
+
+## [2026-06-07] committed | source
+- Committed: ho-constructing-2020 → sources/ho-constructing-2020.md
+- IRI: pkis:source:ho-constructing-2020
