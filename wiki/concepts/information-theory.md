@@ -21,7 +21,7 @@ maturity: evolving
 needs_canonical_source: false
 related_concepts: []
 sources:
-- '[[mackay-information-2003]]'
+- '[[mackay-itila]]'
 tags:
 - entropy
 - information
@@ -34,7 +34,7 @@ understanding: 0
 The quantitative study of information, entropy, and channel capacity (Shannon). Underlies coverage-completeness measures, compression, and uncertainty quantification.
 
 ## Reading Path
-- [[mackay-information-2003]] — canonical source
+- [[mackay-itila]] — canonical source
 
 ## Connections
 [To be populated during integration]
