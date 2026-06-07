@@ -940,3 +940,6 @@
 
 ## [2026-06-07] edit | edit_node
 - pkis:source:sutton-policy-2018: fields=['domain', 'parent_book', 'tags'] sections=['Summary', 'Reading Notes']
+
+## [2026-06-07] edit | edit_node
+- pkis:source:sun-thinkongraph-2023: fields=['domain', 'tags'] sections=['Reading Notes']
