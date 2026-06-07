@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+contrasts-with:
+- variational-inference
 coverage: 1
 date_created: 2026-05-20
 date_updated: '2026-06-07'
@@ -44,3 +46,6 @@ This distinction is load-bearing for the variational-graph-traversal hypothesis:
 
 ## Relationship to MCMC
 Particle filters are to sequential inference what MCMC is to static inference. MCMC constructs a chain whose stationary distribution is the posterior over fixed parameters. Particle filters construct a weighted population whose empirical distribution approximates the sequential posterior at each time step as new observations arrive. Both are asymptotically exact given sufficient particles or chain length.
+
+## Connections
+- [[variational-inference]] — contrasts-with: Particle filter is sampling-based sequential inference; VI is optimization-based approximation

@@ -20,6 +20,8 @@ id: pkis:concept:hamiltonian-classical-mechanics
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: true
+prerequisite-of:
+- hmc
 related_concepts: []
 sources: []
 tags:
@@ -79,6 +81,7 @@ Conservation of H → Staying in the typical set of the posterior
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[hmc]] — prerequisite-of: Hamiltonian dynamics is the mechanism HMC simulates
 [To be populated during integration]
 
 ## Needs Canonical Source

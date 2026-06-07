@@ -9,12 +9,16 @@ component_scores:
   implementation: null
   operational_mechanism: null
   principled_mechanism: null
+contrasts-with:
+- gibbs-sampler
 coverage: 1
 date_created: '2026-06-07'
 date_updated: '2026-06-07'
 domain:
 - bayesian-stats
 - optimization
+extends:
+- mcmc
 id: pkis:technique:hmc
 knowledge_type: technique
 maturity: evolving
@@ -35,6 +39,8 @@ tags:
 - funnel-geometry
 title: Hamiltonian Monte Carlo (HMC)
 understanding: 0
+uses:
+- hamiltonian-classical-mechanics
 ---
 
 ## Definition
@@ -84,4 +90,7 @@ When the leapfrog integrator encounters high posterior curvature (funnel necks i
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[gibbs-sampler]] — contrasts-with: HMC moves along the posterior surface via gradients; Gibbs updates one coordinate at a time
+- [[hamiltonian-classical-mechanics]] — uses: HMC simulates Hamiltonian dynamics over an auxiliary momentum
+- [[mcmc]] — extends: HMC is a gradient-based MCMC method
 [To be populated during integration]

@@ -1,6 +1,9 @@
 ---
 aliases: []
 cluster_membership: []
+contrasts-with:
+- mean-field-approximation
+- belief-propagation
 date_created: '2026-06-07'
 date_updated: '2026-06-07'
 dependent_nodes: []
@@ -9,8 +12,12 @@ domain:
 - knowledge-representation
 - deep-learning
 evidence_nodes: []
+extends:
+- sun-thinkongraph-2023
 id: pkis:hypothesis:variational-graph-traversal
 iks_link: null
+instantiates:
+- variational-inference
 knowledge_type: hypothesis
 origin: research-program
 research_program_cluster: null
@@ -29,6 +36,9 @@ tags:
 - maximum-entropy-rl
 title: 'Variational Graph Traversal: Graph Path Inference as Approximate Posterior
   Estimation'
+uses:
+- transformer-attention-mechanisms
+- particle-filter
 ---
 
 ## Formal Statement
@@ -78,4 +88,10 @@ The formulation reveals that the learning problem for the traversal scoring matr
 - How does the relation-type-level simplification interact with graphs that have fine-grained relation taxonomies?
 
 ## Connections
+- [[particle-filter]] — uses: Particle filter approximates the path distribution Q(pi), preserving entropy
+- [[sun-thinkongraph-2023]] — extends: Hypothesis extends Think-on-Graph's heuristic beam-search traversal with a variational objective
+- [[belief-propagation]] — contrasts-with: Both do graph inference; BP is exact message-passing, VGT is variational path inference
+- [[transformer-attention-mechanisms]] — uses: LLM relevance scoring at each hop is built on attention
+- [[mean-field-approximation]] — contrasts-with: Traversal aims to preserve path correlations that mean field discards
+- [[variational-inference]] — instantiates: Graph traversal recast as approximate posterior inference over paths
 [To be populated during integration]

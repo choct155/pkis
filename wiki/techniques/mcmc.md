@@ -30,6 +30,8 @@ tags:
 - sampling
 title: Markov Chain Monte Carlo (MCMC)
 understanding: 0
+uses:
+- posterior-geometry-coordinate-systems
 ---
 
 A class of algorithms that construct a Markov chain whose stationary distribution is the target distribution (typically a posterior), enabling sampling from intractable distributions by running the chain until convergence; the Metropolis-Hastings and Gibbs sampler are the foundational instances.
@@ -37,6 +39,7 @@ A class of algorithms that construct a Markov chain whose stationary distributio
 Classification note: assigned as technique but also_type framework because MCMC is both a computational procedure and a family of sub-techniques organized by the same principle.
 
 ## Connections
+- [[posterior-geometry-coordinate-systems]] — uses: Non-centered parameterization flattens funnel geometry for MCMC/HMC
 - [[gibbs-sampler]] — generalizes: Gibbs is MCMC restricted to full conditional distributions; a special case of Hastings-Metropolis
 - [[metropolis-algorithm]] — generalizes: the Hastings-Metropolis acceptance rule is the canonical MCMC mechanism
 - [[markov-chains]] — uses: MCMC constructs a Markov chain whose stationary distribution is the target posterior

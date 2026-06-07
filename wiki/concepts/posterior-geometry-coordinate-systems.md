@@ -21,6 +21,8 @@ id: pkis:concept:posterior-geometry-coordinate-systems
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: true
+prerequisite-of:
+- hmc
 related_concepts: []
 sources: []
 tags:
@@ -76,6 +78,7 @@ Richer epistemological anchors produce richer diagnostics. Metropolis-Hastings c
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[hmc]] — prerequisite-of: Coordinate-system choice governs HMC behavior and divergent-transition failure modes
 [To be populated during integration]
 
 ## Needs Canonical Source
