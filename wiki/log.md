@@ -990,3 +990,30 @@
 ## [2026-06-07] committed | hypothesis
 - Committed: variational-graph-traversal → hypotheses/variational-graph-traversal.md
 - IRI: pkis:hypothesis:variational-graph-traversal
+
+## [2026-06-07] edges | add_connections
+- pkis:technique:hmc —extends→ mcmc
+- pkis:technique:hmc —uses→ hamiltonian-classical-mechanics
+- pkis:technique:hmc —contrasts-with→ gibbs-sampler
+- pkis:concept:hamiltonian-classical-mechanics —prerequisite-of→ hmc
+- pkis:concept:posterior-geometry-coordinate-systems —prerequisite-of→ hmc
+- pkis:technique:variational-autoencoder —uses→ posterior-geometry-coordinate-systems
+- pkis:technique:mcmc —uses→ posterior-geometry-coordinate-systems
+- pkis:technique:particle-filter —contrasts-with→ variational-inference
+- pkis:hypothesis:variational-graph-traversal —instantiates→ variational-inference
+- pkis:hypothesis:variational-graph-traversal —contrasts-with→ mean-field-approximation
+- pkis:hypothesis:variational-graph-traversal —uses→ transformer-attention-mechanisms
+- pkis:hypothesis:variational-graph-traversal —contrasts-with→ belief-propagation
+- pkis:hypothesis:variational-graph-traversal —extends→ sun-thinkongraph-2023
+- pkis:hypothesis:variational-graph-traversal —uses→ particle-filter
+
+## [2026-06-07] edges | add_connections
+- pkis:hypothesis:variational-graph-traversal —analogous-to→ coordinate-ascent-vi
+
+## [2026-06-07] staged | bridge-note
+- Staged: bn-20260607-every-inference-algorithm-targeting-a (id: 86f6a302-3aa1-4ba5-9790-9bd217572310)
+- Rationale: Every inference algorithm targeting a posterior needs a mechanism that prevents drift away from the 
+
+## [2026-06-07] committed | bridge-note
+- Committed: bn-20260607-every-inference-algorithm-targeting-a → bridge-notes/bn-20260607-every-inference-algorithm-targeting-a.md
+- IRI: pkis:bridge-note:bn-20260607-every-inference-algorithm-targeting-a
