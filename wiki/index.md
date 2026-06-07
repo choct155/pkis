@@ -1,6 +1,7 @@
 # PKIS Wiki Index
 
 ## Sources
+- [[wu-stark-2024]] — STaRK: Benchmarking LLM Retrieval on Textual and Relational Knowledge Bases () (2026-06-07)
 - [[sutton-policy-2018]] — Policy Gradient Methods (Sutton & Barto Ch. 13) () (2026-06-07)
 - [[sutton-reinforcement-2018]] — Reinforcement Learning: An Introduction (2nd ed.) () (2026-06-07)
 - [[mohamed-monte-2020]] — Monte Carlo Gradient Estimation in Machine Learning () (2026-06-07)

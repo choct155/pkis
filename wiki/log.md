@@ -1070,3 +1070,42 @@
 ## [2026-06-07] committed | problem
 - Committed: graceful-degradation-graph-incompleteness → problems/graceful-degradation-graph-incompleteness.md
 - IRI: pkis:problem:graceful-degradation-graph-incompleteness
+
+## [2026-06-07] staged | source-stub
+- Staged: wu-stark-2024 (id: 43fc4e56-7726-4db0-8e9e-a589cbae2d54)
+- Title: STaRK: Benchmarking LLM Retrieval on Textual and Relational Knowledge Bases
+- Enrichment: full
+
+## [2026-06-07] staged | source-stub
+- Staged: feng-cypherbench-2024 (id: 0b43d4eb-17b3-4abe-b49f-7ecd93d39b15)
+- Title: CypherBench: Towards Precise Retrieval over Full-scale Modern Knowledge Graphs in the LLM Era
+- Enrichment: full
+
+## [2026-06-07] staged | source-stub
+- Staged: yih-the-2016 (id: e2474b13-81ba-4a98-9bf5-618a7118f0e6)
+- Title: The Value of Semantic Parse Labeling for Knowledge Base Question Answering (WebQuestionsSP)
+- Enrichment: minimal
+
+## [2026-06-07] staged | source-stub
+- Staged: talmor-the-2018 (id: 8622af57-7b43-45ca-8bf4-aeb43c46298e)
+- Title: The Web as a Knowledge-Base for Answering Complex Questions (ComplexWebQuestions)
+- Enrichment: minimal
+
+## [2026-06-07] staged | source-stub
+- Staged: zhang-variational-2018 (id: 5d2fc6ce-87ea-4696-9977-fc427d3bb247)
+- Title: Variational Reasoning for Question Answering with Knowledge Graphs (MetaQA)
+- Enrichment: full
+
+## [2026-06-07] staged | source-stub
+- Staged: ho-constructing-2020 (id: 543002b8-e28a-44f9-ba63-754f7e5e4a46)
+- Title: Constructing A Multi-hop QA Dataset for Comprehensive Evaluation of Reasoning Steps (2WikiMultiHopQA)
+- Enrichment: minimal
+
+## [2026-06-07] staged | source-stub
+- Staged: yang-hotpotqa-2018 (id: 8a509371-2868-4281-80c1-30c1c2b4c392)
+- Title: HotpotQA: A Dataset for Diverse, Explainable Multi-hop Question Answering
+- Enrichment: minimal
+
+## [2026-06-07] committed | source
+- Committed: wu-stark-2024 → sources/wu-stark-2024.md
+- IRI: pkis:source:wu-stark-2024
