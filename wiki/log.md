@@ -1113,3 +1113,7 @@
 ## [2026-06-07] committed | source
 - Committed: feng-cypherbench-2024 → sources/feng-cypherbench-2024.md
 - IRI: pkis:source:feng-cypherbench-2024
+
+## [2026-06-07] committed | source
+- Committed: yih-the-2016 → sources/yih-the-2016.md
+- IRI: pkis:source:yih-the-2016

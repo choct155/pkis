@@ -1,6 +1,7 @@
 # PKIS Wiki Index
 
 ## Sources
+- [[yih-the-2016]] — The Value of Semantic Parse Labeling for Knowledge Base Question Answering (WebQuestionsSP) () (2026-06-07)
 - [[feng-cypherbench-2024]] — CypherBench: Towards Precise Retrieval over Full-scale Modern Knowledge Graphs in the LLM Era () (2026-06-07)
 - [[wu-stark-2024]] — STaRK: Benchmarking LLM Retrieval on Textual and Relational Knowledge Bases () (2026-06-07)
 - [[sutton-policy-2018]] — Policy Gradient Methods (Sutton & Barto Ch. 13) () (2026-06-07)
