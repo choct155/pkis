@@ -1062,3 +1062,7 @@
 ## [2026-06-07] committed | technique
 - Committed: ablation-study → techniques/ablation-study.md
 - IRI: pkis:technique:ablation-study
+
+## [2026-06-07] committed | concept
+- Committed: graph-schema-expressivity → concepts/graph-schema-expressivity.md
+- IRI: pkis:concept:graph-schema-expressivity
