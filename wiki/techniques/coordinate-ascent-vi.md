@@ -1,18 +1,31 @@
 ---
-id: "pkis:technique:coordinate-ascent-vi"
-aliases: ["CAVI"]
-title: "Coordinate Ascent Variational Inference (CAVI)"
-knowledge_type: technique
+aliases:
+- CAVI
 also_type: []
-domain: [bayesian-stats, optimization]
-tags: [variational-methods, approximate-inference, optimization, coordinate-ascent]
-related_concepts: ["[[variational-inference]]", "[[mean-field-approximation]]", "[[elbo]]", "[[em-algorithm]]"]
-sources: ["[[blei-vi-review]]", "[[ganguly-intro-vi]]"]
-date_created: 2026-05-20
-date_updated: 2026-05-20
 coverage: 2
-understanding: 0
+date_created: 2026-05-20
+date_updated: '2026-06-05'
+domain:
+- bayesian-stats
+- optimization
+id: pkis:technique:coordinate-ascent-vi
+knowledge_type: technique
 maturity: settled
+related_concepts:
+- '[[variational-inference]]'
+- '[[mean-field-approximation]]'
+- '[[elbo]]'
+- '[[em-algorithm]]'
+sources:
+- '[[blei-vi-review]]'
+- '[[ganguly-intro-vi]]'
+tags:
+- variational-methods
+- approximate-inference
+- optimization
+- coordinate-ascent
+title: Coordinate Ascent Variational Inference (CAVI)
+understanding: 0
 ---
 
 The canonical optimization algorithm for mean-field variational inference: iteratively update each variational factor q_j(z_j) to its optimal form — q*_j(z_j) ∝ exp(E_{-j}[log p(z,x)]) — holding all other factors fixed, until the ELBO converges; equivalent to coordinate ascent on the ELBO in the space of mean-field factorizations.
@@ -28,3 +41,8 @@ The canonical optimization algorithm for mean-field variational inference: itera
 
 - [[blei-vi-review]] (unread) — Section 2.4; full derivation of CAVI update from ELBO; Algorithm 1; convergence properties; complete GMM example in Section 3
 - [[ganguly-intro-vi]] (unread) — Section 5; CAVI for Gaussian mixture (Algorithm 1); demonstrates convergence within ~60 iterations for 3-component GMM
+
+## Intuition
+The mean field assumption does not constrain how you move across the posterior landscape — it constrains which landscape you're allowed to search in the first place. You commit upfront to the submanifold of fully factorized distributions, then CAVI finds the best point on that submanifold via coordinate ascent. The optimization may converge correctly and still be far from the true posterior, because the true posterior may not be close to anything on your submanifold.
+
+Analogy: you've agreed to model wind across a region as a single uniform vector, then you optimize what that vector should be. CAVI finds the best uniform vector. But if the actual field has a hurricane in one corner, no amount of optimization recovers it — the representational commitment was made before the search began.
