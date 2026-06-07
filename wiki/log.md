@@ -1142,3 +1142,6 @@
 
 ## [2026-06-07] edit | edit_node
 - pkis:hypothesis:variational-graph-traversal: fields=[] sections=['Task Grounding', 'Scope Conditions']
+
+## [2026-06-07] edit | edit_node
+- pkis:hypothesis:intensional-grounding-ned-accuracy: fields=[] sections=['Task Grounding']

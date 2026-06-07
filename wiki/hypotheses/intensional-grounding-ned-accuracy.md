@@ -3,7 +3,7 @@ aliases: []
 cluster_membership:
 - intensional-grounding
 date_created: 2026-05-30
-date_updated: 2026-05-30
+date_updated: '2026-06-07'
 dependent_nodes:
 - node: '[[named-entity-disambiguation]]'
   node_type: technique
@@ -54,3 +54,12 @@ How to operationalize token-to-ontological-class distance in a way that is indep
 - [[transformer-attention-mechanisms]] — uses: Token-to-class distance is operationalized through the attention mechanism the hypothesis claims as the channel.
 - [[named-entity-disambiguation]] — uses: NED/NER is the task whose accuracy the hypothesis predicts from token-to-class distance.
 - [[intensional-grounding]] — belongs-to: this is a constituent hypothesis of the Intensional Grounding cluster
+
+## Task Grounding
+Mechanism claim: token-to-ontological-class distance predicts NED/NER accuracy.
+
+Task outcome claim: providing explicit intensional structure at inference time improves entity disambiguation accuracy on private markets documents, measured by NED/NER F1 against ground-truth entity resolution.
+
+Deployment context: financial data manufacturing where entity disambiguation errors propagate through downstream analytics and are costly to correct manually.
+
+Why the scale foil fails at the task level: Scale-based disambiguation relies on distributional similarity in pre-training data. Private markets entities are sparse in pre-training corpora, surface form variation is high (fund names, GP names, portfolio company abbreviations), and new entities appear continuously. Ontological class membership provides normative constraints that are robust to surface form variation and do not require pre-training exposure.
