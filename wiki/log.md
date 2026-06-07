@@ -908,3 +908,12 @@
 
 ## [2026-06-07] edit | edit_node
 - pkis:source:mohamed-monte-2020: fields=['domain', 'tags'] sections=['Summary', 'Reading Notes']
+
+## [2026-06-07] staged | source-stub
+- Staged: sutton-reinforcement-2018 (id: 9b91d16a-38b1-417e-b633-2d447d4d44a0)
+- Title: Reinforcement Learning: An Introduction (2nd ed.)
+- Enrichment: minimal
+
+## [2026-06-07] committed | source
+- Committed: sutton-reinforcement-2018 → sources/sutton-reinforcement-2018.md
+- IRI: pkis:source:sutton-reinforcement-2018
