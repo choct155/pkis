@@ -896,3 +896,12 @@
 
 ## [2026-06-07] edit | edit_node
 - pkis:technique:gibbs-sampler: fields=[] sections=['Operational Mechanism', 'Why Analytic Closure is Load-Bearing', 'Relationship to CAVI']
+
+## [2026-06-07] staged | source-stub
+- Staged: mohamed-monte-2020 (id: 36d58807-a288-45d8-aeaf-fc0a9d22d9d6)
+- Title: Monte Carlo Gradient Estimation in Machine Learning
+- Enrichment: minimal
+
+## [2026-06-07] committed | source
+- Committed: mohamed-monte-2020 → sources/mohamed-monte-2020.md
+- IRI: pkis:source:mohamed-monte-2020
