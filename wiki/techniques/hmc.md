@@ -2,13 +2,13 @@
 aliases: []
 also_type: []
 component_scores:
-  alternatives: null
-  conditions: null
-  diagnostics: null
-  failure_modes: null
-  implementation: null
-  operational_mechanism: null
-  principled_mechanism: null
+  alternatives: 3
+  conditions: 2
+  diagnostics: 3
+  failure_modes: 3
+  implementation: 2
+  operational_mechanism: 3
+  principled_mechanism: 3
 contrasts-with:
 - gibbs-sampler
 coverage: 1
@@ -24,6 +24,7 @@ knowledge_type: technique
 maturity: evolving
 needs_canonical_source: false
 related_concepts: []
+score_date: '2026-06-07'
 sources:
 - betancourt-hmc
 - betancourt-hmcgeometric
@@ -38,7 +39,7 @@ tags:
 - divergent-transitions
 - funnel-geometry
 title: Hamiltonian Monte Carlo (HMC)
-understanding: 0
+understanding: 2
 uses:
 - hamiltonian-classical-mechanics
 ---
