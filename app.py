@@ -86,6 +86,7 @@ EDGE_WEIGHTS = {
     "applies": 0.5,
     "instantiates": 0.4,
     "contrasts-with": 0.2,
+    "analogous-to": 0.3,  # structural analogy across domains (same structure, different mechanism)
 }
 
 # Trusted client token — set via env var in production
@@ -4304,9 +4305,104 @@ def _jsonrpc_result(req_id, result):
     })
 
 
+def tool_get_write_schema() -> dict:
+    """Describe the writable structure of the wiki so clients can compose valid
+    writes without guessing: knowledge types, edge predicates (+ definitions),
+    node frontmatter fields, and the parameter spec for each write tool."""
+    return {
+        "knowledge_types": {
+            "concept": "An idea/object of study (definition-bearing).",
+            "technique": "A method or algorithm.",
+            "result": "A theorem, empirical finding, or established result.",
+            "framework": "An organizing structure spanning techniques/concepts.",
+            "problem": "An open or canonical problem.",
+            "principle": "A guiding rule or invariant.",
+        },
+        "special_node_types": {
+            "source": "Paper/book/chapter — create_source_stub (auto-enriched, staged).",
+            "hypothesis": "Research-program hypothesis — create_hypothesis.",
+            "bridge-note": "Cross-node insight linking >=2 nodes — create_bridge_note.",
+        },
+        "edge_predicates": dict(EDGE_WEIGHTS),
+        "edge_predicate_definitions": {
+            "prerequisite-of": "subject must be understood before target",
+            "uses": "subject employs target as a component/tool",
+            "specializes": "subject is a special case of target",
+            "generalizes": "subject is a generalization of target",
+            "extends": "subject builds on / extends target",
+            "applies": "subject applies target to a domain",
+            "instantiates": "subject is a concrete instance of target",
+            "contrasts-with": "subject is meaningfully opposed/compared to target",
+            "analogous-to": "subject is structurally analogous to target (same structure, different mechanism/domain)",
+        },
+        "node_frontmatter_fields": {
+            "title": "str (required)",
+            "knowledge_type": "one of knowledge_types",
+            "aliases": "list[str]",
+            "also_type": "list[str] secondary knowledge types",
+            "domain": "list[str] domain tags",
+            "tags": "list[str] free tags",
+            "sources": "list[str] source IRIs/slugs backing the node",
+            "related_concepts": "list of [[wikilinks]]",
+            "maturity": "stub | evolving | settled",
+            "coverage": "int curation metric",
+            "understanding": "int self-assessed",
+            "component_scores": "anatomy dict: operational_mechanism, principled_mechanism, conditions, implementation, diagnostics, alternatives, failure_modes",
+            "needs_canonical_source": "bool (set when sourceless)",
+        },
+        "write_tools": {
+            "create_node_stub": {
+                "creates": "staged knowledge node",
+                "required": ["knowledge_type", "title"],
+                "optional": ["slug", "definition", "domain", "tags", "aliases", "also_type", "sources", "suggest_sources"],
+                "notes": "No edges param — use add_connections after commit. Stages; promote with commit_staged_node.",
+            },
+            "create_source_stub": {
+                "creates": "staged source node, metadata auto-enriched (CrossRef/arXiv/Semantic Scholar)",
+                "optional": ["title", "authors", "url", "year", "doi", "notes", "priority"],
+                "notes": "Slug auto-derived. domain/tags/summary are NOT params — set via edit_node after commit.",
+            },
+            "create_hypothesis": {
+                "creates": "staged hypothesis node",
+                "required": ["title"],
+                "optional": ["slug", "domain", "tags", "formal_statement", "motivation", "current_evidence", "open_questions", "aliases", "cluster", "role", "dependent_nodes"],
+                "notes": "No connections param — use add_connections after commit.",
+            },
+            "create_bridge_note": {
+                "creates": "staged bridge note linking >=2 nodes",
+                "required": ["rationale"],
+                "optional": ["title", "linked_node_refs", "origin", "proposed_edge_type", "source_context"],
+                "notes": "Takes linked_node_refs (IRIs or fuzzy refs); NOT domain/tags.",
+            },
+            "edit_node": {
+                "edits": "a LIVE node's frontmatter and/or body sections (commits+pushes)",
+                "optional": ["iri", "slug", "frontmatter_updates", "section_updates", "commit_message"],
+                "notes": "frontmatter_updates merges {field:value} (null deletes). section_updates replaces a '## Section' body (appends if absent).",
+            },
+            "add_connections": {
+                "adds": "typed graph edges between LIVE nodes (batch)",
+                "required": ["edges"],
+                "edge_shape": {"subject": "IRI/slug", "target": "IRI/slug (must be live)", "predicate": "one of edge_predicates", "note": "optional rationale"},
+                "notes": "Idempotent per (subject,predicate,target).",
+            },
+            "add_to_queue": {
+                "adds": "a source/reference to the reading queue",
+                "optional": ["source_iri", "reference", "priority", "reason"],
+                "notes": "priority is 'high' or 'normal'.",
+            },
+        },
+        "two_phase_write": "create_* tools STAGE (review via get_staged_nodes, promote via commit_staged_node). edit_node and add_connections write LIVE immediately.",
+    }
+
+
 def _get_tools_list():
     """Return the canonical tools list used by both tools/list and the manifest."""
     return [
+        {
+            "name": "get_write_schema",
+            "description": "Describe the writable structure of the wiki — knowledge types, edge predicates (with definitions), node frontmatter fields, and the parameter spec for every write tool. Call this BEFORE composing writes so node/edge structure is correct by construction.",
+            "inputSchema": {"type": "object", "properties": {}},
+        },
         {
             "name": "search_wiki",
             "description": "Search the PKIS wiki using hybrid keyword and structural search. Call this FIRST for any question touching the user's learning domains. Returns ranked concept and source nodes.",
@@ -4548,7 +4644,7 @@ def _get_tools_list():
         },
         {
             "name": "add_connections",
-            "description": "Add typed, graph-visible edges between existing live nodes in one batch + a single git commit. Each edge {subject, target, predicate, note}: the predicate is written into the SUBJECT node's frontmatter (build_graph emits a weighted typed edge subject->target) and a line is appended to its ## Connections. Idempotent per (subject, predicate, target). Predicate must be one of: prerequisite-of, uses, specializes, generalizes, extends, applies, instantiates, contrasts-with.",
+            "description": "Add typed, graph-visible edges between existing live nodes in one batch + a single git commit. Each edge {subject, target, predicate, note}: the predicate is written into the SUBJECT node's frontmatter (build_graph emits a weighted typed edge subject->target) and a line is appended to its ## Connections. Idempotent per (subject, predicate, target). Predicate must be one of: prerequisite-of, uses, specializes, generalizes, extends, applies, instantiates, contrasts-with, analogous-to.",
             "inputSchema": {
                 "type": "object",
                 "properties": {
@@ -4559,7 +4655,7 @@ def _get_tools_list():
                             "properties": {
                                 "subject": {"type": "string", "description": "IRI or slug of the node the edge originates from"},
                                 "target": {"type": "string", "description": "IRI or slug of the node the edge points to (must be live)"},
-                                "predicate": {"type": "string", "enum": ["prerequisite-of", "uses", "specializes", "generalizes", "extends", "applies", "instantiates", "contrasts-with"]},
+                                "predicate": {"type": "string", "enum": ["prerequisite-of", "uses", "specializes", "generalizes", "extends", "applies", "instantiates", "contrasts-with", "analogous-to"]},
                                 "note": {"type": "string", "description": "One-sentence rationale for the connection"}
                             },
                             "required": ["subject", "target", "predicate"]
@@ -4745,6 +4841,7 @@ def dispatch_tool(tool_name: str, params: dict, req) -> any:
 
     # Read-only tools — available to all clients
     read_tools = {
+        "get_write_schema": lambda p: tool_get_write_schema(),
         "resolve_concept": lambda p: tool_resolve_concept(p["surface_form"]),
         "resolve_or_detect": lambda p: {
             "registry": tool_resolve_concept(p["text"]),
@@ -5148,7 +5245,7 @@ def tool_build_reader(slug: str, arxiv_id: str = None) -> dict:
     env = dict(os.environ)
     env["PYTHONPATH"] = str(REPO_DIR) + ":" + env.get("PYTHONPATH", "")
     env.setdefault("PIPER", "/home/pkis/piper_dist/piper/piper")
-    env.setdefault("PIPER_MODEL", "/home/pkis/piper_dist/voices/en_US-lessac-medium.onnx")
+    env.setdefault("PIPER_MODEL", "/home/pkis/piper_dist/voices/en_GB-cori-high.onnx")
     env["LD_LIBRARY_PATH"] = "/home/pkis/piper_dist/piper:" + env.get("LD_LIBRARY_PATH", "")
     env["OUTDIR"] = str(d)
     # slug-driven: the builder loads the source node and routes internally
