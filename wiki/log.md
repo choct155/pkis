@@ -917,3 +917,6 @@
 ## [2026-06-07] committed | source
 - Committed: sutton-reinforcement-2018 → sources/sutton-reinforcement-2018.md
 - IRI: pkis:source:sutton-reinforcement-2018
+
+## [2026-06-07] edit | edit_node
+- pkis:source:sutton-reinforcement-2018: fields=['domain', 'tags'] sections=['Summary']
