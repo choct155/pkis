@@ -2,9 +2,17 @@
 aliases:
 - CAVI
 also_type: []
+component_scores:
+  alternatives: 4
+  conditions: 3
+  diagnostics: 3
+  failure_modes: 3
+  implementation: 3
+  operational_mechanism: 4
+  principled_mechanism: 4
 coverage: 2
 date_created: 2026-05-20
-date_updated: '2026-06-05'
+date_updated: '2026-06-07'
 domain:
 - bayesian-stats
 - optimization
@@ -16,6 +24,7 @@ related_concepts:
 - '[[mean-field-approximation]]'
 - '[[elbo]]'
 - '[[em-algorithm]]'
+score_date: '2026-06-07'
 sources:
 - '[[blei-vi-review]]'
 - '[[ganguly-intro-vi]]'
@@ -25,7 +34,7 @@ tags:
 - optimization
 - coordinate-ascent
 title: Coordinate Ascent Variational Inference (CAVI)
-understanding: 0
+understanding: 3
 ---
 
 The canonical optimization algorithm for mean-field variational inference: iteratively update each variational factor q_j(z_j) to its optimal form — q*_j(z_j) ∝ exp(E_{-j}[log p(z,x)]) — holding all other factors fixed, until the ELBO converges; equivalent to coordinate ascent on the ELBO in the space of mean-field factorizations.

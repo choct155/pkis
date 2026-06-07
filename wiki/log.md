@@ -1169,3 +1169,6 @@
 
 ## [2026-06-07] edit | edit_node
 - pkis:technique:variational-inference: fields=['understanding', 'score_date', 'component_scores'] sections=[]
+
+## [2026-06-07] edit | edit_node
+- pkis:technique:coordinate-ascent-vi: fields=['understanding', 'score_date', 'component_scores'] sections=[]
