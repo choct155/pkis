@@ -981,3 +981,12 @@
 
 ## [2026-06-07] edit | edit_node
 - pkis:technique:particle-filter: fields=[] sections=['Distinction from Beam Search', 'Relationship to MCMC']
+
+## [2026-06-07] staged | hypothesis
+- Staged: variational-graph-traversal (id: a772d872-f13c-42a1-ac97-e28aca2dcd3b)
+- Title: Variational Graph Traversal: Graph Path Inference as Approximate Posterior Estimation
+- Cluster: (none)
+
+## [2026-06-07] committed | hypothesis
+- Committed: variational-graph-traversal → hypotheses/variational-graph-traversal.md
+- IRI: pkis:hypothesis:variational-graph-traversal
