@@ -943,3 +943,12 @@
 
 ## [2026-06-07] edit | edit_node
 - pkis:source:sun-thinkongraph-2023: fields=['domain', 'tags'] sections=['Reading Notes']
+
+## [2026-06-07] staged | node-stub (technique)
+- Staged: hmc (id: ce0d2191-4fcd-4b69-8d6c-79f951d5221d)
+- Title: Hamiltonian Monte Carlo (HMC)
+- needs_canonical_source: False
+
+## [2026-06-07] committed | technique
+- Committed: hmc → techniques/hmc.md
+- IRI: pkis:technique:hmc
