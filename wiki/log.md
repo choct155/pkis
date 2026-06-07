@@ -1151,3 +1151,6 @@
 
 ## [2026-06-07] edit | edit_node
 - pkis:hypothesis:domain-specific-benchmark-gap: fields=[] sections=['Task Grounding']
+
+## [2026-06-07] edit | edit_node
+- pkis:source:sun-thinkongraph-2023: fields=[] sections=['Summary', 'LLM-KG Paradigm Distinction', 'Contamination Risk', 'ToG-R Significance', 'Gaps Addressed by VGT Hypothesis']
