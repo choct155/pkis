@@ -1,6 +1,7 @@
 # PKIS Wiki Index
 
 ## Sources
+- [[talmor-the-2018]] — The Web as a Knowledge-Base for Answering Complex Questions (ComplexWebQuestions) () (2026-06-07)
 - [[yih-the-2016]] — The Value of Semantic Parse Labeling for Knowledge Base Question Answering (WebQuestionsSP) () (2026-06-07)
 - [[feng-cypherbench-2024]] — CypherBench: Towards Precise Retrieval over Full-scale Modern Knowledge Graphs in the LLM Era () (2026-06-07)
 - [[wu-stark-2024]] — STaRK: Benchmarking LLM Retrieval on Textual and Relational Knowledge Bases () (2026-06-07)

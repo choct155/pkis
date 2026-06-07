@@ -1117,3 +1117,7 @@
 ## [2026-06-07] committed | source
 - Committed: yih-the-2016 → sources/yih-the-2016.md
 - IRI: pkis:source:yih-the-2016
+
+## [2026-06-07] committed | source
+- Committed: talmor-the-2018 → sources/talmor-the-2018.md
+- IRI: pkis:source:talmor-the-2018
