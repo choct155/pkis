@@ -1190,3 +1190,12 @@
 
 ## [2026-06-07] edit | edit_node
 - pkis:framework:understanding-assessment-protocol: fields=[] sections=['Session Log Convention']
+
+## [2026-06-07] staged | node-stub (result)
+- Staged: session-2026-06-07 (id: 512aadcd-cfeb-4ede-9a29-c6333864b39b)
+- Title: Session Log — 2026-06-07
+- needs_canonical_source: True
+
+## [2026-06-07] committed | result
+- Committed: session-2026-06-07 → results/session-2026-06-07.md
+- IRI: pkis:result:session-2026-06-07
