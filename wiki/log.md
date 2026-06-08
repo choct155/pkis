@@ -3106,3 +3106,6 @@
 
 ## [2026-06-08] edit | edit_node
 - pkis:concept:regularization: fields=[] sections=['Probabilistic Reading: Regularizer as Log-Prior']
+
+## [2026-06-08] edit | edit_node
+- pkis:technique:laplace-approximation: fields=[] sections=['Application: Gaussian Approximation of a Weight Posterior']
