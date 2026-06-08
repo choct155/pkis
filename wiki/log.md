@@ -2286,3 +2286,6 @@
 
 ## [2026-06-08] edit | edit_node
 - pkis:concept:likelihood-ratio-evidence: fields=[] sections=['Bans, Decibans, and Banburismus']
+
+## [2026-06-08] edit | edit_node
+- pkis:concept:entropy: fields=[] sections=['MacKay: information content, surprise, and the units of evidence']
