@@ -2884,3 +2884,12 @@
 ## [2026-06-08] committed | concept
 - Committed: value-of-information → concepts/value-of-information.md
 - IRI: pkis:concept:value-of-information
+
+## [2026-06-08] staged | node-stub (framework)
+- Staged: sampling-theory (id: 21ab00a4-8630-4d07-947c-67256e4167c6)
+- Title: Sampling Theory (Frequentist Statistics)
+- needs_canonical_source: False
+
+## [2026-06-08] committed | framework
+- Committed: sampling-theory → frameworks/sampling-theory.md
+- IRI: pkis:framework:sampling-theory
