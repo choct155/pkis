@@ -543,6 +543,7 @@
 - [[constraint-propagation]] — Reducing a constraint satisfaction problem by iteratively eliminating inconsistent values from variable domains (knowledge-representation) (2026-05-20)
 
 ## Results
+- [[slepian-wolf-theorem]] — Slepian–Wolf Theorem (Distributed Source Coding) (information-theory) (2026-06-08)
 - [[good-linear-codes-exist]] — Very Good Linear Codes Exist (Random Linear Codes Achieve Capacity) (information-theory) (2026-06-08)
 - [[bounds-on-binary-codes]] — Bounds on Binary Codes (Sphere-Packing and Gilbert–Varshamov) (information-theory) (2026-06-08)
 - [[hash-collision-bound]] — Hash Collision Bound (Birthday Problem) (information-theory, computer-science) (2026-06-08)

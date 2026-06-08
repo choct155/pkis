@@ -2010,3 +2010,12 @@
 
 ## [2026-06-08] edit | edit_node
 - pkis:result:source-coding-theorem: fields=[] sections=['## Linear Compressors Are Optimal (Uncompression Duality)']
+
+## [2026-06-08] staged | node-stub (result)
+- Staged: slepian-wolf-theorem (id: ade91f60-10af-413e-a27b-005d0bbfc996)
+- Title: Slepian–Wolf Theorem (Distributed Source Coding)
+- needs_canonical_source: False
+
+## [2026-06-08] committed | result
+- Committed: slepian-wolf-theorem → results/slepian-wolf-theorem.md
+- IRI: pkis:result:slepian-wolf-theorem
