@@ -2525,3 +2525,6 @@
 
 ## [2026-06-08] edit | edit_node
 - pkis:technique:sum-product-algorithm: fields=[] sections=['Factor-graph formulation: the two message rules']
+
+## [2026-06-08] edit | edit_node
+- pkis:technique:belief-propagation: fields=[] sections=['Loopy belief propagation and the limits of exactness']

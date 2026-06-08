@@ -45,3 +45,10 @@ Belief propagation is the probabilistic instance of the **sum-product algorithm*
 
 ## Belief Propagation as Forward-Backward on a Trellis
 MacKay explicitly lists '**belief propagation**' as a synonym for the forward-backward / BCJR algorithm that performs exact bitwise marginalization on a code's **trellis**. Because a trellis is a chain (tree-structured) graph, belief propagation on it is exact: the $\alpha$ (forward) and $\beta$ (backward) messages are the standard BP messages, and the per-bit posteriors are recovered by multiplying incoming messages at each time slice. This is the same algorithm that, run on the loopy factor graph of a parity-check code, becomes the (approximate) iterative decoder for LDPC and turbo codes.
+
+## Loopy belief propagation and the limits of exactness
+Belief propagation (the sum-product algorithm on a factor graph) is *exact* only when the graph is tree-like, because the message-creation schedule relies on each node receiving all of its dependencies exactly once. On a graph with cycles there is no such schedule.
+
+Two responses exist. The principled one is to make the graph a tree by clustering variables (the junction tree algorithm), paying a cost exponential in treewidth. The pragmatic one is **loopy belief propagation**: run the local message updates as if the graph were a tree, iterate, and hope for convergence. Loopy BP is not guaranteed to converge and, when it does, generally returns only approximate marginals — yet it is of enormous practical importance, most famously in the iterative decoding of sparse-graph error-correcting codes (LDPC, turbo) where it works strikingly well. A complementary 'factorization view' of the updates,
+$$P^*(\mathbf{x}) = \prod_m \phi_m(\mathbf{x}_m)\prod_n \psi_n(x_n),$$
+in which $\psi_n$ converges to the marginal $Z_n(x_n)$, holds whether or not the graph is a tree, clarifying what loopy BP is attempting to compute.
