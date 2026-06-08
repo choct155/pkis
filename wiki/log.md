@@ -2938,3 +2938,12 @@
 ## [2026-06-08] committed | technique
 - Committed: logistic-neuron-learning-rule → techniques/logistic-neuron-learning-rule.md
 - IRI: pkis:technique:logistic-neuron-learning-rule
+
+## [2026-06-08] staged | node-stub (result)
+- Staged: capacity-of-a-single-neuron (id: b6c13a5c-a478-4469-bbf9-d0f65d5cfc8f)
+- Title: Capacity of a Single Neuron (Two Bits per Weight)
+- needs_canonical_source: False
+
+## [2026-06-08] committed | result
+- Committed: capacity-of-a-single-neuron → results/capacity-of-a-single-neuron.md
+- IRI: pkis:result:capacity-of-a-single-neuron
