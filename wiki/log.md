@@ -1412,3 +1412,12 @@
 ## [2026-06-08] committed | result
 - Committed: laplaces-rule-of-succession → results/laplaces-rule-of-succession.md
 - IRI: pkis:result:laplaces-rule-of-succession
+
+## [2026-06-08] staged | node-stub (concept)
+- Staged: essential-bit-content (id: dd6c024e-d2e1-4145-ab53-6e5a272189a8)
+- Title: Essential Bit Content (Raw Bit Content)
+- needs_canonical_source: False
+
+## [2026-06-08] committed | concept
+- Committed: essential-bit-content → concepts/essential-bit-content.md
+- IRI: pkis:concept:essential-bit-content
