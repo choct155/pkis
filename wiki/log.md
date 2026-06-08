@@ -3313,3 +3313,12 @@
 ## [2026-06-08] committed | concept
 - Committed: soliton-distribution → concepts/soliton-distribution.md
 - IRI: pkis:concept:soliton-distribution
+
+## [2026-06-08] staged | node-stub (technique)
+- Staged: peeling-decoder (id: 3f8e5b56-218e-4519-90ff-b015372e9bd9)
+- Title: Peeling Decoder for Erasure Codes
+- needs_canonical_source: False
+
+## [2026-06-08] committed | technique
+- Committed: peeling-decoder → techniques/peeling-decoder.md
+- IRI: pkis:technique:peeling-decoder
