@@ -1643,3 +1643,12 @@
 ## [2026-06-08] committed | concept
 - Committed: joint-entropy → concepts/joint-entropy.md
 - IRI: pkis:concept:joint-entropy
+
+## [2026-06-08] staged | node-stub (concept)
+- Staged: conditional-entropy (id: c16ac041-489d-4237-8321-da4defc4c209)
+- Title: Conditional Entropy
+- needs_canonical_source: False
+
+## [2026-06-08] committed | concept
+- Committed: conditional-entropy → concepts/conditional-entropy.md
+- IRI: pkis:concept:conditional-entropy

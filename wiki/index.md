@@ -290,6 +290,7 @@
 - [[liu-machine-unlearning-llm-2024]] — Rethinking Machine Unlearning for LLMs: post-training knowledge editing survey (deep-learning, ai-safety) (2026-05-20)
 
 ## Concepts
+- [[conditional-entropy]] — Conditional Entropy (information-theory) (2026-06-08)
 - [[joint-entropy]] — Joint Entropy (information-theory) (2026-06-08)
 - [[universal-codes]] — Universal Codes and Implicit Priors (information-theory) (2026-06-08)
 - [[stream-codes]] — Stream Codes (information-theory) (2026-06-08)
