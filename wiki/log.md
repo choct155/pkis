@@ -2334,3 +2334,12 @@
 ## [2026-06-08] committed | concept
 - Committed: gamma-distribution → concepts/gamma-distribution.md
 - IRI: pkis:concept:gamma-distribution
+
+## [2026-06-08] staged | node-stub (concept)
+- Staged: beta-distribution (id: c5a618be-a42c-4690-b43f-f2d1672c21d1)
+- Title: Beta Distribution
+- needs_canonical_source: False
+
+## [2026-06-08] committed | concept
+- Committed: beta-distribution → concepts/beta-distribution.md
+- IRI: pkis:concept:beta-distribution
