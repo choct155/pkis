@@ -1760,3 +1760,12 @@
 ## [2026-06-08] committed | result
 - Committed: continuous-channel-capacity → results/continuous-channel-capacity.md
 - IRI: pkis:result:continuous-channel-capacity
+
+## [2026-06-08] staged | node-stub (concept)
+- Staged: linear-block-code (id: b90f0120-ea38-4c26-bb40-76a4dcfbe714)
+- Title: Linear Block Code
+- needs_canonical_source: False
+
+## [2026-06-08] committed | concept
+- Committed: linear-block-code → concepts/linear-block-code.md
+- IRI: pkis:concept:linear-block-code
