@@ -3160,3 +3160,12 @@
 ## [2026-06-08] committed | concept
 - Committed: gaussian-process → concepts/gaussian-process.md
 - IRI: pkis:concept:gaussian-process
+
+## [2026-06-08] staged | node-stub (concept)
+- Staged: covariance-function (id: 8534f984-3957-4cc8-a84f-f16f4c62d2d0)
+- Title: Covariance Function (Kernel)
+- needs_canonical_source: False
+
+## [2026-06-08] committed | concept
+- Committed: covariance-function → concepts/covariance-function.md
+- IRI: pkis:concept:covariance-function
