@@ -3019,3 +3019,57 @@
 ## [2026-06-08] committed | concept
 - Committed: lyapunov-function → concepts/lyapunov-function.md
 - IRI: pkis:concept:lyapunov-function
+
+## [2026-06-08] edges | add_connections
+- expected-utility-theory —uses→ bayesian-inference
+- decision-theory-foundations —uses→ expected-utility-theory
+- expected-loss —contrasts-with→ expected-utility-theory
+- value-of-information —specializes→ decision-theory-foundations
+- value-of-information —uses→ bayesian-inference
+- expected-utility-theory —prerequisite-of→ value-of-information
+- sampling-theory —contrasts-with→ bayesian-inference
+- hypothesis-testing —instantiates→ sampling-theory
+- confidence-interval —instantiates→ sampling-theory
+- stopping-rule-problem —contrasts-with→ likelihood-principle
+- stopping-rule-problem —applies→ hypothesis-testing
+- sampling-theory —contrasts-with→ likelihood-principle
+- content-addressable-memory —applies→ neural-networks
+- content-addressable-memory —contrasts-with→ hash-table
+- logistic-neuron-learning-rule —applies→ single-neuron-classifier
+- single-neuron-classifier —instantiates→ logistic-regression
+- single-neuron-classifier —prerequisite-of→ neural-networks
+- logistic-neuron-learning-rule —specializes→ gradient-descent
+- logistic-neuron-learning-rule —uses→ cross-entropy-loss
+- single-neuron-classifier —uses→ activation-functions
+- logistic-neuron-learning-rule —uses→ regularization
+- logistic-neuron-learning-rule —prerequisite-of→ backpropagation
+- cover-function-counting-theorem —prerequisite-of→ capacity-of-a-single-neuron
+- linear-separability —prerequisite-of→ cover-function-counting-theorem
+- capacity-of-a-single-neuron —analogous-to→ channel-capacity
+- capacity-of-a-single-neuron —applies→ neural-networks
+- cover-function-counting-theorem —uses→ linear-algebra
+- linear-separability —prerequisite-of→ support-vector-machines
+- capacity-of-a-single-neuron —instantiates→ phase-transition
+- learning-as-inference —specializes→ bayesian-inference
+- learning-as-inference —uses→ maximum-likelihood-estimation
+- weight-decay-as-prior —instantiates→ learning-as-inference
+- weight-decay-as-prior —specializes→ regularization
+- weight-decay-as-prior —uses→ gaussian-distribution
+- weight-decay-as-prior —applies→ evidence-framework
+- learning-as-inference —prerequisite-of→ bayesian-neural-networks
+- bayesian-neural-networks —uses→ marginalization
+- bayesian-neural-networks —uses→ hmc
+- bayesian-neural-networks —uses→ laplace-approximation
+- bayesian-neural-networks —contrasts-with→ maxima-are-atypical
+- learning-as-inference —contrasts-with→ maxima-are-atypical
+- hopfield-network —instantiates→ associative-memory
+- hopfield-network —uses→ lyapunov-function
+- hopfield-network —specializes→ ising-model
+- hopfield-network —specializes→ neural-networks
+- hopfield-network-capacity —applies→ hopfield-network
+- hopfield-network-capacity —uses→ ising-model
+- associative-memory —prerequisite-of→ hopfield-network
+- lyapunov-function —prerequisite-of→ hopfield-network-capacity
+
+## [2026-06-08] edit | edit_node
+- pkis:concept:decision-theory-foundations: fields=[] sections=["MacKay's Formulation: Maximize Expected Utility"]

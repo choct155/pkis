@@ -12,7 +12,7 @@ component_scores:
   transfer: null
 coverage: 1
 date_created: '2026-06-01'
-date_updated: '2026-06-02'
+date_updated: '2026-06-08'
 domain:
 - bayesian-stats
 id: pkis:concept:decision-theory-foundations
@@ -44,3 +44,8 @@ The framework for choosing actions under uncertainty by minimizing expected loss
 
 ## Needs Canonical Source
 Resolved — canonical source(s) attached above.
+
+## MacKay's Formulation: Maximize Expected Utility
+MacKay (ITILA Ch. 36) reduces decision theory to a single recipe. You choose an action $a$; the world occupies state $x$ with distribution $P(x\mid a)$ (the action may influence the state); a utility $U(x,a)$ scores each pairing. The task is to select
+$$ a^* = \arg\max_a\; \mathcal{E}[U\mid a] = \arg\max_a \int d^K x\, U(x,a)\, P(x\mid a). $$
+Equivalently, a pessimist defines a loss $L=-U$ and minimises expected loss. "That's all" — apart from computational details, which can nonetheless be enormous (cf. chess, or sequential problems where anticipated future information must be folded back into present choices). The distinctive feature MacKay highlights is the *interleaving of forward probability (predicting data) and inverse probability (Bayesian updating)* whenever a sequence of information-gathering actions precedes the final choice.
