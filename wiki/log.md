@@ -1706,3 +1706,12 @@
 ## [2026-06-08] committed | concept
 - Committed: z-channel → concepts/z-channel.md
 - IRI: pkis:concept:z-channel
+
+## [2026-06-08] staged | node-stub (concept)
+- Staged: jointly-typical-set (id: 89eade46-654a-4eee-aa31-8ed49bb52e5b)
+- Title: Jointly-Typical Set
+- needs_canonical_source: False
+
+## [2026-06-08] committed | concept
+- Committed: jointly-typical-set → concepts/jointly-typical-set.md
+- IRI: pkis:concept:jointly-typical-set
