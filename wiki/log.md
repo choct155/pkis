@@ -2136,3 +2136,12 @@
 ## [2026-06-08] committed | concept
 - Committed: fitness-as-information → concepts/fitness-as-information.md
 - IRI: pkis:concept:fitness-as-information
+
+## [2026-06-08] staged | node-stub (result)
+- Staged: rate-of-information-acquisition-mutation (id: b0c75d70-0c9e-498c-ba44-d1b4478ad8fa)
+- Title: Rate of Information Acquisition Under Mutation (≈1 bit/generation)
+- needs_canonical_source: False
+
+## [2026-06-08] committed | result
+- Committed: rate-of-information-acquisition-mutation → results/rate-of-information-acquisition-mutation.md
+- IRI: pkis:result:rate-of-information-acquisition-mutation
