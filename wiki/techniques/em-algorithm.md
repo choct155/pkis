@@ -2,6 +2,8 @@
 aliases:
 - EM
 also_type: []
+applies:
+- gaussian-mixture-models
 coverage: 10
 date_created: 2026-05-20
 date_updated: '2026-06-08'
@@ -46,3 +48,6 @@ Iterative technique for maximum likelihood estimation in latent variable models,
 
 ## Soft K-means as a precursor to the E-step
 MacKay (ITILA Ch. 20) motivates EM through clustering. The soft K-means **assignment step** computes responsibilities $r_k^{(n)} = \exp(-\beta\, d(\mathbf{m}^{(k)},\mathbf{x}^{(n)})) / \sum_{k'} \exp(-\beta\, d(\mathbf{m}^{(k')},\mathbf{x}^{(n)}))$ — a softmax over squared distances — which is exactly the E-step of EM for an equal-weight, isotropic Gaussian mixture with $\Sigma = \beta^{-1} I$. The **update step** $\mathbf{m}^{(k)} = \sum_n r_k^{(n)}\mathbf{x}^{(n)}/R(k)$ is the corresponding M-step for the means. Thus soft K-means is a constrained instance of EM, and ordinary (hard) K-means is its $\beta \to \infty$ limit, where responsibilities collapse to 0/1 and the E-step becomes a hard nearest-mean assignment. This gives a concrete, geometric reading of EM's alternation: responsibility computation (E) followed by responsibility-weighted parameter re-estimation (M).
+
+## Connections
+- [[gaussian-mixture-models]] — applies: MacKay derives the EM responsibility-weighted mean update specifically as ML for a Gaussian mixture.

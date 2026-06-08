@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+analogous-to:
+- sum-product-algorithm
 component_scores:
   alternatives: null
   conditions: null
@@ -22,6 +24,8 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - mackay-itila-ch26
+specializes:
+- min-sum-algorithm
 tags:
 - message-passing
 - map-inference
@@ -30,6 +34,8 @@ tags:
 - semiring
 title: Max-Product Algorithm
 understanding: 0
+uses:
+- factor-graph
 ---
 
 ## Definition
@@ -49,4 +55,7 @@ Max-product is the MAP/codeword-decoding counterpart of sum-product's bitwise ma
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[min-sum-algorithm]] — specializes: In the negative-log domain max-product becomes the min-sum / Viterbi algorithm.
+- [[factor-graph]] — uses: Max-product passes the same two message types over a factor graph.
+- [[sum-product-algorithm]] — analogous-to: Same message recursion with the (max, times) semiring substituted for (sum, times); marginalization vs maximization.
 [To be populated during integration]

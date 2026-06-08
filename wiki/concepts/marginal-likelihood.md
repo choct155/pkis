@@ -38,6 +38,7 @@ title: Marginal Likelihood (Model Evidence)
 understanding: 0
 uses:
 - conjugate-prior
+- occam-factor
 ---
 
 ## Definition
@@ -58,6 +59,7 @@ Evidence is what makes Bayesian model comparison automatic: it requires no ad ho
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[occam-factor]] — uses: Under Laplace's method the marginal likelihood decomposes into best-fit likelihood times the Occam factor.
 - [[conjugate-prior]] — uses: conjugacy (Beta-Binomial) yields the closed-form Beta-integral evidence in the bent-coin example
 - [[bayesian-inference]] — specializes: the evidence is the normalizing constant of the parameter-level posterior
 - [[bayesian-model-averaging]] — applies: model evidence supplies the posterior model weights P(H|D) used in BMA

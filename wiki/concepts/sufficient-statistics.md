@@ -19,6 +19,8 @@ id: pkis:concept:sufficient-statistics
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- bayesian-inference
 related_concepts: []
 sources:
 - mackay-itila-ch22
@@ -31,6 +33,9 @@ tags:
 - data-summary
 title: Sufficient Statistics
 understanding: 0
+uses:
+- maximum-likelihood-estimation
+- marginalization
 ---
 
 ## Definition
@@ -50,4 +55,7 @@ In an exponential-family model $P(x\mid\mathbf w)\propto\exp(\sum_k w_k f_k(x))$
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[bayesian-inference]] — prerequisite-of: Identifying sufficient statistics is what lets the likelihood and posterior be expressed compactly for inference.
+- [[marginalization]] — uses: Sufficient statistics make exact marginalization tractable by collapsing the data-dependence of the likelihood to a few quantities.
+- [[maximum-likelihood-estimation]] — uses: The Gaussian sufficient statistics (x-bar, S) are exactly what the ML estimators are computed from; sufficiency is why ML can be summary-based.
 [To be populated during integration]

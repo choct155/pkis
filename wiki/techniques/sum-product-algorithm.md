@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- trellis
 component_scores:
   alternatives: null
   conditions: null
@@ -34,6 +36,7 @@ title: Sum-Product Algorithm
 understanding: 0
 uses:
 - generating-functions
+- factor-graph
 ---
 
 ## Definition
@@ -51,6 +54,8 @@ It is the unifying generalization of the forward-backward algorithm and of belie
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[factor-graph]] — uses: Sum-product message rules are defined over the variable/factor nodes of a factor graph.
+- [[trellis]] — applies: Sum-product runs on the trellis to solve bitwise (marginal) decoding.
 - [[generating-functions]] — uses: Counting paths via weighted sums connects to generating-function bookkeeping of combinatorial counts.
 - [[message-passing]] — specializes: Sum-product is the marginalizing instance of the general message-passing paradigm.
 [To be populated during integration]

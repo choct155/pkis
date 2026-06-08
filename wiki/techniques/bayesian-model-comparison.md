@@ -1,6 +1,9 @@
 ---
 aliases: []
 also_type: []
+applies:
+- evidence-framework
+- occams-razor
 component_scores:
   alternatives: null
   conditions: null
@@ -51,6 +54,8 @@ It replaces orthodox null-hypothesis testing with a single coherent quantity. Ma
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[occams-razor]] — applies: Ranking by evidence is the mechanism by which Bayesian model comparison embodies Occam's razor.
+- [[evidence-framework]] — applies: Bayesian model comparison is the level-2 inference step of the evidence framework.
 - [[hypothesis-testing]] — contrasts-with: Bayes factors / posterior odds replace p-values and significance levels
 - [[likelihood-ratio-evidence]] — uses: the Bayes factor is the likelihood ratio at the model level
 - [[marginal-likelihood]] — uses: posterior odds are formed from the ratio of model evidences (Bayes factor)

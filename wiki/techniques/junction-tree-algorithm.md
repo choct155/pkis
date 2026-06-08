@@ -9,12 +9,16 @@ component_scores:
   implementation: null
   operational_mechanism: null
   principled_mechanism: null
+contrasts-with:
+- belief-propagation
 coverage: 1
 date_created: '2026-06-08'
 date_updated: '2026-06-08'
 domain:
 - bayesian-stats
 - information-theory
+extends:
+- sum-product-algorithm
 id: pkis:technique:junction-tree-algorithm
 knowledge_type: technique
 maturity: evolving
@@ -49,4 +53,6 @@ It delineates the boundary between exact and approximate inference: marginalizat
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[belief-propagation]] — contrasts-with: Junction tree is exact-but-exponential-in-treewidth; loopy belief propagation is cheap-but-approximate on cyclic graphs.
+- [[sum-product-algorithm]] — extends: Restores exactness on cyclic graphs by clustering variables into a tree of clusters, then running a sum-product schedule.
 [To be populated during integration]

@@ -1,11 +1,15 @@
 ---
 aliases: []
 also_type: []
+applies:
+- model-selection-problem
 component_scores:
   implications: null
   justification: null
   statement: null
   violations: null
+contrasts-with:
+- information-criteria
 coverage: 1
 date_created: '2026-06-08'
 date_updated: '2026-06-08'
@@ -48,4 +52,6 @@ The everyday intuition that *coincidences are suspicious* is the same effect: a 
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[model-selection-problem]] — applies: Occam's razor is the principle that resolves the over-fitting failure of best-fit model selection.
+- [[information-criteria]] — contrasts-with: AIC/BIC supply a fixed parameter-count penalty; the Occam-factor route penalizes via prior-to-posterior volume collapse, sensitive to the prior, not just the number of parameters.
 [To be populated during integration]

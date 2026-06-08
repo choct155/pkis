@@ -21,6 +21,7 @@ id: pkis:technique:soft-k-means
 instantiates:
 - clustering
 - em-algorithm
+- maximum-likelihood-estimation
 knowledge_type: technique
 maturity: evolving
 needs_canonical_source: false
@@ -54,6 +55,7 @@ Responsibilities turn clustering into smooth, differentiable inference: borderli
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[maximum-likelihood-estimation]] — instantiates: Soft K-means versions 2-3 are maximum-likelihood algorithms for fitting Gaussian mixtures.
 - [[em-algorithm]] — instantiates: The responsibility/update alternation is the E-step/M-step of EM for an isotropic equal-weight mixture.
 - [[gaussian-mixture-models]] — specializes: Soft K-means v1 is a GMM with shared isotropic covariance 1/beta and equal mixing weights.
 - [[k-means-clustering]] — generalizes: Hard K-means is the beta -> infinity limit of soft K-means.

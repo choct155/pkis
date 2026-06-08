@@ -10,6 +10,8 @@ component_scores:
   prerequisites: null
   scope: null
   transfer: null
+contrasts-with:
+- maximum-likelihood-estimation
 coverage: 1
 date_created: '2026-06-08'
 date_updated: '2026-06-08'
@@ -19,6 +21,8 @@ id: pkis:concept:marginalization
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- bayesian-inference
 related_concepts: []
 sources:
 - mackay-itila-ch24
@@ -30,6 +34,8 @@ tags:
 - probability
 title: Marginalization
 understanding: 0
+uses:
+- marginal-likelihood
 ---
 
 ## Definition
@@ -55,4 +61,7 @@ Marginalization is the engine of Bayesian inference: every probabilistic questio
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[bayesian-inference]] — prerequisite-of: Every Bayesian inferential query reduces to marginalizing the joint posterior down to the variables of interest.
+- [[maximum-likelihood-estimation]] — contrasts-with: Marginalization integrates out nuisance parameters whereas ML maximizes over them; this distinction yields the sigma_N (max) vs sigma_{N-1} (marginalized) difference.
+- [[marginal-likelihood]] — uses: Marginalizing a nuisance parameter produces the marginal likelihood as the resulting normalizing constant / evidence.
 [To be populated during integration]

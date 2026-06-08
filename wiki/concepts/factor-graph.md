@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+analogous-to:
+- directed-graphical-models
 component_scores:
   application: null
   boundary: null
@@ -20,9 +22,13 @@ id: pkis:concept:factor-graph
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- sum-product-algorithm
 related_concepts: []
 sources:
 - mackay-itila-ch26
+specializes:
+- undirected-graphical-models
 tags:
 - graphical-models
 - factorization
@@ -50,4 +56,7 @@ The factor graph is the data structure on which the sum-product algorithm runs: 
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[directed-graphical-models]] — analogous-to: Each directed conditional P(x|pa(x)) maps to a single factor node, giving a unified factorization representation.
+- [[undirected-graphical-models]] — specializes: A factor graph is a finer-grained factorization view; clique potentials of an undirected model map to factor nodes.
+- [[sum-product-algorithm]] — prerequisite-of: The sum-product algorithm runs on a factor graph; the bipartite structure defines the message-passing edges.
 [To be populated during integration]

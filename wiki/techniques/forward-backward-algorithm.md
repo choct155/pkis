@@ -1,6 +1,10 @@
 ---
 aliases: []
 also_type: []
+analogous-to:
+- min-sum-algorithm
+- belief-propagation
+- kalman-filter
 component_scores:
   alternatives: null
   conditions: null
@@ -16,6 +20,8 @@ domain:
 - information-theory
 - statistical-learning
 id: pkis:technique:forward-backward-algorithm
+instantiates:
+- sum-product-algorithm
 knowledge_type: technique
 maturity: evolving
 needs_canonical_source: false
@@ -32,6 +38,8 @@ tags:
 - message-passing
 title: Forward-Backward (BCJR) Algorithm
 understanding: 0
+uses:
+- trellis
 ---
 
 ## Definition
@@ -54,4 +62,9 @@ This is the exact, efficient route to per-bit soft outputs that drive iterative 
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[kalman-filter]] — analogous-to: Both are exact forward-backward inference on a chain; Kalman is the linear-Gaussian continuous-state case.
+- [[belief-propagation]] — analogous-to: Forward-backward / BCJR is belief propagation specialized to a chain, and is exact there.
+- [[min-sum-algorithm]] — analogous-to: Same trellis message passing; sum/product for marginals vs min/sum for the best path.
+- [[trellis]] — uses: The alpha/beta recursions are defined over the nodes and edges of the code trellis.
+- [[sum-product-algorithm]] — instantiates: Forward-backward is the sum-product algorithm specialized to a trellis (chain) graph.
 [To be populated during integration]

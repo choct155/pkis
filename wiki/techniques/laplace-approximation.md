@@ -1,6 +1,9 @@
 ---
 aliases: []
 also_type: []
+applies:
+- marginalization
+- marginal-likelihood
 component_scores:
   alternatives: 3
   conditions: 2
@@ -35,6 +38,9 @@ tags:
 - asymptotic-methods
 title: Laplace Approximation
 understanding: 1
+uses:
+- gaussian-distribution
+- occam-factor
 ---
 
 A higher-order normal approximation to a posterior distribution or likelihood function obtained by expanding the log-posterior (or log-likelihood) to second order around its mode: the posterior is approximated as N(θ_mode, [−∇²log p(θ|Y)]^{−1}). This is the saddle-point approximation applied to Bayesian computation.
@@ -45,3 +51,9 @@ The Laplace approximation enables non-normal corrections to basic normal-based i
 - [[tanner-tools-statistical-inference]] (unread) — primary treatment; Chapter 3 covers Laplace's method for posterior moments and marginalization; motivates MCMC alternatives for non-ellipsoidal posteriors
 - [[tanner-tools-statistical-inference-ch03]] (unread) — primary chapter
 - [[lange-applied-probability-ch12]] (unread) — Laplace's method and Watson's Lemma for integral approximation
+
+## Connections
+- [[occam-factor]] — uses: The Occam factor is the width term produced when Laplace's method approximates the evidence integral via the posterior Hessian.
+- [[marginal-likelihood]] — applies: Approximating the normalizing constant Z_P = integral P*(x) dx is exactly the Bayesian evidence/marginal likelihood; Laplace's det(A) formula yields the standard evidence approximation.
+- [[gaussian-distribution]] — uses: The method replaces the peak of P*(x) by a matched Gaussian and uses its normalizing constant sqrt((2pi)^K / det A) as the estimate of Z_P.
+- [[marginalization]] — applies: Laplace's method is an approximate technique for performing the otherwise-intractable marginalization integral.

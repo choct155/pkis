@@ -16,9 +16,13 @@ date_updated: '2026-06-08'
 domain:
 - bayesian-stats
 id: pkis:concept:occam-factor
+instantiates:
+- occams-razor
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- bayesian-model-comparison
 related_concepts: []
 sources:
 - mackay-itila-ch28
@@ -54,4 +58,6 @@ The Occam factor turns Occam's razor from a slogan into a computable number. It 
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[bayesian-model-comparison]] — prerequisite-of: Understanding the Occam factor explains why evidence-based comparison favours simpler models.
+- [[occams-razor]] — instantiates: The Occam factor is the quantitative, computable realization of the qualitative Occam's-razor principle.
 [To be populated during integration]

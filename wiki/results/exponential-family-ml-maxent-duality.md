@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+analogous-to:
+- entropy
 component_scores:
   conditions: null
   implications: null
@@ -19,6 +21,8 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - mackay-itila-ch22
+specializes:
+- maximum-likelihood-estimation
 tags:
 - exponential-family
 - maximum-likelihood
@@ -28,6 +32,9 @@ tags:
 - sufficient-statistics
 title: ML–MaxEnt Duality for Exponential Families
 understanding: 0
+uses:
+- sufficient-statistics
+- lagrange-multipliers
 ---
 
 ## Definition
@@ -47,4 +54,8 @@ This is the conceptual hub of generalized linear models, logistic regression, Bo
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[entropy]] — analogous-to: Maximum-entropy distributions under moment constraints are exponential families, the maxent counterpart of the ML fit.
+- [[lagrange-multipliers]] — uses: The maxent side of the duality derives the exponential form via one Lagrange multiplier per moment constraint.
+- [[sufficient-statistics]] — uses: The empirical feature-averages that ML must match are the sufficient statistics of the exponential family.
+- [[maximum-likelihood-estimation]] — specializes: The moment-matching condition is the ML estimating equation specialized to the exponential family.
 [To be populated during integration]

@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- occams-razor
 component_scores:
   application: null
   limits: null
@@ -28,6 +30,8 @@ tags:
 - bayesian-inference
 title: The Bayesian Evidence Framework (Two Levels of Inference)
 understanding: 0
+uses:
+- marginal-likelihood
 ---
 
 ## Definition
@@ -53,4 +57,6 @@ Both levels are inference, not **decision theory**: no loss function is involved
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[marginal-likelihood]] — uses: The evidence (marginal likelihood) is the quantity linking the framework's two levels of inference.
+- [[occams-razor]] — applies: Ranking models by evidence at level 2 automatically enforces Occam's razor without any subjective complexity bias.
 [To be populated during integration]

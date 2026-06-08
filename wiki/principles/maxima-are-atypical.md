@@ -1,11 +1,15 @@
 ---
 aliases: []
 also_type: []
+applies:
+- gaussian-mixture-models
 component_scores:
   implications: null
   justification: null
   statement: null
   violations: null
+contrasts-with:
+- maximum-likelihood-estimation
 coverage: 1
 date_created: '2026-06-08'
 date_updated: '2026-06-08'
@@ -27,6 +31,8 @@ tags:
 - basis-dependence
 title: Maxima Are Atypical (Pitfalls of ML and MAP)
 understanding: 0
+uses:
+- typical-set
 ---
 
 ## Definition
@@ -48,4 +54,7 @@ These observations motivate the Bayesian programme of integrating over (marginal
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[gaussian-mixture-models]] — applies: The variance-collapse likelihood spike is exhibited concretely in Gaussian-mixture clustering.
+- [[typical-set]] — uses: The argument is that probability mass concentrates in a typical set away from the density maximum.
+- [[maximum-likelihood-estimation]] — contrasts-with: Argues the ML point estimate is unrepresentative in high dimensions and can diverge (overfitting spikes).
 [To be populated during integration]

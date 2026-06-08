@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- conjugate-prior
 component_scores:
   application: null
   boundary: null
@@ -23,6 +25,8 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - mackay-itila-ch23
+specializes:
+- dirichlet-distribution
 tags:
 - probability-distribution
 - conjugate-prior
@@ -49,4 +53,6 @@ The beta is the conjugate prior for the binomial bias: observing $r$ successes i
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[conjugate-prior]] — applies: Beta is the conjugate prior for the binomial bias parameter.
+- [[dirichlet-distribution]] — specializes: Beta is the I=2 case of the Dirichlet distribution over the simplex.
 [To be populated during integration]

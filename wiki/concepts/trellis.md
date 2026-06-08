@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- linear-block-code
 component_scores:
   application: null
   boundary: null
@@ -20,6 +22,9 @@ id: pkis:concept:trellis
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- forward-backward-algorithm
+- min-sum-algorithm
 related_concepts: []
 sources:
 - mackay-itila-ch25
@@ -32,6 +37,8 @@ tags:
 - state-space
 title: Trellis
 understanding: 0
+uses:
+- syndrome-decoding
 ---
 
 ## Definition
@@ -49,4 +56,8 @@ The trellis exposes the conditional-independence (chain) structure of a code, tu
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[syndrome-decoding]] — uses: A trellis can be built from the parity-check matrix using the partial syndrome as the state.
+- [[linear-block-code]] — applies: A linear trellis is an alternative representation of a linear block code's codeword set.
+- [[min-sum-algorithm]] — prerequisite-of: Viterbi/min-sum decoding finds the minimum-cost path across a code trellis.
+- [[forward-backward-algorithm]] — prerequisite-of: The trellis is the graphical structure on which forward-backward message passing is run.
 [To be populated during integration]

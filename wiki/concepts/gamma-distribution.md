@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- conjugate-prior
 component_scores:
   application: null
   boundary: null
@@ -10,12 +12,16 @@ component_scores:
   prerequisites: null
   scope: null
   transfer: null
+contrasts-with:
+- gaussian-distribution
 coverage: 1
 date_created: '2026-06-08'
 date_updated: '2026-06-08'
 domain:
 - bayesian-stats
 - statistical-learning
+generalizes:
+- probability-distribution-relationships
 id: pkis:concept:gamma-distribution
 knowledge_type: concept
 maturity: evolving
@@ -31,6 +37,8 @@ tags:
 - scale-parameter
 title: Gamma Distribution
 understanding: 0
+uses:
+- poisson-process
 ---
 
 ## Definition
@@ -50,4 +58,8 @@ The gamma is the workhorse prior for any inferred positive quantity: the varianc
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[gaussian-distribution]] — contrasts-with: Gamma is the positive-support analogue of the Gaussian, asymmetric and with a heavier right tail.
+- [[poisson-process]] — uses: The m-th arrival time of a Poisson process is gamma-distributed with shape m.
+- [[conjugate-prior]] — applies: Gamma (and its inverse) is conjugate for a Poisson rate and for Gaussian precision/variance.
+- [[probability-distribution-relationships]] — generalizes: Gamma sits in the transformation/limiting web: exponential (c=1) below, Gaussian-like as c grows, inverse-gamma via reciprocal.
 [To be populated during integration]

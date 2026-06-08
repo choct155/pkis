@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- conjugate-prior
 component_scores:
   application: null
   boundary: null
@@ -31,6 +33,8 @@ tags:
 - concentration-parameter
 title: Dirichlet Distribution
 understanding: 0
+uses:
+- gamma-distribution
 ---
 
 ## Definition
@@ -50,4 +54,6 @@ The Dirichlet is the conjugate prior for the multinomial/categorical likelihood 
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[gamma-distribution]] — uses: Dirichlet normalization is built from gamma functions; its components can be generated as normalized independent gamma variates.
+- [[conjugate-prior]] — applies: Dirichlet is the conjugate prior for the multinomial/categorical likelihood.
 [To be populated during integration]
