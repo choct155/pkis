@@ -2289,3 +2289,6 @@
 
 ## [2026-06-08] edit | edit_node
 - pkis:concept:entropy: fields=[] sections=['MacKay: information content, surprise, and the units of evidence']
+
+## [2026-06-08] edit | edit_node
+- pkis:technique:gaussian-mixture-models: fields=[] sections=['Relation to K-means and soft K-means']

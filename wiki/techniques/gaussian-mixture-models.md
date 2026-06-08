@@ -5,7 +5,7 @@ also_type:
 - framework
 coverage: 4
 date_created: 2026-05-20
-date_updated: 2026-05-20
+date_updated: '2026-06-08'
 domain:
 - bayesian-stats
 - statistical-learning
@@ -40,3 +40,6 @@ Density estimation model that represents the data distribution as a weighted sum
 
 ## Connections
 - [[em-algorithm]] — uses: GMMs are fit by EM, computing responsibilities (E) and updating means, covariances, weights (M).
+
+## Relation to K-means and soft K-means
+MacKay (ITILA Ch. 20) reaches GMMs by repairing K-means. Plain K-means is a *hard* clustering that represents only distances to means, so it misassigns points across clusters of unequal weight and slices elongated clusters in half. Soft K-means fixes the hard assignment with a stiffness-$\beta$ softmax over distances, but version 1 still has a single isotropic lengthscale $\sigma = 1/\sqrt{\beta}$ shared by all clusters — no per-cluster weight $\pi_k$ or covariance $\Sigma_k$. A full Gaussian mixture restores exactly these missing degrees of freedom: the responsibility $r_k^{(n)} = \pi_k \mathcal{N}(\mathbf{x}^{(n)}|\mu_k,\Sigma_k) / \sum_{k'} \pi_{k'} \mathcal{N}(\mathbf{x}^{(n)}|\mu_{k'},\Sigma_{k'})$ generalizes the soft K-means softmax, and EM updates means, covariances, and mixing weights. K-means is recovered as the hard-assignment, equal-weight, spherical-fixed-variance limit.
