@@ -2863,3 +2863,6 @@
 
 ## [2026-06-08] edit | edit_node
 - pkis:technique:coordinate-ascent-vi: fields=[] sections=['EM and Soft K-Means as Coordinate Optimization of a Free Energy']
+
+## [2026-06-08] edit | edit_node
+- pkis:technique:principal-component-analysis: fields=[] sections=['Contrast with Independent Component Analysis']
