@@ -61,3 +61,6 @@ The Hopfield network is the canonical *energy-based, attractor* neural model: it
 - [[lyapunov-function]] — uses: Convergence and the attractor/optimizer interpretation rest on the variational free energy being a Lyapunov function of the dynamics.
 - [[associative-memory]] — instantiates: A Hopfield network is the canonical realization of a content-addressable associative memory via attractor pattern-completion.
 [To be populated during integration]
+
+## Stochastic Extension: The Boltzmann Machine
+The deterministic Hopfield network descends the energy $E(x)=-\tfrac{1}{2}x^{\mathsf T}Wx$ to a fixed-point attractor. Replacing the threshold/tanh update with a *stochastic* rule — set $x_i=+1$ with probability $1/(1+e^{-2a_i})$ — turns the network into a **Boltzmann machine** (a stochastic Hopfield network) that performs Gibbs sampling from the Gibbs distribution $P(x\mid W)\propto\exp[\tfrac{1}{2}x^{\mathsf T}Wx]$ instead of merely settling into a minimum. This converts the associative memory into a generative model whose weights can be fit to data by maximum likelihood, and adding hidden units lets it represent higher-order structure the second-order Hopfield energy cannot.

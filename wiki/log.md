@@ -3322,3 +3322,81 @@
 ## [2026-06-08] committed | technique
 - Committed: peeling-decoder → techniques/peeling-decoder.md
 - IRI: pkis:technique:peeling-decoder
+
+## [2026-06-08] edges | add_connections
+- boltzmann-machine —generalizes→ hopfield-network
+- boltzmann-machine —uses→ gibbs-sampler
+- boltzmann-machine —uses→ partition-function
+- boltzmann-machine —analogous-to→ ising-model
+- boltzmann-machine-learning-rule —applies→ boltzmann-machine
+- boltzmann-machine-learning-rule —uses→ gibbs-sampler
+- boltzmann-machine-hidden-units —extends→ boltzmann-machine
+- boltzmann-machine-hidden-units —uses→ boltzmann-machine-learning-rule
+- multilayer-perceptron —specializes→ neural-networks
+- backpropagation —uses→ gradient-descent
+- backpropagation —applies→ multilayer-perceptron
+- multilayer-perceptron —uses→ gradient-descent
+- single-neuron-classifier —prerequisite-of→ multilayer-perceptron
+- multilayer-perceptron —instantiates→ universal-approximation-theorem
+- multilayer-perceptron —uses→ weight-decay-as-prior
+- multilayer-perceptron —uses→ cross-entropy-loss
+- multilayer-perceptron —extends→ regularization
+- bayesian-neural-networks —extends→ multilayer-perceptron
+- multilayer-perceptron —instantiates→ learning-as-inference
+- covariance-function —prerequisite-of→ gaussian-process
+- gaussian-process —generalizes→ gaussian-distribution
+- gaussian-process —prerequisite-of→ gaussian-process-regression
+- covariance-function —uses→ gaussian-process-regression
+- neural-network-gaussian-process-limit —specializes→ gaussian-process
+- neural-network-gaussian-process-limit —applies→ bayesian-neural-networks
+- gaussian-process —contrasts-with→ bayesian-neural-networks
+- optimal-linear-filter —applies→ deconvolution
+- maximum-entropy-image-reconstruction —applies→ deconvolution
+- optimal-linear-filter —instantiates→ bayesian-inference
+- optimal-linear-filter —uses→ regularization
+- deconvolution —uses→ regularization
+- optimal-linear-filter —contrasts-with→ maximum-likelihood-estimation
+- maximum-entropy-image-reconstruction —contrasts-with→ optimal-linear-filter
+- optimal-linear-filter —uses→ laplace-approximation
+- maximum-entropy-image-reconstruction —uses→ entropy
+- low-density-parity-check-code —specializes→ linear-block-code
+- tanner-graph —specializes→ factor-graph
+- tanner-graph —prerequisite-of→ sum-product-decoding-ldpc
+- low-density-parity-check-code —uses→ tanner-graph
+- sum-product-decoding-ldpc —specializes→ sum-product-algorithm
+- sum-product-decoding-ldpc —instantiates→ belief-propagation
+- sum-product-decoding-ldpc —applies→ low-density-parity-check-code
+- density-evolution —applies→ sum-product-decoding-ldpc
+- density-evolution —applies→ low-density-parity-check-code
+- low-density-parity-check-code —instantiates→ noisy-channel-coding-theorem
+- convolutional-code —uses→ trellis
+- convolutional-code —specializes→ linear-block-code
+- turbo-code —uses→ convolutional-code
+- turbo-code —uses→ factor-graph
+- turbo-code —uses→ concatenated-codes
+- iterative-turbo-decoding —instantiates→ sum-product-algorithm
+- iterative-turbo-decoding —uses→ forward-backward-algorithm
+- iterative-turbo-decoding —applies→ turbo-code
+- min-sum-algorithm —applies→ convolutional-code
+- forward-backward-algorithm —applies→ convolutional-code
+- repeat-accumulate-codes —uses→ factor-graph
+- repeat-accumulate-codes —uses→ sum-product-algorithm
+- repeat-accumulate-codes —uses→ trellis
+- repeat-accumulate-codes —uses→ forward-backward-algorithm
+- repeat-accumulate-codes —instantiates→ linear-block-code
+- repeat-accumulate-codes —uses→ repetition-codes
+- repeat-accumulate-codes —analogous-to→ concatenated-codes
+- generalized-parity-check-matrix —generalizes→ linear-block-code
+- generalized-parity-check-matrix —applies→ repeat-accumulate-codes
+- generalized-parity-check-matrix —analogous-to→ factor-graph
+- lt-codes —instantiates→ fountain-codes
+- soliton-distribution —prerequisite-of→ lt-codes
+- peeling-decoder —uses→ soliton-distribution
+- lt-codes —uses→ peeling-decoder
+- peeling-decoder —specializes→ sum-product-algorithm
+- fountain-codes —applies→ binary-erasure-channel
+- peeling-decoder —applies→ binary-erasure-channel
+- fountain-codes —uses→ noisy-channel-coding-theorem
+
+## [2026-06-08] edit | edit_node
+- pkis:framework:hopfield-network: fields=[] sections=['Stochastic Extension: The Boltzmann Machine']
