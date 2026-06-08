@@ -15,7 +15,7 @@ contrasts-with:
 - gibbs-sampler
 coverage: 1
 date_created: '2026-06-07'
-date_updated: '2026-06-07'
+date_updated: '2026-06-08'
 domain:
 - bayesian-stats
 - optimization
@@ -100,3 +100,10 @@ When the leapfrog integrator encounters high posterior curvature (funnel necks i
 - [[hamiltonian-classical-mechanics]] — uses: HMC simulates Hamiltonian dynamics over an auxiliary momentum
 - [[mcmc]] — extends: HMC is a gradient-based MCMC method
 [To be populated during integration]
+
+## MacKay's Framing: Beating the Random Walk
+MacKay (ITILA ch.30) presents HMC as the canonical cure for **random-walk behaviour**. Because the state $x$ persists in the direction of its momentum $p$ throughout each dynamical trajectory, the distance travelled grows **linearly** with computer time rather than as the square root — the defining advantage over random-walk Metropolis. He demonstrates this on a needle-like bivariate Gaussian (correlation $0.998$): a few leapfrog trajectories traverse the distribution, whereas random-walk Metropolis given equal compute barely moves.
+
+The acceptance step is interpreted energetically: if the Hamiltonian dynamics were simulated perfectly, $H(x,p)=E(x)+K(p)$ is a constant of the motion, so every proposal would be accepted ($a=1$). Finite step sizes perturb $H$, and proposals are accepted by the Metropolis rule on $\Delta H$ — the occasional rejections are exactly what guarantee asymptotic sampling from $P_H(x,p)$. The momentum-randomization step is itself a Gibbs update of $p$ and is always accepted.
+
+MacKay also classifies HMC as a *smart* Metropolis method whose proposals depend on $P(x)$ (via $\nabla E$), and poses it as an open question (Exercise 30.7) whether HMC can extract information about $P$ faster than the one-bit-per-iteration ceiling that bounds *dumb* Metropolis.

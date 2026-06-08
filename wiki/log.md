@@ -2836,3 +2836,6 @@
 
 ## [2026-06-08] edit | edit_node
 - pkis:technique:mcmc: fields=[] sections=["MacKay's Foundations: Invariance, Ergodicity, and Chain Construction"]
+
+## [2026-06-08] edit | edit_node
+- pkis:technique:hmc: fields=[] sections=["MacKay's Framing: Beating the Random Walk"]
