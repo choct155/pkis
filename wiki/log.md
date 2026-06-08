@@ -2534,3 +2534,6 @@
 
 ## [2026-06-08] edit | edit_node
 - pkis:technique:laplace-approximation: fields=[] sections=['Basis Dependence']
+
+## [2026-06-08] edit | edit_node
+- pkis:technique:bayesian-model-comparison: fields=[] sections=['Minimum Description Length: the coding view']

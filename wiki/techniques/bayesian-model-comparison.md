@@ -60,3 +60,8 @@ It replaces orthodox null-hypothesis testing with a single coherent quantity. Ma
 - [[likelihood-ratio-evidence]] — uses: the Bayes factor is the likelihood ratio at the model level
 - [[marginal-likelihood]] — uses: posterior odds are formed from the ratio of model evidences (Bayes factor)
 [To be populated during integration]
+
+## Minimum Description Length: the coding view
+A complementary view replaces probabilities by **message lengths** in bits, via $P(x)=2^{-L(x)}$, i.e. $L(x)=-\log_2 P(x)$. The **MDL principle** (Wallace & Boulton, 1968) prefers the model that communicates the data in the fewest bits. A two-part message states the model and then the data within it, $L(D,H)=L(H)+L(D\mid H)$, which maps onto $-\log P(H\mid D)+\text{const}$ — so MDL and Bayesian model comparison are formally interchangeable.
+
+The data block divides into a *parameter block* and a *residual block*: few parameters give a short parameter block but long residuals, while more parameters lengthen the parameter block and shorten the residuals, with an optimum complexity minimizing the sum. The precision to which parameters are sent has a non-trivial optimum (Wallace & Freeman, 1987), closely tied to the posterior error bars $A^{-1}$; remarkably, the optimal parameter message length is virtually identical to the log of the [[occam-factor]]. MacKay notes MDL offers no practical advantage over the direct probabilistic approach but is a valuable pedagogical and prior-eliciting device. The 'bits-back' argument (Hinton & van Camp, 1993) recovers the exact description length $-\log P(D\mid H)$ by crediting back the random bits used to sample parameters from the posterior.
