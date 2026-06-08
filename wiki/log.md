@@ -2388,3 +2388,12 @@
 ## [2026-06-08] committed | concept
 - Committed: factor-graph → concepts/factor-graph.md
 - IRI: pkis:concept:factor-graph
+
+## [2026-06-08] staged | node-stub (technique)
+- Staged: max-product-algorithm (id: 3a753c00-0db8-49e2-b9e8-e112d25d16f2)
+- Title: Max-Product Algorithm
+- needs_canonical_source: False
+
+## [2026-06-08] committed | technique
+- Committed: max-product-algorithm → techniques/max-product-algorithm.md
+- IRI: pkis:technique:max-product-algorithm
