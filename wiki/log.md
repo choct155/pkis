@@ -1628,3 +1628,6 @@
 
 ## [2026-06-08] edit | edit_node
 - pkis:technique:arithmetic-coding: fields=[] sections=['Random sample generation and text entry']
+
+## [2026-06-08] edit | edit_node
+- pkis:technique:arithmetic-coding: fields=[] sections=['Near-optimality bound']

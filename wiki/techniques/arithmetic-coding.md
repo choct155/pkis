@@ -54,3 +54,6 @@ The practical realization of the source coding theorem's promise: compression to
 
 ## Random sample generation and text entry
 Run backwards, an arithmetic *decoder* fed with ordinary random bits selects a point uniformly in $[0,1)$ and hence draws a string from the model's distribution — a way to **generate random samples** using very nearly the minimum number of random bits possible. Inverting the coder also yields information-efficient text entry: in **Dasher** (Ward & MacKay), the user zooms into the unit interval to locate their intended string, with a language model sizing the intervals so probable text is fastest to reach.
+
+## Near-optimality bound
+The near-optimality is precise: terminating a message costs at most 2 bits over the ideal length $\log_2 1/P(x\mid H)$, so the expected length is within ~2 bits of the entropy of the whole message. Crucially, encoding $N$ letters requires computing only $N|A|$ conditional probabilities — one predictive distribution per context actually visited — versus a large-block Huffman code, which must evaluate probabilities of all possible blocks.
