@@ -2842,3 +2842,6 @@
 
 ## [2026-06-08] edit | edit_node
 - pkis:technique:hmc: fields=[] sections=['Reversibility and Volume Preservation (Exercise 30.11)']
+
+## [2026-06-08] edit | edit_node
+- pkis:technique:gibbs-sampler: fields=[] sections=['Application: Gibbs sampling an Ising model']

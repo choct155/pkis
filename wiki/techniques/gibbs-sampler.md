@@ -127,3 +127,10 @@ A single Gibbs coordinate-update is exactly a Metropolis proposal whose **accept
 - **Random-walk slowness.** When two variables are strongly correlated (marginal width $L$, conditional width $\epsilon$), axis-aligned Gibbs still needs $\sim(L/\epsilon)^2$ iterations per independent sample — the same penalty as Metropolis.
 - **Pathological targets.** For syndrome decoding of an error-correcting code, valid codewords are isolated points with no adjacent valid neighbours, so any single-bit conditional move lands on zero probability and the chain freezes — Gibbs is useless there.
 - **Blocking.** Sampling groups of variables jointly (block Gibbs) can mitigate the correlation penalty in big models.
+
+## Application: Gibbs sampling an Ising model
+A standard application of Gibbs sampling is simulating an Ising model at equilibrium. Pick a spin $n$ at random; conditioned on its neighbours through the local field $b_n = \sum_{m:(m,n)\in\mathcal{N}} J x_m + H$, set it to $+1$ with probability
+
+$$P(+1 \mid b_n) = \frac{1}{1 + \exp(-2\beta b_n)},$$
+
+otherwise $-1$, then repeat. (The factor of $2$ appears because the states are $\{+1,-1\}$ rather than $\{+1,0\}$.) After enough sweeps this converges to the Boltzmann distribution. A practical subtlety is *equilibration*: it is hard to define or detect when the chain has reached equilibrium. MacKay's crude recipe runs a few hundred sweeps per spin and discards the first third; for $N=100$ spins this needed over $100{,}000$ iterations per temperature. Running the temperature down then back up exposes hysteresis when equilibrium has not been reached.
