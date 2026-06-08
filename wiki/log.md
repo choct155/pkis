@@ -2657,3 +2657,12 @@
 ## [2026-06-08] committed | concept
 - Committed: phase-transition → concepts/phase-transition.md
 - IRI: pkis:concept:phase-transition
+
+## [2026-06-08] staged | node-stub (technique)
+- Staged: coupling-from-the-past (id: cd7fd174-9a42-4500-9e17-50840b9d56a6)
+- Title: Coupling from the Past
+- needs_canonical_source: False
+
+## [2026-06-08] committed | technique
+- Committed: coupling-from-the-past → techniques/coupling-from-the-past.md
+- IRI: pkis:technique:coupling-from-the-past
