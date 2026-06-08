@@ -2172,3 +2172,12 @@
 ## [2026-06-08] committed | concept
 - Committed: clustering → concepts/clustering.md
 - IRI: pkis:concept:clustering
+
+## [2026-06-08] staged | node-stub (technique)
+- Staged: k-means-clustering (id: 450ab16a-fca2-4286-9435-3bce88896d8e)
+- Title: K-means Clustering
+- needs_canonical_source: False
+
+## [2026-06-08] committed | technique
+- Committed: k-means-clustering → techniques/k-means-clustering.md
+- IRI: pkis:technique:k-means-clustering
