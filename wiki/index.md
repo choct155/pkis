@@ -536,6 +536,7 @@
 - [[constraint-propagation]] — Reducing a constraint satisfaction problem by iteratively eliminating inconsistent values from variable domains (knowledge-representation) (2026-05-20)
 
 ## Results
+- [[hash-collision-bound]] — Hash Collision Bound (Birthday Problem) (information-theory, computer-science) (2026-06-08)
 - [[continuous-channel-capacity]] — Continuous-Channel Capacity (Shannon–Hartley) (information-theory) (2026-06-08)
 - [[fanos-inequality]] — Fano's Inequality (information-theory) (2026-06-08)
 - [[data-processing-inequality]] — Data-Processing Inequality (information-theory) (2026-06-08)

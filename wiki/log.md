@@ -1805,3 +1805,12 @@
 ## [2026-06-08] committed | technique
 - Committed: hash-table → techniques/hash-table.md
 - IRI: pkis:technique:hash-table
+
+## [2026-06-08] staged | node-stub (result)
+- Staged: hash-collision-bound (id: 85fdb683-b947-4d8c-9841-25f0b09b527a)
+- Title: Hash Collision Bound (Birthday Problem)
+- needs_canonical_source: False
+
+## [2026-06-08] committed | result
+- Committed: hash-collision-bound → results/hash-collision-bound.md
+- IRI: pkis:result:hash-collision-bound
