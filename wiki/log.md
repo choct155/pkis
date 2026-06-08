@@ -3100,3 +3100,6 @@
 
 ## [2026-06-08] edit | edit_node
 - pkis:concept:bayesian-neural-networks: fields=[] sections=['Prediction by Marginalization over Weights']
+
+## [2026-06-08] edit | edit_node
+- pkis:concept:bayesian-neural-networks: fields=[] sections=['Monte Carlo Inference: Langevin and Hamiltonian']
