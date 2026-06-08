@@ -3223,3 +3223,12 @@
 ## [2026-06-08] committed | concept
 - Committed: tanner-graph → concepts/tanner-graph.md
 - IRI: pkis:concept:tanner-graph
+
+## [2026-06-08] staged | node-stub (technique)
+- Staged: sum-product-decoding-ldpc (id: 1ab1fc6e-8390-48e6-b633-64eda1d9434c)
+- Title: Sum-Product Decoding of LDPC Codes
+- needs_canonical_source: False
+
+## [2026-06-08] committed | technique
+- Committed: sum-product-decoding-ldpc → techniques/sum-product-decoding-ldpc.md
+- IRI: pkis:technique:sum-product-decoding-ldpc

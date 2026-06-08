@@ -471,6 +471,7 @@
 - [[market-vs-hierarchy]] — Coase/Williamson: transactions governed by price signals (markets) vs. managerial direction (firms) (corporate-finance) (2026-05-20)
 
 ## Techniques
+- [[sum-product-decoding-ldpc]] — Sum-Product Decoding of LDPC Codes (information-theory) (2026-06-08)
 - [[maximum-entropy-image-reconstruction]] — Maximum-Entropy Image Reconstruction (statistical-learning, bayesian-stats) (2026-06-08)
 - [[optimal-linear-filter]] — Optimal Linear Filter (Wiener Filter) (statistical-learning, bayesian-stats) (2026-06-08)
 - [[boltzmann-machine-learning-rule]] — Boltzmann Machine Learning Rule (Wake-Sleep) (deep-learning, statistical-learning) (2026-06-08)
