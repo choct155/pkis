@@ -65,3 +65,14 @@ Evidence is what makes Bayesian model comparison automatic: it requires no ad ho
 - [[bayesian-model-averaging]] — applies: model evidence supplies the posterior model weights P(H|D) used in BMA
 - [[bayesian-model-comparison]] — prerequisite-of: evidence must be computable to compare models
 [To be populated during integration]
+
+## Marginal likelihood as a by-product of marginalization
+The marginal likelihood arises naturally as the normalizing constant when one marginalizes a nuisance parameter out of a posterior. In MacKay's Gaussian example, asking 'what is $\sigma$?' requires integrating out $\mu$:
+
+$$P(\{x_n\} \mid \sigma) = \int P(\{x_n\} \mid \mu, \sigma)\, P(\mu)\, d\mu,$$
+
+the marginal (or *evidence*) for $\sigma$. Carrying out the Gaussian integral over $\mu$ yields
+
+$$\ln P(\{x_n\} \mid \sigma) = -N\ln(\sqrt{2\pi}\,\sigma) - \frac{S}{2\sigma^2} + \ln\frac{\sqrt{2\pi}\,\sigma/\sqrt{N}}{\sigma_\mu}.$$
+
+The first two terms are the best-fit log-likelihood; the final term is an Occam factor that penalizes models with more parameter volume. Differentiating with respect to $\ln\sigma$ shows this volume factor shifts the most probable $\sigma$ away from the maximum-likelihood $\sigma_N = \sqrt{S/N}$ to the unbiased $\sigma_{N-1} = \sqrt{S/(N-1)}$ — the Bayesian evidence automatically recovers the $N-1$ degrees-of-freedom correction.

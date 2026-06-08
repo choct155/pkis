@@ -2510,3 +2510,6 @@
 
 ## [2026-06-08] edit | edit_node
 - pkis:concept:conjugate-prior: fields=[] sections=['Canonical conjugate pairs from MacKay Ch. 23']
+
+## [2026-06-08] edit | edit_node
+- pkis:concept:marginal-likelihood: fields=[] sections=['Marginal likelihood as a by-product of marginalization']
