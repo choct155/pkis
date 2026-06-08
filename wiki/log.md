@@ -2424,3 +2424,12 @@
 ## [2026-06-08] committed | concept
 - Committed: occam-factor → concepts/occam-factor.md
 - IRI: pkis:concept:occam-factor
+
+## [2026-06-08] staged | node-stub (framework)
+- Staged: evidence-framework (id: 0c70f411-a9eb-4361-987f-d6ed708164a1)
+- Title: The Bayesian Evidence Framework (Two Levels of Inference)
+- needs_canonical_source: False
+
+## [2026-06-08] committed | framework
+- Committed: evidence-framework → frameworks/evidence-framework.md
+- IRI: pkis:framework:evidence-framework

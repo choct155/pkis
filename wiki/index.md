@@ -600,6 +600,7 @@
 - [[government-debt-valuation-equation]] — FTPL: price level determined by ratio of nominal debt to expected present value of future surpluses (macroeconomics) (2026-05-20)
 
 ## Frameworks
+- [[evidence-framework]] — The Bayesian Evidence Framework (Two Levels of Inference) (bayesian-stats) (2026-06-08)
 - [[understanding-assessment-protocol]] — Understanding Assessment Protocol (bayesian-stats, deep-learning, knowledge-representation, optimization, causal-analysis, symbolic-subsymbolic) (2026-06-07)
 - [[agentic-systems]] — Autonomous LLM-powered entities that perceive, plan, and act; central paradigm of agentic AI (deep-learning, symbolic-subsymbolic) (2026-05-20)
 - [[multi-agent-systems]] — Systems of multiple coordinated specialized agents for complex goal achievement (deep-learning, symbolic-subsymbolic) (2026-05-20)
