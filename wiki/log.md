@@ -1394,3 +1394,12 @@
 ## [2026-06-08] committed | technique
 - Committed: bayesian-model-comparison → techniques/bayesian-model-comparison.md
 - IRI: pkis:technique:bayesian-model-comparison
+
+## [2026-06-08] staged | node-stub (concept)
+- Staged: likelihood-ratio-evidence (id: 419c3dc7-e069-42e0-914a-1dad4a653ad7)
+- Title: Likelihood Ratio as Evidence
+- needs_canonical_source: False
+
+## [2026-06-08] committed | concept
+- Committed: likelihood-ratio-evidence → concepts/likelihood-ratio-evidence.md
+- IRI: pkis:concept:likelihood-ratio-evidence
