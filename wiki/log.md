@@ -1670,3 +1670,12 @@
 ## [2026-06-08] committed | result
 - Committed: chain-rule-for-entropy → results/chain-rule-for-entropy.md
 - IRI: pkis:result:chain-rule-for-entropy
+
+## [2026-06-08] staged | node-stub (result)
+- Staged: data-processing-inequality (id: 8f9d6615-e1b2-4dc2-b93a-204b541bf93a)
+- Title: Data-Processing Inequality
+- needs_canonical_source: False
+
+## [2026-06-08] committed | result
+- Committed: data-processing-inequality → results/data-processing-inequality.md
+- IRI: pkis:result:data-processing-inequality
