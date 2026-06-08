@@ -20,6 +20,8 @@ id: pkis:concept:lyapunov-function
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- hopfield-network-capacity
 related_concepts: []
 sources:
 - mackay-itila-ch42
@@ -49,4 +51,5 @@ The Lyapunov/energy view is what *justifies* using a Hopfield network as a memor
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[hopfield-network-capacity]] — prerequisite-of: The energy/attractor (Lyapunov) framing underlies the notion of stable states whose existence the capacity analysis counts.
 [To be populated during integration]

@@ -20,6 +20,8 @@ id: pkis:concept:associative-memory
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- hopfield-network
 related_concepts: []
 sources:
 - mackay-itila-ch42
@@ -51,4 +53,5 @@ Associative memory is the striking computational property distinguishing biologi
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[hopfield-network]] — prerequisite-of: Understanding content-addressable memory and Hebbian learning motivates and precedes the Hopfield construction.
 [To be populated during integration]

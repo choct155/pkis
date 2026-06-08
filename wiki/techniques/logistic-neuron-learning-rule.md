@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- single-neuron-classifier
 component_scores:
   alternatives: null
   conditions: null
@@ -19,9 +21,13 @@ id: pkis:technique:logistic-neuron-learning-rule
 knowledge_type: technique
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- backpropagation
 related_concepts: []
 sources:
 - mackay-itila-ch39
+specializes:
+- gradient-descent
 tags:
 - delta-rule
 - error-correction
@@ -31,6 +37,9 @@ tags:
 - weight-decay
 title: Logistic-Neuron Gradient-Descent Learning Rule
 understanding: 0
+uses:
+- cross-entropy-loss
+- regularization
 ---
 
 ## Definition
@@ -54,4 +63,9 @@ This is the prototype of all neural-net training: the error-times-input update a
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[backpropagation]] — prerequisite-of: The single-neuron error-times-input gradient is the base case generalized by backpropagation to multilayer nets.
+- [[regularization]] — uses: Weight decay (L2) is added to the error to curb overfitting on linearly separable data.
+- [[cross-entropy-loss]] — uses: The objective minimized is the cross-entropy / relative-entropy error between targets and neuron outputs.
+- [[gradient-descent]] — specializes: On-line (delta) and batch updates are stochastic and full-batch gradient descent on the cross-entropy error.
+- [[single-neuron-classifier]] — applies: The learning rule trains the single-neuron classifier by adjusting its weights.
 [To be populated during integration]

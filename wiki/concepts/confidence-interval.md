@@ -16,6 +16,8 @@ date_updated: '2026-06-08'
 domain:
 - bayesian-stats
 id: pkis:concept:confidence-interval
+instantiates:
+- sampling-theory
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
@@ -48,4 +50,5 @@ Let $\theta$ be an integer and $x_1,x_2$ each equal $\theta$ or $\theta+1$ with 
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[sampling-theory]] — instantiates: Confidence intervals are the sampling-theory device for interval estimation, with frequency-coverage semantics.
 [To be populated during integration]

@@ -19,6 +19,8 @@ id: pkis:concept:expected-utility-theory
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- value-of-information
 related_concepts: []
 sources:
 - mackay-itila-ch36
@@ -30,6 +32,8 @@ tags:
 - rationality
 title: Expected Utility Theory
 understanding: 0
+uses:
+- bayesian-inference
 ---
 
 ## Definition
@@ -50,4 +54,6 @@ Expected utility is the substrate on which all of Bayesian decision theory rests
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[value-of-information]] — prerequisite-of: VoI is defined as a difference in expected utilities, so EU theory is logically prior.
+- [[bayesian-inference]] — uses: The posterior P(x|a) supplied by Bayesian inference is integrated against the utility to score each action.
 [To be populated during integration]

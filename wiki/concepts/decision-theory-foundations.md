@@ -28,6 +28,8 @@ tags:
 - actions-under-uncertainty
 title: Decision Theory Foundations
 understanding: 0
+uses:
+- expected-utility-theory
 ---
 
 ## Definition
@@ -37,6 +39,7 @@ The framework for choosing actions under uncertainty by minimizing expected loss
 - [[berger-statistical-1985]] — canonical source
 
 ## Connections
+- [[expected-utility-theory]] — uses: The foundations select the action maximising expected utility; EU theory is the underlying choice principle.
 [To be populated during integration]
 
 ## Needs Canonical Source

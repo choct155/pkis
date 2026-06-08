@@ -8,6 +8,9 @@ component_scores:
   purpose: null
   scope: null
   structure: null
+contrasts-with:
+- bayesian-inference
+- likelihood-principle
 coverage: 1
 date_created: '2026-06-08'
 date_updated: '2026-06-08'
@@ -47,4 +50,6 @@ Because the $p$-value integrates over the whole sample space (outcomes that did 
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[likelihood-principle]] — contrasts-with: p-values condition on the whole sample space, including outcomes that did not occur, directly violating the likelihood principle.
+- [[bayesian-inference]] — contrasts-with: The two schools of statistics: frequency-based long-run guarantees vs. probability-as-degree-of-belief conditioned on the data in hand.
 [To be populated during integration]

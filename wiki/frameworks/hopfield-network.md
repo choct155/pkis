@@ -15,12 +15,17 @@ domain:
 - deep-learning
 - statistical-learning
 id: pkis:framework:hopfield-network
+instantiates:
+- associative-memory
 knowledge_type: framework
 maturity: evolving
 needs_canonical_source: false
 related_concepts: []
 sources:
 - mackay-itila-ch42
+specializes:
+- ising-model
+- neural-networks
 tags:
 - hopfield-network
 - feedback-network
@@ -30,6 +35,8 @@ tags:
 - attractor-network
 title: Hopfield Network
 understanding: 0
+uses:
+- lyapunov-function
 ---
 
 ## Definition
@@ -49,4 +56,8 @@ The Hopfield network is the canonical *energy-based, attractor* neural model: it
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[neural-networks]] — specializes: It is the canonical fully-connected, symmetric-weight feedback (recurrent) neural network.
+- [[ising-model]] — specializes: The Hopfield energy is an Ising Hamiltonian (w plays the role of couplings J); continuous Hopfield updates are its mean-field equations.
+- [[lyapunov-function]] — uses: Convergence and the attractor/optimizer interpretation rest on the variational free energy being a Lyapunov function of the dynamics.
+- [[associative-memory]] — instantiates: A Hopfield network is the canonical realization of a content-addressable associative memory via attractor pattern-completion.
 [To be populated during integration]

@@ -10,6 +10,8 @@ component_scores:
   prerequisites: null
   scope: null
   transfer: null
+contrasts-with:
+- expected-utility-theory
 coverage: 1
 date_created: '2026-06-01'
 date_updated: '2026-06-02'
@@ -37,6 +39,7 @@ The probability-weighted average loss of a decision under a loss function — th
 - [[berger-statistical-1985]] — canonical source
 
 ## Connections
+- [[expected-utility-theory]] — contrasts-with: Expected loss is the pessimist's dual L = -U; minimising one is maximising the other.
 [To be populated during integration]
 
 ## Needs Canonical Source

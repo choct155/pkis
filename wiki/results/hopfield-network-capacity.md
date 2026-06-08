@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- hopfield-network
 component_scores:
   conditions: null
   implications: null
@@ -29,6 +31,8 @@ tags:
 - amit-gutfreund-sompolinsky
 title: Capacity of the Hopfield Network (0.138N)
 understanding: 0
+uses:
+- ising-model
 ---
 
 ## Definition
@@ -50,4 +54,6 @@ The $0.138I$ result quantifies a phase transition between *working memory* and *
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[ising-model]] — uses: The 0.138I transition is located with spin-glass statistical-physics methods; failure states are spin-glass states.
+- [[hopfield-network]] — applies: Quantifies how many random patterns a Hebb-rule Hopfield network can store (~0.138 N) before catastrophic failure.
 [To be populated during integration]

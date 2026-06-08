@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- evidence-framework
 component_scores:
   application: null
   boundary: null
@@ -17,12 +19,16 @@ domain:
 - deep-learning
 - bayesian-stats
 id: pkis:concept:weight-decay-as-prior
+instantiates:
+- learning-as-inference
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
 related_concepts: []
 sources:
 - mackay-itila-ch41
+specializes:
+- regularization
 tags:
 - weight-decay
 - gaussian-prior
@@ -31,6 +37,8 @@ tags:
 - hyperparameter
 title: Weight Decay as a Gaussian Prior
 understanding: 0
+uses:
+- gaussian-distribution
 ---
 
 ## Definition
@@ -50,4 +58,8 @@ It dissolves the apparent arbitrariness of weight decay. Choosing a regularizer 
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[evidence-framework]] — applies: Treating alpha as inverse prior variance lets the evidence framework infer it from data.
+- [[gaussian-distribution]] — uses: The implied prior is an isotropic Gaussian with variance 1/alpha.
+- [[regularization]] — specializes: Gives the Bayesian reading of the L2/weight-decay regularizer specifically.
+- [[learning-as-inference]] — instantiates: The quadratic regularizer is the concrete prior in the learning-as-inference correspondence.
 [To be populated during integration]

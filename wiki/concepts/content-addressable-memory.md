@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- neural-networks
 component_scores:
   application: null
   boundary: null
@@ -10,6 +12,8 @@ component_scores:
   prerequisites: null
   scope: null
   transfer: null
+contrasts-with:
+- hash-table
 coverage: 1
 date_created: '2026-06-08'
 date_updated: '2026-06-08'
@@ -46,4 +50,6 @@ Content-addressability reframes "memory" as an inference problem — completing 
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[hash-table]] — contrasts-with: Hash tables give fast address-based lookup keyed by an arbitrary hash of a key; content-addressable memory instead retrieves by partial content and degrades gracefully, the properties MacKay shows address-based schemes lack.
+- [[neural-networks]] — applies: Associative neural network memories (e.g. Hopfield nets) are the canonical realization of content-addressable storage; MacKay introduces CAM precisely to motivate these models.
 [To be populated during integration]

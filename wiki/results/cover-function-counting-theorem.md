@@ -17,6 +17,8 @@ id: pkis:result:cover-function-counting-theorem
 knowledge_type: result
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- capacity-of-a-single-neuron
 related_concepts: []
 sources:
 - mackay-itila-ch40
@@ -29,6 +31,8 @@ tags:
 - perceptron
 title: Cover's Function-Counting Theorem
 understanding: 0
+uses:
+- linear-algebra
 ---
 
 ## Definition
@@ -48,4 +52,6 @@ It gives an exact combinatorial count of the expressive power of a linear classi
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[linear-algebra]] — uses: Weight-space hyperplane arrangement and general position are linear-algebraic notions.
+- [[capacity-of-a-single-neuron]] — prerequisite-of: The function count T(N,K) and its N=2K phase transition directly yield the two-bits-per-weight capacity.
 [To be populated during integration]

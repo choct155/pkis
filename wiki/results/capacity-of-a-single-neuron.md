@@ -1,6 +1,10 @@
 ---
 aliases: []
 also_type: []
+analogous-to:
+- channel-capacity
+applies:
+- neural-networks
 component_scores:
   conditions: null
   implications: null
@@ -14,6 +18,8 @@ domain:
 - deep-learning
 - statistical-learning
 id: pkis:result:capacity-of-a-single-neuron
+instantiates:
+- phase-transition
 knowledge_type: result
 maturity: evolving
 needs_canonical_source: false
@@ -47,4 +53,7 @@ It quantifies how much a perceptron can *memorise*, not generalise, and recasts 
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[phase-transition]] — instantiates: The realisable fraction T(N,K)/2^N drops catastrophically at N=2K, a sharp phase transition.
+- [[neural-networks]] — applies: Quantifies the memory (not generalisation) capacity of a single-neuron network.
+- [[channel-capacity]] — analogous-to: Weights play the role of a communication channel; capacity is the max N storable with small error, by analogy to Shannon's channel capacity.
 [To be populated during integration]

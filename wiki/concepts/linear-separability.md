@@ -20,6 +20,9 @@ id: pkis:concept:linear-separability
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- cover-function-counting-theorem
+- support-vector-machines
 related_concepts: []
 sources:
 - mackay-itila-ch40
@@ -51,4 +54,6 @@ Linear separability is the dividing line between what a perceptron can and canno
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[support-vector-machines]] — prerequisite-of: Margin-based classifiers build directly on the separability of dichotomies by hyperplanes.
+- [[cover-function-counting-theorem]] — prerequisite-of: T(N,K) counts exactly the linearly separable dichotomies.
 [To be populated during integration]

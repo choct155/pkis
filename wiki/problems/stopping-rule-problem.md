@@ -1,11 +1,15 @@
 ---
 aliases: []
 also_type: []
+applies:
+- hypothesis-testing
 component_scores:
   formulation: null
   instances: null
   solution_landscape: null
   why_hard: null
+contrasts-with:
+- likelihood-principle
 coverage: 1
 date_created: '2026-06-08'
 date_updated: '2026-06-08'
@@ -45,4 +49,6 @@ MacKay's spy/janitor thought experiments — onlookers updating beliefs as tosse
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[hypothesis-testing]] — applies: The problem arises within significance testing: the relevant sampling distribution, and hence the p-value, depends on the experimenter's stopping rule.
+- [[likelihood-principle]] — contrasts-with: The stopping-rule dependence of p-values is precisely the violation that the likelihood principle forbids; Bayesian inference is invariant to the stopping rule.
 [To be populated during integration]

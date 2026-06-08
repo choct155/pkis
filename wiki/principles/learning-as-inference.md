@@ -6,6 +6,8 @@ component_scores:
   justification: null
   statement: null
   violations: null
+contrasts-with:
+- maxima-are-atypical
 coverage: 1
 date_created: '2026-06-08'
 date_updated: '2026-06-08'
@@ -16,9 +18,13 @@ id: pkis:principle:learning-as-inference
 knowledge_type: principle
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- bayesian-neural-networks
 related_concepts: []
 sources:
 - mackay-itila-ch41
+specializes:
+- bayesian-inference
 tags:
 - map-estimation
 - regularization
@@ -27,6 +33,8 @@ tags:
 - probabilistic-interpretation
 title: Learning as Inference
 understanding: 0
+uses:
+- maximum-likelihood-estimation
 ---
 
 ## Definition
@@ -46,4 +54,8 @@ The equivalence turns a heuristic recipe (pick a loss, add a penalty, descend) i
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[maxima-are-atypical]] — contrasts-with: Identifies training output as the mode w_MP, which the typical-set argument shows is unrepresentative.
+- [[bayesian-neural-networks]] — prerequisite-of: Reinterpreting NN training as inference is the conceptual entry point to placing distributions over weights.
+- [[maximum-likelihood-estimation]] — uses: The data-fit term is minus the log likelihood; minimizing it alone is MLE, and adding the prior makes it MAP.
+- [[bayesian-inference]] — specializes: Learning-as-inference is the application of Bayesian parameter inference to the model-training objective.
 [To be populated during integration]

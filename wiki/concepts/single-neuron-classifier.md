@@ -17,9 +17,13 @@ domain:
 - deep-learning
 - statistical-learning
 id: pkis:concept:single-neuron-classifier
+instantiates:
+- logistic-regression
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- neural-networks
 related_concepts: []
 sources:
 - mackay-itila-ch39
@@ -32,6 +36,8 @@ tags:
 - feedforward
 title: Single Neuron as a Classifier
 understanding: 0
+uses:
+- activation-functions
 ---
 
 ## Definition
@@ -49,4 +55,7 @@ The single neuron is the conceptual seed of all of deep learning: networks are b
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[activation-functions]] — uses: The neuron's output is an activation function (sigmoid, tanh, threshold, linear) of the weighted sum.
+- [[neural-networks]] — prerequisite-of: Multi-layer neural networks are built by composing single neurons; the neuron is the atomic unit.
+- [[logistic-regression]] — instantiates: A logistic single neuron is exactly logistic regression: same model, objective, and gradient.
 [To be populated during integration]
