@@ -2181,3 +2181,12 @@
 ## [2026-06-08] committed | technique
 - Committed: k-means-clustering → techniques/k-means-clustering.md
 - IRI: pkis:technique:k-means-clustering
+
+## [2026-06-08] staged | node-stub (technique)
+- Staged: soft-k-means (id: 9e5dfd9d-3a00-4aa5-ac2d-0cd5a60493aa)
+- Title: Soft K-means and Responsibilities
+- needs_canonical_source: False
+
+## [2026-06-08] committed | technique
+- Committed: soft-k-means → techniques/soft-k-means.md
+- IRI: pkis:technique:soft-k-means

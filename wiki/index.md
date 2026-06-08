@@ -438,6 +438,7 @@
 - [[market-vs-hierarchy]] — Coase/Williamson: transactions governed by price signals (markets) vs. managerial direction (firms) (corporate-finance) (2026-05-20)
 
 ## Techniques
+- [[soft-k-means]] — Soft K-means and Responsibilities (statistical-learning, bayesian-stats) (2026-06-08)
 - [[k-means-clustering]] — K-means Clustering (statistical-learning, bayesian-stats) (2026-06-08)
 - [[bayesian-codebreaking]] — Bayesian Codebreaking (Banburismus) (information-theory) (2026-06-08)
 - [[min-sum-algorithm]] — Min-Sum (Viterbi) Algorithm (information-theory, bayesian-stats) (2026-06-08)
