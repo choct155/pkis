@@ -1202,3 +1202,56 @@
 
 ## [2026-06-07] edit | edit_node
 - pkis:result:session-2026-06-07: fields=['session_type', 'duration_estimate', 'maturity'] sections=[]
+
+## [2026-06-07] edges | add_connections
+- pkis:result:session-2026-06-07 —applies→ mcmc
+- pkis:result:session-2026-06-07 —applies→ gibbs-sampler
+- pkis:result:session-2026-06-07 —applies→ hmc
+- pkis:result:session-2026-06-07 —applies→ mean-field-approximation
+- pkis:result:session-2026-06-07 —applies→ variational-inference
+- pkis:result:session-2026-06-07 —applies→ coordinate-ascent-vi
+- pkis:result:session-2026-06-07 —applies→ variational-graph-traversal
+- pkis:result:session-2026-06-07 —applies→ graph-schema-expressivity
+- pkis:result:session-2026-06-07 —applies→ graceful-degradation-graph-incompleteness
+- pkis:result:session-2026-06-07 —applies→ understanding-assessment-protocol
+- pkis:result:session-2026-06-07 —applies→ hamiltonian-classical-mechanics
+- pkis:result:session-2026-06-07 —applies→ posterior-geometry-coordinate-systems
+- pkis:result:session-2026-06-07 —applies→ particle-filter
+- pkis:result:session-2026-06-07 —applies→ ablation-study
+- pkis:result:session-2026-06-07 —applies→ sun-thinkongraph-2023
+- pkis:result:session-2026-06-07 —applies→ mohamed-monte-2020
+- pkis:result:session-2026-06-07 —applies→ sutton-policy-2018
+
+## [2026-06-08] staged | node-stub (concept)
+- Staged: typical-set (id: e7329e7a-6183-437c-80a3-b2eb046d601c)
+- Title: Typical Set
+- needs_canonical_source: False
+
+## [2026-06-08] staged | node-stub (concept)
+- Staged: shannon-information-content (id: f4b4d7b9-d27c-486a-a8b8-a97a0d167c85)
+- Title: Shannon Information Content
+- needs_canonical_source: False
+
+## [2026-06-08] staged | node-stub (result)
+- Staged: source-coding-theorem (id: b7bd17fb-5b59-42be-9e7a-647cf1b17f4d)
+- Title: Source Coding Theorem (Shannon's First Theorem)
+- needs_canonical_source: False
+
+## [2026-06-08] staged | node-stub (result)
+- Staged: kraft-inequality (id: c18e8588-0b78-43c8-9657-4baec7a975ca)
+- Title: Kraft Inequality
+- needs_canonical_source: False
+
+## [2026-06-08] staged | node-stub (technique)
+- Staged: huffman-coding (id: 8e0465ad-357c-4efa-a4e3-51798aa6a034)
+- Title: Huffman Coding
+- needs_canonical_source: False
+
+## [2026-06-08] staged | node-stub (technique)
+- Staged: arithmetic-coding (id: 33252241-d9ee-442d-b857-f05817ed8195)
+- Title: Arithmetic Coding
+- needs_canonical_source: False
+
+## [2026-06-08] committed | concept
+- Committed: typical-set → concepts/typical-set.md
+- IRI: pkis:concept:typical-set
