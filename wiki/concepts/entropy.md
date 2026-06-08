@@ -3,7 +3,7 @@ aliases: []
 also_type: []
 coverage: 1
 date_created: 2026-05-20
-date_updated: 2026-05-20
+date_updated: '2026-06-08'
 domain:
 - information-theory
 - bayesian-stats
@@ -36,3 +36,8 @@ Shannon entropy H(X) = −∑ p_i log p_i measures the average uncertainty (or i
 
 ## Reading Path
 - [[lange-applied-probability-ch16]] (unread) — Shannon entropy, maximum entropy, applications, EM reinterpretation from information-theoretic perspective
+
+## Decomposability (chain rule)
+The entropy obeys a recursive **decomposability** property: revealing an outcome in stages gives
+$$H(\mathbf{p}) = H(p_1, 1-p_1) + (1-p_1)\,H\!\left(\tfrac{p_2}{1-p_1},\ldots,\tfrac{p_I}{1-p_1}\right),$$
+and more generally splitting the alphabet into groups adds the group-selection entropy plus the probability-weighted within-group entropies. This is the discrete root of the chain rule $H(X,Y)=H(X)+H(Y\mid X)$ and makes many entropy computations easy.

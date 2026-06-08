@@ -1589,3 +1589,6 @@
 
 ## [2026-06-08] edit | edit_node
 - pkis:concept:binary-symmetric-channel: fields=[] sections=["MacKay's framing"]
+
+## [2026-06-08] edit | edit_node
+- pkis:concept:entropy: fields=[] sections=['Decomposability (chain rule)']
