@@ -405,6 +405,7 @@
 - [[market-vs-hierarchy]] — Coase/Williamson: transactions governed by price signals (markets) vs. managerial direction (firms) (corporate-finance) (2026-05-20)
 
 ## Techniques
+- [[syndrome-decoding]] — Syndrome Decoding (information-theory) (2026-06-08)
 - [[hamming-7-4-code]] — (7,4) Hamming Code (information-theory) (2026-06-08)
 - [[repetition-codes]] — Repetition Codes (information-theory) (2026-06-08)
 - [[arithmetic-coding]] — Arithmetic Coding (information-theory) (2026-06-08)

@@ -1322,3 +1322,12 @@
 ## [2026-06-08] committed | technique
 - Committed: hamming-7-4-code → techniques/hamming-7-4-code.md
 - IRI: pkis:technique:hamming-7-4-code
+
+## [2026-06-08] staged | node-stub (technique)
+- Staged: syndrome-decoding (id: d6e0d6f1-bbf5-4c13-8d95-b7f759156651)
+- Title: Syndrome Decoding
+- needs_canonical_source: False
+
+## [2026-06-08] committed | technique
+- Committed: syndrome-decoding → techniques/syndrome-decoding.md
+- IRI: pkis:technique:syndrome-decoding
