@@ -2693,3 +2693,12 @@
 ## [2026-06-08] committed | concept
 - Committed: variational-free-energy → concepts/variational-free-energy.md
 - IRI: pkis:concept:variational-free-energy
+
+## [2026-06-08] staged | node-stub (concept)
+- Staged: variational-over-compactness (id: 5a7a7d21-c18b-4270-8dbe-9af469596068)
+- Title: Variational Over-Compactness (Zero-Forcing)
+- needs_canonical_source: False
+
+## [2026-06-08] committed | concept
+- Committed: variational-over-compactness → concepts/variational-over-compactness.md
+- IRI: pkis:concept:variational-over-compactness
