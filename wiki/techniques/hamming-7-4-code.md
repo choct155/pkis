@@ -59,3 +59,8 @@ It is the archetypal linear block code: it shows redundancy can be added to *blo
 - [[binary-symmetric-channel]] — uses: Hamming block/bit error rates are derived assuming a binary symmetric channel.
 - [[syndrome-decoding]] — uses: The (7,4) Hamming code is optimally decoded by mapping each of seven non-zero syndromes to a single-bit flip.
 [To be populated during integration]
+
+## Perfection, the hat puzzle, and the Hamming family
+The (7,4) Hamming code is the smallest non-trivial **perfect** code: the sixteen 1-spheres about its codewords tile all $2^7=128$ binary vectors with no overlap, because $1+\binom{7}{1}=2^3$. It generalizes to the family with $M$ parity constraints, blocklength $N=2^M-1$, dimension $K=N-M$, all with $d_{\min}=3$ and $t=1$ (rates $1/3,\,4/7,\,11/15,\,26/31,\dots\to 1$).
+
+This perfection gives a slick solution to **Ebert's hat puzzle**: with $N=2^r-1$ players whose red/blue hats form a random binary vector, each player checks whether flipping his own (unseen) bit would yield a Hamming codeword. A random vector is a codeword with probability $1/(N+1)$ -- in which case everyone guesses and all are wrong -- and otherwise differs from a unique codeword in exactly one bit, so only that one player guesses, correctly. The group wins with probability $N/(N+1)$ (e.g. $7/8$ for seven players).

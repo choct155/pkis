@@ -2001,3 +2001,6 @@
 
 ## [2026-06-08] edit | edit_node
 - pkis:concept:likelihood-ratio-evidence: fields=[] sections=['## Bitwise Confirmation of a Hash Hit']
+
+## [2026-06-08] edit | edit_node
+- pkis:technique:hamming-7-4-code: fields=[] sections=['Perfection, the hat puzzle, and the Hamming family']
