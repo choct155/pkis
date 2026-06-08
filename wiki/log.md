@@ -1604,3 +1604,6 @@
 
 ## [2026-06-08] edit | edit_node
 - pkis:technique:bayesian-model-averaging: fields=[] sections=['Prediction under discrete model uncertainty (MacKay)']
+
+## [2026-06-08] edit | edit_node
+- pkis:technique:maximum-likelihood-estimation: fields=[] sections=['Bayesian critique (MacKay)']
