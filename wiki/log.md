@@ -1313,3 +1313,12 @@
 ## [2026-06-08] committed | technique
 - Committed: repetition-codes → techniques/repetition-codes.md
 - IRI: pkis:technique:repetition-codes
+
+## [2026-06-08] staged | node-stub (technique)
+- Staged: hamming-7-4-code (id: c78378f8-47d1-4523-813d-0691ff002351)
+- Title: (7,4) Hamming Code
+- needs_canonical_source: False
+
+## [2026-06-08] committed | technique
+- Committed: hamming-7-4-code → techniques/hamming-7-4-code.md
+- IRI: pkis:technique:hamming-7-4-code
