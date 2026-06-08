@@ -2163,3 +2163,12 @@
 ## [2026-06-08] committed | result
 - Committed: maximum-tolerable-mutation-rate → results/maximum-tolerable-mutation-rate.md
 - IRI: pkis:result:maximum-tolerable-mutation-rate
+
+## [2026-06-08] staged | node-stub (concept)
+- Staged: clustering (id: 958ce90a-c7cf-4ec8-a4c8-390c7f9ba513)
+- Title: Clustering
+- needs_canonical_source: False
+
+## [2026-06-08] committed | concept
+- Committed: clustering → concepts/clustering.md
+- IRI: pkis:concept:clustering
