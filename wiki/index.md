@@ -413,6 +413,7 @@
 - [[market-vs-hierarchy]] — Coase/Williamson: transactions governed by price signals (markets) vs. managerial direction (firms) (corporate-finance) (2026-05-20)
 
 ## Techniques
+- [[self-delimiting-integer-codes]] — Self-Delimiting Codes for Integers (information-theory) (2026-06-08)
 - [[lempel-ziv-coding]] — Lempel–Ziv Coding (information-theory) (2026-06-08)
 - [[bayesian-model-comparison]] — Bayesian Model Comparison (bayesian-stats) (2026-06-08)
 - [[syndrome-decoding]] — Syndrome Decoding (information-theory) (2026-06-08)

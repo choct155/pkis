@@ -1493,3 +1493,12 @@
 ## [2026-06-08] committed | principle
 - Committed: compression-as-probabilistic-modelling → principles/compression-as-probabilistic-modelling.md
 - IRI: pkis:principle:compression-as-probabilistic-modelling
+
+## [2026-06-08] staged | node-stub (technique)
+- Staged: self-delimiting-integer-codes (id: 50e4557b-c10c-43c3-9eb3-b7a28ae644c9)
+- Title: Self-Delimiting Codes for Integers
+- needs_canonical_source: False
+
+## [2026-06-08] committed | technique
+- Committed: self-delimiting-integer-codes → techniques/self-delimiting-integer-codes.md
+- IRI: pkis:technique:self-delimiting-integer-codes
