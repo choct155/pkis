@@ -2283,3 +2283,6 @@
 
 ## [2026-06-08] edit | edit_node
 - pkis:concept:markov-chains: fields=[] sections=['Maximum-Entropy Chains on Constrained State Machines']
+
+## [2026-06-08] edit | edit_node
+- pkis:concept:likelihood-ratio-evidence: fields=[] sections=['Bans, Decibans, and Banburismus']

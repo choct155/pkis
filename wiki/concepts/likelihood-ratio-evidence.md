@@ -52,3 +52,8 @@ Confusing $P(D\mid H)$ with $P(H\mid D)$ corrupts this reasoning. The wife-beate
 
 ## Bitwise Confirmation of a Hash Hit
 When a hash table returns a candidate record $s$, comparing the stored $\mathbf{x}^{(s)}$ against the query $\mathbf{x}$ bit by bit accumulates Bayesian evidence. Under $H_0: \mathbf{x}^{(s)}=\mathbf{x}$ versus $H_1: \mathbf{x}^{(s)}\neq\mathbf{x}$ (random strings), each matching bit contributes likelihood ratio $\frac{P(\text{match}\mid H_0)}{P(\text{match}\mid H_1)} = \frac{1}{1/2} = 2$. After $r$ matching bits the odds are $2^r:1$, so just 30 matching bits give billion-to-one confidence that the correct entry was retrieved — long before checking all $N$ bits. The same logic scores a casting-out-nines check (one digit match $\Rightarrow$ 9:1 evidence the addition is correct).
+
+## Bans, Decibans, and Banburismus
+Weights of evidence inherit units from the logarithm base: $\log_2$ gives **bits** (a.k.a. shannons), $\log_e$ gives **nats**, and $\log_{10}$ gives **bans**, with one tenth of a ban being a **deciban** — named for Banbury, where the tally sheets for Bletchley Park's *Banburismus* were printed, and judged the smallest weight of evidence a human can discern.
+
+The codebreaking application mirrors the bitwise hash-hit logic above. To test whether two Enigma cyphertexts share a machine state, each synchronized character match contributes $\log mA$ in favour of the 'same-state' hypothesis (with match probability $m=\sum_i p_i^2 \approx 2/26$ for English), each non-match a small amount against it. Summed over a few hundred characters, this weak per-symbol signal accumulates to decisive odds — about 20 decibans (100:1) per 400 characters. See [[bayesian-codebreaking]].
