@@ -2537,3 +2537,6 @@
 
 ## [2026-06-08] edit | edit_node
 - pkis:technique:bayesian-model-comparison: fields=[] sections=['Minimum Description Length: the coding view']
+
+## [2026-06-08] edit | edit_node
+- pkis:concept:marginal-likelihood: fields=[] sections=['Laplace approximation: best-fit likelihood times Occam factor']
