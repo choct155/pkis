@@ -80,3 +80,8 @@ $$p_B\le \exp[-N E_r(R)],$$
 where $E_r(R)$, the **random-coding exponent** (or reliability function), is a convex $\smile$, decreasing, positive function of $R$ on $0\le R<C$, vanishing as $R\to C$. A matching lower bound,
 $$p_B\gtrsim \exp[-N E_{sp}(R)],$$
 uses the **sphere-packing exponent** $E_{sp}(R)$. These exponents say error decays exponentially in $N$ for any fixed $R<C$, but the closer $R$ is to $C$ the slower the decay. Even for the binary symmetric channel there is no closed form for $E_r(R)$, and a random code of large $N$ costs exponentially to implement — which is why practical coding theory matters.
+
+## ## Geometric proof: sphere packing
+MacKay gives an intuitive proof of the coding theorem for the Gaussian channel via **sphere packing** in $N$-dimensional signal space. For large $N$ the noise puts the output $\mathbf y$ within a sphere of radius $\sqrt{N\sigma^2}$ about $\mathbf x$, while all probable outputs lie within a sphere of radius $\sqrt{N(v+\sigma^2)}$ about the origin. The number of non-confusable (non-overlapping) inputs is at most the ratio of sphere volumes,
+$$S\le\Big(\tfrac{\sqrt{N(v+\sigma^2)}}{\sqrt{N\sigma^2}}\Big)^{\!N},\qquad C=\tfrac1N\log S\le\tfrac12\log\!\big(1+\tfrac{v}{\sigma^2}\big).$$
+A more careful argument establishes equality, recovering the Gaussian-channel capacity geometrically.

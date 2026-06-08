@@ -1995,3 +1995,6 @@
 
 ## [2026-06-08] edit | edit_node
 - pkis:concept:gaussian-distribution: fields=[] sections=['## Precisions add: combining Gaussian evidence']
+
+## [2026-06-08] edit | edit_node
+- pkis:result:noisy-channel-coding-theorem: fields=[] sections=['## Geometric proof: sphere packing']
