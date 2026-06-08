@@ -85,3 +85,8 @@ uses the **sphere-packing exponent** $E_{sp}(R)$. These exponents say error deca
 MacKay gives an intuitive proof of the coding theorem for the Gaussian channel via **sphere packing** in $N$-dimensional signal space. For large $N$ the noise puts the output $\mathbf y$ within a sphere of radius $\sqrt{N\sigma^2}$ about $\mathbf x$, while all probable outputs lie within a sphere of radius $\sqrt{N(v+\sigma^2)}$ about the origin. The number of non-confusable (non-overlapping) inputs is at most the ratio of sphere volumes,
 $$S\le\Big(\tfrac{\sqrt{N(v+\sigma^2)}}{\sqrt{N\sigma^2}}\Big)^{\!N},\qquad C=\tfrac1N\log S\le\tfrac12\log\!\big(1+\tfrac{v}{\sigma^2}\big).$$
 A more careful argument establishes equality, recovering the Gaussian-channel capacity geometrically.
+
+## ## Random-Coding Proof via Linear Codes (BSC)
+Shannon's original achievability proof averages over *all* codes; MacKay's Ch.14 sharpens this for the BSC to the **linear** sub-ensemble. Define a code by a random binary parity-check matrix $\mathbf{H}$ ($M\times N$, rate $R = 1 - M/N$). Syndrome decoding turns reception into recovering the noise $\mathbf{x}$ from $\mathbf{z}=\mathbf{Hx}$. Averaging the typical-set decoder's type-II error over $\mathbf{H}$ uses the single ensemble identity
+$$\langle \mathbb{1}[\mathbf{Hv}=0]\rangle_{\mathbf{H}} = 2^{-M}\quad(\mathbf{v}\neq\mathbf{0}),$$
+giving $\bar P^{(\mathrm{II})} \le 2^{NH(X)}2^{-M}\to 0$ whenever $R < 1 - H_2(f) = C_{\text{BSC}}$. Thus *almost all* linear codes achieve capacity — a stronger, fully elementary form of the achievability half of the theorem.
