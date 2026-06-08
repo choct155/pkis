@@ -2911,3 +2911,12 @@
 ## [2026-06-08] committed | problem
 - Committed: stopping-rule-problem → problems/stopping-rule-problem.md
 - IRI: pkis:problem:stopping-rule-problem
+
+## [2026-06-08] staged | node-stub (concept)
+- Staged: content-addressable-memory (id: 1a0cb696-d2fd-437a-be64-33a5f2a9af20)
+- Title: Content-Addressable Memory
+- needs_canonical_source: False
+
+## [2026-06-08] committed | concept
+- Committed: content-addressable-memory → concepts/content-addressable-memory.md
+- IRI: pkis:concept:content-addressable-memory
