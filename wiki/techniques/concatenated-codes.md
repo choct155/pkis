@@ -30,6 +30,8 @@ tags:
 - mackay
 title: Concatenated Codes and Interleaving
 understanding: 0
+uses:
+- linear-block-code
 ---
 
 ## Definition
@@ -45,4 +47,5 @@ Concatenation + interleaving is how real systems beat **burst-error** channels: 
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[linear-block-code]] — uses: concatenation composes linear inner and outer codes into a practically-decodable code
 [To be populated during integration]

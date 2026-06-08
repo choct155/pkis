@@ -27,6 +27,8 @@ tags:
 - channel-coding
 title: Fano's Inequality
 understanding: 0
+uses:
+- channel-capacity
 ---
 
 ## Definition
@@ -48,4 +50,5 @@ Fano's inequality, paired with the data processing inequality, supplies the **co
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[channel-capacity]] — uses: Fano's bound is closed against I(x;y) <= NC to yield the converse boundary.
 [To be populated during integration]

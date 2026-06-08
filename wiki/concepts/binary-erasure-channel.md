@@ -10,12 +10,16 @@ component_scores:
   prerequisites: null
   scope: null
   transfer: null
+contrasts-with:
+- binary-symmetric-channel
 coverage: 1
 date_created: '2026-06-08'
 date_updated: '2026-06-08'
 domain:
 - information-theory
 id: pkis:concept:binary-erasure-channel
+instantiates:
+- discrete-memoryless-channel
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
@@ -51,4 +55,6 @@ The BEC models packet loss in networks and is the canonical example where capaci
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[binary-symmetric-channel]] — contrasts-with: Erasures announce their location (C=1-f) vs hidden flips (C=1-H2(f)).
+- [[discrete-memoryless-channel]] — instantiates: The BEC is a specific DMC with an erasure output symbol.
 [To be populated during integration]

@@ -19,6 +19,8 @@ domain:
 id: pkis:technique:repetition-codes
 instantiates:
 - maximum-likelihood-estimation
+- linear-block-code
+- code-goodness-taxonomy
 knowledge_type: technique
 maturity: evolving
 needs_canonical_source: false
@@ -56,6 +58,8 @@ Repetition codes are the baseline against which all coding is measured. They mak
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[code-goodness-taxonomy]] — instantiates: repetition codes are the canonical example of a 'bad' code family
+- [[linear-block-code]] — instantiates: repetition codes are linear block codes (and the textbook example of a 'bad' code)
 - [[maximum-likelihood-estimation]] — instantiates: Majority-vote decoding is the maximum-likelihood decoder for R3 over a BSC.
 - [[binary-symmetric-channel]] — uses: Error probability of R_N is computed for the binary symmetric channel with flip probability f.
 - [[hamming-7-4-code]] — contrasts-with: Both correct errors at O(f^2), but the Hamming code achieves rate 4/7 versus the repetition code's 1/3.

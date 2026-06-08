@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- named-entity-disambiguation
 component_scores:
   alternatives: null
   conditions: null
@@ -30,6 +32,8 @@ tags:
 - mackay-itila
 title: Hash Table for Information Retrieval
 understanding: 0
+uses:
+- hash-function
 ---
 
 ## Definition
@@ -50,4 +54,6 @@ The hash table is the canonical near-$O(1)$ retrieval structure and a concrete i
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[named-entity-disambiguation]] — applies: Surface-collision handling in NED mirrors hash-table collision resolution: distinct entities sharing a key.
+- [[hash-function]] — uses: A hash table is built on a hash function that maps keys to slots.
 [To be populated during integration]

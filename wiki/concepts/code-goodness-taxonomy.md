@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- noisy-channel-coding-theorem
 component_scores:
   application: null
   boundary: null
@@ -50,4 +52,5 @@ This taxonomy frames the central engineering problem of coding theory: existence
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[noisy-channel-coding-theorem]] — applies: the very-good/good/bad axis is defined relative to achieving capacity as promised by the coding theorem
 [To be populated during integration]

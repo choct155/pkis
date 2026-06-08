@@ -19,6 +19,8 @@ id: pkis:concept:minimum-distance
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- perfect-codes
 related_concepts: []
 sources:
 - mackay-itila-ch13
@@ -30,6 +32,8 @@ tags:
 - binary-codes
 title: Minimum Distance of a Code
 understanding: 0
+uses:
+- weight-enumerator-function
 ---
 
 ## Definition
@@ -52,4 +56,6 @@ Distance is the classical figure of merit in coding theory, but MacKay's central
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[weight-enumerator-function]] — uses: for a linear code d_min is the smallest weight w>0 with A(w)>0.
+- [[perfect-codes]] — prerequisite-of: the t-error-correcting radius defining perfection is t=floor((d-1)/2).
 [To be populated during integration]

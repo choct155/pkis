@@ -34,6 +34,7 @@ title: Channel Capacity
 understanding: 0
 uses:
 - information-theory
+- mutual-information
 ---
 
 ## Definition
@@ -53,6 +54,7 @@ Capacity is the central quantity of information theory: it sets the fundamental 
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[mutual-information]] — uses: C = max over input distributions of mutual information.
 - [[information-theory]] — uses: Capacity is defined via mutual information, a core information-theoretic quantity.
 - [[noisy-channel-coding-theorem]] — prerequisite-of: Capacity is the threshold quantity whose existence and value the coding theorem establishes.
 [To be populated during integration]

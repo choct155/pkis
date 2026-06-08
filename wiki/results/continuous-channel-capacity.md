@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- gaussian-channel
 component_scores:
   conditions: null
   implications: null
@@ -19,6 +21,8 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - mackay-itila-ch11
+specializes:
+- channel-capacity
 tags:
 - channel-capacity
 - shannon-hartley
@@ -46,4 +50,6 @@ This is the single most-cited formula in communication engineering: it sets the 
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[gaussian-channel]] — applies: the Shannon-Hartley law is the rate ceiling of the Gaussian / continuous channel
+- [[channel-capacity]] — specializes: C=(1/2)log(1+v/sigma^2) is the capacity formula for the Gaussian channel
 [To be populated during integration]

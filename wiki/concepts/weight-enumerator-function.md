@@ -19,6 +19,8 @@ id: pkis:concept:weight-enumerator-function
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- bounds-on-binary-codes
 related_concepts: []
 sources:
 - mackay-itila-ch13
@@ -53,4 +55,5 @@ The *whole* weight enumerator -- not just $d_{\min}$ -- governs whether a code i
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[bounds-on-binary-codes]] — prerequisite-of: the random-code enumerator yields the Gilbert-Varshamov distance.
 [To be populated during integration]

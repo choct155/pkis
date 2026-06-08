@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- hamming-7-4-code
 component_scores:
   application: null
   boundary: null
@@ -48,4 +50,5 @@ Good codes need not have good duals -- the classic example being LDPC codes, who
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[hamming-7-4-code]] — applies: the dual of the (7,4) Hamming code is a self-orthogonal code contained within it.
 [To be populated during integration]

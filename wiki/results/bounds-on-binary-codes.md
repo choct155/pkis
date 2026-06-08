@@ -7,6 +7,8 @@ component_scores:
   limitations: null
   proof_sketch: null
   statement: null
+contrasts-with:
+- channel-capacity
 coverage: 1
 date_created: '2026-06-08'
 date_updated: '2026-06-08'
@@ -27,6 +29,9 @@ tags:
 - rate-distance-tradeoff
 title: Bounds on Binary Codes (Sphere-Packing and Gilbert–Varshamov)
 understanding: 0
+uses:
+- minimum-distance
+- weight-enumerator-function
 ---
 
 ## Definition
@@ -55,4 +60,7 @@ Bounded-distance decoding -- and hence any approach worshipping minimum distance
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[channel-capacity]] — contrasts-with: bounded-distance decoders tolerate only f/2, half Shannon's capacity-achieving noise level.
+- [[weight-enumerator-function]] — uses: the GV distance comes from where the expected weight enumerator crosses 1.
+- [[minimum-distance]] — uses: both the sphere-packing and GV bounds constrain the rate-distance trade-off.
 [To be populated during integration]

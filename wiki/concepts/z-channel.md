@@ -10,12 +10,16 @@ component_scores:
   prerequisites: null
   scope: null
   transfer: null
+contrasts-with:
+- binary-symmetric-channel
 coverage: 1
 date_created: '2026-06-08'
 date_updated: '2026-06-08'
 domain:
 - information-theory
 id: pkis:concept:z-channel
+instantiates:
+- discrete-memoryless-channel
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
@@ -52,4 +56,6 @@ The Z channel is MacKay's standard example that the optimal input distribution c
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[binary-symmetric-channel]] — contrasts-with: Asymmetric (non-uniform optimal input) vs symmetric; higher capacity at equal f.
+- [[discrete-memoryless-channel]] — instantiates: The Z channel is a specific asymmetric binary DMC.
 [To be populated during integration]

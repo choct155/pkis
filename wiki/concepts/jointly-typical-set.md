@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- channel-capacity
 component_scores:
   application: null
   boundary: null
@@ -22,6 +24,8 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - mackay-itila-ch10
+specializes:
+- typical-set
 tags:
 - shannon
 - typicality
@@ -48,4 +52,6 @@ Property (3) is the heart of achievability: the chance that a *wrong* codeword l
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[channel-capacity]] — applies: Independent pairs collide in J_N with probability 2^{-NI(X;Y)}, exposing capacity as a collision rate.
+- [[typical-set]] — specializes: Joint typicality applies the typical-set idea to a joint ensemble (XY)^N.
 [To be populated during integration]

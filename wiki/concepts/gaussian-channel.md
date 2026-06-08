@@ -10,18 +10,24 @@ component_scores:
   prerequisites: null
   scope: null
   transfer: null
+contrasts-with:
+- binary-symmetric-channel
 coverage: 1
 date_created: '2026-06-08'
 date_updated: '2026-06-08'
 domain:
 - information-theory
 id: pkis:concept:gaussian-channel
+instantiates:
+- noisy-channel-coding-theorem
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
 related_concepts: []
 sources:
 - mackay-itila-ch11
+specializes:
+- channel-capacity
 tags:
 - continuous-channel
 - awgn
@@ -30,6 +36,8 @@ tags:
 - mackay
 title: Gaussian Channel (AWGN)
 understanding: 0
+uses:
+- gaussian-distribution
 ---
 
 ## Definition
@@ -47,4 +55,8 @@ The Gaussian channel is the bridge from Shannon's discrete theory to physical co
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[binary-symmetric-channel]] — contrasts-with: continuous real-valued AWGN channel vs the discrete binary noisy channel
+- [[noisy-channel-coding-theorem]] — instantiates: the coding theorem is proved for the Gaussian channel via sphere packing, achieving its capacity
+- [[gaussian-distribution]] — uses: additive Gaussian noise defines the channel's conditional distribution P(y|x)
+- [[channel-capacity]] — specializes: the Gaussian channel is a continuous channel whose capacity instantiates the general max-mutual-information definition under a power cost
 [To be populated during integration]

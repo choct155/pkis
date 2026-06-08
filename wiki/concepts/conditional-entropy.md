@@ -19,10 +19,14 @@ id: pkis:concept:conditional-entropy
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- mutual-information
 related_concepts: []
 sources:
 - mackay-itila-ch08
 - mackay-itila-ch09
+specializes:
+- entropy
 tags:
 - entropy
 - conditioning
@@ -49,4 +53,6 @@ Conditional entropy is the residual uncertainty after observation, making it the
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[mutual-information]] — prerequisite-of: I(X;Y)=H(X)-H(X|Y) is defined via conditional entropy.
+- [[entropy]] — specializes: Conditional entropy is the entropy of conditional distributions, averaged over the conditioning variable.
 [To be populated during integration]

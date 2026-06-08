@@ -10,6 +10,8 @@ component_scores:
   prerequisites: null
   scope: null
   transfer: null
+contrasts-with:
+- channel-capacity
 coverage: 1
 date_created: '2026-06-08'
 date_updated: '2026-06-08'
@@ -30,6 +32,8 @@ tags:
 - error-correction
 title: Perfect Codes
 understanding: 0
+uses:
+- minimum-distance
 ---
 
 ## Definition
@@ -47,4 +51,6 @@ Perfect codes would be the ideal solution to Shannon's problem -- if they existe
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[channel-capacity]] — contrasts-with: useful perfect codes don't exist near capacity; reaching Shannon's limit needs decoding past the packing radius.
+- [[minimum-distance]] — uses: perfection means t-spheres (t set by d_min) tile Hamming space without overlap.
 [To be populated during integration]

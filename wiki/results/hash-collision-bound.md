@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- hash-table
 component_scores:
   conditions: null
   implications: null
@@ -48,4 +50,5 @@ This is the **birthday problem** in disguise (cf. the $\sqrt{\,}$ scaling of $2^
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[hash-table]] — applies: The collision bound dictates the table size M needed for collision-free or low-collision operation.
 [To be populated during integration]

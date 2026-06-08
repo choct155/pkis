@@ -15,6 +15,9 @@ date_updated: '2026-06-08'
 domain:
 - information-theory
 id: pkis:technique:hamming-7-4-code
+instantiates:
+- linear-block-code
+- perfect-codes
 knowledge_type: technique
 maturity: evolving
 needs_canonical_source: false
@@ -51,6 +54,8 @@ It is the archetypal linear block code: it shows redundancy can be added to *blo
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[perfect-codes]] — instantiates: the (7,4) Hamming code is the smallest non-trivial perfect binary code.
+- [[linear-block-code]] — instantiates: the (7,4) Hamming code is the canonical small linear block code with generator and parity-check matrices
 - [[binary-symmetric-channel]] — uses: Hamming block/bit error rates are derived assuming a binary symmetric channel.
 - [[syndrome-decoding]] — uses: The (7,4) Hamming code is optimally decoded by mapping each of seven non-zero syndromes to a single-bit flip.
 [To be populated during integration]

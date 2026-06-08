@@ -22,6 +22,8 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - mackay-itila-ch08
+specializes:
+- entropy
 tags:
 - entropy
 - joint-ensemble
@@ -51,4 +53,5 @@ Noisy channels define a joint ensemble of input $x$ and output $y$ that are *dep
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[entropy]] — specializes: Joint entropy is the entropy of the joint ensemble XY.
 [To be populated during integration]

@@ -35,6 +35,8 @@ title: Noisy-Channel Coding Theorem
 understanding: 0
 uses:
 - channel-capacity
+- random-coding-argument
+- fanos-inequality
 ---
 
 ## Definition
@@ -53,6 +55,8 @@ This result created information theory and overturned the prevailing 'no pain, n
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[fanos-inequality]] — uses: The converse combines Fano's inequality with the data processing inequality.
+- [[random-coding-argument]] — uses: Achievability is proved by averaging error over a random ensemble of codes.
 - [[typical-set]] — prerequisite-of: MacKay develops typical sets to prove the coding theorem in later chapters.
 - [[binary-symmetric-channel]] — applies: The theorem holds for any channel, including the binary symmetric channel used throughout the chapter.
 - [[repetition-codes]] — contrasts-with: Repetition codes need rate to vanish for small error; the theorem proves finite rate at vanishing error is achievable.

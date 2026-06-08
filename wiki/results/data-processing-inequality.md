@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- markov-chains
 component_scores:
   conditions: null
   implications: null
@@ -26,6 +28,9 @@ tags:
 - mackay
 title: Data-Processing Inequality
 understanding: 0
+uses:
+- mutual-information
+- chain-rule-for-entropy
 ---
 
 ## Definition
@@ -45,4 +50,7 @@ As MacKay notes, this is as much a caution about the *definition* of information
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[markov-chains]] — applies: Stated for the Markov chain W -> D -> R where W and R are conditionally independent given D.
+- [[chain-rule-for-entropy]] — uses: Proof expands I(W;D,R) two ways using the mutual-information chain rule.
+- [[mutual-information]] — uses: The theorem bounds I(W;R) <= I(W;D) between processed and raw data.
 [To be populated during integration]

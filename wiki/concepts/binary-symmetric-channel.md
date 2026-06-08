@@ -18,6 +18,7 @@ domain:
 id: pkis:concept:binary-symmetric-channel
 instantiates:
 - information-theory
+- discrete-memoryless-channel
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
@@ -52,6 +53,7 @@ The BSC is the canonical testbed of information theory. MacKay frames the book's
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[discrete-memoryless-channel]] — instantiates: The BSC is a specific DMC with a 2x2 transition matrix.
 - [[information-theory]] — instantiates: The BSC is the canonical channel on which information theory's communication problem is posed.
 - [[entropy]] — uses: Channel capacity 1 - H_2(f) is defined via the binary entropy function.
 [To be populated during integration]

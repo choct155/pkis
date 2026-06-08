@@ -30,6 +30,8 @@ tags:
 - mackay
 title: Linear Block Code
 understanding: 0
+uses:
+- noisy-channel-coding-theorem
 ---
 
 ## Definition
@@ -49,4 +51,5 @@ Linearity is the organizing principle of almost all real error-correcting codes:
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[noisy-channel-coding-theorem]] — uses: the coding theorem still holds (non-constructively) for linear codes
 [To be populated during integration]

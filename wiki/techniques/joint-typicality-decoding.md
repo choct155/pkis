@@ -18,6 +18,8 @@ id: pkis:technique:joint-typicality-decoding
 knowledge_type: technique
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- noisy-channel-coding-theorem
 related_concepts: []
 sources:
 - mackay-itila-ch10
@@ -29,6 +31,8 @@ tags:
 - achievability
 title: Joint-Typicality (Typical-Set) Decoding
 understanding: 0
+uses:
+- jointly-typical-set
 ---
 
 ## Definition
@@ -51,4 +55,6 @@ This decoder turns the abstract joint-typicality theorem into the operational cl
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[noisy-channel-coding-theorem]] — prerequisite-of: The decoder is the operational device that makes achievability provable.
+- [[jointly-typical-set]] — uses: The decoder accepts a codeword iff it is jointly typical with the received sequence.
 [To be populated during integration]

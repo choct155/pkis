@@ -23,6 +23,8 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - mackay-itila-ch12
+specializes:
+- hash-function
 tags:
 - cryptography
 - digital-signature
@@ -31,6 +33,8 @@ tags:
 - mackay-itila
 title: One-Way Hash Function
 understanding: 0
+uses:
+- hash-collision-bound
 ---
 
 ## Definition
@@ -52,4 +56,6 @@ The gulf between $2^M$ and $2^{M/2}$ shows why hash sizes for digital signatures
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[hash-collision-bound]] — uses: Collision-attack cost 2^{M/2} comes directly from the birthday-problem collision bound.
+- [[hash-function]] — specializes: A one-way hash is a hash function with the added cryptographic property of being hard to invert.
 [To be populated during integration]

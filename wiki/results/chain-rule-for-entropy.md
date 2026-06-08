@@ -26,6 +26,10 @@ tags:
 - mackay
 title: Chain Rule for Entropy
 understanding: 0
+uses:
+- joint-entropy
+- conditional-entropy
+- shannon-information-content
 ---
 
 ## Definition
@@ -49,4 +53,7 @@ The chain rule is the algebraic glue of information theory: combined with $I(X;Y
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[shannon-information-content]] — uses: Entropy chain rule is the ensemble average of the chain rule for information content h(x,y)=h(x)+h(y|x).
+- [[conditional-entropy]] — uses: The conditional term H(Y|X) is the bridge in the decomposition.
+- [[joint-entropy]] — uses: The chain rule decomposes joint entropy into marginal plus conditional terms.
 [To be populated during integration]

@@ -1,6 +1,9 @@
 ---
 aliases: []
 also_type: []
+applies:
+- binary-symmetric-channel
+- channel-capacity
 component_scores:
   conditions: null
   implications: null
@@ -13,6 +16,9 @@ date_updated: '2026-06-08'
 domain:
 - information-theory
 id: pkis:result:good-linear-codes-exist
+instantiates:
+- noisy-channel-coding-theorem
+- source-coding-theorem
 knowledge_type: result
 maturity: evolving
 needs_canonical_source: false
@@ -28,6 +34,10 @@ tags:
 - existence-proof
 title: Very Good Linear Codes Exist (Random Linear Codes Achieve Capacity)
 understanding: 0
+uses:
+- typical-set-decoder
+- typical-set
+- syndrome-decoding
 ---
 
 ## Definition
@@ -47,4 +57,11 @@ This is a constructive-in-spirit, fully elementary proof of the noisy-channel co
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[channel-capacity]] — applies: Shows linear codes reach the BSC capacity C = 1 - H2(f).
+- [[source-coding-theorem]] — instantiates: Re-read as uncompression, the same argument proves linear compressors attain the entropy limit.
+- [[binary-symmetric-channel]] — applies: The achievable rate 1 - H2(f) equals the BSC capacity.
+- [[syndrome-decoding]] — uses: Reception is reduced to recovering noise x from the syndrome z = Hx.
+- [[typical-set]] — uses: Type-I error vanishes by the AEP; |T| ≈ 2^{NH(X)} controls the type-II bound.
+- [[typical-set-decoder]] — uses: The proof bounds the analyzable typical-set decoder's error to show good codes exist.
+- [[noisy-channel-coding-theorem]] — instantiates: Establishes the achievability half of the noisy-channel coding theorem for the BSC using linear codes.
 [To be populated during integration]

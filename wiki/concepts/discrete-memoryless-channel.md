@@ -19,6 +19,9 @@ id: pkis:concept:discrete-memoryless-channel
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- channel-capacity
+- noisy-channel-coding-theorem
 related_concepts: []
 sources:
 - mackay-itila-ch09
@@ -53,4 +56,6 @@ The DMC is the object the noisy-channel coding theorem is stated about. Its capa
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[noisy-channel-coding-theorem]] — prerequisite-of: The coding theorem is stated about a discrete memoryless channel.
+- [[channel-capacity]] — prerequisite-of: Capacity is a property defined for a given DMC Q.
 [To be populated during integration]

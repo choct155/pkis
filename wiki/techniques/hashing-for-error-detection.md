@@ -9,6 +9,9 @@ component_scores:
   implementation: null
   operational_mechanism: null
   principled_mechanism: null
+contrasts-with:
+- one-way-hash-function
+- hamming-7-4-code
 coverage: 1
 date_created: '2026-06-08'
 date_updated: '2026-06-08'
@@ -53,4 +56,6 @@ A tiny fixed-size hash protects an arbitrarily large file: redundancy is added i
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[hamming-7-4-code]] — contrasts-with: A CRC is a set of parity-check bits like the (7,4) Hamming code but detects only, without correcting.
+- [[one-way-hash-function]] — contrasts-with: Linear hashes suffice against random noise but fail against an adversary, motivating one-way hashes.
 [To be populated during integration]

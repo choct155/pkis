@@ -29,6 +29,8 @@ tags:
 - channel-coding
 title: Random Coding Argument
 understanding: 0
+uses:
+- joint-typicality-decoding
 ---
 
 ## Definition
@@ -49,4 +51,5 @@ This is one of the founding uses of the probabilistic method in applied mathemat
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[joint-typicality-decoding]] — uses: The averaged-error analysis decodes each random code by joint typicality.
 [To be populated during integration]

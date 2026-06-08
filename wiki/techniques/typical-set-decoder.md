@@ -21,6 +21,8 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - mackay-itila-ch14
+specializes:
+- syndrome-decoding
 tags:
 - decoding
 - typical-set
@@ -29,6 +31,8 @@ tags:
 - proof-technique
 title: Typical-Set Decoder
 understanding: 0
+uses:
+- typical-set
 ---
 
 ## Definition
@@ -48,4 +52,6 @@ Neither the optimal decoder nor the typical-set decoder is practical, but the la
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[typical-set]] — uses: Decoder candidates are exactly the typical noise vectors.
+- [[syndrome-decoding]] — specializes: A syndrome decoder restricted to searching only the typical set of noise vectors.
 [To be populated during integration]

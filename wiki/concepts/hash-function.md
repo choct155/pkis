@@ -1,6 +1,9 @@
 ---
 aliases: []
 also_type: []
+analogous-to:
+- typical-set
+- noisy-channel-coding-theorem
 component_scores:
   application: null
   boundary: null
@@ -20,6 +23,8 @@ id: pkis:concept:hash-function
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- hashing-for-error-detection
 related_concepts: []
 sources:
 - mackay-itila-ch12
@@ -51,4 +56,7 @@ A hash function is *not* injective, so retrieval must confirm a hit by comparing
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[noisy-channel-coding-theorem]] — analogous-to: Hash codes reuse the random-code idea of channel coding, but mapping N bits down to M<N rather than up.
+- [[typical-set]] — analogous-to: MacKay derives hashing from the unsolved typical-set compression encoder: both map N bits down to a short label.
+- [[hashing-for-error-detection]] — prerequisite-of: Error detection computes and compares hashes of files.
 [To be populated during integration]
