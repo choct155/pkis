@@ -1859,3 +1859,12 @@
 ## [2026-06-08] committed | concept
 - Committed: perfect-codes → concepts/perfect-codes.md
 - IRI: pkis:concept:perfect-codes
+
+## [2026-06-08] staged | node-stub (result)
+- Staged: bounds-on-binary-codes (id: 4f2b4217-0808-4d08-8d49-cb0275ba5071)
+- Title: Bounds on Binary Codes (Sphere-Packing and Gilbert–Varshamov)
+- needs_canonical_source: False
+
+## [2026-06-08] committed | result
+- Committed: bounds-on-binary-codes → results/bounds-on-binary-codes.md
+- IRI: pkis:result:bounds-on-binary-codes
