@@ -2531,3 +2531,6 @@
 
 ## [2026-06-08] edit | edit_node
 - pkis:technique:laplace-approximation: fields=[] sections=['Approximating a Normalizing Constant (Saddle-Point Form)']
+
+## [2026-06-08] edit | edit_node
+- pkis:technique:laplace-approximation: fields=[] sections=['Basis Dependence']
