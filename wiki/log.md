@@ -2851,3 +2851,6 @@
 
 ## [2026-06-08] edit | edit_node
 - pkis:technique:mcmc: fields=[] sections=['Exact Sampling and the Convergence Question']
+
+## [2026-06-08] edit | edit_node
+- pkis:technique:gibbs-sampler: fields=[] sections=['Coupled Gibbs Sampling for Exact Samples']
