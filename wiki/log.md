@@ -2666,3 +2666,12 @@
 ## [2026-06-08] committed | technique
 - Committed: coupling-from-the-past → techniques/coupling-from-the-past.md
 - IRI: pkis:technique:coupling-from-the-past
+
+## [2026-06-08] staged | node-stub (concept)
+- Staged: exact-sampling (id: f18c0045-c0f8-4d27-8a42-9d99fedc794d)
+- Title: Exact (Perfect) Sampling
+- needs_canonical_source: False
+
+## [2026-06-08] committed | concept
+- Committed: exact-sampling → concepts/exact-sampling.md
+- IRI: pkis:concept:exact-sampling
