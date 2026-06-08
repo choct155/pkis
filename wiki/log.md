@@ -3094,3 +3094,6 @@
 
 ## [2026-06-08] edit | edit_node
 - pkis:technique:neural-networks: fields=[] sections=['Memory Capacity of a Single Neuron']
+
+## [2026-06-08] edit | edit_node
+- pkis:concept:channel-capacity: fields=[] sections=['Analogy: Capacity of a Learning Machine']

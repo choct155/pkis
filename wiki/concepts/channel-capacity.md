@@ -73,3 +73,6 @@ For real-valued channels the capacity $C=\max_{p(x)}I(X;Y)$ must be defined via 
 Capacity also has meaning for **noiseless** channels that merely forbid certain strings. Here the mutual-information maximisation is replaced by a counting limit,
 $$C=\lim_{N\to\infty}\frac1N\log_2 M_N,$$
 with $M_N$ the number of legal length-$N$ strings. Modelling the transmitter as a finite-state machine, $M_N$ grows as $\lambda_1^N$ where $\lambda_1$ is the leading eigenvalue of the connection matrix, so $C=\log_2\lambda_1$. See [[constrained-noiseless-channel]] and [[constrained-channel-capacity-eigenvalue]].
+
+## Analogy: Capacity of a Learning Machine
+MacKay applies the channel-capacity lens to *learning*: adapted weights $\mathbf{w}$ act as a channel carrying information about training data $D_N$ to a future user. Constraining the receiver to observe the neuron only at the $N$ training inputs, the relevant 'capacity' is the largest $N$ for which almost any labelling is reproducible. For a $K$-weight linear threshold neuron this is $N=2K$, i.e. **two bits per weight** (a slight departure from the Ch. 9 $\max_{p(x)} I(X;Y)$ definition). See [[capacity-of-a-single-neuron]].
