@@ -469,6 +469,7 @@
 - [[market-vs-hierarchy]] — Coase/Williamson: transactions governed by price signals (markets) vs. managerial direction (firms) (corporate-finance) (2026-05-20)
 
 ## Techniques
+- [[optimal-linear-filter]] — Optimal Linear Filter (Wiener Filter) (statistical-learning, bayesian-stats) (2026-06-08)
 - [[boltzmann-machine-learning-rule]] — Boltzmann Machine Learning Rule (Wake-Sleep) (deep-learning, statistical-learning) (2026-06-08)
 - [[logistic-neuron-learning-rule]] — Logistic-Neuron Gradient-Descent Learning Rule (deep-learning, statistical-learning) (2026-06-08)
 - [[natural-gradient]] — Natural Gradient (Covariant Optimization) (statistical-learning, deep-learning) (2026-06-08)

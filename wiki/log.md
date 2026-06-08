@@ -3187,3 +3187,12 @@
 ## [2026-06-08] committed | problem
 - Committed: deconvolution → problems/deconvolution.md
 - IRI: pkis:problem:deconvolution
+
+## [2026-06-08] staged | node-stub (technique)
+- Staged: optimal-linear-filter (id: 72b6cb4d-d1b6-4990-870b-4958a03a7ece)
+- Title: Optimal Linear Filter (Wiener Filter)
+- needs_canonical_source: False
+
+## [2026-06-08] committed | technique
+- Committed: optimal-linear-filter → techniques/optimal-linear-filter.md
+- IRI: pkis:technique:optimal-linear-filter
