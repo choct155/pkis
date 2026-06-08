@@ -1502,3 +1502,12 @@
 ## [2026-06-08] committed | technique
 - Committed: self-delimiting-integer-codes → techniques/self-delimiting-integer-codes.md
 - IRI: pkis:technique:self-delimiting-integer-codes
+
+## [2026-06-08] staged | node-stub (technique)
+- Staged: elias-omega-code (id: e178b94c-e8e0-4019-a76e-affe5e32d7b4)
+- Title: Elias's Universal Code for Integers (C_omega)
+- needs_canonical_source: False
+
+## [2026-06-08] committed | technique
+- Committed: elias-omega-code → techniques/elias-omega-code.md
+- IRI: pkis:technique:elias-omega-code
