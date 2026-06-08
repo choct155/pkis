@@ -41,3 +41,6 @@ Shannon entropy H(X) = −∑ p_i log p_i measures the average uncertainty (or i
 The entropy obeys a recursive **decomposability** property: revealing an outcome in stages gives
 $$H(\mathbf{p}) = H(p_1, 1-p_1) + (1-p_1)\,H\!\left(\tfrac{p_2}{1-p_1},\ldots,\tfrac{p_I}{1-p_1}\right),$$
 and more generally splitting the alphabet into groups adds the group-selection entropy plus the probability-weighted within-group entropies. This is the discrete root of the chain rule $H(X,Y)=H(X)+H(Y\mid X)$ and makes many entropy computations easy.
+
+## Maximum-entropy bound
+Entropy is bounded: $0 \le H(X) \le \log|A_X|$. The lower bound is attained iff one outcome has probability 1; the **upper bound is attained iff $\mathbf{p}$ is uniform**. The uniform-maximum result follows from Jensen's inequality applied to the concave $\log$, and the gap from the maximum defines the **redundancy** $1 - H(X)/\log|A_X|$. Entropy is additive over independent variables: $H(X,Y)=H(X)+H(Y)$ iff $P(x,y)=P(x)P(y)$.
