@@ -1634,3 +1634,12 @@
 
 ## [2026-06-08] edit | edit_node
 - pkis:result:kraft-inequality: fields=[] sections=['Completeness in integer codes']
+
+## [2026-06-08] staged | node-stub (concept)
+- Staged: joint-entropy (id: 56eb4cf0-c122-4d47-9761-3f10af020c4d)
+- Title: Joint Entropy
+- needs_canonical_source: False
+
+## [2026-06-08] committed | concept
+- Committed: joint-entropy → concepts/joint-entropy.md
+- IRI: pkis:concept:joint-entropy
