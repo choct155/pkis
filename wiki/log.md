@@ -1300,3 +1300,16 @@
 ## [2026-06-08] committed | concept
 - Committed: binary-symmetric-channel → concepts/binary-symmetric-channel.md
 - IRI: pkis:concept:binary-symmetric-channel
+
+## [2026-06-08] edges | add_connections
+- binary-symmetric-channel —uses→ entropy
+- binary-symmetric-channel —instantiates→ information-theory
+
+## [2026-06-08] staged | node-stub (technique)
+- Staged: repetition-codes (id: 5cdae67a-9e92-4310-9952-8ef887567f75)
+- Title: Repetition Codes
+- needs_canonical_source: False
+
+## [2026-06-08] committed | technique
+- Committed: repetition-codes → techniques/repetition-codes.md
+- IRI: pkis:technique:repetition-codes
