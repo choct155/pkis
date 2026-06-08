@@ -2947,3 +2947,12 @@
 ## [2026-06-08] committed | result
 - Committed: capacity-of-a-single-neuron → results/capacity-of-a-single-neuron.md
 - IRI: pkis:result:capacity-of-a-single-neuron
+
+## [2026-06-08] staged | node-stub (result)
+- Staged: cover-function-counting-theorem (id: d8e2141f-681c-44d6-8c3c-251c3965fe9a)
+- Title: Cover's Function-Counting Theorem
+- needs_canonical_source: False
+
+## [2026-06-08] committed | result
+- Committed: cover-function-counting-theorem → results/cover-function-counting-theorem.md
+- IRI: pkis:result:cover-function-counting-theorem
