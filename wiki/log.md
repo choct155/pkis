@@ -1475,3 +1475,12 @@
 ## [2026-06-08] committed | technique
 - Committed: lempel-ziv-coding → techniques/lempel-ziv-coding.md
 - IRI: pkis:technique:lempel-ziv-coding
+
+## [2026-06-08] staged | node-stub (concept)
+- Staged: stream-codes (id: 33693113-a0a2-41d7-9630-90c071e96d38)
+- Title: Stream Codes
+- needs_canonical_source: False
+
+## [2026-06-08] committed | concept
+- Committed: stream-codes → concepts/stream-codes.md
+- IRI: pkis:concept:stream-codes
