@@ -2519,3 +2519,6 @@
 
 ## [2026-06-08] edit | edit_node
 - pkis:technique:sum-product-algorithm: fields=[] sections=['Bitwise Decoding on a Trellis (Forward-Backward)']
+
+## [2026-06-08] edit | edit_node
+- pkis:technique:belief-propagation: fields=[] sections=['Belief Propagation as Forward-Backward on a Trellis']
