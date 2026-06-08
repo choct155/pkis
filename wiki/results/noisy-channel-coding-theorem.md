@@ -62,3 +62,14 @@ This result created information theory and overturned the prevailing 'no pain, n
 - [[repetition-codes]] — contrasts-with: Repetition codes need rate to vanish for small error; the theorem proves finite rate at vanishing error is achievable.
 - [[channel-capacity]] — uses: The theorem states reliable communication is possible exactly for rates below the channel capacity C.
 [To be populated during integration]
+
+## ## Proof: achievability and converse
+MacKay's proof has two halves built from typical-set machinery.
+
+**Achievability (rate $R<C$ is reachable).** Use a [[random-coding-argument]]: fix the optimal input distribution $P(x)$, draw $2^{NR'}$ codewords i.i.d., transmit, and decode by [[joint-typicality-decoding]]. Averaging over all codes, an error occurs only if (a) the sent pair is not jointly typical (probability $\delta\to0$) or (b) a rival codeword is jointly typical with $\mathbf{y}$ (each $\le 2^{-N(I(X;Y)-3\beta)}$). A union bound over the $2^{NR'}-1$ rivals gives
+$$\langle p_B\rangle\le\delta+2^{-N(I(X;Y)-R'-3\beta)},$$
+which vanishes whenever $R'<I(X;Y)-3\beta$. Choosing $P(x)$ optimal makes $I(X;Y)=C$; existence of one good code follows from the average; expurgating the worst half of codewords converts small *average* error into small *maximal* error at a negligible rate cost. Setting $R'=(R+C)/2$ and $N$ large completes part 1.
+
+**Extending to non-zero $p_b$.** Running a capacity-achieving code's decoder *backwards* as a lossy compressor proves the achievability of the whole region $R=C/(1-H_2(p_b))$ (rate-distortion).
+
+**Converse (rates above the boundary are impossible).** The chain $s\to x\to y\to\hat{s}$ obeys the data processing inequality, so $I(s;\hat{s})\le I(x;y)\le NC$. [[fanos-inequality]] gives $I(s;\hat{s})\ge NR(1-H_2(p_b))$. Together they force $R\le C/(1-H_2(p_b))$ — anything beyond is unachievable. $\square$

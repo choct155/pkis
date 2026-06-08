@@ -1983,3 +1983,6 @@
 
 ## [2026-06-08] edit | edit_node
 - pkis:concept:binary-symmetric-channel: fields=[] sections=['## Capacity of the BSC']
+
+## [2026-06-08] edit | edit_node
+- pkis:result:noisy-channel-coding-theorem: fields=[] sections=['## Proof: achievability and converse']
