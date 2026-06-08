@@ -1787,3 +1787,12 @@
 ## [2026-06-08] committed | concept
 - Committed: code-goodness-taxonomy → concepts/code-goodness-taxonomy.md
 - IRI: pkis:concept:code-goodness-taxonomy
+
+## [2026-06-08] staged | node-stub (concept)
+- Staged: hash-function (id: b26bba59-99fc-424e-aaaa-e6a21a480340)
+- Title: Hash Function
+- needs_canonical_source: False
+
+## [2026-06-08] committed | concept
+- Committed: hash-function → concepts/hash-function.md
+- IRI: pkis:concept:hash-function
