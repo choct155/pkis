@@ -565,6 +565,21 @@ def main():
         print(f"  [{s['id']}] {s['title']}  ({len(s['paper_md'])} chars)")
 
     if stage == "extract":
+        # Persist the extracted text as a payload.json (sections only, no
+        # narration/audio) so downstream Phase-C mining can read paper_md
+        # without paying for Sonnet narration or TTS. Mirrors the `full`
+        # payload shape minus narration/audio fields.
+        outdir = os.environ.get("OUTDIR", str(app.WIKI_DIR / "reader" / slug))
+        os.makedirs(outdir, exist_ok=True)
+        payload = {
+            "slug": slug,
+            "title": title,
+            "source_iri": f"pkis:source:{slug}",
+            "sections": segs,
+        }
+        with open(os.path.join(outdir, "payload.json"), "w") as f:
+            json.dump(payload, f, ensure_ascii=False, indent=1)
+        print(f"\nwrote {outdir}/payload.json ({len(segs)} sections)")
         print("\n--- first 3 segments (paper_md preview) ---")
         for s in segs[:3]:
             print(f"\n### {s['title']}\n{s['paper_md'][:600]}")
