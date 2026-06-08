@@ -3277,3 +3277,12 @@
 ## [2026-06-08] committed | technique
 - Committed: repeat-accumulate-codes → techniques/repeat-accumulate-codes.md
 - IRI: pkis:technique:repeat-accumulate-codes
+
+## [2026-06-08] staged | node-stub (concept)
+- Staged: generalized-parity-check-matrix (id: 5befc7a4-5938-4c02-804b-2cef9dd14c74)
+- Title: Generalized Parity-Check Matrix
+- needs_canonical_source: False
+
+## [2026-06-08] committed | concept
+- Committed: generalized-parity-check-matrix → concepts/generalized-parity-check-matrix.md
+- IRI: pkis:concept:generalized-parity-check-matrix
