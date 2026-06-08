@@ -2501,3 +2501,6 @@
 
 ## [2026-06-08] edit | edit_node
 - pkis:technique:soft-k-means: fields=[] sections=['Soft K-means as ML mixture fitting (versions 2 and 3)']
+
+## [2026-06-08] edit | edit_node
+- pkis:concept:probability-distribution-relationships: fields=[] sections=['Heavy-tailed alternatives to the Gaussian (MacKay Ch. 23)']
