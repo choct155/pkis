@@ -425,6 +425,7 @@
 - [[market-vs-hierarchy]] — Coase/Williamson: transactions governed by price signals (markets) vs. managerial direction (firms) (corporate-finance) (2026-05-20)
 
 ## Techniques
+- [[hashing-for-error-detection]] — Hashing for Error Detection (information-theory, computer-science) (2026-06-08)
 - [[hash-table]] — Hash Table for Information Retrieval (information-theory, computer-science) (2026-06-08)
 - [[concatenated-codes]] — Concatenated Codes and Interleaving (information-theory) (2026-06-08)
 - [[random-coding-argument]] — Random Coding Argument (information-theory) (2026-06-08)

@@ -1814,3 +1814,12 @@
 ## [2026-06-08] committed | result
 - Committed: hash-collision-bound → results/hash-collision-bound.md
 - IRI: pkis:result:hash-collision-bound
+
+## [2026-06-08] staged | node-stub (technique)
+- Staged: hashing-for-error-detection (id: c4c084ff-b00e-487b-9fa9-8c6c4f2ec939)
+- Title: Hashing for Error Detection
+- needs_canonical_source: False
+
+## [2026-06-08] committed | technique
+- Committed: hashing-for-error-detection → techniques/hashing-for-error-detection.md
+- IRI: pkis:technique:hashing-for-error-detection
