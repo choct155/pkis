@@ -2549,3 +2549,12 @@
 ## [2026-06-08] committed | principle
 - Committed: monte-carlo-estimator → principles/monte-carlo-estimator.md
 - IRI: pkis:principle:monte-carlo-estimator
+
+## [2026-06-08] staged | node-stub (principle)
+- Staged: uniform-sampling-curse (id: f64faf95-4bcf-4583-8b09-ffdb1332bb8b)
+- Title: Why Uniform Sampling Fails in High Dimensions
+- needs_canonical_source: False
+
+## [2026-06-08] committed | principle
+- Committed: uniform-sampling-curse → principles/uniform-sampling-curse.md
+- IRI: pkis:principle:uniform-sampling-curse
