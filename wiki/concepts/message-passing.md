@@ -20,6 +20,9 @@ id: pkis:concept:message-passing
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- sum-product-algorithm
+- min-sum-algorithm
 related_concepts: []
 sources:
 - mackay-itila-ch16
@@ -46,4 +49,6 @@ It converts seemingly global, combinatorially explosive computations (counting $
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[min-sum-algorithm]] — prerequisite-of: The separability/tree-message framework underlies the min-sum rule.
+- [[sum-product-algorithm]] — prerequisite-of: The separability/tree-message framework underlies the sum-product rule.
 [To be populated during integration]

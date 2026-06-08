@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- runlength-limited-codes
 component_scores:
   conditions: null
   implications: null
@@ -12,6 +14,8 @@ date_created: '2026-06-08'
 date_updated: '2026-06-08'
 domain:
 - information-theory
+extends:
+- constrained-channel-capacity-eigenvalue
 id: pkis:result:constrained-channel-optimal-transitions
 knowledge_type: result
 maturity: evolving
@@ -28,6 +32,9 @@ tags:
 - mackay
 title: Optimal Transition Probabilities for a Constrained Channel
 understanding: 0
+uses:
+- eigendecomposition
+- markov-chains
 ---
 
 ## Definition
@@ -45,4 +52,8 @@ When symbols have unequal durations $l_i$, the optimal usage frequency mirrors o
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[runlength-limited-codes]] — applies: The optimal transition probabilities give the capacity-achieving variable-length RLL code.
+- [[constrained-channel-capacity-eigenvalue]] — extends: Same eigenvectors that give capacity also yield the optimal transition probabilities achieving entropy rate log lambda.
+- [[markov-chains]] — uses: Capacity-achieving generation is a Markov chain over channel states with the optimal Q.
+- [[eigendecomposition]] — uses: Optimal transition matrix Q is constructed from the left and right principal eigenvectors of A.
 [To be populated during integration]

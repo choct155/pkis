@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- channel-capacity
 component_scores:
   application: null
   boundary: null
@@ -30,6 +32,8 @@ tags:
 - crosswords
 title: Redundancy of Natural Language
 understanding: 0
+uses:
+- entropy
 ---
 
 ## Definition
@@ -48,4 +52,6 @@ For type-A (American) grids this needs $H_W > \tfrac12\tfrac{L}{L+1}H_0$; the lo
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[channel-capacity]] — applies: A crossword grid is a two-dimensional constrained channel; puzzles exist only if its capacity exceeds zero.
+- [[entropy]] — uses: Redundancy is defined as 1 - H/log|A|; the crossword bound is stated in terms of per-character entropy H_W.
 [To be populated during integration]

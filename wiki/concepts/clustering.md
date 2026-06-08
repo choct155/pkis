@@ -29,6 +29,8 @@ tags:
 - compression
 title: Clustering
 understanding: 0
+uses:
+- vector-quantization
 ---
 
 ## Definition
@@ -44,4 +46,5 @@ Vector quantization supplies the distortion measure as part of the problem and t
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[vector-quantization]] — uses: Vector quantization is the lossy-compression motivation for clustering; cluster centres are the codebook.
 [To be populated during integration]

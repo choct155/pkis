@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- binary-symmetric-channel
 component_scores:
   application: null
   boundary: null
@@ -10,6 +12,8 @@ component_scores:
   prerequisites: null
   scope: null
   transfer: null
+contrasts-with:
+- multiple-access-channel
 coverage: 1
 date_created: '2026-06-08'
 date_updated: '2026-06-08'
@@ -22,6 +26,8 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - mackay-itila-ch15
+specializes:
+- channel-capacity
 tags:
 - network-information-theory
 - channel-capacity
@@ -31,6 +37,8 @@ tags:
 - superposition-coding
 title: Broadcast Channel
 understanding: 0
+uses:
+- markov-chains
 ---
 
 ## Definition
@@ -49,4 +57,8 @@ It models one-to-many communication (TV, downlink, multicast) and is mathematica
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[multiple-access-channel]] — contrasts-with: One-sender-many-receivers vs many-senders-one-receiver; dual multiterminal settings.
+- [[binary-symmetric-channel]] — applies: Canonical example: two BSCs with a common input and different flip probabilities.
+- [[markov-chains]] — uses: The degraded case is defined by the Markov chain x -> y^A -> y^B.
+- [[channel-capacity]] — specializes: One-to-many channel described by a capacity region of rate triplets.
 [To be populated during integration]

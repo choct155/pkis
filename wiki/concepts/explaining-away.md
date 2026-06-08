@@ -22,6 +22,8 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - mackay-itila-ch21
+specializes:
+- bayesian-inference
 tags:
 - bayesian-inference
 - conditional-independence
@@ -48,4 +50,5 @@ Explaining away is a hallmark of correct probabilistic reasoning and a signature
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[bayesian-inference]] — specializes: Explaining away is a specific qualitative consequence of correct Bayesian conditioning on a common effect of independent causes.
 [To be populated during integration]

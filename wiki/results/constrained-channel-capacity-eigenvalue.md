@@ -19,6 +19,8 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - mackay-itila-ch17
+specializes:
+- channel-capacity
 tags:
 - perron-frobenius
 - eigenvalue
@@ -28,6 +30,8 @@ tags:
 - mackay
 title: Capacity of a Constrained Channel as a Leading Eigenvalue
 understanding: 0
+uses:
+- eigendecomposition
 ---
 
 ## Definition
@@ -49,4 +53,6 @@ Channels A, B and C share connection matrices with the same dominant eigenvalue,
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[eigendecomposition]] — uses: Capacity = log of the Perron-Frobenius leading eigenvalue of the connection matrix.
+- [[channel-capacity]] — specializes: Capacity of a noiseless constrained channel is the log of the connection matrix's leading eigenvalue, a special case of the general capacity notion.
 [To be populated during integration]

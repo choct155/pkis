@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- likelihood-ratio-evidence
 component_scores:
   alternatives: null
   conditions: null
@@ -30,6 +32,9 @@ tags:
 - turing
 title: Bayesian Codebreaking (Banburismus)
 understanding: 0
+uses:
+- redundancy-of-natural-language
+- mutual-information
 ---
 
 ## Definition
@@ -48,4 +53,7 @@ Because English bigrams/trigrams are non-uniform, real matches arrive in bursts 
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[mutual-information]] — uses: Exercise 18.3: the Enigma flaw of never mapping a letter to itself leaks information per character, exploitable for crib alignment.
+- [[redundancy-of-natural-language]] — uses: The method works only because plaintext redundancy makes synchronized matches more frequent than chance (m > 1/A).
+- [[likelihood-ratio-evidence]] — applies: Each character match/non-match contributes a fixed log-likelihood-ratio toward the same-state hypothesis; odds accumulate multiplicatively.
 [To be populated during integration]

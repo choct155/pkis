@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+analogous-to:
+- slepian-wolf-theorem
 component_scores:
   application: null
   boundary: null
@@ -22,6 +24,8 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - mackay-itila-ch15
+specializes:
+- channel-capacity
 tags:
 - network-information-theory
 - channel-capacity
@@ -30,6 +34,8 @@ tags:
 - shared-medium
 title: Multiple-Access Channel
 understanding: 0
+uses:
+- mutual-information
 ---
 
 ## Definition
@@ -50,4 +56,7 @@ It models any shared medium—cellular uplinks, Ethernet, ship VHF—and shows t
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[slepian-wolf-theorem]] — analogous-to: Channel-coding dual of the distributed source-coding result; same conditional/joint structure.
+- [[mutual-information]] — uses: Region bounds are conditional and joint mutual informations between inputs and output.
+- [[channel-capacity]] — specializes: Replaces scalar capacity with a multi-user capacity region over independent inputs.
 [To be populated during integration]

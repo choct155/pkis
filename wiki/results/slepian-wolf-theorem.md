@@ -12,6 +12,8 @@ date_created: '2026-06-08'
 date_updated: '2026-06-08'
 domain:
 - information-theory
+extends:
+- source-coding-theorem
 id: pkis:result:slepian-wolf-theorem
 knowledge_type: result
 maturity: evolving
@@ -28,6 +30,10 @@ tags:
 - distributed-coding
 title: Slepian–Wolf Theorem (Distributed Source Coding)
 understanding: 0
+uses:
+- joint-entropy
+- conditional-entropy
+- typical-set
 ---
 
 ## Definition
@@ -48,4 +54,8 @@ It is the cornerstone of distributed/sensor-network compression and shows that c
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[typical-set]] — uses: Random binning of jointly-typical sequences underlies the achievability proof.
+- [[source-coding-theorem]] — extends: Generalizes single-source compression to separately-encoded correlated sources.
+- [[conditional-entropy]] — uses: Per-source lower bounds are the conditional entropies H(X^A|X^B), H(X^B|X^A).
+- [[joint-entropy]] — uses: The achievable sum-rate is exactly the joint entropy H(X^A, X^B).
 [To be populated during integration]

@@ -16,6 +16,8 @@ date_updated: '2026-06-08'
 domain:
 - information-theory
 id: pkis:concept:runlength-limited-codes
+instantiates:
+- constrained-noiseless-channel
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
@@ -31,6 +33,8 @@ tags:
 - mackay
 title: Runlength-Limited Codes
 understanding: 0
+uses:
+- entropy
 ---
 
 ## Definition
@@ -50,4 +54,6 @@ When predictable block sizes matter (e.g. 512-byte disk blocks), one can pair tw
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[entropy]] — uses: Optimising a sparse-source RLL code maximises H_2(f)/(1+f), an entropy-per-length rate.
+- [[constrained-noiseless-channel]] — instantiates: RLL channels A, B, C are the canonical examples of constrained noiseless channels.
 [To be populated during integration]

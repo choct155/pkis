@@ -22,6 +22,8 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - mackay-itila-ch16
+specializes:
+- message-passing
 tags:
 - message-passing
 - marginalization
@@ -30,6 +32,8 @@ tags:
 - forward-backward
 title: Sum-Product Algorithm
 understanding: 0
+uses:
+- generating-functions
 ---
 
 ## Definition
@@ -47,4 +51,6 @@ It is the unifying generalization of the forward-backward algorithm and of belie
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[generating-functions]] — uses: Counting paths via weighted sums connects to generating-function bookkeeping of combinatorial counts.
+- [[message-passing]] — specializes: Sum-product is the marginalizing instance of the general message-passing paradigm.
 [To be populated during integration]

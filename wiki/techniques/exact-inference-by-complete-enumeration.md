@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- explaining-away
 component_scores:
   alternatives: null
   conditions: null
@@ -15,6 +17,8 @@ date_updated: '2026-06-08'
 domain:
 - bayesian-stats
 id: pkis:technique:exact-inference-by-complete-enumeration
+instantiates:
+- bayesian-inference
 knowledge_type: technique
 maturity: evolving
 needs_canonical_source: false
@@ -28,6 +32,8 @@ tags:
 - posterior
 title: Exact Inference by Complete Enumeration
 understanding: 0
+uses:
+- marginal-likelihood
 ---
 
 ## Definition
@@ -47,4 +53,7 @@ Enumeration is the conceptual baseline against which all approximate inference (
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[explaining-away]] — applies: MacKay derives the explaining-away effect concretely by enumerating the four joint hypotheses over (b,e) and marginalizing.
+- [[marginal-likelihood]] — uses: The normalizing sum over enumerated hypotheses is exactly the marginal likelihood / evidence, computed numerically as a grid sum.
+- [[bayesian-inference]] — instantiates: Enumeration is the most direct, exact realization of Bayesian posterior computation: score every hypothesis and normalize.
 [To be populated during integration]

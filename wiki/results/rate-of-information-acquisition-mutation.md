@@ -28,6 +28,9 @@ tags:
 - maynard-smith
 title: Rate of Information Acquisition Under Mutation (≈1 bit/generation)
 understanding: 0
+uses:
+- fitness-as-information
+- weak-law-of-large-numbers
 ---
 
 ## Definition
@@ -46,4 +49,6 @@ This is the baseline against which sex is judged: it shows mutation-only evoluti
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[weak-law-of-large-numbers]] — uses: The Gaussian/normal approximation for the spread of children's fitness over G independent loci relies on large-G concentration arguments.
+- [[fitness-as-information]] — uses: The mutation-rate result is expressed in terms of the additive fitness model and its bit-counting interpretation of acquired information.
 [To be populated during integration]

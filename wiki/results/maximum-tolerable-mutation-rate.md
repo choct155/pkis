@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+analogous-to:
+- noisy-channel-coding-theorem
 component_scores:
   conditions: null
   implications: null
@@ -13,6 +15,8 @@ date_updated: '2026-06-08'
 domain:
 - information-theory
 - statistical-learning
+extends:
+- sqrt-g-advantage-of-sex
 id: pkis:result:maximum-tolerable-mutation-rate
 knowledge_type: result
 maturity: evolving
@@ -46,4 +50,6 @@ This is the population-genetics analogue of an **error threshold**: just as a co
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[noisy-channel-coding-theorem]] — analogous-to: The error-threshold view treats the genome as a code over a mutation channel; tolerable mutation rate plays the role of a capacity-like noise limit.
+- [[sqrt-g-advantage-of-sex]] — extends: The same √G factor that speeds sexual learning also raises the tolerable mutation rate and the sustainable genome size.
 [To be populated during integration]

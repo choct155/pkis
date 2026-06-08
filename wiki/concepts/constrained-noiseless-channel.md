@@ -19,6 +19,8 @@ id: pkis:concept:constrained-noiseless-channel
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- constrained-channel-capacity-eigenvalue
 related_concepts: []
 sources:
 - mackay-itila-ch17
@@ -30,6 +32,8 @@ tags:
 - mackay
 title: Constrained Noiseless Channel
 understanding: 0
+uses:
+- finite-automata
 ---
 
 ## Definition
@@ -49,4 +53,6 @@ The definition of capacity as $\lim \frac1N\log M_N$ is borrowed directly from t
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[constrained-channel-capacity-eigenvalue]] — prerequisite-of: Defining the channel and its connection matrix precedes computing its capacity spectrally.
+- [[finite-automata]] — uses: The transmitter is modelled as a finite-state machine / state diagram defining legal strings.
 [To be populated during integration]

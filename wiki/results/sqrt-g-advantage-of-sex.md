@@ -7,6 +7,8 @@ component_scores:
   limitations: null
   proof_sketch: null
   statement: null
+contrasts-with:
+- rate-of-information-acquisition-mutation
 coverage: 1
 date_created: '2026-06-08'
 date_updated: '2026-06-08'
@@ -28,6 +30,9 @@ tags:
 - deterministic-mutation-hypothesis
 title: The √G Advantage of Sexual Reproduction
 understanding: 0
+uses:
+- fitness-as-information
+- gaussian-distribution
 ---
 
 ## Definition
@@ -44,4 +49,7 @@ A sexual species acquires information from selection $\sim\sqrt{G}$ times faster
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[gaussian-distribution]] — uses: Children's fitness under recombination is modeled as Normal(fG, ½f(1-f)G), and selection acts on its upper tail.
+- [[rate-of-information-acquisition-mutation]] — contrasts-with: Recombination acquires information ~√G times faster than mutation-only (asexual) evolution; the chapter's central comparison.
+- [[fitness-as-information]] — uses: The sexual-reproduction rate is derived on the same additive-fitness genome and read as information acquired.
 [To be populated during integration]

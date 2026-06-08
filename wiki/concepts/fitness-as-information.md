@@ -31,6 +31,8 @@ tags:
 - information-acquisition
 title: Fitness as Information Acquired by Natural Selection
 understanding: 0
+uses:
+- shannon-information-content
 ---
 
 ## Definition
@@ -49,4 +51,5 @@ This reframing turns evolution into a learning/communication problem: natural se
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[shannon-information-content]] — uses: Information acquired per locus is defined as log_2(1/f_g), the Shannon information content of finding a good allele at frequency f_g.
 [To be populated during integration]

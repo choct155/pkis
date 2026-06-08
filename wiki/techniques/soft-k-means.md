@@ -15,13 +15,20 @@ date_updated: '2026-06-08'
 domain:
 - statistical-learning
 - bayesian-stats
+generalizes:
+- k-means-clustering
 id: pkis:technique:soft-k-means
+instantiates:
+- clustering
+- em-algorithm
 knowledge_type: technique
 maturity: evolving
 needs_canonical_source: false
 related_concepts: []
 sources:
 - mackay-itila-ch20
+specializes:
+- gaussian-mixture-models
 tags:
 - unsupervised-learning
 - responsibilities
@@ -47,4 +54,8 @@ Responsibilities turn clustering into smooth, differentiable inference: borderli
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[em-algorithm]] — instantiates: The responsibility/update alternation is the E-step/M-step of EM for an isotropic equal-weight mixture.
+- [[gaussian-mixture-models]] — specializes: Soft K-means v1 is a GMM with shared isotropic covariance 1/beta and equal mixing weights.
+- [[k-means-clustering]] — generalizes: Hard K-means is the beta -> infinity limit of soft K-means.
+- [[clustering]] — instantiates: Soft K-means performs clustering with fractional membership.
 [To be populated during integration]

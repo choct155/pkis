@@ -27,6 +27,8 @@ tags:
 - monogram-model
 title: Zipf–Mandelbrot Law
 understanding: 0
+uses:
+- redundancy-of-natural-language
 ---
 
 ## Definition
@@ -45,4 +47,5 @@ A plain Dirichlet process does *not* reproduce Zipf curves. MacKay's tweak does:
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[redundancy-of-natural-language]] — uses: The power-law rank-frequency curve is a quantitative signature of the monogram-level structure that gives language its redundancy.
 [To be populated during integration]

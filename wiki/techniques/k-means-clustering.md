@@ -16,12 +16,18 @@ domain:
 - statistical-learning
 - bayesian-stats
 id: pkis:technique:k-means-clustering
+instantiates:
+- clustering
 knowledge_type: technique
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- soft-k-means
 related_concepts: []
 sources:
 - mackay-itila-ch20
+specializes:
+- gaussian-mixture-models
 tags:
 - unsupervised-learning
 - competitive-learning
@@ -50,4 +56,7 @@ K-means is the canonical competitive-learning clustering method and the hard-ass
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[gaussian-mixture-models]] — specializes: K-means is the hard-assignment, equal-weight, fixed-spherical-covariance limit of a Gaussian mixture.
+- [[soft-k-means]] — prerequisite-of: Soft K-means generalizes the hard assignment of K-means via a stiffness-controlled softmax.
+- [[clustering]] — instantiates: K-means is the canonical hard clustering algorithm.
 [To be populated during integration]

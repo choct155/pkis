@@ -1,18 +1,33 @@
 ---
-id: "pkis:technique:gaussian-mixture-models"
-aliases: ["GMM"]
-title: "Gaussian Mixture Models (GMM)"
-knowledge_type: technique
-also_type: [framework]
-domain: [bayesian-stats, statistical-learning]
-tags: [probability-theory, simulation]
-related_concepts: ["[[gaussian-distribution]]", "[[em-algorithm]]", "[[probability-theory]]"]
-sources: ["[[deisenroth-mml]]", "[[blei-vi-review]]", "[[ganguly-intro-vi]]", "[[kroese-statistical-modeling]]"]
+aliases:
+- GMM
+also_type:
+- framework
+coverage: 4
 date_created: 2026-05-20
 date_updated: 2026-05-20
-coverage: 4
-understanding: 0
+domain:
+- bayesian-stats
+- statistical-learning
+id: pkis:technique:gaussian-mixture-models
+knowledge_type: technique
 maturity: settled
+related_concepts:
+- '[[gaussian-distribution]]'
+- '[[em-algorithm]]'
+- '[[probability-theory]]'
+sources:
+- '[[deisenroth-mml]]'
+- '[[blei-vi-review]]'
+- '[[ganguly-intro-vi]]'
+- '[[kroese-statistical-modeling]]'
+tags:
+- probability-theory
+- simulation
+title: Gaussian Mixture Models (GMM)
+understanding: 0
+uses:
+- em-algorithm
 ---
 
 ## Reading Path
@@ -22,3 +37,6 @@ maturity: settled
 - [[kroese-statistical-modeling-ch06]] (unread) — EM algorithm for GMMs as the primary worked example of the EM procedure
 
 Density estimation model that represents the data distribution as a weighted sum of Gaussian components $p(x) = \sum_k \pi_k \mathcal{N}(x | \mu_k, \Sigma_k)$, fit via the EM algorithm; serves as both a generative model and a soft-clustering technique.
+
+## Connections
+- [[em-algorithm]] — uses: GMMs are fit by EM, computing responsibilities (E) and updating means, covariances, weights (M).
