@@ -3151,3 +3151,12 @@
 ## [2026-06-08] committed | concept
 - Committed: multilayer-perceptron → concepts/multilayer-perceptron.md
 - IRI: pkis:concept:multilayer-perceptron
+
+## [2026-06-08] staged | node-stub (concept)
+- Staged: gaussian-process (id: c4b6c335-29b1-4654-b541-91cbee23caf9)
+- Title: Gaussian Process
+- needs_canonical_source: False
+
+## [2026-06-08] committed | concept
+- Committed: gaussian-process → concepts/gaussian-process.md
+- IRI: pkis:concept:gaussian-process
