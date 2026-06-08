@@ -1715,3 +1715,12 @@
 ## [2026-06-08] committed | concept
 - Committed: jointly-typical-set → concepts/jointly-typical-set.md
 - IRI: pkis:concept:jointly-typical-set
+
+## [2026-06-08] staged | node-stub (technique)
+- Staged: joint-typicality-decoding (id: d5627baf-9daf-4237-8379-1a9c7804f22a)
+- Title: Joint-Typicality (Typical-Set) Decoding
+- needs_canonical_source: False
+
+## [2026-06-08] committed | technique
+- Committed: joint-typicality-decoding → techniques/joint-typicality-decoding.md
+- IRI: pkis:technique:joint-typicality-decoding
