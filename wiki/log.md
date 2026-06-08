@@ -2073,3 +2073,12 @@
 ## [2026-06-08] committed | concept
 - Committed: constrained-noiseless-channel → concepts/constrained-noiseless-channel.md
 - IRI: pkis:concept:constrained-noiseless-channel
+
+## [2026-06-08] staged | node-stub (result)
+- Staged: constrained-channel-capacity-eigenvalue (id: d5ef0cf0-2ff8-4480-9787-d9c63ee7c8b3)
+- Title: Capacity of a Constrained Channel as a Leading Eigenvalue
+- needs_canonical_source: False
+
+## [2026-06-08] committed | result
+- Committed: constrained-channel-capacity-eigenvalue → results/constrained-channel-capacity-eigenvalue.md
+- IRI: pkis:result:constrained-channel-capacity-eigenvalue
