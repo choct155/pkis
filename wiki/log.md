@@ -2612,3 +2612,12 @@
 ## [2026-06-08] committed | technique
 - Committed: simulated-annealing → techniques/simulated-annealing.md
 - IRI: pkis:technique:simulated-annealing
+
+## [2026-06-08] staged | node-stub (principle)
+- Staged: information-theoretic-view-monte-carlo (id: 59fa0edd-8921-4f79-a352-5a76af1ba096)
+- Title: Information-Theoretic View of Monte Carlo
+- needs_canonical_source: False
+
+## [2026-06-08] committed | principle
+- Committed: information-theoretic-view-monte-carlo → principles/information-theoretic-view-monte-carlo.md
+- IRI: pkis:principle:information-theoretic-view-monte-carlo

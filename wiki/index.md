@@ -651,6 +651,7 @@
 - [[llm-language-comprehension]] — The problem of whether LLMs genuinely comprehend language vs. pattern-match surface form (deep-learning, cognitive-science) (2026-05-20)
 
 ## Principles
+- [[information-theoretic-view-monte-carlo]] — Information-Theoretic View of Monte Carlo (bayesian-stats, statistical-learning) (2026-06-08)
 - [[detailed-balance]] — Detailed Balance (bayesian-stats, statistical-learning) (2026-06-08)
 - [[uniform-sampling-curse]] — Why Uniform Sampling Fails in High Dimensions (bayesian-stats, statistical-learning) (2026-06-08)
 - [[monte-carlo-estimator]] — Monte Carlo Estimator (bayesian-stats, statistical-learning) (2026-06-08)
