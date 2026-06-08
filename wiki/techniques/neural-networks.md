@@ -41,3 +41,11 @@ MacKay (ITILA Ch. 38) gives a clean three-part specification that defines any ne
 - **Learning rule** — the long-time-scale dynamics: how the *weights* change over time. The learning rule generally depends on the neuron activities, and may also depend on *target* values supplied by a teacher.
 
 The key separation is the **two time scales**: activities settle quickly under fixed weights (the activity rule), while weights adapt slowly (the learning rule). MacKay notes these rules may be *invented* by researchers or, more principledly, *derived* from a chosen objective function — the latter being the route that connects neural networks to probabilistic modelling and gradient-based optimization.
+
+## Learning Paradigms: Supervised vs Unsupervised
+MacKay divides neural network algorithms into two broad classes by the form of the data they consume:
+
+- **Supervised networks** receive *inputs paired with targets*, where the target is a teacher's specification of the desired response. Learning shapes the weights so the network's output matches the target.
+- **Unsupervised networks** receive data in undivided form, simply a set of examples $\{\mathbf{x}\}$. Some unsupervised algorithms merely *memorize* the examples for later recall (associative memories); others aim to *generalize* — to discover patterns, extract underlying features, or model the data distribution.
+
+The boundary is porous: an unsupervised model that can *fill in missing variables* of an example $\mathbf{x}$ (predicting one part of the data from another) thereby also acts as a supervised network. This blurring foreshadows the modern view of self-supervised learning, where supervision targets are manufactured from the structure of the unlabelled data itself.

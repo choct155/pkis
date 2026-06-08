@@ -3085,3 +3085,6 @@
 
 ## [2026-06-08] edit | edit_node
 - pkis:technique:neural-networks: fields=[] sections=['Specifying a Neural Network: Architecture, Activity Rule, Learning Rule']
+
+## [2026-06-08] edit | edit_node
+- pkis:technique:neural-networks: fields=[] sections=['Learning Paradigms: Supervised vs Unsupervised']
