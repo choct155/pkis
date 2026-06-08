@@ -2118,3 +2118,12 @@
 ## [2026-06-08] committed | technique
 - Committed: bayesian-codebreaking → techniques/bayesian-codebreaking.md
 - IRI: pkis:technique:bayesian-codebreaking
+
+## [2026-06-08] staged | node-stub (result)
+- Staged: zipf-mandelbrot-law (id: c52b9106-d4f1-4900-bf1b-8469f1c00cc1)
+- Title: Zipf–Mandelbrot Law
+- needs_canonical_source: False
+
+## [2026-06-08] committed | result
+- Committed: zipf-mandelbrot-law → results/zipf-mandelbrot-law.md
+- IRI: pkis:result:zipf-mandelbrot-law
