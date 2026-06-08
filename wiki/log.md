@@ -1466,3 +1466,12 @@
 ## [2026-06-08] committed | result
 - Committed: optimal-symbol-codelengths → results/optimal-symbol-codelengths.md
 - IRI: pkis:result:optimal-symbol-codelengths
+
+## [2026-06-08] staged | node-stub (technique)
+- Staged: lempel-ziv-coding (id: 02d9ce54-b47b-4fed-9924-6a2f0e0796cc)
+- Title: Lempel–Ziv Coding
+- needs_canonical_source: False
+
+## [2026-06-08] committed | technique
+- Committed: lempel-ziv-coding → techniques/lempel-ziv-coding.md
+- IRI: pkis:technique:lempel-ziv-coding
