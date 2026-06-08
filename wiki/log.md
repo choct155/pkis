@@ -2271,3 +2271,6 @@
 
 ## [2026-06-08] edit | edit_node
 - pkis:technique:hashing-for-error-detection: fields=[] sections=['Checksum codes and the ISBN check digit']
+
+## [2026-06-08] edit | edit_node
+- pkis:technique:hashing-for-error-detection: fields=[] sections=['Detection versus correction: redundancy cost']
