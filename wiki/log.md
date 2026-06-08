@@ -1877,3 +1877,12 @@
 ## [2026-06-08] committed | concept
 - Committed: dual-code → concepts/dual-code.md
 - IRI: pkis:concept:dual-code
+
+## [2026-06-08] staged | node-stub (result)
+- Staged: good-linear-codes-exist (id: 9f43c2f8-77d8-425e-922e-9cb44c0ffa59)
+- Title: Very Good Linear Codes Exist (Random Linear Codes Achieve Capacity)
+- needs_canonical_source: False
+
+## [2026-06-08] committed | result
+- Committed: good-linear-codes-exist → results/good-linear-codes-exist.md
+- IRI: pkis:result:good-linear-codes-exist
