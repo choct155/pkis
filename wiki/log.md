@@ -2866,3 +2866,12 @@
 
 ## [2026-06-08] edit | edit_node
 - pkis:technique:principal-component-analysis: fields=[] sections=['Contrast with Independent Component Analysis']
+
+## [2026-06-08] staged | node-stub (concept)
+- Staged: expected-utility-theory (id: 528d66d4-7bf8-4e3d-80fb-807e03946db6)
+- Title: Expected Utility Theory
+- needs_canonical_source: False
+
+## [2026-06-08] committed | concept
+- Committed: expected-utility-theory → concepts/expected-utility-theory.md
+- IRI: pkis:concept:expected-utility-theory
