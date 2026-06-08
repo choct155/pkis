@@ -1,18 +1,28 @@
 ---
-id: "pkis:technique:neural-networks"
 aliases: []
-title: "Neural Networks (Feedforward)"
-knowledge_type: technique
-also_type: [framework]
-domain: [deep-learning, statistical-learning]
-tags: [optimization, linear-algebra]
-related_concepts: ["[[bias-variance-tradeoff]]", "[[regularization]]"]
-sources: ["[[hastie-esl]]", "[[nielsen-nndl]]", "[[marcus-dl-critical-appraisal-2018]]"]
-date_created: 2026-05-20
-date_updated: 2026-05-20
+also_type:
+- framework
 coverage: 3
-understanding: 0
+date_created: 2026-05-20
+date_updated: '2026-06-08'
+domain:
+- deep-learning
+- statistical-learning
+id: pkis:technique:neural-networks
+knowledge_type: technique
 maturity: settled
+related_concepts:
+- '[[bias-variance-tradeoff]]'
+- '[[regularization]]'
+sources:
+- '[[hastie-esl]]'
+- '[[nielsen-nndl]]'
+- '[[marcus-dl-critical-appraisal-2018]]'
+tags:
+- optimization
+- linear-algebra
+title: Neural Networks (Feedforward)
+understanding: 0
 ---
 
 Layered function approximators that compose affine transformations with nonlinear activation functions, trained by gradient-based optimization (backpropagation). Classification note: assigned as technique but also functions as a framework — neural networks encompass an architecture space, training methodology, regularization strategies (weight decay, early stopping, dropout), and Bayesian extensions.
@@ -22,3 +32,12 @@ Layered function approximators that compose affine transformations with nonlinea
 - [[nielsen-nndl-ch03]] (unread) — covers practical improvements: cross-entropy loss, regularization, dropout, weight initialization
 - [[hastie-esl-ch11]] (unread) — statistical learning perspective on neural networks
 - [[marcus-dl-critical-appraisal-2018]] (unread) — critical appraisal of the deep learning paradigm as a whole; identifies 10 structural limitations including poor generalization outside training distribution, need for large datasets, opacity, and lack of compositionality; motivates hybrid neural-symbolic architectures
+
+## Specifying a Neural Network: Architecture, Activity Rule, Learning Rule
+MacKay (ITILA Ch. 38) gives a clean three-part specification that defines any neural network model:
+
+- **Architecture** — what variables exist and their topological relationships. Typically the *weights* of connections between neurons and the *activities* of the neurons.
+- **Activity rule** — the short-time-scale dynamics: local rules saying how neuron *activities* change in response to one another, usually as a function of the (fixed) weights.
+- **Learning rule** — the long-time-scale dynamics: how the *weights* change over time. The learning rule generally depends on the neuron activities, and may also depend on *target* values supplied by a teacher.
+
+The key separation is the **two time scales**: activities settle quickly under fixed weights (the activity rule), while weights adapt slowly (the learning rule). MacKay notes these rules may be *invented* by researchers or, more principledly, *derived* from a chosen objective function — the latter being the route that connects neural networks to probabilistic modelling and gradient-based optimization.

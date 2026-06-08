@@ -3082,3 +3082,6 @@
 
 ## [2026-06-08] edit | edit_node
 - pkis:technique:hypothesis-testing: fields=[] sections=['What a p-value does not mean']
+
+## [2026-06-08] edit | edit_node
+- pkis:technique:neural-networks: fields=[] sections=['Specifying a Neural Network: Architecture, Activity Rule, Learning Rule']
