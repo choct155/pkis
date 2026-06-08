@@ -1850,3 +1850,12 @@
 ## [2026-06-08] committed | concept
 - Committed: weight-enumerator-function → concepts/weight-enumerator-function.md
 - IRI: pkis:concept:weight-enumerator-function
+
+## [2026-06-08] staged | node-stub (concept)
+- Staged: perfect-codes (id: 04034cc8-e0ad-4b0a-a5c3-f6a4f0703e74)
+- Title: Perfect Codes
+- needs_canonical_source: False
+
+## [2026-06-08] committed | concept
+- Committed: perfect-codes → concepts/perfect-codes.md
+- IRI: pkis:concept:perfect-codes

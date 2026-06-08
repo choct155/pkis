@@ -290,6 +290,7 @@
 - [[liu-machine-unlearning-llm-2024]] — Rethinking Machine Unlearning for LLMs: post-training knowledge editing survey (deep-learning, ai-safety) (2026-05-20)
 
 ## Concepts
+- [[perfect-codes]] — Perfect Codes (information-theory) (2026-06-08)
 - [[weight-enumerator-function]] — Weight Enumerator Function (information-theory) (2026-06-08)
 - [[minimum-distance]] — Minimum Distance of a Code (information-theory) (2026-06-08)
 - [[one-way-hash-function]] — One-Way Hash Function (information-theory, computer-science) (2026-06-08)
