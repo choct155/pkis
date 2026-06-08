@@ -9,12 +9,16 @@ component_scores:
   implementation: null
   operational_mechanism: null
   principled_mechanism: null
+contrasts-with:
+- arithmetic-coding
 coverage: 1
 date_created: '2026-06-08'
 date_updated: '2026-06-08'
 domain:
 - information-theory
 id: pkis:technique:huffman-coding
+instantiates:
+- source-coding-theorem
 knowledge_type: technique
 maturity: evolving
 needs_canonical_source: false
@@ -44,4 +48,6 @@ The canonical instance of the source coding theorem made constructive — it sho
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[arithmetic-coding]] — contrasts-with: Integer bits/symbol (Huffman) vs whole-stream coding escaping that limit (arithmetic)
+- [[source-coding-theorem]] — instantiates: Optimal symbol code; achieves within 1 bit of H
 [To be populated during integration]

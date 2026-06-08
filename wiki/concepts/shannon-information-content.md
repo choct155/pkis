@@ -20,6 +20,8 @@ id: pkis:concept:shannon-information-content
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- entropy
 related_concepts: []
 sources:
 - mackay-itila-ch04
@@ -48,4 +50,5 @@ Information content is the natural codeword-length target: an optimal code assig
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[entropy]] — prerequisite-of: Entropy is the expected Shannon information content; define h(x) first
 [To be populated during integration]

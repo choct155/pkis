@@ -29,6 +29,10 @@ tags:
 - typical-set
 title: Source Coding Theorem (Shannon's First Theorem)
 understanding: 0
+uses:
+- typical-set
+- entropy
+- shannon-information-content
 ---
 
 ## Definition
@@ -44,4 +48,7 @@ It establishes entropy as a physically meaningful limit, not just a formula. It 
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[shannon-information-content]] — uses: Optimal codeword length ≈ h(x)
+- [[entropy]] — uses: Entropy H is the fundamental compression limit
+- [[typical-set]] — uses: Proof: code only the ~2^{NH} typical strings
 [To be populated during integration]

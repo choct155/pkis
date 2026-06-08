@@ -16,6 +16,8 @@ id: pkis:result:kraft-inequality
 knowledge_type: result
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- huffman-coding
 related_concepts: []
 sources:
 - mackay-itila-ch05
@@ -40,4 +42,5 @@ Combined with Gibbs' inequality, Kraft yields the lower bound on expected codewo
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[huffman-coding]] — prerequisite-of: Kraft guarantees prefix codes exist for valid length sets; underlies optimality
 [To be populated during integration]

@@ -15,6 +15,8 @@ date_updated: '2026-06-08'
 domain:
 - information-theory
 id: pkis:technique:arithmetic-coding
+instantiates:
+- source-coding-theorem
 knowledge_type: technique
 maturity: evolving
 needs_canonical_source: false
@@ -43,4 +45,5 @@ The practical realization of the source coding theorem's promise: compression to
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[source-coding-theorem]] — instantiates: Stream code; reaches ~H bits/symbol for arbitrary models
 [To be populated during integration]

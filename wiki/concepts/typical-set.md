@@ -35,6 +35,9 @@ tags:
 - typicality
 title: Typical Set
 understanding: 0
+uses:
+- entropy
+- shannon-information-content
 ---
 
 ## Definition
@@ -61,4 +64,6 @@ The same fact in continuous form: samples from a $d$-dimensional standard Gaussi
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[shannon-information-content]] — uses: Typical strings have average information content per symbol ≈ H
+- [[entropy]] — uses: The typical set is defined by per-symbol log-prob ≈ H(X)
 [To be populated during integration]
