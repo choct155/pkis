@@ -1616,3 +1616,6 @@
 
 ## [2026-06-08] edit | edit_node
 - pkis:result:source-coding-theorem: fields=[] sections=['Converse — the two-sided bound']
+
+## [2026-06-08] edit | edit_node
+- pkis:result:source-coding-theorem: fields=[] sections=['Source coding theorem for symbol codes']

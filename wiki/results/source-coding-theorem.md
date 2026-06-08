@@ -59,3 +59,6 @@ It establishes entropy as a physically meaningful limit, not just a formula. It 
 
 ## Converse — the two-sided bound
 The theorem has two distinct halves. **Part 1** ($\tfrac1N H_\delta(X^N) < H+\epsilon$): even for vanishingly small permitted error $\delta$, the bits/symbol need not exceed $H+\epsilon$. **Part 2 / converse** ($\tfrac1N H_\delta(X^N) > H-\epsilon$): even for $\delta$ close to 1 (errors most of the time!), you still cannot get below $H-\epsilon$ bits/symbol. Together: the answer is $H$, no more and no less, regardless of error tolerance.
+
+## Source coding theorem for symbol codes
+**Symbol-code form (MacKay Thm 5.1).** For an ensemble $X$ there exists a prefix code with $H(X)\le L(C,X) < H(X)+1$. Proof: set $l_i=\lceil\log_2(1/p_i)\rceil$; these satisfy Kraft since $\sum_i 2^{-\lceil\log_2(1/p_i)\rceil}\le\sum_i p_i=1$, so a prefix code exists, and $L < H(X)+1$. The lower bound $L\ge H(X)$ holds for any uniquely decodable code (Gibbs + Kraft).
