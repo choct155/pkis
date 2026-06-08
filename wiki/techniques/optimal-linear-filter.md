@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- deconvolution
 component_scores:
   alternatives: null
   conditions: null
@@ -9,6 +11,8 @@ component_scores:
   implementation: null
   operational_mechanism: null
   principled_mechanism: null
+contrasts-with:
+- maximum-likelihood-estimation
 coverage: 1
 date_created: '2026-06-08'
 date_updated: '2026-06-08'
@@ -16,6 +20,8 @@ domain:
 - statistical-learning
 - bayesian-stats
 id: pkis:technique:optimal-linear-filter
+instantiates:
+- bayesian-inference
 knowledge_type: technique
 maturity: evolving
 needs_canonical_source: false
@@ -31,6 +37,9 @@ tags:
 - pseudoinverse
 title: Optimal Linear Filter (Wiener Filter)
 understanding: 0
+uses:
+- regularization
+- laplace-approximation
 ---
 
 ## Definition
@@ -48,4 +57,9 @@ This equivalence reveals the implicit Gaussian assumptions buried in classical l
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[laplace-approximation]] — uses: Posterior covariance is the inverse Hessian of the neg-log-posterior; for this Gaussian posterior the Laplace approximation is exact.
+- [[maximum-likelihood-estimation]] — contrasts-with: Dropping the prior term reduces the filter to the ML pseudoinverse, which is ill-conditioned; the prior is what regularizes it.
+- [[regularization]] — uses: The sigma_nu^2/sigma_f^2 C term regularizes the ill-conditioned pseudoinverse.
+- [[bayesian-inference]] — instantiates: f_MP is the posterior mode of a linear-Gaussian Bayesian model; the filter is MAP estimation.
+- [[deconvolution]] — applies: The optimal linear filter is the standard linear solution to the deconvolution / linear inverse problem.
 [To be populated during integration]

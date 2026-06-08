@@ -6,6 +6,7 @@ analogous-to:
 applies:
 - linear-block-code
 - trellis
+- convolutional-code
 component_scores:
   alternatives: null
   conditions: null
@@ -54,6 +55,7 @@ It solves shortest-path and critical-path problems in linear time without enumer
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[convolutional-code]] — applies: The min-sum (Viterbi) algorithm finds the ML codeword as the minimum-cost trellis path.
 - [[trellis]] — applies: Min-sum (Viterbi) runs on the trellis to solve MAP codeword decoding.
 - [[linear-block-code]] — applies: Viterbi/min-sum decoding finds the most likely codeword on a trellis.
 - [[sum-product-algorithm]] — analogous-to: Same local message structure with the (+,x) semiring replaced by (min,+).

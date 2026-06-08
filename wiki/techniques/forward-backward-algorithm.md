@@ -5,6 +5,8 @@ analogous-to:
 - min-sum-algorithm
 - belief-propagation
 - kalman-filter
+applies:
+- convolutional-code
 component_scores:
   alternatives: null
   conditions: null
@@ -62,6 +64,7 @@ This is the exact, efficient route to per-bit soft outputs that drive iterative 
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[convolutional-code]] — applies: The forward-backward (BCJR) algorithm computes per-bit posteriors on the convolutional trellis.
 - [[kalman-filter]] — analogous-to: Both are exact forward-backward inference on a chain; Kalman is the linear-Gaussian continuous-state case.
 - [[belief-propagation]] — analogous-to: Forward-backward / BCJR is belief propagation specialized to a chain, and is exact there.
 - [[min-sum-algorithm]] — analogous-to: Same trellis message passing; sum/product for marginals vs min/sum for the best path.

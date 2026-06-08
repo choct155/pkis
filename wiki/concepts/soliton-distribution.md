@@ -19,6 +19,8 @@ id: pkis:concept:soliton-distribution
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- lt-codes
 related_concepts: []
 sources:
 - mackay-itila-ch50
@@ -51,4 +53,5 @@ The soliton design is what makes LT codes *work*: Luby's main theorem guarantees
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[lt-codes]] — prerequisite-of: The robust soliton degree distribution is what makes LT decoding succeed with bounded overhead and complexity.
 [To be populated during integration]

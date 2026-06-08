@@ -28,6 +28,8 @@ tags:
 - point-spread-function
 title: Deconvolution (Linear Inverse Problem)
 understanding: 0
+uses:
+- regularization
 ---
 
 ## Definition
@@ -48,4 +50,5 @@ Deconvolution is ubiquitous: astronomical imaging, microscopy, medical imaging, 
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[regularization]] — uses: The ill-posed inversion requires a prior/regularizer to stabilize amplified noise.
 [To be populated during integration]

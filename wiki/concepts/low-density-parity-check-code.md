@@ -16,12 +16,16 @@ date_updated: '2026-06-08'
 domain:
 - information-theory
 id: pkis:concept:low-density-parity-check-code
+instantiates:
+- noisy-channel-coding-theorem
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
 related_concepts: []
 sources:
 - mackay-itila-ch47
+specializes:
+- linear-block-code
 tags:
 - error-correction
 - linear-codes
@@ -30,6 +34,8 @@ tags:
 - channel-coding
 title: Low-Density Parity-Check Code (Gallager Code)
 understanding: 0
+uses:
+- tanner-graph
 ---
 
 ## Definition
@@ -50,4 +56,7 @@ Gallager invented these codes in 1962; they were forgotten for thirty years, the
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[noisy-channel-coding-theorem]] — instantiates: LDPC codes are a practical, capacity-approaching realization of Shannon's noisy-channel coding theorem.
+- [[tanner-graph]] — uses: An LDPC code's sparse H is naturally represented as a sparse bipartite Tanner graph.
+- [[linear-block-code]] — specializes: An LDPC code is a linear block code whose parity-check matrix H is sparse.
 [To be populated during integration]

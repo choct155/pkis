@@ -30,6 +30,10 @@ tags:
 - near-capacity-codes
 title: Turbo Code
 understanding: 0
+uses:
+- convolutional-code
+- factor-graph
+- concatenated-codes
 ---
 
 ## Definition
@@ -48,4 +52,7 @@ Turbo codes were among the first practical codes to approach Shannon capacity. B
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[concatenated-codes]] — uses: Turbo codes interleave (permute) source bits across parallel encoders, a parallel-concatenation construction.
+- [[factor-graph]] — uses: A turbo code is represented by a factor graph with one rectangular node per constituent trellis.
+- [[convolutional-code]] — uses: A turbo code is built from two or more constituent convolutional encoders.
 [To be populated during integration]

@@ -15,13 +15,20 @@ date_created: '2026-06-08'
 date_updated: '2026-06-08'
 domain:
 - deep-learning
+extends:
+- regularization
 id: pkis:concept:multilayer-perceptron
+instantiates:
+- universal-approximation-theorem
+- learning-as-inference
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
 related_concepts: []
 sources:
 - mackay-itila-ch44
+specializes:
+- neural-networks
 tags:
 - neural-networks
 - function-approximation
@@ -30,6 +37,10 @@ tags:
 - classification
 title: Multilayer Perceptron (Feedforward Network)
 understanding: 0
+uses:
+- gradient-descent
+- weight-decay-as-prior
+- cross-entropy-loss
 ---
 
 ## Definition
@@ -54,4 +65,11 @@ The MLP is the canonical trainable nonlinear curve-fitter underpinning modern de
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[learning-as-inference]] — instantiates: Minimizing the MLP objective M(w) is MAP inference: error is a negative log likelihood and weight decay a negative log prior.
+- [[regularization]] — extends: Training adds a regularizing weight-decay term to the data error to combat overfitting.
+- [[cross-entropy-loss]] — uses: Classification MLPs (logistic / softmax outputs) are trained with the cross-entropy negative log likelihood.
+- [[weight-decay-as-prior]] — uses: Quadratic weight decay (Gaussian prior on weights) controls the effective complexity of the fitted MLP.
+- [[universal-approximation-theorem]] — instantiates: A one-hidden-layer MLP with enough units realizes the universal approximation property, producing functions far richer than linear regression.
+- [[gradient-descent]] — uses: MLP parameters are fit by gradient descent on the (regularized) error function.
+- [[neural-networks]] — specializes: The MLP is the canonical feedforward neural network instantiated with one or more hidden layers.
 [To be populated during integration]

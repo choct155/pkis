@@ -9,6 +9,8 @@ date_updated: '2026-06-08'
 domain:
 - bayesian-stats
 - deep-learning
+extends:
+- multilayer-perceptron
 id: pkis:concept:bayesian-neural-networks
 knowledge_type: concept
 maturity: evolving
@@ -34,6 +36,7 @@ uses:
 Neural networks that place probability distributions over weights rather than point estimates, enabling principled uncertainty quantification in predictions; inference over the weight posterior is typically intractable and requires approximate methods such as variational inference, MCMC, or Monte Carlo dropout.
 
 ## Connections
+- [[multilayer-perceptron]] — extends: Bayesian neural networks place priors over MLP weights and marginalize, yielding evidence-based complexity control and predictive error bars.
 - [[maxima-are-atypical]] — contrasts-with: Marginalization fixes the over-confidence of MAP point prediction that maxima-are-atypical warns about.
 - [[laplace-approximation]] — uses: The Gaussian approximation around w_MP gives a deterministic route to BNN predictions.
 - [[hmc]] — uses: Hamiltonian (and Langevin) Monte Carlo sample the weight posterior to estimate the predictive integral.

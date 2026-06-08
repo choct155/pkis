@@ -24,6 +24,7 @@ maturity: evolving
 needs_canonical_source: false
 prerequisite-of:
 - neural-networks
+- multilayer-perceptron
 related_concepts: []
 sources:
 - mackay-itila-ch39
@@ -55,6 +56,7 @@ The single neuron is the conceptual seed of all of deep learning: networks are b
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[multilayer-perceptron]] — prerequisite-of: An MLP composes layers of neurons; the single-neuron classifier is the building block and special case.
 - [[activation-functions]] — uses: The neuron's output is an activation function (sigmoid, tanh, threshold, linear) of the weighted sum.
 - [[neural-networks]] — prerequisite-of: Multi-layer neural networks are built by composing single neurons; the neuron is the atomic unit.
 - [[logistic-regression]] — instantiates: A logistic single neuron is exactly logistic regression: same model, objective, and gradient.

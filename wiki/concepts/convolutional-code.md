@@ -22,6 +22,8 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - mackay-itila-ch48
+specializes:
+- linear-block-code
 tags:
 - error-correcting-codes
 - shift-register
@@ -30,6 +32,8 @@ tags:
 - convolutional-codes
 title: Convolutional Code
 understanding: 0
+uses:
+- trellis
 ---
 
 ## Definition
@@ -50,4 +54,6 @@ Convolutional codes admit an efficient trellis description, so optimal decoding 
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[linear-block-code]] — specializes: A convolutional code is a linear code; over one block it has a (low-density) parity-check matrix.
+- [[trellis]] — uses: Valid transmissions of a convolutional code are paths through its trellis.
 [To be populated during integration]

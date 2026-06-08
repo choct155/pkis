@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- binary-erasure-channel
 component_scores:
   application: null
   boundary: null
@@ -31,6 +33,8 @@ tags:
 - no-feedback
 title: Fountain Codes (Rateless Erasure Codes)
 understanding: 0
+uses:
+- noisy-channel-coding-theorem
 ---
 
 ## Definition
@@ -45,4 +49,6 @@ Fountain codes are the *best known* codes for the erasure channel, and the pract
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[noisy-channel-coding-theorem]] — uses: Shannon's theorem justifies discarding feedback: erasure-channel capacity (1-f)l is unchanged by a feedback channel.
+- [[binary-erasure-channel]] — applies: Fountain codes are erasure-correcting codes for the (q-ary) erasure channel.
 [To be populated during integration]

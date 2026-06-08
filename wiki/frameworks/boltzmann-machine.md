@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+analogous-to:
+- ising-model
 component_scores:
   application: null
   limits: null
@@ -14,6 +16,8 @@ date_updated: '2026-06-08'
 domain:
 - deep-learning
 - statistical-learning
+generalizes:
+- hopfield-network
 id: pkis:framework:boltzmann-machine
 knowledge_type: framework
 maturity: evolving
@@ -30,6 +34,9 @@ tags:
 - hinton-sejnowski
 title: Boltzmann Machine
 understanding: 0
+uses:
+- gibbs-sampler
+- partition-function
 ---
 
 ## Definition
@@ -49,4 +56,8 @@ The Boltzmann machine reframes a neural network as a Markov-random-field generat
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[ising-model]] — analogous-to: Both are systems of binary spins with symmetric pairwise couplings and a Gibbs distribution over an energy function; the Boltzmann machine is an Ising model whose couplings are learned from data.
+- [[partition-function]] — uses: The model probability P(x|W)=exp[(1/2)x^T W x]/Z(W) is normalized by the partition function Z(W), whose log-derivative yields the model correlations.
+- [[gibbs-sampler]] — uses: The stochastic activity rule (set x_i=+1 with prob 1/(1+e^{-2a_i})) is exactly single-site Gibbs sampling of P(x|W).
+- [[hopfield-network]] — generalizes: The Boltzmann machine is the stochastic generalization of the Hopfield network: it samples from the Gibbs distribution rather than descending to a fixed-point attractor.
 [To be populated during integration]

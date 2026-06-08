@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- deconvolution
 component_scores:
   alternatives: null
   conditions: null
@@ -9,6 +11,8 @@ component_scores:
   implementation: null
   operational_mechanism: null
   principled_mechanism: null
+contrasts-with:
+- optimal-linear-filter
 coverage: 1
 date_created: '2026-06-08'
 date_updated: '2026-06-08'
@@ -31,6 +35,8 @@ tags:
 - astronomy
 title: Maximum-Entropy Image Reconstruction
 understanding: 0
+uses:
+- entropy
 ---
 
 ## Definition
@@ -51,4 +57,7 @@ It is a flagship demonstration of MacKay's thesis that *the better the prior mat
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[entropy]] — uses: The entropic prior is built from the Shannon-Skilling cross-entropy S(f,m) relative to a default image m.
+- [[optimal-linear-filter]] — contrasts-with: MaxEnt swaps the Gaussian prior (which permits unphysical negative pixels) for a positive entropic prior, removing artefacts.
+- [[deconvolution]] — applies: MaxEnt reconstruction solves deconvolution with a positivity-enforcing entropic prior instead of a Gaussian one.
 [To be populated during integration]

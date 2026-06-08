@@ -20,6 +20,8 @@ id: pkis:concept:covariance-function
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- gaussian-process
 related_concepts: []
 sources:
 - mackay-itila-ch45
@@ -31,6 +33,8 @@ tags:
 - stationary-process
 title: Covariance Function (Kernel)
 understanding: 0
+uses:
+- gaussian-process-regression
 ---
 
 ## Definition
@@ -48,4 +52,6 @@ The continuity and differentiability of typical sample functions are dictated en
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[gaussian-process-regression]] — uses: GPR predictions depend entirely on the covariance matrix built from the kernel.
+- [[gaussian-process]] — prerequisite-of: A GP is fully specified by its mean and covariance function; the kernel defines the prior over functions.
 [To be populated during integration]

@@ -16,6 +16,8 @@ date_updated: '2026-06-08'
 domain:
 - deep-learning
 - statistical-learning
+extends:
+- boltzmann-machine
 id: pkis:concept:boltzmann-machine-hidden-units
 knowledge_type: concept
 maturity: evolving
@@ -32,6 +34,8 @@ tags:
 - restricted-boltzmann-machine
 title: Hidden Units in Boltzmann Machines
 understanding: 0
+uses:
+- boltzmann-machine-learning-rule
 ---
 
 ## Definition
@@ -51,4 +55,6 @@ Hidden units are the decisive innovation that lets the labelled shifter ensemble
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[boltzmann-machine-learning-rule]] — uses: Learning with hidden units uses the same data-minus-model gradient, now over the joint state y=(x,h) with clamped (positive) and free (negative) phases.
+- [[boltzmann-machine]] — extends: Adding latent hidden units extends the fully-visible Boltzmann machine so that marginalizing the hidden units induces higher-order correlations among the visible variables.
 [To be populated during integration]

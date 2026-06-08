@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- boltzmann-machine
 component_scores:
   alternatives: null
   conditions: null
@@ -31,6 +33,8 @@ tags:
 - hebb-rule
 title: Boltzmann Machine Learning Rule (Wake-Sleep)
 understanding: 0
+uses:
+- gibbs-sampler
 ---
 
 ## Definition
@@ -48,4 +52,6 @@ This is a clean, biologically suggestive instance of learning-as-inference: cont
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[gibbs-sampler]] — uses: The model (sleep-phase) correlation must be estimated by Monte Carlo, i.e. by averaging x_i x_j over Gibbs samples from the network.
+- [[boltzmann-machine]] — applies: The wake-sleep / data-minus-model-correlation gradient is the maximum-likelihood training rule for the Boltzmann machine's weights.
 [To be populated during integration]

@@ -1,6 +1,9 @@
 ---
 aliases: []
 also_type: []
+applies:
+- sum-product-decoding-ldpc
+- low-density-parity-check-code
 component_scores:
   alternatives: null
   conditions: null
@@ -47,4 +50,6 @@ Density evolution turns the empirical question 'how noisy a channel can this cod
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[low-density-parity-check-code]] — applies: Density evolution computes the noise threshold and guides degree-distribution design of LDPC codes.
+- [[sum-product-decoding-ldpc]] — applies: Density evolution tracks the asymptotic message distributions of sum-product decoding to find its threshold.
 [To be populated during integration]

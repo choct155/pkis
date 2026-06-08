@@ -10,16 +10,22 @@ component_scores:
   prerequisites: null
   scope: null
   transfer: null
+contrasts-with:
+- bayesian-neural-networks
 coverage: 1
 date_created: '2026-06-08'
 date_updated: '2026-06-08'
 domain:
 - statistical-learning
 - bayesian-stats
+generalizes:
+- gaussian-distribution
 id: pkis:concept:gaussian-process
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- gaussian-process-regression
 related_concepts: []
 sources:
 - mackay-itila-ch45
@@ -49,4 +55,7 @@ Brownian motion, Wiener and Langevin processes, Kalman-filter models, and geosta
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[bayesian-neural-networks]] — contrasts-with: GPs place a prior directly on functions (a smoothing device); BNNs parameterize functions and can in principle do feature discovery.
+- [[gaussian-process-regression]] — prerequisite-of: GPR is inference under a GP prior with a Gaussian noise model.
+- [[gaussian-distribution]] — generalizes: A GP is the generalization of a finite-dimensional Gaussian to an infinite-dimensional function space; any finite marginal is Gaussian.
 [To be populated during integration]

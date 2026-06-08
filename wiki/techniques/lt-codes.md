@@ -15,6 +15,8 @@ date_updated: '2026-06-08'
 domain:
 - information-theory
 id: pkis:technique:lt-codes
+instantiates:
+- fountain-codes
 knowledge_type: technique
 maturity: evolving
 needs_canonical_source: false
@@ -30,6 +32,8 @@ tags:
 - sparse-graph-codes
 title: LT Codes (Luby Transform)
 understanding: 0
+uses:
+- peeling-decoder
 ---
 
 ## Definition
@@ -51,4 +55,6 @@ LT codes turned the abstract fountain ideal into a deployable, linear-cost erasu
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[peeling-decoder]] — uses: LT codes are decoded by the degree-one peeling chain reaction on the erasure channel.
+- [[fountain-codes]] — instantiates: LT codes are the first practical construction of the rateless fountain ideal.
 [To be populated during integration]

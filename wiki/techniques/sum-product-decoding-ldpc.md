@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- low-density-parity-check-code
 component_scores:
   alternatives: null
   conditions: null
@@ -15,12 +17,16 @@ date_updated: '2026-06-08'
 domain:
 - information-theory
 id: pkis:technique:sum-product-decoding-ldpc
+instantiates:
+- belief-propagation
 knowledge_type: technique
 maturity: evolving
 needs_canonical_source: false
 related_concepts: []
 sources:
 - mackay-itila-ch47
+specializes:
+- sum-product-algorithm
 tags:
 - error-correction
 - belief-propagation
@@ -49,4 +55,7 @@ Because the Tanner graph has cycles the algorithm is not exact, but for a good c
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[low-density-parity-check-code]] — applies: Sum-product is the practical decoder that makes LDPC codes usable despite NP-complete optimal decoding.
+- [[belief-propagation]] — instantiates: Iterative probabilistic decoding is belief propagation on a loopy graph.
+- [[sum-product-algorithm]] — specializes: LDPC decoding is the sum-product algorithm instantiated on the code's Tanner graph.
 [To be populated during integration]

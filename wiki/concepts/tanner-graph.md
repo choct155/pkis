@@ -19,9 +19,13 @@ id: pkis:concept:tanner-graph
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- sum-product-decoding-ldpc
 related_concepts: []
 sources:
 - mackay-itila-ch47
+specializes:
+- factor-graph
 tags:
 - error-correction
 - factor-graph
@@ -52,4 +56,6 @@ The Tanner graph is the data structure on which all practical LDPC decoding runs
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[sum-product-decoding-ldpc]] — prerequisite-of: Sum-product decoding runs message passing over the Tanner graph's edges.
+- [[factor-graph]] — specializes: The Tanner graph is the factor graph of the codeword prior/posterior, with bit nodes as variables and check nodes as indicator factors.
 [To be populated during integration]

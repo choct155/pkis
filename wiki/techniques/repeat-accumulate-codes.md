@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+analogous-to:
+- concatenated-codes
 component_scores:
   alternatives: null
   conditions: null
@@ -15,6 +17,8 @@ date_updated: '2026-06-08'
 domain:
 - information-theory
 id: pkis:technique:repeat-accumulate-codes
+instantiates:
+- linear-block-code
 knowledge_type: technique
 maturity: evolving
 needs_canonical_source: false
@@ -30,6 +34,12 @@ tags:
 - channel-coding
 title: Repeat-Accumulate Codes
 understanding: 0
+uses:
+- factor-graph
+- sum-product-algorithm
+- trellis
+- forward-backward-algorithm
+- repetition-codes
 ---
 
 ## Definition
@@ -58,4 +68,11 @@ The number of sum-product iterations $\tau$ needed to decode is random, with a h
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[concatenated-codes]] — analogous-to: RA codes are turbo-like, serial-concatenation-style constructions of a repeater and an accumulator
+- [[repetition-codes]] — uses: the first encoding step repeats each source bit q times, the repetition-code building block
+- [[linear-block-code]] — instantiates: an RA code is a linear code; its valid words satisfy a (generalized) linear parity-check system
+- [[forward-backward-algorithm]] — uses: the accumulator trellis runs forward-backward to produce per-variable likelihoods each iteration
+- [[trellis]] — uses: the accumulator is represented as a trellis for the forward-backward sub-routine
+- [[sum-product-algorithm]] — uses: RA codes are decoded by sum-product message passing on the factor graph
+- [[factor-graph]] — uses: the RA code's prior over codewords is a factor graph with equality and parity factor nodes
 [To be populated during integration]

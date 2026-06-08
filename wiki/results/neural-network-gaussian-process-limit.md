@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- bayesian-neural-networks
 component_scores:
   conditions: null
   implications: null
@@ -20,6 +22,8 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - mackay-itila-ch45
+specializes:
+- gaussian-process
 tags:
 - gaussian-process
 - neural-networks
@@ -45,4 +49,6 @@ The result demystifies Bayesian neural networks: in the wide-network limit, the 
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[bayesian-neural-networks]] — applies: The limit characterizes the implicit function-space prior of a Bayesian neural network as its width grows.
+- [[gaussian-process]] — specializes: An infinitely-wide one-layer network with weight-decay priors converges to a particular GP.
 [To be populated during integration]

@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- turbo-code
 component_scores:
   alternatives: null
   conditions: null
@@ -15,6 +17,8 @@ date_updated: '2026-06-08'
 domain:
 - information-theory
 id: pkis:technique:iterative-turbo-decoding
+instantiates:
+- sum-product-algorithm
 knowledge_type: technique
 maturity: evolving
 needs_canonical_source: false
@@ -29,6 +33,8 @@ tags:
 - forward-backward
 title: Iterative Turbo Decoding
 understanding: 0
+uses:
+- forward-backward-algorithm
 ---
 
 ## Definition
@@ -44,4 +50,7 @@ Iterative decoding is what makes turbo codes practical: exact joint decoding ove
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[turbo-code]] — applies: Iterative decoding is the standard decoder for turbo codes.
+- [[forward-backward-algorithm]] — uses: Each iteration runs the forward-backward (BCJR) sweep within each constituent trellis.
+- [[sum-product-algorithm]] — instantiates: Turbo decoding is the sum-product algorithm run on the (loopy) turbo factor graph.
 [To be populated during integration]

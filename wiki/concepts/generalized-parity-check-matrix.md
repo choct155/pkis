@@ -1,6 +1,10 @@
 ---
 aliases: []
 also_type: []
+analogous-to:
+- factor-graph
+applies:
+- repeat-accumulate-codes
 component_scores:
   application: null
   boundary: null
@@ -15,6 +19,8 @@ date_created: '2026-06-08'
 date_updated: '2026-06-08'
 domain:
 - information-theory
+generalizes:
+- linear-block-code
 id: pkis:concept:generalized-parity-check-matrix
 knowledge_type: concept
 maturity: evolving
@@ -55,4 +61,7 @@ By distinguishing transmitted from state (punctured) bits, this framework reveal
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[factor-graph]] — analogous-to: the generalized parity-check matrix is the matrix counterpart of Forney's normal graph / factor-graph view of a code
+- [[repeat-accumulate-codes]] — applies: RA codes have a compact generalized parity-check matrix with band-diagonal accumulator structure and a permutation
+- [[linear-block-code]] — generalizes: extends the parity-check matrix with state/punctured columns to represent any sparse-graph linear code
 [To be populated during integration]

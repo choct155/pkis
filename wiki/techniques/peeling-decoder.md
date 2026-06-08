@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- binary-erasure-channel
 component_scores:
   alternatives: null
   conditions: null
@@ -21,6 +23,8 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - mackay-itila-ch50
+specializes:
+- sum-product-algorithm
 tags:
 - erasure-channel
 - message-passing
@@ -30,6 +34,8 @@ tags:
 - sum-product
 title: Peeling Decoder for Erasure Codes
 understanding: 0
+uses:
+- soliton-distribution
 ---
 
 ## Definition
@@ -55,4 +61,7 @@ This degree-one chain reaction is the engine that gives LT/fountain codes their 
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[binary-erasure-channel]] — applies: The certain/uncertain message simplification is specific to the erasure channel.
+- [[sum-product-algorithm]] — specializes: Peeling is the sum-product algorithm with only fully-certain/fully-uncertain messages, the erasure-channel case.
+- [[soliton-distribution]] — uses: Peeling relies on the soliton design to keep a steady supply of degree-one checks throughout decoding.
 [To be populated during integration]
