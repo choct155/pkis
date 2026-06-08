@@ -2857,3 +2857,6 @@
 
 ## [2026-06-08] edit | edit_node
 - pkis:technique:mean-field-approximation: fields=[] sections=['Mean-Field as Variational Free-Energy Minimization (Spin Systems)']
+
+## [2026-06-08] edit | edit_node
+- pkis:concept:kl-divergence: fields=[] sections=['Asymmetry: Forward vs Reverse KL in Approximation']
