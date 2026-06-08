@@ -2720,3 +2720,12 @@
 ## [2026-06-08] committed | technique
 - Committed: independent-component-analysis → techniques/independent-component-analysis.md
 - IRI: pkis:technique:independent-component-analysis
+
+## [2026-06-08] staged | node-stub (problem)
+- Staged: blind-source-separation (id: 7374642a-d35b-407a-84af-652b74c5e54d)
+- Title: Blind Source Separation
+- needs_canonical_source: False
+
+## [2026-06-08] committed | problem
+- Committed: blind-source-separation → problems/blind-source-separation.md
+- IRI: pkis:problem:blind-source-separation
