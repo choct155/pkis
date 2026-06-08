@@ -1259,3 +1259,7 @@
 ## [2026-06-08] committed | concept
 - Committed: shannon-information-content → concepts/shannon-information-content.md
 - IRI: pkis:concept:shannon-information-content
+
+## [2026-06-08] committed | result
+- Committed: source-coding-theorem → results/source-coding-theorem.md
+- IRI: pkis:result:source-coding-theorem
