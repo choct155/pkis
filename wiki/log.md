@@ -2929,3 +2929,12 @@
 ## [2026-06-08] committed | concept
 - Committed: single-neuron-classifier → concepts/single-neuron-classifier.md
 - IRI: pkis:concept:single-neuron-classifier
+
+## [2026-06-08] staged | node-stub (technique)
+- Staged: logistic-neuron-learning-rule (id: cc1b272d-8479-489c-add8-57af46f35718)
+- Title: Logistic-Neuron Gradient-Descent Learning Rule
+- needs_canonical_source: False
+
+## [2026-06-08] committed | technique
+- Committed: logistic-neuron-learning-rule → techniques/logistic-neuron-learning-rule.md
+- IRI: pkis:technique:logistic-neuron-learning-rule

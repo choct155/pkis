@@ -461,6 +461,7 @@
 - [[market-vs-hierarchy]] — Coase/Williamson: transactions governed by price signals (markets) vs. managerial direction (firms) (corporate-finance) (2026-05-20)
 
 ## Techniques
+- [[logistic-neuron-learning-rule]] — Logistic-Neuron Gradient-Descent Learning Rule (deep-learning, statistical-learning) (2026-06-08)
 - [[natural-gradient]] — Natural Gradient (Covariant Optimization) (statistical-learning, deep-learning) (2026-06-08)
 - [[independent-component-analysis]] — Independent Component Analysis (ICA) (statistical-learning, deep-learning) (2026-06-08)
 - [[coupling-from-the-past]] — Coupling from the Past (bayesian-stats, statistical-learning) (2026-06-08)
