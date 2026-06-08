@@ -2576,3 +2576,12 @@
 ## [2026-06-08] committed | technique
 - Committed: slice-sampling → techniques/slice-sampling.md
 - IRI: pkis:technique:slice-sampling
+
+## [2026-06-08] staged | node-stub (principle)
+- Staged: detailed-balance (id: dde5c061-3fd8-4116-8958-69656a84a83b)
+- Title: Detailed Balance
+- needs_canonical_source: False
+
+## [2026-06-08] committed | principle
+- Committed: detailed-balance → principles/detailed-balance.md
+- IRI: pkis:principle:detailed-balance
