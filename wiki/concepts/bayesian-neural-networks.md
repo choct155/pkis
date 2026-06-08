@@ -5,7 +5,7 @@ contrasts-with:
 - maxima-are-atypical
 coverage: 1
 date_created: 2026-05-20
-date_updated: 2026-05-20
+date_updated: '2026-06-08'
 domain:
 - bayesian-stats
 - deep-learning
@@ -46,3 +46,10 @@ Neural networks that place probability distributions over weights rather than po
 ## Reading Path
 
 - [[yellapragada-variational-bayes]] (unread) — central subject; reviews five VI approaches to BNN inference; applications in RL exploration and continual learning
+
+## Prediction by Marginalization over Weights
+The point of Bayesian learning is not a single trained weight vector but an *ensemble*: rather than fix $w$ to its optimum $w_{MP}$, one predicts a new target by integrating the network output against the weight posterior,
+$$P(t^{(N+1)}{=}1\mid x^{(N+1)},D,\alpha)=\int d^K w\; y(x^{(N+1)};w)\,\tfrac{1}{Z_M}e^{-M(w)}.$$
+This marginalization is what fixes the central pathology of point prediction: networks fixed to $w_{MP}$ give *over-confident* outputs far from the data. MacKay's example — two test points A and B with the same $w_{MP}\!\cdot\!x$ receive the same MAP probability, yet B (far from the training data) should be far less certain — shows why. Marginalizing over the posterior automatically moderates predictions toward 0.5 exactly where parameter uncertainty is large, with no ad hoc downweighting factor.
+
+MacKay names three families for computing the integral: Monte Carlo sampling from the posterior (Langevin and Hamiltonian Monte Carlo), the Laplace/Gaussian approximation around $w_{MP}$, and variational methods. For realistic networks ($K$ in the thousands) only the approximate routes are feasible.

@@ -3097,3 +3097,6 @@
 
 ## [2026-06-08] edit | edit_node
 - pkis:concept:channel-capacity: fields=[] sections=['Analogy: Capacity of a Learning Machine']
+
+## [2026-06-08] edit | edit_node
+- pkis:concept:bayesian-neural-networks: fields=[] sections=['Prediction by Marginalization over Weights']
