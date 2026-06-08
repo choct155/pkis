@@ -2109,3 +2109,12 @@
 ## [2026-06-08] committed | concept
 - Committed: redundancy-of-natural-language → concepts/redundancy-of-natural-language.md
 - IRI: pkis:concept:redundancy-of-natural-language
+
+## [2026-06-08] staged | node-stub (technique)
+- Staged: bayesian-codebreaking (id: 3043cd2c-1c73-4358-9f89-82d0d97096dc)
+- Title: Bayesian Codebreaking (Banburismus)
+- needs_canonical_source: False
+
+## [2026-06-08] committed | technique
+- Committed: bayesian-codebreaking → techniques/bayesian-codebreaking.md
+- IRI: pkis:technique:bayesian-codebreaking
