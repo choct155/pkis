@@ -61,3 +61,12 @@ Responsibilities turn clustering into smooth, differentiable inference: borderli
 - [[k-means-clustering]] — generalizes: Hard K-means is the beta -> infinity limit of soft K-means.
 - [[clustering]] — instantiates: Soft K-means performs clustering with fractional membership.
 [To be populated during integration]
+
+## Soft K-means as ML mixture fitting (versions 2 and 3)
+ch22 establishes that the soft K-means update is *identical* to the maximum-likelihood EM algorithm for a mixture of Gaussians — so clustering can be viewed as mixture-density modelling, and the heuristic version 1 can be upgraded principledly.
+
+**Version 2** lets each spherical cluster own its width $\beta^{(k)}=1/\sigma_k^2$ and a mixing weight $\pi_k$, both updated by the algorithm; this fits a mixture of spherical Gaussians of unequal size and weight, fixing version 1's inability to handle clusters of differing scale.
+
+**Version 3** replaces the spherical assumption with axis-aligned Gaussians of per-axis variances, correctly recovering elongated 'cigar-shaped' clusters that defeat versions 1–2.
+
+**Failure mode.** Both upgraded versions inherit ML's pathology: a mean can sit on a single data point and drive $\sigma_k^2\to0$, blowing up the likelihood (an overfitting spike from which there is no return). Fitting $K=4$ to small toy data can spawn degenerate one-point clusters — a caution that the likelihood maximum is not always the answer you want.

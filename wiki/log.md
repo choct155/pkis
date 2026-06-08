@@ -2498,3 +2498,6 @@
 
 ## [2026-06-08] edit | edit_node
 - pkis:technique:em-algorithm: fields=[] sections=['EM as maximum likelihood for a Gaussian mixture (MacKay derivation)']
+
+## [2026-06-08] edit | edit_node
+- pkis:technique:soft-k-means: fields=[] sections=['Soft K-means as ML mixture fitting (versions 2 and 3)']
