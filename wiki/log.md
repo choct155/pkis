@@ -2920,3 +2920,12 @@
 ## [2026-06-08] committed | concept
 - Committed: content-addressable-memory → concepts/content-addressable-memory.md
 - IRI: pkis:concept:content-addressable-memory
+
+## [2026-06-08] staged | node-stub (concept)
+- Staged: single-neuron-classifier (id: 77eb1d81-f080-429e-b440-037a353ff649)
+- Title: Single Neuron as a Classifier
+- needs_canonical_source: False
+
+## [2026-06-08] committed | concept
+- Committed: single-neuron-classifier → concepts/single-neuron-classifier.md
+- IRI: pkis:concept:single-neuron-classifier

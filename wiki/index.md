@@ -290,6 +290,7 @@
 - [[liu-machine-unlearning-llm-2024]] — Rethinking Machine Unlearning for LLMs: post-training knowledge editing survey (deep-learning, ai-safety) (2026-05-20)
 
 ## Concepts
+- [[single-neuron-classifier]] — Single Neuron as a Classifier (deep-learning, statistical-learning) (2026-06-08)
 - [[content-addressable-memory]] — Content-Addressable Memory (deep-learning) (2026-06-08)
 - [[confidence-interval]] — Confidence Interval (bayesian-stats) (2026-06-08)
 - [[value-of-information]] — Value of Information (bayesian-stats) (2026-06-08)
