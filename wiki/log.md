@@ -1598,3 +1598,6 @@
 
 ## [2026-06-08] edit | edit_node
 - pkis:concept:kl-divergence: fields=[] sections=["Relative entropy and Gibbs' inequality"]
+
+## [2026-06-08] edit | edit_node
+- pkis:concept:bayesian-inference: fields=[] sections=['Forward vs inverse probability']

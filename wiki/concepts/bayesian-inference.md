@@ -12,7 +12,7 @@ component_scores:
   transfer: null
 coverage: 1
 date_created: '2026-06-01'
-date_updated: '2026-06-02'
+date_updated: '2026-06-08'
 domain:
 - bayesian-stats
 id: pkis:concept:bayesian-inference
@@ -41,3 +41,8 @@ Inference that treats unknown quantities as random variables and updates beliefs
 
 ## Needs Canonical Source
 Resolved — canonical source(s) attached above.
+
+## Forward vs inverse probability
+MacKay frames inference as **inverse probability**: given a generative (forward) model $P(d\mid\theta)$, compute $P(\theta\mid d)$ via Bayes' theorem,
+$$\text{posterior} = \frac{\text{likelihood}\times\text{prior}}{\text{evidence}}.$$
+The **evidence** (marginal likelihood) $P(D\mid H)=\sum_\theta P(D\mid\theta)P(\theta)$ normalizes the posterior. Crucially, **likelihood $\ne$ probability**: $P(d\mid\theta)$ is a probability over $d$ for fixed $\theta$, but a *likelihood* of $\theta$ for fixed observed $d$. Predictions should marginalize over the posterior rather than plug in the single most plausible hypothesis.
