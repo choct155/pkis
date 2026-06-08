@@ -2433,3 +2433,65 @@
 ## [2026-06-08] committed | framework
 - Committed: evidence-framework → frameworks/evidence-framework.md
 - IRI: pkis:framework:evidence-framework
+
+## [2026-06-08] edges | add_connections
+- sufficient-statistics —uses→ maximum-likelihood-estimation
+- exponential-family-ml-maxent-duality —specializes→ maximum-likelihood-estimation
+- exponential-family-ml-maxent-duality —uses→ sufficient-statistics
+- exponential-family-ml-maxent-duality —uses→ lagrange-multipliers
+- exponential-family-ml-maxent-duality —analogous-to→ entropy
+- maxima-are-atypical —contrasts-with→ maximum-likelihood-estimation
+- maxima-are-atypical —uses→ typical-set
+- maxima-are-atypical —applies→ gaussian-mixture-models
+- em-algorithm —applies→ gaussian-mixture-models
+- soft-k-means —instantiates→ maximum-likelihood-estimation
+- gamma-distribution —generalizes→ probability-distribution-relationships
+- beta-distribution —specializes→ dirichlet-distribution
+- beta-distribution —applies→ conjugate-prior
+- dirichlet-distribution —applies→ conjugate-prior
+- gamma-distribution —applies→ conjugate-prior
+- gamma-distribution —uses→ poisson-process
+- gamma-distribution —contrasts-with→ gaussian-distribution
+- dirichlet-distribution —uses→ gamma-distribution
+- marginalization —uses→ marginal-likelihood
+- marginalization —contrasts-with→ maximum-likelihood-estimation
+- marginalization —prerequisite-of→ bayesian-inference
+- laplace-approximation —applies→ marginalization
+- sufficient-statistics —uses→ marginalization
+- sufficient-statistics —prerequisite-of→ bayesian-inference
+- conjugate-prior —uses→ sufficient-statistics
+- forward-backward-algorithm —instantiates→ sum-product-algorithm
+- forward-backward-algorithm —uses→ trellis
+- trellis —prerequisite-of→ forward-backward-algorithm
+- trellis —prerequisite-of→ min-sum-algorithm
+- min-sum-algorithm —applies→ trellis
+- sum-product-algorithm —applies→ trellis
+- forward-backward-algorithm —analogous-to→ min-sum-algorithm
+- forward-backward-algorithm —analogous-to→ belief-propagation
+- forward-backward-algorithm —analogous-to→ kalman-filter
+- trellis —applies→ linear-block-code
+- trellis —uses→ syndrome-decoding
+- factor-graph —prerequisite-of→ sum-product-algorithm
+- sum-product-algorithm —uses→ factor-graph
+- factor-graph —specializes→ undirected-graphical-models
+- factor-graph —analogous-to→ directed-graphical-models
+- max-product-algorithm —analogous-to→ sum-product-algorithm
+- max-product-algorithm —uses→ factor-graph
+- max-product-algorithm —specializes→ min-sum-algorithm
+- junction-tree-algorithm —extends→ sum-product-algorithm
+- junction-tree-algorithm —contrasts-with→ belief-propagation
+- laplace-approximation —uses→ gaussian-distribution
+- laplace-approximation —applies→ marginal-likelihood
+- occam-factor —instantiates→ occams-razor
+- evidence-framework —applies→ occams-razor
+- marginal-likelihood —uses→ occam-factor
+- laplace-approximation —uses→ occam-factor
+- bayesian-model-comparison —applies→ evidence-framework
+- bayesian-model-comparison —applies→ occams-razor
+- evidence-framework —uses→ marginal-likelihood
+- occams-razor —contrasts-with→ information-criteria
+- occams-razor —applies→ model-selection-problem
+- occam-factor —prerequisite-of→ bayesian-model-comparison
+
+## [2026-06-08] edit | edit_node
+- pkis:technique:maximum-likelihood-estimation: fields=[] sections=['ML for a single Gaussian: closed-form estimators and error bars']
