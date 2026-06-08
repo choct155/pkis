@@ -1275,3 +1275,19 @@
 ## [2026-06-08] committed | technique
 - Committed: arithmetic-coding → techniques/arithmetic-coding.md
 - IRI: pkis:technique:arithmetic-coding
+
+## [2026-06-08] edges | add_connections
+- pkis:concept:shannon-information-content —prerequisite-of→ entropy
+- pkis:concept:typical-set —uses→ entropy
+- pkis:concept:typical-set —uses→ shannon-information-content
+- pkis:result:source-coding-theorem —uses→ typical-set
+- pkis:result:source-coding-theorem —uses→ entropy
+- pkis:result:source-coding-theorem —uses→ shannon-information-content
+- pkis:technique:huffman-coding —instantiates→ source-coding-theorem
+- pkis:technique:arithmetic-coding —instantiates→ source-coding-theorem
+- pkis:result:kraft-inequality —prerequisite-of→ huffman-coding
+- pkis:technique:huffman-coding —contrasts-with→ arithmetic-coding
+- pkis:technique:hmc —uses→ typical-set
+
+## [2026-06-08] edit | edit_node
+- pkis:concept:typical-set: fields=[] sections=['Definition (information-theoretic)', 'Geometric face']
