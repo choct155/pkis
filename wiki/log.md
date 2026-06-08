@@ -2965,3 +2965,12 @@
 ## [2026-06-08] committed | concept
 - Committed: linear-separability → concepts/linear-separability.md
 - IRI: pkis:concept:linear-separability
+
+## [2026-06-08] staged | node-stub (principle)
+- Staged: learning-as-inference (id: 5d60908d-21bb-436e-823a-404b2d5041c5)
+- Title: Learning as Inference
+- needs_canonical_source: False
+
+## [2026-06-08] committed | principle
+- Committed: learning-as-inference → principles/learning-as-inference.md
+- IRI: pkis:principle:learning-as-inference
