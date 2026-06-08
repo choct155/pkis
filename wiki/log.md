@@ -2875,3 +2875,12 @@
 ## [2026-06-08] committed | concept
 - Committed: expected-utility-theory → concepts/expected-utility-theory.md
 - IRI: pkis:concept:expected-utility-theory
+
+## [2026-06-08] staged | node-stub (concept)
+- Staged: value-of-information (id: 5038292b-9806-4bc3-9c5f-0f4566a12c7c)
+- Title: Value of Information
+- needs_canonical_source: False
+
+## [2026-06-08] committed | concept
+- Committed: value-of-information → concepts/value-of-information.md
+- IRI: pkis:concept:value-of-information

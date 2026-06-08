@@ -290,6 +290,7 @@
 - [[liu-machine-unlearning-llm-2024]] — Rethinking Machine Unlearning for LLMs: post-training knowledge editing survey (deep-learning, ai-safety) (2026-05-20)
 
 ## Concepts
+- [[value-of-information]] — Value of Information (bayesian-stats) (2026-06-08)
 - [[expected-utility-theory]] — Expected Utility Theory (bayesian-stats) (2026-06-08)
 - [[likelihood-equivalence]] — Likelihood Equivalence (bayesian-stats) (2026-06-08)
 - [[latent-variable-models]] — Latent Variable Model (statistical-learning, bayesian-stats) (2026-06-08)
