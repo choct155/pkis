@@ -60,3 +60,6 @@ The factor graph is the data structure on which the sum-product algorithm runs: 
 - [[undirected-graphical-models]] — specializes: A factor graph is a finer-grained factorization view; clique potentials of an undirected model map to factor nodes.
 - [[sum-product-algorithm]] — prerequisite-of: The sum-product algorithm runs on a factor graph; the bipartite structure defines the message-passing edges.
 [To be populated during integration]
+
+## Example: the repeat-accumulate code graph
+The **repeat-accumulate (RA) code** gives a clean worked example of a factor graph used as a *prior over codewords*. Its graph uses exactly two factor types: **equality constraints** contributing $\mathbb{1}[x_1=x_2=x_3]$ (encoding bit-repetition) and **parity constraints** contributing $\mathbb{1}[\sum x = 0 \bmod 2]$ (encoding the mod-2 accumulator). Black-circle nodes are intermediate binary variables and white-circle nodes are transmitted bits. Decoding runs the sum-product algorithm directly on this graph, with the accumulator's parity chain represented as a trellis. This illustrates how a generative constraint structure becomes an inference graph by attaching channel-likelihood factors at the observed nodes.

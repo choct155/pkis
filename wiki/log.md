@@ -3430,3 +3430,6 @@
 
 ## [2026-06-08] edit | edit_node
 - pkis:technique:concatenated-codes: fields=[] sections=['Interleavers in turbo codes']
+
+## [2026-06-08] edit | edit_node
+- pkis:concept:factor-graph: fields=[] sections=['Example: the repeat-accumulate code graph']
