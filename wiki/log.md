@@ -2630,3 +2630,12 @@
 ## [2026-06-08] committed | framework
 - Committed: ising-model → frameworks/ising-model.md
 - IRI: pkis:framework:ising-model
+
+## [2026-06-08] staged | node-stub (concept)
+- Staged: partition-function (id: 74f797d2-14a2-4075-b280-293e760dfefd)
+- Title: Partition Function
+- needs_canonical_source: False
+
+## [2026-06-08] committed | concept
+- Committed: partition-function → concepts/partition-function.md
+- IRI: pkis:concept:partition-function
