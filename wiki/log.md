@@ -2839,3 +2839,6 @@
 
 ## [2026-06-08] edit | edit_node
 - pkis:technique:hmc: fields=[] sections=["MacKay's Framing: Beating the Random Walk"]
+
+## [2026-06-08] edit | edit_node
+- pkis:technique:hmc: fields=[] sections=['Reversibility and Volume Preservation (Exercise 30.11)']
