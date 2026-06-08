@@ -2648,3 +2648,12 @@
 ## [2026-06-08] committed | technique
 - Committed: transfer-matrix-method → techniques/transfer-matrix-method.md
 - IRI: pkis:technique:transfer-matrix-method
+
+## [2026-06-08] staged | node-stub (concept)
+- Staged: phase-transition (id: f86bdd27-1aee-49c5-be42-f7ecf8451d00)
+- Title: Phase Transition
+- needs_canonical_source: False
+
+## [2026-06-08] committed | concept
+- Committed: phase-transition → concepts/phase-transition.md
+- IRI: pkis:concept:phase-transition
