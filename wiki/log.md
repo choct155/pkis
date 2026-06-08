@@ -2352,3 +2352,12 @@
 ## [2026-06-08] committed | concept
 - Committed: dirichlet-distribution → concepts/dirichlet-distribution.md
 - IRI: pkis:concept:dirichlet-distribution
+
+## [2026-06-08] staged | node-stub (concept)
+- Staged: marginalization (id: 32e1490b-29e1-4ddf-a422-f33d116df106)
+- Title: Marginalization
+- needs_canonical_source: False
+
+## [2026-06-08] committed | concept
+- Committed: marginalization → concepts/marginalization.md
+- IRI: pkis:concept:marginalization
