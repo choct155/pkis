@@ -162,3 +162,6 @@ Complex transitions are assembled from simple base transitions $B_b$ that each l
 
 ### Convergence is the open hard part
 MacKay emphasizes that while these conditions guarantee convergence *eventually*, predicting *how long* equilibration and inter-sample decorrelation take is largely unsolved — most theoretical upper bounds are useless in practice, and convergence diagnostics are imperfect.
+
+## Exact Sampling and the Convergence Question
+A fundamental weakness of all MCMC methods is that they sample from the target $P(x)$ only *asymptotically*: a finite-$T$ run yields draws from some $P^{(T)}(x)$, and deciding when the chain has 'converged' is generally intractable. **Exact (perfect) sampling** methods, pioneered by Propp and Wilson (1996), resolve this for certain chains by certifying internally that equilibrium has been reached. The key mechanism is *coalescence*: coupled chains started from different states but sharing one random-number stream merge and never separate, signalling that the initial condition has been forgotten. Combined with *coupling from the past* (simulate from progressively earlier $T_0$ until all starts coalesce by $t=0$) and *monotonicity* (track only extreme states), this delivers burn-in-free, bias-free samples. See [[coupling-from-the-past]], [[exact-sampling]], and [[monotone-coupling]].
