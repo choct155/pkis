@@ -16,6 +16,8 @@ date_updated: '2026-06-08'
 domain:
 - information-theory
 id: pkis:concept:binary-symmetric-channel
+instantiates:
+- information-theory
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
@@ -31,6 +33,8 @@ tags:
 - channel-capacity
 title: Binary Symmetric Channel
 understanding: 0
+uses:
+- entropy
 ---
 
 ## Definition
@@ -48,4 +52,6 @@ The BSC is the canonical testbed of information theory. MacKay frames the book's
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[information-theory]] — instantiates: The BSC is the canonical channel on which information theory's communication problem is posed.
+- [[entropy]] — uses: Channel capacity 1 - H_2(f) is defined via the binary entropy function.
 [To be populated during integration]
