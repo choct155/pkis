@@ -44,3 +44,6 @@ and more generally splitting the alphabet into groups adds the group-selection e
 
 ## Maximum-entropy bound
 Entropy is bounded: $0 \le H(X) \le \log|A_X|$. The lower bound is attained iff one outcome has probability 1; the **upper bound is attained iff $\mathbf{p}$ is uniform**. The uniform-maximum result follows from Jensen's inequality applied to the concave $\log$, and the gap from the maximum defines the **redundancy** $1 - H(X)/\log|A_X|$. Entropy is additive over independent variables: $H(X,Y)=H(X)+H(Y)$ iff $P(x,y)=P(x)P(y)$.
+
+## MacKay: decomposing joint entropy
+For dependent variables, MacKay (ITILA ch. 8) decomposes the joint entropy via the chain rule $H(X,Y) = H(X) + H(Y\mid X)$ and defines the [[mutual-information]] $I(X;Y) = H(X) - H(X\mid Y) \geq 0$ as the average reduction in uncertainty about $X$ from learning $Y$. Conditioning reduces entropy on average, $H(X\mid Y) \leq H(X)$, with equality iff $X \perp Y$ — though for a single observed value $H(X\mid y=b_k)$ can exceed $H(X)$. See [[joint-entropy]], [[conditional-entropy]], [[chain-rule-for-entropy]].

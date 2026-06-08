@@ -1895,3 +1895,82 @@
 ## [2026-06-08] committed | technique
 - Committed: typical-set-decoder → techniques/typical-set-decoder.md
 - IRI: pkis:technique:typical-set-decoder
+
+## [2026-06-08] edges | add_connections
+- joint-entropy —specializes→ entropy
+- conditional-entropy —specializes→ entropy
+- chain-rule-for-entropy —uses→ joint-entropy
+- chain-rule-for-entropy —uses→ conditional-entropy
+- chain-rule-for-entropy —uses→ shannon-information-content
+- mutual-information —uses→ conditional-entropy
+- mutual-information —specializes→ kl-divergence
+- mutual-information —uses→ gibbs-inequality
+- mutual-information —contrasts-with→ conditional-independence
+- data-processing-inequality —uses→ mutual-information
+- data-processing-inequality —uses→ chain-rule-for-entropy
+- data-processing-inequality —applies→ markov-chains
+- mutual-information —prerequisite-of→ channel-capacity
+- mutual-information —prerequisite-of→ noisy-channel-coding-theorem
+- mutual-information —applies→ binary-symmetric-channel
+- conditional-entropy —prerequisite-of→ mutual-information
+- mutual-information —uses→ entropy
+- channel-capacity —uses→ mutual-information
+- discrete-memoryless-channel —prerequisite-of→ channel-capacity
+- discrete-memoryless-channel —prerequisite-of→ noisy-channel-coding-theorem
+- binary-symmetric-channel —instantiates→ discrete-memoryless-channel
+- binary-erasure-channel —instantiates→ discrete-memoryless-channel
+- z-channel —instantiates→ discrete-memoryless-channel
+- z-channel —contrasts-with→ binary-symmetric-channel
+- binary-erasure-channel —contrasts-with→ binary-symmetric-channel
+- joint-typicality-decoding —uses→ jointly-typical-set
+- random-coding-argument —uses→ joint-typicality-decoding
+- noisy-channel-coding-theorem —uses→ random-coding-argument
+- noisy-channel-coding-theorem —uses→ fanos-inequality
+- jointly-typical-set —specializes→ typical-set
+- joint-typicality-decoding —prerequisite-of→ noisy-channel-coding-theorem
+- jointly-typical-set —applies→ channel-capacity
+- fanos-inequality —uses→ channel-capacity
+- gaussian-channel —specializes→ channel-capacity
+- gaussian-channel —uses→ gaussian-distribution
+- continuous-channel-capacity —specializes→ channel-capacity
+- continuous-channel-capacity —applies→ gaussian-channel
+- gaussian-channel —instantiates→ noisy-channel-coding-theorem
+- gaussian-channel —contrasts-with→ binary-symmetric-channel
+- hamming-7-4-code —instantiates→ linear-block-code
+- repetition-codes —instantiates→ linear-block-code
+- linear-block-code —uses→ noisy-channel-coding-theorem
+- concatenated-codes —uses→ linear-block-code
+- code-goodness-taxonomy —applies→ noisy-channel-coding-theorem
+- repetition-codes —instantiates→ code-goodness-taxonomy
+- hash-table —uses→ hash-function
+- hash-collision-bound —applies→ hash-table
+- hash-function —prerequisite-of→ hashing-for-error-detection
+- one-way-hash-function —specializes→ hash-function
+- hashing-for-error-detection —contrasts-with→ one-way-hash-function
+- one-way-hash-function —uses→ hash-collision-bound
+- hash-function —analogous-to→ typical-set
+- hash-function —analogous-to→ noisy-channel-coding-theorem
+- hashing-for-error-detection —contrasts-with→ hamming-7-4-code
+- hash-table —applies→ named-entity-disambiguation
+- perfect-codes —uses→ minimum-distance
+- minimum-distance —prerequisite-of→ perfect-codes
+- bounds-on-binary-codes —uses→ minimum-distance
+- bounds-on-binary-codes —uses→ weight-enumerator-function
+- hamming-7-4-code —instantiates→ perfect-codes
+- perfect-codes —contrasts-with→ channel-capacity
+- bounds-on-binary-codes —contrasts-with→ channel-capacity
+- weight-enumerator-function —prerequisite-of→ bounds-on-binary-codes
+- dual-code —applies→ hamming-7-4-code
+- minimum-distance —uses→ weight-enumerator-function
+- good-linear-codes-exist —instantiates→ noisy-channel-coding-theorem
+- good-linear-codes-exist —uses→ typical-set-decoder
+- good-linear-codes-exist —uses→ typical-set
+- good-linear-codes-exist —uses→ syndrome-decoding
+- good-linear-codes-exist —applies→ binary-symmetric-channel
+- good-linear-codes-exist —instantiates→ source-coding-theorem
+- typical-set-decoder —specializes→ syndrome-decoding
+- typical-set-decoder —uses→ typical-set
+- good-linear-codes-exist —applies→ channel-capacity
+
+## [2026-06-08] edit | edit_node
+- pkis:concept:entropy: fields=[] sections=['MacKay: decomposing joint entropy']
