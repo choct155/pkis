@@ -1886,3 +1886,12 @@
 ## [2026-06-08] committed | result
 - Committed: good-linear-codes-exist → results/good-linear-codes-exist.md
 - IRI: pkis:result:good-linear-codes-exist
+
+## [2026-06-08] staged | node-stub (technique)
+- Staged: typical-set-decoder (id: 7aa2a521-20b1-4bb2-9c25-85d1cac93e51)
+- Title: Typical-Set Decoder
+- needs_canonical_source: False
+
+## [2026-06-08] committed | technique
+- Committed: typical-set-decoder → techniques/typical-set-decoder.md
+- IRI: pkis:technique:typical-set-decoder
