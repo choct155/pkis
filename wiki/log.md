@@ -3433,3 +3433,6 @@
 
 ## [2026-06-08] edit | edit_node
 - pkis:concept:factor-graph: fields=[] sections=['Example: the repeat-accumulate code graph']
+
+## [2026-06-08] edit | edit_node
+- pkis:technique:sum-product-algorithm: fields=[] sections=['Application: decoding repeat-accumulate codes']
