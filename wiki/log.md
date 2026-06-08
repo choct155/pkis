@@ -1992,3 +1992,6 @@
 
 ## [2026-06-08] edit | edit_node
 - pkis:concept:channel-capacity: fields=[] sections=['## Capacity of continuous channels and the cost constraint']
+
+## [2026-06-08] edit | edit_node
+- pkis:concept:gaussian-distribution: fields=[] sections=['## Precisions add: combining Gaussian evidence']
