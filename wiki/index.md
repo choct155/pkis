@@ -447,6 +447,7 @@
 - [[market-vs-hierarchy]] — Coase/Williamson: transactions governed by price signals (markets) vs. managerial direction (firms) (corporate-finance) (2026-05-20)
 
 ## Techniques
+- [[slice-sampling]] — Slice Sampling (bayesian-stats, statistical-learning) (2026-06-08)
 - [[rejection-sampling]] — Rejection Sampling (bayesian-stats, statistical-learning) (2026-06-08)
 - [[junction-tree-algorithm]] — Junction Tree Algorithm (bayesian-stats, information-theory) (2026-06-08)
 - [[max-product-algorithm]] — Max-Product Algorithm (bayesian-stats, information-theory) (2026-06-08)

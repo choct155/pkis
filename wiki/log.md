@@ -2567,3 +2567,12 @@
 ## [2026-06-08] committed | technique
 - Committed: rejection-sampling → techniques/rejection-sampling.md
 - IRI: pkis:technique:rejection-sampling
+
+## [2026-06-08] staged | node-stub (technique)
+- Staged: slice-sampling (id: d87f00ef-e0eb-42df-ab67-bbb7be6d209a)
+- Title: Slice Sampling
+- needs_canonical_source: False
+
+## [2026-06-08] committed | technique
+- Committed: slice-sampling → techniques/slice-sampling.md
+- IRI: pkis:technique:slice-sampling
