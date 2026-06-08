@@ -550,6 +550,7 @@
 - [[constraint-propagation]] — Reducing a constraint satisfaction problem by iteratively eliminating inconsistent values from variable domains (knowledge-representation) (2026-05-20)
 
 ## Results
+- [[constrained-channel-optimal-transitions]] — Optimal Transition Probabilities for a Constrained Channel (information-theory) (2026-06-08)
 - [[constrained-channel-capacity-eigenvalue]] — Capacity of a Constrained Channel as a Leading Eigenvalue (information-theory) (2026-06-08)
 - [[slepian-wolf-theorem]] — Slepian–Wolf Theorem (Distributed Source Coding) (information-theory) (2026-06-08)
 - [[good-linear-codes-exist]] — Very Good Linear Codes Exist (Random Linear Codes Achieve Capacity) (information-theory) (2026-06-08)

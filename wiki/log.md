@@ -2091,3 +2091,12 @@
 ## [2026-06-08] committed | concept
 - Committed: runlength-limited-codes → concepts/runlength-limited-codes.md
 - IRI: pkis:concept:runlength-limited-codes
+
+## [2026-06-08] staged | node-stub (result)
+- Staged: constrained-channel-optimal-transitions (id: 06d73bea-bd14-4dcb-b395-d821f767410f)
+- Title: Optimal Transition Probabilities for a Constrained Channel
+- needs_canonical_source: False
+
+## [2026-06-08] committed | result
+- Committed: constrained-channel-optimal-transitions → results/constrained-channel-optimal-transitions.md
+- IRI: pkis:result:constrained-channel-optimal-transitions
