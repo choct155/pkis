@@ -2343,3 +2343,12 @@
 ## [2026-06-08] committed | concept
 - Committed: beta-distribution → concepts/beta-distribution.md
 - IRI: pkis:concept:beta-distribution
+
+## [2026-06-08] staged | node-stub (concept)
+- Staged: dirichlet-distribution (id: 357fef2f-f849-4733-b196-2f8db9ed47dd)
+- Title: Dirichlet Distribution
+- needs_canonical_source: False
+
+## [2026-06-08] committed | concept
+- Committed: dirichlet-distribution → concepts/dirichlet-distribution.md
+- IRI: pkis:concept:dirichlet-distribution
