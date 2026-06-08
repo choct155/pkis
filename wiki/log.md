@@ -2956,3 +2956,12 @@
 ## [2026-06-08] committed | result
 - Committed: cover-function-counting-theorem → results/cover-function-counting-theorem.md
 - IRI: pkis:result:cover-function-counting-theorem
+
+## [2026-06-08] staged | node-stub (concept)
+- Staged: linear-separability (id: fe446d00-e8e2-4ee7-aaf8-00c318271464)
+- Title: Linear Separability
+- needs_canonical_source: False
+
+## [2026-06-08] committed | concept
+- Committed: linear-separability → concepts/linear-separability.md
+- IRI: pkis:concept:linear-separability
