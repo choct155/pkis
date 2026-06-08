@@ -51,3 +51,12 @@ MacKay (ITILA Ch. 20) motivates EM through clustering. The soft K-means **assign
 
 ## Connections
 - [[gaussian-mixture-models]] — applies: MacKay derives the EM responsibility-weighted mean update specifically as ML for a Gaussian mixture.
+
+## EM as maximum likelihood for a Gaussian mixture (MacKay derivation)
+MacKay derives the EM update for a two-Gaussian mixture from scratch as a maximum-likelihood algorithm, exposing why the E/M alternation works. Given equal-width Gaussians with means $\{\mu_k\}$, the posterior responsibility of point $n$ for component $k$ is the softmax/logistic
+$$p_{k\mid n} \equiv P(k_n=k\mid x_n,\theta),$$
+which for two components reduces to a sigmoid $1/(1+e^{-(w_1 x_n + w_0)})$. The log-likelihood gradient is
+$$\frac{\partial L}{\partial\mu_k} = \sum_n p_{k\mid n}\,\frac{x_n-\mu_k}{\sigma^2},$$
+and, neglecting the dependence of $p_{k\mid n}$ on $\mu_k$, the second derivative is $-\sum_n p_{k\mid n}/\sigma^2$. An approximate Newton–Raphson step then gives the **responsibility-weighted mean update**
+$$\mu_k' = \frac{\sum_n p_{k\mid n}\,x_n}{\sum_n p_{k\mid n}}.$$
+This is exactly the E-step (compute $p_{k\mid n}$) / M-step (re-estimate $\mu_k$) of EM, revealed here as an approximate Newton step on the likelihood. The same derivation shows clustering *is* mixture-density modelling.

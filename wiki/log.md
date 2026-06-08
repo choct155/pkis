@@ -2495,3 +2495,6 @@
 
 ## [2026-06-08] edit | edit_node
 - pkis:technique:maximum-likelihood-estimation: fields=[] sections=['ML for a single Gaussian: closed-form estimators and error bars']
+
+## [2026-06-08] edit | edit_node
+- pkis:technique:em-algorithm: fields=[] sections=['EM as maximum likelihood for a Gaussian mixture (MacKay derivation)']
