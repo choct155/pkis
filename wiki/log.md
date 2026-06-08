@@ -1688,3 +1688,12 @@
 ## [2026-06-08] committed | concept
 - Committed: discrete-memoryless-channel → concepts/discrete-memoryless-channel.md
 - IRI: pkis:concept:discrete-memoryless-channel
+
+## [2026-06-08] staged | node-stub (concept)
+- Staged: binary-erasure-channel (id: ab0e826f-f90c-4a3a-8074-99dcfe85c935)
+- Title: Binary Erasure Channel
+- needs_canonical_source: False
+
+## [2026-06-08] committed | concept
+- Committed: binary-erasure-channel → concepts/binary-erasure-channel.md
+- IRI: pkis:concept:binary-erasure-channel
