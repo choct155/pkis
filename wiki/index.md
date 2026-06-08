@@ -445,6 +445,7 @@
 - [[market-vs-hierarchy]] — Coase/Williamson: transactions governed by price signals (markets) vs. managerial direction (firms) (corporate-finance) (2026-05-20)
 
 ## Techniques
+- [[forward-backward-algorithm]] — Forward-Backward (BCJR) Algorithm (information-theory, statistical-learning) (2026-06-08)
 - [[exact-inference-by-complete-enumeration]] — Exact Inference by Complete Enumeration (bayesian-stats) (2026-06-08)
 - [[soft-k-means]] — Soft K-means and Responsibilities (statistical-learning, bayesian-stats) (2026-06-08)
 - [[k-means-clustering]] — K-means Clustering (statistical-learning, bayesian-stats) (2026-06-08)

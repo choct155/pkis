@@ -2370,3 +2370,12 @@
 ## [2026-06-08] committed | concept
 - Committed: trellis → concepts/trellis.md
 - IRI: pkis:concept:trellis
+
+## [2026-06-08] staged | node-stub (technique)
+- Staged: forward-backward-algorithm (id: bb28bd82-50e0-4a67-98ce-699f6dbe4702)
+- Title: Forward-Backward (BCJR) Algorithm
+- needs_canonical_source: False
+
+## [2026-06-08] committed | technique
+- Committed: forward-backward-algorithm → techniques/forward-backward-algorithm.md
+- IRI: pkis:technique:forward-backward-algorithm
