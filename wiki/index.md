@@ -644,6 +644,7 @@
 - [[llm-language-comprehension]] — The problem of whether LLMs genuinely comprehend language vs. pattern-match surface form (deep-learning, cognitive-science) (2026-05-20)
 
 ## Principles
+- [[occams-razor]] — Occam's Razor (bayesian-stats) (2026-06-08)
 - [[maxima-are-atypical]] — Maxima Are Atypical (Pitfalls of ML and MAP) (statistical-learning) (2026-06-08)
 - [[compression-as-probabilistic-modelling]] — Compression as Probabilistic Modelling (information-theory) (2026-06-08)
 - [[likelihood-principle]] — Likelihood Principle (bayesian-stats) (2026-06-08)

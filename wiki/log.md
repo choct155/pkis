@@ -2406,3 +2406,12 @@
 ## [2026-06-08] committed | technique
 - Committed: junction-tree-algorithm → techniques/junction-tree-algorithm.md
 - IRI: pkis:technique:junction-tree-algorithm
+
+## [2026-06-08] staged | node-stub (principle)
+- Staged: occams-razor (id: b0989179-96d5-49b3-b78e-d4a7afdaf813)
+- Title: Occam's Razor
+- needs_canonical_source: False
+
+## [2026-06-08] committed | principle
+- Committed: occams-razor → principles/occams-razor.md
+- IRI: pkis:principle:occams-razor
