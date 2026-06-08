@@ -2893,3 +2893,12 @@
 ## [2026-06-08] committed | framework
 - Committed: sampling-theory → frameworks/sampling-theory.md
 - IRI: pkis:framework:sampling-theory
+
+## [2026-06-08] staged | node-stub (concept)
+- Staged: confidence-interval (id: e4d01dd4-7bf4-4359-b4fa-348ed9af441d)
+- Title: Confidence Interval
+- needs_canonical_source: False
+
+## [2026-06-08] committed | concept
+- Committed: confidence-interval → concepts/confidence-interval.md
+- IRI: pkis:concept:confidence-interval
