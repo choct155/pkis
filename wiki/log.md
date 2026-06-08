@@ -3001,3 +3001,12 @@
 ## [2026-06-08] committed | concept
 - Committed: associative-memory → concepts/associative-memory.md
 - IRI: pkis:concept:associative-memory
+
+## [2026-06-08] staged | node-stub (result)
+- Staged: hopfield-network-capacity (id: 58f0351f-b891-45ec-a947-c52babd8a111)
+- Title: Capacity of the Hopfield Network (0.138N)
+- needs_canonical_source: False
+
+## [2026-06-08] committed | result
+- Committed: hopfield-network-capacity → results/hopfield-network-capacity.md
+- IRI: pkis:result:hopfield-network-capacity
