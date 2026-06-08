@@ -3103,3 +3103,6 @@
 
 ## [2026-06-08] edit | edit_node
 - pkis:concept:bayesian-neural-networks: fields=[] sections=['Monte Carlo Inference: Langevin and Hamiltonian']
+
+## [2026-06-08] edit | edit_node
+- pkis:concept:regularization: fields=[] sections=['Probabilistic Reading: Regularizer as Log-Prior']
