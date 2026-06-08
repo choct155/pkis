@@ -2827,3 +2827,6 @@
 
 ## [2026-06-08] edit | edit_node
 - pkis:technique:metropolis-algorithm: fields=[] sections=["MacKay's Formulation: Why Local Proposals Beat Global Ones"]
+
+## [2026-06-08] edit | edit_node
+- pkis:technique:gibbs-sampler: fields=[] sections=["MacKay's View: Gibbs as Parameter-Free Metropolis"]

@@ -14,7 +14,7 @@ component_scores:
   principled_mechanism: 3
 coverage: 3
 date_created: 2026-05-20
-date_updated: '2026-06-07'
+date_updated: '2026-06-08'
 domain:
 - bayesian-stats
 id: pkis:technique:gibbs-sampler
@@ -115,3 +115,15 @@ Both degrade when variables are highly correlated — updating one coordinate at
 - [[exact-sampling]] — applies: Coupled Gibbs sampling is the chain Propp-Wilson use to draw exact Ising samples.
 - [[ising-model]] — applies: Gibbs sampling draws each spin from its conditional given neighbours to sample the Ising equilibrium distribution.
 - [[metropolis-algorithm]] — specializes: A Gibbs coordinate-update is a Metropolis method whose proposal is always accepted.
+
+## MacKay's View: Gibbs as Parameter-Free Metropolis
+MacKay (also calling it the heat-bath method or Glauber dynamics) presents Gibbs sampling as a method for joint distributions over $\ge 2$ variables that works when $P(x)$ is too complex to sample directly but its **full conditionals** $P(x_i\mid\{x_j\}_{j\neq i})$ are tractable. One sweep updates each coordinate in turn:
+$$x_i^{(t+1)}\sim P\bigl(x_i \mid x_1^{(t+1)},\dots,x_{i-1}^{(t+1)},x_{i+1}^{(t)},\dots,x_K^{(t)}\bigr).$$
+
+### Gibbs is a special Metropolis method
+A single Gibbs coordinate-update is exactly a Metropolis proposal whose **acceptance probability is always 1**: sampling from the conditional is equivalent to proposing from it and never rejecting. Hence Gibbs inherits MCMC convergence ($p^{(t)}\to P$) without any adjustable step-size parameters — its great practical attraction (and the basis of the BUGS software).
+
+### Limitations MacKay stresses
+- **Random-walk slowness.** When two variables are strongly correlated (marginal width $L$, conditional width $\epsilon$), axis-aligned Gibbs still needs $\sim(L/\epsilon)^2$ iterations per independent sample — the same penalty as Metropolis.
+- **Pathological targets.** For syndrome decoding of an error-correcting code, valid codewords are isolated points with no adjacent valid neighbours, so any single-bit conditional move lands on zero probability and the chain freezes — Gibbs is useless there.
+- **Blocking.** Sampling groups of variables jointly (block Gibbs) can mitigate the correlation penalty in big models.
