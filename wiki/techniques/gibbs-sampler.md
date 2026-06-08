@@ -1,6 +1,9 @@
 ---
 aliases: []
 also_type: []
+applies:
+- ising-model
+- exact-sampling
 component_scores:
   alternatives: 4
   conditions: 2
@@ -11,7 +14,7 @@ component_scores:
   principled_mechanism: 3
 coverage: 3
 date_created: 2026-05-20
-date_updated: '2026-06-07'
+date_updated: '2026-06-08'
 domain:
 - bayesian-stats
 id: pkis:technique:gibbs-sampler
@@ -29,6 +32,8 @@ sources:
 - '[[kroese-statistical-modeling]]'
 - '[[lange-applied-probability]]'
 - '[[kurz-hybrid-modeling-2022]]'
+specializes:
+- metropolis-algorithm
 tags:
 - mcmc
 - posterior-sampling
@@ -105,3 +110,33 @@ CAVI tolerates approximation because the ELBO provides correction.
 Gibbs does not tolerate approximation because there is no correction mechanism.
 
 Both degrade when variables are highly correlated — updating one coordinate at a time while holding others fixed produces small effective moves along the ridge of correlation. HMC addresses this by using gradient information to construct proposals that move along the posterior surface rather than across it.
+
+## Connections
+- [[exact-sampling]] — applies: Coupled Gibbs sampling is the chain Propp-Wilson use to draw exact Ising samples.
+- [[ising-model]] — applies: Gibbs sampling draws each spin from its conditional given neighbours to sample the Ising equilibrium distribution.
+- [[metropolis-algorithm]] — specializes: A Gibbs coordinate-update is a Metropolis method whose proposal is always accepted.
+
+## MacKay's View: Gibbs as Parameter-Free Metropolis
+MacKay (also calling it the heat-bath method or Glauber dynamics) presents Gibbs sampling as a method for joint distributions over $\ge 2$ variables that works when $P(x)$ is too complex to sample directly but its **full conditionals** $P(x_i\mid\{x_j\}_{j\neq i})$ are tractable. One sweep updates each coordinate in turn:
+$$x_i^{(t+1)}\sim P\bigl(x_i \mid x_1^{(t+1)},\dots,x_{i-1}^{(t+1)},x_{i+1}^{(t)},\dots,x_K^{(t)}\bigr).$$
+
+### Gibbs is a special Metropolis method
+A single Gibbs coordinate-update is exactly a Metropolis proposal whose **acceptance probability is always 1**: sampling from the conditional is equivalent to proposing from it and never rejecting. Hence Gibbs inherits MCMC convergence ($p^{(t)}\to P$) without any adjustable step-size parameters — its great practical attraction (and the basis of the BUGS software).
+
+### Limitations MacKay stresses
+- **Random-walk slowness.** When two variables are strongly correlated (marginal width $L$, conditional width $\epsilon$), axis-aligned Gibbs still needs $\sim(L/\epsilon)^2$ iterations per independent sample — the same penalty as Metropolis.
+- **Pathological targets.** For syndrome decoding of an error-correcting code, valid codewords are isolated points with no adjacent valid neighbours, so any single-bit conditional move lands on zero probability and the chain freezes — Gibbs is useless there.
+- **Blocking.** Sampling groups of variables jointly (block Gibbs) can mitigate the correlation penalty in big models.
+
+## Application: Gibbs sampling an Ising model
+A standard application of Gibbs sampling is simulating an Ising model at equilibrium. Pick a spin $n$ at random; conditioned on its neighbours through the local field $b_n = \sum_{m:(m,n)\in\mathcal{N}} J x_m + H$, set it to $+1$ with probability
+
+$$P(+1 \mid b_n) = \frac{1}{1 + \exp(-2\beta b_n)},$$
+
+otherwise $-1$, then repeat. (The factor of $2$ appears because the states are $\{+1,-1\}$ rather than $\{+1,0\}$.) After enough sweeps this converges to the Boltzmann distribution. A practical subtlety is *equilibration*: it is hard to define or detect when the chain has reached equilibrium. MacKay's crude recipe runs a few hundred sweeps per spin and discards the first third; for $N=100$ spins this needed over $100{,}000$ iterations per temperature. Running the temperature down then back up exposes hysteresis when equilibrium has not been reached.
+
+## Coupled Gibbs Sampling for Exact Samples
+Gibbs sampling can be embedded in an exact-sampling scheme. For a ferromagnetic Ising model, couple all chains by having them update the same spin $i$ at each step using a shared uniform draw $u$: compute $a_i = \sum_j J_{ij} x_j$ and set $x_i = +1$ iff $u < 1/(1 + e^{-2a_i})$, else $x_i = -1$. Under the spin-wise partial order ($x \succeq y$ iff $x_i \ge y_i$ for all $i$), this coupled update is **monotone**, so tracking only the all-up and all-down chains certifies coalescence of all $2^N$ histories. Running this with [[coupling-from-the-past]] yields an exact draw from the Ising equilibrium (Propp-Wilson's famous 16-million-spin critical sample). Convergence is fast above the critical temperature but slow below it, where Gibbs itself mixes slowly. See [[monotone-coupling]] and [[exact-sampling]].
+
+## Application: Sampling a Boltzmann Machine
+The stochastic activity rule of a **Boltzmann machine** is exactly Gibbs sampling. With energy $E(x)=-\tfrac{1}{2}x^{\mathsf T}Wx$ and activation $a_i=\sum_j w_{ij}x_j$, the conditional of a single binary unit given the rest is $P(x_i=+1\mid x_{\setminus i})=1/(1+e^{-2a_i})$, so resampling each unit in turn from this logistic conditional is one Gibbs sweep over the Markov random field $P(x\mid W)\propto e^{-E(x)}$. Boltzmann-machine *learning* leans on this twice per gradient step: estimating the model correlation $\langle x_i x_j\rangle_{P(x\mid W)}$ (and, with hidden units, the clamped-phase correlation) by averaging $x_i x_j$ over Gibbs samples — the source of the method's computational cost.

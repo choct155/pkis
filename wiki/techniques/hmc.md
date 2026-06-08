@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- random-walk-behaviour-mcmc
 component_scores:
   alternatives: 3
   conditions: 2
@@ -13,7 +15,7 @@ contrasts-with:
 - gibbs-sampler
 coverage: 1
 date_created: '2026-06-07'
-date_updated: '2026-06-07'
+date_updated: '2026-06-08'
 domain:
 - bayesian-stats
 - optimization
@@ -92,8 +94,21 @@ When the leapfrog integrator encounters high posterior curvature (funnel necks i
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[random-walk-behaviour-mcmc]] — applies: HMC replaces sqrt-t diffusion with linear-in-time directed motion via momentum
 - [[typical-set]] — uses: HMC is engineered to move along the typical set rather than toward the mode
 - [[gibbs-sampler]] — contrasts-with: HMC moves along the posterior surface via gradients; Gibbs updates one coordinate at a time
 - [[hamiltonian-classical-mechanics]] — uses: HMC simulates Hamiltonian dynamics over an auxiliary momentum
 - [[mcmc]] — extends: HMC is a gradient-based MCMC method
 [To be populated during integration]
+
+## MacKay's Framing: Beating the Random Walk
+MacKay (ITILA ch.30) presents HMC as the canonical cure for **random-walk behaviour**. Because the state $x$ persists in the direction of its momentum $p$ throughout each dynamical trajectory, the distance travelled grows **linearly** with computer time rather than as the square root — the defining advantage over random-walk Metropolis. He demonstrates this on a needle-like bivariate Gaussian (correlation $0.998$): a few leapfrog trajectories traverse the distribution, whereas random-walk Metropolis given equal compute barely moves.
+
+The acceptance step is interpreted energetically: if the Hamiltonian dynamics were simulated perfectly, $H(x,p)=E(x)+K(p)$ is a constant of the motion, so every proposal would be accepted ($a=1$). Finite step sizes perturb $H$, and proposals are accepted by the Metropolis rule on $\Delta H$ — the occasional rejections are exactly what guarantee asymptotic sampling from $P_H(x,p)$. The momentum-randomization step is itself a Gibbs update of $p$ and is always accepted.
+
+MacKay also classifies HMC as a *smart* Metropolis method whose proposals depend on $P(x)$ (via $\nabla E$), and poses it as an open question (Exercise 30.7) whether HMC can extract information about $P$ faster than the one-bit-per-iteration ceiling that bounds *dumb* Metropolis.
+
+## Reversibility and Volume Preservation (Exercise 30.11)
+A subtle correctness requirement that MacKay emphasizes: the simulated Hamiltonian dynamics may be **inaccurate**, but it must be **perfectly reversible** and must **conserve state-space volume**. Concretely, if the integrator maps $(x,p)\to(x',p')$, then the *same* integrator applied to $(x',-p')$ must return exactly $(x,-p)$. The leapfrog integrator satisfies both properties: it is time-reversible and symplectic (volume-preserving).
+
+These two properties are what make the simple Metropolis acceptance ratio $\min(1,\exp(\Delta H))$ valid: reversibility ensures the proposal mechanism satisfies detailed balance, and volume preservation means the Jacobian of the proposal map is $1$, so no Jacobian correction term is needed in the acceptance probability. If volume were not preserved, the omitted Jacobian factor would bias the stationary distribution away from the target; if reversibility failed, detailed balance would break. This is why one cannot simply substitute an arbitrary high-accuracy ODE integrator (e.g. Runge–Kutta) for leapfrog — accuracy is not the issue, structure preservation is.

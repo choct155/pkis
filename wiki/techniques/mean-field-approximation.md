@@ -13,7 +13,7 @@ contrasts-with:
 - transformer-attention-mechanisms
 coverage: 3
 date_created: 2026-05-20
-date_updated: '2026-06-07'
+date_updated: '2026-06-08'
 domain:
 - bayesian-stats
 - deep-learning
@@ -44,11 +44,14 @@ tags:
 - tractability
 title: Mean-Field Variational Approximation
 understanding: 3
+uses:
+- variational-free-energy
 ---
 
 A variational inference approach that assumes the variational posterior fully factorizes over the latent variables: q(z) = ∏_j q_j(z_j), with each factor governed independently; this independence assumption makes ELBO optimization tractable via coordinate ascent but can systematically underestimate posterior variance.
 
 ## Connections
+- [[variational-free-energy]] — uses: Mean-field equations arise as the stationarity conditions of the variational free energy.
 - [[transformer-attention-mechanisms]] — contrasts-with: Attention is architecturally designed to recover inter-token correlations that mean field discards; see bridge note
 - [[belief-propagation]] — extends: Loopy belief propagation makes an implicit mean field approximation when applied to graphs with cycles
 - [[gaussian-process-regression]] — extends: Infinite-width networks converge to GPs under the mean field argument that layer outputs are approximately independent Gaussians
@@ -83,3 +86,10 @@ Mean field approximation is broader than variational inference — it is a gener
 ## Open Questions
 - At what width does the mean field approximation of neural network layers become practically accurate, and how does this interact with depth?
 - Is there a unified formal account spanning statistical physics, VI, and neural network theory, or are these analogies rather than instances of a common mathematical structure? This question is substantively unresolved in the literature, not merely pedagogical.
+
+## Mean-Field as Variational Free-Energy Minimization (Spin Systems)
+Mean-field theory is the variational free-energy method applied to a Gibbs distribution $P(x)\propto\exp[-\beta E(x;\mathbf{J})]$ with a **separable** trial distribution $Q(x;\mathbf{a})\propto\exp(\sum_n a_n x_n)$. Substituting into $\beta\tilde F = \beta\langle E\rangle_Q - S_Q$ and stationarizing in the variational parameters $a_m$ recovers the classical **mean-field equations**:
+
+$$a_m = \beta\Big(\sum_n J_{mn}\bar{x}_n + h_m\Big),\qquad \bar{x}_n = \tanh(a_n).$$
+
+Here $a_n$ acts as a *fictitious field* applied to an isolated spin and $\bar{x}_n$ is that spin's mean response to the average state of all the others. Asynchronous coordinate updates of $(a_m,\bar x_m)$ are guaranteed to decrease $\beta\tilde F$. This viewpoint gives the otherwise heuristic mean-field equations a genuine objective function, exposes their multiple stationary points (the $h=0$ Ising case shows a pitchfork bifurcation at $T_c^{mft}$), and reveals their limitations: because $Q$ has no inter-spin correlations, it badly misses the critical-temperature value and the large energy fluctuations near criticality.

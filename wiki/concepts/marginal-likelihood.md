@@ -1,0 +1,83 @@
+---
+aliases: []
+also_type: []
+applies:
+- bayesian-model-averaging
+component_scores:
+  application: null
+  boundary: null
+  definition: null
+  dependents: null
+  formal_statement: null
+  prerequisites: null
+  scope: null
+  transfer: null
+coverage: 1
+date_created: '2026-06-08'
+date_updated: '2026-06-08'
+domain:
+- bayesian-stats
+id: pkis:concept:marginal-likelihood
+knowledge_type: concept
+maturity: evolving
+needs_canonical_source: false
+prerequisite-of:
+- bayesian-model-comparison
+related_concepts: []
+sources:
+- mackay-itila-ch03
+specializes:
+- bayesian-inference
+tags:
+- evidence
+- model-comparison
+- normalizing-constant
+- bayes-theorem
+- occams-razor
+title: Marginal Likelihood (Model Evidence)
+understanding: 0
+uses:
+- conjugate-prior
+- occam-factor
+---
+
+## Definition
+The probability of the observed data under a model $H$, with all parameters integrated out:
+$$P(D \mid H) = \int P(D \mid \theta, H)\, P(\theta \mid H)\, d\theta.$$
+It is the denominator (normalizing constant) of parameter-level Bayesian inference and simultaneously the *evidence* the data lend to the model as a whole. MacKay's key observation: 'the evidence for a model is usually the normalizing constant of an earlier Bayesian inference' — the same integral that normalized $P(\theta\mid D,H)$ scores $H$.
+
+### Automatic Occam's razor
+Because the integral averages the likelihood over the *whole* prior — not just its peak — a model that spreads probability over many parameter values pays a cost in evidence for the regions the data rule out. A flexible model can never win by much, but the simpler model can lose by a large margin.
+
+### Computing it
+For the bent coin with a uniform prior, the evidence is the Beta integral $P(s\mid F,H_1)=\frac{F_a!\,F_b!}{(F_a+F_b+1)!}$. It is closed-form here but generally intractable, motivating Laplace approximation and Monte Carlo methods.
+
+### Why it matters
+Evidence is what makes Bayesian model comparison automatic: it requires no ad hoc estimators or significance tests, only the probability of the data under each hypothesis.
+
+## Reading Path
+[To be populated when a canonical source is attached]
+
+## Connections
+- [[occam-factor]] — uses: Under Laplace's method the marginal likelihood decomposes into best-fit likelihood times the Occam factor.
+- [[conjugate-prior]] — uses: conjugacy (Beta-Binomial) yields the closed-form Beta-integral evidence in the bent-coin example
+- [[bayesian-inference]] — specializes: the evidence is the normalizing constant of the parameter-level posterior
+- [[bayesian-model-averaging]] — applies: model evidence supplies the posterior model weights P(H|D) used in BMA
+- [[bayesian-model-comparison]] — prerequisite-of: evidence must be computable to compare models
+[To be populated during integration]
+
+## Marginal likelihood as a by-product of marginalization
+The marginal likelihood arises naturally as the normalizing constant when one marginalizes a nuisance parameter out of a posterior. In MacKay's Gaussian example, asking 'what is $\sigma$?' requires integrating out $\mu$:
+
+$$P(\{x_n\} \mid \sigma) = \int P(\{x_n\} \mid \mu, \sigma)\, P(\mu)\, d\mu,$$
+
+the marginal (or *evidence*) for $\sigma$. Carrying out the Gaussian integral over $\mu$ yields
+
+$$\ln P(\{x_n\} \mid \sigma) = -N\ln(\sqrt{2\pi}\,\sigma) - \frac{S}{2\sigma^2} + \ln\frac{\sqrt{2\pi}\,\sigma/\sqrt{N}}{\sigma_\mu}.$$
+
+The first two terms are the best-fit log-likelihood; the final term is an Occam factor that penalizes models with more parameter volume. Differentiating with respect to $\ln\sigma$ shows this volume factor shifts the most probable $\sigma$ away from the maximum-likelihood $\sigma_N = \sqrt{S/N}$ to the unbiased $\sigma_{N-1} = \sqrt{S/(N-1)}$ — the Bayesian evidence automatically recovers the $N-1$ degrees-of-freedom correction.
+
+## Laplace approximation: best-fit likelihood times Occam factor
+When the posterior $P(\mathbf{w}\mid D,H)\propto P(D\mid\mathbf{w},H)P(\mathbf{w}\mid H)$ has a sharp peak at $\mathbf{w}_{MP}$, the evidence integral $P(D\mid H)=\int P(D\mid\mathbf{w},H)P(\mathbf{w}\mid H)\,d\mathbf{w}$ can be approximated by **Laplace's method** as the height of the integrand times its width:
+$$P(D\mid H) \simeq \underbrace{P(D\mid \mathbf{w}_{MP},H)}_{\text{best-fit likelihood}}\times\underbrace{P(\mathbf{w}_{MP}\mid H)\,\det{}^{-1/2}(A/2\pi)}_{\text{Occam factor}},$$
+where $A=-\nabla\nabla\ln P(\mathbf{w}\mid D,H)$ is the posterior Hessian (the same curvature used for parameter error bars). This decomposition makes explicit *why* the marginal likelihood embodies Occam's razor: it is the maximal achievable fit discounted by the [[occam-factor]], a sub-unity penalty equal to the ratio of posterior to prior accessible parameter-space volume. Because $A$ is already computed during model fitting, evaluating the evidence this way is no more costly than finding the best-fit parameters and their error bars. The approximation improves as more data are collected and the posterior becomes more Gaussian, but it can fail badly for multimodal or spiky likelihoods (e.g. clustering), motivating Monte Carlo alternatives.

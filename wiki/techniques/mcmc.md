@@ -13,7 +13,7 @@ component_scores:
   principled_mechanism: 4
 coverage: 2
 date_created: 2026-05-20
-date_updated: '2026-06-07'
+date_updated: '2026-06-08'
 domain:
 - bayesian-stats
 id: pkis:technique:mcmc
@@ -145,3 +145,23 @@ High-dimensional mixing degradation: optimal step size shrinks as d^(-1/2). Chai
 Funnel geometry in hierarchical models: variance parameter controls scale of group-level parameters. Small variance produces tightly constrained group parameters — a narrow funnel neck. Fixed step sizes calibrated for the wide region cause energy conservation failure in the neck, producing divergent transitions in HMC. Silent failure in Metropolis-Hastings.
 
 Relationship to diagnostics: R-hat cannot detect cases where all chains are stuck in the same local region. ESS cannot detect unexplored modes. Divergent transitions (HMC only) can detect funnel geometry. Richer epistemological anchors produce richer diagnostics.
+
+## MacKay's Foundations: Invariance, Ergodicity, and Chain Construction
+MacKay grounds MCMC in the evolution of the *distribution* $p^{(t)}(x)$ of the chain's state (imagine an infinite ensemble of parallel simulators), governed by the transition $T$:
+$$p^{(t+1)}(x') = \int d^N x\, T(x';x)\,p^{(t)}(x).$$
+The goal is to design $T$ so that $p^{(t)}\to P$ for **any** start. Two properties are required.
+
+### 1. Invariance
+$P$ must be an invariant distribution of $T$: $P(x')=\int d^N x\, T(x';x)P(x)$ — equivalently, $P$ is an eigenvector of $T$ with eigenvalue 1. Detailed balance is the usual sufficient condition guaranteeing this.
+
+### 2. Ergodicity
+$p^{(t)}\to P$ regardless of $p^{(0)}$. This fails if the chain is **reducible** (the state space splits into mutually unreachable subsets — multiple eigenvalue-1 eigenvectors) or **periodic** (e.g. the random walk on the hypercube alternates parity forever, an eigenvalue of $-1$).
+
+### Building valid chains
+Complex transitions are assembled from simple base transitions $B_b$ that each leave $P$ invariant, combined by **mixing** ($T=\sum_b p_b B_b$, pick one at random) or **concatenation** ($T = B_2\circ B_1$, apply in sequence). The base transitions need not individually be ergodic; their combination must be.
+
+### Convergence is the open hard part
+MacKay emphasizes that while these conditions guarantee convergence *eventually*, predicting *how long* equilibration and inter-sample decorrelation take is largely unsolved — most theoretical upper bounds are useless in practice, and convergence diagnostics are imperfect.
+
+## Exact Sampling and the Convergence Question
+A fundamental weakness of all MCMC methods is that they sample from the target $P(x)$ only *asymptotically*: a finite-$T$ run yields draws from some $P^{(T)}(x)$, and deciding when the chain has 'converged' is generally intractable. **Exact (perfect) sampling** methods, pioneered by Propp and Wilson (1996), resolve this for certain chains by certifying internally that equilibrium has been reached. The key mechanism is *coalescence*: coupled chains started from different states but sharing one random-number stream merge and never separate, signalling that the initial condition has been forgotten. Combined with *coupling from the past* (simulate from progressively earlier $T_0$ until all starts coalesce by $t=0$) and *monotonicity* (track only extreme states), this delivers burn-in-free, bias-free samples. See [[coupling-from-the-past]], [[exact-sampling]], and [[monotone-coupling]].

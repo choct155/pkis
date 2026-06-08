@@ -34,6 +34,13 @@
 - [ ] [[kroese-statistical-modeling-ch10]] — primary treatment of [[generalized-linear-models]] with logit/probit/Poisson
 
 ### Normal
+- [ ] [[yang-hotpotqa-2018]] — HotpotQA — background/literature context only (text-based multi-hop, not graph-based). Less directly relevant to VGT but appears constantly in related work.
+- [ ] [[ho-constructing-2020]] — 2WikiMultiHopQA — most important benchmark for path-quality evaluation. Path overlap metric directly tests whether VGT recovers ground-truth paths more efficiently than heuristic beam search.
+- [ ] [[zhang-variational-2018]] — MetaQA — controlled depth analysis (1/2/3-hop). Useful for ablation on the ELBO plateau as convergence criterion across difficulty levels.
+- [ ] [[talmor-the-2018]] — ComplexWebQuestions (CWQ) — primary hard benchmark for VGT evaluation. Up to 4-hop; where the ELBO plateau convergence criterion will show most differentiation.
+- [ ] [[yih-the-2016]] — WebQSP — sanity-check benchmark for the VGT hypothesis. Read before running experiments. 1-2 hop; establishes the method works at all.
+- [ ] [[feng-cypherbench-2024]] — CypherBench — most directly applicable benchmark for IKS Neo4j LPG traversal. NL-to-Cypher over typed property graphs. Read alongside graph-schema-expressivity work.
+- [ ] [[wu-stark-2024]] — STaRK — most relevant benchmark for IKS domain context. Hybrid structured-unstructured retrieval across scientific/e-commerce/medical. Lower contamination than Freebase. Read after KGQA fundamentals (WebQSP, CWQ).
 - [ ] [[betancourt-hmcgeometric]] — Formal geometric (symplectic) treatment of HMC. Read after the conceptual intro. Supports the hamiltonian-classical-mechanics concept node and why leapfrog (symplecticity) is the right integrator. Not blocking.
 - [ ] [[sun-thinkongraph-2023]] — Empirical baseline for the variational-graph-traversal hypothesis. Read after policy-gradient foundations. Not blocking — hypothesis can be formalized first — but required before empirical comparison.
 - [ ] [[gulli-agentic-design-patterns-ch14]] — covers standard RAG, GraphRAG, and Agentic RAG; directly deepens [[retrieval-augmented-generation]] and [[graph-rag]] with practical pattern framing
@@ -79,6 +86,13 @@
 - [ ] [[lenat-marcus-cyc-trustworthy-2023]] — deepens [[neurosymbolic-ai]], [[formal-ontology]], [[knowledge-graph]]; trustworthy AI framing
 
 ### Normal
+- [ ] [[yang-hotpotqa-2018]] — HotpotQA — background/literature context only (text-based multi-hop, not graph-based). Less directly relevant to VGT but appears constantly in related work.
+- [ ] [[ho-constructing-2020]] — 2WikiMultiHopQA — most important benchmark for path-quality evaluation. Path overlap metric directly tests whether VGT recovers ground-truth paths more efficiently than heuristic beam search.
+- [ ] [[zhang-variational-2018]] — MetaQA — controlled depth analysis (1/2/3-hop). Useful for ablation on the ELBO plateau as convergence criterion across difficulty levels.
+- [ ] [[talmor-the-2018]] — ComplexWebQuestions (CWQ) — primary hard benchmark for VGT evaluation. Up to 4-hop; where the ELBO plateau convergence criterion will show most differentiation.
+- [ ] [[yih-the-2016]] — WebQSP — sanity-check benchmark for the VGT hypothesis. Read before running experiments. 1-2 hop; establishes the method works at all.
+- [ ] [[feng-cypherbench-2024]] — CypherBench — most directly applicable benchmark for IKS Neo4j LPG traversal. NL-to-Cypher over typed property graphs. Read alongside graph-schema-expressivity work.
+- [ ] [[wu-stark-2024]] — STaRK — most relevant benchmark for IKS domain context. Hybrid structured-unstructured retrieval across scientific/e-commerce/medical. Lower contamination than Freebase. Read after KGQA fundamentals (WebQSP, CWQ).
 - [ ] [[betancourt-hmcgeometric]] — Formal geometric (symplectic) treatment of HMC. Read after the conceptual intro. Supports the hamiltonian-classical-mechanics concept node and why leapfrog (symplecticity) is the right integrator. Not blocking.
 - [ ] [[sun-thinkongraph-2023]] — Empirical baseline for the variational-graph-traversal hypothesis. Read after policy-gradient foundations. Not blocking — hypothesis can be formalized first — but required before empirical comparison. (new — from batch ingest 2026-05-20)
 - [ ] [[fama-two-pillars-2013]] — Nobel lecture: deepens [[efficient-market-hypothesis]], [[risk-premium-structure]], [[stochastic-discount-factor]]

@@ -1291,3 +1291,2154 @@
 
 ## [2026-06-08] edit | edit_node
 - pkis:concept:typical-set: fields=[] sections=['Definition (information-theoretic)', 'Geometric face']
+
+## [2026-06-08] staged | node-stub (concept)
+- Staged: binary-symmetric-channel (id: 7929a0e8-b18e-4745-bfd6-8c9ad88ba93b)
+- Title: Binary Symmetric Channel
+- needs_canonical_source: False
+
+## [2026-06-08] committed | concept
+- Committed: binary-symmetric-channel → concepts/binary-symmetric-channel.md
+- IRI: pkis:concept:binary-symmetric-channel
+
+## [2026-06-08] edges | add_connections
+- binary-symmetric-channel —uses→ entropy
+- binary-symmetric-channel —instantiates→ information-theory
+
+## [2026-06-08] staged | node-stub (technique)
+- Staged: repetition-codes (id: 5cdae67a-9e92-4310-9952-8ef887567f75)
+- Title: Repetition Codes
+- needs_canonical_source: False
+
+## [2026-06-08] committed | technique
+- Committed: repetition-codes → techniques/repetition-codes.md
+- IRI: pkis:technique:repetition-codes
+
+## [2026-06-08] staged | node-stub (technique)
+- Staged: hamming-7-4-code (id: c78378f8-47d1-4523-813d-0691ff002351)
+- Title: (7,4) Hamming Code
+- needs_canonical_source: False
+
+## [2026-06-08] committed | technique
+- Committed: hamming-7-4-code → techniques/hamming-7-4-code.md
+- IRI: pkis:technique:hamming-7-4-code
+
+## [2026-06-08] staged | node-stub (technique)
+- Staged: syndrome-decoding (id: d6e0d6f1-bbf5-4c13-8d95-b7f759156651)
+- Title: Syndrome Decoding
+- needs_canonical_source: False
+
+## [2026-06-08] committed | technique
+- Committed: syndrome-decoding → techniques/syndrome-decoding.md
+- IRI: pkis:technique:syndrome-decoding
+
+## [2026-06-08] staged | node-stub (concept)
+- Staged: channel-capacity (id: c5b8eca3-5c31-492c-b9c0-a0ddd5dbd654)
+- Title: Channel Capacity
+- needs_canonical_source: False
+
+## [2026-06-08] committed | concept
+- Committed: channel-capacity → concepts/channel-capacity.md
+- IRI: pkis:concept:channel-capacity
+
+## [2026-06-08] staged | node-stub (result)
+- Staged: noisy-channel-coding-theorem (id: 3f446e60-5f3c-4ce8-a79c-adcb7e6ef0ef)
+- Title: Noisy-Channel Coding Theorem
+- needs_canonical_source: False
+
+## [2026-06-08] committed | result
+- Committed: noisy-channel-coding-theorem → results/noisy-channel-coding-theorem.md
+- IRI: pkis:result:noisy-channel-coding-theorem
+
+## [2026-06-08] staged | node-stub (result)
+- Staged: jensens-inequality (id: cbd4cf2e-071d-4a85-81ef-e098d5c57487)
+- Title: Jensen's Inequality
+- needs_canonical_source: False
+
+## [2026-06-08] committed | result
+- Committed: jensens-inequality → results/jensens-inequality.md
+- IRI: pkis:result:jensens-inequality
+
+## [2026-06-08] staged | node-stub (result)
+- Staged: gibbs-inequality (id: 06774771-d72a-4181-a8ec-ea0ab4ec22c5)
+- Title: Gibbs' Inequality
+- needs_canonical_source: False
+
+## [2026-06-08] committed | result
+- Committed: gibbs-inequality → results/gibbs-inequality.md
+- IRI: pkis:result:gibbs-inequality
+
+## [2026-06-08] staged | node-stub (principle)
+- Staged: likelihood-principle (id: a47f4b1c-8dea-4eb0-abd5-7db7d6212d9b)
+- Title: Likelihood Principle
+- needs_canonical_source: False
+
+## [2026-06-08] committed | principle
+- Committed: likelihood-principle → principles/likelihood-principle.md
+- IRI: pkis:principle:likelihood-principle
+
+## [2026-06-08] staged | node-stub (concept)
+- Staged: marginal-likelihood (id: 9f527490-c069-4803-bc17-b28744d25ce5)
+- Title: Marginal Likelihood (Model Evidence)
+- needs_canonical_source: False
+
+## [2026-06-08] committed | concept
+- Committed: marginal-likelihood → concepts/marginal-likelihood.md
+- IRI: pkis:concept:marginal-likelihood
+
+## [2026-06-08] staged | node-stub (technique)
+- Staged: bayesian-model-comparison (id: 7fc1780e-f16e-4ac5-95d7-d83bd9c0f69c)
+- Title: Bayesian Model Comparison
+- needs_canonical_source: False
+
+## [2026-06-08] committed | technique
+- Committed: bayesian-model-comparison → techniques/bayesian-model-comparison.md
+- IRI: pkis:technique:bayesian-model-comparison
+
+## [2026-06-08] staged | node-stub (concept)
+- Staged: likelihood-ratio-evidence (id: 419c3dc7-e069-42e0-914a-1dad4a653ad7)
+- Title: Likelihood Ratio as Evidence
+- needs_canonical_source: False
+
+## [2026-06-08] committed | concept
+- Committed: likelihood-ratio-evidence → concepts/likelihood-ratio-evidence.md
+- IRI: pkis:concept:likelihood-ratio-evidence
+
+## [2026-06-08] staged | node-stub (result)
+- Staged: laplaces-rule-of-succession (id: cacd60c3-45e2-4a39-b4ca-93f45302941a)
+- Title: Laplace's Rule of Succession
+- needs_canonical_source: False
+
+## [2026-06-08] committed | result
+- Committed: laplaces-rule-of-succession → results/laplaces-rule-of-succession.md
+- IRI: pkis:result:laplaces-rule-of-succession
+
+## [2026-06-08] staged | node-stub (concept)
+- Staged: essential-bit-content (id: dd6c024e-d2e1-4145-ab53-6e5a272189a8)
+- Title: Essential Bit Content (Raw Bit Content)
+- needs_canonical_source: False
+
+## [2026-06-08] committed | concept
+- Committed: essential-bit-content → concepts/essential-bit-content.md
+- IRI: pkis:concept:essential-bit-content
+
+## [2026-06-08] staged | node-stub (result)
+- Staged: weak-law-of-large-numbers (id: b630d604-36c6-4ffc-b6ec-4b6be290b9bb)
+- Title: Weak Law of Large Numbers (via Chebyshev)
+- needs_canonical_source: False
+
+## [2026-06-08] committed | result
+- Committed: weak-law-of-large-numbers → results/weak-law-of-large-numbers.md
+- IRI: pkis:result:weak-law-of-large-numbers
+
+## [2026-06-08] staged | node-stub (concept)
+- Staged: uniquely-decodable-codes (id: 462b2066-6090-4b36-a921-3f5bc2d2844e)
+- Title: Uniquely Decodable Codes
+- needs_canonical_source: False
+
+## [2026-06-08] committed | concept
+- Committed: uniquely-decodable-codes → concepts/uniquely-decodable-codes.md
+- IRI: pkis:concept:uniquely-decodable-codes
+
+## [2026-06-08] staged | node-stub (concept)
+- Staged: prefix-code (id: 678b7e2c-261f-45cf-a127-2c7fdb93b3fe)
+- Title: Prefix Codes (Instantaneous Codes)
+- needs_canonical_source: False
+
+## [2026-06-08] committed | concept
+- Committed: prefix-code → concepts/prefix-code.md
+- IRI: pkis:concept:prefix-code
+
+## [2026-06-08] staged | node-stub (concept)
+- Staged: complete-code (id: 063b729b-b05c-4d85-b874-a14a3cc8d880)
+- Title: Complete Code
+- needs_canonical_source: False
+
+## [2026-06-08] committed | concept
+- Committed: complete-code → concepts/complete-code.md
+- IRI: pkis:concept:complete-code
+
+## [2026-06-08] staged | node-stub (result)
+- Staged: optimal-symbol-codelengths (id: 0a5f2677-6063-4583-823c-7a9447175e5c)
+- Title: Optimal Symbol Codelengths and the Cost of Wrong Lengths
+- needs_canonical_source: False
+
+## [2026-06-08] committed | result
+- Committed: optimal-symbol-codelengths → results/optimal-symbol-codelengths.md
+- IRI: pkis:result:optimal-symbol-codelengths
+
+## [2026-06-08] staged | node-stub (technique)
+- Staged: lempel-ziv-coding (id: 02d9ce54-b47b-4fed-9924-6a2f0e0796cc)
+- Title: Lempel–Ziv Coding
+- needs_canonical_source: False
+
+## [2026-06-08] committed | technique
+- Committed: lempel-ziv-coding → techniques/lempel-ziv-coding.md
+- IRI: pkis:technique:lempel-ziv-coding
+
+## [2026-06-08] staged | node-stub (concept)
+- Staged: stream-codes (id: 33693113-a0a2-41d7-9630-90c071e96d38)
+- Title: Stream Codes
+- needs_canonical_source: False
+
+## [2026-06-08] committed | concept
+- Committed: stream-codes → concepts/stream-codes.md
+- IRI: pkis:concept:stream-codes
+
+## [2026-06-08] staged | node-stub (principle)
+- Staged: compression-as-probabilistic-modelling (id: 19e40963-27e5-4397-8f5c-a39731fdfc87)
+- Title: Compression as Probabilistic Modelling
+- needs_canonical_source: False
+
+## [2026-06-08] committed | principle
+- Committed: compression-as-probabilistic-modelling → principles/compression-as-probabilistic-modelling.md
+- IRI: pkis:principle:compression-as-probabilistic-modelling
+
+## [2026-06-08] staged | node-stub (technique)
+- Staged: self-delimiting-integer-codes (id: 50e4557b-c10c-43c3-9eb3-b7a28ae644c9)
+- Title: Self-Delimiting Codes for Integers
+- needs_canonical_source: False
+
+## [2026-06-08] committed | technique
+- Committed: self-delimiting-integer-codes → techniques/self-delimiting-integer-codes.md
+- IRI: pkis:technique:self-delimiting-integer-codes
+
+## [2026-06-08] staged | node-stub (technique)
+- Staged: elias-omega-code (id: e178b94c-e8e0-4019-a76e-affe5e32d7b4)
+- Title: Elias's Universal Code for Integers (C_omega)
+- needs_canonical_source: False
+
+## [2026-06-08] committed | technique
+- Committed: elias-omega-code → techniques/elias-omega-code.md
+- IRI: pkis:technique:elias-omega-code
+
+## [2026-06-08] staged | node-stub (concept)
+- Staged: universal-codes (id: 998897d1-5326-4170-9d77-4052dd2509da)
+- Title: Universal Codes and Implicit Priors
+- needs_canonical_source: False
+
+## [2026-06-08] committed | concept
+- Committed: universal-codes → concepts/universal-codes.md
+- IRI: pkis:concept:universal-codes
+
+## [2026-06-08] edges | add_connections
+- repetition-codes —contrasts-with→ hamming-7-4-code
+- hamming-7-4-code —uses→ syndrome-decoding
+- repetition-codes —uses→ binary-symmetric-channel
+- hamming-7-4-code —uses→ binary-symmetric-channel
+- syndrome-decoding —instantiates→ maximum-likelihood-estimation
+- repetition-codes —instantiates→ maximum-likelihood-estimation
+- noisy-channel-coding-theorem —uses→ channel-capacity
+- channel-capacity —prerequisite-of→ noisy-channel-coding-theorem
+- noisy-channel-coding-theorem —contrasts-with→ repetition-codes
+- noisy-channel-coding-theorem —applies→ binary-symmetric-channel
+- channel-capacity —uses→ information-theory
+- noisy-channel-coding-theorem —prerequisite-of→ typical-set
+- gibbs-inequality —uses→ jensens-inequality
+- gibbs-inequality —applies→ kl-divergence
+- jensens-inequality —prerequisite-of→ entropy
+- jensens-inequality —applies→ elbo
+- jensens-inequality —uses→ convex-optimization
+- likelihood-principle —specializes→ bayesian-inference
+- likelihood-principle —contrasts-with→ hypothesis-testing
+- gibbs-inequality —prerequisite-of→ source-coding-theorem
+- entropy —uses→ shannon-information-content
+- kl-divergence —uses→ gibbs-inequality
+- bayesian-model-comparison —uses→ marginal-likelihood
+- marginal-likelihood —prerequisite-of→ bayesian-model-comparison
+- bayesian-model-comparison —uses→ likelihood-ratio-evidence
+- likelihood-principle —prerequisite-of→ likelihood-ratio-evidence
+- laplaces-rule-of-succession —instantiates→ bayesian-inference
+- laplaces-rule-of-succession —contrasts-with→ maximum-likelihood-estimation
+- bayesian-model-comparison —contrasts-with→ hypothesis-testing
+- marginal-likelihood —applies→ bayesian-model-averaging
+- marginal-likelihood —specializes→ bayesian-inference
+- likelihood-ratio-evidence —uses→ bayesian-inference
+- marginal-likelihood —uses→ conjugate-prior
+- essential-bit-content —prerequisite-of→ source-coding-theorem
+- essential-bit-content —uses→ shannon-information-content
+- essential-bit-content —contrasts-with→ entropy
+- weak-law-of-large-numbers —prerequisite-of→ typical-set
+- weak-law-of-large-numbers —prerequisite-of→ source-coding-theorem
+- source-coding-theorem —uses→ essential-bit-content
+- prefix-code —specializes→ uniquely-decodable-codes
+- complete-code —specializes→ uniquely-decodable-codes
+- uniquely-decodable-codes —uses→ kraft-inequality
+- prefix-code —uses→ kraft-inequality
+- complete-code —instantiates→ kraft-inequality
+- huffman-coding —instantiates→ prefix-code
+- huffman-coding —applies→ optimal-symbol-codelengths
+- optimal-symbol-codelengths —uses→ shannon-information-content
+- optimal-symbol-codelengths —prerequisite-of→ source-coding-theorem
+- optimal-symbol-codelengths —uses→ kl-divergence
+- source-coding-theorem —uses→ prefix-code
+- arithmetic-coding —instantiates→ stream-codes
+- lempel-ziv-coding —instantiates→ stream-codes
+- lempel-ziv-coding —contrasts-with→ arithmetic-coding
+- arithmetic-coding —instantiates→ compression-as-probabilistic-modelling
+- compression-as-probabilistic-modelling —prerequisite-of→ arithmetic-coding
+- stream-codes —contrasts-with→ huffman-coding
+- lempel-ziv-coding —instantiates→ source-coding-theorem
+- self-delimiting-integer-codes —uses→ kraft-inequality
+- elias-omega-code —specializes→ self-delimiting-integer-codes
+- elias-omega-code —instantiates→ universal-codes
+- self-delimiting-integer-codes —prerequisite-of→ universal-codes
+- universal-codes —uses→ kraft-inequality
+- universal-codes —applies→ entropy
+- self-delimiting-integer-codes —contrasts-with→ huffman-coding
+
+## [2026-06-08] edit | edit_node
+- pkis:concept:binary-symmetric-channel: fields=[] sections=["MacKay's framing"]
+
+## [2026-06-08] edit | edit_node
+- pkis:concept:entropy: fields=[] sections=['Decomposability (chain rule)']
+
+## [2026-06-08] edit | edit_node
+- pkis:concept:entropy: fields=[] sections=['Maximum-entropy bound']
+
+## [2026-06-08] edit | edit_node
+- pkis:concept:kl-divergence: fields=[] sections=["Relative entropy and Gibbs' inequality"]
+
+## [2026-06-08] edit | edit_node
+- pkis:concept:bayesian-inference: fields=[] sections=['Forward vs inverse probability']
+
+## [2026-06-08] edit | edit_node
+- pkis:technique:bayesian-model-averaging: fields=[] sections=['Prediction under discrete model uncertainty (MacKay)']
+
+## [2026-06-08] edit | edit_node
+- pkis:technique:maximum-likelihood-estimation: fields=[] sections=['Bayesian critique (MacKay)']
+
+## [2026-06-08] edit | edit_node
+- pkis:concept:typical-set: fields=[] sections=['Asymptotic equipartition — the weak sense']
+
+## [2026-06-08] edit | edit_node
+- pkis:concept:typical-set: fields=[] sections=['Why introduce the typical set at all?']
+
+## [2026-06-08] edit | edit_node
+- pkis:result:source-coding-theorem: fields=[] sections=['Converse — the two-sided bound']
+
+## [2026-06-08] edit | edit_node
+- pkis:result:source-coding-theorem: fields=[] sections=['Source coding theorem for symbol codes']
+
+## [2026-06-08] edit | edit_node
+- pkis:technique:huffman-coding: fields=[] sections=["Optimality proof and the 'extra bit' defect"]
+
+## [2026-06-08] edit | edit_node
+- pkis:result:kraft-inequality: fields=[] sections=['Kraft–McMillan: both directions']
+
+## [2026-06-08] edit | edit_node
+- pkis:technique:arithmetic-coding: fields=[] sections=['Random sample generation and text entry']
+
+## [2026-06-08] edit | edit_node
+- pkis:technique:arithmetic-coding: fields=[] sections=['Near-optimality bound']
+
+## [2026-06-08] edit | edit_node
+- pkis:result:kraft-inequality: fields=[] sections=['Completeness in integer codes']
+
+## [2026-06-08] staged | node-stub (concept)
+- Staged: joint-entropy (id: 56eb4cf0-c122-4d47-9761-3f10af020c4d)
+- Title: Joint Entropy
+- needs_canonical_source: False
+
+## [2026-06-08] committed | concept
+- Committed: joint-entropy → concepts/joint-entropy.md
+- IRI: pkis:concept:joint-entropy
+
+## [2026-06-08] staged | node-stub (concept)
+- Staged: conditional-entropy (id: c16ac041-489d-4237-8321-da4defc4c209)
+- Title: Conditional Entropy
+- needs_canonical_source: False
+
+## [2026-06-08] committed | concept
+- Committed: conditional-entropy → concepts/conditional-entropy.md
+- IRI: pkis:concept:conditional-entropy
+
+## [2026-06-08] staged | node-stub (concept)
+- Staged: mutual-information (id: c9e085d9-3bef-474f-bb33-d2c15f747957)
+- Title: Mutual Information
+- needs_canonical_source: False
+
+## [2026-06-08] committed | concept
+- Committed: mutual-information → concepts/mutual-information.md
+- IRI: pkis:concept:mutual-information
+
+## [2026-06-08] staged | node-stub (result)
+- Staged: chain-rule-for-entropy (id: ccd97df2-2e9a-4835-8890-de5deaee68bc)
+- Title: Chain Rule for Entropy
+- needs_canonical_source: False
+
+## [2026-06-08] committed | result
+- Committed: chain-rule-for-entropy → results/chain-rule-for-entropy.md
+- IRI: pkis:result:chain-rule-for-entropy
+
+## [2026-06-08] staged | node-stub (result)
+- Staged: data-processing-inequality (id: 8f9d6615-e1b2-4dc2-b93a-204b541bf93a)
+- Title: Data-Processing Inequality
+- needs_canonical_source: False
+
+## [2026-06-08] committed | result
+- Committed: data-processing-inequality → results/data-processing-inequality.md
+- IRI: pkis:result:data-processing-inequality
+
+## [2026-06-08] staged | node-stub (concept)
+- Staged: discrete-memoryless-channel (id: f825402d-06c2-4da7-ad69-f5e354890845)
+- Title: Discrete Memoryless Channel
+- needs_canonical_source: False
+
+## [2026-06-08] committed | concept
+- Committed: discrete-memoryless-channel → concepts/discrete-memoryless-channel.md
+- IRI: pkis:concept:discrete-memoryless-channel
+
+## [2026-06-08] staged | node-stub (concept)
+- Staged: binary-erasure-channel (id: ab0e826f-f90c-4a3a-8074-99dcfe85c935)
+- Title: Binary Erasure Channel
+- needs_canonical_source: False
+
+## [2026-06-08] committed | concept
+- Committed: binary-erasure-channel → concepts/binary-erasure-channel.md
+- IRI: pkis:concept:binary-erasure-channel
+
+## [2026-06-08] staged | node-stub (concept)
+- Staged: z-channel (id: c6da762d-5253-446a-b708-571179ba735e)
+- Title: Z Channel
+- needs_canonical_source: False
+
+## [2026-06-08] committed | concept
+- Committed: z-channel → concepts/z-channel.md
+- IRI: pkis:concept:z-channel
+
+## [2026-06-08] staged | node-stub (concept)
+- Staged: jointly-typical-set (id: 89eade46-654a-4eee-aa31-8ed49bb52e5b)
+- Title: Jointly-Typical Set
+- needs_canonical_source: False
+
+## [2026-06-08] committed | concept
+- Committed: jointly-typical-set → concepts/jointly-typical-set.md
+- IRI: pkis:concept:jointly-typical-set
+
+## [2026-06-08] staged | node-stub (technique)
+- Staged: joint-typicality-decoding (id: d5627baf-9daf-4237-8379-1a9c7804f22a)
+- Title: Joint-Typicality (Typical-Set) Decoding
+- needs_canonical_source: False
+
+## [2026-06-08] committed | technique
+- Committed: joint-typicality-decoding → techniques/joint-typicality-decoding.md
+- IRI: pkis:technique:joint-typicality-decoding
+
+## [2026-06-08] staged | node-stub (technique)
+- Staged: random-coding-argument (id: 6ba79a37-dda2-4ce6-a013-1fa31f71b1d5)
+- Title: Random Coding Argument
+- needs_canonical_source: False
+
+## [2026-06-08] committed | technique
+- Committed: random-coding-argument → techniques/random-coding-argument.md
+- IRI: pkis:technique:random-coding-argument
+
+## [2026-06-08] staged | node-stub (result)
+- Staged: fanos-inequality (id: 5ff50f2d-a576-410e-9955-1e89d7905188)
+- Title: Fano's Inequality
+- needs_canonical_source: False
+
+## [2026-06-08] committed | result
+- Committed: fanos-inequality → results/fanos-inequality.md
+- IRI: pkis:result:fanos-inequality
+
+## [2026-06-08] staged | node-stub (concept)
+- Staged: gaussian-channel (id: 55766718-8a51-46bf-a9c8-b883d2123838)
+- Title: Gaussian Channel (AWGN)
+- needs_canonical_source: False
+
+## [2026-06-08] committed | concept
+- Committed: gaussian-channel → concepts/gaussian-channel.md
+- IRI: pkis:concept:gaussian-channel
+
+## [2026-06-08] staged | node-stub (result)
+- Staged: continuous-channel-capacity (id: e2dee0c1-15bb-4f5e-ad65-64bbe1f6a2df)
+- Title: Continuous-Channel Capacity (Shannon–Hartley)
+- needs_canonical_source: False
+
+## [2026-06-08] committed | result
+- Committed: continuous-channel-capacity → results/continuous-channel-capacity.md
+- IRI: pkis:result:continuous-channel-capacity
+
+## [2026-06-08] staged | node-stub (concept)
+- Staged: linear-block-code (id: b90f0120-ea38-4c26-bb40-76a4dcfbe714)
+- Title: Linear Block Code
+- needs_canonical_source: False
+
+## [2026-06-08] committed | concept
+- Committed: linear-block-code → concepts/linear-block-code.md
+- IRI: pkis:concept:linear-block-code
+
+## [2026-06-08] staged | node-stub (technique)
+- Staged: concatenated-codes (id: 044261e6-97f6-4726-b837-732fabb214fe)
+- Title: Concatenated Codes and Interleaving
+- needs_canonical_source: False
+
+## [2026-06-08] committed | technique
+- Committed: concatenated-codes → techniques/concatenated-codes.md
+- IRI: pkis:technique:concatenated-codes
+
+## [2026-06-08] staged | node-stub (concept)
+- Staged: code-goodness-taxonomy (id: 9b662110-da49-456d-932b-c7556f9e1ace)
+- Title: Code Goodness Taxonomy
+- needs_canonical_source: False
+
+## [2026-06-08] committed | concept
+- Committed: code-goodness-taxonomy → concepts/code-goodness-taxonomy.md
+- IRI: pkis:concept:code-goodness-taxonomy
+
+## [2026-06-08] staged | node-stub (concept)
+- Staged: hash-function (id: b26bba59-99fc-424e-aaaa-e6a21a480340)
+- Title: Hash Function
+- needs_canonical_source: False
+
+## [2026-06-08] committed | concept
+- Committed: hash-function → concepts/hash-function.md
+- IRI: pkis:concept:hash-function
+
+## [2026-06-08] staged | node-stub (technique)
+- Staged: hash-table (id: 00a1476b-f480-4cea-8e90-13cdd687120c)
+- Title: Hash Table for Information Retrieval
+- needs_canonical_source: False
+
+## [2026-06-08] committed | technique
+- Committed: hash-table → techniques/hash-table.md
+- IRI: pkis:technique:hash-table
+
+## [2026-06-08] staged | node-stub (result)
+- Staged: hash-collision-bound (id: 85fdb683-b947-4d8c-9841-25f0b09b527a)
+- Title: Hash Collision Bound (Birthday Problem)
+- needs_canonical_source: False
+
+## [2026-06-08] committed | result
+- Committed: hash-collision-bound → results/hash-collision-bound.md
+- IRI: pkis:result:hash-collision-bound
+
+## [2026-06-08] staged | node-stub (technique)
+- Staged: hashing-for-error-detection (id: c4c084ff-b00e-487b-9fa9-8c6c4f2ec939)
+- Title: Hashing for Error Detection
+- needs_canonical_source: False
+
+## [2026-06-08] committed | technique
+- Committed: hashing-for-error-detection → techniques/hashing-for-error-detection.md
+- IRI: pkis:technique:hashing-for-error-detection
+
+## [2026-06-08] staged | node-stub (concept)
+- Staged: one-way-hash-function (id: 0aaf3f21-bce3-41cc-b4ec-0a11ae46ea97)
+- Title: One-Way Hash Function
+- needs_canonical_source: False
+
+## [2026-06-08] committed | concept
+- Committed: one-way-hash-function → concepts/one-way-hash-function.md
+- IRI: pkis:concept:one-way-hash-function
+
+## [2026-06-08] staged | node-stub (concept)
+- Staged: minimum-distance (id: 46df604a-3962-4113-b700-14d334d7dbc7)
+- Title: Minimum Distance of a Code
+- needs_canonical_source: False
+
+## [2026-06-08] committed | concept
+- Committed: minimum-distance → concepts/minimum-distance.md
+- IRI: pkis:concept:minimum-distance
+
+## [2026-06-08] staged | node-stub (concept)
+- Staged: weight-enumerator-function (id: 0e099396-c248-4c73-b648-62d0683f7c86)
+- Title: Weight Enumerator Function
+- needs_canonical_source: False
+
+## [2026-06-08] committed | concept
+- Committed: weight-enumerator-function → concepts/weight-enumerator-function.md
+- IRI: pkis:concept:weight-enumerator-function
+
+## [2026-06-08] staged | node-stub (concept)
+- Staged: perfect-codes (id: 04034cc8-e0ad-4b0a-a5c3-f6a4f0703e74)
+- Title: Perfect Codes
+- needs_canonical_source: False
+
+## [2026-06-08] committed | concept
+- Committed: perfect-codes → concepts/perfect-codes.md
+- IRI: pkis:concept:perfect-codes
+
+## [2026-06-08] staged | node-stub (result)
+- Staged: bounds-on-binary-codes (id: 4f2b4217-0808-4d08-8d49-cb0275ba5071)
+- Title: Bounds on Binary Codes (Sphere-Packing and Gilbert–Varshamov)
+- needs_canonical_source: False
+
+## [2026-06-08] committed | result
+- Committed: bounds-on-binary-codes → results/bounds-on-binary-codes.md
+- IRI: pkis:result:bounds-on-binary-codes
+
+## [2026-06-08] staged | node-stub (concept)
+- Staged: dual-code (id: 7d17fa0c-153c-40d0-bcb1-47e62642b128)
+- Title: Dual of a Linear Code
+- needs_canonical_source: False
+
+## [2026-06-08] committed | concept
+- Committed: dual-code → concepts/dual-code.md
+- IRI: pkis:concept:dual-code
+
+## [2026-06-08] staged | node-stub (result)
+- Staged: good-linear-codes-exist (id: 9f43c2f8-77d8-425e-922e-9cb44c0ffa59)
+- Title: Very Good Linear Codes Exist (Random Linear Codes Achieve Capacity)
+- needs_canonical_source: False
+
+## [2026-06-08] committed | result
+- Committed: good-linear-codes-exist → results/good-linear-codes-exist.md
+- IRI: pkis:result:good-linear-codes-exist
+
+## [2026-06-08] staged | node-stub (technique)
+- Staged: typical-set-decoder (id: 7aa2a521-20b1-4bb2-9c25-85d1cac93e51)
+- Title: Typical-Set Decoder
+- needs_canonical_source: False
+
+## [2026-06-08] committed | technique
+- Committed: typical-set-decoder → techniques/typical-set-decoder.md
+- IRI: pkis:technique:typical-set-decoder
+
+## [2026-06-08] edges | add_connections
+- joint-entropy —specializes→ entropy
+- conditional-entropy —specializes→ entropy
+- chain-rule-for-entropy —uses→ joint-entropy
+- chain-rule-for-entropy —uses→ conditional-entropy
+- chain-rule-for-entropy —uses→ shannon-information-content
+- mutual-information —uses→ conditional-entropy
+- mutual-information —specializes→ kl-divergence
+- mutual-information —uses→ gibbs-inequality
+- mutual-information —contrasts-with→ conditional-independence
+- data-processing-inequality —uses→ mutual-information
+- data-processing-inequality —uses→ chain-rule-for-entropy
+- data-processing-inequality —applies→ markov-chains
+- mutual-information —prerequisite-of→ channel-capacity
+- mutual-information —prerequisite-of→ noisy-channel-coding-theorem
+- mutual-information —applies→ binary-symmetric-channel
+- conditional-entropy —prerequisite-of→ mutual-information
+- mutual-information —uses→ entropy
+- channel-capacity —uses→ mutual-information
+- discrete-memoryless-channel —prerequisite-of→ channel-capacity
+- discrete-memoryless-channel —prerequisite-of→ noisy-channel-coding-theorem
+- binary-symmetric-channel —instantiates→ discrete-memoryless-channel
+- binary-erasure-channel —instantiates→ discrete-memoryless-channel
+- z-channel —instantiates→ discrete-memoryless-channel
+- z-channel —contrasts-with→ binary-symmetric-channel
+- binary-erasure-channel —contrasts-with→ binary-symmetric-channel
+- joint-typicality-decoding —uses→ jointly-typical-set
+- random-coding-argument —uses→ joint-typicality-decoding
+- noisy-channel-coding-theorem —uses→ random-coding-argument
+- noisy-channel-coding-theorem —uses→ fanos-inequality
+- jointly-typical-set —specializes→ typical-set
+- joint-typicality-decoding —prerequisite-of→ noisy-channel-coding-theorem
+- jointly-typical-set —applies→ channel-capacity
+- fanos-inequality —uses→ channel-capacity
+- gaussian-channel —specializes→ channel-capacity
+- gaussian-channel —uses→ gaussian-distribution
+- continuous-channel-capacity —specializes→ channel-capacity
+- continuous-channel-capacity —applies→ gaussian-channel
+- gaussian-channel —instantiates→ noisy-channel-coding-theorem
+- gaussian-channel —contrasts-with→ binary-symmetric-channel
+- hamming-7-4-code —instantiates→ linear-block-code
+- repetition-codes —instantiates→ linear-block-code
+- linear-block-code —uses→ noisy-channel-coding-theorem
+- concatenated-codes —uses→ linear-block-code
+- code-goodness-taxonomy —applies→ noisy-channel-coding-theorem
+- repetition-codes —instantiates→ code-goodness-taxonomy
+- hash-table —uses→ hash-function
+- hash-collision-bound —applies→ hash-table
+- hash-function —prerequisite-of→ hashing-for-error-detection
+- one-way-hash-function —specializes→ hash-function
+- hashing-for-error-detection —contrasts-with→ one-way-hash-function
+- one-way-hash-function —uses→ hash-collision-bound
+- hash-function —analogous-to→ typical-set
+- hash-function —analogous-to→ noisy-channel-coding-theorem
+- hashing-for-error-detection —contrasts-with→ hamming-7-4-code
+- hash-table —applies→ named-entity-disambiguation
+- perfect-codes —uses→ minimum-distance
+- minimum-distance —prerequisite-of→ perfect-codes
+- bounds-on-binary-codes —uses→ minimum-distance
+- bounds-on-binary-codes —uses→ weight-enumerator-function
+- hamming-7-4-code —instantiates→ perfect-codes
+- perfect-codes —contrasts-with→ channel-capacity
+- bounds-on-binary-codes —contrasts-with→ channel-capacity
+- weight-enumerator-function —prerequisite-of→ bounds-on-binary-codes
+- dual-code —applies→ hamming-7-4-code
+- minimum-distance —uses→ weight-enumerator-function
+- good-linear-codes-exist —instantiates→ noisy-channel-coding-theorem
+- good-linear-codes-exist —uses→ typical-set-decoder
+- good-linear-codes-exist —uses→ typical-set
+- good-linear-codes-exist —uses→ syndrome-decoding
+- good-linear-codes-exist —applies→ binary-symmetric-channel
+- good-linear-codes-exist —instantiates→ source-coding-theorem
+- typical-set-decoder —specializes→ syndrome-decoding
+- typical-set-decoder —uses→ typical-set
+- good-linear-codes-exist —applies→ channel-capacity
+
+## [2026-06-08] edit | edit_node
+- pkis:concept:entropy: fields=[] sections=['MacKay: decomposing joint entropy']
+
+## [2026-06-08] edit | edit_node
+- pkis:concept:kl-divergence: fields=[] sections=['MacKay: mutual information as a KL divergence']
+
+## [2026-06-08] edit | edit_node
+- pkis:concept:channel-capacity: fields=[] sections=['## Optimal input distribution and the extended-channel sketch']
+
+## [2026-06-08] edit | edit_node
+- pkis:concept:binary-symmetric-channel: fields=[] sections=['## Capacity of the BSC']
+
+## [2026-06-08] edit | edit_node
+- pkis:result:noisy-channel-coding-theorem: fields=[] sections=['## Proof: achievability and converse']
+
+## [2026-06-08] edit | edit_node
+- pkis:result:noisy-channel-coding-theorem: fields=[] sections=['## Finite-blocklength refinement and the reliability function']
+
+## [2026-06-08] edit | edit_node
+- pkis:concept:channel-capacity: fields=[] sections=['## Capacity of continuous channels and the cost constraint']
+
+## [2026-06-08] edit | edit_node
+- pkis:concept:gaussian-distribution: fields=[] sections=['## Precisions add: combining Gaussian evidence']
+
+## [2026-06-08] edit | edit_node
+- pkis:result:noisy-channel-coding-theorem: fields=[] sections=['## Geometric proof: sphere packing']
+
+## [2026-06-08] edit | edit_node
+- pkis:concept:likelihood-ratio-evidence: fields=[] sections=['## Bitwise Confirmation of a Hash Hit']
+
+## [2026-06-08] edit | edit_node
+- pkis:technique:hamming-7-4-code: fields=[] sections=['Perfection, the hat puzzle, and the Hamming family']
+
+## [2026-06-08] edit | edit_node
+- pkis:result:noisy-channel-coding-theorem: fields=[] sections=['## Random-Coding Proof via Linear Codes (BSC)']
+
+## [2026-06-08] edit | edit_node
+- pkis:result:source-coding-theorem: fields=[] sections=['## Linear Compressors Are Optimal (Uncompression Duality)']
+
+## [2026-06-08] staged | node-stub (result)
+- Staged: slepian-wolf-theorem (id: ade91f60-10af-413e-a27b-005d0bbfc996)
+- Title: Slepian–Wolf Theorem (Distributed Source Coding)
+- needs_canonical_source: False
+
+## [2026-06-08] committed | result
+- Committed: slepian-wolf-theorem → results/slepian-wolf-theorem.md
+- IRI: pkis:result:slepian-wolf-theorem
+
+## [2026-06-08] staged | node-stub (concept)
+- Staged: multiple-access-channel (id: 2fde3400-074e-4e9e-b88e-7a2ef4df630c)
+- Title: Multiple-Access Channel
+- needs_canonical_source: False
+
+## [2026-06-08] committed | concept
+- Committed: multiple-access-channel → concepts/multiple-access-channel.md
+- IRI: pkis:concept:multiple-access-channel
+
+## [2026-06-08] staged | node-stub (concept)
+- Staged: broadcast-channel (id: 21c6aa63-1fd3-4453-b141-278e758a2fbd)
+- Title: Broadcast Channel
+- needs_canonical_source: False
+
+## [2026-06-08] committed | concept
+- Committed: broadcast-channel → concepts/broadcast-channel.md
+- IRI: pkis:concept:broadcast-channel
+
+## [2026-06-08] staged | node-stub (concept)
+- Staged: message-passing (id: 894e6261-00f5-4327-aa9c-c1976bd2e0c5)
+- Title: Message Passing
+- needs_canonical_source: False
+
+## [2026-06-08] committed | concept
+- Committed: message-passing → concepts/message-passing.md
+- IRI: pkis:concept:message-passing
+
+## [2026-06-08] staged | node-stub (technique)
+- Staged: sum-product-algorithm (id: 2238eb36-eb61-4e82-a77f-aa5747c4a910)
+- Title: Sum-Product Algorithm
+- needs_canonical_source: False
+
+## [2026-06-08] committed | technique
+- Committed: sum-product-algorithm → techniques/sum-product-algorithm.md
+- IRI: pkis:technique:sum-product-algorithm
+
+## [2026-06-08] staged | node-stub (technique)
+- Staged: min-sum-algorithm (id: ecf2e24e-f41d-4f3f-8ced-50db82a9e238)
+- Title: Min-Sum (Viterbi) Algorithm
+- needs_canonical_source: False
+
+## [2026-06-08] committed | technique
+- Committed: min-sum-algorithm → techniques/min-sum-algorithm.md
+- IRI: pkis:technique:min-sum-algorithm
+
+## [2026-06-08] staged | node-stub (concept)
+- Staged: constrained-noiseless-channel (id: 0ee3af71-67ce-416f-bae2-97d6550db2a5)
+- Title: Constrained Noiseless Channel
+- needs_canonical_source: False
+
+## [2026-06-08] committed | concept
+- Committed: constrained-noiseless-channel → concepts/constrained-noiseless-channel.md
+- IRI: pkis:concept:constrained-noiseless-channel
+
+## [2026-06-08] staged | node-stub (result)
+- Staged: constrained-channel-capacity-eigenvalue (id: d5ef0cf0-2ff8-4480-9787-d9c63ee7c8b3)
+- Title: Capacity of a Constrained Channel as a Leading Eigenvalue
+- needs_canonical_source: False
+
+## [2026-06-08] committed | result
+- Committed: constrained-channel-capacity-eigenvalue → results/constrained-channel-capacity-eigenvalue.md
+- IRI: pkis:result:constrained-channel-capacity-eigenvalue
+
+## [2026-06-08] staged | node-stub (concept)
+- Staged: runlength-limited-codes (id: 0f3f8698-38fe-46be-ae4f-d2ba6f91c3fe)
+- Title: Runlength-Limited Codes
+- needs_canonical_source: False
+
+## [2026-06-08] committed | concept
+- Committed: runlength-limited-codes → concepts/runlength-limited-codes.md
+- IRI: pkis:concept:runlength-limited-codes
+
+## [2026-06-08] staged | node-stub (result)
+- Staged: constrained-channel-optimal-transitions (id: 06d73bea-bd14-4dcb-b395-d821f767410f)
+- Title: Optimal Transition Probabilities for a Constrained Channel
+- needs_canonical_source: False
+
+## [2026-06-08] committed | result
+- Committed: constrained-channel-optimal-transitions → results/constrained-channel-optimal-transitions.md
+- IRI: pkis:result:constrained-channel-optimal-transitions
+
+## [2026-06-08] staged | node-stub (concept)
+- Staged: redundancy-of-natural-language (id: 16c9008a-959a-4dbe-87c6-2c4b5b235f53)
+- Title: Redundancy of Natural Language
+- needs_canonical_source: False
+
+## [2026-06-08] committed | concept
+- Committed: redundancy-of-natural-language → concepts/redundancy-of-natural-language.md
+- IRI: pkis:concept:redundancy-of-natural-language
+
+## [2026-06-08] staged | node-stub (technique)
+- Staged: bayesian-codebreaking (id: 3043cd2c-1c73-4358-9f89-82d0d97096dc)
+- Title: Bayesian Codebreaking (Banburismus)
+- needs_canonical_source: False
+
+## [2026-06-08] committed | technique
+- Committed: bayesian-codebreaking → techniques/bayesian-codebreaking.md
+- IRI: pkis:technique:bayesian-codebreaking
+
+## [2026-06-08] staged | node-stub (result)
+- Staged: zipf-mandelbrot-law (id: c52b9106-d4f1-4900-bf1b-8469f1c00cc1)
+- Title: Zipf–Mandelbrot Law
+- needs_canonical_source: False
+
+## [2026-06-08] committed | result
+- Committed: zipf-mandelbrot-law → results/zipf-mandelbrot-law.md
+- IRI: pkis:result:zipf-mandelbrot-law
+
+## [2026-06-08] staged | node-stub (concept)
+- Staged: fitness-as-information (id: ad5ef27f-719b-4c02-bc22-98e8dad6150e)
+- Title: Fitness as Information Acquired by Natural Selection
+- needs_canonical_source: False
+
+## [2026-06-08] committed | concept
+- Committed: fitness-as-information → concepts/fitness-as-information.md
+- IRI: pkis:concept:fitness-as-information
+
+## [2026-06-08] staged | node-stub (result)
+- Staged: rate-of-information-acquisition-mutation (id: b0c75d70-0c9e-498c-ba44-d1b4478ad8fa)
+- Title: Rate of Information Acquisition Under Mutation (≈1 bit/generation)
+- needs_canonical_source: False
+
+## [2026-06-08] committed | result
+- Committed: rate-of-information-acquisition-mutation → results/rate-of-information-acquisition-mutation.md
+- IRI: pkis:result:rate-of-information-acquisition-mutation
+
+## [2026-06-08] staged | node-stub (result)
+- Staged: sqrt-g-advantage-of-sex (id: 79aff173-3a7d-41b9-8ed8-6633fd7a48c9)
+- Title: The √G Advantage of Sexual Reproduction
+- needs_canonical_source: False
+
+## [2026-06-08] committed | result
+- Committed: sqrt-g-advantage-of-sex → results/sqrt-g-advantage-of-sex.md
+- IRI: pkis:result:sqrt-g-advantage-of-sex
+
+## [2026-06-08] staged | node-stub (result)
+- Staged: maximum-tolerable-mutation-rate (id: 3aedc818-580a-4cee-8126-5e6d6bd57bcd)
+- Title: Maximum Tolerable Mutation Rate and Genome Size
+- needs_canonical_source: False
+
+## [2026-06-08] committed | result
+- Committed: maximum-tolerable-mutation-rate → results/maximum-tolerable-mutation-rate.md
+- IRI: pkis:result:maximum-tolerable-mutation-rate
+
+## [2026-06-08] staged | node-stub (concept)
+- Staged: clustering (id: 958ce90a-c7cf-4ec8-a4c8-390c7f9ba513)
+- Title: Clustering
+- needs_canonical_source: False
+
+## [2026-06-08] committed | concept
+- Committed: clustering → concepts/clustering.md
+- IRI: pkis:concept:clustering
+
+## [2026-06-08] staged | node-stub (technique)
+- Staged: k-means-clustering (id: 450ab16a-fca2-4286-9435-3bce88896d8e)
+- Title: K-means Clustering
+- needs_canonical_source: False
+
+## [2026-06-08] committed | technique
+- Committed: k-means-clustering → techniques/k-means-clustering.md
+- IRI: pkis:technique:k-means-clustering
+
+## [2026-06-08] staged | node-stub (technique)
+- Staged: soft-k-means (id: 9e5dfd9d-3a00-4aa5-ac2d-0cd5a60493aa)
+- Title: Soft K-means and Responsibilities
+- needs_canonical_source: False
+
+## [2026-06-08] committed | technique
+- Committed: soft-k-means → techniques/soft-k-means.md
+- IRI: pkis:technique:soft-k-means
+
+## [2026-06-08] staged | node-stub (technique)
+- Staged: exact-inference-by-complete-enumeration (id: 3dff11b2-60e2-4188-8a6e-4fec2e634acb)
+- Title: Exact Inference by Complete Enumeration
+- needs_canonical_source: False
+
+## [2026-06-08] committed | technique
+- Committed: exact-inference-by-complete-enumeration → techniques/exact-inference-by-complete-enumeration.md
+- IRI: pkis:technique:exact-inference-by-complete-enumeration
+
+## [2026-06-08] staged | node-stub (concept)
+- Staged: explaining-away (id: 6e152c31-0fd7-4d40-9713-380006abb9d4)
+- Title: Explaining Away
+- needs_canonical_source: False
+
+## [2026-06-08] committed | concept
+- Committed: explaining-away → concepts/explaining-away.md
+- IRI: pkis:concept:explaining-away
+
+## [2026-06-08] edges | add_connections
+- slepian-wolf-theorem —uses→ joint-entropy
+- slepian-wolf-theorem —uses→ conditional-entropy
+- slepian-wolf-theorem —extends→ source-coding-theorem
+- slepian-wolf-theorem —uses→ typical-set
+- multiple-access-channel —specializes→ channel-capacity
+- multiple-access-channel —uses→ mutual-information
+- multiple-access-channel —analogous-to→ slepian-wolf-theorem
+- broadcast-channel —specializes→ channel-capacity
+- broadcast-channel —uses→ markov-chains
+- broadcast-channel —applies→ binary-symmetric-channel
+- broadcast-channel —contrasts-with→ multiple-access-channel
+- sum-product-algorithm —specializes→ message-passing
+- min-sum-algorithm —specializes→ message-passing
+- min-sum-algorithm —analogous-to→ sum-product-algorithm
+- message-passing —prerequisite-of→ sum-product-algorithm
+- message-passing —prerequisite-of→ min-sum-algorithm
+- belief-propagation —instantiates→ sum-product-algorithm
+- belief-propagation —specializes→ message-passing
+- min-sum-algorithm —applies→ linear-block-code
+- sum-product-algorithm —uses→ generating-functions
+- constrained-channel-capacity-eigenvalue —specializes→ channel-capacity
+- constrained-noiseless-channel —uses→ finite-automata
+- constrained-channel-capacity-eigenvalue —uses→ eigendecomposition
+- constrained-noiseless-channel —prerequisite-of→ constrained-channel-capacity-eigenvalue
+- runlength-limited-codes —instantiates→ constrained-noiseless-channel
+- constrained-channel-optimal-transitions —uses→ eigendecomposition
+- constrained-channel-optimal-transitions —uses→ markov-chains
+- constrained-channel-optimal-transitions —extends→ constrained-channel-capacity-eigenvalue
+- runlength-limited-codes —uses→ entropy
+- constrained-channel-optimal-transitions —applies→ runlength-limited-codes
+- redundancy-of-natural-language —uses→ entropy
+- redundancy-of-natural-language —applies→ channel-capacity
+- bayesian-codebreaking —applies→ likelihood-ratio-evidence
+- bayesian-codebreaking —uses→ redundancy-of-natural-language
+- bayesian-codebreaking —uses→ mutual-information
+- zipf-mandelbrot-law —uses→ redundancy-of-natural-language
+- rate-of-information-acquisition-mutation —uses→ fitness-as-information
+- sqrt-g-advantage-of-sex —uses→ fitness-as-information
+- sqrt-g-advantage-of-sex —contrasts-with→ rate-of-information-acquisition-mutation
+- maximum-tolerable-mutation-rate —extends→ sqrt-g-advantage-of-sex
+- rate-of-information-acquisition-mutation —uses→ weak-law-of-large-numbers
+- fitness-as-information —uses→ shannon-information-content
+- sqrt-g-advantage-of-sex —uses→ gaussian-distribution
+- maximum-tolerable-mutation-rate —analogous-to→ noisy-channel-coding-theorem
+- k-means-clustering —instantiates→ clustering
+- soft-k-means —instantiates→ clustering
+- k-means-clustering —prerequisite-of→ soft-k-means
+- soft-k-means —generalizes→ k-means-clustering
+- k-means-clustering —specializes→ gaussian-mixture-models
+- soft-k-means —specializes→ gaussian-mixture-models
+- soft-k-means —instantiates→ em-algorithm
+- clustering —uses→ vector-quantization
+- gaussian-mixture-models —uses→ em-algorithm
+- exact-inference-by-complete-enumeration —instantiates→ bayesian-inference
+- exact-inference-by-complete-enumeration —uses→ marginal-likelihood
+- curse-of-dimensionality —contrasts-with→ exact-inference-by-complete-enumeration
+- explaining-away —specializes→ bayesian-inference
+- exact-inference-by-complete-enumeration —applies→ explaining-away
+
+## [2026-06-08] edit | edit_node
+- pkis:technique:hashing-for-error-detection: fields=[] sections=['Checksum codes and the ISBN check digit']
+
+## [2026-06-08] edit | edit_node
+- pkis:technique:hashing-for-error-detection: fields=[] sections=['Detection versus correction: redundancy cost']
+
+## [2026-06-08] edit | edit_node
+- pkis:technique:belief-propagation: fields=[] sections=['Belief Propagation as Probabilistic Message Passing']
+
+## [2026-06-08] edit | edit_node
+- pkis:concept:channel-capacity: fields=[] sections=['Noiseless Constrained Channels']
+
+## [2026-06-08] edit | edit_node
+- pkis:concept:markov-chains: fields=[] sections=['Maximum-Entropy Chains on Constrained State Machines']
+
+## [2026-06-08] edit | edit_node
+- pkis:concept:likelihood-ratio-evidence: fields=[] sections=['Bans, Decibans, and Banburismus']
+
+## [2026-06-08] edit | edit_node
+- pkis:concept:entropy: fields=[] sections=['MacKay: information content, surprise, and the units of evidence']
+
+## [2026-06-08] edit | edit_node
+- pkis:technique:gaussian-mixture-models: fields=[] sections=['Relation to K-means and soft K-means']
+
+## [2026-06-08] edit | edit_node
+- pkis:technique:em-algorithm: fields=[] sections=['Soft K-means as a precursor to the E-step']
+
+## [2026-06-08] edit | edit_node
+- pkis:concept:curse-of-dimensionality: fields=[] sections=['Curse of Dimensionality in Brute-Force Integration']
+
+## [2026-06-08] staged | node-stub (concept)
+- Staged: sufficient-statistics (id: 2ab151c2-53eb-4be0-abe8-558ba4c7b6b9)
+- Title: Sufficient Statistics
+- needs_canonical_source: False
+
+## [2026-06-08] committed | concept
+- Committed: sufficient-statistics → concepts/sufficient-statistics.md
+- IRI: pkis:concept:sufficient-statistics
+
+## [2026-06-08] staged | node-stub (result)
+- Staged: exponential-family-ml-maxent-duality (id: af73ae5f-a2d0-4ad6-90e0-193831c11945)
+- Title: ML–MaxEnt Duality for Exponential Families
+- needs_canonical_source: False
+
+## [2026-06-08] committed | result
+- Committed: exponential-family-ml-maxent-duality → results/exponential-family-ml-maxent-duality.md
+- IRI: pkis:result:exponential-family-ml-maxent-duality
+
+## [2026-06-08] staged | node-stub (principle)
+- Staged: maxima-are-atypical (id: 88857dfd-e23a-4e54-815c-0c68d3aaf587)
+- Title: Maxima Are Atypical (Pitfalls of ML and MAP)
+- needs_canonical_source: False
+
+## [2026-06-08] committed | principle
+- Committed: maxima-are-atypical → principles/maxima-are-atypical.md
+- IRI: pkis:principle:maxima-are-atypical
+
+## [2026-06-08] staged | node-stub (concept)
+- Staged: gamma-distribution (id: 38ed707c-fd89-4b0a-a057-373bd89fed17)
+- Title: Gamma Distribution
+- needs_canonical_source: False
+
+## [2026-06-08] committed | concept
+- Committed: gamma-distribution → concepts/gamma-distribution.md
+- IRI: pkis:concept:gamma-distribution
+
+## [2026-06-08] staged | node-stub (concept)
+- Staged: beta-distribution (id: c5a618be-a42c-4690-b43f-f2d1672c21d1)
+- Title: Beta Distribution
+- needs_canonical_source: False
+
+## [2026-06-08] committed | concept
+- Committed: beta-distribution → concepts/beta-distribution.md
+- IRI: pkis:concept:beta-distribution
+
+## [2026-06-08] staged | node-stub (concept)
+- Staged: dirichlet-distribution (id: 357fef2f-f849-4733-b196-2f8db9ed47dd)
+- Title: Dirichlet Distribution
+- needs_canonical_source: False
+
+## [2026-06-08] committed | concept
+- Committed: dirichlet-distribution → concepts/dirichlet-distribution.md
+- IRI: pkis:concept:dirichlet-distribution
+
+## [2026-06-08] staged | node-stub (concept)
+- Staged: marginalization (id: 32e1490b-29e1-4ddf-a422-f33d116df106)
+- Title: Marginalization
+- needs_canonical_source: False
+
+## [2026-06-08] committed | concept
+- Committed: marginalization → concepts/marginalization.md
+- IRI: pkis:concept:marginalization
+
+## [2026-06-08] staged | node-stub (concept)
+- Staged: trellis (id: 8c398d1c-deb4-4e13-9cfa-c0365b9c5d7b)
+- Title: Trellis
+- needs_canonical_source: False
+
+## [2026-06-08] committed | concept
+- Committed: trellis → concepts/trellis.md
+- IRI: pkis:concept:trellis
+
+## [2026-06-08] staged | node-stub (technique)
+- Staged: forward-backward-algorithm (id: bb28bd82-50e0-4a67-98ce-699f6dbe4702)
+- Title: Forward-Backward (BCJR) Algorithm
+- needs_canonical_source: False
+
+## [2026-06-08] committed | technique
+- Committed: forward-backward-algorithm → techniques/forward-backward-algorithm.md
+- IRI: pkis:technique:forward-backward-algorithm
+
+## [2026-06-08] staged | node-stub (concept)
+- Staged: factor-graph (id: b4dd51d3-4e84-40cf-b911-9e4140291396)
+- Title: Factor Graph
+- needs_canonical_source: False
+
+## [2026-06-08] committed | concept
+- Committed: factor-graph → concepts/factor-graph.md
+- IRI: pkis:concept:factor-graph
+
+## [2026-06-08] staged | node-stub (technique)
+- Staged: max-product-algorithm (id: 3a753c00-0db8-49e2-b9e8-e112d25d16f2)
+- Title: Max-Product Algorithm
+- needs_canonical_source: False
+
+## [2026-06-08] committed | technique
+- Committed: max-product-algorithm → techniques/max-product-algorithm.md
+- IRI: pkis:technique:max-product-algorithm
+
+## [2026-06-08] staged | node-stub (technique)
+- Staged: junction-tree-algorithm (id: 9f0b1faf-36cb-4f7d-b0d2-cfcab40e550c)
+- Title: Junction Tree Algorithm
+- needs_canonical_source: False
+
+## [2026-06-08] committed | technique
+- Committed: junction-tree-algorithm → techniques/junction-tree-algorithm.md
+- IRI: pkis:technique:junction-tree-algorithm
+
+## [2026-06-08] staged | node-stub (principle)
+- Staged: occams-razor (id: b0989179-96d5-49b3-b78e-d4a7afdaf813)
+- Title: Occam's Razor
+- needs_canonical_source: False
+
+## [2026-06-08] committed | principle
+- Committed: occams-razor → principles/occams-razor.md
+- IRI: pkis:principle:occams-razor
+
+## [2026-06-08] staged | node-stub (concept)
+- Staged: occam-factor (id: db4a2a80-8966-4c42-921e-d19da64825cd)
+- Title: The Occam Factor
+- needs_canonical_source: False
+
+## [2026-06-08] committed | concept
+- Committed: occam-factor → concepts/occam-factor.md
+- IRI: pkis:concept:occam-factor
+
+## [2026-06-08] staged | node-stub (framework)
+- Staged: evidence-framework (id: 0c70f411-a9eb-4361-987f-d6ed708164a1)
+- Title: The Bayesian Evidence Framework (Two Levels of Inference)
+- needs_canonical_source: False
+
+## [2026-06-08] committed | framework
+- Committed: evidence-framework → frameworks/evidence-framework.md
+- IRI: pkis:framework:evidence-framework
+
+## [2026-06-08] edges | add_connections
+- sufficient-statistics —uses→ maximum-likelihood-estimation
+- exponential-family-ml-maxent-duality —specializes→ maximum-likelihood-estimation
+- exponential-family-ml-maxent-duality —uses→ sufficient-statistics
+- exponential-family-ml-maxent-duality —uses→ lagrange-multipliers
+- exponential-family-ml-maxent-duality —analogous-to→ entropy
+- maxima-are-atypical —contrasts-with→ maximum-likelihood-estimation
+- maxima-are-atypical —uses→ typical-set
+- maxima-are-atypical —applies→ gaussian-mixture-models
+- em-algorithm —applies→ gaussian-mixture-models
+- soft-k-means —instantiates→ maximum-likelihood-estimation
+- gamma-distribution —generalizes→ probability-distribution-relationships
+- beta-distribution —specializes→ dirichlet-distribution
+- beta-distribution —applies→ conjugate-prior
+- dirichlet-distribution —applies→ conjugate-prior
+- gamma-distribution —applies→ conjugate-prior
+- gamma-distribution —uses→ poisson-process
+- gamma-distribution —contrasts-with→ gaussian-distribution
+- dirichlet-distribution —uses→ gamma-distribution
+- marginalization —uses→ marginal-likelihood
+- marginalization —contrasts-with→ maximum-likelihood-estimation
+- marginalization —prerequisite-of→ bayesian-inference
+- laplace-approximation —applies→ marginalization
+- sufficient-statistics —uses→ marginalization
+- sufficient-statistics —prerequisite-of→ bayesian-inference
+- conjugate-prior —uses→ sufficient-statistics
+- forward-backward-algorithm —instantiates→ sum-product-algorithm
+- forward-backward-algorithm —uses→ trellis
+- trellis —prerequisite-of→ forward-backward-algorithm
+- trellis —prerequisite-of→ min-sum-algorithm
+- min-sum-algorithm —applies→ trellis
+- sum-product-algorithm —applies→ trellis
+- forward-backward-algorithm —analogous-to→ min-sum-algorithm
+- forward-backward-algorithm —analogous-to→ belief-propagation
+- forward-backward-algorithm —analogous-to→ kalman-filter
+- trellis —applies→ linear-block-code
+- trellis —uses→ syndrome-decoding
+- factor-graph —prerequisite-of→ sum-product-algorithm
+- sum-product-algorithm —uses→ factor-graph
+- factor-graph —specializes→ undirected-graphical-models
+- factor-graph —analogous-to→ directed-graphical-models
+- max-product-algorithm —analogous-to→ sum-product-algorithm
+- max-product-algorithm —uses→ factor-graph
+- max-product-algorithm —specializes→ min-sum-algorithm
+- junction-tree-algorithm —extends→ sum-product-algorithm
+- junction-tree-algorithm —contrasts-with→ belief-propagation
+- laplace-approximation —uses→ gaussian-distribution
+- laplace-approximation —applies→ marginal-likelihood
+- occam-factor —instantiates→ occams-razor
+- evidence-framework —applies→ occams-razor
+- marginal-likelihood —uses→ occam-factor
+- laplace-approximation —uses→ occam-factor
+- bayesian-model-comparison —applies→ evidence-framework
+- bayesian-model-comparison —applies→ occams-razor
+- evidence-framework —uses→ marginal-likelihood
+- occams-razor —contrasts-with→ information-criteria
+- occams-razor —applies→ model-selection-problem
+- occam-factor —prerequisite-of→ bayesian-model-comparison
+
+## [2026-06-08] edit | edit_node
+- pkis:technique:maximum-likelihood-estimation: fields=[] sections=['ML for a single Gaussian: closed-form estimators and error bars']
+
+## [2026-06-08] edit | edit_node
+- pkis:technique:em-algorithm: fields=[] sections=['EM as maximum likelihood for a Gaussian mixture (MacKay derivation)']
+
+## [2026-06-08] edit | edit_node
+- pkis:technique:soft-k-means: fields=[] sections=['Soft K-means as ML mixture fitting (versions 2 and 3)']
+
+## [2026-06-08] edit | edit_node
+- pkis:concept:probability-distribution-relationships: fields=[] sections=['Heavy-tailed alternatives to the Gaussian (MacKay Ch. 23)']
+
+## [2026-06-08] edit | edit_node
+- pkis:concept:probability-distribution-relationships: fields=[] sections=['Exponential distribution: the building block (MacKay Ch. 23)']
+
+## [2026-06-08] edit | edit_node
+- pkis:concept:conjugate-prior: fields=[] sections=['Canonical conjugate pairs from MacKay Ch. 23']
+
+## [2026-06-08] edit | edit_node
+- pkis:concept:marginal-likelihood: fields=[] sections=['Marginal likelihood as a by-product of marginalization']
+
+## [2026-06-08] edit | edit_node
+- pkis:technique:min-sum-algorithm: fields=[] sections=['Viterbi Decoding on a Trellis']
+
+## [2026-06-08] edit | edit_node
+- pkis:technique:sum-product-algorithm: fields=[] sections=['Bitwise Decoding on a Trellis (Forward-Backward)']
+
+## [2026-06-08] edit | edit_node
+- pkis:technique:belief-propagation: fields=[] sections=['Belief Propagation as Forward-Backward on a Trellis']
+
+## [2026-06-08] edit | edit_node
+- pkis:technique:sum-product-algorithm: fields=[] sections=['Factor-graph formulation: the two message rules']
+
+## [2026-06-08] edit | edit_node
+- pkis:technique:belief-propagation: fields=[] sections=['Loopy belief propagation and the limits of exactness']
+
+## [2026-06-08] edit | edit_node
+- pkis:technique:laplace-approximation: fields=[] sections=['Approximating a Normalizing Constant (Saddle-Point Form)']
+
+## [2026-06-08] edit | edit_node
+- pkis:technique:laplace-approximation: fields=[] sections=['Basis Dependence']
+
+## [2026-06-08] edit | edit_node
+- pkis:technique:bayesian-model-comparison: fields=[] sections=['Minimum Description Length: the coding view']
+
+## [2026-06-08] edit | edit_node
+- pkis:concept:marginal-likelihood: fields=[] sections=['Laplace approximation: best-fit likelihood times Occam factor']
+
+## [2026-06-08] staged | node-stub (principle)
+- Staged: monte-carlo-estimator (id: 6a3cc381-c3cb-418c-95c8-71c325296c07)
+- Title: Monte Carlo Estimator
+- needs_canonical_source: False
+
+## [2026-06-08] committed | principle
+- Committed: monte-carlo-estimator → principles/monte-carlo-estimator.md
+- IRI: pkis:principle:monte-carlo-estimator
+
+## [2026-06-08] staged | node-stub (principle)
+- Staged: uniform-sampling-curse (id: f64faf95-4bcf-4583-8b09-ffdb1332bb8b)
+- Title: Why Uniform Sampling Fails in High Dimensions
+- needs_canonical_source: False
+
+## [2026-06-08] committed | principle
+- Committed: uniform-sampling-curse → principles/uniform-sampling-curse.md
+- IRI: pkis:principle:uniform-sampling-curse
+
+## [2026-06-08] staged | node-stub (technique)
+- Staged: rejection-sampling (id: f40de3f9-b404-4e00-942f-30c5577ee521)
+- Title: Rejection Sampling
+- needs_canonical_source: False
+
+## [2026-06-08] committed | technique
+- Committed: rejection-sampling → techniques/rejection-sampling.md
+- IRI: pkis:technique:rejection-sampling
+
+## [2026-06-08] staged | node-stub (technique)
+- Staged: slice-sampling (id: d87f00ef-e0eb-42df-ab67-bbb7be6d209a)
+- Title: Slice Sampling
+- needs_canonical_source: False
+
+## [2026-06-08] committed | technique
+- Committed: slice-sampling → techniques/slice-sampling.md
+- IRI: pkis:technique:slice-sampling
+
+## [2026-06-08] staged | node-stub (principle)
+- Staged: detailed-balance (id: dde5c061-3fd8-4116-8958-69656a84a83b)
+- Title: Detailed Balance
+- needs_canonical_source: False
+
+## [2026-06-08] committed | principle
+- Committed: detailed-balance → principles/detailed-balance.md
+- IRI: pkis:principle:detailed-balance
+
+## [2026-06-08] staged | node-stub (concept)
+- Staged: random-walk-behaviour-mcmc (id: aa77e83b-7729-435b-add8-3b1bd21b4c02)
+- Title: Random-Walk Behaviour in MCMC
+- needs_canonical_source: False
+
+## [2026-06-08] committed | concept
+- Committed: random-walk-behaviour-mcmc → concepts/random-walk-behaviour-mcmc.md
+- IRI: pkis:concept:random-walk-behaviour-mcmc
+
+## [2026-06-08] staged | node-stub (technique)
+- Staged: overrelaxation (id: eed9749f-ab8e-4d31-9546-e31689a516c2)
+- Title: Overrelaxation
+- needs_canonical_source: False
+
+## [2026-06-08] committed | technique
+- Committed: overrelaxation → techniques/overrelaxation.md
+- IRI: pkis:technique:overrelaxation
+
+## [2026-06-08] staged | node-stub (technique)
+- Staged: simulated-annealing (id: b040b605-fd78-45ca-9f16-2df9f9dc0dfd)
+- Title: Simulated Annealing
+- needs_canonical_source: False
+
+## [2026-06-08] committed | technique
+- Committed: simulated-annealing → techniques/simulated-annealing.md
+- IRI: pkis:technique:simulated-annealing
+
+## [2026-06-08] staged | node-stub (principle)
+- Staged: information-theoretic-view-monte-carlo (id: 59fa0edd-8921-4f79-a352-5a76af1ba096)
+- Title: Information-Theoretic View of Monte Carlo
+- needs_canonical_source: False
+
+## [2026-06-08] committed | principle
+- Committed: information-theoretic-view-monte-carlo → principles/information-theoretic-view-monte-carlo.md
+- IRI: pkis:principle:information-theoretic-view-monte-carlo
+
+## [2026-06-08] staged | node-stub (framework)
+- Staged: ising-model (id: 8850a07d-a4d5-42ef-ab13-cc7a1f211e38)
+- Title: Ising Model
+- needs_canonical_source: False
+
+## [2026-06-08] committed | framework
+- Committed: ising-model → frameworks/ising-model.md
+- IRI: pkis:framework:ising-model
+
+## [2026-06-08] staged | node-stub (concept)
+- Staged: partition-function (id: 74f797d2-14a2-4075-b280-293e760dfefd)
+- Title: Partition Function
+- needs_canonical_source: False
+
+## [2026-06-08] committed | concept
+- Committed: partition-function → concepts/partition-function.md
+- IRI: pkis:concept:partition-function
+
+## [2026-06-08] staged | node-stub (technique)
+- Staged: transfer-matrix-method (id: c2485a2a-17f9-440f-aa75-a5a26e8c29a9)
+- Title: Transfer Matrix Method
+- needs_canonical_source: False
+
+## [2026-06-08] committed | technique
+- Committed: transfer-matrix-method → techniques/transfer-matrix-method.md
+- IRI: pkis:technique:transfer-matrix-method
+
+## [2026-06-08] staged | node-stub (concept)
+- Staged: phase-transition (id: f86bdd27-1aee-49c5-be42-f7ecf8451d00)
+- Title: Phase Transition
+- needs_canonical_source: False
+
+## [2026-06-08] committed | concept
+- Committed: phase-transition → concepts/phase-transition.md
+- IRI: pkis:concept:phase-transition
+
+## [2026-06-08] staged | node-stub (technique)
+- Staged: coupling-from-the-past (id: cd7fd174-9a42-4500-9e17-50840b9d56a6)
+- Title: Coupling from the Past
+- needs_canonical_source: False
+
+## [2026-06-08] committed | technique
+- Committed: coupling-from-the-past → techniques/coupling-from-the-past.md
+- IRI: pkis:technique:coupling-from-the-past
+
+## [2026-06-08] staged | node-stub (concept)
+- Staged: exact-sampling (id: f18c0045-c0f8-4d27-8a42-9d99fedc794d)
+- Title: Exact (Perfect) Sampling
+- needs_canonical_source: False
+
+## [2026-06-08] committed | concept
+- Committed: exact-sampling → concepts/exact-sampling.md
+- IRI: pkis:concept:exact-sampling
+
+## [2026-06-08] staged | node-stub (concept)
+- Staged: monotone-coupling (id: 6474bb5a-8ee5-4b6f-8518-78868184df43)
+- Title: Monotone Coupling for Exact Sampling
+- needs_canonical_source: False
+
+## [2026-06-08] committed | concept
+- Committed: monotone-coupling → concepts/monotone-coupling.md
+- IRI: pkis:concept:monotone-coupling
+
+## [2026-06-08] staged | node-stub (concept)
+- Staged: variational-free-energy (id: 10a43e30-376a-4cc1-b3d3-a1a965af214e)
+- Title: Variational Free Energy
+- needs_canonical_source: False
+
+## [2026-06-08] committed | concept
+- Committed: variational-free-energy → concepts/variational-free-energy.md
+- IRI: pkis:concept:variational-free-energy
+
+## [2026-06-08] staged | node-stub (concept)
+- Staged: variational-over-compactness (id: 5a7a7d21-c18b-4270-8dbe-9af469596068)
+- Title: Variational Over-Compactness (Zero-Forcing)
+- needs_canonical_source: False
+
+## [2026-06-08] committed | concept
+- Committed: variational-over-compactness → concepts/variational-over-compactness.md
+- IRI: pkis:concept:variational-over-compactness
+
+## [2026-06-08] staged | node-stub (concept)
+- Staged: latent-variable-models (id: c3864770-1553-4401-bf74-680b8a206310)
+- Title: Latent Variable Model
+- needs_canonical_source: False
+
+## [2026-06-08] committed | concept
+- Committed: latent-variable-models → concepts/latent-variable-models.md
+- IRI: pkis:concept:latent-variable-models
+
+## [2026-06-08] staged | node-stub (technique)
+- Staged: independent-component-analysis (id: 6a0de500-6380-4f72-ad8b-5b4ef8932ece)
+- Title: Independent Component Analysis (ICA)
+- needs_canonical_source: False
+
+## [2026-06-08] committed | technique
+- Committed: independent-component-analysis → techniques/independent-component-analysis.md
+- IRI: pkis:technique:independent-component-analysis
+
+## [2026-06-08] staged | node-stub (problem)
+- Staged: blind-source-separation (id: 7374642a-d35b-407a-84af-652b74c5e54d)
+- Title: Blind Source Separation
+- needs_canonical_source: False
+
+## [2026-06-08] committed | problem
+- Committed: blind-source-separation → problems/blind-source-separation.md
+- IRI: pkis:problem:blind-source-separation
+
+## [2026-06-08] staged | node-stub (technique)
+- Staged: natural-gradient (id: db012cf7-c707-4433-aed3-e3d652e3c534)
+- Title: Natural Gradient (Covariant Optimization)
+- needs_canonical_source: False
+
+## [2026-06-08] committed | technique
+- Committed: natural-gradient → techniques/natural-gradient.md
+- IRI: pkis:technique:natural-gradient
+
+## [2026-06-08] staged | node-stub (result)
+- Staged: benfords-law (id: dd222e6a-ba13-441e-a28c-cd8ddc0b041b)
+- Title: Benford's Law
+- needs_canonical_source: False
+
+## [2026-06-08] committed | result
+- Committed: benfords-law → results/benfords-law.md
+- IRI: pkis:result:benfords-law
+
+## [2026-06-08] staged | node-stub (concept)
+- Staged: likelihood-equivalence (id: 91edab84-149a-4d19-b6c6-2a4db112fc1e)
+- Title: Likelihood Equivalence
+- needs_canonical_source: False
+
+## [2026-06-08] committed | concept
+- Committed: likelihood-equivalence → concepts/likelihood-equivalence.md
+- IRI: pkis:concept:likelihood-equivalence
+
+## [2026-06-08] edges | add_connections
+- monte-carlo-estimator —prerequisite-of→ importance-sampling
+- monte-carlo-estimator —prerequisite-of→ mcmc
+- uniform-sampling-curse —uses→ typical-set
+- uniform-sampling-curse —instantiates→ curse-of-dimensionality
+- uniform-sampling-curse —prerequisite-of→ importance-sampling
+- rejection-sampling —contrasts-with→ importance-sampling
+- rejection-sampling —contrasts-with→ mcmc
+- detailed-balance —prerequisite-of→ mcmc
+- detailed-balance —applies→ metropolis-algorithm
+- detailed-balance —applies→ gibbs-sampler
+- metropolis-algorithm —specializes→ mcmc
+- gibbs-sampler —specializes→ metropolis-algorithm
+- slice-sampling —specializes→ mcmc
+- slice-sampling —uses→ detailed-balance
+- slice-sampling —contrasts-with→ metropolis-algorithm
+- slice-sampling —analogous-to→ rejection-sampling
+- overrelaxation —specializes→ gibbs-sampler
+- overrelaxation —applies→ random-walk-behaviour-mcmc
+- hmc —applies→ random-walk-behaviour-mcmc
+- random-walk-behaviour-mcmc —prerequisite-of→ hmc
+- simulated-annealing —extends→ mcmc
+- simulated-annealing —uses→ metropolis-algorithm
+- simulated-annealing —contrasts-with→ overrelaxation
+- information-theoretic-view-monte-carlo —applies→ metropolis-algorithm
+- information-theoretic-view-monte-carlo —analogous-to→ channel-capacity
+- overrelaxation —contrasts-with→ hmc
+- partition-function —prerequisite-of→ ising-model
+- transfer-matrix-method —applies→ ising-model
+- transfer-matrix-method —uses→ partition-function
+- ising-model —instantiates→ phase-transition
+- phase-transition —uses→ partition-function
+- ising-model —specializes→ undirected-graphical-models
+- gibbs-sampler —applies→ ising-model
+- metropolis-algorithm —applies→ ising-model
+- transfer-matrix-method —analogous-to→ sum-product-algorithm
+- metropolis-algorithm —contrasts-with→ gibbs-sampler
+- coupling-from-the-past —instantiates→ exact-sampling
+- exact-sampling —contrasts-with→ mcmc
+- coupling-from-the-past —uses→ mcmc
+- monotone-coupling —extends→ coupling-from-the-past
+- monotone-coupling —uses→ gibbs-sampler
+- gibbs-sampler —applies→ exact-sampling
+- monotone-coupling —prerequisite-of→ exact-sampling
+- variational-free-energy —generalizes→ mean-field-approximation
+- variational-free-energy —uses→ kl-divergence
+- variational-free-energy —analogous-to→ elbo
+- variational-free-energy —prerequisite-of→ variational-inference
+- variational-over-compactness —specializes→ kl-divergence
+- variational-over-compactness —applies→ variational-free-energy
+- variational-over-compactness —contrasts-with→ variational-inference
+- coordinate-ascent-vi —instantiates→ variational-free-energy
+- mean-field-approximation —uses→ variational-free-energy
+- independent-component-analysis —instantiates→ latent-variable-models
+- independent-component-analysis —applies→ blind-source-separation
+- independent-component-analysis —uses→ natural-gradient
+- independent-component-analysis —uses→ maximum-likelihood-estimation
+- independent-component-analysis —contrasts-with→ principal-component-analysis
+- natural-gradient —extends→ gradient-descent
+- principal-component-analysis —instantiates→ latent-variable-models
+- gaussian-mixture-models —instantiates→ latent-variable-models
+- benfords-law —instantiates→ proportionality-postulate
+- benfords-law —uses→ automatic-priors
+- likelihood-equivalence —applies→ directed-graphical-models
+- likelihood-equivalence —uses→ bayesian-model-comparison
+- likelihood-equivalence —contrasts-with→ likelihood-principle
+- likelihood-equivalence —uses→ dirichlet-distribution
+
+## [2026-06-08] edit | edit_node
+- pkis:technique:metropolis-algorithm: fields=[] sections=["MacKay's Formulation: Why Local Proposals Beat Global Ones"]
+
+## [2026-06-08] edit | edit_node
+- pkis:technique:gibbs-sampler: fields=[] sections=["MacKay's View: Gibbs as Parameter-Free Metropolis"]
+
+## [2026-06-08] edit | edit_node
+- pkis:technique:importance-sampling: fields=[] sections=["MacKay's Cautions: Heavy Tails and the High-Dimensional Weight Catastrophe"]
+
+## [2026-06-08] edit | edit_node
+- pkis:technique:mcmc: fields=[] sections=["MacKay's Foundations: Invariance, Ergodicity, and Chain Construction"]
+
+## [2026-06-08] edit | edit_node
+- pkis:technique:hmc: fields=[] sections=["MacKay's Framing: Beating the Random Walk"]
+
+## [2026-06-08] edit | edit_node
+- pkis:technique:hmc: fields=[] sections=['Reversibility and Volume Preservation (Exercise 30.11)']
+
+## [2026-06-08] edit | edit_node
+- pkis:technique:gibbs-sampler: fields=[] sections=['Application: Gibbs sampling an Ising model']
+
+## [2026-06-08] edit | edit_node
+- pkis:technique:metropolis-algorithm: fields=[] sections=['Application: Metropolis spin flips in an Ising model']
+
+## [2026-06-08] edit | edit_node
+- pkis:technique:mcmc: fields=[] sections=['Exact Sampling and the Convergence Question']
+
+## [2026-06-08] edit | edit_node
+- pkis:technique:gibbs-sampler: fields=[] sections=['Coupled Gibbs Sampling for Exact Samples']
+
+## [2026-06-08] edit | edit_node
+- pkis:technique:mean-field-approximation: fields=[] sections=['Mean-Field as Variational Free-Energy Minimization (Spin Systems)']
+
+## [2026-06-08] edit | edit_node
+- pkis:concept:kl-divergence: fields=[] sections=['Asymmetry: Forward vs Reverse KL in Approximation']
+
+## [2026-06-08] edit | edit_node
+- pkis:technique:coordinate-ascent-vi: fields=[] sections=['EM and Soft K-Means as Coordinate Optimization of a Free Energy']
+
+## [2026-06-08] edit | edit_node
+- pkis:technique:principal-component-analysis: fields=[] sections=['Contrast with Independent Component Analysis']
+
+## [2026-06-08] staged | node-stub (concept)
+- Staged: expected-utility-theory (id: 528d66d4-7bf8-4e3d-80fb-807e03946db6)
+- Title: Expected Utility Theory
+- needs_canonical_source: False
+
+## [2026-06-08] committed | concept
+- Committed: expected-utility-theory → concepts/expected-utility-theory.md
+- IRI: pkis:concept:expected-utility-theory
+
+## [2026-06-08] staged | node-stub (concept)
+- Staged: value-of-information (id: 5038292b-9806-4bc3-9c5f-0f4566a12c7c)
+- Title: Value of Information
+- needs_canonical_source: False
+
+## [2026-06-08] committed | concept
+- Committed: value-of-information → concepts/value-of-information.md
+- IRI: pkis:concept:value-of-information
+
+## [2026-06-08] staged | node-stub (framework)
+- Staged: sampling-theory (id: 21ab00a4-8630-4d07-947c-67256e4167c6)
+- Title: Sampling Theory (Frequentist Statistics)
+- needs_canonical_source: False
+
+## [2026-06-08] committed | framework
+- Committed: sampling-theory → frameworks/sampling-theory.md
+- IRI: pkis:framework:sampling-theory
+
+## [2026-06-08] staged | node-stub (concept)
+- Staged: confidence-interval (id: e4d01dd4-7bf4-4359-b4fa-348ed9af441d)
+- Title: Confidence Interval
+- needs_canonical_source: False
+
+## [2026-06-08] committed | concept
+- Committed: confidence-interval → concepts/confidence-interval.md
+- IRI: pkis:concept:confidence-interval
+
+## [2026-06-08] staged | node-stub (problem)
+- Staged: stopping-rule-problem (id: 241c32e0-01cc-4a42-892f-98647bd89ee2)
+- Title: Stopping-Rule Problem
+- needs_canonical_source: False
+
+## [2026-06-08] committed | problem
+- Committed: stopping-rule-problem → problems/stopping-rule-problem.md
+- IRI: pkis:problem:stopping-rule-problem
+
+## [2026-06-08] staged | node-stub (concept)
+- Staged: content-addressable-memory (id: 1a0cb696-d2fd-437a-be64-33a5f2a9af20)
+- Title: Content-Addressable Memory
+- needs_canonical_source: False
+
+## [2026-06-08] committed | concept
+- Committed: content-addressable-memory → concepts/content-addressable-memory.md
+- IRI: pkis:concept:content-addressable-memory
+
+## [2026-06-08] staged | node-stub (concept)
+- Staged: single-neuron-classifier (id: 77eb1d81-f080-429e-b440-037a353ff649)
+- Title: Single Neuron as a Classifier
+- needs_canonical_source: False
+
+## [2026-06-08] committed | concept
+- Committed: single-neuron-classifier → concepts/single-neuron-classifier.md
+- IRI: pkis:concept:single-neuron-classifier
+
+## [2026-06-08] staged | node-stub (technique)
+- Staged: logistic-neuron-learning-rule (id: cc1b272d-8479-489c-add8-57af46f35718)
+- Title: Logistic-Neuron Gradient-Descent Learning Rule
+- needs_canonical_source: False
+
+## [2026-06-08] committed | technique
+- Committed: logistic-neuron-learning-rule → techniques/logistic-neuron-learning-rule.md
+- IRI: pkis:technique:logistic-neuron-learning-rule
+
+## [2026-06-08] staged | node-stub (result)
+- Staged: capacity-of-a-single-neuron (id: b6c13a5c-a478-4469-bbf9-d0f65d5cfc8f)
+- Title: Capacity of a Single Neuron (Two Bits per Weight)
+- needs_canonical_source: False
+
+## [2026-06-08] committed | result
+- Committed: capacity-of-a-single-neuron → results/capacity-of-a-single-neuron.md
+- IRI: pkis:result:capacity-of-a-single-neuron
+
+## [2026-06-08] staged | node-stub (result)
+- Staged: cover-function-counting-theorem (id: d8e2141f-681c-44d6-8c3c-251c3965fe9a)
+- Title: Cover's Function-Counting Theorem
+- needs_canonical_source: False
+
+## [2026-06-08] committed | result
+- Committed: cover-function-counting-theorem → results/cover-function-counting-theorem.md
+- IRI: pkis:result:cover-function-counting-theorem
+
+## [2026-06-08] staged | node-stub (concept)
+- Staged: linear-separability (id: fe446d00-e8e2-4ee7-aaf8-00c318271464)
+- Title: Linear Separability
+- needs_canonical_source: False
+
+## [2026-06-08] committed | concept
+- Committed: linear-separability → concepts/linear-separability.md
+- IRI: pkis:concept:linear-separability
+
+## [2026-06-08] staged | node-stub (principle)
+- Staged: learning-as-inference (id: 5d60908d-21bb-436e-823a-404b2d5041c5)
+- Title: Learning as Inference
+- needs_canonical_source: False
+
+## [2026-06-08] committed | principle
+- Committed: learning-as-inference → principles/learning-as-inference.md
+- IRI: pkis:principle:learning-as-inference
+
+## [2026-06-08] staged | node-stub (concept)
+- Staged: weight-decay-as-prior (id: 50ea07ad-7ced-47d0-a1a3-498ffcce6906)
+- Title: Weight Decay as a Gaussian Prior
+- needs_canonical_source: False
+
+## [2026-06-08] committed | concept
+- Committed: weight-decay-as-prior → concepts/weight-decay-as-prior.md
+- IRI: pkis:concept:weight-decay-as-prior
+
+## [2026-06-08] staged | node-stub (framework)
+- Staged: hopfield-network (id: 8c3e74c6-1b11-4a7a-babb-9cab653b1b1c)
+- Title: Hopfield Network
+- needs_canonical_source: False
+
+## [2026-06-08] committed | framework
+- Committed: hopfield-network → frameworks/hopfield-network.md
+- IRI: pkis:framework:hopfield-network
+
+## [2026-06-08] staged | node-stub (concept)
+- Staged: associative-memory (id: b43d0d39-85ea-4f03-b814-16e2b35882d0)
+- Title: Associative (Content-Addressable) Memory
+- needs_canonical_source: False
+
+## [2026-06-08] committed | concept
+- Committed: associative-memory → concepts/associative-memory.md
+- IRI: pkis:concept:associative-memory
+
+## [2026-06-08] staged | node-stub (result)
+- Staged: hopfield-network-capacity (id: 58f0351f-b891-45ec-a947-c52babd8a111)
+- Title: Capacity of the Hopfield Network (0.138N)
+- needs_canonical_source: False
+
+## [2026-06-08] committed | result
+- Committed: hopfield-network-capacity → results/hopfield-network-capacity.md
+- IRI: pkis:result:hopfield-network-capacity
+
+## [2026-06-08] staged | node-stub (concept)
+- Staged: lyapunov-function (id: aa01c785-6799-49c9-ba93-c90e689dfb63)
+- Title: Lyapunov Function and Attractor Dynamics
+- needs_canonical_source: False
+
+## [2026-06-08] committed | concept
+- Committed: lyapunov-function → concepts/lyapunov-function.md
+- IRI: pkis:concept:lyapunov-function
+
+## [2026-06-08] edges | add_connections
+- expected-utility-theory —uses→ bayesian-inference
+- decision-theory-foundations —uses→ expected-utility-theory
+- expected-loss —contrasts-with→ expected-utility-theory
+- value-of-information —specializes→ decision-theory-foundations
+- value-of-information —uses→ bayesian-inference
+- expected-utility-theory —prerequisite-of→ value-of-information
+- sampling-theory —contrasts-with→ bayesian-inference
+- hypothesis-testing —instantiates→ sampling-theory
+- confidence-interval —instantiates→ sampling-theory
+- stopping-rule-problem —contrasts-with→ likelihood-principle
+- stopping-rule-problem —applies→ hypothesis-testing
+- sampling-theory —contrasts-with→ likelihood-principle
+- content-addressable-memory —applies→ neural-networks
+- content-addressable-memory —contrasts-with→ hash-table
+- logistic-neuron-learning-rule —applies→ single-neuron-classifier
+- single-neuron-classifier —instantiates→ logistic-regression
+- single-neuron-classifier —prerequisite-of→ neural-networks
+- logistic-neuron-learning-rule —specializes→ gradient-descent
+- logistic-neuron-learning-rule —uses→ cross-entropy-loss
+- single-neuron-classifier —uses→ activation-functions
+- logistic-neuron-learning-rule —uses→ regularization
+- logistic-neuron-learning-rule —prerequisite-of→ backpropagation
+- cover-function-counting-theorem —prerequisite-of→ capacity-of-a-single-neuron
+- linear-separability —prerequisite-of→ cover-function-counting-theorem
+- capacity-of-a-single-neuron —analogous-to→ channel-capacity
+- capacity-of-a-single-neuron —applies→ neural-networks
+- cover-function-counting-theorem —uses→ linear-algebra
+- linear-separability —prerequisite-of→ support-vector-machines
+- capacity-of-a-single-neuron —instantiates→ phase-transition
+- learning-as-inference —specializes→ bayesian-inference
+- learning-as-inference —uses→ maximum-likelihood-estimation
+- weight-decay-as-prior —instantiates→ learning-as-inference
+- weight-decay-as-prior —specializes→ regularization
+- weight-decay-as-prior —uses→ gaussian-distribution
+- weight-decay-as-prior —applies→ evidence-framework
+- learning-as-inference —prerequisite-of→ bayesian-neural-networks
+- bayesian-neural-networks —uses→ marginalization
+- bayesian-neural-networks —uses→ hmc
+- bayesian-neural-networks —uses→ laplace-approximation
+- bayesian-neural-networks —contrasts-with→ maxima-are-atypical
+- learning-as-inference —contrasts-with→ maxima-are-atypical
+- hopfield-network —instantiates→ associative-memory
+- hopfield-network —uses→ lyapunov-function
+- hopfield-network —specializes→ ising-model
+- hopfield-network —specializes→ neural-networks
+- hopfield-network-capacity —applies→ hopfield-network
+- hopfield-network-capacity —uses→ ising-model
+- associative-memory —prerequisite-of→ hopfield-network
+- lyapunov-function —prerequisite-of→ hopfield-network-capacity
+
+## [2026-06-08] edit | edit_node
+- pkis:concept:decision-theory-foundations: fields=[] sections=["MacKay's Formulation: Maximize Expected Utility"]
+
+## [2026-06-08] edit | edit_node
+- pkis:concept:expected-loss: fields=[] sections=['Loss as Negative Utility (MacKay)']
+
+## [2026-06-08] edit | edit_node
+- pkis:principle:likelihood-principle: fields=[] sections=['Stopping rules are irrelevant']
+
+## [2026-06-08] edit | edit_node
+- pkis:technique:hypothesis-testing: fields=[] sections=['What a p-value does not mean']
+
+## [2026-06-08] edit | edit_node
+- pkis:technique:neural-networks: fields=[] sections=['Specifying a Neural Network: Architecture, Activity Rule, Learning Rule']
+
+## [2026-06-08] edit | edit_node
+- pkis:technique:neural-networks: fields=[] sections=['Learning Paradigms: Supervised vs Unsupervised']
+
+## [2026-06-08] edit | edit_node
+- pkis:technique:logistic-regression: fields=[] sections=['Equivalence to the Logistic Single Neuron']
+
+## [2026-06-08] edit | edit_node
+- pkis:technique:neural-networks: fields=[] sections=['Memory Capacity of a Single Neuron']
+
+## [2026-06-08] edit | edit_node
+- pkis:concept:channel-capacity: fields=[] sections=['Analogy: Capacity of a Learning Machine']
+
+## [2026-06-08] edit | edit_node
+- pkis:concept:bayesian-neural-networks: fields=[] sections=['Prediction by Marginalization over Weights']
+
+## [2026-06-08] edit | edit_node
+- pkis:concept:bayesian-neural-networks: fields=[] sections=['Monte Carlo Inference: Langevin and Hamiltonian']
+
+## [2026-06-08] edit | edit_node
+- pkis:concept:regularization: fields=[] sections=['Probabilistic Reading: Regularizer as Log-Prior']
+
+## [2026-06-08] edit | edit_node
+- pkis:technique:laplace-approximation: fields=[] sections=['Application: Gaussian Approximation of a Weight Posterior']
+
+## [2026-06-08] edit | edit_node
+- pkis:framework:ising-model: fields=[] sections=['From Ising Spins to Hopfield Networks']
+
+## [2026-06-08] edit | edit_node
+- pkis:technique:neural-networks: fields=[] sections=['Feedback Networks and the Hopfield Model']
+
+## [2026-06-08] staged | node-stub (framework)
+- Staged: boltzmann-machine (id: 2e3becea-5e6a-40e5-ad38-fb5e81eb6ac5)
+- Title: Boltzmann Machine
+- needs_canonical_source: False
+
+## [2026-06-08] committed | framework
+- Committed: boltzmann-machine → frameworks/boltzmann-machine.md
+- IRI: pkis:framework:boltzmann-machine
+
+## [2026-06-08] staged | node-stub (technique)
+- Staged: boltzmann-machine-learning-rule (id: 36a5bf90-ed49-4faa-90e1-a908b1637b97)
+- Title: Boltzmann Machine Learning Rule (Wake-Sleep)
+- needs_canonical_source: False
+
+## [2026-06-08] committed | technique
+- Committed: boltzmann-machine-learning-rule → techniques/boltzmann-machine-learning-rule.md
+- IRI: pkis:technique:boltzmann-machine-learning-rule
+
+## [2026-06-08] staged | node-stub (concept)
+- Staged: boltzmann-machine-hidden-units (id: f053581c-d03a-4422-8266-d63a677eeedf)
+- Title: Hidden Units in Boltzmann Machines
+- needs_canonical_source: False
+
+## [2026-06-08] committed | concept
+- Committed: boltzmann-machine-hidden-units → concepts/boltzmann-machine-hidden-units.md
+- IRI: pkis:concept:boltzmann-machine-hidden-units
+
+## [2026-06-08] staged | node-stub (concept)
+- Staged: multilayer-perceptron (id: 0592251a-672f-40b3-9440-92c784b016b8)
+- Title: Multilayer Perceptron (Feedforward Network)
+- needs_canonical_source: False
+
+## [2026-06-08] committed | concept
+- Committed: multilayer-perceptron → concepts/multilayer-perceptron.md
+- IRI: pkis:concept:multilayer-perceptron
+
+## [2026-06-08] staged | node-stub (concept)
+- Staged: gaussian-process (id: c4b6c335-29b1-4654-b541-91cbee23caf9)
+- Title: Gaussian Process
+- needs_canonical_source: False
+
+## [2026-06-08] committed | concept
+- Committed: gaussian-process → concepts/gaussian-process.md
+- IRI: pkis:concept:gaussian-process
+
+## [2026-06-08] staged | node-stub (concept)
+- Staged: covariance-function (id: 8534f984-3957-4cc8-a84f-f16f4c62d2d0)
+- Title: Covariance Function (Kernel)
+- needs_canonical_source: False
+
+## [2026-06-08] committed | concept
+- Committed: covariance-function → concepts/covariance-function.md
+- IRI: pkis:concept:covariance-function
+
+## [2026-06-08] staged | node-stub (result)
+- Staged: neural-network-gaussian-process-limit (id: c44ab244-9b7b-4093-abb3-8ccf0ec348ce)
+- Title: Neural Network → Gaussian Process Limit (Infinite Width)
+- needs_canonical_source: False
+
+## [2026-06-08] committed | result
+- Committed: neural-network-gaussian-process-limit → results/neural-network-gaussian-process-limit.md
+- IRI: pkis:result:neural-network-gaussian-process-limit
+
+## [2026-06-08] staged | node-stub (problem)
+- Staged: deconvolution (id: 2323bf4a-668f-4979-8ee4-341099ea5ae9)
+- Title: Deconvolution (Linear Inverse Problem)
+- needs_canonical_source: False
+
+## [2026-06-08] committed | problem
+- Committed: deconvolution → problems/deconvolution.md
+- IRI: pkis:problem:deconvolution
+
+## [2026-06-08] staged | node-stub (technique)
+- Staged: optimal-linear-filter (id: 72b6cb4d-d1b6-4990-870b-4958a03a7ece)
+- Title: Optimal Linear Filter (Wiener Filter)
+- needs_canonical_source: False
+
+## [2026-06-08] committed | technique
+- Committed: optimal-linear-filter → techniques/optimal-linear-filter.md
+- IRI: pkis:technique:optimal-linear-filter
+
+## [2026-06-08] staged | node-stub (technique)
+- Staged: maximum-entropy-image-reconstruction (id: ce93baaa-6803-4e92-8aac-431c1e1730ec)
+- Title: Maximum-Entropy Image Reconstruction
+- needs_canonical_source: False
+
+## [2026-06-08] committed | technique
+- Committed: maximum-entropy-image-reconstruction → techniques/maximum-entropy-image-reconstruction.md
+- IRI: pkis:technique:maximum-entropy-image-reconstruction
+
+## [2026-06-08] staged | node-stub (concept)
+- Staged: low-density-parity-check-code (id: cc40edfa-c4ff-40a1-9a40-6cd979e7fdd2)
+- Title: Low-Density Parity-Check Code (Gallager Code)
+- needs_canonical_source: False
+
+## [2026-06-08] committed | concept
+- Committed: low-density-parity-check-code → concepts/low-density-parity-check-code.md
+- IRI: pkis:concept:low-density-parity-check-code
+
+## [2026-06-08] staged | node-stub (concept)
+- Staged: tanner-graph (id: 32a6c0a3-69f1-469f-90d2-f1c889a8f720)
+- Title: Tanner Graph (Bipartite Bit-Check Graph)
+- needs_canonical_source: False
+
+## [2026-06-08] committed | concept
+- Committed: tanner-graph → concepts/tanner-graph.md
+- IRI: pkis:concept:tanner-graph
+
+## [2026-06-08] staged | node-stub (technique)
+- Staged: sum-product-decoding-ldpc (id: 1ab1fc6e-8390-48e6-b633-64eda1d9434c)
+- Title: Sum-Product Decoding of LDPC Codes
+- needs_canonical_source: False
+
+## [2026-06-08] committed | technique
+- Committed: sum-product-decoding-ldpc → techniques/sum-product-decoding-ldpc.md
+- IRI: pkis:technique:sum-product-decoding-ldpc
+
+## [2026-06-08] staged | node-stub (technique)
+- Staged: density-evolution (id: a08538df-1357-4e2c-8585-8747b5c91960)
+- Title: Density Evolution and the Decoding Threshold
+- needs_canonical_source: False
+
+## [2026-06-08] committed | technique
+- Committed: density-evolution → techniques/density-evolution.md
+- IRI: pkis:technique:density-evolution
+
+## [2026-06-08] staged | node-stub (concept)
+- Staged: convolutional-code (id: 82da7d8f-67be-4204-a26f-2e7048c2aeb9)
+- Title: Convolutional Code
+- needs_canonical_source: False
+
+## [2026-06-08] committed | concept
+- Committed: convolutional-code → concepts/convolutional-code.md
+- IRI: pkis:concept:convolutional-code
+
+## [2026-06-08] staged | node-stub (concept)
+- Staged: turbo-code (id: 2d905d35-0e75-42ac-b401-accad7169e81)
+- Title: Turbo Code
+- needs_canonical_source: False
+
+## [2026-06-08] committed | concept
+- Committed: turbo-code → concepts/turbo-code.md
+- IRI: pkis:concept:turbo-code
+
+## [2026-06-08] staged | node-stub (technique)
+- Staged: iterative-turbo-decoding (id: bf732472-da2a-4add-a978-4aebd5b4dfe1)
+- Title: Iterative Turbo Decoding
+- needs_canonical_source: False
+
+## [2026-06-08] committed | technique
+- Committed: iterative-turbo-decoding → techniques/iterative-turbo-decoding.md
+- IRI: pkis:technique:iterative-turbo-decoding
+
+## [2026-06-08] staged | node-stub (technique)
+- Staged: repeat-accumulate-codes (id: 8a8bca4f-9751-43bb-8230-d1a36630352b)
+- Title: Repeat-Accumulate Codes
+- needs_canonical_source: False
+
+## [2026-06-08] committed | technique
+- Committed: repeat-accumulate-codes → techniques/repeat-accumulate-codes.md
+- IRI: pkis:technique:repeat-accumulate-codes
+
+## [2026-06-08] staged | node-stub (concept)
+- Staged: generalized-parity-check-matrix (id: 5befc7a4-5938-4c02-804b-2cef9dd14c74)
+- Title: Generalized Parity-Check Matrix
+- needs_canonical_source: False
+
+## [2026-06-08] committed | concept
+- Committed: generalized-parity-check-matrix → concepts/generalized-parity-check-matrix.md
+- IRI: pkis:concept:generalized-parity-check-matrix
+
+## [2026-06-08] staged | node-stub (concept)
+- Staged: fountain-codes (id: 9be928e3-da76-49a8-b7d0-24ac1bd38764)
+- Title: Fountain Codes (Rateless Erasure Codes)
+- needs_canonical_source: False
+
+## [2026-06-08] committed | concept
+- Committed: fountain-codes → concepts/fountain-codes.md
+- IRI: pkis:concept:fountain-codes
+
+## [2026-06-08] staged | node-stub (technique)
+- Staged: lt-codes (id: 5527e61f-4344-4aa8-9d66-79e9545cf09f)
+- Title: LT Codes (Luby Transform)
+- needs_canonical_source: False
+
+## [2026-06-08] committed | technique
+- Committed: lt-codes → techniques/lt-codes.md
+- IRI: pkis:technique:lt-codes
+
+## [2026-06-08] staged | node-stub (concept)
+- Staged: soliton-distribution (id: bce118d7-e537-49bc-ae4b-10ecc1f964e4)
+- Title: Soliton Degree Distributions
+- needs_canonical_source: False
+
+## [2026-06-08] committed | concept
+- Committed: soliton-distribution → concepts/soliton-distribution.md
+- IRI: pkis:concept:soliton-distribution
+
+## [2026-06-08] staged | node-stub (technique)
+- Staged: peeling-decoder (id: 3f8e5b56-218e-4519-90ff-b015372e9bd9)
+- Title: Peeling Decoder for Erasure Codes
+- needs_canonical_source: False
+
+## [2026-06-08] committed | technique
+- Committed: peeling-decoder → techniques/peeling-decoder.md
+- IRI: pkis:technique:peeling-decoder
+
+## [2026-06-08] edges | add_connections
+- boltzmann-machine —generalizes→ hopfield-network
+- boltzmann-machine —uses→ gibbs-sampler
+- boltzmann-machine —uses→ partition-function
+- boltzmann-machine —analogous-to→ ising-model
+- boltzmann-machine-learning-rule —applies→ boltzmann-machine
+- boltzmann-machine-learning-rule —uses→ gibbs-sampler
+- boltzmann-machine-hidden-units —extends→ boltzmann-machine
+- boltzmann-machine-hidden-units —uses→ boltzmann-machine-learning-rule
+- multilayer-perceptron —specializes→ neural-networks
+- backpropagation —uses→ gradient-descent
+- backpropagation —applies→ multilayer-perceptron
+- multilayer-perceptron —uses→ gradient-descent
+- single-neuron-classifier —prerequisite-of→ multilayer-perceptron
+- multilayer-perceptron —instantiates→ universal-approximation-theorem
+- multilayer-perceptron —uses→ weight-decay-as-prior
+- multilayer-perceptron —uses→ cross-entropy-loss
+- multilayer-perceptron —extends→ regularization
+- bayesian-neural-networks —extends→ multilayer-perceptron
+- multilayer-perceptron —instantiates→ learning-as-inference
+- covariance-function —prerequisite-of→ gaussian-process
+- gaussian-process —generalizes→ gaussian-distribution
+- gaussian-process —prerequisite-of→ gaussian-process-regression
+- covariance-function —uses→ gaussian-process-regression
+- neural-network-gaussian-process-limit —specializes→ gaussian-process
+- neural-network-gaussian-process-limit —applies→ bayesian-neural-networks
+- gaussian-process —contrasts-with→ bayesian-neural-networks
+- optimal-linear-filter —applies→ deconvolution
+- maximum-entropy-image-reconstruction —applies→ deconvolution
+- optimal-linear-filter —instantiates→ bayesian-inference
+- optimal-linear-filter —uses→ regularization
+- deconvolution —uses→ regularization
+- optimal-linear-filter —contrasts-with→ maximum-likelihood-estimation
+- maximum-entropy-image-reconstruction —contrasts-with→ optimal-linear-filter
+- optimal-linear-filter —uses→ laplace-approximation
+- maximum-entropy-image-reconstruction —uses→ entropy
+- low-density-parity-check-code —specializes→ linear-block-code
+- tanner-graph —specializes→ factor-graph
+- tanner-graph —prerequisite-of→ sum-product-decoding-ldpc
+- low-density-parity-check-code —uses→ tanner-graph
+- sum-product-decoding-ldpc —specializes→ sum-product-algorithm
+- sum-product-decoding-ldpc —instantiates→ belief-propagation
+- sum-product-decoding-ldpc —applies→ low-density-parity-check-code
+- density-evolution —applies→ sum-product-decoding-ldpc
+- density-evolution —applies→ low-density-parity-check-code
+- low-density-parity-check-code —instantiates→ noisy-channel-coding-theorem
+- convolutional-code —uses→ trellis
+- convolutional-code —specializes→ linear-block-code
+- turbo-code —uses→ convolutional-code
+- turbo-code —uses→ factor-graph
+- turbo-code —uses→ concatenated-codes
+- iterative-turbo-decoding —instantiates→ sum-product-algorithm
+- iterative-turbo-decoding —uses→ forward-backward-algorithm
+- iterative-turbo-decoding —applies→ turbo-code
+- min-sum-algorithm —applies→ convolutional-code
+- forward-backward-algorithm —applies→ convolutional-code
+- repeat-accumulate-codes —uses→ factor-graph
+- repeat-accumulate-codes —uses→ sum-product-algorithm
+- repeat-accumulate-codes —uses→ trellis
+- repeat-accumulate-codes —uses→ forward-backward-algorithm
+- repeat-accumulate-codes —instantiates→ linear-block-code
+- repeat-accumulate-codes —uses→ repetition-codes
+- repeat-accumulate-codes —analogous-to→ concatenated-codes
+- generalized-parity-check-matrix —generalizes→ linear-block-code
+- generalized-parity-check-matrix —applies→ repeat-accumulate-codes
+- generalized-parity-check-matrix —analogous-to→ factor-graph
+- lt-codes —instantiates→ fountain-codes
+- soliton-distribution —prerequisite-of→ lt-codes
+- peeling-decoder —uses→ soliton-distribution
+- lt-codes —uses→ peeling-decoder
+- peeling-decoder —specializes→ sum-product-algorithm
+- fountain-codes —applies→ binary-erasure-channel
+- peeling-decoder —applies→ binary-erasure-channel
+- fountain-codes —uses→ noisy-channel-coding-theorem
+
+## [2026-06-08] edit | edit_node
+- pkis:framework:hopfield-network: fields=[] sections=['Stochastic Extension: The Boltzmann Machine']
+
+## [2026-06-08] edit | edit_node
+- pkis:technique:gibbs-sampler: fields=[] sections=['Application: Sampling a Boltzmann Machine']
+
+## [2026-06-08] edit | edit_node
+- pkis:technique:backpropagation: fields=[] sections=['What Backpropagation Computes: Gradient of the Regularized Objective']
+
+## [2026-06-08] edit | edit_node
+- pkis:technique:neural-networks: fields=[] sections=['Probabilistic Interpretation of Supervised Training (MacKay Ch. 44)']
+
+## [2026-06-08] edit | edit_node
+- pkis:technique:gaussian-process-regression: fields=[] sections=['Predictive equations via the partitioned inverse']
+
+## [2026-06-08] edit | edit_node
+- pkis:concept:regularization: fields=[] sections=['Regularization as a stabilized matrix inverse']
+
+## [2026-06-08] edit | edit_node
+- pkis:concept:bayesian-inference: fields=[] sections=['Linear-Gaussian inference yields a closed-form posterior']
+
+## [2026-06-08] edit | edit_node
+- pkis:technique:sum-product-algorithm: fields=[] sections=['Application: Decoding LDPC Codes']
+
+## [2026-06-08] edit | edit_node
+- pkis:concept:linear-block-code: fields=[] sections=['Sparse Parity-Check Matrices and LDPC Codes']
+
+## [2026-06-08] edit | edit_node
+- pkis:concept:trellis: fields=[] sections=['Decoding on the trellis (min-sum and sum-product)']
+
+## [2026-06-08] edit | edit_node
+- pkis:technique:concatenated-codes: fields=[] sections=['Interleavers in turbo codes']
+
+## [2026-06-08] edit | edit_node
+- pkis:concept:factor-graph: fields=[] sections=['Example: the repeat-accumulate code graph']
+
+## [2026-06-08] edit | edit_node
+- pkis:technique:sum-product-algorithm: fields=[] sections=['Application: decoding repeat-accumulate codes']
+
+## [2026-06-08] edit | edit_node
+- pkis:concept:binary-erasure-channel: fields=[] sections=['The q-ary Erasure Channel and Packet Networks']
+
+## [2026-06-08] edit | edit_node
+- pkis:technique:sum-product-algorithm: fields=[] sections=['Erasure-Channel Specialization: the Peeling Decoder']

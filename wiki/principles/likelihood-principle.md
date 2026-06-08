@@ -1,0 +1,57 @@
+---
+aliases: []
+also_type: []
+component_scores:
+  implications: null
+  justification: null
+  statement: null
+  violations: null
+contrasts-with:
+- hypothesis-testing
+coverage: 1
+date_created: '2026-06-08'
+date_updated: '2026-06-08'
+domain:
+- bayesian-stats
+id: pkis:principle:likelihood-principle
+knowledge_type: principle
+maturity: evolving
+needs_canonical_source: false
+prerequisite-of:
+- likelihood-ratio-evidence
+related_concepts: []
+sources:
+- mackay-itila-ch02
+specializes:
+- bayesian-inference
+tags:
+- likelihood
+- inference
+- bayes
+- sufficiency
+title: Likelihood Principle
+understanding: 0
+---
+
+## Definition
+All the information the observed data $D$ carry about competing hypotheses is contained in the likelihood — the values $P(D\mid H_i)$ evaluated *at the data that actually occurred*. Two experiments yielding proportional likelihood functions support identical inferences, regardless of which other outcomes were possible but did not happen.
+
+Intuition: only the probability the model assigned to *what actually happened* matters — the probabilities of other outcomes that did not occur are irrelevant.
+
+### Illustration
+MacKay's three-door (Monty Hall) variants make this vivid: the host opening door 3 deliberately versus an earthquake popping door 3 open look visually identical, yet give different answers (switch vs. indifferent) because $P(D\mid H_i)$ differs. 'All that matters are the relative values of $P(D\mid H_i)$ for the value of $D$ that actually occurred.'
+
+### Tension with orthodox statistics
+The likelihood principle falls directly out of Bayes' theorem (the posterior depends on data only via the likelihood), yet many classical/frequentist procedures — which condition on the full sample space, e.g. p-values and stopping-rule-dependent tests — violate it. It is a sharp dividing line between Bayesian and sampling-theory inference.
+
+## Reading Path
+[To be populated when a canonical source is attached]
+
+## Connections
+- [[likelihood-ratio-evidence]] — prerequisite-of: evidence resides in the likelihood at the observed data, justifying ratio-based reasoning
+- [[hypothesis-testing]] — contrasts-with: Classical sampling-theory tests condition on the sample space and can violate the likelihood principle.
+- [[bayesian-inference]] — specializes: The likelihood principle is an immediate consequence of Bayes' theorem.
+[To be populated during integration]
+
+## Stopping rules are irrelevant
+MacKay's coin-tossing scenario (Ch. 37) is the canonical demonstration. Dr. Bloggs observes 3 $b$s in 12 tosses. A frequentist who treats $n=12$ as fixed reports $p\approx0.07$ (not significant); one who learns Bloggs intended to stop at the third $b$ (so $n$ is random) reports $p\approx0.03$ (significant) — from *identical data*. The likelihood principle resolves this cleanly: under either stopping rule the likelihood as a function of the bias $p_a$ is proportional to $p_a^{9}(1-p_a)^{3}$ (the stopping rule contributes only a data-independent combinatorial factor), so the Bayesian posterior — and what we have learned about $p_a$ — is the same. Onlookers spying on the tosses, or a janitor revealing the coin was later destroyed, cannot change the inference; only the observed sequence can. The dependence of $p$-values on the stopping rule is, for MacKay, a decisive reason to reject them.
