@@ -1340,3 +1340,12 @@
 ## [2026-06-08] committed | concept
 - Committed: channel-capacity → concepts/channel-capacity.md
 - IRI: pkis:concept:channel-capacity
+
+## [2026-06-08] staged | node-stub (result)
+- Staged: noisy-channel-coding-theorem (id: 3f446e60-5f3c-4ce8-a79c-adcb7e6ef0ef)
+- Title: Noisy-Channel Coding Theorem
+- needs_canonical_source: False
+
+## [2026-06-08] committed | result
+- Committed: noisy-channel-coding-theorem → results/noisy-channel-coding-theorem.md
+- IRI: pkis:result:noisy-channel-coding-theorem

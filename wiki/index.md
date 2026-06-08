@@ -509,6 +509,7 @@
 - [[constraint-propagation]] — Reducing a constraint satisfaction problem by iteratively eliminating inconsistent values from variable domains (knowledge-representation) (2026-05-20)
 
 ## Results
+- [[noisy-channel-coding-theorem]] — Noisy-Channel Coding Theorem (information-theory) (2026-06-08)
 - [[kraft-inequality]] — Kraft Inequality (information-theory) (2026-06-08)
 - [[source-coding-theorem]] — Source Coding Theorem (Shannon's First Theorem) (information-theory, statistical-learning) (2026-06-08)
 - [[session-2026-06-07]] — Session Log — 2026-06-07 (bayesian-stats, deep-learning, knowledge-representation, optimization) (2026-06-07)
