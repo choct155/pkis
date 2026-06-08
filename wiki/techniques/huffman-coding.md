@@ -56,3 +56,8 @@ The canonical instance of the source coding theorem made constructive — it sho
 - [[arithmetic-coding]] — contrasts-with: Integer bits/symbol (Huffman) vs whole-stream coding escaping that limit (arithmetic)
 - [[source-coding-theorem]] — instantiates: Optimal symbol code; achieves within 1 bit of H
 [To be populated during integration]
+
+## Optimality proof and the 'extra bit' defect
+**Optimality (Exercise 5.16).** By contradiction: the algorithm gives the two least-probable symbols equal-length codewords; swapping with a more probable symbol of length >= l_b changes expected length by a negative amount, contradicting optimality. So Huffman is an optimal symbol code.
+
+**Defects.** (i) Huffman handles *changing* ensemble probabilities poorly. (ii) The **extra bit**: $L<H+1$ means 0–1 bits of overhead *per symbol*, which dominates when $H$ is small. Block-coding $X^N$ shrinks the overhead to $\le 1/N$ per symbol but loses instantaneous decoding and explodes the tree. These defects motivate **arithmetic coding**.

@@ -1619,3 +1619,6 @@
 
 ## [2026-06-08] edit | edit_node
 - pkis:result:source-coding-theorem: fields=[] sections=['Source coding theorem for symbol codes']
+
+## [2026-06-08] edit | edit_node
+- pkis:technique:huffman-coding: fields=[] sections=["Optimality proof and the 'extra bit' defect"]
