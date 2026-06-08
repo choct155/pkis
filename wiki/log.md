@@ -2082,3 +2082,12 @@
 ## [2026-06-08] committed | result
 - Committed: constrained-channel-capacity-eigenvalue → results/constrained-channel-capacity-eigenvalue.md
 - IRI: pkis:result:constrained-channel-capacity-eigenvalue
+
+## [2026-06-08] staged | node-stub (concept)
+- Staged: runlength-limited-codes (id: 0f3f8698-38fe-46be-ae4f-d2ba6f91c3fe)
+- Title: Runlength-Limited Codes
+- needs_canonical_source: False
+
+## [2026-06-08] committed | concept
+- Committed: runlength-limited-codes → concepts/runlength-limited-codes.md
+- IRI: pkis:concept:runlength-limited-codes

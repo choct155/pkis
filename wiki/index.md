@@ -290,6 +290,7 @@
 - [[liu-machine-unlearning-llm-2024]] — Rethinking Machine Unlearning for LLMs: post-training knowledge editing survey (deep-learning, ai-safety) (2026-05-20)
 
 ## Concepts
+- [[runlength-limited-codes]] — Runlength-Limited Codes (information-theory) (2026-06-08)
 - [[constrained-noiseless-channel]] — Constrained Noiseless Channel (information-theory) (2026-06-08)
 - [[message-passing]] — Message Passing (information-theory, bayesian-stats) (2026-06-08)
 - [[broadcast-channel]] — Broadcast Channel (information-theory) (2026-06-08)
