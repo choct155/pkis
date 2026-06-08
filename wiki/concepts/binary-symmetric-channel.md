@@ -61,7 +61,7 @@ The BSC is the canonical testbed of information theory. MacKay frames the book's
 ## MacKay's framing
 MacKay uses the BSC as the running model for a noisy disk drive: each bit is correct with probability $1-f$ and flipped with probability $f$. He frames the noise as a sparse vector $\mathbf{n}$ added mod 2, so the received vector is $\mathbf{r}=\mathbf{t}+\mathbf{n}$ — recasting decoding as inferring the most probable noise pattern.
 
-## ## Capacity of the BSC
+## Capacity of the BSC
 By symmetry the capacity-achieving input is uniform, $P_X^*=\{1/2,1/2\}$, giving
 $$C_{\text{BSC}} = H_2(1/2) - H_2(f) = 1 - H_2(f),$$
 where $H_2$ is the binary entropy function. For $f=0.15$ this is $1-0.61=0.39$ bits. Equivalently $I(X;Y)=H_2((1-f)p_1+(1-p_1)f)-H_2(f)$, maximized when the output is equiprobable, i.e. at $p_1=1/2$ for the symmetric channel.

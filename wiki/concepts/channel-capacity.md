@@ -59,12 +59,12 @@ Capacity is the central quantity of information theory: it sets the fundamental 
 - [[noisy-channel-coding-theorem]] — prerequisite-of: Capacity is the threshold quantity whose existence and value the coding theorem establishes.
 [To be populated during integration]
 
-## ## Optimal input distribution and the extended-channel sketch
+## Optimal input distribution and the extended-channel sketch
 The maximizer of $I(X;Y)$ in $C=\max_{P_X}I(X;Y)$ is the **optimal input distribution** $P_X^*$ (it need not be unique). For symmetric channels symmetry forces $P_X^*$ uniform, but for asymmetric channels like the Z channel it is genuinely skewed (e.g. $p_1^*\approx 0.445$), so capacity is a real optimization, not just a noise property.
 
 MacKay's intuitive justification for *why* $C$ is the right number uses the **extended channel** $Q^N$ ($N$ uses at once). A typical input produces roughly $2^{NH(Y\mid X)}$ probable outputs, while the whole typical output set has size $2^{NH(Y)}$. Packing non-overlapping output 'spheres' gives at most
 $$\frac{2^{NH(Y)}}{2^{NH(Y\mid X)}} = 2^{NI(X;Y)} \le 2^{NC}$$
 non-confusable inputs. For large $N$ the extended channel behaves like a noisy typewriter with a non-confusable sub-alphabet, so up to $C$ bits per use — and no more — can be sent with vanishing error.
 
-## ## Capacity of continuous channels and the cost constraint
+## Capacity of continuous channels and the cost constraint
 For real-valued channels the capacity $C=\max_{p(x)}I(X;Y)$ must be defined via the **mutual information**, the one information measure with a well-behaved continuous limit (joint/marginal entropies diverge as the discretization granularity shrinks). Because the integrand is a ratio of densities over the same space, $I(X;Y)=\int dx\,dy\,P(x,y)\log\tfrac{P(x,y)}{P(x)P(y)}$ is well defined. An unconstrained real input can carry unbounded information per use, so a **cost function** $v(x)$ (e.g. power $x^2$) is imposed, yielding a capacity-cost function $C(\bar v)$. For the Gaussian channel the maximizing input is Gaussian and $C=\tfrac12\log(1+v/\sigma^2)$.

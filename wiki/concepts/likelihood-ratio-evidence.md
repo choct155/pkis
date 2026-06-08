@@ -50,5 +50,5 @@ Confusing $P(D\mid H)$ with $P(H\mid D)$ corrupts this reasoning. The wife-beate
 - [[bayesian-inference]] — uses: posterior odds = likelihood ratio x prior odds, a direct application of Bayes' theorem
 [To be populated during integration]
 
-## ## Bitwise Confirmation of a Hash Hit
+## Bitwise Confirmation of a Hash Hit
 When a hash table returns a candidate record $s$, comparing the stored $\mathbf{x}^{(s)}$ against the query $\mathbf{x}$ bit by bit accumulates Bayesian evidence. Under $H_0: \mathbf{x}^{(s)}=\mathbf{x}$ versus $H_1: \mathbf{x}^{(s)}\neq\mathbf{x}$ (random strings), each matching bit contributes likelihood ratio $\frac{P(\text{match}\mid H_0)}{P(\text{match}\mid H_1)} = \frac{1}{1/2} = 2$. After $r$ matching bits the odds are $2^r:1$, so just 30 matching bits give billion-to-one confidence that the correct entry was retrieved — long before checking all $N$ bits. The same logic scores a casting-out-nines check (one digit match $\Rightarrow$ 9:1 evidence the addition is correct).
