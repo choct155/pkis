@@ -2292,3 +2292,6 @@
 
 ## [2026-06-08] edit | edit_node
 - pkis:technique:gaussian-mixture-models: fields=[] sections=['Relation to K-means and soft K-means']
+
+## [2026-06-08] edit | edit_node
+- pkis:technique:em-algorithm: fields=[] sections=['Soft K-means as a precursor to the E-step']
