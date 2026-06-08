@@ -1358,3 +1358,12 @@
 ## [2026-06-08] committed | result
 - Committed: jensens-inequality → results/jensens-inequality.md
 - IRI: pkis:result:jensens-inequality
+
+## [2026-06-08] staged | node-stub (result)
+- Staged: gibbs-inequality (id: 06774771-d72a-4181-a8ec-ea0ab4ec22c5)
+- Title: Gibbs' Inequality
+- needs_canonical_source: False
+
+## [2026-06-08] committed | result
+- Committed: gibbs-inequality → results/gibbs-inequality.md
+- IRI: pkis:result:gibbs-inequality

@@ -509,6 +509,7 @@
 - [[constraint-propagation]] — Reducing a constraint satisfaction problem by iteratively eliminating inconsistent values from variable domains (knowledge-representation) (2026-05-20)
 
 ## Results
+- [[gibbs-inequality]] — Gibbs' Inequality (information-theory) (2026-06-08)
 - [[jensens-inequality]] — Jensen's Inequality (information-theory) (2026-06-08)
 - [[noisy-channel-coding-theorem]] — Noisy-Channel Coding Theorem (information-theory) (2026-06-08)
 - [[kraft-inequality]] — Kraft Inequality (information-theory) (2026-06-08)
