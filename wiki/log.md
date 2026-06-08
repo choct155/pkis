@@ -2702,3 +2702,12 @@
 ## [2026-06-08] committed | concept
 - Committed: variational-over-compactness → concepts/variational-over-compactness.md
 - IRI: pkis:concept:variational-over-compactness
+
+## [2026-06-08] staged | node-stub (concept)
+- Staged: latent-variable-models (id: c3864770-1553-4401-bf74-680b8a206310)
+- Title: Latent Variable Model
+- needs_canonical_source: False
+
+## [2026-06-08] committed | concept
+- Committed: latent-variable-models → concepts/latent-variable-models.md
+- IRI: pkis:concept:latent-variable-models
