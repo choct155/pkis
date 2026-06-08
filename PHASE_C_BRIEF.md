@@ -11,6 +11,21 @@ lean: extract/propose off-context (server-side or subagents), write nodes in bat
 - **`create_node_stub` CAN set `slug`** (and `sources`, `definition`, `domain`, `tags`); it STAGES → `commit_staged_node` to go live → `add_connections` for edges (targets must be live). `create_source_stub` can NOT set slug (auto-derives).
 - **Credits:** watch the Anthropic balance — the MacKay reader batch hit a credit wall mid-run once. A failed-credit error is a 400 that fails instantly.
 
+## TASK 0 — RECURRING (do first): claude.ai connector "can't read" after updates
+User reports chat's claude.ai connector intermittently can't read the wiki, often after we push changes; **drop+reconnect does NOT reliably fix it.** They want a real root-cause pass, not a band-aid.
+
+**Live snapshot 2026-06-08 (server is HEALTHY — the break is connector-side):**
+- `pkis-mcp.service` active, **NRestarts=0**, last start 2026-06-07 07:47 UTC → **no restart** accompanied recent updates (so "after updates" is NOT a service restart this time).
+- Over `https://pkis.dev/mcp`: `search_wiki` returns fresh results incl. brand-new nodes; `tools/list` (the JSON-RPC path the connector uses) returns fine; `Caches refreshed: 840 nodes` with **no errors**. ⇒ **Server reads work. Failure is claude.ai-side, not the server, and not caused by our writes.**
+
+**Known history (don't re-derive — see memory `project-pkis-mobile-write-oauth` + `OAUTH_PLAN.md`):** the server's MCP / Streamable-HTTP impl is spec-compliant over the bare URL; claude.ai custom connectors are flaky (prior symptom: `"Session terminated" / code 32600`), reject URL-embedded creds, and the **durable fix for robust/authenticated use is OAuth** (OAUTH_PLAN.md; WorkOS recommended, ~2–4 days). A service **restart ALWAYS drops the connector** → minimize restarts (the git-HEAD cache auto-refresh already removed the need to restart for new content).
+
+**Diagnostic playbook:**
+1. Exonerate the server: curl `tools/list` + a `tools/call search_wiki` to `https://pkis.dev/mcp` (snapshot above shows these pass).
+2. See what claude.ai ACTUALLY sends: temporarily add a request-log line at the top of `mcp_endpoint` in `app.py` (method / Accept / User-Agent / rpc-method — `grep` git history for `MCP-DIAG`, it was done before), deploy, have the user retry from chat, read the journal. Reveals whether the connector's requests even arrive, whether it issues a `GET` (SSE attempt → 405), and where it stops (e.g. after `tools/list`). **Remove the temp logging after.**
+3. If requests arrive + server answers but chat still fails → claude.ai client-side session handling; compare to the earlier 32600 findings.
+4. Durable-fix decision: migrate the connector to **OAuth** (OAUTH_PLAN.md) and/or document a reliable reconnect procedure. Note: a fresh full deploy of `app.py` (restart) will itself drop the connector mid-diagnosis — warn the user before restarting.
+
 ## State of the books (coverage layer done; readers/text vary)
 | Book | slug | chapter stubs | reader text (`paper_md`)? |
 |---|---|---|---|
