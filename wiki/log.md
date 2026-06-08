@@ -1796,3 +1796,12 @@
 ## [2026-06-08] committed | concept
 - Committed: hash-function → concepts/hash-function.md
 - IRI: pkis:concept:hash-function
+
+## [2026-06-08] staged | node-stub (technique)
+- Staged: hash-table (id: 00a1476b-f480-4cea-8e90-13cdd687120c)
+- Title: Hash Table for Information Retrieval
+- needs_canonical_source: False
+
+## [2026-06-08] committed | technique
+- Committed: hash-table → techniques/hash-table.md
+- IRI: pkis:technique:hash-table
