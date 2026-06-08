@@ -1778,3 +1778,12 @@
 ## [2026-06-08] committed | technique
 - Committed: concatenated-codes → techniques/concatenated-codes.md
 - IRI: pkis:technique:concatenated-codes
+
+## [2026-06-08] staged | node-stub (concept)
+- Staged: code-goodness-taxonomy (id: 9b662110-da49-456d-932b-c7556f9e1ace)
+- Title: Code Goodness Taxonomy
+- needs_canonical_source: False
+
+## [2026-06-08] committed | concept
+- Committed: code-goodness-taxonomy → concepts/code-goodness-taxonomy.md
+- IRI: pkis:concept:code-goodness-taxonomy
