@@ -15,6 +15,8 @@ date_updated: '2026-06-08'
 domain:
 - statistical-learning
 - deep-learning
+extends:
+- gradient-descent
 id: pkis:technique:natural-gradient
 knowledge_type: technique
 maturity: evolving
@@ -53,4 +55,5 @@ Covariance is a design principle: a consistent algorithm should give the same re
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[gradient-descent]] — extends: Natural gradient repairs the non-covariance and dimensional inconsistency of plain steepest descent via a metric preconditioner.
 [To be populated during integration]

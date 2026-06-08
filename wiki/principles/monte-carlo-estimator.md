@@ -16,6 +16,9 @@ id: pkis:principle:monte-carlo-estimator
 knowledge_type: principle
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- importance-sampling
+- mcmc
 related_concepts: []
 sources:
 - mackay-itila-ch29
@@ -47,4 +50,6 @@ This is the foundational promise of Monte Carlo: integration over thousand-dimen
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[mcmc]] — prerequisite-of: MCMC supplies the (correlated) samples plugged into the Monte Carlo estimator.
+- [[importance-sampling]] — prerequisite-of: Importance sampling is a reweighted variant of the basic Monte Carlo estimator.
 [To be populated during integration]

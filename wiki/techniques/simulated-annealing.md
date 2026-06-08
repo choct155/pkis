@@ -9,12 +9,16 @@ component_scores:
   implementation: null
   operational_mechanism: null
   principled_mechanism: null
+contrasts-with:
+- overrelaxation
 coverage: 1
 date_created: '2026-06-08'
 date_updated: '2026-06-08'
 domain:
 - bayesian-stats
 - statistical-learning
+extends:
+- mcmc
 id: pkis:technique:simulated-annealing
 knowledge_type: technique
 maturity: evolving
@@ -31,6 +35,8 @@ tags:
 - multimodal
 title: Simulated Annealing
 understanding: 0
+uses:
+- metropolis-algorithm
 ---
 
 ## Definition
@@ -53,4 +59,7 @@ Annealing is the canonical tool for multimodal targets and rough energy landscap
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[overrelaxation]] — contrasts-with: annealing combats multimodality across basins; overrelaxation combats within-basin random-walk correlation
+- [[metropolis-algorithm]] — uses: tempering/annealing updates temperature and states via Metropolis acceptance
+- [[mcmc]] — extends: annealing runs MCMC at a sequence of temperatures to escape local basins
 [To be populated during integration]

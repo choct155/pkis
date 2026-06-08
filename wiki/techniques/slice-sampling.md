@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+analogous-to:
+- rejection-sampling
 component_scores:
   alternatives: null
   conditions: null
@@ -9,6 +11,8 @@ component_scores:
   implementation: null
   operational_mechanism: null
   principled_mechanism: null
+contrasts-with:
+- metropolis-algorithm
 coverage: 1
 date_created: '2026-06-08'
 date_updated: '2026-06-08'
@@ -22,6 +26,8 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - mackay-itila-ch29
+specializes:
+- mcmc
 tags:
 - monte-carlo
 - mcmc
@@ -31,6 +37,8 @@ tags:
 - mackay
 title: Slice Sampling
 understanding: 0
+uses:
+- detailed-balance
 ---
 
 ## Definition
@@ -48,4 +56,8 @@ Slice sampling removes the painful manual tuning of Metropolis step sizes. It st
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[rejection-sampling]] — analogous-to: Both draw samples uniformly from the area under P*(x), but slice sampling needs no upper-bounding constant c.
+- [[metropolis-algorithm]] — contrasts-with: Slice sampling self-tunes its step size; Metropolis requires manual step-size tuning.
+- [[detailed-balance]] — uses: Slice sampling's interval construction must satisfy detailed balance to keep the under-curve uniform distribution invariant.
+- [[mcmc]] — specializes: Slice sampling is an MCMC method blending rejection, Gibbs, and Metropolis ideas.
 [To be populated during integration]

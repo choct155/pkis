@@ -16,6 +16,8 @@ domain:
 - bayesian-stats
 - statistical-learning
 id: pkis:technique:coupling-from-the-past
+instantiates:
+- exact-sampling
 knowledge_type: technique
 maturity: evolving
 needs_canonical_source: false
@@ -31,6 +33,8 @@ tags:
 - coalescence
 title: Coupling from the Past
 understanding: 0
+uses:
+- mcmc
 ---
 
 ## Definition
@@ -51,4 +55,6 @@ The random bits used at a given clock time $t$ must be identical across all runs
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[mcmc]] — uses: CFTP runs coupled MCMC chains backward from the past with shared randomness.
+- [[exact-sampling]] — instantiates: CFTP is the concrete algorithm that realizes the goal of exact/perfect sampling.
 [To be populated during integration]

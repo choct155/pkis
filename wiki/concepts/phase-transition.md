@@ -32,6 +32,8 @@ tags:
 - ising-model
 title: Phase Transition
 understanding: 0
+uses:
+- partition-function
 ---
 
 ## Definition
@@ -47,4 +49,5 @@ Strictly, true phase transitions occur only in the infinite-$N$ limit, but finit
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[partition-function]] — uses: Critical signatures (energy variance, free-energy branch crossing, transition temperature) are derived from Z and its derivatives.
 [To be populated during integration]

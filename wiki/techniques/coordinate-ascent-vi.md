@@ -17,6 +17,8 @@ domain:
 - bayesian-stats
 - optimization
 id: pkis:technique:coordinate-ascent-vi
+instantiates:
+- variational-free-energy
 knowledge_type: technique
 maturity: settled
 related_concepts:
@@ -40,6 +42,7 @@ understanding: 3
 The canonical optimization algorithm for mean-field variational inference: iteratively update each variational factor q_j(z_j) to its optimal form — q*_j(z_j) ∝ exp(E_{-j}[log p(z,x)]) — holding all other factors fixed, until the ELBO converges; equivalent to coordinate ascent on the ELBO in the space of mean-field factorizations.
 
 ## Connections
+- [[variational-free-energy]] — instantiates: EM/soft K-means is coordinate descent on the variational free energy (Neal & Hinton).
 
 - [[variational-inference]] — specializes: CAVI is the standard optimization algorithm for mean-field VI
 - [[mean-field-approximation]] — uses: CAVI is only applicable when the variational family is mean-field factorized

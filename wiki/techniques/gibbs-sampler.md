@@ -1,6 +1,9 @@
 ---
 aliases: []
 also_type: []
+applies:
+- ising-model
+- exact-sampling
 component_scores:
   alternatives: 4
   conditions: 2
@@ -29,6 +32,8 @@ sources:
 - '[[kroese-statistical-modeling]]'
 - '[[lange-applied-probability]]'
 - '[[kurz-hybrid-modeling-2022]]'
+specializes:
+- metropolis-algorithm
 tags:
 - mcmc
 - posterior-sampling
@@ -105,3 +110,8 @@ CAVI tolerates approximation because the ELBO provides correction.
 Gibbs does not tolerate approximation because there is no correction mechanism.
 
 Both degrade when variables are highly correlated — updating one coordinate at a time while holding others fixed produces small effective moves along the ridge of correlation. HMC addresses this by using gradient information to construct proposals that move along the posterior surface rather than across it.
+
+## Connections
+- [[exact-sampling]] — applies: Coupled Gibbs sampling is the chain Propp-Wilson use to draw exact Ising samples.
+- [[ising-model]] — applies: Gibbs sampling draws each spin from its conditional given neighbours to sample the Ising equilibrium distribution.
+- [[metropolis-algorithm]] — specializes: A Gibbs coordinate-update is a Metropolis method whose proposal is always accepted.

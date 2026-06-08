@@ -20,6 +20,8 @@ id: pkis:concept:partition-function
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- ising-model
 related_concepts: []
 sources:
 - mackay-itila-ch31
@@ -55,4 +57,5 @@ Because $Z$ encodes the full distribution, observables that would seem to requir
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[ising-model]] — prerequisite-of: The Ising equilibrium distribution is a Boltzmann distribution normalized by its partition function Z.
 [To be populated during integration]

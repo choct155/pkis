@@ -1,6 +1,10 @@
 ---
 aliases: []
 also_type: []
+analogous-to:
+- channel-capacity
+applies:
+- metropolis-algorithm
 component_scores:
   implications: null
   justification: null
@@ -42,4 +46,6 @@ This bound yields a one-line justification for the classic rule of thumb that a 
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[channel-capacity]] — analogous-to: treats the sampler as a channel from P(x) to the user and maximizes its information-transfer rate
+- [[metropolis-algorithm]] — applies: bounds dumb-Metropolis learning at T*H2(f) bits, justifying the ~50% acceptance-rate rule
 [To be populated during integration]

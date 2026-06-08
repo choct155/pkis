@@ -1,18 +1,38 @@
 ---
-id: "pkis:technique:metropolis-algorithm"
 aliases: []
-title: "Metropolis Algorithm"
-knowledge_type: technique
 also_type: []
-domain: [bayesian-stats]
-tags: [mcmc, posterior-sampling, markov-chains, acceptance-rejection, bayesian-computation, metropolis-hastings]
-related_concepts: ["[[gibbs-sampler]]", "[[data-augmentation]]", "[[probability-theory]]", "[[directed-graphical-models]]"]
-sources: ["[[tanner-tools-statistical-inference]]", "[[kroese-statistical-modeling]]", "[[lange-applied-probability]]"]
+applies:
+- ising-model
+contrasts-with:
+- gibbs-sampler
+coverage: 3
 date_created: 2026-05-20
 date_updated: 2026-05-20
-coverage: 3
-understanding: 0
+domain:
+- bayesian-stats
+id: pkis:technique:metropolis-algorithm
+knowledge_type: technique
 maturity: settled
+related_concepts:
+- '[[gibbs-sampler]]'
+- '[[data-augmentation]]'
+- '[[probability-theory]]'
+- '[[directed-graphical-models]]'
+sources:
+- '[[tanner-tools-statistical-inference]]'
+- '[[kroese-statistical-modeling]]'
+- '[[lange-applied-probability]]'
+specializes:
+- mcmc
+tags:
+- mcmc
+- posterior-sampling
+- markov-chains
+- acceptance-rejection
+- bayesian-computation
+- metropolis-hastings
+title: Metropolis Algorithm
+understanding: 0
 ---
 
 An MCMC algorithm for sampling from p(θ|Y) ∝ p(Y|θ)p(θ) by constructing a Markov chain via proposal-acceptance: propose θ* from a symmetric proposal q(θ*|θ^{(t)}), accept with probability min(1, p(θ*|Y)/p(θ^{(t)}|Y)), otherwise stay at θ^{(t)}. The chain's stationary distribution is the target posterior, with correctness guaranteed by detailed balance.
@@ -24,3 +44,8 @@ Unlike the Gibbs sampler, the Metropolis algorithm is a non-augmentation method 
 - [[tanner-tools-statistical-inference-ch06]] (unread) — primary chapter
 - [[kroese-statistical-modeling-ch07]] (unread) — Metropolis-Hastings in Monte Carlo chapter; presents as the general MCMC algorithm of which Metropolis is the symmetric-proposal special case
 - [[lange-applied-probability-ch07]] (unread) — foundational Hastings-Metropolis treatment with convergence of independence sampler
+
+## Connections
+- [[gibbs-sampler]] — contrasts-with: On the same Ising target, Metropolis accepts unfavourable moves about twice as often, trading off mixing speed differently from the Gibbs conditional update.
+- [[ising-model]] — applies: Metropolis spin-flip acceptance is an alternative MCMC sampler for the Ising Boltzmann distribution.
+- [[mcmc]] — specializes: Metropolis-Hastings is the foundational instance of Markov chain Monte Carlo.

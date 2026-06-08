@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- random-walk-behaviour-mcmc
 component_scores:
   alternatives: null
   conditions: null
@@ -9,6 +11,8 @@ component_scores:
   implementation: null
   operational_mechanism: null
   principled_mechanism: null
+contrasts-with:
+- hmc
 coverage: 1
 date_created: '2026-06-08'
 date_updated: '2026-06-08'
@@ -22,6 +26,8 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - mackay-itila-ch30
+specializes:
+- gibbs-sampler
 tags:
 - MCMC
 - Gibbs-sampling
@@ -53,4 +59,7 @@ Where applicable, overrelaxation can speed convergence by a factor of ten or twe
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[hmc]] — contrasts-with: both suppress random walk; overrelaxation needs no gradient but is limited to Gaussian-conditional / Gibbs-samplable systems
+- [[random-walk-behaviour-mcmc]] — applies: designed specifically to suppress random-walk diffusion in correlated Gibbs sampling
+- [[gibbs-sampler]] — specializes: overrelaxation is a modified Gibbs update that biases each draw to the opposite side of the conditional
 [To be populated during integration]

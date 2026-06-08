@@ -1,6 +1,10 @@
 ---
 aliases: []
 also_type: []
+analogous-to:
+- sum-product-algorithm
+applies:
+- ising-model
 component_scores:
   alternatives: null
   conditions: null
@@ -31,6 +35,8 @@ tags:
 - ising-model
 title: Transfer Matrix Method
 understanding: 0
+uses:
+- partition-function
 ---
 
 ## Definition
@@ -54,4 +60,7 @@ It is striking that *every* thermodynamic property of an infinite thin strip —
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[sum-product-algorithm]] — analogous-to: Both factorize a global sum over exponentially many configurations into local matrix/message operations along a chain.
+- [[partition-function]] — uses: The method evaluates Z as Trace[M^C], dominated by the leading eigenvalue mu_max.
+- [[ising-model]] — applies: Transfer matrices compute the Ising partition function exactly for thin-strip geometries.
 [To be populated during integration]

@@ -1,6 +1,9 @@
 ---
 aliases: []
 also_type: []
+applies:
+- metropolis-algorithm
+- gibbs-sampler
 component_scores:
   implications: null
   justification: null
@@ -16,6 +19,8 @@ id: pkis:principle:detailed-balance
 knowledge_type: principle
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- mcmc
 related_concepts: []
 sources:
 - mackay-itila-ch29
@@ -47,4 +52,7 @@ Proving detailed balance is the standard route to validating a new sampler. Toge
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[gibbs-sampler]] — applies: Gibbs conditional updates leave P invariant via detailed balance of each base transition.
+- [[metropolis-algorithm]] — applies: The Metropolis acceptance rule is constructed to satisfy detailed balance.
+- [[mcmc]] — prerequisite-of: Detailed balance is the standard sufficient condition for the target to be the chain's invariant distribution.
 [To be populated during integration]

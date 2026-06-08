@@ -15,12 +15,16 @@ domain:
 - statistical-learning
 - information-theory
 id: pkis:framework:ising-model
+instantiates:
+- phase-transition
 knowledge_type: framework
 maturity: evolving
 needs_canonical_source: false
 related_concepts: []
 sources:
 - mackay-itila-ch31
+specializes:
+- undirected-graphical-models
 tags:
 - ising-model
 - statistical-physics
@@ -49,4 +53,6 @@ The Ising model is the canonical solvable system with a genuine phase transition
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[undirected-graphical-models]] — specializes: An Ising model is a pairwise Markov random field over binary spins with energy = negative log potential.
+- [[phase-transition]] — instantiates: The 2D ferromagnetic Ising model is the canonical system exhibiting a temperature-driven phase transition.
 [To be populated during integration]

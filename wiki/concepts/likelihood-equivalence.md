@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- directed-graphical-models
 component_scores:
   application: null
   boundary: null
@@ -10,6 +12,8 @@ component_scores:
   prerequisites: null
   scope: null
   transfer: null
+contrasts-with:
+- likelihood-principle
 coverage: 1
 date_created: '2026-06-08'
 date_updated: '2026-06-08'
@@ -31,6 +35,9 @@ tags:
 - prior-design
 title: Likelihood Equivalence
 understanding: 0
+uses:
+- bayesian-model-comparison
+- dirichlet-distribution
 ---
 
 ## Definition
@@ -46,4 +53,8 @@ A widespread orthodoxy deliberately restricts priors to those for which *prior e
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[dirichlet-distribution]] — uses: The 'prior-equivalence' orthodoxy enforces indistinguishability via specially-constructed Dirichlet priors over probability vectors.
+- [[likelihood-principle]] — contrasts-with: If you obey the likelihood principle alone the two directions are indistinguishable; the prior is what breaks the tie.
+- [[bayesian-model-comparison]] — uses: Distinguishing likelihood-equivalent models requires comparing marginal likelihoods, which differ under honestly chosen priors.
+- [[directed-graphical-models]] — applies: Likelihood equivalence concerns when two DAG orientations induce the same observable joint distribution.
 [To be populated during integration]

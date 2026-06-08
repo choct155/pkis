@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- variational-free-energy
 component_scores:
   application: null
   boundary: null
@@ -10,6 +12,8 @@ component_scores:
   prerequisites: null
   scope: null
   transfer: null
+contrasts-with:
+- variational-inference
 coverage: 1
 date_created: '2026-06-08'
 date_updated: '2026-06-08'
@@ -23,6 +27,8 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - mackay-itila-ch33
+specializes:
+- kl-divergence
 tags:
 - variational-methods
 - kl-divergence
@@ -50,4 +56,7 @@ This bias is predictable and consequential: variational posteriors **understate 
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[variational-inference]] — contrasts-with: Quantifies the systematic uncertainty-underestimation incurred by variational inference.
+- [[variational-free-energy]] — applies: Minimizing the variational free energy (reverse KL) is exactly what produces over-compact, variance-understating approximations.
+- [[kl-divergence]] — specializes: The compactness bias is a direct consequence of the asymmetry of KL (reverse direction is zero-forcing).
 [To be populated during integration]

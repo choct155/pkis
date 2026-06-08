@@ -44,11 +44,14 @@ tags:
 - tractability
 title: Mean-Field Variational Approximation
 understanding: 3
+uses:
+- variational-free-energy
 ---
 
 A variational inference approach that assumes the variational posterior fully factorizes over the latent variables: q(z) = ∏_j q_j(z_j), with each factor governed independently; this independence assumption makes ELBO optimization tractable via coordinate ascent but can systematically underestimate posterior variance.
 
 ## Connections
+- [[variational-free-energy]] — uses: Mean-field equations arise as the stationarity conditions of the variational free energy.
 - [[transformer-attention-mechanisms]] — contrasts-with: Attention is architecturally designed to recover inter-token correlations that mean field discards; see bridge note
 - [[belief-propagation]] — extends: Loopy belief propagation makes an implicit mean field approximation when applied to graphs with cycles
 - [[gaussian-process-regression]] — extends: Infinite-width networks converge to GPs under the mean field argument that layer outputs are approximately independent Gaussians

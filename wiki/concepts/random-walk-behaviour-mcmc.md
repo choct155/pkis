@@ -20,6 +20,8 @@ id: pkis:concept:random-walk-behaviour-mcmc
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- hmc
 related_concepts: []
 sources:
 - mackay-itila-ch30
@@ -46,4 +48,5 @@ Quantifying random-walk inefficiency is the unifying motivation behind nearly ev
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[hmc]] — prerequisite-of: the random-walk pathology is the motivating problem HMC is built to solve
 [To be populated during integration]

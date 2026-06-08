@@ -13,6 +13,8 @@ date_updated: '2026-06-08'
 domain:
 - bayesian-stats
 id: pkis:result:benfords-law
+instantiates:
+- proportionality-postulate
 knowledge_type: result
 maturity: evolving
 needs_canonical_source: false
@@ -28,6 +30,8 @@ tags:
 - improper-prior
 title: Benford's Law
 understanding: 0
+uses:
+- automatic-priors
 ---
 
 ## Definition
@@ -47,4 +51,6 @@ Benford's law is the canonical demonstration that **"knowing nothing" is not the
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[automatic-priors]] — uses: The log-uniform first-digit distribution is derived as a transformation-group (scale-invariant) automatic prior.
+- [[proportionality-postulate]] — instantiates: Benford's law is what 'ignorance' actually looks like: the scale-invariant ignorance prior, not a uniform one.
 [To be populated during integration]

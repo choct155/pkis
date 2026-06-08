@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+analogous-to:
+- elbo
 component_scores:
   application: null
   boundary: null
@@ -16,10 +18,14 @@ date_updated: '2026-06-08'
 domain:
 - bayesian-stats
 - statistical-learning
+generalizes:
+- mean-field-approximation
 id: pkis:concept:variational-free-energy
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- variational-inference
 related_concepts: []
 sources:
 - mackay-itila-ch33
@@ -32,6 +38,8 @@ tags:
 - feynman-bogoliubov
 title: Variational Free Energy
 understanding: 0
+uses:
+- kl-divergence
 ---
 
 ## Definition
@@ -60,4 +68,8 @@ Richer families $Q$ (capturing correlations) tighten the bound but cost more to 
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[variational-inference]] — prerequisite-of: Casting inference as minimizing a free-energy bound is the foundation of variational inference.
+- [[elbo]] — analogous-to: The negative variational free energy is the physics-language form of the ELBO; both lower-bound the (log-)evidence/partition function.
+- [[kl-divergence]] — uses: betaF-tilde = D_KL(Q||P) + betaF; the bound follows from Gibbs' inequality on the KL term.
+- [[mean-field-approximation]] — generalizes: Mean-field theory is variational free-energy minimization with a separable trial distribution.
 [To be populated during integration]

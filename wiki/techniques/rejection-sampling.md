@@ -9,6 +9,9 @@ component_scores:
   implementation: null
   operational_mechanism: null
   principled_mechanism: null
+contrasts-with:
+- importance-sampling
+- mcmc
 coverage: 1
 date_created: '2026-06-08'
 date_updated: '2026-06-08'
@@ -50,4 +53,6 @@ Rejection sampling is the gold standard in one dimension — exact and i.i.d. �
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[mcmc]] — contrasts-with: Rejection produces independent samples but fails exponentially in N; MCMC trades independence for tractable high-dimensional mixing.
+- [[importance-sampling]] — contrasts-with: Rejection sampling yields exact i.i.d. samples; importance sampling yields weighted, biased-at-finite-R estimates.
 [To be populated during integration]

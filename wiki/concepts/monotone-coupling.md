@@ -16,10 +16,14 @@ date_updated: '2026-06-08'
 domain:
 - bayesian-stats
 - statistical-learning
+extends:
+- coupling-from-the-past
 id: pkis:concept:monotone-coupling
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- exact-sampling
 related_concepts: []
 sources:
 - mackay-itila-ch32
@@ -32,6 +36,8 @@ tags:
 - bounding-chains
 title: Monotone Coupling for Exact Sampling
 understanding: 0
+uses:
+- gibbs-sampler
 ---
 
 ## Definition
@@ -52,4 +58,7 @@ Monotone coupling needs an 'attractive' (e.g. positive-coupling) system. For gen
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[exact-sampling]] — prerequisite-of: Monotone coupling is what makes exact sampling practical for large attractive spin systems.
+- [[gibbs-sampler]] — uses: Coupled monotone Gibbs sampling on the ferromagnetic Ising model is the canonical example.
+- [[coupling-from-the-past]] — extends: Monotonicity lets CFTP track only extreme states, making it tractable on huge state spaces.
 [To be populated during integration]

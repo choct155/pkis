@@ -13,9 +13,13 @@ domain:
 - bayesian-stats
 - statistical-learning
 id: pkis:principle:uniform-sampling-curse
+instantiates:
+- curse-of-dimensionality
 knowledge_type: principle
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- importance-sampling
 related_concepts: []
 sources:
 - mackay-itila-ch29
@@ -28,6 +32,8 @@ tags:
 - mackay
 title: Why Uniform Sampling Fails in High Dimensions
 understanding: 0
+uses:
+- typical-set
 ---
 
 ## Definition
@@ -46,4 +52,7 @@ This result motivates *every* sophisticated sampler in the chapter. Importance s
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[importance-sampling]] — prerequisite-of: Importance sampling exists to fix the failure of naive uniform sampling.
+- [[curse-of-dimensionality]] — instantiates: Exponential blow-up of samples needed to hit the typical set is the sampling-specific curse of dimensionality.
+- [[typical-set]] — uses: The R_min ≈ 2^(N-H) failure argument rests on the typical set carrying nearly all mass.
 [To be populated during integration]

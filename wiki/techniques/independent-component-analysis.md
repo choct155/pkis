@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- blind-source-separation
 component_scores:
   alternatives: null
   conditions: null
@@ -9,6 +11,8 @@ component_scores:
   implementation: null
   operational_mechanism: null
   principled_mechanism: null
+contrasts-with:
+- principal-component-analysis
 coverage: 1
 date_created: '2026-06-08'
 date_updated: '2026-06-08'
@@ -16,6 +20,8 @@ domain:
 - statistical-learning
 - deep-learning
 id: pkis:technique:independent-component-analysis
+instantiates:
+- latent-variable-models
 knowledge_type: technique
 maturity: evolving
 needs_canonical_source: false
@@ -31,6 +37,9 @@ tags:
 - natural-gradient
 title: Independent Component Analysis (ICA)
 understanding: 0
+uses:
+- natural-gradient
+- maximum-likelihood-estimation
 ---
 
 ## Definition
@@ -54,4 +63,9 @@ ICA solves blind source separation — recovering hidden signals (the cocktail-p
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[principal-component-analysis]] — contrasts-with: ICA assumes independent non-Gaussian sources and recovers mixing directions; PCA assumes Gaussian latents and only fixes a variance-ordered subspace.
+- [[maximum-likelihood-estimation]] — uses: ICA's learning rule is steepest ascent on the marginal log likelihood of the mixtures.
+- [[natural-gradient]] — uses: The covariant ICA update is the natural-gradient form of the maximum-likelihood ascent.
+- [[blind-source-separation]] — applies: ICA is the workhorse algorithm for solving the BSS problem.
+- [[latent-variable-models]] — instantiates: ICA is the simplest latent variable model with continuous latents.
 [To be populated during integration]

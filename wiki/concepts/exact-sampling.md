@@ -10,6 +10,8 @@ component_scores:
   prerequisites: null
   scope: null
   transfer: null
+contrasts-with:
+- mcmc
 coverage: 1
 date_created: '2026-06-08'
 date_updated: '2026-06-08'
@@ -51,4 +53,5 @@ Exact-sampling schemes can be slow when the underlying chain mixes slowly (e.g. 
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[mcmc]] — contrasts-with: Exact sampling removes the asymptotic-convergence / burn-in bias inherent to ordinary finite-time MCMC.
 [To be populated during integration]
