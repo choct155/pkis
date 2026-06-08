@@ -2747,3 +2747,12 @@
 ## [2026-06-08] committed | result
 - Committed: benfords-law → results/benfords-law.md
 - IRI: pkis:result:benfords-law
+
+## [2026-06-08] staged | node-stub (concept)
+- Staged: likelihood-equivalence (id: 91edab84-149a-4d19-b6c6-2a4db112fc1e)
+- Title: Likelihood Equivalence
+- needs_canonical_source: False
+
+## [2026-06-08] committed | concept
+- Committed: likelihood-equivalence → concepts/likelihood-equivalence.md
+- IRI: pkis:concept:likelihood-equivalence

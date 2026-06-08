@@ -290,6 +290,7 @@
 - [[liu-machine-unlearning-llm-2024]] — Rethinking Machine Unlearning for LLMs: post-training knowledge editing survey (deep-learning, ai-safety) (2026-05-20)
 
 ## Concepts
+- [[likelihood-equivalence]] — Likelihood Equivalence (bayesian-stats) (2026-06-08)
 - [[latent-variable-models]] — Latent Variable Model (statistical-learning, bayesian-stats) (2026-06-08)
 - [[variational-over-compactness]] — Variational Over-Compactness (Zero-Forcing) (bayesian-stats, statistical-learning) (2026-06-08)
 - [[variational-free-energy]] — Variational Free Energy (bayesian-stats, statistical-learning) (2026-06-08)
