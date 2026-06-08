@@ -1457,3 +1457,12 @@
 ## [2026-06-08] committed | concept
 - Committed: complete-code → concepts/complete-code.md
 - IRI: pkis:concept:complete-code
+
+## [2026-06-08] staged | node-stub (result)
+- Staged: optimal-symbol-codelengths (id: 0a5f2677-6063-4583-823c-7a9447175e5c)
+- Title: Optimal Symbol Codelengths and the Cost of Wrong Lengths
+- needs_canonical_source: False
+
+## [2026-06-08] committed | result
+- Committed: optimal-symbol-codelengths → results/optimal-symbol-codelengths.md
+- IRI: pkis:result:optimal-symbol-codelengths
