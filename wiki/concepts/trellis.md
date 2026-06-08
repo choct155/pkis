@@ -61,3 +61,6 @@ The trellis exposes the conditional-independence (chain) structure of a code, tu
 - [[min-sum-algorithm]] — prerequisite-of: Viterbi/min-sum decoding finds the minimum-cost path across a code trellis.
 - [[forward-backward-algorithm]] — prerequisite-of: The trellis is the graphical structure on which forward-backward message passing is run.
 [To be populated during integration]
+
+## Decoding on the trellis (min-sum and sum-product)
+For a convolutional code, the trellis edge costs encode the channel likelihoods directly. On a binary symmetric channel with received vector equal to a codeword bar one flipped bit, each edge carries a likelihood cost: zero when both of its two code bits match the received bits, one when exactly one matches, and two when neither matches. The **min–sum (Viterbi) algorithm** finds the maximum-likelihood codeword as the minimum-cost path — the path using as many exact-match edges as possible — while the **sum–product (forward–backward / BCJR) algorithm** returns the posterior marginal of each bit. A defect of an unterminated trellis is *unequal protection*: the final source bits can be distinguished by very few transmitted bits, which motivates **trellis termination** — driving the $k$ memory bits back to zero with a few extra parity bits, at a small loss in rate.

@@ -3424,3 +3424,6 @@
 
 ## [2026-06-08] edit | edit_node
 - pkis:concept:linear-block-code: fields=[] sections=['Sparse Parity-Check Matrices and LDPC Codes']
+
+## [2026-06-08] edit | edit_node
+- pkis:concept:trellis: fields=[] sections=['Decoding on the trellis (min-sum and sum-product)']
