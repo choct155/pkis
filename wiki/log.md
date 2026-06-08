@@ -2845,3 +2845,6 @@
 
 ## [2026-06-08] edit | edit_node
 - pkis:technique:gibbs-sampler: fields=[] sections=['Application: Gibbs sampling an Ising model']
+
+## [2026-06-08] edit | edit_node
+- pkis:technique:metropolis-algorithm: fields=[] sections=['Application: Metropolis spin flips in an Ising model']
