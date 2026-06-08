@@ -2190,3 +2190,12 @@
 ## [2026-06-08] committed | technique
 - Committed: soft-k-means → techniques/soft-k-means.md
 - IRI: pkis:technique:soft-k-means
+
+## [2026-06-08] staged | node-stub (technique)
+- Staged: exact-inference-by-complete-enumeration (id: 3dff11b2-60e2-4188-8a6e-4fec2e634acb)
+- Title: Exact Inference by Complete Enumeration
+- needs_canonical_source: False
+
+## [2026-06-08] committed | technique
+- Committed: exact-inference-by-complete-enumeration → techniques/exact-inference-by-complete-enumeration.md
+- IRI: pkis:technique:exact-inference-by-complete-enumeration
