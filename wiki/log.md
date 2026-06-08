@@ -1291,3 +1291,12 @@
 
 ## [2026-06-08] edit | edit_node
 - pkis:concept:typical-set: fields=[] sections=['Definition (information-theoretic)', 'Geometric face']
+
+## [2026-06-08] staged | node-stub (concept)
+- Staged: binary-symmetric-channel (id: 7929a0e8-b18e-4745-bfd6-8c9ad88ba93b)
+- Title: Binary Symmetric Channel
+- needs_canonical_source: False
+
+## [2026-06-08] committed | concept
+- Committed: binary-symmetric-channel → concepts/binary-symmetric-channel.md
+- IRI: pkis:concept:binary-symmetric-channel
