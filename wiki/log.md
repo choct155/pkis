@@ -1349,3 +1349,12 @@
 ## [2026-06-08] committed | result
 - Committed: noisy-channel-coding-theorem → results/noisy-channel-coding-theorem.md
 - IRI: pkis:result:noisy-channel-coding-theorem
+
+## [2026-06-08] staged | node-stub (result)
+- Staged: jensens-inequality (id: cbd4cf2e-071d-4a85-81ef-e098d5c57487)
+- Title: Jensen's Inequality
+- needs_canonical_source: False
+
+## [2026-06-08] committed | result
+- Committed: jensens-inequality → results/jensens-inequality.md
+- IRI: pkis:result:jensens-inequality
