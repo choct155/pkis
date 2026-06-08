@@ -1652,3 +1652,12 @@
 ## [2026-06-08] committed | concept
 - Committed: conditional-entropy → concepts/conditional-entropy.md
 - IRI: pkis:concept:conditional-entropy
+
+## [2026-06-08] staged | node-stub (concept)
+- Staged: mutual-information (id: c9e085d9-3bef-474f-bb33-d2c15f747957)
+- Title: Mutual Information
+- needs_canonical_source: False
+
+## [2026-06-08] committed | concept
+- Committed: mutual-information → concepts/mutual-information.md
+- IRI: pkis:concept:mutual-information
