@@ -1263,3 +1263,7 @@
 ## [2026-06-08] committed | result
 - Committed: source-coding-theorem → results/source-coding-theorem.md
 - IRI: pkis:result:source-coding-theorem
+
+## [2026-06-08] committed | result
+- Committed: kraft-inequality → results/kraft-inequality.md
+- IRI: pkis:result:kraft-inequality
