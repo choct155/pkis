@@ -1601,3 +1601,6 @@
 
 ## [2026-06-08] edit | edit_node
 - pkis:concept:bayesian-inference: fields=[] sections=['Forward vs inverse probability']
+
+## [2026-06-08] edit | edit_node
+- pkis:technique:bayesian-model-averaging: fields=[] sections=['Prediction under discrete model uncertainty (MacKay)']
