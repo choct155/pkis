@@ -1823,3 +1823,12 @@
 ## [2026-06-08] committed | technique
 - Committed: hashing-for-error-detection → techniques/hashing-for-error-detection.md
 - IRI: pkis:technique:hashing-for-error-detection
+
+## [2026-06-08] staged | node-stub (concept)
+- Staged: one-way-hash-function (id: 0aaf3f21-bce3-41cc-b4ec-0a11ae46ea97)
+- Title: One-Way Hash Function
+- needs_canonical_source: False
+
+## [2026-06-08] committed | concept
+- Committed: one-way-hash-function → concepts/one-way-hash-function.md
+- IRI: pkis:concept:one-way-hash-function

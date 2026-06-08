@@ -290,6 +290,7 @@
 - [[liu-machine-unlearning-llm-2024]] — Rethinking Machine Unlearning for LLMs: post-training knowledge editing survey (deep-learning, ai-safety) (2026-05-20)
 
 ## Concepts
+- [[one-way-hash-function]] — One-Way Hash Function (information-theory, computer-science) (2026-06-08)
 - [[hash-function]] — Hash Function (information-theory, computer-science) (2026-06-08)
 - [[code-goodness-taxonomy]] — Code Goodness Taxonomy (information-theory) (2026-06-08)
 - [[linear-block-code]] — Linear Block Code (information-theory) (2026-06-08)
