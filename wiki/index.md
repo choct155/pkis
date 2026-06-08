@@ -290,6 +290,7 @@
 - [[liu-machine-unlearning-llm-2024]] — Rethinking Machine Unlearning for LLMs: post-training knowledge editing survey (deep-learning, ai-safety) (2026-05-20)
 
 ## Concepts
+- [[associative-memory]] — Associative (Content-Addressable) Memory (deep-learning, statistical-learning) (2026-06-08)
 - [[weight-decay-as-prior]] — Weight Decay as a Gaussian Prior (deep-learning, bayesian-stats) (2026-06-08)
 - [[linear-separability]] — Linear Separability (deep-learning, statistical-learning) (2026-06-08)
 - [[single-neuron-classifier]] — Single Neuron as a Classifier (deep-learning, statistical-learning) (2026-06-08)

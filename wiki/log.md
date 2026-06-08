@@ -2992,3 +2992,12 @@
 ## [2026-06-08] committed | framework
 - Committed: hopfield-network → frameworks/hopfield-network.md
 - IRI: pkis:framework:hopfield-network
+
+## [2026-06-08] staged | node-stub (concept)
+- Staged: associative-memory (id: b43d0d39-85ea-4f03-b814-16e2b35882d0)
+- Title: Associative (Content-Addressable) Memory
+- needs_canonical_source: False
+
+## [2026-06-08] committed | concept
+- Committed: associative-memory → concepts/associative-memory.md
+- IRI: pkis:concept:associative-memory
