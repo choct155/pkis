@@ -3196,3 +3196,12 @@
 ## [2026-06-08] committed | technique
 - Committed: optimal-linear-filter → techniques/optimal-linear-filter.md
 - IRI: pkis:technique:optimal-linear-filter
+
+## [2026-06-08] staged | node-stub (technique)
+- Staged: maximum-entropy-image-reconstruction (id: ce93baaa-6803-4e92-8aac-431c1e1730ec)
+- Title: Maximum-Entropy Image Reconstruction
+- needs_canonical_source: False
+
+## [2026-06-08] committed | technique
+- Committed: maximum-entropy-image-reconstruction → techniques/maximum-entropy-image-reconstruction.md
+- IRI: pkis:technique:maximum-entropy-image-reconstruction
