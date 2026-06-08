@@ -3205,3 +3205,12 @@
 ## [2026-06-08] committed | technique
 - Committed: maximum-entropy-image-reconstruction → techniques/maximum-entropy-image-reconstruction.md
 - IRI: pkis:technique:maximum-entropy-image-reconstruction
+
+## [2026-06-08] staged | node-stub (concept)
+- Staged: low-density-parity-check-code (id: cc40edfa-c4ff-40a1-9a40-6cd979e7fdd2)
+- Title: Low-Density Parity-Check Code (Gallager Code)
+- needs_canonical_source: False
+
+## [2026-06-08] committed | concept
+- Committed: low-density-parity-check-code → concepts/low-density-parity-check-code.md
+- IRI: pkis:concept:low-density-parity-check-code

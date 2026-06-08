@@ -290,6 +290,7 @@
 - [[liu-machine-unlearning-llm-2024]] — Rethinking Machine Unlearning for LLMs: post-training knowledge editing survey (deep-learning, ai-safety) (2026-05-20)
 
 ## Concepts
+- [[low-density-parity-check-code]] — Low-Density Parity-Check Code (Gallager Code) (information-theory) (2026-06-08)
 - [[covariance-function]] — Covariance Function (Kernel) (statistical-learning, bayesian-stats) (2026-06-08)
 - [[gaussian-process]] — Gaussian Process (statistical-learning, bayesian-stats) (2026-06-08)
 - [[multilayer-perceptron]] — Multilayer Perceptron (Feedforward Network) (deep-learning) (2026-06-08)
