@@ -524,6 +524,7 @@
 - [[constraint-propagation]] — Reducing a constraint satisfaction problem by iteratively eliminating inconsistent values from variable domains (knowledge-representation) (2026-05-20)
 
 ## Results
+- [[chain-rule-for-entropy]] — Chain Rule for Entropy (information-theory) (2026-06-08)
 - [[optimal-symbol-codelengths]] — Optimal Symbol Codelengths and the Cost of Wrong Lengths (information-theory) (2026-06-08)
 - [[weak-law-of-large-numbers]] — Weak Law of Large Numbers (via Chebyshev) (information-theory, statistical-learning) (2026-06-08)
 - [[laplaces-rule-of-succession]] — Laplace's Rule of Succession (bayesian-stats) (2026-06-08)

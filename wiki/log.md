@@ -1661,3 +1661,12 @@
 ## [2026-06-08] committed | concept
 - Committed: mutual-information → concepts/mutual-information.md
 - IRI: pkis:concept:mutual-information
+
+## [2026-06-08] staged | node-stub (result)
+- Staged: chain-rule-for-entropy (id: ccd97df2-2e9a-4835-8890-de5deaee68bc)
+- Title: Chain Rule for Entropy
+- needs_canonical_source: False
+
+## [2026-06-08] committed | result
+- Committed: chain-rule-for-entropy → results/chain-rule-for-entropy.md
+- IRI: pkis:result:chain-rule-for-entropy
