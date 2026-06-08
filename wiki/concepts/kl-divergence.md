@@ -47,3 +47,6 @@ An asymmetric non-negative measure of the "extra information" required to encode
 
 ## Relative entropy and Gibbs' inequality
 In MacKay's information-theoretic framing the KL divergence is the **relative entropy** $D_{KL}(P\|Q)=\sum_x P(x)\log\frac{P(x)}{Q(x)}$ — the expected extra number of bits incurred by coding for $Q$ when the true distribution is $P$. **Gibbs' inequality** guarantees $D_{KL}(P\|Q)\ge0$ with equality iff $P=Q$, proved via Jensen's inequality. It is generally **asymmetric** ($D_{KL}(P\|Q)\ne D_{KL}(Q\|P)$), so despite the nickname 'KL distance' it is not a metric.
+
+## MacKay: mutual information as a KL divergence
+Mutual information is a special case of relative entropy: $I(X;Y) = D_{KL}\big(P(x,y)\,\|\,P(x)P(y)\big) \geq 0$, measuring how far the joint distribution sits from the independent product. Non-negativity of $I(X;Y)$ is therefore exactly [[gibbs-inequality]]. See [[mutual-information]].

@@ -1974,3 +1974,6 @@
 
 ## [2026-06-08] edit | edit_node
 - pkis:concept:entropy: fields=[] sections=['MacKay: decomposing joint entropy']
+
+## [2026-06-08] edit | edit_node
+- pkis:concept:kl-divergence: fields=[] sections=['MacKay: mutual information as a KL divergence']
