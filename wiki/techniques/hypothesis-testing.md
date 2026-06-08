@@ -3,7 +3,7 @@ aliases: []
 also_type: []
 coverage: 1
 date_created: 2026-05-20
-date_updated: 2026-05-20
+date_updated: '2026-06-08'
 domain:
 - statistical-learning
 - bayesian-stats
@@ -41,3 +41,8 @@ Hypothesis testing is a frequentist procedure for deciding between a null hypoth
 ## Reading Path
 - [[kroese-statistical-modeling-ch05]] (unread) — primary treatment: null/alternative hypotheses, p-values, power, ANOVA for normal linear models
 - [[kroese-statistical-modeling-ch06]] (unread) — likelihood ratio tests and score tests as special hypothesis testing procedures
+
+## What a p-value does not mean
+A persistent error, flagged by MacKay (Ch. 37) and conceded by sampling theorists themselves, is interpreting a $p$-value as a posterior probability of the null. A report '$p=0.07$' means: *if the experiment were repeated many times and $H_0$ were true, 7% of the time the statistic would be as extreme as observed.* It does **not** mean there is a 93% chance the treatments differ, nor that $P(H_0\mid D)=0.07$. The test also reports only *statistical* significance, never the effect size or practical magnitude.
+
+MacKay's vaccination example sharpens the critique: comparing treatment $A$ (1/30 infected) with control $B$ (3/10), the $\chi^2$ test gives $p\approx0.07$ (and flips to 'accept $H_0$' under Yates's correction), whereas a Bayesian computation of $P(p_{A+}<p_{B+}\mid D)\approx0.99$ gives a direct, decision-relevant answer. Sampling theory can be 'trigger-happy' (rejecting $H_0$ on data that actually favour it) or, conversely, miss evidence intuition deems strong — and its verdict can swing with the choice of statistic, continuity correction, or stopping rule.
