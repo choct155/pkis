@@ -2830,3 +2830,6 @@
 
 ## [2026-06-08] edit | edit_node
 - pkis:technique:gibbs-sampler: fields=[] sections=["MacKay's View: Gibbs as Parameter-Free Metropolis"]
+
+## [2026-06-08] edit | edit_node
+- pkis:technique:importance-sampling: fields=[] sections=["MacKay's Cautions: Heavy Tails and the High-Dimensional Weight Catastrophe"]
