@@ -1448,3 +1448,12 @@
 ## [2026-06-08] committed | concept
 - Committed: prefix-code → concepts/prefix-code.md
 - IRI: pkis:concept:prefix-code
+
+## [2026-06-08] staged | node-stub (concept)
+- Staged: complete-code (id: 063b729b-b05c-4d85-b874-a14a3cc8d880)
+- Title: Complete Code
+- needs_canonical_source: False
+
+## [2026-06-08] committed | concept
+- Committed: complete-code → concepts/complete-code.md
+- IRI: pkis:concept:complete-code
