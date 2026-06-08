@@ -1986,3 +1986,6 @@
 
 ## [2026-06-08] edit | edit_node
 - pkis:result:noisy-channel-coding-theorem: fields=[] sections=['## Proof: achievability and converse']
+
+## [2026-06-08] edit | edit_node
+- pkis:result:noisy-channel-coding-theorem: fields=[] sections=['## Finite-blocklength refinement and the reliability function']

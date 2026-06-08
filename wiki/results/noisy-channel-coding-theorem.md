@@ -73,3 +73,10 @@ which vanishes whenever $R'<I(X;Y)-3\beta$. Choosing $P(x)$ optimal makes $I(X;Y
 **Extending to non-zero $p_b$.** Running a capacity-achieving code's decoder *backwards* as a lossy compressor proves the achievability of the whole region $R=C/(1-H_2(p_b))$ (rate-distortion).
 
 **Converse (rates above the boundary are impossible).** The chain $s\to x\to y\to\hat{s}$ obeys the data processing inequality, so $I(s;\hat{s})\le I(x;y)\le NC$. [[fanos-inequality]] gives $I(s;\hat{s})\ge NR(1-H_2(p_b))$. Together they force $R\le C/(1-H_2(p_b))$ — anything beyond is unachievable. $\square$
+
+## ## Finite-blocklength refinement and the reliability function
+The basic theorem is general but silent on *how large* $N$ must be for a target $(R,\epsilon)$. A sharper version bounds the error exponentially in blocklength:
+$$p_B\le \exp[-N E_r(R)],$$
+where $E_r(R)$, the **random-coding exponent** (or reliability function), is a convex $\smile$, decreasing, positive function of $R$ on $0\le R<C$, vanishing as $R\to C$. A matching lower bound,
+$$p_B\gtrsim \exp[-N E_{sp}(R)],$$
+uses the **sphere-packing exponent** $E_{sp}(R)$. These exponents say error decays exponentially in $N$ for any fixed $R<C$, but the closer $R$ is to $C$ the slower the decay. Even for the binary symmetric channel there is no closed form for $E_r(R)$, and a random code of large $N$ costs exponentially to implement — which is why practical coding theory matters.
