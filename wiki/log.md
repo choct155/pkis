@@ -2684,3 +2684,12 @@
 ## [2026-06-08] committed | concept
 - Committed: monotone-coupling → concepts/monotone-coupling.md
 - IRI: pkis:concept:monotone-coupling
+
+## [2026-06-08] staged | node-stub (concept)
+- Staged: variational-free-energy (id: 10a43e30-376a-4cc1-b3d3-a1a965af214e)
+- Title: Variational Free Energy
+- needs_canonical_source: False
+
+## [2026-06-08] committed | concept
+- Committed: variational-free-energy → concepts/variational-free-energy.md
+- IRI: pkis:concept:variational-free-energy

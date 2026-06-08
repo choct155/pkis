@@ -290,6 +290,7 @@
 - [[liu-machine-unlearning-llm-2024]] — Rethinking Machine Unlearning for LLMs: post-training knowledge editing survey (deep-learning, ai-safety) (2026-05-20)
 
 ## Concepts
+- [[variational-free-energy]] — Variational Free Energy (bayesian-stats, statistical-learning) (2026-06-08)
 - [[monotone-coupling]] — Monotone Coupling for Exact Sampling (bayesian-stats, statistical-learning) (2026-06-08)
 - [[exact-sampling]] — Exact (Perfect) Sampling (bayesian-stats, statistical-learning) (2026-06-08)
 - [[phase-transition]] — Phase Transition (statistical-learning, information-theory) (2026-06-08)
