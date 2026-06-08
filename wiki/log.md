@@ -2154,3 +2154,12 @@
 ## [2026-06-08] committed | result
 - Committed: sqrt-g-advantage-of-sex → results/sqrt-g-advantage-of-sex.md
 - IRI: pkis:result:sqrt-g-advantage-of-sex
+
+## [2026-06-08] staged | node-stub (result)
+- Staged: maximum-tolerable-mutation-rate (id: 3aedc818-580a-4cee-8126-5e6d6bd57bcd)
+- Title: Maximum Tolerable Mutation Rate and Genome Size
+- needs_canonical_source: False
+
+## [2026-06-08] committed | result
+- Committed: maximum-tolerable-mutation-rate → results/maximum-tolerable-mutation-rate.md
+- IRI: pkis:result:maximum-tolerable-mutation-rate
