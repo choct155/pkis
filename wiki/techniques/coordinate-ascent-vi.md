@@ -12,7 +12,7 @@ component_scores:
   principled_mechanism: 4
 coverage: 2
 date_created: 2026-05-20
-date_updated: '2026-06-07'
+date_updated: '2026-06-08'
 domain:
 - bayesian-stats
 - optimization
@@ -58,3 +58,10 @@ The canonical optimization algorithm for mean-field variational inference: itera
 The mean field assumption does not constrain how you move across the posterior landscape — it constrains which landscape you're allowed to search in the first place. You commit upfront to the submanifold of fully factorized distributions, then CAVI finds the best point on that submanifold via coordinate ascent. The optimization may converge correctly and still be far from the true posterior, because the true posterior may not be close to anything on your submanifold.
 
 Analogy: you've agreed to model wind across a region as a single uniform vector, then you optimize what that vector should be. CAVI finds the best uniform vector. But if the actual field has a hurricane in one corner, no amount of optimization recovers it — the representational commitment was made before the search began.
+
+## EM and Soft K-Means as Coordinate Optimization of a Free Energy
+Neal and Hinton (1998) showed that the EM algorithm — and soft K-means clustering as a special case — is coordinate descent on a single variational free energy. With latent class labels $\{k_n\}$ and parameters $\theta$, approximate the posterior by a separable $Q_k(\{k_n\})\,Q_\theta(\theta)$ and minimize
+
+$$\tilde F(Q_k,Q_\theta) = \Big\langle \ln\frac{Q_k Q_\theta}{P(\{x^{(n)},k_n\},\theta\mid H)}\Big\rangle,$$
+
+which is bounded below by $-\ln P(\{x^{(n)}\}\mid H)$. The **E-step** ('assignment') optimizes $Q_k$ for fixed $Q_\theta$ — the optimal $Q_k$ is separable with $\Pr(k_n{=}k)$ equal to the responsibility $r^{(n)}_k$. The **M-step** ('update') optimizes $Q_\theta$ for fixed $Q_k$. Soft K-means is the degenerate case where $Q_\theta=\delta(\theta-\theta^*)$ is collapsed to a point estimate — which is why it contributes a divergent entropy term and suffers the 'kaboom' problem of gluing a shrinking Gaussian to one point. Relaxing $Q_\theta$ to a genuine distribution recovers a fully variational, better-behaved clustering algorithm.

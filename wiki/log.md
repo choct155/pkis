@@ -2860,3 +2860,6 @@
 
 ## [2026-06-08] edit | edit_node
 - pkis:concept:kl-divergence: fields=[] sections=['Asymmetry: Forward vs Reverse KL in Approximation']
+
+## [2026-06-08] edit | edit_node
+- pkis:technique:coordinate-ascent-vi: fields=[] sections=['EM and Soft K-Means as Coordinate Optimization of a Free Energy']
