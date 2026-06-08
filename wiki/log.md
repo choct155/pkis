@@ -2639,3 +2639,12 @@
 ## [2026-06-08] committed | concept
 - Committed: partition-function → concepts/partition-function.md
 - IRI: pkis:concept:partition-function
+
+## [2026-06-08] staged | node-stub (technique)
+- Staged: transfer-matrix-method (id: c2485a2a-17f9-440f-aa75-a5a26e8c29a9)
+- Title: Transfer Matrix Method
+- needs_canonical_source: False
+
+## [2026-06-08] committed | technique
+- Committed: transfer-matrix-method → techniques/transfer-matrix-method.md
+- IRI: pkis:technique:transfer-matrix-method

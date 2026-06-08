@@ -449,6 +449,7 @@
 - [[market-vs-hierarchy]] — Coase/Williamson: transactions governed by price signals (markets) vs. managerial direction (firms) (corporate-finance) (2026-05-20)
 
 ## Techniques
+- [[transfer-matrix-method]] — Transfer Matrix Method (statistical-learning, information-theory) (2026-06-08)
 - [[simulated-annealing]] — Simulated Annealing (bayesian-stats, statistical-learning) (2026-06-08)
 - [[overrelaxation]] — Overrelaxation (bayesian-stats, statistical-learning) (2026-06-08)
 - [[slice-sampling]] — Slice Sampling (bayesian-stats, statistical-learning) (2026-06-08)
