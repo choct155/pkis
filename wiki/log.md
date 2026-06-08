@@ -2046,3 +2046,12 @@
 ## [2026-06-08] committed | concept
 - Committed: message-passing → concepts/message-passing.md
 - IRI: pkis:concept:message-passing
+
+## [2026-06-08] staged | node-stub (technique)
+- Staged: sum-product-algorithm (id: 2238eb36-eb61-4e82-a77f-aa5747c4a910)
+- Title: Sum-Product Algorithm
+- needs_canonical_source: False
+
+## [2026-06-08] committed | technique
+- Committed: sum-product-algorithm → techniques/sum-product-algorithm.md
+- IRI: pkis:technique:sum-product-algorithm

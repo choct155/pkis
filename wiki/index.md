@@ -433,6 +433,7 @@
 - [[market-vs-hierarchy]] — Coase/Williamson: transactions governed by price signals (markets) vs. managerial direction (firms) (corporate-finance) (2026-05-20)
 
 ## Techniques
+- [[sum-product-algorithm]] — Sum-Product Algorithm (information-theory, bayesian-stats) (2026-06-08)
 - [[typical-set-decoder]] — Typical-Set Decoder (information-theory) (2026-06-08)
 - [[hashing-for-error-detection]] — Hashing for Error Detection (information-theory, computer-science) (2026-06-08)
 - [[hash-table]] — Hash Table for Information Retrieval (information-theory, computer-science) (2026-06-08)
