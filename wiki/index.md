@@ -455,6 +455,7 @@
 - [[market-vs-hierarchy]] — Coase/Williamson: transactions governed by price signals (markets) vs. managerial direction (firms) (corporate-finance) (2026-05-20)
 
 ## Techniques
+- [[natural-gradient]] — Natural Gradient (Covariant Optimization) (statistical-learning, deep-learning) (2026-06-08)
 - [[independent-component-analysis]] — Independent Component Analysis (ICA) (statistical-learning, deep-learning) (2026-06-08)
 - [[coupling-from-the-past]] — Coupling from the Past (bayesian-stats, statistical-learning) (2026-06-08)
 - [[transfer-matrix-method]] — Transfer Matrix Method (statistical-learning, information-theory) (2026-06-08)

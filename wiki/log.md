@@ -2729,3 +2729,12 @@
 ## [2026-06-08] committed | problem
 - Committed: blind-source-separation → problems/blind-source-separation.md
 - IRI: pkis:problem:blind-source-separation
+
+## [2026-06-08] staged | node-stub (technique)
+- Staged: natural-gradient (id: db012cf7-c707-4433-aed3-e3d652e3c534)
+- Title: Natural Gradient (Covariant Optimization)
+- needs_canonical_source: False
+
+## [2026-06-08] committed | technique
+- Committed: natural-gradient → techniques/natural-gradient.md
+- IRI: pkis:technique:natural-gradient
