@@ -2361,3 +2361,12 @@
 ## [2026-06-08] committed | concept
 - Committed: marginalization → concepts/marginalization.md
 - IRI: pkis:concept:marginalization
+
+## [2026-06-08] staged | node-stub (concept)
+- Staged: trellis (id: 8c398d1c-deb4-4e13-9cfa-c0365b9c5d7b)
+- Title: Trellis
+- needs_canonical_source: False
+
+## [2026-06-08] committed | concept
+- Committed: trellis → concepts/trellis.md
+- IRI: pkis:concept:trellis
