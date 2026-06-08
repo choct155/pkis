@@ -2711,3 +2711,12 @@
 ## [2026-06-08] committed | concept
 - Committed: latent-variable-models → concepts/latent-variable-models.md
 - IRI: pkis:concept:latent-variable-models
+
+## [2026-06-08] staged | node-stub (technique)
+- Staged: independent-component-analysis (id: 6a0de500-6380-4f72-ad8b-5b4ef8932ece)
+- Title: Independent Component Analysis (ICA)
+- needs_canonical_source: False
+
+## [2026-06-08] committed | technique
+- Committed: independent-component-analysis → techniques/independent-component-analysis.md
+- IRI: pkis:technique:independent-component-analysis
