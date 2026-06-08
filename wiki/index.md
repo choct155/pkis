@@ -421,6 +421,7 @@
 - [[market-vs-hierarchy]] — Coase/Williamson: transactions governed by price signals (markets) vs. managerial direction (firms) (corporate-finance) (2026-05-20)
 
 ## Techniques
+- [[random-coding-argument]] — Random Coding Argument (information-theory) (2026-06-08)
 - [[joint-typicality-decoding]] — Joint-Typicality (Typical-Set) Decoding (information-theory) (2026-06-08)
 - [[elias-omega-code]] — Elias's Universal Code for Integers (C_omega) (information-theory) (2026-06-08)
 - [[self-delimiting-integer-codes]] — Self-Delimiting Codes for Integers (information-theory) (2026-06-08)

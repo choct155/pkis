@@ -1724,3 +1724,12 @@
 ## [2026-06-08] committed | technique
 - Committed: joint-typicality-decoding → techniques/joint-typicality-decoding.md
 - IRI: pkis:technique:joint-typicality-decoding
+
+## [2026-06-08] staged | node-stub (technique)
+- Staged: random-coding-argument (id: 6ba79a37-dda2-4ce6-a013-1fa31f71b1d5)
+- Title: Random Coding Argument
+- needs_canonical_source: False
+
+## [2026-06-08] committed | technique
+- Committed: random-coding-argument → techniques/random-coding-argument.md
+- IRI: pkis:technique:random-coding-argument
