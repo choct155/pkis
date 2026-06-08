@@ -2037,3 +2037,12 @@
 ## [2026-06-08] committed | concept
 - Committed: broadcast-channel → concepts/broadcast-channel.md
 - IRI: pkis:concept:broadcast-channel
+
+## [2026-06-08] staged | node-stub (concept)
+- Staged: message-passing (id: 894e6261-00f5-4327-aa9c-c1976bd2e0c5)
+- Title: Message Passing
+- needs_canonical_source: False
+
+## [2026-06-08] committed | concept
+- Committed: message-passing → concepts/message-passing.md
+- IRI: pkis:concept:message-passing
