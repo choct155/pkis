@@ -1376,3 +1376,12 @@
 ## [2026-06-08] committed | principle
 - Committed: likelihood-principle → principles/likelihood-principle.md
 - IRI: pkis:principle:likelihood-principle
+
+## [2026-06-08] staged | node-stub (concept)
+- Staged: marginal-likelihood (id: 9f527490-c069-4803-bc17-b28744d25ce5)
+- Title: Marginal Likelihood (Model Evidence)
+- needs_canonical_source: False
+
+## [2026-06-08] committed | concept
+- Committed: marginal-likelihood → concepts/marginal-likelihood.md
+- IRI: pkis:concept:marginal-likelihood

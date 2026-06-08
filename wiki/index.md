@@ -290,6 +290,7 @@
 - [[liu-machine-unlearning-llm-2024]] — Rethinking Machine Unlearning for LLMs: post-training knowledge editing survey (deep-learning, ai-safety) (2026-05-20)
 
 ## Concepts
+- [[marginal-likelihood]] — Marginal Likelihood (Model Evidence) (bayesian-stats) (2026-06-08)
 - [[channel-capacity]] — Channel Capacity (information-theory) (2026-06-08)
 - [[binary-symmetric-channel]] — Binary Symmetric Channel (information-theory) (2026-06-08)
 - [[shannon-information-content]] — Shannon Information Content (information-theory, statistical-learning) (2026-06-08)
