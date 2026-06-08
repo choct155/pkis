@@ -3409,3 +3409,6 @@
 
 ## [2026-06-08] edit | edit_node
 - pkis:technique:neural-networks: fields=[] sections=['Probabilistic Interpretation of Supervised Training (MacKay Ch. 44)']
+
+## [2026-06-08] edit | edit_node
+- pkis:technique:gaussian-process-regression: fields=[] sections=['Predictive equations via the partitioned inverse']
