@@ -3073,3 +3073,6 @@
 
 ## [2026-06-08] edit | edit_node
 - pkis:concept:decision-theory-foundations: fields=[] sections=["MacKay's Formulation: Maximize Expected Utility"]
+
+## [2026-06-08] edit | edit_node
+- pkis:concept:expected-loss: fields=[] sections=['Loss as Negative Utility (MacKay)']
