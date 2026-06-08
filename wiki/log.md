@@ -2621,3 +2621,12 @@
 ## [2026-06-08] committed | principle
 - Committed: information-theoretic-view-monte-carlo → principles/information-theoretic-view-monte-carlo.md
 - IRI: pkis:principle:information-theoretic-view-monte-carlo
+
+## [2026-06-08] staged | node-stub (framework)
+- Staged: ising-model (id: 8850a07d-a4d5-42ef-ab13-cc7a1f211e38)
+- Title: Ising Model
+- needs_canonical_source: False
+
+## [2026-06-08] committed | framework
+- Committed: ising-model → frameworks/ising-model.md
+- IRI: pkis:framework:ising-model
