@@ -3406,3 +3406,6 @@
 
 ## [2026-06-08] edit | edit_node
 - pkis:technique:backpropagation: fields=[] sections=['What Backpropagation Computes: Gradient of the Regularized Objective']
+
+## [2026-06-08] edit | edit_node
+- pkis:technique:neural-networks: fields=[] sections=['Probabilistic Interpretation of Supervised Training (MacKay Ch. 44)']
