@@ -2522,3 +2522,6 @@
 
 ## [2026-06-08] edit | edit_node
 - pkis:technique:belief-propagation: fields=[] sections=['Belief Propagation as Forward-Backward on a Trellis']
+
+## [2026-06-08] edit | edit_node
+- pkis:technique:sum-product-algorithm: fields=[] sections=['Factor-graph formulation: the two message rules']

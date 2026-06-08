@@ -62,3 +62,16 @@ It is the unifying generalization of the forward-backward algorithm and of belie
 
 ## Bitwise Decoding on a Trellis (Forward-Backward)
 Replacing the min and sum of the Viterbi algorithm by sum and product, and the edge costs by the likelihoods $P(y_n\mid t_n)$ themselves, turns trellis message passing into the **sum-product algorithm** for *bitwise* decoding. The forward messages $\alpha_i=\sum_{j\in\mathcal{P}(i)} w_{ij}\alpha_j$ and backward messages $\beta_j=\sum_{i:\,j\in\mathcal{P}(i)} w_{ij}\beta_i$ combine to give each bit's posterior marginal $P(t_n=t\mid\mathbf{y})\propto\sum \alpha_j w_{ij}\beta_i$ over edges carrying value $t$. This trellis instance is exactly the **forward-backward / BCJR** algorithm, demonstrating that sum-product on a chain marginalizes in time linear in the number of edges.
+
+## Factor-graph formulation: the two message rules
+On a factor graph, the algorithm passes messages of two types along each edge, both functions of the adjacent variable $x_n$: variable-to-factor messages $q_{n\to m}$ and factor-to-variable messages $r_{m\to n}$.
+
+**Variable to factor** (multiply incoming factor messages, excluding the recipient):
+$$q_{n\to m}(x_n) = \!\!\prod_{m'\in M(n)\setminus m}\!\! r_{m'\to n}(x_n).$$
+
+**Factor to variable** (sum the factor times incoming variable messages over all of $\mathbf{x}_m$ except $x_n$):
+$$r_{m\to n}(x_n) = \sum_{\mathbf{x}_{m\setminus n}}\Big( f_m(\mathbf{x}_m)\!\!\prod_{n'\in N(m)\setminus n}\!\! q_{n'\to m}(x_{n'})\Big).$$
+
+Leaf nodes seed the recursion: a leaf variable broadcasts $q_{n\to m}(x_n)=1$; a leaf factor broadcasts $r_{m\to n}(x_n)=f_m(x_n)$. A message is emitted once all messages it depends on have arrived, so after a number of steps equal to the graph diameter every edge carries a message in each direction. The marginal is then the product of all incoming factor messages at a variable,
+$$Z_n(x_n) = \!\prod_{m\in M(n)}\! r_{m\to n}(x_n),$$
+with $Z = \sum_{x_n} Z_n(x_n)$ and $P_n(x_n) = Z_n(x_n)/Z$. On-the-fly normalization of the $q$ messages keeps values from over/under-flowing, and passing log-messages turns the products into sums (at the cost of softmax combinations $\ln\sum_i e^{l_i}$).
