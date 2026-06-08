@@ -3142,3 +3142,12 @@
 ## [2026-06-08] committed | concept
 - Committed: boltzmann-machine-hidden-units → concepts/boltzmann-machine-hidden-units.md
 - IRI: pkis:concept:boltzmann-machine-hidden-units
+
+## [2026-06-08] staged | node-stub (concept)
+- Staged: multilayer-perceptron (id: 0592251a-672f-40b3-9440-92c784b016b8)
+- Title: Multilayer Perceptron (Feedforward Network)
+- needs_canonical_source: False
+
+## [2026-06-08] committed | concept
+- Committed: multilayer-perceptron → concepts/multilayer-perceptron.md
+- IRI: pkis:concept:multilayer-perceptron

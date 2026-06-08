@@ -290,6 +290,7 @@
 - [[liu-machine-unlearning-llm-2024]] — Rethinking Machine Unlearning for LLMs: post-training knowledge editing survey (deep-learning, ai-safety) (2026-05-20)
 
 ## Concepts
+- [[multilayer-perceptron]] — Multilayer Perceptron (Feedforward Network) (deep-learning) (2026-06-08)
 - [[boltzmann-machine-hidden-units]] — Hidden Units in Boltzmann Machines (deep-learning, statistical-learning) (2026-06-08)
 - [[lyapunov-function]] — Lyapunov Function and Attractor Dynamics (deep-learning, statistical-learning) (2026-06-08)
 - [[associative-memory]] — Associative (Content-Addressable) Memory (deep-learning, statistical-learning) (2026-06-08)
