@@ -1484,3 +1484,12 @@
 ## [2026-06-08] committed | concept
 - Committed: stream-codes → concepts/stream-codes.md
 - IRI: pkis:concept:stream-codes
+
+## [2026-06-08] staged | node-stub (principle)
+- Staged: compression-as-probabilistic-modelling (id: 19e40963-27e5-4397-8f5c-a39731fdfc87)
+- Title: Compression as Probabilistic Modelling
+- needs_canonical_source: False
+
+## [2026-06-08] committed | principle
+- Committed: compression-as-probabilistic-modelling → principles/compression-as-probabilistic-modelling.md
+- IRI: pkis:principle:compression-as-probabilistic-modelling
