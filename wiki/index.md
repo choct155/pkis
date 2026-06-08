@@ -290,6 +290,7 @@
 - [[liu-machine-unlearning-llm-2024]] — Rethinking Machine Unlearning for LLMs: post-training knowledge editing survey (deep-learning, ai-safety) (2026-05-20)
 
 ## Concepts
+- [[turbo-code]] — Turbo Code (information-theory) (2026-06-08)
 - [[convolutional-code]] — Convolutional Code (information-theory) (2026-06-08)
 - [[tanner-graph]] — Tanner Graph (Bipartite Bit-Check Graph) (information-theory) (2026-06-08)
 - [[low-density-parity-check-code]] — Low-Density Parity-Check Code (Gallager Code) (information-theory) (2026-06-08)

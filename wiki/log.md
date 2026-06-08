@@ -3250,3 +3250,12 @@
 ## [2026-06-08] committed | concept
 - Committed: convolutional-code → concepts/convolutional-code.md
 - IRI: pkis:concept:convolutional-code
+
+## [2026-06-08] staged | node-stub (concept)
+- Staged: turbo-code (id: 2d905d35-0e75-42ac-b401-accad7169e81)
+- Title: Turbo Code
+- needs_canonical_source: False
+
+## [2026-06-08] committed | concept
+- Committed: turbo-code → concepts/turbo-code.md
+- IRI: pkis:concept:turbo-code
