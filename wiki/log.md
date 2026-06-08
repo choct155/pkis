@@ -3421,3 +3421,6 @@
 
 ## [2026-06-08] edit | edit_node
 - pkis:technique:sum-product-algorithm: fields=[] sections=['Application: Decoding LDPC Codes']
+
+## [2026-06-08] edit | edit_node
+- pkis:concept:linear-block-code: fields=[] sections=['Sparse Parity-Check Matrices and LDPC Codes']

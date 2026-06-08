@@ -53,3 +53,6 @@ Linearity is the organizing principle of almost all real error-correcting codes:
 ## Connections
 - [[noisy-channel-coding-theorem]] — uses: the coding theorem still holds (non-constructively) for linear codes
 [To be populated during integration]
+
+## Sparse Parity-Check Matrices and LDPC Codes
+A linear block code is fixed once its codeword subspace is fixed, but the *parity-check matrix* representing it is not unique: any $\mathbf{H}' = \mathbf{P}\mathbf{H}$ with invertible $\mathbf{P}$ describes the same code. This freedom is exploited by **low-density parity-check (LDPC) codes** (MacKay ITILA Ch. 47), which choose an $\mathbf{H}$ that is *sparse* — few 1s per row and column. Sparsity is what makes near-optimal iterative (sum-product) decoding tractable, in time linear in the blocklength. Not every linear code admits such a representation, however: a counting/pigeonhole argument shows there are far more distinct random linear codes ($2^{N^2R(1-R)}$) than low-density matrices of bounded row weight, so a generic random linear code provably has *no* low-density parity-check matrix. LDPC codes are thus a special, decodable subclass of linear block codes — yet still good, and capacity-approaching.
