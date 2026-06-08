@@ -2019,3 +2019,12 @@
 ## [2026-06-08] committed | result
 - Committed: slepian-wolf-theorem → results/slepian-wolf-theorem.md
 - IRI: pkis:result:slepian-wolf-theorem
+
+## [2026-06-08] staged | node-stub (concept)
+- Staged: multiple-access-channel (id: 2fde3400-074e-4e9e-b88e-7a2ef4df630c)
+- Title: Multiple-Access Channel
+- needs_canonical_source: False
+
+## [2026-06-08] committed | concept
+- Committed: multiple-access-channel → concepts/multiple-access-channel.md
+- IRI: pkis:concept:multiple-access-channel
