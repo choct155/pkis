@@ -2854,3 +2854,6 @@
 
 ## [2026-06-08] edit | edit_node
 - pkis:technique:gibbs-sampler: fields=[] sections=['Coupled Gibbs Sampling for Exact Samples']
+
+## [2026-06-08] edit | edit_node
+- pkis:technique:mean-field-approximation: fields=[] sections=['Mean-Field as Variational Free-Energy Minimization (Spin Systems)']
