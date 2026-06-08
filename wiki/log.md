@@ -3133,3 +3133,12 @@
 ## [2026-06-08] committed | technique
 - Committed: boltzmann-machine-learning-rule → techniques/boltzmann-machine-learning-rule.md
 - IRI: pkis:technique:boltzmann-machine-learning-rule
+
+## [2026-06-08] staged | node-stub (concept)
+- Staged: boltzmann-machine-hidden-units (id: f053581c-d03a-4422-8266-d63a677eeedf)
+- Title: Hidden Units in Boltzmann Machines
+- needs_canonical_source: False
+
+## [2026-06-08] committed | concept
+- Committed: boltzmann-machine-hidden-units → concepts/boltzmann-machine-hidden-units.md
+- IRI: pkis:concept:boltzmann-machine-hidden-units
