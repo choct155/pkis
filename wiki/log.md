@@ -2280,3 +2280,6 @@
 
 ## [2026-06-08] edit | edit_node
 - pkis:concept:channel-capacity: fields=[] sections=['Noiseless Constrained Channels']
+
+## [2026-06-08] edit | edit_node
+- pkis:concept:markov-chains: fields=[] sections=['Maximum-Entropy Chains on Constrained State Machines']
