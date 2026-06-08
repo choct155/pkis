@@ -40,10 +40,10 @@ The information content (or "surprise") of a single outcome $x=a_i$ with probabi
 $$h(x=a_i) \equiv \log_2 \frac{1}{p_i} \quad \text{bits.}$$
 Improbable outcomes carry more information than probable ones — observing a rare event tells you more. It is additive over independent events ($h(x,y)=h(x)+h(y)$), which forces the logarithm.
 
-## Relationship to entropy
+### Relationship to entropy
 The **entropy** $H(X)=\sum_i p_i \log_2 \tfrac{1}{p_i}$ is the *expected* (average) Shannon information content of the ensemble: $H(X)=\mathbb{E}[h(x)]$. So information content is the per-outcome quantity; entropy is its mean. This is the bridge from "how surprising is this one outcome" to "how many bits per symbol does this source need."
 
-## Why it matters
+### Why it matters
 Information content is the natural codeword-length target: an optimal code assigns $\approx h(x)$ bits to outcome $x$ (achieved by arithmetic coding, approached by Huffman). It also underlies the typical set — strings whose average information content per symbol is $\approx H$.
 
 ## Reading Path

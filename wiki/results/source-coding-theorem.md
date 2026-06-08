@@ -38,10 +38,10 @@ uses:
 ## Definition
 $N$ i.i.d. outcomes from a source $X$ can be losslessly compressed into about $NH(X)$ bits (and no fewer) as $N\to\infty$: the entropy $H(X)$ is the fundamental limit of lossless compression, in bits per symbol. More precisely, for any $\epsilon,\delta$, for large enough $N$ one can encode blocks at $H+\epsilon$ bits/symbol with error probability $<\delta$, and compression below $H$ is impossible with vanishing error.
 
-## Mechanism — via the typical set
+### Mechanism — via the typical set
 The proof rests on **typicality**: almost all probability sits on $\approx 2^{NH}$ typical strings, each of probability $\approx 2^{-NH}$. So you only need to assign codewords to the typical set — $\log_2(2^{NH}) = NH$ bits — and accept negligible error on the rest. The law of large numbers / Chebyshev's inequality (MacKay §4.5) make "almost all" precise.
 
-## Why it matters
+### Why it matters
 It establishes entropy as a physically meaningful limit, not just a formula. It is *instantiated* by practical codes — Huffman (symbol codes) and arithmetic coding (stream codes) — which approach $H$ bits/symbol. It is the data-compression half of Shannon's program; the noisy-channel coding theorem is the transmission half.
 
 ## Reading Path
