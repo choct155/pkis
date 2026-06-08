@@ -2516,3 +2516,6 @@
 
 ## [2026-06-08] edit | edit_node
 - pkis:technique:min-sum-algorithm: fields=[] sections=['Viterbi Decoding on a Trellis']
+
+## [2026-06-08] edit | edit_node
+- pkis:technique:sum-product-algorithm: fields=[] sections=['Bitwise Decoding on a Trellis (Forward-Backward)']

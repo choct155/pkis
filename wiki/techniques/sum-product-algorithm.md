@@ -59,3 +59,6 @@ It is the unifying generalization of the forward-backward algorithm and of belie
 - [[generating-functions]] — uses: Counting paths via weighted sums connects to generating-function bookkeeping of combinatorial counts.
 - [[message-passing]] — specializes: Sum-product is the marginalizing instance of the general message-passing paradigm.
 [To be populated during integration]
+
+## Bitwise Decoding on a Trellis (Forward-Backward)
+Replacing the min and sum of the Viterbi algorithm by sum and product, and the edge costs by the likelihoods $P(y_n\mid t_n)$ themselves, turns trellis message passing into the **sum-product algorithm** for *bitwise* decoding. The forward messages $\alpha_i=\sum_{j\in\mathcal{P}(i)} w_{ij}\alpha_j$ and backward messages $\beta_j=\sum_{i:\,j\in\mathcal{P}(i)} w_{ij}\beta_i$ combine to give each bit's posterior marginal $P(t_n=t\mid\mathbf{y})\propto\sum \alpha_j w_{ij}\beta_i$ over edges carrying value $t$. This trellis instance is exactly the **forward-backward / BCJR** algorithm, demonstrating that sum-product on a chain marginalizes in time linear in the number of edges.
