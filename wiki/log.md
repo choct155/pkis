@@ -1267,3 +1267,7 @@
 ## [2026-06-08] committed | result
 - Committed: kraft-inequality → results/kraft-inequality.md
 - IRI: pkis:result:kraft-inequality
+
+## [2026-06-08] committed | technique
+- Committed: huffman-coding → techniques/huffman-coding.md
+- IRI: pkis:technique:huffman-coding
