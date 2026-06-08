@@ -3169,3 +3169,12 @@
 ## [2026-06-08] committed | concept
 - Committed: covariance-function → concepts/covariance-function.md
 - IRI: pkis:concept:covariance-function
+
+## [2026-06-08] staged | node-stub (result)
+- Staged: neural-network-gaussian-process-limit (id: c44ab244-9b7b-4093-abb3-8ccf0ec348ce)
+- Title: Neural Network → Gaussian Process Limit (Infinite Width)
+- needs_canonical_source: False
+
+## [2026-06-08] committed | result
+- Committed: neural-network-gaussian-process-limit → results/neural-network-gaussian-process-limit.md
+- IRI: pkis:result:neural-network-gaussian-process-limit

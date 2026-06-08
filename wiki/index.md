@@ -601,6 +601,7 @@
 - [[constraint-propagation]] — Reducing a constraint satisfaction problem by iteratively eliminating inconsistent values from variable domains (knowledge-representation) (2026-05-20)
 
 ## Results
+- [[neural-network-gaussian-process-limit]] — Neural Network → Gaussian Process Limit (Infinite Width) (statistical-learning, bayesian-stats) (2026-06-08)
 - [[hopfield-network-capacity]] — Capacity of the Hopfield Network (0.138N) (deep-learning, statistical-learning) (2026-06-08)
 - [[cover-function-counting-theorem]] — Cover's Function-Counting Theorem (deep-learning, statistical-learning) (2026-06-08)
 - [[capacity-of-a-single-neuron]] — Capacity of a Single Neuron (Two Bits per Weight) (deep-learning, statistical-learning) (2026-06-08)
