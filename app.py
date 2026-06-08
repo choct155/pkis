@@ -111,7 +111,13 @@ PODCHASER_KEY        = os.environ.get("PODCHASER_KEY", "")
 
 # MCP JSON-RPC 2.0 Streamable HTTP transport constants
 JSONRPC_VERSION = "2.0"
-MCP_PROTOCOL_VERSION = "2024-11-05"
+# Protocol versions we can speak, newest first. We negotiate: on `initialize`
+# we echo back the client's requested version if we support it, otherwise our
+# newest. Advertising only the legacy 2024-11-05 made claude.ai's connector fall
+# back to the legacy HTTP+SSE transport, which POSTs to a session-scoped URL
+# (`/mcp/<session>`) our single-endpoint route never matched → persistent 404s.
+MCP_SUPPORTED_PROTOCOL_VERSIONS = ["2025-06-18", "2025-03-26", "2024-11-05"]
+MCP_PROTOCOL_VERSION = MCP_SUPPORTED_PROTOCOL_VERSIONS[0]
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
@@ -4808,8 +4814,14 @@ def handle_jsonrpc(body):
     params = body.get("params") or {}
 
     if method == "initialize":
+        # Negotiate: honor the client's requested version if we support it, else
+        # offer our newest. Echoing the client's version keeps modern clients
+        # (claude.ai connector) on single-endpoint Streamable HTTP instead of the
+        # legacy SSE transport (which 404'd against our single /mcp route).
+        requested = params.get("protocolVersion")
+        negotiated = requested if requested in MCP_SUPPORTED_PROTOCOL_VERSIONS else MCP_PROTOCOL_VERSION
         return _jsonrpc_result(req_id, {
-            "protocolVersion": MCP_PROTOCOL_VERSION,
+            "protocolVersion": negotiated,
             "capabilities": {"tools": {}},
             "serverInfo": {"name": "PKIS Wiki", "version": "1.0.0"}
         })
@@ -4847,15 +4859,31 @@ def handle_jsonrpc(body):
 
 
 @app.route("/mcp", methods=["GET", "POST"])
-def mcp_endpoint():
+@app.route("/mcp/<path:session>", methods=["GET", "POST"])
+def mcp_endpoint(session=None):
     """
     MCP Streamable HTTP transport endpoint.
 
-    GET  → 405 (SSE server-push not implemented)
+    Routes BOTH the canonical `/mcp` and any session-suffixed `/mcp/<session>`.
+    claude.ai's connector persists a per-connector session id and POSTs its
+    sub-channel traffic to `/mcp/<session>`; before this catch-all those
+    requests 404'd (≈86% of connector traffic), which is what made the connector
+    intermittently "unable to read" the wiki. The session segment is accepted
+    and ignored — this server is stateless (no per-session state to look up).
+
+    GET  → 405 (SSE server-push not implemented; reads return inline over POST)
     POST → JSON-RPC 2.0 if body has {"jsonrpc": "2.0", ...}
            Legacy format {"tool": "...", "params": {...}} still accepted for
            backward compatibility.
     """
+    if session is not None:
+        # Visibility into the session-suffixed sub-channel without needing a
+        # redeploy to diagnose; confirms the catch-all is doing its job.
+        logger.info(
+            "MCP session-suffixed request: %s /mcp/%s ua=%r",
+            request.method, session, request.headers.get("User-Agent", "")
+        )
+
     if request.method == "GET":
         return Response("Server-Sent Events not supported", status=405)
 
