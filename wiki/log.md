@@ -2055,3 +2055,12 @@
 ## [2026-06-08] committed | technique
 - Committed: sum-product-algorithm → techniques/sum-product-algorithm.md
 - IRI: pkis:technique:sum-product-algorithm
+
+## [2026-06-08] staged | node-stub (technique)
+- Staged: min-sum-algorithm (id: ecf2e24e-f41d-4f3f-8ced-50db82a9e238)
+- Title: Min-Sum (Viterbi) Algorithm
+- needs_canonical_source: False
+
+## [2026-06-08] committed | technique
+- Committed: min-sum-algorithm → techniques/min-sum-algorithm.md
+- IRI: pkis:technique:min-sum-algorithm
