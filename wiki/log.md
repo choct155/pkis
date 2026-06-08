@@ -1439,3 +1439,12 @@
 ## [2026-06-08] committed | concept
 - Committed: uniquely-decodable-codes → concepts/uniquely-decodable-codes.md
 - IRI: pkis:concept:uniquely-decodable-codes
+
+## [2026-06-08] staged | node-stub (concept)
+- Staged: prefix-code (id: 678b7e2c-261f-45cf-a127-2c7fdb93b3fe)
+- Title: Prefix Codes (Instantaneous Codes)
+- needs_canonical_source: False
+
+## [2026-06-08] committed | concept
+- Committed: prefix-code → concepts/prefix-code.md
+- IRI: pkis:concept:prefix-code
