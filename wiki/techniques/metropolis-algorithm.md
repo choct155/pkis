@@ -7,7 +7,7 @@ contrasts-with:
 - gibbs-sampler
 coverage: 3
 date_created: 2026-05-20
-date_updated: 2026-05-20
+date_updated: '2026-06-08'
 domain:
 - bayesian-stats
 id: pkis:technique:metropolis-algorithm
@@ -49,3 +49,15 @@ Unlike the Gibbs sampler, the Metropolis algorithm is a non-augmentation method 
 - [[gibbs-sampler]] — contrasts-with: On the same Ising target, Metropolis accepts unfavourable moves about twice as often, trading off mixing speed differently from the Gibbs conditional update.
 - [[ising-model]] — applies: Metropolis spin-flip acceptance is an alternative MCMC sampler for the Ising Boltzmann distribution.
 - [[mcmc]] — specializes: Metropolis-Hastings is the foundational instance of Markov chain Monte Carlo.
+
+## MacKay's Formulation: Why Local Proposals Beat Global Ones
+MacKay frames the Metropolis-Hastings algorithm as the answer to a defect of importance and rejection sampling: both demand a single proposal $Q(x)$ resembling $P(x)$ everywhere, which is hopeless in large problems. Metropolis instead uses a proposal $Q(x';x^{(t)})$ that **depends on the current state** — typically a Gaussian centred on $x^{(t)}$ — so $Q$ need not resemble $P$ at all.
+
+A proposed $x'$ is accepted with probability $\min(1,a)$ where
+$$a = \frac{P^*(x')}{P^*(x^{(t)})}\,\frac{Q(x^{(t)};x')}{Q(x';x^{(t)})}.$$
+For symmetric $Q$ the ratio of $Q$'s is 1 (the original Metropolis method); the general asymmetric case is Metropolis-Hastings. Crucially, a *rejection* writes the current state onto the sample list again — unlike rejection sampling, where rejected points vanish.
+
+### Random-walk penalty
+MacKay's key quantitative lesson: a random-walk Metropolis chain explores by diffusion, so with step size $\ell$ and largest length scale $L$ it needs at least
+$$T \simeq (L/\ell)^2$$
+iterations per independent sample (and a further factor $1/f$ if only a fraction $f$ of proposals are accepted). In $N$-dimensional Gaussian targets this becomes $T\simeq(\sigma_{\max}/\sigma_{\min})^2$ — no catastrophic dependence on $N$ (good news, unlike rejection sampling), but a punishing dependence on the conditioning of the target. Abolishing this random walk motivates Hamiltonian Monte Carlo and overrelaxation.

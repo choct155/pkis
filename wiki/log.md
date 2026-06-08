@@ -2756,3 +2756,74 @@
 ## [2026-06-08] committed | concept
 - Committed: likelihood-equivalence → concepts/likelihood-equivalence.md
 - IRI: pkis:concept:likelihood-equivalence
+
+## [2026-06-08] edges | add_connections
+- monte-carlo-estimator —prerequisite-of→ importance-sampling
+- monte-carlo-estimator —prerequisite-of→ mcmc
+- uniform-sampling-curse —uses→ typical-set
+- uniform-sampling-curse —instantiates→ curse-of-dimensionality
+- uniform-sampling-curse —prerequisite-of→ importance-sampling
+- rejection-sampling —contrasts-with→ importance-sampling
+- rejection-sampling —contrasts-with→ mcmc
+- detailed-balance —prerequisite-of→ mcmc
+- detailed-balance —applies→ metropolis-algorithm
+- detailed-balance —applies→ gibbs-sampler
+- metropolis-algorithm —specializes→ mcmc
+- gibbs-sampler —specializes→ metropolis-algorithm
+- slice-sampling —specializes→ mcmc
+- slice-sampling —uses→ detailed-balance
+- slice-sampling —contrasts-with→ metropolis-algorithm
+- slice-sampling —analogous-to→ rejection-sampling
+- overrelaxation —specializes→ gibbs-sampler
+- overrelaxation —applies→ random-walk-behaviour-mcmc
+- hmc —applies→ random-walk-behaviour-mcmc
+- random-walk-behaviour-mcmc —prerequisite-of→ hmc
+- simulated-annealing —extends→ mcmc
+- simulated-annealing —uses→ metropolis-algorithm
+- simulated-annealing —contrasts-with→ overrelaxation
+- information-theoretic-view-monte-carlo —applies→ metropolis-algorithm
+- information-theoretic-view-monte-carlo —analogous-to→ channel-capacity
+- overrelaxation —contrasts-with→ hmc
+- partition-function —prerequisite-of→ ising-model
+- transfer-matrix-method —applies→ ising-model
+- transfer-matrix-method —uses→ partition-function
+- ising-model —instantiates→ phase-transition
+- phase-transition —uses→ partition-function
+- ising-model —specializes→ undirected-graphical-models
+- gibbs-sampler —applies→ ising-model
+- metropolis-algorithm —applies→ ising-model
+- transfer-matrix-method —analogous-to→ sum-product-algorithm
+- metropolis-algorithm —contrasts-with→ gibbs-sampler
+- coupling-from-the-past —instantiates→ exact-sampling
+- exact-sampling —contrasts-with→ mcmc
+- coupling-from-the-past —uses→ mcmc
+- monotone-coupling —extends→ coupling-from-the-past
+- monotone-coupling —uses→ gibbs-sampler
+- gibbs-sampler —applies→ exact-sampling
+- monotone-coupling —prerequisite-of→ exact-sampling
+- variational-free-energy —generalizes→ mean-field-approximation
+- variational-free-energy —uses→ kl-divergence
+- variational-free-energy —analogous-to→ elbo
+- variational-free-energy —prerequisite-of→ variational-inference
+- variational-over-compactness —specializes→ kl-divergence
+- variational-over-compactness —applies→ variational-free-energy
+- variational-over-compactness —contrasts-with→ variational-inference
+- coordinate-ascent-vi —instantiates→ variational-free-energy
+- mean-field-approximation —uses→ variational-free-energy
+- independent-component-analysis —instantiates→ latent-variable-models
+- independent-component-analysis —applies→ blind-source-separation
+- independent-component-analysis —uses→ natural-gradient
+- independent-component-analysis —uses→ maximum-likelihood-estimation
+- independent-component-analysis —contrasts-with→ principal-component-analysis
+- natural-gradient —extends→ gradient-descent
+- principal-component-analysis —instantiates→ latent-variable-models
+- gaussian-mixture-models —instantiates→ latent-variable-models
+- benfords-law —instantiates→ proportionality-postulate
+- benfords-law —uses→ automatic-priors
+- likelihood-equivalence —applies→ directed-graphical-models
+- likelihood-equivalence —uses→ bayesian-model-comparison
+- likelihood-equivalence —contrasts-with→ likelihood-principle
+- likelihood-equivalence —uses→ dirichlet-distribution
+
+## [2026-06-08] edit | edit_node
+- pkis:technique:metropolis-algorithm: fields=[] sections=["MacKay's Formulation: Why Local Proposals Beat Global Ones"]
