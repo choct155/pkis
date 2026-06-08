@@ -3124,3 +3124,12 @@
 ## [2026-06-08] committed | framework
 - Committed: boltzmann-machine → frameworks/boltzmann-machine.md
 - IRI: pkis:framework:boltzmann-machine
+
+## [2026-06-08] staged | node-stub (technique)
+- Staged: boltzmann-machine-learning-rule (id: 36a5bf90-ed49-4faa-90e1-a908b1637b97)
+- Title: Boltzmann Machine Learning Rule (Wake-Sleep)
+- needs_canonical_source: False
+
+## [2026-06-08] committed | technique
+- Committed: boltzmann-machine-learning-rule → techniques/boltzmann-machine-learning-rule.md
+- IRI: pkis:technique:boltzmann-machine-learning-rule
