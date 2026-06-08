@@ -5,7 +5,7 @@ applies:
 - multilayer-perceptron
 coverage: 4
 date_created: 2026-05-20
-date_updated: 2026-05-20
+date_updated: '2026-06-08'
 domain:
 - deep-learning
 - statistical-learning
@@ -43,3 +43,16 @@ Efficient computation of gradients in layered computational graphs via the chain
 ## Connections
 - [[multilayer-perceptron]] — applies: Backprop is the efficient chain-rule procedure for computing gradients of an MLP's parameters.
 - [[gradient-descent]] — uses: Backprop supplies the gradient that gradient descent uses to minimize the training objective M(w).
+
+## What Backpropagation Computes: Gradient of the Regularized Objective
+An MLP is trained on data $D=\{\mathbf{x}^{(n)}, \mathbf{t}^{(n)}\}$ by minimizing an error function, e.g. the sum-of-squares
+
+$$E_D(\mathbf{w}) = \tfrac{1}{2}\sum_n\sum_i\big(t_i^{(n)} - y_i(\mathbf{x}^{(n)};\mathbf{w})\big)^2.$$
+
+Minimization proceeds by repeated evaluation of $\nabla E_D$, and **this gradient is exactly what backpropagation computes efficiently** (Rumelhart et al., 1986) — a single forward pass followed by a backward pass that applies the chain rule layer by layer, reusing intermediate quantities so the whole gradient costs roughly the same as one forward evaluation.
+
+In practice the objective is regularized (weight decay):
+
+$$M(\mathbf{w}) = \beta E_D + \alpha E_W,\qquad E_W = \tfrac{1}{2}\sum_i w_i^2,$$
+
+which penalises large weights and curbs overfitting. Backpropagation supplies $\nabla M$ just as readily — the regularizer's gradient $\alpha\mathbf{w}$ is trivial — and gradient descent on $M(\mathbf{w})$ has been used to solve non-trivial tasks (symmetry detection, text-to-speech in NETtalk, telescope focussing). For classification heads the squared error $\beta E_D$ is replaced by the cross-entropy negative log likelihood, but the backprop mechanism for obtaining the gradient is unchanged.

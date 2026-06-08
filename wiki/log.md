@@ -3403,3 +3403,6 @@
 
 ## [2026-06-08] edit | edit_node
 - pkis:technique:gibbs-sampler: fields=[] sections=['Application: Sampling a Boltzmann Machine']
+
+## [2026-06-08] edit | edit_node
+- pkis:technique:backpropagation: fields=[] sections=['What Backpropagation Computes: Gradient of the Regularized Objective']
