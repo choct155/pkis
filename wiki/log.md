@@ -1622,3 +1622,6 @@
 
 ## [2026-06-08] edit | edit_node
 - pkis:technique:huffman-coding: fields=[] sections=["Optimality proof and the 'extra bit' defect"]
+
+## [2026-06-08] edit | edit_node
+- pkis:result:kraft-inequality: fields=[] sections=['Kraft–McMillan: both directions']
