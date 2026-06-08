@@ -2585,3 +2585,12 @@
 ## [2026-06-08] committed | principle
 - Committed: detailed-balance → principles/detailed-balance.md
 - IRI: pkis:principle:detailed-balance
+
+## [2026-06-08] staged | node-stub (concept)
+- Staged: random-walk-behaviour-mcmc (id: aa77e83b-7729-435b-add8-3b1bd21b4c02)
+- Title: Random-Walk Behaviour in MCMC
+- needs_canonical_source: False
+
+## [2026-06-08] committed | concept
+- Committed: random-walk-behaviour-mcmc → concepts/random-walk-behaviour-mcmc.md
+- IRI: pkis:concept:random-walk-behaviour-mcmc
