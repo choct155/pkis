@@ -1998,3 +1998,6 @@
 
 ## [2026-06-08] edit | edit_node
 - pkis:result:noisy-channel-coding-theorem: fields=[] sections=['## Geometric proof: sphere packing']
+
+## [2026-06-08] edit | edit_node
+- pkis:concept:likelihood-ratio-evidence: fields=[] sections=['## Bitwise Confirmation of a Hash Hit']
