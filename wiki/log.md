@@ -2558,3 +2558,12 @@
 ## [2026-06-08] committed | principle
 - Committed: uniform-sampling-curse → principles/uniform-sampling-curse.md
 - IRI: pkis:principle:uniform-sampling-curse
+
+## [2026-06-08] staged | node-stub (technique)
+- Staged: rejection-sampling (id: f40de3f9-b404-4e00-942f-30c5577ee521)
+- Title: Rejection Sampling
+- needs_canonical_source: False
+
+## [2026-06-08] committed | technique
+- Committed: rejection-sampling → techniques/rejection-sampling.md
+- IRI: pkis:technique:rejection-sampling
