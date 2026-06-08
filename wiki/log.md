@@ -1977,3 +1977,6 @@
 
 ## [2026-06-08] edit | edit_node
 - pkis:concept:kl-divergence: fields=[] sections=['MacKay: mutual information as a KL divergence']
+
+## [2026-06-08] edit | edit_node
+- pkis:concept:channel-capacity: fields=[] sections=['## Optimal input distribution and the extended-channel sketch']
