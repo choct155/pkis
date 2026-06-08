@@ -1271,3 +1271,7 @@
 ## [2026-06-08] committed | technique
 - Committed: huffman-coding → techniques/huffman-coding.md
 - IRI: pkis:technique:huffman-coding
+
+## [2026-06-08] committed | technique
+- Committed: arithmetic-coding → techniques/arithmetic-coding.md
+- IRI: pkis:technique:arithmetic-coding
