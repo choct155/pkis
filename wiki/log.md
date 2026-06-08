@@ -3415,3 +3415,6 @@
 
 ## [2026-06-08] edit | edit_node
 - pkis:concept:regularization: fields=[] sections=['Regularization as a stabilized matrix inverse']
+
+## [2026-06-08] edit | edit_node
+- pkis:concept:bayesian-inference: fields=[] sections=['Linear-Gaussian inference yields a closed-form posterior']
