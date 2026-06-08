@@ -2675,3 +2675,12 @@
 ## [2026-06-08] committed | concept
 - Committed: exact-sampling → concepts/exact-sampling.md
 - IRI: pkis:concept:exact-sampling
+
+## [2026-06-08] staged | node-stub (concept)
+- Staged: monotone-coupling (id: 6474bb5a-8ee5-4b6f-8518-78868184df43)
+- Title: Monotone Coupling for Exact Sampling
+- needs_canonical_source: False
+
+## [2026-06-08] committed | concept
+- Committed: monotone-coupling → concepts/monotone-coupling.md
+- IRI: pkis:concept:monotone-coupling
