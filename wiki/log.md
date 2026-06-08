@@ -2397,3 +2397,12 @@
 ## [2026-06-08] committed | technique
 - Committed: max-product-algorithm → techniques/max-product-algorithm.md
 - IRI: pkis:technique:max-product-algorithm
+
+## [2026-06-08] staged | node-stub (technique)
+- Staged: junction-tree-algorithm (id: 9f0b1faf-36cb-4f7d-b0d2-cfcab40e550c)
+- Title: Junction Tree Algorithm
+- needs_canonical_source: False
+
+## [2026-06-08] committed | technique
+- Committed: junction-tree-algorithm → techniques/junction-tree-algorithm.md
+- IRI: pkis:technique:junction-tree-algorithm
