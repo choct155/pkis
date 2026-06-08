@@ -59,3 +59,6 @@ It solves shortest-path and critical-path problems in linear time without enumer
 - [[sum-product-algorithm]] — analogous-to: Same local message structure with the (+,x) semiring replaced by (min,+).
 - [[message-passing]] — specializes: Min-sum is the optimizing (shortest-path) instance of message passing.
 [To be populated during integration]
+
+## Viterbi Decoding on a Trellis
+On the **trellis** of a linear code, the min-sum algorithm *is* the **Viterbi algorithm** for MAP codeword decoding. Each codeword corresponds to a left-to-right path, and because the channel is memoryless the log-likelihood of a codeword is the sum of the bitwise log-likelihoods. Flipping signs, assign each edge the cost $-\log P(y_n\mid t_n)$; the min-sum recursion then finds the minimum-cost path in a number of operations equal to the number of edges in the trellis, replacing the $O(2^{K})$ search over all codewords. Because MAP decoding of a general linear code is NP-complete, the speedup is real only when the code admits a low-width trellis.
