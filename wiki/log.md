@@ -3412,3 +3412,6 @@
 
 ## [2026-06-08] edit | edit_node
 - pkis:technique:gaussian-process-regression: fields=[] sections=['Predictive equations via the partitioned inverse']
+
+## [2026-06-08] edit | edit_node
+- pkis:concept:regularization: fields=[] sections=['Regularization as a stabilized matrix inverse']

@@ -42,3 +42,8 @@ These uses share a common core (constraining the solution space to improve gener
 
 ## Probabilistic Reading: Regularizer as Log-Prior
 Under the learning-as-inference view, a regularizer is not a heuristic complexity penalty but *minus a log prior* over parameters. MacKay writes the prior $P(w\mid\alpha)=\tfrac{1}{Z_W(\alpha)}\exp(-\alpha E_W)$, so minimizing $G(w)+\alpha E_W(w)$ is MAP inference of $w$. The quadratic (ridge / weight-decay) penalty $E_W=\tfrac12\sum_i w_i^2$ corresponds to a zero-mean Gaussian prior with variance $1/\alpha$; an $L_1$ (lasso) penalty corresponds to a Laplacian prior. The regularization strength is therefore an *inverse prior variance*, which makes it a quantity the data can speak to: the evidence framework infers $\alpha$ by maximizing the marginal likelihood, in place of pure cross-validation.
+
+## Regularization as a stabilized matrix inverse
+In linear inverse problems such as deconvolution, regularization appears concretely as a term added inside a matrix inverse. The naive deblurring operator, the pseudoinverse $[\mathbf{R}^T\mathbf{R}]^{-1}\mathbf{R}^T$, is ill-conditioned because $\mathbf{R}^T\mathbf{R}$ has tiny or zero eigenvalues that explosively amplify noise. The optimal linear filter
+$$\mathbf{f}_{MP} = \left[\mathbf{R}^T\mathbf{R} + \tfrac{\sigma_\nu^2}{\sigma_f^2}\mathbf{C}\right]^{-1}\mathbf{R}^T\mathbf{d}$$
+adds $\tfrac{\sigma_\nu^2}{\sigma_f^2}\mathbf{C}$ to floor those eigenvalues, stabilizing the inversion. This term is exactly the contribution of a Gaussian prior on the image, so Tikhonov/ridge-style regularization is revealed as MAP estimation under a Gaussian prior, with the regularization strength set by the noise-to-prior variance ratio $\sigma_\nu^2/\sigma_f^2$.
