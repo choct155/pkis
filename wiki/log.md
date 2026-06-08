@@ -3214,3 +3214,12 @@
 ## [2026-06-08] committed | concept
 - Committed: low-density-parity-check-code → concepts/low-density-parity-check-code.md
 - IRI: pkis:concept:low-density-parity-check-code
+
+## [2026-06-08] staged | node-stub (concept)
+- Staged: tanner-graph (id: 32a6c0a3-69f1-469f-90d2-f1c889a8f720)
+- Title: Tanner Graph (Bipartite Bit-Check Graph)
+- needs_canonical_source: False
+
+## [2026-06-08] committed | concept
+- Committed: tanner-graph → concepts/tanner-graph.md
+- IRI: pkis:concept:tanner-graph
