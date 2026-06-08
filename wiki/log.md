@@ -3439,3 +3439,6 @@
 
 ## [2026-06-08] edit | edit_node
 - pkis:concept:binary-erasure-channel: fields=[] sections=['The q-ary Erasure Channel and Packet Networks']
+
+## [2026-06-08] edit | edit_node
+- pkis:technique:sum-product-algorithm: fields=[] sections=['Erasure-Channel Specialization: the Peeling Decoder']
