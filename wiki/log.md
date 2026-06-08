@@ -3268,3 +3268,12 @@
 ## [2026-06-08] committed | technique
 - Committed: iterative-turbo-decoding → techniques/iterative-turbo-decoding.md
 - IRI: pkis:technique:iterative-turbo-decoding
+
+## [2026-06-08] staged | node-stub (technique)
+- Staged: repeat-accumulate-codes (id: 8a8bca4f-9751-43bb-8230-d1a36630352b)
+- Title: Repeat-Accumulate Codes
+- needs_canonical_source: False
+
+## [2026-06-08] committed | technique
+- Committed: repeat-accumulate-codes → techniques/repeat-accumulate-codes.md
+- IRI: pkis:technique:repeat-accumulate-codes
