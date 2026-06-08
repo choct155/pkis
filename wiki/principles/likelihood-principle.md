@@ -52,3 +52,6 @@ The likelihood principle falls directly out of Bayes' theorem (the posterior dep
 - [[hypothesis-testing]] — contrasts-with: Classical sampling-theory tests condition on the sample space and can violate the likelihood principle.
 - [[bayesian-inference]] — specializes: The likelihood principle is an immediate consequence of Bayes' theorem.
 [To be populated during integration]
+
+## Stopping rules are irrelevant
+MacKay's coin-tossing scenario (Ch. 37) is the canonical demonstration. Dr. Bloggs observes 3 $b$s in 12 tosses. A frequentist who treats $n=12$ as fixed reports $p\approx0.07$ (not significant); one who learns Bloggs intended to stop at the third $b$ (so $n$ is random) reports $p\approx0.03$ (significant) — from *identical data*. The likelihood principle resolves this cleanly: under either stopping rule the likelihood as a function of the bias $p_a$ is proportional to $p_a^{9}(1-p_a)^{3}$ (the stopping rule contributes only a data-independent combinatorial factor), so the Bayesian posterior — and what we have learned about $p_a$ — is the same. Onlookers spying on the tosses, or a janitor revealing the coin was later destroyed, cannot change the inference; only the observed sequence can. The dependence of $p$-values on the stopping rule is, for MacKay, a decisive reason to reject them.

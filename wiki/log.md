@@ -3076,3 +3076,6 @@
 
 ## [2026-06-08] edit | edit_node
 - pkis:concept:expected-loss: fields=[] sections=['Loss as Negative Utility (MacKay)']
+
+## [2026-06-08] edit | edit_node
+- pkis:principle:likelihood-principle: fields=[] sections=['Stopping rules are irrelevant']
