@@ -2974,3 +2974,12 @@
 ## [2026-06-08] committed | principle
 - Committed: learning-as-inference → principles/learning-as-inference.md
 - IRI: pkis:principle:learning-as-inference
+
+## [2026-06-08] staged | node-stub (concept)
+- Staged: weight-decay-as-prior (id: 50ea07ad-7ced-47d0-a1a3-498ffcce6906)
+- Title: Weight Decay as a Gaussian Prior
+- needs_canonical_source: False
+
+## [2026-06-08] committed | concept
+- Committed: weight-decay-as-prior → concepts/weight-decay-as-prior.md
+- IRI: pkis:concept:weight-decay-as-prior
