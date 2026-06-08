@@ -3010,3 +3010,12 @@
 ## [2026-06-08] committed | result
 - Committed: hopfield-network-capacity → results/hopfield-network-capacity.md
 - IRI: pkis:result:hopfield-network-capacity
+
+## [2026-06-08] staged | node-stub (concept)
+- Staged: lyapunov-function (id: aa01c785-6799-49c9-ba93-c90e689dfb63)
+- Title: Lyapunov Function and Attractor Dynamics
+- needs_canonical_source: False
+
+## [2026-06-08] committed | concept
+- Committed: lyapunov-function → concepts/lyapunov-function.md
+- IRI: pkis:concept:lyapunov-function
