@@ -567,6 +567,7 @@
 - [[llm-language-comprehension]] — The problem of whether LLMs genuinely comprehend language vs. pattern-match surface form (deep-learning, cognitive-science) (2026-05-20)
 
 ## Principles
+- [[likelihood-principle]] — Likelihood Principle (bayesian-stats) (2026-06-08)
 - [[parallel-trends]] — DiD identifying assumption: treated and control groups would have had the same outcome trend absent treatment (causal-analysis) (2026-05-20)
 - [[open-world-assumption]] — Absence of information implies nothing; the foundational epistemic stance of the Semantic Web vs. closed-world databases (knowledge-representation) (2026-05-20)
 - [[linked-data-principles]] — Berners-Lee's four rules for publishing linked data via HTTP URIs, RDF, and cross-dataset links (knowledge-representation) (2026-05-20)

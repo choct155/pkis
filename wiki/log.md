@@ -1367,3 +1367,12 @@
 ## [2026-06-08] committed | result
 - Committed: gibbs-inequality → results/gibbs-inequality.md
 - IRI: pkis:result:gibbs-inequality
+
+## [2026-06-08] staged | node-stub (principle)
+- Staged: likelihood-principle (id: a47f4b1c-8dea-4eb0-abd5-7db7d6212d9b)
+- Title: Likelihood Principle
+- needs_canonical_source: False
+
+## [2026-06-08] committed | principle
+- Committed: likelihood-principle → principles/likelihood-principle.md
+- IRI: pkis:principle:likelihood-principle
