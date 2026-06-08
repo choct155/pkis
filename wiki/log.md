@@ -2208,3 +2208,66 @@
 ## [2026-06-08] committed | concept
 - Committed: explaining-away → concepts/explaining-away.md
 - IRI: pkis:concept:explaining-away
+
+## [2026-06-08] edges | add_connections
+- slepian-wolf-theorem —uses→ joint-entropy
+- slepian-wolf-theorem —uses→ conditional-entropy
+- slepian-wolf-theorem —extends→ source-coding-theorem
+- slepian-wolf-theorem —uses→ typical-set
+- multiple-access-channel —specializes→ channel-capacity
+- multiple-access-channel —uses→ mutual-information
+- multiple-access-channel —analogous-to→ slepian-wolf-theorem
+- broadcast-channel —specializes→ channel-capacity
+- broadcast-channel —uses→ markov-chains
+- broadcast-channel —applies→ binary-symmetric-channel
+- broadcast-channel —contrasts-with→ multiple-access-channel
+- sum-product-algorithm —specializes→ message-passing
+- min-sum-algorithm —specializes→ message-passing
+- min-sum-algorithm —analogous-to→ sum-product-algorithm
+- message-passing —prerequisite-of→ sum-product-algorithm
+- message-passing —prerequisite-of→ min-sum-algorithm
+- belief-propagation —instantiates→ sum-product-algorithm
+- belief-propagation —specializes→ message-passing
+- min-sum-algorithm —applies→ linear-block-code
+- sum-product-algorithm —uses→ generating-functions
+- constrained-channel-capacity-eigenvalue —specializes→ channel-capacity
+- constrained-noiseless-channel —uses→ finite-automata
+- constrained-channel-capacity-eigenvalue —uses→ eigendecomposition
+- constrained-noiseless-channel —prerequisite-of→ constrained-channel-capacity-eigenvalue
+- runlength-limited-codes —instantiates→ constrained-noiseless-channel
+- constrained-channel-optimal-transitions —uses→ eigendecomposition
+- constrained-channel-optimal-transitions —uses→ markov-chains
+- constrained-channel-optimal-transitions —extends→ constrained-channel-capacity-eigenvalue
+- runlength-limited-codes —uses→ entropy
+- constrained-channel-optimal-transitions —applies→ runlength-limited-codes
+- redundancy-of-natural-language —uses→ entropy
+- redundancy-of-natural-language —applies→ channel-capacity
+- bayesian-codebreaking —applies→ likelihood-ratio-evidence
+- bayesian-codebreaking —uses→ redundancy-of-natural-language
+- bayesian-codebreaking —uses→ mutual-information
+- zipf-mandelbrot-law —uses→ redundancy-of-natural-language
+- rate-of-information-acquisition-mutation —uses→ fitness-as-information
+- sqrt-g-advantage-of-sex —uses→ fitness-as-information
+- sqrt-g-advantage-of-sex —contrasts-with→ rate-of-information-acquisition-mutation
+- maximum-tolerable-mutation-rate —extends→ sqrt-g-advantage-of-sex
+- rate-of-information-acquisition-mutation —uses→ weak-law-of-large-numbers
+- fitness-as-information —uses→ shannon-information-content
+- sqrt-g-advantage-of-sex —uses→ gaussian-distribution
+- maximum-tolerable-mutation-rate —analogous-to→ noisy-channel-coding-theorem
+- k-means-clustering —instantiates→ clustering
+- soft-k-means —instantiates→ clustering
+- k-means-clustering —prerequisite-of→ soft-k-means
+- soft-k-means —generalizes→ k-means-clustering
+- k-means-clustering —specializes→ gaussian-mixture-models
+- soft-k-means —specializes→ gaussian-mixture-models
+- soft-k-means —instantiates→ em-algorithm
+- clustering —uses→ vector-quantization
+- gaussian-mixture-models —uses→ em-algorithm
+- exact-inference-by-complete-enumeration —instantiates→ bayesian-inference
+- exact-inference-by-complete-enumeration —uses→ marginal-likelihood
+- curse-of-dimensionality —contrasts-with→ exact-inference-by-complete-enumeration
+- explaining-away —specializes→ bayesian-inference
+- exact-inference-by-complete-enumeration —applies→ explaining-away
+
+## [2026-06-08] edit | edit_node
+- pkis:technique:hashing-for-error-detection: fields=[] sections=['Checksum codes and the ISBN check digit']

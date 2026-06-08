@@ -59,3 +59,10 @@ A tiny fixed-size hash protects an arbitrarily large file: redundancy is added i
 - [[hamming-7-4-code]] — contrasts-with: A CRC is a set of parity-check bits like the (7,4) Hamming code but detects only, without correcting.
 - [[one-way-hash-function]] — contrasts-with: Linear hashes suffice against random noise but fail against an adversary, motivating one-way hashes.
 [To be populated during integration]
+
+## Checksum codes and the ISBN check digit
+A **checksum** appends a redundant symbol computed as a weighted modular sum of the data, trading a tiny rate cost for guaranteed detection of structured errors. The classic example is the 10-digit **ISBN**: nine source digits $x_1,\dots,x_9$ and a check digit
+$$x_{10} = \Big(\sum_{n=1}^{9} n\,x_n\Big) \bmod 11,$$
+so that every valid ISBN satisfies $\big(\sum_{n=1}^{10} n\,x_n\big) \bmod 11 = 0$.
+
+Working modulo the **prime** 11 is what makes it powerful: it detects **any single-digit modification** (a wrong digit changes the weighted sum by $n\,\Delta \not\equiv 0 \pmod{11}$ since $n,\Delta \in \{1,\dots,10\}$ are non-zero mod 11) and **any transposition of two distinct digits** (swapping positions $i,j$ shifts the sum by $(i-j)(x_i-x_j)\not\equiv 0 \pmod{11}$). Using mod $10$ instead would fail: $10$ is not prime, so factors sharing a divisor with 10 can produce changes that vanish mod 10, leaving some single-digit and transposition errors undetected (and 10 cannot represent the full check range without the special symbol X).
