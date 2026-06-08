@@ -2540,3 +2540,12 @@
 
 ## [2026-06-08] edit | edit_node
 - pkis:concept:marginal-likelihood: fields=[] sections=['Laplace approximation: best-fit likelihood times Occam factor']
+
+## [2026-06-08] staged | node-stub (principle)
+- Staged: monte-carlo-estimator (id: 6a3cc381-c3cb-418c-95c8-71c325296c07)
+- Title: Monte Carlo Estimator
+- needs_canonical_source: False
+
+## [2026-06-08] committed | principle
+- Committed: monte-carlo-estimator → principles/monte-carlo-estimator.md
+- IRI: pkis:principle:monte-carlo-estimator
