@@ -1511,3 +1511,12 @@
 ## [2026-06-08] committed | technique
 - Committed: elias-omega-code → techniques/elias-omega-code.md
 - IRI: pkis:technique:elias-omega-code
+
+## [2026-06-08] staged | node-stub (concept)
+- Staged: universal-codes (id: 998897d1-5326-4170-9d77-4052dd2509da)
+- Title: Universal Codes and Implicit Priors
+- needs_canonical_source: False
+
+## [2026-06-08] committed | concept
+- Committed: universal-codes → concepts/universal-codes.md
+- IRI: pkis:concept:universal-codes
