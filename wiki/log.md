@@ -2298,3 +2298,12 @@
 
 ## [2026-06-08] edit | edit_node
 - pkis:concept:curse-of-dimensionality: fields=[] sections=['Curse of Dimensionality in Brute-Force Integration']
+
+## [2026-06-08] staged | node-stub (concept)
+- Staged: sufficient-statistics (id: 2ab151c2-53eb-4be0-abe8-558ba4c7b6b9)
+- Title: Sufficient Statistics
+- needs_canonical_source: False
+
+## [2026-06-08] committed | concept
+- Committed: sufficient-statistics → concepts/sufficient-statistics.md
+- IRI: pkis:concept:sufficient-statistics
