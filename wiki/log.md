@@ -3304,3 +3304,12 @@
 ## [2026-06-08] committed | technique
 - Committed: lt-codes → techniques/lt-codes.md
 - IRI: pkis:technique:lt-codes
+
+## [2026-06-08] staged | node-stub (concept)
+- Staged: soliton-distribution (id: bce118d7-e537-49bc-ae4b-10ecc1f964e4)
+- Title: Soliton Degree Distributions
+- needs_canonical_source: False
+
+## [2026-06-08] committed | concept
+- Committed: soliton-distribution → concepts/soliton-distribution.md
+- IRI: pkis:concept:soliton-distribution
