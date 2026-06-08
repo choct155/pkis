@@ -1595,3 +1595,6 @@
 
 ## [2026-06-08] edit | edit_node
 - pkis:concept:entropy: fields=[] sections=['Maximum-entropy bound']
+
+## [2026-06-08] edit | edit_node
+- pkis:concept:kl-divergence: fields=[] sections=["Relative entropy and Gibbs' inequality"]

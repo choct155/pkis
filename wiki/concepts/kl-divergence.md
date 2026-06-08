@@ -3,7 +3,7 @@ aliases: []
 also_type: []
 coverage: 4
 date_created: 2026-05-20
-date_updated: 2026-05-20
+date_updated: '2026-06-08'
 domain:
 - bayesian-stats
 - information-theory
@@ -44,3 +44,6 @@ An asymmetric non-negative measure of the "extra information" required to encode
 - [[ganguly-intro-vi]] (unread) — Section 2; KL derivation; Figure 2 illustrates forward vs. reverse KL on bimodal distribution; zero-avoiding vs. zero-forcing behavior
 - [[yellapragada-variational-bayes]] (unread) — Section 2.2; entropy and KL definitions; role in MDL loss formulation
 - [[lange-applied-probability-ch16]] (unread) — entropy chapter grounds KL divergence in information-theoretic context
+
+## Relative entropy and Gibbs' inequality
+In MacKay's information-theoretic framing the KL divergence is the **relative entropy** $D_{KL}(P\|Q)=\sum_x P(x)\log\frac{P(x)}{Q(x)}$ — the expected extra number of bits incurred by coding for $Q$ when the true distribution is $P$. **Gibbs' inequality** guarantees $D_{KL}(P\|Q)\ge0$ with equality iff $P=Q$, proved via Jensen's inequality. It is generally **asymmetric** ($D_{KL}(P\|Q)\ne D_{KL}(Q\|P)$), so despite the nickname 'KL distance' it is not a metric.
