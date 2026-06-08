@@ -1331,3 +1331,12 @@
 ## [2026-06-08] committed | technique
 - Committed: syndrome-decoding → techniques/syndrome-decoding.md
 - IRI: pkis:technique:syndrome-decoding
+
+## [2026-06-08] staged | node-stub (concept)
+- Staged: channel-capacity (id: c5b8eca3-5c31-492c-b9c0-a0ddd5dbd654)
+- Title: Channel Capacity
+- needs_canonical_source: False
+
+## [2026-06-08] committed | concept
+- Committed: channel-capacity → concepts/channel-capacity.md
+- IRI: pkis:concept:channel-capacity

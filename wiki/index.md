@@ -290,6 +290,7 @@
 - [[liu-machine-unlearning-llm-2024]] — Rethinking Machine Unlearning for LLMs: post-training knowledge editing survey (deep-learning, ai-safety) (2026-05-20)
 
 ## Concepts
+- [[channel-capacity]] — Channel Capacity (information-theory) (2026-06-08)
 - [[binary-symmetric-channel]] — Binary Symmetric Channel (information-theory) (2026-06-08)
 - [[shannon-information-content]] — Shannon Information Content (information-theory, statistical-learning) (2026-06-08)
 - [[typical-set]] — Typical Set (information-theory, bayesian-stats, statistical-learning) (2026-06-08)
