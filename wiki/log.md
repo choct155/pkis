@@ -2603,3 +2603,12 @@
 ## [2026-06-08] committed | technique
 - Committed: overrelaxation → techniques/overrelaxation.md
 - IRI: pkis:technique:overrelaxation
+
+## [2026-06-08] staged | node-stub (technique)
+- Staged: simulated-annealing (id: b040b605-fd78-45ca-9f16-2df9f9dc0dfd)
+- Title: Simulated Annealing
+- needs_canonical_source: False
+
+## [2026-06-08] committed | technique
+- Committed: simulated-annealing → techniques/simulated-annealing.md
+- IRI: pkis:technique:simulated-annealing
