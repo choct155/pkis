@@ -1751,3 +1751,12 @@
 ## [2026-06-08] committed | concept
 - Committed: gaussian-channel → concepts/gaussian-channel.md
 - IRI: pkis:concept:gaussian-channel
+
+## [2026-06-08] staged | node-stub (result)
+- Staged: continuous-channel-capacity (id: e2dee0c1-15bb-4f5e-ad65-64bbe1f6a2df)
+- Title: Continuous-Channel Capacity (Shannon–Hartley)
+- needs_canonical_source: False
+
+## [2026-06-08] committed | result
+- Committed: continuous-channel-capacity → results/continuous-channel-capacity.md
+- IRI: pkis:result:continuous-channel-capacity
