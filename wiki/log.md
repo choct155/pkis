@@ -2199,3 +2199,12 @@
 ## [2026-06-08] committed | technique
 - Committed: exact-inference-by-complete-enumeration → techniques/exact-inference-by-complete-enumeration.md
 - IRI: pkis:technique:exact-inference-by-complete-enumeration
+
+## [2026-06-08] staged | node-stub (concept)
+- Staged: explaining-away (id: 6e152c31-0fd7-4d40-9713-380006abb9d4)
+- Title: Explaining Away
+- needs_canonical_source: False
+
+## [2026-06-08] committed | concept
+- Committed: explaining-away → concepts/explaining-away.md
+- IRI: pkis:concept:explaining-away
