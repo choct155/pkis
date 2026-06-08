@@ -3088,3 +3088,6 @@
 
 ## [2026-06-08] edit | edit_node
 - pkis:technique:neural-networks: fields=[] sections=['Learning Paradigms: Supervised vs Unsupervised']
+
+## [2026-06-08] edit | edit_node
+- pkis:technique:logistic-regression: fields=[] sections=['Equivalence to the Logistic Single Neuron']
