@@ -2127,3 +2127,12 @@
 ## [2026-06-08] committed | result
 - Committed: zipf-mandelbrot-law → results/zipf-mandelbrot-law.md
 - IRI: pkis:result:zipf-mandelbrot-law
+
+## [2026-06-08] staged | node-stub (concept)
+- Staged: fitness-as-information (id: ad5ef27f-719b-4c02-bc22-98e8dad6150e)
+- Title: Fitness as Information Acquired by Natural Selection
+- needs_canonical_source: False
+
+## [2026-06-08] committed | concept
+- Committed: fitness-as-information → concepts/fitness-as-information.md
+- IRI: pkis:concept:fitness-as-information
