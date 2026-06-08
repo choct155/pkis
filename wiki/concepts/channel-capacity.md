@@ -68,3 +68,8 @@ non-confusable inputs. For large $N$ the extended channel behaves like a noisy t
 
 ## Capacity of continuous channels and the cost constraint
 For real-valued channels the capacity $C=\max_{p(x)}I(X;Y)$ must be defined via the **mutual information**, the one information measure with a well-behaved continuous limit (joint/marginal entropies diverge as the discretization granularity shrinks). Because the integrand is a ratio of densities over the same space, $I(X;Y)=\int dx\,dy\,P(x,y)\log\tfrac{P(x,y)}{P(x)P(y)}$ is well defined. An unconstrained real input can carry unbounded information per use, so a **cost function** $v(x)$ (e.g. power $x^2$) is imposed, yielding a capacity-cost function $C(\bar v)$. For the Gaussian channel the maximizing input is Gaussian and $C=\tfrac12\log(1+v/\sigma^2)$.
+
+## Noiseless Constrained Channels
+Capacity also has meaning for **noiseless** channels that merely forbid certain strings. Here the mutual-information maximisation is replaced by a counting limit,
+$$C=\lim_{N\to\infty}\frac1N\log_2 M_N,$$
+with $M_N$ the number of legal length-$N$ strings. Modelling the transmitter as a finite-state machine, $M_N$ grows as $\lambda_1^N$ where $\lambda_1$ is the leading eigenvalue of the connection matrix, so $C=\log_2\lambda_1$. See [[constrained-noiseless-channel]] and [[constrained-channel-capacity-eigenvalue]].

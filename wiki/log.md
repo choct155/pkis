@@ -2277,3 +2277,6 @@
 
 ## [2026-06-08] edit | edit_node
 - pkis:technique:belief-propagation: fields=[] sections=['Belief Propagation as Probabilistic Message Passing']
+
+## [2026-06-08] edit | edit_node
+- pkis:concept:channel-capacity: fields=[] sections=['Noiseless Constrained Channels']
