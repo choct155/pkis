@@ -389,6 +389,10 @@ body {
   border-left: 3px solid var(--accent); padding-left: 12px;
   color: var(--muted); margin: 8px 0;
 }
+.body-text a {
+  color: var(--accent); text-decoration: underline;
+  text-underline-offset: 2px;
+}
 
 /* ── VIZ PANEL ────────────────────────────────────────────────────────── */
 .viz-toggle {

@@ -32,7 +32,15 @@ function Pips({ count, filled, variant, sheet }: {
 function MarkdownBody({ md }: { md: string }) {
   const ref = useRef<HTMLDivElement>(null)
   const html = renderMarkdown(md)
-  useEffect(() => { renderMath(ref.current) }, [md])
+  useEffect(() => {
+    renderMath(ref.current)
+    // Open body links (e.g. explainer URLs) in a new tab instead of
+    // navigating away from the PWA.
+    ref.current?.querySelectorAll('a[href]').forEach((a) => {
+      a.setAttribute('target', '_blank')
+      a.setAttribute('rel', 'noreferrer')
+    })
+  }, [md])
   return (
     <div
       ref={ref}
@@ -209,23 +217,25 @@ export default function DetailSheet({ iri, onClose, onNavigate, onEdit, onGraph,
   const isSource = iri.startsWith('pkis:source:')
   const sources = Array.isArray(fm?.sources) ? (fm!.sources as string[]) : []
 
-  // Split content into sections by ## headings
-  function extractSection(md: string, heading: RegExp): string {
-    const match = md.match(heading)
-    if (!match || match.index === undefined) return ''
-    const start = match.index + match[0].length
-    const rest = md.slice(start)
-    const nextHeading = rest.match(/\n##\s/)
-    return nextHeading ? rest.slice(0, nextHeading.index).trim() : rest.trim()
+  // Render the FULL node body for every node type — all sections (Definition,
+  // Intuition, Why it matters, anatomy, mechanism, Formal Statement, Thesis…).
+  // (Previously only Definition+Intuition surfaced, so the rest of every node
+  // was authored-but-invisible in the viewer.)
+  //
+  // Strip ONLY sections that are also rendered structurally below, to avoid
+  // duplication: the "## Connections" section (structural block always shows),
+  // and "## Reading Path" but only when structured reading_path data exists —
+  // when it's empty, the markdown section is the only copy, so keep it. The
+  // anchored heading match leaves prose like "## Connections Beyond HMC" intact.
+  function stripSection(md: string, name: string): string {
+    return md.replace(
+      new RegExp(`\\n##[ \\t]+${name}[ \\t]*(?=\\n|$)[\\s\\S]*?(?=\\n##\\s|$)`, 'i'),
+      ''
+    )
   }
-
-  const hasDefinition = /^## Definition\s*/m.test(content)
-  const definitionMd = extractSection(content, /^## Definition\s*/m) || content.split('\n\n')[0]
-  const intuitionMd  = extractSection(content, /^## Intuition\s*/m)
-  // Hypotheses, clusters, sources use other section headings (Formal Statement,
-  // Thesis, Summary…). When there's no Definition, render the full body (minus the
-  // Connections prose, which is shown structurally below) so those nodes aren't blank.
-  const fullBody = content.replace(/\n##\s+Connections[\s\S]*?(?=\n##\s|$)/i, '').trim()
+  let fullBody = stripSection(content, 'Connections')
+  if (readingPath.length > 0) fullBody = stripSection(fullBody, 'Reading Path')
+  fullBody = fullBody.trim()
 
   return (
     <div className="sheet-overlay open">
@@ -266,21 +276,11 @@ export default function DetailSheet({ iri, onClose, onNavigate, onEdit, onGraph,
 
           {!loading && node && (
             <>
-              {/* Definition (concepts) or full body (hypotheses, clusters, sources, …) */}
-              {hasDefinition ? (
-                definitionMd && (
-                  <div className="body-section">
-                    <div className="body-section-title">definition</div>
-                    <MarkdownBody md={definitionMd} />
-                  </div>
-                )
-              ) : (
-                fullBody && (
-                  <div className="body-section">
-                    <div className="body-section-title">details</div>
-                    <MarkdownBody md={fullBody} />
-                  </div>
-                )
+              {/* Full node body — every section, with its own ## headings */}
+              {fullBody && (
+                <div className="body-section">
+                  <MarkdownBody md={fullBody} />
+                </div>
               )}
 
               {/* Source citation + links (when this node is a source) */}
@@ -304,14 +304,6 @@ export default function DetailSheet({ iri, onClose, onNavigate, onEdit, onGraph,
                   onNavigate={onNavigate}
                 />
               </div>
-
-              {/* Intuition */}
-              {intuitionMd && (
-                <div className="body-section">
-                  <div className="body-section-title">intuition</div>
-                  <MarkdownBody md={intuitionMd} />
-                </div>
-              )}
 
               {/* Sources to read (when this node cites sources) */}
               {!isSource && sources.length > 0 && (
