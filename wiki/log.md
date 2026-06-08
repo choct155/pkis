@@ -1697,3 +1697,12 @@
 ## [2026-06-08] committed | concept
 - Committed: binary-erasure-channel → concepts/binary-erasure-channel.md
 - IRI: pkis:concept:binary-erasure-channel
+
+## [2026-06-08] staged | node-stub (concept)
+- Staged: z-channel (id: c6da762d-5253-446a-b708-571179ba735e)
+- Title: Z Channel
+- needs_canonical_source: False
+
+## [2026-06-08] committed | concept
+- Committed: z-channel → concepts/z-channel.md
+- IRI: pkis:concept:z-channel
