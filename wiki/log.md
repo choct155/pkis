@@ -1832,3 +1832,12 @@
 ## [2026-06-08] committed | concept
 - Committed: one-way-hash-function → concepts/one-way-hash-function.md
 - IRI: pkis:concept:one-way-hash-function
+
+## [2026-06-08] staged | node-stub (concept)
+- Staged: minimum-distance (id: 46df604a-3962-4113-b700-14d334d7dbc7)
+- Title: Minimum Distance of a Code
+- needs_canonical_source: False
+
+## [2026-06-08] committed | concept
+- Committed: minimum-distance → concepts/minimum-distance.md
+- IRI: pkis:concept:minimum-distance
