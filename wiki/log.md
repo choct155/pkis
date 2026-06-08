@@ -1607,3 +1607,6 @@
 
 ## [2026-06-08] edit | edit_node
 - pkis:technique:maximum-likelihood-estimation: fields=[] sections=['Bayesian critique (MacKay)']
+
+## [2026-06-08] edit | edit_node
+- pkis:concept:typical-set: fields=[] sections=['Asymptotic equipartition — the weak sense']

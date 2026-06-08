@@ -69,3 +69,6 @@ The same fact in continuous form: samples from a $d$-dimensional standard Gaussi
 - [[shannon-information-content]] — uses: Typical strings have average information content per symbol ≈ H
 - [[entropy]] — uses: The typical set is defined by per-symbol log-prob ≈ H(X)
 [To be populated during integration]
+
+## Asymptotic equipartition — the weak sense
+MacKay deliberately quotes 'asymptotic equipartition': typical strings are *not* nearly equiprobable in absolute terms. Their values of $\log_2\tfrac1{P(x)}$ lie within $2N\beta$ of each other, so the most- and least-probable typical strings differ in probability by a factor $2^{2N\beta}$. So 'equipartition' holds only in the weak sense that per-symbol log-probabilities converge to $H$.
