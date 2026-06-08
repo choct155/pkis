@@ -1841,3 +1841,12 @@
 ## [2026-06-08] committed | concept
 - Committed: minimum-distance → concepts/minimum-distance.md
 - IRI: pkis:concept:minimum-distance
+
+## [2026-06-08] staged | node-stub (concept)
+- Staged: weight-enumerator-function (id: 0e099396-c248-4c73-b648-62d0683f7c86)
+- Title: Weight Enumerator Function
+- needs_canonical_source: False
+
+## [2026-06-08] committed | concept
+- Committed: weight-enumerator-function → concepts/weight-enumerator-function.md
+- IRI: pkis:concept:weight-enumerator-function
