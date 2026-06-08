@@ -559,6 +559,7 @@
 - [[constraint-propagation]] — Reducing a constraint satisfaction problem by iteratively eliminating inconsistent values from variable domains (knowledge-representation) (2026-05-20)
 
 ## Results
+- [[exponential-family-ml-maxent-duality]] — ML–MaxEnt Duality for Exponential Families (statistical-learning) (2026-06-08)
 - [[maximum-tolerable-mutation-rate]] — Maximum Tolerable Mutation Rate and Genome Size (information-theory, statistical-learning) (2026-06-08)
 - [[sqrt-g-advantage-of-sex]] — The √G Advantage of Sexual Reproduction (information-theory, statistical-learning) (2026-06-08)
 - [[rate-of-information-acquisition-mutation]] — Rate of Information Acquisition Under Mutation (≈1 bit/generation) (information-theory, statistical-learning) (2026-06-08)

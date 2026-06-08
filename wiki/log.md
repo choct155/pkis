@@ -2307,3 +2307,12 @@
 ## [2026-06-08] committed | concept
 - Committed: sufficient-statistics → concepts/sufficient-statistics.md
 - IRI: pkis:concept:sufficient-statistics
+
+## [2026-06-08] staged | node-stub (result)
+- Staged: exponential-family-ml-maxent-duality (id: af73ae5f-a2d0-4ad6-90e0-193831c11945)
+- Title: ML–MaxEnt Duality for Exponential Families
+- needs_canonical_source: False
+
+## [2026-06-08] committed | result
+- Committed: exponential-family-ml-maxent-duality → results/exponential-family-ml-maxent-duality.md
+- IRI: pkis:result:exponential-family-ml-maxent-duality
