@@ -1989,3 +1989,6 @@
 
 ## [2026-06-08] edit | edit_node
 - pkis:result:noisy-channel-coding-theorem: fields=[] sections=['## Finite-blocklength refinement and the reliability function']
+
+## [2026-06-08] edit | edit_node
+- pkis:concept:channel-capacity: fields=[] sections=['## Capacity of continuous channels and the cost constraint']
