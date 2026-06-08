@@ -14,7 +14,7 @@ component_scores:
   principled_mechanism: 3
 coverage: 2
 date_created: 2026-05-20
-date_updated: '2026-06-07'
+date_updated: '2026-06-08'
 domain:
 - bayesian-stats
 id: pkis:technique:laplace-approximation
@@ -57,3 +57,20 @@ The Laplace approximation enables non-normal corrections to basic normal-based i
 - [[marginal-likelihood]] — applies: Approximating the normalizing constant Z_P = integral P*(x) dx is exactly the Bayesian evidence/marginal likelihood; Laplace's det(A) formula yields the standard evidence approximation.
 - [[gaussian-distribution]] — uses: The method replaces the peak of P*(x) by a matched Gaussian and uses its normalizing constant sqrt((2pi)^K / det A) as the estimate of Z_P.
 - [[marginalization]] — applies: Laplace's method is an approximate technique for performing the otherwise-intractable marginalization integral.
+
+## Approximating a Normalizing Constant (Saddle-Point Form)
+MacKay frames Laplace's method primarily as a way to approximate an *integral* — the normalizing constant of an unnormalized density $P^*(x)$:
+
+$$Z_P \equiv \int P^*(x)\,dx.$$
+
+Taylor-expand the log-density about its peak $x_0$:
+
+$$\ln P^*(x) \simeq \ln P^*(x_0) - \tfrac{c}{2}(x-x_0)^2,\qquad c = -\left.\frac{\partial^2}{\partial x^2}\ln P^*(x)\right|_{x_0}.$$
+
+Replacing $P^*$ by the matched unnormalized Gaussian and integrating gives the one-dimensional estimate $Z_Q = P^*(x_0)\sqrt{2\pi/c}$.
+
+In $K$ dimensions, let $\mathbf{A}$ be the Hessian of $-\ln P^*$ at the mode, $A_{ij} = -\partial^2 \ln P^* / \partial x_i\partial x_j|_{x_0}$. Then
+
+$$Z_P \simeq Z_Q = P^*(x_0)\sqrt{\frac{(2\pi)^K}{\det \mathbf{A}}}.$$
+
+The $\det\mathbf{A}$ factor is the engine: it follows from the Gaussian volume integral $\int d^K x\,\exp(-\tfrac12\mathbf{x}^T\mathbf{A}\mathbf{x}) = \sqrt{(2\pi)^K/\det\mathbf{A}}$, provable by an orthogonal transformation to the eigenbasis of $\mathbf{A}$, where the integral separates into one-dimensional factors $\sqrt{2\pi/\lambda_i}$ whose product gives $1/\sqrt{\prod_i\lambda_i} = 1/\sqrt{\det\mathbf{A}}$. Geometrically, $1/\sqrt{\det\mathbf{A}}$ measures the *width* of the posterior peak — a small, sharp peak (large eigenvalues) carries little mass, a broad peak carries much. Physicists call this the saddle-point approximation; it is the same device whether one is normalizing a posterior or evaluating a model's evidence.

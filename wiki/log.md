@@ -2528,3 +2528,6 @@
 
 ## [2026-06-08] edit | edit_node
 - pkis:technique:belief-propagation: fields=[] sections=['Loopy belief propagation and the limits of exactness']
+
+## [2026-06-08] edit | edit_node
+- pkis:technique:laplace-approximation: fields=[] sections=['Approximating a Normalizing Constant (Saddle-Point Form)']
