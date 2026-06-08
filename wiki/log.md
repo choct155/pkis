@@ -2064,3 +2064,12 @@
 ## [2026-06-08] committed | technique
 - Committed: min-sum-algorithm → techniques/min-sum-algorithm.md
 - IRI: pkis:technique:min-sum-algorithm
+
+## [2026-06-08] staged | node-stub (concept)
+- Staged: constrained-noiseless-channel (id: 0ee3af71-67ce-416f-bae2-97d6550db2a5)
+- Title: Constrained Noiseless Channel
+- needs_canonical_source: False
+
+## [2026-06-08] committed | concept
+- Committed: constrained-noiseless-channel → concepts/constrained-noiseless-channel.md
+- IRI: pkis:concept:constrained-noiseless-channel
