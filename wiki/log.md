@@ -2379,3 +2379,12 @@
 ## [2026-06-08] committed | technique
 - Committed: forward-backward-algorithm → techniques/forward-backward-algorithm.md
 - IRI: pkis:technique:forward-backward-algorithm
+
+## [2026-06-08] staged | node-stub (concept)
+- Staged: factor-graph (id: b4dd51d3-4e84-40cf-b911-9e4140291396)
+- Title: Factor Graph
+- needs_canonical_source: False
+
+## [2026-06-08] committed | concept
+- Committed: factor-graph → concepts/factor-graph.md
+- IRI: pkis:concept:factor-graph

@@ -290,6 +290,7 @@
 - [[liu-machine-unlearning-llm-2024]] — Rethinking Machine Unlearning for LLMs: post-training knowledge editing survey (deep-learning, ai-safety) (2026-05-20)
 
 ## Concepts
+- [[factor-graph]] — Factor Graph (bayesian-stats, information-theory) (2026-06-08)
 - [[trellis]] — Trellis (information-theory, statistical-learning) (2026-06-08)
 - [[marginalization]] — Marginalization (bayesian-stats) (2026-06-08)
 - [[dirichlet-distribution]] — Dirichlet Distribution (bayesian-stats, statistical-learning) (2026-06-08)
