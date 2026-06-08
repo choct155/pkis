@@ -2983,3 +2983,12 @@
 ## [2026-06-08] committed | concept
 - Committed: weight-decay-as-prior → concepts/weight-decay-as-prior.md
 - IRI: pkis:concept:weight-decay-as-prior
+
+## [2026-06-08] staged | node-stub (framework)
+- Staged: hopfield-network (id: 8c3e74c6-1b11-4a7a-babb-9cab653b1b1c)
+- Title: Hopfield Network
+- needs_canonical_source: False
+
+## [2026-06-08] committed | framework
+- Committed: hopfield-network → frameworks/hopfield-network.md
+- IRI: pkis:framework:hopfield-network

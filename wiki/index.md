@@ -628,6 +628,7 @@
 - [[government-debt-valuation-equation]] — FTPL: price level determined by ratio of nominal debt to expected present value of future surpluses (macroeconomics) (2026-05-20)
 
 ## Frameworks
+- [[hopfield-network]] — Hopfield Network (deep-learning, statistical-learning) (2026-06-08)
 - [[sampling-theory]] — Sampling Theory (Frequentist Statistics) (bayesian-stats) (2026-06-08)
 - [[ising-model]] — Ising Model (statistical-learning, information-theory) (2026-06-08)
 - [[evidence-framework]] — The Bayesian Evidence Framework (Two Levels of Inference) (bayesian-stats) (2026-06-08)
