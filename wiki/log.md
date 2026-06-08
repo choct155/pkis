@@ -2295,3 +2295,6 @@
 
 ## [2026-06-08] edit | edit_node
 - pkis:technique:em-algorithm: fields=[] sections=['Soft K-means as a precursor to the E-step']
+
+## [2026-06-08] edit | edit_node
+- pkis:concept:curse-of-dimensionality: fields=[] sections=['Curse of Dimensionality in Brute-Force Integration']
