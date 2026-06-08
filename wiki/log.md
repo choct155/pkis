@@ -3436,3 +3436,6 @@
 
 ## [2026-06-08] edit | edit_node
 - pkis:technique:sum-product-algorithm: fields=[] sections=['Application: decoding repeat-accumulate codes']
+
+## [2026-06-08] edit | edit_node
+- pkis:concept:binary-erasure-channel: fields=[] sections=['The q-ary Erasure Channel and Packet Networks']

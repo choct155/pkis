@@ -58,3 +58,6 @@ The BEC models packet loss in networks and is the canonical example where capaci
 - [[binary-symmetric-channel]] — contrasts-with: Erasures announce their location (C=1-f) vs hidden flips (C=1-H2(f)).
 - [[discrete-memoryless-channel]] — instantiates: The BEC is a specific DMC with an erasure output symbol.
 [To be populated during integration]
+
+## The q-ary Erasure Channel and Packet Networks
+The BEC generalizes naturally to a **$q$-ary erasure channel** with alphabet $\{0,1,\dots,q-1\}$, $q = 2^l$, which models packet-switched networks directly: a file is chopped into $l$-bit packets, and each packet either arrives intact (probability $1-f$) or is wholly lost and delivered as '?' (probability $f$). Its capacity is $C = (1-f)\,l$ bits per packet — and, as for any channel, a feedback channel does **not** raise capacity. This is the channel for which **fountain codes** (rateless erasure codes, e.g. [[lt-codes]]) are the best known solution: they need no feedback and no advance estimate of $f$, recovering the file from any $K' \approx K$ received packets.
