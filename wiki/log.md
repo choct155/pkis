@@ -1520,3 +1520,72 @@
 ## [2026-06-08] committed | concept
 - Committed: universal-codes → concepts/universal-codes.md
 - IRI: pkis:concept:universal-codes
+
+## [2026-06-08] edges | add_connections
+- repetition-codes —contrasts-with→ hamming-7-4-code
+- hamming-7-4-code —uses→ syndrome-decoding
+- repetition-codes —uses→ binary-symmetric-channel
+- hamming-7-4-code —uses→ binary-symmetric-channel
+- syndrome-decoding —instantiates→ maximum-likelihood-estimation
+- repetition-codes —instantiates→ maximum-likelihood-estimation
+- noisy-channel-coding-theorem —uses→ channel-capacity
+- channel-capacity —prerequisite-of→ noisy-channel-coding-theorem
+- noisy-channel-coding-theorem —contrasts-with→ repetition-codes
+- noisy-channel-coding-theorem —applies→ binary-symmetric-channel
+- channel-capacity —uses→ information-theory
+- noisy-channel-coding-theorem —prerequisite-of→ typical-set
+- gibbs-inequality —uses→ jensens-inequality
+- gibbs-inequality —applies→ kl-divergence
+- jensens-inequality —prerequisite-of→ entropy
+- jensens-inequality —applies→ elbo
+- jensens-inequality —uses→ convex-optimization
+- likelihood-principle —specializes→ bayesian-inference
+- likelihood-principle —contrasts-with→ hypothesis-testing
+- gibbs-inequality —prerequisite-of→ source-coding-theorem
+- entropy —uses→ shannon-information-content
+- kl-divergence —uses→ gibbs-inequality
+- bayesian-model-comparison —uses→ marginal-likelihood
+- marginal-likelihood —prerequisite-of→ bayesian-model-comparison
+- bayesian-model-comparison —uses→ likelihood-ratio-evidence
+- likelihood-principle —prerequisite-of→ likelihood-ratio-evidence
+- laplaces-rule-of-succession —instantiates→ bayesian-inference
+- laplaces-rule-of-succession —contrasts-with→ maximum-likelihood-estimation
+- bayesian-model-comparison —contrasts-with→ hypothesis-testing
+- marginal-likelihood —applies→ bayesian-model-averaging
+- marginal-likelihood —specializes→ bayesian-inference
+- likelihood-ratio-evidence —uses→ bayesian-inference
+- marginal-likelihood —uses→ conjugate-prior
+- essential-bit-content —prerequisite-of→ source-coding-theorem
+- essential-bit-content —uses→ shannon-information-content
+- essential-bit-content —contrasts-with→ entropy
+- weak-law-of-large-numbers —prerequisite-of→ typical-set
+- weak-law-of-large-numbers —prerequisite-of→ source-coding-theorem
+- source-coding-theorem —uses→ essential-bit-content
+- prefix-code —specializes→ uniquely-decodable-codes
+- complete-code —specializes→ uniquely-decodable-codes
+- uniquely-decodable-codes —uses→ kraft-inequality
+- prefix-code —uses→ kraft-inequality
+- complete-code —instantiates→ kraft-inequality
+- huffman-coding —instantiates→ prefix-code
+- huffman-coding —applies→ optimal-symbol-codelengths
+- optimal-symbol-codelengths —uses→ shannon-information-content
+- optimal-symbol-codelengths —prerequisite-of→ source-coding-theorem
+- optimal-symbol-codelengths —uses→ kl-divergence
+- source-coding-theorem —uses→ prefix-code
+- arithmetic-coding —instantiates→ stream-codes
+- lempel-ziv-coding —instantiates→ stream-codes
+- lempel-ziv-coding —contrasts-with→ arithmetic-coding
+- arithmetic-coding —instantiates→ compression-as-probabilistic-modelling
+- compression-as-probabilistic-modelling —prerequisite-of→ arithmetic-coding
+- stream-codes —contrasts-with→ huffman-coding
+- lempel-ziv-coding —instantiates→ source-coding-theorem
+- self-delimiting-integer-codes —uses→ kraft-inequality
+- elias-omega-code —specializes→ self-delimiting-integer-codes
+- elias-omega-code —instantiates→ universal-codes
+- self-delimiting-integer-codes —prerequisite-of→ universal-codes
+- universal-codes —uses→ kraft-inequality
+- universal-codes —applies→ entropy
+- self-delimiting-integer-codes —contrasts-with→ huffman-coding
+
+## [2026-06-08] edit | edit_node
+- pkis:concept:binary-symmetric-channel: fields=[] sections=["MacKay's framing"]

@@ -55,3 +55,6 @@ The BSC is the canonical testbed of information theory. MacKay frames the book's
 - [[information-theory]] — instantiates: The BSC is the canonical channel on which information theory's communication problem is posed.
 - [[entropy]] — uses: Channel capacity 1 - H_2(f) is defined via the binary entropy function.
 [To be populated during integration]
+
+## MacKay's framing
+MacKay uses the BSC as the running model for a noisy disk drive: each bit is correct with probability $1-f$ and flipped with probability $f$. He frames the noise as a sparse vector $\mathbf{n}$ added mod 2, so the received vector is $\mathbf{r}=\mathbf{t}+\mathbf{n}$ — recasting decoding as inferring the most probable noise pattern.
