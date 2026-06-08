@@ -38,3 +38,8 @@ MacKay catalogs a family of unimodal real-valued densities ordered by tail weigh
 - **Inverse-cosh**: $P(x\mid\beta)\propto[\cosh(\beta x)]^{-1/\beta}$, popular in independent component analysis; biexponential as $\beta\to\infty$, Gaussian as $\beta\to 0$.
 
 For positive variables the analogous catalog is exponential $\subset$ gamma, plus the **log-normal** ($\ln x$ Gaussian) and **inverse-gamma**. For periodic variables, the **Von Mises** distribution $P(\theta)\propto\exp(\beta\cos(\theta-\mu))$ plays the Gaussian's role, with the **wrapped Gaussian** as the Brownian-diffusion alternative.
+
+## Exponential distribution: the building block (MacKay Ch. 23)
+The **exponential distribution** is the simplest waiting-time law and the common ancestor of several catalog entries. On the positive reals, $P(x\mid s)=\frac{1}{s}\exp(-x/s)$, $x\in(0,\infty)$, with mean $s$ — e.g. the wait for a bus arriving on average every $s$ minutes (a Poisson process). Its discrete analogue over integers is $P(r\mid f)=f^r(1-f)$, the number of rolls until a six appears ($f=5/6$); writing $\lambda=\ln(1/f)$ gives $P(r\mid f)=(1-f)e^{-\lambda r}$.
+
+It is the $c=1$ special case of the gamma distribution, and summing $m$ i.i.d. exponentials (the $m$-th Poisson arrival time) gives a gamma with shape $m$. This nests it cleanly into the transformation/limiting web alongside the binomial $\to$ Poisson and gamma $\to$ Gaussian limits.

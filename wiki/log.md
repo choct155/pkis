@@ -2504,3 +2504,6 @@
 
 ## [2026-06-08] edit | edit_node
 - pkis:concept:probability-distribution-relationships: fields=[] sections=['Heavy-tailed alternatives to the Gaussian (MacKay Ch. 23)']
+
+## [2026-06-08] edit | edit_node
+- pkis:concept:probability-distribution-relationships: fields=[] sections=['Exponential distribution: the building block (MacKay Ch. 23)']
