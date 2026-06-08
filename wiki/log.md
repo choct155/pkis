@@ -1679,3 +1679,12 @@
 ## [2026-06-08] committed | result
 - Committed: data-processing-inequality → results/data-processing-inequality.md
 - IRI: pkis:result:data-processing-inequality
+
+## [2026-06-08] staged | node-stub (concept)
+- Staged: discrete-memoryless-channel (id: f825402d-06c2-4da7-ad69-f5e354890845)
+- Title: Discrete Memoryless Channel
+- needs_canonical_source: False
+
+## [2026-06-08] committed | concept
+- Committed: discrete-memoryless-channel → concepts/discrete-memoryless-channel.md
+- IRI: pkis:concept:discrete-memoryless-channel

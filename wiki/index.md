@@ -290,6 +290,7 @@
 - [[liu-machine-unlearning-llm-2024]] — Rethinking Machine Unlearning for LLMs: post-training knowledge editing survey (deep-learning, ai-safety) (2026-05-20)
 
 ## Concepts
+- [[discrete-memoryless-channel]] — Discrete Memoryless Channel (information-theory) (2026-06-08)
 - [[mutual-information]] — Mutual Information (information-theory) (2026-06-08)
 - [[conditional-entropy]] — Conditional Entropy (information-theory) (2026-06-08)
 - [[joint-entropy]] — Joint Entropy (information-theory) (2026-06-08)
