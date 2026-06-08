@@ -2325,3 +2325,12 @@
 ## [2026-06-08] committed | principle
 - Committed: maxima-are-atypical → principles/maxima-are-atypical.md
 - IRI: pkis:principle:maxima-are-atypical
+
+## [2026-06-08] staged | node-stub (concept)
+- Staged: gamma-distribution (id: 38ed707c-fd89-4b0a-a057-373bd89fed17)
+- Title: Gamma Distribution
+- needs_canonical_source: False
+
+## [2026-06-08] committed | concept
+- Committed: gamma-distribution → concepts/gamma-distribution.md
+- IRI: pkis:concept:gamma-distribution

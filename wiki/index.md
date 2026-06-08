@@ -290,6 +290,7 @@
 - [[liu-machine-unlearning-llm-2024]] — Rethinking Machine Unlearning for LLMs: post-training knowledge editing survey (deep-learning, ai-safety) (2026-05-20)
 
 ## Concepts
+- [[gamma-distribution]] — Gamma Distribution (bayesian-stats, statistical-learning) (2026-06-08)
 - [[sufficient-statistics]] — Sufficient Statistics (statistical-learning) (2026-06-08)
 - [[explaining-away]] — Explaining Away (bayesian-stats) (2026-06-08)
 - [[clustering]] — Clustering (statistical-learning, bayesian-stats) (2026-06-08)
