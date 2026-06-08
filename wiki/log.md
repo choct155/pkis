@@ -2415,3 +2415,12 @@
 ## [2026-06-08] committed | principle
 - Committed: occams-razor → principles/occams-razor.md
 - IRI: pkis:principle:occams-razor
+
+## [2026-06-08] staged | node-stub (concept)
+- Staged: occam-factor (id: db4a2a80-8966-4c42-921e-d19da64825cd)
+- Title: The Occam Factor
+- needs_canonical_source: False
+
+## [2026-06-08] committed | concept
+- Committed: occam-factor → concepts/occam-factor.md
+- IRI: pkis:concept:occam-factor
