@@ -1421,3 +1421,12 @@
 ## [2026-06-08] committed | concept
 - Committed: essential-bit-content → concepts/essential-bit-content.md
 - IRI: pkis:concept:essential-bit-content
+
+## [2026-06-08] staged | node-stub (result)
+- Staged: weak-law-of-large-numbers (id: b630d604-36c6-4ffc-b6ec-4b6be290b9bb)
+- Title: Weak Law of Large Numbers (via Chebyshev)
+- needs_canonical_source: False
+
+## [2026-06-08] committed | result
+- Committed: weak-law-of-large-numbers → results/weak-law-of-large-numbers.md
+- IRI: pkis:result:weak-law-of-large-numbers
