@@ -1769,3 +1769,12 @@
 ## [2026-06-08] committed | concept
 - Committed: linear-block-code → concepts/linear-block-code.md
 - IRI: pkis:concept:linear-block-code
+
+## [2026-06-08] staged | node-stub (technique)
+- Staged: concatenated-codes (id: 044261e6-97f6-4726-b837-732fabb214fe)
+- Title: Concatenated Codes and Interleaving
+- needs_canonical_source: False
+
+## [2026-06-08] committed | technique
+- Committed: concatenated-codes → techniques/concatenated-codes.md
+- IRI: pkis:technique:concatenated-codes
