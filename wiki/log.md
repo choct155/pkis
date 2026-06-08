@@ -3232,3 +3232,12 @@
 ## [2026-06-08] committed | technique
 - Committed: sum-product-decoding-ldpc → techniques/sum-product-decoding-ldpc.md
 - IRI: pkis:technique:sum-product-decoding-ldpc
+
+## [2026-06-08] staged | node-stub (technique)
+- Staged: density-evolution (id: a08538df-1357-4e2c-8585-8747b5c91960)
+- Title: Density Evolution and the Decoding Threshold
+- needs_canonical_source: False
+
+## [2026-06-08] committed | technique
+- Committed: density-evolution → techniques/density-evolution.md
+- IRI: pkis:technique:density-evolution
