@@ -62,3 +62,6 @@ The theorem has two distinct halves. **Part 1** ($\tfrac1N H_\delta(X^N) < H+\ep
 
 ## Source coding theorem for symbol codes
 **Symbol-code form (MacKay Thm 5.1).** For an ensemble $X$ there exists a prefix code with $H(X)\le L(C,X) < H(X)+1$. Proof: set $l_i=\lceil\log_2(1/p_i)\rceil$; these satisfy Kraft since $\sum_i 2^{-\lceil\log_2(1/p_i)\rceil}\le\sum_i p_i=1$, so a prefix code exists, and $L < H(X)+1$. The lower bound $L\ge H(X)$ holds for any uniquely decodable code (Gibbs + Kraft).
+
+## ## Linear Compressors Are Optimal (Uncompression Duality)
+The Ch.14 channel-coding proof yields a free **source coding** corollary by re-reading it as compression. Treat the noise $\mathbf{x}$ (length $N$) as a redundant binary source; the linear map $\mathbf{x}\mapsto\mathbf{z}=\mathbf{Hx}\bmod 2$ (length $M$) is a *linear compressor* of rate $R_{\text{compressor}}=M/N$. Recovering $\mathbf{x}$ from $\mathbf{z}$ is decoding. Because that succeeds (vanishing error, almost any $\mathbf{H}$) whenever $H(X) < M/N$, there exists a virtually lossless **linear** compressor at any rate $R > H(X)$. This holds for any ergodic source admitting a typical set (sources with memory, time-varying sources), not just i.i.d. ones.

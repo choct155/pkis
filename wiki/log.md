@@ -2007,3 +2007,6 @@
 
 ## [2026-06-08] edit | edit_node
 - pkis:result:noisy-channel-coding-theorem: fields=[] sections=['## Random-Coding Proof via Linear Codes (BSC)']
+
+## [2026-06-08] edit | edit_node
+- pkis:result:source-coding-theorem: fields=[] sections=['## Linear Compressors Are Optimal (Uncompression Duality)']
