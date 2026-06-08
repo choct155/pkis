@@ -2594,3 +2594,12 @@
 ## [2026-06-08] committed | concept
 - Committed: random-walk-behaviour-mcmc → concepts/random-walk-behaviour-mcmc.md
 - IRI: pkis:concept:random-walk-behaviour-mcmc
+
+## [2026-06-08] staged | node-stub (technique)
+- Staged: overrelaxation (id: eed9749f-ab8e-4d31-9546-e31689a516c2)
+- Title: Overrelaxation
+- needs_canonical_source: False
+
+## [2026-06-08] committed | technique
+- Committed: overrelaxation → techniques/overrelaxation.md
+- IRI: pkis:technique:overrelaxation
