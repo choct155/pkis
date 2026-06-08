@@ -2100,3 +2100,12 @@
 ## [2026-06-08] committed | result
 - Committed: constrained-channel-optimal-transitions → results/constrained-channel-optimal-transitions.md
 - IRI: pkis:result:constrained-channel-optimal-transitions
+
+## [2026-06-08] staged | node-stub (concept)
+- Staged: redundancy-of-natural-language (id: 16c9008a-959a-4dbe-87c6-2c4b5b235f53)
+- Title: Redundancy of Natural Language
+- needs_canonical_source: False
+
+## [2026-06-08] committed | concept
+- Committed: redundancy-of-natural-language → concepts/redundancy-of-natural-language.md
+- IRI: pkis:concept:redundancy-of-natural-language
