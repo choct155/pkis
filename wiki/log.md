@@ -1613,3 +1613,6 @@
 
 ## [2026-06-08] edit | edit_node
 - pkis:concept:typical-set: fields=[] sections=['Why introduce the typical set at all?']
+
+## [2026-06-08] edit | edit_node
+- pkis:result:source-coding-theorem: fields=[] sections=['Converse — the two-sided bound']

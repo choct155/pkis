@@ -56,3 +56,6 @@ It establishes entropy as a physically meaningful limit, not just a formula. It 
 - [[entropy]] — uses: Entropy H is the fundamental compression limit
 - [[typical-set]] — uses: Proof: code only the ~2^{NH} typical strings
 [To be populated during integration]
+
+## Converse — the two-sided bound
+The theorem has two distinct halves. **Part 1** ($\tfrac1N H_\delta(X^N) < H+\epsilon$): even for vanishingly small permitted error $\delta$, the bits/symbol need not exceed $H+\epsilon$. **Part 2 / converse** ($\tfrac1N H_\delta(X^N) > H-\epsilon$): even for $\delta$ close to 1 (errors most of the time!), you still cannot get below $H-\epsilon$ bits/symbol. Together: the answer is $H$, no more and no less, regardless of error tolerance.
