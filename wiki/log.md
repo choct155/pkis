@@ -2274,3 +2274,6 @@
 
 ## [2026-06-08] edit | edit_node
 - pkis:technique:hashing-for-error-detection: fields=[] sections=['Detection versus correction: redundancy cost']
+
+## [2026-06-08] edit | edit_node
+- pkis:technique:belief-propagation: fields=[] sections=['Belief Propagation as Probabilistic Message Passing']

@@ -3,7 +3,7 @@ aliases: []
 also_type: []
 coverage: 1
 date_created: 2026-05-20
-date_updated: 2026-05-20
+date_updated: '2026-06-08'
 domain:
 - bayesian-stats
 - knowledge-representation
@@ -39,3 +39,6 @@ Message-passing algorithm for exact Bayesian inference in tree-structured graphi
 ## Connections
 - [[message-passing]] — specializes: BP is the Bayesian-inference instance of message passing on trees.
 - [[sum-product-algorithm]] — instantiates: BP is sum-product on a probabilistic graphical model; lambda/pi messages are the backward/forward passes.
+
+## Belief Propagation as Probabilistic Message Passing
+Belief propagation is the probabilistic instance of the **sum-product algorithm** applied to a tree-structured graphical model: the $\lambda$ (bottom-up evidential) and $\pi$ (top-down anticipatory) messages are exactly the backward and forward sum-product messages, and the posterior $P(B_i)\propto\lambda(B_i)\,\pi(B_i)$ is the product of the two passes that, in MacKay's path-counting view, gives the weight of configurations through a node. Reading BP this way clarifies that its single-pass, graph-diameter convergence is the generic property of message passing on trees (where any node separates the graph into independent subtrees), not a quirk of Bayesian inference. The same machinery becomes the **max-product / min-sum** algorithm when one seeks the single most probable configuration instead of marginals.
