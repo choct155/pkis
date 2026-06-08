@@ -1733,3 +1733,12 @@
 ## [2026-06-08] committed | technique
 - Committed: random-coding-argument → techniques/random-coding-argument.md
 - IRI: pkis:technique:random-coding-argument
+
+## [2026-06-08] staged | node-stub (result)
+- Staged: fanos-inequality (id: 5ff50f2d-a576-410e-9955-1e89d7905188)
+- Title: Fano's Inequality
+- needs_canonical_source: False
+
+## [2026-06-08] committed | result
+- Committed: fanos-inequality → results/fanos-inequality.md
+- IRI: pkis:result:fanos-inequality
