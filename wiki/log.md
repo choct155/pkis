@@ -3286,3 +3286,12 @@
 ## [2026-06-08] committed | concept
 - Committed: generalized-parity-check-matrix → concepts/generalized-parity-check-matrix.md
 - IRI: pkis:concept:generalized-parity-check-matrix
+
+## [2026-06-08] staged | node-stub (concept)
+- Staged: fountain-codes (id: 9be928e3-da76-49a8-b7d0-24ac1bd38764)
+- Title: Fountain Codes (Rateless Erasure Codes)
+- needs_canonical_source: False
+
+## [2026-06-08] committed | concept
+- Committed: fountain-codes → concepts/fountain-codes.md
+- IRI: pkis:concept:fountain-codes

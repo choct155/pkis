@@ -290,6 +290,7 @@
 - [[liu-machine-unlearning-llm-2024]] — Rethinking Machine Unlearning for LLMs: post-training knowledge editing survey (deep-learning, ai-safety) (2026-05-20)
 
 ## Concepts
+- [[fountain-codes]] — Fountain Codes (Rateless Erasure Codes) (information-theory) (2026-06-08)
 - [[generalized-parity-check-matrix]] — Generalized Parity-Check Matrix (information-theory) (2026-06-08)
 - [[turbo-code]] — Turbo Code (information-theory) (2026-06-08)
 - [[convolutional-code]] — Convolutional Code (information-theory) (2026-06-08)
