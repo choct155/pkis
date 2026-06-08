@@ -3241,3 +3241,12 @@
 ## [2026-06-08] committed | technique
 - Committed: density-evolution → techniques/density-evolution.md
 - IRI: pkis:technique:density-evolution
+
+## [2026-06-08] staged | node-stub (concept)
+- Staged: convolutional-code (id: 82da7d8f-67be-4204-a26f-2e7048c2aeb9)
+- Title: Convolutional Code
+- needs_canonical_source: False
+
+## [2026-06-08] committed | concept
+- Committed: convolutional-code → concepts/convolutional-code.md
+- IRI: pkis:concept:convolutional-code
