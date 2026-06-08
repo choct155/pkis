@@ -1385,3 +1385,12 @@
 ## [2026-06-08] committed | concept
 - Committed: marginal-likelihood → concepts/marginal-likelihood.md
 - IRI: pkis:concept:marginal-likelihood
+
+## [2026-06-08] staged | node-stub (technique)
+- Staged: bayesian-model-comparison (id: 7fc1780e-f16e-4ac5-95d7-d83bd9c0f69c)
+- Title: Bayesian Model Comparison
+- needs_canonical_source: False
+
+## [2026-06-08] committed | technique
+- Committed: bayesian-model-comparison → techniques/bayesian-model-comparison.md
+- IRI: pkis:technique:bayesian-model-comparison
