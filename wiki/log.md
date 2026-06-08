@@ -1403,3 +1403,12 @@
 ## [2026-06-08] committed | concept
 - Committed: likelihood-ratio-evidence → concepts/likelihood-ratio-evidence.md
 - IRI: pkis:concept:likelihood-ratio-evidence
+
+## [2026-06-08] staged | node-stub (result)
+- Staged: laplaces-rule-of-succession (id: cacd60c3-45e2-4a39-b4ca-93f45302941a)
+- Title: Laplace's Rule of Succession
+- needs_canonical_source: False
+
+## [2026-06-08] committed | result
+- Committed: laplaces-rule-of-succession → results/laplaces-rule-of-succession.md
+- IRI: pkis:result:laplaces-rule-of-succession
