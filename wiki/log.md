@@ -1255,3 +1255,7 @@
 ## [2026-06-08] committed | concept
 - Committed: typical-set → concepts/typical-set.md
 - IRI: pkis:concept:typical-set
+
+## [2026-06-08] committed | concept
+- Committed: shannon-information-content → concepts/shannon-information-content.md
+- IRI: pkis:concept:shannon-information-content
