@@ -2316,3 +2316,12 @@
 ## [2026-06-08] committed | result
 - Committed: exponential-family-ml-maxent-duality → results/exponential-family-ml-maxent-duality.md
 - IRI: pkis:result:exponential-family-ml-maxent-duality
+
+## [2026-06-08] staged | node-stub (principle)
+- Staged: maxima-are-atypical (id: 88857dfd-e23a-4e54-815c-0c68d3aaf587)
+- Title: Maxima Are Atypical (Pitfalls of ML and MAP)
+- needs_canonical_source: False
+
+## [2026-06-08] committed | principle
+- Committed: maxima-are-atypical → principles/maxima-are-atypical.md
+- IRI: pkis:principle:maxima-are-atypical
