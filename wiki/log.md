@@ -1742,3 +1742,12 @@
 ## [2026-06-08] committed | result
 - Committed: fanos-inequality → results/fanos-inequality.md
 - IRI: pkis:result:fanos-inequality
+
+## [2026-06-08] staged | node-stub (concept)
+- Staged: gaussian-channel (id: 55766718-8a51-46bf-a9c8-b883d2123838)
+- Title: Gaussian Channel (AWGN)
+- needs_canonical_source: False
+
+## [2026-06-08] committed | concept
+- Committed: gaussian-channel → concepts/gaussian-channel.md
+- IRI: pkis:concept:gaussian-channel

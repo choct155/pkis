@@ -290,6 +290,7 @@
 - [[liu-machine-unlearning-llm-2024]] — Rethinking Machine Unlearning for LLMs: post-training knowledge editing survey (deep-learning, ai-safety) (2026-05-20)
 
 ## Concepts
+- [[gaussian-channel]] — Gaussian Channel (AWGN) (information-theory) (2026-06-08)
 - [[jointly-typical-set]] — Jointly-Typical Set (information-theory) (2026-06-08)
 - [[z-channel]] — Z Channel (information-theory) (2026-06-08)
 - [[binary-erasure-channel]] — Binary Erasure Channel (information-theory) (2026-06-08)
