@@ -3259,3 +3259,12 @@
 ## [2026-06-08] committed | concept
 - Committed: turbo-code → concepts/turbo-code.md
 - IRI: pkis:concept:turbo-code
+
+## [2026-06-08] staged | node-stub (technique)
+- Staged: iterative-turbo-decoding (id: bf732472-da2a-4add-a978-4aebd5b4dfe1)
+- Title: Iterative Turbo Decoding
+- needs_canonical_source: False
+
+## [2026-06-08] committed | technique
+- Committed: iterative-turbo-decoding → techniques/iterative-turbo-decoding.md
+- IRI: pkis:technique:iterative-turbo-decoding

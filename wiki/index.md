@@ -473,6 +473,7 @@
 - [[market-vs-hierarchy]] — Coase/Williamson: transactions governed by price signals (markets) vs. managerial direction (firms) (corporate-finance) (2026-05-20)
 
 ## Techniques
+- [[iterative-turbo-decoding]] — Iterative Turbo Decoding (information-theory) (2026-06-08)
 - [[density-evolution]] — Density Evolution and the Decoding Threshold (information-theory) (2026-06-08)
 - [[sum-product-decoding-ldpc]] — Sum-Product Decoding of LDPC Codes (information-theory) (2026-06-08)
 - [[maximum-entropy-image-reconstruction]] — Maximum-Entropy Image Reconstruction (statistical-learning, bayesian-stats) (2026-06-08)
