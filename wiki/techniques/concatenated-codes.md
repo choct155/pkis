@@ -49,3 +49,6 @@ Concatenation + interleaving is how real systems beat **burst-error** channels: 
 ## Connections
 - [[linear-block-code]] — uses: concatenation composes linear inner and outer codes into a practically-decodable code
 [To be populated during integration]
+
+## Interleavers in turbo codes
+In turbo codes the interleaver is realized as a $K\times K$ **permutation matrix** that reorders the $K$ source bits before they enter a constituent convolutional encoder. With two encoders, the first interleaver is conventionally the identity and the second is a (often pseudo-random) permutation; this decorrelation is exactly what lets the two constituent trellises supply nearly independent evidence about each source bit during iterative decoding. The interleaver thus plays the same role here as in classical concatenation — spreading the correlated errors of one decoder so the other sees an effectively memoryless super-channel — but acts in parallel across coupled trellises rather than in series.

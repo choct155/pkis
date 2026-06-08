@@ -3427,3 +3427,6 @@
 
 ## [2026-06-08] edit | edit_node
 - pkis:concept:trellis: fields=[] sections=['Decoding on the trellis (min-sum and sum-product)']
+
+## [2026-06-08] edit | edit_node
+- pkis:technique:concatenated-codes: fields=[] sections=['Interleavers in turbo codes']
