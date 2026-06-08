@@ -290,6 +290,7 @@
 - [[liu-machine-unlearning-llm-2024]] — Rethinking Machine Unlearning for LLMs: post-training knowledge editing survey (deep-learning, ai-safety) (2026-05-20)
 
 ## Concepts
+- [[uniquely-decodable-codes]] — Uniquely Decodable Codes (information-theory) (2026-06-08)
 - [[essential-bit-content]] — Essential Bit Content (Raw Bit Content) (information-theory, statistical-learning) (2026-06-08)
 - [[likelihood-ratio-evidence]] — Likelihood Ratio as Evidence (bayesian-stats) (2026-06-08)
 - [[marginal-likelihood]] — Marginal Likelihood (Model Evidence) (bayesian-stats) (2026-06-08)

@@ -1430,3 +1430,12 @@
 ## [2026-06-08] committed | result
 - Committed: weak-law-of-large-numbers → results/weak-law-of-large-numbers.md
 - IRI: pkis:result:weak-law-of-large-numbers
+
+## [2026-06-08] staged | node-stub (concept)
+- Staged: uniquely-decodable-codes (id: 462b2066-6090-4b36-a921-3f5bc2d2844e)
+- Title: Uniquely Decodable Codes
+- needs_canonical_source: False
+
+## [2026-06-08] committed | concept
+- Committed: uniquely-decodable-codes → concepts/uniquely-decodable-codes.md
+- IRI: pkis:concept:uniquely-decodable-codes
