@@ -659,6 +659,7 @@
 - [[broad-money-monetarism]] — Congdon's updated monetarism: broad money (M3/M4) drives nominal spending; emphasis on credit and asset prices (macroeconomics, monetary-economics) (2026-05-20)
 
 ## Problems
+- [[stopping-rule-problem]] — Stopping-Rule Problem (bayesian-stats) (2026-06-08)
 - [[blind-source-separation]] — Blind Source Separation (statistical-learning) (2026-06-08)
 - [[graceful-degradation-graph-incompleteness]] — Graceful Degradation Under Graph Incompleteness (knowledge-representation, deep-learning) (2026-06-07)
 - [[model-selection-problem]] — Choosing model complexity given finite data (statistical-learning, bayesian-stats) (2026-05-20)

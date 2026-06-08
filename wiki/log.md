@@ -2902,3 +2902,12 @@
 ## [2026-06-08] committed | concept
 - Committed: confidence-interval → concepts/confidence-interval.md
 - IRI: pkis:concept:confidence-interval
+
+## [2026-06-08] staged | node-stub (problem)
+- Staged: stopping-rule-problem (id: 241c32e0-01cc-4a42-892f-98647bd89ee2)
+- Title: Stopping-Rule Problem
+- needs_canonical_source: False
+
+## [2026-06-08] committed | problem
+- Committed: stopping-rule-problem → problems/stopping-rule-problem.md
+- IRI: pkis:problem:stopping-rule-problem
