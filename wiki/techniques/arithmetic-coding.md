@@ -51,3 +51,6 @@ The practical realization of the source coding theorem's promise: compression to
 - [[stream-codes]] — instantiates: Arithmetic coding is a stream code: maps a whole string to a sub-interval of [0,1) of size = its probability.
 - [[source-coding-theorem]] — instantiates: Stream code; reaches ~H bits/symbol for arbitrary models
 [To be populated during integration]
+
+## Random sample generation and text entry
+Run backwards, an arithmetic *decoder* fed with ordinary random bits selects a point uniformly in $[0,1)$ and hence draws a string from the model's distribution — a way to **generate random samples** using very nearly the minimum number of random bits possible. Inverting the coder also yields information-efficient text entry: in **Dasher** (Ward & MacKay), the user zooms into the unit interval to locate their intended string, with a language model sizing the intervals so probable text is fastest to reach.

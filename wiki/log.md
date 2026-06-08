@@ -1625,3 +1625,6 @@
 
 ## [2026-06-08] edit | edit_node
 - pkis:result:kraft-inequality: fields=[] sections=['Kraft–McMillan: both directions']
+
+## [2026-06-08] edit | edit_node
+- pkis:technique:arithmetic-coding: fields=[] sections=['Random sample generation and text entry']
