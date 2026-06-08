@@ -3109,3 +3109,6 @@
 
 ## [2026-06-08] edit | edit_node
 - pkis:technique:laplace-approximation: fields=[] sections=['Application: Gaussian Approximation of a Weight Posterior']
+
+## [2026-06-08] edit | edit_node
+- pkis:framework:ising-model: fields=[] sections=['From Ising Spins to Hopfield Networks']

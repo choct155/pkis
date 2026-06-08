@@ -56,3 +56,10 @@ The Ising model is the canonical solvable system with a genuine phase transition
 - [[undirected-graphical-models]] — specializes: An Ising model is a pairwise Markov random field over binary spins with energy = negative log potential.
 - [[phase-transition]] — instantiates: The 2D ferromagnetic Ising model is the canonical system exhibiting a temperature-driven phase transition.
 [To be populated during integration]
+
+## From Ising Spins to Hopfield Networks
+The **Hopfield network** is, formally, an Ising-type spin system repurposed for computation. Its binary states $x_i\in\{-1,1\}$ are spins, its symmetric weights $w_{ij}$ play the role of the couplings $J_{ij}$, and its energy
+$$E(\mathbf{x}) = -\tfrac{1}{2}\sum_{m,n} w_{mn}x_m x_n - \sum_n w_{n0} x_n$$
+is exactly the Ising Hamiltonian $E(\mathbf{x};J) = -\tfrac{1}{2}\sum_{m,n}J_{mn}x_m x_n - \sum_n h_n x_n$ with $J\to w$ and external field $h\to$ bias. The continuous Hopfield update $x_i=\tanh(\beta a_i)$ is precisely the **mean-field** equation obtained when one approximates this spin system by a separable distribution and minimizes the variational free energy — so Hopfield dynamics *are* mean-field relaxation of an Ising model.
+
+The deep payoff is the capacity result: when too many memories are loaded ($N/I > 0.138$), the Hopfield network's only stable states are uncorrelated **spin-glass** states, and the statistical-physics methods of Amit, Gutfreund & Sompolinsky (1985) used to locate this transition are the same tools developed for disordered Ising spin glasses.
