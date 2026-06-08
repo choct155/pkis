@@ -2145,3 +2145,12 @@
 ## [2026-06-08] committed | result
 - Committed: rate-of-information-acquisition-mutation → results/rate-of-information-acquisition-mutation.md
 - IRI: pkis:result:rate-of-information-acquisition-mutation
+
+## [2026-06-08] staged | node-stub (result)
+- Staged: sqrt-g-advantage-of-sex (id: 79aff173-3a7d-41b9-8ed8-6633fd7a48c9)
+- Title: The √G Advantage of Sexual Reproduction
+- needs_canonical_source: False
+
+## [2026-06-08] committed | result
+- Committed: sqrt-g-advantage-of-sex → results/sqrt-g-advantage-of-sex.md
+- IRI: pkis:result:sqrt-g-advantage-of-sex
