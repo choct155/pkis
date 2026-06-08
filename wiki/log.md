@@ -1868,3 +1868,12 @@
 ## [2026-06-08] committed | result
 - Committed: bounds-on-binary-codes → results/bounds-on-binary-codes.md
 - IRI: pkis:result:bounds-on-binary-codes
+
+## [2026-06-08] staged | node-stub (concept)
+- Staged: dual-code (id: 7d17fa0c-153c-40d0-bcb1-47e62642b128)
+- Title: Dual of a Linear Code
+- needs_canonical_source: False
+
+## [2026-06-08] committed | concept
+- Committed: dual-code → concepts/dual-code.md
+- IRI: pkis:concept:dual-code
