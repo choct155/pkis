@@ -2028,3 +2028,12 @@
 ## [2026-06-08] committed | concept
 - Committed: multiple-access-channel → concepts/multiple-access-channel.md
 - IRI: pkis:concept:multiple-access-channel
+
+## [2026-06-08] staged | node-stub (concept)
+- Staged: broadcast-channel (id: 21c6aa63-1fd3-4453-b141-278e758a2fbd)
+- Title: Broadcast Channel
+- needs_canonical_source: False
+
+## [2026-06-08] committed | concept
+- Committed: broadcast-channel → concepts/broadcast-channel.md
+- IRI: pkis:concept:broadcast-channel

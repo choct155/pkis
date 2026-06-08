@@ -290,6 +290,7 @@
 - [[liu-machine-unlearning-llm-2024]] — Rethinking Machine Unlearning for LLMs: post-training knowledge editing survey (deep-learning, ai-safety) (2026-05-20)
 
 ## Concepts
+- [[broadcast-channel]] — Broadcast Channel (information-theory) (2026-06-08)
 - [[multiple-access-channel]] — Multiple-Access Channel (information-theory) (2026-06-08)
 - [[dual-code]] — Dual of a Linear Code (information-theory) (2026-06-08)
 - [[perfect-codes]] — Perfect Codes (information-theory) (2026-06-08)
