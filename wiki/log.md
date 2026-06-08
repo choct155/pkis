@@ -3178,3 +3178,12 @@
 ## [2026-06-08] committed | result
 - Committed: neural-network-gaussian-process-limit → results/neural-network-gaussian-process-limit.md
 - IRI: pkis:result:neural-network-gaussian-process-limit
+
+## [2026-06-08] staged | node-stub (problem)
+- Staged: deconvolution (id: 2323bf4a-668f-4979-8ee4-341099ea5ae9)
+- Title: Deconvolution (Linear Inverse Problem)
+- needs_canonical_source: False
+
+## [2026-06-08] committed | problem
+- Committed: deconvolution → problems/deconvolution.md
+- IRI: pkis:problem:deconvolution
