@@ -3115,3 +3115,12 @@
 
 ## [2026-06-08] edit | edit_node
 - pkis:technique:neural-networks: fields=[] sections=['Feedback Networks and the Hopfield Model']
+
+## [2026-06-08] staged | node-stub (framework)
+- Staged: boltzmann-machine (id: 2e3becea-5e6a-40e5-ad38-fb5e81eb6ac5)
+- Title: Boltzmann Machine
+- needs_canonical_source: False
+
+## [2026-06-08] committed | framework
+- Committed: boltzmann-machine → frameworks/boltzmann-machine.md
+- IRI: pkis:framework:boltzmann-machine
