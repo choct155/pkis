@@ -3295,3 +3295,12 @@
 ## [2026-06-08] committed | concept
 - Committed: fountain-codes → concepts/fountain-codes.md
 - IRI: pkis:concept:fountain-codes
+
+## [2026-06-08] staged | node-stub (technique)
+- Staged: lt-codes (id: 5527e61f-4344-4aa8-9d66-79e9545cf09f)
+- Title: LT Codes (Luby Transform)
+- needs_canonical_source: False
+
+## [2026-06-08] committed | technique
+- Committed: lt-codes → techniques/lt-codes.md
+- IRI: pkis:technique:lt-codes
