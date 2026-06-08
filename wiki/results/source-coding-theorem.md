@@ -33,6 +33,8 @@ uses:
 - typical-set
 - entropy
 - shannon-information-content
+- essential-bit-content
+- prefix-code
 ---
 
 ## Definition
@@ -48,6 +50,8 @@ It establishes entropy as a physically meaningful limit, not just a formula. It 
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[prefix-code]] — uses: Thm 5.1 constructs a prefix code with lengths ceil(log 1/p_i) attaining L<H+1.
+- [[essential-bit-content]] — uses: The theorem is phrased as the convergence of the essential bit content per symbol to the entropy.
 - [[shannon-information-content]] — uses: Optimal codeword length ≈ h(x)
 - [[entropy]] — uses: Entropy H is the fundamental compression limit
 - [[typical-set]] — uses: Proof: code only the ~2^{NH} typical strings

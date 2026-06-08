@@ -17,6 +17,8 @@ domain:
 id: pkis:technique:arithmetic-coding
 instantiates:
 - source-coding-theorem
+- stream-codes
+- compression-as-probabilistic-modelling
 knowledge_type: technique
 maturity: evolving
 needs_canonical_source: false
@@ -45,5 +47,7 @@ The practical realization of the source coding theorem's promise: compression to
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[compression-as-probabilistic-modelling]] — instantiates: Arithmetic coding turns any predictive distribution into a code of length ~ log2 1/P.
+- [[stream-codes]] — instantiates: Arithmetic coding is a stream code: maps a whole string to a sub-interval of [0,1) of size = its probability.
 - [[source-coding-theorem]] — instantiates: Stream code; reaches ~H bits/symbol for arbitrary models
 [To be populated during integration]

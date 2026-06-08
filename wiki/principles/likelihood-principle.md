@@ -6,6 +6,8 @@ component_scores:
   justification: null
   statement: null
   violations: null
+contrasts-with:
+- hypothesis-testing
 coverage: 1
 date_created: '2026-06-08'
 date_updated: '2026-06-08'
@@ -15,9 +17,13 @@ id: pkis:principle:likelihood-principle
 knowledge_type: principle
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- likelihood-ratio-evidence
 related_concepts: []
 sources:
 - mackay-itila-ch02
+specializes:
+- bayesian-inference
 tags:
 - likelihood
 - inference
@@ -42,4 +48,7 @@ The likelihood principle falls directly out of Bayes' theorem (the posterior dep
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[likelihood-ratio-evidence]] — prerequisite-of: evidence resides in the likelihood at the observed data, justifying ratio-based reasoning
+- [[hypothesis-testing]] — contrasts-with: Classical sampling-theory tests condition on the sample space and can violate the likelihood principle.
+- [[bayesian-inference]] — specializes: The likelihood principle is an immediate consequence of Bayes' theorem.
 [To be populated during integration]

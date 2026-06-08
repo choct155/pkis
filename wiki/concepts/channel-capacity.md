@@ -19,6 +19,8 @@ id: pkis:concept:channel-capacity
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- noisy-channel-coding-theorem
 related_concepts: []
 sources:
 - mackay-itila-ch01
@@ -30,6 +32,8 @@ tags:
 - shannon
 title: Channel Capacity
 understanding: 0
+uses:
+- information-theory
 ---
 
 ## Definition
@@ -49,4 +53,6 @@ Capacity is the central quantity of information theory: it sets the fundamental 
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[information-theory]] — uses: Capacity is defined via mutual information, a core information-theoretic quantity.
+- [[noisy-channel-coding-theorem]] — prerequisite-of: Capacity is the threshold quantity whose existence and value the coding theorem establishes.
 [To be populated during integration]

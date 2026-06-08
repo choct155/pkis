@@ -7,12 +7,16 @@ component_scores:
   limitations: null
   proof_sketch: null
   statement: null
+contrasts-with:
+- maximum-likelihood-estimation
 coverage: 1
 date_created: '2026-06-08'
 date_updated: '2026-06-08'
 domain:
 - bayesian-stats
 id: pkis:result:laplaces-rule-of-succession
+instantiates:
+- bayesian-inference
 knowledge_type: result
 maturity: evolving
 needs_canonical_source: false
@@ -44,4 +48,6 @@ The predictive mean $\frac{F_a+1}{F_a+F_b+2}$ differs from the posterior mode (t
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[maximum-likelihood-estimation]] — contrasts-with: predictive mean differs from MLE; averages over vs. maximizes the posterior
+- [[bayesian-inference]] — instantiates: posterior-predictive integration is a worked instance of full Bayesian inference
 [To be populated during integration]

@@ -9,6 +9,8 @@ component_scores:
   implementation: null
   operational_mechanism: null
   principled_mechanism: null
+contrasts-with:
+- hypothesis-testing
 coverage: 1
 date_created: '2026-06-08'
 date_updated: '2026-06-08'
@@ -29,6 +31,9 @@ tags:
 - likelihood-ratio
 title: Bayesian Model Comparison
 understanding: 0
+uses:
+- marginal-likelihood
+- likelihood-ratio-evidence
 ---
 
 ## Definition
@@ -46,4 +51,7 @@ It replaces orthodox null-hypothesis testing with a single coherent quantity. Ma
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[hypothesis-testing]] — contrasts-with: Bayes factors / posterior odds replace p-values and significance levels
+- [[likelihood-ratio-evidence]] — uses: the Bayes factor is the likelihood ratio at the model level
+- [[marginal-likelihood]] — uses: posterior odds are formed from the ratio of model evidences (Bayes factor)
 [To be populated during integration]

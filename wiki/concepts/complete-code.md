@@ -16,12 +16,16 @@ date_updated: '2026-06-08'
 domain:
 - information-theory
 id: pkis:concept:complete-code
+instantiates:
+- kraft-inequality
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
 related_concepts: []
 sources:
 - mackay-itila-ch05
+specializes:
+- uniquely-decodable-codes
 tags:
 - symbol-codes
 - kraft-inequality
@@ -47,4 +51,6 @@ Completeness is the condition under which a code can be optimal: the lower bound
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[kraft-inequality]] — instantiates: Completeness is exactly the equality case of the Kraft inequality.
+- [[uniquely-decodable-codes]] — specializes: A complete code is a uniquely decodable code meeting Kraft with equality.
 [To be populated during integration]

@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- entropy
 component_scores:
   application: null
   boundary: null
@@ -30,6 +32,8 @@ tags:
 - minimum-description-length
 title: Universal Codes and Implicit Priors
 understanding: 0
+uses:
+- kraft-inequality
 ---
 
 ## Definition
@@ -48,4 +52,6 @@ Universality is the bridge from compression to inference: every code is a probab
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[entropy]] — applies: Universal codes are judged by closeness to the entropy/ideal average length.
+- [[kraft-inequality]] — uses: Universality and the 'no free code-switching' argument turn on completeness (Kraft equality).
 [To be populated during integration]

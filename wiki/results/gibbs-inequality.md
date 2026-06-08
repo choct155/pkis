@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- kl-divergence
 component_scores:
   conditions: null
   implications: null
@@ -16,6 +18,8 @@ id: pkis:result:gibbs-inequality
 knowledge_type: result
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- source-coding-theorem
 related_concepts: []
 sources:
 - mackay-itila-ch02
@@ -26,6 +30,8 @@ tags:
 - inequality
 title: Gibbs' Inequality
 understanding: 0
+uses:
+- jensens-inequality
 ---
 
 ## Definition
@@ -45,4 +51,7 @@ MacKay calls this 'probably the most important inequality in this book.' It guar
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[source-coding-theorem]] — prerequisite-of: Non-negativity of relative entropy underlies the optimality of matched codes.
+- [[kl-divergence]] — applies: Gibbs' inequality is exactly the non-negativity D_KL(P||Q) >= 0.
+- [[jensens-inequality]] — uses: Gibbs' inequality is proved by applying Jensen's inequality to the concave log.
 [To be populated during integration]

@@ -15,12 +15,16 @@ date_updated: '2026-06-08'
 domain:
 - information-theory
 id: pkis:technique:elias-omega-code
+instantiates:
+- universal-codes
 knowledge_type: technique
 maturity: evolving
 needs_canonical_source: false
 related_concepts: []
 sources:
 - mackay-itila-ch07
+specializes:
+- self-delimiting-integer-codes
 tags:
 - source-coding
 - integer-coding
@@ -47,4 +51,6 @@ $C_\omega$ shows you can encode integers near-optimally *without* committing to 
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[universal-codes]] — instantiates: Elias's C_omega is the canonical example of a universal code for integers.
+- [[self-delimiting-integer-codes]] — specializes: C_omega is the recursive, automatically-truncating member of the self-delimiting family.
 [To be populated during integration]

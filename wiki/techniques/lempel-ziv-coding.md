@@ -9,12 +9,17 @@ component_scores:
   implementation: null
   operational_mechanism: null
   principled_mechanism: null
+contrasts-with:
+- arithmetic-coding
 coverage: 1
 date_created: '2026-06-08'
 date_updated: '2026-06-08'
 domain:
 - information-theory
 id: pkis:technique:lempel-ziv-coding
+instantiates:
+- stream-codes
+- source-coding-theorem
 knowledge_type: technique
 maturity: evolving
 needs_canonical_source: false
@@ -47,4 +52,7 @@ It is the workhorse of everyday lossless compression (gzip, compress, zip). It e
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[source-coding-theorem]] — instantiates: Universality: for any ergodic source LZ asymptotically compresses to the source entropy H.
+- [[arithmetic-coding]] — contrasts-with: Opposite philosophies: LZ has no explicit model (dictionary IS the model); arithmetic coding cleanly separates model from coder.
+- [[stream-codes]] — instantiates: Lempel–Ziv is a stream code: codes many symbols jointly via dictionary pointers.
 [To be populated during integration]

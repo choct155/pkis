@@ -1,12 +1,16 @@
 ---
 aliases: []
 also_type: []
+applies:
+- binary-symmetric-channel
 component_scores:
   conditions: null
   implications: null
   limitations: null
   proof_sketch: null
   statement: null
+contrasts-with:
+- repetition-codes
 coverage: 1
 date_created: '2026-06-08'
 date_updated: '2026-06-08'
@@ -16,6 +20,8 @@ id: pkis:result:noisy-channel-coding-theorem
 knowledge_type: result
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- typical-set
 related_concepts: []
 sources:
 - mackay-itila-ch01
@@ -27,6 +33,8 @@ tags:
 - reliable-communication
 title: Noisy-Channel Coding Theorem
 understanding: 0
+uses:
+- channel-capacity
 ---
 
 ## Definition
@@ -45,4 +53,8 @@ This result created information theory and overturned the prevailing 'no pain, n
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[typical-set]] — prerequisite-of: MacKay develops typical sets to prove the coding theorem in later chapters.
+- [[binary-symmetric-channel]] — applies: The theorem holds for any channel, including the binary symmetric channel used throughout the chapter.
+- [[repetition-codes]] — contrasts-with: Repetition codes need rate to vanish for small error; the theorem proves finite rate at vanishing error is achievable.
+- [[channel-capacity]] — uses: The theorem states reliable communication is possible exactly for rates below the channel capacity C.
 [To be populated during integration]

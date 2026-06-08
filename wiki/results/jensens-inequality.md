@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- elbo
 component_scores:
   conditions: null
   implications: null
@@ -16,6 +18,8 @@ id: pkis:result:jensens-inequality
 knowledge_type: result
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- entropy
 related_concepts: []
 sources:
 - mackay-itila-ch02
@@ -26,6 +30,8 @@ tags:
 - entropy
 title: Jensen's Inequality
 understanding: 0
+uses:
+- convex-optimization
 ---
 
 ## Definition
@@ -48,4 +54,7 @@ Jensen is the engine behind the most important inequalities in information theor
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[convex-optimization]] — uses: Jensen's inequality is the probabilistic statement of convexity.
+- [[elbo]] — applies: Jensen yields the evidence lower bound used in variational inference.
+- [[entropy]] — prerequisite-of: The maximum-entropy bound H(X) <= log|A_X| is derived from Jensen.
 [To be populated during integration]

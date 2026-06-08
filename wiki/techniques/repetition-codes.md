@@ -9,12 +9,16 @@ component_scores:
   implementation: null
   operational_mechanism: null
   principled_mechanism: null
+contrasts-with:
+- hamming-7-4-code
 coverage: 1
 date_created: '2026-06-08'
 date_updated: '2026-06-08'
 domain:
 - information-theory
 id: pkis:technique:repetition-codes
+instantiates:
+- maximum-likelihood-estimation
 knowledge_type: technique
 maturity: evolving
 needs_canonical_source: false
@@ -29,6 +33,8 @@ tags:
 - binary-symmetric-channel
 title: Repetition Codes
 understanding: 0
+uses:
+- binary-symmetric-channel
 ---
 
 ## Definition
@@ -50,4 +56,7 @@ Repetition codes are the baseline against which all coding is measured. They mak
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[maximum-likelihood-estimation]] — instantiates: Majority-vote decoding is the maximum-likelihood decoder for R3 over a BSC.
+- [[binary-symmetric-channel]] — uses: Error probability of R_N is computed for the binary symmetric channel with flip probability f.
+- [[hamming-7-4-code]] — contrasts-with: Both correct errors at O(f^2), but the Hamming code achieves rate 4/7 versus the repetition code's 1/3.
 [To be populated during integration]

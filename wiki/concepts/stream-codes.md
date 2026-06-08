@@ -10,6 +10,8 @@ component_scores:
   prerequisites: null
   scope: null
   transfer: null
+contrasts-with:
+- huffman-coding
 coverage: 1
 date_created: '2026-06-08'
 date_updated: '2026-06-08'
@@ -44,4 +46,5 @@ Stream codes are MacKay's organizing category for the two practically important 
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[huffman-coding]] — contrasts-with: Stream codes lift the >=1 bit/symbol granularity that constrains Huffman.
 [To be populated during integration]

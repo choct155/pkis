@@ -16,6 +16,8 @@ id: pkis:result:optimal-symbol-codelengths
 knowledge_type: result
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- source-coding-theorem
 related_concepts: []
 sources:
 - mackay-itila-ch05
@@ -27,6 +29,9 @@ tags:
 - symbol-codes
 title: Optimal Symbol Codelengths and the Cost of Wrong Lengths
 understanding: 0
+uses:
+- shannon-information-content
+- kl-divergence
 ---
 
 ## Definition
@@ -49,4 +54,7 @@ This gives the operational meaning of two central quantities: the Shannon inform
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[kl-divergence]] — uses: Excess length over entropy equals D_KL(p||q) for implicit probabilities q_i=2^{-l_i}.
+- [[source-coding-theorem]] — prerequisite-of: The lower bound L>=H underlies the [H,H+1) symbol-code theorem.
+- [[shannon-information-content]] — uses: Ideal codelength of symbol i equals its Shannon information content log2(1/p_i).
 [To be populated during integration]

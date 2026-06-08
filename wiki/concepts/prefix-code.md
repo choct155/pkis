@@ -22,6 +22,8 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - mackay-itila-ch05
+specializes:
+- uniquely-decodable-codes
 tags:
 - symbol-codes
 - prefix-free
@@ -30,6 +32,8 @@ tags:
 - binary-trees
 title: Prefix Codes (Instantaneous Codes)
 understanding: 0
+uses:
+- kraft-inequality
 ---
 
 ## Definition
@@ -47,4 +51,6 @@ Prefix codes give instantaneous decoding yet sacrifice nothing in compression: f
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[kraft-inequality]] — uses: Lengths satisfying Kraft are realizable as a prefix code via the supermarket construction.
+- [[uniquely-decodable-codes]] — specializes: Every prefix code is uniquely decodable; the converse fails (e.g. C6).
 [To be populated during integration]

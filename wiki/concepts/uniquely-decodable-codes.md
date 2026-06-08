@@ -30,6 +30,8 @@ tags:
 - kraft-mcmillan
 title: Uniquely Decodable Codes
 understanding: 0
+uses:
+- kraft-inequality
 ---
 
 ## Definition
@@ -50,4 +52,5 @@ Unique decodeability is what makes a variable-length code usable at all. A code 
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[kraft-inequality]] — uses: Kraft–McMillan characterizes which length sets admit a uniquely decodable code.
 [To be populated during integration]

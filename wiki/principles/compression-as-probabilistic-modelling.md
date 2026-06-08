@@ -15,6 +15,8 @@ id: pkis:principle:compression-as-probabilistic-modelling
 knowledge_type: principle
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- arithmetic-coding
 related_concepts: []
 sources:
 - mackay-itila-ch06
@@ -44,4 +46,5 @@ It frames compression, prediction, and learning as one problem. Taken to its lim
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[arithmetic-coding]] — prerequisite-of: The model/coder split underlying arithmetic coding presupposes that prediction drives compression.
 [To be populated during integration]

@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- optimal-symbol-codelengths
 component_scores:
   alternatives: null
   conditions: null
@@ -19,6 +21,7 @@ domain:
 id: pkis:technique:huffman-coding
 instantiates:
 - source-coding-theorem
+- prefix-code
 knowledge_type: technique
 maturity: evolving
 needs_canonical_source: false
@@ -48,6 +51,8 @@ The canonical instance of the source coding theorem made constructive — it sho
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[optimal-symbol-codelengths]] — applies: Huffman attains the minimum expected length, approaching ideal lengths l_i=log(1/p_i).
+- [[prefix-code]] — instantiates: Huffman builds an optimal code that is a prefix (instantaneous) code.
 - [[arithmetic-coding]] — contrasts-with: Integer bits/symbol (Huffman) vs whole-stream coding escaping that limit (arithmetic)
 - [[source-coding-theorem]] — instantiates: Optimal symbol code; achieves within 1 bit of H
 [To be populated during integration]

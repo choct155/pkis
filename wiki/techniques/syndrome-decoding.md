@@ -15,6 +15,8 @@ date_updated: '2026-06-08'
 domain:
 - information-theory
 id: pkis:technique:syndrome-decoding
+instantiates:
+- maximum-likelihood-estimation
 knowledge_type: technique
 maturity: evolving
 needs_canonical_source: false
@@ -48,4 +50,5 @@ Syndrome decoding turns optimal decoding from brute-force codeword comparison ($
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[maximum-likelihood-estimation]] — instantiates: The maximum-likelihood decoder finds the most probable noise vector solving Hn=z.
 [To be populated during integration]

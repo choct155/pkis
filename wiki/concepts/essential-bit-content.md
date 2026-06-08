@@ -10,6 +10,8 @@ component_scores:
   prerequisites: null
   scope: null
   transfer: null
+contrasts-with:
+- entropy
 coverage: 1
 date_created: '2026-06-08'
 date_updated: '2026-06-08'
@@ -20,6 +22,8 @@ id: pkis:concept:essential-bit-content
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- source-coding-theorem
 related_concepts: []
 sources:
 - mackay-itila-ch04
@@ -31,6 +35,8 @@ tags:
 - information-content-measure
 title: Essential Bit Content (Raw Bit Content)
 understanding: 0
+uses:
+- shannon-information-content
 ---
 
 ## Definition
@@ -48,4 +54,7 @@ $H_\delta$ is the bridge from the naive counting measure $H_0$ to the entropy $H
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[entropy]] — contrasts-with: H_δ depends awkwardly on δ for a single ensemble; entropy H is its large-N limit.
+- [[shannon-information-content]] — uses: δ-sufficient subsets are built by ranking outcomes by probability (Shannon information content).
+- [[source-coding-theorem]] — prerequisite-of: The source coding theorem is the statement that (1/N)H_δ(X^N) -> H(X).
 [To be populated during integration]

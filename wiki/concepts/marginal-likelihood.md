@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- bayesian-model-averaging
 component_scores:
   application: null
   boundary: null
@@ -19,9 +21,13 @@ id: pkis:concept:marginal-likelihood
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- bayesian-model-comparison
 related_concepts: []
 sources:
 - mackay-itila-ch03
+specializes:
+- bayesian-inference
 tags:
 - evidence
 - model-comparison
@@ -30,6 +36,8 @@ tags:
 - occams-razor
 title: Marginal Likelihood (Model Evidence)
 understanding: 0
+uses:
+- conjugate-prior
 ---
 
 ## Definition
@@ -50,4 +58,8 @@ Evidence is what makes Bayesian model comparison automatic: it requires no ad ho
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[conjugate-prior]] — uses: conjugacy (Beta-Binomial) yields the closed-form Beta-integral evidence in the bent-coin example
+- [[bayesian-inference]] — specializes: the evidence is the normalizing constant of the parameter-level posterior
+- [[bayesian-model-averaging]] — applies: model evidence supplies the posterior model weights P(H|D) used in BMA
+- [[bayesian-model-comparison]] — prerequisite-of: evidence must be computable to compare models
 [To be populated during integration]

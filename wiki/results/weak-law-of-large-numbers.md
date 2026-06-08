@@ -17,6 +17,9 @@ id: pkis:result:weak-law-of-large-numbers
 knowledge_type: result
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- typical-set
+- source-coding-theorem
 related_concepts: []
 sources:
 - mackay-itila-ch04
@@ -45,4 +48,6 @@ This is the probabilistic engine behind the asymptotic equipartition property an
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[source-coding-theorem]] — prerequisite-of: The WLLN (via Chebyshev) is the probabilistic engine of MacKay's proof.
+- [[typical-set]] — prerequisite-of: Applying the WLLN to (1/N)log(1/P(x)) proves the asymptotic equipartition property.
 [To be populated during integration]

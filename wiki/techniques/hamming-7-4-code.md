@@ -29,6 +29,9 @@ tags:
 - channel-coding
 title: (7,4) Hamming Code
 understanding: 0
+uses:
+- syndrome-decoding
+- binary-symmetric-channel
 ---
 
 ## Definition
@@ -48,4 +51,6 @@ It is the archetypal linear block code: it shows redundancy can be added to *blo
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[binary-symmetric-channel]] — uses: Hamming block/bit error rates are derived assuming a binary symmetric channel.
+- [[syndrome-decoding]] — uses: The (7,4) Hamming code is optimally decoded by mapping each of seven non-zero syndromes to a single-bit flip.
 [To be populated during integration]

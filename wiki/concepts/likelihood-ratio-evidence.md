@@ -30,6 +30,8 @@ tags:
 - weight-of-evidence
 title: Likelihood Ratio as Evidence
 understanding: 0
+uses:
+- bayesian-inference
 ---
 
 ## Definition
@@ -45,4 +47,5 @@ Confusing $P(D\mid H)$ with $P(H\mid D)$ corrupts this reasoning. The wife-beate
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[bayesian-inference]] — uses: posterior odds = likelihood ratio x prior odds, a direct application of Bayes' theorem
 [To be populated during integration]

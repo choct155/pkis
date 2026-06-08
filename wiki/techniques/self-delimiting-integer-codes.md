@@ -9,6 +9,8 @@ component_scores:
   implementation: null
   operational_mechanism: null
   principled_mechanism: null
+contrasts-with:
+- huffman-coding
 coverage: 1
 date_created: '2026-06-08'
 date_updated: '2026-06-08'
@@ -18,6 +20,8 @@ id: pkis:technique:self-delimiting-integer-codes
 knowledge_type: technique
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- universal-codes
 related_concepts: []
 sources:
 - mackay-itila-ch07
@@ -29,6 +33,8 @@ tags:
 - kraft-inequality
 title: Self-Delimiting Codes for Integers
 understanding: 0
+uses:
+- kraft-inequality
 ---
 
 ## Definition
@@ -48,4 +54,7 @@ Self-delimiting codes solve lossless coding when the integer's magnitude is unkn
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[huffman-coding]] — contrasts-with: Huffman builds an optimal code from a known finite distribution; self-delimiting integer codes target an unbounded distribution over the positive integers.
+- [[universal-codes]] — prerequisite-of: Universal integer codes are constructed from and compared against the self-delimiting family.
+- [[kraft-inequality]] — uses: Self-delimiting codes are prefix codes; their length profiles must satisfy Kraft.
 [To be populated during integration]
