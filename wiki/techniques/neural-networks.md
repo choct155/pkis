@@ -52,3 +52,10 @@ The boundary is porous: an unsupervised model that can *fill in missing variable
 
 ## Memory Capacity of a Single Neuron
 Viewed as a communication channel, a binary linear threshold neuron with $K$ weights can store about $2K$ bits — **two bits per weight**. It can almost certainly memorise any random binary labelling of up to $N=2K$ points (in general position) and almost certainly fails beyond that, a sharp phase transition. The number of realisable dichotomies is Cover's $T(N,K)=2\sum_{k=0}^{K-1}\binom{N-1}{k}$, equal to $2^N$ for $N\le K$; hence the VC dimension of a $K$-input threshold unit is $K$. See [[capacity-of-a-single-neuron]] and [[cover-function-counting-theorem]].
+
+## Feedback Networks and the Hopfield Model
+Neural networks split by connectivity into **feedforward** networks (connections form a directed acyclic graph) and **feedback** (recurrent) networks (anything else). The **Hopfield network** is the canonical feedback network: fully connected with *symmetric* weights $w_{ij}=w_{ji}$ and no self-connections, every neuron's output feeding back as input to all others.
+
+This feedback structure is what gives the network its distinctive capability — *attractor dynamics* and content-addressable memory — but it also forces a choice of update order (synchronous vs. asynchronous) absent in feedforward nets, and convergence is only guaranteed under symmetry with asynchronous updates.
+
+A neat unification (MacKay's Exercise 42.10): if a Hopfield network's memories are all stable, then *each neuron* solves a single-neuron binary classification problem on the other neurons' states. So an unsupervised associative memory is, internally, a collection of supervised binary classifiers — and the same cross-entropy objective and gradient algorithm used to train one neuron can train the whole network, outperforming the one-shot Hebb rule.
