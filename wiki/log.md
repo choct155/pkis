@@ -2738,3 +2738,12 @@
 ## [2026-06-08] committed | technique
 - Committed: natural-gradient → techniques/natural-gradient.md
 - IRI: pkis:technique:natural-gradient
+
+## [2026-06-08] staged | node-stub (result)
+- Staged: benfords-law (id: dd222e6a-ba13-441e-a28c-cd8ddc0b041b)
+- Title: Benford's Law
+- needs_canonical_source: False
+
+## [2026-06-08] committed | result
+- Committed: benfords-law → results/benfords-law.md
+- IRI: pkis:result:benfords-law
