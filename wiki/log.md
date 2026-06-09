@@ -4099,3 +4099,12 @@
 ## [2026-06-09] committed | technique
 - Committed: upper-confidence-bound → techniques/upper-confidence-bound.md
 - IRI: pkis:technique:upper-confidence-bound
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: softmax-action-selection (id: 019ae526-c978-4c08-b833-05782914bddc)
+- Title: Softmax (Boltzmann) Action Selection
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: softmax-action-selection → techniques/softmax-action-selection.md
+- IRI: pkis:technique:softmax-action-selection
