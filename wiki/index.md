@@ -290,6 +290,7 @@
 - [[liu-machine-unlearning-llm-2024]] — Rethinking Machine Unlearning for LLMs: post-training knowledge editing survey (deep-learning, ai-safety) (2026-05-20)
 
 ## Concepts
+- [[evaluation-function-games]] — Heuristic Evaluation Function (Games) (optimization, knowledge-representation) (2026-06-09)
 - [[game-tree]] — Game Tree (optimization, knowledge-representation) (2026-06-09)
 - [[online-search-agents]] — Online Search Agents (search-and-planning, reinforcement-learning) (2026-06-09)
 - [[belief-state-search]] — Belief-State Search (search-and-planning) (2026-06-09)

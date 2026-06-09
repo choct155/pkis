@@ -8905,3 +8905,12 @@
 ## [2026-06-09] committed | technique
 - Committed: alpha-beta-pruning → techniques/alpha-beta-pruning.md
 - IRI: pkis:technique:alpha-beta-pruning
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: evaluation-function-games (id: 7f436402-7058-4c16-96b1-f988f425cd19)
+- Title: Heuristic Evaluation Function (Games)
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: evaluation-function-games → concepts/evaluation-function-games.md
+- IRI: pkis:concept:evaluation-function-games
