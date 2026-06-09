@@ -4954,3 +4954,12 @@
 ## [2026-06-09] committed | concept
 - Committed: predictive-state-representations → concepts/predictive-state-representations.md
 - IRI: pkis:concept:predictive-state-representations
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: intrinsic-motivation-rl (id: bbf3e072-9eb6-434a-8195-f3a61d5c35f4)
+- Title: Intrinsically-Motivated Reinforcement Learning
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: intrinsic-motivation-rl → concepts/intrinsic-motivation-rl.md
+- IRI: pkis:concept:intrinsic-motivation-rl
