@@ -6,6 +6,10 @@ __pycache__/
 # C extensions
 *.so
 
+# Derived dense-search index (rebuilt from wiki content; must stay untracked so
+# it never enters git HEAD — the cache-freshness signature IS the HEAD sha).
+.embed_cache.npz
+
 # Distribution / packaging
 .Python
 build/

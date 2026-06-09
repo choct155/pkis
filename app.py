@@ -42,6 +42,25 @@ RAW_DIR = Path(os.environ.get("RAW_DIR", "/home/pkis/pkis-wiki/raw"))
 REPO_DIR = Path(os.environ.get("REPO_DIR", "/home/pkis/pkis-wiki"))
 ANTHROPIC_API_KEY = os.environ.get("ANTHROPIC_API_KEY", "")
 
+# Semantic (dense) search. BM25 stays the precision anchor; embeddings add recall
+# for paraphrase / "approach the idea" queries. Fused via RRF (see hybrid_search).
+# Degrades gracefully: if sentence-transformers isn't installed the app runs
+# BM25-only, so local dev needs no heavy ML deps.
+EMBED_MODEL_NAME = os.environ.get("PKIS_EMBED_MODEL", "BAAI/bge-small-en-v1.5")
+# bge-* is trained for asymmetric retrieval: the QUERY (not the documents) gets
+# this instruction prefix. Empty it via env for symmetric models (e.g. MiniLM).
+EMBED_QUERY_PREFIX = os.environ.get(
+    "PKIS_EMBED_QUERY_PREFIX",
+    "Represent this sentence for searching relevant passages: ",
+)
+EMBED_CACHE_PATH = Path(os.environ.get("PKIS_EMBED_CACHE", str(REPO_DIR / ".embed_cache.npz")))
+SEMANTIC_SEARCH = os.environ.get("PKIS_SEMANTIC_SEARCH", "1") != "0"
+try:
+    from sentence_transformers import SentenceTransformer  # noqa: F401
+    _ST_AVAILABLE = True
+except Exception:
+    _ST_AVAILABLE = False
+
 KNOWLEDGE_DIRS = [
     "concepts", "techniques", "results",
     "frameworks", "problems", "principles", "sources",
@@ -161,6 +180,14 @@ _graph: Optional[nx.DiGraph] = None
 _bm25_index = None
 _bm25_corpus: list = []
 _bm25_slugs: list = []
+
+# Dense-vector index (parallel arrays: _embed_matrix[i] is the unit vector for
+# _embed_slugs[i]). Model is lazy-loaded once per worker. Vectors are persisted
+# to EMBED_CACHE_PATH keyed by a content hash, so restarts don't re-encode and a
+# committed write only re-encodes the nodes that actually changed.
+_embed_model = None
+_embed_matrix = None      # np.ndarray (N, dim), L2-normalized, float32
+_embed_slugs: list = []
 
 # Cross-worker cache freshness. Each gunicorn worker holds its own in-memory
 # caches, so a write handled by one worker leaves the others stale (and writes
@@ -395,6 +422,103 @@ def build_bm25_index():
     _bm25_slugs = slugs
 
 
+def _semantic_enabled() -> bool:
+    return SEMANTIC_SEARCH and _ST_AVAILABLE
+
+
+def _get_embed_model():
+    """Lazy-load the sentence-transformer once per worker (CPU)."""
+    global _embed_model
+    if _embed_model is None:
+        from sentence_transformers import SentenceTransformer
+        logger.info(f"Loading embedding model {EMBED_MODEL_NAME} ...")
+        _embed_model = SentenceTransformer(EMBED_MODEL_NAME, device="cpu")
+    return _embed_model
+
+
+def _embed_text(node: dict) -> str:
+    """Front-load the most discriminating signal (title, aliases) before the body;
+    the body tail past the model's token window is truncated by the encoder."""
+    title = node.get("title", "") or ""
+    aliases = " ".join(node.get("aliases", []) or [])
+    content = node.get("content", "") or ""
+    return f"{title}\n{aliases}\n{content}".strip()
+
+
+def _load_embed_cache() -> dict:
+    """hash -> vector, from the persisted npz. Empty on any miss/corruption."""
+    if not EMBED_CACHE_PATH.exists():
+        return {}
+    try:
+        data = np.load(EMBED_CACHE_PATH, allow_pickle=False)
+        hashes, vectors = data["hashes"], data["vectors"]
+        return {str(h): vectors[i] for i, h in enumerate(hashes)}
+    except Exception as e:
+        logger.warning(f"embed cache load failed ({e}); rebuilding from scratch")
+        return {}
+
+
+def _save_embed_cache(cache: dict, current_hashes: list):
+    """Persist only the vectors for the current corpus (prunes deleted nodes)."""
+    keep = list(dict.fromkeys(current_hashes))
+    if not keep:
+        return
+    try:
+        np.savez(
+            EMBED_CACHE_PATH,
+            hashes=np.array(keep),
+            vectors=np.vstack([cache[h] for h in keep]).astype(np.float32),
+        )
+    except Exception as e:
+        logger.warning(f"embed cache save failed: {e}")
+
+
+def build_embedding_index():
+    """Build the dense index over all nodes, reusing cached vectors for unchanged
+    content and only encoding what's new. No-op (clears index) when semantic
+    search is disabled or the ML dep is absent."""
+    global _embed_matrix, _embed_slugs
+    if not _semantic_enabled():
+        _embed_matrix, _embed_slugs = None, []
+        return
+
+    nodes = load_all_nodes()
+    texts = [_embed_text(n) for n in nodes]
+    hashes = [hashlib.sha1(t.encode("utf-8")).hexdigest() for t in texts]
+    iris = [n["iri"] for n in nodes]
+
+    cache = _load_embed_cache()
+    missing = [i for i, h in enumerate(hashes) if h not in cache]
+    if missing:
+        model = _get_embed_model()
+        vecs = model.encode(
+            [texts[i] for i in missing],
+            normalize_embeddings=True,
+            batch_size=64,
+            show_progress_bar=False,
+        )
+        for j, i in enumerate(missing):
+            cache[hashes[i]] = np.asarray(vecs[j], dtype=np.float32)
+        logger.info(f"Embedded {len(missing)} new/changed nodes "
+                    f"({len(nodes) - len(missing)} reused from cache)")
+
+    _embed_matrix = np.vstack([cache[h] for h in hashes]).astype(np.float32)
+    _embed_slugs = iris
+    _save_embed_cache(cache, hashes)
+
+
+def vector_search(query: str, max_results: int = 30) -> list:
+    """Cosine ranking over the dense index. Returns [(iri, score), ...].
+    Brute-force dot product (vectors are unit-norm) — trivial at this corpus size."""
+    if not _semantic_enabled() or _embed_matrix is None or not _embed_slugs:
+        return []
+    model = _get_embed_model()
+    q = model.encode([EMBED_QUERY_PREFIX + query], normalize_embeddings=True)[0]
+    sims = _embed_matrix @ np.asarray(q, dtype=np.float32)
+    top = np.argsort(-sims)[:max_results]
+    return [(_embed_slugs[i], float(sims[i])) for i in top]
+
+
 def refresh_caches():
     """Invalidate and rebuild all caches."""
     global _alias_registry, _node_cache, _graph, _bm25_index
@@ -402,9 +526,11 @@ def refresh_caches():
     _alias_registry = build_alias_registry()
     _graph = build_graph()
     build_bm25_index()
+    build_embedding_index()
     logger.info(f"Caches refreshed: {len(_alias_registry)} aliases, "
                 f"{_graph.number_of_nodes()} nodes, "
-                f"{_graph.number_of_edges()} edges")
+                f"{_graph.number_of_edges()} edges, "
+                f"semantic={'on' if _semantic_enabled() else 'off'}")
 
 
 def get_alias_registry() -> dict:
@@ -476,10 +602,16 @@ def hybrid_search(query: str, domains=None, node_types=None, max_results=10) -> 
         reverse=True
     )[:max_results * 3]
 
-    # Build RRF score map
+    # Build RRF score map. BM25 contributes one ranked list; the dense retriever
+    # contributes a second. Reciprocal-rank fusion blends them so exact-term hits
+    # (BM25) and paraphrase/semantic hits (embeddings) reinforce each other without
+    # either needing calibrated score scales.
     rrf_scores = {}
     for rank, (idx, score) in enumerate(bm25_ranked):
         iri = _bm25_slugs[idx]
+        rrf_scores[iri] = rrf_scores.get(iri, 0) + rrf_score(rank)
+
+    for rank, (iri, _sim) in enumerate(vector_search(query, max_results=max_results * 3)):
         rrf_scores[iri] = rrf_scores.get(iri, 0) + rrf_score(rank)
 
     # Apply filters
@@ -5683,6 +5815,21 @@ def pkis_api_viz(filename):
 # ============================================================
 
 if __name__ == "__main__":
+    import sys
+    # Offline embedding build: `python app.py build-embeddings`. Run once at deploy
+    # so the initial full encode (~minutes) happens out of band, not inside a
+    # request that would trip gunicorn's worker timeout. Persists EMBED_CACHE_PATH;
+    # the live workers then load vectors instantly and only re-encode on change.
+    if len(sys.argv) > 1 and sys.argv[1] == "build-embeddings":
+        if not _semantic_enabled():
+            print(f"Semantic search disabled "
+                  f"(SEMANTIC_SEARCH={SEMANTIC_SEARCH}, st_available={_ST_AVAILABLE}); nothing to build.")
+            sys.exit(1)
+        logger.info("Building embedding index offline...")
+        build_embedding_index()
+        print(f"Embedding index built: {len(_embed_slugs)} nodes -> {EMBED_CACHE_PATH}")
+        sys.exit(0)
+
     # Build caches on startup
     logger.info("Building caches on startup...")
     refresh_caches()
