@@ -9616,3 +9616,12 @@
 ## [2026-06-09] committed | concept
 - Committed: belief-state-mdp → concepts/belief-state-mdp.md
 - IRI: pkis:concept:belief-state-mdp
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: pomdp-value-iteration (id: 9aa0e9a9-2ee3-4bb3-99cc-fb3d84aacaae)
+- Title: POMDP Value Iteration (α-vectors)
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: pomdp-value-iteration → techniques/pomdp-value-iteration.md
+- IRI: pkis:technique:pomdp-value-iteration
