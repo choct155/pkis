@@ -3667,3 +3667,12 @@
 ## [2026-06-09] committed | technique
 - Committed: change-of-variables-for-densities → techniques/change-of-variables-for-densities.md
 - IRI: pkis:technique:change-of-variables-for-densities
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: stochastic-gradient-descent (id: 91680e9f-0495-498c-a1ae-da6fe26f2cfc)
+- Title: Stochastic Gradient Descent (SGD)
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: stochastic-gradient-descent → techniques/stochastic-gradient-descent.md
+- IRI: pkis:technique:stochastic-gradient-descent
