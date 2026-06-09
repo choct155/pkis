@@ -7219,3 +7219,12 @@
 ## [2026-06-09] committed | concept
 - Committed: first-passage-time → concepts/first-passage-time.md
 - IRI: pkis:concept:first-passage-time
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: random-sum-compound-distribution (id: caeb7102-7df3-4e09-bcaa-e6f51393a82a)
+- Title: Random Sum and Compound Distribution
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: random-sum-compound-distribution → concepts/random-sum-compound-distribution.md
+- IRI: pkis:concept:random-sum-compound-distribution
