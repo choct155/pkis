@@ -10426,3 +10426,12 @@
 ## [2026-06-09] committed | technique
 - Committed: rapidly-exploring-random-tree-rrt → techniques/rapidly-exploring-random-tree-rrt.md
 - IRI: pkis:technique:rapidly-exploring-random-tree-rrt
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: trajectory-optimization-motion-planning (id: 462227b0-e300-408c-9ee3-71f248671252)
+- Title: Trajectory Optimization for Motion Planning
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: trajectory-optimization-motion-planning → techniques/trajectory-optimization-motion-planning.md
+- IRI: pkis:technique:trajectory-optimization-motion-planning
