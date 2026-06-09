@@ -290,6 +290,7 @@
 - [[liu-machine-unlearning-llm-2024]] — Rethinking Machine Unlearning for LLMs: post-training knowledge editing survey (deep-learning, ai-safety) (2026-05-20)
 
 ## Concepts
+- [[waic]] — Widely Applicable Information Criterion (WAIC) (bayesian-stats, statistical-learning) (2026-06-09)
 - [[effective-number-of-parameters]] — Effective Number of Parameters (bayesian-stats, statistical-learning) (2026-06-09)
 - [[scoring-rules]] — Scoring Rules (bayesian-stats, statistical-learning, forecasting) (2026-06-09)
 - [[expected-log-predictive-density]] — Expected Log Predictive Density (elpd) (bayesian-stats, statistical-learning) (2026-06-09)

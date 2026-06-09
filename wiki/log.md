@@ -5548,3 +5548,12 @@
 ## [2026-06-09] committed | concept
 - Committed: effective-number-of-parameters → concepts/effective-number-of-parameters.md
 - IRI: pkis:concept:effective-number-of-parameters
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: waic (id: 79d835ac-08d1-4f34-92b0-d4df92502a4c)
+- Title: Widely Applicable Information Criterion (WAIC)
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: waic → concepts/waic.md
+- IRI: pkis:concept:waic
