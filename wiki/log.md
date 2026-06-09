@@ -6070,3 +6070,12 @@
 ## [2026-06-09] committed | framework
 - Committed: pharmacokinetic-modeling → frameworks/pharmacokinetic-modeling.md
 - IRI: pkis:framework:pharmacokinetic-modeling
+
+## [2026-06-09] staged | node-stub (framework)
+- Staged: basis-function-models (id: 4a4350bf-afe8-405b-93df-901616f6697f)
+- Title: Basis Function Models
+- needs_canonical_source: False
+
+## [2026-06-09] committed | framework
+- Committed: basis-function-models → frameworks/basis-function-models.md
+- IRI: pkis:framework:basis-function-models
