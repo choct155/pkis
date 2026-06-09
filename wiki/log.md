@@ -4153,3 +4153,12 @@
 ## [2026-06-09] committed | concept
 - Committed: return-and-discounting → concepts/return-and-discounting.md
 - IRI: pkis:concept:return-and-discounting
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: policy-rl (id: 008444cc-298b-4416-9f22-b95bfe5499bd)
+- Title: Policy (Reinforcement Learning)
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: policy-rl → concepts/policy-rl.md
+- IRI: pkis:concept:policy-rl
