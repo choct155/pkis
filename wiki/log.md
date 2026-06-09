@@ -7992,3 +7992,12 @@
 ## [2026-06-09] committed | result
 - Committed: fisher-neyman-factorization → results/fisher-neyman-factorization.md
 - IRI: pkis:result:fisher-neyman-factorization
+
+## [2026-06-09] staged | node-stub (principle)
+- Staged: logical-vs-causal-independence (id: 4a6cdaa8-3763-4048-87fc-93a9ed88b859)
+- Title: Logical vs Causal Independence (AA = A)
+- needs_canonical_source: False
+
+## [2026-06-09] committed | principle
+- Committed: logical-vs-causal-independence → principles/logical-vs-causal-independence.md
+- IRI: pkis:principle:logical-vs-causal-independence
