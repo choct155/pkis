@@ -7893,3 +7893,12 @@
 ## [2026-06-09] committed | technique
 - Committed: multiple-hypothesis-testing-bayesian → techniques/multiple-hypothesis-testing-bayesian.md
 - IRI: pkis:technique:multiple-hypothesis-testing-bayesian
+
+## [2026-06-09] staged | node-stub (principle)
+- Staged: resurrection-of-alternative-hypotheses (id: 869311d4-e2b8-42b7-8601-859ec78522d8)
+- Title: Resurrection of Alternative Hypotheses
+- needs_canonical_source: False
+
+## [2026-06-09] committed | principle
+- Committed: resurrection-of-alternative-hypotheses → principles/resurrection-of-alternative-hypotheses.md
+- IRI: pkis:principle:resurrection-of-alternative-hypotheses
