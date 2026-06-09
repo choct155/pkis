@@ -290,6 +290,7 @@
 - [[liu-machine-unlearning-llm-2024]] — Rethinking Machine Unlearning for LLMs: post-training knowledge editing survey (deep-learning, ai-safety) (2026-05-20)
 
 ## Concepts
+- [[exchangeability]] — Exchangeability (bayesian-stats) (2026-06-09)
 - [[intrinsic-motivation-rl]] — Intrinsically-Motivated Reinforcement Learning (optimization, deep-learning) (2026-06-09)
 - [[predictive-state-representations]] — Predictive State Representations (PSRs) (optimization, deep-learning) (2026-06-09)
 - [[general-value-functions]] — General Value Functions (GVFs) (optimization, deep-learning) (2026-06-09)

@@ -5296,3 +5296,12 @@
 
 ## [2026-06-09] edit | edit_node
 - pkis:framework:markov-decision-processes: fields=[] sections=['Role in Reinforcement Learning']
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: exchangeability (id: 90165e7d-ae16-46b4-83ba-efea52c4f8b6)
+- Title: Exchangeability
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: exchangeability → concepts/exchangeability.md
+- IRI: pkis:concept:exchangeability
