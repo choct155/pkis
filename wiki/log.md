@@ -5863,3 +5863,12 @@
 ## [2026-06-09] committed | concept
 - Committed: bayesian-anova → concepts/bayesian-anova.md
 - IRI: pkis:concept:bayesian-anova
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: finite-vs-superpopulation-variance (id: 283f8897-239b-452f-aa07-1e391fa4a3e6)
+- Title: Finite-Population vs. Superpopulation Standard Deviation
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: finite-vs-superpopulation-variance → concepts/finite-vs-superpopulation-variance.md
+- IRI: pkis:concept:finite-vs-superpopulation-variance

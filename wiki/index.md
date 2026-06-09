@@ -290,6 +290,7 @@
 - [[liu-machine-unlearning-llm-2024]] — Rethinking Machine Unlearning for LLMs: post-training knowledge editing survey (deep-learning, ai-safety) (2026-05-20)
 
 ## Concepts
+- [[finite-vs-superpopulation-variance]] — Finite-Population vs. Superpopulation Standard Deviation (bayesian-stats, statistical-learning) (2026-06-09)
 - [[bayesian-anova]] — Bayesian Analysis of Variance (bayesian-stats, statistical-learning) (2026-06-09)
 - [[group-level-predictors]] — Group-Level Predictors (bayesian-stats, statistical-learning) (2026-06-09)
 - [[burn-in-and-warmup]] — Burn-in and Warm-up (MCMC) (bayesian-stats) (2026-06-09)
