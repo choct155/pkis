@@ -9688,3 +9688,12 @@
 ## [2026-06-09] committed | concept
 - Committed: nash-equilibrium → concepts/nash-equilibrium.md
 - IRI: pkis:concept:nash-equilibrium
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: maximin-equilibrium (id: 0db3598d-6906-4497-8740-542fb65b3949)
+- Title: Maximin Equilibrium
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: maximin-equilibrium → concepts/maximin-equilibrium.md
+- IRI: pkis:concept:maximin-equilibrium
