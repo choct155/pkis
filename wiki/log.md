@@ -7228,3 +7228,12 @@
 ## [2026-06-09] committed | concept
 - Committed: random-sum-compound-distribution → concepts/random-sum-compound-distribution.md
 - IRI: pkis:concept:random-sum-compound-distribution
+
+## [2026-06-09] staged | node-stub (result)
+- Staged: walds-identity (id: 9633ee70-c9c9-4264-9019-d4cdb34733ee)
+- Title: Wald's Identity
+- needs_canonical_source: False
+
+## [2026-06-09] committed | result
+- Committed: walds-identity → results/walds-identity.md
+- IRI: pkis:result:walds-identity
