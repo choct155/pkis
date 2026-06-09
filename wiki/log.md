@@ -5422,3 +5422,12 @@
 ## [2026-06-09] committed | concept
 - Committed: fisher-information → concepts/fisher-information.md
 - IRI: pkis:concept:fisher-information
+
+## [2026-06-09] staged | node-stub (principle)
+- Staged: frequentist-evaluation-of-bayesian-methods (id: 39067deb-d027-45ca-80ad-89cc47fc30a6)
+- Title: Frequentist Evaluation of Bayesian Methods
+- needs_canonical_source: False
+
+## [2026-06-09] committed | principle
+- Committed: frequentist-evaluation-of-bayesian-methods → principles/frequentist-evaluation-of-bayesian-methods.md
+- IRI: pkis:principle:frequentist-evaluation-of-bayesian-methods

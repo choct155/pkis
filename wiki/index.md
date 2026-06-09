@@ -879,6 +879,7 @@
 - [[llm-language-comprehension]] — The problem of whether LLMs genuinely comprehend language vs. pattern-match surface form (deep-learning, cognitive-science) (2026-05-20)
 
 ## Principles
+- [[frequentist-evaluation-of-bayesian-methods]] — Frequentist Evaluation of Bayesian Methods (bayesian-stats) (2026-06-09)
 - [[the-law-of-effect]] — The Law of Effect (optimization, deep-learning) (2026-06-09)
 - [[forward-vs-backward-view]] — Forward vs. Backward View (optimization, deep-learning) (2026-06-09)
 - [[td-vs-mc-vs-dp]] — TD vs. Monte Carlo vs. Dynamic Programming (reinforcement-learning, optimization) (2026-06-09)
