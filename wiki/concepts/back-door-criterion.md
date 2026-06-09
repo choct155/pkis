@@ -19,9 +19,13 @@ domain:
 - causal-analysis
 - bayesian-stats
 id: pkis:concept:back-door-criterion
+instantiates:
+- identification-strategy
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- identifiability-of-causal-effects
 related_concepts: []
 sources:
 - pearl-causality-ch03
@@ -46,6 +50,8 @@ uses:
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[identification-strategy]] — instantiates: The back-door criterion is a concrete graphical identification strategy.
+- [[identifiability-of-causal-effects]] — prerequisite-of: Satisfying the back-door criterion is a sufficient condition for identifiability.
 - [[confounding]] — applies: Identifies total effects by blocking confounding back-door paths.
 - [[d-separation]] — uses: Adjustment set Z must d-separate X from Y in the mutilated graph G_X.
 [To be populated during integration]

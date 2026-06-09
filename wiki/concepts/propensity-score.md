@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- adjustment-formula-standardization
 coverage: 1
 date_created: 2026-05-20
 date_updated: 2026-05-20
@@ -37,5 +39,6 @@ The propensity score e(X) = P(D=1|X) is the conditional probability of treatment
 - [[cunningham-causal-inference-mixtape-ch06]] (unread) — balancing score theorem, propensity score estimation via logit, overlap/common support requirement
 
 ## Connections
+- [[adjustment-formula-standardization]] — applies: Propensity-score adjustment is an implementation of the back-door adjustment/standardization formula.
 - [[strong-ignorability]] — uses: Unbiasedness of propensity-score adjustment holds only when the covariate set satisfies strong ignorability.
 - [[ignorability]] — specializes: propensity scores are the unit-level inclusion probabilities under a strongly ignorable design
