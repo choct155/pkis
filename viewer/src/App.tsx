@@ -14,6 +14,7 @@ import ClustersView from './views/ClustersView'
 import PriorityView from './views/PriorityView'
 import GraphView from './views/GraphView'
 import StagedView from './views/StagedView'
+import ExplainersView from './views/ExplainersView'
 import ReaderView from './views/ReaderView'
 
 export default function App() {
@@ -78,6 +79,9 @@ export default function App() {
             )}
             {view === 'staged' && (
               <StagedView onSelectNode={handleSelectNode} />
+            )}
+            {view === 'explainers' && (
+              <ExplainersView onSelectNode={handleSelectNode} />
             )}
           </>
         )}

@@ -11,6 +11,7 @@ import type {
   IndexNode,
   DomainCount,
   ReaderPayload,
+  Explainer,
 } from '../types';
 
 const BASE = '/pkis-api';
@@ -108,6 +109,11 @@ export async function getReaderStatus(slug: string): Promise<{ state: string }> 
 // ── Domains (facet) ───────────────────────────────────────────────────────
 export async function getDomains(): Promise<DomainCount[]> {
   return post<DomainCount[]>('/domains');
+}
+
+// ── Explainers (interactive viz gallery) ──────────────────────────────────
+export async function getExplainers(): Promise<Explainer[]> {
+  return post<Explainer[]>('/explainers');
 }
 
 // ── Research clusters ─────────────────────────────────────────────────────

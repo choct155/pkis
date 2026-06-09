@@ -118,8 +118,51 @@ function wikilinkSlug(ref: string): string {
   return ref.replace(/^\[\[/, '').replace(/\]\]$/, '').split('|')[0].trim()
 }
 
+// Parse a book node's "## Chapters" section into {slug,label} entries.
+// Lines look like:  - [[mackay-itila-ch06]] — Ch. 6: About Inference
+function parseChapters(content: string): { slug: string; label: string }[] {
+  const m = content.match(/\n##[ \t]+Chapters[ \t]*\n([\s\S]*?)(?=\n##\s|$)/i)
+  if (!m) return []
+  const out: { slug: string; label: string }[] = []
+  for (const line of m[1].split('\n')) {
+    const lm = line.match(/\[\[([^\]|]+)(?:\|[^\]]*)?\]\]\s*(?:[—\-–:]\s*(.*))?/)
+    if (lm) out.push({ slug: lm[1].trim(), label: (lm[2] || '').trim() })
+  }
+  return out
+}
+
+// Book → chapters: navigable list parsed from the "## Chapters" wikilinks.
+function ChaptersList({ chapters, onNavigate }: {
+  chapters: { slug: string; label: string }[]; onNavigate: (iri: string) => void
+}) {
+  return (
+    <div className="body-section">
+      <div className="body-section-title">chapters</div>
+      {chapters.map((c) => (
+        <div key={c.slug} className="conn-item" onClick={() => onNavigate(`pkis:source:${c.slug}`)}>
+          <span className="conn-predicate">chapter</span>
+          <div className="conn-detail"><div className="conn-target">{c.label || c.slug}</div></div>
+        </div>
+      ))}
+    </div>
+  )
+}
+
+// Chapter → book: a clickable chip pointing at the containing book.
+function ParentBookNav({ parentBook, onNavigate }: {
+  parentBook: string; onNavigate: (iri: string) => void
+}) {
+  const slug = parentBook.split(':').pop() || parentBook
+  return (
+    <div className="conn-item" style={{ marginBottom: 4 }} onClick={() => onNavigate(parentBook)}>
+      <span className="conn-predicate">📖 in book</span>
+      <div className="conn-detail"><div className="conn-target">{slug}</div></div>
+    </div>
+  )
+}
+
 // Citation + open-this-source links, shown when the node IS a source.
-function SourceBlock({ fm, title }: { fm: Record<string, unknown>; title: string }) {
+function SourceBlock({ fm, title, iri }: { fm: Record<string, unknown>; title: string; iri: string }) {
   const sourceUrl = (fm.source_url as string) || (fm.url as string) || ''
   const docPath   = (fm.doc_path as string) || ''
   const readwise  = (fm.readwise_id as string) || ''
@@ -127,6 +170,21 @@ function SourceBlock({ fm, title }: { fm: Record<string, unknown>; title: string
   const year      = (fm.year as string | number) ?? ''
   const doi       = (fm.doi as string) || ''
   const [copied, setCopied] = useState(false)
+  const [derivedPdf, setDerivedPdf] = useState('')
+
+  // When no explicit doc_path, fall back to the split-chapter PDF convention
+  // (/docs/sources/<slug>/<slug>.pdf) so the original document — figures and all
+  // — is one tap away. HEAD-check so the link only appears when the file exists.
+  const slug = iri.split(':').pop() || ''
+  useEffect(() => {
+    if (docPath || !slug) return
+    let cancelled = false
+    const url = `/docs/sources/${slug}/${slug}.pdf`
+    fetch(url, { method: 'HEAD' })
+      .then((r) => { if (!cancelled && r.ok) setDerivedPdf(url) })
+      .catch(() => { /* not served */ })
+    return () => { cancelled = true }
+  }, [slug, docPath])
 
   const citation = [
     authors,
@@ -135,7 +193,7 @@ function SourceBlock({ fm, title }: { fm: Record<string, unknown>; title: string
     doi ? `doi:${doi}` : (sourceUrl || ''),
   ].filter(Boolean).join(' ')
 
-  const fileUrl = docPath ? `/docs/${docPath.replace(/^\/+/, '')}` : ''
+  const fileUrl = docPath ? `/docs/${docPath.replace(/^\/+/, '')}` : derivedPdf
   const readwiseUrl = readwise ? `https://read.readwise.io/read/${readwise}` : ''
 
   const copy = () => {
@@ -150,7 +208,7 @@ function SourceBlock({ fm, title }: { fm: Record<string, unknown>; title: string
       <div className="citation">{citation}</div>
       <div className="source-links">
         {sourceUrl && <a className="source-link" href={sourceUrl} target="_blank" rel="noreferrer">↗ open url</a>}
-        {fileUrl && <a className="source-link" href={fileUrl} target="_blank" rel="noreferrer">⤓ open file</a>}
+        {fileUrl && <a className="source-link" href={fileUrl} target="_blank" rel="noreferrer">📄 open original</a>}
         {readwiseUrl && <a className="source-link" href={readwiseUrl} target="_blank" rel="noreferrer">▤ readwise</a>}
         <span className="source-link as-btn" onClick={copy}>{copied ? '✓ copied' : '⎘ copy citation'}</span>
       </div>
@@ -216,6 +274,10 @@ export default function DetailSheet({ iri, onClose, onNavigate, onEdit, onGraph,
   const readingPath = node?.reading_path ?? []
   const isSource = iri.startsWith('pkis:source:')
   const sources = Array.isArray(fm?.sources) ? (fm!.sources as string[]) : []
+  // Book ↔ chapter navigation: a book lists its chapters in "## Chapters";
+  // a chapter points back via the parent_book frontmatter.
+  const chapters = isSource ? parseChapters(content) : []
+  const parentBook = (fm?.parent_book as string) || ''
 
   // Render the FULL node body for every node type — all sections (Definition,
   // Intuition, Why it matters, anatomy, mechanism, Formal Statement, Thesis…).
@@ -235,6 +297,9 @@ export default function DetailSheet({ iri, onClose, onNavigate, onEdit, onGraph,
   }
   let fullBody = stripSection(content, 'Connections')
   if (readingPath.length > 0) fullBody = stripSection(fullBody, 'Reading Path')
+  // The chapter wikilinks render as a navigable block below, so drop the raw
+  // "## Chapters" list from the prose to avoid a dead, duplicated copy.
+  if (chapters.length > 0) fullBody = stripSection(fullBody, 'Chapters')
   fullBody = fullBody.trim()
 
   return (
@@ -276,6 +341,9 @@ export default function DetailSheet({ iri, onClose, onNavigate, onEdit, onGraph,
 
           {!loading && node && (
             <>
+              {/* Chapter → containing book (navigable) */}
+              {parentBook && <ParentBookNav parentBook={parentBook} onNavigate={onNavigate} />}
+
               {/* Full node body — every section, with its own ## headings */}
               {fullBody && (
                 <div className="body-section">
@@ -283,8 +351,13 @@ export default function DetailSheet({ iri, onClose, onNavigate, onEdit, onGraph,
                 </div>
               )}
 
+              {/* Book → chapters (navigable) */}
+              {chapters.length > 0 && (
+                <ChaptersList chapters={chapters} onNavigate={onNavigate} />
+              )}
+
               {/* Source citation + links (when this node is a source) */}
-              {isSource && fm && <SourceBlock fm={fm as Record<string, unknown>} title={title} />}
+              {isSource && fm && <SourceBlock fm={fm as Record<string, unknown>} title={title} iri={iri} />}
 
               {/* Visualization */}
               {viz && (

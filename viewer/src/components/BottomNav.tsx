@@ -6,6 +6,7 @@ const NAV_ITEMS: { view: View; icon: string; label: string }[] = [
   { view: 'priority', icon: '▲', label: 'priority' },
   { view: 'graph',    icon: '⬡', label: 'graph' },
   { view: 'staged',   icon: '⊞', label: 'staged' },
+  { view: 'explainers', icon: '▦', label: 'explain' },
 ]
 
 interface Props {

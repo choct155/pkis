@@ -9,7 +9,17 @@ export type NodeType =
 
 export type Maturity = 'settled' | 'evolving' | 'contested' | 'historical';
 
-export type View = 'browse' | 'clusters' | 'priority' | 'graph' | 'staged';
+export type View = 'browse' | 'clusters' | 'priority' | 'graph' | 'staged' | 'explainers';
+
+// ── Explainer (from get_explainers) ───────────────────────────────────────
+export interface Explainer {
+  viz: string;          // viz asset slug -> /pkis-api/viz/<slug>.html
+  viz_title: string;    // the explainer's own <title>
+  iri: string;          // backing node
+  node_title: string;
+  node_type: string;
+  domain: string[];
+}
 
 // ── Search result (from search_wiki / search_wiki_index) ──────────────────
 export interface SearchResult {
@@ -200,6 +210,7 @@ export interface ReaderSection {
   narration: string;
   t_start: number;
   t_end: number;
+  page?: number;            // 1-based PDF page this section starts on (for synced PDF view)
 }
 
 export interface ReaderPayload {
@@ -209,6 +220,8 @@ export interface ReaderPayload {
   audio_url: string;
   total_duration: number;
   sections: ReaderSection[];
+  pdf_url?: string;         // original chapter PDF, when available
+  pdf_pages?: number;
 }
 
 // ── App context ───────────────────────────────────────────────────────────

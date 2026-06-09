@@ -1574,6 +1574,37 @@ def tool_get_domains() -> list:
     return [{"domain": k, "count": v} for k, v in sorted(c.items(), key=lambda x: (-x[1], x[0]))]
 
 
+def _viz_title(slug: str) -> str:
+    """The explainer's own <title>, for the gallery (falls back to the slug)."""
+    p = WIKI_DIR / "assets" / "viz" / f"{slug}.html"
+    try:
+        m = re.search(r"<title>(.*?)</title>", p.read_text(errors="ignore"), re.I | re.S)
+        return m.group(1).strip() if m else slug
+    except Exception:
+        return slug
+
+
+def tool_get_explainers() -> list:
+    """All nodes that bind an interactive explainer via the `viz:` frontmatter
+    field — powers the viewer's Explainers gallery so assets are discoverable on
+    their own, not only by navigating to the backing concept."""
+    out = []
+    for n in load_all_nodes():
+        viz = n.get("frontmatter", {}).get("viz")
+        if not viz:
+            continue
+        out.append({
+            "viz": viz,
+            "viz_title": _viz_title(viz),
+            "iri": n["iri"],
+            "node_title": n.get("title", n["slug"]),
+            "node_type": FOLDER_TO_TYPE.get(n["node_type"], n["node_type"]),
+            "domain": n.get("domain", []),
+        })
+    out.sort(key=lambda x: x["node_title"].lower())
+    return out
+
+
 def tool_get_health_metrics() -> dict:
     nodes = load_all_nodes()
     G = get_graph()
@@ -5484,6 +5515,14 @@ def pkis_api_index():
 def pkis_api_domains():
     try:
         return _api_ok(tool_get_domains())
+    except Exception as e:
+        return _api_err(e, 500)
+
+
+@app.route("/pkis-api/explainers", methods=["POST"])
+def pkis_api_explainers():
+    try:
+        return _api_ok(tool_get_explainers())
     except Exception as e:
         return _api_err(e, 500)
 

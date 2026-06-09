@@ -24,6 +24,9 @@ export default function ReaderView({ slug, onClose }: Props) {
   const [audioSrc, setAudioSrc] = useState('')
   const [toast, setToast] = useState<string | null>(null)
   const [sel, setSel] = useState<{ section_id: string; text: string } | null>(null)
+  const [pdfUrl, setPdfUrl] = useState('')
+  const [pdfPage, setPdfPage] = useState(1)
+  const [mode, setMode] = useState<'read' | 'pdf'>('read')   // narrow-screen view toggle
   const audioRef = useRef<HTMLAudioElement>(null)
   const bodyRef = useRef<HTMLDivElement>(null)
 
@@ -101,6 +104,19 @@ export default function ReaderView({ slug, onClose }: Props) {
   // Render KaTeX after the sections mount.
   useEffect(() => { if (payload) renderMath(bodyRef.current) }, [payload])
 
+  // Surface the original document (e.g. for figures the narration can't convey).
+  // Split book chapters are stored at /docs/sources/<slug>/<slug>.pdf; HEAD-check
+  // the convention and only show the link when the file is actually served.
+  useEffect(() => {
+    let cancelled = false
+    const url = `/docs/sources/${slug}/${slug}.pdf`
+    setPdfUrl('')
+    fetch(url, { method: 'HEAD' })
+      .then((r) => { if (!cancelled && r.ok) setPdfUrl(url) })
+      .catch(() => { /* not served — no original on file */ })
+    return () => { cancelled = true }
+  }, [slug])
+
   // Lock-screen / background controls.
   useEffect(() => {
     if (!payload || !('mediaSession' in navigator)) return
@@ -122,8 +138,16 @@ export default function ReaderView({ slug, onClose }: Props) {
       ?? payload.sections[payload.sections.length - 1]
     if (cur && cur.id !== curId) {
       setCurId(cur.id)
+      if (cur.page) setPdfPage(cur.page)   // keep the original document in sync by section
       document.getElementById(`sec-${cur.id}`)?.scrollIntoView({ behavior: 'smooth', block: 'start' })
     }
+  }
+
+  // Jump both the audio and the PDF to a section (synced).
+  const goToSection = (s: { id: string; t_start: number; page?: number }) => {
+    seek(s.t_start)
+    setCurId(s.id)
+    if (s.page) setPdfPage(s.page)
   }
 
   const seek = (t: number) => { const a = audioRef.current; if (a) { a.currentTime = Math.max(0, t); a.play() } }
@@ -164,6 +188,7 @@ export default function ReaderView({ slug, onClose }: Props) {
         <div className="reader-bar">
           <span className="reader-back" onClick={onClose}>← back</span>
           <span className="reader-title">{slug}</span>
+          {pdfUrl && <a className="reader-save" href={pdfUrl} target="_blank" rel="noreferrer">📄 pdf</a>}
         </div>
         <div className="reader-gate">
           {phase === 'loading' && <div className="loading-row"><div className="loading-spinner" /> loading…</div>}
@@ -193,25 +218,58 @@ export default function ReaderView({ slug, onClose }: Props) {
     )
   }
 
+  const hasPdf = !!pdfUrl
+  // Active section drives both the highlight and the PDF page; fall back to the
+  // first section before playback has set one (so "note this section" still works).
+  const curSection = payload.sections.find((s) => s.id === curId) ?? payload.sections[0]
+  const noteOnCurrentSection = () => {
+    if (curSection) setSel({ section_id: curSection.id, text: curSection.title })
+  }
+
   return (
-    <div className="reader-overlay">
+    <div className={`reader-overlay${hasPdf ? ' reader-has-pdf' : ''}`}>
       <div className="reader-bar">
         <span className="reader-back" onClick={onClose}>← back</span>
         <span className="reader-title">{payload.title}</span>
+        {hasPdf && (
+          <div className="reader-modes">
+            <span className={`reader-mode${mode === 'read' ? ' on' : ''}`} onClick={() => setMode('read')}>narration</span>
+            <span className={`reader-mode${mode === 'pdf' ? ' on' : ''}`} onClick={() => setMode('pdf')}>pdf</span>
+          </div>
+        )}
+        {pdfUrl && <a className="reader-save" href={pdfUrl} target="_blank" rel="noreferrer">↗ open</a>}
         <span className="reader-save" onClick={saveOffline}>⤓ offline</span>
       </div>
 
-      <div className="reader-body" ref={bodyRef} onMouseUp={onSelect} onTouchEnd={onSelect}>
-        {payload.sections.map((s) => (
-          <div key={s.id} id={`sec-${s.id}`} data-sec={s.id} className={`reader-section${curId === s.id ? ' active' : ''}`}>
-            <div className="reader-sec-head" onClick={() => seek(s.t_start)}>
-              <span className="reader-sec-title">{s.title}</span>
-              <span className="reader-sec-time">{fmt(s.t_start)}</span>
+      <div className={`reader-main mode-${mode}${hasPdf ? ' split' : ''}`}>
+        <div className="reader-body reader-pane-text" ref={bodyRef} onMouseUp={onSelect} onTouchEnd={onSelect}>
+          {payload.sections.map((s) => (
+            <div key={s.id} id={`sec-${s.id}`} data-sec={s.id} className={`reader-section${curId === s.id ? ' active' : ''}`}>
+              <div className="reader-sec-head" onClick={() => goToSection(s)}>
+                <span className="reader-sec-title">{s.title}</span>
+                {s.page && <span className="reader-sec-page">p{s.page}</span>}
+                <span className="reader-sec-time">{fmt(s.t_start)}</span>
+              </div>
+              <div className="reader-sec-body prose" dangerouslySetInnerHTML={{ __html: renderMarkdown(s.paper_md) }} />
             </div>
-            <div className="reader-sec-body prose" dangerouslySetInnerHTML={{ __html: renderMarkdown(s.paper_md) }} />
+          ))}
+          <div className="reader-foot">narration is the listening track; the paper is on screen — select any text to annotate or flag</div>
+        </div>
+
+        {hasPdf && (
+          <div className="reader-pane-pdf">
+            <iframe
+              key={pdfPage}
+              className="reader-pdf-frame"
+              src={`${pdfUrl}#page=${pdfPage}&view=FitH`}
+              title="original document"
+            />
+            <div className="reader-pdf-bar">
+              <span className="reader-pdf-info">{curSection ? curSection.title : ''} · p{pdfPage}</span>
+              <span className="reader-pdf-note" onClick={noteOnCurrentSection}>⚑ note this section</span>
+            </div>
           </div>
-        ))}
-        <div className="reader-foot">narration is the listening track; the paper is on screen — select any text to annotate or flag</div>
+        )}
       </div>
 
       <div className="reader-controls">

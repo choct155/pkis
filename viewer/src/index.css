@@ -629,6 +629,44 @@ body {
   letter-spacing: 0.06em;
 }
 
+/* ── EXPLAINERS GALLERY ───────────────────────────────────────────────── */
+.view-intro {
+  font-family: var(--mono); font-size: 11px; color: var(--muted);
+  line-height: 1.6; letter-spacing: 0.04em; margin: 2px 2px 12px;
+}
+.explainer-grid {
+  display: grid; gap: 8px;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+}
+.explainer-card {
+  display: flex; align-items: center; gap: 12px;
+  margin-bottom: 0;            /* grid gap handles spacing */
+  padding-right: 30px;         /* room for the ↗ open affordance */
+}
+.explainer-thumb {
+  flex-shrink: 0; width: 46px; height: 46px; border-radius: var(--radius);
+  background: var(--raised); border: 1px solid var(--border);
+  display: flex; align-items: center; justify-content: center;
+}
+.explainer-thumb-glyph { font-size: 20px; color: var(--accent); }
+.explainer-body { flex: 1; min-width: 0; }
+.explainer-title {
+  font-size: 13.5px; font-weight: 500; color: var(--bright); line-height: 1.3;
+  margin-bottom: 4px;
+  display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;
+}
+.explainer-backing { display: flex; align-items: center; gap: 6px; margin-bottom: 6px; min-width: 0; }
+.explainer-node {
+  font-size: 11px; color: var(--muted); white-space: nowrap;
+  overflow: hidden; text-overflow: ellipsis;
+}
+.explainer-open {
+  position: absolute; top: 8px; right: 8px;
+  font-size: 14px; color: var(--dim); text-decoration: none; line-height: 1;
+  padding: 2px 4px; border-radius: 4px;
+}
+.explainer-open:hover { color: var(--accent); background: var(--raised); }
+
 /* ── TOAST ────────────────────────────────────────────────────────────── */
 .toast {
   position: fixed; bottom: 90px; left: 50%; transform: translateX(-50%);
@@ -853,3 +891,45 @@ body {
   align-items: center; justify-content: center; gap: 16px; text-align: center;
 }
 .reader-gate-note { font-size: 13px; color: var(--muted); line-height: 1.55; max-width: 360px; }
+
+/* ── Reader: synced PDF (side-by-side desktop / toggle mobile) ──────────── */
+.reader-sec-page {
+  font-family: var(--mono); font-size: 10px; color: var(--dim);
+  border: 1px solid var(--border); border-radius: var(--radius); padding: 0 4px; margin-left: 8px;
+}
+.reader-sec-page + .reader-sec-time { margin-left: 6px; }
+
+/* segmented narration|pdf toggle (narrow screens only) */
+.reader-modes { display: flex; gap: 0; flex-shrink: 0; border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; }
+.reader-mode { font-family: var(--mono); font-size: 11px; color: var(--muted); padding: 4px 10px; cursor: pointer; }
+.reader-mode.on { background: var(--accent); color: #fff; }
+
+.reader-main { flex: 1; display: flex; flex-direction: column; min-height: 0; }
+.reader-main .reader-body { flex: 1; }
+
+/* PDF pane */
+.reader-pane-pdf { flex: 1; display: flex; flex-direction: column; min-height: 0; }
+.reader-pdf-frame { flex: 1; width: 100%; border: 0; background: #fff; }
+.reader-pdf-bar {
+  flex-shrink: 0; display: flex; align-items: center; gap: 10px;
+  padding: 6px 12px; border-top: 1px solid var(--border); background: var(--surface);
+}
+.reader-pdf-info { font-size: 11px; color: var(--muted); flex: 1; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.reader-pdf-note {
+  font-family: var(--mono); font-size: 11px; color: var(--accent); cursor: pointer; flex-shrink: 0;
+  border: 1px solid var(--border); border-radius: var(--radius); padding: 3px 8px;
+}
+.reader-pdf-note:hover { border-color: var(--accent); }
+
+/* narrow screens: show one pane at a time per the toggle */
+.reader-main.split.mode-read .reader-pane-pdf { display: none; }
+.reader-main.split.mode-pdf  .reader-pane-text { display: none; }
+
+/* wide screens: show both panes side by side, hide the toggle */
+@media (min-width: 880px) {
+  .reader-overlay.reader-has-pdf { max-width: 1440px; }
+  .reader-has-pdf .reader-modes { display: none; }
+  .reader-main.split { flex-direction: row; }
+  .reader-main.split .reader-pane-text { flex: 1 1 50%; border-right: 1px solid var(--border); }
+  .reader-main.split .reader-pane-pdf  { flex: 1 1 50%; display: flex !important; }
+}
