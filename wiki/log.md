@@ -9391,3 +9391,12 @@
 ## [2026-06-09] committed | concept
 - Committed: full-joint-probability-distribution → concepts/full-joint-probability-distribution.md
 - IRI: pkis:concept:full-joint-probability-distribution
+
+## [2026-06-09] staged | node-stub (framework)
+- Staged: naive-bayes-model (id: 5019e759-3a1a-460e-95db-411ffcd00fed)
+- Title: Naive Bayes Model
+- needs_canonical_source: False
+
+## [2026-06-09] committed | framework
+- Committed: naive-bayes-model → frameworks/naive-bayes-model.md
+- IRI: pkis:framework:naive-bayes-model
