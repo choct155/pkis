@@ -1070,6 +1070,7 @@
 - [[llm-language-comprehension]] — The problem of whether LLMs genuinely comprehend language vs. pattern-match surface form (deep-learning, cognitive-science) (2026-05-20)
 
 ## Principles
+- [[maximum-entropy-principle]] — Maximum Entropy Principle (bayesian-stats, information-theory) (2026-06-09)
 - [[probability-vs-frequency]] — Probability vs. Frequency (bayesian-stats, information-theory) (2026-06-09)
 - [[logical-vs-causal-independence]] — Logical vs Causal Independence (AA = A) (bayesian-stats, information-theory) (2026-06-09)
 - [[error-cancellation-arithmetic-mean]] — Error Cancellation and the Optimality of the Arithmetic Mean (bayesian-stats, statistical-learning) (2026-06-09)

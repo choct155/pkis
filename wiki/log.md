@@ -8019,3 +8019,12 @@
 ## [2026-06-09] committed | problem
 - Committed: problem-of-induction → problems/problem-of-induction.md
 - IRI: pkis:problem:problem-of-induction
+
+## [2026-06-09] staged | node-stub (principle)
+- Staged: maximum-entropy-principle (id: 64e7dcb5-4f6c-43a0-a4ac-ffce56406289)
+- Title: Maximum Entropy Principle
+- needs_canonical_source: False
+
+## [2026-06-09] committed | principle
+- Committed: maximum-entropy-principle → principles/maximum-entropy-principle.md
+- IRI: pkis:principle:maximum-entropy-principle
