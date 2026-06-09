@@ -11282,3 +11282,12 @@
 ## [2026-06-09] committed | concept
 - Committed: thin-plate-spline → concepts/thin-plate-spline.md
 - IRI: pkis:concept:thin-plate-spline
+
+## [2026-06-09] staged | node-stub (framework)
+- Staged: reproducing-kernel-hilbert-space (id: edd106ec-9c6b-41d3-b62b-80adb412a491)
+- Title: Reproducing Kernel Hilbert Space (RKHS)
+- needs_canonical_source: False
+
+## [2026-06-09] committed | framework
+- Committed: reproducing-kernel-hilbert-space → frameworks/reproducing-kernel-hilbert-space.md
+- IRI: pkis:framework:reproducing-kernel-hilbert-space
