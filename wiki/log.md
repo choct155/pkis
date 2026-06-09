@@ -9832,3 +9832,12 @@
 ## [2026-06-09] committed | technique
 - Committed: vickrey-auction → techniques/vickrey-auction.md
 - IRI: pkis:technique:vickrey-auction
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: vcg-mechanism (id: d3e59690-1c13-43e8-a7b8-a78e6561a7ee)
+- Title: VCG Mechanism
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: vcg-mechanism → techniques/vcg-mechanism.md
+- IRI: pkis:technique:vcg-mechanism
