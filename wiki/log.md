@@ -9130,3 +9130,12 @@
 ## [2026-06-09] committed | technique
 - Committed: knowledge-engineering → techniques/knowledge-engineering.md
 - IRI: pkis:technique:knowledge-engineering
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: unification (id: aecfba37-19e7-406d-bf04-07189116c178)
+- Title: Unification
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: unification → concepts/unification.md
+- IRI: pkis:concept:unification
