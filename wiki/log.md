@@ -11516,3 +11516,12 @@
 ## [2026-06-09] committed | technique
 - Committed: support-vector-regression → techniques/support-vector-regression.md
 - IRI: pkis:technique:support-vector-regression
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: epsilon-insensitive-loss (id: 16d906ba-7361-4bb6-bba3-6db89fd49c3f)
+- Title: Epsilon-Insensitive Loss
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: epsilon-insensitive-loss → concepts/epsilon-insensitive-loss.md
+- IRI: pkis:concept:epsilon-insensitive-loss
