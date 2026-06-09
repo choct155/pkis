@@ -6460,3 +6460,6 @@
 
 ## [2026-06-09] edit | edit_node
 - pkis:concept:bayesian-inference: fields=[] sections=['Posterior odds and the likelihood ratio']
+
+## [2026-06-09] edit | edit_node
+- pkis:concept:probability-theory: fields=[] sections=['Foundations: probability as a measure of uncertainty']
