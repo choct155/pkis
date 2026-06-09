@@ -3838,3 +3838,12 @@
 ## [2026-06-09] committed | technique
 - Committed: ancestral-sampling → techniques/ancestral-sampling.md
 - IRI: pkis:technique:ancestral-sampling
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: margin-maximum-margin-classifier (id: ffd79258-1c4d-4431-91b8-9be22ecbfaaf)
+- Title: Margin (Maximum-Margin Classifier)
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: margin-maximum-margin-classifier → concepts/margin-maximum-margin-classifier.md
+- IRI: pkis:concept:margin-maximum-margin-classifier
