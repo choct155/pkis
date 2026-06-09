@@ -9796,3 +9796,12 @@
 ## [2026-06-09] committed | concept
 - Committed: shapley-value → concepts/shapley-value.md
 - IRI: pkis:concept:shapley-value
+
+## [2026-06-09] staged | node-stub (framework)
+- Staged: mechanism-design (id: 77ad3228-6911-4fa0-bab2-88c42257cf39)
+- Title: Mechanism Design
+- needs_canonical_source: False
+
+## [2026-06-09] committed | framework
+- Committed: mechanism-design → frameworks/mechanism-design.md
+- IRI: pkis:framework:mechanism-design
