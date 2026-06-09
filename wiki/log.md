@@ -5440,3 +5440,12 @@
 ## [2026-06-09] committed | principle
 - Committed: regression-to-the-mean → principles/regression-to-the-mean.md
 - IRI: pkis:principle:regression-to-the-mean
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: unbiasedness (id: a6f3283d-62ba-4713-b8bb-daa157a63535)
+- Title: Unbiasedness
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: unbiasedness → concepts/unbiasedness.md
+- IRI: pkis:concept:unbiasedness
