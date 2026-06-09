@@ -6061,3 +6061,12 @@
 ## [2026-06-09] committed | technique
 - Committed: bayesian-nonlinear-model → techniques/bayesian-nonlinear-model.md
 - IRI: pkis:technique:bayesian-nonlinear-model
+
+## [2026-06-09] staged | node-stub (framework)
+- Staged: pharmacokinetic-modeling (id: 6fc0c382-b00c-45f4-85c1-b6ab3249b30a)
+- Title: Physiological Pharmacokinetic Modeling
+- needs_canonical_source: False
+
+## [2026-06-09] committed | framework
+- Committed: pharmacokinetic-modeling → frameworks/pharmacokinetic-modeling.md
+- IRI: pkis:framework:pharmacokinetic-modeling
