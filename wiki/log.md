@@ -4018,3 +4018,12 @@
 ## [2026-06-09] committed | concept
 - Committed: value-function → concepts/value-function.md
 - IRI: pkis:concept:value-function
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: exploration-exploitation-tradeoff (id: 84e50e6e-1b8b-4bbb-88a9-a7f28d18eca7)
+- Title: Exploration–Exploitation Trade-off
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: exploration-exploitation-tradeoff → concepts/exploration-exploitation-tradeoff.md
+- IRI: pkis:concept:exploration-exploitation-tradeoff
