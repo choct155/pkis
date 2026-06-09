@@ -4531,3 +4531,12 @@
 ## [2026-06-09] committed | technique
 - Committed: rollout-algorithms → techniques/rollout-algorithms.md
 - IRI: pkis:technique:rollout-algorithms
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: monte-carlo-tree-search (id: 931eaa99-73c4-4e61-840d-acdbe4331dc4)
+- Title: Monte Carlo Tree Search (MCTS)
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: monte-carlo-tree-search → techniques/monte-carlo-tree-search.md
+- IRI: pkis:technique:monte-carlo-tree-search
