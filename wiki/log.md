@@ -8896,3 +8896,12 @@
 ## [2026-06-09] committed | technique
 - Committed: minimax-algorithm → techniques/minimax-algorithm.md
 - IRI: pkis:technique:minimax-algorithm
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: alpha-beta-pruning (id: 36d2e4b4-ab20-420d-aecb-0b5121ea496e)
+- Title: Alpha-Beta Pruning
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: alpha-beta-pruning → techniques/alpha-beta-pruning.md
+- IRI: pkis:technique:alpha-beta-pruning
