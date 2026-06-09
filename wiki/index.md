@@ -904,6 +904,7 @@
 - [[llm-language-comprehension]] — The problem of whether LLMs genuinely comprehend language vs. pattern-match surface form (deep-learning, cognitive-science) (2026-05-20)
 
 ## Principles
+- [[log-scale-computation]] — Log-Scale Computation (bayesian-stats, statistical-learning, optimization) (2026-06-09)
 - [[numerical-vs-simulation-integration]] — Numerical vs. Simulation Integration (bayesian-stats, statistical-learning, optimization) (2026-06-09)
 - [[continuous-model-expansion]] — Continuous Model Expansion (bayesian-stats, statistical-learning) (2026-06-09)
 - [[partial-pooling-shrinkage]] — Partial Pooling and Shrinkage (bayesian-stats) (2026-06-09)

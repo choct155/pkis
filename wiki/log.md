@@ -5692,3 +5692,12 @@
 ## [2026-06-09] committed | principle
 - Committed: numerical-vs-simulation-integration → principles/numerical-vs-simulation-integration.md
 - IRI: pkis:principle:numerical-vs-simulation-integration
+
+## [2026-06-09] staged | node-stub (principle)
+- Staged: log-scale-computation (id: 5a3f6ab3-3f0b-4f4e-9d08-156c2f8ad466)
+- Title: Log-Scale Computation
+- needs_canonical_source: False
+
+## [2026-06-09] committed | principle
+- Committed: log-scale-computation → principles/log-scale-computation.md
+- IRI: pkis:principle:log-scale-computation
