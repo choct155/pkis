@@ -5989,3 +5989,12 @@
 ## [2026-06-09] committed | concept
 - Committed: robust-inference → concepts/robust-inference.md
 - IRI: pkis:concept:robust-inference
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: t-distribution (id: 3e6c1521-6839-443c-a933-f1c46eeeb971)
+- Title: Student t Distribution
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: t-distribution → concepts/t-distribution.md
+- IRI: pkis:concept:t-distribution

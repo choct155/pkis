@@ -290,6 +290,7 @@
 - [[liu-machine-unlearning-llm-2024]] — Rethinking Machine Unlearning for LLMs: post-training knowledge editing survey (deep-learning, ai-safety) (2026-05-20)
 
 ## Concepts
+- [[t-distribution]] — Student t Distribution (bayesian-stats, statistical-learning) (2026-06-09)
 - [[robust-inference]] — Robust Inference (bayesian-stats, statistical-learning) (2026-06-09)
 - [[separation-logistic-regression]] — Separation in Logistic Regression (bayesian-stats) (2026-06-09)
 - [[latent-variable-discrete-regression]] — Latent-Variable Formulation of Discrete Regression (bayesian-stats) (2026-06-09)
