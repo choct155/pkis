@@ -10345,3 +10345,12 @@
 ## [2026-06-09] committed | concept
 - Committed: stereo-and-depth → concepts/stereo-and-depth.md
 - IRI: pkis:concept:stereo-and-depth
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: object-detection (id: 3303abb0-acf5-4c48-91fb-d5254e8f301c)
+- Title: Object Detection
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: object-detection → techniques/object-detection.md
+- IRI: pkis:technique:object-detection
