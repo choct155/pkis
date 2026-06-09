@@ -4072,3 +4072,12 @@
 ## [2026-06-09] committed | technique
 - Committed: epsilon-greedy → techniques/epsilon-greedy.md
 - IRI: pkis:technique:epsilon-greedy
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: incremental-sample-average-update (id: 8c71d52e-156d-4418-96f7-e2056db6fc2f)
+- Title: Incremental Sample-Average Update
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: incremental-sample-average-update → techniques/incremental-sample-average-update.md
+- IRI: pkis:technique:incremental-sample-average-update
