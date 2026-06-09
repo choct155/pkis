@@ -4423,3 +4423,12 @@
 ## [2026-06-09] committed | technique
 - Committed: n-step-off-policy → techniques/n-step-off-policy.md
 - IRI: pkis:technique:n-step-off-policy
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: tree-backup-algorithm (id: eb86871b-a159-4c2c-a8dc-0945f88b5b23)
+- Title: Tree-backup Algorithm
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: tree-backup-algorithm → techniques/tree-backup-algorithm.md
+- IRI: pkis:technique:tree-backup-algorithm
