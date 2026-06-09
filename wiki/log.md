@@ -10525,3 +10525,12 @@
 ## [2026-06-09] committed | concept
 - Committed: machine-consciousness-and-qualia → concepts/machine-consciousness-and-qualia.md
 - IRI: pkis:concept:machine-consciousness-and-qualia
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: ai-safety-engineering (id: 016470cf-b211-4a05-b65c-6d285a22e155)
+- Title: AI Safety Engineering
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: ai-safety-engineering → concepts/ai-safety-engineering.md
+- IRI: pkis:concept:ai-safety-engineering
