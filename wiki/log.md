@@ -6646,3 +6646,12 @@
 ## [2026-06-09] committed | result
 - Committed: adjustment-formula-standardization → results/adjustment-formula-standardization.md
 - IRI: pkis:result:adjustment-formula-standardization
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: direct-and-indirect-effects (id: 5851f1c6-731a-4f6d-8ad7-ed1c669c6df7)
+- Title: Direct and Indirect Effects
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: direct-and-indirect-effects → concepts/direct-and-indirect-effects.md
+- IRI: pkis:concept:direct-and-indirect-effects
