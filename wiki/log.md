@@ -8253,3 +8253,12 @@
 ## [2026-06-09] committed | concept
 - Committed: unbiased-estimator-pathology → concepts/unbiased-estimator-pathology.md
 - IRI: pkis:concept:unbiased-estimator-pathology
+
+## [2026-06-09] staged | node-stub (result)
+- Staged: cramer-rao-bound (id: 7e72123b-73ed-4681-9cc3-ed4b8ed2d92b)
+- Title: Cramér–Rao Lower Bound
+- needs_canonical_source: False
+
+## [2026-06-09] committed | result
+- Committed: cramer-rao-bound → results/cramer-rao-bound.md
+- IRI: pkis:result:cramer-rao-bound
