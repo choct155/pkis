@@ -9409,3 +9409,12 @@
 ## [2026-06-09] committed | technique
 - Committed: variable-elimination → techniques/variable-elimination.md
 - IRI: pkis:technique:variable-elimination
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: likelihood-weighting (id: 18f82d87-4692-4744-9ea5-d3d572c347e9)
+- Title: Likelihood Weighting
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: likelihood-weighting → techniques/likelihood-weighting.md
+- IRI: pkis:technique:likelihood-weighting
