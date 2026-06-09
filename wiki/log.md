@@ -11435,3 +11435,12 @@
 ## [2026-06-09] committed | concept
 - Committed: receiver-operating-characteristic-curve → concepts/receiver-operating-characteristic-curve.md
 - IRI: pkis:concept:receiver-operating-characteristic-curve
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: adaboost (id: 7150d26a-c511-4bf9-b574-83a3f1fe30e8)
+- Title: AdaBoost
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: adaboost → techniques/adaboost.md
+- IRI: pkis:technique:adaboost
