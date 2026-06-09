@@ -8887,3 +8887,12 @@
 ## [2026-06-09] committed | concept
 - Committed: game-tree → concepts/game-tree.md
 - IRI: pkis:concept:game-tree
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: minimax-algorithm (id: 0d52b04e-a0a3-4596-84f8-b0bf1267db27)
+- Title: Minimax Algorithm
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: minimax-algorithm → techniques/minimax-algorithm.md
+- IRI: pkis:technique:minimax-algorithm
