@@ -6538,3 +6538,12 @@
 ## [2026-06-09] committed | technique
 - Committed: ic-algorithm → techniques/ic-algorithm.md
 - IRI: pkis:technique:ic-algorithm
+
+## [2026-06-09] staged | node-stub (principle)
+- Staged: faithfulness-stability (id: da67fbea-c917-4d73-a563-304d31e0b2bc)
+- Title: Faithfulness (Stability)
+- needs_canonical_source: False
+
+## [2026-06-09] committed | principle
+- Committed: faithfulness-stability → principles/faithfulness-stability.md
+- IRI: pkis:principle:faithfulness-stability
