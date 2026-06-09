@@ -577,6 +577,7 @@
 - [[market-vs-hierarchy]] — Coase/Williamson: transactions governed by price signals (markets) vs. managerial direction (firms) (corporate-finance) (2026-05-20)
 
 ## Techniques
+- [[non-centered-parameterization]] — Non-Centered Parameterization (bayesian-stats, optimization) (2026-06-09)
 - [[varying-intercepts-and-slopes]] — Varying-Intercept, Varying-Slope Models (bayesian-stats, statistical-learning) (2026-06-09)
 - [[approximate-bayesian-computation]] — Approximate Bayesian Computation (ABC) (bayesian-stats) (2026-06-09)
 - [[modal-approximation]] — Modal Approximation (Mode-Centered Distributional Approximation) (bayesian-stats, optimization) (2026-06-09)

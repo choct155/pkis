@@ -5881,3 +5881,12 @@
 ## [2026-06-09] committed | concept
 - Committed: fixed-vs-random-effects → concepts/fixed-vs-random-effects.md
 - IRI: pkis:concept:fixed-vs-random-effects
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: non-centered-parameterization (id: d0a86755-c396-44b0-b9e5-a65ffac05f8f)
+- Title: Non-Centered Parameterization
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: non-centered-parameterization → techniques/non-centered-parameterization.md
+- IRI: pkis:technique:non-centered-parameterization
