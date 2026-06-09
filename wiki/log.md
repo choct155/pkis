@@ -4135,3 +4135,12 @@
 ## [2026-06-09] committed | problem
 - Committed: associative-search → problems/associative-search.md
 - IRI: pkis:problem:associative-search
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: thompson-sampling (id: 3d1271e7-6d8e-4ee0-9ce3-56bf91b0bc30)
+- Title: Thompson Sampling (Posterior Sampling)
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: thompson-sampling → techniques/thompson-sampling.md
+- IRI: pkis:technique:thompson-sampling

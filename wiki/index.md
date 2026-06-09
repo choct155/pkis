@@ -511,6 +511,7 @@
 - [[market-vs-hierarchy]] — Coase/Williamson: transactions governed by price signals (markets) vs. managerial direction (firms) (corporate-finance) (2026-05-20)
 
 ## Techniques
+- [[thompson-sampling]] — Thompson Sampling (Posterior Sampling) (reinforcement-learning) (2026-06-09)
 - [[optimistic-initial-values]] — Optimistic Initial Values (reinforcement-learning) (2026-06-09)
 - [[gradient-bandit-algorithm]] — Gradient Bandit Algorithm (reinforcement-learning) (2026-06-09)
 - [[softmax-action-selection]] — Softmax (Boltzmann) Action Selection (reinforcement-learning) (2026-06-09)
