@@ -7902,3 +7902,12 @@
 ## [2026-06-09] committed | principle
 - Committed: resurrection-of-alternative-hypotheses → principles/resurrection-of-alternative-hypotheses.md
 - IRI: pkis:principle:resurrection-of-alternative-hypotheses
+
+## [2026-06-09] staged | node-stub (principle)
+- Staged: significance-test-requires-alternative (id: bc07008e-629d-4599-81ca-01cabd464033)
+- Title: A Significance Test Requires a Definite Alternative
+- needs_canonical_source: False
+
+## [2026-06-09] committed | principle
+- Committed: significance-test-requires-alternative → principles/significance-test-requires-alternative.md
+- IRI: pkis:principle:significance-test-requires-alternative

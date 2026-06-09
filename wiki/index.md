@@ -1062,6 +1062,7 @@
 - [[llm-language-comprehension]] — The problem of whether LLMs genuinely comprehend language vs. pattern-match surface form (deep-learning, cognitive-science) (2026-05-20)
 
 ## Principles
+- [[significance-test-requires-alternative]] — A Significance Test Requires a Definite Alternative (bayesian-stats) (2026-06-09)
 - [[resurrection-of-alternative-hypotheses]] — Resurrection of Alternative Hypotheses (bayesian-stats) (2026-06-09)
 - [[principle-of-indifference]] — Principle of Indifference (bayesian-stats, information-theory) (2026-06-09)
 - [[probability-as-extended-logic]] — Probability as Extended Logic (bayesian-stats, information-theory, knowledge-representation) (2026-06-09)
