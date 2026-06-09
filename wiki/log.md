@@ -4846,3 +4846,12 @@
 ## [2026-06-09] committed | principle
 - Committed: forward-vs-backward-view → principles/forward-vs-backward-view.md
 - IRI: pkis:principle:forward-vs-backward-view
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: replacing-traces (id: 7e6e7494-470d-4e8a-af84-96cb763ea417)
+- Title: Replacing and Dutch Traces
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: replacing-traces → techniques/replacing-traces.md
+- IRI: pkis:technique:replacing-traces
