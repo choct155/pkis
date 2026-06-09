@@ -6754,3 +6754,12 @@
 ## [2026-06-09] committed | concept
 - Committed: total-vs-direct-effect → concepts/total-vs-direct-effect.md
 - IRI: pkis:concept:total-vs-direct-effect
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: observational-equivalence-sem (id: ce84d2fa-3e46-465b-b7c5-a513b08c581e)
+- Title: Observational (Covariance) Equivalence of Structural Models
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: observational-equivalence-sem → concepts/observational-equivalence-sem.md
+- IRI: pkis:concept:observational-equivalence-sem
