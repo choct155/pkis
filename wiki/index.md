@@ -290,6 +290,7 @@
 - [[liu-machine-unlearning-llm-2024]] — Rethinking Machine Unlearning for LLMs: post-training knowledge editing survey (deep-learning, ai-safety) (2026-05-20)
 
 ## Concepts
+- [[structural-contingency]] — Structural Contingency (causal-analysis) (2026-06-09)
 - [[sustenance-causal]] — Sustenance (Causal) (causal-analysis) (2026-06-09)
 - [[actual-causation]] — Actual Causation (causal-analysis) (2026-06-09)
 - [[attribution-and-but-for-causation]] — Attribution and But-For Causation (causal-analysis, bayesian-stats) (2026-06-09)

@@ -6961,3 +6961,12 @@
 ## [2026-06-09] committed | principle
 - Committed: but-for-vs-actual-cause → principles/but-for-vs-actual-cause.md
 - IRI: pkis:principle:but-for-vs-actual-cause
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: structural-contingency (id: 92690ebe-199e-4aa2-b2a4-2f15afb2ef5f)
+- Title: Structural Contingency
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: structural-contingency → concepts/structural-contingency.md
+- IRI: pkis:concept:structural-contingency
