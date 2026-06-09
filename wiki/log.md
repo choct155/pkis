@@ -8190,3 +8190,12 @@
 ## [2026-06-09] committed | principle
 - Committed: finite-sets-policy → principles/finite-sets-policy.md
 - IRI: pkis:principle:finite-sets-policy
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: nonconglomerability (id: b5f35527-d6b6-4185-9cc5-8b57d8d0a3e7)
+- Title: Conglomerability and Nonconglomerability
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: nonconglomerability → concepts/nonconglomerability.md
+- IRI: pkis:concept:nonconglomerability
