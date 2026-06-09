@@ -5998,3 +5998,12 @@
 ## [2026-06-09] committed | concept
 - Committed: t-distribution → concepts/t-distribution.md
 - IRI: pkis:concept:t-distribution
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: negative-binomial-distribution (id: eb00e4b1-50fe-4144-852c-5813232ffe6e)
+- Title: Negative Binomial Distribution
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: negative-binomial-distribution → concepts/negative-binomial-distribution.md
+- IRI: pkis:concept:negative-binomial-distribution
