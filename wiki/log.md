@@ -10579,3 +10579,12 @@
 ## [2026-06-09] committed | concept
 - Committed: ai-existential-risk → concepts/ai-existential-risk.md
 - IRI: pkis:concept:ai-existential-risk
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: bounded-optimality (id: 776fac74-d551-46f5-87db-fb5141db315b)
+- Title: Bounded Optimality
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: bounded-optimality → concepts/bounded-optimality.md
+- IRI: pkis:concept:bounded-optimality
