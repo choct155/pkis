@@ -4963,3 +4963,12 @@
 ## [2026-06-09] committed | concept
 - Committed: intrinsic-motivation-rl → concepts/intrinsic-motivation-rl.md
 - IRI: pkis:concept:intrinsic-motivation-rl
+
+## [2026-06-09] staged | node-stub (framework)
+- Staged: policy-gradient-methods (id: 9bb1eb71-57f3-44b4-8cdf-588bb2d5bda1)
+- Title: Policy Gradient Methods
+- needs_canonical_source: False
+
+## [2026-06-09] committed | framework
+- Committed: policy-gradient-methods → frameworks/policy-gradient-methods.md
+- IRI: pkis:framework:policy-gradient-methods
