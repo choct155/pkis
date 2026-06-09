@@ -1024,6 +1024,7 @@
 - [[constraint-propagation]] — Reducing a constraint satisfaction problem by iteratively eliminating inconsistent values from variable domains (knowledge-representation) (2026-05-20)
 
 ## Results
+- [[no-free-lunch-theorem]] — No Free Lunch (No Representation Efficient for All Functions) (statistical-learning) (2026-06-09)
 - [[gibbard-satterthwaite-theorem]] — Gibbard–Satterthwaite Theorem (multi-agent-systems, economics, social-choice) (2026-06-09)
 - [[arrows-theorem]] — Arrow's Theorem (multi-agent-systems, economics, social-choice) (2026-06-09)
 - [[revenue-equivalence-theorem]] — Revenue Equivalence Theorem (multi-agent-systems, economics) (2026-06-09)

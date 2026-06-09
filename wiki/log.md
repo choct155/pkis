@@ -9931,3 +9931,12 @@
 ## [2026-06-09] committed | framework
 - Committed: pac-learning → frameworks/pac-learning.md
 - IRI: pkis:framework:pac-learning
+
+## [2026-06-09] staged | node-stub (result)
+- Staged: no-free-lunch-theorem (id: a10defb0-422d-440a-bc90-5fe0b7518810)
+- Title: No Free Lunch (No Representation Efficient for All Functions)
+- needs_canonical_source: False
+
+## [2026-06-09] committed | result
+- Committed: no-free-lunch-theorem → results/no-free-lunch-theorem.md
+- IRI: pkis:result:no-free-lunch-theorem
