@@ -11687,3 +11687,12 @@
 ## [2026-06-09] committed | technique
 - Committed: graphical-lasso → techniques/graphical-lasso.md
 - IRI: pkis:technique:graphical-lasso
+
+## [2026-06-09] staged | node-stub (result)
+- Staged: hammersley-clifford-theorem (id: 37c564eb-01c3-419a-ba0c-98992f7ebd95)
+- Title: Hammersley-Clifford Theorem
+- needs_canonical_source: False
+
+## [2026-06-09] committed | result
+- Committed: hammersley-clifford-theorem → results/hammersley-clifford-theorem.md
+- IRI: pkis:result:hammersley-clifford-theorem
