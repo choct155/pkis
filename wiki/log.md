@@ -5404,3 +5404,12 @@
 ## [2026-06-09] committed | concept
 - Committed: large-sample-bayesian-inference → concepts/large-sample-bayesian-inference.md
 - IRI: pkis:concept:large-sample-bayesian-inference
+
+## [2026-06-09] staged | node-stub (result)
+- Staged: bernstein-von-mises-theorem (id: 482627b6-705d-49e9-8ed2-23ec6b6cda38)
+- Title: Bernstein-von Mises Theorem (Posterior Asymptotic Normality)
+- needs_canonical_source: False
+
+## [2026-06-09] committed | result
+- Committed: bernstein-von-mises-theorem → results/bernstein-von-mises-theorem.md
+- IRI: pkis:result:bernstein-von-mises-theorem
