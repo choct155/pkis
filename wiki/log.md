@@ -5386,3 +5386,12 @@
 ## [2026-06-09] committed | concept
 - Committed: pivotal-quantity → concepts/pivotal-quantity.md
 - IRI: pkis:concept:pivotal-quantity
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: grid-approximation (id: c4676060-21d0-4a4a-974a-3fe89fc90773)
+- Title: Grid Approximation of the Posterior
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: grid-approximation → techniques/grid-approximation.md
+- IRI: pkis:technique:grid-approximation
