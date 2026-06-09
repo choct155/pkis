@@ -11642,3 +11642,12 @@
 ## [2026-06-09] committed | technique
 - Committed: procrustes-analysis → techniques/procrustes-analysis.md
 - IRI: pkis:technique:procrustes-analysis
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: sparse-pca (id: 66aaaf1a-59fb-4d73-b799-6ae2440a5fd9)
+- Title: Sparse Principal Components
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: sparse-pca → techniques/sparse-pca.md
+- IRI: pkis:technique:sparse-pca
