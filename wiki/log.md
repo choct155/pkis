@@ -6556,3 +6556,12 @@
 ## [2026-06-09] committed | principle
 - Committed: minimal-model-causation → principles/minimal-model-causation.md
 - IRI: pkis:principle:minimal-model-causation
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: latent-structure-projection (id: 288aad5b-eb64-43ef-97c0-e20171d6c7f5)
+- Title: Latent Structure Projection
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: latent-structure-projection → concepts/latent-structure-projection.md
+- IRI: pkis:concept:latent-structure-projection
