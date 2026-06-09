@@ -6565,3 +6565,12 @@
 ## [2026-06-09] committed | concept
 - Committed: latent-structure-projection → concepts/latent-structure-projection.md
 - IRI: pkis:concept:latent-structure-projection
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: intransitive-triplet (id: 972870fb-869c-457d-9bed-b390853c3dd0)
+- Title: Intransitive Triplet (Virtual Control)
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: intransitive-triplet → concepts/intransitive-triplet.md
+- IRI: pkis:concept:intransitive-triplet
