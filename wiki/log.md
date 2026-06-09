@@ -4297,3 +4297,12 @@
 ## [2026-06-09] committed | concept
 - Committed: exploring-starts → concepts/exploring-starts.md
 - IRI: pkis:concept:exploring-starts
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: on-policy-vs-off-policy (id: f5c4a571-6870-4f0a-a062-f3101110f9c0)
+- Title: On-policy vs. Off-policy Learning
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: on-policy-vs-off-policy → concepts/on-policy-vs-off-policy.md
+- IRI: pkis:concept:on-policy-vs-off-policy
