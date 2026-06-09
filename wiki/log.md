@@ -6052,3 +6052,12 @@
 ## [2026-06-09] committed | concept
 - Committed: monotone-missing-data-pattern → concepts/monotone-missing-data-pattern.md
 - IRI: pkis:concept:monotone-missing-data-pattern
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: bayesian-nonlinear-model (id: 2b5d3d02-c990-4e60-a184-5cc93c01c112)
+- Title: Bayesian Nonlinear Model
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: bayesian-nonlinear-model → techniques/bayesian-nonlinear-model.md
+- IRI: pkis:technique:bayesian-nonlinear-model
