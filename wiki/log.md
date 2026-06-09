@@ -7318,3 +7318,12 @@
 ## [2026-06-09] committed | technique
 - Committed: renewal-equation → techniques/renewal-equation.md
 - IRI: pkis:technique:renewal-equation
+
+## [2026-06-09] staged | node-stub (result)
+- Staged: elementary-renewal-theorem (id: 76e2d03c-93fd-4bbf-950d-facffc3e1a61)
+- Title: Elementary Renewal Theorem
+- needs_canonical_source: False
+
+## [2026-06-09] committed | result
+- Committed: elementary-renewal-theorem → results/elementary-renewal-theorem.md
+- IRI: pkis:result:elementary-renewal-theorem
