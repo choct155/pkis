@@ -8986,3 +8986,12 @@
 ## [2026-06-09] committed | technique
 - Committed: min-conflicts-local-search-csp → techniques/min-conflicts-local-search-csp.md
 - IRI: pkis:technique:min-conflicts-local-search-csp
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: tree-decomposition-csp (id: 1a013de7-67e3-47dd-b8f7-256dfbfa2236)
+- Title: Exploiting CSP Structure: Tree-Structured CSPs, Cutset Conditioning, and Tree Decomposition
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: tree-decomposition-csp → techniques/tree-decomposition-csp.md
+- IRI: pkis:technique:tree-decomposition-csp
