@@ -1019,6 +1019,7 @@
 - [[government-debt-valuation-equation]] — FTPL: price level determined by ratio of nominal debt to expected present value of future surpluses (macroeconomics) (2026-05-20)
 
 ## Frameworks
+- [[peas-task-environment]] — PEAS Task Environment Specification (agentic-ai, reinforcement-learning) (2026-06-09)
 - [[four-approaches-to-ai]] — Four Approaches to AI (knowledge-representation) (2026-06-09)
 - [[comparative-probability]] — Comparative (Qualitative) Probability Theory (bayesian-stats, statistical-learning) (2026-06-09)
 - [[kolmogorov-axioms]] — Kolmogorov System of Probability (Measure-Theoretic Axioms) (bayesian-stats, statistical-learning) (2026-06-09)

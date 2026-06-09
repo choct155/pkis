@@ -8671,3 +8671,12 @@
 ## [2026-06-09] committed | concept
 - Committed: performance-measure → concepts/performance-measure.md
 - IRI: pkis:concept:performance-measure
+
+## [2026-06-09] staged | node-stub (framework)
+- Staged: peas-task-environment (id: f9e70f97-48c0-4d49-90d1-bc801ebb4aae)
+- Title: PEAS Task Environment Specification
+- needs_canonical_source: False
+
+## [2026-06-09] committed | framework
+- Committed: peas-task-environment → frameworks/peas-task-environment.md
+- IRI: pkis:framework:peas-task-environment
