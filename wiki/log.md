@@ -8127,3 +8127,12 @@
 ## [2026-06-09] committed | principle
 - Committed: minimax-criterion → principles/minimax-criterion.md
 - IRI: pkis:principle:minimax-criterion
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: admissibility (id: eca22176-fc9f-4ace-82b2-9226ab5a9944)
+- Title: Admissibility of Decision Rules
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: admissibility → concepts/admissibility.md
+- IRI: pkis:concept:admissibility
