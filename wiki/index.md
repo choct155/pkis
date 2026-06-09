@@ -290,6 +290,7 @@
 - [[liu-machine-unlearning-llm-2024]] — Rethinking Machine Unlearning for LLMs: post-training knowledge editing survey (deep-learning, ai-safety) (2026-05-20)
 
 ## Concepts
+- [[robot-rights-and-personhood]] — Robot Rights and Personhood (knowledge-representation) (2026-06-09)
 - [[technological-unemployment]] — Technological Unemployment (macroeconomics) (2026-06-09)
 - [[lethal-autonomous-weapons]] — Lethal Autonomous Weapons (ai-safety) (2026-06-09)
 - [[algorithmic-fairness]] — Algorithmic Fairness (deep-learning, ai-safety) (2026-06-09)

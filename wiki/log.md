@@ -10561,3 +10561,12 @@
 ## [2026-06-09] committed | concept
 - Committed: technological-unemployment → concepts/technological-unemployment.md
 - IRI: pkis:concept:technological-unemployment
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: robot-rights-and-personhood (id: b0a02350-7b6e-47a9-83fd-bd714839a3fa)
+- Title: Robot Rights and Personhood
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: robot-rights-and-personhood → concepts/robot-rights-and-personhood.md
+- IRI: pkis:concept:robot-rights-and-personhood
