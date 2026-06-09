@@ -4324,3 +4324,12 @@
 ## [2026-06-09] committed | concept
 - Committed: td-error → concepts/td-error.md
 - IRI: pkis:concept:td-error
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: sarsa (id: 1312ce12-0d64-48c0-a522-c6243bd5e3bd)
+- Title: Sarsa
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: sarsa → techniques/sarsa.md
+- IRI: pkis:technique:sarsa
