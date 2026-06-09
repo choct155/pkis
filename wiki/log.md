@@ -3784,3 +3784,12 @@
 ## [2026-06-09] committed | technique
 - Committed: factor-analysis → techniques/factor-analysis.md
 - IRI: pkis:technique:factor-analysis
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: autoencoder (id: e77ef38e-fec1-4c3a-9da2-a3b7700f3e0c)
+- Title: Autoencoder
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: autoencoder → techniques/autoencoder.md
+- IRI: pkis:technique:autoencoder
