@@ -5719,3 +5719,12 @@
 ## [2026-06-09] committed | technique
 - Committed: metropolis-hastings → techniques/metropolis-hastings.md
 - IRI: pkis:technique:metropolis-hastings
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: gelman-rubin-diagnostic (id: 7cfffac5-b996-4266-b221-6e997c0b57af)
+- Title: Gelman-Rubin Convergence Diagnostic (R-hat)
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: gelman-rubin-diagnostic → techniques/gelman-rubin-diagnostic.md
+- IRI: pkis:technique:gelman-rubin-diagnostic
