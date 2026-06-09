@@ -5818,3 +5818,12 @@
 ## [2026-06-09] committed | technique
 - Committed: approximate-bayesian-computation → techniques/approximate-bayesian-computation.md
 - IRI: pkis:technique:approximate-bayesian-computation
+
+## [2026-06-09] staged | node-stub (problem)
+- Staged: collinearity (id: 5ed519fb-9b22-416c-baa0-d616be8bcf0d)
+- Title: Collinearity
+- needs_canonical_source: False
+
+## [2026-06-09] committed | problem
+- Committed: collinearity → problems/collinearity.md
+- IRI: pkis:problem:collinearity
