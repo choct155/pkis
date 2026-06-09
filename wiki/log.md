@@ -11390,3 +11390,12 @@
 ## [2026-06-09] committed | technique
 - Committed: generalized-additive-model → techniques/generalized-additive-model.md
 - IRI: pkis:technique:generalized-additive-model
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: backfitting-algorithm (id: e80c84be-8214-4d61-b327-3ddcd99b1d53)
+- Title: Backfitting Algorithm
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: backfitting-algorithm → techniques/backfitting-algorithm.md
+- IRI: pkis:technique:backfitting-algorithm
