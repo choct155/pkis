@@ -3703,3 +3703,12 @@
 ## [2026-06-09] committed | concept
 - Committed: convex-conjugate → concepts/convex-conjugate.md
 - IRI: pkis:concept:convex-conjugate
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: maximum-a-posteriori-estimation-map (id: 27d7d283-5e84-49c4-8e1e-83a4ee4543d5)
+- Title: Maximum A Posteriori Estimation (MAP)
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: maximum-a-posteriori-estimation-map → techniques/maximum-a-posteriori-estimation-map.md
+- IRI: pkis:technique:maximum-a-posteriori-estimation-map
