@@ -631,6 +631,7 @@
 - [[market-vs-hierarchy]] — Coase/Williamson: transactions governed by price signals (markets) vs. managerial direction (firms) (corporate-finance) (2026-05-20)
 
 ## Techniques
+- [[renewal-equation]] — Renewal Equation (bayesian-stats, statistical-learning) (2026-06-09)
 - [[causal-beam]] — Causal Beam (causal-analysis) (2026-06-09)
 - [[twin-network-method]] — Twin-Network Method (causal-analysis) (2026-06-09)
 - [[abduction-action-prediction]] — Abduction–Action–Prediction (causal-analysis) (2026-06-09)

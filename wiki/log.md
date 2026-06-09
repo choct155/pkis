@@ -7309,3 +7309,12 @@
 ## [2026-06-09] committed | concept
 - Committed: renewal-function → concepts/renewal-function.md
 - IRI: pkis:concept:renewal-function
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: renewal-equation (id: 3cd07ae5-5e9b-4102-a9b7-52cb803b13c9)
+- Title: Renewal Equation
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: renewal-equation → techniques/renewal-equation.md
+- IRI: pkis:technique:renewal-equation
