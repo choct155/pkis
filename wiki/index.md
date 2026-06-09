@@ -1095,6 +1095,7 @@
 - [[llm-language-comprehension]] — The problem of whether LLMs genuinely comprehend language vs. pattern-match surface form (deep-learning, cognitive-science) (2026-05-20)
 
 ## Principles
+- [[de-finetti-coherence]] — De Finetti Coherence (Dutch-Book Foundation) (bayesian-stats) (2026-06-09)
 - [[robustness-implies-optimality]] — Any Well-Defined Inference Property Implies an Optimality Principle (bayesian-stats, information-theory) (2026-06-09)
 - [[macroscopic-final-cause-entropy]] — Macroscopic Final Causes Have an Entropy (bayesian-stats, information-theory) (2026-06-09)
 - [[gaussian-error-assignment-as-state-of-knowledge]] — Gaussian Error Assignment as State of Knowledge (bayesian-stats, information-theory) (2026-06-09)

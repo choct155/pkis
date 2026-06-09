@@ -8361,3 +8361,12 @@
 ## [2026-06-09] committed | framework
 - Committed: kolmogorov-axioms → frameworks/kolmogorov-axioms.md
 - IRI: pkis:framework:kolmogorov-axioms
+
+## [2026-06-09] staged | node-stub (principle)
+- Staged: de-finetti-coherence (id: 96cca3ad-c5c4-4eae-b47d-47eb01342794)
+- Title: De Finetti Coherence (Dutch-Book Foundation)
+- needs_canonical_source: False
+
+## [2026-06-09] committed | principle
+- Committed: de-finetti-coherence → principles/de-finetti-coherence.md
+- IRI: pkis:principle:de-finetti-coherence
