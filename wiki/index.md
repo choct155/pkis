@@ -749,6 +749,7 @@
 - [[market-vs-hierarchy]] — Coase/Williamson: transactions governed by price signals (markets) vs. managerial direction (firms) (corporate-finance) (2026-05-20)
 
 ## Techniques
+- [[multidimensional-scaling]] — Multidimensional Scaling (statistical-learning) (2026-06-09)
 - [[principal-curves-surfaces]] — Principal Curves and Surfaces (statistical-learning) (2026-06-09)
 - [[spectral-clustering]] — Spectral Clustering (statistical-learning) (2026-06-09)
 - [[self-organizing-map]] — Self-Organizing Map (statistical-learning) (2026-06-09)

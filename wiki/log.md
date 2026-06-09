@@ -11624,3 +11624,12 @@
 ## [2026-06-09] committed | technique
 - Committed: principal-curves-surfaces → techniques/principal-curves-surfaces.md
 - IRI: pkis:technique:principal-curves-surfaces
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: multidimensional-scaling (id: ca178a47-b1a0-4846-bc4e-e58b9fa0b861)
+- Title: Multidimensional Scaling
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: multidimensional-scaling → techniques/multidimensional-scaling.md
+- IRI: pkis:technique:multidimensional-scaling
