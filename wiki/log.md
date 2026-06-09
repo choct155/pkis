@@ -5566,3 +5566,12 @@
 ## [2026-06-09] committed | concept
 - Committed: deviance-information-criterion → concepts/deviance-information-criterion.md
 - IRI: pkis:concept:deviance-information-criterion
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: loo-cv (id: 72cb21b9-60da-427c-b7c1-43a44817a25f)
+- Title: Bayesian Leave-One-Out Cross-Validation (LOO-CV)
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: loo-cv → techniques/loo-cv.md
+- IRI: pkis:technique:loo-cv
