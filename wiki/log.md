@@ -9463,3 +9463,12 @@
 ## [2026-06-09] committed | concept
 - Committed: filtering-prediction-smoothing → concepts/filtering-prediction-smoothing.md
 - IRI: pkis:concept:filtering-prediction-smoothing
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: viterbi-for-hmm (id: f2d33568-dacf-4281-9264-822994491b0d)
+- Title: Viterbi Algorithm for HMMs (Most Likely Sequence)
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: viterbi-for-hmm → techniques/viterbi-for-hmm.md
+- IRI: pkis:technique:viterbi-for-hmm
