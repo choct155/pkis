@@ -8199,3 +8199,12 @@
 ## [2026-06-09] committed | concept
 - Committed: nonconglomerability → concepts/nonconglomerability.md
 - IRI: pkis:concept:nonconglomerability
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: borel-kolmogorov-paradox (id: ed9568b8-e130-4712-8ac7-233c85932b05)
+- Title: Borel-Kolmogorov Paradox
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: borel-kolmogorov-paradox → concepts/borel-kolmogorov-paradox.md
+- IRI: pkis:concept:borel-kolmogorov-paradox
