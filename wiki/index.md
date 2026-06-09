@@ -1091,6 +1091,7 @@
 - [[llm-language-comprehension]] — The problem of whether LLMs genuinely comprehend language vs. pattern-match surface form (deep-learning, cognitive-science) (2026-05-20)
 
 ## Principles
+- [[gaussian-error-assignment-as-state-of-knowledge]] — Gaussian Error Assignment as State of Knowledge (bayesian-stats, information-theory) (2026-06-09)
 - [[well-posed-hypothesis-space]] — Well-Posed Hypothesis Space (bayesian-stats) (2026-06-09)
 - [[randomization-is-suboptimal]] — Randomization Is Suboptimal (vs. Deterministic Designs) (bayesian-stats, statistical-learning) (2026-06-09)
 - [[information-loss-from-data-preprocessing]] — Information Loss from Data Preprocessing (bayesian-stats, time-series) (2026-06-09)

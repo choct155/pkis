@@ -8298,3 +8298,12 @@
 ## [2026-06-09] committed | principle
 - Committed: well-posed-hypothesis-space → principles/well-posed-hypothesis-space.md
 - IRI: pkis:principle:well-posed-hypothesis-space
+
+## [2026-06-09] staged | node-stub (principle)
+- Staged: gaussian-error-assignment-as-state-of-knowledge (id: ad6a7ca5-983a-4137-b20d-9057997503bf)
+- Title: Gaussian Error Assignment as State of Knowledge
+- needs_canonical_source: False
+
+## [2026-06-09] committed | principle
+- Committed: gaussian-error-assignment-as-state-of-knowledge → principles/gaussian-error-assignment-as-state-of-knowledge.md
+- IRI: pkis:principle:gaussian-error-assignment-as-state-of-knowledge
