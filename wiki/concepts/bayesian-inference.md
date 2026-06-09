@@ -12,7 +12,7 @@ component_scores:
   transfer: null
 coverage: 1
 date_created: '2026-06-01'
-date_updated: '2026-06-08'
+date_updated: '2026-06-09'
 domain:
 - bayesian-stats
 id: pkis:concept:bayesian-inference
@@ -51,3 +51,6 @@ The **evidence** (marginal likelihood) $P(D\mid H)=\sum_\theta P(D\mid\theta)P(\
 Deconvolution illustrates Bayesian inference in the fully tractable linear-Gaussian setting. With a Gaussian likelihood $P(\mathbf{d}\mid\mathbf{f})$ and a Gaussian prior $P(\mathbf{f})$, the posterior $P(\mathbf{f}\mid\mathbf{d}) \propto P(\mathbf{d}\mid\mathbf{f})P(\mathbf{f})$ is itself Gaussian. It is therefore fully summarized by its mean, which here coincides with the most probable image $\mathbf{f}_{MP}$, and its covariance
 $$\Sigma_{f\mid d} = \big[-\nabla\nabla \log P(\mathbf{f}\mid\mathbf{d})\big]^{-1},$$
 the inverse Hessian of the negative log-posterior, which supplies joint error bars on the reconstruction. The evidence $P(\mathbf{d})$, an unimportant normalizer for the point estimate, becomes central at a higher level for comparing noise levels, prior scales, or candidate point spread functions. This is the rare case where the Laplace approximation is exact.
+
+## The three-step Bayesian workflow (Gelman)
+Gelman et al. (BDA3, Ch. 1) frame applied Bayesian data analysis as an iterative three-step process rather than a one-shot formula: (1) set up a full probability model — a joint distribution $p(\theta,y)=p(\theta)p(y\mid\theta)$ over all observable and unobservable quantities, consistent with substantive knowledge and the data-collection process; (2) condition on the observed data to obtain and interpret the posterior $p(\theta\mid y)\propto p(\theta)p(y\mid\theta)$; and (3) evaluate model fit and the implications of the posterior — checking how well the model fits, whether conclusions are reasonable, and how sensitive they are to assumptions — then alter or expand the model and repeat. The first step (where do models come from?) is the hardest; advances in step 2 (computation, especially simulation) and step 3 (model checking) reduce the need to get the model right on the first attempt. The central feature distinguishing this paradigm is the direct quantification of uncertainty via probability, which is what permits fitting models with many parameters and complex multilevel specifications.
