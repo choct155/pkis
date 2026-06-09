@@ -11489,3 +11489,12 @@
 ## [2026-06-09] committed | technique
 - Committed: flexible-discriminant-analysis → techniques/flexible-discriminant-analysis.md
 - IRI: pkis:technique:flexible-discriminant-analysis
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: penalized-discriminant-analysis (id: d3c3ce0b-a9bd-4daf-8990-e0a89cfcbf7c)
+- Title: Penalized Discriminant Analysis (PDA)
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: penalized-discriminant-analysis → techniques/penalized-discriminant-analysis.md
+- IRI: pkis:technique:penalized-discriminant-analysis

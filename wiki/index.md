@@ -747,6 +747,7 @@
 - [[market-vs-hierarchy]] — Coase/Williamson: transactions governed by price signals (markets) vs. managerial direction (firms) (corporate-finance) (2026-05-20)
 
 ## Techniques
+- [[penalized-discriminant-analysis]] — Penalized Discriminant Analysis (PDA) (statistical-learning) (2026-06-09)
 - [[flexible-discriminant-analysis]] — Flexible Discriminant Analysis (FDA) (statistical-learning) (2026-06-09)
 - [[optimal-scoring]] — Optimal Scoring (statistical-learning) (2026-06-09)
 - [[variable-importance-for-tree-ensembles]] — Variable Importance for Tree Ensembles (statistical-learning) (2026-06-09)
