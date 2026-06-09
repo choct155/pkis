@@ -290,6 +290,7 @@
 - [[liu-machine-unlearning-llm-2024]] — Rethinking Machine Unlearning for LLMs: post-training knowledge editing survey (deep-learning, ai-safety) (2026-05-20)
 
 ## Concepts
+- [[algorithmic-fairness]] — Algorithmic Fairness (deep-learning, ai-safety) (2026-06-09)
 - [[ai-safety-engineering]] — AI Safety Engineering (ai-safety, deep-learning) (2026-06-09)
 - [[machine-consciousness-and-qualia]] — Machine Consciousness and Qualia (knowledge-representation) (2026-06-09)
 - [[chinese-room-argument]] — Chinese Room Argument (knowledge-representation) (2026-06-09)

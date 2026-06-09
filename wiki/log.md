@@ -10534,3 +10534,12 @@
 ## [2026-06-09] committed | concept
 - Committed: ai-safety-engineering → concepts/ai-safety-engineering.md
 - IRI: pkis:concept:ai-safety-engineering
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: algorithmic-fairness (id: c755a35b-2d4b-4257-847b-2b9acae958dd)
+- Title: Algorithmic Fairness
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: algorithmic-fairness → concepts/algorithmic-fairness.md
+- IRI: pkis:concept:algorithmic-fairness
