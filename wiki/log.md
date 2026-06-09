@@ -4657,3 +4657,12 @@
 ## [2026-06-09] committed | technique
 - Committed: polynomial-basis-rl → techniques/polynomial-basis-rl.md
 - IRI: pkis:technique:polynomial-basis-rl
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: lstd (id: 34ac1890-6434-4254-876f-8a65076a3727)
+- Title: Least-Squares TD (LSTD)
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: lstd → techniques/lstd.md
+- IRI: pkis:technique:lstd
