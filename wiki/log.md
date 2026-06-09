@@ -3685,3 +3685,12 @@
 ## [2026-06-09] committed | concept
 - Committed: convex-set-and-function → concepts/convex-set-and-function.md
 - IRI: pkis:concept:convex-set-and-function
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: lagrangian-duality (id: afae2ddb-4ba2-42e7-9b11-fa91b339576b)
+- Title: Lagrangian Duality
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: lagrangian-duality → concepts/lagrangian-duality.md
+- IRI: pkis:concept:lagrangian-duality
