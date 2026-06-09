@@ -11750,3 +11750,12 @@
 ## [2026-06-09] committed | technique
 - Committed: nearest-shrunken-centroids → techniques/nearest-shrunken-centroids.md
 - IRI: pkis:technique:nearest-shrunken-centroids
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: regularized-discriminant-analysis (id: 2732ac7e-fb47-4326-ac0f-6a9bd458d23c)
+- Title: Regularized Discriminant Analysis (RDA)
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: regularized-discriminant-analysis → techniques/regularized-discriminant-analysis.md
+- IRI: pkis:technique:regularized-discriminant-analysis
