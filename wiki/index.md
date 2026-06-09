@@ -1224,6 +1224,7 @@
 - [[llm-language-comprehension]] — The problem of whether LLMs genuinely comprehend language vs. pattern-match surface form (deep-learning, cognitive-science) (2026-05-20)
 
 ## Principles
+- [[revelation-principle]] — Revelation Principle (multi-agent-systems, economics) (2026-06-09)
 - [[off-switch-deference]] — Off-Switch Deference Under Preference Uncertainty (agentic-systems, bayesian-stats) (2026-06-09)
 - [[maximum-expected-utility-principle]] — Maximum Expected Utility Principle (bayesian-stats, agentic-systems) (2026-06-09)
 - [[ontological-and-epistemological-commitment]] — Ontological and Epistemological Commitment (knowledge-representation, symbolic-subsymbolic) (2026-06-09)

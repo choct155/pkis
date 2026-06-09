@@ -9805,3 +9805,12 @@
 ## [2026-06-09] committed | framework
 - Committed: mechanism-design → frameworks/mechanism-design.md
 - IRI: pkis:framework:mechanism-design
+
+## [2026-06-09] staged | node-stub (principle)
+- Staged: revelation-principle (id: 173fbe3e-5b54-4429-add8-62d67bfee16f)
+- Title: Revelation Principle
+- needs_canonical_source: False
+
+## [2026-06-09] committed | principle
+- Committed: revelation-principle → principles/revelation-principle.md
+- IRI: pkis:principle:revelation-principle
