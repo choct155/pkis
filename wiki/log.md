@@ -9922,3 +9922,12 @@
 ## [2026-06-09] committed | concept
 - Committed: supervised-learning → concepts/supervised-learning.md
 - IRI: pkis:concept:supervised-learning
+
+## [2026-06-09] staged | node-stub (framework)
+- Staged: pac-learning (id: 0cee4c80-310a-4155-87ce-da9f523e9090)
+- Title: PAC Learning (Probably Approximately Correct)
+- needs_canonical_source: False
+
+## [2026-06-09] committed | framework
+- Committed: pac-learning → frameworks/pac-learning.md
+- IRI: pkis:framework:pac-learning
