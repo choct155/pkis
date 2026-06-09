@@ -10120,3 +10120,12 @@
 ## [2026-06-09] committed | technique
 - Committed: experience-replay → techniques/experience-replay.md
 - IRI: pkis:technique:experience-replay
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: language-model (id: 68b16377-9e3c-4ce8-ad4c-1ba70698cc0f)
+- Title: Language Model
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: language-model → concepts/language-model.md
+- IRI: pkis:concept:language-model
