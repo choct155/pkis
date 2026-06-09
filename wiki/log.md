@@ -5557,3 +5557,12 @@
 ## [2026-06-09] committed | concept
 - Committed: waic → concepts/waic.md
 - IRI: pkis:concept:waic
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: deviance-information-criterion (id: 984114fb-8b4a-441d-969c-47d79d3fcfde)
+- Title: Deviance Information Criterion (DIC)
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: deviance-information-criterion → concepts/deviance-information-criterion.md
+- IRI: pkis:concept:deviance-information-criterion
