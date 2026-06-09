@@ -5953,3 +5953,12 @@
 ## [2026-06-09] committed | concept
 - Committed: latent-variable-discrete-regression → concepts/latent-variable-discrete-regression.md
 - IRI: pkis:concept:latent-variable-discrete-regression
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: separation-logistic-regression (id: 14f2f1d1-96af-4c9b-bca9-af0eb8c2b9e7)
+- Title: Separation in Logistic Regression
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: separation-logistic-regression → concepts/separation-logistic-regression.md
+- IRI: pkis:concept:separation-logistic-regression
