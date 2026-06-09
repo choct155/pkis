@@ -9247,3 +9247,12 @@
 ## [2026-06-09] committed | framework
 - Committed: upper-ontology-categories-objects → frameworks/upper-ontology-categories-objects.md
 - IRI: pkis:framework:upper-ontology-categories-objects
+
+## [2026-06-09] staged | node-stub (framework)
+- Staged: event-calculus (id: e3a8b0a4-e91b-4253-8e9b-4b435137dcf8)
+- Title: Event Calculus
+- needs_canonical_source: False
+
+## [2026-06-09] committed | framework
+- Committed: event-calculus → frameworks/event-calculus.md
+- IRI: pkis:framework:event-calculus
