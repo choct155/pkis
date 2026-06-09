@@ -5971,3 +5971,12 @@
 ## [2026-06-09] committed | technique
 - Committed: loglinear-model → techniques/loglinear-model.md
 - IRI: pkis:technique:loglinear-model
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: iterative-proportional-fitting (id: 3b181f7f-5081-4bc7-9e73-1323421721b6)
+- Title: Iterative Proportional Fitting
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: iterative-proportional-fitting → techniques/iterative-proportional-fitting.md
+- IRI: pkis:technique:iterative-proportional-fitting
