@@ -11264,3 +11264,12 @@
 ## [2026-06-09] committed | technique
 - Committed: regression-splines → techniques/regression-splines.md
 - IRI: pkis:technique:regression-splines
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: smoothing-splines (id: 5ff9ac2d-89cb-484d-98f3-0da17c03dd2c)
+- Title: Smoothing Splines
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: smoothing-splines → techniques/smoothing-splines.md
+- IRI: pkis:technique:smoothing-splines
