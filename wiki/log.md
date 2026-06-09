@@ -11525,3 +11525,12 @@
 ## [2026-06-09] committed | concept
 - Committed: epsilon-insensitive-loss → concepts/epsilon-insensitive-loss.md
 - IRI: pkis:concept:epsilon-insensitive-loss
+
+## [2026-06-09] staged | node-stub (framework)
+- Staged: prototype-methods (id: 120377bc-e757-449f-b362-023adf599f4b)
+- Title: Prototype Methods
+- needs_canonical_source: False
+
+## [2026-06-09] committed | framework
+- Committed: prototype-methods → frameworks/prototype-methods.md
+- IRI: pkis:framework:prototype-methods
