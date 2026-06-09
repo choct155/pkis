@@ -5449,3 +5449,12 @@
 ## [2026-06-09] committed | concept
 - Committed: unbiasedness → concepts/unbiasedness.md
 - IRI: pkis:concept:unbiasedness
+
+## [2026-06-09] staged | node-stub (principle)
+- Staged: partial-pooling-shrinkage (id: 89fe0abb-9aae-44a5-914e-33ddba67291c)
+- Title: Partial Pooling and Shrinkage
+- needs_canonical_source: False
+
+## [2026-06-09] committed | principle
+- Committed: partial-pooling-shrinkage → principles/partial-pooling-shrinkage.md
+- IRI: pkis:principle:partial-pooling-shrinkage
