@@ -10156,3 +10156,12 @@
 ## [2026-06-09] committed | concept
 - Committed: bag-of-words-model → concepts/bag-of-words-model.md
 - IRI: pkis:concept:bag-of-words-model
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: text-classification (id: 0f431400-a52e-4c8b-b6be-551cf0ac2be0)
+- Title: Text Classification
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: text-classification → techniques/text-classification.md
+- IRI: pkis:technique:text-classification
