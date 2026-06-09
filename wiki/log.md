@@ -5980,3 +5980,12 @@
 ## [2026-06-09] committed | technique
 - Committed: iterative-proportional-fitting → techniques/iterative-proportional-fitting.md
 - IRI: pkis:technique:iterative-proportional-fitting
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: robust-inference (id: 86a884e7-b9eb-4883-99e2-88b1eb0b37e4)
+- Title: Robust Inference
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: robust-inference → concepts/robust-inference.md
+- IRI: pkis:concept:robust-inference
