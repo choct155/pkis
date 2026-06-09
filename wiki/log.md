@@ -11336,3 +11336,12 @@
 ## [2026-06-09] committed | concept
 - Committed: optimism-of-training-error → concepts/optimism-of-training-error.md
 - IRI: pkis:concept:optimism-of-training-error
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: vc-dimension (id: f479a866-6816-4044-bda8-33134065cbbc)
+- Title: Vapnik–Chervonenkis (VC) Dimension
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: vc-dimension → concepts/vc-dimension.md
+- IRI: pkis:concept:vc-dimension

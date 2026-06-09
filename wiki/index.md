@@ -290,6 +290,7 @@
 - [[liu-machine-unlearning-llm-2024]] — Rethinking Machine Unlearning for LLMs: post-training knowledge editing survey (deep-learning, ai-safety) (2026-05-20)
 
 ## Concepts
+- [[vc-dimension]] — Vapnik–Chervonenkis (VC) Dimension (statistical-learning) (2026-06-09)
 - [[optimism-of-training-error]] — Optimism of the Training Error (statistical-learning, bayesian-stats) (2026-06-09)
 - [[thin-plate-spline]] — Thin-Plate Spline (statistical-learning, optimization) (2026-06-09)
 - [[optimal-separating-hyperplane]] — Optimal Separating Hyperplane (statistical-learning, optimization) (2026-06-09)
