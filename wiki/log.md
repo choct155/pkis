@@ -8334,3 +8334,12 @@
 ## [2026-06-09] committed | technique
 - Committed: bayesian-outlier-model → techniques/bayesian-outlier-model.md
 - IRI: pkis:technique:bayesian-outlier-model
+
+## [2026-06-09] staged | node-stub (principle)
+- Staged: robustness-implies-optimality (id: b5bd5095-4b58-4b85-94af-8ba43799a6e6)
+- Title: Any Well-Defined Inference Property Implies an Optimality Principle
+- needs_canonical_source: False
+
+## [2026-06-09] committed | principle
+- Committed: robustness-implies-optimality → principles/robustness-implies-optimality.md
+- IRI: pkis:principle:robustness-implies-optimality
