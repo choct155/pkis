@@ -4810,3 +4810,12 @@
 ## [2026-06-09] committed | concept
 - Committed: lambda-return → concepts/lambda-return.md
 - IRI: pkis:concept:lambda-return
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: td-lambda (id: 21572446-6306-46b3-a00c-dad5e248d9bd)
+- Title: TD(λ)
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: td-lambda → techniques/td-lambda.md
+- IRI: pkis:technique:td-lambda
