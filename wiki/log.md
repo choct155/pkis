@@ -10408,3 +10408,12 @@
 ## [2026-06-09] committed | technique
 - Committed: cell-decomposition-motion-planning → techniques/cell-decomposition-motion-planning.md
 - IRI: pkis:technique:cell-decomposition-motion-planning
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: probabilistic-roadmap-prm (id: c5911947-993f-44a5-9b57-bd6450cb3ebc)
+- Title: Probabilistic Roadmap (PRM)
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: probabilistic-roadmap-prm → techniques/probabilistic-roadmap-prm.md
+- IRI: pkis:technique:probabilistic-roadmap-prm
