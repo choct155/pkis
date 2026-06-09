@@ -290,6 +290,7 @@
 - [[liu-machine-unlearning-llm-2024]] — Rethinking Machine Unlearning for LLMs: post-training knowledge editing survey (deep-learning, ai-safety) (2026-05-20)
 
 ## Concepts
+- [[sampling-distribution]] — Sampling Distribution (Direct Probability) (bayesian-stats) (2026-06-09)
 - [[binomial-distribution]] — Binomial Distribution (bayesian-stats) (2026-06-09)
 - [[hypergeometric-distribution]] — Hypergeometric Distribution (bayesian-stats) (2026-06-09)
 - [[strong-and-weak-syllogisms]] — Strong and Weak Syllogisms (bayesian-stats) (2026-06-09)

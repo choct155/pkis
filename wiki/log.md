@@ -7866,3 +7866,12 @@
 ## [2026-06-09] committed | concept
 - Committed: binomial-distribution → concepts/binomial-distribution.md
 - IRI: pkis:concept:binomial-distribution
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: sampling-distribution (id: 9ca58369-e6db-495c-aeba-589bda663987)
+- Title: Sampling Distribution (Direct Probability)
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: sampling-distribution → concepts/sampling-distribution.md
+- IRI: pkis:concept:sampling-distribution
