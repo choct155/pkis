@@ -8959,3 +8959,12 @@
 ## [2026-06-09] committed | technique
 - Committed: backtracking-search → techniques/backtracking-search.md
 - IRI: pkis:technique:backtracking-search
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: forward-checking (id: dd2c57d7-ca69-4598-a241-b18a257b6c25)
+- Title: Forward Checking and Maintaining Arc Consistency (MAC)
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: forward-checking → techniques/forward-checking.md
+- IRI: pkis:technique:forward-checking

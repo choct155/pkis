@@ -682,6 +682,7 @@
 - [[market-vs-hierarchy]] — Coase/Williamson: transactions governed by price signals (markets) vs. managerial direction (firms) (corporate-finance) (2026-05-20)
 
 ## Techniques
+- [[forward-checking]] — Forward Checking and Maintaining Arc Consistency (MAC) (knowledge-representation, optimization) (2026-06-09)
 - [[backtracking-search]] — Backtracking Search for CSPs (knowledge-representation, optimization) (2026-06-09)
 - [[arc-consistency-ac3]] — Arc Consistency and the AC-3 Algorithm (knowledge-representation, optimization) (2026-06-09)
 - [[expectiminimax]] — Expectiminimax (optimization, knowledge-representation) (2026-06-09)
