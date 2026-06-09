@@ -7525,3 +7525,12 @@
 ## [2026-06-09] committed | result
 - Committed: reflection-principle → results/reflection-principle.md
 - IRI: pkis:result:reflection-principle
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: brownian-bridge (id: 063a056c-2347-46f0-9608-1af8db56d239)
+- Title: Brownian Bridge
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: brownian-bridge → concepts/brownian-bridge.md
+- IRI: pkis:concept:brownian-bridge
