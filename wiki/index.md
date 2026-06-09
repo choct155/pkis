@@ -743,6 +743,7 @@
 - [[market-vs-hierarchy]] — Coase/Williamson: transactions governed by price signals (markets) vs. managerial direction (firms) (corporate-finance) (2026-05-20)
 
 ## Techniques
+- [[kernel-smoothing]] — Kernel Smoothing (Local Averaging) (statistical-learning) (2026-06-09)
 - [[wavelet-smoothing]] — Wavelet Smoothing (statistical-learning, signal-processing) (2026-06-09)
 - [[smoothing-splines]] — Smoothing Splines (statistical-learning, optimization) (2026-06-09)
 - [[regression-splines]] — Regression Splines (statistical-learning, optimization) (2026-06-09)

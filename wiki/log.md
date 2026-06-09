@@ -11300,3 +11300,12 @@
 ## [2026-06-09] committed | technique
 - Committed: wavelet-smoothing → techniques/wavelet-smoothing.md
 - IRI: pkis:technique:wavelet-smoothing
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: kernel-smoothing (id: 8e110206-55fa-4942-977c-d92889b44cc3)
+- Title: Kernel Smoothing (Local Averaging)
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: kernel-smoothing → techniques/kernel-smoothing.md
+- IRI: pkis:technique:kernel-smoothing
