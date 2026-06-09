@@ -9004,3 +9004,12 @@
 ## [2026-06-09] committed | framework
 - Committed: knowledge-based-agent → frameworks/knowledge-based-agent.md
 - IRI: pkis:framework:knowledge-based-agent
+
+## [2026-06-09] staged | node-stub (framework)
+- Staged: propositional-logic (id: 400f4045-4ee2-4a7b-be2b-90b3667653b3)
+- Title: Propositional Logic
+- needs_canonical_source: False
+
+## [2026-06-09] committed | framework
+- Committed: propositional-logic → frameworks/propositional-logic.md
+- IRI: pkis:framework:propositional-logic
