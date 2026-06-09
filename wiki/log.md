@@ -9292,3 +9292,12 @@
 ## [2026-06-09] committed | technique
 - Committed: forward-state-space-planning → techniques/forward-state-space-planning.md
 - IRI: pkis:technique:forward-state-space-planning
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: backward-regression-planning (id: 7f9ba7ce-240a-42bc-8e83-307373fb2e86)
+- Title: Backward Regression Planning
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: backward-regression-planning → techniques/backward-regression-planning.md
+- IRI: pkis:technique:backward-regression-planning

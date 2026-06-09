@@ -688,6 +688,7 @@
 - [[market-vs-hierarchy]] — Coase/Williamson: transactions governed by price signals (markets) vs. managerial direction (firms) (corporate-finance) (2026-05-20)
 
 ## Techniques
+- [[backward-regression-planning]] — Backward Regression Planning (optimization, symbolic-subsymbolic, knowledge-representation) (2026-06-09)
 - [[forward-state-space-planning]] — Forward State-Space Planning (Progression) (optimization, symbolic-subsymbolic, knowledge-representation) (2026-06-09)
 - [[equality-reasoning-demodulation-paramodulation]] — Equality Reasoning: Demodulation and Paramodulation (knowledge-representation, symbolic-subsymbolic) (2026-06-09)
 - [[propositionalization]] — Propositionalization (knowledge-representation, symbolic-subsymbolic) (2026-06-09)
