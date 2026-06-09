@@ -5584,3 +5584,12 @@
 ## [2026-06-09] committed | concept
 - Committed: bayes-factor → concepts/bayes-factor.md
 - IRI: pkis:concept:bayes-factor
+
+## [2026-06-09] staged | node-stub (principle)
+- Staged: continuous-model-expansion (id: a049530c-db40-4d65-809a-81586874ac99)
+- Title: Continuous Model Expansion
+- needs_canonical_source: False
+
+## [2026-06-09] committed | principle
+- Committed: continuous-model-expansion → principles/continuous-model-expansion.md
+- IRI: pkis:principle:continuous-model-expansion

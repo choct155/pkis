@@ -894,6 +894,7 @@
 - [[llm-language-comprehension]] — The problem of whether LLMs genuinely comprehend language vs. pattern-match surface form (deep-learning, cognitive-science) (2026-05-20)
 
 ## Principles
+- [[continuous-model-expansion]] — Continuous Model Expansion (bayesian-stats, statistical-learning) (2026-06-09)
 - [[partial-pooling-shrinkage]] — Partial Pooling and Shrinkage (bayesian-stats) (2026-06-09)
 - [[regression-to-the-mean]] — Regression to the Mean (bayesian-stats, statistical-learning) (2026-06-09)
 - [[frequentist-evaluation-of-bayesian-methods]] — Frequentist Evaluation of Bayesian Methods (bayesian-stats) (2026-06-09)
