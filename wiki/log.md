@@ -11399,3 +11399,12 @@
 ## [2026-06-09] committed | technique
 - Committed: backfitting-algorithm → techniques/backfitting-algorithm.md
 - IRI: pkis:technique:backfitting-algorithm
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: multivariate-adaptive-regression-splines-mars (id: d987774b-df78-4d24-be3d-f304faab5464)
+- Title: Multivariate Adaptive Regression Splines (MARS)
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: multivariate-adaptive-regression-splines-mars → techniques/multivariate-adaptive-regression-splines-mars.md
+- IRI: pkis:technique:multivariate-adaptive-regression-splines-mars
