@@ -52,10 +52,18 @@ PRED_SYNONYMS = {
 }
 
 
+def _bare_slug(s):
+    # Edges sometimes arrive as full IRIs (pkis:concept:foo) with a GUESSED type
+    # prefix that may not match the node's real type; reduce to the bare slug so
+    # add_connections resolves by slug regardless of knowledge_type.
+    s = s.strip()
+    return s.split(":")[-1] if s.startswith("pkis:") else s
+
+
 def normalize_edge(e):
     """Return a clean {subject,target,predicate,note} or None if unusable."""
-    subj = (e.get("subject") or e.get("source") or "").strip()
-    tgt = (e.get("target") or e.get("object") or "").strip()
+    subj = _bare_slug(e.get("subject") or e.get("source") or "")
+    tgt = _bare_slug(e.get("target") or e.get("object") or "")
     pred = (e.get("predicate") or e.get("edge_type") or "").strip()
     pred = pred if pred in VALID_PREDICATES else PRED_SYNONYMS.get(pred)
     if not (subj and tgt and pred):
