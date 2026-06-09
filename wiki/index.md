@@ -696,6 +696,7 @@
 - [[market-vs-hierarchy]] — Coase/Williamson: transactions governed by price signals (markets) vs. managerial direction (firms) (corporate-finance) (2026-05-20)
 
 ## Techniques
+- [[preference-elicitation]] — Preference Elicitation (bayesian-stats, agentic-systems) (2026-06-09)
 - [[grounding-unrolling]] — Grounding (Unrolling) (bayesian-stats, knowledge-representation) (2026-06-09)
 - [[viterbi-for-hmm]] — Viterbi Algorithm for HMMs (Most Likely Sequence) (bayesian-stats, state-space-models, information-theory) (2026-06-09)
 - [[likelihood-weighting]] — Likelihood Weighting (bayesian-stats, knowledge-representation) (2026-06-09)

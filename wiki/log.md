@@ -9589,3 +9589,12 @@
 ## [2026-06-09] committed | principle
 - Committed: off-switch-deference → principles/off-switch-deference.md
 - IRI: pkis:principle:off-switch-deference
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: preference-elicitation (id: 88138b9d-706b-4d78-9346-70d5d01ca174)
+- Title: Preference Elicitation
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: preference-elicitation → techniques/preference-elicitation.md
+- IRI: pkis:technique:preference-elicitation
