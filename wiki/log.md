@@ -4180,3 +4180,12 @@
 ## [2026-06-09] committed | concept
 - Committed: action-value-function → concepts/action-value-function.md
 - IRI: pkis:concept:action-value-function
+
+## [2026-06-09] staged | node-stub (result)
+- Staged: bellman-equation (id: 9fc6aa27-4616-4342-9690-78a3f3b0c16a)
+- Title: Bellman Equation
+- needs_canonical_source: False
+
+## [2026-06-09] committed | result
+- Committed: bellman-equation → results/bellman-equation.md
+- IRI: pkis:result:bellman-equation
