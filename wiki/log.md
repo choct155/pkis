@@ -6520,3 +6520,12 @@
 ## [2026-06-09] committed | result
 - Committed: graphoid-axioms → results/graphoid-axioms.md
 - IRI: pkis:result:graphoid-axioms
+
+## [2026-06-09] staged | node-stub (problem)
+- Staged: causal-discovery (id: 58f38685-87a0-436d-ba45-3bba70e4f31a)
+- Title: Causal Discovery
+- needs_canonical_source: False
+
+## [2026-06-09] committed | problem
+- Committed: causal-discovery → problems/causal-discovery.md
+- IRI: pkis:problem:causal-discovery
