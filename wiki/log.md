@@ -7453,3 +7453,12 @@
 ## [2026-06-09] committed | concept
 - Committed: compound-poisson-process → concepts/compound-poisson-process.md
 - IRI: pkis:concept:compound-poisson-process
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: continuous-time-markov-chain (id: 1235a94f-a33f-4fb5-9818-95b544ea1ece)
+- Title: Continuous Time Markov Chain
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: continuous-time-markov-chain → concepts/continuous-time-markov-chain.md
+- IRI: pkis:concept:continuous-time-markov-chain
