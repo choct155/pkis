@@ -10102,3 +10102,12 @@
 ## [2026-06-09] committed | concept
 - Committed: deep-reinforcement-learning → concepts/deep-reinforcement-learning.md
 - IRI: pkis:concept:deep-reinforcement-learning
+
+## [2026-06-09] staged | node-stub (framework)
+- Staged: hierarchical-reinforcement-learning (id: 41d2c960-399f-4f4c-815b-f23661e55511)
+- Title: Hierarchical Reinforcement Learning
+- needs_canonical_source: False
+
+## [2026-06-09] committed | framework
+- Committed: hierarchical-reinforcement-learning → frameworks/hierarchical-reinforcement-learning.md
+- IRI: pkis:framework:hierarchical-reinforcement-learning
