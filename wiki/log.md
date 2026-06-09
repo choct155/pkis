@@ -10066,3 +10066,12 @@
 ## [2026-06-09] committed | concept
 - Committed: inverse-reinforcement-learning → concepts/inverse-reinforcement-learning.md
 - IRI: pkis:concept:inverse-reinforcement-learning
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: apprenticeship-learning (id: 8c13d6ef-b5ee-434f-a595-1dad201892e1)
+- Title: Apprenticeship Learning
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: apprenticeship-learning → concepts/apprenticeship-learning.md
+- IRI: pkis:concept:apprenticeship-learning
