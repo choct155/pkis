@@ -5962,3 +5962,12 @@
 ## [2026-06-09] committed | concept
 - Committed: separation-logistic-regression → concepts/separation-logistic-regression.md
 - IRI: pkis:concept:separation-logistic-regression
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: loglinear-model (id: 1450db36-e8a1-4055-b5af-3c105bd4028e)
+- Title: Loglinear Model
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: loglinear-model → techniques/loglinear-model.md
+- IRI: pkis:technique:loglinear-model
