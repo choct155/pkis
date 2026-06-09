@@ -4918,3 +4918,12 @@
 ## [2026-06-09] committed | concept
 - Committed: eligibility-trace → concepts/eligibility-trace.md
 - IRI: pkis:concept:eligibility-trace
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: deep-q-network (id: dcdda62a-2059-4b0b-b5e7-31bdd914fe99)
+- Title: Deep Q-Network (DQN)
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: deep-q-network → techniques/deep-q-network.md
+- IRI: pkis:technique:deep-q-network
