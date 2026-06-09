@@ -7911,3 +7911,12 @@
 ## [2026-06-09] committed | principle
 - Committed: significance-test-requires-alternative → principles/significance-test-requires-alternative.md
 - IRI: pkis:principle:significance-test-requires-alternative
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: credible-interval (id: 2b9984ab-868f-4cee-9d24-add309ae9090)
+- Title: Credible Interval
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: credible-interval → concepts/credible-interval.md
+- IRI: pkis:concept:credible-interval
