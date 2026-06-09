@@ -9238,3 +9238,12 @@
 ## [2026-06-09] committed | technique
 - Committed: equality-reasoning-demodulation-paramodulation → techniques/equality-reasoning-demodulation-paramodulation.md
 - IRI: pkis:technique:equality-reasoning-demodulation-paramodulation
+
+## [2026-06-09] staged | node-stub (framework)
+- Staged: upper-ontology-categories-objects (id: c964d262-e635-45b4-be76-63ee21f340a2)
+- Title: Upper Ontology of Categories and Objects
+- needs_canonical_source: False
+
+## [2026-06-09] committed | framework
+- Committed: upper-ontology-categories-objects → frameworks/upper-ontology-categories-objects.md
+- IRI: pkis:framework:upper-ontology-categories-objects

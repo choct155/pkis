@@ -1069,6 +1069,7 @@
 - [[government-debt-valuation-equation]] — FTPL: price level determined by ratio of nominal debt to expected present value of future surpluses (macroeconomics) (2026-05-20)
 
 ## Frameworks
+- [[upper-ontology-categories-objects]] — Upper Ontology of Categories and Objects (knowledge-representation) (2026-06-09)
 - [[logic-programming]] — Logic Programming (knowledge-representation, symbolic-subsymbolic) (2026-06-09)
 - [[first-order-logic]] — First-Order Logic (knowledge-representation, symbolic-subsymbolic) (2026-06-09)
 - [[propositional-logic]] — Propositional Logic (knowledge-representation, symbolic-subsymbolic) (2026-06-09)
