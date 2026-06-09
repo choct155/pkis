@@ -7839,3 +7839,12 @@
 ## [2026-06-09] committed | principle
 - Committed: principle-of-indifference → principles/principle-of-indifference.md
 - IRI: pkis:principle:principle-of-indifference
+
+## [2026-06-09] staged | node-stub (framework)
+- Staged: the-bernoulli-urn (id: 0b959e0d-03e2-4002-81d2-ad3f6c907698)
+- Title: The Bernoulli Urn Model
+- needs_canonical_source: False
+
+## [2026-06-09] committed | framework
+- Committed: the-bernoulli-urn → frameworks/the-bernoulli-urn.md
+- IRI: pkis:framework:the-bernoulli-urn
