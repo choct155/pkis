@@ -4252,3 +4252,12 @@
 ## [2026-06-09] committed | principle
 - Committed: generalized-policy-iteration → principles/generalized-policy-iteration.md
 - IRI: pkis:principle:generalized-policy-iteration
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: asynchronous-dynamic-programming (id: 3f8f3eba-1fae-4645-b3bc-26d675f9517f)
+- Title: Asynchronous Dynamic Programming
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: asynchronous-dynamic-programming → techniques/asynchronous-dynamic-programming.md
+- IRI: pkis:technique:asynchronous-dynamic-programming
