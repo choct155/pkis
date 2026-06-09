@@ -5413,3 +5413,12 @@
 ## [2026-06-09] committed | result
 - Committed: bernstein-von-mises-theorem → results/bernstein-von-mises-theorem.md
 - IRI: pkis:result:bernstein-von-mises-theorem
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: fisher-information (id: 9cfad781-358d-4fba-b839-159b4d041dd4)
+- Title: Fisher Information
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: fisher-information → concepts/fisher-information.md
+- IRI: pkis:concept:fisher-information

@@ -290,6 +290,7 @@
 - [[liu-machine-unlearning-llm-2024]] — Rethinking Machine Unlearning for LLMs: post-training knowledge editing survey (deep-learning, ai-safety) (2026-05-20)
 
 ## Concepts
+- [[fisher-information]] — Fisher Information (bayesian-stats, statistical-learning) (2026-06-09)
 - [[large-sample-bayesian-inference]] — Large-Sample Bayesian Inference (bayesian-stats) (2026-06-09)
 - [[pivotal-quantity]] — Pivotal Quantity (bayesian-stats) (2026-06-09)
 - [[multivariate-normal-model]] — Multivariate Normal Model (Bayesian) (bayesian-stats, statistical-learning) (2026-06-09)
