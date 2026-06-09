@@ -6682,3 +6682,12 @@
 ## [2026-06-09] committed | technique
 - Committed: conditional-action-policy → techniques/conditional-action-policy.md
 - IRI: pkis:technique:conditional-action-policy
+
+## [2026-06-09] staged | node-stub (problem)
+- Staged: plan-identification (id: 2f9b3aa6-a1e1-4a68-8f92-d10bb439e698)
+- Title: Plan Identification (Sequential Back-Door)
+- needs_canonical_source: False
+
+## [2026-06-09] committed | problem
+- Committed: plan-identification → problems/plan-identification.md
+- IRI: pkis:problem:plan-identification
