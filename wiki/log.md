@@ -8289,3 +8289,12 @@
 ## [2026-06-09] committed | concept
 - Committed: ap-distribution → concepts/ap-distribution.md
 - IRI: pkis:concept:ap-distribution
+
+## [2026-06-09] staged | node-stub (principle)
+- Staged: well-posed-hypothesis-space (id: 7502c939-b16a-417b-b3cd-3652ac78e35f)
+- Title: Well-Posed Hypothesis Space
+- needs_canonical_source: False
+
+## [2026-06-09] committed | principle
+- Committed: well-posed-hypothesis-space → principles/well-posed-hypothesis-space.md
+- IRI: pkis:principle:well-posed-hypothesis-space
