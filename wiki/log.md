@@ -7282,3 +7282,12 @@
 ## [2026-06-09] committed | concept
 - Committed: absorbing-markov-chain → concepts/absorbing-markov-chain.md
 - IRI: pkis:concept:absorbing-markov-chain
+
+## [2026-06-09] staged | node-stub (result)
+- Staged: ergodic-theorem-markov (id: 9ca7a4c2-2932-4d10-a3a7-f25034ab6784)
+- Title: Ergodic Theorem for Markov Chains (Convergence to Stationarity)
+- needs_canonical_source: False
+
+## [2026-06-09] committed | result
+- Committed: ergodic-theorem-markov → results/ergodic-theorem-markov.md
+- IRI: pkis:result:ergodic-theorem-markov
