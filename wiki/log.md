@@ -3613,3 +3613,12 @@
 ## [2026-06-09] committed | concept
 - Committed: taylor-series → concepts/taylor-series.md
 - IRI: pkis:concept:taylor-series
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: chain-rule-multivariate (id: 8a071a86-0d22-470e-aa26-141445a0fce0)
+- Title: Chain Rule (Multivariate)
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: chain-rule-multivariate → techniques/chain-rule-multivariate.md
+- IRI: pkis:technique:chain-rule-multivariate
