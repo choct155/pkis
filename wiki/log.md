@@ -7435,3 +7435,12 @@
 ## [2026-06-09] committed | concept
 - Committed: thinning-and-superposition → concepts/thinning-and-superposition.md
 - IRI: pkis:concept:thinning-and-superposition
+
+## [2026-06-09] staged | node-stub (result)
+- Staged: poisson-order-statistic-property (id: 086356cc-fec9-4288-9df2-9af7d613d906)
+- Title: Order Statistic Property of the Poisson Process
+- needs_canonical_source: False
+
+## [2026-06-09] committed | result
+- Committed: poisson-order-statistic-property → results/poisson-order-statistic-property.md
+- IRI: pkis:result:poisson-order-statistic-property
