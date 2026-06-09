@@ -10237,3 +10237,12 @@
 ## [2026-06-09] committed | technique
 - Committed: long-short-term-memory-lstm → techniques/long-short-term-memory-lstm.md
 - IRI: pkis:technique:long-short-term-memory-lstm
+
+## [2026-06-09] staged | node-stub (framework)
+- Staged: sequence-to-sequence-model (id: 84e765c4-8cbd-41ba-8c60-818c2fc64fd6)
+- Title: Sequence-to-Sequence Model
+- needs_canonical_source: False
+
+## [2026-06-09] committed | framework
+- Committed: sequence-to-sequence-model → frameworks/sequence-to-sequence-model.md
+- IRI: pkis:framework:sequence-to-sequence-model
