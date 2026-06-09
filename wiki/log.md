@@ -9418,3 +9418,12 @@
 ## [2026-06-09] committed | technique
 - Committed: likelihood-weighting → techniques/likelihood-weighting.md
 - IRI: pkis:technique:likelihood-weighting
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: markov-blanket (id: 05e9c67e-4bac-43cc-87ee-81b14a8f9658)
+- Title: Markov Blanket
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: markov-blanket → concepts/markov-blanket.md
+- IRI: pkis:concept:markov-blanket
