@@ -7516,3 +7516,12 @@
 ## [2026-06-09] committed | result
 - Committed: invariance-principle → results/invariance-principle.md
 - IRI: pkis:result:invariance-principle
+
+## [2026-06-09] staged | node-stub (result)
+- Staged: reflection-principle (id: b67e1aef-33ee-47d9-83a2-9f1d9a8c7c92)
+- Title: Reflection Principle
+- needs_canonical_source: False
+
+## [2026-06-09] committed | result
+- Committed: reflection-principle → results/reflection-principle.md
+- IRI: pkis:result:reflection-principle
