@@ -10588,3 +10588,12 @@
 ## [2026-06-09] committed | concept
 - Committed: bounded-optimality → concepts/bounded-optimality.md
 - IRI: pkis:concept:bounded-optimality
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: metareasoning (id: bf563275-3dce-44d5-bfce-0c89c741d53c)
+- Title: Metareasoning
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: metareasoning → concepts/metareasoning.md
+- IRI: pkis:concept:metareasoning
