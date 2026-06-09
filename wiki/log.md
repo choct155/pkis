@@ -11543,3 +11543,12 @@
 ## [2026-06-09] committed | technique
 - Committed: learning-vector-quantization → techniques/learning-vector-quantization.md
 - IRI: pkis:technique:learning-vector-quantization
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: tangent-distance (id: b85cfcdf-3f56-4c4d-833d-83cce3a04b8f)
+- Title: Tangent Distance
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: tangent-distance → techniques/tangent-distance.md
+- IRI: pkis:technique:tangent-distance

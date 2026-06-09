@@ -748,6 +748,7 @@
 - [[market-vs-hierarchy]] — Coase/Williamson: transactions governed by price signals (markets) vs. managerial direction (firms) (corporate-finance) (2026-05-20)
 
 ## Techniques
+- [[tangent-distance]] — Tangent Distance (statistical-learning, computer-vision) (2026-06-09)
 - [[learning-vector-quantization]] — Learning Vector Quantization (LVQ) (statistical-learning) (2026-06-09)
 - [[support-vector-regression]] — Support Vector Regression (SVR) (statistical-learning, optimization) (2026-06-09)
 - [[mixture-discriminant-analysis]] — Mixture Discriminant Analysis (MDA) (statistical-learning) (2026-06-09)
