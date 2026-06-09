@@ -8208,3 +8208,12 @@
 ## [2026-06-09] committed | concept
 - Committed: borel-kolmogorov-paradox → concepts/borel-kolmogorov-paradox.md
 - IRI: pkis:concept:borel-kolmogorov-paradox
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: marginalization-paradox (id: 9e1ecbce-69c8-4694-bb18-1c564c53d5eb)
+- Title: Marginalization Paradox
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: marginalization-paradox → concepts/marginalization-paradox.md
+- IRI: pkis:concept:marginalization-paradox
