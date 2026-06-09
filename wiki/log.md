@@ -11444,3 +11444,12 @@
 ## [2026-06-09] committed | technique
 - Committed: adaboost → techniques/adaboost.md
 - IRI: pkis:technique:adaboost
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: forward-stagewise-additive-modeling (id: c280ae45-3360-4b43-beb1-7c75647ca843)
+- Title: Forward Stagewise Additive Modeling
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: forward-stagewise-additive-modeling → techniques/forward-stagewise-additive-modeling.md
+- IRI: pkis:technique:forward-stagewise-additive-modeling
