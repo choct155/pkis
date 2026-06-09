@@ -9346,3 +9346,12 @@
 ## [2026-06-09] committed | concept
 - Committed: angelic-semantics-hla → concepts/angelic-semantics-hla.md
 - IRI: pkis:concept:angelic-semantics-hla
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: belief-state-planning (id: 26192c46-8d44-4631-aab9-9ceb1322b054)
+- Title: Belief-State Planning (Sensorless, Conformant, and Contingent)
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: belief-state-planning → techniques/belief-state-planning.md
+- IRI: pkis:technique:belief-state-planning
