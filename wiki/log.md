@@ -6853,3 +6853,12 @@
 ## [2026-06-09] committed | problem
 - Committed: noncompliance-and-imperfect-experiments → problems/noncompliance-and-imperfect-experiments.md
 - IRI: pkis:problem:noncompliance-and-imperfect-experiments
+
+## [2026-06-09] staged | node-stub (result)
+- Staged: instrumental-inequality (id: 41f733b0-a6ef-4d4f-b8ea-4e41645d7b3a)
+- Title: The Instrumental Inequality
+- needs_canonical_source: False
+
+## [2026-06-09] committed | result
+- Committed: instrumental-inequality → results/instrumental-inequality.md
+- IRI: pkis:result:instrumental-inequality

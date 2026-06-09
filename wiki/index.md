@@ -862,6 +862,7 @@
 - [[constraint-propagation]] — Reducing a constraint satisfaction problem by iteratively eliminating inconsistent values from variable domains (knowledge-representation) (2026-05-20)
 
 ## Results
+- [[instrumental-inequality]] — The Instrumental Inequality (causal-analysis) (2026-06-09)
 - [[counterfactual-axioms]] — Counterfactual Axioms: Composition, Effectiveness, Reversibility (causal-analysis) (2026-06-09)
 - [[sure-thing-principle]] — Sure-Thing Principle (causal-analysis, bayesian-stats) (2026-06-09)
 - [[single-door-criterion]] — Single-Door Criterion for Direct Effects (causal-analysis, econometrics) (2026-06-09)
