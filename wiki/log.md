@@ -8145,3 +8145,12 @@
 ## [2026-06-09] committed | result
 - Committed: complete-class-theorem → results/complete-class-theorem.md
 - IRI: pkis:result:complete-class-theorem
+
+## [2026-06-09] staged | node-stub (problem)
+- Staged: st-petersburg-paradox (id: 0bcbf0fa-2916-447b-a87f-4b211e34ef93)
+- Title: St Petersburg Paradox
+- needs_canonical_source: False
+
+## [2026-06-09] committed | problem
+- Committed: st-petersburg-paradox → problems/st-petersburg-paradox.md
+- IRI: pkis:problem:st-petersburg-paradox
