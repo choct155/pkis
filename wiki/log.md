@@ -5827,3 +5827,12 @@
 ## [2026-06-09] committed | problem
 - Committed: collinearity → problems/collinearity.md
 - IRI: pkis:problem:collinearity
+
+## [2026-06-09] staged | node-stub (framework)
+- Staged: multilevel-regression (id: be755faf-e3e8-4eec-bcc5-91a89b6a6af6)
+- Title: Multilevel Regression
+- needs_canonical_source: False
+
+## [2026-06-09] committed | framework
+- Committed: multilevel-regression → frameworks/multilevel-regression.md
+- IRI: pkis:framework:multilevel-regression

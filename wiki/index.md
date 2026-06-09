@@ -857,6 +857,7 @@
 - [[government-debt-valuation-equation]] — FTPL: price level determined by ratio of nominal debt to expected present value of future surpluses (macroeconomics) (2026-05-20)
 
 ## Frameworks
+- [[multilevel-regression]] — Multilevel Regression (bayesian-stats, statistical-learning) (2026-06-09)
 - [[policy-gradient-methods]] — Policy Gradient Methods (reinforcement-learning, optimization, deep-learning) (2026-06-09)
 - [[options-framework]] — Options Framework (Temporal Abstraction) (optimization, deep-learning) (2026-06-09)
 - [[rescorla-wagner-model]] — Rescorla-Wagner Model (optimization, deep-learning, statistical-learning) (2026-06-09)
