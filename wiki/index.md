@@ -712,6 +712,7 @@
 - [[market-vs-hierarchy]] — Coase/Williamson: transactions governed by price signals (markets) vs. managerial direction (firms) (corporate-finance) (2026-05-20)
 
 ## Techniques
+- [[lstm]] — Long Short-Term Memory (LSTM) (deep-learning) (2026-06-09)
 - [[recurrent-neural-network]] — Recurrent Neural Network (RNN) (deep-learning) (2026-06-09)
 - [[locality-sensitive-hashing]] — Locality-Sensitive Hashing (LSH) (statistical-learning) (2026-06-09)
 - [[k-nearest-neighbors]] — k-Nearest Neighbors (statistical-learning) (2026-06-09)

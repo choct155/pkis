@@ -9985,3 +9985,12 @@
 ## [2026-06-09] committed | technique
 - Committed: recurrent-neural-network → techniques/recurrent-neural-network.md
 - IRI: pkis:technique:recurrent-neural-network
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: lstm (id: 6083f970-89e7-4b7b-a9d8-6aef9fd9ba37)
+- Title: Long Short-Term Memory (LSTM)
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: lstm → techniques/lstm.md
+- IRI: pkis:technique:lstm
