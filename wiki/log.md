@@ -11723,3 +11723,12 @@
 ## [2026-06-09] committed | concept
 - Committed: high-dimensional-statistics-p-gg-n → concepts/high-dimensional-statistics-p-gg-n.md
 - IRI: pkis:concept:high-dimensional-statistics-p-gg-n
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: false-discovery-rate (id: cc1f8f92-fc92-4909-aa7a-3ae898558ef3)
+- Title: False Discovery Rate (FDR)
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: false-discovery-rate → concepts/false-discovery-rate.md
+- IRI: pkis:concept:false-discovery-rate
