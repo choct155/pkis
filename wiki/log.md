@@ -7417,3 +7417,12 @@
 ## [2026-06-09] committed | concept
 - Committed: marked-point-process → concepts/marked-point-process.md
 - IRI: pkis:concept:marked-point-process
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: laplace-functional (id: 95399da6-a80d-4e4d-9a2c-327c7e2bcdd9)
+- Title: Laplace Functional
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: laplace-functional → techniques/laplace-functional.md
+- IRI: pkis:technique:laplace-functional
