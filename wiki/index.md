@@ -754,6 +754,7 @@
 - [[broad-money-monetarism]] — Congdon's updated monetarism: broad money (M3/M4) drives nominal spending; emphasis on credit and asset prices (macroeconomics, monetary-economics) (2026-05-20)
 
 ## Problems
+- [[associative-search]] — Associative Search (Contextual Bandits) (reinforcement-learning) (2026-06-09)
 - [[multi-armed-bandit]] — k-armed Bandit Problem (reinforcement-learning) (2026-06-09)
 - [[credit-assignment-problem]] — Credit-Assignment Problem (reinforcement-learning) (2026-06-09)
 - [[deconvolution]] — Deconvolution (Linear Inverse Problem) (statistical-learning, bayesian-stats) (2026-06-08)

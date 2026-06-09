@@ -4126,3 +4126,12 @@
 ## [2026-06-09] committed | technique
 - Committed: optimistic-initial-values → techniques/optimistic-initial-values.md
 - IRI: pkis:technique:optimistic-initial-values
+
+## [2026-06-09] staged | node-stub (problem)
+- Staged: associative-search (id: 69b54879-8ea0-44a0-936b-7a6315953511)
+- Title: Associative Search (Contextual Bandits)
+- needs_canonical_source: False
+
+## [2026-06-09] committed | problem
+- Committed: associative-search → problems/associative-search.md
+- IRI: pkis:problem:associative-search
