@@ -6889,3 +6889,12 @@
 ## [2026-06-09] committed | concept
 - Committed: probability-of-necessity → concepts/probability-of-necessity.md
 - IRI: pkis:concept:probability-of-necessity
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: probability-of-sufficiency (id: d8efc887-11de-4f65-8346-7456dd213c33)
+- Title: Probability of Sufficiency (PS)
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: probability-of-sufficiency → concepts/probability-of-sufficiency.md
+- IRI: pkis:concept:probability-of-sufficiency
