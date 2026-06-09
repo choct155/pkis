@@ -7444,3 +7444,12 @@
 ## [2026-06-09] committed | result
 - Committed: poisson-order-statistic-property → results/poisson-order-statistic-property.md
 - IRI: pkis:result:poisson-order-statistic-property
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: compound-poisson-process (id: b10c743a-3a38-414b-b339-e6f65c75fff4)
+- Title: Compound Poisson Process
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: compound-poisson-process → concepts/compound-poisson-process.md
+- IRI: pkis:concept:compound-poisson-process

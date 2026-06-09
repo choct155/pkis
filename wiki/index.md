@@ -290,6 +290,7 @@
 - [[liu-machine-unlearning-llm-2024]] — Rethinking Machine Unlearning for LLMs: post-training knowledge editing survey (deep-learning, ai-safety) (2026-05-20)
 
 ## Concepts
+- [[compound-poisson-process]] — Compound Poisson Process (bayesian-stats) (2026-06-09)
 - [[thinning-and-superposition]] — Thinning and Superposition of Poisson Processes (bayesian-stats) (2026-06-09)
 - [[marked-point-process]] — Marked Point Process (bayesian-stats) (2026-06-09)
 - [[poisson-random-measure]] — Poisson Random Measure (PRM) (bayesian-stats) (2026-06-09)
