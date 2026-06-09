@@ -8244,3 +8244,12 @@
 ## [2026-06-09] committed | concept
 - Committed: fisher-vs-neyman-pearson → concepts/fisher-vs-neyman-pearson.md
 - IRI: pkis:concept:fisher-vs-neyman-pearson
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: unbiased-estimator-pathology (id: 393b6406-5aea-4564-ac03-f0d397e18b8b)
+- Title: Unbiased-Estimator Pathology
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: unbiased-estimator-pathology → concepts/unbiased-estimator-pathology.md
+- IRI: pkis:concept:unbiased-estimator-pathology
