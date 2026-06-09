@@ -9202,3 +9202,12 @@
 ## [2026-06-09] committed | framework
 - Committed: logic-programming → frameworks/logic-programming.md
 - IRI: pkis:framework:logic-programming
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: propositionalization (id: ba417458-bfa8-40d9-96b6-b1137b93a633)
+- Title: Propositionalization
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: propositionalization → techniques/propositionalization.md
+- IRI: pkis:technique:propositionalization
