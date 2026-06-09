@@ -4981,3 +4981,12 @@
 ## [2026-06-09] committed | result
 - Committed: policy-gradient-theorem → results/policy-gradient-theorem.md
 - IRI: pkis:result:policy-gradient-theorem
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: reinforce (id: c45de473-17c2-431c-885d-4e652ca03fa0)
+- Title: REINFORCE
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: reinforce → techniques/reinforce.md
+- IRI: pkis:technique:reinforce
