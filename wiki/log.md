@@ -9283,3 +9283,12 @@
 ## [2026-06-09] committed | framework
 - Committed: classical-planning-pddl → frameworks/classical-planning-pddl.md
 - IRI: pkis:framework:classical-planning-pddl
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: forward-state-space-planning (id: f64ad474-18e2-40cd-9a62-bc1ff312b3d8)
+- Title: Forward State-Space Planning (Progression)
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: forward-state-space-planning → techniques/forward-state-space-planning.md
+- IRI: pkis:technique:forward-state-space-planning
