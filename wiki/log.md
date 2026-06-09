@@ -5305,3 +5305,12 @@
 ## [2026-06-09] committed | concept
 - Committed: exchangeability → concepts/exchangeability.md
 - IRI: pkis:concept:exchangeability
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: posterior-predictive-distribution (id: 7f5a8910-f022-4e9e-bf50-52cf87a0f76c)
+- Title: Posterior Predictive Distribution
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: posterior-predictive-distribution → concepts/posterior-predictive-distribution.md
+- IRI: pkis:concept:posterior-predictive-distribution
