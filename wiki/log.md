@@ -3442,3 +3442,1857 @@
 
 ## [2026-06-08] edit | edit_node
 - pkis:technique:sum-product-algorithm: fields=[] sections=['Erasure-Channel Specialization: the Peeling Decoder']
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: vector-space (id: cf2c0ec1-53ba-485d-9e5e-05ed97abcaf4)
+- Title: Vector Space
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: vector-space → concepts/vector-space.md
+- IRI: pkis:concept:vector-space
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: linear-independence (id: 184a912a-f6b3-4de0-abd1-56bc0563a7ba)
+- Title: Linear Independence
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: linear-independence → concepts/linear-independence.md
+- IRI: pkis:concept:linear-independence
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: basis-and-rank (id: 66dc3585-0925-40e6-97b2-d74404a2cc30)
+- Title: Basis, Dimension, and Rank
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: basis-and-rank → concepts/basis-and-rank.md
+- IRI: pkis:concept:basis-and-rank
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: linear-mapping (id: 5049963a-f940-432c-a63f-4bd990b32e63)
+- Title: Linear Mapping
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: linear-mapping → concepts/linear-mapping.md
+- IRI: pkis:concept:linear-mapping
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: affine-space (id: c684c5e4-3c45-4e45-a202-8b572a00de6b)
+- Title: Affine Space
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: affine-space → concepts/affine-space.md
+- IRI: pkis:concept:affine-space
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: solving-linear-systems (id: 8427dc68-155f-4242-95f3-b3c835b94736)
+- Title: Solving Linear Systems (Gaussian Elimination)
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: solving-linear-systems → techniques/solving-linear-systems.md
+- IRI: pkis:technique:solving-linear-systems
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: norm (id: 6a959f1c-541c-44d5-98d8-148d89090258)
+- Title: Norm
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: norm → concepts/norm.md
+- IRI: pkis:concept:norm
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: inner-product (id: fbe3bc25-1056-4d1f-bb8b-2be62367ba31)
+- Title: Inner Product
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: inner-product → concepts/inner-product.md
+- IRI: pkis:concept:inner-product
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: orthogonality (id: de736c04-929c-43d8-890e-81628faaa403)
+- Title: Orthogonality
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: orthogonality → concepts/orthogonality.md
+- IRI: pkis:concept:orthogonality
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: orthogonal-projection (id: a5511337-d859-44fe-8cc4-4d1e316d4c73)
+- Title: Orthogonal Projection
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: orthogonal-projection → concepts/orthogonal-projection.md
+- IRI: pkis:concept:orthogonal-projection
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: gram-schmidt (id: 4d7eb51e-9f2e-4591-adaf-7441397c253d)
+- Title: Gram-Schmidt Orthogonalization
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: gram-schmidt → techniques/gram-schmidt.md
+- IRI: pkis:technique:gram-schmidt
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: rotation-matrix (id: c5768d21-6b5f-4146-9975-cc83408863f1)
+- Title: Rotation Matrix
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: rotation-matrix → concepts/rotation-matrix.md
+- IRI: pkis:concept:rotation-matrix
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: determinant (id: d414a637-8ceb-42ad-9a44-089be62f4a03)
+- Title: Determinant
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: determinant → concepts/determinant.md
+- IRI: pkis:concept:determinant
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: trace (id: e9d8387c-78af-4f27-8cb3-1d6744ab6ede)
+- Title: Trace
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: trace → concepts/trace.md
+- IRI: pkis:concept:trace
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: cholesky-decomposition (id: 3498b2e7-3e30-4ec4-ac4a-b14bc715ceec)
+- Title: Cholesky Decomposition
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: cholesky-decomposition → techniques/cholesky-decomposition.md
+- IRI: pkis:technique:cholesky-decomposition
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: low-rank-matrix-approximation (id: 36898124-df55-426d-871c-7e24b592973f)
+- Title: Low-Rank Matrix Approximation
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: low-rank-matrix-approximation → techniques/low-rank-matrix-approximation.md
+- IRI: pkis:technique:low-rank-matrix-approximation
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: gradient-and-jacobian (id: 59f24bc4-cdc7-431f-859b-a2ffe1c1ed0d)
+- Title: Gradient and Jacobian
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: gradient-and-jacobian → concepts/gradient-and-jacobian.md
+- IRI: pkis:concept:gradient-and-jacobian
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: hessian-matrix (id: eccf8b1d-221c-43b7-8980-0522943d5f69)
+- Title: Hessian Matrix
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: hessian-matrix → concepts/hessian-matrix.md
+- IRI: pkis:concept:hessian-matrix
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: taylor-series (id: 8b27e007-b3ba-4a72-b39b-bbf2b5a6a366)
+- Title: Taylor Series
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: taylor-series → concepts/taylor-series.md
+- IRI: pkis:concept:taylor-series
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: chain-rule-multivariate (id: 8a071a86-0d22-470e-aa26-141445a0fce0)
+- Title: Chain Rule (Multivariate)
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: chain-rule-multivariate → techniques/chain-rule-multivariate.md
+- IRI: pkis:technique:chain-rule-multivariate
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: random-variable (id: 5863cb89-ebf9-428c-960a-7dad42e0c148)
+- Title: Random Variable
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: random-variable → concepts/random-variable.md
+- IRI: pkis:concept:random-variable
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: expectation-and-variance (id: 5e06d532-4149-4f62-9555-1bc879c640fc)
+- Title: Expectation and Variance
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: expectation-and-variance → concepts/expectation-and-variance.md
+- IRI: pkis:concept:expectation-and-variance
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: covariance-and-correlation (id: 5f28df6f-2cd9-4ab2-acdf-15494b75b45f)
+- Title: Covariance and Correlation
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: covariance-and-correlation → concepts/covariance-and-correlation.md
+- IRI: pkis:concept:covariance-and-correlation
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: exponential-family (id: 103b1a53-0db9-4338-8d95-62907cb731cd)
+- Title: Exponential Family
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: exponential-family → concepts/exponential-family.md
+- IRI: pkis:concept:exponential-family
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: change-of-variables-for-densities (id: 62332e21-e001-4955-95c7-be6a518d29d3)
+- Title: Change of Variables for Densities
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: change-of-variables-for-densities → techniques/change-of-variables-for-densities.md
+- IRI: pkis:technique:change-of-variables-for-densities
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: stochastic-gradient-descent (id: 91680e9f-0495-498c-a1ae-da6fe26f2cfc)
+- Title: Stochastic Gradient Descent (SGD)
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: stochastic-gradient-descent → techniques/stochastic-gradient-descent.md
+- IRI: pkis:technique:stochastic-gradient-descent
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: convex-set-and-function (id: 1ab17086-b6a1-42fd-8944-075913216678)
+- Title: Convex Sets and Convex Functions
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: convex-set-and-function → concepts/convex-set-and-function.md
+- IRI: pkis:concept:convex-set-and-function
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: lagrangian-duality (id: afae2ddb-4ba2-42e7-9b11-fa91b339576b)
+- Title: Lagrangian Duality
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: lagrangian-duality → concepts/lagrangian-duality.md
+- IRI: pkis:concept:lagrangian-duality
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: convex-conjugate (id: 0e15faa9-9e28-492b-955d-55622713d0b4)
+- Title: Convex Conjugate (Legendre-Fenchel Transform)
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: convex-conjugate → concepts/convex-conjugate.md
+- IRI: pkis:concept:convex-conjugate
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: maximum-a-posteriori-estimation-map (id: 27d7d283-5e84-49c4-8e1e-83a4ee4543d5)
+- Title: Maximum A Posteriori Estimation (MAP)
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: maximum-a-posteriori-estimation-map → techniques/maximum-a-posteriori-estimation-map.md
+- IRI: pkis:technique:maximum-a-posteriori-estimation-map
+
+## [2026-06-09] staged | node-stub (principle)
+- Staged: parameter-estimation-vs-bayesian-inference (id: 41c0434c-7ab8-4d9d-bd38-45e1af485b98)
+- Title: Parameter Estimation vs. Bayesian Inference
+- needs_canonical_source: False
+
+## [2026-06-09] committed | principle
+- Committed: parameter-estimation-vs-bayesian-inference → principles/parameter-estimation-vs-bayesian-inference.md
+- IRI: pkis:principle:parameter-estimation-vs-bayesian-inference
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: overfitting-and-underfitting (id: 10a8296f-1ed4-40ae-9e37-fb8d086ba26b)
+- Title: Overfitting and Underfitting
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: overfitting-and-underfitting → concepts/overfitting-and-underfitting.md
+- IRI: pkis:concept:overfitting-and-underfitting
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: nested-cross-validation (id: c8c61f41-8a25-47c8-994e-d8279b40cbc2)
+- Title: Nested Cross-Validation
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: nested-cross-validation → techniques/nested-cross-validation.md
+- IRI: pkis:technique:nested-cross-validation
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: linear-regression (id: 166cfb04-bf37-4c7f-946c-df0d4d8e0a9f)
+- Title: Linear Regression
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: linear-regression → techniques/linear-regression.md
+- IRI: pkis:technique:linear-regression
+
+## [2026-06-09] staged | node-stub (result)
+- Staged: maximum-likelihood-as-least-squares (id: 4ae949ef-5cfa-4206-90bf-c4a2a397127e)
+- Title: Maximum Likelihood as Least Squares
+- needs_canonical_source: False
+
+## [2026-06-09] committed | result
+- Committed: maximum-likelihood-as-least-squares → results/maximum-likelihood-as-least-squares.md
+- IRI: pkis:result:maximum-likelihood-as-least-squares
+
+## [2026-06-09] staged | node-stub (result)
+- Staged: map-regression-as-regularized-least-squares (id: c049df78-a098-4ac5-b867-fca46e9669e8)
+- Title: MAP Regression as Regularized Least Squares
+- needs_canonical_source: False
+
+## [2026-06-09] committed | result
+- Committed: map-regression-as-regularized-least-squares → results/map-regression-as-regularized-least-squares.md
+- IRI: pkis:result:map-regression-as-regularized-least-squares
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: probabilistic-pca (id: 6d6435bb-ae7f-4de0-8334-141b2fec5731)
+- Title: Probabilistic PCA (PPCA)
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: probabilistic-pca → techniques/probabilistic-pca.md
+- IRI: pkis:technique:probabilistic-pca
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: factor-analysis (id: 2fe645c4-68d5-4df1-b399-3c83afea8a49)
+- Title: Factor Analysis (FA)
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: factor-analysis → techniques/factor-analysis.md
+- IRI: pkis:technique:factor-analysis
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: autoencoder (id: e77ef38e-fec1-4c3a-9da2-a3b7700f3e0c)
+- Title: Autoencoder
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: autoencoder → techniques/autoencoder.md
+- IRI: pkis:technique:autoencoder
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: low-rank-approximation (id: 2d4fa863-7f29-470b-a7e6-4988ecc61821)
+- Title: Low-Rank Approximation
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: low-rank-approximation → concepts/low-rank-approximation.md
+- IRI: pkis:concept:low-rank-approximation
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: kernel-pca (id: 79f8e4af-d530-4ea0-ad56-5bfa6075f52f)
+- Title: Kernel PCA
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: kernel-pca → techniques/kernel-pca.md
+- IRI: pkis:technique:kernel-pca
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: power-iteration (id: 031fb41b-def8-4ba4-9682-fecd0d62ded6)
+- Title: Power Iteration
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: power-iteration → techniques/power-iteration.md
+- IRI: pkis:technique:power-iteration
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: mixture-models (id: c95d216d-028e-42be-bd7f-06e03610b9a6)
+- Title: Mixture Models
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: mixture-models → concepts/mixture-models.md
+- IRI: pkis:concept:mixture-models
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: ancestral-sampling (id: e1cecb55-eab4-4be5-a17f-d2b38bbf807d)
+- Title: Ancestral Sampling
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: ancestral-sampling → techniques/ancestral-sampling.md
+- IRI: pkis:technique:ancestral-sampling
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: margin-maximum-margin-classifier (id: ffd79258-1c4d-4431-91b8-9be22ecbfaaf)
+- Title: Margin (Maximum-Margin Classifier)
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: margin-maximum-margin-classifier → concepts/margin-maximum-margin-classifier.md
+- IRI: pkis:concept:margin-maximum-margin-classifier
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: hinge-loss (id: 6b122861-8306-47ee-9213-6d8f9702c0ff)
+- Title: Hinge Loss
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: hinge-loss → concepts/hinge-loss.md
+- IRI: pkis:concept:hinge-loss
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: the-kernel-trick (id: b0d0b7f2-cde7-49e2-bcdb-a4eea6265f0c)
+- Title: The Kernel Trick
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: the-kernel-trick → concepts/the-kernel-trick.md
+- IRI: pkis:concept:the-kernel-trick
+
+## [2026-06-09] staged | node-stub (result)
+- Staged: representer-theorem (id: 9c04ba67-ef4b-43d2-8032-b490a40c5d67)
+- Title: Representer Theorem
+- needs_canonical_source: False
+
+## [2026-06-09] committed | result
+- Committed: representer-theorem → results/representer-theorem.md
+- IRI: pkis:result:representer-theorem
+
+## [2026-06-09] edges | add_connections
+- linear-algebra —prerequisite-of→ principal-component-analysis
+- analytic-geometry —prerequisite-of→ support-vector-machines
+- matrix-decompositions —prerequisite-of→ principal-component-analysis
+- vector-calculus —prerequisite-of→ continuous-optimization
+- continuous-optimization —prerequisite-of→ empirical-risk-minimization
+- probability-theory —prerequisite-of→ gaussian-mixture-models
+- probability-theory —prerequisite-of→ bayesian-linear-regression
+- empirical-risk-minimization —contrasts-with→ bias-variance-tradeoff
+- group-theory —prerequisite-of→ vector-space
+- vector-space —prerequisite-of→ linear-independence
+- linear-independence —prerequisite-of→ basis-and-rank
+- vector-space —prerequisite-of→ linear-mapping
+- basis-and-rank —prerequisite-of→ linear-mapping
+- vector-space —generalizes→ affine-space
+- linear-mapping —specializes→ affine-space
+- solving-linear-systems —uses→ linear-independence
+- solving-linear-systems —uses→ basis-and-rank
+- linear-mapping —uses→ solving-linear-systems
+- affine-space —instantiates→ solving-linear-systems
+- linear-algebra —uses→ vector-space
+- linear-algebra —uses→ linear-mapping
+- solving-linear-systems —applies→ linear-algebra
+- matrix-decompositions —extends→ linear-mapping
+- analytic-geometry —extends→ vector-space
+
+## [2026-06-09] edit | edit_node
+- pkis:framework:empirical-risk-minimization: fields=[] sections=['Generalization is the goal, not training fit']
+
+## [2026-06-09] edit | edit_node
+- pkis:concept:linear-algebra: fields=[] sections=['Core algebraic structures']
+
+## [2026-06-09] edges | add_connections
+
+## [2026-06-09] edit | edit_node
+- pkis:framework:empirical-risk-minimization: fields=[] sections=['Generalization is the goal, not training fit']
+
+## [2026-06-09] edit | edit_node
+- pkis:concept:linear-algebra: fields=[] sections=['Core algebraic structures']
+
+## [2026-06-09] edges | add_connections
+- pkis:concept:inner-product —prerequisite-of→ analytic-geometry
+- pkis:concept:norm —prerequisite-of→ analytic-geometry
+- pkis:concept:inner-product —uses→ norm
+- pkis:concept:norm —specializes→ inner-product
+- pkis:concept:orthogonality —uses→ inner-product
+- pkis:concept:orthogonal-projection —uses→ orthogonality
+- pkis:concept:orthogonal-projection —uses→ inner-product
+- pkis:technique:gram-schmidt —uses→ orthogonal-projection
+- pkis:technique:gram-schmidt —applies→ orthogonality
+- pkis:concept:rotation-matrix —specializes→ orthogonality
+- pkis:concept:inner-product —prerequisite-of→ support-vector-machines
+- pkis:concept:orthogonal-projection —uses→ linear-algebra
+- pkis:concept:orthogonal-projection —prerequisite-of→ principal-component-analysis
+- pkis:concept:inner-product —specializes→ linear-algebra
+- pkis:concept:norm —applies→ regularization
+- pkis:concept:trace —prerequisite-of→ eigendecomposition
+- pkis:concept:determinant —prerequisite-of→ eigendecomposition
+- pkis:concept:determinant —applies→ eigendecomposition
+- pkis:concept:determinant —analogous-to→ trace
+- pkis:technique:cholesky-decomposition —specializes→ matrix-decompositions
+- pkis:technique:eigendecomposition —specializes→ matrix-decompositions
+- pkis:technique:singular-value-decomposition —specializes→ matrix-decompositions
+- pkis:technique:singular-value-decomposition —generalizes→ eigendecomposition
+- pkis:technique:singular-value-decomposition —uses→ eigendecomposition
+- pkis:technique:low-rank-matrix-approximation —uses→ singular-value-decomposition
+- pkis:technique:cholesky-decomposition —uses→ determinant
+- pkis:technique:low-rank-matrix-approximation —applies→ principal-component-analysis
+- pkis:technique:cholesky-decomposition —applies→ variational-autoencoder
+- pkis:technique:jordan-canonical-form —generalizes→ eigendecomposition
+- random-variable —uses→ probability-theory
+- expectation-and-variance —uses→ probability-theory
+- exponential-family —uses→ probability-theory
+- exponential-family —generalizes→ gaussian-distribution
+- exponential-family —uses→ sufficient-statistics
+- exponential-family —analogous-to→ conjugate-prior
+- exponential-family —analogous-to→ beta-distribution
+- conjugate-prior —analogous-to→ exponential-family
+- gaussian-distribution —instantiates→ exponential-family
+- pkis:technique:linear-regression —uses→ maximum-likelihood-estimation
+- pkis:technique:linear-regression —uses→ gaussian-distribution
+- pkis:result:maximum-likelihood-as-least-squares —uses→ maximum-likelihood-estimation
+- pkis:result:maximum-likelihood-as-least-squares —uses→ gaussian-distribution
+- pkis:technique:bayesian-linear-regression —uses→ marginal-likelihood
+- pkis:technique:bayesian-linear-regression —uses→ gaussian-distribution
+- pkis:concept:mixture-models —instantiates→ latent-variable-models
+- pkis:technique:gaussian-mixture-models —specializes→ mixture-models
+- pkis:technique:gaussian-mixture-models —uses→ ancestral-sampling
+- pkis:technique:gaussian-mixture-models —analogous-to→ soft-k-means
+- pkis:technique:ancestral-sampling —analogous-to→ directed-graphical-models
+- pkis:technique:em-algorithm —analogous-to→ latent-variable-models
+- pkis:technique:gaussian-mixture-models —analogous-to→ kernel-density-estimation
+
+## [2026-06-09] edit | edit_node
+- pkis:framework:empirical-risk-minimization: fields=[] sections=['Generalization is the goal, not training fit']
+
+## [2026-06-09] edit | edit_node
+- pkis:concept:linear-algebra: fields=[] sections=['Core algebraic structures']
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: reinforcement-learning (id: 57b25bc1-3116-49de-895b-9d5f753d8f00)
+- Title: Reinforcement Learning
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: reinforcement-learning → concepts/reinforcement-learning.md
+- IRI: pkis:concept:reinforcement-learning
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: agent-environment-interface (id: 61899f38-661f-4a3a-b27b-568a9d810b75)
+- Title: Agent–Environment Interface
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: agent-environment-interface → concepts/agent-environment-interface.md
+- IRI: pkis:concept:agent-environment-interface
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: reward-signal (id: e4fa445a-993e-44f7-ac7e-4cb2df07fcd9)
+- Title: Reward Signal
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: reward-signal → concepts/reward-signal.md
+- IRI: pkis:concept:reward-signal
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: policy (id: 9a2f92ee-d02e-45ad-9361-4a17a59d89ee)
+- Title: Policy
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: policy → concepts/policy.md
+- IRI: pkis:concept:policy
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: value-function (id: 059aa00f-1d95-4077-86d4-5fcc0b354649)
+- Title: Value Function
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: value-function → concepts/value-function.md
+- IRI: pkis:concept:value-function
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: exploration-exploitation-tradeoff (id: 84e50e6e-1b8b-4bbb-88a9-a7f28d18eca7)
+- Title: Exploration–Exploitation Trade-off
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: exploration-exploitation-tradeoff → concepts/exploration-exploitation-tradeoff.md
+- IRI: pkis:concept:exploration-exploitation-tradeoff
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: temporal-difference-learning (id: 7f594ee2-8188-45f4-8164-259103ece766)
+- Title: Temporal-Difference Learning
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: temporal-difference-learning → concepts/temporal-difference-learning.md
+- IRI: pkis:concept:temporal-difference-learning
+
+## [2026-06-09] staged | node-stub (problem)
+- Staged: credit-assignment-problem (id: 8b88c466-9396-4e14-8063-b6ef1c24153b)
+- Title: Credit-Assignment Problem
+- needs_canonical_source: False
+
+## [2026-06-09] committed | problem
+- Committed: credit-assignment-problem → problems/credit-assignment-problem.md
+- IRI: pkis:problem:credit-assignment-problem
+
+## [2026-06-09] staged | node-stub (problem)
+- Staged: multi-armed-bandit (id: dc316261-dfcb-4818-bfbc-a13f064ef130)
+- Title: k-armed Bandit Problem
+- needs_canonical_source: False
+
+## [2026-06-09] committed | problem
+- Committed: multi-armed-bandit → problems/multi-armed-bandit.md
+- IRI: pkis:problem:multi-armed-bandit
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: action-value-methods (id: 6d1e770a-a36c-43e3-aff4-07cb6c3c258b)
+- Title: Action-Value Methods
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: action-value-methods → techniques/action-value-methods.md
+- IRI: pkis:technique:action-value-methods
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: epsilon-greedy (id: 17cdacd5-7710-4d3d-b5a2-19fd31582845)
+- Title: ε-greedy Action Selection
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: epsilon-greedy → techniques/epsilon-greedy.md
+- IRI: pkis:technique:epsilon-greedy
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: incremental-sample-average-update (id: 8c71d52e-156d-4418-96f7-e2056db6fc2f)
+- Title: Incremental Sample-Average Update
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: incremental-sample-average-update → techniques/incremental-sample-average-update.md
+- IRI: pkis:technique:incremental-sample-average-update
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: nonstationary-bandit-step-size (id: 40a91be2-341d-4e50-97e6-a9bdf3e1818b)
+- Title: Constant Step-Size for Nonstationary Bandits
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: nonstationary-bandit-step-size → techniques/nonstationary-bandit-step-size.md
+- IRI: pkis:technique:nonstationary-bandit-step-size
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: upper-confidence-bound (id: 47d87ab1-6296-47e3-a0c4-98bbbf9c84e4)
+- Title: Upper Confidence Bound (UCB) Action Selection
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: upper-confidence-bound → techniques/upper-confidence-bound.md
+- IRI: pkis:technique:upper-confidence-bound
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: softmax-action-selection (id: 019ae526-c978-4c08-b833-05782914bddc)
+- Title: Softmax (Boltzmann) Action Selection
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: softmax-action-selection → techniques/softmax-action-selection.md
+- IRI: pkis:technique:softmax-action-selection
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: gradient-bandit-algorithm (id: ad6fb54e-c78d-4f9a-a402-774e1672e225)
+- Title: Gradient Bandit Algorithm
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: gradient-bandit-algorithm → techniques/gradient-bandit-algorithm.md
+- IRI: pkis:technique:gradient-bandit-algorithm
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: optimistic-initial-values (id: 13088354-2c43-4bfd-84c7-1e2c339e0f71)
+- Title: Optimistic Initial Values
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: optimistic-initial-values → techniques/optimistic-initial-values.md
+- IRI: pkis:technique:optimistic-initial-values
+
+## [2026-06-09] staged | node-stub (problem)
+- Staged: associative-search (id: 69b54879-8ea0-44a0-936b-7a6315953511)
+- Title: Associative Search (Contextual Bandits)
+- needs_canonical_source: False
+
+## [2026-06-09] committed | problem
+- Committed: associative-search → problems/associative-search.md
+- IRI: pkis:problem:associative-search
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: thompson-sampling (id: 3d1271e7-6d8e-4ee0-9ce3-56bf91b0bc30)
+- Title: Thompson Sampling (Posterior Sampling)
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: thompson-sampling → techniques/thompson-sampling.md
+- IRI: pkis:technique:thompson-sampling
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: return-and-discounting (id: b56b185f-a41e-4839-a923-4a07a57ea371)
+- Title: Return and Discounting
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: return-and-discounting → concepts/return-and-discounting.md
+- IRI: pkis:concept:return-and-discounting
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: policy-rl (id: 008444cc-298b-4416-9f22-b95bfe5499bd)
+- Title: Policy (Reinforcement Learning)
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: policy-rl → concepts/policy-rl.md
+- IRI: pkis:concept:policy-rl
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: state-value-function (id: b4fa15e6-f34b-499d-ac7f-e6850499a22c)
+- Title: State-Value Function
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: state-value-function → concepts/state-value-function.md
+- IRI: pkis:concept:state-value-function
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: action-value-function (id: 70d56c9c-4ef9-4a88-91b6-4030a1348bea)
+- Title: Action-Value Function (Q)
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: action-value-function → concepts/action-value-function.md
+- IRI: pkis:concept:action-value-function
+
+## [2026-06-09] staged | node-stub (result)
+- Staged: bellman-equation (id: 9fc6aa27-4616-4342-9690-78a3f3b0c16a)
+- Title: Bellman Equation
+- needs_canonical_source: False
+
+## [2026-06-09] committed | result
+- Committed: bellman-equation → results/bellman-equation.md
+- IRI: pkis:result:bellman-equation
+
+## [2026-06-09] staged | node-stub (result)
+- Staged: bellman-optimality-equation (id: 94f247b1-31f4-478f-803f-8364f7fad419)
+- Title: Bellman Optimality Equation
+- needs_canonical_source: False
+
+## [2026-06-09] committed | result
+- Committed: bellman-optimality-equation → results/bellman-optimality-equation.md
+- IRI: pkis:result:bellman-optimality-equation
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: optimal-policy (id: 23608c8a-1b2c-4d65-a650-fb8e0b6457bf)
+- Title: Optimal Policy
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: optimal-policy → concepts/optimal-policy.md
+- IRI: pkis:concept:optimal-policy
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: policy-evaluation (id: 332987a3-250f-4883-8839-1ff067d0e058)
+- Title: Policy Evaluation
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: policy-evaluation → techniques/policy-evaluation.md
+- IRI: pkis:technique:policy-evaluation
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: policy-improvement (id: 70d75a81-bd83-4aa8-9d8d-bf2925b0fe45)
+- Title: Policy Improvement
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: policy-improvement → techniques/policy-improvement.md
+- IRI: pkis:technique:policy-improvement
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: policy-iteration (id: 7688a8c7-e651-4c6f-a1db-1d2a030d08ca)
+- Title: Policy Iteration
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: policy-iteration → techniques/policy-iteration.md
+- IRI: pkis:technique:policy-iteration
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: value-iteration (id: 63147d6b-5d23-4047-a356-820c259a8382)
+- Title: Value Iteration
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: value-iteration → techniques/value-iteration.md
+- IRI: pkis:technique:value-iteration
+
+## [2026-06-09] staged | node-stub (principle)
+- Staged: generalized-policy-iteration (id: d9c6b70b-1f0f-4ba5-bc5f-5bfa688b8654)
+- Title: Generalized Policy Iteration (GPI)
+- needs_canonical_source: False
+
+## [2026-06-09] committed | principle
+- Committed: generalized-policy-iteration → principles/generalized-policy-iteration.md
+- IRI: pkis:principle:generalized-policy-iteration
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: asynchronous-dynamic-programming (id: 3f8f3eba-1fae-4645-b3bc-26d675f9517f)
+- Title: Asynchronous Dynamic Programming
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: asynchronous-dynamic-programming → techniques/asynchronous-dynamic-programming.md
+- IRI: pkis:technique:asynchronous-dynamic-programming
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: bootstrapping-rl (id: db65d8b3-b9e6-4da3-a23d-36f0ee6c9fa2)
+- Title: Bootstrapping (Reinforcement Learning)
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: bootstrapping-rl → concepts/bootstrapping-rl.md
+- IRI: pkis:concept:bootstrapping-rl
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: monte-carlo-prediction (id: 85f3bfc0-2ce5-4306-8569-618344e624d0)
+- Title: Monte Carlo Prediction (RL)
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: monte-carlo-prediction → techniques/monte-carlo-prediction.md
+- IRI: pkis:technique:monte-carlo-prediction
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: monte-carlo-control (id: a83f6e33-ff15-448f-a7ab-63cba93dd5e3)
+- Title: Monte Carlo Control (RL)
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: monte-carlo-control → techniques/monte-carlo-control.md
+- IRI: pkis:technique:monte-carlo-control
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: exploring-starts (id: 7c75b17f-2476-4a63-bffd-eee844b47951)
+- Title: Exploring Starts
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: exploring-starts → concepts/exploring-starts.md
+- IRI: pkis:concept:exploring-starts
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: on-policy-vs-off-policy (id: f5c4a571-6870-4f0a-a062-f3101110f9c0)
+- Title: On-policy vs. Off-policy Learning
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: on-policy-vs-off-policy → concepts/on-policy-vs-off-policy.md
+- IRI: pkis:concept:on-policy-vs-off-policy
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: off-policy-importance-sampling-rl (id: 3970b368-a03b-45c7-b5c3-a1940b9c36a0)
+- Title: Off-policy Importance Sampling for Returns (RL)
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: off-policy-importance-sampling-rl → techniques/off-policy-importance-sampling-rl.md
+- IRI: pkis:technique:off-policy-importance-sampling-rl
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: td-error (id: 0fec7b52-1e6c-4314-afb1-ca4dc9a500b1)
+- Title: TD Error
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: td-error → concepts/td-error.md
+- IRI: pkis:concept:td-error
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: sarsa (id: 1312ce12-0d64-48c0-a522-c6243bd5e3bd)
+- Title: Sarsa
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: sarsa → techniques/sarsa.md
+- IRI: pkis:technique:sarsa
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: q-learning (id: bcb85aed-ab0d-4564-9551-729bfbe7a413)
+- Title: Q-learning
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: q-learning → techniques/q-learning.md
+- IRI: pkis:technique:q-learning
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: expected-sarsa (id: 544d66fd-5e34-44c4-8442-3f7e07361bbf)
+- Title: Expected Sarsa
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: expected-sarsa → techniques/expected-sarsa.md
+- IRI: pkis:technique:expected-sarsa
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: maximization-bias (id: 32f64135-67a0-40b7-88b3-c138cd72d548)
+- Title: Maximization Bias
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: maximization-bias → concepts/maximization-bias.md
+- IRI: pkis:concept:maximization-bias
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: double-q-learning (id: d51209f3-f439-4131-96da-67f2fb005efa)
+- Title: Double Q-learning
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: double-q-learning → techniques/double-q-learning.md
+- IRI: pkis:technique:double-q-learning
+
+## [2026-06-09] staged | node-stub (principle)
+- Staged: td-vs-mc-vs-dp (id: e4ddbddd-efe6-48ac-bf6a-672cf046df7f)
+- Title: TD vs. Monte Carlo vs. Dynamic Programming
+- needs_canonical_source: False
+
+## [2026-06-09] committed | principle
+- Committed: td-vs-mc-vs-dp → principles/td-vs-mc-vs-dp.md
+- IRI: pkis:principle:td-vs-mc-vs-dp
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: n-step-bootstrapping (id: b143c51b-4cc7-43f5-8e40-545d4b37eb47)
+- Title: n-step Bootstrapping
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: n-step-bootstrapping → concepts/n-step-bootstrapping.md
+- IRI: pkis:concept:n-step-bootstrapping
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: n-step-return (id: 44f6cd5d-bc58-44e5-9fdc-6508a989e864)
+- Title: n-step Return
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: n-step-return → concepts/n-step-return.md
+- IRI: pkis:concept:n-step-return
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: n-step-td (id: 94f9f1c3-790b-4dd9-91e8-c46b2849e08f)
+- Title: n-step TD
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: n-step-td → techniques/n-step-td.md
+- IRI: pkis:technique:n-step-td
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: n-step-sarsa (id: 6146eee2-d13f-4e9d-a218-9f52fbfa8c51)
+- Title: n-step Sarsa
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: n-step-sarsa → techniques/n-step-sarsa.md
+- IRI: pkis:technique:n-step-sarsa
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: n-step-off-policy (id: 6805b9d8-fe79-4ff7-b487-1dd5a8d071a8)
+- Title: n-step Off-policy Learning
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: n-step-off-policy → techniques/n-step-off-policy.md
+- IRI: pkis:technique:n-step-off-policy
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: tree-backup-algorithm (id: eb86871b-a159-4c2c-a8dc-0945f88b5b23)
+- Title: Tree-backup Algorithm
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: tree-backup-algorithm → techniques/tree-backup-algorithm.md
+- IRI: pkis:technique:tree-backup-algorithm
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: n-step-q-sigma (id: dd72db53-eebb-4886-828a-b1a8d1f85d70)
+- Title: n-step Q(sigma)
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: n-step-q-sigma → techniques/n-step-q-sigma.md
+- IRI: pkis:technique:n-step-q-sigma
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: planning-rl (id: 79cfd886-3e65-4a50-aa75-cbe4254776e1)
+- Title: Planning (Reinforcement Learning)
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: planning-rl → concepts/planning-rl.md
+- IRI: pkis:concept:planning-rl
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: model-based-rl (id: a9966459-a178-4312-b38c-bb34323c763c)
+- Title: Model-Based Reinforcement Learning
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: model-based-rl → concepts/model-based-rl.md
+- IRI: pkis:concept:model-based-rl
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: dyna-q (id: a481d778-0429-47af-b5e3-28bf733b8e0b)
+- Title: Dyna-Q
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: dyna-q → techniques/dyna-q.md
+- IRI: pkis:technique:dyna-q
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: prioritized-sweeping (id: 7c5cbeea-8534-44a5-b58f-71942ae65d75)
+- Title: Prioritized Sweeping
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: prioritized-sweeping → techniques/prioritized-sweeping.md
+- IRI: pkis:technique:prioritized-sweeping
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: expected-vs-sample-updates (id: fd6d1a6f-2d34-4691-b778-777b2cbaf4f4)
+- Title: Expected vs. Sample Updates
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: expected-vs-sample-updates → concepts/expected-vs-sample-updates.md
+- IRI: pkis:concept:expected-vs-sample-updates
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: trajectory-sampling (id: 3b274553-cd44-4fef-9bb5-d8f2c2da2911)
+- Title: Trajectory Sampling
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: trajectory-sampling → techniques/trajectory-sampling.md
+- IRI: pkis:technique:trajectory-sampling
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: real-time-dynamic-programming (id: ee661446-e9d0-419e-b1bc-c0daf006ea02)
+- Title: Real-Time Dynamic Programming (RTDP)
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: real-time-dynamic-programming → techniques/real-time-dynamic-programming.md
+- IRI: pkis:technique:real-time-dynamic-programming
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: decision-time-planning (id: b221d09f-5e8e-4aee-a805-4bb68135240e)
+- Title: Decision-Time Planning
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: decision-time-planning → concepts/decision-time-planning.md
+- IRI: pkis:concept:decision-time-planning
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: heuristic-search-rl (id: 57985909-d9f2-4119-9a2a-9bb03ee4e455)
+- Title: Heuristic Search (Reinforcement Learning)
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: heuristic-search-rl → techniques/heuristic-search-rl.md
+- IRI: pkis:technique:heuristic-search-rl
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: rollout-algorithms (id: 5fd507ae-3258-4b04-bd06-27fc692538b4)
+- Title: Rollout Algorithms
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: rollout-algorithms → techniques/rollout-algorithms.md
+- IRI: pkis:technique:rollout-algorithms
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: monte-carlo-tree-search (id: 931eaa99-73c4-4e61-840d-acdbe4331dc4)
+- Title: Monte Carlo Tree Search (MCTS)
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: monte-carlo-tree-search → techniques/monte-carlo-tree-search.md
+- IRI: pkis:technique:monte-carlo-tree-search
+
+## [2026-06-09] staged | node-stub (framework)
+- Staged: function-approximation-rl (id: 8d8100ea-e0f3-47dd-a90c-cefcd0c01d9e)
+- Title: Function Approximation in Reinforcement Learning
+- needs_canonical_source: False
+
+## [2026-06-09] committed | framework
+- Committed: function-approximation-rl → frameworks/function-approximation-rl.md
+- IRI: pkis:framework:function-approximation-rl
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: mean-square-value-error (id: 3abb54e0-159f-4744-8d99-68e45134d60b)
+- Title: Mean Square Value Error (VE)
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: mean-square-value-error → concepts/mean-square-value-error.md
+- IRI: pkis:concept:mean-square-value-error
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: on-policy-distribution (id: 19c38223-36f8-42a3-b2a9-cb453c4c0a84)
+- Title: On-policy Distribution
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: on-policy-distribution → concepts/on-policy-distribution.md
+- IRI: pkis:concept:on-policy-distribution
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: gradient-monte-carlo (id: 560f9226-e80f-499b-8c21-79583bf99fbc)
+- Title: Gradient Monte Carlo for Value Prediction
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: gradient-monte-carlo → techniques/gradient-monte-carlo.md
+- IRI: pkis:technique:gradient-monte-carlo
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: semi-gradient-td (id: 07772ecd-8518-49a2-929c-ed766eddec8b)
+- Title: Semi-gradient TD Methods
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: semi-gradient-td → techniques/semi-gradient-td.md
+- IRI: pkis:technique:semi-gradient-td
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: linear-function-approximation-rl (id: 800598f7-78d5-4415-973d-5f415018d389)
+- Title: Linear Function Approximation in RL
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: linear-function-approximation-rl → techniques/linear-function-approximation-rl.md
+- IRI: pkis:technique:linear-function-approximation-rl
+
+## [2026-06-09] staged | node-stub (result)
+- Staged: td-fixed-point (id: 62eae11e-8194-47ad-b5ae-7b26de23c9a9)
+- Title: TD Fixed Point
+- needs_canonical_source: False
+
+## [2026-06-09] committed | result
+- Committed: td-fixed-point → results/td-fixed-point.md
+- IRI: pkis:result:td-fixed-point
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: state-aggregation (id: 807df61b-2260-4bcd-9506-713676832f4a)
+- Title: State Aggregation
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: state-aggregation → techniques/state-aggregation.md
+- IRI: pkis:technique:state-aggregation
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: coarse-coding (id: f67cf5e0-5844-4f1b-8ccb-10287b77d343)
+- Title: Coarse Coding
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: coarse-coding → techniques/coarse-coding.md
+- IRI: pkis:technique:coarse-coding
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: tile-coding (id: c45e7327-b972-4093-bdd7-665a6911ee54)
+- Title: Tile Coding
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: tile-coding → techniques/tile-coding.md
+- IRI: pkis:technique:tile-coding
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: radial-basis-function-network (id: e7caad79-e09e-4ae5-beee-be0daee8fe6b)
+- Title: Radial Basis Function Network
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: radial-basis-function-network → techniques/radial-basis-function-network.md
+- IRI: pkis:technique:radial-basis-function-network
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: fourier-basis-rl (id: dd03cacf-49b1-401a-8f48-1dbf0f75b35f)
+- Title: Fourier Basis for RL
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: fourier-basis-rl → techniques/fourier-basis-rl.md
+- IRI: pkis:technique:fourier-basis-rl
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: polynomial-basis-rl (id: 06971551-a637-4722-8635-407e6f494f63)
+- Title: Polynomial Basis for RL
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: polynomial-basis-rl → techniques/polynomial-basis-rl.md
+- IRI: pkis:technique:polynomial-basis-rl
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: lstd (id: 34ac1890-6434-4254-876f-8a65076a3727)
+- Title: Least-Squares TD (LSTD)
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: lstd → techniques/lstd.md
+- IRI: pkis:technique:lstd
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: memory-based-function-approximation (id: a873d8ae-e11e-4399-b351-c6edc742c06e)
+- Title: Memory-based Function Approximation
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: memory-based-function-approximation → techniques/memory-based-function-approximation.md
+- IRI: pkis:technique:memory-based-function-approximation
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: kernel-regression-rl (id: e2611c87-5ff2-47c2-b13e-84004549fa2d)
+- Title: Kernel Regression for Value Estimation
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: kernel-regression-rl → techniques/kernel-regression-rl.md
+- IRI: pkis:technique:kernel-regression-rl
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: interest-and-emphasis (id: 9bf89134-08f7-4c5d-aaab-596cba4b11ea)
+- Title: Interest and Emphasis
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: interest-and-emphasis → concepts/interest-and-emphasis.md
+- IRI: pkis:concept:interest-and-emphasis
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: semi-gradient-sarsa (id: 5995c42d-e5e5-4e1c-8c93-779e3ccbb2f2)
+- Title: Episodic Semi-Gradient Sarsa
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: semi-gradient-sarsa → techniques/semi-gradient-sarsa.md
+- IRI: pkis:technique:semi-gradient-sarsa
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: average-reward-setting (id: e3569f16-3820-4717-8a56-ca0320fffe95)
+- Title: Average-Reward Setting
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: average-reward-setting → concepts/average-reward-setting.md
+- IRI: pkis:concept:average-reward-setting
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: differential-return (id: c4806818-2a76-42a5-9075-8f208020cb09)
+- Title: Differential Return and Differential Value Functions
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: differential-return → concepts/differential-return.md
+- IRI: pkis:concept:differential-return
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: n-step-semi-gradient-sarsa (id: 807dcfb5-f36c-449b-8e96-ce74043854ec)
+- Title: n-step Semi-Gradient Sarsa
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: n-step-semi-gradient-sarsa → techniques/n-step-semi-gradient-sarsa.md
+- IRI: pkis:technique:n-step-semi-gradient-sarsa
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: the-deadly-triad (id: 3b4e61e0-7f1a-4e44-af48-6d0a888993ef)
+- Title: The Deadly Triad
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: the-deadly-triad → concepts/the-deadly-triad.md
+- IRI: pkis:concept:the-deadly-triad
+
+## [2026-06-09] staged | node-stub (result)
+- Staged: baird-counterexample (id: 01f457ca-0bab-4348-b07b-42ddd6afeba4)
+- Title: Baird's Counterexample
+- needs_canonical_source: False
+
+## [2026-06-09] committed | result
+- Committed: baird-counterexample → results/baird-counterexample.md
+- IRI: pkis:result:baird-counterexample
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: bellman-error-vs-projected-bellman-error (id: 8d43ed28-fae4-4836-bd19-40835c31d044)
+- Title: Bellman Error vs. Projected Bellman Error
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: bellman-error-vs-projected-bellman-error → concepts/bellman-error-vs-projected-bellman-error.md
+- IRI: pkis:concept:bellman-error-vs-projected-bellman-error
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: gradient-td-methods (id: ecd3b2a8-6458-4d8f-a095-bfd685209097)
+- Title: Gradient-TD Methods (GTD2 and TDC)
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: gradient-td-methods → techniques/gradient-td-methods.md
+- IRI: pkis:technique:gradient-td-methods
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: emphatic-td (id: abfabbe4-019b-4b5d-a5b2-8a83ff1606db)
+- Title: Emphatic-TD Methods
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: emphatic-td → techniques/emphatic-td.md
+- IRI: pkis:technique:emphatic-td
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: residual-gradient-algorithm (id: e6dd8533-92f0-4f7c-8e08-6ebca9f9f9a8)
+- Title: Residual-Gradient Algorithm
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: residual-gradient-algorithm → techniques/residual-gradient-algorithm.md
+- IRI: pkis:technique:residual-gradient-algorithm
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: learnability-of-rl-objectives (id: 7525226c-0f39-4d0a-9842-6d63484ac1da)
+- Title: Learnability of RL Objectives
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: learnability-of-rl-objectives → concepts/learnability-of-rl-objectives.md
+- IRI: pkis:concept:learnability-of-rl-objectives
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: eligibility-traces (id: 32912a29-ffa6-4e01-99ba-4de7135fc92f)
+- Title: Eligibility Traces
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: eligibility-traces → concepts/eligibility-traces.md
+- IRI: pkis:concept:eligibility-traces
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: lambda-return (id: dc37b44d-1291-41a7-90d3-b1c64afe3fd8)
+- Title: Lambda-Return
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: lambda-return → concepts/lambda-return.md
+- IRI: pkis:concept:lambda-return
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: td-lambda (id: 21572446-6306-46b3-a00c-dad5e248d9bd)
+- Title: TD(λ)
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: td-lambda → techniques/td-lambda.md
+- IRI: pkis:technique:td-lambda
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: true-online-td-lambda (id: 7fe8a8ea-1478-4344-a808-3f5e812af307)
+- Title: True Online TD(λ)
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: true-online-td-lambda → techniques/true-online-td-lambda.md
+- IRI: pkis:technique:true-online-td-lambda
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: sarsa-lambda (id: 666b902c-a7e4-4041-bef2-dff0729477c1)
+- Title: Sarsa(λ)
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: sarsa-lambda → techniques/sarsa-lambda.md
+- IRI: pkis:technique:sarsa-lambda
+
+## [2026-06-09] staged | node-stub (principle)
+- Staged: forward-vs-backward-view (id: 7c3232ba-e154-402a-ba94-568d1835eeb6)
+- Title: Forward vs. Backward View
+- needs_canonical_source: False
+
+## [2026-06-09] committed | principle
+- Committed: forward-vs-backward-view → principles/forward-vs-backward-view.md
+- IRI: pkis:principle:forward-vs-backward-view
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: replacing-traces (id: 7e6e7494-470d-4e8a-af84-96cb763ea417)
+- Title: Replacing and Dutch Traces
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: replacing-traces → techniques/replacing-traces.md
+- IRI: pkis:technique:replacing-traces
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: classical-conditioning (id: 6ecd8bde-5db8-4a1b-950a-366128bbdb86)
+- Title: Classical (Pavlovian) Conditioning
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: classical-conditioning → concepts/classical-conditioning.md
+- IRI: pkis:concept:classical-conditioning
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: instrumental-conditioning (id: e5b756f2-ce62-406d-97f0-d0fb79e8af05)
+- Title: Instrumental (Operant) Conditioning
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: instrumental-conditioning → concepts/instrumental-conditioning.md
+- IRI: pkis:concept:instrumental-conditioning
+
+## [2026-06-09] staged | node-stub (framework)
+- Staged: rescorla-wagner-model (id: 9d45af8f-4d74-4ad6-8801-79ee55941a93)
+- Title: Rescorla-Wagner Model
+- needs_canonical_source: False
+
+## [2026-06-09] committed | framework
+- Committed: rescorla-wagner-model → frameworks/rescorla-wagner-model.md
+- IRI: pkis:framework:rescorla-wagner-model
+
+## [2026-06-09] staged | node-stub (principle)
+- Staged: the-law-of-effect (id: fab0b7af-37fb-47e2-b242-c6b9bb0f8ec7)
+- Title: The Law of Effect
+- needs_canonical_source: False
+
+## [2026-06-09] committed | principle
+- Committed: the-law-of-effect → principles/the-law-of-effect.md
+- IRI: pkis:principle:the-law-of-effect
+
+## [2026-06-09] staged | node-stub (result)
+- Staged: reward-prediction-error-hypothesis (id: 12b28c3e-f9d0-42b4-a82d-3b2a60dffd72)
+- Title: Reward Prediction Error Hypothesis of Dopamine Neuron Activity
+- needs_canonical_source: False
+
+## [2026-06-09] committed | result
+- Committed: reward-prediction-error-hypothesis → results/reward-prediction-error-hypothesis.md
+- IRI: pkis:result:reward-prediction-error-hypothesis
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: temporal-difference-error (id: ddf2954f-8160-4694-984b-343ae1f79b25)
+- Title: Temporal-Difference Error (delta)
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: temporal-difference-error → concepts/temporal-difference-error.md
+- IRI: pkis:concept:temporal-difference-error
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: eligibility-trace (id: a8a5e00b-9607-468f-a8af-5f5d4912b097)
+- Title: Eligibility Trace
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: eligibility-trace → concepts/eligibility-trace.md
+- IRI: pkis:concept:eligibility-trace
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: deep-q-network (id: dcdda62a-2059-4b0b-b5e7-31bdd914fe99)
+- Title: Deep Q-Network (DQN)
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: deep-q-network → techniques/deep-q-network.md
+- IRI: pkis:technique:deep-q-network
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: general-value-functions (id: 7ab8d516-80bc-4b5a-a16b-1224dc462b09)
+- Title: General Value Functions (GVFs)
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: general-value-functions → concepts/general-value-functions.md
+- IRI: pkis:concept:general-value-functions
+
+## [2026-06-09] staged | node-stub (framework)
+- Staged: options-framework (id: b8217bdc-271b-4f5c-9aed-e8b70b188e18)
+- Title: Options Framework (Temporal Abstraction)
+- needs_canonical_source: False
+
+## [2026-06-09] committed | framework
+- Committed: options-framework → frameworks/options-framework.md
+- IRI: pkis:framework:options-framework
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: predictive-state-representations (id: 0a880a94-2869-4947-8104-63fe21779db3)
+- Title: Predictive State Representations (PSRs)
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: predictive-state-representations → concepts/predictive-state-representations.md
+- IRI: pkis:concept:predictive-state-representations
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: intrinsic-motivation-rl (id: bbf3e072-9eb6-434a-8195-f3a61d5c35f4)
+- Title: Intrinsically-Motivated Reinforcement Learning
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: intrinsic-motivation-rl → concepts/intrinsic-motivation-rl.md
+- IRI: pkis:concept:intrinsic-motivation-rl
+
+## [2026-06-09] staged | node-stub (framework)
+- Staged: policy-gradient-methods (id: 9bb1eb71-57f3-44b4-8cdf-588bb2d5bda1)
+- Title: Policy Gradient Methods
+- needs_canonical_source: False
+
+## [2026-06-09] committed | framework
+- Committed: policy-gradient-methods → frameworks/policy-gradient-methods.md
+- IRI: pkis:framework:policy-gradient-methods
+
+## [2026-06-09] staged | node-stub (result)
+- Staged: policy-gradient-theorem (id: f9b66f9f-9d35-43ef-a648-4414271f5dc7)
+- Title: Policy Gradient Theorem
+- needs_canonical_source: False
+
+## [2026-06-09] committed | result
+- Committed: policy-gradient-theorem → results/policy-gradient-theorem.md
+- IRI: pkis:result:policy-gradient-theorem
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: reinforce (id: c45de473-17c2-431c-885d-4e652ca03fa0)
+- Title: REINFORCE
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: reinforce → techniques/reinforce.md
+- IRI: pkis:technique:reinforce
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: reinforce-with-baseline (id: 6d642845-980d-4be2-a15e-dc63772213c1)
+- Title: REINFORCE with Baseline
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: reinforce-with-baseline → techniques/reinforce-with-baseline.md
+- IRI: pkis:technique:reinforce-with-baseline
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: actor-critic (id: cf479912-3718-476b-a693-3cd4c5320606)
+- Title: Actor-Critic Methods
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: actor-critic → techniques/actor-critic.md
+- IRI: pkis:technique:actor-critic
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: policy-parameterization-softmax (id: 730935b2-bf89-4969-83f3-dfd4526514ae)
+- Title: Softmax Policy Parameterization in Action Preferences
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: policy-parameterization-softmax → techniques/policy-parameterization-softmax.md
+- IRI: pkis:technique:policy-parameterization-softmax
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: gaussian-policy-continuous-actions (id: 6e81a4fa-d8cd-45b3-9f0a-41dd8553e4f7)
+- Title: Gaussian Policy for Continuous Actions
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: gaussian-policy-continuous-actions → techniques/gaussian-policy-continuous-actions.md
+- IRI: pkis:technique:gaussian-policy-continuous-actions
+
+## [2026-06-09] edges | add_connections
+- agent-environment-interface —prerequisite-of→ reinforcement-learning
+- reinforcement-learning —uses→ markov-decision-processes
+- reward-signal —prerequisite-of→ value-function
+- value-function —prerequisite-of→ temporal-difference-learning
+- policy —uses→ value-function
+- reward-signal —prerequisite-of→ reinforcement-learning
+- exploration-exploitation-tradeoff —prerequisite-of→ reinforcement-learning
+- temporal-difference-learning —applies→ credit-assignment-problem
+- value-function —applies→ credit-assignment-problem
+- policy —prerequisite-of→ reinforcement-learning
+- exploration-exploitation-tradeoff —prerequisite-of→ multi-armed-bandit
+- action-value-methods —applies→ multi-armed-bandit
+- action-value-methods —uses→ weak-law-of-large-numbers
+- epsilon-greedy —extends→ action-value-methods
+- epsilon-greedy —applies→ exploration-exploitation-tradeoff
+- incremental-sample-average-update —specializes→ action-value-methods
+- nonstationary-bandit-step-size —generalizes→ incremental-sample-average-update
+- nonstationary-bandit-step-size —uses→ weak-law-of-large-numbers
+- upper-confidence-bound —extends→ action-value-methods
+- upper-confidence-bound —contrasts-with→ epsilon-greedy
+- upper-confidence-bound —uses→ confidence-interval
+- optimistic-initial-values —applies→ exploration-exploitation-tradeoff
+- optimistic-initial-values —extends→ action-value-methods
+- gradient-bandit-algorithm —uses→ softmax-action-selection
+- gradient-bandit-algorithm —instantiates→ stochastic-gradient-descent
+- gradient-bandit-algorithm —applies→ multi-armed-bandit
+- softmax-action-selection —generalizes→ logistic-regression
+- associative-search —generalizes→ multi-armed-bandit
+- associative-search —prerequisite-of→ markov-decision-processes
+- thompson-sampling —applies→ multi-armed-bandit
+- thompson-sampling —uses→ conjugate-prior
+- thompson-sampling —uses→ bayesian-inference
+- thompson-sampling —contrasts-with→ upper-confidence-bound
+- return-and-discounting —prerequisite-of→ state-value-function
+- return-and-discounting —prerequisite-of→ action-value-function
+- policy-rl —prerequisite-of→ state-value-function
+- policy-rl —prerequisite-of→ action-value-function
+- state-value-function —uses→ bellman-equation
+- action-value-function —uses→ bellman-equation
+- bellman-equation —specializes→ return-and-discounting
+- bellman-optimality-equation —specializes→ bellman-equation
+- optimal-policy —uses→ bellman-optimality-equation
+- action-value-function —generalizes→ state-value-function
+- markov-decision-processes —prerequisite-of→ return-and-discounting
+- markov-decision-processes —prerequisite-of→ policy-rl
+- bellman-optimality-equation —applies→ markov-decision-processes
+- optimal-policy —uses→ action-value-function
+- policy-iteration —uses→ policy-evaluation
+- policy-iteration —uses→ policy-improvement
+- policy-improvement —prerequisite-of→ policy-iteration
+- policy-evaluation —prerequisite-of→ policy-iteration
+- value-iteration —specializes→ policy-iteration
+- value-iteration —uses→ policy-improvement
+- generalized-policy-iteration —generalizes→ policy-iteration
+- policy-iteration —instantiates→ generalized-policy-iteration
+- value-iteration —instantiates→ generalized-policy-iteration
+- asynchronous-dynamic-programming —instantiates→ generalized-policy-iteration
+- asynchronous-dynamic-programming —extends→ value-iteration
+- policy-evaluation —uses→ bootstrapping-rl
+- value-iteration —uses→ bootstrapping-rl
+- policy-evaluation —applies→ markov-decision-processes
+- value-iteration —applies→ markov-decision-processes
+- policy-iteration —applies→ markov-decision-processes
+- asynchronous-dynamic-programming —applies→ markov-decision-processes
+- asynchronous-dynamic-programming —contrasts-with→ curse-of-dimensionality
+- monte-carlo-prediction —specializes→ monte-carlo-estimator
+- monte-carlo-prediction —applies→ markov-decision-processes
+- monte-carlo-prediction —prerequisite-of→ monte-carlo-control
+- monte-carlo-control —uses→ monte-carlo-prediction
+- monte-carlo-control —applies→ markov-decision-processes
+- monte-carlo-control —uses→ exploring-starts
+- exploring-starts —prerequisite-of→ monte-carlo-control
+- on-policy-vs-off-policy —contrasts-with→ exploring-starts
+- off-policy-importance-sampling-rl —specializes→ importance-sampling
+- off-policy-importance-sampling-rl —applies→ on-policy-vs-off-policy
+- off-policy-importance-sampling-rl —uses→ bias-variance-tradeoff
+- monte-carlo-prediction —uses→ weak-law-of-large-numbers
+- temporal-difference-learning —uses→ markov-decision-processes
+- temporal-difference-learning —uses→ markov-chains
+- temporal-difference-learning —uses→ td-error
+- td-error —prerequisite-of→ temporal-difference-learning
+- temporal-difference-learning —prerequisite-of→ sarsa
+- temporal-difference-learning —prerequisite-of→ q-learning
+- sarsa —specializes→ temporal-difference-learning
+- q-learning —specializes→ temporal-difference-learning
+- expected-sarsa —specializes→ temporal-difference-learning
+- q-learning —contrasts-with→ sarsa
+- expected-sarsa —generalizes→ q-learning
+- expected-sarsa —extends→ sarsa
+- sarsa —uses→ td-error
+- q-learning —uses→ td-error
+- double-q-learning —extends→ q-learning
+- double-q-learning —applies→ maximization-bias
+- q-learning —contrasts-with→ maximization-bias
+- td-vs-mc-vs-dp —uses→ temporal-difference-learning
+- td-vs-mc-vs-dp —uses→ maximum-likelihood-estimation
+- temporal-difference-learning —contrasts-with→ monte-carlo-estimator
+- n-step-bootstrapping —generalizes→ temporal-difference-learning
+- n-step-bootstrapping —contrasts-with→ monte-carlo-estimator
+- temporal-difference-learning —prerequisite-of→ n-step-bootstrapping
+- n-step-return —prerequisite-of→ n-step-bootstrapping
+- n-step-return —generalizes→ temporal-difference-learning
+- n-step-td —uses→ n-step-return
+- n-step-td —instantiates→ n-step-bootstrapping
+- n-step-td —specializes→ temporal-difference-learning
+- n-step-sarsa —uses→ n-step-return
+- n-step-sarsa —instantiates→ n-step-bootstrapping
+- n-step-off-policy —extends→ n-step-sarsa
+- n-step-off-policy —uses→ importance-sampling
+- tree-backup-algorithm —instantiates→ n-step-bootstrapping
+- tree-backup-algorithm —contrasts-with→ n-step-off-policy
+- n-step-q-sigma —generalizes→ n-step-sarsa
+- n-step-q-sigma —generalizes→ tree-backup-algorithm
+- n-step-q-sigma —uses→ importance-sampling
+- model-based-rl —uses→ planning-rl
+- planning-rl —uses→ markov-decision-processes
+- model-based-rl —contrasts-with→ expected-vs-sample-updates
+- dyna-q —instantiates→ model-based-rl
+- dyna-q —uses→ planning-rl
+- dyna-q —contrasts-with→ decision-time-planning
+- prioritized-sweeping —extends→ dyna-q
+- prioritized-sweeping —uses→ expected-vs-sample-updates
+- trajectory-sampling —contrasts-with→ prioritized-sweeping
+- real-time-dynamic-programming —uses→ trajectory-sampling
+- real-time-dynamic-programming —specializes→ expected-vs-sample-updates
+- decision-time-planning —specializes→ planning-rl
+- heuristic-search-rl —instantiates→ decision-time-planning
+- heuristic-search-rl —uses→ expected-vs-sample-updates
+- rollout-algorithms —instantiates→ decision-time-planning
+- rollout-algorithms —uses→ monte-carlo-estimator
+- monte-carlo-tree-search —extends→ rollout-algorithms
+- monte-carlo-tree-search —uses→ monte-carlo-estimator
+- monte-carlo-tree-search —instantiates→ decision-time-planning
+- function-approximation-rl —applies→ markov-decision-processes
+- function-approximation-rl —uses→ stochastic-gradient-descent
+- function-approximation-rl —generalizes→ state-aggregation
+- function-approximation-rl —uses→ mean-square-value-error
+- mean-square-value-error —uses→ on-policy-distribution
+- on-policy-distribution —specializes→ markov-chains
+- gradient-monte-carlo —specializes→ stochastic-gradient-descent
+- gradient-monte-carlo —uses→ monte-carlo-estimator
+- semi-gradient-td —contrasts-with→ gradient-monte-carlo
+- semi-gradient-td —uses→ stochastic-gradient-descent
+- gradient-monte-carlo —specializes→ semi-gradient-td
+- linear-function-approximation-rl —specializes→ function-approximation-rl
+- linear-function-approximation-rl —uses→ inner-product
+- semi-gradient-td —uses→ linear-function-approximation-rl
+- td-fixed-point —instantiates→ linear-function-approximation-rl
+- td-fixed-point —uses→ on-policy-distribution
+- state-aggregation —specializes→ linear-function-approximation-rl
+- tile-coding —specializes→ coarse-coding
+- coarse-coding —specializes→ linear-function-approximation-rl
+- tile-coding —uses→ hash-function
+- tile-coding —applies→ curse-of-dimensionality
+- radial-basis-function-network —generalizes→ coarse-coding
+- radial-basis-function-network —specializes→ linear-function-approximation-rl
+- fourier-basis-rl —specializes→ linear-function-approximation-rl
+- polynomial-basis-rl —specializes→ linear-function-approximation-rl
+- fourier-basis-rl —contrasts-with→ polynomial-basis-rl
+- lstd —specializes→ linear-function-approximation-rl
+- lstd —instantiates→ td-fixed-point
+- lstd —contrasts-with→ semi-gradient-td
+- kernel-regression-rl —specializes→ memory-based-function-approximation
+- kernel-regression-rl —uses→ the-kernel-trick
+- memory-based-function-approximation —contrasts-with→ function-approximation-rl
+- interest-and-emphasis —extends→ semi-gradient-td
+- interest-and-emphasis —generalizes→ on-policy-distribution
+- function-approximation-rl —uses→ neural-networks
+- function-approximation-rl —uses→ backpropagation
+- function-approximation-rl —uses→ convolutional-neural-networks
+- semi-gradient-td —uses→ function-approximation-rl
+- semi-gradient-sarsa —extends→ semi-gradient-td
+- semi-gradient-sarsa —uses→ function-approximation-rl
+- n-step-semi-gradient-sarsa —generalizes→ semi-gradient-sarsa
+- differential-return —specializes→ average-reward-setting
+- average-reward-setting —contrasts-with→ function-approximation-rl
+- semi-gradient-sarsa —instantiates→ markov-decision-processes
+- average-reward-setting —specializes→ markov-decision-processes
+- baird-counterexample —instantiates→ the-deadly-triad
+- the-deadly-triad —uses→ semi-gradient-td
+- baird-counterexample —contrasts-with→ semi-gradient-td
+- semi-gradient-td —uses→ importance-sampling
+- gradient-td-methods —applies→ stochastic-gradient-descent
+- residual-gradient-algorithm —applies→ stochastic-gradient-descent
+- gradient-td-methods —contrasts-with→ residual-gradient-algorithm
+- gradient-td-methods —extends→ semi-gradient-td
+- emphatic-td —extends→ semi-gradient-td
+- gradient-td-methods —uses→ bellman-error-vs-projected-bellman-error
+- residual-gradient-algorithm —uses→ bellman-error-vs-projected-bellman-error
+- learnability-of-rl-objectives —contrasts-with→ bellman-error-vs-projected-bellman-error
+- emphatic-td —uses→ importance-sampling
+- the-deadly-triad —prerequisite-of→ gradient-td-methods
+- the-deadly-triad —prerequisite-of→ emphatic-td
+- semi-gradient-td —specializes→ markov-decision-processes
+- baird-counterexample —uses→ importance-sampling
+- td-lambda —uses→ eligibility-traces
+- sarsa-lambda —uses→ eligibility-traces
+- td-lambda —uses→ lambda-return
+- lambda-return —generalizes→ monte-carlo-estimator
+- eligibility-traces —contrasts-with→ n-step-bootstrapping
+- td-lambda —uses→ stochastic-gradient-descent
+- true-online-td-lambda —extends→ td-lambda
+- true-online-td-lambda —uses→ replacing-traces
+- sarsa-lambda —specializes→ td-lambda
+- sarsa-lambda —applies→ markov-decision-processes
+- forward-vs-backward-view —prerequisite-of→ td-lambda
+- lambda-return —instantiates→ forward-vs-backward-view
+- replacing-traces —specializes→ eligibility-traces
+- eligibility-traces —uses→ importance-sampling
+- sarsa-lambda —extends→ sarsa
+- td-lambda —specializes→ temporal-difference-learning
+- eligibility-traces —contrasts-with→ monte-carlo-estimator
+- classical-conditioning —analogous-to→ temporal-difference-learning
+- instrumental-conditioning —analogous-to→ the-law-of-effect
+- rescorla-wagner-model —specializes→ temporal-difference-learning
+- rescorla-wagner-model —applies→ classical-conditioning
+- temporal-difference-learning —uses→ reward-signal
+- classical-conditioning —contrasts-with→ instrumental-conditioning
+- temporal-difference-learning —applies→ markov-decision-processes
+- reward-prediction-error-hypothesis —uses→ temporal-difference-error
+- reward-prediction-error-hypothesis —analogous-to→ temporal-difference-error
+- temporal-difference-error —uses→ eligibility-trace
+- reward-prediction-error-hypothesis —applies→ temporal-difference-error
+- temporal-difference-error —prerequisite-of→ reward-prediction-error-hypothesis
+- reward-prediction-error-hypothesis —instantiates→ sutton-reinforcement-2018-ch15
+- temporal-difference-error —uses→ sutton-reinforcement-2018-ch06
+- eligibility-trace —uses→ sutton-reinforcement-2018-ch12
+- deep-q-network —applies→ markov-decision-processes
+- deep-q-network —uses→ convolutional-neural-networks
+- deep-q-network —uses→ backpropagation
+- deep-q-network —uses→ stochastic-gradient-descent
+- sutton-reinforcement-2018-ch16 —instantiates→ deep-q-network
+- sutton-reinforcement-2018-ch16 —applies→ markov-decision-processes
+- sutton-reinforcement-2018-ch16 —applies→ random-forests
+- sutton-reinforcement-2018-ch16 —applies→ convolutional-neural-networks
+- sutton-reinforcement-2018-ch16 —extends→ sutton-reinforcement-2018-ch02
+- sutton-reinforcement-2018-ch16 —extends→ sutton-reinforcement-2018-ch08
+- general-value-functions —generalizes→ markov-decision-processes
+- options-framework —extends→ markov-decision-processes
+- options-framework —uses→ general-value-functions
+- predictive-state-representations —analogous-to→ general-value-functions
+- intrinsic-motivation-rl —uses→ general-value-functions
+- intrinsic-motivation-rl —uses→ options-framework
+- policy-gradient-methods —uses→ markov-decision-processes
+- policy-gradient-methods —uses→ stochastic-gradient-descent
+- policy-gradient-methods —contrasts-with→ markov-decision-processes
+- policy-gradient-theorem —prerequisite-of→ reinforce
+- policy-gradient-theorem —prerequisite-of→ policy-gradient-methods
+- reinforce —instantiates→ policy-gradient-methods
+- reinforce —uses→ monte-carlo-estimator
+- reinforce —applies→ stochastic-gradient-descent
+- reinforce-with-baseline —extends→ reinforce
+- reinforce-with-baseline —specializes→ policy-gradient-theorem
+- actor-critic —extends→ reinforce-with-baseline
+- actor-critic —instantiates→ policy-gradient-methods
+- actor-critic —contrasts-with→ reinforce-with-baseline
+- policy-parameterization-softmax —uses→ policy-gradient-methods
+- policy-parameterization-softmax —instantiates→ logistic-neuron-learning-rule
+- gaussian-policy-continuous-actions —uses→ policy-gradient-methods
+- gaussian-policy-continuous-actions —uses→ gaussian-distribution
+- gaussian-policy-continuous-actions —contrasts-with→ policy-parameterization-softmax
+- reinforce —analogous-to→ reparameterization-trick
+- reinforce-with-baseline —analogous-to→ monte-carlo-estimator
+- policy-gradient-methods —extends→ natural-gradient
+- actor-critic —uses→ sutton-reinforcement-2018-ch06
+
+## [2026-06-09] edit | edit_node
+- pkis:framework:markov-decision-processes: fields=[] sections=['Role in Reinforcement Learning']

@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+analogous-to:
+- exponential-family
 coverage: 2
 date_created: 2026-05-20
 date_updated: '2026-06-08'
@@ -33,6 +35,7 @@ A prior distribution that, combined with a given likelihood, yields a posterior 
 - [[capretto-bambi-2022]] (unread) — Bambi's automatic priors are motivated by approximate conjugacy (Normal priors for Normal likelihoods, HalfStudentT for variance)
 
 ## Connections
+- [[exponential-family]] — analogous-to
 - [[sufficient-statistics]] — uses: Conjugate priors combine with the likelihood through its sufficient statistics, giving closed-form posterior updates.
 
 ## Canonical conjugate pairs from MacKay Ch. 23

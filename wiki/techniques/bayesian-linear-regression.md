@@ -1,18 +1,35 @@
 ---
-id: "pkis:technique:bayesian-linear-regression"
 aliases: []
-title: "Bayesian Linear Regression"
-knowledge_type: technique
 also_type: []
-domain: [bayesian-stats, statistical-learning]
-tags: [probability-theory, linear-algebra]
-related_concepts: ["[[conjugate-prior]]", "[[gaussian-distribution]]", "[[probability-theory]]", "[[logistic-regression]]"]
-sources: ["[[deisenroth-mml]]", "[[steel-bma-forecasting-2011]]", "[[scott-varian-bsts-2014]]", "[[kroese-statistical-modeling]]", "[[capretto-bambi-2022]]", "[[kurz-hybrid-modeling-2022]]"]
+coverage: 4
 date_created: 2026-05-20
 date_updated: 2026-05-20
-coverage: 4
-understanding: 0
+domain:
+- bayesian-stats
+- statistical-learning
+id: pkis:technique:bayesian-linear-regression
+knowledge_type: technique
 maturity: settled
+related_concepts:
+- '[[conjugate-prior]]'
+- '[[gaussian-distribution]]'
+- '[[probability-theory]]'
+- '[[logistic-regression]]'
+sources:
+- '[[deisenroth-mml]]'
+- '[[steel-bma-forecasting-2011]]'
+- '[[scott-varian-bsts-2014]]'
+- '[[kroese-statistical-modeling]]'
+- '[[capretto-bambi-2022]]'
+- '[[kurz-hybrid-modeling-2022]]'
+tags:
+- probability-theory
+- linear-algebra
+title: Bayesian Linear Regression
+understanding: 0
+uses:
+- marginal-likelihood
+- gaussian-distribution
 ---
 
 Linear regression under a full Bayesian treatment: places a prior over weights, computes the posterior analytically (via Gaussian conjugacy), and produces a predictive distribution over outputs rather than a point estimate — naturally regularizing and quantifying predictive uncertainty.
@@ -24,3 +41,7 @@ Linear regression under a full Bayesian treatment: places a prior over weights, 
 - [[kroese-statistical-modeling-ch08]] (unread) — Bayesian normal linear model with full conjugate posterior derivation including marginal posterior for σ²
 - [[capretto-bambi-2022]] (unread) — Bambi's Gaussian family is BLR with automatic weakly informative priors; extends to GLMMs via link functions
 - [[kurz-hybrid-modeling-2022]] (unread) — BEM state estimation under Gaussian prior and noise model is exactly a Bayesian linear regression; solution via stochastic linear equation
+
+## Connections
+- [[gaussian-distribution]] — uses
+- [[marginal-likelihood]] — uses
