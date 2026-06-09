@@ -3658,3 +3658,12 @@
 ## [2026-06-09] committed | concept
 - Committed: exponential-family → concepts/exponential-family.md
 - IRI: pkis:concept:exponential-family
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: change-of-variables-for-densities (id: 62332e21-e001-4955-95c7-be6a518d29d3)
+- Title: Change of Variables for Densities
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: change-of-variables-for-densities → techniques/change-of-variables-for-densities.md
+- IRI: pkis:technique:change-of-variables-for-densities
