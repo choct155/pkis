@@ -4342,3 +4342,12 @@
 ## [2026-06-09] committed | technique
 - Committed: q-learning → techniques/q-learning.md
 - IRI: pkis:technique:q-learning
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: expected-sarsa (id: 544d66fd-5e34-44c4-8442-3f7e07361bbf)
+- Title: Expected Sarsa
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: expected-sarsa → techniques/expected-sarsa.md
+- IRI: pkis:technique:expected-sarsa
