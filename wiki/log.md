@@ -10111,3 +10111,12 @@
 ## [2026-06-09] committed | framework
 - Committed: hierarchical-reinforcement-learning → frameworks/hierarchical-reinforcement-learning.md
 - IRI: pkis:framework:hierarchical-reinforcement-learning
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: experience-replay (id: e2916cd2-8056-4d83-a79b-ed317c2bf25e)
+- Title: Experience Replay
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: experience-replay → techniques/experience-replay.md
+- IRI: pkis:technique:experience-replay
