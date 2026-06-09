@@ -7480,3 +7480,12 @@
 ## [2026-06-09] committed | result
 - Committed: kolmogorov-forward-backward-equations → results/kolmogorov-forward-backward-equations.md
 - IRI: pkis:result:kolmogorov-forward-backward-equations
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: birth-death-process (id: fd5bc162-1e45-47c7-a7bb-46c9182f16cc)
+- Title: Birth-Death Process
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: birth-death-process → concepts/birth-death-process.md
+- IRI: pkis:concept:birth-death-process

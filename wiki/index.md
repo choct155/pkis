@@ -290,6 +290,7 @@
 - [[liu-machine-unlearning-llm-2024]] — Rethinking Machine Unlearning for LLMs: post-training knowledge editing survey (deep-learning, ai-safety) (2026-05-20)
 
 ## Concepts
+- [[birth-death-process]] — Birth-Death Process (bayesian-stats, statistical-learning, systems-theory) (2026-06-09)
 - [[generator-matrix-q-matrix]] — Generator Matrix (Q-Matrix) (bayesian-stats, statistical-learning, systems-theory) (2026-06-09)
 - [[continuous-time-markov-chain]] — Continuous Time Markov Chain (bayesian-stats, statistical-learning, systems-theory) (2026-06-09)
 - [[compound-poisson-process]] — Compound Poisson Process (bayesian-stats) (2026-06-09)
