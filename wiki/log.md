@@ -7857,3 +7857,12 @@
 ## [2026-06-09] committed | concept
 - Committed: hypergeometric-distribution → concepts/hypergeometric-distribution.md
 - IRI: pkis:concept:hypergeometric-distribution
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: binomial-distribution (id: 7e171322-8be1-4338-9894-1fc83471f59c)
+- Title: Binomial Distribution
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: binomial-distribution → concepts/binomial-distribution.md
+- IRI: pkis:concept:binomial-distribution
