@@ -11696,3 +11696,12 @@
 ## [2026-06-09] committed | result
 - Committed: hammersley-clifford-theorem → results/hammersley-clifford-theorem.md
 - IRI: pkis:result:hammersley-clifford-theorem
+
+## [2026-06-09] staged | node-stub (framework)
+- Staged: restricted-boltzmann-machine (id: c08f8c00-76f4-43a2-ae63-53cffef9f7b2)
+- Title: Restricted Boltzmann Machine
+- needs_canonical_source: False
+
+## [2026-06-09] committed | framework
+- Committed: restricted-boltzmann-machine → frameworks/restricted-boltzmann-machine.md
+- IRI: pkis:framework:restricted-boltzmann-machine
