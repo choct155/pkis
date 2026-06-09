@@ -6079,3 +6079,12 @@
 ## [2026-06-09] committed | framework
 - Committed: basis-function-models → frameworks/basis-function-models.md
 - IRI: pkis:framework:basis-function-models
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: shrinkage-priors (id: bcda1ae0-8b8f-42d6-97df-f5c708a41116)
+- Title: Shrinkage Priors (Continuous / Global-Local)
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: shrinkage-priors → techniques/shrinkage-priors.md
+- IRI: pkis:technique:shrinkage-priors
