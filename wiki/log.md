@@ -5521,3 +5521,12 @@
 ## [2026-06-09] committed | technique
 - Committed: sensitivity-analysis → techniques/sensitivity-analysis.md
 - IRI: pkis:technique:sensitivity-analysis
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: expected-log-predictive-density (id: 19ac6be7-d872-48fe-b796-49a837de4753)
+- Title: Expected Log Predictive Density (elpd)
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: expected-log-predictive-density → concepts/expected-log-predictive-density.md
+- IRI: pkis:concept:expected-log-predictive-density
