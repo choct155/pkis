@@ -9220,3 +9220,12 @@
 ## [2026-06-09] committed | result
 - Committed: herbrands-theorem → results/herbrands-theorem.md
 - IRI: pkis:result:herbrands-theorem
+
+## [2026-06-09] staged | node-stub (result)
+- Staged: godels-incompleteness-theorem (id: c0501d4a-c338-455b-bc9d-efc003b781b2)
+- Title: Goedel's Incompleteness Theorem
+- needs_canonical_source: False
+
+## [2026-06-09] committed | result
+- Committed: godels-incompleteness-theorem → results/godels-incompleteness-theorem.md
+- IRI: pkis:result:godels-incompleteness-theorem
