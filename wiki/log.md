@@ -10372,3 +10372,12 @@
 ## [2026-06-09] committed | concept
 - Committed: robot-localization → concepts/robot-localization.md
 - IRI: pkis:concept:robot-localization
+
+## [2026-06-09] staged | node-stub (problem)
+- Staged: simultaneous-localization-and-mapping-slam (id: fba5adfd-7cf5-46a7-a75b-7d350e12d9ae)
+- Title: Simultaneous Localization and Mapping (SLAM)
+- needs_canonical_source: False
+
+## [2026-06-09] committed | problem
+- Committed: simultaneous-localization-and-mapping-slam → problems/simultaneous-localization-and-mapping-slam.md
+- IRI: pkis:problem:simultaneous-localization-and-mapping-slam

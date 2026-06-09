@@ -1251,6 +1251,7 @@
 - [[broad-money-monetarism]] — Congdon's updated monetarism: broad money (M3/M4) drives nominal spending; emphasis on credit and asset prices (macroeconomics, monetary-economics) (2026-05-20)
 
 ## Problems
+- [[simultaneous-localization-and-mapping-slam]] — Simultaneous Localization and Mapping (SLAM) (robotics, state-space-models) (2026-06-09)
 - [[density-estimation]] — Density Estimation (statistical-learning, bayesian-stats) (2026-06-09)
 - [[tragedy-of-the-commons]] — Tragedy of the Commons (multi-agent-systems, economics) (2026-06-09)
 - [[optimizers-curse]] — Optimizer's Curse (bayesian-stats) (2026-06-09)
