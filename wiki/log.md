@@ -8788,3 +8788,12 @@
 ## [2026-06-09] committed | technique
 - Committed: greedy-best-first-search → techniques/greedy-best-first-search.md
 - IRI: pkis:technique:greedy-best-first-search
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: relaxed-problem-heuristics (id: 140bd8f7-56fc-4498-8bd6-cd954b879a36)
+- Title: Heuristics from Relaxed Problems, Pattern Databases, and Landmarks
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: relaxed-problem-heuristics → techniques/relaxed-problem-heuristics.md
+- IRI: pkis:technique:relaxed-problem-heuristics

@@ -676,6 +676,7 @@
 - [[market-vs-hierarchy]] — Coase/Williamson: transactions governed by price signals (markets) vs. managerial direction (firms) (corporate-finance) (2026-05-20)
 
 ## Techniques
+- [[relaxed-problem-heuristics]] — Heuristics from Relaxed Problems, Pattern Databases, and Landmarks (optimization, knowledge-representation) (2026-06-09)
 - [[greedy-best-first-search]] — Greedy Best-First Search (optimization, knowledge-representation) (2026-06-09)
 - [[a-star-search]] — A* Search (optimization, knowledge-representation, deep-learning) (2026-06-09)
 - [[iterative-deepening-search]] — Iterative Deepening Search (optimization, knowledge-representation) (2026-06-09)
