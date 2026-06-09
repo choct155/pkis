@@ -544,6 +544,7 @@
 - [[market-vs-hierarchy]] — Coase/Williamson: transactions governed by price signals (markets) vs. managerial direction (firms) (corporate-finance) (2026-05-20)
 
 ## Techniques
+- [[actor-critic]] — Actor-Critic Methods (reinforcement-learning, optimization) (2026-06-09)
 - [[reinforce-with-baseline]] — REINFORCE with Baseline (reinforcement-learning, optimization) (2026-06-09)
 - [[reinforce]] — REINFORCE (reinforcement-learning, optimization) (2026-06-09)
 - [[deep-q-network]] — Deep Q-Network (DQN) (deep-learning, optimization) (2026-06-09)

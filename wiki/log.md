@@ -4999,3 +4999,12 @@
 ## [2026-06-09] committed | technique
 - Committed: reinforce-with-baseline → techniques/reinforce-with-baseline.md
 - IRI: pkis:technique:reinforce-with-baseline
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: actor-critic (id: cf479912-3718-476b-a693-3cd4c5320606)
+- Title: Actor-Critic Methods
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: actor-critic → techniques/actor-critic.md
+- IRI: pkis:technique:actor-critic
