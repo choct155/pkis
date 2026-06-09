@@ -8662,3 +8662,12 @@
 ## [2026-06-09] committed | concept
 - Committed: rational-agent → concepts/rational-agent.md
 - IRI: pkis:concept:rational-agent
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: performance-measure (id: 55084bd9-d381-4aeb-b438-313cb5c85a5d)
+- Title: Performance Measure
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: performance-measure → concepts/performance-measure.md
+- IRI: pkis:concept:performance-measure
