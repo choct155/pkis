@@ -12,7 +12,7 @@ component_scores:
   transfer: null
 coverage: 1
 date_created: '2026-06-08'
-date_updated: '2026-06-08'
+date_updated: '2026-06-09'
 domain:
 - information-theory
 - bayesian-stats
@@ -76,3 +76,8 @@ MacKay deliberately quotes 'asymptotic equipartition': typical strings are *not*
 
 ## Why introduce the typical set at all?
 The best subset for block compression is the smallest $\delta$-sufficient subset $S_\delta$, not the typical set $T_{N\beta}$. MacKay introduces $T_{N\beta}$ anyway because *it can be counted*: its members all have probability $\approx 2^{-NH}$ and it carries probability $\approx 1$, so $|T_{N\beta}|\approx 2^{NH}$. Sandwiching $T_{N\beta}$ against $S_\delta$ gives both bounds of the source coding theorem.
+
+## Geometric face
+The same fact in continuous form: samples from a $d$-dimensional standard Gaussian land on a thin shell at radius $\approx\sqrt{d}$ (density × shell-volume peaks away from the mode), not at the mode $r=0$. The typical set is that shell. **See it interactively:** https://pkis.dev/pkis-api/viz/typical-sets.html
+
+*The shell radius follows from the chi-squared connection: the squared distance from the origin, $r^2 = x_1^2 + x_2^2 + \cdots + x_d^2$, is a sum of $d$ independent squared standard normals, each with expectation 1. By the Law of Large Numbers the sum concentrates near $d$, so the typical radius is $\sqrt{d}$. This is a chi-squared($d$) random variable by definition. Scaling: if each dimension has variance $\sigma^2$, the typical radius is $\sigma\sqrt{d}$. Translation: the shell is centered at the mean $\mu$; squared distance from the mean concentrates near $d\sigma^2$ regardless of $\mu$.*
