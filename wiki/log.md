@@ -11408,3 +11408,12 @@
 ## [2026-06-09] committed | technique
 - Committed: multivariate-adaptive-regression-splines-mars → techniques/multivariate-adaptive-regression-splines-mars.md
 - IRI: pkis:technique:multivariate-adaptive-regression-splines-mars
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: patient-rule-induction-prim (id: 003164c3-35a3-4091-a264-d553d398166d)
+- Title: Patient Rule Induction Method (PRIM)
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: patient-rule-induction-prim → techniques/patient-rule-induction-prim.md
+- IRI: pkis:technique:patient-rule-induction-prim
