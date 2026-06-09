@@ -885,6 +885,7 @@
 - [[government-debt-valuation-equation]] — FTPL: price level determined by ratio of nominal debt to expected present value of future surpluses (macroeconomics) (2026-05-20)
 
 ## Frameworks
+- [[causal-bayesian-network]] — Causal Bayesian Network (causal-analysis) (2026-06-09)
 - [[basis-function-models]] — Basis Function Models (bayesian-stats, statistical-learning) (2026-06-09)
 - [[pharmacokinetic-modeling]] — Physiological Pharmacokinetic Modeling (bayesian-stats, statistical-learning) (2026-06-09)
 - [[multilevel-regression]] — Multilevel Regression (bayesian-stats, statistical-learning) (2026-06-09)

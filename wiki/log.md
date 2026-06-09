@@ -6466,3 +6466,12 @@
 
 ## [2026-06-09] edit | edit_node
 - pkis:principle:likelihood-principle: fields=[] sections=["The likelihood principle is conditional on the model (Gelman's caveat)"]
+
+## [2026-06-09] staged | node-stub (framework)
+- Staged: causal-bayesian-network (id: dc4c160b-7d79-48c4-94f0-e0657ee7dd54)
+- Title: Causal Bayesian Network
+- needs_canonical_source: False
+
+## [2026-06-09] committed | framework
+- Committed: causal-bayesian-network → frameworks/causal-bayesian-network.md
+- IRI: pkis:framework:causal-bayesian-network
