@@ -11201,3 +11201,12 @@
 ## [2026-06-09] committed | result
 - Committed: gauss-markov-theorem → results/gauss-markov-theorem.md
 - IRI: pkis:result:gauss-markov-theorem
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: linear-discriminant-analysis (id: 73da39bc-a8f8-44ab-92d0-8221fb2b4f89)
+- Title: Linear Discriminant Analysis
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: linear-discriminant-analysis → techniques/linear-discriminant-analysis.md
+- IRI: pkis:technique:linear-discriminant-analysis
