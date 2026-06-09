@@ -511,6 +511,7 @@
 - [[market-vs-hierarchy]] — Coase/Williamson: transactions governed by price signals (markets) vs. managerial direction (firms) (corporate-finance) (2026-05-20)
 
 ## Techniques
+- [[gradient-bandit-algorithm]] — Gradient Bandit Algorithm (reinforcement-learning) (2026-06-09)
 - [[softmax-action-selection]] — Softmax (Boltzmann) Action Selection (reinforcement-learning) (2026-06-09)
 - [[upper-confidence-bound]] — Upper Confidence Bound (UCB) Action Selection (reinforcement-learning) (2026-06-09)
 - [[nonstationary-bandit-step-size]] — Constant Step-Size for Nonstationary Bandits (reinforcement-learning) (2026-06-09)

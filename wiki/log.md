@@ -4108,3 +4108,12 @@
 ## [2026-06-09] committed | technique
 - Committed: softmax-action-selection → techniques/softmax-action-selection.md
 - IRI: pkis:technique:softmax-action-selection
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: gradient-bandit-algorithm (id: ad6fb54e-c78d-4f9a-a402-774e1672e225)
+- Title: Gradient Bandit Algorithm
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: gradient-bandit-algorithm → techniques/gradient-bandit-algorithm.md
+- IRI: pkis:technique:gradient-bandit-algorithm
