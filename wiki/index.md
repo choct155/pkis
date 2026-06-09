@@ -1004,6 +1004,7 @@
 - [[government-debt-valuation-equation]] — FTPL: price level determined by ratio of nominal debt to expected present value of future surpluses (macroeconomics) (2026-05-20)
 
 ## Frameworks
+- [[signal-detection-theory]] — Signal Detection Theory (bayesian-stats, information-theory) (2026-06-09)
 - [[wald-decision-theory]] — Wald's Decision Theory (bayesian-stats) (2026-06-09)
 - [[the-bernoulli-urn]] — The Bernoulli Urn Model (bayesian-stats) (2026-06-09)
 - [[structural-equation-models]] — Structural Equation Models (Causal Reading) (causal-analysis, econometrics, social-science-methods) (2026-06-09)

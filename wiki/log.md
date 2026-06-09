@@ -8163,3 +8163,12 @@
 ## [2026-06-09] committed | principle
 - Committed: loss-function-vs-prior-asymmetry → principles/loss-function-vs-prior-asymmetry.md
 - IRI: pkis:principle:loss-function-vs-prior-asymmetry
+
+## [2026-06-09] staged | node-stub (framework)
+- Staged: signal-detection-theory (id: be2e5b02-68f6-4f3e-9bb6-1979534dfd10)
+- Title: Signal Detection Theory
+- needs_canonical_source: False
+
+## [2026-06-09] committed | framework
+- Committed: signal-detection-theory → frameworks/signal-detection-theory.md
+- IRI: pkis:framework:signal-detection-theory
