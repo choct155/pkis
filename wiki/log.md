@@ -5476,3 +5476,12 @@
 ## [2026-06-09] committed | technique
 - Committed: bayesian-model-checking → techniques/bayesian-model-checking.md
 - IRI: pkis:technique:bayesian-model-checking
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: posterior-predictive-check (id: 63f0d9a3-2f16-4020-8c45-7142afb47a0d)
+- Title: Posterior Predictive Check
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: posterior-predictive-check → techniques/posterior-predictive-check.md
+- IRI: pkis:technique:posterior-predictive-check
