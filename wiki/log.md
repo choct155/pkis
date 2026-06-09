@@ -11426,3 +11426,12 @@
 ## [2026-06-09] committed | technique
 - Committed: hierarchical-mixtures-of-experts → techniques/hierarchical-mixtures-of-experts.md
 - IRI: pkis:technique:hierarchical-mixtures-of-experts
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: receiver-operating-characteristic-curve (id: a87b8398-e914-45f8-89cc-efbad51cf86e)
+- Title: ROC Curve, Sensitivity and Specificity
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: receiver-operating-characteristic-curve → concepts/receiver-operating-characteristic-curve.md
+- IRI: pkis:concept:receiver-operating-characteristic-curve
