@@ -7390,3 +7390,12 @@
 ## [2026-06-09] committed | concept
 - Committed: stationary-renewal-process → concepts/stationary-renewal-process.md
 - IRI: pkis:concept:stationary-renewal-process
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: point-process (id: 4b09a3a1-f01f-45fb-bfae-106cbddcd41a)
+- Title: Point Process
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: point-process → concepts/point-process.md
+- IRI: pkis:concept:point-process

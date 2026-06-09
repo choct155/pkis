@@ -290,6 +290,7 @@
 - [[liu-machine-unlearning-llm-2024]] — Rethinking Machine Unlearning for LLMs: post-training knowledge editing survey (deep-learning, ai-safety) (2026-05-20)
 
 ## Concepts
+- [[point-process]] — Point Process (bayesian-stats) (2026-06-09)
 - [[stationary-renewal-process]] — Stationary Renewal Process (bayesian-stats, statistical-learning) (2026-06-09)
 - [[alternating-renewal-process]] — Alternating Renewal Process (bayesian-stats, statistical-learning) (2026-06-09)
 - [[regenerative-process]] — Regenerative Process (bayesian-stats, statistical-learning) (2026-06-09)
