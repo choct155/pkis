@@ -95,6 +95,31 @@ TRUSTED_TOKEN = os.environ.get("PKIS_TRUSTED_TOKEN", "")
 # Write endpoint key — separate from read token; required for write operations
 WRITE_KEY = os.environ.get("PKIS_MCP_WRITE_KEY", "")
 
+# ============================================================
+# OAuth (MCP Resource Server) — DORMANT until PKIS_OAUTH_ISSUER is set.
+# With no issuer configured, OAUTH_ENABLED is False and every code path below
+# is a no-op: auth falls back exactly to the static WRITE_KEY/TRUSTED_TOKEN
+# behavior. To activate (after WorkOS/Stytch setup): set PKIS_OAUTH_ISSUER,
+# PKIS_OAUTH_JWKS_URL, PKIS_OAUTH_AUDIENCE (=https://pkis.dev/mcp), PKIS_ROLES_PATH,
+# `pip install "PyJWT[crypto]"`, restart. See OAUTH_PLAN.md. Static key stays valid
+# (machine-to-machine escape hatch for desktop Claude Code).
+# ============================================================
+OAUTH_ISSUER   = os.environ.get("PKIS_OAUTH_ISSUER", "").rstrip("/")
+OAUTH_AUDIENCE = os.environ.get("PKIS_OAUTH_AUDIENCE", "https://pkis.dev/mcp")
+OAUTH_JWKS_URL = os.environ.get("PKIS_OAUTH_JWKS_URL", "") or (
+    OAUTH_ISSUER + "/.well-known/jwks.json" if OAUTH_ISSUER else "")
+OAUTH_ALGS     = [a.strip() for a in os.environ.get("PKIS_OAUTH_ALGS", "RS256").split(",") if a.strip()]
+ROLES_PATH     = os.environ.get("PKIS_ROLES_PATH", "")
+PUBLIC_BASE    = os.environ.get("PKIS_PUBLIC_BASE", "https://pkis.dev").rstrip("/")
+OAUTH_ENABLED  = bool(OAUTH_ISSUER and OAUTH_JWKS_URL)
+_jwk_client = None
+_roles_cache = {"mtime": 0.0, "data": {}}
+
+
+class OAuthChallenge(PermissionError):
+    """Unauthorized write while OAuth is enabled and caller is anonymous —
+    triggers a 401 + WWW-Authenticate so the connector starts the OAuth flow."""
+
 # Document store + Readwise integration
 DOCS_DIR          = Path(os.environ.get("DOCS_DIR", "/home/pkis/docs"))
 DOCS_BASE_URL     = os.environ.get("DOCS_BASE_URL", "https://pkis.dev/docs")
@@ -504,20 +529,95 @@ def hybrid_search(query: str, domains=None, node_types=None, max_results=10) -> 
     return results
 
 
+def _bearer(req) -> str:
+    a = req.headers.get("Authorization", "")
+    return a[7:].strip() if a.startswith("Bearer ") else ""
+
+
+def _has_static_key(req) -> bool:
+    tok = _bearer(req)
+    return bool((WRITE_KEY and tok == WRITE_KEY) or (TRUSTED_TOKEN and tok == TRUSTED_TOKEN))
+
+
+def _get_jwk_client():
+    global _jwk_client
+    if _jwk_client is None:
+        from jwt import PyJWKClient  # lazy: app imports fine without PyJWT installed
+        _jwk_client = PyJWKClient(OAUTH_JWKS_URL)
+    return _jwk_client
+
+
+def verify_jwt(token: str) -> dict:
+    """Validate an IdP JWT (signature via cached JWKS; iss/aud/exp). Raises on failure."""
+    import jwt
+    signing_key = _get_jwk_client().get_signing_key_from_jwt(token)
+    return jwt.decode(
+        token, signing_key.key, algorithms=OAUTH_ALGS,
+        audience=OAUTH_AUDIENCE, issuer=OAUTH_ISSUER,
+        options={"require": ["exp", "iss", "aud"]},
+    )
+
+
+def _load_roles() -> dict:
+    """{email: role} allowlist from PKIS_ROLES_PATH, reloaded on mtime change."""
+    if not ROLES_PATH:
+        return {}
+    try:
+        m = os.path.getmtime(ROLES_PATH)
+        if m != _roles_cache["mtime"]:
+            with open(ROLES_PATH) as f:
+                _roles_cache["data"] = {k.lower(): v for k, v in json.load(f).items()}
+            _roles_cache["mtime"] = m
+    except Exception as e:  # noqa: BLE001
+        logger.warning("OAuth roles load failed (%s): %s", ROLES_PATH, e)
+    return _roles_cache["data"]
+
+
+def _role_for_email(email: str) -> str:
+    return _load_roles().get((email or "").lower(), "reader")
+
+
+def oauth_identity(req):
+    """Return (email, role) for a valid OAuth JWT, else None. No-op when OAuth off
+    or when the bearer is the static key (handled by the static-key path)."""
+    if not OAUTH_ENABLED:
+        return None
+    tok = _bearer(req)
+    if not tok or tok == WRITE_KEY or tok == TRUSTED_TOKEN:
+        return None
+    try:
+        claims = verify_jwt(tok)
+    except Exception as e:  # noqa: BLE001
+        logger.info("OAuth JWT rejected: %s", e)
+        return None
+    email = (claims.get("email") or "").lower()
+    return (email, _role_for_email(email))
+
+
 def is_trusted(req) -> bool:
-    """Check if request carries trusted client token."""
-    if not TRUSTED_TOKEN:
-        return False
-    auth = req.headers.get("Authorization", "")
-    return auth == f"Bearer {TRUSTED_TOKEN}"
+    """Trusted tier: static TRUSTED_TOKEN, or an OAuth 'owner'."""
+    if TRUSTED_TOKEN and _bearer(req) == TRUSTED_TOKEN:
+        return True
+    ident = oauth_identity(req)
+    return bool(ident and ident[1] == "owner")
 
 
 def is_write_authorized(req) -> bool:
-    """Check if request carries the write endpoint key."""
-    if not WRITE_KEY:
-        return False
-    auth = req.headers.get("Authorization", "")
-    return auth == f"Bearer {WRITE_KEY}"
+    """Write tier: static WRITE_KEY, or an OAuth 'owner'/'writer'."""
+    if WRITE_KEY and _bearer(req) == WRITE_KEY:
+        return True
+    ident = oauth_identity(req)
+    return bool(ident and ident[1] in ("owner", "writer"))
+
+
+def gate_error(req, tier: str) -> PermissionError:
+    """Pick the right error for an unauthorized gated tool: a 401 OAuthChallenge
+    when OAuth is on and the caller is anonymous (so the connector starts the
+    flow), else a plain 403 PermissionError (OAuth off, or authed-but-insufficient)."""
+    msg = f"Tool requires {tier} authorization"
+    if OAUTH_ENABLED and not _has_static_key(req) and oauth_identity(req) is None:
+        return OAuthChallenge(msg)
+    return PermissionError(msg)
 
 
 # ============================================================
@@ -4843,6 +4943,13 @@ def handle_jsonrpc(body):
             return _jsonrpc_result(req_id, {
                 "content": [{"type": "text", "text": json.dumps(result, default=str)}]
             })
+        except OAuthChallenge as e:
+            resp = _jsonrpc_error(req_id, -32001, str(e))
+            resp.status_code = 401
+            resp.headers["WWW-Authenticate"] = (
+                f'Bearer resource_metadata="{PUBLIC_BASE}/.well-known/oauth-protected-resource"'
+            )
+            return resp
         except PermissionError as e:
             return _jsonrpc_error(req_id, -32001, str(e)), 403
         except ValueError as e:
@@ -5088,11 +5195,11 @@ def dispatch_tool(tool_name: str, params: dict, req) -> any:
         return read_tools[tool_name](params)
     elif tool_name in trusted_tools:
         if not is_trusted(req):
-            raise PermissionError(f"Tool '{tool_name}' requires trusted client token")
+            raise gate_error(req, "trusted")
         return trusted_tools[tool_name](params)
     elif tool_name in write_tools:
         if not is_write_authorized(req):
-            raise PermissionError(f"Tool '{tool_name}' requires write authorization key")
+            raise gate_error(req, "write")
         return write_tools[tool_name](params)
     else:
         raise ValueError(f"Unknown tool: {tool_name}")
@@ -5110,6 +5217,21 @@ def mcp_manifest():
         "description": "Personal Knowledge Integration System — semantic wiki covering Bayesian statistics, deep learning, reinforcement learning, causal analysis, knowledge representation, and symbolic/sub-symbolic AI",
         "version": "1.0.0",
         "tools": _get_tools_list()
+    })
+
+
+@app.route("/.well-known/oauth-protected-resource", methods=["GET"])
+@app.route("/.well-known/oauth-protected-resource/mcp", methods=["GET"])
+def oauth_protected_resource():
+    """RFC 9728 Protected Resource Metadata — points the connector at the IdP.
+    404 while OAuth is dormant (PKIS_OAUTH_ISSUER unset) so behavior is unchanged
+    until activation; the 401 challenge that references this only fires when enabled."""
+    if not OAUTH_ENABLED:
+        return jsonify({"error": "OAuth not enabled"}), 404
+    return jsonify({
+        "resource": OAUTH_AUDIENCE,
+        "authorization_servers": [OAUTH_ISSUER],
+        "bearer_methods_supported": ["header"],
     })
 
 
