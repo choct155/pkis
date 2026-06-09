@@ -10318,3 +10318,12 @@
 ## [2026-06-09] committed | concept
 - Committed: feature-detection-vision → concepts/feature-detection-vision.md
 - IRI: pkis:concept:feature-detection-vision
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: image-segmentation (id: 2e3e476c-4bb6-4e97-bf02-fe82550bb3f9)
+- Title: Image Segmentation
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: image-segmentation → techniques/image-segmentation.md
+- IRI: pkis:technique:image-segmentation
