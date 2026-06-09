@@ -3514,3 +3514,12 @@
 ## [2026-06-09] committed | concept
 - Committed: inner-product → concepts/inner-product.md
 - IRI: pkis:concept:inner-product
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: orthogonality (id: de736c04-929c-43d8-890e-81628faaa403)
+- Title: Orthogonality
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: orthogonality → concepts/orthogonality.md
+- IRI: pkis:concept:orthogonality
