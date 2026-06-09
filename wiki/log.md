@@ -4540,3 +4540,12 @@
 ## [2026-06-09] committed | technique
 - Committed: monte-carlo-tree-search → techniques/monte-carlo-tree-search.md
 - IRI: pkis:technique:monte-carlo-tree-search
+
+## [2026-06-09] staged | node-stub (framework)
+- Staged: function-approximation-rl (id: 8d8100ea-e0f3-47dd-a90c-cefcd0c01d9e)
+- Title: Function Approximation in Reinforcement Learning
+- needs_canonical_source: False
+
+## [2026-06-09] committed | framework
+- Committed: function-approximation-rl → frameworks/function-approximation-rl.md
+- IRI: pkis:framework:function-approximation-rl
