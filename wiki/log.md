@@ -11219,3 +11219,12 @@
 ## [2026-06-09] committed | technique
 - Committed: quadratic-discriminant-analysis → techniques/quadratic-discriminant-analysis.md
 - IRI: pkis:technique:quadratic-discriminant-analysis
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: perceptron-learning-algorithm (id: 386d3fe6-3c6d-4114-bd18-c7a2cba41247)
+- Title: Perceptron Learning Algorithm
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: perceptron-learning-algorithm → techniques/perceptron-learning-algorithm.md
+- IRI: pkis:technique:perceptron-learning-algorithm
