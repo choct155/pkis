@@ -3478,3 +3478,12 @@
 ## [2026-06-09] committed | concept
 - Committed: linear-mapping → concepts/linear-mapping.md
 - IRI: pkis:concept:linear-mapping
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: affine-space (id: c684c5e4-3c45-4e45-a202-8b572a00de6b)
+- Title: Affine Space
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: affine-space → concepts/affine-space.md
+- IRI: pkis:concept:affine-space
