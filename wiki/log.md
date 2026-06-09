@@ -11741,3 +11741,12 @@
 ## [2026-06-09] committed | concept
 - Committed: family-wise-error-rate → concepts/family-wise-error-rate.md
 - IRI: pkis:concept:family-wise-error-rate
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: nearest-shrunken-centroids (id: 8f0018eb-c548-42d7-b03c-a075f150d35e)
+- Title: Nearest Shrunken Centroids (NSC)
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: nearest-shrunken-centroids → techniques/nearest-shrunken-centroids.md
+- IRI: pkis:technique:nearest-shrunken-centroids
