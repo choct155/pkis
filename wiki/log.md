@@ -8172,3 +8172,12 @@
 ## [2026-06-09] committed | framework
 - Committed: signal-detection-theory → frameworks/signal-detection-theory.md
 - IRI: pkis:framework:signal-detection-theory
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: matched-filter (id: 9d3ec3ce-b172-4da4-b604-c16e5612fde1)
+- Title: Matched Filter
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: matched-filter → techniques/matched-filter.md
+- IRI: pkis:technique:matched-filter
