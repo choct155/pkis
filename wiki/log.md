@@ -10246,3 +10246,12 @@
 ## [2026-06-09] committed | framework
 - Committed: sequence-to-sequence-model → frameworks/sequence-to-sequence-model.md
 - IRI: pkis:framework:sequence-to-sequence-model
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: contextual-word-embeddings (id: c373853e-8e54-4f9a-85f5-fcc68501b044)
+- Title: Contextual Word Embeddings
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: contextual-word-embeddings → concepts/contextual-word-embeddings.md
+- IRI: pkis:concept:contextual-word-embeddings

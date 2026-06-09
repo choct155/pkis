@@ -290,6 +290,7 @@
 - [[liu-machine-unlearning-llm-2024]] — Rethinking Machine Unlearning for LLMs: post-training knowledge editing survey (deep-learning, ai-safety) (2026-05-20)
 
 ## Concepts
+- [[contextual-word-embeddings]] — Contextual Word Embeddings (deep-learning) (2026-06-09)
 - [[bag-of-words-model]] — Bag-of-Words Model (deep-learning, statistical-learning) (2026-06-09)
 - [[n-gram-language-model]] — N-gram Language Model (deep-learning, information-theory) (2026-06-09)
 - [[language-model]] — Language Model (deep-learning, information-theory) (2026-06-09)
