@@ -539,53 +539,6 @@ def _has_static_key(req) -> bool:
     return bool((WRITE_KEY and tok == WRITE_KEY) or (TRUSTED_TOKEN and tok == TRUSTED_TOKEN))
 
 
-def _authlog(msg: str):
-    """Temporary file-based auth diagnostic (gunicorn doesn't capture logger.info)."""
-    try:
-        with open("/home/pkis/oauth_diag.log", "a") as f:
-            f.write(f"{datetime.now(timezone.utc).isoformat()} {msg}\n")
-    except Exception:
-        pass
-
-
-def _jwt_peek(tok: str) -> dict:
-    """Decode a JWT payload WITHOUT verification, for diagnosis only."""
-    import base64 as _b64
-    try:
-        p = tok.split(".")[1]
-        p += "=" * (-len(p) % 4)
-        d = json.loads(_b64.urlsafe_b64decode(p))
-        out = {k: d.get(k) for k in ("email", "sub", "aud", "iss", "scope", "scp", "client_id")}
-        out["keys"] = sorted(d.keys())
-        return out
-    except Exception as e:  # noqa: BLE001
-        return {"peek_error": str(e)}
-
-
-@app.before_request
-def _oauth_request_diag():
-    p = request.path or ""
-    if "/mcp" not in p:
-        return
-    tok = _bearer(request)
-    if not tok:
-        cls = "none"
-    elif tok == WRITE_KEY:
-        cls = "static-write-key"
-    elif tok == TRUSTED_TOKEN:
-        cls = "static-trusted-token"
-    elif tok.count(".") == 2:
-        cls = "JWT " + json.dumps(_jwt_peek(tok), default=str)
-    else:
-        cls = f"other(len={len(tok)},pfx={tok[:10]})"
-    try:
-        b = request.get_json(silent=True) or {}
-        m = b.get("method", ""); tn = (b.get("params") or {}).get("name", "")
-    except Exception:  # noqa: BLE001
-        m = tn = "?"
-    _authlog(f"{request.method} {p} rpc={m} tool={tn} auth={cls}")
-
-
 def _get_jwk_client():
     global _jwk_client
     if _jwk_client is None:
