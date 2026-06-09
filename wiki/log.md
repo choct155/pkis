@@ -7372,3 +7372,12 @@
 ## [2026-06-09] committed | concept
 - Committed: regenerative-process → concepts/regenerative-process.md
 - IRI: pkis:concept:regenerative-process
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: alternating-renewal-process (id: 4975efeb-69ca-4864-bf31-3d5ca72e05c8)
+- Title: Alternating Renewal Process
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: alternating-renewal-process → concepts/alternating-renewal-process.md
+- IRI: pkis:concept:alternating-renewal-process
