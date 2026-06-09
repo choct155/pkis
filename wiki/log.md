@@ -9913,3 +9913,12 @@
 ## [2026-06-09] committed | concept
 - Committed: assistance-game → concepts/assistance-game.md
 - IRI: pkis:concept:assistance-game
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: supervised-learning (id: 393484f7-51f3-4730-a5c3-11db6831a620)
+- Title: Supervised Learning
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: supervised-learning → concepts/supervised-learning.md
+- IRI: pkis:concept:supervised-learning
