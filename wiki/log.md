@@ -9364,3 +9364,12 @@
 ## [2026-06-09] committed | technique
 - Committed: execution-monitoring-replanning → techniques/execution-monitoring-replanning.md
 - IRI: pkis:technique:execution-monitoring-replanning
+
+## [2026-06-09] staged | node-stub (problem)
+- Staged: job-shop-scheduling (id: 4a7fa23f-9cea-433e-86d3-aae7c2ed1b43)
+- Title: Job-Shop Scheduling with Resource Constraints
+- needs_canonical_source: False
+
+## [2026-06-09] committed | problem
+- Committed: job-shop-scheduling → problems/job-shop-scheduling.md
+- IRI: pkis:problem:job-shop-scheduling
