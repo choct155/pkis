@@ -8815,3 +8815,12 @@
 ## [2026-06-09] committed | technique
 - Committed: hill-climbing → techniques/hill-climbing.md
 - IRI: pkis:technique:hill-climbing
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: local-beam-search (id: fc8f12d3-d460-47a4-85cd-130d677ed8bc)
+- Title: Local Beam Search
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: local-beam-search → techniques/local-beam-search.md
+- IRI: pkis:technique:local-beam-search
