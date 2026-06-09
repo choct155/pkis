@@ -7794,3 +7794,12 @@
 ## [2026-06-09] committed | principle
 - Committed: mind-projection-fallacy → principles/mind-projection-fallacy.md
 - IRI: pkis:principle:mind-projection-fallacy
+
+## [2026-06-09] staged | node-stub (result)
+- Staged: cox-theorem (id: ace6e5b9-ff5a-40e7-8197-3eacb5fb5b86)
+- Title: Cox's Theorem
+- needs_canonical_source: False
+
+## [2026-06-09] committed | result
+- Committed: cox-theorem → results/cox-theorem.md
+- IRI: pkis:result:cox-theorem
