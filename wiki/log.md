@@ -9085,3 +9085,12 @@
 ## [2026-06-09] committed | technique
 - Committed: satplan-logical-planning → techniques/satplan-logical-planning.md
 - IRI: pkis:technique:satplan-logical-planning
+
+## [2026-06-09] staged | node-stub (framework)
+- Staged: first-order-logic (id: 60f5da38-0c72-4aae-a0d3-9d5bc599beff)
+- Title: First-Order Logic
+- needs_canonical_source: False
+
+## [2026-06-09] committed | framework
+- Committed: first-order-logic → frameworks/first-order-logic.md
+- IRI: pkis:framework:first-order-logic

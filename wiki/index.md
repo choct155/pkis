@@ -1055,6 +1055,7 @@
 - [[government-debt-valuation-equation]] — FTPL: price level determined by ratio of nominal debt to expected present value of future surpluses (macroeconomics) (2026-05-20)
 
 ## Frameworks
+- [[first-order-logic]] — First-Order Logic (knowledge-representation, symbolic-subsymbolic) (2026-06-09)
 - [[propositional-logic]] — Propositional Logic (knowledge-representation, symbolic-subsymbolic) (2026-06-09)
 - [[knowledge-based-agent]] — Knowledge-Based Agent (knowledge-representation, symbolic-subsymbolic) (2026-06-09)
 - [[constraint-satisfaction-problem]] — Constraint Satisfaction Problem (CSP) (knowledge-representation, optimization) (2026-06-09)
