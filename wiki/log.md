@@ -5593,3 +5593,12 @@
 ## [2026-06-09] committed | principle
 - Committed: continuous-model-expansion → principles/continuous-model-expansion.md
 - IRI: pkis:principle:continuous-model-expansion
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: ignorability (id: 437a1b8a-f344-4669-b92b-cc65b1251934)
+- Title: Ignorability
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: ignorability → concepts/ignorability.md
+- IRI: pkis:concept:ignorability
