@@ -290,6 +290,7 @@
 - [[liu-machine-unlearning-llm-2024]] — Rethinking Machine Unlearning for LLMs: post-training knowledge editing survey (deep-learning, ai-safety) (2026-05-20)
 
 ## Concepts
+- [[datalog]] — Datalog (knowledge-representation, symbolic-subsymbolic) (2026-06-09)
 - [[unification]] — Unification (knowledge-representation, symbolic-subsymbolic) (2026-06-09)
 - [[terms-predicates-and-models-fol]] — Terms, Predicates, and Models in First-Order Logic (knowledge-representation, symbolic-subsymbolic) (2026-06-09)
 - [[quantifiers-universal-existential]] — Universal and Existential Quantifiers (knowledge-representation, symbolic-subsymbolic) (2026-06-09)

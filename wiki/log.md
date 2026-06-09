@@ -9184,3 +9184,12 @@
 ## [2026-06-09] committed | technique
 - Committed: skolemization → techniques/skolemization.md
 - IRI: pkis:technique:skolemization
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: datalog (id: 33812b67-e114-4543-9d64-7486cc7cfac2)
+- Title: Datalog
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: datalog → concepts/datalog.md
+- IRI: pkis:concept:datalog
