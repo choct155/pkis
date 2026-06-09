@@ -290,6 +290,7 @@
 - [[liu-machine-unlearning-llm-2024]] — Rethinking Machine Unlearning for LLMs: post-training knowledge editing survey (deep-learning, ai-safety) (2026-05-20)
 
 ## Concepts
+- [[atomic-factored-structured-representations]] — Atomic, Factored, and Structured Representations (agentic-ai, knowledge-representation) (2026-06-09)
 - [[task-environment-properties]] — Task Environment Properties (agentic-ai, reinforcement-learning) (2026-06-09)
 - [[performance-measure]] — Performance Measure (agentic-ai, reinforcement-learning) (2026-06-09)
 - [[rational-agent]] — Rational Agent (agentic-ai, reinforcement-learning) (2026-06-09)

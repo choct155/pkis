@@ -8707,3 +8707,12 @@
 ## [2026-06-09] committed | framework
 - Committed: learning-agent-architecture → frameworks/learning-agent-architecture.md
 - IRI: pkis:framework:learning-agent-architecture
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: atomic-factored-structured-representations (id: 5ed58e1e-8f96-4876-ab8e-4d16ec6bfff5)
+- Title: Atomic, Factored, and Structured Representations
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: atomic-factored-structured-representations → concepts/atomic-factored-structured-representations.md
+- IRI: pkis:concept:atomic-factored-structured-representations
