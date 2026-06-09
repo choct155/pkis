@@ -6610,3 +6610,12 @@
 ## [2026-06-09] committed | result
 - Committed: truncated-factorization-g-formula → results/truncated-factorization-g-formula.md
 - IRI: pkis:result:truncated-factorization-g-formula
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: identifiability-of-causal-effects (id: e1788758-a25d-45f9-8bb9-72a529ecac0e)
+- Title: Identifiability of Causal Effects
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: identifiability-of-causal-effects → concepts/identifiability-of-causal-effects.md
+- IRI: pkis:concept:identifiability-of-causal-effects
