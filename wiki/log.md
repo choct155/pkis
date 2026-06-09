@@ -9634,3 +9634,12 @@
 ## [2026-06-09] committed | result
 - Committed: gittins-index → results/gittins-index.md
 - IRI: pkis:result:gittins-index
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: reward-shaping (id: e25e07e9-c639-4a45-a802-cf1aebaf43e7)
+- Title: Reward Shaping (Shaping Theorem)
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: reward-shaping → techniques/reward-shaping.md
+- IRI: pkis:technique:reward-shaping

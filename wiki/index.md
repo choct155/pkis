@@ -697,6 +697,7 @@
 - [[market-vs-hierarchy]] — Coase/Williamson: transactions governed by price signals (markets) vs. managerial direction (firms) (corporate-finance) (2026-05-20)
 
 ## Techniques
+- [[reward-shaping]] — Reward Shaping (Shaping Theorem) (reinforcement-learning, optimization) (2026-06-09)
 - [[pomdp-value-iteration]] — POMDP Value Iteration (α-vectors) (reinforcement-learning, optimization) (2026-06-09)
 - [[preference-elicitation]] — Preference Elicitation (bayesian-stats, agentic-systems) (2026-06-09)
 - [[grounding-unrolling]] — Grounding (Unrolling) (bayesian-stats, knowledge-representation) (2026-06-09)
