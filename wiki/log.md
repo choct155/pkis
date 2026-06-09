@@ -6043,3 +6043,12 @@
 ## [2026-06-09] committed | result
 - Committed: rubins-rules → results/rubins-rules.md
 - IRI: pkis:result:rubins-rules
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: monotone-missing-data-pattern (id: 6386ca1e-6b9a-45c9-ba2d-a141b26dc806)
+- Title: Monotone Missing-Data Pattern
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: monotone-missing-data-pattern → concepts/monotone-missing-data-pattern.md
+- IRI: pkis:concept:monotone-missing-data-pattern
