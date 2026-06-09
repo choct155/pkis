@@ -1123,6 +1123,7 @@
 - [[government-debt-valuation-equation]] — FTPL: price level determined by ratio of nominal debt to expected present value of future surpluses (macroeconomics) (2026-05-20)
 
 ## Frameworks
+- [[generative-adversarial-network]] — Generative Adversarial Network (GAN) (deep-learning) (2026-06-09)
 - [[pac-learning]] — PAC Learning (Probably Approximately Correct) (statistical-learning) (2026-06-09)
 - [[social-choice-theory]] — Social Choice Theory (multi-agent-systems, economics, social-choice) (2026-06-09)
 - [[contract-net-protocol]] — Contract Net Protocol (multi-agent-systems) (2026-06-09)

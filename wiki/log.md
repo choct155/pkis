@@ -10012,3 +10012,12 @@
 ## [2026-06-09] committed | technique
 - Committed: batch-normalization → techniques/batch-normalization.md
 - IRI: pkis:technique:batch-normalization
+
+## [2026-06-09] staged | node-stub (framework)
+- Staged: generative-adversarial-network (id: 0a45fba7-bd86-4d66-a265-e324459ae596)
+- Title: Generative Adversarial Network (GAN)
+- needs_canonical_source: False
+
+## [2026-06-09] committed | framework
+- Committed: generative-adversarial-network → frameworks/generative-adversarial-network.md
+- IRI: pkis:framework:generative-adversarial-network
