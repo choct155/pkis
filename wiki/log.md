@@ -9571,3 +9571,12 @@
 ## [2026-06-09] committed | framework
 - Committed: decision-network-influence-diagram → frameworks/decision-network-influence-diagram.md
 - IRI: pkis:framework:decision-network-influence-diagram
+
+## [2026-06-09] staged | node-stub (problem)
+- Staged: optimizers-curse (id: edafbf03-3d3b-4845-9902-3cba26e36de2)
+- Title: Optimizer's Curse
+- needs_canonical_source: False
+
+## [2026-06-09] committed | problem
+- Committed: optimizers-curse → problems/optimizers-curse.md
+- IRI: pkis:problem:optimizers-curse
