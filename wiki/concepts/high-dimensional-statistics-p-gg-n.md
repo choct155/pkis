@@ -22,6 +22,8 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - hastie-esl-ch18
+specializes:
+- curse-of-dimensionality
 tags:
 - high-dimensional
 - regularization
@@ -30,6 +32,10 @@ tags:
 - p-gg-n
 title: High-Dimensional Statistics (p ≫ N)
 understanding: 0
+uses:
+- regularization
+- lasso
+- ridge-regression
 ---
 
 ## Definition
@@ -39,4 +45,8 @@ The statistical setting in which the number of features p vastly exceeds the num
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[ridge-regression]] — uses
+- [[lasso]] — uses
+- [[regularization]] — uses
+- [[curse-of-dimensionality]] — specializes
 [To be populated during integration]

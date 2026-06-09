@@ -1,6 +1,9 @@
 ---
 aliases: []
 also_type: []
+applies:
+- logistic-regression
+- generalized-linear-models
 component_scores:
   alternatives: null
   conditions: null
@@ -31,6 +34,9 @@ tags:
 - weighted-least-squares
 title: Iteratively Reweighted Least Squares
 understanding: 0
+uses:
+- maximum-likelihood-estimation
+- hessian-matrix
 ---
 
 ## Definition
@@ -40,4 +46,8 @@ An algorithm for maximum-likelihood fitting of logistic regression (and GLMs gen
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[generalized-linear-models]] — applies: IRLS is the general fitting procedure for the GLM family, of which logistic regression is a member
+- [[hessian-matrix]] — uses: Newton step uses the log-likelihood Hessian -X^T W X
+- [[maximum-likelihood-estimation]] — uses: solves the ML score equations via repeated Newton steps
+- [[logistic-regression]] — applies: IRLS is the standard maximum-likelihood fitting algorithm for logistic regression
 [To be populated during integration]

@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- bias-variance-tradeoff
 component_scores:
   alternatives: null
   conditions: null
@@ -9,6 +11,8 @@ component_scores:
   implementation: null
   operational_mechanism: null
   principled_mechanism: null
+contrasts-with:
+- gradient-boosting
 coverage: 1
 date_created: '2026-06-09'
 date_updated: '2026-06-09'
@@ -22,6 +26,8 @@ related_concepts: []
 sources:
 - hastie-esl-ch08
 - hastie-esl-ch15
+specializes:
+- ensemble-learning
 tags:
 - ensemble-methods
 - variance-reduction
@@ -31,6 +37,9 @@ tags:
 - wisdom-of-crowds
 title: Bagging (Bootstrap Aggregation)
 understanding: 0
+uses:
+- bootstrap
+- decision-trees
 ---
 
 ## Definition
@@ -49,4 +58,9 @@ Bagging does not help, and can hurt, under 0-1 loss when the base classifier is 
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[decision-trees]] — uses
+- [[gradient-boosting]] — contrasts-with: bagging only modestly enlarges the model class; boosting enlarges it enough to capture structure bagging cannot
+- [[bias-variance-tradeoff]] — applies: bagging reduces variance while leaving bias unchanged under squared-error loss
+- [[ensemble-learning]] — specializes: bagging is a variance-reduction ensemble method combining bootstrap-resampled base learners
+- [[bootstrap]] — uses: bagging averages a base learner refit on B bootstrap resamples of the training data
 [To be populated during integration]

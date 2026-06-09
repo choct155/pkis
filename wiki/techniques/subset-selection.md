@@ -9,6 +9,8 @@ component_scores:
   implementation: null
   operational_mechanism: null
   principled_mechanism: null
+contrasts-with:
+- lasso
 coverage: 1
 date_created: '2026-06-09'
 date_updated: '2026-06-09'
@@ -30,6 +32,9 @@ tags:
 - stepwise
 title: Subset Selection (Linear Regression)
 understanding: 0
+uses:
+- linear-regression
+- cross-validation
 ---
 
 ## Definition
@@ -39,4 +44,7 @@ A family of discrete variable-selection strategies for linear regression that re
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[cross-validation]] — uses: subset size k chosen by cross-validation (or AIC)
+- [[lasso]] — contrasts-with: discrete (high-variance) selection vs. lasso's continuous selection via soft-thresholding
+- [[linear-regression]] — uses: fits least squares on the retained subset of predictors
 [To be populated during integration]

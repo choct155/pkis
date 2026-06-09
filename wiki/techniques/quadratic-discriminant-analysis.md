@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+analogous-to:
+- ridge-regression
 component_scores:
   alternatives: null
   conditions: null
@@ -14,6 +16,8 @@ date_created: '2026-06-09'
 date_updated: '2026-06-09'
 domain:
 - statistical-learning
+generalizes:
+- linear-discriminant-analysis
 id: pkis:technique:quadratic-discriminant-analysis
 knowledge_type: technique
 maturity: evolving
@@ -28,6 +32,8 @@ tags:
 - discriminant-function
 title: Quadratic Discriminant Analysis
 understanding: 0
+uses:
+- gaussian-distribution
 ---
 
 ## Definition
@@ -37,4 +43,7 @@ A generative classifier that, like LDA, models each class-conditional density as
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[ridge-regression]] — analogous-to: regularized discriminant analysis shrinks Sigma_k toward pooled Sigma, in the flavor of ridge shrinkage
+- [[gaussian-distribution]] — uses: per-class multivariate Gaussian densities
+- [[linear-discriminant-analysis]] — generalizes: QDA allows per-class covariances; LDA is the common-covariance special case
 [To be populated during integration]

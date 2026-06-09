@@ -10,13 +10,19 @@ component_scores:
   prerequisites: null
   scope: null
   transfer: null
+contrasts-with:
+- curse-of-dimensionality
 coverage: 1
 date_created: '2026-06-09'
 date_updated: '2026-06-09'
 domain:
 - statistical-learning
 - optimization
+generalizes:
+- smoothing-splines
 id: pkis:concept:thin-plate-spline
+instantiates:
+- reproducing-kernel-hilbert-space
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
@@ -30,6 +36,8 @@ tags:
 - roughness-penalty
 title: Thin-Plate Spline
 understanding: 0
+uses:
+- radial-basis-function-network
 ---
 
 ## Definition
@@ -39,4 +47,8 @@ The multivariate generalization of the one-dimensional cubic smoothing spline. F
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[curse-of-dimensionality]] — contrasts-with: tensor-product multivariate bases grow exponentially in d
+- [[radial-basis-function-network]] — uses: solution is an expansion in radial basis functions centered at data points
+- [[reproducing-kernel-hilbert-space]] — instantiates: RBF expansion from kernel ‖x−y‖² log‖x−y‖, an RKHS special case
+- [[smoothing-splines]] — generalizes: multivariate (ℝ^d) analog of the 1-D cubic smoothing spline
 [To be populated during integration]

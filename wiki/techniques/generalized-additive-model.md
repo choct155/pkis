@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- basis-function-models
 component_scores:
   alternatives: null
   conditions: null
@@ -14,6 +16,8 @@ date_created: '2026-06-09'
 date_updated: '2026-06-09'
 domain:
 - statistical-learning
+generalizes:
+- generalized-linear-models
 id: pkis:technique:generalized-additive-model
 knowledge_type: technique
 maturity: evolving
@@ -21,12 +25,17 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - hastie-esl-ch09
+specializes:
+- supervised-learning
 tags:
 - nonparametric-regression
 - interpretability
 - smoothing
 title: Generalized Additive Model (GAM)
 understanding: 0
+uses:
+- backfitting-algorithm
+- generalized-linear-models
 ---
 
 ## Definition
@@ -36,4 +45,9 @@ A generalized additive model relates the conditional mean of a response to an ad
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[basis-function-models]] — applies
+- [[supervised-learning]] — specializes
+- [[generalized-linear-models]] — uses
+- [[backfitting-algorithm]] — uses
+- [[generalized-linear-models]] — generalizes
 [To be populated during integration]

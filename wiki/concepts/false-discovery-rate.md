@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- high-dimensional-statistics-p-gg-n
 component_scores:
   application: null
   boundary: null
@@ -10,6 +12,8 @@ component_scores:
   prerequisites: null
   scope: null
   transfer: null
+contrasts-with:
+- family-wise-error-rate
 coverage: 1
 date_created: '2026-06-09'
 date_updated: '2026-06-09'
@@ -31,6 +35,8 @@ tags:
 - genomics
 title: False Discovery Rate (FDR)
 understanding: 0
+uses:
+- multiple-hypothesis-testing-bayesian
 ---
 
 ## Definition
@@ -40,4 +46,7 @@ An error criterion for large-scale multiple hypothesis testing: FDR = E(V/R), th
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[high-dimensional-statistics-p-gg-n]] — applies
+- [[family-wise-error-rate]] — contrasts-with
+- [[multiple-hypothesis-testing-bayesian]] — uses
 [To be populated during integration]

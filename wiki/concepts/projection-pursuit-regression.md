@@ -1,6 +1,10 @@
 ---
 aliases: []
 also_type: []
+analogous-to:
+- neural-networks
+- gradient-boosting
+- independent-component-analysis
 component_scores:
   application: null
   boundary: null
@@ -16,6 +20,8 @@ date_updated: '2026-06-09'
 domain:
 - statistical-learning
 id: pkis:concept:projection-pursuit-regression
+instantiates:
+- universal-approximation-theorem
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
@@ -31,6 +37,8 @@ tags:
 - universal-approximator
 title: Projection Pursuit Regression
 understanding: 0
+uses:
+- gradient-descent
 ---
 
 ## Definition
@@ -52,4 +60,9 @@ PPR is the conceptual ancestor of the single-hidden-layer neural network: both t
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[independent-component-analysis]] — analogous-to: Exploratory projection pursuit underlies ICA; both seek interesting projection directions of the inputs.
+- [[gradient-boosting]] — analogous-to: PPR builds its sum of ridge functions in a forward stage-wise manner, structurally like additive forward-stagewise boosting.
+- [[gradient-descent]] — uses: Directions omega_m are updated by a Gauss-Newton (quasi-Newton) least-squares step alternating with smoothing of g_m.
+- [[universal-approximation-theorem]] — instantiates: With M arbitrarily large, PPR approximates any continuous function on R^p arbitrarily well.
+- [[neural-networks]] — analogous-to: Both PPR and the single-hidden-layer net take nonlinear functions of linear combinations of inputs; PPR is the semiparametric-statistics ancestor of the neural net.
 [To be populated during integration]

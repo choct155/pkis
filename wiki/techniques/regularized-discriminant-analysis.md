@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+analogous-to:
+- ridge-regression
 component_scores:
   alternatives: null
   conditions: null
@@ -14,6 +16,8 @@ date_created: '2026-06-09'
 date_updated: '2026-06-09'
 domain:
 - statistical-learning
+extends:
+- linear-discriminant-analysis
 id: pkis:technique:regularized-discriminant-analysis
 knowledge_type: technique
 maturity: evolving
@@ -29,6 +33,8 @@ tags:
 - p-gg-n
 title: Regularized Discriminant Analysis (RDA)
 understanding: 0
+uses:
+- regularization
 ---
 
 ## Definition
@@ -38,4 +44,7 @@ A modification of linear discriminant analysis for high-dimensional problems whe
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[ridge-regression]] — analogous-to
+- [[regularization]] — uses
+- [[linear-discriminant-analysis]] — extends
 [To be populated during integration]

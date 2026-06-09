@@ -15,6 +15,8 @@ domain:
 - statistical-learning
 - bayesian-stats
 id: pkis:problem:density-estimation
+instantiates:
+- unsupervised-learning
 knowledge_type: problem
 maturity: evolving
 needs_canonical_source: false
@@ -41,6 +43,7 @@ Density estimation is the general task of learning a probability model from data
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[unsupervised-learning]] — instantiates
 - [[model-selection-problem]] — contrasts-with
 - [[em-algorithm]] — uses
 - [[kernel-density-estimation]] — uses

@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- curse-of-dimensionality
 component_scores:
   alternatives: null
   conditions: null
@@ -14,6 +16,8 @@ date_created: '2026-06-09'
 date_updated: '2026-06-09'
 domain:
 - statistical-learning
+extends:
+- kernel-smoothing
 id: pkis:technique:local-regression-loess
 knowledge_type: technique
 maturity: evolving
@@ -30,6 +34,11 @@ tags:
 - boundary-correction
 title: Local Regression (LOESS)
 understanding: 0
+uses:
+- linear-regression
+- bias-variance-tradeoff
+- effective-number-of-parameters
+- cross-validation
 ---
 
 ## Definition
@@ -39,4 +48,10 @@ A nonparametric regression technique that, at each target point x_0, solves a se
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[curse-of-dimensionality]] — applies
+- [[cross-validation]] — uses
+- [[effective-number-of-parameters]] — uses
+- [[bias-variance-tradeoff]] — uses
+- [[linear-regression]] — uses
+- [[kernel-smoothing]] — extends
 [To be populated during integration]

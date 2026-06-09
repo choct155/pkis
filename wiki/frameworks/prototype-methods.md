@@ -20,6 +20,8 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - hastie-esl-ch13
+specializes:
+- supervised-learning
 tags:
 - classification
 - nonparametric
@@ -35,4 +37,5 @@ A family of model-free classifiers that represent the training data by a set of 
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[supervised-learning]] — specializes: Prototype methods are supervised classifiers.
 [To be populated during integration]

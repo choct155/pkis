@@ -16,6 +16,8 @@ domain:
 - statistical-learning
 - bayesian-stats
 id: pkis:technique:linear-regression
+instantiates:
+- statistical-decision-theory-regression
 knowledge_type: technique
 maturity: evolving
 needs_canonical_source: false
@@ -41,6 +43,7 @@ uses:
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[statistical-decision-theory-regression]] — instantiates: least squares = model-based estimate of the regression function under a linear assumption
 - [[posterior-predictive-check]] — uses
 - [[gaussian-distribution]] — uses
 - [[maximum-likelihood-estimation]] — uses

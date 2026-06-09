@@ -9,6 +9,8 @@ component_scores:
   implementation: null
   operational_mechanism: null
   principled_mechanism: null
+contrasts-with:
+- decision-trees
 coverage: 1
 date_created: '2026-06-09'
 date_updated: '2026-06-09'
@@ -27,6 +29,8 @@ tags:
 - feature-space-partitioning
 title: Patient Rule Induction Method (PRIM)
 understanding: 0
+uses:
+- cross-validation
 ---
 
 ## Definition
@@ -36,4 +40,6 @@ PRIM finds axis-aligned boxes in the feature space within which the response ave
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[cross-validation]] — uses
+- [[decision-trees]] — contrasts-with
 [To be populated during integration]

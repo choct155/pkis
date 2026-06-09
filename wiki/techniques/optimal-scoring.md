@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- linear-discriminant-analysis
 component_scores:
   alternatives: null
   conditions: null
@@ -39,6 +41,7 @@ Form the N x K indicator response matrix Y. Fit a (possibly nonparametric) regre
 The regression formulation is modular: replacing the linear fit by any flexible regression (additive splines, MARS, kernels) immediately yields a more flexible discriminant analysis (FDA). It also sidesteps the masking pathology of naive indicator-regression classification, because the fits are transformed via the eigen-decomposition before classification.
 
 ## Connections
+- [[linear-discriminant-analysis]] — applies: optimal scoring recasts LDA as a sequence of linear regressions
 - Recasts [[linear-discriminant-analysis]] as regression
 - Is the engine of [[flexible-discriminant-analysis]] and the M-step regression of [[mixture-discriminant-analysis]]
 - Reduces to a [[singular-value-decomposition]]/canonical-correlation eigenproblem

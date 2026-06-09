@@ -21,12 +21,17 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - hastie-esl-ch12
+specializes:
+- linear-discriminant-analysis
 tags:
 - classification
 - regularization
 - signal-image
 title: Penalized Discriminant Analysis (PDA)
 understanding: 0
+uses:
+- flexible-discriminant-analysis
+- regularization
 ---
 
 ## Definition
@@ -36,6 +41,9 @@ A regularized form of LDA designed for problems with many highly correlated pred
 Positively correlated predictors (e.g., neighboring image pixels) lead to noisy, negatively correlated LDA coefficient estimates that cancel under similar inputs, inflating sampling variance. Penalizing coefficients to be smooth over the spatial domain produces interpretable, smooth discriminant images (vs. LDA's salt-and-pepper images) and improved test-set accuracy (roughly 25% in Hastie et al.'s digit-classification trials).
 
 ## Connections
+- [[regularization]] — uses: PDA penalizes discriminant coefficients to be spatially smooth
+- [[flexible-discriminant-analysis]] — uses: PDA reuses the FDA penalized-regression machinery
+- [[linear-discriminant-analysis]] — specializes: PDA is a regularized special case of LDA for many correlated predictors
 - Specializes / regularizes [[linear-discriminant-analysis]]
 - Shares the FDA computational machinery (penalized regression in place of plain regression); [[flexible-discriminant-analysis]] with a quadratic penalty *is* PDA in the enlarged space
 - Uses [[optimal-scoring]]

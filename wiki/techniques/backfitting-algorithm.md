@@ -18,6 +18,8 @@ id: pkis:technique:backfitting-algorithm
 knowledge_type: technique
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- generalized-additive-model
 related_concepts: []
 sources:
 - hastie-esl-ch09
@@ -36,4 +38,5 @@ An iterative, modular procedure for fitting additive models Y = alpha + sum_j f_
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[generalized-additive-model]] — prerequisite-of
 [To be populated during integration]

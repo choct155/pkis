@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+contrasts-with:
+- information-criteria
 coverage: 2
 date_created: 2026-05-20
 date_updated: 2026-05-20
@@ -31,4 +33,5 @@ Estimation of out-of-sample prediction error by repeatedly partitioning the data
 - [[kroese-statistical-modeling-ch05]] (unread) — CV in the frequentist inference chapter; PRESS statistic for leave-one-out CV in linear models
 
 ## Connections
+- [[information-criteria]] — contrasts-with
 - [[model-selection-problem]] — prerequisite-of

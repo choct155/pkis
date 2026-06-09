@@ -9,6 +9,8 @@ component_scores:
   implementation: null
   operational_mechanism: null
   principled_mechanism: null
+contrasts-with:
+- smoothing-splines
 coverage: 1
 date_created: '2026-06-09'
 date_updated: '2026-06-09'
@@ -16,6 +18,8 @@ domain:
 - statistical-learning
 - optimization
 id: pkis:technique:regression-splines
+instantiates:
+- basis-function-models
 knowledge_type: technique
 maturity: evolving
 needs_canonical_source: false
@@ -29,6 +33,8 @@ tags:
 - nonparametric-regression
 title: Regression Splines
 understanding: 0
+uses:
+- spline-approximation
 ---
 
 ## Definition
@@ -40,4 +46,7 @@ A **natural cubic spline** adds the constraint that the fit be linear beyond the
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[smoothing-splines]] — contrasts-with: projection smoother (few knots, no penalty) vs shrinking smoother (all knots, roughness penalty)
+- [[spline-approximation]] — uses: uses truncated-power / B-spline bases
+- [[basis-function-models]] — instantiates: fixed-knot least-squares spline as a concrete basis-expansion method
 [To be populated during integration]

@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- k-means-clustering
 component_scores:
   alternatives: null
   conditions: null
@@ -27,6 +29,8 @@ tags:
 - codebook
 title: Vector Quantization
 understanding: 0
+uses:
+- source-coding-theorem
 ---
 
 ## Definition
@@ -36,6 +40,8 @@ Mapping continuous vectors to a finite learned codebook of discrete codes (VQ-VA
 - [[oord-neural-2017]] — canonical source
 
 ## Connections
+- [[source-coding-theorem]] — uses: variable-length codeword coding lowers the rate toward the codeword entropy
+- [[k-means-clustering]] — applies: VQ codebook construction is K-means (Lloyd's algorithm) on image blocks
 [To be populated during integration]
 
 ## Needs Canonical Source

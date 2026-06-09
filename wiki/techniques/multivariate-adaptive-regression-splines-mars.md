@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- basis-function-models
 component_scores:
   alternatives: null
   conditions: null
@@ -9,6 +11,8 @@ component_scores:
   implementation: null
   operational_mechanism: null
   principled_mechanism: null
+contrasts-with:
+- decision-trees
 coverage: 1
 date_created: '2026-06-09'
 date_updated: '2026-06-09'
@@ -21,6 +25,8 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - hastie-esl-ch09
+specializes:
+- supervised-learning
 tags:
 - nonparametric-regression
 - basis-functions
@@ -28,6 +34,8 @@ tags:
 - high-dimensional
 title: Multivariate Adaptive Regression Splines (MARS)
 understanding: 0
+uses:
+- cross-validation
 ---
 
 ## Definition
@@ -37,4 +45,8 @@ An adaptive regression procedure well suited to high-dimensional problems, viewa
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[basis-function-models]] — applies
+- [[decision-trees]] — contrasts-with
+- [[cross-validation]] — uses
+- [[supervised-learning]] — specializes
 [To be populated during integration]

@@ -15,7 +15,11 @@ date_updated: '2026-06-09'
 domain:
 - statistical-learning
 - optimization
+generalizes:
+- ridge-regression
 id: pkis:technique:smoothing-splines
+instantiates:
+- basis-function-models
 knowledge_type: technique
 maturity: evolving
 needs_canonical_source: false
@@ -30,6 +34,10 @@ tags:
 - nonparametric-regression
 title: Smoothing Splines
 understanding: 0
+uses:
+- regularization
+- spline-approximation
+- cross-validation
 ---
 
 ## Definition
@@ -41,4 +49,9 @@ The fit is a **linear smoother**: f̂ = S_λ y, where the smoother matrix S_λ d
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[cross-validation]] — uses: λ chosen by LOO/GCV; shortcut CV formula from S_λ diagonal
+- [[ridge-regression]] — generalizes: generalized ridge form (NᵀN+λΩ)⁻¹Nᵀy with curvature penalty matrix Ω
+- [[spline-approximation]] — uses: minimizer is a natural cubic spline; B-spline basis for O(N) computation
+- [[regularization]] — uses: roughness penalty λ∫(f'')² controls complexity
+- [[basis-function-models]] — instantiates: complete natural-spline basis with regularization
 [To be populated during integration]

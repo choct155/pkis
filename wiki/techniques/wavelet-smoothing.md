@@ -9,6 +9,8 @@ component_scores:
   implementation: null
   operational_mechanism: null
   principled_mechanism: null
+contrasts-with:
+- smoothing-splines
 coverage: 1
 date_created: '2026-06-09'
 date_updated: '2026-06-09'
@@ -16,6 +18,8 @@ domain:
 - statistical-learning
 - signal-processing
 id: pkis:technique:wavelet-smoothing
+instantiates:
+- basis-function-models
 knowledge_type: technique
 maturity: evolving
 needs_canonical_source: false
@@ -30,6 +34,9 @@ tags:
 - signal-processing
 title: Wavelet Smoothing
 understanding: 0
+uses:
+- lasso
+- regularization
 ---
 
 ## Definition
@@ -41,4 +48,8 @@ The key virtue is simultaneous **time and frequency localization**: unlike the F
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[smoothing-splines]] — contrasts-with: L_1 sparsity + time-frequency localization vs L_2 pure shrinkage toward smoothness
+- [[regularization]] — uses: L_1 penalty 2λ‖θ‖_1 does shrinkage and selection of coefficients
+- [[lasso]] — uses: SURE shrinkage = lasso criterion; orthonormal W gives soft-thresholding closed form
+- [[basis-function-models]] — instantiates: complete orthonormal wavelet dictionary with shrink-and-select
 [To be populated during integration]

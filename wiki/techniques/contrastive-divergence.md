@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- restricted-boltzmann-machine
 component_scores:
   alternatives: null
   conditions: null
@@ -15,6 +17,8 @@ date_updated: '2026-06-09'
 domain:
 - deep-learning
 - statistical-learning
+extends:
+- boltzmann-machine-learning-rule
 id: pkis:technique:contrastive-divergence
 knowledge_type: technique
 maturity: evolving
@@ -30,6 +34,8 @@ tags:
 - energy-based-models
 title: Contrastive Divergence
 understanding: 0
+uses:
+- gibbs-sampler
 ---
 
 ## Definition
@@ -41,4 +47,7 @@ Hinton's empirical observation is that learning still works well if the model ex
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[boltzmann-machine-learning-rule]] — extends: Replaces the intractable equilibrium model expectation in the BM learning rule with a few-step approximation.
+- [[gibbs-sampler]] — uses: Runs a short Gibbs chain started at the data to approximate the model expectation.
+- [[restricted-boltzmann-machine]] — applies: Contrastive divergence is the practical learning rule for RBMs.
 [To be populated during integration]

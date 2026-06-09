@@ -15,6 +15,8 @@ date_updated: '2026-06-09'
 domain:
 - statistical-learning
 - optimization
+extends:
+- subset-selection
 id: pkis:technique:least-angle-regression-lars
 knowledge_type: technique
 maturity: evolving
@@ -31,6 +33,9 @@ tags:
 - lasso
 title: Least Angle Regression (LARS)
 understanding: 0
+uses:
+- linear-regression
+- effective-degrees-of-freedom
 ---
 
 ## Definition
@@ -40,4 +45,7 @@ A regression procedure (Efron et al., 2004) that can be seen as a 'democratic' v
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[effective-degrees-of-freedom]] — uses: after k LAR steps the effective df is exactly k
+- [[subset-selection]] — extends: a 'democratic' continuous relaxation of forward-stepwise/stagewise selection
+- [[linear-regression]] — uses: moves coefficients along joint least-squares directions of the active set
 [To be populated during integration]

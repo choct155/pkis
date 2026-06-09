@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- reproducing-kernel-hilbert-space
 component_scores:
   conditions: null
   implications: null
@@ -35,4 +37,5 @@ understanding: 0
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[reproducing-kernel-hilbert-space]] — applies: characterizes the minimizer of RKHS-regularized risk
 [To be populated during integration]

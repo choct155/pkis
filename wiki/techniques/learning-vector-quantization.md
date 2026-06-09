@@ -9,12 +9,19 @@ component_scores:
   implementation: null
   operational_mechanism: null
   principled_mechanism: null
+contrasts-with:
+- k-means-clustering
 coverage: 1
 date_created: '2026-06-09'
 date_updated: '2026-06-09'
 domain:
 - statistical-learning
+extends:
+- k-means-clustering
 id: pkis:technique:learning-vector-quantization
+instantiates:
+- prototype-methods
+- vector-quantization
 knowledge_type: technique
 maturity: evolving
 needs_canonical_source: false
@@ -37,4 +44,8 @@ An online prototype-classification method (Kohonen, 1989) that places prototypes
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[vector-quantization]] — instantiates: LVQ is the supervised, label-aware form of vector quantization.
+- [[k-means-clustering]] — contrasts-with: LVQ positions prototypes away from boundaries using inter-class repulsion; per-class K-means ignores other classes.
+- [[k-means-clustering]] — extends: LVQ refines K-means prototype placement using all classes' data, often initialized from the K-means solution.
+- [[prototype-methods]] — instantiates: LVQ is a prototype-classification method.
 [To be populated during integration]

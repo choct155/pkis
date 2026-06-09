@@ -1,6 +1,10 @@
 ---
 aliases: []
 also_type: []
+analogous-to:
+- linear-regression
+applies:
+- bias-variance-tradeoff
 component_scores:
   alternatives: null
   conditions: null
@@ -9,12 +13,16 @@ component_scores:
   implementation: null
   operational_mechanism: null
   principled_mechanism: null
+contrasts-with:
+- margin-maximum-margin-classifier
 coverage: 1
 date_created: '2026-06-09'
 date_updated: '2026-06-09'
 domain:
 - statistical-learning
 id: pkis:technique:linear-discriminant-analysis
+instantiates:
+- generative-vs-discriminative-models
 knowledge_type: technique
 maturity: evolving
 needs_canonical_source: false
@@ -30,6 +38,9 @@ tags:
 - dimension-reduction
 title: Linear Discriminant Analysis
 understanding: 0
+uses:
+- gaussian-distribution
+- singular-value-decomposition
 ---
 
 ## Definition
@@ -39,4 +50,10 @@ A generative classifier that models each class-conditional density f_k(x) as a m
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[singular-value-decomposition]] — uses: reduced-rank LDA solves a generalized eigenproblem / eigen-decomposition
+- [[margin-maximum-margin-classifier]] — contrasts-with: LDA boundary uses covariance and all points; max-margin boundary uses only support points
+- [[generative-vs-discriminative-models]] — instantiates: LDA is the generative classifier (models joint via class densities) in the LDA-vs-logistic contrast
+- [[linear-regression]] — analogous-to: two-class LDA direction equals the least-squares coefficient on +/-1 coded targets up to scale
+- [[bias-variance-tradeoff]] — applies: shared-covariance restriction trades bias for much lower variance, explaining LDA's empirical robustness
+- [[gaussian-distribution]] — uses: models each class-conditional density as a multivariate Gaussian
 [To be populated during integration]

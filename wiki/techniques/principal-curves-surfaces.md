@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+analogous-to:
+- k-means-clustering
 component_scores:
   alternatives: null
   conditions: null
@@ -14,6 +16,8 @@ date_created: '2026-06-09'
 date_updated: '2026-06-09'
 domain:
 - statistical-learning
+generalizes:
+- principal-component-analysis
 id: pkis:technique:principal-curves-surfaces
 knowledge_type: technique
 maturity: evolving
@@ -37,4 +41,6 @@ A nonlinear generalization of the principal-component line: a smooth one-dimensi
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[k-means-clustering]] — analogous-to: principal points are the distributional analog of K-means centroids; a principal curve is k=∞ principal points on a smooth curve
+- [[principal-component-analysis]] — generalizes: nonlinear smooth-manifold generalization of the linear principal-component line; reduces to it under a linear smoother
 [To be populated during integration]

@@ -28,6 +28,7 @@ title: PAC Learning (Probably Approximately Correct)
 understanding: 0
 uses:
 - supervised-learning
+- vc-dimension
 ---
 
 ## Definition
@@ -45,6 +46,7 @@ For the class of all Boolean functions on n attributes |H|=2^{2^n}, so sample co
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[vc-dimension]] — uses
 - [[no-free-lunch-theorem]] — prerequisite-of
 - [[empirical-risk-minimization]] — prerequisite-of
 - [[supervised-learning]] — uses

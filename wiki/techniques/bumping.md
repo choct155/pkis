@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- decision-trees
 component_scores:
   alternatives: null
   conditions: null
@@ -9,6 +11,8 @@ component_scores:
   implementation: null
   operational_mechanism: null
   principled_mechanism: null
+contrasts-with:
+- bagging
 coverage: 1
 date_created: '2026-06-09'
 date_updated: '2026-06-09'
@@ -29,6 +33,8 @@ tags:
 - trees
 title: Bumping
 understanding: 0
+uses:
+- bootstrap
 ---
 
 ## Definition
@@ -44,4 +50,7 @@ Because bumping compares models on the training data, the candidate models must 
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[decision-trees]] — applies: bumping helps greedy tree induction escape poor splits, e.g. on the XOR problem
+- [[bagging]] — contrasts-with: both resample via bootstrap, but bumping picks one best model rather than averaging
+- [[bootstrap]] — uses: bumping searches model space by fitting the model to bootstrap resamples and selecting the best on training data
 [To be populated during integration]

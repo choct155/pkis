@@ -9,6 +9,8 @@ component_scores:
   implementation: null
   operational_mechanism: null
   principled_mechanism: null
+contrasts-with:
+- gradient-boosting
 coverage: 1
 date_created: '2026-06-09'
 date_updated: '2026-06-09'
@@ -16,15 +18,21 @@ domain:
 - statistical-learning
 - optimization
 id: pkis:technique:adaboost
+instantiates:
+- forward-stagewise-additive-modeling
 knowledge_type: technique
 maturity: evolving
 needs_canonical_source: false
 related_concepts: []
 sources:
 - hastie-esl-ch10
+specializes:
+- ensemble-learning
 tags: []
 title: AdaBoost
 understanding: 0
+uses:
+- decision-trees
 ---
 
 ## Definition
@@ -34,4 +42,8 @@ understanding: 0
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[gradient-boosting]] — contrasts-with
+- [[decision-trees]] — uses
+- [[forward-stagewise-additive-modeling]] — instantiates
+- [[ensemble-learning]] — specializes
 [To be populated during integration]

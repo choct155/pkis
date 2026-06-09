@@ -15,6 +15,8 @@ date_updated: '2026-06-09'
 domain:
 - statistical-learning
 - optimization
+extends:
+- lasso
 id: pkis:technique:fused-lasso
 knowledge_type: technique
 maturity: evolving
@@ -22,6 +24,8 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - hastie-esl-ch18
+specializes:
+- regularization
 tags:
 - regularization
 - structured-sparsity
@@ -39,4 +43,6 @@ A lasso variant that exploits a natural ordering of the features by penalizing b
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[regularization]] — specializes
+- [[lasso]] — extends
 [To be populated during integration]

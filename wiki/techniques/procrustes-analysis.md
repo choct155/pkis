@@ -27,6 +27,8 @@ tags:
 - dimension-reduction
 title: Procrustes Analysis
 understanding: 0
+uses:
+- singular-value-decomposition
 ---
 
 ## Definition
@@ -36,4 +38,5 @@ A method for aligning sets of corresponding landmark points (shapes) by removing
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[singular-value-decomposition]] — uses: the optimal rotation R̂=UVᵀ comes from the SVD of the centered cross-product matrix
 [To be populated during integration]

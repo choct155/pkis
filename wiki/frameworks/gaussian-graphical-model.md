@@ -21,6 +21,8 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - hastie-esl-ch17
+specializes:
+- undirected-graphical-models
 tags:
 - graphical-models
 - multivariate-gaussian
@@ -29,6 +31,10 @@ tags:
 - covariance-selection
 title: Gaussian Graphical Model
 understanding: 0
+uses:
+- conditional-independence
+- covariance-and-correlation
+- linear-regression
 ---
 
 ## Definition
@@ -42,4 +48,8 @@ Given N realizations with empirical covariance S, the log-likelihood (profiled o
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[linear-regression]] — uses: Each node's conditional distribution given the rest is a linear regression; dependence structure is learned via multiple regression.
+- [[covariance-and-correlation]] — uses: Built on the covariance matrix Sigma and its inverse (precision/partial-correlation) structure.
+- [[conditional-independence]] — uses: Edge absence = conditional independence, read off zeros of the precision matrix.
+- [[undirected-graphical-models]] — specializes: A Gaussian graphical model is the continuous-variable, multivariate-Gaussian special case of an undirected graphical model.
 [To be populated during integration]

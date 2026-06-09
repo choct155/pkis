@@ -14,6 +14,10 @@ date_updated: '2026-06-09'
 domain:
 - statistical-learning
 - optimization
+generalizes:
+- bagging
+- random-forests
+- gradient-boosting
 id: pkis:framework:importance-sampled-learning-ensemble-isle
 knowledge_type: framework
 maturity: evolving
@@ -21,6 +25,8 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - hastie-esl-ch16
+specializes:
+- ensemble-learning
 tags:
 - ensemble-methods
 - boosting
@@ -31,6 +37,9 @@ tags:
 - subsampling
 title: Importance Sampled Learning Ensemble (ISLE)
 understanding: 0
+uses:
+- lasso
+- importance-sampling
 ---
 
 ## Definition
@@ -40,4 +49,10 @@ A two-stage framework (Friedman & Popescu, 2003) that reconceives ensemble const
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[gradient-boosting]] — generalizes: (stochastic) gradient boosting with shrinkage is the exact recipe with subsample η and memory ν
+- [[random-forests]] — generalizes: random forests arise as a subsampling special case with random split-variable selection
+- [[bagging]] — generalizes: bagging is the special case η=1 (with replacement), ν=0 of Algorithm 16.2
+- [[importance-sampling]] — uses: dictionary members are drawn by importance sampling over the basis-function index space Γ
+- [[lasso]] — uses: stage-2 post-processing fits a lasso path over the induced dictionary
+- [[ensemble-learning]] — specializes: ISLE is a concrete two-stage instantiation of the ensemble-learning framework
 [To be populated during integration]

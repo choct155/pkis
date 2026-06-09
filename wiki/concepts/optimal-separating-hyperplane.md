@@ -16,6 +16,8 @@ date_updated: '2026-06-09'
 domain:
 - statistical-learning
 - optimization
+extends:
+- perceptron-learning-algorithm
 id: pkis:concept:optimal-separating-hyperplane
 knowledge_type: concept
 maturity: evolving
@@ -31,6 +33,10 @@ tags:
 - duality
 title: Optimal Separating Hyperplane
 understanding: 0
+uses:
+- margin-maximum-margin-classifier
+- convex-optimization
+- lagrangian-duality
 ---
 
 ## Definition
@@ -40,4 +46,8 @@ The unique hyperplane (Vapnik, 1996) that separates two linearly separable class
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[lagrangian-duality]] — uses: Wolfe dual and KKT conditions identify the support points
+- [[convex-optimization]] — uses: solved as a convex quadratic program with linear inequality constraints
+- [[margin-maximum-margin-classifier]] — uses: maximizes the margin to the closest training point of either class
+- [[perceptron-learning-algorithm]] — extends: adds a maximal-margin constraint to resolve the perceptron's non-unique solution
 [To be populated during integration]

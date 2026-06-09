@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- linear-regression
 component_scores:
   conditions: null
   implications: null
@@ -28,6 +30,8 @@ tags:
 - bias-variance
 title: Gauss-Markov Theorem
 understanding: 0
+uses:
+- bias-variance-tradeoff
 ---
 
 ## Definition
@@ -37,4 +41,6 @@ Among all linear unbiased estimators of a linear combination theta = a^T beta of
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[bias-variance-tradeoff]] — uses: its caveat (unbiasedness is not always wise) motivates biased shrinkage via MSE = variance + bias^2
+- [[linear-regression]] — applies: establishes least squares as BLUE for linear unbiased estimation
 [To be populated during integration]

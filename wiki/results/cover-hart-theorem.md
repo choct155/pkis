@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- k-nearest-neighbors
 component_scores:
   conditions: null
   implications: null
@@ -26,6 +28,8 @@ tags:
 - classification
 title: Cover-Hart Theorem (1-Nearest-Neighbor Error Bound)
 understanding: 0
+uses:
+- bias-variance-tradeoff
 ---
 
 ## Definition
@@ -35,4 +39,6 @@ A classical asymptotic result (Cover & Hart, 1967) stating that the error rate o
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[bias-variance-tradeoff]] — uses: The bound assumes zero bias (dense training data); real high-dimensional bias breaks the guarantee.
+- [[k-nearest-neighbors]] — applies: Bounds the asymptotic 1-NN error by twice the Bayes rate.
 [To be populated during integration]

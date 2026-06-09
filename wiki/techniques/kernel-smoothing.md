@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- curse-of-dimensionality
 component_scores:
   alternatives: null
   conditions: null
@@ -9,11 +11,15 @@ component_scores:
   implementation: null
   operational_mechanism: null
   principled_mechanism: null
+contrasts-with:
+- the-kernel-trick
 coverage: 1
 date_created: '2026-06-09'
 date_updated: '2026-06-09'
 domain:
 - statistical-learning
+generalizes:
+- k-nearest-neighbors
 id: pkis:technique:kernel-smoothing
 knowledge_type: technique
 maturity: evolving
@@ -21,6 +27,8 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - hastie-esl-ch06
+specializes:
+- density-estimation
 tags:
 - nonparametric-regression
 - local-averaging
@@ -29,6 +37,8 @@ tags:
 - smoothing
 title: Kernel Smoothing (Local Averaging)
 understanding: 0
+uses:
+- bias-variance-tradeoff
 ---
 
 ## Definition
@@ -38,4 +48,9 @@ A memory-based nonparametric regression technique that estimates f(x_0) = E(Y|X=
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[curse-of-dimensionality]] — applies
+- [[bias-variance-tradeoff]] — uses
+- [[k-nearest-neighbors]] — generalizes
+- [[the-kernel-trick]] — contrasts-with
+- [[density-estimation]] — specializes
 [To be populated during integration]

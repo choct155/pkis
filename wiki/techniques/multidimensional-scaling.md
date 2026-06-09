@@ -9,6 +9,8 @@ component_scores:
   implementation: null
   operational_mechanism: null
   principled_mechanism: null
+contrasts-with:
+- principal-component-analysis
 coverage: 1
 date_created: '2026-06-09'
 date_updated: '2026-06-09'
@@ -28,6 +30,8 @@ tags:
 - embedding
 title: Multidimensional Scaling
 understanding: 0
+uses:
+- cluster-dissimilarity-measures
 ---
 
 ## Definition
@@ -37,4 +41,6 @@ A dimension-reduction/visualization technique that embeds N objects into a low-d
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[principal-component-analysis]] — contrasts-with: operates on dissimilarities rather than raw attribute coordinates, so usable when only distances are known
+- [[cluster-dissimilarity-measures]] — uses: embeds objects directly from a pairwise dissimilarity matrix
 [To be populated during integration]

@@ -22,6 +22,8 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - hastie-esl-ch13
+specializes:
+- k-nearest-neighbors
 tags:
 - invariant-metric
 - nearest-neighbors
@@ -29,6 +31,8 @@ tags:
 - classification
 title: Tangent Distance
 understanding: 0
+uses:
+- symmetry-groups
 ---
 
 ## Definition
@@ -38,4 +42,6 @@ An invariant distance metric for nearest-neighbor classification that makes obje
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[symmetry-groups]] — uses: Invariance manifolds are orbits under a transformation group (rotation, translation, scaling, shear).
+- [[k-nearest-neighbors]] — specializes: Tangent distance is an invariant metric for nearest-neighbor classification.
 [To be populated during integration]

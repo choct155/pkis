@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+analogous-to:
+- kernel-pca
 component_scores:
   alternatives: null
   conditions: null
@@ -21,6 +23,8 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - hastie-esl-ch14
+specializes:
+- clustering
 tags:
 - clustering
 - unsupervised-learning
@@ -28,6 +32,10 @@ tags:
 - non-convex-clusters
 title: Spectral Clustering
 understanding: 0
+uses:
+- eigendecomposition
+- k-means-clustering
+- the-kernel-trick
 ---
 
 ## Definition
@@ -37,4 +45,9 @@ A clustering generalization that finds non-convex groups (e.g. concentric circle
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[the-kernel-trick]] — uses: similarity matrix is the radial-kernel gram matrix exp(−d²/c)
+- [[kernel-pca]] — analogous-to: Laplacian eigenproblem nearly matches kernel PCA on I−ÃK; both built from a radial-kernel gram matrix
+- [[k-means-clustering]] — uses: runs K-means on the rows of the Laplacian eigenvector matrix Z
+- [[eigendecomposition]] — uses: clusters the eigenvectors of the smallest eigenvalues of the graph Laplacian
+- [[clustering]] — specializes: a graph-partition clustering that handles non-convex groups where metric K-means fails
 [To be populated during integration]

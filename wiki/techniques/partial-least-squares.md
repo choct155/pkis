@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+analogous-to:
+- ridge-regression
 component_scores:
   alternatives: null
   conditions: null
@@ -9,6 +11,8 @@ component_scores:
   implementation: null
   operational_mechanism: null
   principled_mechanism: null
+contrasts-with:
+- principal-components-regression
 coverage: 1
 date_created: '2026-06-09'
 date_updated: '2026-06-09'
@@ -29,6 +33,8 @@ tags:
 - shrinkage
 title: Partial Least Squares (PLS)
 understanding: 0
+uses:
+- linear-regression
 ---
 
 ## Definition
@@ -38,4 +44,7 @@ A dimension-reduction regression method (Wold, 1975) that, like principal compon
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[ridge-regression]] — analogous-to: in practice the variance aspect dominates so PLS behaves much like ridge
+- [[principal-components-regression]] — contrasts-with: PLS uses y to build directions (variance AND correlation); PCR uses only input variance
+- [[linear-regression]] — uses: regresses y on orthogonal derived directions
 [To be populated during integration]

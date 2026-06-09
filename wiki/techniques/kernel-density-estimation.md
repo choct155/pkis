@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+analogous-to:
+- kernel-smoothing
 applies:
 - density-estimation
 coverage: 1
@@ -26,11 +28,15 @@ tags:
 - bandwidth
 title: Kernel Density Estimation
 understanding: 0
+uses:
+- convolution-of-distributions
 ---
 
 Kernel Density Estimation (KDE) is a nonparametric method for estimating a continuous probability density function from data by placing a smooth kernel function (typically Gaussian) centered at each observation, producing a smooth estimate f̂(x) = (1/nh) Σ K((x - xᵢ)/h) controlled by bandwidth h.
 
 ## Connections
+- [[convolution-of-distributions]] — uses
+- [[kernel-smoothing]] — analogous-to
 - [[density-estimation]] — applies
 - [[bootstrap]] — uses: the smoothed bootstrap uses KDE in place of the empirical CDF as the resampling distribution
 - [[gaussian-process-regression]] — contrasts-with: KDE estimates densities nonparametrically; GP regression estimates conditional means nonparametrically

@@ -8,6 +8,8 @@ component_scores:
   purpose: null
   scope: null
   structure: null
+contrasts-with:
+- multilayer-perceptron
 coverage: 1
 date_created: '2026-06-09'
 date_updated: '2026-06-09'
@@ -21,6 +23,9 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - hastie-esl-ch17
+specializes:
+- boltzmann-machine
+- undirected-graphical-models
 tags:
 - boltzmann-machine
 - hidden-units
@@ -30,6 +35,8 @@ tags:
 - gibbs-sampling
 title: Restricted Boltzmann Machine
 understanding: 0
+uses:
+- gibbs-sampler
 ---
 
 ## Definition
@@ -43,4 +50,8 @@ Exact maximum-likelihood learning requires the gradient term E_Theta(X_j X_k), e
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[multilayer-perceptron]] — contrasts-with: Same single-hidden-layer shape but undirected/generative joint-likelihood vs directed/discriminative conditional cross-entropy.
+- [[gibbs-sampler]] — uses: Block Gibbs sampling of whole layers exploits within-layer conditional independence.
+- [[undirected-graphical-models]] — specializes: An RBM is an undirected, energy-based graphical model over binary units.
+- [[boltzmann-machine]] — specializes: An RBM is a Boltzmann machine with a bipartite (no intra-layer) connection structure.
 [To be populated during integration]

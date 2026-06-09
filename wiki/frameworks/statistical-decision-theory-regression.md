@@ -18,6 +18,8 @@ id: pkis:framework:statistical-decision-theory-regression
 knowledge_type: framework
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- supervised-learning
 related_concepts: []
 sources:
 - hastie-esl-ch02
@@ -29,6 +31,9 @@ tags:
 - probability-theory
 title: Statistical Decision Theory for Regression and Classification
 understanding: 0
+uses:
+- expected-loss
+- bias-variance-tradeoff
 ---
 
 ## Definition
@@ -42,4 +47,7 @@ This is the optimality target that all supervised methods approximate. k-nearest
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[bias-variance-tradeoff]] — uses: EPE decomposes into irreducible error, bias, and variance
+- [[supervised-learning]] — prerequisite-of: the optimal-predictor target that all supervised methods approximate
+- [[expected-loss]] — uses: EPE = E[L(Y,f(X))] is the expected-loss criterion specialized to prediction
 [To be populated during integration]

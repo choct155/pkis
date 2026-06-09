@@ -21,6 +21,9 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - hastie-esl-ch08
+specializes:
+- model-averaging
+- ensemble-learning
 tags:
 - ensemble-methods
 - model-combination
@@ -29,6 +32,8 @@ tags:
 - leave-one-out
 title: Stacked Generalization (Stacking)
 understanding: 0
+uses:
+- cross-validation
 ---
 
 ## Definition
@@ -44,4 +49,7 @@ Stacking addresses the frequentist model-averaging problem (8.56): seeking weigh
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[ensemble-learning]] — specializes: stacking combines distinct base learners with learned weights
+- [[cross-validation]] — uses: stacking weights are fit on leave-one-out predictions to avoid favoring complex models
+- [[model-averaging]] — specializes: stacking is a frequentist model-averaging scheme that estimates combination weights from cross-validated predictions
 [To be populated during integration]

@@ -9,6 +9,8 @@ component_scores:
   implementation: null
   operational_mechanism: null
   principled_mechanism: null
+contrasts-with:
+- decision-trees
 coverage: 1
 date_created: '2026-06-09'
 date_updated: '2026-06-09'
@@ -21,6 +23,8 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - hastie-esl-ch09
+specializes:
+- mixture-models
 tags:
 - mixture-models
 - soft-splits
@@ -28,6 +32,9 @@ tags:
 - tree-based
 title: Hierarchical Mixtures of Experts (HME)
 understanding: 0
+uses:
+- em-algorithm
+- logistic-regression
 ---
 
 ## Definition
@@ -37,4 +44,8 @@ A tree-structured model in which the splits are soft (probabilistic) rather than
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[logistic-regression]] — uses
+- [[mixture-models]] — specializes
+- [[em-algorithm]] — uses
+- [[decision-trees]] — contrasts-with
 [To be populated during integration]

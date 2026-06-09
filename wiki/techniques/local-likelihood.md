@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- generalized-linear-models
 component_scores:
   alternatives: null
   conditions: null
@@ -14,6 +16,8 @@ date_created: '2026-06-09'
 date_updated: '2026-06-09'
 domain:
 - statistical-learning
+extends:
+- local-regression-loess
 id: pkis:technique:local-likelihood
 knowledge_type: technique
 maturity: evolving
@@ -21,6 +25,8 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - hastie-esl-ch06
+specializes:
+- logistic-regression
 tags:
 - nonparametric
 - local-likelihood
@@ -29,6 +35,8 @@ tags:
 - local-logistic-regression
 title: Local Likelihood and Varying-Coefficient Models
 understanding: 0
+uses:
+- maximum-likelihood-estimation
 ---
 
 ## Definition
@@ -38,4 +46,8 @@ A general principle for localizing any parametric model whose fitting accommodat
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[logistic-regression]] — specializes
+- [[generalized-linear-models]] — applies
+- [[maximum-likelihood-estimation]] — uses
+- [[local-regression-loess]] — extends
 [To be populated during integration]

@@ -30,6 +30,8 @@ tags:
 - type-i-error
 title: Family-Wise Error Rate (FWER)
 understanding: 0
+uses:
+- hypothesis-testing
 ---
 
 ## Definition
@@ -39,4 +41,5 @@ In a family of M hypothesis tests, the family-wise error rate is the probability
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[hypothesis-testing]] — uses
 [To be populated during integration]

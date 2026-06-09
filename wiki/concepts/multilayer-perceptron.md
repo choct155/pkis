@@ -29,6 +29,7 @@ sources:
 - mackay-itila-ch44
 specializes:
 - neural-networks
+- projection-pursuit-regression
 tags:
 - neural-networks
 - function-approximation
@@ -65,6 +66,7 @@ The MLP is the canonical trainable nonlinear curve-fitter underpinning modern de
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[projection-pursuit-regression]] — specializes: The MLP is a restricted PPR with the parametric ridge form g_m = beta_m sigma(alpha_0m + ||alpha_m|| omega_m^T X).
 - [[learning-as-inference]] — instantiates: Minimizing the MLP objective M(w) is MAP inference: error is a negative log likelihood and weight decay a negative log prior.
 - [[regularization]] — extends: Training adds a regularizing weight-decay term to the data error to combat overfitting.
 - [[cross-entropy-loss]] — uses: Classification MLPs (logistic / softmax outputs) are trained with the cross-entropy negative log likelihood.

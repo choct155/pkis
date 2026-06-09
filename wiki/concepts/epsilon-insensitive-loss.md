@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+analogous-to:
+- hinge-loss
 component_scores:
   application: null
   boundary: null
@@ -38,6 +40,7 @@ The loss function underlying support vector regression: V_epsilon(r) = 0 if |r| 
 Huber's loss V_H(r) is quadratic for |r| <= c and linear beyond, so it down-weights only the *tails*; the epsilon-insensitive loss additionally zeroes the *center*. Squared error penalizes everywhere and yields no sparsity. The parameter epsilon plays the same scale-dependent role for V_epsilon that c plays for V_H.
 
 ## Connections
+- [[hinge-loss]] — analogous-to: epsilon-insensitive loss is the regression analogue of the classification hinge loss
 - Used by [[support-vector-regression]]
 - Contrasts with [[hinge-loss]] (classification analogue) and with squared-error / Huber loss
 

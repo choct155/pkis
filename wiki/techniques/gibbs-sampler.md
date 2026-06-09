@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+analogous-to:
+- em-algorithm
 applies:
 - ising-model
 - exact-sampling
@@ -35,6 +37,7 @@ sources:
 specializes:
 - metropolis-algorithm
 - metropolis-hastings
+- mcmc
 tags:
 - mcmc
 - posterior-sampling
@@ -115,6 +118,8 @@ Gibbs does not tolerate approximation because there is no correction mechanism.
 Both degrade when variables are highly correlated — updating one coordinate at a time while holding others fixed produces small effective moves along the ridge of correlation. HMC addresses this by using gradient information to construct proposals that move along the posterior surface rather than across it.
 
 ## Connections
+- [[mcmc]] — specializes: Gibbs sampling produces a Markov chain whose stationary distribution is the target joint/posterior
+- [[em-algorithm]] — analogous-to: in exponential-family models Gibbs sampling mirrors EM's E and M steps but samples from conditionals instead of maximizing
 - [[metropolis-hastings]] — specializes
 - [[markov-blanket]] — uses
 - [[exact-sampling]] — applies: Coupled Gibbs sampling is the chain Propp-Wilson use to draw exact Ising samples.

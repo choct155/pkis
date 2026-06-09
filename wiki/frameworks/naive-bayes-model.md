@@ -41,6 +41,7 @@ uses:
 - conditional-independence
 - bayesian-inference
 - maximum-likelihood-estimation
+- kernel-density-estimation
 ---
 
 ## Definition
@@ -50,6 +51,7 @@ uses:
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[kernel-density-estimation]] — uses
 - [[density-estimation]] — applies
 - [[logistic-regression]] — contrasts-with
 - [[generative-vs-discriminative-models]] — instantiates

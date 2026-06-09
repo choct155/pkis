@@ -22,12 +22,17 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - hastie-esl-ch12
+specializes:
+- support-vector-machines
 tags:
 - regression
 - kernel-methods
 - robust
 title: Support Vector Regression (SVR)
 understanding: 0
+uses:
+- epsilon-insensitive-loss
+- the-kernel-trick
 ---
 
 ## Definition
@@ -37,6 +42,9 @@ An adaptation of the support vector machine to quantitative-response regression 
 Solve the dual QP min over alpha_i, alpha*_i of epsilon sum (alpha*_i + alpha_i) - sum y_i(alpha*_i - alpha_i) + (1/2) sum_{i,i'} (alpha*_i - alpha_i)(alpha*_{i'} - alpha_{i'}) <x_i, x_{i'}> subject to 0 <= alpha_i, alpha*_i <= 1/lambda, sum (alpha*_i - alpha_i) = 0, and alpha_i alpha*_i = 0. Replace inner products by a kernel K for nonlinear regression. Two tuning parameters: epsilon (loss-function width, analogous to Huber's c) and lambda (regularization, set by cross-validation); both depend on the scale of y.
 
 ## Connections
+- [[the-kernel-trick]] — uses: SVR depends on inputs only through inner products, generalized via kernels
+- [[epsilon-insensitive-loss]] — uses: SVR is defined by minimizing the epsilon-insensitive loss
+- [[support-vector-machines]] — specializes: SVR adapts the SVM to quantitative-response regression
 - Specializes / adapts [[support-vector-machines]] to regression
 - Uses [[epsilon-insensitive-loss]] and [[the-kernel-trick]]
 - Contrasts with Huber robust regression: both have linear tails, but SVR additionally flattens small residuals

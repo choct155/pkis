@@ -1,6 +1,9 @@
 ---
 aliases: []
 also_type: []
+applies:
+- linear-discriminant-analysis
+- high-dimensional-statistics-p-gg-n
 component_scores:
   alternatives: null
   conditions: null
@@ -30,6 +33,8 @@ tags:
 - diagonal-lda
 title: Nearest Shrunken Centroids (NSC)
 understanding: 0
+uses:
+- regularization
 ---
 
 ## Definition
@@ -39,4 +44,7 @@ A regularized nearest-centroid classifier for the p ≫ N setting that performs 
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[high-dimensional-statistics-p-gg-n]] — applies
+- [[regularization]] — uses
+- [[linear-discriminant-analysis]] — applies
 [To be populated during integration]

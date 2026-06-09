@@ -14,6 +14,8 @@ date_created: '2026-06-09'
 date_updated: '2026-06-09'
 domain:
 - statistical-learning
+extends:
+- principal-component-analysis
 id: pkis:technique:sparse-pca
 knowledge_type: technique
 maturity: evolving
@@ -28,6 +30,9 @@ tags:
 - interpretability
 title: Sparse Principal Components
 understanding: 0
+uses:
+- lasso
+- procrustes-analysis
 ---
 
 ## Definition
@@ -37,4 +42,7 @@ Variants of PCA that produce loading vectors with many zero entries, making the 
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[procrustes-analysis]] — uses: the Θ-update in the multi-component SPCA criterion is a Procrustes/SVD step
+- [[lasso]] — uses: L1 / elastic-net penalties drive loadings to zero (SCoTLASS, SPCA)
+- [[principal-component-analysis]] — extends: adds L1 penalties on loadings to produce sparse, interpretable components
 [To be populated during integration]

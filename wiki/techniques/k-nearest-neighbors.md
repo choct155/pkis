@@ -1,6 +1,10 @@
 ---
 aliases: []
 also_type: []
+analogous-to:
+- prototype-methods
+applies:
+- curse-of-dimensionality
 component_scores:
   alternatives: null
   conditions: null
@@ -9,12 +13,17 @@ component_scores:
   implementation: null
   operational_mechanism: null
   principled_mechanism: null
+contrasts-with:
+- linear-regression
 coverage: 1
 date_created: '2026-06-09'
 date_updated: '2026-06-09'
 domain:
 - statistical-learning
 id: pkis:technique:k-nearest-neighbors
+instantiates:
+- statistical-decision-theory-regression
+- memory-based-function-approximation
 knowledge_type: technique
 maturity: evolving
 needs_canonical_source: false
@@ -26,6 +35,8 @@ specializes:
 tags: []
 title: k-Nearest Neighbors
 understanding: 0
+uses:
+- bias-variance-tradeoff
 ---
 
 ## Definition
@@ -39,5 +50,11 @@ KNN suffers acutely from the curse of dimensionality -- in high dimensions the '
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[memory-based-function-approximation]] — instantiates: k-NN stores training examples and answers queries by retrieving nearest neighbors — the canonical memory-based method.
+- [[prototype-methods]] — analogous-to: 1-NN is the limiting prototype method where every training point is a prototype.
+- [[curse-of-dimensionality]] — applies: kNN breaks down in high dimensions as neighborhoods stop being local
+- [[linear-regression]] — contrasts-with: flexible/high-variance vs rigid/high-bias ends of the model spectrum
+- [[bias-variance-tradeoff]] — uses: k controls effective parameters N/k; small k = high variance, large k = high bias
+- [[statistical-decision-theory-regression]] — instantiates: kNN directly approximates f(x)=E(Y|X=x) / the Bayes classifier by sample averaging over a neighborhood
 - [[supervised-learning]] — specializes
 [To be populated during integration]

@@ -1,11 +1,15 @@
 ---
 aliases: []
 also_type: []
+applies:
+- inductive-bias
 component_scores:
   implications: null
   justification: null
   statement: null
   violations: null
+contrasts-with:
+- curse-of-dimensionality
 coverage: 1
 date_created: '2026-06-09'
 date_updated: '2026-06-09'
@@ -15,6 +19,8 @@ id: pkis:principle:structured-regression-and-restricted-estimators
 knowledge_type: principle
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- regularization
 related_concepts: []
 sources:
 - hastie-esl-ch02
@@ -26,6 +32,9 @@ tags:
 - inductive-bias
 title: Structured Regression and Restricted Estimators
 understanding: 0
+uses:
+- bias-variance-tradeoff
+- basis-function-models
 ---
 
 ## Definition
@@ -39,4 +48,9 @@ Hastie groups restricted estimators into three broad classes, each with a smooth
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[inductive-bias]] — applies: the chosen restriction encodes the inductive bias; ambiguity is transferred to the constraint
+- [[basis-function-models]] — uses: basis-function/dictionary methods are one of the three restriction classes
+- [[curse-of-dimensionality]] — contrasts-with: restricting the function class is the escape route from the curse for local methods
+- [[bias-variance-tradeoff]] — uses: the smoothing parameter of every restricted estimator is selected by trading bias against variance
+- [[regularization]] — prerequisite-of: roughness-penalty/regularization is one of the three restriction classes
 [To be populated during integration]

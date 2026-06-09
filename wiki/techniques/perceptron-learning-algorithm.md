@@ -19,6 +19,9 @@ id: pkis:technique:perceptron-learning-algorithm
 knowledge_type: technique
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- linear-separability
+- multilayer-perceptron
 related_concepts: []
 sources:
 - hastie-esl-ch04
@@ -30,6 +33,8 @@ tags:
 - linear-classifier
 title: Perceptron Learning Algorithm
 understanding: 0
+uses:
+- stochastic-gradient-descent
 ---
 
 ## Definition
@@ -39,4 +44,7 @@ Rosenblatt's (1958) algorithm for finding a separating hyperplane between two cl
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[multilayer-perceptron]] — prerequisite-of: perceptrons set the foundation for later neural-network models
+- [[linear-separability]] — prerequisite-of: finite-step convergence guaranteed only when the classes are linearly separable
+- [[stochastic-gradient-descent]] — uses: minimizes the misclassification distance criterion by SGD, updating after each misclassified point
 [To be populated during integration]

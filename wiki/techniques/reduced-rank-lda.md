@@ -21,6 +21,8 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - hastie-esl-ch04
+specializes:
+- linear-discriminant-analysis
 tags:
 - classification
 - dimension-reduction
@@ -29,6 +31,9 @@ tags:
 - canonical-variates
 title: Reduced-Rank Linear Discriminant Analysis
 understanding: 0
+uses:
+- principal-component-analysis
+- eigendecomposition
 ---
 
 ## Definition
@@ -38,4 +43,7 @@ A dimension-reduction refinement of LDA exploiting that the K class centroids sp
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[eigendecomposition]] — uses: solves the generalized eigenvalue problem of W^{-1}B for discriminant coordinates
+- [[principal-component-analysis]] — uses: optimal subspace is the principal-component subspace of the sphered class centroids
+- [[linear-discriminant-analysis]] — specializes: reduced-rank restriction confines LDA to the optimal centroid-spanning subspace
 [To be populated during integration]

@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- model-selection-problem
 component_scores:
   alternatives: null
   conditions: null
@@ -9,6 +11,8 @@ component_scores:
   implementation: null
   operational_mechanism: null
   principled_mechanism: null
+contrasts-with:
+- information-criteria
 coverage: 1
 date_created: '2026-06-09'
 date_updated: '2026-06-09'
@@ -21,6 +25,8 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - hastie-esl-ch07
+specializes:
+- empirical-risk-minimization
 tags:
 - model-selection
 - vc-theory
@@ -28,6 +34,9 @@ tags:
 - complexity-control
 title: Structural Risk Minimization (SRM)
 understanding: 0
+uses:
+- vc-dimension
+- support-vector-machines
 ---
 
 ## Definition
@@ -37,4 +46,9 @@ Vapnik's model-selection procedure that controls generalization error by exploit
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[empirical-risk-minimization]] — specializes
+- [[support-vector-machines]] — uses
+- [[information-criteria]] — contrasts-with
+- [[model-selection-problem]] — applies
+- [[vc-dimension]] — uses
 [To be populated during integration]

@@ -34,6 +34,9 @@ tags:
 - phase-transition
 title: Ising Model
 understanding: 0
+uses:
+- iterative-proportional-fitting
+- exponential-family
 ---
 
 ## Definition
@@ -53,6 +56,8 @@ The Ising model is the canonical solvable system with a genuine phase transition
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[exponential-family]] — uses: Ising MLE matches sufficient statistics to model expectations -- the standard exponential-family score equation.
+- [[iterative-proportional-fitting]] — uses: IPF performs cyclic coordinate descent on the Ising gradient equations to fit the discrete model.
 - [[undirected-graphical-models]] — specializes: An Ising model is a pairwise Markov random field over binary spins with energy = negative log potential.
 - [[phase-transition]] — instantiates: The 2D ferromagnetic Ising model is the canonical system exhibiting a temperature-driven phase transition.
 [To be populated during integration]

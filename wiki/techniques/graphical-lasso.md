@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- gaussian-graphical-model
 component_scores:
   alternatives: null
   conditions: null
@@ -30,6 +32,9 @@ tags:
 - structure-estimation
 title: Graphical Lasso
 understanding: 0
+uses:
+- lasso
+- convex-optimization
 ---
 
 ## Definition
@@ -47,4 +52,7 @@ The algorithm cycles over all p variables until convergence; the diagonal of the
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[convex-optimization]] — uses: Maximizes the convex L1-penalized Gaussian log-likelihood.
+- [[lasso]] — uses: Each row/column update is solved as an ordinary lasso regression with W_11 in place of Z^T Z.
+- [[gaussian-graphical-model]] — applies: The graphical lasso estimates a sparse Gaussian graphical model's precision matrix.
 [To be populated during integration]

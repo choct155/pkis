@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- high-dimensional-statistics-p-gg-n
 component_scores:
   alternatives: null
   conditions: null
@@ -9,6 +11,8 @@ component_scores:
   implementation: null
   operational_mechanism: null
   principled_mechanism: null
+contrasts-with:
+- lasso
 coverage: 1
 date_created: '2026-06-09'
 date_updated: '2026-06-09'
@@ -30,6 +34,8 @@ tags:
 - genomics
 title: Supervised Principal Components
 understanding: 0
+uses:
+- principal-component-analysis
 ---
 
 ## Definition
@@ -39,4 +45,7 @@ A regression/generalized-regression method for p ≫ N that finds low-dimensiona
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[lasso]] — contrasts-with
+- [[high-dimensional-statistics-p-gg-n]] — applies
+- [[principal-component-analysis]] — uses
 [To be populated during integration]

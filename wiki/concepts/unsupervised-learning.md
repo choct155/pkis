@@ -10,6 +10,8 @@ component_scores:
   prerequisites: null
   scope: null
   transfer: null
+contrasts-with:
+- supervised-learning
 coverage: 1
 date_created: '2026-06-09'
 date_updated: '2026-06-09'
@@ -45,4 +47,5 @@ Most real-world data arrive *unlabeled* — labels are expensive, scarce, or und
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[supervised-learning]] — contrasts-with
 [To be populated during integration]

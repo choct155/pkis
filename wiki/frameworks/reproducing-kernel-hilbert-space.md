@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+analogous-to:
+- gaussian-process-regression
 component_scores:
   application: null
   limits: null
@@ -28,6 +30,10 @@ tags:
 - representer-theorem
 title: Reproducing Kernel Hilbert Space (RKHS)
 understanding: 0
+uses:
+- regularization
+- representer-theorem
+- the-kernel-trick
 ---
 
 ## Definition
@@ -39,4 +45,8 @@ The defining payoff is that although the criterion lives on an infinite-dimensio
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[gaussian-process-regression]] — analogous-to: Bayesian reading: f a zero-mean GP with prior covariance K; kernel-ridge fit = kriging
+- [[the-kernel-trick]] — uses: kernel property: only N² kernel evaluations, no explicit feature map
+- [[representer-theorem]] — uses: infinite-dimensional problem reduces to finite kernel expansion f=Σα_i K(·,x_i)
+- [[regularization]] — uses: penalty J(f)=‖f‖²_{H_K} as a generalized ridge over function space
 [To be populated during integration]

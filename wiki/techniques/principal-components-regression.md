@@ -9,6 +9,8 @@ component_scores:
   implementation: null
   operational_mechanism: null
   principled_mechanism: null
+contrasts-with:
+- ridge-regression
 coverage: 1
 date_created: '2026-06-09'
 date_updated: '2026-06-09'
@@ -29,6 +31,9 @@ tags:
 - shrinkage
 title: Principal Components Regression (PCR)
 understanding: 0
+uses:
+- principal-component-analysis
+- linear-regression
 ---
 
 ## Definition
@@ -38,4 +43,7 @@ A dimension-reduction regression method that regresses the response on a small n
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[ridge-regression]] — contrasts-with: PCR hard-truncates low-variance components; ridge shrinks them smoothly
+- [[linear-regression]] — uses: least-squares regression of y on the derived orthogonal components
+- [[principal-component-analysis]] — uses: regresses on the leading principal-component directions of the input matrix
 [To be populated during integration]

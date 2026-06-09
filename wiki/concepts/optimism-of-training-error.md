@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- model-selection-problem
 component_scores:
   application: null
   boundary: null
@@ -10,6 +12,8 @@ component_scores:
   prerequisites: null
   scope: null
   transfer: null
+contrasts-with:
+- overfitting-and-underfitting
 coverage: 1
 date_created: '2026-06-09'
 date_updated: '2026-06-09'
@@ -20,6 +24,8 @@ id: pkis:concept:optimism-of-training-error
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- information-criteria
 related_concepts: []
 sources:
 - hastie-esl-ch07
@@ -31,6 +37,8 @@ tags:
 - AIC
 title: Optimism of the Training Error
 understanding: 0
+uses:
+- effective-number-of-parameters
 ---
 
 ## Definition
@@ -40,4 +48,8 @@ The gap between a model's in-sample prediction error and its training error, cap
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[model-selection-problem]] — applies
+- [[overfitting-and-underfitting]] — contrasts-with
+- [[information-criteria]] — prerequisite-of
+- [[effective-number-of-parameters]] — uses
 [To be populated during integration]

@@ -19,12 +19,17 @@ id: pkis:technique:forward-stagewise-additive-modeling
 knowledge_type: technique
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- gradient-boosting
+- adaboost
 related_concepts: []
 sources:
 - hastie-esl-ch10
 tags: []
 title: Forward Stagewise Additive Modeling
 understanding: 0
+uses:
+- basis-function-models
 ---
 
 ## Definition
@@ -34,4 +39,7 @@ understanding: 0
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[adaboost]] — prerequisite-of
+- [[gradient-boosting]] — prerequisite-of
+- [[basis-function-models]] — uses
 [To be populated during integration]

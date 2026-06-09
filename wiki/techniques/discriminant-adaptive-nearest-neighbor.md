@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- curse-of-dimensionality
 component_scores:
   alternatives: null
   conditions: null
@@ -21,6 +23,8 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - hastie-esl-ch13
+specializes:
+- k-nearest-neighbors
 tags:
 - nearest-neighbors
 - adaptive-metric
@@ -37,4 +41,6 @@ A nearest-neighbor method (Hastie & Tibshirani, 1996a) that adapts the distance 
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[curse-of-dimensionality]] — applies: DANN adapts the metric specifically to mitigate high-dimensional neighborhood degradation.
+- [[k-nearest-neighbors]] — specializes: DANN is k-NN with a locally adapted discriminant metric.
 [To be populated during integration]

@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+analogous-to:
+- principal-curves-surfaces
 component_scores:
   alternatives: null
   conditions: null
@@ -21,6 +23,8 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - hastie-esl-ch14
+specializes:
+- k-means-clustering
 tags:
 - unsupervised-learning
 - dimension-reduction
@@ -28,6 +32,8 @@ tags:
 - manifold-learning
 title: Self-Organizing Map
 understanding: 0
+uses:
+- principal-component-analysis
 ---
 
 ## Definition
@@ -37,4 +43,7 @@ A clustering/visualization technique (Kohonen) that places K prototypes m_j ∈ 
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[principal-curves-surfaces]] — analogous-to: both constrain prototypes to a smooth manifold; the batch SOM is a discrete version of a principal surface
+- [[principal-component-analysis]] — uses: prototypes are initialized in the two-dimensional principal-component plane of the data
+- [[k-means-clustering]] — specializes: K-means with prototypes constrained to a fixed low-dimensional grid; reduces to online K-means as the neighborhood shrinks
 [To be populated during integration]

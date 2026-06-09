@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- supervised-learning
 component_scores:
   application: null
   boundary: null
@@ -36,4 +38,5 @@ Tools for summarizing the threshold-dependent performance of a binary classifier
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[supervised-learning]] — applies
 [To be populated during integration]

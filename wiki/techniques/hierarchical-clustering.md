@@ -9,6 +9,8 @@ component_scores:
   implementation: null
   operational_mechanism: null
   principled_mechanism: null
+contrasts-with:
+- k-means-clustering
 coverage: 1
 date_created: '2026-06-09'
 date_updated: '2026-06-09'
@@ -21,11 +23,15 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - hastie-esl-ch14
+specializes:
+- clustering
 tags:
 - clustering
 - unsupervised-learning
 title: Hierarchical Clustering
 understanding: 0
+uses:
+- cluster-dissimilarity-measures
 ---
 
 ## Definition
@@ -35,4 +41,7 @@ A family of clustering methods that produce a nested sequence of groupings rathe
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[k-means-clustering]] — contrasts-with: no preset K and no random initialization; yields nested clusters and a dendrogram
+- [[cluster-dissimilarity-measures]] — uses: intergroup linkage is computed from pairwise object dissimilarities
+- [[clustering]] — specializes: produces a nested sequence of partitions rather than a single flat clustering
 [To be populated during integration]

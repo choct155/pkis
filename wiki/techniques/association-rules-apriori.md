@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- density-estimation
 component_scores:
   alternatives: null
   conditions: null
@@ -9,6 +11,8 @@ component_scores:
   implementation: null
   operational_mechanism: null
   principled_mechanism: null
+contrasts-with:
+- rule-ensembles
 coverage: 1
 date_created: '2026-06-09'
 date_updated: '2026-06-09'
@@ -28,6 +32,8 @@ tags:
 - mode-finding
 title: Association Rules and the Apriori Algorithm
 understanding: 0
+uses:
+- decision-trees
 ---
 
 ## Definition
@@ -37,4 +43,7 @@ A data-mining technique for discovering frequently co-occurring joint values in 
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[rule-ensembles]] — contrasts-with: both build conjunctive rules; Apriori is exhaustive over binary data, PRIM/RuleFit are greedy and handle general variables
+- [[decision-trees]] — uses: CART terminal nodes give generalized item sets of the conjunctive-rule form (14.18)
+- [[density-estimation]] — applies: recasts mode-finding / high-density-region discovery as a tractable frequent-itemset search
 [To be populated during integration]

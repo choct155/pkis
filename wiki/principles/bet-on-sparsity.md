@@ -1,11 +1,15 @@
 ---
 aliases: []
 also_type: []
+applies:
+- lasso
 component_scores:
   implications: null
   justification: null
   statement: null
   violations: null
+contrasts-with:
+- ridge-regression
 coverage: 1
 date_created: '2026-06-09'
 date_updated: '2026-06-09'
@@ -36,4 +40,6 @@ A heuristic for choosing a regularizer in high-dimensional problems (Friedman, H
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[ridge-regression]] — contrasts-with: L1 (sparse-optimal) vs L2 (dense-optimal but defeated by curse of dimensionality)
+- [[lasso]] — applies: the principle justifies preferring the lasso's L1 penalty as a high-dimensional default
 [To be populated during integration]

@@ -2,6 +2,8 @@
 aliases:
 - CART
 also_type: []
+contrasts-with:
+- generalized-additive-model
 coverage: 2
 date_created: 2026-05-20
 date_updated: 2026-05-20
@@ -23,6 +25,8 @@ tags:
 - model-selection
 title: Decision Trees (CART)
 understanding: 0
+uses:
+- cross-validation
 ---
 
 ## Reading Path
@@ -32,4 +36,6 @@ understanding: 0
 Recursive binary partitioning of the feature space into axis-aligned regions, selecting splits to minimize impurity (classification) or squared error (regression), then pruning via cost-complexity to control overfitting.
 
 ## Connections
+- [[generalized-additive-model]] — contrasts-with
+- [[cross-validation]] — uses
 - [[supervised-learning]] — specializes

@@ -15,6 +15,10 @@ date_updated: '2026-06-09'
 domain:
 - statistical-learning
 - optimization
+extends:
+- lasso
+generalizes:
+- lasso
 id: pkis:technique:elastic-net
 knowledge_type: technique
 maturity: evolving
@@ -32,6 +36,9 @@ tags:
 - L2
 title: Elastic Net
 understanding: 0
+uses:
+- ridge-regression
+- regularization
 ---
 
 ## Definition
@@ -41,4 +48,8 @@ A regularized regression penalty (Zou and Hastie, 2005) that combines the L1 (la
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[lasso]] — generalizes
+- [[regularization]] — uses: a combined L1/L2 regularization penalty
+- [[ridge-regression]] — uses: the L2 component is the ridge penalty
+- [[lasso]] — extends: adds an L2 term to the L1 penalty to shrink correlated coefficients together
 [To be populated during integration]
