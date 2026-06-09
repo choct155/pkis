@@ -1164,6 +1164,7 @@
 - [[broad-money-monetarism]] — Congdon's updated monetarism: broad money (M3/M4) drives nominal spending; emphasis on credit and asset prices (macroeconomics, monetary-economics) (2026-05-20)
 
 ## Problems
+- [[data-association]] — Data Association (bayesian-stats, knowledge-representation) (2026-06-09)
 - [[job-shop-scheduling]] — Job-Shop Scheduling with Resource Constraints (optimization, symbolic-subsymbolic) (2026-06-09)
 - [[frame-problem]] — The Frame Problem and Successor-State Axioms (knowledge-representation, symbolic-subsymbolic) (2026-06-09)
 - [[satisfiability-sat]] — Boolean Satisfiability (SAT) (knowledge-representation, optimization, symbolic-subsymbolic) (2026-06-09)

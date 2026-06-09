@@ -9508,3 +9508,12 @@
 ## [2026-06-09] committed | concept
 - Committed: generative-program → concepts/generative-program.md
 - IRI: pkis:concept:generative-program
+
+## [2026-06-09] staged | node-stub (problem)
+- Staged: data-association (id: ee614394-a139-4337-9070-0abf9a0beee7)
+- Title: Data Association
+- needs_canonical_source: False
+
+## [2026-06-09] committed | problem
+- Committed: data-association → problems/data-association.md
+- IRI: pkis:problem:data-association
