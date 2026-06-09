@@ -10363,3 +10363,12 @@
 ## [2026-06-09] committed | framework
 - Committed: robotics-decision-making → frameworks/robotics-decision-making.md
 - IRI: pkis:framework:robotics-decision-making
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: robot-localization (id: 4e176664-a211-4ec4-9ca7-5641a5a0079c)
+- Title: Robot Localization
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: robot-localization → concepts/robot-localization.md
+- IRI: pkis:concept:robot-localization
