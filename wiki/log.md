@@ -6790,3 +6790,12 @@
 ## [2026-06-09] committed | concept
 - Committed: stable-no-confounding → concepts/stable-no-confounding.md
 - IRI: pkis:concept:stable-no-confounding
+
+## [2026-06-09] staged | node-stub (result)
+- Staged: sure-thing-principle (id: a82ed80a-195f-4c9b-9967-79b38646d680)
+- Title: Sure-Thing Principle
+- needs_canonical_source: False
+
+## [2026-06-09] committed | result
+- Committed: sure-thing-principle → results/sure-thing-principle.md
+- IRI: pkis:result:sure-thing-principle

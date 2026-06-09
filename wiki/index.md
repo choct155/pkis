@@ -858,6 +858,7 @@
 - [[constraint-propagation]] — Reducing a constraint satisfaction problem by iteratively eliminating inconsistent values from variable domains (knowledge-representation) (2026-05-20)
 
 ## Results
+- [[sure-thing-principle]] — Sure-Thing Principle (causal-analysis, bayesian-stats) (2026-06-09)
 - [[single-door-criterion]] — Single-Door Criterion for Direct Effects (causal-analysis, econometrics) (2026-06-09)
 - [[adjustment-formula-standardization]] — Adjustment Formula (Standardization) (causal-analysis, bayesian-stats) (2026-06-09)
 - [[truncated-factorization-g-formula]] — Truncated Factorization (g-Formula) (causal-analysis, bayesian-stats) (2026-06-09)
