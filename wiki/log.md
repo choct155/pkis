@@ -9625,3 +9625,12 @@
 ## [2026-06-09] committed | technique
 - Committed: pomdp-value-iteration → techniques/pomdp-value-iteration.md
 - IRI: pkis:technique:pomdp-value-iteration
+
+## [2026-06-09] staged | node-stub (result)
+- Staged: gittins-index (id: e5783401-312f-4e22-bf2b-8cb4b6339f61)
+- Title: Gittins Index
+- needs_canonical_source: False
+
+## [2026-06-09] committed | result
+- Committed: gittins-index → results/gittins-index.md
+- IRI: pkis:result:gittins-index

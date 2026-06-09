@@ -1005,6 +1005,7 @@
 - [[constraint-propagation]] — Reducing a constraint satisfaction problem by iteratively eliminating inconsistent values from variable domains (knowledge-representation) (2026-05-20)
 
 ## Results
+- [[gittins-index]] — Gittins Index (reinforcement-learning, optimization) (2026-06-09)
 - [[von-neumann-morgenstern-axioms]] — Von Neumann–Morgenstern Axioms (bayesian-stats) (2026-06-09)
 - [[godels-incompleteness-theorem]] — Goedel's Incompleteness Theorem (knowledge-representation, symbolic-subsymbolic) (2026-06-09)
 - [[herbrands-theorem]] — Herbrand's Theorem (knowledge-representation, symbolic-subsymbolic) (2026-06-09)
