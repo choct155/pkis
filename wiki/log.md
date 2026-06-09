@@ -5944,3 +5944,12 @@
 ## [2026-06-09] committed | technique
 - Committed: probit-model → techniques/probit-model.md
 - IRI: pkis:technique:probit-model
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: latent-variable-discrete-regression (id: 5347596f-a8db-4373-9601-b6c2d58953f9)
+- Title: Latent-Variable Formulation of Discrete Regression
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: latent-variable-discrete-regression → concepts/latent-variable-discrete-regression.md
+- IRI: pkis:concept:latent-variable-discrete-regression
