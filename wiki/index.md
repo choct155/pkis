@@ -529,6 +529,7 @@
 - [[market-vs-hierarchy]] — Coase/Williamson: transactions governed by price signals (markets) vs. managerial direction (firms) (corporate-finance) (2026-05-20)
 
 ## Techniques
+- [[radial-basis-function-network]] — Radial Basis Function Network (reinforcement-learning, statistical-learning) (2026-06-09)
 - [[tile-coding]] — Tile Coding (reinforcement-learning) (2026-06-09)
 - [[coarse-coding]] — Coarse Coding (reinforcement-learning) (2026-06-09)
 - [[state-aggregation]] — State Aggregation (reinforcement-learning) (2026-06-09)

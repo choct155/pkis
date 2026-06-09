@@ -4630,3 +4630,12 @@
 ## [2026-06-09] committed | technique
 - Committed: tile-coding → techniques/tile-coding.md
 - IRI: pkis:technique:tile-coding
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: radial-basis-function-network (id: e7caad79-e09e-4ae5-beee-be0daee8fe6b)
+- Title: Radial Basis Function Network
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: radial-basis-function-network → techniques/radial-basis-function-network.md
+- IRI: pkis:technique:radial-basis-function-network
