@@ -4792,3 +4792,12 @@
 ## [2026-06-09] committed | concept
 - Committed: learnability-of-rl-objectives → concepts/learnability-of-rl-objectives.md
 - IRI: pkis:concept:learnability-of-rl-objectives
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: eligibility-traces (id: 32912a29-ffa6-4e01-99ba-4de7135fc92f)
+- Title: Eligibility Traces
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: eligibility-traces → concepts/eligibility-traces.md
+- IRI: pkis:concept:eligibility-traces
