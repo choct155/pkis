@@ -8037,3 +8037,12 @@
 ## [2026-06-09] committed | result
 - Committed: multiplicity-entropy-concentration → results/multiplicity-entropy-concentration.md
 - IRI: pkis:result:multiplicity-entropy-concentration
+
+## [2026-06-09] staged | node-stub (result)
+- Staged: psi-test-bayesian-goodness-of-fit (id: 03cc40ba-3997-4a5a-9c67-a6aaa1c1beba)
+- Title: Psi-Test (Bayesian Goodness of Fit)
+- needs_canonical_source: False
+
+## [2026-06-09] committed | result
+- Committed: psi-test-bayesian-goodness-of-fit → results/psi-test-bayesian-goodness-of-fit.md
+- IRI: pkis:result:psi-test-bayesian-goodness-of-fit
