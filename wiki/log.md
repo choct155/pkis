@@ -3874,3 +3874,32 @@
 ## [2026-06-09] committed | result
 - Committed: representer-theorem → results/representer-theorem.md
 - IRI: pkis:result:representer-theorem
+
+## [2026-06-09] edges | add_connections
+- linear-algebra —prerequisite-of→ principal-component-analysis
+- analytic-geometry —prerequisite-of→ support-vector-machines
+- matrix-decompositions —prerequisite-of→ principal-component-analysis
+- vector-calculus —prerequisite-of→ continuous-optimization
+- continuous-optimization —prerequisite-of→ empirical-risk-minimization
+- probability-theory —prerequisite-of→ gaussian-mixture-models
+- probability-theory —prerequisite-of→ bayesian-linear-regression
+- empirical-risk-minimization —contrasts-with→ bias-variance-tradeoff
+- group-theory —prerequisite-of→ vector-space
+- vector-space —prerequisite-of→ linear-independence
+- linear-independence —prerequisite-of→ basis-and-rank
+- vector-space —prerequisite-of→ linear-mapping
+- basis-and-rank —prerequisite-of→ linear-mapping
+- vector-space —generalizes→ affine-space
+- linear-mapping —specializes→ affine-space
+- solving-linear-systems —uses→ linear-independence
+- solving-linear-systems —uses→ basis-and-rank
+- linear-mapping —uses→ solving-linear-systems
+- affine-space —instantiates→ solving-linear-systems
+- linear-algebra —uses→ vector-space
+- linear-algebra —uses→ linear-mapping
+- solving-linear-systems —applies→ linear-algebra
+- matrix-decompositions —extends→ linear-mapping
+- analytic-geometry —extends→ vector-space
+
+## [2026-06-09] edit | edit_node
+- pkis:framework:empirical-risk-minimization: fields=[] sections=['Generalization is the goal, not training fit']
