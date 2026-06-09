@@ -290,6 +290,7 @@
 - [[liu-machine-unlearning-llm-2024]] — Rethinking Machine Unlearning for LLMs: post-training knowledge editing survey (deep-learning, ai-safety) (2026-05-20)
 
 ## Concepts
+- [[noisy-or-model]] — Noisy-OR Model (bayesian-stats, knowledge-representation) (2026-06-09)
 - [[markov-blanket]] — Markov Blanket (bayesian-stats, knowledge-representation, causal-analysis) (2026-06-09)
 - [[full-joint-probability-distribution]] — Full Joint Probability Distribution (bayesian-stats, knowledge-representation) (2026-06-09)
 - [[angelic-semantics-hla]] — Angelic Semantics for High-Level Actions (knowledge-representation, symbolic-subsymbolic, optimization) (2026-06-09)

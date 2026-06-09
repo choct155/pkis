@@ -9427,3 +9427,12 @@
 ## [2026-06-09] committed | concept
 - Committed: markov-blanket → concepts/markov-blanket.md
 - IRI: pkis:concept:markov-blanket
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: noisy-or-model (id: c296b08b-3ac0-4e07-8971-09545aaa568c)
+- Title: Noisy-OR Model
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: noisy-or-model → concepts/noisy-or-model.md
+- IRI: pkis:concept:noisy-or-model
