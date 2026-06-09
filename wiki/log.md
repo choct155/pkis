@@ -5737,3 +5737,12 @@
 ## [2026-06-09] committed | concept
 - Committed: effective-sample-size → concepts/effective-sample-size.md
 - IRI: pkis:concept:effective-sample-size
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: burn-in-and-warmup (id: 473ba081-0b98-4f61-b041-62e78c665a1c)
+- Title: Burn-in and Warm-up (MCMC)
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: burn-in-and-warmup → concepts/burn-in-and-warmup.md
+- IRI: pkis:concept:burn-in-and-warmup

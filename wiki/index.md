@@ -290,6 +290,7 @@
 - [[liu-machine-unlearning-llm-2024]] — Rethinking Machine Unlearning for LLMs: post-training knowledge editing survey (deep-learning, ai-safety) (2026-05-20)
 
 ## Concepts
+- [[burn-in-and-warmup]] — Burn-in and Warm-up (MCMC) (bayesian-stats) (2026-06-09)
 - [[effective-sample-size]] — Effective Sample Size (MCMC) (bayesian-stats) (2026-06-09)
 - [[institutional-decision-analysis]] — Institutional Decision Analysis (bayesian-stats) (2026-06-09)
 - [[censoring-and-truncation]] — Censoring and Truncation (bayesian-stats, statistical-learning) (2026-06-09)
