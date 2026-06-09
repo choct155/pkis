@@ -11381,3 +11381,12 @@
 ## [2026-06-09] committed | technique
 - Committed: bumping → techniques/bumping.md
 - IRI: pkis:technique:bumping
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: generalized-additive-model (id: dfaedb3f-9557-40ff-b2de-6a25d6d84f8c)
+- Title: Generalized Additive Model (GAM)
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: generalized-additive-model → techniques/generalized-additive-model.md
+- IRI: pkis:technique:generalized-additive-model

@@ -745,6 +745,7 @@
 - [[market-vs-hierarchy]] — Coase/Williamson: transactions governed by price signals (markets) vs. managerial direction (firms) (corporate-finance) (2026-05-20)
 
 ## Techniques
+- [[generalized-additive-model]] — Generalized Additive Model (GAM) (statistical-learning) (2026-06-09)
 - [[bumping]] — Bumping (statistical-learning) (2026-06-09)
 - [[stacking]] — Stacked Generalization (Stacking) (statistical-learning) (2026-06-09)
 - [[bagging]] — Bagging (Bootstrap Aggregation) (statistical-learning) (2026-06-09)
