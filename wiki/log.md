@@ -4585,3 +4585,12 @@
 ## [2026-06-09] committed | technique
 - Committed: semi-gradient-td → techniques/semi-gradient-td.md
 - IRI: pkis:technique:semi-gradient-td
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: linear-function-approximation-rl (id: 800598f7-78d5-4415-973d-5f415018d389)
+- Title: Linear Function Approximation in RL
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: linear-function-approximation-rl → techniques/linear-function-approximation-rl.md
+- IRI: pkis:technique:linear-function-approximation-rl
