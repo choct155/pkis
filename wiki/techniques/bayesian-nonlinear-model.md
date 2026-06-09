@@ -9,12 +9,16 @@ component_scores:
   implementation: null
   operational_mechanism: null
   principled_mechanism: null
+contrasts-with:
+- gaussian-process-regression
 coverage: 1
 date_created: '2026-06-09'
 date_updated: '2026-06-09'
 domain:
 - bayesian-stats
 - statistical-learning
+generalizes:
+- generalized-linear-models
 id: pkis:technique:bayesian-nonlinear-model
 knowledge_type: technique
 maturity: evolving
@@ -29,6 +33,10 @@ tags:
 - reparameterization
 title: Bayesian Nonlinear Model
 understanding: 0
+uses:
+- metropolis-algorithm
+- gibbs-sampler
+- model-checking
 ---
 
 ## Definition
@@ -38,4 +46,9 @@ A Bayesian model in which the expected value of the response is a nonlinear func
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[gaussian-process-regression]] — contrasts-with: parametric nonlinear (fixed finite parameter vector) vs nonparametric Bayesian nonlinear regression
+- [[model-checking]] — uses: residual plots, posterior predictive checks, and model-specific graphics are the main fit diagnostics
+- [[gibbs-sampler]] — uses: Ch.19 examples fit via Gibbs with Metropolis steps for the nonlinear parameter blocks
+- [[metropolis-algorithm]] — uses: nonlinear posteriors lack closed-form conditionals; sampled via Metropolis (often embedded in Gibbs)
+- [[generalized-linear-models]] — generalizes: drops the requirement that parameters enter only through a linear predictor X*beta
 [To be populated during integration]

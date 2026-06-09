@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- mixture-models
 component_scores:
   alternatives: null
   conditions: null
@@ -9,6 +11,8 @@ component_scores:
   implementation: null
   operational_mechanism: null
   principled_mechanism: null
+contrasts-with:
+- simulated-annealing
 coverage: 1
 date_created: '2026-06-09'
 date_updated: '2026-06-09'
@@ -22,6 +26,8 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - gelman-bda3-ch12
+specializes:
+- mcmc
 tags:
 - mcmc
 - multimodal
@@ -32,6 +38,8 @@ tags:
 - auxiliary-variable
 title: Simulated Tempering
 understanding: 0
+uses:
+- metropolis-algorithm
 ---
 
 ## Definition
@@ -50,4 +58,8 @@ Tempering shares the temperature device with simulated annealing but has a diffe
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[mixture-models]] — applies: tempering targets multimodal posteriors such as those arising in mixture models
+- [[metropolis-algorithm]] — uses: moves between temperature rungs (or swaps between parallel chains) are accepted by a Metropolis rule
+- [[simulated-annealing]] — contrasts-with: both use a temperature device but tempering samples the full multimodal distribution whereas annealing cools toward a single optimum
+- [[mcmc]] — specializes: simulated tempering is an MCMC scheme for multimodal targets
 [To be populated during integration]

@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+analogous-to:
+- loo-cv
 component_scores:
   application: null
   boundary: null
@@ -10,6 +12,8 @@ component_scores:
   prerequisites: null
   scope: null
   transfer: null
+contrasts-with:
+- deviance-information-criterion
 coverage: 1
 date_created: '2026-06-09'
 date_updated: '2026-06-09'
@@ -23,6 +27,8 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - gelman-bda3-ch07
+specializes:
+- information-criteria
 tags:
 - information-criteria
 - model-comparison
@@ -32,6 +38,9 @@ tags:
 - bias-correction
 title: Widely Applicable Information Criterion (WAIC)
 understanding: 0
+uses:
+- expected-log-predictive-density
+- effective-number-of-parameters
 ---
 
 ## Definition
@@ -43,4 +52,9 @@ Unlike AIC (which plugs in the maximum likelihood estimate) and DIC (which plugs
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[loo-cv]] — analogous-to: WAIC is asymptotically equal to Bayesian LOO-CV
+- [[deviance-information-criterion]] — contrasts-with: WAIC averages over posterior; DIC plugs in posterior mean
+- [[effective-number-of-parameters]] — uses: p_WAIC is the bias correction
+- [[expected-log-predictive-density]] — uses: WAIC estimates elppd
+- [[information-criteria]] — specializes: WAIC is a specific information criterion
 [To be populated during integration]

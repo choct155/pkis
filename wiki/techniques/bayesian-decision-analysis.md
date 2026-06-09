@@ -21,6 +21,8 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - gelman-bda3-ch09
+specializes:
+- decision-theory-foundations
 tags:
 - decision-theory
 - expected-utility
@@ -29,6 +31,10 @@ tags:
 - applied-bayes
 title: Bayesian Decision Analysis
 understanding: 0
+uses:
+- expected-utility-theory
+- bayesian-inference
+- expected-loss
 ---
 
 ## Definition
@@ -44,4 +50,8 @@ This is the bridge from inference to action: it makes posterior *uncertainty*, n
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[expected-loss]] — uses
+- [[decision-theory-foundations]] — specializes
+- [[bayesian-inference]] — uses
+- [[expected-utility-theory]] — uses
 [To be populated during integration]

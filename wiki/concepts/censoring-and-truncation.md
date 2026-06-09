@@ -17,6 +17,8 @@ domain:
 - bayesian-stats
 - statistical-learning
 id: pkis:concept:censoring-and-truncation
+instantiates:
+- missing-data-mechanisms
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
@@ -30,6 +32,8 @@ tags:
 - survival-analysis
 title: Censoring and Truncation
 understanding: 0
+uses:
+- data-collection-mechanism
 ---
 
 ## Definition
@@ -39,4 +43,6 @@ Two related partial-observation patterns, distinguished by whether the *number* 
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[data-collection-mechanism]] — uses: derived formally via the inclusion-vector likelihood
+- [[missing-data-mechanisms]] — instantiates: censoring/truncation are canonical nonignorable (MNAR) mechanisms
 [To be populated during integration]

@@ -21,6 +21,8 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - gelman-bda3-ch16
+specializes:
+- poisson-regression
 tags:
 - loglinear-model
 - contingency-table
@@ -30,6 +32,9 @@ tags:
 - imputation
 title: Loglinear Model
 understanding: 0
+uses:
+- conditional-independence
+- conjugate-prior
 ---
 
 ## Definition
@@ -50,4 +55,7 @@ Loglinear models are the standard framework for multivariate discrete-data analy
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[conjugate-prior]] — uses
+- [[conditional-independence]] — uses
+- [[poisson-regression]] — specializes
 [To be populated during integration]

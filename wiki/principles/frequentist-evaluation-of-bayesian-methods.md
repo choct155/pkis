@@ -1,11 +1,15 @@
 ---
 aliases: []
 also_type: []
+applies:
+- confidence-interval
 component_scores:
   implications: null
   justification: null
   statement: null
   violations: null
+contrasts-with:
+- hypothesis-testing
 coverage: 1
 date_created: '2026-06-09'
 date_updated: '2026-06-09'
@@ -27,6 +31,9 @@ tags:
 - repeated-sampling
 title: Frequentist Evaluation of Bayesian Methods
 understanding: 0
+uses:
+- bernstein-von-mises-theorem
+- sampling-theory
 ---
 
 ## Definition
@@ -36,4 +43,8 @@ The practice of judging a Bayesian procedure by its operating characteristics un
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[hypothesis-testing]] — contrasts-with: Frequentist evaluation is endorsed for coverage/consistency but Gelman rejects point-null hypothesis testing as a comparison criterion.
+- [[sampling-theory]] — uses: Operating characteristics (consistency, efficiency, coverage) are sampling-theory constructs applied to Bayesian estimators.
+- [[bernstein-von-mises-theorem]] — uses: Large-sample correspondence (posterior intervals attaining nominal frequentist coverage) follows from posterior asymptotic normality.
+- [[confidence-interval]] — applies: Coverage of Bayesian posterior intervals is assessed against the frequentist confidence-interval criterion under repeated sampling.
 [To be populated during integration]

@@ -28,6 +28,8 @@ tags:
 - multilevel-models
 title: Group-Level Predictors
 understanding: 0
+uses:
+- multilevel-regression
 ---
 
 ## Definition
@@ -37,4 +39,5 @@ Predictors measured at a higher level of aggregation than the individual unit of
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[multilevel-regression]] — uses: enter via a regression at the population-distribution level
 [To be populated during integration]

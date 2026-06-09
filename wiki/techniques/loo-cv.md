@@ -22,6 +22,8 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - gelman-bda3-ch07
+specializes:
+- cross-validation
 tags:
 - cross-validation
 - predictive-accuracy
@@ -31,6 +33,9 @@ tags:
 - model-comparison
 title: Bayesian Leave-One-Out Cross-Validation (LOO-CV)
 understanding: 0
+uses:
+- expected-log-predictive-density
+- importance-sampling
 ---
 
 ## Definition
@@ -42,4 +47,7 @@ Naive LOO-CV requires refitting the model n times, which is prohibitive; in prac
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[importance-sampling]] — uses: PSIS-LOO approximates leave-one-out posteriors via Pareto-smoothed importance sampling
+- [[expected-log-predictive-density]] — uses: LOO-CV estimates out-of-sample elppd
+- [[cross-validation]] — specializes: LOO-CV is the n-fold special case
 [To be populated during integration]

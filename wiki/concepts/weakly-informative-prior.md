@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- regularization
 component_scores:
   application: null
   boundary: null
@@ -28,6 +30,8 @@ tags:
 - applied-bayes
 title: Weakly Informative Prior
 understanding: 0
+uses:
+- conjugate-prior
 ---
 
 ## Definition
@@ -50,4 +54,6 @@ Weakly informative priors are the default recommendation in modern applied Bayes
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[conjugate-prior]] — uses: Weakly informative priors are often chosen within a conjugate family (e.g. Beta(20,20)) for tractability.
+- [[regularization]] — applies: A weakly informative prior regularizes the posterior to stay within reasonable bounds.
 [To be populated during integration]

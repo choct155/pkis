@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- gelman-bda3-ch06
 component_scores:
   alternatives: null
   conditions: null
@@ -32,6 +34,9 @@ tags:
 - bayesian-stats
 title: Sensitivity Analysis (Bayesian)
 understanding: 0
+uses:
+- robust-inference
+- importance-sampling
 ---
 
 ## Definition
@@ -41,4 +46,7 @@ Assessment of how much posterior inferences change when other reasonable probabi
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[gelman-bda3-ch06]] — applies: extends posterior-predictive model checking to assess sensitivity to assumptions
+- [[importance-sampling]] — uses: importance weighting/resampling reuse original posterior draws to evaluate alternatives
+- [[robust-inference]] — uses: robust model families provide the alternatives over which sensitivity is assessed
 [To be populated during integration]

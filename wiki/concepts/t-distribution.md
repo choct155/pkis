@@ -16,7 +16,11 @@ date_updated: '2026-06-09'
 domain:
 - bayesian-stats
 - statistical-learning
+generalizes:
+- gaussian-distribution
 id: pkis:concept:t-distribution
+instantiates:
+- mixture-models
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
@@ -30,6 +34,8 @@ tags:
 - cauchy
 title: Student t Distribution
 understanding: 0
+uses:
+- em-algorithm
 ---
 
 ## Definition
@@ -39,4 +45,7 @@ A symmetric, longer-tailed family $t_\nu(\mu,\sigma^2)$ parameterized by a cente
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[em-algorithm]] — uses: EM via the normal scale-mixture treats latent variances as missing data
+- [[mixture-models]] — instantiates: t is a scale mixture of normals with Inv-chi^2 variances
+- [[gaussian-distribution]] — generalizes: normal is the nu->infinity limit of the t
 [To be populated during integration]

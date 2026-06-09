@@ -23,6 +23,8 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - gelman-bda3-ch03
+specializes:
+- gaussian-distribution
 tags:
 - bayesian-inference
 - conjugate-prior
@@ -30,6 +32,8 @@ tags:
 - linear-models
 title: Multivariate Normal Model (Bayesian)
 understanding: 0
+uses:
+- conjugate-prior
 ---
 
 ## Definition
@@ -49,4 +53,6 @@ The conjugate prior for (mu, Sigma) is the normal-inverse-Wishart: Sigma ~ Inv-W
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[conjugate-prior]] — uses
+- [[gaussian-distribution]] — specializes
 [To be populated during integration]

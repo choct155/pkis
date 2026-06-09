@@ -1,18 +1,33 @@
 ---
-id: "pkis:concept:information-criteria"
 aliases: []
-title: "Information Criteria"
-knowledge_type: concept
 also_type: []
-domain: [statistical-learning, bayesian-stats]
-tags: [model-selection, aic, bic, sic, penalized-likelihood, information-theory]
-related_concepts: ["[[model-selection-problem]]", "[[bias-variance-tradeoff]]", "[[regularization]]", "[[model-averaging]]"]
-sources: ["[[castle-model-selection-algorithms]]"]
+contrasts-with:
+- marginal-likelihood
+coverage: 1
 date_created: 2026-05-20
 date_updated: 2026-05-20
-coverage: 1
-understanding: 0
+domain:
+- statistical-learning
+- bayesian-stats
+id: pkis:concept:information-criteria
+knowledge_type: concept
 maturity: settled
+related_concepts:
+- '[[model-selection-problem]]'
+- '[[bias-variance-tradeoff]]'
+- '[[regularization]]'
+- '[[model-averaging]]'
+sources:
+- '[[castle-model-selection-algorithms]]'
+tags:
+- model-selection
+- aic
+- bic
+- sic
+- penalized-likelihood
+- information-theory
+title: Information Criteria
+understanding: 0
 ---
 
 Penalized log-likelihood scores for comparing statistical models that trade off goodness-of-fit (via maximized log-likelihood) against complexity (via a penalty on the number of parameters), enabling automatic model selection without held-out data.
@@ -21,3 +36,6 @@ The two canonical forms are: AIC = −2ℓ + 2k (asymptotically efficient; selec
 
 ## Reading Path
 - [[castle-model-selection-algorithms]] (unread) — comprehensive Monte Carlo comparison of 21 MSAs; AIC vs SIC performance as a function of signal-to-noise and proportion of relevant variables; penalty function / gauge framework
+
+## Connections
+- [[marginal-likelihood]] — contrasts-with: predictive ICs target out-of-sample fit; BIC/Bayes factors target the marginal likelihood

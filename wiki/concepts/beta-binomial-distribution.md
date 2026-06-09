@@ -17,6 +17,9 @@ domain:
 - bayesian-stats
 - statistical-learning
 id: pkis:concept:beta-binomial-distribution
+instantiates:
+- overdispersion
+- mixture-models
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
@@ -30,6 +33,8 @@ tags:
 - binomial
 title: Beta-Binomial Distribution
 understanding: 0
+uses:
+- beta-distribution
 ---
 
 ## Definition
@@ -39,4 +44,7 @@ A robust, overdispersed alternative to the binomial: a **beta mixture of binomia
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[beta-distribution]] — uses: success probabilities follow a Beta(alpha,beta)
+- [[mixture-models]] — instantiates: beta mixture of binomials
+- [[overdispersion]] — instantiates: canonical overdispersed alternative to the binomial
 [To be populated during integration]

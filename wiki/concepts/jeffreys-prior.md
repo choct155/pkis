@@ -22,6 +22,8 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - gelman-bda3-ch02
+specializes:
+- noninformative-prior
 tags:
 - prior
 - objective-bayes
@@ -29,6 +31,8 @@ tags:
 - invariance
 title: Jeffreys' Prior
 understanding: 0
+uses:
+- beta-distribution
 ---
 
 ## Definition
@@ -54,4 +58,6 @@ Jeffreys' prior is the most principled single-parameter answer to the "what is t
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[beta-distribution]] — uses: For the binomial parameter, Jeffreys' prior is the Beta(1/2, 1/2) density.
+- [[noninformative-prior]] — specializes: Jeffreys' prior is the parameterization-invariant construction of a noninformative prior.
 [To be populated during integration]

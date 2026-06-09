@@ -22,6 +22,8 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - gelman-bda3-ch06
+specializes:
+- posterior-predictive-check
 tags:
 - posterior-predictive
 - graphical-checking
@@ -32,6 +34,8 @@ tags:
 - bayesian-stats
 title: Graphical Posterior Predictive Checks
 understanding: 0
+uses:
+- test-quantity-discrepancy
 ---
 
 ## Definition
@@ -41,4 +45,6 @@ Model checking by displaying observed data alongside simulated data from the fit
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[test-quantity-discrepancy]] — uses: the display (e.g. binned residuals) serves as T(y)
+- [[posterior-predictive-check]] — specializes: uses graphical displays as the test quantity
 [To be populated during integration]

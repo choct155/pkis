@@ -1,6 +1,10 @@
 ---
 aliases: []
 also_type: []
+analogous-to:
+- weak-law-of-large-numbers
+applies:
+- laplace-approximation
 component_scores:
   conditions: null
   implications: null
@@ -26,6 +30,8 @@ tags:
 - frequentist-bayesian-correspondence
 title: Bernstein-von Mises Theorem (Posterior Asymptotic Normality)
 understanding: 0
+uses:
+- fisher-information
 ---
 
 ## Definition
@@ -35,4 +41,7 @@ Under regularity conditions (the likelihood is continuous in omega and omega_0 l
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[weak-law-of-large-numbers]] — analogous-to: Both are large-n concentration results; consistency concentrates the posterior just as the WLLN concentrates the sample mean.
+- [[laplace-approximation]] — applies: The theorem is the formal justification of the mode-based normal (Laplace) approximation to the posterior.
+- [[fisher-information]] — uses: Asymptotic posterior covariance is (n*J(omega_0))^{-1}, set by the Fisher information.
 [To be populated during integration]

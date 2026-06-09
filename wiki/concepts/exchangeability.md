@@ -15,10 +15,15 @@ date_created: '2026-06-09'
 date_updated: '2026-06-09'
 domain:
 - bayesian-stats
+generalizes:
+- conditional-independence
 id: pkis:concept:exchangeability
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- bayesian-inference
+- hierarchical-bayesian-models
 related_concepts: []
 sources:
 - gelman-bda3-ch01
@@ -31,6 +36,9 @@ tags:
 - prior
 title: Exchangeability
 understanding: 0
+uses:
+- probability-theory
+- conditional-independence
 ---
 
 ## Definition
@@ -52,4 +60,9 @@ Exchangeability is what makes a parameter, a prior, and a likelihood meaningful 
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[conditional-independence]] — uses: The mixture-of-i.i.d. representation makes the exchangeable parameters conditionally independent given the hyperparameters.
+- [[probability-theory]] — uses: Defined as permutation-invariance of a joint probability density.
+- [[conditional-independence]] — generalizes: Exchangeable data are typically conditionally iid given theta; exchangeability is a symmetric weakening of independence.
+- [[hierarchical-bayesian-models]] — prerequisite-of: Hierarchical models assume exchangeability at each level of units, enabling partial pooling.
+- [[bayesian-inference]] — prerequisite-of: Exchangeability of units justifies the parameter-prior-likelihood structure (de Finetti) that Bayesian inference operates on.
 [To be populated during integration]

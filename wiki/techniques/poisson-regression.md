@@ -21,6 +21,8 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - gelman-bda3-ch16
+specializes:
+- generalized-linear-models
 tags:
 - poisson-regression
 - glm
@@ -30,6 +32,9 @@ tags:
 - loglinear
 title: Poisson Regression
 understanding: 0
+uses:
+- link-function
+- poisson-process
 ---
 
 ## Definition
@@ -48,4 +53,7 @@ Poisson regression is the default tool for events-per-exposure data — disease 
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[poisson-process]] — uses
+- [[link-function]] — uses
+- [[generalized-linear-models]] — specializes
 [To be populated during integration]

@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- mcmc
 component_scores:
   application: null
   boundary: null
@@ -32,6 +34,8 @@ tags:
 - gelman
 title: Effective Sample Size (MCMC)
 understanding: 0
+uses:
+- monte-carlo-estimator
 ---
 
 ## Definition
@@ -59,4 +63,6 @@ All computed on saved (post-warm-up) iterations only. n_eff combines with R̂ as
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[monte-carlo-estimator]] — uses: n_eff is defined via the variance-efficiency of the Monte Carlo average as an estimate of E(ψ|y).
+- [[mcmc]] — applies: n_eff measures the independent-draw worth of correlated MCMC output.
 [To be populated during integration]

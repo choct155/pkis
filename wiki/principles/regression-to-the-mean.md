@@ -6,6 +6,8 @@ component_scores:
   justification: null
   statement: null
   violations: null
+contrasts-with:
+- unbiasedness
 coverage: 1
 date_created: '2026-06-09'
 date_updated: '2026-06-09'
@@ -13,6 +15,8 @@ domain:
 - bayesian-stats
 - statistical-learning
 id: pkis:principle:regression-to-the-mean
+instantiates:
+- bayesian-inference
 knowledge_type: principle
 maturity: evolving
 needs_canonical_source: false
@@ -36,4 +40,6 @@ When two variables are imperfectly correlated, the conditional expectation of on
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[bayesian-inference]] — instantiates: Regression to the mean is Bayesian updating of a prediction toward the population mean; Bayesian analysis generalizes it.
+- [[unbiasedness]] — contrasts-with: The regression-prediction example shows the posterior mean is biased while the unbiased estimate over-extrapolates absurdly.
 [To be populated during integration]

@@ -31,6 +31,9 @@ tags:
 - survey-sampling
 title: Monotone Missing-Data Pattern
 understanding: 0
+uses:
+- data-augmentation
+- sufficient-statistics
 ---
 
 ## Definition
@@ -40,4 +43,6 @@ A structure of missingness in which the variables can be ordered into blocks y_1
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[sufficient-statistics]] — uses: The monotone factorization of the likelihood into block-conditional pieces lets EM operate on per-pattern expected sufficient statistics rather than per-observation.
+- [[data-augmentation]] — uses: Monotone data augmentation imputes only the values needed to complete the monotone staircase, then draws directly from the factorized posterior.
 [To be populated during integration]

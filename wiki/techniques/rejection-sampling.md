@@ -25,6 +25,8 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - mackay-itila-ch29
+specializes:
+- numerical-vs-simulation-integration
 tags:
 - monte-carlo
 - sampling
@@ -53,6 +55,7 @@ Rejection sampling is the gold standard in one dimension — exact and i.i.d. �
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[numerical-vs-simulation-integration]] — specializes: Rejection sampling is a simulation (stochastic) integration method.
 - [[mcmc]] — contrasts-with: Rejection produces independent samples but fails exponentially in N; MCMC trades independence for tractable high-dimensional mixing.
 - [[importance-sampling]] — contrasts-with: Rejection sampling yields exact i.i.d. samples; importance sampling yields weighted, biased-at-finite-R estimates.
 [To be populated during integration]

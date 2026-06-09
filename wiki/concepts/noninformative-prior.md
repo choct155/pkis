@@ -10,6 +10,8 @@ component_scores:
   prerequisites: null
   scope: null
   transfer: null
+contrasts-with:
+- weakly-informative-prior
 coverage: 1
 date_created: '2026-06-09'
 date_updated: '2026-06-09'
@@ -19,10 +21,15 @@ id: pkis:concept:noninformative-prior
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- bayesian-inference
+- bayesian-linear-regression
 related_concepts: []
 sources:
 - gelman-bda3-ch02
 - gelman-bda3-ch14
+specializes:
+- conjugate-prior
 tags:
 - prior
 - objective-bayes
@@ -52,4 +59,8 @@ Noninformative priors are the workhorse when one is unwilling to quantify real p
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[bayesian-linear-regression]] — prerequisite-of
+- [[bayesian-inference]] — prerequisite-of: Constructing a prior is a required step in Bayesian inference when no population basis exists.
+- [[weakly-informative-prior]] — contrasts-with: Noninformative priors model complete ignorance (often improper); weakly informative priors are proper and add minimal regularizing information.
+- [[conjugate-prior]] — specializes: Standard noninformative priors arise as improper zero-pseudo-count limits of conjugate priors.
 [To be populated during integration]

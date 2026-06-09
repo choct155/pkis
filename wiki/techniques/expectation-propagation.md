@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- intractable-posterior
 component_scores:
   alternatives: null
   conditions: null
@@ -9,6 +11,9 @@ component_scores:
   implementation: null
   operational_mechanism: null
   principled_mechanism: null
+contrasts-with:
+- variational-inference
+- laplace-approximation
 coverage: 1
 date_created: '2026-06-09'
 date_updated: '2026-06-09'
@@ -30,6 +35,9 @@ tags:
 - message-passing
 title: Expectation Propagation
 understanding: 0
+uses:
+- exponential-family
+- kl-divergence
 ---
 
 ## Definition
@@ -43,4 +51,9 @@ In the BDA3 bioassay logistic-regression example, EP shifts the normal approxima
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[laplace-approximation]] — contrasts-with: EP improves on the plain mode-centered curvature (Laplace) normal approximation by shifting toward posterior mass/skew, as in the BDA3 bioassay example.
+- [[intractable-posterior]] — applies: EP is a deterministic approximate-inference method for intractable posteriors, illustrated on logistic regression in BDA3.
+- [[kl-divergence]] — uses: EP's moment-matching projection minimizes a forward KL at each step; fractional/power EP generalizes to alpha-divergences (including KL and Hellinger).
+- [[exponential-family]] — uses: EP constrains the approximating family g to the exponential family (typically multivariate normal) and updates it by matching expected sufficient statistics.
+- [[variational-inference]] — contrasts-with: EP minimizes local forward-KL via moment matching and fits the joint; VB minimizes global reverse KL(g||p) and (in mean-field) fits only marginals, underestimating variance.
 [To be populated during integration]

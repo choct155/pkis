@@ -10,6 +10,8 @@ component_scores:
   prerequisites: null
   scope: null
   transfer: null
+contrasts-with:
+- gaussian-distribution
 coverage: 1
 date_created: '2026-06-09'
 date_updated: '2026-06-09'
@@ -30,6 +32,9 @@ tags:
 - model-expansion
 title: Robust Inference
 understanding: 0
+uses:
+- t-distribution
+- mixture-models
 ---
 
 ## Definition
@@ -39,4 +44,7 @@ Inference whose conclusions are not unduly distorted by aberrant observations or
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[gaussian-distribution]] — contrasts-with: normal-based models are the nonrobust baseline robust inference replaces
+- [[mixture-models]] — uses: heavy-tailed/overdispersed robust models are continuous or finite mixtures
+- [[t-distribution]] — uses: the t is the primary heavy-tailed family used to achieve robustness
 [To be populated during integration]

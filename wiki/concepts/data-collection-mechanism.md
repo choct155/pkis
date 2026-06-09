@@ -10,6 +10,8 @@ component_scores:
   prerequisites: null
   scope: null
   transfer: null
+contrasts-with:
+- likelihood-principle
 coverage: 1
 date_created: '2026-06-09'
 date_updated: '2026-06-09'
@@ -32,6 +34,8 @@ tags:
 - missing-data
 title: Data-Collection Mechanism (Inclusion Model)
 understanding: 0
+uses:
+- potential-outcomes-framework
 ---
 
 ## Definition
@@ -41,4 +45,6 @@ The unifying Bayesian device (Rubin 1976; Gelman BDA3 Ch. 8) for handling sample
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[potential-outcomes-framework]] — uses: unobserved potential outcomes under unapplied treatments are intentional missing data
+- [[likelihood-principle]] — contrasts-with: chapter shows the design DOES affect inference, refining naive likelihood-principle intuition
 [To be populated during integration]

@@ -15,6 +15,8 @@ date_updated: '2026-06-09'
 domain:
 - causal-analysis
 - bayesian-stats
+generalizes:
+- instrumental-variables
 id: pkis:technique:principal-stratification
 knowledge_type: technique
 maturity: evolving
@@ -30,6 +32,10 @@ tags:
 - instrumental-variables
 title: Principal Stratification
 understanding: 0
+uses:
+- potential-outcomes-framework
+- local-average-treatment-effect
+- missing-data-mechanisms
 ---
 
 ## Definition
@@ -39,4 +45,8 @@ A method (Frangakis & Rubin 2002) for causal inference that must adjust for an i
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[missing-data-mechanisms]] — uses: Bayesian version treats unknown compliance status as missing data
+- [[local-average-treatment-effect]] — uses: CACE is the complier (local) average treatment effect
+- [[instrumental-variables]] — generalizes: IV estimate of CACE is the special case under the exclusion restriction
+- [[potential-outcomes-framework]] — uses: stratifies on joint potential values (C(1),C(0)) of an intermediate outcome
 [To be populated during integration]

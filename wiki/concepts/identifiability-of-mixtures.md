@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- mixture-models
 component_scores:
   application: null
   boundary: null
@@ -39,4 +41,5 @@ The conditions under which the parameters of a finite (or continuous) mixture mo
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[mixture-models]] — applies
 [To be populated during integration]

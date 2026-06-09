@@ -22,6 +22,8 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - gelman-bda3-ch04
+specializes:
+- limiting-distributions
 tags:
 - asymptotics
 - posterior-approximation
@@ -30,6 +32,11 @@ tags:
 - stable-estimation
 title: Large-Sample Bayesian Inference
 understanding: 0
+uses:
+- bernstein-von-mises-theorem
+- laplace-approximation
+- fisher-information
+- sufficient-statistics
 ---
 
 ## Definition
@@ -39,4 +46,9 @@ The body of asymptotic theory describing how a posterior distribution behaves as
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[sufficient-statistics]] — uses: Asymptotically the posterior mode and observed-information curvature are sufficient statistics for the parameter.
+- [[limiting-distributions]] — specializes: Posterior asymptotic normality is a specific limiting-distribution result for the parameter posterior as n grows.
+- [[fisher-information]] — uses: Asymptotic curvature of the log-posterior approaches n times the Fisher information.
+- [[laplace-approximation]] — uses: The normal approximation about the posterior mode is the operational tool of large-sample inference.
+- [[bernstein-von-mises-theorem]] — uses: Posterior asymptotic normality and consistency are the central results of the large-sample theory.
 [To be populated during integration]

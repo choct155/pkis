@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- value-of-information
 component_scores:
   alternatives: null
   conditions: null
@@ -29,6 +31,9 @@ tags:
 - value-of-information
 title: Decision Tree Analysis
 understanding: 0
+uses:
+- bayesian-inference
+- bayesian-decision-analysis
 ---
 
 ## Definition
@@ -44,4 +49,7 @@ Decision trees make the *value of testing before acting* computable. Gelman's br
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[value-of-information]] — applies
+- [[bayesian-decision-analysis]] — uses
+- [[bayesian-inference]] — uses
 [To be populated during integration]

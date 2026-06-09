@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+analogous-to:
+- marginal-likelihood
 component_scores:
   application: null
   boundary: null
@@ -10,6 +12,8 @@ component_scores:
   prerequisites: null
   scope: null
   transfer: null
+contrasts-with:
+- posterior-predictive-distribution
 coverage: 1
 date_created: '2026-06-09'
 date_updated: '2026-06-09'
@@ -22,6 +26,8 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - gelman-bda3-ch01
+specializes:
+- marginalization
 tags:
 - bayesian
 - prediction
@@ -49,4 +55,7 @@ The prior predictive turns an abstract prior on parameters into concrete, checka
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[posterior-predictive-distribution]] — contrasts-with: Prior predictive is before-data, posterior predictive is after-data; together they bracket the inference workflow.
+- [[marginal-likelihood]] — analogous-to: As a function of the data the prior predictive is exactly the marginal likelihood / model evidence.
+- [[marginalization]] — specializes: It is the marginal distribution of y, integrating the likelihood over the prior.
 [To be populated during integration]

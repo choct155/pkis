@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- logistic-regression
 component_scores:
   application: null
   boundary: null
@@ -47,4 +49,5 @@ Separation is "surprisingly common" in applied logistic regression, especially w
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[logistic-regression]] — applies
 [To be populated during integration]

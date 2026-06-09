@@ -1,11 +1,18 @@
 ---
 aliases: []
 also_type: []
+analogous-to:
+- regularization
+- ridge-regression
+applies:
+- hierarchical-bayesian-models
 component_scores:
   implications: null
   justification: null
   statement: null
   violations: null
+contrasts-with:
+- fixed-effects-estimator
 coverage: 1
 date_created: '2026-06-09'
 date_updated: '2026-06-09'
@@ -27,6 +34,8 @@ tags:
 - james-stein
 title: Partial Pooling and Shrinkage
 understanding: 0
+uses:
+- exchangeability
 ---
 
 ## Definition
@@ -54,4 +63,9 @@ Groups with low internal precision (large σ_j) shrink most; small τ (high homo
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[ridge-regression]] — analogous-to: an exchangeable normal prior on coefficients is equivalent to ridge / Tikhonov shrinkage
+- [[fixed-effects-estimator]] — contrasts-with: partial pooling (random effects) vs no-pooling fixed effects
+- [[regularization]] — analogous-to: Shrinkage toward the population mean is the Bayesian analogue of regularization / penalized estimation.
+- [[exchangeability]] — uses: Borrowing strength across groups is justified precisely by treating the group parameters as exchangeable.
+- [[hierarchical-bayesian-models]] — applies: Partial pooling/shrinkage is the estimation behavior produced by hierarchical models.
 [To be populated during integration]

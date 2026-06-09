@@ -9,13 +9,20 @@ component_scores:
   implementation: null
   operational_mechanism: null
   principled_mechanism: null
+contrasts-with:
+- spike-and-slab
+- ridge-regression
 coverage: 1
 date_created: '2026-06-09'
 date_updated: '2026-06-09'
 domain:
 - bayesian-stats
 - statistical-learning
+generalizes:
+- lasso
 id: pkis:technique:shrinkage-priors
+instantiates:
+- regularization
 knowledge_type: technique
 maturity: evolving
 needs_canonical_source: false
@@ -54,4 +61,8 @@ Preferred over spike-and-slab when H (the number of candidate predictors/basis f
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[regularization]] — instantiates: Bayesian-prior realization of regularization/sparsity
+- [[ridge-regression]] — contrasts-with: Gaussian prior gives uniform ridge shrinkage; shrinkage priors add heavy tails to spare large coefficients
+- [[lasso]] — generalizes: Laplace prior is the Bayesian lasso; GDP/t priors extend with heavier tails
+- [[spike-and-slab]] — contrasts-with: continuous near-zero shrinkage vs. discrete point-mass-at-zero variable selection
 [To be populated during integration]

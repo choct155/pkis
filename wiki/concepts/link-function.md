@@ -19,6 +19,8 @@ id: pkis:concept:link-function
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- generalized-linear-models
 related_concepts: []
 sources:
 - gelman-bda3-ch16
@@ -51,4 +53,5 @@ The link is what makes the GLM *general*: by swapping $g$, the same linear predi
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[generalized-linear-models]] — prerequisite-of
 [To be populated during integration]

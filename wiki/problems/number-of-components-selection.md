@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- mixture-models
 component_scores:
   formulation: null
   instances: null
@@ -19,6 +21,8 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - gelman-bda3-ch22
+specializes:
+- model-selection-problem
 tags:
 - mixture-models
 - model-selection
@@ -26,6 +30,9 @@ tags:
 - simulation
 title: Choosing the Number of Mixture Components
 understanding: 0
+uses:
+- dirichlet-distribution
+- bayesian-model-averaging
 ---
 
 ## Definition
@@ -35,4 +42,8 @@ The problem of determining H, the number of components in a finite mixture model
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[bayesian-model-averaging]] — uses
+- [[dirichlet-distribution]] — uses
+- [[model-selection-problem]] — specializes
+- [[mixture-models]] — applies
 [To be populated during integration]

@@ -31,6 +31,8 @@ tags:
 - jeffreys-prior
 title: Fisher Information
 understanding: 0
+uses:
+- maximum-likelihood-estimation
 ---
 
 ## Definition
@@ -40,4 +42,5 @@ A measure of the curvature of the log-likelihood that quantifies how much inform
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[maximum-likelihood-estimation]] — uses: Fisher information sets the asymptotic sampling variance of the MLE, (n*J)^{-1}.
 [To be populated during integration]

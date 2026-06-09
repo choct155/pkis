@@ -9,12 +9,16 @@ component_scores:
   implementation: null
   operational_mechanism: null
   principled_mechanism: null
+contrasts-with:
+- rejection-sampling
 coverage: 1
 date_created: '2026-06-09'
 date_updated: '2026-06-09'
 domain:
 - bayesian-stats
 - statistical-learning
+extends:
+- importance-sampling
 id: pkis:technique:importance-resampling
 knowledge_type: technique
 maturity: evolving
@@ -31,6 +35,8 @@ tags:
 - posterior-inference
 title: Importance Resampling (SIR)
 understanding: 0
+uses:
+- importance-sampling
 ---
 
 ## Definition
@@ -40,4 +46,7 @@ A method for converting a weighted importance sample into an (approximately) equ
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[rejection-sampling]] — contrasts-with: Both yield (approximately) equal-weight samples but via resampling vs. accept/reject.
+- [[importance-sampling]] — uses: Resampling probabilities are the importance weights.
+- [[importance-sampling]] — extends: SIR turns weighted importance samples into approximately equal-weight independent draws.
 [To be populated during integration]

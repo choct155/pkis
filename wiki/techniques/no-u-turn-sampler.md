@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- adaptive-mcmc
 component_scores:
   alternatives: null
   conditions: null
@@ -15,6 +17,8 @@ date_updated: '2026-06-09'
 domain:
 - bayesian-stats
 - optimization
+extends:
+- hmc
 id: pkis:technique:no-u-turn-sampler
 knowledge_type: technique
 maturity: evolving
@@ -22,6 +26,8 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - gelman-bda3-ch12
+specializes:
+- mcmc
 tags:
 - MCMC
 - HMC
@@ -33,6 +39,8 @@ tags:
 - dual-averaging
 title: No-U-Turn Sampler (NUTS)
 understanding: 0
+uses:
+- detailed-balance
 ---
 
 ## Definition
@@ -54,4 +62,8 @@ NUTS is HMC with an adaptive, geometry-driven stopping rule for the trajectory l
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[adaptive-mcmc]] — applies: NUTS adapts M and epsilon by dual averaging during warm-up, the safe two-phase adaptation pattern
+- [[mcmc]] — specializes: NUTS is a specific MCMC sampler
+- [[detailed-balance]] — uses: the recursive forward/backward trajectory construction is designed so the U-turn stopping rule still satisfies detailed balance
+- [[hmc]] — extends: NUTS is HMC with an adaptive, geometry-driven trajectory-length stopping rule replacing fixed L
 [To be populated during integration]

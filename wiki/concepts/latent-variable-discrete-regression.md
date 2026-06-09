@@ -16,6 +16,8 @@ date_updated: '2026-06-09'
 domain:
 - bayesian-stats
 id: pkis:concept:latent-variable-discrete-regression
+instantiates:
+- latent-variable-models
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
@@ -31,6 +33,8 @@ tags:
 - data-augmentation
 title: Latent-Variable Formulation of Discrete Regression
 understanding: 0
+uses:
+- gibbs-sampler
 ---
 
 ## Definition
@@ -49,4 +53,6 @@ This device serves two ends. Interpretively, the latent variable often has meani
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[latent-variable-models]] — instantiates
+- [[gibbs-sampler]] — uses
 [To be populated during integration]

@@ -17,6 +17,8 @@ domain:
 - bayesian-stats
 - statistical-learning
 id: pkis:concept:intraclass-correlation
+instantiates:
+- multilevel-regression
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
@@ -37,4 +39,5 @@ The correlation between outcomes on two units belonging to the same group, induc
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[multilevel-regression]] — instantiates: within-group correlation is induced by a shared group-level random effect
 [To be populated during integration]

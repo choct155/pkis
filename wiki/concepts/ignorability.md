@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- selection-bias
 component_scores:
   application: null
   boundary: null
@@ -10,6 +12,8 @@ component_scores:
   prerequisites: null
   scope: null
   transfer: null
+contrasts-with:
+- likelihood-principle
 coverage: 1
 date_created: '2026-06-09'
 date_updated: '2026-06-09'
@@ -30,6 +34,10 @@ tags:
 - bayesian-inference
 title: Ignorability
 understanding: 0
+uses:
+- missing-data-mechanisms
+- data-collection-mechanism
+- conditional-independence
 ---
 
 ## Definition
@@ -39,4 +47,9 @@ A data-collection or missing-data mechanism is *ignorable* (with respect to a pr
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[selection-bias]] — applies: nonignorable designs are where selection bias is irreducible without modeling the selection mechanism
+- [[conditional-independence]] — uses: MAR is a conditional-independence statement: I independent of y_mis given x and y_obs
+- [[likelihood-principle]] — contrasts-with: ignorability is the precise weak sense in which the likelihood-principle intuition holds
+- [[data-collection-mechanism]] — uses: ignorability is a property of the inclusion model p(I|y,phi)
+- [[missing-data-mechanisms]] — uses: MAR + distinct parameters are the sufficient conditions defining ignorability
 [To be populated during integration]

@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- bayesian-inference
 component_scores:
   alternatives: null
   conditions: null
@@ -9,12 +11,16 @@ component_scores:
   implementation: null
   operational_mechanism: null
   principled_mechanism: null
+contrasts-with:
+- mcmc
 coverage: 1
 date_created: '2026-06-09'
 date_updated: '2026-06-09'
 domain:
 - bayesian-stats
 id: pkis:technique:grid-approximation
+instantiates:
+- exact-inference-by-complete-enumeration
 knowledge_type: technique
 maturity: evolving
 needs_canonical_source: false
@@ -28,6 +34,8 @@ tags:
 - numerical-integration
 title: Grid Approximation of the Posterior
 understanding: 0
+uses:
+- inverse-transform-sampling
 ---
 
 ## Definition
@@ -47,4 +55,8 @@ Grid placement is delicate: too small an area misses mass outside the grid; too 
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[exact-inference-by-complete-enumeration]] — instantiates
+- [[mcmc]] — contrasts-with
+- [[inverse-transform-sampling]] — uses
+- [[bayesian-inference]] — applies
 [To be populated during integration]

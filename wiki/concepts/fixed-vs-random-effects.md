@@ -23,11 +23,15 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - gelman-bda3-ch15
+specializes:
+- multilevel-regression
 tags:
 - multilevel-models
 - variance-components
 title: Fixed vs. Random Effects
 understanding: 0
+uses:
+- finite-vs-superpopulation-variance
 ---
 
 ## Definition
@@ -37,4 +41,6 @@ In the hierarchical-modeling view, 'random effects' are batches of coefficients 
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[multilevel-regression]] — specializes: fixed = infinite-variance prior (no pooling), random = estimated finite-variance population distribution
+- [[finite-vs-superpopulation-variance]] — uses: Gelman recasts the fixed/random distinction via which variance is of interest
 [To be populated during integration]

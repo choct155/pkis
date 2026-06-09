@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- sampling-theory
 component_scores:
   application: null
   boundary: null
@@ -30,6 +32,9 @@ tags:
 - finite-population
 title: Finite-Population vs. Superpopulation Inference
 understanding: 0
+uses:
+- data-collection-mechanism
+- average-treatment-effect
 ---
 
 ## Definition
@@ -39,4 +44,7 @@ A distinction between two kinds of estimands in design-based Bayesian analysis. 
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[average-treatment-effect]] — uses: finite- vs super-population framing of the average causal effect estimand
+- [[sampling-theory]] — applies: Bayesian finite-population inference reconstructs and corrects classical survey-sampling estimands
+- [[data-collection-mechanism]] — uses: finite-population estimands are functions of complete data y partitioned by I
 [To be populated during integration]

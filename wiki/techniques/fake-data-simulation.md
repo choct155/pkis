@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- model-checking
 component_scores:
   alternatives: null
   conditions: null
@@ -40,4 +42,5 @@ A procedure for building confidence in posterior inferences (and catching progra
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[model-checking]] — applies: Fake-data simulation is a debugging form of posterior-predictive model checking.
 [To be populated during integration]

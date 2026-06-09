@@ -23,6 +23,8 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - gelman-bda3-ch07
+specializes:
+- information-criteria
 tags:
 - information-criteria
 - model-comparison
@@ -32,6 +34,9 @@ tags:
 - bias-correction
 title: Deviance Information Criterion (DIC)
 understanding: 0
+uses:
+- expected-log-predictive-density
+- effective-number-of-parameters
 ---
 
 ## Definition
@@ -43,4 +48,7 @@ DIC became popular because p_DIC has an easy, stable Monte Carlo estimate from p
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[effective-number-of-parameters]] — uses: p_DIC is the bias correction
+- [[expected-log-predictive-density]] — uses: DIC estimates elpd
+- [[information-criteria]] — specializes: DIC is a specific information criterion
 [To be populated during integration]

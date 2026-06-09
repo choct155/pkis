@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- multilevel-regression
 component_scores:
   alternatives: null
   conditions: null
@@ -9,6 +11,8 @@ component_scores:
   implementation: null
   operational_mechanism: null
   principled_mechanism: null
+contrasts-with:
+- non-centered-parameterization
 coverage: 1
 date_created: '2026-06-09'
 date_updated: '2026-06-09'
@@ -29,6 +33,8 @@ tags:
 - sampling
 title: Parameter Expansion for Hierarchical Sampling
 understanding: 0
+uses:
+- gibbs-sampler
 ---
 
 ## Definition
@@ -38,4 +44,7 @@ A technique to accelerate Gibbs/EM sampling of hierarchical variance parameters 
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[non-centered-parameterization]] — contrasts-with: related reparameterizations: redundant multiplicative (PX) vs decoupling for HMC
+- [[gibbs-sampler]] — uses: parameter-expanded Gibbs sampler updates coefficients, variances, and zeta factors
+- [[multilevel-regression]] — applies: redundant multiplicative factors decouple coefficients from variance parameters
 [To be populated during integration]

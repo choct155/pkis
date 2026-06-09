@@ -17,6 +17,9 @@ domain:
 - bayesian-stats
 - statistical-learning
 id: pkis:concept:negative-binomial-distribution
+instantiates:
+- overdispersion
+- mixture-models
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
@@ -30,6 +33,8 @@ tags:
 - poisson
 title: Negative Binomial Distribution
 understanding: 0
+uses:
+- gamma-distribution
 ---
 
 ## Definition
@@ -39,4 +44,7 @@ A two-parameter distribution for overdispersed count data, $\text{Neg-bin}(\alph
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[gamma-distribution]] — uses: Poisson means follow a Gamma(alpha,beta)
+- [[mixture-models]] — instantiates: gamma mixture of Poissons
+- [[overdispersion]] — instantiates: canonical overdispersed alternative to the Poisson
 [To be populated during integration]

@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- mcmc
 component_scores:
   application: null
   boundary: null
@@ -19,6 +21,8 @@ id: pkis:concept:burn-in-and-warmup
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- gelman-rubin-diagnostic
 related_concepts: []
 sources:
 - gelman-bda3-ch11
@@ -45,4 +49,6 @@ A distinct, optional post-convergence step is *thinning*: keeping only every k-t
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[mcmc]] — applies: Discarding early iterations removes the transient influence of the starting distribution on MCMC inference.
+- [[gelman-rubin-diagnostic]] — prerequisite-of: Warm-up draws are discarded before chains are split and B/W variances computed for R-hat.
 [To be populated during integration]

@@ -28,6 +28,8 @@ tags:
 - implementation
 title: Log-Scale Computation
 understanding: 0
+uses:
+- metropolis-algorithm
 ---
 
 ## Definition
@@ -37,4 +39,5 @@ To avoid computational overflow and underflow, one should compute with the LOGAR
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[metropolis-algorithm]] — uses: Metropolis ratio computed as exp of the difference of log-densities is the canonical example.
 [To be populated during integration]

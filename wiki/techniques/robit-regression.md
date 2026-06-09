@@ -9,6 +9,8 @@ component_scores:
   implementation: null
   operational_mechanism: null
   principled_mechanism: null
+contrasts-with:
+- logistic-regression
 coverage: 1
 date_created: '2026-06-09'
 date_updated: '2026-06-09'
@@ -22,6 +24,8 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - gelman-bda3-ch17
+specializes:
+- robust-inference
 tags:
 - binary-regression
 - latent-variable
@@ -30,6 +34,9 @@ tags:
 - probit
 title: Robit Regression
 understanding: 0
+uses:
+- t-distribution
+- latent-variable-models
 ---
 
 ## Definition
@@ -39,4 +46,8 @@ A robust alternative to logistic and probit regression for binary outcomes, due 
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[logistic-regression]] — contrasts-with: robust alternative to logistic regression; nu=4 approximates the logistic link
+- [[latent-variable-models]] — uses: built on the latent continuous-variable formulation of discrete-data regression
+- [[robust-inference]] — specializes: robit is robust inference applied to binary regression
+- [[t-distribution]] — uses: robit replaces the binary-regression latent distribution with a t
 [To be populated during integration]

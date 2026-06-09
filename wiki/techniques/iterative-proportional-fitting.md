@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- loglinear-model
 component_scores:
   alternatives: null
   conditions: null
@@ -15,6 +17,8 @@ date_updated: '2026-06-09'
 domain:
 - bayesian-stats
 id: pkis:technique:iterative-proportional-fitting
+instantiates:
+- gibbs-sampler
 knowledge_type: technique
 maturity: evolving
 needs_canonical_source: false
@@ -48,4 +52,6 @@ IPF exploits the special structure of conjugate loglinear models to fit large co
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[gibbs-sampler]] — instantiates
+- [[loglinear-model]] — applies
 [To be populated during integration]

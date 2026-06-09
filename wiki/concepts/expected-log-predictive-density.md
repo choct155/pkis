@@ -32,6 +32,9 @@ tags:
 - model-evaluation
 title: Expected Log Predictive Density (elpd)
 understanding: 0
+uses:
+- scoring-rules
+- kl-divergence
 ---
 
 ## Definition
@@ -45,4 +48,6 @@ Notably the prior density is excluded from this calculation: predictive accuracy
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[kl-divergence]] — uses: elpd is tied to Kullback-Leibler information
+- [[scoring-rules]] — uses: elpd is built on the logarithmic scoring rule
 [To be populated during integration]

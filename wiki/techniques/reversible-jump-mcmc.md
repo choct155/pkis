@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- bayesian-model-averaging
 component_scores:
   alternatives: null
   conditions: null
@@ -14,6 +16,8 @@ date_created: '2026-06-09'
 date_updated: '2026-06-09'
 domain:
 - bayesian-stats
+extends:
+- metropolis-algorithm
 id: pkis:technique:reversible-jump-mcmc
 knowledge_type: technique
 maturity: evolving
@@ -21,6 +25,8 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - gelman-bda3-ch12
+specializes:
+- mcmc
 tags:
 - mcmc
 - trans-dimensional
@@ -31,6 +37,8 @@ tags:
 - mixture-models
 title: Reversible Jump MCMC
 understanding: 0
+uses:
+- mixture-models
 ---
 
 ## Definition
@@ -49,4 +57,8 @@ A canonical illustration is testing whether a variance component τ is needed in
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[mixture-models]] — uses: a canonical use is finite mixture models with an unknown, varying number of components
+- [[bayesian-model-averaging]] — applies: RJMCMC samples across candidate models, yielding posterior model probabilities for model averaging
+- [[mcmc]] — specializes: RJMCMC is a trans-dimensional MCMC sampler
+- [[metropolis-algorithm]] — extends: RJMCMC generalizes Metropolis-Hastings to moves between spaces of differing dimension via dimension-matching
 [To be populated during integration]

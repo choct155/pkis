@@ -12,6 +12,7 @@ component_scores:
   transfer: null
 contrasts-with:
 - bayesian-neural-networks
+- curse-of-dimensionality
 coverage: 1
 date_created: '2026-06-08'
 date_updated: '2026-06-08'
@@ -37,6 +38,8 @@ tags:
 - stochastic-process
 title: Gaussian Process
 understanding: 0
+uses:
+- generalized-linear-models
 ---
 
 ## Definition
@@ -55,6 +58,8 @@ Brownian motion, Wiener and Langevin processes, Kalman-filter models, and geosta
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[generalized-linear-models]] — uses: For non-Gaussian data a latent GP feeds a GLM-style link/likelihood (location and optionally shape).
+- [[curse-of-dimensionality]] — contrasts-with: Centering a GP on a parametric mean function lets the posterior concentrate near it, mitigating the curse of dimensionality.
 - [[bayesian-neural-networks]] — contrasts-with: GPs place a prior directly on functions (a smoothing device); BNNs parameterize functions and can in principle do feature discovery.
 - [[gaussian-process-regression]] — prerequisite-of: GPR is inference under a GP prior with a Gaussian noise model.
 - [[gaussian-distribution]] — generalizes: A GP is the generalization of a finite-dimensional Gaussian to an infinite-dimensional function space; any finite marginal is Gaussian.

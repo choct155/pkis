@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- em-algorithm
 component_scores:
   alternatives: null
   conditions: null
@@ -9,11 +11,15 @@ component_scores:
   implementation: null
   operational_mechanism: null
   principled_mechanism: null
+contrasts-with:
+- posterior-geometry-coordinate-systems
 coverage: 1
 date_created: '2026-06-09'
 date_updated: '2026-06-09'
 domain:
 - bayesian-stats
+extends:
+- gibbs-sampler
 id: pkis:technique:parameter-expansion
 knowledge_type: technique
 maturity: evolving
@@ -31,6 +37,8 @@ tags:
 - overparameterization
 title: Parameter Expansion
 understanding: 0
+uses:
+- data-augmentation
 ---
 
 ## Definition
@@ -49,4 +57,8 @@ Parameter expansion is distinct from ordinary reparameterization: rather than re
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[em-algorithm]] — applies: PX-EM is the deterministic optimization analog of stochastic parameter expansion
+- [[posterior-geometry-coordinate-systems]] — contrasts-with: expansion adds a dimension to break dependence, rather than re-expressing the same parameters in better coordinates
+- [[data-augmentation]] — uses: parameter expansion is naturally built on top of an auxiliary-variable / data-augmented model
+- [[gibbs-sampler]] — extends: parameter expansion accelerates Gibbs-sampler convergence by adding a redundant working parameter
 [To be populated during integration]

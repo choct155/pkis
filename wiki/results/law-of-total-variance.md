@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- mixture-models
 component_scores:
   conditions: null
   implications: null
@@ -16,6 +18,8 @@ id: pkis:result:law-of-total-variance
 knowledge_type: result
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- hierarchical-bayesian-models
 related_concepts: []
 sources:
 - gelman-bda3-ch01
@@ -26,6 +30,8 @@ tags:
 - decomposition
 title: Law of Total Variance
 understanding: 0
+uses:
+- expectation-and-variance
 ---
 
 ## Definition
@@ -45,4 +51,7 @@ The decomposition is the algebraic backbone of hierarchical and mixture modeling
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[mixture-models]] — applies: Justifies modeling complexity via a latent conditioning variable rather than a complicated marginal.
+- [[hierarchical-bayesian-models]] — prerequisite-of: The between/within variance decomposition underlies partial pooling and shrinkage in hierarchical models.
+- [[expectation-and-variance]] — uses: Decomposes mean and variance via conditional expectations and variances.
 [To be populated during integration]

@@ -1,6 +1,10 @@
 ---
 aliases: []
 also_type: []
+applies:
+- mcmc
+- gibbs-sampler
+- metropolis-algorithm
 component_scores:
   alternatives: null
   conditions: null
@@ -32,6 +36,8 @@ tags:
 - gelman
 title: Gelman-Rubin Convergence Diagnostic (R-hat)
 understanding: 0
+uses:
+- effective-sample-size
 ---
 
 ## Definition
@@ -58,4 +64,8 @@ the factor by which the scale of the current pooled distribution might shrink if
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[metropolis-algorithm]] — applies: BDA3 monitors parallel Metropolis sequences with R-hat in the bivariate-normal example.
+- [[gibbs-sampler]] — applies: BDA3 monitors ten parallel Gibbs sequences with R-hat in the hierarchical-normal coagulation example.
+- [[effective-sample-size]] — uses: n_eff complements R-hat as the joint stopping rule: stop when R-hat is near 1 and n_eff is large enough for every estimand.
+- [[mcmc]] — applies: R-hat diagnoses convergence of MCMC chains to the stationary distribution.
 [To be populated during integration]

@@ -10,6 +10,8 @@ component_scores:
   prerequisites: null
   scope: null
   transfer: null
+contrasts-with:
+- conjugate-prior
 coverage: 1
 date_created: '2026-06-09'
 date_updated: '2026-06-09'
@@ -19,6 +21,8 @@ id: pkis:concept:hyperprior
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- hierarchical-bayesian-models
 related_concepts: []
 sources:
 - gelman-bda3-ch05
@@ -53,4 +57,6 @@ Any noninformative or weakly informative hyperprior is provisional: fit the mode
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[conjugate-prior]] — contrasts-with: Conditionally conjugate inverse-gamma hyperpriors are convenient but, unlike a genuine conjugate prior at the data level, are not noninformative for variance components.
+- [[hierarchical-bayesian-models]] — prerequisite-of: Specifying a hyperprior on the hyperparameters is required to complete a hierarchical Bayesian model.
 [To be populated during integration]

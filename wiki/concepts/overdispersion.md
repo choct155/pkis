@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- generalized-linear-models
 component_scores:
   application: null
   boundary: null
@@ -15,6 +17,8 @@ date_created: '2026-06-09'
 date_updated: '2026-06-09'
 domain:
 - bayesian-stats
+extends:
+- poisson-regression
 id: pkis:concept:overdispersion
 knowledge_type: concept
 maturity: evolving
@@ -32,6 +36,9 @@ tags:
 - dispersion-parameter
 title: Overdispersion
 understanding: 0
+uses:
+- hierarchical-bayesian-models
+- mixture-models
 ---
 
 ## Definition
@@ -52,4 +59,8 @@ Ignoring overdispersion makes posterior intervals far too narrow, producing over
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[generalized-linear-models]] — applies: overdispersion arises and is remedied within the GLM framework
+- [[mixture-models]] — uses: overdispersed extensions are mixtures over a varying rate/probability parameter
+- [[hierarchical-bayesian-models]] — uses
+- [[poisson-regression]] — extends
 [To be populated during integration]

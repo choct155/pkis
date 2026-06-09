@@ -1,6 +1,9 @@
 ---
 aliases: []
 also_type: []
+applies:
+- metropolis-algorithm
+- mcmc
 component_scores:
   alternatives: null
   conditions: null
@@ -32,6 +35,8 @@ tags:
 - convergence
 title: Adaptive MCMC
 understanding: 0
+uses:
+- detailed-balance
 ---
 
 ## Definition
@@ -53,4 +58,7 @@ Specially constructed adaptive algorithms (e.g. the diminishing-adaptation schem
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[mcmc]] — applies: adaptive MCMC is a family of strategies for tuning MCMC samplers on the fly
+- [[metropolis-algorithm]] — applies: the canonical adaptive scheme tunes the Metropolis jumping covariance and scale toward the optimal acceptance rate
+- [[detailed-balance]] — uses: the whole hazard of adaptive MCMC is that history-dependent tuning breaks detailed balance
 [To be populated during integration]

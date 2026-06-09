@@ -19,11 +19,15 @@ id: pkis:concept:posterior-predictive-distribution
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- posterior-predictive-check
 related_concepts: []
 sources:
 - gelman-bda3-ch01
 - gelman-bda3-ch03
 - gelman-bda3-ch06
+specializes:
+- bayesian-inference
 tags:
 - bayesian
 - prediction
@@ -32,6 +36,10 @@ tags:
 - model-checking
 title: Posterior Predictive Distribution
 understanding: 0
+uses:
+- bayesian-inference
+- marginalization
+- model-checking
 ---
 
 ## Definition
@@ -53,4 +61,9 @@ Prediction is frequently the actual goal of an analysis, and the posterior predi
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[posterior-predictive-check]] — prerequisite-of: the check samples from this distribution
+- [[bayesian-inference]] — specializes
+- [[model-checking]] — uses: Replicated draws from the posterior predictive are the basis of Bayesian model checking.
+- [[marginalization]] — uses: Computed by integrating (marginalizing) the joint predictive over the posterior of theta.
+- [[bayesian-inference]] — uses: Defined as the data model averaged over the posterior obtained by Bayesian inference.
 [To be populated during integration]

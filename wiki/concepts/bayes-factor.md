@@ -22,6 +22,8 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - gelman-bda3-ch07
+specializes:
+- bayesian-model-comparison
 tags:
 - model-comparison
 - marginal-likelihood
@@ -30,6 +32,8 @@ tags:
 - improper-priors
 title: Bayes Factor
 understanding: 0
+uses:
+- marginal-likelihood
 ---
 
 ## Definition
@@ -41,4 +45,6 @@ Bayes factors are well behaved when the competing models are genuinely discrete,
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[bayesian-model-comparison]] — specializes: Bayes factor is the evidence ratio in the model-comparison framework
+- [[marginal-likelihood]] — uses: Bayes factor is a ratio of marginal likelihoods
 [To be populated during integration]

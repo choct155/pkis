@@ -9,6 +9,8 @@ component_scores:
   implementation: null
   operational_mechanism: null
   principled_mechanism: null
+contrasts-with:
+- logistic-regression
 coverage: 1
 date_created: '2026-06-09'
 date_updated: '2026-06-09'
@@ -21,6 +23,8 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - gelman-bda3-ch16
+specializes:
+- generalized-linear-models
 tags:
 - probit
 - binary-regression
@@ -30,6 +34,9 @@ tags:
 - link-function
 title: Probit Model
 understanding: 0
+uses:
+- link-function
+- latent-variable-discrete-regression
 ---
 
 ## Definition
@@ -52,4 +59,8 @@ The probit is the standard binary-choice model in econometrics and a workhorse a
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[logistic-regression]] — contrasts-with
+- [[latent-variable-discrete-regression]] — uses
+- [[link-function]] — uses
+- [[generalized-linear-models]] — specializes
 [To be populated during integration]

@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+analogous-to:
+- hierarchical-bayesian-models
 component_scores:
   conditions: null
   implications: null
@@ -37,4 +39,5 @@ The standard moment-matching formulas for combining K complete-data analyses of 
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[hierarchical-bayesian-models]] — analogous-to: The between-imputation variance is the survey/imputation-level variance component; the decomposition mirrors a two-level hierarchical variance split.
 [To be populated during integration]

@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+analogous-to:
+- physics-informed-neural-networks
 component_scores:
   application: null
   limits: null
@@ -21,6 +23,8 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - gelman-bda3-ch19
+specializes:
+- bayesian-nonlinear-model
 tags:
 - mechanistic-model
 - differential-equations
@@ -29,6 +33,8 @@ tags:
 - risk-assessment
 title: Physiological Pharmacokinetic Modeling
 understanding: 0
+uses:
+- hierarchical-bayesian-models
 ---
 
 ## Definition
@@ -38,4 +44,7 @@ A mechanistic modeling framework in which the concentration of a compound (drug 
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[physics-informed-neural-networks]] — analogous-to: both embed mechanistic differential-equation physics into a statistical/ML model; PBPK solves the ODE numerically as a forward model, PINNs penalize PDE residuals in the loss
+- [[hierarchical-bayesian-models]] — uses: population PK separates posterior uncertainty from inter-individual variation via a hierarchy over per-person parameters
+- [[bayesian-nonlinear-model]] — specializes: a mechanistic ODE-driven instance where g() is the numerical solution of a compartment ODE system
 [To be populated during integration]

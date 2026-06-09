@@ -6,6 +6,9 @@ component_scores:
   justification: null
   statement: null
   violations: null
+contrasts-with:
+- bayes-factor
+- bayesian-model-averaging
 coverage: 1
 date_created: '2026-06-09'
 date_updated: '2026-06-09'
@@ -28,6 +31,8 @@ tags:
 - gelman
 title: Continuous Model Expansion
 understanding: 0
+uses:
+- hierarchical-bayesian-models
 ---
 
 ## Definition
@@ -39,4 +44,7 @@ Motivations for expansion include poor fit revealed by posterior predictive chec
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[hierarchical-bayesian-models]] — uses: hierarchical models are the canonical continuous expansion (8-schools)
+- [[bayesian-model-averaging]] — contrasts-with: continuous expansion preferred over averaging discrete models
+- [[bayes-factor]] — contrasts-with: Gelman prefers continuous expansion to discrete model choice via Bayes factors
 [To be populated during integration]

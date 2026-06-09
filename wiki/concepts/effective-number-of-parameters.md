@@ -10,6 +10,8 @@ component_scores:
   prerequisites: null
   scope: null
   transfer: null
+contrasts-with:
+- overfitting-and-underfitting
 coverage: 1
 date_created: '2026-06-09'
 date_updated: '2026-06-09'
@@ -42,4 +44,5 @@ Several concrete estimators exist. p_DIC = 2(log p(y|ω̂_Bayes) − E_post(log 
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[overfitting-and-underfitting]] — contrasts-with: the effective parameter count is the bias correction for overfitting
 [To be populated during integration]

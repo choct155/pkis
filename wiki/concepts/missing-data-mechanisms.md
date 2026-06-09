@@ -23,6 +23,8 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - gelman-bda3-ch08
+specializes:
+- data-collection-mechanism
 tags:
 - missing-data
 - nonresponse
@@ -39,4 +41,5 @@ A taxonomy (Rubin 1976) classifying *why* data are missing, in terms of how the 
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[data-collection-mechanism]] — specializes: MCAR/MAR/MNAR classify the inclusion model in missing-data settings
 [To be populated during integration]

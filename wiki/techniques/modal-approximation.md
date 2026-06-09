@@ -16,6 +16,8 @@ domain:
 - bayesian-stats
 - optimization
 id: pkis:technique:modal-approximation
+instantiates:
+- maxima-are-atypical
 knowledge_type: technique
 maturity: evolving
 needs_canonical_source: false
@@ -31,6 +33,12 @@ tags:
 - marginal-mode
 title: Modal Approximation (Mode-Centered Distributional Approximation)
 understanding: 0
+uses:
+- laplace-approximation
+- hessian-matrix
+- taylor-series
+- gradient-descent
+- importance-sampling
 ---
 
 ## Definition
@@ -46,4 +54,10 @@ A central caution (linked to the 'maxima-are-atypical' principle): the mode is a
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[importance-sampling]] — uses: Mode-based normal/t (mixture) approximations serve as proposals for importance sampling and importance resampling toward the true posterior.
+- [[maxima-are-atypical]] — instantiates: BDA3 cautions that the mode is a poor summary for asymmetric/boundary posteriors, motivating boundary-avoiding priors -- a concrete statistical instance of maxima being atypical of the distribution's mass.
+- [[gradient-descent]] — uses: Mode-finding draws on numerical optimization (Newton, quasi-Newton/BFGS, conjugate gradient) to maximize the log-posterior.
+- [[taylor-series]] — uses: Newton's method and the normal approximation both rest on a quadratic Taylor expansion of the log-posterior about the mode.
+- [[hessian-matrix]] — uses: The normal approximation variance is the inverse Hessian of the negative log-posterior at the mode.
+- [[laplace-approximation]] — uses: The mode plus log-posterior curvature gives the Gaussian width; Laplace's method extends this to approximate integrals against the posterior and to compute mixture-component masses.
 [To be populated during integration]

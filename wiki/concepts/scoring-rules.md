@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- decision-theory-foundations
 component_scores:
   application: null
   boundary: null
@@ -43,4 +45,5 @@ Two desiderata characterize good rules: propriety — the expected score is opti
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[decision-theory-foundations]] — applies: proper scoring rules incentivize honest belief reporting
 [To be populated during integration]

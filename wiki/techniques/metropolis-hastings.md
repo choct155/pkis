@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- random-walk-behaviour-mcmc
 component_scores:
   alternatives: null
   conditions: null
@@ -14,6 +16,9 @@ date_created: '2026-06-09'
 date_updated: '2026-06-09'
 domain:
 - bayesian-stats
+generalizes:
+- metropolis-algorithm
+- gibbs-sampler
 id: pkis:technique:metropolis-hastings
 knowledge_type: technique
 maturity: evolving
@@ -21,6 +26,8 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - gelman-bda3-ch11
+specializes:
+- mcmc
 tags:
 - mcmc
 - posterior-sampling
@@ -31,6 +38,8 @@ tags:
 - gelman
 title: Metropolis-Hastings Algorithm
 understanding: 0
+uses:
+- detailed-balance
 ---
 
 ## Definition
@@ -46,4 +55,9 @@ The basic (symmetric) Metropolis algorithm is the special case J_t(ω_a|ω_b) = 
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[random-walk-behaviour-mcmc]] — applies: Asymmetric proposals are introduced to speed up the random walk; tuning trades step size against acceptance.
+- [[detailed-balance]] — uses: The ratio-of-ratios acceptance rule is constructed so the chain satisfies detailed balance w.r.t. p(ω|y).
+- [[gibbs-sampler]] — generalizes: Gibbs is the special case of MH whose componentwise conditional proposal gives acceptance ratio identically 1.
+- [[mcmc]] — specializes: MH is the general foundational instance of MCMC.
+- [[metropolis-algorithm]] — generalizes: MH drops the symmetry requirement on the jumping rule and adds the proposal-ratio correction; Metropolis is the symmetric special case.
 [To be populated during integration]

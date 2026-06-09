@@ -17,6 +17,8 @@ id: pkis:principle:numerical-vs-simulation-integration
 knowledge_type: principle
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- mcmc
 related_concepts: []
 sources:
 - gelman-bda3-ch10
@@ -37,4 +39,5 @@ Bayesian computation reduces to evaluating integrals of the form E(h(omega)|y) =
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[mcmc]] — prerequisite-of: Understanding the integration framing motivates MCMC for high-dimensional posteriors.
 [To be populated during integration]

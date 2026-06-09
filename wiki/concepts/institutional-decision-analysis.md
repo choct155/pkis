@@ -22,6 +22,8 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - gelman-bda3-ch09
+specializes:
+- bayesian-decision-analysis
 tags:
 - decision-theory
 - objective-bayes
@@ -30,6 +32,8 @@ tags:
 - sensitivity-analysis
 title: Institutional Decision Analysis
 understanding: 0
+uses:
+- hierarchical-bayesian-models
 ---
 
 ## Definition
@@ -43,4 +47,6 @@ In businesses, governments, and research organizations, decisions must be *justi
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[hierarchical-bayesian-models]] — uses
+- [[bayesian-decision-analysis]] — specializes
 [To be populated during integration]

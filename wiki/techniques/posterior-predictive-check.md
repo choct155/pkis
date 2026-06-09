@@ -9,16 +9,23 @@ component_scores:
   implementation: null
   operational_mechanism: null
   principled_mechanism: null
+contrasts-with:
+- cross-validation
+- likelihood-principle
 coverage: 1
 date_created: '2026-06-09'
 date_updated: '2026-06-09'
 domain:
 - bayesian-stats
 - statistical-learning
+generalizes:
+- hypothesis-testing
 id: pkis:technique:posterior-predictive-check
 knowledge_type: technique
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- bayesian-linear-regression
 related_concepts: []
 sources:
 - gelman-bda3-ch06
@@ -32,6 +39,11 @@ tags:
 - bayesian-stats
 title: Posterior Predictive Check
 understanding: 0
+uses:
+- posterior-predictive-distribution
+- test-quantity-discrepancy
+- bayesian-p-value
+- monte-carlo-estimator
 ---
 
 ## Definition
@@ -41,4 +53,12 @@ A model check that draws simulated datasets from the posterior predictive distri
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[bayesian-linear-regression]] — prerequisite-of
+- [[likelihood-principle]] — contrasts-with: inference obeys the likelihood principle but checking depends on the sampling/stopping rule
+- [[cross-validation]] — contrasts-with: cross-validation predictive checks compare each point to inference from all others
+- [[monte-carlo-estimator]] — uses: p_B estimated as the proportion of joint draws with T(y_rep)>=T(y)
+- [[hypothesis-testing]] — generalizes: averages over the posterior of theta instead of fixing it at an estimate
+- [[bayesian-p-value]] — uses: summarizes the discrepancy as a posterior predictive p-value
+- [[test-quantity-discrepancy]] — uses: compares realized vs replicated test quantities
+- [[posterior-predictive-distribution]] — uses: draws replicated data from p(y_rep|y)
 [To be populated during integration]

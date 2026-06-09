@@ -10,12 +10,16 @@ component_scores:
   prerequisites: null
   scope: null
   transfer: null
+contrasts-with:
+- test-quantity-discrepancy
 coverage: 1
 date_created: '2026-06-09'
 date_updated: '2026-06-09'
 domain:
 - bayesian-stats
 - statistical-learning
+generalizes:
+- confidence-interval
 id: pkis:concept:bayesian-p-value
 knowledge_type: concept
 maturity: evolving
@@ -42,4 +46,6 @@ The probability, taken over the joint posterior predictive distribution p(θ, y_
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[test-quantity-discrepancy]] — contrasts-with: p_B is the tail-area summary of the discrepancy measure T
+- [[confidence-interval]] — generalizes: p-value is to the u-value as the posterior interval is to the confidence interval
 [To be populated during integration]

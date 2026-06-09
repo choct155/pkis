@@ -1,6 +1,9 @@
 ---
 aliases: []
 also_type: []
+applies:
+- mixture-models
+- gaussian-mixture-models
 component_scores:
   formulation: null
   instances: null
@@ -19,6 +22,8 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - gelman-bda3-ch22
+specializes:
+- identifiability-of-mixtures
 tags:
 - mixture-models
 - identifiability
@@ -26,6 +31,8 @@ tags:
 - simulation
 title: Label Switching in Mixture Models
 understanding: 0
+uses:
+- gibbs-sampler
 ---
 
 ## Definition
@@ -35,4 +42,8 @@ The non-identifiability of finite mixture models under permutation of the compon
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[gibbs-sampler]] — uses
+- [[gaussian-mixture-models]] — applies
+- [[mixture-models]] — applies
+- [[identifiability-of-mixtures]] — specializes
 [To be populated during integration]

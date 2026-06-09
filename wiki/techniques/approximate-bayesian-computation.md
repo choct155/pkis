@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- intractable-posterior
 component_scores:
   alternatives: null
   conditions: null
@@ -29,6 +31,10 @@ tags:
 - summary-statistics
 title: Approximate Bayesian Computation (ABC)
 understanding: 0
+uses:
+- rejection-sampling
+- sufficient-statistics
+- importance-sampling
 ---
 
 ## Definition
@@ -40,4 +46,8 @@ ABC faces three coupled challenges: (1) choosing a discrepancy d that captures t
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[importance-sampling]] — uses: ABC can draw proposals from a non-prior distribution and correct via importance sampling to reduce the rejection rate.
+- [[sufficient-statistics]] — uses: ABC's discrepancy measure ideally compares parameter-relevant summaries (sufficient statistics) of simulated vs observed data rather than the raw data.
+- [[intractable-posterior]] — applies: ABC targets posteriors where the likelihood is intractable or unavailable but the generative model can be simulated.
+- [[rejection-sampling]] — uses: The basic ABC algorithm is rejection sampling: accept prior draws whose simulated data fall within tolerance epsilon of the observed data.
 [To be populated during integration]

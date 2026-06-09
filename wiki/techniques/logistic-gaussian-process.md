@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- kernel-density-estimation
 component_scores:
   alternatives: null
   conditions: null
@@ -9,6 +11,8 @@ component_scores:
   implementation: null
   operational_mechanism: null
   principled_mechanism: null
+contrasts-with:
+- mixture-models
 coverage: 1
 date_created: '2026-06-09'
 date_updated: '2026-06-09'
@@ -30,6 +34,10 @@ tags:
 - latent-function
 title: Logistic Gaussian Process (LGP)
 understanding: 0
+uses:
+- gaussian-process
+- covariance-function
+- laplace-approximation
 ---
 
 ## Definition
@@ -53,4 +61,9 @@ A simpler related construction (Kundu & Dunson 2014) induces a density prior via
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[kernel-density-estimation]] — applies: LGP is a Bayesian alternative for the same density-estimation task that KDE addresses non-probabilistically.
+- [[mixture-models]] — contrasts-with: Both are nonparametric density estimators; LGP has a unimodal latent posterior given hyperparameters, unlike multimodal mixture posteriors.
+- [[laplace-approximation]] — uses: Laplace's method integrates over the latent values f; hyperparameters via quadrature/CCD.
+- [[covariance-function]] — uses: The kernel (squared-exponential, Matern) sets the smoothness of the induced density.
+- [[gaussian-process]] — uses: LGP draws an unconstrained surface from a GP, then logistic-transforms it into a density.
 [To be populated during integration]

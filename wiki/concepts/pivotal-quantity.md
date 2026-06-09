@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- gaussian-distribution
 component_scores:
   application: null
   boundary: null
@@ -10,6 +12,8 @@ component_scores:
   prerequisites: null
   scope: null
   transfer: null
+contrasts-with:
+- confidence-interval
 coverage: 1
 date_created: '2026-06-09'
 date_updated: '2026-06-09'
@@ -44,4 +48,6 @@ Gelman highlights a striking duality for the normal model: the same quantity is 
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[gaussian-distribution]] — applies
+- [[confidence-interval]] — contrasts-with
 [To be populated during integration]

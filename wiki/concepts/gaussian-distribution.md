@@ -10,6 +10,7 @@ domain:
 id: pkis:concept:gaussian-distribution
 instantiates:
 - exponential-family
+- conjugate-prior
 knowledge_type: concept
 maturity: settled
 related_concepts:
@@ -40,4 +41,5 @@ $$P(x\mid y)=\mathrm{Normal}\!\Big(\tfrac{v}{v+\sigma^2}y,\ \big(\tfrac1v+\tfrac
 The posterior mean is a precision-weighted blend of the data-best value $x=y$ and the prior-best value $x=0$. This is the dual of the familiar rule that *variances add when independent variables are summed*: under inference, precisions (inverse variances) add.
 
 ## Connections
+- [[conjugate-prior]] — instantiates: The normal is its own conjugate prior for the mean with known variance; precisions add.
 - [[exponential-family]] — instantiates

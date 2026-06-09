@@ -22,12 +22,16 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - gelman-bda3-ch15
+specializes:
+- multilevel-regression
 tags:
 - regression
 - multilevel-models
 - covariance
 title: Varying-Intercept, Varying-Slope Models
 understanding: 0
+uses:
+- partial-pooling-shrinkage
 ---
 
 ## Definition
@@ -37,4 +41,6 @@ A multilevel regression in which more than one coefficient varies by group: each
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[partial-pooling-shrinkage]] — uses: Sigma_beta pools sparse per-group coefficient vectors
+- [[multilevel-regression]] — specializes: the case where multiple coefficients vary by group with a multivariate group-level covariance
 [To be populated during integration]

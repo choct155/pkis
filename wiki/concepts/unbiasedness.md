@@ -10,6 +10,8 @@ component_scores:
   prerequisites: null
   scope: null
   transfer: null
+contrasts-with:
+- bias-variance-tradeoff
 coverage: 1
 date_created: '2026-06-09'
 date_updated: '2026-06-09'
@@ -23,6 +25,8 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - gelman-bda3-ch04
+specializes:
+- sampling-theory
 tags:
 - point-estimation
 - bias-variance
@@ -39,4 +43,6 @@ A point estimate omega-hat(y) is unbiased if its expectation over the sampling d
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[bias-variance-tradeoff]] — contrasts-with: Demanding unbiasedness ignores the bias-variance tradeoff; biased shrinkage estimators often achieve lower mean squared error.
+- [[sampling-theory]] — specializes: Unbiasedness is a sampling-theory estimation criterion defined via the repeated-sampling expectation.
 [To be populated during integration]

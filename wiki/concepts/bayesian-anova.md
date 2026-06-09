@@ -17,6 +17,8 @@ domain:
 - bayesian-stats
 - statistical-learning
 id: pkis:concept:bayesian-anova
+instantiates:
+- multilevel-regression
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
@@ -29,6 +31,8 @@ tags:
 - experimental-design
 title: Bayesian Analysis of Variance
 understanding: 0
+uses:
+- finite-vs-superpopulation-variance
 ---
 
 ## Definition
@@ -38,4 +42,6 @@ Gelman's reframing of analysis of variance as a hierarchical regression in which
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[finite-vs-superpopulation-variance]] — uses: ANOVA rows summarized by finite-population standard deviations of their coefficient batches
+- [[multilevel-regression]] — instantiates: ANOVA as a hierarchical regression with coefficients batched into sources of variation
 [To be populated during integration]

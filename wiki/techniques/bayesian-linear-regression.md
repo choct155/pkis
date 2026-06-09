@@ -22,6 +22,8 @@ sources:
 - '[[kroese-statistical-modeling]]'
 - '[[capretto-bambi-2022]]'
 - '[[kurz-hybrid-modeling-2022]]'
+specializes:
+- linear-regression
 tags:
 - probability-theory
 - linear-algebra
@@ -30,6 +32,9 @@ understanding: 0
 uses:
 - marginal-likelihood
 - gaussian-distribution
+- multivariate-normal-model
+- posterior-predictive-check
+- noninformative-prior
 ---
 
 Linear regression under a full Bayesian treatment: places a prior over weights, computes the posterior analytically (via Gaussian conjugacy), and produces a predictive distribution over outputs rather than a point estimate — naturally regularizing and quantifying predictive uncertainty.
@@ -43,5 +48,9 @@ Linear regression under a full Bayesian treatment: places a prior over weights, 
 - [[kurz-hybrid-modeling-2022]] (unread) — BEM state estimation under Gaussian prior and noise model is exactly a Bayesian linear regression; solution via stochastic linear equation
 
 ## Connections
+- [[linear-regression]] — specializes
+- [[noninformative-prior]] — uses
+- [[posterior-predictive-check]] — uses
+- [[multivariate-normal-model]] — uses
 - [[gaussian-distribution]] — uses
 - [[marginal-likelihood]] — uses

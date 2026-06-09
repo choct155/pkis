@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- multilevel-regression
 component_scores:
   alternatives: null
   conditions: null
@@ -29,6 +31,8 @@ tags:
 - sampling
 title: Non-Centered Parameterization
 understanding: 0
+uses:
+- hmc
 ---
 
 ## Definition
@@ -38,4 +42,6 @@ A reparameterization of a hierarchical model that decouples group-level paramete
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[hmc]] — uses: standard fix for funnel pathologies in Hamiltonian Monte Carlo of hierarchical models
+- [[multilevel-regression]] — applies: reparameterizes hierarchical models to fix funnel geometry for sampling
 [To be populated during integration]

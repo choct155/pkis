@@ -19,6 +19,8 @@ id: pkis:concept:nuisance-parameters
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- bayesian-inference
 related_concepts: []
 sources:
 - gelman-bda3-ch03
@@ -29,6 +31,9 @@ tags:
 - posterior
 title: Nuisance Parameters
 understanding: 0
+uses:
+- marginalization
+- mixture-models
 ---
 
 ## Definition
@@ -48,4 +53,7 @@ The averaging over omega_2 is interpreted broadly: omega_2 can include a discret
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[mixture-models]] — uses
+- [[bayesian-inference]] — prerequisite-of
+- [[marginalization]] — uses
 [To be populated during integration]

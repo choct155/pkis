@@ -8,12 +8,17 @@ component_scores:
   purpose: null
   scope: null
   structure: null
+contrasts-with:
+- gaussian-process-regression
+- curse-of-dimensionality
 coverage: 1
 date_created: '2026-06-09'
 date_updated: '2026-06-09'
 domain:
 - bayesian-stats
 - statistical-learning
+generalizes:
+- taylor-series
 id: pkis:framework:basis-function-models
 knowledge_type: framework
 maturity: evolving
@@ -29,6 +34,11 @@ tags:
 - additive-models
 title: Basis Function Models
 understanding: 0
+uses:
+- bayesian-linear-regression
+- spline-approximation
+- spike-and-slab
+- shrinkage-priors
 ---
 
 ## Definition
@@ -62,4 +72,11 @@ Basis function models are an explicit, finite-dimensional construction of flexib
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[shrinkage-priors]] — uses: continuous shrinkage of basis coefficients as alternative to discrete selection
+- [[spike-and-slab]] — uses: variable selection over which basis functions to include
+- [[curse-of-dimensionality]] — contrasts-with: prespecifying bases for multivariate surfaces is prohibitive; additive/tensor-product structure mitigates
+- [[gaussian-process-regression]] — contrasts-with: explicit finite basis construction vs. implicit kernel/GP prior over functions
+- [[taylor-series]] — generalizes: polynomial Taylor expansion is the canonical (poorly-behaved) basis expansion; local bases improve on it
+- [[spline-approximation]] — uses: B-splines are a standard local basis family
+- [[bayesian-linear-regression]] — uses: conditional on a fixed basis the model is linear in coefficients, fit as Bayesian linear regression
 [To be populated during integration]

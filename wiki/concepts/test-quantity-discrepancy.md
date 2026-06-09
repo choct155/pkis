@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+analogous-to:
+- sufficient-statistics
 component_scores:
   application: null
   boundary: null
@@ -41,4 +43,5 @@ A scalar summary T(y, θ) of data (and possibly parameters) used as the yardstic
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[sufficient-statistics]] — analogous-to: a sufficient statistic is a poor test quantity — gives p approx 1/2 by construction
 [To be populated during integration]

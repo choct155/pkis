@@ -6,6 +6,9 @@ component_scores:
   instances: null
   solution_landscape: null
   why_hard: null
+contrasts-with:
+- noninformative-prior
+- linear-regression
 coverage: 1
 date_created: '2026-06-09'
 date_updated: '2026-06-09'
@@ -35,4 +38,6 @@ understanding: 0
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[linear-regression]] — contrasts-with
+- [[noninformative-prior]] — contrasts-with
 [To be populated during integration]

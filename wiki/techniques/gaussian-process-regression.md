@@ -26,11 +26,18 @@ tags:
 - regression
 title: Gaussian Process Regression
 understanding: 0
+uses:
+- marginal-likelihood
+- laplace-approximation
+- cross-validation
 ---
 
 Gaussian Process Regression (GPR) is a nonparametric Bayesian regression method that places a Gaussian process prior over the function space — a collection of random variables where any finite subset is jointly Gaussian, defined by a mean function m(x) and covariance kernel k(x,x') — yielding exact closed-form posterior inference over functions given observed data.
 
 ## Connections
+- [[cross-validation]] — uses: Leave-one-out CV predictions (lppd_loo) are computed cheaply via multivariate-Gaussian identities for model comparison.
+- [[laplace-approximation]] — uses: For non-Gaussian likelihoods the marginal likelihood and latent posterior are approximated by Laplace's method.
+- [[marginal-likelihood]] — uses: Kernel hyperparameters and noise variance are learned by maximizing/sampling the GP log marginal likelihood.
 - [[bayesian-linear-regression]] — generalizes: Bayesian linear regression is GPR with a linear kernel; GPR extends to nonlinear relationships via richer kernels
 - [[conjugate-prior]] — uses: the Gaussian likelihood combined with a GP prior yields a GP posterior (exact conjugacy)
 - [[kernel-density-estimation]] — contrasts-with: KDE estimates marginal densities; GPR estimates conditional mean functions via kernel-induced covariance structure

@@ -14,6 +14,8 @@ date_updated: '2026-06-09'
 domain:
 - bayesian-stats
 - statistical-learning
+extends:
+- linear-regression
 id: pkis:framework:multilevel-regression
 knowledge_type: framework
 maturity: evolving
@@ -21,12 +23,17 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - gelman-bda3-ch15
+specializes:
+- hierarchical-bayesian-models
 tags:
 - regression
 - multilevel-models
 - shrinkage
 title: Multilevel Regression
 understanding: 0
+uses:
+- partial-pooling-shrinkage
+- bayesian-linear-regression
 ---
 
 ## Definition
@@ -36,4 +43,8 @@ A regression framework for data with predictors and structure at multiple levels
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[bayesian-linear-regression]] — uses: conjugacy recasts the multilevel model as a single augmented weighted normal regression
+- [[partial-pooling-shrinkage]] — uses: estimation interpolates between no pooling and complete pooling
+- [[linear-regression]] — extends: adds group-level population distributions over batches of coefficients
+- [[hierarchical-bayesian-models]] — specializes: the hierarchical linear model is the normal-likelihood specialization of the general hierarchical Bayesian framework
 [To be populated during integration]
