@@ -290,6 +290,7 @@
 - [[liu-machine-unlearning-llm-2024]] — Rethinking Machine Unlearning for LLMs: post-training knowledge editing survey (deep-learning, ai-safety) (2026-05-20)
 
 ## Concepts
+- [[interest-and-emphasis]] — Interest and Emphasis (reinforcement-learning) (2026-06-09)
 - [[on-policy-distribution]] — On-policy Distribution (reinforcement-learning) (2026-06-09)
 - [[mean-square-value-error]] — Mean Square Value Error (VE) (reinforcement-learning, optimization) (2026-06-09)
 - [[decision-time-planning]] — Decision-Time Planning (optimization, deep-learning) (2026-06-09)

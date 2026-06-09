@@ -4684,3 +4684,12 @@
 ## [2026-06-09] committed | technique
 - Committed: kernel-regression-rl → techniques/kernel-regression-rl.md
 - IRI: pkis:technique:kernel-regression-rl
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: interest-and-emphasis (id: 9bf89134-08f7-4c5d-aaab-596cba4b11ea)
+- Title: Interest and Emphasis
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: interest-and-emphasis → concepts/interest-and-emphasis.md
+- IRI: pkis:concept:interest-and-emphasis
