@@ -7201,3 +7201,12 @@
 ## [2026-06-09] committed | concept
 - Committed: convolution-of-distributions → concepts/convolution-of-distributions.md
 - IRI: pkis:concept:convolution-of-distributions
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: stopping-time (id: 10af7ce3-1f60-4eb6-8932-e979ff8ee135)
+- Title: Stopping Time
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: stopping-time → concepts/stopping-time.md
+- IRI: pkis:concept:stopping-time
