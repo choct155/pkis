@@ -6835,3 +6835,12 @@
 ## [2026-06-09] committed | result
 - Committed: counterfactual-axioms → results/counterfactual-axioms.md
 - IRI: pkis:result:counterfactual-axioms
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: partial-identification-bounds (id: c7e1f523-2844-44a4-924a-8ea225b822c4)
+- Title: Partial Identification and Bounds
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: partial-identification-bounds → concepts/partial-identification-bounds.md
+- IRI: pkis:concept:partial-identification-bounds
