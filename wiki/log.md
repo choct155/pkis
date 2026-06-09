@@ -6007,3 +6007,12 @@
 ## [2026-06-09] committed | concept
 - Committed: negative-binomial-distribution → concepts/negative-binomial-distribution.md
 - IRI: pkis:concept:negative-binomial-distribution
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: beta-binomial-distribution (id: 56e92a5a-0649-40ec-b148-595d7743d18f)
+- Title: Beta-Binomial Distribution
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: beta-binomial-distribution → concepts/beta-binomial-distribution.md
+- IRI: pkis:concept:beta-binomial-distribution
