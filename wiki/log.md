@@ -8644,3 +8644,12 @@
 ## [2026-06-09] committed | problem
 - Committed: value-alignment-problem → problems/value-alignment-problem.md
 - IRI: pkis:problem:value-alignment-problem
+
+## [2026-06-09] staged | node-stub (principle)
+- Staged: physical-symbol-system-hypothesis (id: 59073fa7-8f1b-4d31-87ce-678e3a838272)
+- Title: Physical Symbol System Hypothesis
+- needs_canonical_source: False
+
+## [2026-06-09] committed | principle
+- Committed: physical-symbol-system-hypothesis → principles/physical-symbol-system-hypothesis.md
+- IRI: pkis:principle:physical-symbol-system-hypothesis
