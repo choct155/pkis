@@ -5656,3 +5656,12 @@
 ## [2026-06-09] committed | technique
 - Committed: bayesian-decision-analysis → techniques/bayesian-decision-analysis.md
 - IRI: pkis:technique:bayesian-decision-analysis
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: decision-tree-analysis (id: b6c4865f-de14-45bd-831f-c6836c82f68c)
+- Title: Decision Tree Analysis
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: decision-tree-analysis → techniques/decision-tree-analysis.md
+- IRI: pkis:technique:decision-tree-analysis
