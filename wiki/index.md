@@ -290,6 +290,7 @@
 - [[liu-machine-unlearning-llm-2024]] — Rethinking Machine Unlearning for LLMs: post-training knowledge editing survey (deep-learning, ai-safety) (2026-05-20)
 
 ## Concepts
+- [[stationary-distribution]] — Stationary Distribution and Invariant Measure (bayesian-stats) (2026-06-09)
 - [[recurrence-and-transience]] — Recurrence and Transience (bayesian-stats) (2026-06-09)
 - [[transition-matrix]] — Transition Matrix (Stochastic Matrix) (bayesian-stats) (2026-06-09)
 - [[random-sum-compound-distribution]] — Random Sum and Compound Distribution (statistical-learning) (2026-06-09)

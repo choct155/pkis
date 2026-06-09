@@ -7255,3 +7255,12 @@
 ## [2026-06-09] committed | concept
 - Committed: recurrence-and-transience → concepts/recurrence-and-transience.md
 - IRI: pkis:concept:recurrence-and-transience
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: stationary-distribution (id: 2b266514-b288-4077-8562-edf40c8fb24b)
+- Title: Stationary Distribution and Invariant Measure
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: stationary-distribution → concepts/stationary-distribution.md
+- IRI: pkis:concept:stationary-distribution
