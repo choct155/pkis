@@ -21,6 +21,8 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - russell-norvig-aima-ch18
+specializes:
+- mechanism-design
 tags:
 - resource-allocation
 - bidding
@@ -38,4 +40,5 @@ The study of auction mechanisms for allocating scarce resources among bidders, a
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[mechanism-design]] — specializes
 [To be populated during integration]

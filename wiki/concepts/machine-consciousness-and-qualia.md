@@ -19,9 +19,13 @@ id: pkis:concept:machine-consciousness-and-qualia
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- robot-rights-and-personhood
 related_concepts: []
 sources:
 - russell-norvig-aima-ch27
+specializes:
+- weak-vs-strong-ai
 tags: []
 title: Machine Consciousness and Qualia
 understanding: 0
@@ -34,4 +38,6 @@ understanding: 0
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[robot-rights-and-personhood]] — prerequisite-of
+- [[weak-vs-strong-ai]] — specializes
 [To be populated during integration]

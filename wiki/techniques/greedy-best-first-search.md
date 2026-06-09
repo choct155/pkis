@@ -22,6 +22,8 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - russell-norvig-aima-ch03
+specializes:
+- best-first-search
 tags:
 - search
 - informed-search
@@ -29,6 +31,8 @@ tags:
 - greedy
 title: Greedy Best-First Search
 understanding: 0
+uses:
+- heuristic-function
 ---
 
 ## Definition
@@ -38,4 +42,6 @@ A form of best-first search whose evaluation function is the heuristic alone, f(
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[heuristic-function]] — uses: evaluates nodes purely by h(n)
+- [[best-first-search]] — specializes: best-first search with f(n) = h(n)
 [To be populated during integration]

@@ -28,6 +28,8 @@ tags:
 - competitive-environments
 title: Adversarial Search
 understanding: 0
+uses:
+- game-tree
 ---
 
 ## Definition
@@ -37,4 +39,5 @@ The framework for acting optimally in competitive environments where two or more
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[game-tree]] — uses: Adversarial search operates over the game tree.
 [To be populated during integration]

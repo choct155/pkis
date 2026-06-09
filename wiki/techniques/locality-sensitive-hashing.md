@@ -18,6 +18,8 @@ id: pkis:technique:locality-sensitive-hashing
 knowledge_type: technique
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- k-nearest-neighbors
 related_concepts: []
 sources:
 - russell-norvig-aima-ch19
@@ -35,4 +37,5 @@ The construction relies on the intuition that points close in n-dimensional spac
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[k-nearest-neighbors]] — prerequisite-of
 [To be populated during integration]

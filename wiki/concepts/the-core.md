@@ -10,6 +10,8 @@ component_scores:
   prerequisites: null
   scope: null
   transfer: null
+contrasts-with:
+- shapley-value
 coverage: 1
 date_created: '2026-06-09'
 date_updated: '2026-06-09'
@@ -31,6 +33,8 @@ tags:
 - linear-programming
 title: The Core
 understanding: 0
+uses:
+- cooperative-game
 ---
 
 ## Definition
@@ -40,4 +44,6 @@ The set of all *imputations* (payoff vectors that distribute the grand coalition
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[shapley-value]] — contrasts-with
+- [[cooperative-game]] — uses
 [To be populated during integration]

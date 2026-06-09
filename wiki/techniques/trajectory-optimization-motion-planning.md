@@ -9,6 +9,8 @@ component_scores:
   implementation: null
   operational_mechanism: null
   principled_mechanism: null
+contrasts-with:
+- probabilistic-roadmap-prm
 coverage: 1
 date_created: '2026-06-09'
 date_updated: '2026-06-09'
@@ -16,6 +18,8 @@ domain:
 - robotics
 - optimization
 id: pkis:technique:trajectory-optimization-motion-planning
+instantiates:
+- motion-planning
 knowledge_type: technique
 maturity: evolving
 needs_canonical_source: false
@@ -29,6 +33,8 @@ tags:
 - signed-distance-field
 title: Trajectory Optimization for Motion Planning
 understanding: 0
+uses:
+- simulated-annealing
 ---
 
 ## Definition
@@ -38,4 +44,7 @@ A motion-planning approach that starts from a simple but possibly infeasible pat
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[simulated-annealing]] — uses: annealing used for exploration to escape poor local optima of the functional gradient descent
+- [[probabilistic-roadmap-prm]] — contrasts-with: optimization starts feasible-then-optimize is reversed: it starts infeasible and pushes out of collision, vs sampling planners that find a feasible path first
+- [[motion-planning]] — instantiates: optimization-based path generation for motion planning
 [To be populated during integration]

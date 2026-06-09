@@ -20,6 +20,8 @@ id: pkis:concept:game-tree
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- minimax-algorithm
 related_concepts: []
 sources:
 - russell-norvig-aima-ch05
@@ -39,4 +41,5 @@ A search tree superimposed over the state-space graph of a game, in which vertic
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[minimax-algorithm]] — prerequisite-of: The game-tree formalism (S0, ACTIONS, RESULT, UTILITY, MAX/MIN) must be understood before minimax.
 [To be populated during integration]

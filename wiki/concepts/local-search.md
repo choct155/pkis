@@ -1,6 +1,9 @@
 ---
 aliases: []
 also_type: []
+applies:
+- continuous-optimization
+- convex-optimization
 component_scores:
   application: null
   boundary: null
@@ -40,4 +43,6 @@ A family of search methods that operate from a single current state (or a small 
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[convex-optimization]] — applies: Constrained continuous local search reduces to LP and convex optimization for well-shaped landscapes.
+- [[continuous-optimization]] — applies: Local search methods (empirical gradient, line search, Newton-Raphson) extend to continuous spaces.
 [To be populated during integration]

@@ -21,6 +21,8 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - russell-norvig-aima-ch19
+specializes:
+- supervised-learning
 tags: []
 title: k-Nearest Neighbors
 understanding: 0
@@ -37,4 +39,5 @@ KNN suffers acutely from the curse of dimensionality -- in high dimensions the '
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[supervised-learning]] — specializes
 [To be populated during integration]

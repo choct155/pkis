@@ -14,6 +14,8 @@ date_updated: '2026-06-09'
 domain:
 - bayesian-stats
 - knowledge-representation
+extends:
+- relational-probability-model
 id: pkis:framework:open-universe-probability-model
 knowledge_type: framework
 maturity: evolving
@@ -21,6 +23,8 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - russell-norvig-aima-ch15
+specializes:
+- probabilistic-programming-language
 tags:
 - existence-uncertainty
 - identity-uncertainty
@@ -30,6 +34,9 @@ tags:
 - BLOG
 title: Open-Universe Probability Model
 understanding: 0
+uses:
+- mcmc
+- poisson-process
 ---
 
 ## Definition
@@ -39,4 +46,8 @@ A first-order probability model on the standard (not database) semantics of firs
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[poisson-process]] — uses: number statements commonly use the Poisson distribution over object counts
+- [[mcmc]] — uses: approximate inference over partial worlds since worlds may be infinite
+- [[relational-probability-model]] — extends: OUPMs drop unique-names/domain-closure, adding existence and identity uncertainty via number statements
+- [[probabilistic-programming-language]] — specializes: OUPMs are declarative PPLs on standard FOL semantics
 [To be populated during integration]

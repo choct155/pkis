@@ -1,6 +1,10 @@
 ---
 aliases: []
 also_type: []
+analogous-to:
+- min-sum-algorithm
+applies:
+- hidden-markov-model
 component_scores:
   alternatives: null
   conditions: null
@@ -17,12 +21,16 @@ domain:
 - state-space-models
 - information-theory
 id: pkis:technique:viterbi-for-hmm
+instantiates:
+- max-product-algorithm
 knowledge_type: technique
 maturity: evolving
 needs_canonical_source: false
 related_concepts: []
 sources:
 - russell-norvig-aima-ch14
+specializes:
+- filtering-prediction-smoothing
 tags:
 - viterbi
 - most-likely-explanation
@@ -51,4 +59,8 @@ Time is linear in the sequence length t (like filtering), but unlike constant-sp
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[filtering-prediction-smoothing]] — specializes: Viterbi solves the most-likely-explanation task, one of the four canonical temporal inference tasks.
+- [[max-product-algorithm]] — instantiates: Viterbi is the max-product (max/sum) semiring version of the forward filtering recursion.
+- [[min-sum-algorithm]] — analogous-to: Same trellis dynamic program; the AIMA HMM most-likely-explanation framing is the probabilistic-temporal counterpart of the min-sum/Viterbi decoder.
+- [[hidden-markov-model]] — applies: Viterbi computes the most likely hidden state sequence for an HMM observation sequence.
 [To be populated during integration]

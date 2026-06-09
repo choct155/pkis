@@ -15,6 +15,8 @@ date_created: '2026-06-09'
 date_updated: '2026-06-09'
 domain:
 - deep-learning
+extends:
+- word-embeddings
 id: pkis:concept:contextual-word-embeddings
 knowledge_type: concept
 maturity: evolving
@@ -29,6 +31,9 @@ tags:
 - representations
 title: Contextual Word Embeddings
 understanding: 0
+uses:
+- recurrent-neural-network
+- bidirectional-rnn
 ---
 
 ## Definition
@@ -38,4 +43,7 @@ A representation that maps a word together with its surrounding context to an em
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[bidirectional-rnn]] — uses
+- [[recurrent-neural-network]] — uses
+- [[word-embeddings]] — extends
 [To be populated during integration]

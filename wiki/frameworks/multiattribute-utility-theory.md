@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+analogous-to:
+- bayesian-networks
 component_scores:
   application: null
   limits: null
@@ -21,6 +23,8 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - russell-norvig-aima-ch16
+specializes:
+- expected-utility-theory
 tags:
 - decision-theory
 - utility
@@ -29,6 +33,8 @@ tags:
 - public-policy
 title: Multiattribute Utility Theory
 understanding: 0
+uses:
+- stochastic-dominance
 ---
 
 ## Definition
@@ -45,6 +51,9 @@ Under uncertainty one needs structure over *lotteries*, not just values. **Utili
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[bayesian-networks]] — analogous-to: additive/multiplicative utility decomposition mirrors BN factorization of a joint distribution
+- [[stochastic-dominance]] — uses: stochastic dominance discards dominated options within MAUT
+- [[expected-utility-theory]] — specializes: MAUT specializes EU theory to vector-valued outcomes
 - Specializes the general expected-utility framework to vector-valued outcomes.
 - Uses stochastic dominance to discard dominated options without numeric utilities.
 - Structurally analogous to Bayesian-network decomposition of a joint distribution.

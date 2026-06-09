@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+analogous-to:
+- simulated-annealing
 component_scores:
   alternatives: null
   conditions: null
@@ -15,6 +17,8 @@ date_updated: '2026-06-09'
 domain:
 - optimization
 - search-and-planning
+extends:
+- local-beam-search
 id: pkis:technique:genetic-algorithm
 knowledge_type: technique
 maturity: evolving
@@ -41,4 +45,6 @@ An evolutionary algorithm that can be viewed as a variant of stochastic beam sea
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[simulated-annealing]] — analogous-to: Both take large stochastic steps early and smaller steps as the search 'cools'/population converges.
+- [[local-beam-search]] — extends: GAs are stochastic beam search plus recombination/crossover of multiple parents.
 [To be populated during integration]

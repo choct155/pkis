@@ -23,6 +23,8 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - russell-norvig-aima-ch23
+specializes:
+- language-model
 tags:
 - nlp
 - markov
@@ -30,6 +32,8 @@ tags:
 - smoothing
 title: N-gram Language Model
 understanding: 0
+uses:
+- markov-chains
 ---
 
 ## Definition
@@ -39,4 +43,6 @@ A language model that factorizes the probability of a sequence using a Markov as
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[markov-chains]] — uses
+- [[language-model]] — specializes
 [To be populated during integration]

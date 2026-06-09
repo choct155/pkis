@@ -1,6 +1,10 @@
 ---
 aliases: []
 also_type: []
+analogous-to:
+- decision-theory-foundations
+applies:
+- expected-utility-theory
 component_scores:
   application: null
   limits: null
@@ -8,6 +12,8 @@ component_scores:
   purpose: null
   scope: null
   structure: null
+contrasts-with:
+- conjectural-variation
 coverage: 1
 date_created: '2026-06-09'
 date_updated: '2026-06-09'
@@ -37,4 +43,7 @@ The mathematical theory of strategic decision making: how rational agents should
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[conjectural-variation]] — contrasts-with
+- [[expected-utility-theory]] — applies
+- [[decision-theory-foundations]] — analogous-to
 [To be populated during integration]

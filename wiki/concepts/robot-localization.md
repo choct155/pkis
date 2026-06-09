@@ -23,6 +23,8 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - russell-norvig-aima-ch26
+specializes:
+- robot-perception-state-estimation
 tags:
 - robotics
 - filtering
@@ -30,6 +32,9 @@ tags:
 - belief-state
 title: Robot Localization
 understanding: 0
+uses:
+- kalman-filter
+- particle-filter
 ---
 
 ## Definition
@@ -39,4 +44,7 @@ The problem of estimating where things are—especially the robot itself—by ma
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[particle-filter]] — uses: Monte Carlo localization represents the pose belief as particles
+- [[kalman-filter]] — uses: Gaussian belief representation for the pose posterior; EKF linearizes nonlinear models
+- [[robot-perception-state-estimation]] — specializes: localization is the canonical instance of robot state estimation—estimating the robot's own pose
 [To be populated during integration]

@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- vanishing-gradient-problem
 component_scores:
   alternatives: null
   conditions: null
@@ -28,6 +30,8 @@ tags:
 - identity-mapping
 title: Residual Network (Skip Connections)
 understanding: 0
+uses:
+- convolutional-neural-networks
 ---
 
 ## Definition
@@ -37,4 +41,6 @@ An architectural device (He et al., 2016) for building very deep networks that a
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[convolutional-neural-networks]] — uses: residual blocks are commonly built on convolutional layers in vision
+- [[vanishing-gradient-problem]] — applies: skip connections let information and gradients propagate by default in very deep nets
 [To be populated during integration]

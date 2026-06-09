@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- maximum-expected-utility-principle
 component_scores:
   application: null
   limits: null
@@ -8,12 +10,16 @@ component_scores:
   purpose: null
   scope: null
   structure: null
+contrasts-with:
+- decision-tree-analysis
 coverage: 1
 date_created: '2026-06-09'
 date_updated: '2026-06-09'
 domain:
 - bayesian-stats
 - agentic-systems
+extends:
+- bayesian-networks
 id: pkis:framework:decision-network-influence-diagram
 knowledge_type: framework
 maturity: evolving
@@ -50,6 +56,9 @@ To choose an action: (1) set the evidence variables for the current state; (2) f
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[decision-tree-analysis]] — contrasts-with: decision networks avoid building the exponential decision tree
+- [[maximum-expected-utility-principle]] — applies: network evaluation implements MEU as inference
+- [[bayesian-networks]] — extends: decision networks add decision and utility nodes to a Bayesian network
 - Extends Bayesian networks with decision and utility nodes.
 - Implements the maximum-expected-utility principle as an inference procedure.
 - Its action-utility form is the Q-function used in reinforcement learning.

@@ -20,6 +20,8 @@ id: pkis:concept:quantifiers-universal-existential
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- first-order-logic
 related_concepts: []
 sources:
 - russell-norvig-aima-ch08
@@ -35,4 +37,5 @@ understanding: 0
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[first-order-logic]] — prerequisite-of
 [To be populated during integration]

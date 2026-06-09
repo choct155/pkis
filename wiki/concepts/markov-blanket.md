@@ -21,14 +21,20 @@ id: pkis:concept:markov-blanket
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- bayesian-networks
 related_concepts: []
 sources:
 - russell-norvig-aima-ch13
+specializes:
+- conditional-independence
 tags:
 - conditional-independence
 - graphical-models
 title: Markov Blanket
 understanding: 0
+uses:
+- d-separation
 ---
 
 ## Definition
@@ -38,4 +44,7 @@ understanding: 0
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[bayesian-networks]] — prerequisite-of
+- [[d-separation]] — uses
+- [[conditional-independence]] — specializes
 [To be populated during integration]

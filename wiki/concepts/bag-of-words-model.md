@@ -23,6 +23,8 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - russell-norvig-aima-ch23
+specializes:
+- n-gram-language-model
 tags:
 - nlp
 - naive-bayes
@@ -39,4 +41,5 @@ A generative language model that applies naive Bayes to a string of words, P(Cla
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[n-gram-language-model]] — specializes
 [To be populated during integration]

@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+analogous-to:
+- the-prisoners-dilemma
 component_scores:
   formulation: null
   instances: null
@@ -35,4 +37,5 @@ The situation (Lloyd 1833; Hardin 1968) in which a shared resource that no one m
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[the-prisoners-dilemma]] — analogous-to
 [To be populated during integration]

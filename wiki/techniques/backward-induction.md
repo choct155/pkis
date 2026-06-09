@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- extensive-form-game
 component_scores:
   alternatives: null
   conditions: null
@@ -23,6 +25,8 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - russell-norvig-aima-ch18
+specializes:
+- value-iteration
 tags:
 - dynamic-programming
 - game-tree
@@ -39,4 +43,6 @@ A dynamic-programming technique for solving sequential games, generalizing the m
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[value-iteration]] — specializes
+- [[extensive-form-game]] — applies
 [To be populated during integration]

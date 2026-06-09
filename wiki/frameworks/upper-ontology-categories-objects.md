@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- knowledge-representation
 component_scores:
   application: null
   limits: null
@@ -20,6 +22,8 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - russell-norvig-aima-ch10
+specializes:
+- formal-ontology
 tags:
 - ontology
 - categories
@@ -55,4 +59,6 @@ General ontological engineering has had limited success; no top AI application u
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[formal-ontology]] — specializes: an upper ontology is a particular, most-general kind of formal ontology
+- [[knowledge-representation]] — applies: an upper ontology is the content-level apparatus of KR — organizing what to represent
 [To be populated during integration]

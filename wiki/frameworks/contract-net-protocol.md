@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- mechanism-design
 component_scores:
   application: null
   limits: null
@@ -36,4 +38,5 @@ One of the oldest and most widely used multiagent task-sharing protocols (Reid S
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[mechanism-design]] — applies
 [To be populated during integration]

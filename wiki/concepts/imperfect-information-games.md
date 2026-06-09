@@ -24,6 +24,8 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - russell-norvig-aima-ch05
+specializes:
+- adversarial-search
 tags:
 - adversarial-search
 - partial-observability
@@ -33,6 +35,8 @@ tags:
 - averaging-over-clairvoyance
 title: Imperfect-Information Games (Belief-State Search)
 understanding: 0
+uses:
+- expectiminimax
 ---
 
 ## Definition
@@ -42,4 +46,6 @@ Games in which players lack full access to the state -- either through determini
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[adversarial-search]] — specializes: Imperfect-information game play is adversarial search under partial observability via belief states.
+- [[expectiminimax]] — uses: Averaging over clairvoyance treats the deal as a root chance node and averages EXPECTIMINIMAX over deals.
 [To be populated during integration]

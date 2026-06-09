@@ -19,6 +19,8 @@ id: pkis:concept:belief-state-search
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- markov-decision-processes
 related_concepts: []
 sources:
 - russell-norvig-aima-ch04
@@ -32,6 +34,8 @@ tags:
 - localization
 title: Belief-State Search
 understanding: 0
+uses:
+- and-or-search
 ---
 
 ## Definition
@@ -41,4 +45,6 @@ When an environment is partially observable, the agent does not know its exact p
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[markov-decision-processes]] — prerequisite-of: Belief states generalize to POMDPs / probabilistic state estimation (AIMA Ch. 17).
+- [[and-or-search]] — uses: General partially observable problems are solved by running AND-OR search over belief states.
 [To be populated during integration]

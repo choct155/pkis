@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- formal-ontology
 component_scores:
   alternatives: null
   conditions: null
@@ -25,6 +27,8 @@ sources:
 tags: []
 title: Knowledge Engineering
 understanding: 0
+uses:
+- first-order-logic
 ---
 
 ## Definition
@@ -34,4 +38,6 @@ understanding: 0
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[formal-ontology]] — applies
+- [[first-order-logic]] — uses
 [To be populated during integration]

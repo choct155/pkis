@@ -28,6 +28,8 @@ tags:
 - solution-concept
 title: Mixed Strategy
 understanding: 0
+uses:
+- game-theory
 ---
 
 ## Definition
@@ -37,4 +39,5 @@ A randomized policy that selects actions according to a probability distribution
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[game-theory]] — uses
 [To be populated during integration]

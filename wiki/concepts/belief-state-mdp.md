@@ -23,6 +23,8 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - russell-norvig-aima-ch17
+specializes:
+- markov-decision-processes
 tags:
 - belief-state
 - pomdp
@@ -40,4 +42,5 @@ The construction that reduces a partially observable MDP to a fully observable M
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[markov-decision-processes]] — specializes: The belief-state construction yields an ordinary, fully observable MDP whose states are probability distributions over the POMDP's physical states.
 [To be populated during integration]

@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- datalog
 component_scores:
   alternatives: null
   conditions: null
@@ -29,6 +31,8 @@ tags:
 - russell-norvig-aima
 title: Backward Chaining (First-Order)
 understanding: 0
+uses:
+- generalized-modus-ponens
 ---
 
 ## Definition
@@ -38,4 +42,6 @@ A goal-directed inference algorithm over definite clauses that works backward fr
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[datalog]] — applies
+- [[generalized-modus-ponens]] — uses
 [To be populated during integration]

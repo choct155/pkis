@@ -30,6 +30,9 @@ tags:
 - clauses
 title: Resolution Inference
 understanding: 0
+uses:
+- conjunctive-normal-form
+- satisfiability-sat
 ---
 
 ## Definition
@@ -39,4 +42,6 @@ A single inference rule that, applied to clauses in CNF, yields a refutation-com
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[satisfiability-sat]] — uses: Refutation: prove KB |= a by showing (KB ^ ~a) unsatisfiable.
+- [[conjunctive-normal-form]] — uses: Resolution applies only to clauses; every sentence is converted to CNF first.
 [To be populated during integration]

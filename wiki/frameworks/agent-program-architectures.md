@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- rational-agent
 component_scores:
   application: null
   limits: null
@@ -30,6 +32,9 @@ tags:
 - agent-architecture
 title: Agent Program Architectures
 understanding: 0
+uses:
+- expected-utility-theory
+- atomic-factored-structured-representations
 ---
 
 ## Definition
@@ -45,4 +50,7 @@ Four basic skeleton designs of increasing capability:
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[atomic-factored-structured-representations]] — uses: Agent components represent world states using atomic, factored, or structured representations.
+- [[expected-utility-theory]] — uses: Utility-based agents choose actions maximizing expected utility per expected utility theory.
+- [[rational-agent]] — applies: The skeleton designs are concrete program-level realizations of the rational-agent specification.
 [To be populated during integration]

@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- classical-planning-pddl
 component_scores:
   application: null
   boundary: null
@@ -32,6 +34,8 @@ tags:
 - ignore-delete-lists
 title: Planning Heuristics via Relaxation and Abstraction
 understanding: 0
+uses:
+- planning-graph-graphplan
 ---
 
 ## Definition
@@ -41,4 +45,6 @@ Because PDDL uses a factored representation of states and actions, admissible do
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[planning-graph-graphplan]] — uses: ignore-delete-lists heuristic estimated via a planning graph
+- [[classical-planning-pddl]] — applies: relaxes PDDL action schemas to derive admissible heuristics
 [To be populated during integration]

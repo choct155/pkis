@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- neural-networks
 component_scores:
   alternatives: null
   conditions: null
@@ -22,6 +24,8 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - russell-norvig-aima-ch21
+specializes:
+- model-selection-problem
 tags:
 - hyperparameter-tuning
 - automl
@@ -38,4 +42,6 @@ The automated exploration of the space of possible network architectures (depth,
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[model-selection-problem]] — specializes: architecture search is hyperparameter/model selection over the architecture space
+- [[neural-networks]] — applies: automates selection of network depth, width, connectivity, and node types
 [To be populated during integration]

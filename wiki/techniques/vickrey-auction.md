@@ -16,6 +16,8 @@ domain:
 - multi-agent-systems
 - economics
 id: pkis:technique:vickrey-auction
+instantiates:
+- auction-theory
 knowledge_type: technique
 maturity: evolving
 needs_canonical_source: false
@@ -38,4 +40,5 @@ A sealed-bid auction in which the highest bidder wins but pays the *second-highe
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[auction-theory]] — instantiates
 [To be populated during integration]

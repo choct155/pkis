@@ -30,6 +30,8 @@ tags:
 - axiomatic
 title: Shapley Value
 understanding: 0
+uses:
+- cooperative-game
 ---
 
 ## Definition
@@ -39,4 +41,5 @@ Lloyd Shapley's (1953) proposal for fairly dividing a grand coalition's value v(
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[cooperative-game]] — uses
 [To be populated during integration]

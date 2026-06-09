@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+analogous-to:
+- exploration-exploitation-tradeoff
 component_scores:
   application: null
   limits: null
@@ -14,6 +16,8 @@ date_updated: '2026-06-09'
 domain:
 - agentic-ai
 - reinforcement-learning
+extends:
+- agent-program-architectures
 id: pkis:framework:learning-agent-architecture
 knowledge_type: framework
 maturity: evolving
@@ -30,6 +34,8 @@ tags:
 - exploration
 title: Learning Agent Architecture
 understanding: 0
+uses:
+- performance-measure
 ---
 
 ## Definition
@@ -46,4 +52,7 @@ Learning is the modification of each agent component to bring it into closer agr
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[exploration-exploitation-tradeoff]] — analogous-to: The problem generator's role (suggesting suboptimal exploratory actions for long-run gain) instantiates the exploration–exploitation tradeoff.
+- [[performance-measure]] — uses: The critic judges the agent against a fixed external performance standard.
+- [[agent-program-architectures]] — extends: Any of the four agent-program designs can be wrapped as a learning agent by adding learning element, critic, and problem generator around the performance element.
 [To be populated during integration]

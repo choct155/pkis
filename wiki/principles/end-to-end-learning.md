@@ -25,6 +25,8 @@ tags:
 - representation-learning
 title: End-to-End Learning
 understanding: 0
+uses:
+- automatic-differentiation
 ---
 
 ## Definition
@@ -34,4 +36,5 @@ An approach in which an entire complex computational system is composed from tra
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[automatic-differentiation]] — uses: autodiff supplies gradients for arbitrary differentiable compositions of subsystems
 [To be populated during integration]

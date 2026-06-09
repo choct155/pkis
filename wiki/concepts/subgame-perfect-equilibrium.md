@@ -23,6 +23,8 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - russell-norvig-aima-ch18
+specializes:
+- nash-equilibrium
 tags:
 - equilibrium-refinement
 - credible-threat
@@ -30,6 +32,8 @@ tags:
 - extensive-form
 title: Subgame-Perfect Equilibrium
 understanding: 0
+uses:
+- backward-induction
 ---
 
 ## Definition
@@ -39,4 +43,6 @@ A refinement of Nash equilibrium for extensive-form games that eliminates equili
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[backward-induction]] — uses
+- [[nash-equilibrium]] — specializes
 [To be populated during integration]

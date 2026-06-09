@@ -24,6 +24,8 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - russell-norvig-aima-ch18
+specializes:
+- normal-form-game
 tags:
 - iterated-game
 - stage-game
@@ -31,6 +33,8 @@ tags:
 - backward-induction
 title: Repeated Game
 understanding: 0
+uses:
+- backward-induction
 ---
 
 ## Definition
@@ -40,4 +44,6 @@ A multi-move game in which players repeatedly play rounds of a single-move *stag
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[backward-induction]] — uses
+- [[normal-form-game]] — specializes
 [To be populated during integration]

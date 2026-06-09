@@ -15,7 +15,11 @@ date_updated: '2026-06-09'
 domain:
 - robotics
 - optimization
+extends:
+- probabilistic-roadmap-prm
 id: pkis:technique:rapidly-exploring-random-tree-rrt
+instantiates:
+- motion-planning
 knowledge_type: technique
 maturity: evolving
 needs_canonical_source: false
@@ -38,4 +42,6 @@ A randomized, single-query motion planner that incrementally grows tree(s)—oft
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[probabilistic-roadmap-prm]] — extends: RRT is described as an extension of the PRM idea for single-query planning
+- [[motion-planning]] — instantiates: a randomized single-query tree method for motion planning
 [To be populated during integration]

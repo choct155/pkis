@@ -8,6 +8,8 @@ component_scores:
   purpose: null
   scope: null
   structure: null
+contrasts-with:
+- motion-planning
 coverage: 1
 date_created: '2026-06-09'
 date_updated: '2026-06-09'
@@ -20,6 +22,8 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - russell-norvig-aima-ch26
+specializes:
+- robotics-decision-making
 tags:
 - robotics
 - reactive-control
@@ -36,4 +40,6 @@ A framework (Brooks, 1986) for building reactive robot controllers by composing 
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[robotics-decision-making]] — specializes: the reactive (reflex-agent) pole of the deliberative-vs-reactive design space
+- [[motion-planning]] — contrasts-with: reactive AFSM control vs deliberative configuration-space planning; succeeds where planning is intractable (high-DOF rough terrain)
 [To be populated during integration]

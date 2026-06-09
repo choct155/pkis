@@ -16,6 +16,8 @@ domain:
 - optimization
 - symbolic-subsymbolic
 - knowledge-representation
+extends:
+- belief-state-planning
 id: pkis:technique:execution-monitoring-replanning
 knowledge_type: technique
 maturity: evolving
@@ -32,6 +34,8 @@ tags:
 - plan-monitoring
 title: Execution Monitoring and Replanning
 understanding: 0
+uses:
+- partial-order-planning
 ---
 
 ## Definition
@@ -41,4 +45,6 @@ Online planning interleaves planning and acting: an agent executes a plan while 
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[partial-order-planning]] — uses: plan monitoring leverages partial-order causal-link structures
+- [[belief-state-planning]] — extends: online complement that repairs contingent plans at execution time
 [To be populated during integration]

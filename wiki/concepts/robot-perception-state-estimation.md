@@ -30,6 +30,9 @@ tags:
 - self-supervised-learning
 title: Robot Perception as Continuous State Estimation
 understanding: 0
+uses:
+- kalman-filter
+- particle-filter
 ---
 
 ## Definition
@@ -39,4 +42,6 @@ The process by which a robot maps noisy sensor measurements into an internal rep
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[particle-filter]] — uses: particle filtering maintains a non-parametric belief state
+- [[kalman-filter]] — uses: Kalman filtering maintains the belief state over environment variables
 [To be populated during integration]

@@ -15,6 +15,8 @@ domain:
 - reinforcement-learning
 - formal-methods
 - systems-theory
+generalizes:
+- markov-decision-processes
 id: pkis:framework:partially-observable-mdp
 knowledge_type: framework
 maturity: evolving
@@ -31,6 +33,8 @@ tags:
 - value-of-information
 title: Partially Observable Markov Decision Process (POMDP)
 understanding: 0
+uses:
+- belief-state-mdp
 ---
 
 ## Definition
@@ -40,4 +44,6 @@ A POMDP extends a Markov decision process to the case where the agent cannot dir
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[belief-state-mdp]] — uses: Solving a POMDP proceeds by reducing it to an MDP over belief states.
+- [[markov-decision-processes]] — generalizes: A POMDP relaxes the full-observability assumption of an MDP, adding a sensor model P(e|s); an MDP is the special case where the state is perceived directly.
 [To be populated during integration]

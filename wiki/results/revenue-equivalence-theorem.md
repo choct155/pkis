@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- auction-theory
 component_scores:
   conditions: null
   implications: null
@@ -35,4 +37,5 @@ A central result of auction theory (Myerson 1981; Riley and Samuelson 1981): und
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[auction-theory]] — applies
 [To be populated during integration]

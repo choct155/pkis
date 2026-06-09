@@ -20,9 +20,13 @@ id: pkis:concept:task-environment-properties
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- agent-program-architectures
 related_concepts: []
 sources:
 - russell-norvig-aima-ch02
+specializes:
+- peas-task-environment
 tags:
 - task-environment
 - observability
@@ -50,4 +54,6 @@ The hardest case is partially observable, multiagent, nondeterministic, sequenti
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[agent-program-architectures]] — prerequisite-of: Environment properties (observability, determinism, etc.) determine which agent-program design is appropriate.
+- [[peas-task-environment]] — specializes: The categorization dimensions classify the Environment component of a PEAS task environment.
 [To be populated during integration]

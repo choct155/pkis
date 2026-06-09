@@ -32,6 +32,10 @@ tags:
 - action-exclusion
 title: 'SATPLAN: Planning as Satisfiability'
 understanding: 0
+uses:
+- satisfiability-sat
+- frame-problem
+- dpll-algorithm
 ---
 
 ## Definition
@@ -41,4 +45,7 @@ An approach (Kautz & Selman, 1992) that solves planning by reduction to Boolean 
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[dpll-algorithm]] — uses: A DPLL-style solver finds the plan model.
+- [[frame-problem]] — uses: Transition axioms in SATPLAN are successor-state axioms, the frame-problem solution.
+- [[satisfiability-sat]] — uses: Reduces planning to finding a satisfying model.
 [To be populated during integration]

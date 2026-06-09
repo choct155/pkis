@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- admissible-and-consistent-heuristics
 component_scores:
   alternatives: null
   conditions: null
@@ -39,4 +41,5 @@ The principal methods for *inventing* admissible heuristics rather than hand-spe
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[admissible-and-consistent-heuristics]] — applies: relaxation, pattern databases, and landmarks are methods for constructing admissible heuristics
 [To be populated during integration]

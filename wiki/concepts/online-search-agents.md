@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- reinforcement-learning
 component_scores:
   application: null
   boundary: null
@@ -42,4 +44,5 @@ Search agents that interleave computation, sensing, and acting—taking an actio
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[reinforcement-learning]] — applies: Online search in unknown environments is a precursor to / special case of RL; LRTA* is an RL algorithm.
 [To be populated during integration]

@@ -22,6 +22,8 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - russell-norvig-aima-ch21
+specializes:
+- bayesian-networks
 tags:
 - generative-model
 - time-series
@@ -38,4 +40,5 @@ A generative model in which each element x_i of the data vector is predicted fro
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[bayesian-networks]] — specializes: a fixed-size AR model is a fully observable, possibly fully connected Bayes net
 [To be populated during integration]

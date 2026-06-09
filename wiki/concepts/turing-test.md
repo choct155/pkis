@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- weak-vs-strong-ai
 component_scores:
   application: null
   boundary: null
@@ -16,6 +18,8 @@ date_updated: '2026-06-09'
 domain:
 - knowledge-representation
 id: pkis:concept:turing-test
+instantiates:
+- four-approaches-to-ai
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
@@ -50,4 +54,6 @@ Most researchers have devoted little effort to passing it, preferring to study t
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[weak-vs-strong-ai]] — applies
+- [[four-approaches-to-ai]] — instantiates
 [To be populated during integration]

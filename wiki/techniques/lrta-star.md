@@ -15,6 +15,8 @@ date_updated: '2026-06-09'
 domain:
 - search-and-planning
 - reinforcement-learning
+extends:
+- hill-climbing
 id: pkis:technique:lrta-star
 knowledge_type: technique
 maturity: evolving
@@ -22,6 +24,9 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - russell-norvig-aima-ch04
+specializes:
+- online-search-agents
+- reinforcement-learning
 tags:
 - LRTA-star
 - real-time-search
@@ -40,4 +45,7 @@ An online search agent that augments hill climbing with memory rather than rando
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[reinforcement-learning]] — specializes: LRTA* is a special case of RL algorithms for stochastic environments (Barto et al. 1995).
+- [[hill-climbing]] — extends: LRTA* augments hill climbing with a learned cost-to-go memory H(s) to escape local minima.
+- [[online-search-agents]] — specializes: LRTA* is a specific online search agent that updates heuristic estimates from experience.
 [To be populated during integration]

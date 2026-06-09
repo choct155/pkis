@@ -22,6 +22,8 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - russell-norvig-aima-ch04
+specializes:
+- local-search
 tags:
 - hill-climbing
 - greedy-local-search
@@ -31,6 +33,8 @@ tags:
 - 8-queens
 title: Hill Climbing
 understanding: 0
+uses:
+- gradient-descent
 ---
 
 ## Definition
@@ -40,4 +44,6 @@ The simplest local search algorithm: keep one current state, and on each iterati
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[gradient-descent]] — uses: Steepest-ascent/empirical-gradient hill climbing follows the objective gradient; dual to gradient descent on cost.
+- [[local-search]] — specializes: Hill climbing is the simplest instance of local search: a single current state moved to the best neighbor.
 [To be populated during integration]

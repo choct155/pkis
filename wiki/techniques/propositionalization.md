@@ -28,6 +28,8 @@ tags:
 - russell-norvig-aima
 title: Propositionalization
 understanding: 0
+uses:
+- herbrands-theorem
 ---
 
 ## Definition
@@ -37,4 +39,5 @@ The reduction of first-order inference to propositional inference by replacing q
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[herbrands-theorem]] — uses
 [To be populated during integration]

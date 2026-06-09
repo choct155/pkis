@@ -16,6 +16,8 @@ domain:
 - reinforcement-learning
 - optimization
 id: pkis:technique:adaptive-dynamic-programming
+instantiates:
+- model-based-rl
 knowledge_type: technique
 maturity: evolving
 needs_canonical_source: false
@@ -25,6 +27,11 @@ sources:
 tags: []
 title: Adaptive Dynamic Programming
 understanding: 0
+uses:
+- value-iteration
+- policy-iteration
+- bellman-equation
+- prioritized-sweeping
 ---
 
 ## Definition
@@ -34,4 +41,9 @@ understanding: 0
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[prioritized-sweeping]] — uses
+- [[bellman-equation]] — uses
+- [[model-based-rl]] — instantiates
+- [[policy-iteration]] — uses
+- [[value-iteration]] — uses
 [To be populated during integration]

@@ -19,6 +19,8 @@ id: pkis:technique:skolemization
 knowledge_type: technique
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- resolution-first-order
 related_concepts: []
 sources:
 - russell-norvig-aima-ch09
@@ -38,4 +40,5 @@ Skolemization removes existential quantifiers by replacing an existentially quan
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[resolution-first-order]] — prerequisite-of
 [To be populated during integration]

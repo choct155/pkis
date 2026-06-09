@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- probabilistic-context-free-grammar
 component_scores:
   alternatives: null
   conditions: null
@@ -9,6 +11,8 @@ component_scores:
   implementation: null
   operational_mechanism: null
   principled_mechanism: null
+contrasts-with:
+- n-gram-language-model
 coverage: 1
 date_created: '2026-06-09'
 date_updated: '2026-06-09'
@@ -40,4 +44,6 @@ The process of analyzing a string of words to recover its phrase structure under
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[n-gram-language-model]] — contrasts-with
+- [[probabilistic-context-free-grammar]] — applies
 [To be populated during integration]

@@ -28,6 +28,8 @@ tags:
 - definitions-of-ai
 title: Four Approaches to AI
 understanding: 0
+uses:
+- bounded-rationality
 ---
 
 ## Definition
@@ -51,4 +53,5 @@ Russell and Norvig argue for **acting rationally**: it is more general (correct 
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[bounded-rationality]] — uses
 [To be populated during integration]

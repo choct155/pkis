@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- relational-probability-model
 component_scores:
   alternatives: null
   conditions: null
@@ -30,6 +32,8 @@ tags:
 - inference
 title: Grounding (Unrolling)
 understanding: 0
+uses:
+- bayesian-networks
 ---
 
 ## Definition
@@ -39,4 +43,6 @@ The most direct inference strategy for relational and open-universe probability 
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[bayesian-networks]] — uses: grounding produces the equivalent Bayes net on which standard inference (e.g. variable elimination, with factor caching/lifting) runs
+- [[relational-probability-model]] — applies: grounding instantiates RPM dependencies into the equivalent Bayes net for inference
 [To be populated during integration]

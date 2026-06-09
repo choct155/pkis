@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- bayesian-networks
 component_scores:
   application: null
   boundary: null
@@ -38,4 +40,5 @@ understanding: 0
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[bayesian-networks]] — applies
 [To be populated during integration]

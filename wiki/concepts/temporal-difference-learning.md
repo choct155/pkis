@@ -4,6 +4,7 @@ also_type: []
 applies:
 - credit-assignment-problem
 - markov-decision-processes
+- adaptive-dynamic-programming
 component_scores:
   application: null
   boundary: null
@@ -68,6 +69,7 @@ TD learning lets an agent learn from raw experience without a model and without 
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[adaptive-dynamic-programming]] — applies
 - [[markov-decision-processes]] — applies: TD learning is a solution method for the RL problem formalized as a Markov decision process (prediction and control).
 - [[reward-signal]] — uses: The TD error R_{t+1} + gamma*V(S_{t+1}) - V(S_t) combines the reward signal R with the temporal difference of value predictions.
 - [[n-step-bootstrapping]] — prerequisite-of: one-step TD must be understood before its n-step generalization

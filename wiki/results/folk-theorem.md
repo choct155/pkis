@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- repeated-game
 component_scores:
   conditions: null
   implications: null
@@ -28,6 +30,8 @@ tags:
 - punishment-strategies
 title: Nash Folk Theorem
 understanding: 0
+uses:
+- nash-equilibrium
 ---
 
 ## Definition
@@ -37,4 +41,6 @@ A class of results characterizing which outcomes can be sustained by Nash equili
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[nash-equilibrium]] — uses
+- [[repeated-game]] — applies
 [To be populated during integration]

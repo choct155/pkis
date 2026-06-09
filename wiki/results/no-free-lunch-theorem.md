@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+analogous-to:
+- bias-variance-tradeoff
 component_scores:
   conditions: null
   implications: null
@@ -33,4 +35,5 @@ The same fact appears in learning theory: with H the class of all Boolean functi
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[bias-variance-tradeoff]] — analogous-to
 [To be populated during integration]

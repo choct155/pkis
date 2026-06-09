@@ -26,6 +26,8 @@ tags:
 - joint-vs-conditional
 title: Generative vs Discriminative Models
 understanding: 0
+uses:
+- bias-variance-tradeoff
 ---
 
 ## Definition
@@ -35,4 +37,5 @@ A distinction between two families of classifiers. A generative model learns the
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[bias-variance-tradeoff]] — uses
 [To be populated during integration]

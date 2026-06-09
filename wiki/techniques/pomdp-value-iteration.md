@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- partially-observable-mdp
 component_scores:
   alternatives: null
   conditions: null
@@ -22,6 +24,8 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - russell-norvig-aima-ch17
+specializes:
+- value-iteration
 tags:
 - pomdp
 - value-iteration
@@ -40,4 +44,6 @@ An exact value-iteration algorithm for POMDPs that, instead of storing one utili
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[value-iteration]] — specializes: POMDP value iteration is the value-iteration scheme redesigned for the continuous belief-state MDP, storing alpha-vector hyperplanes instead of per-state utilities.
+- [[partially-observable-mdp]] — applies: Exact dynamic-programming solver for POMDPs via undominated conditional plans and alpha-vectors.
 [To be populated during integration]

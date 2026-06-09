@@ -25,6 +25,8 @@ sources:
 tags: []
 title: Robot Rights and Personhood
 understanding: 0
+uses:
+- machine-consciousness-and-qualia
 ---
 
 ## Definition
@@ -34,4 +36,5 @@ understanding: 0
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[machine-consciousness-and-qualia]] — uses
 [To be populated during integration]

@@ -15,6 +15,8 @@ date_updated: '2026-06-09'
 domain:
 - computer-vision
 - deep-learning
+extends:
+- convolutional-neural-networks
 id: pkis:technique:object-detection
 knowledge_type: technique
 maturity: evolving
@@ -30,6 +32,9 @@ tags:
 - non-maximum-suppression
 title: Object Detection
 understanding: 0
+uses:
+- convolutional-neural-networks
+- image-segmentation
 ---
 
 ## Definition
@@ -39,4 +44,7 @@ The task of finding multiple objects in an image, reporting each object's class 
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[image-segmentation]] — uses: Objectness/region proposals exploit region coherence akin to segmentation cues.
+- [[convolutional-neural-networks]] — extends: Object detection turns a whole-image CNN classifier into a multi-object localizer via region proposals and NMS.
+- [[convolutional-neural-networks]] — uses: Window/region classification and the feature stack in detectors like Faster RCNN are CNNs.
 [To be populated during integration]

@@ -19,6 +19,8 @@ id: pkis:technique:edge-detection
 knowledge_type: technique
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- image-segmentation
 related_concepts: []
 sources:
 - russell-norvig-aima-ch25
@@ -30,6 +32,8 @@ tags:
 - canny
 title: Edge Detection
 understanding: 0
+uses:
+- convolution-of-distributions
 ---
 
 ## Definition
@@ -39,4 +43,6 @@ An early, low-level vision operation that abstracts an image into curves of sign
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[image-segmentation]] — prerequisite-of: Boundary detection refines and extends simple edge detection; edges are a low-level input to segmentation.
+- [[convolution-of-distributions]] — uses: Smoothing and differentiation are implemented as image convolution with a (derivative-of-)Gaussian kernel.
 [To be populated during integration]

@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- constraint-satisfaction-problem
 component_scores:
   alternatives: null
   conditions: null
@@ -9,6 +11,8 @@ component_scores:
   implementation: null
   operational_mechanism: null
   principled_mechanism: null
+contrasts-with:
+- backtracking-search
 coverage: 1
 date_created: '2026-06-09'
 date_updated: '2026-06-09'
@@ -32,6 +36,8 @@ tags:
 - online-search
 title: Min-Conflicts Local Search for CSPs
 understanding: 0
+uses:
+- simulated-annealing
 ---
 
 ## Definition
@@ -45,4 +51,7 @@ A further advantage is ONLINE repair: when a solved problem changes (e.g. weathe
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[backtracking-search]] — contrasts-with: incomplete local search over complete assignments vs. complete DFS over partial assignments
+- [[simulated-annealing]] — uses: simulated annealing is one method to escape min-conflicts plateaus
+- [[constraint-satisfaction-problem]] — applies: local search over complete CSP assignments
 [To be populated during integration]

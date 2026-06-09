@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- vanishing-gradient-problem
 component_scores:
   alternatives: null
   conditions: null
@@ -9,6 +11,8 @@ component_scores:
   implementation: null
   operational_mechanism: null
   principled_mechanism: null
+contrasts-with:
+- transformer-attention-mechanisms
 coverage: 1
 date_created: '2026-06-09'
 date_updated: '2026-06-09'
@@ -21,6 +25,8 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - russell-norvig-aima-ch21
+specializes:
+- recurrent-neural-network
 tags:
 - recurrent-network
 - gating
@@ -37,4 +43,7 @@ A specialized recurrent neural network architecture (Hochreiter & Schmidhuber, 1
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[transformer-attention-mechanisms]] — contrasts-with
+- [[vanishing-gradient-problem]] — applies: additive memory-cell updates mitigate vanishing/exploding gradients in RNNs
+- [[recurrent-neural-network]] — specializes: a specialized RNN architecture with gated additive memory
 [To be populated during integration]

@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- occams-razor
 component_scores:
   alternatives: null
   conditions: null
@@ -29,6 +31,8 @@ tags:
 - regularization
 title: Maximum A Posteriori Estimation (MAP)
 understanding: 0
+uses:
+- compression-as-probabilistic-modelling
 ---
 
 ## Definition
@@ -38,4 +42,6 @@ understanding: 0
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[compression-as-probabilistic-modelling]] — uses
+- [[occams-razor]] — applies
 [To be populated during integration]

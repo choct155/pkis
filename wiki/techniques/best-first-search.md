@@ -29,6 +29,8 @@ tags:
 - priority-queue
 title: Best-First Search
 understanding: 0
+uses:
+- state-space-search
 ---
 
 ## Definition
@@ -38,4 +40,5 @@ A general search template that, on each iteration, removes from the frontier the
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[state-space-search]] — uses: operates over the search tree and frontier defined by the state-space-search framework
 [To be populated during integration]

@@ -20,6 +20,8 @@ id: pkis:concept:normal-form-game
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- game-theory
 related_concepts: []
 sources:
 - russell-norvig-aima-ch18
@@ -38,4 +40,5 @@ A game in which all players act simultaneously (or, equivalently, with no knowle
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[game-theory]] — prerequisite-of
 [To be populated during integration]

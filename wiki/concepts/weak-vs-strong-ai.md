@@ -10,6 +10,8 @@ component_scores:
   prerequisites: null
   scope: null
   transfer: null
+contrasts-with:
+- turing-test
 coverage: 1
 date_created: '2026-06-09'
 date_updated: '2026-06-09'
@@ -35,4 +37,5 @@ understanding: 0
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[turing-test]] — contrasts-with
 [To be populated during integration]

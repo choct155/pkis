@@ -1,6 +1,9 @@
 ---
 aliases: []
 also_type: []
+applies:
+- markov-decision-processes
+- credit-assignment-problem
 component_scores:
   alternatives: null
   conditions: null
@@ -31,6 +34,9 @@ tags:
 - reward-engineering
 title: Reward Shaping (Shaping Theorem)
 understanding: 0
+uses:
+- bellman-equation
+- reward-signal
 ---
 
 ## Definition
@@ -40,4 +46,8 @@ A way of modifying an MDP's reward function to make learning or planning easier 
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[reward-signal]] — uses
+- [[credit-assignment-problem]] — applies
+- [[bellman-equation]] — uses: The shaping theorem is proven by substituting Q'(s,a)=Q(s,a)-Phi(s) into the Bellman equation and showing it satisfies the shaped MDP's Bellman equation.
+- [[markov-decision-processes]] — applies: Potential-based reward shaping transforms an MDP's reward function while provably preserving the optimal policy.
 [To be populated during integration]

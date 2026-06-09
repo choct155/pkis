@@ -18,6 +18,8 @@ id: pkis:technique:and-or-search
 knowledge_type: technique
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- belief-state-search
 related_concepts: []
 sources:
 - russell-norvig-aima-ch04
@@ -40,4 +42,5 @@ A search method for nondeterministic environments where, instead of a single RES
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[belief-state-search]] — prerequisite-of: The AND-OR contingent-plan machinery underlies belief-state conditional plans.
 [To be populated during integration]

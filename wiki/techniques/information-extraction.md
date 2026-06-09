@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- named-entity-disambiguation
 component_scores:
   alternatives: null
   conditions: null
@@ -29,6 +31,8 @@ tags:
 - knowledge-acquisition
 title: Information Extraction
 understanding: 0
+uses:
+- forward-backward-algorithm
 ---
 
 ## Definition
@@ -38,4 +42,6 @@ The process of acquiring structured knowledge by skimming text for occurrences o
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[named-entity-disambiguation]] — applies
+- [[forward-backward-algorithm]] — uses
 [To be populated during integration]

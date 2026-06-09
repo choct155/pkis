@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- word-embeddings
 component_scores:
   application: null
   limits: null
@@ -28,6 +30,10 @@ tags:
 - rnn
 title: Sequence-to-Sequence Model
 understanding: 0
+uses:
+- recurrent-neural-network
+- transformer-attention-mechanisms
+- lstm
 ---
 
 ## Definition
@@ -37,4 +43,8 @@ A neural architecture that maps an input sequence to an output sequence of possi
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[lstm]] — uses
+- [[word-embeddings]] — applies
+- [[transformer-attention-mechanisms]] — uses
+- [[recurrent-neural-network]] — uses
 [To be populated during integration]

@@ -1,6 +1,10 @@
 ---
 aliases: []
 also_type: []
+analogous-to:
+- forward-and-backward-chaining
+applies:
+- satisfiability-sat
 component_scores:
   alternatives: null
   conditions: null
@@ -31,6 +35,8 @@ tags:
 - model-checking
 title: DPLL Algorithm
 understanding: 0
+uses:
+- conjunctive-normal-form
 ---
 
 ## Definition
@@ -40,4 +46,7 @@ A complete, recursive, depth-first backtracking search over truth assignments th
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[forward-and-backward-chaining]] — analogous-to: DPLL unit propagation on definite-clause CNF replicates forward chaining.
+- [[conjunctive-normal-form]] — uses: DPLL takes a CNF sentence (set of clauses) as input.
+- [[satisfiability-sat]] — applies: DPLL is the canonical complete SAT decision procedure.
 [To be populated during integration]

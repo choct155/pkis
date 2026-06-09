@@ -21,6 +21,8 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - russell-norvig-aima-ch26
+specializes:
+- markov-decision-processes
 tags:
 - robotics
 - optimal-control
@@ -28,6 +30,8 @@ tags:
 - control
 title: Linear Quadratic Regulator (LQR)
 understanding: 0
+uses:
+- value-iteration
 ---
 
 ## Definition
@@ -37,4 +41,6 @@ The closed-form solution of the continuous optimal-control problem when the cost
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[value-iteration]] — uses: LQR avoids iterative value/policy iteration by solving an algebraic Riccati equation instead
+- [[markov-decision-processes]] — specializes: LQR is the closed-form solution of a continuous MDP with quadratic cost and linear dynamics
 [To be populated during integration]

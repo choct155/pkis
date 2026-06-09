@@ -12,6 +12,8 @@ date_updated: '2026-06-09'
 domain:
 - robotics
 - state-space-models
+extends:
+- robot-localization
 id: pkis:problem:simultaneous-localization-and-mapping-slam
 knowledge_type: problem
 maturity: evolving
@@ -26,6 +28,8 @@ tags:
 - estimation
 title: Simultaneous Localization and Mapping (SLAM)
 understanding: 0
+uses:
+- kalman-filter
 ---
 
 ## Definition
@@ -35,4 +39,6 @@ The chicken-and-egg problem a robot faces when it must build a map of an unknown
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[kalman-filter]] — uses: EKF-SLAM augments the state with landmark positions
+- [[robot-localization]] — extends: SLAM is localization without a given map—the map must be built concurrently
 [To be populated during integration]

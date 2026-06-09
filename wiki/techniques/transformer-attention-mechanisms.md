@@ -13,11 +13,15 @@ component_scores:
   implementation: null
   operational_mechanism: null
   principled_mechanism: null
+contrasts-with:
+- recurrent-neural-network
 coverage: 1
 date_created: '2026-05-31'
 date_updated: '2026-05-31'
 domain:
 - deep-learning
+extends:
+- sequence-to-sequence-model
 id: pkis:technique:transformer-attention-mechanisms
 knowledge_type: technique
 maturity: evolving
@@ -40,4 +44,6 @@ The mechanism by which transformer models compute a weighted combination of valu
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[recurrent-neural-network]] — contrasts-with
+- [[sequence-to-sequence-model]] — extends
 [To be populated during integration]

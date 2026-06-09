@@ -10,6 +10,8 @@ component_scores:
   prerequisites: null
   scope: null
   transfer: null
+contrasts-with:
+- pareto-optimality
 coverage: 1
 date_created: '2026-06-09'
 date_updated: '2026-06-09'
@@ -29,6 +31,8 @@ tags:
 - best-response
 title: Dominant Strategy
 understanding: 0
+uses:
+- game-theory
 ---
 
 ## Definition
@@ -38,4 +42,6 @@ A strategy s for player p *strongly dominates* s' if s yields a strictly better 
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[pareto-optimality]] — contrasts-with
+- [[game-theory]] — uses
 [To be populated during integration]

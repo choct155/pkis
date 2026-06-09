@@ -15,6 +15,8 @@ domain:
 - multi-agent-systems
 - economics
 - decision-theory
+extends:
+- game-theory
 id: pkis:framework:mechanism-design
 knowledge_type: framework
 maturity: evolving
@@ -38,4 +40,5 @@ The problem of *designing the rules of a game* so that self-interested agents, e
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[game-theory]] — extends
 [To be populated during integration]

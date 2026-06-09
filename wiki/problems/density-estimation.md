@@ -6,6 +6,8 @@ component_scores:
   instances: null
   solution_landscape: null
   why_hard: null
+contrasts-with:
+- model-selection-problem
 coverage: 1
 date_created: '2026-06-09'
 date_updated: '2026-06-09'
@@ -26,6 +28,10 @@ tags:
 - structure-learning
 title: Density Estimation
 understanding: 0
+uses:
+- maximum-likelihood-estimation
+- kernel-density-estimation
+- em-algorithm
 ---
 
 ## Definition
@@ -35,4 +41,8 @@ Density estimation is the general task of learning a probability model from data
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[model-selection-problem]] — contrasts-with
+- [[em-algorithm]] — uses
+- [[kernel-density-estimation]] — uses
+- [[maximum-likelihood-estimation]] — uses
 [To be populated during integration]

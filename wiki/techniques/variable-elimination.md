@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- bayesian-networks
 component_scores:
   alternatives: null
   conditions: null
@@ -9,6 +11,8 @@ component_scores:
   implementation: null
   operational_mechanism: null
   principled_mechanism: null
+contrasts-with:
+- intractable-posterior
 coverage: 1
 date_created: '2026-06-09'
 date_updated: '2026-06-09'
@@ -28,6 +32,8 @@ tags:
 - graphical-models
 title: Variable Elimination
 understanding: 0
+uses:
+- factor-graph
 ---
 
 ## Definition
@@ -37,4 +43,7 @@ understanding: 0
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[intractable-posterior]] — contrasts-with
+- [[factor-graph]] — uses
+- [[bayesian-networks]] — applies
 [To be populated during integration]

@@ -23,6 +23,8 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - russell-norvig-aima-ch18
+specializes:
+- nash-equilibrium
 tags:
 - zero-sum-games
 - von-neumann
@@ -39,4 +41,5 @@ For two-player zero-sum games, the maximin (mixed) strategy maximizes a player's
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[nash-equilibrium]] — specializes
 [To be populated during integration]

@@ -15,7 +15,11 @@ date_updated: '2026-06-09'
 domain:
 - optimization
 - knowledge-representation
+generalizes:
+- minimax-algorithm
 id: pkis:technique:expectiminimax
+instantiates:
+- adversarial-search
 knowledge_type: technique
 maturity: evolving
 needs_canonical_source: false
@@ -39,4 +43,6 @@ A generalization of minimax to stochastic games -- games with a random element s
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[adversarial-search]] — instantiates: Expectiminimax is the adversarial-search method for stochastic games.
+- [[minimax-algorithm]] — generalizes: Expectiminimax extends minimax to stochastic games by adding chance nodes evaluated as expected values.
 [To be populated during integration]

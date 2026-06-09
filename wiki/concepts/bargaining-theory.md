@@ -31,6 +31,10 @@ tags:
 - Zeuthen-strategy
 title: Bargaining Theory
 understanding: 0
+uses:
+- mechanism-design
+- nash-equilibrium
+- return-and-discounting
 ---
 
 ## Definition
@@ -40,4 +44,7 @@ The game-theoretic study of how agents reach agreement on matters of common inte
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[return-and-discounting]] — uses
+- [[nash-equilibrium]] — uses
+- [[mechanism-design]] — uses
 [To be populated during integration]

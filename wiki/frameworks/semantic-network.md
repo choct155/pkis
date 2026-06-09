@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+analogous-to:
+- knowledge-graph
 component_scores:
   application: null
   limits: null
@@ -31,6 +33,9 @@ tags:
 - existential-graphs
 title: Semantic Network
 understanding: 0
+uses:
+- upper-ontology-categories-objects
+- default-reasoning
 ---
 
 ## Definition
@@ -53,4 +58,7 @@ Semantic networks are graphical knowledge-representation systems — objects and
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[knowledge-graph]] — analogous-to: labeled-node/binary-link graphs of objects and relations; modern KGs are descendants of semantic networks
+- [[default-reasoning]] — uses: semantic-network inheritance enforces overridable default values for category properties
+- [[upper-ontology-categories-objects]] — uses: semantic networks implement category/subset/inheritance structure graphically
 [To be populated during integration]

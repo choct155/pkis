@@ -22,6 +22,8 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - russell-norvig-aima-ch18
+specializes:
+- mechanism-design
 tags:
 - voting
 - preference-aggregation
@@ -29,6 +31,8 @@ tags:
 - social-choice-function
 title: Social Choice Theory
 understanding: 0
+uses:
+- social-welfare-function
 ---
 
 ## Definition
@@ -38,4 +42,6 @@ The study of aggregating individual preferences into a collective decision, the 
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[social-welfare-function]] — uses
+- [[mechanism-design]] — specializes
 [To be populated during integration]

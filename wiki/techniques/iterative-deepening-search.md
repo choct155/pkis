@@ -22,6 +22,8 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - russell-norvig-aima-ch03
+specializes:
+- uninformed-search
 tags:
 - search
 - depth-first
@@ -38,4 +40,5 @@ An uninformed search that solves the problem of choosing a depth limit by repeat
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[uninformed-search]] — specializes: an uninformed strategy combining DFS memory with BFS completeness/optimality
 [To be populated during integration]

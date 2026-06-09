@@ -21,6 +21,8 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - russell-norvig-aima-ch23
+specializes:
+- language-model
 tags:
 - nlp
 - grammar
@@ -29,6 +31,9 @@ tags:
 - pcfg
 title: Probabilistic Context-Free Grammar
 understanding: 0
+uses:
+- phrase-structure
+- compositionality
 ---
 
 ## Definition
@@ -38,4 +43,7 @@ A language model based on hierarchical syntactic structure: a set of rewrite rul
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[compositionality]] — uses
+- [[phrase-structure]] — uses
+- [[language-model]] — specializes
 [To be populated during integration]

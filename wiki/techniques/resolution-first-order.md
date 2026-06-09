@@ -15,6 +15,8 @@ date_updated: '2026-06-09'
 domain:
 - knowledge-representation
 - symbolic-subsymbolic
+generalizes:
+- backward-chaining-fol
 id: pkis:technique:resolution-first-order
 knowledge_type: technique
 maturity: evolving
@@ -29,6 +31,10 @@ tags:
 - russell-norvig-aima
 title: First-Order Resolution
 understanding: 0
+uses:
+- unification
+- skolemization
+- herbrands-theorem
 ---
 
 ## Definition
@@ -38,4 +44,8 @@ The lifted version of propositional resolution and the only inference family com
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[herbrands-theorem]] — uses
+- [[backward-chaining-fol]] — generalizes
+- [[skolemization]] — uses
+- [[unification]] — uses
 [To be populated during integration]

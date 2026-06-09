@@ -22,6 +22,8 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - russell-norvig-aima-ch07
+specializes:
+- resolution-inference
 tags:
 - forward-chaining
 - backward-chaining
@@ -31,6 +33,8 @@ tags:
 - logic-programming
 title: Forward and Backward Chaining
 understanding: 0
+uses:
+- conjunctive-normal-form
 ---
 
 ## Definition
@@ -40,4 +44,6 @@ Two natural inference algorithms for knowledge bases of definite (Horn) clauses,
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[conjunctive-normal-form]] — uses: Operates on definite/Horn clauses, a restricted CNF form.
+- [[resolution-inference]] — specializes: A more restricted, efficient inference method for the Horn-clause sublanguage.
 [To be populated during integration]

@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- datalog
 component_scores:
   application: null
   limits: null
@@ -27,6 +29,8 @@ tags:
 - russell-norvig-aima
 title: Logic Programming
 understanding: 0
+uses:
+- backward-chaining-fol
 ---
 
 ## Definition
@@ -36,4 +40,6 @@ A declarative programming paradigm embodying Kowalski's equation Algorithm = Log
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[datalog]] — applies
+- [[backward-chaining-fol]] — uses
 [To be populated during integration]

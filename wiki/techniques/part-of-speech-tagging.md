@@ -30,6 +30,10 @@ tags:
 - penn-treebank
 title: Part-of-Speech Tagging
 understanding: 0
+uses:
+- forward-backward-algorithm
+- min-sum-algorithm
+- logistic-regression
 ---
 
 ## Definition
@@ -39,4 +43,7 @@ The task of assigning each word in a sentence its part of speech (lexical catego
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[logistic-regression]] — uses
+- [[min-sum-algorithm]] — uses
+- [[forward-backward-algorithm]] — uses
 [To be populated during integration]

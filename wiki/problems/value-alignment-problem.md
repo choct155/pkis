@@ -6,6 +6,8 @@ component_scores:
   instances: null
   solution_landscape: null
   why_hard: null
+contrasts-with:
+- four-approaches-to-ai
 coverage: 1
 date_created: '2026-06-09'
 date_updated: '2026-06-09'
@@ -26,6 +28,8 @@ tags:
 - standard-model
 title: Value Alignment Problem
 understanding: 0
+uses:
+- expected-utility-theory
 ---
 
 ## Definition
@@ -43,4 +47,6 @@ Russell and Norvig argue the standard model is inadequate: we want machines that
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[expected-utility-theory]] — uses
+- [[four-approaches-to-ai]] — contrasts-with
 [To be populated during integration]

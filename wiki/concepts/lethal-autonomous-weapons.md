@@ -16,6 +16,8 @@ date_updated: '2026-06-09'
 domain:
 - ai-safety
 id: pkis:concept:lethal-autonomous-weapons
+instantiates:
+- ai-existential-risk
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
@@ -34,4 +36,5 @@ understanding: 0
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[ai-existential-risk]] — instantiates
 [To be populated during integration]

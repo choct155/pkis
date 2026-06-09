@@ -1,18 +1,40 @@
 ---
-id: "pkis:concept:description-logic"
 aliases: []
-title: "Description Logic"
-knowledge_type: concept
 also_type: []
-domain: [knowledge-representation]
-tags: [logic, ontology, owl, description-logic, formal-semantics, decidability, knowledge-representation]
-related_concepts: [formal-ontology, ontology-reasoning, rdf, knowledge-graph]
-sources: ["[[cimiano-ontology-nlp]]", "[[allemang-semantic-web]]", "[[delong-nsai-kg-survey-2024]]", "[[luong-ontology-constrained-neural-2026]]"]
+coverage: 4
 date_created: 2026-05-20
 date_updated: 2026-05-20
-coverage: 4
-understanding: 0
+domain:
+- knowledge-representation
+extends:
+- semantic-network
+id: pkis:concept:description-logic
+instantiates:
+- expressiveness-tractability-tradeoff
+knowledge_type: concept
 maturity: settled
+related_concepts:
+- formal-ontology
+- ontology-reasoning
+- rdf
+- knowledge-graph
+sources:
+- '[[cimiano-ontology-nlp]]'
+- '[[allemang-semantic-web]]'
+- '[[delong-nsai-kg-survey-2024]]'
+- '[[luong-ontology-constrained-neural-2026]]'
+specializes:
+- first-order-logic
+tags:
+- logic
+- ontology
+- owl
+- description-logic
+- formal-semantics
+- decidability
+- knowledge-representation
+title: Description Logic
+understanding: 0
 ---
 
 Description Logics (DLs) are a family of decidable fragments of first-order logic used for representing structured domain knowledge; they form the logical foundation of the OWL family of ontology languages, with OWL DL corresponding to SHOIN(D) and OWL 2 DL to SROIQ(D).
@@ -24,3 +46,8 @@ Description Logics (DLs) are a family of decidable fragments of first-order logi
 - [[allemang-semantic-web-ch15]] (unread) — OWL 2 DL profiles (EL, QL, RL) corresponding to tractable DL sub-languages
 - [[delong-nsai-kg-survey-2024]] (unread) — DL-based ontologies (OWL, OWL 2 EL) as semantic framework for KG reasoning; EL fragment for polynomial-time inference in biomedical KGs
 - [[luong-ontology-constrained-neural-2026]] (unread) — three-layer enterprise ontology grounded in DL semantics; formal constraints on LLM agent inputs
+
+## Connections
+- [[expressiveness-tractability-tradeoff]] — instantiates: DLs restrict negation/disjunction to keep subsumption polynomial — a canonical expressiveness/tractability instance
+- [[semantic-network]] — extends: description logics evolved from semantic networks to formalize their meaning while keeping taxonomy central
+- [[first-order-logic]] — specializes

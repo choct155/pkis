@@ -28,6 +28,8 @@ tags:
 - spatial-invariance
 title: Pooling Layer
 understanding: 0
+uses:
+- convolutional-neural-networks
 ---
 
 ## Definition
@@ -37,4 +39,5 @@ A layer in a convolutional network that summarizes a set of adjacent units from 
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[convolutional-neural-networks]] — uses: pooling is a fixed-operation layer used within CNN architectures
 [To be populated during integration]

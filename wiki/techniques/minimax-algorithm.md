@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+analogous-to:
+- minimax-criterion
 component_scores:
   alternatives: null
   conditions: null
@@ -16,6 +18,8 @@ domain:
 - optimization
 - knowledge-representation
 id: pkis:technique:minimax-algorithm
+instantiates:
+- adversarial-search
 knowledge_type: technique
 maturity: evolving
 needs_canonical_source: false
@@ -30,6 +34,8 @@ tags:
 - optimal-play
 title: Minimax Algorithm
 understanding: 0
+uses:
+- game-tree
 ---
 
 ## Definition
@@ -39,4 +45,7 @@ An algorithm that computes the optimal move for MAX in a deterministic, two-play
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[adversarial-search]] — instantiates: Minimax is the canonical algorithm of adversarial game-tree search.
+- [[minimax-criterion]] — analogous-to: The game algorithm and the decision-theory minimax loss criterion share the same max-of-worst-case structure (treating the opponent/Nature as an adversary) via different mechanisms (game-tree backup vs single-stage loss matrix).
+- [[game-tree]] — uses: Minimax backs up values through the game tree.
 [To be populated during integration]

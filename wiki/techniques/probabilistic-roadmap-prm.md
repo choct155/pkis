@@ -16,6 +16,8 @@ domain:
 - robotics
 - optimization
 id: pkis:technique:probabilistic-roadmap-prm
+instantiates:
+- motion-planning
 knowledge_type: technique
 maturity: evolving
 needs_canonical_source: false
@@ -38,4 +40,5 @@ A randomized motion-planning method that builds a graph (roadmap) over the confi
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[motion-planning]] — instantiates: a randomized roadmap method for motion planning
 [To be populated during integration]

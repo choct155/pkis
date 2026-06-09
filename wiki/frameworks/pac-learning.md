@@ -17,12 +17,17 @@ id: pkis:framework:pac-learning
 knowledge_type: framework
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- empirical-risk-minimization
+- no-free-lunch-theorem
 related_concepts: []
 sources:
 - russell-norvig-aima-ch19
 tags: []
 title: PAC Learning (Probably Approximately Correct)
 understanding: 0
+uses:
+- supervised-learning
 ---
 
 ## Definition
@@ -40,4 +45,7 @@ For the class of all Boolean functions on n attributes |H|=2^{2^n}, so sample co
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[no-free-lunch-theorem]] — prerequisite-of
+- [[empirical-risk-minimization]] — prerequisite-of
+- [[supervised-learning]] — uses
 [To be populated during integration]

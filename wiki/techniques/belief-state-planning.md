@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+analogous-to:
+- markov-decision-processes
 component_scores:
   alternatives: null
   conditions: null
@@ -16,6 +18,8 @@ domain:
 - knowledge-representation
 - symbolic-subsymbolic
 - optimization
+extends:
+- classical-planning-pddl
 id: pkis:technique:belief-state-planning
 knowledge_type: technique
 maturity: evolving
@@ -33,6 +37,8 @@ tags:
 - percept-schema
 title: Belief-State Planning (Sensorless, Conformant, and Contingent)
 understanding: 0
+uses:
+- planning-heuristics-relaxation
 ---
 
 ## Definition
@@ -42,4 +48,7 @@ Belief-state planning extends classical planning to partially observable, nondet
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[markov-decision-processes]] — analogous-to: belief-state machinery parallels POMDPs
+- [[planning-heuristics-relaxation]] — uses: admissible-on-subset heuristics guide belief-state search
+- [[classical-planning-pddl]] — extends: extends planning to partial observability and nondeterminism
 [To be populated during integration]

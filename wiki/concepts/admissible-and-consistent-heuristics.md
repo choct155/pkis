@@ -23,6 +23,8 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - russell-norvig-aima-ch03
+specializes:
+- heuristic-function
 tags:
 - search
 - heuristic
@@ -40,4 +42,5 @@ Two properties of a heuristic function h(n) that govern whether informed search 
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[heuristic-function]] — specializes: admissibility and consistency are properties that distinguish certain heuristic functions
 [To be populated during integration]

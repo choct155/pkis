@@ -1,11 +1,15 @@
 ---
 aliases: []
 also_type: []
+analogous-to:
+- regression-to-the-mean
 component_scores:
   formulation: null
   instances: null
   solution_landscape: null
   why_hard: null
+contrasts-with:
+- maximum-expected-utility-principle
 coverage: 1
 date_created: '2026-06-09'
 date_updated: '2026-06-09'
@@ -26,6 +30,8 @@ tags:
 - winners-curse
 title: Optimizer's Curse
 understanding: 0
+uses:
+- bayesian-decision-analysis
 ---
 
 ## Definition
@@ -42,6 +48,9 @@ The curse appears wherever utility-maximizing selection is ubiquitous: a drug th
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[regression-to-the-mean]] — analogous-to: selecting the max and being disappointed is regression to the mean by another name
+- [[bayesian-decision-analysis]] — uses: a Bayesian posterior treatment of estimates cures the curse
+- [[maximum-expected-utility-principle]] — contrasts-with: the curse is the failure mode of naive argmax over noisy utility estimates
 - Afflicts naive application of the maximum-expected-utility principle.
 - Quantified via the distribution of an order statistic (the maximum).
 - Cured by a Bayesian (shrinkage) treatment of utility estimates.

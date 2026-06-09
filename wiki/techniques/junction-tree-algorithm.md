@@ -19,6 +19,8 @@ domain:
 - information-theory
 extends:
 - sum-product-algorithm
+generalizes:
+- variable-elimination
 id: pkis:technique:junction-tree-algorithm
 knowledge_type: technique
 maturity: evolving
@@ -53,6 +55,7 @@ It delineates the boundary between exact and approximate inference: marginalizat
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[variable-elimination]] — generalizes
 - [[belief-propagation]] — contrasts-with: Junction tree is exact-but-exponential-in-treewidth; loopy belief propagation is cheap-but-approximate on cyclic graphs.
 - [[sum-product-algorithm]] — extends: Restores exactness on cyclic graphs by clustering variables into a tree of clusters, then running a sum-product schedule.
 [To be populated during integration]

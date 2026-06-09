@@ -8,6 +8,8 @@ component_scores:
   purpose: null
   scope: null
   structure: null
+contrasts-with:
+- discrete-event-systems
 coverage: 1
 date_created: '2026-06-09'
 date_updated: '2026-06-09'
@@ -20,6 +22,8 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - russell-norvig-aima-ch10
+specializes:
+- upper-ontology-categories-objects
 tags:
 - event-calculus
 - fluents
@@ -31,6 +35,8 @@ tags:
 - frame-problem
 title: Event Calculus
 understanding: 0
+uses:
+- temporal-interval-logic
 ---
 
 ## Definition
@@ -60,4 +66,7 @@ Alternative to situation calculus and to the fluent calculus (Thielscher); James
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[discrete-event-systems]] — contrasts-with: both model events over time; event calculus is a logical KR formalism, DES a state-transition systems-theory model
+- [[temporal-interval-logic]] — uses: event calculus reasons over time points and Allen interval relations
+- [[upper-ontology-categories-objects]] — specializes: events/time are the event-calculus portion of the upper ontology; objects are generalized events
 [To be populated during integration]

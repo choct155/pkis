@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- value-alignment-problem
 component_scores:
   application: null
   boundary: null
@@ -20,6 +22,8 @@ id: pkis:concept:ai-safety-engineering
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- ai-existential-risk
 related_concepts: []
 sources:
 - russell-norvig-aima-ch27
@@ -35,4 +39,6 @@ understanding: 0
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[ai-existential-risk]] — prerequisite-of
+- [[value-alignment-problem]] — applies
 [To be populated during integration]

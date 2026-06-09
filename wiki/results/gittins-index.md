@@ -1,12 +1,17 @@
 ---
 aliases: []
 also_type: []
+applies:
+- multi-armed-bandit
 component_scores:
   conditions: null
   implications: null
   limitations: null
   proof_sketch: null
   statement: null
+contrasts-with:
+- upper-confidence-bound
+- thompson-sampling
 coverage: 1
 date_created: '2026-06-09'
 date_updated: '2026-06-09'
@@ -29,6 +34,8 @@ tags:
 - restart-mdp
 title: Gittins Index
 understanding: 0
+uses:
+- markov-decision-processes
 ---
 
 ## Definition
@@ -38,4 +45,8 @@ An index assigned to each arm of a multi-armed bandit that yields a remarkably s
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[thompson-sampling]] — contrasts-with: Both target bandit optimality; Thompson sampling is a randomized posterior-sampling heuristic with O(log N) regret rather than the exact Gittins index.
+- [[upper-confidence-bound]] — contrasts-with: Gittins gives the exact optimal index but is hard to compute for realistic arms; UCB is an approximate, easily computed heuristic with O(log N) regret. UCB is not strictly an index since it depends on the total sample count N.
+- [[markov-decision-processes]] — uses: The index of an arm equals (1-gamma) times the optimal value of its restart MDP, computed by ordinary MDP solvers.
+- [[multi-armed-bandit]] — applies: The Gittins index gives the exact optimal index policy for the (Markovian, discounted) multi-armed bandit.
 [To be populated during integration]

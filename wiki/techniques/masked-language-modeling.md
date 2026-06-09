@@ -14,6 +14,8 @@ date_created: '2026-06-09'
 date_updated: '2026-06-09'
 domain:
 - deep-learning
+generalizes:
+- contextual-word-embeddings
 id: pkis:technique:masked-language-modeling
 knowledge_type: technique
 maturity: evolving
@@ -29,6 +31,9 @@ tags:
 - bert
 title: Masked Language Modeling
 understanding: 0
+uses:
+- transformer-attention-mechanisms
+- bidirectional-rnn
 ---
 
 ## Definition
@@ -38,4 +43,7 @@ A self-supervised pretraining objective in which random tokens of an input sente
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[bidirectional-rnn]] — uses
+- [[contextual-word-embeddings]] — generalizes
+- [[transformer-attention-mechanisms]] — uses
 [To be populated during integration]

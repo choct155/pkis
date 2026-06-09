@@ -19,6 +19,8 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - russell-norvig-aima-ch15
+specializes:
+- open-universe-probability-model
 tags:
 - tracking
 - identity-uncertainty
@@ -28,6 +30,9 @@ tags:
 - control-theory
 title: Data Association
 understanding: 0
+uses:
+- kalman-filter
+- particle-filter
 ---
 
 ## Definition
@@ -37,4 +42,7 @@ The problem of associating observations with the objects that generated them whe
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[particle-filter]] — uses: particle filtering maintains a population of candidate associations
+- [[kalman-filter]] — uses: per-hypothesis state filtering (linear-Gaussian) via Rao-Blackwellization
+- [[open-universe-probability-model]] — specializes: data association is identity uncertainty in a temporal context, an important special case of open-universe modeling
 [To be populated during integration]

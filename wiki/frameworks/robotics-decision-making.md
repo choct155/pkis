@@ -19,6 +19,8 @@ id: pkis:framework:robotics-decision-making
 knowledge_type: framework
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- motion-planning
 related_concepts: []
 sources:
 - russell-norvig-aima-ch26
@@ -29,6 +31,9 @@ tags:
 - embodied-agent
 title: Robotics as Continuous, Partially-Observable, Multi-Agent Decision Making
 understanding: 0
+uses:
+- markov-decision-processes
+- multi-agent-systems
 ---
 
 ## Definition
@@ -38,4 +43,7 @@ The overarching framing in which a robot is a physically embodied agent that max
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[motion-planning]] — prerequisite-of: the decoupled hierarchy isolates motion planning as a sub-problem
+- [[multi-agent-systems]] — uses: robots acting around people are multi-agent and formulated as games
+- [[markov-decision-processes]] — uses: isolated known-environment robot acting is formulated as an MDP
 [To be populated during integration]

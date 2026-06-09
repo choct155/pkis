@@ -21,6 +21,8 @@ id: pkis:concept:heuristic-function
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- a-star-search
 related_concepts: []
 sources:
 - russell-norvig-aima-ch03
@@ -40,4 +42,5 @@ A function h(n) that gives the estimated cost of the cheapest path from the stat
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[a-star-search]] — prerequisite-of: informed search presupposes the notion of a heuristic estimate
 [To be populated during integration]

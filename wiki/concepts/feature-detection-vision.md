@@ -20,6 +20,9 @@ id: pkis:concept:feature-detection-vision
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- optical-flow
+- stereo-and-depth
 related_concepts: []
 sources:
 - russell-norvig-aima-ch25
@@ -33,6 +36,8 @@ tags:
 - histogram-of-orientations
 title: Visual Feature and Texture Representation
 understanding: 0
+uses:
+- edge-detection
 ---
 
 ## Definition
@@ -42,4 +47,7 @@ A feature is a number obtained by simple computation on an image; useful represe
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[stereo-and-depth]] — prerequisite-of: Descriptor-based patch matching solves the stereo correspondence problem.
+- [[optical-flow]] — prerequisite-of: Patch/texture matching is the correspondence mechanism optical flow relies on.
+- [[edge-detection]] — uses: Gradient/orientation computations underlying texture and point descriptors build on edge/gradient operations.
 [To be populated during integration]

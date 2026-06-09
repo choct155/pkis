@@ -10,6 +10,8 @@ component_scores:
   prerequisites: null
   scope: null
   transfer: null
+contrasts-with:
+- deconvolution
 coverage: 1
 date_created: '2026-06-09'
 date_updated: '2026-06-09'
@@ -20,6 +22,9 @@ id: pkis:concept:image-formation-model
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- edge-detection
+- stereo-and-depth
 related_concepts: []
 sources:
 - russell-norvig-aima-ch25
@@ -40,4 +45,7 @@ The geometric and photometric account of how a 3D scene gives rise to a 2D image
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[deconvolution]] — contrasts-with: Recovering scene structure from images is an inverse problem akin to deconvolution; image formation is the forward model.
+- [[stereo-and-depth]] — prerequisite-of: Perspective projection geometry is the basis for relating disparity to depth.
+- [[edge-detection]] — prerequisite-of: Edges arise from scene effects (depth, normal, reflectance, shadow) modeled by image formation.
 [To be populated during integration]

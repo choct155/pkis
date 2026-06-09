@@ -37,6 +37,8 @@ tags:
 - inference-tasks
 title: Filtering, Prediction, Smoothing, and Most Likely Explanation
 understanding: 0
+uses:
+- markov-chains
 ---
 
 ## Definition
@@ -57,4 +59,5 @@ The likelihood and Viterbi messages shrink toward underflow, handled by normaliz
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[markov-chains]] — uses: The recursive filtering and smoothing decompositions rely on the (first-order) Markov property of the state process.
 [To be populated during integration]

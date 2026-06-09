@@ -10,6 +10,8 @@ component_scores:
   prerequisites: null
   scope: null
   transfer: null
+contrasts-with:
+- the-deadly-triad
 coverage: 1
 date_created: '2026-06-09'
 date_updated: '2026-06-09'
@@ -23,9 +25,14 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - russell-norvig-aima-ch22
+specializes:
+- function-approximation-rl
 tags: []
 title: Deep Reinforcement Learning
 understanding: 0
+uses:
+- neural-networks
+- backpropagation
 ---
 
 ## Definition
@@ -35,4 +42,8 @@ understanding: 0
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[the-deadly-triad]] — contrasts-with
+- [[backpropagation]] — uses
+- [[neural-networks]] — uses
+- [[function-approximation-rl]] — specializes
 [To be populated during integration]

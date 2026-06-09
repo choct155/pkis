@@ -15,6 +15,8 @@ domain:
 - knowledge-representation
 - symbolic-subsymbolic
 - optimization
+extends:
+- classical-planning-pddl
 id: pkis:framework:hierarchical-task-network
 knowledge_type: framework
 maturity: evolving
@@ -40,4 +42,5 @@ Hierarchical task network (HTN) planning manages complexity by planning at multi
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[classical-planning-pddl]] — extends: adds high-level actions and refinement hierarchy
 [To be populated during integration]

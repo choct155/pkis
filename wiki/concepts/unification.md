@@ -20,6 +20,11 @@ id: pkis:concept:unification
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- generalized-modus-ponens
+- resolution-first-order
+- backward-chaining-fol
+- forward-chaining-fol
 related_concepts: []
 sources:
 - russell-norvig-aima-ch09
@@ -38,4 +43,8 @@ Unification is the process of finding a substitution (a unifier) that makes two 
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[forward-chaining-fol]] — prerequisite-of
+- [[backward-chaining-fol]] — prerequisite-of
+- [[resolution-first-order]] — prerequisite-of
+- [[generalized-modus-ponens]] — prerequisite-of
 [To be populated during integration]

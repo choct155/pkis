@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- social-choice-theory
 component_scores:
   conditions: null
   implications: null
@@ -37,4 +39,5 @@ A negative result of social choice theory on strategic voting: any social choice
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[social-choice-theory]] — applies
 [To be populated during integration]

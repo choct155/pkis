@@ -27,6 +27,9 @@ tags:
 - performance-measure
 title: Maximum Expected Utility Principle
 understanding: 0
+uses:
+- expected-utility-theory
+- von-neumann-morgenstern-axioms
 ---
 
 ## Definition
@@ -45,6 +48,8 @@ MEU formalizes the notion that an intelligent agent should "do the right thing" 
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[von-neumann-morgenstern-axioms]] — uses: VNM axioms justify acting as if maximizing expected utility
+- [[expected-utility-theory]] — uses: MEU maximizes the expected utility defined by EU theory
 - Uses expected-utility-theory as its underlying scoring rule.
 - Realized computationally by the decision-network evaluation algorithm.
 

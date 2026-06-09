@@ -18,6 +18,8 @@ domain:
 - ai-alignment
 - reinforcement-learning
 id: pkis:concept:assistance-game
+instantiates:
+- cooperative-game
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
@@ -32,6 +34,9 @@ tags:
 - POMDP
 title: Assistance Game
 understanding: 0
+uses:
+- markov-decision-processes
+- nash-equilibrium
 ---
 
 ## Definition
@@ -41,4 +46,7 @@ A two-player cooperative game (Hadfield-Menell et al. 2017, as cooperative inver
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[nash-equilibrium]] — uses
+- [[markov-decision-processes]] — uses
+- [[cooperative-game]] — instantiates
 [To be populated during integration]

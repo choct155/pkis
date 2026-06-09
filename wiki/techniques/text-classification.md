@@ -29,6 +29,9 @@ tags:
 - feature-engineering
 title: Text Classification
 understanding: 0
+uses:
+- bag-of-words-model
+- logistic-regression
 ---
 
 ## Definition
@@ -38,4 +41,6 @@ The task of assigning a text to one of a set of predefined categories -- newspap
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[logistic-regression]] — uses
+- [[bag-of-words-model]] — uses
 [To be populated during integration]

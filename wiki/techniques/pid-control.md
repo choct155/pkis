@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- trajectory-tracking-control
 component_scores:
   alternatives: null
   conditions: null
@@ -38,4 +40,5 @@ A feedback control law that sets the command as a sum of three terms in the trac
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[trajectory-tracking-control]] — applies: PID corrects deviations between actual and reference state during tracking
 [To be populated during integration]

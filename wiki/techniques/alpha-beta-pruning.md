@@ -22,6 +22,8 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - russell-norvig-aima-ch05
+specializes:
+- minimax-algorithm
 tags:
 - adversarial-search
 - games
@@ -39,4 +41,5 @@ A pruning technique that computes exactly the same optimal move as minimax while
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[minimax-algorithm]] — specializes: Alpha-beta computes the identical optimal move as minimax while pruning provably irrelevant subtrees.
 [To be populated during integration]

@@ -1,6 +1,10 @@
 ---
 aliases: []
 also_type: []
+analogous-to:
+- backward-regression-planning
+applies:
+- job-shop-scheduling
 component_scores:
   alternatives: null
   conditions: null
@@ -39,4 +43,6 @@ The critical path method computes a minimum-makespan schedule for a partially or
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[backward-regression-planning]] — analogous-to: shares a forward/backward dynamic-programming propagation structure
+- [[job-shop-scheduling]] — applies: solves the temporal (resource-free) core of scheduling
 [To be populated during integration]

@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- constraint-satisfaction-problem
 component_scores:
   alternatives: null
   conditions: null
@@ -22,6 +24,8 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - russell-norvig-aima-ch06
+specializes:
+- constraint-propagation
 tags:
 - csp
 - constraint-propagation
@@ -46,4 +50,6 @@ Limits: arc consistency alone cannot detect that the three-colorable Australia m
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[constraint-propagation]] — specializes: AC-3 / local consistency is a concrete form of constraint propagation
+- [[constraint-satisfaction-problem]] — applies: arc consistency is enforced over the CSP constraint graph
 [To be populated during integration]

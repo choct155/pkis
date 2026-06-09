@@ -7,6 +7,8 @@ component_scores:
   limitations: null
   proof_sketch: null
   statement: null
+contrasts-with:
+- st-petersburg-paradox
 coverage: 1
 date_created: '2026-06-09'
 date_updated: '2026-06-09'
@@ -16,6 +18,8 @@ id: pkis:result:von-neumann-morgenstern-axioms
 knowledge_type: result
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- expected-utility-theory
 related_concepts: []
 sources:
 - russell-norvig-aima-ch16
@@ -43,6 +47,8 @@ The axioms are normative; real human preferences violate them in predictable way
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[st-petersburg-paradox]] — contrasts-with: the St Petersburg paradox motivated the move from expected money to expected utility that the axioms formalize
+- [[expected-utility-theory]] — prerequisite-of: the axioms establish the existence of the utility function EU theory assumes
 - Provides the foundational justification for the maximum-expected-utility principle.
 - Its descriptive failures are catalogued by the Allais and Ellsberg paradoxes.
 

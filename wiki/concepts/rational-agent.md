@@ -16,6 +16,8 @@ date_updated: '2026-06-09'
 domain:
 - agentic-ai
 - reinforcement-learning
+generalizes:
+- agent-environment-interface
 id: pkis:concept:rational-agent
 knowledge_type: concept
 maturity: evolving
@@ -31,6 +33,8 @@ tags:
 - autonomy
 title: Rational Agent
 understanding: 0
+uses:
+- performance-measure
 ---
 
 ## Definition
@@ -42,4 +46,6 @@ An agent perceives its environment through sensors and acts through actuators; i
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[agent-environment-interface]] — generalizes: AIMA's general rational agent (any performance measure, any environment) generalizes the reinforcement-learning agent–environment interface (scalar reward, state/action loop).
+- [[performance-measure]] — uses: A rational agent acts to maximize the expected value of the performance measure.
 [To be populated during integration]

@@ -30,6 +30,8 @@ tags:
 - superpixels
 title: Image Segmentation
 understanding: 0
+uses:
+- feature-detection-vision
 ---
 
 ## Definition
@@ -39,4 +41,5 @@ The process of partitioning an image into groups of pixels that naturally belong
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[feature-detection-vision]] — uses: Region clustering and boundary classification use brightness, color, and texture features.
 [To be populated during integration]

@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- statistical-relational-learning
 component_scores:
   application: null
   limits: null
@@ -38,4 +40,5 @@ A universal formal language for specifying probability models, in the sense that
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[statistical-relational-learning]] — applies: PPLs operationalize the SRL goal of unifying first-order logic with probabilistic inference
 [To be populated during integration]

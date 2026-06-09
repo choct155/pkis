@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- curse-of-dimensionality
 component_scores:
   alternatives: null
   conditions: null
@@ -16,6 +18,8 @@ domain:
 - robotics
 - optimization
 id: pkis:technique:cell-decomposition-motion-planning
+instantiates:
+- motion-planning
 knowledge_type: technique
 maturity: evolving
 needs_canonical_source: false
@@ -29,6 +33,8 @@ tags:
 - graph-search
 title: Cell Decomposition Motion Planning
 understanding: 0
+uses:
+- value-iteration
 ---
 
 ## Definition
@@ -38,4 +44,7 @@ A family of motion-planning methods that partition the free space into a finite 
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[curse-of-dimensionality]] — applies: limited to low-dimensional C-spaces because cell count grows exponentially in d
+- [[value-iteration]] — uses: grid cell costs (shortest path to goal) computed by a deterministic value-iteration
+- [[motion-planning]] — instantiates: a concrete grid/cell-based method for solving the motion-planning problem
 [To be populated during integration]

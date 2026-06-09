@@ -22,6 +22,8 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - russell-norvig-aima-ch04
+specializes:
+- local-search
 tags:
 - beam-search
 - local-search
@@ -39,4 +41,5 @@ A local search algorithm that keeps track of k states rather than one. It begins
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[local-search]] — specializes: Local beam search is a local search keeping k states instead of one.
 [To be populated during integration]

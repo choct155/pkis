@@ -1,6 +1,10 @@
 ---
 aliases: []
 also_type: []
+analogous-to:
+- options-framework
+applies:
+- credit-assignment-problem
 component_scores:
   application: null
   limits: null
@@ -14,6 +18,8 @@ date_updated: '2026-06-09'
 domain:
 - reinforcement-learning
 - optimization
+generalizes:
+- reinforcement-learning
 id: pkis:framework:hierarchical-reinforcement-learning
 knowledge_type: framework
 maturity: evolving
@@ -24,6 +30,9 @@ sources:
 tags: []
 title: Hierarchical Reinforcement Learning
 understanding: 0
+uses:
+- markov-decision-processes
+- reward-shaping
 ---
 
 ## Definition
@@ -33,4 +42,9 @@ understanding: 0
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[reward-shaping]] — uses
+- [[options-framework]] — analogous-to
+- [[credit-assignment-problem]] — applies
+- [[markov-decision-processes]] — uses
+- [[reinforcement-learning]] — generalizes
 [To be populated during integration]

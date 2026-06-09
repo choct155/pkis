@@ -23,6 +23,8 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - russell-norvig-aima-ch09
+specializes:
+- logic-programming
 tags:
 - first-order-logic
 - logic-programming
@@ -39,4 +41,5 @@ Datalog is the language of first-order definite clauses with no function symbols
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[logic-programming]] — specializes
 [To be populated during integration]

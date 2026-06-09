@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- robotics-decision-making
 component_scores:
   application: null
   boundary: null
@@ -44,6 +46,7 @@ Reinforcement learning methods that rely on a model of the environment and use p
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[robotics-decision-making]] — applies: model-based RL reduces real-world sample complexity for robot learning
 - [[expected-vs-sample-updates]] — contrasts-with: Distribution models enable expected updates; sample models enable sample updates.
 - [[planning-rl]] — uses: Model-based RL relies on planning as its primary component to improve policy from the model.
 [To be populated during integration]

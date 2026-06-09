@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+analogous-to:
+- lexicalized-tree-adjoining-grammar
 component_scores:
   application: null
   limits: null
@@ -14,6 +16,8 @@ date_updated: '2026-06-09'
 domain:
 - knowledge-representation
 - deep-learning
+extends:
+- probabilistic-context-free-grammar
 id: pkis:framework:lexicalized-pcfg
 knowledge_type: framework
 maturity: evolving
@@ -29,6 +33,8 @@ tags:
 - smoothing
 title: Lexicalized PCFG
 understanding: 0
+uses:
+- language-model-smoothing
 ---
 
 ## Definition
@@ -38,4 +44,7 @@ An augmented context-free grammar that conditions rule probabilities on properti
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[lexicalized-tree-adjoining-grammar]] — analogous-to
+- [[language-model-smoothing]] — uses
+- [[probabilistic-context-free-grammar]] — extends
 [To be populated during integration]

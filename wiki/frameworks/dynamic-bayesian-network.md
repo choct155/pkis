@@ -16,7 +16,11 @@ domain:
 - state-space-models
 - knowledge-representation
 - time-series
+extends:
+- bayesian-networks
 id: pkis:framework:dynamic-bayesian-network
+instantiates:
+- state-space-models
 knowledge_type: framework
 maturity: evolving
 needs_canonical_source: false
@@ -53,4 +57,6 @@ Given observations, a DBN is unrolled into a finite Bayesian network and solved 
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[state-space-models]] — instantiates: A DBN is a factored state-space model with per-slice state and evidence variables.
+- [[bayesian-networks]] — extends: A DBN extends standard Bayesian-network semantics to an unbounded sequence of replicated time slices.
 [To be populated during integration]

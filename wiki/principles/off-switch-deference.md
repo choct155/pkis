@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- value-of-information
 component_scores:
   implications: null
   justification: null
@@ -46,6 +48,7 @@ The incentive is a direct instance of the nonnegativity of the **value of inform
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[value-of-information]] — applies: the deference incentive is the nonnegative value of the human's switch-off decision
 - A direct application of the nonnegative value of information.
 - Motivated by uncertainty over the human's utility (a gap in expected-utility theory's usual assumption of a known U).
 

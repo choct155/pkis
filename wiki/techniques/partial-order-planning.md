@@ -9,6 +9,8 @@ component_scores:
   implementation: null
   operational_mechanism: null
   principled_mechanism: null
+contrasts-with:
+- forward-state-space-planning
 coverage: 1
 date_created: '2026-06-09'
 date_updated: '2026-06-09'
@@ -31,6 +33,8 @@ tags:
 - causal-link
 title: Partial-Order Planning
 understanding: 0
+uses:
+- classical-planning-pddl
 ---
 
 ## Definition
@@ -40,4 +44,6 @@ Partial-order planning represents a plan as a graph rather than a strictly linea
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[forward-state-space-planning]] — contrasts-with: plan-space vs world-state search; eclipsed on automated classical planning
+- [[classical-planning-pddl]] — uses: searches plan space over PDDL actions
 [To be populated during integration]

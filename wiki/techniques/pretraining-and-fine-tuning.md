@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- contextual-word-embeddings
 component_scores:
   alternatives: null
   conditions: null
@@ -21,6 +23,8 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - russell-norvig-aima-ch24
+specializes:
+- transfer-learning
 tags:
 - nlp
 - transfer-learning
@@ -28,6 +32,8 @@ tags:
 - self-supervised
 title: Pretraining and Fine-Tuning
 understanding: 0
+uses:
+- masked-language-modeling
 ---
 
 ## Definition
@@ -37,4 +43,7 @@ A form of transfer learning in which a model is first trained on a large amount 
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[contextual-word-embeddings]] — applies
+- [[masked-language-modeling]] — uses
+- [[transfer-learning]] — specializes
 [To be populated during integration]

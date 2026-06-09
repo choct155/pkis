@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+analogous-to:
+- kalman-filter
 component_scores:
   alternatives: null
   conditions: null
@@ -9,6 +11,8 @@ component_scores:
   implementation: null
   operational_mechanism: null
   principled_mechanism: null
+contrasts-with:
+- multilayer-perceptron
 coverage: 1
 date_created: '2026-06-09'
 date_updated: '2026-06-09'
@@ -18,6 +22,8 @@ id: pkis:technique:recurrent-neural-network
 knowledge_type: technique
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- sequence-to-sequence-model
 related_concepts: []
 sources:
 - russell-norvig-aima-ch21
@@ -29,6 +35,8 @@ tags:
 - backpropagation-through-time
 title: Recurrent Neural Network (RNN)
 understanding: 0
+uses:
+- backpropagation
 ---
 
 ## Definition
@@ -38,4 +46,8 @@ A neural network whose computation graph contains cycles, so that units may take
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[sequence-to-sequence-model]] — prerequisite-of
+- [[kalman-filter]] — analogous-to: both summarize past inputs in a hidden state under a Markov assumption for sequential data
+- [[multilayer-perceptron]] — contrasts-with: adds cyclic connections and internal state vs. a strictly feedforward network
+- [[backpropagation]] — uses: trained by backpropagation through time on the unrolled network
 [To be populated during integration]

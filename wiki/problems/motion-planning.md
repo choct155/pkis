@@ -26,6 +26,8 @@ tags:
 - search
 title: Motion Planning (Piano Mover's Problem)
 understanding: 0
+uses:
+- configuration-space
 ---
 
 ## Definition
@@ -35,4 +37,5 @@ The problem of finding a collision-free path that takes a robot from a start con
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[configuration-space]] — uses: paths are sought through C_free of the configuration space
 [To be populated during integration]

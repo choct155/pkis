@@ -8,6 +8,8 @@ component_scores:
   purpose: null
   scope: null
   structure: null
+contrasts-with:
+- temporal-logic
 coverage: 1
 date_created: '2026-06-09'
 date_updated: '2026-06-09'
@@ -20,6 +22,8 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - russell-norvig-aima-ch10
+specializes:
+- upper-ontology-categories-objects
 tags:
 - modal-logic
 - propositional-attitudes
@@ -56,4 +60,6 @@ Possibility/necessity, and **linear temporal logic** operators X (next), F (fina
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[temporal-logic]] — contrasts-with: linear temporal logic is another modal logic; the chapter presents both as modal extensions of FOL
+- [[upper-ontology-categories-objects]] — specializes: knowledge about beliefs is the mental-objects portion of the upper ontology
 [To be populated during integration]

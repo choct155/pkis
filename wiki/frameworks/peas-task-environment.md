@@ -18,6 +18,8 @@ id: pkis:framework:peas-task-environment
 knowledge_type: framework
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- rational-agent
 related_concepts: []
 sources:
 - russell-norvig-aima-ch02
@@ -29,6 +31,8 @@ tags:
 - specification
 title: PEAS Task Environment Specification
 understanding: 0
+uses:
+- performance-measure
 ---
 
 ## Definition
@@ -40,4 +44,6 @@ The canonical worked examples are the two-square vacuum world and the automated 
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[performance-measure]] — uses: The 'P' in PEAS is the performance measure.
+- [[rational-agent]] — prerequisite-of: Rationality is defined relative to a fully specified task environment (PEAS); the task environment is the problem to which the rational agent is the solution.
 [To be populated during integration]

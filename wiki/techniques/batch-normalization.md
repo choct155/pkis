@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- vanishing-gradient-problem
 component_scores:
   alternatives: null
   conditions: null
@@ -28,6 +30,8 @@ tags:
 - minibatch
 title: Batch Normalization
 understanding: 0
+uses:
+- stochastic-gradient-descent
 ---
 
 ## Definition
@@ -37,4 +41,6 @@ A technique (Ioffe & Szegedy, 2015) that improves the convergence rate of stocha
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[vanishing-gradient-problem]] — applies: prevents layer standard deviations from decaying to zero, preserving signal propagation
+- [[stochastic-gradient-descent]] — uses: rescales per-minibatch activations to improve SGD convergence
 [To be populated during integration]

@@ -31,6 +31,8 @@ tags:
 - fail-last
 title: Variable and Value Ordering Heuristics for CSPs
 understanding: 0
+uses:
+- forward-checking
 ---
 
 ## Definition
@@ -44,4 +46,5 @@ Value selection is FAIL-LAST: the LEAST-CONSTRAINING-VALUE heuristic prefers the
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[forward-checking]] — uses: forward checking incrementally computes the domain sizes the MRV heuristic needs
 [To be populated during integration]

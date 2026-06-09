@@ -22,6 +22,8 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - russell-norvig-aima-ch18
+specializes:
+- game-theory
 tags:
 - coalition
 - characteristic-function
@@ -38,4 +40,5 @@ A model of strategic settings in which agents can form *binding* agreements to c
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[game-theory]] — specializes
 [To be populated during integration]

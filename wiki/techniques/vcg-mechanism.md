@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- tragedy-of-the-commons
 component_scores:
   alternatives: null
   conditions: null
@@ -15,6 +17,8 @@ date_updated: '2026-06-09'
 domain:
 - multi-agent-systems
 - economics
+generalizes:
+- vickrey-auction
 id: pkis:technique:vcg-mechanism
 knowledge_type: technique
 maturity: evolving
@@ -30,6 +34,8 @@ tags:
 - combinatorial-auction
 title: VCG Mechanism
 understanding: 0
+uses:
+- mechanism-design
 ---
 
 ## Definition
@@ -39,4 +45,7 @@ A general mechanism that is simultaneously utility-maximizing (it maximizes tota
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[tragedy-of-the-commons]] — applies
+- [[mechanism-design]] — uses
+- [[vickrey-auction]] — generalizes
 [To be populated during integration]

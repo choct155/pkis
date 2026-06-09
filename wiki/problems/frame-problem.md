@@ -16,6 +16,8 @@ id: pkis:problem:frame-problem
 knowledge_type: problem
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- satplan-logical-planning
 related_concepts: []
 sources:
 - russell-norvig-aima-ch07
@@ -37,4 +39,5 @@ The frame problem (McCarthy & Hayes, 1969) is the difficulty of representing, in
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[satplan-logical-planning]] — prerequisite-of
 [To be populated during integration]

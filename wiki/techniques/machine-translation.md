@@ -30,6 +30,9 @@ tags:
 - bilingual-corpus
 title: Machine Translation
 understanding: 0
+uses:
+- word-embeddings
+- transformer-attention-mechanisms
 ---
 
 ## Definition
@@ -39,4 +42,6 @@ The task of transforming text in one language into another, typically learned fr
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[transformer-attention-mechanisms]] — uses
+- [[word-embeddings]] — uses
 [To be populated during integration]

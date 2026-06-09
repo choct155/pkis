@@ -25,6 +25,8 @@ sources:
 tags: []
 title: AI Existential Risk and the Control Problem
 understanding: 0
+uses:
+- value-alignment-problem
 ---
 
 ## Definition
@@ -34,4 +36,5 @@ understanding: 0
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[value-alignment-problem]] — uses
 [To be populated during integration]

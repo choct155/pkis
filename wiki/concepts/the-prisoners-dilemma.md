@@ -18,6 +18,8 @@ domain:
 - decision-theory
 - economics
 id: pkis:concept:the-prisoners-dilemma
+instantiates:
+- normal-form-game
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
@@ -30,6 +32,8 @@ tags:
 - social-dilemma
 title: The Prisoner's Dilemma
 understanding: 0
+uses:
+- dominant-strategy
 ---
 
 ## Definition
@@ -39,4 +43,6 @@ The canonical non-cooperative game (Tucker 1950, after Flood and Dresher) illust
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[dominant-strategy]] — uses
+- [[normal-form-game]] — instantiates
 [To be populated during integration]

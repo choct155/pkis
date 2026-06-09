@@ -19,6 +19,8 @@ id: pkis:framework:state-space-search
 knowledge_type: framework
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- best-first-search
 related_concepts: []
 sources:
 - russell-norvig-aima-ch03
@@ -38,4 +40,5 @@ The foundational framework for goal-directed problem solving in which a problem-
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[best-first-search]] — prerequisite-of: the search-problem formulation must be understood before any search algorithm
 [To be populated during integration]

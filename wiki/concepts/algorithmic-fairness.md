@@ -10,6 +10,8 @@ component_scores:
   prerequisites: null
   scope: null
   transfer: null
+contrasts-with:
+- privacy-in-ml
 coverage: 1
 date_created: '2026-06-09'
 date_updated: '2026-06-09'
@@ -26,6 +28,8 @@ sources:
 tags: []
 title: Algorithmic Fairness
 understanding: 0
+uses:
+- value-alignment-problem
 ---
 
 ## Definition
@@ -35,4 +39,6 @@ understanding: 0
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[value-alignment-problem]] — uses
+- [[privacy-in-ml]] — contrasts-with
 [To be populated during integration]

@@ -10,6 +10,8 @@ component_scores:
   prerequisites: null
   scope: null
   transfer: null
+contrasts-with:
+- contextual-word-embeddings
 coverage: 1
 date_created: '2026-06-01'
 date_updated: '2026-06-02'
@@ -37,6 +39,7 @@ Dense vector representations of words/tokens learned from distributional co-occu
 - [[mikolov-efficient-2013]] — canonical source
 
 ## Connections
+- [[contextual-word-embeddings]] — contrasts-with
 [To be populated during integration]
 
 ## Needs Canonical Source

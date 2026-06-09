@@ -6,6 +6,8 @@ component_scores:
   instances: null
   solution_landscape: null
   why_hard: null
+contrasts-with:
+- logical-entailment-and-inference
 coverage: 1
 date_created: '2026-06-09'
 date_updated: '2026-06-09'
@@ -37,4 +39,5 @@ The decision problem of determining whether a propositional sentence (typically 
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[logical-entailment-and-inference]] — contrasts-with: Entailment treats unknowns as unusable in a proof; SAT may set them freely — the gap SATPLAN must close.
 [To be populated during integration]

@@ -17,6 +17,8 @@ domain:
 - multi-agent-systems
 - decision-theory
 - economics
+generalizes:
+- dominant-strategy
 id: pkis:concept:nash-equilibrium
 knowledge_type: concept
 maturity: evolving
@@ -30,6 +32,9 @@ tags:
 - stability
 title: Nash Equilibrium
 understanding: 0
+uses:
+- game-theory
+- mixed-strategy
 ---
 
 ## Definition
@@ -39,4 +44,7 @@ A strategy profile in which no player can unilaterally change their strategy and
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[dominant-strategy]] — generalizes
+- [[mixed-strategy]] — uses
+- [[game-theory]] — uses
 [To be populated during integration]

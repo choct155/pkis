@@ -10,6 +10,8 @@ component_scores:
   prerequisites: null
   scope: null
   transfer: null
+contrasts-with:
+- turing-test
 coverage: 1
 date_created: '2026-06-09'
 date_updated: '2026-06-09'
@@ -22,6 +24,8 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - russell-norvig-aima-ch27
+specializes:
+- weak-vs-strong-ai
 tags: []
 title: Chinese Room Argument
 understanding: 0
@@ -34,4 +38,6 @@ understanding: 0
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[weak-vs-strong-ai]] — specializes
+- [[turing-test]] — contrasts-with
 [To be populated during integration]

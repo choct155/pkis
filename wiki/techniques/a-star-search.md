@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+analogous-to:
+- min-sum-algorithm
 component_scores:
   alternatives: null
   conditions: null
@@ -9,6 +11,10 @@ component_scores:
   implementation: null
   operational_mechanism: null
   principled_mechanism: null
+contrasts-with:
+- greedy-best-first-search
+- uninformed-search
+- heuristic-search-rl
 coverage: 1
 date_created: '2026-06-09'
 date_updated: '2026-06-09'
@@ -23,6 +29,8 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - russell-norvig-aima-ch03
+specializes:
+- best-first-search
 tags:
 - search
 - informed-search
@@ -31,6 +39,9 @@ tags:
 - best-first
 title: A* Search
 understanding: 0
+uses:
+- heuristic-function
+- admissible-and-consistent-heuristics
 ---
 
 ## Definition
@@ -40,4 +51,11 @@ The most common informed search algorithm: a best-first search using the evaluat
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[heuristic-search-rl]] — contrasts-with: classical heuristic graph search vs decision-time tree search with learned value backups in RL
+- [[min-sum-algorithm]] — analogous-to: both find lowest-cost paths over a weighted graph by expanding/relaxing nodes in cost order
+- [[uninformed-search]] — contrasts-with: informed vs uninformed: A* uses a goal-distance estimate, uninformed search does not
+- [[greedy-best-first-search]] — contrasts-with: A* trades the speed of greedy search for cost-optimality by adding g(n)
+- [[admissible-and-consistent-heuristics]] — uses: cost-optimality and non-re-expansion guarantees rest on admissibility and consistency
+- [[heuristic-function]] — uses: combines the heuristic h(n) with path cost g(n)
+- [[best-first-search]] — specializes: best-first search with f(n) = g(n) + h(n)
 [To be populated during integration]

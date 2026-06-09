@@ -8,12 +8,16 @@ component_scores:
   purpose: null
   scope: null
   structure: null
+contrasts-with:
+- markov-logic-networks
 coverage: 1
 date_created: '2026-06-09'
 date_updated: '2026-06-09'
 domain:
 - bayesian-stats
 - knowledge-representation
+extends:
+- bayesian-networks
 id: pkis:framework:relational-probability-model
 knowledge_type: framework
 maturity: evolving
@@ -21,6 +25,8 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - russell-norvig-aima-ch15
+specializes:
+- probabilistic-programming-language
 tags:
 - first-order-probability
 - database-semantics
@@ -38,4 +44,7 @@ A first-order probability model built on the database semantics of first-order l
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[markov-logic-networks]] — contrasts-with: RPMs are generative/directed defining a unique distribution; MLNs are undirected max-entropy completions
+- [[bayesian-networks]] — extends: RPM grounds to an equivalent Bayes net; lifts the factored BN to a structured relational representation
+- [[probabilistic-programming-language]] — specializes: RPMs are declarative PPLs (logic route, database semantics)
 [To be populated during integration]

@@ -8,6 +8,8 @@ component_scores:
   purpose: null
   scope: null
   structure: null
+contrasts-with:
+- phrase-structure
 coverage: 1
 date_created: '2026-06-09'
 date_updated: '2026-06-09'
@@ -37,4 +39,5 @@ A syntactic formalism that represents structure as a set of binary head-dependen
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[phrase-structure]] — contrasts-with
 [To be populated during integration]

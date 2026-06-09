@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+analogous-to:
+- open-universe-probability-model
 component_scores:
   application: null
   boundary: null
@@ -17,6 +19,8 @@ domain:
 - bayesian-stats
 - knowledge-representation
 id: pkis:concept:generative-program
+instantiates:
+- probabilistic-programming-language
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
@@ -31,6 +35,8 @@ tags:
 - sample-space
 title: Generative Program
 understanding: 0
+uses:
+- importance-sampling
 ---
 
 ## Definition
@@ -40,4 +46,7 @@ An executable program in which every random choice defines a random variable of 
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[importance-sampling]] — uses: likelihood weighting reweights traces; learned proposals enable importance sampling
+- [[open-universe-probability-model]] — analogous-to: trace distribution P(omega)=prod P(x_i|x_<i) mirrors OUPM world distribution; any OUPM converts to a generative program
+- [[probabilistic-programming-language]] — instantiates: the programming-language route to a PPL: programs define distributions over execution traces
 [To be populated during integration]

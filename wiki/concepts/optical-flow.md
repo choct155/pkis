@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+analogous-to:
+- stereo-and-depth
 component_scores:
   application: null
   boundary: null
@@ -20,6 +22,8 @@ id: pkis:concept:optical-flow
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- stereo-and-depth
 related_concepts: []
 sources:
 - russell-norvig-aima-ch25
@@ -40,4 +44,6 @@ The apparent motion field of image features induced by relative movement between
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[stereo-and-depth]] — prerequisite-of: The disparity-depth relation is derived from the optical-flow equations under a baseline translation.
+- [[stereo-and-depth]] — analogous-to: Optical flow under a moving camera is the temporal analogue of binocular stereo disparity; both solve correspondence and recover depth.
 [To be populated during integration]

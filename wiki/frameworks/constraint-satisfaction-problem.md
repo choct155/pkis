@@ -8,12 +8,16 @@ component_scores:
   purpose: null
   scope: null
   structure: null
+contrasts-with:
+- heuristic-search-rl
 coverage: 1
 date_created: '2026-06-09'
 date_updated: '2026-06-09'
 domain:
 - knowledge-representation
 - optimization
+generalizes:
+- convex-optimization
 id: pkis:framework:constraint-satisfaction-problem
 knowledge_type: framework
 maturity: evolving
@@ -45,4 +49,6 @@ Canonical example domains: map coloring (Australia's seven regions, three colors
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[heuristic-search-rl]] — contrasts-with: factored CSP states with general heuristics vs. atomic black-box state-space search
+- [[convex-optimization]] — generalizes: linear-programming CSPs / COPs connect CSPs to continuous constrained optimization
 [To be populated during integration]

@@ -7,6 +7,8 @@ analogous-to:
 - kalman-filter
 applies:
 - convolutional-code
+- hidden-markov-model
+- filtering-prediction-smoothing
 component_scores:
   alternatives: null
   conditions: null
@@ -64,6 +66,8 @@ This is the exact, efficient route to per-bit soft outputs that drive iterative 
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[filtering-prediction-smoothing]] — applies: Forward-backward realizes the filtering and smoothing inference tasks via forward and backward messages.
+- [[hidden-markov-model]] — applies: Forward-backward performs filtering and smoothing inference in HMMs via T/O matrix recursions.
 - [[convolutional-code]] — applies: The forward-backward (BCJR) algorithm computes per-bit posteriors on the convolutional trellis.
 - [[kalman-filter]] — analogous-to: Both are exact forward-backward inference on a chain; Kalman is the linear-Gaussian continuous-state case.
 - [[belief-propagation]] — analogous-to: Forward-backward / BCJR is belief propagation specialized to a chain, and is exact there.

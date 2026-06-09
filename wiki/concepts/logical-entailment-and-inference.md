@@ -20,6 +20,8 @@ id: pkis:concept:logical-entailment-and-inference
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- resolution-inference
 related_concepts: []
 sources:
 - russell-norvig-aima-ch07
@@ -41,4 +43,5 @@ Entailment is the semantic relation 'α ⊨ β' holding when β is true in every
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[resolution-inference]] — prerequisite-of
 [To be populated during integration]

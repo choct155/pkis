@@ -25,6 +25,8 @@ sources:
 tags: []
 title: Experience Replay
 understanding: 0
+uses:
+- deep-reinforcement-learning
 ---
 
 ## Definition
@@ -34,4 +36,5 @@ understanding: 0
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[deep-reinforcement-learning]] — uses
 [To be populated during integration]

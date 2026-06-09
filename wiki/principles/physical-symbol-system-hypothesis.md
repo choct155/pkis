@@ -6,12 +6,16 @@ component_scores:
   justification: null
   statement: null
   violations: null
+contrasts-with:
+- system-1-system-2-thinking
 coverage: 1
 date_created: '2026-06-09'
 date_updated: '2026-06-09'
 domain:
 - knowledge-representation
 id: pkis:principle:physical-symbol-system-hypothesis
+instantiates:
+- four-approaches-to-ai
 knowledge_type: principle
 maturity: evolving
 needs_canonical_source: false
@@ -43,4 +47,6 @@ Russell and Norvig note the hypothesis "has been challenged from many directions
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[system-1-system-2-thinking]] — contrasts-with
+- [[four-approaches-to-ai]] — instantiates
 [To be populated during integration]

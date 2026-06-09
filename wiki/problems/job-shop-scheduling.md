@@ -12,6 +12,8 @@ date_updated: '2026-06-09'
 domain:
 - optimization
 - symbolic-subsymbolic
+extends:
+- classical-planning-pddl
 id: pkis:problem:job-shop-scheduling
 knowledge_type: problem
 maturity: evolving
@@ -37,4 +39,5 @@ Whereas classical planning says what to do and in what order, *scheduling* adds 
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[classical-planning-pddl]] — extends: adds time, durations, and resource constraints to planning
 [To be populated during integration]

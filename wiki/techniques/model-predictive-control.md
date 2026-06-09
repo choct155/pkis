@@ -17,6 +17,8 @@ domain:
 - optimization
 - systems-theory
 id: pkis:technique:model-predictive-control
+instantiates:
+- trajectory-tracking-control
 knowledge_type: technique
 maturity: evolving
 needs_canonical_source: false
@@ -30,6 +32,8 @@ tags:
 - receding-horizon
 title: Model Predictive Control (MPC)
 understanding: 0
+uses:
+- value-of-information
 ---
 
 ## Definition
@@ -39,4 +43,6 @@ A control strategy for acting under uncertainty in which, at every time step, th
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[trajectory-tracking-control]] — instantiates: MPC turns repeated short-horizon planning into a tracking policy
+- [[value-of-information]] — uses: MPC handles uncertainty by online replanning, complementary to explicit information-gathering
 [To be populated during integration]

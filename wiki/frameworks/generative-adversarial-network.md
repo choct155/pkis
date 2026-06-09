@@ -8,6 +8,8 @@ component_scores:
   purpose: null
   scope: null
   structure: null
+contrasts-with:
+- variational-autoencoder
 coverage: 1
 date_created: '2026-06-09'
 date_updated: '2026-06-09'
@@ -28,6 +30,10 @@ tags:
 - image-synthesis
 title: Generative Adversarial Network (GAN)
 understanding: 0
+uses:
+- neural-networks
+- convolutional-neural-networks
+- gradient-descent
 ---
 
 ## Definition
@@ -37,4 +43,8 @@ A pair of networks (Goodfellow et al., 2014) that together form a generative sys
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[gradient-descent]] — uses: Style transfer (related to GAN image generation) optimizes the synthesized image by gradient descent on content+style losses.
+- [[convolutional-neural-networks]] — uses: GAN generators and discriminators for images are convolutional networks.
+- [[neural-networks]] — uses: generator and discriminator are both deep networks trained simultaneously
+- [[variational-autoencoder]] — contrasts-with: implicit sample-based training vs. explicit likelihood/ELBO maximization; GAN generator relates to the VAE decoder
 [To be populated during integration]

@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- constraint-satisfaction-problem
 component_scores:
   alternatives: null
   conditions: null
@@ -32,6 +34,9 @@ tags:
 - constraint-learning
 title: Backtracking Search for CSPs
 understanding: 0
+uses:
+- forward-checking
+- variable-and-value-ordering-heuristics
 ---
 
 ## Definition
@@ -45,4 +50,7 @@ CONSTRAINT LEARNING (no-good learning) extracts a minimal subset of the conflict
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[variable-and-value-ordering-heuristics]] — uses: MRV, degree, and LCV heuristics guide backtracking choices
+- [[forward-checking]] — uses: backtracking interleaves forward checking / MAC inference
+- [[constraint-satisfaction-problem]] — applies: backtracking search is the standard complete solver for CSPs
 [To be populated during integration]

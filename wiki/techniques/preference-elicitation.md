@@ -19,6 +19,8 @@ id: pkis:technique:preference-elicitation
 knowledge_type: technique
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- expected-utility-theory
 related_concepts: []
 sources:
 - russell-norvig-aima-ch16
@@ -30,6 +32,8 @@ tags:
 - human-ai-collaboration
 title: Preference Elicitation
 understanding: 0
+uses:
+- multiattribute-utility-theory
 ---
 
 ## Definition
@@ -46,6 +50,8 @@ Elicited preferences are routinely inconsistent (Allais, Ellsberg paradoxes; fra
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[multiattribute-utility-theory]] — uses: MAUT structure reduces the number of elicitation experiments
+- [[expected-utility-theory]] — prerequisite-of: elicitation supplies the U that EU maximization requires
 - Supplies the utility function required by expected-utility theory.
 - Its target structure for many attributes is given by multiattribute utility theory.
 

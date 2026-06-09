@@ -21,6 +21,8 @@ id: pkis:concept:angelic-semantics-hla
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- hierarchical-task-network
 related_concepts: []
 sources:
 - russell-norvig-aima-ch11
@@ -42,4 +44,5 @@ Angelic semantics gives precondition–effect descriptions to high-level actions
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[hierarchical-task-network]] — prerequisite-of: provides the semantics for provably correct abstract HTN plans
 [To be populated during integration]

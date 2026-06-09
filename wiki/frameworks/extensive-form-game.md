@@ -14,6 +14,8 @@ date_updated: '2026-06-09'
 domain:
 - multi-agent-systems
 - decision-theory
+extends:
+- normal-form-game
 id: pkis:framework:extensive-form-game
 knowledge_type: framework
 maturity: evolving
@@ -28,6 +30,8 @@ tags:
 - sequential-game
 title: Extensive-Form Game
 understanding: 0
+uses:
+- monte-carlo-tree-search
 ---
 
 ## Definition
@@ -37,4 +41,6 @@ A representation of sequential, possibly stochastic, possibly partially observab
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[monte-carlo-tree-search]] — uses
+- [[normal-form-game]] — extends
 [To be populated during integration]

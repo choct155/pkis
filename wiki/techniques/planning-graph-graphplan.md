@@ -9,6 +9,8 @@ component_scores:
   implementation: null
   operational_mechanism: null
   principled_mechanism: null
+contrasts-with:
+- partial-order-planning
 coverage: 1
 date_created: '2026-06-09'
 date_updated: '2026-06-09'
@@ -30,6 +32,8 @@ tags:
 - heuristic-estimation
 title: Planning Graphs and Graphplan
 understanding: 0
+uses:
+- classical-planning-pddl
 ---
 
 ## Definition
@@ -39,4 +43,6 @@ A planning graph is a specialized leveled data structure that encodes constraint
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[partial-order-planning]] — contrasts-with: Graphplan outpaced partial-order planners
+- [[classical-planning-pddl]] — uses: encodes constraints among PDDL actions, preconditions, effects
 [To be populated during integration]

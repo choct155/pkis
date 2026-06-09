@@ -7,6 +7,8 @@ date_updated: '2026-06-08'
 domain:
 - statistical-learning
 id: pkis:technique:logistic-regression
+instantiates:
+- generative-vs-discriminative-models
 knowledge_type: technique
 maturity: settled
 related_concepts:
@@ -37,5 +39,6 @@ $$G(\mathbf{w}) = -\sum_n\big[t^{(n)}\ln y^{(n)}+(1-t^{(n)})\ln(1-y^{(n)})\big],
 whose per-example term is the *information content* of the outcome — equivalently the relative entropy between the empirical label distribution $(t,1-t)$ and the model's $(y,1-y)$, bounded below by zero and attained iff $y^{(n)}=t^{(n)}$ for all $n$. Maximizing the Bernoulli likelihood and minimizing this cross-entropy coincide. The gradient $\partial G/\partial w_j=-\sum_n(t^{(n)}-y^{(n)})x_j^{(n)}$ yields the delta update $\Delta w_i=\eta(t-y)x_i$. The same logistic posterior arises canonically from two Gaussian class-conditionals with shared covariance (MacKay §11.2), explaining *why* this functional form is the natural classifier.
 
 ## Connections
+- [[generative-vs-discriminative-models]] — instantiates
 - [[weight-decay-as-prior]] — uses
 - [[generalized-linear-models]] — specializes

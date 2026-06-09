@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- alpha-beta-pruning
 component_scores:
   application: null
   boundary: null
@@ -32,6 +34,8 @@ tags:
 - horizon-effect
 title: Heuristic Evaluation Function (Games)
 understanding: 0
+uses:
+- minimax-algorithm
 ---
 
 ## Definition
@@ -41,4 +45,6 @@ A function EVAL(s,p) that estimates the expected utility (probability-of-winning
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[alpha-beta-pruning]] — applies: ALPHA-BETA-SEARCH is modified to call EVAL at the cutoff test rather than IS-TERMINAL.
+- [[minimax-algorithm]] — uses: Heuristic (H-MINIMAX) search cuts off minimax and substitutes EVAL for UTILITY at the cutoff.
 [To be populated during integration]

@@ -31,6 +31,9 @@ tags:
 - variance-reduction
 title: Smoothing (Language Models)
 understanding: 0
+uses:
+- n-gram-language-model
+- em-algorithm
 ---
 
 ## Definition
@@ -40,4 +43,6 @@ A family of techniques for reserving probability mass for never-seen events in a
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[em-algorithm]] — uses
+- [[n-gram-language-model]] — uses
 [To be populated during integration]

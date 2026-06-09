@@ -26,6 +26,9 @@ sources:
 tags: []
 title: Metareasoning
 understanding: 0
+uses:
+- value-of-information
+- exploration-exploitation-tradeoff
 ---
 
 ## Definition
@@ -35,4 +38,6 @@ understanding: 0
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[exploration-exploitation-tradeoff]] — uses
+- [[value-of-information]] — uses
 [To be populated during integration]

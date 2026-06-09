@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- sequence-to-sequence-model
 component_scores:
   alternatives: null
   conditions: null
@@ -37,4 +39,5 @@ An approximate search procedure for generating the highest-probability output se
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[sequence-to-sequence-model]] — applies
 [To be populated during integration]

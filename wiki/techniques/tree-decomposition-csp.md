@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- constraint-satisfaction-problem
 component_scores:
   alternatives: null
   conditions: null
@@ -34,6 +36,8 @@ tags:
 title: 'Exploiting CSP Structure: Tree-Structured CSPs, Cutset Conditioning, and Tree
   Decomposition'
 understanding: 0
+uses:
+- arc-consistency-ac3
 ---
 
 ## Definition
@@ -51,4 +55,6 @@ VALUE SYMMETRY: when solutions come in equivalent classes (e.g. d! color permuta
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[arc-consistency-ac3]] — uses: tree-structured CSPs are solved via directional arc consistency
+- [[constraint-satisfaction-problem]] — applies: structural methods exploit the CSP constraint graph
 [To be populated during integration]

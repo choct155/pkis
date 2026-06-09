@@ -31,6 +31,8 @@ tags:
 - preference-aggregation
 title: Social Welfare Function
 understanding: 0
+uses:
+- pareto-optimality
 ---
 
 ## Definition
@@ -40,4 +42,5 @@ A criterion for evaluating outcomes from the perspective of society as a whole, 
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[pareto-optimality]] — uses
 [To be populated during integration]

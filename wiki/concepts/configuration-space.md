@@ -20,6 +20,8 @@ id: pkis:concept:configuration-space
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- motion-planning
 related_concepts: []
 sources:
 - russell-norvig-aima-ch26
@@ -39,4 +41,5 @@ An abstract multidimensional space in which an entire robot—every point on its
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[motion-planning]] — prerequisite-of: motion planning is defined and solved in configuration space
 [To be populated during integration]

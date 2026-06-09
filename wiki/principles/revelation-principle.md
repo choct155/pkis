@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- mechanism-design
 component_scores:
   implications: null
   justification: null
@@ -34,4 +36,5 @@ A foundational result of mechanism design (Myerson 1986): any mechanism can be t
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[mechanism-design]] — applies
 [To be populated during integration]

@@ -17,12 +17,17 @@ domain:
 - time-series
 - statistical-learning
 id: pkis:framework:hidden-markov-model
+instantiates:
+- state-space-models
+- latent-variable-models
 knowledge_type: framework
 maturity: evolving
 needs_canonical_source: false
 related_concepts: []
 sources:
 - russell-norvig-aima-ch14
+specializes:
+- dynamic-bayesian-network
 tags:
 - hmm
 - temporal-model
@@ -34,6 +39,8 @@ tags:
 - matrix-formulation
 title: Hidden Markov Model (HMM)
 understanding: 0
+uses:
+- markov-chains
 ---
 
 ## Definition
@@ -52,4 +59,8 @@ The HMM and its inference/learning algorithms (including forward-backward) were 
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[latent-variable-models]] — instantiates: The discrete hidden state X_t is the latent variable generating the observed evidence E_t.
+- [[state-space-models]] — instantiates: An HMM is a discrete-state state-space model with a transition model and a sensor/observation model.
+- [[markov-chains]] — uses: HMM state evolution is a Markov chain (first-order Markov assumption on the hidden state).
+- [[dynamic-bayesian-network]] — specializes: Every HMM is a DBN with a single discrete state variable and a single evidence variable.
 [To be populated during integration]

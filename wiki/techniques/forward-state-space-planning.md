@@ -9,6 +9,8 @@ component_scores:
   implementation: null
   operational_mechanism: null
   principled_mechanism: null
+contrasts-with:
+- backward-regression-planning
 coverage: 1
 date_created: '2026-06-09'
 date_updated: '2026-06-09'
@@ -30,6 +32,9 @@ tags:
 - forward-search
 title: Forward State-Space Planning (Progression)
 understanding: 0
+uses:
+- classical-planning-pddl
+- planning-heuristics-relaxation
 ---
 
 ## Definition
@@ -39,4 +44,7 @@ Forward (progression) planning searches the space of ground world-states from th
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[planning-heuristics-relaxation]] — uses: forward search needs domain-independent heuristics to be efficient
+- [[backward-regression-planning]] — contrasts-with: lower vs higher branching factor; easy vs hard heuristics
+- [[classical-planning-pddl]] — uses: progression searches the PDDL ground-state space
 [To be populated during integration]

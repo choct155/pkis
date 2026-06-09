@@ -15,6 +15,8 @@ date_updated: '2026-06-09'
 domain:
 - knowledge-representation
 - symbolic-subsymbolic
+generalizes:
+- propositionalization
 id: pkis:technique:generalized-modus-ponens
 knowledge_type: technique
 maturity: evolving
@@ -28,6 +30,8 @@ tags:
 - russell-norvig-aima
 title: Generalized Modus Ponens
 understanding: 0
+uses:
+- unification
 ---
 
 ## Definition
@@ -37,4 +41,6 @@ A lifted version of Modus Ponens that raises the rule from ground propositional 
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[propositionalization]] — generalizes
+- [[unification]] — uses
 [To be populated during integration]

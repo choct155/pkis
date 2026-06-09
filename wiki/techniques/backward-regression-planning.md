@@ -30,6 +30,8 @@ tags:
 - relevant-actions
 title: Backward Regression Planning
 understanding: 0
+uses:
+- classical-planning-pddl
 ---
 
 ## Definition
@@ -39,4 +41,5 @@ Backward (regression) planning searches from the goal toward the initial state, 
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[classical-planning-pddl]] — uses: regression searches backward over PDDL action schemas
 [To be populated during integration]

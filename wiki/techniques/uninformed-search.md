@@ -22,6 +22,8 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - russell-norvig-aima-ch03
+specializes:
+- best-first-search
 tags:
 - search
 - blind-search
@@ -39,4 +41,5 @@ The family of search strategies that have access only to the problem definition 
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[best-first-search]] — specializes: BFS/UCS/DFS are best-first search with f = depth, g, or -depth respectively
 [To be populated during integration]

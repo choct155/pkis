@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- datalog
 component_scores:
   alternatives: null
   conditions: null
@@ -9,6 +11,8 @@ component_scores:
   implementation: null
   operational_mechanism: null
   principled_mechanism: null
+contrasts-with:
+- backward-chaining-fol
 coverage: 1
 date_created: '2026-06-09'
 date_updated: '2026-06-09'
@@ -29,6 +33,8 @@ tags:
 - russell-norvig-aima
 title: Forward Chaining (First-Order)
 understanding: 0
+uses:
+- generalized-modus-ponens
 ---
 
 ## Definition
@@ -38,4 +44,7 @@ A data-driven inference algorithm over first-order definite clauses: starting fr
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[datalog]] — applies
+- [[backward-chaining-fol]] — contrasts-with
+- [[generalized-modus-ponens]] — uses
 [To be populated during integration]

@@ -20,12 +20,16 @@ id: pkis:concept:terms-predicates-and-models-fol
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- first-order-logic
 related_concepts: []
 sources:
 - russell-norvig-aima-ch08
 tags: []
 title: Terms, Predicates, and Models in First-Order Logic
 understanding: 0
+uses:
+- formal-ontology
 ---
 
 ## Definition
@@ -35,4 +39,6 @@ understanding: 0
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[formal-ontology]] — uses
+- [[first-order-logic]] — prerequisite-of
 [To be populated during integration]

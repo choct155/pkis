@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- knowledge-representation
 component_scores:
   application: null
   limits: null
@@ -28,6 +30,10 @@ tags:
 - knowledge-level
 title: Knowledge-Based Agent
 understanding: 0
+uses:
+- propositional-logic
+- logical-entailment-and-inference
+- frame-problem
 ---
 
 ## Definition
@@ -37,4 +43,8 @@ An agent architecture whose central component is a knowledge base (KB) — a set
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[frame-problem]] — uses: A logical agent's transition model must solve the frame problem to track fluents.
+- [[knowledge-representation]] — applies
+- [[logical-entailment-and-inference]] — uses: ASK answers must be entailed by prior TELLs.
+- [[propositional-logic]] — uses: Ch. 7 instantiates the KB agent with propositional logic.
 [To be populated during integration]

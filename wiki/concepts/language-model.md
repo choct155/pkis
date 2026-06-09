@@ -29,6 +29,8 @@ tags:
 - language
 title: Language Model
 understanding: 0
+uses:
+- word-embeddings
 ---
 
 ## Definition
@@ -38,4 +40,5 @@ A probability distribution over strings of a natural language, assigning to any 
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[word-embeddings]] — uses
 [To be populated during integration]

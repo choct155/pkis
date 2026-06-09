@@ -20,6 +20,8 @@ id: pkis:concept:trajectory-tracking-control
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- motion-planning
 related_concepts: []
 sources:
 - russell-norvig-aima-ch26
@@ -30,6 +32,8 @@ tags:
 - feedback
 title: Trajectory Tracking Control
 understanding: 0
+uses:
+- pid-control
 ---
 
 ## Definition
@@ -39,4 +43,6 @@ The task of executing a planned reference path/trajectory by computing the actua
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[motion-planning]] — prerequisite-of: tracking executes the path produced by motion planning
+- [[pid-control]] — uses: PID is the standard closed-loop law for tracking a reference trajectory
 [To be populated during integration]

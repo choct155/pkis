@@ -21,6 +21,8 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - russell-norvig-aima-ch24
+specializes:
+- recurrent-neural-network
 tags:
 - nlp
 - rnn
@@ -37,4 +39,5 @@ A recurrent architecture that runs two RNNs over the input, one left-to-right an
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[recurrent-neural-network]] — specializes
 [To be populated during integration]

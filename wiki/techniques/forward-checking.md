@@ -30,6 +30,8 @@ tags:
 - constraint-propagation
 title: Forward Checking and Maintaining Arc Consistency (MAC)
 understanding: 0
+uses:
+- arc-consistency-ac3
 ---
 
 ## Definition
@@ -43,4 +45,5 @@ MAINTAINING ARC CONSISTENCY (MAC): after assigning X_i, call AC-3 but seed its q
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[arc-consistency-ac3]] — uses: forward checking and MAC enforce arc consistency during search
 [To be populated during integration]

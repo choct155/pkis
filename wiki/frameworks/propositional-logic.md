@@ -15,12 +15,18 @@ domain:
 - knowledge-representation
 - symbolic-subsymbolic
 id: pkis:framework:propositional-logic
+instantiates:
+- expressiveness-tractability-tradeoff
 knowledge_type: framework
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- logical-entailment-and-inference
 related_concepts: []
 sources:
 - russell-norvig-aima-ch07
+specializes:
+- knowledge-representation
 tags:
 - logic
 - boolean
@@ -37,4 +43,7 @@ A formal language for representing knowledge whose atomic sentences are proposit
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[expressiveness-tractability-tradeoff]] — instantiates: Tractable but inexpressive end of the spectrum; lacks quantification, motivating first-order logic.
+- [[knowledge-representation]] — specializes: Propositional logic is a particular (factored) knowledge representation language.
+- [[logical-entailment-and-inference]] — prerequisite-of
 [To be populated during integration]

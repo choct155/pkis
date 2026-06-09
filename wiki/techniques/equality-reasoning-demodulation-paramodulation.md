@@ -15,6 +15,8 @@ date_updated: '2026-06-09'
 domain:
 - knowledge-representation
 - symbolic-subsymbolic
+extends:
+- resolution-first-order
 id: pkis:technique:equality-reasoning-demodulation-paramodulation
 knowledge_type: technique
 maturity: evolving
@@ -37,4 +39,5 @@ Techniques for handling the equality relation, which resolution cannot process d
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[resolution-first-order]] — extends
 [To be populated during integration]

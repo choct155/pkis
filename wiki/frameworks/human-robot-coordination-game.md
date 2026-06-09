@@ -21,6 +21,8 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - russell-norvig-aima-ch26
+specializes:
+- robotics-decision-making
 tags:
 - robotics
 - game-theory
@@ -28,6 +30,9 @@ tags:
 - prediction
 title: Human-Robot Coordination as a Game
 understanding: 0
+uses:
+- multi-agent-systems
+- model-predictive-control
 ---
 
 ## Definition
@@ -37,4 +42,7 @@ A formulation of a robot acting around people as an incomplete-information game 
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[model-predictive-control]] — uses: collaboration adapts to human deviations from the joint plan via MPC replanning
+- [[multi-agent-systems]] — uses: coordination is modeled as an incomplete-information game between robot and human
+- [[robotics-decision-making]] — specializes: the multi-agent (game) facet of the general robotics problem
 [To be populated during integration]
