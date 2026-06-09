@@ -11354,3 +11354,12 @@
 ## [2026-06-09] committed | technique
 - Committed: structural-risk-minimization → techniques/structural-risk-minimization.md
 - IRI: pkis:technique:structural-risk-minimization
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: bagging (id: 9bd87cf3-064e-4f19-a8c0-3e9c70918dc1)
+- Title: Bagging (Bootstrap Aggregation)
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: bagging → techniques/bagging.md
+- IRI: pkis:technique:bagging
