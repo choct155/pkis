@@ -290,6 +290,7 @@
 - [[liu-machine-unlearning-llm-2024]] — Rethinking Machine Unlearning for LLMs: post-training knowledge editing survey (deep-learning, ai-safety) (2026-05-20)
 
 ## Concepts
+- [[optical-flow]] — Optical Flow (computer-vision, deep-learning) (2026-06-09)
 - [[feature-detection-vision]] — Visual Feature and Texture Representation (computer-vision, deep-learning) (2026-06-09)
 - [[image-formation-model]] — Image Formation Model (computer-vision, deep-learning) (2026-06-09)
 - [[contextual-word-embeddings]] — Contextual Word Embeddings (deep-learning) (2026-06-09)

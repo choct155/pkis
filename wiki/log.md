@@ -10327,3 +10327,12 @@
 ## [2026-06-09] committed | technique
 - Committed: image-segmentation → techniques/image-segmentation.md
 - IRI: pkis:technique:image-segmentation
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: optical-flow (id: 4f629b9b-772b-498d-a325-cd36361ef0b5)
+- Title: Optical Flow
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: optical-flow → concepts/optical-flow.md
+- IRI: pkis:concept:optical-flow
