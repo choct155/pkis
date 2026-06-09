@@ -904,6 +904,7 @@
 - [[constraint-propagation]] — Reducing a constraint satisfaction problem by iteratively eliminating inconsistent values from variable domains (knowledge-representation) (2026-05-20)
 
 ## Results
+- [[borel-cantelli-lemma]] — Borel-Cantelli Lemma (bayesian-stats, statistical-learning) (2026-06-09)
 - [[law-of-iterated-logarithm]] — Law of the Iterated Logarithm (bayesian-stats, statistical-learning) (2026-06-09)
 - [[reflection-principle]] — Reflection Principle (bayesian-stats, statistical-learning) (2026-06-09)
 - [[invariance-principle]] — Invariance Principle (Functional Central Limit Theorem) (bayesian-stats, statistical-learning) (2026-06-09)

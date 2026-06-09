@@ -7552,3 +7552,12 @@
 ## [2026-06-09] committed | result
 - Committed: law-of-iterated-logarithm → results/law-of-iterated-logarithm.md
 - IRI: pkis:result:law-of-iterated-logarithm
+
+## [2026-06-09] staged | node-stub (result)
+- Staged: borel-cantelli-lemma (id: ffab0bc1-e594-4717-855b-3d03a0e1481b)
+- Title: Borel-Cantelli Lemma
+- needs_canonical_source: False
+
+## [2026-06-09] committed | result
+- Committed: borel-cantelli-lemma → results/borel-cantelli-lemma.md
+- IRI: pkis:result:borel-cantelli-lemma
