@@ -38,6 +38,7 @@ understanding: 0
 uses:
 - entropy
 - shannon-information-content
+viz: typical-sets
 ---
 
 ## Definition

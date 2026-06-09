@@ -45,6 +45,7 @@ title: Markov Chain Monte Carlo (MCMC)
 understanding: 2
 uses:
 - posterior-geometry-coordinate-systems
+viz: mcmc-sampling-trace
 ---
 
 A class of algorithms that construct a Markov chain whose stationary distribution is the target distribution (typically a posterior), enabling sampling from intractable distributions by running the chain until convergence; the Metropolis-Hastings and Gibbs sampler are the foundational instances.
