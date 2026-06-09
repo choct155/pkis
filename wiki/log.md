@@ -6463,3 +6463,6 @@
 
 ## [2026-06-09] edit | edit_node
 - pkis:concept:probability-theory: fields=[] sections=['Foundations: probability as a measure of uncertainty']
+
+## [2026-06-09] edit | edit_node
+- pkis:principle:likelihood-principle: fields=[] sections=["The likelihood principle is conditional on the model (Gelman's caveat)"]
