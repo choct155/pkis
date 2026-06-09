@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- orthogonality
 component_scores:
   alternatives: null
   conditions: null
@@ -27,6 +29,8 @@ tags:
 - analytic-geometry
 title: Gram-Schmidt Orthogonalization
 understanding: 0
+uses:
+- orthogonal-projection
 ---
 
 ## Definition
@@ -47,4 +51,6 @@ Orthonormal bases dramatically simplify computation: projections become dot prod
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[orthogonality]] — applies
+- [[orthogonal-projection]] — uses
 [To be populated during integration]

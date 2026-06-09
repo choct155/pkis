@@ -17,6 +17,8 @@ domain:
 - statistical-learning
 - bayesian-stats
 id: pkis:concept:mixture-models
+instantiates:
+- latent-variable-models
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
@@ -38,4 +40,5 @@ understanding: 0
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[latent-variable-models]] — instantiates
 [To be populated during integration]

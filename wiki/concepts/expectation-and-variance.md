@@ -26,6 +26,8 @@ sources:
 tags: []
 title: Expectation and Variance
 understanding: 0
+uses:
+- probability-theory
 ---
 
 ## Definition
@@ -46,4 +48,5 @@ Expectations are the workhorse of ML: losses are expected risks, the marginal li
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[probability-theory]] — uses
 [To be populated during integration]

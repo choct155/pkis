@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+analogous-to:
+- directed-graphical-models
 component_scores:
   alternatives: null
   conditions: null
@@ -38,4 +40,5 @@ understanding: 0
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[directed-graphical-models]] — analogous-to
 [To be populated during integration]

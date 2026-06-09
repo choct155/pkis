@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- variational-autoencoder
 component_scores:
   alternatives: null
   conditions: null
@@ -21,9 +23,13 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - deisenroth-mml-ch04
+specializes:
+- matrix-decompositions
 tags: []
 title: Cholesky Decomposition
 understanding: 0
+uses:
+- determinant
 ---
 
 ## Definition
@@ -44,4 +50,7 @@ SPD matrices appear constantly in ML — kernels, covariances, Hessians, Gram ma
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[variational-autoencoder]] — applies
+- [[determinant]] — uses
+- [[matrix-decompositions]] — specializes
 [To be populated during integration]

@@ -19,6 +19,8 @@ id: pkis:concept:trace
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- eigendecomposition
 related_concepts: []
 sources:
 - deisenroth-mml-ch04
@@ -45,4 +47,5 @@ Together with the determinant and eigenvalues, the trace is one of the few basis
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[eigendecomposition]] — prerequisite-of
 [To be populated during integration]

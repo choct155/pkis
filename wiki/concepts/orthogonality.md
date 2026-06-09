@@ -28,6 +28,8 @@ tags:
 - analytic-geometry
 title: Orthogonality
 understanding: 0
+uses:
+- inner-product
 ---
 
 ## Definition
@@ -51,4 +53,5 @@ Orthogonality makes projection, decomposition, and dimensionality reduction trac
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[inner-product]] — uses
 [To be populated during integration]

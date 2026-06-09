@@ -26,6 +26,8 @@ sources:
 tags: []
 title: Random Variable
 understanding: 0
+uses:
+- probability-theory
 ---
 
 ## Definition
@@ -46,4 +48,5 @@ Virtually all of probabilistic ML is phrased over random variables rather than r
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[probability-theory]] — uses
 [To be populated during integration]

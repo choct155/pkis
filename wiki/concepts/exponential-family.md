@@ -1,6 +1,9 @@
 ---
 aliases: []
 also_type: []
+analogous-to:
+- conjugate-prior
+- beta-distribution
 component_scores:
   application: null
   boundary: null
@@ -16,6 +19,8 @@ date_updated: '2026-06-09'
 domain:
 - bayesian-stats
 - statistical-learning
+generalizes:
+- gaussian-distribution
 id: pkis:concept:exponential-family
 knowledge_type: concept
 maturity: evolving
@@ -26,6 +31,9 @@ sources:
 tags: []
 title: Exponential Family
 understanding: 0
+uses:
+- probability-theory
+- sufficient-statistics
 ---
 
 ## Definition
@@ -40,6 +48,11 @@ Most "named" distributions — Gaussian, Bernoulli, Binomial, Beta, Gamma, Diric
 The exponential family is the unique class admitting **finite-dimensional sufficient statistics** under i.i.d. sampling (Pitman–Koopman–Darmois): no matter how much data you collect, $\phi(x)$ of fixed dimension summarizes it. This yields the three desiderata for tractable modeling — closure under Bayesian updating, bounded parameter count, and well-behaved estimation. Critically, **every exponential-family likelihood has a conjugate prior** of matching form, which is why conjugate pairs (Beta–Bernoulli, Gaussian–Gaussian, Dirichlet–Multinomial) exist. This structure underpins generalized linear models, variational inference, and much of probabilistic ML.
 
 ### Connections
+- [[beta-distribution]] — analogous-to
+- [[conjugate-prior]] — analogous-to
+- [[sufficient-statistics]] — uses
+- [[gaussian-distribution]] — generalizes
+- [[probability-theory]] — uses
 The form is exactly the $g_\theta(\phi(x))$ piece of the Fisher–Neyman factorization, tying the family directly to sufficient statistics.
 
 ## Reading Path

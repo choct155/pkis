@@ -8,6 +8,8 @@ domain:
 - bayesian-stats
 - statistical-learning
 id: pkis:concept:gaussian-distribution
+instantiates:
+- exponential-family
 knowledge_type: concept
 maturity: settled
 related_concepts:
@@ -36,3 +38,6 @@ The normal distribution, characterized by mean and covariance, central to ML bec
 When two independent sources contribute Gaussian information about an unknown $x$ — here a prior $\mathrm{Normal}(0,v)$ and a likelihood $\mathrm{Normal}(x,\sigma^2)$ — the posterior is Gaussian with **precision equal to the sum of the precisions**:
 $$P(x\mid y)=\mathrm{Normal}\!\Big(\tfrac{v}{v+\sigma^2}y,\ \big(\tfrac1v+\tfrac1{\sigma^2}\big)^{-1}\Big).$$
 The posterior mean is a precision-weighted blend of the data-best value $x=y$ and the prior-best value $x=0$. This is the dual of the familiar rule that *variances add when independent variables are summed*: under inference, precisions (inverse variances) add.
+
+## Connections
+- [[exponential-family]] — instantiates

@@ -19,15 +19,22 @@ id: pkis:concept:inner-product
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- analytic-geometry
+- support-vector-machines
 related_concepts: []
 sources:
 - deisenroth-mml-ch03
+specializes:
+- linear-algebra
 tags:
 - mathematical-foundations
 - linear-algebra
 - analytic-geometry
 title: Inner Product
 understanding: 0
+uses:
+- norm
 ---
 
 ## Definition
@@ -51,4 +58,8 @@ The inner product is the single object from which all of analytic geometry flows
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[linear-algebra]] — specializes
+- [[support-vector-machines]] — prerequisite-of
+- [[norm]] — uses
+- [[analytic-geometry]] — prerequisite-of
 [To be populated during integration]

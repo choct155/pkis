@@ -19,6 +19,8 @@ id: pkis:concept:orthogonal-projection
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- principal-component-analysis
 related_concepts: []
 sources:
 - deisenroth-mml-ch03
@@ -28,6 +30,10 @@ tags:
 - analytic-geometry
 title: Orthogonal Projection
 understanding: 0
+uses:
+- orthogonality
+- inner-product
+- linear-algebra
 ---
 
 ## Definition
@@ -51,4 +57,8 @@ Orthogonal projection is the geometry behind least-squares regression (projectin
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[principal-component-analysis]] — prerequisite-of
+- [[linear-algebra]] — uses
+- [[inner-product]] — uses
+- [[orthogonality]] — uses
 [To be populated during integration]

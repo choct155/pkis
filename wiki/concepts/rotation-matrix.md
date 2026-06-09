@@ -22,6 +22,8 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - deisenroth-mml-ch03
+specializes:
+- orthogonality
 tags:
 - mathematical-foundations
 - linear-algebra
@@ -51,4 +53,5 @@ Rotations are central to computer graphics and robotics (orienting robot joints,
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[orthogonality]] — specializes
 [To be populated during integration]

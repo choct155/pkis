@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- principal-component-analysis
 component_scores:
   alternatives: null
   conditions: null
@@ -24,6 +26,8 @@ sources:
 tags: []
 title: Low-Rank Matrix Approximation
 understanding: 0
+uses:
+- singular-value-decomposition
 ---
 
 ## Definition
@@ -44,4 +48,6 @@ Low-rank approximation turns the SVD into a compression and denoising engine: im
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[principal-component-analysis]] — applies
+- [[singular-value-decomposition]] — uses
 [To be populated during integration]

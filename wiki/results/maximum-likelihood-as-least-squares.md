@@ -25,6 +25,9 @@ tags:
 - vector-calculus
 title: Maximum Likelihood as Least Squares
 understanding: 0
+uses:
+- maximum-likelihood-estimation
+- gaussian-distribution
 ---
 
 ## Definition
@@ -34,4 +37,6 @@ understanding: 0
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[gaussian-distribution]] — uses
+- [[maximum-likelihood-estimation]] — uses
 [To be populated during integration]

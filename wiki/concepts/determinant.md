@@ -1,6 +1,10 @@
 ---
 aliases: []
 also_type: []
+analogous-to:
+- trace
+applies:
+- eigendecomposition
 component_scores:
   application: null
   boundary: null
@@ -19,6 +23,8 @@ id: pkis:concept:determinant
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- eigendecomposition
 related_concepts: []
 sources:
 - deisenroth-mml-ch04
@@ -45,4 +51,7 @@ $A$ is invertible iff $\det(A)\neq 0$ iff $\mathrm{rk}(A)=n$. The determinant fe
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[trace]] — analogous-to
+- [[eigendecomposition]] — applies
+- [[eigendecomposition]] — prerequisite-of
 [To be populated during integration]

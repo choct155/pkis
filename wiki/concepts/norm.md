@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- regularization
 component_scores:
   application: null
   boundary: null
@@ -19,9 +21,13 @@ id: pkis:concept:norm
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- analytic-geometry
 related_concepts: []
 sources:
 - deisenroth-mml-ch03
+specializes:
+- inner-product
 tags:
 - mathematical-foundations
 - linear-algebra
@@ -51,4 +57,7 @@ Norms are the basic measure of magnitude in ML: $\ell_1$ and $\ell_2$ penalties 
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[regularization]] — applies
+- [[inner-product]] — specializes
+- [[analytic-geometry]] — prerequisite-of
 [To be populated during integration]
