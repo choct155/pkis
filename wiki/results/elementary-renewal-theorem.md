@@ -27,6 +27,9 @@ tags:
 - central-limit-theorem
 title: Elementary Renewal Theorem
 understanding: 0
+uses:
+- renewal-function
+- weak-law-of-large-numbers
 ---
 
 ## Definition
@@ -36,4 +39,6 @@ Let mu = E Y_1 be the mean interarrival time. The elementary renewal theorem sta
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[weak-law-of-large-numbers]] — uses
+- [[renewal-function]] — uses
 [To be populated during integration]

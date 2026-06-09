@@ -13,6 +13,8 @@ date_updated: '2026-06-09'
 domain:
 - bayesian-stats
 - statistical-learning
+generalizes:
+- elementary-renewal-theorem
 id: pkis:result:blackwells-renewal-theorem
 knowledge_type: result
 maturity: evolving
@@ -35,4 +37,5 @@ Blackwell's theorem describes the asymptotically constant rate of accumulation o
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[elementary-renewal-theorem]] — generalizes
 [To be populated during integration]

@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- point-process
 component_scores:
   alternatives: null
   conditions: null
@@ -38,4 +40,5 @@ The Laplace functional is the transform that characterizes the distribution of a
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[point-process]] — applies: the Laplace functional is the characterizing transform of a point process
 [To be populated during integration]

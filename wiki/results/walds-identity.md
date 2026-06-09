@@ -12,6 +12,8 @@ date_created: '2026-06-09'
 date_updated: '2026-06-09'
 domain:
 - statistical-learning
+generalizes:
+- random-sum-compound-distribution
 id: pkis:result:walds-identity
 knowledge_type: result
 maturity: evolving
@@ -19,6 +21,8 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - resnick-stochastic-processes-ch01
+specializes:
+- martingales
 tags:
 - probability-theory
 - stochastic-processes
@@ -27,6 +31,8 @@ tags:
 - martingales
 title: Wald's Identity
 understanding: 0
+uses:
+- stopping-time
 ---
 
 ## Definition
@@ -47,4 +53,7 @@ Wald's identity is the workhorse for the mean of randomly stopped sums in sequen
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[martingales]] — specializes: Wald's identity is the simplest special case of the martingale optional-stopping theorems.
+- [[random-sum-compound-distribution]] — generalizes: Wald's E(sum)=E(N)E(X1) extends the compound-distribution mean relation to stopping times.
+- [[stopping-time]] — uses: Wald's identity requires alpha to be a stopping time with finite expectation.
 [To be populated during integration]

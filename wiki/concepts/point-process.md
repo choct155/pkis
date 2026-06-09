@@ -15,6 +15,8 @@ date_created: '2026-06-09'
 date_updated: '2026-06-09'
 domain:
 - bayesian-stats
+generalizes:
+- markov-chains
 id: pkis:concept:point-process
 knowledge_type: concept
 maturity: evolving
@@ -30,6 +32,9 @@ tags:
 - spatial-statistics
 title: Point Process
 understanding: 0
+uses:
+- random-variable
+- probability-theory
 ---
 
 ## Definition
@@ -39,4 +44,7 @@ A point process is a model for a random distribution of points (atoms) in a stat
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[markov-chains]] — generalizes: renewal/arrival point processes generalize discrete event-count models
+- [[probability-theory]] — uses: built on measure-theoretic probability (random counting measures)
+- [[random-variable]] — uses: points are random elements; N(A) is a random variable
 [To be populated during integration]

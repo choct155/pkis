@@ -21,6 +21,8 @@ id: pkis:concept:generator-matrix-q-matrix
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- kolmogorov-forward-backward-equations
 related_concepts: []
 sources:
 - resnick-stochastic-processes-ch05
@@ -54,4 +56,5 @@ The generator is the analytic engine of the CTMC: the transition function solves
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[kolmogorov-forward-backward-equations]] — prerequisite-of: The generator must be understood before the Kolmogorov equations that use it.
 [To be populated during integration]

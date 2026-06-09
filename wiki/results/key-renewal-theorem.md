@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+analogous-to:
+- blackwells-renewal-theorem
 component_scores:
   conditions: null
   implications: null
@@ -27,6 +29,9 @@ tags:
 - direct-riemann-integrability
 title: Key Renewal Theorem
 understanding: 0
+uses:
+- renewal-equation
+- renewal-function
 ---
 
 ## Definition
@@ -36,4 +41,7 @@ Originally formulated by Walter Smith. For the solution Z = U*z of a proper rene
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[blackwells-renewal-theorem]] — analogous-to
+- [[renewal-function]] — uses
+- [[renewal-equation]] — uses
 [To be populated during integration]

@@ -20,6 +20,8 @@ id: pkis:concept:renewal-process
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- renewal-function
 related_concepts: []
 sources:
 - resnick-stochastic-processes-ch03
@@ -30,6 +32,8 @@ tags:
 - probability-theory
 title: Renewal Process
 understanding: 0
+uses:
+- markov-chains
 ---
 
 ## Definition
@@ -39,4 +43,6 @@ A renewal process is the sequence of partial sums S_n = Y_0 + ... + Y_n of indep
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[markov-chains]] — uses
+- [[renewal-function]] — prerequisite-of
 [To be populated during integration]

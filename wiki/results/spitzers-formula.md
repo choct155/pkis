@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- random-walk
 component_scores:
   conditions: null
   implications: null
@@ -27,6 +29,9 @@ tags:
 - transforms
 title: Spitzer's Formula
 understanding: 0
+uses:
+- wiener-hopf-factorization
+- ladder-epochs-and-heights
 ---
 
 ## Definition
@@ -36,4 +41,7 @@ Spitzer's formula gives the generating function of the characteristic functions 
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[ladder-epochs-and-heights]] — uses
+- [[random-walk]] — applies
+- [[wiener-hopf-factorization]] — uses
 [To be populated during integration]

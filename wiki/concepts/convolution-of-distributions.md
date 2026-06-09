@@ -29,6 +29,8 @@ tags:
 - generating-functions
 title: Convolution of Distributions
 understanding: 0
+uses:
+- random-variable
 ---
 
 ## Definition
@@ -51,4 +53,5 @@ Convolution is the natural but computationally awkward arithmetic of independent
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[random-variable]] — uses: Convolution computes the distribution of a sum of independent non-negative integer-valued random variables.
 [To be populated during integration]

@@ -21,6 +21,8 @@ id: pkis:concept:holding-times
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- continuous-time-markov-chain
 related_concepts: []
 sources:
 - resnick-stochastic-processes-ch05
@@ -30,6 +32,8 @@ tags:
 - markov
 title: Holding Times (Exponential Sojourn Times)
 understanding: 0
+uses:
+- poisson-process
 ---
 
 ## Definition
@@ -51,4 +55,6 @@ Holding times are the timing layer of the CTMC construction: the embedded discre
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[poisson-process]] — uses: Constant-rate exponential holding times generate the jump epochs of a Poisson process (uniformization).
+- [[continuous-time-markov-chain]] — prerequisite-of: Exponential holding times and their memorylessness underlie the CTMC construction and Markov property.
 [To be populated during integration]

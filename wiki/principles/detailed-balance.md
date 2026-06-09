@@ -24,6 +24,8 @@ prerequisite-of:
 related_concepts: []
 sources:
 - mackay-itila-ch29
+specializes:
+- stationary-distribution
 tags:
 - mcmc
 - markov-chain
@@ -52,6 +54,7 @@ Proving detailed balance is the standard route to validating a new sampler. Toge
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[stationary-distribution]] — specializes: detailed balance is a sufficient (reversibility) condition for a distribution to be stationary
 - [[gibbs-sampler]] — applies: Gibbs conditional updates leave P invariant via detailed balance of each base transition.
 - [[metropolis-algorithm]] — applies: The Metropolis acceptance rule is constructed to satisfy detailed balance.
 - [[mcmc]] — prerequisite-of: Detailed balance is the standard sufficient condition for the target to be the chain's invariant distribution.

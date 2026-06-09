@@ -30,6 +30,8 @@ tags:
 - fluctuation-theory
 title: Duality of Stopping Times (Random Walk)
 understanding: 0
+uses:
+- random-walk
 ---
 
 ## Definition
@@ -39,4 +41,5 @@ Two stopping times tau and eta of an iid sequence are dual if for every n the ev
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[random-walk]] — uses
 [To be populated during integration]

@@ -29,6 +29,9 @@ tags:
 - chapman-kolmogorov
 title: Transition Matrix (Stochastic Matrix)
 understanding: 0
+uses:
+- markov-chains
+- linear-algebra
 ---
 
 ## Definition
@@ -40,4 +43,6 @@ The analytic power of Markov chains rests on the fact that probabilistic questio
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[linear-algebra]] — uses: n-step transitions are matrix powers; Chapman-Kolmogorov is matrix multiplication
+- [[markov-chains]] — uses: the transition matrix is the defining data of a Markov chain
 [To be populated during integration]

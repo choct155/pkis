@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- queueing-theory
 component_scores:
   conditions: null
   implications: null
@@ -29,6 +31,9 @@ tags:
 - transforms
 title: Pollaczek-Khintchine Formula
 understanding: 0
+uses:
+- wiener-hopf-factorization
+- random-walk
 ---
 
 ## Definition
@@ -38,4 +43,7 @@ The Pollaczek-Khintchine formula gives the Laplace transform (equivalently the d
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[random-walk]] — uses
+- [[wiener-hopf-factorization]] — uses
+- [[queueing-theory]] — applies
 [To be populated during integration]

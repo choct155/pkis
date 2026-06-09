@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+analogous-to:
+- diffusion-processes
 component_scores:
   application: null
   boundary: null
@@ -30,6 +32,8 @@ tags:
 - queueing
 title: Random Walk
 understanding: 0
+uses:
+- martingales
 ---
 
 ## Definition
@@ -39,4 +43,6 @@ A random walk is the sequence of partial sums {S_n, n >= 0} formed from iid real
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[martingales]] — uses
+- [[diffusion-processes]] — analogous-to: random walk is the discrete-time prototype of Brownian motion
 [To be populated during integration]

@@ -27,6 +27,8 @@ tags:
 - differential-equations
 title: Kolmogorov Forward and Backward Equations
 understanding: 0
+uses:
+- generator-matrix-q-matrix
 ---
 
 ## Definition
@@ -58,4 +60,5 @@ Resnick illustrates several: direct ODE solving, eigendecomposition of A (matrix
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[generator-matrix-q-matrix]] — uses: Both equations are stated in terms of the generator matrix A.
 [To be populated during integration]

@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- poisson-random-measure
 component_scores:
   application: null
   boundary: null
@@ -31,6 +33,8 @@ tags:
 - coloring
 title: Thinning and Superposition of Poisson Processes
 understanding: 0
+uses:
+- marked-point-process
 ---
 
 ## Definition
@@ -40,4 +44,6 @@ Two complementary closure operations under which the Poisson family is invariant
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[marked-point-process]] — uses: thinning realized via Bernoulli/multinomial marks
+- [[poisson-random-measure]] — applies: operations under which the Poisson family is closed
 [To be populated during integration]

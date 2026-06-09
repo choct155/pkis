@@ -12,6 +12,8 @@ date_created: '2026-06-09'
 date_updated: '2026-06-09'
 domain:
 - bayesian-stats
+extends:
+- weak-law-of-large-numbers
 id: pkis:result:ergodic-theorem-markov
 knowledge_type: result
 maturity: evolving
@@ -29,6 +31,9 @@ tags:
 - convergence
 title: Ergodic Theorem for Markov Chains (Convergence to Stationarity)
 understanding: 0
+uses:
+- stationary-distribution
+- recurrence-and-transience
 ---
 
 ## Definition
@@ -40,4 +45,7 @@ Two complementary limit theorems hold. (1) The Markov-chain strong law of large 
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[weak-law-of-large-numbers]] — extends: the Markov-chain SLLN generalizes the iid law of large numbers via iid path excursions
+- [[recurrence-and-transience]] — uses: ergodicity = irreducible + aperiodic + positive recurrent
+- [[stationary-distribution]] — uses: states convergence of P^n to the stationary distribution
 [To be populated during integration]

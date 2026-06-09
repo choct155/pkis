@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- renewal-process
 component_scores:
   conditions: null
   implications: null
@@ -27,6 +29,8 @@ tags:
 - operations-research
 title: Renewal Reward Theorem
 understanding: 0
+uses:
+- elementary-renewal-theorem
 ---
 
 ## Definition
@@ -36,4 +40,6 @@ Attach to each cycle of a renewal process a reward R_n (a cost, claim size, occu
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[renewal-process]] — applies
+- [[elementary-renewal-theorem]] — uses
 [To be populated during integration]

@@ -19,6 +19,8 @@ id: pkis:concept:stopping-time
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- martingales
 related_concepts: []
 sources:
 - resnick-stochastic-processes-ch01
@@ -50,4 +52,5 @@ Stopping times are the formal device that makes "the first time something happen
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[martingales]] — prerequisite-of: Stopping times are the formal prerequisite for optional stopping and martingale stopping theorems.
 [To be populated during integration]

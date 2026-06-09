@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- brownian-motion
 component_scores:
   application: null
   boundary: null
@@ -30,6 +32,8 @@ tags:
 - path-properties
 title: Quadratic Variation
 understanding: 0
+uses:
+- borel-cantelli-lemma
 ---
 
 ## Definition
@@ -41,4 +45,6 @@ This is the path property distinguishing diffusions from smooth functions: Brown
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[borel-cantelli-lemma]] — uses: Almost-sure convergence Q -> t is obtained from an L2 bound plus Chebyshev and Borel-Cantelli.
+- [[brownian-motion]] — applies: Quadratic variation is the path functional that equals t for Brownian motion, separating it from smooth functions.
 [To be populated during integration]

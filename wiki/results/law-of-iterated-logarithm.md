@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- brownian-motion
 component_scores:
   conditions: null
   implications: null
@@ -27,6 +29,8 @@ tags:
 - oscillation
 title: Law of the Iterated Logarithm
 understanding: 0
+uses:
+- borel-cantelli-lemma
 ---
 
 ## Definition
@@ -40,4 +44,6 @@ The upper bound uses an exponential maximal inequality for BM with drift ($P[\su
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[borel-cantelli-lemma]] — uses: Both bounds in the LIL are obtained by summing tail probabilities and invoking the two halves of Borel-Cantelli.
+- [[brownian-motion]] — applies: The LIL gives the exact almost-sure oscillation envelope of Brownian paths near 0 and infinity.
 [To be populated during integration]

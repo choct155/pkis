@@ -24,6 +24,8 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - resnick-stochastic-processes-ch06
+specializes:
+- brownian-motion
 tags:
 - stochastic-processes
 - brownian-motion
@@ -31,6 +33,8 @@ tags:
 - first-passage
 title: Brownian Motion with Drift
 understanding: 0
+uses:
+- reflection-principle
 ---
 
 ## Definition
@@ -44,4 +48,6 @@ This exponential supremum law is the engine behind the heavy-traffic approximati
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[reflection-principle]] — uses: The exponential supremum law uses first-passage Laplace transforms obtained via reflection and strong independent increments.
+- [[brownian-motion]] — specializes: Adding a deterministic linear drift mu t to standard BM.
 [To be populated during integration]

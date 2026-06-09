@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- queueing-theory
 component_scores:
   application: null
   boundary: null
@@ -16,6 +18,8 @@ date_updated: '2026-06-09'
 domain:
 - bayesian-stats
 - statistical-learning
+generalizes:
+- renewal-process
 id: pkis:concept:regenerative-process
 knowledge_type: concept
 maturity: evolving
@@ -31,6 +35,9 @@ tags:
 - markov-chains
 title: Regenerative Process
 understanding: 0
+uses:
+- key-renewal-theorem
+- renewal-equation
 ---
 
 ## Definition
@@ -40,4 +47,8 @@ A process {X(t), t in T} is regenerative if there is an embedded renewal sequenc
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[queueing-theory]] — applies
+- [[renewal-equation]] — uses
+- [[key-renewal-theorem]] — uses
+- [[renewal-process]] — generalizes
 [To be populated during integration]

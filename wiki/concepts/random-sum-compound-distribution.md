@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- poisson-process
 component_scores:
   application: null
   boundary: null
@@ -30,6 +32,9 @@ tags:
 - random-sums
 title: Random Sum and Compound Distribution
 understanding: 0
+uses:
+- probability-generating-function
+- convolution-of-distributions
 ---
 
 ## Definition
@@ -52,4 +57,7 @@ Random sums model insurance claims (a random number of claims of random size), c
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[poisson-process]] — applies: Compounding Bernoulli indicators by a Poisson count yields Poisson thinning, basic to Poisson-process theory.
+- [[convolution-of-distributions]] — uses: A random sum mixes convolution powers of the term distribution weighted by the index distribution.
+- [[probability-generating-function]] — uses: The compound-distribution gf is the composition P_N(P_X(s)) of the two PGFs.
 [To be populated during integration]

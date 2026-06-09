@@ -3,6 +3,8 @@ aliases:
 - MCMC
 also_type:
 - framework
+applies:
+- ergodic-theorem-markov
 component_scores:
   alternatives: 4
   conditions: 2
@@ -50,6 +52,7 @@ A class of algorithms that construct a Markov chain whose stationary distributio
 Classification note: assigned as technique but also_type framework because MCMC is both a computational procedure and a family of sub-techniques organized by the same principle.
 
 ## Connections
+- [[ergodic-theorem-markov]] — applies: MCMC relies on ergodic convergence of P^n to the target stationary distribution
 - [[numerical-vs-simulation-integration]] — specializes: MCMC is a simulation method that scales integration to high dimensions.
 - [[posterior-geometry-coordinate-systems]] — uses: Non-centered parameterization flattens funnel geometry for MCMC/HMC
 - [[gibbs-sampler]] — generalizes: Gibbs is MCMC restricted to full conditional distributions; a special case of Hastings-Metropolis

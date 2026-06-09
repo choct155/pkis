@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- brownian-motion
 component_scores:
   conditions: null
   implications: null
@@ -13,6 +15,8 @@ date_updated: '2026-06-09'
 domain:
 - bayesian-stats
 - statistical-learning
+generalizes:
+- weak-law-of-large-numbers
 id: pkis:result:invariance-principle
 knowledge_type: result
 maturity: evolving
@@ -38,4 +42,6 @@ Its power comes from the **continuous mapping theorem**: for any functional $\ps
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[brownian-motion]] — applies: The functional CLT identifies the weak limit of rescaled random-walk paths as standard Brownian motion.
+- [[weak-law-of-large-numbers]] — generalizes: The invariance principle is the path-space (functional) strengthening of classical limit theorems for partial sums; the CLT is its one-dimensional projection.
 [To be populated during integration]

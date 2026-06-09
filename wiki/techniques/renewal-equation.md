@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- branching-processes
 component_scores:
   alternatives: null
   conditions: null
@@ -29,6 +31,8 @@ tags:
 - laplace-transform
 title: Renewal Equation
 understanding: 0
+uses:
+- renewal-function
 ---
 
 ## Definition
@@ -38,4 +42,6 @@ The renewal equation is the convolution integral equation Z = z + F*Z, i.e. Z(t)
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[branching-processes]] — applies
+- [[renewal-function]] — uses
 [To be populated during integration]

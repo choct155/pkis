@@ -22,6 +22,8 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - resnick-stochastic-processes-ch01
+specializes:
+- stopping-time
 tags:
 - probability-theory
 - stochastic-processes
@@ -30,6 +32,8 @@ tags:
 - generating-functions
 title: First-Passage Time
 understanding: 0
+uses:
+- probability-generating-function
 ---
 
 ## Definition
@@ -50,4 +54,6 @@ First-passage times answer the central questions of random dynamics — Will the
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[probability-generating-function]] — uses: The first-passage distribution is obtained by solving a gf recursion (quadratic for the simple random walk).
+- [[stopping-time]] — specializes: A first-passage / hitting time is a canonical example of a stopping time.
 [To be populated during integration]

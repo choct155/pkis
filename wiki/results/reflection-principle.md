@@ -1,12 +1,16 @@
 ---
 aliases: []
 also_type: []
+applies:
+- brownian-motion
 component_scores:
   conditions: null
   implications: null
   limitations: null
   proof_sketch: null
   statement: null
+contrasts-with:
+- martingales
 coverage: 1
 date_created: '2026-06-09'
 date_updated: '2026-06-09'
@@ -44,4 +48,6 @@ Consequences (all derived from reflection):
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[martingales]] — contrasts-with: Reflection gives elementary first-passage/exit results that martingale optional-stopping methods obtain by a different route.
+- [[brownian-motion]] — applies: Reflection is a property of Brownian sample paths used to compute hitting-time and maximum distributions.
 [To be populated during integration]

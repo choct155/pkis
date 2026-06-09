@@ -19,6 +19,8 @@ id: pkis:concept:first-passage-times
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- recurrence-and-transience
 related_concepts: []
 sources:
 - resnick-stochastic-processes-ch02
@@ -30,6 +32,8 @@ tags:
 - generating-functions
 title: First-Passage and Hitting Times
 understanding: 0
+uses:
+- markov-chains
 ---
 
 ## Definition
@@ -41,4 +45,6 @@ First-passage quantities are computed by first-step (first-jump) analysis, condi
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[recurrence-and-transience]] — prerequisite-of: recurrence is defined via the first-return probability f_ii
+- [[markov-chains]] — uses: hitting and return times of a Markov chain, computed by first-step analysis
 [To be populated during integration]

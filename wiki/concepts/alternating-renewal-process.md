@@ -23,6 +23,8 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - resnick-stochastic-processes-ch03
+specializes:
+- regenerative-process
 tags:
 - renewal-theory
 - stochastic-processes
@@ -30,6 +32,8 @@ tags:
 - availability
 title: Alternating Renewal Process
 understanding: 0
+uses:
+- renewal-reward-theorem
 ---
 
 ## Definition
@@ -39,4 +43,6 @@ An alternating renewal process models a system that switches between two states 
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[renewal-reward-theorem]] — uses
+- [[regenerative-process]] — specializes
 [To be populated during integration]

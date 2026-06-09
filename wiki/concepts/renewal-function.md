@@ -30,6 +30,8 @@ tags:
 - laplace-transform
 title: Renewal Function
 understanding: 0
+uses:
+- renewal-process
 ---
 
 ## Definition
@@ -39,4 +41,5 @@ The renewal function is the expected number of renewals by time t, U(t) = E N(t)
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[renewal-process]] — uses
 [To be populated during integration]

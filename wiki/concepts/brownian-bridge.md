@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- brownian-motion
 component_scores:
   application: null
   boundary: null
@@ -17,12 +19,16 @@ domain:
 - bayesian-stats
 - statistical-learning
 id: pkis:concept:brownian-bridge
+instantiates:
+- gaussian-process
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
 related_concepts: []
 sources:
 - resnick-stochastic-processes-ch06
+specializes:
+- brownian-motion
 tags:
 - stochastic-processes
 - gaussian-process
@@ -43,4 +49,7 @@ The Brownian bridge is the weak limit of the normalized empirical process: for i
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[brownian-motion]] — applies: The bridge arises as Brownian motion conditioned to return to 0 at time 1.
+- [[gaussian-process]] — instantiates: The bridge is a zero-mean Gaussian process with covariance s(1-t).
+- [[brownian-motion]] — specializes: The bridge is BM tied down at both endpoints (conditioned to be 0 at time 1).
 [To be populated during integration]

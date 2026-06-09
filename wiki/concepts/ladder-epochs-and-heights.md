@@ -23,6 +23,8 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - resnick-stochastic-processes-ch07
+specializes:
+- resnick-stochastic-processes-ch03
 tags:
 - random-walk
 - renewal
@@ -30,6 +32,8 @@ tags:
 - records
 title: Ladder Epochs and Ladder Heights
 understanding: 0
+uses:
+- random-walk
 ---
 
 ## Definition
@@ -39,4 +43,6 @@ For a random walk {S_n}, the first strict ascending ladder epoch N = inf{n >= 1 
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[random-walk]] — uses
+- [[resnick-stochastic-processes-ch03]] — specializes: ladder processes are embedded renewal processes
 [To be populated during integration]

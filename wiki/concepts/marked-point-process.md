@@ -15,6 +15,8 @@ date_created: '2026-06-09'
 date_updated: '2026-06-09'
 domain:
 - bayesian-stats
+extends:
+- poisson-random-measure
 id: pkis:concept:marked-point-process
 knowledge_type: concept
 maturity: evolving
@@ -22,6 +24,8 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - resnick-stochastic-processes-ch04
+specializes:
+- point-process
 tags:
 - stochastic-processes
 - point-processes
@@ -39,4 +43,6 @@ A marked point process attaches to each point X_n of a base point process an aux
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[poisson-random-measure]] — extends: marking enlarges point dimension while preserving PRM(mu x F)
+- [[point-process]] — specializes: marked process is a point process on a product space
 [To be populated during integration]

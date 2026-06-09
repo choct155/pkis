@@ -30,6 +30,9 @@ tags:
 - random-walk
 title: Recurrence and Transience
 understanding: 0
+uses:
+- markov-chains
+- generating-functions
 ---
 
 ## Definition
@@ -43,4 +46,6 @@ Classic results: the simple symmetric random walk on Z^d is recurrent for d=1,2 
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[generating-functions]] — uses: recurrence criterion derived via the generating-function identity P_ii(s)=1/(1-F_ii(s))
+- [[markov-chains]] — uses: classifies the states of a Markov chain by return behavior
 [To be populated during integration]

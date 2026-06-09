@@ -22,6 +22,8 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - resnick-stochastic-processes-ch04
+specializes:
+- poisson-process
 tags:
 - stochastic-processes
 - point-processes
@@ -31,6 +33,9 @@ tags:
 - insurance-risk
 title: Compound Poisson Process
 understanding: 0
+uses:
+- marked-point-process
+- laplace-functional
 ---
 
 ## Definition
@@ -40,4 +45,7 @@ Given a homogeneous Poisson process N on [0,∞) with rate α and an independent
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[laplace-functional]] — uses: increment law derived via Laplace transform of the Poisson sum
+- [[poisson-process]] — specializes: Poisson-driven cumulative-sum process; simplest Levy process
+- [[marked-point-process]] — uses: jump sizes are real-valued marks on Poisson arrival times
 [To be populated during integration]

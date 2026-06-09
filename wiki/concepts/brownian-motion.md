@@ -18,12 +18,18 @@ domain:
 - statistical-learning
 - state-space-models
 id: pkis:concept:brownian-motion
+instantiates:
+- gaussian-process
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- martingales
 related_concepts: []
 sources:
 - resnick-stochastic-processes-ch06
+specializes:
+- diffusion-processes
 tags:
 - stochastic-processes
 - continuous-time
@@ -31,6 +37,10 @@ tags:
 - wiener-process
 title: Brownian Motion
 understanding: 0
+uses:
+- gaussian-distribution
+- invariance-principle
+- borel-cantelli-lemma
 ---
 
 ## Definition
@@ -50,4 +60,10 @@ Key structural properties:
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[borel-cantelli-lemma]] — uses: Borel-Cantelli controls the dyadic-refinement errors in the Levy construction and proves nowhere-differentiability and quadratic-variation convergence.
+- [[invariance-principle]] — uses: BM's role in large-sample statistics flows through the invariance principle and the continuous mapping theorem.
+- [[martingales]] — prerequisite-of: BM is the prototypical continuous martingale; its quadratic-variation/submartingale decompositions underlie martingale stochastic calculus.
+- [[gaussian-distribution]] — uses: Increments B(t)-B(s) are exactly N(0, t-s); the normal density and tail dominate every BM calculation.
+- [[gaussian-process]] — instantiates: BM is characterized as the continuous zero-mean Gaussian process with B(0)=0 and covariance s wedge t.
+- [[diffusion-processes]] — specializes: Standard Brownian motion is the canonical diffusion (zero drift, unit infinitesimal variance); diffusions are built as solutions of SDEs driven by it.
 [To be populated during integration]

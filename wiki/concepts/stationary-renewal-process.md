@@ -23,6 +23,8 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - resnick-stochastic-processes-ch03
+specializes:
+- renewal-process
 tags:
 - renewal-theory
 - stochastic-processes
@@ -30,6 +32,8 @@ tags:
 - equilibrium-distribution
 title: Stationary Renewal Process
 understanding: 0
+uses:
+- recurrence-times
 ---
 
 ## Definition
@@ -39,4 +43,6 @@ A stationary (equilibrium) renewal process is a delayed renewal process whose de
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[recurrence-times]] — uses
+- [[renewal-process]] — specializes
 [To be populated during integration]

@@ -30,6 +30,9 @@ tags:
 - inspection-paradox
 title: Recurrence Times (Age and Excess Life)
 understanding: 0
+uses:
+- renewal-equation
+- key-renewal-theorem
 ---
 
 ## Definition
@@ -39,4 +42,6 @@ For a renewal process observed at time t, the *forward recurrence time* (excess 
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[key-renewal-theorem]] — uses
+- [[renewal-equation]] — uses
 [To be populated during integration]

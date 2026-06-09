@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- poisson-process
 component_scores:
   conditions: null
   implications: null
@@ -27,6 +29,8 @@ tags:
 - uniform-distribution
 title: Order Statistic Property of the Poisson Process
 understanding: 0
+uses:
+- probability-theory
 ---
 
 ## Definition
@@ -36,4 +40,6 @@ For a homogeneous Poisson process N on [0,∞) with rate α, conditional on the 
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[probability-theory]] — uses: relies on order statistics of the uniform distribution
+- [[poisson-process]] — applies: conditional uniformity of homogeneous Poisson points
 [To be populated during integration]

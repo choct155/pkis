@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- random-walk
 component_scores:
   conditions: null
   implications: null
@@ -28,6 +30,9 @@ tags:
 - queueing
 title: Wiener-Hopf Factorization (Random Walk)
 understanding: 0
+uses:
+- duality-random-walk
+- ladder-epochs-and-heights
 ---
 
 ## Definition
@@ -37,4 +42,7 @@ For a random walk with step distribution F, geometric killing time T with P[T >=
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[random-walk]] — applies
+- [[ladder-epochs-and-heights]] — uses
+- [[duality-random-walk]] — uses
 [To be populated during integration]

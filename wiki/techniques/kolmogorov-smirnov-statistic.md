@@ -29,6 +29,10 @@ tags:
 - nonparametric
 title: Kolmogorov-Smirnov Statistic
 understanding: 0
+uses:
+- brownian-bridge
+- reflection-principle
+- invariance-principle
 ---
 
 ## Definition
@@ -40,4 +44,7 @@ For large $n$, $\sqrt{n} D_n \Rightarrow D := \sup_{0\le t\le1} |B^{(0)}(t)|$, t
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[invariance-principle]] — uses: sqrt(n)(F_hat - F) converges to the bridge via the empirical-process invariance principle, justifying the sup-functional limit.
+- [[reflection-principle]] — uses: The KS limit distribution is computed by iterated application of the reflection principle to the Brownian bridge / conditioned BM.
+- [[brownian-bridge]] — uses: The large-sample law of sqrt(n) D_n is the distribution of the supremum of the absolute Brownian bridge.
 [To be populated during integration]

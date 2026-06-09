@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- queueing-theory
 component_scores:
   application: null
   boundary: null
@@ -24,12 +26,18 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - resnick-stochastic-processes-ch05
+specializes:
+- markov-chains
 tags:
 - stochastic-processes
 - markov
 - queueing
 title: Continuous Time Markov Chain
 understanding: 0
+uses:
+- generator-matrix-q-matrix
+- kolmogorov-forward-backward-equations
+- poisson-process
 ---
 
 ## Definition
@@ -54,4 +62,9 @@ Queueing models (M/M/1, M/M/s, finite-capacity queues), population growth, relia
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[poisson-process]] — uses: Uniformizable CTMCs are subordinated to a Poisson clock: X(t)=X_{N(0,t]}.
+- [[queueing-theory]] — applies: Markovian queues are analyzed as CTMCs.
+- [[kolmogorov-forward-backward-equations]] — uses: Global transition probabilities are obtained by solving the Kolmogorov equations.
+- [[generator-matrix-q-matrix]] — uses: The generator A encodes the infinitesimal rates governing P(t).
+- [[markov-chains]] — specializes: A CTMC is the continuous-time instance of a Markov chain.
 [To be populated during integration]

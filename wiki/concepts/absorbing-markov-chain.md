@@ -22,6 +22,8 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - resnick-stochastic-processes-ch02
+specializes:
+- markov-chains
 tags:
 - stochastic-processes
 - markov-property
@@ -31,6 +33,9 @@ tags:
 - first-step-analysis
 title: Absorbing Markov Chain and the Fundamental Matrix
 understanding: 0
+uses:
+- first-passage-times
+- linear-algebra
 ---
 
 ## Definition
@@ -42,4 +47,7 @@ Absorption probabilities u_{ik} = P_i[X_\tau = k] (probability of being absorbed
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[linear-algebra]] — uses: the fundamental matrix (I-Q)^{-1} solves absorption via matrix inversion
+- [[first-passage-times]] — uses: absorption probabilities and times are first-passage quantities via first-step analysis
+- [[markov-chains]] — specializes: a Markov chain with closed/absorbing classes analyzed via the transient block Q
 [To be populated during integration]

@@ -22,6 +22,8 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - resnick-stochastic-processes-ch04
+specializes:
+- point-process
 tags:
 - stochastic-processes
 - point-processes
@@ -30,6 +32,8 @@ tags:
 - complete-randomness
 title: Poisson Random Measure (PRM)
 understanding: 0
+uses:
+- laplace-functional
 ---
 
 ## Definition
@@ -39,4 +43,6 @@ A Poisson random measure with mean measure μ — written PRM(μ) — is the mos
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[laplace-functional]] — uses: PRM is characterized by exp{-int(1-e^{-f})dmu}
+- [[point-process]] — specializes: PRM is the Poisson special case of a general point process
 [To be populated during integration]

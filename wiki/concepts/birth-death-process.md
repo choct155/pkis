@@ -18,12 +18,16 @@ domain:
 - statistical-learning
 - systems-theory
 id: pkis:concept:birth-death-process
+instantiates:
+- queueing-theory
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
 related_concepts: []
 sources:
 - resnick-stochastic-processes-ch05
+specializes:
+- continuous-time-markov-chain
 tags:
 - stochastic-processes
 - markov
@@ -31,6 +35,8 @@ tags:
 - population-dynamics
 title: Birth-Death Process
 understanding: 0
+uses:
+- detailed-balance
 ---
 
 ## Definition
@@ -53,4 +59,7 @@ so a stationary distribution exists iff sum_n eta_n < infinity. This is the disc
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[detailed-balance]] — uses: The product-form stationary distribution follows from the detailed-balance relation mu_n eta_n = lambda_{n-1} eta_{n-1}.
+- [[queueing-theory]] — instantiates: The M/M/1 and M/M/s queues are concrete birth-death processes.
+- [[continuous-time-markov-chain]] — specializes: A birth-death process is the nearest-neighbor (random-walk-embedded) CTMC.
 [To be populated during integration]

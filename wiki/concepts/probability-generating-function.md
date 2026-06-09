@@ -22,6 +22,8 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - resnick-stochastic-processes-ch01
+specializes:
+- generating-functions
 tags:
 - probability-theory
 - stochastic-processes
@@ -30,6 +32,8 @@ tags:
 - limit-theorems
 title: Probability Generating Function
 understanding: 0
+uses:
+- convolution-of-distributions
 ---
 
 ## Definition
@@ -50,4 +54,6 @@ The PGF turns three awkward operations into algebra: convolution of independent 
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[convolution-of-distributions]] — uses: The gf of a convolution is the product of gfs, the PGF's central computational lever.
+- [[generating-functions]] — specializes: The PGF is the probability-distribution specialization of the general generating-function technique.
 [To be populated during integration]

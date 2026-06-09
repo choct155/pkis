@@ -19,6 +19,8 @@ id: pkis:concept:stationary-distribution
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- limiting-distributions
 related_concepts: []
 sources:
 - resnick-stochastic-processes-ch02
@@ -30,6 +32,9 @@ tags:
 - long-run-behavior
 title: Stationary Distribution and Invariant Measure
 understanding: 0
+uses:
+- markov-chains
+- recurrence-and-transience
 ---
 
 ## Definition
@@ -41,4 +46,7 @@ For a recurrent state i, the cycle construction \nu_j = E_i \sum_{0<=n<\tau_i(1)
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[recurrence-and-transience]] — uses: invariant measure / stationary distribution constructed from positive-recurrent cycle structure
+- [[limiting-distributions]] — prerequisite-of: a limit distribution is necessarily a stationary distribution
+- [[markov-chains]] — uses: the equilibrium distribution of a Markov chain
 [To be populated during integration]
