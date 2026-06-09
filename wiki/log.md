@@ -11174,3 +11174,12 @@
 ## [2026-06-09] committed | technique
 - Committed: partial-least-squares → techniques/partial-least-squares.md
 - IRI: pkis:technique:partial-least-squares
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: elastic-net (id: e7cb6484-d2f2-45fa-bd1c-e208230c5716)
+- Title: Elastic Net
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: elastic-net → techniques/elastic-net.md
+- IRI: pkis:technique:elastic-net

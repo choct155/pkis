@@ -740,6 +740,7 @@
 - [[market-vs-hierarchy]] — Coase/Williamson: transactions governed by price signals (markets) vs. managerial direction (firms) (corporate-finance) (2026-05-20)
 
 ## Techniques
+- [[elastic-net]] — Elastic Net (statistical-learning, optimization) (2026-06-09)
 - [[partial-least-squares]] — Partial Least Squares (PLS) (statistical-learning) (2026-06-09)
 - [[principal-components-regression]] — Principal Components Regression (PCR) (statistical-learning) (2026-06-09)
 - [[least-angle-regression-lars]] — Least Angle Regression (LARS) (statistical-learning, optimization) (2026-06-09)
