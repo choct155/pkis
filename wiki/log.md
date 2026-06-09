@@ -9517,3 +9517,12 @@
 ## [2026-06-09] committed | problem
 - Committed: data-association → problems/data-association.md
 - IRI: pkis:problem:data-association
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: grounding-unrolling (id: 8be485a2-7647-4edf-a00f-ec3b89887c1c)
+- Title: Grounding (Unrolling)
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: grounding-unrolling → techniques/grounding-unrolling.md
+- IRI: pkis:technique:grounding-unrolling
