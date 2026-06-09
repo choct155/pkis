@@ -5701,3 +5701,12 @@
 ## [2026-06-09] committed | principle
 - Committed: log-scale-computation → principles/log-scale-computation.md
 - IRI: pkis:principle:log-scale-computation
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: fake-data-simulation (id: 10351a76-5bdf-4a15-b9f0-ff765bb32aea)
+- Title: Fake-Data Simulation (Debugging)
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: fake-data-simulation → techniques/fake-data-simulation.md
+- IRI: pkis:technique:fake-data-simulation
