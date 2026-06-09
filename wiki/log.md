@@ -10201,3 +10201,12 @@
 ## [2026-06-09] committed | framework
 - Committed: dependency-grammar → frameworks/dependency-grammar.md
 - IRI: pkis:framework:dependency-grammar
+
+## [2026-06-09] staged | node-stub (framework)
+- Staged: lexicalized-pcfg (id: 216b32b3-4fca-4c4b-87cd-8caea68599b2)
+- Title: Lexicalized PCFG
+- needs_canonical_source: False
+
+## [2026-06-09] committed | framework
+- Committed: lexicalized-pcfg → frameworks/lexicalized-pcfg.md
+- IRI: pkis:framework:lexicalized-pcfg
