@@ -4972,3 +4972,12 @@
 ## [2026-06-09] committed | framework
 - Committed: policy-gradient-methods → frameworks/policy-gradient-methods.md
 - IRI: pkis:framework:policy-gradient-methods
+
+## [2026-06-09] staged | node-stub (result)
+- Staged: policy-gradient-theorem (id: f9b66f9f-9d35-43ef-a648-4414271f5dc7)
+- Title: Policy Gradient Theorem
+- needs_canonical_source: False
+
+## [2026-06-09] committed | result
+- Committed: policy-gradient-theorem → results/policy-gradient-theorem.md
+- IRI: pkis:result:policy-gradient-theorem
