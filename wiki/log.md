@@ -9013,3 +9013,12 @@
 ## [2026-06-09] committed | framework
 - Committed: propositional-logic → frameworks/propositional-logic.md
 - IRI: pkis:framework:propositional-logic
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: logical-entailment-and-inference (id: 0a86caa3-65c8-48d6-91bc-868bb670207e)
+- Title: Logical Entailment and Inference
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: logical-entailment-and-inference → concepts/logical-entailment-and-inference.md
+- IRI: pkis:concept:logical-entailment-and-inference
