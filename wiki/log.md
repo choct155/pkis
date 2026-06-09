@@ -5908,3 +5908,12 @@
 ## [2026-06-09] committed | concept
 - Committed: intraclass-correlation → concepts/intraclass-correlation.md
 - IRI: pkis:concept:intraclass-correlation
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: link-function (id: a2e43810-cf68-4e35-8911-cc3a67faabe4)
+- Title: Link Function
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: link-function → concepts/link-function.md
+- IRI: pkis:concept:link-function
