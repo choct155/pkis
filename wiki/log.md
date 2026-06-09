@@ -3595,3 +3595,12 @@
 ## [2026-06-09] committed | concept
 - Committed: gradient-and-jacobian → concepts/gradient-and-jacobian.md
 - IRI: pkis:concept:gradient-and-jacobian
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: hessian-matrix (id: eccf8b1d-221c-43b7-8980-0522943d5f69)
+- Title: Hessian Matrix
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: hessian-matrix → concepts/hessian-matrix.md
+- IRI: pkis:concept:hessian-matrix
