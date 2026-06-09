@@ -4315,3 +4315,12 @@
 ## [2026-06-09] committed | technique
 - Committed: off-policy-importance-sampling-rl → techniques/off-policy-importance-sampling-rl.md
 - IRI: pkis:technique:off-policy-importance-sampling-rl
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: td-error (id: 0fec7b52-1e6c-4314-afb1-ca4dc9a500b1)
+- Title: TD Error
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: td-error → concepts/td-error.md
+- IRI: pkis:concept:td-error
