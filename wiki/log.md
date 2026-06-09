@@ -9886,3 +9886,12 @@
 ## [2026-06-09] committed | result
 - Committed: arrows-theorem → results/arrows-theorem.md
 - IRI: pkis:result:arrows-theorem
+
+## [2026-06-09] staged | node-stub (result)
+- Staged: gibbard-satterthwaite-theorem (id: e0dd34c1-72c8-4fda-be2c-1a753b7736e4)
+- Title: Gibbard–Satterthwaite Theorem
+- needs_canonical_source: False
+
+## [2026-06-09] committed | result
+- Committed: gibbard-satterthwaite-theorem → results/gibbard-satterthwaite-theorem.md
+- IRI: pkis:result:gibbard-satterthwaite-theorem
