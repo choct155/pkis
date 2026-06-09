@@ -9121,3 +9121,12 @@
 ## [2026-06-09] committed | principle
 - Committed: ontological-and-epistemological-commitment → principles/ontological-and-epistemological-commitment.md
 - IRI: pkis:principle:ontological-and-epistemological-commitment
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: knowledge-engineering (id: d61048f6-7809-4151-abf3-83e7cdbc2b9f)
+- Title: Knowledge Engineering
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: knowledge-engineering → techniques/knowledge-engineering.md
+- IRI: pkis:technique:knowledge-engineering
