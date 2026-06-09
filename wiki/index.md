@@ -290,6 +290,7 @@
 - [[liu-machine-unlearning-llm-2024]] — Rethinking Machine Unlearning for LLMs: post-training knowledge editing survey (deep-learning, ai-safety) (2026-05-20)
 
 ## Concepts
+- [[turing-test]] — Turing Test (knowledge-representation) (2026-06-09)
 - [[equations-of-condition]] — Equations of Condition (Overdetermined Linear Observation Model) (bayesian-stats, statistical-learning) (2026-06-09)
 - [[ap-distribution]] — Ap-Distribution (bayesian-stats) (2026-06-09)
 - [[unbiased-estimator-pathology]] — Unbiased-Estimator Pathology (bayesian-stats, statistical-learning) (2026-06-09)

@@ -8626,3 +8626,12 @@
 ## [2026-06-09] committed | framework
 - Committed: four-approaches-to-ai → frameworks/four-approaches-to-ai.md
 - IRI: pkis:framework:four-approaches-to-ai
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: turing-test (id: 5779fe11-014d-495b-a9c8-dc59614b037f)
+- Title: Turing Test
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: turing-test → concepts/turing-test.md
+- IRI: pkis:concept:turing-test
