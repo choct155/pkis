@@ -8869,3 +8869,12 @@
 ## [2026-06-09] committed | technique
 - Committed: lrta-star → techniques/lrta-star.md
 - IRI: pkis:technique:lrta-star
+
+## [2026-06-09] staged | node-stub (framework)
+- Staged: adversarial-search (id: 19090f83-0f41-4495-92f5-08b9f74fe8d6)
+- Title: Adversarial Search
+- needs_canonical_source: False
+
+## [2026-06-09] committed | framework
+- Committed: adversarial-search → frameworks/adversarial-search.md
+- IRI: pkis:framework:adversarial-search
