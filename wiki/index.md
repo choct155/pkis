@@ -290,6 +290,7 @@
 - [[liu-machine-unlearning-llm-2024]] — Rethinking Machine Unlearning for LLMs: post-training knowledge editing survey (deep-learning, ai-safety) (2026-05-20)
 
 ## Concepts
+- [[probability-of-necessity]] — Probability of Necessity (PN) (causal-analysis, bayesian-stats) (2026-06-09)
 - [[probability-of-causation]] — Probability of Causation (causal-analysis, bayesian-stats) (2026-06-09)
 - [[canonical-partition]] — Canonical Partition (Response Variables) (causal-analysis, bayesian-stats) (2026-06-09)
 - [[partial-identification-bounds]] — Partial Identification and Bounds (causal-analysis, bayesian-stats) (2026-06-09)

@@ -6880,3 +6880,12 @@
 ## [2026-06-09] committed | concept
 - Committed: probability-of-causation → concepts/probability-of-causation.md
 - IRI: pkis:concept:probability-of-causation
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: probability-of-necessity (id: 33317b05-e65c-47c2-a1df-723b8fd3a06a)
+- Title: Probability of Necessity (PN)
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: probability-of-necessity → concepts/probability-of-necessity.md
+- IRI: pkis:concept:probability-of-necessity
