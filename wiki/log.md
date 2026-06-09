@@ -4594,3 +4594,12 @@
 ## [2026-06-09] committed | technique
 - Committed: linear-function-approximation-rl → techniques/linear-function-approximation-rl.md
 - IRI: pkis:technique:linear-function-approximation-rl
+
+## [2026-06-09] staged | node-stub (result)
+- Staged: td-fixed-point (id: 62eae11e-8194-47ad-b5ae-7b26de23c9a9)
+- Title: TD Fixed Point
+- needs_canonical_source: False
+
+## [2026-06-09] committed | result
+- Committed: td-fixed-point → results/td-fixed-point.md
+- IRI: pkis:result:td-fixed-point
