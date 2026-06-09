@@ -8950,3 +8950,12 @@
 ## [2026-06-09] committed | technique
 - Committed: arc-consistency-ac3 → techniques/arc-consistency-ac3.md
 - IRI: pkis:technique:arc-consistency-ac3
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: backtracking-search (id: b0b16402-f921-4d66-a34f-35d09f867ab6)
+- Title: Backtracking Search for CSPs
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: backtracking-search → techniques/backtracking-search.md
+- IRI: pkis:technique:backtracking-search
