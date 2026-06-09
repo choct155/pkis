@@ -718,6 +718,7 @@
 - [[market-vs-hierarchy]] — Coase/Williamson: transactions governed by price signals (markets) vs. managerial direction (firms) (corporate-finance) (2026-05-20)
 
 ## Techniques
+- [[part-of-speech-tagging]] — Part-of-Speech Tagging (deep-learning, knowledge-representation) (2026-06-09)
 - [[text-classification]] — Text Classification (deep-learning, statistical-learning) (2026-06-09)
 - [[language-model-smoothing]] — Smoothing (Language Models) (deep-learning, information-theory, bayesian-stats) (2026-06-09)
 - [[experience-replay]] — Experience Replay (reinforcement-learning, deep-learning) (2026-06-09)

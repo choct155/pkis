@@ -10165,3 +10165,12 @@
 ## [2026-06-09] committed | technique
 - Committed: text-classification → techniques/text-classification.md
 - IRI: pkis:technique:text-classification
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: part-of-speech-tagging (id: bee41145-f3c7-4579-b41b-9c383bdfcc23)
+- Title: Part-of-Speech Tagging
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: part-of-speech-tagging → techniques/part-of-speech-tagging.md
+- IRI: pkis:technique:part-of-speech-tagging
