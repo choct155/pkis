@@ -9274,3 +9274,12 @@
 ## [2026-06-09] committed | framework
 - Committed: semantic-network → frameworks/semantic-network.md
 - IRI: pkis:framework:semantic-network
+
+## [2026-06-09] staged | node-stub (framework)
+- Staged: classical-planning-pddl (id: 2e7488cf-7dd9-42c6-9892-1ba8cab6cda2)
+- Title: Classical Planning and PDDL
+- needs_canonical_source: False
+
+## [2026-06-09] committed | framework
+- Committed: classical-planning-pddl → frameworks/classical-planning-pddl.md
+- IRI: pkis:framework:classical-planning-pddl
