@@ -10192,3 +10192,12 @@
 ## [2026-06-09] committed | technique
 - Committed: syntactic-parsing → techniques/syntactic-parsing.md
 - IRI: pkis:technique:syntactic-parsing
+
+## [2026-06-09] staged | node-stub (framework)
+- Staged: dependency-grammar (id: cbf33bf6-3a6f-4a63-b1e4-485a9d69e270)
+- Title: Dependency Grammar
+- needs_canonical_source: False
+
+## [2026-06-09] committed | framework
+- Committed: dependency-grammar → frameworks/dependency-grammar.md
+- IRI: pkis:framework:dependency-grammar
