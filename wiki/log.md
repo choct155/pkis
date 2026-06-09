@@ -6871,3 +6871,12 @@
 ## [2026-06-09] committed | concept
 - Committed: canonical-partition → concepts/canonical-partition.md
 - IRI: pkis:concept:canonical-partition
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: probability-of-causation (id: 9de59288-70e2-45bd-8198-34aa33f8fef0)
+- Title: Probability of Causation
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: probability-of-causation → concepts/probability-of-causation.md
+- IRI: pkis:concept:probability-of-causation
