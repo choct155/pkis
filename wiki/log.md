@@ -10498,3 +10498,12 @@
 ## [2026-06-09] committed | framework
 - Committed: subsumption-architecture → frameworks/subsumption-architecture.md
 - IRI: pkis:framework:subsumption-architecture
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: weak-vs-strong-ai (id: 0b3c3a28-2401-4ea3-8b40-d814085a95b7)
+- Title: Weak AI vs. Strong AI
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: weak-vs-strong-ai → concepts/weak-vs-strong-ai.md
+- IRI: pkis:concept:weak-vs-strong-ai
