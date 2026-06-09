@@ -23,6 +23,8 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - pearl-causality-ch04
+specializes:
+- direct-and-indirect-effects
 tags:
 - causality
 - mediation
@@ -31,6 +33,9 @@ tags:
 - pearl
 title: Controlled Direct Effect
 understanding: 0
+uses:
+- plan-identification
+- do-calculus
 ---
 
 ## Definition
@@ -40,4 +45,7 @@ The direct effect of X on Y obtained by physically fixing all other variables. P
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[do-calculus]] — uses
+- [[plan-identification]] — uses
+- [[direct-and-indirect-effects]] — specializes
 [To be populated during integration]

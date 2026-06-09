@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+analogous-to:
+- principal-stratification
 component_scores:
   application: null
   boundary: null
@@ -20,9 +22,13 @@ id: pkis:concept:canonical-partition
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- partial-identification-bounds
 related_concepts: []
 sources:
 - pearl-causality-ch08
+specializes:
+- potential-outcomes-framework
 tags:
 - canonical-partition
 - response-variable
@@ -44,4 +50,7 @@ For the binary Z->X->Y model, U splits into 16 classes indexed by two four-value
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[partial-identification-bounds]] — prerequisite-of: the finite response-type encoding is needed before LP bounds can be set up
+- [[principal-stratification]] — analogous-to: compliance-type strata; principal strata are the same latent partition by potential treatment
+- [[potential-outcomes-framework]] — specializes: response types are a finite enumeration of counterfactual outcome patterns Y_x
 [To be populated during integration]

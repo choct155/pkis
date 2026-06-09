@@ -23,6 +23,8 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - pearl-causality-ch02
+specializes:
+- latent-variable-models
 tags:
 - latent-variable
 - bidirected-edge
@@ -40,4 +42,5 @@ A canonical, finite normal form for latent-variable causal structures that makes
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[latent-variable-models]] — specializes: A projection is a canonical two-children-root normal form of a latent-variable causal model.
 [To be populated during integration]

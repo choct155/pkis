@@ -14,7 +14,11 @@ date_created: '2026-06-09'
 date_updated: '2026-06-09'
 domain:
 - causal-analysis
+extends:
+- inus-condition
 id: pkis:technique:causal-beam
+instantiates:
+- sustenance-causal
 knowledge_type: technique
 maturity: evolving
 needs_canonical_source: false
@@ -29,6 +33,9 @@ tags:
 - do-operator
 title: Causal Beam
 understanding: 0
+uses:
+- structural-causal-models
+- do-calculus
 ---
 
 ## Definition
@@ -38,4 +45,8 @@ A causal beam is a structural-semantic explication of the intuitive notion of a 
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[inus-condition]] — extends: the beam recovers and corrects the INUS intuition in single-mechanism models
+- [[do-calculus]] — uses: freezing non-sustaining variables and testing contingencies relies on the do(.) operator
+- [[sustenance-causal]] — instantiates: the beam test (Def 10.3.3) is the operational embodiment of sustenance
+- [[structural-causal-models]] — uses: a beam is a projection of an SCM's mechanisms onto a state u
 [To be populated during integration]

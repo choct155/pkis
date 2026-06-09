@@ -19,9 +19,13 @@ id: pkis:concept:causal-submodel
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- counterfactuals
 related_concepts: []
 sources:
 - pearl-causality-ch07
+specializes:
+- structural-causal-models
 tags:
 - structural-causal-models
 - do-operator
@@ -51,4 +55,6 @@ The submodel is the precise replacement for Lewis's vague "miracles": minisurger
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[structural-causal-models]] — specializes
+- [[counterfactuals]] — prerequisite-of
 [To be populated during integration]

@@ -10,6 +10,8 @@ component_scores:
   prerequisites: null
   scope: null
   transfer: null
+contrasts-with:
+- collider-bias
 coverage: 1
 date_created: '2026-06-09'
 date_updated: '2026-06-09'
@@ -17,6 +19,8 @@ domain:
 - causal-analysis
 - bayesian-stats
 id: pkis:concept:simpsons-paradox
+instantiates:
+- confounding
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
@@ -32,6 +36,8 @@ tags:
 - contingency-tables
 title: Simpson's Paradox
 understanding: 0
+uses:
+- do-calculus
 ---
 
 ## Definition
@@ -43,4 +49,7 @@ Pearl's resolution rests on the seeing/doing distinction: the inequality P(E|C) 
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[collider-bias]] — contrasts-with: whether to stratify depends on the variable's causal role: confounder (condition) vs collider/intermediate (do not condition)
+- [[confounding]] — instantiates: the reversal under stratification is the canonical illustration of confounding by a common cause
+- [[do-calculus]] — uses: the do-operator distinguishes seeing from doing, which dissolves the paradox
 [To be populated during integration]

@@ -13,6 +13,8 @@ domain:
 - causal-analysis
 - bayesian-stats
 id: pkis:principle:minimal-model-causation
+instantiates:
+- occams-razor
 knowledge_type: principle
 maturity: evolving
 needs_canonical_source: false
@@ -28,6 +30,8 @@ tags:
 - latent-structure
 title: Minimal-Model Semantics of Inferred Causation
 understanding: 0
+uses:
+- causal-markov-condition
 ---
 
 ## Definition
@@ -37,4 +41,6 @@ A normative, Occam's-razor-based definition of when observational data licenses 
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[causal-markov-condition]] — uses: Minimality is defined over Markovian (and their latent) causal structures.
+- [[occams-razor]] — instantiates: Inferred-causation minimality is the semantical casting of Occam's razor.
 [To be populated during integration]

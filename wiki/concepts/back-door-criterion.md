@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- confounding
 component_scores:
   application: null
   boundary: null
@@ -33,6 +35,8 @@ tags:
 - pearl
 title: Back-Door Criterion
 understanding: 0
+uses:
+- d-separation
 ---
 
 ## Definition
@@ -42,4 +46,6 @@ understanding: 0
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[confounding]] — applies: Identifies total effects by blocking confounding back-door paths.
+- [[d-separation]] — uses: Adjustment set Z must d-separate X from Y in the mutilated graph G_X.
 [To be populated during integration]

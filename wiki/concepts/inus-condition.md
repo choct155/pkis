@@ -10,6 +10,8 @@ component_scores:
   prerequisites: null
   scope: null
   transfer: null
+contrasts-with:
+- counterfactuals
 coverage: 1
 date_created: '2026-06-09'
 date_updated: '2026-06-09'
@@ -39,4 +41,5 @@ The INUS condition (Mackie 1965) is the influential logical/regularity account o
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[counterfactuals]] — contrasts-with: INUS is a regularity/logical account distinct from the counterfactual account
 [To be populated during integration]

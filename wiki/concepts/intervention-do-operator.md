@@ -10,6 +10,8 @@ component_scores:
   prerequisites: null
   scope: null
   transfer: null
+contrasts-with:
+- conditional-independence
 coverage: 1
 date_created: '2026-06-09'
 date_updated: '2026-06-09'
@@ -19,9 +21,14 @@ id: pkis:concept:intervention-do-operator
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- do-calculus
+- counterfactuals
 related_concepts: []
 sources:
 - pearl-causality-ch01
+specializes:
+- structural-causal-models
 tags:
 - causality
 - do-operator
@@ -53,4 +60,8 @@ $P_x(\cdot)$ generally cannot be recovered from the joint distribution alone, no
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[structural-causal-models]] — specializes
+- [[counterfactuals]] — prerequisite-of
+- [[do-calculus]] — prerequisite-of
+- [[conditional-independence]] — contrasts-with
 [To be populated during integration]

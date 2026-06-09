@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- instrumental-variables
 component_scores:
   conditions: null
   implications: null
@@ -28,6 +30,8 @@ tags:
 - instrument-validity
 title: The Instrumental Inequality
 understanding: 0
+uses:
+- partial-identification-bounds
 ---
 
 ## Definition
@@ -43,4 +47,6 @@ Pearl notes a deep analogy to **Bell's inequality** in quantum physics: both del
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[partial-identification-bounds]] — uses: derived by requiring upper bound >= lower bound on ACE
+- [[instrumental-variables]] — applies: testable constraint that screens out invalid instruments / violations of exogeneity
 [To be populated during integration]

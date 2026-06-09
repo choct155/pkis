@@ -10,6 +10,8 @@ component_scores:
   prerequisites: null
   scope: null
   transfer: null
+contrasts-with:
+- inus-condition
 coverage: 1
 date_created: '2026-06-09'
 date_updated: '2026-06-09'
@@ -22,6 +24,8 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - pearl-causality-ch10
+specializes:
+- counterfactuals
 tags:
 - causality
 - explanation
@@ -29,6 +33,9 @@ tags:
 - token-vs-type
 title: Actual Causation
 understanding: 0
+uses:
+- structural-causal-models
+- causal-beam
 ---
 
 ## Definition
@@ -38,4 +45,8 @@ Actual causation is the singular, token-level relation that designates a specifi
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[inus-condition]] — contrasts-with: structural account corrects the logical/INUS regularity account of singular causation
+- [[causal-beam]] — uses: Def 10.3.3 defines actual cause via existence of a natural causal beam
+- [[structural-causal-models]] — uses: defined within structural model semantics
+- [[counterfactuals]] — specializes: actual causation is a token-level, scenario-specific application of counterfactual reasoning
 [To be populated during integration]

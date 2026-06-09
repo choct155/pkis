@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- markov-decision-processes
 component_scores:
   alternatives: null
   conditions: null
@@ -15,6 +17,8 @@ date_updated: '2026-06-09'
 domain:
 - causal-analysis
 - bayesian-stats
+extends:
+- do-calculus
 id: pkis:technique:conditional-action-policy
 knowledge_type: technique
 maturity: evolving
@@ -31,6 +35,8 @@ tags:
 - pearl
 title: Conditional and Stochastic Action Policies
 understanding: 0
+uses:
+- do-calculus
 ---
 
 ## Definition
@@ -40,4 +46,7 @@ An extension of the primitive intervention do(X=x) to interventions where X is m
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[markov-decision-processes]] — applies
+- [[do-calculus]] — uses
+- [[do-calculus]] — extends
 [To be populated during integration]

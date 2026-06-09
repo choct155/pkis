@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- counterfactuals
 component_scores:
   alternatives: null
   conditions: null
@@ -21,6 +23,8 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - pearl-causality-ch07
+specializes:
+- abduction-action-prediction
 tags:
 - counterfactuals
 - bayesian-networks
@@ -29,6 +33,9 @@ tags:
 - causality
 title: Twin-Network Method
 understanding: 0
+uses:
+- d-separation
+- directed-graphical-models
 ---
 
 ## Definition
@@ -49,4 +56,8 @@ The twin network also lets one read off independencies among counterfactual vari
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[counterfactuals]] — applies
+- [[directed-graphical-models]] — uses
+- [[d-separation]] — uses
+- [[abduction-action-prediction]] — specializes
 [To be populated during integration]

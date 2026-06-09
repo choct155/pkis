@@ -23,6 +23,8 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - pearl-causality-ch06
+specializes:
+- confounding
 tags:
 - causality
 - confounding
@@ -33,6 +35,9 @@ tags:
 - associational-criterion
 title: Stable vs. Incidental Unbiasedness
 understanding: 0
+uses:
+- d-separation
+- structural-causal-models
 ---
 
 ## Definition
@@ -44,4 +49,7 @@ This distinction is the missing link between statistical association and confoun
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[structural-causal-models]] — uses: stability rests on the conception of a causal model as autonomous mechanisms varying independently
+- [[d-separation]] — uses: the back-door criterion (a d-separation test) is necessary and sufficient for stable no-confounding in acyclic diagrams
+- [[confounding]] — specializes: stable unbiasedness is a stronger, parameter-robust form of no-confounding
 [To be populated during integration]

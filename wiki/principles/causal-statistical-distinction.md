@@ -16,6 +16,9 @@ id: pkis:principle:causal-statistical-distinction
 knowledge_type: principle
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- structural-causal-models
+- do-calculus
 related_concepts: []
 sources:
 - pearl-causality-ch11
@@ -36,4 +39,6 @@ Pearl's foundational demarcation between statistical and causal concepts, defend
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[do-calculus]] — prerequisite-of: The do-operator exists to express the causal half of the demarcation in mathematical notation.
+- [[structural-causal-models]] — prerequisite-of: Distinguishing causal from statistical concepts is the conceptual entry point to SCM modeling.
 [To be populated during integration]

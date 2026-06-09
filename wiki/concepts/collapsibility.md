@@ -10,6 +10,8 @@ component_scores:
   prerequisites: null
   scope: null
   transfer: null
+contrasts-with:
+- confounding
 coverage: 1
 date_created: '2026-06-09'
 date_updated: '2026-06-09'
@@ -33,6 +35,8 @@ tags:
 - noncollapsibility
 title: Collapsibility
 understanding: 0
+uses:
+- stable-no-confounding
 ---
 
 ## Definition
@@ -44,4 +48,6 @@ This near-coincidence led many to identify noncollapsibility with confounding, b
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[stable-no-confounding]] — uses: Corollary 6.5.2: stable no-confounding implies collapsibility, the genuine logical link
+- [[confounding]] — contrasts-with: noncollapsibility and confounding are distinct: neither implies the other, even for linear effect measures
 [To be populated during integration]

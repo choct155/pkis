@@ -10,6 +10,8 @@ component_scores:
   prerequisites: null
   scope: null
   transfer: null
+contrasts-with:
+- probability-of-sufficiency
 coverage: 1
 date_created: '2026-06-09'
 date_updated: '2026-06-09'
@@ -23,6 +25,8 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - pearl-causality-ch09
+specializes:
+- probability-of-causation
 tags:
 - counterfactuals
 - attribution
@@ -31,6 +35,8 @@ tags:
 - legal-reasoning
 title: Probability of Necessity (PN)
 understanding: 0
+uses:
+- counterfactuals
 ---
 
 ## Definition
@@ -40,4 +46,7 @@ For binary X, Y in a structural causal model, the probability that the effect y 
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[probability-of-sufficiency]] — contrasts-with: necessity emphasises absence of alternative processes (singular causation); sufficiency the presence of an active producing process (type tendency)
+- [[counterfactuals]] — uses: PN = P(y'_{x'} | x, y) is a counterfactual probability
+- [[probability-of-causation]] — specializes: PN is one of the three core probabilities of causation
 [To be populated during integration]

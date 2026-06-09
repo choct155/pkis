@@ -1,12 +1,16 @@
 ---
 aliases: []
 also_type: []
+applies:
+- path-coefficient
 component_scores:
   conditions: null
   implications: null
   limitations: null
   proof_sketch: null
   statement: null
+contrasts-with:
+- back-door-criterion
 coverage: 1
 date_created: '2026-06-09'
 date_updated: '2026-06-09'
@@ -28,6 +32,8 @@ tags:
 - linear-sem
 title: Single-Door Criterion for Direct Effects
 understanding: 0
+uses:
+- d-separation
 ---
 
 ## Definition
@@ -37,4 +43,7 @@ Pearl's Theorem 5.3.1. Let G be a path diagram in which alpha is the path coeffi
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[back-door-criterion]] — contrasts-with: Single-door blocks ALL X-Y paths to identify a direct effect; back-door blocks only confounding paths to identify a total effect.
+- [[path-coefficient]] — applies: States when a path coefficient equals a partial regression coefficient r_YX.Z.
+- [[d-separation]] — uses: Identifiability test is d-separation of X from Y in G_alpha.
 [To be populated during integration]

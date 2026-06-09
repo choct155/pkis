@@ -31,6 +31,8 @@ tags:
 - path-coefficients
 title: Total vs. Direct vs. Indirect Effects
 understanding: 0
+uses:
+- do-calculus
 ---
 
 ## Definition
@@ -40,4 +42,5 @@ Operational, intervention-based definitions of causal-effect components (Pearl D
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[do-calculus]] — uses: Total = P(y|do(x)); direct = P(y|do(x),do(s_XY)); defined via the do-operator.
 [To be populated during integration]

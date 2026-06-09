@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+analogous-to:
+- ignorability
 component_scores:
   application: null
   boundary: null
@@ -10,6 +12,8 @@ component_scores:
   prerequisites: null
   scope: null
   transfer: null
+contrasts-with:
+- confounding
 coverage: 1
 date_created: '2026-06-09'
 date_updated: '2026-06-09'
@@ -20,6 +24,9 @@ id: pkis:concept:exogeneity
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- instrumental-variables
+- attribution-and-but-for-causation
 related_concepts: []
 sources:
 - pearl-causality-ch05
@@ -32,6 +39,9 @@ tags:
 - engle-hendry-richard
 title: Exogeneity
 understanding: 0
+uses:
+- back-door-criterion
+- counterfactuals
 ---
 
 ## Definition
@@ -41,4 +51,10 @@ Pearl's structural reformulation of econometric exogeneity (Definitions 5.4.4-5.
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[ignorability]] — analogous-to: strong exogeneity coincides with Rosenbaum-Rubin strong ignorability
+- [[confounding]] — contrasts-with: exogeneity is precisely the no-confounding condition; failure of exogeneity is confounding
+- [[counterfactuals]] — uses: exogeneity defined via independence of joint potential response {Y_x, Y_{x'}} from X
+- [[attribution-and-but-for-causation]] — prerequisite-of: excess-risk-ratio equals PN only under exogeneity (plus monotonicity)
+- [[instrumental-variables]] — prerequisite-of: Generalized exogeneity (lambda a causal effect among non-instrument variables) yields the IV identification role.
+- [[back-door-criterion]] — uses: Graphical test of exogeneity: no unblocked back-door path (Z=empty in Thm 5.3.2).
 [To be populated during integration]

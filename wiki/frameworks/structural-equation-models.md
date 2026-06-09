@@ -8,6 +8,8 @@ component_scores:
   purpose: null
   scope: null
   structure: null
+contrasts-with:
+- potential-outcomes-framework
 coverage: 1
 date_created: '2026-06-09'
 date_updated: '2026-06-09'
@@ -22,6 +24,8 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - pearl-causality-ch05
+specializes:
+- structural-causal-models
 tags:
 - sem
 - causal-inference
@@ -31,6 +35,8 @@ tags:
 - haavelmo
 title: Structural Equation Models (Causal Reading)
 understanding: 0
+uses:
+- d-separation
 ---
 
 ## Definition
@@ -40,4 +46,7 @@ A modeling framework, originated by Wright (1921, path analysis) and the Cowles 
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[potential-outcomes-framework]] — contrasts-with: Pearl's two mathematically-equivalent languages for causality; SEM/path-analysis vs Neyman-Rubin potential outcomes.
+- [[d-separation]] — uses: d-separation characterizes the testable zero-partial-correlation content of a linear SEM.
+- [[structural-causal-models]] — specializes: Linear/parametric SEM is the path-coefficient special case of the general nonparametric SCM x_i = f_i(pa_i, e_i).
 [To be populated during integration]

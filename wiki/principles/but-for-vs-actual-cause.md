@@ -6,6 +6,8 @@ component_scores:
   justification: null
   statement: null
   violations: null
+contrasts-with:
+- actual-causation
 coverage: 1
 date_created: '2026-06-09'
 date_updated: '2026-06-09'
@@ -26,6 +28,8 @@ tags:
 - overdetermination
 title: But-For Test vs. Actual Cause
 understanding: 0
+uses:
+- counterfactuals
 ---
 
 ## Definition
@@ -35,4 +39,6 @@ The but-for (counterfactual dependence) test -- x caused y iff y would not have 
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[counterfactuals]] — uses: the but-for criterion is the counterfactual-dependence account (Lewis)
+- [[actual-causation]] — contrasts-with: the but-for test fails to capture actual causation under preemption/overdetermination
 [To be populated during integration]

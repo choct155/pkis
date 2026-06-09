@@ -16,6 +16,8 @@ domain:
 - causal-analysis
 - social-science-methods
 id: pkis:technique:path-analysis
+instantiates:
+- structural-equation-models
 knowledge_type: technique
 maturity: evolving
 needs_canonical_source: false
@@ -29,6 +31,8 @@ tags:
 - identifiability
 title: Path Analysis (Method of Path Coefficients)
 understanding: 0
+uses:
+- path-coefficient
 ---
 
 ## Definition
@@ -38,4 +42,6 @@ Sewall Wright's (1919-1921) technique for computing cause-effect magnitudes from
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[path-coefficient]] — uses: Path analysis solves for path coefficients from correlations along traced paths.
+- [[structural-equation-models]] — instantiates: Wright's method of path coefficients is the original concrete SEM technique.
 [To be populated during integration]

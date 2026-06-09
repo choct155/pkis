@@ -6,6 +6,8 @@ component_scores:
   instances: null
   solution_landscape: null
   why_hard: null
+contrasts-with:
+- local-average-treatment-effect
 coverage: 1
 date_created: '2026-06-09'
 date_updated: '2026-06-09'
@@ -28,6 +30,9 @@ tags:
 - self-selection
 title: Noncompliance and Imperfect Experiments
 understanding: 0
+uses:
+- instrumental-variables
+- average-treatment-effect
 ---
 
 ## Definition
@@ -39,4 +44,7 @@ The core difficulty: because the same unobserved factors U drive both treatment 
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[average-treatment-effect]] — uses: ACE/ETT are the estimands of interest under noncompliance
+- [[local-average-treatment-effect]] — contrasts-with: LATE/IV-correction targets unstable instrument-dependent compliers; Pearl seeks instrument-independent population bounds
+- [[instrumental-variables]] — uses: the randomized assignment is treated as an instrument encouraging treatment
 [To be populated during integration]

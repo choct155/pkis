@@ -1,11 +1,15 @@
 ---
 aliases: []
 also_type: []
+applies:
+- structural-causal-models
 component_scores:
   formulation: null
   instances: null
   solution_landscape: null
   why_hard: null
+contrasts-with:
+- potential-outcomes-framework
 coverage: 1
 date_created: '2026-06-09'
 date_updated: '2026-06-09'
@@ -26,6 +30,11 @@ tags:
 - bayesian-networks
 title: Causal Discovery
 understanding: 0
+uses:
+- minimal-model-causation
+- faithfulness-stability
+- causal-markov-condition
+- d-separation
 ---
 
 ## Definition
@@ -35,4 +44,10 @@ The problem of recovering the causal structure (a DAG or an equivalence class of
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[potential-outcomes-framework]] — contrasts-with: Discovery learns structure from association under minimality/stability, vs. the manipulationist 'no causation without manipulation' stance it reframes as virtual control.
+- [[structural-causal-models]] — applies: Discovery targets the SCM structure D underlying the data.
+- [[d-separation]] — uses: Discovery reads observed independencies as d-separation conditions in the latent DAG.
+- [[causal-markov-condition]] — uses: The Markov condition defines what a complete causal model is and is the object minimized.
+- [[faithfulness-stability]] — uses: Stability guarantees a unique minimal structure (up to equivalence) and effective recovery.
+- [[minimal-model-causation]] — uses: Minimality is the normative criterion selecting among structures that fit P[O].
 [To be populated during integration]

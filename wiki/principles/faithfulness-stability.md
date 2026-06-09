@@ -17,6 +17,8 @@ id: pkis:principle:faithfulness-stability
 knowledge_type: principle
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- ic-algorithm
 related_concepts: []
 sources:
 - pearl-causality-ch02
@@ -29,6 +31,8 @@ tags:
 - zero-measure
 title: Faithfulness (Stability)
 understanding: 0
+uses:
+- d-separation
 ---
 
 ## Definition
@@ -38,4 +42,6 @@ The assumption that every conditional independence holding in the data distribut
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[d-separation]] — uses: Stability is defined as P being a perfect map: independence in P iff d-separation in D.
+- [[ic-algorithm]] — prerequisite-of: IC takes a *stable* distribution as input; without faithfulness independencies need not reflect d-separation.
 [To be populated during integration]

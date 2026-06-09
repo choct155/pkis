@@ -1,6 +1,10 @@
 ---
 aliases: []
 also_type: []
+analogous-to:
+- potential-outcomes-framework
+applies:
+- counterfactuals
 component_scores:
   conditions: null
   implications: null
@@ -27,6 +31,8 @@ tags:
 - causality
 title: 'Counterfactual Axioms: Composition, Effectiveness, Reversibility'
 understanding: 0
+uses:
+- causal-submodel
 ---
 
 ## Definition
@@ -50,4 +56,7 @@ This is the bridge between identification and symbolic algebra. **Soundness** me
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[potential-outcomes-framework]] — analogous-to
+- [[counterfactuals]] — applies
+- [[causal-submodel]] — uses
 [To be populated during integration]

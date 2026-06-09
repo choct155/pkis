@@ -23,6 +23,8 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - pearl-causality-ch03
+specializes:
+- causal-analysis
 tags:
 - causality
 - identification
@@ -40,4 +42,5 @@ understanding: 0
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[causal-analysis]] — specializes
 [To be populated during integration]

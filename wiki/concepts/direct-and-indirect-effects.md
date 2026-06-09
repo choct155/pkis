@@ -10,6 +10,8 @@ component_scores:
   prerequisites: null
   scope: null
   transfer: null
+contrasts-with:
+- confounding
 coverage: 1
 date_created: '2026-06-09'
 date_updated: '2026-06-09'
@@ -23,6 +25,8 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - pearl-causality-ch04
+specializes:
+- structural-causal-models
 tags:
 - causality
 - mediation
@@ -31,6 +35,8 @@ tags:
 - pearl
 title: Direct and Indirect Effects
 understanding: 0
+uses:
+- do-calculus
 ---
 
 ## Definition
@@ -40,4 +46,7 @@ A decomposition of the total causal effect of X on Y into the portion transmitte
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[structural-causal-models]] — specializes
+- [[confounding]] — contrasts-with
+- [[do-calculus]] — uses
 [To be populated during integration]

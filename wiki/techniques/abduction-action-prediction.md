@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- counterfactuals
 component_scores:
   alternatives: null
   conditions: null
@@ -15,6 +17,8 @@ date_updated: '2026-06-09'
 domain:
 - causal-analysis
 id: pkis:technique:abduction-action-prediction
+instantiates:
+- structural-causal-models
 knowledge_type: technique
 maturity: evolving
 needs_canonical_source: false
@@ -29,6 +33,9 @@ tags:
 - causality
 title: Abduction–Action–Prediction
 understanding: 0
+uses:
+- causal-submodel
+- bayesian-inference
 ---
 
 ## Definition
@@ -53,4 +60,8 @@ In the firing-squad example, evaluating "the prisoner would be dead even had rif
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[bayesian-inference]] — uses
+- [[counterfactuals]] — applies
+- [[structural-causal-models]] — instantiates
+- [[causal-submodel]] — uses
 [To be populated during integration]

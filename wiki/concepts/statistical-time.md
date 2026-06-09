@@ -31,6 +31,8 @@ tags:
 - reichenbach
 title: Statistical Time
 understanding: 0
+uses:
+- minimal-model-causation
 ---
 
 ## Definition
@@ -40,4 +42,5 @@ Pearl's device (Definition 2.8.1) for explaining why causal directions inferred 
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[minimal-model-causation]] — uses: A statistical time is an ordering agreeing with some minimal causal structure consistent with P.
 [To be populated during integration]

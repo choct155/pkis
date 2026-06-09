@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- causal-discovery
 component_scores:
   alternatives: null
   conditions: null
@@ -30,6 +32,11 @@ tags:
 - verma-pearl
 title: IC Algorithm (Inductive Causation)
 understanding: 0
+uses:
+- d-separation
+- conditional-independence
+- intransitive-triplet
+- latent-structure-projection
 ---
 
 ## Definition
@@ -39,4 +46,9 @@ A constraint-based causal-discovery algorithm (Verma and Pearl 1990) that takes 
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[latent-structure-projection]] — uses: IC* recovers fragments of latent structures via their bidirected projections.
+- [[intransitive-triplet]] — uses: Collider orientation (step 2) fires on intransitive triplets where c is not in S_ab.
+- [[causal-discovery]] — applies: IC/IC* is the canonical constraint-based solver for the causal-discovery problem.
+- [[conditional-independence]] — uses: Step 1 searches for conditioning sets that render variable pairs independent.
+- [[d-separation]] — uses: IC reconstructs structure by inverting d-separation queries: edges are absent exactly where a separating set exists.
 [To be populated during integration]

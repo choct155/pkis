@@ -23,6 +23,8 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - pearl-causality-ch09
+specializes:
+- probability-of-causation
 tags:
 - counterfactuals
 - attribution
@@ -30,6 +32,9 @@ tags:
 - bounds
 title: Probability of Necessity and Sufficiency (PNS)
 understanding: 0
+uses:
+- probability-of-necessity
+- probability-of-sufficiency
 ---
 
 ## Definition
@@ -39,4 +44,7 @@ The probability that the effect y would respond to the cause x in both direction
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[probability-of-sufficiency]] — uses: Lemma 9.2.6/Thm 9.2.11 relate PNS to PS
+- [[probability-of-necessity]] — uses: Lemma 9.2.6/Thm 9.2.11 relate PNS to PN
+- [[probability-of-causation]] — specializes: PNS is one of the three core probabilities of causation
 [To be populated during integration]

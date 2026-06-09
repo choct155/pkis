@@ -31,6 +31,9 @@ tags:
 - identification
 title: Probability of Causation
 understanding: 0
+uses:
+- counterfactuals
+- structural-causal-models
 ---
 
 ## Definition
@@ -40,4 +43,6 @@ An umbrella term for a family of counterfactual quantities that measure, for bin
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[structural-causal-models]] — uses: defined within SCM semantics (Section 7.1)
+- [[counterfactuals]] — uses: all probabilities of causation are defined via counterfactual potential responses Y_x(u)
 [To be populated during integration]

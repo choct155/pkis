@@ -23,6 +23,8 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - pearl-causality-ch09
+specializes:
+- probability-of-causation
 tags:
 - counterfactuals
 - attribution
@@ -31,6 +33,8 @@ tags:
 - susceptibility
 title: Probability of Sufficiency (PS)
 understanding: 0
+uses:
+- counterfactuals
 ---
 
 ## Definition
@@ -40,4 +44,6 @@ For binary X, Y in a structural causal model, the probability that setting x wou
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[counterfactuals]] — uses: PS = P(y_x | x', y') is a counterfactual probability
+- [[probability-of-causation]] — specializes: PS is one of the three core probabilities of causation
 [To be populated during integration]

@@ -34,6 +34,7 @@ understanding: 0
 uses:
 - bayesian-inference
 - bayesian-decision-analysis
+- do-calculus
 ---
 
 ## Definition
@@ -49,6 +50,7 @@ Decision trees make the *value of testing before acting* computable. Gelman's br
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[do-calculus]] — uses: Correct branch probabilities at decision nodes are do-probabilities P(E|do(action),Z), supplied by causal calculus.
 - [[value-of-information]] — applies
 - [[bayesian-decision-analysis]] — uses
 - [[bayesian-inference]] — uses

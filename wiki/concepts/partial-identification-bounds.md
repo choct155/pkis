@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- noncompliance-and-imperfect-experiments
 component_scores:
   application: null
   boundary: null
@@ -10,6 +12,8 @@ component_scores:
   prerequisites: null
   scope: null
   transfer: null
+contrasts-with:
+- identification-strategy
 coverage: 1
 date_created: '2026-06-09'
 date_updated: '2026-06-09'
@@ -33,6 +37,9 @@ tags:
 - manski-bounds
 title: Partial Identification and Bounds
 understanding: 0
+uses:
+- canonical-partition
+- instrumental-variables
 ---
 
 ## Definition
@@ -49,4 +56,8 @@ Bounds are decision-relevant: in the Lipid trial, despite 39% noncompliance the 
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[identification-strategy]] — contrasts-with: partial identification is the fallback when point-identifying assumptions are unavailable
+- [[instrumental-variables]] — uses: bounds are derived for the IV/encouragement model
+- [[canonical-partition]] — uses: canonical partition linearizes the target and constraints, enabling LP bounds
+- [[noncompliance-and-imperfect-experiments]] — applies: bounds are the response to nonidentifiability under noncompliance
 [To be populated during integration]

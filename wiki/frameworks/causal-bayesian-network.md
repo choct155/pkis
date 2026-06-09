@@ -17,9 +17,13 @@ id: pkis:framework:causal-bayesian-network
 knowledge_type: framework
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- do-calculus
 related_concepts: []
 sources:
 - pearl-causality-ch01
+specializes:
+- bayesian-networks
 tags:
 - causality
 - dag
@@ -29,6 +33,9 @@ tags:
 - truncated-factorization
 title: Causal Bayesian Network
 understanding: 0
+uses:
+- intervention-do-operator
+- d-separation
 ---
 
 ## Definition
@@ -51,4 +58,8 @@ This is the bridge from association to causation: it shows that a single graph p
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[do-calculus]] — prerequisite-of
+- [[d-separation]] — uses
+- [[intervention-do-operator]] — uses
+- [[bayesian-networks]] — specializes
 [To be populated during integration]

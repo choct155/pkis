@@ -12,6 +12,8 @@ date_updated: '2026-06-09'
 domain:
 - causal-analysis
 - bayesian-stats
+extends:
+- do-calculus
 id: pkis:problem:plan-identification
 knowledge_type: problem
 maturity: evolving
@@ -30,6 +32,10 @@ tags:
 - robins
 title: Plan Identification (Sequential Back-Door)
 understanding: 0
+uses:
+- do-calculus
+- d-separation
+- conditional-action-policy
 ---
 
 ## Definition
@@ -39,4 +45,8 @@ The problem of evaluating a **sequential plan** — a time-ordered set of action
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[conditional-action-policy]] — uses
+- [[do-calculus]] — extends
+- [[d-separation]] — uses
+- [[do-calculus]] — uses
 [To be populated during integration]

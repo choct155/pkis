@@ -15,10 +15,16 @@ date_created: '2026-06-09'
 date_updated: '2026-06-09'
 domain:
 - causal-analysis
+extends:
+- but-for-vs-actual-cause
+generalizes:
+- counterfactuals
 id: pkis:concept:sustenance-causal
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- actual-causation
 related_concepts: []
 sources:
 - pearl-causality-ch10
@@ -30,6 +36,8 @@ tags:
 - structural-contingency
 title: Sustenance (Causal)
 understanding: 0
+uses:
+- structural-contingency
 ---
 
 ## Definition
@@ -39,4 +47,8 @@ Sustenance is Pearl's aspect of causation that enriches dependence (necessity) w
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[but-for-vs-actual-cause]] — extends: sustenance is proposed to replace the but-for test in multistage multi-cause scenarios
+- [[actual-causation]] — prerequisite-of: sustenance (Def 10.2.1) is the property the beam test operationalizes for actual causation
+- [[structural-contingency]] — uses: sustenance is defined against structural (interventional) contingencies in W
+- [[counterfactuals]] — generalizes: sustenance includes counterfactual necessity (but-for) as the W=empty special case
 [To be populated during integration]

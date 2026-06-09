@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- simpsons-paradox
 component_scores:
   conditions: null
   implications: null
@@ -28,6 +30,8 @@ tags:
 - subpopulations
 title: Sure-Thing Principle
 understanding: 0
+uses:
+- do-calculus
 ---
 
 ## Definition
@@ -39,4 +43,6 @@ The proof expands P(E|do(C)) over the strata, substitutes the invariance conditi
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[do-calculus]] — uses: stated and proved in terms of the do-operator and subpopulation invariance
+- [[simpsons-paradox]] — applies: Theorem 6.1.1 formally precludes the 'miracle drug', resolving the paradox
 [To be populated during integration]

@@ -23,6 +23,8 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - pearl-causality-ch04
+specializes:
+- direct-and-indirect-effects
 tags:
 - causality
 - mediation
@@ -31,6 +33,8 @@ tags:
 - pearl
 title: Natural Direct and Indirect Effects
 understanding: 0
+uses:
+- counterfactuals
 ---
 
 ## Definition
@@ -40,4 +44,6 @@ Effect measures, defined via **nested counterfactuals**, that quantify mediation
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[counterfactuals]] — uses
+- [[direct-and-indirect-effects]] — specializes
 [To be populated during integration]

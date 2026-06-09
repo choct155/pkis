@@ -1,6 +1,9 @@
 ---
 aliases: []
 also_type: []
+applies:
+- probability-of-necessity
+- structural-causal-models
 component_scores:
   application: null
   boundary: null
@@ -40,4 +43,6 @@ The problem of assigning causal responsibility for an observed outcome to a spec
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[structural-causal-models]] — applies: attribution computed within SCM semantics, combining experimental and observational data
+- [[probability-of-necessity]] — applies: legal but-for and epidemiological attribution are PN-based criteria
 [To be populated during integration]

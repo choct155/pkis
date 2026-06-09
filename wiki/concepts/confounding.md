@@ -1,18 +1,38 @@
 ---
-id: "pkis:concept:confounding"
 aliases: []
-title: "Confounding"
-knowledge_type: concept
 also_type: []
-domain: [causal-analysis, bayesian-stats, statistical-learning]
-tags: [causality, causal-inference, back-door, front-door, common-cause, spurious-correlation]
-related_concepts: ["[[structural-causal-models]]", "[[do-calculus]]", "[[d-separation]]", "[[directed-graphical-models]]", "[[bias-variance-tradeoff]]"]
-sources: ["[[pearl-causality]]", "[[cunningham-causal-inference-mixtape]]"]
+coverage: 2
 date_created: 2026-05-20
 date_updated: 2026-05-20
-coverage: 2
-understanding: 0
+domain:
+- causal-analysis
+- bayesian-stats
+- statistical-learning
+id: pkis:concept:confounding
+instantiates:
+- causal-statistical-distinction
+knowledge_type: concept
 maturity: settled
+related_concepts:
+- '[[structural-causal-models]]'
+- '[[do-calculus]]'
+- '[[d-separation]]'
+- '[[directed-graphical-models]]'
+- '[[bias-variance-tradeoff]]'
+sources:
+- '[[pearl-causality]]'
+- '[[cunningham-causal-inference-mixtape]]'
+tags:
+- causality
+- causal-inference
+- back-door
+- front-door
+- common-cause
+- spurious-correlation
+title: Confounding
+understanding: 0
+uses:
+- d-separation
 ---
 
 ## Reading Path
@@ -21,3 +41,7 @@ maturity: settled
 - [[cunningham-causal-inference-mixtape-ch04]] (unread) — confounders in DAGs vs. colliders; backdoor criterion for practitioners; econometric examples
 
 In Pearl's causal framework, confounding arises when there exists an open back-door path from treatment X to outcome Y — a path entering X through an arrowhead (a common cause). A set Z satisfies the back-door criterion if it blocks all back-door paths and excludes descendants of X; conditioning on such Z identifies the causal effect `P(Y|do(X)) = Σ_z P(Y|X,Z=z)P(Z=z)`. Pearl's causal definition supersedes the purely statistical notion: confounding is not simply correlation between treatment and covariates, but a structural property of the DAG.
+
+## Connections
+- [[causal-statistical-distinction]] — instantiates: Confounding is Pearl's paradigm example of a concept that cannot be defined from the distribution alone.
+- [[d-separation]] — uses: the back-door criterion blocking open back-door paths is a d-separation test

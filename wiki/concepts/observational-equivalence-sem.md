@@ -1,6 +1,10 @@
 ---
 aliases: []
 also_type: []
+analogous-to:
+- likelihood-equivalence
+applies:
+- structural-equation-models
 component_scores:
   application: null
   boundary: null
@@ -31,6 +35,8 @@ tags:
 - saturated-models
 title: Observational (Covariance) Equivalence of Structural Models
 understanding: 0
+uses:
+- d-separation
 ---
 
 ## Definition
@@ -40,4 +46,7 @@ Two structural equation models are observationally equivalent if every distribut
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[likelihood-equivalence]] — analogous-to: Both express indistinguishability of DAGs from the joint distribution; covariance equivalence is the linear-normal SEM instance of Markov/likelihood equivalence (same skeleton + v-structures).
+- [[structural-equation-models]] — applies: Characterizes the testable content and equivalence classes of SEMs.
+- [[d-separation]] — uses: Equivalence = same zero partial correlations (same edges + v-structures), read via d-separation.
 [To be populated during integration]

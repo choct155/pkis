@@ -17,6 +17,8 @@ domain:
 - causal-analysis
 - statistical-learning
 id: pkis:concept:intransitive-triplet
+instantiates:
+- collider-bias
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
@@ -40,4 +42,5 @@ The minimal statistical signature -- requiring three variables -- that lets none
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[collider-bias]] — instantiates: The direction-revealing intransitive pattern is exactly an unshielded collider A->C<-B.
 [To be populated during integration]

@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- conditional-independence
 component_scores:
   conditions: null
   implications: null
@@ -16,6 +18,8 @@ id: pkis:result:graphoid-axioms
 knowledge_type: result
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- d-separation
 related_concepts: []
 sources:
 - pearl-causality-ch01
@@ -53,4 +57,6 @@ The graphoid axioms are the formal warrant for graphical models: they explain *w
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[conditional-independence]] — applies
+- [[d-separation]] — prerequisite-of
 [To be populated during integration]

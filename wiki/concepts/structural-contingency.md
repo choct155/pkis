@@ -22,6 +22,8 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - pearl-causality-ch10
+specializes:
+- structural-causal-models
 tags:
 - causality
 - do-operator
@@ -30,6 +32,8 @@ tags:
 - autonomy
 title: Structural Contingency
 understanding: 0
+uses:
+- do-calculus
 ---
 
 ## Definition
@@ -39,4 +43,6 @@ A structural contingency is a hypothetical perturbation of a causal model produc
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[structural-causal-models]] — specializes: arises from the autonomy of mechanisms in an SCM
+- [[do-calculus]] — uses: structural contingencies are do(.) interventions overriding mechanisms
 [To be populated during integration]

@@ -23,6 +23,8 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - pearl-causality-ch05
+specializes:
+- total-vs-direct-effect
 tags:
 - sem
 - direct-effect
@@ -39,4 +41,5 @@ The coefficient alpha associated with a directed edge X->Y in a structural equat
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[total-vs-direct-effect]] — specializes: A path coefficient is the direct effect on a single edge.
 [To be populated during integration]

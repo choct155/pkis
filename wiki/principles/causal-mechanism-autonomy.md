@@ -6,6 +6,8 @@ component_scores:
   justification: null
   statement: null
   violations: null
+contrasts-with:
+- covariance-and-correlation
 coverage: 1
 date_created: '2026-06-09'
 date_updated: '2026-06-09'
@@ -15,6 +17,9 @@ id: pkis:principle:causal-mechanism-autonomy
 knowledge_type: principle
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- structural-causal-models
+- do-calculus
 related_concepts: []
 sources:
 - pearl-causality-epilogue
@@ -37,4 +42,7 @@ The principle (which Pearl traces to early econometricians' notion of *autonomy*
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[covariance-and-correlation]] — contrasts-with: Autonomy supplies exactly the interventional information that symmetric correlational/algebraic analysis washes out; it is what makes a causal model more than a correlational one.
+- [[do-calculus]] — prerequisite-of: The do-operator's surgery (deleting one equation, holding the rest fixed) is only well-defined if the equations are autonomous independent mechanisms.
+- [[structural-causal-models]] — prerequisite-of: Autonomy of each structural equation as an independent mechanism is the conceptual precondition for interpreting an SCM's equations as severable under intervention.
 [To be populated during integration]

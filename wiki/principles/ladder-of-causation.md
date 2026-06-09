@@ -27,6 +27,9 @@ tags:
 - do-operator
 title: Ladder of Causation
 understanding: 0
+uses:
+- intervention-do-operator
+- counterfactuals
 ---
 
 ## Definition
@@ -49,4 +52,6 @@ The hierarchy organizes the entire theory of causal inference — and Pearl's bo
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[counterfactuals]] — uses
+- [[intervention-do-operator]] — uses
 [To be populated during integration]

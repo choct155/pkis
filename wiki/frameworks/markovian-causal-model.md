@@ -14,12 +14,16 @@ date_updated: '2026-06-09'
 domain:
 - causal-analysis
 id: pkis:framework:markovian-causal-model
+instantiates:
+- bayesian-networks
 knowledge_type: framework
 maturity: evolving
 needs_canonical_source: false
 related_concepts: []
 sources:
 - pearl-causality-ch01
+specializes:
+- structural-causal-models
 tags:
 - causality
 - functional-equations
@@ -49,4 +53,6 @@ Markovianity is the bridge from causal structure to ordinary Bayesian-network fa
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[bayesian-networks]] — instantiates
+- [[structural-causal-models]] — specializes
 [To be populated during integration]

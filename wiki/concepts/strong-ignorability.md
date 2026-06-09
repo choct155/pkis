@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+analogous-to:
+- confounding
 component_scores:
   application: null
   boundary: null
@@ -10,6 +12,8 @@ component_scores:
   prerequisites: null
   scope: null
   transfer: null
+contrasts-with:
+- ignorability
 coverage: 1
 date_created: '2026-06-09'
 date_updated: '2026-06-09'
@@ -23,6 +27,8 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - pearl-causality-ch11
+specializes:
+- confounding
 tags:
 - causality
 - potential-outcomes
@@ -41,4 +47,7 @@ The potential-outcome condition under which a covariate set Z renders treatment 
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[ignorability]] — contrasts-with: Pearl's strong ignorability (counterfactual no-confounding) is distinct from the Bayesian/missing-data sense of an ignorable inclusion mechanism.
+- [[confounding]] — analogous-to: Pearl shows strong ignorability {Y(0),Y(1)}⊥X|Z is the back-door admissibility condition expressed in counterfactual rather than graphical notation.
+- [[confounding]] — specializes: Strong ignorability is the potential-outcome statement of no-confounding (admissibility).
 [To be populated during integration]

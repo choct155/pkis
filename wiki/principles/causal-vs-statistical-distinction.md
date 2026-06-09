@@ -15,6 +15,8 @@ id: pkis:principle:causal-vs-statistical-distinction
 knowledge_type: principle
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- intervention-do-operator
 related_concepts: []
 sources:
 - pearl-causality-ch01
@@ -51,4 +53,5 @@ This principle motivates the whole project of causal analysis: it forces investi
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[intervention-do-operator]] — prerequisite-of
 [To be populated during integration]

@@ -16,6 +16,9 @@ id: pkis:principle:monotonicity-no-prevention
 knowledge_type: principle
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- probability-of-causation
+- attribution-and-but-for-causation
 related_concepts: []
 sources:
 - pearl-causality-ch09
@@ -35,4 +38,6 @@ A causal-modelling assumption stating that the response function Y_x(u) is monot
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[attribution-and-but-for-causation]] — prerequisite-of: excess-risk-ratio equals PN only under monotonicity (plus exogeneity)
+- [[probability-of-causation]] — prerequisite-of: monotonicity (with exogeneity) is what renders probabilities of causation identifiable
 [To be populated during integration]

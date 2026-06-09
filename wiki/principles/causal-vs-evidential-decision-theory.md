@@ -1,11 +1,15 @@
 ---
 aliases: []
 also_type: []
+applies:
+- expected-utility-theory
 component_scores:
   implications: null
   justification: null
   statement: null
   violations: null
+contrasts-with:
+- potential-outcomes-framework
 coverage: 1
 date_created: '2026-06-09'
 date_updated: '2026-06-09'
@@ -28,6 +32,8 @@ tags:
 - pearl
 title: Causal vs. Evidential Decision Theory
 understanding: 0
+uses:
+- do-calculus
 ---
 
 ## Definition
@@ -37,4 +43,7 @@ The principle that a rational agent deciding on an action should maximize expect
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[expected-utility-theory]] — applies
+- [[potential-outcomes-framework]] — contrasts-with
+- [[do-calculus]] — uses
 [To be populated during integration]

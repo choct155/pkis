@@ -29,6 +29,8 @@ tags:
 - interactive-fork
 title: Markov Condition (Causal Markov Assumption)
 understanding: 0
+uses:
+- conditional-independence
 ---
 
 ## Definition
@@ -38,4 +40,5 @@ The assumption that, in a complete causal model, each variable is independent of
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[conditional-independence]] — uses: The condition states each variable is conditionally independent of nondescendants given parents.
 [To be populated during integration]
