@@ -11228,3 +11228,12 @@
 ## [2026-06-09] committed | technique
 - Committed: perceptron-learning-algorithm → techniques/perceptron-learning-algorithm.md
 - IRI: pkis:technique:perceptron-learning-algorithm
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: optimal-separating-hyperplane (id: cfad10a5-d466-4923-a6b3-7c20b66aa83b)
+- Title: Optimal Separating Hyperplane
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: optimal-separating-hyperplane → concepts/optimal-separating-hyperplane.md
+- IRI: pkis:concept:optimal-separating-hyperplane

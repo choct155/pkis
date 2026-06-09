@@ -290,6 +290,7 @@
 - [[liu-machine-unlearning-llm-2024]] — Rethinking Machine Unlearning for LLMs: post-training knowledge editing survey (deep-learning, ai-safety) (2026-05-20)
 
 ## Concepts
+- [[optimal-separating-hyperplane]] — Optimal Separating Hyperplane (statistical-learning, optimization) (2026-06-09)
 - [[effective-degrees-of-freedom]] — Effective Degrees of Freedom (statistical-learning) (2026-06-09)
 - [[unsupervised-learning]] — Unsupervised Learning (statistical-learning) (2026-06-09)
 - [[artificial-general-intelligence]] — Artificial General Intelligence (AGI / HLAI) (deep-learning, knowledge-representation, ai-safety) (2026-06-09)
