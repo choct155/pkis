@@ -8316,3 +8316,12 @@
 ## [2026-06-09] committed | concept
 - Committed: equations-of-condition → concepts/equations-of-condition.md
 - IRI: pkis:concept:equations-of-condition
+
+## [2026-06-09] staged | node-stub (principle)
+- Staged: macroscopic-final-cause-entropy (id: 79c73529-af27-457b-a74b-4cb8bf4deaa1)
+- Title: Macroscopic Final Causes Have an Entropy
+- needs_canonical_source: False
+
+## [2026-06-09] committed | principle
+- Committed: macroscopic-final-cause-entropy → principles/macroscopic-final-cause-entropy.md
+- IRI: pkis:principle:macroscopic-final-cause-entropy
