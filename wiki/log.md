@@ -9229,3 +9229,12 @@
 ## [2026-06-09] committed | result
 - Committed: godels-incompleteness-theorem → results/godels-incompleteness-theorem.md
 - IRI: pkis:result:godels-incompleteness-theorem
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: equality-reasoning-demodulation-paramodulation (id: d5317889-5318-4742-b54f-9498c0309877)
+- Title: Equality Reasoning: Demodulation and Paramodulation
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: equality-reasoning-demodulation-paramodulation → techniques/equality-reasoning-demodulation-paramodulation.md
+- IRI: pkis:technique:equality-reasoning-demodulation-paramodulation
