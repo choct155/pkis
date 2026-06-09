@@ -290,6 +290,7 @@
 - [[liu-machine-unlearning-llm-2024]] — Rethinking Machine Unlearning for LLMs: post-training knowledge editing survey (deep-learning, ai-safety) (2026-05-20)
 
 ## Concepts
+- [[marked-point-process]] — Marked Point Process (bayesian-stats) (2026-06-09)
 - [[poisson-random-measure]] — Poisson Random Measure (PRM) (bayesian-stats) (2026-06-09)
 - [[point-process]] — Point Process (bayesian-stats) (2026-06-09)
 - [[stationary-renewal-process]] — Stationary Renewal Process (bayesian-stats, statistical-learning) (2026-06-09)

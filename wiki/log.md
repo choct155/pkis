@@ -7408,3 +7408,12 @@
 ## [2026-06-09] committed | concept
 - Committed: poisson-random-measure → concepts/poisson-random-measure.md
 - IRI: pkis:concept:poisson-random-measure
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: marked-point-process (id: e8c67b61-4e8e-4267-8001-5bb497dd4f86)
+- Title: Marked Point Process
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: marked-point-process → concepts/marked-point-process.md
+- IRI: pkis:concept:marked-point-process
