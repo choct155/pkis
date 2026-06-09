@@ -8761,3 +8761,12 @@
 ## [2026-06-09] committed | concept
 - Committed: heuristic-function → concepts/heuristic-function.md
 - IRI: pkis:concept:heuristic-function
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: admissible-and-consistent-heuristics (id: ab516953-1dd9-4906-9bd3-07dc2f9ba97f)
+- Title: Admissible and Consistent Heuristics
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: admissible-and-consistent-heuristics → concepts/admissible-and-consistent-heuristics.md
+- IRI: pkis:concept:admissible-and-consistent-heuristics
