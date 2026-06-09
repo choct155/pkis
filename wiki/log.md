@@ -9850,3 +9850,12 @@
 ## [2026-06-09] committed | result
 - Committed: revenue-equivalence-theorem → results/revenue-equivalence-theorem.md
 - IRI: pkis:result:revenue-equivalence-theorem
+
+## [2026-06-09] staged | node-stub (framework)
+- Staged: contract-net-protocol (id: 031b437b-0095-4041-8dec-4a5d94ffa575)
+- Title: Contract Net Protocol
+- needs_canonical_source: False
+
+## [2026-06-09] committed | framework
+- Committed: contract-net-protocol → frameworks/contract-net-protocol.md
+- IRI: pkis:framework:contract-net-protocol
