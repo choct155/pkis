@@ -3811,3 +3811,12 @@
 ## [2026-06-09] committed | technique
 - Committed: kernel-pca → techniques/kernel-pca.md
 - IRI: pkis:technique:kernel-pca
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: power-iteration (id: 031fb41b-def8-4ba4-9682-fecd0d62ded6)
+- Title: Power Iteration
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: power-iteration → techniques/power-iteration.md
+- IRI: pkis:technique:power-iteration
