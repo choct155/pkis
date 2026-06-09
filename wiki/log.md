@@ -7561,3 +7561,12 @@
 ## [2026-06-09] committed | result
 - Committed: borel-cantelli-lemma → results/borel-cantelli-lemma.md
 - IRI: pkis:result:borel-cantelli-lemma
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: brownian-motion-with-drift (id: 91b64f1f-e2b1-4184-8f66-92d1bc52d230)
+- Title: Brownian Motion with Drift
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: brownian-motion-with-drift → concepts/brownian-motion-with-drift.md
+- IRI: pkis:concept:brownian-motion-with-drift
