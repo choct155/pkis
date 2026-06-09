@@ -8082,3 +8082,12 @@
 ## [2026-06-09] committed | result
 - Committed: wallis-derivation-of-entropy → results/wallis-derivation-of-entropy.md
 - IRI: pkis:result:wallis-derivation-of-entropy
+
+## [2026-06-09] staged | node-stub (result)
+- Staged: entropy-concentration-theorem (id: 584409f4-84fa-4c9f-b856-474c307e1bf8)
+- Title: Entropy Concentration Theorem
+- needs_canonical_source: False
+
+## [2026-06-09] committed | result
+- Committed: entropy-concentration-theorem → results/entropy-concentration-theorem.md
+- IRI: pkis:result:entropy-concentration-theorem
