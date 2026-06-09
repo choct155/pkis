@@ -7633,3 +7633,137 @@
 ## [2026-06-09] committed | result
 - Committed: pollaczek-khintchine-formula → results/pollaczek-khintchine-formula.md
 - IRI: pkis:result:pollaczek-khintchine-formula
+
+## [2026-06-09] edges | add_connections
+- probability-generating-function —specializes→ generating-functions
+- probability-generating-function —uses→ convolution-of-distributions
+- convolution-of-distributions —uses→ random-variable
+- random-sum-compound-distribution —uses→ probability-generating-function
+- random-sum-compound-distribution —uses→ convolution-of-distributions
+- random-sum-compound-distribution —applies→ poisson-process
+- branching-processes —uses→ random-sum-compound-distribution
+- branching-processes —uses→ probability-generating-function
+- first-passage-time —specializes→ stopping-time
+- first-passage-time —uses→ probability-generating-function
+- walds-identity —uses→ stopping-time
+- walds-identity —generalizes→ random-sum-compound-distribution
+- walds-identity —specializes→ martingales
+- stopping-time —prerequisite-of→ martingales
+- generating-functions —applies→ negative-binomial-distribution
+- transition-matrix —uses→ markov-chains
+- transition-matrix —uses→ linear-algebra
+- recurrence-and-transience —uses→ markov-chains
+- recurrence-and-transience —uses→ generating-functions
+- stationary-distribution —uses→ markov-chains
+- stationary-distribution —prerequisite-of→ limiting-distributions
+- stationary-distribution —uses→ recurrence-and-transience
+- first-passage-times —uses→ markov-chains
+- first-passage-times —prerequisite-of→ recurrence-and-transience
+- absorbing-markov-chain —specializes→ markov-chains
+- absorbing-markov-chain —uses→ first-passage-times
+- absorbing-markov-chain —uses→ linear-algebra
+- ergodic-theorem-markov —uses→ stationary-distribution
+- ergodic-theorem-markov —uses→ recurrence-and-transience
+- ergodic-theorem-markov —extends→ weak-law-of-large-numbers
+- mcmc —applies→ ergodic-theorem-markov
+- detailed-balance —specializes→ stationary-distribution
+- renewal-function —uses→ renewal-process
+- renewal-process —prerequisite-of→ renewal-function
+- renewal-equation —uses→ renewal-function
+- elementary-renewal-theorem —uses→ renewal-function
+- elementary-renewal-theorem —uses→ weak-law-of-large-numbers
+- renewal-reward-theorem —uses→ elementary-renewal-theorem
+- renewal-reward-theorem —applies→ renewal-process
+- key-renewal-theorem —uses→ renewal-equation
+- key-renewal-theorem —uses→ renewal-function
+- blackwells-renewal-theorem —generalizes→ elementary-renewal-theorem
+- key-renewal-theorem —analogous-to→ blackwells-renewal-theorem
+- recurrence-times —uses→ renewal-equation
+- recurrence-times —uses→ key-renewal-theorem
+- regenerative-process —generalizes→ renewal-process
+- regenerative-process —uses→ key-renewal-theorem
+- regenerative-process —uses→ renewal-equation
+- alternating-renewal-process —specializes→ regenerative-process
+- alternating-renewal-process —uses→ renewal-reward-theorem
+- stationary-renewal-process —specializes→ renewal-process
+- stationary-renewal-process —uses→ recurrence-times
+- poisson-process —instantiates→ renewal-process
+- poisson-process —instantiates→ stationary-renewal-process
+- renewal-process —uses→ markov-chains
+- renewal-equation —applies→ branching-processes
+- regenerative-process —applies→ queueing-theory
+- poisson-random-measure —specializes→ point-process
+- poisson-process —instantiates→ poisson-random-measure
+- point-process —uses→ random-variable
+- point-process —uses→ probability-theory
+- laplace-functional —applies→ point-process
+- poisson-random-measure —uses→ laplace-functional
+- marked-point-process —specializes→ point-process
+- marked-point-process —extends→ poisson-random-measure
+- thinning-and-superposition —applies→ poisson-random-measure
+- thinning-and-superposition —uses→ marked-point-process
+- poisson-order-statistic-property —applies→ poisson-process
+- poisson-order-statistic-property —uses→ probability-theory
+- compound-poisson-process —uses→ marked-point-process
+- compound-poisson-process —specializes→ poisson-process
+- point-process —generalizes→ markov-chains
+- compound-poisson-process —uses→ laplace-functional
+- continuous-time-markov-chain —specializes→ markov-chains
+- holding-times —prerequisite-of→ continuous-time-markov-chain
+- continuous-time-markov-chain —uses→ generator-matrix-q-matrix
+- continuous-time-markov-chain —uses→ kolmogorov-forward-backward-equations
+- kolmogorov-forward-backward-equations —uses→ generator-matrix-q-matrix
+- birth-death-process —specializes→ continuous-time-markov-chain
+- generator-matrix-q-matrix —prerequisite-of→ kolmogorov-forward-backward-equations
+- continuous-time-markov-chain —applies→ queueing-theory
+- birth-death-process —instantiates→ queueing-theory
+- holding-times —uses→ poisson-process
+- continuous-time-markov-chain —uses→ poisson-process
+- birth-death-process —uses→ detailed-balance
+- brownian-motion —specializes→ diffusion-processes
+- diffusion-processes —uses→ brownian-motion
+- brownian-motion —instantiates→ gaussian-process
+- brownian-motion —uses→ gaussian-distribution
+- brownian-motion —prerequisite-of→ martingales
+- invariance-principle —generalizes→ weak-law-of-large-numbers
+- invariance-principle —applies→ brownian-motion
+- brownian-motion —uses→ invariance-principle
+- reflection-principle —applies→ brownian-motion
+- brownian-bridge —specializes→ brownian-motion
+- brownian-bridge —instantiates→ gaussian-process
+- quadratic-variation —applies→ brownian-motion
+- law-of-iterated-logarithm —applies→ brownian-motion
+- law-of-iterated-logarithm —uses→ borel-cantelli-lemma
+- brownian-motion —uses→ borel-cantelli-lemma
+- quadratic-variation —uses→ borel-cantelli-lemma
+- brownian-motion-with-drift —specializes→ brownian-motion
+- brownian-motion-with-drift —uses→ reflection-principle
+- kolmogorov-smirnov-statistic —uses→ brownian-bridge
+- kolmogorov-smirnov-statistic —uses→ reflection-principle
+- kolmogorov-smirnov-statistic —uses→ invariance-principle
+- brownian-bridge —applies→ brownian-motion
+- reflection-principle —contrasts-with→ martingales
+- ladder-epochs-and-heights —specializes→ resnick-stochastic-processes-ch03
+- ladder-epochs-and-heights —uses→ random-walk
+- duality-random-walk —uses→ random-walk
+- wiener-hopf-factorization —uses→ duality-random-walk
+- wiener-hopf-factorization —uses→ ladder-epochs-and-heights
+- wiener-hopf-factorization —applies→ random-walk
+- spitzers-formula —uses→ wiener-hopf-factorization
+- spitzers-formula —applies→ random-walk
+- spitzers-formula —uses→ ladder-epochs-and-heights
+- pollaczek-khintchine-formula —applies→ queueing-theory
+- pollaczek-khintchine-formula —uses→ wiener-hopf-factorization
+- pollaczek-khintchine-formula —uses→ random-walk
+- queueing-theory —uses→ random-walk
+- random-walk —analogous-to→ diffusion-processes
+- random-walk —uses→ martingales
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: plausible-reasoning (id: 635ea500-b997-4c42-8572-0adade403ef9)
+- Title: Plausible Reasoning
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: plausible-reasoning → concepts/plausible-reasoning.md
+- IRI: pkis:concept:plausible-reasoning
