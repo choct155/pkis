@@ -6934,3 +6934,12 @@
 ## [2026-06-09] committed | concept
 - Committed: actual-causation → concepts/actual-causation.md
 - IRI: pkis:concept:actual-causation
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: sustenance-causal (id: 7bbc819b-c79b-4b56-9b2c-675dc0eded03)
+- Title: Sustenance (Causal)
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: sustenance-causal → concepts/sustenance-causal.md
+- IRI: pkis:concept:sustenance-causal
