@@ -4054,3 +4054,12 @@
 ## [2026-06-09] committed | problem
 - Committed: multi-armed-bandit → problems/multi-armed-bandit.md
 - IRI: pkis:problem:multi-armed-bandit
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: action-value-methods (id: 6d1e770a-a36c-43e3-aff4-07cb6c3c258b)
+- Title: Action-Value Methods
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: action-value-methods → techniques/action-value-methods.md
+- IRI: pkis:technique:action-value-methods
