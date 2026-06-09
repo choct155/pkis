@@ -8280,3 +8280,12 @@
 ## [2026-06-09] committed | principle
 - Committed: randomization-is-suboptimal → principles/randomization-is-suboptimal.md
 - IRI: pkis:principle:randomization-is-suboptimal
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: ap-distribution (id: 878a992d-90fd-47b1-be98-298428ac3f2b)
+- Title: Ap-Distribution
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: ap-distribution → concepts/ap-distribution.md
+- IRI: pkis:concept:ap-distribution
