@@ -10300,3 +10300,12 @@
 ## [2026-06-09] committed | concept
 - Committed: image-formation-model → concepts/image-formation-model.md
 - IRI: pkis:concept:image-formation-model
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: edge-detection (id: e840c547-9acc-4173-8638-4030f770cdf7)
+- Title: Edge Detection
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: edge-detection → techniques/edge-detection.md
+- IRI: pkis:technique:edge-detection
