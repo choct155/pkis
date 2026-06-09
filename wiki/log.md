@@ -10039,3 +10039,12 @@
 ## [2026-06-09] committed | technique
 - Committed: pooling-layer → techniques/pooling-layer.md
 - IRI: pkis:technique:pooling-layer
+
+## [2026-06-09] staged | node-stub (principle)
+- Staged: end-to-end-learning (id: 3a5a5b40-5ab4-46b5-8a2b-8650490e81a9)
+- Title: End-to-End Learning
+- needs_canonical_source: False
+
+## [2026-06-09] committed | principle
+- Committed: end-to-end-learning → principles/end-to-end-learning.md
+- IRI: pkis:principle:end-to-end-learning
