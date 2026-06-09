@@ -8779,3 +8779,12 @@
 ## [2026-06-09] committed | technique
 - Committed: a-star-search → techniques/a-star-search.md
 - IRI: pkis:technique:a-star-search
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: greedy-best-first-search (id: 00b76386-1465-4b1e-af01-215b33bb1d03)
+- Title: Greedy Best-First Search
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: greedy-best-first-search → techniques/greedy-best-first-search.md
+- IRI: pkis:technique:greedy-best-first-search
