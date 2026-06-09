@@ -1154,6 +1154,7 @@
 - [[government-debt-valuation-equation]] — FTPL: price level determined by ratio of nominal debt to expected present value of future surpluses (macroeconomics) (2026-05-20)
 
 ## Frameworks
+- [[robotics-decision-making]] — Robotics as Continuous, Partially-Observable, Multi-Agent Decision Making (robotics, optimization, reinforcement-learning) (2026-06-09)
 - [[sequence-to-sequence-model]] — Sequence-to-Sequence Model (deep-learning) (2026-06-09)
 - [[lexicalized-pcfg]] — Lexicalized PCFG (knowledge-representation, deep-learning) (2026-06-09)
 - [[dependency-grammar]] — Dependency Grammar (knowledge-representation) (2026-06-09)

@@ -10354,3 +10354,12 @@
 ## [2026-06-09] committed | technique
 - Committed: object-detection → techniques/object-detection.md
 - IRI: pkis:technique:object-detection
+
+## [2026-06-09] staged | node-stub (framework)
+- Staged: robotics-decision-making (id: af826f9f-e1e9-4c67-8552-a2a3f392ef78)
+- Title: Robotics as Continuous, Partially-Observable, Multi-Agent Decision Making
+- needs_canonical_source: False
+
+## [2026-06-09] committed | framework
+- Committed: robotics-decision-making → frameworks/robotics-decision-making.md
+- IRI: pkis:framework:robotics-decision-making
