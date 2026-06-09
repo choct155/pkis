@@ -8325,3 +8325,12 @@
 ## [2026-06-09] committed | principle
 - Committed: macroscopic-final-cause-entropy → principles/macroscopic-final-cause-entropy.md
 - IRI: pkis:principle:macroscopic-final-cause-entropy
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: bayesian-outlier-model (id: 4072fb2f-a9f2-4ae0-bde6-53ab214aa5f2)
+- Title: Bayesian Outlier Model (Two-Model Contamination Mixture)
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: bayesian-outlier-model → techniques/bayesian-outlier-model.md
+- IRI: pkis:technique:bayesian-outlier-model
