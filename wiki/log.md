@@ -3721,3 +3721,12 @@
 ## [2026-06-09] committed | principle
 - Committed: parameter-estimation-vs-bayesian-inference → principles/parameter-estimation-vs-bayesian-inference.md
 - IRI: pkis:principle:parameter-estimation-vs-bayesian-inference
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: overfitting-and-underfitting (id: 10a8296f-1ed4-40ae-9e37-fb8d086ba26b)
+- Title: Overfitting and Underfitting
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: overfitting-and-underfitting → concepts/overfitting-and-underfitting.md
+- IRI: pkis:concept:overfitting-and-underfitting
