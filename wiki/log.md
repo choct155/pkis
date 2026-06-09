@@ -9040,3 +9040,12 @@
 ## [2026-06-09] committed | technique
 - Committed: resolution-inference → techniques/resolution-inference.md
 - IRI: pkis:technique:resolution-inference
+
+## [2026-06-09] staged | node-stub (problem)
+- Staged: satisfiability-sat (id: 02056f58-5d77-4250-8128-ae416cf2e81c)
+- Title: Boolean Satisfiability (SAT)
+- needs_canonical_source: False
+
+## [2026-06-09] committed | problem
+- Committed: satisfiability-sat → problems/satisfiability-sat.md
+- IRI: pkis:problem:satisfiability-sat
