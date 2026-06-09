@@ -8109,3 +8109,12 @@
 ## [2026-06-09] committed | problem
 - Committed: the-well-posed-problem-bertrand → problems/the-well-posed-problem-bertrand.md
 - IRI: pkis:problem:the-well-posed-problem-bertrand
+
+## [2026-06-09] staged | node-stub (framework)
+- Staged: wald-decision-theory (id: ecc6ceba-4207-4270-ba74-170649903349)
+- Title: Wald's Decision Theory
+- needs_canonical_source: False
+
+## [2026-06-09] committed | framework
+- Committed: wald-decision-theory → frameworks/wald-decision-theory.md
+- IRI: pkis:framework:wald-decision-theory
