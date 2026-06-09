@@ -3757,3 +3757,12 @@
 ## [2026-06-09] committed | result
 - Committed: maximum-likelihood-as-least-squares → results/maximum-likelihood-as-least-squares.md
 - IRI: pkis:result:maximum-likelihood-as-least-squares
+
+## [2026-06-09] staged | node-stub (result)
+- Staged: map-regression-as-regularized-least-squares (id: c049df78-a098-4ac5-b867-fca46e9669e8)
+- Title: MAP Regression as Regularized Least Squares
+- needs_canonical_source: False
+
+## [2026-06-09] committed | result
+- Committed: map-regression-as-regularized-least-squares → results/map-regression-as-regularized-least-squares.md
+- IRI: pkis:result:map-regression-as-regularized-least-squares

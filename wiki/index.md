@@ -649,6 +649,7 @@
 - [[constraint-propagation]] — Reducing a constraint satisfaction problem by iteratively eliminating inconsistent values from variable domains (knowledge-representation) (2026-05-20)
 
 ## Results
+- [[map-regression-as-regularized-least-squares]] — MAP Regression as Regularized Least Squares (statistical-learning, bayesian-stats) (2026-06-09)
 - [[maximum-likelihood-as-least-squares]] — Maximum Likelihood as Least Squares (statistical-learning, bayesian-stats) (2026-06-09)
 - [[neural-network-gaussian-process-limit]] — Neural Network → Gaussian Process Limit (Infinite Width) (statistical-learning, bayesian-stats) (2026-06-08)
 - [[hopfield-network-capacity]] — Capacity of the Hopfield Network (0.138N) (deep-learning, statistical-learning) (2026-06-08)
