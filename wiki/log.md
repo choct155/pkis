@@ -10336,3 +10336,12 @@
 ## [2026-06-09] committed | concept
 - Committed: optical-flow → concepts/optical-flow.md
 - IRI: pkis:concept:optical-flow
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: stereo-and-depth (id: fd885034-d315-45bf-a467-91aefb303f79)
+- Title: Stereo and Depth Reconstruction
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: stereo-and-depth → concepts/stereo-and-depth.md
+- IRI: pkis:concept:stereo-and-depth
