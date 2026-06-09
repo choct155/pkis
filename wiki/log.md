@@ -8064,3 +8064,12 @@
 ## [2026-06-09] committed | principle
 - Committed: physical-vs-epistemic-probability → principles/physical-vs-epistemic-probability.md
 - IRI: pkis:principle:physical-vs-epistemic-probability
+
+## [2026-06-09] staged | node-stub (principle)
+- Staged: symmetry-as-positive-knowledge (id: 3ca07b55-2374-4fc6-92c3-e99737c27c75)
+- Title: Symmetry as Positive Knowledge for Prior Assignment
+- needs_canonical_source: False
+
+## [2026-06-09] committed | principle
+- Committed: symmetry-as-positive-knowledge → principles/symmetry-as-positive-knowledge.md
+- IRI: pkis:principle:symmetry-as-positive-knowledge

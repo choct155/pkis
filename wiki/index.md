@@ -1073,6 +1073,7 @@
 - [[llm-language-comprehension]] — The problem of whether LLMs genuinely comprehend language vs. pattern-match surface form (deep-learning, cognitive-science) (2026-05-20)
 
 ## Principles
+- [[symmetry-as-positive-knowledge]] — Symmetry as Positive Knowledge for Prior Assignment (bayesian-stats, information-theory) (2026-06-09)
 - [[physical-vs-epistemic-probability]] — Physical vs. Epistemic Probability (bayesian-stats, information-theory) (2026-06-09)
 - [[maximum-entropy-principle]] — Maximum Entropy Principle (bayesian-stats, information-theory) (2026-06-09)
 - [[probability-vs-frequency]] — Probability vs. Frequency (bayesian-stats, information-theory) (2026-06-09)
