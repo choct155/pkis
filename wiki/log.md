@@ -9193,3 +9193,12 @@
 ## [2026-06-09] committed | concept
 - Committed: datalog → concepts/datalog.md
 - IRI: pkis:concept:datalog
+
+## [2026-06-09] staged | node-stub (framework)
+- Staged: logic-programming (id: 719b5833-b2b7-4ca8-804f-0aa32b0b52d7)
+- Title: Logic Programming
+- needs_canonical_source: False
+
+## [2026-06-09] committed | framework
+- Committed: logic-programming → frameworks/logic-programming.md
+- IRI: pkis:framework:logic-programming
