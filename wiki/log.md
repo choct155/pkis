@@ -5017,3 +5017,12 @@
 ## [2026-06-09] committed | technique
 - Committed: policy-parameterization-softmax → techniques/policy-parameterization-softmax.md
 - IRI: pkis:technique:policy-parameterization-softmax
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: gaussian-policy-continuous-actions (id: 6e81a4fa-d8cd-45b3-9f0a-41dd8553e4f7)
+- Title: Gaussian Policy for Continuous Actions
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: gaussian-policy-continuous-actions → techniques/gaussian-policy-continuous-actions.md
+- IRI: pkis:technique:gaussian-policy-continuous-actions
