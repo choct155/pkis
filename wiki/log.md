@@ -8010,3 +8010,12 @@
 ## [2026-06-09] committed | principle
 - Committed: probability-vs-frequency → principles/probability-vs-frequency.md
 - IRI: pkis:principle:probability-vs-frequency
+
+## [2026-06-09] staged | node-stub (problem)
+- Staged: problem-of-induction (id: deef9366-6bf0-4981-9e7c-3075aaca4538)
+- Title: The Problem of Induction
+- needs_canonical_source: False
+
+## [2026-06-09] committed | problem
+- Committed: problem-of-induction → problems/problem-of-induction.md
+- IRI: pkis:problem:problem-of-induction
