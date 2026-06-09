@@ -127,71 +127,6 @@ app.config["MAX_CONTENT_LENGTH"] = 200 * 1024 * 1024  # 200 MB — matches nginx
 anthropic_client = Anthropic(api_key=ANTHROPIC_API_KEY)
 
 # ============================================================
-# MCP-DIAG — temporary request/response logging for diagnosing
-# claude.ai connector failures. Captures EXACTLY what the connector sends
-# (method, full path, key headers, body) + the status we return, to
-# /home/pkis/mcp_diag.log. Toggle off by setting PKIS_MCP_DIAG=0 (or remove
-# this block + restart). Only logs /mcp and /.well-known traffic.
-# ============================================================
-_MCP_DIAG = os.environ.get("PKIS_MCP_DIAG", "1") != "0"
-_MCP_DIAG_LOG = os.environ.get("PKIS_MCP_DIAG_LOG", "/home/pkis/mcp_diag.log")
-
-
-def _mcp_diag_write(rec: dict):
-    try:
-        with open(_MCP_DIAG_LOG, "a") as f:
-            f.write(json.dumps(rec, default=str) + "\n")
-    except Exception:
-        pass
-
-
-@app.before_request
-def _mcp_diag_before():
-    if not _MCP_DIAG:
-        return
-    p = request.path or ""
-    if "mcp" not in p and ".well-known" not in p:
-        return
-    h = request.headers
-    try:
-        body = request.get_data(cache=True)  # cache=True so handlers still read it
-        bsnip = body[:800].decode("utf-8", "replace") if body else ""
-    except Exception as e:
-        bsnip = f"<body read err: {e}>"
-    auth = h.get("Authorization", "")
-    _mcp_diag_write({
-        "t": datetime.now(timezone.utc).isoformat(),
-        "dir": "REQ",
-        "method": request.method,
-        "path": request.full_path,
-        "remote": h.get("X-Forwarded-For") or request.remote_addr,
-        "ua": h.get("User-Agent", ""),
-        "accept": h.get("Accept", ""),
-        "ctype": h.get("Content-Type", ""),
-        "auth": (f"present({len(auth)}ch):{auth[:16]}…" if auth else "none"),
-        "mcp_session_hdr": h.get("Mcp-Session-Id", ""),
-        "mcp_proto_hdr": h.get("MCP-Protocol-Version", ""),
-        "origin": h.get("Origin", ""),
-        "body": bsnip,
-    })
-
-
-@app.after_request
-def _mcp_diag_after(resp):
-    if _MCP_DIAG:
-        p = request.path or ""
-        if "mcp" in p or ".well-known" in p:
-            _mcp_diag_write({
-                "t": datetime.now(timezone.utc).isoformat(),
-                "dir": "RESP",
-                "method": request.method,
-                "path": request.full_path,
-                "status": resp.status_code,
-                "resp_ctype": resp.headers.get("Content-Type", ""),
-            })
-    return resp
-
-# ============================================================
 # In-memory caches (invalidated on git pull via /refresh)
 # ============================================================
 
@@ -5033,6 +4968,13 @@ def dispatch_tool(tool_name: str, params: dict, req) -> any:
         ),
         "get_health_metrics": lambda p: tool_get_health_metrics(),
         "get_sourceless_stubs": lambda p: tool_get_sourceless_stubs(),
+        # Read-only: lists pending staged nodes (no mutation). In READ tier so it
+        # works from the claude.ai connector (anonymous reads).
+        "get_staged_nodes": lambda p: tool_get_staged_nodes(
+            node_type=p.get("node_type"),
+            staged_by=p.get("staged_by"),
+            limit=p.get("limit", 20),
+        ),
         "list_documents": lambda p: tool_list_documents(p.get("slug")),
         "get_transcript_queue": lambda p: tool_get_transcript_queue(),
         "check_alias_collision": lambda p: tool_check_alias_collision(p["surface_form"]),
@@ -5122,11 +5064,6 @@ def dispatch_tool(tool_name: str, params: dict, req) -> any:
             edits=p.get("edits"),
             confirmed_links=p.get("confirmed_links"),
             action=p.get("action", "commit"),
-        ),
-        "get_staged_nodes": lambda p: tool_get_staged_nodes(
-            node_type=p.get("node_type"),
-            staged_by=p.get("staged_by"),
-            limit=p.get("limit", 20),
         ),
         "rebuild_source_graph": lambda p: tool_rebuild_source_graph(),
         "upload_document": lambda p: tool_upload_document(
