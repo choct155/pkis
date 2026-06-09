@@ -4117,3 +4117,12 @@
 ## [2026-06-09] committed | technique
 - Committed: gradient-bandit-algorithm → techniques/gradient-bandit-algorithm.md
 - IRI: pkis:technique:gradient-bandit-algorithm
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: optimistic-initial-values (id: 13088354-2c43-4bfd-84c7-1e2c339e0f71)
+- Title: Optimistic Initial Values
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: optimistic-initial-values → techniques/optimistic-initial-values.md
+- IRI: pkis:technique:optimistic-initial-values
