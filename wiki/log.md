@@ -9490,3 +9490,12 @@
 ## [2026-06-09] committed | framework
 - Committed: relational-probability-model → frameworks/relational-probability-model.md
 - IRI: pkis:framework:relational-probability-model
+
+## [2026-06-09] staged | node-stub (framework)
+- Staged: open-universe-probability-model (id: bd0e1b9c-b946-43d5-a437-ecdcb9976f98)
+- Title: Open-Universe Probability Model
+- needs_canonical_source: False
+
+## [2026-06-09] committed | framework
+- Committed: open-universe-probability-model → frameworks/open-universe-probability-model.md
+- IRI: pkis:framework:open-universe-probability-model
