@@ -10219,3 +10219,12 @@
 ## [2026-06-09] committed | technique
 - Committed: information-extraction → techniques/information-extraction.md
 - IRI: pkis:technique:information-extraction
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: machine-translation (id: 41bd6a92-ff25-4aad-86ea-7450a8d13b2c)
+- Title: Machine Translation
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: machine-translation → techniques/machine-translation.md
+- IRI: pkis:technique:machine-translation
