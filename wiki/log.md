@@ -5935,3 +5935,12 @@
 ## [2026-06-09] committed | technique
 - Committed: poisson-regression → techniques/poisson-regression.md
 - IRI: pkis:technique:poisson-regression
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: probit-model (id: 3f13cd86-0d66-4741-a678-269db1d0992f)
+- Title: Probit Model
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: probit-model → techniques/probit-model.md
+- IRI: pkis:technique:probit-model
