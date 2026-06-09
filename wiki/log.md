@@ -11768,3 +11768,12 @@
 ## [2026-06-09] committed | technique
 - Committed: supervised-principal-components → techniques/supervised-principal-components.md
 - IRI: pkis:technique:supervised-principal-components
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: fused-lasso (id: 01d832da-f277-48ef-a291-196a3d4ab834)
+- Title: Fused Lasso
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: fused-lasso → techniques/fused-lasso.md
+- IRI: pkis:technique:fused-lasso
