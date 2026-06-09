@@ -8689,3 +8689,12 @@
 ## [2026-06-09] committed | concept
 - Committed: task-environment-properties → concepts/task-environment-properties.md
 - IRI: pkis:concept:task-environment-properties
+
+## [2026-06-09] staged | node-stub (framework)
+- Staged: agent-program-architectures (id: e18cdec4-f284-4e08-947a-97929a213a9c)
+- Title: Agent Program Architectures
+- needs_canonical_source: False
+
+## [2026-06-09] committed | framework
+- Committed: agent-program-architectures → frameworks/agent-program-architectures.md
+- IRI: pkis:framework:agent-program-architectures
