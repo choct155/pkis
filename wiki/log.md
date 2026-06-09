@@ -11633,3 +11633,12 @@
 ## [2026-06-09] committed | technique
 - Committed: multidimensional-scaling → techniques/multidimensional-scaling.md
 - IRI: pkis:technique:multidimensional-scaling
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: procrustes-analysis (id: 17900013-1122-4096-9fc4-b5cd9c293435)
+- Title: Procrustes Analysis
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: procrustes-analysis → techniques/procrustes-analysis.md
+- IRI: pkis:technique:procrustes-analysis
