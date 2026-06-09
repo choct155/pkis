@@ -11363,3 +11363,12 @@
 ## [2026-06-09] committed | technique
 - Committed: bagging → techniques/bagging.md
 - IRI: pkis:technique:bagging
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: stacking (id: 5ffb47e1-f39f-42b3-9e9e-b28d0a84eb54)
+- Title: Stacked Generalization (Stacking)
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: stacking → techniques/stacking.md
+- IRI: pkis:technique:stacking
