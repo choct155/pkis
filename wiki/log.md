@@ -6808,3 +6808,12 @@
 ## [2026-06-09] committed | technique
 - Committed: abduction-action-prediction → techniques/abduction-action-prediction.md
 - IRI: pkis:technique:abduction-action-prediction
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: twin-network-method (id: 19fd521f-cbad-4871-90ee-ab6e2e9bc5dd)
+- Title: Twin-Network Method
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: twin-network-method → techniques/twin-network-method.md
+- IRI: pkis:technique:twin-network-method
