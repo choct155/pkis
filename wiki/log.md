@@ -11417,3 +11417,12 @@
 ## [2026-06-09] committed | technique
 - Committed: patient-rule-induction-prim → techniques/patient-rule-induction-prim.md
 - IRI: pkis:technique:patient-rule-induction-prim
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: hierarchical-mixtures-of-experts (id: a6ba25f0-cad1-4187-a255-c73c81bb686d)
+- Title: Hierarchical Mixtures of Experts (HME)
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: hierarchical-mixtures-of-experts → techniques/hierarchical-mixtures-of-experts.md
+- IRI: pkis:technique:hierarchical-mixtures-of-experts
