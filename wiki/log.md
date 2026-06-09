@@ -3568,3 +3568,12 @@
 ## [2026-06-09] committed | concept
 - Committed: trace → concepts/trace.md
 - IRI: pkis:concept:trace
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: cholesky-decomposition (id: 3498b2e7-3e30-4ec4-ac4a-b14bc715ceec)
+- Title: Cholesky Decomposition
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: cholesky-decomposition → techniques/cholesky-decomposition.md
+- IRI: pkis:technique:cholesky-decomposition
