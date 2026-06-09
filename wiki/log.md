@@ -10129,3 +10129,12 @@
 ## [2026-06-09] committed | concept
 - Committed: language-model → concepts/language-model.md
 - IRI: pkis:concept:language-model
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: n-gram-language-model (id: 77f6f989-ab2c-4474-bb5e-4cf5a47a4395)
+- Title: N-gram Language Model
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: n-gram-language-model → concepts/n-gram-language-model.md
+- IRI: pkis:concept:n-gram-language-model
