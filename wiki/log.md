@@ -11183,3 +11183,12 @@
 ## [2026-06-09] committed | technique
 - Committed: elastic-net → techniques/elastic-net.md
 - IRI: pkis:technique:elastic-net
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: effective-degrees-of-freedom (id: d3d695c4-2a28-41b7-8ec6-df740474f12e)
+- Title: Effective Degrees of Freedom
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: effective-degrees-of-freedom → concepts/effective-degrees-of-freedom.md
+- IRI: pkis:concept:effective-degrees-of-freedom
