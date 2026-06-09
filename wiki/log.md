@@ -5854,3 +5854,12 @@
 ## [2026-06-09] committed | concept
 - Committed: group-level-predictors → concepts/group-level-predictors.md
 - IRI: pkis:concept:group-level-predictors
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: bayesian-anova (id: c4d3f4b0-3077-425a-a613-d884c4310355)
+- Title: Bayesian Analysis of Variance
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: bayesian-anova → concepts/bayesian-anova.md
+- IRI: pkis:concept:bayesian-anova
