@@ -4378,3 +4378,12 @@
 ## [2026-06-09] committed | principle
 - Committed: td-vs-mc-vs-dp → principles/td-vs-mc-vs-dp.md
 - IRI: pkis:principle:td-vs-mc-vs-dp
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: n-step-bootstrapping (id: b143c51b-4cc7-43f5-8e40-545d4b37eb47)
+- Title: n-step Bootstrapping
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: n-step-bootstrapping → concepts/n-step-bootstrapping.md
+- IRI: pkis:concept:n-step-bootstrapping
