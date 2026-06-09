@@ -11327,3 +11327,12 @@
 ## [2026-06-09] committed | technique
 - Committed: local-likelihood → techniques/local-likelihood.md
 - IRI: pkis:technique:local-likelihood
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: optimism-of-training-error (id: 8bf3f167-5d75-49df-909b-95b799751350)
+- Title: Optimism of the Training Error
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: optimism-of-training-error → concepts/optimism-of-training-error.md
+- IRI: pkis:concept:optimism-of-training-error
