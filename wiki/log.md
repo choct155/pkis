@@ -8932,3 +8932,12 @@
 ## [2026-06-09] committed | concept
 - Committed: imperfect-information-games → concepts/imperfect-information-games.md
 - IRI: pkis:concept:imperfect-information-games
+
+## [2026-06-09] staged | node-stub (framework)
+- Staged: constraint-satisfaction-problem (id: 27f776f2-afd6-4ac2-87b6-7482df753fb3)
+- Title: Constraint Satisfaction Problem (CSP)
+- needs_canonical_source: False
+
+## [2026-06-09] committed | framework
+- Committed: constraint-satisfaction-problem → frameworks/constraint-satisfaction-problem.md
+- IRI: pkis:framework:constraint-satisfaction-problem
