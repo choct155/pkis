@@ -5800,3 +5800,12 @@
 ## [2026-06-09] committed | technique
 - Committed: expectation-propagation → techniques/expectation-propagation.md
 - IRI: pkis:technique:expectation-propagation
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: modal-approximation (id: 1d54d719-d354-42b9-9373-30f9406bddd6)
+- Title: Modal Approximation (Mode-Centered Distributional Approximation)
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: modal-approximation → techniques/modal-approximation.md
+- IRI: pkis:technique:modal-approximation
