@@ -11651,3 +11651,12 @@
 ## [2026-06-09] committed | technique
 - Committed: sparse-pca → techniques/sparse-pca.md
 - IRI: pkis:technique:sparse-pca
+
+## [2026-06-09] staged | node-stub (framework)
+- Staged: importance-sampled-learning-ensemble-isle (id: fe4a6fef-44e3-4f2a-b160-f5388d6869e3)
+- Title: Importance Sampled Learning Ensemble (ISLE)
+- needs_canonical_source: False
+
+## [2026-06-09] committed | framework
+- Committed: importance-sampled-learning-ensemble-isle → frameworks/importance-sampled-learning-ensemble-isle.md
+- IRI: pkis:framework:importance-sampled-learning-ensemble-isle
