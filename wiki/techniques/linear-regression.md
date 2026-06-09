@@ -31,6 +31,7 @@ understanding: 0
 uses:
 - maximum-likelihood-estimation
 - gaussian-distribution
+- posterior-predictive-check
 ---
 
 ## Definition
@@ -40,6 +41,7 @@ uses:
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[posterior-predictive-check]] — uses
 - [[gaussian-distribution]] — uses
 - [[maximum-likelihood-estimation]] — uses
 [To be populated during integration]

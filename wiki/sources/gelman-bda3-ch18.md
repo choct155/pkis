@@ -14,6 +14,8 @@ tags:
 title: Ch. 18 — Models for missing data
 type: chapter
 understanding: 0
+uses:
+- multiple-imputation
 year: 2013
 ---
 
@@ -22,3 +24,6 @@ year: 2013
 
 ## Reading Path
 - Parent: [[gelman-bda3]]
+
+## Connections
+- [[multiple-imputation]] — uses: Chapter 18 is organized around multiple imputation as the practical workflow for missing data.

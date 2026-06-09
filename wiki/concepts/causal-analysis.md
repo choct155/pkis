@@ -28,6 +28,8 @@ tags:
 - confounding
 title: Causal Analysis
 understanding: 0
+uses:
+- causal-statistical-distinction
 ---
 
 ## Definition
@@ -37,6 +39,7 @@ The study of cause–effect relationships through identification strategies, con
 - [[pearl-causality-ch03]] — canonical source
 
 ## Connections
+- [[causal-statistical-distinction]] — uses: Causal analysis is organized around keeping causal and statistical assumptions distinct.
 [To be populated during integration]
 
 ## Needs Canonical Source

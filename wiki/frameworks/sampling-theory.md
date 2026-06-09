@@ -31,6 +31,9 @@ tags:
 - null-hypothesis
 title: Sampling Theory (Frequentist Statistics)
 understanding: 0
+uses:
+- ignorability
+- hierarchical-bayesian-models
 ---
 
 ## Definition
@@ -50,6 +53,8 @@ Because the $p$-value integrates over the whole sample space (outcomes that did 
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[hierarchical-bayesian-models]] — uses: strata and clusters are modeled as exchangeable batches in a hierarchical model
+- [[ignorability]] — uses: stratified/cluster/unequal-probability designs are analyzed by making them ignorable given design covariates
 - [[likelihood-principle]] — contrasts-with: p-values condition on the whole sample space, including outcomes that did not occur, directly violating the likelihood principle.
 - [[bayesian-inference]] — contrasts-with: The two schools of statistics: frequency-based long-run guarantees vs. probability-as-degree-of-belief conditioned on the data in hand.
 [To be populated during integration]

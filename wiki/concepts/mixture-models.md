@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- clustering
 component_scores:
   application: null
   boundary: null
@@ -31,6 +33,11 @@ tags:
 - probability-theory
 title: Mixture Models
 understanding: 0
+uses:
+- identifiability-of-mixtures
+- em-algorithm
+- gibbs-sampler
+- dirichlet-distribution
 ---
 
 ## Definition
@@ -40,5 +47,10 @@ understanding: 0
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[clustering]] — applies
+- [[dirichlet-distribution]] — uses
+- [[gibbs-sampler]] — uses
+- [[em-algorithm]] — uses
+- [[identifiability-of-mixtures]] — uses
 - [[latent-variable-models]] — instantiates
 [To be populated during integration]

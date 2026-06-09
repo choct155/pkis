@@ -5296,3 +5296,1713 @@
 
 ## [2026-06-09] edit | edit_node
 - pkis:framework:markov-decision-processes: fields=[] sections=['Role in Reinforcement Learning']
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: exchangeability (id: 90165e7d-ae16-46b4-83ba-efea52c4f8b6)
+- Title: Exchangeability
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: exchangeability → concepts/exchangeability.md
+- IRI: pkis:concept:exchangeability
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: posterior-predictive-distribution (id: 7f5a8910-f022-4e9e-bf50-52cf87a0f76c)
+- Title: Posterior Predictive Distribution
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: posterior-predictive-distribution → concepts/posterior-predictive-distribution.md
+- IRI: pkis:concept:posterior-predictive-distribution
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: prior-predictive-distribution (id: 04877527-6cd3-4a9b-9f88-f24c6ef45ba9)
+- Title: Prior Predictive Distribution
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: prior-predictive-distribution → concepts/prior-predictive-distribution.md
+- IRI: pkis:concept:prior-predictive-distribution
+
+## [2026-06-09] staged | node-stub (result)
+- Staged: law-of-total-variance (id: 2af05bcb-193e-40cb-af24-2f514e2b3a69)
+- Title: Law of Total Variance
+- needs_canonical_source: False
+
+## [2026-06-09] committed | result
+- Committed: law-of-total-variance → results/law-of-total-variance.md
+- IRI: pkis:result:law-of-total-variance
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: noninformative-prior (id: cc926472-2dac-4ef8-ad45-03e46b72c57b)
+- Title: Noninformative Prior
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: noninformative-prior → concepts/noninformative-prior.md
+- IRI: pkis:concept:noninformative-prior
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: jeffreys-prior (id: fb2deb2a-254a-4289-bb28-ceeabe4a06dc)
+- Title: Jeffreys' Prior
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: jeffreys-prior → concepts/jeffreys-prior.md
+- IRI: pkis:concept:jeffreys-prior
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: weakly-informative-prior (id: 2282def1-8908-4e89-bf7b-f2f42a2e2fd5)
+- Title: Weakly Informative Prior
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: weakly-informative-prior → concepts/weakly-informative-prior.md
+- IRI: pkis:concept:weakly-informative-prior
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: nuisance-parameters (id: 93812831-7e35-4398-a70e-b694f4e8e5a5)
+- Title: Nuisance Parameters
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: nuisance-parameters → concepts/nuisance-parameters.md
+- IRI: pkis:concept:nuisance-parameters
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: multivariate-normal-model (id: 3de04a86-9a26-41ad-8798-16373a531798)
+- Title: Multivariate Normal Model (Bayesian)
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: multivariate-normal-model → concepts/multivariate-normal-model.md
+- IRI: pkis:concept:multivariate-normal-model
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: pivotal-quantity (id: 6378e37d-84f4-4e75-8cac-f80c9d051fb3)
+- Title: Pivotal Quantity
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: pivotal-quantity → concepts/pivotal-quantity.md
+- IRI: pkis:concept:pivotal-quantity
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: grid-approximation (id: c4676060-21d0-4a4a-974a-3fe89fc90773)
+- Title: Grid Approximation of the Posterior
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: grid-approximation → techniques/grid-approximation.md
+- IRI: pkis:technique:grid-approximation
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: large-sample-bayesian-inference (id: 852b1da1-a01d-4b90-accd-b806c9a568f7)
+- Title: Large-Sample Bayesian Inference
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: large-sample-bayesian-inference → concepts/large-sample-bayesian-inference.md
+- IRI: pkis:concept:large-sample-bayesian-inference
+
+## [2026-06-09] staged | node-stub (result)
+- Staged: bernstein-von-mises-theorem (id: 482627b6-705d-49e9-8ed2-23ec6b6cda38)
+- Title: Bernstein-von Mises Theorem (Posterior Asymptotic Normality)
+- needs_canonical_source: False
+
+## [2026-06-09] committed | result
+- Committed: bernstein-von-mises-theorem → results/bernstein-von-mises-theorem.md
+- IRI: pkis:result:bernstein-von-mises-theorem
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: fisher-information (id: 9cfad781-358d-4fba-b839-159b4d041dd4)
+- Title: Fisher Information
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: fisher-information → concepts/fisher-information.md
+- IRI: pkis:concept:fisher-information
+
+## [2026-06-09] staged | node-stub (principle)
+- Staged: frequentist-evaluation-of-bayesian-methods (id: 39067deb-d027-45ca-80ad-89cc47fc30a6)
+- Title: Frequentist Evaluation of Bayesian Methods
+- needs_canonical_source: False
+
+## [2026-06-09] committed | principle
+- Committed: frequentist-evaluation-of-bayesian-methods → principles/frequentist-evaluation-of-bayesian-methods.md
+- IRI: pkis:principle:frequentist-evaluation-of-bayesian-methods
+
+## [2026-06-09] staged | node-stub (principle)
+- Staged: regression-to-the-mean (id: adf71933-3d3d-40d1-bacb-03c6f3ad66b6)
+- Title: Regression to the Mean
+- needs_canonical_source: False
+
+## [2026-06-09] committed | principle
+- Committed: regression-to-the-mean → principles/regression-to-the-mean.md
+- IRI: pkis:principle:regression-to-the-mean
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: unbiasedness (id: a6f3283d-62ba-4713-b8bb-daa157a63535)
+- Title: Unbiasedness
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: unbiasedness → concepts/unbiasedness.md
+- IRI: pkis:concept:unbiasedness
+
+## [2026-06-09] staged | node-stub (principle)
+- Staged: partial-pooling-shrinkage (id: 89fe0abb-9aae-44a5-914e-33ddba67291c)
+- Title: Partial Pooling and Shrinkage
+- needs_canonical_source: False
+
+## [2026-06-09] committed | principle
+- Committed: partial-pooling-shrinkage → principles/partial-pooling-shrinkage.md
+- IRI: pkis:principle:partial-pooling-shrinkage
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: hyperprior (id: 4a278961-5cac-419f-88a1-0459fb1ff77f)
+- Title: Hyperprior Distribution
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: hyperprior → concepts/hyperprior.md
+- IRI: pkis:concept:hyperprior
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: bayesian-model-checking (id: 15558d25-8585-408f-b350-489714784cac)
+- Title: Bayesian Model Checking
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: bayesian-model-checking → techniques/bayesian-model-checking.md
+- IRI: pkis:technique:bayesian-model-checking
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: posterior-predictive-check (id: 63f0d9a3-2f16-4020-8c45-7142afb47a0d)
+- Title: Posterior Predictive Check
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: posterior-predictive-check → techniques/posterior-predictive-check.md
+- IRI: pkis:technique:posterior-predictive-check
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: test-quantity-discrepancy (id: 2dcd77bb-c1ea-4221-8c82-085ce085c890)
+- Title: Test Quantity (Discrepancy Measure)
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: test-quantity-discrepancy → concepts/test-quantity-discrepancy.md
+- IRI: pkis:concept:test-quantity-discrepancy
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: bayesian-p-value (id: 41a2e80a-8fb7-4a70-8e8e-11c5089fc2c5)
+- Title: Bayesian (Posterior Predictive) p-value
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: bayesian-p-value → concepts/bayesian-p-value.md
+- IRI: pkis:concept:bayesian-p-value
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: graphical-posterior-predictive-checks (id: b9da34ea-0405-43e0-ba3c-0941e227cbc2)
+- Title: Graphical Posterior Predictive Checks
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: graphical-posterior-predictive-checks → techniques/graphical-posterior-predictive-checks.md
+- IRI: pkis:technique:graphical-posterior-predictive-checks
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: sensitivity-analysis (id: 49238aac-19c7-48c2-8c9f-cb28ac61b036)
+- Title: Sensitivity Analysis (Bayesian)
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: sensitivity-analysis → techniques/sensitivity-analysis.md
+- IRI: pkis:technique:sensitivity-analysis
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: expected-log-predictive-density (id: 19ac6be7-d872-48fe-b796-49a837de4753)
+- Title: Expected Log Predictive Density (elpd)
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: expected-log-predictive-density → concepts/expected-log-predictive-density.md
+- IRI: pkis:concept:expected-log-predictive-density
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: scoring-rules (id: c9c742c5-e3fe-4a6d-b9fc-75cb0f603d20)
+- Title: Scoring Rules
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: scoring-rules → concepts/scoring-rules.md
+- IRI: pkis:concept:scoring-rules
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: effective-number-of-parameters (id: 4c0bcda7-4a37-49f4-b00a-c1f75e8c7c60)
+- Title: Effective Number of Parameters
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: effective-number-of-parameters → concepts/effective-number-of-parameters.md
+- IRI: pkis:concept:effective-number-of-parameters
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: waic (id: 79d835ac-08d1-4f34-92b0-d4df92502a4c)
+- Title: Widely Applicable Information Criterion (WAIC)
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: waic → concepts/waic.md
+- IRI: pkis:concept:waic
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: deviance-information-criterion (id: 984114fb-8b4a-441d-969c-47d79d3fcfde)
+- Title: Deviance Information Criterion (DIC)
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: deviance-information-criterion → concepts/deviance-information-criterion.md
+- IRI: pkis:concept:deviance-information-criterion
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: loo-cv (id: 72cb21b9-60da-427c-b7c1-43a44817a25f)
+- Title: Bayesian Leave-One-Out Cross-Validation (LOO-CV)
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: loo-cv → techniques/loo-cv.md
+- IRI: pkis:technique:loo-cv
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: bayes-factor (id: c6a4ce56-81c7-48fe-aee4-db670179d465)
+- Title: Bayes Factor
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: bayes-factor → concepts/bayes-factor.md
+- IRI: pkis:concept:bayes-factor
+
+## [2026-06-09] staged | node-stub (principle)
+- Staged: continuous-model-expansion (id: a049530c-db40-4d65-809a-81586874ac99)
+- Title: Continuous Model Expansion
+- needs_canonical_source: False
+
+## [2026-06-09] committed | principle
+- Committed: continuous-model-expansion → principles/continuous-model-expansion.md
+- IRI: pkis:principle:continuous-model-expansion
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: ignorability (id: 437a1b8a-f344-4669-b92b-cc65b1251934)
+- Title: Ignorability
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: ignorability → concepts/ignorability.md
+- IRI: pkis:concept:ignorability
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: missing-data-mechanisms (id: df3d77fd-986c-4b80-a190-fd22ffadd864)
+- Title: Missing-Data Mechanisms (MCAR / MAR / MNAR)
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: missing-data-mechanisms → concepts/missing-data-mechanisms.md
+- IRI: pkis:concept:missing-data-mechanisms
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: data-collection-mechanism (id: 33b8c9b1-030b-4d15-ae44-fac388ef501e)
+- Title: Data-Collection Mechanism (Inclusion Model)
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: data-collection-mechanism → concepts/data-collection-mechanism.md
+- IRI: pkis:concept:data-collection-mechanism
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: finite-population-vs-superpopulation-inference (id: 50bdc083-28fe-4389-9a34-7f927c985394)
+- Title: Finite-Population vs. Superpopulation Inference
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: finite-population-vs-superpopulation-inference → concepts/finite-population-vs-superpopulation-inference.md
+- IRI: pkis:concept:finite-population-vs-superpopulation-inference
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: censoring-and-truncation (id: 5d7e0de2-55b0-4de6-ab91-d05916e73f71)
+- Title: Censoring and Truncation
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: censoring-and-truncation → concepts/censoring-and-truncation.md
+- IRI: pkis:concept:censoring-and-truncation
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: principal-stratification (id: c4f35418-1d06-4a0b-b103-90b29d4fc606)
+- Title: Principal Stratification
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: principal-stratification → techniques/principal-stratification.md
+- IRI: pkis:technique:principal-stratification
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: bayesian-decision-analysis (id: 88cebf4c-c4dc-4bcc-8d62-8442e68f4a84)
+- Title: Bayesian Decision Analysis
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: bayesian-decision-analysis → techniques/bayesian-decision-analysis.md
+- IRI: pkis:technique:bayesian-decision-analysis
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: decision-tree-analysis (id: b6c4865f-de14-45bd-831f-c6836c82f68c)
+- Title: Decision Tree Analysis
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: decision-tree-analysis → techniques/decision-tree-analysis.md
+- IRI: pkis:technique:decision-tree-analysis
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: institutional-decision-analysis (id: ac1b33d6-c0ed-46bf-88ae-ee231f774734)
+- Title: Institutional Decision Analysis
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: institutional-decision-analysis → concepts/institutional-decision-analysis.md
+- IRI: pkis:concept:institutional-decision-analysis
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: importance-resampling (id: ce0a2711-15d1-472d-9d03-16e04c73360a)
+- Title: Importance Resampling (SIR)
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: importance-resampling → techniques/importance-resampling.md
+- IRI: pkis:technique:importance-resampling
+
+## [2026-06-09] staged | node-stub (principle)
+- Staged: numerical-vs-simulation-integration (id: 4ead5469-4df1-4553-97ba-5eaff0c4150a)
+- Title: Numerical vs. Simulation Integration
+- needs_canonical_source: False
+
+## [2026-06-09] committed | principle
+- Committed: numerical-vs-simulation-integration → principles/numerical-vs-simulation-integration.md
+- IRI: pkis:principle:numerical-vs-simulation-integration
+
+## [2026-06-09] staged | node-stub (principle)
+- Staged: log-scale-computation (id: 5a3f6ab3-3f0b-4f4e-9d08-156c2f8ad466)
+- Title: Log-Scale Computation
+- needs_canonical_source: False
+
+## [2026-06-09] committed | principle
+- Committed: log-scale-computation → principles/log-scale-computation.md
+- IRI: pkis:principle:log-scale-computation
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: fake-data-simulation (id: 10351a76-5bdf-4a15-b9f0-ff765bb32aea)
+- Title: Fake-Data Simulation (Debugging)
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: fake-data-simulation → techniques/fake-data-simulation.md
+- IRI: pkis:technique:fake-data-simulation
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: metropolis-hastings (id: 61b9454f-296c-4306-b657-817c097b5bbd)
+- Title: Metropolis-Hastings Algorithm
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: metropolis-hastings → techniques/metropolis-hastings.md
+- IRI: pkis:technique:metropolis-hastings
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: gelman-rubin-diagnostic (id: 7cfffac5-b996-4266-b221-6e997c0b57af)
+- Title: Gelman-Rubin Convergence Diagnostic (R-hat)
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: gelman-rubin-diagnostic → techniques/gelman-rubin-diagnostic.md
+- IRI: pkis:technique:gelman-rubin-diagnostic
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: effective-sample-size (id: 581e448d-2dc1-44c0-b57e-46588fb115c1)
+- Title: Effective Sample Size (MCMC)
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: effective-sample-size → concepts/effective-sample-size.md
+- IRI: pkis:concept:effective-sample-size
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: burn-in-and-warmup (id: 473ba081-0b98-4f61-b041-62e78c665a1c)
+- Title: Burn-in and Warm-up (MCMC)
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: burn-in-and-warmup → concepts/burn-in-and-warmup.md
+- IRI: pkis:concept:burn-in-and-warmup
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: no-u-turn-sampler (id: e3b44d29-94f0-4f5f-807a-136526ac1180)
+- Title: No-U-Turn Sampler (NUTS)
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: no-u-turn-sampler → techniques/no-u-turn-sampler.md
+- IRI: pkis:technique:no-u-turn-sampler
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: adaptive-mcmc (id: c3b0f7f0-9858-45a4-a710-16cd74021655)
+- Title: Adaptive MCMC
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: adaptive-mcmc → techniques/adaptive-mcmc.md
+- IRI: pkis:technique:adaptive-mcmc
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: parameter-expansion (id: f8e87560-e642-4379-b158-45c84e8b3870)
+- Title: Parameter Expansion
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: parameter-expansion → techniques/parameter-expansion.md
+- IRI: pkis:technique:parameter-expansion
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: reversible-jump-mcmc (id: 13d0abcf-95df-451d-8970-0bd1c9695bbb)
+- Title: Reversible Jump MCMC
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: reversible-jump-mcmc → techniques/reversible-jump-mcmc.md
+- IRI: pkis:technique:reversible-jump-mcmc
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: simulated-tempering (id: 1ae51f3b-6d5b-4663-a053-d5a825e53e57)
+- Title: Simulated Tempering
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: simulated-tempering → techniques/simulated-tempering.md
+- IRI: pkis:technique:simulated-tempering
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: expectation-propagation (id: 1979d8d8-f815-483f-bbe1-a4be23b25906)
+- Title: Expectation Propagation
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: expectation-propagation → techniques/expectation-propagation.md
+- IRI: pkis:technique:expectation-propagation
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: modal-approximation (id: 1d54d719-d354-42b9-9373-30f9406bddd6)
+- Title: Modal Approximation (Mode-Centered Distributional Approximation)
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: modal-approximation → techniques/modal-approximation.md
+- IRI: pkis:technique:modal-approximation
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: approximate-bayesian-computation (id: 5ed40824-f108-4c31-bfa4-ec11bac9d583)
+- Title: Approximate Bayesian Computation (ABC)
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: approximate-bayesian-computation → techniques/approximate-bayesian-computation.md
+- IRI: pkis:technique:approximate-bayesian-computation
+
+## [2026-06-09] staged | node-stub (problem)
+- Staged: collinearity (id: 5ed519fb-9b22-416c-baa0-d616be8bcf0d)
+- Title: Collinearity
+- needs_canonical_source: False
+
+## [2026-06-09] committed | problem
+- Committed: collinearity → problems/collinearity.md
+- IRI: pkis:problem:collinearity
+
+## [2026-06-09] staged | node-stub (framework)
+- Staged: multilevel-regression (id: be755faf-e3e8-4eec-bcc5-91a89b6a6af6)
+- Title: Multilevel Regression
+- needs_canonical_source: False
+
+## [2026-06-09] committed | framework
+- Committed: multilevel-regression → frameworks/multilevel-regression.md
+- IRI: pkis:framework:multilevel-regression
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: varying-intercepts-and-slopes (id: fd319139-7d66-4331-91e4-f97785cdff82)
+- Title: Varying-Intercept, Varying-Slope Models
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: varying-intercepts-and-slopes → techniques/varying-intercepts-and-slopes.md
+- IRI: pkis:technique:varying-intercepts-and-slopes
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: group-level-predictors (id: e4f5f100-48c9-425b-b260-016bfedaed5d)
+- Title: Group-Level Predictors
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: group-level-predictors → concepts/group-level-predictors.md
+- IRI: pkis:concept:group-level-predictors
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: bayesian-anova (id: c4d3f4b0-3077-425a-a613-d884c4310355)
+- Title: Bayesian Analysis of Variance
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: bayesian-anova → concepts/bayesian-anova.md
+- IRI: pkis:concept:bayesian-anova
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: finite-vs-superpopulation-variance (id: 283f8897-239b-452f-aa07-1e391fa4a3e6)
+- Title: Finite-Population vs. Superpopulation Standard Deviation
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: finite-vs-superpopulation-variance → concepts/finite-vs-superpopulation-variance.md
+- IRI: pkis:concept:finite-vs-superpopulation-variance
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: fixed-vs-random-effects (id: 4cac803c-b034-4c59-a458-dafde33b7d28)
+- Title: Fixed vs. Random Effects
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: fixed-vs-random-effects → concepts/fixed-vs-random-effects.md
+- IRI: pkis:concept:fixed-vs-random-effects
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: non-centered-parameterization (id: d0a86755-c396-44b0-b9e5-a65ffac05f8f)
+- Title: Non-Centered Parameterization
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: non-centered-parameterization → techniques/non-centered-parameterization.md
+- IRI: pkis:technique:non-centered-parameterization
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: parameter-expansion-sampling (id: 46dc622d-5fa2-4ed5-9abd-323b75ddf72a)
+- Title: Parameter Expansion for Hierarchical Sampling
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: parameter-expansion-sampling → techniques/parameter-expansion-sampling.md
+- IRI: pkis:technique:parameter-expansion-sampling
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: intraclass-correlation (id: 48febaed-2ebe-4684-a65b-8db7c71cbf43)
+- Title: Intraclass Correlation
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: intraclass-correlation → concepts/intraclass-correlation.md
+- IRI: pkis:concept:intraclass-correlation
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: link-function (id: a2e43810-cf68-4e35-8911-cc3a67faabe4)
+- Title: Link Function
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: link-function → concepts/link-function.md
+- IRI: pkis:concept:link-function
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: overdispersion (id: ca7acaef-2bb0-4cb5-956b-b99ed9b9cfcf)
+- Title: Overdispersion
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: overdispersion → concepts/overdispersion.md
+- IRI: pkis:concept:overdispersion
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: poisson-regression (id: 39bd13c5-35e0-45dd-9d54-0558aac58095)
+- Title: Poisson Regression
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: poisson-regression → techniques/poisson-regression.md
+- IRI: pkis:technique:poisson-regression
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: probit-model (id: 3f13cd86-0d66-4741-a678-269db1d0992f)
+- Title: Probit Model
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: probit-model → techniques/probit-model.md
+- IRI: pkis:technique:probit-model
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: latent-variable-discrete-regression (id: 5347596f-a8db-4373-9601-b6c2d58953f9)
+- Title: Latent-Variable Formulation of Discrete Regression
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: latent-variable-discrete-regression → concepts/latent-variable-discrete-regression.md
+- IRI: pkis:concept:latent-variable-discrete-regression
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: separation-logistic-regression (id: 14f2f1d1-96af-4c9b-bca9-af0eb8c2b9e7)
+- Title: Separation in Logistic Regression
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: separation-logistic-regression → concepts/separation-logistic-regression.md
+- IRI: pkis:concept:separation-logistic-regression
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: loglinear-model (id: 1450db36-e8a1-4055-b5af-3c105bd4028e)
+- Title: Loglinear Model
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: loglinear-model → techniques/loglinear-model.md
+- IRI: pkis:technique:loglinear-model
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: iterative-proportional-fitting (id: 3b181f7f-5081-4bc7-9e73-1323421721b6)
+- Title: Iterative Proportional Fitting
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: iterative-proportional-fitting → techniques/iterative-proportional-fitting.md
+- IRI: pkis:technique:iterative-proportional-fitting
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: robust-inference (id: 86a884e7-b9eb-4883-99e2-88b1eb0b37e4)
+- Title: Robust Inference
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: robust-inference → concepts/robust-inference.md
+- IRI: pkis:concept:robust-inference
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: t-distribution (id: 3e6c1521-6839-443c-a933-f1c46eeeb971)
+- Title: Student t Distribution
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: t-distribution → concepts/t-distribution.md
+- IRI: pkis:concept:t-distribution
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: negative-binomial-distribution (id: eb00e4b1-50fe-4144-852c-5813232ffe6e)
+- Title: Negative Binomial Distribution
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: negative-binomial-distribution → concepts/negative-binomial-distribution.md
+- IRI: pkis:concept:negative-binomial-distribution
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: beta-binomial-distribution (id: 56e92a5a-0649-40ec-b148-595d7743d18f)
+- Title: Beta-Binomial Distribution
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: beta-binomial-distribution → concepts/beta-binomial-distribution.md
+- IRI: pkis:concept:beta-binomial-distribution
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: robit-regression (id: 87238cc3-a015-4f0e-8d6a-a5984e964405)
+- Title: Robit Regression
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: robit-regression → techniques/robit-regression.md
+- IRI: pkis:technique:robit-regression
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: multiple-imputation (id: 3e414d8b-2be7-425c-968a-9fc305c6fc0e)
+- Title: Multiple Imputation
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: multiple-imputation → techniques/multiple-imputation.md
+- IRI: pkis:technique:multiple-imputation
+
+## [2026-06-09] staged | node-stub (result)
+- Staged: rubins-rules (id: c7f79f7d-f69e-44e6-babc-6ccaf4a6074e)
+- Title: Rubin's Rules for Combining Multiple Imputations
+- needs_canonical_source: False
+
+## [2026-06-09] committed | result
+- Committed: rubins-rules → results/rubins-rules.md
+- IRI: pkis:result:rubins-rules
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: monotone-missing-data-pattern (id: 6386ca1e-6b9a-45c9-ba2d-a141b26dc806)
+- Title: Monotone Missing-Data Pattern
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: monotone-missing-data-pattern → concepts/monotone-missing-data-pattern.md
+- IRI: pkis:concept:monotone-missing-data-pattern
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: bayesian-nonlinear-model (id: 2b5d3d02-c990-4e60-a184-5cc93c01c112)
+- Title: Bayesian Nonlinear Model
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: bayesian-nonlinear-model → techniques/bayesian-nonlinear-model.md
+- IRI: pkis:technique:bayesian-nonlinear-model
+
+## [2026-06-09] staged | node-stub (framework)
+- Staged: pharmacokinetic-modeling (id: 6fc0c382-b00c-45f4-85c1-b6ab3249b30a)
+- Title: Physiological Pharmacokinetic Modeling
+- needs_canonical_source: False
+
+## [2026-06-09] committed | framework
+- Committed: pharmacokinetic-modeling → frameworks/pharmacokinetic-modeling.md
+- IRI: pkis:framework:pharmacokinetic-modeling
+
+## [2026-06-09] staged | node-stub (framework)
+- Staged: basis-function-models (id: 4a4350bf-afe8-405b-93df-901616f6697f)
+- Title: Basis Function Models
+- needs_canonical_source: False
+
+## [2026-06-09] committed | framework
+- Committed: basis-function-models → frameworks/basis-function-models.md
+- IRI: pkis:framework:basis-function-models
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: shrinkage-priors (id: bcda1ae0-8b8f-42d6-97df-f5c708a41116)
+- Title: Shrinkage Priors (Continuous / Global-Local)
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: shrinkage-priors → techniques/shrinkage-priors.md
+- IRI: pkis:technique:shrinkage-priors
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: logistic-gaussian-process (id: 94ab2be4-f4c0-4637-ab4a-281305642475)
+- Title: Logistic Gaussian Process (LGP)
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: logistic-gaussian-process → techniques/logistic-gaussian-process.md
+- IRI: pkis:technique:logistic-gaussian-process
+
+## [2026-06-09] staged | node-stub (problem)
+- Staged: label-switching (id: 0e702ea1-5e74-4d08-942a-dee5e46b5491)
+- Title: Label Switching in Mixture Models
+- needs_canonical_source: False
+
+## [2026-06-09] committed | problem
+- Committed: label-switching → problems/label-switching.md
+- IRI: pkis:problem:label-switching
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: identifiability-of-mixtures (id: 98704616-dfad-4248-9e2b-754099a48d83)
+- Title: Identifiability of the Mixture Likelihood
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: identifiability-of-mixtures → concepts/identifiability-of-mixtures.md
+- IRI: pkis:concept:identifiability-of-mixtures
+
+## [2026-06-09] staged | node-stub (problem)
+- Staged: number-of-components-selection (id: f49ed2fd-5ce2-40e0-9ea8-a9e7e916679c)
+- Title: Choosing the Number of Mixture Components
+- needs_canonical_source: False
+
+## [2026-06-09] committed | problem
+- Committed: number-of-components-selection → problems/number-of-components-selection.md
+- IRI: pkis:problem:number-of-components-selection
+
+## [2026-06-09] edges | add_connections
+- exchangeability —prerequisite-of→ bayesian-inference
+- exchangeability —prerequisite-of→ hierarchical-bayesian-models
+- exchangeability —generalizes→ conditional-independence
+- posterior-predictive-distribution —uses→ bayesian-inference
+- posterior-predictive-distribution —uses→ marginalization
+- posterior-predictive-distribution —uses→ model-checking
+- prior-predictive-distribution —specializes→ marginalization
+- prior-predictive-distribution —analogous-to→ marginal-likelihood
+- prior-predictive-distribution —contrasts-with→ posterior-predictive-distribution
+- law-of-total-variance —uses→ expectation-and-variance
+- law-of-total-variance —prerequisite-of→ hierarchical-bayesian-models
+- law-of-total-variance —applies→ mixture-models
+- exchangeability —uses→ probability-theory
+- pkis:concept:noninformative-prior —specializes→ conjugate-prior
+- pkis:concept:noninformative-prior —contrasts-with→ weakly-informative-prior
+- pkis:concept:jeffreys-prior —specializes→ noninformative-prior
+- pkis:concept:jeffreys-prior —uses→ beta-distribution
+- pkis:concept:weakly-informative-prior —applies→ regularization
+- pkis:concept:weakly-informative-prior —uses→ conjugate-prior
+- pkis:concept:noninformative-prior —prerequisite-of→ bayesian-inference
+- pkis:concept:gamma-distribution —instantiates→ conjugate-prior
+- pkis:concept:gaussian-distribution —instantiates→ conjugate-prior
+- pkis:result:laplaces-rule-of-succession —uses→ beta-distribution
+- pkis:concept:nuisance-parameters —uses→ marginalization
+- pkis:concept:nuisance-parameters —prerequisite-of→ bayesian-inference
+- pkis:concept:nuisance-parameters —uses→ mixture-models
+- pkis:concept:posterior-predictive-distribution —specializes→ bayesian-inference
+- pkis:concept:multivariate-normal-model —specializes→ gaussian-distribution
+- pkis:concept:multivariate-normal-model —uses→ conjugate-prior
+- pkis:technique:bayesian-linear-regression —uses→ multivariate-normal-model
+- pkis:concept:pivotal-quantity —contrasts-with→ confidence-interval
+- pkis:concept:pivotal-quantity —applies→ gaussian-distribution
+- pkis:technique:grid-approximation —applies→ bayesian-inference
+- pkis:technique:grid-approximation —uses→ inverse-transform-sampling
+- pkis:technique:grid-approximation —contrasts-with→ mcmc
+- pkis:technique:grid-approximation —instantiates→ exact-inference-by-complete-enumeration
+- pkis:technique:logistic-regression —specializes→ generalized-linear-models
+- pkis:concept:dirichlet-distribution —uses→ conjugate-prior
+- pkis:result:bernstein-von-mises-theorem —uses→ fisher-information
+- pkis:result:bernstein-von-mises-theorem —applies→ laplace-approximation
+- pkis:concept:large-sample-bayesian-inference —uses→ bernstein-von-mises-theorem
+- pkis:concept:large-sample-bayesian-inference —uses→ laplace-approximation
+- pkis:concept:large-sample-bayesian-inference —uses→ fisher-information
+- pkis:concept:large-sample-bayesian-inference —specializes→ limiting-distributions
+- pkis:concept:fisher-information —uses→ maximum-likelihood-estimation
+- pkis:result:bernstein-von-mises-theorem —analogous-to→ weak-law-of-large-numbers
+- pkis:principle:frequentist-evaluation-of-bayesian-methods —applies→ confidence-interval
+- pkis:principle:frequentist-evaluation-of-bayesian-methods —uses→ bernstein-von-mises-theorem
+- pkis:principle:frequentist-evaluation-of-bayesian-methods —uses→ sampling-theory
+- pkis:principle:frequentist-evaluation-of-bayesian-methods —contrasts-with→ hypothesis-testing
+- pkis:concept:unbiasedness —specializes→ sampling-theory
+- pkis:principle:regression-to-the-mean —contrasts-with→ unbiasedness
+- pkis:principle:regression-to-the-mean —instantiates→ bayesian-inference
+- pkis:concept:unbiasedness —contrasts-with→ bias-variance-tradeoff
+- pkis:concept:large-sample-bayesian-inference —uses→ sufficient-statistics
+- pkis:framework:hierarchical-bayesian-models —uses→ exchangeability
+- pkis:framework:hierarchical-bayesian-models —uses→ hyperprior
+- pkis:concept:hyperprior —prerequisite-of→ hierarchical-bayesian-models
+- pkis:principle:partial-pooling-shrinkage —applies→ hierarchical-bayesian-models
+- pkis:framework:hierarchical-bayesian-models —specializes→ bayesian-inference
+- pkis:framework:hierarchical-bayesian-models —uses→ conjugate-prior
+- pkis:concept:hyperprior —contrasts-with→ conjugate-prior
+- pkis:principle:partial-pooling-shrinkage —uses→ exchangeability
+- pkis:principle:partial-pooling-shrinkage —analogous-to→ regularization
+- pkis:concept:exchangeability —uses→ conditional-independence
+- bayesian-model-checking —uses→ posterior-predictive-check
+- bayesian-model-checking —uses→ sensitivity-analysis
+- bayesian-model-checking —contrasts-with→ bayesian-model-comparison
+- bayesian-model-checking —contrasts-with→ hypothesis-testing
+- posterior-predictive-check —uses→ posterior-predictive-distribution
+- posterior-predictive-check —uses→ test-quantity-discrepancy
+- posterior-predictive-check —uses→ bayesian-p-value
+- posterior-predictive-check —generalizes→ hypothesis-testing
+- posterior-predictive-check —uses→ monte-carlo-estimator
+- posterior-predictive-distribution —prerequisite-of→ posterior-predictive-check
+- bayesian-p-value —generalizes→ confidence-interval
+- bayesian-p-value —contrasts-with→ test-quantity-discrepancy
+- test-quantity-discrepancy —analogous-to→ sufficient-statistics
+- graphical-posterior-predictive-checks —specializes→ posterior-predictive-check
+- graphical-posterior-predictive-checks —uses→ test-quantity-discrepancy
+- posterior-predictive-check —contrasts-with→ cross-validation
+- bayesian-model-checking —applies→ hierarchical-bayesian-models
+- posterior-predictive-check —contrasts-with→ likelihood-principle
+- pkis:concept:waic —specializes→ information-criteria
+- pkis:concept:deviance-information-criterion —specializes→ information-criteria
+- pkis:concept:waic —uses→ expected-log-predictive-density
+- pkis:concept:deviance-information-criterion —uses→ expected-log-predictive-density
+- pkis:concept:waic —uses→ effective-number-of-parameters
+- pkis:concept:deviance-information-criterion —uses→ effective-number-of-parameters
+- pkis:concept:waic —contrasts-with→ deviance-information-criterion
+- pkis:technique:loo-cv —specializes→ cross-validation
+- pkis:technique:loo-cv —uses→ expected-log-predictive-density
+- pkis:technique:loo-cv —uses→ importance-sampling
+- pkis:concept:waic —analogous-to→ loo-cv
+- pkis:concept:expected-log-predictive-density —uses→ scoring-rules
+- pkis:concept:expected-log-predictive-density —uses→ kl-divergence
+- pkis:concept:scoring-rules —applies→ decision-theory-foundations
+- pkis:concept:bayes-factor —uses→ marginal-likelihood
+- pkis:concept:bayes-factor —specializes→ bayesian-model-comparison
+- pkis:principle:continuous-model-expansion —contrasts-with→ bayes-factor
+- pkis:principle:continuous-model-expansion —contrasts-with→ bayesian-model-averaging
+- pkis:principle:continuous-model-expansion —uses→ hierarchical-bayesian-models
+- pkis:concept:effective-number-of-parameters —contrasts-with→ overfitting-and-underfitting
+- pkis:concept:information-criteria —contrasts-with→ marginal-likelihood
+- pkis:concept:ignorability —uses→ missing-data-mechanisms
+- pkis:concept:ignorability —uses→ data-collection-mechanism
+- pkis:concept:missing-data-mechanisms —specializes→ data-collection-mechanism
+- pkis:concept:censoring-and-truncation —instantiates→ missing-data-mechanisms
+- pkis:concept:censoring-and-truncation —uses→ data-collection-mechanism
+- pkis:concept:data-collection-mechanism —contrasts-with→ likelihood-principle
+- pkis:concept:ignorability —contrasts-with→ likelihood-principle
+- pkis:concept:ignorability —uses→ conditional-independence
+- pkis:concept:data-collection-mechanism —uses→ potential-outcomes-framework
+- pkis:concept:finite-population-vs-superpopulation-inference —uses→ data-collection-mechanism
+- pkis:concept:finite-population-vs-superpopulation-inference —applies→ sampling-theory
+- pkis:framework:sampling-theory —uses→ ignorability
+- pkis:framework:sampling-theory —uses→ hierarchical-bayesian-models
+- pkis:concept:propensity-score —specializes→ ignorability
+- pkis:technique:principal-stratification —uses→ potential-outcomes-framework
+- pkis:technique:principal-stratification —generalizes→ instrumental-variables
+- pkis:technique:principal-stratification —uses→ local-average-treatment-effect
+- pkis:technique:principal-stratification —uses→ missing-data-mechanisms
+- pkis:concept:ignorability —applies→ selection-bias
+- pkis:concept:finite-population-vs-superpopulation-inference —uses→ average-treatment-effect
+- bayesian-decision-analysis —uses→ expected-utility-theory
+- bayesian-decision-analysis —uses→ bayesian-inference
+- bayesian-decision-analysis —specializes→ decision-theory-foundations
+- bayesian-decision-analysis —uses→ expected-loss
+- decision-tree-analysis —uses→ bayesian-inference
+- decision-tree-analysis —uses→ bayesian-decision-analysis
+- decision-tree-analysis —applies→ value-of-information
+- value-of-information —prerequisite-of→ decision-tree-analysis
+- institutional-decision-analysis —specializes→ bayesian-decision-analysis
+- institutional-decision-analysis —uses→ hierarchical-bayesian-models
+- pkis:technique:importance-resampling —extends→ importance-sampling
+- pkis:technique:importance-resampling —uses→ importance-sampling
+- pkis:technique:importance-resampling —contrasts-with→ rejection-sampling
+- pkis:technique:importance-sampling —specializes→ numerical-vs-simulation-integration
+- pkis:technique:rejection-sampling —specializes→ numerical-vs-simulation-integration
+- pkis:principle:monte-carlo-estimator —specializes→ numerical-vs-simulation-integration
+- pkis:technique:mcmc —specializes→ numerical-vs-simulation-integration
+- pkis:principle:log-scale-computation —uses→ metropolis-algorithm
+- pkis:technique:metropolis-algorithm —uses→ log-scale-computation
+- pkis:technique:fake-data-simulation —applies→ model-checking
+- pkis:principle:numerical-vs-simulation-integration —prerequisite-of→ mcmc
+- pkis:technique:metropolis-hastings —generalizes→ metropolis-algorithm
+- pkis:technique:metropolis-hastings —specializes→ mcmc
+- pkis:technique:metropolis-hastings —generalizes→ gibbs-sampler
+- pkis:technique:metropolis-hastings —uses→ detailed-balance
+- pkis:technique:metropolis-hastings —applies→ random-walk-behaviour-mcmc
+- pkis:technique:gelman-rubin-diagnostic —applies→ mcmc
+- pkis:technique:gelman-rubin-diagnostic —uses→ effective-sample-size
+- pkis:concept:effective-sample-size —applies→ mcmc
+- pkis:concept:effective-sample-size —uses→ monte-carlo-estimator
+- pkis:concept:burn-in-and-warmup —prerequisite-of→ gelman-rubin-diagnostic
+- pkis:concept:burn-in-and-warmup —applies→ mcmc
+- pkis:technique:gelman-rubin-diagnostic —applies→ gibbs-sampler
+- pkis:technique:gelman-rubin-diagnostic —applies→ metropolis-algorithm
+- no-u-turn-sampler —extends→ hmc
+- no-u-turn-sampler —uses→ detailed-balance
+- no-u-turn-sampler —specializes→ mcmc
+- no-u-turn-sampler —applies→ adaptive-mcmc
+- adaptive-mcmc —uses→ detailed-balance
+- adaptive-mcmc —applies→ metropolis-algorithm
+- adaptive-mcmc —applies→ mcmc
+- hmc —applies→ adaptive-mcmc
+- parameter-expansion —extends→ gibbs-sampler
+- parameter-expansion —uses→ data-augmentation
+- parameter-expansion —contrasts-with→ posterior-geometry-coordinate-systems
+- parameter-expansion —applies→ em-algorithm
+- reversible-jump-mcmc —extends→ metropolis-algorithm
+- reversible-jump-mcmc —specializes→ mcmc
+- reversible-jump-mcmc —applies→ bayesian-model-averaging
+- reversible-jump-mcmc —uses→ mixture-models
+- simulated-tempering —specializes→ mcmc
+- simulated-tempering —contrasts-with→ simulated-annealing
+- simulated-tempering —uses→ metropolis-algorithm
+- simulated-tempering —applies→ mixture-models
+- pkis:technique:expectation-propagation —contrasts-with→ variational-inference
+- pkis:technique:expectation-propagation —uses→ exponential-family
+- pkis:technique:expectation-propagation —uses→ kl-divergence
+- pkis:technique:expectation-propagation —applies→ intractable-posterior
+- pkis:technique:expectation-propagation —contrasts-with→ laplace-approximation
+- pkis:technique:modal-approximation —uses→ laplace-approximation
+- pkis:technique:modal-approximation —uses→ hessian-matrix
+- pkis:technique:modal-approximation —uses→ taylor-series
+- pkis:technique:modal-approximation —uses→ gradient-descent
+- pkis:technique:modal-approximation —instantiates→ maxima-are-atypical
+- pkis:technique:modal-approximation —uses→ importance-sampling
+- pkis:technique:em-algorithm —applies→ modal-approximation
+- pkis:technique:approximate-bayesian-computation —uses→ rejection-sampling
+- pkis:technique:approximate-bayesian-computation —applies→ intractable-posterior
+- pkis:technique:approximate-bayesian-computation —uses→ sufficient-statistics
+- pkis:technique:approximate-bayesian-computation —uses→ importance-sampling
+- pkis:technique:variational-inference —contrasts-with→ expectation-propagation
+- pkis:technique:bayesian-linear-regression —uses→ posterior-predictive-check
+- pkis:technique:bayesian-linear-regression —uses→ noninformative-prior
+- pkis:technique:linear-regression —uses→ posterior-predictive-check
+- pkis:technique:bayesian-linear-regression —specializes→ linear-regression
+- pkis:problem:collinearity —contrasts-with→ noninformative-prior
+- pkis:concept:noninformative-prior —prerequisite-of→ bayesian-linear-regression
+- pkis:technique:posterior-predictive-check —prerequisite-of→ bayesian-linear-regression
+- pkis:technique:ridge-regression —analogous-to→ noninformative-prior
+- pkis:technique:generalized-linear-models —generalizes→ linear-regression
+- pkis:concept:average-treatment-effect —uses→ linear-regression
+- pkis:problem:collinearity —contrasts-with→ linear-regression
+- multilevel-regression —specializes→ hierarchical-bayesian-models
+- multilevel-regression —extends→ linear-regression
+- multilevel-regression —uses→ partial-pooling-shrinkage
+- multilevel-regression —uses→ bayesian-linear-regression
+- varying-intercepts-and-slopes —specializes→ multilevel-regression
+- varying-intercepts-and-slopes —uses→ partial-pooling-shrinkage
+- group-level-predictors —uses→ multilevel-regression
+- partial-pooling-shrinkage —contrasts-with→ fixed-effects-estimator
+- partial-pooling-shrinkage —analogous-to→ ridge-regression
+- bayesian-anova —instantiates→ multilevel-regression
+- bayesian-anova —uses→ finite-vs-superpopulation-variance
+- fixed-vs-random-effects —uses→ finite-vs-superpopulation-variance
+- fixed-vs-random-effects —specializes→ multilevel-regression
+- intraclass-correlation —instantiates→ multilevel-regression
+- non-centered-parameterization —applies→ multilevel-regression
+- non-centered-parameterization —uses→ hmc
+- parameter-expansion-sampling —applies→ multilevel-regression
+- parameter-expansion-sampling —uses→ gibbs-sampler
+- parameter-expansion-sampling —contrasts-with→ non-centered-parameterization
+- pkis:concept:link-function —prerequisite-of→ generalized-linear-models
+- pkis:technique:generalized-linear-models —uses→ link-function
+- pkis:technique:poisson-regression —specializes→ generalized-linear-models
+- pkis:technique:probit-model —specializes→ generalized-linear-models
+- pkis:technique:poisson-regression —uses→ link-function
+- pkis:technique:probit-model —uses→ link-function
+- pkis:technique:poisson-regression —uses→ poisson-process
+- pkis:concept:overdispersion —extends→ poisson-regression
+- pkis:concept:overdispersion —uses→ hierarchical-bayesian-models
+- pkis:technique:probit-model —uses→ latent-variable-discrete-regression
+- pkis:concept:latent-variable-discrete-regression —uses→ gibbs-sampler
+- pkis:concept:latent-variable-discrete-regression —instantiates→ latent-variable-models
+- pkis:technique:probit-model —contrasts-with→ logistic-regression
+- pkis:concept:separation-logistic-regression —applies→ logistic-regression
+- pkis:technique:logistic-regression —uses→ weight-decay-as-prior
+- pkis:technique:loglinear-model —specializes→ poisson-regression
+- pkis:technique:loglinear-model —uses→ conditional-independence
+- pkis:technique:loglinear-model —uses→ conjugate-prior
+- pkis:technique:iterative-proportional-fitting —applies→ loglinear-model
+- pkis:technique:iterative-proportional-fitting —instantiates→ gibbs-sampler
+- pkis:technique:generalized-linear-models —uses→ laplace-approximation
+- pkis:concept:robust-inference —uses→ t-distribution
+- pkis:concept:robust-inference —uses→ mixture-models
+- pkis:concept:robust-inference —contrasts-with→ gaussian-distribution
+- pkis:concept:t-distribution —generalizes→ gaussian-distribution
+- pkis:concept:t-distribution —instantiates→ mixture-models
+- pkis:concept:t-distribution —uses→ em-algorithm
+- pkis:concept:overdispersion —uses→ mixture-models
+- pkis:concept:overdispersion —applies→ generalized-linear-models
+- pkis:concept:negative-binomial-distribution —instantiates→ overdispersion
+- pkis:concept:negative-binomial-distribution —instantiates→ mixture-models
+- pkis:concept:negative-binomial-distribution —uses→ gamma-distribution
+- pkis:concept:beta-binomial-distribution —instantiates→ overdispersion
+- pkis:concept:beta-binomial-distribution —instantiates→ mixture-models
+- pkis:concept:beta-binomial-distribution —uses→ beta-distribution
+- pkis:technique:sensitivity-analysis —uses→ robust-inference
+- pkis:technique:sensitivity-analysis —uses→ importance-sampling
+- pkis:technique:sensitivity-analysis —applies→ gelman-bda3-ch06
+- pkis:technique:robit-regression —uses→ t-distribution
+- pkis:technique:robit-regression —specializes→ robust-inference
+- pkis:technique:robit-regression —uses→ latent-variable-models
+- pkis:technique:robit-regression —contrasts-with→ logistic-regression
+- pkis:technique:multiple-imputation —uses→ data-augmentation
+- pkis:technique:multiple-imputation —uses→ rubins-rules
+- pkis:technique:multiple-imputation —applies→ ignorability
+- pkis:technique:multiple-imputation —uses→ missing-data-mechanisms
+- pkis:result:rubins-rules —analogous-to→ hierarchical-bayesian-models
+- pkis:concept:monotone-missing-data-pattern —uses→ data-augmentation
+- pkis:concept:monotone-missing-data-pattern —uses→ sufficient-statistics
+- pkis:technique:em-algorithm —applies→ missing-data-mechanisms
+- pkis:technique:multiple-imputation —applies→ hierarchical-bayesian-models
+- pkis:technique:multiple-imputation —uses→ gibbs-sampler
+- pkis:technique:em-algorithm —uses→ exponential-family
+- pkis:source:gelman-bda3-ch18 —uses→ multiple-imputation
+- pkis:technique:bayesian-nonlinear-model —generalizes→ generalized-linear-models
+- pkis:technique:bayesian-nonlinear-model —uses→ metropolis-algorithm
+- pkis:technique:bayesian-nonlinear-model —uses→ gibbs-sampler
+- pkis:technique:bayesian-nonlinear-model —uses→ model-checking
+- pkis:technique:bayesian-nonlinear-model —contrasts-with→ gaussian-process-regression
+- pkis:framework:pharmacokinetic-modeling —specializes→ bayesian-nonlinear-model
+- pkis:framework:pharmacokinetic-modeling —uses→ hierarchical-bayesian-models
+- pkis:framework:pharmacokinetic-modeling —analogous-to→ physics-informed-neural-networks
+- pkis:source:gelman-bda3-ch19 —instantiates→ bayesian-nonlinear-model
+- pkis:source:gelman-bda3-ch19 —instantiates→ pharmacokinetic-modeling
+- pkis:framework:basis-function-models —uses→ bayesian-linear-regression
+- pkis:framework:basis-function-models —uses→ spline-approximation
+- pkis:framework:basis-function-models —generalizes→ taylor-series
+- pkis:framework:basis-function-models —contrasts-with→ gaussian-process-regression
+- pkis:framework:basis-function-models —contrasts-with→ curse-of-dimensionality
+- pkis:framework:basis-function-models —uses→ spike-and-slab
+- pkis:framework:basis-function-models —uses→ shrinkage-priors
+- pkis:technique:shrinkage-priors —contrasts-with→ spike-and-slab
+- pkis:technique:shrinkage-priors —generalizes→ lasso
+- pkis:technique:shrinkage-priors —contrasts-with→ ridge-regression
+- pkis:technique:shrinkage-priors —instantiates→ regularization
+- pkis:technique:spline-approximation —instantiates→ basis-function-models
+- pkis:technique:logistic-gaussian-process —uses→ gaussian-process
+- pkis:technique:logistic-gaussian-process —uses→ covariance-function
+- pkis:technique:logistic-gaussian-process —uses→ laplace-approximation
+- pkis:technique:logistic-gaussian-process —contrasts-with→ mixture-models
+- pkis:technique:logistic-gaussian-process —applies→ kernel-density-estimation
+- pkis:technique:gaussian-process-regression —uses→ marginal-likelihood
+- pkis:technique:gaussian-process-regression —uses→ laplace-approximation
+- pkis:technique:gaussian-process-regression —uses→ cross-validation
+- pkis:concept:gaussian-process —contrasts-with→ curse-of-dimensionality
+- pkis:concept:gaussian-process —uses→ generalized-linear-models
+- label-switching —specializes→ identifiability-of-mixtures
+- label-switching —applies→ mixture-models
+- label-switching —applies→ gaussian-mixture-models
+- label-switching —uses→ gibbs-sampler
+- identifiability-of-mixtures —applies→ mixture-models
+- mixture-models —uses→ identifiability-of-mixtures
+- number-of-components-selection —applies→ mixture-models
+- number-of-components-selection —specializes→ model-selection-problem
+- number-of-components-selection —uses→ dirichlet-distribution
+- number-of-components-selection —uses→ bayesian-model-averaging
+- mixture-models —uses→ em-algorithm
+- mixture-models —uses→ gibbs-sampler
+- mixture-models —uses→ dirichlet-distribution
+- mixture-models —applies→ clustering
+- gaussian-mixture-models —uses→ gibbs-sampler
+- gaussian-mixture-models —uses→ dirichlet-distribution
+- gaussian-mixture-models —applies→ number-of-components-selection
+
+## [2026-06-09] edit | edit_node
+- pkis:concept:bayesian-inference: fields=[] sections=['The three-step Bayesian workflow (Gelman)']
+
+## [2026-06-09] edit | edit_node
+- pkis:concept:bayesian-inference: fields=[] sections=['Posterior odds and the likelihood ratio']
+
+## [2026-06-09] edit | edit_node
+- pkis:concept:probability-theory: fields=[] sections=['Foundations: probability as a measure of uncertainty']
+
+## [2026-06-09] edit | edit_node
+- pkis:principle:likelihood-principle: fields=[] sections=["The likelihood principle is conditional on the model (Gelman's caveat)"]
+
+## [2026-06-09] staged | node-stub (framework)
+- Staged: causal-bayesian-network (id: dc4c160b-7d79-48c4-94f0-e0657ee7dd54)
+- Title: Causal Bayesian Network
+- needs_canonical_source: False
+
+## [2026-06-09] committed | framework
+- Committed: causal-bayesian-network → frameworks/causal-bayesian-network.md
+- IRI: pkis:framework:causal-bayesian-network
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: intervention-do-operator (id: 45ea5d3b-7521-462e-a2d6-0bcee4446562)
+- Title: Intervention and the do-Operator
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: intervention-do-operator → concepts/intervention-do-operator.md
+- IRI: pkis:concept:intervention-do-operator
+
+## [2026-06-09] staged | node-stub (framework)
+- Staged: markovian-causal-model (id: 7d0fcc84-0b91-45f0-965b-c6b766f26cec)
+- Title: Markovian Causal Model
+- needs_canonical_source: False
+
+## [2026-06-09] committed | framework
+- Committed: markovian-causal-model → frameworks/markovian-causal-model.md
+- IRI: pkis:framework:markovian-causal-model
+
+## [2026-06-09] staged | node-stub (principle)
+- Staged: ladder-of-causation (id: cb78463e-3f03-4230-844d-3926af7a044f)
+- Title: Ladder of Causation
+- needs_canonical_source: False
+
+## [2026-06-09] committed | principle
+- Committed: ladder-of-causation → principles/ladder-of-causation.md
+- IRI: pkis:principle:ladder-of-causation
+
+## [2026-06-09] staged | node-stub (principle)
+- Staged: causal-vs-statistical-distinction (id: 0ff125d3-432f-4a55-bd71-1697db10d133)
+- Title: Causal vs. Statistical Distinction
+- needs_canonical_source: False
+
+## [2026-06-09] committed | principle
+- Committed: causal-vs-statistical-distinction → principles/causal-vs-statistical-distinction.md
+- IRI: pkis:principle:causal-vs-statistical-distinction
+
+## [2026-06-09] staged | node-stub (result)
+- Staged: graphoid-axioms (id: 81d88492-df34-4733-b2d0-61a2fecf7477)
+- Title: Graphoid Axioms
+- needs_canonical_source: False
+
+## [2026-06-09] committed | result
+- Committed: graphoid-axioms → results/graphoid-axioms.md
+- IRI: pkis:result:graphoid-axioms
+
+## [2026-06-09] staged | node-stub (problem)
+- Staged: causal-discovery (id: 58f38685-87a0-436d-ba45-3bba70e4f31a)
+- Title: Causal Discovery
+- needs_canonical_source: False
+
+## [2026-06-09] committed | problem
+- Committed: causal-discovery → problems/causal-discovery.md
+- IRI: pkis:problem:causal-discovery
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: ic-algorithm (id: aa2d3a80-81e5-44ce-b505-2ea4b172c9e2)
+- Title: IC Algorithm (Inductive Causation)
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: ic-algorithm → techniques/ic-algorithm.md
+- IRI: pkis:technique:ic-algorithm
+
+## [2026-06-09] staged | node-stub (principle)
+- Staged: faithfulness-stability (id: da67fbea-c917-4d73-a563-304d31e0b2bc)
+- Title: Faithfulness (Stability)
+- needs_canonical_source: False
+
+## [2026-06-09] committed | principle
+- Committed: faithfulness-stability → principles/faithfulness-stability.md
+- IRI: pkis:principle:faithfulness-stability
+
+## [2026-06-09] staged | node-stub (principle)
+- Staged: minimal-model-causation (id: 63223bc5-3836-4348-adce-d21610a6812c)
+- Title: Minimal-Model Semantics of Inferred Causation
+- needs_canonical_source: False
+
+## [2026-06-09] committed | principle
+- Committed: minimal-model-causation → principles/minimal-model-causation.md
+- IRI: pkis:principle:minimal-model-causation
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: latent-structure-projection (id: 288aad5b-eb64-43ef-97c0-e20171d6c7f5)
+- Title: Latent Structure Projection
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: latent-structure-projection → concepts/latent-structure-projection.md
+- IRI: pkis:concept:latent-structure-projection
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: intransitive-triplet (id: 972870fb-869c-457d-9bed-b390853c3dd0)
+- Title: Intransitive Triplet (Virtual Control)
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: intransitive-triplet → concepts/intransitive-triplet.md
+- IRI: pkis:concept:intransitive-triplet
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: statistical-time (id: 281f7637-7af3-4ff9-a3de-dfa87916aa4b)
+- Title: Statistical Time
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: statistical-time → concepts/statistical-time.md
+- IRI: pkis:concept:statistical-time
+
+## [2026-06-09] staged | node-stub (principle)
+- Staged: causal-markov-condition (id: 6053c3c3-3fd6-459e-984e-b675bb2eca28)
+- Title: Markov Condition (Causal Markov Assumption)
+- needs_canonical_source: False
+
+## [2026-06-09] committed | principle
+- Committed: causal-markov-condition → principles/causal-markov-condition.md
+- IRI: pkis:principle:causal-markov-condition
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: intervention-and-the-do-operator (id: 3f645187-4c08-4c91-8299-9766c1666c84)
+- Title: Intervention and the do(·) Operator
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: intervention-and-the-do-operator → concepts/intervention-and-the-do-operator.md
+- IRI: pkis:concept:intervention-and-the-do-operator
+
+## [2026-06-09] staged | node-stub (result)
+- Staged: truncated-factorization-g-formula (id: d3c97d2f-bfa0-401b-a572-49e9d1750457)
+- Title: Truncated Factorization (g-Formula)
+- needs_canonical_source: False
+
+## [2026-06-09] committed | result
+- Committed: truncated-factorization-g-formula → results/truncated-factorization-g-formula.md
+- IRI: pkis:result:truncated-factorization-g-formula
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: identifiability-of-causal-effects (id: e1788758-a25d-45f9-8bb9-72a529ecac0e)
+- Title: Identifiability of Causal Effects
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: identifiability-of-causal-effects → concepts/identifiability-of-causal-effects.md
+- IRI: pkis:concept:identifiability-of-causal-effects
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: back-door-criterion (id: f2245152-ec72-451c-bb93-6a0d012d9255)
+- Title: Back-Door Criterion
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: back-door-criterion → concepts/back-door-criterion.md
+- IRI: pkis:concept:back-door-criterion
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: front-door-criterion (id: 63031f2f-efc7-402d-9e0d-a07cdcffc9ad)
+- Title: Front-Door Criterion
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: front-door-criterion → concepts/front-door-criterion.md
+- IRI: pkis:concept:front-door-criterion
+
+## [2026-06-09] staged | node-stub (result)
+- Staged: adjustment-formula-standardization (id: c35f3d1c-7dad-42b8-8a28-19cd3cf611f7)
+- Title: Adjustment Formula (Standardization)
+- needs_canonical_source: False
+
+## [2026-06-09] committed | result
+- Committed: adjustment-formula-standardization → results/adjustment-formula-standardization.md
+- IRI: pkis:result:adjustment-formula-standardization
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: direct-and-indirect-effects (id: 5851f1c6-731a-4f6d-8ad7-ed1c669c6df7)
+- Title: Direct and Indirect Effects
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: direct-and-indirect-effects → concepts/direct-and-indirect-effects.md
+- IRI: pkis:concept:direct-and-indirect-effects
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: controlled-direct-effect (id: 828ca809-1515-4b44-84ff-8d13b07b7dde)
+- Title: Controlled Direct Effect
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: controlled-direct-effect → concepts/controlled-direct-effect.md
+- IRI: pkis:concept:controlled-direct-effect
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: natural-direct-indirect-effects (id: b8e8e7e9-0a6c-4505-a815-a8a34edd248c)
+- Title: Natural Direct and Indirect Effects
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: natural-direct-indirect-effects → concepts/natural-direct-indirect-effects.md
+- IRI: pkis:concept:natural-direct-indirect-effects
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: conditional-action-policy (id: 66ffc80e-e5a2-4a1c-9e60-87b30a10dcaa)
+- Title: Conditional and Stochastic Action Policies
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: conditional-action-policy → techniques/conditional-action-policy.md
+- IRI: pkis:technique:conditional-action-policy
+
+## [2026-06-09] staged | node-stub (problem)
+- Staged: plan-identification (id: 2f9b3aa6-a1e1-4a68-8f92-d10bb439e698)
+- Title: Plan Identification (Sequential Back-Door)
+- needs_canonical_source: False
+
+## [2026-06-09] committed | problem
+- Committed: plan-identification → problems/plan-identification.md
+- IRI: pkis:problem:plan-identification
+
+## [2026-06-09] staged | node-stub (principle)
+- Staged: causal-vs-evidential-decision-theory (id: ae2cb56e-be64-4754-96a0-49338329afb5)
+- Title: Causal vs. Evidential Decision Theory
+- needs_canonical_source: False
+
+## [2026-06-09] committed | principle
+- Committed: causal-vs-evidential-decision-theory → principles/causal-vs-evidential-decision-theory.md
+- IRI: pkis:principle:causal-vs-evidential-decision-theory
+
+## [2026-06-09] staged | node-stub (framework)
+- Staged: structural-equation-models (id: 7c587a2c-f88b-43f5-bc07-4a188da98c5d)
+- Title: Structural Equation Models (Causal Reading)
+- needs_canonical_source: False
+
+## [2026-06-09] committed | framework
+- Committed: structural-equation-models → frameworks/structural-equation-models.md
+- IRI: pkis:framework:structural-equation-models
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: path-analysis (id: 41c8ce2d-decc-4e37-870d-75bc424e8b39)
+- Title: Path Analysis (Method of Path Coefficients)
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: path-analysis → techniques/path-analysis.md
+- IRI: pkis:technique:path-analysis
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: path-coefficient (id: ed4331a0-7274-4b6f-a73d-a0afce88d74f)
+- Title: Path Coefficient
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: path-coefficient → concepts/path-coefficient.md
+- IRI: pkis:concept:path-coefficient
+
+## [2026-06-09] staged | node-stub (result)
+- Staged: single-door-criterion (id: 69abd482-45bc-4913-87fa-ab015072bc33)
+- Title: Single-Door Criterion for Direct Effects
+- needs_canonical_source: False
+
+## [2026-06-09] committed | result
+- Committed: single-door-criterion → results/single-door-criterion.md
+- IRI: pkis:result:single-door-criterion
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: exogeneity (id: d9b64420-6b19-468a-8a82-af11539359be)
+- Title: Exogeneity
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: exogeneity → concepts/exogeneity.md
+- IRI: pkis:concept:exogeneity
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: total-vs-direct-effect (id: f5eb30a1-253e-4c2d-a3ef-73bc00b6df4f)
+- Title: Total vs. Direct vs. Indirect Effects
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: total-vs-direct-effect → concepts/total-vs-direct-effect.md
+- IRI: pkis:concept:total-vs-direct-effect
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: observational-equivalence-sem (id: ce84d2fa-3e46-465b-b7c5-a513b08c581e)
+- Title: Observational (Covariance) Equivalence of Structural Models
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: observational-equivalence-sem → concepts/observational-equivalence-sem.md
+- IRI: pkis:concept:observational-equivalence-sem
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: simpsons-paradox (id: d8b9ab23-a07b-44a3-a040-f28d82539668)
+- Title: Simpson's Paradox
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: simpsons-paradox → concepts/simpsons-paradox.md
+- IRI: pkis:concept:simpsons-paradox
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: collapsibility (id: c3d9c26b-0cd7-4a93-8ead-7fe2cfceaf16)
+- Title: Collapsibility
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: collapsibility → concepts/collapsibility.md
+- IRI: pkis:concept:collapsibility
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: stable-no-confounding (id: 7de65645-5a11-4647-9c7c-4a80b522d21b)
+- Title: Stable vs. Incidental Unbiasedness
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: stable-no-confounding → concepts/stable-no-confounding.md
+- IRI: pkis:concept:stable-no-confounding
+
+## [2026-06-09] staged | node-stub (result)
+- Staged: sure-thing-principle (id: a82ed80a-195f-4c9b-9967-79b38646d680)
+- Title: Sure-Thing Principle
+- needs_canonical_source: False
+
+## [2026-06-09] committed | result
+- Committed: sure-thing-principle → results/sure-thing-principle.md
+- IRI: pkis:result:sure-thing-principle
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: abduction-action-prediction (id: 7515dff5-ce4b-4fe3-ba3e-52f839a63bc0)
+- Title: Abduction–Action–Prediction
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: abduction-action-prediction → techniques/abduction-action-prediction.md
+- IRI: pkis:technique:abduction-action-prediction
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: twin-network-method (id: 19fd521f-cbad-4871-90ee-ab6e2e9bc5dd)
+- Title: Twin-Network Method
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: twin-network-method → techniques/twin-network-method.md
+- IRI: pkis:technique:twin-network-method
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: causal-submodel (id: 2f902d71-469f-4139-8624-07627a9b6966)
+- Title: Causal Submodel
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: causal-submodel → concepts/causal-submodel.md
+- IRI: pkis:concept:causal-submodel
+
+## [2026-06-09] staged | node-stub (result)
+- Staged: counterfactual-axioms (id: 70574942-c20f-4d5b-af07-5b4e2737a4e7)
+- Title: Counterfactual Axioms: Composition, Effectiveness, Reversibility
+- needs_canonical_source: False
+
+## [2026-06-09] committed | result
+- Committed: counterfactual-axioms → results/counterfactual-axioms.md
+- IRI: pkis:result:counterfactual-axioms
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: partial-identification-bounds (id: c7e1f523-2844-44a4-924a-8ea225b822c4)
+- Title: Partial Identification and Bounds
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: partial-identification-bounds → concepts/partial-identification-bounds.md
+- IRI: pkis:concept:partial-identification-bounds
+
+## [2026-06-09] staged | node-stub (problem)
+- Staged: noncompliance-and-imperfect-experiments (id: b25eaa1f-c80a-471a-9e79-7b7cdf38dab1)
+- Title: Noncompliance and Imperfect Experiments
+- needs_canonical_source: False
+
+## [2026-06-09] committed | problem
+- Committed: noncompliance-and-imperfect-experiments → problems/noncompliance-and-imperfect-experiments.md
+- IRI: pkis:problem:noncompliance-and-imperfect-experiments
+
+## [2026-06-09] staged | node-stub (result)
+- Staged: instrumental-inequality (id: 41f733b0-a6ef-4d4f-b8ea-4e41645d7b3a)
+- Title: The Instrumental Inequality
+- needs_canonical_source: False
+
+## [2026-06-09] committed | result
+- Committed: instrumental-inequality → results/instrumental-inequality.md
+- IRI: pkis:result:instrumental-inequality
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: canonical-partition (id: 6a9ba9f8-7e19-4884-81ac-50217efc9e19)
+- Title: Canonical Partition (Response Variables)
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: canonical-partition → concepts/canonical-partition.md
+- IRI: pkis:concept:canonical-partition
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: probability-of-causation (id: 9de59288-70e2-45bd-8198-34aa33f8fef0)
+- Title: Probability of Causation
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: probability-of-causation → concepts/probability-of-causation.md
+- IRI: pkis:concept:probability-of-causation
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: probability-of-necessity (id: 33317b05-e65c-47c2-a1df-723b8fd3a06a)
+- Title: Probability of Necessity (PN)
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: probability-of-necessity → concepts/probability-of-necessity.md
+- IRI: pkis:concept:probability-of-necessity
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: probability-of-sufficiency (id: d8efc887-11de-4f65-8346-7456dd213c33)
+- Title: Probability of Sufficiency (PS)
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: probability-of-sufficiency → concepts/probability-of-sufficiency.md
+- IRI: pkis:concept:probability-of-sufficiency
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: probability-of-necessity-and-sufficiency (id: 6363745c-0be2-41a0-88a0-037d300043ee)
+- Title: Probability of Necessity and Sufficiency (PNS)
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: probability-of-necessity-and-sufficiency → concepts/probability-of-necessity-and-sufficiency.md
+- IRI: pkis:concept:probability-of-necessity-and-sufficiency
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: attribution-and-but-for-causation (id: a4c7438a-a9c1-4668-ba78-eaa580d89534)
+- Title: Attribution and But-For Causation
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: attribution-and-but-for-causation → concepts/attribution-and-but-for-causation.md
+- IRI: pkis:concept:attribution-and-but-for-causation
+
+## [2026-06-09] staged | node-stub (principle)
+- Staged: monotonicity-no-prevention (id: 3cd694d0-955c-4c76-94f9-2d35d5b72ca5)
+- Title: Monotonicity (No-Prevention Assumption)
+- needs_canonical_source: False
+
+## [2026-06-09] committed | principle
+- Committed: monotonicity-no-prevention → principles/monotonicity-no-prevention.md
+- IRI: pkis:principle:monotonicity-no-prevention
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: actual-causation (id: 66ceaea0-ead0-4b0b-a27d-c9448cb9d1ce)
+- Title: Actual Causation
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: actual-causation → concepts/actual-causation.md
+- IRI: pkis:concept:actual-causation
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: sustenance-causal (id: 7bbc819b-c79b-4b56-9b2c-675dc0eded03)
+- Title: Sustenance (Causal)
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: sustenance-causal → concepts/sustenance-causal.md
+- IRI: pkis:concept:sustenance-causal
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: causal-beam (id: 3ed323fa-9a68-46a5-845f-02f0fb1e7fb7)
+- Title: Causal Beam
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: causal-beam → techniques/causal-beam.md
+- IRI: pkis:technique:causal-beam
+
+## [2026-06-09] staged | node-stub (principle)
+- Staged: but-for-vs-actual-cause (id: cc01126e-107f-4726-a425-8c1faaeb35fb)
+- Title: But-For Test vs. Actual Cause
+- needs_canonical_source: False
+
+## [2026-06-09] committed | principle
+- Committed: but-for-vs-actual-cause → principles/but-for-vs-actual-cause.md
+- IRI: pkis:principle:but-for-vs-actual-cause
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: structural-contingency (id: 92690ebe-199e-4aa2-b2a4-2f15afb2ef5f)
+- Title: Structural Contingency
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: structural-contingency → concepts/structural-contingency.md
+- IRI: pkis:concept:structural-contingency
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: inus-condition (id: a1e1e23f-0172-4b45-af04-c6c767672c79)
+- Title: INUS Condition
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: inus-condition → concepts/inus-condition.md
+- IRI: pkis:concept:inus-condition
+
+## [2026-06-09] staged | node-stub (principle)
+- Staged: causal-statistical-distinction (id: 66fdca44-5720-4a4f-9ca4-096705ca7d81)
+- Title: Causal-Statistical Distinction
+- needs_canonical_source: False
+
+## [2026-06-09] committed | principle
+- Committed: causal-statistical-distinction → principles/causal-statistical-distinction.md
+- IRI: pkis:principle:causal-statistical-distinction
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: strong-ignorability (id: b06c2e51-1851-4b5b-aaf1-7568358f6e81)
+- Title: Strong Ignorability
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: strong-ignorability → concepts/strong-ignorability.md
+- IRI: pkis:concept:strong-ignorability
+
+## [2026-06-09] staged | node-stub (principle)
+- Staged: causal-mechanism-autonomy (id: 58cba753-8034-4373-ac4b-e20949da816f)
+- Title: Autonomy of Causal Mechanisms
+- needs_canonical_source: False
+
+## [2026-06-09] committed | principle
+- Committed: causal-mechanism-autonomy → principles/causal-mechanism-autonomy.md
+- IRI: pkis:principle:causal-mechanism-autonomy

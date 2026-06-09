@@ -31,6 +31,8 @@ sources:
 - '[[kroese-statistical-modeling]]'
 - '[[capretto-bambi-2022]]'
 - '[[kurz-hybrid-modeling-2022]]'
+specializes:
+- numerical-vs-simulation-integration
 tags:
 - mcmc
 - markov-chains
@@ -48,6 +50,7 @@ A class of algorithms that construct a Markov chain whose stationary distributio
 Classification note: assigned as technique but also_type framework because MCMC is both a computational procedure and a family of sub-techniques organized by the same principle.
 
 ## Connections
+- [[numerical-vs-simulation-integration]] — specializes: MCMC is a simulation method that scales integration to high dimensions.
 - [[posterior-geometry-coordinate-systems]] — uses: Non-centered parameterization flattens funnel geometry for MCMC/HMC
 - [[gibbs-sampler]] — generalizes: Gibbs is MCMC restricted to full conditional distributions; a special case of Hastings-Metropolis
 - [[metropolis-algorithm]] — generalizes: the Hastings-Metropolis acceptance rule is the canonical MCMC mechanism

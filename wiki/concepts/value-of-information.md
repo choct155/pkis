@@ -19,6 +19,8 @@ id: pkis:concept:value-of-information
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- decision-tree-analysis
 related_concepts: []
 sources:
 - mackay-itila-ch36
@@ -53,6 +55,7 @@ Value of information formalises *exploration vs. exploitation*: prospecting, A/B
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[decision-tree-analysis]] — prerequisite-of
 - [[bayesian-inference]] — uses: The value of an experiment is computed from the posterior it would induce, averaged over possible data outcomes.
 - [[decision-theory-foundations]] — specializes: VoI applies the expected-utility framework to a sequential problem: act now to gather data, then act again.
 [To be populated during integration]

@@ -31,6 +31,8 @@ tags:
 - prediction
 title: Laplace's Rule of Succession
 understanding: 0
+uses:
+- beta-distribution
 ---
 
 ## Definition
@@ -48,6 +50,7 @@ The predictive mean $\frac{F_a+1}{F_a+F_b+2}$ differs from the posterior mode (t
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[beta-distribution]] — uses: Laplace's rule (y+1)/(n+2) is the posterior mean of a Beta(y+1, n-y+1) from a uniform prior.
 - [[maximum-likelihood-estimation]] — contrasts-with: predictive mean differs from MLE; averages over vs. maximizes the posterior
 - [[bayesian-inference]] — instantiates: posterior-predictive integration is a worked instance of full Bayesian inference
 [To be populated during integration]

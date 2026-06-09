@@ -3,6 +3,7 @@ aliases: []
 also_type: []
 applies:
 - random-walk-behaviour-mcmc
+- adaptive-mcmc
 component_scores:
   alternatives: 3
   conditions: 2
@@ -94,6 +95,7 @@ When the leapfrog integrator encounters high posterior curvature (funnel necks i
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[adaptive-mcmc]] — applies: HMC tuning (M, epsilon, L) must be confined to a warm-up phase to avoid breaking convergence
 - [[random-walk-behaviour-mcmc]] — applies: HMC replaces sqrt-t diffusion with linear-in-time directed motion via momentum
 - [[typical-set]] — uses: HMC is engineered to move along the typical set rather than toward the mode
 - [[gibbs-sampler]] — contrasts-with: HMC moves along the posterior surface via gradients; Gibbs updates one coordinate at a time

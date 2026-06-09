@@ -23,6 +23,8 @@ domain:
 generalizes:
 - probability-distribution-relationships
 id: pkis:concept:gamma-distribution
+instantiates:
+- conjugate-prior
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
@@ -58,6 +60,7 @@ The gamma is the workhorse prior for any inferred positive quantity: the varianc
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[conjugate-prior]] — instantiates: The gamma is the conjugate prior for Poisson and exponential rate parameters.
 - [[gaussian-distribution]] — contrasts-with: Gamma is the positive-support analogue of the Gaussian, asymmetric and with a heavier right tail.
 - [[poisson-process]] — uses: The m-th arrival time of a Poisson process is gamma-distributed with shape m.
 - [[conjugate-prior]] — applies: Gamma (and its inverse) is conjugate for a Poisson rate and for Gaussian precision/variance.

@@ -10,6 +10,8 @@ component_scores:
   implementation: 3
   operational_mechanism: 4
   principled_mechanism: 4
+contrasts-with:
+- expectation-propagation
 coverage: 4
 date_created: 2026-05-20
 date_updated: '2026-06-07'
@@ -46,6 +48,7 @@ A family of algorithms for approximating intractable posterior distributions in 
 Classification note: assigned as technique (it is a procedure with inputs — model, data, variational family — and output — approximate posterior) but also qualifies as framework because it organizes a large ecosystem of sub-techniques (mean-field, amortized, SVI, BBVI, normalizing flows) under a shared objective.
 
 ## Connections
+- [[expectation-propagation]] — contrasts-with: VB and EP are the two deterministic iterative posterior approximations in BDA3 Ch.13, differing in optimization criterion (reverse vs local forward KL) and factorization (per-parameter vs per-datum).
 
 - [[em-algorithm]] — extends: EM is the special case of VI where the E-step posterior is computed exactly; VI generalizes this to intractable models by optimizing an approximate E-step
 - [[gaussian-mixture-models]] — uses: the Gaussian mixture is the canonical pedagogical example for VI (CAVI derivation)

@@ -19,6 +19,8 @@ sources:
 - '[[tanner-tools-statistical-inference]]'
 - '[[kroese-statistical-modeling]]'
 - '[[lange-applied-probability]]'
+specializes:
+- numerical-vs-simulation-integration
 tags:
 - monte-carlo
 - posterior-inference
@@ -51,3 +53,6 @@ The estimator's reliability is hard to assess: if $Q$ is small where $|\varphi P
 
 ### High-dimensional weight catastrophe
 In $N$ dimensions the weights vary enormously even when $Q$ is reasonable. For a Gaussian $Q$ targeting a uniform sphere, the largest of 100 weights typically exceeds the median by $\exp(\sqrt{2N})$ — about $10^{19}$ at $N=1000$. The estimate is then dominated by a handful of samples, so importance sampling is impractical in high dimensions unless $Q$ is a near-perfect match to $P$.
+
+## Connections
+- [[numerical-vs-simulation-integration]] — specializes: Importance sampling is a simulation-based integration method.

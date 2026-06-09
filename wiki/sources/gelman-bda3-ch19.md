@@ -6,6 +6,9 @@ domain:
 - bayesian-stats
 - statistical-learning
 id: pkis:source:gelman-bda3-ch19
+instantiates:
+- bayesian-nonlinear-model
+- pharmacokinetic-modeling
 maturity: stub
 parent_book: pkis:source:gelman-bda3
 status: unread
@@ -22,3 +25,7 @@ year: 2013
 
 ## Reading Path
 - Parent: [[gelman-bda3]]
+
+## Connections
+- [[pharmacokinetic-modeling]] — instantiates: the PERC toxicokinetic example
+- [[bayesian-nonlinear-model]] — instantiates: chapter develops the topic via serial-dilution and PK examples

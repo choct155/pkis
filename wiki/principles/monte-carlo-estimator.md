@@ -22,6 +22,8 @@ prerequisite-of:
 related_concepts: []
 sources:
 - mackay-itila-ch29
+specializes:
+- numerical-vs-simulation-integration
 tags:
 - monte-carlo
 - expectation
@@ -50,6 +52,7 @@ This is the foundational promise of Monte Carlo: integration over thousand-dimen
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[numerical-vs-simulation-integration]] — specializes: The Monte Carlo sample-average estimator is the canonical simulation integration method.
 - [[mcmc]] — prerequisite-of: MCMC supplies the (correlated) samples plugged into the Monte Carlo estimator.
 - [[importance-sampling]] — prerequisite-of: Importance sampling is a reweighted variant of the basic Monte Carlo estimator.
 [To be populated during integration]

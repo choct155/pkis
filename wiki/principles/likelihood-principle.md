@@ -10,7 +10,7 @@ contrasts-with:
 - hypothesis-testing
 coverage: 1
 date_created: '2026-06-08'
-date_updated: '2026-06-08'
+date_updated: '2026-06-09'
 domain:
 - bayesian-stats
 id: pkis:principle:likelihood-principle
@@ -55,3 +55,6 @@ The likelihood principle falls directly out of Bayes' theorem (the posterior dep
 
 ## Stopping rules are irrelevant
 MacKay's coin-tossing scenario (Ch. 37) is the canonical demonstration. Dr. Bloggs observes 3 $b$s in 12 tosses. A frequentist who treats $n=12$ as fixed reports $p\approx0.07$ (not significant); one who learns Bloggs intended to stop at the third $b$ (so $n$ is random) reports $p\approx0.03$ (significant) — from *identical data*. The likelihood principle resolves this cleanly: under either stopping rule the likelihood as a function of the bias $p_a$ is proportional to $p_a^{9}(1-p_a)^{3}$ (the stopping rule contributes only a data-independent combinatorial factor), so the Bayesian posterior — and what we have learned about $p_a$ — is the same. Onlookers spying on the tosses, or a janitor revealing the coin was later destroyed, cannot change the inference; only the observed sequence can. The dependence of $p$-values on the stopping rule is, for MacKay, a decisive reason to reject them.
+
+## The likelihood principle is conditional on the model (Gelman's caveat)
+BDA3 Ch. 1 endorses the likelihood principle — the data $y$ affect posterior inference only through $p(y\mid\theta)$ viewed as a function of $\theta$ — but adds an important practical qualification: the principle is reasonable *only within the framework of the model or family of models adopted*. In practice one can rarely be confident the chosen model is correct, so sampling distributions (imagining repeated realizations of the data) still play a legitimate role in *checking* model assumptions, even though they do not enter the within-model posterior. Gelman's stance is that the applied Bayesian is one who is willing to apply Bayes' rule under a variety of possible models; the likelihood principle governs inference given a model, while model checking and expansion sit outside it.
