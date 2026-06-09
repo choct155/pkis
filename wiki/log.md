@@ -7237,3 +7237,12 @@
 ## [2026-06-09] committed | result
 - Committed: walds-identity → results/walds-identity.md
 - IRI: pkis:result:walds-identity
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: transition-matrix (id: 81610a90-91cf-442a-b25e-53a5bf99f0c8)
+- Title: Transition Matrix (Stochastic Matrix)
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: transition-matrix → concepts/transition-matrix.md
+- IRI: pkis:concept:transition-matrix
