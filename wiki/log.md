@@ -5647,3 +5647,12 @@
 ## [2026-06-09] committed | technique
 - Committed: principal-stratification → techniques/principal-stratification.md
 - IRI: pkis:technique:principal-stratification
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: bayesian-decision-analysis (id: 88cebf4c-c4dc-4bcc-8d62-8442e68f4a84)
+- Title: Bayesian Decision Analysis
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: bayesian-decision-analysis → techniques/bayesian-decision-analysis.md
+- IRI: pkis:technique:bayesian-decision-analysis

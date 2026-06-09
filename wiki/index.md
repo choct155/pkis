@@ -570,6 +570,7 @@
 - [[market-vs-hierarchy]] — Coase/Williamson: transactions governed by price signals (markets) vs. managerial direction (firms) (corporate-finance) (2026-05-20)
 
 ## Techniques
+- [[bayesian-decision-analysis]] — Bayesian Decision Analysis (bayesian-stats) (2026-06-09)
 - [[principal-stratification]] — Principal Stratification (causal-analysis, bayesian-stats) (2026-06-09)
 - [[loo-cv]] — Bayesian Leave-One-Out Cross-Validation (LOO-CV) (bayesian-stats, statistical-learning) (2026-06-09)
 - [[sensitivity-analysis]] — Sensitivity Analysis (Bayesian) (bayesian-stats, statistical-learning) (2026-06-09)
