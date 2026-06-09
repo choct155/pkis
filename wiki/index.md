@@ -529,6 +529,7 @@
 - [[market-vs-hierarchy]] — Coase/Williamson: transactions governed by price signals (markets) vs. managerial direction (firms) (corporate-finance) (2026-05-20)
 
 ## Techniques
+- [[semi-gradient-td]] — Semi-gradient TD Methods (reinforcement-learning, optimization) (2026-06-09)
 - [[gradient-monte-carlo]] — Gradient Monte Carlo for Value Prediction (reinforcement-learning, optimization) (2026-06-09)
 - [[monte-carlo-tree-search]] — Monte Carlo Tree Search (MCTS) (optimization, deep-learning) (2026-06-09)
 - [[rollout-algorithms]] — Rollout Algorithms (optimization, deep-learning) (2026-06-09)

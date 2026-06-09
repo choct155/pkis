@@ -4576,3 +4576,12 @@
 ## [2026-06-09] committed | technique
 - Committed: gradient-monte-carlo → techniques/gradient-monte-carlo.md
 - IRI: pkis:technique:gradient-monte-carlo
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: semi-gradient-td (id: 07772ecd-8518-49a2-929c-ed766eddec8b)
+- Title: Semi-gradient TD Methods
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: semi-gradient-td → techniques/semi-gradient-td.md
+- IRI: pkis:technique:semi-gradient-td
