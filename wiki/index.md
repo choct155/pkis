@@ -520,6 +520,7 @@
 - [[market-vs-hierarchy]] — Coase/Williamson: transactions governed by price signals (markets) vs. managerial direction (firms) (corporate-finance) (2026-05-20)
 
 ## Techniques
+- [[q-learning]] — Q-learning (reinforcement-learning, optimization) (2026-06-09)
 - [[sarsa]] — Sarsa (reinforcement-learning, optimization) (2026-06-09)
 - [[off-policy-importance-sampling-rl]] — Off-policy Importance Sampling for Returns (RL) (optimization, deep-learning) (2026-06-09)
 - [[monte-carlo-control]] — Monte Carlo Control (RL) (optimization, deep-learning) (2026-06-09)

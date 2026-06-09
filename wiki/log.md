@@ -4333,3 +4333,12 @@
 ## [2026-06-09] committed | technique
 - Committed: sarsa → techniques/sarsa.md
 - IRI: pkis:technique:sarsa
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: q-learning (id: bcb85aed-ab0d-4564-9551-729bfbe7a413)
+- Title: Q-learning
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: q-learning → techniques/q-learning.md
+- IRI: pkis:technique:q-learning
