@@ -5341,3 +5341,12 @@
 ## [2026-06-09] committed | concept
 - Committed: noninformative-prior → concepts/noninformative-prior.md
 - IRI: pkis:concept:noninformative-prior
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: jeffreys-prior (id: fb2deb2a-254a-4289-bb28-ceeabe4a06dc)
+- Title: Jeffreys' Prior
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: jeffreys-prior → concepts/jeffreys-prior.md
+- IRI: pkis:concept:jeffreys-prior
