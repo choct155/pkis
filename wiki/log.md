@@ -10174,3 +10174,12 @@
 ## [2026-06-09] committed | technique
 - Committed: part-of-speech-tagging → techniques/part-of-speech-tagging.md
 - IRI: pkis:technique:part-of-speech-tagging
+
+## [2026-06-09] staged | node-stub (framework)
+- Staged: probabilistic-context-free-grammar (id: f3a89bc3-4963-4ba0-9e6a-0ba18adaa3d1)
+- Title: Probabilistic Context-Free Grammar
+- needs_canonical_source: False
+
+## [2026-06-09] committed | framework
+- Committed: probabilistic-context-free-grammar → frameworks/probabilistic-context-free-grammar.md
+- IRI: pkis:framework:probabilistic-context-free-grammar
