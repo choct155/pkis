@@ -76,9 +76,10 @@ export async function getReadingGraph(
 // ── Index (browse all nodes of a type) ────────────────────────────────────
 export async function getIndex(
   node_type?: string,
-  domain?: string
+  domain?: string,
+  cluster?: string
 ): Promise<IndexNode[]> {
-  return post<IndexNode[]>('/index', { node_type, domain });
+  return post<IndexNode[]>('/index', { node_type, domain, cluster });
 }
 
 // ── Reader (read+listen) ──────────────────────────────────────────────────

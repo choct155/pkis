@@ -1,13 +1,5 @@
 import type { View } from '../types'
-
-const NAV_ITEMS: { view: View; icon: string; label: string }[] = [
-  { view: 'browse',   icon: '◈', label: 'browse' },
-  { view: 'clusters', icon: '◎', label: 'clusters' },
-  { view: 'priority', icon: '▲', label: 'priority' },
-  { view: 'graph',    icon: '⬡', label: 'graph' },
-  { view: 'staged',   icon: '⊞', label: 'staged' },
-  { view: 'explainers', icon: '▦', label: 'explain' },
-]
+import { NAV_ITEMS } from '../lib/nav'
 
 interface Props {
   active: View

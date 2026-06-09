@@ -1,8 +1,11 @@
-import { useEffect, useRef, useState } from 'react'
+import { lazy, Suspense, useEffect, useRef, useState } from 'react'
 import { getReader, saveReaderAnnotation, buildReader, getReaderStatus } from '../lib/api'
 import { renderMarkdown } from '../lib/markdown'
 import { renderMath } from '../lib/katex'
 import type { ReaderPayload } from '../types'
+
+// pdf.js is heavy; only pull it in when a reader with an original PDF is opened.
+const PdfPane = lazy(() => import('../components/PdfPane'))
 
 interface Props {
   slug: string
@@ -26,6 +29,7 @@ export default function ReaderView({ slug, onClose }: Props) {
   const [sel, setSel] = useState<{ section_id: string; text: string } | null>(null)
   const [pdfUrl, setPdfUrl] = useState('')
   const [pdfPage, setPdfPage] = useState(1)
+  const [numPages, setNumPages] = useState(0)
   const [mode, setMode] = useState<'read' | 'pdf'>('read')   // narrow-screen view toggle
   const audioRef = useRef<HTMLAudioElement>(null)
   const bodyRef = useRef<HTMLDivElement>(null)
@@ -258,15 +262,19 @@ export default function ReaderView({ slug, onClose }: Props) {
 
         {hasPdf && (
           <div className="reader-pane-pdf">
-            <iframe
-              key={pdfPage}
-              className="reader-pdf-frame"
-              src={`${pdfUrl}#page=${pdfPage}&view=FitH`}
-              title="original document"
-            />
+            <Suspense fallback={<div className="reader-pdf-loading"><div className="loading-spinner" /> loading pdf…</div>}>
+              <PdfPane
+                url={pdfUrl}
+                page={pdfPage}
+                onLoaded={setNumPages}
+                onSelectText={(text) => { if (curSection) setSel({ section_id: curSection.id, text }) }}
+              />
+            </Suspense>
             <div className="reader-pdf-bar">
-              <span className="reader-pdf-info">{curSection ? curSection.title : ''} · p{pdfPage}</span>
-              <span className="reader-pdf-note" onClick={noteOnCurrentSection}>⚑ note this section</span>
+              <button className="reader-pdf-nav" onClick={() => setPdfPage((p) => Math.max(1, p - 1))} disabled={pdfPage <= 1}>‹</button>
+              <span className="reader-pdf-info">{curSection ? curSection.title : ''} · p{pdfPage}{numPages ? `/${numPages}` : ''}</span>
+              <button className="reader-pdf-nav" onClick={() => setPdfPage((p) => (numPages ? Math.min(numPages, p + 1) : p + 1))} disabled={!!numPages && pdfPage >= numPages}>›</button>
+              <span className="reader-pdf-note" onClick={noteOnCurrentSection}>⚑ note section</span>
             </div>
           </div>
         )}

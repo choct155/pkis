@@ -8,6 +8,7 @@ import NodeCard from '../components/NodeCard'
 interface Props {
   typeFilter: NodeType | 'all'
   domainFilter: string
+  clusterFilter: string
   onSelectNode: (iri: string) => void
   onNavigate: (v: View) => void
 }
@@ -23,7 +24,7 @@ function asCard(n: IndexNode): SearchResult {
   }
 }
 
-export default function BrowseView({ typeFilter, domainFilter, onSelectNode, onNavigate }: Props) {
+export default function BrowseView({ typeFilter, domainFilter, clusterFilter, onSelectNode, onNavigate }: Props) {
   const [health, setHealth]   = useState<HealthMetrics | null>(null)
   const [frontier, setFrontier] = useState<FrontierNode[]>([])
   const [queue, setQueue]     = useState<QueueItem[]>([])
@@ -32,7 +33,7 @@ export default function BrowseView({ typeFilter, domainFilter, onSelectNode, onN
   const [indexNodes, setIndexNodes] = useState<IndexNode[]>([])
   const [loadingIndex, setLoadingIndex] = useState(false)
 
-  const faceted = typeFilter !== 'all' || domainFilter !== 'all'
+  const faceted = typeFilter !== 'all' || domainFilter !== 'all' || clusterFilter !== 'all'
 
   useEffect(() => {
     let cancelled = false
@@ -47,7 +48,7 @@ export default function BrowseView({ typeFilter, domainFilter, onSelectNode, onN
     return () => { cancelled = true }
   }, [])
 
-  // Faceted browse: all nodes matching the active type and/or domain.
+  // Faceted browse: all nodes matching the active type, domain, and/or cluster.
   useEffect(() => {
     if (!faceted) { setIndexNodes([]); return }
     let cancelled = false
@@ -55,21 +56,23 @@ export default function BrowseView({ typeFilter, domainFilter, onSelectNode, onN
     getIndex(
       typeFilter === 'all' ? undefined : typeFilter,
       domainFilter === 'all' ? undefined : domainFilter,
+      clusterFilter === 'all' ? undefined : clusterFilter,
     )
       .then((nodes) => { if (!cancelled) { setIndexNodes(nodes); setLoadingIndex(false) } })
       .catch(() => { if (!cancelled) setLoadingIndex(false) })
     return () => { cancelled = true }
-  }, [typeFilter, domainFilter, faceted])
+  }, [typeFilter, domainFilter, clusterFilter, faceted])
 
   // ── Faceted mode ────────────────────────────────────────────────────────
   if (faceted) {
     const label = [
+      clusterFilter !== 'all' ? clusterFilter : null,
       domainFilter !== 'all' ? domainFilter : null,
       typeFilter !== 'all' ? typeFilter : null,
     ].filter(Boolean).join(' / ') || 'all'
 
-    // Group by type when a domain is selected with no specific type chosen.
-    const groupByType = domainFilter !== 'all' && typeFilter === 'all'
+    // Group by type when a domain/cluster is selected with no specific type chosen.
+    const groupByType = (domainFilter !== 'all' || clusterFilter !== 'all') && typeFilter === 'all'
     const groups: [string, IndexNode[]][] = groupByType
       ? TYPE_ORDER
           .map((t) => [t, indexNodes.filter((n) => n.node_type === t)] as [string, IndexNode[]])

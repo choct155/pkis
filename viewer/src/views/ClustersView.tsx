@@ -5,9 +5,11 @@ import type { Cluster } from '../types'
 
 interface Props {
   onSelectNode: (iri: string) => void
+  onDomain: (d: string) => void          // cross-link: browse a domain
+  onBrowseCluster: (slug: string) => void // browse a cluster's nodes as a facet
 }
 
-export default function ClustersView({ onSelectNode }: Props) {
+export default function ClustersView({ onSelectNode, onDomain, onBrowseCluster }: Props) {
   const [clusters, setClusters] = useState<Cluster[]>([])
   const [loading, setLoading] = useState(true)
   const [selected, setSelected] = useState<Cluster | null>(null)
@@ -30,7 +32,15 @@ export default function ClustersView({ onSelectNode }: Props) {
   }
 
   if (selected) {
-    return <ClusterDetail cluster={selected} onBack={() => setSelected(null)} onSelectNode={onSelectNode} />
+    return (
+      <ClusterDetail
+        cluster={selected}
+        onBack={() => setSelected(null)}
+        onSelectNode={onSelectNode}
+        onDomain={onDomain}
+        onBrowseCluster={onBrowseCluster}
+      />
+    )
   }
 
   if (clusters.length === 0) {
@@ -45,10 +55,19 @@ export default function ClustersView({ onSelectNode }: Props) {
           <div className="cluster-card-head">
             <span className="cluster-title">{c.title}</span>
             {c.status !== 'active' && <span className="cluster-status">{c.status}</span>}
+            <span
+              className="cluster-browse"
+              onClick={(e) => { e.stopPropagation(); onBrowseCluster(c.slug) }}
+              title="Browse this cluster's nodes"
+            >browse →</span>
           </div>
           <div className="cluster-card-meta">
             {c.domain.slice(0, 3).map((d) => (
-              <span key={d} className="domain-tag">{d}</span>
+              <span
+                key={d}
+                className="domain-tag clickable"
+                onClick={(e) => { e.stopPropagation(); onDomain(d) }}
+              >{d}</span>
             ))}
             <span className="cluster-counts">
               {c.hypotheses.length} hyp · frontier {c.frontier_hypotheses.length}
@@ -60,17 +79,24 @@ export default function ClustersView({ onSelectNode }: Props) {
   )
 }
 
-function ClusterDetail({ cluster, onBack, onSelectNode }: {
+function ClusterDetail({ cluster, onBack, onSelectNode, onDomain, onBrowseCluster }: {
   cluster: Cluster
   onBack: () => void
   onSelectNode: (iri: string) => void
+  onDomain: (d: string) => void
+  onBrowseCluster: (slug: string) => void
 }) {
   return (
     <div className="cluster-detail">
-      <div className="cluster-back" onClick={onBack}>← clusters</div>
+      <div className="cluster-detail-bar">
+        <div className="cluster-back" onClick={onBack}>← clusters</div>
+        <span className="cluster-browse" onClick={() => onBrowseCluster(cluster.slug)}>browse nodes →</span>
+      </div>
       <h2 className="cluster-detail-title">{cluster.title}</h2>
       <div className="cluster-card-meta">
-        {cluster.domain.map((d) => <span key={d} className="domain-tag">{d}</span>)}
+        {cluster.domain.map((d) => (
+          <span key={d} className="domain-tag clickable" onClick={() => onDomain(d)}>{d}</span>
+        ))}
       </div>
 
       {cluster.thesis && (

@@ -3,6 +3,8 @@ import type { View, NodeType, SearchResult } from './types'
 import TopBar from './components/TopBar'
 import FilterStrip from './components/FilterStrip'
 import DomainStrip from './components/DomainStrip'
+import Sidebar from './components/Sidebar'
+import FacetBar from './components/FacetBar'
 import BottomNav from './components/BottomNav'
 import Fab from './components/Fab'
 import DetailSheet from './components/DetailSheet'
@@ -24,6 +26,7 @@ export default function App() {
   const [editIri, setEditIri]         = useState<string | null>(null)
   const [typeFilter, setTypeFilter]   = useState<NodeType | 'all'>('all')
   const [domainFilter, setDomainFilter] = useState<string>('all')
+  const [clusterFilter, setClusterFilter] = useState<string>('all')
   const [searchResults, setSearchResults] = useState<SearchResult[] | null>(null)
   const [readerSlug, setReaderSlug] = useState<string | null>(null)
 
@@ -34,57 +37,94 @@ export default function App() {
     setSelectedIri(null)
   }
 
+  // Selecting a domain or cluster (from the sidebar or a cluster cross-link)
+  // applies it as a browse facet and surfaces the faceted browse.
+  const browseWith = (apply: () => void) => { apply(); setView('browse'); setSearchResults(null) }
+  const handleDomain = (d: string) => browseWith(() => setDomainFilter(d))
+  const handleCluster = (slug: string) => browseWith(() => setClusterFilter(slug))
+
   // Search is global: when there are results, show them over any view.
   const showSearch = searchResults !== null
   // The type filter is only meaningful for Browse and search results.
   const showFilter = view === 'browse' || showSearch
+  const facetActive = typeFilter !== 'all' || domainFilter !== 'all' || clusterFilter !== 'all'
+  const showFacetBar = view === 'browse' && !showSearch && facetActive
 
   return (
     <>
-      <TopBar
-        onResults={setSearchResults}
-        onNavigate={setView}
-        activeView={view}
-      />
-      {showFilter && <FilterStrip active={typeFilter} onChange={setTypeFilter} />}
-      {view === 'browse' && !showSearch && (
-        <DomainStrip active={domainFilter} onChange={setDomainFilter} />
-      )}
+      <div className="app-shell">
+        <Sidebar
+          view={view}
+          onNavigate={setView}
+          domainFilter={domainFilter}
+          onDomain={handleDomain}
+          clusterFilter={clusterFilter}
+          onCluster={handleCluster}
+          onClusterAgenda={() => setView('clusters')}
+        />
 
-      <div className={view === 'graph' && !showSearch ? 'main main-graph' : 'main'}>
-        {showSearch ? (
-          <SearchResults
-            results={searchResults!}
-            typeFilter={typeFilter}
-            onSelectNode={handleSelectNode}
+        <div className="content-col">
+          <TopBar
+            onResults={setSearchResults}
+            onNavigate={setView}
+            activeView={view}
           />
-        ) : (
-          <>
-            {view === 'browse' && (
-              <BrowseView
+          {showFilter && <FilterStrip active={typeFilter} onChange={setTypeFilter} />}
+          {view === 'browse' && !showSearch && (
+            <DomainStrip active={domainFilter} onChange={setDomainFilter} />
+          )}
+          {showFacetBar && (
+            <FacetBar
+              typeFilter={typeFilter}
+              domainFilter={domainFilter}
+              clusterFilter={clusterFilter}
+              onClearType={() => setTypeFilter('all')}
+              onClearDomain={() => setDomainFilter('all')}
+              onClearCluster={() => setClusterFilter('all')}
+            />
+          )}
+
+          <div className={view === 'graph' && !showSearch ? 'main main-graph' : 'main'}>
+            {showSearch ? (
+              <SearchResults
+                results={searchResults!}
                 typeFilter={typeFilter}
-                domainFilter={domainFilter}
                 onSelectNode={handleSelectNode}
-                onNavigate={setView}
               />
+            ) : (
+              <>
+                {view === 'browse' && (
+                  <BrowseView
+                    typeFilter={typeFilter}
+                    domainFilter={domainFilter}
+                    clusterFilter={clusterFilter}
+                    onSelectNode={handleSelectNode}
+                    onNavigate={setView}
+                  />
+                )}
+                {view === 'clusters' && (
+                  <ClustersView
+                    onSelectNode={handleSelectNode}
+                    onDomain={handleDomain}
+                    onBrowseCluster={handleCluster}
+                  />
+                )}
+                {view === 'priority' && (
+                  <PriorityView onSelectNode={handleSelectNode} />
+                )}
+                {view === 'graph' && (
+                  <GraphView focusIri={selectedIri} onSelectNode={handleSelectNode} />
+                )}
+                {view === 'staged' && (
+                  <StagedView onSelectNode={handleSelectNode} />
+                )}
+                {view === 'explainers' && (
+                  <ExplainersView onSelectNode={handleSelectNode} />
+                )}
+              </>
             )}
-            {view === 'clusters' && (
-              <ClustersView onSelectNode={handleSelectNode} />
-            )}
-            {view === 'priority' && (
-              <PriorityView onSelectNode={handleSelectNode} />
-            )}
-            {view === 'graph' && (
-              <GraphView focusIri={selectedIri} onSelectNode={handleSelectNode} />
-            )}
-            {view === 'staged' && (
-              <StagedView onSelectNode={handleSelectNode} />
-            )}
-            {view === 'explainers' && (
-              <ExplainersView onSelectNode={handleSelectNode} />
-            )}
-          </>
-        )}
+          </div>
+        </div>
       </div>
 
       <BottomNav active={view} onNavigate={setView} />
