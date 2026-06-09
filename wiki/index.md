@@ -1195,6 +1195,7 @@
 - [[llm-language-comprehension]] — The problem of whether LLMs genuinely comprehend language vs. pattern-match surface form (deep-learning, cognitive-science) (2026-05-20)
 
 ## Principles
+- [[maximum-expected-utility-principle]] — Maximum Expected Utility Principle (bayesian-stats, agentic-systems) (2026-06-09)
 - [[ontological-and-epistemological-commitment]] — Ontological and Epistemological Commitment (knowledge-representation, symbolic-subsymbolic) (2026-06-09)
 - [[physical-symbol-system-hypothesis]] — Physical Symbol System Hypothesis (knowledge-representation) (2026-06-09)
 - [[de-finetti-coherence]] — De Finetti Coherence (Dutch-Book Foundation) (bayesian-stats) (2026-06-09)

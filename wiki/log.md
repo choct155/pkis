@@ -9526,3 +9526,12 @@
 ## [2026-06-09] committed | technique
 - Committed: grounding-unrolling → techniques/grounding-unrolling.md
 - IRI: pkis:technique:grounding-unrolling
+
+## [2026-06-09] staged | node-stub (principle)
+- Staged: maximum-expected-utility-principle (id: 2984ac13-30d8-403e-a211-d1b7c6d83d3c)
+- Title: Maximum Expected Utility Principle
+- needs_canonical_source: False
+
+## [2026-06-09] committed | principle
+- Committed: maximum-expected-utility-principle → principles/maximum-expected-utility-principle.md
+- IRI: pkis:principle:maximum-expected-utility-principle
