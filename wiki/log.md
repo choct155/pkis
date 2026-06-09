@@ -9607,3 +9607,12 @@
 ## [2026-06-09] committed | framework
 - Committed: partially-observable-mdp → frameworks/partially-observable-mdp.md
 - IRI: pkis:framework:partially-observable-mdp
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: belief-state-mdp (id: 994d6340-928f-4fdd-bf46-19d820c2552f)
+- Title: Belief-State MDP
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: belief-state-mdp → concepts/belief-state-mdp.md
+- IRI: pkis:concept:belief-state-mdp
