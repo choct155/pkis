@@ -7929,3 +7929,12 @@
 ## [2026-06-09] committed | concept
 - Committed: bayesian-point-estimation → concepts/bayesian-point-estimation.md
 - IRI: pkis:concept:bayesian-point-estimation
+
+## [2026-06-09] staged | node-stub (principle)
+- Staged: conservation-of-logical-independence (id: d08a239b-6943-43b6-80a9-54ca4a0c44c9)
+- Title: Conservation of Logical Independence
+- needs_canonical_source: False
+
+## [2026-06-09] committed | principle
+- Committed: conservation-of-logical-independence → principles/conservation-of-logical-independence.md
+- IRI: pkis:principle:conservation-of-logical-independence
