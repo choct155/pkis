@@ -4288,3 +4288,12 @@
 ## [2026-06-09] committed | technique
 - Committed: monte-carlo-control → techniques/monte-carlo-control.md
 - IRI: pkis:technique:monte-carlo-control
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: exploring-starts (id: 7c75b17f-2476-4a63-bffd-eee844b47951)
+- Title: Exploring Starts
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: exploring-starts → concepts/exploring-starts.md
+- IRI: pkis:concept:exploring-starts
