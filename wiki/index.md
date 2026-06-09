@@ -1108,6 +1108,7 @@
 - [[government-debt-valuation-equation]] — FTPL: price level determined by ratio of nominal debt to expected present value of future surpluses (macroeconomics) (2026-05-20)
 
 ## Frameworks
+- [[auction-theory]] — Auction Theory (multi-agent-systems, economics) (2026-06-09)
 - [[mechanism-design]] — Mechanism Design (multi-agent-systems, economics, decision-theory) (2026-06-09)
 - [[cooperative-game]] — Cooperative Game (multi-agent-systems, economics, decision-theory) (2026-06-09)
 - [[extensive-form-game]] — Extensive-Form Game (multi-agent-systems, decision-theory) (2026-06-09)

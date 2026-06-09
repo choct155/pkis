@@ -9814,3 +9814,12 @@
 ## [2026-06-09] committed | principle
 - Committed: revelation-principle → principles/revelation-principle.md
 - IRI: pkis:principle:revelation-principle
+
+## [2026-06-09] staged | node-stub (framework)
+- Staged: auction-theory (id: 26b131a7-3f94-45f6-a647-98a0cde1998c)
+- Title: Auction Theory
+- needs_canonical_source: False
+
+## [2026-06-09] committed | framework
+- Committed: auction-theory → frameworks/auction-theory.md
+- IRI: pkis:framework:auction-theory
