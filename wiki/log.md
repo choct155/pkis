@@ -4036,3 +4036,12 @@
 ## [2026-06-09] committed | concept
 - Committed: temporal-difference-learning → concepts/temporal-difference-learning.md
 - IRI: pkis:concept:temporal-difference-learning
+
+## [2026-06-09] staged | node-stub (problem)
+- Staged: credit-assignment-problem (id: 8b88c466-9396-4e14-8063-b6ef1c24153b)
+- Title: Credit-Assignment Problem
+- needs_canonical_source: False
+
+## [2026-06-09] committed | problem
+- Committed: credit-assignment-problem → problems/credit-assignment-problem.md
+- IRI: pkis:problem:credit-assignment-problem
