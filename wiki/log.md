@@ -6016,3 +6016,12 @@
 ## [2026-06-09] committed | concept
 - Committed: beta-binomial-distribution → concepts/beta-binomial-distribution.md
 - IRI: pkis:concept:beta-binomial-distribution
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: robit-regression (id: 87238cc3-a015-4f0e-8d6a-a5984e964405)
+- Title: Robit Regression
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: robit-regression → techniques/robit-regression.md
+- IRI: pkis:technique:robit-regression

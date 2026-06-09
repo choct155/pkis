@@ -586,6 +586,7 @@
 - [[market-vs-hierarchy]] — Coase/Williamson: transactions governed by price signals (markets) vs. managerial direction (firms) (corporate-finance) (2026-05-20)
 
 ## Techniques
+- [[robit-regression]] — Robit Regression (bayesian-stats, statistical-learning) (2026-06-09)
 - [[iterative-proportional-fitting]] — Iterative Proportional Fitting (bayesian-stats) (2026-06-09)
 - [[loglinear-model]] — Loglinear Model (bayesian-stats) (2026-06-09)
 - [[probit-model]] — Probit Model (bayesian-stats) (2026-06-09)
