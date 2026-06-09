@@ -6475,3 +6475,12 @@
 ## [2026-06-09] committed | framework
 - Committed: causal-bayesian-network → frameworks/causal-bayesian-network.md
 - IRI: pkis:framework:causal-bayesian-network
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: intervention-do-operator (id: 45ea5d3b-7521-462e-a2d6-0bcee4446562)
+- Title: Intervention and the do-Operator
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: intervention-do-operator → concepts/intervention-do-operator.md
+- IRI: pkis:concept:intervention-do-operator
