@@ -613,7 +613,9 @@ def _load_roles() -> dict:
         m = os.path.getmtime(ROLES_PATH)
         if m != _roles_cache["mtime"]:
             with open(ROLES_PATH) as f:
-                _roles_cache["data"] = {k.lower(): v for k, v in json.load(f).items()}
+                # Keep keys verbatim: WorkOS `sub`s are case-sensitive. Email keys
+                # should be stored lowercase (the email claim is lowercased at lookup).
+                _roles_cache["data"] = dict(json.load(f))
             _roles_cache["mtime"] = m
     except Exception as e:  # noqa: BLE001
         logger.warning("OAuth roles load failed (%s): %s", ROLES_PATH, e)
