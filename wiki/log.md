@@ -5638,3 +5638,12 @@
 ## [2026-06-09] committed | concept
 - Committed: censoring-and-truncation → concepts/censoring-and-truncation.md
 - IRI: pkis:concept:censoring-and-truncation
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: principal-stratification (id: c4f35418-1d06-4a0b-b103-90b29d4fc606)
+- Title: Principal Stratification
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: principal-stratification → techniques/principal-stratification.md
+- IRI: pkis:technique:principal-stratification
