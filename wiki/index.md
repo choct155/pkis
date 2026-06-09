@@ -511,6 +511,7 @@
 - [[market-vs-hierarchy]] — Coase/Williamson: transactions governed by price signals (markets) vs. managerial direction (firms) (corporate-finance) (2026-05-20)
 
 ## Techniques
+- [[nonstationary-bandit-step-size]] — Constant Step-Size for Nonstationary Bandits (reinforcement-learning) (2026-06-09)
 - [[incremental-sample-average-update]] — Incremental Sample-Average Update (reinforcement-learning) (2026-06-09)
 - [[epsilon-greedy]] — ε-greedy Action Selection (reinforcement-learning) (2026-06-09)
 - [[action-value-methods]] — Action-Value Methods (reinforcement-learning) (2026-06-09)

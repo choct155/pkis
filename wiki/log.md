@@ -4081,3 +4081,12 @@
 ## [2026-06-09] committed | technique
 - Committed: incremental-sample-average-update → techniques/incremental-sample-average-update.md
 - IRI: pkis:technique:incremental-sample-average-update
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: nonstationary-bandit-step-size (id: 40a91be2-341d-4e50-97e6-a9bdf3e1818b)
+- Title: Constant Step-Size for Nonstationary Bandits
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: nonstationary-bandit-step-size → techniques/nonstationary-bandit-step-size.md
+- IRI: pkis:technique:nonstationary-bandit-step-size
