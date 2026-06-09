@@ -8217,3 +8217,12 @@
 ## [2026-06-09] committed | concept
 - Committed: marginalization-paradox → concepts/marginalization-paradox.md
 - IRI: pkis:concept:marginalization-paradox
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: finite-vs-countable-additivity (id: 33941ec9-6c3b-4269-afa6-c86a7f7df937)
+- Title: Finite vs. Countable Additivity
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: finite-vs-countable-additivity → concepts/finite-vs-countable-additivity.md
+- IRI: pkis:concept:finite-vs-countable-additivity
