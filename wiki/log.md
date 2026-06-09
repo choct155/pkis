@@ -4738,3 +4738,12 @@
 ## [2026-06-09] committed | concept
 - Committed: the-deadly-triad → concepts/the-deadly-triad.md
 - IRI: pkis:concept:the-deadly-triad
+
+## [2026-06-09] staged | node-stub (result)
+- Staged: baird-counterexample (id: 01f457ca-0bab-4348-b07b-42ddd6afeba4)
+- Title: Baird's Counterexample
+- needs_canonical_source: False
+
+## [2026-06-09] committed | result
+- Committed: baird-counterexample → results/baird-counterexample.md
+- IRI: pkis:result:baird-counterexample

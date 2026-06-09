@@ -736,6 +736,7 @@
 - [[constraint-propagation]] — Reducing a constraint satisfaction problem by iteratively eliminating inconsistent values from variable domains (knowledge-representation) (2026-05-20)
 
 ## Results
+- [[baird-counterexample]] — Baird's Counterexample (reinforcement-learning, optimization) (2026-06-09)
 - [[td-fixed-point]] — TD Fixed Point (reinforcement-learning, optimization) (2026-06-09)
 - [[bellman-optimality-equation]] — Bellman Optimality Equation (reinforcement-learning, optimization) (2026-06-09)
 - [[bellman-equation]] — Bellman Equation (reinforcement-learning, optimization) (2026-06-09)
