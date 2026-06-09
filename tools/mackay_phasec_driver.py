@@ -19,6 +19,7 @@ Usage:
 """
 import json
 import os
+import re
 import sys
 import time
 import urllib.request
@@ -34,6 +35,36 @@ TYPE_MAP = {
     "problem": "problem", "problems": "problem",
     "principle": "principle", "principles": "principle",
 }
+
+VALID_PREDICATES = {
+    "prerequisite-of", "uses", "specializes", "generalizes", "extends",
+    "applies", "instantiates", "contrasts-with", "analogous-to",
+}
+# Map non-spec predicates some agents emit onto the valid set.
+PRED_SYNONYMS = {
+    "instance-of": "instantiates", "instanceof": "instantiates", "is-a": "instantiates",
+    "alternative-to": "contrasts-with", "alternative": "contrasts-with",
+    "compares-with": "contrasts-with", "contrasts": "contrasts-with",
+    "relies-on": "uses", "uses-technique": "uses", "part-of": "uses",
+    "depends-on": "prerequisite-of", "requires": "prerequisite-of", "enables": "prerequisite-of",
+    "related": "analogous-to", "related-to": "analogous-to", "analogous": "analogous-to",
+    "generalization-of": "generalizes", "specialization-of": "specializes",
+}
+
+
+def normalize_edge(e):
+    """Return a clean {subject,target,predicate,note} or None if unusable."""
+    subj = (e.get("subject") or e.get("source") or "").strip()
+    tgt = (e.get("target") or e.get("object") or "").strip()
+    pred = (e.get("predicate") or e.get("edge_type") or "").strip()
+    pred = pred if pred in VALID_PREDICATES else PRED_SYNONYMS.get(pred)
+    if not (subj and tgt and pred):
+        return None
+    # slugs may arrive as full IRIs; add_connections accepts slug or IRI
+    out = {"subject": subj, "target": tgt, "predicate": pred}
+    if e.get("note"):
+        out["note"] = e["note"]
+    return out
 
 _rpc_id = 0
 
@@ -102,22 +133,41 @@ def main(path):
     all_edges = []
     all_enrich = []
     for ch in chapters:
-        src = f"mackay-itila-{ch['chapter']}"  # e.g. mackay-itila-ch08
+        chp = ch["chapter"]
+        # MacKay subagents set chapter="chNN" (prefix mackay-itila-); book
+        # subagents set chapter to the full source slug (e.g. deisenroth-mml-ch01).
+        src = f"mackay-itila-{chp}" if re.fullmatch(r"ch\d+", chp) else chp
         for n in ch.get("new_nodes", []):
-            slug = n["slug"]
-            kt = TYPE_MAP.get(n["knowledge_type"], n["knowledge_type"])
+            # Tolerate alternate schemas some agents emit
+            # (canonical_title/iri/node_type instead of title/slug/knowledge_type).
+            title = (n.get("title") or n.get("canonical_title") or "").strip()
+            iri = n.get("iri") or ""
+            slug = (n.get("slug") or "").strip()
+            if not slug and iri and ":" in iri:
+                slug = iri.split(":")[-1]
+            if not slug and title:
+                slug = re.sub(r"[^a-z0-9]+", "-", title.lower()).strip("-")
+            if not slug or not title:
+                print(f"SKIP malformed node (missing slug/title): {n.get('title') or n.get('slug') or n}")
+                continue
+            kt_raw = n.get("knowledge_type") or n.get("node_type") or "concept"
+            kt = TYPE_MAP.get(kt_raw, "concept")
             if slug in nodes_by_slug:
                 if src not in nodes_by_slug[slug]["sources"]:
                     nodes_by_slug[slug]["sources"].append(src)
                 continue
             nodes_by_slug[slug] = {
-                "knowledge_type": kt, "title": n["title"], "slug": slug,
+                "knowledge_type": kt, "title": title, "slug": slug,
                 "definition": n.get("definition", ""),
                 "domain": n.get("domain", []), "tags": n.get("tags", []),
                 "sources": [src],
             }
         for e in ch.get("edges", []):
-            all_edges.append({k: e[k] for k in ("subject", "target", "predicate", "note") if k in e})
+            ne = normalize_edge(e)
+            if ne:
+                all_edges.append(ne)
+            else:
+                print(f"DROP unusable edge: {e.get('subject') or e.get('source')} -{e.get('predicate')}-> {e.get('target')}")
         for en in ch.get("enrichments", []):
             all_enrich.append(en)
 
