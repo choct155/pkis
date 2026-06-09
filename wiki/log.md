@@ -11309,3 +11309,12 @@
 ## [2026-06-09] committed | technique
 - Committed: kernel-smoothing → techniques/kernel-smoothing.md
 - IRI: pkis:technique:kernel-smoothing
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: local-regression-loess (id: 7e923617-e0dd-42e0-a948-befaf3a6fc61)
+- Title: Local Regression (LOESS)
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: local-regression-loess → techniques/local-regression-loess.md
+- IRI: pkis:technique:local-regression-loess
