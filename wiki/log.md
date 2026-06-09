@@ -11291,3 +11291,12 @@
 ## [2026-06-09] committed | framework
 - Committed: reproducing-kernel-hilbert-space → frameworks/reproducing-kernel-hilbert-space.md
 - IRI: pkis:framework:reproducing-kernel-hilbert-space
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: wavelet-smoothing (id: 5466ab2a-0957-4ace-8447-0cad78e1c3da)
+- Title: Wavelet Smoothing
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: wavelet-smoothing → techniques/wavelet-smoothing.md
+- IRI: pkis:technique:wavelet-smoothing
