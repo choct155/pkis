@@ -9472,3 +9472,12 @@
 ## [2026-06-09] committed | technique
 - Committed: viterbi-for-hmm → techniques/viterbi-for-hmm.md
 - IRI: pkis:technique:viterbi-for-hmm
+
+## [2026-06-09] staged | node-stub (framework)
+- Staged: probabilistic-programming-language (id: f326b055-51ce-4a3f-ad77-7edd160770be)
+- Title: Probabilistic Programming Language
+- needs_canonical_source: False
+
+## [2026-06-09] committed | framework
+- Committed: probabilistic-programming-language → frameworks/probabilistic-programming-language.md
+- IRI: pkis:framework:probabilistic-programming-language
