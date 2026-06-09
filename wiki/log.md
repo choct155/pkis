@@ -5746,3 +5746,12 @@
 ## [2026-06-09] committed | concept
 - Committed: burn-in-and-warmup → concepts/burn-in-and-warmup.md
 - IRI: pkis:concept:burn-in-and-warmup
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: no-u-turn-sampler (id: e3b44d29-94f0-4f5f-807a-136526ac1180)
+- Title: No-U-Turn Sampler (NUTS)
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: no-u-turn-sampler → techniques/no-u-turn-sampler.md
+- IRI: pkis:technique:no-u-turn-sampler
