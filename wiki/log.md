@@ -4639,3 +4639,12 @@
 ## [2026-06-09] committed | technique
 - Committed: radial-basis-function-network → techniques/radial-basis-function-network.md
 - IRI: pkis:technique:radial-basis-function-network
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: fourier-basis-rl (id: dd03cacf-49b1-401a-8f48-1dbf0f75b35f)
+- Title: Fourier Basis for RL
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: fourier-basis-rl → techniques/fourier-basis-rl.md
+- IRI: pkis:technique:fourier-basis-rl
