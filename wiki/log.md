@@ -4747,3 +4747,12 @@
 ## [2026-06-09] committed | result
 - Committed: baird-counterexample → results/baird-counterexample.md
 - IRI: pkis:result:baird-counterexample
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: bellman-error-vs-projected-bellman-error (id: 8d43ed28-fae4-4836-bd19-40835c31d044)
+- Title: Bellman Error vs. Projected Bellman Error
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: bellman-error-vs-projected-bellman-error → concepts/bellman-error-vs-projected-bellman-error.md
+- IRI: pkis:concept:bellman-error-vs-projected-bellman-error
