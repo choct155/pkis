@@ -7399,3 +7399,12 @@
 ## [2026-06-09] committed | concept
 - Committed: point-process → concepts/point-process.md
 - IRI: pkis:concept:point-process
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: poisson-random-measure (id: ceb7605b-43af-4ea9-89ac-f115284fa913)
+- Title: Poisson Random Measure (PRM)
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: poisson-random-measure → concepts/poisson-random-measure.md
+- IRI: pkis:concept:poisson-random-measure
