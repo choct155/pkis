@@ -4450,3 +4450,12 @@
 ## [2026-06-09] committed | concept
 - Committed: planning-rl → concepts/planning-rl.md
 - IRI: pkis:concept:planning-rl
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: model-based-rl (id: a9966459-a178-4312-b38c-bb34323c763c)
+- Title: Model-Based Reinforcement Learning
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: model-based-rl → concepts/model-based-rl.md
+- IRI: pkis:concept:model-based-rl

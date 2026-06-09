@@ -290,6 +290,7 @@
 - [[liu-machine-unlearning-llm-2024]] — Rethinking Machine Unlearning for LLMs: post-training knowledge editing survey (deep-learning, ai-safety) (2026-05-20)
 
 ## Concepts
+- [[model-based-rl]] — Model-Based Reinforcement Learning (optimization, deep-learning) (2026-06-09)
 - [[planning-rl]] — Planning (Reinforcement Learning) (optimization, deep-learning) (2026-06-09)
 - [[n-step-return]] — n-step Return (optimization, deep-learning) (2026-06-09)
 - [[n-step-bootstrapping]] — n-step Bootstrapping (optimization, deep-learning) (2026-06-09)
