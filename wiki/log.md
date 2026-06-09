@@ -4900,3 +4900,12 @@
 ## [2026-06-09] committed | result
 - Committed: reward-prediction-error-hypothesis → results/reward-prediction-error-hypothesis.md
 - IRI: pkis:result:reward-prediction-error-hypothesis
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: temporal-difference-error (id: ddf2954f-8160-4694-984b-343ae1f79b25)
+- Title: Temporal-Difference Error (delta)
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: temporal-difference-error → concepts/temporal-difference-error.md
+- IRI: pkis:concept:temporal-difference-error

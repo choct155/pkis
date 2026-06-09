@@ -290,6 +290,7 @@
 - [[liu-machine-unlearning-llm-2024]] — Rethinking Machine Unlearning for LLMs: post-training knowledge editing survey (deep-learning, ai-safety) (2026-05-20)
 
 ## Concepts
+- [[temporal-difference-error]] — Temporal-Difference Error (delta) (optimization, deep-learning) (2026-06-09)
 - [[instrumental-conditioning]] — Instrumental (Operant) Conditioning (optimization, deep-learning) (2026-06-09)
 - [[classical-conditioning]] — Classical (Pavlovian) Conditioning (optimization, deep-learning) (2026-06-09)
 - [[lambda-return]] — Lambda-Return (optimization, deep-learning) (2026-06-09)
