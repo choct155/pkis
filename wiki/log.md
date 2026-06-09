@@ -5728,3 +5728,12 @@
 ## [2026-06-09] committed | technique
 - Committed: gelman-rubin-diagnostic → techniques/gelman-rubin-diagnostic.md
 - IRI: pkis:technique:gelman-rubin-diagnostic
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: effective-sample-size (id: 581e448d-2dc1-44c0-b57e-46588fb115c1)
+- Title: Effective Sample Size (MCMC)
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: effective-sample-size → concepts/effective-sample-size.md
+- IRI: pkis:concept:effective-sample-size
