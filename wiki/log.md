@@ -8914,3 +8914,12 @@
 ## [2026-06-09] committed | concept
 - Committed: evaluation-function-games → concepts/evaluation-function-games.md
 - IRI: pkis:concept:evaluation-function-games
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: expectiminimax (id: 243c8792-146e-47d4-9c57-b53c2246cbe2)
+- Title: Expectiminimax
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: expectiminimax → techniques/expectiminimax.md
+- IRI: pkis:technique:expectiminimax
