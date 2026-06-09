@@ -11129,3 +11129,12 @@
 ## [2026-06-09] committed | framework
 - Committed: statistical-decision-theory-regression → frameworks/statistical-decision-theory-regression.md
 - IRI: pkis:framework:statistical-decision-theory-regression
+
+## [2026-06-09] staged | node-stub (principle)
+- Staged: structured-regression-and-restricted-estimators (id: 26257f09-7f94-43ff-a78c-241003288075)
+- Title: Structured Regression and Restricted Estimators
+- needs_canonical_source: False
+
+## [2026-06-09] committed | principle
+- Committed: structured-regression-and-restricted-estimators → principles/structured-regression-and-restricted-estimators.md
+- IRI: pkis:principle:structured-regression-and-restricted-estimators

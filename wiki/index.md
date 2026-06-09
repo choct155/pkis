@@ -1312,6 +1312,7 @@
 - [[llm-language-comprehension]] — The problem of whether LLMs genuinely comprehend language vs. pattern-match surface form (deep-learning, cognitive-science) (2026-05-20)
 
 ## Principles
+- [[structured-regression-and-restricted-estimators]] — Structured Regression and Restricted Estimators (statistical-learning) (2026-06-09)
 - [[end-to-end-learning]] — End-to-End Learning (deep-learning) (2026-06-09)
 - [[generative-vs-discriminative-models]] — Generative vs Discriminative Models (statistical-learning, deep-learning) (2026-06-09)
 - [[revelation-principle]] — Revelation Principle (multi-agent-systems, economics) (2026-06-09)
