@@ -1074,6 +1074,7 @@
 - [[government-debt-valuation-equation]] — FTPL: price level determined by ratio of nominal debt to expected present value of future surpluses (macroeconomics) (2026-05-20)
 
 ## Frameworks
+- [[hierarchical-task-network]] — Hierarchical Task Network (HTN) Planning (knowledge-representation, symbolic-subsymbolic, optimization) (2026-06-09)
 - [[classical-planning-pddl]] — Classical Planning and PDDL (knowledge-representation, symbolic-subsymbolic, optimization) (2026-06-09)
 - [[semantic-network]] — Semantic Network (knowledge-representation) (2026-06-09)
 - [[mental-objects-and-modal-logic]] — Modal Logic of Mental Objects (knowledge-representation) (2026-06-09)

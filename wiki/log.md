@@ -9328,3 +9328,12 @@
 ## [2026-06-09] committed | technique
 - Committed: planning-graph-graphplan → techniques/planning-graph-graphplan.md
 - IRI: pkis:technique:planning-graph-graphplan
+
+## [2026-06-09] staged | node-stub (framework)
+- Staged: hierarchical-task-network (id: b7809aa5-2ed1-4c84-8a5e-96dd57d25860)
+- Title: Hierarchical Task Network (HTN) Planning
+- needs_canonical_source: False
+
+## [2026-06-09] committed | framework
+- Committed: hierarchical-task-network → frameworks/hierarchical-task-network.md
+- IRI: pkis:framework:hierarchical-task-network
