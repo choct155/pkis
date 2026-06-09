@@ -7965,3 +7965,12 @@
 ## [2026-06-09] committed | result
 - Committed: gaussian-maximum-entropy-characterization → results/gaussian-maximum-entropy-characterization.md
 - IRI: pkis:result:gaussian-maximum-entropy-characterization
+
+## [2026-06-09] staged | node-stub (principle)
+- Staged: error-cancellation-arithmetic-mean (id: 7d8b7300-1876-457a-a16b-846425c4c3ff)
+- Title: Error Cancellation and the Optimality of the Arithmetic Mean
+- needs_canonical_source: False
+
+## [2026-06-09] committed | principle
+- Committed: error-cancellation-arithmetic-mean → principles/error-cancellation-arithmetic-mean.md
+- IRI: pkis:principle:error-cancellation-arithmetic-mean

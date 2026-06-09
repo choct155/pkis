@@ -1067,6 +1067,7 @@
 - [[llm-language-comprehension]] — The problem of whether LLMs genuinely comprehend language vs. pattern-match surface form (deep-learning, cognitive-science) (2026-05-20)
 
 ## Principles
+- [[error-cancellation-arithmetic-mean]] — Error Cancellation and the Optimality of the Arithmetic Mean (bayesian-stats, statistical-learning) (2026-06-09)
 - [[conservation-of-logical-independence]] — Conservation of Logical Independence (bayesian-stats) (2026-06-09)
 - [[significance-test-requires-alternative]] — A Significance Test Requires a Definite Alternative (bayesian-stats) (2026-06-09)
 - [[resurrection-of-alternative-hypotheses]] — Resurrection of Alternative Hypotheses (bayesian-stats) (2026-06-09)
