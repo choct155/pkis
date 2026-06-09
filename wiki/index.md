@@ -1021,6 +1021,7 @@
 - [[government-debt-valuation-equation]] — FTPL: price level determined by ratio of nominal debt to expected present value of future surpluses (macroeconomics) (2026-05-20)
 
 ## Frameworks
+- [[state-space-search]] — State-Space Search (optimization, knowledge-representation, deep-learning) (2026-06-09)
 - [[learning-agent-architecture]] — Learning Agent Architecture (agentic-ai, reinforcement-learning) (2026-06-09)
 - [[agent-program-architectures]] — Agent Program Architectures (agentic-ai, reinforcement-learning) (2026-06-09)
 - [[peas-task-environment]] — PEAS Task Environment Specification (agentic-ai, reinforcement-learning) (2026-06-09)

@@ -8716,3 +8716,12 @@
 ## [2026-06-09] committed | concept
 - Committed: atomic-factored-structured-representations → concepts/atomic-factored-structured-representations.md
 - IRI: pkis:concept:atomic-factored-structured-representations
+
+## [2026-06-09] staged | node-stub (framework)
+- Staged: state-space-search (id: f525b1c4-dcf2-4d8d-ab85-9f22e5c43471)
+- Title: State-Space Search
+- needs_canonical_source: False
+
+## [2026-06-09] committed | framework
+- Committed: state-space-search → frameworks/state-space-search.md
+- IRI: pkis:framework:state-space-search
