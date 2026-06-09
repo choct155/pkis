@@ -9976,3 +9976,12 @@
 ## [2026-06-09] committed | principle
 - Committed: generative-vs-discriminative-models → principles/generative-vs-discriminative-models.md
 - IRI: pkis:principle:generative-vs-discriminative-models
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: recurrent-neural-network (id: 1afb9bfb-e741-4aac-868b-b08c94442ab0)
+- Title: Recurrent Neural Network (RNN)
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: recurrent-neural-network → techniques/recurrent-neural-network.md
+- IRI: pkis:technique:recurrent-neural-network
