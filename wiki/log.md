@@ -9211,3 +9211,12 @@
 ## [2026-06-09] committed | technique
 - Committed: propositionalization → techniques/propositionalization.md
 - IRI: pkis:technique:propositionalization
+
+## [2026-06-09] staged | node-stub (result)
+- Staged: herbrands-theorem (id: e567eb5b-4efb-4ced-bd35-ffd7a3821e14)
+- Title: Herbrand's Theorem
+- needs_canonical_source: False
+
+## [2026-06-09] committed | result
+- Committed: herbrands-theorem → results/herbrands-theorem.md
+- IRI: pkis:result:herbrands-theorem
