@@ -4414,3 +4414,12 @@
 ## [2026-06-09] committed | technique
 - Committed: n-step-sarsa → techniques/n-step-sarsa.md
 - IRI: pkis:technique:n-step-sarsa
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: n-step-off-policy (id: 6805b9d8-fe79-4ff7-b487-1dd5a8d071a8)
+- Title: n-step Off-policy Learning
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: n-step-off-policy → techniques/n-step-off-policy.md
+- IRI: pkis:technique:n-step-off-policy
