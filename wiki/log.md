@@ -10543,3 +10543,12 @@
 ## [2026-06-09] committed | concept
 - Committed: algorithmic-fairness → concepts/algorithmic-fairness.md
 - IRI: pkis:concept:algorithmic-fairness
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: lethal-autonomous-weapons (id: 5b68cc17-c187-4ec6-af0a-60b8c093c5fb)
+- Title: Lethal Autonomous Weapons
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: lethal-autonomous-weapons → concepts/lethal-autonomous-weapons.md
+- IRI: pkis:concept:lethal-autonomous-weapons
