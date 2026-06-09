@@ -4351,3 +4351,12 @@
 ## [2026-06-09] committed | technique
 - Committed: expected-sarsa → techniques/expected-sarsa.md
 - IRI: pkis:technique:expected-sarsa
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: maximization-bias (id: 32f64135-67a0-40b7-88b3-c138cd72d548)
+- Title: Maximization Bias
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: maximization-bias → concepts/maximization-bias.md
+- IRI: pkis:concept:maximization-bias
