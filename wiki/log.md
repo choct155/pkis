@@ -3914,3 +3914,59 @@
 
 ## [2026-06-09] edit | edit_node
 - pkis:concept:linear-algebra: fields=[] sections=['Core algebraic structures']
+
+## [2026-06-09] edges | add_connections
+- pkis:concept:inner-product —prerequisite-of→ analytic-geometry
+- pkis:concept:norm —prerequisite-of→ analytic-geometry
+- pkis:concept:inner-product —uses→ norm
+- pkis:concept:norm —specializes→ inner-product
+- pkis:concept:orthogonality —uses→ inner-product
+- pkis:concept:orthogonal-projection —uses→ orthogonality
+- pkis:concept:orthogonal-projection —uses→ inner-product
+- pkis:technique:gram-schmidt —uses→ orthogonal-projection
+- pkis:technique:gram-schmidt —applies→ orthogonality
+- pkis:concept:rotation-matrix —specializes→ orthogonality
+- pkis:concept:inner-product —prerequisite-of→ support-vector-machines
+- pkis:concept:orthogonal-projection —uses→ linear-algebra
+- pkis:concept:orthogonal-projection —prerequisite-of→ principal-component-analysis
+- pkis:concept:inner-product —specializes→ linear-algebra
+- pkis:concept:norm —applies→ regularization
+- pkis:concept:trace —prerequisite-of→ eigendecomposition
+- pkis:concept:determinant —prerequisite-of→ eigendecomposition
+- pkis:concept:determinant —applies→ eigendecomposition
+- pkis:concept:determinant —analogous-to→ trace
+- pkis:technique:cholesky-decomposition —specializes→ matrix-decompositions
+- pkis:technique:eigendecomposition —specializes→ matrix-decompositions
+- pkis:technique:singular-value-decomposition —specializes→ matrix-decompositions
+- pkis:technique:singular-value-decomposition —generalizes→ eigendecomposition
+- pkis:technique:singular-value-decomposition —uses→ eigendecomposition
+- pkis:technique:low-rank-matrix-approximation —uses→ singular-value-decomposition
+- pkis:technique:cholesky-decomposition —uses→ determinant
+- pkis:technique:low-rank-matrix-approximation —applies→ principal-component-analysis
+- pkis:technique:cholesky-decomposition —applies→ variational-autoencoder
+- pkis:technique:jordan-canonical-form —generalizes→ eigendecomposition
+- random-variable —uses→ probability-theory
+- expectation-and-variance —uses→ probability-theory
+- exponential-family —uses→ probability-theory
+- exponential-family —generalizes→ gaussian-distribution
+- exponential-family —uses→ sufficient-statistics
+- exponential-family —analogous-to→ conjugate-prior
+- exponential-family —analogous-to→ beta-distribution
+- conjugate-prior —analogous-to→ exponential-family
+- gaussian-distribution —instantiates→ exponential-family
+- pkis:technique:linear-regression —uses→ maximum-likelihood-estimation
+- pkis:technique:linear-regression —uses→ gaussian-distribution
+- pkis:result:maximum-likelihood-as-least-squares —uses→ maximum-likelihood-estimation
+- pkis:result:maximum-likelihood-as-least-squares —uses→ gaussian-distribution
+- pkis:technique:bayesian-linear-regression —uses→ marginal-likelihood
+- pkis:technique:bayesian-linear-regression —uses→ gaussian-distribution
+- pkis:concept:mixture-models —instantiates→ latent-variable-models
+- pkis:technique:gaussian-mixture-models —specializes→ mixture-models
+- pkis:technique:gaussian-mixture-models —uses→ ancestral-sampling
+- pkis:technique:gaussian-mixture-models —analogous-to→ soft-k-means
+- pkis:technique:ancestral-sampling —analogous-to→ directed-graphical-models
+- pkis:technique:em-algorithm —analogous-to→ latent-variable-models
+- pkis:technique:gaussian-mixture-models —analogous-to→ kernel-density-estimation
+
+## [2026-06-09] edit | edit_node
+- pkis:framework:empirical-risk-minimization: fields=[] sections=['Generalization is the goal, not training fit']
