@@ -7956,3 +7956,12 @@
 ## [2026-06-09] committed | result
 - Committed: herschel-maxwell-derivation → results/herschel-maxwell-derivation.md
 - IRI: pkis:result:herschel-maxwell-derivation
+
+## [2026-06-09] staged | node-stub (result)
+- Staged: gaussian-maximum-entropy-characterization (id: 68c6b74e-4a89-4abf-b363-755fb3f281e4)
+- Title: Gaussian as Maximum-Entropy Distribution for Fixed Mean and Variance
+- needs_canonical_source: False
+
+## [2026-06-09] committed | result
+- Committed: gaussian-maximum-entropy-characterization → results/gaussian-maximum-entropy-characterization.md
+- IRI: pkis:result:gaussian-maximum-entropy-characterization
