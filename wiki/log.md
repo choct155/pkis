@@ -9337,3 +9337,12 @@
 ## [2026-06-09] committed | framework
 - Committed: hierarchical-task-network → frameworks/hierarchical-task-network.md
 - IRI: pkis:framework:hierarchical-task-network
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: angelic-semantics-hla (id: 1b010b87-0676-4881-b268-8b814ef51ecb)
+- Title: Angelic Semantics for High-Level Actions
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: angelic-semantics-hla → concepts/angelic-semantics-hla.md
+- IRI: pkis:concept:angelic-semantics-hla

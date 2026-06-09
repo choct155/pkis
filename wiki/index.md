@@ -290,6 +290,7 @@
 - [[liu-machine-unlearning-llm-2024]] — Rethinking Machine Unlearning for LLMs: post-training knowledge editing survey (deep-learning, ai-safety) (2026-05-20)
 
 ## Concepts
+- [[angelic-semantics-hla]] — Angelic Semantics for High-Level Actions (knowledge-representation, symbolic-subsymbolic, optimization) (2026-06-09)
 - [[planning-heuristics-relaxation]] — Planning Heuristics via Relaxation and Abstraction (optimization, symbolic-subsymbolic) (2026-06-09)
 - [[datalog]] — Datalog (knowledge-representation, symbolic-subsymbolic) (2026-06-09)
 - [[unification]] — Unification (knowledge-representation, symbolic-subsymbolic) (2026-06-09)
