@@ -15,10 +15,15 @@ date_created: '2026-06-09'
 date_updated: '2026-06-09'
 domain:
 - statistical-learning
+generalizes:
+- affine-space
 id: pkis:concept:vector-space
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- linear-independence
+- linear-mapping
 related_concepts: []
 sources:
 - deisenroth-mml-ch02
@@ -50,4 +55,7 @@ Vector spaces are the substrate on which essentially all of machine learning liv
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[affine-space]] — generalizes: An affine subspace is a vector subspace translated off the origin (support point + direction space).
+- [[linear-mapping]] — prerequisite-of: Linear mappings are structure-preserving maps between vector spaces.
+- [[linear-independence]] — prerequisite-of: Linear combinations and independence are defined over the elements of a vector space.
 [To be populated during integration]

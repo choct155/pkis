@@ -19,6 +19,8 @@ id: pkis:concept:linear-independence
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- basis-and-rank
 related_concepts: []
 sources:
 - deisenroth-mml-ch02
@@ -50,4 +52,5 @@ Linear independence is the gatekeeper for the notions of basis, dimension, and r
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[basis-and-rank]] — prerequisite-of: A basis is a linearly independent generating set; rank counts independent columns.
 [To be populated during integration]

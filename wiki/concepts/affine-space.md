@@ -16,6 +16,8 @@ date_updated: '2026-06-09'
 domain:
 - statistical-learning
 id: pkis:concept:affine-space
+instantiates:
+- solving-linear-systems
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
@@ -51,4 +53,5 @@ The "linear" layers of ML models are usually affine (a weight matrix plus a bias
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[solving-linear-systems]] — instantiates: The solution set of an inhomogeneous system Ax=b is an affine subspace of dimension n-rk(A).
 [To be populated during integration]

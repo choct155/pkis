@@ -19,6 +19,8 @@ id: pkis:concept:basis-and-rank
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- linear-mapping
 related_concepts: []
 sources:
 - deisenroth-mml-ch02
@@ -50,4 +52,5 @@ Dimension and rank quantify the effective degrees of freedom in data and models:
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[linear-mapping]] — prerequisite-of: Transformation matrices and coordinates are defined with respect to ordered bases; rank = dim of the image.
 [To be populated during integration]

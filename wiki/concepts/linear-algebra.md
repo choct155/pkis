@@ -1,18 +1,33 @@
 ---
-id: "pkis:concept:linear-algebra"
 aliases: []
-title: "Linear Algebra"
-knowledge_type: concept
-also_type: [framework]
-domain: [statistical-learning, bayesian-stats, deep-learning]
-tags: [mathematical-foundations]
-related_concepts: ["[[analytic-geometry]]", "[[matrix-decompositions]]", "[[vector-calculus]]"]
-sources: ["[[deisenroth-mml]]", "[[carrell-groups-matrices-vectors]]"]
+also_type:
+- framework
+coverage: 2
 date_created: 2026-05-20
 date_updated: 2026-05-20
-coverage: 2
-understanding: 0
+domain:
+- statistical-learning
+- bayesian-stats
+- deep-learning
+id: pkis:concept:linear-algebra
+knowledge_type: concept
 maturity: settled
+prerequisite-of:
+- principal-component-analysis
+related_concepts:
+- '[[analytic-geometry]]'
+- '[[matrix-decompositions]]'
+- '[[vector-calculus]]'
+sources:
+- '[[deisenroth-mml]]'
+- '[[carrell-groups-matrices-vectors]]'
+tags:
+- mathematical-foundations
+title: Linear Algebra
+understanding: 0
+uses:
+- vector-space
+- linear-mapping
 ---
 
 The mathematical study of vector spaces, linear maps, and their structure — the substrate for virtually all computation in machine learning, from data representation (vectors and matrices) through optimization (gradient updates) to model parameterization.
@@ -22,3 +37,8 @@ The mathematical study of vector spaces, linear maps, and their structure — th
 - [[carrell-groups-matrices-vectors-ch03]] (unread) — matrix algebra from group-theoretic perspective; matrices as linear maps
 - [[carrell-groups-matrices-vectors-ch06]] (unread) — abstract vector space axioms, bases, dimension, inner product spaces
 - [[carrell-groups-matrices-vectors-ch07]] (unread) — linear mappings, rank-nullity, dual space
+
+## Connections
+- [[linear-mapping]] — uses: Linear mappings and their matrix representations are core to linear algebra.
+- [[vector-space]] — uses: Vector spaces are the central object of study in linear algebra.
+- [[principal-component-analysis]] — prerequisite-of: MML Ch.1: data is represented as vectors/matrices (linear algebra, Ch.2) which is the foundation for the dimensionality-reduction pillar realized as PCA (Ch.10).

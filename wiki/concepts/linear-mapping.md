@@ -22,11 +22,15 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - deisenroth-mml-ch02
+specializes:
+- affine-space
 tags:
 - mathematical-foundations
 - linear-algebra
 title: Linear Mapping
 understanding: 0
+uses:
+- solving-linear-systems
 ---
 
 ## Definition
@@ -50,4 +54,6 @@ Neural network layers, projections, rotations, and coordinate transforms are all
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[solving-linear-systems]] — uses: The kernel (null space) of a linear map is the general solution of the homogeneous system Ax=0, found by elimination.
+- [[affine-space]] — specializes: An affine mapping is a linear mapping composed with a translation.
 [To be populated during integration]

@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- linear-algebra
 component_scores:
   alternatives: null
   conditions: null
@@ -27,6 +29,9 @@ tags:
 - algorithm
 title: Solving Linear Systems (Gaussian Elimination)
 understanding: 0
+uses:
+- linear-independence
+- basis-and-rank
 ---
 
 ## Definition
@@ -50,4 +55,7 @@ It is the workhorse for inversion, rank, and least squares; understanding it cla
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[linear-algebra]] — applies: Gaussian elimination is the foundational computational tool of linear algebra (inversion, rank, least squares).
+- [[basis-and-rank]] — uses: Echelon form yields rank and a basis of the span/kernel via pivot columns.
+- [[linear-independence]] — uses: Gaussian elimination to row-echelon form is the practical test for linear independence (pivot columns).
 [To be populated during integration]
