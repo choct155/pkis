@@ -1073,6 +1073,7 @@
 - [[broad-money-monetarism]] — Congdon's updated monetarism: broad money (M3/M4) drives nominal spending; emphasis on credit and asset prices (macroeconomics, monetary-economics) (2026-05-20)
 
 ## Problems
+- [[value-alignment-problem]] — Value Alignment Problem (knowledge-representation) (2026-06-09)
 - [[st-petersburg-paradox]] — St Petersburg Paradox (bayesian-stats) (2026-06-09)
 - [[the-well-posed-problem-bertrand]] — Bertrand's Paradox (The Well-Posed Problem) (bayesian-stats, information-theory) (2026-06-09)
 - [[problem-of-induction]] — The Problem of Induction (bayesian-stats) (2026-06-09)

@@ -8635,3 +8635,12 @@
 ## [2026-06-09] committed | concept
 - Committed: turing-test → concepts/turing-test.md
 - IRI: pkis:concept:turing-test
+
+## [2026-06-09] staged | node-stub (problem)
+- Staged: value-alignment-problem (id: 4506e508-cf30-4a55-8a46-8c30ae9872b1)
+- Title: Value Alignment Problem
+- needs_canonical_source: False
+
+## [2026-06-09] committed | problem
+- Committed: value-alignment-problem → problems/value-alignment-problem.md
+- IRI: pkis:problem:value-alignment-problem
