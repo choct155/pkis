@@ -9868,3 +9868,12 @@
 ## [2026-06-09] committed | problem
 - Committed: tragedy-of-the-commons → problems/tragedy-of-the-commons.md
 - IRI: pkis:problem:tragedy-of-the-commons
+
+## [2026-06-09] staged | node-stub (framework)
+- Staged: social-choice-theory (id: 144d0717-666f-436c-a781-7ea91f92134e)
+- Title: Social Choice Theory
+- needs_canonical_source: False
+
+## [2026-06-09] committed | framework
+- Committed: social-choice-theory → frameworks/social-choice-theory.md
+- IRI: pkis:framework:social-choice-theory
