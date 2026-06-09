@@ -8352,3 +8352,12 @@
 ## [2026-06-09] committed | result
 - Committed: noiseless-channel-capacity-partition-function → results/noiseless-channel-capacity-partition-function.md
 - IRI: pkis:result:noiseless-channel-capacity-partition-function
+
+## [2026-06-09] staged | node-stub (framework)
+- Staged: kolmogorov-axioms (id: 2db02f50-2a17-4b43-ba36-6719785ee9c6)
+- Title: Kolmogorov System of Probability (Measure-Theoretic Axioms)
+- needs_canonical_source: False
+
+## [2026-06-09] committed | framework
+- Committed: kolmogorov-axioms → frameworks/kolmogorov-axioms.md
+- IRI: pkis:framework:kolmogorov-axioms
