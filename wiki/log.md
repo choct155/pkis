@@ -3523,3 +3523,12 @@
 ## [2026-06-09] committed | concept
 - Committed: orthogonality → concepts/orthogonality.md
 - IRI: pkis:concept:orthogonality
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: orthogonal-projection (id: a5511337-d859-44fe-8cc4-4d1e316d4c73)
+- Title: Orthogonal Projection
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: orthogonal-projection → concepts/orthogonal-projection.md
+- IRI: pkis:concept:orthogonal-projection
