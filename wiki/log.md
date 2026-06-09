@@ -9022,3 +9022,12 @@
 ## [2026-06-09] committed | concept
 - Committed: logical-entailment-and-inference → concepts/logical-entailment-and-inference.md
 - IRI: pkis:concept:logical-entailment-and-inference
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: conjunctive-normal-form (id: 5a982e7d-2f3f-4c96-a546-0de084d5d3b3)
+- Title: Conjunctive Normal Form (CNF), Clauses, and Horn Clauses
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: conjunctive-normal-form → concepts/conjunctive-normal-form.md
+- IRI: pkis:concept:conjunctive-normal-form
