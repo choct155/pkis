@@ -6709,3 +6709,12 @@
 ## [2026-06-09] committed | framework
 - Committed: structural-equation-models → frameworks/structural-equation-models.md
 - IRI: pkis:framework:structural-equation-models
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: path-analysis (id: 41c8ce2d-decc-4e37-870d-75bc424e8b39)
+- Title: Path Analysis (Method of Path Coefficients)
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: path-analysis → techniques/path-analysis.md
+- IRI: pkis:technique:path-analysis
