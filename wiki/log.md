@@ -7776,3 +7776,12 @@
 ## [2026-06-09] committed | concept
 - Committed: strong-and-weak-syllogisms → concepts/strong-and-weak-syllogisms.md
 - IRI: pkis:concept:strong-and-weak-syllogisms
+
+## [2026-06-09] staged | node-stub (principle)
+- Staged: desiderata-of-plausible-reasoning (id: eb8c35bf-c03c-4fbf-b98e-87cdfa664dd4)
+- Title: Desiderata of Plausible Reasoning
+- needs_canonical_source: False
+
+## [2026-06-09] committed | principle
+- Committed: desiderata-of-plausible-reasoning → principles/desiderata-of-plausible-reasoning.md
+- IRI: pkis:principle:desiderata-of-plausible-reasoning
