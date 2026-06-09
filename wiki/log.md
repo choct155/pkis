@@ -3793,3 +3793,12 @@
 ## [2026-06-09] committed | technique
 - Committed: autoencoder → techniques/autoencoder.md
 - IRI: pkis:technique:autoencoder
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: low-rank-approximation (id: 2d4fa863-7f29-470b-a7e6-4988ecc61821)
+- Title: Low-Rank Approximation
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: low-rank-approximation → concepts/low-rank-approximation.md
+- IRI: pkis:concept:low-rank-approximation
