@@ -290,6 +290,7 @@
 - [[liu-machine-unlearning-llm-2024]] — Rethinking Machine Unlearning for LLMs: post-training knowledge editing survey (deep-learning, ai-safety) (2026-05-20)
 
 ## Concepts
+- [[robot-perception-state-estimation]] — Robot Perception as Continuous State Estimation (robotics, state-space-models) (2026-06-09)
 - [[trajectory-tracking-control]] — Trajectory Tracking Control (robotics, systems-theory) (2026-06-09)
 - [[configuration-space]] — Configuration Space (C-space) (robotics, optimization) (2026-06-09)
 - [[robot-localization]] — Robot Localization (robotics, state-space-models) (2026-06-09)

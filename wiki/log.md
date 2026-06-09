@@ -10471,3 +10471,12 @@
 ## [2026-06-09] committed | technique
 - Committed: model-predictive-control → techniques/model-predictive-control.md
 - IRI: pkis:technique:model-predictive-control
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: robot-perception-state-estimation (id: dd012d56-c56c-4825-b60c-5744c0b2841b)
+- Title: Robot Perception as Continuous State Estimation
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: robot-perception-state-estimation → concepts/robot-perception-state-estimation.md
+- IRI: pkis:concept:robot-perception-state-estimation
