@@ -4549,3 +4549,12 @@
 ## [2026-06-09] committed | framework
 - Committed: function-approximation-rl → frameworks/function-approximation-rl.md
 - IRI: pkis:framework:function-approximation-rl
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: mean-square-value-error (id: 3abb54e0-159f-4744-8d99-68e45134d60b)
+- Title: Mean Square Value Error (VE)
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: mean-square-value-error → concepts/mean-square-value-error.md
+- IRI: pkis:concept:mean-square-value-error

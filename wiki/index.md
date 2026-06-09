@@ -290,6 +290,7 @@
 - [[liu-machine-unlearning-llm-2024]] — Rethinking Machine Unlearning for LLMs: post-training knowledge editing survey (deep-learning, ai-safety) (2026-05-20)
 
 ## Concepts
+- [[mean-square-value-error]] — Mean Square Value Error (VE) (reinforcement-learning, optimization) (2026-06-09)
 - [[decision-time-planning]] — Decision-Time Planning (optimization, deep-learning) (2026-06-09)
 - [[expected-vs-sample-updates]] — Expected vs. Sample Updates (optimization, deep-learning) (2026-06-09)
 - [[model-based-rl]] — Model-Based Reinforcement Learning (optimization, deep-learning) (2026-06-09)
