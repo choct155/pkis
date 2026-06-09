@@ -5872,3 +5872,12 @@
 ## [2026-06-09] committed | concept
 - Committed: finite-vs-superpopulation-variance → concepts/finite-vs-superpopulation-variance.md
 - IRI: pkis:concept:finite-vs-superpopulation-variance
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: fixed-vs-random-effects (id: 4cac803c-b034-4c59-a458-dafde33b7d28)
+- Title: Fixed vs. Random Effects
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: fixed-vs-random-effects → concepts/fixed-vs-random-effects.md
+- IRI: pkis:concept:fixed-vs-random-effects
