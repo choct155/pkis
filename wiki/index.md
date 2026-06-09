@@ -488,6 +488,7 @@
 - [[market-vs-hierarchy]] — Coase/Williamson: transactions governed by price signals (markets) vs. managerial direction (firms) (corporate-finance) (2026-05-20)
 
 ## Techniques
+- [[low-rank-matrix-approximation]] — Low-Rank Matrix Approximation (statistical-learning) (2026-06-09)
 - [[cholesky-decomposition]] — Cholesky Decomposition (statistical-learning) (2026-06-09)
 - [[gram-schmidt]] — Gram-Schmidt Orthogonalization (statistical-learning) (2026-06-09)
 - [[solving-linear-systems]] — Solving Linear Systems (Gaussian Elimination) (statistical-learning) (2026-06-09)

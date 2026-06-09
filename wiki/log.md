@@ -3577,3 +3577,12 @@
 ## [2026-06-09] committed | technique
 - Committed: cholesky-decomposition → techniques/cholesky-decomposition.md
 - IRI: pkis:technique:cholesky-decomposition
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: low-rank-matrix-approximation (id: 36898124-df55-426d-871c-7e24b592973f)
+- Title: Low-Rank Matrix Approximation
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: low-rank-matrix-approximation → techniques/low-rank-matrix-approximation.md
+- IRI: pkis:technique:low-rank-matrix-approximation
