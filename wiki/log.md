@@ -7471,3 +7471,12 @@
 ## [2026-06-09] committed | concept
 - Committed: generator-matrix-q-matrix → concepts/generator-matrix-q-matrix.md
 - IRI: pkis:concept:generator-matrix-q-matrix
+
+## [2026-06-09] staged | node-stub (result)
+- Staged: kolmogorov-forward-backward-equations (id: ab86c24b-a2cb-477b-ba8d-98a9e1cd9d86)
+- Title: Kolmogorov Forward and Backward Equations
+- needs_canonical_source: False
+
+## [2026-06-09] committed | result
+- Committed: kolmogorov-forward-backward-equations → results/kolmogorov-forward-backward-equations.md
+- IRI: pkis:result:kolmogorov-forward-backward-equations
