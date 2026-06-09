@@ -9301,3 +9301,12 @@
 ## [2026-06-09] committed | technique
 - Committed: backward-regression-planning → techniques/backward-regression-planning.md
 - IRI: pkis:technique:backward-regression-planning
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: planning-heuristics-relaxation (id: 13f87437-90d0-4843-84c6-8496cdf43dff)
+- Title: Planning Heuristics via Relaxation and Abstraction
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: planning-heuristics-relaxation → concepts/planning-heuristics-relaxation.md
+- IRI: pkis:concept:planning-heuristics-relaxation
