@@ -5832,6 +5832,31 @@ def pkis_api_queue_add():
         return _api_err(e, 500)
 
 
+@app.route("/pkis-api/upload-document", methods=["POST"])
+def pkis_api_upload_document():
+    """Upload a document (base64) from the viewer. Stores it in the doc store and
+    auto-creates the source node + reader if the slug is new. Mirrors the
+    /docs/upload form's slug fallback (clean filename stem)."""
+    b = _api_json()
+    try:
+        filename = (b.get("filename") or "").strip()
+        if not filename:
+            return _api_err("filename is required")
+        slug = (b.get("slug") or "").strip()
+        if not slug:
+            slug = re.sub(r'[^a-z0-9]+', '-', Path(filename).stem.lower()).strip('-')[:55] or "source"
+        return _api_ok(tool_upload_document(
+            slug=slug,
+            filename=filename,
+            content_b64=b.get("content_b64", ""),
+            push_to_readwise=bool(b.get("push_to_readwise", False)) and bool(READWISE_TOKEN),
+        ))
+    except ValueError as e:
+        return _api_err(e)
+    except Exception as e:
+        return _api_err(e, 500)
+
+
 @app.route("/pkis-api/save-url", methods=["POST"])
 def pkis_api_save_url():
     b = _api_json()

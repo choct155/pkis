@@ -1,7 +1,7 @@
 import { useState } from 'react'
-import { createBridgeNote, createSourceStub, addToQueue } from '../lib/api'
+import { createBridgeNote, createSourceStub, addToQueue, uploadDocument } from '../lib/api'
 
-type Tab = 'bridge' | 'source' | 'queue'
+type Tab = 'bridge' | 'source' | 'upload' | 'queue'
 
 interface Props {
   onClose: () => void
@@ -124,6 +124,73 @@ function SourceTab({ onDone }: { onDone: (msg: string) => void }) {
   )
 }
 
+function UploadTab({ onDone }: { onDone: (msg: string) => void }) {
+  const [file, setFile] = useState<File | null>(null)
+  const [slug, setSlug] = useState('')
+  const [readwise, setReadwise] = useState(false)
+  const [loading, setLoading] = useState(false)
+  const [error, setError] = useState('')
+
+  const pick = (f: File | null) => {
+    setFile(f)
+    if (f && !slug.trim()) {
+      const stem = f.name.replace(/\.[^.]+$/, '')
+      setSlug(stem.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '').slice(0, 55))
+    }
+  }
+
+  const submit = async () => {
+    if (!file) { setError('Choose a file'); return }
+    setLoading(true); setError('')
+    try {
+      const b64 = await new Promise<string>((resolve, reject) => {
+        const r = new FileReader()
+        r.onload = () => resolve(String(r.result).split(',')[1] ?? '')
+        r.onerror = () => reject(r.error)
+        r.readAsDataURL(file)
+      })
+      const res = await uploadDocument(file.name, b64, slug.trim() || undefined, readwise)
+      onDone(`Uploaded → ${res.slug}${res.source_auto_created ? ' (node created)' : ''}`)
+    } catch (e) {
+      setError(String(e))
+    } finally {
+      setLoading(false)
+    }
+  }
+
+  return (
+    <div>
+      <div className="cap-field">
+        <label className="cap-label">document (pdf, epub, md, html, txt, docx)</label>
+        <input
+          className="cap-file"
+          type="file"
+          accept=".pdf,.epub,.md,.html,.txt,.docx"
+          onChange={(e) => pick(e.target.files?.[0] ?? null)}
+        />
+      </div>
+      <div className="cap-field">
+        <label className="cap-label">source slug</label>
+        <input
+          className="cap-input"
+          type="text"
+          placeholder="auto-derived from filename"
+          value={slug}
+          onChange={(e) => setSlug(e.target.value)}
+        />
+      </div>
+      <label className="cap-check">
+        <input type="checkbox" checked={readwise} onChange={(e) => setReadwise(e.target.checked)} />
+        push to Readwise Reader
+      </label>
+      {error && <div className="cap-error">{error}</div>}
+      <button className="cap-submit" onClick={submit} disabled={loading || !file}>
+        {loading ? 'uploading…' : 'upload document →'}
+      </button>
+    </div>
+  )
+}
+
 function QueueTab({ onDone }: { onDone: (msg: string) => void }) {
   const [ref, setRef] = useState('')
   const [reason, setReason] = useState('')
@@ -208,19 +275,23 @@ export default function CaptureSheet({ onClose }: Props) {
             <span className="capture-close" onClick={onClose}>×</span>
           </div>
           <div className="capture-tabs">
-            {(['bridge', 'source', 'queue'] as Tab[]).map((t) => (
+            {(['bridge', 'source', 'upload', 'queue'] as Tab[]).map((t) => (
               <div
                 key={t}
                 className={`cap-tab${tab === t ? ' active' : ''}`}
                 onClick={() => setTab(t)}
               >
-                {t === 'bridge' ? 'bridge note' : t === 'source' ? 'source stub' : 'add to queue'}
+                {t === 'bridge' ? 'bridge note'
+                  : t === 'source' ? 'source stub'
+                  : t === 'upload' ? 'upload doc'
+                  : 'add to queue'}
               </div>
             ))}
           </div>
 
           {tab === 'bridge' && <BridgeTab onDone={handleDone} />}
           {tab === 'source' && <SourceTab onDone={handleDone} />}
+          {tab === 'upload' && <UploadTab onDone={handleDone} />}
           {tab === 'queue'  && <QueueTab  onDone={handleDone} />}
 
           {toast && <div className="cap-success">{toast}</div>}

@@ -182,6 +182,16 @@ export async function addToQueue(
   return post('/queue/add', { reference, reason, priority, source_iri });
 }
 
+// ── Upload document ───────────────────────────────────────────────────────
+export async function uploadDocument(
+  filename: string,
+  content_b64: string,
+  slug?: string,
+  push_to_readwise = false
+): Promise<{ slug: string; doc_url: string; source_auto_created?: boolean; readwise_url?: string }> {
+  return post('/upload-document', { filename, content_b64, slug, push_to_readwise });
+}
+
 // ── Save URL ──────────────────────────────────────────────────────────────
 export async function saveUrl(
   url: string,
