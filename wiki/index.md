@@ -749,6 +749,7 @@
 - [[market-vs-hierarchy]] — Coase/Williamson: transactions governed by price signals (markets) vs. managerial direction (firms) (corporate-finance) (2026-05-20)
 
 ## Techniques
+- [[self-organizing-map]] — Self-Organizing Map (statistical-learning) (2026-06-09)
 - [[hierarchical-clustering]] — Hierarchical Clustering (statistical-learning) (2026-06-09)
 - [[association-rules-apriori]] — Association Rules and the Apriori Algorithm (statistical-learning) (2026-06-09)
 - [[discriminant-adaptive-nearest-neighbor]] — Discriminant Adaptive Nearest-Neighbors (DANN) (statistical-learning) (2026-06-09)

@@ -11597,3 +11597,12 @@
 ## [2026-06-09] committed | technique
 - Committed: hierarchical-clustering → techniques/hierarchical-clustering.md
 - IRI: pkis:technique:hierarchical-clustering
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: self-organizing-map (id: 5660b065-0f06-49ea-958b-886b31cafd78)
+- Title: Self-Organizing Map
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: self-organizing-map → techniques/self-organizing-map.md
+- IRI: pkis:technique:self-organizing-map
