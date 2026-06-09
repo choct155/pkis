@@ -6601,3 +6601,12 @@
 ## [2026-06-09] committed | concept
 - Committed: intervention-and-the-do-operator → concepts/intervention-and-the-do-operator.md
 - IRI: pkis:concept:intervention-and-the-do-operator
+
+## [2026-06-09] staged | node-stub (result)
+- Staged: truncated-factorization-g-formula (id: d3c97d2f-bfa0-401b-a572-49e9d1750457)
+- Title: Truncated Factorization (g-Formula)
+- needs_canonical_source: False
+
+## [2026-06-09] committed | result
+- Committed: truncated-factorization-g-formula → results/truncated-factorization-g-formula.md
+- IRI: pkis:result:truncated-factorization-g-formula
