@@ -5350,3 +5350,12 @@
 ## [2026-06-09] committed | concept
 - Committed: jeffreys-prior → concepts/jeffreys-prior.md
 - IRI: pkis:concept:jeffreys-prior
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: weakly-informative-prior (id: 2282def1-8908-4e89-bf7b-f2f42a2e2fd5)
+- Title: Weakly Informative Prior
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: weakly-informative-prior → concepts/weakly-informative-prior.md
+- IRI: pkis:concept:weakly-informative-prior
