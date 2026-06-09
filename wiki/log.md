@@ -10048,3 +10048,12 @@
 ## [2026-06-09] committed | principle
 - Committed: end-to-end-learning → principles/end-to-end-learning.md
 - IRI: pkis:principle:end-to-end-learning
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: neural-architecture-search (id: 59671ce5-7e16-429a-8cc3-eef2599bc9d7)
+- Title: Neural Architecture Search
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: neural-architecture-search → techniques/neural-architecture-search.md
+- IRI: pkis:technique:neural-architecture-search
