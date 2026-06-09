@@ -4306,3 +4306,12 @@
 ## [2026-06-09] committed | concept
 - Committed: on-policy-vs-off-policy → concepts/on-policy-vs-off-policy.md
 - IRI: pkis:concept:on-policy-vs-off-policy
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: off-policy-importance-sampling-rl (id: 3970b368-a03b-45c7-b5c3-a1940b9c36a0)
+- Title: Off-policy Importance Sampling for Returns (RL)
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: off-policy-importance-sampling-rl → techniques/off-policy-importance-sampling-rl.md
+- IRI: pkis:technique:off-policy-importance-sampling-rl
