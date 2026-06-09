@@ -4783,3 +4783,12 @@
 ## [2026-06-09] committed | technique
 - Committed: residual-gradient-algorithm → techniques/residual-gradient-algorithm.md
 - IRI: pkis:technique:residual-gradient-algorithm
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: learnability-of-rl-objectives (id: 7525226c-0f39-4d0a-9842-6d63484ac1da)
+- Title: Learnability of RL Objectives
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: learnability-of-rl-objectives → concepts/learnability-of-rl-objectives.md
+- IRI: pkis:concept:learnability-of-rl-objectives

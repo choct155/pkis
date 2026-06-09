@@ -290,6 +290,7 @@
 - [[liu-machine-unlearning-llm-2024]] — Rethinking Machine Unlearning for LLMs: post-training knowledge editing survey (deep-learning, ai-safety) (2026-05-20)
 
 ## Concepts
+- [[learnability-of-rl-objectives]] — Learnability of RL Objectives (reinforcement-learning, statistical-learning) (2026-06-09)
 - [[bellman-error-vs-projected-bellman-error]] — Bellman Error vs. Projected Bellman Error (reinforcement-learning, optimization) (2026-06-09)
 - [[the-deadly-triad]] — The Deadly Triad (reinforcement-learning, optimization, deep-learning) (2026-06-09)
 - [[differential-return]] — Differential Return and Differential Value Functions (reinforcement-learning) (2026-06-09)
