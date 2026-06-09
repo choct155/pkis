@@ -4477,3 +4477,12 @@
 ## [2026-06-09] committed | technique
 - Committed: prioritized-sweeping → techniques/prioritized-sweeping.md
 - IRI: pkis:technique:prioritized-sweeping
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: expected-vs-sample-updates (id: fd6d1a6f-2d34-4691-b778-777b2cbaf4f4)
+- Title: Expected vs. Sample Updates
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: expected-vs-sample-updates → concepts/expected-vs-sample-updates.md
+- IRI: pkis:concept:expected-vs-sample-updates
