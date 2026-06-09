@@ -4216,3 +4216,12 @@
 ## [2026-06-09] committed | technique
 - Committed: policy-evaluation → techniques/policy-evaluation.md
 - IRI: pkis:technique:policy-evaluation
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: policy-improvement (id: 70d75a81-bd83-4aa8-9d8d-bf2925b0fe45)
+- Title: Policy Improvement
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: policy-improvement → techniques/policy-improvement.md
+- IRI: pkis:technique:policy-improvement
