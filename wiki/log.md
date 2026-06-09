@@ -3559,3 +3559,12 @@
 ## [2026-06-09] committed | concept
 - Committed: determinant → concepts/determinant.md
 - IRI: pkis:concept:determinant
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: trace (id: e9d8387c-78af-4f27-8cb3-1d6744ab6ede)
+- Title: Trace
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: trace → concepts/trace.md
+- IRI: pkis:concept:trace
