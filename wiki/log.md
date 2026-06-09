@@ -11255,3 +11255,12 @@
 ## [2026-06-09] committed | technique
 - Committed: iteratively-reweighted-least-squares → techniques/iteratively-reweighted-least-squares.md
 - IRI: pkis:technique:iteratively-reweighted-least-squares
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: regression-splines (id: f7ecb16e-460f-43e5-b3cf-ae74e13746c2)
+- Title: Regression Splines
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: regression-splines → techniques/regression-splines.md
+- IRI: pkis:technique:regression-splines
