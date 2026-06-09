@@ -6772,3 +6772,12 @@
 ## [2026-06-09] committed | concept
 - Committed: simpsons-paradox → concepts/simpsons-paradox.md
 - IRI: pkis:concept:simpsons-paradox
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: collapsibility (id: c3d9c26b-0cd7-4a93-8ead-7fe2cfceaf16)
+- Title: Collapsibility
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: collapsibility → concepts/collapsibility.md
+- IRI: pkis:concept:collapsibility
