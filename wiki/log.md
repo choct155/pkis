@@ -8752,3 +8752,12 @@
 ## [2026-06-09] committed | technique
 - Committed: iterative-deepening-search → techniques/iterative-deepening-search.md
 - IRI: pkis:technique:iterative-deepening-search
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: heuristic-function (id: cba1157f-69ec-4e93-8c44-9147f061dcb8)
+- Title: Heuristic Function
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: heuristic-function → concepts/heuristic-function.md
+- IRI: pkis:concept:heuristic-function
