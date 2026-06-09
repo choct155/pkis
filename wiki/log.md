@@ -10291,3 +10291,12 @@
 ## [2026-06-09] committed | technique
 - Committed: bidirectional-rnn → techniques/bidirectional-rnn.md
 - IRI: pkis:technique:bidirectional-rnn
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: image-formation-model (id: 010a0469-b023-4100-b824-5eb435acc243)
+- Title: Image Formation Model
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: image-formation-model → concepts/image-formation-model.md
+- IRI: pkis:concept:image-formation-model
