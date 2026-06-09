@@ -8977,3 +8977,12 @@
 ## [2026-06-09] committed | technique
 - Committed: variable-and-value-ordering-heuristics → techniques/variable-and-value-ordering-heuristics.md
 - IRI: pkis:technique:variable-and-value-ordering-heuristics
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: min-conflicts-local-search-csp (id: 3f5c90f3-bf83-4bd6-92bc-e475c211ff73)
+- Title: Min-Conflicts Local Search for CSPs
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: min-conflicts-local-search-csp → techniques/min-conflicts-local-search-csp.md
+- IRI: pkis:technique:min-conflicts-local-search-csp

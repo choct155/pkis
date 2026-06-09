@@ -682,6 +682,7 @@
 - [[market-vs-hierarchy]] — Coase/Williamson: transactions governed by price signals (markets) vs. managerial direction (firms) (corporate-finance) (2026-05-20)
 
 ## Techniques
+- [[min-conflicts-local-search-csp]] — Min-Conflicts Local Search for CSPs (knowledge-representation, optimization) (2026-06-09)
 - [[variable-and-value-ordering-heuristics]] — Variable and Value Ordering Heuristics for CSPs (knowledge-representation, optimization) (2026-06-09)
 - [[forward-checking]] — Forward Checking and Maintaining Arc Consistency (MAC) (knowledge-representation, optimization) (2026-06-09)
 - [[backtracking-search]] — Backtracking Search for CSPs (knowledge-representation, optimization) (2026-06-09)
