@@ -9580,3 +9580,12 @@
 ## [2026-06-09] committed | problem
 - Committed: optimizers-curse → problems/optimizers-curse.md
 - IRI: pkis:problem:optimizers-curse
+
+## [2026-06-09] staged | node-stub (principle)
+- Staged: off-switch-deference (id: cc99495f-5d42-405b-a586-094ff591a0a0)
+- Title: Off-Switch Deference Under Preference Uncertainty
+- needs_canonical_source: False
+
+## [2026-06-09] committed | principle
+- Committed: off-switch-deference → principles/off-switch-deference.md
+- IRI: pkis:principle:off-switch-deference
