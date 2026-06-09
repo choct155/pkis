@@ -290,6 +290,7 @@
 - [[liu-machine-unlearning-llm-2024]] — Rethinking Machine Unlearning for LLMs: post-training knowledge editing survey (deep-learning, ai-safety) (2026-05-20)
 
 ## Concepts
+- [[mixture-models]] — Mixture Models (statistical-learning, bayesian-stats) (2026-06-09)
 - [[low-rank-approximation]] — Low-Rank Approximation (optimization, statistical-learning) (2026-06-09)
 - [[overfitting-and-underfitting]] — Overfitting and Underfitting (statistical-learning) (2026-06-09)
 - [[convex-conjugate]] — Convex Conjugate (Legendre-Fenchel Transform) (optimization, statistical-learning) (2026-06-09)

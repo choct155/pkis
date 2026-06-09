@@ -3820,3 +3820,12 @@
 ## [2026-06-09] committed | technique
 - Committed: power-iteration → techniques/power-iteration.md
 - IRI: pkis:technique:power-iteration
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: mixture-models (id: c95d216d-028e-42be-bd7f-06e03610b9a6)
+- Title: Mixture Models
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: mixture-models → concepts/mixture-models.md
+- IRI: pkis:concept:mixture-models
