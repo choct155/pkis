@@ -11669,3 +11669,12 @@
 ## [2026-06-09] committed | principle
 - Committed: bet-on-sparsity → principles/bet-on-sparsity.md
 - IRI: pkis:principle:bet-on-sparsity
+
+## [2026-06-09] staged | node-stub (framework)
+- Staged: gaussian-graphical-model (id: 8be4b710-81ae-4734-8879-e02557e8e9a3)
+- Title: Gaussian Graphical Model
+- needs_canonical_source: False
+
+## [2026-06-09] committed | framework
+- Committed: gaussian-graphical-model → frameworks/gaussian-graphical-model.md
+- IRI: pkis:framework:gaussian-graphical-model

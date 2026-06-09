@@ -1233,6 +1233,7 @@
 - [[government-debt-valuation-equation]] — FTPL: price level determined by ratio of nominal debt to expected present value of future surpluses (macroeconomics) (2026-05-20)
 
 ## Frameworks
+- [[gaussian-graphical-model]] — Gaussian Graphical Model (statistical-learning, bayesian-stats) (2026-06-09)
 - [[importance-sampled-learning-ensemble-isle]] — Importance Sampled Learning Ensemble (ISLE) (statistical-learning, optimization) (2026-06-09)
 - [[prototype-methods]] — Prototype Methods (statistical-learning) (2026-06-09)
 - [[reproducing-kernel-hilbert-space]] — Reproducing Kernel Hilbert Space (RKHS) (statistical-learning, optimization) (2026-06-09)
