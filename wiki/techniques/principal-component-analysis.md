@@ -25,11 +25,14 @@ tags:
 - dimensionality-reduction
 title: Principal Component Analysis (PCA)
 understanding: 0
+uses:
+- singular-value-decomposition
 ---
 
 Linear dimensionality reduction that projects data onto the directions of maximum variance, found as the eigenvectors of the covariance matrix (equivalently, the right singular vectors of the centered data matrix).
 
 ## Connections
+- [[singular-value-decomposition]] — uses: PCs are computed from the SVD X=UDVᵀ, columns of UD
 - [[latent-variable-models]] — instantiates: PCA is the Gaussian-latent member of the latent variable family.
 
 ## Contrast with Independent Component Analysis

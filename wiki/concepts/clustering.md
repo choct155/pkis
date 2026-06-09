@@ -17,6 +17,8 @@ domain:
 - statistical-learning
 - bayesian-stats
 id: pkis:concept:clustering
+instantiates:
+- unsupervised-learning
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
@@ -31,6 +33,7 @@ title: Clustering
 understanding: 0
 uses:
 - vector-quantization
+- cluster-dissimilarity-measures
 ---
 
 ## Definition
@@ -46,5 +49,7 @@ Vector quantization supplies the distortion measure as part of the problem and t
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[cluster-dissimilarity-measures]] — uses: the supplied dissimilarity is the central, algorithm-independent input to any clustering method
+- [[unsupervised-learning]] — instantiates
 - [[vector-quantization]] — uses: Vector quantization is the lossy-compression motivation for clustering; cluster centres are the codebook.
 [To be populated during integration]

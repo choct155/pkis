@@ -3,6 +3,7 @@ aliases: []
 also_type: []
 applies:
 - deconvolution
+- maximum-entropy-principle
 component_scores:
   alternatives: null
   conditions: null
@@ -57,6 +58,7 @@ It is a flagship demonstration of MacKay's thesis that *the better the prior mat
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[maximum-entropy-principle]] — applies: MaxEnt image reconstruction applies the principle to assign pixel intensities.
 - [[entropy]] — uses: The entropic prior is built from the Shannon-Skilling cross-entropy S(f,m) relative to a default image m.
 - [[optimal-linear-filter]] — contrasts-with: MaxEnt swaps the Gaussian prior (which permits unphysical negative pixels) for a positive entropic prior, removing artefacts.
 - [[deconvolution]] — applies: MaxEnt reconstruction solves deconvolution with a positivity-enforcing entropic prior instead of a Gaussian one.

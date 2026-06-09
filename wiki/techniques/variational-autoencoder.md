@@ -22,6 +22,8 @@ sources:
 - '[[ganguly-intro-vi]]'
 - '[[sjolund-parametric-vi]]'
 - '[[yellapragada-variational-bayes]]'
+specializes:
+- autoencoder
 tags:
 - variational-methods
 - generative-models
@@ -31,6 +33,7 @@ title: Variational Autoencoder (VAE)
 understanding: 0
 uses:
 - posterior-geometry-coordinate-systems
+- elbo
 ---
 
 A deep generative model (Kingma & Welling, 2013) that combines amortized variational inference with a neural network decoder: an encoder network q_φ(z|x) approximates the posterior over latent codes, a decoder p_θ(x|z) models the generative process, and both are trained jointly by maximizing the ELBO via the reparameterization trick; the ELBO objective decomposes into a reconstruction term E_q[log p(x|z)] minus a KL regularization term KL(q_φ(z|x)‖p(z)).
@@ -38,6 +41,8 @@ A deep generative model (Kingma & Welling, 2013) that combines amortized variati
 Classification note: assigned as technique but also qualifies as framework because it provides an architecture paradigm (encoder-decoder with latent code) that organizes many derivative models (β-VAE, VAE-GAN, VQ-VAE, hierarchical VAEs).
 
 ## Connections
+- [[elbo]] — uses: training maximizes the evidence lower bound over encoder and decoder parameters
+- [[autoencoder]] — specializes: a VAE is an autoencoder whose encoder/decoder define a variational posterior and likelihood
 - [[posterior-geometry-coordinate-systems]] — uses: The VAE reparameterization trick is a coordinate transformation
 
 - [[variational-inference]] — specializes: VAE is an amortized parametric VI algorithm; the encoder implements approximate posterior inference

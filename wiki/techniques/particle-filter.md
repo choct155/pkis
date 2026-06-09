@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- dynamic-bayesian-network
 contrasts-with:
 - variational-inference
 coverage: 1
@@ -16,6 +18,8 @@ maturity: settled
 related_concepts: []
 sources:
 - '[[binsbergen-term-structure-dsge-2011]]'
+specializes:
+- filtering-prediction-smoothing
 tags:
 - sequential-monte-carlo
 - smc
@@ -28,6 +32,8 @@ tags:
 - dynamic-bayesian-networks
 title: Particle Filter (Sequential Monte Carlo)
 understanding: 0
+uses:
+- importance-resampling
 ---
 
 A sequential Monte Carlo algorithm that approximates the filtering distribution p(states_t | data_{1:t}) of a nonlinear, non-Gaussian state-space model by propagating a weighted empirical distribution of particles (state draws) through time using sequential importance resampling (SIR); at each step, particles are propagated through the state transition, reweighted by the likelihood of the new observation, and resampled to prevent weight degeneracy — producing a consistent Monte Carlo estimator of the likelihood function even when the Kalman filter is inapplicable due to model nonlinearity.
@@ -48,4 +54,7 @@ This distinction is load-bearing for the variational-graph-traversal hypothesis:
 Particle filters are to sequential inference what MCMC is to static inference. MCMC constructs a chain whose stationary distribution is the posterior over fixed parameters. Particle filters construct a weighted population whose empirical distribution approximates the sequential posterior at each time step as new observations arrive. Both are asymptotically exact given sufficient particles or chain length.
 
 ## Connections
+- [[importance-resampling]] — uses: Particle filtering is sequential importance sampling with resampling to combat weight degeneracy.
+- [[filtering-prediction-smoothing]] — specializes: Particle filtering approximates the filtering task by a resampled weighted sample population.
+- [[dynamic-bayesian-network]] — applies: Particle filtering is the workhorse approximate-inference method for general (nonlinear, non-Gaussian, factored) DBNs.
 - [[variational-inference]] — contrasts-with: Particle filter is sampling-based sequential inference; VI is optimization-based approximation

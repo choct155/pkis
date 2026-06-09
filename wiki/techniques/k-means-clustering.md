@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- prototype-methods
 component_scores:
   alternatives: null
   conditions: null
@@ -28,12 +30,15 @@ sources:
 - mackay-itila-ch20
 specializes:
 - gaussian-mixture-models
+- em-algorithm
 tags:
 - unsupervised-learning
 - competitive-learning
 - optimization
 title: K-means Clustering
 understanding: 0
+uses:
+- cluster-dissimilarity-measures
 ---
 
 ## Definition
@@ -56,6 +61,9 @@ K-means is the canonical competitive-learning clustering method and the hard-ass
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[em-algorithm]] — specializes: K-means is the hard (σ²→0) limit of EM for a spherical Gaussian mixture
+- [[cluster-dissimilarity-measures]] — uses: fixes the dissimilarity to squared Euclidean distance
+- [[prototype-methods]] — applies: K-means within each class produces labeled prototypes for classification.
 - [[gaussian-mixture-models]] — specializes: K-means is the hard-assignment, equal-weight, fixed-spherical-covariance limit of a Gaussian mixture.
 - [[soft-k-means]] — prerequisite-of: Soft K-means generalizes the hard assignment of K-means via a stiffness-controlled softmax.
 - [[clustering]] — instantiates: K-means is the canonical hard clustering algorithm.

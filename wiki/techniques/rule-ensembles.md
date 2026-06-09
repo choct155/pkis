@@ -1,18 +1,34 @@
 ---
-id: "pkis:technique:rule-ensembles"
 aliases: []
-title: "Rule Ensembles"
-knowledge_type: technique
 also_type: []
-domain: [statistical-learning]
-tags: [ensemble-methods, decision-trees, lasso, interpretability, rule-learning, rulefit]
-related_concepts: ["[[ensemble-learning]]", "[[decision-trees]]", "[[gradient-boosting]]", "[[lasso]]", "[[regularization]]", "[[partial-dependence]]"]
-sources: ["[[friedman-rulefit-2005]]"]
+coverage: 1
 date_created: 2026-05-20
 date_updated: 2026-05-20
-coverage: 1
-understanding: 0
+domain:
+- statistical-learning
+id: pkis:technique:rule-ensembles
+knowledge_type: technique
 maturity: settled
+related_concepts:
+- '[[ensemble-learning]]'
+- '[[decision-trees]]'
+- '[[gradient-boosting]]'
+- '[[lasso]]'
+- '[[regularization]]'
+- '[[partial-dependence]]'
+sources:
+- '[[friedman-rulefit-2005]]'
+tags:
+- ensemble-methods
+- decision-trees
+- lasso
+- interpretability
+- rule-learning
+- rulefit
+title: Rule Ensembles
+understanding: 0
+uses:
+- importance-sampled-learning-ensemble-isle
 ---
 
 A predictive learning technique (RuleFit) that generates a large pool of conjunctive binary rules by extracting every node of every tree in a tree ensemble, then selects a sparse weighted combination of rules via lasso regression, producing an interpretable model with accuracy competitive with the best tree ensemble methods.
@@ -21,3 +37,6 @@ Inputs: training data (x_i, y_i), a tree-growing algorithm, a pool of rules r_k(
 
 ## Reading Path
 - [[friedman-rulefit-2005]] (unread) — primary treatment; ISLE ensemble generation, lasso-based rule fitting, variable importance measures, H-statistics for interaction detection, illustrated on Boston housing and adult census data
+
+## Connections
+- [[importance-sampled-learning-ensemble-isle]] — uses: RuleFit generates its tree pool via the ISLE ensemble generator before extracting rules

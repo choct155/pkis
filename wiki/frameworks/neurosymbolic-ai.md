@@ -1,18 +1,48 @@
 ---
-id: "pkis:framework:neurosymbolic-ai"
 aliases: []
-title: "Neurosymbolic AI"
-knowledge_type: framework
 also_type: []
-domain: [symbolic-subsymbolic, deep-learning, knowledge-representation]
-tags: [neural-symbolic, hybrid-ai, knowledge-representation, reasoning, llm, logic]
-related_concepts: [knowledge-graph, agentic-systems, ontology-reasoning]
-sources: ["[[baldazzi-soft-ontological-reasoning]]", "[[liu-symagent]]", "[[cimiano-ontology-nlp]]", "[[marcus-dl-critical-appraisal-2018]]", "[[marcus-atoms-neural-computation-2014]]", "[[murphy-llm-linguistic-structure-2025]]", "[[luong-ontology-constrained-neural-2026]]", "[[wan-cognitive-ai-nsai-survey-2023]]", "[[sheth-neurosymbolic-why-2023]]", "[[gibaut-nsai-taxonomy-survey-2023]]", "[[delong-nsai-kg-survey-2024]]", "[[lamb-gnn-neural-symbolic-2020]]", "[[belle-future-neurosymbolic-2025]]", "[[lenat-marcus-cyc-trustworthy-2023]]", "[[sequeda-kg-benchmark-llm-2023]]", "[[sequeda-kg-trust-llm-2025]]"]
+coverage: 16
 date_created: 2026-05-20
 date_updated: 2026-05-20
-coverage: 16
-understanding: 0
+domain:
+- symbolic-subsymbolic
+- deep-learning
+- knowledge-representation
+id: pkis:framework:neurosymbolic-ai
+knowledge_type: framework
 maturity: evolving
+prerequisite-of:
+- artificial-general-intelligence
+related_concepts:
+- knowledge-graph
+- agentic-systems
+- ontology-reasoning
+sources:
+- '[[baldazzi-soft-ontological-reasoning]]'
+- '[[liu-symagent]]'
+- '[[cimiano-ontology-nlp]]'
+- '[[marcus-dl-critical-appraisal-2018]]'
+- '[[marcus-atoms-neural-computation-2014]]'
+- '[[murphy-llm-linguistic-structure-2025]]'
+- '[[luong-ontology-constrained-neural-2026]]'
+- '[[wan-cognitive-ai-nsai-survey-2023]]'
+- '[[sheth-neurosymbolic-why-2023]]'
+- '[[gibaut-nsai-taxonomy-survey-2023]]'
+- '[[delong-nsai-kg-survey-2024]]'
+- '[[lamb-gnn-neural-symbolic-2020]]'
+- '[[belle-future-neurosymbolic-2025]]'
+- '[[lenat-marcus-cyc-trustworthy-2023]]'
+- '[[sequeda-kg-benchmark-llm-2023]]'
+- '[[sequeda-kg-trust-llm-2025]]'
+tags:
+- neural-symbolic
+- hybrid-ai
+- knowledge-representation
+- reasoning
+- llm
+- logic
+title: Neurosymbolic AI
+understanding: 0
 ---
 
 A paradigm for AI systems that combine neural (sub-symbolic, data-driven) and symbolic (rule-based, logic-driven) components to achieve capabilities that neither alone provides — leveraging neural flexibility and symbolic transparency, explainability, and formal guarantees.
@@ -34,3 +64,6 @@ A paradigm for AI systems that combine neural (sub-symbolic, data-driven) and sy
 - [[lenat-marcus-cyc-trustworthy-2023]] (unread) — 16 desiderata for trustworthy AI; Cyc as System 2 alternative; hybrid LLM+formal-KB path forward
 - [[sequeda-kg-benchmark-llm-2023]] (unread) — LLM (neural) + OWL/SPARQL (symbolic) enterprise QA: empirical evidence for neurosymbolic advantage; 3x accuracy improvement; different neural vs. symbolic failure modes
 - [[sequeda-kg-trust-llm-2025]] (unread) — KG as formal trust infrastructure for LLM QA; three trust roles (query validation, explainability, governed access) exemplify neurosymbolic design principles
+
+## Connections
+- [[artificial-general-intelligence]] — prerequisite-of

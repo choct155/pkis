@@ -1,0 +1,27 @@
+---
+aliases: []
+authors: Christopher M. Bishop
+coverage: 0
+domain:
+- statistical-learning
+- bayesian-stats
+id: pkis:source:bishop-prml-ch01
+maturity: stub
+parent_book: pkis:source:bishop-prml
+status: unread
+tags:
+- machine-learning
+- bayesian
+- pattern-recognition
+- textbook
+title: "Ch. 01 \u2014 Introduction"
+type: chapter
+understanding: 0
+year: 2006
+---
+
+## Summary
+[Chapter stub — Pattern Recognition and Machine Learning ch01: Introduction. To be deepened from the chapter reader extraction.]
+
+## Reading Path
+- Parent: [[bishop-prml]]

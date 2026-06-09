@@ -8,15 +8,19 @@ analogous-to:
 - kernel-density-estimation
 applies:
 - number-of-components-selection
+- density-estimation
 coverage: 4
 date_created: 2026-05-20
 date_updated: '2026-06-08'
 domain:
 - bayesian-stats
 - statistical-learning
+generalizes:
+- kernel-density-estimation
 id: pkis:technique:gaussian-mixture-models
 instantiates:
 - latent-variable-models
+- prototype-methods
 knowledge_type: technique
 maturity: settled
 related_concepts:
@@ -51,6 +55,9 @@ uses:
 Density estimation model that represents the data distribution as a weighted sum of Gaussian components $p(x) = \sum_k \pi_k \mathcal{N}(x | \mu_k, \Sigma_k)$, fit via the EM algorithm; serves as both a generative model and a soft-clustering technique.
 
 ## Connections
+- [[prototype-methods]] — instantiates: Each Gaussian component is a soft prototype (centroid + covariance).
+- [[kernel-density-estimation]] — generalizes
+- [[density-estimation]] — applies
 - [[number-of-components-selection]] — applies
 - [[dirichlet-distribution]] — uses
 - [[gibbs-sampler]] — uses

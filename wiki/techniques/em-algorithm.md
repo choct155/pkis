@@ -8,6 +8,8 @@ applies:
 - gaussian-mixture-models
 - modal-approximation
 - missing-data-mechanisms
+- label-switching
+- model-selection-problem
 coverage: 10
 date_created: 2026-05-20
 date_updated: '2026-06-08'
@@ -29,6 +31,8 @@ sources:
 - '[[tanner-tools-statistical-inference]]'
 - '[[kroese-statistical-modeling]]'
 - '[[lange-applied-probability]]'
+specializes:
+- mm-algorithm
 tags:
 - optimization
 - probability-theory
@@ -36,6 +40,8 @@ title: Expectation-Maximization (EM) Algorithm
 understanding: 0
 uses:
 - exponential-family
+- forward-backward-algorithm
+- maximum-likelihood-estimation
 ---
 
 Iterative technique for maximum likelihood estimation in latent variable models, alternating between computing expected sufficient statistics under the current parameter estimates (E-step) and maximizing the complete-data likelihood (M-step).
@@ -56,6 +62,11 @@ Iterative technique for maximum likelihood estimation in latent variable models,
 MacKay (ITILA Ch. 20) motivates EM through clustering. The soft K-means **assignment step** computes responsibilities $r_k^{(n)} = \exp(-\beta\, d(\mathbf{m}^{(k)},\mathbf{x}^{(n)})) / \sum_{k'} \exp(-\beta\, d(\mathbf{m}^{(k')},\mathbf{x}^{(n)}))$ — a softmax over squared distances — which is exactly the E-step of EM for an equal-weight, isotropic Gaussian mixture with $\Sigma = \beta^{-1} I$. The **update step** $\mathbf{m}^{(k)} = \sum_n r_k^{(n)}\mathbf{x}^{(n)}/R(k)$ is the corresponding M-step for the means. Thus soft K-means is a constrained instance of EM, and ordinary (hard) K-means is its $\beta \to \infty$ limit, where responsibilities collapse to 0/1 and the E-step becomes a hard nearest-mean assignment. This gives a concrete, geometric reading of EM's alternation: responsibility computation (E) followed by responsibility-weighted parameter re-estimation (M).
 
 ## Connections
+- [[mm-algorithm]] — specializes: EM is an instance of a minorize-maximize (MM) algorithm via the F-function lower bound
+- [[maximum-likelihood-estimation]] — uses: EM is a method for maximizing likelihood when augmenting the data with latent variables simplifies the problem
+- [[model-selection-problem]] — applies
+- [[forward-backward-algorithm]] — uses
+- [[label-switching]] — applies
 - [[exponential-family]] — uses: For exponential families (e.g. multivariate normal, multinomial) the expected complete-data log posterior is linear in the expected sufficient statistics, so only those need be imputed in the E-step.
 - [[missing-data-mechanisms]] — applies: EM finds the posterior mode in missing-data problems by averaging the complete-data log posterior over y_mis (E-step) and maximizing (M-step); it applies to ignorable and, with an explicit inclusion model, nonignorable mechanisms.
 - [[modal-approximation]] — applies: EM finds the marginal posterior mode used to anchor a mode-centered distributional approximation in high dimensions where the joint mode is useless.

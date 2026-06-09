@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- exploration-exploitation-tradeoff
 component_scores:
   alternatives: null
   conditions: null
@@ -9,6 +11,8 @@ component_scores:
   implementation: null
   operational_mechanism: null
   principled_mechanism: null
+contrasts-with:
+- alpha-beta-pruning
 coverage: 1
 date_created: '2026-06-09'
 date_updated: '2026-06-09'
@@ -20,6 +24,8 @@ extends:
 id: pkis:technique:monte-carlo-tree-search
 instantiates:
 - decision-time-planning
+- adversarial-search
+- metareasoning
 knowledge_type: technique
 maturity: evolving
 needs_canonical_source: false
@@ -37,6 +43,7 @@ title: Monte Carlo Tree Search (MCTS)
 understanding: 0
 uses:
 - monte-carlo-estimator
+- upper-confidence-bound
 ---
 
 ## Definition
@@ -46,6 +53,11 @@ A decision-time planning method (Coulom, 2006; Kocsis & Szepesvari, 2006) that e
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[metareasoning]] — instantiates
+- [[adversarial-search]] — instantiates: MCTS is the Type-B adversarial game-tree search method.
+- [[exploration-exploitation-tradeoff]] — applies: The selection policy balances exploration of low-count nodes against exploitation of high-win-rate nodes.
+- [[upper-confidence-bound]] — uses: The UCT selection policy ranks moves by the UCB1 upper-confidence-bound formula.
+- [[alpha-beta-pruning]] — contrasts-with: MCTS is the Type-B alternative to Type-A heuristic alpha-beta, preferred for high branching factors or weak evaluation functions.
 - [[decision-time-planning]] — instantiates: MCTS is executed per state to select that state's action.
 - [[monte-carlo-estimator]] — uses: MCTS estimates tree-edge action values as averages of simulated returns.
 - [[rollout-algorithms]] — extends: MCTS is a rollout algorithm augmented with a tree of accumulated value estimates and a tree policy.

@@ -19,6 +19,8 @@ date_created: '2026-06-08'
 date_updated: '2026-06-08'
 domain:
 - bayesian-stats
+generalizes:
+- hypothesis-testing
 id: pkis:technique:bayesian-model-comparison
 knowledge_type: technique
 maturity: evolving
@@ -54,6 +56,7 @@ It replaces orthodox null-hypothesis testing with a single coherent quantity. Ma
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[hypothesis-testing]] — generalizes: Jaynes: model comparison is compound hypothesis testing one level up; significance tests are the special case
 - [[occams-razor]] — applies: Ranking by evidence is the mechanism by which Bayesian model comparison embodies Occam's razor.
 - [[evidence-framework]] — applies: Bayesian model comparison is the level-2 inference step of the evidence framework.
 - [[hypothesis-testing]] — contrasts-with: Bayes factors / posterior odds replace p-values and significance levels

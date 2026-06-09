@@ -27,6 +27,8 @@ tags:
 - optimization
 title: Empirical Risk Minimization (ERM)
 understanding: 0
+uses:
+- supervised-learning
 ---
 
 ## Reading Path
@@ -37,6 +39,7 @@ understanding: 0
 The formal framework underlying supervised learning: choose a hypothesis class and loss function, then minimize average loss on training data as a surrogate for true risk (expected loss over the data-generating distribution); the choice of loss and hypothesis class determines the method — cross-entropy gives logistic regression, hinge loss gives SVMs, squared loss gives OLS.
 
 ## Connections
+- [[supervised-learning]] — uses
 - [[bias-variance-tradeoff]] — contrasts-with: MML Ch.1: minimizing empirical (training) risk can yield memorization rather than generalization; the bias-variance tradeoff names exactly the failure mode that makes pure ERM insufficient for unseen data.
 
 ## Generalization is the goal, not training fit

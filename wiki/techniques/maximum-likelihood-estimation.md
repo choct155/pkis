@@ -17,6 +17,8 @@ related_concepts:
 - '[[logistic-regression]]'
 sources:
 - '[[kroese-statistical-modeling]]'
+specializes:
+- maximum-a-posteriori-estimation-map
 tags:
 - likelihood
 - estimation
@@ -42,3 +44,6 @@ $$\sigma_\mu = \sigma/\sqrt N,$$
 the points at which the likelihood has fallen by a factor $e^{1/2}$.
 
 With $\mu$ known, differentiating with respect to $\ln\sigma$ (the hygienic choice for a scale parameter) gives $\hat\sigma^2 = S_{\text{tot}}/N$ with $S_{\text{tot}}=\sum_n(x_n-\mu)^2$, and error bars $\sigma_{\ln\sigma}=1/\sqrt{2N}$. Jointly maximizing over both parameters gives $\{\hat\mu,\hat\sigma\}=\{\bar x,\ \sigma_N\}$ with $\sigma_N=\sqrt{S/N}$. Note that $\sigma_N$ is the *biased* ML estimator of the standard deviation (it divides by $N$, not $N-1$) — a low-dimensional example of an unrepresentative ML solution.
+
+## Connections
+- [[maximum-a-posteriori-estimation-map]] — specializes

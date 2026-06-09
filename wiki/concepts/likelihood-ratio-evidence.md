@@ -32,6 +32,7 @@ title: Likelihood Ratio as Evidence
 understanding: 0
 uses:
 - bayesian-inference
+- log-scale-computation
 ---
 
 ## Definition
@@ -47,6 +48,7 @@ Confusing $P(D\mid H)$ with $P(H\mid D)$ corrupts this reasoning. The wife-beate
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[log-scale-computation]] — uses: evidence in decibels is the log-odds, made additive over independent data
 - [[bayesian-inference]] — uses: posterior odds = likelihood ratio x prior odds, a direct application of Bayes' theorem
 [To be populated during integration]
 

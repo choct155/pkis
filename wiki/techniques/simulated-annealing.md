@@ -11,6 +11,7 @@ component_scores:
   principled_mechanism: null
 contrasts-with:
 - overrelaxation
+- hill-climbing
 coverage: 1
 date_created: '2026-06-08'
 date_updated: '2026-06-08'
@@ -26,6 +27,8 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - mackay-itila-ch30
+specializes:
+- local-search
 tags:
 - MCMC
 - temperature
@@ -59,6 +62,8 @@ Annealing is the canonical tool for multimodal targets and rough energy landscap
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[hill-climbing]] — contrasts-with: Annealing accepts worsening moves probabilistically to escape local maxima; hill climbing never moves downhill.
+- [[local-search]] — specializes: Simulated annealing is a stochastic local search method (AIMA framing).
 - [[overrelaxation]] — contrasts-with: annealing combats multimodality across basins; overrelaxation combats within-basin random-walk correlation
 - [[metropolis-algorithm]] — uses: tempering/annealing updates temperature and states via Metropolis acceptance
 - [[mcmc]] — extends: annealing runs MCMC at a sequence of temperatures to escape local basins

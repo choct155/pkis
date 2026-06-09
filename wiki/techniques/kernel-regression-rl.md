@@ -16,6 +16,8 @@ domain:
 - reinforcement-learning
 - statistical-learning
 id: pkis:technique:kernel-regression-rl
+instantiates:
+- kernel-smoothing
 knowledge_type: technique
 maturity: evolving
 needs_canonical_source: false
@@ -42,6 +44,7 @@ A memory-based value approximator that returns a kernel-weighted average of all 
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[kernel-smoothing]] — instantiates
 - [[the-kernel-trick]] — uses: inner-product kernels let one work in an implicit high-dimensional feature space without computing in it
 - [[memory-based-function-approximation]] — specializes: kernel regression is a memory-based method using a kernel-weighted average of stored targets
 [To be populated during integration]

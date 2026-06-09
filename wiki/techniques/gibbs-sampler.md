@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+analogous-to:
+- em-algorithm
 applies:
 - ising-model
 - exact-sampling
@@ -34,6 +36,8 @@ sources:
 - '[[kurz-hybrid-modeling-2022]]'
 specializes:
 - metropolis-algorithm
+- metropolis-hastings
+- mcmc
 tags:
 - mcmc
 - posterior-sampling
@@ -42,6 +46,8 @@ tags:
 - bayesian-computation
 title: Gibbs Sampler
 understanding: 2
+uses:
+- markov-blanket
 ---
 
 An iterative MCMC algorithm for sampling from a multivariate posterior p(θ_1, ..., θ_d | Y) by cycling through the full conditional distributions: at step t+1, draw θ_i^{(t+1)} from p(θ_i | θ_{-i}^{(t)}, Y) for each i in sequence. Under regularity conditions, the generated chain is ergodic with the joint posterior as its stationary distribution.
@@ -112,6 +118,10 @@ Gibbs does not tolerate approximation because there is no correction mechanism.
 Both degrade when variables are highly correlated — updating one coordinate at a time while holding others fixed produces small effective moves along the ridge of correlation. HMC addresses this by using gradient information to construct proposals that move along the posterior surface rather than across it.
 
 ## Connections
+- [[mcmc]] — specializes: Gibbs sampling produces a Markov chain whose stationary distribution is the target joint/posterior
+- [[em-algorithm]] — analogous-to: in exponential-family models Gibbs sampling mirrors EM's E and M steps but samples from conditionals instead of maximizing
+- [[metropolis-hastings]] — specializes
+- [[markov-blanket]] — uses
 - [[exact-sampling]] — applies: Coupled Gibbs sampling is the chain Propp-Wilson use to draw exact Ising samples.
 - [[ising-model]] — applies: Gibbs sampling draws each spin from its conditional given neighbours to sample the Ising equilibrium distribution.
 - [[metropolis-algorithm]] — specializes: A Gibbs coordinate-update is a Metropolis method whose proposal is always accepted.

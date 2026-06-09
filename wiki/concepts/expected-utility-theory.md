@@ -15,6 +15,8 @@ date_created: '2026-06-08'
 date_updated: '2026-06-08'
 domain:
 - bayesian-stats
+generalizes:
+- st-petersburg-paradox
 id: pkis:concept:expected-utility-theory
 knowledge_type: concept
 maturity: evolving
@@ -54,6 +56,7 @@ Expected utility is the substrate on which all of Bayesian decision theory rests
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[st-petersburg-paradox]] — generalizes: Bernoulli's moral-value (utility) theory was devised to resolve the St Petersburg paradox.
 - [[value-of-information]] — prerequisite-of: VoI is defined as a difference in expected utilities, so EU theory is logically prior.
 - [[bayesian-inference]] — uses: The posterior P(x|a) supplied by Bayesian inference is integrated against the utility to score each action.
 [To be populated during integration]

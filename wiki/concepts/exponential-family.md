@@ -22,6 +22,8 @@ domain:
 generalizes:
 - gaussian-distribution
 id: pkis:concept:exponential-family
+instantiates:
+- maximum-entropy-principle
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
@@ -48,6 +50,7 @@ Most "named" distributions — Gaussian, Bernoulli, Binomial, Beta, Gamma, Diric
 The exponential family is the unique class admitting **finite-dimensional sufficient statistics** under i.i.d. sampling (Pitman–Koopman–Darmois): no matter how much data you collect, $\phi(x)$ of fixed dimension summarizes it. This yields the three desiderata for tractable modeling — closure under Bayesian updating, bounded parameter count, and well-behaved estimation. Critically, **every exponential-family likelihood has a conjugate prior** of matching form, which is why conjugate pairs (Beta–Bernoulli, Gaussian–Gaussian, Dirichlet–Multinomial) exist. This structure underpins generalized linear models, variational inference, and much of probabilistic ML.
 
 ### Connections
+- [[maximum-entropy-principle]] — instantiates
 - [[beta-distribution]] — analogous-to
 - [[conjugate-prior]] — analogous-to
 - [[sufficient-statistics]] — uses

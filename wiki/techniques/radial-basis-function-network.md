@@ -9,6 +9,8 @@ component_scores:
   implementation: null
   operational_mechanism: null
   principled_mechanism: null
+contrasts-with:
+- the-kernel-trick
 coverage: 1
 date_created: '2026-06-09'
 date_updated: '2026-06-09'
@@ -17,6 +19,7 @@ domain:
 - statistical-learning
 generalizes:
 - coarse-coding
+- kernel-smoothing
 id: pkis:technique:radial-basis-function-network
 knowledge_type: technique
 maturity: evolving
@@ -33,6 +36,8 @@ tags:
 - function-approximation
 title: Radial Basis Function Network
 understanding: 0
+uses:
+- gaussian-mixture-models
 ---
 
 ## Definition
@@ -42,6 +47,9 @@ A linear function approximator whose features are radial basis functions—the c
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[the-kernel-trick]] — contrasts-with
+- [[gaussian-mixture-models]] — uses
+- [[kernel-smoothing]] — generalizes
 - [[linear-function-approximation-rl]] — specializes: an RBF network with fixed centers/widths is a linear approximator over RBF features
 - [[coarse-coding]] — generalizes: RBFs are the continuous-valued generalization of binary coarse-coding features
 [To be populated during integration]

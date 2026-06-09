@@ -35,6 +35,7 @@ understanding: 0
 uses:
 - t-distribution
 - mixture-models
+- bayesian-outlier-model
 ---
 
 ## Definition
@@ -44,6 +45,7 @@ Inference whose conclusions are not unduly distorted by aberrant observations or
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[bayesian-outlier-model]] — uses: Jaynes's route to robustness is the two-model mixture rather than outlier rejection
 - [[gaussian-distribution]] — contrasts-with: normal-based models are the nonrobust baseline robust inference replaces
 - [[mixture-models]] — uses: heavy-tailed/overdispersed robust models are continuous or finite mixtures
 - [[t-distribution]] — uses: the t is the primary heavy-tailed family used to achieve robustness

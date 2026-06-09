@@ -1,18 +1,40 @@
 ---
-id: "pkis:technique:kalman-filter"
 aliases: []
-title: "Kalman Filter"
-knowledge_type: technique
 also_type: []
-domain: [time-series, state-space-models, bayesian-stats]
-tags: [state-space-models, sequential-inference, linear-gaussian, recursive-estimation, filtering, smoothing]
-related_concepts: ["[[state-space-models]]", "[[structural-time-series]]", "[[bayesian-linear-regression]]", "[[dynamic-factor-models]]"]
-sources: ["[[duncan-mskf-seemingly-unrelated-1993]]", "[[scott-varian-nowcasting-2013a]]", "[[scott-varian-bsts-2014]]", "[[stock-watson-leading-indicators-1992]]", "[[kroese-statistical-modeling]]", "[[kurz-hybrid-modeling-2022]]"]
+coverage: 5
 date_created: 2026-05-20
 date_updated: 2026-05-20
-coverage: 5
-understanding: 0
+domain:
+- time-series
+- state-space-models
+- bayesian-stats
+id: pkis:technique:kalman-filter
+knowledge_type: technique
 maturity: settled
+related_concepts:
+- '[[state-space-models]]'
+- '[[structural-time-series]]'
+- '[[bayesian-linear-regression]]'
+- '[[dynamic-factor-models]]'
+sources:
+- '[[duncan-mskf-seemingly-unrelated-1993]]'
+- '[[scott-varian-nowcasting-2013a]]'
+- '[[scott-varian-bsts-2014]]'
+- '[[stock-watson-leading-indicators-1992]]'
+- '[[kroese-statistical-modeling]]'
+- '[[kurz-hybrid-modeling-2022]]'
+specializes:
+- dynamic-bayesian-network
+- filtering-prediction-smoothing
+tags:
+- state-space-models
+- sequential-inference
+- linear-gaussian
+- recursive-estimation
+- filtering
+- smoothing
+title: Kalman Filter
+understanding: 0
 ---
 
 Recursive Bayesian estimation algorithm for linear Gaussian state-space models: given the current observation y_t, the Kalman filter produces the optimal (minimum mean-square-error) estimate of the latent state α_t by combining the prior prediction (from the transition equation) with the observation likelihood, yielding a Gaussian posterior that serves as the prior for the next step.
@@ -24,3 +46,7 @@ Recursive Bayesian estimation algorithm for linear Gaussian state-space models: 
 - [[stock-watson-leading-indicators-1992]] (unread) — uses Kalman filter to compute the conditional distribution of the unobserved economic state for recession probability computation
 - [[kroese-statistical-modeling-ch13]] (unread) — Kalman filter for the unobserved components model with both frequentist and Bayesian (MCMC via Gibbs) estimation; clean pedagogical presentation
 - [[kurz-hybrid-modeling-2022]] (unread) — Kalman filtering recognized as recursive Bayesian estimation and canonical hybrid model; Ensemble Kalman Filter used in weather forecasting with ~10^6 data points/hr and ~10^9 model states
+
+## Connections
+- [[filtering-prediction-smoothing]] — specializes: Kalman filtering is the linear-Gaussian continuous-state instance of the general filtering/smoothing recursion.
+- [[dynamic-bayesian-network]] — specializes: A Kalman filter is a DBN with continuous variables and linear-Gaussian conditional distributions.

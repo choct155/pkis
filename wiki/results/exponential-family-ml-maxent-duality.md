@@ -15,6 +15,8 @@ date_updated: '2026-06-08'
 domain:
 - statistical-learning
 id: pkis:result:exponential-family-ml-maxent-duality
+instantiates:
+- maximum-entropy-principle
 knowledge_type: result
 maturity: evolving
 needs_canonical_source: false
@@ -35,6 +37,7 @@ understanding: 0
 uses:
 - sufficient-statistics
 - lagrange-multipliers
+- maximum-entropy-principle
 ---
 
 ## Definition
@@ -54,6 +57,8 @@ This is the conceptual hub of generalized linear models, logistic regression, Bo
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[maximum-entropy-principle]] — uses
+- [[maximum-entropy-principle]] — instantiates: ML fitting of an exponential family equals maxent under empirical-moment constraints.
 - [[entropy]] — analogous-to: Maximum-entropy distributions under moment constraints are exponential families, the maxent counterpart of the ML fit.
 - [[lagrange-multipliers]] — uses: The maxent side of the duality derives the exponential form via one Lagrange multiplier per moment constraint.
 - [[sufficient-statistics]] — uses: The empirical feature-averages that ML must match are the sufficient statistics of the exponential family.

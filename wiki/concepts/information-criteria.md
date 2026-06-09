@@ -28,6 +28,9 @@ tags:
 - information-theory
 title: Information Criteria
 understanding: 0
+uses:
+- optimism-of-training-error
+- effective-number-of-parameters
 ---
 
 Penalized log-likelihood scores for comparing statistical models that trade off goodness-of-fit (via maximized log-likelihood) against complexity (via a penalty on the number of parameters), enabling automatic model selection without held-out data.
@@ -38,4 +41,6 @@ The two canonical forms are: AIC = −2ℓ + 2k (asymptotically efficient; selec
 - [[castle-model-selection-algorithms]] (unread) — comprehensive Monte Carlo comparison of 21 MSAs; AIC vs SIC performance as a function of signal-to-noise and proportion of relevant variables; penalty function / gauge framework
 
 ## Connections
+- [[effective-number-of-parameters]] — uses
+- [[optimism-of-training-error]] — uses
 - [[marginal-likelihood]] — contrasts-with: predictive ICs target out-of-sample fit; BIC/Bayes factors target the marginal likelihood

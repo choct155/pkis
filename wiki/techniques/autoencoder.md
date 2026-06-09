@@ -15,6 +15,8 @@ date_updated: '2026-06-09'
 domain:
 - deep-learning
 - statistical-learning
+generalizes:
+- principal-component-analysis
 id: pkis:technique:autoencoder
 knowledge_type: technique
 maturity: evolving
@@ -36,4 +38,5 @@ understanding: 0
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[principal-component-analysis]] — generalizes: the linear autoencoder recovers the top principal components; nonlinear autoencoders generalize PCA
 [To be populated during integration]

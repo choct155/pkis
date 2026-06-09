@@ -14,6 +14,8 @@ date_created: '2026-06-09'
 date_updated: '2026-06-09'
 domain:
 - bayesian-stats
+generalizes:
+- signal-detection-theory
 id: pkis:technique:bayesian-decision-analysis
 knowledge_type: technique
 maturity: evolving
@@ -50,6 +52,7 @@ This is the bridge from inference to action: it makes posterior *uncertainty*, n
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[signal-detection-theory]] — generalizes
 - [[expected-loss]] — uses
 - [[decision-theory-foundations]] — specializes
 - [[bayesian-inference]] — uses
