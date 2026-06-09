@@ -6106,3 +6106,12 @@
 ## [2026-06-09] committed | problem
 - Committed: label-switching → problems/label-switching.md
 - IRI: pkis:problem:label-switching
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: identifiability-of-mixtures (id: 98704616-dfad-4248-9e2b-754099a48d83)
+- Title: Identifiability of the Mixture Likelihood
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: identifiability-of-mixtures → concepts/identifiability-of-mixtures.md
+- IRI: pkis:concept:identifiability-of-mixtures

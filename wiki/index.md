@@ -290,6 +290,7 @@
 - [[liu-machine-unlearning-llm-2024]] — Rethinking Machine Unlearning for LLMs: post-training knowledge editing survey (deep-learning, ai-safety) (2026-05-20)
 
 ## Concepts
+- [[identifiability-of-mixtures]] — Identifiability of the Mixture Likelihood (bayesian-stats, statistical-learning) (2026-06-09)
 - [[monotone-missing-data-pattern]] — Monotone Missing-Data Pattern (bayesian-stats, statistical-learning) (2026-06-09)
 - [[beta-binomial-distribution]] — Beta-Binomial Distribution (bayesian-stats, statistical-learning) (2026-06-09)
 - [[negative-binomial-distribution]] — Negative Binomial Distribution (bayesian-stats, statistical-learning) (2026-06-09)
