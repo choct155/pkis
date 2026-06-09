@@ -4675,3 +4675,12 @@
 ## [2026-06-09] committed | technique
 - Committed: memory-based-function-approximation → techniques/memory-based-function-approximation.md
 - IRI: pkis:technique:memory-based-function-approximation
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: kernel-regression-rl (id: e2611c87-5ff2-47c2-b13e-84004549fa2d)
+- Title: Kernel Regression for Value Estimation
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: kernel-regression-rl → techniques/kernel-regression-rl.md
+- IRI: pkis:technique:kernel-regression-rl
