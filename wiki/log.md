@@ -6925,3 +6925,12 @@
 ## [2026-06-09] committed | principle
 - Committed: monotonicity-no-prevention → principles/monotonicity-no-prevention.md
 - IRI: pkis:principle:monotonicity-no-prevention
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: actual-causation (id: 66ceaea0-ead0-4b0b-a27d-c9448cb9d1ce)
+- Title: Actual Causation
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: actual-causation → concepts/actual-causation.md
+- IRI: pkis:concept:actual-causation
