@@ -4063,3 +4063,12 @@
 ## [2026-06-09] committed | technique
 - Committed: action-value-methods → techniques/action-value-methods.md
 - IRI: pkis:technique:action-value-methods
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: epsilon-greedy (id: 17cdacd5-7710-4d3d-b5a2-19fd31582845)
+- Title: ε-greedy Action Selection
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: epsilon-greedy → techniques/epsilon-greedy.md
+- IRI: pkis:technique:epsilon-greedy

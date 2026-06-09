@@ -511,6 +511,7 @@
 - [[market-vs-hierarchy]] — Coase/Williamson: transactions governed by price signals (markets) vs. managerial direction (firms) (corporate-finance) (2026-05-20)
 
 ## Techniques
+- [[epsilon-greedy]] — ε-greedy Action Selection (reinforcement-learning) (2026-06-09)
 - [[action-value-methods]] — Action-Value Methods (reinforcement-learning) (2026-06-09)
 - [[ancestral-sampling]] — Ancestral Sampling (bayesian-stats, statistical-learning) (2026-06-09)
 - [[power-iteration]] — Power Iteration (optimization, statistical-learning) (2026-06-09)
