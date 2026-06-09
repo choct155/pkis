@@ -687,6 +687,7 @@
 - [[market-vs-hierarchy]] — Coase/Williamson: transactions governed by price signals (markets) vs. managerial direction (firms) (corporate-finance) (2026-05-20)
 
 ## Techniques
+- [[generalized-modus-ponens]] — Generalized Modus Ponens (knowledge-representation, symbolic-subsymbolic) (2026-06-09)
 - [[knowledge-engineering]] — Knowledge Engineering (knowledge-representation, symbolic-subsymbolic) (2026-06-09)
 - [[satplan-logical-planning]] — SATPLAN: Planning as Satisfiability (knowledge-representation, optimization, symbolic-subsymbolic) (2026-06-09)
 - [[forward-and-backward-chaining]] — Forward and Backward Chaining (knowledge-representation, symbolic-subsymbolic) (2026-06-09)

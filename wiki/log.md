@@ -9139,3 +9139,12 @@
 ## [2026-06-09] committed | concept
 - Committed: unification → concepts/unification.md
 - IRI: pkis:concept:unification
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: generalized-modus-ponens (id: b185e26c-2777-4f87-b0f3-79e6d0e95ec1)
+- Title: Generalized Modus Ponens
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: generalized-modus-ponens → techniques/generalized-modus-ponens.md
+- IRI: pkis:technique:generalized-modus-ponens
