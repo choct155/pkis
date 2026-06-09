@@ -6574,3 +6574,12 @@
 ## [2026-06-09] committed | concept
 - Committed: intransitive-triplet → concepts/intransitive-triplet.md
 - IRI: pkis:concept:intransitive-triplet
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: statistical-time (id: 281f7637-7af3-4ff9-a3de-dfa87916aa4b)
+- Title: Statistical Time
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: statistical-time → concepts/statistical-time.md
+- IRI: pkis:concept:statistical-time
