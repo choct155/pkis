@@ -6700,3 +6700,12 @@
 ## [2026-06-09] committed | principle
 - Committed: causal-vs-evidential-decision-theory → principles/causal-vs-evidential-decision-theory.md
 - IRI: pkis:principle:causal-vs-evidential-decision-theory
+
+## [2026-06-09] staged | node-stub (framework)
+- Staged: structural-equation-models (id: 7c587a2c-f88b-43f5-bc07-4a188da98c5d)
+- Title: Structural Equation Models (Causal Reading)
+- needs_canonical_source: False
+
+## [2026-06-09] committed | framework
+- Committed: structural-equation-models → frameworks/structural-equation-models.md
+- IRI: pkis:framework:structural-equation-models
