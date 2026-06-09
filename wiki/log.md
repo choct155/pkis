@@ -6088,3 +6088,12 @@
 ## [2026-06-09] committed | technique
 - Committed: shrinkage-priors → techniques/shrinkage-priors.md
 - IRI: pkis:technique:shrinkage-priors
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: logistic-gaussian-process (id: 94ab2be4-f4c0-4637-ab4a-281305642475)
+- Title: Logistic Gaussian Process (LGP)
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: logistic-gaussian-process → techniques/logistic-gaussian-process.md
+- IRI: pkis:technique:logistic-gaussian-process
