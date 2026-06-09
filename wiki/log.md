@@ -11534,3 +11534,12 @@
 ## [2026-06-09] committed | framework
 - Committed: prototype-methods → frameworks/prototype-methods.md
 - IRI: pkis:framework:prototype-methods
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: learning-vector-quantization (id: bcfec53e-c605-4875-b8ef-61b3bbfb054d)
+- Title: Learning Vector Quantization (LVQ)
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: learning-vector-quantization → techniques/learning-vector-quantization.md
+- IRI: pkis:technique:learning-vector-quantization
