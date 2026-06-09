@@ -6025,3 +6025,12 @@
 ## [2026-06-09] committed | technique
 - Committed: robit-regression → techniques/robit-regression.md
 - IRI: pkis:technique:robit-regression
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: multiple-imputation (id: 3e414d8b-2be7-425c-968a-9fc305c6fc0e)
+- Title: Multiple Imputation
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: multiple-imputation → techniques/multiple-imputation.md
+- IRI: pkis:technique:multiple-imputation
