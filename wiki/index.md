@@ -1083,6 +1083,7 @@
 - [[government-debt-valuation-equation]] — FTPL: price level determined by ratio of nominal debt to expected present value of future surpluses (macroeconomics) (2026-05-20)
 
 ## Frameworks
+- [[hidden-markov-model]] — Hidden Markov Model (HMM) (bayesian-stats, state-space-models, time-series, statistical-learning) (2026-06-09)
 - [[naive-bayes-model]] — Naive Bayes Model (bayesian-stats, statistical-learning, knowledge-representation) (2026-06-09)
 - [[hierarchical-task-network]] — Hierarchical Task Network (HTN) Planning (knowledge-representation, symbolic-subsymbolic, optimization) (2026-06-09)
 - [[classical-planning-pddl]] — Classical Planning and PDDL (knowledge-representation, symbolic-subsymbolic, optimization) (2026-06-09)

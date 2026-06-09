@@ -9436,3 +9436,12 @@
 ## [2026-06-09] committed | concept
 - Committed: noisy-or-model → concepts/noisy-or-model.md
 - IRI: pkis:concept:noisy-or-model
+
+## [2026-06-09] staged | node-stub (framework)
+- Staged: hidden-markov-model (id: d17ca161-3f65-41c8-8ae0-4272a1c47087)
+- Title: Hidden Markov Model (HMM)
+- needs_canonical_source: False
+
+## [2026-06-09] committed | framework
+- Committed: hidden-markov-model → frameworks/hidden-markov-model.md
+- IRI: pkis:framework:hidden-markov-model
