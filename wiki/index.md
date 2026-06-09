@@ -290,6 +290,7 @@
 - [[liu-machine-unlearning-llm-2024]] — Rethinking Machine Unlearning for LLMs: post-training knowledge editing survey (deep-learning, ai-safety) (2026-05-20)
 
 ## Concepts
+- [[renewal-function]] — Renewal Function (bayesian-stats, statistical-learning) (2026-06-09)
 - [[renewal-process]] — Renewal Process (bayesian-stats, statistical-learning) (2026-06-09)
 - [[absorbing-markov-chain]] — Absorbing Markov Chain and the Fundamental Matrix (bayesian-stats) (2026-06-09)
 - [[first-passage-times]] — First-Passage and Hitting Times (bayesian-stats) (2026-06-09)

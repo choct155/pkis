@@ -7300,3 +7300,12 @@
 ## [2026-06-09] committed | concept
 - Committed: renewal-process → concepts/renewal-process.md
 - IRI: pkis:concept:renewal-process
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: renewal-function (id: 3f6b4cb8-2e1b-4ac2-b0dd-abddbe028b12)
+- Title: Renewal Function
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: renewal-function → concepts/renewal-function.md
+- IRI: pkis:concept:renewal-function
