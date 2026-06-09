@@ -6484,3 +6484,12 @@
 ## [2026-06-09] committed | concept
 - Committed: intervention-do-operator → concepts/intervention-do-operator.md
 - IRI: pkis:concept:intervention-do-operator
+
+## [2026-06-09] staged | node-stub (framework)
+- Staged: markovian-causal-model (id: 7d0fcc84-0b91-45f0-965b-c6b766f26cec)
+- Title: Markovian Causal Model
+- needs_canonical_source: False
+
+## [2026-06-09] committed | framework
+- Committed: markovian-causal-model → frameworks/markovian-causal-model.md
+- IRI: pkis:framework:markovian-causal-model
