@@ -6529,3 +6529,12 @@
 ## [2026-06-09] committed | problem
 - Committed: causal-discovery → problems/causal-discovery.md
 - IRI: pkis:problem:causal-discovery
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: ic-algorithm (id: aa2d3a80-81e5-44ce-b505-2ea4b172c9e2)
+- Title: IC Algorithm (Inductive Causation)
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: ic-algorithm → techniques/ic-algorithm.md
+- IRI: pkis:technique:ic-algorithm

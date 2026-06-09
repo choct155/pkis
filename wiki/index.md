@@ -589,6 +589,7 @@
 - [[market-vs-hierarchy]] — Coase/Williamson: transactions governed by price signals (markets) vs. managerial direction (firms) (corporate-finance) (2026-05-20)
 
 ## Techniques
+- [[ic-algorithm]] — IC Algorithm (Inductive Causation) (causal-analysis, statistical-learning) (2026-06-09)
 - [[logistic-gaussian-process]] — Logistic Gaussian Process (LGP) (bayesian-stats, statistical-learning) (2026-06-09)
 - [[shrinkage-priors]] — Shrinkage Priors (Continuous / Global-Local) (bayesian-stats, statistical-learning) (2026-06-09)
 - [[bayesian-nonlinear-model]] — Bayesian Nonlinear Model (bayesian-stats, statistical-learning) (2026-06-09)
