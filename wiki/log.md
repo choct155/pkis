@@ -9643,3 +9643,12 @@
 ## [2026-06-09] committed | technique
 - Committed: reward-shaping → techniques/reward-shaping.md
 - IRI: pkis:technique:reward-shaping
+
+## [2026-06-09] staged | node-stub (framework)
+- Staged: game-theory (id: dbf5a47c-90e1-4128-a937-c732c657ccb3)
+- Title: Game Theory
+- needs_canonical_source: False
+
+## [2026-06-09] committed | framework
+- Committed: game-theory → frameworks/game-theory.md
+- IRI: pkis:framework:game-theory
