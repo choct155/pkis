@@ -4765,3 +4765,12 @@
 ## [2026-06-09] committed | technique
 - Committed: gradient-td-methods → techniques/gradient-td-methods.md
 - IRI: pkis:technique:gradient-td-methods
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: emphatic-td (id: abfabbe4-019b-4b5d-a5b2-8a83ff1606db)
+- Title: Emphatic-TD Methods
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: emphatic-td → techniques/emphatic-td.md
+- IRI: pkis:technique:emphatic-td
