@@ -10210,3 +10210,12 @@
 ## [2026-06-09] committed | framework
 - Committed: lexicalized-pcfg → frameworks/lexicalized-pcfg.md
 - IRI: pkis:framework:lexicalized-pcfg
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: information-extraction (id: a826f4af-bd55-44cb-9b24-e8ac86725e6f)
+- Title: Information Extraction
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: information-extraction → techniques/information-extraction.md
+- IRI: pkis:technique:information-extraction
