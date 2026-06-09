@@ -11318,3 +11318,12 @@
 ## [2026-06-09] committed | technique
 - Committed: local-regression-loess → techniques/local-regression-loess.md
 - IRI: pkis:technique:local-regression-loess
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: local-likelihood (id: 51c28df7-2641-4874-800d-0053cb52999f)
+- Title: Local Likelihood and Varying-Coefficient Models
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: local-likelihood → techniques/local-likelihood.md
+- IRI: pkis:technique:local-likelihood
