@@ -7983,3 +7983,12 @@
 ## [2026-06-09] committed | concept
 - Committed: ancillary-statistic → concepts/ancillary-statistic.md
 - IRI: pkis:concept:ancillary-statistic
+
+## [2026-06-09] staged | node-stub (result)
+- Staged: fisher-neyman-factorization (id: 09ea7f55-b8a1-4a52-a77e-f84cb82a1310)
+- Title: Fisher–Neyman Factorization
+- needs_canonical_source: False
+
+## [2026-06-09] committed | result
+- Committed: fisher-neyman-factorization → results/fisher-neyman-factorization.md
+- IRI: pkis:result:fisher-neyman-factorization

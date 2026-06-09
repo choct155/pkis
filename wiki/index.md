@@ -919,6 +919,7 @@
 - [[constraint-propagation]] — Reducing a constraint satisfaction problem by iteratively eliminating inconsistent values from variable domains (knowledge-representation) (2026-05-20)
 
 ## Results
+- [[fisher-neyman-factorization]] — Fisher–Neyman Factorization (bayesian-stats, statistical-learning) (2026-06-09)
 - [[gaussian-maximum-entropy-characterization]] — Gaussian as Maximum-Entropy Distribution for Fixed Mean and Variance (bayesian-stats, information-theory, statistical-learning) (2026-06-09)
 - [[herschel-maxwell-derivation]] — Herschel–Maxwell Derivation of the Gaussian (bayesian-stats, statistical-learning) (2026-06-09)
 - [[central-limit-theorem]] — Central Limit Theorem (bayesian-stats, statistical-learning) (2026-06-09)
