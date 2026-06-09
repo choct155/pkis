@@ -10597,3 +10597,12 @@
 ## [2026-06-09] committed | concept
 - Committed: metareasoning → concepts/metareasoning.md
 - IRI: pkis:concept:metareasoning
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: artificial-general-intelligence (id: 8447a50c-9e13-4088-8fe3-086f3c879a38)
+- Title: Artificial General Intelligence (AGI / HLAI)
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: artificial-general-intelligence → concepts/artificial-general-intelligence.md
+- IRI: pkis:concept:artificial-general-intelligence
