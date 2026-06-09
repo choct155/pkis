@@ -995,6 +995,7 @@
 - [[llm-language-comprehension]] — The problem of whether LLMs genuinely comprehend language vs. pattern-match surface form (deep-learning, cognitive-science) (2026-05-20)
 
 ## Principles
+- [[monotonicity-no-prevention]] — Monotonicity (No-Prevention Assumption) (causal-analysis, bayesian-stats) (2026-06-09)
 - [[causal-vs-evidential-decision-theory]] — Causal vs. Evidential Decision Theory (causal-analysis, bayesian-stats) (2026-06-09)
 - [[causal-markov-condition]] — Markov Condition (Causal Markov Assumption) (causal-analysis, bayesian-stats, knowledge-representation) (2026-06-09)
 - [[minimal-model-causation]] — Minimal-Model Semantics of Inferred Causation (causal-analysis, bayesian-stats) (2026-06-09)

@@ -6916,3 +6916,12 @@
 ## [2026-06-09] committed | concept
 - Committed: attribution-and-but-for-causation → concepts/attribution-and-but-for-causation.md
 - IRI: pkis:concept:attribution-and-but-for-causation
+
+## [2026-06-09] staged | node-stub (principle)
+- Staged: monotonicity-no-prevention (id: 3cd694d0-955c-4c76-94f9-2d35d5b72ca5)
+- Title: Monotonicity (No-Prevention Assumption)
+- needs_canonical_source: False
+
+## [2026-06-09] committed | principle
+- Committed: monotonicity-no-prevention → principles/monotonicity-no-prevention.md
+- IRI: pkis:principle:monotonicity-no-prevention
