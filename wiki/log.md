@@ -10462,3 +10462,12 @@
 ## [2026-06-09] committed | result
 - Committed: linear-quadratic-regulator-lqr → results/linear-quadratic-regulator-lqr.md
 - IRI: pkis:result:linear-quadratic-regulator-lqr
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: model-predictive-control (id: 2d272693-d802-43ed-a8c6-2998b012f4e5)
+- Title: Model Predictive Control (MPC)
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: model-predictive-control → techniques/model-predictive-control.md
+- IRI: pkis:technique:model-predictive-control
