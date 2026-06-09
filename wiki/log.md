@@ -8878,3 +8878,12 @@
 ## [2026-06-09] committed | framework
 - Committed: adversarial-search → frameworks/adversarial-search.md
 - IRI: pkis:framework:adversarial-search
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: game-tree (id: 6d20b97d-784e-4b19-a2ae-5b30a06a6b49)
+- Title: Game Tree
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: game-tree → concepts/game-tree.md
+- IRI: pkis:concept:game-tree
