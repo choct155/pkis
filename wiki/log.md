@@ -4486,3 +4486,12 @@
 ## [2026-06-09] committed | concept
 - Committed: expected-vs-sample-updates → concepts/expected-vs-sample-updates.md
 - IRI: pkis:concept:expected-vs-sample-updates
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: trajectory-sampling (id: 3b274553-cd44-4fef-9bb5-d8f2c2da2911)
+- Title: Trajectory Sampling
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: trajectory-sampling → techniques/trajectory-sampling.md
+- IRI: pkis:technique:trajectory-sampling
