@@ -6592,3 +6592,12 @@
 ## [2026-06-09] committed | principle
 - Committed: causal-markov-condition → principles/causal-markov-condition.md
 - IRI: pkis:principle:causal-markov-condition
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: intervention-and-the-do-operator (id: 3f645187-4c08-4c91-8299-9766c1666c84)
+- Title: Intervention and the do(·) Operator
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: intervention-and-the-do-operator → concepts/intervention-and-the-do-operator.md
+- IRI: pkis:concept:intervention-and-the-do-operator
