@@ -7785,3 +7785,12 @@
 ## [2026-06-09] committed | principle
 - Committed: desiderata-of-plausible-reasoning → principles/desiderata-of-plausible-reasoning.md
 - IRI: pkis:principle:desiderata-of-plausible-reasoning
+
+## [2026-06-09] staged | node-stub (principle)
+- Staged: mind-projection-fallacy (id: 5a7a16ef-b3ee-4439-9fa9-bd74e63c3b22)
+- Title: Mind Projection Fallacy
+- needs_canonical_source: False
+
+## [2026-06-09] committed | principle
+- Committed: mind-projection-fallacy → principles/mind-projection-fallacy.md
+- IRI: pkis:principle:mind-projection-fallacy

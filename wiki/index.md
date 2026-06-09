@@ -1053,6 +1053,7 @@
 - [[llm-language-comprehension]] — The problem of whether LLMs genuinely comprehend language vs. pattern-match surface form (deep-learning, cognitive-science) (2026-05-20)
 
 ## Principles
+- [[mind-projection-fallacy]] — Mind Projection Fallacy (bayesian-stats) (2026-06-09)
 - [[desiderata-of-plausible-reasoning]] — Desiderata of Plausible Reasoning (bayesian-stats) (2026-06-09)
 - [[causal-mechanism-autonomy]] — Autonomy of Causal Mechanisms (causal-analysis) (2026-06-09)
 - [[causal-statistical-distinction]] — Causal-Statistical Distinction (causal-analysis, bayesian-stats) (2026-06-09)
