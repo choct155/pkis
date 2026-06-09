@@ -7767,3 +7767,12 @@
 ## [2026-06-09] committed | concept
 - Committed: plausible-reasoning → concepts/plausible-reasoning.md
 - IRI: pkis:concept:plausible-reasoning
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: strong-and-weak-syllogisms (id: 6b174e73-a07f-4d26-a328-27aea92b85d3)
+- Title: Strong and Weak Syllogisms
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: strong-and-weak-syllogisms → concepts/strong-and-weak-syllogisms.md
+- IRI: pkis:concept:strong-and-weak-syllogisms
