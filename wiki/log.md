@@ -9076,3 +9076,12 @@
 ## [2026-06-09] committed | problem
 - Committed: frame-problem → problems/frame-problem.md
 - IRI: pkis:problem:frame-problem
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: satplan-logical-planning (id: 59212507-05ab-449c-9307-e69b3e275638)
+- Title: SATPLAN: Planning as Satisfiability
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: satplan-logical-planning → techniques/satplan-logical-planning.md
+- IRI: pkis:technique:satplan-logical-planning
