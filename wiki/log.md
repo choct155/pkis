@@ -4864,3 +4864,12 @@
 ## [2026-06-09] committed | concept
 - Committed: classical-conditioning → concepts/classical-conditioning.md
 - IRI: pkis:concept:classical-conditioning
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: instrumental-conditioning (id: e5b756f2-ce62-406d-97f0-d0fb79e8af05)
+- Title: Instrumental (Operant) Conditioning
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: instrumental-conditioning → concepts/instrumental-conditioning.md
+- IRI: pkis:concept:instrumental-conditioning
