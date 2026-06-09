@@ -747,6 +747,7 @@
 - [[market-vs-hierarchy]] — Coase/Williamson: transactions governed by price signals (markets) vs. managerial direction (firms) (corporate-finance) (2026-05-20)
 
 ## Techniques
+- [[support-vector-regression]] — Support Vector Regression (SVR) (statistical-learning, optimization) (2026-06-09)
 - [[mixture-discriminant-analysis]] — Mixture Discriminant Analysis (MDA) (statistical-learning) (2026-06-09)
 - [[penalized-discriminant-analysis]] — Penalized Discriminant Analysis (PDA) (statistical-learning) (2026-06-09)
 - [[flexible-discriminant-analysis]] — Flexible Discriminant Analysis (FDA) (statistical-learning) (2026-06-09)

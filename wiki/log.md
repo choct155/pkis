@@ -11507,3 +11507,12 @@
 ## [2026-06-09] committed | technique
 - Committed: mixture-discriminant-analysis → techniques/mixture-discriminant-analysis.md
 - IRI: pkis:technique:mixture-discriminant-analysis
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: support-vector-regression (id: fe0004c2-21d7-4735-b48f-295b8762ac99)
+- Title: Support Vector Regression (SVR)
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: support-vector-regression → techniques/support-vector-regression.md
+- IRI: pkis:technique:support-vector-regression
