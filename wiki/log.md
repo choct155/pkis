@@ -5710,3 +5710,12 @@
 ## [2026-06-09] committed | technique
 - Committed: fake-data-simulation → techniques/fake-data-simulation.md
 - IRI: pkis:technique:fake-data-simulation
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: metropolis-hastings (id: 61b9454f-296c-4306-b657-817c097b5bbd)
+- Title: Metropolis-Hastings Algorithm
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: metropolis-hastings → techniques/metropolis-hastings.md
+- IRI: pkis:technique:metropolis-hastings
