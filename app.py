@@ -591,7 +591,13 @@ def oauth_identity(req):
         logger.info("OAuth JWT rejected: %s", e)
         return None
     email = (claims.get("email") or "").lower()
-    return (email, _role_for_email(email))
+    sub = (claims.get("sub") or "").strip()
+    roles = _load_roles()
+    # Map by email OR WorkOS sub (user id) — allowlist file may key on either.
+    role = roles.get(email) or roles.get(sub) or "reader"
+    logger.info("OAuth identity: email=%r sub=%r role=%r claim_keys=%s",
+                email, sub, role, sorted(claims.keys()))
+    return ((email or sub), role)
 
 
 def is_trusted(req) -> bool:
