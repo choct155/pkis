@@ -11246,3 +11246,12 @@
 ## [2026-06-09] committed | technique
 - Committed: reduced-rank-lda → techniques/reduced-rank-lda.md
 - IRI: pkis:technique:reduced-rank-lda
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: iteratively-reweighted-least-squares (id: d2824664-891a-45ee-8a38-8b691951bcd1)
+- Title: Iteratively Reweighted Least Squares
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: iteratively-reweighted-least-squares → techniques/iteratively-reweighted-least-squares.md
+- IRI: pkis:technique:iteratively-reweighted-least-squares
