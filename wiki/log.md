@@ -4045,3 +4045,12 @@
 ## [2026-06-09] committed | problem
 - Committed: credit-assignment-problem → problems/credit-assignment-problem.md
 - IRI: pkis:problem:credit-assignment-problem
+
+## [2026-06-09] staged | node-stub (problem)
+- Staged: multi-armed-bandit (id: dc316261-dfcb-4818-bfbc-a13f064ef130)
+- Title: k-armed Bandit Problem
+- needs_canonical_source: False
+
+## [2026-06-09] committed | problem
+- Committed: multi-armed-bandit → problems/multi-armed-bandit.md
+- IRI: pkis:problem:multi-armed-bandit
