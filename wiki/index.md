@@ -742,6 +742,7 @@
 - [[market-vs-hierarchy]] — Coase/Williamson: transactions governed by price signals (markets) vs. managerial direction (firms) (corporate-finance) (2026-05-20)
 
 ## Techniques
+- [[reduced-rank-lda]] — Reduced-Rank Linear Discriminant Analysis (statistical-learning) (2026-06-09)
 - [[perceptron-learning-algorithm]] — Perceptron Learning Algorithm (statistical-learning, deep-learning) (2026-06-09)
 - [[quadratic-discriminant-analysis]] — Quadratic Discriminant Analysis (statistical-learning) (2026-06-09)
 - [[linear-discriminant-analysis]] — Linear Discriminant Analysis (statistical-learning) (2026-06-09)

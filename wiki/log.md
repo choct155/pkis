@@ -11237,3 +11237,12 @@
 ## [2026-06-09] committed | concept
 - Committed: optimal-separating-hyperplane → concepts/optimal-separating-hyperplane.md
 - IRI: pkis:concept:optimal-separating-hyperplane
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: reduced-rank-lda (id: 0d3c65e6-d063-458d-9053-4f0fdfc289a7)
+- Title: Reduced-Rank Linear Discriminant Analysis
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: reduced-rank-lda → techniques/reduced-rank-lda.md
+- IRI: pkis:technique:reduced-rank-lda
