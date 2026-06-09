@@ -954,6 +954,7 @@
 - [[llm-language-comprehension]] — The problem of whether LLMs genuinely comprehend language vs. pattern-match surface form (deep-learning, cognitive-science) (2026-05-20)
 
 ## Principles
+- [[causal-vs-statistical-distinction]] — Causal vs. Statistical Distinction (causal-analysis) (2026-06-09)
 - [[ladder-of-causation]] — Ladder of Causation (causal-analysis) (2026-06-09)
 - [[log-scale-computation]] — Log-Scale Computation (bayesian-stats, statistical-learning, optimization) (2026-06-09)
 - [[numerical-vs-simulation-integration]] — Numerical vs. Simulation Integration (bayesian-stats, statistical-learning, optimization) (2026-06-09)

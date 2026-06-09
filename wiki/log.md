@@ -6502,3 +6502,12 @@
 ## [2026-06-09] committed | principle
 - Committed: ladder-of-causation → principles/ladder-of-causation.md
 - IRI: pkis:principle:ladder-of-causation
+
+## [2026-06-09] staged | node-stub (principle)
+- Staged: causal-vs-statistical-distinction (id: 0ff125d3-432f-4a55-bd71-1697db10d133)
+- Title: Causal vs. Statistical Distinction
+- needs_canonical_source: False
+
+## [2026-06-09] committed | principle
+- Committed: causal-vs-statistical-distinction → principles/causal-vs-statistical-distinction.md
+- IRI: pkis:principle:causal-vs-statistical-distinction
