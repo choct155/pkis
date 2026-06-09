@@ -3829,3 +3829,12 @@
 ## [2026-06-09] committed | concept
 - Committed: mixture-models → concepts/mixture-models.md
 - IRI: pkis:concept:mixture-models
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: ancestral-sampling (id: e1cecb55-eab4-4be5-a17f-d2b38bbf807d)
+- Title: Ancestral Sampling
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: ancestral-sampling → techniques/ancestral-sampling.md
+- IRI: pkis:technique:ancestral-sampling

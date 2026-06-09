@@ -501,6 +501,7 @@
 - [[market-vs-hierarchy]] — Coase/Williamson: transactions governed by price signals (markets) vs. managerial direction (firms) (corporate-finance) (2026-05-20)
 
 ## Techniques
+- [[ancestral-sampling]] — Ancestral Sampling (bayesian-stats, statistical-learning) (2026-06-09)
 - [[power-iteration]] — Power Iteration (optimization, statistical-learning) (2026-06-09)
 - [[kernel-pca]] — Kernel PCA (statistical-learning) (2026-06-09)
 - [[autoencoder]] — Autoencoder (deep-learning, statistical-learning) (2026-06-09)
