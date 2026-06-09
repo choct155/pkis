@@ -557,6 +557,7 @@
 - [[market-vs-hierarchy]] — Coase/Williamson: transactions governed by price signals (markets) vs. managerial direction (firms) (corporate-finance) (2026-05-20)
 
 ## Techniques
+- [[bayesian-model-checking]] — Bayesian Model Checking (bayesian-stats, statistical-learning) (2026-06-09)
 - [[grid-approximation]] — Grid Approximation of the Posterior (bayesian-stats) (2026-06-09)
 - [[gaussian-policy-continuous-actions]] — Gaussian Policy for Continuous Actions (reinforcement-learning, deep-learning) (2026-06-09)
 - [[policy-parameterization-softmax]] — Softmax Policy Parameterization in Action Preferences (reinforcement-learning, deep-learning) (2026-06-09)

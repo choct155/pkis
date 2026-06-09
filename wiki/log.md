@@ -5467,3 +5467,12 @@
 ## [2026-06-09] committed | concept
 - Committed: hyperprior → concepts/hyperprior.md
 - IRI: pkis:concept:hyperprior
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: bayesian-model-checking (id: 15558d25-8585-408f-b350-489714784cac)
+- Title: Bayesian Model Checking
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: bayesian-model-checking → techniques/bayesian-model-checking.md
+- IRI: pkis:technique:bayesian-model-checking
