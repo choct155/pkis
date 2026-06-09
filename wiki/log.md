@@ -8851,3 +8851,12 @@
 ## [2026-06-09] committed | concept
 - Committed: belief-state-search → concepts/belief-state-search.md
 - IRI: pkis:concept:belief-state-search
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: online-search-agents (id: dcdbeeb2-4ee9-40e5-967f-98133369c14c)
+- Title: Online Search Agents
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: online-search-agents → concepts/online-search-agents.md
+- IRI: pkis:concept:online-search-agents

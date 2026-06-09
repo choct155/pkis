@@ -290,6 +290,7 @@
 - [[liu-machine-unlearning-llm-2024]] — Rethinking Machine Unlearning for LLMs: post-training knowledge editing survey (deep-learning, ai-safety) (2026-05-20)
 
 ## Concepts
+- [[online-search-agents]] — Online Search Agents (search-and-planning, reinforcement-learning) (2026-06-09)
 - [[belief-state-search]] — Belief-State Search (search-and-planning) (2026-06-09)
 - [[local-search]] — Local Search (optimization, search-and-planning) (2026-06-09)
 - [[admissible-and-consistent-heuristics]] — Admissible and Consistent Heuristics (optimization, knowledge-representation) (2026-06-09)
