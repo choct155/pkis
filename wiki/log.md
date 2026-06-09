@@ -6862,3 +6862,12 @@
 ## [2026-06-09] committed | result
 - Committed: instrumental-inequality → results/instrumental-inequality.md
 - IRI: pkis:result:instrumental-inequality
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: canonical-partition (id: 6a9ba9f8-7e19-4884-81ac-50217efc9e19)
+- Title: Canonical Partition (Response Variables)
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: canonical-partition → concepts/canonical-partition.md
+- IRI: pkis:concept:canonical-partition
