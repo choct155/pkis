@@ -4936,3 +4936,12 @@
 ## [2026-06-09] committed | concept
 - Committed: general-value-functions → concepts/general-value-functions.md
 - IRI: pkis:concept:general-value-functions
+
+## [2026-06-09] staged | node-stub (framework)
+- Staged: options-framework (id: b8217bdc-271b-4f5c-9aed-e8b70b188e18)
+- Title: Options Framework (Temporal Abstraction)
+- needs_canonical_source: False
+
+## [2026-06-09] committed | framework
+- Committed: options-framework → frameworks/options-framework.md
+- IRI: pkis:framework:options-framework
