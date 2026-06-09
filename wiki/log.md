@@ -3622,3 +3622,12 @@
 ## [2026-06-09] committed | technique
 - Committed: chain-rule-multivariate → techniques/chain-rule-multivariate.md
 - IRI: pkis:technique:chain-rule-multivariate
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: random-variable (id: 5863cb89-ebf9-428c-960a-7dad42e0c148)
+- Title: Random Variable
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: random-variable → concepts/random-variable.md
+- IRI: pkis:concept:random-variable
