@@ -6,6 +6,8 @@ component_scores:
   instances: null
   solution_landscape: null
   why_hard: null
+contrasts-with:
+- expected-utility-theory
 coverage: 1
 date_created: '2026-06-09'
 date_updated: '2026-06-09'
@@ -36,4 +38,5 @@ A gambling problem exposing the failure of the maximize-expected-profit criterio
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[expected-utility-theory]] — contrasts-with: The paradox exposes the failure of maximizing expected profit, motivating utility.
 [To be populated during integration]

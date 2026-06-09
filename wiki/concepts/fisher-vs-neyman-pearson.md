@@ -10,12 +10,16 @@ component_scores:
   prerequisites: null
   scope: null
   transfer: null
+contrasts-with:
+- likelihood-principle
 coverage: 1
 date_created: '2026-06-09'
 date_updated: '2026-06-09'
 domain:
 - bayesian-stats
 id: pkis:concept:fisher-vs-neyman-pearson
+instantiates:
+- sampling-theory
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
@@ -31,6 +35,11 @@ tags:
 - frequentist
 title: Fisher vs Neyman-Pearson Schools
 understanding: 0
+uses:
+- hypothesis-testing
+- confidence-interval
+- unbiasedness
+- maximum-likelihood-estimation
 ---
 
 ## Definition
@@ -42,4 +51,10 @@ Jaynes stresses that the persistence of the rift was symptomatic: with no unifyi
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[likelihood-principle]] — contrasts-with
+- [[maximum-likelihood-estimation]] — uses
+- [[unbiasedness]] — uses
+- [[confidence-interval]] — uses
+- [[hypothesis-testing]] — uses
+- [[sampling-theory]] — instantiates
 [To be populated during integration]

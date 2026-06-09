@@ -16,6 +16,8 @@ date_updated: '2026-06-09'
 domain:
 - bayesian-stats
 id: pkis:concept:admissibility
+instantiates:
+- wald-decision-theory
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
@@ -30,6 +32,8 @@ tags:
 - wald
 title: Admissibility of Decision Rules
 understanding: 0
+uses:
+- expected-loss
 ---
 
 ## Definition
@@ -39,4 +43,6 @@ A strategy $S$ is **admissible** if no other strategy $S'$ exists with $R_j(S')\
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[wald-decision-theory]] — instantiates: Admissibility is a core criterion within Wald's framework.
+- [[expected-loss]] — uses: Admissibility is defined via the risk function (expected loss over the sampling distribution).
 [To be populated during integration]

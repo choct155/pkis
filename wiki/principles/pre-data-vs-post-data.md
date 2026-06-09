@@ -6,11 +6,15 @@ component_scores:
   justification: null
   statement: null
   violations: null
+contrasts-with:
+- sampling-theory
 coverage: 1
 date_created: '2026-06-09'
 date_updated: '2026-06-09'
 domain:
 - bayesian-stats
+extends:
+- bayesian-inference
 id: pkis:principle:pre-data-vs-post-data
 knowledge_type: principle
 maturity: evolving
@@ -26,6 +30,8 @@ tags:
 - estimator
 title: Pre-Data vs Post-Data Questions
 understanding: 0
+uses:
+- confidence-interval
 ---
 
 ## Definition
@@ -37,4 +43,7 @@ The sharpest instance contrasts (Q1) 'how much would the estimate of a parameter
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[bayesian-inference]] — extends
+- [[confidence-interval]] — uses
+- [[sampling-theory]] — contrasts-with
 [To be populated during integration]

@@ -1,6 +1,10 @@
 ---
 aliases: []
 also_type: []
+analogous-to:
+- constrained-channel-capacity-eigenvalue
+applies:
+- maximum-entropy-principle
 component_scores:
   conditions: null
   implications: null
@@ -19,6 +23,8 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - jaynes-probability-ch22
+specializes:
+- channel-capacity
 tags:
 - channel-capacity
 - partition-function
@@ -29,6 +35,9 @@ tags:
 - cost-per-symbol
 title: Noiseless Channel Capacity via the Partition Function
 understanding: 0
+uses:
+- partition-function
+- lagrange-multipliers
 ---
 
 ## Definition
@@ -51,4 +60,9 @@ This is Jaynes's statistical-mechanics rendering of Shannon's noiseless-channel 
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[maximum-entropy-principle]] — applies
+- [[constrained-channel-capacity-eigenvalue]] — analogous-to
+- [[lagrange-multipliers]] — uses
+- [[partition-function]] — uses
+- [[channel-capacity]] — specializes
 [To be populated during integration]

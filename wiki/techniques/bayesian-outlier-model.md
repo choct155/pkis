@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- robust-inference
 component_scores:
   alternatives: null
   conditions: null
@@ -15,6 +17,8 @@ date_updated: '2026-06-09'
 domain:
 - bayesian-stats
 - information-theory
+extends:
+- bayesian-inference
 id: pkis:technique:bayesian-outlier-model
 knowledge_type: technique
 maturity: evolving
@@ -22,6 +26,8 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - jaynes-probability-ch21
+specializes:
+- mixture-models
 tags:
 - outliers
 - robustness
@@ -30,6 +36,9 @@ tags:
 - jaynes
 title: Bayesian Outlier Model (Two-Model Contamination Mixture)
 understanding: 0
+uses:
+- exchangeability
+- nuisance-parameters
 ---
 
 ## Definition
@@ -49,4 +58,9 @@ i.e. a weighted average of the good-distribution likelihoods over every hypothes
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[bayesian-inference]] — extends: applies Bayes' theorem with a flexible mixture model to the outlier problem
+- [[robust-inference]] — applies: the contamination mixture is the constructive mechanism delivering automatic robustness/resistance
+- [[nuisance-parameters]] — uses: the bad-distribution parameter eta and purity u are integrated out as nuisance parameters
+- [[exchangeability]] — uses: exchangeable prior on the good/bad indicator sequence enables the de Finetti reduction
+- [[mixture-models]] — specializes: the good/bad contamination model is a two-component probability mixture
 [To be populated during integration]

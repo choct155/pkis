@@ -13,12 +13,16 @@ date_updated: '2026-06-09'
 domain:
 - bayesian-stats
 id: pkis:result:complete-class-theorem
+instantiates:
+- wald-decision-theory
 knowledge_type: result
 maturity: evolving
 needs_canonical_source: false
 related_concepts: []
 sources:
 - jaynes-probability-ch13
+specializes:
+- admissibility
 tags:
 - decision-theory
 - wald
@@ -27,6 +31,8 @@ tags:
 - bayesian-revolution
 title: Wald's Complete Class Theorem
 understanding: 0
+uses:
+- bayesian-decision-analysis
 ---
 
 ## Definition
@@ -36,4 +42,7 @@ Wald's fundamental theorem characterizing the class of admissible decision rules
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[bayesian-decision-analysis]] — uses: The admissible class equals the class of Bayes strategies (minimizing expected loss over a posterior).
+- [[wald-decision-theory]] — instantiates: It is the fundamental theorem of Wald's decision theory.
+- [[admissibility]] — specializes: The theorem characterizes precisely the admissible decision rules.
 [To be populated during integration]

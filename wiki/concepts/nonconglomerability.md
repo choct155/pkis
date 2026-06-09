@@ -10,6 +10,8 @@ component_scores:
   prerequisites: null
   scope: null
   transfer: null
+contrasts-with:
+- finite-vs-countable-additivity
 coverage: 1
 date_created: '2026-06-09'
 date_updated: '2026-06-09'
@@ -43,4 +45,5 @@ Jaynes argues nonconglomerability is not a phenomenon of probability theory but 
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[finite-vs-countable-additivity]] — contrasts-with: Jaynes treats both as red herrings concealing the same real issue: admitting uniform distributions on infinite sets.
 [To be populated during integration]

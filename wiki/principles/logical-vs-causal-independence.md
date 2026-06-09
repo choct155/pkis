@@ -6,6 +6,8 @@ component_scores:
   justification: null
   statement: null
   violations: null
+contrasts-with:
+- conditional-independence
 coverage: 1
 date_created: '2026-06-09'
 date_updated: '2026-06-09'
@@ -19,6 +21,8 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - jaynes-probability-ch08
+specializes:
+- probability-theory
 tags:
 - independence
 - redundant-information
@@ -43,4 +47,6 @@ Probability theory as logic counts information, not events; redundant informatio
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[conditional-independence]] — contrasts-with: Distinguishes logical independence (inferential) from causal/physical independence, sharpening when conditional independence licenses evidence combination.
+- [[probability-theory]] — specializes: AA = A non-use of redundant information is a direct consequence of treating probability as extended logic.
 [To be populated during integration]

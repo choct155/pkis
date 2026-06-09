@@ -1,11 +1,15 @@
 ---
 aliases: []
 also_type: []
+applies:
+- maximum-likelihood-estimation
 component_scores:
   implications: null
   justification: null
   statement: null
   violations: null
+contrasts-with:
+- regression-to-the-mean
 coverage: 1
 date_created: '2026-06-09'
 date_updated: '2026-06-09'
@@ -25,6 +29,8 @@ tags:
 - location-parameter
 title: Error Cancellation and the Optimality of the Arithmetic Mean
 understanding: 0
+uses:
+- gaussian-distribution
 ---
 
 ## Definition
@@ -40,6 +46,9 @@ With a general positive-definite covariance matrix $C_{ij}=\langle e_i e_j\rangl
 The cancellation phenomenon is why summed errors grow as $\sqrt N$ not $N$; failing to see this, Euler concentrated on the worst case and concluded (wrongly) that averaging 'multiplies the errors'.
 
 ## Connections
+- [[regression-to-the-mean]] — contrasts-with: distinct Galtonian phenomenon arising from the same convolution machinery
+- [[maximum-likelihood-estimation]] — applies: ML under Gaussian noise yields the arithmetic-mean estimator
+- [[gaussian-distribution]] — uses: Gaussian is the unique distribution coupling arithmetic mean to ML estimate
 - [[gaussian-distribution]] — the Gaussian uniquely couples the arithmetic mean to maximum-likelihood estimation
 - [[central-limit-theorem]] — the $\sqrt N$ growth of summed errors
 - [[regression-to-the-mean]] — contrasts: a distinct Galtonian phenomenon

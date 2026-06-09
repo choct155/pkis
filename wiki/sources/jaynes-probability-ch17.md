@@ -1,6 +1,8 @@
 ---
 aliases: []
 authors: E. T. Jaynes
+contrasts-with:
+- sampling-theory
 coverage: 0
 domain:
 - bayesian-stats
@@ -13,7 +15,7 @@ tags:
 - bayesian
 - probability-theory
 - jaynes-probability
-title: 'Ch. 17 — Principles and Pathology of Orthodox Statistics'
+title: Ch. 17 — Principles and Pathology of Orthodox Statistics
 type: chapter
 understanding: 0
 year: 2003
@@ -24,3 +26,6 @@ year: 2003
 
 ## Reading Path
 - Parent: [[jaynes-probability]]
+
+## Connections
+- [[sampling-theory]] — contrasts-with

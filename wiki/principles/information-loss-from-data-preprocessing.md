@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- structural-breaks
 component_scores:
   implications: null
   justification: null
@@ -28,6 +30,9 @@ tags:
 - fourier
 title: Information Loss from Data Preprocessing
 understanding: 0
+uses:
+- nuisance-parameters
+- convolution-of-distributions
 ---
 
 ## Definition
@@ -37,4 +42,7 @@ understanding: 0
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[structural-breaks]] — applies
+- [[convolution-of-distributions]] — uses
+- [[nuisance-parameters]] — uses
 [To be populated during integration]

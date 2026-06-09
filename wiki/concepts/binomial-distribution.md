@@ -10,11 +10,15 @@ component_scores:
   prerequisites: null
   scope: null
   transfer: null
+contrasts-with:
+- hypergeometric-distribution
 coverage: 1
 date_created: '2026-06-09'
 date_updated: '2026-06-09'
 domain:
 - bayesian-stats
+generalizes:
+- beta-binomial-distribution
 id: pkis:concept:binomial-distribution
 knowledge_type: concept
 maturity: evolving
@@ -22,6 +26,8 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - jaynes-probability-ch03
+specializes:
+- hypergeometric-distribution
 tags:
 - jaynes
 - sampling-with-replacement
@@ -44,4 +50,7 @@ The binomial is broader than the hypergeometric of equal mean because replacemen
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[beta-binomial-distribution]] — generalizes: the beta-binomial is a mixture over the binomial success probability; the binomial is its fixed-probability special case
+- [[hypergeometric-distribution]] — contrasts-with: with-replacement (independent, broader) vs without-replacement (negatively correlated, exact for finite N)
+- [[hypergeometric-distribution]] — specializes: binomial is the N->infinity, M/N->f limiting form of the hypergeometric distribution
 [To be populated during integration]

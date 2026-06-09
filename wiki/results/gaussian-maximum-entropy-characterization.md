@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- gaussian-distribution
 component_scores:
   conditions: null
   implications: null
@@ -21,12 +23,16 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - jaynes-probability-ch07
+specializes:
+- exponential-family-ml-maxent-duality
 tags:
 - probability-theory
 - maximum-entropy
 - information-theory
 title: Gaussian as Maximum-Entropy Distribution for Fixed Mean and Variance
 understanding: 0
+uses:
+- entropy
 ---
 
 ## Definition
@@ -39,6 +45,9 @@ This is the deepest justification for the ubiquitous use of Gaussian sampling di
 Because the Gaussian maximizes entropy at fixed variance, any operation that discards information while conserving variance drives a distribution toward the Gaussian. This is the mechanism behind the central limit theorem (repeated convolution) and behind the general 'gravitation' of distributions to the central form.
 
 ## Connections
+- [[exponential-family-ml-maxent-duality]] — specializes: Gaussian is the maxent/exponential-family member for first-two-moment constraints
+- [[gaussian-distribution]] — applies: characterizes the Gaussian as the unique maxent distribution at fixed mean and variance
+- [[entropy]] — uses: the quantity being maximized under moment constraints
 - [[entropy]] — uses: the objective being maximized
 - [[gaussian-distribution]] — the unique maximizer
 - [[central-limit-theorem]] — explained as variance-conserving, entropy-increasing convolution

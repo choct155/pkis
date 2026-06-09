@@ -16,12 +16,16 @@ domain:
 - bayesian-stats
 - statistical-learning
 id: pkis:technique:chi-squared-test
+instantiates:
+- sampling-theory
 knowledge_type: technique
 maturity: evolving
 needs_canonical_source: false
 related_concepts: []
 sources:
 - jaynes-probability-ch09
+specializes:
+- hypothesis-testing
 tags:
 - pearson
 - goodness-of-fit
@@ -40,4 +44,6 @@ understanding: 0
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[hypothesis-testing]] — specializes
+- [[sampling-theory]] — instantiates
 [To be populated during integration]

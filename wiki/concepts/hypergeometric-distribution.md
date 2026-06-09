@@ -15,7 +15,11 @@ date_created: '2026-06-09'
 date_updated: '2026-06-09'
 domain:
 - bayesian-stats
+generalizes:
+- binomial-distribution
 id: pkis:concept:hypergeometric-distribution
+instantiates:
+- the-bernoulli-urn
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
@@ -29,6 +33,8 @@ tags:
 - discrete-distribution
 title: Hypergeometric Distribution
 understanding: 0
+uses:
+- exchangeability
 ---
 
 ## Definition
@@ -44,4 +50,7 @@ Key properties: most-probable value $\hat r=\mathrm{INT}[(n+1)(M+1)/(N+2)]$, so 
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[exchangeability]] — uses: order-independence of the count probability is a manifestation of exchangeability of the draws
+- [[binomial-distribution]] — generalizes: the hypergeometric is the finite-population generalization; the binomial is its infinite-population / with-replacement limit
+- [[the-bernoulli-urn]] — instantiates: the hypergeometric is the exact count distribution produced by the without-replacement urn model
 [To be populated during integration]

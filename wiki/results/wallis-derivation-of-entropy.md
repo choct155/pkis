@@ -1,12 +1,16 @@
 ---
 aliases: []
 also_type: []
+applies:
+- maximum-entropy-principle
 component_scores:
   conditions: null
   implications: null
   limitations: null
   proof_sketch: null
   statement: null
+contrasts-with:
+- gibbs-inequality
 coverage: 1
 date_created: '2026-06-09'
 date_updated: '2026-06-09'
@@ -30,6 +34,8 @@ tags:
 - entropy-justification
 title: Wallis Derivation of Entropy
 understanding: 0
+uses:
+- entropy
 ---
 
 ## Definition
@@ -39,4 +45,7 @@ A combinatorial justification of the maximum entropy principle, due to a 1962 su
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[gibbs-inequality]] — contrasts-with: Two independent justifications of maxent: combinatorial (Wallis) vs. inequality-based rigorous proof.
+- [[maximum-entropy-principle]] — applies: The combinatorial game derives the maxent prescription without any uncertainty axiom.
+- [[entropy]] — uses: The Stirling limit of the multinomial probability recovers the entropy functional.
 [To be populated during integration]

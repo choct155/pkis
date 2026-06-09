@@ -39,6 +39,7 @@ understanding: 0
 uses:
 - probability-theory
 - conditional-independence
+- ap-distribution
 ---
 
 ## Definition
@@ -60,6 +61,7 @@ Exchangeability is what makes a parameter, a prior, and a likelihood meaningful 
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[ap-distribution]] — uses
 - [[conditional-independence]] — uses: The mixture-of-i.i.d. representation makes the exchangeable parameters conditionally independent given the hyperparameters.
 - [[probability-theory]] — uses: Defined as permutation-invariance of a joint probability density.
 - [[conditional-independence]] — generalizes: Exchangeable data are typically conditionally iid given theta; exchangeability is a symmetric weakening of independence.

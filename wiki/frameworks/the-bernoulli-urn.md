@@ -14,6 +14,8 @@ date_updated: '2026-06-09'
 domain:
 - bayesian-stats
 id: pkis:framework:the-bernoulli-urn
+instantiates:
+- sampling-distribution
 knowledge_type: framework
 maturity: evolving
 needs_canonical_source: false
@@ -27,6 +29,8 @@ tags:
 - probability-as-logic
 title: The Bernoulli Urn Model
 understanding: 0
+uses:
+- principle-of-indifference
 ---
 
 ## Definition
@@ -38,4 +42,6 @@ Jaynes stresses that the urn probability is a description of *knowledge*, not a 
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[sampling-distribution]] — instantiates: the urn distributions are the chapter's worked examples of direct (sampling) probabilities P(D|H)
+- [[principle-of-indifference]] — uses: Bernoulli urn rule P(A|B)=M/N is derived by applying the principle of indifference to the equally-possible labelled balls
 [To be populated during integration]

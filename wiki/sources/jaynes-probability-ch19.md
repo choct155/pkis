@@ -13,9 +13,11 @@ tags:
 - bayesian
 - probability-theory
 - jaynes-probability
-title: 'Ch. 19 — Physical Measurements'
+title: Ch. 19 — Physical Measurements
 type: chapter
 understanding: 0
+uses:
+- jaynes-probability-ch06
 year: 2003
 ---
 
@@ -24,3 +26,6 @@ year: 2003
 
 ## Reading Path
 - Parent: [[jaynes-probability]]
+
+## Connections
+- [[jaynes-probability-ch06]] — uses: Ch.19 builds on the elementary parameter-estimation machinery of Ch.6

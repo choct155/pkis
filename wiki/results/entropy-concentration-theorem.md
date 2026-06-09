@@ -1,6 +1,10 @@
 ---
 aliases: []
 also_type: []
+analogous-to:
+- typical-set
+applies:
+- maximum-entropy-principle
 component_scores:
   conditions: null
   implications: null
@@ -31,6 +35,8 @@ tags:
 - large-deviations
 title: Entropy Concentration Theorem
 understanding: 0
+uses:
+- entropy
 ---
 
 ## Definition
@@ -40,4 +46,7 @@ The maximum-entropy frequency distribution is the one realizable in overwhelming
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[typical-set]] — analogous-to: Discrete-trial root of the typical-set / asymptotic-equipartition concentration phenomenon.
+- [[entropy]] — uses: The normalized log multinomial coefficient converges to the entropy of the frequency profile.
+- [[maximum-entropy-principle]] — applies: Justifies maxent's weak frequency correspondence: the maxent profile is realizable in the most ways.
 [To be populated during integration]

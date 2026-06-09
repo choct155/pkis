@@ -6,6 +6,8 @@ component_scores:
   justification: null
   statement: null
   violations: null
+contrasts-with:
+- occams-razor
 coverage: 1
 date_created: '2026-06-09'
 date_updated: '2026-06-09'
@@ -15,6 +17,8 @@ id: pkis:principle:well-posed-hypothesis-space
 knowledge_type: principle
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- laplaces-rule-of-succession
 related_concepts: []
 sources:
 - jaynes-probability-ch18
@@ -38,4 +42,6 @@ This principle dissolves the classic objections to Laplace's rule of succession.
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[occams-razor]] — contrasts-with
+- [[laplaces-rule-of-succession]] — prerequisite-of
 [To be populated during integration]

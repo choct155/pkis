@@ -10,6 +10,8 @@ component_scores:
   prerequisites: null
   scope: null
   transfer: null
+contrasts-with:
+- bayesian-inference
 coverage: 1
 date_created: '2026-06-09'
 date_updated: '2026-06-09'
@@ -23,6 +25,8 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - jaynes-probability-ch17
+specializes:
+- unbiasedness
 tags:
 - unbiasedness
 - frequentist
@@ -40,4 +44,6 @@ understanding: 0
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[bayesian-inference]] — contrasts-with
+- [[unbiasedness]] — specializes
 [To be populated during integration]

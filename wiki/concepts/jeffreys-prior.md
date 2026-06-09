@@ -16,6 +16,9 @@ date_updated: '2026-06-09'
 domain:
 - bayesian-stats
 id: pkis:concept:jeffreys-prior
+instantiates:
+- transformation-group-priors
+- noninformative-prior
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
@@ -58,6 +61,8 @@ Jeffreys' prior is the most principled single-parameter answer to the "what is t
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[noninformative-prior]] — instantiates: For a scale parameter the Jeffreys prior eta^{-1} is the unique completely-uninformative prior that makes B1 and B2 agree.
+- [[transformation-group-priors]] — instantiates: The scale prior 1/sigma is derivable as a transformation-group invariant prior.
 - [[beta-distribution]] — uses: For the binomial parameter, Jeffreys' prior is the Beta(1/2, 1/2) density.
 - [[noninformative-prior]] — specializes: Jeffreys' prior is the parameterization-invariant construction of a noninformative prior.
 [To be populated during integration]

@@ -6,6 +6,8 @@ component_scores:
   justification: null
   statement: null
   violations: null
+contrasts-with:
+- monte-carlo-estimator
 coverage: 1
 date_created: '2026-06-09'
 date_updated: '2026-06-09'
@@ -13,6 +15,8 @@ domain:
 - bayesian-stats
 - statistical-learning
 id: pkis:principle:randomization-is-suboptimal
+instantiates:
+- numerical-vs-simulation-integration
 knowledge_type: principle
 maturity: evolving
 needs_canonical_source: false
@@ -36,4 +40,6 @@ understanding: 0
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[numerical-vs-simulation-integration]] — instantiates
+- [[monte-carlo-estimator]] — contrasts-with
 [To be populated during integration]

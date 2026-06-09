@@ -34,6 +34,8 @@ understanding: 0
 uses:
 - ignorability
 - hierarchical-bayesian-models
+- hypergeometric-distribution
+- mind-projection-fallacy
 ---
 
 ## Definition
@@ -53,6 +55,8 @@ Because the $p$-value integrates over the whole sample space (outcomes that did 
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[mind-projection-fallacy]] — uses
+- [[hypergeometric-distribution]] — uses: the hypergeometric is the foundational sampling distribution of elementary sampling theory
 - [[hierarchical-bayesian-models]] — uses: strata and clusters are modeled as exchangeable batches in a hierarchical model
 - [[ignorability]] — uses: stratified/cluster/unequal-probability designs are analyzed by making them ignorable given design covariates
 - [[likelihood-principle]] — contrasts-with: p-values condition on the whole sample space, including outcomes that did not occur, directly violating the likelihood principle.

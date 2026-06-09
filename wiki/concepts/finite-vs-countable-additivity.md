@@ -32,6 +32,8 @@ tags:
 - infinite-sets
 title: Finite vs. Countable Additivity
 understanding: 0
+uses:
+- noninformative-prior
 ---
 
 ## Definition
@@ -44,4 +46,5 @@ For Jaynes the debate is a 'red herring'. de Finetti's advocacy of *finite* addi
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[noninformative-prior]] — uses: The additivity debate is fundamentally about whether non-normalizable (uniform-on-infinite-set) priors are legitimate objects.
 [To be populated during integration]

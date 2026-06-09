@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- exchangeability
 component_scores:
   application: null
   boundary: null
@@ -10,6 +12,8 @@ component_scores:
   prerequisites: null
   scope: null
   transfer: null
+contrasts-with:
+- probability-theory
 coverage: 1
 date_created: '2026-06-09'
 date_updated: '2026-06-09'
@@ -19,6 +23,8 @@ id: pkis:concept:ap-distribution
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- laplaces-rule-of-succession
 related_concepts: []
 sources:
 - jaynes-probability-ch18
@@ -31,6 +37,10 @@ tags:
 - robot
 title: Ap-Distribution
 understanding: 0
+uses:
+- bayesian-inference
+- beta-distribution
+- beta-binomial-distribution
 ---
 
 ## Definition
@@ -46,4 +56,10 @@ Jaynes resolves the apparent paradox with a two-level reading: an 'outer robot' 
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[beta-binomial-distribution]] — uses
+- [[exchangeability]] — applies
+- [[probability-theory]] — contrasts-with
+- [[beta-distribution]] — uses
+- [[bayesian-inference]] — uses
+- [[laplaces-rule-of-succession]] — prerequisite-of
 [To be populated during integration]

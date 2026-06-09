@@ -23,6 +23,8 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - jaynes-probability-ch08
+specializes:
+- sampling-theory
 tags:
 - ancillarity
 - conditioning
@@ -32,6 +34,8 @@ tags:
 - sampling-theory
 title: Ancillary Statistic
 understanding: 0
+uses:
+- logical-vs-causal-independence
 ---
 
 ## Definition
@@ -44,4 +48,6 @@ Jaynes shows the device accomplishes nothing for inference. Writing p(D|z theta 
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[logical-vs-causal-independence]] — uses: Jaynes dissolves data-function ancillarity via AA = A: a known function of the data is redundant information.
+- [[sampling-theory]] — specializes: Ancillarity is a sampling-theory device (Fisher 1934) defined via parameter-free sampling distributions.
 [To be populated during integration]

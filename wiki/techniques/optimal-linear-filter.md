@@ -28,6 +28,8 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - mackay-itila-ch46
+specializes:
+- maximum-likelihood-as-least-squares
 tags:
 - wiener-filter
 - deconvolution
@@ -57,6 +59,7 @@ This equivalence reveals the implicit Gaussian assumptions buried in classical l
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[maximum-likelihood-as-least-squares]] — specializes: Wiener filter is the linear-Gaussian estimator with a Gaussian prior added
 - [[laplace-approximation]] — uses: Posterior covariance is the inverse Hessian of the neg-log-posterior; for this Gaussian posterior the Laplace approximation is exact.
 - [[maximum-likelihood-estimation]] — contrasts-with: Dropping the prior term reduces the filter to the ML pseudoinverse, which is ill-conditioned; the prior is what regularizes it.
 - [[regularization]] — uses: The sigma_nu^2/sigma_f^2 C term regularizes the ill-conditioned pseudoinverse.

@@ -10,12 +10,16 @@ component_scores:
   prerequisites: null
   scope: null
   transfer: null
+contrasts-with:
+- confidence-interval
 coverage: 1
 date_created: '2026-06-09'
 date_updated: '2026-06-09'
 domain:
 - bayesian-stats
 id: pkis:concept:credible-interval
+instantiates:
+- bayesian-inference
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
@@ -30,6 +34,8 @@ tags:
 - uncertainty-quantification
 title: Credible Interval
 understanding: 0
+uses:
+- uncertainty-quantification
 ---
 
 ## Definition
@@ -45,6 +51,9 @@ In practice Jaynes most often reports the posterior (mean) $\pm$ (standard devia
 - [[jaynes-probability-ch06]] — interval estimation as compound hypothesis testing; percentile invariance; mean ± s.d. worked examples
 
 ## Connections
+- [[uncertainty-quantification]] — uses
+- [[bayesian-inference]] — instantiates
+- [[confidence-interval]] — contrasts-with
 - [[confidence-interval]] — contrasts-with: a confidence interval has frequency-coverage (pre-data) semantics; a credible interval is a direct posterior-probability (post-data) statement about the parameter.
 
 ## Reading Path

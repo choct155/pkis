@@ -17,6 +17,8 @@ id: pkis:result:product-rule
 knowledge_type: result
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- bayesian-inference
 related_concepts: []
 sources:
 - jaynes-probability-ch02
@@ -36,4 +38,5 @@ Two qualitative boundary conditions fix the scale: if A is certain given C then 
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[bayesian-inference]] — prerequisite-of: Bayes' theorem is the product rule solved for a conditional
 [To be populated during integration]

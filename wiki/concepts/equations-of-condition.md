@@ -16,10 +16,14 @@ date_updated: '2026-06-09'
 domain:
 - bayesian-stats
 - statistical-learning
+generalizes:
+- deconvolution
 id: pkis:concept:equations-of-condition
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- maximum-likelihood-as-least-squares
 related_concepts: []
 sources:
 - jaynes-probability-ch19
@@ -32,6 +36,9 @@ tags:
 - least-squares
 title: Equations of Condition (Overdetermined Linear Observation Model)
 understanding: 0
+uses:
+- linear-algebra
+- basis-and-rank
 ---
 
 ## Definition
@@ -41,4 +48,8 @@ A system y = Ax + delta relating N imperfect observations y_i to n unknown param
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[basis-and-rank]] — uses: identifiability hinges on the rank / column independence of A
+- [[maximum-likelihood-as-least-squares]] — prerequisite-of: the least-squares/Bayes estimator is defined over this observation model
+- [[deconvolution]] — generalizes: deconvolution d = Rf + n is an equations-of-condition system with a convolution design matrix
+- [[linear-algebra]] — uses: observation model is a matrix system y = Ax + delta
 [To be populated during integration]

@@ -20,6 +20,8 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - jaynes-probability-ch08
+specializes:
+- sampling-theory
 tags:
 - sufficiency
 - likelihood
@@ -28,6 +30,8 @@ tags:
 - sampling-distribution
 title: Fisher–Neyman Factorization
 understanding: 0
+uses:
+- exponential-family
 ---
 
 ## Definition
@@ -43,4 +47,6 @@ Fisher required factorization for all priors. Jaynes notes that for a particular
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[exponential-family]] — uses: Exponential-family models are exactly those with finite-dimensional sufficient statistics, the cleanest case of the factorization.
+- [[sampling-theory]] — specializes: The factorization is stated in terms of the sampling density of orthodox/sampling theory.
 [To be populated during integration]

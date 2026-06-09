@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- maximum-entropy-image-reconstruction
 component_scores:
   implications: null
   justification: null
@@ -13,6 +15,8 @@ domain:
 - bayesian-stats
 - information-theory
 id: pkis:principle:gaussian-error-assignment-as-state-of-knowledge
+instantiates:
+- learning-as-inference
 knowledge_type: principle
 maturity: evolving
 needs_canonical_source: false
@@ -26,6 +30,9 @@ tags:
 - epistemology-of-probability
 title: Gaussian Error Assignment as State of Knowledge
 understanding: 0
+uses:
+- gaussian-distribution
+- entropy
 ---
 
 ## Definition
@@ -35,4 +42,8 @@ In probability theory as logic, assigning a Gaussian probability distribution to
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[learning-as-inference]] — instantiates: Gaussian-as-knowledge is the logical (vs frequentist) reading of probability applied to errors
+- [[entropy]] — uses: principle of maximum entropy underwrites the Gaussian as the least-committal assignment
+- [[maximum-entropy-image-reconstruction]] — applies: maxent given two moments yields the Gaussian; same justificatory machinery
+- [[gaussian-distribution]] — uses: the assignment in question is a Gaussian
 [To be populated during integration]

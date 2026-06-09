@@ -1,11 +1,15 @@
 ---
 aliases: []
 also_type: []
+applies:
+- decision-theory-foundations
 component_scores:
   implications: null
   justification: null
   statement: null
   violations: null
+contrasts-with:
+- expected-loss
 coverage: 1
 date_created: '2026-06-09'
 date_updated: '2026-06-09'
@@ -36,4 +40,6 @@ Jaynes's distinctive thesis on the foundations of decision theory. Since the opt
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[expected-loss]] — contrasts-with: Argues the loss function is less formally grounded than the prior despite both entering only as a product.
+- [[decision-theory-foundations]] — applies: Jaynes's thesis about the relative groundedness of priors vs. loss functions in the decision framework.
 [To be populated during integration]

@@ -25,6 +25,8 @@ tags:
 - probability-as-logic
 title: Sum Rule (Plausibility)
 understanding: 0
+uses:
+- product-rule
 ---
 
 ## Definition
@@ -36,4 +38,5 @@ Its most useful applied form is the **extended (generalized) sum rule** for the 
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[product-rule]] — uses: the extended sum rule is derived using the product rule
 [To be populated during integration]

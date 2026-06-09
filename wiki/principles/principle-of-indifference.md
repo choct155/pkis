@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- probability-as-extended-logic
 component_scores:
   implications: null
   justification: null
@@ -16,17 +18,24 @@ id: pkis:principle:principle-of-indifference
 knowledge_type: principle
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- the-bernoulli-urn
+- noninformative-prior
 related_concepts: []
 sources:
 - jaynes-probability-ch02
 - jaynes-probability-ch03
 - jaynes-probability-ch12
+specializes:
+- noninformative-prior
 tags:
 - foundations
 - prior-assignment
 - symmetry
 title: Principle of Indifference
 understanding: 0
+uses:
+- sum-rule
 ---
 
 ## Definition
@@ -38,4 +47,9 @@ Jaynes derives it rather than postulating it, via a 'baby' group-invariance argu
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[noninformative-prior]] — prerequisite-of: Indifference is the classical rationale underlying noninformative priors.
+- [[the-bernoulli-urn]] — prerequisite-of: the urn rule cannot be stated without first fixing equal probabilities by indifference
+- [[noninformative-prior]] — specializes: the uniform assignment 1/N is the discrete, symmetry-compelled instance of a noninformative prior
+- [[probability-as-extended-logic]] — applies: first instance of symmetry/group-invariance prior assignment within the extended-logic program
+- [[sum-rule]] — uses: exhaustiveness via the sum rule fixes the common value at 1/n
 [To be populated during integration]

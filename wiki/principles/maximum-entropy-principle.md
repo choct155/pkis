@@ -12,6 +12,8 @@ date_updated: '2026-06-09'
 domain:
 - bayesian-stats
 - information-theory
+generalizes:
+- canonical-partition
 id: pkis:principle:maximum-entropy-principle
 knowledge_type: principle
 maturity: evolving
@@ -21,6 +23,8 @@ sources:
 - jaynes-probability-ch09
 - jaynes-probability-ch11
 - jaynes-probability-ch22
+specializes:
+- exponential-family
 tags:
 - jaynes
 - maxent
@@ -30,6 +34,11 @@ tags:
 - exponential-family
 title: Maximum Entropy Principle
 understanding: 0
+uses:
+- partition-function
+- gibbs-inequality
+- entropy
+- lagrange-multipliers
 ---
 
 ## Definition
@@ -39,4 +48,10 @@ understanding: 0
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[canonical-partition]] — generalizes
+- [[lagrange-multipliers]] — uses: Constrained maxent is solved by Lagrange multipliers, yielding the exponential canonical form.
+- [[exponential-family]] — specializes
+- [[entropy]] — uses
+- [[gibbs-inequality]] — uses
+- [[partition-function]] — uses
 [To be populated during integration]

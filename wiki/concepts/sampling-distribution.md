@@ -10,6 +10,8 @@ component_scores:
   prerequisites: null
   scope: null
   transfer: null
+contrasts-with:
+- bayesian-inference
 coverage: 1
 date_created: '2026-06-09'
 date_updated: '2026-06-09'
@@ -40,4 +42,5 @@ Sampling distributions make predictions; agreement with observation supports $H$
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[bayesian-inference]] — contrasts-with: the forward problem P(D|H) vs the inverse problem P(H|D); Jaynes frames real inference as the latter
 [To be populated during integration]

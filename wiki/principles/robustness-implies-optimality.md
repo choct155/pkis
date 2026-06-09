@@ -6,6 +6,8 @@ component_scores:
   justification: null
   statement: null
   violations: null
+contrasts-with:
+- robust-inference
 coverage: 1
 date_created: '2026-06-09'
 date_updated: '2026-06-09'
@@ -38,4 +40,5 @@ Two corollaries sharpen the point. (1) **Robustness has a price**: robust/resist
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[robust-inference]] — contrasts-with: argues robustness cannot be advocated as an end in itself divorced from optimality
 [To be populated during integration]

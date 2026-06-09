@@ -14,6 +14,8 @@ date_updated: '2026-06-09'
 domain:
 - bayesian-stats
 - statistical-learning
+generalizes:
+- probability-as-extended-logic
 id: pkis:framework:comparative-probability
 knowledge_type: framework
 maturity: evolving
@@ -27,6 +29,8 @@ tags:
 - ordering-relations
 title: Comparative (Qualitative) Probability Theory
 understanding: 0
+uses:
+- qualitative-reasoning
 ---
 
 ## Definition
@@ -38,4 +42,6 @@ His analysis: any comparative theory holding *both* axioms can be faithfully rep
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[qualitative-reasoning]] — uses: Comparative probability operates on qualitative ordering relations rather than numerical values.
+- [[probability-as-extended-logic]] — generalizes: Comparative probability drops the real-number desideratum, attempting a weaker (lattice) theory of which numerical probability is the everywhere-dense limit.
 [To be populated during integration]

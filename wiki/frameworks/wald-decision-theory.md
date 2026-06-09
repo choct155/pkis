@@ -20,6 +20,8 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - jaynes-probability-ch13
+specializes:
+- decision-theory-foundations
 tags:
 - decision-theory
 - wald
@@ -29,6 +31,8 @@ tags:
 - sampling-theory
 title: Wald's Decision Theory
 understanding: 0
+uses:
+- expected-loss
 ---
 
 ## Definition
@@ -38,4 +42,6 @@ Abraham Wald's (1950) formalization of decision-making under uncertainty, origin
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[decision-theory-foundations]] — specializes: Wald's framework is one formalization of the general decision-theory framework.
+- [[expected-loss]] — uses: Wald's risk is expected loss over the sampling distribution.
 [To be populated during integration]

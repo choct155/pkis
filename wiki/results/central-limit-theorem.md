@@ -1,12 +1,16 @@
 ---
 aliases: []
 also_type: []
+applies:
+- gaussian-distribution
 component_scores:
   conditions: null
   implications: null
   limitations: null
   proof_sketch: null
   statement: null
+contrasts-with:
+- weak-law-of-large-numbers
 coverage: 1
 date_created: '2026-06-09'
 date_updated: '2026-06-09'
@@ -26,6 +30,10 @@ tags:
 - asymptotics
 title: Central Limit Theorem
 understanding: 0
+uses:
+- convolution-of-distributions
+- entropy
+- gaussian-maximum-entropy-characterization
 ---
 
 ## Definition
@@ -44,6 +52,11 @@ When $N$ independent errors each of magnitude $\sim\epsilon$ are summed, mutual 
 The theorem requires the second moment to exist. The Cauchy distribution is the unique non-Gaussian stable law for which the sample mean has the same distribution as a single observation; its characteristic function $\exp\{i\alpha\theta - k|\alpha|\}$ has no finite variance, so the CLT does not apply.
 
 ## Connections
+- [[gaussian-maximum-entropy-characterization]] — uses: limit form is dictated by maximum entropy at fixed variance
+- [[weak-law-of-large-numbers]] — contrasts-with: WLLN gives convergence of the mean; CLT gives its fluctuation scale and shape
+- [[entropy]] — uses: convolution conserves variance while increasing entropy toward the maxent Gaussian
+- [[gaussian-distribution]] — applies: the limiting form is Gaussian
+- [[convolution-of-distributions]] — uses: CLT is the limit of repeated convolution
 - [[convolution-of-distributions]] — uses: the CLT is the limit of repeated convolution
 - [[gaussian-distribution]] — the limiting form
 - [[entropy]] — the limit is the maximum-entropy distribution for fixed variance

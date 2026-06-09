@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- transformation-group-priors
 component_scores:
   formulation: null
   instances: null
@@ -13,6 +15,8 @@ domain:
 - bayesian-stats
 - information-theory
 id: pkis:problem:the-well-posed-problem-bertrand
+instantiates:
+- principle-of-indifference
 knowledge_type: problem
 maturity: evolving
 needs_canonical_source: false
@@ -57,4 +61,6 @@ The paradox dissolves once 'well-posed' is read as 'has a unique invariant solut
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[transformation-group-priors]] — applies: Solved by rotational, scale, and translational invariance.
+- [[principle-of-indifference]] — instantiates: Canonical case exposing the ambiguity, then resolution, of the principle.
 [To be populated during integration]

@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+analogous-to:
+- optimal-linear-filter
 component_scores:
   alternatives: null
   conditions: null
@@ -16,6 +18,8 @@ domain:
 - bayesian-stats
 - information-theory
 id: pkis:technique:matched-filter
+instantiates:
+- signal-detection-theory
 knowledge_type: technique
 maturity: evolving
 needs_canonical_source: false
@@ -30,6 +34,8 @@ tags:
 - radar
 title: Matched Filter
 understanding: 0
+uses:
+- likelihood-ratio-evidence
 ---
 
 ## Definition
@@ -39,4 +45,7 @@ The receiver front-end design that maximizes output signal-to-noise ratio for a 
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[likelihood-ratio-evidence]] — uses
+- [[optimal-linear-filter]] — analogous-to
+- [[signal-detection-theory]] — instantiates
 [To be populated during integration]

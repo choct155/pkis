@@ -6,6 +6,8 @@ component_scores:
   justification: null
   statement: null
   violations: null
+contrasts-with:
+- bayesian-decision-analysis
 coverage: 1
 date_created: '2026-06-09'
 date_updated: '2026-06-09'
@@ -26,6 +28,8 @@ tags:
 - loss-matrix
 title: Minimax Criterion
 understanding: 0
+uses:
+- expected-loss
 ---
 
 ## Definition
@@ -35,4 +39,6 @@ A decision criterion that, for each decision $D_i$, computes the maximum possibl
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[bayesian-decision-analysis]] — contrasts-with: Minimax (Nature-as-adversary) vs. Bayes rules (Nature neutral); only Bayes rules pass all common-sense tests.
+- [[expected-loss]] — uses: Minimax operates on the loss matrix / worst-case loss.
 [To be populated during integration]

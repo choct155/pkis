@@ -6,6 +6,10 @@ component_scores:
   justification: null
   statement: null
   violations: null
+contrasts-with:
+- kolmogorov-axioms
+- de-finetti-coherence
+- comparative-probability
 coverage: 1
 date_created: '2026-06-09'
 date_updated: '2026-06-09'
@@ -13,6 +17,8 @@ domain:
 - bayesian-stats
 - information-theory
 - knowledge-representation
+extends:
+- probability-theory
 id: pkis:principle:probability-as-extended-logic
 knowledge_type: principle
 maturity: evolving
@@ -27,6 +33,8 @@ tags:
 - objective-bayes
 title: Probability as Extended Logic
 understanding: 0
+uses:
+- cox-theorem
 ---
 
 ## Definition
@@ -38,4 +46,9 @@ Key commitments: (1) plausibilities attach to *propositions*, manipulated by the
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[comparative-probability]] — contrasts-with: Extended logic insists on real-number plausibilities; comparative probability tries to do without them.
+- [[de-finetti-coherence]] — contrasts-with: Extended logic uses the stronger Cox consistency rather than de Finetti coherence as its basis.
+- [[kolmogorov-axioms]] — contrasts-with: Jaynes contrasts proposition-based extended logic with Kolmogorov's set-based measure axioms; identical 'as far as it goes' but more general and Bayes-primary.
+- [[probability-theory]] — extends: recasts probability theory as the unique consistent extension of deductive logic
+- [[cox-theorem]] — uses: Cox's theorem is the formal justification of the extended-logic stance
 [To be populated during integration]

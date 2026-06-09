@@ -18,6 +18,8 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - jaynes-probability-appA
+specializes:
+- cox-theorem
 tags:
 - probability-foundations
 - subjective-probability
@@ -25,6 +27,8 @@ tags:
 - decision-theory
 title: De Finetti Coherence (Dutch-Book Foundation)
 understanding: 0
+uses:
+- exchangeability
 ---
 
 ## Definition
@@ -36,4 +40,6 @@ Jaynes (Appendix A) acknowledges coherence as a near-relative of his own philoso
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[exchangeability]] — uses: De Finetti's 1937 work pairs the coherence foundation with his exchangeability representation theorem.
+- [[cox-theorem]] — specializes: Coherence is implied by (a weaker consequence of) Cox-style consistency: consistent rules are automatically coherent, not conversely.
 [To be populated during integration]

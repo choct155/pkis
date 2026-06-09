@@ -6,12 +6,16 @@ component_scores:
   justification: null
   statement: null
   violations: null
+contrasts-with:
+- exchangeability
 coverage: 1
 date_created: '2026-06-09'
 date_updated: '2026-06-09'
 domain:
 - bayesian-stats
 id: pkis:principle:conservation-of-logical-independence
+instantiates:
+- bayesian-inference
 knowledge_type: principle
 maturity: evolving
 needs_canonical_source: false
@@ -41,6 +45,8 @@ Jaynes raises the converse as an open line of thought (Exercise 6.4): does the *
 - [[jaynes-probability-ch06]] — binomial prior nullifies the data; §6.5 and Exercise 6.4
 
 ## Connections
+- [[bayesian-inference]] — instantiates
+- [[exchangeability]] — contrasts-with
 - [[exchangeability]] — contrasts-with: exchangeable priors let data inform beliefs about unsampled members; the independence (binomial) prior is the extreme where sampling carries no such information.
 - [[bayesian-inference]] — instantiates: a concrete consequence of applying Bayes' theorem with an independence-structured prior.
 

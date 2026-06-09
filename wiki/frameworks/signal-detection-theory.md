@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- decision-theory-foundations
 component_scores:
   application: null
   limits: null
@@ -8,6 +10,8 @@ component_scores:
   purpose: null
   scope: null
   structure: null
+contrasts-with:
+- hypothesis-testing
 coverage: 1
 date_created: '2026-06-09'
 date_updated: '2026-06-09'
@@ -29,6 +33,9 @@ tags:
 - significance-test
 title: Signal Detection Theory
 understanding: 0
+uses:
+- likelihood-ratio-evidence
+- expected-loss
 ---
 
 ## Definition
@@ -38,4 +45,8 @@ The theory of deciding, from a noisy observation, which of several hypothesized 
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[hypothesis-testing]] — contrasts-with
+- [[decision-theory-foundations]] — applies
+- [[expected-loss]] — uses
+- [[likelihood-ratio-evidence]] — uses
 [To be populated during integration]

@@ -16,9 +16,13 @@ id: pkis:principle:symmetry-as-positive-knowledge
 knowledge_type: principle
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- physical-vs-epistemic-probability
 related_concepts: []
 sources:
 - jaynes-probability-ch10
+specializes:
+- noninformative-prior
 tags:
 - jaynes
 - principle-of-indifference
@@ -27,6 +31,8 @@ tags:
 - invariance
 title: Symmetry as Positive Knowledge for Prior Assignment
 understanding: 0
+uses:
+- symmetry-groups
 ---
 
 ## Definition
@@ -36,4 +42,7 @@ Jaynes's correction and generalization of the principle of indifference: the com
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[physical-vs-epistemic-probability]] — prerequisite-of: The 1/2 assignment for an honest coin rests on positive symmetry knowledge, not on frequencies — the constructive complement to the no-physical-probability critique.
+- [[noninformative-prior]] — specializes: Symmetry/transformation-group reasoning supplies a principled, often unique, noninformative prior where 'equal ignorance' alone is ambiguous.
+- [[symmetry-groups]] — uses: Prior must be invariant under the problem's transformation group; specifiable only on the group's fundamental domain.
 [To be populated during integration]

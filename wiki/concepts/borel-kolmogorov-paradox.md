@@ -31,6 +31,8 @@ tags:
 - great-circle
 title: Borel-Kolmogorov Paradox
 understanding: 0
+uses:
+- conditional-independence
 ---
 
 ## Definition
@@ -43,4 +45,5 @@ Jaynes's resolution is an instance of the finite-sets policy: 'y=0' has measure 
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[conditional-independence]] — uses: The paradox concerns conditional densities on measure-zero events; conditioning is the operation that becomes ambiguous.
 [To be populated during integration]

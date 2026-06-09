@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- noninformative-prior
 component_scores:
   alternatives: null
   conditions: null
@@ -15,13 +17,19 @@ date_updated: '2026-06-09'
 domain:
 - bayesian-stats
 - information-theory
+generalizes:
+- jeffreys-prior
 id: pkis:technique:transformation-group-priors
 knowledge_type: technique
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- entropy
 related_concepts: []
 sources:
 - jaynes-probability-ch12
+specializes:
+- principle-of-indifference
 tags:
 - prior
 - objective-bayes
@@ -31,6 +39,8 @@ tags:
 - jaynes
 title: Transformation-Group Priors
 understanding: 0
+uses:
+- group-theory
 ---
 
 ## Definition
@@ -59,4 +69,9 @@ It supplies the *invariant measure* $m(x)$ that the maximum-entropy principle ne
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[entropy]] — prerequisite-of: Supplies the invariant measure m(x) required for continuous maximum entropy.
+- [[group-theory]] — uses: Encodes problem symmetries as a transformation group; priors are invariant measures.
+- [[noninformative-prior]] — applies: Constructs noninformative (pre-)priors as invariant measures.
+- [[jeffreys-prior]] — generalizes: The 1/sigma Jeffreys scale prior is one instance of a transformation-group ignorance prior.
+- [[principle-of-indifference]] — specializes: Operationalizes indifference between problems via invariance groups.
 [To be populated during integration]

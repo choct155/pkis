@@ -10,15 +10,21 @@ component_scores:
   prerequisites: null
   scope: null
   transfer: null
+contrasts-with:
+- common-sense-reasoning
 coverage: 1
 date_created: '2026-06-09'
 date_updated: '2026-06-09'
 domain:
 - bayesian-stats
+extends:
+- probability-theory
 id: pkis:concept:plausible-reasoning
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- bayesian-inference
 related_concepts: []
 sources:
 - jaynes-probability-ch01
@@ -50,4 +56,7 @@ Jaynes traces the lineage to Pólya, who catalogued the qualitative rules of pla
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[bayesian-inference]] — prerequisite-of
+- [[common-sense-reasoning]] — contrasts-with
+- [[probability-theory]] — extends
 [To be populated during integration]

@@ -16,6 +16,11 @@ id: pkis:principle:finite-sets-policy
 knowledge_type: principle
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- nonconglomerability
+- borel-kolmogorov-paradox
+- marginalization-paradox
+- finite-vs-countable-additivity
 related_concepts: []
 sources:
 - jaynes-probability-ch15
@@ -40,4 +45,8 @@ Jaynes argues that essentially all of the 'mathematically generated' paradoxes o
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[finite-vs-countable-additivity]] — prerequisite-of: Jaynes argues 'finite additivity' is a euphemism for reversing the proper order of approaching limits.
+- [[marginalization-paradox]] — prerequisite-of: The paradox stems from treating improper priors as completed objects rather than limits of proper priors.
+- [[borel-kolmogorov-paradox]] — prerequisite-of: The measure-zero conditioning paradox resolves only by passing to an explicitly specified limit of positive-measure events.
+- [[nonconglomerability]] — prerequisite-of: Conglomerability bounds hold for finite sets and any limit of them; nonconglomerability is precisely the artifact of violating the limit-last policy.
 [To be populated during integration]

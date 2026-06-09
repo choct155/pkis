@@ -10,12 +10,16 @@ component_scores:
   prerequisites: null
   scope: null
   transfer: null
+contrasts-with:
+- defeasibility
 coverage: 1
 date_created: '2026-06-09'
 date_updated: '2026-06-09'
 domain:
 - bayesian-stats
 id: pkis:concept:strong-and-weak-syllogisms
+instantiates:
+- plausible-reasoning
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
@@ -48,4 +52,6 @@ The premise *if A then B* asserts a logical connection, not physical causation: 
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[defeasibility]] — contrasts-with
+- [[plausible-reasoning]] — instantiates
 [To be populated during integration]

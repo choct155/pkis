@@ -7,6 +7,8 @@ component_scores:
   limitations: null
   proof_sketch: null
   statement: null
+contrasts-with:
+- probability-theory
 coverage: 1
 date_created: '2026-06-09'
 date_updated: '2026-06-09'
@@ -17,6 +19,10 @@ id: pkis:result:cox-theorem
 knowledge_type: result
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- product-rule
+- sum-rule
+- probability-as-extended-logic
 related_concepts: []
 sources:
 - jaynes-probability-ch02
@@ -27,6 +33,8 @@ tags:
 - consistency
 title: Cox's Theorem
 understanding: 0
+uses:
+- probability-theory
 ---
 
 ## Definition
@@ -40,4 +48,9 @@ The scope is finite sets of propositions: Jaynes stresses that the consistency t
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[probability-theory]] — uses: Cox's theorems characterize exactly the standard probability rules.
+- [[probability-as-extended-logic]] — prerequisite-of: Cox's consistency theorems supply the derivation that turns the extended-logic desiderata into the standard probability rules.
+- [[probability-theory]] — contrasts-with: derives the Kolmogorov axioms from consistency rather than positing measure-theoretic axioms
+- [[sum-rule]] — prerequisite-of: Cox's theorem is the derivation that yields the sum rule
+- [[product-rule]] — prerequisite-of: Cox's theorem is the derivation that yields the product rule
 [To be populated during integration]

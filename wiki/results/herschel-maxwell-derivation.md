@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- gaussian-distribution
 component_scores:
   conditions: null
   implications: null
@@ -43,6 +45,7 @@ Equating the two forms gives the functional equation $f(x)f(y) = g(\sqrt{x^2+y^2
 Two qualitative conditions that are incompatible for general distributions become compatible for exactly one quantitative family, which they therefore uniquely determine. Einstein used the same style of argument to deduce the Lorentz transformation from his two relativity postulates. The derivation reveals the Gaussian as a unique object for purely mathematical (geometric-invariance) reasons, independent of any frequency interpretation.
 
 ## Connections
+- [[gaussian-distribution]] — applies: derives the Gaussian uniquely from geometric invariance
 - [[gaussian-distribution]] — the unique distribution satisfying the invariance postulates
 - the Maxwellian velocity distribution is its 3-D instance, basis of kinetic theory and statistical mechanics
 

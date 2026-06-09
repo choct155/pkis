@@ -8,6 +8,8 @@ component_scores:
   purpose: null
   scope: null
   structure: null
+contrasts-with:
+- de-finetti-coherence
 coverage: 1
 date_created: '2026-06-09'
 date_updated: '2026-06-09'
@@ -21,6 +23,8 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - jaynes-probability-appA
+specializes:
+- probability-theory
 tags:
 - mathematical-foundations
 - measure-theory
@@ -38,4 +42,6 @@ Jaynes (Appendix A) treats KSP as the dominant alternative to his probability-as
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[probability-theory]] — specializes: The Kolmogorov system is the measure-theoretic instantiation of probability theory.
+- [[de-finetti-coherence]] — contrasts-with: Both work on uncountable sets but treat additivity differently; de Finetti's onion-layer zero probabilities depart from Kolmogorov's countable additivity.
 [To be populated during integration]

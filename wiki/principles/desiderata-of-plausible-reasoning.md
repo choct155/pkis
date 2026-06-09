@@ -15,6 +15,8 @@ id: pkis:principle:desiderata-of-plausible-reasoning
 knowledge_type: principle
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- plausible-reasoning
 related_concepts: []
 sources:
 - jaynes-probability-ch01
@@ -28,6 +30,8 @@ tags:
 - extended-logic
 title: Desiderata of Plausible Reasoning
 understanding: 0
+uses:
+- probability-theory
 ---
 
 ## Definition
@@ -46,4 +50,6 @@ The central surprise — the Cox–Jaynes theorem of Chapter 2 — is that these
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[probability-theory]] — uses
+- [[plausible-reasoning]] — prerequisite-of
 [To be populated during integration]

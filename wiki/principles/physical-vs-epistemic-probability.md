@@ -6,12 +6,16 @@ component_scores:
   justification: null
   statement: null
   violations: null
+contrasts-with:
+- random-variable
 coverage: 1
 date_created: '2026-06-09'
 date_updated: '2026-06-09'
 domain:
 - bayesian-stats
 - information-theory
+extends:
+- jaynes-probability-ch09
 id: pkis:principle:physical-vs-epistemic-probability
 knowledge_type: principle
 maturity: evolving
@@ -36,4 +40,6 @@ Jaynes's central foundational thesis: a probability is not a physical property o
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[jaynes-probability-ch09]] — extends: Continues the Ch. 9 treatment of probability vs. frequency, now adding the physics of random experiments.
+- [[random-variable]] — contrasts-with: Cramer's axiom that a random variable has a unique (frequency) distribution treats probability as a physical constant of the device; Jaynes rejects this.
 [To be populated during integration]

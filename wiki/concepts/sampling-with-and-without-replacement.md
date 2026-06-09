@@ -29,6 +29,9 @@ tags:
 - independence
 title: Sampling With and Without Replacement
 understanding: 0
+uses:
+- the-bernoulli-urn
+- markov-chains
 ---
 
 ## Definition
@@ -40,4 +43,6 @@ The distinction between two drawing protocols and the surprising reversal in the
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[markov-chains]] — uses: correlated with-replacement sampling is modeled as a two-state Markov chain via the epsilon/delta transition matrix
+- [[the-bernoulli-urn]] — uses: both protocols are defined on the Bernoulli urn; the distinction drives which distribution results
 [To be populated during integration]

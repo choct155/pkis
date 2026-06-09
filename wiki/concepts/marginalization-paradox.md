@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- jeffreys-prior
 component_scores:
   application: null
   boundary: null
@@ -16,6 +18,8 @@ date_updated: '2026-06-09'
 domain:
 - bayesian-stats
 id: pkis:concept:marginalization-paradox
+instantiates:
+- nonconglomerability
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
@@ -32,6 +36,10 @@ tags:
 - complete-ignorance
 title: Marginalization Paradox
 understanding: 0
+uses:
+- marginalization
+- nuisance-parameters
+- noninformative-prior
 ---
 
 ## Definition
@@ -44,4 +52,9 @@ B2's 'reduction principle' (15.61) is an intuitive guess that does *not* follow 
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[jeffreys-prior]] — applies: Agreement of B1 and B2 for a scale parameter holds iff the Jeffreys prior eta^{-1} is used (k=1).
+- [[noninformative-prior]] — uses: The paradox arises with improper noninformative priors; the resolution is an objective definition of complete ignorance.
+- [[nuisance-parameters]] — uses: DSZ frame the paradox around integrating out a nuisance parameter eta, though Jaynes shows nuisance parameters are not essential to it.
+- [[marginalization]] — uses: The paradox concerns B1's marginal posterior obtained by integrating out a nuisance parameter.
+- [[nonconglomerability]] — instantiates: Both are 'mathematically generated' paradoxes; the marginalization tetrahedron scenario is the same tumbling-tetrahedra setup that generates the nonconglomerability claims.
 [To be populated during integration]

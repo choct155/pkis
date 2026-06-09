@@ -22,6 +22,8 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - '[[kroese-statistical-modeling-ch08]]'
+specializes:
+- plausible-reasoning
 tags:
 - bayesian
 - posterior
@@ -37,6 +39,7 @@ Inference that treats unknown quantities as random variables and updates beliefs
 - [[kroese-statistical-modeling-ch08]] — canonical source
 
 ## Connections
+- [[plausible-reasoning]] — specializes
 [To be populated during integration]
 
 ## Needs Canonical Source

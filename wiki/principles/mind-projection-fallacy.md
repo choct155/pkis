@@ -1,11 +1,19 @@
 ---
 aliases: []
 also_type: []
+analogous-to:
+- causal-statistical-distinction
+- likelihood-ratio-evidence
+applies:
+- plausible-reasoning
 component_scores:
   implications: null
   justification: null
   statement: null
   violations: null
+contrasts-with:
+- conditional-independence
+- bayesian-inference
 coverage: 1
 date_created: '2026-06-09'
 date_updated: '2026-06-09'
@@ -15,6 +23,10 @@ id: pkis:principle:mind-projection-fallacy
 knowledge_type: principle
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- sampling-distribution
+- bayesian-inference
+- physical-vs-epistemic-probability
 related_concepts: []
 sources:
 - jaynes-probability-ch01
@@ -49,4 +61,12 @@ The fallacy is not confined to statistics; Jaynes contends much philosophical an
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[bayesian-inference]] — contrasts-with
+- [[physical-vs-epistemic-probability]] — prerequisite-of: Belief in physical probability is the canonical instance of the mind projection fallacy: projecting epistemic ignorance onto the object as a physical attribute.
+- [[likelihood-ratio-evidence]] — analogous-to: Both stress the relativity of inference: 'support' (a likelihood ratio) is a relation to a state of knowledge, not an absolute property of D and S.
+- [[conditional-independence]] — contrasts-with: logical (probabilistic) independence must not be reified as physical/causal independence
+- [[bayesian-inference]] — prerequisite-of: probabilities describe states of knowledge, not physical properties — foundational to probability-as-logic
+- [[causal-statistical-distinction]] — analogous-to: both separate epistemic/statistical content from ontic/physical-causal content; conflating them is the shared error
+- [[sampling-distribution]] — prerequisite-of: avoiding the fallacy is needed to interpret a sampling distribution as a state of knowledge rather than physical long-run frequency
+- [[plausible-reasoning]] — applies
 [To be populated during integration]

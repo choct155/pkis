@@ -10,15 +10,22 @@ component_scores:
   prerequisites: null
   scope: null
   transfer: null
+contrasts-with:
+- maximum-likelihood-estimation
+- credible-interval
 coverage: 1
 date_created: '2026-06-09'
 date_updated: '2026-06-09'
 domain:
 - bayesian-stats
 id: pkis:concept:bayesian-point-estimation
+instantiates:
+- bayesian-inference
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- credible-interval
 related_concepts: []
 sources:
 - jaynes-probability-ch06
@@ -31,6 +38,8 @@ tags:
 - decision-theory
 title: Bayesian Point Estimation (Mean, Median, Mode)
 understanding: 0
+uses:
+- expected-loss
 ---
 
 ## Definition
@@ -50,6 +59,11 @@ The same posterior gives strikingly different point estimates depending on rule 
 - [[jaynes-probability-ch06]] — §6.4: mean/median/mode, loss functions, invariance and robustness; particle-counter Bayes-vs-MLE contrast
 
 ## Connections
+- [[credible-interval]] — prerequisite-of
+- [[credible-interval]] — contrasts-with
+- [[bayesian-inference]] — instantiates
+- [[maximum-likelihood-estimation]] — contrasts-with
+- [[expected-loss]] — uses
 - [[expected-loss]] — uses: the choice of point estimate is the minimizer of an expected loss (squared, absolute, or 0–1) over the posterior.
 - [[maximum-likelihood-estimation]] — contrasts-with: the posterior mode equals the MLE only under a locally flat prior; the mean and median generally differ from it.
 - [[bayesian-inference]] — instantiates: extracting a point estimate is a downstream summary of the full posterior.

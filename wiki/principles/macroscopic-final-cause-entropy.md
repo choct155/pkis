@@ -28,6 +28,8 @@ tags:
 - mind-projection-fallacy
 title: Macroscopic Final Causes Have an Entropy
 understanding: 0
+uses:
+- entropy
 ---
 
 ## Definition
@@ -43,4 +45,5 @@ This dissolves a centuries-old confusion by separating two ideas that had been c
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[entropy]] — uses: the final cause is assigned an entropy (log count of microstates realizing its purpose); maximum-entropy reasoning makes the most probable macrostate the realized one
 [To be populated during integration]
