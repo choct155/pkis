@@ -6628,3 +6628,12 @@
 ## [2026-06-09] committed | concept
 - Committed: back-door-criterion → concepts/back-door-criterion.md
 - IRI: pkis:concept:back-door-criterion
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: front-door-criterion (id: 63031f2f-efc7-402d-9e0d-a07cdcffc9ad)
+- Title: Front-Door Criterion
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: front-door-criterion → concepts/front-door-criterion.md
+- IRI: pkis:concept:front-door-criterion
