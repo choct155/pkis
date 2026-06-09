@@ -5890,3 +5890,12 @@
 ## [2026-06-09] committed | technique
 - Committed: non-centered-parameterization → techniques/non-centered-parameterization.md
 - IRI: pkis:technique:non-centered-parameterization
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: parameter-expansion-sampling (id: 46dc622d-5fa2-4ed5-9abd-323b75ddf72a)
+- Title: Parameter Expansion for Hierarchical Sampling
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: parameter-expansion-sampling → techniques/parameter-expansion-sampling.md
+- IRI: pkis:technique:parameter-expansion-sampling
