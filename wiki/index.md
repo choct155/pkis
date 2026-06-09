@@ -1087,6 +1087,7 @@
 - [[llm-language-comprehension]] — The problem of whether LLMs genuinely comprehend language vs. pattern-match surface form (deep-learning, cognitive-science) (2026-05-20)
 
 ## Principles
+- [[pre-data-vs-post-data]] — Pre-Data vs Post-Data Questions (bayesian-stats) (2026-06-09)
 - [[finite-sets-policy]] — Finite-Sets Policy (Passage to the Limit Last) (bayesian-stats, information-theory) (2026-06-09)
 - [[loss-function-vs-prior-asymmetry]] — Asymmetry of Loss Functions and Prior Probabilities (bayesian-stats) (2026-06-09)
 - [[minimax-criterion]] — Minimax Criterion (bayesian-stats) (2026-06-09)

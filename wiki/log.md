@@ -8226,3 +8226,12 @@
 ## [2026-06-09] committed | concept
 - Committed: finite-vs-countable-additivity → concepts/finite-vs-countable-additivity.md
 - IRI: pkis:concept:finite-vs-countable-additivity
+
+## [2026-06-09] staged | node-stub (principle)
+- Staged: pre-data-vs-post-data (id: ecc2c204-492b-43f4-9c81-74317e15c025)
+- Title: Pre-Data vs Post-Data Questions
+- needs_canonical_source: False
+
+## [2026-06-09] committed | principle
+- Committed: pre-data-vs-post-data → principles/pre-data-vs-post-data.md
+- IRI: pkis:principle:pre-data-vs-post-data
