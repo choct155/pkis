@@ -9679,3 +9679,12 @@
 ## [2026-06-09] committed | concept
 - Committed: mixed-strategy → concepts/mixed-strategy.md
 - IRI: pkis:concept:mixed-strategy
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: nash-equilibrium (id: 71c60e50-857e-4848-8b8c-9eee7cb48197)
+- Title: Nash Equilibrium
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: nash-equilibrium → concepts/nash-equilibrium.md
+- IRI: pkis:concept:nash-equilibrium
