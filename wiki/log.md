@@ -9310,3 +9310,12 @@
 ## [2026-06-09] committed | concept
 - Committed: planning-heuristics-relaxation → concepts/planning-heuristics-relaxation.md
 - IRI: pkis:concept:planning-heuristics-relaxation
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: partial-order-planning (id: 6750afdb-a0a3-418f-80cd-ae7f6a1fc3da)
+- Title: Partial-Order Planning
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: partial-order-planning → techniques/partial-order-planning.md
+- IRI: pkis:technique:partial-order-planning
