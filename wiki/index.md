@@ -529,6 +529,7 @@
 - [[market-vs-hierarchy]] — Coase/Williamson: transactions governed by price signals (markets) vs. managerial direction (firms) (corporate-finance) (2026-05-20)
 
 ## Techniques
+- [[coarse-coding]] — Coarse Coding (reinforcement-learning) (2026-06-09)
 - [[state-aggregation]] — State Aggregation (reinforcement-learning) (2026-06-09)
 - [[linear-function-approximation-rl]] — Linear Function Approximation in RL (reinforcement-learning, optimization) (2026-06-09)
 - [[semi-gradient-td]] — Semi-gradient TD Methods (reinforcement-learning, optimization) (2026-06-09)

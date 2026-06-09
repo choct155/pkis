@@ -4612,3 +4612,12 @@
 ## [2026-06-09] committed | technique
 - Committed: state-aggregation → techniques/state-aggregation.md
 - IRI: pkis:technique:state-aggregation
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: coarse-coding (id: f67cf5e0-5844-4f1b-8ccb-10287b77d343)
+- Title: Coarse Coding
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: coarse-coding → techniques/coarse-coding.md
+- IRI: pkis:technique:coarse-coding
