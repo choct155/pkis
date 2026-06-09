@@ -10084,3 +10084,12 @@
 ## [2026-06-09] committed | technique
 - Committed: imitation-learning → techniques/imitation-learning.md
 - IRI: pkis:technique:imitation-learning
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: adaptive-dynamic-programming (id: a0736614-c4b6-4ffc-b6a4-a45b43cbf672)
+- Title: Adaptive Dynamic Programming
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: adaptive-dynamic-programming → techniques/adaptive-dynamic-programming.md
+- IRI: pkis:technique:adaptive-dynamic-programming
