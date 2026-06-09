@@ -4360,3 +4360,12 @@
 ## [2026-06-09] committed | concept
 - Committed: maximization-bias → concepts/maximization-bias.md
 - IRI: pkis:concept:maximization-bias
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: double-q-learning (id: d51209f3-f439-4131-96da-67f2fb005efa)
+- Title: Double Q-learning
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: double-q-learning → techniques/double-q-learning.md
+- IRI: pkis:technique:double-q-learning
