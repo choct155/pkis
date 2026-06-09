@@ -10444,3 +10444,12 @@
 ## [2026-06-09] committed | concept
 - Committed: trajectory-tracking-control → concepts/trajectory-tracking-control.md
 - IRI: pkis:concept:trajectory-tracking-control
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: pid-control (id: 785c5639-528f-48d3-b17d-8e003459420c)
+- Title: PID Control
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: pid-control → techniques/pid-control.md
+- IRI: pkis:technique:pid-control
