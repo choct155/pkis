@@ -9058,3 +9058,12 @@
 ## [2026-06-09] committed | technique
 - Committed: dpll-algorithm → techniques/dpll-algorithm.md
 - IRI: pkis:technique:dpll-algorithm
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: forward-and-backward-chaining (id: 9e484df5-94f7-43a0-9647-45d21277d5ea)
+- Title: Forward and Backward Chaining
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: forward-and-backward-chaining → techniques/forward-and-backward-chaining.md
+- IRI: pkis:technique:forward-and-backward-chaining

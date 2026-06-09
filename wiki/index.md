@@ -684,6 +684,7 @@
 - [[market-vs-hierarchy]] — Coase/Williamson: transactions governed by price signals (markets) vs. managerial direction (firms) (corporate-finance) (2026-05-20)
 
 ## Techniques
+- [[forward-and-backward-chaining]] — Forward and Backward Chaining (knowledge-representation, symbolic-subsymbolic) (2026-06-09)
 - [[dpll-algorithm]] — DPLL Algorithm (knowledge-representation, optimization, symbolic-subsymbolic) (2026-06-09)
 - [[resolution-inference]] — Resolution Inference (knowledge-representation, symbolic-subsymbolic) (2026-06-09)
 - [[tree-decomposition-csp]] — Exploiting CSP Structure: Tree-Structured CSPs, Cutset Conditioning, and Tree Decomposition (knowledge-representation, optimization) (2026-06-09)
