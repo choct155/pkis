@@ -4027,3 +4027,12 @@
 ## [2026-06-09] committed | concept
 - Committed: exploration-exploitation-tradeoff → concepts/exploration-exploitation-tradeoff.md
 - IRI: pkis:concept:exploration-exploitation-tradeoff
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: temporal-difference-learning (id: 7f594ee2-8188-45f4-8164-259103ece766)
+- Title: Temporal-Difference Learning
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: temporal-difference-learning → concepts/temporal-difference-learning.md
+- IRI: pkis:concept:temporal-difference-learning
