@@ -6034,3 +6034,12 @@
 ## [2026-06-09] committed | technique
 - Committed: multiple-imputation → techniques/multiple-imputation.md
 - IRI: pkis:technique:multiple-imputation
+
+## [2026-06-09] staged | node-stub (result)
+- Staged: rubins-rules (id: c7f79f7d-f69e-44e6-babc-6ccaf4a6074e)
+- Title: Rubin's Rules for Combining Multiple Imputations
+- needs_canonical_source: False
+
+## [2026-06-09] committed | result
+- Committed: rubins-rules → results/rubins-rules.md
+- IRI: pkis:result:rubins-rules
