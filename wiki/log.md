@@ -8770,3 +8770,12 @@
 ## [2026-06-09] committed | concept
 - Committed: admissible-and-consistent-heuristics → concepts/admissible-and-consistent-heuristics.md
 - IRI: pkis:concept:admissible-and-consistent-heuristics
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: a-star-search (id: 29ac73cb-b95c-4811-af11-f2e0f0c900bc)
+- Title: A* Search
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: a-star-search → techniques/a-star-search.md
+- IRI: pkis:technique:a-star-search
