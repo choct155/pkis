@@ -4468,3 +4468,12 @@
 ## [2026-06-09] committed | technique
 - Committed: dyna-q → techniques/dyna-q.md
 - IRI: pkis:technique:dyna-q
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: prioritized-sweeping (id: 7c5cbeea-8534-44a5-b58f-71942ae65d75)
+- Title: Prioritized Sweeping
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: prioritized-sweeping → techniques/prioritized-sweeping.md
+- IRI: pkis:technique:prioritized-sweeping

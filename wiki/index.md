@@ -525,6 +525,7 @@
 - [[market-vs-hierarchy]] — Coase/Williamson: transactions governed by price signals (markets) vs. managerial direction (firms) (corporate-finance) (2026-05-20)
 
 ## Techniques
+- [[prioritized-sweeping]] — Prioritized Sweeping (optimization, deep-learning) (2026-06-09)
 - [[dyna-q]] — Dyna-Q (optimization, deep-learning) (2026-06-09)
 - [[n-step-q-sigma]] — n-step Q(sigma) (optimization, deep-learning) (2026-06-09)
 - [[tree-backup-algorithm]] — Tree-backup Algorithm (optimization, deep-learning) (2026-06-09)
