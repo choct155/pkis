@@ -6493,3 +6493,12 @@
 ## [2026-06-09] committed | framework
 - Committed: markovian-causal-model → frameworks/markovian-causal-model.md
 - IRI: pkis:framework:markovian-causal-model
+
+## [2026-06-09] staged | node-stub (principle)
+- Staged: ladder-of-causation (id: cb78463e-3f03-4230-844d-3926af7a044f)
+- Title: Ladder of Causation
+- needs_canonical_source: False
+
+## [2026-06-09] committed | principle
+- Committed: ladder-of-causation → principles/ladder-of-causation.md
+- IRI: pkis:principle:ladder-of-causation
