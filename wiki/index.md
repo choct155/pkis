@@ -918,6 +918,7 @@
 - [[constraint-propagation]] — Reducing a constraint satisfaction problem by iteratively eliminating inconsistent values from variable domains (knowledge-representation) (2026-05-20)
 
 ## Results
+- [[herschel-maxwell-derivation]] — Herschel–Maxwell Derivation of the Gaussian (bayesian-stats, statistical-learning) (2026-06-09)
 - [[central-limit-theorem]] — Central Limit Theorem (bayesian-stats, statistical-learning) (2026-06-09)
 - [[sum-rule]] — Sum Rule (Plausibility) (bayesian-stats, information-theory) (2026-06-09)
 - [[product-rule]] — Product Rule (Plausibility) (bayesian-stats, information-theory) (2026-06-09)

@@ -7947,3 +7947,12 @@
 ## [2026-06-09] committed | result
 - Committed: central-limit-theorem → results/central-limit-theorem.md
 - IRI: pkis:result:central-limit-theorem
+
+## [2026-06-09] staged | node-stub (result)
+- Staged: herschel-maxwell-derivation (id: 53e44007-5256-4fd4-922d-a8e60f2e6af8)
+- Title: Herschel–Maxwell Derivation of the Gaussian
+- needs_canonical_source: False
+
+## [2026-06-09] committed | result
+- Committed: herschel-maxwell-derivation → results/herschel-maxwell-derivation.md
+- IRI: pkis:result:herschel-maxwell-derivation
