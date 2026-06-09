@@ -4162,3 +4162,12 @@
 ## [2026-06-09] committed | concept
 - Committed: policy-rl → concepts/policy-rl.md
 - IRI: pkis:concept:policy-rl
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: state-value-function (id: b4fa15e6-f34b-499d-ac7f-e6850499a22c)
+- Title: State-Value Function
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: state-value-function → concepts/state-value-function.md
+- IRI: pkis:concept:state-value-function
