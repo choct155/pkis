@@ -8136,3 +8136,12 @@
 ## [2026-06-09] committed | concept
 - Committed: admissibility → concepts/admissibility.md
 - IRI: pkis:concept:admissibility
+
+## [2026-06-09] staged | node-stub (result)
+- Staged: complete-class-theorem (id: 485f76a0-92d1-4ba6-acd5-6a03c86a77e9)
+- Title: Wald's Complete Class Theorem
+- needs_canonical_source: False
+
+## [2026-06-09] committed | result
+- Committed: complete-class-theorem → results/complete-class-theorem.md
+- IRI: pkis:result:complete-class-theorem
