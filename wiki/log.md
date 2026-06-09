@@ -3712,3 +3712,12 @@
 ## [2026-06-09] committed | technique
 - Committed: maximum-a-posteriori-estimation-map → techniques/maximum-a-posteriori-estimation-map.md
 - IRI: pkis:technique:maximum-a-posteriori-estimation-map
+
+## [2026-06-09] staged | node-stub (principle)
+- Staged: parameter-estimation-vs-bayesian-inference (id: 41c0434c-7ab8-4d9d-bd38-45e1af485b98)
+- Title: Parameter Estimation vs. Bayesian Inference
+- needs_canonical_source: False
+
+## [2026-06-09] committed | principle
+- Committed: parameter-estimation-vs-bayesian-inference → principles/parameter-estimation-vs-bayesian-inference.md
+- IRI: pkis:principle:parameter-estimation-vs-bayesian-inference
