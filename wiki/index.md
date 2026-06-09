@@ -909,6 +909,7 @@
 - [[constraint-propagation]] — Reducing a constraint satisfaction problem by iteratively eliminating inconsistent values from variable domains (knowledge-representation) (2026-05-20)
 
 ## Results
+- [[pollaczek-khintchine-formula]] — Pollaczek-Khintchine Formula (bayesian-stats, statistical-learning, systems-theory) (2026-06-09)
 - [[spitzers-formula]] — Spitzer's Formula (bayesian-stats, statistical-learning) (2026-06-09)
 - [[wiener-hopf-factorization]] — Wiener-Hopf Factorization (Random Walk) (bayesian-stats, statistical-learning) (2026-06-09)
 - [[borel-cantelli-lemma]] — Borel-Cantelli Lemma (bayesian-stats, statistical-learning) (2026-06-09)

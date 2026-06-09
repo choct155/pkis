@@ -7624,3 +7624,12 @@
 ## [2026-06-09] committed | result
 - Committed: spitzers-formula → results/spitzers-formula.md
 - IRI: pkis:result:spitzers-formula
+
+## [2026-06-09] staged | node-stub (result)
+- Staged: pollaczek-khintchine-formula (id: 6a706232-19a2-4aa2-b5f9-6e2462aaa77e)
+- Title: Pollaczek-Khintchine Formula
+- needs_canonical_source: False
+
+## [2026-06-09] committed | result
+- Committed: pollaczek-khintchine-formula → results/pollaczek-khintchine-formula.md
+- IRI: pkis:result:pollaczek-khintchine-formula
