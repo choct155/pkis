@@ -8833,3 +8833,12 @@
 ## [2026-06-09] committed | technique
 - Committed: genetic-algorithm → techniques/genetic-algorithm.md
 - IRI: pkis:technique:genetic-algorithm
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: and-or-search (id: 6fcb0289-787b-4a52-9ccd-d014d0c98bc7)
+- Title: AND-OR Search
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: and-or-search → techniques/and-or-search.md
+- IRI: pkis:technique:and-or-search

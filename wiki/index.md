@@ -677,6 +677,7 @@
 - [[market-vs-hierarchy]] — Coase/Williamson: transactions governed by price signals (markets) vs. managerial direction (firms) (corporate-finance) (2026-05-20)
 
 ## Techniques
+- [[and-or-search]] — AND-OR Search (search-and-planning) (2026-06-09)
 - [[genetic-algorithm]] — Genetic Algorithm (optimization, search-and-planning) (2026-06-09)
 - [[local-beam-search]] — Local Beam Search (optimization, search-and-planning) (2026-06-09)
 - [[hill-climbing]] — Hill Climbing (optimization, search-and-planning) (2026-06-09)
