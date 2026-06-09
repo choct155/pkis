@@ -8734,3 +8734,12 @@
 ## [2026-06-09] committed | technique
 - Committed: best-first-search → techniques/best-first-search.md
 - IRI: pkis:technique:best-first-search
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: uninformed-search (id: ddbba24c-6454-4748-ba0e-1828ad88dd19)
+- Title: Uninformed Search
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: uninformed-search → techniques/uninformed-search.md
+- IRI: pkis:technique:uninformed-search
