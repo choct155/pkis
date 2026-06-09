@@ -1150,6 +1150,7 @@
 - [[llm-language-comprehension]] — The problem of whether LLMs genuinely comprehend language vs. pattern-match surface form (deep-learning, cognitive-science) (2026-05-20)
 
 ## Principles
+- [[ontological-and-epistemological-commitment]] — Ontological and Epistemological Commitment (knowledge-representation, symbolic-subsymbolic) (2026-06-09)
 - [[physical-symbol-system-hypothesis]] — Physical Symbol System Hypothesis (knowledge-representation) (2026-06-09)
 - [[de-finetti-coherence]] — De Finetti Coherence (Dutch-Book Foundation) (bayesian-stats) (2026-06-09)
 - [[robustness-implies-optimality]] — Any Well-Defined Inference Property Implies an Optimality Principle (bayesian-stats, information-theory) (2026-06-09)

@@ -9112,3 +9112,12 @@
 ## [2026-06-09] committed | concept
 - Committed: terms-predicates-and-models-fol → concepts/terms-predicates-and-models-fol.md
 - IRI: pkis:concept:terms-predicates-and-models-fol
+
+## [2026-06-09] staged | node-stub (principle)
+- Staged: ontological-and-epistemological-commitment (id: d4999297-29d2-42a8-bd4a-c802a96abb44)
+- Title: Ontological and Epistemological Commitment
+- needs_canonical_source: False
+
+## [2026-06-09] committed | principle
+- Committed: ontological-and-epistemological-commitment → principles/ontological-and-epistemological-commitment.md
+- IRI: pkis:principle:ontological-and-epistemological-commitment
