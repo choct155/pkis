@@ -3469,3 +3469,12 @@
 ## [2026-06-09] committed | concept
 - Committed: basis-and-rank → concepts/basis-and-rank.md
 - IRI: pkis:concept:basis-and-rank
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: linear-mapping (id: 5049963a-f940-432c-a63f-4bd990b32e63)
+- Title: Linear Mapping
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: linear-mapping → concepts/linear-mapping.md
+- IRI: pkis:concept:linear-mapping

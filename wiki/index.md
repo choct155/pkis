@@ -290,6 +290,7 @@
 - [[liu-machine-unlearning-llm-2024]] — Rethinking Machine Unlearning for LLMs: post-training knowledge editing survey (deep-learning, ai-safety) (2026-05-20)
 
 ## Concepts
+- [[linear-mapping]] — Linear Mapping (statistical-learning) (2026-06-09)
 - [[basis-and-rank]] — Basis, Dimension, and Rank (statistical-learning) (2026-06-09)
 - [[linear-independence]] — Linear Independence (statistical-learning) (2026-06-09)
 - [[vector-space]] — Vector Space (statistical-learning) (2026-06-09)
