@@ -6457,3 +6457,6 @@
 
 ## [2026-06-09] edit | edit_node
 - pkis:concept:bayesian-inference: fields=[] sections=['The three-step Bayesian workflow (Gelman)']
+
+## [2026-06-09] edit | edit_node
+- pkis:concept:bayesian-inference: fields=[] sections=['Posterior odds and the likelihood ratio']
