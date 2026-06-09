@@ -290,6 +290,7 @@
 - [[liu-machine-unlearning-llm-2024]] — Rethinking Machine Unlearning for LLMs: post-training knowledge editing survey (deep-learning, ai-safety) (2026-05-20)
 
 ## Concepts
+- [[return-and-discounting]] — Return and Discounting (reinforcement-learning, optimization) (2026-06-09)
 - [[temporal-difference-learning]] — Temporal-Difference Learning (reinforcement-learning) (2026-06-09)
 - [[exploration-exploitation-tradeoff]] — Exploration–Exploitation Trade-off (reinforcement-learning) (2026-06-09)
 - [[value-function]] — Value Function (reinforcement-learning) (2026-06-09)

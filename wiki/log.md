@@ -4144,3 +4144,12 @@
 ## [2026-06-09] committed | technique
 - Committed: thompson-sampling → techniques/thompson-sampling.md
 - IRI: pkis:technique:thompson-sampling
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: return-and-discounting (id: b56b185f-a41e-4839-a923-4a07a57ea371)
+- Title: Return and Discounting
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: return-and-discounting → concepts/return-and-discounting.md
+- IRI: pkis:concept:return-and-discounting
