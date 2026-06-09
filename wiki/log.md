@@ -4819,3 +4819,12 @@
 ## [2026-06-09] committed | technique
 - Committed: td-lambda → techniques/td-lambda.md
 - IRI: pkis:technique:td-lambda
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: true-online-td-lambda (id: 7fe8a8ea-1478-4344-a808-3f5e812af307)
+- Title: True Online TD(λ)
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: true-online-td-lambda → techniques/true-online-td-lambda.md
+- IRI: pkis:technique:true-online-td-lambda
