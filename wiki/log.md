@@ -9049,3 +9049,12 @@
 ## [2026-06-09] committed | problem
 - Committed: satisfiability-sat → problems/satisfiability-sat.md
 - IRI: pkis:problem:satisfiability-sat
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: dpll-algorithm (id: 64456ca6-9e7a-4db2-b3c9-98144212518e)
+- Title: DPLL Algorithm
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: dpll-algorithm → techniques/dpll-algorithm.md
+- IRI: pkis:technique:dpll-algorithm
