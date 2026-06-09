@@ -6943,3 +6943,12 @@
 ## [2026-06-09] committed | concept
 - Committed: sustenance-causal → concepts/sustenance-causal.md
 - IRI: pkis:concept:sustenance-causal
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: causal-beam (id: 3ed323fa-9a68-46a5-845f-02f0fb1e7fb7)
+- Title: Causal Beam
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: causal-beam → techniques/causal-beam.md
+- IRI: pkis:technique:causal-beam
