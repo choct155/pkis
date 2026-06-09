@@ -660,6 +660,7 @@
 - [[market-vs-hierarchy]] — Coase/Williamson: transactions governed by price signals (markets) vs. managerial direction (firms) (corporate-finance) (2026-05-20)
 
 ## Techniques
+- [[transformation-group-priors]] — Transformation-Group Priors (bayesian-stats, information-theory) (2026-06-09)
 - [[chi-squared-test]] — Chi-Squared Goodness-of-Fit Test (bayesian-stats, statistical-learning) (2026-06-09)
 - [[multiple-hypothesis-testing-bayesian]] — Bayesian Multiple Hypothesis Testing (bayesian-stats) (2026-06-09)
 - [[kolmogorov-smirnov-statistic]] — Kolmogorov-Smirnov Statistic (bayesian-stats, statistical-learning) (2026-06-09)

@@ -8091,3 +8091,12 @@
 ## [2026-06-09] committed | result
 - Committed: entropy-concentration-theorem → results/entropy-concentration-theorem.md
 - IRI: pkis:result:entropy-concentration-theorem
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: transformation-group-priors (id: 8e0ec697-f675-4c45-8523-7ad67bd85919)
+- Title: Transformation-Group Priors
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: transformation-group-priors → techniques/transformation-group-priors.md
+- IRI: pkis:technique:transformation-group-priors
