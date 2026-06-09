@@ -4279,3 +4279,12 @@
 ## [2026-06-09] committed | technique
 - Committed: monte-carlo-prediction → techniques/monte-carlo-prediction.md
 - IRI: pkis:technique:monte-carlo-prediction
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: monte-carlo-control (id: a83f6e33-ff15-448f-a7ab-63cba93dd5e3)
+- Title: Monte Carlo Control (RL)
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: monte-carlo-control → techniques/monte-carlo-control.md
+- IRI: pkis:technique:monte-carlo-control
