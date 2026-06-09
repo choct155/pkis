@@ -6097,3 +6097,12 @@
 ## [2026-06-09] committed | technique
 - Committed: logistic-gaussian-process → techniques/logistic-gaussian-process.md
 - IRI: pkis:technique:logistic-gaussian-process
+
+## [2026-06-09] staged | node-stub (problem)
+- Staged: label-switching (id: 0e702ea1-5e74-4d08-942a-dee5e46b5491)
+- Title: Label Switching in Mixture Models
+- needs_canonical_source: False
+
+## [2026-06-09] committed | problem
+- Committed: label-switching → problems/label-switching.md
+- IRI: pkis:problem:label-switching
