@@ -1016,6 +1016,7 @@
 - [[government-debt-valuation-equation]] — FTPL: price level determined by ratio of nominal debt to expected present value of future surpluses (macroeconomics) (2026-05-20)
 
 ## Frameworks
+- [[four-approaches-to-ai]] — Four Approaches to AI (knowledge-representation) (2026-06-09)
 - [[comparative-probability]] — Comparative (Qualitative) Probability Theory (bayesian-stats, statistical-learning) (2026-06-09)
 - [[kolmogorov-axioms]] — Kolmogorov System of Probability (Measure-Theoretic Axioms) (bayesian-stats, statistical-learning) (2026-06-09)
 - [[signal-detection-theory]] — Signal Detection Theory (bayesian-stats, information-theory) (2026-06-09)
