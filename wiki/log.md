@@ -9661,3 +9661,12 @@
 ## [2026-06-09] committed | concept
 - Committed: normal-form-game → concepts/normal-form-game.md
 - IRI: pkis:concept:normal-form-game
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: dominant-strategy (id: f2440533-c00a-4d22-a5dd-7cbcb1057020)
+- Title: Dominant Strategy
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: dominant-strategy → concepts/dominant-strategy.md
+- IRI: pkis:concept:dominant-strategy
