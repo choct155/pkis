@@ -8001,3 +8001,12 @@
 ## [2026-06-09] committed | principle
 - Committed: logical-vs-causal-independence → principles/logical-vs-causal-independence.md
 - IRI: pkis:principle:logical-vs-causal-independence
+
+## [2026-06-09] staged | node-stub (principle)
+- Staged: probability-vs-frequency (id: abbdc29b-f720-4867-ae46-3cea7d0f19be)
+- Title: Probability vs. Frequency
+- needs_canonical_source: False
+
+## [2026-06-09] committed | principle
+- Committed: probability-vs-frequency → principles/probability-vs-frequency.md
+- IRI: pkis:principle:probability-vs-frequency
