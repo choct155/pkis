@@ -8743,3 +8743,12 @@
 ## [2026-06-09] committed | technique
 - Committed: uninformed-search → techniques/uninformed-search.md
 - IRI: pkis:technique:uninformed-search
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: iterative-deepening-search (id: 548d01b0-f214-44f7-b22e-d40b3e1c1e40)
+- Title: Iterative Deepening Search
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: iterative-deepening-search → techniques/iterative-deepening-search.md
+- IRI: pkis:technique:iterative-deepening-search
