@@ -9760,3 +9760,12 @@
 ## [2026-06-09] committed | concept
 - Committed: subgame-perfect-equilibrium → concepts/subgame-perfect-equilibrium.md
 - IRI: pkis:concept:subgame-perfect-equilibrium
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: backward-induction (id: 2a071226-874d-42ae-9663-a1b5200cef25)
+- Title: Backward Induction
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: backward-induction → techniques/backward-induction.md
+- IRI: pkis:technique:backward-induction
