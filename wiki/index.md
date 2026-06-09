@@ -559,6 +559,7 @@
 - [[market-vs-hierarchy]] — Coase/Williamson: transactions governed by price signals (markets) vs. managerial direction (firms) (corporate-finance) (2026-05-20)
 
 ## Techniques
+- [[sensitivity-analysis]] — Sensitivity Analysis (Bayesian) (bayesian-stats, statistical-learning) (2026-06-09)
 - [[graphical-posterior-predictive-checks]] — Graphical Posterior Predictive Checks (bayesian-stats, statistical-learning) (2026-06-09)
 - [[posterior-predictive-check]] — Posterior Predictive Check (bayesian-stats, statistical-learning) (2026-06-09)
 - [[bayesian-model-checking]] — Bayesian Model Checking (bayesian-stats, statistical-learning) (2026-06-09)

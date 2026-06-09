@@ -5512,3 +5512,12 @@
 ## [2026-06-09] committed | technique
 - Committed: graphical-posterior-predictive-checks → techniques/graphical-posterior-predictive-checks.md
 - IRI: pkis:technique:graphical-posterior-predictive-checks
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: sensitivity-analysis (id: 49238aac-19c7-48c2-8c9f-cb28ac61b036)
+- Title: Sensitivity Analysis (Bayesian)
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: sensitivity-analysis → techniques/sensitivity-analysis.md
+- IRI: pkis:technique:sensitivity-analysis
