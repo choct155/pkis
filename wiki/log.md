@@ -9553,3 +9553,12 @@
 ## [2026-06-09] committed | framework
 - Committed: multiattribute-utility-theory → frameworks/multiattribute-utility-theory.md
 - IRI: pkis:framework:multiattribute-utility-theory
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: stochastic-dominance (id: d3b8cf5c-9550-475a-a458-b7a33ee7dcec)
+- Title: Stochastic Dominance
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: stochastic-dominance → concepts/stochastic-dominance.md
+- IRI: pkis:concept:stochastic-dominance
