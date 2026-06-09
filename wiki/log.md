@@ -8046,3 +8046,12 @@
 ## [2026-06-09] committed | result
 - Committed: psi-test-bayesian-goodness-of-fit → results/psi-test-bayesian-goodness-of-fit.md
 - IRI: pkis:result:psi-test-bayesian-goodness-of-fit
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: chi-squared-test (id: 4b75c2cc-91fb-4bb1-b828-a7f47aa9ab2c)
+- Title: Chi-Squared Goodness-of-Fit Test
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: chi-squared-test → techniques/chi-squared-test.md
+- IRI: pkis:technique:chi-squared-test
