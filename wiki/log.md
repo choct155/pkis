@@ -7821,3 +7821,12 @@
 ## [2026-06-09] committed | result
 - Committed: sum-rule → results/sum-rule.md
 - IRI: pkis:result:sum-rule
+
+## [2026-06-09] staged | node-stub (principle)
+- Staged: probability-as-extended-logic (id: 0d83cd1b-4260-4990-b638-669416752110)
+- Title: Probability as Extended Logic
+- needs_canonical_source: False
+
+## [2026-06-09] committed | principle
+- Committed: probability-as-extended-logic → principles/probability-as-extended-logic.md
+- IRI: pkis:principle:probability-as-extended-logic
