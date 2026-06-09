@@ -8181,3 +8181,12 @@
 ## [2026-06-09] committed | technique
 - Committed: matched-filter → techniques/matched-filter.md
 - IRI: pkis:technique:matched-filter
+
+## [2026-06-09] staged | node-stub (principle)
+- Staged: finite-sets-policy (id: 930f45df-249c-4b49-86aa-2e5904edfb2b)
+- Title: Finite-Sets Policy (Passage to the Limit Last)
+- needs_canonical_source: False
+
+## [2026-06-09] committed | principle
+- Committed: finite-sets-policy → principles/finite-sets-policy.md
+- IRI: pkis:principle:finite-sets-policy
