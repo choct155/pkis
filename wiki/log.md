@@ -6583,3 +6583,12 @@
 ## [2026-06-09] committed | concept
 - Committed: statistical-time → concepts/statistical-time.md
 - IRI: pkis:concept:statistical-time
+
+## [2026-06-09] staged | node-stub (principle)
+- Staged: causal-markov-condition (id: 6053c3c3-3fd6-459e-984e-b675bb2eca28)
+- Title: Markov Condition (Causal Markov Assumption)
+- needs_canonical_source: False
+
+## [2026-06-09] committed | principle
+- Committed: causal-markov-condition → principles/causal-markov-condition.md
+- IRI: pkis:principle:causal-markov-condition
