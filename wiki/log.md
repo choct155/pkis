@@ -11498,3 +11498,12 @@
 ## [2026-06-09] committed | technique
 - Committed: penalized-discriminant-analysis → techniques/penalized-discriminant-analysis.md
 - IRI: pkis:technique:penalized-discriminant-analysis
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: mixture-discriminant-analysis (id: c049a07f-fc19-41df-abd7-74d1fff7b608)
+- Title: Mixture Discriminant Analysis (MDA)
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: mixture-discriminant-analysis → techniques/mixture-discriminant-analysis.md
+- IRI: pkis:technique:mixture-discriminant-analysis
