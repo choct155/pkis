@@ -3973,3 +3973,12 @@
 
 ## [2026-06-09] edit | edit_node
 - pkis:concept:linear-algebra: fields=[] sections=['Core algebraic structures']
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: reinforcement-learning (id: 57b25bc1-3116-49de-895b-9d5f753d8f00)
+- Title: Reinforcement Learning
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: reinforcement-learning → concepts/reinforcement-learning.md
+- IRI: pkis:concept:reinforcement-learning
