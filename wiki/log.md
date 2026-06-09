@@ -6979,3 +6979,12 @@
 ## [2026-06-09] committed | concept
 - Committed: inus-condition → concepts/inus-condition.md
 - IRI: pkis:concept:inus-condition
+
+## [2026-06-09] staged | node-stub (principle)
+- Staged: causal-statistical-distinction (id: 66fdca44-5720-4a4f-9ca4-096705ca7d81)
+- Title: Causal-Statistical Distinction
+- needs_canonical_source: False
+
+## [2026-06-09] committed | principle
+- Committed: causal-statistical-distinction → principles/causal-statistical-distinction.md
+- IRI: pkis:principle:causal-statistical-distinction
