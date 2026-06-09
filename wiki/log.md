@@ -9355,3 +9355,12 @@
 ## [2026-06-09] committed | technique
 - Committed: belief-state-planning → techniques/belief-state-planning.md
 - IRI: pkis:technique:belief-state-planning
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: execution-monitoring-replanning (id: ea9940a8-6f84-4120-b0f4-65028f41c976)
+- Title: Execution Monitoring and Replanning
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: execution-monitoring-replanning → techniques/execution-monitoring-replanning.md
+- IRI: pkis:technique:execution-monitoring-replanning
