@@ -6673,3 +6673,12 @@
 ## [2026-06-09] committed | concept
 - Committed: natural-direct-indirect-effects → concepts/natural-direct-indirect-effects.md
 - IRI: pkis:concept:natural-direct-indirect-effects
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: conditional-action-policy (id: 66ffc80e-e5a2-4a1c-9e60-87b30a10dcaa)
+- Title: Conditional and Stochastic Action Policies
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: conditional-action-policy → techniques/conditional-action-policy.md
+- IRI: pkis:technique:conditional-action-policy
