@@ -4558,3 +4558,12 @@
 ## [2026-06-09] committed | concept
 - Committed: mean-square-value-error → concepts/mean-square-value-error.md
 - IRI: pkis:concept:mean-square-value-error
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: on-policy-distribution (id: 19c38223-36f8-42a3-b2a9-cb453c4c0a84)
+- Title: On-policy Distribution
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: on-policy-distribution → concepts/on-policy-distribution.md
+- IRI: pkis:concept:on-policy-distribution
