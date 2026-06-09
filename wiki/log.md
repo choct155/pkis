@@ -4432,3 +4432,12 @@
 ## [2026-06-09] committed | technique
 - Committed: tree-backup-algorithm → techniques/tree-backup-algorithm.md
 - IRI: pkis:technique:tree-backup-algorithm
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: n-step-q-sigma (id: dd72db53-eebb-4886-828a-b1a8d1f85d70)
+- Title: n-step Q(sigma)
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: n-step-q-sigma → techniques/n-step-q-sigma.md
+- IRI: pkis:technique:n-step-q-sigma

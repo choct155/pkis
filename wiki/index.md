@@ -523,6 +523,7 @@
 - [[market-vs-hierarchy]] — Coase/Williamson: transactions governed by price signals (markets) vs. managerial direction (firms) (corporate-finance) (2026-05-20)
 
 ## Techniques
+- [[n-step-q-sigma]] — n-step Q(sigma) (optimization, deep-learning) (2026-06-09)
 - [[tree-backup-algorithm]] — Tree-backup Algorithm (optimization, deep-learning) (2026-06-09)
 - [[n-step-off-policy]] — n-step Off-policy Learning (optimization, deep-learning) (2026-06-09)
 - [[n-step-sarsa]] — n-step Sarsa (optimization, deep-learning) (2026-06-09)
