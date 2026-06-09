@@ -3631,3 +3631,12 @@
 ## [2026-06-09] committed | concept
 - Committed: random-variable → concepts/random-variable.md
 - IRI: pkis:concept:random-variable
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: expectation-and-variance (id: 5e06d532-4149-4f62-9555-1bc879c640fc)
+- Title: Expectation and Variance
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: expectation-and-variance → concepts/expectation-and-variance.md
+- IRI: pkis:concept:expectation-and-variance
