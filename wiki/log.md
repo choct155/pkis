@@ -9373,3 +9373,12 @@
 ## [2026-06-09] committed | problem
 - Committed: job-shop-scheduling → problems/job-shop-scheduling.md
 - IRI: pkis:problem:job-shop-scheduling
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: critical-path-method (id: 789f6e61-bc68-46ad-a103-3a87a15e531b)
+- Title: Critical Path Method (CPM)
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: critical-path-method → techniques/critical-path-method.md
+- IRI: pkis:technique:critical-path-method
