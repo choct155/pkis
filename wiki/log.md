@@ -4990,3 +4990,12 @@
 ## [2026-06-09] committed | technique
 - Committed: reinforce → techniques/reinforce.md
 - IRI: pkis:technique:reinforce
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: reinforce-with-baseline (id: 6d642845-980d-4be2-a15e-dc63772213c1)
+- Title: REINFORCE with Baseline
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: reinforce-with-baseline → techniques/reinforce-with-baseline.md
+- IRI: pkis:technique:reinforce-with-baseline
