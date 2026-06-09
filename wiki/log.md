@@ -4171,3 +4171,12 @@
 ## [2026-06-09] committed | concept
 - Committed: state-value-function → concepts/state-value-function.md
 - IRI: pkis:concept:state-value-function
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: action-value-function (id: 70d56c9c-4ef9-4a88-91b6-4030a1348bea)
+- Title: Action-Value Function (Q)
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: action-value-function → concepts/action-value-function.md
+- IRI: pkis:concept:action-value-function

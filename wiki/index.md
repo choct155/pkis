@@ -290,6 +290,7 @@
 - [[liu-machine-unlearning-llm-2024]] — Rethinking Machine Unlearning for LLMs: post-training knowledge editing survey (deep-learning, ai-safety) (2026-05-20)
 
 ## Concepts
+- [[action-value-function]] — Action-Value Function (Q) (reinforcement-learning, optimization) (2026-06-09)
 - [[state-value-function]] — State-Value Function (reinforcement-learning, optimization) (2026-06-09)
 - [[policy-rl]] — Policy (Reinforcement Learning) (reinforcement-learning, optimization) (2026-06-09)
 - [[return-and-discounting]] — Return and Discounting (reinforcement-learning, optimization) (2026-06-09)
