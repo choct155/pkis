@@ -3586,3 +3586,12 @@
 ## [2026-06-09] committed | technique
 - Committed: low-rank-matrix-approximation → techniques/low-rank-matrix-approximation.md
 - IRI: pkis:technique:low-rank-matrix-approximation
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: gradient-and-jacobian (id: 59f24bc4-cdc7-431f-859b-a2ffe1c1ed0d)
+- Title: Gradient and Jacobian
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: gradient-and-jacobian → concepts/gradient-and-jacobian.md
+- IRI: pkis:concept:gradient-and-jacobian
