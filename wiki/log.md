@@ -9652,3 +9652,12 @@
 ## [2026-06-09] committed | framework
 - Committed: game-theory → frameworks/game-theory.md
 - IRI: pkis:framework:game-theory
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: normal-form-game (id: d1874e10-8ca4-4bd6-8ef5-93c106c366a3)
+- Title: Normal-Form Game
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: normal-form-game → concepts/normal-form-game.md
+- IRI: pkis:concept:normal-form-game

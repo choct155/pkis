@@ -290,6 +290,7 @@
 - [[liu-machine-unlearning-llm-2024]] — Rethinking Machine Unlearning for LLMs: post-training knowledge editing survey (deep-learning, ai-safety) (2026-05-20)
 
 ## Concepts
+- [[normal-form-game]] — Normal-Form Game (multi-agent-systems, decision-theory) (2026-06-09)
 - [[belief-state-mdp]] — Belief-State MDP (reinforcement-learning, formal-methods) (2026-06-09)
 - [[stochastic-dominance]] — Stochastic Dominance (bayesian-stats) (2026-06-09)
 - [[generative-program]] — Generative Program (bayesian-stats, knowledge-representation) (2026-06-09)
