@@ -4000,3 +4000,12 @@
 ## [2026-06-09] committed | concept
 - Committed: reward-signal → concepts/reward-signal.md
 - IRI: pkis:concept:reward-signal
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: policy (id: 9a2f92ee-d02e-45ad-9361-4a17a59d89ee)
+- Title: Policy
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: policy → concepts/policy.md
+- IRI: pkis:concept:policy
