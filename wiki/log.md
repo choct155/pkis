@@ -9256,3 +9256,12 @@
 ## [2026-06-09] committed | framework
 - Committed: event-calculus → frameworks/event-calculus.md
 - IRI: pkis:framework:event-calculus
+
+## [2026-06-09] staged | node-stub (framework)
+- Staged: mental-objects-and-modal-logic (id: 7b07ee9a-fe47-4615-84ca-8aec762541c0)
+- Title: Modal Logic of Mental Objects
+- needs_canonical_source: False
+
+## [2026-06-09] committed | framework
+- Committed: mental-objects-and-modal-logic → frameworks/mental-objects-and-modal-logic.md
+- IRI: pkis:framework:mental-objects-and-modal-logic
