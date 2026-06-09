@@ -9787,3 +9787,12 @@
 ## [2026-06-09] committed | concept
 - Committed: the-core → concepts/the-core.md
 - IRI: pkis:concept:the-core
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: shapley-value (id: ae2fbb8e-1df4-4330-bcf4-65fddd6958d9)
+- Title: Shapley Value
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: shapley-value → concepts/shapley-value.md
+- IRI: pkis:concept:shapley-value
