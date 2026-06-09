@@ -5611,3 +5611,12 @@
 ## [2026-06-09] committed | concept
 - Committed: missing-data-mechanisms → concepts/missing-data-mechanisms.md
 - IRI: pkis:concept:missing-data-mechanisms
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: data-collection-mechanism (id: 33b8c9b1-030b-4d15-ae44-fac388ef501e)
+- Title: Data-Collection Mechanism (Inclusion Model)
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: data-collection-mechanism → concepts/data-collection-mechanism.md
+- IRI: pkis:concept:data-collection-mechanism
