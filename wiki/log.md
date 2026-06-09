@@ -11210,3 +11210,12 @@
 ## [2026-06-09] committed | technique
 - Committed: linear-discriminant-analysis → techniques/linear-discriminant-analysis.md
 - IRI: pkis:technique:linear-discriminant-analysis
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: quadratic-discriminant-analysis (id: cd4b7e96-6b9e-47cb-b814-e9bbb73c54ee)
+- Title: Quadratic Discriminant Analysis
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: quadratic-discriminant-analysis → techniques/quadratic-discriminant-analysis.md
+- IRI: pkis:technique:quadratic-discriminant-analysis
