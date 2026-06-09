@@ -8235,3 +8235,12 @@
 ## [2026-06-09] committed | principle
 - Committed: pre-data-vs-post-data → principles/pre-data-vs-post-data.md
 - IRI: pkis:principle:pre-data-vs-post-data
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: fisher-vs-neyman-pearson (id: f49fa0e9-8fe6-4858-b1c2-b7825a345e7e)
+- Title: Fisher vs Neyman-Pearson Schools
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: fisher-vs-neyman-pearson → concepts/fisher-vs-neyman-pearson.md
+- IRI: pkis:concept:fisher-vs-neyman-pearson
