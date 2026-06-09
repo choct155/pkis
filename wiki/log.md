@@ -9967,3 +9967,12 @@
 ## [2026-06-09] committed | problem
 - Committed: density-estimation → problems/density-estimation.md
 - IRI: pkis:problem:density-estimation
+
+## [2026-06-09] staged | node-stub (principle)
+- Staged: generative-vs-discriminative-models (id: e0ebfac7-9baf-43a0-8359-b48791f5b365)
+- Title: Generative vs Discriminative Models
+- needs_canonical_source: False
+
+## [2026-06-09] committed | principle
+- Committed: generative-vs-discriminative-models → principles/generative-vs-discriminative-models.md
+- IRI: pkis:principle:generative-vs-discriminative-models
