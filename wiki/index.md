@@ -290,6 +290,7 @@
 - [[liu-machine-unlearning-llm-2024]] — Rethinking Machine Unlearning for LLMs: post-training knowledge editing survey (deep-learning, ai-safety) (2026-05-20)
 
 ## Concepts
+- [[stable-no-confounding]] — Stable vs. Incidental Unbiasedness (causal-analysis, bayesian-stats) (2026-06-09)
 - [[collapsibility]] — Collapsibility (causal-analysis, bayesian-stats, statistical-learning) (2026-06-09)
 - [[simpsons-paradox]] — Simpson's Paradox (causal-analysis, bayesian-stats) (2026-06-09)
 - [[observational-equivalence-sem]] — Observational (Covariance) Equivalence of Structural Models (causal-analysis, social-science-methods) (2026-06-09)

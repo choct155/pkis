@@ -6781,3 +6781,12 @@
 ## [2026-06-09] committed | concept
 - Committed: collapsibility → concepts/collapsibility.md
 - IRI: pkis:concept:collapsibility
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: stable-no-confounding (id: 7de65645-5a11-4647-9c7c-4a80b522d21b)
+- Title: Stable vs. Incidental Unbiasedness
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: stable-no-confounding → concepts/stable-no-confounding.md
+- IRI: pkis:concept:stable-no-confounding
