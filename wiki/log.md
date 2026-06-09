@@ -11138,3 +11138,12 @@
 ## [2026-06-09] committed | principle
 - Committed: structured-regression-and-restricted-estimators → principles/structured-regression-and-restricted-estimators.md
 - IRI: pkis:principle:structured-regression-and-restricted-estimators
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: subset-selection (id: 696bd283-228a-4ae4-8363-9203fa5977f5)
+- Title: Subset Selection (Linear Regression)
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: subset-selection → techniques/subset-selection.md
+- IRI: pkis:technique:subset-selection
