@@ -7615,3 +7615,12 @@
 ## [2026-06-09] committed | result
 - Committed: wiener-hopf-factorization → results/wiener-hopf-factorization.md
 - IRI: pkis:result:wiener-hopf-factorization
+
+## [2026-06-09] staged | node-stub (result)
+- Staged: spitzers-formula (id: 009edfbc-3df9-428c-8a19-83c5f7701925)
+- Title: Spitzer's Formula
+- needs_canonical_source: False
+
+## [2026-06-09] committed | result
+- Committed: spitzers-formula → results/spitzers-formula.md
+- IRI: pkis:result:spitzers-formula
