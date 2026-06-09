@@ -290,6 +290,7 @@
 - [[liu-machine-unlearning-llm-2024]] — Rethinking Machine Unlearning for LLMs: post-training knowledge editing survey (deep-learning, ai-safety) (2026-05-20)
 
 ## Concepts
+- [[unsupervised-learning]] — Unsupervised Learning (statistical-learning) (2026-06-09)
 - [[artificial-general-intelligence]] — Artificial General Intelligence (AGI / HLAI) (deep-learning, knowledge-representation, ai-safety) (2026-06-09)
 - [[metareasoning]] — Metareasoning (optimization, agentic-ai) (2026-06-09)
 - [[bounded-optimality]] — Bounded Optimality (optimization, ai-safety) (2026-06-09)
