@@ -6826,3 +6826,12 @@
 ## [2026-06-09] committed | concept
 - Committed: causal-submodel → concepts/causal-submodel.md
 - IRI: pkis:concept:causal-submodel
+
+## [2026-06-09] staged | node-stub (result)
+- Staged: counterfactual-axioms (id: 70574942-c20f-4d5b-af07-5b4e2737a4e7)
+- Title: Counterfactual Axioms: Composition, Effectiveness, Reversibility
+- needs_canonical_source: False
+
+## [2026-06-09] committed | result
+- Committed: counterfactual-axioms → results/counterfactual-axioms.md
+- IRI: pkis:result:counterfactual-axioms
