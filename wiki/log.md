@@ -4405,3 +4405,12 @@
 ## [2026-06-09] committed | technique
 - Committed: n-step-td → techniques/n-step-td.md
 - IRI: pkis:technique:n-step-td
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: n-step-sarsa (id: 6146eee2-d13f-4e9d-a218-9f52fbfa8c51)
+- Title: n-step Sarsa
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: n-step-sarsa → techniques/n-step-sarsa.md
+- IRI: pkis:technique:n-step-sarsa
