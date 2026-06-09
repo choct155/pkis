@@ -5665,3 +5665,12 @@
 ## [2026-06-09] committed | technique
 - Committed: decision-tree-analysis → techniques/decision-tree-analysis.md
 - IRI: pkis:technique:decision-tree-analysis
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: institutional-decision-analysis (id: ac1b33d6-c0ed-46bf-88ae-ee231f774734)
+- Title: Institutional Decision Analysis
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: institutional-decision-analysis → concepts/institutional-decision-analysis.md
+- IRI: pkis:concept:institutional-decision-analysis
