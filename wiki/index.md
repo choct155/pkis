@@ -499,6 +499,7 @@
 - [[market-vs-hierarchy]] — Coase/Williamson: transactions governed by price signals (markets) vs. managerial direction (firms) (corporate-finance) (2026-05-20)
 
 ## Techniques
+- [[probabilistic-pca]] — Probabilistic PCA (PPCA) (statistical-learning, bayesian-stats) (2026-06-09)
 - [[linear-regression]] — Linear Regression (statistical-learning, bayesian-stats) (2026-06-09)
 - [[nested-cross-validation]] — Nested Cross-Validation (statistical-learning) (2026-06-09)
 - [[maximum-a-posteriori-estimation-map]] — Maximum A Posteriori Estimation (MAP) (statistical-learning, bayesian-stats) (2026-06-09)

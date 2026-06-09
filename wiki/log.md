@@ -3766,3 +3766,12 @@
 ## [2026-06-09] committed | result
 - Committed: map-regression-as-regularized-least-squares → results/map-regression-as-regularized-least-squares.md
 - IRI: pkis:result:map-regression-as-regularized-least-squares
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: probabilistic-pca (id: 6d6435bb-ae7f-4de0-8334-141b2fec5731)
+- Title: Probabilistic PCA (PPCA)
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: probabilistic-pca → techniques/probabilistic-pca.md
+- IRI: pkis:technique:probabilistic-pca
