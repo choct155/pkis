@@ -11273,3 +11273,12 @@
 ## [2026-06-09] committed | technique
 - Committed: smoothing-splines → techniques/smoothing-splines.md
 - IRI: pkis:technique:smoothing-splines
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: thin-plate-spline (id: c055a0bf-d175-466a-8d35-b42618484604)
+- Title: Thin-Plate Spline
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: thin-plate-spline → concepts/thin-plate-spline.md
+- IRI: pkis:concept:thin-plate-spline
