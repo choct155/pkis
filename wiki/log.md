@@ -8698,3 +8698,12 @@
 ## [2026-06-09] committed | framework
 - Committed: agent-program-architectures → frameworks/agent-program-architectures.md
 - IRI: pkis:framework:agent-program-architectures
+
+## [2026-06-09] staged | node-stub (framework)
+- Staged: learning-agent-architecture (id: 3d6b1fc7-a9d7-4691-bb7c-432388474282)
+- Title: Learning Agent Architecture
+- needs_canonical_source: False
+
+## [2026-06-09] committed | framework
+- Committed: learning-agent-architecture → frameworks/learning-agent-architecture.md
+- IRI: pkis:framework:learning-agent-architecture
