@@ -10057,3 +10057,12 @@
 ## [2026-06-09] committed | technique
 - Committed: neural-architecture-search → techniques/neural-architecture-search.md
 - IRI: pkis:technique:neural-architecture-search
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: inverse-reinforcement-learning (id: 7ab1a220-b432-4635-8f74-c6361e9d6d4d)
+- Title: Inverse Reinforcement Learning
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: inverse-reinforcement-learning → concepts/inverse-reinforcement-learning.md
+- IRI: pkis:concept:inverse-reinforcement-learning
