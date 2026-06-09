@@ -4198,3 +4198,12 @@
 ## [2026-06-09] committed | result
 - Committed: bellman-optimality-equation → results/bellman-optimality-equation.md
 - IRI: pkis:result:bellman-optimality-equation
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: optimal-policy (id: 23608c8a-1b2c-4d65-a650-fb8e0b6457bf)
+- Title: Optimal Policy
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: optimal-policy → concepts/optimal-policy.md
+- IRI: pkis:concept:optimal-policy
