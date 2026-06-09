@@ -11372,3 +11372,12 @@
 ## [2026-06-09] committed | technique
 - Committed: stacking → techniques/stacking.md
 - IRI: pkis:technique:stacking
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: bumping (id: 7cf6f714-b387-49d3-8d44-42a171fa3a5d)
+- Title: Bumping
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: bumping → techniques/bumping.md
+- IRI: pkis:technique:bumping
