@@ -7543,3 +7543,12 @@
 ## [2026-06-09] committed | concept
 - Committed: quadratic-variation → concepts/quadratic-variation.md
 - IRI: pkis:concept:quadratic-variation
+
+## [2026-06-09] staged | node-stub (result)
+- Staged: law-of-iterated-logarithm (id: 220a053c-6297-4c14-8a81-549a3bbae0e7)
+- Title: Law of the Iterated Logarithm
+- needs_canonical_source: False
+
+## [2026-06-09] committed | result
+- Committed: law-of-iterated-logarithm → results/law-of-iterated-logarithm.md
+- IRI: pkis:result:law-of-iterated-logarithm
