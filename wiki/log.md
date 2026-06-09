@@ -4495,3 +4495,12 @@
 ## [2026-06-09] committed | technique
 - Committed: trajectory-sampling → techniques/trajectory-sampling.md
 - IRI: pkis:technique:trajectory-sampling
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: real-time-dynamic-programming (id: ee661446-e9d0-419e-b1bc-c0daf006ea02)
+- Title: Real-Time Dynamic Programming (RTDP)
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: real-time-dynamic-programming → techniques/real-time-dynamic-programming.md
+- IRI: pkis:technique:real-time-dynamic-programming

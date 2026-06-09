@@ -526,6 +526,7 @@
 - [[market-vs-hierarchy]] — Coase/Williamson: transactions governed by price signals (markets) vs. managerial direction (firms) (corporate-finance) (2026-05-20)
 
 ## Techniques
+- [[real-time-dynamic-programming]] — Real-Time Dynamic Programming (RTDP) (optimization, deep-learning) (2026-06-09)
 - [[trajectory-sampling]] — Trajectory Sampling (optimization, deep-learning) (2026-06-09)
 - [[prioritized-sweeping]] — Prioritized Sweeping (optimization, deep-learning) (2026-06-09)
 - [[dyna-q]] — Dyna-Q (optimization, deep-learning) (2026-06-09)
