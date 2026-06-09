@@ -7848,3 +7848,12 @@
 ## [2026-06-09] committed | framework
 - Committed: the-bernoulli-urn → frameworks/the-bernoulli-urn.md
 - IRI: pkis:framework:the-bernoulli-urn
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: hypergeometric-distribution (id: 69f34cfa-e52f-4419-97d9-37f11e676bce)
+- Title: Hypergeometric Distribution
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: hypergeometric-distribution → concepts/hypergeometric-distribution.md
+- IRI: pkis:concept:hypergeometric-distribution

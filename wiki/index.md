@@ -290,6 +290,7 @@
 - [[liu-machine-unlearning-llm-2024]] — Rethinking Machine Unlearning for LLMs: post-training knowledge editing survey (deep-learning, ai-safety) (2026-05-20)
 
 ## Concepts
+- [[hypergeometric-distribution]] — Hypergeometric Distribution (bayesian-stats) (2026-06-09)
 - [[strong-and-weak-syllogisms]] — Strong and Weak Syllogisms (bayesian-stats) (2026-06-09)
 - [[plausible-reasoning]] — Plausible Reasoning (bayesian-stats) (2026-06-09)
 - [[duality-random-walk]] — Duality of Stopping Times (Random Walk) (bayesian-stats, statistical-learning) (2026-06-09)
