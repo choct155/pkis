@@ -481,6 +481,7 @@
 - [[market-vs-hierarchy]] — Coase/Williamson: transactions governed by price signals (markets) vs. managerial direction (firms) (corporate-finance) (2026-05-20)
 
 ## Techniques
+- [[solving-linear-systems]] — Solving Linear Systems (Gaussian Elimination) (statistical-learning) (2026-06-09)
 - [[peeling-decoder]] — Peeling Decoder for Erasure Codes (information-theory) (2026-06-08)
 - [[lt-codes]] — LT Codes (Luby Transform) (information-theory) (2026-06-08)
 - [[repeat-accumulate-codes]] — Repeat-Accumulate Codes (information-theory) (2026-06-08)

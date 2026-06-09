@@ -3487,3 +3487,12 @@
 ## [2026-06-09] committed | concept
 - Committed: affine-space → concepts/affine-space.md
 - IRI: pkis:concept:affine-space
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: solving-linear-systems (id: 8427dc68-155f-4242-95f3-b3c835b94736)
+- Title: Solving Linear Systems (Gaussian Elimination)
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: solving-linear-systems → techniques/solving-linear-systems.md
+- IRI: pkis:technique:solving-linear-systems
