@@ -9400,3 +9400,12 @@
 ## [2026-06-09] committed | framework
 - Committed: naive-bayes-model → frameworks/naive-bayes-model.md
 - IRI: pkis:framework:naive-bayes-model
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: variable-elimination (id: 30e0e7af-6db9-498c-8a7a-2e0e15b71052)
+- Title: Variable Elimination
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: variable-elimination → techniques/variable-elimination.md
+- IRI: pkis:technique:variable-elimination

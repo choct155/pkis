@@ -691,6 +691,7 @@
 - [[market-vs-hierarchy]] — Coase/Williamson: transactions governed by price signals (markets) vs. managerial direction (firms) (corporate-finance) (2026-05-20)
 
 ## Techniques
+- [[variable-elimination]] — Variable Elimination (bayesian-stats, knowledge-representation) (2026-06-09)
 - [[critical-path-method]] — Critical Path Method (CPM) (optimization) (2026-06-09)
 - [[execution-monitoring-replanning]] — Execution Monitoring and Replanning (optimization, symbolic-subsymbolic, knowledge-representation) (2026-06-09)
 - [[belief-state-planning]] — Belief-State Planning (Sensorless, Conformant, and Contingent) (knowledge-representation, symbolic-subsymbolic, optimization) (2026-06-09)
