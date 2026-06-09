@@ -3532,3 +3532,12 @@
 ## [2026-06-09] committed | concept
 - Committed: orthogonal-projection → concepts/orthogonal-projection.md
 - IRI: pkis:concept:orthogonal-projection
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: gram-schmidt (id: 4d7eb51e-9f2e-4591-adaf-7441397c253d)
+- Title: Gram-Schmidt Orthogonalization
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: gram-schmidt → techniques/gram-schmidt.md
+- IRI: pkis:technique:gram-schmidt
