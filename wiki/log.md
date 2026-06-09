@@ -9715,3 +9715,12 @@
 ## [2026-06-09] committed | concept
 - Committed: pareto-optimality → concepts/pareto-optimality.md
 - IRI: pkis:concept:pareto-optimality
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: social-welfare-function (id: 3b11b1a7-67e8-4cab-8b86-2b9357c35153)
+- Title: Social Welfare Function
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: social-welfare-function → concepts/social-welfare-function.md
+- IRI: pkis:concept:social-welfare-function

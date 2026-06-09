@@ -290,6 +290,7 @@
 - [[liu-machine-unlearning-llm-2024]] — Rethinking Machine Unlearning for LLMs: post-training knowledge editing survey (deep-learning, ai-safety) (2026-05-20)
 
 ## Concepts
+- [[social-welfare-function]] — Social Welfare Function (multi-agent-systems, economics, social-choice) (2026-06-09)
 - [[pareto-optimality]] — Pareto Optimality (multi-agent-systems, economics, decision-theory) (2026-06-09)
 - [[the-prisoners-dilemma]] — The Prisoner's Dilemma (multi-agent-systems, decision-theory, economics) (2026-06-09)
 - [[maximin-equilibrium]] — Maximin Equilibrium (multi-agent-systems, decision-theory) (2026-06-09)
