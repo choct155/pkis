@@ -9499,3 +9499,12 @@
 ## [2026-06-09] committed | framework
 - Committed: open-universe-probability-model → frameworks/open-universe-probability-model.md
 - IRI: pkis:framework:open-universe-probability-model
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: generative-program (id: 6ebe9ea3-4dc3-4a0f-aeed-75ab4310db49)
+- Title: Generative Program
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: generative-program → concepts/generative-program.md
+- IRI: pkis:concept:generative-program
