@@ -8307,3 +8307,12 @@
 ## [2026-06-09] committed | principle
 - Committed: gaussian-error-assignment-as-state-of-knowledge → principles/gaussian-error-assignment-as-state-of-knowledge.md
 - IRI: pkis:principle:gaussian-error-assignment-as-state-of-knowledge
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: equations-of-condition (id: abf00c08-b4f5-4d8c-b932-9dab6800ed6a)
+- Title: Equations of Condition (Overdetermined Linear Observation Model)
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: equations-of-condition → concepts/equations-of-condition.md
+- IRI: pkis:concept:equations-of-condition
