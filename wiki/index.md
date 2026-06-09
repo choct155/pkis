@@ -290,6 +290,7 @@
 - [[liu-machine-unlearning-llm-2024]] — Rethinking Machine Unlearning for LLMs: post-training knowledge editing survey (deep-learning, ai-safety) (2026-05-20)
 
 ## Concepts
+- [[bayes-factor]] — Bayes Factor (bayesian-stats) (2026-06-09)
 - [[deviance-information-criterion]] — Deviance Information Criterion (DIC) (bayesian-stats, statistical-learning) (2026-06-09)
 - [[waic]] — Widely Applicable Information Criterion (WAIC) (bayesian-stats, statistical-learning) (2026-06-09)
 - [[effective-number-of-parameters]] — Effective Number of Parameters (bayesian-stats, statistical-learning) (2026-06-09)

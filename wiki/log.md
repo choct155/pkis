@@ -5575,3 +5575,12 @@
 ## [2026-06-09] committed | technique
 - Committed: loo-cv → techniques/loo-cv.md
 - IRI: pkis:technique:loo-cv
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: bayes-factor (id: c6a4ce56-81c7-48fe-aee4-db670179d465)
+- Title: Bayes Factor
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: bayes-factor → concepts/bayes-factor.md
+- IRI: pkis:concept:bayes-factor
