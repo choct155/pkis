@@ -9319,3 +9319,12 @@
 ## [2026-06-09] committed | technique
 - Committed: partial-order-planning → techniques/partial-order-planning.md
 - IRI: pkis:technique:partial-order-planning
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: planning-graph-graphplan (id: 8856a0d2-c5f5-4509-aad6-3eceb014fe5b)
+- Title: Planning Graphs and Graphplan
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: planning-graph-graphplan → techniques/planning-graph-graphplan.md
+- IRI: pkis:technique:planning-graph-graphplan
