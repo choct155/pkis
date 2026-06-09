@@ -4891,3 +4891,12 @@
 ## [2026-06-09] committed | principle
 - Committed: the-law-of-effect → principles/the-law-of-effect.md
 - IRI: pkis:principle:the-law-of-effect
+
+## [2026-06-09] staged | node-stub (result)
+- Staged: reward-prediction-error-hypothesis (id: 12b28c3e-f9d0-42b4-a82d-3b2a60dffd72)
+- Title: Reward Prediction Error Hypothesis of Dopamine Neuron Activity
+- needs_canonical_source: False
+
+## [2026-06-09] committed | result
+- Committed: reward-prediction-error-hypothesis → results/reward-prediction-error-hypothesis.md
+- IRI: pkis:result:reward-prediction-error-hypothesis
