@@ -4567,3 +4567,12 @@
 ## [2026-06-09] committed | concept
 - Committed: on-policy-distribution → concepts/on-policy-distribution.md
 - IRI: pkis:concept:on-policy-distribution
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: gradient-monte-carlo (id: 560f9226-e80f-499b-8c21-79583bf99fbc)
+- Title: Gradient Monte Carlo for Value Prediction
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: gradient-monte-carlo → techniques/gradient-monte-carlo.md
+- IRI: pkis:technique:gradient-monte-carlo
