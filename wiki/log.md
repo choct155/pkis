@@ -4207,3 +4207,12 @@
 ## [2026-06-09] committed | concept
 - Committed: optimal-policy → concepts/optimal-policy.md
 - IRI: pkis:concept:optimal-policy
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: policy-evaluation (id: 332987a3-250f-4883-8839-1ff067d0e058)
+- Title: Policy Evaluation
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: policy-evaluation → techniques/policy-evaluation.md
+- IRI: pkis:technique:policy-evaluation
