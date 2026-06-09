@@ -9841,3 +9841,12 @@
 ## [2026-06-09] committed | technique
 - Committed: vcg-mechanism → techniques/vcg-mechanism.md
 - IRI: pkis:technique:vcg-mechanism
+
+## [2026-06-09] staged | node-stub (result)
+- Staged: revenue-equivalence-theorem (id: 77dc6bc5-034f-47fb-9d0f-734d334affe3)
+- Title: Revenue Equivalence Theorem
+- needs_canonical_source: False
+
+## [2026-06-09] committed | result
+- Committed: revenue-equivalence-theorem → results/revenue-equivalence-theorem.md
+- IRI: pkis:result:revenue-equivalence-theorem
