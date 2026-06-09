@@ -687,6 +687,7 @@
 - [[market-vs-hierarchy]] — Coase/Williamson: transactions governed by price signals (markets) vs. managerial direction (firms) (corporate-finance) (2026-05-20)
 
 ## Techniques
+- [[resolution-first-order]] — First-Order Resolution (knowledge-representation, symbolic-subsymbolic) (2026-06-09)
 - [[backward-chaining-fol]] — Backward Chaining (First-Order) (knowledge-representation, symbolic-subsymbolic) (2026-06-09)
 - [[forward-chaining-fol]] — Forward Chaining (First-Order) (knowledge-representation, symbolic-subsymbolic) (2026-06-09)
 - [[generalized-modus-ponens]] — Generalized Modus Ponens (knowledge-representation, symbolic-subsymbolic) (2026-06-09)

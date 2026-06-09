@@ -9166,3 +9166,12 @@
 ## [2026-06-09] committed | technique
 - Committed: backward-chaining-fol → techniques/backward-chaining-fol.md
 - IRI: pkis:technique:backward-chaining-fol
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: resolution-first-order (id: eca9acc2-ab66-43c6-b8b0-df7409d95d95)
+- Title: First-Order Resolution
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: resolution-first-order → techniques/resolution-first-order.md
+- IRI: pkis:technique:resolution-first-order
