@@ -9535,3 +9535,12 @@
 ## [2026-06-09] committed | principle
 - Committed: maximum-expected-utility-principle → principles/maximum-expected-utility-principle.md
 - IRI: pkis:principle:maximum-expected-utility-principle
+
+## [2026-06-09] staged | node-stub (result)
+- Staged: von-neumann-morgenstern-axioms (id: 6dee1925-2248-46c7-b383-bb16ec774cbe)
+- Title: Von Neumann–Morgenstern Axioms
+- needs_canonical_source: False
+
+## [2026-06-09] committed | result
+- Committed: von-neumann-morgenstern-axioms → results/von-neumann-morgenstern-axioms.md
+- IRI: pkis:result:von-neumann-morgenstern-axioms
