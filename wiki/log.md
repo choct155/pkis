@@ -9994,3 +9994,12 @@
 ## [2026-06-09] committed | technique
 - Committed: lstm → techniques/lstm.md
 - IRI: pkis:technique:lstm
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: residual-network (id: 25251195-aa97-459d-b778-e6291d0b6eef)
+- Title: Residual Network (Skip Connections)
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: residual-network → techniques/residual-network.md
+- IRI: pkis:technique:residual-network
