@@ -4090,3 +4090,12 @@
 ## [2026-06-09] committed | technique
 - Committed: nonstationary-bandit-step-size → techniques/nonstationary-bandit-step-size.md
 - IRI: pkis:technique:nonstationary-bandit-step-size
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: upper-confidence-bound (id: 47d87ab1-6296-47e3-a0c4-98bbbf9c84e4)
+- Title: Upper Confidence Bound (UCB) Action Selection
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: upper-confidence-bound → techniques/upper-confidence-bound.md
+- IRI: pkis:technique:upper-confidence-bound
