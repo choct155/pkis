@@ -4666,3 +4666,12 @@
 ## [2026-06-09] committed | technique
 - Committed: lstd → techniques/lstd.md
 - IRI: pkis:technique:lstd
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: memory-based-function-approximation (id: a873d8ae-e11e-4399-b351-c6edc742c06e)
+- Title: Memory-based Function Approximation
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: memory-based-function-approximation → techniques/memory-based-function-approximation.md
+- IRI: pkis:technique:memory-based-function-approximation
