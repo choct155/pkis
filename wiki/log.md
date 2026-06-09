@@ -9769,3 +9769,12 @@
 ## [2026-06-09] committed | technique
 - Committed: backward-induction → techniques/backward-induction.md
 - IRI: pkis:technique:backward-induction
+
+## [2026-06-09] staged | node-stub (framework)
+- Staged: cooperative-game (id: 088d3a5b-6bdf-42c3-997a-7dfdcaf60750)
+- Title: Cooperative Game
+- needs_canonical_source: False
+
+## [2026-06-09] committed | framework
+- Committed: cooperative-game → frameworks/cooperative-game.md
+- IRI: pkis:framework:cooperative-game
