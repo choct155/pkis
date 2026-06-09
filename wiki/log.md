@@ -4234,3 +4234,12 @@
 ## [2026-06-09] committed | technique
 - Committed: policy-iteration → techniques/policy-iteration.md
 - IRI: pkis:technique:policy-iteration
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: value-iteration (id: 63147d6b-5d23-4047-a356-820c259a8382)
+- Title: Value Iteration
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: value-iteration → techniques/value-iteration.md
+- IRI: pkis:technique:value-iteration

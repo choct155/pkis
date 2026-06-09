@@ -516,6 +516,7 @@
 - [[market-vs-hierarchy]] — Coase/Williamson: transactions governed by price signals (markets) vs. managerial direction (firms) (corporate-finance) (2026-05-20)
 
 ## Techniques
+- [[value-iteration]] — Value Iteration (reinforcement-learning, optimization) (2026-06-09)
 - [[policy-iteration]] — Policy Iteration (reinforcement-learning, optimization) (2026-06-09)
 - [[policy-improvement]] — Policy Improvement (reinforcement-learning, optimization) (2026-06-09)
 - [[policy-evaluation]] — Policy Evaluation (reinforcement-learning, optimization) (2026-06-09)
