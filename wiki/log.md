@@ -3906,3 +3906,8 @@
 
 ## [2026-06-09] edit | edit_node
 - pkis:concept:linear-algebra: fields=[] sections=['Core algebraic structures']
+
+## [2026-06-09] edges | add_connections
+
+## [2026-06-09] edit | edit_node
+- pkis:framework:empirical-risk-minimization: fields=[] sections=['Generalization is the goal, not training fit']
