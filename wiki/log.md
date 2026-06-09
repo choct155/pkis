@@ -4270,3 +4270,12 @@
 ## [2026-06-09] committed | concept
 - Committed: bootstrapping-rl → concepts/bootstrapping-rl.md
 - IRI: pkis:concept:bootstrapping-rl
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: monte-carlo-prediction (id: 85f3bfc0-2ce5-4306-8569-618344e624d0)
+- Title: Monte Carlo Prediction (RL)
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: monte-carlo-prediction → techniques/monte-carlo-prediction.md
+- IRI: pkis:technique:monte-carlo-prediction
