@@ -9859,3 +9859,12 @@
 ## [2026-06-09] committed | framework
 - Committed: contract-net-protocol → frameworks/contract-net-protocol.md
 - IRI: pkis:framework:contract-net-protocol
+
+## [2026-06-09] staged | node-stub (problem)
+- Staged: tragedy-of-the-commons (id: 3814ec57-a1de-41f7-92c1-009566aea6d5)
+- Title: Tragedy of the Commons
+- needs_canonical_source: False
+
+## [2026-06-09] committed | problem
+- Committed: tragedy-of-the-commons → problems/tragedy-of-the-commons.md
+- IRI: pkis:problem:tragedy-of-the-commons
