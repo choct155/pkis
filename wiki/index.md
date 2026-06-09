@@ -1015,6 +1015,7 @@
 - [[constraint-propagation]] — Reducing a constraint satisfaction problem by iteratively eliminating inconsistent values from variable domains (knowledge-representation) (2026-05-20)
 
 ## Results
+- [[folk-theorem]] — Nash Folk Theorem (multi-agent-systems, decision-theory, economics) (2026-06-09)
 - [[gittins-index]] — Gittins Index (reinforcement-learning, optimization) (2026-06-09)
 - [[von-neumann-morgenstern-axioms]] — Von Neumann–Morgenstern Axioms (bayesian-stats) (2026-06-09)
 - [[godels-incompleteness-theorem]] — Goedel's Incompleteness Theorem (knowledge-representation, symbolic-subsymbolic) (2026-06-09)

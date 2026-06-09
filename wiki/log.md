@@ -9733,3 +9733,12 @@
 ## [2026-06-09] committed | concept
 - Committed: repeated-game → concepts/repeated-game.md
 - IRI: pkis:concept:repeated-game
+
+## [2026-06-09] staged | node-stub (result)
+- Staged: folk-theorem (id: 2e2a4878-b5a2-46cb-bd5a-e6cd060a89c8)
+- Title: Nash Folk Theorem
+- needs_canonical_source: False
+
+## [2026-06-09] committed | result
+- Committed: folk-theorem → results/folk-theorem.md
+- IRI: pkis:result:folk-theorem
