@@ -290,6 +290,7 @@
 - [[liu-machine-unlearning-llm-2024]] — Rethinking Machine Unlearning for LLMs: post-training knowledge editing survey (deep-learning, ai-safety) (2026-05-20)
 
 ## Concepts
+- [[bayesian-point-estimation]] — Bayesian Point Estimation (Mean, Median, Mode) (bayesian-stats) (2026-06-09)
 - [[credible-interval]] — Credible Interval (bayesian-stats) (2026-06-09)
 - [[sampling-with-and-without-replacement]] — Sampling With and Without Replacement (bayesian-stats) (2026-06-09)
 - [[sampling-distribution]] — Sampling Distribution (Direct Probability) (bayesian-stats) (2026-06-09)

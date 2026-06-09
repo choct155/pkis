@@ -7920,3 +7920,12 @@
 ## [2026-06-09] committed | concept
 - Committed: credible-interval → concepts/credible-interval.md
 - IRI: pkis:concept:credible-interval
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: bayesian-point-estimation (id: 174272ef-9734-46ff-a1bc-27747d78d2df)
+- Title: Bayesian Point Estimation (Mean, Median, Mode)
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: bayesian-point-estimation → concepts/bayesian-point-estimation.md
+- IRI: pkis:concept:bayesian-point-estimation
