@@ -10399,3 +10399,12 @@
 ## [2026-06-09] committed | problem
 - Committed: motion-planning → problems/motion-planning.md
 - IRI: pkis:problem:motion-planning
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: cell-decomposition-motion-planning (id: 0a8039d1-e0f4-42f7-8d4d-79a2004db461)
+- Title: Cell Decomposition Motion Planning
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: cell-decomposition-motion-planning → techniques/cell-decomposition-motion-planning.md
+- IRI: pkis:technique:cell-decomposition-motion-planning
