@@ -9904,3 +9904,12 @@
 ## [2026-06-09] committed | concept
 - Committed: bargaining-theory → concepts/bargaining-theory.md
 - IRI: pkis:concept:bargaining-theory
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: assistance-game (id: 5c84c4cc-21a4-47f5-b0cf-42473fb2c6b4)
+- Title: Assistance Game
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: assistance-game → concepts/assistance-game.md
+- IRI: pkis:concept:assistance-game

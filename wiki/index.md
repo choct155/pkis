@@ -290,6 +290,7 @@
 - [[liu-machine-unlearning-llm-2024]] — Rethinking Machine Unlearning for LLMs: post-training knowledge editing survey (deep-learning, ai-safety) (2026-05-20)
 
 ## Concepts
+- [[assistance-game]] — Assistance Game (multi-agent-systems, ai-alignment, reinforcement-learning) (2026-06-09)
 - [[bargaining-theory]] — Bargaining Theory (multi-agent-systems, economics) (2026-06-09)
 - [[shapley-value]] — Shapley Value (multi-agent-systems, economics) (2026-06-09)
 - [[the-core]] — The Core (multi-agent-systems, economics) (2026-06-09)
