@@ -902,6 +902,7 @@
 - [[constraint-propagation]] — Reducing a constraint satisfaction problem by iteratively eliminating inconsistent values from variable domains (knowledge-representation) (2026-05-20)
 
 ## Results
+- [[invariance-principle]] — Invariance Principle (Functional Central Limit Theorem) (bayesian-stats, statistical-learning) (2026-06-09)
 - [[kolmogorov-forward-backward-equations]] — Kolmogorov Forward and Backward Equations (bayesian-stats, statistical-learning, systems-theory) (2026-06-09)
 - [[poisson-order-statistic-property]] — Order Statistic Property of the Poisson Process (bayesian-stats) (2026-06-09)
 - [[blackwells-renewal-theorem]] — Blackwell's Renewal Theorem (bayesian-stats, statistical-learning) (2026-06-09)

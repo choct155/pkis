@@ -7507,3 +7507,12 @@
 ## [2026-06-09] committed | concept
 - Committed: brownian-motion → concepts/brownian-motion.md
 - IRI: pkis:concept:brownian-motion
+
+## [2026-06-09] staged | node-stub (result)
+- Staged: invariance-principle (id: 934d2dd2-8e38-4752-bdba-dbcc2c705801)
+- Title: Invariance Principle (Functional Central Limit Theorem)
+- needs_canonical_source: False
+
+## [2026-06-09] committed | result
+- Committed: invariance-principle → results/invariance-principle.md
+- IRI: pkis:result:invariance-principle
