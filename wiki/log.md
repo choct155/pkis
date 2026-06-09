@@ -6907,3 +6907,12 @@
 ## [2026-06-09] committed | concept
 - Committed: probability-of-necessity-and-sufficiency → concepts/probability-of-necessity-and-sufficiency.md
 - IRI: pkis:concept:probability-of-necessity-and-sufficiency
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: attribution-and-but-for-causation (id: a4c7438a-a9c1-4668-ba78-eaa580d89534)
+- Title: Attribution and But-For Causation
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: attribution-and-but-for-causation → concepts/attribution-and-but-for-causation.md
+- IRI: pkis:concept:attribution-and-but-for-causation

@@ -290,6 +290,7 @@
 - [[liu-machine-unlearning-llm-2024]] — Rethinking Machine Unlearning for LLMs: post-training knowledge editing survey (deep-learning, ai-safety) (2026-05-20)
 
 ## Concepts
+- [[attribution-and-but-for-causation]] — Attribution and But-For Causation (causal-analysis, bayesian-stats) (2026-06-09)
 - [[probability-of-necessity-and-sufficiency]] — Probability of Necessity and Sufficiency (PNS) (causal-analysis, bayesian-stats) (2026-06-09)
 - [[probability-of-sufficiency]] — Probability of Sufficiency (PS) (causal-analysis, bayesian-stats) (2026-06-09)
 - [[probability-of-necessity]] — Probability of Necessity (PN) (causal-analysis, bayesian-stats) (2026-06-09)
