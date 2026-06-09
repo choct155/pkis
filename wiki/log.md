@@ -5926,3 +5926,12 @@
 ## [2026-06-09] committed | concept
 - Committed: overdispersion → concepts/overdispersion.md
 - IRI: pkis:concept:overdispersion
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: poisson-regression (id: 39bd13c5-35e0-45dd-9d54-0558aac58095)
+- Title: Poisson Regression
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: poisson-regression → techniques/poisson-regression.md
+- IRI: pkis:technique:poisson-regression
