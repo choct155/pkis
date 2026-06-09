@@ -5503,3 +5503,12 @@
 ## [2026-06-09] committed | concept
 - Committed: bayesian-p-value → concepts/bayesian-p-value.md
 - IRI: pkis:concept:bayesian-p-value
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: graphical-posterior-predictive-checks (id: b9da34ea-0405-43e0-ba3c-0941e227cbc2)
+- Title: Graphical Posterior Predictive Checks
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: graphical-posterior-predictive-checks → techniques/graphical-posterior-predictive-checks.md
+- IRI: pkis:technique:graphical-posterior-predictive-checks
