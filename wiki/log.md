@@ -8370,3 +8370,12 @@
 ## [2026-06-09] committed | principle
 - Committed: de-finetti-coherence → principles/de-finetti-coherence.md
 - IRI: pkis:principle:de-finetti-coherence
+
+## [2026-06-09] staged | node-stub (framework)
+- Staged: comparative-probability (id: 461243eb-0cc1-4935-b5dc-0eeb21cf3b28)
+- Title: Comparative (Qualitative) Probability Theory
+- needs_canonical_source: False
+
+## [2026-06-09] committed | framework
+- Committed: comparative-probability → frameworks/comparative-probability.md
+- IRI: pkis:framework:comparative-probability
