@@ -11660,3 +11660,12 @@
 ## [2026-06-09] committed | framework
 - Committed: importance-sampled-learning-ensemble-isle → frameworks/importance-sampled-learning-ensemble-isle.md
 - IRI: pkis:framework:importance-sampled-learning-ensemble-isle
+
+## [2026-06-09] staged | node-stub (principle)
+- Staged: bet-on-sparsity (id: bd31d04d-9404-4e31-86ef-c8d03d661ff3)
+- Title: Bet on Sparsity Principle
+- needs_canonical_source: False
+
+## [2026-06-09] committed | principle
+- Committed: bet-on-sparsity → principles/bet-on-sparsity.md
+- IRI: pkis:principle:bet-on-sparsity
