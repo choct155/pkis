@@ -290,6 +290,7 @@
 - [[liu-machine-unlearning-llm-2024]] — Rethinking Machine Unlearning for LLMs: post-training knowledge editing survey (deep-learning, ai-safety) (2026-05-20)
 
 ## Concepts
+- [[imperfect-information-games]] — Imperfect-Information Games (Belief-State Search) (optimization, knowledge-representation, bayesian-stats) (2026-06-09)
 - [[evaluation-function-games]] — Heuristic Evaluation Function (Games) (optimization, knowledge-representation) (2026-06-09)
 - [[game-tree]] — Game Tree (optimization, knowledge-representation) (2026-06-09)
 - [[online-search-agents]] — Online Search Agents (search-and-planning, reinforcement-learning) (2026-06-09)

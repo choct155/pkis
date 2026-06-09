@@ -8923,3 +8923,12 @@
 ## [2026-06-09] committed | technique
 - Committed: expectiminimax → techniques/expectiminimax.md
 - IRI: pkis:technique:expectiminimax
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: imperfect-information-games (id: 24e4a1ad-6709-4ff5-b659-fee0949f7a5d)
+- Title: Imperfect-Information Games (Belief-State Search)
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: imperfect-information-games → concepts/imperfect-information-games.md
+- IRI: pkis:concept:imperfect-information-games
