@@ -3730,3 +3730,12 @@
 ## [2026-06-09] committed | concept
 - Committed: overfitting-and-underfitting → concepts/overfitting-and-underfitting.md
 - IRI: pkis:concept:overfitting-and-underfitting
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: nested-cross-validation (id: c8c61f41-8a25-47c8-994e-d8279b40cbc2)
+- Title: Nested Cross-Validation
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: nested-cross-validation → techniques/nested-cross-validation.md
+- IRI: pkis:technique:nested-cross-validation
