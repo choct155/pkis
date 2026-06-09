@@ -1090,6 +1090,7 @@
 - [[llm-language-comprehension]] — The problem of whether LLMs genuinely comprehend language vs. pattern-match surface form (deep-learning, cognitive-science) (2026-05-20)
 
 ## Principles
+- [[randomization-is-suboptimal]] — Randomization Is Suboptimal (vs. Deterministic Designs) (bayesian-stats, statistical-learning) (2026-06-09)
 - [[information-loss-from-data-preprocessing]] — Information Loss from Data Preprocessing (bayesian-stats, time-series) (2026-06-09)
 - [[pre-data-vs-post-data]] — Pre-Data vs Post-Data Questions (bayesian-stats) (2026-06-09)
 - [[finite-sets-policy]] — Finite-Sets Policy (Passage to the Limit Last) (bayesian-stats, information-theory) (2026-06-09)

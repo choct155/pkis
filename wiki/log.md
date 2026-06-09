@@ -8271,3 +8271,12 @@
 ## [2026-06-09] committed | principle
 - Committed: information-loss-from-data-preprocessing → principles/information-loss-from-data-preprocessing.md
 - IRI: pkis:principle:information-loss-from-data-preprocessing
+
+## [2026-06-09] staged | node-stub (principle)
+- Staged: randomization-is-suboptimal (id: a217d906-1f52-4f8a-8417-70e5e8046c21)
+- Title: Randomization Is Suboptimal (vs. Deterministic Designs)
+- needs_canonical_source: False
+
+## [2026-06-09] committed | principle
+- Committed: randomization-is-suboptimal → principles/randomization-is-suboptimal.md
+- IRI: pkis:principle:randomization-is-suboptimal
