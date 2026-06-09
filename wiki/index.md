@@ -290,6 +290,7 @@
 - [[liu-machine-unlearning-llm-2024]] — Rethinking Machine Unlearning for LLMs: post-training knowledge editing survey (deep-learning, ai-safety) (2026-05-20)
 
 ## Concepts
+- [[bayesian-p-value]] — Bayesian (Posterior Predictive) p-value (bayesian-stats, statistical-learning) (2026-06-09)
 - [[test-quantity-discrepancy]] — Test Quantity (Discrepancy Measure) (bayesian-stats, statistical-learning) (2026-06-09)
 - [[hyperprior]] — Hyperprior Distribution (bayesian-stats) (2026-06-09)
 - [[unbiasedness]] — Unbiasedness (bayesian-stats, statistical-learning) (2026-06-09)

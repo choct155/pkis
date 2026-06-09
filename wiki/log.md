@@ -5494,3 +5494,12 @@
 ## [2026-06-09] committed | concept
 - Committed: test-quantity-discrepancy → concepts/test-quantity-discrepancy.md
 - IRI: pkis:concept:test-quantity-discrepancy
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: bayesian-p-value (id: 41a2e80a-8fb7-4a70-8e8e-11c5089fc2c5)
+- Title: Bayesian (Posterior Predictive) p-value
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: bayesian-p-value → concepts/bayesian-p-value.md
+- IRI: pkis:concept:bayesian-p-value
