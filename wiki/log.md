@@ -4504,3 +4504,12 @@
 ## [2026-06-09] committed | technique
 - Committed: real-time-dynamic-programming → techniques/real-time-dynamic-programming.md
 - IRI: pkis:technique:real-time-dynamic-programming
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: decision-time-planning (id: b221d09f-5e8e-4aee-a805-4bb68135240e)
+- Title: Decision-Time Planning
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: decision-time-planning → concepts/decision-time-planning.md
+- IRI: pkis:concept:decision-time-planning
