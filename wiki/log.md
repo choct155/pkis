@@ -4459,3 +4459,12 @@
 ## [2026-06-09] committed | concept
 - Committed: model-based-rl → concepts/model-based-rl.md
 - IRI: pkis:concept:model-based-rl
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: dyna-q (id: a481d778-0429-47af-b5e3-28bf733b8e0b)
+- Title: Dyna-Q
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: dyna-q → techniques/dyna-q.md
+- IRI: pkis:technique:dyna-q
