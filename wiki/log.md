@@ -3640,3 +3640,12 @@
 ## [2026-06-09] committed | concept
 - Committed: expectation-and-variance → concepts/expectation-and-variance.md
 - IRI: pkis:concept:expectation-and-variance
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: covariance-and-correlation (id: 5f28df6f-2cd9-4ab2-acdf-15494b75b45f)
+- Title: Covariance and Correlation
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: covariance-and-correlation → concepts/covariance-and-correlation.md
+- IRI: pkis:concept:covariance-and-correlation

@@ -290,6 +290,7 @@
 - [[liu-machine-unlearning-llm-2024]] — Rethinking Machine Unlearning for LLMs: post-training knowledge editing survey (deep-learning, ai-safety) (2026-05-20)
 
 ## Concepts
+- [[covariance-and-correlation]] — Covariance and Correlation (bayesian-stats, statistical-learning) (2026-06-09)
 - [[expectation-and-variance]] — Expectation and Variance (bayesian-stats, statistical-learning) (2026-06-09)
 - [[random-variable]] — Random Variable (bayesian-stats, statistical-learning) (2026-06-09)
 - [[taylor-series]] — Taylor Series (optimization, bayesian-stats, statistical-learning) (2026-06-09)
