@@ -5764,3 +5764,12 @@
 ## [2026-06-09] committed | technique
 - Committed: adaptive-mcmc → techniques/adaptive-mcmc.md
 - IRI: pkis:technique:adaptive-mcmc
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: parameter-expansion (id: f8e87560-e642-4379-b158-45c84e8b3870)
+- Title: Parameter Expansion
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: parameter-expansion → techniques/parameter-expansion.md
+- IRI: pkis:technique:parameter-expansion
