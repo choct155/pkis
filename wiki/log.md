@@ -9724,3 +9724,12 @@
 ## [2026-06-09] committed | concept
 - Committed: social-welfare-function → concepts/social-welfare-function.md
 - IRI: pkis:concept:social-welfare-function
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: repeated-game (id: 0ab7873f-8a1b-4e5d-95c3-7f0ed85498c7)
+- Title: Repeated Game
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: repeated-game → concepts/repeated-game.md
+- IRI: pkis:concept:repeated-game
