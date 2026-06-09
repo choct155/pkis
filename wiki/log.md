@@ -10480,3 +10480,12 @@
 ## [2026-06-09] committed | concept
 - Committed: robot-perception-state-estimation → concepts/robot-perception-state-estimation.md
 - IRI: pkis:concept:robot-perception-state-estimation
+
+## [2026-06-09] staged | node-stub (framework)
+- Staged: human-robot-coordination-game (id: 3cc70cfd-bfe5-4c90-a2b0-1d612a28035c)
+- Title: Human-Robot Coordination as a Game
+- needs_canonical_source: False
+
+## [2026-06-09] committed | framework
+- Committed: human-robot-coordination-game → frameworks/human-robot-coordination-game.md
+- IRI: pkis:framework:human-robot-coordination-game
