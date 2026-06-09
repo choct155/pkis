@@ -4522,3 +4522,12 @@
 ## [2026-06-09] committed | technique
 - Committed: heuristic-search-rl → techniques/heuristic-search-rl.md
 - IRI: pkis:technique:heuristic-search-rl
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: rollout-algorithms (id: 5fd507ae-3258-4b04-bd06-27fc692538b4)
+- Title: Rollout Algorithms
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: rollout-algorithms → techniques/rollout-algorithms.md
+- IRI: pkis:technique:rollout-algorithms
