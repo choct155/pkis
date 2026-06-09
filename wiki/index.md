@@ -763,6 +763,7 @@
 - [[constraint-propagation]] — Reducing a constraint satisfaction problem by iteratively eliminating inconsistent values from variable domains (knowledge-representation) (2026-05-20)
 
 ## Results
+- [[law-of-total-variance]] — Law of Total Variance (bayesian-stats) (2026-06-09)
 - [[policy-gradient-theorem]] — Policy Gradient Theorem (reinforcement-learning, optimization) (2026-06-09)
 - [[reward-prediction-error-hypothesis]] — Reward Prediction Error Hypothesis of Dopamine Neuron Activity (neuroscience, optimization, deep-learning) (2026-06-09)
 - [[baird-counterexample]] — Baird's Counterexample (reinforcement-learning, optimization) (2026-06-09)

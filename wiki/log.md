@@ -5323,3 +5323,12 @@
 ## [2026-06-09] committed | concept
 - Committed: prior-predictive-distribution → concepts/prior-predictive-distribution.md
 - IRI: pkis:concept:prior-predictive-distribution
+
+## [2026-06-09] staged | node-stub (result)
+- Staged: law-of-total-variance (id: 2af05bcb-193e-40cb-af24-2f514e2b3a69)
+- Title: Law of Total Variance
+- needs_canonical_source: False
+
+## [2026-06-09] committed | result
+- Committed: law-of-total-variance → results/law-of-total-variance.md
+- IRI: pkis:result:law-of-total-variance
