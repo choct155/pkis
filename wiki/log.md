@@ -8725,3 +8725,12 @@
 ## [2026-06-09] committed | framework
 - Committed: state-space-search → frameworks/state-space-search.md
 - IRI: pkis:framework:state-space-search
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: best-first-search (id: 65daf90e-ada2-4a1b-a292-0dca444245ea)
+- Title: Best-First Search
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: best-first-search → techniques/best-first-search.md
+- IRI: pkis:technique:best-first-search

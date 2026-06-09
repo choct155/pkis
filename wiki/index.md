@@ -674,6 +674,7 @@
 - [[market-vs-hierarchy]] — Coase/Williamson: transactions governed by price signals (markets) vs. managerial direction (firms) (corporate-finance) (2026-05-20)
 
 ## Techniques
+- [[best-first-search]] — Best-First Search (optimization, knowledge-representation) (2026-06-09)
 - [[bayesian-outlier-model]] — Bayesian Outlier Model (Two-Model Contamination Mixture) (bayesian-stats, information-theory) (2026-06-09)
 - [[matched-filter]] — Matched Filter (bayesian-stats, information-theory) (2026-06-09)
 - [[transformation-group-priors]] — Transformation-Group Priors (bayesian-stats, information-theory) (2026-06-09)
