@@ -10552,3 +10552,12 @@
 ## [2026-06-09] committed | concept
 - Committed: lethal-autonomous-weapons → concepts/lethal-autonomous-weapons.md
 - IRI: pkis:concept:lethal-autonomous-weapons
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: technological-unemployment (id: 19181518-de17-448d-88ec-f5fe39f081f0)
+- Title: Technological Unemployment
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: technological-unemployment → concepts/technological-unemployment.md
+- IRI: pkis:concept:technological-unemployment
