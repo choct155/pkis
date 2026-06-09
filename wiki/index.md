@@ -290,6 +290,7 @@
 - [[liu-machine-unlearning-llm-2024]] — Rethinking Machine Unlearning for LLMs: post-training knowledge editing survey (deep-learning, ai-safety) (2026-05-20)
 
 ## Concepts
+- [[chinese-room-argument]] — Chinese Room Argument (knowledge-representation) (2026-06-09)
 - [[weak-vs-strong-ai]] — Weak AI vs. Strong AI (knowledge-representation, deep-learning) (2026-06-09)
 - [[robot-perception-state-estimation]] — Robot Perception as Continuous State Estimation (robotics, state-space-models) (2026-06-09)
 - [[trajectory-tracking-control]] — Trajectory Tracking Control (robotics, systems-theory) (2026-06-09)

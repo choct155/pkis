@@ -10507,3 +10507,12 @@
 ## [2026-06-09] committed | concept
 - Committed: weak-vs-strong-ai → concepts/weak-vs-strong-ai.md
 - IRI: pkis:concept:weak-vs-strong-ai
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: chinese-room-argument (id: 0703710e-0f11-42e5-91bf-0d98f76b61f3)
+- Title: Chinese Room Argument
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: chinese-room-argument → concepts/chinese-room-argument.md
+- IRI: pkis:concept:chinese-room-argument
