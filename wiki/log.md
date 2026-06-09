@@ -9895,3 +9895,12 @@
 ## [2026-06-09] committed | result
 - Committed: gibbard-satterthwaite-theorem → results/gibbard-satterthwaite-theorem.md
 - IRI: pkis:result:gibbard-satterthwaite-theorem
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: bargaining-theory (id: 2bb935ff-df42-4a4a-91e2-627cd27374e0)
+- Title: Bargaining Theory
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: bargaining-theory → concepts/bargaining-theory.md
+- IRI: pkis:concept:bargaining-theory
