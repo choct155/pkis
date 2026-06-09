@@ -4513,3 +4513,12 @@
 ## [2026-06-09] committed | concept
 - Committed: decision-time-planning → concepts/decision-time-planning.md
 - IRI: pkis:concept:decision-time-planning
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: heuristic-search-rl (id: 57985909-d9f2-4119-9a2a-9bb03ee4e455)
+- Title: Heuristic Search (Reinforcement Learning)
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: heuristic-search-rl → techniques/heuristic-search-rl.md
+- IRI: pkis:technique:heuristic-search-rl
