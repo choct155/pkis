@@ -3604,3 +3604,12 @@
 ## [2026-06-09] committed | concept
 - Committed: hessian-matrix → concepts/hessian-matrix.md
 - IRI: pkis:concept:hessian-matrix
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: taylor-series (id: 8b27e007-b3ba-4a72-b39b-bbf2b5a6a366)
+- Title: Taylor Series
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: taylor-series → concepts/taylor-series.md
+- IRI: pkis:concept:taylor-series
