@@ -4882,3 +4882,12 @@
 ## [2026-06-09] committed | framework
 - Committed: rescorla-wagner-model → frameworks/rescorla-wagner-model.md
 - IRI: pkis:framework:rescorla-wagner-model
+
+## [2026-06-09] staged | node-stub (principle)
+- Staged: the-law-of-effect (id: fab0b7af-37fb-47e2-b242-c6b9bb0f8ec7)
+- Title: The Law of Effect
+- needs_canonical_source: False
+
+## [2026-06-09] committed | principle
+- Committed: the-law-of-effect → principles/the-law-of-effect.md
+- IRI: pkis:principle:the-law-of-effect
