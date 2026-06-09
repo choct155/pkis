@@ -10021,3 +10021,12 @@
 ## [2026-06-09] committed | framework
 - Committed: generative-adversarial-network → frameworks/generative-adversarial-network.md
 - IRI: pkis:framework:generative-adversarial-network
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: autoregressive-model (id: c1e260bf-92b6-4e26-a29f-575a02b60b4d)
+- Title: Autoregressive Model
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: autoregressive-model → techniques/autoregressive-model.md
+- IRI: pkis:technique:autoregressive-model
