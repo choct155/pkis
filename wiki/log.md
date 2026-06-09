@@ -8995,3 +8995,12 @@
 ## [2026-06-09] committed | technique
 - Committed: tree-decomposition-csp → techniques/tree-decomposition-csp.md
 - IRI: pkis:technique:tree-decomposition-csp
+
+## [2026-06-09] staged | node-stub (framework)
+- Staged: knowledge-based-agent (id: dcaf0f10-13ec-463a-91bb-85ade04e9f97)
+- Title: Knowledge-Based Agent
+- needs_canonical_source: False
+
+## [2026-06-09] committed | framework
+- Committed: knowledge-based-agent → frameworks/knowledge-based-agent.md
+- IRI: pkis:framework:knowledge-based-agent
