@@ -7327,3 +7327,12 @@
 ## [2026-06-09] committed | result
 - Committed: elementary-renewal-theorem → results/elementary-renewal-theorem.md
 - IRI: pkis:result:elementary-renewal-theorem
+
+## [2026-06-09] staged | node-stub (result)
+- Staged: renewal-reward-theorem (id: 0d9be1f0-e0e6-4037-a221-f8a7ab3836c9)
+- Title: Renewal Reward Theorem
+- needs_canonical_source: False
+
+## [2026-06-09] committed | result
+- Committed: renewal-reward-theorem → results/renewal-reward-theorem.md
+- IRI: pkis:result:renewal-reward-theorem
