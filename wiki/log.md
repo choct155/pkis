@@ -7875,3 +7875,12 @@
 ## [2026-06-09] committed | concept
 - Committed: sampling-distribution → concepts/sampling-distribution.md
 - IRI: pkis:concept:sampling-distribution
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: sampling-with-and-without-replacement (id: 997ea9e4-e83b-4271-8b94-214efd3545dd)
+- Title: Sampling With and Without Replacement
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: sampling-with-and-without-replacement → concepts/sampling-with-and-without-replacement.md
+- IRI: pkis:concept:sampling-with-and-without-replacement
