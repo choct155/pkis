@@ -7246,3 +7246,12 @@
 ## [2026-06-09] committed | concept
 - Committed: transition-matrix → concepts/transition-matrix.md
 - IRI: pkis:concept:transition-matrix
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: recurrence-and-transience (id: 84bbcc35-56c8-4ea5-96d5-7295c3e7d557)
+- Title: Recurrence and Transience
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: recurrence-and-transience → concepts/recurrence-and-transience.md
+- IRI: pkis:concept:recurrence-and-transience
