@@ -11120,3 +11120,12 @@
 ## [2026-06-09] committed | concept
 - Committed: unsupervised-learning → concepts/unsupervised-learning.md
 - IRI: pkis:concept:unsupervised-learning
+
+## [2026-06-09] staged | node-stub (framework)
+- Staged: statistical-decision-theory-regression (id: 95470e96-64bc-48e0-999c-9bb232f59a59)
+- Title: Statistical Decision Theory for Regression and Classification
+- needs_canonical_source: False
+
+## [2026-06-09] committed | framework
+- Committed: statistical-decision-theory-regression → frameworks/statistical-decision-theory-regression.md
+- IRI: pkis:framework:statistical-decision-theory-regression
