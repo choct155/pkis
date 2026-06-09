@@ -4225,3 +4225,12 @@
 ## [2026-06-09] committed | technique
 - Committed: policy-improvement → techniques/policy-improvement.md
 - IRI: pkis:technique:policy-improvement
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: policy-iteration (id: 7688a8c7-e651-4c6f-a1db-1d2a030d08ca)
+- Title: Policy Iteration
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: policy-iteration → techniques/policy-iteration.md
+- IRI: pkis:technique:policy-iteration
