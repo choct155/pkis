@@ -290,6 +290,7 @@
 - [[liu-machine-unlearning-llm-2024]] — Rethinking Machine Unlearning for LLMs: post-training knowledge editing survey (deep-learning, ai-safety) (2026-05-20)
 
 ## Concepts
+- [[intraclass-correlation]] — Intraclass Correlation (bayesian-stats, statistical-learning) (2026-06-09)
 - [[fixed-vs-random-effects]] — Fixed vs. Random Effects (bayesian-stats, statistical-learning) (2026-06-09)
 - [[finite-vs-superpopulation-variance]] — Finite-Population vs. Superpopulation Standard Deviation (bayesian-stats, statistical-learning) (2026-06-09)
 - [[bayesian-anova]] — Bayesian Analysis of Variance (bayesian-stats, statistical-learning) (2026-06-09)

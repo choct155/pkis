@@ -5899,3 +5899,12 @@
 ## [2026-06-09] committed | technique
 - Committed: parameter-expansion-sampling → techniques/parameter-expansion-sampling.md
 - IRI: pkis:technique:parameter-expansion-sampling
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: intraclass-correlation (id: 48febaed-2ebe-4684-a65b-8db7c71cbf43)
+- Title: Intraclass Correlation
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: intraclass-correlation → concepts/intraclass-correlation.md
+- IRI: pkis:concept:intraclass-correlation
