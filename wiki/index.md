@@ -290,6 +290,7 @@
 - [[liu-machine-unlearning-llm-2024]] — Rethinking Machine Unlearning for LLMs: post-training knowledge editing survey (deep-learning, ai-safety) (2026-05-20)
 
 ## Concepts
+- [[deep-reinforcement-learning]] — Deep Reinforcement Learning (reinforcement-learning, deep-learning) (2026-06-09)
 - [[apprenticeship-learning]] — Apprenticeship Learning (reinforcement-learning, deep-learning) (2026-06-09)
 - [[inverse-reinforcement-learning]] — Inverse Reinforcement Learning (reinforcement-learning, deep-learning) (2026-06-09)
 - [[supervised-learning]] — Supervised Learning (statistical-learning) (2026-06-09)

@@ -10093,3 +10093,12 @@
 ## [2026-06-09] committed | technique
 - Committed: adaptive-dynamic-programming → techniques/adaptive-dynamic-programming.md
 - IRI: pkis:technique:adaptive-dynamic-programming
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: deep-reinforcement-learning (id: 1d44803d-e0aa-4476-bb11-a85e8d3f3896)
+- Title: Deep Reinforcement Learning
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: deep-reinforcement-learning → concepts/deep-reinforcement-learning.md
+- IRI: pkis:concept:deep-reinforcement-learning
