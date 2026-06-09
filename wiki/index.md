@@ -745,6 +745,7 @@
 - [[market-vs-hierarchy]] — Coase/Williamson: transactions governed by price signals (markets) vs. managerial direction (firms) (corporate-finance) (2026-05-20)
 
 ## Techniques
+- [[structural-risk-minimization]] — Structural Risk Minimization (SRM) (statistical-learning) (2026-06-09)
 - [[local-likelihood]] — Local Likelihood and Varying-Coefficient Models (statistical-learning) (2026-06-09)
 - [[local-regression-loess]] — Local Regression (LOESS) (statistical-learning) (2026-06-09)
 - [[kernel-smoothing]] — Kernel Smoothing (Local Averaging) (statistical-learning) (2026-06-09)

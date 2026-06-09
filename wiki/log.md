@@ -11345,3 +11345,12 @@
 ## [2026-06-09] committed | concept
 - Committed: vc-dimension → concepts/vc-dimension.md
 - IRI: pkis:concept:vc-dimension
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: structural-risk-minimization (id: 62b636dc-b60a-4a51-8566-bd15c1f03164)
+- Title: Structural Risk Minimization (SRM)
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: structural-risk-minimization → techniques/structural-risk-minimization.md
+- IRI: pkis:technique:structural-risk-minimization
