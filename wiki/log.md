@@ -10390,3 +10390,12 @@
 ## [2026-06-09] committed | concept
 - Committed: configuration-space → concepts/configuration-space.md
 - IRI: pkis:concept:configuration-space
+
+## [2026-06-09] staged | node-stub (problem)
+- Staged: motion-planning (id: 8cef6da0-857b-4ea3-be1d-b53b7d8ed18c)
+- Title: Motion Planning (Piano Mover's Problem)
+- needs_canonical_source: False
+
+## [2026-06-09] committed | problem
+- Committed: motion-planning → problems/motion-planning.md
+- IRI: pkis:problem:motion-planning
