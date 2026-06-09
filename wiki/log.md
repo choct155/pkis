@@ -6736,3 +6736,12 @@
 ## [2026-06-09] committed | result
 - Committed: single-door-criterion → results/single-door-criterion.md
 - IRI: pkis:result:single-door-criterion
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: exogeneity (id: d9b64420-6b19-468a-8a82-af11539359be)
+- Title: Exogeneity
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: exogeneity → concepts/exogeneity.md
+- IRI: pkis:concept:exogeneity

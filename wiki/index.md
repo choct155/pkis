@@ -290,6 +290,7 @@
 - [[liu-machine-unlearning-llm-2024]] — Rethinking Machine Unlearning for LLMs: post-training knowledge editing survey (deep-learning, ai-safety) (2026-05-20)
 
 ## Concepts
+- [[exogeneity]] — Exogeneity (econometrics, causal-analysis) (2026-06-09)
 - [[path-coefficient]] — Path Coefficient (causal-analysis, econometrics) (2026-06-09)
 - [[natural-direct-indirect-effects]] — Natural Direct and Indirect Effects (causal-analysis, bayesian-stats) (2026-06-09)
 - [[controlled-direct-effect]] — Controlled Direct Effect (causal-analysis, bayesian-stats) (2026-06-09)
