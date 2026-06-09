@@ -5683,3 +5683,12 @@
 ## [2026-06-09] committed | technique
 - Committed: importance-resampling → techniques/importance-resampling.md
 - IRI: pkis:technique:importance-resampling
+
+## [2026-06-09] staged | node-stub (principle)
+- Staged: numerical-vs-simulation-integration (id: 4ead5469-4df1-4553-97ba-5eaff0c4150a)
+- Title: Numerical vs. Simulation Integration
+- needs_canonical_source: False
+
+## [2026-06-09] committed | principle
+- Committed: numerical-vs-simulation-integration → principles/numerical-vs-simulation-integration.md
+- IRI: pkis:principle:numerical-vs-simulation-integration
