@@ -5539,3 +5539,12 @@
 ## [2026-06-09] committed | concept
 - Committed: scoring-rules → concepts/scoring-rules.md
 - IRI: pkis:concept:scoring-rules
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: effective-number-of-parameters (id: 4c0bcda7-4a37-49f4-b00a-c1f75e8c7c60)
+- Title: Effective Number of Parameters
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: effective-number-of-parameters → concepts/effective-number-of-parameters.md
+- IRI: pkis:concept:effective-number-of-parameters
