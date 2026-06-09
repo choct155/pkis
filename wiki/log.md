@@ -6511,3 +6511,12 @@
 ## [2026-06-09] committed | principle
 - Committed: causal-vs-statistical-distinction → principles/causal-vs-statistical-distinction.md
 - IRI: pkis:principle:causal-vs-statistical-distinction
+
+## [2026-06-09] staged | node-stub (result)
+- Staged: graphoid-axioms (id: 81d88492-df34-4733-b2d0-61a2fecf7477)
+- Title: Graphoid Axioms
+- needs_canonical_source: False
+
+## [2026-06-09] committed | result
+- Committed: graphoid-axioms → results/graphoid-axioms.md
+- IRI: pkis:result:graphoid-axioms
