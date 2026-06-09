@@ -3739,3 +3739,12 @@
 ## [2026-06-09] committed | technique
 - Committed: nested-cross-validation → techniques/nested-cross-validation.md
 - IRI: pkis:technique:nested-cross-validation
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: linear-regression (id: 166cfb04-bf37-4c7f-946c-df0d4d8e0a9f)
+- Title: Linear Regression
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: linear-regression → techniques/linear-regression.md
+- IRI: pkis:technique:linear-regression
