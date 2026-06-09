@@ -1541,11 +1541,35 @@ def tool_rebuild_source_graph() -> dict:
         return {"status": "error", "detail": str(e)}
 
 
-def tool_get_index(domain=None, node_type=None) -> list:
+def _cluster_member_iris(cluster_slug: str) -> set:
+    """Member nodes of a research cluster: its typed-edge dep targets plus its
+    hypotheses — mirrors the membership shown by tool_get_clusters so the browse
+    facet matches the Clusters view exactly."""
+    cpath = find_node_path(cluster_slug)
+    if not cpath:
+        return set()
+    cnode = load_node(cpath)
+    G = get_graph()
+    members = set()
+    for _u, v, d in G.edges(cnode["iri"], data=True):
+        if d.get("edge_type") == "related":
+            continue
+        members.add(v)
+    for h_slug in cnode.get("frontmatter", {}).get("hypotheses", []) or []:
+        hp = find_node_path(h_slug)
+        if hp:
+            members.add(load_node(hp)["iri"])
+    return members
+
+
+def tool_get_index(domain=None, node_type=None, cluster=None) -> list:
     nodes = load_all_nodes()
+    member_iris = _cluster_member_iris(cluster) if cluster else None
     results = []
     for node in nodes:
         singular = FOLDER_TO_TYPE.get(node["node_type"], node["node_type"])
+        if member_iris is not None and node["iri"] not in member_iris:
+            continue
         if domain and domain not in node.get("domain", []):
             continue
         # accept singular type ("concept") or the raw folder name ("concepts")
@@ -5248,7 +5272,8 @@ def dispatch_tool(tool_name: str, params: dict, req) -> any:
         ),
         "get_index": lambda p: tool_get_index(
             domain=p.get("domain"),
-            node_type=p.get("node_type")
+            node_type=p.get("node_type"),
+            cluster=p.get("cluster")
         ),
         "get_health_metrics": lambda p: tool_get_health_metrics(),
         "get_sourceless_stubs": lambda p: tool_get_sourceless_stubs(),
@@ -5506,7 +5531,7 @@ def pkis_api_clusters():
 def pkis_api_index():
     b = _api_json()
     try:
-        return _api_ok(tool_get_index(domain=b.get("domain"), node_type=b.get("node_type")))
+        return _api_ok(tool_get_index(domain=b.get("domain"), node_type=b.get("node_type"), cluster=b.get("cluster")))
     except Exception as e:
         return _api_err(e, 500)
 
