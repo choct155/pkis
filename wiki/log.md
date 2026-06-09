@@ -4387,3 +4387,12 @@
 ## [2026-06-09] committed | concept
 - Committed: n-step-bootstrapping → concepts/n-step-bootstrapping.md
 - IRI: pkis:concept:n-step-bootstrapping
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: n-step-return (id: 44f6cd5d-bc58-44e5-9fdc-6508a989e864)
+- Title: n-step Return
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: n-step-return → concepts/n-step-return.md
+- IRI: pkis:concept:n-step-return
