@@ -8653,3 +8653,12 @@
 ## [2026-06-09] committed | principle
 - Committed: physical-symbol-system-hypothesis → principles/physical-symbol-system-hypothesis.md
 - IRI: pkis:principle:physical-symbol-system-hypothesis
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: rational-agent (id: a020c73a-e6ef-4917-bd6e-051282423d9a)
+- Title: Rational Agent
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: rational-agent → concepts/rational-agent.md
+- IRI: pkis:concept:rational-agent
