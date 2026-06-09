@@ -11462,3 +11462,12 @@
 ## [2026-06-09] committed | technique
 - Committed: variable-importance-for-tree-ensembles → techniques/variable-importance-for-tree-ensembles.md
 - IRI: pkis:technique:variable-importance-for-tree-ensembles
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: projection-pursuit-regression (id: f801ab87-04c5-47ab-80ed-9408df8dfae3)
+- Title: Projection Pursuit Regression
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: projection-pursuit-regression → concepts/projection-pursuit-regression.md
+- IRI: pkis:concept:projection-pursuit-regression
