@@ -11165,3 +11165,12 @@
 ## [2026-06-09] committed | technique
 - Committed: principal-components-regression → techniques/principal-components-regression.md
 - IRI: pkis:technique:principal-components-regression
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: partial-least-squares (id: 014fede7-2768-4ab1-a940-b42cd51a3ba8)
+- Title: Partial Least Squares (PLS)
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: partial-least-squares → techniques/partial-least-squares.md
+- IRI: pkis:technique:partial-least-squares
