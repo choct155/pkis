@@ -10147,3 +10147,12 @@
 ## [2026-06-09] committed | technique
 - Committed: language-model-smoothing → techniques/language-model-smoothing.md
 - IRI: pkis:technique:language-model-smoothing
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: bag-of-words-model (id: 79afc48b-b2f7-4b52-b89f-1ac1235fed96)
+- Title: Bag-of-Words Model
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: bag-of-words-model → concepts/bag-of-words-model.md
+- IRI: pkis:concept:bag-of-words-model
