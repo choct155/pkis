@@ -4909,3 +4909,12 @@
 ## [2026-06-09] committed | concept
 - Committed: temporal-difference-error → concepts/temporal-difference-error.md
 - IRI: pkis:concept:temporal-difference-error
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: eligibility-trace (id: a8a5e00b-9607-468f-a8af-5f5d4912b097)
+- Title: Eligibility Trace
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: eligibility-trace → concepts/eligibility-trace.md
+- IRI: pkis:concept:eligibility-trace
