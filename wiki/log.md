@@ -6763,3 +6763,12 @@
 ## [2026-06-09] committed | concept
 - Committed: observational-equivalence-sem → concepts/observational-equivalence-sem.md
 - IRI: pkis:concept:observational-equivalence-sem
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: simpsons-paradox (id: d8b9ab23-a07b-44a3-a040-f28d82539668)
+- Title: Simpson's Paradox
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: simpsons-paradox → concepts/simpsons-paradox.md
+- IRI: pkis:concept:simpsons-paradox
