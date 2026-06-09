@@ -7830,3 +7830,12 @@
 ## [2026-06-09] committed | principle
 - Committed: probability-as-extended-logic → principles/probability-as-extended-logic.md
 - IRI: pkis:principle:probability-as-extended-logic
+
+## [2026-06-09] staged | node-stub (principle)
+- Staged: principle-of-indifference (id: de7c10bf-6fc1-49ea-8c70-c80a79015902)
+- Title: Principle of Indifference
+- needs_canonical_source: False
+
+## [2026-06-09] committed | principle
+- Committed: principle-of-indifference → principles/principle-of-indifference.md
+- IRI: pkis:principle:principle-of-indifference
