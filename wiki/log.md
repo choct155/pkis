@@ -3847,3 +3847,12 @@
 ## [2026-06-09] committed | concept
 - Committed: margin-maximum-margin-classifier → concepts/margin-maximum-margin-classifier.md
 - IRI: pkis:concept:margin-maximum-margin-classifier
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: hinge-loss (id: 6b122861-8306-47ee-9213-6d8f9702c0ff)
+- Title: Hinge Loss
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: hinge-loss → concepts/hinge-loss.md
+- IRI: pkis:concept:hinge-loss

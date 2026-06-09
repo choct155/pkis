@@ -290,6 +290,7 @@
 - [[liu-machine-unlearning-llm-2024]] — Rethinking Machine Unlearning for LLMs: post-training knowledge editing survey (deep-learning, ai-safety) (2026-05-20)
 
 ## Concepts
+- [[hinge-loss]] — Hinge Loss (statistical-learning, optimization) (2026-06-09)
 - [[margin-maximum-margin-classifier]] — Margin (Maximum-Margin Classifier) (statistical-learning, optimization) (2026-06-09)
 - [[mixture-models]] — Mixture Models (statistical-learning, bayesian-stats) (2026-06-09)
 - [[low-rank-approximation]] — Low-Rank Approximation (optimization, statistical-learning) (2026-06-09)
