@@ -11453,3 +11453,12 @@
 ## [2026-06-09] committed | technique
 - Committed: forward-stagewise-additive-modeling → techniques/forward-stagewise-additive-modeling.md
 - IRI: pkis:technique:forward-stagewise-additive-modeling
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: variable-importance-for-tree-ensembles (id: e588918f-3860-4291-b667-75c6e04d04ab)
+- Title: Variable Importance for Tree Ensembles
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: variable-importance-for-tree-ensembles → techniques/variable-importance-for-tree-ensembles.md
+- IRI: pkis:technique:variable-importance-for-tree-ensembles
