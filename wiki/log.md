@@ -4828,3 +4828,12 @@
 ## [2026-06-09] committed | technique
 - Committed: true-online-td-lambda → techniques/true-online-td-lambda.md
 - IRI: pkis:technique:true-online-td-lambda
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: sarsa-lambda (id: 666b902c-a7e4-4041-bef2-dff0729477c1)
+- Title: Sarsa(λ)
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: sarsa-lambda → techniques/sarsa-lambda.md
+- IRI: pkis:technique:sarsa-lambda

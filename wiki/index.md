@@ -537,6 +537,7 @@
 - [[market-vs-hierarchy]] — Coase/Williamson: transactions governed by price signals (markets) vs. managerial direction (firms) (corporate-finance) (2026-05-20)
 
 ## Techniques
+- [[sarsa-lambda]] — Sarsa(λ) (optimization, deep-learning) (2026-06-09)
 - [[true-online-td-lambda]] — True Online TD(λ) (optimization, deep-learning) (2026-06-09)
 - [[td-lambda]] — TD(λ) (optimization, deep-learning) (2026-06-09)
 - [[residual-gradient-algorithm]] — Residual-Gradient Algorithm (reinforcement-learning, optimization) (2026-06-09)
