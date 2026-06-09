@@ -11759,3 +11759,12 @@
 ## [2026-06-09] committed | technique
 - Committed: regularized-discriminant-analysis → techniques/regularized-discriminant-analysis.md
 - IRI: pkis:technique:regularized-discriminant-analysis
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: supervised-principal-components (id: 0bcbffeb-bb6b-475c-8ec7-1c248e3f99cb)
+- Title: Supervised Principal Components
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: supervised-principal-components → techniques/supervised-principal-components.md
+- IRI: pkis:technique:supervised-principal-components
