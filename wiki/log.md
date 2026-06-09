@@ -8842,3 +8842,12 @@
 ## [2026-06-09] committed | technique
 - Committed: and-or-search → techniques/and-or-search.md
 - IRI: pkis:technique:and-or-search
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: belief-state-search (id: fb732ed7-86b0-4786-9cf5-7113f7a05229)
+- Title: Belief-State Search
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: belief-state-search → concepts/belief-state-search.md
+- IRI: pkis:concept:belief-state-search
