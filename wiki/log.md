@@ -9481,3 +9481,12 @@
 ## [2026-06-09] committed | framework
 - Committed: probabilistic-programming-language → frameworks/probabilistic-programming-language.md
 - IRI: pkis:framework:probabilistic-programming-language
+
+## [2026-06-09] staged | node-stub (framework)
+- Staged: relational-probability-model (id: 043a2bd0-b22d-48df-bd5d-afb214be1cc9)
+- Title: Relational Probability Model
+- needs_canonical_source: False
+
+## [2026-06-09] committed | framework
+- Committed: relational-probability-model → frameworks/relational-probability-model.md
+- IRI: pkis:framework:relational-probability-model

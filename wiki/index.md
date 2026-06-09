@@ -1085,6 +1085,7 @@
 - [[government-debt-valuation-equation]] — FTPL: price level determined by ratio of nominal debt to expected present value of future surpluses (macroeconomics) (2026-05-20)
 
 ## Frameworks
+- [[relational-probability-model]] — Relational Probability Model (bayesian-stats, knowledge-representation) (2026-06-09)
 - [[probabilistic-programming-language]] — Probabilistic Programming Language (bayesian-stats, knowledge-representation) (2026-06-09)
 - [[dynamic-bayesian-network]] — Dynamic Bayesian Network (DBN) (bayesian-stats, state-space-models, knowledge-representation, time-series) (2026-06-09)
 - [[hidden-markov-model]] — Hidden Markov Model (HMM) (bayesian-stats, state-space-models, time-series, statistical-learning) (2026-06-09)
