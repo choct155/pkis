@@ -5395,3 +5395,12 @@
 ## [2026-06-09] committed | technique
 - Committed: grid-approximation → techniques/grid-approximation.md
 - IRI: pkis:technique:grid-approximation
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: large-sample-bayesian-inference (id: 852b1da1-a01d-4b90-accd-b806c9a568f7)
+- Title: Large-Sample Bayesian Inference
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: large-sample-bayesian-inference → concepts/large-sample-bayesian-inference.md
+- IRI: pkis:concept:large-sample-bayesian-inference
