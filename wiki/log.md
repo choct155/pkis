@@ -4261,3 +4261,12 @@
 ## [2026-06-09] committed | technique
 - Committed: asynchronous-dynamic-programming → techniques/asynchronous-dynamic-programming.md
 - IRI: pkis:technique:asynchronous-dynamic-programming
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: bootstrapping-rl (id: db65d8b3-b9e6-4da3-a23d-36f0ee6c9fa2)
+- Title: Bootstrapping (Reinforcement Learning)
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: bootstrapping-rl → concepts/bootstrapping-rl.md
+- IRI: pkis:concept:bootstrapping-rl
