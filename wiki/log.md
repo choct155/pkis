@@ -5008,3 +5008,12 @@
 ## [2026-06-09] committed | technique
 - Committed: actor-critic → techniques/actor-critic.md
 - IRI: pkis:technique:actor-critic
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: policy-parameterization-softmax (id: 730935b2-bf89-4969-83f3-dfd4526514ae)
+- Title: Softmax Policy Parameterization in Action Preferences
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: policy-parameterization-softmax → techniques/policy-parameterization-softmax.md
+- IRI: pkis:technique:policy-parameterization-softmax
