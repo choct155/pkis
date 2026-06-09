@@ -8055,3 +8055,12 @@
 ## [2026-06-09] committed | technique
 - Committed: chi-squared-test → techniques/chi-squared-test.md
 - IRI: pkis:technique:chi-squared-test
+
+## [2026-06-09] staged | node-stub (principle)
+- Staged: physical-vs-epistemic-probability (id: e7e4f353-d39f-40d3-9d32-5b96dc932bd5)
+- Title: Physical vs. Epistemic Probability
+- needs_canonical_source: False
+
+## [2026-06-09] committed | principle
+- Committed: physical-vs-epistemic-probability → principles/physical-vs-epistemic-probability.md
+- IRI: pkis:principle:physical-vs-epistemic-probability
