@@ -290,6 +290,7 @@
 - [[liu-machine-unlearning-llm-2024]] — Rethinking Machine Unlearning for LLMs: post-training knowledge editing survey (deep-learning, ai-safety) (2026-05-20)
 
 ## Concepts
+- [[missing-data-mechanisms]] — Missing-Data Mechanisms (MCAR / MAR / MNAR) (bayesian-stats, statistical-learning) (2026-06-09)
 - [[ignorability]] — Ignorability (bayesian-stats, causal-analysis) (2026-06-09)
 - [[bayes-factor]] — Bayes Factor (bayesian-stats) (2026-06-09)
 - [[deviance-information-criterion]] — Deviance Information Criterion (DIC) (bayesian-stats, statistical-learning) (2026-06-09)

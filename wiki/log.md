@@ -5602,3 +5602,12 @@
 ## [2026-06-09] committed | concept
 - Committed: ignorability → concepts/ignorability.md
 - IRI: pkis:concept:ignorability
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: missing-data-mechanisms (id: df3d77fd-986c-4b80-a190-fd22ffadd864)
+- Title: Missing-Data Mechanisms (MCAR / MAR / MNAR)
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: missing-data-mechanisms → concepts/missing-data-mechanisms.md
+- IRI: pkis:concept:missing-data-mechanisms
