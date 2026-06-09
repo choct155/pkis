@@ -6115,3 +6115,12 @@
 ## [2026-06-09] committed | concept
 - Committed: identifiability-of-mixtures → concepts/identifiability-of-mixtures.md
 - IRI: pkis:concept:identifiability-of-mixtures
+
+## [2026-06-09] staged | node-stub (problem)
+- Staged: number-of-components-selection (id: f49ed2fd-5ce2-40e0-9ea8-a9e7e916679c)
+- Title: Choosing the Number of Mixture Components
+- needs_canonical_source: False
+
+## [2026-06-09] committed | problem
+- Committed: number-of-components-selection → problems/number-of-components-selection.md
+- IRI: pkis:problem:number-of-components-selection

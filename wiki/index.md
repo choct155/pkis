@@ -932,6 +932,7 @@
 - [[broad-money-monetarism]] — Congdon's updated monetarism: broad money (M3/M4) drives nominal spending; emphasis on credit and asset prices (macroeconomics, monetary-economics) (2026-05-20)
 
 ## Problems
+- [[number-of-components-selection]] — Choosing the Number of Mixture Components (bayesian-stats, statistical-learning) (2026-06-09)
 - [[label-switching]] — Label Switching in Mixture Models (bayesian-stats, statistical-learning) (2026-06-09)
 - [[collinearity]] — Collinearity (statistical-learning, bayesian-stats, causal-analysis) (2026-06-09)
 - [[associative-search]] — Associative Search (Contextual Bandits) (reinforcement-learning) (2026-06-09)
