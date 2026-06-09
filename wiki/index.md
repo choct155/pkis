@@ -290,6 +290,7 @@
 - [[liu-machine-unlearning-llm-2024]] — Rethinking Machine Unlearning for LLMs: post-training knowledge editing survey (deep-learning, ai-safety) (2026-05-20)
 
 ## Concepts
+- [[duality-random-walk]] — Duality of Stopping Times (Random Walk) (bayesian-stats, statistical-learning) (2026-06-09)
 - [[ladder-epochs-and-heights]] — Ladder Epochs and Ladder Heights (bayesian-stats, statistical-learning) (2026-06-09)
 - [[random-walk]] — Random Walk (bayesian-stats, statistical-learning) (2026-06-09)
 - [[brownian-motion-with-drift]] — Brownian Motion with Drift (bayesian-stats, statistical-learning, state-space-models) (2026-06-09)

@@ -7597,3 +7597,12 @@
 ## [2026-06-09] committed | concept
 - Committed: ladder-epochs-and-heights → concepts/ladder-epochs-and-heights.md
 - IRI: pkis:concept:ladder-epochs-and-heights
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: duality-random-walk (id: 57f8632a-9ee8-4071-8600-121c0d54d0f4)
+- Title: Duality of Stopping Times (Random Walk)
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: duality-random-walk → concepts/duality-random-walk.md
+- IRI: pkis:concept:duality-random-walk
