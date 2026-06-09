@@ -592,6 +592,12 @@ def hybrid_search(query: str, domains=None, node_types=None, max_results=10) -> 
 
     if _bm25_index is None:
         build_bm25_index()
+    # The REST search route doesn't go through dispatch_tool's ensure_fresh(), so a
+    # worker serving only REST traffic would never build the dense index and would
+    # silently fall back to BM25-only. Build it lazily here too (loads instantly
+    # from the persisted cache; no re-encode).
+    if _semantic_enabled() and _embed_matrix is None:
+        build_embedding_index()
 
     # BM25 semantic ranking
     tokens = query.lower().split()
