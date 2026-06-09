@@ -10003,3 +10003,12 @@
 ## [2026-06-09] committed | technique
 - Committed: residual-network → techniques/residual-network.md
 - IRI: pkis:technique:residual-network
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: batch-normalization (id: 0176c1c3-4b17-4d7a-8320-e64cde007bc0)
+- Title: Batch Normalization
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: batch-normalization → techniques/batch-normalization.md
+- IRI: pkis:technique:batch-normalization

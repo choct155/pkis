@@ -712,6 +712,7 @@
 - [[market-vs-hierarchy]] — Coase/Williamson: transactions governed by price signals (markets) vs. managerial direction (firms) (corporate-finance) (2026-05-20)
 
 ## Techniques
+- [[batch-normalization]] — Batch Normalization (deep-learning) (2026-06-09)
 - [[residual-network]] — Residual Network (Skip Connections) (deep-learning) (2026-06-09)
 - [[lstm]] — Long Short-Term Memory (LSTM) (deep-learning) (2026-06-09)
 - [[recurrent-neural-network]] — Recurrent Neural Network (RNN) (deep-learning) (2026-06-09)
