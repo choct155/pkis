@@ -22,6 +22,8 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - sutton-reinforcement-2018-ch09
+specializes:
+- function-approximation-rl
 tags:
 - linear-methods
 - feature-vector
@@ -29,6 +31,8 @@ tags:
 - convergence
 title: Linear Function Approximation in RL
 understanding: 0
+uses:
+- inner-product
 ---
 
 ## Definition
@@ -38,4 +42,6 @@ The case in which v̂(s,w) = wᵀ x(s) = Σ_i w_i x_i(s) is linear in the weight
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[inner-product]] — uses: v-hat(s,w) = w^T x(s) is the inner product of weights and the feature vector
+- [[function-approximation-rl]] — specializes: the linear-in-weights case is the most tractable special case of function approximation
 [To be populated during integration]

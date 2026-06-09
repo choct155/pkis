@@ -10,6 +10,9 @@ component_scores:
   prerequisites: null
   scope: null
   transfer: null
+contrasts-with:
+- n-step-bootstrapping
+- monte-carlo-estimator
 coverage: 1
 date_created: '2026-06-09'
 date_updated: '2026-06-09'
@@ -29,6 +32,8 @@ tags:
 - credit-assignment
 title: Eligibility Traces
 understanding: 0
+uses:
+- importance-sampling
 ---
 
 ## Definition
@@ -38,4 +43,7 @@ A short-term memory vector z_t in R^d that parallels the long-term weight vector
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[monte-carlo-estimator]] — contrasts-with: traces interpolate toward Monte Carlo without requiring complete episodes, enabling online/continuing implementation
+- [[importance-sampling]] — uses: off-policy eligibility traces incorporate per-decision importance-sampling ratios into the trace update
+- [[n-step-bootstrapping]] — contrasts-with: traces achieve TD/MC interpolation with a single O(d) trace vector instead of storing n feature vectors
 [To be populated during integration]

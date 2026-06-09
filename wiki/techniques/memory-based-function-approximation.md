@@ -9,6 +9,8 @@ component_scores:
   implementation: null
   operational_mechanism: null
   principled_mechanism: null
+contrasts-with:
+- function-approximation-rl
 coverage: 1
 date_created: '2026-06-09'
 date_updated: '2026-06-09'
@@ -38,4 +40,5 @@ A nonparametric alternative to parametric value approximation: training examples
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[function-approximation-rl]] — contrasts-with: nonparametric memory-based methods store examples rather than fitting a fixed parametric form
 [To be populated during integration]

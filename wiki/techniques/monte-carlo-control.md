@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- markov-decision-processes
 component_scores:
   alternatives: null
   conditions: null
@@ -31,6 +33,9 @@ tags:
 - exploring-starts
 title: Monte Carlo Control (RL)
 understanding: 0
+uses:
+- monte-carlo-prediction
+- exploring-starts
 ---
 
 ## Definition
@@ -45,4 +50,7 @@ Monte Carlo control is the first method in the book that finds optimal behavior 
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[exploring-starts]] — uses: Monte Carlo ES relies on exploring starts to guarantee every state-action pair is evaluated.
+- [[markov-decision-processes]] — applies: Approximates an optimal policy and q_* for an MDP from sampled episodes alone, with no dynamics model.
+- [[monte-carlo-prediction]] — uses: GPI control alternates MC policy evaluation (prediction of q_pi) with greedy policy improvement.
 [To be populated during integration]

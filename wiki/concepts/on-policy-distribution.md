@@ -22,6 +22,8 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - sutton-reinforcement-2018-ch09
+specializes:
+- markov-chains
 tags:
 - state-distribution
 - stationary-distribution
@@ -37,4 +39,5 @@ The distribution μ(s) of states encountered while following the target policy �
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[markov-chains]] — specializes: in continuing tasks the on-policy distribution is the stationary distribution of the Markov chain induced by pi
 [To be populated during integration]

@@ -26,6 +26,9 @@ sources:
 tags: []
 title: Optimal Policy
 understanding: 0
+uses:
+- bellman-optimality-equation
+- action-value-function
 ---
 
 ## Definition
@@ -49,4 +52,6 @@ The optimal policy is the ideal that defines the RL objective and anchors the an
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[action-value-function]] — uses: pi_*(s) in argmax_a q_*(s,a); q_* makes optimal action selection model-free.
+- [[bellman-optimality-equation]] — uses: An optimal policy is greedy w.r.t. the optimal value functions defined by the optimality equation.
 [To be populated during integration]

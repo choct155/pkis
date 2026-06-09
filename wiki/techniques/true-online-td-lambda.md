@@ -15,6 +15,8 @@ date_updated: '2026-06-09'
 domain:
 - optimization
 - deep-learning
+extends:
+- td-lambda
 id: pkis:technique:true-online-td-lambda
 knowledge_type: technique
 maturity: evolving
@@ -29,6 +31,8 @@ tags:
 - dutch-trace
 title: True Online TD(λ)
 understanding: 0
+uses:
+- replacing-traces
 ---
 
 ## Definition
@@ -38,4 +42,6 @@ An exact, computationally congenial backward-view implementation of the online l
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[replacing-traces]] — uses: true online TD(lambda) employs the dutch trace variant
+- [[td-lambda]] — extends: exact linear implementation of the online lambda-return ideal that TD(lambda) only approximates
 [To be populated during integration]

@@ -8,6 +8,8 @@ component_scores:
   purpose: null
   scope: null
   structure: null
+contrasts-with:
+- markov-decision-processes
 coverage: 1
 date_created: '2026-06-09'
 date_updated: '2026-06-09'
@@ -15,6 +17,8 @@ domain:
 - reinforcement-learning
 - optimization
 - deep-learning
+extends:
+- natural-gradient
 id: pkis:framework:policy-gradient-methods
 knowledge_type: framework
 maturity: evolving
@@ -29,6 +33,9 @@ tags:
 - reinforcement-learning
 title: Policy Gradient Methods
 understanding: 0
+uses:
+- markov-decision-processes
+- stochastic-gradient-descent
 ---
 
 ## Definition
@@ -46,4 +53,8 @@ The framework covers the episodic case (performance = value of the start state, 
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[natural-gradient]] — extends: Natural-gradient policy methods (Amari 1998; Kakade 2002) precondition the policy gradient by the Fisher metric; a major modern development beyond vanilla policy gradients.
+- [[markov-decision-processes]] — contrasts-with: Policy-gradient methods select actions WITHOUT consulting action values, contrasting the action-value (Q/value-iteration) methods that dominate the rest of the MDP/RL literature.
+- [[stochastic-gradient-descent]] — uses: The core update is stochastic gradient ascent on J(theta); same stochastic-approximation machinery as SGD, with the sign reversed for maximization.
+- [[markov-decision-processes]] — uses: Policy-gradient methods optimize policies for MDPs; states, actions, rewards, returns are the MDP formalism.
 [To be populated during integration]

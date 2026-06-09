@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- exploration-exploitation-tradeoff
 component_scores:
   alternatives: null
   conditions: null
@@ -14,6 +16,8 @@ date_created: '2026-06-09'
 date_updated: '2026-06-09'
 domain:
 - reinforcement-learning
+extends:
+- action-value-methods
 id: pkis:technique:optimistic-initial-values
 knowledge_type: technique
 maturity: evolving
@@ -49,4 +53,6 @@ Optimistic initialization is a near-free way to bootstrap exploration on *statio
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[action-value-methods]] — extends: tweaks Q_1 initialization to drive early exploration
+- [[exploration-exploitation-tradeoff]] — applies: biased initialization induces exploration under greedy selection
 [To be populated during integration]

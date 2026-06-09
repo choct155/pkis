@@ -22,12 +22,17 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - sutton-reinforcement-2018-ch09
+specializes:
+- stochastic-gradient-descent
+- semi-gradient-td
 tags:
 - stochastic-gradient-descent
 - monte-carlo
 - value-prediction
 title: Gradient Monte Carlo for Value Prediction
 understanding: 0
+uses:
+- monte-carlo-estimator
 ---
 
 ## Definition
@@ -37,4 +42,7 @@ Applying stochastic gradient descent to value prediction using the Monte Carlo r
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[semi-gradient-td]] — specializes: gradient MC is the n=infinity special case of n-step semi-gradient TD
+- [[monte-carlo-estimator]] — uses: the update target is the Monte Carlo return G_t
+- [[stochastic-gradient-descent]] — specializes: gradient MC is true SGD because the Monte Carlo return is an unbiased, weight-independent target
 [To be populated during integration]

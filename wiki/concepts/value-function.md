@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- credit-assignment-problem
 component_scores:
   application: null
   boundary: null
@@ -19,6 +21,8 @@ id: pkis:concept:value-function
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- temporal-difference-learning
 related_concepts: []
 sources:
 - sutton-reinforcement-2018-ch01
@@ -51,4 +55,6 @@ The value function is the central object of most RL algorithms: it converts the 
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[credit-assignment-problem]] — applies: Estimating per-state values converts the global credit problem into local prediction updates.
+- [[temporal-difference-learning]] — prerequisite-of: TD methods learn by incrementally estimating a value function.
 [To be populated during integration]

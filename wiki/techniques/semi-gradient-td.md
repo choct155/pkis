@@ -9,6 +9,8 @@ component_scores:
   implementation: null
   operational_mechanism: null
   principled_mechanism: null
+contrasts-with:
+- gradient-monte-carlo
 coverage: 1
 date_created: '2026-06-09'
 date_updated: '2026-06-09'
@@ -24,6 +26,8 @@ sources:
 - sutton-reinforcement-2018-ch09
 - sutton-reinforcement-2018-ch10
 - sutton-reinforcement-2018-ch11
+specializes:
+- markov-decision-processes
 tags:
 - temporal-difference
 - bootstrapping
@@ -31,6 +35,11 @@ tags:
 - td-0
 title: Semi-gradient TD Methods
 understanding: 0
+uses:
+- stochastic-gradient-descent
+- linear-function-approximation-rl
+- function-approximation-rl
+- importance-sampling
 ---
 
 ## Definition
@@ -40,4 +49,10 @@ Gradient-style value-prediction updates whose target is a bootstrapped estimate 
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[markov-decision-processes]] — specializes: Semi-gradient value-function approximation is a solution method for prediction in MDPs.
+- [[importance-sampling]] — uses: Off-policy semi-gradient variants weight updates by the per-step IS ratio rho_t.
+- [[function-approximation-rl]] — uses: Semi-gradient TD learns a parameterized value function, the core object of RL function approximation.
+- [[linear-function-approximation-rl]] — uses: linear features give the simple update and the only setting with semi-gradient convergence guarantees
+- [[stochastic-gradient-descent]] — uses: semi-gradient methods take an SGD-style step but include only part of the gradient
+- [[gradient-monte-carlo]] — contrasts-with: semi-gradient bootstrapping targets depend on w so are not true gradient descent, unlike unbiased MC targets
 [To be populated during integration]

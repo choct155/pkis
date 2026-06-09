@@ -22,6 +22,8 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - sutton-reinforcement-2018-ch06
+specializes:
+- temporal-difference-learning
 tags:
 - sarsa
 - on-policy
@@ -31,6 +33,8 @@ tags:
 - generalized-policy-iteration
 title: Sarsa
 understanding: 0
+uses:
+- td-error
 ---
 
 ## Definition
@@ -54,4 +58,6 @@ Introduced by Rummery and Niranjan (1994) as "Modified Connectionist Q-learning"
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[td-error]] — uses: Sarsa update uses the action-value TD error
+- [[temporal-difference-learning]] — specializes: on-policy TD control: TD applied to q_pi with policy improvement
 [To be populated during integration]

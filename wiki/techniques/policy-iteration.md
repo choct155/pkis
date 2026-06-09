@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- markov-decision-processes
 component_scores:
   alternatives: null
   conditions: null
@@ -16,6 +18,8 @@ domain:
 - reinforcement-learning
 - optimization
 id: pkis:technique:policy-iteration
+instantiates:
+- generalized-policy-iteration
 knowledge_type: technique
 maturity: evolving
 needs_canonical_source: false
@@ -28,6 +32,9 @@ tags:
 - value-function
 title: Policy Iteration
 understanding: 0
+uses:
+- policy-evaluation
+- policy-improvement
 ---
 
 ## Definition
@@ -48,4 +55,8 @@ Policy iteration is one of the two classical DP algorithms for solving finite MD
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[markov-decision-processes]] — applies: Computes an optimal policy for a finite MDP.
+- [[generalized-policy-iteration]] — instantiates: Policy iteration is the complete-step instance of GPI.
+- [[policy-improvement]] — uses: Each iteration makes the policy greedy w.r.t. v_pi.
+- [[policy-evaluation]] — uses: Each iteration runs full policy evaluation to obtain v_pi.
 [To be populated during integration]

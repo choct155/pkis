@@ -28,6 +28,9 @@ tags:
 - comparison
 title: TD vs. Monte Carlo vs. Dynamic Programming
 understanding: 0
+uses:
+- temporal-difference-learning
+- maximum-likelihood-estimation
 ---
 
 ## Definition
@@ -53,4 +56,6 @@ This explains TD's typical empirical speed advantage on stochastic tasks (e.g. t
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[maximum-likelihood-estimation]] — uses: batch TD converges to the certainty-equivalence estimate of the maximum-likelihood Markov model
+- [[temporal-difference-learning]] — uses: TD is one of the three method families compared along the sampling/bootstrapping axes
 [To be populated during integration]

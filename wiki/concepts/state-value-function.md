@@ -26,6 +26,8 @@ sources:
 tags: []
 title: State-Value Function
 understanding: 0
+uses:
+- bellman-equation
 ---
 
 ## Definition
@@ -49,4 +51,5 @@ Nearly all RL algorithms revolve around estimating value functions; $v_\pi$ is t
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[bellman-equation]] — uses: v_pi satisfies and is the unique solution of its Bellman equation.
 [To be populated during integration]

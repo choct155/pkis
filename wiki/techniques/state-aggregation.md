@@ -21,6 +21,8 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - sutton-reinforcement-2018-ch09
+specializes:
+- linear-function-approximation-rl
 tags:
 - function-approximation
 - generalization
@@ -36,4 +38,5 @@ The simplest generalizing function approximator: states are partitioned into gro
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[linear-function-approximation-rl]] — specializes: state aggregation is linear approximation with one-hot group-indicator features
 [To be populated during integration]

@@ -11,10 +11,14 @@ date_created: '2026-06-09'
 date_updated: '2026-06-09'
 domain:
 - reinforcement-learning
+generalizes:
+- multi-armed-bandit
 id: pkis:problem:associative-search
 knowledge_type: problem
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- markov-decision-processes
 related_concepts: []
 sources:
 - sutton-reinforcement-2018-ch02
@@ -46,4 +50,6 @@ Now usually called *contextual bandits*, associative search is heavily used in p
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[markov-decision-processes]] — prerequisite-of: contextual bandits are the stepping-stone toward the full MDP/RL problem
+- [[multi-armed-bandit]] — generalizes: adds an observable context, requiring a context-to-action policy
 [To be populated during integration]

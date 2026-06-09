@@ -19,6 +19,9 @@ id: pkis:concept:reward-signal
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- value-function
+- reinforcement-learning
 related_concepts: []
 sources:
 - sutton-reinforcement-2018-ch01
@@ -47,4 +50,6 @@ The scalar-reward formulation is what makes RL a single, well-posed optimization
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[reinforcement-learning]] — prerequisite-of: The scalar reward signal defines the goal that RL maximizes.
+- [[value-function]] — prerequisite-of: Values are predictions of cumulative reward; without a reward signal there are no values.
 [To be populated during integration]

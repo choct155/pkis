@@ -22,6 +22,8 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - sutton-reinforcement-2018-ch09
+specializes:
+- memory-based-function-approximation
 tags:
 - kernel-function
 - nonparametric
@@ -29,6 +31,8 @@ tags:
 - kernel-trick
 title: Kernel Regression for Value Estimation
 understanding: 0
+uses:
+- the-kernel-trick
 ---
 
 ## Definition
@@ -38,4 +42,6 @@ A memory-based value approximator that returns a kernel-weighted average of all 
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[the-kernel-trick]] — uses: inner-product kernels let one work in an implicit high-dimensional feature space without computing in it
+- [[memory-based-function-approximation]] — specializes: kernel regression is a memory-based method using a kernel-weighted average of stored targets
 [To be populated during integration]

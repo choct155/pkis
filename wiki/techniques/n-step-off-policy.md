@@ -15,6 +15,8 @@ date_updated: '2026-06-09'
 domain:
 - optimization
 - deep-learning
+extends:
+- n-step-sarsa
 id: pkis:technique:n-step-off-policy
 knowledge_type: technique
 maturity: evolving
@@ -29,6 +31,8 @@ tags:
 - control-variate
 title: n-step Off-policy Learning
 understanding: 0
+uses:
+- importance-sampling
 ---
 
 ## Definition
@@ -38,4 +42,6 @@ Off-policy n-step learning estimates the value function for a target policy pi w
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[importance-sampling]] — uses: weights n-step updates by the product-of-policy-ratios importance sampling ratio
+- [[n-step-sarsa]] — extends: off-policy n-step learning extends on-policy n-step Sarsa/TD via importance sampling
 [To be populated during integration]

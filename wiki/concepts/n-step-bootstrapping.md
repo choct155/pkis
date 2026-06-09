@@ -10,12 +10,16 @@ component_scores:
   prerequisites: null
   scope: null
   transfer: null
+contrasts-with:
+- monte-carlo-estimator
 coverage: 1
 date_created: '2026-06-09'
 date_updated: '2026-06-09'
 domain:
 - optimization
 - deep-learning
+generalizes:
+- temporal-difference-learning
 id: pkis:concept:n-step-bootstrapping
 knowledge_type: concept
 maturity: evolving
@@ -38,4 +42,6 @@ n-step bootstrapping is the family of temporal-difference methods that update an
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[monte-carlo-estimator]] — contrasts-with: MC sits at the far (n=infinity) end of the n-step spectrum; n-step methods bootstrap whereas pure MC does not
+- [[temporal-difference-learning]] — generalizes: n-step methods generalize one-step TD; n=1 recovers it
 [To be populated during integration]

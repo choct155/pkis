@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+analogous-to:
+- the-law-of-effect
 component_scores:
   application: null
   boundary: null
@@ -35,4 +37,5 @@ understanding: 0
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[the-law-of-effect]] — analogous-to: Instrumental conditioning is the experimental paradigm Thorndike's Law of Effect describes: behavior-contingent reinforcement shaping action selection.
 [To be populated during integration]

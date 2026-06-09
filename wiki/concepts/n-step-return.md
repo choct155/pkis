@@ -16,10 +16,14 @@ date_updated: '2026-06-09'
 domain:
 - optimization
 - deep-learning
+generalizes:
+- temporal-difference-learning
 id: pkis:concept:n-step-return
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- n-step-bootstrapping
 related_concepts: []
 sources:
 - sutton-reinforcement-2018-ch07
@@ -39,4 +43,6 @@ The n-step return is the update target used by n-step bootstrapping methods: G_{
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[temporal-difference-learning]] — generalizes: the n-step return generalizes the one-step TD target and the MC full return
+- [[n-step-bootstrapping]] — prerequisite-of: the n-step return is the target that defines all n-step methods
 [To be populated during integration]

@@ -15,6 +15,10 @@ date_created: '2026-06-09'
 date_updated: '2026-06-09'
 domain:
 - reinforcement-learning
+extends:
+- semi-gradient-td
+generalizes:
+- on-policy-distribution
 id: pkis:concept:interest-and-emphasis
 knowledge_type: concept
 maturity: evolving
@@ -38,4 +42,6 @@ A mechanism for steering limited function-approximation resources toward states 
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[on-policy-distribution]] — generalizes: interest generalizes the single on-policy distribution into an interest-weighted family
+- [[semi-gradient-td]] — extends: interest and emphasis add per-state weighting M_t to the n-step semi-gradient update
 [To be populated during integration]

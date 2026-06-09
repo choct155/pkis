@@ -14,7 +14,11 @@ date_created: '2026-06-09'
 date_updated: '2026-06-09'
 domain:
 - reinforcement-learning
+extends:
+- semi-gradient-td
 id: pkis:technique:semi-gradient-sarsa
+instantiates:
+- markov-decision-processes
 knowledge_type: technique
 maturity: evolving
 needs_canonical_source: false
@@ -31,6 +35,8 @@ tags:
 - mountain-car
 title: Episodic Semi-Gradient Sarsa
 understanding: 0
+uses:
+- function-approximation-rl
 ---
 
 ## Definition
@@ -49,4 +55,7 @@ This is the chapter's headline algorithm and the canonical template for value-ba
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[markov-decision-processes]] — instantiates: Semi-gradient Sarsa solves the control problem of an MDP via generalized policy iteration with approximate action values.
+- [[function-approximation-rl]] — uses: Sarsa control here represents the action-value function with a weight vector, e.g. linearly via tile-coded features.
+- [[semi-gradient-td]] — extends: Episodic semi-gradient Sarsa extends semi-gradient TD(0) from state values to action values and to on-policy control.
 [To be populated during integration]

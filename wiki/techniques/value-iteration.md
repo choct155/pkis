@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- markov-decision-processes
 component_scores:
   alternatives: null
   conditions: null
@@ -16,18 +18,25 @@ domain:
 - reinforcement-learning
 - optimization
 id: pkis:technique:value-iteration
+instantiates:
+- generalized-policy-iteration
 knowledge_type: technique
 maturity: evolving
 needs_canonical_source: false
 related_concepts: []
 sources:
 - sutton-reinforcement-2018-ch04
+specializes:
+- policy-iteration
 tags:
 - dynamic-programming
 - bellman-optimality
 - optimal-policy
 title: Value Iteration
 understanding: 0
+uses:
+- policy-improvement
+- bootstrapping-rl
 ---
 
 ## Definition
@@ -48,4 +57,9 @@ Value iteration is the second classical DP algorithm and the most direct realiza
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[markov-decision-processes]] — applies: Solves a finite MDP given its known dynamics.
+- [[bootstrapping-rl]] — uses: Bootstraps estimates from estimates of successor states.
+- [[generalized-policy-iteration]] — instantiates: Value iteration interleaves evaluation and improvement at one sweep each.
+- [[policy-improvement]] — uses: The max operator folds policy improvement into each sweep.
+- [[policy-iteration]] — specializes: Value iteration is policy iteration with policy evaluation truncated to a single sweep.
 [To be populated during integration]

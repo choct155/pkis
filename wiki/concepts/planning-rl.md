@@ -30,6 +30,8 @@ tags:
 - value-functions
 title: Planning (Reinforcement Learning)
 understanding: 0
+uses:
+- markov-decision-processes
 ---
 
 ## Definition
@@ -39,4 +41,5 @@ Any computational process that takes a model of the environment as input and pro
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[markov-decision-processes]] — uses: State-space planning searches the MDP state space and backs up MDP value functions.
 [To be populated during integration]

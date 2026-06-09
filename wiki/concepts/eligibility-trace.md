@@ -32,6 +32,8 @@ tags:
 - temporal-credit
 title: Eligibility Trace
 understanding: 0
+uses:
+- sutton-reinforcement-2018-ch12
 ---
 
 ## Definition
@@ -41,4 +43,5 @@ An eligibility trace is a short-term, decaying memory at each parameter (or syna
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[sutton-reinforcement-2018-ch12]] — uses: Eligibility traces are the subject of Ch. 12; Ch. 15 connects them to synaptic plasticity / STDP.
 [To be populated during integration]

@@ -19,6 +19,8 @@ id: pkis:concept:policy
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- reinforcement-learning
 related_concepts: []
 sources:
 - sutton-reinforcement-2018-ch01
@@ -29,6 +31,8 @@ tags:
 - state-action-mapping
 title: Policy
 understanding: 0
+uses:
+- value-function
 ---
 
 ## Definition
@@ -51,4 +55,6 @@ The policy is the object that solution methods are trying to find or improve, ma
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[reinforcement-learning]] — prerequisite-of: The policy is the core decision structure an RL agent learns and improves.
+- [[value-function]] — uses: Value-based agents derive or improve the policy by acting greedily with respect to estimated values.
 [To be populated during integration]

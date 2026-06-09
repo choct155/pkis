@@ -22,6 +22,8 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - sutton-reinforcement-2018-ch08
+specializes:
+- expected-vs-sample-updates
 tags:
 - reinforcement-learning
 - dynamic-programming
@@ -30,6 +32,8 @@ tags:
 - stochastic-shortest-path
 title: Real-Time Dynamic Programming (RTDP)
 understanding: 0
+uses:
+- trajectory-sampling
 ---
 
 ## Definition
@@ -39,4 +43,6 @@ An on-policy, trajectory-sampling version of the value-iteration algorithm (Bart
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[expected-vs-sample-updates]] — specializes: RTDP applies expected value-iteration updates along visited trajectories.
+- [[trajectory-sampling]] — uses: RTDP is an on-policy trajectory-sampling version of value iteration.
 [To be populated during integration]

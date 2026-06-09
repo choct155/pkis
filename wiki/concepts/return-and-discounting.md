@@ -20,6 +20,9 @@ id: pkis:concept:return-and-discounting
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- state-value-function
+- action-value-function
 related_concepts: []
 sources:
 - sutton-reinforcement-2018-ch03
@@ -49,4 +52,6 @@ The return is the precise object value functions estimate; its recursive form is
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[action-value-function]] — prerequisite-of: Action values are expected returns conditioned on a state-action pair.
+- [[state-value-function]] — prerequisite-of: Value functions are defined as the expected return.
 [To be populated during integration]

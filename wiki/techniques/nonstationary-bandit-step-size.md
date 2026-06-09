@@ -14,6 +14,8 @@ date_created: '2026-06-09'
 date_updated: '2026-06-09'
 domain:
 - reinforcement-learning
+generalizes:
+- incremental-sample-average-update
 id: pkis:technique:nonstationary-bandit-step-size
 knowledge_type: technique
 maturity: evolving
@@ -29,6 +31,8 @@ tags:
 - recency-weighting
 title: Constant Step-Size for Nonstationary Bandits
 understanding: 0
+uses:
+- weak-law-of-large-numbers
 ---
 
 ## Definition
@@ -51,4 +55,6 @@ Nonstationarity is the rule, not the exception, in reinforcement learning: even 
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[weak-law-of-large-numbers]] — uses: contrasts decaying 1/n (which converges by LLN) with constant alpha (which tracks)
+- [[incremental-sample-average-update]] — generalizes: constant alpha replaces 1/n, yielding recency-weighted averaging
 [To be populated during integration]

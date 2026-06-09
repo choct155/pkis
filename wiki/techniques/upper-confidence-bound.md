@@ -9,11 +9,15 @@ component_scores:
   implementation: null
   operational_mechanism: null
   principled_mechanism: null
+contrasts-with:
+- epsilon-greedy
 coverage: 1
 date_created: '2026-06-09'
 date_updated: '2026-06-09'
 domain:
 - reinforcement-learning
+extends:
+- action-value-methods
 id: pkis:technique:upper-confidence-bound
 knowledge_type: technique
 maturity: evolving
@@ -29,6 +33,8 @@ tags:
 - optimism
 title: Upper Confidence Bound (UCB) Action Selection
 understanding: 0
+uses:
+- confidence-interval
 ---
 
 ## Definition
@@ -49,4 +55,7 @@ UCB is hard to extend beyond bandits: it copes poorly with nonstationarity and w
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[confidence-interval]] — uses: selects the upper confidence bound on each action's value
+- [[epsilon-greedy]] — contrasts-with: directed optimism-under-uncertainty vs. undirected random exploration
+- [[action-value-methods]] — extends: adds an uncertainty bonus to value estimates for directed exploration
 [To be populated during integration]

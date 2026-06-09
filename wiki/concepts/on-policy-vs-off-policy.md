@@ -10,6 +10,8 @@ component_scores:
   prerequisites: null
   scope: null
   transfer: null
+contrasts-with:
+- exploring-starts
 coverage: 1
 date_created: '2026-06-09'
 date_updated: '2026-06-09'
@@ -45,4 +47,5 @@ This distinction structures essentially all of reinforcement learning beyond thi
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[exploring-starts]] — contrasts-with: On-policy soft policies and off-policy behavior policies are the two general alternatives to the unrealistic exploring-starts assumption for maintaining exploration.
 [To be populated during integration]

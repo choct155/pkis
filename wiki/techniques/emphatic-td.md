@@ -15,6 +15,8 @@ date_updated: '2026-06-09'
 domain:
 - reinforcement-learning
 - optimization
+extends:
+- semi-gradient-td
 id: pkis:technique:emphatic-td
 knowledge_type: technique
 maturity: evolving
@@ -32,6 +34,8 @@ tags:
 - pseudo-termination
 title: Emphatic-TD Methods
 understanding: 0
+uses:
+- importance-sampling
 ---
 
 ## Definition
@@ -41,4 +45,6 @@ An off-policy stabilization strategy that, rather than building a true SGD metho
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[importance-sampling]] — uses: Emphasis accumulates IS ratios (M_t = gamma rho_{t-1} M_{t-1} + I_t) to warp the update distribution toward on-policy.
+- [[semi-gradient-td]] — extends: Emphatic-TD reweights semi-gradient TD updates (by emphasis M_t) to restore on-policy-like stability.
 [To be populated during integration]

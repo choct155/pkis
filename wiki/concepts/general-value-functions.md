@@ -16,6 +16,8 @@ date_updated: '2026-06-09'
 domain:
 - optimization
 - deep-learning
+generalizes:
+- markov-decision-processes
 id: pkis:concept:general-value-functions
 knowledge_type: concept
 maturity: evolving
@@ -35,4 +37,5 @@ understanding: 0
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[markov-decision-processes]] — generalizes: GVFs relax the MDP value function along policy, state-dependent termination, and the accumulated signal (cumulant) rather than reward.
 [To be populated during integration]

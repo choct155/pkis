@@ -26,6 +26,9 @@ sources:
 tags: []
 title: Intrinsically-Motivated Reinforcement Learning
 understanding: 0
+uses:
+- general-value-functions
+- options-framework
 ---
 
 ## Definition
@@ -35,4 +38,6 @@ understanding: 0
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[options-framework]] — uses: Curiosity-driven agents construct options (skills) as self-generated subgoals, building competence hierarchically for future unknown tasks.
+- [[general-value-functions]] — uses: Intrinsic-reward agents pose tasks for themselves by defining their own GVFs, auxiliary tasks, and options driven by learning progress, novelty, or empowerment.
 [To be populated during integration]

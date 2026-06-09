@@ -10,6 +10,8 @@ component_scores:
   prerequisites: null
   scope: null
   transfer: null
+contrasts-with:
+- function-approximation-rl
 coverage: 1
 date_created: '2026-06-09'
 date_updated: '2026-06-09'
@@ -22,6 +24,8 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - sutton-reinforcement-2018-ch10
+specializes:
+- markov-decision-processes
 tags:
 - average-reward
 - continuing-tasks
@@ -49,4 +53,6 @@ This chapter argues the discounted control objective is futile under function ap
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[markov-decision-processes]] — specializes: The average-reward setting is one of the classical MDP optimization criteria, used here for continuing control.
+- [[function-approximation-rl]] — contrasts-with: The chapter shows the discounted objective is futile under function approximation, motivating average-reward as its replacement for approximate continuing control.
 [To be populated during integration]

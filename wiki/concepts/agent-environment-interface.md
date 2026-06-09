@@ -19,6 +19,8 @@ id: pkis:concept:agent-environment-interface
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- reinforcement-learning
 related_concepts: []
 sources:
 - sutton-reinforcement-2018-ch01
@@ -50,4 +52,5 @@ This loop—state, action, reward, repeat—is the common skeleton onto which MD
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[reinforcement-learning]] — prerequisite-of: The agent/environment/state/action/reward loop is the structure RL operates over.
 [To be populated during integration]

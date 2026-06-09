@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- multi-armed-bandit
 component_scores:
   alternatives: null
   conditions: null
@@ -9,6 +11,8 @@ component_scores:
   implementation: null
   operational_mechanism: null
   principled_mechanism: null
+contrasts-with:
+- upper-confidence-bound
 coverage: 1
 date_created: '2026-06-09'
 date_updated: '2026-06-09'
@@ -29,6 +33,9 @@ tags:
 - conjugate-prior
 title: Thompson Sampling (Posterior Sampling)
 understanding: 0
+uses:
+- conjugate-prior
+- bayesian-inference
 ---
 
 ## Definition
@@ -46,4 +53,8 @@ Thompson sampling (a.k.a. posterior sampling) often matches the best distributio
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[upper-confidence-bound]] — contrasts-with: probability-matching Bayesian exploration vs. deterministic optimism bound
+- [[bayesian-inference]] — uses: maintains and samples from a posterior over action values
+- [[conjugate-prior]] — uses: closed-form posterior updates rely on conjugate priors
+- [[multi-armed-bandit]] — applies: Bayesian posterior-sampling exploration for the bandit
 [To be populated during integration]

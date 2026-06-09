@@ -9,6 +9,8 @@ component_scores:
   implementation: null
   operational_mechanism: null
   principled_mechanism: null
+contrasts-with:
+- prioritized-sweeping
 coverage: 1
 date_created: '2026-06-09'
 date_updated: '2026-06-09'
@@ -39,4 +41,5 @@ A way of distributing planning updates by simulating individual trajectories und
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[prioritized-sweeping]] — contrasts-with: Forward focusing (on-policy trajectory sampling) vs. backward focusing (prioritized sweeping) as update-distribution strategies.
 [To be populated during integration]

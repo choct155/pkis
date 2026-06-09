@@ -20,6 +20,8 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - sutton-reinforcement-2018-ch03
+specializes:
+- return-and-discounting
 tags: []
 title: Bellman Equation
 understanding: 0
@@ -46,4 +48,5 @@ The Bellman equation is the structural backbone of RL: it turns the definition o
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[return-and-discounting]] — specializes: Derived by taking expectations of the recursive return G_t = R_{t+1} + gamma G_{t+1}.
 [To be populated during integration]

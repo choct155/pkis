@@ -9,6 +9,8 @@ component_scores:
   implementation: null
   operational_mechanism: null
   principled_mechanism: null
+contrasts-with:
+- semi-gradient-td
 coverage: 1
 date_created: '2026-06-09'
 date_updated: '2026-06-09'
@@ -16,12 +18,16 @@ domain:
 - reinforcement-learning
 - optimization
 id: pkis:technique:lstd
+instantiates:
+- td-fixed-point
 knowledge_type: technique
 maturity: evolving
 needs_canonical_source: false
 related_concepts: []
 sources:
 - sutton-reinforcement-2018-ch09
+specializes:
+- linear-function-approximation-rl
 tags:
 - temporal-difference
 - linear-methods
@@ -38,4 +44,7 @@ The most data-efficient linear TD(0) prediction method (Bradtke & Barto 1996): r
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[semi-gradient-td]] — contrasts-with: LSTD is more data-efficient but O(d^2) per step versus O(d) for semi-gradient TD
+- [[td-fixed-point]] — instantiates: LSTD computes the TD fixed point w = A-inverse b directly from estimated A and b
+- [[linear-function-approximation-rl]] — specializes: LSTD is a direct least-squares solver for the linear TD fixed point
 [To be populated during integration]

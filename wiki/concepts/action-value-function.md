@@ -16,6 +16,8 @@ date_updated: '2026-06-09'
 domain:
 - reinforcement-learning
 - optimization
+generalizes:
+- state-value-function
 id: pkis:concept:action-value-function
 knowledge_type: concept
 maturity: evolving
@@ -26,6 +28,8 @@ sources:
 tags: []
 title: Action-Value Function (Q)
 understanding: 0
+uses:
+- bellman-equation
 ---
 
 ## Definition
@@ -49,4 +53,6 @@ $q_\pi$ is the object learned by value-based control methods (Q-learning, Sarsa)
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[state-value-function]] — generalizes: v_pi(s) = sum_a pi(a|s) q_pi(s,a); state value is the policy-average of action values.
+- [[bellman-equation]] — uses: q_pi obeys an analogous Bellman recursion.
 [To be populated during integration]

@@ -1,6 +1,10 @@
 ---
 aliases: []
 also_type: []
+analogous-to:
+- temporal-difference-error
+applies:
+- temporal-difference-error
 component_scores:
   conditions: null
   implications: null
@@ -15,6 +19,8 @@ domain:
 - optimization
 - deep-learning
 id: pkis:result:reward-prediction-error-hypothesis
+instantiates:
+- sutton-reinforcement-2018-ch15
 knowledge_type: result
 maturity: evolving
 needs_canonical_source: false
@@ -29,6 +35,8 @@ tags:
 - neuroscience
 title: Reward Prediction Error Hypothesis of Dopamine Neuron Activity
 understanding: 0
+uses:
+- temporal-difference-error
 ---
 
 ## Definition
@@ -38,4 +46,8 @@ The hypothesis (first explicitly stated by Montague, Dayan & Sejnowski, 1996, bu
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[sutton-reinforcement-2018-ch15]] — instantiates: The hypothesis is the central result developed in Ch. 15 (Neuroscience).
+- [[temporal-difference-error]] — applies: Ch. 15 applies the TD-error concept to interpret midbrain dopamine signaling — a neuroscience domain.
+- [[temporal-difference-error]] — analogous-to: Same TD-error structure realized in a different mechanism/domain: dopamine neuromodulation in the mammalian brain vs. an algorithmic update in RL.
+- [[temporal-difference-error]] — uses: The hypothesis identifies phasic dopamine activity with the RL temporal-difference error delta.
 [To be populated during integration]

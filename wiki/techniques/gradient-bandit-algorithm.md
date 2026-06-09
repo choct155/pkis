@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- multi-armed-bandit
 component_scores:
   alternatives: null
   conditions: null
@@ -15,6 +17,8 @@ date_updated: '2026-06-09'
 domain:
 - reinforcement-learning
 id: pkis:technique:gradient-bandit-algorithm
+instantiates:
+- stochastic-gradient-descent
 knowledge_type: technique
 maturity: evolving
 needs_canonical_source: false
@@ -30,6 +34,8 @@ tags:
 - softmax
 title: Gradient Bandit Algorithm
 understanding: 0
+uses:
+- softmax-action-selection
 ---
 
 ## Definition
@@ -50,4 +56,7 @@ The gradient bandit is the conceptual seed of *policy-gradient* and *actor–cri
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[multi-armed-bandit]] — applies: learns action preferences rather than action values on the bandit
+- [[stochastic-gradient-descent]] — instantiates: expected update equals the gradient of expected reward (ascent)
+- [[softmax-action-selection]] — uses: selects actions from a soft-max distribution over learned preferences
 [To be populated during integration]

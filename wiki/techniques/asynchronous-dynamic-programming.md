@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- markov-decision-processes
 component_scores:
   alternatives: null
   conditions: null
@@ -9,13 +11,19 @@ component_scores:
   implementation: null
   operational_mechanism: null
   principled_mechanism: null
+contrasts-with:
+- curse-of-dimensionality
 coverage: 1
 date_created: '2026-06-09'
 date_updated: '2026-06-09'
 domain:
 - reinforcement-learning
 - optimization
+extends:
+- value-iteration
 id: pkis:technique:asynchronous-dynamic-programming
+instantiates:
+- generalized-policy-iteration
 knowledge_type: technique
 maturity: evolving
 needs_canonical_source: false
@@ -46,4 +54,8 @@ Full sweeps are infeasible when the state set is enormous — backgammon has ove
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[curse-of-dimensionality]] — contrasts-with: Mitigates the cost of huge state sets by avoiding full sweeps.
+- [[markov-decision-processes]] — applies: Solves large finite MDPs without full sweeps.
+- [[value-iteration]] — extends: Drops systematic sweeps; updates states in arbitrary order.
+- [[generalized-policy-iteration]] — instantiates: Fine-grained, per-state interleaving of evaluation and improvement.
 [To be populated during integration]

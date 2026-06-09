@@ -15,7 +15,11 @@ date_updated: '2026-06-09'
 domain:
 - optimization
 - deep-learning
+extends:
+- rollout-algorithms
 id: pkis:technique:monte-carlo-tree-search
+instantiates:
+- decision-time-planning
 knowledge_type: technique
 maturity: evolving
 needs_canonical_source: false
@@ -31,6 +35,8 @@ tags:
 - alphago
 title: Monte Carlo Tree Search (MCTS)
 understanding: 0
+uses:
+- monte-carlo-estimator
 ---
 
 ## Definition
@@ -40,4 +46,7 @@ A decision-time planning method (Coulom, 2006; Kocsis & Szepesvari, 2006) that e
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[decision-time-planning]] — instantiates: MCTS is executed per state to select that state's action.
+- [[monte-carlo-estimator]] — uses: MCTS estimates tree-edge action values as averages of simulated returns.
+- [[rollout-algorithms]] — extends: MCTS is a rollout algorithm augmented with a tree of accumulated value estimates and a tree policy.
 [To be populated during integration]

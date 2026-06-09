@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- maximization-bias
 component_scores:
   alternatives: null
   conditions: null
@@ -15,6 +17,8 @@ date_updated: '2026-06-09'
 domain:
 - reinforcement-learning
 - optimization
+extends:
+- q-learning
 id: pkis:technique:double-q-learning
 knowledge_type: technique
 maturity: evolving
@@ -47,4 +51,6 @@ Double learning doubles the memory requirement but does *not* increase computati
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[maximization-bias]] — applies: Double Q-learning exists specifically to eliminate maximization bias
+- [[q-learning]] — extends: applies double learning to Q-learning to remove maximization bias
 [To be populated during integration]

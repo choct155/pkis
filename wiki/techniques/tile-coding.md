@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- curse-of-dimensionality
 component_scores:
   alternatives: null
   conditions: null
@@ -21,6 +23,8 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - sutton-reinforcement-2018-ch09
+specializes:
+- coarse-coding
 tags:
 - coarse-coding
 - feature-construction
@@ -29,6 +33,8 @@ tags:
 - cmac
 title: Tile Coding
 understanding: 0
+uses:
+- hash-function
 ---
 
 ## Definition
@@ -38,4 +44,7 @@ A computationally efficient form of coarse coding for multi-dimensional continuo
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[curse-of-dimensionality]] — applies: hashed tile coding makes memory match task demands rather than scaling exponentially in dimension
+- [[hash-function]] — uses: hashing pseudo-randomly collapses large tilings into fewer tiles to cut memory
+- [[coarse-coding]] — specializes: tile coding is coarse coding with multiple offset partition tilings
 [To be populated during integration]

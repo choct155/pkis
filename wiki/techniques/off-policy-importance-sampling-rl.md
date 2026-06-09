@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- on-policy-vs-off-policy
 component_scores:
   alternatives: null
   conditions: null
@@ -22,6 +24,8 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - sutton-reinforcement-2018-ch05
+specializes:
+- importance-sampling
 tags:
 - reinforcement-learning
 - importance-sampling
@@ -31,6 +35,8 @@ tags:
 - variance
 title: Off-policy Importance Sampling for Returns (RL)
 understanding: 0
+uses:
+- bias-variance-tradeoff
 ---
 
 ## Definition
@@ -45,4 +51,7 @@ Almost every off-policy method rests on importance sampling, so this is the work
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[bias-variance-tradeoff]] — uses: Ordinary (unbiased, high/infinite variance) vs. weighted (biased, low variance) importance sampling is a direct instance of the bias-variance tradeoff.
+- [[on-policy-vs-off-policy]] — applies: Importance sampling is the correction mechanism that makes off-policy learning (target policy != behavior policy) tractable.
+- [[importance-sampling]] — specializes: Applies the general importance-sampling reweighting to off-policy RL, with the target/behavior policies playing the role of target/proposal distributions and the MDP dynamics cancelling.
 [To be populated during integration]

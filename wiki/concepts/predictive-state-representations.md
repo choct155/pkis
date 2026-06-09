@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+analogous-to:
+- general-value-functions
 component_scores:
   application: null
   boundary: null
@@ -35,4 +37,5 @@ understanding: 0
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[general-value-functions]] — analogous-to: PSRs ground agent state in predictions of future observable tests, the same prediction-as-state-feature heuristic behind GVFs; a Markov state suffices to determine any test probability or any GVF.
 [To be populated during integration]

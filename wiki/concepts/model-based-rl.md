@@ -10,6 +10,8 @@ component_scores:
   prerequisites: null
   scope: null
   transfer: null
+contrasts-with:
+- expected-vs-sample-updates
 coverage: 1
 date_created: '2026-06-09'
 date_updated: '2026-06-09'
@@ -31,6 +33,8 @@ tags:
 - distribution-model
 title: Model-Based Reinforcement Learning
 understanding: 0
+uses:
+- planning-rl
 ---
 
 ## Definition
@@ -40,4 +44,6 @@ Reinforcement learning methods that rely on a model of the environment and use p
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[expected-vs-sample-updates]] — contrasts-with: Distribution models enable expected updates; sample models enable sample updates.
+- [[planning-rl]] — uses: Model-based RL relies on planning as its primary component to improve policy from the model.
 [To be populated during integration]

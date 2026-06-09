@@ -9,6 +9,8 @@ component_scores:
   implementation: null
   operational_mechanism: null
   principled_mechanism: null
+contrasts-with:
+- decision-time-planning
 coverage: 1
 date_created: '2026-06-09'
 date_updated: '2026-06-09'
@@ -16,6 +18,8 @@ domain:
 - optimization
 - deep-learning
 id: pkis:technique:dyna-q
+instantiates:
+- model-based-rl
 knowledge_type: technique
 maturity: evolving
 needs_canonical_source: false
@@ -30,6 +34,8 @@ tags:
 - model-learning
 title: Dyna-Q
 understanding: 0
+uses:
+- planning-rl
 ---
 
 ## Definition
@@ -39,4 +45,7 @@ A simple architecture (Sutton, 1990) that integrates planning, acting, model-lea
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[decision-time-planning]] — contrasts-with: Dyna-Q exemplifies background planning (improving a global value function), opposed to decision-time planning.
+- [[planning-rl]] — uses: Dyna-Q performs n background-planning Q-learning updates per real step on simulated experience.
+- [[model-based-rl]] — instantiates: Dyna-Q is a concrete integrated model-based RL architecture (model-learning + planning + direct RL).
 [To be populated during integration]

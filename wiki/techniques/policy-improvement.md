@@ -19,6 +19,8 @@ id: pkis:technique:policy-improvement
 knowledge_type: technique
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- policy-iteration
 related_concepts: []
 sources:
 - sutton-reinforcement-2018-ch04
@@ -48,4 +50,5 @@ Policy improvement turns an evaluated policy into a strictly better one, providi
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[policy-iteration]] — prerequisite-of: Policy improvement is a building block that must be understood first.
 [To be populated during integration]

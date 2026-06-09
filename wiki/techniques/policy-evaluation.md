@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- markov-decision-processes
 component_scores:
   alternatives: null
   conditions: null
@@ -19,6 +21,8 @@ id: pkis:technique:policy-evaluation
 knowledge_type: technique
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- policy-iteration
 related_concepts: []
 sources:
 - sutton-reinforcement-2018-ch04
@@ -28,6 +32,8 @@ tags:
 - value-function
 title: Policy Evaluation
 understanding: 0
+uses:
+- bootstrapping-rl
 ---
 
 ## Definition
@@ -48,4 +54,7 @@ Policy evaluation is the foundational subroutine of dynamic programming: it make
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[markov-decision-processes]] — applies: Computes the value function of a policy for a finite MDP.
+- [[bootstrapping-rl]] — uses: Updates v(s) from estimated successor values v(s').
+- [[policy-iteration]] — prerequisite-of: Policy evaluation is the evaluation half of the loop.
 [To be populated during integration]

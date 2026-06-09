@@ -22,6 +22,8 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - sutton-reinforcement-2018-ch10
+specializes:
+- average-reward-setting
 tags:
 - differential-return
 - average-reward
@@ -51,4 +53,5 @@ Differential values are what make undiscounted continuing control learnable: nea
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[average-reward-setting]] — specializes: Differential returns and differential value functions are the return/value objects of the average-reward formulation.
 [To be populated during integration]

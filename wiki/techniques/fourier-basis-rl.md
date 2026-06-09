@@ -9,6 +9,8 @@ component_scores:
   implementation: null
   operational_mechanism: null
   principled_mechanism: null
+contrasts-with:
+- polynomial-basis-rl
 coverage: 1
 date_created: '2026-06-09'
 date_updated: '2026-06-09'
@@ -21,6 +23,8 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - sutton-reinforcement-2018-ch09
+specializes:
+- linear-function-approximation-rl
 tags:
 - feature-construction
 - fourier-series
@@ -37,4 +41,6 @@ A linear feature set built from the Fourier series (Konidaris, Osentoski & Thoma
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[polynomial-basis-rl]] — contrasts-with: Fourier features outperform polynomials in online RL, which are not recommended
+- [[linear-function-approximation-rl]] — specializes: the Fourier cosine basis is a feature set for linear value approximation
 [To be populated during integration]

@@ -21,6 +21,8 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - sutton-reinforcement-2018-ch02
+specializes:
+- action-value-methods
 tags:
 - bandits
 - value-estimation
@@ -51,4 +53,5 @@ The error-correction update is the algorithmic skeleton of nearly every RL learn
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[action-value-methods]] — specializes: constant-memory online form of the sample-average estimator
 [To be populated during integration]

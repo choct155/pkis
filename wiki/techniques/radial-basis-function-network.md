@@ -15,6 +15,8 @@ date_updated: '2026-06-09'
 domain:
 - reinforcement-learning
 - statistical-learning
+generalizes:
+- coarse-coding
 id: pkis:technique:radial-basis-function-network
 knowledge_type: technique
 maturity: evolving
@@ -22,6 +24,8 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - sutton-reinforcement-2018-ch09
+specializes:
+- linear-function-approximation-rl
 tags:
 - feature-construction
 - rbf
@@ -38,4 +42,6 @@ A linear function approximator whose features are radial basis functions—the c
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[linear-function-approximation-rl]] — specializes: an RBF network with fixed centers/widths is a linear approximator over RBF features
+- [[coarse-coding]] — generalizes: RBFs are the continuous-valued generalization of binary coarse-coding features
 [To be populated during integration]

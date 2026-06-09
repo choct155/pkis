@@ -15,6 +15,8 @@ date_updated: '2026-06-09'
 domain:
 - optimization
 - deep-learning
+extends:
+- dyna-q
 id: pkis:technique:prioritized-sweeping
 knowledge_type: technique
 maturity: evolving
@@ -30,6 +32,8 @@ tags:
 - dyna
 title: Prioritized Sweeping
 understanding: 0
+uses:
+- expected-vs-sample-updates
 ---
 
 ## Definition
@@ -39,4 +43,6 @@ A planning method (Moore & Atkeson, 1993; Peng & Williams, 1993) that focuses co
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[expected-vs-sample-updates]] — uses: Prioritized sweeping prioritizes by TD-error magnitude and (for stochastic envs) uses expected updates.
+- [[dyna-q]] — extends: Prioritized sweeping focuses Dyna-style planning updates via a priority queue instead of uniform sampling.
 [To be populated during integration]

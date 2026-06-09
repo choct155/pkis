@@ -14,6 +14,8 @@ date_created: '2026-06-09'
 date_updated: '2026-06-09'
 domain:
 - reinforcement-learning
+generalizes:
+- logistic-regression
 id: pkis:technique:softmax-action-selection
 knowledge_type: technique
 maturity: evolving
@@ -50,4 +52,5 @@ Soft-max action selection is the bridge from value-based bandit methods to *poli
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[logistic-regression]] — generalizes: two-action soft-max reduces to the logistic/sigmoid function
 [To be populated during integration]

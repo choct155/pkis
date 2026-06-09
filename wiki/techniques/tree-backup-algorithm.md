@@ -9,6 +9,8 @@ component_scores:
   implementation: null
   operational_mechanism: null
   principled_mechanism: null
+contrasts-with:
+- n-step-off-policy
 coverage: 1
 date_created: '2026-06-09'
 date_updated: '2026-06-09'
@@ -16,6 +18,8 @@ domain:
 - optimization
 - deep-learning
 id: pkis:technique:tree-backup-algorithm
+instantiates:
+- n-step-bootstrapping
 knowledge_type: technique
 maturity: evolving
 needs_canonical_source: false
@@ -38,4 +42,6 @@ The tree-backup algorithm is an n-step off-policy control method that achieves s
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[n-step-off-policy]] — contrasts-with: achieves off-policy learning without importance sampling, unlike the IS-based n-step methods
+- [[n-step-bootstrapping]] — instantiates: tree backup is an n-step off-policy control method
 [To be populated during integration]

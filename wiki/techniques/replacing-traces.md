@@ -22,6 +22,8 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - sutton-reinforcement-2018-ch12
+specializes:
+- eligibility-traces
 tags:
 - reinforcement-learning
 - eligibility-traces
@@ -37,4 +39,5 @@ The family of update rules for the eligibility-trace vector. An accumulating tra
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[eligibility-traces]] — specializes: accumulating, replacing, and dutch traces are specific update rules for the eligibility-trace vector
 [To be populated during integration]

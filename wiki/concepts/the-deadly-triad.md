@@ -21,6 +21,9 @@ id: pkis:concept:the-deadly-triad
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- gradient-td-methods
+- emphatic-td
 related_concepts: []
 sources:
 - sutton-reinforcement-2018-ch11
@@ -33,6 +36,8 @@ tags:
 - td-learning
 title: The Deadly Triad
 understanding: 0
+uses:
+- semi-gradient-td
 ---
 
 ## Definition
@@ -42,4 +47,7 @@ The deadly triad names the three properties whose simultaneous presence makes a 
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[emphatic-td]] — prerequisite-of: Emphatic-TD is the second remedy for off-policy instability under the deadly triad.
+- [[gradient-td-methods]] — prerequisite-of: Gradient-TD is motivated as a remedy that keeps all three triad elements while restoring stability.
+- [[semi-gradient-td]] — uses: The triad's instability manifests specifically in bootstrapping semi-gradient TD methods.
 [To be populated during integration]

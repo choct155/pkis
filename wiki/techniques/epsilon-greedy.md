@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- exploration-exploitation-tradeoff
 component_scores:
   alternatives: null
   conditions: null
@@ -14,6 +16,8 @@ date_created: '2026-06-09'
 date_updated: '2026-06-09'
 domain:
 - reinforcement-learning
+extends:
+- action-value-methods
 id: pkis:technique:epsilon-greedy
 knowledge_type: technique
 maturity: evolving
@@ -48,4 +52,6 @@ $\varepsilon$-greedy is the default exploration heuristic across reinforcement l
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[exploration-exploitation-tradeoff]] — applies: simplest balancing rule: explore with probability epsilon
+- [[action-value-methods]] — extends: adds random exploration to greedy action selection
 [To be populated during integration]

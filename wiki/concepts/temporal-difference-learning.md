@@ -1,6 +1,9 @@
 ---
 aliases: []
 also_type: []
+applies:
+- credit-assignment-problem
+- markov-decision-processes
 component_scores:
   application: null
   boundary: null
@@ -10,6 +13,8 @@ component_scores:
   prerequisites: null
   scope: null
   transfer: null
+contrasts-with:
+- monte-carlo-estimator
 coverage: 1
 date_created: '2026-06-09'
 date_updated: '2026-06-09'
@@ -19,6 +24,10 @@ id: pkis:concept:temporal-difference-learning
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- sarsa
+- q-learning
+- n-step-bootstrapping
 related_concepts: []
 sources:
 - sutton-reinforcement-2018-ch01
@@ -32,6 +41,11 @@ tags:
 - incremental-learning
 title: Temporal-Difference Learning
 understanding: 0
+uses:
+- markov-decision-processes
+- markov-chains
+- td-error
+- reward-signal
 ---
 
 ## Definition
@@ -54,4 +68,14 @@ TD learning lets an agent learn from raw experience without a model and without 
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[markov-decision-processes]] — applies: TD learning is a solution method for the RL problem formalized as a Markov decision process (prediction and control).
+- [[reward-signal]] — uses: The TD error R_{t+1} + gamma*V(S_{t+1}) - V(S_t) combines the reward signal R with the temporal difference of value predictions.
+- [[n-step-bootstrapping]] — prerequisite-of: one-step TD must be understood before its n-step generalization
+- [[monte-carlo-estimator]] — contrasts-with: TD samples and bootstraps; Monte Carlo samples the full return without bootstrapping
+- [[q-learning]] — prerequisite-of: Q-learning is a TD control method
+- [[sarsa]] — prerequisite-of: Sarsa is TD prediction applied to action values, folded into control
+- [[td-error]] — uses: the TD(0) update is driven by the TD error in brackets
+- [[markov-chains]] — uses: prediction is studied on Markov reward processes (Markov chains with rewards), e.g. the Random Walk example
+- [[markov-decision-processes]] — uses: TD prediction/control operate within the MDP (and MRP) framework
+- [[credit-assignment-problem]] — applies: TD learning backs up value estimates to assign delayed credit to earlier decisions.
 [To be populated during integration]

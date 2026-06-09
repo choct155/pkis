@@ -9,6 +9,8 @@ component_scores:
   implementation: null
   operational_mechanism: null
   principled_mechanism: null
+contrasts-with:
+- policy-parameterization-softmax
 coverage: 1
 date_created: '2026-06-09'
 date_updated: '2026-06-09'
@@ -30,6 +32,9 @@ tags:
 - eligibility-vector
 title: Gaussian Policy for Continuous Actions
 understanding: 0
+uses:
+- policy-gradient-methods
+- gaussian-distribution
 ---
 
 ## Definition
@@ -49,4 +54,7 @@ The mean update pushes toward sampled actions in proportion to their advantage; 
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[policy-parameterization-softmax]] — contrasts-with: Softmax handles discrete action sets by per-action preferences; the Gaussian policy handles continuous action sets by learning distribution statistics instead.
+- [[gaussian-distribution]] — uses: The continuous-action policy IS a state-conditioned Gaussian density; mean and (log) standard deviation are the learned function approximators.
+- [[policy-gradient-methods]] — uses: Parameterizing a normal density over real-valued actions lets all policy-gradient algorithms handle continuous control.
 [To be populated during integration]

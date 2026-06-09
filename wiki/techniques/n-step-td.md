@@ -16,12 +16,16 @@ domain:
 - optimization
 - deep-learning
 id: pkis:technique:n-step-td
+instantiates:
+- n-step-bootstrapping
 knowledge_type: technique
 maturity: evolving
 needs_canonical_source: false
 related_concepts: []
 sources:
 - sutton-reinforcement-2018-ch07
+specializes:
+- temporal-difference-learning
 tags:
 - reinforcement-learning
 - prediction
@@ -29,6 +33,8 @@ tags:
 - bootstrapping
 title: n-step TD
 understanding: 0
+uses:
+- n-step-return
 ---
 
 ## Definition
@@ -38,4 +44,7 @@ n-step TD is the prediction (policy-evaluation) algorithm that estimates the sta
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[temporal-difference-learning]] — specializes: n-step TD is a TD method whose temporal difference spans n steps
+- [[n-step-bootstrapping]] — instantiates: n-step TD is the prediction instance of n-step bootstrapping
+- [[n-step-return]] — uses: n-step TD moves V(S_t) toward the n-step return
 [To be populated during integration]

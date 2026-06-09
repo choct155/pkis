@@ -16,6 +16,8 @@ id: pkis:principle:forward-vs-backward-view
 knowledge_type: principle
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- td-lambda
 related_concepts: []
 sources:
 - sutton-reinforcement-2018-ch12
@@ -34,4 +36,5 @@ A pair of complementary perspectives on learning algorithms, central to understa
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[td-lambda]] — prerequisite-of: understanding the forward/backward-view equivalence motivates the TD(lambda) trace mechanism
 [To be populated during integration]

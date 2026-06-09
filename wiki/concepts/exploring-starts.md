@@ -20,6 +20,8 @@ id: pkis:concept:exploring-starts
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- monte-carlo-control
 related_concepts: []
 sources:
 - sutton-reinforcement-2018-ch05
@@ -45,4 +47,5 @@ It isolates the *maintaining-exploration* problem at the heart of model-free con
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[monte-carlo-control]] — prerequisite-of: Exploring starts is the assumption that makes the basic MC ES control algorithm's convergence argument go through.
 [To be populated during integration]

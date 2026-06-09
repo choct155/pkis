@@ -10,6 +10,8 @@ component_scores:
   prerequisites: null
   scope: null
   transfer: null
+contrasts-with:
+- bellman-error-vs-projected-bellman-error
 coverage: 1
 date_created: '2026-06-09'
 date_updated: '2026-06-09'
@@ -41,4 +43,5 @@ A foundational notion (distinct from the ML sense of efficient/PAC learnability)
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[bellman-error-vs-projected-bellman-error]] — contrasts-with: Learnability analysis shows the BE (and its minimizer) is not learnable, while the PBE is — the decisive argument between the two objectives.
 [To be populated during integration]

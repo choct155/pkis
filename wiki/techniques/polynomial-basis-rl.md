@@ -21,6 +21,8 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - sutton-reinforcement-2018-ch09
+specializes:
+- linear-function-approximation-rl
 tags:
 - feature-construction
 - linear-methods
@@ -37,4 +39,5 @@ Representing states by polynomial features of their numeric dimensions, the simp
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[linear-function-approximation-rl]] — specializes: polynomial features form a linear basis for value approximation
 [To be populated during integration]

@@ -16,6 +16,8 @@ domain:
 - optimization
 - deep-learning
 id: pkis:technique:rollout-algorithms
+instantiates:
+- decision-time-planning
 knowledge_type: technique
 maturity: evolving
 needs_canonical_source: false
@@ -30,6 +32,8 @@ tags:
 - simulation
 title: Rollout Algorithms
 understanding: 0
+uses:
+- monte-carlo-estimator
 ---
 
 ## Definition
@@ -39,4 +43,6 @@ Decision-time planning algorithms based on Monte Carlo control applied to simula
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[monte-carlo-estimator]] — uses: Rollout algorithms estimate action values by averaging returns over simulated trajectories (Monte Carlo control).
+- [[decision-time-planning]] — instantiates: Rollout algorithms plan at decision time by simulating from the current state and discarding estimates.
 [To be populated during integration]

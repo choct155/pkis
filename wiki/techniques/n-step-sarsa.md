@@ -16,6 +16,8 @@ domain:
 - optimization
 - deep-learning
 id: pkis:technique:n-step-sarsa
+instantiates:
+- n-step-bootstrapping
 knowledge_type: technique
 maturity: evolving
 needs_canonical_source: false
@@ -29,6 +31,8 @@ tags:
 - bootstrapping
 title: n-step Sarsa
 understanding: 0
+uses:
+- n-step-return
 ---
 
 ## Definition
@@ -38,4 +42,6 @@ n-step Sarsa is the on-policy TD control method that extends one-step Sarsa (Sar
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[n-step-bootstrapping]] — instantiates: n-step Sarsa is the on-policy control instance of n-step bootstrapping
+- [[n-step-return]] — uses: n-step Sarsa uses the action-value form of the n-step return
 [To be populated during integration]

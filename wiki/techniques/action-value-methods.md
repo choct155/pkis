@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- multi-armed-bandit
 component_scores:
   alternatives: null
   conditions: null
@@ -28,6 +30,8 @@ tags:
 - greedy
 title: Action-Value Methods
 understanding: 0
+uses:
+- weak-law-of-large-numbers
 ---
 
 ## Definition
@@ -48,4 +52,6 @@ Action-value methods are the conceptual backbone of tabular reinforcement learni
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[weak-law-of-large-numbers]] — uses: sample averages converge to q_*(a) by the law of large numbers
+- [[multi-armed-bandit]] — applies: sample-average value estimation + greedy selection solve the bandit
 [To be populated during integration]

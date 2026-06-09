@@ -14,6 +14,8 @@ date_created: '2026-06-09'
 date_updated: '2026-06-09'
 domain:
 - reinforcement-learning
+generalizes:
+- semi-gradient-sarsa
 id: pkis:technique:n-step-semi-gradient-sarsa
 knowledge_type: technique
 maturity: evolving
@@ -50,4 +52,5 @@ $n$-step methods are the standard way to tune the bias-variance trade-off in TD 
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[semi-gradient-sarsa]] — generalizes: n-step semi-gradient Sarsa generalizes the one-step version by using an n-step bootstrapped return as the target.
 [To be populated during integration]

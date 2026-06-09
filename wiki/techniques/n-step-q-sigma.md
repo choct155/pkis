@@ -15,6 +15,9 @@ date_updated: '2026-06-09'
 domain:
 - optimization
 - deep-learning
+generalizes:
+- n-step-sarsa
+- tree-backup-algorithm
 id: pkis:technique:n-step-q-sigma
 knowledge_type: technique
 maturity: evolving
@@ -30,6 +33,8 @@ tags:
 - bootstrapping
 title: n-step Q(sigma)
 understanding: 0
+uses:
+- importance-sampling
 ---
 
 ## Definition
@@ -39,4 +44,7 @@ n-step Q(sigma) is a unifying multi-step action-value algorithm that subsumes n-
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[importance-sampling]] — uses: interpolates with the importance-sampling ratio when sampling
+- [[tree-backup-algorithm]] — generalizes: Q(sigma)=pure expectation recovers tree backup
+- [[n-step-sarsa]] — generalizes: Q(sigma)=full sampling recovers n-step Sarsa
 [To be populated during integration]

@@ -23,6 +23,8 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - sutton-reinforcement-2018-ch08
+specializes:
+- planning-rl
 tags:
 - reinforcement-learning
 - planning
@@ -40,4 +42,5 @@ Using planning to select a single action for the current state St: planning begi
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[planning-rl]] — specializes: Decision-time planning is planning whose output is the action for the current state, discarded afterward.
 [To be populated during integration]

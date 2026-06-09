@@ -14,6 +14,8 @@ domain:
 - reinforcement-learning
 - optimization
 id: pkis:result:td-fixed-point
+instantiates:
+- linear-function-approximation-rl
 knowledge_type: result
 maturity: evolving
 needs_canonical_source: false
@@ -27,6 +29,8 @@ tags:
 - error-bound
 title: TD Fixed Point
 understanding: 0
+uses:
+- on-policy-distribution
 ---
 
 ## Definition
@@ -36,4 +40,6 @@ The weight vector w_TD = A⁻¹ b to which linear semi-gradient TD(0) converges,
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[on-policy-distribution]] — uses: positive definiteness of A, and hence stability, relies on updating under the on-policy distribution
+- [[linear-function-approximation-rl]] — instantiates: the TD fixed point is the convergence point of linear semi-gradient TD(0)
 [To be populated during integration]

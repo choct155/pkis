@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- stochastic-gradient-descent
 component_scores:
   alternatives: null
   conditions: null
@@ -30,6 +32,8 @@ tags:
 - baird
 title: Residual-Gradient Algorithm
 understanding: 0
+uses:
+- bellman-error-vs-projected-bellman-error
 ---
 
 ## Definition
@@ -39,4 +43,6 @@ A true SGD method (Baird, 1995) that performs gradient descent on the mean squar
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[bellman-error-vs-projected-bellman-error]] — uses: Residual-gradient minimizes the (unprojected) Bellman error.
+- [[stochastic-gradient-descent]] — applies: Residual-gradient is true SGD on the Bellman error.
 [To be populated during integration]

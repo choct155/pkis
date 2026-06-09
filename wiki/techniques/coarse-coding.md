@@ -21,6 +21,8 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - sutton-reinforcement-2018-ch09
+specializes:
+- linear-function-approximation-rl
 tags:
 - feature-construction
 - binary-features
@@ -37,4 +39,5 @@ A feature-construction scheme representing a state by overlapping receptive fiel
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[linear-function-approximation-rl]] — specializes: coarse coding supplies binary overlapping features for a linear approximator
 [To be populated during integration]

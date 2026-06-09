@@ -20,6 +20,8 @@ id: pkis:concept:td-error
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- temporal-difference-learning
 related_concepts: []
 sources:
 - sutton-reinforcement-2018-ch06
@@ -51,4 +53,5 @@ The TD error generalizes across the algorithms of the chapter: an action-value f
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[temporal-difference-learning]] — prerequisite-of: the TD error is the error signal that defines the TD update
 [To be populated during integration]

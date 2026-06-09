@@ -9,6 +9,9 @@ component_scores:
   implementation: null
   operational_mechanism: null
   principled_mechanism: null
+contrasts-with:
+- sarsa
+- maximization-bias
 coverage: 1
 date_created: '2026-06-09'
 date_updated: '2026-06-09'
@@ -22,6 +25,8 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - sutton-reinforcement-2018-ch06
+specializes:
+- temporal-difference-learning
 tags:
 - q-learning
 - off-policy
@@ -31,6 +36,8 @@ tags:
 - bootstrapping
 title: Q-learning
 understanding: 0
+uses:
+- td-error
 ---
 
 ## Definition
@@ -53,4 +60,8 @@ The $\max_a$ operator over noisy estimates induces a systematic positive maximiz
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[maximization-bias]] — contrasts-with: Q-learning's max target induces a positive maximization bias
+- [[td-error]] — uses: Q-learning update is driven by an action-value TD error with a max target
+- [[sarsa]] — contrasts-with: off-policy (max target) vs on-policy (sampled next action); Cliff-Walking shows the behavioral difference
+- [[temporal-difference-learning]] — specializes: off-policy TD control approximating q_*
 [To be populated during integration]

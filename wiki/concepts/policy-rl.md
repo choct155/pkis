@@ -20,6 +20,9 @@ id: pkis:concept:policy-rl
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- state-value-function
+- action-value-function
 related_concepts: []
 sources:
 - sutton-reinforcement-2018-ch03
@@ -49,4 +52,6 @@ The policy is the deliverable of reinforcement learning. Solving an RL task mean
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[action-value-function]] — prerequisite-of: q_pi is defined with respect to a policy pi.
+- [[state-value-function]] — prerequisite-of: v_pi is defined with respect to a policy pi.
 [To be populated during integration]

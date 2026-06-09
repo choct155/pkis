@@ -16,6 +16,8 @@ domain:
 - reinforcement-learning
 - deep-learning
 id: pkis:technique:policy-parameterization-softmax
+instantiates:
+- logistic-neuron-learning-rule
 knowledge_type: technique
 maturity: evolving
 needs_canonical_source: false
@@ -30,6 +32,8 @@ tags:
 - eligibility-vector
 title: Softmax Policy Parameterization in Action Preferences
 understanding: 0
+uses:
+- policy-gradient-methods
 ---
 
 ## Definition
@@ -49,4 +53,6 @@ i.e. the feature of the taken action minus its expected feature under the curren
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[logistic-neuron-learning-rule]] — instantiates: The two-action Bernoulli-logistic special case (Exercise 13.5) yields exactly the logistic unit P=1/(1+exp(-theta^T x)); soft-max preferences generalize the logistic neuron to multiple actions.
+- [[policy-gradient-methods]] — uses: The soft-max-in-preferences parameterization is the standard differentiable policy form plugged into policy-gradient updates for discrete actions.
 [To be populated during integration]

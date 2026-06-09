@@ -30,6 +30,8 @@ tags:
 - delayed-reward
 title: Reinforcement Learning
 understanding: 0
+uses:
+- markov-decision-processes
 ---
 
 ## Definition
@@ -50,4 +52,5 @@ It is the first framework to seriously address the computational problem of lear
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[markov-decision-processes]] — uses: RL formalizes its problem as the optimal control of an incompletely-known MDP.
 [To be populated during integration]

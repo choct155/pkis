@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- markov-decision-processes
 component_scores:
   alternatives: null
   conditions: null
@@ -15,6 +17,8 @@ date_updated: '2026-06-09'
 domain:
 - optimization
 - deep-learning
+extends:
+- sarsa
 id: pkis:technique:sarsa-lambda
 knowledge_type: technique
 maturity: evolving
@@ -22,6 +26,8 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - sutton-reinforcement-2018-ch12
+specializes:
+- td-lambda
 tags:
 - reinforcement-learning
 - control
@@ -29,6 +35,8 @@ tags:
 - action-values
 title: Sarsa(λ)
 understanding: 0
+uses:
+- eligibility-traces
 ---
 
 ## Definition
@@ -38,4 +46,8 @@ The eligibility-trace extension of Sarsa to control with approximate action valu
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[sarsa]] — extends: Sarsa(lambda) augments one-step Sarsa with eligibility traces
+- [[markov-decision-processes]] — applies: Sarsa(lambda) is a control method for learning near-optimal policies in MDPs
+- [[td-lambda]] — specializes: Sarsa(lambda) is the action-value control form of the TD(lambda) update rule
+- [[eligibility-traces]] — uses: Sarsa(lambda) maintains an action-value eligibility trace for credit assignment
 [To be populated during integration]

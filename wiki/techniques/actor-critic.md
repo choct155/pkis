@@ -9,13 +9,19 @@ component_scores:
   implementation: null
   operational_mechanism: null
   principled_mechanism: null
+contrasts-with:
+- reinforce-with-baseline
 coverage: 1
 date_created: '2026-06-09'
 date_updated: '2026-06-09'
 domain:
 - reinforcement-learning
 - optimization
+extends:
+- reinforce-with-baseline
 id: pkis:technique:actor-critic
+instantiates:
+- policy-gradient-methods
 knowledge_type: technique
 maturity: evolving
 needs_canonical_source: false
@@ -33,6 +39,8 @@ tags:
 - eligibility-traces
 title: Actor-Critic Methods
 understanding: 0
+uses:
+- sutton-reinforcement-2018-ch06
 ---
 
 ## Definition
@@ -50,4 +58,8 @@ One-step actor-critic generalizes to n-step returns ($G_{t:t+n}$), to a $\lambda
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[sutton-reinforcement-2018-ch06]] — uses: The critic is learned by semi-gradient TD(0), the temporal-difference method of Ch. 6; one-step actor-critic is the policy-gradient analog of TD(0)/Sarsa(0)/Q-learning.
+- [[reinforce-with-baseline]] — contrasts-with: Baseline uses the value of the first state (no bias, no action assessment); critic uses the second state via bootstrapping (biased, but assesses the action and reduces variance).
+- [[policy-gradient-methods]] — instantiates: Actor-critic is the policy-gradient family member that learns both policy (actor) and value function (critic).
+- [[reinforce-with-baseline]] — extends: Replaces the Monte Carlo return with a bootstrapped one-step (or n-step / lambda) return; the value function now criticizes actions via the second state, introducing bias but cutting variance.
 [To be populated during integration]

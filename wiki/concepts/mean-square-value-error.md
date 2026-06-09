@@ -29,6 +29,8 @@ tags:
 - value-function
 title: Mean Square Value Error (VE)
 understanding: 0
+uses:
+- on-policy-distribution
 ---
 
 ## Definition
@@ -38,4 +40,5 @@ The objective for value prediction under approximation: VE(w) = Σ_s μ(s) [v_π
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[on-policy-distribution]] — uses: VE weights per-state squared error by the on-policy state distribution mu
 [To be populated during integration]

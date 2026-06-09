@@ -17,6 +17,9 @@ id: pkis:result:policy-gradient-theorem
 knowledge_type: result
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- reinforce
+- policy-gradient-methods
 related_concepts: []
 sources:
 - sutton-policy-2018
@@ -47,4 +50,6 @@ This is the theoretical foundation for ALL policy-gradient algorithms (REINFORCE
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[policy-gradient-methods]] — prerequisite-of: The theorem is the theoretical foundation underpinning every member algorithm of the framework.
+- [[reinforce]] — prerequisite-of: REINFORCE is derived directly from the policy gradient theorem by converting the action sum to an expectation and sampling.
 [To be populated during integration]

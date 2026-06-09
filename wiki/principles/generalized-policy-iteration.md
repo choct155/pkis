@@ -12,6 +12,8 @@ date_updated: '2026-06-09'
 domain:
 - reinforcement-learning
 - optimization
+generalizes:
+- policy-iteration
 id: pkis:principle:generalized-policy-iteration
 knowledge_type: principle
 maturity: evolving
@@ -43,4 +45,5 @@ Almost all reinforcement-learning methods are well described as GPI: they mainta
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[policy-iteration]] — generalizes: GPI abstracts the evaluation/improvement loop away from full-sweep granularity.
 [To be populated during integration]

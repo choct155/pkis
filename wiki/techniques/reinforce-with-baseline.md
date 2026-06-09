@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+analogous-to:
+- monte-carlo-estimator
 component_scores:
   alternatives: null
   conditions: null
@@ -15,6 +17,8 @@ date_updated: '2026-06-09'
 domain:
 - reinforcement-learning
 - optimization
+extends:
+- reinforce
 id: pkis:technique:reinforce-with-baseline
 knowledge_type: technique
 maturity: evolving
@@ -22,6 +26,8 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - sutton-policy-2018
+specializes:
+- policy-gradient-theorem
 tags:
 - policy-gradient
 - variance-reduction
@@ -51,4 +57,7 @@ The baseline is precisely a control variate for the score-function (REINFORCE) g
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[monte-carlo-estimator]] — analogous-to: Baseline subtraction is a control-variate variance-reduction technique for the Monte Carlo gradient estimator, mirroring control variates used in VI gradient estimation.
+- [[policy-gradient-theorem]] — specializes: Derived from the baseline-generalized policy gradient theorem, valid because the baseline term sums to zero over actions.
+- [[reinforce]] — extends: A strict generalization adding a state-dependent baseline b(s); REINFORCE is the b=0 special case.
 [To be populated during integration]

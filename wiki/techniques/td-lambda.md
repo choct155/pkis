@@ -22,6 +22,8 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - sutton-reinforcement-2018-ch12
+specializes:
+- temporal-difference-learning
 tags:
 - reinforcement-learning
 - temporal-difference
@@ -29,6 +31,10 @@ tags:
 - eligibility-traces
 title: TD(λ)
 understanding: 0
+uses:
+- eligibility-traces
+- lambda-return
+- stochastic-gradient-descent
 ---
 
 ## Definition
@@ -38,4 +44,8 @@ The classic backward-view, eligibility-trace algorithm for state-value predictio
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[temporal-difference-learning]] — specializes: TD(lambda) is the eligibility-trace generalization of one-step TD prediction
+- [[stochastic-gradient-descent]] — uses: the semi-gradient weight update is an SGD-style update using the TD error and value gradient
+- [[lambda-return]] — uses: TD(lambda) approximates the forward-view lambda-return target via its backward-view trace mechanism
+- [[eligibility-traces]] — uses: TD(lambda) accumulates the TD error into an eligibility trace to update weights each step
 [To be populated during integration]

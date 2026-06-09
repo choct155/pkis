@@ -16,7 +16,11 @@ date_updated: '2026-06-09'
 domain:
 - optimization
 - deep-learning
+generalizes:
+- monte-carlo-estimator
 id: pkis:concept:lambda-return
+instantiates:
+- forward-vs-backward-view
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
@@ -38,4 +42,6 @@ A compound update target that averages all n-step returns, each weighted proport
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[forward-vs-backward-view]] — instantiates: the lambda-return is the canonical forward-view target
+- [[monte-carlo-estimator]] — generalizes: at lambda=1 the lambda-return reduces to the full Monte Carlo return
 [To be populated during integration]

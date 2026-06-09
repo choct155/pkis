@@ -17,6 +17,8 @@ domain:
 - deep-learning
 - knowledge-representation
 id: pkis:technique:heuristic-search-rl
+instantiates:
+- decision-time-planning
 knowledge_type: technique
 maturity: evolving
 needs_canonical_source: false
@@ -31,6 +33,8 @@ tags:
 - value-backup
 title: Heuristic Search (Reinforcement Learning)
 understanding: 0
+uses:
+- expected-vs-sample-updates
 ---
 
 ## Definition
@@ -40,4 +44,6 @@ The classical AI family of decision-time planning methods. For each state encoun
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[expected-vs-sample-updates]] — uses: Heuristic search backs up leaf values via expected updates with maxes toward the root.
+- [[decision-time-planning]] — instantiates: Heuristic search builds and backs up a search tree for the current state at decision time.
 [To be populated during integration]

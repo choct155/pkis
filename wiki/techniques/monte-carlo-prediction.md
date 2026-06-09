@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- markov-decision-processes
 component_scores:
   alternatives: null
   conditions: null
@@ -19,9 +21,13 @@ id: pkis:technique:monte-carlo-prediction
 knowledge_type: technique
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- monte-carlo-control
 related_concepts: []
 sources:
 - sutton-reinforcement-2018-ch05
+specializes:
+- monte-carlo-estimator
 tags:
 - reinforcement-learning
 - monte-carlo
@@ -31,6 +37,8 @@ tags:
 - every-visit
 title: Monte Carlo Prediction (RL)
 understanding: 0
+uses:
+- weak-law-of-large-numbers
 ---
 
 ## Definition
@@ -45,4 +53,8 @@ This is the foundational RL learning method: it shows you can learn value functi
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[weak-law-of-large-numbers]] — uses: First-visit returns are i.i.d. estimates of v_pi(s), so the average converges to the expected value by the law of large numbers.
+- [[monte-carlo-control]] — prerequisite-of: Control uses MC prediction as its policy-evaluation step inside generalized policy iteration.
+- [[markov-decision-processes]] — applies: Estimates value functions v_pi, q_pi for a policy in an episodic MDP from sampled experience without the transition model.
+- [[monte-carlo-estimator]] — specializes: MC prediction is the RL specialization of the general Monte Carlo estimator: it averages sampled returns to estimate the value (an expected return) of a state under a fixed policy.
 [To be populated during integration]

@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+analogous-to:
+- temporal-difference-learning
 component_scores:
   application: null
   boundary: null
@@ -10,6 +12,8 @@ component_scores:
   prerequisites: null
   scope: null
   transfer: null
+contrasts-with:
+- instrumental-conditioning
 coverage: 1
 date_created: '2026-06-09'
 date_updated: '2026-06-09'
@@ -35,4 +39,6 @@ understanding: 0
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[instrumental-conditioning]] — contrasts-with: Defining difference: in classical conditioning the reinforcing US is delivered independently of behavior (prediction); in instrumental conditioning reinforcement is behavior-contingent (control).
+- [[temporal-difference-learning]] — analogous-to: Sutton & Barto align classical (Pavlovian) conditioning with RL prediction; the TD model of classical conditioning treats US prediction as value estimation.
 [To be populated during integration]

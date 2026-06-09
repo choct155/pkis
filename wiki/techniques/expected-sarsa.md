@@ -15,6 +15,10 @@ date_updated: '2026-06-09'
 domain:
 - reinforcement-learning
 - optimization
+extends:
+- sarsa
+generalizes:
+- q-learning
 id: pkis:technique:expected-sarsa
 knowledge_type: technique
 maturity: evolving
@@ -22,6 +26,8 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - sutton-reinforcement-2018-ch06
+specializes:
+- temporal-difference-learning
 tags:
 - expected-sarsa
 - td-control
@@ -53,4 +59,7 @@ Introduced by George John (1994, who called it "Q-learning"); presented as an ex
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[sarsa]] — extends: replaces the sampled A_{t+1} value with its expectation, eliminating that variance and reliably improving over Sarsa
+- [[q-learning]] — generalizes: with a greedy target policy and exploratory behavior, Expected Sarsa reduces exactly to Q-learning
+- [[temporal-difference-learning]] — specializes: TD control using the expected next-action value
 [To be populated during integration]

@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- stochastic-gradient-descent
 component_scores:
   alternatives: null
   conditions: null
@@ -9,12 +11,16 @@ component_scores:
   implementation: null
   operational_mechanism: null
   principled_mechanism: null
+contrasts-with:
+- residual-gradient-algorithm
 coverage: 1
 date_created: '2026-06-09'
 date_updated: '2026-06-09'
 domain:
 - reinforcement-learning
 - optimization
+extends:
+- semi-gradient-td
 id: pkis:technique:gradient-td-methods
 knowledge_type: technique
 maturity: evolving
@@ -32,6 +38,8 @@ tags:
 - tdc
 title: Gradient-TD Methods (GTD2 and TDC)
 understanding: 0
+uses:
+- bellman-error-vs-projected-bellman-error
 ---
 
 ## Definition
@@ -41,4 +49,8 @@ A family of true stochastic-gradient-descent methods that minimize the projected
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[bellman-error-vs-projected-bellman-error]] — uses: Gradient-TD minimizes the projected Bellman error (PBE).
+- [[semi-gradient-td]] — extends: TDC = semi-gradient TD plus a gradient-correction term using a second weight vector.
+- [[residual-gradient-algorithm]] — contrasts-with: Both are true SGD methods but target the PBE vs the BE; Gradient-TD avoids the BE's learnability and double-sampling problems.
+- [[stochastic-gradient-descent]] — applies: Gradient-TD performs true SGD on the projected Bellman error.
 [To be populated during integration]

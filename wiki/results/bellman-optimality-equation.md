@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- markov-decision-processes
 component_scores:
   conditions: null
   implications: null
@@ -20,6 +22,8 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - sutton-reinforcement-2018-ch03
+specializes:
+- bellman-equation
 tags: []
 title: Bellman Optimality Equation
 understanding: 0
@@ -46,4 +50,6 @@ Dynamic programming, heuristic search, and most RL methods can be read as ways o
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[markov-decision-processes]] — applies: For a finite MDP it has a unique solution and characterizes the optimal value functions.
+- [[bellman-equation]] — specializes: Replaces the policy-average over actions with a maximum.
 [To be populated during integration]

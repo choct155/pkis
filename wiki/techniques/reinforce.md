@@ -1,6 +1,10 @@
 ---
 aliases: []
 also_type: []
+analogous-to:
+- reparameterization-trick
+applies:
+- stochastic-gradient-descent
 component_scores:
   alternatives: null
   conditions: null
@@ -16,6 +20,8 @@ domain:
 - reinforcement-learning
 - optimization
 id: pkis:technique:reinforce
+instantiates:
+- policy-gradient-methods
 knowledge_type: technique
 maturity: evolving
 needs_canonical_source: false
@@ -30,6 +36,8 @@ tags:
 - eligibility-vector
 title: REINFORCE
 understanding: 0
+uses:
+- monte-carlo-estimator
 ---
 
 ## Definition
@@ -50,4 +58,8 @@ Because it uses the complete return through episode end, REINFORCE is a Monte Ca
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[reparameterization-trick]] — analogous-to: REINFORCE's log-derivative (score-function) estimator and the reparameterization trick are the two canonical Monte Carlo gradient estimators for expectations over a parameterized distribution; same goal, different mechanism (Mohamed et al. 2020).
+- [[stochastic-gradient-descent]] — applies: REINFORCE instantiates generic stochastic gradient ascent (13.1) with a score-function sample whose expectation is proportional to the gradient.
+- [[monte-carlo-estimator]] — uses: REINFORCE uses the complete sampled return G_t as a Monte Carlo estimate of q_pi, making it a Monte Carlo gradient method well defined only episodically.
+- [[policy-gradient-methods]] — instantiates: REINFORCE is the canonical Monte Carlo instance of the policy-gradient framework.
 [To be populated during integration]

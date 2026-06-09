@@ -20,6 +20,8 @@ id: pkis:concept:temporal-difference-error
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- reward-prediction-error-hypothesis
 related_concepts: []
 sources:
 - sutton-reinforcement-2018-ch15
@@ -31,6 +33,9 @@ tags:
 - value-function
 title: Temporal-Difference Error (delta)
 understanding: 0
+uses:
+- eligibility-trace
+- sutton-reinforcement-2018-ch06
 ---
 
 ## Definition
@@ -40,4 +45,7 @@ The temporal-difference error delta_{t-1} = R_t + gamma*V(S_t) - V(S_{t-1}) is t
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[sutton-reinforcement-2018-ch06]] — uses: TD error is defined and developed in Ch. 6 (Temporal-Difference Learning).
+- [[reward-prediction-error-hypothesis]] — prerequisite-of: Understanding the TD error is required to grasp the reward-prediction-error hypothesis of dopamine activity.
+- [[eligibility-trace]] — uses: TD(lambda) and actor-critic methods combine delta with eligibility traces to assign temporal credit.
 [To be populated during integration]
