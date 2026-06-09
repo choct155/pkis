@@ -7974,3 +7974,12 @@
 ## [2026-06-09] committed | principle
 - Committed: error-cancellation-arithmetic-mean → principles/error-cancellation-arithmetic-mean.md
 - IRI: pkis:principle:error-cancellation-arithmetic-mean
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: ancillary-statistic (id: e24654bf-68c6-438f-bb08-fda649d5bcc4)
+- Title: Ancillary Statistic
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: ancillary-statistic → concepts/ancillary-statistic.md
+- IRI: pkis:concept:ancillary-statistic
