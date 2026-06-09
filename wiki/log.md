@@ -6619,3 +6619,12 @@
 ## [2026-06-09] committed | concept
 - Committed: identifiability-of-causal-effects → concepts/identifiability-of-causal-effects.md
 - IRI: pkis:concept:identifiability-of-causal-effects
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: back-door-criterion (id: f2245152-ec72-451c-bb93-6a0d012d9255)
+- Title: Back-Door Criterion
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: back-door-criterion → concepts/back-door-criterion.md
+- IRI: pkis:concept:back-door-criterion

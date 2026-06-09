@@ -290,6 +290,7 @@
 - [[liu-machine-unlearning-llm-2024]] — Rethinking Machine Unlearning for LLMs: post-training knowledge editing survey (deep-learning, ai-safety) (2026-05-20)
 
 ## Concepts
+- [[back-door-criterion]] — Back-Door Criterion (causal-analysis, bayesian-stats) (2026-06-09)
 - [[identifiability-of-causal-effects]] — Identifiability of Causal Effects (causal-analysis, bayesian-stats) (2026-06-09)
 - [[intervention-and-the-do-operator]] — Intervention and the do(·) Operator (causal-analysis, bayesian-stats) (2026-06-09)
 - [[statistical-time]] — Statistical Time (causal-analysis, time-series) (2026-06-09)
