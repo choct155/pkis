@@ -5458,3 +5458,12 @@
 ## [2026-06-09] committed | principle
 - Committed: partial-pooling-shrinkage → principles/partial-pooling-shrinkage.md
 - IRI: pkis:principle:partial-pooling-shrinkage
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: hyperprior (id: 4a278961-5cac-419f-88a1-0459fb1ff77f)
+- Title: Hyperprior Distribution
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: hyperprior → concepts/hyperprior.md
+- IRI: pkis:concept:hyperprior

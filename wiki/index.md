@@ -290,6 +290,7 @@
 - [[liu-machine-unlearning-llm-2024]] — Rethinking Machine Unlearning for LLMs: post-training knowledge editing survey (deep-learning, ai-safety) (2026-05-20)
 
 ## Concepts
+- [[hyperprior]] — Hyperprior Distribution (bayesian-stats) (2026-06-09)
 - [[unbiasedness]] — Unbiasedness (bayesian-stats, statistical-learning) (2026-06-09)
 - [[fisher-information]] — Fisher Information (bayesian-stats, statistical-learning) (2026-06-09)
 - [[large-sample-bayesian-inference]] — Large-Sample Bayesian Inference (bayesian-stats) (2026-06-09)
