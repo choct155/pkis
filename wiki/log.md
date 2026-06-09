@@ -9148,3 +9148,12 @@
 ## [2026-06-09] committed | technique
 - Committed: generalized-modus-ponens → techniques/generalized-modus-ponens.md
 - IRI: pkis:technique:generalized-modus-ponens
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: forward-chaining-fol (id: 10dcb23b-f0a0-40b1-9703-c693607bd437)
+- Title: Forward Chaining (First-Order)
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: forward-chaining-fol → techniques/forward-chaining-fol.md
+- IRI: pkis:technique:forward-chaining-fol
