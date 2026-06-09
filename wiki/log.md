@@ -5809,3 +5809,12 @@
 ## [2026-06-09] committed | technique
 - Committed: modal-approximation → techniques/modal-approximation.md
 - IRI: pkis:technique:modal-approximation
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: approximate-bayesian-computation (id: 5ed40824-f108-4c31-bfa4-ec11bac9d583)
+- Title: Approximate Bayesian Computation (ABC)
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: approximate-bayesian-computation → techniques/approximate-bayesian-computation.md
+- IRI: pkis:technique:approximate-bayesian-computation
