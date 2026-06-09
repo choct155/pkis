@@ -7570,3 +7570,12 @@
 ## [2026-06-09] committed | concept
 - Committed: brownian-motion-with-drift → concepts/brownian-motion-with-drift.md
 - IRI: pkis:concept:brownian-motion-with-drift
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: kolmogorov-smirnov-statistic (id: 226c72d3-b986-4594-8a3c-e0620d044aa8)
+- Title: Kolmogorov-Smirnov Statistic
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: kolmogorov-smirnov-statistic → techniques/kolmogorov-smirnov-statistic.md
+- IRI: pkis:technique:kolmogorov-smirnov-statistic
