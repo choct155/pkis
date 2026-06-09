@@ -5,17 +5,23 @@ import type { DomainCount } from '../types'
 // so newly-introduced domains never silently disappear from navigation.
 export const DOMAIN_FAMILIES: { family: string; domains: string[] }[] = [
   { family: 'AI & Learning', domains: [
-    'agentic-ai', 'ai-safety', 'deep-learning', 'statistical-learning',
-    'optimization', 'symbolic-subsymbolic', 'knowledge-representation',
+    'deep-learning', 'statistical-learning', 'optimization', 'reinforcement-learning',
+    'knowledge-representation', 'symbolic-subsymbolic', 'computer-vision',
+    'robotics', 'search-and-planning',
+  ] },
+  { family: 'Agents & Safety', domains: [
+    'agentic-ai', 'agentic-systems', 'multi-agent-systems', 'ai-safety', 'ai-alignment',
   ] },
   { family: 'Probability & Inference', domains: [
-    'bayesian-stats', 'causal-analysis', 'forecasting', 'time-series',
+    'bayesian-stats', 'causal-analysis', 'information-theory', 'decision-theory',
+    'time-series', 'state-space-models', 'forecasting', 'econometrics', 'signal-processing',
   ] },
   { family: 'Economics & Finance', domains: [
-    'macroeconomics', 'monetary-economics', 'corporate-finance',
+    'macroeconomics', 'monetary-economics', 'corporate-finance', 'economics', 'asset-pricing',
   ] },
   { family: 'Systems & Methods', domains: [
-    'formal-methods', 'systems-theory', 'organizational-theory',
+    'systems-theory', 'formal-methods', 'organizational-theory', 'computer-science',
+    'social-choice', 'social-science-methods', 'neuroscience',
   ] },
 ]
 
