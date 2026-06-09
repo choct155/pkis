@@ -9454,3 +9454,12 @@
 ## [2026-06-09] committed | framework
 - Committed: dynamic-bayesian-network → frameworks/dynamic-bayesian-network.md
 - IRI: pkis:framework:dynamic-bayesian-network
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: filtering-prediction-smoothing (id: 3e55b821-0e39-4ac4-b277-28e1f2c83d4b)
+- Title: Filtering, Prediction, Smoothing, and Most Likely Explanation
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: filtering-prediction-smoothing → concepts/filtering-prediction-smoothing.md
+- IRI: pkis:concept:filtering-prediction-smoothing

@@ -290,6 +290,7 @@
 - [[liu-machine-unlearning-llm-2024]] — Rethinking Machine Unlearning for LLMs: post-training knowledge editing survey (deep-learning, ai-safety) (2026-05-20)
 
 ## Concepts
+- [[filtering-prediction-smoothing]] — Filtering, Prediction, Smoothing, and Most Likely Explanation (bayesian-stats, state-space-models, time-series) (2026-06-09)
 - [[noisy-or-model]] — Noisy-OR Model (bayesian-stats, knowledge-representation) (2026-06-09)
 - [[markov-blanket]] — Markov Blanket (bayesian-stats, knowledge-representation, causal-analysis) (2026-06-09)
 - [[full-joint-probability-distribution]] — Full Joint Probability Distribution (bayesian-stats, knowledge-representation) (2026-06-09)
