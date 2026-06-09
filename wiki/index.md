@@ -290,6 +290,7 @@
 - [[liu-machine-unlearning-llm-2024]] — Rethinking Machine Unlearning for LLMs: post-training knowledge editing survey (deep-learning, ai-safety) (2026-05-20)
 
 ## Concepts
+- [[local-search]] — Local Search (optimization, search-and-planning) (2026-06-09)
 - [[admissible-and-consistent-heuristics]] — Admissible and Consistent Heuristics (optimization, knowledge-representation) (2026-06-09)
 - [[heuristic-function]] — Heuristic Function (optimization, knowledge-representation, deep-learning) (2026-06-09)
 - [[atomic-factored-structured-representations]] — Atomic, Factored, and Structured Representations (agentic-ai, knowledge-representation) (2026-06-09)

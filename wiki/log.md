@@ -8797,3 +8797,12 @@
 ## [2026-06-09] committed | technique
 - Committed: relaxed-problem-heuristics → techniques/relaxed-problem-heuristics.md
 - IRI: pkis:technique:relaxed-problem-heuristics
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: local-search (id: f4ae19d1-3229-4782-9f38-b2f5c54fd22d)
+- Title: Local Search
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: local-search → concepts/local-search.md
+- IRI: pkis:concept:local-search
