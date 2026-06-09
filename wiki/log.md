@@ -7354,3 +7354,12 @@
 ## [2026-06-09] committed | result
 - Committed: blackwells-renewal-theorem → results/blackwells-renewal-theorem.md
 - IRI: pkis:result:blackwells-renewal-theorem
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: recurrence-times (id: ef98c9ee-cec4-46e7-8821-350c9f752530)
+- Title: Recurrence Times (Age and Excess Life)
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: recurrence-times → concepts/recurrence-times.md
+- IRI: pkis:concept:recurrence-times
