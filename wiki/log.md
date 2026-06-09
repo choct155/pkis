@@ -4009,3 +4009,12 @@
 ## [2026-06-09] committed | concept
 - Committed: policy → concepts/policy.md
 - IRI: pkis:concept:policy
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: value-function (id: 059aa00f-1d95-4077-86d4-5fcc0b354649)
+- Title: Value Function
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: value-function → concepts/value-function.md
+- IRI: pkis:concept:value-function

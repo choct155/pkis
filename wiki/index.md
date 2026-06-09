@@ -290,6 +290,7 @@
 - [[liu-machine-unlearning-llm-2024]] — Rethinking Machine Unlearning for LLMs: post-training knowledge editing survey (deep-learning, ai-safety) (2026-05-20)
 
 ## Concepts
+- [[value-function]] — Value Function (reinforcement-learning) (2026-06-09)
 - [[policy]] — Policy (reinforcement-learning) (2026-06-09)
 - [[reward-signal]] — Reward Signal (reinforcement-learning) (2026-06-09)
 - [[agent-environment-interface]] — Agent–Environment Interface (reinforcement-learning) (2026-06-09)
