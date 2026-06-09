@@ -3676,3 +3676,12 @@
 ## [2026-06-09] committed | technique
 - Committed: stochastic-gradient-descent → techniques/stochastic-gradient-descent.md
 - IRI: pkis:technique:stochastic-gradient-descent
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: convex-set-and-function (id: 1ab17086-b6a1-42fd-8944-075913216678)
+- Title: Convex Sets and Convex Functions
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: convex-set-and-function → concepts/convex-set-and-function.md
+- IRI: pkis:concept:convex-set-and-function
