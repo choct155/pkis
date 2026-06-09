@@ -9706,3 +9706,12 @@
 ## [2026-06-09] committed | concept
 - Committed: the-prisoners-dilemma → concepts/the-prisoners-dilemma.md
 - IRI: pkis:concept:the-prisoners-dilemma
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: pareto-optimality (id: fae0efa9-f01a-4402-ae9f-e62fc1a9d20a)
+- Title: Pareto Optimality
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: pareto-optimality → concepts/pareto-optimality.md
+- IRI: pkis:concept:pareto-optimality
