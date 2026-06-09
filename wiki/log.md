@@ -4369,3 +4369,12 @@
 ## [2026-06-09] committed | technique
 - Committed: double-q-learning → techniques/double-q-learning.md
 - IRI: pkis:technique:double-q-learning
+
+## [2026-06-09] staged | node-stub (principle)
+- Staged: td-vs-mc-vs-dp (id: e4ddbddd-efe6-48ac-bf6a-672cf046df7f)
+- Title: TD vs. Monte Carlo vs. Dynamic Programming
+- needs_canonical_source: False
+
+## [2026-06-09] committed | principle
+- Committed: td-vs-mc-vs-dp → principles/td-vs-mc-vs-dp.md
+- IRI: pkis:principle:td-vs-mc-vs-dp

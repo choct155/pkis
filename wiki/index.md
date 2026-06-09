@@ -795,6 +795,7 @@
 - [[llm-language-comprehension]] — The problem of whether LLMs genuinely comprehend language vs. pattern-match surface form (deep-learning, cognitive-science) (2026-05-20)
 
 ## Principles
+- [[td-vs-mc-vs-dp]] — TD vs. Monte Carlo vs. Dynamic Programming (reinforcement-learning, optimization) (2026-06-09)
 - [[generalized-policy-iteration]] — Generalized Policy Iteration (GPI) (reinforcement-learning, optimization) (2026-06-09)
 - [[parameter-estimation-vs-bayesian-inference]] — Parameter Estimation vs. Bayesian Inference (statistical-learning, bayesian-stats) (2026-06-09)
 - [[learning-as-inference]] — Learning as Inference (deep-learning, bayesian-stats) (2026-06-08)
