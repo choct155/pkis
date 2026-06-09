@@ -10273,3 +10273,12 @@
 ## [2026-06-09] committed | technique
 - Committed: pretraining-and-fine-tuning → techniques/pretraining-and-fine-tuning.md
 - IRI: pkis:technique:pretraining-and-fine-tuning
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: beam-search-decoding (id: 56b61acd-d551-4fae-aac6-df1f1999c8eb)
+- Title: Beam Search Decoding
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: beam-search-decoding → techniques/beam-search-decoding.md
+- IRI: pkis:technique:beam-search-decoding
