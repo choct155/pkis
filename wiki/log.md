@@ -9940,3 +9940,12 @@
 ## [2026-06-09] committed | result
 - Committed: no-free-lunch-theorem → results/no-free-lunch-theorem.md
 - IRI: pkis:result:no-free-lunch-theorem
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: k-nearest-neighbors (id: ce9565b2-9eb2-43f3-b5df-c094d761dae2)
+- Title: k-Nearest Neighbors
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: k-nearest-neighbors → techniques/k-nearest-neighbors.md
+- IRI: pkis:technique:k-nearest-neighbors
