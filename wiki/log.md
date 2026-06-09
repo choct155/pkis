@@ -3442,3 +3442,12 @@
 
 ## [2026-06-08] edit | edit_node
 - pkis:technique:sum-product-algorithm: fields=[] sections=['Erasure-Channel Specialization: the Peeling Decoder']
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: vector-space (id: cf2c0ec1-53ba-485d-9e5e-05ed97abcaf4)
+- Title: Vector Space
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: vector-space → concepts/vector-space.md
+- IRI: pkis:concept:vector-space

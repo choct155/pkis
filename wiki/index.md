@@ -290,6 +290,7 @@
 - [[liu-machine-unlearning-llm-2024]] — Rethinking Machine Unlearning for LLMs: post-training knowledge editing survey (deep-learning, ai-safety) (2026-05-20)
 
 ## Concepts
+- [[vector-space]] — Vector Space (statistical-learning) (2026-06-09)
 - [[soliton-distribution]] — Soliton Degree Distributions (information-theory) (2026-06-08)
 - [[fountain-codes]] — Fountain Codes (Rateless Erasure Codes) (information-theory) (2026-06-08)
 - [[generalized-parity-check-matrix]] — Generalized Parity-Check Matrix (information-theory) (2026-06-08)
