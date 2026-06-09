@@ -9823,3 +9823,12 @@
 ## [2026-06-09] committed | framework
 - Committed: auction-theory → frameworks/auction-theory.md
 - IRI: pkis:framework:auction-theory
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: vickrey-auction (id: 713384d3-2fe6-45c1-a581-8642a87a0eab)
+- Title: Vickrey Auction
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: vickrey-auction → techniques/vickrey-auction.md
+- IRI: pkis:technique:vickrey-auction
