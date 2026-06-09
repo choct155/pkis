@@ -8028,3 +8028,12 @@
 ## [2026-06-09] committed | principle
 - Committed: maximum-entropy-principle → principles/maximum-entropy-principle.md
 - IRI: pkis:principle:maximum-entropy-principle
+
+## [2026-06-09] staged | node-stub (result)
+- Staged: multiplicity-entropy-concentration (id: 79f7d773-cdd5-41e2-8076-c17f2158a0d2)
+- Title: Multiplicity-Entropy Concentration (M ~ exp{nH})
+- needs_canonical_source: False
+
+## [2026-06-09] committed | result
+- Committed: multiplicity-entropy-concentration → results/multiplicity-entropy-concentration.md
+- IRI: pkis:result:multiplicity-entropy-concentration
