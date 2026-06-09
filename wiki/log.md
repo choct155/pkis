@@ -11732,3 +11732,12 @@
 ## [2026-06-09] committed | concept
 - Committed: false-discovery-rate → concepts/false-discovery-rate.md
 - IRI: pkis:concept:false-discovery-rate
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: family-wise-error-rate (id: e6a540f1-08a3-41bd-8c6e-347df17cf755)
+- Title: Family-Wise Error Rate (FWER)
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: family-wise-error-rate → concepts/family-wise-error-rate.md
+- IRI: pkis:concept:family-wise-error-rate

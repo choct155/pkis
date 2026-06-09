@@ -290,6 +290,7 @@
 - [[liu-machine-unlearning-llm-2024]] — Rethinking Machine Unlearning for LLMs: post-training knowledge editing survey (deep-learning, ai-safety) (2026-05-20)
 
 ## Concepts
+- [[family-wise-error-rate]] — Family-Wise Error Rate (FWER) (statistical-learning, bayesian-stats) (2026-06-09)
 - [[false-discovery-rate]] — False Discovery Rate (FDR) (statistical-learning, bayesian-stats) (2026-06-09)
 - [[high-dimensional-statistics-p-gg-n]] — High-Dimensional Statistics (p ≫ N) (statistical-learning) (2026-06-09)
 - [[cluster-dissimilarity-measures]] — Cluster Dissimilarity Measures (statistical-learning) (2026-06-09)
