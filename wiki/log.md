@@ -10417,3 +10417,12 @@
 ## [2026-06-09] committed | technique
 - Committed: probabilistic-roadmap-prm → techniques/probabilistic-roadmap-prm.md
 - IRI: pkis:technique:probabilistic-roadmap-prm
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: rapidly-exploring-random-tree-rrt (id: 4300cda1-ad6d-4f1b-a27c-9037f00f5bb4)
+- Title: Rapidly-Exploring Random Tree (RRT)
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: rapidly-exploring-random-tree-rrt → techniques/rapidly-exploring-random-tree-rrt.md
+- IRI: pkis:technique:rapidly-exploring-random-tree-rrt

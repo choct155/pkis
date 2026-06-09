@@ -725,6 +725,7 @@
 - [[market-vs-hierarchy]] — Coase/Williamson: transactions governed by price signals (markets) vs. managerial direction (firms) (corporate-finance) (2026-05-20)
 
 ## Techniques
+- [[rapidly-exploring-random-tree-rrt]] — Rapidly-Exploring Random Tree (RRT) (robotics, optimization) (2026-06-09)
 - [[probabilistic-roadmap-prm]] — Probabilistic Roadmap (PRM) (robotics, optimization) (2026-06-09)
 - [[cell-decomposition-motion-planning]] — Cell Decomposition Motion Planning (robotics, optimization) (2026-06-09)
 - [[object-detection]] — Object Detection (computer-vision, deep-learning) (2026-06-09)
