@@ -8262,3 +8262,12 @@
 ## [2026-06-09] committed | result
 - Committed: cramer-rao-bound → results/cramer-rao-bound.md
 - IRI: pkis:result:cramer-rao-bound
+
+## [2026-06-09] staged | node-stub (principle)
+- Staged: information-loss-from-data-preprocessing (id: c8d5983b-5c7b-4c73-9b88-76434e0e9868)
+- Title: Information Loss from Data Preprocessing
+- needs_canonical_source: False
+
+## [2026-06-09] committed | principle
+- Committed: information-loss-from-data-preprocessing → principles/information-loss-from-data-preprocessing.md
+- IRI: pkis:principle:information-loss-from-data-preprocessing
