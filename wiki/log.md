@@ -3775,3 +3775,12 @@
 ## [2026-06-09] committed | technique
 - Committed: probabilistic-pca → techniques/probabilistic-pca.md
 - IRI: pkis:technique:probabilistic-pca
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: factor-analysis (id: 2fe645c4-68d5-4df1-b399-3c83afea8a49)
+- Title: Factor Analysis (FA)
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: factor-analysis → techniques/factor-analysis.md
+- IRI: pkis:technique:factor-analysis
