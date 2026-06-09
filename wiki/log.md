@@ -10453,3 +10453,12 @@
 ## [2026-06-09] committed | technique
 - Committed: pid-control → techniques/pid-control.md
 - IRI: pkis:technique:pid-control
+
+## [2026-06-09] staged | node-stub (result)
+- Staged: linear-quadratic-regulator-lqr (id: fd9e065f-1c1c-4b4f-a281-fe34b9c8fd32)
+- Title: Linear Quadratic Regulator (LQR)
+- needs_canonical_source: False
+
+## [2026-06-09] committed | result
+- Committed: linear-quadratic-regulator-lqr → results/linear-quadratic-regulator-lqr.md
+- IRI: pkis:result:linear-quadratic-regulator-lqr
