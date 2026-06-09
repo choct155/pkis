@@ -9175,3 +9175,12 @@
 ## [2026-06-09] committed | technique
 - Committed: resolution-first-order → techniques/resolution-first-order.md
 - IRI: pkis:technique:resolution-first-order
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: skolemization (id: 28afc573-9acb-41e7-9d88-1b68b4a5bcde)
+- Title: Skolemization and CNF Conversion
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: skolemization → techniques/skolemization.md
+- IRI: pkis:technique:skolemization
