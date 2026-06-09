@@ -4396,3 +4396,12 @@
 ## [2026-06-09] committed | concept
 - Committed: n-step-return → concepts/n-step-return.md
 - IRI: pkis:concept:n-step-return
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: n-step-td (id: 94f9f1c3-790b-4dd9-91e8-c46b2849e08f)
+- Title: n-step TD
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: n-step-td → techniques/n-step-td.md
+- IRI: pkis:technique:n-step-td
