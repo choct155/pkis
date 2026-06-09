@@ -290,6 +290,7 @@
 - [[liu-machine-unlearning-llm-2024]] — Rethinking Machine Unlearning for LLMs: post-training knowledge editing survey (deep-learning, ai-safety) (2026-05-20)
 
 ## Concepts
+- [[general-value-functions]] — General Value Functions (GVFs) (optimization, deep-learning) (2026-06-09)
 - [[eligibility-trace]] — Eligibility Trace (optimization, deep-learning, neuroscience) (2026-06-09)
 - [[temporal-difference-error]] — Temporal-Difference Error (delta) (optimization, deep-learning) (2026-06-09)
 - [[instrumental-conditioning]] — Instrumental (Operant) Conditioning (optimization, deep-learning) (2026-06-09)

@@ -4927,3 +4927,12 @@
 ## [2026-06-09] committed | technique
 - Committed: deep-q-network → techniques/deep-q-network.md
 - IRI: pkis:technique:deep-q-network
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: general-value-functions (id: 7ab8d516-80bc-4b5a-a16b-1224dc462b09)
+- Title: General Value Functions (GVFs)
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: general-value-functions → concepts/general-value-functions.md
+- IRI: pkis:concept:general-value-functions
