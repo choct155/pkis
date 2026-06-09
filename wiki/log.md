@@ -8968,3 +8968,12 @@
 ## [2026-06-09] committed | technique
 - Committed: forward-checking → techniques/forward-checking.md
 - IRI: pkis:technique:forward-checking
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: variable-and-value-ordering-heuristics (id: 4badb047-3258-42aa-8991-3760e563d0d9)
+- Title: Variable and Value Ordering Heuristics for CSPs
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: variable-and-value-ordering-heuristics → techniques/variable-and-value-ordering-heuristics.md
+- IRI: pkis:technique:variable-and-value-ordering-heuristics
