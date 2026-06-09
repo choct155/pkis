@@ -4720,3 +4720,12 @@
 ## [2026-06-09] committed | concept
 - Committed: differential-return → concepts/differential-return.md
 - IRI: pkis:concept:differential-return
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: n-step-semi-gradient-sarsa (id: 807dcfb5-f36c-449b-8e96-ce74043854ec)
+- Title: n-step Semi-Gradient Sarsa
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: n-step-semi-gradient-sarsa → techniques/n-step-semi-gradient-sarsa.md
+- IRI: pkis:technique:n-step-semi-gradient-sarsa
