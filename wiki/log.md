@@ -3550,3 +3550,12 @@
 ## [2026-06-09] committed | concept
 - Committed: rotation-matrix → concepts/rotation-matrix.md
 - IRI: pkis:concept:rotation-matrix
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: determinant (id: d414a637-8ceb-42ad-9a44-089be62f4a03)
+- Title: Determinant
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: determinant → concepts/determinant.md
+- IRI: pkis:concept:determinant

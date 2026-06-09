@@ -290,6 +290,7 @@
 - [[liu-machine-unlearning-llm-2024]] — Rethinking Machine Unlearning for LLMs: post-training knowledge editing survey (deep-learning, ai-safety) (2026-05-20)
 
 ## Concepts
+- [[determinant]] — Determinant (statistical-learning) (2026-06-09)
 - [[rotation-matrix]] — Rotation Matrix (statistical-learning) (2026-06-09)
 - [[orthogonal-projection]] — Orthogonal Projection (statistical-learning) (2026-06-09)
 - [[orthogonality]] — Orthogonality (statistical-learning) (2026-06-09)
