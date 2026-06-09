@@ -5359,3 +5359,12 @@
 ## [2026-06-09] committed | concept
 - Committed: weakly-informative-prior → concepts/weakly-informative-prior.md
 - IRI: pkis:concept:weakly-informative-prior
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: nuisance-parameters (id: 93812831-7e35-4398-a70e-b694f4e8e5a5)
+- Title: Nuisance Parameters
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: nuisance-parameters → concepts/nuisance-parameters.md
+- IRI: pkis:concept:nuisance-parameters
