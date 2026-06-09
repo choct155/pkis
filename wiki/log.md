@@ -6727,3 +6727,12 @@
 ## [2026-06-09] committed | concept
 - Committed: path-coefficient → concepts/path-coefficient.md
 - IRI: pkis:concept:path-coefficient
+
+## [2026-06-09] staged | node-stub (result)
+- Staged: single-door-criterion (id: 69abd482-45bc-4913-87fa-ab015072bc33)
+- Title: Single-Door Criterion for Direct Effects
+- needs_canonical_source: False
+
+## [2026-06-09] committed | result
+- Committed: single-door-criterion → results/single-door-criterion.md
+- IRI: pkis:result:single-door-criterion
