@@ -4693,3 +4693,12 @@
 ## [2026-06-09] committed | concept
 - Committed: interest-and-emphasis → concepts/interest-and-emphasis.md
 - IRI: pkis:concept:interest-and-emphasis
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: semi-gradient-sarsa (id: 5995c42d-e5e5-4e1c-8c93-779e3ccbb2f2)
+- Title: Episodic Semi-Gradient Sarsa
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: semi-gradient-sarsa → techniques/semi-gradient-sarsa.md
+- IRI: pkis:technique:semi-gradient-sarsa

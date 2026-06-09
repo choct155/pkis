@@ -530,6 +530,7 @@
 - [[market-vs-hierarchy]] — Coase/Williamson: transactions governed by price signals (markets) vs. managerial direction (firms) (corporate-finance) (2026-05-20)
 
 ## Techniques
+- [[semi-gradient-sarsa]] — Episodic Semi-Gradient Sarsa (reinforcement-learning) (2026-06-09)
 - [[kernel-regression-rl]] — Kernel Regression for Value Estimation (reinforcement-learning, statistical-learning) (2026-06-09)
 - [[memory-based-function-approximation]] — Memory-based Function Approximation (reinforcement-learning, statistical-learning) (2026-06-09)
 - [[lstd]] — Least-Squares TD (LSTD) (reinforcement-learning, optimization) (2026-06-09)
