@@ -7381,3 +7381,12 @@
 ## [2026-06-09] committed | concept
 - Committed: alternating-renewal-process → concepts/alternating-renewal-process.md
 - IRI: pkis:concept:alternating-renewal-process
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: stationary-renewal-process (id: c2c426a8-9e95-45f6-b0db-2dd8cb051ae0)
+- Title: Stationary Renewal Process
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: stationary-renewal-process → concepts/stationary-renewal-process.md
+- IRI: pkis:concept:stationary-renewal-process
