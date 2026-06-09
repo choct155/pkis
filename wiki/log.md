@@ -11480,3 +11480,12 @@
 ## [2026-06-09] committed | technique
 - Committed: optimal-scoring → techniques/optimal-scoring.md
 - IRI: pkis:technique:optimal-scoring
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: flexible-discriminant-analysis (id: 9fdd9892-088f-4d92-b9ab-b077368c40ba)
+- Title: Flexible Discriminant Analysis (FDA)
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: flexible-discriminant-analysis → techniques/flexible-discriminant-analysis.md
+- IRI: pkis:technique:flexible-discriminant-analysis
