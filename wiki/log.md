@@ -7812,3 +7812,12 @@
 ## [2026-06-09] committed | result
 - Committed: product-rule → results/product-rule.md
 - IRI: pkis:result:product-rule
+
+## [2026-06-09] staged | node-stub (result)
+- Staged: sum-rule (id: b486434b-5882-4883-bb94-1f77f5dc3d77)
+- Title: Sum Rule (Plausibility)
+- needs_canonical_source: False
+
+## [2026-06-09] committed | result
+- Committed: sum-rule → results/sum-rule.md
+- IRI: pkis:result:sum-rule
