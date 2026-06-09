@@ -6664,3 +6664,12 @@
 ## [2026-06-09] committed | concept
 - Committed: controlled-direct-effect → concepts/controlled-direct-effect.md
 - IRI: pkis:concept:controlled-direct-effect
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: natural-direct-indirect-effects (id: b8e8e7e9-0a6c-4505-a815-a8a34edd248c)
+- Title: Natural Direct and Indirect Effects
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: natural-direct-indirect-effects → concepts/natural-direct-indirect-effects.md
+- IRI: pkis:concept:natural-direct-indirect-effects
