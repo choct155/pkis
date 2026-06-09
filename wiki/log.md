@@ -3496,3 +3496,12 @@
 ## [2026-06-09] committed | technique
 - Committed: solving-linear-systems → techniques/solving-linear-systems.md
 - IRI: pkis:technique:solving-linear-systems
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: norm (id: 6a959f1c-541c-44d5-98d8-148d89090258)
+- Title: Norm
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: norm → concepts/norm.md
+- IRI: pkis:concept:norm
