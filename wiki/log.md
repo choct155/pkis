@@ -5674,3 +5674,12 @@
 ## [2026-06-09] committed | concept
 - Committed: institutional-decision-analysis → concepts/institutional-decision-analysis.md
 - IRI: pkis:concept:institutional-decision-analysis
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: importance-resampling (id: ce0a2711-15d1-472d-9d03-16e04c73360a)
+- Title: Importance Resampling (SIR)
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: importance-resampling → techniques/importance-resampling.md
+- IRI: pkis:technique:importance-resampling
