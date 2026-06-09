@@ -3991,3 +3991,12 @@
 ## [2026-06-09] committed | concept
 - Committed: agent-environment-interface → concepts/agent-environment-interface.md
 - IRI: pkis:concept:agent-environment-interface
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: reward-signal (id: e4fa445a-993e-44f7-ac7e-4cb2df07fcd9)
+- Title: Reward Signal
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: reward-signal → concepts/reward-signal.md
+- IRI: pkis:concept:reward-signal
