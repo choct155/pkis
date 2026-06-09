@@ -6637,3 +6637,12 @@
 ## [2026-06-09] committed | concept
 - Committed: front-door-criterion → concepts/front-door-criterion.md
 - IRI: pkis:concept:front-door-criterion
+
+## [2026-06-09] staged | node-stub (result)
+- Staged: adjustment-formula-standardization (id: c35f3d1c-7dad-42b8-8a28-19cd3cf611f7)
+- Title: Adjustment Formula (Standardization)
+- needs_canonical_source: False
+
+## [2026-06-09] committed | result
+- Committed: adjustment-formula-standardization → results/adjustment-formula-standardization.md
+- IRI: pkis:result:adjustment-formula-standardization
