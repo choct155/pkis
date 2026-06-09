@@ -7884,3 +7884,12 @@
 ## [2026-06-09] committed | concept
 - Committed: sampling-with-and-without-replacement → concepts/sampling-with-and-without-replacement.md
 - IRI: pkis:concept:sampling-with-and-without-replacement
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: multiple-hypothesis-testing-bayesian (id: e14e1002-e147-4f27-b375-dc3cf1b97708)
+- Title: Bayesian Multiple Hypothesis Testing
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: multiple-hypothesis-testing-bayesian → techniques/multiple-hypothesis-testing-bayesian.md
+- IRI: pkis:technique:multiple-hypothesis-testing-bayesian

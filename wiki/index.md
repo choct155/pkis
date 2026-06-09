@@ -657,6 +657,7 @@
 - [[market-vs-hierarchy]] — Coase/Williamson: transactions governed by price signals (markets) vs. managerial direction (firms) (corporate-finance) (2026-05-20)
 
 ## Techniques
+- [[multiple-hypothesis-testing-bayesian]] — Bayesian Multiple Hypothesis Testing (bayesian-stats) (2026-06-09)
 - [[kolmogorov-smirnov-statistic]] — Kolmogorov-Smirnov Statistic (bayesian-stats, statistical-learning) (2026-06-09)
 - [[laplace-functional]] — Laplace Functional (bayesian-stats) (2026-06-09)
 - [[renewal-equation]] — Renewal Equation (bayesian-stats, statistical-learning) (2026-06-09)
