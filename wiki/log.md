@@ -6997,3 +6997,12 @@
 ## [2026-06-09] committed | concept
 - Committed: strong-ignorability → concepts/strong-ignorability.md
 - IRI: pkis:concept:strong-ignorability
+
+## [2026-06-09] staged | node-stub (principle)
+- Staged: causal-mechanism-autonomy (id: 58cba753-8034-4373-ac4b-e20949da816f)
+- Title: Autonomy of Causal Mechanisms
+- needs_canonical_source: False
+
+## [2026-06-09] committed | principle
+- Committed: causal-mechanism-autonomy → principles/causal-mechanism-autonomy.md
+- IRI: pkis:principle:causal-mechanism-autonomy
