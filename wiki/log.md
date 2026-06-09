@@ -3802,3 +3802,12 @@
 ## [2026-06-09] committed | concept
 - Committed: low-rank-approximation → concepts/low-rank-approximation.md
 - IRI: pkis:concept:low-rank-approximation
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: kernel-pca (id: 79f8e4af-d530-4ea0-ad56-5bfa6075f52f)
+- Title: Kernel PCA
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: kernel-pca → techniques/kernel-pca.md
+- IRI: pkis:technique:kernel-pca
