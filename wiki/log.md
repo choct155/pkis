@@ -3460,3 +3460,12 @@
 ## [2026-06-09] committed | concept
 - Committed: linear-independence → concepts/linear-independence.md
 - IRI: pkis:concept:linear-independence
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: basis-and-rank (id: 66dc3585-0925-40e6-97b2-d74404a2cc30)
+- Title: Basis, Dimension, and Rank
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: basis-and-rank → concepts/basis-and-rank.md
+- IRI: pkis:concept:basis-and-rank
