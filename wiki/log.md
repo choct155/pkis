@@ -7462,3 +7462,12 @@
 ## [2026-06-09] committed | concept
 - Committed: continuous-time-markov-chain → concepts/continuous-time-markov-chain.md
 - IRI: pkis:concept:continuous-time-markov-chain
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: generator-matrix-q-matrix (id: 8e2b3389-d79f-45e5-8c35-a2fcfc4ef4db)
+- Title: Generator Matrix (Q-Matrix)
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: generator-matrix-q-matrix → concepts/generator-matrix-q-matrix.md
+- IRI: pkis:concept:generator-matrix-q-matrix
