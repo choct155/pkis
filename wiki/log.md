@@ -9949,3 +9949,12 @@
 ## [2026-06-09] committed | technique
 - Committed: k-nearest-neighbors → techniques/k-nearest-neighbors.md
 - IRI: pkis:technique:k-nearest-neighbors
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: locality-sensitive-hashing (id: a6e4b99f-2709-4a8f-9135-f28f8dea9dbb)
+- Title: Locality-Sensitive Hashing (LSH)
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: locality-sensitive-hashing → techniques/locality-sensitive-hashing.md
+- IRI: pkis:technique:locality-sensitive-hashing
