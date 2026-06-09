@@ -3748,3 +3748,12 @@
 ## [2026-06-09] committed | technique
 - Committed: linear-regression → techniques/linear-regression.md
 - IRI: pkis:technique:linear-regression
+
+## [2026-06-09] staged | node-stub (result)
+- Staged: maximum-likelihood-as-least-squares (id: 4ae949ef-5cfa-4206-90bf-c4a2a397127e)
+- Title: Maximum Likelihood as Least Squares
+- needs_canonical_source: False
+
+## [2026-06-09] committed | result
+- Committed: maximum-likelihood-as-least-squares → results/maximum-likelihood-as-least-squares.md
+- IRI: pkis:result:maximum-likelihood-as-least-squares
