@@ -11588,3 +11588,12 @@
 ## [2026-06-09] committed | concept
 - Committed: cluster-dissimilarity-measures → concepts/cluster-dissimilarity-measures.md
 - IRI: pkis:concept:cluster-dissimilarity-measures
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: hierarchical-clustering (id: cccedcdf-b832-4a10-b59f-64e66629ae15)
+- Title: Hierarchical Clustering
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: hierarchical-clustering → techniques/hierarchical-clustering.md
+- IRI: pkis:technique:hierarchical-clustering
