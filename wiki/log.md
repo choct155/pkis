@@ -7336,3 +7336,12 @@
 ## [2026-06-09] committed | result
 - Committed: renewal-reward-theorem → results/renewal-reward-theorem.md
 - IRI: pkis:result:renewal-reward-theorem
+
+## [2026-06-09] staged | node-stub (result)
+- Staged: key-renewal-theorem (id: d2f6f2c3-eccc-47b2-b5ff-f3dbf66a0d22)
+- Title: Key Renewal Theorem
+- needs_canonical_source: False
+
+## [2026-06-09] committed | result
+- Committed: key-renewal-theorem → results/key-renewal-theorem.md
+- IRI: pkis:result:key-renewal-theorem
