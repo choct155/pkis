@@ -6745,3 +6745,12 @@
 ## [2026-06-09] committed | concept
 - Committed: exogeneity → concepts/exogeneity.md
 - IRI: pkis:concept:exogeneity
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: total-vs-direct-effect (id: f5eb30a1-253e-4c2d-a3ef-73bc00b6df4f)
+- Title: Total vs. Direct vs. Indirect Effects
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: total-vs-direct-effect → concepts/total-vs-direct-effect.md
+- IRI: pkis:concept:total-vs-direct-effect
