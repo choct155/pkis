@@ -10264,3 +10264,12 @@
 ## [2026-06-09] committed | technique
 - Committed: masked-language-modeling → techniques/masked-language-modeling.md
 - IRI: pkis:technique:masked-language-modeling
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: pretraining-and-fine-tuning (id: e544ce8b-bcbf-4893-a18b-8132e9ded7f0)
+- Title: Pretraining and Fine-Tuning
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: pretraining-and-fine-tuning → techniques/pretraining-and-fine-tuning.md
+- IRI: pkis:technique:pretraining-and-fine-tuning
