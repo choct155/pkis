@@ -7345,3 +7345,12 @@
 ## [2026-06-09] committed | result
 - Committed: key-renewal-theorem → results/key-renewal-theorem.md
 - IRI: pkis:result:key-renewal-theorem
+
+## [2026-06-09] staged | node-stub (result)
+- Staged: blackwells-renewal-theorem (id: 5459ddec-c339-4918-949f-c8e1a167cec7)
+- Title: Blackwell's Renewal Theorem
+- needs_canonical_source: False
+
+## [2026-06-09] committed | result
+- Committed: blackwells-renewal-theorem → results/blackwells-renewal-theorem.md
+- IRI: pkis:result:blackwells-renewal-theorem

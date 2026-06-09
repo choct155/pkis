@@ -887,6 +887,7 @@
 - [[constraint-propagation]] — Reducing a constraint satisfaction problem by iteratively eliminating inconsistent values from variable domains (knowledge-representation) (2026-05-20)
 
 ## Results
+- [[blackwells-renewal-theorem]] — Blackwell's Renewal Theorem (bayesian-stats, statistical-learning) (2026-06-09)
 - [[key-renewal-theorem]] — Key Renewal Theorem (bayesian-stats, statistical-learning) (2026-06-09)
 - [[renewal-reward-theorem]] — Renewal Reward Theorem (bayesian-stats, statistical-learning) (2026-06-09)
 - [[elementary-renewal-theorem]] — Elementary Renewal Theorem (bayesian-stats, statistical-learning) (2026-06-09)
