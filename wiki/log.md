@@ -8941,3 +8941,12 @@
 ## [2026-06-09] committed | framework
 - Committed: constraint-satisfaction-problem → frameworks/constraint-satisfaction-problem.md
 - IRI: pkis:framework:constraint-satisfaction-problem
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: arc-consistency-ac3 (id: 084c792e-1592-404d-9ba2-fb2c5953df62)
+- Title: Arc Consistency and the AC-3 Algorithm
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: arc-consistency-ac3 → techniques/arc-consistency-ac3.md
+- IRI: pkis:technique:arc-consistency-ac3

@@ -682,6 +682,7 @@
 - [[market-vs-hierarchy]] — Coase/Williamson: transactions governed by price signals (markets) vs. managerial direction (firms) (corporate-finance) (2026-05-20)
 
 ## Techniques
+- [[arc-consistency-ac3]] — Arc Consistency and the AC-3 Algorithm (knowledge-representation, optimization) (2026-06-09)
 - [[expectiminimax]] — Expectiminimax (optimization, knowledge-representation) (2026-06-09)
 - [[alpha-beta-pruning]] — Alpha-Beta Pruning (optimization, knowledge-representation) (2026-06-09)
 - [[minimax-algorithm]] — Minimax Algorithm (optimization, knowledge-representation) (2026-06-09)
