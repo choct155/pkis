@@ -10435,3 +10435,12 @@
 ## [2026-06-09] committed | technique
 - Committed: trajectory-optimization-motion-planning → techniques/trajectory-optimization-motion-planning.md
 - IRI: pkis:technique:trajectory-optimization-motion-planning
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: trajectory-tracking-control (id: 7c9d2fa6-afe9-439b-a4d6-3755581f3695)
+- Title: Trajectory Tracking Control
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: trajectory-tracking-control → concepts/trajectory-tracking-control.md
+- IRI: pkis:concept:trajectory-tracking-control
