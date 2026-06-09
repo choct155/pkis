@@ -290,6 +290,7 @@
 - [[liu-machine-unlearning-llm-2024]] — Rethinking Machine Unlearning for LLMs: post-training knowledge editing survey (deep-learning, ai-safety) (2026-05-20)
 
 ## Concepts
+- [[cluster-dissimilarity-measures]] — Cluster Dissimilarity Measures (statistical-learning) (2026-06-09)
 - [[epsilon-insensitive-loss]] — Epsilon-Insensitive Loss (statistical-learning, optimization) (2026-06-09)
 - [[projection-pursuit-regression]] — Projection Pursuit Regression (statistical-learning) (2026-06-09)
 - [[receiver-operating-characteristic-curve]] — ROC Curve, Sensitivity and Specificity (statistical-learning) (2026-06-09)

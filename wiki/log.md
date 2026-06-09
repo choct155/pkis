@@ -11579,3 +11579,12 @@
 ## [2026-06-09] committed | technique
 - Committed: association-rules-apriori → techniques/association-rules-apriori.md
 - IRI: pkis:technique:association-rules-apriori
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: cluster-dissimilarity-measures (id: d3753906-7f2a-4f11-b28e-2a00a9e15eb0)
+- Title: Cluster Dissimilarity Measures
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: cluster-dissimilarity-measures → concepts/cluster-dissimilarity-measures.md
+- IRI: pkis:concept:cluster-dissimilarity-measures
