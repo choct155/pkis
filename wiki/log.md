@@ -5314,3 +5314,12 @@
 ## [2026-06-09] committed | concept
 - Committed: posterior-predictive-distribution → concepts/posterior-predictive-distribution.md
 - IRI: pkis:concept:posterior-predictive-distribution
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: prior-predictive-distribution (id: 04877527-6cd3-4a9b-9f88-f24c6ef45ba9)
+- Title: Prior Predictive Distribution
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: prior-predictive-distribution → concepts/prior-predictive-distribution.md
+- IRI: pkis:concept:prior-predictive-distribution
