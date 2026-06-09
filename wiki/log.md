@@ -9958,3 +9958,12 @@
 ## [2026-06-09] committed | technique
 - Committed: locality-sensitive-hashing → techniques/locality-sensitive-hashing.md
 - IRI: pkis:technique:locality-sensitive-hashing
+
+## [2026-06-09] staged | node-stub (problem)
+- Staged: density-estimation (id: af9af2a1-f6e4-4d9c-966a-7b3e13c1738e)
+- Title: Density Estimation
+- needs_canonical_source: False
+
+## [2026-06-09] committed | problem
+- Committed: density-estimation → problems/density-estimation.md
+- IRI: pkis:problem:density-estimation
