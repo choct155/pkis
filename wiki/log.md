@@ -6988,3 +6988,12 @@
 ## [2026-06-09] committed | principle
 - Committed: causal-statistical-distinction → principles/causal-statistical-distinction.md
 - IRI: pkis:principle:causal-statistical-distinction
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: strong-ignorability (id: b06c2e51-1851-4b5b-aaf1-7568358f6e81)
+- Title: Strong Ignorability
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: strong-ignorability → concepts/strong-ignorability.md
+- IRI: pkis:concept:strong-ignorability
