@@ -4945,3 +4945,12 @@
 ## [2026-06-09] committed | framework
 - Committed: options-framework → frameworks/options-framework.md
 - IRI: pkis:framework:options-framework
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: predictive-state-representations (id: 0a880a94-2869-4947-8104-63fe21779db3)
+- Title: Predictive State Representations (PSRs)
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: predictive-state-representations → concepts/predictive-state-representations.md
+- IRI: pkis:concept:predictive-state-representations
