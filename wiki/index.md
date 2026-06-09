@@ -290,6 +290,7 @@
 - [[liu-machine-unlearning-llm-2024]] — Rethinking Machine Unlearning for LLMs: post-training knowledge editing survey (deep-learning, ai-safety) (2026-05-20)
 
 ## Concepts
+- [[quantifiers-universal-existential]] — Universal and Existential Quantifiers (knowledge-representation, symbolic-subsymbolic) (2026-06-09)
 - [[conjunctive-normal-form]] — Conjunctive Normal Form (CNF), Clauses, and Horn Clauses (knowledge-representation, symbolic-subsymbolic) (2026-06-09)
 - [[logical-entailment-and-inference]] — Logical Entailment and Inference (knowledge-representation, symbolic-subsymbolic) (2026-06-09)
 - [[imperfect-information-games]] — Imperfect-Information Games (Belief-State Search) (optimization, knowledge-representation, bayesian-stats) (2026-06-09)

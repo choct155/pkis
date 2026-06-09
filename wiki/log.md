@@ -9094,3 +9094,12 @@
 ## [2026-06-09] committed | framework
 - Committed: first-order-logic → frameworks/first-order-logic.md
 - IRI: pkis:framework:first-order-logic
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: quantifiers-universal-existential (id: 225ae0f5-e7ba-4257-b413-0c078e6ba9d9)
+- Title: Universal and Existential Quantifiers
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: quantifiers-universal-existential → concepts/quantifiers-universal-existential.md
+- IRI: pkis:concept:quantifiers-universal-existential
