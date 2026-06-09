@@ -10138,3 +10138,12 @@
 ## [2026-06-09] committed | concept
 - Committed: n-gram-language-model → concepts/n-gram-language-model.md
 - IRI: pkis:concept:n-gram-language-model
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: language-model-smoothing (id: e4b9251a-4632-4772-b2cc-a07f49ef47d7)
+- Title: Smoothing (Language Models)
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: language-model-smoothing → techniques/language-model-smoothing.md
+- IRI: pkis:technique:language-model-smoothing
