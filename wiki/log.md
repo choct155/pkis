@@ -3865,3 +3865,12 @@
 ## [2026-06-09] committed | concept
 - Committed: the-kernel-trick → concepts/the-kernel-trick.md
 - IRI: pkis:concept:the-kernel-trick
+
+## [2026-06-09] staged | node-stub (result)
+- Staged: representer-theorem (id: 9c04ba67-ef4b-43d2-8032-b490a40c5d67)
+- Title: Representer Theorem
+- needs_canonical_source: False
+
+## [2026-06-09] committed | result
+- Committed: representer-theorem → results/representer-theorem.md
+- IRI: pkis:result:representer-theorem
