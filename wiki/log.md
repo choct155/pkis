@@ -5791,3 +5791,12 @@
 ## [2026-06-09] committed | technique
 - Committed: simulated-tempering → techniques/simulated-tempering.md
 - IRI: pkis:technique:simulated-tempering
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: expectation-propagation (id: 1979d8d8-f815-483f-bbe1-a4be23b25906)
+- Title: Expectation Propagation
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: expectation-propagation → techniques/expectation-propagation.md
+- IRI: pkis:technique:expectation-propagation
