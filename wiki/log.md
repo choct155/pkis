@@ -11570,3 +11570,12 @@
 ## [2026-06-09] committed | result
 - Committed: cover-hart-theorem → results/cover-hart-theorem.md
 - IRI: pkis:result:cover-hart-theorem
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: association-rules-apriori (id: fcdaa708-e989-404e-b9ad-6855da804235)
+- Title: Association Rules and the Apriori Algorithm
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: association-rules-apriori → techniques/association-rules-apriori.md
+- IRI: pkis:technique:association-rules-apriori
