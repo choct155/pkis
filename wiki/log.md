@@ -4711,3 +4711,12 @@
 ## [2026-06-09] committed | concept
 - Committed: average-reward-setting → concepts/average-reward-setting.md
 - IRI: pkis:concept:average-reward-setting
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: differential-return (id: c4806818-2a76-42a5-9075-8f208020cb09)
+- Title: Differential Return and Differential Value Functions
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: differential-return → concepts/differential-return.md
+- IRI: pkis:concept:differential-return
