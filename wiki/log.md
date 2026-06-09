@@ -7192,3 +7192,12 @@
 ## [2026-06-09] committed | concept
 - Committed: probability-generating-function → concepts/probability-generating-function.md
 - IRI: pkis:concept:probability-generating-function
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: convolution-of-distributions (id: 4b81ae2e-6d02-46b3-8bf5-bc2157bbe341)
+- Title: Convolution of Distributions
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: convolution-of-distributions → concepts/convolution-of-distributions.md
+- IRI: pkis:concept:convolution-of-distributions
