@@ -10255,3 +10255,12 @@
 ## [2026-06-09] committed | concept
 - Committed: contextual-word-embeddings → concepts/contextual-word-embeddings.md
 - IRI: pkis:concept:contextual-word-embeddings
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: masked-language-modeling (id: 2083f25b-886f-4536-ad16-60a102956c8d)
+- Title: Masked Language Modeling
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: masked-language-modeling → techniques/masked-language-modeling.md
+- IRI: pkis:technique:masked-language-modeling

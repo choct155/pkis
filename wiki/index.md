@@ -719,6 +719,7 @@
 - [[market-vs-hierarchy]] — Coase/Williamson: transactions governed by price signals (markets) vs. managerial direction (firms) (corporate-finance) (2026-05-20)
 
 ## Techniques
+- [[masked-language-modeling]] — Masked Language Modeling (deep-learning) (2026-06-09)
 - [[long-short-term-memory-lstm]] — Long Short-Term Memory (LSTM) (deep-learning) (2026-06-09)
 - [[machine-translation]] — Machine Translation (deep-learning, knowledge-representation) (2026-06-09)
 - [[information-extraction]] — Information Extraction (knowledge-representation, deep-learning) (2026-06-09)
