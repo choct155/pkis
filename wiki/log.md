@@ -7291,3 +7291,12 @@
 ## [2026-06-09] committed | result
 - Committed: ergodic-theorem-markov → results/ergodic-theorem-markov.md
 - IRI: pkis:result:ergodic-theorem-markov
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: renewal-process (id: 56c08465-c38a-4899-a5a6-d031ab181db8)
+- Title: Renewal Process
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: renewal-process → concepts/renewal-process.md
+- IRI: pkis:concept:renewal-process
