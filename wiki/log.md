@@ -7579,3 +7579,12 @@
 ## [2026-06-09] committed | technique
 - Committed: kolmogorov-smirnov-statistic → techniques/kolmogorov-smirnov-statistic.md
 - IRI: pkis:technique:kolmogorov-smirnov-statistic
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: random-walk (id: 6d69b2e2-dc47-40bb-bea4-1863e5240af9)
+- Title: Random Walk
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: random-walk → concepts/random-walk.md
+- IRI: pkis:concept:random-walk
