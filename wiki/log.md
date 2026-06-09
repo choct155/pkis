@@ -4243,3 +4243,12 @@
 ## [2026-06-09] committed | technique
 - Committed: value-iteration → techniques/value-iteration.md
 - IRI: pkis:technique:value-iteration
+
+## [2026-06-09] staged | node-stub (principle)
+- Staged: generalized-policy-iteration (id: d9c6b70b-1f0f-4ba5-bc5f-5bfa688b8654)
+- Title: Generalized Policy Iteration (GPI)
+- needs_canonical_source: False
+
+## [2026-06-09] committed | principle
+- Committed: generalized-policy-iteration → principles/generalized-policy-iteration.md
+- IRI: pkis:principle:generalized-policy-iteration
