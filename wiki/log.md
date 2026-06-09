@@ -11678,3 +11678,12 @@
 ## [2026-06-09] committed | framework
 - Committed: gaussian-graphical-model → frameworks/gaussian-graphical-model.md
 - IRI: pkis:framework:gaussian-graphical-model
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: graphical-lasso (id: 213aeee0-ca0e-4b0e-8edf-8deddf9ac4c5)
+- Title: Graphical Lasso
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: graphical-lasso → techniques/graphical-lasso.md
+- IRI: pkis:technique:graphical-lasso
