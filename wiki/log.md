@@ -9031,3 +9031,12 @@
 ## [2026-06-09] committed | concept
 - Committed: conjunctive-normal-form → concepts/conjunctive-normal-form.md
 - IRI: pkis:concept:conjunctive-normal-form
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: resolution-inference (id: 734953ec-8671-4e99-ae47-9d1e5812d97b)
+- Title: Resolution Inference
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: resolution-inference → techniques/resolution-inference.md
+- IRI: pkis:technique:resolution-inference
