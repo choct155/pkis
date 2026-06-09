@@ -9067,3 +9067,12 @@
 ## [2026-06-09] committed | technique
 - Committed: forward-and-backward-chaining → techniques/forward-and-backward-chaining.md
 - IRI: pkis:technique:forward-and-backward-chaining
+
+## [2026-06-09] staged | node-stub (problem)
+- Staged: frame-problem (id: 5e116996-7537-43d2-8191-c129417cf8ae)
+- Title: The Frame Problem and Successor-State Axioms
+- needs_canonical_source: False
+
+## [2026-06-09] committed | problem
+- Committed: frame-problem → problems/frame-problem.md
+- IRI: pkis:problem:frame-problem
