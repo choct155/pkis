@@ -4441,3 +4441,12 @@
 ## [2026-06-09] committed | technique
 - Committed: n-step-q-sigma → techniques/n-step-q-sigma.md
 - IRI: pkis:technique:n-step-q-sigma
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: planning-rl (id: 79cfd886-3e65-4a50-aa75-cbe4254776e1)
+- Title: Planning (Reinforcement Learning)
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: planning-rl → concepts/planning-rl.md
+- IRI: pkis:concept:planning-rl
