@@ -749,6 +749,7 @@
 - [[market-vs-hierarchy]] — Coase/Williamson: transactions governed by price signals (markets) vs. managerial direction (firms) (corporate-finance) (2026-05-20)
 
 ## Techniques
+- [[contrastive-divergence]] — Contrastive Divergence (deep-learning, statistical-learning) (2026-06-09)
 - [[graphical-lasso]] — Graphical Lasso (statistical-learning, optimization) (2026-06-09)
 - [[sparse-pca]] — Sparse Principal Components (statistical-learning) (2026-06-09)
 - [[procrustes-analysis]] — Procrustes Analysis (statistical-learning) (2026-06-09)

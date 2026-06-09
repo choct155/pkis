@@ -11705,3 +11705,12 @@
 ## [2026-06-09] committed | framework
 - Committed: restricted-boltzmann-machine → frameworks/restricted-boltzmann-machine.md
 - IRI: pkis:framework:restricted-boltzmann-machine
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: contrastive-divergence (id: 26bf18ad-e621-4079-abb4-dfadabedb683)
+- Title: Contrastive Divergence
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: contrastive-divergence → techniques/contrastive-divergence.md
+- IRI: pkis:technique:contrastive-divergence
