@@ -10309,3 +10309,12 @@
 ## [2026-06-09] committed | technique
 - Committed: edge-detection → techniques/edge-detection.md
 - IRI: pkis:technique:edge-detection
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: feature-detection-vision (id: bc8c2314-894d-4092-b191-ec9176dbccfe)
+- Title: Visual Feature and Texture Representation
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: feature-detection-vision → concepts/feature-detection-vision.md
+- IRI: pkis:concept:feature-detection-vision
