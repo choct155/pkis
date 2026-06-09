@@ -920,6 +920,7 @@
 - [[constraint-propagation]] — Reducing a constraint satisfaction problem by iteratively eliminating inconsistent values from variable domains (knowledge-representation) (2026-05-20)
 
 ## Results
+- [[wallis-derivation-of-entropy]] — Wallis Derivation of Entropy (information-theory, bayesian-stats) (2026-06-09)
 - [[psi-test-bayesian-goodness-of-fit]] — Psi-Test (Bayesian Goodness of Fit) (bayesian-stats, information-theory) (2026-06-09)
 - [[multiplicity-entropy-concentration]] — Multiplicity-Entropy Concentration (M ~ exp{nH}) (bayesian-stats, information-theory) (2026-06-09)
 - [[fisher-neyman-factorization]] — Fisher–Neyman Factorization (bayesian-stats, statistical-learning) (2026-06-09)
