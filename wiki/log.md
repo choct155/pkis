@@ -5836,3 +5836,12 @@
 ## [2026-06-09] committed | framework
 - Committed: multilevel-regression → frameworks/multilevel-regression.md
 - IRI: pkis:framework:multilevel-regression
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: varying-intercepts-and-slopes (id: fd319139-7d66-4331-91e4-f97785cdff82)
+- Title: Varying-Intercept, Varying-Slope Models
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: varying-intercepts-and-slopes → techniques/varying-intercepts-and-slopes.md
+- IRI: pkis:technique:varying-intercepts-and-slopes
