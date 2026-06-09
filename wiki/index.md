@@ -573,6 +573,7 @@
 - [[market-vs-hierarchy]] — Coase/Williamson: transactions governed by price signals (markets) vs. managerial direction (firms) (corporate-finance) (2026-05-20)
 
 ## Techniques
+- [[simulated-tempering]] — Simulated Tempering (bayesian-stats, optimization) (2026-06-09)
 - [[reversible-jump-mcmc]] — Reversible Jump MCMC (bayesian-stats) (2026-06-09)
 - [[parameter-expansion]] — Parameter Expansion (bayesian-stats) (2026-06-09)
 - [[adaptive-mcmc]] — Adaptive MCMC (bayesian-stats, optimization) (2026-06-09)

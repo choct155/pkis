@@ -5782,3 +5782,12 @@
 ## [2026-06-09] committed | technique
 - Committed: reversible-jump-mcmc → techniques/reversible-jump-mcmc.md
 - IRI: pkis:technique:reversible-jump-mcmc
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: simulated-tempering (id: 1ae51f3b-6d5b-4663-a053-d5a825e53e57)
+- Title: Simulated Tempering
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: simulated-tempering → techniques/simulated-tempering.md
+- IRI: pkis:technique:simulated-tempering
