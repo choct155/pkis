@@ -4702,3 +4702,12 @@
 ## [2026-06-09] committed | technique
 - Committed: semi-gradient-sarsa → techniques/semi-gradient-sarsa.md
 - IRI: pkis:technique:semi-gradient-sarsa
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: average-reward-setting (id: e3569f16-3820-4717-8a56-ca0320fffe95)
+- Title: Average-Reward Setting
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: average-reward-setting → concepts/average-reward-setting.md
+- IRI: pkis:concept:average-reward-setting
