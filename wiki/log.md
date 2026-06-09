@@ -5431,3 +5431,12 @@
 ## [2026-06-09] committed | principle
 - Committed: frequentist-evaluation-of-bayesian-methods → principles/frequentist-evaluation-of-bayesian-methods.md
 - IRI: pkis:principle:frequentist-evaluation-of-bayesian-methods
+
+## [2026-06-09] staged | node-stub (principle)
+- Staged: regression-to-the-mean (id: adf71933-3d3d-40d1-bacb-03c6f3ad66b6)
+- Title: Regression to the Mean
+- needs_canonical_source: False
+
+## [2026-06-09] committed | principle
+- Committed: regression-to-the-mean → principles/regression-to-the-mean.md
+- IRI: pkis:principle:regression-to-the-mean
