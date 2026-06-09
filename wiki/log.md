@@ -8154,3 +8154,12 @@
 ## [2026-06-09] committed | problem
 - Committed: st-petersburg-paradox → problems/st-petersburg-paradox.md
 - IRI: pkis:problem:st-petersburg-paradox
+
+## [2026-06-09] staged | node-stub (principle)
+- Staged: loss-function-vs-prior-asymmetry (id: 62e582e8-0d62-4a36-b15f-85963fc146bf)
+- Title: Asymmetry of Loss Functions and Prior Probabilities
+- needs_canonical_source: False
+
+## [2026-06-09] committed | principle
+- Committed: loss-function-vs-prior-asymmetry → principles/loss-function-vs-prior-asymmetry.md
+- IRI: pkis:principle:loss-function-vs-prior-asymmetry
