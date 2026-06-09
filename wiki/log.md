@@ -8806,3 +8806,12 @@
 ## [2026-06-09] committed | concept
 - Committed: local-search → concepts/local-search.md
 - IRI: pkis:concept:local-search
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: hill-climbing (id: 8a78799a-985c-400c-b9f5-f5cdddf01667)
+- Title: Hill Climbing
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: hill-climbing → techniques/hill-climbing.md
+- IRI: pkis:technique:hill-climbing
