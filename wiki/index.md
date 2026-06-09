@@ -606,6 +606,7 @@
 - [[market-vs-hierarchy]] — Coase/Williamson: transactions governed by price signals (markets) vs. managerial direction (firms) (corporate-finance) (2026-05-20)
 
 ## Techniques
+- [[abduction-action-prediction]] — Abduction–Action–Prediction (causal-analysis) (2026-06-09)
 - [[path-analysis]] — Path Analysis (Method of Path Coefficients) (causal-analysis, social-science-methods) (2026-06-09)
 - [[conditional-action-policy]] — Conditional and Stochastic Action Policies (causal-analysis, bayesian-stats) (2026-06-09)
 - [[ic-algorithm]] — IC Algorithm (Inductive Causation) (causal-analysis, statistical-learning) (2026-06-09)

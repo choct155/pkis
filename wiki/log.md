@@ -6799,3 +6799,12 @@
 ## [2026-06-09] committed | result
 - Committed: sure-thing-principle → results/sure-thing-principle.md
 - IRI: pkis:result:sure-thing-principle
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: abduction-action-prediction (id: 7515dff5-ce4b-4fe3-ba3e-52f839a63bc0)
+- Title: Abduction–Action–Prediction
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: abduction-action-prediction → techniques/abduction-action-prediction.md
+- IRI: pkis:technique:abduction-action-prediction
