@@ -9445,3 +9445,12 @@
 ## [2026-06-09] committed | framework
 - Committed: hidden-markov-model → frameworks/hidden-markov-model.md
 - IRI: pkis:framework:hidden-markov-model
+
+## [2026-06-09] staged | node-stub (framework)
+- Staged: dynamic-bayesian-network (id: 47671f2b-84bc-4b48-b18b-3555506ed4c2)
+- Title: Dynamic Bayesian Network (DBN)
+- needs_canonical_source: False
+
+## [2026-06-09] committed | framework
+- Committed: dynamic-bayesian-network → frameworks/dynamic-bayesian-network.md
+- IRI: pkis:framework:dynamic-bayesian-network
