@@ -5629,3 +5629,12 @@
 ## [2026-06-09] committed | concept
 - Committed: finite-population-vs-superpopulation-inference → concepts/finite-population-vs-superpopulation-inference.md
 - IRI: pkis:concept:finite-population-vs-superpopulation-inference
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: censoring-and-truncation (id: 5d7e0de2-55b0-4de6-ab91-d05916e73f71)
+- Title: Censoring and Truncation
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: censoring-and-truncation → concepts/censoring-and-truncation.md
+- IRI: pkis:concept:censoring-and-truncation
