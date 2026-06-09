@@ -8118,3 +8118,12 @@
 ## [2026-06-09] committed | framework
 - Committed: wald-decision-theory → frameworks/wald-decision-theory.md
 - IRI: pkis:framework:wald-decision-theory
+
+## [2026-06-09] staged | node-stub (principle)
+- Staged: minimax-criterion (id: 2bfa66f2-95b2-4cef-9df7-be22bfe409b5)
+- Title: Minimax Criterion
+- needs_canonical_source: False
+
+## [2026-06-09] committed | principle
+- Committed: minimax-criterion → principles/minimax-criterion.md
+- IRI: pkis:principle:minimax-criterion
