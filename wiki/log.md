@@ -6718,3 +6718,12 @@
 ## [2026-06-09] committed | technique
 - Committed: path-analysis → techniques/path-analysis.md
 - IRI: pkis:technique:path-analysis
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: path-coefficient (id: ed4331a0-7274-4b6f-a73d-a0afce88d74f)
+- Title: Path Coefficient
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: path-coefficient → concepts/path-coefficient.md
+- IRI: pkis:concept:path-coefficient
