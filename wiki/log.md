@@ -9598,3 +9598,12 @@
 ## [2026-06-09] committed | technique
 - Committed: preference-elicitation → techniques/preference-elicitation.md
 - IRI: pkis:technique:preference-elicitation
+
+## [2026-06-09] staged | node-stub (framework)
+- Staged: partially-observable-mdp (id: 524f860e-1726-47b6-837b-267165c7c3ff)
+- Title: Partially Observable Markov Decision Process (POMDP)
+- needs_canonical_source: False
+
+## [2026-06-09] committed | framework
+- Committed: partially-observable-mdp → frameworks/partially-observable-mdp.md
+- IRI: pkis:framework:partially-observable-mdp
