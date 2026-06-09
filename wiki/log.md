@@ -6691,3 +6691,12 @@
 ## [2026-06-09] committed | problem
 - Committed: plan-identification → problems/plan-identification.md
 - IRI: pkis:problem:plan-identification
+
+## [2026-06-09] staged | node-stub (principle)
+- Staged: causal-vs-evidential-decision-theory (id: ae2cb56e-be64-4754-96a0-49338329afb5)
+- Title: Causal vs. Evidential Decision Theory
+- needs_canonical_source: False
+
+## [2026-06-09] committed | principle
+- Committed: causal-vs-evidential-decision-theory → principles/causal-vs-evidential-decision-theory.md
+- IRI: pkis:principle:causal-vs-evidential-decision-theory
