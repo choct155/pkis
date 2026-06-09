@@ -290,6 +290,7 @@
 - [[liu-machine-unlearning-llm-2024]] — Rethinking Machine Unlearning for LLMs: post-training knowledge editing survey (deep-learning, ai-safety) (2026-05-20)
 
 ## Concepts
+- [[regenerative-process]] — Regenerative Process (bayesian-stats, statistical-learning) (2026-06-09)
 - [[recurrence-times]] — Recurrence Times (Age and Excess Life) (bayesian-stats, statistical-learning) (2026-06-09)
 - [[renewal-function]] — Renewal Function (bayesian-stats, statistical-learning) (2026-06-09)
 - [[renewal-process]] — Renewal Process (bayesian-stats, statistical-learning) (2026-06-09)

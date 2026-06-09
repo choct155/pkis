@@ -7363,3 +7363,12 @@
 ## [2026-06-09] committed | concept
 - Committed: recurrence-times → concepts/recurrence-times.md
 - IRI: pkis:concept:recurrence-times
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: regenerative-process (id: c6bd243a-1187-41a9-a836-b4a43d86c01d)
+- Title: Regenerative Process
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: regenerative-process → concepts/regenerative-process.md
+- IRI: pkis:concept:regenerative-process
