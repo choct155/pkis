@@ -4837,3 +4837,12 @@
 ## [2026-06-09] committed | technique
 - Committed: sarsa-lambda → techniques/sarsa-lambda.md
 - IRI: pkis:technique:sarsa-lambda
+
+## [2026-06-09] staged | node-stub (principle)
+- Staged: forward-vs-backward-view (id: 7c3232ba-e154-402a-ba94-568d1835eeb6)
+- Title: Forward vs. Backward View
+- needs_canonical_source: False
+
+## [2026-06-09] committed | principle
+- Committed: forward-vs-backward-view → principles/forward-vs-backward-view.md
+- IRI: pkis:principle:forward-vs-backward-view
