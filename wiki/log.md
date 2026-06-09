@@ -5845,3 +5845,12 @@
 ## [2026-06-09] committed | technique
 - Committed: varying-intercepts-and-slopes → techniques/varying-intercepts-and-slopes.md
 - IRI: pkis:technique:varying-intercepts-and-slopes
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: group-level-predictors (id: e4f5f100-48c9-425b-b260-016bfedaed5d)
+- Title: Group-Level Predictors
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: group-level-predictors → concepts/group-level-predictors.md
+- IRI: pkis:concept:group-level-predictors
