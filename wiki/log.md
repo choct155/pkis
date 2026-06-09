@@ -3649,3 +3649,12 @@
 ## [2026-06-09] committed | concept
 - Committed: covariance-and-correlation → concepts/covariance-and-correlation.md
 - IRI: pkis:concept:covariance-and-correlation
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: exponential-family (id: 103b1a53-0db9-4338-8d95-62907cb731cd)
+- Title: Exponential Family
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: exponential-family → concepts/exponential-family.md
+- IRI: pkis:concept:exponential-family
