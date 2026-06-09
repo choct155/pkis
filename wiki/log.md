@@ -4648,3 +4648,12 @@
 ## [2026-06-09] committed | technique
 - Committed: fourier-basis-rl → techniques/fourier-basis-rl.md
 - IRI: pkis:technique:fourier-basis-rl
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: polynomial-basis-rl (id: 06971551-a637-4722-8635-407e6f494f63)
+- Title: Polynomial Basis for RL
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: polynomial-basis-rl → techniques/polynomial-basis-rl.md
+- IRI: pkis:technique:polynomial-basis-rl

@@ -529,6 +529,7 @@
 - [[market-vs-hierarchy]] — Coase/Williamson: transactions governed by price signals (markets) vs. managerial direction (firms) (corporate-finance) (2026-05-20)
 
 ## Techniques
+- [[polynomial-basis-rl]] — Polynomial Basis for RL (reinforcement-learning) (2026-06-09)
 - [[fourier-basis-rl]] — Fourier Basis for RL (reinforcement-learning) (2026-06-09)
 - [[radial-basis-function-network]] — Radial Basis Function Network (reinforcement-learning, statistical-learning) (2026-06-09)
 - [[tile-coding]] — Tile Coding (reinforcement-learning) (2026-06-09)
