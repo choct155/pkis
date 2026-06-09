@@ -10183,3 +10183,12 @@
 ## [2026-06-09] committed | framework
 - Committed: probabilistic-context-free-grammar → frameworks/probabilistic-context-free-grammar.md
 - IRI: pkis:framework:probabilistic-context-free-grammar
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: syntactic-parsing (id: 51328da8-0e71-4081-ad21-5990363765a3)
+- Title: Syntactic Parsing
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: syntactic-parsing → techniques/syntactic-parsing.md
+- IRI: pkis:technique:syntactic-parsing
