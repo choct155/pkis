@@ -5773,3 +5773,12 @@
 ## [2026-06-09] committed | technique
 - Committed: parameter-expansion → techniques/parameter-expansion.md
 - IRI: pkis:technique:parameter-expansion
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: reversible-jump-mcmc (id: 13d0abcf-95df-451d-8970-0bd1c9695bbb)
+- Title: Reversible Jump MCMC
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: reversible-jump-mcmc → techniques/reversible-jump-mcmc.md
+- IRI: pkis:technique:reversible-jump-mcmc
