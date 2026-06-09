@@ -290,6 +290,7 @@
 - [[liu-machine-unlearning-llm-2024]] — Rethinking Machine Unlearning for LLMs: post-training knowledge editing survey (deep-learning, ai-safety) (2026-05-20)
 
 ## Concepts
+- [[overdispersion]] — Overdispersion (bayesian-stats) (2026-06-09)
 - [[link-function]] — Link Function (bayesian-stats) (2026-06-09)
 - [[intraclass-correlation]] — Intraclass Correlation (bayesian-stats, statistical-learning) (2026-06-09)
 - [[fixed-vs-random-effects]] — Fixed vs. Random Effects (bayesian-stats, statistical-learning) (2026-06-09)

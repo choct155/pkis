@@ -5917,3 +5917,12 @@
 ## [2026-06-09] committed | concept
 - Committed: link-function → concepts/link-function.md
 - IRI: pkis:concept:link-function
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: overdispersion (id: ca7acaef-2bb0-4cb5-956b-b99ed9b9cfcf)
+- Title: Overdispersion
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: overdispersion → concepts/overdispersion.md
+- IRI: pkis:concept:overdispersion
