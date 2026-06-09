@@ -7534,3 +7534,12 @@
 ## [2026-06-09] committed | concept
 - Committed: brownian-bridge → concepts/brownian-bridge.md
 - IRI: pkis:concept:brownian-bridge
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: quadratic-variation (id: 47d2458d-92fa-437d-b3b5-31c67a927a29)
+- Title: Quadratic Variation
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: quadratic-variation → concepts/quadratic-variation.md
+- IRI: pkis:concept:quadratic-variation
