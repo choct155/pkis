@@ -4855,3 +4855,12 @@
 ## [2026-06-09] committed | technique
 - Committed: replacing-traces → techniques/replacing-traces.md
 - IRI: pkis:technique:replacing-traces
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: classical-conditioning (id: 6ecd8bde-5db8-4a1b-950a-366128bbdb86)
+- Title: Classical (Pavlovian) Conditioning
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: classical-conditioning → concepts/classical-conditioning.md
+- IRI: pkis:concept:classical-conditioning
