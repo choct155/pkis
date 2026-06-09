@@ -10075,3 +10075,12 @@
 ## [2026-06-09] committed | concept
 - Committed: apprenticeship-learning → concepts/apprenticeship-learning.md
 - IRI: pkis:concept:apprenticeship-learning
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: imitation-learning (id: 105d806b-cac9-4c25-a8fe-391890676f39)
+- Title: Imitation Learning
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: imitation-learning → techniques/imitation-learning.md
+- IRI: pkis:technique:imitation-learning
