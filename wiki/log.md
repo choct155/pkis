@@ -5755,3 +5755,12 @@
 ## [2026-06-09] committed | technique
 - Committed: no-u-turn-sampler → techniques/no-u-turn-sampler.md
 - IRI: pkis:technique:no-u-turn-sampler
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: adaptive-mcmc (id: c3b0f7f0-9858-45a4-a710-16cd74021655)
+- Title: Adaptive MCMC
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: adaptive-mcmc → techniques/adaptive-mcmc.md
+- IRI: pkis:technique:adaptive-mcmc
