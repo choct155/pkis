@@ -11156,3 +11156,12 @@
 ## [2026-06-09] committed | technique
 - Committed: least-angle-regression-lars → techniques/least-angle-regression-lars.md
 - IRI: pkis:technique:least-angle-regression-lars
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: principal-components-regression (id: 40126de7-4bd7-41ef-937d-6d7693c4c459)
+- Title: Principal Components Regression (PCR)
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: principal-components-regression → techniques/principal-components-regression.md
+- IRI: pkis:technique:principal-components-regression
