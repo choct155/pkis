@@ -4621,3 +4621,12 @@
 ## [2026-06-09] committed | technique
 - Committed: coarse-coding → techniques/coarse-coding.md
 - IRI: pkis:technique:coarse-coding
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: tile-coding (id: c45e7327-b972-4093-bdd7-665a6911ee54)
+- Title: Tile Coding
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: tile-coding → techniques/tile-coding.md
+- IRI: pkis:technique:tile-coding
