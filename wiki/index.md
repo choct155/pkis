@@ -290,6 +290,7 @@
 - [[liu-machine-unlearning-llm-2024]] — Rethinking Machine Unlearning for LLMs: post-training knowledge editing survey (deep-learning, ai-safety) (2026-05-20)
 
 ## Concepts
+- [[brownian-motion]] — Brownian Motion (bayesian-stats, statistical-learning, state-space-models) (2026-06-09)
 - [[holding-times]] — Holding Times (Exponential Sojourn Times) (bayesian-stats, statistical-learning, systems-theory) (2026-06-09)
 - [[birth-death-process]] — Birth-Death Process (bayesian-stats, statistical-learning, systems-theory) (2026-06-09)
 - [[generator-matrix-q-matrix]] — Generator Matrix (Q-Matrix) (bayesian-stats, statistical-learning, systems-theory) (2026-06-09)

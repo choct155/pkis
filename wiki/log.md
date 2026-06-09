@@ -7498,3 +7498,12 @@
 ## [2026-06-09] committed | concept
 - Committed: holding-times → concepts/holding-times.md
 - IRI: pkis:concept:holding-times
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: brownian-motion (id: 9b423eeb-0745-41f4-9f70-9c1f41b4c3c1)
+- Title: Brownian Motion
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: brownian-motion → concepts/brownian-motion.md
+- IRI: pkis:concept:brownian-motion
