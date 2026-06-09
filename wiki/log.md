@@ -11552,3 +11552,12 @@
 ## [2026-06-09] committed | technique
 - Committed: tangent-distance → techniques/tangent-distance.md
 - IRI: pkis:technique:tangent-distance
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: discriminant-adaptive-nearest-neighbor (id: 3ad2d67f-0a99-46f3-9a5c-11b871474a6c)
+- Title: Discriminant Adaptive Nearest-Neighbors (DANN)
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: discriminant-adaptive-nearest-neighbor → techniques/discriminant-adaptive-nearest-neighbor.md
+- IRI: pkis:technique:discriminant-adaptive-nearest-neighbor
