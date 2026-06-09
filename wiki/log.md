@@ -4873,3 +4873,12 @@
 ## [2026-06-09] committed | concept
 - Committed: instrumental-conditioning → concepts/instrumental-conditioning.md
 - IRI: pkis:concept:instrumental-conditioning
+
+## [2026-06-09] staged | node-stub (framework)
+- Staged: rescorla-wagner-model (id: 9d45af8f-4d74-4ad6-8801-79ee55941a93)
+- Title: Rescorla-Wagner Model
+- needs_canonical_source: False
+
+## [2026-06-09] committed | framework
+- Committed: rescorla-wagner-model → frameworks/rescorla-wagner-model.md
+- IRI: pkis:framework:rescorla-wagner-model
