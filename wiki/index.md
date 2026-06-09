@@ -1090,6 +1090,7 @@
 - [[constraint-propagation]] — Reducing a constraint satisfaction problem by iteratively eliminating inconsistent values from variable domains (knowledge-representation) (2026-05-20)
 
 ## Results
+- [[gauss-markov-theorem]] — Gauss-Markov Theorem (statistical-learning) (2026-06-09)
 - [[linear-quadratic-regulator-lqr]] — Linear Quadratic Regulator (LQR) (robotics, optimization, systems-theory) (2026-06-09)
 - [[no-free-lunch-theorem]] — No Free Lunch (No Representation Efficient for All Functions) (statistical-learning) (2026-06-09)
 - [[gibbard-satterthwaite-theorem]] — Gibbard–Satterthwaite Theorem (multi-agent-systems, economics, social-choice) (2026-06-09)

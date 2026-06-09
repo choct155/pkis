@@ -11192,3 +11192,12 @@
 ## [2026-06-09] committed | concept
 - Committed: effective-degrees-of-freedom → concepts/effective-degrees-of-freedom.md
 - IRI: pkis:concept:effective-degrees-of-freedom
+
+## [2026-06-09] staged | node-stub (result)
+- Staged: gauss-markov-theorem (id: 2c8c24e4-ef6e-49ac-a592-708a47a3812e)
+- Title: Gauss-Markov Theorem
+- needs_canonical_source: False
+
+## [2026-06-09] committed | result
+- Committed: gauss-markov-theorem → results/gauss-markov-theorem.md
+- IRI: pkis:result:gauss-markov-theorem
