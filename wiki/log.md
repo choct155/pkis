@@ -8824,3 +8824,12 @@
 ## [2026-06-09] committed | technique
 - Committed: local-beam-search → techniques/local-beam-search.md
 - IRI: pkis:technique:local-beam-search
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: genetic-algorithm (id: ef56d6a6-f0ea-4e56-8865-57d3a55c68af)
+- Title: Genetic Algorithm
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: genetic-algorithm → techniques/genetic-algorithm.md
+- IRI: pkis:technique:genetic-algorithm
