@@ -290,6 +290,7 @@
 - [[liu-machine-unlearning-llm-2024]] — Rethinking Machine Unlearning for LLMs: post-training knowledge editing survey (deep-learning, ai-safety) (2026-05-20)
 
 ## Concepts
+- [[probability-generating-function]] — Probability Generating Function (statistical-learning) (2026-06-09)
 - [[strong-ignorability]] — Strong Ignorability (causal-analysis, bayesian-stats) (2026-06-09)
 - [[inus-condition]] — INUS Condition (causal-analysis) (2026-06-09)
 - [[structural-contingency]] — Structural Contingency (causal-analysis) (2026-06-09)
