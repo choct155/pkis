@@ -680,6 +680,7 @@
 - [[constraint-propagation]] — Reducing a constraint satisfaction problem by iteratively eliminating inconsistent values from variable domains (knowledge-representation) (2026-05-20)
 
 ## Results
+- [[bellman-optimality-equation]] — Bellman Optimality Equation (reinforcement-learning, optimization) (2026-06-09)
 - [[bellman-equation]] — Bellman Equation (reinforcement-learning, optimization) (2026-06-09)
 - [[representer-theorem]] — Representer Theorem (statistical-learning, optimization) (2026-06-09)
 - [[map-regression-as-regularized-least-squares]] — MAP Regression as Regularized Least Squares (statistical-learning, bayesian-stats) (2026-06-09)

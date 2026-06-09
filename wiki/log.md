@@ -4189,3 +4189,12 @@
 ## [2026-06-09] committed | result
 - Committed: bellman-equation → results/bellman-equation.md
 - IRI: pkis:result:bellman-equation
+
+## [2026-06-09] staged | node-stub (result)
+- Staged: bellman-optimality-equation (id: 94f247b1-31f4-478f-803f-8364f7fad419)
+- Title: Bellman Optimality Equation
+- needs_canonical_source: False
+
+## [2026-06-09] committed | result
+- Committed: bellman-optimality-equation → results/bellman-optimality-equation.md
+- IRI: pkis:result:bellman-optimality-equation
