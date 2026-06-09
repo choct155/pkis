@@ -7803,3 +7803,12 @@
 ## [2026-06-09] committed | result
 - Committed: cox-theorem → results/cox-theorem.md
 - IRI: pkis:result:cox-theorem
+
+## [2026-06-09] staged | node-stub (result)
+- Staged: product-rule (id: 90e1fcf1-7d08-4524-84ed-f6b33f30f8ec)
+- Title: Product Rule (Plausibility)
+- needs_canonical_source: False
+
+## [2026-06-09] committed | result
+- Committed: product-rule → results/product-rule.md
+- IRI: pkis:result:product-rule
