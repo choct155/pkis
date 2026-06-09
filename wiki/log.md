@@ -10516,3 +10516,12 @@
 ## [2026-06-09] committed | concept
 - Committed: chinese-room-argument → concepts/chinese-room-argument.md
 - IRI: pkis:concept:chinese-room-argument
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: machine-consciousness-and-qualia (id: 1b0c8fc4-1af5-4cb9-9888-9d529d62ea5d)
+- Title: Machine Consciousness and Qualia
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: machine-consciousness-and-qualia → concepts/machine-consciousness-and-qualia.md
+- IRI: pkis:concept:machine-consciousness-and-qualia
