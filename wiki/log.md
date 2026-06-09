@@ -7426,3 +7426,12 @@
 ## [2026-06-09] committed | technique
 - Committed: laplace-functional → techniques/laplace-functional.md
 - IRI: pkis:technique:laplace-functional
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: thinning-and-superposition (id: f530fcf6-1a32-4d10-86f2-52bf92c56557)
+- Title: Thinning and Superposition of Poisson Processes
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: thinning-and-superposition → concepts/thinning-and-superposition.md
+- IRI: pkis:concept:thinning-and-superposition
