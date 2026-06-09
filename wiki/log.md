@@ -8343,3 +8343,12 @@
 ## [2026-06-09] committed | principle
 - Committed: robustness-implies-optimality → principles/robustness-implies-optimality.md
 - IRI: pkis:principle:robustness-implies-optimality
+
+## [2026-06-09] staged | node-stub (result)
+- Staged: noiseless-channel-capacity-partition-function (id: 64eeb7be-8764-42d8-952c-73e3008a7775)
+- Title: Noiseless Channel Capacity via the Partition Function
+- needs_canonical_source: False
+
+## [2026-06-09] committed | result
+- Committed: noiseless-channel-capacity-partition-function → results/noiseless-channel-capacity-partition-function.md
+- IRI: pkis:result:noiseless-channel-capacity-partition-function
