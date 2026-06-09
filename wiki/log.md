@@ -7210,3 +7210,12 @@
 ## [2026-06-09] committed | concept
 - Committed: stopping-time → concepts/stopping-time.md
 - IRI: pkis:concept:stopping-time
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: first-passage-time (id: 88675618-e055-473e-b539-550ea48cba66)
+- Title: First-Passage Time
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: first-passage-time → concepts/first-passage-time.md
+- IRI: pkis:concept:first-passage-time

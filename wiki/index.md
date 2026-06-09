@@ -290,6 +290,7 @@
 - [[liu-machine-unlearning-llm-2024]] — Rethinking Machine Unlearning for LLMs: post-training knowledge editing survey (deep-learning, ai-safety) (2026-05-20)
 
 ## Concepts
+- [[first-passage-time]] — First-Passage Time (statistical-learning) (2026-06-09)
 - [[stopping-time]] — Stopping Time (statistical-learning) (2026-06-09)
 - [[convolution-of-distributions]] — Convolution of Distributions (statistical-learning) (2026-06-09)
 - [[probability-generating-function]] — Probability Generating Function (statistical-learning) (2026-06-09)
