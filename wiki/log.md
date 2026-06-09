@@ -6952,3 +6952,12 @@
 ## [2026-06-09] committed | technique
 - Committed: causal-beam → techniques/causal-beam.md
 - IRI: pkis:technique:causal-beam
+
+## [2026-06-09] staged | node-stub (principle)
+- Staged: but-for-vs-actual-cause (id: cc01126e-107f-4726-a425-8c1faaeb35fb)
+- Title: But-For Test vs. Actual Cause
+- needs_canonical_source: False
+
+## [2026-06-09] committed | principle
+- Committed: but-for-vs-actual-cause → principles/but-for-vs-actual-cause.md
+- IRI: pkis:principle:but-for-vs-actual-cause
