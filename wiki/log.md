@@ -8100,3 +8100,12 @@
 ## [2026-06-09] committed | technique
 - Committed: transformation-group-priors → techniques/transformation-group-priors.md
 - IRI: pkis:technique:transformation-group-priors
+
+## [2026-06-09] staged | node-stub (problem)
+- Staged: the-well-posed-problem-bertrand (id: 4fdd4b7d-fe71-4df9-9a1f-13d9219b881b)
+- Title: Bertrand's Paradox (The Well-Posed Problem)
+- needs_canonical_source: False
+
+## [2026-06-09] committed | problem
+- Committed: the-well-posed-problem-bertrand → problems/the-well-posed-problem-bertrand.md
+- IRI: pkis:problem:the-well-posed-problem-bertrand

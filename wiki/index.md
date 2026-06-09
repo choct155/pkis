@@ -1053,6 +1053,7 @@
 - [[broad-money-monetarism]] — Congdon's updated monetarism: broad money (M3/M4) drives nominal spending; emphasis on credit and asset prices (macroeconomics, monetary-economics) (2026-05-20)
 
 ## Problems
+- [[the-well-posed-problem-bertrand]] — Bertrand's Paradox (The Well-Posed Problem) (bayesian-stats, information-theory) (2026-06-09)
 - [[problem-of-induction]] — The Problem of Induction (bayesian-stats) (2026-06-09)
 - [[noncompliance-and-imperfect-experiments]] — Noncompliance and Imperfect Experiments (causal-analysis) (2026-06-09)
 - [[plan-identification]] — Plan Identification (Sequential Back-Door) (causal-analysis, bayesian-stats) (2026-06-09)
