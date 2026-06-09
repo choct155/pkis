@@ -6547,3 +6547,12 @@
 ## [2026-06-09] committed | principle
 - Committed: faithfulness-stability → principles/faithfulness-stability.md
 - IRI: pkis:principle:faithfulness-stability
+
+## [2026-06-09] staged | node-stub (principle)
+- Staged: minimal-model-causation (id: 63223bc5-3836-4348-adce-d21610a6812c)
+- Title: Minimal-Model Semantics of Inferred Causation
+- needs_canonical_source: False
+
+## [2026-06-09] committed | principle
+- Committed: minimal-model-causation → principles/minimal-model-causation.md
+- IRI: pkis:principle:minimal-model-causation

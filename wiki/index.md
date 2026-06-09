@@ -957,6 +957,7 @@
 - [[llm-language-comprehension]] — The problem of whether LLMs genuinely comprehend language vs. pattern-match surface form (deep-learning, cognitive-science) (2026-05-20)
 
 ## Principles
+- [[minimal-model-causation]] — Minimal-Model Semantics of Inferred Causation (causal-analysis, bayesian-stats) (2026-06-09)
 - [[faithfulness-stability]] — Faithfulness (Stability) (causal-analysis, statistical-learning, bayesian-stats) (2026-06-09)
 - [[causal-vs-statistical-distinction]] — Causal vs. Statistical Distinction (causal-analysis) (2026-06-09)
 - [[ladder-of-causation]] — Ladder of Causation (causal-analysis) (2026-06-09)
