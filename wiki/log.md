@@ -9751,3 +9751,12 @@
 ## [2026-06-09] committed | framework
 - Committed: extensive-form-game → frameworks/extensive-form-game.md
 - IRI: pkis:framework:extensive-form-game
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: subgame-perfect-equilibrium (id: 40b54311-7860-4975-b1c1-034f3329cd63)
+- Title: Subgame-Perfect Equilibrium
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: subgame-perfect-equilibrium → concepts/subgame-perfect-equilibrium.md
+- IRI: pkis:concept:subgame-perfect-equilibrium
