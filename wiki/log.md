@@ -6844,3 +6844,12 @@
 ## [2026-06-09] committed | concept
 - Committed: partial-identification-bounds → concepts/partial-identification-bounds.md
 - IRI: pkis:concept:partial-identification-bounds
+
+## [2026-06-09] staged | node-stub (problem)
+- Staged: noncompliance-and-imperfect-experiments (id: b25eaa1f-c80a-471a-9e79-7b7cdf38dab1)
+- Title: Noncompliance and Imperfect Experiments
+- needs_canonical_source: False
+
+## [2026-06-09] committed | problem
+- Committed: noncompliance-and-imperfect-experiments → problems/noncompliance-and-imperfect-experiments.md
+- IRI: pkis:problem:noncompliance-and-imperfect-experiments

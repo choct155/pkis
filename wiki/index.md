@@ -966,6 +966,7 @@
 - [[broad-money-monetarism]] — Congdon's updated monetarism: broad money (M3/M4) drives nominal spending; emphasis on credit and asset prices (macroeconomics, monetary-economics) (2026-05-20)
 
 ## Problems
+- [[noncompliance-and-imperfect-experiments]] — Noncompliance and Imperfect Experiments (causal-analysis) (2026-06-09)
 - [[plan-identification]] — Plan Identification (Sequential Back-Door) (causal-analysis, bayesian-stats) (2026-06-09)
 - [[causal-discovery]] — Causal Discovery (causal-analysis, statistical-learning) (2026-06-09)
 - [[number-of-components-selection]] — Choosing the Number of Mixture Components (bayesian-stats, statistical-learning) (2026-06-09)
