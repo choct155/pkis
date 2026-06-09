@@ -7264,3 +7264,12 @@
 ## [2026-06-09] committed | concept
 - Committed: stationary-distribution → concepts/stationary-distribution.md
 - IRI: pkis:concept:stationary-distribution
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: first-passage-times (id: 6833901d-8796-4289-8e91-5489e7540b10)
+- Title: First-Passage and Hitting Times
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: first-passage-times → concepts/first-passage-times.md
+- IRI: pkis:concept:first-passage-times
