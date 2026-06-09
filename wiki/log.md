@@ -9265,3 +9265,12 @@
 ## [2026-06-09] committed | framework
 - Committed: mental-objects-and-modal-logic → frameworks/mental-objects-and-modal-logic.md
 - IRI: pkis:framework:mental-objects-and-modal-logic
+
+## [2026-06-09] staged | node-stub (framework)
+- Staged: semantic-network (id: 0480f3a5-be3c-4427-843e-2d9a18175a8e)
+- Title: Semantic Network
+- needs_canonical_source: False
+
+## [2026-06-09] committed | framework
+- Committed: semantic-network → frameworks/semantic-network.md
+- IRI: pkis:framework:semantic-network
