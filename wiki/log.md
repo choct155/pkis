@@ -7273,3 +7273,12 @@
 ## [2026-06-09] committed | concept
 - Committed: first-passage-times → concepts/first-passage-times.md
 - IRI: pkis:concept:first-passage-times
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: absorbing-markov-chain (id: 29b99b3c-a38b-4243-a889-72cc3db1ff60)
+- Title: Absorbing Markov Chain and the Fundamental Matrix
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: absorbing-markov-chain → concepts/absorbing-markov-chain.md
+- IRI: pkis:concept:absorbing-markov-chain
