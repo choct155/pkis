@@ -10282,3 +10282,12 @@
 ## [2026-06-09] committed | technique
 - Committed: beam-search-decoding → techniques/beam-search-decoding.md
 - IRI: pkis:technique:beam-search-decoding
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: bidirectional-rnn (id: ecb15258-ecb8-4e16-a576-1fade7349eb7)
+- Title: Bidirectional RNN
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: bidirectional-rnn → techniques/bidirectional-rnn.md
+- IRI: pkis:technique:bidirectional-rnn

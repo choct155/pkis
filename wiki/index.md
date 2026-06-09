@@ -719,6 +719,7 @@
 - [[market-vs-hierarchy]] — Coase/Williamson: transactions governed by price signals (markets) vs. managerial direction (firms) (corporate-finance) (2026-05-20)
 
 ## Techniques
+- [[bidirectional-rnn]] — Bidirectional RNN (deep-learning) (2026-06-09)
 - [[beam-search-decoding]] — Beam Search Decoding (deep-learning) (2026-06-09)
 - [[pretraining-and-fine-tuning]] — Pretraining and Fine-Tuning (deep-learning) (2026-06-09)
 - [[masked-language-modeling]] — Masked Language Modeling (deep-learning) (2026-06-09)
