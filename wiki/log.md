@@ -11714,3 +11714,12 @@
 ## [2026-06-09] committed | technique
 - Committed: contrastive-divergence → techniques/contrastive-divergence.md
 - IRI: pkis:technique:contrastive-divergence
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: high-dimensional-statistics-p-gg-n (id: c675c204-471d-4f65-b714-bb6123316b46)
+- Title: High-Dimensional Statistics (p ≫ N)
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: high-dimensional-statistics-p-gg-n → concepts/high-dimensional-statistics-p-gg-n.md
+- IRI: pkis:concept:high-dimensional-statistics-p-gg-n

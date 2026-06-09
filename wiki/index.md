@@ -290,6 +290,7 @@
 - [[liu-machine-unlearning-llm-2024]] — Rethinking Machine Unlearning for LLMs: post-training knowledge editing survey (deep-learning, ai-safety) (2026-05-20)
 
 ## Concepts
+- [[high-dimensional-statistics-p-gg-n]] — High-Dimensional Statistics (p ≫ N) (statistical-learning) (2026-06-09)
 - [[cluster-dissimilarity-measures]] — Cluster Dissimilarity Measures (statistical-learning) (2026-06-09)
 - [[epsilon-insensitive-loss]] — Epsilon-Insensitive Loss (statistical-learning, optimization) (2026-06-09)
 - [[projection-pursuit-regression]] — Projection Pursuit Regression (statistical-learning) (2026-06-09)
