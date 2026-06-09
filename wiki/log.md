@@ -4729,3 +4729,12 @@
 ## [2026-06-09] committed | technique
 - Committed: n-step-semi-gradient-sarsa → techniques/n-step-semi-gradient-sarsa.md
 - IRI: pkis:technique:n-step-semi-gradient-sarsa
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: the-deadly-triad (id: 3b4e61e0-7f1a-4e44-af48-6d0a888993ef)
+- Title: The Deadly Triad
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: the-deadly-triad → concepts/the-deadly-triad.md
+- IRI: pkis:concept:the-deadly-triad
