@@ -11615,3 +11615,12 @@
 ## [2026-06-09] committed | technique
 - Committed: spectral-clustering → techniques/spectral-clustering.md
 - IRI: pkis:technique:spectral-clustering
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: principal-curves-surfaces (id: 3404be89-e1b1-4a1e-8fc7-035ea90b671d)
+- Title: Principal Curves and Surfaces
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: principal-curves-surfaces → techniques/principal-curves-surfaces.md
+- IRI: pkis:technique:principal-curves-surfaces
