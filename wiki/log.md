@@ -6970,3 +6970,12 @@
 ## [2026-06-09] committed | concept
 - Committed: structural-contingency → concepts/structural-contingency.md
 - IRI: pkis:concept:structural-contingency
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: inus-condition (id: a1e1e23f-0172-4b45-af04-c6c767672c79)
+- Title: INUS Condition
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: inus-condition → concepts/inus-condition.md
+- IRI: pkis:concept:inus-condition
