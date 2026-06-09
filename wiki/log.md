@@ -9382,3 +9382,12 @@
 ## [2026-06-09] committed | technique
 - Committed: critical-path-method → techniques/critical-path-method.md
 - IRI: pkis:technique:critical-path-method
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: full-joint-probability-distribution (id: 2f9e2bf6-cefe-4e36-8f8f-3cbd91a2bcd8)
+- Title: Full Joint Probability Distribution
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: full-joint-probability-distribution → concepts/full-joint-probability-distribution.md
+- IRI: pkis:concept:full-joint-probability-distribution
