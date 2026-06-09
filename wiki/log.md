@@ -4801,3 +4801,12 @@
 ## [2026-06-09] committed | concept
 - Committed: eligibility-traces → concepts/eligibility-traces.md
 - IRI: pkis:concept:eligibility-traces
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: lambda-return (id: dc37b44d-1291-41a7-90d3-b1c64afe3fd8)
+- Title: Lambda-Return
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: lambda-return → concepts/lambda-return.md
+- IRI: pkis:concept:lambda-return
