@@ -9670,3 +9670,12 @@
 ## [2026-06-09] committed | concept
 - Committed: dominant-strategy → concepts/dominant-strategy.md
 - IRI: pkis:concept:dominant-strategy
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: mixed-strategy (id: 2958154e-dc7d-4b97-8061-143b79266578)
+- Title: Mixed Strategy
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: mixed-strategy → concepts/mixed-strategy.md
+- IRI: pkis:concept:mixed-strategy
