@@ -10381,3 +10381,12 @@
 ## [2026-06-09] committed | problem
 - Committed: simultaneous-localization-and-mapping-slam → problems/simultaneous-localization-and-mapping-slam.md
 - IRI: pkis:problem:simultaneous-localization-and-mapping-slam
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: configuration-space (id: 40bb9022-0094-4d4d-8d5c-33f20ae246a6)
+- Title: Configuration Space (C-space)
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: configuration-space → concepts/configuration-space.md
+- IRI: pkis:concept:configuration-space

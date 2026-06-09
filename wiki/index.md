@@ -290,6 +290,7 @@
 - [[liu-machine-unlearning-llm-2024]] — Rethinking Machine Unlearning for LLMs: post-training knowledge editing survey (deep-learning, ai-safety) (2026-05-20)
 
 ## Concepts
+- [[configuration-space]] — Configuration Space (C-space) (robotics, optimization) (2026-06-09)
 - [[robot-localization]] — Robot Localization (robotics, state-space-models) (2026-06-09)
 - [[stereo-and-depth]] — Stereo and Depth Reconstruction (computer-vision, deep-learning) (2026-06-09)
 - [[optical-flow]] — Optical Flow (computer-vision, deep-learning) (2026-06-09)
