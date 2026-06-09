@@ -11561,3 +11561,12 @@
 ## [2026-06-09] committed | technique
 - Committed: discriminant-adaptive-nearest-neighbor → techniques/discriminant-adaptive-nearest-neighbor.md
 - IRI: pkis:technique:discriminant-adaptive-nearest-neighbor
+
+## [2026-06-09] staged | node-stub (result)
+- Staged: cover-hart-theorem (id: 989e9671-87a8-475c-b5ec-8f6b8e30e6d2)
+- Title: Cover-Hart Theorem (1-Nearest-Neighbor Error Bound)
+- needs_canonical_source: False
+
+## [2026-06-09] committed | result
+- Committed: cover-hart-theorem → results/cover-hart-theorem.md
+- IRI: pkis:result:cover-hart-theorem
