@@ -5332,3 +5332,12 @@
 ## [2026-06-09] committed | result
 - Committed: law-of-total-variance → results/law-of-total-variance.md
 - IRI: pkis:result:law-of-total-variance
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: noninformative-prior (id: cc926472-2dac-4ef8-ad45-03e46b72c57b)
+- Title: Noninformative Prior
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: noninformative-prior → concepts/noninformative-prior.md
+- IRI: pkis:concept:noninformative-prior
