@@ -1021,6 +1021,7 @@
 - [[constraint-propagation]] — Reducing a constraint satisfaction problem by iteratively eliminating inconsistent values from variable domains (knowledge-representation) (2026-05-20)
 
 ## Results
+- [[arrows-theorem]] — Arrow's Theorem (multi-agent-systems, economics, social-choice) (2026-06-09)
 - [[revenue-equivalence-theorem]] — Revenue Equivalence Theorem (multi-agent-systems, economics) (2026-06-09)
 - [[folk-theorem]] — Nash Folk Theorem (multi-agent-systems, decision-theory, economics) (2026-06-09)
 - [[gittins-index]] — Gittins Index (reinforcement-learning, optimization) (2026-06-09)

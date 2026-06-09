@@ -9877,3 +9877,12 @@
 ## [2026-06-09] committed | framework
 - Committed: social-choice-theory → frameworks/social-choice-theory.md
 - IRI: pkis:framework:social-choice-theory
+
+## [2026-06-09] staged | node-stub (result)
+- Staged: arrows-theorem (id: 74ff9889-ab5b-4ab6-a523-17fa440601e3)
+- Title: Arrow's Theorem
+- needs_canonical_source: False
+
+## [2026-06-09] committed | result
+- Committed: arrows-theorem → results/arrows-theorem.md
+- IRI: pkis:result:arrows-theorem
