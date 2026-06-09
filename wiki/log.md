@@ -9103,3 +9103,12 @@
 ## [2026-06-09] committed | concept
 - Committed: quantifiers-universal-existential → concepts/quantifiers-universal-existential.md
 - IRI: pkis:concept:quantifiers-universal-existential
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: terms-predicates-and-models-fol (id: 3a556924-0f74-4718-bd0b-64ec9cb3ce76)
+- Title: Terms, Predicates, and Models in First-Order Logic
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: terms-predicates-and-models-fol → concepts/terms-predicates-and-models-fol.md
+- IRI: pkis:concept:terms-predicates-and-models-fol
