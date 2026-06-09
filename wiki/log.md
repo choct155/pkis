@@ -11606,3 +11606,12 @@
 ## [2026-06-09] committed | technique
 - Committed: self-organizing-map → techniques/self-organizing-map.md
 - IRI: pkis:technique:self-organizing-map
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: spectral-clustering (id: 5038f8af-0e88-46b3-8680-d228238e4907)
+- Title: Spectral Clustering
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: spectral-clustering → techniques/spectral-clustering.md
+- IRI: pkis:technique:spectral-clustering
