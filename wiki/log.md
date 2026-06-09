@@ -3541,3 +3541,12 @@
 ## [2026-06-09] committed | technique
 - Committed: gram-schmidt → techniques/gram-schmidt.md
 - IRI: pkis:technique:gram-schmidt
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: rotation-matrix (id: c5768d21-6b5f-4146-9975-cc83408863f1)
+- Title: Rotation Matrix
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: rotation-matrix → concepts/rotation-matrix.md
+- IRI: pkis:concept:rotation-matrix
