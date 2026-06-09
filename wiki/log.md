@@ -8860,3 +8860,12 @@
 ## [2026-06-09] committed | concept
 - Committed: online-search-agents → concepts/online-search-agents.md
 - IRI: pkis:concept:online-search-agents
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: lrta-star (id: 9b917ff8-532b-4ed0-957d-611a961b915f)
+- Title: Learning Real-Time A* (LRTA*)
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: lrta-star → techniques/lrta-star.md
+- IRI: pkis:technique:lrta-star
