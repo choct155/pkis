@@ -11471,3 +11471,12 @@
 ## [2026-06-09] committed | concept
 - Committed: projection-pursuit-regression → concepts/projection-pursuit-regression.md
 - IRI: pkis:concept:projection-pursuit-regression
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: optimal-scoring (id: 67791c58-f776-438f-aa60-b695da2c00fd)
+- Title: Optimal Scoring
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: optimal-scoring → techniques/optimal-scoring.md
+- IRI: pkis:technique:optimal-scoring
