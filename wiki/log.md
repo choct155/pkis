@@ -8680,3 +8680,12 @@
 ## [2026-06-09] committed | framework
 - Committed: peas-task-environment → frameworks/peas-task-environment.md
 - IRI: pkis:framework:peas-task-environment
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: task-environment-properties (id: d5340420-67fb-4e40-8040-cb11f5eee5af)
+- Title: Task Environment Properties
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: task-environment-properties → concepts/task-environment-properties.md
+- IRI: pkis:concept:task-environment-properties
