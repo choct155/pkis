@@ -3694,3 +3694,12 @@
 ## [2026-06-09] committed | concept
 - Committed: lagrangian-duality → concepts/lagrangian-duality.md
 - IRI: pkis:concept:lagrangian-duality
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: convex-conjugate (id: 0e15faa9-9e28-492b-955d-55622713d0b4)
+- Title: Convex Conjugate (Legendre-Fenchel Transform)
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: convex-conjugate → concepts/convex-conjugate.md
+- IRI: pkis:concept:convex-conjugate
