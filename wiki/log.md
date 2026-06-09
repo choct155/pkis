@@ -7489,3 +7489,12 @@
 ## [2026-06-09] committed | concept
 - Committed: birth-death-process → concepts/birth-death-process.md
 - IRI: pkis:concept:birth-death-process
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: holding-times (id: f613e19f-b875-4b4a-a409-b307454bc2fc)
+- Title: Holding Times (Exponential Sojourn Times)
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: holding-times → concepts/holding-times.md
+- IRI: pkis:concept:holding-times
