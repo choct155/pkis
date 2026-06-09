@@ -290,6 +290,7 @@
 - [[liu-machine-unlearning-llm-2024]] — Rethinking Machine Unlearning for LLMs: post-training knowledge editing survey (deep-learning, ai-safety) (2026-05-20)
 
 ## Concepts
+- [[pivotal-quantity]] — Pivotal Quantity (bayesian-stats) (2026-06-09)
 - [[multivariate-normal-model]] — Multivariate Normal Model (Bayesian) (bayesian-stats, statistical-learning) (2026-06-09)
 - [[nuisance-parameters]] — Nuisance Parameters (bayesian-stats) (2026-06-09)
 - [[weakly-informative-prior]] — Weakly Informative Prior (bayesian-stats) (2026-06-09)

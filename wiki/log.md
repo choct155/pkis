@@ -5377,3 +5377,12 @@
 ## [2026-06-09] committed | concept
 - Committed: multivariate-normal-model → concepts/multivariate-normal-model.md
 - IRI: pkis:concept:multivariate-normal-model
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: pivotal-quantity (id: 6378e37d-84f4-4e75-8cac-f80c9d051fb3)
+- Title: Pivotal Quantity
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: pivotal-quantity → concepts/pivotal-quantity.md
+- IRI: pkis:concept:pivotal-quantity
