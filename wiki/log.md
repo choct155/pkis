@@ -9544,3 +9544,12 @@
 ## [2026-06-09] committed | result
 - Committed: von-neumann-morgenstern-axioms → results/von-neumann-morgenstern-axioms.md
 - IRI: pkis:result:von-neumann-morgenstern-axioms
+
+## [2026-06-09] staged | node-stub (framework)
+- Staged: multiattribute-utility-theory (id: 6af81d34-0e65-44a6-9603-b7b837af7a29)
+- Title: Multiattribute Utility Theory
+- needs_canonical_source: False
+
+## [2026-06-09] committed | framework
+- Committed: multiattribute-utility-theory → frameworks/multiattribute-utility-theory.md
+- IRI: pkis:framework:multiattribute-utility-theory
