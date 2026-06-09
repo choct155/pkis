@@ -9778,3 +9778,12 @@
 ## [2026-06-09] committed | framework
 - Committed: cooperative-game → frameworks/cooperative-game.md
 - IRI: pkis:framework:cooperative-game
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: the-core (id: 652adcc2-c55c-4a86-bbc5-2f2f6277ca56)
+- Title: The Core
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: the-core → concepts/the-core.md
+- IRI: pkis:concept:the-core

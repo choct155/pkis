@@ -290,6 +290,7 @@
 - [[liu-machine-unlearning-llm-2024]] — Rethinking Machine Unlearning for LLMs: post-training knowledge editing survey (deep-learning, ai-safety) (2026-05-20)
 
 ## Concepts
+- [[the-core]] — The Core (multi-agent-systems, economics) (2026-06-09)
 - [[subgame-perfect-equilibrium]] — Subgame-Perfect Equilibrium (multi-agent-systems, decision-theory) (2026-06-09)
 - [[repeated-game]] — Repeated Game (multi-agent-systems, decision-theory, economics) (2026-06-09)
 - [[social-welfare-function]] — Social Welfare Function (multi-agent-systems, economics, social-choice) (2026-06-09)
