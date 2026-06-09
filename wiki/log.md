@@ -4756,3 +4756,12 @@
 ## [2026-06-09] committed | concept
 - Committed: bellman-error-vs-projected-bellman-error → concepts/bellman-error-vs-projected-bellman-error.md
 - IRI: pkis:concept:bellman-error-vs-projected-bellman-error
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: gradient-td-methods (id: ecd3b2a8-6458-4d8f-a095-bfd685209097)
+- Title: Gradient-TD Methods (GTD2 and TDC)
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: gradient-td-methods → techniques/gradient-td-methods.md
+- IRI: pkis:technique:gradient-td-methods
