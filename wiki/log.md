@@ -10570,3 +10570,12 @@
 ## [2026-06-09] committed | concept
 - Committed: robot-rights-and-personhood → concepts/robot-rights-and-personhood.md
 - IRI: pkis:concept:robot-rights-and-personhood
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: ai-existential-risk (id: 793431c7-35d3-4b41-93ca-84fc9ae9f2e6)
+- Title: AI Existential Risk and the Control Problem
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: ai-existential-risk → concepts/ai-existential-risk.md
+- IRI: pkis:concept:ai-existential-risk
