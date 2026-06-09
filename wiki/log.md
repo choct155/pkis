@@ -5368,3 +5368,12 @@
 ## [2026-06-09] committed | concept
 - Committed: nuisance-parameters → concepts/nuisance-parameters.md
 - IRI: pkis:concept:nuisance-parameters
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: multivariate-normal-model (id: 3de04a86-9a26-41ad-8798-16373a531798)
+- Title: Multivariate Normal Model (Bayesian)
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: multivariate-normal-model → concepts/multivariate-normal-model.md
+- IRI: pkis:concept:multivariate-normal-model
