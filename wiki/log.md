@@ -7588,3 +7588,12 @@
 ## [2026-06-09] committed | concept
 - Committed: random-walk → concepts/random-walk.md
 - IRI: pkis:concept:random-walk
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: ladder-epochs-and-heights (id: ad90c218-ffe0-472f-8c1a-0f03126daf5d)
+- Title: Ladder Epochs and Ladder Heights
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: ladder-epochs-and-heights → concepts/ladder-epochs-and-heights.md
+- IRI: pkis:concept:ladder-epochs-and-heights
