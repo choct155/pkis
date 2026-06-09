@@ -10030,3 +10030,12 @@
 ## [2026-06-09] committed | technique
 - Committed: autoregressive-model → techniques/autoregressive-model.md
 - IRI: pkis:technique:autoregressive-model
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: pooling-layer (id: da2e71d1-ea66-4615-80fa-2a43c90da1e6)
+- Title: Pooling Layer
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: pooling-layer → techniques/pooling-layer.md
+- IRI: pkis:technique:pooling-layer
