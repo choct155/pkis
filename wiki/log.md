@@ -3856,3 +3856,12 @@
 ## [2026-06-09] committed | concept
 - Committed: hinge-loss → concepts/hinge-loss.md
 - IRI: pkis:concept:hinge-loss
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: the-kernel-trick (id: b0d0b7f2-cde7-49e2-bcdb-a4eea6265f0c)
+- Title: The Kernel Trick
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: the-kernel-trick → concepts/the-kernel-trick.md
+- IRI: pkis:concept:the-kernel-trick
