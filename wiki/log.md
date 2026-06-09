@@ -5530,3 +5530,12 @@
 ## [2026-06-09] committed | concept
 - Committed: expected-log-predictive-density → concepts/expected-log-predictive-density.md
 - IRI: pkis:concept:expected-log-predictive-density
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: scoring-rules (id: c9c742c5-e3fe-4a6d-b9fc-75cb0f603d20)
+- Title: Scoring Rules
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: scoring-rules → concepts/scoring-rules.md
+- IRI: pkis:concept:scoring-rules
