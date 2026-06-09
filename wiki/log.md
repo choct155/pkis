@@ -5485,3 +5485,12 @@
 ## [2026-06-09] committed | technique
 - Committed: posterior-predictive-check → techniques/posterior-predictive-check.md
 - IRI: pkis:technique:posterior-predictive-check
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: test-quantity-discrepancy (id: 2dcd77bb-c1ea-4221-8c82-085ce085c890)
+- Title: Test Quantity (Discrepancy Measure)
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: test-quantity-discrepancy → concepts/test-quantity-discrepancy.md
+- IRI: pkis:concept:test-quantity-discrepancy
