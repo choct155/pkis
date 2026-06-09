@@ -9157,3 +9157,12 @@
 ## [2026-06-09] committed | technique
 - Committed: forward-chaining-fol → techniques/forward-chaining-fol.md
 - IRI: pkis:technique:forward-chaining-fol
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: backward-chaining-fol (id: fd70a90a-0c93-4ef9-9636-fa520764c1e7)
+- Title: Backward Chaining (First-Order)
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: backward-chaining-fol → techniques/backward-chaining-fol.md
+- IRI: pkis:technique:backward-chaining-fol
