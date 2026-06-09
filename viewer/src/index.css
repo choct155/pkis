@@ -987,13 +987,16 @@ body {
 .domain-group-caret { color: var(--dim); font-size: 10px; width: 10px; }
 .domain-group-name { font-weight: 500; }
 .domain-row {
-  display: flex; align-items: center; justify-content: space-between;
+  display: flex; align-items: center; justify-content: space-between; gap: 8px;
   padding: 4px 12px 4px 28px; cursor: pointer; color: var(--muted); font-size: 12px;
 }
 .domain-row:hover { background: var(--raised); color: var(--text); }
 .domain-row.active { color: var(--accent); background: rgba(79,142,247,0.10); }
-.domain-row-name { font-family: var(--mono); }
-.domain-row-count { font-family: var(--mono); font-size: 10px; color: var(--dim); }
+.domain-row-name {
+  font-family: var(--mono); min-width: 0;
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+.domain-row-count { font-family: var(--mono); font-size: 10px; color: var(--dim); flex-shrink: 0; }
 
 .cluster-row {
   padding: 5px 12px; cursor: pointer; color: var(--muted); font-size: 12px;
