@@ -3982,3 +3982,12 @@
 ## [2026-06-09] committed | concept
 - Committed: reinforcement-learning → concepts/reinforcement-learning.md
 - IRI: pkis:concept:reinforcement-learning
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: agent-environment-interface (id: 61899f38-661f-4a3a-b27b-568a9d810b75)
+- Title: Agent–Environment Interface
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: agent-environment-interface → concepts/agent-environment-interface.md
+- IRI: pkis:concept:agent-environment-interface
