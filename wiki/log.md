@@ -3451,3 +3451,12 @@
 ## [2026-06-09] committed | concept
 - Committed: vector-space → concepts/vector-space.md
 - IRI: pkis:concept:vector-space
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: linear-independence (id: 184a912a-f6b3-4de0-abd1-56bc0563a7ba)
+- Title: Linear Independence
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: linear-independence → concepts/linear-independence.md
+- IRI: pkis:concept:linear-independence
