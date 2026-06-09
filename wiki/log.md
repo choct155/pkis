@@ -5620,3 +5620,12 @@
 ## [2026-06-09] committed | concept
 - Committed: data-collection-mechanism → concepts/data-collection-mechanism.md
 - IRI: pkis:concept:data-collection-mechanism
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: finite-population-vs-superpopulation-inference (id: 50bdc083-28fe-4389-9a34-7f927c985394)
+- Title: Finite-Population vs. Superpopulation Inference
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: finite-population-vs-superpopulation-inference → concepts/finite-population-vs-superpopulation-inference.md
+- IRI: pkis:concept:finite-population-vs-superpopulation-inference
