@@ -7606,3 +7606,12 @@
 ## [2026-06-09] committed | concept
 - Committed: duality-random-walk → concepts/duality-random-walk.md
 - IRI: pkis:concept:duality-random-walk
+
+## [2026-06-09] staged | node-stub (result)
+- Staged: wiener-hopf-factorization (id: 6d347acd-f37c-4b09-887a-58681570b1a2)
+- Title: Wiener-Hopf Factorization (Random Walk)
+- needs_canonical_source: False
+
+## [2026-06-09] committed | result
+- Committed: wiener-hopf-factorization → results/wiener-hopf-factorization.md
+- IRI: pkis:result:wiener-hopf-factorization
