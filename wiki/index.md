@@ -1165,6 +1165,7 @@
 - [[government-debt-valuation-equation]] — FTPL: price level determined by ratio of nominal debt to expected present value of future surpluses (macroeconomics) (2026-05-20)
 
 ## Frameworks
+- [[subsumption-architecture]] — Subsumption Architecture (Reactive Robot Control) (robotics) (2026-06-09)
 - [[human-robot-coordination-game]] — Human-Robot Coordination as a Game (robotics, reinforcement-learning) (2026-06-09)
 - [[robotics-decision-making]] — Robotics as Continuous, Partially-Observable, Multi-Agent Decision Making (robotics, optimization, reinforcement-learning) (2026-06-09)
 - [[sequence-to-sequence-model]] — Sequence-to-Sequence Model (deep-learning) (2026-06-09)

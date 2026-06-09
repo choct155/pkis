@@ -10489,3 +10489,12 @@
 ## [2026-06-09] committed | framework
 - Committed: human-robot-coordination-game → frameworks/human-robot-coordination-game.md
 - IRI: pkis:framework:human-robot-coordination-game
+
+## [2026-06-09] staged | node-stub (framework)
+- Staged: subsumption-architecture (id: 533fc7d0-ec03-490e-a9dd-b4a1d6d800f6)
+- Title: Subsumption Architecture (Reactive Robot Control)
+- needs_canonical_source: False
+
+## [2026-06-09] committed | framework
+- Committed: subsumption-architecture → frameworks/subsumption-architecture.md
+- IRI: pkis:framework:subsumption-architecture
