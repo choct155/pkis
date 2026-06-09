@@ -1089,6 +1089,7 @@
 - [[government-debt-valuation-equation]] — FTPL: price level determined by ratio of nominal debt to expected present value of future surpluses (macroeconomics) (2026-05-20)
 
 ## Frameworks
+- [[decision-network-influence-diagram]] — Decision Network (Influence Diagram) (bayesian-stats, agentic-systems) (2026-06-09)
 - [[multiattribute-utility-theory]] — Multiattribute Utility Theory (bayesian-stats, agentic-systems) (2026-06-09)
 - [[open-universe-probability-model]] — Open-Universe Probability Model (bayesian-stats, knowledge-representation) (2026-06-09)
 - [[relational-probability-model]] — Relational Probability Model (bayesian-stats, knowledge-representation) (2026-06-09)

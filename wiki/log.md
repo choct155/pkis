@@ -9562,3 +9562,12 @@
 ## [2026-06-09] committed | concept
 - Committed: stochastic-dominance → concepts/stochastic-dominance.md
 - IRI: pkis:concept:stochastic-dominance
+
+## [2026-06-09] staged | node-stub (framework)
+- Staged: decision-network-influence-diagram (id: 524e88b1-fe09-4a8b-bc83-b0725277d1d1)
+- Title: Decision Network (Influence Diagram)
+- needs_canonical_source: False
+
+## [2026-06-09] committed | framework
+- Committed: decision-network-influence-diagram → frameworks/decision-network-influence-diagram.md
+- IRI: pkis:framework:decision-network-influence-diagram
