@@ -4603,3 +4603,12 @@
 ## [2026-06-09] committed | result
 - Committed: td-fixed-point → results/td-fixed-point.md
 - IRI: pkis:result:td-fixed-point
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: state-aggregation (id: 807df61b-2260-4bcd-9506-713676832f4a)
+- Title: State Aggregation
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: state-aggregation → techniques/state-aggregation.md
+- IRI: pkis:technique:state-aggregation
