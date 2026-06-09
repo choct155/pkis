@@ -6817,3 +6817,12 @@
 ## [2026-06-09] committed | technique
 - Committed: twin-network-method → techniques/twin-network-method.md
 - IRI: pkis:technique:twin-network-method
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: causal-submodel (id: 2f902d71-469f-4139-8624-07627a9b6966)
+- Title: Causal Submodel
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: causal-submodel → concepts/causal-submodel.md
+- IRI: pkis:concept:causal-submodel
