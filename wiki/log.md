@@ -3505,3 +3505,12 @@
 ## [2026-06-09] committed | concept
 - Committed: norm → concepts/norm.md
 - IRI: pkis:concept:norm
+
+## [2026-06-09] staged | node-stub (concept)
+- Staged: inner-product (id: fbe3bc25-1056-4d1f-bb8b-2be62367ba31)
+- Title: Inner Product
+- needs_canonical_source: False
+
+## [2026-06-09] committed | concept
+- Committed: inner-product → concepts/inner-product.md
+- IRI: pkis:concept:inner-product

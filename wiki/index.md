@@ -290,6 +290,7 @@
 - [[liu-machine-unlearning-llm-2024]] — Rethinking Machine Unlearning for LLMs: post-training knowledge editing survey (deep-learning, ai-safety) (2026-05-20)
 
 ## Concepts
+- [[inner-product]] — Inner Product (statistical-learning) (2026-06-09)
 - [[norm]] — Norm (statistical-learning) (2026-06-09)
 - [[affine-space]] — Affine Space (statistical-learning) (2026-06-09)
 - [[linear-mapping]] — Linear Mapping (statistical-learning) (2026-06-09)
