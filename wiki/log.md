@@ -11147,3 +11147,12 @@
 ## [2026-06-09] committed | technique
 - Committed: subset-selection → techniques/subset-selection.md
 - IRI: pkis:technique:subset-selection
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: least-angle-regression-lars (id: 0ad3e25b-1f6d-4aa6-b79e-1df192557b7c)
+- Title: Least Angle Regression (LARS)
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: least-angle-regression-lars → techniques/least-angle-regression-lars.md
+- IRI: pkis:technique:least-angle-regression-lars

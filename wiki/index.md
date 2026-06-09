@@ -740,6 +740,7 @@
 - [[market-vs-hierarchy]] — Coase/Williamson: transactions governed by price signals (markets) vs. managerial direction (firms) (corporate-finance) (2026-05-20)
 
 ## Techniques
+- [[least-angle-regression-lars]] — Least Angle Regression (LARS) (statistical-learning, optimization) (2026-06-09)
 - [[subset-selection]] — Subset Selection (Linear Regression) (statistical-learning, optimization) (2026-06-09)
 - [[model-predictive-control]] — Model Predictive Control (MPC) (robotics, optimization, systems-theory) (2026-06-09)
 - [[pid-control]] — PID Control (robotics, systems-theory) (2026-06-09)
