@@ -10228,3 +10228,12 @@
 ## [2026-06-09] committed | technique
 - Committed: machine-translation → techniques/machine-translation.md
 - IRI: pkis:technique:machine-translation
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: long-short-term-memory-lstm (id: b66f98f8-5880-4117-9a72-3f81d2e897c0)
+- Title: Long Short-Term Memory (LSTM)
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: long-short-term-memory-lstm → techniques/long-short-term-memory-lstm.md
+- IRI: pkis:technique:long-short-term-memory-lstm
