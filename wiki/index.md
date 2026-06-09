@@ -1104,6 +1104,7 @@
 - [[government-debt-valuation-equation]] — FTPL: price level determined by ratio of nominal debt to expected present value of future surpluses (macroeconomics) (2026-05-20)
 
 ## Frameworks
+- [[extensive-form-game]] — Extensive-Form Game (multi-agent-systems, decision-theory) (2026-06-09)
 - [[game-theory]] — Game Theory (multi-agent-systems, decision-theory, economics) (2026-06-09)
 - [[partially-observable-mdp]] — Partially Observable Markov Decision Process (POMDP) (reinforcement-learning, formal-methods, systems-theory) (2026-06-09)
 - [[decision-network-influence-diagram]] — Decision Network (Influence Diagram) (bayesian-stats, agentic-systems) (2026-06-09)

@@ -9742,3 +9742,12 @@
 ## [2026-06-09] committed | result
 - Committed: folk-theorem → results/folk-theorem.md
 - IRI: pkis:result:folk-theorem
+
+## [2026-06-09] staged | node-stub (framework)
+- Staged: extensive-form-game (id: 20583a73-c4ec-4659-88bf-92d19846f0a8)
+- Title: Extensive-Form Game
+- needs_canonical_source: False
+
+## [2026-06-09] committed | framework
+- Committed: extensive-form-game → frameworks/extensive-form-game.md
+- IRI: pkis:framework:extensive-form-game
