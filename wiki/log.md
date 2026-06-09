@@ -4774,3 +4774,12 @@
 ## [2026-06-09] committed | technique
 - Committed: emphatic-td → techniques/emphatic-td.md
 - IRI: pkis:technique:emphatic-td
+
+## [2026-06-09] staged | node-stub (technique)
+- Staged: residual-gradient-algorithm (id: e6dd8533-92f0-4f7c-8e08-6ebca9f9f9a8)
+- Title: Residual-Gradient Algorithm
+- needs_canonical_source: False
+
+## [2026-06-09] committed | technique
+- Committed: residual-gradient-algorithm → techniques/residual-gradient-algorithm.md
+- IRI: pkis:technique:residual-gradient-algorithm

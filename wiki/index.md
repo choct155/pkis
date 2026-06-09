@@ -534,6 +534,7 @@
 - [[market-vs-hierarchy]] — Coase/Williamson: transactions governed by price signals (markets) vs. managerial direction (firms) (corporate-finance) (2026-05-20)
 
 ## Techniques
+- [[residual-gradient-algorithm]] — Residual-Gradient Algorithm (reinforcement-learning, optimization) (2026-06-09)
 - [[emphatic-td]] — Emphatic-TD Methods (reinforcement-learning, optimization) (2026-06-09)
 - [[gradient-td-methods]] — Gradient-TD Methods (GTD2 and TDC) (reinforcement-learning, optimization) (2026-06-09)
 - [[n-step-semi-gradient-sarsa]] — n-step Semi-Gradient Sarsa (reinforcement-learning) (2026-06-09)
