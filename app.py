@@ -789,12 +789,19 @@ def _load_web_session():
             g.refreshed_session = getattr(ref, "sealed_session", None)
             res = ref
         user = getattr(res, "user", None)
-        sub = ""
+        sub = email = ""
         if user is not None:
             sub = (getattr(user, "id", None)
                    or (user.get("id") if isinstance(user, dict) else "") or "").strip()
-        if sub:
-            g.web_identity = (sub, _load_roles().get(sub, "reader"))
+            email = (getattr(user, "email", None)
+                     or (user.get("email") if isinstance(user, dict) else "") or "").strip().lower()
+        if sub or email:
+            roles = _load_roles()
+            # Match by email OR sub (web sealed session has the email claim that the
+            # MCP access token lacks) → an allowlisted email works regardless of which
+            # login method's sub the web flow produces.
+            role = roles.get(email) or roles.get(sub) or "reader"
+            g.web_identity = (sub or email, role)
     except Exception as e:  # noqa: BLE001 — any failure = treat as signed out
         logger.info("web session auth failed: %s", e)
 
