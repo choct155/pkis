@@ -16,6 +16,15 @@ import type {
 
 const BASE = '/pkis-api';
 
+export class ApiError extends Error {
+  status: number;
+  constructor(message: string, status: number) {
+    super(message);
+    this.name = 'ApiError';
+    this.status = status;
+  }
+}
+
 async function post<T>(path: string, body: Record<string, unknown> = {}): Promise<T> {
   const res = await fetch(`${BASE}${path}`, {
     method: 'POST',
@@ -24,7 +33,7 @@ async function post<T>(path: string, body: Record<string, unknown> = {}): Promis
   });
   if (!res.ok) {
     const err = await res.json().catch(() => ({ error: res.statusText }));
-    throw new Error((err as { error?: string }).error ?? res.statusText);
+    throw new ApiError((err as { error?: string }).error ?? res.statusText, res.status);
   }
   return res.json() as Promise<T>;
 }
@@ -180,6 +189,27 @@ export async function addToQueue(
   source_iri?: string
 ): Promise<unknown> {
   return post('/queue/add', { reference, reason, priority, source_iri });
+}
+
+// ── Auth (WorkOS sealed session) ──────────────────────────────────────────
+export interface AuthState { authenticated: boolean; user_id?: string; role: string }
+
+export async function getAuth(): Promise<AuthState> {
+  try {
+    const r = await fetch(`${BASE}/auth/me`, { credentials: 'same-origin' });
+    if (!r.ok) return { authenticated: false, role: 'reader' };
+    return (await r.json()) as AuthState;
+  } catch {
+    return { authenticated: false, role: 'reader' };
+  }
+}
+
+export async function logout(): Promise<void> {
+  await fetch(`${BASE}/auth/logout`, { method: 'POST', credentials: 'same-origin' });
+}
+
+export function signInUrl(returnTo = '/app/'): string {
+  return `${BASE}/auth/login?return=${encodeURIComponent(returnTo)}`;
 }
 
 // ── Upload document ───────────────────────────────────────────────────────

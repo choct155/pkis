@@ -5,6 +5,8 @@ type Tab = 'bridge' | 'source' | 'upload' | 'queue'
 
 interface Props {
   onClose: () => void
+  canWrite: boolean
+  onSignIn: () => void
 }
 
 function BridgeTab({ onDone }: { onDone: (msg: string) => void }) {
@@ -255,7 +257,7 @@ function QueueTab({ onDone }: { onDone: (msg: string) => void }) {
   )
 }
 
-export default function CaptureSheet({ onClose }: Props) {
+export default function CaptureSheet({ onClose, canWrite, onSignIn }: Props) {
   const [tab, setTab] = useState<Tab>('bridge')
   const [toast, setToast] = useState<string | null>(null)
 
@@ -274,6 +276,16 @@ export default function CaptureSheet({ onClose }: Props) {
             quick capture
             <span className="capture-close" onClick={onClose}>×</span>
           </div>
+
+          {!canWrite ? (
+            <div className="capture-signin">
+              <p className="capture-signin-msg">
+                Capturing and uploading require a signed-in writer. Reading stays open.
+              </p>
+              <button className="cap-submit" onClick={onSignIn}>sign in →</button>
+            </div>
+          ) : (
+          <>
           <div className="capture-tabs">
             {(['bridge', 'source', 'upload', 'queue'] as Tab[]).map((t) => (
               <div
@@ -295,6 +307,8 @@ export default function CaptureSheet({ onClose }: Props) {
           {tab === 'queue'  && <QueueTab  onDone={handleDone} />}
 
           {toast && <div className="cap-success">{toast}</div>}
+          </>
+          )}
         </div>
       </div>
     </div>

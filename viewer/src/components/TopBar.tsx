@@ -1,14 +1,17 @@
 import { useState, useCallback, useRef } from 'react'
-import { searchWiki } from '../lib/api'
+import { searchWiki, type AuthState } from '../lib/api'
 import type { SearchResult, View } from '../types'
 
 interface Props {
   onResults: (results: SearchResult[] | null) => void
   onNavigate: (view: View) => void
   activeView: View
+  auth: AuthState
+  onSignIn: () => void
+  onSignOut: () => void
 }
 
-export default function TopBar({ onResults, onNavigate, activeView }: Props) {
+export default function TopBar({ onResults, onNavigate, activeView, auth, onSignIn, onSignOut }: Props) {
   const [query, setQuery] = useState('')
   const [searching, setSearching] = useState(false)
   const debounceRef = useRef<ReturnType<typeof setTimeout> | null>(null)
@@ -64,6 +67,19 @@ export default function TopBar({ onResults, onNavigate, activeView }: Props) {
       >
         ⬡
       </div>
+      {auth.authenticated ? (
+        <div
+          className="account-btn"
+          onClick={onSignOut}
+          title={`Signed in (${auth.role}) — click to sign out`}
+        >
+          <span className="account-dot" /> {auth.role}
+        </div>
+      ) : (
+        <div className="account-btn signin" onClick={onSignIn} title="Sign in to write">
+          sign in
+        </div>
+      )}
     </div>
   )
 }

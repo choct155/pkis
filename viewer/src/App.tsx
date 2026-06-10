@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import type { View, NodeType, SearchResult } from './types'
+import { useAuth } from './lib/useAuth'
 import TopBar from './components/TopBar'
 import FilterStrip from './components/FilterStrip'
 import DomainStrip from './components/DomainStrip'
@@ -29,6 +30,7 @@ export default function App() {
   const [clusterFilter, setClusterFilter] = useState<string>('all')
   const [searchResults, setSearchResults] = useState<SearchResult[] | null>(null)
   const [readerSlug, setReaderSlug] = useState<string | null>(null)
+  const { auth, canWrite, signIn, signOut } = useAuth()
 
   const handleSelectNode = (iri: string) => setSelectedIri(iri)
 
@@ -68,6 +70,9 @@ export default function App() {
             onResults={setSearchResults}
             onNavigate={setView}
             activeView={view}
+            auth={auth}
+            onSignIn={signIn}
+            onSignOut={signOut}
           />
           {showFilter && <FilterStrip active={typeFilter} onChange={setTypeFilter} />}
           {view === 'browse' && !showSearch && (
@@ -146,7 +151,7 @@ export default function App() {
       )}
 
       {captureOpen && (
-        <CaptureSheet onClose={() => setCaptureOpen(false)} />
+        <CaptureSheet onClose={() => setCaptureOpen(false)} canWrite={canWrite} onSignIn={signIn} />
       )}
 
       {editIri && (
