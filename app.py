@@ -779,16 +779,20 @@ def _load_web_session():
         return
     try:
         session = _get_workos().user_management.load_sealed_session(
-            sealed_session=cookie, cookie_password=WORKOS_COOKIE_PASSWORD)
+            session_data=cookie, cookie_password=WORKOS_COOKIE_PASSWORD)
         res = session.authenticate()
         if not getattr(res, "authenticated", False):
-            ref = session.refresh()
+            # access token expired → refresh transparently via the refresh token
+            ref = session.refresh(cookie_password=WORKOS_COOKIE_PASSWORD)
             if not getattr(ref, "authenticated", False):
                 return
             g.refreshed_session = getattr(ref, "sealed_session", None)
             res = ref
         user = getattr(res, "user", None)
-        sub = (getattr(user, "id", "") or "").strip()
+        sub = ""
+        if user is not None:
+            sub = (getattr(user, "id", None)
+                   or (user.get("id") if isinstance(user, dict) else "") or "").strip()
         if sub:
             g.web_identity = (sub, _load_roles().get(sub, "reader"))
     except Exception as e:  # noqa: BLE001 — any failure = treat as signed out
@@ -5670,11 +5674,21 @@ def pkis_api_auth_callback():
     state = request.args.get("state") or "/app/"
     dest = state if state.startswith("/app") else "/app/"
     try:
-        res = _get_workos().user_management.authenticate_with_code(
-            code=code,
-            session={"seal_session": True, "cookie_password": WORKOS_COOKIE_PASSWORD},
+        # workos 8.x: authenticate_with_code doesn't seal; mirror the SDK's own
+        # refresh() — a raw authenticate request with the session-seal param
+        # returns `sealed_session` in the exact shape load_sealed_session expects.
+        auth = _get_workos().request_raw(
+            method="post",
+            path=("user_management", "authenticate"),
+            body={
+                "grant_type": "authorization_code",
+                "client_id": WORKOS_CLIENT_ID,
+                "client_secret": WORKOS_API_KEY,
+                "code": code,
+                "session": {"seal_session": True, "cookie_password": WORKOS_COOKIE_PASSWORD},
+            },
         )
-        sealed = getattr(res, "sealed_session", None)
+        sealed = auth.get("sealed_session") if isinstance(auth, dict) else None
         resp = make_response(redirect(dest))
         if sealed:
             resp.set_cookie(WEB_SESSION_COOKIE, sealed, max_age=30 * 24 * 3600,
