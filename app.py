@@ -30,7 +30,7 @@ import networkx as nx
 import numpy as np
 from rank_bm25 import BM25Okapi
 from functools import wraps
-from flask import Flask, request, jsonify, Response, send_from_directory
+from flask import Flask, request, jsonify, Response, send_from_directory, g, redirect, make_response
 from anthropic import Anthropic
 
 # ============================================================
@@ -133,6 +133,21 @@ PUBLIC_BASE    = os.environ.get("PKIS_PUBLIC_BASE", "https://pkis.dev").rstrip("
 OAUTH_ENABLED  = bool(OAUTH_ISSUER and OAUTH_JWKS_URL)
 _jwk_client = None
 _roles_cache = {"mtime": 0.0, "data": {}}
+
+# ============================================================
+# Web sign-in (WorkOS AuthKit sealed session) — gates the VIEWER's write routes.
+# Separate surface from the MCP Bearer-JWT path above: the browser app signs in
+# once and carries a sealed-session cookie. DORMANT until WORKOS_API_KEY is set
+# (routes 503, session hooks no-op) so local dev / the MCP path are unaffected.
+# Uses the same WorkOS app as the MCP OAuth (same role allowlist by `sub`).
+# ============================================================
+WORKOS_API_KEY        = os.environ.get("WORKOS_API_KEY", "")
+WORKOS_CLIENT_ID      = os.environ.get("WORKOS_CLIENT_ID", "")
+WORKOS_COOKIE_PASSWORD = os.environ.get("WORKOS_COOKIE_PASSWORD", "")
+WORKOS_REDIRECT_URI   = os.environ.get("WORKOS_REDIRECT_URI", "https://pkis.dev/pkis-api/auth/callback")
+WEB_AUTH_ENABLED      = bool(WORKOS_API_KEY and WORKOS_CLIENT_ID and WORKOS_COOKIE_PASSWORD)
+WEB_SESSION_COOKIE    = "wos_session"
+_workos_client = None
 
 
 class OAuthChallenge(PermissionError):
@@ -740,6 +755,78 @@ def oauth_identity(req):
     return ((email or sub), role)
 
 
+def _get_workos():
+    global _workos_client
+    if _workos_client is None:
+        from workos import WorkOSClient  # lazy: app boots without the dep
+        _workos_client = WorkOSClient(api_key=WORKOS_API_KEY, client_id=WORKOS_CLIENT_ID)
+    return _workos_client
+
+
+@app.before_request
+def _load_web_session():
+    """Populate g.web_identity = (sub, role) from the sealed-session cookie, with
+    TRANSPARENT REFRESH: an expired access token is healed via the session's
+    refresh token (g.refreshed_session is re-cookied in after_request), so a
+    signed-in user is never re-prompted. No-op without a cookie or when web auth
+    is unconfigured — so reads and the MCP path are unaffected."""
+    g.web_identity = None
+    g.refreshed_session = None
+    if not WEB_AUTH_ENABLED:
+        return
+    cookie = request.cookies.get(WEB_SESSION_COOKIE)
+    if not cookie:
+        return
+    try:
+        session = _get_workos().user_management.load_sealed_session(
+            sealed_session=cookie, cookie_password=WORKOS_COOKIE_PASSWORD)
+        res = session.authenticate()
+        if not getattr(res, "authenticated", False):
+            ref = session.refresh()
+            if not getattr(ref, "authenticated", False):
+                return
+            g.refreshed_session = getattr(ref, "sealed_session", None)
+            res = ref
+        user = getattr(res, "user", None)
+        sub = (getattr(user, "id", "") or "").strip()
+        if sub:
+            g.web_identity = (sub, _load_roles().get(sub, "reader"))
+    except Exception as e:  # noqa: BLE001 — any failure = treat as signed out
+        logger.info("web session auth failed: %s", e)
+
+
+@app.after_request
+def _persist_refreshed_session(resp):
+    sealed = getattr(g, "refreshed_session", None)
+    if sealed:
+        resp.set_cookie(WEB_SESSION_COOKIE, sealed, max_age=30 * 24 * 3600,
+                        httponly=True, secure=True, samesite="Lax")
+    return resp
+
+
+def web_identity(req=None) -> Optional[tuple]:
+    """(sub, role) for a valid web sealed session, else None. Computed by the
+    before_request hook (with refresh); the arg is ignored, kept for symmetry."""
+    return getattr(g, "web_identity", None)
+
+
+def require_write(fn):
+    """Gate a REST write route: 401 if not signed in, 403 if signed in but lacking
+    write role. The MCP dispatch path gates itself and is unaffected. The static
+    WRITE_KEY Bearer still authorizes (desktop Claude Code M2M)."""
+    @wraps(fn)
+    def _wrap(*args, **kwargs):
+        if is_write_authorized(request):
+            return fn(*args, **kwargs)
+        anon = (web_identity(request) is None
+                and oauth_identity(request) is None
+                and not _has_static_key(request))
+        if anon:
+            return jsonify({"error": "sign in required"}), 401
+        return jsonify({"error": "insufficient role — write access required"}), 403
+    return _wrap
+
+
 def is_trusted(req) -> bool:
     """Trusted tier: static TRUSTED_TOKEN, or an OAuth 'owner'."""
     if TRUSTED_TOKEN and _bearer(req) == TRUSTED_TOKEN:
@@ -749,11 +836,15 @@ def is_trusted(req) -> bool:
 
 
 def is_write_authorized(req) -> bool:
-    """Write tier: static WRITE_KEY, or an OAuth 'owner'/'writer'."""
+    """Write tier: static WRITE_KEY, an OAuth 'owner'/'writer' (Bearer JWT, MCP),
+    or a signed-in web 'owner'/'writer' (sealed session)."""
     if WRITE_KEY and _bearer(req) == WRITE_KEY:
         return True
     ident = oauth_identity(req)
-    return bool(ident and ident[1] in ("owner", "writer"))
+    if ident and ident[1] in ("owner", "writer"):
+        return True
+    wident = web_identity(req)
+    return bool(wident and wident[1] in ("owner", "writer"))
 
 
 def gate_error(req, tier: str) -> PermissionError:
@@ -5552,6 +5643,64 @@ def pkis_api_explainers():
         return _api_err(e, 500)
 
 
+# ── Web sign-in (WorkOS AuthKit sealed session) ───────────────────────────────
+@app.route("/pkis-api/auth/login", methods=["GET"])
+def pkis_api_auth_login():
+    if not WEB_AUTH_ENABLED:
+        return jsonify({"error": "web auth not configured"}), 503
+    return_to = request.args.get("return", "/app/")
+    try:
+        url = _get_workos().user_management.get_authorization_url(
+            provider="authkit",
+            redirect_uri=WORKOS_REDIRECT_URI,
+            state=return_to,
+        )
+        return redirect(url)
+    except Exception as e:
+        return _api_err(e, 500)
+
+
+@app.route("/pkis-api/auth/callback", methods=["GET"])
+def pkis_api_auth_callback():
+    if not WEB_AUTH_ENABLED:
+        return jsonify({"error": "web auth not configured"}), 503
+    code = request.args.get("code", "")
+    if not code:
+        return jsonify({"error": "missing code"}), 400
+    state = request.args.get("state") or "/app/"
+    dest = state if state.startswith("/app") else "/app/"
+    try:
+        res = _get_workos().user_management.authenticate_with_code(
+            code=code,
+            session={"seal_session": True, "cookie_password": WORKOS_COOKIE_PASSWORD},
+        )
+        sealed = getattr(res, "sealed_session", None)
+        resp = make_response(redirect(dest))
+        if sealed:
+            resp.set_cookie(WEB_SESSION_COOKIE, sealed, max_age=30 * 24 * 3600,
+                            httponly=True, secure=True, samesite="Lax")
+        return resp
+    except Exception as e:  # noqa: BLE001
+        logger.warning("auth callback failed: %s", e)
+        return redirect("/app/?auth_error=1")
+
+
+@app.route("/pkis-api/auth/me", methods=["GET"])
+def pkis_api_auth_me():
+    ident = web_identity(request)
+    if not ident:
+        return jsonify({"authenticated": False, "role": "reader"})
+    sub, role = ident
+    return jsonify({"authenticated": True, "user_id": sub, "role": role})
+
+
+@app.route("/pkis-api/auth/logout", methods=["POST"])
+def pkis_api_auth_logout():
+    resp = make_response(jsonify({"ok": True}))
+    resp.delete_cookie(WEB_SESSION_COOKIE)
+    return resp
+
+
 @app.route("/pkis-api/cluster-priorities", methods=["POST"])
 def pkis_api_cluster_priorities():
     try:
@@ -5670,6 +5819,7 @@ def tool_build_reader(slug: str, arxiv_id: str = None) -> dict:
 
 
 @app.route("/pkis-api/reader-build", methods=["POST"])
+@require_write
 def pkis_api_reader_build():
     b = _api_json()
     slug = b.get("slug")
@@ -5691,6 +5841,7 @@ def pkis_api_reader_annotations(slug):
 
 
 @app.route("/pkis-api/reader-annotate", methods=["POST"])
+@require_write
 def pkis_api_reader_annotate():
     """Save a position-anchored annotation from the reader; optionally drop a bridge note
     into the graph when the user flags it (kind='bridge')."""
@@ -5755,6 +5906,7 @@ def pkis_api_staged():
 
 
 @app.route("/pkis-api/staged/commit", methods=["POST"])
+@require_write
 def pkis_api_staged_commit():
     b = _api_json()
     staged_id = b.get("staged_id", "")
@@ -5774,6 +5926,7 @@ def pkis_api_staged_commit():
 
 
 @app.route("/pkis-api/bridge-note", methods=["POST"])
+@require_write
 def pkis_api_bridge_note():
     b = _api_json()
     try:
@@ -5791,6 +5944,7 @@ def pkis_api_bridge_note():
 
 
 @app.route("/pkis-api/source-stub", methods=["POST"])
+@require_write
 def pkis_api_source_stub():
     b = _api_json()
     try:
@@ -5819,6 +5973,7 @@ def pkis_api_queue_get():
 
 
 @app.route("/pkis-api/queue/add", methods=["POST"])
+@require_write
 def pkis_api_queue_add():
     b = _api_json()
     try:
@@ -5833,6 +5988,7 @@ def pkis_api_queue_add():
 
 
 @app.route("/pkis-api/upload-document", methods=["POST"])
+@require_write
 def pkis_api_upload_document():
     """Upload a document (base64) from the viewer. Stores it in the doc store and
     auto-creates the source node + reader if the slug is new. Mirrors the
@@ -5858,6 +6014,7 @@ def pkis_api_upload_document():
 
 
 @app.route("/pkis-api/save-url", methods=["POST"])
+@require_write
 def pkis_api_save_url():
     b = _api_json()
     url = b.get("url", "")
@@ -5874,6 +6031,7 @@ def pkis_api_save_url():
 
 
 @app.route("/pkis-api/rebuild-graph", methods=["POST"])
+@require_write
 def pkis_api_rebuild_graph():
     try:
         return _api_ok(tool_rebuild_source_graph())
