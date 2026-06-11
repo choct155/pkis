@@ -1123,6 +1123,7 @@
 - [[market-vs-hierarchy]] — Coase/Williamson: transactions governed by price signals (markets) vs. managerial direction (firms) (corporate-finance) (2026-05-20)
 
 ## Techniques
+- [[spectral-learning-hmm]] — Spectral Learning for HMMs (machine-learning, statistics) (2026-06-11)
 - [[bayesian-online-changepoint-detection]] — Bayesian Online Changepoint Detection (BOCPD) (statistics, machine-learning, time-series) (2026-06-11)
 - [[hybrid-generative-discriminative-training]] — Hybrid Generative–Discriminative Training (machine-learning, supervised-learning, semi-supervised-learning) (2026-06-11)
 - [[expected-patch-log-likelihood]] — Expected Patch Log Likelihood (EPLL) (computer-vision, machine-learning, signal-processing) (2026-06-11)

@@ -19541,3 +19541,12 @@
 ## [2026-06-11] committed | technique
 - Committed: bayesian-online-changepoint-detection → techniques/bayesian-online-changepoint-detection.md
 - IRI: pkis:technique:bayesian-online-changepoint-detection
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: spectral-learning-hmm (id: a9979543-83e8-413d-9616-4ee195d07069)
+- Title: Spectral Learning for HMMs
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: spectral-learning-hmm → techniques/spectral-learning-hmm.md
+- IRI: pkis:technique:spectral-learning-hmm
