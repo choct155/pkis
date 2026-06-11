@@ -15968,3 +15968,12 @@
 ## [2026-06-11] committed | technique
 - Committed: softmax-jacobian → techniques/softmax-jacobian.md
 - IRI: pkis:technique:softmax-jacobian
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: probit-approximation-bayesian-logistic (id: 22ca08e6-dafc-427c-a409-db9531d1eda7)
+- Title: Probit Approximation to Bayesian Logistic Posterior Predictive
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: probit-approximation-bayesian-logistic → techniques/probit-approximation-bayesian-logistic.md
+- IRI: pkis:technique:probit-approximation-bayesian-logistic
