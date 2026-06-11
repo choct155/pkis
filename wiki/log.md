@@ -13763,3 +13763,12 @@
 ## [2026-06-11] committed | principle
 - Committed: ml-algorithm-recipe → principles/ml-algorithm-recipe.md
 - IRI: pkis:principle:ml-algorithm-recipe
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: distributed-vs-one-hot-representations (id: aee8b532-b6d4-4160-ae1e-984201e677d6)
+- Title: Distributed vs. One-Hot Representations
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: distributed-vs-one-hot-representations → concepts/distributed-vs-one-hot-representations.md
+- IRI: pkis:concept:distributed-vs-one-hot-representations
