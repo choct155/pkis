@@ -17255,3 +17255,12 @@
 ## [2026-06-11] committed | concept
 - Committed: de-finetti-exchangeability → concepts/de-finetti-exchangeability.md
 - IRI: pkis:concept:de-finetti-exchangeability
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: highest-posterior-density-region (id: c6817959-1186-48cd-9379-0993f2a702da)
+- Title: Highest Posterior Density (HPD) Region
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: highest-posterior-density-region → concepts/highest-posterior-density-region.md
+- IRI: pkis:concept:highest-posterior-density-region

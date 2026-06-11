@@ -290,6 +290,7 @@
 - [[liu-machine-unlearning-llm-2024]] — Rethinking Machine Unlearning for LLMs: post-training knowledge editing survey (deep-learning, ai-safety) (2026-05-20)
 
 ## Concepts
+- [[highest-posterior-density-region]] — Highest Posterior Density (HPD) Region (bayesian-statistics, statistics) (2026-06-11)
 - [[de-finetti-exchangeability]] — Exchangeability (de Finetti) (probability-theory, bayesian-statistics) (2026-06-11)
 - [[aleatoric-vs-epistemic-uncertainty]] — Aleatoric vs Epistemic Uncertainty (statistics, machine-learning, bayesian-methods) (2026-06-11)
 - [[matrix-normal-distribution]] — Matrix Normal Distribution (probability-theory, statistics, machine-learning) (2026-06-11)
