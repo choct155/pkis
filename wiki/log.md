@@ -13124,3 +13124,12 @@
 ## [2026-06-11] committed | technique
 - Committed: viterbi-algorithm → techniques/viterbi-algorithm.md
 - IRI: pkis:technique:viterbi-algorithm
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: hmm-parameters (id: 198bb48a-551d-42c0-9d84-6ca4fd11443b)
+- Title: HMM Transition and Emission Parameters
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: hmm-parameters → concepts/hmm-parameters.md
+- IRI: pkis:concept:hmm-parameters
