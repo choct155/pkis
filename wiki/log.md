@@ -12827,3 +12827,12 @@
 ## [2026-06-11] committed | concept
 - Committed: plate-notation → concepts/plate-notation.md
 - IRI: pkis:concept:plate-notation
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: iterated-conditional-modes (id: 4c93a7f2-af96-4800-baca-d40f29f01b9e)
+- Title: Iterated Conditional Modes (ICM)
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: iterated-conditional-modes → techniques/iterated-conditional-modes.md
+- IRI: pkis:technique:iterated-conditional-modes
