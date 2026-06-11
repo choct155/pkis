@@ -18551,3 +18551,12 @@
 ## [2026-06-11] committed | technique
 - Committed: sngp → techniques/sngp.md
 - IRI: pkis:technique:sngp
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: laplace-bridge (id: edfcb2c6-5290-4d21-9ae1-e7238c5512ed)
+- Title: Laplace Bridge Approximation
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: laplace-bridge → techniques/laplace-bridge.md
+- IRI: pkis:technique:laplace-bridge
