@@ -16274,3 +16274,12 @@
 ## [2026-06-11] committed | technique
 - Committed: transposed-convolution → techniques/transposed-convolution.md
 - IRI: pkis:technique:transposed-convolution
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: depthwise-separable-convolution (id: 93cd6952-59a1-456a-9a23-9b78132631df)
+- Title: Depthwise Separable Convolution
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: depthwise-separable-convolution → techniques/depthwise-separable-convolution.md
+- IRI: pkis:technique:depthwise-separable-convolution
