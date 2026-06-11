@@ -290,6 +290,7 @@
 - [[liu-machine-unlearning-llm-2024]] — Rethinking Machine Unlearning for LLMs: post-training knowledge editing survey (deep-learning, ai-safety) (2026-05-20)
 
 ## Concepts
+- [[stochastic-process-as-prior]] — Stochastic Process as Prior (probability, machine-learning) (2026-06-11)
 - [[structural-causal-model]] — Structural Causal Model (SCM) (causal-inference, statistics) (2026-06-11)
 - [[community-detection]] — Community Detection (network-science, machine-learning) (2026-06-11)
 - [[markov-equivalence-class]] — Markov Equivalence Class (CPDAG) (causal-inference, statistics) (2026-06-11)

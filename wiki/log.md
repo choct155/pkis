@@ -19658,3 +19658,12 @@
 ## [2026-06-11] committed | framework
 - Committed: bayesian-nonparametric-models → frameworks/bayesian-nonparametric-models.md
 - IRI: pkis:framework:bayesian-nonparametric-models
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: stochastic-process-as-prior (id: e041311e-2c14-4a95-b45b-68282ca1c821)
+- Title: Stochastic Process as Prior
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: stochastic-process-as-prior → concepts/stochastic-process-as-prior.md
+- IRI: pkis:concept:stochastic-process-as-prior
