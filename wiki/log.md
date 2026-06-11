@@ -14933,3 +14933,12 @@
 ## [2026-06-11] committed | technique
 - Committed: ratio-matching → techniques/ratio-matching.md
 - IRI: pkis:technique:ratio-matching
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: denoising-score-matching (id: 055d172d-b530-4a78-a536-a88deab5a16a)
+- Title: Denoising Score Matching
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: denoising-score-matching → techniques/denoising-score-matching.md
+- IRI: pkis:technique:denoising-score-matching
