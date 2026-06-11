@@ -12935,3 +12935,12 @@
 ## [2026-06-11] committed | technique
 - Committed: mean-field-variational-inference → techniques/mean-field-variational-inference.md
 - IRI: pkis:technique:mean-field-variational-inference
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: zero-forcing-vs-zero-avoiding-kl (id: f7b0827b-70ad-44e3-96e5-332bcb29455d)
+- Title: Zero-Forcing vs. Zero-Avoiding KL Divergence
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: zero-forcing-vs-zero-avoiding-kl → concepts/zero-forcing-vs-zero-avoiding-kl.md
+- IRI: pkis:concept:zero-forcing-vs-zero-avoiding-kl
