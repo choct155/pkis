@@ -16373,3 +16373,12 @@
 ## [2026-06-11] committed | technique
 - Committed: sinusoidal-positional-encoding → techniques/sinusoidal-positional-encoding.md
 - IRI: pkis:technique:sinusoidal-positional-encoding
+
+## [2026-06-11] staged | node-stub (framework)
+- Staged: transformer-architecture (id: 8d4bdaaa-5f86-4b92-b8f8-140322cc38af)
+- Title: Transformer (Seq2Seq Attention Architecture)
+- needs_canonical_source: False
+
+## [2026-06-11] committed | framework
+- Committed: transformer-architecture → frameworks/transformer-architecture.md
+- IRI: pkis:framework:transformer-architecture

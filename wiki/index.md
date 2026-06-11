@@ -1685,6 +1685,7 @@
 - [[government-debt-valuation-equation]] — FTPL: price level determined by ratio of nominal debt to expected present value of future surpluses (macroeconomics) (2026-05-20)
 
 ## Frameworks
+- [[transformer-architecture]] — Transformer (Seq2Seq Attention Architecture) (machine-learning, deep-learning, nlp) (2026-06-11)
 - [[object-detection-anchor-boxes]] — Object Detection with Anchor Boxes (deep-learning, computer-vision) (2026-06-11)
 - [[encoder-decoder-unet]] — Encoder–Decoder Architecture (U-Net) (deep-learning, computer-vision) (2026-06-11)
 - [[generative-classifier]] — Generative Classifier (machine-learning, statistics) (2026-06-11)
