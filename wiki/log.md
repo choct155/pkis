@@ -12989,3 +12989,12 @@
 ## [2026-06-11] committed | framework
 - Committed: variational-gaussian-mixture → frameworks/variational-gaussian-mixture.md
 - IRI: pkis:framework:variational-gaussian-mixture
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: induced-factorization (id: c633688f-ab7e-496d-a544-05c38492ec9d)
+- Title: Induced Factorization in Variational Inference
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: induced-factorization → concepts/induced-factorization.md
+- IRI: pkis:concept:induced-factorization
