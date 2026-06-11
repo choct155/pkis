@@ -15293,3 +15293,12 @@
 ## [2026-06-11] committed | concept
 - Committed: multinomial-logistic-regression → concepts/multinomial-logistic-regression.md
 - IRI: pkis:concept:multinomial-logistic-regression
+
+## [2026-06-11] staged | node-stub (result)
+- Staged: mvn-marginal-conditional (id: 7261fcef-ed76-4bdf-a75a-8e21ce89b684)
+- Title: MVN Marginal and Conditional Distributions
+- needs_canonical_source: False
+
+## [2026-06-11] committed | result
+- Committed: mvn-marginal-conditional → results/mvn-marginal-conditional.md
+- IRI: pkis:result:mvn-marginal-conditional
