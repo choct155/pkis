@@ -1056,6 +1056,7 @@
 - [[market-vs-hierarchy]] — Coase/Williamson: transactions governed by price signals (markets) vs. managerial direction (firms) (corporate-finance) (2026-05-20)
 
 ## Techniques
+- [[likelihood-tempering-smc]] — Likelihood Tempering / Geometric Path SMC (statistics, machine-learning) (2026-06-11)
 - [[fastslam]] — FastSLAM (robotics, machine-learning) (2026-06-11)
 - [[rao-blackwellized-particle-filter]] — Rao-Blackwellized Particle Filter (RBPF) (machine-learning, robotics, statistics) (2026-06-11)
 - [[particle-resampling]] — Resampling Methods for Particle Filters (statistics, machine-learning) (2026-06-11)

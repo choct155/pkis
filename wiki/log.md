@@ -18173,3 +18173,12 @@
 ## [2026-06-11] committed | framework
 - Committed: smc-sampler → frameworks/smc-sampler.md
 - IRI: pkis:framework:smc-sampler
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: likelihood-tempering-smc (id: 86e9fef5-94aa-40f3-9c4c-8ee66c8d4961)
+- Title: Likelihood Tempering / Geometric Path SMC
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: likelihood-tempering-smc → techniques/likelihood-tempering-smc.md
+- IRI: pkis:technique:likelihood-tempering-smc
