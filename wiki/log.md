@@ -12782,3 +12782,12 @@
 ## [2026-06-11] committed | concept
 - Committed: markov-random-field → concepts/markov-random-field.md
 - IRI: pkis:concept:markov-random-field
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: moralization (id: 8c3b9803-66f9-4b4e-9b27-5fedcd75f208)
+- Title: Moralization (Directed-to-Undirected Conversion)
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: moralization → concepts/moralization.md
+- IRI: pkis:concept:moralization
