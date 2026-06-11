@@ -12926,3 +12926,12 @@
 ## [2026-06-11] committed | concept
 - Committed: mixture-model-identifiability → concepts/mixture-model-identifiability.md
 - IRI: pkis:concept:mixture-model-identifiability
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: mean-field-variational-inference (id: a4c8a02f-b8c3-4092-82c3-878fe8ac78a5)
+- Title: Mean-Field Variational Inference (Factorized VI)
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: mean-field-variational-inference → techniques/mean-field-variational-inference.md
+- IRI: pkis:technique:mean-field-variational-inference

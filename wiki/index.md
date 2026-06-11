@@ -795,6 +795,7 @@
 - [[market-vs-hierarchy]] — Coase/Williamson: transactions governed by price signals (markets) vs. managerial direction (firms) (corporate-finance) (2026-05-20)
 
 ## Techniques
+- [[mean-field-variational-inference]] — Mean-Field Variational Inference (Factorized VI) (machine-learning, Bayesian-inference, approximate-inference) (2026-06-11)
 - [[k-means-algorithm]] — K-Means Algorithm (machine-learning, statistics, unsupervised-learning) (2026-06-11)
 - [[loopy-belief-propagation]] — Loopy Belief Propagation (probabilistic-graphical-models, information-theory, machine-learning) (2026-06-11)
 - [[iterated-conditional-modes]] — Iterated Conditional Modes (ICM) (probabilistic-graphical-models, computer-vision, machine-learning) (2026-06-11)
