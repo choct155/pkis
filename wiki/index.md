@@ -1640,6 +1640,7 @@
 - [[constraint-propagation]] — Reducing a constraint satisfaction problem by iteratively eliminating inconsistent values from variable domains (knowledge-representation) (2026-05-20)
 
 ## Results
+- [[kl-divergence-uniqueness]] — KL Divergence Uniqueness Theorem (information-theory, statistics, machine-learning) (2026-06-11)
 - [[fim-exponential-family]] — FIM for Exponential Family: FIM equals Covariance of Sufficient Statistics (statistics, information-theory, information-geometry) (2026-06-11)
 - [[asymptotic-normality-mle]] — Asymptotic Normality of the MLE (statistics, frequentist-statistics) (2026-06-11)
 - [[linear-autoencoder-pca-equivalence]] — Equivalence of Linear Autoencoder and PCA (machine-learning, linear-algebra) (2026-06-11)

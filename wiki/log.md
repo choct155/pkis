@@ -17408,3 +17408,12 @@
 ## [2026-06-11] committed | technique
 - Committed: expected-sufficient-statistics-pgm → techniques/expected-sufficient-statistics-pgm.md
 - IRI: pkis:technique:expected-sufficient-statistics-pgm
+
+## [2026-06-11] staged | node-stub (result)
+- Staged: kl-divergence-uniqueness (id: 4c9c5386-0c27-4ed3-bd42-e4c178f52918)
+- Title: KL Divergence Uniqueness Theorem
+- needs_canonical_source: False
+
+## [2026-06-11] committed | result
+- Committed: kl-divergence-uniqueness → results/kl-divergence-uniqueness.md
+- IRI: pkis:result:kl-divergence-uniqueness
