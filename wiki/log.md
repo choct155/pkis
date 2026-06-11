@@ -16184,3 +16184,12 @@
 ## [2026-06-11] committed | concept
 - Committed: saturated-model → concepts/saturated-model.md
 - IRI: pkis:concept:saturated-model
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: feedforward-neural-network (id: d68b7188-5571-4ba0-bd19-e355f9de2600)
+- Title: Feedforward Neural Network (MLP)
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: feedforward-neural-network → concepts/feedforward-neural-network.md
+- IRI: pkis:concept:feedforward-neural-network
