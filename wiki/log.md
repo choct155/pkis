@@ -18515,3 +18515,12 @@
 ## [2026-06-11] committed | concept
 - Committed: tempered-posterior → concepts/tempered-posterior.md
 - IRI: pkis:concept:tempered-posterior
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: mode-connectivity (id: f67e547c-9ac4-4e4f-a289-7f752b99b2b9)
+- Title: Mode Connectivity
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: mode-connectivity → concepts/mode-connectivity.md
+- IRI: pkis:concept:mode-connectivity
