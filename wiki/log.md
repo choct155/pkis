@@ -13295,3 +13295,12 @@
 ## [2026-06-11] committed | framework
 - Committed: deep-learning → frameworks/deep-learning.md
 - IRI: pkis:framework:deep-learning
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: representation-learning (id: 59047621-8d40-45c5-84c6-f173841543aa)
+- Title: Representation Learning
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: representation-learning → concepts/representation-learning.md
+- IRI: pkis:concept:representation-learning
