@@ -20189,3 +20189,12 @@
 ## [2026-06-11] committed | technique
 - Committed: difference-in-differences-did → techniques/difference-in-differences-did.md
 - IRI: pkis:technique:difference-in-differences-did
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: late-iv (id: 38eed566-e25b-45ea-b738-e10370201e62)
+- Title: Local Average Treatment Effect (LATE) via IV
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: late-iv → techniques/late-iv.md
+- IRI: pkis:technique:late-iv

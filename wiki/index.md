@@ -1150,6 +1150,7 @@
 - [[market-vs-hierarchy]] — Coase/Williamson: transactions governed by price signals (markets) vs. managerial direction (firms) (corporate-finance) (2026-05-20)
 
 ## Techniques
+- [[late-iv]] — Local Average Treatment Effect (LATE) via IV (causal-inference, econometrics, statistics) (2026-06-11)
 - [[difference-in-differences-did]] — Difference-in-Differences (DiD) (causal-inference, econometrics, statistics) (2026-06-11)
 - [[cross-fitting]] — Cross-Fitting for Causal Estimation (causal-inference, statistics, machine-learning) (2026-06-11)
 - [[aiptw-double-ml]] — Augmented IPTW / Double Machine Learning Estimator (AIPTW) (causal-inference, statistics, machine-learning) (2026-06-11)
