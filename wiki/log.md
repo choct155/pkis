@@ -13988,3 +13988,12 @@
 ## [2026-06-11] committed | technique
 - Committed: nesterov-momentum → techniques/nesterov-momentum.md
 - IRI: pkis:technique:nesterov-momentum
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: adagrad (id: 0cdc8d23-1394-4b80-9ce4-88b1f4a7059a)
+- Title: AdaGrad
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: adagrad → techniques/adagrad.md
+- IRI: pkis:technique:adagrad
