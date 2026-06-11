@@ -290,6 +290,7 @@
 - [[liu-machine-unlearning-llm-2024]] — Rethinking Machine Unlearning for LLMs: post-training knowledge editing survey (deep-learning, ai-safety) (2026-05-20)
 
 ## Concepts
+- [[convolutional-neural-network]] — Convolutional Neural Network (CNN) (deep-learning, computer-vision) (2026-06-11)
 - [[heteroskedastic-neural-regression]] — Heteroskedastic Regression with Neural Networks (machine-learning, statistics, deep-learning) (2026-06-11)
 - [[relu-activation]] — ReLU and Non-Saturating Activation Functions (machine-learning, deep-learning) (2026-06-11)
 - [[autodiff]] — Automatic Differentiation (Autodiff) (machine-learning, deep-learning, numerical-methods) (2026-06-11)

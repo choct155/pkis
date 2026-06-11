@@ -16247,3 +16247,12 @@
 ## [2026-06-11] committed | technique
 - Committed: data-parallelism-dnn → techniques/data-parallelism-dnn.md
 - IRI: pkis:technique:data-parallelism-dnn
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: convolutional-neural-network (id: 3da3ac2a-ae43-4ca6-8784-7d86d88104ae)
+- Title: Convolutional Neural Network (CNN)
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: convolutional-neural-network → concepts/convolutional-neural-network.md
+- IRI: pkis:concept:convolutional-neural-network
