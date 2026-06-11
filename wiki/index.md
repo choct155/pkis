@@ -290,6 +290,7 @@
 - [[liu-machine-unlearning-llm-2024]] — Rethinking Machine Unlearning for LLMs: post-training knowledge editing survey (deep-learning, ai-safety) (2026-05-20)
 
 ## Concepts
+- [[disentangled-representation-learning]] — Disentangled Representation Learning (machine-learning, representation-learning, generative-models) (2026-06-11)
 - [[pitman-yor-process]] — Pitman-Yor Process (statistics, machine-learning, probability) (2026-06-11)
 - [[indian-buffet-process]] — Indian Buffet Process (machine-learning, statistics, probability) (2026-06-11)
 - [[chinese-restaurant-process]] — Chinese Restaurant Process (probability, machine-learning, statistics) (2026-06-11)

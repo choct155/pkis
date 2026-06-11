@@ -19811,3 +19811,12 @@
 ## [2026-06-11] committed | technique
 - Committed: barlow-twins-loss → techniques/barlow-twins-loss.md
 - IRI: pkis:technique:barlow-twins-loss
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: disentangled-representation-learning (id: c76f8c9c-24d4-4dc4-a50e-f9ec7454c0c3)
+- Title: Disentangled Representation Learning
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: disentangled-representation-learning → concepts/disentangled-representation-learning.md
+- IRI: pkis:concept:disentangled-representation-learning
