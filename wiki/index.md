@@ -2019,6 +2019,7 @@
 - [[government-debt-valuation-equation]] — FTPL: price level determined by ratio of nominal debt to expected present value of future surpluses (macroeconomics) (2026-05-20)
 
 ## Frameworks
+- [[interpretable-ml-ecosystem]] — Interpretable ML Ecosystem Framework (machine-learning, interpretability, human-computer-interaction) (2026-06-11)
 - [[analysis-by-synthesis]] — Analysis-by-Synthesis (machine-learning, cognitive-science, representation-learning) (2026-06-11)
 - [[contrastive-representation-learning]] — Contrastive / Multiview Representation Learning (machine-learning, self-supervised-learning, representation-learning) (2026-06-11)
 - [[hierarchical-dirichlet-process]] — Hierarchical Dirichlet Process (machine-learning, statistics) (2026-06-11)

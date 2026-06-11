@@ -19865,3 +19865,12 @@
 ## [2026-06-11] committed | concept
 - Committed: post-hoc-explanation → concepts/post-hoc-explanation.md
 - IRI: pkis:concept:post-hoc-explanation
+
+## [2026-06-11] staged | node-stub (framework)
+- Staged: interpretable-ml-ecosystem (id: 44a3da0e-be72-470d-aa96-7a6b601a4ded)
+- Title: Interpretable ML Ecosystem Framework
+- needs_canonical_source: False
+
+## [2026-06-11] committed | framework
+- Committed: interpretable-ml-ecosystem → frameworks/interpretable-ml-ecosystem.md
+- IRI: pkis:framework:interpretable-ml-ecosystem
