@@ -13466,3 +13466,12 @@
 ## [2026-06-11] committed | result
 - Committed: cyclic-invariance-trace → results/cyclic-invariance-trace.md
 - IRI: pkis:result:cyclic-invariance-trace
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: pca-linear-algebra-derivation (id: 908ac6f6-d72d-4839-b039-e4fb1495afb7)
+- Title: Principal Component Analysis (Linear Algebra Derivation)
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: pca-linear-algebra-derivation → techniques/pca-linear-algebra-derivation.md
+- IRI: pkis:technique:pca-linear-algebra-derivation
