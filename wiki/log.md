@@ -15905,3 +15905,12 @@
 ## [2026-06-11] committed | concept
 - Committed: scatter-matrices-lda → concepts/scatter-matrices-lda.md
 - IRI: pkis:concept:scatter-matrices-lda
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: naive-bayes-assumption (id: 8635e1fb-94f6-46cb-b2f4-95034a9a5517)
+- Title: Naive Bayes Assumption
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: naive-bayes-assumption → concepts/naive-bayes-assumption.md
+- IRI: pkis:concept:naive-bayes-assumption
