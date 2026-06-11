@@ -14618,3 +14618,12 @@
 ## [2026-06-11] committed | concept
 - Committed: score-function → concepts/score-function.md
 - IRI: pkis:concept:score-function
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: score-matching (id: c72e84a8-6399-4107-b336-1c264c411d05)
+- Title: Score Matching
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: score-matching → techniques/score-matching.md
+- IRI: pkis:technique:score-matching

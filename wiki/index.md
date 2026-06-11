@@ -887,6 +887,7 @@
 - [[market-vs-hierarchy]] — Coase/Williamson: transactions governed by price signals (markets) vs. managerial direction (firms) (corporate-finance) (2026-05-20)
 
 ## Techniques
+- [[score-matching]] — Score Matching (statistics, machine-learning, generative-models) (2026-06-11)
 - [[contractive-autoencoder]] — Contractive Autoencoder (CAE) (deep-learning, representation-learning, manifold-learning) (2026-06-11)
 - [[denoising-autoencoder]] — Denoising Autoencoder (DAE) (deep-learning, representation-learning, generative-models) (2026-06-11)
 - [[sparse-autoencoder]] — Sparse Autoencoder (deep-learning, representation-learning) (2026-06-11)
