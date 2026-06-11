@@ -1677,6 +1677,7 @@
 - [[government-debt-valuation-equation]] — FTPL: price level determined by ratio of nominal debt to expected present value of future surpluses (macroeconomics) (2026-05-20)
 
 ## Frameworks
+- [[encoder-decoder-unet]] — Encoder–Decoder Architecture (U-Net) (deep-learning, computer-vision) (2026-06-11)
 - [[generative-classifier]] — Generative Classifier (machine-learning, statistics) (2026-06-11)
 - [[linear-gaussian-system]] — Linear Gaussian System (probability, statistics, machine-learning) (2026-06-11)
 - [[probabilistic-ml-framework]] — Probabilistic Machine Learning Framework (machine-learning, statistics, probability) (2026-06-11)

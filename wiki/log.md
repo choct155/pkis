@@ -16283,3 +16283,12 @@
 ## [2026-06-11] committed | technique
 - Committed: depthwise-separable-convolution → techniques/depthwise-separable-convolution.md
 - IRI: pkis:technique:depthwise-separable-convolution
+
+## [2026-06-11] staged | node-stub (framework)
+- Staged: encoder-decoder-unet (id: d4f0a2b1-e7a6-46e3-9ca1-7e1ce804089d)
+- Title: Encoder–Decoder Architecture (U-Net)
+- needs_canonical_source: False
+
+## [2026-06-11] committed | framework
+- Committed: encoder-decoder-unet → frameworks/encoder-decoder-unet.md
+- IRI: pkis:framework:encoder-decoder-unet
