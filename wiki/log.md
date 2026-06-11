@@ -18101,3 +18101,12 @@
 ## [2026-06-11] committed | concept
 - Committed: stochastic-gradient-langevin-dynamics → concepts/stochastic-gradient-langevin-dynamics.md
 - IRI: pkis:concept:stochastic-gradient-langevin-dynamics
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: data-driven-mcmc (id: dbdee4ca-a094-4d48-8baa-bcf7d9b537fe)
+- Title: Data-Driven MCMC
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: data-driven-mcmc → concepts/data-driven-mcmc.md
+- IRI: pkis:concept:data-driven-mcmc
