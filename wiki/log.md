@@ -17660,3 +17660,12 @@
 ## [2026-06-11] committed | framework
 - Committed: sequential-monte-carlo → frameworks/sequential-monte-carlo.md
 - IRI: pkis:framework:sequential-monte-carlo
+
+## [2026-06-11] staged | node-stub (principle)
+- Staged: turning-the-bayesian-crank (id: 6ce4ff66-37aa-4107-b88f-ea51dfd25303)
+- Title: Turning the Bayesian Crank
+- needs_canonical_source: False
+
+## [2026-06-11] committed | principle
+- Committed: turning-the-bayesian-crank → principles/turning-the-bayesian-crank.md
+- IRI: pkis:principle:turning-the-bayesian-crank
