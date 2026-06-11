@@ -12656,3 +12656,12 @@
 ## [2026-06-11] committed | technique
 - Committed: ard-gaussian-process → techniques/ard-gaussian-process.md
 - IRI: pkis:technique:ard-gaussian-process
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: generative-model-kernels (id: dac720af-4f29-407c-9cb1-2be6d513ac3d)
+- Title: Generative-Model Kernels
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: generative-model-kernels → techniques/generative-model-kernels.md
+- IRI: pkis:technique:generative-model-kernels
