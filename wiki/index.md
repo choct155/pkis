@@ -290,6 +290,7 @@
 - [[liu-machine-unlearning-llm-2024]] — Rethinking Machine Unlearning for LLMs: post-training knowledge editing survey (deep-learning, ai-safety) (2026-05-20)
 
 ## Concepts
+- [[von-mises-distribution]] — Von Mises Distribution (probability, statistics) (2026-06-11)
 - [[students-t-distribution]] — Student's t-Distribution (probability, statistics, machine-learning) (2026-06-11)
 - [[precision-matrix]] — Precision Matrix (probability, statistics, linear-algebra) (2026-06-11)
 - [[multinomial-distribution]] — Multinomial Distribution (probability, statistics, machine-learning) (2026-06-11)

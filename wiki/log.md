@@ -12251,3 +12251,12 @@
 ## [2026-06-11] committed | concept
 - Committed: students-t-distribution → concepts/students-t-distribution.md
 - IRI: pkis:concept:students-t-distribution
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: von-mises-distribution (id: d045182c-8d63-4a13-a15b-235e33ad6511)
+- Title: Von Mises Distribution
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: von-mises-distribution → concepts/von-mises-distribution.md
+- IRI: pkis:concept:von-mises-distribution
