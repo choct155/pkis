@@ -290,6 +290,7 @@
 - [[liu-machine-unlearning-llm-2024]] — Rethinking Machine Unlearning for LLMs: post-training knowledge editing survey (deep-learning, ai-safety) (2026-05-20)
 
 ## Concepts
+- [[column-space-and-span]] — Column Space and Span (linear-algebra) (2026-06-11)
 - [[matrix-inverse]] — Matrix Inverse and Singular Matrix (linear-algebra) (2026-06-11)
 - [[matrix-transpose]] — Matrix Transpose (linear-algebra) (2026-06-11)
 - [[tensor-multidimensional-array]] — Tensor (Multi-dimensional Array) (linear-algebra, deep-learning) (2026-06-11)

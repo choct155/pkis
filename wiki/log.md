@@ -13412,3 +13412,12 @@
 ## [2026-06-11] committed | concept
 - Committed: matrix-inverse → concepts/matrix-inverse.md
 - IRI: pkis:concept:matrix-inverse
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: column-space-and-span (id: 57220c2c-50de-47c2-9206-978be2819ef1)
+- Title: Column Space and Span
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: column-space-and-span → concepts/column-space-and-span.md
+- IRI: pkis:concept:column-space-and-span
