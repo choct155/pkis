@@ -12188,3 +12188,12 @@
 ## [2026-06-11] committed | concept
 - Committed: hyperparameter → concepts/hyperparameter.md
 - IRI: pkis:concept:hyperparameter
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: minkowski-loss (id: 9056b226-c6e9-47b6-8644-c01c8ee19375)
+- Title: Minkowski Loss for Regression
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: minkowski-loss → concepts/minkowski-loss.md
+- IRI: pkis:concept:minkowski-loss

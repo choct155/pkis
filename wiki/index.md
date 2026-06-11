@@ -290,6 +290,7 @@
 - [[liu-machine-unlearning-llm-2024]] — Rethinking Machine Unlearning for LLMs: post-training knowledge editing survey (deep-learning, ai-safety) (2026-05-20)
 
 ## Concepts
+- [[minkowski-loss]] — Minkowski Loss for Regression (statistics, machine-learning, decision-theory) (2026-06-11)
 - [[hyperparameter]] — Hyperparameter (machine-learning, bayesian-methods, statistics) (2026-06-11)
 - [[differential-entropy]] — Differential Entropy (information-theory, probability-theory) (2026-06-11)
 - [[decision-regions-and-boundaries]] — Decision Regions and Decision Boundaries (machine-learning, statistics, pattern-recognition) (2026-06-11)
