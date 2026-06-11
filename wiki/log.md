@@ -14303,3 +14303,12 @@
 ## [2026-06-11] committed | concept
 - Committed: bayes-error-rate → concepts/bayes-error-rate.md
 - IRI: pkis:concept:bayes-error-rate
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: grid-search (id: 007c66bd-e284-4d10-a7e1-bc5c49ef7bf4)
+- Title: Grid Search for Hyperparameter Tuning
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: grid-search → techniques/grid-search.md
+- IRI: pkis:technique:grid-search
