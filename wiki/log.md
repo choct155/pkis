@@ -14537,3 +14537,12 @@
 ## [2026-06-11] committed | result
 - Committed: ica-non-gaussian-identifiability → results/ica-non-gaussian-identifiability.md
 - IRI: pkis:result:ica-non-gaussian-identifiability
+
+## [2026-06-11] staged | node-stub (result)
+- Staged: pca-optimal-reconstruction-error (id: c5a6b102-df3b-4aa4-9629-ed0d98c518e6)
+- Title: PCA Optimal Reconstruction Error
+- needs_canonical_source: False
+
+## [2026-06-11] committed | result
+- Committed: pca-optimal-reconstruction-error → results/pca-optimal-reconstruction-error.md
+- IRI: pkis:result:pca-optimal-reconstruction-error

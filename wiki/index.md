@@ -1364,6 +1364,7 @@
 - [[constraint-propagation]] — Reducing a constraint satisfaction problem by iteratively eliminating inconsistent values from variable domains (knowledge-representation) (2026-05-20)
 
 ## Results
+- [[pca-optimal-reconstruction-error]] — PCA Optimal Reconstruction Error (machine-learning, statistics) (2026-06-11)
 - [[ica-non-gaussian-identifiability]] — ICA Non-Gaussian Identifiability (statistics, signal-processing, machine-learning) (2026-06-11)
 - [[l1-sparsity-soft-thresholding]] — L1 Regularization Induces Sparsity via Soft Thresholding (machine-learning, optimization, statistics, regularization) (2026-06-11)
 - [[l2-regularization-eigenspectrum-shrinkage]] — L2 Regularization Eigenspectrum Shrinkage (machine-learning, optimization, linear-algebra, regularization) (2026-06-11)
