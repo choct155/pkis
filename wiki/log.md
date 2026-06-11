@@ -18344,3 +18344,12 @@
 ## [2026-06-11] committed | technique
 - Committed: probit-approximation-logistic-gaussian → techniques/probit-approximation-logistic-gaussian.md
 - IRI: pkis:technique:probit-approximation-logistic-gaussian
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: logit-adjustment (id: 4bd516e9-f382-48c8-bea3-2656d39371f4)
+- Title: Logit Adjustment for Class Imbalance
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: logit-adjustment → concepts/logit-adjustment.md
+- IRI: pkis:concept:logit-adjustment
