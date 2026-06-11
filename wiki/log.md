@@ -15815,3 +15815,12 @@
 ## [2026-06-11] committed | technique
 - Committed: bfgs-lbfgs → techniques/bfgs-lbfgs.md
 - IRI: pkis:technique:bfgs-lbfgs
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: trust-region-optimization (id: 2dff9efb-b929-486b-9790-8dff42d6efa9)
+- Title: Trust-Region Optimization
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: trust-region-optimization → techniques/trust-region-optimization.md
+- IRI: pkis:technique:trust-region-optimization
