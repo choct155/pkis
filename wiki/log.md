@@ -13799,3 +13799,12 @@
 ## [2026-06-11] committed | concept
 - Committed: softmax-output-unit → concepts/softmax-output-unit.md
 - IRI: pkis:concept:softmax-output-unit
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: maxout-unit (id: 3c697abf-c8a8-44ed-8481-dfb349b77f28)
+- Title: Maxout Unit
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: maxout-unit → concepts/maxout-unit.md
+- IRI: pkis:concept:maxout-unit

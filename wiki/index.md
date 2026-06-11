@@ -290,6 +290,7 @@
 - [[liu-machine-unlearning-llm-2024]] — Rethinking Machine Unlearning for LLMs: post-training knowledge editing survey (deep-learning, ai-safety) (2026-05-20)
 
 ## Concepts
+- [[maxout-unit]] — Maxout Unit (machine-learning, deep-learning) (2026-06-11)
 - [[softmax-output-unit]] — Softmax Output Unit (machine-learning, deep-learning) (2026-06-11)
 - [[relu]] — Rectified Linear Unit (ReLU) (machine-learning, deep-learning) (2026-06-11)
 - [[deep-feedforward-network]] — Deep Feedforward Network (MLP) (machine-learning, deep-learning) (2026-06-11)
