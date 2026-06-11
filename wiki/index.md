@@ -290,6 +290,7 @@
 - [[liu-machine-unlearning-llm-2024]] — Rethinking Machine Unlearning for LLMs: post-training knowledge editing survey (deep-learning, ai-safety) (2026-05-20)
 
 ## Concepts
+- [[energy-based-model]] — Energy-Based Model (EBM) (machine-learning, probabilistic-modeling, statistical-physics) (2026-06-11)
 - [[smoothness-assumption-ml]] — Smoothness Assumption in Machine Learning (statistical-learning-theory, machine-learning) (2026-06-11)
 - [[zero-shot-learning]] — Zero-Shot Learning (machine-learning, representation-learning, computer-vision, nlp) (2026-06-11)
 - [[disentangled-representation]] — Disentangled Representation (representation-learning, deep-learning, causal-inference) (2026-06-11)

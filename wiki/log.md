@@ -14744,3 +14744,12 @@
 ## [2026-06-11] committed | framework
 - Committed: inductive-priors-representation-learning → frameworks/inductive-priors-representation-learning.md
 - IRI: pkis:framework:inductive-priors-representation-learning
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: energy-based-model (id: f54fdf3b-2479-447c-b83d-548dc1d2488a)
+- Title: Energy-Based Model (EBM)
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: energy-based-model → concepts/energy-based-model.md
+- IRI: pkis:concept:energy-based-model
