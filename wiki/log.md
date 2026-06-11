@@ -17633,3 +17633,12 @@
 ## [2026-06-11] committed | technique
 - Committed: grid-approximation-posterior → techniques/grid-approximation-posterior.md
 - IRI: pkis:technique:grid-approximation-posterior
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: advi (id: cd56d985-d55b-4b3c-9acc-8c58655ffa40)
+- Title: Automatic Differentiation Variational Inference (ADVI)
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: advi → techniques/advi.md
+- IRI: pkis:technique:advi
