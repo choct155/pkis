@@ -18218,3 +18218,12 @@
 ## [2026-06-11] committed | framework
 - Committed: empirical-risk-minimization-erm → frameworks/empirical-risk-minimization-erm.md
 - IRI: pkis:framework:empirical-risk-minimization-erm
+
+## [2026-06-11] staged | node-stub (framework)
+- Staged: gibbs-posterior (id: 06044248-8e14-4dc0-bd15-9a2330ea44b8)
+- Title: Gibbs Posterior and Generalised Bayesian Inference
+- needs_canonical_source: False
+
+## [2026-06-11] committed | framework
+- Committed: gibbs-posterior → frameworks/gibbs-posterior.md
+- IRI: pkis:framework:gibbs-posterior
