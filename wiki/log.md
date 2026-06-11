@@ -12323,3 +12323,12 @@
 ## [2026-06-11] committed | technique
 - Committed: lms-algorithm → techniques/lms-algorithm.md
 - IRI: pkis:technique:lms-algorithm
+
+## [2026-06-11] staged | node-stub (result)
+- Staged: bayesian-linear-regression-posterior (id: c3bc5478-b3ca-4297-8355-01e0e3f2d561)
+- Title: Bayesian Linear Regression Posterior
+- needs_canonical_source: False
+
+## [2026-06-11] committed | result
+- Committed: bayesian-linear-regression-posterior → results/bayesian-linear-regression-posterior.md
+- IRI: pkis:result:bayesian-linear-regression-posterior
