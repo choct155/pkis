@@ -15680,3 +15680,12 @@
 ## [2026-06-11] committed | concept
 - Committed: range-and-nullspace → concepts/range-and-nullspace.md
 - IRI: pkis:concept:range-and-nullspace
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: matrix-norms (id: b91bd86f-1dde-4f57-9c9c-7fae6cd57ae1)
+- Title: Frobenius Norm and Matrix Norms
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: matrix-norms → concepts/matrix-norms.md
+- IRI: pkis:concept:matrix-norms
