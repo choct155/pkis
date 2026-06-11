@@ -15257,3 +15257,12 @@
 ## [2026-06-11] committed | concept
 - Committed: population-risk → concepts/population-risk.md
 - IRI: pkis:concept:population-risk
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: polynomial-feature-expansion (id: 75050ac9-3776-40c3-bb65-8ff8de170faa)
+- Title: Polynomial Feature Expansion
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: polynomial-feature-expansion → techniques/polynomial-feature-expansion.md
+- IRI: pkis:technique:polynomial-feature-expansion
