@@ -290,6 +290,7 @@
 - [[liu-machine-unlearning-llm-2024]] — Rethinking Machine Unlearning for LLMs: post-training knowledge editing survey (deep-learning, ai-safety) (2026-05-20)
 
 ## Concepts
+- [[chi-squared-distribution]] — Chi-Squared Distribution (probability-theory, statistics) (2026-06-11)
 - [[pareto-distribution]] — Pareto Distribution and Power Laws (probability-theory, statistics, economics) (2026-06-11)
 - [[cauchy-distribution]] — Cauchy Distribution (probability-theory, statistics, bayesian-inference) (2026-06-11)
 - [[kurtosis-and-tail-behavior]] — Kurtosis and Tail Behavior (probability-theory, statistics) (2026-06-11)

@@ -17192,3 +17192,12 @@
 ## [2026-06-11] committed | concept
 - Committed: pareto-distribution → concepts/pareto-distribution.md
 - IRI: pkis:concept:pareto-distribution
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: chi-squared-distribution (id: d0cd01a2-a616-41f4-b8bb-6e40f894e6cc)
+- Title: Chi-Squared Distribution
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: chi-squared-distribution → concepts/chi-squared-distribution.md
+- IRI: pkis:concept:chi-squared-distribution
