@@ -290,6 +290,7 @@
 - [[liu-machine-unlearning-llm-2024]] — Rethinking Machine Unlearning for LLMs: post-training knowledge editing survey (deep-learning, ai-safety) (2026-05-20)
 
 ## Concepts
+- [[beta-binomial-model]] — Beta-Binomial Conjugate Model (statistics, machine-learning) (2026-06-11)
 - [[learning-curve]] — Learning Curve (machine-learning, statistics) (2026-06-11)
 - [[surrogate-loss]] — Surrogate Loss Function (machine-learning, statistics) (2026-06-11)
 - [[signal-to-noise-ratio-shrinkage]] — Signal-to-Noise Ratio (Bayesian Shrinkage) (statistics, signal-processing, machine-learning) (2026-06-11)

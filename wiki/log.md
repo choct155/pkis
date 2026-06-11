@@ -15455,3 +15455,12 @@
 ## [2026-06-11] committed | concept
 - Committed: learning-curve → concepts/learning-curve.md
 - IRI: pkis:concept:learning-curve
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: beta-binomial-model (id: 31a036ec-40cf-4609-96ec-8bfe3fb622fc)
+- Title: Beta-Binomial Conjugate Model
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: beta-binomial-model → concepts/beta-binomial-model.md
+- IRI: pkis:concept:beta-binomial-model
