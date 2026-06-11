@@ -14465,3 +14465,12 @@
 ## [2026-06-11] committed | technique
 - Committed: classifier-cascade → techniques/classifier-cascade.md
 - IRI: pkis:technique:classifier-cascade
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: conditional-computation (id: 88cff07f-8466-44d5-9752-e39584ec65c5)
+- Title: Conditional Computation (Dynamic Structure in Neural Networks)
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: conditional-computation → concepts/conditional-computation.md
+- IRI: pkis:concept:conditional-computation
