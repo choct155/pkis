@@ -13853,3 +13853,12 @@
 ## [2026-06-11] committed | result
 - Committed: depth-efficiency-rectifier-networks → results/depth-efficiency-rectifier-networks.md
 - IRI: pkis:result:depth-efficiency-rectifier-networks
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: logit-neural-network (id: bed80258-1213-4f99-97aa-49212baed5fb)
+- Title: Logit (Neural Network)
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: logit-neural-network → concepts/logit-neural-network.md
+- IRI: pkis:concept:logit-neural-network

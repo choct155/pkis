@@ -290,6 +290,7 @@
 - [[liu-machine-unlearning-llm-2024]] — Rethinking Machine Unlearning for LLMs: post-training knowledge editing survey (deep-learning, ai-safety) (2026-05-20)
 
 ## Concepts
+- [[logit-neural-network]] — Logit (Neural Network) (machine-learning, deep-learning, statistics) (2026-06-11)
 - [[computational-graph]] — Computational Graph (machine-learning, computer-science, numerical-methods) (2026-06-11)
 - [[maxout-unit]] — Maxout Unit (machine-learning, deep-learning) (2026-06-11)
 - [[softmax-output-unit]] — Softmax Output Unit (machine-learning, deep-learning) (2026-06-11)
