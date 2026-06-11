@@ -19100,3 +19100,12 @@
 ## [2026-06-11] committed | concept
 - Committed: elementwise-flow → concepts/elementwise-flow.md
 - IRI: pkis:concept:elementwise-flow
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: pushforward-distribution (id: f48c597c-643c-4ffc-9032-ee99fb046391)
+- Title: Pushforward Distribution
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: pushforward-distribution → concepts/pushforward-distribution.md
+- IRI: pkis:concept:pushforward-distribution
