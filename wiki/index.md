@@ -290,6 +290,7 @@
 - [[liu-machine-unlearning-llm-2024]] — Rethinking Machine Unlearning for LLMs: post-training knowledge editing survey (deep-learning, ai-safety) (2026-05-20)
 
 ## Concepts
+- [[causal-vs-anticausal-prediction]] — Causal vs. Anticausal Prediction (machine-learning, causality, statistics) (2026-06-11)
 - [[spurious-correlations]] — Spurious Correlations (Shortcut Features) (machine-learning, causality) (2026-06-11)
 - [[out-of-distribution-detection]] — Out-of-Distribution Detection (machine-learning, statistics) (2026-06-11)
 - [[label-shift]] — Label Shift (Prior Shift) (machine-learning, statistics) (2026-06-11)

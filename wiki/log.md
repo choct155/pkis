@@ -18740,3 +18740,12 @@
 ## [2026-06-11] committed | concept
 - Committed: spurious-correlations → concepts/spurious-correlations.md
 - IRI: pkis:concept:spurious-correlations
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: causal-vs-anticausal-prediction (id: d25f696d-5e14-49cc-b5d0-558f206ad414)
+- Title: Causal vs. Anticausal Prediction
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: causal-vs-anticausal-prediction → concepts/causal-vs-anticausal-prediction.md
+- IRI: pkis:concept:causal-vs-anticausal-prediction
