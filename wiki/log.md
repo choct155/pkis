@@ -18074,3 +18074,12 @@
 ## [2026-06-11] committed | technique
 - Committed: swendsen-wang → techniques/swendsen-wang.md
 - IRI: pkis:technique:swendsen-wang
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: hamiltonian-mechanics-sampling (id: 120d2510-d2a8-4298-8afb-f3a11f2acbdd)
+- Title: Hamiltonian Mechanics for Sampling
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: hamiltonian-mechanics-sampling → concepts/hamiltonian-mechanics-sampling.md
+- IRI: pkis:concept:hamiltonian-mechanics-sampling

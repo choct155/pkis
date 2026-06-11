@@ -290,6 +290,7 @@
 - [[liu-machine-unlearning-llm-2024]] — Rethinking Machine Unlearning for LLMs: post-training knowledge editing survey (deep-learning, ai-safety) (2026-05-20)
 
 ## Concepts
+- [[hamiltonian-mechanics-sampling]] — Hamiltonian Mechanics for Sampling (physics, statistics, machine-learning) (2026-06-11)
 - [[variational-bayes]] — Variational Bayes (machine-learning, bayesian-inference) (2026-06-11)
 - [[amortization-gap]] — Amortization Gap (machine-learning, bayesian-inference) (2026-06-11)
 - [[variational-free-energy-vfe]] — Variational Free Energy (machine-learning, bayesian-inference, physics) (2026-06-11)
