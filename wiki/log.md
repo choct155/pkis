@@ -15014,3 +15014,12 @@
 ## [2026-06-11] committed | technique
 - Committed: wake-sleep-algorithm → techniques/wake-sleep-algorithm.md
 - IRI: pkis:technique:wake-sleep-algorithm
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: inference-as-optimization (id: e8014d8b-e298-483c-843a-3887807ca6d1)
+- Title: Inference as Optimization (ELBO Perspective)
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: inference-as-optimization → concepts/inference-as-optimization.md
+- IRI: pkis:concept:inference-as-optimization
