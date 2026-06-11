@@ -17084,3 +17084,12 @@
 ## [2026-06-11] committed | problem
 - Committed: robustness-distribution-shift → problems/robustness-distribution-shift.md
 - IRI: pkis:problem:robustness-distribution-shift
+
+## [2026-06-11] staged | node-stub (problem)
+- Staged: statistical-efficiency-learning (id: 8af42331-974c-48ca-ac42-1d98a9971bee)
+- Title: Statistical Efficiency / Data Efficiency
+- needs_canonical_source: False
+
+## [2026-06-11] committed | problem
+- Committed: statistical-efficiency-learning → problems/statistical-efficiency-learning.md
+- IRI: pkis:problem:statistical-efficiency-learning
