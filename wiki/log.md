@@ -12566,3 +12566,12 @@
 ## [2026-06-11] committed | technique
 - Committed: early-stopping → techniques/early-stopping.md
 - IRI: pkis:technique:early-stopping
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: convolutional-neural-network-architecture (id: 508800bc-8197-4fbf-9a24-93bbe4cc7edd)
+- Title: Convolutional Neural Network
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: convolutional-neural-network-architecture → techniques/convolutional-neural-network-architecture.md
+- IRI: pkis:technique:convolutional-neural-network-architecture
