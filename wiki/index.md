@@ -290,6 +290,7 @@
 - [[liu-machine-unlearning-llm-2024]] — Rethinking Machine Unlearning for LLMs: post-training knowledge editing survey (deep-learning, ai-safety) (2026-05-20)
 
 ## Concepts
+- [[kronecker-product]] — Kronecker Product (linear-algebra, machine-learning) (2026-06-11)
 - [[matrix-norms]] — Frobenius Norm and Matrix Norms (linear-algebra, machine-learning, optimisation) (2026-06-11)
 - [[range-and-nullspace]] — Range and Nullspace of a Matrix (linear-algebra, machine-learning) (2026-06-11)
 - [[sequence-logo]] — Sequence Logo (information-theory, bioinformatics) (2026-06-11)

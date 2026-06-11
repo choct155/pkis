@@ -15716,3 +15716,12 @@
 ## [2026-06-11] committed | result
 - Committed: woodbury-identity → results/woodbury-identity.md
 - IRI: pkis:result:woodbury-identity
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: kronecker-product (id: 7d513222-0174-4d23-b47a-be0b6e8839d5)
+- Title: Kronecker Product
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: kronecker-product → concepts/kronecker-product.md
+- IRI: pkis:concept:kronecker-product
