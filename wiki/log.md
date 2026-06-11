@@ -19433,3 +19433,12 @@
 ## [2026-06-11] committed | concept
 - Committed: horseshoe-distribution → concepts/horseshoe-distribution.md
 - IRI: pkis:concept:horseshoe-distribution
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: factor-rotations-problem (id: 94c9043a-63df-43a7-8232-3606ec1943f7)
+- Title: Factor Rotations Problem
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: factor-rotations-problem → concepts/factor-rotations-problem.md
+- IRI: pkis:concept:factor-rotations-problem
