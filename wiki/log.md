@@ -19757,3 +19757,12 @@
 ## [2026-06-11] committed | technique
 - Committed: representational-similarity-analysis → techniques/representational-similarity-analysis.md
 - IRI: pkis:technique:representational-similarity-analysis
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: infonce-loss (id: 9c0c8d5c-ba1b-44a4-aaee-4e64a893ce2e)
+- Title: InfoNCE Loss
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: infonce-loss → techniques/infonce-loss.md
+- IRI: pkis:technique:infonce-loss
