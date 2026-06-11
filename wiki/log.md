@@ -15248,3 +15248,12 @@
 ## [2026-06-11] committed | concept
 - Committed: self-supervised-learning → concepts/self-supervised-learning.md
 - IRI: pkis:concept:self-supervised-learning
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: population-risk (id: 7fd2aea7-182a-4311-ac41-55d1048fc08d)
+- Title: Population Risk
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: population-risk → concepts/population-risk.md
+- IRI: pkis:concept:population-risk

@@ -290,6 +290,7 @@
 - [[liu-machine-unlearning-llm-2024]] — Rethinking Machine Unlearning for LLMs: post-training knowledge editing survey (deep-learning, ai-safety) (2026-05-20)
 
 ## Concepts
+- [[population-risk]] — Population Risk (machine-learning, statistical-learning-theory) (2026-06-11)
 - [[self-supervised-learning]] — Self-Supervised Learning (machine-learning, representation-learning, nlp) (2026-06-11)
 - [[generalization-gap]] — Generalization Gap (machine-learning, statistical-learning-theory) (2026-06-11)
 - [[epistemic-vs-aleatoric-uncertainty]] — Epistemic vs Aleatoric Uncertainty (machine-learning, statistics, decision-theory) (2026-06-11)
