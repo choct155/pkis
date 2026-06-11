@@ -18830,3 +18830,12 @@
 ## [2026-06-11] committed | principle
 - Committed: likelihood-sample-quality-decoupling → principles/likelihood-sample-quality-decoupling.md
 - IRI: pkis:principle:likelihood-sample-quality-decoupling
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: two-step-latent-manifold-generative-modeling (id: 98bf6dd0-489a-468f-883a-3aaa370e8714)
+- Title: Two-Step Latent Manifold Generative Modeling
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: two-step-latent-manifold-generative-modeling → techniques/two-step-latent-manifold-generative-modeling.md
+- IRI: pkis:technique:two-step-latent-manifold-generative-modeling
