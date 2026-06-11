@@ -15095,3 +15095,12 @@
 ## [2026-06-11] committed | framework
 - Committed: generative-adversarial-network-framework → frameworks/generative-adversarial-network-framework.md
 - IRI: pkis:framework:generative-adversarial-network-framework
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: spike-and-slab-rbm (id: 53cd8673-dcb2-4602-b1be-fdf9c51e78c1)
+- Title: Spike-and-Slab RBM (ssRBM)
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: spike-and-slab-rbm → techniques/spike-and-slab-rbm.md
+- IRI: pkis:technique:spike-and-slab-rbm
