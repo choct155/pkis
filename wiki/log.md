@@ -12359,3 +12359,12 @@
 ## [2026-06-11] committed | framework
 - Committed: evidence-approximation → frameworks/evidence-approximation.md
 - IRI: pkis:framework:evidence-approximation
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: effective-number-of-parameters-gamma (id: 910da2f6-7b94-4b89-ade0-35f205e9ce2f)
+- Title: Effective Number of Parameters ($\gamma$)
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: effective-number-of-parameters-gamma → concepts/effective-number-of-parameters-gamma.md
+- IRI: pkis:concept:effective-number-of-parameters-gamma
