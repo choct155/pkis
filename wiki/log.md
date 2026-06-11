@@ -15185,3 +15185,12 @@
 ## [2026-06-11] committed | technique
 - Committed: multi-prediction-deep-boltzmann-machine → techniques/multi-prediction-deep-boltzmann-machine.md
 - IRI: pkis:technique:multi-prediction-deep-boltzmann-machine
+
+## [2026-06-11] staged | node-stub (framework)
+- Staged: probabilistic-ml-framework (id: bad74a53-3294-4e23-b47a-d00f1eb43ee1)
+- Title: Probabilistic Machine Learning Framework
+- needs_canonical_source: False
+
+## [2026-06-11] committed | framework
+- Committed: probabilistic-ml-framework → frameworks/probabilistic-ml-framework.md
+- IRI: pkis:framework:probabilistic-ml-framework
