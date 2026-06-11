@@ -15428,3 +15428,12 @@
 ## [2026-06-11] committed | technique
 - Committed: method-of-moments → techniques/method-of-moments.md
 - IRI: pkis:technique:method-of-moments
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: validation-set-method (id: 37588887-bea8-4bed-8596-52455a483571)
+- Title: Validation Set and Cross-Validation
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: validation-set-method → techniques/validation-set-method.md
+- IRI: pkis:technique:validation-set-method
