@@ -14816,3 +14816,12 @@
 ## [2026-06-11] committed | concept
 - Committed: las-vegas-vs-monte-carlo-algorithms → concepts/las-vegas-vs-monte-carlo-algorithms.md
 - IRI: pkis:concept:las-vegas-vs-monte-carlo-algorithms
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: biased-importance-sampling (id: ca39a670-e75e-40cd-8ef6-728b26c9e7bf)
+- Title: Biased Importance Sampling (Self-Normalised)
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: biased-importance-sampling → techniques/biased-importance-sampling.md
+- IRI: pkis:technique:biased-importance-sampling
