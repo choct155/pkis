@@ -15950,3 +15950,12 @@
 ## [2026-06-11] committed | concept
 - Committed: binary-logistic-regression → concepts/binary-logistic-regression.md
 - IRI: pkis:concept:binary-logistic-regression
+
+## [2026-06-11] staged | node-stub (result)
+- Staged: logistic-regression-nll-convexity (id: 7e8ce28d-bf3c-441d-a3f2-42109fd123d7)
+- Title: Convexity of Logistic Regression NLL
+- needs_canonical_source: False
+
+## [2026-06-11] committed | result
+- Committed: logistic-regression-nll-convexity → results/logistic-regression-nll-convexity.md
+- IRI: pkis:result:logistic-regression-nll-convexity
