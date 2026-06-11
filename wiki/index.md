@@ -290,6 +290,7 @@
 - [[liu-machine-unlearning-llm-2024]] — Rethinking Machine Unlearning for LLMs: post-training knowledge editing survey (deep-learning, ai-safety) (2026-05-20)
 
 ## Concepts
+- [[matrix-normal-inverse-wishart]] — Matrix Normal Inverse-Wishart (MNIW) Distribution (statistics, bayesian-inference) (2026-06-11)
 - [[zero-inflated-poisson]] — Zero-Inflated Poisson (ZIP) Model (statistics, machine-learning) (2026-06-11)
 - [[horseshoe-prior]] — Horseshoe Prior (statistics, bayesian-inference) (2026-06-11)
 - [[spike-and-slab-prior]] — Spike-and-Slab Prior (statistics, bayesian-inference) (2026-06-11)

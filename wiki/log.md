@@ -18326,3 +18326,12 @@
 ## [2026-06-11] committed | concept
 - Committed: zero-inflated-poisson → concepts/zero-inflated-poisson.md
 - IRI: pkis:concept:zero-inflated-poisson
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: matrix-normal-inverse-wishart (id: 5a640065-a3bb-4f3f-8334-c49d68a11102)
+- Title: Matrix Normal Inverse-Wishart (MNIW) Distribution
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: matrix-normal-inverse-wishart → concepts/matrix-normal-inverse-wishart.md
+- IRI: pkis:concept:matrix-normal-inverse-wishart
