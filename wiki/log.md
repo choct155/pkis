@@ -17651,3 +17651,12 @@
 ## [2026-06-11] committed | concept
 - Committed: mcmc-proposal-distribution → concepts/mcmc-proposal-distribution.md
 - IRI: pkis:concept:mcmc-proposal-distribution
+
+## [2026-06-11] staged | node-stub (framework)
+- Staged: sequential-monte-carlo (id: 9d326ac6-5586-43cb-b024-105fe5ae2f11)
+- Title: Sequential Monte Carlo (SMC)
+- needs_canonical_source: False
+
+## [2026-06-11] committed | framework
+- Committed: sequential-monte-carlo → frameworks/sequential-monte-carlo.md
+- IRI: pkis:framework:sequential-monte-carlo

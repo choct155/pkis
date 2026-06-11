@@ -1813,6 +1813,7 @@
 - [[government-debt-valuation-equation]] — FTPL: price level determined by ratio of nominal debt to expected present value of future surpluses (macroeconomics) (2026-05-20)
 
 ## Frameworks
+- [[sequential-monte-carlo]] — Sequential Monte Carlo (SMC) (bayesian-computation, sequential-inference, monte-carlo-methods) (2026-06-11)
 - [[bayesian-inference-patterns]] — Bayesian Inference Patterns (Global / Local / Mixed Latents) (machine-learning, bayesian-inference, probabilistic-graphical-models) (2026-06-11)
 - [[four-tasks-probabilistic-ml]] — Four Tasks of Probabilistic ML: Prediction, Generation, Discovery, Control (machine-learning, probabilistic-modelling) (2026-06-11)
 - [[model-based-ml]] — Model-Based Machine Learning (MBML) (machine-learning, probabilistic-modelling, bayesian-inference) (2026-06-11)
