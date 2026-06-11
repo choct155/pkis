@@ -13862,3 +13862,12 @@
 ## [2026-06-11] committed | concept
 - Committed: logit-neural-network → concepts/logit-neural-network.md
 - IRI: pkis:concept:logit-neural-network
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: heteroscedastic-neural-network (id: d1872eb1-7998-4bba-9fa3-acdf4aa247fa)
+- Title: Heteroscedastic Neural Network Model
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: heteroscedastic-neural-network → concepts/heteroscedastic-neural-network.md
+- IRI: pkis:concept:heteroscedastic-neural-network
