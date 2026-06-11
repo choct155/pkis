@@ -17786,3 +17786,12 @@
 ## [2026-06-11] committed | concept
 - Committed: backwards-kalman-gain → concepts/backwards-kalman-gain.md
 - IRI: pkis:concept:backwards-kalman-gain
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: gaussian-ansatz-ssm (id: d04462f6-c225-4cf2-8aee-f76fe70ca42d)
+- Title: Gaussian Ansatz for State Estimation
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: gaussian-ansatz-ssm → concepts/gaussian-ansatz-ssm.md
+- IRI: pkis:concept:gaussian-ansatz-ssm
