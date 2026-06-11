@@ -19316,3 +19316,12 @@
 ## [2026-06-11] committed | technique
 - Committed: bidirectional-gan → techniques/bidirectional-gan.md
 - IRI: pkis:technique:bidirectional-gan
+
+## [2026-06-11] staged | node-stub (result)
+- Staged: gan-jsd-equivalence (id: 7d98f6b8-a0ce-4f79-afca-f89bd99b4c46)
+- Title: GAN–Jensen-Shannon Divergence Equivalence
+- needs_canonical_source: False
+
+## [2026-06-11] committed | result
+- Committed: gan-jsd-equivalence → results/gan-jsd-equivalence.md
+- IRI: pkis:result:gan-jsd-equivalence
