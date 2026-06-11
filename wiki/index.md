@@ -931,6 +931,7 @@
 - [[market-vs-hierarchy]] — Coase/Williamson: transactions governed by price signals (markets) vs. managerial direction (firms) (corporate-finance) (2026-05-20)
 
 ## Techniques
+- [[method-of-moments]] — Method of Moments (MOM) (statistics) (2026-06-11)
 - [[shrinkage-covariance-estimation]] — Shrinkage Estimation of Covariance (statistics, machine-learning) (2026-06-11)
 - [[exponentially-weighted-moving-average]] — Exponentially Weighted Moving Average (EWMA) (statistics, machine-learning, signal-processing) (2026-06-11)
 - [[map-estimation]] — MAP Estimation (statistics, machine-learning) (2026-06-11)

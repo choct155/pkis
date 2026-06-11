@@ -15419,3 +15419,12 @@
 ## [2026-06-11] committed | technique
 - Committed: shrinkage-covariance-estimation → techniques/shrinkage-covariance-estimation.md
 - IRI: pkis:technique:shrinkage-covariance-estimation
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: method-of-moments (id: 9ebf05ea-1984-440e-96b4-ef9928183084)
+- Title: Method of Moments (MOM)
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: method-of-moments → techniques/method-of-moments.md
+- IRI: pkis:technique:method-of-moments
