@@ -16859,3 +16859,12 @@
 ## [2026-06-11] committed | concept
 - Committed: vector-quantization-clustering → concepts/vector-quantization-clustering.md
 - IRI: pkis:concept:vector-quantization-clustering
+
+## [2026-06-11] staged | node-stub (problem)
+- Staged: recommender-systems (id: cf6326c5-47b4-469c-8cc9-58029cb0af4f)
+- Title: Recommender Systems
+- needs_canonical_source: False
+
+## [2026-06-11] committed | problem
+- Committed: recommender-systems → problems/recommender-systems.md
+- IRI: pkis:problem:recommender-systems
