@@ -19325,3 +19325,12 @@
 ## [2026-06-11] committed | result
 - Committed: gan-jsd-equivalence → results/gan-jsd-equivalence.md
 - IRI: pkis:result:gan-jsd-equivalence
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: generative-adversarial-imitation-learning (id: c9eef40e-05d7-4d26-a076-214a298bf149)
+- Title: Generative Adversarial Imitation Learning (GAIL)
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: generative-adversarial-imitation-learning → techniques/generative-adversarial-imitation-learning.md
+- IRI: pkis:technique:generative-adversarial-imitation-learning
