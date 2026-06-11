@@ -13682,3 +13682,12 @@
 ## [2026-06-11] committed | concept
 - Committed: generalization-error-training-error → concepts/generalization-error-training-error.md
 - IRI: pkis:concept:generalization-error-training-error
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: model-capacity-hypothesis-space (id: 008a560b-37d8-4bfa-a51a-4ca7fdd05961)
+- Title: Model Capacity and Hypothesis Space
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: model-capacity-hypothesis-space → concepts/model-capacity-hypothesis-space.md
+- IRI: pkis:concept:model-capacity-hypothesis-space
