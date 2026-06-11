@@ -15887,3 +15887,12 @@
 ## [2026-06-11] committed | technique
 - Committed: nearest-centroid-classifier → techniques/nearest-centroid-classifier.md
 - IRI: pkis:technique:nearest-centroid-classifier
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: fishers-linear-discriminant-analysis (id: c0d614c9-7bd1-4c36-a80e-a53f81539a30)
+- Title: Fisher's Linear Discriminant Analysis (FLDA)
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: fishers-linear-discriminant-analysis → techniques/fishers-linear-discriminant-analysis.md
+- IRI: pkis:technique:fishers-linear-discriminant-analysis
