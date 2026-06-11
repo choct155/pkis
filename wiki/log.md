@@ -13007,3 +13007,12 @@
 ## [2026-06-11] committed | concept
 - Committed: moment-matching → concepts/moment-matching.md
 - IRI: pkis:concept:moment-matching
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: adaptive-rejection-sampling (id: 962afc41-62f4-4276-ad18-ef96f6aa1718)
+- Title: Adaptive Rejection Sampling
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: adaptive-rejection-sampling → techniques/adaptive-rejection-sampling.md
+- IRI: pkis:technique:adaptive-rejection-sampling
