@@ -16544,3 +16544,12 @@
 ## [2026-06-11] committed | concept
 - Committed: matern-kernel → concepts/matern-kernel.md
 - IRI: pkis:concept:matern-kernel
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: ard-kernel (id: fd0ea025-f2c3-4f61-b040-c4ac434aef56)
+- Title: ARD Kernel (Automatic Relevance Determination Kernel)
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: ard-kernel → concepts/ard-kernel.md
+- IRI: pkis:concept:ard-kernel
