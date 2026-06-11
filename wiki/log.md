@@ -17993,3 +17993,12 @@
 ## [2026-06-11] committed | technique
 - Committed: self-normalized-importance-sampling → techniques/self-normalized-importance-sampling.md
 - IRI: pkis:technique:self-normalized-importance-sampling
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: rao-blackwellization (id: 8a44978a-db10-4db1-ac7e-47d3cfbfe5f9)
+- Title: Rao-Blackwellization
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: rao-blackwellization → techniques/rao-blackwellization.md
+- IRI: pkis:technique:rao-blackwellization
