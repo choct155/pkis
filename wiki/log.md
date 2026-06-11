@@ -19766,3 +19766,12 @@
 ## [2026-06-11] committed | technique
 - Committed: infonce-loss → techniques/infonce-loss.md
 - IRI: pkis:technique:infonce-loss
+
+## [2026-06-11] staged | node-stub (framework)
+- Staged: contrastive-representation-learning (id: 33c0ec25-0b14-437c-9688-6138a662dfd7)
+- Title: Contrastive / Multiview Representation Learning
+- needs_canonical_source: False
+
+## [2026-06-11] committed | framework
+- Committed: contrastive-representation-learning → frameworks/contrastive-representation-learning.md
+- IRI: pkis:framework:contrastive-representation-learning
