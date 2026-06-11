@@ -14069,3 +14069,12 @@
 ## [2026-06-11] committed | concept
 - Committed: sparse-interactions-cnn → concepts/sparse-interactions-cnn.md
 - IRI: pkis:concept:sparse-interactions-cnn
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: parameter-sharing-cnn (id: 8bc81545-023e-4c0f-bcd6-a0600070f511)
+- Title: Parameter Sharing (CNNs)
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: parameter-sharing-cnn → concepts/parameter-sharing-cnn.md
+- IRI: pkis:concept:parameter-sharing-cnn
