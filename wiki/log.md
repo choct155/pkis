@@ -16211,3 +16211,12 @@
 ## [2026-06-11] committed | technique
 - Committed: xavier-initialization → techniques/xavier-initialization.md
 - IRI: pkis:technique:xavier-initialization
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: residual-block (id: ec5d8bca-9a51-4893-955c-e5890928d38e)
+- Title: Residual Block and Skip Connections
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: residual-block → techniques/residual-block.md
+- IRI: pkis:technique:residual-block
