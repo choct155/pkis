@@ -20180,3 +20180,12 @@
 ## [2026-06-11] committed | technique
 - Committed: cross-fitting → techniques/cross-fitting.md
 - IRI: pkis:technique:cross-fitting
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: difference-in-differences-did (id: 1865c566-e338-40b3-ad24-6ee37be6d4d8)
+- Title: Difference-in-Differences (DiD)
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: difference-in-differences-did → techniques/difference-in-differences-did.md
+- IRI: pkis:technique:difference-in-differences-did
