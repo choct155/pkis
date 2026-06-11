@@ -12557,3 +12557,12 @@
 ## [2026-06-11] committed | technique
 - Committed: soft-weight-sharing → techniques/soft-weight-sharing.md
 - IRI: pkis:technique:soft-weight-sharing
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: early-stopping (id: 64cd7b14-3242-4fc5-ad0e-10d09f003966)
+- Title: Early Stopping as Regularisation
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: early-stopping → techniques/early-stopping.md
+- IRI: pkis:technique:early-stopping
