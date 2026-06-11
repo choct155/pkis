@@ -14285,3 +14285,12 @@
 ## [2026-06-11] committed | concept
 - Committed: precision-recall-f-score → concepts/precision-recall-f-score.md
 - IRI: pkis:concept:precision-recall-f-score
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: coverage-selective-prediction (id: ef86f671-648d-4317-8416-ea777f4700c1)
+- Title: Coverage (selective prediction)
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: coverage-selective-prediction → concepts/coverage-selective-prediction.md
+- IRI: pkis:concept:coverage-selective-prediction
