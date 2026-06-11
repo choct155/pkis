@@ -16526,3 +16526,12 @@
 ## [2026-06-11] committed | technique
 - Committed: random-fourier-features → techniques/random-fourier-features.md
 - IRI: pkis:technique:random-fourier-features
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: kernel-ridge-regression (id: 25524989-f683-4793-b060-2f0447a56f4a)
+- Title: Kernel Ridge Regression
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: kernel-ridge-regression → techniques/kernel-ridge-regression.md
+- IRI: pkis:technique:kernel-ridge-regression
