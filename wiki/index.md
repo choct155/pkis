@@ -989,6 +989,7 @@
 - [[market-vs-hierarchy]] — Coase/Williamson: transactions governed by price signals (markets) vs. managerial direction (firms) (corporate-finance) (2026-05-20)
 
 ## Techniques
+- [[partial-dependence-plots]] — Partial Dependence Plots (machine-learning, interpretability, statistics) (2026-06-11)
 - [[feature-importance-tree-ensembles]] — Feature Importance for Tree Ensembles (machine-learning, interpretability) (2026-06-11)
 - [[xgboost]] — XGBoost (machine-learning, optimization) (2026-06-11)
 - [[platt-scaling]] — Platt Scaling (machine-learning) (2026-06-11)

@@ -16589,3 +16589,12 @@
 ## [2026-06-11] committed | technique
 - Committed: feature-importance-tree-ensembles → techniques/feature-importance-tree-ensembles.md
 - IRI: pkis:technique:feature-importance-tree-ensembles
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: partial-dependence-plots (id: 2dfe4928-eb48-40ac-8e01-9a8c36246529)
+- Title: Partial Dependence Plots
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: partial-dependence-plots → techniques/partial-dependence-plots.md
+- IRI: pkis:technique:partial-dependence-plots
