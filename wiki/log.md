@@ -13214,3 +13214,12 @@
 ## [2026-06-11] committed | technique
 - Committed: adaboost-algorithm → techniques/adaboost-algorithm.md
 - IRI: pkis:technique:adaboost-algorithm
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: exponential-loss (id: bc5ec1f8-23d3-4771-acd8-9b984ff96835)
+- Title: Exponential Loss Function
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: exponential-loss → concepts/exponential-loss.md
+- IRI: pkis:concept:exponential-loss
