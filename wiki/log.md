@@ -15572,3 +15572,12 @@
 ## [2026-06-11] committed | technique
 - Committed: bayesian-t-test → techniques/bayesian-t-test.md
 - IRI: pkis:technique:bayesian-t-test
+
+## [2026-06-11] staged | node-stub (result)
+- Staged: bayesian-occams-razor (id: c4fb4510-bf8a-44a7-a824-90020651cd9d)
+- Title: Bayesian Occam's Razor Effect
+- needs_canonical_source: False
+
+## [2026-06-11] committed | result
+- Committed: bayesian-occams-razor → results/bayesian-occams-razor.md
+- IRI: pkis:result:bayesian-occams-razor
