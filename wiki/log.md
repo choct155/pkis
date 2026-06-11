@@ -13025,3 +13025,12 @@
 ## [2026-06-11] committed | technique
 - Committed: sampling-importance-resampling → techniques/sampling-importance-resampling.md
 - IRI: pkis:technique:sampling-importance-resampling
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: monte-carlo-em (id: 30e9b921-d0ff-49da-93bd-28191e2e81ab)
+- Title: Monte Carlo EM Algorithm
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: monte-carlo-em → techniques/monte-carlo-em.md
+- IRI: pkis:technique:monte-carlo-em
