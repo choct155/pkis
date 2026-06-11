@@ -290,6 +290,7 @@
 - [[liu-machine-unlearning-llm-2024]] — Rethinking Machine Unlearning for LLMs: post-training knowledge editing survey (deep-learning, ai-safety) (2026-05-20)
 
 ## Concepts
+- [[deep-boltzmann-machine]] — Deep Boltzmann Machine (DBM) (deep-learning, probabilistic-graphical-models, generative-models) (2026-06-11)
 - [[deep-belief-network]] — Deep Belief Network (DBN) (deep-learning, probabilistic-graphical-models, generative-models) (2026-06-11)
 - [[mean-field-recurrent-network-connection]] — Mean Field Fixed-Point Equations as Recurrent Networks (machine-learning, deep-learning, probabilistic-inference) (2026-06-11)
 - [[variational-approximation-bias]] — Variational Approximation Bias (Self-Fulfilling Posteriors) (machine-learning, probabilistic-inference) (2026-06-11)

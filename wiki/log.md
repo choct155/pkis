@@ -15068,3 +15068,12 @@
 ## [2026-06-11] committed | concept
 - Committed: deep-belief-network → concepts/deep-belief-network.md
 - IRI: pkis:concept:deep-belief-network
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: deep-boltzmann-machine (id: 69b30f10-7d2f-4138-b650-8a77c72533b7)
+- Title: Deep Boltzmann Machine (DBM)
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: deep-boltzmann-machine → concepts/deep-boltzmann-machine.md
+- IRI: pkis:concept:deep-boltzmann-machine
