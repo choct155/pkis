@@ -13277,3 +13277,12 @@
 ## [2026-06-11] committed | concept
 - Committed: bma-vs-model-combination → concepts/bma-vs-model-combination.md
 - IRI: pkis:concept:bma-vs-model-combination
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: tree-pruning (id: b5168575-ef7a-4d32-954e-69963d550e67)
+- Title: Tree Pruning (Cost-Complexity Pruning)
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: tree-pruning → concepts/tree-pruning.md
+- IRI: pkis:concept:tree-pruning
