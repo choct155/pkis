@@ -12242,3 +12242,12 @@
 ## [2026-06-11] committed | result
 - Committed: linear-gaussian-model → results/linear-gaussian-model.md
 - IRI: pkis:result:linear-gaussian-model
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: students-t-distribution (id: 5f5ee408-15d4-42c8-91dd-ce9b73370daa)
+- Title: Student's t-Distribution
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: students-t-distribution → concepts/students-t-distribution.md
+- IRI: pkis:concept:students-t-distribution
