@@ -12548,3 +12548,12 @@
 ## [2026-06-11] committed | technique
 - Committed: bayesian-neural-network-laplace → techniques/bayesian-neural-network-laplace.md
 - IRI: pkis:technique:bayesian-neural-network-laplace
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: soft-weight-sharing (id: f845ced0-1023-45b3-aa36-c8f6dba918b9)
+- Title: Soft Weight Sharing
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: soft-weight-sharing → techniques/soft-weight-sharing.md
+- IRI: pkis:technique:soft-weight-sharing

@@ -775,6 +775,7 @@
 - [[market-vs-hierarchy]] — Coase/Williamson: transactions governed by price signals (markets) vs. managerial direction (firms) (corporate-finance) (2026-05-20)
 
 ## Techniques
+- [[soft-weight-sharing]] — Soft Weight Sharing (machine-learning, regularisation) (2026-06-11)
 - [[bayesian-neural-network-laplace]] — Bayesian Neural Network via Laplace Approximation (machine-learning, bayesian-inference) (2026-06-11)
 - [[tangent-propagation]] — Tangent Propagation (machine-learning, neural-networks) (2026-06-11)
 - [[levenberg-marquardt-hessian]] — Levenberg–Marquardt (Outer-Product) Hessian Approximation (machine-learning, optimisation) (2026-06-11)
