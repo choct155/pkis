@@ -16193,3 +16193,12 @@
 ## [2026-06-11] committed | concept
 - Committed: feedforward-neural-network → concepts/feedforward-neural-network.md
 - IRI: pkis:concept:feedforward-neural-network
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: autodiff (id: 89296c0d-1a3f-4a9a-a603-0cb2841ea681)
+- Title: Automatic Differentiation (Autodiff)
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: autodiff → concepts/autodiff.md
+- IRI: pkis:concept:autodiff
