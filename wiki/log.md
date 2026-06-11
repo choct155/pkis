@@ -17921,3 +17921,12 @@
 ## [2026-06-11] committed | technique
 - Committed: bbvi → techniques/bbvi.md
 - IRI: pkis:technique:bbvi
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: variational-free-energy-vfe (id: 793cbab1-e389-4560-aa89-5abc102641c0)
+- Title: Variational Free Energy
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: variational-free-energy-vfe → concepts/variational-free-energy-vfe.md
+- IRI: pkis:concept:variational-free-energy-vfe

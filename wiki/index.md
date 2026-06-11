@@ -290,6 +290,7 @@
 - [[liu-machine-unlearning-llm-2024]] — Rethinking Machine Unlearning for LLMs: post-training knowledge editing survey (deep-learning, ai-safety) (2026-05-20)
 
 ## Concepts
+- [[variational-free-energy-vfe]] — Variational Free Energy (machine-learning, bayesian-inference, physics) (2026-06-11)
 - [[mean-field-approximation-vi]] — Mean Field Approximation (Variational) (machine-learning, bayesian-inference) (2026-06-11)
 - [[mpm-map-mpe-estimators]] — MPM vs MAP vs MPE Estimators (probabilistic-graphical-models, statistical-decision-theory, machine-learning) (2026-06-11)
 - [[computation-tree-bp]] — Computation Tree (Belief Propagation) (probabilistic-graphical-models) (2026-06-11)
