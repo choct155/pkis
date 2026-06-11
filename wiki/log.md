@@ -19172,3 +19172,12 @@
 ## [2026-06-11] committed | technique
 - Committed: ddim-sampler → techniques/ddim-sampler.md
 - IRI: pkis:technique:ddim-sampler
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: flow-matching (id: 168e6a04-b89a-484d-b332-d62ef9e42bd4)
+- Title: Flow Matching
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: flow-matching → techniques/flow-matching.md
+- IRI: pkis:technique:flow-matching
