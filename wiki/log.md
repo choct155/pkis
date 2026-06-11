@@ -17831,3 +17831,12 @@
 ## [2026-06-11] committed | technique
 - Committed: max-product-belief-propagation → techniques/max-product-belief-propagation.md
 - IRI: pkis:technique:max-product-belief-propagation
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: computation-tree-bp (id: b29761c6-65d5-4b1e-9ef9-ccbdda031ddb)
+- Title: Computation Tree (Belief Propagation)
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: computation-tree-bp → concepts/computation-tree-bp.md
+- IRI: pkis:concept:computation-tree-bp

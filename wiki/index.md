@@ -290,6 +290,7 @@
 - [[liu-machine-unlearning-llm-2024]] — Rethinking Machine Unlearning for LLMs: post-training knowledge editing survey (deep-learning, ai-safety) (2026-05-20)
 
 ## Concepts
+- [[computation-tree-bp]] — Computation Tree (Belief Propagation) (probabilistic-graphical-models) (2026-06-11)
 - [[gaussian-ansatz-ssm]] — Gaussian Ansatz for State Estimation (machine-learning, statistics, signal-processing) (2026-06-11)
 - [[backwards-kalman-gain]] — Backwards Kalman Gain (Smoother Gain) (signal-processing, statistics) (2026-06-11)
 - [[fixed-lag-smoothing]] — Fixed Lag Smoothing (signal-processing, machine-learning, statistics) (2026-06-11)
