@@ -15077,3 +15077,12 @@
 ## [2026-06-11] committed | concept
 - Committed: deep-boltzmann-machine → concepts/deep-boltzmann-machine.md
 - IRI: pkis:concept:deep-boltzmann-machine
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: variational-autoencoder-vae (id: bfe27e60-00a1-4f04-b1d8-a9d7af087872)
+- Title: Variational Autoencoder (VAE)
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: variational-autoencoder-vae → concepts/variational-autoencoder-vae.md
+- IRI: pkis:concept:variational-autoencoder-vae
