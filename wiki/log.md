@@ -13673,3 +13673,12 @@
 ## [2026-06-11] committed | result
 - Committed: optimal-gradient-step-size-hessian → results/optimal-gradient-step-size-hessian.md
 - IRI: pkis:result:optimal-gradient-step-size-hessian
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: generalization-error-training-error (id: efee41cc-e6f6-4455-b533-a9376e2fe68f)
+- Title: Generalization Error and Training Error
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: generalization-error-training-error → concepts/generalization-error-training-error.md
+- IRI: pkis:concept:generalization-error-training-error
