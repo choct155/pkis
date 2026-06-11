@@ -14735,3 +14735,12 @@
 ## [2026-06-11] committed | concept
 - Committed: smoothness-assumption-ml → concepts/smoothness-assumption-ml.md
 - IRI: pkis:concept:smoothness-assumption-ml
+
+## [2026-06-11] staged | node-stub (framework)
+- Staged: inductive-priors-representation-learning (id: 9219fc54-3375-431b-a3d4-f5490f92b081)
+- Title: Inductive Priors for Representation Learning
+- needs_canonical_source: False
+
+## [2026-06-11] committed | framework
+- Committed: inductive-priors-representation-learning → frameworks/inductive-priors-representation-learning.md
+- IRI: pkis:framework:inductive-priors-representation-learning
