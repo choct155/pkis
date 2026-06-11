@@ -13304,3 +13304,12 @@
 ## [2026-06-11] committed | concept
 - Committed: representation-learning → concepts/representation-learning.md
 - IRI: pkis:concept:representation-learning
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: distributed-representation (id: 94cd5286-087c-48f0-95bc-c5cf611dc3f9)
+- Title: Distributed Representation
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: distributed-representation → concepts/distributed-representation.md
+- IRI: pkis:concept:distributed-representation
