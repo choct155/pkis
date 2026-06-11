@@ -15266,3 +15266,12 @@
 ## [2026-06-11] committed | technique
 - Committed: polynomial-feature-expansion → techniques/polynomial-feature-expansion.md
 - IRI: pkis:technique:polynomial-feature-expansion
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: cumulative-distribution-function (id: efa432ae-32bb-4972-85f6-ffdac3652c1f)
+- Title: Cumulative Distribution Function (CDF)
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: cumulative-distribution-function → concepts/cumulative-distribution-function.md
+- IRI: pkis:concept:cumulative-distribution-function
