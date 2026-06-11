@@ -15464,3 +15464,12 @@
 ## [2026-06-11] committed | concept
 - Committed: beta-binomial-model → concepts/beta-binomial-model.md
 - IRI: pkis:concept:beta-binomial-model
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: loss-function-posterior-expected-loss (id: 9d0f6942-25ed-4641-b817-d2186513654d)
+- Title: Loss Function and Posterior Expected Loss
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: loss-function-posterior-expected-loss → concepts/loss-function-posterior-expected-loss.md
+- IRI: pkis:concept:loss-function-posterior-expected-loss
