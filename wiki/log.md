@@ -12494,3 +12494,12 @@
 ## [2026-06-11] committed | result
 - Committed: universal-approximation-theorem-nn → results/universal-approximation-theorem-nn.md
 - IRI: pkis:result:universal-approximation-theorem-nn
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: weight-space-symmetry (id: 7795c403-9663-4520-b0a9-6ba1599f7329)
+- Title: Weight-Space Symmetry in Neural Networks
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: weight-space-symmetry → concepts/weight-space-symmetry.md
+- IRI: pkis:concept:weight-space-symmetry
