@@ -13169,3 +13169,12 @@
 ## [2026-06-11] committed | concept
 - Committed: observed-markov-chain → concepts/observed-markov-chain.md
 - IRI: pkis:concept:observed-markov-chain
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: hmm-scaling-factors (id: c44e7fe0-2dd5-457a-8270-01184a340766)
+- Title: HMM Scaling Factors and Numerical Stability
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: hmm-scaling-factors → concepts/hmm-scaling-factors.md
+- IRI: pkis:concept:hmm-scaling-factors
