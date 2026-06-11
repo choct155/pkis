@@ -999,6 +999,7 @@
 - [[market-vs-hierarchy]] — Coase/Williamson: transactions governed by price signals (markets) vs. managerial direction (firms) (corporate-finance) (2026-05-20)
 
 ## Techniques
+- [[autorec]] — AutoRec: Autoencoder-Based Recommender (machine-learning, recommender-systems) (2026-06-11)
 - [[factorization-machines]] — Factorization Machines (FM) (machine-learning, recommender-systems) (2026-06-11)
 - [[bayesian-personalized-ranking]] — Bayesian Personalized Ranking (BPR) (machine-learning, recommender-systems) (2026-06-11)
 - [[matrix-factorization-recommender]] — Matrix Factorization for Recommendation (machine-learning, recommender-systems) (2026-06-11)

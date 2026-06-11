@@ -16904,3 +16904,12 @@
 ## [2026-06-11] committed | technique
 - Committed: factorization-machines → techniques/factorization-machines.md
 - IRI: pkis:technique:factorization-machines
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: autorec (id: 83db914b-93bb-4f34-836a-ad796d5f0b48)
+- Title: AutoRec: Autoencoder-Based Recommender
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: autorec → techniques/autorec.md
+- IRI: pkis:technique:autorec
