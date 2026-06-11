@@ -14348,3 +14348,12 @@
 ## [2026-06-11] committed | framework
 - Committed: dl-practical-design-methodology → frameworks/dl-practical-design-methodology.md
 - IRI: pkis:framework:dl-practical-design-methodology
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: effective-model-capacity (id: 1c407470-c4d5-4891-aae2-0a037cfe1a5f)
+- Title: Effective Model Capacity
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: effective-model-capacity → concepts/effective-model-capacity.md
+- IRI: pkis:concept:effective-model-capacity
