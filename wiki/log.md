@@ -14762,3 +14762,12 @@
 ## [2026-06-11] committed | concept
 - Committed: clique-potential → concepts/clique-potential.md
 - IRI: pkis:concept:clique-potential
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: immorality-v-structure (id: 2891210d-b137-4978-bfb0-d617314978a7)
+- Title: Immorality (V-Structure in DAGs)
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: immorality-v-structure → concepts/immorality-v-structure.md
+- IRI: pkis:concept:immorality-v-structure
