@@ -290,6 +290,7 @@
 - [[liu-machine-unlearning-llm-2024]] — Rethinking Machine Unlearning for LLMs: post-training knowledge editing survey (deep-learning, ai-safety) (2026-05-20)
 
 ## Concepts
+- [[probability-density-function]] — Probability Density Function (PDF) (probability-theory, machine-learning) (2026-06-11)
 - [[probability-mass-function]] — Probability Mass Function (PMF) (probability-theory, machine-learning) (2026-06-11)
 - [[positive-definite-matrix]] — Positive Definite and Positive Semidefinite Matrix (linear-algebra, optimization) (2026-06-11)
 - [[orthogonal-matrix]] — Orthogonal Matrix (linear-algebra) (2026-06-11)

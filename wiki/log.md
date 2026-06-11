@@ -13484,3 +13484,12 @@
 ## [2026-06-11] committed | concept
 - Committed: probability-mass-function → concepts/probability-mass-function.md
 - IRI: pkis:concept:probability-mass-function
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: probability-density-function (id: 3b715e78-ce6f-4335-bc84-e0fddfdc95c9)
+- Title: Probability Density Function (PDF)
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: probability-density-function → concepts/probability-density-function.md
+- IRI: pkis:concept:probability-density-function
