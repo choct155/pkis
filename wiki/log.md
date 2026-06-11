@@ -18029,3 +18029,12 @@
 ## [2026-06-11] committed | technique
 - Committed: quasi-monte-carlo → techniques/quasi-monte-carlo.md
 - IRI: pkis:technique:quasi-monte-carlo
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: metropolis-hastings-algorithm (id: d31831a9-1da6-4a49-b3d9-58a9f66f9139)
+- Title: Metropolis-Hastings Algorithm
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: metropolis-hastings-algorithm → techniques/metropolis-hastings-algorithm.md
+- IRI: pkis:technique:metropolis-hastings-algorithm

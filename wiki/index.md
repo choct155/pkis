@@ -1050,6 +1050,7 @@
 - [[market-vs-hierarchy]] — Coase/Williamson: transactions governed by price signals (markets) vs. managerial direction (firms) (corporate-finance) (2026-05-20)
 
 ## Techniques
+- [[metropolis-hastings-algorithm]] — Metropolis-Hastings Algorithm (statistics, machine-learning, probability) (2026-06-11)
 - [[quasi-monte-carlo]] — Quasi-Monte Carlo (QMC) (numerical-methods, statistics, machine-learning) (2026-06-11)
 - [[antithetic-sampling]] — Antithetic Sampling (statistics, simulation, numerical-methods) (2026-06-11)
 - [[control-variates]] — Control Variates (statistics, machine-learning, simulation) (2026-06-11)
