@@ -17435,3 +17435,12 @@
 ## [2026-06-11] committed | result
 - Committed: compression-lemma-donsker-varadhan → results/compression-lemma-donsker-varadhan.md
 - IRI: pkis:result:compression-lemma-donsker-varadhan
+
+## [2026-06-11] staged | node-stub (result)
+- Staged: data-processing-inequality-kl (id: b2b274a0-b154-4e3f-9b7b-133c7c47de53)
+- Title: Data Processing Inequality (KL form)
+- needs_canonical_source: False
+
+## [2026-06-11] committed | result
+- Committed: data-processing-inequality-kl → results/data-processing-inequality-kl.md
+- IRI: pkis:result:data-processing-inequality-kl
