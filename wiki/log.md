@@ -14123,3 +14123,12 @@
 ## [2026-06-11] committed | concept
 - Committed: zero-padding-cnn → concepts/zero-padding-cnn.md
 - IRI: pkis:concept:zero-padding-cnn
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: locally-connected-layer (id: 29bc8b67-c84a-41a6-bf5d-2b67da11594e)
+- Title: Locally Connected Layer (Unshared Convolution)
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: locally-connected-layer → concepts/locally-connected-layer.md
+- IRI: pkis:concept:locally-connected-layer
