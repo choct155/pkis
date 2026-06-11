@@ -19577,3 +19577,12 @@
 ## [2026-06-11] committed | framework
 - Committed: graph-learning-framework → frameworks/graph-learning-framework.md
 - IRI: pkis:framework:graph-learning-framework
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: stochastic-block-model (id: 534f719b-2da0-4284-85e9-90a3fa2a6d9f)
+- Title: Stochastic Block Model (SBM)
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: stochastic-block-model → concepts/stochastic-block-model.md
+- IRI: pkis:concept:stochastic-block-model

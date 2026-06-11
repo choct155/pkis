@@ -290,6 +290,7 @@
 - [[liu-machine-unlearning-llm-2024]] — Rethinking Machine Unlearning for LLMs: post-training knowledge editing survey (deep-learning, ai-safety) (2026-05-20)
 
 ## Concepts
+- [[stochastic-block-model]] — Stochastic Block Model (SBM) (machine-learning, network-science, statistics) (2026-06-11)
 - [[noisy-channel-spelling]] — Noisy Channel Model (Spelling Correction) (natural-language-processing, information-theory) (2026-06-11)
 - [[hierarchical-hmm]] — Hierarchical HMM (HHMM) (machine-learning, speech-processing, bioinformatics) (2026-06-11)
 - [[profile-hmm]] — Profile HMM (bioinformatics, machine-learning) (2026-06-11)
