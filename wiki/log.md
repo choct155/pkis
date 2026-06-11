@@ -19388,3 +19388,12 @@
 ## [2026-06-11] committed | principle
 - Committed: prediction-generation-subroutines-discovery → principles/prediction-generation-subroutines-discovery.md
 - IRI: pkis:principle:prediction-generation-subroutines-discovery
+
+## [2026-06-11] staged | node-stub (framework)
+- Staged: inverse-modeling-framework (id: b5d104f8-a05f-4e09-9f90-54580f337289)
+- Title: Inverse Modeling Framework
+- needs_canonical_source: False
+
+## [2026-06-11] committed | framework
+- Committed: inverse-modeling-framework → frameworks/inverse-modeling-framework.md
+- IRI: pkis:framework:inverse-modeling-framework
