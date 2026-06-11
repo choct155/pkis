@@ -16220,3 +16220,12 @@
 ## [2026-06-11] committed | technique
 - Committed: residual-block → techniques/residual-block.md
 - IRI: pkis:technique:residual-block
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: relu-activation (id: fe75cc50-f5bf-4b08-9c9a-1718e8f5c181)
+- Title: ReLU and Non-Saturating Activation Functions
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: relu-activation → concepts/relu-activation.md
+- IRI: pkis:concept:relu-activation
