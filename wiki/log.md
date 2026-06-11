@@ -15059,3 +15059,12 @@
 ## [2026-06-11] committed | concept
 - Committed: mean-field-recurrent-network-connection → concepts/mean-field-recurrent-network-connection.md
 - IRI: pkis:concept:mean-field-recurrent-network-connection
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: deep-belief-network (id: 88fc4704-10c3-48f2-a6df-16710d618f26)
+- Title: Deep Belief Network (DBN)
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: deep-belief-network → concepts/deep-belief-network.md
+- IRI: pkis:concept:deep-belief-network
