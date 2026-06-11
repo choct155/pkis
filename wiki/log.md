@@ -12728,3 +12728,12 @@
 ## [2026-06-11] committed | framework
 - Committed: relevance-vector-machine → frameworks/relevance-vector-machine.md
 - IRI: pkis:framework:relevance-vector-machine
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: automatic-relevance-determination (id: 298a996b-efa5-4adf-8509-335b9b257018)
+- Title: Automatic Relevance Determination (ARD)
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: automatic-relevance-determination → techniques/automatic-relevance-determination.md
+- IRI: pkis:technique:automatic-relevance-determination
