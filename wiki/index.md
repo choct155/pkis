@@ -290,6 +290,7 @@
 - [[liu-machine-unlearning-llm-2024]] — Rethinking Machine Unlearning for LLMs: post-training knowledge editing survey (deep-learning, ai-safety) (2026-05-20)
 
 ## Concepts
+- [[jeffreys-conditionalization]] — Jeffrey's Conditionalization Rule (statistics, probability-theory, epistemology) (2026-06-11)
 - [[asymptotic-equipartition-property]] — Asymptotic Equipartition Property (AEP) (information-theory, statistics) (2026-06-11)
 - [[forwards-vs-reverse-kl]] — Forwards vs Reverse KL (M-projection vs I-projection) (machine-learning, statistics, information-theory) (2026-06-11)
 - [[tree-augmented-naive-bayes]] — Tree-Augmented Naive Bayes (TAN) (probabilistic-graphical-models, supervised-learning) (2026-06-11)

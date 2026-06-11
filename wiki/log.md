@@ -17480,3 +17480,12 @@
 ## [2026-06-11] committed | result
 - Committed: pitman-koopman-darmois-theorem → results/pitman-koopman-darmois-theorem.md
 - IRI: pkis:result:pitman-koopman-darmois-theorem
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: jeffreys-conditionalization (id: f9abb7d3-dc6a-4be1-9676-f556ed109fd9)
+- Title: Jeffrey's Conditionalization Rule
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: jeffreys-conditionalization → concepts/jeffreys-conditionalization.md
+- IRI: pkis:concept:jeffreys-conditionalization
