@@ -1000,6 +1000,7 @@
 - [[market-vs-hierarchy]] — Coase/Williamson: transactions governed by price signals (markets) vs. managerial direction (firms) (corporate-finance) (2026-05-20)
 
 ## Techniques
+- [[graph-convolutional-network]] — Graph Convolutional Network (GCN) (machine-learning, graph-learning, deep-learning) (2026-06-11)
 - [[message-passing-neural-networks]] — Message Passing Neural Networks (MPNN) (machine-learning, graph-learning, deep-learning) (2026-06-11)
 - [[hyperbolic-graph-embeddings]] — Hyperbolic Graph Embeddings (Poincaré / Lorentz) (machine-learning, graph-learning, geometry) (2026-06-11)
 - [[deepwalk-skip-gram-graph-embedding]] — DeepWalk / Skip-gram Graph Embeddings (machine-learning, graph-learning, natural-language-processing) (2026-06-11)

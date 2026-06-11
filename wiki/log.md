@@ -16985,3 +16985,12 @@
 ## [2026-06-11] committed | technique
 - Committed: message-passing-neural-networks → techniques/message-passing-neural-networks.md
 - IRI: pkis:technique:message-passing-neural-networks
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: graph-convolutional-network (id: 919dc08e-e06b-45cb-a7bf-4501ea902671)
+- Title: Graph Convolutional Network (GCN)
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: graph-convolutional-network → techniques/graph-convolutional-network.md
+- IRI: pkis:technique:graph-convolutional-network
