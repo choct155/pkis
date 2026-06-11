@@ -14681,3 +14681,12 @@
 ## [2026-06-11] committed | technique
 - Committed: greedy-layer-wise-unsupervised-pretraining → techniques/greedy-layer-wise-unsupervised-pretraining.md
 - IRI: pkis:technique:greedy-layer-wise-unsupervised-pretraining
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: disentangled-representation (id: 44abd178-e33a-4338-acec-7742b62d9d9a)
+- Title: Disentangled Representation
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: disentangled-representation → concepts/disentangled-representation.md
+- IRI: pkis:concept:disentangled-representation
