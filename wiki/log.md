@@ -15797,3 +15797,12 @@
 ## [2026-06-11] committed | concept
 - Committed: condition-number-hessian → concepts/condition-number-hessian.md
 - IRI: pkis:concept:condition-number-hessian
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: nesterov-accelerated-gradient (id: 8f4a5cd6-78d5-4d55-994d-011c4ac3cff8)
+- Title: Nesterov Accelerated Gradient
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: nesterov-accelerated-gradient → techniques/nesterov-accelerated-gradient.md
+- IRI: pkis:technique:nesterov-accelerated-gradient
