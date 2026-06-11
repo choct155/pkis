@@ -13178,3 +13178,12 @@
 ## [2026-06-11] committed | concept
 - Committed: hmm-scaling-factors → concepts/hmm-scaling-factors.md
 - IRI: pkis:concept:hmm-scaling-factors
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: left-to-right-hmm (id: 85a7bdd7-6efa-48e4-8099-3c7aa548ad56)
+- Title: Left-to-Right HMM
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: left-to-right-hmm → concepts/left-to-right-hmm.md
+- IRI: pkis:concept:left-to-right-hmm
