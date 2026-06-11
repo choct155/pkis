@@ -19235,3 +19235,12 @@
 ## [2026-06-11] committed | concept
 - Committed: implicit-generative-model → concepts/implicit-generative-model.md
 - IRI: pkis:concept:implicit-generative-model
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: jensen-shannon-divergence (id: af8acfa6-36d0-43e2-985e-e171321f5386)
+- Title: Jensen-Shannon Divergence
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: jensen-shannon-divergence → concepts/jensen-shannon-divergence.md
+- IRI: pkis:concept:jensen-shannon-divergence
