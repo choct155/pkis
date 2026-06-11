@@ -14825,3 +14825,12 @@
 ## [2026-06-11] committed | technique
 - Committed: biased-importance-sampling → techniques/biased-importance-sampling.md
 - IRI: pkis:technique:biased-importance-sampling
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: optimal-importance-sampling-distribution (id: 705fbf5f-353c-4698-87e5-9eaf4a9fdd03)
+- Title: Optimal Importance Sampling Distribution
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: optimal-importance-sampling-distribution → concepts/optimal-importance-sampling-distribution.md
+- IRI: pkis:concept:optimal-importance-sampling-distribution
