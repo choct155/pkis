@@ -14591,3 +14591,12 @@
 ## [2026-06-11] committed | technique
 - Committed: sparse-autoencoder → techniques/sparse-autoencoder.md
 - IRI: pkis:technique:sparse-autoencoder
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: denoising-autoencoder (id: 0e218bae-c3cb-4bd2-9fad-4cdee047eb0b)
+- Title: Denoising Autoencoder (DAE)
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: denoising-autoencoder → techniques/denoising-autoencoder.md
+- IRI: pkis:technique:denoising-autoencoder
