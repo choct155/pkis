@@ -19622,3 +19622,12 @@
 ## [2026-06-11] committed | concept
 - Committed: markov-equivalence-class → concepts/markov-equivalence-class.md
 - IRI: pkis:concept:markov-equivalence-class
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: community-detection (id: e74483b1-b048-48f1-9814-321ffab44ea7)
+- Title: Community Detection
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: community-detection → concepts/community-detection.md
+- IRI: pkis:concept:community-detection
