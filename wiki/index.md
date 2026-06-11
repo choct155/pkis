@@ -1030,6 +1030,7 @@
 - [[market-vs-hierarchy]] — Coase/Williamson: transactions governed by price signals (markets) vs. managerial direction (firms) (corporate-finance) (2026-05-20)
 
 ## Techniques
+- [[expected-sufficient-statistics-pgm]] — Expected Sufficient Statistics (ESS) for EM in Graphical Models (probabilistic-graphical-models, machine-learning) (2026-06-11)
 - [[gaussian-gaussian-conjugate]] — Gaussian-Gaussian Conjugate Model (known variance) (bayesian-statistics, statistics) (2026-06-11)
 - [[dirichlet-categorical-conjugate]] — Conjugate Bayesian Analysis for the Dirichlet-Categorical (Multinomial) Model (bayesian-statistics, machine-learning, natural-language-processing) (2026-06-11)
 - [[bootstrap-sampling-distribution]] — Bootstrap (Parametric and Non-Parametric) (statistics, frequentist-statistics, machine-learning) (2026-06-11)

@@ -17399,3 +17399,12 @@
 ## [2026-06-11] committed | concept
 - Committed: tree-augmented-naive-bayes → concepts/tree-augmented-naive-bayes.md
 - IRI: pkis:concept:tree-augmented-naive-bayes
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: expected-sufficient-statistics-pgm (id: 7027e9d7-5891-4066-b54a-927abd8a8187)
+- Title: Expected Sufficient Statistics (ESS) for EM in Graphical Models
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: expected-sufficient-statistics-pgm → techniques/expected-sufficient-statistics-pgm.md
+- IRI: pkis:technique:expected-sufficient-statistics-pgm
