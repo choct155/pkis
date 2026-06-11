@@ -290,6 +290,7 @@
 - [[liu-machine-unlearning-llm-2024]] — Rethinking Machine Unlearning for LLMs: post-training knowledge editing survey (deep-learning, ai-safety) (2026-05-20)
 
 ## Concepts
+- [[out-of-distribution-detection]] — Out-of-Distribution Detection (machine-learning, statistics) (2026-06-11)
 - [[label-shift]] — Label Shift (Prior Shift) (machine-learning, statistics) (2026-06-11)
 - [[covariate-shift]] — Covariate Shift (machine-learning, statistics, causality) (2026-06-11)
 - [[cox-process]] — Cox Process (Poisson GP) (statistics, machine-learning, spatial-statistics) (2026-06-11)

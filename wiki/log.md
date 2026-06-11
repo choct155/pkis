@@ -18677,3 +18677,12 @@
 ## [2026-06-11] committed | technique
 - Committed: distributionally-robust-optimization → techniques/distributionally-robust-optimization.md
 - IRI: pkis:technique:distributionally-robust-optimization
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: out-of-distribution-detection (id: 019fb10d-f671-4a6d-9dd4-abf5b50f4d03)
+- Title: Out-of-Distribution Detection
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: out-of-distribution-detection → concepts/out-of-distribution-detection.md
+- IRI: pkis:concept:out-of-distribution-detection
