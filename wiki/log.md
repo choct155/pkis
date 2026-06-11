@@ -19532,3 +19532,12 @@
 ## [2026-06-11] committed | concept
 - Committed: profile-hmm → concepts/profile-hmm.md
 - IRI: pkis:concept:profile-hmm
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: bayesian-online-changepoint-detection (id: 7e6ffbb0-2b5c-4879-8c28-87ec9dfbcd8b)
+- Title: Bayesian Online Changepoint Detection (BOCPD)
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: bayesian-online-changepoint-detection → techniques/bayesian-online-changepoint-detection.md
+- IRI: pkis:technique:bayesian-online-changepoint-detection
