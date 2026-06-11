@@ -18848,3 +18848,12 @@
 ## [2026-06-11] committed | concept
 - Committed: spread-kl-divergence → concepts/spread-kl-divergence.md
 - IRI: pkis:concept:spread-kl-divergence
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: generative-design (id: c3104232-8adc-4e19-af65-789a602b3721)
+- Title: Generative Design
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: generative-design → concepts/generative-design.md
+- IRI: pkis:concept:generative-design
