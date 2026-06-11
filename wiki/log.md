@@ -19937,3 +19937,12 @@
 ## [2026-06-11] committed | problem
 - Committed: algorithmic-recourse → problems/algorithmic-recourse.md
 - IRI: pkis:problem:algorithmic-recourse
+
+## [2026-06-11] staged | node-stub (principle)
+- Staged: no-universal-interpretability-metric (id: 6b19e502-54b8-4669-a8d2-e539e5efab6b)
+- Title: No Universal Metric of Interpretability
+- needs_canonical_source: False
+
+## [2026-06-11] committed | principle
+- Committed: no-universal-interpretability-metric → principles/no-universal-interpretability-metric.md
+- IRI: pkis:principle:no-universal-interpretability-metric

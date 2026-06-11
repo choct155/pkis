@@ -2244,6 +2244,7 @@
 - [[llm-language-comprehension]] — The problem of whether LLMs genuinely comprehend language vs. pattern-match surface form (deep-learning, cognitive-science) (2026-05-20)
 
 ## Principles
+- [[no-universal-interpretability-metric]] — No Universal Metric of Interpretability (machine-learning, interpretability, philosophy-of-science) (2026-06-11)
 - [[information-bottleneck-principle]] — Information Bottleneck Principle (information-theory, machine-learning, representation-learning) (2026-06-11)
 - [[prediction-generation-subroutines-discovery]] — Prediction and Generation as Subroutines of Discovery (machine-learning, statistics, philosophy-of-science) (2026-06-11)
 - [[likelihood-sample-quality-decoupling]] — Likelihood–Sample Quality Decoupling (machine-learning, generative-models, evaluation) (2026-06-11)
