@@ -19091,3 +19091,12 @@
 ## [2026-06-11] committed | result
 - Committed: instantaneous-change-of-variables → results/instantaneous-change-of-variables.md
 - IRI: pkis:result:instantaneous-change-of-variables
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: elementwise-flow (id: 2e02a8fa-a3ad-4471-b855-8186e6e965a2)
+- Title: Elementwise Flow
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: elementwise-flow → concepts/elementwise-flow.md
+- IRI: pkis:concept:elementwise-flow
