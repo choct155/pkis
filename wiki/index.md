@@ -1158,6 +1158,7 @@
 - [[constraint-propagation]] — Reducing a constraint satisfaction problem by iteratively eliminating inconsistent values from variable domains (knowledge-representation) (2026-05-20)
 
 ## Results
+- [[partitioned-gaussian-conditionals-marginals]] — Partitioned Gaussian Conditionals and Marginals (probability, statistics, machine-learning) (2026-06-11)
 - [[kl-nonnegativity-ml-equivalence]] — KL Divergence Non-negativity and Equivalence to Maximum Likelihood (information-theory, statistics, machine-learning) (2026-06-11)
 - [[optimal-regression-conditional-mean]] — Optimal Regression Function is the Conditional Mean (statistics, machine-learning, decision-theory) (2026-06-11)
 - [[hammersley-clifford-theorem]] — Hammersley-Clifford Theorem (statistical-learning, bayesian-stats) (2026-06-09)

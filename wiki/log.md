@@ -12224,3 +12224,12 @@
 ## [2026-06-11] committed | concept
 - Committed: precision-matrix → concepts/precision-matrix.md
 - IRI: pkis:concept:precision-matrix
+
+## [2026-06-11] staged | node-stub (result)
+- Staged: partitioned-gaussian-conditionals-marginals (id: 10a21bff-a291-41fd-b060-b9ff623d4e4d)
+- Title: Partitioned Gaussian Conditionals and Marginals
+- needs_canonical_source: False
+
+## [2026-06-11] committed | result
+- Committed: partitioned-gaussian-conditionals-marginals → results/partitioned-gaussian-conditionals-marginals.md
+- IRI: pkis:result:partitioned-gaussian-conditionals-marginals
