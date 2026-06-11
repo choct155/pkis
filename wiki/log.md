@@ -13790,3 +13790,12 @@
 ## [2026-06-11] committed | concept
 - Committed: relu → concepts/relu.md
 - IRI: pkis:concept:relu
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: softmax-output-unit (id: fe85ba47-cb26-4a58-b13a-3ab3c0bc4eef)
+- Title: Softmax Output Unit
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: softmax-output-unit → concepts/softmax-output-unit.md
+- IRI: pkis:concept:softmax-output-unit
