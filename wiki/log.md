@@ -18839,3 +18839,12 @@
 ## [2026-06-11] committed | technique
 - Committed: two-step-latent-manifold-generative-modeling → techniques/two-step-latent-manifold-generative-modeling.md
 - IRI: pkis:technique:two-step-latent-manifold-generative-modeling
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: spread-kl-divergence (id: 977657a4-3a31-4d3c-b8ae-3b21bb54c9ce)
+- Title: Spread KL Divergence
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: spread-kl-divergence → concepts/spread-kl-divergence.md
+- IRI: pkis:concept:spread-kl-divergence
