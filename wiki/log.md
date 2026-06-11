@@ -19910,3 +19910,12 @@
 ## [2026-06-11] committed | concept
 - Committed: shapley-feature-importance → concepts/shapley-feature-importance.md
 - IRI: pkis:concept:shapley-feature-importance
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: lime-local-surrogate (id: be990c57-464a-434a-9250-3b3e95076c09)
+- Title: Local Interpretable Model-Agnostic Explanations (LIME)
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: lime-local-surrogate → concepts/lime-local-surrogate.md
+- IRI: pkis:concept:lime-local-surrogate
