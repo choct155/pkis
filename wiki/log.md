@@ -16022,3 +16022,12 @@
 ## [2026-06-11] committed | concept
 - Committed: logit-pre-activation → concepts/logit-pre-activation.md
 - IRI: pkis:concept:logit-pre-activation
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: feature-standardisation (id: 57c9a6b0-3900-4c9a-8b77-c8149a05ef2d)
+- Title: Feature Standardisation
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: feature-standardisation → techniques/feature-standardisation.md
+- IRI: pkis:technique:feature-standardisation
