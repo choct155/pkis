@@ -15995,3 +15995,12 @@
 ## [2026-06-11] committed | concept
 - Committed: multi-label-classification → concepts/multi-label-classification.md
 - IRI: pkis:concept:multi-label-classification
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: hierarchical-classification-label-smearing (id: c4ec6ed6-7a1d-4f8b-ba40-5b1f541c40ab)
+- Title: Hierarchical Classification with Label Smearing
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: hierarchical-classification-label-smearing → techniques/hierarchical-classification-label-smearing.md
+- IRI: pkis:technique:hierarchical-classification-label-smearing

@@ -963,6 +963,7 @@
 - [[market-vs-hierarchy]] — Coase/Williamson: transactions governed by price signals (markets) vs. managerial direction (firms) (corporate-finance) (2026-05-20)
 
 ## Techniques
+- [[hierarchical-classification-label-smearing]] — Hierarchical Classification with Label Smearing (machine-learning) (2026-06-11)
 - [[probit-approximation-bayesian-logistic]] — Probit Approximation to Bayesian Logistic Posterior Predictive (machine-learning, Bayesian-inference) (2026-06-11)
 - [[softmax-jacobian]] — Softmax Jacobian (machine-learning, calculus) (2026-06-11)
 - [[laplace-smoothing]] — Laplace (Add-One) Smoothing (machine-learning, statistics, natural-language-processing) (2026-06-11)
