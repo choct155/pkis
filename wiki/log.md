@@ -14294,3 +14294,12 @@
 ## [2026-06-11] committed | concept
 - Committed: coverage-selective-prediction → concepts/coverage-selective-prediction.md
 - IRI: pkis:concept:coverage-selective-prediction
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: bayes-error-rate (id: bfca37f5-6c91-4b5b-9893-0135838d07de)
+- Title: Bayes Error Rate
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: bayes-error-rate → concepts/bayes-error-rate.md
+- IRI: pkis:concept:bayes-error-rate
