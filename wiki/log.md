@@ -12467,3 +12467,12 @@
 ## [2026-06-11] committed | result
 - Committed: gaussian-lda-linear-boundary → results/gaussian-lda-linear-boundary.md
 - IRI: pkis:result:gaussian-lda-linear-boundary
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: bayesian-logistic-regression (id: c28c7ea8-71a0-4b95-95fc-f98ed48f352c)
+- Title: Bayesian Logistic Regression (Laplace)
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: bayesian-logistic-regression → techniques/bayesian-logistic-regression.md
+- IRI: pkis:technique:bayesian-logistic-regression
