@@ -12944,3 +12944,12 @@
 ## [2026-06-11] committed | concept
 - Committed: zero-forcing-vs-zero-avoiding-kl → concepts/zero-forcing-vs-zero-avoiding-kl.md
 - IRI: pkis:concept:zero-forcing-vs-zero-avoiding-kl
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: alpha-divergence (id: f9c4edcb-e9b8-4018-8420-492a9f06701d)
+- Title: Alpha-Divergence Family
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: alpha-divergence → concepts/alpha-divergence.md
+- IRI: pkis:concept:alpha-divergence

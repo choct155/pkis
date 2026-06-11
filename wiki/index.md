@@ -290,6 +290,7 @@
 - [[liu-machine-unlearning-llm-2024]] — Rethinking Machine Unlearning for LLMs: post-training knowledge editing survey (deep-learning, ai-safety) (2026-05-20)
 
 ## Concepts
+- [[alpha-divergence]] — Alpha-Divergence Family (information-theory, approximate-inference) (2026-06-11)
 - [[zero-forcing-vs-zero-avoiding-kl]] — Zero-Forcing vs. Zero-Avoiding KL Divergence (information-theory, approximate-inference) (2026-06-11)
 - [[mixture-model-identifiability]] — Identifiability in Mixture Models (statistics, machine-learning, probabilistic-modeling) (2026-06-11)
 - [[gmm-likelihood-singularities]] — Singularities in Gaussian Mixture Maximum Likelihood (statistics, machine-learning) (2026-06-11)
