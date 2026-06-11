@@ -19559,3 +19559,12 @@
 ## [2026-06-11] committed | concept
 - Committed: hierarchical-hmm → concepts/hierarchical-hmm.md
 - IRI: pkis:concept:hierarchical-hmm
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: noisy-channel-spelling (id: fde8195a-c781-420a-8cf0-ef86a50d993d)
+- Title: Noisy Channel Model (Spelling Correction)
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: noisy-channel-spelling → concepts/noisy-channel-spelling.md
+- IRI: pkis:concept:noisy-channel-spelling
