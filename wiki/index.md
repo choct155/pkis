@@ -1167,6 +1167,7 @@
 - [[constraint-propagation]] — Reducing a constraint satisfaction problem by iteratively eliminating inconsistent values from variable domains (knowledge-representation) (2026-05-20)
 
 ## Results
+- [[bayesian-linear-regression-predictive]] — Bayesian Linear Regression Predictive Distribution (machine-learning, bayesian-statistics) (2026-06-11)
 - [[bayesian-linear-regression-posterior]] — Bayesian Linear Regression Posterior (machine-learning, bayesian-statistics) (2026-06-11)
 - [[linear-gaussian-model]] — Linear-Gaussian Model: Marginal and Posterior (probability, statistics, machine-learning) (2026-06-11)
 - [[partitioned-gaussian-conditionals-marginals]] — Partitioned Gaussian Conditionals and Marginals (probability, statistics, machine-learning) (2026-06-11)

@@ -12332,3 +12332,12 @@
 ## [2026-06-11] committed | result
 - Committed: bayesian-linear-regression-posterior → results/bayesian-linear-regression-posterior.md
 - IRI: pkis:result:bayesian-linear-regression-posterior
+
+## [2026-06-11] staged | node-stub (result)
+- Staged: bayesian-linear-regression-predictive (id: b61f96a5-1036-4b45-abc1-da143ca34cb2)
+- Title: Bayesian Linear Regression Predictive Distribution
+- needs_canonical_source: False
+
+## [2026-06-11] committed | result
+- Committed: bayesian-linear-regression-predictive → results/bayesian-linear-regression-predictive.md
+- IRI: pkis:result:bayesian-linear-regression-predictive
