@@ -290,6 +290,7 @@
 - [[liu-machine-unlearning-llm-2024]] — Rethinking Machine Unlearning for LLMs: post-training knowledge editing survey (deep-learning, ai-safety) (2026-05-20)
 
 ## Concepts
+- [[cross-entropy]] — Cross Entropy (information-theory, machine-learning) (2026-06-11)
 - [[binary-entropy-function]] — Binary Entropy Function (information-theory, probability) (2026-06-11)
 - [[region-of-practical-equivalence]] — Region of Practical Equivalence (ROPE) (statistics, decision-theory, machine-learning) (2026-06-11)
 - [[minimum-description-length]] — Minimum Description Length (MDL) Principle (information-theory, statistics, machine-learning) (2026-06-11)

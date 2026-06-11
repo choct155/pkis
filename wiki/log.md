@@ -15590,3 +15590,12 @@
 ## [2026-06-11] committed | concept
 - Committed: binary-entropy-function → concepts/binary-entropy-function.md
 - IRI: pkis:concept:binary-entropy-function
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: cross-entropy (id: e1ba706c-51c9-4c68-b494-b0b46b59c932)
+- Title: Cross Entropy
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: cross-entropy → concepts/cross-entropy.md
+- IRI: pkis:concept:cross-entropy
