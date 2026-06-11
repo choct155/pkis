@@ -3,6 +3,8 @@ aliases: []
 also_type: []
 analogous-to:
 - policy-parameterization-softmax
+applies:
+- categorical-distribution
 component_scores:
   application: null
   boundary: null
@@ -21,6 +23,7 @@ domain:
 generalizes:
 - logistic-sigmoid-logit
 - logistic-regression
+- sigmoid-logistic-function
 id: pkis:concept:softmax-function
 instantiates:
 - policy-parameterization-softmax
@@ -46,6 +49,7 @@ understanding: 0
 uses:
 - exponential-family
 - cross-entropy-loss
+- log-sum-exp-trick
 ---
 
 ## Definition
@@ -60,6 +64,9 @@ Softmax is the canonical output layer for $K$-class probabilistic classifiers. C
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[log-sum-exp-trick]] — uses
+- [[sigmoid-logistic-function]] — generalizes
+- [[categorical-distribution]] — applies
 - [[multinomial-logistic-regression]] — prerequisite-of
 - [[activation-functions]] — specializes
 - [[policy-parameterization-softmax]] — instantiates

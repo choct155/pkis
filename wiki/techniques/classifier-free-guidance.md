@@ -17,6 +17,7 @@ domain:
 - generative-models
 extends:
 - classifier-guidance
+- ddpm
 id: pkis:technique:classifier-free-guidance
 knowledge_type: technique
 maturity: evolving
@@ -49,6 +50,7 @@ Classifier-free guidance avoids the adversarial-gradient pathologies of classifi
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[ddpm]] — extends
 - [[bayesian-inference]] — uses
 - [[classifier-guidance]] — extends: Derives the classifier from the generative model to avoid adversarial-gradient issues
 [To be populated during integration]

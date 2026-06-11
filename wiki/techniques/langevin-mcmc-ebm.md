@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- energy-based-model
 component_scores:
   alternatives: null
   conditions: null
@@ -23,6 +25,8 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - murphy-pml2-advanced-ch24
+specializes:
+- mcmc
 tags:
 - MCMC
 - EBM-sampling
@@ -30,6 +34,9 @@ tags:
 - stochastic-gradient
 title: Langevin MCMC for EBMs
 understanding: 0
+uses:
+- stein-score-function
+- contrastive-divergence
 ---
 
 ## Definition
@@ -44,4 +51,8 @@ Langevin MCMC exploits the Stein score $-\nabla_x E_\theta$, which is tractable 
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[contrastive-divergence]] — uses: Langevin MCMC is a common sampler within CD for gradient-based EBMs
+- [[mcmc]] — specializes
+- [[stein-score-function]] — uses: Langevin steps are driven by the Stein score = -∇_x E_θ
+- [[energy-based-model]] — applies: Langevin MCMC samples from EBMs using the negative energy gradient
 [To be populated during integration]

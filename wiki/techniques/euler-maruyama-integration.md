@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- diffusion-sde-framework
 component_scores:
   alternatives: null
   conditions: null
@@ -47,5 +49,6 @@ Euler-Maruyama is the default numerical solver used to simulate and sample from 
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[diffusion-sde-framework]] — applies
 - [[brownian-motion]] — uses
 [To be populated during integration]

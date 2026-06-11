@@ -12,6 +12,8 @@ component_scores:
   implementation: null
   operational_mechanism: null
   principled_mechanism: null
+contrasts-with:
+- fisher-divergence
 coverage: 1
 date_created: '2026-06-09'
 date_updated: '2026-06-09'
@@ -54,6 +56,7 @@ Hinton's empirical observation is that learning still works well if the model ex
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[fisher-divergence]] — contrasts-with: CD minimizes a KL-based objective; score matching minimizes the Fisher divergence; they are related via de Bruijn's identity
 - [[kl-divergence]] — uses: CD_T minimizes KL(p0||p∞) - KL(pT||p∞)
 - [[mcmc]] — uses: CD runs short MCMC chains initialized at data points
 - [[energy-based-model]] — applies: CD is a training algorithm for EBMs

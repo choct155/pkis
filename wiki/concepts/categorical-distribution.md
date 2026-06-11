@@ -16,10 +16,16 @@ date_updated: '2026-06-11'
 domain:
 - probability-theory
 - machine-learning
+generalizes:
+- bernoulli-distribution
 id: pkis:concept:categorical-distribution
+instantiates:
+- exponential-family
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- multinomial-logistic-regression
 related_concepts: []
 sources:
 - murphy-pml1-intro-ch02
@@ -30,6 +36,9 @@ tags:
 - softmax
 title: Categorical Distribution
 understanding: 0
+uses:
+- softmax-function
+- dirichlet-distribution
 ---
 
 ## Definition
@@ -44,4 +53,9 @@ The categorical distribution is the output model for multiclass classification. 
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[exponential-family]] — instantiates
+- [[multinomial-logistic-regression]] — prerequisite-of
+- [[dirichlet-distribution]] — uses: Dirichlet is conjugate prior for Categorical parameter
+- [[softmax-function]] — uses
+- [[bernoulli-distribution]] — generalizes
 [To be populated during integration]

@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- diffusion-sde-framework
 component_scores:
   conditions: null
   implications: null
@@ -18,6 +20,8 @@ id: pkis:result:andersons-reverse-sde
 knowledge_type: result
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- score-based-generative-model
 related_concepts: []
 sources:
 - murphy-pml2-advanced-ch25
@@ -44,4 +48,6 @@ This theorem is the theoretical cornerstone of continuous-time diffusion generat
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[score-based-generative-model]] — prerequisite-of
+- [[diffusion-sde-framework]] — applies
 [To be populated during integration]

@@ -1,6 +1,10 @@
 ---
 aliases: []
 also_type: []
+analogous-to:
+- law-of-total-variance
+applies:
+- mixture-models
 component_scores:
   application: null
   boundary: null
@@ -20,6 +24,8 @@ id: pkis:concept:law-of-total-expectation
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- em-algorithm
 related_concepts: []
 sources:
 - murphy-pml1-intro-ch02
@@ -30,6 +36,10 @@ tags:
 - iterated-expectation
 title: Law of Total Expectation (Iterated Expectations)
 understanding: 0
+uses:
+- probability-theory
+- conditional-independence
+- sum-rule
 ---
 
 ## Definition
@@ -44,4 +54,10 @@ This law is the expectation analogue of the sum rule of probability and is used 
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[mixture-models]] — applies
+- [[sum-rule]] — uses
+- [[conditional-independence]] — uses
+- [[em-algorithm]] — prerequisite-of
+- [[law-of-total-variance]] — analogous-to
+- [[probability-theory]] — uses
 [To be populated during integration]

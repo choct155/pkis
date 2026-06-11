@@ -19,6 +19,7 @@ extends:
 - normalizing-flows
 generalizes:
 - ddim-sampler
+- diffusion-sde-framework
 id: pkis:technique:flow-matching
 knowledge_type: technique
 maturity: evolving
@@ -52,6 +53,7 @@ Flow matching generalises diffusion by allowing non-Gaussian source distribution
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[diffusion-sde-framework]] — generalizes: Flow matching drops Gaussian noise requirement; the SDE becomes a pure ODE with a learned velocity field
 - [[continuous-optimization]] — uses: Optimal-transport flow matching minimises transport cost
 - [[ddim-sampler]] — generalizes
 - [[normalizing-flows]] — extends

@@ -33,6 +33,8 @@ tags:
 - EBM-training
 title: Sliced Score Matching (SSM)
 understanding: 0
+uses:
+- fisher-divergence
 ---
 
 ## Definition
@@ -47,6 +49,7 @@ SSM is a consistent estimator of the data distribution (unlike DSM) and computat
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[fisher-divergence]] — uses: SSM minimizes the sliced Fisher divergence
 - [[noise-contrastive-estimation]] — analogous-to: NCE with small perturbation vectors recovers SSM up to o(||v||²) terms
 - [[score-matching]] — extends: SSM reduces Jacobian trace cost from O(d²) to O(d) via random projections
 [To be populated during integration]

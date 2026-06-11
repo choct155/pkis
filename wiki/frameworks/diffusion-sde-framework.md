@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+analogous-to:
+- normalizing-flows
 component_scores:
   application: null
   limits: null
@@ -15,6 +17,9 @@ domain:
 - machine-learning
 - stochastic-processes
 - generative-models
+generalizes:
+- ddpm
+- score-based-generative-model
 id: pkis:framework:diffusion-sde-framework
 knowledge_type: framework
 maturity: evolving
@@ -31,6 +36,10 @@ tags:
 - Brownian-motion
 title: Stochastic Differential Equation (SDE) Framework for Diffusion
 understanding: 0
+uses:
+- brownian-motion
+- andersons-reverse-sde
+- euler-maruyama-integration
 ---
 
 ## Definition
@@ -51,4 +60,10 @@ Casting diffusion as an SDE unlocks the entire arsenal of numerical ODE/SDE solv
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[euler-maruyama-integration]] — uses
+- [[normalizing-flows]] — analogous-to: The probability flow ODE is a continuous normalizing flow
+- [[andersons-reverse-sde]] — uses
+- [[brownian-motion]] — uses
+- [[score-based-generative-model]] — generalizes: SGM is the T→∞ limit of the variance-exploding SDE
+- [[ddpm]] — generalizes: DDPM is the T→∞ discrete-time limit of the variance-preserving SDE
 [To be populated during integration]

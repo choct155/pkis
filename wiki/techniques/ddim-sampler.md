@@ -15,7 +15,11 @@ date_updated: '2026-06-11'
 domain:
 - machine-learning
 - generative-models
+extends:
+- ddpm
 id: pkis:technique:ddim-sampler
+instantiates:
+- diffusion-sde-framework
 knowledge_type: technique
 maturity: evolving
 needs_canonical_source: false
@@ -45,4 +49,6 @@ DDIM dramatically reduces the inference cost of diffusion models without retrain
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[diffusion-sde-framework]] — instantiates: DDIM is a discretisation of the probability flow ODE
+- [[ddpm]] — extends: Uses the same trained weights but a non-Markovian deterministic reverse process for faster sampling
 [To be populated during integration]

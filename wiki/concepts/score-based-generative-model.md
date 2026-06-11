@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+analogous-to:
+- ddpm
 component_scores:
   application: null
   boundary: null
@@ -10,6 +12,8 @@ component_scores:
   prerequisites: null
   scope: null
   transfer: null
+contrasts-with:
+- energy-based-model
 coverage: 1
 date_created: '2026-06-11'
 date_updated: '2026-06-11'
@@ -31,6 +35,9 @@ tags:
 - generative-model
 title: Score-Based Generative Model (SGM)
 understanding: 0
+uses:
+- denoising-score-matching
+- diffusion-processes
 ---
 
 ## Definition
@@ -50,4 +57,8 @@ The SGM training loss with $\lambda_t=\sigma_t^2$ weighting is algebraically ide
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[energy-based-model]] — contrasts-with: EBMs learn an energy function; SGMs directly learn its gradient (the score)
+- [[diffusion-processes]] — uses
+- [[ddpm]] — analogous-to: SGM with lambda_t=sigma_t^2 recovers L_simple, establishing formal equivalence
+- [[denoising-score-matching]] — uses
 [To be populated during integration]

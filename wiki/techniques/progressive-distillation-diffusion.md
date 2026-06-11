@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- ddpm
 component_scores:
   alternatives: null
   conditions: null
@@ -50,5 +52,6 @@ Progressive distillation addresses the chief practical weakness of diffusion mod
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[ddpm]] — applies
 - [[ddim-sampler]] — uses: Teacher generates targets via DDIM deterministic steps
 [To be populated during integration]

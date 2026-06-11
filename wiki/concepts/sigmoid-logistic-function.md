@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- bernoulli-distribution
 component_scores:
   application: null
   boundary: null
@@ -18,12 +20,19 @@ domain:
 - probability-theory
 - statistics
 id: pkis:concept:sigmoid-logistic-function
+instantiates:
+- link-function
+- activation-functions
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- logistic-regression
 related_concepts: []
 sources:
 - murphy-pml1-intro-ch02
+specializes:
+- softmax-function
 tags:
 - sigmoid
 - logistic
@@ -45,4 +54,9 @@ The sigmoid is the canonical link function for binary probabilistic models: $p(y
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[activation-functions]] — instantiates
+- [[link-function]] — instantiates
+- [[softmax-function]] — specializes
+- [[logistic-regression]] — prerequisite-of
+- [[bernoulli-distribution]] — applies
 [To be populated during integration]

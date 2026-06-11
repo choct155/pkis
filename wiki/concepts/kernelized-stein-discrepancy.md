@@ -17,6 +17,8 @@ domain:
 - statistics
 - machine-learning
 - functional-analysis
+generalizes:
+- score-matching
 id: pkis:concept:kernelized-stein-discrepancy
 knowledge_type: concept
 maturity: evolving
@@ -31,6 +33,9 @@ tags:
 - goodness-of-fit
 title: Kernelized Stein Discrepancy (KSD)
 understanding: 0
+uses:
+- stein-score-function
+- reproducing-kernel-hilbert-space
 ---
 
 ## Definition
@@ -45,4 +50,7 @@ KSD provides a partition-function-free divergence for training EBMs that avoids 
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[score-matching]] — generalizes: KSD generalises score matching to a kernel-based supremum formulation
+- [[reproducing-kernel-hilbert-space]] — uses
+- [[stein-score-function]] — uses
 [To be populated during integration]

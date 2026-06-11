@@ -24,6 +24,8 @@ id: pkis:concept:cumulative-distribution-function
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- quantile-function
 related_concepts: []
 sources:
 - murphy-pml1-intro-ch02
@@ -51,6 +53,7 @@ The CDF provides a unified representation for both discrete and continuous distr
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[quantile-function]] — prerequisite-of
 - [[gaussian-distribution]] — applies
 - [[probability-mass-function]] — generalizes
 - [[random-variable]] — uses

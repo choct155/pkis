@@ -20,6 +20,9 @@ id: pkis:concept:diffusion-noise-schedule
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- ddpm
+- diffusion-sde-framework
 related_concepts: []
 sources:
 - murphy-pml2-advanced-ch25
@@ -44,4 +47,6 @@ The noise schedule directly governs the trade-off between low-frequency (semanti
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[diffusion-sde-framework]] — prerequisite-of
+- [[ddpm]] — prerequisite-of
 [To be populated during integration]

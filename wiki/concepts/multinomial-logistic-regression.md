@@ -51,6 +51,7 @@ uses:
 - maximum-likelihood-estimation
 - hierarchical-softmax
 - class-imbalance-long-tail
+- categorical-distribution
 ---
 
 ## Definition
@@ -62,6 +63,7 @@ $$p(y=c|x;\theta) = \frac{\exp(w_c^\top x + b_c)}{\sum_{c'=1}^{C}\exp(w_{c'}^\to
 Multinomial logistic regression is the canonical discriminative baseline for multiclass classification and the output layer of most neural network classifiers. It reduces to binary logistic regression for $C=2$ (up to an identifiable over-parameterization), and provides calibrated probability estimates when trained with cross-entropy loss.
 
 ### Connections
+- [[categorical-distribution]] — uses
 - [[class-imbalance-long-tail]] — uses
 - [[hierarchical-softmax]] — uses
 - [[multi-label-classification]] — contrasts-with

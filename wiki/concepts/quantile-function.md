@@ -1,6 +1,9 @@
 ---
 aliases: []
 also_type: []
+applies:
+- confidence-interval
+- credible-interval
 component_scores:
   application: null
   boundary: null
@@ -17,9 +20,13 @@ domain:
 - probability-theory
 - statistics
 id: pkis:concept:quantile-function
+instantiates:
+- gaussian-distribution
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- inverse-transform-sampling
 related_concepts: []
 sources:
 - murphy-pml1-intro-ch02
@@ -31,6 +38,8 @@ tags:
 - confidence-interval
 title: Quantile Function (Inverse CDF)
 understanding: 0
+uses:
+- cumulative-distribution-function
 ---
 
 ## Definition
@@ -45,4 +54,9 @@ Quantile functions are essential for constructing confidence and credible interv
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[gaussian-distribution]] — instantiates
+- [[inverse-transform-sampling]] — prerequisite-of
+- [[credible-interval]] — applies
+- [[confidence-interval]] — applies
+- [[cumulative-distribution-function]] — uses
 [To be populated during integration]

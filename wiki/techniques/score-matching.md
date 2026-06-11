@@ -48,6 +48,7 @@ uses:
 - information-theory
 - fisher-information
 - stein-score-function
+- fisher-divergence
 ---
 
 ## Definition
@@ -62,6 +63,7 @@ Score matching is a consistent estimator for a broad class of models where MLE i
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[fisher-divergence]] — uses: SM minimizes the Fisher divergence between data and model
 - [[fisher-information]] — analogous-to: Fisher divergence uses first-order score differences; Fisher information uses the squared score of the model
 - [[stein-score-function]] — uses
 - [[energy-based-model]] — applies: SM trains EBMs by matching score functions, avoiding the partition function

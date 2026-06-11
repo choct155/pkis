@@ -42,6 +42,7 @@ understanding: 0
 uses:
 - beta-distribution
 - probability-mass-function
+- sigmoid-logistic-function
 ---
 
 ## Definition
@@ -56,6 +57,7 @@ The Bernoulli distribution is the fundamental building block for binary classifi
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[sigmoid-logistic-function]] — uses
 - [[exponential-family]] — instantiates
 - [[binomial-distribution]] — specializes
 - [[probability-mass-function]] — uses

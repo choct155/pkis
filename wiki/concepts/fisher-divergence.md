@@ -10,6 +10,8 @@ component_scores:
   prerequisites: null
   scope: null
   transfer: null
+contrasts-with:
+- kl-divergence
 coverage: 1
 date_created: '2026-06-11'
 date_updated: '2026-06-11'
@@ -31,6 +33,8 @@ tags:
 - EBM
 title: Fisher Divergence
 understanding: 0
+uses:
+- score-matching
 ---
 
 ## Definition
@@ -45,4 +49,6 @@ Fisher divergence is the objective minimised by score matching—its key advanta
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[score-matching]] — uses
+- [[kl-divergence]] — contrasts-with: Fisher divergence is the derivative of KL divergence under Gaussian smoothing (de Bruijn's identity)
 [To be populated during integration]

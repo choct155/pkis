@@ -1,6 +1,9 @@
 ---
 aliases: []
 also_type: []
+applies:
+- softmax-function
+- cross-entropy-loss
 component_scores:
   alternatives: null
   conditions: null
@@ -17,6 +20,8 @@ domain:
 - machine-learning
 - probability-theory
 id: pkis:technique:log-sum-exp-trick
+instantiates:
+- log-scale-computation
 knowledge_type: technique
 maturity: evolving
 needs_canonical_source: false
@@ -30,6 +35,8 @@ tags:
 - floating-point
 title: Log-Sum-Exp (LSE) Trick
 understanding: 0
+uses:
+- partition-function
 ---
 
 ## Definition
@@ -44,4 +51,8 @@ Without this trick, softmax computation fails catastrophically at logit magnitud
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[log-scale-computation]] — instantiates
+- [[partition-function]] — uses
+- [[cross-entropy-loss]] — applies
+- [[softmax-function]] — applies
 [To be populated during integration]

@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+analogous-to:
+- ddpm
 component_scores:
   application: null
   limits: null
@@ -54,6 +56,7 @@ D3PM extends diffusion to text, semantic labels, and other discrete modalities. 
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[ddpm]] — analogous-to: D3PM replaces Gaussian kernels with categorical transition matrices over discrete state spaces
 - [[elbo]] — uses
 - [[absorbing-markov-chain]] — uses: The mask-token forward process is an absorbing Markov chain
 - [[masked-language-modeling]] — generalizes: BERT masked LM is a one-step D3PM with mask-absorbing and uniform transitions

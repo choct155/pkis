@@ -27,6 +27,8 @@ maturity: evolving
 needs_canonical_source: false
 prerequisite-of:
 - diffusion-processes
+- score-based-generative-model
+- ddpm
 related_concepts: []
 sources:
 - goodfellow-deeplearning-ch18
@@ -44,6 +46,7 @@ uses:
 - regularization
 - stein-score-function
 - gaussian-distribution
+- fisher-divergence
 ---
 
 ## Definition
@@ -58,6 +61,9 @@ DSM regularizes score matching against overfitting: without smoothing, a consist
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[ddpm]] — prerequisite-of
+- [[score-based-generative-model]] — prerequisite-of
+- [[fisher-divergence]] — uses
 - [[gaussian-distribution]] — uses: Score of Gaussian kernel is (x - x̃)/σ², giving the closed-form target
 - [[elbo]] — analogous-to: Both provide tractable surrogates for intractable objectives: DSM for the Fisher divergence, ELBO for the log-likelihood
 - [[diffusion-processes]] — prerequisite-of: DSM is the direct training objective for score-based diffusion generative models

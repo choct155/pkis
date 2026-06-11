@@ -15,6 +15,8 @@ date_updated: '2026-06-11'
 domain:
 - machine-learning
 - generative-models
+extends:
+- ddpm
 id: pkis:technique:classifier-guidance
 knowledge_type: technique
 maturity: evolving
@@ -50,5 +52,6 @@ Classifier guidance enables conditional generation from an **unconditionally tra
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[ddpm]] — extends
 - [[bayesian-inference]] — uses: Uses Bayes' rule to decompose the conditional score into unconditional score plus classifier gradient
 [To be populated during integration]

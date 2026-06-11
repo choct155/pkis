@@ -8,6 +8,8 @@ component_scores:
   purpose: null
   scope: null
   structure: null
+contrasts-with:
+- normalizing-flows
 coverage: 1
 date_created: '2026-06-11'
 date_updated: '2026-06-11'
@@ -22,6 +24,8 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - murphy-pml2-advanced-ch25
+specializes:
+- variational-autoencoder
 tags:
 - diffusion
 - generative-model
@@ -30,6 +34,11 @@ tags:
 - noise-prediction
 title: Denoising Diffusion Probabilistic Model (DDPM)
 understanding: 0
+uses:
+- elbo
+- diffusion-noise-schedule
+- denoising-score-matching
+- kl-divergence
 ---
 
 ## Definition
@@ -48,4 +57,10 @@ DDPMs achieve state-of-the-art sample quality on images and other modalities whi
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[kl-divergence]] — uses: ELBO decomposes into KL divergences between Gaussian posteriors at each time step
+- [[denoising-score-matching]] — uses: The simplified DDPM loss L_simple is equivalent to denoising score matching with unit weighting
+- [[diffusion-noise-schedule]] — uses
+- [[normalizing-flows]] — contrasts-with: Latent layers are stochastic and same-dimensional as input, unlike invertible-transform flows; but the ODE version is a continuous normalizing flow
+- [[elbo]] — uses: DDPM training maximises the ELBO, decomposed into a sum of KL terms between Gaussian pairs
+- [[variational-autoencoder]] — specializes: DDPM is a hierarchical VAE with fixed encoder, shared decoder, and same-dimension latents at each level
 [To be populated during integration]

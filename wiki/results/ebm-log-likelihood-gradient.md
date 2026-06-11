@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- energy-based-model
 component_scores:
   conditions: null
   implications: null
@@ -17,6 +19,8 @@ id: pkis:result:ebm-log-likelihood-gradient
 knowledge_type: result
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- contrastive-divergence
 related_concepts: []
 sources:
 - murphy-pml2-advanced-ch24
@@ -27,6 +31,9 @@ tags:
 - Monte-Carlo-gradient
 title: EBM Log-Likelihood Gradient Decomposition
 understanding: 0
+uses:
+- maximum-likelihood-estimation
+- monte-carlo-estimator
 ---
 
 ## Definition
@@ -44,4 +51,8 @@ This result is the foundation of all MCMC-based MLE training of EBMs: if one can
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[contrastive-divergence]] — prerequisite-of: CD approximates the intractable model-sample term in this decomposition
+- [[monte-carlo-estimator]] — uses: The partition-function gradient term is estimated via MC samples from p_θ
+- [[maximum-likelihood-estimation]] — uses
+- [[energy-based-model]] — applies
 [To be populated during integration]
