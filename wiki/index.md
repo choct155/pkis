@@ -290,6 +290,7 @@
 - [[liu-machine-unlearning-llm-2024]] — Rethinking Machine Unlearning for LLMs: post-training knowledge editing survey (deep-learning, ai-safety) (2026-05-20)
 
 ## Concepts
+- [[sequence-logo]] — Sequence Logo (information-theory, bioinformatics) (2026-06-11)
 - [[maximal-information-coefficient]] — Maximal Information Coefficient (MIC) (information-theory, statistics) (2026-06-11)
 - [[normalized-mutual-information]] — Normalized Mutual Information (information-theory, machine-learning) (2026-06-11)
 - [[perplexity]] — Perplexity (information-theory, natural-language-processing) (2026-06-11)

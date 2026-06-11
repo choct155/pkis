@@ -15653,3 +15653,12 @@
 ## [2026-06-11] committed | result
 - Committed: mi-gaussian-formula → results/mi-gaussian-formula.md
 - IRI: pkis:result:mi-gaussian-formula
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: sequence-logo (id: 362f5ece-3f0e-449e-b453-5cc63d1b7db9)
+- Title: Sequence Logo
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: sequence-logo → concepts/sequence-logo.md
+- IRI: pkis:concept:sequence-logo
