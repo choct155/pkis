@@ -18398,3 +18398,12 @@
 ## [2026-06-11] committed | technique
 - Committed: multi-head-attention → techniques/multi-head-attention.md
 - IRI: pkis:technique:multi-head-attention
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: autoencoder-dnn (id: 91f79c0b-bc16-4a60-b2bb-666f9343c03a)
+- Title: Autoencoder
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: autoencoder-dnn → concepts/autoencoder-dnn.md
+- IRI: pkis:concept:autoencoder-dnn
