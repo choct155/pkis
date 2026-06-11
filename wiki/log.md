@@ -14708,3 +14708,12 @@
 ## [2026-06-11] committed | concept
 - Committed: zero-shot-learning → concepts/zero-shot-learning.md
 - IRI: pkis:concept:zero-shot-learning
+
+## [2026-06-11] staged | node-stub (result)
+- Staged: exponential-regions-distributed-representation (id: 7aa14aea-3b9c-4b40-ac95-652fc46c98c9)
+- Title: Exponential Regions from Distributed Binary Features
+- needs_canonical_source: False
+
+## [2026-06-11] committed | result
+- Committed: exponential-regions-distributed-representation → results/exponential-regions-distributed-representation.md
+- IRI: pkis:result:exponential-regions-distributed-representation
