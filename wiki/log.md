@@ -15599,3 +15599,12 @@
 ## [2026-06-11] committed | concept
 - Committed: cross-entropy → concepts/cross-entropy.md
 - IRI: pkis:concept:cross-entropy
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: perplexity (id: fe8ca274-e6f3-465e-9701-f04f617bd4de)
+- Title: Perplexity
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: perplexity → concepts/perplexity.md
+- IRI: pkis:concept:perplexity
