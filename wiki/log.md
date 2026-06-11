@@ -18011,3 +18011,12 @@
 ## [2026-06-11] committed | technique
 - Committed: control-variates → techniques/control-variates.md
 - IRI: pkis:technique:control-variates
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: antithetic-sampling (id: 1c9c220c-c2df-4952-a24a-147ffaa7abe2)
+- Title: Antithetic Sampling
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: antithetic-sampling → techniques/antithetic-sampling.md
+- IRI: pkis:technique:antithetic-sampling
