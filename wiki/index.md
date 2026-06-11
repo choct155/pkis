@@ -290,6 +290,7 @@
 - [[liu-machine-unlearning-llm-2024]] — Rethinking Machine Unlearning for LLMs: post-training knowledge editing survey (deep-learning, ai-safety) (2026-05-20)
 
 ## Concepts
+- [[graph-laplacian]] — Graph Laplacian (machine-learning, graph-learning, linear-algebra, spectral-methods) (2026-06-11)
 - [[transductive-vs-inductive-graph-learning]] — Transductive vs Inductive Graph Learning (machine-learning, graph-learning) (2026-06-11)
 - [[implicit-feedback-recommendation]] — Implicit Feedback in Recommendation (machine-learning, recommender-systems) (2026-06-11)
 - [[vector-quantization-clustering]] — Vector Quantization (machine-learning, information-theory, signal-processing) (2026-06-11)

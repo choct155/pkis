@@ -17030,3 +17030,12 @@
 ## [2026-06-11] committed | concept
 - Committed: transductive-vs-inductive-graph-learning → concepts/transductive-vs-inductive-graph-learning.md
 - IRI: pkis:concept:transductive-vs-inductive-graph-learning
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: graph-laplacian (id: 2f486e9e-931c-4ac6-a994-4c444d3d67c1)
+- Title: Graph Laplacian
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: graph-laplacian → concepts/graph-laplacian.md
+- IRI: pkis:concept:graph-laplacian
