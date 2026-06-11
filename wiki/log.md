@@ -14357,3 +14357,12 @@
 ## [2026-06-11] committed | concept
 - Committed: effective-model-capacity → concepts/effective-model-capacity.md
 - IRI: pkis:concept:effective-model-capacity
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: activation-gradient-monitoring (id: ecca678e-e63b-4acb-96ab-ed0131ce4885)
+- Title: Activation and Gradient Histogram Monitoring
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: activation-gradient-monitoring → techniques/activation-gradient-monitoring.md
+- IRI: pkis:technique:activation-gradient-monitoring

@@ -880,6 +880,7 @@
 - [[market-vs-hierarchy]] — Coase/Williamson: transactions governed by price signals (markets) vs. managerial direction (firms) (corporate-finance) (2026-05-20)
 
 ## Techniques
+- [[activation-gradient-monitoring]] — Activation and Gradient Histogram Monitoring (deep-learning, optimization, debugging) (2026-06-11)
 - [[fit-tiny-dataset-debug]] — Fit-a-Tiny-Dataset Debugging Test (machine-learning, debugging, deep-learning) (2026-06-11)
 - [[gradient-checking]] — Gradient Checking (Finite-Difference Derivative Verification) (machine-learning, numerical-methods, debugging) (2026-06-11)
 - [[random-search-hyperparameters]] — Random Search for Hyperparameter Tuning (machine-learning, hyperparameter-optimization) (2026-06-11)
