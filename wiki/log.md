@@ -17723,3 +17723,12 @@
 ## [2026-06-11] committed | technique
 - Committed: bayes-filter → techniques/bayes-filter.md
 - IRI: pkis:technique:bayes-filter
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: ffbs-algorithm (id: 73b2bdf4-ed7e-4f1b-ac4b-aab135869774)
+- Title: Forwards Filtering Backwards Smoothing (FFBS)
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: ffbs-algorithm → techniques/ffbs-algorithm.md
+- IRI: pkis:technique:ffbs-algorithm
