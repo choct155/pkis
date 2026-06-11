@@ -12593,3 +12593,12 @@
 ## [2026-06-11] committed | technique
 - Committed: dual-kernel-ridge-regression → techniques/dual-kernel-ridge-regression.md
 - IRI: pkis:technique:dual-kernel-ridge-regression
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: kernel-construction-rules (id: 34ae957c-9367-4024-b49f-d5fce934530e)
+- Title: Kernel Construction Rules (Closure Properties)
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: kernel-construction-rules → concepts/kernel-construction-rules.md
+- IRI: pkis:concept:kernel-construction-rules

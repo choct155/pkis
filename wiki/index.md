@@ -290,6 +290,7 @@
 - [[liu-machine-unlearning-llm-2024]] — Rethinking Machine Unlearning for LLMs: post-training knowledge editing survey (deep-learning, ai-safety) (2026-05-20)
 
 ## Concepts
+- [[kernel-construction-rules]] — Kernel Construction Rules (Closure Properties) (machine-learning, kernel-methods) (2026-06-11)
 - [[gram-matrix]] — Gram Matrix (machine-learning, linear-algebra, kernel-methods) (2026-06-11)
 - [[weight-space-symmetry]] — Weight-Space Symmetry in Neural Networks (machine-learning, neural-networks) (2026-06-11)
 - [[canonical-link-function]] — Canonical Link Function (statistics, machine-learning) (2026-06-11)
