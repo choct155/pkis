@@ -13520,3 +13520,12 @@
 ## [2026-06-11] committed | concept
 - Committed: multinoulli-distribution → concepts/multinoulli-distribution.md
 - IRI: pkis:concept:multinoulli-distribution
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: dirac-delta-distribution (id: 698c2c5d-5c7b-4830-9c8b-00289bf39712)
+- Title: Dirac Delta Distribution
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: dirac-delta-distribution → concepts/dirac-delta-distribution.md
+- IRI: pkis:concept:dirac-delta-distribution
