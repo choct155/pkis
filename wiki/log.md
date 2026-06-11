@@ -13952,3 +13952,12 @@
 ## [2026-06-11] committed | technique
 - Committed: adversarial-training-regularization → techniques/adversarial-training-regularization.md
 - IRI: pkis:technique:adversarial-training-regularization
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: representational-sparsity (id: c5a7efdf-564a-4910-a33c-fa7bb6e0a2f6)
+- Title: Representational Sparsity
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: representational-sparsity → concepts/representational-sparsity.md
+- IRI: pkis:concept:representational-sparsity
