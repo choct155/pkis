@@ -18731,3 +18731,12 @@
 ## [2026-06-11] committed | framework
 - Committed: meta-learning → frameworks/meta-learning.md
 - IRI: pkis:framework:meta-learning
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: spurious-correlations (id: 51ce6541-9f08-41e4-b8ee-e22d881a0aa4)
+- Title: Spurious Correlations (Shortcut Features)
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: spurious-correlations → concepts/spurious-correlations.md
+- IRI: pkis:concept:spurious-correlations
