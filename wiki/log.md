@@ -13745,3 +13745,12 @@
 ## [2026-06-11] committed | concept
 - Committed: data-generating-distribution → concepts/data-generating-distribution.md
 - IRI: pkis:concept:data-generating-distribution
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: minibatch-sgd (id: bd4ac163-b7fd-4642-bb49-1f1127d051cf)
+- Title: Minibatch Stochastic Gradient Descent
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: minibatch-sgd → techniques/minibatch-sgd.md
+- IRI: pkis:technique:minibatch-sgd
