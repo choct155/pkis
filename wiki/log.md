@@ -19613,3 +19613,12 @@
 ## [2026-06-11] committed | technique
 - Committed: constraint-based-structure-learning → techniques/constraint-based-structure-learning.md
 - IRI: pkis:technique:constraint-based-structure-learning
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: markov-equivalence-class (id: 3478a1a0-d8cb-4be6-9095-f192d24f8c52)
+- Title: Markov Equivalence Class (CPDAG)
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: markov-equivalence-class → concepts/markov-equivalence-class.md
+- IRI: pkis:concept:markov-equivalence-class
