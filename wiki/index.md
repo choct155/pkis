@@ -290,6 +290,7 @@
 - [[liu-machine-unlearning-llm-2024]] — Rethinking Machine Unlearning for LLMs: post-training knowledge editing survey (deep-learning, ai-safety) (2026-05-20)
 
 ## Concepts
+- [[residual-skip-connection]] — Residual (Skip) Connection (deep-learning, neural-network-architecture) (2026-06-11)
 - [[deep-neural-network-computation-graph]] — Deep Neural Network (DNN) as Differentiable Computation Graph (machine-learning, deep-learning) (2026-06-11)
 - [[gaussian-scale-mixture]] — Gaussian Scale Mixture (statistics, bayesian-inference) (2026-06-11)
 - [[logit-adjustment]] — Logit Adjustment for Class Imbalance (machine-learning, statistics) (2026-06-11)

@@ -18371,3 +18371,12 @@
 ## [2026-06-11] committed | concept
 - Committed: deep-neural-network-computation-graph → concepts/deep-neural-network-computation-graph.md
 - IRI: pkis:concept:deep-neural-network-computation-graph
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: residual-skip-connection (id: a847f295-4986-48a8-acff-5226847ce79e)
+- Title: Residual (Skip) Connection
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: residual-skip-connection → concepts/residual-skip-connection.md
+- IRI: pkis:concept:residual-skip-connection
