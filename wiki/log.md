@@ -19739,3 +19739,12 @@
 ## [2026-06-11] committed | result
 - Committed: kolmogorov-extension-theorem → results/kolmogorov-extension-theorem.md
 - IRI: pkis:result:kolmogorov-extension-theorem
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: centered-kernel-alignment (id: c1ca7bf2-bf4c-409a-994e-53544f61d87e)
+- Title: Centered Kernel Alignment (CKA)
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: centered-kernel-alignment → techniques/centered-kernel-alignment.md
+- IRI: pkis:technique:centered-kernel-alignment
