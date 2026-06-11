@@ -20045,3 +20045,12 @@
 ## [2026-06-11] committed | concept
 - Committed: cumulative-regret → concepts/cumulative-regret.md
 - IRI: pkis:concept:cumulative-regret
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: markov-decision-process-mdp (id: 02c63b1a-5a53-4e71-8999-6273bb516952)
+- Title: Markov Decision Process (MDP)
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: markov-decision-process-mdp → concepts/markov-decision-process-mdp.md
+- IRI: pkis:concept:markov-decision-process-mdp
