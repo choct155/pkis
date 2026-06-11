@@ -13358,3 +13358,12 @@
 ## [2026-06-11] committed | concept
 - Committed: rectified-linear-unit → concepts/rectified-linear-unit.md
 - IRI: pkis:concept:rectified-linear-unit
+
+## [2026-06-11] staged | node-stub (result)
+- Staged: nn-size-doubling-trend (id: 4b1ad809-8313-4b7a-b286-5b67c46ddd6d)
+- Title: Scaling Law: Neural Network Size Doubling
+- needs_canonical_source: False
+
+## [2026-06-11] committed | result
+- Committed: nn-size-doubling-trend → results/nn-size-doubling-trend.md
+- IRI: pkis:result:nn-size-doubling-trend
