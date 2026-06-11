@@ -19469,3 +19469,12 @@
 ## [2026-06-11] committed | technique
 - Committed: hybrid-generative-discriminative-training → techniques/hybrid-generative-discriminative-training.md
 - IRI: pkis:technique:hybrid-generative-discriminative-training
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: bernoulli-mixture-model (id: d201116a-49d4-4223-b444-53cb8ea2d1c9)
+- Title: Bernoulli Mixture Model (BMM)
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: bernoulli-mixture-model → concepts/bernoulli-mixture-model.md
+- IRI: pkis:concept:bernoulli-mixture-model
