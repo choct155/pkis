@@ -17534,3 +17534,12 @@
 ## [2026-06-11] committed | concept
 - Committed: score-function-estimator → concepts/score-function-estimator.md
 - IRI: pkis:concept:score-function-estimator
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: reparameterization-gradient (id: 6287d48c-72fa-4895-8e91-7af3e7d3d962)
+- Title: Reparameterization Gradient (Pathwise Derivative)
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: reparameterization-gradient → techniques/reparameterization-gradient.md
+- IRI: pkis:technique:reparameterization-gradient

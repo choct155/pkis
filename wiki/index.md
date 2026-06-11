@@ -1035,6 +1035,7 @@
 - [[market-vs-hierarchy]] — Coase/Williamson: transactions governed by price signals (markets) vs. managerial direction (firms) (corporate-finance) (2026-05-20)
 
 ## Techniques
+- [[reparameterization-gradient]] — Reparameterization Gradient (Pathwise Derivative) (machine-learning, statistics) (2026-06-11)
 - [[reverse-mode-ad]] — Reverse-Mode Automatic Differentiation (Backpropagation) (machine-learning, numerical-methods) (2026-06-11)
 - [[forward-mode-ad]] — Forward-Mode Automatic Differentiation (machine-learning, numerical-methods) (2026-06-11)
 - [[expected-sufficient-statistics-pgm]] — Expected Sufficient Statistics (ESS) for EM in Graphical Models (probabilistic-graphical-models, machine-learning) (2026-06-11)
