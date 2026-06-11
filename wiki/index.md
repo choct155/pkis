@@ -290,6 +290,7 @@
 - [[liu-machine-unlearning-llm-2024]] — Rethinking Machine Unlearning for LLMs: post-training knowledge editing survey (deep-learning, ai-safety) (2026-05-20)
 
 ## Concepts
+- [[variational-approximation-bias]] — Variational Approximation Bias (Self-Fulfilling Posteriors) (machine-learning, probabilistic-inference) (2026-06-11)
 - [[structured-variational-inference]] — Structured Variational Inference (machine-learning, probabilistic-inference) (2026-06-11)
 - [[inference-as-optimization]] — Inference as Optimization (ELBO Perspective) (machine-learning, probabilistic-inference, information-theory) (2026-06-11)
 - [[fast-pcd]] — Fast PCD (FPCD) (machine-learning, deep-learning, probabilistic-graphical-models) (2026-06-11)

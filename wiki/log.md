@@ -15032,3 +15032,12 @@
 ## [2026-06-11] committed | concept
 - Committed: structured-variational-inference → concepts/structured-variational-inference.md
 - IRI: pkis:concept:structured-variational-inference
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: variational-approximation-bias (id: 89c6bce6-4dfe-4743-9a41-c5095c7484f7)
+- Title: Variational Approximation Bias (Self-Fulfilling Posteriors)
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: variational-approximation-bias → concepts/variational-approximation-bias.md
+- IRI: pkis:concept:variational-approximation-bias
