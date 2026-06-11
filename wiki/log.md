@@ -24719,3 +24719,12 @@
 ## [2026-06-11] committed | concept
 - Committed: fisher-divergence → concepts/fisher-divergence.md
 - IRI: pkis:concept:fisher-divergence
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: kernelized-stein-discrepancy (id: 1e75bd76-96f7-4253-8961-7928ca279d14)
+- Title: Kernelized Stein Discrepancy (KSD)
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: kernelized-stein-discrepancy → concepts/kernelized-stein-discrepancy.md
+- IRI: pkis:concept:kernelized-stein-discrepancy

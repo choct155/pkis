@@ -290,6 +290,7 @@
 - [[liu-machine-unlearning-llm-2024]] — Rethinking Machine Unlearning for LLMs: post-training knowledge editing survey (deep-learning, ai-safety) (2026-05-20)
 
 ## Concepts
+- [[kernelized-stein-discrepancy]] — Kernelized Stein Discrepancy (KSD) (statistics, machine-learning, functional-analysis) (2026-06-11)
 - [[fisher-divergence]] — Fisher Divergence (statistics, information-theory, machine-learning) (2026-06-11)
 - [[law-of-total-expectation]] — Law of Total Expectation (Iterated Expectations) (probability-theory, statistics) (2026-06-11)
 - [[sigmoid-logistic-function]] — Sigmoid (Logistic) Function (machine-learning, probability-theory, statistics) (2026-06-11)
