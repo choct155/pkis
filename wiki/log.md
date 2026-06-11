@@ -18488,3 +18488,12 @@
 ## [2026-06-11] committed | technique
 - Committed: batch-ensemble → techniques/batch-ensemble.md
 - IRI: pkis:technique:batch-ensemble
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: generalized-gauss-newton (id: 0b6d7558-893e-4d9a-b274-8edc3220dde7)
+- Title: Generalized Gauss-Newton (GGN) Approximation
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: generalized-gauss-newton → techniques/generalized-gauss-newton.md
+- IRI: pkis:technique:generalized-gauss-newton
