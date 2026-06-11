@@ -19883,3 +19883,12 @@
 ## [2026-06-11] committed | concept
 - Committed: explanation-fidelity → concepts/explanation-fidelity.md
 - IRI: pkis:concept:explanation-fidelity
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: saliency-map (id: 629aa156-1b23-4353-8a29-fa87a69988c8)
+- Title: Saliency Map (Attribution Map)
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: saliency-map → concepts/saliency-map.md
+- IRI: pkis:concept:saliency-map
