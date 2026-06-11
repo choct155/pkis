@@ -290,6 +290,7 @@
 - [[liu-machine-unlearning-llm-2024]] — Rethinking Machine Unlearning for LLMs: post-training knowledge editing survey (deep-learning, ai-safety) (2026-05-20)
 
 ## Concepts
+- [[bernoulli-distribution]] — Bernoulli Distribution (probability, statistics, machine-learning) (2026-06-11)
 - [[minkowski-loss]] — Minkowski Loss for Regression (statistics, machine-learning, decision-theory) (2026-06-11)
 - [[hyperparameter]] — Hyperparameter (machine-learning, bayesian-methods, statistics) (2026-06-11)
 - [[differential-entropy]] — Differential Entropy (information-theory, probability-theory) (2026-06-11)

@@ -12197,3 +12197,12 @@
 ## [2026-06-11] committed | concept
 - Committed: minkowski-loss → concepts/minkowski-loss.md
 - IRI: pkis:concept:minkowski-loss
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: bernoulli-distribution (id: 2d867dcb-0d90-48d5-b176-1966779cf18b)
+- Title: Bernoulli Distribution
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: bernoulli-distribution → concepts/bernoulli-distribution.md
+- IRI: pkis:concept:bernoulli-distribution
