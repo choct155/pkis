@@ -15833,3 +15833,12 @@
 ## [2026-06-11] committed | technique
 - Committed: svrg → techniques/svrg.md
 - IRI: pkis:technique:svrg
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: learning-rate-schedule (id: dff518f6-ad00-4aaf-b5e3-d92eeb69afb0)
+- Title: Learning Rate Schedule and Warmup
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: learning-rate-schedule → techniques/learning-rate-schedule.md
+- IRI: pkis:technique:learning-rate-schedule
