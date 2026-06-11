@@ -13880,3 +13880,12 @@
 ## [2026-06-11] committed | technique
 - Committed: dropout-regularization → techniques/dropout-regularization.md
 - IRI: pkis:technique:dropout-regularization
+
+## [2026-06-11] staged | node-stub (result)
+- Staged: early-stopping-l2-equivalence (id: 29f98846-82ab-48e2-99fa-8f9e2d8c641c)
+- Title: Early Stopping Equivalence to L2 Regularization
+- needs_canonical_source: False
+
+## [2026-06-11] committed | result
+- Committed: early-stopping-l2-equivalence → results/early-stopping-l2-equivalence.md
+- IRI: pkis:result:early-stopping-l2-equivalence
