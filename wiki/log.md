@@ -12305,3 +12305,12 @@
 ## [2026-06-11] committed | concept
 - Committed: linear-basis-function-model → concepts/linear-basis-function-model.md
 - IRI: pkis:concept:linear-basis-function-model
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: normal-equations-pseudoinverse (id: a29833b7-9ef1-4132-8154-5ef8c760550e)
+- Title: Normal Equations and Moore-Penrose Pseudoinverse
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: normal-equations-pseudoinverse → techniques/normal-equations-pseudoinverse.md
+- IRI: pkis:technique:normal-equations-pseudoinverse
