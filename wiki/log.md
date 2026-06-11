@@ -15509,3 +15509,12 @@
 ## [2026-06-11] committed | concept
 - Committed: brier-score → concepts/brier-score.md
 - IRI: pkis:concept:brier-score
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: class-confusion-matrix (id: 7c159103-286c-4b51-a6db-bca2337de146)
+- Title: Class Confusion Matrix
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: class-confusion-matrix → concepts/class-confusion-matrix.md
+- IRI: pkis:concept:class-confusion-matrix
