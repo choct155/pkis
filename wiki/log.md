@@ -12116,3 +12116,12 @@
 ## [2026-06-11] committed | concept
 - Committed: likelihood-function → concepts/likelihood-function.md
 - IRI: pkis:concept:likelihood-function
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: prior-likelihood-posterior (id: dad58373-86e2-4462-9312-80c7538bb586)
+- Title: Prior, Likelihood, and Posterior in Bayesian Inference
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: prior-likelihood-posterior → concepts/prior-likelihood-posterior.md
+- IRI: pkis:concept:prior-likelihood-posterior
