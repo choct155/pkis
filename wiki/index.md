@@ -775,6 +775,7 @@
 - [[market-vs-hierarchy]] — Coase/Williamson: transactions governed by price signals (markets) vs. managerial direction (firms) (corporate-finance) (2026-05-20)
 
 ## Techniques
+- [[bayesian-neural-network-laplace]] — Bayesian Neural Network via Laplace Approximation (machine-learning, bayesian-inference) (2026-06-11)
 - [[tangent-propagation]] — Tangent Propagation (machine-learning, neural-networks) (2026-06-11)
 - [[levenberg-marquardt-hessian]] — Levenberg–Marquardt (Outer-Product) Hessian Approximation (machine-learning, optimisation) (2026-06-11)
 - [[error-backpropagation]] — Error Backpropagation (machine-learning, numerical-methods) (2026-06-11)

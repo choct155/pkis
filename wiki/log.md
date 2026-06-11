@@ -12539,3 +12539,12 @@
 ## [2026-06-11] committed | framework
 - Committed: mixture-density-network → frameworks/mixture-density-network.md
 - IRI: pkis:framework:mixture-density-network
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: bayesian-neural-network-laplace (id: b42e5250-12f2-48dd-96e2-c8d5417c6579)
+- Title: Bayesian Neural Network via Laplace Approximation
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: bayesian-neural-network-laplace → techniques/bayesian-neural-network-laplace.md
+- IRI: pkis:technique:bayesian-neural-network-laplace
