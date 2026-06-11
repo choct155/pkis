@@ -16508,3 +16508,12 @@
 ## [2026-06-11] committed | technique
 - Committed: gp-marginal-likelihood-optimisation → techniques/gp-marginal-likelihood-optimisation.md
 - IRI: pkis:technique:gp-marginal-likelihood-optimisation
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: sparse-gp-inducing-points (id: 0dfe40ac-2e8b-4b4b-a33c-fc20820ea4d9)
+- Title: Sparse GP via Inducing Points
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: sparse-gp-inducing-points → techniques/sparse-gp-inducing-points.md
+- IRI: pkis:technique:sparse-gp-inducing-points
