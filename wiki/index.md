@@ -926,6 +926,7 @@
 - [[market-vs-hierarchy]] — Coase/Williamson: transactions governed by price signals (markets) vs. managerial direction (firms) (corporate-finance) (2026-05-20)
 
 ## Techniques
+- [[completing-the-square-multivariate]] — Completing the Square (Multivariate) (mathematics, probability, statistics) (2026-06-11)
 - [[polynomial-feature-expansion]] — Polynomial Feature Expansion (machine-learning, statistics) (2026-06-11)
 - [[feature-crosses]] — Feature Crosses (machine-learning, feature-engineering) (2026-06-11)
 - [[tf-idf]] — TF-IDF Weighting (nlp, information-retrieval) (2026-06-11)

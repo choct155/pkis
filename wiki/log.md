@@ -15320,3 +15320,12 @@
 ## [2026-06-11] committed | result
 - Committed: bayes-rule-for-gaussians → results/bayes-rule-for-gaussians.md
 - IRI: pkis:result:bayes-rule-for-gaussians
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: completing-the-square-multivariate (id: 74e38198-9b3c-4833-941e-d3c119703521)
+- Title: Completing the Square (Multivariate)
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: completing-the-square-multivariate → techniques/completing-the-square-multivariate.md
+- IRI: pkis:technique:completing-the-square-multivariate
