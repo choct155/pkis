@@ -16256,3 +16256,12 @@
 ## [2026-06-11] committed | concept
 - Committed: convolutional-neural-network → concepts/convolutional-neural-network.md
 - IRI: pkis:concept:convolutional-neural-network
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: dilated-convolution (id: 2c47119d-2a82-4ba4-a457-3b233d949196)
+- Title: Dilated (Atrous) Convolution
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: dilated-convolution → techniques/dilated-convolution.md
+- IRI: pkis:technique:dilated-convolution
