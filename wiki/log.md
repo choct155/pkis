@@ -15473,3 +15473,12 @@
 ## [2026-06-11] committed | concept
 - Committed: loss-function-posterior-expected-loss → concepts/loss-function-posterior-expected-loss.md
 - IRI: pkis:concept:loss-function-posterior-expected-loss
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: cost-sensitive-classification (id: 97ad9d2c-f2a0-49aa-bff2-f76a875bd295)
+- Title: Cost-Sensitive Classification
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: cost-sensitive-classification → techniques/cost-sensitive-classification.md
+- IRI: pkis:technique:cost-sensitive-classification
