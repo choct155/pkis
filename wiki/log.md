@@ -19181,3 +19181,12 @@
 ## [2026-06-11] committed | technique
 - Committed: flow-matching → techniques/flow-matching.md
 - IRI: pkis:technique:flow-matching
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: progressive-distillation-diffusion (id: 7c957cb2-f115-4a21-9498-0b0aa1416719)
+- Title: Progressive Distillation for Diffusion Models
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: progressive-distillation-diffusion → techniques/progressive-distillation-diffusion.md
+- IRI: pkis:technique:progressive-distillation-diffusion
