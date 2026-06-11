@@ -19226,3 +19226,12 @@
 ## [2026-06-11] committed | technique
 - Committed: classifier-guidance → techniques/classifier-guidance.md
 - IRI: pkis:technique:classifier-guidance
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: implicit-generative-model (id: 5575bf31-5264-43e1-848e-b8dab5f0e14c)
+- Title: Implicit Generative Model
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: implicit-generative-model → concepts/implicit-generative-model.md
+- IRI: pkis:concept:implicit-generative-model
