@@ -14195,3 +14195,12 @@
 ## [2026-06-11] committed | technique
 - Committed: teacher-forcing → techniques/teacher-forcing.md
 - IRI: pkis:technique:teacher-forcing
+
+## [2026-06-11] staged | node-stub (framework)
+- Staged: encoder-decoder-seq2seq (id: 46114a0d-0ba6-4c58-972b-2416bb0acecf)
+- Title: Encoder-Decoder (Sequence-to-Sequence) Architecture
+- needs_canonical_source: False
+
+## [2026-06-11] committed | framework
+- Committed: encoder-decoder-seq2seq → frameworks/encoder-decoder-seq2seq.md
+- IRI: pkis:framework:encoder-decoder-seq2seq
