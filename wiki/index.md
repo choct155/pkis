@@ -1443,6 +1443,7 @@
 - [[constraint-propagation]] — Reducing a constraint satisfaction problem by iteratively eliminating inconsistent values from variable domains (knowledge-representation) (2026-05-20)
 
 ## Results
+- [[maxent-exponential-family-derivation]] — Maximum Entropy Derivation of the Exponential Family (information-theory, probability, statistics) (2026-06-11)
 - [[log-partition-cumulant-generating]] — Log Partition Function Generates Cumulants (probability, statistics) (2026-06-11)
 - [[bayes-rule-for-gaussians]] — Bayes Rule for Gaussians (probability, statistics, machine-learning) (2026-06-11)
 - [[mvn-marginal-conditional]] — MVN Marginal and Conditional Distributions (probability, statistics) (2026-06-11)

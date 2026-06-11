@@ -15356,3 +15356,12 @@
 ## [2026-06-11] committed | result
 - Committed: log-partition-cumulant-generating → results/log-partition-cumulant-generating.md
 - IRI: pkis:result:log-partition-cumulant-generating
+
+## [2026-06-11] staged | node-stub (result)
+- Staged: maxent-exponential-family-derivation (id: 7edab83a-a2df-4317-8a06-ca15541e6cb5)
+- Title: Maximum Entropy Derivation of the Exponential Family
+- needs_canonical_source: False
+
+## [2026-06-11] committed | result
+- Committed: maxent-exponential-family-derivation → results/maxent-exponential-family-derivation.md
+- IRI: pkis:result:maxent-exponential-family-derivation
