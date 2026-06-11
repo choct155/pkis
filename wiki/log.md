@@ -18146,3 +18146,12 @@
 ## [2026-06-11] committed | concept
 - Committed: incremental-importance-weights → concepts/incremental-importance-weights.md
 - IRI: pkis:concept:incremental-importance-weights
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: rao-blackwellized-particle-filter (id: 9bb1d33d-23ac-4800-8107-45782dfa0c41)
+- Title: Rao-Blackwellized Particle Filter (RBPF)
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: rao-blackwellized-particle-filter → techniques/rao-blackwellized-particle-filter.md
+- IRI: pkis:technique:rao-blackwellized-particle-filter

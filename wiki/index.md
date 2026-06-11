@@ -1056,6 +1056,7 @@
 - [[market-vs-hierarchy]] — Coase/Williamson: transactions governed by price signals (markets) vs. managerial direction (firms) (corporate-finance) (2026-05-20)
 
 ## Techniques
+- [[rao-blackwellized-particle-filter]] — Rao-Blackwellized Particle Filter (RBPF) (machine-learning, robotics, statistics) (2026-06-11)
 - [[particle-resampling]] — Resampling Methods for Particle Filters (statistics, machine-learning) (2026-06-11)
 - [[riemann-manifold-hmc]] — Riemann Manifold HMC (RM-HMC) (statistics, machine-learning, differential-geometry) (2026-06-11)
 - [[swendsen-wang]] — Swendsen-Wang Algorithm (statistics, physics, machine-learning) (2026-06-11)
