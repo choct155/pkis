@@ -290,6 +290,7 @@
 - [[liu-machine-unlearning-llm-2024]] — Rethinking Machine Unlearning for LLMs: post-training knowledge editing survey (deep-learning, ai-safety) (2026-05-20)
 
 ## Concepts
+- [[logistic-sigmoid-logit]] — Logistic Sigmoid and Logit Function (machine-learning, statistics) (2026-06-11)
 - [[design-matrix]] — Design Matrix (machine-learning, statistics) (2026-06-11)
 - [[effective-number-of-parameters-gamma]] — Effective Number of Parameters ($\gamma$) (machine-learning, statistics) (2026-06-11)
 - [[equivalent-kernel]] — Equivalent Kernel (Smoother Matrix) (machine-learning, statistics) (2026-06-11)

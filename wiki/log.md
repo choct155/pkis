@@ -12395,3 +12395,12 @@
 ## [2026-06-11] committed | technique
 - Committed: fishers-linear-discriminant → techniques/fishers-linear-discriminant.md
 - IRI: pkis:technique:fishers-linear-discriminant
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: logistic-sigmoid-logit (id: ea22d7d4-ca3f-4037-b4ca-6d9d9e5a50e3)
+- Title: Logistic Sigmoid and Logit Function
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: logistic-sigmoid-logit → concepts/logistic-sigmoid-logit.md
+- IRI: pkis:concept:logistic-sigmoid-logit
