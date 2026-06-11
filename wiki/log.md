@@ -12125,3 +12125,12 @@
 ## [2026-06-11] committed | concept
 - Committed: prior-likelihood-posterior → concepts/prior-likelihood-posterior.md
 - IRI: pkis:concept:prior-likelihood-posterior
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: bayesian-predictive-marginalisation (id: ad1cd175-0995-47b4-ad9f-907f810674fb)
+- Title: Bayesian Predictive Distribution by Marginalisation
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: bayesian-predictive-marginalisation → techniques/bayesian-predictive-marginalisation.md
+- IRI: pkis:technique:bayesian-predictive-marginalisation
