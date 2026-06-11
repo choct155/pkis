@@ -290,6 +290,7 @@
 - [[liu-machine-unlearning-llm-2024]] — Rethinking Machine Unlearning for LLMs: post-training knowledge editing survey (deep-learning, ai-safety) (2026-05-20)
 
 ## Concepts
+- [[sigmoid-logistic-function]] — Sigmoid (Logistic) Function (machine-learning, probability-theory, statistics) (2026-06-11)
 - [[categorical-distribution]] — Categorical Distribution (probability-theory, machine-learning) (2026-06-11)
 - [[quantile-function]] — Quantile Function (Inverse CDF) (probability-theory, statistics) (2026-06-11)
 - [[two-stage-least-squares]] — Two-Stage Least Squares (2SLS) (econometrics, causal-inference, statistics) (2026-06-11)

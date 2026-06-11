@@ -24674,3 +24674,12 @@
 ## [2026-06-11] committed | concept
 - Committed: categorical-distribution → concepts/categorical-distribution.md
 - IRI: pkis:concept:categorical-distribution
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: sigmoid-logistic-function (id: 9993e8c5-5ae5-42b5-93c2-80555555ef1d)
+- Title: Sigmoid (Logistic) Function
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: sigmoid-logistic-function → concepts/sigmoid-logistic-function.md
+- IRI: pkis:concept:sigmoid-logistic-function
