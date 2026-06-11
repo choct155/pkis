@@ -17813,3 +17813,12 @@
 ## [2026-06-11] committed | technique
 - Committed: forwards-filtering-backwards-sampling → techniques/forwards-filtering-backwards-sampling.md
 - IRI: pkis:technique:forwards-filtering-backwards-sampling
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: sum-product-algorithm-trees (id: a6503627-0e70-45de-b008-64f4bcfcfbb2)
+- Title: Sum-Product Algorithm on Trees
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: sum-product-algorithm-trees → techniques/sum-product-algorithm-trees.md
+- IRI: pkis:technique:sum-product-algorithm-trees
