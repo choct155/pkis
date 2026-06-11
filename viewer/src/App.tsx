@@ -18,6 +18,7 @@ import PriorityView from './views/PriorityView'
 import GraphView from './views/GraphView'
 import StagedView from './views/StagedView'
 import ExplainersView from './views/ExplainersView'
+import DiscoverView from './views/DiscoverView'
 import ReaderView from './views/ReaderView'
 
 export default function App() {
@@ -125,6 +126,9 @@ export default function App() {
                 )}
                 {view === 'explainers' && (
                   <ExplainersView onSelectNode={handleSelectNode} />
+                )}
+                {view === 'discover' && (
+                  <DiscoverView onSelectNode={handleSelectNode} />
                 )}
               </>
             )}

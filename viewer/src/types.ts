@@ -9,7 +9,43 @@ export type NodeType =
 
 export type Maturity = 'settled' | 'evolving' | 'contested' | 'historical';
 
-export type View = 'browse' | 'clusters' | 'priority' | 'graph' | 'staged' | 'explainers';
+export type View = 'browse' | 'clusters' | 'priority' | 'graph' | 'staged' | 'explainers' | 'discover';
+
+// ── Proactive discovery (from /pkis-api/discovery) ────────────────────────
+export interface DiscoveryCandidate {
+  id: string;
+  title: string;
+  authors: string;
+  year: number | null;
+  venue: string;
+  doi: string;
+  url: string;
+  abstract: string;
+  cited_by: number;
+  field: string;
+  sim: number;
+  score: number;
+  prior_mult?: number;
+  reason: string;
+  status: 'pending' | 'accepted' | 'dismissed';
+  channel: string;
+  nearest_frontier: { iri: string; title: string; coverage: number; understanding: number; inbound_refs?: number };
+  via_seeds?: string[];
+  // ── enrichment (why-read-it intelligence) ──
+  priority?: number;
+  priority_note?: string;
+  links?: { iri: string; title: string; type: string; score: number }[];
+  clusters?: { slug: string; title: string; thesis: string; relevance: number }[];
+  hypotheses?: { title: string; status: string; cluster: string }[];
+  rationale?: { why?: string; gap?: string; fits?: string; questions?: string; agenda?: string };
+}
+
+export interface DiscoveryInbox {
+  generated_at: string | null;
+  channel: string | null;
+  counts: Record<string, number>;
+  candidates: DiscoveryCandidate[];
+}
 
 // ── Explainer (from get_explainers) ───────────────────────────────────────
 export interface Explainer {

@@ -6186,6 +6186,148 @@ def pkis_api_discovery_act():
         return _api_err(e, 500)
 
 
+# ============================================================
+# PROACTIVE DISCOVERY — inbox + feedback loop
+# The generator (tools/discovery_openalex.py, cron'd) writes ranked, frontier-gated
+# candidates into discovery_inbox.json. The viewer's Discover tab reads them and the
+# user accepts (→ source stub + reading queue) or dismisses. Every decision is logged
+# and folds into a per-signal learned prior that re-weights the next run — the durable
+# fix for the residual taste-dependent noise the a-priori gates can't catch.
+# ============================================================
+DISCOVERY_DIR = Path(os.environ.get("PKIS_DISCOVERY_DIR", "/home/pkis"))
+DISCOVERY_INBOX = DISCOVERY_DIR / "discovery_inbox.json"
+DISCOVERY_FEEDBACK = DISCOVERY_DIR / "discovery_feedback.jsonl"
+DISCOVERY_PRIOR = DISCOVERY_DIR / "discovery_prior.json"
+
+
+def _discovery_load():
+    if DISCOVERY_INBOX.exists():
+        try:
+            return json.loads(DISCOVERY_INBOX.read_text())
+        except Exception:
+            pass
+    return {"candidates": []}
+
+
+def _discovery_save(data):
+    DISCOVERY_INBOX.write_text(json.dumps(data, ensure_ascii=False, indent=1))
+
+
+def _discovery_counts(data):
+    from collections import Counter
+    return dict(Counter(c.get("status", "pending") for c in data.get("candidates", [])))
+
+
+def _discovery_recompute_prior():
+    """From the feedback log, build a per-signal accept/reject multiplier. Each signal
+    value gets (accepts+1)/(rejects+1) clamped to [0.1, 3.0] — neutral 1.0 with no data,
+    >1 when you tend to accept it, <1 when you tend to dismiss it. The generator applies
+    the geometric mean of a candidate's signal multipliers to its score."""
+    from collections import defaultdict
+    stats = defaultdict(lambda: defaultdict(lambda: [0, 0]))
+    if DISCOVERY_FEEDBACK.exists():
+        for line in DISCOVERY_FEEDBACK.read_text().splitlines():
+            if not line.strip():
+                continue
+            try:
+                fb = json.loads(line)
+            except Exception:
+                continue
+            acc = 1 if fb.get("action") == "accept" else 0
+            rej = 1 if fb.get("action") == "dismiss" else 0
+            for dim, val in (fb.get("signals") or {}).items():
+                if not val:
+                    continue
+                s = stats[dim][str(val)]
+                s[0] += acc
+                s[1] += rej
+    prior = {}
+    for dim, vals in stats.items():
+        prior[dim] = {v: max(0.1, min(3.0, (a + 1) / (r + 1))) for v, (a, r) in vals.items()}
+    DISCOVERY_PRIOR.write_text(json.dumps(prior, ensure_ascii=False, indent=1))
+    return prior
+
+
+def tool_get_discovery(status: str = "pending", limit: int = 50) -> dict:
+    """List discovery candidates (default: pending), ranked by score."""
+    data = _discovery_load()
+    cands = data.get("candidates", [])
+    if status:
+        cands = [c for c in cands if c.get("status", "pending") == status]
+    cands = sorted(cands, key=lambda c: -c.get("score", 0))[:limit]
+    return {
+        "generated_at": data.get("generated_at"),
+        "channel": data.get("channel"),
+        "counts": _discovery_counts(data),
+        "candidates": cands,
+    }
+
+
+def tool_discovery_act(cand_id: str, action: str, note: str = "", reason_chip: str = "") -> dict:
+    """Accept (→ source stub + reading queue) or dismiss a candidate; log feedback and
+    refresh the learned prior."""
+    if action not in ("accept", "dismiss"):
+        raise ValueError("action must be 'accept' or 'dismiss'")
+    data = _discovery_load()
+    cand = next((c for c in data.get("candidates", []) if c.get("id") == cand_id), None)
+    if not cand:
+        raise ValueError(f"candidate not found: {cand_id}")
+    result = {"action": action, "id": cand_id}
+    if action == "accept":
+        stub = tool_create_source_stub(
+            title=cand.get("title", ""), url=cand.get("url", ""), doi=cand.get("doi", ""),
+            authors=cand.get("authors", ""), year=cand.get("year"),
+            notes=f"Discovered (frontier): {cand.get('reason', '')}", priority="normal")
+        result["source_slug"] = stub.get("slug")
+        result["staged_id"] = stub.get("staged_id")
+        try:
+            tool_add_to_queue(reference=stub.get("slug"),
+                              reason=cand.get("reason", "discovery pick"), priority="normal")
+            result["queued"] = True
+        except Exception as e:
+            logger.error(f"discovery queue-add failed: {e}")
+    fb = {
+        "id": cand_id, "action": action,
+        "ts": datetime.now(timezone.utc).isoformat(),
+        "signals": cand.get("signals") or {},
+        "reason_chip": reason_chip, "note": note, "title": cand.get("title"),
+    }
+    with open(DISCOVERY_FEEDBACK, "a") as f:
+        f.write(json.dumps(fb, ensure_ascii=False) + "\n")
+    cand["status"] = "accepted" if action == "accept" else "dismissed"
+    cand["decided_at"] = fb["ts"]
+    if reason_chip:
+        cand["reason_chip"] = reason_chip
+    _discovery_save(data)
+    _discovery_recompute_prior()
+    result["prior_updated"] = True
+    return result
+
+
+@app.route("/pkis-api/discovery", methods=["POST"])
+def pkis_api_discovery():
+    b = _api_json()
+    try:
+        return _api_ok(tool_get_discovery(status=b.get("status", "pending"),
+                                          limit=b.get("limit", 50)))
+    except Exception as e:
+        return _api_err(e, 500)
+
+
+@app.route("/pkis-api/discovery/act", methods=["POST"])
+@require_write
+def pkis_api_discovery_act():
+    b = _api_json()
+    try:
+        return _api_ok(tool_discovery_act(
+            cand_id=b.get("id"), action=b.get("action", ""),
+            note=b.get("note", ""), reason_chip=b.get("reason_chip", "")))
+    except ValueError as e:
+        return _api_err(e)
+    except Exception as e:
+        return _api_err(e, 500)
+
+
 @app.route("/pkis-api/upload-document", methods=["POST"])
 @require_write
 def pkis_api_upload_document():

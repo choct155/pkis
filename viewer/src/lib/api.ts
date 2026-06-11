@@ -243,3 +243,20 @@ export async function detectConcepts(
 ): Promise<unknown> {
   return post('/detect-concepts', { text, threshold });
 }
+
+// ── Proactive discovery ───────────────────────────────────────────────────
+export async function getDiscovery(
+  status: 'pending' | 'accepted' | 'dismissed' = 'pending',
+  limit = 50
+): Promise<import('../types').DiscoveryInbox> {
+  return post('/discovery', { status, limit });
+}
+
+export async function discoveryAct(
+  id: string,
+  action: 'accept' | 'dismiss',
+  reason_chip?: string,
+  note?: string
+): Promise<{ action: string; source_slug?: string; queued?: boolean }> {
+  return post('/discovery/act', { id, action, reason_chip, note });
+}

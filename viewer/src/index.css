@@ -963,6 +963,61 @@ body {
 }
 .reader-pdf-nav:disabled { opacity: 0.35; cursor: default; }
 
+/* ── DISCOVER (proactive inbox) ───────────────────────────────────────────── */
+.discover-head { display: flex; align-items: baseline; justify-content: space-between; margin: 4px 0 10px; }
+.discover-sub { font-family: var(--mono); font-size: 10px; color: var(--dim); }
+.discover-card {
+  background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius);
+  padding: 12px 14px 10px; margin-bottom: 10px; position: relative; overflow: hidden;
+}
+.discover-bar { position: absolute; left: 0; top: 0; height: 3px; width: 100%; background: var(--border); }
+.discover-bar-fill { height: 100%; background: var(--accent); }
+.discover-title { font-size: 14px; font-weight: 500; color: var(--bright); line-height: 1.35; margin-top: 4px; }
+.discover-meta { font-size: 11px; color: var(--muted); margin: 5px 0 7px; }
+.discover-reason { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin-bottom: 7px; }
+.discover-gap {
+  font-family: var(--mono); font-size: 11px; color: var(--concept); cursor: pointer;
+  border: 1px solid var(--border); border-radius: 20px; padding: 2px 9px;
+}
+.discover-gap:hover { border-color: var(--concept); }
+.discover-sim { font-family: var(--mono); font-size: 10px; color: var(--dim); }
+.discover-prior { font-family: var(--mono); font-size: 10px; color: var(--amber); }
+.discover-abstract { font-size: 12px; color: var(--muted); line-height: 1.5; margin-bottom: 10px; }
+.discover-actions { display: flex; align-items: center; gap: 6px; }
+.discover-link { font-family: var(--mono); font-size: 11px; color: var(--accent); text-decoration: none; }
+.discover-btn { font-size: 11px; padding: 5px 12px; }
+.discover-btn:disabled { opacity: 0.4; }
+.discover-chip {
+  font-family: var(--mono); font-size: 10px; color: var(--muted); cursor: pointer;
+  border: 1px solid var(--border); border-radius: 20px; padding: 4px 9px;
+}
+.discover-chip:hover { border-color: var(--red); color: var(--red); }
+.discover-titlerow { display: flex; align-items: baseline; gap: 7px; cursor: pointer; margin-top: 4px; }
+.discover-more { color: var(--accent); font-family: var(--mono); font-size: 10px; white-space: nowrap; }
+.disc-prio-badge {
+  font-family: var(--mono); font-size: 10px; font-weight: 500; color: #fff;
+  background: var(--accent); border-radius: 4px; padding: 2px 7px; flex-shrink: 0;
+}
+.disc-prio-badge.sm { font-size: 9px; padding: 1px 5px; background: var(--raised); color: var(--accent); border: 1px solid var(--accent); }
+
+/* discover detail sheet */
+.disc-why { font-size: 14px; line-height: 1.55; color: var(--bright); }
+.disc-prio-note { font-size: 12px; color: var(--amber); line-height: 1.5; }
+.disc-facet { margin-top: 10px; }
+.disc-facet-label { font-family: var(--mono); font-size: 10px; letter-spacing: 0.06em; color: var(--muted); text-transform: uppercase; margin-bottom: 3px; }
+.disc-facet-text { font-size: 13px; line-height: 1.55; color: var(--text); }
+.disc-agenda { border-left: 2px solid var(--framework); padding-left: 12px; }
+.disc-cluster { margin-bottom: 8px; }
+.disc-cluster-title { font-size: 13px; font-weight: 500; color: var(--framework); }
+.disc-cluster-rel { font-family: var(--mono); font-size: 10px; color: var(--dim); margin-left: 8px; }
+.disc-cluster-thesis { font-size: 12px; color: var(--muted); line-height: 1.5; margin-top: 3px; }
+.disc-hyps { margin: 6px 0; }
+.disc-hyp { font-size: 12px; color: var(--text); line-height: 1.5; }
+.disc-hyp-dot { color: var(--framework); margin-right: 5px; }
+.disc-abstract-full { font-size: 12.5px; line-height: 1.6; color: var(--muted); }
+.disc-chip-row { display: flex; flex-wrap: wrap; gap: 6px; padding: 0 16px 12px; }
+.action-btn.disabled { opacity: 0.4; pointer-events: none; }
+
 /* narrow screens: show one pane at a time per the toggle */
 .reader-main.split.mode-read .reader-pane-pdf { display: none; }
 .reader-main.split.mode-pdf  .reader-pane-text { display: none; }
