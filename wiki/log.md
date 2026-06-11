@@ -12170,3 +12170,12 @@
 ## [2026-06-11] committed | concept
 - Committed: differential-entropy → concepts/differential-entropy.md
 - IRI: pkis:concept:differential-entropy
+
+## [2026-06-11] staged | node-stub (result)
+- Staged: kl-nonnegativity-ml-equivalence (id: 16bb6c70-2dc1-4bb6-86a0-e69f5f7f9e3f)
+- Title: KL Divergence Non-negativity and Equivalence to Maximum Likelihood
+- needs_canonical_source: False
+
+## [2026-06-11] committed | result
+- Committed: kl-nonnegativity-ml-equivalence → results/kl-nonnegativity-ml-equivalence.md
+- IRI: pkis:result:kl-nonnegativity-ml-equivalence
