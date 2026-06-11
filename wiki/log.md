@@ -13889,3 +13889,12 @@
 ## [2026-06-11] committed | result
 - Committed: early-stopping-l2-equivalence → results/early-stopping-l2-equivalence.md
 - IRI: pkis:result:early-stopping-l2-equivalence
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: label-smoothing (id: b5eaf171-2083-4ba2-bc40-446c57e26ff1)
+- Title: Label Smoothing
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: label-smoothing → techniques/label-smoothing.md
+- IRI: pkis:technique:label-smoothing
