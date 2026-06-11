@@ -17696,3 +17696,12 @@
 ## [2026-06-11] committed | concept
 - Committed: approximate-inference-quality-metrics → concepts/approximate-inference-quality-metrics.md
 - IRI: pkis:concept:approximate-inference-quality-metrics
+
+## [2026-06-11] staged | node-stub (framework)
+- Staged: linear-gaussian-ssm (id: 261af346-031a-4f13-ac31-e86a05426ef9)
+- Title: Linear Gaussian State Space Model (LG-SSM)
+- needs_canonical_source: False
+
+## [2026-06-11] committed | framework
+- Committed: linear-gaussian-ssm → frameworks/linear-gaussian-ssm.md
+- IRI: pkis:framework:linear-gaussian-ssm
