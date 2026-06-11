@@ -290,6 +290,7 @@
 - [[liu-machine-unlearning-llm-2024]] — Rethinking Machine Unlearning for LLMs: post-training knowledge editing survey (deep-learning, ai-safety) (2026-05-20)
 
 ## Concepts
+- [[precision-matrix]] — Precision Matrix (probability, statistics, linear-algebra) (2026-06-11)
 - [[multinomial-distribution]] — Multinomial Distribution (probability, statistics, machine-learning) (2026-06-11)
 - [[bernoulli-distribution]] — Bernoulli Distribution (probability, statistics, machine-learning) (2026-06-11)
 - [[minkowski-loss]] — Minkowski Loss for Regression (statistics, machine-learning, decision-theory) (2026-06-11)

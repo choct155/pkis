@@ -12215,3 +12215,12 @@
 ## [2026-06-11] committed | concept
 - Committed: multinomial-distribution → concepts/multinomial-distribution.md
 - IRI: pkis:concept:multinomial-distribution
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: precision-matrix (id: 3f84f6bb-edc8-41fb-8061-a350ffa6b52b)
+- Title: Precision Matrix
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: precision-matrix → concepts/precision-matrix.md
+- IRI: pkis:concept:precision-matrix
