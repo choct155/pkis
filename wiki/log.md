@@ -20252,3 +20252,12 @@
 ## [2026-06-11] committed | technique
 - Committed: g-computation → techniques/g-computation.md
 - IRI: pkis:technique:g-computation
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: two-stage-least-squares (id: 90e1e089-3468-4eef-b4f1-89d0cb0d74a2)
+- Title: Two-Stage Least Squares (2SLS)
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: two-stage-least-squares → concepts/two-stage-least-squares.md
+- IRI: pkis:concept:two-stage-least-squares
