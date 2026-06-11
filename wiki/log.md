@@ -18002,3 +18002,12 @@
 ## [2026-06-11] committed | technique
 - Committed: rao-blackwellization → techniques/rao-blackwellization.md
 - IRI: pkis:technique:rao-blackwellization
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: control-variates (id: d1581ff5-7c5c-416e-92bc-1d119092c560)
+- Title: Control Variates
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: control-variates → techniques/control-variates.md
+- IRI: pkis:technique:control-variates
