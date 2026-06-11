@@ -17093,3 +17093,12 @@
 ## [2026-06-11] committed | problem
 - Committed: statistical-efficiency-learning → problems/statistical-efficiency-learning.md
 - IRI: pkis:problem:statistical-efficiency-learning
+
+## [2026-06-11] staged | node-stub (framework)
+- Staged: four-tasks-probabilistic-ml (id: 760d0d8b-b3a9-4a6a-8016-0dc8fdaf0e6e)
+- Title: Four Tasks of Probabilistic ML: Prediction, Generation, Discovery, Control
+- needs_canonical_source: False
+
+## [2026-06-11] committed | framework
+- Committed: four-tasks-probabilistic-ml → frameworks/four-tasks-probabilistic-ml.md
+- IRI: pkis:framework:four-tasks-probabilistic-ml
