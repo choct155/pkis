@@ -13934,3 +13934,12 @@
 ## [2026-06-11] committed | result
 - Committed: l1-sparsity-soft-thresholding → results/l1-sparsity-soft-thresholding.md
 - IRI: pkis:result:l1-sparsity-soft-thresholding
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: multi-task-learning (id: 7e5f3493-64cc-4d3f-a8c5-28ccb1075b65)
+- Title: Multi-Task Learning
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: multi-task-learning → techniques/multi-task-learning.md
+- IRI: pkis:technique:multi-task-learning
