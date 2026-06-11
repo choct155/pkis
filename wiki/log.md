@@ -18983,3 +18983,12 @@
 ## [2026-06-11] committed | technique
 - Committed: made-masked-autoencoder → techniques/made-masked-autoencoder.md
 - IRI: pkis:technique:made-masked-autoencoder
+
+## [2026-06-11] staged | node-stub (framework)
+- Staged: pixelcnn (id: e2d56e6f-c0f0-4766-bed0-99730c954b09)
+- Title: PixelCNN (2-D Autoregressive Image Model)
+- needs_canonical_source: False
+
+## [2026-06-11] committed | framework
+- Committed: pixelcnn → frameworks/pixelcnn.md
+- IRI: pkis:framework:pixelcnn
