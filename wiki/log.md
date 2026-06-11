@@ -12260,3 +12260,12 @@
 ## [2026-06-11] committed | concept
 - Committed: von-mises-distribution → concepts/von-mises-distribution.md
 - IRI: pkis:concept:von-mises-distribution
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: wishart-distribution (id: fced3f0c-4dcc-4367-a3ac-b3f6fb5d4bfa)
+- Title: Wishart Distribution
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: wishart-distribution → concepts/wishart-distribution.md
+- IRI: pkis:concept:wishart-distribution
