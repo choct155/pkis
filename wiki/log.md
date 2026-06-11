@@ -12098,3 +12098,12 @@
 ## [2026-06-11] committed | technique
 - Committed: polynomial-curve-fitting → techniques/polynomial-curve-fitting.md
 - IRI: pkis:technique:polynomial-curve-fitting
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: probability-density-change-of-variables (id: e120cd84-5619-42ca-b344-aa94e1a17881)
+- Title: Probability Density Function and Change of Variables
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: probability-density-change-of-variables → concepts/probability-density-change-of-variables.md
+- IRI: pkis:concept:probability-density-change-of-variables
