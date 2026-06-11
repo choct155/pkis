@@ -17552,3 +17552,12 @@
 ## [2026-06-11] committed | technique
 - Committed: gumbel-softmax → techniques/gumbel-softmax.md
 - IRI: pkis:technique:gumbel-softmax
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: straight-through-estimator (id: 4bc233ce-8226-4522-9ec0-b51976910957)
+- Title: Straight-Through Estimator
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: straight-through-estimator → techniques/straight-through-estimator.md
+- IRI: pkis:technique:straight-through-estimator
