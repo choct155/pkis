@@ -16112,3 +16112,12 @@
 ## [2026-06-11] committed | technique
 - Committed: group-lasso → techniques/group-lasso.md
 - IRI: pkis:technique:group-lasso
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: shooting-algorithm (id: a0ebf0ab-7270-491a-ae94-d3e7b44b23d7)
+- Title: Shooting Algorithm (Coordinate Descent for Lasso)
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: shooting-algorithm → techniques/shooting-algorithm.md
+- IRI: pkis:technique:shooting-algorithm
