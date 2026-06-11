@@ -14186,3 +14186,12 @@
 ## [2026-06-11] committed | technique
 - Committed: backpropagation-through-time → techniques/backpropagation-through-time.md
 - IRI: pkis:technique:backpropagation-through-time
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: teacher-forcing (id: 3f119830-ede6-45b0-9c9f-fa7733ef0d25)
+- Title: Teacher Forcing
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: teacher-forcing → techniques/teacher-forcing.md
+- IRI: pkis:technique:teacher-forcing
