@@ -18956,3 +18956,12 @@
 ## [2026-06-11] committed | concept
 - Committed: deep-latent-variable-model → concepts/deep-latent-variable-model.md
 - IRI: pkis:concept:deep-latent-variable-model
+
+## [2026-06-11] staged | node-stub (framework)
+- Staged: autoregressive-model-arm (id: 0f36cd75-9c51-48e1-a22c-a843b53b92f9)
+- Title: Autoregressive Model (ARM)
+- needs_canonical_source: False
+
+## [2026-06-11] committed | framework
+- Committed: autoregressive-model-arm → frameworks/autoregressive-model-arm.md
+- IRI: pkis:framework:autoregressive-model-arm

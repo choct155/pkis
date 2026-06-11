@@ -1938,6 +1938,7 @@
 - [[government-debt-valuation-equation]] — FTPL: price level determined by ratio of nominal debt to expected present value of future surpluses (macroeconomics) (2026-05-20)
 
 ## Frameworks
+- [[autoregressive-model-arm]] — Autoregressive Model (ARM) (machine-learning, probabilistic-modeling, generative-models) (2026-06-11)
 - [[semisupervised-vae]] — Semisupervised VAE (M2 Model) (machine-learning, semi-supervised-learning) (2026-06-11)
 - [[multimodal-vae]] — Multimodal VAE (MVAE) (machine-learning, multimodal-learning) (2026-06-11)
 - [[vq-vae]] — VQ-VAE (Vector-Quantized VAE) (machine-learning, generative-models, representation-learning) (2026-06-11)
