@@ -13601,3 +13601,12 @@
 ## [2026-06-11] committed | technique
 - Committed: numerically-stable-softmax → techniques/numerically-stable-softmax.md
 - IRI: pkis:technique:numerically-stable-softmax
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: condition-number (id: 928324ee-3254-4a33-b915-4aa7e619edb6)
+- Title: Condition Number
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: condition-number → concepts/condition-number.md
+- IRI: pkis:concept:condition-number
