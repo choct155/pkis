@@ -290,6 +290,7 @@
 - [[liu-machine-unlearning-llm-2024]] — Rethinking Machine Unlearning for LLMs: post-training knowledge editing survey (deep-learning, ai-safety) (2026-05-20)
 
 ## Concepts
+- [[non-saturating-gan-loss]] — Non-Saturating GAN Loss (machine-learning, deep-learning, optimization) (2026-06-11)
 - [[density-ratio-estimation]] — Density Ratio Estimation (statistics, machine-learning) (2026-06-11)
 - [[mode-collapse]] — Mode Collapse (machine-learning, generative-modeling) (2026-06-11)
 - [[maximum-mean-discrepancy]] — Maximum Mean Discrepancy (machine-learning, statistics, kernel-methods) (2026-06-11)

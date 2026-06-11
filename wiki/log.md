@@ -19334,3 +19334,12 @@
 ## [2026-06-11] committed | technique
 - Committed: generative-adversarial-imitation-learning → techniques/generative-adversarial-imitation-learning.md
 - IRI: pkis:technique:generative-adversarial-imitation-learning
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: non-saturating-gan-loss (id: 00c8b946-effa-4841-a756-870236fdee6d)
+- Title: Non-Saturating GAN Loss
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: non-saturating-gan-loss → concepts/non-saturating-gan-loss.md
+- IRI: pkis:concept:non-saturating-gan-loss
