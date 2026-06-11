@@ -12692,3 +12692,12 @@
 ## [2026-06-11] committed | concept
 - Committed: hinge-loss-svm → concepts/hinge-loss-svm.md
 - IRI: pkis:concept:hinge-loss-svm
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: svm-dual-formulation (id: 5a051edc-94f5-469d-b4f9-7873b30d0777)
+- Title: SVM Dual Formulation
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: svm-dual-formulation → techniques/svm-dual-formulation.md
+- IRI: pkis:technique:svm-dual-formulation
