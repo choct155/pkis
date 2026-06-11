@@ -14528,3 +14528,12 @@
 ## [2026-06-11] committed | principle
 - Committed: slowness-principle → principles/slowness-principle.md
 - IRI: pkis:principle:slowness-principle
+
+## [2026-06-11] staged | node-stub (result)
+- Staged: ica-non-gaussian-identifiability (id: d7b65cb4-7b32-49c0-931a-09e1cd101c50)
+- Title: ICA Non-Gaussian Identifiability
+- needs_canonical_source: False
+
+## [2026-06-11] committed | result
+- Committed: ica-non-gaussian-identifiability → results/ica-non-gaussian-identifiability.md
+- IRI: pkis:result:ica-non-gaussian-identifiability
