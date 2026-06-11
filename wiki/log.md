@@ -18416,3 +18416,12 @@
 ## [2026-06-11] committed | concept
 - Committed: film-feature-wise-linear-modulation → concepts/film-feature-wise-linear-modulation.md
 - IRI: pkis:concept:film-feature-wise-linear-modulation
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: implicit-layer (id: fe65b560-d47e-480e-ab7a-cfa17ae2708d)
+- Title: Implicit Layer
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: implicit-layer → concepts/implicit-layer.md
+- IRI: pkis:concept:implicit-layer

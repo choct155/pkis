@@ -290,6 +290,7 @@
 - [[liu-machine-unlearning-llm-2024]] — Rethinking Machine Unlearning for LLMs: post-training knowledge editing survey (deep-learning, ai-safety) (2026-05-20)
 
 ## Concepts
+- [[implicit-layer]] — Implicit Layer (deep-learning, optimization) (2026-06-11)
 - [[film-feature-wise-linear-modulation]] — Feature-wise Linear Modulation (FiLM) (deep-learning, multimodal-learning) (2026-06-11)
 - [[autoencoder-dnn]] — Autoencoder (deep-learning, representation-learning, unsupervised-learning) (2026-06-11)
 - [[residual-skip-connection]] — Residual (Skip) Connection (deep-learning, neural-network-architecture) (2026-06-11)
