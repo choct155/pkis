@@ -19568,3 +19568,12 @@
 ## [2026-06-11] committed | concept
 - Committed: noisy-channel-spelling → concepts/noisy-channel-spelling.md
 - IRI: pkis:concept:noisy-channel-spelling
+
+## [2026-06-11] staged | node-stub (framework)
+- Staged: graph-learning-framework (id: f51854c0-2eb3-42f4-8d79-49353c9e64aa)
+- Title: Graph Learning (Latent Variable & Structure Learning)
+- needs_canonical_source: False
+
+## [2026-06-11] committed | framework
+- Committed: graph-learning-framework → frameworks/graph-learning-framework.md
+- IRI: pkis:framework:graph-learning-framework
