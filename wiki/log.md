@@ -12368,3 +12368,12 @@
 ## [2026-06-11] committed | concept
 - Committed: effective-number-of-parameters-gamma → concepts/effective-number-of-parameters-gamma.md
 - IRI: pkis:concept:effective-number-of-parameters-gamma
+
+## [2026-06-11] staged | node-stub (result)
+- Staged: bias-variance-decomposition (id: 5f7d8181-447c-4a40-af4a-1b86dd74d306)
+- Title: Bias-Variance Decomposition of Expected Squared Loss
+- needs_canonical_source: False
+
+## [2026-06-11] committed | result
+- Committed: bias-variance-decomposition → results/bias-variance-decomposition.md
+- IRI: pkis:result:bias-variance-decomposition
