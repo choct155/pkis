@@ -14879,3 +14879,12 @@
 ## [2026-06-11] committed | concept
 - Committed: energy-barrier-mcmc → concepts/energy-barrier-mcmc.md
 - IRI: pkis:concept:energy-barrier-mcmc
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: temperature-ebm (id: 3cc28316-c153-402d-8cad-4f39755ee86b)
+- Title: Temperature in Energy-Based Models
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: temperature-ebm → concepts/temperature-ebm.md
+- IRI: pkis:concept:temperature-ebm
