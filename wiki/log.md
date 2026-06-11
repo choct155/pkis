@@ -18524,3 +18524,12 @@
 ## [2026-06-11] committed | concept
 - Committed: mode-connectivity → concepts/mode-connectivity.md
 - IRI: pkis:concept:mode-connectivity
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: effective-dimensionality-bnn (id: 052e0c71-16b6-4e37-ab42-6bc9ca9e7eac)
+- Title: Effective Dimensionality of a Neural Network
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: effective-dimensionality-bnn → concepts/effective-dimensionality-bnn.md
+- IRI: pkis:concept:effective-dimensionality-bnn

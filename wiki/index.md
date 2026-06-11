@@ -290,6 +290,7 @@
 - [[liu-machine-unlearning-llm-2024]] — Rethinking Machine Unlearning for LLMs: post-training knowledge editing survey (deep-learning, ai-safety) (2026-05-20)
 
 ## Concepts
+- [[effective-dimensionality-bnn]] — Effective Dimensionality of a Neural Network (deep-learning, bayesian-inference, model-complexity) (2026-06-11)
 - [[mode-connectivity]] — Mode Connectivity (deep-learning, optimisation) (2026-06-11)
 - [[tempered-posterior]] — Tempered / Cold Posterior (bayesian-inference, deep-learning) (2026-06-11)
 - [[bayesian-deep-learning]] — Bayesian Deep Learning (BDL) (deep-learning, bayesian-inference, uncertainty-quantification) (2026-06-11)
