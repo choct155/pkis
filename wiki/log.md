@@ -13547,3 +13547,12 @@
 ## [2026-06-11] committed | concept
 - Committed: laplace-distribution → concepts/laplace-distribution.md
 - IRI: pkis:concept:laplace-distribution
+
+## [2026-06-11] staged | node-stub (result)
+- Staged: change-of-variables-density (id: 824fbb43-0a4d-480b-a6fb-1e2ba3fcf043)
+- Title: Change-of-Variables Formula for Probability Densities
+- needs_canonical_source: False
+
+## [2026-06-11] committed | result
+- Committed: change-of-variables-density → results/change-of-variables-density.md
+- IRI: pkis:result:change-of-variables-density
