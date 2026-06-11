@@ -19991,3 +19991,12 @@
 ## [2026-06-11] committed | technique
 - Committed: minimum-bayes-risk-decoding → techniques/minimum-bayes-risk-decoding.md
 - IRI: pkis:technique:minimum-bayes-risk-decoding
+
+## [2026-06-11] staged | node-stub (framework)
+- Staged: influence-diagram (id: 95e7dd03-c138-4dac-b289-b9756f00e660)
+- Title: Influence Diagram (Decision Diagram)
+- needs_canonical_source: False
+
+## [2026-06-11] committed | framework
+- Committed: influence-diagram → frameworks/influence-diagram.md
+- IRI: pkis:framework:influence-diagram
