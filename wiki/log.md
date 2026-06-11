@@ -14213,3 +14213,12 @@
 ## [2026-06-11] committed | framework
 - Committed: long-short-term-memory → frameworks/long-short-term-memory.md
 - IRI: pkis:framework:long-short-term-memory
+
+## [2026-06-11] staged | node-stub (framework)
+- Staged: gated-recurrent-unit (id: 61b38b88-fc83-48c9-b439-37b836a0495b)
+- Title: Gated Recurrent Unit (GRU)
+- needs_canonical_source: False
+
+## [2026-06-11] committed | framework
+- Committed: gated-recurrent-unit → frameworks/gated-recurrent-unit.md
+- IRI: pkis:framework:gated-recurrent-unit
