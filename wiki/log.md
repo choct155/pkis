@@ -12143,3 +12143,12 @@
 ## [2026-06-11] committed | concept
 - Committed: decision-regions-and-boundaries → concepts/decision-regions-and-boundaries.md
 - IRI: pkis:concept:decision-regions-and-boundaries
+
+## [2026-06-11] staged | node-stub (framework)
+- Staged: generative-discriminative-discriminant-taxonomy (id: 130b244d-bfaf-42a1-bee0-c07a3663e09a)
+- Title: Generative vs Discriminative vs Discriminant-Function Approaches
+- needs_canonical_source: False
+
+## [2026-06-11] committed | framework
+- Committed: generative-discriminative-discriminant-taxonomy → frameworks/generative-discriminative-discriminant-taxonomy.md
+- IRI: pkis:framework:generative-discriminative-discriminant-taxonomy
