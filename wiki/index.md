@@ -779,6 +779,7 @@
 - [[market-vs-hierarchy]] — Coase/Williamson: transactions governed by price signals (markets) vs. managerial direction (firms) (corporate-finance) (2026-05-20)
 
 ## Techniques
+- [[support-vector-machine]] — Support Vector Machine (SVM) (machine-learning, statistical-learning-theory) (2026-06-11)
 - [[generative-model-kernels]] — Generative-Model Kernels (machine-learning, kernel-methods, probabilistic-modeling) (2026-06-11)
 - [[ard-gaussian-process]] — Automatic Relevance Determination (ARD) in Gaussian Processes (machine-learning, gaussian-processes, feature-selection) (2026-06-11)
 - [[gp-classification-laplace]] — Gaussian Process Classification via Laplace Approximation (machine-learning, bayesian-statistics, kernel-methods) (2026-06-11)

@@ -12665,3 +12665,12 @@
 ## [2026-06-11] committed | technique
 - Committed: generative-model-kernels → techniques/generative-model-kernels.md
 - IRI: pkis:technique:generative-model-kernels
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: support-vector-machine (id: 46b7c3db-8b9e-4f47-b1ab-2f5e182e6275)
+- Title: Support Vector Machine (SVM)
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: support-vector-machine → techniques/support-vector-machine.md
+- IRI: pkis:technique:support-vector-machine
