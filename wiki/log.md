@@ -17372,3 +17372,12 @@
 ## [2026-06-11] committed | concept
 - Committed: gaussian-bayes-net → concepts/gaussian-bayes-net.md
 - IRI: pkis:concept:gaussian-bayes-net
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: sigmoid-belief-net (id: 350c6f24-41cf-4bd9-92ac-de4fef9c2c39)
+- Title: Sigmoid Belief Net
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: sigmoid-belief-net → concepts/sigmoid-belief-net.md
+- IRI: pkis:concept:sigmoid-belief-net
