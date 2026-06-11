@@ -1002,6 +1002,7 @@
 - [[market-vs-hierarchy]] — Coase/Williamson: transactions governed by price signals (markets) vs. managerial direction (firms) (corporate-finance) (2026-05-20)
 
 ## Techniques
+- [[deep-graph-infomax]] — Deep Graph Infomax (DGI) (machine-learning, graph-learning, self-supervised-learning) (2026-06-11)
 - [[label-propagation-graph]] — Label Propagation on Graphs (machine-learning, graph-learning, semi-supervised-learning) (2026-06-11)
 - [[variational-graph-auto-encoder]] — Variational Graph Auto-Encoder (VGAE) (machine-learning, graph-learning, generative-models) (2026-06-11)
 - [[graph-attention-network]] — Graph Attention Network (GAT) (machine-learning, graph-learning, deep-learning) (2026-06-11)

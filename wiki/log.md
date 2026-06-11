@@ -17039,3 +17039,12 @@
 ## [2026-06-11] committed | concept
 - Committed: graph-laplacian → concepts/graph-laplacian.md
 - IRI: pkis:concept:graph-laplacian
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: deep-graph-infomax (id: ff3014fa-be28-4ee6-bae4-7ff0d3304913)
+- Title: Deep Graph Infomax (DGI)
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: deep-graph-infomax → techniques/deep-graph-infomax.md
+- IRI: pkis:technique:deep-graph-infomax
