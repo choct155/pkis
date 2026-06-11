@@ -19145,3 +19145,12 @@
 ## [2026-06-11] committed | concept
 - Committed: stein-score-function → concepts/stein-score-function.md
 - IRI: pkis:concept:stein-score-function
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: product-of-experts (id: 07689c71-3d34-482e-8389-14460344010e)
+- Title: Product of Experts (PoE)
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: product-of-experts → concepts/product-of-experts.md
+- IRI: pkis:concept:product-of-experts
