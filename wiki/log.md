@@ -18911,3 +18911,12 @@
 ## [2026-06-11] committed | technique
 - Committed: free-bits → techniques/free-bits.md
 - IRI: pkis:technique:free-bits
+
+## [2026-06-11] staged | node-stub (framework)
+- Staged: hierarchical-vae (id: a8067d47-a584-4175-8bb9-f45bbb7c411e)
+- Title: Hierarchical VAE (HVAE)
+- needs_canonical_source: False
+
+## [2026-06-11] committed | framework
+- Committed: hierarchical-vae → frameworks/hierarchical-vae.md
+- IRI: pkis:framework:hierarchical-vae
