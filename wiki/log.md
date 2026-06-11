@@ -15194,3 +15194,12 @@
 ## [2026-06-11] committed | framework
 - Committed: probabilistic-ml-framework → frameworks/probabilistic-ml-framework.md
 - IRI: pkis:framework:probabilistic-ml-framework
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: epistemic-vs-aleatoric-uncertainty (id: 2370926a-21b3-4943-b535-ca162539eab6)
+- Title: Epistemic vs Aleatoric Uncertainty
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: epistemic-vs-aleatoric-uncertainty → concepts/epistemic-vs-aleatoric-uncertainty.md
+- IRI: pkis:concept:epistemic-vs-aleatoric-uncertainty
