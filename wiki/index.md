@@ -290,6 +290,7 @@
 - [[liu-machine-unlearning-llm-2024]] — Rethinking Machine Unlearning for LLMs: post-training knowledge editing survey (deep-learning, ai-safety) (2026-05-20)
 
 ## Concepts
+- [[value-of-perfect-information]] — Value of Perfect Information (VPI) (decision theory, economics, AI) (2026-06-11)
 - [[posterior-risk]] — Posterior Risk (Posterior Expected Loss) (statistics, decision theory) (2026-06-11)
 - [[concept-bottleneck-model]] — Concept Bottleneck Model (machine-learning, interpretability) (2026-06-11)
 - [[lime-local-surrogate]] — Local Interpretable Model-Agnostic Explanations (LIME) (machine-learning, interpretability) (2026-06-11)

@@ -20000,3 +20000,12 @@
 ## [2026-06-11] committed | framework
 - Committed: influence-diagram → frameworks/influence-diagram.md
 - IRI: pkis:framework:influence-diagram
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: value-of-perfect-information (id: 19e16937-7953-4982-b940-454a80fd0526)
+- Title: Value of Perfect Information (VPI)
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: value-of-perfect-information → concepts/value-of-perfect-information.md
+- IRI: pkis:concept:value-of-perfect-information
