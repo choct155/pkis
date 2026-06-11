@@ -16823,3 +16823,12 @@
 ## [2026-06-11] committed | concept
 - Committed: rand-index → concepts/rand-index.md
 - IRI: pkis:concept:rand-index
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: normalized-mutual-information-clustering (id: 588f081f-b260-49ed-83e4-cb43524e5054)
+- Title: Normalized Mutual Information for Clustering
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: normalized-mutual-information-clustering → concepts/normalized-mutual-information-clustering.md
+- IRI: pkis:concept:normalized-mutual-information-clustering
