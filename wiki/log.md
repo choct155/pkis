@@ -18047,3 +18047,12 @@
 ## [2026-06-11] committed | technique
 - Committed: hamiltonian-monte-carlo → techniques/hamiltonian-monte-carlo.md
 - IRI: pkis:technique:hamiltonian-monte-carlo
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: langevin-monte-carlo (id: bd241e93-ffa4-47fe-81bd-12754a52f0db)
+- Title: Langevin Monte Carlo (MALA)
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: langevin-monte-carlo → techniques/langevin-monte-carlo.md
+- IRI: pkis:technique:langevin-monte-carlo
