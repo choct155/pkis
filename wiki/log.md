@@ -18776,3 +18776,12 @@
 ## [2026-06-11] committed | technique
 - Committed: latent-space-arithmetic → techniques/latent-space-arithmetic.md
 - IRI: pkis:technique:latent-space-arithmetic
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: inception-score (id: 84b12227-ab6d-4969-abe2-4640d8898c78)
+- Title: Inception Score
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: inception-score → concepts/inception-score.md
+- IRI: pkis:concept:inception-score
