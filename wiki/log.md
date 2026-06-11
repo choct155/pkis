@@ -17111,3 +17111,12 @@
 ## [2026-06-11] committed | concept
 - Committed: latent-structure-discovery → concepts/latent-structure-discovery.md
 - IRI: pkis:concept:latent-structure-discovery
+
+## [2026-06-11] staged | node-stub (principle)
+- Staged: world-model-primacy (id: 29c89b4b-6135-47a1-ab60-8092e60ec1b3)
+- Title: World-Model Primacy
+- needs_canonical_source: False
+
+## [2026-06-11] committed | principle
+- Committed: world-model-primacy → principles/world-model-primacy.md
+- IRI: pkis:principle:world-model-primacy
