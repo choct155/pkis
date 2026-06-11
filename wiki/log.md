@@ -18506,3 +18506,12 @@
 ## [2026-06-11] committed | technique
 - Committed: bayes-by-backprop → techniques/bayes-by-backprop.md
 - IRI: pkis:technique:bayes-by-backprop
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: tempered-posterior (id: bcfb5c22-fede-4a8c-bdc6-7176e01d1f6a)
+- Title: Tempered / Cold Posterior
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: tempered-posterior → concepts/tempered-posterior.md
+- IRI: pkis:concept:tempered-posterior
