@@ -14906,3 +14906,12 @@
 ## [2026-06-11] committed | concept
 - Committed: positive-negative-phase-learning → concepts/positive-negative-phase-learning.md
 - IRI: pkis:concept:positive-negative-phase-learning
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: stochastic-maximum-likelihood-pcd (id: d04dcb01-592d-4276-a9d1-280f61bf2db2)
+- Title: Stochastic Maximum Likelihood / Persistent Contrastive Divergence
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: stochastic-maximum-likelihood-pcd → techniques/stochastic-maximum-likelihood-pcd.md
+- IRI: pkis:technique:stochastic-maximum-likelihood-pcd
