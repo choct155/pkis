@@ -15437,3 +15437,12 @@
 ## [2026-06-11] committed | technique
 - Committed: validation-set-method → techniques/validation-set-method.md
 - IRI: pkis:technique:validation-set-method
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: surrogate-loss (id: 63072041-d93e-444b-b234-eead7f3d01e5)
+- Title: Surrogate Loss Function
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: surrogate-loss → concepts/surrogate-loss.md
+- IRI: pkis:concept:surrogate-loss
