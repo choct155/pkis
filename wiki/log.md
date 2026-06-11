@@ -19973,3 +19973,12 @@
 ## [2026-06-11] committed | concept
 - Committed: posterior-risk → concepts/posterior-risk.md
 - IRI: pkis:concept:posterior-risk
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: mpm-estimate (id: adbf74ce-2461-44fe-9f9a-b79e8990ef9b)
+- Title: Maximizer of Posterior Marginals (MPM Estimate)
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: mpm-estimate → techniques/mpm-estimate.md
+- IRI: pkis:technique:mpm-estimate
