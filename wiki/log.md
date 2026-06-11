@@ -17201,3 +17201,12 @@
 ## [2026-06-11] committed | concept
 - Committed: chi-squared-distribution → concepts/chi-squared-distribution.md
 - IRI: pkis:concept:chi-squared-distribution
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: inverse-wishart-distribution (id: 68b7dd1b-e6da-463a-a2cf-ccb7a882608f)
+- Title: Inverse Wishart Distribution
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: inverse-wishart-distribution → concepts/inverse-wishart-distribution.md
+- IRI: pkis:concept:inverse-wishart-distribution
