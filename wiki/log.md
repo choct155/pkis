@@ -17444,3 +17444,12 @@
 ## [2026-06-11] committed | result
 - Committed: data-processing-inequality-kl → results/data-processing-inequality-kl.md
 - IRI: pkis:result:data-processing-inequality-kl
+
+## [2026-06-11] staged | node-stub (result)
+- Staged: kl-as-bregman-divergence (id: 01b5f3bf-c7c6-4862-a04b-bd13e76242cd)
+- Title: KL Divergence as Bregman Divergence
+- needs_canonical_source: False
+
+## [2026-06-11] committed | result
+- Committed: kl-as-bregman-divergence → results/kl-as-bregman-divergence.md
+- IRI: pkis:result:kl-as-bregman-divergence
