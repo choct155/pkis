@@ -18020,3 +18020,12 @@
 ## [2026-06-11] committed | technique
 - Committed: antithetic-sampling → techniques/antithetic-sampling.md
 - IRI: pkis:technique:antithetic-sampling
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: quasi-monte-carlo (id: d0d886ab-9c8f-4243-b1f6-1097e99e7a89)
+- Title: Quasi-Monte Carlo (QMC)
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: quasi-monte-carlo → techniques/quasi-monte-carlo.md
+- IRI: pkis:technique:quasi-monte-carlo
