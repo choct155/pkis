@@ -19487,3 +19487,12 @@
 ## [2026-06-11] committed | result
 - Committed: student-t-as-gaussian-scale-mixture → results/student-t-as-gaussian-scale-mixture.md
 - IRI: pkis:result:student-t-as-gaussian-scale-mixture
+
+## [2026-06-11] staged | node-stub (framework)
+- Staged: state-space-model (id: 87f160fe-e1ee-47bc-8755-9e2876b4198a)
+- Title: State-Space Model (SSM)
+- needs_canonical_source: False
+
+## [2026-06-11] committed | framework
+- Committed: state-space-model → frameworks/state-space-model.md
+- IRI: pkis:framework:state-space-model
