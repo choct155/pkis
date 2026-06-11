@@ -15554,3 +15554,12 @@
 ## [2026-06-11] committed | concept
 - Committed: minimum-description-length → concepts/minimum-description-length.md
 - IRI: pkis:concept:minimum-description-length
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: region-of-practical-equivalence (id: 23921980-f4af-444c-b39e-8c7c47a5bfcf)
+- Title: Region of Practical Equivalence (ROPE)
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: region-of-practical-equivalence → concepts/region-of-practical-equivalence.md
+- IRI: pkis:concept:region-of-practical-equivalence
