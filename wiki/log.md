@@ -18470,3 +18470,12 @@
 ## [2026-06-11] committed | technique
 - Committed: swa-swag → techniques/swa-swag.md
 - IRI: pkis:technique:swa-swag
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: deep-ensembles (id: 62c49a0f-2b65-4f04-8476-0f384ad94ab8)
+- Title: Deep Ensembles
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: deep-ensembles → techniques/deep-ensembles.md
+- IRI: pkis:technique:deep-ensembles
