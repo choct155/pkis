@@ -18389,3 +18389,12 @@
 ## [2026-06-11] committed | technique
 - Committed: layer-normalization → techniques/layer-normalization.md
 - IRI: pkis:technique:layer-normalization
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: multi-head-attention (id: ea5f7883-9e00-4a59-8f88-d9ce1088a1fe)
+- Title: Multi-Head Attention (MHA)
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: multi-head-attention → techniques/multi-head-attention.md
+- IRI: pkis:technique:multi-head-attention
