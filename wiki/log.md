@@ -19946,3 +19946,12 @@
 ## [2026-06-11] committed | principle
 - Committed: no-universal-interpretability-metric → principles/no-universal-interpretability-metric.md
 - IRI: pkis:principle:no-universal-interpretability-metric
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: explanation-sanity-check (id: e6938433-80f3-4b04-89d0-9897402baeec)
+- Title: Explanation Property Sanity Check
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: explanation-sanity-check → techniques/explanation-sanity-check.md
+- IRI: pkis:technique:explanation-sanity-check
