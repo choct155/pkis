@@ -17363,3 +17363,12 @@
 ## [2026-06-11] committed | concept
 - Committed: conditional-probability-table → concepts/conditional-probability-table.md
 - IRI: pkis:concept:conditional-probability-table
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: gaussian-bayes-net (id: 3b0a994d-9ab3-4799-a934-4c706273daa5)
+- Title: Gaussian Bayes Net (Directed Gaussian Graphical Model)
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: gaussian-bayes-net → concepts/gaussian-bayes-net.md
+- IRI: pkis:concept:gaussian-bayes-net

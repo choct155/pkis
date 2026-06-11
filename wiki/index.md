@@ -290,6 +290,7 @@
 - [[liu-machine-unlearning-llm-2024]] — Rethinking Machine Unlearning for LLMs: post-training knowledge editing survey (deep-learning, ai-safety) (2026-05-20)
 
 ## Concepts
+- [[gaussian-bayes-net]] — Gaussian Bayes Net (Directed Gaussian Graphical Model) (probabilistic-graphical-models, statistics) (2026-06-11)
 - [[conditional-probability-table]] — Conditional Probability Table (CPT) (probabilistic-graphical-models, probability-theory) (2026-06-11)
 - [[markov-blanket-dpgm]] — Markov Blanket in Directed Graphical Models (probabilistic-graphical-models) (2026-06-11)
 - [[ordered-markov-property]] — Ordered Markov Property (DAGs) (probabilistic-graphical-models, probability-theory) (2026-06-11)
