@@ -19154,3 +19154,12 @@
 ## [2026-06-11] committed | concept
 - Committed: product-of-experts → concepts/product-of-experts.md
 - IRI: pkis:concept:product-of-experts
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: classifier-free-guidance (id: d3306acd-a282-4aa4-a350-ea7a164c3bc1)
+- Title: Classifier-Free Guidance
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: classifier-free-guidance → techniques/classifier-free-guidance.md
+- IRI: pkis:technique:classifier-free-guidance
