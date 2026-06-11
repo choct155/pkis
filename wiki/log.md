@@ -16850,3 +16850,12 @@
 ## [2026-06-11] committed | concept
 - Committed: cluster-purity → concepts/cluster-purity.md
 - IRI: pkis:concept:cluster-purity
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: vector-quantization-clustering (id: fa959244-aac2-40c5-9432-fdc625a335ef)
+- Title: Vector Quantization
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: vector-quantization-clustering → concepts/vector-quantization-clustering.md
+- IRI: pkis:concept:vector-quantization-clustering
