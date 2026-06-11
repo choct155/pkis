@@ -14672,3 +14672,12 @@
 ## [2026-06-11] committed | concept
 - Committed: stochastic-encoder-decoder → concepts/stochastic-encoder-decoder.md
 - IRI: pkis:concept:stochastic-encoder-decoder
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: greedy-layer-wise-unsupervised-pretraining (id: 233bb1da-efc1-452f-bcf0-37e841d8e92d)
+- Title: Greedy Layer-Wise Unsupervised Pretraining
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: greedy-layer-wise-unsupervised-pretraining → techniques/greedy-layer-wise-unsupervised-pretraining.md
+- IRI: pkis:technique:greedy-layer-wise-unsupervised-pretraining
