@@ -15401,3 +15401,12 @@
 ## [2026-06-11] committed | technique
 - Committed: map-estimation → techniques/map-estimation.md
 - IRI: pkis:technique:map-estimation
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: exponentially-weighted-moving-average (id: 7db2e37c-9ec7-45a6-80ad-300566c586a3)
+- Title: Exponentially Weighted Moving Average (EWMA)
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: exponentially-weighted-moving-average → techniques/exponentially-weighted-moving-average.md
+- IRI: pkis:technique:exponentially-weighted-moving-average
