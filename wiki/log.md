@@ -17966,3 +17966,12 @@
 ## [2026-06-11] committed | technique
 - Committed: monte-carlo-integration → techniques/monte-carlo-integration.md
 - IRI: pkis:technique:monte-carlo-integration
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: inverse-cdf-sampling (id: 5cc17ce6-80ea-418d-985e-960ef38debf8)
+- Title: Inverse CDF Sampling (Inverse Probability Transform)
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: inverse-cdf-sampling → techniques/inverse-cdf-sampling.md
+- IRI: pkis:technique:inverse-cdf-sampling
