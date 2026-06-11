@@ -18623,3 +18623,12 @@
 ## [2026-06-11] committed | concept
 - Committed: cox-process → concepts/cox-process.md
 - IRI: pkis:concept:cox-process
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: covariate-shift (id: 3a92fde4-bdbe-4b7f-bb16-424ec433bb54)
+- Title: Covariate Shift
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: covariate-shift → concepts/covariate-shift.md
+- IRI: pkis:concept:covariate-shift
