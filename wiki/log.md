@@ -16634,3 +16634,12 @@
 ## [2026-06-11] committed | technique
 - Committed: simclr → techniques/simclr.md
 - IRI: pkis:technique:simclr
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: clip (id: 64045e36-a9be-479c-8b13-c878c0827f53)
+- Title: CLIP (Contrastive Language–Image Pre-training)
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: clip → techniques/clip.md
+- IRI: pkis:technique:clip
