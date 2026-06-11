@@ -15158,3 +15158,12 @@
 ## [2026-06-11] committed | concept
 - Committed: autoregressive-generative-network → concepts/autoregressive-generative-network.md
 - IRI: pkis:concept:autoregressive-generative-network
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: sigmoid-belief-network (id: e2bd4b52-690f-4ee6-9e6d-aee0d425368c)
+- Title: Sigmoid Belief Network
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: sigmoid-belief-network → concepts/sigmoid-belief-network.md
+- IRI: pkis:concept:sigmoid-belief-network
