@@ -18920,3 +18920,12 @@
 ## [2026-06-11] committed | framework
 - Committed: hierarchical-vae → frameworks/hierarchical-vae.md
 - IRI: pkis:framework:hierarchical-vae
+
+## [2026-06-11] staged | node-stub (framework)
+- Staged: vq-vae (id: e9d9479c-df83-489d-9916-06d21de0a98a)
+- Title: VQ-VAE (Vector-Quantized VAE)
+- needs_canonical_source: False
+
+## [2026-06-11] committed | framework
+- Committed: vq-vae → frameworks/vq-vae.md
+- IRI: pkis:framework:vq-vae
