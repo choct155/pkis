@@ -12134,3 +12134,12 @@
 ## [2026-06-11] committed | technique
 - Committed: bayesian-predictive-marginalisation → techniques/bayesian-predictive-marginalisation.md
 - IRI: pkis:technique:bayesian-predictive-marginalisation
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: decision-regions-and-boundaries (id: c67dcde1-5954-4637-8856-2982d596edaa)
+- Title: Decision Regions and Decision Boundaries
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: decision-regions-and-boundaries → concepts/decision-regions-and-boundaries.md
+- IRI: pkis:concept:decision-regions-and-boundaries

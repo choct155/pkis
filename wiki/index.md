@@ -290,6 +290,7 @@
 - [[liu-machine-unlearning-llm-2024]] — Rethinking Machine Unlearning for LLMs: post-training knowledge editing survey (deep-learning, ai-safety) (2026-05-20)
 
 ## Concepts
+- [[decision-regions-and-boundaries]] — Decision Regions and Decision Boundaries (machine-learning, statistics, pattern-recognition) (2026-06-11)
 - [[prior-likelihood-posterior]] — Prior, Likelihood, and Posterior in Bayesian Inference (statistics, machine-learning, probability-theory) (2026-06-11)
 - [[likelihood-function]] — Likelihood Function and Maximum Likelihood Estimation (statistics, machine-learning) (2026-06-11)
 - [[probability-density-change-of-variables]] — Probability Density Function and Change of Variables (probability-theory, statistics) (2026-06-11)
