@@ -20072,3 +20072,12 @@
 ## [2026-06-11] committed | technique
 - Committed: trust-region-policy-optimization → techniques/trust-region-policy-optimization.md
 - IRI: pkis:technique:trust-region-policy-optimization
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: proximal-policy-optimization (id: 85e780fd-8143-4437-bdad-ba3da5de1297)
+- Title: Proximal Policy Optimization (PPO)
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: proximal-policy-optimization → techniques/proximal-policy-optimization.md
+- IRI: pkis:technique:proximal-policy-optimization
