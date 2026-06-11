@@ -18065,3 +18065,12 @@
 ## [2026-06-11] committed | technique
 - Committed: collapsed-gibbs-sampler → techniques/collapsed-gibbs-sampler.md
 - IRI: pkis:technique:collapsed-gibbs-sampler
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: swendsen-wang (id: 93bc3e9c-1094-4bb2-b664-96685b8a3416)
+- Title: Swendsen-Wang Algorithm
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: swendsen-wang → techniques/swendsen-wang.md
+- IRI: pkis:technique:swendsen-wang
