@@ -15050,3 +15050,12 @@
 ## [2026-06-11] committed | technique
 - Committed: learned-approximate-inference → techniques/learned-approximate-inference.md
 - IRI: pkis:technique:learned-approximate-inference
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: mean-field-recurrent-network-connection (id: 4bf5b615-b664-415a-966c-f5a3c3d70595)
+- Title: Mean Field Fixed-Point Equations as Recurrent Networks
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: mean-field-recurrent-network-connection → concepts/mean-field-recurrent-network-connection.md
+- IRI: pkis:concept:mean-field-recurrent-network-connection
