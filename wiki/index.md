@@ -290,6 +290,7 @@
 - [[liu-machine-unlearning-llm-2024]] — Rethinking Machine Unlearning for LLMs: post-training knowledge editing survey (deep-learning, ai-safety) (2026-05-20)
 
 ## Concepts
+- [[probability-space]] — Probability Space (probability-theory, measure-theory) (2026-06-11)
 - [[parsimony-in-representation-learning]] — Parsimony in Representation Learning (machine-learning, statistics, information-theory) (2026-06-11)
 - [[latent-structure-discovery]] — Latent Structure Discovery (machine-learning, unsupervised-learning, probabilistic-modelling) (2026-06-11)
 - [[data-generating-process]] — Data-Generating Process (DGP) (statistics, machine-learning, causal-inference) (2026-06-11)

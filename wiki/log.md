@@ -17129,3 +17129,12 @@
 ## [2026-06-11] committed | concept
 - Committed: parsimony-in-representation-learning → concepts/parsimony-in-representation-learning.md
 - IRI: pkis:concept:parsimony-in-representation-learning
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: probability-space (id: 7226a9fe-ac0d-41c8-b9dc-e1e9379437a1)
+- Title: Probability Space
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: probability-space → concepts/probability-space.md
+- IRI: pkis:concept:probability-space
