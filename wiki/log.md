@@ -19982,3 +19982,12 @@
 ## [2026-06-11] committed | technique
 - Committed: mpm-estimate → techniques/mpm-estimate.md
 - IRI: pkis:technique:mpm-estimate
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: minimum-bayes-risk-decoding (id: 94cebd23-8f4c-4421-b7d5-c588471856c9)
+- Title: Minimum Bayes Risk (MBR) Decoding
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: minimum-bayes-risk-decoding → techniques/minimum-bayes-risk-decoding.md
+- IRI: pkis:technique:minimum-bayes-risk-decoding

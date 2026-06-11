@@ -1145,6 +1145,7 @@
 - [[market-vs-hierarchy]] — Coase/Williamson: transactions governed by price signals (markets) vs. managerial direction (firms) (corporate-finance) (2026-05-20)
 
 ## Techniques
+- [[minimum-bayes-risk-decoding]] — Minimum Bayes Risk (MBR) Decoding (machine learning, natural language processing) (2026-06-11)
 - [[mpm-estimate]] — Maximizer of Posterior Marginals (MPM Estimate) (statistics, machine learning) (2026-06-11)
 - [[explanation-sanity-check]] — Explanation Property Sanity Check (machine-learning, interpretability) (2026-06-11)
 - [[byol]] — BYOL (Bootstrap Your Own Latents) (machine-learning, self-supervised-learning, computer-vision) (2026-06-11)
