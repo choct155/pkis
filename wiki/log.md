@@ -14429,3 +14429,12 @@
 ## [2026-06-11] committed | technique
 - Committed: hierarchical-softmax → techniques/hierarchical-softmax.md
 - IRI: pkis:technique:hierarchical-softmax
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: noise-contrastive-estimation (id: 979f1b86-3a4a-4e3b-b240-22e8dd551718)
+- Title: Noise-Contrastive Estimation (NCE)
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: noise-contrastive-estimation → techniques/noise-contrastive-estimation.md
+- IRI: pkis:technique:noise-contrastive-estimation

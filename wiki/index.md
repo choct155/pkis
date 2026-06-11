@@ -880,6 +880,7 @@
 - [[market-vs-hierarchy]] — Coase/Williamson: transactions governed by price signals (markets) vs. managerial direction (firms) (corporate-finance) (2026-05-20)
 
 ## Techniques
+- [[noise-contrastive-estimation]] — Noise-Contrastive Estimation (NCE) (statistics, deep-learning, NLP) (2026-06-11)
 - [[hierarchical-softmax]] — Hierarchical Softmax (NLP, deep-learning, computational-efficiency) (2026-06-11)
 - [[attention-mechanism]] — Attention Mechanism (Soft Alignment) (deep-learning, NLP, sequence-modelling) (2026-06-11)
 - [[local-contrast-normalization]] — Local Contrast Normalization (LCN) (computer-vision, deep-learning, preprocessing) (2026-06-11)
