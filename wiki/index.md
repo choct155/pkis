@@ -1134,6 +1134,7 @@
 - [[market-vs-hierarchy]] — Coase/Williamson: transactions governed by price signals (markets) vs. managerial direction (firms) (corporate-finance) (2026-05-20)
 
 ## Techniques
+- [[representational-similarity-analysis]] — Representational Similarity Analysis (RSA) (machine-learning, neuroscience, representation-learning) (2026-06-11)
 - [[centered-kernel-alignment]] — Centered Kernel Alignment (CKA) (machine-learning, representation-learning, linear-algebra) (2026-06-11)
 - [[stick-breaking-construction]] — Stick-Breaking Construction (statistics, machine-learning) (2026-06-11)
 - [[constraint-based-structure-learning]] — Constraint-Based Structure Learning (PC Algorithm) (causal-inference, statistics, machine-learning) (2026-06-11)

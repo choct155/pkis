@@ -19748,3 +19748,12 @@
 ## [2026-06-11] committed | technique
 - Committed: centered-kernel-alignment → techniques/centered-kernel-alignment.md
 - IRI: pkis:technique:centered-kernel-alignment
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: representational-similarity-analysis (id: b138fc2e-9591-4568-9d52-7822a6074259)
+- Title: Representational Similarity Analysis (RSA)
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: representational-similarity-analysis → techniques/representational-similarity-analysis.md
+- IRI: pkis:technique:representational-similarity-analysis
