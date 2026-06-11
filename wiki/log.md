@@ -17543,3 +17543,12 @@
 ## [2026-06-11] committed | technique
 - Committed: reparameterization-gradient → techniques/reparameterization-gradient.md
 - IRI: pkis:technique:reparameterization-gradient
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: gumbel-softmax (id: 47a8749d-a375-4435-9571-f3cfe33bce57)
+- Title: Gumbel-Softmax (Concrete Distribution)
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: gumbel-softmax → techniques/gumbel-softmax.md
+- IRI: pkis:technique:gumbel-softmax

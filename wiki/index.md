@@ -1035,6 +1035,7 @@
 - [[market-vs-hierarchy]] — Coase/Williamson: transactions governed by price signals (markets) vs. managerial direction (firms) (corporate-finance) (2026-05-20)
 
 ## Techniques
+- [[gumbel-softmax]] — Gumbel-Softmax (Concrete Distribution) (machine-learning, probabilistic-modeling) (2026-06-11)
 - [[reparameterization-gradient]] — Reparameterization Gradient (Pathwise Derivative) (machine-learning, statistics) (2026-06-11)
 - [[reverse-mode-ad]] — Reverse-Mode Automatic Differentiation (Backpropagation) (machine-learning, numerical-methods) (2026-06-11)
 - [[forward-mode-ad]] — Forward-Mode Automatic Differentiation (machine-learning, numerical-methods) (2026-06-11)
