@@ -16094,3 +16094,12 @@
 ## [2026-06-11] committed | concept
 - Committed: soft-thresholding → concepts/soft-thresholding.md
 - IRI: pkis:concept:soft-thresholding
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: regularization-path (id: cabcf89d-51b5-4d17-8b1c-197fb3f2ee58)
+- Title: Regularisation Path
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: regularization-path → concepts/regularization-path.md
+- IRI: pkis:concept:regularization-path
