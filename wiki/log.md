@@ -16994,3 +16994,12 @@
 ## [2026-06-11] committed | technique
 - Committed: graph-convolutional-network → techniques/graph-convolutional-network.md
 - IRI: pkis:technique:graph-convolutional-network
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: graph-attention-network (id: 1c8079e5-4b70-4969-b21c-b283ee285f64)
+- Title: Graph Attention Network (GAT)
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: graph-attention-network → techniques/graph-attention-network.md
+- IRI: pkis:technique:graph-attention-network
