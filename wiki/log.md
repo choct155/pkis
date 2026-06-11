@@ -19271,3 +19271,12 @@
 ## [2026-06-11] committed | concept
 - Committed: wasserstein-distance → concepts/wasserstein-distance.md
 - IRI: pkis:concept:wasserstein-distance
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: maximum-mean-discrepancy (id: a050b016-79bd-4d8a-9170-cebe15082763)
+- Title: Maximum Mean Discrepancy
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: maximum-mean-discrepancy → concepts/maximum-mean-discrepancy.md
+- IRI: pkis:concept:maximum-mean-discrepancy
