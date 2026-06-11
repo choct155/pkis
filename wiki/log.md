@@ -15644,3 +15644,12 @@
 ## [2026-06-11] committed | result
 - Committed: kl-divergence-gaussians → results/kl-divergence-gaussians.md
 - IRI: pkis:result:kl-divergence-gaussians
+
+## [2026-06-11] staged | node-stub (result)
+- Staged: mi-gaussian-formula (id: 21953bf8-5a6b-478d-bd05-730cab71f4a2)
+- Title: Mutual Information for Jointly Gaussian Variables
+- needs_canonical_source: False
+
+## [2026-06-11] committed | result
+- Committed: mi-gaussian-formula → results/mi-gaussian-formula.md
+- IRI: pkis:result:mi-gaussian-formula
