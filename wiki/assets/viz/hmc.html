@@ -1,0 +1,2001 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hamiltonian Monte Carlo — A Complete Mechanical Account</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500;700&family=Fraunces:ital,wght@0,300;0,600;1,300&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #080b14;
+  --surface: #0f1320;
+  --surface2: #161c2e;
+  --surface3: #1e2540;
+  --border: #252d4a;
+  --border2: #2e3860;
+  --cyan: #38bdf8;
+  --cyan-dim: rgba(56,189,248,0.15);
+  --amber: #fbbf24;
+  --amber-dim: rgba(251,191,36,0.12);
+  --green: #34d399;
+  --green-dim: rgba(52,211,153,0.12);
+  --red: #f87171;
+  --red-dim: rgba(248,113,113,0.12);
+  --purple: #a78bfa;
+  --purple-dim: rgba(167,139,250,0.12);
+  --orange: #fb923c;
+  --text: #e2e8f0;
+  --text2: #94a3b8;
+  --text3: #64748b;
+  --mono: 'JetBrains Mono', monospace;
+  --serif: 'Fraunces', Georgia, serif;
+  --sans: 'Inter', sans-serif;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { background: var(--bg); color: var(--text); font-family: var(--sans); font-size: 14px; line-height: 1.6; }
+
+/* ── NAV ── */
+.top-nav {
+  position: sticky; top: 0; z-index: 100;
+  background: rgba(8,11,20,0.92); backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--border);
+  display: flex; align-items: center; gap: 0;
+  padding: 0 24px; overflow-x: auto;
+}
+.nav-brand {
+  font-family: var(--mono); font-size: 12px; font-weight: 700;
+  color: var(--cyan); padding: 14px 16px 14px 0;
+  border-right: 1px solid var(--border); margin-right: 8px;
+  white-space: nowrap; flex-shrink: 0;
+}
+.nav-item {
+  padding: 14px 14px; font-size: 11px; font-weight: 500;
+  color: var(--text3); cursor: pointer; white-space: nowrap;
+  border-bottom: 2px solid transparent; transition: all 0.15s;
+  letter-spacing: 0.03em;
+}
+.nav-item:hover { color: var(--text); }
+.nav-item.active { color: var(--cyan); border-bottom-color: var(--cyan); }
+
+/* ── SECTIONS ── */
+.section { display: none; padding: 32px 40px 48px; max-width: 1300px; }
+.section.active { display: block; }
+
+/* ── TYPOGRAPHY ── */
+.section-eyebrow {
+  font-family: var(--mono); font-size: 10px; font-weight: 700;
+  letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--cyan); margin-bottom: 8px;
+}
+.section-title {
+  font-family: var(--serif); font-size: 28px; font-weight: 300;
+  color: var(--text); margin-bottom: 6px; line-height: 1.2;
+}
+.section-sub {
+  font-size: 14px; color: var(--text2); line-height: 1.7;
+  max-width: 680px; margin-bottom: 28px;
+}
+h3 { font-size: 14px; font-weight: 600; color: var(--text); margin: 20px 0 8px; }
+p { font-size: 13px; color: var(--text2); line-height: 1.75; margin-bottom: 10px; }
+
+/* ── LAYOUT ── */
+.two-col { display: grid; grid-template-columns: 1fr 400px; gap: 28px; align-items: start; }
+.two-col-equal { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.three-col { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; }
+
+/* ── CARDS ── */
+.card {
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: 6px; padding: 18px; margin-bottom: 14px;
+}
+.card-label {
+  font-family: var(--mono); font-size: 9px; font-weight: 700;
+  letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--text3); margin-bottom: 12px;
+}
+
+/* ── CALLOUTS ── */
+.callout {
+  border-left: 3px solid var(--amber); background: var(--amber-dim);
+  padding: 12px 16px; border-radius: 0 4px 4px 0;
+  margin: 14px 0; font-size: 13px; line-height: 1.7; color: var(--text2);
+}
+.callout strong { color: var(--amber); }
+.callout.cyan { border-left-color: var(--cyan); background: var(--cyan-dim); }
+.callout.cyan strong { color: var(--cyan); }
+.callout.green { border-left-color: var(--green); background: var(--green-dim); }
+.callout.green strong { color: var(--green); }
+.callout.red { border-left-color: var(--red); background: var(--red-dim); }
+.callout.red strong { color: var(--red); }
+.callout.purple { border-left-color: var(--purple); background: var(--purple-dim); }
+.callout.purple strong { color: var(--purple); }
+
+/* ── EQUATIONS ── */
+.eq-block {
+  background: var(--surface2); border: 1px solid var(--border);
+  border-radius: 4px; padding: 14px 18px; margin: 12px 0;
+  font-family: var(--mono); font-size: 12.5px; line-height: 2.0;
+}
+.eq-label { font-size: 9px; color: var(--text3); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 8px; }
+.ec { color: var(--cyan); font-weight: 700; }
+.ea { color: var(--amber); }
+.eg { color: var(--green); }
+.er { color: var(--red); }
+.ep { color: var(--purple); }
+.em { color: var(--text3); font-size: 11px; }
+
+/* ── PROOF STEPS ── */
+.proof-step {
+  display: flex; gap: 14px; align-items: flex-start;
+  background: var(--surface2); border: 1px solid var(--border);
+  border-radius: 4px; padding: 14px; margin: 8px 0;
+}
+.proof-n {
+  width: 26px; height: 26px; border-radius: 50%; flex-shrink: 0;
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--mono); font-size: 12px; font-weight: 700;
+}
+.proof-body { font-size: 13px; line-height: 1.7; color: var(--text2); }
+.proof-body strong { color: var(--text); }
+
+/* ── DATA ROWS ── */
+.data-grid { display: flex; flex-direction: column; gap: 5px; }
+.data-row {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 6px 10px; background: var(--surface2); border-radius: 3px;
+  border-left: 3px solid var(--border2);
+}
+.data-row.c { border-left-color: var(--cyan); }
+.data-row.a { border-left-color: var(--amber); }
+.data-row.g { border-left-color: var(--green); }
+.data-row.r { border-left-color: var(--red); }
+.data-row.p { border-left-color: var(--purple); }
+.data-key { font-family: var(--mono); font-size: 11px; color: var(--text3); }
+.data-val { font-family: var(--mono); font-size: 13px; font-weight: 700; color: var(--text); }
+
+/* ── CONTROLS ── */
+.controls { display: flex; gap: 8px; flex-wrap: wrap; margin: 10px 0; }
+button {
+  padding: 7px 13px; border: 1px solid var(--border2);
+  background: var(--surface2); color: var(--text);
+  border-radius: 3px; cursor: pointer; font-family: var(--sans);
+  font-size: 12px; font-weight: 500; transition: all 0.12s;
+}
+button:hover { border-color: var(--cyan); color: var(--cyan); }
+button.btn-primary { border-color: var(--cyan); color: var(--cyan); background: rgba(56,189,248,0.08); }
+button.btn-run { border-color: var(--amber); color: var(--amber); background: var(--amber-dim); }
+.param-row { display: flex; align-items: center; justify-content: space-between; margin-bottom: 7px; }
+.param-lbl { font-size: 11px; color: var(--text3); }
+.param-val { font-family: var(--mono); font-size: 11px; color: var(--text); min-width: 36px; text-align: right; }
+input[type=range] { width: 100px; accent-color: var(--cyan); cursor: pointer; }
+
+/* ── CANVAS ── */
+canvas {
+  display: block; background: var(--surface);
+  border: 1px solid var(--border); border-radius: 4px; width: 100%;
+}
+
+/* ── LOG ── */
+.log {
+  max-height: 130px; overflow-y: auto;
+  font-family: var(--mono); font-size: 10.5px; line-height: 1.7; color: var(--text3);
+  background: var(--surface2); border: 1px solid var(--border); border-radius: 3px; padding: 8px 10px;
+}
+.log .ll { border-bottom: 1px solid var(--surface3); padding: 1px 0; }
+.log .ll.cur { color: var(--cyan); }
+.log .ll.acc { color: var(--green); }
+.log .ll.rej { color: var(--red); }
+.log .ll.wrn { color: var(--amber); }
+
+/* ── BADGES ── */
+.badge {
+  display: inline-block; padding: 2px 7px; border-radius: 2px;
+  font-family: var(--mono); font-size: 9px; font-weight: 700;
+  letter-spacing: 0.06em; text-transform: uppercase;
+}
+.badge.exact { background: var(--green-dim); color: var(--green); border: 1px solid var(--green); }
+.badge.biased { background: var(--red-dim); color: var(--red); border: 1px solid var(--red); }
+.badge.corrected { background: var(--cyan-dim); color: var(--cyan); border: 1px solid var(--cyan); }
+
+/* ── COMPARISON ── */
+.vs-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 12px 0; }
+.vs-card { background: var(--surface2); border: 1px solid var(--border); border-radius: 4px; padding: 13px; }
+.vs-card.good { border-color: rgba(52,211,153,0.4); }
+.vs-card.bad { border-color: rgba(248,113,113,0.4); }
+.vs-title { font-family: var(--mono); font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 7px; }
+.vs-card.good .vs-title { color: var(--green); }
+.vs-card.bad .vs-title { color: var(--red); }
+.vs-body { font-size: 11.5px; color: var(--text2); line-height: 1.65; }
+
+hr.divider { border: none; border-top: 1px solid var(--border); margin: 20px 0; }
+
+.legend { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 6px; }
+.legend-item { display: flex; align-items: center; gap: 5px; font-size: 11px; color: var(--text3); }
+.legend-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
+.legend-line { width: 16px; height: 2px; flex-shrink: 0; }
+</style>
+</head>
+<body>
+
+<nav class="top-nav">
+  <div class="nav-brand">HMC // Full Account</div>
+  <div class="nav-item active" onclick="nav(0)">1 · Navigation Problem</div>
+  <div class="nav-item" onclick="nav(1)">2 · Hamiltonian Construction</div>
+  <div class="nav-item" onclick="nav(2)">3 · Uniqueness</div>
+  <div class="nav-item" onclick="nav(3)">4 · Leapfrog</div>
+  <div class="nav-item" onclick="nav(4)">5 · Metropolis Correction</div>
+  <div class="nav-item" onclick="nav(5)">6 · Full HMC</div>
+  <div class="nav-item" onclick="nav(6)">7 · Neal's Funnel</div>
+</nav>
+
+<!-- ═══════════════════════════════════════════════════ SECTION 1 -->
+<div class="section active" id="s0">
+  <div class="section-eyebrow">Section 1</div>
+  <div class="section-title">The Navigation Problem</div>
+  <div class="section-sub">The typical set is established in PKIS. The question here is sharper: given you know where the mass lives, what does a sampler need to do to stay there — and why does random walk fail at this?</div>
+
+  <div class="two-col">
+    <div>
+      <h3>What the typical set demands of a sampler</h3>
+      <p>The typical set is a thin shell in high-dimensional space — thin relative to the full parameter range, but containing essentially all the probability mass. A sampler needs to find it and then <em>traverse it</em>, generating samples that explore the full extent of the shell rather than clustering in one region.</p>
+      <p>This has two distinct requirements. First, the chain must not drift inward toward the mode or outward into the tails — it must stay on the shell. Second, it must move far enough along the shell on each transition to reduce autocorrelation. A chain that stays on the shell but barely moves achieves correctness but not efficiency.</p>
+
+      <div class="callout">
+        <strong>The geometry of the demand:</strong> In d dimensions, the typical set is roughly the surface of a sphere of radius sqrt(d)·σ. A sampler needs to move along that surface, not across it. The surface is (d-1)-dimensional embedded in d-dimensional space — a sampler moving randomly in all d directions is almost guaranteed to move perpendicular to the surface rather than along it.
+      </div>
+
+      <h3>Why random walk fails — geometrically</h3>
+      <p>Random walk Metropolis proposes a step in a random direction drawn from an isotropic Gaussian. In d dimensions, a random direction is almost surely perpendicular to any fixed surface. The typical set surface has measure zero in the full space — hitting it by chance requires exponentially many tries.</p>
+      <p>The two failure modes are symmetric and unavoidable. Large steps: proposals land outside the typical set, Metropolis rejects, chain doesn't move. Small steps: proposals stay near the current point, accepts, but traversal of the shell takes O(d) steps because diffusion along a surface of radius sqrt(d) requires O(d) random steps to move distance O(1).</p>
+
+      <div class="callout red">
+        <strong>The diffusion bottleneck:</strong> Distance covered by a random walk scales as sqrt(N) for N steps. To traverse the typical set shell — diameter ~2·sqrt(d)·σ — requires N ~ d steps. In a 1000-parameter model, you need ~1000 transitions just to cross the shell once. Each transition requires a gradient evaluation. This is why random walk MCMC is unusable for large models.
+      </div>
+
+      <h3>What coherent exploration looks like</h3>
+      <p>The alternative is a sampler that moves <em>along</em> the shell rather than <em>across</em> it. Distance covered grows linearly with trajectory length, not as its square root. A single trajectory of length T moves distance ~T along the shell. This is what HMC achieves — and it requires knowing the local tangent direction to the typical set, which is exactly what the gradient of the log density encodes.</p>
+
+      <div class="callout cyan">
+        <strong>The key move:</strong> The gradient of log π(θ) points toward the mode — perpendicular to the typical set. But if you augment the system with momentum and use the gradient as a <em>force</em> rather than a <em>direction</em>, conservative dynamics automatically produces motion <em>along</em> the shell. This is the Hamiltonian insight.
+      </div>
+    </div>
+
+    <div>
+      <div class="card">
+        <div class="card-label">Random Walk vs Coherent Motion — Live</div>
+        <canvas id="navCanvas" width="380" height="360"></canvas>
+        <div class="legend" style="margin-top:8px">
+          <div class="legend-item"><div class="legend-dot" style="background:var(--red)"></div>Random walk path</div>
+          <div class="legend-item"><div class="legend-dot" style="background:var(--cyan)"></div>Coherent (HMC-like) path</div>
+          <div class="legend-item"><div class="legend-line" style="background:var(--green)"></div>Typical set shell</div>
+        </div>
+        <div class="controls" style="margin-top:10px">
+          <button class="btn-primary" onclick="navStep()">Step both →</button>
+          <button id="navRunBtn" onclick="navToggle()">Auto</button>
+          <button onclick="navReset()">Reset</button>
+        </div>
+        <div class="param-row" style="margin-top:8px">
+          <span class="param-lbl">RW step size</span>
+          <input type="range" id="navSigma" min="0.05" max="0.8" step="0.05" value="0.15" oninput="navUpdateParams()">
+          <span class="param-val" id="navSigma-v">0.15</span>
+        </div>
+        <div class="data-grid" id="navStats" style="margin-top:10px"></div>
+      </div>
+
+      <div class="card">
+        <div class="card-label">Traversal Efficiency: Steps to Cross the Shell</div>
+        <canvas id="traversalCanvas" width="380" height="140"></canvas>
+        <p style="margin-top:8px; font-size:11px">Both methods eventually explore the shell. The gap in steps required scales with dimension. This is the core inefficiency the Hamiltonian construction eliminates.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════ SECTION 2 -->
+<div class="section" id="s1">
+  <div class="section-eyebrow">Section 2</div>
+  <div class="section-title">The Hamiltonian Construction</div>
+  <div class="section-sub">Why augmenting with momentum and defining H = U + K maps energy level sets to probability level sets — exactly, not approximately. This correspondence is the load-bearing move.</div>
+
+  <div class="two-col">
+    <div>
+      <h3>The augmentation</h3>
+      <p>Start with target π(θ). Introduce auxiliary momentum p, one variable per dimension of θ. The joint distribution is defined to factor:</p>
+
+      <div class="eq-block">
+        <div class="eq-label">Joint Distribution</div>
+        <span class="ec">π(θ, p)</span> = <span class="eg">π(θ)</span> · <span class="ea">π(p)</span><br>
+        <span class="em">// p chosen independent of θ — this factoring is deliberate</span><br>
+        <span class="em">// π(p) = N(0, M) — Gaussian with mass matrix M</span>
+      </div>
+
+      <p>Take the negative log of both sides. Define U and K as the two terms:</p>
+
+      <div class="eq-block">
+        <div class="eq-label">Defining U and K</div>
+        <span class="er">U(θ)</span> = −log <span class="eg">π(θ)</span>   <span class="em">← potential energy</span><br>
+        <span class="ea">K(p)</span> = −log <span class="ea">π(p)</span> = ½·p<sup>T</sup>M<sup>-1</sup>p   <span class="em">← kinetic energy</span><br><br>
+        <span class="ec">H(θ, p)</span> = <span class="er">U(θ)</span> + <span class="ea">K(p)</span> = −log <span class="ec">π(θ, p)</span>
+      </div>
+
+      <div class="callout">
+        <strong>H is not a metaphor.</strong> The Hamiltonian is literally the negative log of the joint density. This is a definition, not an analogy to physics. The physics analogy is a useful intuition pump, but the mathematical identity H = −log π(θ,p) is exact and is what makes the Metropolis correction work.
+      </div>
+
+      <h3>The level set correspondence</h3>
+      <p>A <em>level set</em> of H is the set of (θ,p) pairs where H takes a fixed value c. Constant H means constant −log π(θ,p) means constant π(θ,p). So level sets of H are exactly level sets of the joint density.</p>
+      <p>Now: the typical set of π(θ) is the shell where probability mass concentrates. For the joint distribution π(θ,p), the typical set is a shell in the higher-dimensional (θ,p) space. Conservative Hamiltonian dynamics — which exactly conserves H — keeps trajectories exactly on these level sets.</p>
+
+      <div class="callout cyan">
+        <strong>The correspondence:</strong> Staying on a level set of H = staying on a level set of π(θ,p) = staying in the typical set of the joint distribution. Marginalizing over p gives samples from π(θ). The energy surface and the typical set are the same object.
+      </div>
+
+      <h3>Why U(θ) = −log π(θ) specifically</h3>
+      <p>Any other choice of U would target the wrong distribution. If U = π(θ) (the density itself rather than its negative log), the level sets of H would not correspond to level sets of the target. The negative log transform is what makes the energy and probability representations commensurate.</p>
+
+      <div class="proof-step">
+        <div class="proof-n" style="background:var(--cyan-dim);color:var(--cyan);border:1px solid var(--cyan)">1</div>
+        <div class="proof-body"><strong>Marginalizing out p recovers π(θ).</strong> Since π(θ,p) = π(θ)·π(p) by construction, integrating over p gives ∫π(θ,p)dp = π(θ)·∫π(p)dp = π(θ). Samples from the joint distribution, projected onto θ, are exactly distributed as π(θ).</div>
+      </div>
+      <div class="proof-step">
+        <div class="proof-n" style="background:var(--amber-dim);color:var(--amber);border:1px solid var(--amber)">2</div>
+        <div class="proof-body"><strong>The Gaussian kinetic energy is not arbitrary.</strong> K(p) = ½pᵀM⁻¹p gives π(p) ∝ exp(−K(p)) = Gaussian. This means momentum can be drawn independently at each step from a known distribution. Any other kinetic energy would require sampling from a non-standard distribution.</div>
+      </div>
+      <div class="proof-step">
+        <div class="proof-n" style="background:var(--green-dim);color:var(--green);border:1px solid var(--green)">3</div>
+        <div class="proof-body"><strong>M sets the length scale.</strong> The mass matrix M controls how fast the momentum variable moves relative to position. Optimal M matches the covariance of π(θ) — this is why preconditioning matters and why the Euclidean metric is a special case.</div>
+      </div>
+    </div>
+
+    <div>
+      <div class="card">
+        <div class="card-label">Energy Surfaces = Probability Level Sets</div>
+        <canvas id="levelCanvas" width="380" height="340"></canvas>
+        <div class="param-row" style="margin-top:10px">
+          <span class="param-lbl">Show θ₁ slice at θ₂ =</span>
+          <input type="range" id="sliceTheta2" min="-2" max="2" step="0.1" value="0" oninput="updateLevel()">
+          <span class="param-val" id="sliceTheta2-v">0.00</span>
+        </div>
+        <p style="font-size:11px; margin-top:6px">The horizontal axis is θ₁. The vertical axis is momentum p. Colored contours are constant-H surfaces. The green ring marks where the joint typical set lies. A trajectory following Hamiltonian dynamics stays on one contour.</p>
+      </div>
+
+      <div class="card">
+        <div class="card-label">U, K, H — Interactive Decomposition</div>
+        <div class="param-row">
+          <span class="param-lbl">θ (position on shell)</span>
+          <input type="range" id="thetaSlice" min="-3" max="3" step="0.1" value="1.0" oninput="updateUKH()">
+          <span class="param-val" id="thetaSlice-v">1.00</span>
+        </div>
+        <div class="param-row">
+          <span class="param-lbl">p (momentum)</span>
+          <input type="range" id="momSlice" min="-3" max="3" step="0.1" value="0.8" oninput="updateUKH()">
+          <span class="param-val" id="momSlice-v">0.80</span>
+        </div>
+        <div class="data-grid" id="ukhDisplay"></div>
+        <div class="callout green" style="margin-top:10px; font-size:11.5px" id="ukhInsight"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════ SECTION 3 -->
+<div class="section" id="s2">
+  <div class="section-eyebrow">Section 3</div>
+  <div class="section-title">Why the Hamiltonian Construction is Unique</div>
+  <div class="section-sub">Symplecticity and time-reversibility are not properties HMC happens to have — they are requirements that uniquely force the Hamiltonian structure. This section builds the necessity argument.</div>
+
+  <div class="two-col">
+    <div>
+      <h3>What any valid MCMC transition requires</h3>
+      <p>For a Markov chain to target π, its transitions must satisfy detailed balance. For a <em>deterministic</em> proposal map f (like integrating dynamics), detailed balance reduces to two conditions:</p>
+
+      <div class="eq-block">
+        <div class="eq-label">Requirements on Deterministic Proposals</div>
+        <span class="ec">(1) Volume preservation:</span>  |det J_f| = 1<br>
+        <span class="em">   → Jacobian of the map = 1 exactly</span><br>
+        <span class="em">   → Required for acceptance ratio = π(f(x))/π(x)</span><br><br>
+        <span class="ea">(2) Time-reversibility:</span>  f(f(x,p), −p) = (x, p)<br>
+        <span class="em">   → Running backward returns to start</span><br>
+        <span class="em">   → Required for proposal ratio Q(B→A)/Q(A→B) = 1</span>
+      </div>
+
+      <p>Now add a third requirement: the proposal must use gradient information to generate coherent motion along the typical set rather than random diffusion.</p>
+
+      <div class="callout">
+        <strong>The three requirements:</strong> volume preservation + time-reversibility + gradient-driven coherent exploration. Any map satisfying all three must have Hamiltonian structure. This is not a theorem we prove here — but we can see why each alternative fails.
+      </div>
+
+      <h3>Alternatives and their failure modes</h3>
+
+      <div class="vs-grid">
+        <div class="vs-card bad">
+          <div class="vs-title">Gradient descent</div>
+          <div class="vs-body">Follows gradient directly. Not volume-preserving (contracts toward attractor). Not time-reversible. Correct direction but wrong dynamics — crashes into mode.</div>
+        </div>
+        <div class="vs-card bad">
+          <div class="vs-title">Gradient ascent on π</div>
+          <div class="vs-body">Moves toward mode faster. Catastrophically contracts volume. No mechanism to orbit the typical set. Fails requirement 1 severely.</div>
+        </div>
+        <div class="vs-card bad">
+          <div class="vs-title">Overdamped Langevin</div>
+          <div class="vs-body">Adds noise to gradient. Time-reversible with MH correction. But <em>diffusive</em> — distance scales as sqrt(N). Same scaling as random walk. No coherent orbit.</div>
+        </div>
+        <div class="vs-card bad">
+          <div class="vs-title">Underdamped Langevin (MALA)</div>
+          <div class="vs-body">Closer — momentum-like variable. But adds friction that breaks exact volume preservation. Requires MH correction that includes Jacobian terms. More complex than HMC.</div>
+        </div>
+      </div>
+
+      <h3>Why Hamiltonian dynamics satisfies all three</h3>
+      <p>Liouville's theorem: any system governed by Hamilton's equations exactly preserves phase space volume. This is a theorem of classical mechanics that follows directly from the structure of Hamilton's equations — the divergence of the Hamiltonian vector field is exactly zero.</p>
+      <p>Time-reversibility: Hamilton's equations are symmetric under t → −t combined with p → −p. Running the system backward with negated momentum exactly retraces the trajectory.</p>
+      <p>Coherent motion: the Hamiltonian vector field is tangent to the energy level sets — by definition. Trajectories flow <em>along</em> constant-H surfaces, which are the typical set surfaces.</p>
+
+      <div class="callout cyan">
+        <strong>The uniqueness argument:</strong> You need a deterministic map that (1) preserves volume, (2) is time-reversible, (3) moves along level sets of a function related to the target. Hamiltonian dynamics is the canonical structure that satisfies all three simultaneously. Other approaches satisfy at most two.
+      </div>
+
+      <h3>Symplecticity is stronger than volume preservation</h3>
+      <p>Liouville gives volume preservation. But leapfrog preserves something stronger: the <em>symplectic form</em>, a two-form on phase space that encodes the area of all two-dimensional projections. Symplectic maps preserve these areas exactly, not just the total volume. This is what makes the Jacobian calculation exact rather than approximate.</p>
+
+      <div class="callout purple">
+        <strong>Intuition:</strong> A non-symplectic volume-preserving map could rotate and shear phase space, preserving total volume while distorting shape. A symplectic map preserves the shape of every 2D cross-section. This stronger property is what gives |J| = 1 exactly for leapfrog, not just approximately.
+      </div>
+    </div>
+
+    <div>
+      <div class="card">
+        <div class="card-label">Phase Space Volume Under Different Dynamics</div>
+        <canvas id="symplCanvas" width="380" height="280"></canvas>
+        <div class="param-row" style="margin-top:10px">
+          <span class="param-lbl">Steps</span>
+          <input type="range" id="symplN" min="1" max="30" step="1" value="8" oninput="updateSympl()">
+          <span class="param-val" id="symplN-v">8</span>
+        </div>
+        <div class="param-row">
+          <span class="param-lbl">Step size ε</span>
+          <input type="range" id="symplEps" min="0.05" max="0.6" step="0.05" value="0.25" oninput="updateSympl()">
+          <span class="param-val" id="symplEps-v">0.25</span>
+        </div>
+        <div class="data-grid" id="symplData" style="margin-top:10px"></div>
+        <p style="font-size:11px; margin-top:8px; color:var(--text3)">Gray box = initial region. Green = leapfrog (area preserved). Red = Euler (area contracts). Blue = gradient descent (collapses to a point).</p>
+      </div>
+
+      <div class="card">
+        <div class="card-label">The Liouville Theorem: Divergence = 0</div>
+        <div class="eq-block" style="font-size:12px">
+          <div class="eq-label">Hamilton's Equations</div>
+          dθ/dt = <span class="ec">∂H/∂p</span><br>
+          dp/dt = −<span class="ec">∂H/∂θ</span><br><br>
+          <div class="eq-label">Divergence of the Flow</div>
+          div(v) = ∂(dθ/dt)/∂θ + ∂(dp/dt)/∂p<br>
+          = ∂²H/∂θ∂p − ∂²H/∂p∂θ<br>
+          <span class="ec">= 0</span>  <span class="em">← mixed partials cancel exactly</span><br><br>
+          <span class="em">// Zero divergence → volume exactly preserved</span><br>
+          <span class="em">// This is Liouville's theorem</span><br>
+          <span class="em">// No other deterministic dynamics has this property</span>
+        </div>
+        <p style="font-size:11px; color:var(--text3); margin-top:6px">The mixed partial cancellation is the structural reason. It requires that the equations for dθ/dt and dp/dt are derived from the <em>same</em> function H — which is exactly the Hamiltonian structure.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════ SECTION 4 -->
+<div class="section" id="s3">
+  <div class="section-eyebrow">Section 4</div>
+  <div class="section-title">Leapfrog from First Principles</div>
+  <div class="section-sub">Why this specific three-part update — and not Euler, Runge-Kutta, or anything else. Built up from the requirements established in Section 3.</div>
+
+  <div class="two-col">
+    <div>
+      <h3>What any integrator must satisfy</h3>
+      <p>Continuous Hamiltonian dynamics satisfies volume preservation and time-reversibility exactly. A numerical integrator approximates the dynamics with finite steps — and introduces errors. The question is which integrator preserves the structural properties that make Metropolis correction work.</p>
+
+      <div class="eq-block">
+        <div class="eq-label">Requirements on the Integrator</div>
+        <span class="ec">Symplectic:</span>  |J_f| = 1 exactly for each step<br>
+        <span class="em">   → so the Jacobian cancels in the MH ratio</span><br><br>
+        <span class="ea">Time-reversible:</span>  f(f(θ,p),−p) = (θ,p)<br>
+        <span class="em">   → so the proposal ratio Q(B→A)/Q(A→B) = 1</span><br><br>
+        <span class="eg">Consistent:</span>  error → 0 as step size → 0<br>
+        <span class="em">   → accuracy in the limit (but not required for correctness!)</span>
+      </div>
+
+      <p>Accuracy is <em>not</em> a correctness requirement. You can have large energy errors and still get exact samples, because Metropolis corrects for them. What you cannot compromise is symplecticity and reversibility.</p>
+
+      <h3>Why Euler fails</h3>
+      <p>The Euler method updates both θ and p in a single step using current-point gradients:</p>
+
+      <div class="eq-block">
+        <div class="eq-label">Euler Update</div>
+        <span class="er">θ_new = θ + ε·p</span><br>
+        <span class="er">p_new = p − ε·∇U(θ)</span>   <span class="em">← uses old θ gradient</span>
+      </div>
+
+      <p>The Jacobian of this map is:</p>
+      <div class="eq-block">
+        <div class="eq-label">Euler Jacobian</div>
+        J = [[1, ε], [−ε·∇²U, 1−ε²·∇²U]]<br>
+        det(J) = 1 − ε²·∇²U(θ)<br>
+        <span class="er">≠ 1 in general</span>  <span class="em">← volume not preserved</span><br><br>
+        <span class="em">// Contracts if ∇²U > 0 (bowl-shaped potential)</span><br>
+        <span class="em">// Error accumulates: det(J^n) = (1 − ε²·∇²U)^n → 0</span>
+      </div>
+
+      <div class="callout red">
+        <strong>Euler with Metropolis correction:</strong> Technically works — you include the Jacobian in the acceptance ratio. But now α = min(1, π(end)/π(start) · |J|⁻¹) — and evaluating |J| requires the Hessian ∇²U, which costs O(d²) per step. For large d this is catastrophic. Leapfrog's unit Jacobian eliminates this cost entirely.
+      </div>
+
+      <h3>Why Runge-Kutta fails</h3>
+      <p>Runge-Kutta methods (RK4 is the standard) achieve high accuracy by evaluating the gradient at intermediate points within each step. But they are not symplectic — the intermediate evaluations break the exact cancellation of mixed partials that gives volume preservation.</p>
+      <div class="callout red">
+        <strong>RK4 is more accurate but not symplectic.</strong> Over long trajectories, its energy error drifts systematically rather than oscillating. With Metropolis correction, drift causes rejection rates to grow with trajectory length — exactly the opposite of what you want. Leapfrog's oscillating (non-drifting) error is fundamentally better suited to the MH framework.
+      </div>
+
+      <h3>Building leapfrog from shear maps</h3>
+      <p>The key insight: a map that updates <em>only one variable</em> while holding the other fixed is always a shear map, and shear maps are always volume-preserving with Jacobian 1.</p>
+
+      <div class="eq-block">
+        <div class="eq-label">Half-step in p (shear in p-direction)</div>
+        <span class="ec">p_{1/2} = p − (ε/2)·∇U(θ)</span>   <span class="em">← θ unchanged</span><br>
+        <span class="em">// Jacobian: [[1,0],[−(ε/2)·∇²U, 1]] → det = 1 ✓</span>
+      </div>
+      <div class="eq-block">
+        <div class="eq-label">Full step in θ (shear in θ-direction)</div>
+        <span class="ea">θ_new = θ + ε·p_{1/2}</span>   <span class="em">← p unchanged</span><br>
+        <span class="em">// Jacobian: [[1, ε],[0, 1]] → det = 1 ✓</span>
+      </div>
+      <div class="eq-block">
+        <div class="eq-label">Half-step in p again (shear in p-direction)</div>
+        <span class="eg">p_new = p_{1/2} − (ε/2)·∇U(θ_new)</span>   <span class="em">← θ_new used</span><br>
+        <span class="em">// Jacobian: det = 1 ✓</span><br><br>
+        <span class="em">// Composition of three det=1 maps:</span><br>
+        <span class="ec">det(J_leapfrog) = 1 × 1 × 1 = 1  ✓</span>
+      </div>
+
+      <div class="callout green">
+        <strong>Why the half-steps?</strong> Time-reversibility requires the sequence to be palindromic — the same steps in reverse order with negated momentum must return to the start. Half-step / full-step / half-step is the minimal palindromic structure. A full-step / full-step scheme is not time-reversible.
+      </div>
+
+      <h3>Energy error behavior: oscillation vs drift</h3>
+      <p>Leapfrog energy error oscillates around the true value — it doesn't accumulate. This is a consequence of symplecticity: the map preserves the symplectic form, so there's no systematic direction for energy to drift. Euler and RK4 errors drift, which causes acceptance rates to degrade with trajectory length.</p>
+    </div>
+
+    <div>
+      <div class="card">
+        <div class="card-label">Step-by-Step Leapfrog Builder</div>
+        <canvas id="lfCanvas" width="380" height="300"></canvas>
+        <div class="controls" style="margin-top:8px">
+          <button class="btn-primary" onclick="lfStepOne()">Next sub-step →</button>
+          <button onclick="lfReset()">Reset</button>
+        </div>
+        <div class="card-label" style="margin-top:12px">Current sub-step</div>
+        <div class="data-grid" id="lfSubStep"></div>
+        <div class="callout" id="lfExplain" style="margin-top:10px; font-size:12px"></div>
+      </div>
+
+      <div class="card">
+        <div class="card-label">Energy Error: Leapfrog vs Euler vs RK4</div>
+        <canvas id="errCanvas" width="380" height="160"></canvas>
+        <div class="param-row" style="margin-top:8px">
+          <span class="param-lbl">Step size ε</span>
+          <input type="range" id="errEps" min="0.05" max="0.6" step="0.05" value="0.25" oninput="updateErrPlot()">
+          <span class="param-val" id="errEps-v">0.25</span>
+        </div>
+        <div class="legend" style="margin-top:4px">
+          <div class="legend-item"><div class="legend-line" style="background:var(--green)"></div>Leapfrog (oscillates)</div>
+          <div class="legend-item"><div class="legend-line" style="background:var(--red)"></div>Euler (drifts)</div>
+          <div class="legend-item"><div class="legend-line" style="background:var(--amber)"></div>RK4 (slow drift)</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-label">Jacobian Accumulation Over N Steps</div>
+        <canvas id="jacCanvas" width="380" height="130"></canvas>
+        <p style="font-size:11px; margin-top:6px; color:var(--text3)">Leapfrog Jacobian = 1.000 exactly at every step. Euler contracts (below 1). The Metropolis correction for Euler would require evaluating this Jacobian — O(d²) cost.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════ SECTION 5 -->
+<div class="section" id="s4">
+  <div class="section-eyebrow">Section 5</div>
+  <div class="section-title">Why Metropolis Faithfully Corrects Numerical Error</div>
+  <div class="section-sub">Three nested layers: accept-reject on biased proposals produces exact samples → H is the right density ratio → symplecticity makes the correction clean.</div>
+
+  <div class="two-col">
+    <div>
+      <h3>Layer 1: Detailed balance and exact sampling</h3>
+      <p>A Markov chain targets distribution π if and only if it satisfies detailed balance: for any two states A and B, the probability flow from A to B equals the flow from B to A.</p>
+
+      <div class="eq-block">
+        <div class="eq-label">Detailed Balance</div>
+        <span class="ec">π(A) · T(A→B) = π(B) · T(B→A)</span><br>
+        <span class="em">// flow A→B = flow B→A for all pairs</span><br>
+        <span class="em">// If this holds, π is stationary → long-run samples are exactly π</span>
+      </div>
+
+      <p>Metropolis-Hastings constructs T to satisfy this by design. With proposal Q and acceptance α:</p>
+
+      <div class="eq-block">
+        <div class="eq-label">MH Acceptance (satisfies DB by construction)</div>
+        <span class="ea">α(A→B)</span> = min(1, <span class="ec">π(B)·Q(B→A)</span> / <span class="eg">π(A)·Q(A→B)</span>)<br><br>
+        <span class="em">// Substituting into flow A→B = π(A)·Q(A→B)·α(A→B):</span><br>
+        flow A→B = min(π(A)·Q(A→B), π(B)·Q(B→A))<br>
+        flow B→A = min(π(B)·Q(B→A), π(A)·Q(A→B))<br>
+        <span class="ec">→ always equal, for any Q</span>
+      </div>
+
+      <div class="callout">
+        <strong>The proposal can be arbitrarily biased.</strong> Detailed balance holds regardless of what Q does. Q only affects efficiency — how often you accept and how far you move. Correctness requires only the ability to evaluate π(A), π(B), Q(A→B), Q(B→A).
+      </div>
+
+      <h3>Layer 2: H as the exact density ratio</h3>
+      <p>HMC operates in joint (θ,p) space. The target in joint space is π(θ,p) = π(θ)·π(p). Since H = −log π(θ,p), the Metropolis ratio becomes:</p>
+
+      <div class="eq-block">
+        <div class="eq-label">MH Ratio in Joint Space</div>
+        α = min(1, <span class="ec">π(θ*,p*)</span> / <span class="eg">π(θ,p)</span>)<br><br>
+        = min(1, exp(−<span class="ec">H(θ*,p*)</span>) / exp(−<span class="eg">H(θ,p)</span>))<br><br>
+        <span class="ec">= min(1, exp(−ΔH))</span><br><br>
+        <span class="em">// ΔH = H(end) − H(start) = accumulated leapfrog error</span><br>
+        <span class="em">// If leapfrog exact: ΔH = 0, α = 1, always accept</span><br>
+        <span class="em">// If leapfrog drifts: ΔH > 0, α < 1, reject proportionally</span>
+      </div>
+
+      <div class="callout cyan">
+        <strong>The correction is exact regardless of ΔH's size.</strong> Whether the leapfrog error is 0.001 or 10, exp(−ΔH) is exactly the right acceptance probability. Large step sizes create large ΔH and frequent rejection — correct but inefficient. Small step sizes create small ΔH and high acceptance — correct and efficient.
+      </div>
+
+      <h3>Layer 3: Why symplecticity makes the ratio clean</h3>
+      <p>The full MH ratio for a deterministic map f includes a Jacobian term:</p>
+
+      <div class="eq-block">
+        <div class="eq-label">Full MH Ratio for Deterministic Proposal</div>
+        α = min(1, <span class="ec">π(f(x))</span> / <span class="eg">π(x)</span> · <span class="er">|det J_f(x)|</span>)<br><br>
+        <span class="em">// For leapfrog: |det J_f| = 1 exactly</span><br>
+        <span class="em">// Jacobian term vanishes</span><br>
+        <span class="ec">→ α = min(1, exp(−ΔH))</span>  <span class="em">← no Hessian needed</span><br><br>
+        <span class="em">// For Euler: |det J_f| ≠ 1</span><br>
+        <span class="em">// Need Hessian ∇²U — O(d²) cost</span><br>
+        <span class="er">→ α = min(1, exp(−ΔH) · |J|⁻¹)</span>
+      </div>
+
+      <div class="callout green">
+        <strong>The full chain of necessity:</strong><br>
+        Leapfrog is symplectic → |J| = 1 → Jacobian cancels → α = exp(−ΔH) → exact correction for all numerical error → exact samples from π. Remove symplecticity and the correction becomes intractable.
+      </div>
+    </div>
+
+    <div>
+      <div class="card">
+        <div class="card-label">Layer 1 — Detailed Balance Live</div>
+        <p style="font-size:11px; margin-bottom:8px">Adjust densities and proposal bias. Watch flow A→B = flow B→A exactly, regardless of how biased the proposal is.</p>
+        <div class="param-row">
+          <span class="param-lbl">π(A)</span>
+          <input type="range" id="dbPiA" min="0.1" max="2" step="0.05" value="0.8" oninput="updateDB5()">
+          <span class="param-val" id="dbPiA-v">0.80</span>
+        </div>
+        <div class="param-row">
+          <span class="param-lbl">π(B)</span>
+          <input type="range" id="dbPiB" min="0.1" max="2" step="0.05" value="1.4" oninput="updateDB5()">
+          <span class="param-val" id="dbPiB-v">1.40</span>
+        </div>
+        <div class="param-row">
+          <span class="param-lbl">Q(A→B) bias</span>
+          <input type="range" id="dbQ" min="0.05" max="0.95" step="0.05" value="0.7" oninput="updateDB5()">
+          <span class="param-val" id="dbQ-v">0.70</span>
+        </div>
+        <div class="data-grid" id="dbDisplay5" style="margin-top:8px"></div>
+      </div>
+
+      <div class="card">
+        <div class="card-label">Layer 2 — ΔH → Acceptance Probability</div>
+        <div class="param-row">
+          <span class="param-lbl">H(start)</span>
+          <input type="range" id="mhH0" min="1" max="8" step="0.1" value="4" oninput="updateMH5()">
+          <span class="param-val" id="mhH0-v">4.0</span>
+        </div>
+        <div class="param-row">
+          <span class="param-lbl">ΔH (leapfrog error)</span>
+          <input type="range" id="mhDH" min="-0.2" max="3" step="0.05" value="0.2" oninput="updateMH5()">
+          <span class="param-val" id="mhDH-v">0.20</span>
+        </div>
+        <div class="data-grid" id="mhDisplay5" style="margin-top:8px"></div>
+        <canvas id="mhCurve" width="360" height="100" style="margin-top:10px"></canvas>
+      </div>
+
+      <div class="card">
+        <div class="card-label">Layer 3 — Jacobian Comparison</div>
+        <div class="param-row">
+          <span class="param-lbl">Step size ε</span>
+          <input type="range" id="jacEps" min="0.05" max="0.7" step="0.05" value="0.3" oninput="updateJac5()">
+          <span class="param-val" id="jacEps-v">0.30</span>
+        </div>
+        <div class="param-row">
+          <span class="param-lbl">Steps N</span>
+          <input type="range" id="jacN" min="1" max="20" step="1" value="5" oninput="updateJac5()">
+          <span class="param-val" id="jacN-v">5</span>
+        </div>
+        <div class="data-grid" id="jacDisplay5" style="margin-top:8px"></div>
+        <div class="callout" id="jacInsight5" style="margin-top:10px; font-size:11.5px"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════ SECTION 6 -->
+<div class="section" id="s5">
+  <div class="section-eyebrow">Section 6</div>
+  <div class="section-title">Full HMC — Everything Together</div>
+  <div class="section-sub">The complete algorithm with live simulation. Step through trajectories, watch energy readouts, see accept/reject mechanics in action.</div>
+
+  <div class="two-col">
+    <div>
+      <canvas id="hmcCanvas" width="540" height="500"></canvas>
+      <div class="legend" style="margin-top:8px">
+        <div class="legend-item"><div class="legend-line" style="background:var(--green)"></div>Typical set</div>
+        <div class="legend-item"><div class="legend-dot" style="background:var(--amber)"></div>Current θ</div>
+        <div class="legend-item"><div class="legend-line" style="background:var(--cyan)"></div>Trajectory</div>
+        <div class="legend-item"><div class="legend-dot" style="background:var(--purple)"></div>Accepted</div>
+        <div class="legend-item"><div class="legend-dot" style="background:var(--red)"></div>Rejected</div>
+        <div class="legend-item"><div class="legend-line" style="background:var(--purple)"></div>Momentum p</div>
+      </div>
+    </div>
+
+    <div>
+      <div class="card">
+        <div class="card-label">Energy Balance</div>
+        <div class="data-grid" id="hmcEnergy"></div>
+        <canvas id="hmcEnergyTrace" width="360" height="80" style="margin-top:8px"></canvas>
+      </div>
+
+      <div class="card">
+        <div class="card-label">State</div>
+        <div class="data-grid" id="hmcState"></div>
+      </div>
+
+      <div class="card">
+        <div class="card-label">MH Decision</div>
+        <div id="hmcMH" class="callout" style="font-size:12px">Waiting...</div>
+      </div>
+
+      <div class="card">
+        <div class="card-label">Parameters</div>
+        <div class="param-row">
+          <span class="param-lbl">Step size ε</span>
+          <input type="range" id="hmcEps" min="0.05" max="0.7" step="0.05" value="0.2" oninput="updateHMCParams()">
+          <span class="param-val" id="hmcEps-v">0.20</span>
+        </div>
+        <div class="param-row">
+          <span class="param-lbl">Leapfrog steps L</span>
+          <input type="range" id="hmcL" min="3" max="25" step="1" value="12" oninput="updateHMCParams()">
+          <span class="param-val" id="hmcL-v">12</span>
+        </div>
+        <div class="param-row">
+          <span class="param-lbl">σ (target)</span>
+          <input type="range" id="hmcSig" min="0.5" max="2" step="0.25" value="1.0" oninput="updateHMCParams()">
+          <span class="param-val" id="hmcSig-v">1.00</span>
+        </div>
+        <div class="controls">
+          <button class="btn-primary" onclick="hmcStep()">Step →</button>
+          <button onclick="hmcFireTraj()">Full trajectory</button>
+          <button id="hmcRunBtn" onclick="hmcToggleRun()">Auto</button>
+          <button onclick="hmcReset()">Reset</button>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-label">Statistics</div>
+        <div class="data-grid" id="hmcStats"></div>
+      </div>
+
+      <div class="card">
+        <div class="card-label">Log</div>
+        <div class="log" id="hmcLog"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════ SECTION 7 -->
+<div class="section" id="s6">
+  <div class="section-eyebrow">Section 7</div>
+  <div class="section-title">Neal's Funnel — Where Geometry Breaks HMC</div>
+  <div class="section-sub">The funnel is where all four properties we've built break down simultaneously. Understanding why it fails deepens everything above.</div>
+
+  <div class="two-col">
+    <div>
+      <h3>The funnel distribution</h3>
+      <p>Neal's funnel is a two-dimensional distribution: v ~ N(0,3) and θ₁ ~ N(0, exp(v)). The variable v sets the scale of θ₁. When v is large and positive, θ₁ spreads wide. When v is large and negative, θ₁ is extremely tight near zero.</p>
+      <p>This structure arises naturally in hierarchical models — v plays the role of a hyperparameter (a group-level variance), and θ₁ is a data-level parameter whose scale depends on v. Real Bayesian hierarchical models have this geometry.</p>
+
+      <div class="callout">
+        <strong>The curvature problem:</strong> The gradient of U(v,θ₁) changes dramatically across the funnel. At v = 2 (wide neck), the curvature ∂²U/∂θ₁² = exp(−v) ≈ 0.1 — shallow. At v = −3 (narrow neck), curvature = exp(3) ≈ 20 — extremely steep. A step size that works at the top shreds the energy surface at the bottom.
+      </div>
+
+      <h3>How this breaks leapfrog</h3>
+      <p>The optimal leapfrog step size scales roughly as 1/sqrt(curvature). In the wide top, curvature ≈ 0.1, so ε can be ~3. In the narrow bottom, curvature ≈ 20, so ε must be ~0.2. A single fixed ε cannot satisfy both.</p>
+      <p>With ε tuned for the top: trajectories in the narrow neck accumulate catastrophic energy errors. ΔH >> 0. Metropolis rejects. The chain cannot explore the neck region at all.</p>
+
+      <div class="callout red">
+        <strong>Divergent transitions:</strong> When ΔH is astronomically large (say > 1000), the leapfrog trajectory has left the energy surface entirely. Stan and PyMC flag these as divergences — not just rejected proposals, but evidence of a fundamental geometry problem. The red X markers in the visualization below are exactly these.
+      </div>
+
+      <h3>Why divergences are informative</h3>
+      <p>A random walk chain getting stuck near the funnel neck would simply have low effective sample size — you'd see no warning. HMC with divergences gives you a positive signal: <em>the integrator detected geometry that standard methods miss</em>. The location of divergences even tells you where the problematic region is.</p>
+
+      <h3>The fix: non-centered parameterization</h3>
+      <p>Instead of modeling θ₁ ~ N(0, exp(v)) directly (centered), reparameterize: let z ~ N(0,1) and set θ₁ = z·exp(v/2). The posterior over (v, z) has nearly constant curvature — no funnel. HMC with standard step size works perfectly.</p>
+      <div class="callout cyan">
+        <strong>What this does geometrically:</strong> The non-centered parameterization flattens the energy surface so that curvature is roughly constant across the space. The typical set is still a shell, but the shell's local geometry is uniform. A single step size works everywhere.
+      </div>
+    </div>
+
+    <div>
+      <div class="card">
+        <div class="card-label">Neal's Funnel — Live Sampler</div>
+        <canvas id="funnelCanvas" width="380" height="380"></canvas>
+        <div class="legend" style="margin-top:6px">
+          <div class="legend-item"><div class="legend-line" style="background:var(--green)"></div>Typical region ±2σ(v)</div>
+          <div class="legend-item"><div class="legend-dot" style="background:var(--purple)"></div>Accepted</div>
+          <div class="legend-item"><div class="legend-dot" style="background:var(--red)"></div>Divergence</div>
+        </div>
+        <div class="param-row" style="margin-top:8px">
+          <span class="param-lbl">ε (try 0.1→0.4 to see divergences)</span>
+          <input type="range" id="fEps" min="0.02" max="0.5" step="0.02" value="0.1" oninput="updateFunnelParams()">
+          <span class="param-val" id="fEps-v">0.10</span>
+        </div>
+        <div class="param-row">
+          <span class="param-lbl">L steps</span>
+          <input type="range" id="fL" min="3" max="25" step="1" value="15" oninput="updateFunnelParams()">
+          <span class="param-val" id="fL-v">15</span>
+        </div>
+        <div class="controls">
+          <button class="btn-primary" onclick="funnelStep()">Step →</button>
+          <button id="fRunBtn" onclick="funnelToggleRun()">Auto</button>
+          <button onclick="funnelReset()">Reset</button>
+        </div>
+        <div class="data-grid" id="funnelStats" style="margin-top:8px"></div>
+      </div>
+
+      <div class="card">
+        <div class="card-label">Energy Error by Region</div>
+        <canvas id="funnelDH" width="380" height="120"></canvas>
+        <p style="font-size:11px; margin-top:6px; color:var(--text3)">|ΔH| per trajectory plotted vs the v value where the trajectory started. Divergences (|ΔH| >> 1) cluster at low v — the narrow neck.</p>
+      </div>
+
+      <div class="card">
+        <div class="card-label">Log</div>
+        <div class="log" id="funnelLog"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+// ════════════════════════════════════ UTILITIES
+function randn(){let u=0,v=0;while(!u)u=Math.random();while(!v)v=Math.random();return Math.sqrt(-2*Math.log(u))*Math.cos(2*Math.PI*v);}
+function fmt(x,d=3){return isFinite(x)?x.toFixed(d):'∞';}
+function clamp(x,a,b){return Math.max(a,Math.min(b,x));}
+
+function makeDataRow(key, val, cls=''){
+  return `<div class="data-row ${cls}"><span class="data-key">${key}</span><span class="data-val">${val}</span></div>`;
+}
+
+function addLog(elId, text, cls=''){
+  const el = document.getElementById(elId);
+  const prev = el.querySelector('.ll.cur');
+  if(prev) prev.classList.remove('cur');
+  const d = document.createElement('div');
+  d.className = 'll cur ' + cls;
+  d.textContent = text;
+  el.appendChild(d);
+  el.scrollTop = el.scrollHeight;
+  if(el.children.length > 60) el.removeChild(el.firstChild);
+}
+
+// ════════════════════════════════════ NAV
+function nav(i){
+  document.querySelectorAll('.section').forEach((s,j)=>s.classList.toggle('active',j===i));
+  document.querySelectorAll('.nav-item').forEach((n,j)=>n.classList.toggle('active',j===i));
+  if(i===0) initNav();
+  if(i===1) { updateLevel(); updateUKH(); }
+  if(i===2) updateSympl();
+  if(i===3) { lfReset(); updateErrPlot(); updateJacPlot(); }
+  if(i===4) { updateDB5(); updateMH5(); updateJac5(); }
+  if(i===5) { hmcReset(); }
+  if(i===6) { funnelReset(); }
+}
+
+// ════════════════════════════════════ SECTION 1: NAVIGATION
+const NAV = {
+  rw: {theta:[1.3,0.1], path:[], sigma:0.15, accepts:0, total:0},
+  hmc: {theta:[1.3,0.1], p:[0,0], path:[], H0:null, traj:[], accepts:0, total:0},
+  running: false, interval: null,
+  sigma_target: 1.0
+};
+
+function navReset(){
+  if(NAV.interval) clearInterval(NAV.interval);
+  NAV.running=false;
+  document.getElementById('navRunBtn').className='';
+  document.getElementById('navRunBtn').textContent='Auto';
+  const s = Math.sqrt(2)*NAV.sigma_target;
+  NAV.rw.theta=[s*0.9,0.1]; NAV.rw.path=[]; NAV.rw.accepts=0; NAV.rw.total=0;
+  NAV.hmc.theta=[s*0.9,0.1]; NAV.hmc.path=[]; NAV.hmc.traj=[]; NAV.hmc.accepts=0; NAV.hmc.total=0;
+  drawNav(); updateNavStats();
+}
+
+function navUpdateParams(){
+  NAV.rw.sigma = +document.getElementById('navSigma').value;
+  document.getElementById('navSigma-v').textContent = fmt(NAV.rw.sigma,2);
+}
+
+function U2(t,sig=1){return 0.5*(t[0]**2+t[1]**2)/(sig*sig);}
+function gradU2(t,sig=1){return [t[0]/(sig*sig),t[1]/(sig*sig)];}
+function K2(p){return 0.5*(p[0]**2+p[1]**2);}
+function H2(t,p,sig=1){return U2(t,sig)+K2(p);}
+
+function lfStep2(t,p,eps,sig=1){
+  const g1=gradU2(t,sig);
+  const ph=[p[0]-0.5*eps*g1[0],p[1]-0.5*eps*g1[1]];
+  const tn=[t[0]+eps*ph[0],t[1]+eps*ph[1]];
+  const g2=gradU2(tn,sig);
+  const pn=[ph[0]-0.5*eps*g2[0],ph[1]-0.5*eps*g2[1]];
+  return {theta:tn,p:pn};
+}
+
+function navStep(){
+  // Random walk step
+  const sig=NAV.rw.sigma;
+  const prop=[NAV.rw.theta[0]+sig*randn(), NAV.rw.theta[1]+sig*randn()];
+  const a=Math.min(1,Math.exp(-(U2(prop)-U2(NAV.rw.theta))));
+  NAV.rw.total++;
+  if(Math.random()<a){NAV.rw.theta=prop;NAV.rw.accepts++;}
+  NAV.rw.path.push([...NAV.rw.theta]);
+  if(NAV.rw.path.length>80) NAV.rw.path.shift();
+
+  // HMC step (one full trajectory)
+  const p0=[randn(),randn()];
+  const H0=H2(NAV.hmc.theta,p0);
+  let tc=[...NAV.hmc.theta],pc=[...p0];
+  NAV.hmc.traj=[[...tc]];
+  for(let i=0;i<12;i++){
+    const r=lfStep2(tc,pc,0.15);
+    tc=r.theta;pc=r.p;
+    NAV.hmc.traj.push([...tc]);
+  }
+  const H1=H2(tc,pc);
+  const hmcA=Math.min(1,Math.exp(-(H1-H0)));
+  NAV.hmc.total++;
+  if(Math.random()<hmcA){NAV.hmc.theta=tc;NAV.hmc.accepts++;}
+  NAV.hmc.path.push([...NAV.hmc.theta]);
+  if(NAV.hmc.path.length>80) NAV.hmc.path.shift();
+
+  drawNav(); updateNavStats();
+}
+
+function navToggle(){
+  NAV.running=!NAV.running;
+  const btn=document.getElementById('navRunBtn');
+  if(NAV.running){btn.className='btn-run';btn.textContent='Stop';NAV.interval=setInterval(navStep,350);}
+  else{btn.className='';btn.textContent='Auto';clearInterval(NAV.interval);}
+}
+
+function updateNavStats(){
+  const rwAcc=NAV.rw.total?NAV.rw.accepts/NAV.rw.total:0;
+  const hmcAcc=NAV.hmc.total?NAV.hmc.accepts/NAV.hmc.total:0;
+  document.getElementById('navStats').innerHTML=
+    makeDataRow('RW accept rate',fmt(rwAcc*100,1)+'%','r') +
+    makeDataRow('HMC accept rate',fmt(hmcAcc*100,1)+'%','g') +
+    makeDataRow('RW path length',NAV.rw.path.length,'') +
+    makeDataRow('HMC samples',NAV.hmc.path.length,'c');
+}
+
+function drawNav(){
+  const cvs=document.getElementById('navCanvas');
+  if(!cvs) return;
+  const ctx=cvs.getContext('2d');
+  const W=cvs.width,H=cvs.height,cx=W/2,cy=H/2,sc=70;
+  ctx.clearRect(0,0,W,H);
+  ctx.fillStyle='#0f1320';ctx.fillRect(0,0,W,H);
+
+  // Contours
+  [0.5,1.5,3,5].forEach(u=>{
+    const r=Math.sqrt(2*u)*sc;
+    ctx.strokeStyle='rgba(37,45,74,0.8)';ctx.lineWidth=0.8;
+    ctx.beginPath();ctx.arc(cx,cy,r,0,2*Math.PI);ctx.stroke();
+  });
+
+  // Typical set
+  const tr=Math.sqrt(2)*sc;
+  ctx.strokeStyle='rgba(52,211,153,0.7)';ctx.lineWidth=2;ctx.setLineDash([5,4]);
+  ctx.beginPath();ctx.arc(cx,cy,tr,0,2*Math.PI);ctx.stroke();
+  ctx.setLineDash([]);
+
+  // HMC trajectory
+  if(NAV.hmc.traj.length>1){
+    ctx.strokeStyle='rgba(56,189,248,0.4)';ctx.lineWidth=1;
+    ctx.beginPath();
+    NAV.hmc.traj.forEach((p,i)=>{i?ctx.lineTo(cx+p[0]*sc,cy-p[1]*sc):ctx.moveTo(cx+p[0]*sc,cy-p[1]*sc);});
+    ctx.stroke();
+  }
+
+  // Paths
+  function drawPath(path,col){
+    if(path.length<2) return;
+    ctx.strokeStyle=col;ctx.lineWidth=1;
+    ctx.beginPath();
+    path.forEach((p,i)=>{i?ctx.lineTo(cx+p[0]*sc,cy-p[1]*sc):ctx.moveTo(cx+p[0]*sc,cy-p[1]*sc);});
+    ctx.stroke();
+    path.forEach(p=>{
+      ctx.fillStyle=col.replace('0.6','0.3');
+      ctx.beginPath();ctx.arc(cx+p[0]*sc,cy-p[1]*sc,2,0,2*Math.PI);ctx.fill();
+    });
+  }
+  drawPath(NAV.rw.path,'rgba(248,113,113,0.6)');
+  drawPath(NAV.hmc.path,'rgba(56,189,248,0.6)');
+
+  // Current positions
+  [[NAV.rw.theta,'#f87171'],[NAV.hmc.theta,'#38bdf8']].forEach(([t,col])=>{
+    ctx.fillStyle=col;ctx.beginPath();ctx.arc(cx+t[0]*sc,cy-t[1]*sc,6,0,2*Math.PI);ctx.fill();
+    ctx.strokeStyle='#fff';ctx.lineWidth=1.5;ctx.beginPath();ctx.arc(cx+t[0]*sc,cy-t[1]*sc,6,0,2*Math.PI);ctx.stroke();
+  });
+
+  ctx.fillStyle='#64748b';ctx.font='10px JetBrains Mono';
+  ctx.fillText('θ₁',W-16,cy-4);ctx.fillText('θ₂',cx+4,14);
+}
+
+function drawTraversal(){
+  const cvs=document.getElementById('traversalCanvas');
+  if(!cvs) return;
+  const ctx=cvs.getContext('2d');
+  const W=cvs.width,H=cvs.height;
+  ctx.clearRect(0,0,W,H);ctx.fillStyle='#0f1320';ctx.fillRect(0,0,W,H);
+
+  const dims=[2,5,10,20,50,100,200];
+  const rwSteps=dims.map(d=>d);
+  const hmcSteps=dims.map(()=>1);
+
+  const maxS=Math.max(...rwSteps);
+  function toX(i){return 30+i*(W-50)/6;}
+  function toY(s){return H-20-(s/maxS)*(H-30);}
+
+  ctx.strokeStyle='rgba(248,113,113,0.8)';ctx.lineWidth=2;
+  ctx.beginPath();rwSteps.forEach((s,i)=>{i?ctx.lineTo(toX(i),toY(s)):ctx.moveTo(toX(i),toY(s));});ctx.stroke();
+
+  ctx.strokeStyle='rgba(52,211,153,0.8)';ctx.lineWidth=2;
+  ctx.beginPath();hmcSteps.forEach((s,i)=>{i?ctx.lineTo(toX(i),toY(s)):ctx.moveTo(toX(i),toY(s));});ctx.stroke();
+
+  dims.forEach((d,i)=>{
+    ctx.fillStyle='#475569';ctx.font='9px JetBrains Mono';
+    ctx.fillText(d,toX(i)-5,H-5);
+  });
+  ctx.fillStyle='#475569';ctx.font='9px JetBrains Mono';
+  ctx.fillText('dimension d',W/2-20,H-2);
+  ctx.fillStyle='#f87171';ctx.fillText('RW: O(d)',W-60,30);
+  ctx.fillStyle='#34d399';ctx.fillText('HMC: O(1)',W-65,45);
+}
+
+function initNav(){navReset();drawTraversal();}
+
+// ════════════════════════════════════ SECTION 2: HAMILTONIAN CONSTRUCTION
+function updateLevel(){
+  const cvs=document.getElementById('levelCanvas');
+  if(!cvs) return;
+  const ctx=cvs.getContext('2d');
+  const W=cvs.width,H=cvs.height;
+  const cx=W/2,cy=H/2,sc=55;
+  ctx.clearRect(0,0,W,H);ctx.fillStyle='#0f1320';ctx.fillRect(0,0,W,H);
+
+  const theta2=+document.getElementById('sliceTheta2').value;
+  document.getElementById('sliceTheta2-v').textContent=fmt(theta2,2);
+
+  // For fixed θ₂, draw H(θ₁,p) = 0.5*(θ₁²+θ₂²) + 0.5*p²
+  // as contours in (θ₁, p) space
+  const levels=[1,1.5,2,3,4.5,6];
+  const cols=['#7c3aed','#2563eb','#0891b2','#047857','#b45309','#b91c1c'];
+
+  levels.forEach((c,ci)=>{
+    // H = 0.5*(θ₁² + θ₂²) + 0.5*p² = c
+    // 0.5*p² = c - 0.5*(θ₁²+θ₂²)
+    // p = ±sqrt(2*(c - 0.5*(θ₁²+θ₂²)))
+    ctx.strokeStyle=cols[ci];ctx.lineWidth=1.5;
+    const t2contrib=0.5*theta2*theta2;
+    // draw as ellipse in (θ₁, p): 0.5*θ₁² + 0.5*p² = c - t2contrib
+    const rem = c - t2contrib;
+    if(rem<=0) return;
+    const a=Math.sqrt(2*rem)*sc; // θ₁ radius
+    const b=Math.sqrt(2*rem)*sc; // p radius (same since quadratic in both)
+    ctx.beginPath();ctx.ellipse(cx,cy,a,b,0,0,2*Math.PI);ctx.stroke();
+  });
+
+  // Typical set: H ≈ d/2 + 0.5*θ₂² for 1D marginal
+  // Roughly at θ₁²+p²=2 in the slice
+  const typR = Math.sqrt(2*(1 - 0.5*theta2*theta2));
+  if(typR>0){
+    ctx.strokeStyle='rgba(52,211,153,0.8)';ctx.lineWidth=2;ctx.setLineDash([5,3]);
+    ctx.beginPath();ctx.arc(cx,cy,typR*sc,0,2*Math.PI);ctx.stroke();
+    ctx.setLineDash([]);
+  }
+
+  // Axes
+  ctx.strokeStyle='#252d4a';ctx.lineWidth=1;
+  ctx.beginPath();ctx.moveTo(0,cy);ctx.lineTo(W,cy);ctx.stroke();
+  ctx.beginPath();ctx.moveTo(cx,0);ctx.lineTo(cx,H);ctx.stroke();
+
+  // Labels
+  ctx.fillStyle='#64748b';ctx.font='10px JetBrains Mono';
+  ctx.fillText('θ₁ →',W-30,cy-5);
+  ctx.fillText('p ↑',cx+5,14);
+  ctx.fillText('Level sets of H(θ₁,p)',5,14);
+  ctx.fillStyle='rgba(52,211,153,0.8)';ctx.font='10px Inter';
+  if(typR>0) ctx.fillText('typical set',cx+typR*sc+4,cy-4);
+
+  // Legend
+  levels.forEach((c,ci)=>{
+    ctx.fillStyle=cols[ci];ctx.font='9px JetBrains Mono';
+    ctx.fillText(`H=${c}`,W-42,14+ci*12);
+  });
+}
+
+function updateUKH(){
+  const theta=+document.getElementById('thetaSlice').value;
+  const p=+document.getElementById('momSlice').value;
+  document.getElementById('thetaSlice-v').textContent=fmt(theta,2);
+  document.getElementById('momSlice-v').textContent=fmt(p,2);
+
+  const U=0.5*theta*theta;
+  const K=0.5*p*p;
+  const Hval=U+K;
+  const logpi=-Hval;
+  const typR=Math.sqrt(2);
+  const r=Math.sqrt(theta*theta+p*p);
+
+  document.getElementById('ukhDisplay').innerHTML=
+    makeDataRow('U(θ) = −log π(θ) = ½θ²',fmt(U),'a') +
+    makeDataRow('K(p) = ½p²',fmt(K),'p') +
+    makeDataRow('H = U + K',fmt(Hval),'c') +
+    makeDataRow('−log π(θ,p) = H',fmt(Hval),'c') +
+    makeDataRow('r = √(θ²+p²)',fmt(r)) +
+    makeDataRow('Typical set radius √2',fmt(typR),'g');
+
+  const onTypical = Math.abs(r - typR) < 0.3;
+  const ins = document.getElementById('ukhInsight');
+  if(onTypical){
+    ins.className='callout green';
+    ins.innerHTML=`<strong>On the typical set.</strong> H ≈ ${fmt(Hval,2)} — a conserved level set. Dynamics stays here.`;
+  } else if(r < typR-0.3){
+    ins.className='callout';
+    ins.innerHTML=`<strong>Inside the typical set</strong> (near mode). H = ${fmt(Hval,2)} < typical. High density but low volume contribution.`;
+  } else {
+    ins.className='callout red';
+    ins.innerHTML=`<strong>Outside the typical set</strong> (tail). H = ${fmt(Hval,2)} > typical. Low density — vanishing contribution to expectations.`;
+  }
+}
+
+// ════════════════════════════════════ SECTION 3: UNIQUENESS
+function eulerStep1D(theta,p,eps){
+  return {theta:theta+eps*p, p:p-eps*theta};
+}
+function lfStep1D(theta,p,eps){
+  const ph=p-0.5*eps*theta;
+  const tn=theta+eps*ph;
+  const pn=ph-0.5*eps*tn;
+  return {theta:tn,p:pn};
+}
+function gradStep1D(theta,p,eps){
+  // Gradient descent: move theta toward mode
+  return {theta:theta-eps*theta,p:p-eps*p};
+}
+
+function polygonArea2(pts){
+  let a=0;
+  for(let i=0;i<pts.length;i++){
+    const j=(i+1)%pts.length;
+    a+=pts[i][0]*pts[j][1]-pts[j][0]*pts[i][1];
+  }
+  return Math.abs(a)/2;
+}
+
+function updateSympl(){
+  const N=+document.getElementById('symplN').value;
+  const eps=+document.getElementById('symplEps').value;
+  document.getElementById('symplN-v').textContent=N;
+  document.getElementById('symplEps-v').textContent=fmt(eps,2);
+
+  const init=[[0.3,0.3],[0.7,0.3],[0.7,0.7],[0.3,0.7]];
+  const initArea=polygonArea2(init);
+
+  function evolve(pts,stepFn){
+    return pts.map(([th,p])=>{
+      let ct=th,cp=p;
+      for(let i=0;i<N;i++){const r=stepFn(ct,cp,eps);ct=r.theta;cp=r.p;}
+      return [ct,cp];
+    });
+  }
+
+  const lfPts=evolve(init,lfStep1D);
+  const euPts=evolve(init,eulerStep1D);
+  const gdPts=evolve(init,gradStep1D);
+
+  const lfArea=polygonArea2(lfPts);
+  const euArea=polygonArea2(euPts);
+  const gdArea=polygonArea2(gdPts);
+
+  const cvs=document.getElementById('symplCanvas');
+  if(!cvs)return;
+  const ctx=cvs.getContext('2d');
+  const W=cvs.width,H=cvs.height;
+  ctx.clearRect(0,0,W,H);ctx.fillStyle='#0f1320';ctx.fillRect(0,0,W,H);
+  const cx=W/2,cy=H/2,sc=90;
+
+  function toC(th,p){return[cx+th*sc,cy-p*sc];}
+
+  // Grid
+  ctx.strokeStyle='#161c2e';ctx.lineWidth=0.5;
+  for(let i=-3;i<=3;i++){
+    ctx.beginPath();ctx.moveTo(...toC(i,-3));ctx.lineTo(...toC(i,3));ctx.stroke();
+    ctx.beginPath();ctx.moveTo(...toC(-3,i));ctx.lineTo(...toC(3,i));ctx.stroke();
+  }
+  ctx.strokeStyle='#252d4a';ctx.lineWidth=1;
+  ctx.beginPath();ctx.moveTo(...toC(-3,0));ctx.lineTo(...toC(3,0));ctx.stroke();
+  ctx.beginPath();ctx.moveTo(...toC(0,-3));ctx.lineTo(...toC(0,3));ctx.stroke();
+
+  function drawPoly(pts,fill,stroke){
+    ctx.fillStyle=fill;ctx.strokeStyle=stroke;ctx.lineWidth=2;
+    ctx.beginPath();
+    pts.forEach(([th,p],i)=>{i?ctx.lineTo(...toC(th,p)):ctx.moveTo(...toC(th,p));});
+    ctx.closePath();ctx.fill();ctx.stroke();
+  }
+
+  // Initial (dashed)
+  ctx.strokeStyle='rgba(100,116,139,0.5)';ctx.lineWidth=1;ctx.setLineDash([3,3]);
+  ctx.beginPath();init.forEach(([th,p],i)=>{i?ctx.lineTo(...toC(th,p)):ctx.moveTo(...toC(th,p));});ctx.closePath();ctx.stroke();
+  ctx.setLineDash([]);
+
+  drawPoly(gdPts,'rgba(168,85,247,0.15)','rgba(168,85,247,0.6)');
+  drawPoly(euPts,'rgba(248,113,113,0.15)','rgba(248,113,113,0.7)');
+  drawPoly(lfPts,'rgba(52,211,153,0.15)','rgba(52,211,153,0.7)');
+
+  // Labels
+  ctx.font='10px JetBrains Mono';
+  ctx.fillStyle='rgba(52,211,153,0.9)';ctx.fillText('Leapfrog',toC(lfPts[0][0],lfPts[0][1])[0]-10,toC(lfPts[0][0],lfPts[0][1])[1]-6);
+  ctx.fillStyle='rgba(248,113,113,0.9)';ctx.fillText('Euler',toC(euPts[0][0],euPts[0][1])[0],toC(euPts[0][0],euPts[0][1])[1]-6);
+
+  document.getElementById('symplData').innerHTML=
+    makeDataRow('Initial area',fmt(initArea,4)) +
+    makeDataRow('Leapfrog area |J|='+fmt(lfArea/initArea,4),fmt(lfArea,4),'g') +
+    makeDataRow('Euler area |J|='+fmt(euArea/initArea,4),fmt(euArea,4),'r') +
+    makeDataRow('Grad descent area |J|='+fmt(gdArea/initArea,4),fmt(gdArea,4),'r');
+}
+
+// ════════════════════════════════════ SECTION 4: LEAPFROG
+const LF = {
+  theta:1.5, p:0.8, eps:0.3, substep:0,
+  // substep 0=start, 1=half-p, 2=full-theta, 3=half-p-final
+  ph:null, tn:null, H0:null
+};
+
+function lfReset(){
+  LF.theta=1.5;LF.p=0.8;LF.substep=0;LF.ph=null;LF.tn=null;
+  LF.H0=0.5*LF.theta**2+0.5*LF.p**2;
+  drawLF();updateLFDisplay();
+}
+
+function lfStepOne(){
+  if(LF.substep===0){
+    // half-step p
+    LF.ph=LF.p-0.5*LF.eps*LF.theta;
+    LF.substep=1;
+  } else if(LF.substep===1){
+    // full-step theta
+    LF.tn=LF.theta+LF.eps*LF.ph;
+    LF.substep=2;
+  } else if(LF.substep===2){
+    // half-step p final
+    const pn=LF.ph-0.5*LF.eps*LF.tn;
+    LF.theta=LF.tn;LF.p=pn;
+    LF.substep=0;LF.ph=null;LF.tn=null;
+    LF.H0=0.5*LF.theta**2+0.5*LF.p**2;
+  }
+  drawLF();updateLFDisplay();
+}
+
+function updateLFDisplay(){
+  const theta=LF.theta,p=LF.p;
+  const U=0.5*theta**2,K=0.5*p**2,Hcur=U+K;
+  const subNames=['Start / after last step','After p half-step','After θ full-step'];
+  const subCols=['c','a','g'];
+  const explains=[
+    '<strong>Ready for next leapfrog step.</strong> Current (θ,p) state. H = U + K shown. Each leapfrog step is three sub-steps.',
+    '<strong>Half-step in p completed.</strong> p updated using gradient at current θ. θ unchanged → shear map → Jacobian = 1.',
+    '<strong>Full step in θ completed.</strong> θ updated using half-stepped p. p unchanged → shear map → Jacobian = 1. Now do final half-step in p.'
+  ];
+
+  document.getElementById('lfSubStep').innerHTML=
+    makeDataRow('θ',fmt(theta),'c') +
+    makeDataRow('p'+((LF.substep>=1&&LF.ph!==null)?'_half':''),fmt(LF.substep>=1&&LF.ph!==null?LF.ph:p),(LF.substep>=1?'a':'')) +
+    (LF.tn!==null?makeDataRow('θ_new',fmt(LF.tn),'g'):'') +
+    makeDataRow('U(θ)',fmt(U),'a') +
+    makeDataRow('K(p)',fmt(K),'p') +
+    makeDataRow('H',fmt(Hcur),'c') +
+    makeDataRow('ΔH from initial',fmt(Hcur-LF.H0));
+
+  const el=document.getElementById('lfExplain');
+  el.className='callout '+(LF.substep===0?'cyan':LF.substep===1?'':'green');
+  el.innerHTML=explains[LF.substep];
+}
+
+function drawLF(){
+  const cvs=document.getElementById('lfCanvas');if(!cvs)return;
+  const ctx=cvs.getContext('2d');
+  const W=cvs.width,H=cvs.height,cx=W/2,cy=H/2,sc=60;
+  ctx.clearRect(0,0,W,H);ctx.fillStyle='#0f1320';ctx.fillRect(0,0,W,H);
+
+  // Contours
+  [0.5,1.5,3,5].forEach(u=>{
+    const r=Math.sqrt(2*u)*sc;
+    ctx.strokeStyle='rgba(37,45,74,0.7)';ctx.lineWidth=0.8;
+    ctx.beginPath();ctx.arc(cx,cy,r,0,2*Math.PI);ctx.stroke();
+  });
+
+  // H=H0 circle
+  const H0=LF.H0;
+  ctx.strokeStyle='rgba(56,189,248,0.4)';ctx.lineWidth=1.5;ctx.setLineDash([4,3]);
+  ctx.beginPath();ctx.arc(cx,cy,Math.sqrt(2*H0)*sc,0,2*Math.PI);ctx.stroke();
+  ctx.setLineDash([]);
+
+  // Show sub-step state
+  const theta=LF.theta,p=LF.p;
+  const ph=LF.ph,tn=LF.tn;
+
+  // Current position
+  ctx.fillStyle='#fbbf24';
+  ctx.beginPath();ctx.arc(cx+theta*sc,cy-p*sc,7,0,2*Math.PI);ctx.fill();
+  ctx.strokeStyle='#fff';ctx.lineWidth=1.5;ctx.beginPath();ctx.arc(cx+theta*sc,cy-p*sc,7,0,2*Math.PI);ctx.stroke();
+
+  // Half-p point
+  if(ph!==null){
+    ctx.fillStyle='rgba(167,139,250,0.8)';
+    ctx.beginPath();ctx.arc(cx+theta*sc,cy-ph*sc,5,0,2*Math.PI);ctx.fill();
+    ctx.strokeStyle='#a78bfa';ctx.lineWidth=1;
+    ctx.beginPath();ctx.moveTo(cx+theta*sc,cy-p*sc);ctx.lineTo(cx+theta*sc,cy-ph*sc);ctx.stroke();
+    ctx.fillStyle='#a78bfa';ctx.font='10px JetBrains Mono';
+    ctx.fillText('p½',cx+theta*sc+6,cy-ph*sc);
+  }
+
+  // New theta point
+  if(tn!==null&&ph!==null){
+    ctx.fillStyle='rgba(52,211,153,0.8)';
+    ctx.beginPath();ctx.arc(cx+tn*sc,cy-ph*sc,5,0,2*Math.PI);ctx.fill();
+    ctx.strokeStyle='#34d399';ctx.lineWidth=1;
+    ctx.beginPath();ctx.moveTo(cx+theta*sc,cy-ph*sc);ctx.lineTo(cx+tn*sc,cy-ph*sc);ctx.stroke();
+    ctx.fillStyle='#34d399';ctx.font='10px JetBrains Mono';
+    ctx.fillText('θ*',cx+tn*sc+4,cy-ph*sc-4);
+  }
+
+  // Axes labels
+  ctx.fillStyle='#64748b';ctx.font='10px JetBrains Mono';
+  ctx.fillText('θ →',W-24,cy-4);ctx.fillText('p ↑',cx+4,14);
+  ctx.fillStyle='rgba(56,189,248,0.5)';ctx.font='9px Inter';
+  ctx.fillText('H₀ level set',cx+Math.sqrt(2*H0)*sc+4,cy-4);
+}
+
+function updateErrPlot(){
+  const eps=+document.getElementById('errEps').value;
+  document.getElementById('errEps-v').textContent=fmt(eps,2);
+
+  const cvs=document.getElementById('errCanvas');if(!cvs)return;
+  const ctx=cvs.getContext('2d');
+  const W=cvs.width,H=cvs.height;
+  ctx.clearRect(0,0,W,H);ctx.fillStyle='#0f1320';ctx.fillRect(0,0,W,H);
+
+  const N=50,theta0=1.5,p0=0.5;
+  const H0=0.5*theta0**2+0.5*p0**2;
+
+  function Hof(th,p){return 0.5*th**2+0.5*p**2;}
+
+  // RK4
+  function rk4Step(theta,p,eps){
+    function deriv(th,pm){return{dt:pm,dp:-th};}
+    const k1=deriv(theta,p);
+    const k2=deriv(theta+eps/2*k1.dt,p+eps/2*k1.dp);
+    const k3=deriv(theta+eps/2*k2.dt,p+eps/2*k2.dp);
+    const k4=deriv(theta+eps*k3.dt,p+eps*k3.dp);
+    return{theta:theta+eps/6*(k1.dt+2*k2.dt+2*k3.dt+k4.dt),p:p+eps/6*(k1.dp+2*k2.dp+2*k3.dp+k4.dp)};
+  }
+
+  const lfH=[H0],euH=[H0],rkH=[H0];
+  let tl=theta0,pl=p0,te=theta0,pe=p0,tr=theta0,pr=p0;
+  for(let i=0;i<N;i++){
+    const rl=lfStep1D(tl,pl,eps);tl=rl.theta;pl=rl.p;lfH.push(Hof(tl,pl));
+    const re=eulerStep1D(te,pe,eps);te=re.theta;pe=re.p;euH.push(Hof(te,pe));
+    const rr=rk4Step(tr,pr,eps);tr=rr.theta;pr=rr.p;rkH.push(Hof(tr,pr));
+  }
+
+  const all=[...lfH,...euH,...rkH].filter(isFinite);
+  const Hmin=Math.min(...all)-0.1,Hmax=Math.max(...all)+0.1;
+  function toY(h){return H-8-(h-Hmin)/(Hmax-Hmin)*(H-16);}
+  function toX(i){return 5+i*(W-10)/N;}
+
+  // Reference
+  ctx.strokeStyle='rgba(100,116,139,0.3)';ctx.lineWidth=1;ctx.setLineDash([3,3]);
+  ctx.beginPath();ctx.moveTo(0,toY(H0));ctx.lineTo(W,toY(H0));ctx.stroke();
+  ctx.setLineDash([]);
+
+  [[lfH,'#34d399'],[rkH,'#fbbf24'],[euH,'#f87171']].forEach(([data,col])=>{
+    ctx.strokeStyle=col;ctx.lineWidth=1.5;
+    ctx.beginPath();
+    data.forEach((h,i)=>{if(!isFinite(h))return;i?ctx.lineTo(toX(i),toY(h)):ctx.moveTo(toX(i),toY(h));});
+    ctx.stroke();
+  });
+
+  ctx.fillStyle='#475569';ctx.font='9px JetBrains Mono';
+  ctx.fillText('H₀',W-20,toY(H0)-3);
+}
+
+function updateJacPlot(){
+  const cvs=document.getElementById('jacCanvas');if(!cvs)return;
+  const ctx=cvs.getContext('2d');
+  const W=cvs.width,H=cvs.height;
+  ctx.clearRect(0,0,W,H);ctx.fillStyle='#0f1320';ctx.fillRect(0,0,W,H);
+
+  const eps=+document.getElementById('errEps').value;
+  const N=30;
+  // Leapfrog Jacobian = 1 always
+  // Euler: approximate (1 - eps^2)^n
+  const lfJ=Array(N+1).fill(1);
+  const euJ=[1];
+  for(let i=0;i<N;i++) euJ.push(euJ[i]*(1-eps*eps));
+
+  const Hmin=Math.min(...euJ),Hmax=1.05;
+  function toY(j){return H-8-(j-Hmin)/(Hmax-Hmin)*(H-16);}
+  function toX(i){return 5+i*(W-10)/N;}
+
+  ctx.strokeStyle='rgba(100,116,139,0.3)';ctx.lineWidth=1;ctx.setLineDash([3,3]);
+  ctx.beginPath();ctx.moveTo(0,toY(1));ctx.lineTo(W,toY(1));ctx.stroke();
+  ctx.setLineDash([]);
+
+  ctx.strokeStyle='#34d399';ctx.lineWidth=2;
+  ctx.beginPath();lfJ.forEach((j,i)=>{i?ctx.lineTo(toX(i),toY(j)):ctx.moveTo(toX(i),toY(j));});ctx.stroke();
+
+  ctx.strokeStyle='#f87171';ctx.lineWidth=2;
+  ctx.beginPath();euJ.forEach((j,i)=>{if(!isFinite(j))return;i?ctx.lineTo(toX(i),toY(j)):ctx.moveTo(toX(i),toY(j));});ctx.stroke();
+
+  ctx.fillStyle='#475569';ctx.font='9px JetBrains Mono';
+  ctx.fillText('|J|=1',W-36,toY(1)-3);
+  ctx.fillStyle='#34d399';ctx.fillText('Leapfrog',5,14);
+  ctx.fillStyle='#f87171';ctx.fillText('Euler',5,26);
+}
+
+// ════════════════════════════════════ SECTION 5: METROPOLIS
+function updateDB5(){
+  const piA=+document.getElementById('dbPiA').value;
+  const piB=+document.getElementById('dbPiB').value;
+  const q=+document.getElementById('dbQ').value;
+  const qr=1-q;
+  document.getElementById('dbPiA-v').textContent=fmt(piA,2);
+  document.getElementById('dbPiB-v').textContent=fmt(piB,2);
+  document.getElementById('dbQ-v').textContent=fmt(q,2);
+
+  const aAB=Math.min(1,(piB*qr)/(piA*q));
+  const aBA=Math.min(1,(piA*q)/(piB*qr));
+  const fAB=piA*q*aAB,fBA=piB*qr*aBA;
+  const diff=Math.abs(fAB-fBA);
+  document.getElementById('dbDisplay5').innerHTML=
+    makeDataRow('α(A→B) = min(1, π(B)·Q(B→A) / π(A)·Q(A→B))',fmt(aAB,4),'a') +
+    makeDataRow('α(B→A)',fmt(aBA,4),'p') +
+    makeDataRow('Flow A→B = π(A)·Q(A→B)·α(A→B)',fmt(fAB,5),'c') +
+    makeDataRow('Flow B→A = π(B)·Q(B→A)·α(B→A)',fmt(fBA,5),'c') +
+    makeDataRow('|Difference| (should = 0)',fmt(diff,6),diff<1e-9?'g':'r');
+}
+
+function updateMH5(){
+  const H0=+document.getElementById('mhH0').value;
+  const dH=+document.getElementById('mhDH').value;
+  document.getElementById('mhH0-v').textContent=fmt(H0,1);
+  document.getElementById('mhDH-v').textContent=fmt(dH,2);
+  const alpha=Math.min(1,Math.exp(-dH));
+  document.getElementById('mhDisplay5').innerHTML=
+    makeDataRow('H(start)',fmt(H0,3),'a') +
+    makeDataRow('H(end) = H(start) + ΔH',fmt(H0+dH,3),'r') +
+    makeDataRow('ΔH (leapfrog error)',fmt(dH,4),dH<0.1?'g':dH<0.5?'a':'r') +
+    makeDataRow('α = min(1, exp(−ΔH))',fmt(alpha,4),alpha>0.8?'g':alpha>0.4?'a':'r') +
+    makeDataRow('Rejection rate',fmt(1-alpha,4));
+
+  const cvs=document.getElementById('mhCurve');if(!cvs)return;
+  const ctx=cvs.getContext('2d');
+  const W=cvs.width,H=cvs.height;
+  ctx.clearRect(0,0,W,H);ctx.fillStyle='#0f1320';ctx.fillRect(0,0,W,H);
+  ctx.strokeStyle='rgba(56,189,248,0.6)';ctx.lineWidth=2;
+  ctx.beginPath();
+  for(let px=0;px<W;px++){
+    const d=(-0.2+px/W*3.2);
+    const a=Math.min(1,Math.exp(-d));
+    const py=H-6-(a*(H-12));
+    px?ctx.lineTo(px,py):ctx.moveTo(px,py);
+  }
+  ctx.stroke();
+  const curPx=clamp(((dH+0.2)/3.2)*W,0,W-1);
+  const curPy=H-6-(alpha*(H-12));
+  ctx.fillStyle='#fbbf24';ctx.beginPath();ctx.arc(curPx,curPy,6,0,2*Math.PI);ctx.fill();
+  ctx.fillStyle='#475569';ctx.font='9px JetBrains Mono';
+  ctx.fillText('ΔH →',W-40,H-2);ctx.fillText('α',4,14);
+}
+
+function updateJac5(){
+  const eps=+document.getElementById('jacEps').value;
+  const N=+document.getElementById('jacN').value;
+  document.getElementById('jacEps-v').textContent=fmt(eps,2);
+  document.getElementById('jacN-v').textContent=N;
+  const euJ=Math.pow(1-eps*eps,N);
+  document.getElementById('jacDisplay5').innerHTML=
+    makeDataRow('Leapfrog |J|^N (exact)',fmt(1.0000,4),'g') +
+    makeDataRow('Euler |J|^N ≈ (1−ε²)^N',fmt(euJ,4),euJ>0.9?'a':'r') +
+    makeDataRow('Euler MH correction needed',euJ<0.999?'YES (O(d²) cost)':'minimal','r');
+  const ins=document.getElementById('jacInsight5');
+  if(euJ>0.95){
+    ins.className='callout';
+    ins.innerHTML=`<strong>Euler Jacobian = ${fmt(euJ,4)}</strong> — small ε, not too bad yet. With Metropolis correction including Jacobian: possible but expensive.`;
+  } else {
+    ins.className='callout red';
+    ins.innerHTML=`<strong>Euler Jacobian = ${fmt(euJ,4)}</strong> — significant volume contraction. Requires Hessian evaluation for correct MH ratio. O(d²) per step. Leapfrog avoids this entirely.`;
+  }
+}
+
+// ════════════════════════════════════ SECTION 6: FULL HMC
+const HMC = {
+  eps:0.2, L:12, sigma:1.0,
+  theta:[1.2,0.5], p:[0,0], H0:null,
+  traj:[], samples:[], rejected:[],
+  leapStep:0, inTraj:false,
+  accepts:0, total:0,
+  Htrace:[],
+  running:false, interval:null
+};
+
+function hmcU(t){return 0.5*(t[0]**2+t[1]**2)/(HMC.sigma**2);}
+function hmcGU(t){return[t[0]/HMC.sigma**2,t[1]/HMC.sigma**2];}
+function hmcK(p){return 0.5*(p[0]**2+p[1]**2);}
+function hmcH(t,p){return hmcU(t)+hmcK(p);}
+
+function hmcLF(t,p){
+  const g1=hmcGU(t);
+  const ph=[p[0]-0.5*HMC.eps*g1[0],p[1]-0.5*HMC.eps*g1[1]];
+  const tn=[t[0]+HMC.eps*ph[0],t[1]+HMC.eps*ph[1]];
+  const g2=hmcGU(tn);
+  const pn=[ph[0]-0.5*HMC.eps*g2[0],ph[1]-0.5*HMC.eps*g2[1]];
+  return{theta:tn,p:pn};
+}
+
+function hmcStartTraj(){
+  HMC.p=[randn(),randn()];
+  HMC.H0=hmcH(HMC.theta,HMC.p);
+  HMC.traj=[[...HMC.theta]];
+  HMC.leapStep=0;HMC.inTraj=true;
+  const mh=document.getElementById('hmcMH');
+  mh.className='callout';mh.textContent='New trajectory started...';
+  hmcUpdateDisplay();
+}
+
+function hmcStep(){
+  if(!HMC.inTraj) hmcStartTraj();
+  if(HMC.leapStep>=HMC.L){hmcPropose();return;}
+  const{theta:nt,p:np}=hmcLF(HMC.theta,HMC.p);
+  HMC.theta=nt;HMC.p=np;HMC.leapStep++;
+  HMC.traj.push([...HMC.theta]);
+  if(HMC.leapStep>=HMC.L) setTimeout(hmcPropose,60);
+  hmcDrawCanvas();hmcUpdateDisplay();
+}
+
+function hmcPropose(){
+  const Hp=hmcH(HMC.theta,HMC.p);
+  const dH=Hp-HMC.H0;
+  const alpha=Math.min(1,Math.exp(-dH));
+  const acc=Math.random()<alpha;
+  HMC.total++;
+  HMC.Htrace.push(Hp);
+  if(HMC.Htrace.length>80) HMC.Htrace.shift();
+
+  const mh=document.getElementById('hmcMH');
+  if(acc){
+    HMC.accepts++;HMC.samples.push([...HMC.theta]);
+    mh.className='callout green';
+    mh.innerHTML=`<strong>ACCEPTED</strong> — ΔH = ${fmt(dH,4)}, α = ${fmt(alpha,3)}`;
+    addLog('hmcLog',`ACCEPT  ΔH=${fmt(dH,3)}  α=${fmt(alpha,3)}  θ=(${fmt(HMC.theta[0],2)},${fmt(HMC.theta[1],2)})`,'acc');
+  } else {
+    const start=HMC.traj[0];
+    HMC.rejected.push([...HMC.theta]);
+    HMC.theta=[...start];HMC.samples.push([...HMC.theta]);
+    mh.className='callout red';
+    mh.innerHTML=`<strong>REJECTED</strong> — ΔH = ${fmt(dH,4)}, α = ${fmt(alpha,3)}`;
+    addLog('hmcLog',`REJECT  ΔH=${fmt(dH,3)}  α=${fmt(alpha,3)}`,'rej');
+  }
+  HMC.inTraj=false;
+  hmcDrawCanvas();hmcUpdateDisplay();
+  setTimeout(hmcStartTraj,400);
+}
+
+function hmcFireTraj(){
+  if(!HMC.inTraj) hmcStartTraj();
+  const rem=HMC.L-HMC.leapStep;
+  for(let i=0;i<rem;i++){
+    const{theta:nt,p:np}=hmcLF(HMC.theta,HMC.p);
+    HMC.theta=nt;HMC.p=np;HMC.leapStep++;
+    HMC.traj.push([...HMC.theta]);
+  }
+  hmcPropose();
+}
+
+function hmcToggleRun(){
+  HMC.running=!HMC.running;
+  const btn=document.getElementById('hmcRunBtn');
+  if(HMC.running){btn.className='btn-run';btn.textContent='Stop';HMC.interval=setInterval(hmcFireTraj,550);}
+  else{btn.className='';btn.textContent='Auto';clearInterval(HMC.interval);}
+}
+
+function hmcReset(){
+  if(HMC.interval) clearInterval(HMC.interval);
+  HMC.running=false;
+  document.getElementById('hmcRunBtn').className='';document.getElementById('hmcRunBtn').textContent='Auto';
+  HMC.theta=[1.2,0.5];HMC.p=[0,0];HMC.H0=null;
+  HMC.traj=[];HMC.samples=[];HMC.rejected=[];HMC.Htrace=[];
+  HMC.leapStep=0;HMC.inTraj=false;HMC.accepts=0;HMC.total=0;
+  document.getElementById('hmcLog').innerHTML='';
+  hmcStartTraj();hmcDrawCanvas();hmcUpdateDisplay();
+}
+
+function updateHMCParams(){
+  HMC.eps=+document.getElementById('hmcEps').value;
+  HMC.L=+document.getElementById('hmcL').value;
+  HMC.sigma=+document.getElementById('hmcSig').value;
+  document.getElementById('hmcEps-v').textContent=fmt(HMC.eps,2);
+  document.getElementById('hmcL-v').textContent=HMC.L;
+  document.getElementById('hmcSig-v').textContent=fmt(HMC.sigma,2);
+}
+
+function hmcUpdateDisplay(){
+  const U=hmcU(HMC.theta),K=hmcK(HMC.p),H=hmcH(HMC.theta,HMC.p);
+  const dH=HMC.H0!==null?H-HMC.H0:0;
+  document.getElementById('hmcEnergy').innerHTML=
+    makeDataRow('U(θ) = −log π(θ)',fmt(U),'a') +
+    makeDataRow('K(p) = ½pᵀp',fmt(K),'p') +
+    makeDataRow('H = U + K',fmt(H),'c') +
+    makeDataRow('ΔH from traj start',fmt(dH,4),Math.abs(dH)<0.1?'g':Math.abs(dH)<0.5?'a':'r');
+
+  const r=Math.sqrt(HMC.theta[0]**2+HMC.theta[1]**2);
+  const typR=Math.sqrt(2)*HMC.sigma;
+  document.getElementById('hmcState').innerHTML=
+    makeDataRow('θ₁',fmt(HMC.theta[0]),'c') +
+    makeDataRow('θ₂',fmt(HMC.theta[1]),'c') +
+    makeDataRow('p₁',fmt(HMC.p[0]),'p') +
+    makeDataRow('p₂',fmt(HMC.p[1]),'p') +
+    makeDataRow('|θ| (current radius)',fmt(r)) +
+    makeDataRow('√2·σ (typical set radius)',fmt(typR),'g') +
+    makeDataRow('Step '+HMC.leapStep+' of '+HMC.L,'');
+
+  const rate=HMC.total?HMC.accepts/HMC.total:0;
+  document.getElementById('hmcStats').innerHTML=
+    makeDataRow('Accept rate',fmt(rate*100,1)+'%',rate>0.6?'g':rate>0.3?'a':'r') +
+    makeDataRow('Samples',HMC.samples.length,'c') +
+    makeDataRow('Rejections',HMC.rejected.length,'r');
+
+  // Energy trace
+  const cvs=document.getElementById('hmcEnergyTrace');if(!cvs)return;
+  const ctx=cvs.getContext('2d');
+  const W=cvs.width,Hh=cvs.height;
+  ctx.clearRect(0,0,W,Hh);ctx.fillStyle='#0f1320';ctx.fillRect(0,0,W,Hh);
+  if(HMC.Htrace.length>1){
+    const all=HMC.Htrace;
+    const mn=Math.min(...all)-0.1,mx=Math.max(...all)+0.1;
+    ctx.strokeStyle='rgba(56,189,248,0.7)';ctx.lineWidth=1.5;
+    ctx.beginPath();
+    all.forEach((h,i)=>{
+      const x=5+i*(W-10)/all.length;
+      const y=Hh-5-(h-mn)/(mx-mn)*(Hh-10);
+      i?ctx.lineTo(x,y):ctx.moveTo(x,y);
+    });
+    ctx.stroke();
+  }
+}
+
+function hmcDrawCanvas(){
+  const cvs=document.getElementById('hmcCanvas');if(!cvs)return;
+  const ctx=cvs.getContext('2d');
+  const W=cvs.width,H=cvs.height,cx=W/2,cy=H/2,sc=80;
+  ctx.clearRect(0,0,W,H);ctx.fillStyle='#080b14';ctx.fillRect(0,0,W,H);
+
+  // Density contours
+  [0.5,1,2,3.5,5.5].forEach(u=>{
+    const r=Math.sqrt(2*u)*HMC.sigma*sc;
+    ctx.strokeStyle='rgba(30,37,64,0.9)';ctx.lineWidth=0.8;
+    ctx.beginPath();ctx.arc(cx,cy,r,0,2*Math.PI);ctx.stroke();
+  });
+
+  // Typical set
+  const typR=Math.sqrt(2)*HMC.sigma*sc;
+  ctx.strokeStyle='rgba(52,211,153,0.7)';ctx.lineWidth=2;ctx.setLineDash([5,4]);
+  ctx.beginPath();ctx.arc(cx,cy,typR,0,2*Math.PI);ctx.stroke();ctx.setLineDash([]);
+
+  // Old samples
+  HMC.samples.slice(-50).forEach(s=>{
+    ctx.fillStyle='rgba(167,139,250,0.45)';
+    ctx.beginPath();ctx.arc(cx+s[0]*sc,cy-s[1]*sc,3,0,2*Math.PI);ctx.fill();
+  });
+
+  // Rejected proposals
+  HMC.rejected.slice(-8).forEach(s=>{
+    ctx.strokeStyle='rgba(248,113,113,0.5)';ctx.lineWidth=1.5;
+    const x=cx+s[0]*sc,y=cy-s[1]*sc;
+    ctx.beginPath();ctx.moveTo(x-4,y-4);ctx.lineTo(x+4,y+4);ctx.moveTo(x+4,y-4);ctx.lineTo(x-4,y+4);ctx.stroke();
+  });
+
+  // Trajectory
+  if(HMC.traj.length>1){
+    ctx.strokeStyle='rgba(56,189,248,0.65)';ctx.lineWidth=1.5;
+    ctx.beginPath();
+    HMC.traj.forEach((p,i)=>{i?ctx.lineTo(cx+p[0]*sc,cy-p[1]*sc):ctx.moveTo(cx+p[0]*sc,cy-p[1]*sc);});
+    ctx.stroke();
+    ctx.fillStyle='rgba(56,189,248,0.4)';
+    ctx.beginPath();ctx.arc(cx+HMC.traj[0][0]*sc,cy-HMC.traj[0][1]*sc,4,0,2*Math.PI);ctx.fill();
+  }
+
+  // Momentum arrow
+  const plen=Math.sqrt(HMC.p[0]**2+HMC.p[1]**2);
+  if(plen>0.05){
+    const as=28,ax=cx+HMC.theta[0]*sc,ay=cy-HMC.theta[1]*sc;
+    const ex=ax+HMC.p[0]*as,ey=ay-HMC.p[1]*as;
+    ctx.strokeStyle='#a78bfa';ctx.lineWidth=2;
+    ctx.beginPath();ctx.moveTo(ax,ay);ctx.lineTo(ex,ey);ctx.stroke();
+    const ang=Math.atan2(ay-ey,ex-ax);
+    ctx.fillStyle='#a78bfa';ctx.beginPath();
+    ctx.moveTo(ex,ey);ctx.lineTo(ex-7*Math.cos(ang-0.4),ey+7*Math.sin(ang-0.4));
+    ctx.lineTo(ex-7*Math.cos(ang+0.4),ey+7*Math.sin(ang+0.4));ctx.closePath();ctx.fill();
+  }
+
+  // Current theta
+  ctx.fillStyle='#fbbf24';
+  ctx.beginPath();ctx.arc(cx+HMC.theta[0]*sc,cy-HMC.theta[1]*sc,7,0,2*Math.PI);ctx.fill();
+  ctx.strokeStyle='#fff';ctx.lineWidth=1.5;
+  ctx.beginPath();ctx.arc(cx+HMC.theta[0]*sc,cy-HMC.theta[1]*sc,7,0,2*Math.PI);ctx.stroke();
+
+  ctx.fillStyle='#475569';ctx.font='10px JetBrains Mono';
+  ctx.fillText('θ₁',W-16,cy-4);ctx.fillText('θ₂',cx+4,14);
+  ctx.fillStyle='rgba(52,211,153,0.6)';ctx.font='9px Inter';
+  ctx.fillText('typical set r=√2·σ',cx+typR+4,cy-4);
+}
+
+// ════════════════════════════════════ SECTION 7: FUNNEL
+const FUNNEL = {
+  eps:0.1, L:15,
+  state:[0.5,0.3], p:[0,0], H0:null,
+  traj:[], samples:[], divergences:[],
+  accepts:0, total:0, divCount:0,
+  running:false, interval:null,
+  dhByV:[]
+};
+
+function fU(s){
+  const v=s[0],t=s[1];
+  return 0.5*v*v/9 + 0.5*t*t*Math.exp(-v) + 0.5*v;
+}
+function fGU(s){
+  const v=s[0],t=s[1];
+  return[v/9-0.5*t*t*Math.exp(-v)+0.5, t*Math.exp(-v)];
+}
+function fK(p){return 0.5*(p[0]**2+p[1]**2);}
+function fH(s,p){return fU(s)+fK(p);}
+
+function fLF(s,p,eps){
+  let sc=[...s],pc=[...p];
+  const g1=fGU(sc);
+  const ph=[pc[0]-0.5*eps*g1[0],pc[1]-0.5*eps*g1[1]];
+  const sn=[sc[0]+eps*ph[0],sc[1]+eps*ph[1]];
+  const g2=fGU(sn);
+  const pn=[ph[0]-0.5*eps*g2[0],ph[1]-0.5*eps*g2[1]];
+  return{state:sn,p:pn};
+}
+
+function funnelReset(){
+  if(FUNNEL.interval) clearInterval(FUNNEL.interval);
+  FUNNEL.running=false;
+  document.getElementById('fRunBtn').className='';document.getElementById('fRunBtn').textContent='Auto';
+  FUNNEL.state=[0.5,0.3];FUNNEL.p=[0,0];FUNNEL.H0=null;
+  FUNNEL.traj=[];FUNNEL.samples=[];FUNNEL.divergences=[];
+  FUNNEL.accepts=0;FUNNEL.total=0;FUNNEL.divCount=0;FUNNEL.dhByV=[];
+  document.getElementById('funnelLog').innerHTML='';
+  funnelStartTraj();drawFunnel();updateFunnelStats();
+}
+
+function funnelStartTraj(){
+  FUNNEL.p=[randn(),randn()];
+  FUNNEL.H0=fH(FUNNEL.state,FUNNEL.p);
+  FUNNEL.traj=[[...FUNNEL.state]];
+}
+
+function funnelStep(){
+  if(!FUNNEL.traj.length) funnelStartTraj();
+  let sc=[...FUNNEL.state],pc=[...FUNNEL.p];
+  for(let i=0;i<FUNNEL.L;i++){
+    const r=fLF(sc,pc,FUNNEL.eps);
+    sc=r.state;pc=r.p;
+    FUNNEL.traj.push([...sc]);
+  }
+  const Hp=fH(sc,pc);
+  const dH=Hp-FUNNEL.H0;
+  const isDivergent=!isFinite(dH)||Math.abs(dH)>1000;
+  const alpha=isDivergent?0:Math.min(1,Math.exp(-dH));
+  const acc=!isDivergent&&Math.random()<alpha;
+
+  FUNNEL.total++;
+  FUNNEL.dhByV.push({v:FUNNEL.state[0],dH:Math.min(Math.abs(dH),1000)});
+  if(FUNNEL.dhByV.length>100) FUNNEL.dhByV.shift();
+
+  if(isDivergent){
+    FUNNEL.divergences.push([...sc]);
+    FUNNEL.divCount++;
+    addLog('funnelLog',`DIVERGE  v=${fmt(FUNNEL.state[0],2)}  ΔH=${isFinite(dH)?fmt(dH,1):'∞'}  curv=${fmt(Math.exp(-FUNNEL.state[0]),1)}`,'wrn');
+  } else if(acc){
+    FUNNEL.state=sc;FUNNEL.accepts++;
+    FUNNEL.samples.push([...sc]);
+    addLog('funnelLog',`ACCEPT  v=${fmt(sc[0],2)}  ΔH=${fmt(dH,3)}  α=${fmt(alpha,3)}`,'acc');
+  } else {
+    FUNNEL.samples.push([...FUNNEL.state]);
+    addLog('funnelLog',`REJECT  v=${fmt(sc[0],2)}  ΔH=${fmt(dH,3)}  α=${fmt(alpha,3)}`,'rej');
+  }
+  funnelStartTraj();
+  drawFunnel();updateFunnelStats();drawFunnelDH();
+}
+
+function funnelToggleRun(){
+  FUNNEL.running=!FUNNEL.running;
+  const btn=document.getElementById('fRunBtn');
+  if(FUNNEL.running){btn.className='btn-run';btn.textContent='Stop';FUNNEL.interval=setInterval(funnelStep,600);}
+  else{btn.className='';btn.textContent='Auto';clearInterval(FUNNEL.interval);}
+}
+
+function updateFunnelParams(){
+  FUNNEL.eps=+document.getElementById('fEps').value;
+  FUNNEL.L=+document.getElementById('fL').value;
+  document.getElementById('fEps-v').textContent=fmt(FUNNEL.eps,2);
+  document.getElementById('fL-v').textContent=FUNNEL.L;
+}
+
+function updateFunnelStats(){
+  const rate=FUNNEL.total?FUNNEL.accepts/FUNNEL.total:0;
+  const divRate=FUNNEL.total?FUNNEL.divCount/FUNNEL.total:0;
+  document.getElementById('funnelStats').innerHTML=
+    makeDataRow('Accept rate',fmt(rate*100,1)+'%',rate>0.5?'g':'r') +
+    makeDataRow('Divergence rate',fmt(divRate*100,1)+'%',divRate>0.05?'r':'g') +
+    makeDataRow('Total divergences',FUNNEL.divCount,FUNNEL.divCount>0?'r':'g') +
+    makeDataRow('Current v',fmt(FUNNEL.state[0],3)) +
+    makeDataRow('Curvature exp(-v)',fmt(Math.exp(-FUNNEL.state[0]),2),Math.exp(-FUNNEL.state[0])>5?'r':'g');
+}
+
+function drawFunnel(){
+  const cvs=document.getElementById('funnelCanvas');if(!cvs)return;
+  const ctx=cvs.getContext('2d');
+  const W=cvs.width,H=cvs.height;
+  const vMin=-5,vMax=4,tMin=-8,tMax=8;
+  function toC(v,t){return[((t-tMin)/(tMax-tMin))*W, H-((v-vMin)/(vMax-vMin))*H];}
+
+  // Background density
+  const img=ctx.createImageData(W,H);
+  for(let ix=0;ix<W;ix++){
+    for(let iy=0;iy<H;iy++){
+      const t=tMin+(ix/W)*(tMax-tMin);
+      const v=vMin+(1-iy/H)*(vMax-vMin);
+      const u=fU([v,t]);
+      const norm=Math.max(0,Math.min(1,((-u)+15)/12));
+      const i4=(iy*W+ix)*4;
+      img.data[i4]=Math.floor(8+norm*20);
+      img.data[i4+1]=Math.floor(12+norm*45);
+      img.data[i4+2]=Math.floor(32+norm*85);
+      img.data[i4+3]=255;
+    }
+  }
+  ctx.putImageData(img,0,0);
+
+  // Typical region
+  ctx.strokeStyle='rgba(52,211,153,0.6)';ctx.lineWidth=1.5;ctx.setLineDash([4,3]);
+  [1,-1].forEach(sign=>{
+    ctx.beginPath();
+    for(let iy=0;iy<H;iy++){
+      const v=vMin+(1-iy/H)*(vMax-vMin);
+      const t=sign*2*Math.exp(v/2);
+      const[px,py]=toC(v,t);
+      iy?ctx.lineTo(px,py):ctx.moveTo(px,py);
+    }
+    ctx.stroke();
+  });
+  ctx.setLineDash([]);
+
+  // v grid lines
+  ctx.strokeStyle='rgba(37,45,74,0.5)';ctx.lineWidth=0.5;
+  for(let v=vMin;v<=vMax;v++){
+    const[,py]=toC(v,0);
+    ctx.beginPath();ctx.moveTo(0,py);ctx.lineTo(W,py);ctx.stroke();
+    ctx.fillStyle='#334155';ctx.font='9px JetBrains Mono';
+    ctx.fillText(`v=${v}`,2,py-2);
+  }
+
+  // Trajectory
+  if(FUNNEL.traj.length>1){
+    ctx.strokeStyle='rgba(56,189,248,0.7)';ctx.lineWidth=1.5;
+    ctx.beginPath();
+    FUNNEL.traj.forEach((s,i)=>{const[px,py]=toC(s[0],s[1]);i?ctx.lineTo(px,py):ctx.moveTo(px,py);});
+    ctx.stroke();
+  }
+
+  // Samples
+  FUNNEL.samples.slice(-60).forEach(s=>{
+    const[px,py]=toC(s[0],s[1]);
+    ctx.fillStyle='rgba(167,139,250,0.5)';ctx.beginPath();ctx.arc(px,py,3,0,2*Math.PI);ctx.fill();
+  });
+
+  // Divergences
+  FUNNEL.divergences.slice(-20).forEach(s=>{
+    const[px,py]=toC(s[0],s[1]);
+    ctx.strokeStyle='rgba(248,113,113,0.8)';ctx.lineWidth=2;
+    ctx.beginPath();ctx.moveTo(px-5,py-5);ctx.lineTo(px+5,py+5);ctx.moveTo(px+5,py-5);ctx.lineTo(px-5,py+5);ctx.stroke();
+  });
+
+  // Current
+  const[cpx,cpy]=toC(FUNNEL.state[0],FUNNEL.state[1]);
+  ctx.fillStyle='#fbbf24';ctx.beginPath();ctx.arc(cpx,cpy,7,0,2*Math.PI);ctx.fill();
+  ctx.strokeStyle='#fff';ctx.lineWidth=1.5;ctx.beginPath();ctx.arc(cpx,cpy,7,0,2*Math.PI);ctx.stroke();
+
+  ctx.fillStyle='#475569';ctx.font='10px JetBrains Mono';
+  ctx.fillText('θ₁ →',W-36,H-4);
+  ctx.fillStyle='rgba(52,211,153,0.7)';ctx.font='9px Inter';
+  ctx.fillText('±2·exp(v/2)',W/2,H-4);
+}
+
+function drawFunnelDH(){
+  const cvs=document.getElementById('funnelDH');if(!cvs)return;
+  const ctx=cvs.getContext('2d');
+  const W=cvs.width,H=cvs.height;
+  ctx.clearRect(0,0,W,H);ctx.fillStyle='#0f1320';ctx.fillRect(0,0,W,H);
+
+  if(FUNNEL.dhByV.length<2) return;
+  const vMin=-5,vMax=4;
+  const maxDH=Math.max(...FUNNEL.dhByV.map(d=>d.dH),1);
+
+  FUNNEL.dhByV.forEach(({v,dH})=>{
+    const px=((v-vMin)/(vMax-vMin))*W;
+    const py=H-8-(dH/maxDH)*(H-16);
+    const isDivergent=dH>1000;
+    ctx.fillStyle=isDivergent?'#f87171':'rgba(56,189,248,0.6)';
+    ctx.beginPath();ctx.arc(px,clamp(py,2,H-2),3,0,2*Math.PI);ctx.fill();
+  });
+
+  // Divergence threshold line
+  ctx.strokeStyle='rgba(248,113,113,0.4)';ctx.lineWidth=1;ctx.setLineDash([3,3]);
+  const ty=H-8-(1000/maxDH)*(H-16);
+  if(ty>0&&ty<H){ctx.beginPath();ctx.moveTo(0,ty);ctx.lineTo(W,ty);ctx.stroke();}
+  ctx.setLineDash([]);
+
+  ctx.fillStyle='#475569';ctx.font='9px JetBrains Mono';
+  ctx.fillText('v →',W-24,H-2);
+  ctx.fillText('|ΔH|',2,14);
+  ctx.fillStyle='#f87171';ctx.fillText('← divergences cluster here',5,H/2);
+}
+
+// ════════════════════════════════════ INIT
+window.onload=()=>{
+  initNav();
+  updateLevel();updateUKH();
+  updateSympl();
+  lfReset();updateErrPlot();updateJacPlot();
+  updateDB5();updateMH5();updateJac5();
+  hmcReset();
+  funnelReset();
+};
+</script>
+</body>
+</html>
