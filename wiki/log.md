@@ -20243,3 +20243,12 @@
 ## [2026-06-11] committed | concept
 - Committed: additive-unobserved-confounding → concepts/additive-unobserved-confounding.md
 - IRI: pkis:concept:additive-unobserved-confounding
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: g-computation (id: 6fb26872-98ae-445e-9214-36f3ea3a3761)
+- Title: G-Computation (Outcome Model Adjustment)
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: g-computation → techniques/g-computation.md
+- IRI: pkis:technique:g-computation
