@@ -13448,3 +13448,12 @@
 ## [2026-06-11] committed | concept
 - Committed: positive-definite-matrix → concepts/positive-definite-matrix.md
 - IRI: pkis:concept:positive-definite-matrix
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: moore-penrose-pseudoinverse (id: f17569ad-7686-4661-a6f7-ad48f065cbf8)
+- Title: Moore-Penrose Pseudoinverse
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: moore-penrose-pseudoinverse → techniques/moore-penrose-pseudoinverse.md
+- IRI: pkis:technique:moore-penrose-pseudoinverse
