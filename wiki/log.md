@@ -24692,3 +24692,12 @@
 ## [2026-06-11] committed | technique
 - Committed: log-sum-exp-trick → techniques/log-sum-exp-trick.md
 - IRI: pkis:technique:log-sum-exp-trick
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: law-of-total-expectation (id: e0dfeaa6-9ce3-4493-8b74-4832c1cac702)
+- Title: Law of Total Expectation (Iterated Expectations)
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: law-of-total-expectation → concepts/law-of-total-expectation.md
+- IRI: pkis:concept:law-of-total-expectation
