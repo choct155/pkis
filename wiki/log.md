@@ -19478,3 +19478,12 @@
 ## [2026-06-11] committed | concept
 - Committed: bernoulli-mixture-model → concepts/bernoulli-mixture-model.md
 - IRI: pkis:concept:bernoulli-mixture-model
+
+## [2026-06-11] staged | node-stub (result)
+- Staged: student-t-as-gaussian-scale-mixture (id: ce845ee7-a2df-44df-a1a6-58c7f3b2adf6)
+- Title: Student-t as a Gaussian Scale Mixture
+- needs_canonical_source: False
+
+## [2026-06-11] committed | result
+- Committed: student-t-as-gaussian-scale-mixture → results/student-t-as-gaussian-scale-mixture.md
+- IRI: pkis:result:student-t-as-gaussian-scale-mixture
