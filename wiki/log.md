@@ -19298,3 +19298,12 @@
 ## [2026-06-11] committed | concept
 - Committed: density-ratio-estimation → concepts/density-ratio-estimation.md
 - IRI: pkis:concept:density-ratio-estimation
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: conditional-gan (id: 3dabe762-0d8b-4e05-a674-090be595c28d)
+- Title: Conditional GAN
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: conditional-gan → techniques/conditional-gan.md
+- IRI: pkis:technique:conditional-gan
