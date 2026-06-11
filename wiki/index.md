@@ -882,6 +882,7 @@
 - [[market-vs-hierarchy]] — Coase/Williamson: transactions governed by price signals (markets) vs. managerial direction (firms) (corporate-finance) (2026-05-20)
 
 ## Techniques
+- [[slow-feature-analysis]] — Slow Feature Analysis (SFA) (machine-learning, computer-vision, neuroscience) (2026-06-11)
 - [[gpu-accelerated-deep-learning]] — GPU-Accelerated Deep Learning (deep-learning, hardware, systems) (2026-06-11)
 - [[neural-language-model]] — Neural Language Model (NLP, deep-learning) (2026-06-11)
 - [[classifier-cascade]] — Dynamic Cascade of Classifiers (computer-vision, machine-learning) (2026-06-11)

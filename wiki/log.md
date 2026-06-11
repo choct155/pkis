@@ -14501,3 +14501,12 @@
 ## [2026-06-11] committed | framework
 - Committed: linear-factor-model → frameworks/linear-factor-model.md
 - IRI: pkis:framework:linear-factor-model
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: slow-feature-analysis (id: 27a47c33-f8d9-4ff3-afa6-85f78d9a9a44)
+- Title: Slow Feature Analysis (SFA)
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: slow-feature-analysis → techniques/slow-feature-analysis.md
+- IRI: pkis:technique:slow-feature-analysis
