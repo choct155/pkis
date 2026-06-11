@@ -17867,3 +17867,12 @@
 ## [2026-06-11] committed | concept
 - Committed: mpm-map-mpe-estimators → concepts/mpm-map-mpe-estimators.md
 - IRI: pkis:concept:mpm-map-mpe-estimators
+
+## [2026-06-11] staged | node-stub (framework)
+- Staged: variational-inference-framework (id: 29432874-1c77-438f-b332-384f5f46c0b3)
+- Title: Variational Inference (VI)
+- needs_canonical_source: False
+
+## [2026-06-11] committed | framework
+- Committed: variational-inference-framework → frameworks/variational-inference-framework.md
+- IRI: pkis:framework:variational-inference-framework
