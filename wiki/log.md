@@ -18443,3 +18443,12 @@
 ## [2026-06-11] committed | concept
 - Committed: shift-equivariance-invariance-cnn → concepts/shift-equivariance-invariance-cnn.md
 - IRI: pkis:concept:shift-equivariance-invariance-cnn
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: bayesian-deep-learning (id: c460280c-55c5-4547-b15c-78642ab405f1)
+- Title: Bayesian Deep Learning (BDL)
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: bayesian-deep-learning → concepts/bayesian-deep-learning.md
+- IRI: pkis:concept:bayesian-deep-learning
