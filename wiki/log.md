@@ -19199,3 +19199,12 @@
 ## [2026-06-11] committed | framework
 - Committed: d3pm → frameworks/d3pm.md
 - IRI: pkis:framework:d3pm
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: euler-maruyama-integration (id: 6e2edced-ad1e-4d24-9419-6e27f74674e5)
+- Title: Euler-Maruyama Integration
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: euler-maruyama-integration → techniques/euler-maruyama-integration.md
+- IRI: pkis:technique:euler-maruyama-integration
