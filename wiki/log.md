@@ -14843,3 +14843,12 @@
 ## [2026-06-11] committed | concept
 - Committed: stochastic-transition-matrix-mcmc → concepts/stochastic-transition-matrix-mcmc.md
 - IRI: pkis:concept:stochastic-transition-matrix-mcmc
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: mcmc-mixing-time (id: 015e6e40-62ba-4ba7-9ba5-2980dd192582)
+- Title: MCMC Mixing and Mixing Time
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: mcmc-mixing-time → concepts/mcmc-mixing-time.md
+- IRI: pkis:concept:mcmc-mixing-time
