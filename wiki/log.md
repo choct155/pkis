@@ -12962,3 +12962,12 @@
 ## [2026-06-11] committed | technique
 - Committed: variational-em → techniques/variational-em.md
 - IRI: pkis:technique:variational-em
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: variational-message-passing (id: d2b90794-b812-43e1-ba77-2513917da3c5)
+- Title: Variational Message Passing
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: variational-message-passing → techniques/variational-message-passing.md
+- IRI: pkis:technique:variational-message-passing
