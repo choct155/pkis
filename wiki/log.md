@@ -16940,3 +16940,12 @@
 ## [2026-06-11] committed | concept
 - Committed: implicit-feedback-recommendation → concepts/implicit-feedback-recommendation.md
 - IRI: pkis:concept:implicit-feedback-recommendation
+
+## [2026-06-11] staged | node-stub (framework)
+- Staged: graph-encoder-decoder-model (id: beadaf29-70d7-43f8-a3fd-5d8b90798c39)
+- Title: Graph Encoder-Decoder Model (GraphEDM)
+- needs_canonical_source: False
+
+## [2026-06-11] committed | framework
+- Committed: graph-encoder-decoder-model → frameworks/graph-encoder-decoder-model.md
+- IRI: pkis:framework:graph-encoder-decoder-model

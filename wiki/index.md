@@ -1741,6 +1741,7 @@
 - [[government-debt-valuation-equation]] — FTPL: price level determined by ratio of nominal debt to expected present value of future surpluses (macroeconomics) (2026-05-20)
 
 ## Frameworks
+- [[graph-encoder-decoder-model]] — Graph Encoder-Decoder Model (GraphEDM) (machine-learning, graph-learning, deep-learning) (2026-06-11)
 - [[probabilistic-matrix-factorization]] — Probabilistic Matrix Factorization (PMF) (machine-learning, probabilistic-modelling) (2026-06-11)
 - [[semi-supervised-learning]] — Semi-Supervised Learning (machine-learning) (2026-06-11)
 - [[cart-decision-trees]] — Classification and Regression Trees (CART) (machine-learning, statistics) (2026-06-11)
