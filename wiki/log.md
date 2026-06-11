@@ -15662,3 +15662,12 @@
 ## [2026-06-11] committed | concept
 - Committed: sequence-logo → concepts/sequence-logo.md
 - IRI: pkis:concept:sequence-logo
+
+## [2026-06-11] staged | node-stub (result)
+- Staged: minimal-sufficient-statistic-dpi (id: 17a64aa5-c10a-4245-a8bf-0753d61cd96b)
+- Title: Minimal Sufficient Statistic via Data Processing Inequality
+- needs_canonical_source: False
+
+## [2026-06-11] committed | result
+- Committed: minimal-sufficient-statistic-dpi → results/minimal-sufficient-statistic-dpi.md
+- IRI: pkis:result:minimal-sufficient-statistic-dpi
