@@ -19127,3 +19127,12 @@
 ## [2026-06-11] committed | concept
 - Committed: masked-autoregressive-flow → concepts/masked-autoregressive-flow.md
 - IRI: pkis:concept:masked-autoregressive-flow
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: sliced-score-matching (id: 660074c2-f981-422f-9cf8-5a10d537e706)
+- Title: Sliced Score Matching (SSM)
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: sliced-score-matching → techniques/sliced-score-matching.md
+- IRI: pkis:technique:sliced-score-matching

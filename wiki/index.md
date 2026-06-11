@@ -1100,6 +1100,7 @@
 - [[market-vs-hierarchy]] — Coase/Williamson: transactions governed by price signals (markets) vs. managerial direction (firms) (corporate-finance) (2026-05-20)
 
 ## Techniques
+- [[sliced-score-matching]] — Sliced Score Matching (SSM) (machine-learning, probabilistic-modeling) (2026-06-11)
 - [[continuous-time-normalizing-flow]] — Continuous-Time Normalizing Flow (Neural ODE Flow) (machine-learning, differential-equations, generative-models) (2026-06-11)
 - [[residual-flow]] — Residual Flow (machine-learning, generative-models) (2026-06-11)
 - [[inverse-autoregressive-flow]] — Inverse Autoregressive Flow (IAF) (machine-learning, variational-inference) (2026-06-11)
