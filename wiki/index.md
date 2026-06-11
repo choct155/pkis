@@ -1018,6 +1018,7 @@
 - [[market-vs-hierarchy]] — Coase/Williamson: transactions governed by price signals (markets) vs. managerial direction (firms) (corporate-finance) (2026-05-20)
 
 ## Techniques
+- [[bayesian-posterior-predictive]] — Posterior Predictive Distribution (Bayesian) (statistics, bayesian-methods, machine-learning) (2026-06-11)
 - [[deep-graph-infomax]] — Deep Graph Infomax (DGI) (machine-learning, graph-learning, self-supervised-learning) (2026-06-11)
 - [[label-propagation-graph]] — Label Propagation on Graphs (machine-learning, graph-learning, semi-supervised-learning) (2026-06-11)
 - [[variational-graph-auto-encoder]] — Variational Graph Auto-Encoder (VGAE) (machine-learning, graph-learning, generative-models) (2026-06-11)

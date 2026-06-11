@@ -17237,3 +17237,12 @@
 ## [2026-06-11] committed | concept
 - Committed: aleatoric-vs-epistemic-uncertainty → concepts/aleatoric-vs-epistemic-uncertainty.md
 - IRI: pkis:concept:aleatoric-vs-epistemic-uncertainty
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: bayesian-posterior-predictive (id: ccd77411-fc4c-45fa-92d3-fd1904bb3320)
+- Title: Posterior Predictive Distribution (Bayesian)
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: bayesian-posterior-predictive → techniques/bayesian-posterior-predictive.md
+- IRI: pkis:technique:bayesian-posterior-predictive
