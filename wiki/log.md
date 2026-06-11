@@ -14024,3 +14024,12 @@
 ## [2026-06-11] committed | concept
 - Committed: vanishing-exploding-gradients → concepts/vanishing-exploding-gradients.md
 - IRI: pkis:concept:vanishing-exploding-gradients
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: glorot-initialization (id: 3f0dd377-9f1d-4048-8f7c-e9c3915700f2)
+- Title: Glorot (Xavier) Initialization
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: glorot-initialization → techniques/glorot-initialization.md
+- IRI: pkis:technique:glorot-initialization
