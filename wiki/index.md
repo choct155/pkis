@@ -290,6 +290,7 @@
 - [[liu-machine-unlearning-llm-2024]] — Rethinking Machine Unlearning for LLMs: post-training knowledge editing survey (deep-learning, ai-safety) (2026-05-20)
 
 ## Concepts
+- [[class-imbalance-long-tail]] — Class Imbalance and Long-tail Distributions (machine-learning) (2026-06-11)
 - [[multi-label-classification]] — Multi-label Classification (machine-learning) (2026-06-11)
 - [[robust-logistic-regression]] — Robust Logistic Regression (machine-learning, statistics) (2026-06-11)
 - [[binary-logistic-regression]] — Binary Logistic Regression (machine-learning, statistics) (2026-06-11)

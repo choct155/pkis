@@ -16004,3 +16004,12 @@
 ## [2026-06-11] committed | technique
 - Committed: hierarchical-classification-label-smearing → techniques/hierarchical-classification-label-smearing.md
 - IRI: pkis:technique:hierarchical-classification-label-smearing
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: class-imbalance-long-tail (id: a2fa4583-0708-443e-8657-47d691dbd469)
+- Title: Class Imbalance and Long-tail Distributions
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: class-imbalance-long-tail → concepts/class-imbalance-long-tail.md
+- IRI: pkis:concept:class-imbalance-long-tail
