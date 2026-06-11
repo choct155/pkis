@@ -14771,3 +14771,12 @@
 ## [2026-06-11] committed | concept
 - Committed: immorality-v-structure → concepts/immorality-v-structure.md
 - IRI: pkis:concept:immorality-v-structure
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: separation-undirected-graphical-models (id: 8e11e234-54b8-4249-8b83-2bc8a337aa81)
+- Title: Separation in Undirected Graphical Models
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: separation-undirected-graphical-models → concepts/separation-undirected-graphical-models.md
+- IRI: pkis:concept:separation-undirected-graphical-models

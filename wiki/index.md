@@ -290,6 +290,7 @@
 - [[liu-machine-unlearning-llm-2024]] — Rethinking Machine Unlearning for LLMs: post-training knowledge editing survey (deep-learning, ai-safety) (2026-05-20)
 
 ## Concepts
+- [[separation-undirected-graphical-models]] — Separation in Undirected Graphical Models (probabilistic-graphical-models) (2026-06-11)
 - [[immorality-v-structure]] — Immorality (V-Structure in DAGs) (probabilistic-graphical-models, causal-inference) (2026-06-11)
 - [[clique-potential]] — Clique Potential (Factor in Undirected Models) (probabilistic-graphical-models, machine-learning) (2026-06-11)
 - [[energy-based-model]] — Energy-Based Model (EBM) (machine-learning, probabilistic-modeling, statistical-physics) (2026-06-11)
