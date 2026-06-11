@@ -15275,3 +15275,12 @@
 ## [2026-06-11] committed | concept
 - Committed: cumulative-distribution-function → concepts/cumulative-distribution-function.md
 - IRI: pkis:concept:cumulative-distribution-function
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: anscombes-quartet (id: 65317e69-27ab-4715-b28e-f23af529ddbc)
+- Title: Anscombe's Quartet
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: anscombes-quartet → concepts/anscombes-quartet.md
+- IRI: pkis:concept:anscombes-quartet
