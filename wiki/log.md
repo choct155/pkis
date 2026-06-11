@@ -15338,3 +15338,12 @@
 ## [2026-06-11] committed | concept
 - Committed: sensor-fusion → concepts/sensor-fusion.md
 - IRI: pkis:concept:sensor-fusion
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: exponential-family-distributions (id: 7973d8a4-058f-4866-b16d-a5b0ea9a1cfb)
+- Title: Exponential Family
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: exponential-family-distributions → concepts/exponential-family-distributions.md
+- IRI: pkis:concept:exponential-family-distributions
