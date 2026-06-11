@@ -16724,3 +16724,12 @@
 ## [2026-06-11] committed | framework
 - Committed: semi-supervised-learning → frameworks/semi-supervised-learning.md
 - IRI: pkis:framework:semi-supervised-learning
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: principal-components-analysis (id: 9384eac7-0694-452c-b954-05ced753fbe6)
+- Title: Principal Components Analysis (PCA)
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: principal-components-analysis → techniques/principal-components-analysis.md
+- IRI: pkis:technique:principal-components-analysis
