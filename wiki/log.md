@@ -16895,3 +16895,12 @@
 ## [2026-06-11] committed | technique
 - Committed: bayesian-personalized-ranking → techniques/bayesian-personalized-ranking.md
 - IRI: pkis:technique:bayesian-personalized-ranking
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: factorization-machines (id: a55e5a17-a1ed-4c18-aef4-e66b4806a91a)
+- Title: Factorization Machines (FM)
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: factorization-machines → techniques/factorization-machines.md
+- IRI: pkis:technique:factorization-machines
