@@ -14924,3 +14924,12 @@
 ## [2026-06-11] committed | technique
 - Committed: pseudolikelihood → techniques/pseudolikelihood.md
 - IRI: pkis:technique:pseudolikelihood
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: ratio-matching (id: 427d1f68-0ef5-48fd-83b6-a87e2976e89a)
+- Title: Ratio Matching
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: ratio-matching → techniques/ratio-matching.md
+- IRI: pkis:technique:ratio-matching
