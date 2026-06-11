@@ -14456,3 +14456,12 @@
 ## [2026-06-11] committed | concept
 - Committed: contextual-bandit → concepts/contextual-bandit.md
 - IRI: pkis:concept:contextual-bandit
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: classifier-cascade (id: fe742cc0-3ae4-4d87-b175-e91ad4eb7cc4)
+- Title: Dynamic Cascade of Classifiers
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: classifier-cascade → techniques/classifier-cascade.md
+- IRI: pkis:technique:classifier-cascade
