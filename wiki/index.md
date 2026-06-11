@@ -290,6 +290,7 @@
 - [[liu-machine-unlearning-llm-2024]] — Rethinking Machine Unlearning for LLMs: post-training knowledge editing survey (deep-learning, ai-safety) (2026-05-20)
 
 ## Concepts
+- [[stationary-point-optimality-conditions]] — Stationary Point and Optimality Conditions (optimization, machine-learning) (2026-06-11)
 - [[scatter-matrix]] — Scatter Matrix and Sum-of-Squares Matrix (linear-algebra, statistics, machine-learning) (2026-06-11)
 - [[kronecker-product]] — Kronecker Product (linear-algebra, machine-learning) (2026-06-11)
 - [[matrix-norms]] — Frobenius Norm and Matrix Norms (linear-algebra, machine-learning, optimisation) (2026-06-11)

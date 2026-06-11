@@ -15743,3 +15743,12 @@
 ## [2026-06-11] committed | concept
 - Committed: scatter-matrix → concepts/scatter-matrix.md
 - IRI: pkis:concept:scatter-matrix
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: stationary-point-optimality-conditions (id: 21dd40a2-0734-4f5c-9beb-23cc55b85a2a)
+- Title: Stationary Point and Optimality Conditions
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: stationary-point-optimality-conditions → concepts/stationary-point-optimality-conditions.md
+- IRI: pkis:concept:stationary-point-optimality-conditions
