@@ -290,6 +290,7 @@
 - [[liu-machine-unlearning-llm-2024]] — Rethinking Machine Unlearning for LLMs: post-training knowledge editing survey (deep-learning, ai-safety) (2026-05-20)
 
 ## Concepts
+- [[structured-probabilistic-model]] — Structured Probabilistic Model (Graphical Model) (machine-learning, probability-theory) (2026-06-11)
 - [[frequentist-vs-bayesian-probability]] — Frequentist vs. Bayesian Probability (probability-theory, statistics, philosophy-of-science) (2026-06-11)
 - [[self-information]] — Self-Information (information-theory) (2026-06-11)
 - [[laplace-distribution]] — Laplace Distribution (probability-theory, statistics, machine-learning) (2026-06-11)

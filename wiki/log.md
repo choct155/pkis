@@ -13574,3 +13574,12 @@
 ## [2026-06-11] committed | concept
 - Committed: frequentist-vs-bayesian-probability → concepts/frequentist-vs-bayesian-probability.md
 - IRI: pkis:concept:frequentist-vs-bayesian-probability
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: structured-probabilistic-model (id: 2f9c548d-e8db-4ba3-ae7e-a2c6c228cd6b)
+- Title: Structured Probabilistic Model (Graphical Model)
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: structured-probabilistic-model → concepts/structured-probabilistic-model.md
+- IRI: pkis:concept:structured-probabilistic-model
