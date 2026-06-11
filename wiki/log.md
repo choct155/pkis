@@ -19118,3 +19118,12 @@
 ## [2026-06-11] committed | result
 - Committed: weinstein-aronszajn-identity → results/weinstein-aronszajn-identity.md
 - IRI: pkis:result:weinstein-aronszajn-identity
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: masked-autoregressive-flow (id: 6175cd9d-e8a3-4e4c-98a6-7337b1210590)
+- Title: Masked Autoregressive Flow (MAF)
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: masked-autoregressive-flow → concepts/masked-autoregressive-flow.md
+- IRI: pkis:concept:masked-autoregressive-flow

@@ -290,6 +290,7 @@
 - [[liu-machine-unlearning-llm-2024]] — Rethinking Machine Unlearning for LLMs: post-training knowledge editing survey (deep-learning, ai-safety) (2026-05-20)
 
 ## Concepts
+- [[masked-autoregressive-flow]] — Masked Autoregressive Flow (MAF) (machine-learning, generative-models) (2026-06-11)
 - [[pushforward-distribution]] — Pushforward Distribution (probability-theory, measure-theory) (2026-06-11)
 - [[elementwise-flow]] — Elementwise Flow (machine-learning, generative-models) (2026-06-11)
 - [[foundation-model]] — Foundation Model (machine-learning, natural-language-processing, deep-learning) (2026-06-11)
