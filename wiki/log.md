@@ -15977,3 +15977,12 @@
 ## [2026-06-11] committed | technique
 - Committed: probit-approximation-bayesian-logistic → techniques/probit-approximation-bayesian-logistic.md
 - IRI: pkis:technique:probit-approximation-bayesian-logistic
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: robust-logistic-regression (id: a251e2ce-b94e-4792-8f95-12fa40b6811c)
+- Title: Robust Logistic Regression
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: robust-logistic-regression → concepts/robust-logistic-regression.md
+- IRI: pkis:concept:robust-logistic-regression
