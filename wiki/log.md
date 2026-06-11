@@ -16796,3 +16796,12 @@
 ## [2026-06-11] committed | technique
 - Committed: k-means-plus-plus → techniques/k-means-plus-plus.md
 - IRI: pkis:technique:k-means-plus-plus
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: k-medoids (id: 1931a71f-d058-479d-a1e6-8ede3805c1d7)
+- Title: K-medoids / PAM Algorithm
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: k-medoids → techniques/k-medoids.md
+- IRI: pkis:technique:k-medoids
