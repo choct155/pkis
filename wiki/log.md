@@ -16454,3 +16454,12 @@
 ## [2026-06-11] committed | technique
 - Committed: triplet-loss → techniques/triplet-loss.md
 - IRI: pkis:technique:triplet-loss
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: n-pairs-loss (id: d647c1db-52de-43ff-a8e2-65c7189d3342)
+- Title: N-Pairs Loss (InfoNCE / NT-Xent)
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: n-pairs-loss → techniques/n-pairs-loss.md
+- IRI: pkis:technique:n-pairs-loss
