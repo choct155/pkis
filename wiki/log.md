@@ -17759,3 +17759,12 @@
 ## [2026-06-11] committed | concept
 - Committed: kalman-innovation → concepts/kalman-innovation.md
 - IRI: pkis:concept:kalman-innovation
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: fixed-lag-smoothing (id: db64fc11-0cca-4416-b4ac-2e0d579f95cd)
+- Title: Fixed Lag Smoothing
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: fixed-lag-smoothing → concepts/fixed-lag-smoothing.md
+- IRI: pkis:concept:fixed-lag-smoothing

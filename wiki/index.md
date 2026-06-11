@@ -290,6 +290,7 @@
 - [[liu-machine-unlearning-llm-2024]] — Rethinking Machine Unlearning for LLMs: post-training knowledge editing survey (deep-learning, ai-safety) (2026-05-20)
 
 ## Concepts
+- [[fixed-lag-smoothing]] — Fixed Lag Smoothing (signal-processing, machine-learning, statistics) (2026-06-11)
 - [[kalman-innovation]] — Innovation (Measurement Residual) (signal-processing, statistics, machine-learning) (2026-06-11)
 - [[kalman-gain]] — Kalman Gain Matrix (machine-learning, signal-processing, statistics) (2026-06-11)
 - [[approximate-inference-quality-metrics]] — Approximate Inference Quality Metrics (bayesian-inference, approximate-inference, model-evaluation) (2026-06-11)
