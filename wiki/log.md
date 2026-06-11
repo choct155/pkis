@@ -17705,3 +17705,12 @@
 ## [2026-06-11] committed | framework
 - Committed: linear-gaussian-ssm → frameworks/linear-gaussian-ssm.md
 - IRI: pkis:framework:linear-gaussian-ssm
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: kalman-rts-smoother (id: 033492e8-d3e1-46a3-b979-ed538f7a90c9)
+- Title: Kalman (RTS) Smoother
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: kalman-rts-smoother → techniques/kalman-rts-smoother.md
+- IRI: pkis:technique:kalman-rts-smoother
