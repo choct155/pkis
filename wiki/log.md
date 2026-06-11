@@ -13772,3 +13772,12 @@
 ## [2026-06-11] committed | concept
 - Committed: distributed-vs-one-hot-representations → concepts/distributed-vs-one-hot-representations.md
 - IRI: pkis:concept:distributed-vs-one-hot-representations
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: deep-feedforward-network (id: 61df2ae9-eaef-4862-b2e1-7fc6f7dc4f26)
+- Title: Deep Feedforward Network (MLP)
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: deep-feedforward-network → concepts/deep-feedforward-network.md
+- IRI: pkis:concept:deep-feedforward-network
