@@ -19595,3 +19595,12 @@
 ## [2026-06-11] committed | problem
 - Committed: graphical-model-structure-learning → problems/graphical-model-structure-learning.md
 - IRI: pkis:problem:graphical-model-structure-learning
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: score-based-dag-learning (id: dad61293-5960-486e-9d60-577af46ea741)
+- Title: Score-Based DAG Structure Learning
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: score-based-dag-learning → techniques/score-based-dag-learning.md
+- IRI: pkis:technique:score-based-dag-learning
