@@ -12773,3 +12773,12 @@
 ## [2026-06-11] committed | concept
 - Committed: dag-factorization → concepts/dag-factorization.md
 - IRI: pkis:concept:dag-factorization
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: markov-random-field (id: db74aa01-be78-461d-8359-5688fefc44f3)
+- Title: Markov Random Field (Undirected Graphical Model)
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: markov-random-field → concepts/markov-random-field.md
+- IRI: pkis:concept:markov-random-field
