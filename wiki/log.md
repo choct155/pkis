@@ -16310,3 +16310,12 @@
 ## [2026-06-11] committed | technique
 - Committed: activation-maximization → techniques/activation-maximization.md
 - IRI: pkis:technique:activation-maximization
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: translation-equivariance-invariance (id: f400afae-5b8a-4af7-bd9f-8d71d6f6af7b)
+- Title: Translation Equivariance and Invariance in CNNs
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: translation-equivariance-invariance → concepts/translation-equivariance-invariance.md
+- IRI: pkis:concept:translation-equivariance-invariance
