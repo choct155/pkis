@@ -18992,3 +18992,12 @@
 ## [2026-06-11] committed | framework
 - Committed: pixelcnn → frameworks/pixelcnn.md
 - IRI: pkis:framework:pixelcnn
+
+## [2026-06-11] staged | node-stub (framework)
+- Staged: wavenet (id: 101adcb3-4060-40fd-ba72-c77eeafc39b3)
+- Title: WaveNet (Dilated Causal CNN for Audio)
+- needs_canonical_source: False
+
+## [2026-06-11] committed | framework
+- Committed: wavenet → frameworks/wavenet.md
+- IRI: pkis:framework:wavenet
