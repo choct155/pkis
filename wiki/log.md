@@ -19523,3 +19523,12 @@
 ## [2026-06-11] committed | concept
 - Committed: factorial-hmm → concepts/factorial-hmm.md
 - IRI: pkis:concept:factorial-hmm
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: profile-hmm (id: a9f07bb6-f344-4cbc-9203-c3659244662e)
+- Title: Profile HMM
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: profile-hmm → concepts/profile-hmm.md
+- IRI: pkis:concept:profile-hmm
