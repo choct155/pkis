@@ -984,6 +984,7 @@
 - [[market-vs-hierarchy]] — Coase/Williamson: transactions governed by price signals (markets) vs. managerial direction (firms) (corporate-finance) (2026-05-20)
 
 ## Techniques
+- [[triplet-loss]] — Triplet Loss (machine-learning, representation-learning) (2026-06-11)
 - [[contrastive-loss-siamese]] — Contrastive Loss and Siamese Networks (machine-learning, representation-learning) (2026-06-11)
 - [[deep-metric-learning]] — Deep Metric Learning (DML) (machine-learning, representation-learning, metric-learning) (2026-06-11)
 - [[large-margin-nearest-neighbor]] — Large Margin Nearest Neighbor (LMNN) (machine-learning, metric-learning) (2026-06-11)

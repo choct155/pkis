@@ -16445,3 +16445,12 @@
 ## [2026-06-11] committed | technique
 - Committed: contrastive-loss-siamese → techniques/contrastive-loss-siamese.md
 - IRI: pkis:technique:contrastive-loss-siamese
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: triplet-loss (id: 1b7bb8f8-15af-40fc-9a8b-7025ab144af1)
+- Title: Triplet Loss
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: triplet-loss → techniques/triplet-loss.md
+- IRI: pkis:technique:triplet-loss
