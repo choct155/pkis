@@ -13403,3 +13403,12 @@
 ## [2026-06-11] committed | concept
 - Committed: matrix-transpose → concepts/matrix-transpose.md
 - IRI: pkis:concept:matrix-transpose
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: matrix-inverse (id: 2d83f80b-2f6b-4f41-8033-070ac96f5e76)
+- Title: Matrix Inverse and Singular Matrix
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: matrix-inverse → concepts/matrix-inverse.md
+- IRI: pkis:concept:matrix-inverse
