@@ -18686,3 +18686,12 @@
 ## [2026-06-11] committed | concept
 - Committed: out-of-distribution-detection → concepts/out-of-distribution-detection.md
 - IRI: pkis:concept:out-of-distribution-detection
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: test-time-adaptation (id: 2b3ef01c-f499-442f-a725-14f2e009d396)
+- Title: Test-Time Adaptation (TTA)
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: test-time-adaptation → techniques/test-time-adaptation.md
+- IRI: pkis:technique:test-time-adaptation
