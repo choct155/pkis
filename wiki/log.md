@@ -12863,3 +12863,12 @@
 ## [2026-06-11] committed | concept
 - Committed: responsibilities-mixture-models → concepts/responsibilities-mixture-models.md
 - IRI: pkis:concept:responsibilities-mixture-models
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: complete-vs-incomplete-data-em (id: b62abb09-28fe-4806-b0d2-4ef8a8cbdb28)
+- Title: Complete Data and Incomplete Data in EM
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: complete-vs-incomplete-data-em → concepts/complete-vs-incomplete-data-em.md
+- IRI: pkis:concept:complete-vs-incomplete-data-em
