@@ -1035,6 +1035,7 @@
 - [[market-vs-hierarchy]] — Coase/Williamson: transactions governed by price signals (markets) vs. managerial direction (firms) (corporate-finance) (2026-05-20)
 
 ## Techniques
+- [[kfac]] — KFAC (Kronecker-Factored Approximate Curvature) (machine-learning, optimization) (2026-06-11)
 - [[natural-gradient-descent]] — Natural Gradient Descent (machine-learning, optimization, information-geometry) (2026-06-11)
 - [[straight-through-estimator]] — Straight-Through Estimator (machine-learning, deep-learning) (2026-06-11)
 - [[gumbel-softmax]] — Gumbel-Softmax (Concrete Distribution) (machine-learning, probabilistic-modeling) (2026-06-11)

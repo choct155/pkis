@@ -17570,3 +17570,12 @@
 ## [2026-06-11] committed | technique
 - Committed: natural-gradient-descent → techniques/natural-gradient-descent.md
 - IRI: pkis:technique:natural-gradient-descent
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: kfac (id: 7523b320-8c20-482a-a8c0-54442e2dd014)
+- Title: KFAC (Kronecker-Factored Approximate Curvature)
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: kfac → techniques/kfac.md
+- IRI: pkis:technique:kfac
