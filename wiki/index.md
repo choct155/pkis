@@ -1097,6 +1097,7 @@
 - [[market-vs-hierarchy]] — Coase/Williamson: transactions governed by price signals (markets) vs. managerial direction (firms) (corporate-finance) (2026-05-20)
 
 ## Techniques
+- [[coupling-layer]] — Coupling Layer (Coupling Flow) (machine-learning, generative-models) (2026-06-11)
 - [[reinforcement-learning-from-human-feedback]] — Reinforcement Learning from Human Feedback (RLHF) (reinforcement-learning, natural-language-processing, ai-alignment) (2026-06-11)
 - [[made-masked-autoencoder]] — MADE (Masked Autoencoder for Density Estimation) (machine-learning, deep-learning, density-estimation) (2026-06-11)
 - [[nade-rnade]] — NADE / RNADE (Neural Autoregressive Density Estimator) (machine-learning, density-estimation, generative-models) (2026-06-11)

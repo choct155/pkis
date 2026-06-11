@@ -19037,3 +19037,12 @@
 ## [2026-06-11] committed | concept
 - Committed: foundation-model → concepts/foundation-model.md
 - IRI: pkis:concept:foundation-model
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: coupling-layer (id: 15358772-aefc-4fe2-8da6-b0c417c6bca4)
+- Title: Coupling Layer (Coupling Flow)
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: coupling-layer → techniques/coupling-layer.md
+- IRI: pkis:technique:coupling-layer
