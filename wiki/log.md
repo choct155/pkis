@@ -18245,3 +18245,12 @@
 ## [2026-06-11] committed | technique
 - Committed: temperature-scaling → techniques/temperature-scaling.md
 - IRI: pkis:technique:temperature-scaling
+
+## [2026-06-11] staged | node-stub (framework)
+- Staged: conformal-prediction (id: 7b20f048-34bf-4825-b693-c77fa6adcac0)
+- Title: Conformal Prediction
+- needs_canonical_source: False
+
+## [2026-06-11] committed | framework
+- Committed: conformal-prediction → frameworks/conformal-prediction.md
+- IRI: pkis:framework:conformal-prediction
