@@ -16958,3 +16958,12 @@
 ## [2026-06-11] committed | technique
 - Committed: shallow-graph-embeddings → techniques/shallow-graph-embeddings.md
 - IRI: pkis:technique:shallow-graph-embeddings
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: deepwalk-skip-gram-graph-embedding (id: 0a387072-1a03-4313-ace1-23916c3aead1)
+- Title: DeepWalk / Skip-gram Graph Embeddings
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: deepwalk-skip-gram-graph-embedding → techniques/deepwalk-skip-gram-graph-embedding.md
+- IRI: pkis:technique:deepwalk-skip-gram-graph-embedding

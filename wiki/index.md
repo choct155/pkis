@@ -1000,6 +1000,7 @@
 - [[market-vs-hierarchy]] — Coase/Williamson: transactions governed by price signals (markets) vs. managerial direction (firms) (corporate-finance) (2026-05-20)
 
 ## Techniques
+- [[deepwalk-skip-gram-graph-embedding]] — DeepWalk / Skip-gram Graph Embeddings (machine-learning, graph-learning, natural-language-processing) (2026-06-11)
 - [[shallow-graph-embeddings]] — Shallow Graph Embeddings (machine-learning, graph-learning) (2026-06-11)
 - [[neural-matrix-factorization]] — Neural Matrix Factorization (NeuMF) (machine-learning, recommender-systems) (2026-06-11)
 - [[autorec]] — AutoRec: Autoencoder-Based Recommender (machine-learning, recommender-systems) (2026-06-11)
