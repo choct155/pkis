@@ -19712,3 +19712,12 @@
 ## [2026-06-11] committed | concept
 - Committed: indian-buffet-process → concepts/indian-buffet-process.md
 - IRI: pkis:concept:indian-buffet-process
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: pitman-yor-process (id: 27bf4152-4a03-44ea-85ce-6033c9340a5f)
+- Title: Pitman-Yor Process
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: pitman-yor-process → concepts/pitman-yor-process.md
+- IRI: pkis:concept:pitman-yor-process
