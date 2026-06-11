@@ -18965,3 +18965,12 @@
 ## [2026-06-11] committed | framework
 - Committed: autoregressive-model-arm → frameworks/autoregressive-model-arm.md
 - IRI: pkis:framework:autoregressive-model-arm
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: nade-rnade (id: 1f491042-3fd8-4ad7-a8f8-d789b6ec8b67)
+- Title: NADE / RNADE (Neural Autoregressive Density Estimator)
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: nade-rnade → techniques/nade-rnade.md
+- IRI: pkis:technique:nade-rnade

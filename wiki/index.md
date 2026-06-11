@@ -1096,6 +1096,7 @@
 - [[market-vs-hierarchy]] — Coase/Williamson: transactions governed by price signals (markets) vs. managerial direction (firms) (corporate-finance) (2026-05-20)
 
 ## Techniques
+- [[nade-rnade]] — NADE / RNADE (Neural Autoregressive Density Estimator) (machine-learning, density-estimation, generative-models) (2026-06-11)
 - [[free-bits]] — Free Bits (machine-learning, generative-models) (2026-06-11)
 - [[kl-annealing]] — KL Annealing (machine-learning, optimisation) (2026-06-11)
 - [[two-step-latent-manifold-generative-modeling]] — Two-Step Latent Manifold Generative Modeling (machine-learning, generative-models, representation-learning) (2026-06-11)
