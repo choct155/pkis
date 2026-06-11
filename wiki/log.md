@@ -16805,3 +16805,12 @@
 ## [2026-06-11] committed | technique
 - Committed: k-medoids → techniques/k-medoids.md
 - IRI: pkis:technique:k-medoids
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: silhouette-coefficient (id: 40d72c17-ff8d-4661-b5fa-6cf9d346b35e)
+- Title: Silhouette Coefficient
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: silhouette-coefficient → concepts/silhouette-coefficient.md
+- IRI: pkis:concept:silhouette-coefficient
