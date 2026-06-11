@@ -20234,3 +20234,12 @@
 ## [2026-06-11] committed | concept
 - Committed: potential-outcomes-notation → concepts/potential-outcomes-notation.md
 - IRI: pkis:concept:potential-outcomes-notation
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: additive-unobserved-confounding (id: 147ac577-27f6-46fc-aa4b-cfdba2253d05)
+- Title: Additive Unobserved Confounding (IV Identification Assumption)
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: additive-unobserved-confounding → concepts/additive-unobserved-confounding.md
+- IRI: pkis:concept:additive-unobserved-confounding
