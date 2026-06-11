@@ -882,6 +882,7 @@
 - [[market-vs-hierarchy]] — Coase/Williamson: transactions governed by price signals (markets) vs. managerial direction (firms) (corporate-finance) (2026-05-20)
 
 ## Techniques
+- [[neural-language-model]] — Neural Language Model (NLP, deep-learning) (2026-06-11)
 - [[classifier-cascade]] — Dynamic Cascade of Classifiers (computer-vision, machine-learning) (2026-06-11)
 - [[noise-contrastive-estimation]] — Noise-Contrastive Estimation (NCE) (statistics, deep-learning, NLP) (2026-06-11)
 - [[hierarchical-softmax]] — Hierarchical Softmax (NLP, deep-learning, computational-efficiency) (2026-06-11)

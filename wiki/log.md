@@ -14474,3 +14474,12 @@
 ## [2026-06-11] committed | concept
 - Committed: conditional-computation → concepts/conditional-computation.md
 - IRI: pkis:concept:conditional-computation
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: neural-language-model (id: b6b93982-daa7-4c99-863d-b3df4aff833d)
+- Title: Neural Language Model
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: neural-language-model → techniques/neural-language-model.md
+- IRI: pkis:technique:neural-language-model
