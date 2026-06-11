@@ -18092,3 +18092,12 @@
 ## [2026-06-11] committed | technique
 - Committed: riemann-manifold-hmc → techniques/riemann-manifold-hmc.md
 - IRI: pkis:technique:riemann-manifold-hmc
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: stochastic-gradient-langevin-dynamics (id: 396673b4-b108-4240-bb22-08eabe01a7e1)
+- Title: Stochastic Gradient Langevin Dynamics (SGLD)
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: stochastic-gradient-langevin-dynamics → concepts/stochastic-gradient-langevin-dynamics.md
+- IRI: pkis:concept:stochastic-gradient-langevin-dynamics
