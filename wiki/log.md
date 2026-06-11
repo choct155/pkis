@@ -18749,3 +18749,12 @@
 ## [2026-06-11] committed | concept
 - Committed: causal-vs-anticausal-prediction → concepts/causal-vs-anticausal-prediction.md
 - IRI: pkis:concept:causal-vs-anticausal-prediction
+
+## [2026-06-11] staged | node-stub (framework)
+- Staged: deep-generative-model-taxonomy (id: 393e7624-936e-45bb-990a-722a0f2f6822)
+- Title: Deep Generative Model Taxonomy
+- needs_canonical_source: False
+
+## [2026-06-11] committed | framework
+- Committed: deep-generative-model-taxonomy → frameworks/deep-generative-model-taxonomy.md
+- IRI: pkis:framework:deep-generative-model-taxonomy
