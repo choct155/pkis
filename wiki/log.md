@@ -15365,3 +15365,12 @@
 ## [2026-06-11] committed | result
 - Committed: maxent-exponential-family-derivation → results/maxent-exponential-family-derivation.md
 - IRI: pkis:result:maxent-exponential-family-derivation
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: gaussian-mixture-model (id: ba1bddae-a50f-4483-923e-343cf501b2b3)
+- Title: Gaussian Mixture Model
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: gaussian-mixture-model → concepts/gaussian-mixture-model.md
+- IRI: pkis:concept:gaussian-mixture-model
