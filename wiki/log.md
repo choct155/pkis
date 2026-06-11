@@ -20207,3 +20207,12 @@
 ## [2026-06-11] committed | technique
 - Committed: austen-plots → techniques/austen-plots.md
 - IRI: pkis:technique:austen-plots
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: backdoor-criterion-causal (id: ea77684c-1e7e-4cb6-943b-bbd112405f0c)
+- Title: Backdoor Criterion
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: backdoor-criterion-causal → concepts/backdoor-criterion-causal.md
+- IRI: pkis:concept:backdoor-criterion-causal
