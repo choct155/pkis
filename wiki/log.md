@@ -16949,3 +16949,12 @@
 ## [2026-06-11] committed | framework
 - Committed: graph-encoder-decoder-model → frameworks/graph-encoder-decoder-model.md
 - IRI: pkis:framework:graph-encoder-decoder-model
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: shallow-graph-embeddings (id: a422bd8d-9e4e-4ab0-b0fb-5b9c8070c757)
+- Title: Shallow Graph Embeddings
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: shallow-graph-embeddings → techniques/shallow-graph-embeddings.md
+- IRI: pkis:technique:shallow-graph-embeddings
