@@ -20153,3 +20153,12 @@
 ## [2026-06-11] committed | concept
 - Committed: overlap-positivity → concepts/overlap-positivity.md
 - IRI: pkis:concept:overlap-positivity
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: iptw-estimator (id: 70411dde-31e6-4405-b6fe-af80821eb414)
+- Title: Inverse Probability of Treatment Weighting (IPTW)
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: iptw-estimator → techniques/iptw-estimator.md
+- IRI: pkis:technique:iptw-estimator
