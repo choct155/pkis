@@ -15023,3 +15023,12 @@
 ## [2026-06-11] committed | concept
 - Committed: inference-as-optimization → concepts/inference-as-optimization.md
 - IRI: pkis:concept:inference-as-optimization
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: structured-variational-inference (id: eea37023-e98a-4b6a-8c7f-656e48ac432e)
+- Title: Structured Variational Inference
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: structured-variational-inference → concepts/structured-variational-inference.md
+- IRI: pkis:concept:structured-variational-inference
