@@ -12377,3 +12377,12 @@
 ## [2026-06-11] committed | result
 - Committed: bias-variance-decomposition → results/bias-variance-decomposition.md
 - IRI: pkis:result:bias-variance-decomposition
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: design-matrix (id: 6dcef111-b718-461d-9636-52af71a77d6a)
+- Title: Design Matrix
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: design-matrix → concepts/design-matrix.md
+- IRI: pkis:concept:design-matrix

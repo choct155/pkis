@@ -290,6 +290,7 @@
 - [[liu-machine-unlearning-llm-2024]] — Rethinking Machine Unlearning for LLMs: post-training knowledge editing survey (deep-learning, ai-safety) (2026-05-20)
 
 ## Concepts
+- [[design-matrix]] — Design Matrix (machine-learning, statistics) (2026-06-11)
 - [[effective-number-of-parameters-gamma]] — Effective Number of Parameters ($\gamma$) (machine-learning, statistics) (2026-06-11)
 - [[equivalent-kernel]] — Equivalent Kernel (Smoother Matrix) (machine-learning, statistics) (2026-06-11)
 - [[linear-basis-function-model]] — Linear Basis Function Model (machine-learning, statistics) (2026-06-11)
