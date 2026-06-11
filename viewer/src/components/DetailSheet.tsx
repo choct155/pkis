@@ -10,7 +10,7 @@ import VizPanel from './VizPanel'
 const EDGE_PREDICATES = [
   'all', 'uses', 'generalizes', 'contrasts-with',
   'prerequisite-of', 'grounds', 'extends',
-  'equivalent-in-context', 'commonly-confused-with',
+  'equivalent-in-context', 'commonly-confused-with', 'illustrated-by',
 ]
 
 function Pips({ count, filled, variant, sheet }: {
@@ -241,9 +241,10 @@ interface Props {
   onEdit: () => void
   onGraph: () => void
   onListen: (slug: string) => void
+  onOpenExplainer: (slug: string, title?: string) => void
 }
 
-export default function DetailSheet({ iri, onClose, onNavigate, onEdit, onGraph, onListen }: Props) {
+export default function DetailSheet({ iri, onClose, onNavigate, onEdit, onGraph, onListen, onOpenExplainer }: Props) {
   const [node, setNode] = useState<FullNode | null>(null)
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
@@ -269,8 +270,23 @@ export default function DetailSheet({ iri, onClose, onNavigate, onEdit, onGraph,
   const title = fm?.title ?? iri
   const domain = fm?.domain ?? []
   const viz = fm?.viz
+  const ownKind = (fm?.kind as string) || undefined
   const content = node?.content ?? ''
   const connections = node?.related_nodes ?? []
+
+  // Surfaces to render: this node's own viz (asset nodes) plus any asset linked
+  // via `illustrated-by`. visualization → inline; explainer → open full-screen.
+  const vizItems: { slug: string; kind: string; title: string }[] = []
+  const seenViz = new Set<string>()
+  const addViz = (slug?: string | null, kind?: string | null, ttl?: string) => {
+    if (!slug || seenViz.has(slug)) return
+    seenViz.add(slug)
+    vizItems.push({ slug, kind: kind || 'explainer', title: ttl || slug })
+  }
+  if (viz) addViz(viz, ownKind, title)
+  connections.forEach((c) => {
+    if (c.edge_type === 'illustrated-by' && c.viz) addViz(c.viz, c.kind, c.title)
+  })
   const readingPath = node?.reading_path ?? []
   const isSource = iri.startsWith('pkis:source:')
   const sources = Array.isArray(fm?.sources) ? (fm!.sources as string[]) : []
@@ -359,11 +375,24 @@ export default function DetailSheet({ iri, onClose, onNavigate, onEdit, onGraph,
               {/* Source citation + links (when this node is a source) */}
               {isSource && fm && <SourceBlock fm={fm as Record<string, unknown>} title={title} iri={iri} />}
 
-              {/* Visualization */}
-              {viz && (
+              {/* Explainers & visualizations: viz-kind inline, explainer-kind as
+                  a full-screen link (cramming a full HTML page inline is unreadable). */}
+              {vizItems.length > 0 && (
                 <div className="body-section">
-                  <div className="body-section-title">visualization</div>
-                  <VizPanel slug={viz} />
+                  <div className="body-section-title">
+                    {vizItems.some((v) => v.kind === 'visualization') ? 'visualization' : 'explainer'}
+                  </div>
+                  {vizItems.map((v) =>
+                    v.kind === 'visualization' ? (
+                      <VizPanel key={v.slug} slug={v.slug} />
+                    ) : (
+                      <div key={v.slug} className="explainer-link" onClick={() => onOpenExplainer(v.slug, v.title)}>
+                        <span className="explainer-link-icon">◈</span>
+                        <span className="explainer-link-title">{v.title}</span>
+                        <span className="explainer-link-open">open →</span>
+                      </div>
+                    )
+                  )}
                 </div>
               )}
 

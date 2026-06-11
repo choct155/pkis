@@ -5,7 +5,8 @@ export type NodeType =
   | 'framework'
   | 'problem'
   | 'principle'
-  | 'source';
+  | 'source'
+  | 'asset';
 
 export type Maturity = 'settled' | 'evolving' | 'contested' | 'historical';
 
@@ -47,14 +48,18 @@ export interface DiscoveryInbox {
   candidates: DiscoveryCandidate[];
 }
 
-// ── Explainer (from get_explainers) ───────────────────────────────────────
-export interface Explainer {
-  viz: string;          // viz asset slug -> /pkis-api/viz/<slug>.html
+// ── Asset (from get_assets) — explainers & visualizations ─────────────────
+export type AssetKind = 'explainer' | 'visualization';
+export interface Asset {
+  iri: string;
+  title: string;
+  kind: AssetKind | string;
+  viz: string;          // viz slug -> /pkis-api/viz/<slug>.html
   viz_title: string;    // the explainer's own <title>
-  iri: string;          // backing node
-  node_title: string;
-  node_type: string;
+  viz_url: string | null;
   domain: string[];
+  illustrates: number;  // how many nodes link here via illustrated-by
+  excerpt: string;
 }
 
 // ── Search result (from search_wiki / search_wiki_index) ──────────────────
@@ -101,6 +106,8 @@ export interface RelatedNode {
   title: string;
   edge_type: string;
   direction: 'inbound' | 'outbound';
+  viz?: string | null;   // present when the neighbor is a viz-bearing asset
+  kind?: string | null;  // 'explainer' | 'visualization' (drives inline vs link)
 }
 
 export interface ReadingPathItem {

@@ -14,7 +14,7 @@ interface Props {
 }
 
 const TYPE_ORDER = ['concept', 'technique', 'result', 'framework', 'problem',
-  'principle', 'hypothesis', 'research-cluster', 'source']
+  'principle', 'hypothesis', 'research-cluster', 'source', 'asset']
 
 function asCard(n: IndexNode): SearchResult {
   return {

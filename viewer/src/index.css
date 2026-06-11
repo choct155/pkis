@@ -21,6 +21,7 @@
   --problem:   #e85c5c;
   --principle: #4ecdc4;
   --source:    #a8b3be;
+  --asset:     #c98ad9;
   --radius: 6px;
   --mono: 'IBM Plex Mono', monospace;
   --sans: 'IBM Plex Sans', sans-serif;
@@ -123,6 +124,7 @@ body {
 .chip-problem   { border-color: var(--problem);   color: var(--problem); }
 .chip-principle { border-color: var(--principle); color: var(--principle); }
 .chip-source    { border-color: var(--source);    color: var(--source); }
+.chip-asset     { border-color: var(--asset);     color: var(--asset); }
 .filter-chip.active-type { opacity: 1; }
 .filter-chip:not(.chip-all):not(.active-type) { opacity: 0.45; }
 
@@ -160,6 +162,7 @@ body {
 .node-card.problem::before   { background: var(--problem); }
 .node-card.principle::before { background: var(--principle); }
 .node-card.source::before    { background: var(--source); }
+.node-card.asset::before     { background: var(--asset); }
 .node-card:hover { border-color: var(--dim); background: var(--raised); }
 
 .card-header { display: flex; align-items: flex-start; gap: 8px; margin-bottom: 6px; }
@@ -175,6 +178,7 @@ body {
 .node-card.problem   .card-type { background: rgba(232,92,92,0.15);   color: var(--problem); }
 .node-card.principle .card-type { background: rgba(78,205,196,0.15);  color: var(--principle); }
 .node-card.source    .card-type { background: rgba(168,179,190,0.15); color: var(--source); }
+.node-card.asset     .card-type { background: rgba(201,138,217,0.15); color: var(--asset); }
 
 .card-title { font-size: 14px; font-weight: 500; color: var(--bright); line-height: 1.3; flex: 1; }
 .card-desc  { font-size: 12px; color: var(--muted); line-height: 1.5; margin-bottom: 8px; }
@@ -341,6 +345,7 @@ body {
 .badge-problem   { background: rgba(232,92,92,0.15);   color: var(--problem); }
 .badge-principle { background: rgba(78,205,196,0.15);  color: var(--principle); }
 .badge-source    { background: rgba(168,179,190,0.15); color: var(--source); }
+.badge-asset     { background: rgba(201,138,217,0.15); color: var(--asset); }
 .badge-unknown   { background: rgba(107,114,128,0.15); color: var(--muted); }
 
 .sheet-title {
@@ -1129,4 +1134,45 @@ body {
   .domain-strip { display: none; }    /* replaced by the sidebar domain tree */
   .main { padding-bottom: 24px; }     /* no fixed bottom-nav to clear */
   .fab { right: 24px; bottom: 24px; }
+}
+
+/* ── EXPLAINER LINK (DetailSheet, kind=explainer) + FULL-SCREEN OVERLAY ──── */
+.explainer-link {
+  display: flex; align-items: center; gap: 10px;
+  background: var(--surface); border: 1px solid var(--border);
+  border-left: 3px solid var(--asset); border-radius: var(--radius);
+  padding: 11px 12px; margin-bottom: 8px; cursor: pointer;
+  transition: border-color .15s, background .15s;
+}
+.explainer-link:hover { background: var(--raised); border-color: var(--asset); }
+.explainer-link-icon { color: var(--asset); font-size: 15px; flex-shrink: 0; }
+.explainer-link-title {
+  flex: 1; min-width: 0; font-size: 13px; color: var(--bright);
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+.explainer-link-open { font-family: var(--mono); font-size: 10px; color: var(--asset); flex-shrink: 0; }
+
+.explainer-overlay {
+  position: fixed; inset: 0; z-index: 400;
+  background: var(--bg); display: flex; flex-direction: column;
+}
+.explainer-overlay-bar {
+  display: flex; align-items: center; gap: 10px;
+  padding: 10px 14px; border-bottom: 1px solid var(--border);
+  background: var(--bg); flex-shrink: 0;
+}
+.explainer-overlay-title {
+  flex: 1; min-width: 0; font-size: 13px; color: var(--bright);
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+.explainer-overlay-pop, .explainer-overlay-close {
+  flex-shrink: 0; background: var(--raised); border: 1px solid var(--border);
+  border-radius: var(--radius); width: 30px; height: 30px;
+  display: flex; align-items: center; justify-content: center;
+  color: var(--muted); cursor: pointer; text-decoration: none; font-size: 14px;
+}
+.explainer-overlay-pop:hover, .explainer-overlay-close:hover { color: var(--accent); border-color: var(--accent); }
+.explainer-overlay-frame { flex: 1; width: 100%; border: 0; background: var(--bg); min-height: 0; }
+@media (min-width: 900px) {
+  .explainer-overlay-frame { max-width: 1120px; margin: 0 auto; }
 }

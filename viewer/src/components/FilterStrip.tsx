@@ -9,6 +9,7 @@ const TYPES: { key: NodeType | 'all'; label: string }[] = [
   { key: 'problem',   label: 'problem' },
   { key: 'principle', label: 'principle' },
   { key: 'source',    label: 'source' },
+  { key: 'asset',     label: 'asset' },
 ]
 
 interface Props {

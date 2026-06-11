@@ -20,6 +20,7 @@ import StagedView from './views/StagedView'
 import ExplainersView from './views/ExplainersView'
 import DiscoverView from './views/DiscoverView'
 import ReaderView from './views/ReaderView'
+import ExplainerOverlay from './components/ExplainerOverlay'
 
 export default function App() {
   const [view, setView]               = useState<View>('browse')
@@ -31,7 +32,10 @@ export default function App() {
   const [clusterFilter, setClusterFilter] = useState<string>('all')
   const [searchResults, setSearchResults] = useState<SearchResult[] | null>(null)
   const [readerSlug, setReaderSlug] = useState<string | null>(null)
+  const [explainer, setExplainer] = useState<{ slug: string; title?: string } | null>(null)
   const { auth, canWrite, signIn, signOut } = useAuth()
+
+  const openExplainer = (slug: string, title?: string) => setExplainer({ slug, title })
 
   const handleSelectNode = (iri: string) => setSelectedIri(iri)
 
@@ -125,7 +129,7 @@ export default function App() {
                   <StagedView onSelectNode={handleSelectNode} />
                 )}
                 {view === 'explainers' && (
-                  <ExplainersView onSelectNode={handleSelectNode} />
+                  <ExplainersView onSelectNode={handleSelectNode} onOpenExplainer={openExplainer} />
                 )}
                 {view === 'discover' && (
                   <DiscoverView onSelectNode={handleSelectNode} />
@@ -147,11 +151,16 @@ export default function App() {
           onEdit={() => setEditIri(selectedIri)}
           onGraph={handleNavigateToGraph}
           onListen={(slug) => setReaderSlug(slug)}
+          onOpenExplainer={openExplainer}
         />
       )}
 
       {readerSlug && (
         <ReaderView slug={readerSlug} onClose={() => setReaderSlug(null)} />
+      )}
+
+      {explainer && (
+        <ExplainerOverlay slug={explainer.slug} title={explainer.title} onClose={() => setExplainer(null)} />
       )}
 
       {captureOpen && (
