@@ -19505,3 +19505,12 @@
 ## [2026-06-11] committed | concept
 - Committed: autoregressive-hmm → concepts/autoregressive-hmm.md
 - IRI: pkis:concept:autoregressive-hmm
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: hidden-semi-markov-model (id: 88d1259b-327b-4e7d-a542-2cc76641905f)
+- Title: Hidden Semi-Markov Model (HSMM)
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: hidden-semi-markov-model → concepts/hidden-semi-markov-model.md
+- IRI: pkis:concept:hidden-semi-markov-model
