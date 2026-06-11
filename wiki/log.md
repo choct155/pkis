@@ -16832,3 +16832,12 @@
 ## [2026-06-11] committed | concept
 - Committed: normalized-mutual-information-clustering → concepts/normalized-mutual-information-clustering.md
 - IRI: pkis:concept:normalized-mutual-information-clustering
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: normalized-cut (id: f93eee82-f662-42a6-a5af-664808484a32)
+- Title: Normalized Cut (Graph Partitioning)
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: normalized-cut → concepts/normalized-cut.md
+- IRI: pkis:concept:normalized-cut

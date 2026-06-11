@@ -290,6 +290,7 @@
 - [[liu-machine-unlearning-llm-2024]] — Rethinking Machine Unlearning for LLMs: post-training knowledge editing survey (deep-learning, ai-safety) (2026-05-20)
 
 ## Concepts
+- [[normalized-cut]] — Normalized Cut (Graph Partitioning) (machine-learning, graph-theory, combinatorics) (2026-06-11)
 - [[normalized-mutual-information-clustering]] — Normalized Mutual Information for Clustering (machine-learning, information-theory) (2026-06-11)
 - [[rand-index]] — Rand Index and Adjusted Rand Index (machine-learning, statistics) (2026-06-11)
 - [[silhouette-coefficient]] — Silhouette Coefficient (machine-learning, statistics) (2026-06-11)
