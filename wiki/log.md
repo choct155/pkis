@@ -12764,3 +12764,12 @@
 ## [2026-06-11] committed | result
 - Committed: rvm-evidence-sparsity-result → results/rvm-evidence-sparsity-result.md
 - IRI: pkis:result:rvm-evidence-sparsity-result
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: dag-factorization (id: 37323cf8-1fcb-473a-926a-6331f5b14876)
+- Title: DAG Factorization (Directed Graphical Model)
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: dag-factorization → concepts/dag-factorization.md
+- IRI: pkis:concept:dag-factorization

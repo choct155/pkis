@@ -290,6 +290,7 @@
 - [[liu-machine-unlearning-llm-2024]] — Rethinking Machine Unlearning for LLMs: post-training knowledge editing survey (deep-learning, ai-safety) (2026-05-20)
 
 ## Concepts
+- [[dag-factorization]] — DAG Factorization (Directed Graphical Model) (probabilistic-graphical-models, machine-learning, statistics) (2026-06-11)
 - [[nu-svm]] — ν-SVM (machine-learning) (2026-06-11)
 - [[rvm-sparsity-quality-factors]] — Sparsity and Quality Factors in RVM (machine-learning, bayesian-inference) (2026-06-11)
 - [[support-vectors]] — Support Vectors (machine-learning) (2026-06-11)
