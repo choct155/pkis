@@ -17291,3 +17291,12 @@
 ## [2026-06-11] committed | concept
 - Committed: p-value-nhst → concepts/p-value-nhst.md
 - IRI: pkis:concept:p-value-nhst
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: dirichlet-categorical-conjugate (id: 388306dd-40d4-42e6-bd91-d7076be362b2)
+- Title: Conjugate Bayesian Analysis for the Dirichlet-Categorical (Multinomial) Model
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: dirichlet-categorical-conjugate → techniques/dirichlet-categorical-conjugate.md
+- IRI: pkis:technique:dirichlet-categorical-conjugate

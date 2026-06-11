@@ -1021,6 +1021,7 @@
 - [[market-vs-hierarchy]] — Coase/Williamson: transactions governed by price signals (markets) vs. managerial direction (firms) (corporate-finance) (2026-05-20)
 
 ## Techniques
+- [[dirichlet-categorical-conjugate]] — Conjugate Bayesian Analysis for the Dirichlet-Categorical (Multinomial) Model (bayesian-statistics, machine-learning, natural-language-processing) (2026-06-11)
 - [[bootstrap-sampling-distribution]] — Bootstrap (Parametric and Non-Parametric) (statistics, frequentist-statistics, machine-learning) (2026-06-11)
 - [[bayesian-posterior-predictive]] — Posterior Predictive Distribution (Bayesian) (statistics, bayesian-methods, machine-learning) (2026-06-11)
 - [[deep-graph-infomax]] — Deep Graph Infomax (DGI) (machine-learning, graph-learning, self-supervised-learning) (2026-06-11)
