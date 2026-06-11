@@ -13529,3 +13529,12 @@
 ## [2026-06-11] committed | concept
 - Committed: dirac-delta-distribution → concepts/dirac-delta-distribution.md
 - IRI: pkis:concept:dirac-delta-distribution
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: empirical-distribution (id: ccd297e9-80af-4114-bcca-8cd714fb5f6c)
+- Title: Empirical Distribution
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: empirical-distribution → concepts/empirical-distribution.md
+- IRI: pkis:concept:empirical-distribution
