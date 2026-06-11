@@ -15284,3 +15284,12 @@
 ## [2026-06-11] committed | concept
 - Committed: anscombes-quartet → concepts/anscombes-quartet.md
 - IRI: pkis:concept:anscombes-quartet
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: multinomial-logistic-regression (id: a8c632c3-108d-4827-99a1-350f10729b9b)
+- Title: Multinomial Logistic Regression (Softmax Regression)
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: multinomial-logistic-regression → concepts/multinomial-logistic-regression.md
+- IRI: pkis:concept:multinomial-logistic-regression
