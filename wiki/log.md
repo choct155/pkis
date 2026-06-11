@@ -15005,3 +15005,12 @@
 ## [2026-06-11] committed | technique
 - Committed: calculus-of-variations-inference → techniques/calculus-of-variations-inference.md
 - IRI: pkis:technique:calculus-of-variations-inference
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: wake-sleep-algorithm (id: ebdf0fe2-905a-41a5-8e98-d47d18278ca8)
+- Title: Wake-Sleep Algorithm
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: wake-sleep-algorithm → techniques/wake-sleep-algorithm.md
+- IRI: pkis:technique:wake-sleep-algorithm
