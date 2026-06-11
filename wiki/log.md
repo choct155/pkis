@@ -12386,3 +12386,12 @@
 ## [2026-06-11] committed | concept
 - Committed: design-matrix → concepts/design-matrix.md
 - IRI: pkis:concept:design-matrix
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: fishers-linear-discriminant (id: e601407a-e19e-4110-8e9f-e8aedd4f718d)
+- Title: Fisher's Linear Discriminant
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: fishers-linear-discriminant → techniques/fishers-linear-discriminant.md
+- IRI: pkis:technique:fishers-linear-discriminant
