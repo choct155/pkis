@@ -18299,3 +18299,12 @@
 ## [2026-06-11] committed | concept
 - Committed: zellners-g-prior → concepts/zellners-g-prior.md
 - IRI: pkis:concept:zellners-g-prior
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: spike-and-slab-prior (id: c58bd2f2-6c1e-4952-bb92-20d1a788df0c)
+- Title: Spike-and-Slab Prior
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: spike-and-slab-prior → concepts/spike-and-slab-prior.md
+- IRI: pkis:concept:spike-and-slab-prior
