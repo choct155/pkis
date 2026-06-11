@@ -14096,3 +14096,12 @@
 ## [2026-06-11] committed | technique
 - Committed: max-pooling → techniques/max-pooling.md
 - IRI: pkis:technique:max-pooling
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: receptive-field-cnn (id: 7422050e-93f1-41bb-89f0-264a799acefe)
+- Title: Receptive Field (CNNs)
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: receptive-field-cnn → concepts/receptive-field-cnn.md
+- IRI: pkis:concept:receptive-field-cnn
