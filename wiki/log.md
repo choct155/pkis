@@ -13943,3 +13943,12 @@
 ## [2026-06-11] committed | technique
 - Committed: multi-task-learning → techniques/multi-task-learning.md
 - IRI: pkis:technique:multi-task-learning
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: adversarial-training-regularization (id: 89c50ff1-63a3-42c9-9ed7-fb2dc70899d7)
+- Title: Adversarial Training
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: adversarial-training-regularization → techniques/adversarial-training-regularization.md
+- IRI: pkis:technique:adversarial-training-regularization
