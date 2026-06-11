@@ -950,6 +950,7 @@
 - [[market-vs-hierarchy]] — Coase/Williamson: transactions governed by price signals (markets) vs. managerial direction (firms) (corporate-finance) (2026-05-20)
 
 ## Techniques
+- [[schur-complement]] — Schur Complement and Partitioned Matrix Inversion (linear-algebra, statistics, machine-learning) (2026-06-11)
 - [[hutchinson-trace-estimator]] — Hutchinson Trace Estimator (linear-algebra, numerical-methods, machine-learning) (2026-06-11)
 - [[bayesian-t-test]] — Bayesian t-test (Paired Classifier Comparison) (statistics, machine-learning) (2026-06-11)
 - [[classification-reject-option]] — Classification with Reject Option (Chow's Rule) (machine-learning, decision-theory) (2026-06-11)

@@ -15698,3 +15698,12 @@
 ## [2026-06-11] committed | technique
 - Committed: hutchinson-trace-estimator → techniques/hutchinson-trace-estimator.md
 - IRI: pkis:technique:hutchinson-trace-estimator
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: schur-complement (id: 35b2afe5-4512-4cd3-8cc6-f242333dd494)
+- Title: Schur Complement and Partitioned Matrix Inversion
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: schur-complement → techniques/schur-complement.md
+- IRI: pkis:technique:schur-complement
