@@ -16130,3 +16130,12 @@
 ## [2026-06-11] committed | result
 - Committed: ridge-pca-shrinkage → results/ridge-pca-shrinkage.md
 - IRI: pkis:result:ridge-pca-shrinkage
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: link-function-mean-function (id: d2145332-15c9-4f96-a105-e6f0c10e071c)
+- Title: Link Function and Mean Function
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: link-function-mean-function → concepts/link-function-mean-function.md
+- IRI: pkis:concept:link-function-mean-function
