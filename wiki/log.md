@@ -14726,3 +14726,12 @@
 ## [2026-06-11] committed | principle
 - Committed: causal-factor-robustness-principle → principles/causal-factor-robustness-principle.md
 - IRI: pkis:principle:causal-factor-robustness-principle
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: smoothness-assumption-ml (id: 6e6942b3-c8a0-4217-97e3-068c29531734)
+- Title: Smoothness Assumption in Machine Learning
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: smoothness-assumption-ml → concepts/smoothness-assumption-ml.md
+- IRI: pkis:concept:smoothness-assumption-ml
