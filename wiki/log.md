@@ -20144,3 +20144,12 @@
 ## [2026-06-11] committed | concept
 - Committed: causal-hierarchy → concepts/causal-hierarchy.md
 - IRI: pkis:concept:causal-hierarchy
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: overlap-positivity (id: 686d8aa0-f5b9-4df4-9580-0c75cc717bbe)
+- Title: Overlap (Positivity) Condition
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: overlap-positivity → concepts/overlap-positivity.md
+- IRI: pkis:concept:overlap-positivity
