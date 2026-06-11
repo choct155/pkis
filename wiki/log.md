@@ -13556,3 +13556,12 @@
 ## [2026-06-11] committed | result
 - Committed: change-of-variables-density → results/change-of-variables-density.md
 - IRI: pkis:result:change-of-variables-density
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: self-information (id: cdf4a277-55fa-4655-b470-f675e609258e)
+- Title: Self-Information
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: self-information → concepts/self-information.md
+- IRI: pkis:concept:self-information
