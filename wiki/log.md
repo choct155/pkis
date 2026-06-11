@@ -19343,3 +19343,12 @@
 ## [2026-06-11] committed | concept
 - Committed: non-saturating-gan-loss → concepts/non-saturating-gan-loss.md
 - IRI: pkis:concept:non-saturating-gan-loss
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: dirac-gan (id: 8001ea54-a2a2-42a7-95b5-f9e7dc821774)
+- Title: DiracGAN
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: dirac-gan → concepts/dirac-gan.md
+- IRI: pkis:concept:dirac-gan
