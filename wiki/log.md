@@ -19280,3 +19280,12 @@
 ## [2026-06-11] committed | concept
 - Committed: maximum-mean-discrepancy → concepts/maximum-mean-discrepancy.md
 - IRI: pkis:concept:maximum-mean-discrepancy
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: mode-collapse (id: e0acfe62-91f3-4b30-9e74-1d623b48d0bb)
+- Title: Mode Collapse
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: mode-collapse → concepts/mode-collapse.md
+- IRI: pkis:concept:mode-collapse
