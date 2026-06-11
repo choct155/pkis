@@ -17939,3 +17939,12 @@
 ## [2026-06-11] committed | concept
 - Committed: amortization-gap → concepts/amortization-gap.md
 - IRI: pkis:concept:amortization-gap
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: reparameterized-vi (id: 5853ddb8-074f-4250-a81e-f55da82ed624)
+- Title: Reparameterized Variational Inference
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: reparameterized-vi → techniques/reparameterized-vi.md
+- IRI: pkis:technique:reparameterized-vi

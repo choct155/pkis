@@ -1049,6 +1049,7 @@
 - [[market-vs-hierarchy]] — Coase/Williamson: transactions governed by price signals (markets) vs. managerial direction (firms) (corporate-finance) (2026-05-20)
 
 ## Techniques
+- [[reparameterized-vi]] — Reparameterized Variational Inference (machine-learning, deep-learning, bayesian-inference) (2026-06-11)
 - [[bbvi]] — Blackbox Variational Inference (BBVI) (machine-learning, bayesian-inference, probabilistic-programming) (2026-06-11)
 - [[amortized-vi]] — Amortized Variational Inference (machine-learning, deep-learning, bayesian-inference) (2026-06-11)
 - [[svi]] — Stochastic Variational Inference (SVI) (machine-learning, bayesian-inference, scalable-inference) (2026-06-11)
