@@ -972,6 +972,7 @@
 - [[market-vs-hierarchy]] — Coase/Williamson: transactions governed by price signals (markets) vs. managerial direction (firms) (corporate-finance) (2026-05-20)
 
 ## Techniques
+- [[binomial-regression]] — Binomial Regression (statistics, machine-learning) (2026-06-11)
 - [[shooting-algorithm]] — Shooting Algorithm (Coordinate Descent for Lasso) (optimisation, machine learning) (2026-06-11)
 - [[group-lasso]] — Group Lasso (statistics, machine learning) (2026-06-11)
 - [[lasso-regression]] — Lasso Regression ($\ell_1$-Regularised Linear Regression) (statistics, machine learning) (2026-06-11)

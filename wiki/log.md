@@ -16139,3 +16139,12 @@
 ## [2026-06-11] committed | concept
 - Committed: link-function-mean-function → concepts/link-function-mean-function.md
 - IRI: pkis:concept:link-function-mean-function
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: binomial-regression (id: 6ea58c51-47c8-4725-ade8-1eee64574961)
+- Title: Binomial Regression
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: binomial-regression → techniques/binomial-regression.md
+- IRI: pkis:technique:binomial-regression
