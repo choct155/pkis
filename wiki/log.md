@@ -16841,3 +16841,12 @@
 ## [2026-06-11] committed | concept
 - Committed: normalized-cut → concepts/normalized-cut.md
 - IRI: pkis:concept:normalized-cut
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: cluster-purity (id: 9e605b47-161b-4a3b-8295-6923b19baf43)
+- Title: Cluster Purity
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: cluster-purity → concepts/cluster-purity.md
+- IRI: pkis:concept:cluster-purity
