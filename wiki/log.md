@@ -15167,3 +15167,12 @@
 ## [2026-06-11] committed | concept
 - Committed: sigmoid-belief-network → concepts/sigmoid-belief-network.md
 - IRI: pkis:concept:sigmoid-belief-network
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: centered-deep-boltzmann-machine (id: 5a9176c4-1da0-4204-86d3-69718ea1900c)
+- Title: Centered Deep Boltzmann Machine
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: centered-deep-boltzmann-machine → techniques/centered-deep-boltzmann-machine.md
+- IRI: pkis:technique:centered-deep-boltzmann-machine
