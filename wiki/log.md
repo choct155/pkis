@@ -12908,3 +12908,12 @@
 ## [2026-06-11] committed | result
 - Committed: k-means-as-em-limit → results/k-means-as-em-limit.md
 - IRI: pkis:result:k-means-as-em-limit
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: gmm-likelihood-singularities (id: ac0d046a-2393-4b63-b232-b6e1c55fbd08)
+- Title: Singularities in Gaussian Mixture Maximum Likelihood
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: gmm-likelihood-singularities → concepts/gmm-likelihood-singularities.md
+- IRI: pkis:concept:gmm-likelihood-singularities

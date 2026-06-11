@@ -290,6 +290,7 @@
 - [[liu-machine-unlearning-llm-2024]] — Rethinking Machine Unlearning for LLMs: post-training knowledge editing survey (deep-learning, ai-safety) (2026-05-20)
 
 ## Concepts
+- [[gmm-likelihood-singularities]] — Singularities in Gaussian Mixture Maximum Likelihood (statistics, machine-learning) (2026-06-11)
 - [[mixture-of-bernoulli-distributions]] — Mixture of Bernoulli Distributions (Latent Class Analysis) (statistics, machine-learning, probabilistic-modeling) (2026-06-11)
 - [[complete-vs-incomplete-data-em]] — Complete Data and Incomplete Data in EM (statistics, machine-learning, probabilistic-modeling) (2026-06-11)
 - [[responsibilities-mixture-models]] — Responsibilities in Mixture Models (machine-learning, statistics, probabilistic-modeling) (2026-06-11)
