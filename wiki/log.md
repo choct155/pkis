@@ -16292,3 +16292,12 @@
 ## [2026-06-11] committed | framework
 - Committed: encoder-decoder-unet → frameworks/encoder-decoder-unet.md
 - IRI: pkis:framework:encoder-decoder-unet
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: group-normalization (id: 0db6dd5e-7660-4da2-b916-6e7d6f59af07)
+- Title: Group Normalization
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: group-normalization → techniques/group-normalization.md
+- IRI: pkis:technique:group-normalization
