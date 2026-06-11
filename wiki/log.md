@@ -16742,3 +16742,12 @@
 ## [2026-06-11] committed | technique
 - Committed: scree-plot → techniques/scree-plot.md
 - IRI: pkis:technique:scree-plot
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: canonical-correlation-analysis (id: eaa86f26-c421-4aeb-b6af-403aed208b85)
+- Title: Canonical Correlation Analysis (CCA)
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: canonical-correlation-analysis → techniques/canonical-correlation-analysis.md
+- IRI: pkis:technique:canonical-correlation-analysis
