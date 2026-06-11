@@ -13286,3 +13286,12 @@
 ## [2026-06-11] committed | concept
 - Committed: tree-pruning → concepts/tree-pruning.md
 - IRI: pkis:concept:tree-pruning
+
+## [2026-06-11] staged | node-stub (framework)
+- Staged: deep-learning (id: a578ce51-2abb-40fb-bc87-e0c3c49c3e56)
+- Title: Deep Learning
+- needs_canonical_source: False
+
+## [2026-06-11] committed | framework
+- Committed: deep-learning → frameworks/deep-learning.md
+- IRI: pkis:framework:deep-learning
