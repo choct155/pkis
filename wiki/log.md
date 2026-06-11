@@ -18407,3 +18407,12 @@
 ## [2026-06-11] committed | concept
 - Committed: autoencoder-dnn → concepts/autoencoder-dnn.md
 - IRI: pkis:concept:autoencoder-dnn
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: film-feature-wise-linear-modulation (id: 9887ea9b-c20a-4552-ac0f-ec3b37998407)
+- Title: Feature-wise Linear Modulation (FiLM)
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: film-feature-wise-linear-modulation → concepts/film-feature-wise-linear-modulation.md
+- IRI: pkis:concept:film-feature-wise-linear-modulation
