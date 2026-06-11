@@ -13223,3 +13223,12 @@
 ## [2026-06-11] committed | concept
 - Committed: exponential-loss → concepts/exponential-loss.md
 - IRI: pkis:concept:exponential-loss
+
+## [2026-06-11] staged | node-stub (framework)
+- Staged: cart (id: e032b098-ef85-4c5c-8971-ecd55d2aa22b)
+- Title: CART (Classification and Regression Trees)
+- needs_canonical_source: False
+
+## [2026-06-11] committed | framework
+- Committed: cart → frameworks/cart.md
+- IRI: pkis:framework:cart
