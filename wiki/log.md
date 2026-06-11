@@ -19874,3 +19874,12 @@
 ## [2026-06-11] committed | framework
 - Committed: interpretable-ml-ecosystem → frameworks/interpretable-ml-ecosystem.md
 - IRI: pkis:framework:interpretable-ml-ecosystem
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: explanation-fidelity (id: f2d26ad3-3d25-42b0-848b-e08c1fdc5a4b)
+- Title: Explanation Fidelity (Faithfulness)
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: explanation-fidelity → concepts/explanation-fidelity.md
+- IRI: pkis:concept:explanation-fidelity
