@@ -781,6 +781,7 @@
 - [[market-vs-hierarchy]] — Coase/Williamson: transactions governed by price signals (markets) vs. managerial direction (firms) (corporate-finance) (2026-05-20)
 
 ## Techniques
+- [[sequential-minimal-optimisation]] — Sequential Minimal Optimisation (SMO) (machine-learning, optimization) (2026-06-11)
 - [[svm-dual-formulation]] — SVM Dual Formulation (machine-learning, convex-optimization) (2026-06-11)
 - [[support-vector-machine]] — Support Vector Machine (SVM) (machine-learning, statistical-learning-theory) (2026-06-11)
 - [[generative-model-kernels]] — Generative-Model Kernels (machine-learning, kernel-methods, probabilistic-modeling) (2026-06-11)

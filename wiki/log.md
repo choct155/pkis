@@ -12701,3 +12701,12 @@
 ## [2026-06-11] committed | technique
 - Committed: svm-dual-formulation → techniques/svm-dual-formulation.md
 - IRI: pkis:technique:svm-dual-formulation
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: sequential-minimal-optimisation (id: b6ceca90-11e4-4727-bca9-4c52fb7d86f6)
+- Title: Sequential Minimal Optimisation (SMO)
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: sequential-minimal-optimisation → techniques/sequential-minimal-optimisation.md
+- IRI: pkis:technique:sequential-minimal-optimisation
