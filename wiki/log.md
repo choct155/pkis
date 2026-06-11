@@ -14807,3 +14807,12 @@
 ## [2026-06-11] committed | concept
 - Committed: free-energy-ebm → concepts/free-energy-ebm.md
 - IRI: pkis:concept:free-energy-ebm
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: las-vegas-vs-monte-carlo-algorithms (id: 39966229-2173-45d2-a94f-37fffd22482c)
+- Title: Las Vegas vs Monte Carlo Algorithms
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: las-vegas-vs-monte-carlo-algorithms → concepts/las-vegas-vs-monte-carlo-algorithms.md
+- IRI: pkis:concept:las-vegas-vs-monte-carlo-algorithms
