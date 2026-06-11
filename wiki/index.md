@@ -779,6 +779,7 @@
 - [[market-vs-hierarchy]] — Coase/Williamson: transactions governed by price signals (markets) vs. managerial direction (firms) (corporate-finance) (2026-05-20)
 
 ## Techniques
+- [[ard-gaussian-process]] — Automatic Relevance Determination (ARD) in Gaussian Processes (machine-learning, gaussian-processes, feature-selection) (2026-06-11)
 - [[gp-classification-laplace]] — Gaussian Process Classification via Laplace Approximation (machine-learning, bayesian-statistics, kernel-methods) (2026-06-11)
 - [[nadaraya-watson-model]] — Nadaraya–Watson Kernel Regression (machine-learning, nonparametric-statistics, regression) (2026-06-11)
 - [[dual-kernel-ridge-regression]] — Dual Representation of Kernel Ridge Regression (machine-learning, kernel-methods, regression) (2026-06-11)

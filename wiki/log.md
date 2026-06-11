@@ -12647,3 +12647,12 @@
 ## [2026-06-11] committed | result
 - Committed: nn-gp-infinite-width-limit → results/nn-gp-infinite-width-limit.md
 - IRI: pkis:result:nn-gp-infinite-width-limit
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: ard-gaussian-process (id: 52afe6fb-a88b-4f38-b6f3-f32533add17a)
+- Title: Automatic Relevance Determination (ARD) in Gaussian Processes
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: ard-gaussian-process → techniques/ard-gaussian-process.md
+- IRI: pkis:technique:ard-gaussian-process
