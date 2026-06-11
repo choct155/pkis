@@ -912,6 +912,7 @@
 - [[market-vs-hierarchy]] — Coase/Williamson: transactions governed by price signals (markets) vs. managerial direction (firms) (corporate-finance) (2026-05-20)
 
 ## Techniques
+- [[learned-approximate-inference]] — Learned Approximate Inference (Amortized Inference) (machine-learning, deep-learning, variational-methods) (2026-06-11)
 - [[wake-sleep-algorithm]] — Wake-Sleep Algorithm (machine-learning, deep-learning, neuroscience) (2026-06-11)
 - [[calculus-of-variations-inference]] — Calculus of Variations for Probabilistic Inference (mathematics, probabilistic-inference, variational-methods) (2026-06-11)
 - [[map-inference-as-approximate-vi]] — MAP Inference as Approximate Variational Inference (machine-learning, probabilistic-inference) (2026-06-11)

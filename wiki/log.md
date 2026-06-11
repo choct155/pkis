@@ -15041,3 +15041,12 @@
 ## [2026-06-11] committed | concept
 - Committed: variational-approximation-bias → concepts/variational-approximation-bias.md
 - IRI: pkis:concept:variational-approximation-bias
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: learned-approximate-inference (id: 2b9da245-099c-46ed-ad81-3824b7ff4d17)
+- Title: Learned Approximate Inference (Amortized Inference)
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: learned-approximate-inference → techniques/learned-approximate-inference.md
+- IRI: pkis:technique:learned-approximate-inference
