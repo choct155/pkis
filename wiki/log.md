@@ -19082,3 +19082,12 @@
 ## [2026-06-11] committed | technique
 - Committed: continuous-time-normalizing-flow → techniques/continuous-time-normalizing-flow.md
 - IRI: pkis:technique:continuous-time-normalizing-flow
+
+## [2026-06-11] staged | node-stub (result)
+- Staged: instantaneous-change-of-variables (id: 149cd363-3b45-4ed6-a3a3-0b775353e962)
+- Title: Instantaneous Change-of-Variables Formula (Continuous Flows)
+- needs_canonical_source: False
+
+## [2026-06-11] committed | result
+- Committed: instantaneous-change-of-variables → results/instantaneous-change-of-variables.md
+- IRI: pkis:result:instantaneous-change-of-variables
