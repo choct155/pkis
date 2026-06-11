@@ -17741,3 +17741,12 @@
 ## [2026-06-11] committed | technique
 - Committed: extended-kalman-filter → techniques/extended-kalman-filter.md
 - IRI: pkis:technique:extended-kalman-filter
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: kalman-gain (id: 2ccfab0f-e8ef-437f-866c-1a5ba071a4cf)
+- Title: Kalman Gain Matrix
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: kalman-gain → concepts/kalman-gain.md
+- IRI: pkis:concept:kalman-gain

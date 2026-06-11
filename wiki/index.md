@@ -290,6 +290,7 @@
 - [[liu-machine-unlearning-llm-2024]] — Rethinking Machine Unlearning for LLMs: post-training knowledge editing survey (deep-learning, ai-safety) (2026-05-20)
 
 ## Concepts
+- [[kalman-gain]] — Kalman Gain Matrix (machine-learning, signal-processing, statistics) (2026-06-11)
 - [[approximate-inference-quality-metrics]] — Approximate Inference Quality Metrics (bayesian-inference, approximate-inference, model-evaluation) (2026-06-11)
 - [[mcmc-proposal-distribution]] — Proposal Distribution (MCMC) (MCMC, bayesian-computation, stochastic-processes) (2026-06-11)
 - [[energy-function-posterior]] — Energy Function (Unnormalized Posterior) (bayesian-inference, statistical-physics, probabilistic-modeling) (2026-06-11)
