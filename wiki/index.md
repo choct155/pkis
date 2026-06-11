@@ -1580,6 +1580,7 @@
 - [[constraint-propagation]] — Reducing a constraint satisfaction problem by iteratively eliminating inconsistent values from variable domains (knowledge-representation) (2026-05-20)
 
 ## Results
+- [[linear-autoencoder-pca-equivalence]] — Equivalence of Linear Autoencoder and PCA (machine-learning, linear-algebra) (2026-06-11)
 - [[glm-gradient-hessian]] — GLM Gradient and Hessian of NLL (statistics, machine-learning, optimization) (2026-06-11)
 - [[ridge-pca-shrinkage]] — Ridge–PCA Shrinkage Connection (statistics, machine learning, linear algebra) (2026-06-11)
 - [[logistic-regression-nll-convexity]] — Convexity of Logistic Regression NLL (machine-learning, optimisation) (2026-06-11)

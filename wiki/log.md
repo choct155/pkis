@@ -16760,3 +16760,12 @@
 ## [2026-06-11] committed | technique
 - Committed: mixture-of-factor-analyzers → techniques/mixture-of-factor-analyzers.md
 - IRI: pkis:technique:mixture-of-factor-analyzers
+
+## [2026-06-11] staged | node-stub (result)
+- Staged: linear-autoencoder-pca-equivalence (id: 14caa763-00be-4f79-b4f8-36b2878412a4)
+- Title: Equivalence of Linear Autoencoder and PCA
+- needs_canonical_source: False
+
+## [2026-06-11] committed | result
+- Committed: linear-autoencoder-pca-equivalence → results/linear-autoencoder-pca-equivalence.md
+- IRI: pkis:result:linear-autoencoder-pca-equivalence
