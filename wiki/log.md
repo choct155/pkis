@@ -12998,3 +12998,12 @@
 ## [2026-06-11] committed | concept
 - Committed: induced-factorization → concepts/induced-factorization.md
 - IRI: pkis:concept:induced-factorization
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: moment-matching (id: 31468a96-e4d0-4a1a-92f1-2641dec81dde)
+- Title: Moment Matching Approximation
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: moment-matching → concepts/moment-matching.md
+- IRI: pkis:concept:moment-matching
