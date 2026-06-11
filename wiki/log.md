@@ -14969,3 +14969,12 @@
 ## [2026-06-11] committed | concept
 - Committed: spurious-modes → concepts/spurious-modes.md
 - IRI: pkis:concept:spurious-modes
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: fast-pcd (id: 72b5493c-380e-4453-82bc-be1fb5aa6088)
+- Title: Fast PCD (FPCD)
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: fast-pcd → concepts/fast-pcd.md
+- IRI: pkis:concept:fast-pcd
