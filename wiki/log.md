@@ -16121,3 +16121,12 @@
 ## [2026-06-11] committed | technique
 - Committed: shooting-algorithm → techniques/shooting-algorithm.md
 - IRI: pkis:technique:shooting-algorithm
+
+## [2026-06-11] staged | node-stub (result)
+- Staged: ridge-pca-shrinkage (id: 138c6a09-fc77-47f0-a9c8-5a793ff87992)
+- Title: Ridge–PCA Shrinkage Connection
+- needs_canonical_source: False
+
+## [2026-06-11] committed | result
+- Committed: ridge-pca-shrinkage → results/ridge-pca-shrinkage.md
+- IRI: pkis:result:ridge-pca-shrinkage

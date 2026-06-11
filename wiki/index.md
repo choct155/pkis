@@ -1517,6 +1517,7 @@
 - [[constraint-propagation]] — Reducing a constraint satisfaction problem by iteratively eliminating inconsistent values from variable domains (knowledge-representation) (2026-05-20)
 
 ## Results
+- [[ridge-pca-shrinkage]] — Ridge–PCA Shrinkage Connection (statistics, machine learning, linear algebra) (2026-06-11)
 - [[logistic-regression-nll-convexity]] — Convexity of Logistic Regression NLL (machine-learning, optimisation) (2026-06-11)
 - [[lda-logistic-regression-equivalence]] — LDA–Logistic Regression Equivalence (machine-learning, statistics) (2026-06-11)
 - [[woodbury-identity]] — Sherman–Morrison–Woodbury Formula (linear-algebra, machine-learning, statistics) (2026-06-11)
