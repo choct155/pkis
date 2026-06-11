@@ -17606,3 +17606,12 @@
 ## [2026-06-11] committed | concept
 - Committed: jvp-vjp → concepts/jvp-vjp.md
 - IRI: pkis:concept:jvp-vjp
+
+## [2026-06-11] staged | node-stub (framework)
+- Staged: bayesian-inference-patterns (id: 30b103ac-7b88-464e-993e-d24228237c71)
+- Title: Bayesian Inference Patterns (Global / Local / Mixed Latents)
+- needs_canonical_source: False
+
+## [2026-06-11] committed | framework
+- Committed: bayesian-inference-patterns → frameworks/bayesian-inference-patterns.md
+- IRI: pkis:framework:bayesian-inference-patterns
