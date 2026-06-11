@@ -13250,3 +13250,12 @@
 ## [2026-06-11] committed | framework
 - Committed: mixtures-of-experts → frameworks/mixtures-of-experts.md
 - IRI: pkis:framework:mixtures-of-experts
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: mixture-linear-regression-em (id: e156f388-5d43-4858-b2bc-b6dbdd5f5613)
+- Title: Mixture of Linear Regression Models (EM)
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: mixture-linear-regression-em → techniques/mixture-linear-regression-em.md
+- IRI: pkis:technique:mixture-linear-regression-em
