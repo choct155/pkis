@@ -19055,3 +19055,12 @@
 ## [2026-06-11] committed | technique
 - Committed: autoregressive-flow → techniques/autoregressive-flow.md
 - IRI: pkis:technique:autoregressive-flow
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: inverse-autoregressive-flow (id: 5f0bcf78-7fee-4064-89ad-e5f9c40985a8)
+- Title: Inverse Autoregressive Flow (IAF)
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: inverse-autoregressive-flow → techniques/inverse-autoregressive-flow.md
+- IRI: pkis:technique:inverse-autoregressive-flow
