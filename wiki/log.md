@@ -14960,3 +14960,12 @@
 ## [2026-06-11] committed | technique
 - Committed: bridge-sampling → techniques/bridge-sampling.md
 - IRI: pkis:technique:bridge-sampling
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: spurious-modes (id: ba2df450-9e7b-4e47-8bd9-0ba54860c3e9)
+- Title: Spurious Modes in Generative Models
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: spurious-modes → concepts/spurious-modes.md
+- IRI: pkis:concept:spurious-modes
