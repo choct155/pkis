@@ -290,6 +290,7 @@
 - [[liu-machine-unlearning-llm-2024]] — Rethinking Machine Unlearning for LLMs: post-training knowledge editing survey (deep-learning, ai-safety) (2026-05-20)
 
 ## Concepts
+- [[positive-negative-phase-learning]] — Positive and Negative Phase of Learning (machine-learning, probabilistic-graphical-models, deep-learning) (2026-06-11)
 - [[temperature-ebm]] — Temperature in Energy-Based Models (machine-learning, statistical-physics, probabilistic-inference) (2026-06-11)
 - [[energy-barrier-mcmc]] — Energy Barrier and Mode Separation in MCMC (machine-learning, probabilistic-inference, statistics) (2026-06-11)
 - [[mcmc-mixing-time]] — MCMC Mixing and Mixing Time (statistics, machine-learning, probability-theory) (2026-06-11)

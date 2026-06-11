@@ -14897,3 +14897,12 @@
 ## [2026-06-11] committed | result
 - Committed: depth-improves-mcmc-mixing → results/depth-improves-mcmc-mixing.md
 - IRI: pkis:result:depth-improves-mcmc-mixing
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: positive-negative-phase-learning (id: 91809b90-7c2a-4397-850c-9eda6261897b)
+- Title: Positive and Negative Phase of Learning
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: positive-negative-phase-learning → concepts/positive-negative-phase-learning.md
+- IRI: pkis:concept:positive-negative-phase-learning
