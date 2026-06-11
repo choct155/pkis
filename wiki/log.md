@@ -18191,3 +18191,12 @@
 ## [2026-06-11] committed | technique
 - Committed: data-tempering-ibis → techniques/data-tempering-ibis.md
 - IRI: pkis:technique:data-tempering-ibis
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: smc-abc (id: 8191598f-d851-47f5-a5e5-3555d1bb2945)
+- Title: SMC-ABC (Approximate Bayesian Computation via SMC)
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: smc-abc → techniques/smc-abc.md
+- IRI: pkis:technique:smc-abc
