@@ -14627,3 +14627,12 @@
 ## [2026-06-11] committed | technique
 - Committed: score-matching → techniques/score-matching.md
 - IRI: pkis:technique:score-matching
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: manifold-hypothesis (id: ca551de9-b3b8-4bd4-a751-f110e3a7294b)
+- Title: Manifold Hypothesis
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: manifold-hypothesis → concepts/manifold-hypothesis.md
+- IRI: pkis:concept:manifold-hypothesis
