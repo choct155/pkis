@@ -14312,3 +14312,12 @@
 ## [2026-06-11] committed | technique
 - Committed: grid-search → techniques/grid-search.md
 - IRI: pkis:technique:grid-search
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: random-search-hyperparameters (id: 0e0125a1-adeb-4fd4-89f5-02a5d7ab9e53)
+- Title: Random Search for Hyperparameter Tuning
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: random-search-hyperparameters → techniques/random-search-hyperparameters.md
+- IRI: pkis:technique:random-search-hyperparameters
