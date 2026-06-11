@@ -12917,3 +12917,12 @@
 ## [2026-06-11] committed | concept
 - Committed: gmm-likelihood-singularities → concepts/gmm-likelihood-singularities.md
 - IRI: pkis:concept:gmm-likelihood-singularities
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: mixture-model-identifiability (id: 42b3308a-3d51-440f-ad71-018cac520bf7)
+- Title: Identifiability in Mixture Models
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: mixture-model-identifiability → concepts/mixture-model-identifiability.md
+- IRI: pkis:concept:mixture-model-identifiability
