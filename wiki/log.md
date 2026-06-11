@@ -15761,3 +15761,12 @@
 ## [2026-06-11] committed | concept
 - Committed: strong-convexity → concepts/strong-convexity.md
 - IRI: pkis:concept:strong-convexity
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: subgradient-subdifferential (id: 3f9ee77a-5e59-4fc3-833e-fcb00ad5b9f5)
+- Title: Subgradient and Subdifferential
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: subgradient-subdifferential → concepts/subgradient-subdifferential.md
+- IRI: pkis:concept:subgradient-subdifferential

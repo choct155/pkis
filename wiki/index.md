@@ -290,6 +290,7 @@
 - [[liu-machine-unlearning-llm-2024]] — Rethinking Machine Unlearning for LLMs: post-training knowledge editing survey (deep-learning, ai-safety) (2026-05-20)
 
 ## Concepts
+- [[subgradient-subdifferential]] — Subgradient and Subdifferential (optimization, machine-learning) (2026-06-11)
 - [[strong-convexity]] — Strong Convexity (optimization, machine-learning) (2026-06-11)
 - [[stationary-point-optimality-conditions]] — Stationary Point and Optimality Conditions (optimization, machine-learning) (2026-06-11)
 - [[scatter-matrix]] — Scatter Matrix and Sum-of-Squares Matrix (linear-algebra, statistics, machine-learning) (2026-06-11)
