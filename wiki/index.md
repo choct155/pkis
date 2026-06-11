@@ -290,6 +290,7 @@
 - [[liu-machine-unlearning-llm-2024]] — Rethinking Machine Unlearning for LLMs: post-training knowledge editing survey (deep-learning, ai-safety) (2026-05-20)
 
 ## Concepts
+- [[bayesian-information-criterion]] — Bayesian Information Criterion (BIC) (statistics, machine-learning, model-selection) (2026-06-11)
 - [[class-confusion-matrix]] — Class Confusion Matrix (machine-learning, statistics) (2026-06-11)
 - [[brier-score]] — Brier Score (statistics, machine-learning, meteorology) (2026-06-11)
 - [[precision-recall-curve]] — Precision–Recall Curve (machine-learning, information-retrieval, statistics) (2026-06-11)

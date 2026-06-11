@@ -15527,3 +15527,12 @@
 ## [2026-06-11] committed | result
 - Committed: optimal-regression-loss-estimators → results/optimal-regression-loss-estimators.md
 - IRI: pkis:result:optimal-regression-loss-estimators
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: bayesian-information-criterion (id: 903213b8-a242-458d-8653-5068ce14deef)
+- Title: Bayesian Information Criterion (BIC)
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: bayesian-information-criterion → concepts/bayesian-information-criterion.md
+- IRI: pkis:concept:bayesian-information-criterion
