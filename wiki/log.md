@@ -18434,3 +18434,12 @@
 ## [2026-06-11] committed | concept
 - Committed: hypernetwork → concepts/hypernetwork.md
 - IRI: pkis:concept:hypernetwork
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: shift-equivariance-invariance-cnn (id: 5cf90e5d-4a83-486f-b957-29a0240e49f4)
+- Title: Shift Equivariance and Shift Invariance in CNNs
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: shift-equivariance-invariance-cnn → concepts/shift-equivariance-invariance-cnn.md
+- IRI: pkis:concept:shift-equivariance-invariance-cnn

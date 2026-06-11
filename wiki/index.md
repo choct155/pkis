@@ -290,6 +290,7 @@
 - [[liu-machine-unlearning-llm-2024]] — Rethinking Machine Unlearning for LLMs: post-training knowledge editing survey (deep-learning, ai-safety) (2026-05-20)
 
 ## Concepts
+- [[shift-equivariance-invariance-cnn]] — Shift Equivariance and Shift Invariance in CNNs (deep-learning, computer-vision) (2026-06-11)
 - [[hypernetwork]] — Hypernetwork (deep-learning, meta-learning) (2026-06-11)
 - [[implicit-layer]] — Implicit Layer (deep-learning, optimization) (2026-06-11)
 - [[film-feature-wise-linear-modulation]] — Feature-wise Linear Modulation (FiLM) (deep-learning, multimodal-learning) (2026-06-11)
