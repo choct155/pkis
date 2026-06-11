@@ -13385,3 +13385,12 @@
 ## [2026-06-11] committed | principle
 - Committed: data-driven-ai → principles/data-driven-ai.md
 - IRI: pkis:principle:data-driven-ai
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: tensor-multidimensional-array (id: 83f12b8d-d6b3-4f71-99be-3627f6d2e406)
+- Title: Tensor (Multi-dimensional Array)
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: tensor-multidimensional-array → concepts/tensor-multidimensional-array.md
+- IRI: pkis:concept:tensor-multidimensional-array
