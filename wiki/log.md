@@ -13817,3 +13817,12 @@
 ## [2026-06-11] committed | result
 - Committed: universal-approximation-theorem-mlp → results/universal-approximation-theorem-mlp.md
 - IRI: pkis:result:universal-approximation-theorem-mlp
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: backpropagation-algorithm (id: 5478776b-879c-47be-8d0b-520d0fa80ab2)
+- Title: Backpropagation Algorithm
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: backpropagation-algorithm → techniques/backpropagation-algorithm.md
+- IRI: pkis:technique:backpropagation-algorithm

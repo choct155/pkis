@@ -853,6 +853,7 @@
 - [[market-vs-hierarchy]] — Coase/Williamson: transactions governed by price signals (markets) vs. managerial direction (firms) (corporate-finance) (2026-05-20)
 
 ## Techniques
+- [[backpropagation-algorithm]] — Backpropagation Algorithm (machine-learning, deep-learning, numerical-methods) (2026-06-11)
 - [[minibatch-sgd]] — Minibatch Stochastic Gradient Descent (machine-learning, optimization) (2026-06-11)
 - [[newtons-method-optimization]] — Newton's Method for Optimization (optimization, numerical-computation) (2026-06-11)
 - [[numerically-stable-softmax]] — Numerically Stable Softmax (numerical-computation, deep-learning) (2026-06-11)
