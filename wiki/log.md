@@ -15536,3 +15536,12 @@
 ## [2026-06-11] committed | concept
 - Committed: bayesian-information-criterion → concepts/bayesian-information-criterion.md
 - IRI: pkis:concept:bayesian-information-criterion
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: akaike-information-criterion (id: 71766185-00eb-401f-a73b-00bee221f6ec)
+- Title: Akaike Information Criterion (AIC)
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: akaike-information-criterion → concepts/akaike-information-criterion.md
+- IRI: pkis:concept:akaike-information-criterion
