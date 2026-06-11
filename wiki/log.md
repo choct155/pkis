@@ -14699,3 +14699,12 @@
 ## [2026-06-11] committed | framework
 - Committed: transfer-learning-domain-adaptation → frameworks/transfer-learning-domain-adaptation.md
 - IRI: pkis:framework:transfer-learning-domain-adaptation
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: zero-shot-learning (id: 57d810d9-db08-4dc7-901b-462994d3eb9a)
+- Title: Zero-Shot Learning
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: zero-shot-learning → concepts/zero-shot-learning.md
+- IRI: pkis:concept:zero-shot-learning

@@ -290,6 +290,7 @@
 - [[liu-machine-unlearning-llm-2024]] — Rethinking Machine Unlearning for LLMs: post-training knowledge editing survey (deep-learning, ai-safety) (2026-05-20)
 
 ## Concepts
+- [[zero-shot-learning]] — Zero-Shot Learning (machine-learning, representation-learning, computer-vision, nlp) (2026-06-11)
 - [[disentangled-representation]] — Disentangled Representation (representation-learning, deep-learning, causal-inference) (2026-06-11)
 - [[stochastic-encoder-decoder]] — Stochastic Encoder-Decoder (deep-learning, probabilistic-modelling, generative-models) (2026-06-11)
 - [[overcomplete-autoencoder]] — Overcomplete Autoencoder (deep-learning, representation-learning) (2026-06-11)
