@@ -16355,3 +16355,12 @@
 ## [2026-06-11] committed | concept
 - Committed: multi-headed-attention → concepts/multi-headed-attention.md
 - IRI: pkis:concept:multi-headed-attention
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: self-attention (id: a9f4115f-e5ac-4be4-b3c4-284a7ca7ecba)
+- Title: Self-Attention
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: self-attention → concepts/self-attention.md
+- IRI: pkis:concept:self-attention
