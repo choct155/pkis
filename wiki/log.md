@@ -14384,3 +14384,12 @@
 ## [2026-06-11] committed | technique
 - Committed: model-compression → techniques/model-compression.md
 - IRI: pkis:technique:model-compression
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: asynchronous-sgd (id: 3172965d-3471-4425-9e66-c7c07b384d33)
+- Title: Asynchronous Stochastic Gradient Descent
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: asynchronous-sgd → techniques/asynchronous-sgd.md
+- IRI: pkis:technique:asynchronous-sgd
