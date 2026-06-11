@@ -1203,6 +1203,7 @@
 - [[constraint-propagation]] — Reducing a constraint satisfaction problem by iteratively eliminating inconsistent values from variable domains (knowledge-representation) (2026-05-20)
 
 ## Results
+- [[rvm-evidence-sparsity-result]] — RVM Evidence Optimisation and Sparsity Theorem (machine-learning, bayesian-inference) (2026-06-11)
 - [[nn-gp-infinite-width-limit]] — Neural Network to Gaussian Process in the Infinite-Width Limit (machine-learning, deep-learning, gaussian-processes, bayesian-statistics) (2026-06-11)
 - [[universal-approximation-theorem-nn]] — Universal Approximation Theorem (Neural Networks) (machine-learning, approximation-theory) (2026-06-11)
 - [[gaussian-lda-linear-boundary]] — Gaussian Class-Conditional ⟹ Linear Decision Boundary (machine-learning, statistics) (2026-06-11)

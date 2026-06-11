@@ -12755,3 +12755,12 @@
 ## [2026-06-11] committed | concept
 - Committed: nu-svm → concepts/nu-svm.md
 - IRI: pkis:concept:nu-svm
+
+## [2026-06-11] staged | node-stub (result)
+- Staged: rvm-evidence-sparsity-result (id: 6b66c244-73fd-4a47-8832-359ab4d55fc6)
+- Title: RVM Evidence Optimisation and Sparsity Theorem
+- needs_canonical_source: False
+
+## [2026-06-11] committed | result
+- Committed: rvm-evidence-sparsity-result → results/rvm-evidence-sparsity-result.md
+- IRI: pkis:result:rvm-evidence-sparsity-result
