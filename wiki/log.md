@@ -12584,3 +12584,12 @@
 ## [2026-06-11] committed | concept
 - Committed: gram-matrix → concepts/gram-matrix.md
 - IRI: pkis:concept:gram-matrix
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: dual-kernel-ridge-regression (id: 1be1ba63-59b3-46fb-b8cb-e6e7a75499f9)
+- Title: Dual Representation of Kernel Ridge Regression
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: dual-kernel-ridge-regression → techniques/dual-kernel-ridge-regression.md
+- IRI: pkis:technique:dual-kernel-ridge-regression
