@@ -290,6 +290,7 @@
 - [[liu-machine-unlearning-llm-2024]] — Rethinking Machine Unlearning for LLMs: post-training knowledge editing survey (deep-learning, ai-safety) (2026-05-20)
 
 ## Concepts
+- [[data-generating-distribution]] — Data-Generating Distribution (machine-learning, statistics, probability) (2026-06-11)
 - [[estimator-consistency]] — Statistical Estimator Consistency (statistics, machine-learning) (2026-06-11)
 - [[hyperparameters-validation-set]] — Hyperparameters and Validation Set (machine-learning) (2026-06-11)
 - [[bayes-error]] — Bayes Error (machine-learning, statistics, statistical-learning-theory) (2026-06-11)

@@ -13736,3 +13736,12 @@
 ## [2026-06-11] committed | result
 - Committed: map-as-regularized-mle → results/map-as-regularized-mle.md
 - IRI: pkis:result:map-as-regularized-mle
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: data-generating-distribution (id: 6e9d0dbf-088d-4f44-aeed-b63ee08b6dbc)
+- Title: Data-Generating Distribution
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: data-generating-distribution → concepts/data-generating-distribution.md
+- IRI: pkis:concept:data-generating-distribution
