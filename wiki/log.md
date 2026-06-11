@@ -20027,3 +20027,12 @@
 ## [2026-06-11] committed | technique
 - Committed: upper-confidence-bound-algorithm → techniques/upper-confidence-bound-algorithm.md
 - IRI: pkis:technique:upper-confidence-bound-algorithm
+
+## [2026-06-11] staged | node-stub (result)
+- Staged: lai-robbins-lower-bound (id: 392eca22-0d61-4d48-ae7a-e5806bd7d759)
+- Title: Lai-Robbins Regret Lower Bound
+- needs_canonical_source: False
+
+## [2026-06-11] committed | result
+- Committed: lai-robbins-lower-bound → results/lai-robbins-lower-bound.md
+- IRI: pkis:result:lai-robbins-lower-bound
