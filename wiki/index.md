@@ -2123,6 +2123,7 @@
 - [[llm-language-comprehension]] — The problem of whether LLMs genuinely comprehend language vs. pattern-match surface form (deep-learning, cognitive-science) (2026-05-20)
 
 ## Principles
+- [[likelihood-sample-quality-decoupling]] — Likelihood–Sample Quality Decoupling (machine-learning, generative-models, evaluation) (2026-06-11)
 - [[turning-the-bayesian-crank]] — Turning the Bayesian Crank (bayesian-inference, probabilistic-programming, methodology) (2026-06-11)
 - [[world-model-primacy]] — World-Model Primacy (artificial-intelligence, cognitive-science, machine-learning) (2026-06-11)
 - [[causal-factor-robustness-principle]] — Causal-Factor Robustness Principle (representation-learning, causal-inference, machine-learning) (2026-06-11)

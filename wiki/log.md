@@ -18821,3 +18821,12 @@
 ## [2026-06-11] committed | concept
 - Committed: generative-model-precision-recall → concepts/generative-model-precision-recall.md
 - IRI: pkis:concept:generative-model-precision-recall
+
+## [2026-06-11] staged | node-stub (principle)
+- Staged: likelihood-sample-quality-decoupling (id: f75a1620-2463-4ef6-b529-413bbacf738c)
+- Title: Likelihood–Sample Quality Decoupling
+- needs_canonical_source: False
+
+## [2026-06-11] committed | principle
+- Committed: likelihood-sample-quality-decoupling → principles/likelihood-sample-quality-decoupling.md
+- IRI: pkis:principle:likelihood-sample-quality-decoupling
