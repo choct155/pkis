@@ -1148,6 +1148,7 @@
 - [[market-vs-hierarchy]] — Coase/Williamson: transactions governed by price signals (markets) vs. managerial direction (firms) (corporate-finance) (2026-05-20)
 
 ## Techniques
+- [[bayes-adaptive-mdp]] — Bayes-Adaptive MDP (BAMDP) (reinforcement-learning, bayesian-methods) (2026-06-11)
 - [[pilco]] — PILCO (Probabilistic Inference for Learning Control) (reinforcement-learning, probabilistic-methods, robotics) (2026-06-11)
 - [[model-predictive-control-rl]] — Model Predictive Control for RL (MPC/Receding-Horizon Control) (reinforcement-learning, control-theory) (2026-06-11)
 - [[deep-deterministic-policy-gradient]] — Deep Deterministic Policy Gradient (DDPG) (reinforcement-learning) (2026-06-11)

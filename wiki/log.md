@@ -20108,3 +20108,12 @@
 ## [2026-06-11] committed | technique
 - Committed: pilco → techniques/pilco.md
 - IRI: pkis:technique:pilco
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: bayes-adaptive-mdp (id: d1a95a4d-24d1-40de-ab80-683066f55572)
+- Title: Bayes-Adaptive MDP (BAMDP)
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: bayes-adaptive-mdp → techniques/bayes-adaptive-mdp.md
+- IRI: pkis:technique:bayes-adaptive-mdp
