@@ -13655,3 +13655,12 @@
 ## [2026-06-11] committed | framework
 - Committed: kkt-conditions → frameworks/kkt-conditions.md
 - IRI: pkis:framework:kkt-conditions
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: constrained-optimization (id: 60014d0d-bb16-49f0-9bc4-dbae400cfe97)
+- Title: Constrained Optimization
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: constrained-optimization → concepts/constrained-optimization.md
+- IRI: pkis:concept:constrained-optimization

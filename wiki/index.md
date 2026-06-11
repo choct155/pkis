@@ -290,6 +290,7 @@
 - [[liu-machine-unlearning-llm-2024]] — Rethinking Machine Unlearning for LLMs: post-training knowledge editing survey (deep-learning, ai-safety) (2026-05-20)
 
 ## Concepts
+- [[constrained-optimization]] — Constrained Optimization (optimization, machine-learning) (2026-06-11)
 - [[lipschitz-continuity]] — Lipschitz Continuity (analysis, optimization, machine-learning) (2026-06-11)
 - [[first-order-vs-second-order-optimization]] — First-Order vs Second-Order Optimization (optimization, machine-learning) (2026-06-11)
 - [[critical-points-saddle-points]] — Critical Points and Saddle Points (optimization, machine-learning) (2026-06-11)
