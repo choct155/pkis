@@ -17975,3 +17975,12 @@
 ## [2026-06-11] committed | technique
 - Committed: inverse-cdf-sampling → techniques/inverse-cdf-sampling.md
 - IRI: pkis:technique:inverse-cdf-sampling
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: box-muller-method (id: 3a83c378-976b-4946-aaed-9fe2832cd967)
+- Title: Box-Muller Method
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: box-muller-method → techniques/box-muller-method.md
+- IRI: pkis:technique:box-muller-method
