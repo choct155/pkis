@@ -18713,3 +18713,12 @@
 ## [2026-06-11] committed | framework
 - Committed: domain-generalization → frameworks/domain-generalization.md
 - IRI: pkis:framework:domain-generalization
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: invariant-risk-minimization (id: b48a2bb6-088f-4ca4-94ef-41f4d4bcc65a)
+- Title: Invariant Risk Minimization (IRM)
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: invariant-risk-minimization → techniques/invariant-risk-minimization.md
+- IRI: pkis:technique:invariant-risk-minimization
