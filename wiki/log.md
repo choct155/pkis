@@ -14204,3 +14204,12 @@
 ## [2026-06-11] committed | framework
 - Committed: encoder-decoder-seq2seq → frameworks/encoder-decoder-seq2seq.md
 - IRI: pkis:framework:encoder-decoder-seq2seq
+
+## [2026-06-11] staged | node-stub (framework)
+- Staged: long-short-term-memory (id: c4ab9c7d-b2d6-4efb-9dfa-e70cfc707006)
+- Title: Long Short-Term Memory (LSTM)
+- needs_canonical_source: False
+
+## [2026-06-11] committed | framework
+- Committed: long-short-term-memory → frameworks/long-short-term-memory.md
+- IRI: pkis:framework:long-short-term-memory

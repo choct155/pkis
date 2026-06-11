@@ -1460,6 +1460,7 @@
 - [[government-debt-valuation-equation]] — FTPL: price level determined by ratio of nominal debt to expected present value of future surpluses (macroeconomics) (2026-05-20)
 
 ## Frameworks
+- [[long-short-term-memory]] — Long Short-Term Memory (LSTM) (deep-learning, sequence-modeling) (2026-06-11)
 - [[encoder-decoder-seq2seq]] — Encoder-Decoder (Sequence-to-Sequence) Architecture (deep-learning, sequence-modeling, NLP) (2026-06-11)
 - [[kkt-conditions]] — Karush–Kuhn–Tucker (KKT) Conditions (optimization, machine-learning) (2026-06-11)
 - [[connectionism]] — Connectionism (cognitive-science, artificial-intelligence) (2026-06-11)
