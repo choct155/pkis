@@ -14366,3 +14366,12 @@
 ## [2026-06-11] committed | technique
 - Committed: activation-gradient-monitoring → techniques/activation-gradient-monitoring.md
 - IRI: pkis:technique:activation-gradient-monitoring
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: learning-curve-analysis (id: e6851fce-63d8-481a-a5dc-bdb69180cf3e)
+- Title: Learning Curve Analysis
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: learning-curve-analysis → techniques/learning-curve-analysis.md
+- IRI: pkis:technique:learning-curve-analysis
