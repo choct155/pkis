@@ -15383,3 +15383,12 @@
 ## [2026-06-11] committed | concept
 - Committed: cluster-responsibility → concepts/cluster-responsibility.md
 - IRI: pkis:concept:cluster-responsibility
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: signal-to-noise-ratio-shrinkage (id: 96e3ce68-620a-4197-9cbf-21e8d017623d)
+- Title: Signal-to-Noise Ratio (Bayesian Shrinkage)
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: signal-to-noise-ratio-shrinkage → concepts/signal-to-noise-ratio-shrinkage.md
+- IRI: pkis:concept:signal-to-noise-ratio-shrinkage
