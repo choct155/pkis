@@ -31,6 +31,9 @@ tags:
 - lower-bound
 title: Bayes Error
 understanding: 0
+uses:
+- generalization-error-training-error
+- data-generating-distribution
 ---
 
 ## Definition
@@ -47,4 +50,6 @@ Bayes error is the lower bound all learning algorithms must respect. Parametric 
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[data-generating-distribution]] — uses
+- [[generalization-error-training-error]] — uses
 [To be populated during integration]

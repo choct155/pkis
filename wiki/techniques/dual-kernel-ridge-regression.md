@@ -16,10 +16,17 @@ domain:
 - machine-learning
 - kernel-methods
 - regression
+extends:
+- linear-regression
 id: pkis:technique:dual-kernel-ridge-regression
+instantiates:
+- the-kernel-trick
+- representer-theorem
 knowledge_type: technique
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- support-vector-machines
 related_concepts: []
 sources:
 - bishop-prml-ch06
@@ -30,6 +37,9 @@ tags:
 - kernel-trick
 title: Dual Representation of Kernel Ridge Regression
 understanding: 0
+uses:
+- gram-matrix
+- regularization
 ---
 
 ## Definition
@@ -44,4 +54,10 @@ The dual formulation replaces the $M\times M$ inversion in weight space with an 
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[support-vector-machines]] — prerequisite-of
+- [[regularization]] — uses
+- [[linear-regression]] — extends
+- [[representer-theorem]] — instantiates
+- [[the-kernel-trick]] — instantiates
+- [[gram-matrix]] — uses
 [To be populated during integration]

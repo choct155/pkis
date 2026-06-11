@@ -1,6 +1,11 @@
 ---
 aliases: []
 also_type: []
+analogous-to:
+- kalman-filter
+applies:
+- hidden-markov-model
+- dynamic-bayesian-network
 component_scores:
   alternatives: null
   conditions: null
@@ -17,12 +22,17 @@ domain:
 - machine-learning
 - statistics
 id: pkis:technique:forwards-backwards-algorithm
+instantiates:
+- filtering-prediction-smoothing
+- message-passing
 knowledge_type: technique
 maturity: evolving
 needs_canonical_source: false
 related_concepts: []
 sources:
 - murphy-pml2-advanced-ch09
+specializes:
+- sum-product-algorithm-trees
 tags:
 - HMM
 - smoothing
@@ -31,6 +41,9 @@ tags:
 - sequential-inference
 title: Forwards-Backwards Algorithm (HMM Smoothing)
 understanding: 0
+uses:
+- em-algorithm
+- markov-chains
 ---
 
 ## Definition
@@ -54,4 +67,12 @@ The forwards-backwards (FB) algorithm is the canonical $O(K^2 T)$ algorithm for 
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[kalman-filter]] — analogous-to: FB is the discrete-state analogue of the Kalman smoother
+- [[markov-chains]] — uses
+- [[em-algorithm]] — uses: FB is the E-step of Baum-Welch EM for HMM parameter learning
+- [[message-passing]] — instantiates
+- [[sum-product-algorithm-trees]] — specializes
+- [[dynamic-bayesian-network]] — applies
+- [[filtering-prediction-smoothing]] — instantiates
+- [[hidden-markov-model]] — applies
 [To be populated during integration]

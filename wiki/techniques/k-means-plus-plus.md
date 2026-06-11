@@ -14,6 +14,8 @@ date_created: '2026-06-11'
 date_updated: '2026-06-11'
 domain:
 - machine-learning
+extends:
+- k-means-clustering
 id: pkis:technique:k-means-plus-plus
 knowledge_type: technique
 maturity: evolving
@@ -42,4 +44,5 @@ Poor initialization is a key failure mode of K-means; K-means++ dramatically red
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[k-means-clustering]] — extends
 [To be populated during integration]

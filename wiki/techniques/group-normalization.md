@@ -15,6 +15,8 @@ date_updated: '2026-06-11'
 domain:
 - deep-learning
 - optimization
+generalizes:
+- batch-normalization
 id: pkis:technique:group-normalization
 knowledge_type: technique
 maturity: evolving
@@ -46,4 +48,5 @@ Group normalization outperforms batch normalization when batch size $\leq 8$, wi
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[batch-normalization]] — generalizes: Layer norm and instance norm are special cases of group norm; all generalize BN
 [To be populated during integration]

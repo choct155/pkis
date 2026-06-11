@@ -1,12 +1,17 @@
 ---
 aliases: []
 also_type: []
+analogous-to:
+- gradient-descent
 coverage: 2
 date_created: 2026-05-20
 date_updated: 2026-05-20
 domain:
 - statistical-learning
 - optimization
+generalizes:
+- forward-stagewise-additive-modeling
+- adaboost
 id: pkis:technique:gradient-boosting
 instantiates:
 - forward-stagewise-additive-modeling
@@ -30,6 +35,9 @@ uses:
 - decision-trees
 - gradient-descent
 - lasso
+- cart-decision-trees
+- weak-learner-boosting
+- regularization
 ---
 
 ## Reading Path
@@ -39,6 +47,12 @@ uses:
 Reinterpretation of boosting as functional gradient descent: each successive weak learner (typically a shallow tree) fits the negative gradient of the loss function at the current model's predictions, building the ensemble by steepest descent in function space.
 
 ## Connections
+- [[regularization]] — uses: shrinkage factor nu and stochastic subsampling
+- [[adaboost]] — generalizes
+- [[weak-learner-boosting]] — uses
+- [[cart-decision-trees]] — uses: regression trees are the canonical weak learner
+- [[gradient-descent]] — analogous-to: functional gradient descent in space of predictions
+- [[forward-stagewise-additive-modeling]] — generalizes
 - [[bet-on-sparsity]] — instantiates: boosting's L1-style regularization exploits sparsity per the bet-on-sparsity principle
 - [[lasso]] — uses: tree boosting with shrinkage approximates an L1-regularized (lasso) path over the tree dictionary
 - [[gradient-descent]] — uses

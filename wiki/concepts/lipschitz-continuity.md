@@ -21,9 +21,13 @@ id: pkis:concept:lipschitz-continuity
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- gradient-descent
 related_concepts: []
 sources:
 - goodfellow-deeplearning-ch04
+specializes:
+- continuous-optimization
 tags:
 - convergence
 - gradient-clipping
@@ -31,6 +35,8 @@ tags:
 - bounded-gradient
 title: Lipschitz Continuity
 understanding: 0
+uses:
+- convex-optimization
 ---
 
 ## Definition
@@ -47,4 +53,7 @@ Lipschitz continuity underpins convergence guarantees for gradient descent: if $
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[continuous-optimization]] — specializes
+- [[convex-optimization]] — uses
+- [[gradient-descent]] — prerequisite-of
 [To be populated during integration]

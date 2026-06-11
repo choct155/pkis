@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- energy-based-model
 component_scores:
   application: null
   boundary: null
@@ -10,6 +12,8 @@ component_scores:
   prerequisites: null
   scope: null
   transfer: null
+contrasts-with:
+- fisher-information
 coverage: 1
 date_created: '2026-06-11'
 date_updated: '2026-06-11'
@@ -45,4 +49,6 @@ The Stein score is the central object in score matching, Langevin MCMC, kerneliz
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[fisher-information]] — contrasts-with: Stein/Hyvärinen score differentiates log-density w.r.t. x; Fisher score differentiates w.r.t. θ
+- [[energy-based-model]] — applies
 [To be populated during integration]

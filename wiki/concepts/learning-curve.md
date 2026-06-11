@@ -30,6 +30,10 @@ tags:
 - Bayes-error
 title: Learning Curve
 understanding: 0
+uses:
+- overfitting-and-underfitting
+- bias-variance-tradeoff
+- empirical-risk-minimization
 ---
 
 ## Definition
@@ -48,4 +52,7 @@ Learning curves diagnose whether a model suffers from bias (underfitting: test e
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[empirical-risk-minimization]] — uses
+- [[bias-variance-tradeoff]] — uses
+- [[overfitting-and-underfitting]] — uses
 [To be populated during integration]

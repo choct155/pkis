@@ -1,6 +1,9 @@
 ---
 aliases: []
 also_type: []
+applies:
+- imitation-learning
+- distribution-shift
 component_scores:
   alternatives: null
   conditions: null
@@ -16,6 +19,8 @@ domain:
 - machine-learning
 - deep-learning
 - generative-modeling
+extends:
+- generative-adversarial-network-framework
 id: pkis:technique:conditional-gan
 knowledge_type: technique
 maturity: evolving
@@ -45,4 +50,7 @@ Conditional GANs enable fine-grained control over generated outputs, supporting 
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[distribution-shift]] — applies: Domain adaptation via CycleGAN addresses distribution shift between source and target domains.
+- [[imitation-learning]] — applies
+- [[generative-adversarial-network-framework]] — extends
 [To be populated during integration]

@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- implicit-feedback-recommendation
 component_scores:
   alternatives: null
   conditions: null
@@ -9,6 +11,8 @@ component_scores:
   implementation: null
   operational_mechanism: null
   principled_mechanism: null
+contrasts-with:
+- hinge-loss
 coverage: 1
 date_created: '2026-06-11'
 date_updated: '2026-06-11'
@@ -29,6 +33,10 @@ tags:
 - negative-sampling
 title: Bayesian Personalized Ranking (BPR)
 understanding: 0
+uses:
+- logistic-regression
+- matrix-factorization-recommender
+- regularization
 ---
 
 ## Definition
@@ -43,4 +51,9 @@ BPR is the canonical method for learning-to-rank from implicit (positive-only) f
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[regularization]] — uses
+- [[matrix-factorization-recommender]] — uses
+- [[logistic-regression]] — uses
+- [[hinge-loss]] — contrasts-with
+- [[implicit-feedback-recommendation]] — applies
 [To be populated during integration]

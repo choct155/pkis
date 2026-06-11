@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- collaborative-filtering
 component_scores:
   application: null
   boundary: null
@@ -16,6 +18,10 @@ date_updated: '2026-06-11'
 domain:
 - reinforcement-learning
 - machine-learning
+extends:
+- multi-armed-bandit
+generalizes:
+- multi-armed-bandit
 id: pkis:concept:contextual-bandit
 knowledge_type: concept
 maturity: evolving
@@ -24,6 +30,9 @@ related_concepts: []
 sources:
 - goodfellow-deeplearning-ch12
 - murphy-pml2-advanced-ch34
+specializes:
+- reinforcement-learning
+- markov-decision-processes
 tags:
 - exploration
 - exploitation
@@ -32,6 +41,10 @@ tags:
 - bandit
 title: Contextual Bandit
 understanding: 0
+uses:
+- exploration-exploitation-tradeoff
+- policy
+- belief-state-mdp
 ---
 
 ## Definition
@@ -46,4 +59,12 @@ Formalises the feedback structure of online recommendation, personalised adverti
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[belief-state-mdp]] — uses
+- [[markov-decision-processes]] — specializes
+- [[multi-armed-bandit]] — extends
+- [[policy]] — uses
+- [[collaborative-filtering]] — applies
+- [[exploration-exploitation-tradeoff]] — uses
+- [[reinforcement-learning]] — specializes
+- [[multi-armed-bandit]] — generalizes
 [To be populated during integration]

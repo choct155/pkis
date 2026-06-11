@@ -15,6 +15,11 @@ date_updated: '2026-06-11'
 domain:
 - machine-learning
 - statistics
+extends:
+- bayes-filter
+generalizes:
+- kalman-rts-smoother
+- forward-backward-algorithm
 id: pkis:technique:ffbs-algorithm
 knowledge_type: technique
 maturity: evolving
@@ -44,4 +49,7 @@ FFBS is the canonical template for exact fixed-interval smoothing across all tra
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[forward-backward-algorithm]] — generalizes
+- [[kalman-rts-smoother]] — generalizes
+- [[bayes-filter]] — extends
 [To be populated during integration]

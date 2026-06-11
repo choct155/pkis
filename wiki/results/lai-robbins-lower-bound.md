@@ -1,6 +1,10 @@
 ---
 aliases: []
 also_type: []
+applies:
+- multi-armed-bandit
+- thompson-sampling
+- upper-confidence-bound-algorithm
 component_scores:
   conditions: null
   implications: null
@@ -30,6 +34,9 @@ tags:
 - optimality
 title: Lai-Robbins Regret Lower Bound
 understanding: 0
+uses:
+- cumulative-regret
+- kl-divergence
 ---
 
 ## Definition
@@ -46,4 +53,9 @@ Establishes that $O(\log T)$ regret is the best achievable, and that UCB and Tho
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[upper-confidence-bound-algorithm]] — applies
+- [[thompson-sampling]] — applies
+- [[multi-armed-bandit]] — applies
+- [[kl-divergence]] — uses
+- [[cumulative-regret]] — uses
 [To be populated during integration]

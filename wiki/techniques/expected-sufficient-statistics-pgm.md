@@ -1,6 +1,9 @@
 ---
 aliases: []
 also_type: []
+applies:
+- bayesian-networks
+- missing-data-mechanisms
 component_scores:
   alternatives: null
   conditions: null
@@ -16,6 +19,8 @@ domain:
 - probabilistic-graphical-models
 - machine-learning
 id: pkis:technique:expected-sufficient-statistics-pgm
+instantiates:
+- em-algorithm
 knowledge_type: technique
 maturity: evolving
 needs_canonical_source: false
@@ -30,6 +35,9 @@ tags:
 - family-marginal
 title: Expected Sufficient Statistics (ESS) for EM in Graphical Models
 understanding: 0
+uses:
+- conditional-probability-table
+- sufficient-statistics
 ---
 
 ## Definition
@@ -48,4 +56,9 @@ ESS-based EM is the standard method for learning DPGMs with hidden variables (e.
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[sufficient-statistics]] — uses
+- [[missing-data-mechanisms]] — applies
+- [[conditional-probability-table]] — uses
+- [[bayesian-networks]] — applies
+- [[em-algorithm]] — instantiates
 [To be populated during integration]

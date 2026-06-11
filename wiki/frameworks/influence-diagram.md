@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- statistical-decision-theory
 component_scores:
   application: null
   limits: null
@@ -15,7 +17,12 @@ domain:
 - decision theory
 - probabilistic graphical models
 - AI
+extends:
+- directed-graphical-models
+- bayesian-networks
 id: pkis:framework:influence-diagram
+instantiates:
+- decision-network-influence-diagram
 knowledge_type: framework
 maturity: evolving
 needs_canonical_source: false
@@ -30,6 +37,8 @@ tags:
 - sequential decisions
 title: Influence Diagram (Decision Diagram)
 understanding: 0
+uses:
+- variable-elimination
 ---
 
 ## Definition
@@ -48,4 +57,9 @@ Provides a graphical, modular language for specifying multi-stage decision probl
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[variable-elimination]] — uses
+- [[bayesian-networks]] — extends
+- [[statistical-decision-theory]] — applies
+- [[decision-network-influence-diagram]] — instantiates
+- [[directed-graphical-models]] — extends
 [To be populated during integration]

@@ -16,6 +16,10 @@ date_updated: '2026-06-11'
 domain:
 - statistics
 - machine-learning
+extends:
+- gaussian-process-gp
+generalizes:
+- bayesian-linear-regression
 id: pkis:concept:semiparametric-gp
 knowledge_type: concept
 maturity: evolving
@@ -46,4 +50,6 @@ Semiparametric GPs allow domain knowledge about global structure (e.g., linear t
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[bayesian-linear-regression]] — generalizes
+- [[gaussian-process-gp]] — extends
 [To be populated during integration]

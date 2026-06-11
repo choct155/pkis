@@ -1,6 +1,10 @@
 ---
 aliases: []
 also_type: []
+analogous-to:
+- d-separation
+applies:
+- undirected-graphical-models
 component_scores:
   application: null
   boundary: null
@@ -19,6 +23,8 @@ id: pkis:concept:separation-undirected-graphical-models
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- hammersley-clifford-theorem
 related_concepts: []
 sources:
 - goodfellow-deeplearning-ch16
@@ -30,6 +36,9 @@ tags:
 - inference
 title: Separation in Undirected Graphical Models
 understanding: 0
+uses:
+- conditional-independence
+- markov-blanket
 ---
 
 ## Definition
@@ -44,4 +53,9 @@ Separation is the undirected analogue of d-separation and provides a graphical c
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[hammersley-clifford-theorem]] — prerequisite-of
+- [[markov-blanket]] — uses
+- [[conditional-independence]] — uses
+- [[d-separation]] — analogous-to
+- [[undirected-graphical-models]] — applies
 [To be populated during integration]

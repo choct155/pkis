@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- average-treatment-effect
 component_scores:
   alternatives: null
   conditions: null
@@ -16,6 +18,9 @@ domain:
 - causal-inference
 - statistics
 - machine-learning
+extends:
+- iptw-estimator
+- g-computation
 id: pkis:technique:aiptw-double-ml
 knowledge_type: technique
 maturity: evolving
@@ -31,6 +36,8 @@ tags:
 - causal-estimation
 title: Augmented IPTW / Double Machine Learning Estimator (AIPTW)
 understanding: 0
+uses:
+- cross-fitting
 ---
 
 ## Definition
@@ -51,4 +58,8 @@ IPTW and outcome regression each require one nuisance function to be accurately 
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[cross-fitting]] — uses: Cross-fitting eliminates the empirical-process bias term in AIPTW
+- [[average-treatment-effect]] — applies
+- [[g-computation]] — extends: AIPTW adds a propensity-score stabilisation to outcome regression
+- [[iptw-estimator]] — extends: AIPTW augments IPTW with an outcome model correction term
 [To be populated during integration]

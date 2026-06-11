@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- generative-adversarial-network
 component_scores:
   application: null
   boundary: null
@@ -32,6 +34,9 @@ tags:
 - diversity
 title: Inception Score
 understanding: 0
+uses:
+- kl-divergence
+- entropy
 ---
 
 ## Definition
@@ -48,4 +53,7 @@ IS was the first widely adopted automated metric for image generation, enabling 
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[generative-adversarial-network]] — applies
+- [[entropy]] — uses
+- [[kl-divergence]] — uses
 [To be populated during integration]

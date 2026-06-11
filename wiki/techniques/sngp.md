@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- distribution-shift
 component_scores:
   alternatives: null
   conditions: null
@@ -17,6 +19,8 @@ domain:
 - uncertainty-quantification
 - gaussian-processes
 id: pkis:technique:sngp
+instantiates:
+- bayesian-deep-learning
 knowledge_type: technique
 maturity: evolving
 needs_canonical_source: false
@@ -31,6 +35,9 @@ tags:
 - GP-layer
 title: SNGP (Spectrally Normalized Gaussian Process)
 understanding: 0
+uses:
+- gaussian-process
+- regularization
 ---
 
 ## Definition
@@ -45,4 +52,8 @@ Standard DNN feature extractors can *collapse* distances between inputs—points
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[regularization]] — uses: Spectral normalisation bounds Lipschitz constant of feature extractor
+- [[distribution-shift]] — applies
+- [[bayesian-deep-learning]] — instantiates
+- [[gaussian-process]] — uses
 [To be populated during integration]

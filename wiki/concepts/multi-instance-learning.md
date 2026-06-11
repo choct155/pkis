@@ -23,6 +23,8 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - murphy-pml1-intro-ch19
+specializes:
+- semi-supervised-learning
 tags:
 - weak-supervision
 - bags
@@ -31,6 +33,8 @@ tags:
 - partial-labels
 title: Multi-Instance Learning
 understanding: 0
+uses:
+- missing-data-mechanisms
 ---
 
 ## Definition
@@ -45,4 +49,6 @@ MIL naturally models weakly supervised problems in medical imaging (a scan is po
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[missing-data-mechanisms]] — uses: Instance labels are missing-not-at-random; only aggregate bag labels are observed.
+- [[semi-supervised-learning]] — specializes
 [To be populated during integration]

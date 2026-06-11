@@ -30,6 +30,10 @@ tags:
 - interpretability
 title: Recourse in Automated Decision-Making
 understanding: 0
+uses:
+- counterfactual-explanation
+- algorithmic-fairness
+- causal-analysis
 ---
 
 ## Definition
@@ -46,4 +50,7 @@ Recourse operationalizes the *right to explanation* mandated in regulations such
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[causal-analysis]] — uses: Structural causal models can constrain recourse to causally plausible interventions.
+- [[algorithmic-fairness]] — uses
+- [[counterfactual-explanation]] — uses
 [To be populated during integration]

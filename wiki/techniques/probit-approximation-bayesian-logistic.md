@@ -1,6 +1,10 @@
 ---
 aliases: []
 also_type: []
+applies:
+- posterior-predictive-distribution
+- binary-logistic-regression
+- uncertainty-quantification
 component_scores:
   alternatives: null
   conditions: null
@@ -30,6 +34,9 @@ tags:
 - uncertainty-quantification
 title: Probit Approximation to Bayesian Logistic Posterior Predictive
 understanding: 0
+uses:
+- laplace-approximation
+- gaussian-distribution
 ---
 
 ## Definition
@@ -44,4 +51,9 @@ The probit approximation gives a deterministic, closed-form alternative to Monte
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[uncertainty-quantification]] — applies
+- [[gaussian-distribution]] — uses
+- [[binary-logistic-regression]] — applies
+- [[posterior-predictive-distribution]] — applies
+- [[laplace-approximation]] — uses
 [To be populated during integration]

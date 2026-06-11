@@ -17,6 +17,8 @@ domain:
 - deep-learning
 - generative-models
 id: pkis:concept:differentiable-generator-network
+instantiates:
+- latent-variable-models
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
@@ -30,6 +32,9 @@ tags:
 - implicit-density
 title: Differentiable Generator Network
 understanding: 0
+uses:
+- reparameterization-trick
+- change-of-variables-for-densities
 ---
 
 ## Definition
@@ -44,4 +49,7 @@ Differentiable generator networks are the unifying component of VAEs, GANs, norm
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[latent-variable-models]] — instantiates
+- [[change-of-variables-for-densities]] — uses
+- [[reparameterization-trick]] — uses
 [To be populated during integration]

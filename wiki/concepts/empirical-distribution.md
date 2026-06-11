@@ -17,6 +17,8 @@ domain:
 - statistics
 - machine-learning
 id: pkis:concept:empirical-distribution
+instantiates:
+- multinoulli-distribution
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
@@ -31,6 +33,11 @@ tags:
 - training-data
 title: Empirical Distribution
 understanding: 0
+uses:
+- dirac-delta-distribution
+- maximum-likelihood-estimation
+- kl-divergence
+- probability-theory
 ---
 
 ## Definition
@@ -45,4 +52,9 @@ The empirical distribution is the implicit training distribution in supervised l
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[probability-theory]] — uses
+- [[kl-divergence]] — uses
+- [[multinoulli-distribution]] — instantiates: discrete case reduces to multinoulli with empirical frequencies
+- [[maximum-likelihood-estimation]] — uses: empirical distribution is the nonparametric MLE
+- [[dirac-delta-distribution]] — uses
 [To be populated during integration]

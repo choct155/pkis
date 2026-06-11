@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- gaussian-distribution
 component_scores:
   application: null
   boundary: null
@@ -32,6 +34,11 @@ tags:
 - graphical-models
 title: Precision Matrix
 understanding: 0
+uses:
+- gaussian-distribution
+- wishart-distribution
+- gaussian-graphical-model
+- covariance-and-correlation
 ---
 
 ## Definition
@@ -49,4 +56,9 @@ The Schur complement $(\Sigma_{aa}-\Sigma_{ab}\Sigma_{bb}^{-1}\Sigma_{ba})$ equa
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[covariance-and-correlation]] — uses
+- [[gaussian-distribution]] — applies
+- [[gaussian-graphical-model]] — uses: Sparse precision encodes conditional independence structure
+- [[wishart-distribution]] — uses: Wishart is conjugate prior for precision matrix
+- [[gaussian-distribution]] — uses
 [To be populated during integration]

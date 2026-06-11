@@ -17,7 +17,12 @@ domain:
 - probability
 - statistics
 - machine-learning
+generalizes:
+- binomial-distribution
 id: pkis:concept:bernoulli-distribution
+instantiates:
+- exponential-family-distribution
+- exponential-family
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
@@ -25,6 +30,8 @@ related_concepts: []
 sources:
 - bishop-prml-ch02
 - murphy-pml1-intro-ch02
+specializes:
+- binomial-distribution
 tags:
 - discrete-distribution
 - binary-variable
@@ -32,6 +39,9 @@ tags:
 - conjugate-prior
 title: Bernoulli Distribution
 understanding: 0
+uses:
+- beta-distribution
+- probability-mass-function
 ---
 
 ## Definition
@@ -46,4 +56,10 @@ The Bernoulli distribution is the fundamental building block for binary classifi
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[exponential-family]] — instantiates
+- [[binomial-distribution]] — specializes
+- [[probability-mass-function]] — uses
+- [[exponential-family-distribution]] — instantiates: Natural parameter eta=logit(mu), sufficient statistic u(x)=x
+- [[beta-distribution]] — uses: Beta is conjugate prior for Bernoulli/Binomial parameter mu
+- [[binomial-distribution]] — generalizes: Binomial is sum of N i.i.d. Bernoullis
 [To be populated during integration]

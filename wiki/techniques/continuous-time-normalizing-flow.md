@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+analogous-to:
+- diffusion-processes
 component_scores:
   alternatives: null
   conditions: null
@@ -17,6 +19,8 @@ domain:
 - differential-equations
 - generative-models
 id: pkis:technique:continuous-time-normalizing-flow
+instantiates:
+- normalizing-flows
 knowledge_type: technique
 maturity: evolving
 needs_canonical_source: false
@@ -30,6 +34,9 @@ tags:
 - continuous-normalizing-flow
 title: Continuous-Time Normalizing Flow (Neural ODE Flow)
 understanding: 0
+uses:
+- instantaneous-change-of-variables
+- hutchinson-trace-estimator
 ---
 
 ## Definition
@@ -46,4 +53,8 @@ Continuous-time flows eliminate the discrete layering constraint, offering archi
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[diffusion-processes]] — analogous-to
+- [[hutchinson-trace-estimator]] — uses
+- [[instantaneous-change-of-variables]] — uses
+- [[normalizing-flows]] — instantiates
 [To be populated during integration]

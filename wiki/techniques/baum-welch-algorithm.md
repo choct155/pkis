@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- hidden-markov-model
 component_scores:
   alternatives: null
   conditions: null
@@ -9,6 +11,8 @@ component_scores:
   implementation: null
   operational_mechanism: null
   principled_mechanism: null
+contrasts-with:
+- stochastic-gradient-descent
 coverage: 1
 date_created: '2026-06-11'
 date_updated: '2026-06-11'
@@ -16,6 +20,8 @@ domain:
 - machine-learning
 - probabilistic-graphical-models
 id: pkis:technique:baum-welch-algorithm
+instantiates:
+- em-algorithm
 knowledge_type: technique
 maturity: evolving
 needs_canonical_source: false
@@ -23,6 +29,8 @@ related_concepts: []
 sources:
 - bishop-prml-ch13
 - murphy-pml2-advanced-ch29
+specializes:
+- em-algorithm
 tags:
 - HMM
 - EM
@@ -31,6 +39,11 @@ tags:
 - training
 title: Baum-Welch Algorithm (EM for HMM)
 understanding: 0
+uses:
+- forward-backward-algorithm
+- hmm-parameters
+- sufficient-statistics
+- label-switching
 ---
 
 ## Definition
@@ -51,4 +64,12 @@ Guarantees non-decreasing likelihood at each iteration and scales as $O(K^2N)$ p
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[stochastic-gradient-descent]] — contrasts-with
+- [[label-switching]] — uses
+- [[sufficient-statistics]] — uses
+- [[em-algorithm]] — specializes
+- [[hidden-markov-model]] — applies
+- [[hmm-parameters]] — uses
+- [[em-algorithm]] — instantiates
+- [[forward-backward-algorithm]] — uses
 [To be populated during integration]

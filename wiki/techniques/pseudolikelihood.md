@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- undirected-graphical-models
 component_scores:
   alternatives: null
   conditions: null
@@ -9,6 +11,10 @@ component_scores:
   implementation: null
   operational_mechanism: null
   principled_mechanism: null
+contrasts-with:
+- partition-function
+- maximum-likelihood-estimation
+- contrastive-divergence
 coverage: 1
 date_created: '2026-06-11'
 date_updated: '2026-06-11'
@@ -30,6 +36,8 @@ tags:
 - consistent-estimator
 title: Pseudolikelihood
 understanding: 0
+uses:
+- conditional-independence
 ---
 
 ## Definition
@@ -44,4 +52,9 @@ Pseudolikelihood is **asymptotically consistent** (Mase, 1995) and computational
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[contrastive-divergence]] — contrasts-with
+- [[conditional-independence]] — uses
+- [[undirected-graphical-models]] — applies
+- [[maximum-likelihood-estimation]] — contrasts-with
+- [[partition-function]] — contrasts-with
 [To be populated during integration]

@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- gibbs-sampler
 component_scores:
   alternatives: null
   conditions: null
@@ -16,6 +18,8 @@ domain:
 - statistics
 - machine-learning
 - Bayesian-inference
+extends:
+- monte-carlo-integration
 id: pkis:technique:rao-blackwellization
 knowledge_type: technique
 maturity: evolving
@@ -30,6 +34,9 @@ tags:
 - MC-efficiency
 title: Rao-Blackwellization
 understanding: 0
+uses:
+- law-of-total-variance
+- marginalization
 ---
 
 ## Definition
@@ -48,4 +55,8 @@ This is a direct application of the Rao-Blackwell theorem from statistical decis
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[gibbs-sampler]] — applies: Collapsed Gibbs uses Rao-Blackwellization to reduce variance
+- [[marginalization]] — uses
+- [[monte-carlo-integration]] — extends
+- [[law-of-total-variance]] — uses
 [To be populated during integration]

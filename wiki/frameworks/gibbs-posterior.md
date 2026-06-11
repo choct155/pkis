@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+analogous-to:
+- elbo
 component_scores:
   application: null
   limits: null
@@ -15,6 +17,11 @@ domain:
 - machine-learning
 - bayesian-statistics
 - statistical-learning-theory
+extends:
+- empirical-risk-minimization-erm
+- variational-inference
+generalizes:
+- bayesian-inference
 id: pkis:framework:gibbs-posterior
 knowledge_type: framework
 maturity: evolving
@@ -30,6 +37,8 @@ tags:
 - distributional ERM
 title: Gibbs Posterior and Generalised Bayesian Inference
 understanding: 0
+uses:
+- kl-divergence
 ---
 
 ## Definition
@@ -46,4 +55,9 @@ The Gibbs posterior provides a principled way to combine any loss function with 
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[elbo]] — analogous-to
+- [[kl-divergence]] — uses
+- [[variational-inference]] — extends
+- [[bayesian-inference]] — generalizes
+- [[empirical-risk-minimization-erm]] — extends
 [To be populated during integration]

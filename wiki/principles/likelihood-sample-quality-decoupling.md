@@ -6,6 +6,8 @@ component_scores:
   justification: null
   statement: null
   violations: null
+contrasts-with:
+- maximum-likelihood-estimation
 coverage: 1
 date_created: '2026-06-11'
 date_updated: '2026-06-11'
@@ -17,6 +19,9 @@ id: pkis:principle:likelihood-sample-quality-decoupling
 knowledge_type: principle
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- frechet-inception-distance
+- inception-score
 related_concepts: []
 sources:
 - murphy-pml2-advanced-ch20
@@ -28,6 +33,9 @@ tags:
 - GAN
 title: Likelihood–Sample Quality Decoupling
 understanding: 0
+uses:
+- kl-divergence
+- manifold-hypothesis
 ---
 
 ## Definition
@@ -45,4 +53,9 @@ This principle justifies the development of alternative evaluation metrics (FID,
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[manifold-hypothesis]] — uses
+- [[inception-score]] — prerequisite-of
+- [[frechet-inception-distance]] — prerequisite-of: Motivates need for non-likelihood metrics like FID
+- [[maximum-likelihood-estimation]] — contrasts-with
+- [[kl-divergence]] — uses
 [To be populated during integration]

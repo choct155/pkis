@@ -17,6 +17,8 @@ domain:
 - probabilistic-graphical-models
 - probability-theory
 id: pkis:concept:conditional-probability-table
+instantiates:
+- bayesian-networks
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
@@ -30,6 +32,10 @@ tags:
 - Dirichlet-prior
 title: Conditional Probability Table (CPT)
 understanding: 0
+uses:
+- dirichlet-distribution
+- maximum-likelihood-estimation
+- ordered-markov-property
 ---
 
 ## Definition
@@ -44,4 +50,8 @@ CPTs are the canonical parametric form for discrete Bayesian networks. Parameter
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[ordered-markov-property]] — uses
+- [[maximum-likelihood-estimation]] — uses
+- [[dirichlet-distribution]] — uses: Dirichlet is the conjugate prior for each CPT row
+- [[bayesian-networks]] — instantiates
 [To be populated during integration]

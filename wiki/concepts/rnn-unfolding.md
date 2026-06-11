@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- recurrent-neural-network
 component_scores:
   application: null
   boundary: null
@@ -20,6 +22,8 @@ id: pkis:concept:rnn-unfolding
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- backpropagation-through-time
 related_concepts: []
 sources:
 - goodfellow-deeplearning-ch10
@@ -31,6 +35,8 @@ tags:
 - unrolling
 title: RNN Computational Graph Unfolding
 understanding: 0
+uses:
+- automatic-differentiation
 ---
 
 ## Definition
@@ -48,4 +54,7 @@ Unfolding is the conceptual foundation that connects RNNs to feedforward network
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[backpropagation-through-time]] — prerequisite-of
+- [[automatic-differentiation]] — uses
+- [[recurrent-neural-network]] — applies
 [To be populated during integration]

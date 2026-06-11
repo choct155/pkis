@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- gaussian-mixture-models
 component_scores:
   application: null
   boundary: null
@@ -16,7 +18,11 @@ date_updated: '2026-06-11'
 domain:
 - machine-learning
 - unsupervised-learning
+generalizes:
+- k-means-clustering
 id: pkis:concept:hard-vs-soft-clustering
+instantiates:
+- clustering
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
@@ -47,4 +53,7 @@ The hard/soft distinction reflects the trade-off between interpretability (crisp
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[clustering]] — instantiates
+- [[k-means-clustering]] — generalizes
+- [[gaussian-mixture-models]] — applies
 [To be populated during integration]

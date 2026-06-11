@@ -16,6 +16,8 @@ date_updated: '2026-06-11'
 domain:
 - deep-learning
 - multimodal-learning
+extends:
+- convolutional-neural-networks
 id: pkis:concept:film-feature-wise-linear-modulation
 knowledge_type: concept
 maturity: evolving
@@ -23,6 +25,8 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - murphy-pml2-advanced-ch16
+specializes:
+- hypernetwork
 tags:
 - conditioning
 - multiplicative-interaction
@@ -31,6 +35,8 @@ tags:
 - hypernetwork
 title: Feature-wise Linear Modulation (FiLM)
 understanding: 0
+uses:
+- deep-neural-network-computation-graph
 ---
 
 ## Definition
@@ -45,4 +51,7 @@ FiLM is a lightweight but powerful form of multiplicative interaction that allow
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[deep-neural-network-computation-graph]] — uses
+- [[convolutional-neural-networks]] — extends
+- [[hypernetwork]] — specializes
 [To be populated during integration]

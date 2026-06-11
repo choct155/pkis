@@ -1,6 +1,10 @@
 ---
 aliases: []
 also_type: []
+applies:
+- mercer-kernel
+- stationary-kernel
+- gaussian-process-gp
 component_scores:
   alternatives: null
   conditions: null
@@ -9,13 +13,19 @@ component_scores:
   implementation: null
   operational_mechanism: null
   principled_mechanism: null
+contrasts-with:
+- sparse-gp-inducing-points
 coverage: 1
 date_created: '2026-06-11'
 date_updated: '2026-06-11'
 domain:
 - machine-learning
 - approximation-theory
+extends:
+- gaussian-process-regression
 id: pkis:technique:random-fourier-features
+instantiates:
+- basis-function-models
 knowledge_type: technique
 maturity: evolving
 needs_canonical_source: false
@@ -32,6 +42,8 @@ tags:
 - fastfood
 title: Random Fourier Features
 understanding: 0
+uses:
+- monte-carlo-estimator
 ---
 
 ## Definition
@@ -46,4 +58,11 @@ RFF enables large-scale kernel machine learning by converting a kernel method in
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[gaussian-process-gp]] — applies
+- [[stationary-kernel]] — applies
+- [[monte-carlo-estimator]] — uses
+- [[basis-function-models]] — instantiates
+- [[gaussian-process-regression]] — extends
+- [[sparse-gp-inducing-points]] — contrasts-with: Both approximate the Gram matrix; RFF uses random projections, inducing points use learned points
+- [[mercer-kernel]] — applies
 [To be populated during integration]

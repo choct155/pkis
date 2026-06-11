@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- amortized-vi
 component_scores:
   application: null
   boundary: null
@@ -30,6 +32,8 @@ tags:
 - semi-amortized-VI
 title: Amortization Gap
 understanding: 0
+uses:
+- elbo
 ---
 
 ## Definition
@@ -45,4 +49,6 @@ The amortization gap motivates **semi-amortized VI** (Kim et al., 2018): use the
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[elbo]] — uses: The gap is measured in ELBO units: difference between per-example optimal ELBO and amortized ELBO.
+- [[amortized-vi]] — applies
 [To be populated during integration]

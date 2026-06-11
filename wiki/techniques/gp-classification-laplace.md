@@ -1,6 +1,10 @@
 ---
 aliases: []
 also_type: []
+analogous-to:
+- bayesian-neural-networks
+applies:
+- gaussian-process-gp
 component_scores:
   alternatives: null
   conditions: null
@@ -16,6 +20,10 @@ domain:
 - machine-learning
 - bayesian-statistics
 - kernel-methods
+extends:
+- gaussian-process-regression
+generalizes:
+- logistic-regression
 id: pkis:technique:gp-classification-laplace
 knowledge_type: technique
 maturity: evolving
@@ -32,6 +40,9 @@ tags:
 - approximate-inference
 title: Gaussian Process Classification via Laplace Approximation
 understanding: 0
+uses:
+- laplace-approximation
+- iteratively-reweighted-least-squares
 ---
 
 ## Definition
@@ -50,4 +61,10 @@ The Laplace approach extends GP regression to classification with only moderate 
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[bayesian-neural-networks]] — analogous-to
+- [[gaussian-process-gp]] — applies
+- [[logistic-regression]] — generalizes
+- [[iteratively-reweighted-least-squares]] — uses
+- [[laplace-approximation]] — uses
+- [[gaussian-process-regression]] — extends
 [To be populated during integration]

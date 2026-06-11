@@ -17,12 +17,19 @@ domain:
 - probability-theory
 - statistics
 id: pkis:concept:probability-density-change-of-variables
+instantiates:
+- change-of-variables-for-densities
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- reparameterization-trick
+- normalizing-flows
 related_concepts: []
 sources:
 - bishop-prml-ch01
+specializes:
+- probability-theory
 tags:
 - jacobian
 - change-of-variables
@@ -49,4 +56,8 @@ For $\mathbf{x}\in\mathbb{R}^D$ the joint density satisfies $p(\mathbf{x})\geq 0
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[normalizing-flows]] — prerequisite-of
+- [[reparameterization-trick]] — prerequisite-of
+- [[change-of-variables-for-densities]] — instantiates
+- [[probability-theory]] — specializes
 [To be populated during integration]

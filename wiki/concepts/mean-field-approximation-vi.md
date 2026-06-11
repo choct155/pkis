@@ -17,12 +17,16 @@ domain:
 - machine-learning
 - bayesian-inference
 id: pkis:concept:mean-field-approximation-vi
+instantiates:
+- conditional-independence
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
 related_concepts: []
 sources:
 - murphy-pml2-advanced-ch10
+specializes:
+- mean-field-approximation
 tags:
 - mean-field
 - variational-inference
@@ -30,6 +34,9 @@ tags:
 - CAVI
 title: Mean Field Approximation (Variational)
 understanding: 0
+uses:
+- markov-blanket
+- kl-divergence
 ---
 
 ## Definition
@@ -44,4 +51,8 @@ Mean field is the backbone of **free-form VI** (CAVI) and trades exact dependenc
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[conditional-independence]] — instantiates: Mean field assumes full conditional independence across all latent variable groups.
+- [[kl-divergence]] — uses: Mean field VI minimizes forward KL, leading to mode-seeking/over-confident posteriors.
+- [[markov-blanket]] — uses: CAVI optimal update for each factor depends only on the Markov blanket of that variable.
+- [[mean-field-approximation]] — specializes: The mean field approximation here is the variational/statistical specialization of the general mean-field concept.
 [To be populated during integration]

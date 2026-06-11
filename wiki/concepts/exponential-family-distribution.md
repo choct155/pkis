@@ -17,7 +17,16 @@ domain:
 - probability
 - statistics
 - information-theory
+generalizes:
+- bernoulli-distribution
+- gaussian-distribution
+- dirichlet-distribution
+- beta-distribution
+- gamma-distribution
 id: pkis:concept:exponential-family-distribution
+instantiates:
+- maximum-entropy-principle
+- exponential-family-ml-maxent-duality
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
@@ -31,6 +40,10 @@ tags:
 - maximum-entropy
 title: Exponential Family
 understanding: 0
+uses:
+- sufficient-statistics
+- conjugate-prior
+- noninformative-prior
 ---
 
 ## Definition
@@ -48,4 +61,14 @@ Bernoulli: $\eta=\ln(\mu/(1-\mu))$ (logit), $u(x)=x$. Gaussian: $\boldsymbol{\et
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[noninformative-prior]] — uses: Jeffreys prior and scale/location priors motivated for expfam members
+- [[gamma-distribution]] — generalizes
+- [[beta-distribution]] — generalizes
+- [[dirichlet-distribution]] — generalizes
+- [[gaussian-distribution]] — generalizes
+- [[bernoulli-distribution]] — generalizes
+- [[exponential-family-ml-maxent-duality]] — instantiates
+- [[maximum-entropy-principle]] — instantiates: MaxEnt with fixed moment constraints yields exponential family
+- [[conjugate-prior]] — uses
+- [[sufficient-statistics]] — uses
 [To be populated during integration]

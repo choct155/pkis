@@ -23,6 +23,8 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - murphy-pml2-advanced-ch32
+specializes:
+- representational-similarity-analysis
 tags:
 - representational-similarity
 - neural-networks
@@ -31,6 +33,11 @@ tags:
 - RV-coefficient
 title: Centered Kernel Alignment (CKA)
 understanding: 0
+uses:
+- the-kernel-trick
+- reproducing-kernel-hilbert-space
+- inner-product
+- principal-component-analysis
 ---
 
 ## Definition
@@ -45,4 +52,9 @@ CKA provides a principled, invariant way to compare representations across layer
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[principal-component-analysis]] — uses: Linear CKA has a closed-form expression in terms of PCA singular vectors and variances
+- [[inner-product]] — uses
+- [[reproducing-kernel-hilbert-space]] — uses
+- [[the-kernel-trick]] — uses
+- [[representational-similarity-analysis]] — specializes: CKA is a specific instantiation of RSA with PSD kernels and cosine matrix similarity
 [To be populated during integration]

@@ -1,6 +1,9 @@
 ---
 aliases: []
 also_type: []
+applies:
+- dag-factorization
+- probabilistic-graphical-models
 component_scores:
   application: null
   boundary: null
@@ -20,6 +23,8 @@ id: pkis:concept:moralization
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- junction-tree-algorithm
 related_concepts: []
 sources:
 - bishop-prml-ch08
@@ -32,6 +37,12 @@ tags:
 - exact-inference
 title: Moralization (Directed-to-Undirected Conversion)
 understanding: 0
+uses:
+- markov-random-field
+- directed-graphical-models
+- undirected-graphical-models
+- immorality-v-structure
+- d-separation
 ---
 
 ## Definition
@@ -50,4 +61,12 @@ Moralization is the first step in the **junction tree algorithm** for exact infe
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[probabilistic-graphical-models]] — applies
+- [[d-separation]] — uses
+- [[immorality-v-structure]] — uses
+- [[undirected-graphical-models]] — uses
+- [[directed-graphical-models]] — uses
+- [[junction-tree-algorithm]] — prerequisite-of
+- [[markov-random-field]] — uses
+- [[dag-factorization]] — applies
 [To be populated during integration]

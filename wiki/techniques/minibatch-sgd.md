@@ -1,6 +1,9 @@
 ---
 aliases: []
 also_type: []
+applies:
+- generalization-error-training-error
+- empirical-risk-minimization
 component_scores:
   alternatives: null
   conditions: null
@@ -15,7 +18,12 @@ date_updated: '2026-06-11'
 domain:
 - machine-learning
 - optimization
+extends:
+- gradient-descent
 id: pkis:technique:minibatch-sgd
+instantiates:
+- ml-algorithm-recipe
+- bias-variance-tradeoff
 knowledge_type: technique
 maturity: evolving
 needs_canonical_source: false
@@ -23,6 +31,8 @@ related_concepts: []
 sources:
 - goodfellow-deeplearning-ch05
 - goodfellow-deeplearning-ch08
+specializes:
+- stochastic-gradient-descent
 tags:
 - SGD
 - gradient-descent
@@ -32,6 +42,8 @@ tags:
 - deep-learning
 title: Minibatch Stochastic Gradient Descent
 understanding: 0
+uses:
+- regularization
 ---
 
 ## Definition
@@ -48,4 +60,11 @@ Minibatch SGD is the engine of virtually all modern deep learning. It scales to 
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[bias-variance-tradeoff]] — instantiates: batch-size selection trades gradient variance for computational cost
+- [[empirical-risk-minimization]] — applies: minibatch SGD is the canonical algorithm for ERM in deep learning
+- [[regularization]] — uses
+- [[ml-algorithm-recipe]] — instantiates
+- [[generalization-error-training-error]] — applies
+- [[gradient-descent]] — extends
+- [[stochastic-gradient-descent]] — specializes
 [To be populated during integration]

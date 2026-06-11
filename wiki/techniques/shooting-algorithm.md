@@ -1,6 +1,10 @@
 ---
 aliases: []
 also_type: []
+analogous-to:
+- coordinate-ascent-vi
+applies:
+- lasso-regression
 component_scores:
   alternatives: null
   conditions: null
@@ -29,6 +33,8 @@ tags:
 - glmnet
 title: Shooting Algorithm (Coordinate Descent for Lasso)
 understanding: 0
+uses:
+- soft-thresholding
 ---
 
 ## Definition
@@ -45,4 +51,7 @@ Coordinate descent for lasso is simple to implement, memory-efficient (no large 
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[soft-thresholding]] — uses
+- [[lasso-regression]] — applies
+- [[coordinate-ascent-vi]] — analogous-to: both are coordinate-wise optimisation
 [To be populated during integration]

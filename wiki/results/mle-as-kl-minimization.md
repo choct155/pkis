@@ -14,7 +14,11 @@ domain:
 - statistics
 - information-theory
 - machine-learning
+extends:
+- maximum-likelihood-estimation
 id: pkis:result:mle-as-kl-minimization
+instantiates:
+- empirical-risk-minimization
 knowledge_type: result
 maturity: evolving
 needs_canonical_source: false
@@ -29,6 +33,11 @@ tags:
 - log-likelihood
 title: MLE as KL-Divergence Minimization
 understanding: 0
+uses:
+- kl-divergence
+- cross-entropy-loss
+- data-generating-distribution
+- entropy
 ---
 
 ## Definition
@@ -45,4 +54,10 @@ This equivalence unifies MLE with information-theoretic objectives and reveals t
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[empirical-risk-minimization]] — instantiates
+- [[entropy]] — uses
+- [[data-generating-distribution]] — uses
+- [[cross-entropy-loss]] — uses
+- [[kl-divergence]] — uses
+- [[maximum-likelihood-estimation]] — extends
 [To be populated during integration]

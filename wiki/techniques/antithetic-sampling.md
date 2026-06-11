@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+analogous-to:
+- control-variates
 component_scores:
   alternatives: null
   conditions: null
@@ -16,6 +18,8 @@ domain:
 - statistics
 - simulation
 - numerical-methods
+extends:
+- monte-carlo-integration
 id: pkis:technique:antithetic-sampling
 knowledge_type: technique
 maturity: evolving
@@ -23,6 +27,8 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - murphy-pml2-advanced-ch11
+specializes:
+- quasi-monte-carlo
 tags:
 - variance-reduction
 - negative-correlation
@@ -48,4 +54,7 @@ Antithetic sampling is a simple special case of the broader idea behind quasi-Mo
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[quasi-monte-carlo]] — specializes
+- [[control-variates]] — analogous-to
+- [[monte-carlo-integration]] — extends
 [To be populated during integration]

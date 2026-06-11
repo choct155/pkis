@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+analogous-to:
+- spike-and-slab-prior
 component_scores:
   application: null
   boundary: null
@@ -10,6 +12,8 @@ component_scores:
   prerequisites: null
   scope: null
   transfer: null
+contrasts-with:
+- lasso
 coverage: 1
 date_created: '2026-06-11'
 date_updated: '2026-06-11'
@@ -17,6 +21,9 @@ domain:
 - statistics
 - bayesian-inference
 id: pkis:concept:horseshoe-prior
+instantiates:
+- gaussian-scale-mixture
+- shrinkage-priors
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
@@ -45,4 +52,8 @@ The horseshoe prior achieves near-spike-and-slab sparsity without discrete laten
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[shrinkage-priors]] — instantiates
+- [[lasso]] — contrasts-with
+- [[spike-and-slab-prior]] — analogous-to
+- [[gaussian-scale-mixture]] — instantiates
 [To be populated during integration]

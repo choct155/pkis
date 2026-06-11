@@ -26,6 +26,14 @@ tags:
 - cold-start
 title: Recommender Systems
 understanding: 0
+uses:
+- collaborative-filtering
+- matrix-factorization-recommender
+- implicit-feedback-recommendation
+- cold-start-problem
+- exploration-exploitation-tradeoff
+- missing-data-mechanisms
+- reinforcement-learning
 ---
 
 ## Definition
@@ -40,4 +48,11 @@ Recommender systems are the backbone of personalisation at scale (Netflix, Amazo
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[reinforcement-learning]] — uses: RL used to optimise long-term recommendation policies and handle the feedback loop
+- [[missing-data-mechanisms]] — uses
+- [[exploration-exploitation-tradeoff]] — uses
+- [[cold-start-problem]] — uses
+- [[implicit-feedback-recommendation]] — uses
+- [[matrix-factorization-recommender]] — uses
+- [[collaborative-filtering]] — uses
 [To be populated during integration]

@@ -16,6 +16,8 @@ domain:
 - cognitive-science
 - representation-learning
 id: pkis:framework:analysis-by-synthesis
+instantiates:
+- latent-variable-models
 knowledge_type: framework
 maturity: evolving
 needs_canonical_source: false
@@ -30,6 +32,10 @@ tags:
 - disentanglement
 title: Analysis-by-Synthesis
 understanding: 0
+uses:
+- variational-autoencoder
+- disentangled-representation-learning
+- generative-adversarial-network
 ---
 
 ## Definition
@@ -46,4 +52,8 @@ Analysis-by-synthesis provides the conceptual foundation for latent-variable gen
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[generative-adversarial-network]] — uses
+- [[disentangled-representation-learning]] — uses: Aims to recover the latent factors that generated observations
+- [[variational-autoencoder]] — uses
+- [[latent-variable-models]] — instantiates
 [To be populated during integration]

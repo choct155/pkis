@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- density-estimation
 component_scores:
   application: null
   boundary: null
@@ -10,6 +12,8 @@ component_scores:
   prerequisites: null
   scope: null
   transfer: null
+contrasts-with:
+- inverse-autoregressive-flow
 coverage: 1
 date_created: '2026-06-11'
 date_updated: '2026-06-11'
@@ -17,6 +21,8 @@ domain:
 - machine-learning
 - generative-models
 id: pkis:concept:masked-autoregressive-flow
+instantiates:
+- autoregressive-flow
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
@@ -46,4 +52,7 @@ MAF achieves state-of-the-art density estimation while being parameter-efficient
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[inverse-autoregressive-flow]] — contrasts-with
+- [[density-estimation]] — applies
+- [[autoregressive-flow]] — instantiates
 [To be populated during integration]

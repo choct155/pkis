@@ -15,13 +15,19 @@ date_updated: '2026-06-11'
 domain:
 - probabilistic-graphical-models
 - variational-inference
+generalizes:
+- loopy-belief-propagation
 id: pkis:technique:generalised-belief-propagation
+instantiates:
+- variational-inference
 knowledge_type: technique
 maturity: evolving
 needs_canonical_source: false
 related_concepts: []
 sources:
 - murphy-pml2-advanced-ch09
+specializes:
+- junction-tree-algorithm
 tags:
 - Bethe-approximation
 - cluster-variational-method
@@ -30,6 +36,8 @@ tags:
 - treewidth
 title: Generalised Belief Propagation (Cluster Variational Method)
 understanding: 0
+uses:
+- variational-free-energy
 ---
 
 ## Definition
@@ -48,4 +56,8 @@ Generalised BP (Yedidia, Freeman & Weiss, 2000) provides a systematic hierarchy 
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[variational-free-energy]] — uses
+- [[variational-inference]] — instantiates
+- [[junction-tree-algorithm]] — specializes: when hyper-edges cover full treewidth, equals junction tree
+- [[loopy-belief-propagation]] — generalizes
 [To be populated during integration]

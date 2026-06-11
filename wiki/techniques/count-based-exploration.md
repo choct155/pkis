@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- exploration-exploitation-tradeoff
 component_scores:
   alternatives: null
   conditions: null
@@ -15,12 +17,17 @@ date_updated: '2026-06-11'
 domain:
 - reinforcement-learning
 id: pkis:technique:count-based-exploration
+instantiates:
+- upper-confidence-bound
+- intrinsic-motivation-rl
 knowledge_type: technique
 maturity: evolving
 needs_canonical_source: false
 related_concepts: []
 sources:
 - murphy-pml2-advanced-ch35
+specializes:
+- bayes-adaptive-mdp
 tags:
 - exploration
 - UCB
@@ -42,4 +49,8 @@ Count-based exploration gives a practical approximation to UCB-style exploration
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[bayes-adaptive-mdp]] — specializes
+- [[intrinsic-motivation-rl]] — instantiates
+- [[upper-confidence-bound]] — instantiates
+- [[exploration-exploitation-tradeoff]] — applies
 [To be populated during integration]

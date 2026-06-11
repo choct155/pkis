@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+analogous-to:
+- polynomial-feature-expansion
 component_scores:
   alternatives: null
   conditions: null
@@ -15,6 +17,8 @@ date_updated: '2026-06-11'
 domain:
 - machine-learning
 - feature-engineering
+extends:
+- linear-regression
 id: pkis:technique:feature-crosses
 knowledge_type: technique
 maturity: evolving
@@ -29,6 +33,8 @@ tags:
 - linear-models
 title: Feature Crosses
 understanding: 0
+uses:
+- one-hot-encoding
 ---
 
 ## Definition
@@ -43,4 +49,7 @@ Linear models cannot capture interaction effects between features without explic
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[linear-regression]] — extends
+- [[one-hot-encoding]] — uses
+- [[polynomial-feature-expansion]] — analogous-to
 [To be populated during integration]

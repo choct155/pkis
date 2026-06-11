@@ -18,12 +18,16 @@ domain:
 - interpretability
 - game-theory
 id: pkis:concept:shapley-feature-importance
+instantiates:
+- shapley-value
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
 related_concepts: []
 sources:
 - murphy-pml2-advanced-ch33
+specializes:
+- post-hoc-explanation
 tags:
 - SHAP
 - feature-importance
@@ -32,6 +36,9 @@ tags:
 - attribution
 title: Shapley Feature Importance
 understanding: 0
+uses:
+- explanation-fidelity
+- cooperative-game
 ---
 
 ## Definition
@@ -48,4 +55,8 @@ Shapley values are the unique additive attribution satisfying the four axioms ab
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[cooperative-game]] — uses: SHAP formulates feature attribution as a cooperative game where features are players.
+- [[explanation-fidelity]] — uses
+- [[post-hoc-explanation]] — specializes
+- [[shapley-value]] — instantiates: SHAP applies the cooperative game theory Shapley value to the feature attribution problem.
 [To be populated during integration]

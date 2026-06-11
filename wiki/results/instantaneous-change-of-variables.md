@@ -13,10 +13,14 @@ date_updated: '2026-06-11'
 domain:
 - machine-learning
 - differential-equations
+extends:
+- change-of-variables-for-densities
 id: pkis:result:instantaneous-change-of-variables
 knowledge_type: result
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- continuous-time-normalizing-flow
 related_concepts: []
 sources:
 - murphy-pml2-advanced-ch23
@@ -41,4 +45,6 @@ This ODE replaces the expensive $O(D^3)$ determinant computation of discrete flo
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[change-of-variables-for-densities]] — extends
+- [[continuous-time-normalizing-flow]] — prerequisite-of
 [To be populated during integration]

@@ -17,12 +17,18 @@ domain:
 - probabilistic-graphical-models
 - deep-learning
 id: pkis:concept:sigmoid-belief-net
+instantiates:
+- latent-variable-models
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- variational-autoencoder
 related_concepts: []
 sources:
 - murphy-pml2-advanced-ch04
+specializes:
+- bayesian-networks
 tags:
 - deep-generative-model
 - variational-inference
@@ -30,6 +36,10 @@ tags:
 - logistic-regression
 title: Sigmoid Belief Net
 understanding: 0
+uses:
+- elbo
+- activation-functions
+- explaining-away
 ---
 
 ## Definition
@@ -46,4 +56,10 @@ Sigmoid belief nets were the first trainable deep latent variable models and dir
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[explaining-away]] — uses: Explaining away in the posterior motivates amortized variational inference
+- [[activation-functions]] — uses
+- [[elbo]] — uses
+- [[variational-autoencoder]] — prerequisite-of
+- [[latent-variable-models]] — instantiates
+- [[bayesian-networks]] — specializes
 [To be populated during integration]

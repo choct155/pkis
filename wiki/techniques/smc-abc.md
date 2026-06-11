@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+analogous-to:
+- likelihood-tempering-smc
 component_scores:
   alternatives: null
   conditions: null
@@ -16,7 +18,11 @@ domain:
 - statistics
 - machine-learning
 - computational-biology
+extends:
+- approximate-bayesian-computation
 id: pkis:technique:smc-abc
+instantiates:
+- smc-sampler
 knowledge_type: technique
 maturity: evolving
 needs_canonical_source: false
@@ -44,4 +50,7 @@ SMC-ABC is a principled extension of likelihood-free inference to the sequential
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[likelihood-tempering-smc]] — analogous-to
+- [[smc-sampler]] — instantiates
+- [[approximate-bayesian-computation]] — extends
 [To be populated during integration]

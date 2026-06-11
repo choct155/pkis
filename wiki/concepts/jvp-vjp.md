@@ -21,6 +21,9 @@ id: pkis:concept:jvp-vjp
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- forward-mode-ad
+- reverse-mode-ad
 related_concepts: []
 sources:
 - murphy-pml2-advanced-ch06
@@ -32,6 +35,9 @@ tags:
 - reverse-mode
 title: Jacobian-Vector Product and Vector-Jacobian Product
 understanding: 0
+uses:
+- gradient-and-jacobian
+- hessian-matrix
 ---
 
 ## Definition
@@ -52,4 +58,8 @@ JVP and VJP are the two fundamental primitives of automatic differentiation. Eve
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[hessian-matrix]] — uses: Hessian-vector products are JVP-of-VJP compositions
+- [[gradient-and-jacobian]] — uses
+- [[reverse-mode-ad]] — prerequisite-of
+- [[forward-mode-ad]] — prerequisite-of
 [To be populated during integration]

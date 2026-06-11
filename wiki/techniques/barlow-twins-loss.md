@@ -1,6 +1,9 @@
 ---
 aliases: []
 also_type: []
+analogous-to:
+- byol
+- independent-component-analysis
 component_scores:
   alternatives: null
   conditions: null
@@ -9,6 +12,9 @@ component_scores:
   implementation: null
   operational_mechanism: null
   principled_mechanism: null
+contrasts-with:
+- contrastive-representation-learning
+- infonce-loss
 coverage: 1
 date_created: '2026-06-11'
 date_updated: '2026-06-11'
@@ -47,4 +53,8 @@ Barlow Twins avoids the large-batch requirement of InfoNCE-based methods, has no
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[independent-component-analysis]] — analogous-to: Both aim to decorrelate representation dimensions
+- [[infonce-loss]] — contrasts-with
+- [[byol]] — analogous-to
+- [[contrastive-representation-learning]] — contrasts-with: Negative-free alternative that prevents collapse via cross-correlation regularisation
 [To be populated during integration]

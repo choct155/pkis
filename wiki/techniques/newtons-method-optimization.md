@@ -1,6 +1,10 @@
 ---
 aliases: []
 also_type: []
+applies:
+- convex-optimization
+- condition-number-hessian
+- linear-regression
 component_scores:
   alternatives: null
   conditions: null
@@ -9,6 +13,8 @@ component_scores:
   implementation: null
   operational_mechanism: null
   principled_mechanism: null
+contrasts-with:
+- gradient-descent
 coverage: 1
 date_created: '2026-06-11'
 date_updated: '2026-06-11'
@@ -16,6 +22,8 @@ domain:
 - optimization
 - numerical-computation
 id: pkis:technique:newtons-method-optimization
+instantiates:
+- first-order-vs-second-order-optimization
 knowledge_type: technique
 maturity: evolving
 needs_canonical_source: false
@@ -30,6 +38,12 @@ tags:
 - quasi-Newton
 title: Newton's Method for Optimization
 understanding: 0
+uses:
+- hessian-matrix
+- critical-points-saddle-points
+- gradient-and-jacobian
+- stationary-point-optimality-conditions
+- line-search
 ---
 
 ## Definition
@@ -46,4 +60,14 @@ Newton's method is the archetype of all **second-order optimization algorithms**
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[linear-regression]] — applies
+- [[line-search]] — uses
+- [[condition-number-hessian]] — applies
+- [[stationary-point-optimality-conditions]] — uses
+- [[gradient-and-jacobian]] — uses
+- [[critical-points-saddle-points]] — uses
+- [[convex-optimization]] — applies
+- [[first-order-vs-second-order-optimization]] — instantiates
+- [[gradient-descent]] — contrasts-with
+- [[hessian-matrix]] — uses
 [To be populated during integration]

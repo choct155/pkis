@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- disentangled-representation
 component_scores:
   application: null
   limits: null
@@ -14,6 +16,8 @@ date_updated: '2026-06-11'
 domain:
 - machine-learning
 - representation-learning
+extends:
+- variational-autoencoder
 id: pkis:framework:beta-vae
 knowledge_type: framework
 maturity: evolving
@@ -21,6 +25,8 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - murphy-pml2-advanced-ch21
+specializes:
+- infovae
 tags:
 - VAE
 - disentanglement
@@ -42,4 +48,7 @@ By sweeping $\beta$ one traces the rate–distortion curve, trading off reconstr
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[infovae]] — specializes
+- [[disentangled-representation]] — applies
+- [[variational-autoencoder]] — extends
 [To be populated during integration]

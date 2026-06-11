@@ -1,6 +1,10 @@
 ---
 aliases: []
 also_type: []
+analogous-to:
+- sum-product-algorithm
+applies:
+- directed-graphical-models
 component_scores:
   alternatives: null
   conditions: null
@@ -22,6 +26,8 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - bishop-prml-ch10
+specializes:
+- mean-field-variational-inference
 tags:
 - message-passing
 - mean-field
@@ -30,6 +36,9 @@ tags:
 - variational-inference
 title: Variational Message Passing
 understanding: 0
+uses:
+- markov-blanket
+- conjugate-prior
 ---
 
 ## Definition
@@ -44,4 +53,9 @@ Enables general-purpose software (e.g., Infer.NET) that performs variational inf
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[sum-product-algorithm]] — analogous-to
+- [[conjugate-prior]] — uses
+- [[directed-graphical-models]] — applies
+- [[markov-blanket]] — uses
+- [[mean-field-variational-inference]] — specializes
 [To be populated during integration]

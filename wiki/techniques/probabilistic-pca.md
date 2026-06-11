@@ -15,19 +15,34 @@ date_updated: '2026-06-09'
 domain:
 - statistical-learning
 - bayesian-stats
+extends:
+- principal-component-analysis
+generalizes:
+- principal-components-analysis
 id: pkis:technique:probabilistic-pca
+instantiates:
+- linear-manifold-pca
 knowledge_type: technique
 maturity: evolving
 needs_canonical_source: false
 related_concepts: []
 sources:
 - deisenroth-mml-ch10
+specializes:
+- linear-factor-model
+- factor-analysis
 tags:
 - dimensionality-reduction
 - latent-variable-models
 - generative-model
 title: Probabilistic PCA (PPCA)
 understanding: 0
+uses:
+- em-algorithm
+- pca-optimal-reconstruction-error
+- marginal-likelihood
+- elbo
+- eigendecomposition
 ---
 
 ## Definition
@@ -37,4 +52,14 @@ understanding: 0
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[eigendecomposition]] — uses
+- [[elbo]] — uses
+- [[principal-components-analysis]] — generalizes
+- [[marginal-likelihood]] — uses
+- [[pca-optimal-reconstruction-error]] — uses
+- [[linear-manifold-pca]] — instantiates
+- [[em-algorithm]] — uses
+- [[factor-analysis]] — specializes
+- [[principal-component-analysis]] — extends
+- [[linear-factor-model]] — specializes
 [To be populated during integration]

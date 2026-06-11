@@ -10,6 +10,8 @@ component_scores:
   prerequisites: null
   scope: null
   transfer: null
+contrasts-with:
+- backdoor-criterion-causal
 coverage: 1
 date_created: '2026-06-11'
 date_updated: '2026-06-11'
@@ -23,6 +25,8 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - murphy-pml2-advanced-ch36
+specializes:
+- collider-bias
 tags:
 - collider-bias
 - covariate-selection
@@ -31,6 +35,9 @@ tags:
 - z-bias
 title: m-Bias and Bias Amplification
 understanding: 0
+uses:
+- confounding
+- austen-plots
 ---
 
 ## Definition
@@ -47,4 +54,8 @@ Both phenomena show that naïvely conditioning on more pre-treatment variables d
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[backdoor-criterion-causal]] — contrasts-with: Backdoor criterion precisely characterises which adjustments avoid m-bias
+- [[austen-plots]] — uses: Austen plots quantify bias amplification through the z-bias formula
+- [[confounding]] — uses
+- [[collider-bias]] — specializes
 [To be populated during integration]

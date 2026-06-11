@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+analogous-to:
+- kalman-gain
 component_scores:
   application: null
   boundary: null
@@ -20,6 +22,8 @@ id: pkis:concept:backwards-kalman-gain
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- kalman-rts-smoother
 related_concepts: []
 sources:
 - murphy-pml2-advanced-ch08
@@ -44,4 +48,6 @@ Understanding $J_t$ clarifies the backward information flow in the RTS smoother 
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[kalman-gain]] — analogous-to
+- [[kalman-rts-smoother]] — prerequisite-of
 [To be populated during integration]

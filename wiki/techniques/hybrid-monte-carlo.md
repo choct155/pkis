@@ -9,6 +9,8 @@ component_scores:
   implementation: null
   operational_mechanism: null
   principled_mechanism: null
+contrasts-with:
+- gibbs-sampling
 coverage: 1
 date_created: '2026-06-11'
 date_updated: '2026-06-11'
@@ -16,10 +18,16 @@ domain:
 - statistics
 - machine-learning
 - physics
+extends:
+- metropolis-hastings
 id: pkis:technique:hybrid-monte-carlo
+instantiates:
+- hmc
 knowledge_type: technique
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- no-u-turn-sampler
 related_concepts: []
 sources:
 - bishop-prml-ch11
@@ -31,6 +39,11 @@ tags:
 - gradient-based
 title: Hybrid Monte Carlo (HMC)
 understanding: 0
+uses:
+- leapfrog-integrator
+- liouvilles-theorem
+- ergodicity-markov-chain-mcmc
+- hamiltonian-classical-mechanics
 ---
 
 ## Definition
@@ -47,4 +60,12 @@ HMC exploits gradient information $\nabla_z \ln p(\mathbf{z})$ to make coherent,
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[hamiltonian-classical-mechanics]] — uses
+- [[gibbs-sampling]] — contrasts-with
+- [[hmc]] — instantiates
+- [[no-u-turn-sampler]] — prerequisite-of
+- [[ergodicity-markov-chain-mcmc]] — uses
+- [[liouvilles-theorem]] — uses
+- [[leapfrog-integrator]] — uses
+- [[metropolis-hastings]] — extends
 [To be populated during integration]

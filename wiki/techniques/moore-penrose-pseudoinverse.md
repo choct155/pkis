@@ -1,6 +1,10 @@
 ---
 aliases: []
 also_type: []
+analogous-to:
+- ridge-regression
+applies:
+- low-rank-approximation
 component_scores:
   alternatives: null
   conditions: null
@@ -15,6 +19,8 @@ date_updated: '2026-06-11'
 domain:
 - linear-algebra
 - machine-learning
+generalizes:
+- matrix-inverse
 id: pkis:technique:moore-penrose-pseudoinverse
 knowledge_type: technique
 maturity: evolving
@@ -30,6 +36,9 @@ tags:
 - regularization
 title: Moore-Penrose Pseudoinverse
 understanding: 0
+uses:
+- singular-value-decomposition
+- column-space-and-span
 ---
 
 ## Definition
@@ -48,4 +57,9 @@ It is the foundation of regularised least squares and ridge regression (the $\al
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[ridge-regression]] — analogous-to
+- [[low-rank-approximation]] — applies
+- [[column-space-and-span]] — uses
+- [[matrix-inverse]] — generalizes
+- [[singular-value-decomposition]] — uses
 [To be populated during integration]

@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+analogous-to:
+- nonstationary-bandit-step-size
 component_scores:
   alternatives: null
   conditions: null
@@ -30,6 +32,8 @@ tags:
 - Adam
 title: Exponentially Weighted Moving Average (EWMA)
 understanding: 0
+uses:
+- stochastic-gradient-descent
 ---
 
 ## Definition
@@ -47,4 +51,6 @@ The plain recursive mean $\hat{\mu}_t = \hat{\mu}_{t-1} + \frac{1}{t}(y_t - \hat
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[stochastic-gradient-descent]] — uses: Adam optimizer uses bias-corrected EWMA for first and second moment estimates
+- [[nonstationary-bandit-step-size]] — analogous-to: Both use fixed step-size updates to track non-stationary distributions
 [To be populated during integration]

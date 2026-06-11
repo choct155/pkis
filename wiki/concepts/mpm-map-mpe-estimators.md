@@ -10,6 +10,8 @@ component_scores:
   prerequisites: null
   scope: null
   transfer: null
+contrasts-with:
+- viterbi-algorithm
 coverage: 1
 date_created: '2026-06-11'
 date_updated: '2026-06-11'
@@ -17,7 +19,11 @@ domain:
 - probabilistic-graphical-models
 - statistical-decision-theory
 - machine-learning
+extends:
+- maximum-a-posteriori-estimation-map
 id: pkis:concept:mpm-map-mpe-estimators
+instantiates:
+- statistical-decision-theory-regression
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
@@ -33,6 +39,9 @@ tags:
 - belief-propagation
 title: MPM vs MAP vs MPE Estimators
 understanding: 0
+uses:
+- expected-loss
+- forwards-backwards-algorithm
 ---
 
 ## Definition
@@ -53,4 +62,9 @@ Choosing the right estimator is a crucial modelling decision tied to the loss fu
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[statistical-decision-theory-regression]] — instantiates
+- [[viterbi-algorithm]] — contrasts-with: MAP via Viterbi vs per-node MPM
+- [[forwards-backwards-algorithm]] — uses: MPM estimates computed from FB posterior marginals
+- [[expected-loss]] — uses
+- [[maximum-a-posteriori-estimation-map]] — extends
 [To be populated during integration]

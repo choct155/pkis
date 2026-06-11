@@ -1,6 +1,9 @@
 ---
 aliases: []
 also_type: []
+applies:
+- marginal-likelihood
+- variational-autoencoder
 component_scores:
   alternatives: null
   conditions: null
@@ -16,6 +19,8 @@ domain:
 - statistics
 - machine-learning
 - Bayesian-inference
+extends:
+- monte-carlo-integration
 id: pkis:technique:self-normalized-importance-sampling
 knowledge_type: technique
 maturity: evolving
@@ -23,6 +28,8 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - murphy-pml2-advanced-ch11
+specializes:
+- importance-sampling
 tags:
 - importance-weights
 - unnormalized
@@ -31,6 +38,8 @@ tags:
 - ratio-estimator
 title: Self-Normalized Importance Sampling (SNIS)
 understanding: 0
+uses:
+- elbo
 ---
 
 ## Definition
@@ -42,6 +51,11 @@ Estimates expectations under an unnormalized target $\tilde{\gamma}(x)=Z\pi(x)$ 
 Most practically useful form of importance sampling because real posteriors are known only up to a normalizing constant. Unlike direct IS, no evaluation of the normalized target is needed. The estimator is biased (ratio of two expectations) but bias $\to 0$ as $N_s\to\infty$. Also yields a particle approximation $\hat{\pi}(x)=\sum_n W_n\delta(x-x_n)$ used as the foundation for sequential Monte Carlo.
 
 ### Connections
+- [[variational-autoencoder]] — applies: IWAE uses SNIS weights
+- [[marginal-likelihood]] — applies: Z approximated as mean of unnormalized weights
+- [[elbo]] — uses: ELBO optimization can yield good IS proposals
+- [[monte-carlo-integration]] — extends
+- [[importance-sampling]] — specializes
 Direct importance sampling is the special case where $\tilde{\gamma}=\pi$ (normalized), giving unbiased weights $\tilde{w}_n=\pi(x_n)/q(x_n)$.
 
 ## Reading Path

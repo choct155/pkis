@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- continuous-optimization
 component_scores:
   alternatives: null
   conditions: null
@@ -9,11 +11,15 @@ component_scores:
   implementation: null
   operational_mechanism: null
   principled_mechanism: null
+contrasts-with:
+- lagrangian-duality
 coverage: 1
 date_created: '2026-06-11'
 date_updated: '2026-06-11'
 domain:
 - optimization
+extends:
+- gradient-descent
 id: pkis:technique:line-search
 knowledge_type: technique
 maturity: evolving
@@ -49,4 +55,7 @@ Line search converts the free hyper-parameter of step size into an automatic, lo
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[lagrangian-duality]] — contrasts-with
+- [[continuous-optimization]] — applies
+- [[gradient-descent]] — extends
 [To be populated during integration]

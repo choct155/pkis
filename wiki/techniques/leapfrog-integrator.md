@@ -17,9 +17,14 @@ domain:
 - machine-learning
 - physics
 id: pkis:technique:leapfrog-integrator
+instantiates:
+- liouvilles-theorem
 knowledge_type: technique
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- hybrid-monte-carlo
+- detailed-balance
 related_concepts: []
 sources:
 - bishop-prml-ch11
@@ -31,6 +36,9 @@ tags:
 - mcmc
 title: Leapfrog Integrator
 understanding: 0
+uses:
+- hamiltonian-classical-mechanics
+- hamiltonian-mechanics-sampling
 ---
 
 ## Definition
@@ -47,4 +55,9 @@ Volume preservation and time-reversibility are precisely the properties needed t
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[detailed-balance]] — prerequisite-of
+- [[hamiltonian-mechanics-sampling]] — uses
+- [[hamiltonian-classical-mechanics]] — uses
+- [[hybrid-monte-carlo]] — prerequisite-of
+- [[liouvilles-theorem]] — instantiates
 [To be populated during integration]

@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- numerical-underflow-overflow
 component_scores:
   alternatives: null
   conditions: null
@@ -16,6 +18,8 @@ domain:
 - numerical-computation
 - deep-learning
 id: pkis:technique:numerically-stable-softmax
+instantiates:
+- activation-functions
 knowledge_type: technique
 maturity: evolving
 needs_canonical_source: false
@@ -45,4 +49,6 @@ Without this trick, softmax fails for inputs with large positive values (overflo
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[activation-functions]] — instantiates
+- [[numerical-underflow-overflow]] — applies
 [To be populated during integration]

@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- variational-autoencoder
 component_scores:
   application: null
   boundary: null
@@ -32,6 +34,9 @@ tags:
 - disentanglement
 title: Latent Space Interpolation
 understanding: 0
+uses:
+- manifold-hypothesis
+- latent-variable-models
 ---
 
 ## Definition
@@ -48,4 +53,7 @@ Latent space interpolation is the canonical demonstration that a generative mode
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[latent-variable-models]] — uses
+- [[manifold-hypothesis]] — uses: Linearity justified by approximately zero curvature of learned manifold
+- [[variational-autoencoder]] — applies
 [To be populated during integration]

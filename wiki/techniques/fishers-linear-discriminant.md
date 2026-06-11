@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+analogous-to:
+- linear-function-approximation-rl
 component_scores:
   alternatives: null
   conditions: null
@@ -9,6 +11,8 @@ component_scores:
   implementation: null
   operational_mechanism: null
   principled_mechanism: null
+contrasts-with:
+- logistic-regression
 coverage: 1
 date_created: '2026-06-11'
 date_updated: '2026-06-11'
@@ -17,6 +21,8 @@ domain:
 - statistics
 - pattern-recognition
 id: pkis:technique:fishers-linear-discriminant
+instantiates:
+- linear-discriminant-analysis
 knowledge_type: technique
 maturity: evolving
 needs_canonical_source: false
@@ -31,6 +37,9 @@ tags:
 - within-class-covariance
 title: Fisher's Linear Discriminant
 understanding: 0
+uses:
+- linear-separability
+- eigendecomposition
 ---
 
 ## Definition
@@ -52,4 +61,9 @@ For $K$ classes one maximises $J(\mathbf{W}) = \text{Tr}\{\mathbf{s}_W^{-1}\math
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[linear-function-approximation-rl]] — analogous-to: Both find weight vectors maximising a ratio criterion over projected representations
+- [[logistic-regression]] — contrasts-with: FDA is a discriminant projection; logistic regression directly models posterior
+- [[eigendecomposition]] — uses: Multi-class FDA solved via eigenvectors of S_W^{-1} S_B
+- [[linear-separability]] — uses
+- [[linear-discriminant-analysis]] — instantiates
 [To be populated during integration]

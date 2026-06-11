@@ -15,7 +15,12 @@ date_updated: '2026-06-11'
 domain:
 - machine-learning
 - generative-models
+generalizes:
+- autoregressive-model
+- coupling-layer
 id: pkis:technique:autoregressive-flow
+instantiates:
+- normalizing-flows
 knowledge_type: technique
 maturity: evolving
 needs_canonical_source: false
@@ -30,6 +35,8 @@ tags:
 - masked-network
 title: Autoregressive Flow
 understanding: 0
+uses:
+- elementwise-flow
 ---
 
 ## Definition
@@ -46,4 +53,8 @@ Autoregressive flows unify autoregressive generative models and normalizing flow
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[coupling-layer]] — generalizes
+- [[autoregressive-model]] — generalizes
+- [[elementwise-flow]] — uses
+- [[normalizing-flows]] — instantiates
 [To be populated during integration]

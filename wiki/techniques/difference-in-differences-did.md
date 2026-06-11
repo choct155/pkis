@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- average-treatment-effect
 component_scores:
   alternatives: null
   conditions: null
@@ -31,6 +33,10 @@ tags:
 - policy-evaluation
 title: Difference-in-Differences (DiD)
 understanding: 0
+uses:
+- parallel-trends
+- aiptw-double-ml
+- structural-causal-model
 ---
 
 ## Definition
@@ -52,4 +58,8 @@ DiD permits causal identification in the presence of time-invariant unobserved u
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[structural-causal-model]] — uses
+- [[aiptw-double-ml]] — uses: Same estimation machinery applies after reformulating DiD as an ATT adjustment problem on differenced outcomes
+- [[parallel-trends]] — uses: Parallel trends is the core identification assumption of DiD
+- [[average-treatment-effect]] — applies: DiD identifies the ATT under parallel trends
 [To be populated during integration]

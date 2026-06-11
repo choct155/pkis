@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+analogous-to:
+- masked-language-modeling
 component_scores:
   alternatives: null
   conditions: null
@@ -9,6 +11,8 @@ component_scores:
   implementation: null
   operational_mechanism: null
   principled_mechanism: null
+contrasts-with:
+- contrastive-representation-learning
 coverage: 1
 date_created: '2026-06-11'
 date_updated: '2026-06-11'
@@ -16,7 +20,11 @@ domain:
 - machine-learning
 - computer-vision
 - self-supervised-learning
+extends:
+- autoencoder
 id: pkis:technique:masked-autoencoder
+instantiates:
+- self-supervised-learning
 knowledge_type: technique
 maturity: evolving
 needs_canonical_source: false
@@ -31,6 +39,8 @@ tags:
 - denoising
 title: Masked Autoencoder (MAE)
 understanding: 0
+uses:
+- transformer-attention-mechanisms
 ---
 
 ## Definition
@@ -47,4 +57,9 @@ MAE achieves state-of-the-art ImageNet fine-tuned accuracy without labels or com
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[contrastive-representation-learning]] — contrasts-with: MAE uses reconstruction rather than contrastive objective
+- [[self-supervised-learning]] — instantiates
+- [[transformer-attention-mechanisms]] — uses
+- [[masked-language-modeling]] — analogous-to
+- [[autoencoder]] — extends
 [To be populated during integration]

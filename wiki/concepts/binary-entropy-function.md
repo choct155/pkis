@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- binomial-distribution
 component_scores:
   application: null
   boundary: null
@@ -23,12 +25,16 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - murphy-pml1-intro-ch06
+specializes:
+- entropy
 tags:
 - entropy
 - bernoulli
 - binary
 title: Binary Entropy Function
 understanding: 0
+uses:
+- fanos-inequality
 ---
 
 ## Definition
@@ -43,4 +49,7 @@ Serves as the canonical one-dimensional illustration of entropy: it is symmetric
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[binomial-distribution]] — applies
+- [[fanos-inequality]] — uses
+- [[entropy]] — specializes
 [To be populated during integration]

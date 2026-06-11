@@ -1,6 +1,9 @@
 ---
 aliases: []
 also_type: []
+applies:
+- neural-networks
+- convolutional-neural-networks
 component_scores:
   application: null
   boundary: null
@@ -24,6 +27,8 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - murphy-pml2-advanced-ch33
+specializes:
+- post-hoc-explanation
 tags:
 - saliency
 - attribution
@@ -33,6 +38,9 @@ tags:
 - local-explanation
 title: Saliency Map (Attribution Map)
 understanding: 0
+uses:
+- explanation-fidelity
+- gradient-and-jacobian
 ---
 
 ## Definition
@@ -52,4 +60,9 @@ Saliency maps are the dominant interpretability method for image, audio, and tex
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[gradient-and-jacobian]] — uses: Gradient-based saliency maps are computed as the Jacobian of the output w.r.t. input.
+- [[explanation-fidelity]] — uses
+- [[convolutional-neural-networks]] — applies
+- [[neural-networks]] — applies: Gradient-based saliency maps are computed with respect to a neural network's input.
+- [[post-hoc-explanation]] — specializes
 [To be populated during integration]

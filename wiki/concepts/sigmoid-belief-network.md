@@ -18,9 +18,13 @@ domain:
 - probabilistic-graphical-models
 - generative-models
 id: pkis:concept:sigmoid-belief-network
+instantiates:
+- directed-graphical-models
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- deep-belief-network
 related_concepts: []
 sources:
 - goodfellow-deeplearning-ch20
@@ -31,6 +35,8 @@ tags:
 - historical
 title: Sigmoid Belief Network
 understanding: 0
+uses:
+- amortized-inference
 ---
 
 ## Definition
@@ -45,4 +51,7 @@ Sigmoid belief networks are among the earliest deep directed generative models a
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[amortized-inference]] — uses: Helmholtz machine / recognition network provides approximate inference.
+- [[deep-belief-network]] — prerequisite-of: Understanding SBNs clarifies the directed part of DBNs.
+- [[directed-graphical-models]] — instantiates
 [To be populated during integration]

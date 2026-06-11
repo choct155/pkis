@@ -22,6 +22,8 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - murphy-pml1-intro-ch16
+specializes:
+- distribution-shift
 tags:
 - OOD
 - novelty-detection
@@ -30,6 +32,9 @@ tags:
 - few-shot
 title: Open-Set Recognition and Novelty Detection
 understanding: 0
+uses:
+- knn-classifier
+- deep-metric-learning
 ---
 
 ## Definition
@@ -47,4 +52,7 @@ Closed-set classifiers assign high confidence to any input, including out-of-dis
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[deep-metric-learning]] — uses
+- [[knn-classifier]] — uses
+- [[distribution-shift]] — specializes: OOD detection is a form of distribution shift detection
 [To be populated during integration]

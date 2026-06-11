@@ -9,6 +9,8 @@ component_scores:
   implementation: null
   operational_mechanism: null
   principled_mechanism: null
+contrasts-with:
+- tangent-propagation
 coverage: 1
 date_created: '2026-06-11'
 date_updated: '2026-06-11'
@@ -16,12 +18,16 @@ domain:
 - machine-learning
 - computer-vision
 id: pkis:technique:convolutional-neural-network-architecture
+instantiates:
+- convolutional-neural-networks
 knowledge_type: technique
 maturity: evolving
 needs_canonical_source: false
 related_concepts: []
 sources:
 - bishop-prml-ch05
+specializes:
+- feed-forward-neural-network
 tags:
 - CNN
 - translation-invariance
@@ -29,6 +35,8 @@ tags:
 - image-recognition
 title: Convolutional Neural Network
 understanding: 0
+uses:
+- error-backpropagation
 ---
 
 ## Definition
@@ -49,4 +57,8 @@ Dramatically reduces parameter count vs. fully connected networks on image data,
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[error-backpropagation]] — uses
+- [[tangent-propagation]] — contrasts-with
+- [[feed-forward-neural-network]] — specializes
+- [[convolutional-neural-networks]] — instantiates
 [To be populated during integration]

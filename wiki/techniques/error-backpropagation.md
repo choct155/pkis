@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- feed-forward-neural-network
 component_scores:
   alternatives: null
   conditions: null
@@ -15,13 +17,21 @@ date_updated: '2026-06-11'
 domain:
 - machine-learning
 - numerical-methods
+extends:
+- hessian-matrix
 id: pkis:technique:error-backpropagation
+instantiates:
+- backpropagation
 knowledge_type: technique
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- gradient-descent
 related_concepts: []
 sources:
 - bishop-prml-ch05
+specializes:
+- automatic-differentiation
 tags:
 - gradient
 - chain-rule
@@ -29,6 +39,8 @@ tags:
 - automatic-differentiation
 title: Error Backpropagation
 understanding: 0
+uses:
+- gradient-and-jacobian
 ---
 
 ## Definition
@@ -53,4 +65,10 @@ Backpropagation is the algorithmic foundation of virtually all neural network tr
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[feed-forward-neural-network]] — applies
+- [[gradient-and-jacobian]] — uses
+- [[hessian-matrix]] — extends
+- [[gradient-descent]] — prerequisite-of
+- [[automatic-differentiation]] — specializes
+- [[backpropagation]] — instantiates
 [To be populated during integration]

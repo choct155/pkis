@@ -15,6 +15,8 @@ date_created: '2026-06-11'
 date_updated: '2026-06-11'
 domain:
 - deep-learning
+extends:
+- convolution-operation-nn
 id: pkis:concept:zero-padding-cnn
 knowledge_type: concept
 maturity: evolving
@@ -30,6 +32,8 @@ tags:
 - spatial dimensions
 title: Zero Padding
 understanding: 0
+uses:
+- strided-convolution
 ---
 
 ## Definition
@@ -47,4 +51,6 @@ Without padding, repeated convolutions rapidly erode spatial dimensions, limitin
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[strided-convolution]] — uses
+- [[convolution-operation-nn]] — extends
 [To be populated during integration]

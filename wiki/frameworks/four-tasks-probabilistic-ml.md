@@ -29,6 +29,13 @@ tags:
 - taxonomy
 title: 'Four Tasks of Probabilistic ML: Prediction, Generation, Discovery, Control'
 understanding: 0
+uses:
+- supervised-learning
+- unsupervised-learning
+- generative-adversarial-network
+- latent-structure-discovery
+- decision-theory-foundations
+- reinforcement-learning
 ---
 
 ## Definition
@@ -50,4 +57,10 @@ Many ML papers conflate these tasks or borrow inappropriate methods from one reg
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[reinforcement-learning]] — uses
+- [[decision-theory-foundations]] — uses
+- [[latent-structure-discovery]] — uses
+- [[generative-adversarial-network]] — uses
+- [[unsupervised-learning]] — uses
+- [[supervised-learning]] — uses
 [To be populated during integration]

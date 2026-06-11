@@ -7,6 +7,9 @@ component_scores:
   limitations: null
   proof_sketch: null
   statement: null
+contrasts-with:
+- vc-dimension
+- curse-of-dimensionality
 coverage: 1
 date_created: '2026-06-11'
 date_updated: '2026-06-11'
@@ -29,6 +32,9 @@ tags:
 - vc-theory
 title: Exponential Regions from Distributed Binary Features
 understanding: 0
+uses:
+- distributed-representation
+- linear-separability
 ---
 
 ## Definition
@@ -43,4 +49,8 @@ The result gives a precise geometric justification for the statistical efficienc
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[linear-separability]] — uses
+- [[curse-of-dimensionality]] — contrasts-with
+- [[vc-dimension]] — contrasts-with: VC dimension remains O(w log w) despite exponential region count
+- [[distributed-representation]] — uses
 [To be populated during integration]

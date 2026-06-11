@@ -14,7 +14,12 @@ date_updated: '2026-06-11'
 domain:
 - machine-learning
 - statistics
+extends:
+- dirichlet-process
+- dirichlet-process-mixture-model
 id: pkis:framework:hierarchical-dirichlet-process
+instantiates:
+- hierarchical-bayesian-models
 knowledge_type: framework
 maturity: evolving
 needs_canonical_source: false
@@ -45,4 +50,7 @@ The HDP is the foundation of the HDP-LDA (infinite LDA) topic model, where the n
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[dirichlet-process-mixture-model]] — extends
+- [[hierarchical-bayesian-models]] — instantiates
+- [[dirichlet-process]] — extends
 [To be populated during integration]

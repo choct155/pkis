@@ -1,6 +1,9 @@
 ---
 aliases: []
 also_type: []
+applies:
+- reinforce
+- variational-inference
 component_scores:
   alternatives: null
   conditions: null
@@ -16,6 +19,8 @@ domain:
 - statistics
 - machine-learning
 - simulation
+extends:
+- monte-carlo-integration
 id: pkis:technique:control-variates
 knowledge_type: technique
 maturity: evolving
@@ -31,6 +36,8 @@ tags:
 - MC-efficiency
 title: Control Variates
 understanding: 0
+uses:
+- covariance-and-correlation
 ---
 
 ## Definition
@@ -53,4 +60,8 @@ If $\rho^2_{m,b}\approx 1$, variance is nearly eliminated.
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[covariance-and-correlation]] — uses
+- [[variational-inference]] — applies
+- [[reinforce]] — applies: Baseline in REINFORCE is a control variate
+- [[monte-carlo-integration]] — extends
 [To be populated during integration]

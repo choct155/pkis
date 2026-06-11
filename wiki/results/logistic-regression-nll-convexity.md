@@ -14,6 +14,8 @@ domain:
 - machine-learning
 - optimisation
 id: pkis:result:logistic-regression-nll-convexity
+instantiates:
+- convex-set-and-function
 knowledge_type: result
 maturity: evolving
 needs_canonical_source: false
@@ -28,6 +30,10 @@ tags:
 - logistic-regression
 title: Convexity of Logistic Regression NLL
 understanding: 0
+uses:
+- hessian-matrix
+- maximum-likelihood-estimation
+- regularization
 ---
 
 ## Definition
@@ -44,4 +50,8 @@ Convexity guarantees that gradient-based optimisers find the unique global minim
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[regularization]] — uses
+- [[maximum-likelihood-estimation]] — uses
+- [[hessian-matrix]] — uses
+- [[convex-set-and-function]] — instantiates
 [To be populated during integration]

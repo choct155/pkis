@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- transformer-attention-mechanisms
 component_scores:
   alternatives: null
   conditions: null
@@ -23,6 +25,8 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - murphy-pml1-intro-ch19
+specializes:
+- transfer-learning-fine-tuning
 tags:
 - parameter-efficient
 - fine-tuning
@@ -31,6 +35,8 @@ tags:
 - low-rank
 title: Adapter Modules
 understanding: 0
+uses:
+- low-rank-approximation
 ---
 
 ## Definition
@@ -47,4 +53,7 @@ Adapters enable **parameter-efficient fine-tuning**: only ~1–10% of original p
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[transformer-attention-mechanisms]] — applies
+- [[low-rank-approximation]] — uses: Series and parallel adapter perturbations are low-rank modifications to convolutional filters.
+- [[transfer-learning-fine-tuning]] — specializes: Adapters are parameter-efficient fine-tuning: backbone frozen, only small bottleneck modules trained.
 [To be populated during integration]

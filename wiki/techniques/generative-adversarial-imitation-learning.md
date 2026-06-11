@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- imitation-learning
 component_scores:
   alternatives: null
   conditions: null
@@ -9,6 +11,8 @@ component_scores:
   implementation: null
   operational_mechanism: null
   principled_mechanism: null
+contrasts-with:
+- inverse-reinforcement-learning
 coverage: 1
 date_created: '2026-06-11'
 date_updated: '2026-06-11'
@@ -17,6 +21,8 @@ domain:
 - imitation-learning
 - machine-learning
 id: pkis:technique:generative-adversarial-imitation-learning
+instantiates:
+- generative-adversarial-network-framework
 knowledge_type: technique
 maturity: evolving
 needs_canonical_source: false
@@ -31,6 +37,8 @@ tags:
 - occupancy-measure
 title: Generative Adversarial Imitation Learning (GAIL)
 understanding: 0
+uses:
+- f-divergence
 ---
 
 ## Definition
@@ -45,4 +53,8 @@ GAIL avoids the compounding errors of behavioural cloning and bypasses the ill-p
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[f-divergence]] — uses
+- [[inverse-reinforcement-learning]] — contrasts-with: IRL explicitly recovers a reward; GAIL uses a discriminator as an implicit reward.
+- [[generative-adversarial-network-framework]] — instantiates
+- [[imitation-learning]] — applies
 [To be populated during integration]

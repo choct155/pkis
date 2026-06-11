@@ -10,6 +10,9 @@ component_scores:
   prerequisites: null
   scope: null
   transfer: null
+contrasts-with:
+- bayesian-model-averaging
+- mixture-models
 coverage: 1
 date_created: '2026-06-11'
 date_updated: '2026-06-11'
@@ -32,6 +35,9 @@ tags:
 - model-selection
 title: Bayesian Model Averaging vs. Model Combination
 understanding: 0
+uses:
+- latent-variable-models
+- marginalization
 ---
 
 ## Definition
@@ -46,4 +52,8 @@ The distinction is subtle but operationally critical: BMA is not an ensemble —
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[marginalization]] — uses
+- [[latent-variable-models]] — uses
+- [[mixture-models]] — contrasts-with
+- [[bayesian-model-averaging]] — contrasts-with
 [To be populated during integration]

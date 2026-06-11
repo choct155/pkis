@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+analogous-to:
+- elbo
 component_scores:
   application: null
   boundary: null
@@ -17,6 +19,8 @@ domain:
 - information-theory
 - statistics
 - machine-learning
+generalizes:
+- kl-divergence
 id: pkis:concept:f-divergence
 knowledge_type: concept
 maturity: evolving
@@ -31,6 +35,8 @@ tags:
 - f-GAN
 title: f-Divergence
 understanding: 0
+uses:
+- convex-conjugate
 ---
 
 ## Definition
@@ -47,4 +53,7 @@ f-Divergences unify a large family of distributional discrepancies under a singl
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[elbo]] — analogous-to: Both use variational lower bounds to convert intractable objectives into tractable optimisation problems.
+- [[convex-conjugate]] — uses: The variational lower bound uses the Fenchel conjugate f† to replace the density ratio with a tractable supremum.
+- [[kl-divergence]] — generalizes
 [To be populated during integration]

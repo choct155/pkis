@@ -18,6 +18,9 @@ domain:
 - computer-vision
 - deep-learning
 id: pkis:concept:gabor-function
+instantiates:
+- feature-detection-vision
+- convolution-operation-nn
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
@@ -32,6 +35,8 @@ tags:
 - feature detection
 title: Gabor Function (Neuroscience / Vision)
 understanding: 0
+uses:
+- simple-cells-complex-cells-v1
 ---
 
 ## Definition
@@ -51,4 +56,7 @@ $\alpha$ — amplitude; $\beta_x,\beta_y$ — Gaussian spread; $f$ — spatial f
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[convolution-operation-nn]] — instantiates: Gabor functions describe V1 simple-cell kernels; first-layer CNN kernels learn Gabor-like shapes.
+- [[feature-detection-vision]] — instantiates
+- [[simple-cells-complex-cells-v1]] — uses
 [To be populated during integration]

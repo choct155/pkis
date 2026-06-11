@@ -10,6 +10,8 @@ component_scores:
   prerequisites: null
   scope: null
   transfer: null
+contrasts-with:
+- gibbs-sampler
 coverage: 1
 date_created: '2026-06-11'
 date_updated: '2026-06-11'
@@ -21,6 +23,8 @@ id: pkis:concept:energy-barrier-mcmc
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- stationary-distribution
 related_concepts: []
 sources:
 - goodfellow-deeplearning-ch17
@@ -49,4 +53,6 @@ Poor mixing causes biased Monte Carlo estimates of model statistics, unreliable 
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[stationary-distribution]] — prerequisite-of: barriers prevent convergence to stationary distribution in practice
+- [[gibbs-sampler]] — contrasts-with: Gibbs sampling is exponentially slowed by energy barriers
 [To be populated during integration]

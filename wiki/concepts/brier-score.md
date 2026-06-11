@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- calibration
 component_scores:
   application: null
   boundary: null
@@ -10,6 +12,9 @@ component_scores:
   prerequisites: null
   scope: null
   transfer: null
+contrasts-with:
+- cross-entropy-loss
+- kl-divergence
 coverage: 1
 date_created: '2026-06-11'
 date_updated: '2026-06-11'
@@ -18,6 +23,8 @@ domain:
 - machine-learning
 - meteorology
 id: pkis:concept:brier-score
+instantiates:
+- scoring-rules
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
@@ -33,6 +40,8 @@ tags:
 - squared-loss
 title: Brier Score
 understanding: 0
+uses:
+- calibration
 ---
 
 ## Definition
@@ -47,4 +56,9 @@ The Brier score is a **proper scoring rule** (minimised iff $q=p$), and a mean-s
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[calibration]] — applies
+- [[kl-divergence]] — contrasts-with
+- [[calibration]] — uses
+- [[scoring-rules]] — instantiates
+- [[cross-entropy-loss]] — contrasts-with
 [To be populated during integration]

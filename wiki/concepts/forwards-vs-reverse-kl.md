@@ -1,6 +1,13 @@
 ---
 aliases: []
 also_type: []
+analogous-to:
+- forward-vs-backward-view
+applies:
+- variational-inference
+- maximum-likelihood-estimation
+- elbo
+- mean-field-approximation
 component_scores:
   application: null
   boundary: null
@@ -24,6 +31,8 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - murphy-pml2-advanced-ch05
+specializes:
+- kl-divergence
 tags:
 - kl-divergence
 - variational-inference
@@ -33,6 +42,8 @@ tags:
 - approximate-inference
 title: Forwards vs Reverse KL (M-projection vs I-projection)
 understanding: 0
+uses:
+- exponential-family
 ---
 
 ## Definition
@@ -52,4 +63,11 @@ The choice between forwards and reverse KL fundamentally shapes the behavior of 
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[forward-vs-backward-view]] — analogous-to: Both describe dual perspectives in learning algorithms
+- [[mean-field-approximation]] — applies: Mean-field VI uses reverse KL
+- [[exponential-family]] — uses: Moment projection / moment matching applies when q is exponential family
+- [[elbo]] — applies: ELBO arises from reverse KL minimization
+- [[maximum-likelihood-estimation]] — applies: MLE corresponds to minimizing forwards KL to empirical distribution
+- [[variational-inference]] — applies: Reverse KL minimization is the standard VI objective
+- [[kl-divergence]] — specializes
 [To be populated during integration]

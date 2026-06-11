@@ -1,6 +1,9 @@
 ---
 aliases: []
 also_type: []
+analogous-to:
+- bias-variance-tradeoff
+- regularization
 component_scores:
   application: null
   boundary: null
@@ -18,6 +21,8 @@ domain:
 - signal-processing
 - machine-learning
 id: pkis:concept:signal-to-noise-ratio-shrinkage
+instantiates:
+- partial-pooling-shrinkage
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
@@ -31,6 +36,8 @@ tags:
 - regularization
 title: Signal-to-Noise Ratio (Bayesian Shrinkage)
 understanding: 0
+uses:
+- bayes-rule-for-gaussians
 ---
 
 ## Definition
@@ -46,4 +53,8 @@ When SNR is high (strong signal or tight prior), the posterior mean stays close 
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[partial-pooling-shrinkage]] — instantiates
+- [[regularization]] — analogous-to
+- [[bias-variance-tradeoff]] — analogous-to
+- [[bayes-rule-for-gaussians]] — uses
 [To be populated during integration]

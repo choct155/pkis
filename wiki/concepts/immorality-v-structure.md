@@ -1,6 +1,10 @@
 ---
 aliases: []
 also_type: []
+analogous-to:
+- collider-bias
+applies:
+- causal-discovery
 component_scores:
   application: null
   boundary: null
@@ -17,6 +21,8 @@ domain:
 - probabilistic-graphical-models
 - causal-inference
 id: pkis:concept:immorality-v-structure
+instantiates:
+- explaining-away
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
@@ -31,6 +37,8 @@ tags:
 - causal-discovery
 title: Immorality (V-Structure in DAGs)
 understanding: 0
+uses:
+- d-separation
 ---
 
 ## Definition
@@ -43,4 +51,8 @@ Immoralities are the substructures that make directed graphical models strictly 
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[causal-discovery]] — applies
+- [[collider-bias]] — analogous-to
+- [[explaining-away]] — instantiates
+- [[d-separation]] — uses
 [To be populated during integration]

@@ -16,13 +16,20 @@ date_updated: '2026-06-11'
 domain:
 - statistics
 - decision theory
+generalizes:
+- maximum-a-posteriori-estimation-map
+- bayesian-point-estimation
 id: pkis:concept:posterior-risk
+instantiates:
+- statistical-decision-theory
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
 related_concepts: []
 sources:
 - murphy-pml2-advanced-ch34
+specializes:
+- expected-loss
 tags:
 - posterior
 - loss function
@@ -30,6 +37,8 @@ tags:
 - risk
 title: Posterior Risk (Posterior Expected Loss)
 understanding: 0
+uses:
+- bayesian-inference
 ---
 
 ## Definition
@@ -44,4 +53,9 @@ Provides a constructive recipe for any decision problem: compute the posterior, 
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[bayesian-point-estimation]] — generalizes
+- [[maximum-a-posteriori-estimation-map]] — generalizes
+- [[expected-loss]] — specializes
+- [[bayesian-inference]] — uses
+- [[statistical-decision-theory]] — instantiates
 [To be populated during integration]

@@ -1,6 +1,11 @@
 ---
 aliases: []
 also_type: []
+analogous-to:
+- causal-discovery
+applies:
+- probabilistic-graphical-models
+- bayesian-networks
 component_scores:
   application: null
   boundary: null
@@ -10,6 +15,8 @@ component_scores:
   prerequisites: null
   scope: null
   transfer: null
+contrasts-with:
+- latent-variable-models
 coverage: 1
 date_created: '2026-06-11'
 date_updated: '2026-06-11'
@@ -31,6 +38,8 @@ tags:
 - score-function
 title: Structure Learning
 understanding: 0
+uses:
+- information-criteria
 ---
 
 ## Definition
@@ -45,4 +54,9 @@ Learning graph structure directly from data can discover conditional independenc
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[bayesian-networks]] — applies
+- [[latent-variable-models]] — contrasts-with
+- [[information-criteria]] — uses
+- [[causal-discovery]] — analogous-to
+- [[probabilistic-graphical-models]] — applies
 [To be populated during integration]

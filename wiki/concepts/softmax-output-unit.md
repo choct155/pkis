@@ -17,6 +17,8 @@ domain:
 - machine-learning
 - deep-learning
 id: pkis:concept:softmax-output-unit
+instantiates:
+- ml-cost-design-neural-networks
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
@@ -31,6 +33,10 @@ tags:
 - cross-entropy
 title: Softmax Output Unit
 understanding: 0
+uses:
+- cross-entropy-loss
+- logit-neural-network
+- maximum-likelihood-estimation
 ---
 
 ## Definition
@@ -45,4 +51,8 @@ Paired with the cross-entropy loss, softmax avoids the gradient-vanishing caused
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[maximum-likelihood-estimation]] — uses
+- [[logit-neural-network]] — uses
+- [[ml-cost-design-neural-networks]] — instantiates
+- [[cross-entropy-loss]] — uses
 [To be populated during integration]

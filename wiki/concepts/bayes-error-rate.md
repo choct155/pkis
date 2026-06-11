@@ -10,6 +10,8 @@ component_scores:
   prerequisites: null
   scope: null
   transfer: null
+contrasts-with:
+- overfitting-and-underfitting
 coverage: 1
 date_created: '2026-06-11'
 date_updated: '2026-06-11'
@@ -17,6 +19,8 @@ domain:
 - machine-learning
 - statistics
 - learning-theory
+extends:
+- bias-variance-tradeoff
 id: pkis:concept:bayes-error-rate
 knowledge_type: concept
 maturity: evolving
@@ -30,6 +34,8 @@ tags:
 - learning-theory
 title: Bayes Error Rate
 understanding: 0
+uses:
+- cover-hart-theorem
 ---
 
 ## Definition
@@ -49,4 +55,7 @@ Human performance on perceptual tasks is often used as a practical upper bound o
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[overfitting-and-underfitting]] — contrasts-with
+- [[cover-hart-theorem]] — uses: Cover-Hart theorem bounds the nearest-neighbour error relative to Bayes error
+- [[bias-variance-tradeoff]] — extends: Bayes error is the irreducible component not captured by bias-variance decomposition
 [To be populated during integration]

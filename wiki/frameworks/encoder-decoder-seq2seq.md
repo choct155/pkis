@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- machine-translation
 component_scores:
   application: null
   limits: null
@@ -16,9 +18,13 @@ domain:
 - sequence-modeling
 - NLP
 id: pkis:framework:encoder-decoder-seq2seq
+instantiates:
+- sequence-to-sequence-model
 knowledge_type: framework
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- attention-mechanism
 related_concepts: []
 sources:
 - goodfellow-deeplearning-ch10
@@ -32,6 +38,10 @@ tags:
 - seq2seq
 title: Encoder-Decoder (Sequence-to-Sequence) Architecture
 understanding: 0
+uses:
+- recurrent-neural-network
+- long-short-term-memory
+- long-short-term-memory-lstm
 ---
 
 ## Definition
@@ -48,4 +58,10 @@ Introduced by Cho et al. (2014) and Sutskever et al. (2014), seq2seq became the 
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[attention-mechanism]] — prerequisite-of
+- [[long-short-term-memory-lstm]] — uses
+- [[long-short-term-memory]] — uses: LSTM cells are commonly used within encoder and decoder RNNs
+- [[sequence-to-sequence-model]] — instantiates
+- [[machine-translation]] — applies
+- [[recurrent-neural-network]] — uses
 [To be populated during integration]

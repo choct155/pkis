@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- distribution-shift
 component_scores:
   alternatives: null
   conditions: null
@@ -18,6 +20,8 @@ domain:
 - nlp
 - computer-vision
 id: pkis:technique:transfer-learning-fine-tuning
+instantiates:
+- pretraining-and-fine-tuning
 knowledge_type: technique
 maturity: evolving
 needs_canonical_source: false
@@ -32,6 +36,9 @@ tags:
 - domain-shift
 title: Transfer Learning and Fine-Tuning
 understanding: 0
+uses:
+- regularization
+- data-augmentation
 ---
 
 ## Definition
@@ -47,4 +54,8 @@ Supervised pre-training (ImageNet → CNNs), self-supervised pre-training (maske
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[data-augmentation]] — uses: Pre-training benefits greatly from data augmentation for producing diverse views.
+- [[regularization]] — uses: Frozen or low-lr backbone prevents divergence from pretrained features.
+- [[distribution-shift]] — applies: Domain gap between p(x,y) and q(x,y) motivates the need for fine-tuning.
+- [[pretraining-and-fine-tuning]] — instantiates: Chapter provides formal two-phase framework: source pre-training then target fine-tuning.
 [To be populated during integration]

@@ -1,6 +1,11 @@
 ---
 aliases: []
 also_type: []
+applies:
+- laplace-distribution
+- t-distribution
+- blind-source-separation
+- robust-inference
 component_scores:
   application: null
   boundary: null
@@ -10,6 +15,8 @@ component_scores:
   prerequisites: null
   scope: null
   transfer: null
+contrasts-with:
+- gaussian-distribution
 coverage: 1
 date_created: '2026-06-11'
 date_updated: '2026-06-11'
@@ -47,4 +54,9 @@ Kurtosis governs outlier probability and is critical in robust statistics and IC
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[robust-inference]] — applies
+- [[blind-source-separation]] — applies
+- [[t-distribution]] — applies
+- [[laplace-distribution]] — applies
+- [[gaussian-distribution]] — contrasts-with
 [To be populated during integration]

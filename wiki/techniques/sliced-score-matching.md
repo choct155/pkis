@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+analogous-to:
+- noise-contrastive-estimation
 component_scores:
   alternatives: null
   conditions: null
@@ -15,6 +17,8 @@ date_updated: '2026-06-11'
 domain:
 - machine-learning
 - probabilistic-modeling
+extends:
+- score-matching
 id: pkis:technique:sliced-score-matching
 knowledge_type: technique
 maturity: evolving
@@ -43,4 +47,6 @@ SSM is a consistent estimator of the data distribution (unlike DSM) and computat
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[noise-contrastive-estimation]] — analogous-to: NCE with small perturbation vectors recovers SSM up to o(||v||²) terms
+- [[score-matching]] — extends: SSM reduces Jacobian trace cost from O(d²) to O(d) via random projections
 [To be populated during integration]

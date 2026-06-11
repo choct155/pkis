@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- simultaneous-localization-and-mapping-slam
 component_scores:
   alternatives: null
   conditions: null
@@ -16,6 +18,8 @@ domain:
 - robotics
 - machine-learning
 id: pkis:technique:fastslam
+instantiates:
+- rao-blackwellized-particle-filter
 knowledge_type: technique
 maturity: evolving
 needs_canonical_source: false
@@ -31,6 +35,8 @@ tags:
 - landmark-map
 title: FastSLAM
 understanding: 0
+uses:
+- kalman-filter
 ---
 
 ## Definition
@@ -46,4 +52,7 @@ FastSLAM overcame the $O(K^3)$ bottleneck of the monolithic Kalman-filter SLAM a
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[kalman-filter]] — uses
+- [[simultaneous-localization-and-mapping-slam]] — applies
+- [[rao-blackwellized-particle-filter]] — instantiates
 [To be populated during integration]

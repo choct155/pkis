@@ -17,10 +17,17 @@ domain:
 - statistics
 - machine-learning
 - probability-theory
+generalizes:
+- ridge-regression
 id: pkis:concept:prior-likelihood-posterior
+instantiates:
+- bayesian-inference
+- maximum-a-posteriori-estimation-map
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- bayesian-predictive-marginalisation
 related_concepts: []
 sources:
 - bishop-prml-ch01
@@ -33,6 +40,12 @@ tags:
 - regularisation
 title: Prior, Likelihood, and Posterior in Bayesian Inference
 understanding: 0
+uses:
+- likelihood-function
+- map-regression-as-regularized-least-squares
+- conjugate-prior
+- noninformative-prior
+- hyperparameter
 ---
 
 ## Definition
@@ -50,4 +63,13 @@ Frequentists treat $\mathbf{w}$ as fixed and reason about hypothetical repeated 
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[maximum-a-posteriori-estimation-map]] — instantiates
+- [[hyperparameter]] — uses
+- [[noninformative-prior]] — uses
+- [[conjugate-prior]] — uses
+- [[bayesian-predictive-marginalisation]] — prerequisite-of
+- [[map-regression-as-regularized-least-squares]] — uses
+- [[ridge-regression]] — generalizes
+- [[likelihood-function]] — uses
+- [[bayesian-inference]] — instantiates
 [To be populated during integration]

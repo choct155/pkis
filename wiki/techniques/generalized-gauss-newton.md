@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+analogous-to:
+- fisher-information
 component_scores:
   alternatives: null
   conditions: null
@@ -16,6 +18,8 @@ domain:
 - optimisation
 - bayesian-inference
 - deep-learning
+extends:
+- laplace-approximation
 id: pkis:technique:generalized-gauss-newton
 knowledge_type: technique
 maturity: evolving
@@ -31,6 +35,9 @@ tags:
 - KFAC
 title: Generalized Gauss-Newton (GGN) Approximation
 understanding: 0
+uses:
+- hessian-matrix
+- gradient-and-jacobian
 ---
 
 ## Definition
@@ -45,4 +52,8 @@ The true Hessian of a DNN log-likelihood is non-convex and may be indefinite, ma
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[fisher-information]] — analogous-to: GGN equals the empirical Fisher for canonical exponential-family likelihoods
+- [[gradient-and-jacobian]] — uses
+- [[hessian-matrix]] — uses
+- [[laplace-approximation]] — extends: GGN replaces the full Hessian in the Laplace approximation with a PSD Jacobian-based surrogate
 [To be populated during integration]

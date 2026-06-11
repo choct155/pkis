@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+analogous-to:
+- gp-posterior-inference
 component_scores:
   alternatives: null
   conditions: null
@@ -15,7 +17,13 @@ date_updated: '2026-06-11'
 domain:
 - machine-learning
 - statistics
+extends:
+- ridge-regression
+generalizes:
+- ridge-regression
 id: pkis:technique:kernel-ridge-regression
+instantiates:
+- representer-theorem
 knowledge_type: technique
 maturity: evolving
 needs_canonical_source: false
@@ -31,6 +39,13 @@ tags:
 - nonparametric
 title: Kernel Ridge Regression
 understanding: 0
+uses:
+- mercer-kernel
+- the-kernel-trick
+- gram-matrix
+- reproducing-kernel-hilbert-space
+- representer-theorem
+- regularization
 ---
 
 ## Definition
@@ -45,4 +60,14 @@ Kernel ridge regression unifies nonparametric regression with regularised linear
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[regularization]] — uses
+- [[gp-posterior-inference]] — analogous-to
+- [[ridge-regression]] — generalizes
+- [[representer-theorem]] — uses
+- [[reproducing-kernel-hilbert-space]] — uses
+- [[gram-matrix]] — uses
+- [[representer-theorem]] — instantiates
+- [[ridge-regression]] — extends
+- [[the-kernel-trick]] — uses
+- [[mercer-kernel]] — uses
 [To be populated during integration]

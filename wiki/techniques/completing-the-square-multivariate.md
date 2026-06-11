@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- gaussian-distribution
 component_scores:
   alternatives: null
   conditions: null
@@ -20,6 +22,9 @@ id: pkis:technique:completing-the-square-multivariate
 knowledge_type: technique
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- bayesian-linear-regression
+- bayes-rule-for-gaussians
 related_concepts: []
 sources:
 - murphy-pml1-intro-ch03
@@ -44,4 +49,7 @@ Completing the square is the key algebraic trick for deriving closed-form Gaussi
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[bayes-rule-for-gaussians]] — prerequisite-of
+- [[bayesian-linear-regression]] — prerequisite-of
+- [[gaussian-distribution]] — applies
 [To be populated during integration]

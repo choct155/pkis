@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+analogous-to:
+- pac-learning
 component_scores:
   alternatives: null
   conditions: null
@@ -9,6 +11,8 @@ component_scores:
   implementation: null
   operational_mechanism: null
   principled_mechanism: null
+contrasts-with:
+- credit-assignment-problem
 coverage: 1
 date_created: '2026-06-11'
 date_updated: '2026-06-11'
@@ -16,9 +20,13 @@ domain:
 - machine-learning
 - neural-networks
 id: pkis:technique:perceptron-algorithm
+instantiates:
+- perceptron-learning-algorithm
 knowledge_type: technique
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- multilayer-perceptron
 related_concepts: []
 sources:
 - bishop-prml-ch04
@@ -31,6 +39,9 @@ tags:
 - historical
 title: Perceptron Learning Algorithm
 understanding: 0
+uses:
+- linear-separability
+- stochastic-gradient-descent
 ---
 
 ## Definition
@@ -47,4 +58,10 @@ The perceptron is the historical origin of neural network learning and the credi
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[multilayer-perceptron]] — prerequisite-of
+- [[stochastic-gradient-descent]] — uses
+- [[pac-learning]] — analogous-to: Convergence theorem is an early finite-sample learnability result
+- [[credit-assignment-problem]] — contrasts-with: Perceptron avoids multi-layer credit assignment but limited to linear boundaries
+- [[linear-separability]] — uses
+- [[perceptron-learning-algorithm]] — instantiates
 [To be populated during integration]

@@ -20,6 +20,8 @@ id: pkis:concept:weight-degeneracy-sis
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- particle-filter
 related_concepts: []
 sources:
 - murphy-pml2-advanced-ch13
@@ -30,6 +32,8 @@ tags:
 - effective-sample-size
 title: Weight Degeneracy in Sequential Importance Sampling
 understanding: 0
+uses:
+- effective-sample-size
 ---
 
 ## Definition
@@ -46,4 +50,6 @@ Weight degeneracy is the fundamental failure mode motivating the resampling step
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[effective-sample-size]] — uses
+- [[particle-filter]] — prerequisite-of
 [To be populated during integration]

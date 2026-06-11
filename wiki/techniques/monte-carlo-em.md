@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- latent-variable-models
 component_scores:
   alternatives: null
   conditions: null
@@ -9,12 +11,16 @@ component_scores:
   implementation: null
   operational_mechanism: null
   principled_mechanism: null
+contrasts-with:
+- data-augmentation-algorithm
 coverage: 1
 date_created: '2026-06-11'
 date_updated: '2026-06-11'
 domain:
 - statistics
 - machine-learning
+extends:
+- em-algorithm
 id: pkis:technique:monte-carlo-em
 knowledge_type: technique
 maturity: evolving
@@ -29,6 +35,9 @@ tags:
 - maximum-likelihood
 title: Monte Carlo EM Algorithm
 understanding: 0
+uses:
+- monte-carlo-estimator
+- gibbs-sampling
 ---
 
 ## Definition
@@ -45,4 +54,9 @@ Monte Carlo EM extends maximum-likelihood learning to models where the posterior
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[gibbs-sampling]] — uses: Gibbs or other MCMC used to draw samples in the E-step
+- [[data-augmentation-algorithm]] — contrasts-with: MC-EM targets MLE/MAP; data augmentation targets full posterior
+- [[latent-variable-models]] — applies
+- [[monte-carlo-estimator]] — uses
+- [[em-algorithm]] — extends
 [To be populated during integration]

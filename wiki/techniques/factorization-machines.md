@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- cold-start-problem
 component_scores:
   alternatives: null
   conditions: null
@@ -9,12 +11,18 @@ component_scores:
   implementation: null
   operational_mechanism: null
   principled_mechanism: null
+contrasts-with:
+- multilayer-perceptron
 coverage: 1
 date_created: '2026-06-11'
 date_updated: '2026-06-11'
 domain:
 - machine-learning
 - recommender-systems
+extends:
+- linear-regression
+generalizes:
+- matrix-factorization-recommender
 id: pkis:technique:factorization-machines
 knowledge_type: technique
 maturity: evolving
@@ -44,6 +52,10 @@ reducing computation from $O(KD^2)$ to $O(KD)$ (or $O(K)$ for sparse one-hot inp
 FMs generalise matrix factorisation to arbitrary feature vectors, unifying CF and content-based approaches in one model. They naturally handle the cold-start problem by incorporating side information and are the linear core of deep FM and wide-and-deep architectures.
 
 ### Connections
+- [[multilayer-perceptron]] — contrasts-with: FM is the linear bilinear core; deep FM adds an MLP branch
+- [[linear-regression]] — extends
+- [[cold-start-problem]] — applies
+- [[matrix-factorization-recommender]] — generalizes
 When $\mathbf{x}$ contains only one-hot user and item encodings, the FM reduces to standard matrix factorisation. Deep FMs add an MLP branch to capture higher-order feature interactions.
 
 ## Reading Path

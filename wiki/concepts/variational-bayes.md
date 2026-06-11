@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- hierarchical-bayesian-models
 component_scores:
   application: null
   boundary: null
@@ -23,6 +25,8 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - murphy-pml2-advanced-ch10
+specializes:
+- variational-inference-framework
 tags:
 - variational-Bayes
 - parameter-posterior
@@ -30,6 +34,10 @@ tags:
 - CAVI
 title: Variational Bayes
 understanding: 0
+uses:
+- cavi
+- conjugate-prior
+- marginal-likelihood
 ---
 
 ## Definition
@@ -44,4 +52,9 @@ Variational Bayes provides a principled, computationally tractable route to full
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[marginal-likelihood]] — uses: Variational Bayes maximizes a lower bound on the marginal likelihood (ELBO) rather than the marginal likelihood directly.
+- [[conjugate-prior]] — uses: Conjugate priors allow CAVI updates in variational Bayes to be derived in closed form.
+- [[hierarchical-bayesian-models]] — applies
+- [[variational-inference-framework]] — specializes: Variational Bayes specializes VI to parameter posterior approximation in Bayesian models.
+- [[cavi]] — uses: Variational Bayes applies CAVI to iteratively update each parameter-group's variational distribution.
 [To be populated during integration]

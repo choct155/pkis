@@ -9,6 +9,8 @@ component_scores:
   implementation: null
   operational_mechanism: null
   principled_mechanism: null
+contrasts-with:
+- generative-adversarial-network-framework
 coverage: 1
 date_created: '2026-06-11'
 date_updated: '2026-06-11'
@@ -30,6 +32,9 @@ tags:
 - generative-model
 title: Maximum Mean Discrepancy (MMD) Training
 understanding: 0
+uses:
+- differentiable-generator-network
+- the-kernel-trick
 ---
 
 ## Definition
@@ -44,4 +49,7 @@ MMD-based training (used in generative moment matching networks) requires no dis
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[generative-adversarial-network-framework]] — contrasts-with: MMD requires no discriminator; GANs use a dynamically trained adversary.
+- [[the-kernel-trick]] — uses: MMD computes infinite-dimensional moment matching via kernel function.
+- [[differentiable-generator-network]] — uses
 [To be populated during integration]

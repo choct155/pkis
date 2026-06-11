@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- mixture-models
 component_scores:
   alternatives: null
   conditions: null
@@ -23,6 +25,8 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - murphy-pml2-advanced-ch12
+specializes:
+- gibbs-sampling
 tags:
 - mcmc
 - rao-blackwellisation
@@ -31,6 +35,10 @@ tags:
 - marginalisation
 title: Collapsed Gibbs Sampler
 understanding: 0
+uses:
+- marginalization
+- posterior-predictive-distribution
+- sufficient-statistics
 ---
 
 ## Definition
@@ -45,4 +53,9 @@ Sampling in a lower-dimensional space reduces variance (Rao–Blackwellisation) 
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[sufficient-statistics]] — uses
+- [[posterior-predictive-distribution]] — uses
+- [[mixture-models]] — applies
+- [[marginalization]] — uses
+- [[gibbs-sampling]] — specializes
 [To be populated during integration]

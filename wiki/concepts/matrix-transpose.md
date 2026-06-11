@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- tensor-multidimensional-array
 component_scores:
   application: null
   boundary: null
@@ -29,6 +31,9 @@ tags:
 - orthogonal
 title: Matrix Transpose
 understanding: 0
+uses:
+- orthogonality
+- linear-mapping
 ---
 
 ## Definition
@@ -45,4 +50,7 @@ Symmetric matrices satisfy $\mathbf{A} = \mathbf{A}^T$ and admit real eigendecom
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[linear-mapping]] — uses
+- [[orthogonality]] — uses
+- [[tensor-multidimensional-array]] — applies
 [To be populated during integration]

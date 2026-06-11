@@ -9,6 +9,8 @@ component_scores:
   implementation: null
   operational_mechanism: null
   principled_mechanism: null
+contrasts-with:
+- bayes-factor
 coverage: 1
 date_created: '2026-06-11'
 date_updated: '2026-06-11'
@@ -16,6 +18,8 @@ domain:
 - statistics
 - machine-learning
 id: pkis:technique:bayesian-t-test
+instantiates:
+- bayesian-inference
 knowledge_type: technique
 maturity: evolving
 needs_canonical_source: false
@@ -30,6 +34,10 @@ tags:
 - effect-size
 title: Bayesian t-test (Paired Classifier Comparison)
 understanding: 0
+uses:
+- region-of-practical-equivalence
+- t-distribution
+- noninformative-prior
 ---
 
 ## Definition
@@ -46,4 +54,9 @@ Paired testing removes shared difficulty across examples, substantially increasi
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[bayes-factor]] — contrasts-with
+- [[noninformative-prior]] — uses
+- [[bayesian-inference]] — instantiates
+- [[t-distribution]] — uses
+- [[region-of-practical-equivalence]] — uses
 [To be populated during integration]

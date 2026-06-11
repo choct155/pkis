@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- distribution-shift
 component_scores:
   application: null
   boundary: null
@@ -10,6 +12,8 @@ component_scores:
   prerequisites: null
   scope: null
   transfer: null
+contrasts-with:
+- adversarial-examples
 coverage: 1
 date_created: '2026-06-11'
 date_updated: '2026-06-11'
@@ -31,6 +35,11 @@ tags:
 - selective-prediction
 title: Out-of-Distribution Detection
 understanding: 0
+uses:
+- uncertainty-quantification
+- calibration
+- variational-autoencoder
+- kl-divergence
 ---
 
 ## Definition
@@ -46,4 +55,10 @@ For deep generative models, raw log-likelihood $\log p(x)$ is an unreliable OOD 
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[adversarial-examples]] — contrasts-with
+- [[kl-divergence]] — uses
+- [[variational-autoencoder]] — uses
+- [[calibration]] — uses
+- [[uncertainty-quantification]] — uses
+- [[distribution-shift]] — applies
 [To be populated during integration]

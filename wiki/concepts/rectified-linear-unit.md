@@ -1,6 +1,10 @@
 ---
 aliases: []
 also_type: []
+applies:
+- vanishing-gradient-problem
+- deep-learning
+- multilayer-perceptron
 component_scores:
   application: null
   boundary: null
@@ -22,6 +26,8 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - goodfellow-deeplearning-ch01
+specializes:
+- activation-functions
 tags:
 - activation-function
 - nonlinearity
@@ -47,4 +53,8 @@ The ReLU was influenced by neuroscience (half-wave rectification in neurons) but
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[multilayer-perceptron]] — applies
+- [[deep-learning]] — applies
+- [[vanishing-gradient-problem]] — applies: ReLU largely solves the vanishing gradient problem by maintaining unit gradient for positive inputs.
+- [[activation-functions]] — specializes
 [To be populated during integration]

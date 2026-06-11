@@ -1,6 +1,9 @@
 ---
 aliases: []
 also_type: []
+applies:
+- overfitting-and-underfitting
+- model-selection-problem
 component_scores:
   application: null
   limits: null
@@ -15,13 +18,22 @@ domain:
 - machine-learning
 - statistics
 - probability
+extends:
+- hierarchical-bayesian-models
+generalizes:
+- latent-variable-models
 id: pkis:framework:bayesian-nonparametric-models
+instantiates:
+- gaussian-process
+- dirichlet-process
 knowledge_type: framework
 maturity: evolving
 needs_canonical_source: false
 related_concepts: []
 sources:
 - murphy-pml2-advanced-ch31
+specializes:
+- bayesian-inference
 tags:
 - nonparametric
 - stochastic-process
@@ -30,6 +42,9 @@ tags:
 - infinite-dimensional
 title: Bayesian Nonparametric Models
 understanding: 0
+uses:
+- stochastic-process-as-prior
+- kolmogorov-extension-theorem
 ---
 
 ## Definition
@@ -44,4 +59,13 @@ BNP provides a principled, fully probabilistic alternative to model-selection pr
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[model-selection-problem]] — applies
+- [[overfitting-and-underfitting]] — applies
+- [[hierarchical-bayesian-models]] — extends
+- [[bayesian-inference]] — specializes
+- [[latent-variable-models]] — generalizes
+- [[kolmogorov-extension-theorem]] — uses
+- [[stochastic-process-as-prior]] — uses
+- [[dirichlet-process]] — instantiates
+- [[gaussian-process]] — instantiates
 [To be populated during integration]

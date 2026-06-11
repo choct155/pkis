@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+analogous-to:
+- independent-component-analysis
 component_scores:
   application: null
   boundary: null
@@ -18,12 +20,16 @@ domain:
 - representation-learning
 - generative-models
 id: pkis:concept:disentangled-representation-learning
+instantiates:
+- analysis-by-synthesis
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
 related_concepts: []
 sources:
 - murphy-pml2-advanced-ch32
+specializes:
+- latent-variable-models
 tags:
 - beta-VAE
 - identifiability
@@ -32,6 +38,9 @@ tags:
 - causal-representation-learning
 title: Disentangled Representation Learning
 understanding: 0
+uses:
+- variational-autoencoder
+- identifiability-of-mixtures
 ---
 
 ## Definition
@@ -48,4 +57,9 @@ Disentanglement is a key desideratum for representations that support systematic
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[analysis-by-synthesis]] — instantiates
+- [[independent-component-analysis]] — analogous-to
+- [[identifiability-of-mixtures]] — uses
+- [[variational-autoencoder]] — uses
+- [[latent-variable-models]] — specializes
 [To be populated during integration]

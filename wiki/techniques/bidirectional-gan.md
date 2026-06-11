@@ -9,6 +9,8 @@ component_scores:
   implementation: null
   operational_mechanism: null
   principled_mechanism: null
+contrasts-with:
+- variational-autoencoder
 coverage: 1
 date_created: '2026-06-11'
 date_updated: '2026-06-11'
@@ -16,6 +18,8 @@ domain:
 - machine-learning
 - deep-learning
 - generative-modeling
+extends:
+- generative-adversarial-network-framework
 id: pkis:technique:bidirectional-gan
 knowledge_type: technique
 maturity: evolving
@@ -31,6 +35,8 @@ tags:
 - BiGAN
 title: Bidirectional GAN (BiGAN)
 understanding: 0
+uses:
+- amortized-inference
 ---
 
 ## Definition
@@ -45,4 +51,7 @@ BiGAN simultaneously learns a generative model and an inference (encoding) netwo
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[amortized-inference]] — uses
+- [[variational-autoencoder]] — contrasts-with: BiGAN learns an encoder adversarially without a reconstruction loss; VAE uses ELBO.
+- [[generative-adversarial-network-framework]] — extends
 [To be populated during integration]

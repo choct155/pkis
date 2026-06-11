@@ -18,6 +18,9 @@ domain:
 - generative-models
 - variational-inference
 id: pkis:concept:variational-autoencoder-vae
+instantiates:
+- variational-inference
+- latent-variable-models
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
@@ -31,6 +34,12 @@ tags:
 - reparameterisation
 title: Variational Autoencoder (VAE)
 understanding: 0
+uses:
+- elbo
+- reparameterization-trick
+- differentiable-generator-network
+- kl-divergence
+- amortized-inference
 ---
 
 ## Definition
@@ -45,4 +54,11 @@ VAEs are end-to-end differentiable, do not require MCMC, and learn interpretable
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[amortized-inference]] — uses: A parametric encoder replaces per-datapoint optimisation of q.
+- [[latent-variable-models]] — instantiates
+- [[kl-divergence]] — uses: KL(q||p_model(z)) acts as a regulariser in the ELBO.
+- [[differentiable-generator-network]] — uses
+- [[variational-inference]] — instantiates
+- [[reparameterization-trick]] — uses: Gradients through the Gaussian sampling step use the reparameterisation trick.
+- [[elbo]] — uses: VAE training objective is the ELBO / variational lower bound.
 [To be populated during integration]

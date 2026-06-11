@@ -23,6 +23,8 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - bishop-prml-ch14
+specializes:
+- ensemble-learning
 tags:
 - ensemble
 - variance-reduction
@@ -30,6 +32,10 @@ tags:
 - bagging
 title: Committee Method (Model Averaging)
 understanding: 0
+uses:
+- bias-variance-tradeoff
+- bagging
+- bootstrap
 ---
 
 ## Definition
@@ -41,6 +47,10 @@ A committee combines the predictions of $M$ independently trained models by simp
 Under the idealized assumption of zero-mean, uncorrelated errors across models, committee averaging reduces the expected squared error by a factor of $M$ relative to the average individual error: $E_{\text{COM}} = \frac{1}{M} E_{\text{AV}}$. In practice errors are correlated so the gain is smaller, but Jensen's inequality guarantees $E_{\text{COM}} \leq E_{\text{AV}}$ for any convex loss. Bootstrap aggregation (bagging) is the canonical technique for constructing the required diverse models from a single dataset.
 
 ### Connections
+- [[ensemble-learning]] — specializes
+- [[bootstrap]] — uses
+- [[bagging]] — uses
+- [[bias-variance-tradeoff]] — uses
 Distinct from Bayesian model averaging: committees assign *each data point* to a potentially different component, whereas BMA treats a single model as responsible for the entire dataset.
 
 ## Reading Path

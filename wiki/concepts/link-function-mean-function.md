@@ -15,10 +15,15 @@ date_created: '2026-06-11'
 date_updated: '2026-06-11'
 domain:
 - statistics
+generalizes:
+- canonical-link-function
+- complementary-log-log-link
 id: pkis:concept:link-function-mean-function
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- generalized-linear-models
 related_concepts: []
 sources:
 - murphy-pml1-intro-ch12
@@ -30,6 +35,8 @@ tags:
 - complementary-log-log
 title: Link Function and Mean Function
 understanding: 0
+uses:
+- probit-model
 ---
 
 ## Definition
@@ -46,4 +53,8 @@ The choice of link function determines (a) the support and shape of predictions,
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[probit-model]] — uses
+- [[complementary-log-log-link]] — generalizes
+- [[canonical-link-function]] — generalizes
+- [[generalized-linear-models]] — prerequisite-of
 [To be populated during integration]

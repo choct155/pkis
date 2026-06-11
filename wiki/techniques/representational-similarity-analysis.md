@@ -16,6 +16,8 @@ domain:
 - machine-learning
 - neuroscience
 - representation-learning
+generalizes:
+- centered-kernel-alignment
 id: pkis:technique:representational-similarity-analysis
 knowledge_type: technique
 maturity: evolving
@@ -30,6 +32,8 @@ tags:
 - RSM
 title: Representational Similarity Analysis (RSA)
 understanding: 0
+uses:
+- covariance-function
 ---
 
 ## Definition
@@ -42,4 +46,6 @@ Originating in computational neuroscience, RSA is widely used to test whether a 
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[centered-kernel-alignment]] — generalizes
+- [[covariance-function]] — uses
 [To be populated during integration]

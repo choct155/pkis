@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+analogous-to:
+- kernel-regression-rl
 component_scores:
   application: null
   boundary: null
@@ -23,6 +25,8 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - murphy-pml2-advanced-ch33
+specializes:
+- post-hoc-explanation
 tags:
 - LIME
 - local-explanation
@@ -31,6 +35,10 @@ tags:
 - interpretability
 title: Local Interpretable Model-Agnostic Explanations (LIME)
 understanding: 0
+uses:
+- linear-regression
+- regularization
+- explanation-fidelity
 ---
 
 ## Definition
@@ -47,4 +55,9 @@ LIME is model-agnostic and applies to any differentiable or black-box predictor,
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[kernel-regression-rl]] — analogous-to: Both use a kernel/proximity weighting to localize a global function approximation.
+- [[explanation-fidelity]] — uses
+- [[regularization]] — uses: Complexity penalty Omega(g) regularizes the local surrogate.
+- [[linear-regression]] — uses: LIME fits a local sparse linear model as the surrogate.
+- [[post-hoc-explanation]] — specializes
 [To be populated during integration]

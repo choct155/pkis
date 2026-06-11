@@ -1,6 +1,9 @@
 ---
 aliases: []
 also_type: []
+applies:
+- elbo
+- variational-autoencoder
 component_scores:
   alternatives: null
   conditions: null
@@ -9,6 +12,8 @@ component_scores:
   implementation: null
   operational_mechanism: null
   principled_mechanism: null
+contrasts-with:
+- masked-autoregressive-flow
 coverage: 1
 date_created: '2026-06-11'
 date_updated: '2026-06-11'
@@ -16,6 +21,8 @@ domain:
 - machine-learning
 - variational-inference
 id: pkis:technique:inverse-autoregressive-flow
+instantiates:
+- autoregressive-flow
 knowledge_type: technique
 maturity: evolving
 needs_canonical_source: false
@@ -43,4 +50,8 @@ IAF is ideally suited for variational inference: drawing samples from $q_\theta(
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[variational-autoencoder]] — applies
+- [[elbo]] — applies
+- [[masked-autoregressive-flow]] — contrasts-with: IAF is fast to sample, slow to evaluate density; MAF is the reverse
+- [[autoregressive-flow]] — instantiates
 [To be populated during integration]

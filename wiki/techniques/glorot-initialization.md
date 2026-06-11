@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- vanishing-exploding-gradients
 component_scores:
   alternatives: null
   conditions: null
@@ -22,6 +24,8 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - goodfellow-deeplearning-ch08
+specializes:
+- weight-initialization
 tags:
 - weight-initialization
 - deep-learning
@@ -45,4 +49,6 @@ Glorot initialisation is the default in most deep learning frameworks (Keras, Py
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[vanishing-exploding-gradients]] — applies: balanced variance prevents signal loss at initialisation
+- [[weight-initialization]] — specializes
 [To be populated during integration]

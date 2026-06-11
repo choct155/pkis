@@ -10,6 +10,8 @@ component_scores:
   prerequisites: null
   scope: null
   transfer: null
+contrasts-with:
+- frequentist-confidence-interval
 coverage: 1
 date_created: '2026-06-11'
 date_updated: '2026-06-11'
@@ -23,6 +25,8 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - murphy-pml2-advanced-ch03
+specializes:
+- credible-interval
 tags:
 - HPD
 - HDI
@@ -31,6 +35,8 @@ tags:
 - uncertainty-quantification
 title: Highest Posterior Density (HPD) Region
 understanding: 0
+uses:
+- posterior-geometry-coordinate-systems
 ---
 
 ## Definition
@@ -47,4 +53,7 @@ For skewed or multimodal posteriors, the HPD region is narrower than the central
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[posterior-geometry-coordinate-systems]] — uses
+- [[frequentist-confidence-interval]] — contrasts-with
+- [[credible-interval]] — specializes
 [To be populated during integration]

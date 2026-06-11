@@ -1,6 +1,9 @@
 ---
 aliases: []
 also_type: []
+applies:
+- recurrent-neural-network
+- backpropagation
 component_scores:
   application: null
   boundary: null
@@ -17,10 +20,15 @@ domain:
 - deep-learning
 - optimization
 - recurrent-networks
+extends:
+- vanishing-gradient-problem
 id: pkis:concept:vanishing-exploding-gradients
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- residual-block
+- xavier-initialization
 related_concepts: []
 sources:
 - goodfellow-deeplearning-ch08
@@ -32,6 +40,10 @@ tags:
 - stability
 title: Vanishing and Exploding Gradients
 understanding: 0
+uses:
+- long-short-term-memory-lstm
+- eigendecomposition
+- activation-functions
 ---
 
 ## Definition
@@ -48,4 +60,12 @@ Vanishing gradients make it impossible to assign credit to early layers/time-ste
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[xavier-initialization]] — prerequisite-of
+- [[residual-block]] — prerequisite-of
+- [[activation-functions]] — uses
+- [[vanishing-gradient-problem]] — extends: Chapter formalises both vanishing and exploding gradient in terms of spectral radius
+- [[backpropagation]] — applies
+- [[eigendecomposition]] — uses: W^t = V diag(lambda)^t V^{-1} explains gradient scaling
+- [[long-short-term-memory-lstm]] — uses: LSTM gating was designed specifically to address vanishing gradients
+- [[recurrent-neural-network]] — applies: most severe in RNNs where same W is multiplied t times
 [To be populated during integration]

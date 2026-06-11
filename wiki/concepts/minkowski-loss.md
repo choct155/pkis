@@ -17,7 +17,11 @@ domain:
 - statistics
 - machine-learning
 - decision-theory
+generalizes:
+- optimal-regression-conditional-mean
 id: pkis:concept:minkowski-loss
+instantiates:
+- expected-loss
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
@@ -32,6 +36,8 @@ tags:
 - robust-regression
 title: Minkowski Loss for Regression
 understanding: 0
+uses:
+- decision-theory-foundations
 ---
 
 ## Definition
@@ -49,4 +55,7 @@ Generalises squared loss to a family parameterised by $q$, making explicit the m
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[decision-theory-foundations]] — uses
+- [[expected-loss]] — instantiates
+- [[optimal-regression-conditional-mean]] — generalizes
 [To be populated during integration]

@@ -10,6 +10,9 @@ component_scores:
   prerequisites: null
   scope: null
   transfer: null
+contrasts-with:
+- receiver-operating-characteristic-curve
+- brier-score
 coverage: 1
 date_created: '2026-06-11'
 date_updated: '2026-06-11'
@@ -33,6 +36,9 @@ tags:
 - mAP
 title: Precision–Recall Curve
 understanding: 0
+uses:
+- class-confusion-matrix
+- false-discovery-rate
 ---
 
 ## Definition
@@ -52,4 +58,8 @@ The $F_\beta$ score, the weighted harmonic mean of precision and recall, summari
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[brier-score]] — contrasts-with
+- [[false-discovery-rate]] — uses: Precision = 1 - FDR
+- [[class-confusion-matrix]] — uses
+- [[receiver-operating-characteristic-curve]] — contrasts-with
 [To be populated during integration]

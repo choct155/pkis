@@ -23,6 +23,8 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - goodfellow-deeplearning-ch14
+specializes:
+- autoencoder
 tags:
 - overcomplete
 - regularization
@@ -30,6 +32,8 @@ tags:
 - representation-learning
 title: Overcomplete Autoencoder
 understanding: 0
+uses:
+- regularization
 ---
 
 ## Definition
@@ -44,4 +48,6 @@ Overcomplete architectures are important in modern deep learning because they ar
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[regularization]] — uses
+- [[autoencoder]] — specializes
 [To be populated during integration]

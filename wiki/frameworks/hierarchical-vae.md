@@ -15,6 +15,10 @@ domain:
 - machine-learning
 - deep-learning
 - generative-models
+extends:
+- variational-autoencoder
+generalizes:
+- autoregressive-model
 id: pkis:framework:hierarchical-vae
 knowledge_type: framework
 maturity: evolving
@@ -31,6 +35,11 @@ tags:
 - NVAE
 title: Hierarchical VAE (HVAE)
 understanding: 0
+uses:
+- posterior-collapse
+- residual-network
+- free-bits
+- normalizing-flows
 ---
 
 ## Definition
@@ -51,4 +60,10 @@ Hierarchical VAEs can represent any autoregressive model as a special case (with
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[normalizing-flows]] — uses: NVAE uses inverse autoregressive flows in each layer
+- [[free-bits]] — uses
+- [[autoregressive-model]] — generalizes
+- [[residual-network]] — uses
+- [[posterior-collapse]] — uses: variational pruning is the hierarchical analogue of posterior collapse
+- [[variational-autoencoder]] — extends
 [To be populated during integration]

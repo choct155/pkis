@@ -4,6 +4,8 @@ also_type: []
 applies:
 - marginalization
 - marginal-likelihood
+- bayesian-inference
+- intractable-posterior
 component_scores:
   alternatives: 3
   conditions: 2
@@ -12,6 +14,8 @@ component_scores:
   implementation: 2
   operational_mechanism: 3
   principled_mechanism: 3
+contrasts-with:
+- variational-inference
 coverage: 2
 date_created: 2026-05-20
 date_updated: '2026-06-08'
@@ -20,6 +24,9 @@ domain:
 id: pkis:technique:laplace-approximation
 knowledge_type: technique
 maturity: settled
+prerequisite-of:
+- bic
+- bayesian-logistic-regression
 related_concepts:
 - '[[probability-theory]]'
 - '[[gaussian-distribution]]'
@@ -41,6 +48,10 @@ understanding: 1
 uses:
 - gaussian-distribution
 - occam-factor
+- hessian-matrix
+- maximum-a-posteriori-estimation-map
+- energy-function-posterior
+- map-reparameterisation-noninvariance
 ---
 
 A higher-order normal approximation to a posterior distribution or likelihood function obtained by expanding the log-posterior (or log-likelihood) to second order around its mode: the posterior is approximated as N(θ_mode, [−∇²log p(θ|Y)]^{−1}). This is the saddle-point approximation applied to Bayesian computation.
@@ -53,6 +64,15 @@ The Laplace approximation enables non-normal corrections to basic normal-based i
 - [[lange-applied-probability-ch12]] (unread) — Laplace's method and Watson's Lemma for integral approximation
 
 ## Connections
+- [[map-reparameterisation-noninvariance]] — uses
+- [[energy-function-posterior]] — uses
+- [[variational-inference]] — contrasts-with
+- [[bayesian-logistic-regression]] — prerequisite-of
+- [[bic]] — prerequisite-of
+- [[maximum-a-posteriori-estimation-map]] — uses
+- [[hessian-matrix]] — uses
+- [[intractable-posterior]] — applies
+- [[bayesian-inference]] — applies
 - [[occam-factor]] — uses: The Occam factor is the width term produced when Laplace's method approximates the evidence integral via the posterior Hessian.
 - [[marginal-likelihood]] — applies: Approximating the normalizing constant Z_P = integral P*(x) dx is exactly the Bayesian evidence/marginal likelihood; Laplace's det(A) formula yields the standard evidence approximation.
 - [[gaussian-distribution]] — uses: The method replaces the peak of P*(x) by a matched Gaussian and uses its normalizing constant sqrt((2pi)^K / det A) as the estimate of Z_P.

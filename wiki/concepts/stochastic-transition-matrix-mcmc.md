@@ -18,12 +18,16 @@ domain:
 - linear-algebra
 - statistics
 id: pkis:concept:stochastic-transition-matrix-mcmc
+instantiates:
+- transition-matrix
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
 related_concepts: []
 sources:
 - goodfellow-deeplearning-ch17
+specializes:
+- markov-chains
 tags:
 - markov-chain
 - transition-matrix
@@ -32,6 +36,9 @@ tags:
 - perron-frobenius
 title: Stochastic Transition Matrix (MCMC)
 understanding: 0
+uses:
+- stationary-distribution
+- eigendecomposition
 ---
 
 ## Definition
@@ -47,4 +54,8 @@ The eigendecomposition perspective explains MCMC convergence: by the Perron–Fr
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[eigendecomposition]] — uses: Perron-Frobenius eigendecomposition explains convergence to stationarity
+- [[stationary-distribution]] — uses: eigenvector with eigenvalue 1 of A is the stationary distribution
+- [[transition-matrix]] — instantiates: same object as the general transition matrix, viewed through MCMC lens
+- [[markov-chains]] — specializes: matrix representation of a discrete Markov chain transition operator
 [To be populated during integration]

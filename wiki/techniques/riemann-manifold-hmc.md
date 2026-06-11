@@ -16,6 +16,8 @@ domain:
 - statistics
 - machine-learning
 - differential-geometry
+extends:
+- hamiltonian-monte-carlo
 id: pkis:technique:riemann-manifold-hmc
 knowledge_type: technique
 maturity: evolving
@@ -31,6 +33,9 @@ tags:
 - adaptive-mcmc
 title: Riemann Manifold HMC (RM-HMC)
 understanding: 0
+uses:
+- fisher-information
+- hessian-matrix
 ---
 
 ## Definition
@@ -45,4 +50,7 @@ When the target has highly variable curvature (e.g., hierarchical models with fu
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[hessian-matrix]] — uses
+- [[fisher-information]] — uses
+- [[hamiltonian-monte-carlo]] — extends
 [To be populated during integration]

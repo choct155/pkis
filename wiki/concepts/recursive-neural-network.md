@@ -17,6 +17,8 @@ domain:
 - deep-learning
 - sequence-modeling
 - NLP
+generalizes:
+- recurrent-neural-network
 id: pkis:concept:recursive-neural-network
 knowledge_type: concept
 maturity: evolving
@@ -32,6 +34,9 @@ tags:
 - composition
 title: Recursive Neural Network (Tree-Structured)
 understanding: 0
+uses:
+- phrase-structure
+- backpropagation-through-time
 ---
 
 ## Definition
@@ -46,4 +51,7 @@ Recursive nets are particularly natural for hierarchically structured data: pars
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[backpropagation-through-time]] — uses: Gradients propagate through the tree structure
+- [[phrase-structure]] — uses
+- [[recurrent-neural-network]] — generalizes: Recursive nets operate on trees rather than chains
 [To be populated during integration]

@@ -22,6 +22,8 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - goodfellow-deeplearning-ch15
+specializes:
+- inductive-bias
 tags:
 - inductive-bias
 - priors
@@ -32,6 +34,12 @@ tags:
 - generalization
 title: Inductive Priors for Representation Learning
 understanding: 0
+uses:
+- no-free-lunch-theorem
+- regularization
+- disentangled-representation
+- manifold-hypothesis
+- smoothness-assumption-ml
 ---
 
 ## Definition
@@ -56,4 +64,10 @@ Frames representation learning as the problem of choosing inductive biases that 
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[smoothness-assumption-ml]] — uses
+- [[manifold-hypothesis]] — uses
+- [[disentangled-representation]] — uses
+- [[regularization]] — uses
+- [[inductive-bias]] — specializes
+- [[no-free-lunch-theorem]] — uses
 [To be populated during integration]

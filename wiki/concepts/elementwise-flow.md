@@ -17,6 +17,8 @@ domain:
 - machine-learning
 - generative-models
 id: pkis:concept:elementwise-flow
+instantiates:
+- normalizing-flows
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
@@ -29,6 +31,8 @@ tags:
 - monotone-function
 title: Elementwise Flow
 understanding: 0
+uses:
+- activation-functions
 ---
 
 ## Definition
@@ -51,4 +55,6 @@ Elementwise flows alone do not mix dimensions, but they are the key building blo
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[activation-functions]] — uses: Strictly monotone activations serve as scalar bijections
+- [[normalizing-flows]] — instantiates
 [To be populated during integration]

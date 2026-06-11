@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- linear-basis-function-model
 component_scores:
   conditions: null
   implications: null
@@ -13,7 +15,11 @@ date_updated: '2026-06-11'
 domain:
 - machine-learning
 - statistics
+extends:
+- bias-variance-tradeoff
 id: pkis:result:bias-variance-decomposition
+instantiates:
+- mean-square-value-error
 knowledge_type: result
 maturity: evolving
 needs_canonical_source: false
@@ -27,6 +33,9 @@ tags:
 - expected-loss
 title: Bias-Variance Decomposition of Expected Squared Loss
 understanding: 0
+uses:
+- overfitting-and-underfitting
+- regularization
 ---
 
 ## Definition
@@ -49,4 +58,9 @@ Provides a frequentist account of the over-fitting phenomenon: high-capacity mod
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[mean-square-value-error]] — instantiates
+- [[regularization]] — uses
+- [[overfitting-and-underfitting]] — uses
+- [[linear-basis-function-model]] — applies
+- [[bias-variance-tradeoff]] — extends: Provides the formal mathematical derivation of the bias-variance tradeoff
 [To be populated during integration]

@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- adaboost-algorithm
 component_scores:
   conditions: null
   implications: null
@@ -14,9 +16,13 @@ domain:
 - machine-learning
 - statistics
 id: pkis:result:adaboost-exponential-loss-equivalence
+instantiates:
+- forward-stagewise-additive-modeling
 knowledge_type: result
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- gradient-boosting
 related_concepts: []
 sources:
 - bishop-prml-ch14
@@ -28,6 +34,8 @@ tags:
 - equivalence
 title: AdaBoost as Exponential-Loss Minimisation
 understanding: 0
+uses:
+- exponential-loss
 ---
 
 ## Definition
@@ -42,4 +50,8 @@ This equivalence reframes boosting as a statistical optimisation problem, enabli
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[gradient-boosting]] — prerequisite-of
+- [[forward-stagewise-additive-modeling]] — instantiates
+- [[exponential-loss]] — uses
+- [[adaboost-algorithm]] — applies
 [To be populated during integration]

@@ -24,6 +24,8 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - murphy-pml2-advanced-ch18
+specializes:
+- mercer-kernel
 tags:
 - GP
 - kernel
@@ -32,6 +34,8 @@ tags:
 - translation-invariance
 title: Stationary (Shift-Invariant) Kernel
 understanding: 0
+uses:
+- mutual-information
 ---
 
 ## Definition
@@ -49,4 +53,6 @@ Stationarity is the most common structural assumption for GP kernels: it implies
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[mutual-information]] — uses: Spectral density via Bochner's theorem connects to Fourier analysis.
+- [[mercer-kernel]] — specializes
 [To be populated during integration]

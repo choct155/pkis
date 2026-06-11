@@ -17,6 +17,8 @@ id: pkis:result:liouvilles-theorem
 knowledge_type: result
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- hybrid-monte-carlo
 related_concepts: []
 sources:
 - bishop-prml-ch11
@@ -27,6 +29,8 @@ tags:
 - volume-preservation
 title: Liouville's Theorem (Phase-Space Volume Preservation)
 understanding: 0
+uses:
+- hamiltonian-classical-mechanics
 ---
 
 ## Definition
@@ -43,4 +47,6 @@ Liouville's theorem, together with the conservation of $H$ along trajectories, i
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[hybrid-monte-carlo]] — prerequisite-of
+- [[hamiltonian-classical-mechanics]] — uses
 [To be populated during integration]

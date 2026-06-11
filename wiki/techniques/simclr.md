@@ -17,9 +17,13 @@ domain:
 - computer-vision
 - deep-learning
 id: pkis:technique:simclr
+instantiates:
+- self-supervised-learning
 knowledge_type: technique
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- knowledge-distillation
 related_concepts: []
 sources:
 - murphy-pml1-intro-ch19
@@ -31,6 +35,10 @@ tags:
 - energy-based-model
 title: SimCLR (Simple Contrastive Learning of Representations)
 understanding: 0
+uses:
+- data-augmentation
+- kl-divergence
+- partition-function
 ---
 
 ## Definition
@@ -45,4 +53,9 @@ SimCLR demonstrated that careful data augmentation (random cropping + colour jit
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[knowledge-distillation]] — prerequisite-of: SimCLRv2 uses SimCLR representations as teacher for self-training distillation.
+- [[partition-function]] — uses: The normalization constant Z(x) in the energy-based conditional model is approximated by in-batch negatives.
+- [[kl-divergence]] — uses: Contrastive log-likelihood approximates KL from the energy-based model.
+- [[data-augmentation]] — uses
+- [[self-supervised-learning]] — instantiates
 [To be populated during integration]

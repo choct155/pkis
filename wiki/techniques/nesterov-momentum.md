@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- convex-optimization
 component_scores:
   alternatives: null
   conditions: null
@@ -15,6 +17,8 @@ date_updated: '2026-06-11'
 domain:
 - machine-learning
 - optimization
+extends:
+- sgd-momentum
 id: pkis:technique:nesterov-momentum
 knowledge_type: technique
 maturity: evolving
@@ -45,4 +49,6 @@ Nesterov momentum is theoretically optimal among first-order methods for smooth 
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[convex-optimization]] — applies: achieves optimal O(1/k^2) rate for smooth convex functions
+- [[sgd-momentum]] — extends
 [To be populated during integration]

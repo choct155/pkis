@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+analogous-to:
+- phase-transition
 component_scores:
   application: null
   boundary: null
@@ -10,6 +12,8 @@ component_scores:
   prerequisites: null
   scope: null
   transfer: null
+contrasts-with:
+- vanishing-exploding-gradients
 coverage: 1
 date_created: '2026-06-11'
 date_updated: '2026-06-11'
@@ -31,6 +35,8 @@ tags:
 - hessian
 title: Saddle Points in Neural Network Optimization
 understanding: 0
+uses:
+- hessian-matrix
 ---
 
 ## Definition
@@ -47,4 +53,7 @@ Saddle points explain why second-order methods like Newton's method often fail f
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[phase-transition]] — analogous-to: ratio of saddle points to minima undergoes sharp transition with dimension
+- [[hessian-matrix]] — uses
+- [[vanishing-exploding-gradients]] — contrasts-with: saddle points have zero gradient but non-zero curvature; vanishing gradient is a separate phenomenon
 [To be populated during integration]

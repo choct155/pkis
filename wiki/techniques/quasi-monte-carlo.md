@@ -1,6 +1,10 @@
 ---
 aliases: []
 also_type: []
+applies:
+- bayesian-optimization
+- variational-inference
+- mcmc
 component_scores:
   alternatives: null
   conditions: null
@@ -16,6 +20,8 @@ domain:
 - numerical-methods
 - statistics
 - machine-learning
+extends:
+- monte-carlo-integration
 id: pkis:technique:quasi-monte-carlo
 knowledge_type: technique
 maturity: evolving
@@ -50,4 +56,8 @@ Deterministic QMC provides no built-in uncertainty estimate; RQMC resolves this 
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[mcmc]] — applies
+- [[variational-inference]] — applies
+- [[bayesian-optimization]] — applies
+- [[monte-carlo-integration]] — extends
 [To be populated during integration]

@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- random-variable
 component_scores:
   application: null
   boundary: null
@@ -20,10 +22,17 @@ id: pkis:concept:probability-mass-function
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- full-joint-probability-distribution
+- probability-theory
+- bernoulli-distribution
+- binomial-distribution
 related_concepts: []
 sources:
 - goodfellow-deeplearning-ch03
 - murphy-pml1-intro-ch02
+specializes:
+- probability-theory
 tags:
 - discrete
 - distribution
@@ -31,6 +40,8 @@ tags:
 - fundamentals
 title: Probability Mass Function (PMF)
 understanding: 0
+uses:
+- random-variable
 ---
 
 ## Definition
@@ -45,4 +56,11 @@ PMFs are the foundational representation of discrete distributions in machine le
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[binomial-distribution]] — prerequisite-of
+- [[bernoulli-distribution]] — prerequisite-of
+- [[probability-theory]] — prerequisite-of
+- [[random-variable]] — uses
+- [[full-joint-probability-distribution]] — prerequisite-of
+- [[probability-theory]] — specializes
+- [[random-variable]] — applies
 [To be populated during integration]

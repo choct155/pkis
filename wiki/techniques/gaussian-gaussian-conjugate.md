@@ -16,6 +16,8 @@ domain:
 - bayesian-statistics
 - statistics
 id: pkis:technique:gaussian-gaussian-conjugate
+instantiates:
+- conjugate-prior
 knowledge_type: technique
 maturity: evolving
 needs_canonical_source: false
@@ -30,6 +32,12 @@ tags:
 - posterior-mean
 title: Gaussian-Gaussian Conjugate Model (known variance)
 understanding: 0
+uses:
+- gaussian-distribution
+- bayesian-linear-regression
+- kalman-filter
+- gaussian-process-regression
+- equivalent-sample-size
 ---
 
 ## Definition
@@ -47,4 +55,10 @@ This is the simplest conjugate Gaussian update and serves as the building block 
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[equivalent-sample-size]] — uses
+- [[gaussian-process-regression]] — uses
+- [[kalman-filter]] — uses
+- [[bayesian-linear-regression]] — uses
+- [[gaussian-distribution]] — uses
+- [[conjugate-prior]] — instantiates
 [To be populated during integration]

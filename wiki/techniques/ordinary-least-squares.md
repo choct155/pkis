@@ -9,6 +9,9 @@ component_scores:
   implementation: null
   operational_mechanism: null
   principled_mechanism: null
+contrasts-with:
+- normal-form-game
+- collinearity
 coverage: 1
 date_created: '2026-06-11'
 date_updated: '2026-06-11'
@@ -16,6 +19,9 @@ domain:
 - statistics
 - machine learning
 id: pkis:technique:ordinary-least-squares
+instantiates:
+- linear-regression
+- maximum-likelihood-estimation
 knowledge_type: technique
 maturity: evolving
 needs_canonical_source: false
@@ -29,6 +35,12 @@ tags:
 - normal equations
 title: Ordinary Least Squares (OLS)
 understanding: 0
+uses:
+- residual-sum-of-squares
+- hat-matrix
+- orthogonal-projection
+- singular-value-decomposition
+- gauss-markov-theorem
 ---
 
 ## Definition
@@ -43,4 +55,13 @@ OLS is the canonical closed-form estimator for linear models and is equivalent t
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[collinearity]] — contrasts-with: collinearity makes X^TX singular
+- [[normal-form-game]] — contrasts-with
+- [[gauss-markov-theorem]] — uses
+- [[singular-value-decomposition]] — uses: numerically preferred solver
+- [[orthogonal-projection]] — uses
+- [[hat-matrix]] — uses
+- [[residual-sum-of-squares]] — uses
+- [[maximum-likelihood-estimation]] — instantiates: OLS = MLE under Gaussian noise
+- [[linear-regression]] — instantiates
 [To be populated during integration]

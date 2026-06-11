@@ -1,6 +1,9 @@
 ---
 aliases: []
 also_type: []
+applies:
+- language-model
+- autoregressive-model
 component_scores:
   application: null
   boundary: null
@@ -32,6 +35,9 @@ tags:
 - information-theory
 title: Perplexity of a Language Model
 understanding: 0
+uses:
+- cross-entropy-loss
+- source-coding-theorem
 ---
 
 ## Definition
@@ -48,4 +54,8 @@ Perplexity is the canonical evaluation metric for language models. It directly r
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[autoregressive-model]] — applies
+- [[language-model]] — applies
+- [[source-coding-theorem]] — uses: Perplexity = 2^H relates to optimal code length via Shannon's theorem
+- [[cross-entropy-loss]] — uses
 [To be populated during integration]

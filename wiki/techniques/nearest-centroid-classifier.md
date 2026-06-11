@@ -9,6 +9,8 @@ component_scores:
   implementation: null
   operational_mechanism: null
   principled_mechanism: null
+contrasts-with:
+- nearest-shrunken-centroids
 coverage: 1
 date_created: '2026-06-11'
 date_updated: '2026-06-11'
@@ -21,6 +23,8 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - murphy-pml1-intro-ch09
+specializes:
+- gaussian-discriminant-analysis
 tags:
 - classification
 - metric-learning
@@ -42,4 +46,6 @@ Nearest-centroid classifiers are extremely fast at test time (one distance evalu
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[nearest-shrunken-centroids]] — contrasts-with: Shrunken version adds per-feature regularisation
+- [[gaussian-discriminant-analysis]] — specializes: Arises under uniform prior from LDA decision rule
 [To be populated during integration]

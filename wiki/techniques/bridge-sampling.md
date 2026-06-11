@@ -1,6 +1,10 @@
 ---
 aliases: []
 also_type: []
+analogous-to:
+- annealed-importance-sampling
+applies:
+- partition-function
 component_scores:
   alternatives: null
   conditions: null
@@ -16,6 +20,8 @@ domain:
 - machine-learning
 - statistics
 - probabilistic-graphical-models
+extends:
+- importance-sampling
 id: pkis:technique:bridge-sampling
 knowledge_type: technique
 maturity: evolving
@@ -44,4 +50,7 @@ Bridge sampling is more efficient than AIS when $D_{\text{KL}}(p_0\|p_1)$ is mod
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[partition-function]] — applies
+- [[annealed-importance-sampling]] — analogous-to
+- [[importance-sampling]] — extends
 [To be populated during integration]

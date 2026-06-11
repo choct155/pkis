@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+analogous-to:
+- generative-adversarial-network
 component_scores:
   alternatives: null
   conditions: null
@@ -17,6 +19,8 @@ domain:
 - graph-learning
 - self-supervised-learning
 id: pkis:technique:deep-graph-infomax
+instantiates:
+- graph-encoder-decoder-model
 knowledge_type: technique
 maturity: evolving
 needs_canonical_source: false
@@ -32,6 +36,9 @@ tags:
 - DGI
 title: Deep Graph Infomax (DGI)
 understanding: 0
+uses:
+- mutual-information
+- graph-convolutional-network
 ---
 
 ## Definition
@@ -48,4 +55,8 @@ DGI achieves competitive or superior performance to supervised GCN on node class
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[graph-convolutional-network]] — uses
+- [[generative-adversarial-network]] — analogous-to
+- [[mutual-information]] — uses
+- [[graph-encoder-decoder-model]] — instantiates
 [To be populated during integration]

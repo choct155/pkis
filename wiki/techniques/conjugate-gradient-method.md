@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- continuous-optimization
 component_scores:
   alternatives: null
   conditions: null
@@ -15,6 +17,8 @@ date_updated: '2026-06-11'
 domain:
 - optimization
 - numerical-methods
+extends:
+- gradient-descent
 id: pkis:technique:conjugate-gradient-method
 knowledge_type: technique
 maturity: evolving
@@ -29,6 +33,8 @@ tags:
 - quadratic-optimization
 title: Conjugate Gradient Method
 understanding: 0
+uses:
+- hessian-matrix
 ---
 
 ## Definition
@@ -45,4 +51,7 @@ CG achieves super-linear convergence on quadratic objectives without forming or 
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[continuous-optimization]] — applies
+- [[hessian-matrix]] — uses: conjugacy defined via H but H need not be explicitly formed
+- [[gradient-descent]] — extends
 [To be populated during integration]

@@ -1,6 +1,9 @@
 ---
 aliases: []
 also_type: []
+applies:
+- lasso
+- hinge-loss
 component_scores:
   application: null
   boundary: null
@@ -16,6 +19,8 @@ date_updated: '2026-06-11'
 domain:
 - optimization
 - machine-learning
+extends:
+- convex-set-and-function
 id: pkis:concept:subgradient-subdifferential
 knowledge_type: concept
 maturity: evolving
@@ -46,4 +51,7 @@ Subgradients extend gradient-based optimality conditions to non-smooth objective
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[hinge-loss]] — applies
+- [[lasso]] — applies
+- [[convex-set-and-function]] — extends
 [To be populated during integration]

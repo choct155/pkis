@@ -19,6 +19,8 @@ id: pkis:concept:hyperparameters-validation-set
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- cross-validation
 related_concepts: []
 sources:
 - goodfellow-deeplearning-ch05
@@ -30,6 +32,10 @@ tags:
 - cross-validation
 title: Hyperparameters and Validation Set
 understanding: 0
+uses:
+- model-capacity-hypothesis-space
+- generalization-error-training-error
+- regularization
 ---
 
 ## Definition
@@ -46,4 +52,8 @@ Learning capacity-controlling hyperparameters on the training set leads to degen
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[regularization]] — uses
+- [[generalization-error-training-error]] — uses
+- [[model-capacity-hypothesis-space]] — uses
+- [[cross-validation]] — prerequisite-of
 [To be populated during integration]

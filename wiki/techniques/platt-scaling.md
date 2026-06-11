@@ -1,6 +1,9 @@
 ---
 aliases: []
 also_type: []
+applies:
+- support-vector-machine
+- calibration
 component_scores:
   alternatives: null
   conditions: null
@@ -30,6 +33,9 @@ tags:
 - post-hoc
 title: Platt Scaling
 understanding: 0
+uses:
+- logistic-regression
+- maximum-likelihood-estimation
 ---
 
 ## Definition
@@ -44,4 +50,8 @@ SVMs do not naturally produce calibrated probabilities; Platt scaling is the sta
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[maximum-likelihood-estimation]] — uses
+- [[logistic-regression]] — uses
+- [[calibration]] — applies
+- [[support-vector-machine]] — applies
 [To be populated during integration]

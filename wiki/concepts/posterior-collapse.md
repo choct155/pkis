@@ -10,12 +10,16 @@ component_scores:
   prerequisites: null
   scope: null
   transfer: null
+contrasts-with:
+- infovae
 coverage: 1
 date_created: '2026-06-11'
 date_updated: '2026-06-11'
 domain:
 - machine-learning
 - generative-models
+extends:
+- variational-autoencoder
 id: pkis:concept:posterior-collapse
 knowledge_type: concept
 maturity: evolving
@@ -30,6 +34,9 @@ tags:
 - failure-mode
 title: Posterior Collapse (Variational Pruning)
 understanding: 0
+uses:
+- kl-annealing
+- free-bits
 ---
 
 ## Definition
@@ -46,4 +53,8 @@ Posterior collapse is the primary failure mode of VAEs with expressive decoders 
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[infovae]] — contrasts-with: InfoVAE explicitly mitigates posterior collapse via MI term
+- [[free-bits]] — uses
+- [[kl-annealing]] — uses: KL annealing is a primary mitigation
+- [[variational-autoencoder]] — extends: failure mode of VAEs with expressive decoders
 [To be populated during integration]

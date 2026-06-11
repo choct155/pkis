@@ -10,6 +10,8 @@ component_scores:
   prerequisites: null
   scope: null
   transfer: null
+contrasts-with:
+- credible-interval
 coverage: 1
 date_created: '2026-06-11'
 date_updated: '2026-06-11'
@@ -31,6 +33,9 @@ tags:
 - uncertainty
 title: Frequentist Confidence Interval
 understanding: 0
+uses:
+- sampling-distribution
+- p-value-nhst
 ---
 
 ## Definition
@@ -47,4 +52,7 @@ The CI is widely misinterpreted as a posterior probability statement. Its freque
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[p-value-nhst]] — uses
+- [[sampling-distribution]] — uses
+- [[credible-interval]] — contrasts-with
 [To be populated during integration]

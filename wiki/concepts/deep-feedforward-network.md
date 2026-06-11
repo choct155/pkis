@@ -17,9 +17,15 @@ domain:
 - machine-learning
 - deep-learning
 id: pkis:concept:deep-feedforward-network
+instantiates:
+- multilayer-perceptron
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- recurrent-neural-network
+- convolutional-neural-networks
+- vanishing-gradient-problem
 related_concepts: []
 sources:
 - goodfellow-deeplearning-ch06
@@ -31,6 +37,11 @@ tags:
 - representation-learning
 title: Deep Feedforward Network (MLP)
 understanding: 0
+uses:
+- activation-functions
+- backpropagation
+- universal-approximation-theorem
+- gradient-descent
 ---
 
 ## Definition
@@ -48,4 +59,12 @@ Depth (number of layers), width (units per layer), activation functions, output 
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[vanishing-gradient-problem]] — prerequisite-of
+- [[convolutional-neural-networks]] — prerequisite-of
+- [[recurrent-neural-network]] — prerequisite-of: Feedforward networks are the conceptual stepping stone to RNNs.
+- [[gradient-descent]] — uses
+- [[universal-approximation-theorem]] — uses: UAT establishes expressive capacity of MLPs.
+- [[backpropagation]] — uses
+- [[activation-functions]] — uses
+- [[multilayer-perceptron]] — instantiates: Deep feedforward network IS the formal name for MLPs; chapter introduces the precise layered composition definition.
 [To be populated during integration]

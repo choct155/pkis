@@ -3,6 +3,8 @@ aliases: []
 also_type: []
 applies:
 - multi-armed-bandit
+- contextual-bandit
+- exploration-exploitation-tradeoff
 component_scores:
   alternatives: null
   conditions: null
@@ -13,6 +15,7 @@ component_scores:
   principled_mechanism: null
 contrasts-with:
 - upper-confidence-bound
+- upper-confidence-bound-algorithm
 coverage: 1
 date_created: '2026-06-09'
 date_updated: '2026-06-09'
@@ -36,6 +39,8 @@ understanding: 0
 uses:
 - conjugate-prior
 - bayesian-inference
+- cumulative-regret
+- monte-carlo-estimator
 ---
 
 ## Definition
@@ -53,6 +58,11 @@ Thompson sampling (a.k.a. posterior sampling) often matches the best distributio
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[monte-carlo-estimator]] — uses
+- [[cumulative-regret]] — uses
+- [[exploration-exploitation-tradeoff]] — applies
+- [[upper-confidence-bound-algorithm]] — contrasts-with
+- [[contextual-bandit]] — applies
 - [[upper-confidence-bound]] — contrasts-with: probability-matching Bayesian exploration vs. deterministic optimism bound
 - [[bayesian-inference]] — uses: maintains and samples from a posterior over action values
 - [[conjugate-prior]] — uses: closed-form posterior updates rely on conjugate priors

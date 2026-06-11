@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- image-segmentation
 component_scores:
   application: null
   limits: null
@@ -29,6 +31,11 @@ tags:
 - image-to-image
 title: Encoder–Decoder Architecture (U-Net)
 understanding: 0
+uses:
+- convolutional-neural-network
+- transposed-convolution
+- dilated-convolution
+- residual-block
 ---
 
 ## Definition
@@ -49,4 +56,9 @@ Dilated convolution in the encoder replaces pooling to preserve spatial resoluti
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[residual-block]] — uses: Skip connections in U-Net play the same role as in ResNet
+- [[image-segmentation]] — applies: U-Net is the standard architecture for semantic segmentation
+- [[dilated-convolution]] — uses: Dilated convolution in encoder for context without spatial reduction
+- [[transposed-convolution]] — uses: Decoder upsamples via transposed convolution
+- [[convolutional-neural-network]] — uses: Both encoder and decoder paths consist of CNN layers
 [To be populated during integration]

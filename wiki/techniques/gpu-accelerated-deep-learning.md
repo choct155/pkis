@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- convolutional-neural-networks
 component_scores:
   alternatives: null
   conditions: null
@@ -20,6 +22,8 @@ id: pkis:technique:gpu-accelerated-deep-learning
 knowledge_type: technique
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- asynchronous-sgd
 related_concepts: []
 sources:
 - goodfellow-deeplearning-ch12
@@ -31,6 +35,8 @@ tags:
 - training-efficiency
 title: GPU-Accelerated Deep Learning
 understanding: 0
+uses:
+- backpropagation
 ---
 
 ## Definition
@@ -45,4 +51,7 @@ The adoption of GP-GPUs (Raina et al., 2009) enabled a 10–50× speedup over CP
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[asynchronous-sgd]] — prerequisite-of
+- [[backpropagation]] — uses
+- [[convolutional-neural-networks]] — applies
 [To be populated during integration]

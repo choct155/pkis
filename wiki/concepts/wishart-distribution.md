@@ -1,6 +1,9 @@
 ---
 aliases: []
 also_type: []
+applies:
+- precision-matrix
+- bayesian-inference
 component_scores:
   application: null
   boundary: null
@@ -17,7 +20,12 @@ domain:
 - probability
 - statistics
 - bayesian-inference
+generalizes:
+- gamma-distribution
+- chi-squared-distribution
 id: pkis:concept:wishart-distribution
+instantiates:
+- conjugate-prior
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
@@ -32,6 +40,9 @@ tags:
 - multivariate-gaussian
 title: Wishart Distribution
 understanding: 0
+uses:
+- gaussian-distribution
+- multivariate-normal-model
 ---
 
 ## Definition
@@ -46,4 +57,11 @@ The Wishart is the matrix generalisation of the Gamma distribution: if $\nu$ vec
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[chi-squared-distribution]] — generalizes
+- [[conjugate-prior]] — instantiates
+- [[multivariate-normal-model]] — uses
+- [[bayesian-inference]] — applies
+- [[precision-matrix]] — applies
+- [[gaussian-distribution]] — uses: Conjugate prior for multivariate Gaussian precision
+- [[gamma-distribution]] — generalizes: Wishart reduces to Gamma for D=1
 [To be populated during integration]

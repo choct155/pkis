@@ -13,6 +13,8 @@ component_scores:
   principled_mechanism: null
 contrasts-with:
 - principal-component-analysis
+- independent-component-analysis
+- probabilistic-pca
 coverage: 1
 date_created: '2026-06-08'
 date_updated: '2026-06-08'
@@ -28,6 +30,8 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - mackay-itila-ch34
+specializes:
+- linear-factor-model
 tags:
 - latent-variables
 - blind-source-separation
@@ -40,6 +44,9 @@ understanding: 0
 uses:
 - natural-gradient
 - maximum-likelihood-estimation
+- ica-non-gaussian-identifiability
+- identifiability-of-mixtures
+- change-of-variables-for-densities
 ---
 
 ## Definition
@@ -63,6 +70,12 @@ ICA solves blind source separation — recovering hidden signals (the cocktail-p
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[change-of-variables-for-densities]] — uses
+- [[identifiability-of-mixtures]] — uses
+- [[probabilistic-pca]] — contrasts-with
+- [[independent-component-analysis]] — contrasts-with: self-referential edge excluded; see probabilistic-pca contrasts-with
+- [[ica-non-gaussian-identifiability]] — uses
+- [[linear-factor-model]] — specializes
 - [[principal-component-analysis]] — contrasts-with: ICA assumes independent non-Gaussian sources and recovers mixing directions; PCA assumes Gaussian latents and only fixes a variance-ordered subspace.
 - [[maximum-likelihood-estimation]] — uses: ICA's learning rule is steepest ascent on the marginal log likelihood of the mixtures.
 - [[natural-gradient]] — uses: The covariant ICA update is the natural-gradient form of the maximum-likelihood ascent.

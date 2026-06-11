@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- distribution-shift
 component_scores:
   alternatives: null
   conditions: null
@@ -9,6 +11,8 @@ component_scores:
   implementation: null
   operational_mechanism: null
   principled_mechanism: null
+contrasts-with:
+- domain-adversarial-learning
 coverage: 1
 date_created: '2026-06-11'
 date_updated: '2026-06-11'
@@ -29,6 +33,9 @@ tags:
 - self-supervised
 title: Test-Time Adaptation (TTA)
 understanding: 0
+uses:
+- entropy
+- data-augmentation
 ---
 
 ## Definition
@@ -46,4 +53,8 @@ Unlike unsupervised domain adaptation (UDA), TTA does not assume access to the s
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[domain-adversarial-learning]] — contrasts-with
+- [[data-augmentation]] — uses
+- [[entropy]] — uses
+- [[distribution-shift]] — applies
 [To be populated during integration]

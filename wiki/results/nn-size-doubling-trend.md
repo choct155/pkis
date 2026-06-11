@@ -14,12 +14,16 @@ domain:
 - deep-learning
 - machine-learning
 id: pkis:result:nn-size-doubling-trend
+instantiates:
+- scaling-laws
 knowledge_type: result
 maturity: evolving
 needs_canonical_source: false
 related_concepts: []
 sources:
 - goodfellow-deeplearning-ch01
+specializes:
+- neural-scaling-laws
 tags:
 - scaling
 - hardware
@@ -44,4 +48,6 @@ Simple neuron-count comparisons ignore architectural differences, connection den
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[scaling-laws]] — instantiates
+- [[neural-scaling-laws]] — specializes: The ~2.4-year doubling of network size is an early empirical scaling law for neural networks.
 [To be populated during integration]

@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+analogous-to:
+- ridge-regression
 component_scores:
   application: null
   boundary: null
@@ -10,6 +12,9 @@ component_scores:
   prerequisites: null
   scope: null
   transfer: null
+contrasts-with:
+- noninformative-prior
+- jeffreys-prior
 coverage: 1
 date_created: '2026-06-11'
 date_updated: '2026-06-11'
@@ -23,6 +28,8 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - murphy-pml2-advanced-ch15
+specializes:
+- normal-inverse-gamma-prior
 tags:
 - prior
 - ridge-regression
@@ -45,4 +52,8 @@ The g-prior makes the posterior invariant to affine rescaling of the inputs (e.g
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[jeffreys-prior]] — contrasts-with
+- [[noninformative-prior]] — contrasts-with
+- [[ridge-regression]] — analogous-to
+- [[normal-inverse-gamma-prior]] — specializes
 [To be populated during integration]

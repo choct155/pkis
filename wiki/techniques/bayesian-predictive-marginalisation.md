@@ -9,6 +9,8 @@ component_scores:
   implementation: null
   operational_mechanism: null
   principled_mechanism: null
+contrasts-with:
+- overfitting-and-underfitting
 coverage: 1
 date_created: '2026-06-11'
 date_updated: '2026-06-11'
@@ -17,6 +19,9 @@ domain:
 - statistics
 - bayesian-methods
 id: pkis:technique:bayesian-predictive-marginalisation
+instantiates:
+- marginalization
+- posterior-predictive-distribution
 knowledge_type: technique
 maturity: evolving
 needs_canonical_source: false
@@ -31,6 +36,9 @@ tags:
 - Gaussian
 title: Bayesian Predictive Distribution by Marginalisation
 understanding: 0
+uses:
+- prior-likelihood-posterior
+- gaussian-distribution
 ---
 
 ## Definition
@@ -47,4 +55,9 @@ Marginalisation automatically regularises: for an $M=9$ polynomial with a sensib
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[overfitting-and-underfitting]] — contrasts-with
+- [[gaussian-distribution]] — uses
+- [[posterior-predictive-distribution]] — instantiates
+- [[marginalization]] — instantiates
+- [[prior-likelihood-posterior]] — uses
 [To be populated during integration]

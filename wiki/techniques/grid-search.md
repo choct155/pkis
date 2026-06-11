@@ -9,6 +9,9 @@ component_scores:
   implementation: null
   operational_mechanism: null
   principled_mechanism: null
+contrasts-with:
+- random-search-hyperparameters
+- bayesian-optimization
 coverage: 1
 date_created: '2026-06-11'
 date_updated: '2026-06-11'
@@ -28,6 +31,8 @@ tags:
 - exhaustive-search
 title: Grid Search for Hyperparameter Tuning
 understanding: 0
+uses:
+- cross-validation
 ---
 
 ## Definition
@@ -42,4 +47,7 @@ Grid search is simple, embarrassingly parallel, and exhaustive within the define
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[cross-validation]] — uses
+- [[bayesian-optimization]] — contrasts-with
+- [[random-search-hyperparameters]] — contrasts-with
 [To be populated during integration]

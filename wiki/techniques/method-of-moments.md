@@ -9,6 +9,8 @@ component_scores:
   implementation: null
   operational_mechanism: null
   principled_mechanism: null
+contrasts-with:
+- maximum-likelihood-estimation
 coverage: 1
 date_created: '2026-06-11'
 date_updated: '2026-06-11'
@@ -28,6 +30,9 @@ tags:
 - initialisation
 title: Method of Moments (MOM)
 understanding: 0
+uses:
+- em-algorithm
+- sufficient-statistics
 ---
 
 ## Definition
@@ -45,4 +50,7 @@ For the Uniform$(\theta_1, \theta_2)$ distribution, MOM can yield $\hat{\theta}_
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[sufficient-statistics]] — uses
+- [[em-algorithm]] — uses: MOM used to initialise EM for mixture models
+- [[maximum-likelihood-estimation]] — contrasts-with: MOM is simpler but less efficient than MLE
 [To be populated during integration]

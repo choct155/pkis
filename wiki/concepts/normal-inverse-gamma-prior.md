@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- linear-regression
 component_scores:
   application: null
   boundary: null
@@ -17,6 +19,8 @@ domain:
 - statistics
 - bayesian-inference
 id: pkis:concept:normal-inverse-gamma-prior
+instantiates:
+- conjugate-prior
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
@@ -30,6 +34,9 @@ tags:
 - closed-form-posterior
 title: Normal-Inverse-Gamma (NIG) Prior
 understanding: 0
+uses:
+- bayesian-linear-regression
+- t-distribution
 ---
 
 ## Definition
@@ -47,4 +54,8 @@ Given $N$ observations: $\hat{w}=(\bar{\Sigma}^{-1}+X^TX)^{-1}(\bar{\Sigma}^{-1}
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[t-distribution]] — uses: Marginal posterior over weights is a multivariate Student-t
+- [[bayesian-linear-regression]] — uses
+- [[linear-regression]] — applies
+- [[conjugate-prior]] — instantiates
 [To be populated during integration]

@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- representation-learning
 component_scores:
   application: null
   boundary: null
@@ -10,13 +12,24 @@ component_scores:
   prerequisites: null
   scope: null
   transfer: null
+contrasts-with:
+- curse-of-dimensionality
 coverage: 1
 date_created: '2026-06-11'
 date_updated: '2026-06-11'
 domain:
 - machine-learning
 - cognitive-science
+extends:
+- smoothness-assumption-ml
+generalizes:
+- word-embeddings
+- contextual-word-embeddings
 id: pkis:concept:distributed-representation
+instantiates:
+- connectionism
+- inductive-priors-representation-learning
+- restricted-boltzmann-machine
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
@@ -32,6 +45,10 @@ tags:
 - neural-networks
 title: Distributed Representation
 understanding: 0
+uses:
+- exponential-regions-distributed-representation
+- neural-networks
+- latent-variable-models
 ---
 
 ## Definition
@@ -49,4 +66,15 @@ Introduced prominently by Hinton, McClelland & Rumelhart (1986) during the conne
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[representation-learning]] — applies: representation-learning is implicitly present in several existing nodes
+- [[restricted-boltzmann-machine]] — instantiates
+- [[latent-variable-models]] — uses
+- [[smoothness-assumption-ml]] — extends: Distributed representations extend beyond smoothness to achieve exponential generalisation
+- [[curse-of-dimensionality]] — contrasts-with
+- [[inductive-priors-representation-learning]] — instantiates
+- [[neural-networks]] — uses
+- [[exponential-regions-distributed-representation]] — uses
+- [[contextual-word-embeddings]] — generalizes
+- [[word-embeddings]] — generalizes: Word embeddings are distributed representations of words.
+- [[connectionism]] — instantiates: Distributed representation was a central concept introduced in the connectionist movement.
 [To be populated during integration]

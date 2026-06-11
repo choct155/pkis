@@ -14,6 +14,8 @@ domain:
 - probabilistic-programming
 - methodology
 id: pkis:principle:turning-the-bayesian-crank
+instantiates:
+- bayesian-inference
 knowledge_type: principle
 maturity: evolving
 needs_canonical_source: false
@@ -27,6 +29,11 @@ tags:
 - separation-of-concerns
 title: Turning the Bayesian Crank
 understanding: 0
+uses:
+- probabilistic-programming-language
+- advi
+- hmc
+- no-u-turn-sampler
 ---
 
 ## Definition
@@ -42,4 +49,9 @@ The phrase captures the Bayesian workflow articulated in texts like Gelman et al
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[no-u-turn-sampler]] — uses
+- [[hmc]] — uses
+- [[advi]] — uses
+- [[probabilistic-programming-language]] — uses
+- [[bayesian-inference]] — instantiates
 [To be populated during integration]

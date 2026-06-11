@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- robot-localization
 component_scores:
   application: null
   boundary: null
@@ -18,6 +20,8 @@ domain:
 - signal-processing
 - statistics
 id: pkis:concept:sensor-fusion
+instantiates:
+- linear-gaussian-system
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
@@ -31,6 +35,8 @@ tags:
 - robotics
 title: Sensor Fusion
 understanding: 0
+uses:
+- bayes-rule-for-gaussians
 ---
 
 ## Definition
@@ -46,4 +52,7 @@ Sensor fusion is foundational in robotics, navigation, medical imaging, and sign
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[robot-localization]] — applies
+- [[linear-gaussian-system]] — instantiates
+- [[bayes-rule-for-gaussians]] — uses
 [To be populated during integration]

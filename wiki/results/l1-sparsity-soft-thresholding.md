@@ -1,12 +1,16 @@
 ---
 aliases: []
 also_type: []
+analogous-to:
+- spike-and-slab
 component_scores:
   conditions: null
   implications: null
   limitations: null
   proof_sketch: null
   statement: null
+contrasts-with:
+- l2-regularization-eigenspectrum-shrinkage
 coverage: 1
 date_created: '2026-06-11'
 date_updated: '2026-06-11'
@@ -22,6 +26,8 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - goodfellow-deeplearning-ch07
+specializes:
+- shrinkage-priors
 tags:
 - L1-regularization
 - LASSO
@@ -30,6 +36,9 @@ tags:
 - feature-selection
 title: L1 Regularization Induces Sparsity via Soft Thresholding
 understanding: 0
+uses:
+- lasso
+- maximum-a-posteriori-estimation-map
 ---
 
 ## Definition
@@ -47,4 +56,9 @@ The exact-zero property makes $L^1$ (LASSO) a natural feature-selection mechanis
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[maximum-a-posteriori-estimation-map]] — uses
+- [[shrinkage-priors]] — specializes
+- [[spike-and-slab]] — analogous-to: Both achieve parameter sparsity via prior-induced shrinkage-to-zero
+- [[l2-regularization-eigenspectrum-shrinkage]] — contrasts-with: L1 produces exact zeros; L2 only scales toward zero
+- [[lasso]] — uses
 [To be populated during integration]

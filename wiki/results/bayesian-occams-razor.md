@@ -1,12 +1,18 @@
 ---
 aliases: []
 also_type: []
+analogous-to:
+- minimum-description-length
+applies:
+- bayesian-model-comparison
 component_scores:
   conditions: null
   implications: null
   limitations: null
   proof_sketch: null
   statement: null
+contrasts-with:
+- overfitting-and-underfitting
 coverage: 1
 date_created: '2026-06-11'
 date_updated: '2026-06-11'
@@ -15,9 +21,14 @@ domain:
 - machine-learning
 - information-theory
 id: pkis:result:bayesian-occams-razor
+instantiates:
+- occams-razor
 knowledge_type: result
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- information-criteria
+- bayesian-information-criterion
 related_concepts: []
 sources:
 - murphy-pml1-intro-ch05
@@ -29,6 +40,9 @@ tags:
 - Bayesian
 title: Bayesian Occam's Razor Effect
 understanding: 0
+uses:
+- marginal-likelihood
+- occam-factor
 ---
 
 ## Definition
@@ -45,4 +59,12 @@ This result shows that Bayesian model selection via marginal likelihoods impleme
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[occams-razor]] — instantiates
+- [[minimum-description-length]] — analogous-to
+- [[bayesian-information-criterion]] — prerequisite-of
+- [[overfitting-and-underfitting]] — contrasts-with
+- [[information-criteria]] — prerequisite-of
+- [[occam-factor]] — uses
+- [[bayesian-model-comparison]] — applies
+- [[marginal-likelihood]] — uses
 [To be populated during integration]

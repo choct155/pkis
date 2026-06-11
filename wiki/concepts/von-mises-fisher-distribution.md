@@ -1,6 +1,10 @@
 ---
 aliases: []
 also_type: []
+analogous-to:
+- gaussian-distribution
+applies:
+- word-embeddings
 component_scores:
   application: null
   boundary: null
@@ -32,6 +36,9 @@ tags:
 - concentration
 title: Von Mises–Fisher Distribution
 understanding: 0
+uses:
+- pmf-and-pdf
+- mixture-models
 ---
 
 ## Definition
@@ -46,4 +53,8 @@ The vMF distribution is the correct distribution for directional data and $\ell_
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[mixture-models]] — uses
+- [[word-embeddings]] — applies
+- [[pmf-and-pdf]] — uses
+- [[gaussian-distribution]] — analogous-to
 [To be populated during integration]

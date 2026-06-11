@@ -30,6 +30,10 @@ tags:
 - svm
 title: SVM Dual Formulation
 understanding: 0
+uses:
+- lagrangian-duality
+- the-kernel-trick
+- support-vectors
 ---
 
 ## Definition
@@ -46,4 +50,7 @@ The dual formulation is what allows SVMs to exploit the kernel trick: neither th
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[support-vectors]] — uses
+- [[the-kernel-trick]] — uses
+- [[lagrangian-duality]] — uses
 [To be populated during integration]

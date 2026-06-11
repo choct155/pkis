@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+analogous-to:
+- multimodal-vae
 component_scores:
   application: null
   limits: null
@@ -14,6 +16,8 @@ date_updated: '2026-06-11'
 domain:
 - machine-learning
 - semi-supervised-learning
+extends:
+- variational-autoencoder
 id: pkis:framework:semisupervised-vae
 knowledge_type: framework
 maturity: evolving
@@ -29,6 +33,8 @@ tags:
 - M2
 title: Semisupervised VAE (M2 Model)
 understanding: 0
+uses:
+- elbo
 ---
 
 ## Definition
@@ -47,4 +53,7 @@ The M2 model achieves competitive classification accuracy with very few labels b
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[elbo]] — uses
+- [[multimodal-vae]] — analogous-to
+- [[variational-autoencoder]] — extends
 [To be populated during integration]

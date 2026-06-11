@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- vector-quantization
 component_scores:
   alternatives: null
   conditions: null
@@ -17,12 +19,18 @@ domain:
 - statistics
 - unsupervised-learning
 id: pkis:technique:k-means-algorithm
+instantiates:
+- clustering
+- k-means-as-em-limit
 knowledge_type: technique
 maturity: evolving
 needs_canonical_source: false
 related_concepts: []
 sources:
 - bishop-prml-ch09
+specializes:
+- gaussian-mixture-models
+- em-algorithm
 tags:
 - clustering
 - expectation-maximization
@@ -30,6 +38,8 @@ tags:
 - coordinate-descent
 title: K-Means Algorithm
 understanding: 0
+uses:
+- cluster-dissimilarity-measures
 ---
 
 ## Definition
@@ -49,4 +59,10 @@ K-medoids generalises the distortion measure to any $\mathcal{V}(\mathbf{x},\mat
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[cluster-dissimilarity-measures]] — uses
+- [[k-means-as-em-limit]] — instantiates
+- [[vector-quantization]] — applies: K-means minimises the VQ distortion measure
+- [[em-algorithm]] — specializes: K-means E/M steps correspond to hard-assignment limit of EM E/M steps
+- [[gaussian-mixture-models]] — specializes: K-means is the hard-assignment, zero-temperature limit of EM for isotropic Gaussian mixtures
+- [[clustering]] — instantiates
 [To be populated during integration]

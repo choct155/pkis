@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- meta-learning
 component_scores:
   application: null
   boundary: null
@@ -16,6 +18,8 @@ date_updated: '2026-06-11'
 domain:
 - deep-learning
 - meta-learning
+generalizes:
+- film-feature-wise-linear-modulation
 id: pkis:concept:hypernetwork
 knowledge_type: concept
 maturity: evolving
@@ -30,6 +34,8 @@ tags:
 - meta-learning
 title: Hypernetwork
 understanding: 0
+uses:
+- deep-neural-network-computation-graph
 ---
 
 ## Definition
@@ -44,4 +50,7 @@ Hypernetworks allow rapid, input-conditioned parameter generation, enabling a si
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[meta-learning]] — applies: hypernetworks generate task-specific parameters for meta-learning
+- [[deep-neural-network-computation-graph]] — uses
+- [[film-feature-wise-linear-modulation]] — generalizes
 [To be populated during integration]

@@ -6,6 +6,8 @@ component_scores:
   justification: null
   statement: null
   violations: null
+contrasts-with:
+- knowledge-base-ai
 coverage: 1
 date_created: '2026-06-11'
 date_updated: '2026-06-11'
@@ -26,6 +28,9 @@ tags:
 - big-data
 title: Data-Driven AI (Learning from Experience)
 understanding: 0
+uses:
+- supervised-learning
+- inductive-bias
 ---
 
 ## Definition
@@ -43,4 +48,7 @@ As of ~2016, supervised deep learning typically achieves acceptable performance 
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[inductive-bias]] — uses
+- [[supervised-learning]] — uses
+- [[knowledge-base-ai]] — contrasts-with
 [To be populated during integration]

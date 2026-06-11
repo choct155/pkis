@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+analogous-to:
+- kl-divergence
 component_scores:
   application: null
   boundary: null
@@ -30,6 +32,9 @@ tags:
 - deviance
 title: Deviance (GLM)
 understanding: 0
+uses:
+- saturated-model
+- calibration
 ---
 
 ## Definition
@@ -44,4 +49,7 @@ For Poisson regression the deviance simplifies to $2\sum_i[y_i\log(y_i/\hat{\mu}
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[calibration]] — uses
+- [[saturated-model]] — uses
+- [[kl-divergence]] — analogous-to: Deviance is twice the KL-based log-likelihood ratio
 [To be populated during integration]

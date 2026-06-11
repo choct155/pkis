@@ -16,7 +16,12 @@ domain:
 - deep-learning
 - generative-models
 - energy-based-models
+extends:
+- gaussian-bernoulli-rbm
+- restricted-boltzmann-machine
 id: pkis:technique:spike-and-slab-rbm
+instantiates:
+- spike-and-slab
 knowledge_type: technique
 maturity: evolving
 needs_canonical_source: false
@@ -44,4 +49,7 @@ ssRBMs address the weakness of Gaussian-Bernoulli RBMs in modelling pixel covari
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[spike-and-slab]] — instantiates: Applies the spike-and-slab prior structure to RBM hidden units.
+- [[restricted-boltzmann-machine]] — extends
+- [[gaussian-bernoulli-rbm]] — extends: ssRBM adds slab variables to model conditional covariance, beyond the mean-only Gaussian RBM.
 [To be populated during integration]

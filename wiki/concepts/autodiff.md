@@ -17,10 +17,14 @@ domain:
 - machine-learning
 - deep-learning
 - numerical-methods
+generalizes:
+- backpropagation
 id: pkis:concept:autodiff
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- gradient-descent
 related_concepts: []
 sources:
 - murphy-pml1-intro-ch13
@@ -49,4 +53,6 @@ Autodiff enables *differentiable programming*: any differentiable DAG can be tra
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[backpropagation]] — generalizes
+- [[gradient-descent]] — prerequisite-of
 [To be populated during integration]

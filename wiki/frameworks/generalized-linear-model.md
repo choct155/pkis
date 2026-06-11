@@ -14,6 +14,10 @@ date_updated: '2026-06-11'
 domain:
 - statistics
 - machine-learning
+generalizes:
+- linear-regression
+- logistic-regression
+- poisson-regression
 id: pkis:framework:generalized-linear-model
 knowledge_type: framework
 maturity: evolving
@@ -21,6 +25,8 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - murphy-pml2-advanced-ch15
+specializes:
+- exponential-family
 tags:
 - regression
 - exponential-family
@@ -29,6 +35,11 @@ tags:
 - dispersion
 title: Generalized Linear Model (GLM)
 understanding: 0
+uses:
+- link-function
+- iteratively-reweighted-least-squares
+- maximum-likelihood-estimation
+- bayesian-inference
 ---
 
 ## Definition
@@ -43,4 +54,12 @@ GLMs unify linear regression, logistic regression, Poisson regression, and many 
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[bayesian-inference]] — uses
+- [[maximum-likelihood-estimation]] — uses
+- [[iteratively-reweighted-least-squares]] — uses
+- [[poisson-regression]] — generalizes
+- [[logistic-regression]] — generalizes
+- [[linear-regression]] — generalizes
+- [[link-function]] — uses
+- [[exponential-family]] — specializes
 [To be populated during integration]

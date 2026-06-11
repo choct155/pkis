@@ -15,6 +15,10 @@ date_updated: '2026-06-11'
 domain:
 - machine-learning
 - Bayesian-statistics
+extends:
+- gaussian-process-regression
+- gaussian-process-gp
+- gp-posterior-inference
 id: pkis:technique:sparse-gp-inducing-points
 knowledge_type: technique
 maturity: evolving
@@ -31,6 +35,10 @@ tags:
 - pseudo-inputs
 title: Sparse GP via Inducing Points
 understanding: 0
+uses:
+- variational-inference
+- gram-matrix
+- elbo
 ---
 
 ## Definition
@@ -45,4 +53,10 @@ Sparse GPs make nonparametric Bayesian function estimation practical for large d
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[gp-posterior-inference]] — extends
+- [[elbo]] — uses
+- [[gaussian-process-gp]] — extends
+- [[gram-matrix]] — uses
+- [[variational-inference]] — uses
+- [[gaussian-process-regression]] — extends
 [To be populated during integration]

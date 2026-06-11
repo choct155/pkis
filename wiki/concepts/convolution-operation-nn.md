@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+analogous-to:
+- convolution-of-distributions
 component_scores:
   application: null
   boundary: null
@@ -17,12 +19,16 @@ domain:
 - deep-learning
 - signal-processing
 id: pkis:concept:convolution-operation-nn
+instantiates:
+- convolutional-neural-networks
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
 related_concepts: []
 sources:
 - goodfellow-deeplearning-ch09
+specializes:
+- linear-mapping
 tags:
 - convolution
 - feature-map
@@ -31,6 +37,8 @@ tags:
 - CNN
 title: Convolution Operation (Neural Networks)
 understanding: 0
+uses:
+- toeplitz-matrices
 ---
 
 ## Definition
@@ -45,4 +53,8 @@ Convolution is the core linear operation of CNNs; it exploits spatial structure 
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[convolution-of-distributions]] — analogous-to: Neural-network convolution is a discrete, finite-support version of the continuous convolution integral.
+- [[linear-mapping]] — specializes
+- [[toeplitz-matrices]] — uses: 1-D discrete convolution corresponds to multiplication by a Toeplitz matrix; 2-D convolution to a doubly block-circulant matrix.
+- [[convolutional-neural-networks]] — instantiates
 [To be populated during integration]

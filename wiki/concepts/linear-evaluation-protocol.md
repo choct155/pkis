@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- contrastive-representation-learning
 component_scores:
   application: null
   boundary: null
@@ -10,6 +12,8 @@ component_scores:
   prerequisites: null
   scope: null
   transfer: null
+contrasts-with:
+- pretraining-and-fine-tuning
 coverage: 1
 date_created: '2026-06-11'
 date_updated: '2026-06-11'
@@ -31,6 +35,10 @@ tags:
 - fine-tuning
 title: Linear Evaluation Protocol
 understanding: 0
+uses:
+- transfer-learning
+- logistic-regression
+- linear-separability
 ---
 
 ## Definition
@@ -47,4 +55,9 @@ Linear evaluation tests whether task-relevant information is **linearly accessib
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[pretraining-and-fine-tuning]] — contrasts-with
+- [[contrastive-representation-learning]] — applies
+- [[linear-separability]] — uses
+- [[logistic-regression]] — uses
+- [[transfer-learning]] — uses
 [To be populated during integration]

@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+analogous-to:
+- iteratively-reweighted-least-squares
 component_scores:
   alternatives: null
   conditions: null
@@ -15,6 +17,8 @@ date_updated: '2026-06-11'
 domain:
 - machine-learning
 - statistics
+extends:
+- gaussian-mixture-models
 id: pkis:technique:mixture-linear-regression-em
 knowledge_type: technique
 maturity: evolving
@@ -22,6 +26,8 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - bishop-prml-ch14
+specializes:
+- mixture-models
 tags:
 - mixture-model
 - regression
@@ -30,6 +36,9 @@ tags:
 - latent-variable
 title: Mixture of Linear Regression Models (EM)
 understanding: 0
+uses:
+- em-algorithm
+- linear-regression
 ---
 
 ## Definition
@@ -46,4 +55,9 @@ This model captures multimodal, heteroscedastic regression distributions that a 
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[iteratively-reweighted-least-squares]] — analogous-to
+- [[mixture-models]] — specializes
+- [[linear-regression]] — uses
+- [[gaussian-mixture-models]] — extends
+- [[em-algorithm]] — uses
 [To be populated during integration]

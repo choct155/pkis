@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- structural-breaks
 component_scores:
   alternatives: null
   conditions: null
@@ -31,6 +33,10 @@ tags:
 - time-series
 title: Bayesian Online Changepoint Detection (BOCPD)
 understanding: 0
+uses:
+- hidden-semi-markov-model
+- particle-filter
+- conjugate-prior
 ---
 
 ## Definition
@@ -47,4 +53,8 @@ BOCPD (Adams & MacKay 2007, Fearnhead & Liu 2007) provides a principled Bayesian
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[structural-breaks]] — applies
+- [[conjugate-prior]] — uses
+- [[particle-filter]] — uses
+- [[hidden-semi-markov-model]] — uses
 [To be populated during integration]

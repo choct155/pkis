@@ -1,6 +1,9 @@
 ---
 aliases: []
 also_type: []
+analogous-to:
+- bias-variance-tradeoff
+- law-of-total-variance
 component_scores:
   application: null
   boundary: null
@@ -18,6 +21,8 @@ domain:
 - statistics
 - decision-theory
 id: pkis:concept:epistemic-vs-aleatoric-uncertainty
+instantiates:
+- probabilistic-ml-framework
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
@@ -25,12 +30,18 @@ related_concepts: []
 sources:
 - murphy-pml1-intro-ch01
 - murphy-pml1-intro-ch02
+specializes:
+- uncertainty-quantification
 tags:
 - uncertainty-quantification
 - bayesian
 - reliability
 title: Epistemic vs Aleatoric Uncertainty
 understanding: 0
+uses:
+- bayesian-inference
+- entropy
+- information-theory
 ---
 
 ## Definition
@@ -47,4 +58,11 @@ Distinguishing the two types guides where to invest: more data reduces epistemic
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[information-theory]] — uses
+- [[law-of-total-variance]] — analogous-to
+- [[entropy]] — uses
+- [[bias-variance-tradeoff]] — analogous-to
+- [[probabilistic-ml-framework]] — instantiates
+- [[bayesian-inference]] — uses
+- [[uncertainty-quantification]] — specializes
 [To be populated during integration]

@@ -17,6 +17,8 @@ domain:
 - statistics
 - probability-theory
 - epistemology
+generalizes:
+- bayesian-inference
 id: pkis:concept:jeffreys-conditionalization
 knowledge_type: concept
 maturity: evolving
@@ -32,6 +34,9 @@ tags:
 - belief-updating
 title: Jeffrey's Conditionalization Rule
 understanding: 0
+uses:
+- kl-divergence
+- kl-divergence-uniqueness
 ---
 
 ## Definition
@@ -50,4 +55,7 @@ Jeffrey's conditionalization handles soft evidence (uncertain observations) with
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[kl-divergence-uniqueness]] — uses
+- [[kl-divergence]] — uses
+- [[bayesian-inference]] — generalizes
 [To be populated during integration]

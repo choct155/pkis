@@ -14,7 +14,11 @@ domain:
 - statistics
 - information-theory
 - information-geometry
+extends:
+- score-function
 id: pkis:result:fim-exponential-family
+instantiates:
+- fisher-information
 knowledge_type: result
 maturity: evolving
 needs_canonical_source: false
@@ -29,6 +33,11 @@ tags:
 - information-geometry
 title: 'FIM for Exponential Family: FIM equals Covariance of Sufficient Statistics'
 understanding: 0
+uses:
+- exponential-family
+- sufficient-statistics
+- jeffreys-prior
+- natural-gradient
 ---
 
 ## Definition
@@ -47,4 +56,10 @@ This result unifies the FIM across all exponential family models (Gaussian, Bern
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[natural-gradient]] — uses
+- [[jeffreys-prior]] — uses
+- [[fisher-information]] — instantiates
+- [[sufficient-statistics]] — uses
+- [[exponential-family]] — uses
+- [[score-function]] — extends
 [To be populated during integration]

@@ -20,6 +20,8 @@ id: pkis:concept:density-ratio-estimation
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- f-divergence
 related_concepts: []
 sources:
 - murphy-pml2-advanced-ch26
@@ -30,6 +32,9 @@ tags:
 - likelihood-ratio
 title: Density Ratio Estimation
 understanding: 0
+uses:
+- logistic-regression
+- scoring-rules
 ---
 
 ## Definition
@@ -44,4 +49,7 @@ Density ratio estimation converts an intractable density evaluation problem into
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[f-divergence]] — prerequisite-of
+- [[scoring-rules]] — uses
+- [[logistic-regression]] — uses: Binary classifier with Bernoulli loss provides the density ratio estimate.
 [To be populated during integration]

@@ -16,6 +16,8 @@ date_updated: '2026-06-11'
 domain:
 - probability-theory
 - machine-learning
+generalizes:
+- binomial-distribution
 id: pkis:concept:multinoulli-distribution
 knowledge_type: concept
 maturity: evolving
@@ -30,6 +32,9 @@ tags:
 - softmax
 title: Multinoulli (Categorical) Distribution
 understanding: 0
+uses:
+- probability-mass-function
+- mixture-models
 ---
 
 ## Definition
@@ -44,4 +49,7 @@ The multinoulli distribution is fundamental to multi-class classification, langu
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[mixture-models]] — uses: component identity variable is multinoulli distributed
+- [[probability-mass-function]] — uses
+- [[binomial-distribution]] — generalizes
 [To be populated during integration]

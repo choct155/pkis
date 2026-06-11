@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+analogous-to:
+- barlow-twins-loss
 component_scores:
   alternatives: null
   conditions: null
@@ -9,6 +11,8 @@ component_scores:
   implementation: null
   operational_mechanism: null
   principled_mechanism: null
+contrasts-with:
+- contrastive-representation-learning
 coverage: 1
 date_created: '2026-06-11'
 date_updated: '2026-06-11'
@@ -17,6 +21,8 @@ domain:
 - self-supervised-learning
 - computer-vision
 id: pkis:technique:byol
+instantiates:
+- self-supervised-learning
 knowledge_type: technique
 maturity: evolving
 needs_canonical_source: false
@@ -31,6 +37,8 @@ tags:
 - DINO
 title: BYOL (Bootstrap Your Own Latents)
 understanding: 0
+uses:
+- transfer-learning
 ---
 
 ## Definition
@@ -50,4 +58,8 @@ SimSiam uses $\theta' \leftarrow \theta$ (stop-gradient only); DINO replaces MSE
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[transfer-learning]] — uses
+- [[self-supervised-learning]] — instantiates
+- [[barlow-twins-loss]] — analogous-to
+- [[contrastive-representation-learning]] — contrasts-with
 [To be populated during integration]

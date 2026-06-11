@@ -19,6 +19,9 @@ id: pkis:technique:contrastive-loss-siamese
 knowledge_type: technique
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- triplet-loss
+- n-pairs-loss
 related_concepts: []
 sources:
 - murphy-pml1-intro-ch16
@@ -30,6 +33,8 @@ tags:
 - metric-learning
 title: Contrastive Loss and Siamese Networks
 understanding: 0
+uses:
+- hinge-loss
 ---
 
 ## Definition
@@ -44,4 +49,7 @@ Contrastive loss is among the earliest and most influential losses for learning 
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[hinge-loss]] — uses
+- [[n-pairs-loss]] — prerequisite-of
+- [[triplet-loss]] — prerequisite-of: contrastive/pairwise loss is the conceptual predecessor to triplet loss
 [To be populated during integration]

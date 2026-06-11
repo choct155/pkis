@@ -21,6 +21,9 @@ id: pkis:concept:data-generating-distribution
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- generalization-error-training-error
+- mle-as-kl-minimization
 related_concepts: []
 sources:
 - goodfellow-deeplearning-ch05
@@ -31,6 +34,8 @@ tags:
 - statistical-learning-theory
 title: Data-Generating Distribution
 understanding: 0
+uses:
+- probability-distribution-relationships
 ---
 
 ## Definition
@@ -47,4 +52,7 @@ All guarantees from statistical learning theory (bias, variance, consistency, VC
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[mle-as-kl-minimization]] — prerequisite-of
+- [[generalization-error-training-error]] — prerequisite-of
+- [[probability-distribution-relationships]] — uses
 [To be populated during integration]

@@ -1,6 +1,10 @@
 ---
 aliases: []
 also_type: []
+applies:
+- variational-autoencoder
+- posterior-collapse
+- hierarchical-vae
 component_scores:
   alternatives: null
   conditions: null
@@ -45,4 +49,7 @@ Free bits provides a principled lower bound on the per-latent information rate, 
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[hierarchical-vae]] — applies
+- [[posterior-collapse]] — applies
+- [[variational-autoencoder]] — applies
 [To be populated during integration]

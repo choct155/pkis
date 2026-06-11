@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- generative-adversarial-network-framework
 component_scores:
   conditions: null
   implications: null
@@ -28,6 +30,9 @@ tags:
 - convergence
 title: GAN–Jensen-Shannon Divergence Equivalence
 understanding: 0
+uses:
+- jensen-shannon-divergence
+- density-ratio-estimation
 ---
 
 ## Definition
@@ -42,4 +47,7 @@ This result grounds the GAN objective in information-theoretic divergence minimi
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[density-ratio-estimation]] — uses
+- [[jensen-shannon-divergence]] — uses
+- [[generative-adversarial-network-framework]] — applies
 [To be populated during integration]

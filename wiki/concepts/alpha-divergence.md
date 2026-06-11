@@ -16,6 +16,9 @@ date_updated: '2026-06-11'
 domain:
 - information-theory
 - approximate-inference
+generalizes:
+- kl-divergence
+- mutual-information
 id: pkis:concept:alpha-divergence
 knowledge_type: concept
 maturity: evolving
@@ -45,4 +48,6 @@ Unifies a broad spectrum of message-passing and variational algorithms: variatio
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[mutual-information]] — generalizes
+- [[kl-divergence]] — generalizes
 [To be populated during integration]

@@ -20,9 +20,13 @@ id: pkis:concept:range-and-nullspace
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- orthogonal-projection
 related_concepts: []
 sources:
 - murphy-pml1-intro-ch07
+specializes:
+- linear-algebra
 tags:
 - column-space
 - kernel
@@ -31,6 +35,11 @@ tags:
 - SVD
 title: Range and Nullspace of a Matrix
 understanding: 0
+uses:
+- basis-and-rank
+- linear-mapping
+- singular-value-decomposition
+- linear-independence
 ---
 
 ## Definition
@@ -47,4 +56,10 @@ The dimension of the range equals $\text{rank}(\mathbf{A})$; the dimension of th
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[linear-independence]] — uses
+- [[singular-value-decomposition]] — uses
+- [[orthogonal-projection]] — prerequisite-of
+- [[linear-mapping]] — uses
+- [[basis-and-rank]] — uses
+- [[linear-algebra]] — specializes
 [To be populated during integration]

@@ -9,6 +9,8 @@ component_scores:
   implementation: null
   operational_mechanism: null
   principled_mechanism: null
+contrasts-with:
+- mean-field-variational-inference
 coverage: 1
 date_created: '2026-06-11'
 date_updated: '2026-06-11'
@@ -16,13 +18,19 @@ domain:
 - machine-learning
 - deep-learning
 - variational-methods
+generalizes:
+- wake-sleep-algorithm
 id: pkis:technique:learned-approximate-inference
 knowledge_type: technique
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- variational-autoencoder
 related_concepts: []
 sources:
 - goodfellow-deeplearning-ch19
+specializes:
+- amortized-inference
 tags:
 - encoder-network
 - VAE
@@ -31,6 +39,9 @@ tags:
 - approximate-inference
 title: Learned Approximate Inference (Amortized Inference)
 understanding: 0
+uses:
+- inference-as-optimization
+- neural-networks
 ---
 
 ## Definition
@@ -50,4 +61,10 @@ The gap between the ELBO achieved by amortized inference and by per-example opti
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[mean-field-variational-inference]] — contrasts-with
+- [[neural-networks]] — uses
+- [[inference-as-optimization]] — uses
+- [[variational-autoencoder]] — prerequisite-of
+- [[wake-sleep-algorithm]] — generalizes
+- [[amortized-inference]] — specializes
 [To be populated during integration]

@@ -15,7 +15,11 @@ date_updated: '2026-06-11'
 domain:
 - statistics
 - machine-learning
+generalizes:
+- logistic-regression
 id: pkis:technique:binomial-regression
+instantiates:
+- generalized-linear-models
 knowledge_type: technique
 maturity: evolving
 needs_canonical_source: false
@@ -29,6 +33,9 @@ tags:
 - count-data
 title: Binomial Regression
 understanding: 0
+uses:
+- binomial-distribution
+- canonical-link-function
 ---
 
 ## Definition
@@ -44,4 +51,8 @@ Binary logistic regression is the special case $N_n=1$. The binomial regression 
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[canonical-link-function]] — uses
+- [[binomial-distribution]] — uses
+- [[logistic-regression]] — generalizes
+- [[generalized-linear-models]] — instantiates
 [To be populated during integration]

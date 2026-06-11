@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- variational-autoencoder
 component_scores:
   alternatives: null
   conditions: null
@@ -23,6 +25,8 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - goodfellow-deeplearning-ch17
+specializes:
+- importance-sampling
 tags:
 - importance-sampling
 - self-normalised
@@ -30,6 +34,8 @@ tags:
 - monte-carlo
 title: Biased Importance Sampling (Self-Normalised)
 understanding: 0
+uses:
+- optimal-importance-sampling-distribution
 ---
 
 ## Definition
@@ -46,4 +52,7 @@ Many distributions of interest in deep learning (e.g., EBMs, VAE posteriors) are
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[variational-autoencoder]] — applies: biased IS used to estimate log-likelihood in VAEs (IWAE bound)
+- [[optimal-importance-sampling-distribution]] — uses: both rely on the IS identity p*f = q*(pf/q)
+- [[importance-sampling]] — specializes: self-normalised / biased IS is a variant that handles unnormalized densities
 [To be populated during integration]

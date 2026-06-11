@@ -3,6 +3,11 @@ aliases: []
 also_type: []
 analogous-to:
 - directed-graphical-models
+- generative-program
+- autoregressive-model
+applies:
+- directed-graphical-models
+- bayesian-networks
 component_scores:
   alternatives: null
   conditions: null
@@ -11,6 +16,8 @@ component_scores:
   implementation: null
   operational_mechanism: null
   principled_mechanism: null
+contrasts-with:
+- gibbs-sampler
 coverage: 1
 date_created: '2026-06-09'
 date_updated: '2026-06-09'
@@ -31,6 +38,8 @@ tags:
 - probability-theory
 title: Ancestral Sampling
 understanding: 0
+uses:
+- dag-factorization
 ---
 
 ## Definition
@@ -40,5 +49,11 @@ understanding: 0
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[autoregressive-model]] — analogous-to
+- [[gibbs-sampler]] — contrasts-with
+- [[bayesian-networks]] — applies
+- [[generative-program]] — analogous-to
+- [[directed-graphical-models]] — applies
+- [[dag-factorization]] — uses
 - [[directed-graphical-models]] — analogous-to
 [To be populated during integration]

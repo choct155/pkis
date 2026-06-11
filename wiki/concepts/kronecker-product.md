@@ -1,6 +1,10 @@
 ---
 aliases: []
 also_type: []
+analogous-to:
+- einstein-summation
+applies:
+- gaussian-process
 component_scores:
   application: null
   boundary: null
@@ -23,6 +27,8 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - murphy-pml1-intro-ch07
+specializes:
+- linear-algebra
 tags:
 - tensor-product
 - vec-operator
@@ -31,6 +37,8 @@ tags:
 - multi-linear
 title: Kronecker Product
 understanding: 0
+uses:
+- matrix-decompositions
 ---
 
 ## Definition
@@ -45,4 +53,8 @@ Kronecker products arise naturally in multi-linear models, separable covariance 
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[einstein-summation]] — analogous-to
+- [[gaussian-process]] — applies
+- [[matrix-decompositions]] — uses
+- [[linear-algebra]] — specializes
 [To be populated during integration]

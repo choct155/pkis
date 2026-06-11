@@ -22,6 +22,8 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - murphy-pml1-intro-ch10
+specializes:
+- supervised-learning
 tags:
 - classification
 - multi-label
@@ -30,6 +32,8 @@ tags:
 - image-tagging
 title: Multi-label Classification
 understanding: 0
+uses:
+- binary-logistic-regression
 ---
 
 ## Definition
@@ -44,4 +48,6 @@ Many real tasks require multi-label outputs: image tagging, gene-function predic
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[supervised-learning]] — specializes
+- [[binary-logistic-regression]] — uses
 [To be populated during integration]

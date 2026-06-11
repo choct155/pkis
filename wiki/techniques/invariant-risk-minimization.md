@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- spurious-correlations
 component_scores:
   alternatives: null
   conditions: null
@@ -9,6 +11,8 @@ component_scores:
   implementation: null
   operational_mechanism: null
   principled_mechanism: null
+contrasts-with:
+- distributionally-robust-optimization
 coverage: 1
 date_created: '2026-06-11'
 date_updated: '2026-06-11'
@@ -22,6 +26,8 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - murphy-pml2-advanced-ch19
+specializes:
+- domain-generalization
 tags:
 - domain-generalization
 - causality
@@ -29,6 +35,9 @@ tags:
 - invariance
 title: Invariant Risk Minimization (IRM)
 understanding: 0
+uses:
+- causal-vs-anticausal-prediction
+- faithfulness-stability
 ---
 
 ## Definition
@@ -48,4 +57,9 @@ IRM has been shown to fail on covariate shift both theoretically and empirically
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[faithfulness-stability]] — uses
+- [[distributionally-robust-optimization]] — contrasts-with
+- [[causal-vs-anticausal-prediction]] — uses
+- [[spurious-correlations]] — applies
+- [[domain-generalization]] — specializes
 [To be populated during integration]

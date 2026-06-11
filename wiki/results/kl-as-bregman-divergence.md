@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- natural-gradient
 component_scores:
   conditions: null
   implications: null
@@ -14,6 +16,8 @@ domain:
 - information-theory
 - optimization
 - statistics
+extends:
+- kl-divergence
 id: pkis:result:kl-as-bregman-divergence
 knowledge_type: result
 maturity: evolving
@@ -29,6 +33,10 @@ tags:
 - natural-parameters
 title: KL Divergence as Bregman Divergence
 understanding: 0
+uses:
+- exponential-family
+- convex-set-and-function
+- partition-function
 ---
 
 ## Definition
@@ -49,4 +57,9 @@ Embedding KL divergence in the Bregman family unifies it with squared Euclidean 
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[natural-gradient]] — applies: Bregman structure motivates mirror-descent / natural-gradient
+- [[partition-function]] — uses
+- [[convex-set-and-function]] — uses
+- [[exponential-family]] — uses
+- [[kl-divergence]] — extends
 [To be populated during integration]

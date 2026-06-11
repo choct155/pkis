@@ -1,6 +1,10 @@
 ---
 aliases: []
 also_type: []
+analogous-to:
+- identifiability-of-mixtures
+applies:
+- robot-localization
 component_scores:
   application: null
   boundary: null
@@ -21,6 +25,9 @@ id: pkis:concept:perceptual-aliasing
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- belief-state-mdp
+- partially-observable-mdp
 related_concepts: []
 sources:
 - murphy-pml2-advanced-ch27
@@ -43,4 +50,8 @@ Perceptual aliasing is the core difficulty of inverse modeling: the observation 
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[identifiability-of-mixtures]] — analogous-to
+- [[robot-localization]] — applies
+- [[partially-observable-mdp]] — prerequisite-of
+- [[belief-state-mdp]] — prerequisite-of
 [To be populated during integration]

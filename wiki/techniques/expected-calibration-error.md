@@ -1,6 +1,9 @@
 ---
 aliases: []
 also_type: []
+applies:
+- calibration
+- predictive-model
 component_scores:
   alternatives: null
   conditions: null
@@ -29,6 +32,8 @@ tags:
 - MCE
 title: Expected Calibration Error (ECE) and Reliability Diagram
 understanding: 0
+uses:
+- brier-score
 ---
 
 ## Definition
@@ -43,4 +48,7 @@ ECE is the dominant scalar summary of calibration in modern deep-learning evalua
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[predictive-model]] — applies
+- [[brier-score]] — uses
+- [[calibration]] — applies
 [To be populated during integration]

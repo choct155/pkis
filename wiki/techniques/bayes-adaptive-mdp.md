@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- exploration-exploitation-tradeoff
 component_scores:
   alternatives: null
   conditions: null
@@ -15,6 +17,9 @@ date_updated: '2026-06-11'
 domain:
 - reinforcement-learning
 - bayesian-methods
+generalizes:
+- gittins-index
+- thompson-sampling
 id: pkis:technique:bayes-adaptive-mdp
 knowledge_type: technique
 maturity: evolving
@@ -22,6 +27,9 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - murphy-pml2-advanced-ch35
+specializes:
+- partially-observable-mdp
+- belief-state-mdp
 tags:
 - exploration
 - belief-state
@@ -30,6 +38,8 @@ tags:
 - Bayesian-RL
 title: Bayes-Adaptive MDP (BAMDP)
 understanding: 0
+uses:
+- bayesian-inference
 ---
 
 ## Definition
@@ -44,4 +54,10 @@ The BAMDP formalism extends the Gittins-index / bandit framework to full sequent
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[thompson-sampling]] — generalizes
+- [[bayesian-inference]] — uses
+- [[gittins-index]] — generalizes
+- [[exploration-exploitation-tradeoff]] — applies
+- [[belief-state-mdp]] — specializes
+- [[partially-observable-mdp]] — specializes
 [To be populated during integration]

@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- linear-gaussian-ssm
 component_scores:
   alternatives: null
   conditions: null
@@ -16,7 +18,11 @@ domain:
 - machine-learning
 - statistics
 - signal-processing
+extends:
+- kalman-filter
 id: pkis:technique:kalman-rts-smoother
+instantiates:
+- ffbs-algorithm
 knowledge_type: technique
 maturity: evolving
 needs_canonical_source: false
@@ -32,6 +38,8 @@ tags:
 - offline-inference
 title: Kalman (RTS) Smoother
 understanding: 0
+uses:
+- backwards-kalman-gain
 ---
 
 ## Definition
@@ -48,4 +56,8 @@ Smoothing yields strictly smaller posterior covariances than filtering and is es
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[linear-gaussian-ssm]] — applies
+- [[backwards-kalman-gain]] — uses
+- [[ffbs-algorithm]] — instantiates
+- [[kalman-filter]] — extends
 [To be populated during integration]

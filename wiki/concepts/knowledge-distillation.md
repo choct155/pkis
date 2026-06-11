@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- semi-supervised-learning
 component_scores:
   application: null
   boundary: null
@@ -17,6 +19,8 @@ domain:
 - machine-learning
 - deep-learning
 - model-compression
+generalizes:
+- pseudo-labeling
 id: pkis:concept:knowledge-distillation
 knowledge_type: concept
 maturity: evolving
@@ -32,6 +36,8 @@ tags:
 - temperature
 title: Knowledge Distillation
 understanding: 0
+uses:
+- cross-entropy-loss
 ---
 
 ## Definition
@@ -46,4 +52,7 @@ Distillation enables **model compression**: a compact student can approach teach
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[pseudo-labeling]] — generalizes
+- [[semi-supervised-learning]] — applies
+- [[cross-entropy-loss]] — uses
 [To be populated during integration]

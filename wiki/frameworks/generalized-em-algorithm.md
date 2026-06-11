@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+analogous-to:
+- coordinate-ascent-vi
 component_scores:
   application: null
   limits: null
@@ -15,6 +17,8 @@ domain:
 - machine-learning
 - statistics
 - optimisation
+extends:
+- em-algorithm
 id: pkis:framework:generalized-em-algorithm
 knowledge_type: framework
 maturity: evolving
@@ -30,6 +34,8 @@ tags:
 - convergence
 title: Generalized EM (GEM) Algorithm
 understanding: 0
+uses:
+- em-monotone-likelihood-increase
 ---
 
 ## Definition
@@ -46,4 +52,7 @@ GEM is essential when the M step has no closed-form solution (e.g., non-exponent
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[coordinate-ascent-vi]] — analogous-to
+- [[em-monotone-likelihood-increase]] — uses
+- [[em-algorithm]] — extends
 [To be populated during integration]

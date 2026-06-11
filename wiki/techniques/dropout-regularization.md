@@ -1,6 +1,12 @@
 ---
 aliases: []
 also_type: []
+analogous-to:
+- adversarial-training-regularization
+applies:
+- neural-networks
+- overfitting-and-underfitting
+- restricted-boltzmann-machine
 component_scores:
   alternatives: null
   conditions: null
@@ -9,6 +15,9 @@ component_scores:
   implementation: null
   operational_mechanism: null
   principled_mechanism: null
+contrasts-with:
+- weight-decay-as-prior
+- batch-normalization
 coverage: 1
 date_created: '2026-06-11'
 date_updated: '2026-06-11'
@@ -16,6 +25,8 @@ domain:
 - machine-learning
 - deep-learning
 - regularization
+extends:
+- bagging
 id: pkis:technique:dropout-regularization
 knowledge_type: technique
 maturity: evolving
@@ -23,6 +34,8 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - goodfellow-deeplearning-ch07
+specializes:
+- regularization
 tags:
 - dropout
 - ensemble
@@ -32,6 +45,8 @@ tags:
 - weight-scaling
 title: Dropout Regularization
 understanding: 0
+uses:
+- bias-variance-tradeoff
 ---
 
 ## Definition
@@ -48,4 +63,13 @@ Dropout is the most widely used implicit ensemble regularizer for deep networks.
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[adversarial-training-regularization]] — analogous-to: Both inject noise that forces robust representations
+- [[restricted-boltzmann-machine]] — applies
+- [[batch-normalization]] — contrasts-with: Batch normalization introduces additive+multiplicative noise and can make dropout unnecessary
+- [[weight-decay-as-prior]] — contrasts-with: Wager et al. showed dropout on linear regression equals L2 decay with per-feature coefficients
+- [[bias-variance-tradeoff]] — uses
+- [[overfitting-and-underfitting]] — applies
+- [[neural-networks]] — applies
+- [[bagging]] — extends: Dropout approximates bagging over exponentially many sub-networks with shared parameters
+- [[regularization]] — specializes
 [To be populated during integration]

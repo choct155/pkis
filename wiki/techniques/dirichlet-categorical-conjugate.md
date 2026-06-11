@@ -9,6 +9,8 @@ component_scores:
   implementation: null
   operational_mechanism: null
   principled_mechanism: null
+contrasts-with:
+- maximum-likelihood-estimation
 coverage: 1
 date_created: '2026-06-11'
 date_updated: '2026-06-11'
@@ -16,7 +18,11 @@ domain:
 - bayesian-statistics
 - machine-learning
 - natural-language-processing
+generalizes:
+- beta-binomial-distribution
 id: pkis:technique:dirichlet-categorical-conjugate
+instantiates:
+- conjugate-prior
 knowledge_type: technique
 maturity: evolving
 needs_canonical_source: false
@@ -31,6 +37,9 @@ tags:
 - add-one-smoothing
 title: Conjugate Bayesian Analysis for the Dirichlet-Categorical (Multinomial) Model
 understanding: 0
+uses:
+- dirichlet-distribution
+- marginal-likelihood
 ---
 
 ## Definition
@@ -48,4 +57,9 @@ This model underpins Bayesian language models (Dirichlet-language models, LDA to
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[maximum-likelihood-estimation]] — contrasts-with
+- [[marginal-likelihood]] — uses
+- [[beta-binomial-distribution]] — generalizes
+- [[dirichlet-distribution]] — uses
+- [[conjugate-prior]] — instantiates
 [To be populated during integration]

@@ -10,6 +10,8 @@ component_scores:
   prerequisites: null
   scope: null
   transfer: null
+contrasts-with:
+- late-iv
 coverage: 1
 date_created: '2026-06-11'
 date_updated: '2026-06-11'
@@ -24,6 +26,8 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - murphy-pml2-advanced-ch36
+specializes:
+- additive-unobserved-confounding
 tags:
 - instrumental-variables
 - linear-model
@@ -32,6 +36,9 @@ tags:
 - regression
 title: Two-Stage Least Squares (2SLS)
 understanding: 0
+uses:
+- instrumental-variables
+- linear-regression
 ---
 
 ## Definition
@@ -48,4 +55,8 @@ Practically, 2SLS is implemented by (1) regressing $A$ on $Z, X$ and taking fitt
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[additive-unobserved-confounding]] — specializes
+- [[late-iv]] — contrasts-with: 2SLS requires linearity; LATE requires monotonicity—complementary assumptions
+- [[linear-regression]] — uses
+- [[instrumental-variables]] — uses
 [To be populated during integration]

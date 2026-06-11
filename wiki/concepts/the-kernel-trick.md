@@ -29,6 +29,8 @@ tags:
 - feature-engineering
 title: The Kernel Trick
 understanding: 0
+uses:
+- mercer-kernel
 ---
 
 ## Definition
@@ -38,4 +40,5 @@ understanding: 0
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[mercer-kernel]] — uses
 [To be populated during integration]

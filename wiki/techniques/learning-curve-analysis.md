@@ -19,6 +19,8 @@ id: pkis:technique:learning-curve-analysis
 knowledge_type: technique
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- dl-practical-design-methodology
 related_concepts: []
 sources:
 - goodfellow-deeplearning-ch11
@@ -29,6 +31,9 @@ tags:
 - diagnostics
 title: Learning Curve Analysis
 understanding: 0
+uses:
+- bayes-error-rate
+- bias-variance-tradeoff
 ---
 
 ## Definition
@@ -45,4 +50,7 @@ Gathering data is expensive; so is training on large datasets. Learning curves p
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[dl-practical-design-methodology]] — prerequisite-of
+- [[bias-variance-tradeoff]] — uses
+- [[bayes-error-rate]] — uses: The asymptote of the learning curve is the Bayes error
 [To be populated during integration]

@@ -16,14 +16,24 @@ date_updated: '2026-06-11'
 domain:
 - causal-inference
 - statistics
+extends:
+- causal-bayesian-network
+generalizes:
+- probabilistic-graphical-models
 id: pkis:concept:structural-causal-model
+instantiates:
+- structural-causal-models
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- causal-discovery
 related_concepts: []
 sources:
 - murphy-pml2-advanced-ch30
 - murphy-pml2-advanced-ch36
+specializes:
+- directed-graphical-models
 tags:
 - causal-model
 - DAG
@@ -32,6 +42,11 @@ tags:
 - Pearl
 title: Structural Causal Model (SCM)
 understanding: 0
+uses:
+- intervention-do-operator
+- counterfactuals
+- ladder-of-causation
+- intervention-and-the-do-operator
 ---
 
 ## Definition
@@ -51,4 +66,13 @@ SCMs are the formal language for causal inference beyond association. They are t
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[probabilistic-graphical-models]] — generalizes: SCMs add causal/interventional semantics on top of PGM structure
+- [[intervention-and-the-do-operator]] — uses: Graph surgery/do-operator semantics are defined via SCM equation replacement
+- [[causal-bayesian-network]] — extends
+- [[directed-graphical-models]] — specializes
+- [[causal-discovery]] — prerequisite-of
+- [[ladder-of-causation]] — uses
+- [[counterfactuals]] — uses
+- [[intervention-do-operator]] — uses
+- [[structural-causal-models]] — instantiates
 [To be populated during integration]

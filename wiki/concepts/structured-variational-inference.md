@@ -16,6 +16,8 @@ date_updated: '2026-06-11'
 domain:
 - machine-learning
 - probabilistic-inference
+generalizes:
+- mean-field-variational-inference
 id: pkis:concept:structured-variational-inference
 knowledge_type: concept
 maturity: evolving
@@ -30,6 +32,8 @@ tags:
 - approximate-inference
 title: Structured Variational Inference
 understanding: 0
+uses:
+- probabilistic-graphical-models
 ---
 
 ## Definition
@@ -46,4 +50,6 @@ Full mean field ($\mathcal{G}_q$ = empty graph) is the extreme tractable case; e
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[probabilistic-graphical-models]] — uses
+- [[mean-field-variational-inference]] — generalizes
 [To be populated during integration]

@@ -14,7 +14,12 @@ date_created: '2026-06-11'
 date_updated: '2026-06-11'
 domain:
 - reinforcement-learning
+extends:
+- deep-q-network
 id: pkis:technique:deep-deterministic-policy-gradient
+instantiates:
+- deterministic-policy-gradient
+- actor-critic
 knowledge_type: technique
 maturity: evolving
 needs_canonical_source: false
@@ -28,6 +33,9 @@ tags:
 - deterministic-policy
 title: Deep Deterministic Policy Gradient (DDPG)
 understanding: 0
+uses:
+- experience-replay
+- double-q-learning
 ---
 
 ## Definition
@@ -44,4 +52,9 @@ DDPG is the canonical off-policy, continuous-action actor-critic algorithm and i
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[double-q-learning]] — uses: TD3 variant extends DDPG with double Q-learning
+- [[actor-critic]] — instantiates
+- [[deep-q-network]] — extends
+- [[experience-replay]] — uses
+- [[deterministic-policy-gradient]] — instantiates
 [To be populated during integration]

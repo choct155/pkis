@@ -17,13 +17,20 @@ domain:
 - reinforcement learning
 - AI
 - operations research
+generalizes:
+- contextual-bandit
 id: pkis:concept:markov-decision-process-mdp
+instantiates:
+- markov-decision-processes
+- statistical-decision-theory
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
 related_concepts: []
 sources:
 - murphy-pml2-advanced-ch34
+specializes:
+- influence-diagram
 tags:
 - reinforcement learning
 - sequential decision making
@@ -32,6 +39,10 @@ tags:
 - state transition
 title: Markov Decision Process (MDP)
 understanding: 0
+uses:
+- bellman-equation
+- policy-rl
+- return-and-discounting
 ---
 
 ## Definition
@@ -49,4 +60,11 @@ MDPs are the foundational model for sequential decision-making under uncertainty
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[statistical-decision-theory]] — instantiates
+- [[return-and-discounting]] — uses
+- [[influence-diagram]] — specializes
+- [[policy-rl]] — uses
+- [[bellman-equation]] — uses
+- [[contextual-bandit]] — generalizes
+- [[markov-decision-processes]] — instantiates
 [To be populated during integration]

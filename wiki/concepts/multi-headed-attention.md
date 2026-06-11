@@ -17,10 +17,14 @@ domain:
 - machine-learning
 - deep-learning
 - nlp
+generalizes:
+- self-attention
 id: pkis:concept:multi-headed-attention
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- transformer-architecture
 related_concepts: []
 sources:
 - murphy-pml1-intro-ch15
@@ -31,6 +35,8 @@ tags:
 - representation-learning
 title: Multi-Headed Attention (MHA)
 understanding: 0
+uses:
+- scaled-dot-product-attention
 ---
 
 ## Definition
@@ -49,4 +55,7 @@ Different heads specialise in capturing different notions of token similarity (s
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[self-attention]] — generalizes
+- [[transformer-architecture]] — prerequisite-of
+- [[scaled-dot-product-attention]] — uses
 [To be populated during integration]

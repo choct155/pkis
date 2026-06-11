@@ -17,6 +17,10 @@ domain:
 - probabilistic-graphical-models
 - machine-learning
 - statistics
+generalizes:
+- multivariate-normal-model
+- factor-analysis
+- kalman-filter
 id: pkis:concept:linear-gaussian-graphical-model
 knowledge_type: concept
 maturity: evolving
@@ -24,6 +28,8 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - bishop-prml-ch08
+specializes:
+- dag-factorization
 tags:
 - Gaussian
 - DAG
@@ -32,6 +38,9 @@ tags:
 - covariance-structure
 title: Linear-Gaussian Graphical Model
 understanding: 0
+uses:
+- gaussian-distribution
+- sum-product-algorithm
 ---
 
 ## Definition
@@ -50,4 +59,10 @@ Linear-Gaussian DAGs unify probabilistic PCA, factor analysis, Kalman filters, a
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[sum-product-algorithm]] — uses
+- [[kalman-filter]] — generalizes
+- [[factor-analysis]] — generalizes
+- [[multivariate-normal-model]] — generalizes
+- [[gaussian-distribution]] — uses
+- [[dag-factorization]] — specializes
 [To be populated during integration]

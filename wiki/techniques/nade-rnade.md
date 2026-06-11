@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- density-estimation
 component_scores:
   alternatives: null
   conditions: null
@@ -17,6 +19,8 @@ domain:
 - density-estimation
 - generative-models
 id: pkis:technique:nade-rnade
+instantiates:
+- autoregressive-model-arm
 knowledge_type: technique
 maturity: evolving
 needs_canonical_source: false
@@ -32,6 +36,10 @@ tags:
 - density-estimation
 title: NADE / RNADE (Neural Autoregressive Density Estimator)
 understanding: 0
+uses:
+- mixture-models
+- neural-networks
+- made-masked-autoencoder
 ---
 
 ## Definition
@@ -49,4 +57,9 @@ Assumes a fixed linear variable ordering, which is natural for sequential data b
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[density-estimation]] — applies
+- [[made-masked-autoencoder]] — uses: MADE is the efficient single-network implementation of NADE
+- [[neural-networks]] — uses
+- [[mixture-models]] — uses: RNADE uses a mixture of Gaussians for each conditional
+- [[autoregressive-model-arm]] — instantiates: NADE/RNADE are specific neural-network parameterisations of an ARM
 [To be populated during integration]

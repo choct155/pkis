@@ -16,12 +16,16 @@ domain:
 - machine-learning
 - semi-supervised-learning
 id: pkis:technique:pseudo-labeling
+instantiates:
+- semi-supervised-learning
 knowledge_type: technique
 maturity: evolving
 needs_canonical_source: false
 related_concepts: []
 sources:
 - murphy-pml1-intro-ch19
+specializes:
+- knowledge-distillation
 tags:
 - semi-supervised
 - self-training
@@ -46,4 +50,6 @@ Pseudo-labeling is model-agnostic and simple to implement, making it one of the 
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[knowledge-distillation]] — specializes: Distillation generalises pseudo-labeling: student trained on teacher soft predictions at temperature τ.
+- [[semi-supervised-learning]] — instantiates
 [To be populated during integration]

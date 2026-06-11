@@ -15,6 +15,8 @@ date_updated: '2026-06-11'
 domain:
 - machine-learning
 - statistics
+extends:
+- gaussian-discriminant-analysis
 id: pkis:technique:regularised-discriminant-analysis
 knowledge_type: technique
 maturity: evolving
@@ -29,6 +31,9 @@ tags:
 - LDA
 title: Regularised Discriminant Analysis (RDA)
 understanding: 0
+uses:
+- regularization
+- maximum-a-posteriori-estimation-map
 ---
 
 ## Definition
@@ -43,4 +48,7 @@ The MLE covariance $\hat{\Sigma}$ is ill-conditioned whenever the number of exam
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[maximum-a-posteriori-estimation-map]] — uses
+- [[regularization]] — uses
+- [[gaussian-discriminant-analysis]] — extends
 [To be populated during integration]

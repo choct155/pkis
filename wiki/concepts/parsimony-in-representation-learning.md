@@ -10,6 +10,8 @@ component_scores:
   prerequisites: null
   scope: null
   transfer: null
+contrasts-with:
+- overfitting-and-underfitting
 coverage: 1
 date_created: '2026-06-11'
 date_updated: '2026-06-11'
@@ -18,6 +20,8 @@ domain:
 - statistics
 - information-theory
 id: pkis:concept:parsimony-in-representation-learning
+instantiates:
+- occams-razor
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
@@ -32,6 +36,11 @@ tags:
 - generalisation
 title: Parsimony in Representation Learning
 understanding: 0
+uses:
+- marginal-likelihood
+- regularization
+- bayesian-model-comparison
+- information-criteria
 ---
 
 ## Definition
@@ -48,4 +57,10 @@ Parsimonious models generalise better, are more interpretable, and are more scie
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[information-criteria]] — uses
+- [[overfitting-and-underfitting]] — contrasts-with
+- [[bayesian-model-comparison]] — uses
+- [[regularization]] — uses
+- [[marginal-likelihood]] — uses
+- [[occams-razor]] — instantiates
 [To be populated during integration]

@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- bayesian-inference
 component_scores:
   conditions: null
   implications: null
@@ -18,6 +20,9 @@ id: pkis:result:linear-gaussian-model
 knowledge_type: result
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- gaussian-process-regression
+- kalman-filter
 related_concepts: []
 sources:
 - bishop-prml-ch02
@@ -28,6 +33,8 @@ tags:
 - conjugate-prior
 title: 'Linear-Gaussian Model: Marginal and Posterior'
 understanding: 0
+uses:
+- partitioned-gaussian-conditionals-marginals
 ---
 
 ## Definition
@@ -46,4 +53,8 @@ This result is a cornerstone of Bayesian signal processing: it recovers the Kalm
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[kalman-filter]] — prerequisite-of
+- [[gaussian-process-regression]] — prerequisite-of
+- [[bayesian-inference]] — applies
+- [[partitioned-gaussian-conditionals-marginals]] — uses
 [To be populated during integration]

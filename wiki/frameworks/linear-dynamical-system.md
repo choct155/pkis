@@ -16,6 +16,8 @@ domain:
 - signal-processing
 - control-theory
 - time-series
+generalizes:
+- factor-analysis
 id: pkis:framework:linear-dynamical-system
 knowledge_type: framework
 maturity: evolving
@@ -23,6 +25,8 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - bishop-prml-ch13
+specializes:
+- state-space-model-sequential
 tags:
 - Kalman
 - state-space
@@ -32,6 +36,11 @@ tags:
 - EM
 title: Linear Dynamical System (Kalman Filter Model)
 understanding: 0
+uses:
+- gaussian-distribution
+- kalman-filter
+- kalman-smoother
+- em-algorithm
 ---
 
 ## Definition
@@ -49,4 +58,10 @@ Generalizes probabilistic PCA and factor analysis to sequential data; the contin
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[factor-analysis]] — generalizes
+- [[em-algorithm]] — uses
+- [[kalman-smoother]] — uses
+- [[kalman-filter]] — uses
+- [[gaussian-distribution]] — uses
+- [[state-space-model-sequential]] — specializes
 [To be populated during integration]

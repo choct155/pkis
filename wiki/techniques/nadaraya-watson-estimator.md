@@ -16,9 +16,15 @@ domain:
 - statistics
 - machine-learning
 id: pkis:technique:nadaraya-watson-estimator
+instantiates:
+- kernel-regression-rl
+- kernel-smoothing
 knowledge_type: technique
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- gaussian-process-regression
+- local-regression-loess
 related_concepts: []
 sources:
 - murphy-pml1-intro-ch16
@@ -44,4 +50,8 @@ The Nadaraya–Watson estimator is the simplest nonparametric regression method 
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[local-regression-loess]] — prerequisite-of: LOESS extends N-W by fitting a local polynomial rather than a constant
+- [[gaussian-process-regression]] — prerequisite-of: Nadaraya-Watson is conceptually connected to GP regression via kernel weighting
+- [[kernel-smoothing]] — instantiates
+- [[kernel-regression-rl]] — instantiates
 [To be populated during integration]

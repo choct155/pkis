@@ -1,15 +1,24 @@
 ---
 aliases: []
 also_type: []
+applies:
+- bayesian-model-comparison
+- bayesian-networks
+contrasts-with:
+- rejection-sampling
 coverage: 3
 date_created: 2026-05-20
 date_updated: '2026-06-08'
 domain:
 - bayesian-stats
 - statistical-learning
+extends:
+- monte-carlo-estimator
 id: pkis:technique:importance-sampling
 knowledge_type: technique
 maturity: settled
+prerequisite-of:
+- sampling-importance-resampling
 related_concepts:
 - '[[data-augmentation]]'
 - '[[gibbs-sampler]]'
@@ -30,6 +39,8 @@ tags:
 - sir-algorithm
 title: Importance Sampling
 understanding: 0
+uses:
+- effective-sample-size
 ---
 
 A non-iterative Monte Carlo technique for estimating expectations under a target distribution p(θ) by drawing samples from an alternative proposal distribution q(θ) and reweighting: E_p[f(θ)] ≈ Σ w_i f(θ_i) / Σ w_i where θ_i ~ q(θ) and w_i = p(θ_i)/q(θ_i). When p is the posterior, the weights are proportional to the likelihood times prior divided by the proposal.
@@ -55,4 +66,10 @@ The estimator's reliability is hard to assess: if $Q$ is small where $|\varphi P
 In $N$ dimensions the weights vary enormously even when $Q$ is reasonable. For a Gaussian $Q$ targeting a uniform sphere, the largest of 100 weights typically exceeds the median by $\exp(\sqrt{2N})$ — about $10^{19}$ at $N=1000$. The estimate is then dominated by a handful of samples, so importance sampling is impractical in high dimensions unless $Q$ is a near-perfect match to $P$.
 
 ## Connections
+- [[bayesian-networks]] — applies: likelihood-weighted sampling in Bayesian networks
+- [[sampling-importance-resampling]] — prerequisite-of
+- [[rejection-sampling]] — contrasts-with
+- [[bayesian-model-comparison]] — applies
+- [[effective-sample-size]] — uses: weight degeneracy reduces effective sample size
+- [[monte-carlo-estimator]] — extends
 - [[numerical-vs-simulation-integration]] — specializes: Importance sampling is a simulation-based integration method.

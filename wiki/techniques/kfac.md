@@ -1,6 +1,9 @@
 ---
 aliases: []
 also_type: []
+applies:
+- neural-networks
+- multilayer-perceptron
 component_scores:
   alternatives: null
   conditions: null
@@ -22,6 +25,8 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - murphy-pml2-advanced-ch06
+specializes:
+- natural-gradient-descent
 tags:
 - natural-gradient
 - Kronecker-product
@@ -30,6 +35,8 @@ tags:
 - neural-networks
 title: KFAC (Kronecker-Factored Approximate Curvature)
 understanding: 0
+uses:
+- fisher-information
 ---
 
 ## Definition
@@ -44,4 +51,8 @@ KFAC reduces the cost of approximate natural gradient descent from $O(p^2)$ stor
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[multilayer-perceptron]] — applies
+- [[neural-networks]] — applies
+- [[fisher-information]] — uses
+- [[natural-gradient-descent]] — specializes
 [To be populated during integration]

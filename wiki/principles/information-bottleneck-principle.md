@@ -28,6 +28,11 @@ tags:
 - rate-distortion
 title: Information Bottleneck Principle
 understanding: 0
+uses:
+- mutual-information
+- variational-inference
+- kl-divergence
+- lagrange-multipliers
 ---
 
 ## Definition
@@ -47,4 +52,8 @@ For deterministic encoders mapping continuous inputs, $I(X;Z) = \infty$, making 
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[lagrange-multipliers]] — uses
+- [[kl-divergence]] — uses
+- [[variational-inference]] — uses: VIB uses variational bounds to optimise the IB objective
+- [[mutual-information]] — uses
 [To be populated during integration]

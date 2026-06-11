@@ -9,12 +9,17 @@ component_scores:
   implementation: null
   operational_mechanism: null
   principled_mechanism: null
+contrasts-with:
+- ridge-regression
+- elastic-net
 coverage: 1
 date_created: '2026-06-11'
 date_updated: '2026-06-11'
 domain:
 - statistics
 - machine learning
+generalizes:
+- lasso-regression
 id: pkis:technique:group-lasso
 knowledge_type: technique
 maturity: evolving
@@ -43,4 +48,7 @@ Many structured models require group-level variable selection: categorical featu
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[elastic-net]] — contrasts-with
+- [[ridge-regression]] — contrasts-with
+- [[lasso-regression]] — generalizes
 [To be populated during integration]

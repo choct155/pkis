@@ -18,6 +18,8 @@ id: pkis:result:kl-fisher-information-connection
 knowledge_type: result
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- natural-gradient
 related_concepts: []
 sources:
 - murphy-pml2-advanced-ch05
@@ -29,6 +31,10 @@ tags:
 - information-geometry
 title: KL Divergence–Fisher Information Connection
 understanding: 0
+uses:
+- kl-divergence
+- fisher-information
+- cramer-rao-bound
 ---
 
 ## Definition
@@ -47,4 +53,8 @@ This connection motivates the **natural gradient** method, which preconditions g
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[cramer-rao-bound]] — uses
+- [[natural-gradient]] — prerequisite-of
+- [[fisher-information]] — uses
+- [[kl-divergence]] — uses
 [To be populated during integration]

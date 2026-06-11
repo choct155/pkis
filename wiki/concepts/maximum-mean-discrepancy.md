@@ -24,6 +24,8 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - murphy-pml2-advanced-ch26
+specializes:
+- integral-probability-metric
 tags:
 - kernel
 - RKHS
@@ -32,6 +34,9 @@ tags:
 - MMD
 title: Maximum Mean Discrepancy
 understanding: 0
+uses:
+- reproducing-kernel-hilbert-space
+- the-kernel-trick
 ---
 
 ## Definition
@@ -46,4 +51,7 @@ MMD provides a closed-form (kernel-based) sample estimator that avoids the insta
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[the-kernel-trick]] — uses
+- [[reproducing-kernel-hilbert-space]] — uses
+- [[integral-probability-metric]] — specializes
 [To be populated during integration]

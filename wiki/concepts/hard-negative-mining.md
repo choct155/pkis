@@ -1,6 +1,9 @@
 ---
 aliases: []
 also_type: []
+applies:
+- triplet-loss
+- contrastive-loss-siamese
 component_scores:
   application: null
   boundary: null
@@ -43,4 +46,6 @@ The vast majority of randomly sampled triplets satisfy the margin constraint and
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[contrastive-loss-siamese]] — applies
+- [[triplet-loss]] — applies
 [To be populated during integration]

@@ -10,6 +10,8 @@ component_scores:
   prerequisites: null
   scope: null
   transfer: null
+contrasts-with:
+- deep-belief-network
 coverage: 1
 date_created: '2026-06-11'
 date_updated: '2026-06-11'
@@ -17,6 +19,8 @@ domain:
 - deep-learning
 - probabilistic-graphical-models
 - generative-models
+generalizes:
+- restricted-boltzmann-machine
 id: pkis:concept:deep-boltzmann-machine
 knowledge_type: concept
 maturity: evolving
@@ -31,6 +35,12 @@ tags:
 - generative-model
 title: Deep Boltzmann Machine (DBM)
 understanding: 0
+uses:
+- mean-field-approximation
+- greedy-layer-wise-pretraining
+- elbo
+- centered-deep-boltzmann-machine
+- multi-prediction-deep-boltzmann-machine
 ---
 
 ## Definition
@@ -45,4 +55,11 @@ DBMs allow variational mean-field inference to capture top-down feedback interac
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[multi-prediction-deep-boltzmann-machine]] — uses
+- [[centered-deep-boltzmann-machine]] — uses
+- [[elbo]] — uses: Training maximises the variational lower bound L(Q, theta).
+- [[deep-belief-network]] — contrasts-with: DBM is fully undirected; DBN has directed lower layers and an undirected top pair.
+- [[greedy-layer-wise-pretraining]] — uses
+- [[mean-field-approximation]] — uses: DBM inference uses iterative mean-field fixed-point equations to optimise the variational lower bound.
+- [[restricted-boltzmann-machine]] — generalizes: DBM extends RBM to multiple hidden layers, all connections undirected.
 [To be populated during integration]

@@ -17,9 +17,13 @@ domain:
 - probability
 - simulation
 id: pkis:technique:inverse-cdf-sampling
+instantiates:
+- inverse-transform-sampling
 knowledge_type: technique
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- rejection-sampling
 related_concepts: []
 sources:
 - murphy-pml2-advanced-ch11
@@ -47,4 +51,6 @@ $\Pr(F^{-1}(U)\leq x) = \Pr(U \leq F(x)) = F(x)$, using monotonicity of $F$ and 
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[rejection-sampling]] — prerequisite-of
+- [[inverse-transform-sampling]] — instantiates
 [To be populated during integration]

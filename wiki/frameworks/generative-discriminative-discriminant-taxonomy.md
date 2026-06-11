@@ -16,6 +16,8 @@ domain:
 - statistics
 - pattern-recognition
 id: pkis:framework:generative-discriminative-discriminant-taxonomy
+instantiates:
+- generative-vs-discriminative-models
 knowledge_type: framework
 maturity: evolving
 needs_canonical_source: false
@@ -30,6 +32,11 @@ tags:
 - posterior
 title: Generative vs Discriminative vs Discriminant-Function Approaches
 understanding: 0
+uses:
+- decision-theory-foundations
+- bayesian-inference
+- naive-bayes-model
+- decision-regions-and-boundaries
 ---
 
 ## Definition
@@ -48,4 +55,9 @@ The taxonomy clarifies the information/computation trade-off: generative models 
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[decision-regions-and-boundaries]] — uses
+- [[naive-bayes-model]] — uses
+- [[bayesian-inference]] — uses
+- [[decision-theory-foundations]] — uses
+- [[generative-vs-discriminative-models]] — instantiates
 [To be populated during integration]

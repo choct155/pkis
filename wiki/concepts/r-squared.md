@@ -28,6 +28,9 @@ tags:
 - variance explained
 title: Coefficient of Determination ($R^2$)
 understanding: 0
+uses:
+- ordinary-least-squares
+- residual-sum-of-squares
 ---
 
 ## Definition
@@ -42,4 +45,6 @@ $R^2$ is the most widely reported goodness-of-fit statistic for regression model
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[residual-sum-of-squares]] — uses
+- [[ordinary-least-squares]] — uses
 [To be populated during integration]

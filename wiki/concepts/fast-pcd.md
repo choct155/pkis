@@ -10,6 +10,8 @@ component_scores:
   prerequisites: null
   scope: null
   transfer: null
+contrasts-with:
+- spurious-modes
 coverage: 1
 date_created: '2026-06-11'
 date_updated: '2026-06-11'
@@ -17,6 +19,8 @@ domain:
 - machine-learning
 - deep-learning
 - probabilistic-graphical-models
+extends:
+- stochastic-maximum-likelihood-pcd
 id: pkis:concept:fast-pcd
 knowledge_type: concept
 maturity: evolving
@@ -45,4 +49,6 @@ FPCD addresses the chain-lag problem of SML/PCD: if the model changes faster tha
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[spurious-modes]] — contrasts-with
+- [[stochastic-maximum-likelihood-pcd]] — extends
 [To be populated during integration]

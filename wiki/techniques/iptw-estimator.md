@@ -1,6 +1,9 @@
 ---
 aliases: []
 also_type: []
+applies:
+- average-treatment-effect
+- back-door-criterion
 component_scores:
   alternatives: null
   conditions: null
@@ -19,6 +22,8 @@ id: pkis:technique:iptw-estimator
 knowledge_type: technique
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- overlap-positivity
 related_concepts: []
 sources:
 - murphy-pml2-advanced-ch36
@@ -30,6 +35,8 @@ tags:
 - double-robustness
 title: Inverse Probability of Treatment Weighting (IPTW)
 understanding: 0
+uses:
+- propensity-score
 ---
 
 ## Definition
@@ -48,4 +55,8 @@ IPTW re-weights observations so that the empirical distributions of $X$ in the t
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[back-door-criterion]] — applies
+- [[overlap-positivity]] — prerequisite-of: Extreme weights arise from overlap violations
+- [[average-treatment-effect]] — applies: IPTW is an estimator for the ATE under the no-unobserved-confounding assumption
+- [[propensity-score]] — uses
 [To be populated during integration]

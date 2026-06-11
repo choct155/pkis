@@ -1,12 +1,16 @@
 ---
 aliases: []
 also_type: []
+analogous-to:
+- fishers-linear-discriminant
 component_scores:
   conditions: null
   implications: null
   limitations: null
   proof_sketch: null
   statement: null
+contrasts-with:
+- quadratic-discriminant-analysis
 coverage: 1
 date_created: '2026-06-11'
 date_updated: '2026-06-11'
@@ -14,6 +18,8 @@ domain:
 - machine-learning
 - statistics
 id: pkis:result:gaussian-lda-linear-boundary
+instantiates:
+- probabilistic-generative-classifier
 knowledge_type: result
 maturity: evolving
 needs_canonical_source: false
@@ -29,6 +35,9 @@ tags:
 - shared-covariance
 title: Gaussian Class-Conditional ⟹ Linear Decision Boundary
 understanding: 0
+uses:
+- logistic-sigmoid-logit
+- gaussian-distribution
 ---
 
 ## Definition
@@ -49,4 +58,9 @@ This result is the generative derivation of Linear Discriminant Analysis, showin
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[quadratic-discriminant-analysis]] — contrasts-with
+- [[fishers-linear-discriminant]] — analogous-to: Both yield the same linear projection under shared-covariance Gaussian assumption
+- [[gaussian-distribution]] — uses
+- [[logistic-sigmoid-logit]] — uses
+- [[probabilistic-generative-classifier]] — instantiates
 [To be populated during integration]

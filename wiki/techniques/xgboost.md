@@ -15,6 +15,8 @@ date_updated: '2026-06-11'
 domain:
 - machine-learning
 - optimization
+extends:
+- gradient-boosting
 id: pkis:technique:xgboost
 knowledge_type: technique
 maturity: evolving
@@ -31,6 +33,10 @@ tags:
 - tabular-data
 title: XGBoost
 understanding: 0
+uses:
+- hessian-matrix
+- regularization
+- random-forests
 ---
 
 ## Definition
@@ -57,4 +63,8 @@ XGBoost became the dominant algorithm on structured/tabular data competitions (K
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[random-forests]] — uses: random feature subsampling at nodes
+- [[regularization]] — uses: penalty on number of leaves and leaf weights
+- [[hessian-matrix]] — uses: second-order Taylor expansion of loss
+- [[gradient-boosting]] — extends
 [To be populated during integration]

@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- causal-discovery
 component_scores:
   alternatives: null
   conditions: null
@@ -20,6 +22,8 @@ id: pkis:technique:constraint-based-structure-learning
 knowledge_type: technique
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- faithfulness-stability
 related_concepts: []
 sources:
 - murphy-pml2-advanced-ch30
@@ -31,6 +35,11 @@ tags:
 - DAG
 title: Constraint-Based Structure Learning (PC Algorithm)
 understanding: 0
+uses:
+- conditional-independence
+- d-separation
+- markov-equivalence-class
+- causal-markov-condition
 ---
 
 ## Definition
@@ -49,4 +58,10 @@ Constraint-based methods are computationally efficient for sparse graphs (the nu
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[causal-markov-condition]] — uses
+- [[faithfulness-stability]] — prerequisite-of
+- [[markov-equivalence-class]] — uses
+- [[causal-discovery]] — applies
+- [[d-separation]] — uses
+- [[conditional-independence]] — uses
 [To be populated during integration]

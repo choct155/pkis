@@ -1,6 +1,12 @@
 ---
 aliases: []
 also_type: []
+analogous-to:
+- weight-decay-as-prior
+- cross-validation
+- ridge-regression
+applies:
+- overfitting-and-underfitting
 component_scores:
   alternatives: null
   conditions: null
@@ -16,6 +22,8 @@ domain:
 - machine-learning
 - optimisation
 id: pkis:technique:early-stopping
+instantiates:
+- regularization
 knowledge_type: technique
 maturity: evolving
 needs_canonical_source: false
@@ -25,6 +33,8 @@ sources:
 - goodfellow-deeplearning-ch07
 - murphy-pml1-intro-ch04
 - murphy-pml1-intro-ch13
+specializes:
+- regularization
 tags:
 - overfitting
 - regularisation
@@ -32,6 +42,9 @@ tags:
 - weight-decay
 title: Early Stopping as Regularisation
 understanding: 0
+uses:
+- gradient-descent
+- validation-set-method
 ---
 
 ## Definition
@@ -46,4 +59,12 @@ Requires no modification to the loss function or model architecture, and is comp
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[ridge-regression]] — analogous-to: For linear models, early stopping ≈ L2 regularization
+- [[validation-set-method]] — uses
+- [[cross-validation]] — analogous-to: Both use held-out data to select model complexity
+- [[regularization]] — specializes
+- [[gradient-descent]] — uses
+- [[weight-decay-as-prior]] — analogous-to
+- [[overfitting-and-underfitting]] — applies
+- [[regularization]] — instantiates
 [To be populated during integration]

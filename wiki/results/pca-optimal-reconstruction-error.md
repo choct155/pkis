@@ -27,6 +27,10 @@ tags:
 - eigenvalues
 title: PCA Optimal Reconstruction Error
 understanding: 0
+uses:
+- principal-component-analysis
+- eigendecomposition
+- matrix-decompositions
 ---
 
 ## Definition
@@ -43,4 +47,7 @@ The result gives a precise, data-driven criterion for choosing the number of pri
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[matrix-decompositions]] — uses
+- [[eigendecomposition]] — uses
+- [[principal-component-analysis]] — uses
 [To be populated during integration]

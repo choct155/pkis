@@ -16,6 +16,8 @@ domain:
 - machine-learning
 - generative-models
 - representation-learning
+generalizes:
+- variational-autoencoder
 id: pkis:technique:two-step-latent-manifold-generative-modeling
 knowledge_type: technique
 maturity: evolving
@@ -32,6 +34,11 @@ tags:
 - VQ-VAE
 title: Two-Step Latent Manifold Generative Modeling
 understanding: 0
+uses:
+- autoencoder
+- manifold-hypothesis
+- density-estimation
+- bayesian-optimization
 ---
 
 ## Definition
@@ -50,4 +57,9 @@ This framework underlies latent diffusion models (Stable Diffusion), VQ-VAE, and
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[bayesian-optimization]] — uses: Bayesian optimization in latent space for generative design
+- [[density-estimation]] — uses
+- [[variational-autoencoder]] — generalizes
+- [[manifold-hypothesis]] — uses
+- [[autoencoder]] — uses
 [To be populated during integration]

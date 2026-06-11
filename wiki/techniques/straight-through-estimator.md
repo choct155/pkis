@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- autoencoder
 component_scores:
   alternatives: null
   conditions: null
@@ -9,6 +11,8 @@ component_scores:
   implementation: null
   operational_mechanism: null
   principled_mechanism: null
+contrasts-with:
+- gumbel-softmax
 coverage: 1
 date_created: '2026-06-11'
 date_updated: '2026-06-11'
@@ -29,6 +33,8 @@ tags:
 - binary-networks
 title: Straight-Through Estimator
 understanding: 0
+uses:
+- activation-functions
 ---
 
 ## Definition
@@ -43,4 +49,7 @@ STE is the standard training recipe for binary/quantized neural networks and dis
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[autoencoder]] — applies
+- [[activation-functions]] — uses
+- [[gumbel-softmax]] — contrasts-with: STE avoids continuous relaxation; uses identity gradient instead
 [To be populated during integration]

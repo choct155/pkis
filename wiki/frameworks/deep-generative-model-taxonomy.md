@@ -8,6 +8,8 @@ component_scores:
   purpose: null
   scope: null
   structure: null
+contrasts-with:
+- probabilistic-graphical-models
 coverage: 1
 date_created: '2026-06-11'
 date_updated: '2026-06-11'
@@ -15,6 +17,12 @@ domain:
 - machine-learning
 - generative-models
 id: pkis:framework:deep-generative-model-taxonomy
+instantiates:
+- variational-autoencoder
+- autoregressive-model
+- normalizing-flows
+- generative-adversarial-network
+- diffusion-processes
 knowledge_type: framework
 maturity: evolving
 needs_canonical_source: false
@@ -57,4 +65,10 @@ Provides a principled language for comparing generative architectures and guides
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[probabilistic-graphical-models]] — contrasts-with: DGMs vs classical PGMs contrasted on latent structure and training
+- [[diffusion-processes]] — instantiates
+- [[generative-adversarial-network]] — instantiates
+- [[normalizing-flows]] — instantiates
+- [[autoregressive-model]] — instantiates
+- [[variational-autoencoder]] — instantiates
 [To be populated during integration]

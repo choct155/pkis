@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- marginal-likelihood
 component_scores:
   application: null
   limits: null
@@ -8,12 +10,16 @@ component_scores:
   purpose: null
   scope: null
   structure: null
+contrasts-with:
+- mcmc
 coverage: 1
 date_created: '2026-06-11'
 date_updated: '2026-06-11'
 domain:
 - statistics
 - machine-learning
+generalizes:
+- annealed-importance-sampling
 id: pkis:framework:smc-sampler
 knowledge_type: framework
 maturity: evolving
@@ -21,6 +27,8 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - murphy-pml2-advanced-ch13
+specializes:
+- sequential-monte-carlo
 tags:
 - smc
 - tempering
@@ -29,6 +37,9 @@ tags:
 - normalizing-constant
 title: SMC Sampler
 understanding: 0
+uses:
+- likelihood-tempering-smc
+- data-tempering-ibis
 ---
 
 ## Definition
@@ -46,4 +57,10 @@ SMC samplers are a principled alternative to MCMC for multimodal targets: they p
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[marginal-likelihood]] — applies
+- [[annealed-importance-sampling]] — generalizes: AIS is SMC sampler without resampling
+- [[data-tempering-ibis]] — uses
+- [[likelihood-tempering-smc]] — uses
+- [[mcmc]] — contrasts-with
+- [[sequential-monte-carlo]] — specializes
 [To be populated during integration]

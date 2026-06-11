@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- object-detection
 component_scores:
   alternatives: null
   conditions: null
@@ -16,6 +18,8 @@ domain:
 - computer-vision
 - machine-learning
 id: pkis:technique:classifier-cascade
+instantiates:
+- conditional-computation
 knowledge_type: technique
 maturity: evolving
 needs_canonical_source: false
@@ -30,6 +34,9 @@ tags:
 - cascaded
 title: Dynamic Cascade of Classifiers
 understanding: 0
+uses:
+- ensemble-learning
+- adaboost
 ---
 
 ## Definition
@@ -44,4 +51,8 @@ Enables real-time detection of rare objects (e.g., faces in images, Viola–Jone
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[adaboost]] — uses
+- [[ensemble-learning]] — uses
+- [[object-detection]] — applies
+- [[conditional-computation]] — instantiates
 [To be populated during integration]

@@ -20,6 +20,8 @@ id: pkis:concept:implicit-feedback-recommendation
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- bayesian-personalized-ranking
 related_concepts: []
 sources:
 - murphy-pml1-intro-ch22
@@ -42,4 +44,5 @@ Implicit feedback is far more abundant than explicit ratings in real systems. Tr
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[bayesian-personalized-ranking]] — prerequisite-of
 [To be populated during integration]

@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- binary-logistic-regression
 component_scores:
   alternatives: null
   conditions: null
@@ -19,6 +21,8 @@ id: pkis:technique:feature-standardisation
 knowledge_type: technique
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- weight-decay-as-prior
 related_concepts: []
 sources:
 - murphy-pml1-intro-ch10
@@ -30,6 +34,8 @@ tags:
 - conditioning
 title: Feature Standardisation
 understanding: 0
+uses:
+- regularization
 ---
 
 ## Definition
@@ -44,4 +50,7 @@ Isotropic regularisers such as $\ell_2$ weight decay implicitly assume all featu
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[weight-decay-as-prior]] — prerequisite-of
+- [[regularization]] — uses
+- [[binary-logistic-regression]] — applies
 [To be populated during integration]

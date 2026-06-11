@@ -17,6 +17,8 @@ domain:
 - probability-theory
 - statistics
 - machine-learning
+generalizes:
+- binomial-distribution
 id: pkis:concept:categorical-and-multinomial-distributions
 knowledge_type: concept
 maturity: evolving
@@ -24,6 +26,8 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - murphy-pml2-advanced-ch02
+specializes:
+- exponential-family
 tags:
 - categorical
 - multinomial
@@ -32,6 +36,11 @@ tags:
 - one-hot
 title: Categorical and Multinomial Distributions
 understanding: 0
+uses:
+- pmf-and-pdf
+- dirichlet-distribution
+- bag-of-words-model
+- n-gram-language-model
 ---
 
 ## Definition
@@ -48,4 +57,10 @@ Categorical/multinomial distributions are the building blocks of discrete genera
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[n-gram-language-model]] — uses
+- [[bag-of-words-model]] — uses
+- [[exponential-family]] — specializes
+- [[dirichlet-distribution]] — uses
+- [[binomial-distribution]] — generalizes
+- [[pmf-and-pdf]] — uses
 [To be populated during integration]

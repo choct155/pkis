@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- directed-graphical-models
 component_scores:
   alternatives: null
   conditions: null
@@ -17,12 +19,18 @@ domain:
 - deep-learning
 - neuroscience
 id: pkis:technique:wake-sleep-algorithm
+instantiates:
+- learned-approximate-inference
 knowledge_type: technique
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- variational-autoencoder
 related_concepts: []
 sources:
 - goodfellow-deeplearning-ch19
+specializes:
+- amortized-inference
 tags:
 - amortized-inference
 - generative-model
@@ -51,4 +59,8 @@ The sleep phase has been proposed as a computational model for the role of dream
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[directed-graphical-models]] — applies
+- [[amortized-inference]] — specializes
+- [[variational-autoencoder]] — prerequisite-of
+- [[learned-approximate-inference]] — instantiates
 [To be populated during integration]

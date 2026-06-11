@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- mutual-information
 component_scores:
   conditions: null
   implications: null
@@ -29,6 +31,10 @@ tags:
 - donsker-varadhan
 title: Compression Lemma (Donsker-Varadhan Representation)
 understanding: 0
+uses:
+- kl-divergence
+- information-inequality
+- jensens-inequality
 ---
 
 ## Definition
@@ -49,4 +55,8 @@ The compression lemma is a workhorse for deriving PAC-Bayes generalization bound
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[mutual-information]] — applies: Provides variational lower bounds on mutual information
+- [[jensens-inequality]] — uses
+- [[information-inequality]] — uses
+- [[kl-divergence]] — uses
 [To be populated during integration]

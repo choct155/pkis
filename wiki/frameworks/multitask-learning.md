@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- distribution-shift
 component_scores:
   application: null
   limits: null
@@ -8,6 +10,8 @@ component_scores:
   purpose: null
   scope: null
   structure: null
+contrasts-with:
+- domain-generalization
 coverage: 1
 date_created: '2026-06-11'
 date_updated: '2026-06-11'
@@ -20,6 +24,8 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - murphy-pml2-advanced-ch19
+specializes:
+- transfer-learning
 tags:
 - transfer-learning
 - shared-representations
@@ -44,4 +50,7 @@ MTL differs from domain generalization (DG) in that DG only targets a new unseen
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[domain-generalization]] — contrasts-with
+- [[distribution-shift]] — applies
+- [[transfer-learning]] — specializes
 [To be populated during integration]

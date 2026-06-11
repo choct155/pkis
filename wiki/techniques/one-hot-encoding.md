@@ -9,6 +9,8 @@ component_scores:
   implementation: null
   operational_mechanism: null
   principled_mechanism: null
+contrasts-with:
+- word-embeddings
 coverage: 1
 date_created: '2026-06-11'
 date_updated: '2026-06-11'
@@ -19,9 +21,14 @@ id: pkis:technique:one-hot-encoding
 knowledge_type: technique
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- bag-of-words-model
+- feature-crosses
 related_concepts: []
 sources:
 - murphy-pml1-intro-ch01
+specializes:
+- feature-engineering
 tags:
 - categorical-data
 - preprocessing
@@ -43,4 +50,8 @@ Categorical variables have no natural numeric ordering, so feeding raw integer c
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[feature-crosses]] — prerequisite-of
+- [[word-embeddings]] — contrasts-with
+- [[feature-engineering]] — specializes
+- [[bag-of-words-model]] — prerequisite-of
 [To be populated during integration]

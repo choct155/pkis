@@ -9,6 +9,8 @@ component_scores:
   implementation: null
   operational_mechanism: null
   principled_mechanism: null
+contrasts-with:
+- curse-of-dimensionality
 coverage: 1
 date_created: '2026-06-11'
 date_updated: '2026-06-11'
@@ -17,9 +19,14 @@ domain:
 - machine-learning
 - numerical-methods
 id: pkis:technique:monte-carlo-integration
+instantiates:
+- monte-carlo-estimator
+- numerical-vs-simulation-integration
 knowledge_type: technique
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- importance-sampling
 related_concepts: []
 sources:
 - murphy-pml2-advanced-ch11
@@ -31,6 +38,9 @@ tags:
 - numerical
 title: Monte Carlo Integration
 understanding: 0
+uses:
+- central-limit-theorem
+- expectation-and-variance
 ---
 
 ## Definition
@@ -48,4 +58,10 @@ For independent samples, $(\hat{\mu}-\mu)\to N(0,\sigma^2/N_s)$ where $\sigma^2=
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[expectation-and-variance]] — uses
+- [[importance-sampling]] — prerequisite-of
+- [[numerical-vs-simulation-integration]] — instantiates
+- [[curse-of-dimensionality]] — contrasts-with: MC error is dimension-independent in principle, unlike grid-based quadrature
+- [[central-limit-theorem]] — uses
+- [[monte-carlo-estimator]] — instantiates
 [To be populated during integration]

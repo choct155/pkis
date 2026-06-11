@@ -17,7 +17,11 @@ domain:
 - computer-vision
 - nlp
 - multimodal
+extends:
+- simclr
 id: pkis:technique:clip
+instantiates:
+- self-supervised-learning
 knowledge_type: technique
 maturity: evolving
 needs_canonical_source: false
@@ -32,6 +36,9 @@ tags:
 - prompt-engineering
 title: CLIP (Contrastive Language–Image Pre-training)
 understanding: 0
+uses:
+- cross-entropy-loss
+- in-context-learning
 ---
 
 ## Definition
@@ -46,4 +53,8 @@ CLIP achieves competitive zero-shot performance on ImageNet without task-specifi
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[in-context-learning]] — uses: Zero-shot classification via prompt engineering is a form of in-context specification.
+- [[simclr]] — extends: CLIP extends contrastive SSL to cross-modal (image-text) pairs.
+- [[cross-entropy-loss]] — uses
+- [[self-supervised-learning]] — instantiates
 [To be populated during integration]

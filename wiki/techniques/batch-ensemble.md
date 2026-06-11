@@ -16,6 +16,8 @@ domain:
 - deep-learning
 - ensemble-methods
 - efficiency
+extends:
+- deep-ensembles
 id: pkis:technique:batch-ensemble
 knowledge_type: technique
 maturity: evolving
@@ -31,6 +33,8 @@ tags:
 - ensembles
 title: Batch Ensemble
 understanding: 0
+uses:
+- low-rank-approximation
 ---
 
 ## Definition
@@ -45,4 +49,6 @@ Naïve deep ensembles require $M\times$ memory and compute. Batch ensemble reduc
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[low-rank-approximation]] — uses: Per-member perturbation is a rank-one matrix
+- [[deep-ensembles]] — extends: Achieves ensemble diversity at a fraction of the memory cost via rank-one fast weights
 [To be populated during integration]

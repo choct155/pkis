@@ -24,6 +24,8 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - goodfellow-deeplearning-ch06
+specializes:
+- deep-feedforward-network
 tags:
 - uncertainty-quantification
 - output-unit
@@ -31,6 +33,8 @@ tags:
 - precision-parametrization
 title: Heteroscedastic Neural Network Model
 understanding: 0
+uses:
+- gaussian-distribution
 ---
 
 ## Definition
@@ -45,4 +49,6 @@ Homoscedastic regression assumes constant noise, which is incorrect for many rea
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[gaussian-distribution]] — uses
+- [[deep-feedforward-network]] — specializes
 [To be populated during integration]

@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- latent-variable-models
 component_scores:
   alternatives: null
   conditions: null
@@ -9,6 +11,8 @@ component_scores:
   implementation: null
   operational_mechanism: null
   principled_mechanism: null
+contrasts-with:
+- mean-field-variational-inference
 coverage: 1
 date_created: '2026-06-11'
 date_updated: '2026-06-11'
@@ -17,12 +21,16 @@ domain:
 - statistics
 - probabilistic-models
 id: pkis:technique:expectation-maximization
+instantiates:
+- inference-as-optimization
 knowledge_type: technique
 maturity: evolving
 needs_canonical_source: false
 related_concepts: []
 sources:
 - goodfellow-deeplearning-ch19
+specializes:
+- em-algorithm
 tags:
 - latent-variables
 - coordinate-ascent
@@ -31,6 +39,8 @@ tags:
 - generative-models
 title: Expectation Maximization (EM) Algorithm
 understanding: 0
+uses:
+- elbo
 ---
 
 ## Definition
@@ -52,4 +62,9 @@ EM holds $q$ fixed at $p(h|v; \theta^{(0)})$ throughout the M-step, introducing 
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[mean-field-variational-inference]] — contrasts-with
+- [[em-algorithm]] — specializes: em-algorithm already exists; this node is the deep-learning ELBO-coordinate-ascent view
+- [[latent-variable-models]] — applies
+- [[inference-as-optimization]] — instantiates
+- [[elbo]] — uses
 [To be populated during integration]

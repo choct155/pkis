@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- markov-random-field
 component_scores:
   conditions: null
   implications: null
@@ -48,6 +50,7 @@ The theorem is the formal backbone of undirected graphical models: it guarantees
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[markov-random-field]] — applies
 - [[conditional-independence]] — uses: Links conditional-independence (Markov) structure to the product-over-cliques form.
 - [[partition-function]] — uses: The factorization is normalized by the partition function Z.
 - [[undirected-graphical-models]] — prerequisite-of: Establishes the clique-factorization <-> Markov-property equivalence that defines undirected graphical models.

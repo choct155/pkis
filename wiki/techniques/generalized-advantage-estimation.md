@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- bias-variance-tradeoff
 component_scores:
   alternatives: null
   conditions: null
@@ -14,7 +16,11 @@ date_created: '2026-06-11'
 date_updated: '2026-06-11'
 domain:
 - reinforcement-learning
+extends:
+- n-step-return
 id: pkis:technique:generalized-advantage-estimation
+instantiates:
+- actor-critic
 knowledge_type: technique
 maturity: evolving
 needs_canonical_source: false
@@ -28,6 +34,10 @@ tags:
 - bias-variance-tradeoff
 title: Generalized Advantage Estimation (GAE)
 understanding: 0
+uses:
+- policy-gradient-theorem
+- eligibility-traces
+- td-lambda
 ---
 
 ## Definition
@@ -42,4 +52,10 @@ GAE unifies the continuum between one-step TD ($\lambda=0$, low variance but bia
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[bias-variance-tradeoff]] — applies
+- [[actor-critic]] — instantiates
+- [[td-lambda]] — uses
+- [[n-step-return]] — extends
+- [[eligibility-traces]] — uses
+- [[policy-gradient-theorem]] — uses
 [To be populated during integration]

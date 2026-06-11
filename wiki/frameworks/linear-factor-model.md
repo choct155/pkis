@@ -15,13 +15,20 @@ domain:
 - machine-learning
 - statistics
 - probabilistic-modeling
+generalizes:
+- factor-analysis
 id: pkis:framework:linear-factor-model
+instantiates:
+- directed-graphical-models
+- probabilistic-graphical-models
 knowledge_type: framework
 maturity: evolving
 needs_canonical_source: false
 related_concepts: []
 sources:
 - goodfellow-deeplearning-ch13
+specializes:
+- latent-variable-models
 tags:
 - generative-models
 - latent-variables
@@ -29,6 +36,8 @@ tags:
 - dimensionality-reduction
 title: Linear Factor Model
 understanding: 0
+uses:
+- mixture-models
 ---
 
 ## Definition
@@ -51,4 +60,9 @@ Linear factor models are the simplest latent-variable generative models and prov
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[mixture-models]] — uses: can serve as building blocks of mixture models
+- [[factor-analysis]] — generalizes
+- [[probabilistic-graphical-models]] — instantiates
+- [[directed-graphical-models]] — instantiates
+- [[latent-variable-models]] — specializes
 [To be populated during integration]

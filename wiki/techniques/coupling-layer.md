@@ -16,6 +16,8 @@ domain:
 - machine-learning
 - generative-models
 id: pkis:technique:coupling-layer
+instantiates:
+- normalizing-flows
 knowledge_type: technique
 maturity: evolving
 needs_canonical_source: false
@@ -29,6 +31,9 @@ tags:
 - generative-model
 title: Coupling Layer (Coupling Flow)
 understanding: 0
+uses:
+- elementwise-flow
+- neural-networks
 ---
 
 ## Definition
@@ -43,4 +48,7 @@ Coupling layers allow arbitrarily non-linear dimension mixing through $\Theta$ (
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[neural-networks]] — uses: The conditioner Θ is typically a deep neural network
+- [[elementwise-flow]] — uses
+- [[normalizing-flows]] — instantiates
 [To be populated during integration]

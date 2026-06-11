@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- elbo
 component_scores:
   alternatives: null
   conditions: null
@@ -9,12 +11,16 @@ component_scores:
   implementation: null
   operational_mechanism: null
   principled_mechanism: null
+contrasts-with:
+- score-function-estimator
 coverage: 1
 date_created: '2026-06-11'
 date_updated: '2026-06-11'
 domain:
 - machine-learning
 - statistics
+extends:
+- reparameterization-gradient
 id: pkis:technique:stl-estimator
 knowledge_type: technique
 maturity: evolving
@@ -45,4 +51,7 @@ The score-function term vanishes in expectation but inflates variance for finite
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[score-function-estimator]] — contrasts-with
+- [[elbo]] — applies
+- [[reparameterization-gradient]] — extends
 [To be populated during integration]

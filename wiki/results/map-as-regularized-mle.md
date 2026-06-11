@@ -14,7 +14,12 @@ domain:
 - statistics
 - machine-learning
 - Bayesian-inference
+extends:
+- maximum-a-posteriori-estimation-map
+- mle-as-kl-minimization
 id: pkis:result:map-as-regularized-mle
+instantiates:
+- weight-decay-as-prior
 knowledge_type: result
 maturity: evolving
 needs_canonical_source: false
@@ -29,6 +34,9 @@ tags:
 - Bayesian-prior
 title: MAP Estimation as Regularized MLE
 understanding: 0
+uses:
+- regularization
+- bayesian-linear-regression
 ---
 
 ## Definition
@@ -49,4 +57,9 @@ The MAP-regularization correspondence gives practitioners a principled language 
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[bayesian-linear-regression]] — uses
+- [[weight-decay-as-prior]] — instantiates
+- [[mle-as-kl-minimization]] — extends
+- [[regularization]] — uses
+- [[maximum-a-posteriori-estimation-map]] — extends
 [To be populated during integration]

@@ -9,6 +9,8 @@ component_scores:
   implementation: null
   operational_mechanism: null
   principled_mechanism: null
+contrasts-with:
+- hmc
 coverage: 1
 date_created: '2026-06-11'
 date_updated: '2026-06-11'
@@ -16,6 +18,8 @@ domain:
 - MCMC
 - bayesian-computation
 id: pkis:technique:random-walk-metropolis
+instantiates:
+- random-walk
 knowledge_type: technique
 maturity: evolving
 needs_canonical_source: false
@@ -23,6 +27,9 @@ related_concepts: []
 sources:
 - murphy-pml2-advanced-ch07
 - murphy-pml2-advanced-ch12
+specializes:
+- metropolis-hastings
+- metropolis-hastings-algorithm
 tags:
 - Metropolis
 - random-walk
@@ -31,6 +38,10 @@ tags:
 - proposal
 title: Random Walk Metropolis Algorithm
 understanding: 0
+uses:
+- mcmc-proposal-distribution
+- energy-function-posterior
+- random-walk
 ---
 
 ## Definition
@@ -48,4 +59,11 @@ For Gaussian targets in $D$ dimensions the optimal step-size scales as $\sigma \
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[random-walk]] — uses
+- [[metropolis-hastings-algorithm]] — specializes
+- [[random-walk]] — instantiates
+- [[hmc]] — contrasts-with
+- [[energy-function-posterior]] — uses
+- [[mcmc-proposal-distribution]] — uses
+- [[metropolis-hastings]] — specializes
 [To be populated during integration]

@@ -17,9 +17,13 @@ domain:
 - deep-learning
 - nlp
 id: pkis:technique:sinusoidal-positional-encoding
+instantiates:
+- inductive-bias
 knowledge_type: technique
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- transformer-architecture
 related_concepts: []
 sources:
 - murphy-pml1-intro-ch15
@@ -30,6 +34,8 @@ tags:
 - embedding
 title: Positional Encoding (Sinusoidal)
 understanding: 0
+uses:
+- self-attention
 ---
 
 ## Definition
@@ -46,4 +52,7 @@ The sinusoidal basis ensures (1) extrapolation to sequence lengths unseen during
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[inductive-bias]] — instantiates
+- [[self-attention]] — uses: Positional encoding compensates for self-attention's permutation invariance
+- [[transformer-architecture]] — prerequisite-of
 [To be populated during integration]

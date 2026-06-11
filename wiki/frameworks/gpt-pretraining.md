@@ -16,6 +16,10 @@ domain:
 - deep-learning
 - generative-models
 id: pkis:framework:gpt-pretraining
+instantiates:
+- autoregressive-model-arm
+- language-model
+- foundation-model
 knowledge_type: framework
 maturity: evolving
 needs_canonical_source: false
@@ -31,6 +35,11 @@ tags:
 - in-context-learning
 title: GPT / Large Language Model Pre-training
 understanding: 0
+uses:
+- transformer-attention-mechanisms
+- maximum-likelihood-estimation
+- in-context-learning
+- neural-scaling-laws
 ---
 
 ## Definition
@@ -48,4 +57,11 @@ Empirical scaling laws (Kaplan et al.) show loss decreases predictably with mode
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[neural-scaling-laws]] — uses: GPT scaling follows empirical neural scaling laws
+- [[foundation-model]] — instantiates
+- [[language-model]] — instantiates
+- [[in-context-learning]] — uses: GPT-style models exhibit few-shot in-context learning
+- [[maximum-likelihood-estimation]] — uses
+- [[autoregressive-model-arm]] — instantiates
+- [[transformer-attention-mechanisms]] — uses: GPT uses causal (masked) self-attention in a decoder-only transformer
 [To be populated during integration]

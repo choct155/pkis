@@ -9,6 +9,9 @@ component_scores:
   implementation: null
   operational_mechanism: null
   principled_mechanism: null
+contrasts-with:
+- bagging
+- model-averaging
 coverage: 1
 date_created: '2026-06-11'
 date_updated: '2026-06-11'
@@ -16,13 +19,19 @@ domain:
 - deep-learning
 - ensemble-methods
 - uncertainty-quantification
+generalizes:
+- swa-swag
 id: pkis:technique:deep-ensembles
+instantiates:
+- bayesian-deep-learning
 knowledge_type: technique
 maturity: evolving
 needs_canonical_source: false
 related_concepts: []
 sources:
 - murphy-pml2-advanced-ch17
+specializes:
+- ensemble-learning
 tags:
 - multimodal-posterior
 - diversity
@@ -30,6 +39,8 @@ tags:
 - OOD-robustness
 title: Deep Ensembles
 understanding: 0
+uses:
+- mode-connectivity
 ---
 
 ## Definition
@@ -47,4 +58,10 @@ In the large-sample limit, standard BMA concentrates on the single best model. D
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[model-averaging]] — contrasts-with: Ensembling maintains M equally-weighted models; BMA concentrates on single best model in large-N limit
+- [[swa-swag]] — generalizes: MultiSWAG extends deep ensembles by fitting a Gaussian within each basin
+- [[mode-connectivity]] — uses: Ensemble members sit in different basins connected by low-loss curves
+- [[bagging]] — contrasts-with: Deep ensembles use same data; diversity from random init and SGD noise, not bootstrap resampling
+- [[ensemble-learning]] — specializes
+- [[bayesian-deep-learning]] — instantiates
 [To be populated during integration]

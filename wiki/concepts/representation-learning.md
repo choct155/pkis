@@ -10,6 +10,8 @@ component_scores:
   prerequisites: null
   scope: null
   transfer: null
+contrasts-with:
+- feature-engineering
 coverage: 1
 date_created: '2026-06-11'
 date_updated: '2026-06-11'
@@ -19,6 +21,8 @@ id: pkis:concept:representation-learning
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- deep-learning
 related_concepts: []
 sources:
 - goodfellow-deeplearning-ch01
@@ -29,6 +33,10 @@ tags:
 - deep-learning
 title: Representation Learning
 understanding: 0
+uses:
+- autoencoder
+- factors-of-variation
+- distributed-representation
 ---
 
 ## Definition
@@ -46,4 +54,9 @@ A useful representation disentangles the independent *factors of variation* — 
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[deep-learning]] — prerequisite-of
+- [[feature-engineering]] — contrasts-with: Representation learning automates what feature engineering does manually.
+- [[distributed-representation]] — uses
+- [[factors-of-variation]] — uses: The goal of representation learning is to disentangle factors of variation.
+- [[autoencoder]] — uses: Autoencoders are the quintessential representation learning algorithm.
 [To be populated during integration]

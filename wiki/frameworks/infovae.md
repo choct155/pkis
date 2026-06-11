@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+analogous-to:
+- generative-adversarial-network
 component_scores:
   application: null
   limits: null
@@ -15,6 +17,8 @@ domain:
 - machine-learning
 - variational-inference
 - information-theory
+generalizes:
+- variational-autoencoder
 id: pkis:framework:infovae
 knowledge_type: framework
 maturity: evolving
@@ -29,6 +33,10 @@ tags:
 - generative-model
 title: InfoVAE
 understanding: 0
+uses:
+- aggregated-posterior
+- mutual-information
+- kl-divergence
 ---
 
 ## Definition
@@ -43,4 +51,9 @@ The InfoVAE objective addresses two known deficiencies of the standard ELBO: ten
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[generative-adversarial-network]] — analogous-to: MMD-VAE special case uses implicit density matching as in GANs
+- [[kl-divergence]] — uses
+- [[mutual-information]] — uses
+- [[aggregated-posterior]] — uses
+- [[variational-autoencoder]] — generalizes
 [To be populated during integration]

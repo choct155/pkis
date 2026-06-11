@@ -17,9 +17,14 @@ domain:
 - neuroscience
 - deep-learning
 id: pkis:concept:simple-cells-complex-cells-v1
+instantiates:
+- heterogeneous-cortex
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- max-pooling
+- convolution-operation-nn
 related_concepts: []
 sources:
 - goodfellow-deeplearning-ch09
@@ -32,6 +37,8 @@ tags:
 - pooling motivation
 title: Simple Cells and Complex Cells (V1)
 understanding: 0
+uses:
+- gabor-function
 ---
 
 ## Definition
@@ -47,4 +54,8 @@ Simple cells inspired the *detector stage* (linear filter + nonlinearity) of con
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[heterogeneous-cortex]] — instantiates
+- [[gabor-function]] — uses
+- [[convolution-operation-nn]] — prerequisite-of
+- [[max-pooling]] — prerequisite-of
 [To be populated during integration]

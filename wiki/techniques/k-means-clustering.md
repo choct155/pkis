@@ -3,6 +3,8 @@ aliases: []
 also_type: []
 applies:
 - prototype-methods
+- vector-quantization-clustering
+- number-of-components-selection
 component_scores:
   alternatives: null
   conditions: null
@@ -20,6 +22,8 @@ domain:
 id: pkis:technique:k-means-clustering
 instantiates:
 - clustering
+- gaussian-mixture-models
+- mixture-models
 knowledge_type: technique
 maturity: evolving
 needs_canonical_source: false
@@ -31,6 +35,8 @@ sources:
 specializes:
 - gaussian-mixture-models
 - em-algorithm
+- clustering
+- unsupervised-learning
 tags:
 - unsupervised-learning
 - competitive-learning
@@ -39,6 +45,10 @@ title: K-means Clustering
 understanding: 0
 uses:
 - cluster-dissimilarity-measures
+- k-means-plus-plus
+- silhouette-coefficient
+- spectral-clustering
+- information-criteria
 ---
 
 ## Definition
@@ -61,6 +71,16 @@ K-means is the canonical competitive-learning clustering method and the hard-ass
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[number-of-components-selection]] — applies: choosing K in K-means is an instance of the number-of-components-selection problem
+- [[unsupervised-learning]] — specializes
+- [[mixture-models]] — instantiates
+- [[information-criteria]] — uses: BIC/WAIC on GMM used to choose K
+- [[spectral-clustering]] — uses: K-means applied to eigenvector rows in the final step of spectral clustering
+- [[silhouette-coefficient]] — uses: silhouette score used to choose K for K-means
+- [[k-means-plus-plus]] — uses
+- [[vector-quantization-clustering]] — applies
+- [[gaussian-mixture-models]] — instantiates: K-means corresponds to a GMM with Sigma_k=I, pi_k=1/K, hard E-step
+- [[clustering]] — specializes
 - [[em-algorithm]] — specializes: K-means is the hard (σ²→0) limit of EM for a spherical Gaussian mixture
 - [[cluster-dissimilarity-measures]] — uses: fixes the dissimilarity to squared Euclidean distance
 - [[prototype-methods]] — applies: K-means within each class produces labeled prototypes for classification.

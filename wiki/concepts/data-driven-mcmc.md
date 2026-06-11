@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+analogous-to:
+- amortized-inference
 component_scores:
   application: null
   boundary: null
@@ -17,6 +19,8 @@ domain:
 - machine-learning
 - computer-vision
 - statistics
+extends:
+- metropolis-hastings-algorithm
 id: pkis:concept:data-driven-mcmc
 knowledge_type: concept
 maturity: evolving
@@ -46,4 +50,6 @@ Data-driven proposals can be orders of magnitude more efficient than generic pro
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[amortized-inference]] — analogous-to
+- [[metropolis-hastings-algorithm]] — extends
 [To be populated during integration]

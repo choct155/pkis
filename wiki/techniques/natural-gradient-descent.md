@@ -1,6 +1,9 @@
 ---
 aliases: []
 also_type: []
+applies:
+- exponential-family
+- variational-inference
 component_scores:
   alternatives: null
   conditions: null
@@ -16,7 +19,11 @@ domain:
 - machine-learning
 - optimization
 - information-geometry
+extends:
+- stochastic-gradient-descent
 id: pkis:technique:natural-gradient-descent
+instantiates:
+- natural-gradient
 knowledge_type: technique
 maturity: evolving
 needs_canonical_source: false
@@ -31,6 +38,9 @@ tags:
 - preconditioning
 title: Natural Gradient Descent
 understanding: 0
+uses:
+- fisher-information
+- kl-divergence
 ---
 
 ## Definition
@@ -52,4 +62,10 @@ Exact FIM inversion is $O(p^3)$; practical variants include diagonal approximati
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[variational-inference]] — applies
+- [[natural-gradient]] — instantiates
+- [[exponential-family]] — applies
+- [[kl-divergence]] — uses
+- [[stochastic-gradient-descent]] — extends
+- [[fisher-information]] — uses
 [To be populated during integration]

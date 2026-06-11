@@ -17,6 +17,9 @@ domain:
 - generative-models
 - multimodal-learning
 id: pkis:framework:dall-e
+instantiates:
+- autoregressive-model-arm
+- foundation-model
 knowledge_type: framework
 maturity: evolving
 needs_canonical_source: false
@@ -33,6 +36,9 @@ tags:
 - reranking
 title: DALL-E (Autoregressive Text-to-Image Generation)
 understanding: 0
+uses:
+- gpt-pretraining
+- variational-autoencoder
 ---
 
 ## Definition
@@ -52,4 +58,8 @@ Variable binding (e.g., assigning attributes to the correct noun) remains imperf
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[foundation-model]] — instantiates
+- [[autoregressive-model-arm]] — instantiates
+- [[variational-autoencoder]] — uses: DALL-E uses a discrete VAE to tokenise images
+- [[gpt-pretraining]] — uses: DALL-E uses a GPT-style autoregressive transformer over image+text tokens
 [To be populated during integration]

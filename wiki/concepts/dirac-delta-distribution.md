@@ -20,9 +20,13 @@ id: pkis:concept:dirac-delta-distribution
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- empirical-distribution
 related_concepts: []
 sources:
 - goodfellow-deeplearning-ch03
+specializes:
+- probability-density-function
 tags:
 - generalized-function
 - empirical-distribution
@@ -43,4 +47,6 @@ The Dirac delta is essential for defining the empirical distribution $\hat{p}(x)
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[empirical-distribution]] — prerequisite-of
+- [[probability-density-function]] — specializes
 [To be populated during integration]

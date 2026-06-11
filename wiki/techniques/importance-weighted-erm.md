@@ -1,6 +1,10 @@
 ---
 aliases: []
 also_type: []
+analogous-to:
+- importance-sampling
+applies:
+- covariate-shift
 component_scores:
   alternatives: null
   conditions: null
@@ -15,6 +19,8 @@ date_updated: '2026-06-11'
 domain:
 - machine-learning
 - statistics
+extends:
+- empirical-risk-minimization
 id: pkis:technique:importance-weighted-erm
 knowledge_type: technique
 maturity: evolving
@@ -46,4 +52,7 @@ If a logistic classifier is trained with $c=-1$ for source and $c=+1$ for target
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[importance-sampling]] — analogous-to
+- [[empirical-risk-minimization]] — extends
+- [[covariate-shift]] — applies
 [To be populated during integration]

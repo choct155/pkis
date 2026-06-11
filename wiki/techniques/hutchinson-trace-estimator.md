@@ -1,6 +1,11 @@
 ---
 aliases: []
 also_type: []
+applies:
+- trace
+- matrix-norms
+- hessian-matrix
+- determinant
 component_scores:
   alternatives: null
   conditions: null
@@ -17,6 +22,8 @@ domain:
 - numerical-methods
 - machine-learning
 id: pkis:technique:hutchinson-trace-estimator
+instantiates:
+- monte-carlo-estimator
 knowledge_type: technique
 maturity: evolving
 needs_canonical_source: false
@@ -32,6 +39,9 @@ tags:
 - implicit-matrix
 title: Hutchinson Trace Estimator
 understanding: 0
+uses:
+- gradient-and-jacobian
+- automatic-differentiation
 ---
 
 ## Definition
@@ -46,4 +56,11 @@ For large neural networks, $\mathbf{A}$ is often the Hessian or the Fisher infor
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[automatic-differentiation]] — uses
+- [[gradient-and-jacobian]] — uses
+- [[determinant]] — applies
+- [[hessian-matrix]] — applies
+- [[matrix-norms]] — applies
+- [[monte-carlo-estimator]] — instantiates
+- [[trace]] — applies
 [To be populated during integration]

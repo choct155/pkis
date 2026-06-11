@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- curse-of-dimensionality
 component_scores:
   alternatives: null
   conditions: null
@@ -9,12 +11,18 @@ component_scores:
   implementation: null
   operational_mechanism: null
   principled_mechanism: null
+contrasts-with:
+- generative-adversarial-network
 coverage: 1
 date_created: '2026-06-11'
 date_updated: '2026-06-11'
 domain:
 - machine-learning
 - statistics
+extends:
+- factor-analysis
+generalizes:
+- probabilistic-pca
 id: pkis:technique:mixture-of-factor-analyzers
 knowledge_type: technique
 maturity: evolving
@@ -23,6 +31,8 @@ related_concepts: []
 sources:
 - murphy-pml1-intro-ch20
 - murphy-pml2-advanced-ch28
+specializes:
+- gaussian-mixture-models
 tags:
 - mixture-models
 - factor-analysis
@@ -31,6 +41,10 @@ tags:
 - manifold-learning
 title: Mixture of Factor Analyzers (MFA)
 understanding: 0
+uses:
+- em-algorithm
+- variational-inference
+- automatic-relevance-determination
 ---
 
 ## Definition
@@ -45,4 +59,12 @@ MFA approximates a globally nonlinear manifold by a union of local linear subspa
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[generative-adversarial-network]] — contrasts-with: MFA achieves competitive image generation while admitting exact likelihoods
+- [[automatic-relevance-determination]] — uses: ARD used to prune irrelevant latent dimensions automatically
+- [[variational-inference]] — uses
+- [[curse-of-dimensionality]] — applies
+- [[probabilistic-pca]] — generalizes
+- [[em-algorithm]] — uses
+- [[gaussian-mixture-models]] — specializes
+- [[factor-analysis]] — extends
 [To be populated during integration]

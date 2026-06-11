@@ -16,7 +16,11 @@ domain:
 - deep-learning
 - generative-models
 - energy-based-models
+extends:
+- restricted-boltzmann-machine
 id: pkis:technique:gaussian-bernoulli-rbm
+instantiates:
+- exponential-family
 knowledge_type: technique
 maturity: evolving
 needs_canonical_source: false
@@ -46,4 +50,6 @@ Gaussian-Bernoulli RBMs are the canonical energy-based model for continuous (e.g
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[exponential-family]] — instantiates: Gaussian conditionals are in the exponential family; generalisation to other exp-family distributions is immediate.
+- [[restricted-boltzmann-machine]] — extends
 [To be populated during integration]

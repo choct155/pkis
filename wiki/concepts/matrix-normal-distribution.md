@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+analogous-to:
+- gaussian-process
 component_scores:
   application: null
   boundary: null
@@ -17,13 +19,19 @@ domain:
 - probability-theory
 - statistics
 - machine-learning
+generalizes:
+- gaussian-distribution
 id: pkis:concept:matrix-normal-distribution
+instantiates:
+- conjugate-prior
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
 related_concepts: []
 sources:
 - murphy-pml2-advanced-ch02
+specializes:
+- multivariate-normal-model
 tags:
 - matrix-normal
 - kronecker
@@ -32,6 +40,8 @@ tags:
 - structured-covariance
 title: Matrix Normal Distribution
 understanding: 0
+uses:
+- wishart-distribution
 ---
 
 ## Definition
@@ -46,4 +56,9 @@ The matrix normal provides a compact, interpretable parameterization of structur
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[gaussian-process]] — analogous-to
+- [[conjugate-prior]] — instantiates
+- [[wishart-distribution]] — uses
+- [[multivariate-normal-model]] — specializes
+- [[gaussian-distribution]] — generalizes
 [To be populated during integration]

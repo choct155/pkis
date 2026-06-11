@@ -20,6 +20,8 @@ id: pkis:concept:stochastic-process-as-prior
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- probability-theory
 related_concepts: []
 sources:
 - murphy-pml2-advanced-ch31
@@ -31,6 +33,8 @@ tags:
 - bayesian-nonparametric
 title: Stochastic Process as Prior
 understanding: 0
+uses:
+- kolmogorov-extension-theorem
 ---
 
 ## Definition
@@ -45,4 +49,6 @@ Using a stochastic process as a prior allows the model complexity to be formally
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[probability-theory]] — prerequisite-of
+- [[kolmogorov-extension-theorem]] — uses
 [To be populated during integration]

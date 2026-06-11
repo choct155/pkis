@@ -17,10 +17,12 @@ domain:
 - statistical-learning
 generalizes:
 - kernel-density-estimation
+- empirical-distribution
 id: pkis:technique:gaussian-mixture-models
 instantiates:
 - latent-variable-models
 - prototype-methods
+- structured-probabilistic-model
 knowledge_type: technique
 maturity: settled
 related_concepts:
@@ -44,6 +46,8 @@ uses:
 - ancestral-sampling
 - gibbs-sampler
 - dirichlet-distribution
+- multinoulli-distribution
+- hard-vs-soft-clustering
 ---
 
 ## Reading Path
@@ -55,6 +59,10 @@ uses:
 Density estimation model that represents the data distribution as a weighted sum of Gaussian components $p(x) = \sum_k \pi_k \mathcal{N}(x | \mu_k, \Sigma_k)$, fit via the EM algorithm; serves as both a generative model and a soft-clustering technique.
 
 ## Connections
+- [[hard-vs-soft-clustering]] — uses
+- [[empirical-distribution]] — generalizes
+- [[structured-probabilistic-model]] — instantiates
+- [[multinoulli-distribution]] — uses
 - [[prototype-methods]] — instantiates: Each Gaussian component is a soft prototype (centroid + covariance).
 - [[kernel-density-estimation]] — generalizes
 - [[density-estimation]] — applies

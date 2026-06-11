@@ -10,6 +10,8 @@ component_scores:
   prerequisites: null
   scope: null
   transfer: null
+contrasts-with:
+- gamma-distribution
 coverage: 1
 date_created: '2026-06-11'
 date_updated: '2026-06-11'
@@ -17,7 +19,11 @@ domain:
 - probability-theory
 - statistics
 - economics
+generalizes:
+- zipf-mandelbrot-law
 id: pkis:concept:pareto-distribution
+instantiates:
+- kurtosis-and-tail-behavior
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
@@ -33,6 +39,8 @@ tags:
 - wealth-distribution
 title: Pareto Distribution and Power Laws
 understanding: 0
+uses:
+- pmf-and-pdf
 ---
 
 ## Definition
@@ -47,4 +55,8 @@ Power-law (heavy-tailed) distributions describe wealth, word frequencies, city s
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[gamma-distribution]] — contrasts-with
+- [[zipf-mandelbrot-law]] — generalizes
+- [[kurtosis-and-tail-behavior]] — instantiates
+- [[pmf-and-pdf]] — uses
 [To be populated during integration]

@@ -16,6 +16,8 @@ date_updated: '2026-06-11'
 domain:
 - causal-inference
 - econometrics
+generalizes:
+- two-stage-least-squares
 id: pkis:concept:additive-unobserved-confounding
 knowledge_type: concept
 maturity: evolving
@@ -31,6 +33,9 @@ tags:
 - nonparametric-IV
 title: Additive Unobserved Confounding (IV Identification Assumption)
 understanding: 0
+uses:
+- instrumental-variables
+- structural-causal-model
 ---
 
 ## Definition
@@ -50,4 +55,7 @@ Additive unobserved confounding is a *non-parametric* assumption weaker than ful
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[two-stage-least-squares]] — generalizes: Additive confounding does not require linearity, generalising beyond 2SLS assumptions
+- [[structural-causal-model]] — uses
+- [[instrumental-variables]] — uses
 [To be populated during integration]

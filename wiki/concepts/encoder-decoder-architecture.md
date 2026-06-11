@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- machine-translation
 component_scores:
   application: null
   boundary: null
@@ -18,6 +20,8 @@ domain:
 - deep-learning
 - nlp
 id: pkis:concept:encoder-decoder-architecture
+instantiates:
+- sequence-to-sequence-model
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
@@ -31,6 +35,9 @@ tags:
 - architecture
 title: Encoder–Decoder Architecture
 understanding: 0
+uses:
+- recurrent-neural-network
+- scaled-dot-product-attention
 ---
 
 ## Definition
@@ -47,4 +54,8 @@ The encoder–decoder pattern decouples input and output lengths and is the foun
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[scaled-dot-product-attention]] — uses
+- [[machine-translation]] — applies
+- [[sequence-to-sequence-model]] — instantiates
+- [[recurrent-neural-network]] — uses
 [To be populated during integration]

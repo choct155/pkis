@@ -22,6 +22,8 @@ id: pkis:technique:bagging
 knowledge_type: technique
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- random-forests
 related_concepts: []
 sources:
 - hastie-esl-ch08
@@ -40,6 +42,7 @@ understanding: 0
 uses:
 - bootstrap
 - decision-trees
+- cart-decision-trees
 ---
 
 ## Definition
@@ -58,6 +61,8 @@ Bagging does not help, and can hurt, under 0-1 loss when the base classifier is 
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[random-forests]] — prerequisite-of
+- [[cart-decision-trees]] — uses: unstable base learner for which bagging is most beneficial
 - [[decision-trees]] — uses
 - [[gradient-boosting]] — contrasts-with: bagging only modestly enlarges the model class; boosting enlarges it enough to capture structure bagging cannot
 - [[bias-variance-tradeoff]] — applies: bagging reduces variance while leaving bias unchanged under squared-error loss

@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- hypothesis-testing
 component_scores:
   application: null
   boundary: null
@@ -20,9 +22,13 @@ id: pkis:concept:chi-squared-distribution
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- chi-squared-test
 related_concepts: []
 sources:
 - murphy-pml2-advanced-ch02
+specializes:
+- gamma-distribution
 tags:
 - chi-squared
 - goodness-of-fit
@@ -31,6 +37,8 @@ tags:
 - gamma-special-case
 title: Chi-Squared Distribution
 understanding: 0
+uses:
+- gaussian-distribution
 ---
 
 ## Definition
@@ -45,4 +53,8 @@ The chi-squared distribution underpins classical hypothesis tests (goodness-of-f
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[chi-squared-test]] — prerequisite-of
+- [[hypothesis-testing]] — applies
+- [[gaussian-distribution]] — uses
+- [[gamma-distribution]] — specializes
 [To be populated during integration]

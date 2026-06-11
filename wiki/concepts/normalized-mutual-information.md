@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- clustering
 component_scores:
   application: null
   boundary: null
@@ -16,6 +18,8 @@ date_updated: '2026-06-11'
 domain:
 - information-theory
 - machine-learning
+extends:
+- mutual-information
 id: pkis:concept:normalized-mutual-information
 knowledge_type: concept
 maturity: evolving
@@ -30,6 +34,8 @@ tags:
 - clustering
 title: Normalized Mutual Information
 understanding: 0
+uses:
+- entropy
 ---
 
 ## Definition
@@ -44,4 +50,7 @@ Raw mutual information is hard to compare across variable pairs with different m
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[entropy]] — uses
+- [[clustering]] — applies
+- [[mutual-information]] — extends
 [To be populated during integration]

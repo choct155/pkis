@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- gaussian-mixture-models
 component_scores:
   application: null
   boundary: null
@@ -10,6 +12,8 @@ component_scores:
   prerequisites: null
   scope: null
   transfer: null
+contrasts-with:
+- bernstein-von-mises-theorem
 coverage: 1
 date_created: '2026-06-11'
 date_updated: '2026-06-11'
@@ -18,12 +22,16 @@ domain:
 - machine-learning
 - probabilistic-modeling
 id: pkis:concept:mixture-model-identifiability
+instantiates:
+- label-switching
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
 related_concepts: []
 sources:
 - bishop-prml-ch09
+specializes:
+- identifiability-of-mixtures
 tags:
 - label-switching
 - mixture-models
@@ -47,4 +55,8 @@ Label switching means the likelihood surface has at least $K!$ symmetric modes, 
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[bernstein-von-mises-theorem]] — contrasts-with: label switching breaks standard BvM asymptotics for mixture posteriors
+- [[label-switching]] — instantiates
+- [[identifiability-of-mixtures]] — specializes
+- [[gaussian-mixture-models]] — applies
 [To be populated during integration]

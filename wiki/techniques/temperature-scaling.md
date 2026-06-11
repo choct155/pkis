@@ -1,6 +1,9 @@
 ---
 aliases: []
 also_type: []
+applies:
+- expected-calibration-error
+- calibration
 component_scores:
   alternatives: null
   conditions: null
@@ -22,6 +25,8 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - murphy-pml2-advanced-ch14
+specializes:
+- platt-scaling
 tags:
 - calibration
 - post-hoc
@@ -44,4 +49,7 @@ Temperature scaling is the simplest and empirically best-performing post-hoc cal
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[calibration]] — applies
+- [[expected-calibration-error]] — applies
+- [[platt-scaling]] — specializes
 [To be populated during integration]

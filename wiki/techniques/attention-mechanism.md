@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- machine-translation
 component_scores:
   alternatives: null
   conditions: null
@@ -16,10 +18,14 @@ domain:
 - deep-learning
 - NLP
 - sequence-modelling
+extends:
+- encoder-decoder-seq2seq
 id: pkis:technique:attention-mechanism
 knowledge_type: technique
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- transformer-attention-mechanisms
 related_concepts: []
 sources:
 - goodfellow-deeplearning-ch12
@@ -31,6 +37,8 @@ tags:
 - soft-attention
 title: Attention Mechanism (Soft Alignment)
 understanding: 0
+uses:
+- neural-language-model
 ---
 
 ## Definition
@@ -45,4 +53,8 @@ Solves the information bottleneck of fixed-size context vectors for long sequenc
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[machine-translation]] — applies
+- [[neural-language-model]] — uses
+- [[transformer-attention-mechanisms]] — prerequisite-of
+- [[encoder-decoder-seq2seq]] — extends
 [To be populated during integration]

@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+analogous-to:
+- effective-degrees-of-freedom
 component_scores:
   application: null
   boundary: null
@@ -23,6 +25,8 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - bishop-prml-ch03
+specializes:
+- effective-number-of-parameters
 tags:
 - degrees-of-freedom
 - regularisation
@@ -30,6 +34,9 @@ tags:
 - model-complexity
 title: Effective Number of Parameters ($\gamma$)
 understanding: 0
+uses:
+- evidence-approximation
+- regularization
 ---
 
 ## Definition
@@ -46,4 +53,8 @@ Provides an intuitive measure of the model's effective capacity given both the d
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[effective-number-of-parameters]] — specializes
+- [[regularization]] — uses
+- [[effective-degrees-of-freedom]] — analogous-to
+- [[evidence-approximation]] — uses
 [To be populated during integration]

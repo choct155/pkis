@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- convolutional-neural-networks
 component_scores:
   alternatives: null
   conditions: null
@@ -16,6 +18,8 @@ domain:
 - computer-vision
 - deep-learning
 - preprocessing
+extends:
+- global-contrast-normalization
 id: pkis:technique:local-contrast-normalization
 knowledge_type: technique
 maturity: evolving
@@ -45,4 +49,6 @@ Unlike global contrast normalisation, LCN highlights local edges and textures wi
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[convolutional-neural-networks]] — applies
+- [[global-contrast-normalization]] — extends
 [To be populated during integration]

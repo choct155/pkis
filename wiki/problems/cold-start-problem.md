@@ -16,9 +16,13 @@ id: pkis:problem:cold-start-problem
 knowledge_type: problem
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- factorization-machines
 related_concepts: []
 sources:
 - murphy-pml1-intro-ch22
+specializes:
+- distribution-shift
 tags:
 - side-information
 - generalisation
@@ -35,6 +39,8 @@ The **cold start problem** arises in recommender systems when a new user or new 
 Cold start is a fundamental practical limitation: a pure matrix-factorisation model cannot embed an entity it has never seen. Solving it requires **side information** (content features, demographics, context) or meta-learning strategies so that predictions can be made from item/user attributes alone, motivating factorisation machines, content-based methods, and hybrid models.
 
 ### Connections
+- [[distribution-shift]] — specializes
+- [[factorization-machines]] — prerequisite-of
 The cold start problem is an instance of distribution-shift / extrapolation failure and is directly addressed by factorisation machines and neural MF models that accept feature vectors rather than bare integer IDs.
 
 ## Reading Path

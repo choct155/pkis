@@ -17,6 +17,8 @@ id: pkis:result:pitman-koopman-darmois-theorem
 knowledge_type: result
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- minimal-sufficient-statistic
 related_concepts: []
 sources:
 - murphy-pml2-advanced-ch05
@@ -27,6 +29,10 @@ tags:
 - characterization
 title: Pitman-Koopman-Darmois Theorem
 understanding: 0
+uses:
+- exponential-family
+- sufficient-statistics
+- data-processing-inequality
 ---
 
 ## Definition
@@ -41,4 +47,8 @@ This theorem provides a deep characterization of exponential families as the uni
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[data-processing-inequality]] — uses
+- [[minimal-sufficient-statistic]] — prerequisite-of
+- [[sufficient-statistics]] — uses
+- [[exponential-family]] — uses
 [To be populated during integration]

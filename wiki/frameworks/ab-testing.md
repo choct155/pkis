@@ -8,6 +8,9 @@ component_scores:
   purpose: null
   scope: null
   structure: null
+contrasts-with:
+- hypothesis-testing
+- gittins-index
 coverage: 1
 date_created: '2026-06-11'
 date_updated: '2026-06-11'
@@ -16,12 +19,17 @@ domain:
 - machine learning
 - business analytics
 id: pkis:framework:ab-testing
+instantiates:
+- statistical-decision-theory
+- exploration-exploitation-tradeoff
 knowledge_type: framework
 maturity: evolving
 needs_canonical_source: false
 related_concepts: []
 sources:
 - murphy-pml2-advanced-ch34
+specializes:
+- multi-armed-bandit
 tags:
 - bandit
 - hypothesis testing
@@ -30,6 +38,9 @@ tags:
 - Bayesian decision theory
 title: A/B Testing (Test-and-Roll)
 understanding: 0
+uses:
+- bayesian-decision-analysis
+- conjugate-prior
 ---
 
 ## Definition
@@ -45,4 +56,11 @@ Formulates a concrete exploration-exploitation tradeoff: larger test phases redu
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[gittins-index]] — contrasts-with
+- [[conjugate-prior]] — uses
+- [[hypothesis-testing]] — contrasts-with
+- [[multi-armed-bandit]] — specializes
+- [[bayesian-decision-analysis]] — uses
+- [[exploration-exploitation-tradeoff]] — instantiates
+- [[statistical-decision-theory]] — instantiates
 [To be populated during integration]

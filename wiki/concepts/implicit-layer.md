@@ -16,7 +16,11 @@ date_updated: '2026-06-11'
 domain:
 - deep-learning
 - optimization
+extends:
+- deep-neural-network-computation-graph
 id: pkis:concept:implicit-layer
+instantiates:
+- end-to-end-learning
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
@@ -30,6 +34,9 @@ tags:
 - memory-efficiency
 title: Implicit Layer
 understanding: 0
+uses:
+- lagrangian-duality
+- convex-optimization
 ---
 
 ## Definition
@@ -44,4 +51,8 @@ Implicit layers decouple the *specification* of the desired output from the *alg
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[convex-optimization]] — uses
+- [[end-to-end-learning]] — instantiates
+- [[lagrangian-duality]] — uses: implicit function theorem / KKT conditions underlie gradient computation
+- [[deep-neural-network-computation-graph]] — extends
 [To be populated during integration]

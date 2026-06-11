@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- curse-of-dimensionality
 component_scores:
   alternatives: null
   conditions: null
@@ -22,6 +24,8 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - murphy-pml1-intro-ch14
+specializes:
+- convolutional-neural-network
 tags:
 - efficient-cnn
 - mobilenet
@@ -45,4 +49,6 @@ Depthwise separable convolution is the core building block of lightweight archit
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[curse-of-dimensionality]] — applies: Separable conv drastically reduces parameter count, mitigating over-parameterization
+- [[convolutional-neural-network]] — specializes: Factorizes standard conv into depthwise + pointwise steps
 [To be populated during integration]

@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+analogous-to:
+- gaussian-mixture-models
 component_scores:
   application: null
   boundary: null
@@ -17,6 +19,8 @@ domain:
 - machine-learning
 - unsupervised-learning
 id: pkis:concept:bernoulli-mixture-model
+instantiates:
+- mixture-models
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
@@ -30,6 +34,9 @@ tags:
 - unsupervised-clustering
 title: Bernoulli Mixture Model (BMM)
 understanding: 0
+uses:
+- em-algorithm
+- binomial-distribution
 ---
 
 ## Definition
@@ -44,4 +51,8 @@ BMMs are the natural counterpart of GMMs for binary data such as binarised image
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[binomial-distribution]] — uses
+- [[em-algorithm]] — uses
+- [[gaussian-mixture-models]] — analogous-to
+- [[mixture-models]] — instantiates
 [To be populated during integration]

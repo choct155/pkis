@@ -3,6 +3,7 @@ aliases: []
 also_type: []
 applies:
 - restricted-boltzmann-machine
+- energy-based-model
 component_scores:
   alternatives: null
   conditions: null
@@ -20,6 +21,9 @@ domain:
 extends:
 - boltzmann-machine-learning-rule
 id: pkis:technique:contrastive-divergence
+instantiates:
+- positive-negative-phase-learning
+- boltzmann-machine-learning-rule
 knowledge_type: technique
 maturity: evolving
 needs_canonical_source: false
@@ -36,6 +40,9 @@ title: Contrastive Divergence
 understanding: 0
 uses:
 - gibbs-sampler
+- spurious-modes
+- mcmc
+- kl-divergence
 ---
 
 ## Definition
@@ -47,6 +54,12 @@ Hinton's empirical observation is that learning still works well if the model ex
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[kl-divergence]] — uses: CD_T minimizes KL(p0||p∞) - KL(pT||p∞)
+- [[mcmc]] — uses: CD runs short MCMC chains initialized at data points
+- [[energy-based-model]] — applies: CD is a training algorithm for EBMs
+- [[boltzmann-machine-learning-rule]] — instantiates
+- [[spurious-modes]] — uses
+- [[positive-negative-phase-learning]] — instantiates
 - [[boltzmann-machine-learning-rule]] — extends: Replaces the intractable equilibrium model expectation in the BM learning rule with a few-step approximation.
 - [[gibbs-sampler]] — uses: Runs a short Gibbs chain started at the data to approximate the model expectation.
 - [[restricted-boltzmann-machine]] — applies: Contrastive divergence is the practical learning rule for RBMs.

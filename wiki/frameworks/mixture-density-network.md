@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+analogous-to:
+- em-algorithm
 component_scores:
   application: null
   limits: null
@@ -8,13 +10,22 @@ component_scores:
   purpose: null
   scope: null
   structure: null
+contrasts-with:
+- hierarchical-mixtures-of-experts
 coverage: 1
 date_created: '2026-06-11'
 date_updated: '2026-06-11'
 domain:
 - machine-learning
 - probabilistic-models
+extends:
+- feed-forward-neural-network
+generalizes:
+- heteroscedastic-neural-network
 id: pkis:framework:mixture-density-network
+instantiates:
+- mixture-models
+- ml-cost-design-neural-networks
 knowledge_type: framework
 maturity: evolving
 needs_canonical_source: false
@@ -29,6 +40,10 @@ tags:
 - heteroscedastic
 title: Mixture Density Network
 understanding: 0
+uses:
+- gaussian-mixture-models
+- cross-entropy-loss
+- softmax-output-unit
 ---
 
 ## Definition
@@ -45,4 +60,13 @@ Addresses the fundamental limitation of least-squares neural networks on *invers
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[ml-cost-design-neural-networks]] — instantiates
+- [[heteroscedastic-neural-network]] — generalizes
+- [[softmax-output-unit]] — uses: Mixture weights are produced by softmax.
+- [[hierarchical-mixtures-of-experts]] — contrasts-with
+- [[em-algorithm]] — analogous-to
+- [[cross-entropy-loss]] — uses
+- [[mixture-models]] — instantiates
+- [[feed-forward-neural-network]] — extends
+- [[gaussian-mixture-models]] — uses
 [To be populated during integration]

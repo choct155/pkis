@@ -1,6 +1,10 @@
 ---
 aliases: []
 also_type: []
+analogous-to:
+- information-criteria
+applies:
+- cart
 component_scores:
   application: null
   boundary: null
@@ -23,6 +27,8 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - bishop-prml-ch14
+specializes:
+- regularization
 tags:
 - decision-tree
 - regularisation
@@ -31,6 +37,9 @@ tags:
 - model-complexity
 title: Tree Pruning (Cost-Complexity Pruning)
 understanding: 0
+uses:
+- bias-variance-tradeoff
+- cross-validation
 ---
 
 ## Definition
@@ -45,4 +54,9 @@ Greedy tree growing often builds over-complex trees that overfit training data. 
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[information-criteria]] — analogous-to
+- [[cross-validation]] — uses
+- [[bias-variance-tradeoff]] — uses
+- [[regularization]] — specializes
+- [[cart]] — applies
 [To be populated during integration]

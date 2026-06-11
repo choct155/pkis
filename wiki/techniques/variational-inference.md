@@ -18,6 +18,10 @@ date_updated: '2026-06-07'
 domain:
 - bayesian-stats
 - optimization
+generalizes:
+- mean-field-variational-inference
+- mean-field-approximation
+- advi
 id: pkis:technique:variational-inference
 knowledge_type: technique
 maturity: evolving
@@ -48,6 +52,9 @@ A family of algorithms for approximating intractable posterior distributions in 
 Classification note: assigned as technique (it is a procedure with inputs — model, data, variational family — and output — approximate posterior) but also qualifies as framework because it organizes a large ecosystem of sub-techniques (mean-field, amortized, SVI, BBVI, normalizing flows) under a shared objective.
 
 ## Connections
+- [[advi]] — generalizes
+- [[mean-field-approximation]] — generalizes
+- [[mean-field-variational-inference]] — generalizes
 - [[expectation-propagation]] — contrasts-with: VB and EP are the two deterministic iterative posterior approximations in BDA3 Ch.13, differing in optimization criterion (reverse vs local forward KL) and factorization (per-parameter vs per-datum).
 
 - [[em-algorithm]] — extends: EM is the special case of VI where the E-step posterior is computed exactly; VI generalizes this to intractable models by optimizing an approximate E-step

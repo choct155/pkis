@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- feedforward-neural-network
 component_scores:
   alternatives: null
   conditions: null
@@ -16,6 +18,8 @@ domain:
 - machine-learning
 - deep-learning
 - distributed-computing
+extends:
+- stochastic-gradient-descent
 id: pkis:technique:data-parallelism-dnn
 knowledge_type: technique
 maturity: evolving
@@ -30,6 +34,8 @@ tags:
 - all-reduce
 title: Data Parallelism for DNN Training
 understanding: 0
+uses:
+- gradient-descent
 ---
 
 ## Definition
@@ -48,4 +54,7 @@ Data parallelism is the dominant strategy for large-scale DNN training because i
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[gradient-descent]] — uses
+- [[feedforward-neural-network]] — applies
+- [[stochastic-gradient-descent]] — extends
 [To be populated during integration]

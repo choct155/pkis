@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+analogous-to:
+- gradient-descent
 component_scores:
   alternatives: null
   conditions: null
@@ -15,6 +17,8 @@ date_updated: '2026-06-11'
 domain:
 - statistics
 - machine-learning
+generalizes:
+- stochastic-gradient-langevin-dynamics
 id: pkis:technique:langevin-monte-carlo
 knowledge_type: technique
 maturity: evolving
@@ -22,6 +26,8 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - murphy-pml2-advanced-ch12
+specializes:
+- hamiltonian-monte-carlo
 tags:
 - mcmc
 - langevin
@@ -30,6 +36,8 @@ tags:
 - stochastic-differential-equations
 title: Langevin Monte Carlo (MALA)
 understanding: 0
+uses:
+- natural-gradient
 ---
 
 ## Definition
@@ -47,4 +55,8 @@ The stochastic gradient noise in SGD plays the role of the injected Langevin noi
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[natural-gradient]] — uses: when Sigma = Fisher information
+- [[gradient-descent]] — analogous-to
+- [[stochastic-gradient-langevin-dynamics]] — generalizes
+- [[hamiltonian-monte-carlo]] — specializes
 [To be populated during integration]

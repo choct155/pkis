@@ -1,6 +1,9 @@
 ---
 aliases: []
 also_type: []
+applies:
+- covariate-shift
+- spurious-correlations
 component_scores:
   alternatives: null
   conditions: null
@@ -16,6 +19,8 @@ domain:
 - machine-learning
 - optimization
 - statistics
+extends:
+- empirical-risk-minimization
 id: pkis:technique:distributionally-robust-optimization
 knowledge_type: technique
 maturity: evolving
@@ -47,4 +52,7 @@ DRO generalizes standard ERM (which sets all $w_n=1/N$) and is a special case of
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[spurious-correlations]] — applies
+- [[empirical-risk-minimization]] — extends
+- [[covariate-shift]] — applies
 [To be populated during integration]

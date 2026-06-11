@@ -15,6 +15,9 @@ domain:
 - machine-learning
 - statistics
 id: pkis:framework:cart-decision-trees
+instantiates:
+- decision-trees
+- bias-variance-tradeoff
 knowledge_type: framework
 maturity: evolving
 needs_canonical_source: false
@@ -30,6 +33,12 @@ tags:
 - interpretability
 title: Classification and Regression Trees (CART)
 understanding: 0
+uses:
+- supervised-learning
+- gini-impurity
+- entropy
+- overfitting-and-underfitting
+- missing-data-mechanisms
 ---
 
 ## Definition
@@ -51,4 +60,11 @@ Finding the globally optimal partition is NP-complete; regularization is achieve
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[missing-data-mechanisms]] — uses: surrogate splits handle missing inputs at test time
+- [[bias-variance-tradeoff]] — instantiates
+- [[overfitting-and-underfitting]] — uses: regularization via pruning or early stopping addresses overfitting
+- [[entropy]] — uses: entropy/deviance is an alternative node-splitting cost
+- [[gini-impurity]] — uses
+- [[supervised-learning]] — uses
+- [[decision-trees]] — instantiates
 [To be populated during integration]

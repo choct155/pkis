@@ -16,12 +16,17 @@ domain:
 - machine-learning
 - linear-algebra
 id: pkis:technique:pca-linear-algebra-derivation
+instantiates:
+- principal-component-analysis
+- orthogonal-projection
 knowledge_type: technique
 maturity: evolving
 needs_canonical_source: false
 related_concepts: []
 sources:
 - goodfellow-deeplearning-ch02
+specializes:
+- low-rank-approximation
 tags:
 - PCA
 - dimensionality reduction
@@ -30,6 +35,12 @@ tags:
 - projection
 title: Principal Component Analysis (Linear Algebra Derivation)
 understanding: 0
+uses:
+- eigendecomposition
+- lp-norms-frobenius
+- orthogonal-matrix
+- cyclic-invariance-trace
+- singular-value-decomposition
 ---
 
 ## Definition
@@ -46,4 +57,12 @@ This derivation reveals PCA as purely an eigendecomposition problem and shows ho
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[orthogonal-projection]] — instantiates
+- [[low-rank-approximation]] — specializes
+- [[singular-value-decomposition]] — uses
+- [[cyclic-invariance-trace]] — uses
+- [[orthogonal-matrix]] — uses
+- [[lp-norms-frobenius]] — uses
+- [[eigendecomposition]] — uses
+- [[principal-component-analysis]] — instantiates
 [To be populated during integration]

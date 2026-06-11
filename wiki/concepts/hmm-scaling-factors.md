@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- hidden-markov-model
 component_scores:
   application: null
   boundary: null
@@ -16,6 +18,8 @@ date_updated: '2026-06-11'
 domain:
 - machine-learning
 - numerical-methods
+extends:
+- forward-backward-algorithm
 id: pkis:concept:hmm-scaling-factors
 knowledge_type: concept
 maturity: evolving
@@ -46,4 +50,6 @@ Without scaling, $\alpha(z_n)$ decays exponentially in $n$ and underflows to zer
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[hidden-markov-model]] — applies
+- [[forward-backward-algorithm]] — extends
 [To be populated during integration]

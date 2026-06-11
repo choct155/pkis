@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- bayesian-inference
 component_scores:
   application: null
   limits: null
@@ -16,9 +18,14 @@ domain:
 - statistics
 - machine-learning
 id: pkis:framework:linear-gaussian-system
+instantiates:
+- latent-variable-models
 knowledge_type: framework
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- kalman-filter
+- sensor-fusion
 related_concepts: []
 sources:
 - murphy-pml1-intro-ch03
@@ -29,6 +36,8 @@ tags:
 - kalman-filter
 title: Linear Gaussian System
 understanding: 0
+uses:
+- mvn-marginal-conditional
 ---
 
 ## Definition
@@ -47,4 +56,9 @@ LGSs are the backbone of Kalman filtering, sensor fusion, Bayesian linear regres
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[sensor-fusion]] — prerequisite-of
+- [[kalman-filter]] — prerequisite-of
+- [[latent-variable-models]] — instantiates
+- [[bayesian-inference]] — applies
+- [[mvn-marginal-conditional]] — uses
 [To be populated during integration]

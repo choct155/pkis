@@ -1,6 +1,9 @@
 ---
 aliases: []
 also_type: []
+applies:
+- multivariate-normal-model
+- high-dimensional-statistics-p-gg-n
 component_scores:
   alternatives: null
   conditions: null
@@ -15,7 +18,11 @@ date_updated: '2026-06-11'
 domain:
 - statistics
 - machine-learning
+extends:
+- maximum-likelihood-estimation
 id: pkis:technique:shrinkage-covariance-estimation
+instantiates:
+- map-estimation
 knowledge_type: technique
 maturity: evolving
 needs_canonical_source: false
@@ -30,6 +37,8 @@ tags:
 - inverse-Wishart
 title: Shrinkage Estimation of Covariance
 understanding: 0
+uses:
+- regularization
 ---
 
 ## Definition
@@ -47,4 +56,9 @@ Using an inverse-Wishart prior $\text{IW}(\breve{S}, \breve{N})$ with $\breve{S}
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[maximum-likelihood-estimation]] — extends
+- [[high-dimensional-statistics-p-gg-n]] — applies
+- [[multivariate-normal-model]] — applies
+- [[regularization]] — uses
+- [[map-estimation]] — instantiates
 [To be populated during integration]

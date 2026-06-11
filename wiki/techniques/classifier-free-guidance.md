@@ -15,6 +15,8 @@ date_updated: '2026-06-11'
 domain:
 - machine-learning
 - generative-models
+extends:
+- classifier-guidance
 id: pkis:technique:classifier-free-guidance
 knowledge_type: technique
 maturity: evolving
@@ -29,6 +31,8 @@ tags:
 - diffusion
 title: Classifier-Free Guidance
 understanding: 0
+uses:
+- bayesian-inference
 ---
 
 ## Definition
@@ -45,4 +49,6 @@ Classifier-free guidance avoids the adversarial-gradient pathologies of classifi
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[bayesian-inference]] — uses
+- [[classifier-guidance]] — extends: Derives the classifier from the generative model to avoid adversarial-gradient issues
 [To be populated during integration]

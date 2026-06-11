@@ -6,6 +6,8 @@ component_scores:
   instances: null
   solution_landscape: null
   why_hard: null
+contrasts-with:
+- adversarial-examples
 coverage: 1
 date_created: '2026-06-11'
 date_updated: '2026-06-11'
@@ -20,6 +22,8 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - murphy-pml2-advanced-ch01
+specializes:
+- distribution-shift
 tags:
 - distribution-shift
 - covariate-shift
@@ -28,6 +32,9 @@ tags:
 - robustness
 title: Robustness to Distribution Shift
 understanding: 0
+uses:
+- causal-mechanism-autonomy
+- inductive-bias
 ---
 
 ## Definition
@@ -43,4 +50,8 @@ Pure function-approximation / pattern-matching approaches tend to exploit spurio
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[adversarial-examples]] — contrasts-with
+- [[inductive-bias]] — uses
+- [[causal-mechanism-autonomy]] — uses
+- [[distribution-shift]] — specializes
 [To be populated during integration]

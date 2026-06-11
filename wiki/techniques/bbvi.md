@@ -9,6 +9,8 @@ component_scores:
   implementation: null
   operational_mechanism: null
   principled_mechanism: null
+contrasts-with:
+- reparameterization-trick
 coverage: 1
 date_created: '2026-06-11'
 date_updated: '2026-06-11'
@@ -17,6 +19,8 @@ domain:
 - bayesian-inference
 - probabilistic-programming
 id: pkis:technique:bbvi
+instantiates:
+- variational-inference-framework
 knowledge_type: technique
 maturity: evolving
 needs_canonical_source: false
@@ -31,6 +35,8 @@ tags:
 - black-box-inference
 title: Blackbox Variational Inference (BBVI)
 understanding: 0
+uses:
+- reinforce
 ---
 
 ## Definition
@@ -45,4 +51,7 @@ BBVI treats the generative model as a black box, enabling VI for models with dis
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[reparameterization-trick]] — contrasts-with: BBVI uses score-function gradients (higher variance, works for discrete z) vs. reparameterization (lower variance, continuous z only).
+- [[variational-inference-framework]] — instantiates: BBVI is a black-box instantiation of the general VI framework requiring only model log-joint evaluations.
+- [[reinforce]] — uses: BBVI uses the REINFORCE/score-function gradient estimator to estimate ELBO gradients.
 [To be populated during integration]

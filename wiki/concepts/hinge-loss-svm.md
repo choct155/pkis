@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+analogous-to:
+- epsilon-insensitive-loss
 component_scores:
   application: null
   boundary: null
@@ -10,6 +12,9 @@ component_scores:
   prerequisites: null
   scope: null
   transfer: null
+contrasts-with:
+- cross-entropy-loss
+- logistic-regression
 coverage: 1
 date_created: '2026-06-11'
 date_updated: '2026-06-11'
@@ -47,4 +52,7 @@ The hinge loss is a convex, piecewise-linear upper bound on the 0–1 misclassif
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[logistic-regression]] — contrasts-with
+- [[cross-entropy-loss]] — contrasts-with: Hinge loss yields sparse solutions; cross-entropy does not
+- [[epsilon-insensitive-loss]] — analogous-to
 [To be populated during integration]

@@ -18,6 +18,9 @@ domain:
 - graph-learning
 - geometry
 - deep-learning
+generalizes:
+- graph-neural-networks
+- convolutional-neural-networks
 id: pkis:concept:geometric-deep-learning
 knowledge_type: concept
 maturity: evolving
@@ -33,6 +36,9 @@ tags:
 - GDL
 title: Geometric Deep Learning
 understanding: 0
+uses:
+- graph-convolutional-network
+- hyperbolic-graph-embeddings
 ---
 
 ## Definition
@@ -47,4 +53,8 @@ GDL encompasses spectral graph convolutions (GCN), spatial methods (GraphSAGE, G
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[hyperbolic-graph-embeddings]] — uses
+- [[graph-convolutional-network]] — uses
+- [[convolutional-neural-networks]] — generalizes
+- [[graph-neural-networks]] — generalizes
 [To be populated during integration]

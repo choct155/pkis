@@ -14,7 +14,12 @@ date_updated: '2026-06-11'
 domain:
 - machine-learning
 - statistics
+generalizes:
+- naive-bayes-model
+- gaussian-discriminant-analysis
 id: pkis:framework:generative-classifier
+instantiates:
+- generative-vs-discriminative-models
 knowledge_type: framework
 maturity: evolving
 needs_canonical_source: false
@@ -45,4 +50,7 @@ Gaussian Discriminant Analysis (GDA/LDA/QDA) and Naive Bayes are the canonical p
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[generative-vs-discriminative-models]] — instantiates: This node is the specific concept distinguishing joint vs conditional modelling in classification
+- [[gaussian-discriminant-analysis]] — generalizes
+- [[naive-bayes-model]] — generalizes
 [To be populated during integration]

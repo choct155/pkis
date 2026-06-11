@@ -9,6 +9,8 @@ component_scores:
   implementation: null
   operational_mechanism: null
   principled_mechanism: null
+contrasts-with:
+- k-means-clustering
 coverage: 1
 date_created: '2026-06-11'
 date_updated: '2026-06-11'
@@ -17,12 +19,16 @@ domain:
 - statistics
 - unsupervised-learning
 id: pkis:technique:hierarchical-agglomerative-clustering
+instantiates:
+- hierarchical-clustering
 knowledge_type: technique
 maturity: evolving
 needs_canonical_source: false
 related_concepts: []
 sources:
 - murphy-pml1-intro-ch21
+specializes:
+- clustering
 tags:
 - clustering
 - dendrogram
@@ -31,6 +37,9 @@ tags:
 - hierarchical
 title: Hierarchical Agglomerative Clustering (HAC)
 understanding: 0
+uses:
+- cluster-dissimilarity-measures
+- dendrogram
 ---
 
 ## Definition
@@ -48,4 +57,9 @@ HAC requires no pre-specified number of clusters, produces interpretable dendrog
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[hierarchical-clustering]] — instantiates
+- [[k-means-clustering]] — contrasts-with: HAC is O(N^3) and model-free; K-means is O(NKT) and optimizes an objective
+- [[dendrogram]] — uses
+- [[cluster-dissimilarity-measures]] — uses
+- [[clustering]] — specializes
 [To be populated during integration]

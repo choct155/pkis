@@ -1,6 +1,10 @@
 ---
 aliases: []
 also_type: []
+analogous-to:
+- dropout-regularization
+applies:
+- overfitting-and-underfitting
 component_scores:
   alternatives: null
   conditions: null
@@ -9,6 +13,8 @@ component_scores:
   implementation: null
   operational_mechanism: null
   principled_mechanism: null
+contrasts-with:
+- tangent-propagation
 coverage: 1
 date_created: '2026-06-11'
 date_updated: '2026-06-11'
@@ -24,6 +30,8 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - goodfellow-deeplearning-ch07
+specializes:
+- regularization
 tags:
 - data-augmentation
 - invariance
@@ -49,4 +57,8 @@ Dataset augmentation is the **non-infinitesimal** version of tangent propagation
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[overfitting-and-underfitting]] — applies
+- [[dropout-regularization]] — analogous-to: Dropout can be viewed as constructing augmented inputs by multiplying by noise
+- [[tangent-propagation]] — contrasts-with: Augmentation applies finite transformations; tangent prop only infinitesimal perturbations
+- [[regularization]] — specializes
 [To be populated during integration]

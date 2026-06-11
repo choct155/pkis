@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+analogous-to:
+- partial-least-squares
 component_scores:
   alternatives: null
   conditions: null
@@ -9,6 +11,8 @@ component_scores:
   implementation: null
   operational_mechanism: null
   principled_mechanism: null
+contrasts-with:
+- centered-kernel-alignment
 coverage: 1
 date_created: '2026-06-11'
 date_updated: '2026-06-11'
@@ -30,6 +34,9 @@ tags:
 - neural-networks
 title: Singular Vector CCA (SVCCA)
 understanding: 0
+uses:
+- principal-component-analysis
+- singular-value-decomposition
 ---
 
 ## Definition
@@ -46,4 +53,8 @@ High-dimensional neural representations have more dimensions than data points, m
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[partial-least-squares]] — analogous-to
+- [[singular-value-decomposition]] — uses
+- [[principal-component-analysis]] — uses: PCA dimensionality reduction precedes CCA in SVCCA
+- [[centered-kernel-alignment]] — contrasts-with: Both measure representational similarity but via CCA vs kernel alignment
 [To be populated during integration]

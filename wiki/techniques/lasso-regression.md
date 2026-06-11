@@ -9,13 +9,20 @@ component_scores:
   implementation: null
   operational_mechanism: null
   principled_mechanism: null
+contrasts-with:
+- ridge-regression
 coverage: 1
 date_created: '2026-06-11'
 date_updated: '2026-06-11'
 domain:
 - statistics
 - machine learning
+extends:
+- maximum-likelihood-estimation
 id: pkis:technique:lasso-regression
+instantiates:
+- lasso
+- map-regression-as-regularized-least-squares
 knowledge_type: technique
 maturity: evolving
 needs_canonical_source: false
@@ -30,6 +37,10 @@ tags:
 - MAP estimation
 title: Lasso Regression ($\ell_1$-Regularised Linear Regression)
 understanding: 0
+uses:
+- soft-thresholding
+- regularization-path
+- shooting-algorithm
 ---
 
 ## Definition
@@ -47,4 +58,11 @@ Lasso shrinks selected coefficients (bias), is not model-selection consistent at
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[maximum-likelihood-estimation]] — extends
+- [[map-regression-as-regularized-least-squares]] — instantiates
+- [[shooting-algorithm]] — uses
+- [[lasso]] — instantiates
+- [[regularization-path]] — uses
+- [[soft-thresholding]] — uses
+- [[ridge-regression]] — contrasts-with
 [To be populated during integration]

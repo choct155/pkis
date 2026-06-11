@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- bayesian-inference
 component_scores:
   alternatives: null
   conditions: null
@@ -9,6 +11,8 @@ component_scores:
   implementation: null
   operational_mechanism: null
   principled_mechanism: null
+contrasts-with:
+- likelihood-tempering-smc
 coverage: 1
 date_created: '2026-06-11'
 date_updated: '2026-06-11'
@@ -16,6 +20,8 @@ domain:
 - statistics
 - machine-learning
 id: pkis:technique:data-tempering-ibis
+instantiates:
+- smc-sampler
 knowledge_type: technique
 maturity: evolving
 needs_canonical_source: false
@@ -45,4 +51,7 @@ Data tempering / IBIS is the online Bayesian equivalent of sequential updating: 
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[bayesian-inference]] — applies
+- [[likelihood-tempering-smc]] — contrasts-with
+- [[smc-sampler]] — instantiates
 [To be populated during integration]

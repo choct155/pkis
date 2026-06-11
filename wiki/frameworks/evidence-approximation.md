@@ -1,6 +1,9 @@
 ---
 aliases: []
 also_type: []
+analogous-to:
+- em-algorithm
+- effective-degrees-of-freedom
 component_scores:
   application: null
   limits: null
@@ -8,6 +11,9 @@ component_scores:
   purpose: null
   scope: null
   structure: null
+contrasts-with:
+- information-criteria
+- cross-validation
 coverage: 1
 date_created: '2026-06-11'
 date_updated: '2026-06-11'
@@ -15,6 +21,8 @@ domain:
 - machine-learning
 - bayesian-statistics
 id: pkis:framework:evidence-approximation
+instantiates:
+- occam-factor
 knowledge_type: framework
 maturity: evolving
 needs_canonical_source: false
@@ -28,6 +36,10 @@ tags:
 - marginal-likelihood
 title: Evidence Approximation (Empirical Bayes for Linear Models)
 understanding: 0
+uses:
+- marginal-likelihood
+- bayesian-linear-regression-posterior
+- effective-number-of-parameters-gamma
 ---
 
 ## Definition
@@ -48,4 +60,12 @@ Automates regularisation coefficient selection from training data alone—no cro
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[occam-factor]] — instantiates
+- [[effective-degrees-of-freedom]] — analogous-to
+- [[effective-number-of-parameters-gamma]] — uses
+- [[cross-validation]] — contrasts-with: Evidence approximation selects hyperparameters without held-out data
+- [[information-criteria]] — contrasts-with: Evidence approximation gives a principled Bayesian alternative to AIC/BIC
+- [[em-algorithm]] — analogous-to: Both the direct evidence maximization and EM converge to the same solution
+- [[bayesian-linear-regression-posterior]] — uses
+- [[marginal-likelihood]] — uses
 [To be populated during integration]

@@ -21,6 +21,8 @@ id: pkis:concept:kalman-gain
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- kalman-filter
 related_concepts: []
 sources:
 - murphy-pml2-advanced-ch08
@@ -31,6 +33,8 @@ tags:
 - state-estimation
 title: Kalman Gain Matrix
 understanding: 0
+uses:
+- kalman-innovation
 ---
 
 ## Definition
@@ -45,4 +49,6 @@ The Kalman gain encodes the optimal trade-off between trusting the dynamics pred
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[kalman-innovation]] — uses
+- [[kalman-filter]] — prerequisite-of
 [To be populated during integration]

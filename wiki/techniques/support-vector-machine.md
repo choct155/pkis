@@ -9,13 +9,22 @@ component_scores:
   implementation: null
   operational_mechanism: null
   principled_mechanism: null
+contrasts-with:
+- kernel-ridge-regression
 coverage: 1
 date_created: '2026-06-11'
 date_updated: '2026-06-11'
 domain:
 - machine-learning
 - statistical-learning-theory
+generalizes:
+- soft-margin-svm
+- support-vector-regression
 id: pkis:technique:support-vector-machine
+instantiates:
+- margin-maximum-margin-classifier
+- structural-risk-minimization
+- optimal-separating-hyperplane
 knowledge_type: technique
 maturity: evolving
 needs_canonical_source: false
@@ -23,6 +32,8 @@ related_concepts: []
 sources:
 - bishop-prml-ch07
 - murphy-pml1-intro-ch17
+specializes:
+- optimal-separating-hyperplane
 tags:
 - classification
 - kernel-methods
@@ -31,6 +42,20 @@ tags:
 - quadratic-programming
 title: Support Vector Machine (SVM)
 understanding: 0
+uses:
+- the-kernel-trick
+- lagrange-multipliers
+- convex-optimization
+- vc-dimension
+- pac-learning
+- hinge-loss-svm
+- svm-dual-formulation
+- support-vectors
+- reproducing-kernel-hilbert-space
+- mercer-kernel
+- lagrangian-duality
+- hinge-loss
+- gram-matrix
 ---
 
 ## Definition
@@ -47,4 +72,24 @@ SVMs offer strong generalisation guarantees via VC theory, handle high- and infi
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[gram-matrix]] — uses
+- [[optimal-separating-hyperplane]] — instantiates
+- [[support-vector-regression]] — generalizes
+- [[kernel-ridge-regression]] — contrasts-with: SVM is sparse; KRR uses all training points
+- [[hinge-loss]] — uses
+- [[soft-margin-svm]] — generalizes
+- [[lagrangian-duality]] — uses
+- [[mercer-kernel]] — uses
+- [[structural-risk-minimization]] — instantiates
+- [[optimal-separating-hyperplane]] — specializes
+- [[reproducing-kernel-hilbert-space]] — uses
+- [[support-vectors]] — uses
+- [[svm-dual-formulation]] — uses
+- [[hinge-loss-svm]] — uses
+- [[pac-learning]] — uses: Historically motivated via PAC/statistical learning theory
+- [[vc-dimension]] — uses: PAC/VC-dim analysis motivates maximum-margin principle
+- [[convex-optimization]] — uses
+- [[lagrange-multipliers]] — uses
+- [[the-kernel-trick]] — uses
+- [[margin-maximum-margin-classifier]] — instantiates
 [To be populated during integration]

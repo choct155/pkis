@@ -1,6 +1,9 @@
 ---
 aliases: []
 also_type: []
+applies:
+- gaussian-distribution
+- solving-linear-systems
 component_scores:
   alternatives: null
   conditions: null
@@ -20,9 +23,14 @@ id: pkis:technique:schur-complement
 knowledge_type: technique
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- woodbury-identity
+- kalman-filter
 related_concepts: []
 sources:
 - murphy-pml1-intro-ch07
+specializes:
+- linear-algebra
 tags:
 - block-matrix
 - matrix-inversion
@@ -46,4 +54,9 @@ Schur complements are fundamental in Gaussian conditioning (marginal and conditi
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[solving-linear-systems]] — applies
+- [[gaussian-distribution]] — applies
+- [[kalman-filter]] — prerequisite-of
+- [[woodbury-identity]] — prerequisite-of
+- [[linear-algebra]] — specializes
 [To be populated during integration]

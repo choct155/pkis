@@ -14,13 +14,20 @@ date_updated: '2026-06-11'
 domain:
 - machine-learning
 - artificial-intelligence
+extends:
+- representation-learning
+- connectionism
 id: pkis:framework:deep-learning
+instantiates:
+- data-driven-ai
 knowledge_type: framework
 maturity: evolving
 needs_canonical_source: false
 related_concepts: []
 sources:
 - goodfellow-deeplearning-ch01
+specializes:
+- neural-networks
 tags:
 - neural-networks
 - representation-learning
@@ -28,6 +35,15 @@ tags:
 - deep-learning
 title: Deep Learning
 understanding: 0
+uses:
+- multilayer-perceptron
+- backpropagation
+- stochastic-gradient-descent
+- supervised-learning
+- unsupervised-learning
+- convolutional-neural-networks
+- lstm
+- deep-reinforcement-learning
 ---
 
 ## Definition
@@ -45,4 +61,16 @@ Depth can be measured either as the length of the longest computational path (fl
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[deep-reinforcement-learning]] — uses
+- [[lstm]] — uses
+- [[convolutional-neural-networks]] — uses
+- [[unsupervised-learning]] — uses
+- [[supervised-learning]] — uses
+- [[data-driven-ai]] — instantiates: Deep learning is the preeminent instantiation of the data-driven AI principle.
+- [[connectionism]] — extends: Deep learning grew out of the connectionist movement of the 1980s.
+- [[stochastic-gradient-descent]] — uses: SGD and its variants are the standard optimizers for deep learning.
+- [[backpropagation]] — uses: Backpropagation is the dominant algorithm for training deep networks.
+- [[neural-networks]] — specializes: Deep learning is a subfield of neural network research focused on depth and hierarchical representations.
+- [[multilayer-perceptron]] — uses: The MLP / feedforward deep network is the canonical deep learning architecture.
+- [[representation-learning]] — extends: Deep learning is a specific approach to representation learning that uses hierarchical composition of learned functions.
 [To be populated during integration]

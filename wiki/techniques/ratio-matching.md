@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+analogous-to:
+- pseudolikelihood
 component_scores:
   alternatives: null
   conditions: null
@@ -9,12 +11,16 @@ component_scores:
   implementation: null
   operational_mechanism: null
   principled_mechanism: null
+contrasts-with:
+- partition-function
 coverage: 1
 date_created: '2026-06-11'
 date_updated: '2026-06-11'
 domain:
 - machine-learning
 - probabilistic-graphical-models
+extends:
+- score-matching
 id: pkis:technique:ratio-matching
 knowledge_type: technique
 maturity: evolving
@@ -44,4 +50,7 @@ Ratio matching addresses the failure of score matching (which requires continuou
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[partition-function]] — contrasts-with
+- [[pseudolikelihood]] — analogous-to
+- [[score-matching]] — extends
 [To be populated during integration]

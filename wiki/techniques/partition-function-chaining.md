@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- bayesian-model-comparison
 component_scores:
   alternatives: null
   conditions: null
@@ -29,6 +31,10 @@ tags:
 - thermodynamic-integration
 title: Partition Function Estimation by Chaining
 understanding: 0
+uses:
+- importance-sampling
+- partition-function
+- mcmc
 ---
 
 ## Definition
@@ -45,4 +51,8 @@ Direct estimation of $Z_M/Z_1$ by importance sampling fails when the two distrib
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[mcmc]] — uses
+- [[partition-function]] — uses
+- [[bayesian-model-comparison]] — applies
+- [[importance-sampling]] — uses
 [To be populated during integration]

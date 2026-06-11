@@ -14,13 +14,19 @@ date_created: '2026-06-11'
 date_updated: '2026-06-11'
 domain:
 - deep-learning
+extends:
+- translation-equivariance
 id: pkis:technique:max-pooling
+instantiates:
+- simple-cells-complex-cells-v1
 knowledge_type: technique
 maturity: evolving
 needs_canonical_source: false
 related_concepts: []
 sources:
 - goodfellow-deeplearning-ch09
+specializes:
+- pooling-layer
 tags:
 - pooling
 - translation invariance
@@ -46,4 +52,7 @@ The operation is biologically motivated by V1 *complex cells*, which respond to 
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[simple-cells-complex-cells-v1]] — instantiates: Motivated by complex-cell pooling over quadrature-pair simple-cell responses.
+- [[translation-equivariance]] — extends: Max pooling converts equivariance into approximate local translation invariance.
+- [[pooling-layer]] — specializes
 [To be populated during integration]

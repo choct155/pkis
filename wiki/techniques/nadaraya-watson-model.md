@@ -9,6 +9,8 @@ component_scores:
   implementation: null
   operational_mechanism: null
   principled_mechanism: null
+contrasts-with:
+- gaussian-process-regression
 coverage: 1
 date_created: '2026-06-11'
 date_updated: '2026-06-11'
@@ -23,6 +25,8 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - bishop-prml-ch06
+specializes:
+- kernel-smoothing
 tags:
 - kernel-regression
 - Nadaraya-Watson
@@ -31,6 +35,9 @@ tags:
 - Parzen-window
 title: Nadaraya–Watson Kernel Regression
 understanding: 0
+uses:
+- kernel-density-estimation
+- stationary-and-radial-kernels
 ---
 
 ## Definition
@@ -42,6 +49,10 @@ where $g$ is a non-negative localised function (e.g., Gaussian). The estimator i
 Nadaraya–Watson (1964) is the foundational nonparametric regression estimate. It arises naturally from three distinct perspectives: (1) kernel density estimation of the joint distribution, (2) regularisation theory via Green's functions of isotropic differential operators, and (3) optimisation under input noise. Its normalised kernel satisfies an exact partition-of-unity property, preventing the degenerate extrapolation of unnormalised RBF networks.
 
 ### Connections
+- [[gaussian-process-regression]] — contrasts-with
+- [[stationary-and-radial-kernels]] — uses
+- [[kernel-smoothing]] — specializes
+- [[kernel-density-estimation]] — uses
 It is the nonparametric analogue of the equivalent-kernel predictor in Bayesian linear regression (Section 3.3.3) and is a special case of local constant kernel smoothing.
 
 ## Reading Path

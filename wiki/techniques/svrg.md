@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+analogous-to:
+- monte-carlo-estimator
 component_scores:
   alternatives: null
   conditions: null
@@ -15,6 +17,8 @@ date_updated: '2026-06-11'
 domain:
 - optimization
 - machine-learning
+extends:
+- stochastic-gradient-descent
 id: pkis:technique:svrg
 knowledge_type: technique
 maturity: evolving
@@ -30,6 +34,8 @@ tags:
 - SGD
 title: Stochastic Variance Reduced Gradient (SVRG)
 understanding: 0
+uses:
+- strong-convexity
 ---
 
 ## Definition
@@ -46,4 +52,7 @@ SVRG (and related SAGA) bridge the gap between the per-step cheapness of SGD and
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[monte-carlo-estimator]] — analogous-to
+- [[strong-convexity]] — uses
+- [[stochastic-gradient-descent]] — extends
 [To be populated during integration]

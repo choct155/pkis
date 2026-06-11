@@ -21,6 +21,8 @@ id: pkis:concept:logit-neural-network
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- softmax-output-unit
 related_concepts: []
 sources:
 - goodfellow-deeplearning-ch06
@@ -32,6 +34,8 @@ tags:
 - softmax
 title: Logit (Neural Network)
 understanding: 0
+uses:
+- cross-entropy-loss
 ---
 
 ## Definition
@@ -46,4 +50,6 @@ Numerically stable training requires computing the cross-entropy loss directly f
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[cross-entropy-loss]] — uses
+- [[softmax-output-unit]] — prerequisite-of
 [To be populated during integration]

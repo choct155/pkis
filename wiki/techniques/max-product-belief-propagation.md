@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+analogous-to:
+- sum-product-algorithm-trees
 component_scores:
   alternatives: null
   conditions: null
@@ -15,13 +17,19 @@ date_updated: '2026-06-11'
 domain:
 - probabilistic-graphical-models
 - machine-learning
+generalizes:
+- viterbi-algorithm
 id: pkis:technique:max-product-belief-propagation
+instantiates:
+- max-product-algorithm
 knowledge_type: technique
 maturity: evolving
 needs_canonical_source: false
 related_concepts: []
 sources:
 - murphy-pml2-advanced-ch09
+specializes:
+- loopy-belief-propagation
 tags:
 - MAP-inference
 - belief-propagation
@@ -30,6 +38,8 @@ tags:
 - MPE
 title: Max-Product Belief Propagation
 understanding: 0
+uses:
+- mpm-map-mpe-estimators
 ---
 
 ## Definition
@@ -48,4 +58,9 @@ Max-product BP generalises the Viterbi algorithm from chains to general (tree-st
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[max-product-algorithm]] — instantiates
+- [[mpm-map-mpe-estimators]] — uses
+- [[loopy-belief-propagation]] — specializes
+- [[viterbi-algorithm]] — generalizes
+- [[sum-product-algorithm-trees]] — analogous-to: replace sum with max
 [To be populated during integration]

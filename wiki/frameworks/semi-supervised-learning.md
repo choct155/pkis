@@ -13,6 +13,9 @@ date_created: '2026-06-11'
 date_updated: '2026-06-11'
 domain:
 - machine-learning
+extends:
+- unsupervised-learning
+- supervised-learning
 id: pkis:framework:semi-supervised-learning
 knowledge_type: framework
 maturity: evolving
@@ -27,6 +30,9 @@ tags:
 - representation-learning
 title: Semi-Supervised Learning
 understanding: 0
+uses:
+- variational-autoencoder
+- generative-adversarial-network
 ---
 
 ## Definition
@@ -44,4 +50,8 @@ Labeled data is expensive; unlabeled data is often abundant. SSL bridges the gap
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[generative-adversarial-network]] — uses: Semi-supervised GANs extend the critic to output class labels plus fake class.
+- [[variational-autoencoder]] — uses: VAE M1/M2 models use the ELBO on unlabeled data for semi-supervised learning.
+- [[supervised-learning]] — extends
+- [[unsupervised-learning]] — extends
 [To be populated during integration]

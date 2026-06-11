@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+analogous-to:
+- independent-component-analysis
 component_scores:
   application: null
   boundary: null
@@ -25,6 +27,8 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - goodfellow-deeplearning-ch07
+specializes:
+- regularization
 tags:
 - sparse-coding
 - representational-sparsity
@@ -33,6 +37,9 @@ tags:
 - dictionary-learning
 title: Representational Sparsity
 understanding: 0
+uses:
+- l1-sparsity-soft-thresholding
+- autoencoder
 ---
 
 ## Definition
@@ -49,4 +56,8 @@ Representational sparsity is motivated by neuroscience (sparse coding in primary
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[independent-component-analysis]] — analogous-to
+- [[autoencoder]] — uses
+- [[regularization]] — specializes
+- [[l1-sparsity-soft-thresholding]] — uses
 [To be populated during integration]

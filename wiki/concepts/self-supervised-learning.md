@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+analogous-to:
+- contrastive-divergence
 component_scores:
   application: null
   boundary: null
@@ -17,14 +19,24 @@ domain:
 - machine-learning
 - representation-learning
 - nlp
+generalizes:
+- word-embeddings
+- masked-language-modeling
 id: pkis:concept:self-supervised-learning
+instantiates:
+- masked-language-modeling
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- pretraining-and-fine-tuning
+- transfer-learning-fine-tuning
 related_concepts: []
 sources:
 - murphy-pml1-intro-ch01
 - murphy-pml1-intro-ch19
+specializes:
+- unsupervised-learning
 tags:
 - pretext-task
 - representation-learning
@@ -32,6 +44,10 @@ tags:
 - large-language-models
 title: Self-Supervised Learning
 understanding: 0
+uses:
+- supervised-learning
+- transfer-learning
+- mutual-information
 ---
 
 ## Definition
@@ -46,4 +62,14 @@ Self-supervised learning has driven major breakthroughs in NLP (BERT, GPT) and v
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[mutual-information]] — uses: Maximising I(x1;x2) between views motivates contrastive objectives.
+- [[contrastive-divergence]] — analogous-to: Contrastive SSL objectives can be viewed as approximate MLE of energy-based models.
+- [[masked-language-modeling]] — generalizes: MLM is an imputation/cloze SSL task.
+- [[transfer-learning-fine-tuning]] — prerequisite-of: SSL pre-trains representations on unlabeled data; fine-tuning adapts them to downstream tasks.
+- [[pretraining-and-fine-tuning]] — prerequisite-of
+- [[word-embeddings]] — generalizes
+- [[transfer-learning]] — uses
+- [[masked-language-modeling]] — instantiates
+- [[supervised-learning]] — uses
+- [[unsupervised-learning]] — specializes
 [To be populated during integration]

@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- convolutional-neural-network
 component_scores:
   alternatives: null
   conditions: null
@@ -9,6 +11,8 @@ component_scores:
   implementation: null
   operational_mechanism: null
   principled_mechanism: null
+contrasts-with:
+- variational-free-energy
 coverage: 1
 date_created: '2026-06-11'
 date_updated: '2026-06-11'
@@ -29,6 +33,9 @@ tags:
 - image-prior
 title: Activation Maximization
 understanding: 0
+uses:
+- total-vs-direct-effect
+- backpropagation
 ---
 
 ## Definition
@@ -46,4 +53,8 @@ Deep Dream uses activation maximization on intermediate layers of a trained netw
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[backpropagation]] — uses: Gradient of log p(y=c|x) wrt input pixels computed via backprop
+- [[total-vs-direct-effect]] — uses: Image prior (TV norm, Gaussian) regularizes the ill-posed inversion
+- [[variational-free-energy]] — contrasts-with: Both optimize a functional; AM optimizes wrt input rather than model parameters
+- [[convolutional-neural-network]] — applies: AM uses backprop through a trained CNN to optimize input pixels
 [To be populated during integration]

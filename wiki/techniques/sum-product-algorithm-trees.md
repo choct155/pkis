@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- probabilistic-graphical-models
 component_scores:
   alternatives: null
   conditions: null
@@ -15,13 +17,21 @@ date_updated: '2026-06-11'
 domain:
 - probabilistic-graphical-models
 - information-theory
+generalizes:
+- forwards-backwards-algorithm
 id: pkis:technique:sum-product-algorithm-trees
+instantiates:
+- message-passing
 knowledge_type: technique
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- junction-tree-algorithm
 related_concepts: []
 sources:
 - murphy-pml2-advanced-ch09
+specializes:
+- sum-product-algorithm
 tags:
 - belief-propagation
 - tree-inference
@@ -29,6 +39,9 @@ tags:
 - marginal-inference
 title: Sum-Product Algorithm on Trees
 understanding: 0
+uses:
+- factor-graph
+- conditional-independence
 ---
 
 ## Definition
@@ -49,4 +62,11 @@ The sum-product algorithm is the general tree-structured instance of belief prop
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[junction-tree-algorithm]] — prerequisite-of
+- [[forwards-backwards-algorithm]] — generalizes
+- [[conditional-independence]] — uses
+- [[message-passing]] — instantiates
+- [[probabilistic-graphical-models]] — applies
+- [[factor-graph]] — uses
+- [[sum-product-algorithm]] — specializes
 [To be populated during integration]

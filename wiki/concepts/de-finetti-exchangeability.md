@@ -16,6 +16,9 @@ date_updated: '2026-06-11'
 domain:
 - probability-theory
 - bayesian-statistics
+extends:
+- exchangeability
+- de-finetti-coherence
 id: pkis:concept:de-finetti-exchangeability
 knowledge_type: concept
 maturity: evolving
@@ -31,6 +34,9 @@ tags:
 - prior
 title: Exchangeability (de Finetti)
 understanding: 0
+uses:
+- bayesian-inference
+- conjugate-prior
 ---
 
 ## Definition
@@ -50,4 +56,8 @@ De Finetti's theorem provides a *logical foundation* for Bayesian inference: if 
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[de-finetti-coherence]] — extends
+- [[conjugate-prior]] — uses
+- [[bayesian-inference]] — uses
+- [[exchangeability]] — extends: Existing node on exchangeability; de Finetti's theorem is the representation result
 [To be populated during integration]

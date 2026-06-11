@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+analogous-to:
+- margin-maximum-margin-classifier
 component_scores:
   alternatives: null
   conditions: null
@@ -15,6 +17,8 @@ date_updated: '2026-06-11'
 domain:
 - machine-learning
 - metric-learning
+extends:
+- knn-classifier
 id: pkis:technique:large-margin-nearest-neighbor
 knowledge_type: technique
 maturity: evolving
@@ -30,6 +34,10 @@ tags:
 - metric-learning
 title: Large Margin Nearest Neighbor (LMNN)
 understanding: 0
+uses:
+- mahalanobis-distance
+- hinge-loss
+- convex-optimization
 ---
 
 ## Definition
@@ -44,4 +52,9 @@ LMNN is the foundational linear metric-learning method: the combined objective i
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[margin-maximum-margin-classifier]] — analogous-to: both methods optimize large-margin objectives; LMNN does so for the metric rather than the classifier boundary
+- [[convex-optimization]] — uses: M can be optimized via semidefinite programming
+- [[hinge-loss]] — uses: LMNN push term uses hinge loss to enforce margin over impostors
+- [[mahalanobis-distance]] — uses
+- [[knn-classifier]] — extends: LMNN learns a Mahalanobis metric optimized specifically for KNN classification
 [To be populated during integration]

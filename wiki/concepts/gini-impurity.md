@@ -1,6 +1,10 @@
 ---
 aliases: []
 also_type: []
+analogous-to:
+- entropy
+applies:
+- cart
 component_scores:
   application: null
   boundary: null
@@ -10,6 +14,9 @@ component_scores:
   prerequisites: null
   scope: null
   transfer: null
+contrasts-with:
+- cross-entropy-loss
+- entropy
 coverage: 1
 date_created: '2026-06-11'
 date_updated: '2026-06-11'
@@ -20,6 +27,8 @@ id: pkis:concept:gini-impurity
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- cart-decision-trees
 related_concepts: []
 sources:
 - bishop-prml-ch14
@@ -46,4 +55,9 @@ Used in CART as a node-splitting criterion, the Gini index is differentiable and
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[entropy]] — contrasts-with: both measure node impurity; Gini is cheaper, entropy has information-theoretic grounding
+- [[cart-decision-trees]] — prerequisite-of
+- [[cross-entropy-loss]] — contrasts-with
+- [[entropy]] — analogous-to
+- [[cart]] — applies
 [To be populated during integration]

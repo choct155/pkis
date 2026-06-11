@@ -22,6 +22,8 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - murphy-pml2-advanced-ch07
+specializes:
+- bayesian-inference
 tags:
 - latent-variables
 - global-latents
@@ -30,6 +32,13 @@ tags:
 - inference
 title: Bayesian Inference Patterns (Global / Local / Mixed Latents)
 understanding: 0
+uses:
+- latent-variable-models
+- em-algorithm
+- variational-inference
+- amortized-inference
+- probabilistic-graphical-models
+- stochastic-vi
 ---
 
 ## Definition
@@ -44,4 +53,11 @@ Recognising which pattern a model belongs to determines the most efficient infer
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[stochastic-vi]] — uses
+- [[probabilistic-graphical-models]] — uses
+- [[amortized-inference]] — uses
+- [[variational-inference]] — uses
+- [[em-algorithm]] — uses: EM exploits the local-latents pattern
+- [[latent-variable-models]] — uses
+- [[bayesian-inference]] — specializes
 [To be populated during integration]

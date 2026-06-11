@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- linear-basis-function-model
 component_scores:
   alternatives: null
   conditions: null
@@ -9,6 +11,8 @@ component_scores:
   implementation: null
   operational_mechanism: null
   principled_mechanism: null
+contrasts-with:
+- normal-equations-pseudoinverse
 coverage: 1
 date_created: '2026-06-11'
 date_updated: '2026-06-11'
@@ -22,6 +26,8 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - bishop-prml-ch03
+specializes:
+- stochastic-gradient-descent
 tags:
 - online-learning
 - stochastic-gradient
@@ -45,4 +51,7 @@ Enables regression on streaming or very large data sets without storing or inver
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[normal-equations-pseudoinverse]] — contrasts-with: Sequential vs. batch solution to the same least-squares problem
+- [[linear-basis-function-model]] — applies
+- [[stochastic-gradient-descent]] — specializes
 [To be populated during integration]

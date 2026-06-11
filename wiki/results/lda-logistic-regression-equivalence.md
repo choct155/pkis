@@ -14,6 +14,8 @@ domain:
 - machine-learning
 - statistics
 id: pkis:result:lda-logistic-regression-equivalence
+instantiates:
+- generative-vs-discriminative-classifiers
 knowledge_type: result
 maturity: evolving
 needs_canonical_source: false
@@ -28,6 +30,10 @@ tags:
 - joint-vs-conditional
 title: LDA–Logistic Regression Equivalence
 understanding: 0
+uses:
+- linear-discriminant-analysis
+- logistic-regression
+- gaussian-discriminant-analysis
 ---
 
 ## Definition
@@ -44,4 +50,8 @@ This result reveals that LDA and multinomial logistic regression are the **same 
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[gaussian-discriminant-analysis]] — uses
+- [[generative-vs-discriminative-classifiers]] — instantiates
+- [[logistic-regression]] — uses
+- [[linear-discriminant-analysis]] — uses
 [To be populated during integration]

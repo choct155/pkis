@@ -1,6 +1,10 @@
 ---
 aliases: []
 also_type: []
+analogous-to:
+- fisher-information
+applies:
+- maximum-likelihood-estimation
 component_scores:
   conditions: null
   implications: null
@@ -20,6 +24,8 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - murphy-pml1-intro-ch03
+specializes:
+- exponential-family-distributions
 tags:
 - exponential-family
 - cumulants
@@ -27,6 +33,8 @@ tags:
 - MLE
 title: Log Partition Function Generates Cumulants
 understanding: 0
+uses:
+- convex-set-and-function
 ---
 
 ## Definition
@@ -43,4 +51,8 @@ Because the Hessian of $A$ is a covariance matrix and hence positive semi-defini
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[maximum-likelihood-estimation]] — applies
+- [[convex-set-and-function]] — uses
+- [[fisher-information]] — analogous-to
+- [[exponential-family-distributions]] — specializes
 [To be populated during integration]

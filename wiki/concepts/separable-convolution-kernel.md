@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+analogous-to:
+- low-rank-approximation
 component_scores:
   application: null
   boundary: null
@@ -23,6 +25,8 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - goodfellow-deeplearning-ch09
+specializes:
+- convolution-operation-nn
 tags:
 - separable filter
 - efficiency
@@ -46,4 +50,6 @@ Separability is a key algorithmic efficiency tool for high-dimensional convoluti
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[low-rank-approximation]] — analogous-to: A separable kernel is a rank-1 (outer product) factorisation of the kernel tensor.
+- [[convolution-operation-nn]] — specializes
 [To be populated during integration]

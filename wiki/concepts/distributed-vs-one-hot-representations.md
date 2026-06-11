@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- unsupervised-learning
 component_scores:
   application: null
   boundary: null
@@ -10,12 +12,17 @@ component_scores:
   prerequisites: null
   scope: null
   transfer: null
+contrasts-with:
+- k-means-clustering
+- principal-component-analysis
 coverage: 1
 date_created: '2026-06-11'
 date_updated: '2026-06-11'
 domain:
 - machine-learning
 - representation-learning
+generalizes:
+- word-embeddings
 id: pkis:concept:distributed-vs-one-hot-representations
 knowledge_type: concept
 maturity: evolving
@@ -45,4 +52,8 @@ Distributed representations are a foundational motivation for deep learning: the
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[principal-component-analysis]] — contrasts-with
+- [[k-means-clustering]] — contrasts-with
+- [[word-embeddings]] — generalizes
+- [[unsupervised-learning]] — applies
 [To be populated during integration]

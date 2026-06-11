@@ -20,6 +20,8 @@ id: pkis:concept:borel-sigma-field
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- pmf-and-pdf
 related_concepts: []
 sources:
 - murphy-pml2-advanced-ch02
@@ -30,6 +32,8 @@ tags:
 - event-space
 title: Borel Sigma-Field
 understanding: 0
+uses:
+- probability-space
 ---
 
 ## Definition
@@ -44,4 +48,6 @@ Without a $\sigma$-field, probabilities cannot be consistently assigned to all "
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[pmf-and-pdf]] — prerequisite-of
+- [[probability-space]] — uses
 [To be populated during integration]

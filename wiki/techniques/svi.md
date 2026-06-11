@@ -16,6 +16,8 @@ domain:
 - machine-learning
 - bayesian-inference
 - scalable-inference
+extends:
+- variational-inference-framework
 id: pkis:technique:svi
 knowledge_type: technique
 maturity: evolving
@@ -23,6 +25,8 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - murphy-pml2-advanced-ch10
+specializes:
+- stochastic-vi
 tags:
 - SVI
 - stochastic-optimization
@@ -31,6 +35,9 @@ tags:
 - scalable-bayes
 title: Stochastic Variational Inference (SVI)
 understanding: 0
+uses:
+- stochastic-gradient-descent
+- elbo
 ---
 
 ## Definition
@@ -45,4 +52,8 @@ SVI (Hoffman et al., 2013) was a key enabler of scaling VI to web-scale datasets
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[elbo]] — uses
+- [[stochastic-gradient-descent]] — uses: SVI uses SGD (or Adam) on an unbiased minibatch estimate of the ELBO gradient.
+- [[stochastic-vi]] — specializes: SVI is the specific stochastic optimization-based approach to VI introduced by Hoffman et al. 2013.
+- [[variational-inference-framework]] — extends: SVI scales VI to large datasets via minibatch stochastic gradient estimation of the ELBO.
 [To be populated during integration]

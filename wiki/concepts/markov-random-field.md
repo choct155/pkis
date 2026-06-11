@@ -10,6 +10,8 @@ component_scores:
   prerequisites: null
   scope: null
   transfer: null
+contrasts-with:
+- bayesian-networks
 coverage: 1
 date_created: '2026-06-11'
 date_updated: '2026-06-11'
@@ -18,10 +20,18 @@ domain:
 - machine-learning
 - statistics
 - statistical-physics
+generalizes:
+- ising-model
 id: pkis:concept:markov-random-field
+instantiates:
+- undirected-graphical-models
+- probabilistic-graphical-models
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- belief-propagation
+- gibbs-sampler
 related_concepts: []
 sources:
 - bishop-prml-ch08
@@ -34,6 +44,10 @@ tags:
 - Hammersley-Clifford
 title: Markov Random Field (Undirected Graphical Model)
 understanding: 0
+uses:
+- hammersley-clifford-theorem
+- partition-function
+- conditional-independence
 ---
 
 ## Definition
@@ -52,4 +66,13 @@ Writing $\psi_C(\mathbf{x}_C) = \exp\{-E(\mathbf{x}_C)\}$ gives the Boltzmann di
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[gibbs-sampler]] — prerequisite-of
+- [[belief-propagation]] — prerequisite-of
+- [[bayesian-networks]] — contrasts-with
+- [[conditional-independence]] — uses
+- [[ising-model]] — generalizes
+- [[partition-function]] — uses
+- [[hammersley-clifford-theorem]] — uses
+- [[probabilistic-graphical-models]] — instantiates
+- [[undirected-graphical-models]] — instantiates
 [To be populated during integration]

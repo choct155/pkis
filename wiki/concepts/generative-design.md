@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- deep-generative-model-taxonomy
 component_scores:
   application: null
   boundary: null
@@ -32,6 +34,10 @@ tags:
 - design
 title: Generative Design
 understanding: 0
+uses:
+- variational-autoencoder
+- bayesian-optimization
+- latent-space-interpolation
 ---
 
 ## Definition
@@ -51,4 +57,8 @@ Generative design is a major driver of generative model adoption in drug discove
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[deep-generative-model-taxonomy]] — applies
+- [[latent-space-interpolation]] — uses
+- [[bayesian-optimization]] — uses
+- [[variational-autoencoder]] — uses
 [To be populated during integration]

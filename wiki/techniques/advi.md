@@ -1,6 +1,9 @@
 ---
 aliases: []
 also_type: []
+applies:
+- map-reparameterisation-noninvariance
+- probabilistic-programming-language
 component_scores:
   alternatives: null
   conditions: null
@@ -9,6 +12,8 @@ component_scores:
   implementation: null
   operational_mechanism: null
   principled_mechanism: null
+contrasts-with:
+- normalizing-flows
 coverage: 1
 date_created: '2026-06-11'
 date_updated: '2026-06-11'
@@ -16,7 +21,11 @@ domain:
 - variational-inference
 - probabilistic-programming
 - automatic-differentiation
+extends:
+- normalizing-flows
 id: pkis:technique:advi
+instantiates:
+- variational-inference-framework
 knowledge_type: technique
 maturity: evolving
 needs_canonical_source: false
@@ -24,6 +33,8 @@ related_concepts: []
 sources:
 - murphy-pml2-advanced-ch07
 - murphy-pml2-advanced-ch10
+specializes:
+- variational-inference
 tags:
 - ADVI
 - change-of-variables
@@ -32,6 +43,12 @@ tags:
 - unconstrained-parameterisation
 title: Automatic Differentiation Variational Inference (ADVI)
 understanding: 0
+uses:
+- mean-field-approximation
+- automatic-differentiation
+- change-of-variables-for-densities
+- elbo
+- reparameterized-vi
 ---
 
 ## Definition
@@ -49,4 +66,15 @@ The Gaussian assumption in the unconstrained space may poorly approximate multim
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[normalizing-flows]] — extends: ADVI can be combined with normalizing flows for richer posterior approximations.
+- [[reparameterized-vi]] — uses: ADVI applies reparameterization in the unconstrained space after transforming parameters via bijections.
+- [[variational-inference-framework]] — instantiates: ADVI is an automatic instantiation of Gaussian VI using differentiable bijections to handle constraints.
+- [[probabilistic-programming-language]] — applies
+- [[normalizing-flows]] — contrasts-with
+- [[elbo]] — uses
+- [[map-reparameterisation-noninvariance]] — applies: ADVI works in unconstrained space to sidestep reparameterisation sensitivity
+- [[change-of-variables-for-densities]] — uses
+- [[automatic-differentiation]] — uses
+- [[mean-field-approximation]] — uses
+- [[variational-inference]] — specializes
 [To be populated during integration]

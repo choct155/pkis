@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- regularization
 component_scores:
   application: null
   boundary: null
@@ -20,9 +22,14 @@ id: pkis:concept:lp-norms-frobenius
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- lasso
+- ridge-regression
 related_concepts: []
 sources:
 - goodfellow-deeplearning-ch02
+specializes:
+- norm
 tags:
 - norm
 - L1
@@ -32,6 +39,9 @@ tags:
 - regularization
 title: Lp Norms and Frobenius Norm
 understanding: 0
+uses:
+- inner-product
+- cyclic-invariance-trace
 ---
 
 ## Definition
@@ -46,4 +56,10 @@ The choice of norm encodes geometric and statistical assumptions. $L^2$ regulari
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[cyclic-invariance-trace]] — uses
+- [[ridge-regression]] — prerequisite-of
+- [[lasso]] — prerequisite-of
+- [[regularization]] — applies
+- [[inner-product]] — uses
+- [[norm]] — specializes
 [To be populated during integration]

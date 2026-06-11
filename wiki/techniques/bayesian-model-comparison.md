@@ -14,6 +14,7 @@ component_scores:
   principled_mechanism: null
 contrasts-with:
 - hypothesis-testing
+- information-criteria
 coverage: 1
 date_created: '2026-06-08'
 date_updated: '2026-06-08'
@@ -22,6 +23,8 @@ domain:
 generalizes:
 - hypothesis-testing
 id: pkis:technique:bayesian-model-comparison
+instantiates:
+- bayesian-model-comparison
 knowledge_type: technique
 maturity: evolving
 needs_canonical_source: false
@@ -39,6 +42,10 @@ understanding: 0
 uses:
 - marginal-likelihood
 - likelihood-ratio-evidence
+- bayes-factor
+- occam-factor
+- kl-divergence
+- evidence-approximation
 ---
 
 ## Definition
@@ -56,6 +63,12 @@ It replaces orthodox null-hypothesis testing with a single coherent quantity. Ma
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[information-criteria]] — contrasts-with
+- [[evidence-approximation]] — uses
+- [[kl-divergence]] — uses: Expected Bayes factor over true distribution equals a KL divergence, proving it favours the correct model on average
+- [[bayesian-model-comparison]] — instantiates
+- [[occam-factor]] — uses
+- [[bayes-factor]] — uses
 - [[hypothesis-testing]] — generalizes: Jaynes: model comparison is compound hypothesis testing one level up; significance tests are the special case
 - [[occams-razor]] — applies: Ranking by evidence is the mechanism by which Bayesian model comparison embodies Occam's razor.
 - [[evidence-framework]] — applies: Bayesian model comparison is the level-2 inference step of the evidence framework.

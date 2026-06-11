@@ -1,6 +1,10 @@
 ---
 aliases: []
 also_type: []
+analogous-to:
+- variational-free-energy
+applies:
+- intractable-posterior
 component_scores:
   application: null
   boundary: null
@@ -32,6 +36,9 @@ tags:
 - approximate-inference
 title: Inference as Optimization (ELBO Perspective)
 understanding: 0
+uses:
+- elbo
+- kl-divergence
 ---
 
 ## Definition
@@ -49,4 +56,8 @@ Minimizing $D_{\mathrm{KL}}(q \| p)$ encourages $q$ to concentrate on modes of $
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[variational-free-energy]] — analogous-to
+- [[intractable-posterior]] — applies
+- [[kl-divergence]] — uses
+- [[elbo]] — uses
 [To be populated during integration]

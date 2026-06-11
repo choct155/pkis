@@ -20,6 +20,8 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - murphy-pml2-advanced-ch05
+specializes:
+- data-processing-inequality
 tags:
 - kl-divergence
 - data-processing-inequality
@@ -28,6 +30,10 @@ tags:
 - jensen-inequality
 title: Data Processing Inequality (KL form)
 understanding: 0
+uses:
+- kl-divergence
+- information-inequality
+- jensens-inequality
 ---
 
 ## Definition
@@ -48,4 +54,8 @@ This result formalizes the intuition that processing or partial observation can 
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[jensens-inequality]] — uses
+- [[information-inequality]] — uses
+- [[data-processing-inequality]] — specializes: KL-domain version of the general DPI for mutual information
+- [[kl-divergence]] — uses
 [To be populated during integration]

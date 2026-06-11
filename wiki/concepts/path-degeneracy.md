@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- particle-filter
 component_scores:
   application: null
   boundary: null
@@ -42,4 +44,5 @@ Path degeneracy limits the accuracy of fixed-lag and full smoothing estimates de
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[particle-filter]] — applies
 [To be populated during integration]

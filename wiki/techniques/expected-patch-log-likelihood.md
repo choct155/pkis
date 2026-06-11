@@ -17,6 +17,8 @@ domain:
 - machine-learning
 - signal-processing
 id: pkis:technique:expected-patch-log-likelihood
+instantiates:
+- regularization
 knowledge_type: technique
 maturity: evolving
 needs_canonical_source: false
@@ -32,6 +34,10 @@ tags:
 - half-quadratic-splitting
 title: Expected Patch Log Likelihood (EPLL)
 understanding: 0
+uses:
+- gaussian-mixture-models
+- maximum-a-posteriori-estimation-map
+- amortized-inference
 ---
 
 ## Definition
@@ -48,4 +54,8 @@ EPLL bridges classical patch-based image restoration and probabilistic modelling
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[amortized-inference]] — uses: Amortised inference networks speed up per-patch MAP estimation
+- [[maximum-a-posteriori-estimation-map]] — uses
+- [[regularization]] — instantiates
+- [[gaussian-mixture-models]] — uses
 [To be populated during integration]

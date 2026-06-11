@@ -9,6 +9,8 @@ component_scores:
   implementation: null
   operational_mechanism: null
   principled_mechanism: null
+contrasts-with:
+- multidimensional-scaling
 coverage: 1
 date_created: '2026-06-11'
 date_updated: '2026-06-11'
@@ -16,7 +18,11 @@ domain:
 - machine-learning
 - graph-learning
 - geometry
+extends:
+- shallow-graph-embeddings
 id: pkis:technique:hyperbolic-graph-embeddings
+instantiates:
+- graph-encoder-decoder-model
 knowledge_type: technique
 maturity: evolving
 needs_canonical_source: false
@@ -47,4 +53,7 @@ Nickel & Kiela (2017, 2018) showed that even two-dimensional Poincaré embedding
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[graph-encoder-decoder-model]] — instantiates
+- [[multidimensional-scaling]] — contrasts-with
+- [[shallow-graph-embeddings]] — extends
 [To be populated during integration]

@@ -10,6 +10,9 @@ component_scores:
   prerequisites: null
   scope: null
   transfer: null
+contrasts-with:
+- spike-and-slab
+- lasso
 coverage: 1
 date_created: '2026-06-11'
 date_updated: '2026-06-11'
@@ -17,6 +20,9 @@ domain:
 - bayesian-statistics
 - probability-theory
 id: pkis:concept:horseshoe-distribution
+instantiates:
+- gaussian-scale-mixture
+- shrinkage-priors
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
@@ -45,4 +51,8 @@ The horseshoe prior is the gold standard sparsity-promoting prior in Bayesian st
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[lasso]] — contrasts-with
+- [[shrinkage-priors]] — instantiates
+- [[spike-and-slab]] — contrasts-with
+- [[gaussian-scale-mixture]] — instantiates
 [To be populated during integration]

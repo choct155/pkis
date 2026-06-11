@@ -23,6 +23,8 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - murphy-pml2-advanced-ch30
+specializes:
+- clustering
 tags:
 - graph-clustering
 - modularity
@@ -31,6 +33,8 @@ tags:
 - network-science
 title: Community Detection
 understanding: 0
+uses:
+- stochastic-block-model
 ---
 
 ## Definition
@@ -47,4 +51,6 @@ Community detection is the graph-domain analogue of clustering and underlies app
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[stochastic-block-model]] — uses
+- [[clustering]] — specializes
 [To be populated during integration]

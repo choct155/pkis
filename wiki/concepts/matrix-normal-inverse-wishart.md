@@ -16,7 +16,11 @@ date_updated: '2026-06-11'
 domain:
 - statistics
 - bayesian-inference
+generalizes:
+- normal-inverse-gamma-prior
 id: pkis:concept:matrix-normal-inverse-wishart
+instantiates:
+- conjugate-prior
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
@@ -31,6 +35,8 @@ tags:
 - closed-form
 title: Matrix Normal Inverse-Wishart (MNIW) Distribution
 understanding: 0
+uses:
+- multivariate-normal-model
 ---
 
 ## Definition
@@ -45,4 +51,7 @@ The MNIW prior yields a closed-form posterior of the same family (closed under B
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[multivariate-normal-model]] — uses
+- [[conjugate-prior]] — instantiates
+- [[normal-inverse-gamma-prior]] — generalizes
 [To be populated during integration]

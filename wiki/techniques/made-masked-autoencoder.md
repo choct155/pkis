@@ -16,7 +16,11 @@ domain:
 - machine-learning
 - deep-learning
 - density-estimation
+extends:
+- autoencoder
 id: pkis:technique:made-masked-autoencoder
+instantiates:
+- autoregressive-model-arm
 knowledge_type: technique
 maturity: evolving
 needs_canonical_source: false
@@ -46,4 +50,6 @@ MADE enables exact autoregressive likelihood computation at the cost of a single
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[autoregressive-model-arm]] — instantiates
+- [[autoencoder]] — extends: MADE is an autoencoder with masked weights enforcing the autoregressive property
 [To be populated during integration]

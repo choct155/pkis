@@ -1,6 +1,10 @@
 ---
 aliases: []
 also_type: []
+analogous-to:
+- principal-component-analysis
+applies:
+- unsupervised-learning
 component_scores:
   alternatives: null
   conditions: null
@@ -17,12 +21,16 @@ domain:
 - computer-vision
 - neuroscience
 id: pkis:technique:slow-feature-analysis
+instantiates:
+- slowness-principle
 knowledge_type: technique
 maturity: evolving
 needs_canonical_source: false
 related_concepts: []
 sources:
 - goodfellow-deeplearning-ch13
+specializes:
+- linear-factor-model
 tags:
 - temporal-coherence
 - invariant-features
@@ -31,6 +39,9 @@ tags:
 - closed-form
 title: Slow Feature Analysis (SFA)
 understanding: 0
+uses:
+- regularization
+- eigendecomposition
 ---
 
 ## Definition
@@ -50,4 +61,10 @@ The principle can be applied to any differentiable model via an auxiliary tempor
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[unsupervised-learning]] — applies
+- [[principal-component-analysis]] — analogous-to
+- [[eigendecomposition]] — uses
+- [[regularization]] — uses
+- [[slowness-principle]] — instantiates
+- [[linear-factor-model]] — specializes
 [To be populated during integration]

@@ -17,13 +17,21 @@ domain:
 - deep-learning
 - representation-learning
 - unsupervised-learning
+generalizes:
+- variational-autoencoder
+- principal-component-analysis
+- low-rank-approximation
 id: pkis:concept:autoencoder-dnn
+instantiates:
+- unsupervised-learning
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
 related_concepts: []
 sources:
 - murphy-pml2-advanced-ch16
+specializes:
+- latent-variable-models
 tags:
 - autoencoder
 - latent-space
@@ -45,4 +53,9 @@ Autoencoders provide a general unsupervised technique for dimensionality reducti
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[low-rank-approximation]] — generalizes
+- [[principal-component-analysis]] — generalizes: autoencoder with linear activations and MSE loss recovers PCA subspace
+- [[latent-variable-models]] — specializes
+- [[variational-autoencoder]] — generalizes: VAE adds a probabilistic prior over the latent space
+- [[unsupervised-learning]] — instantiates
 [To be populated during integration]

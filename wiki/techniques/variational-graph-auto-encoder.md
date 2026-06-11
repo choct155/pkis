@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- knowledge-graph-completion
 component_scores:
   alternatives: null
   conditions: null
@@ -16,7 +18,11 @@ domain:
 - machine-learning
 - graph-learning
 - generative-models
+extends:
+- variational-autoencoder
 id: pkis:technique:variational-graph-auto-encoder
+instantiates:
+- graph-encoder-decoder-model
 knowledge_type: technique
 maturity: evolving
 needs_canonical_source: false
@@ -32,6 +38,9 @@ tags:
 - ELBO
 title: Variational Graph Auto-Encoder (VGAE)
 understanding: 0
+uses:
+- graph-convolutional-network
+- elbo
 ---
 
 ## Definition
@@ -50,4 +59,9 @@ VGAE extends the VAE framework to graph-structured data, enabling link predictio
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[knowledge-graph-completion]] — applies
+- [[elbo]] — uses
+- [[graph-encoder-decoder-model]] — instantiates
+- [[graph-convolutional-network]] — uses
+- [[variational-autoencoder]] — extends
 [To be populated during integration]

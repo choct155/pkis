@@ -14,6 +14,8 @@ date_updated: '2026-06-11'
 domain:
 - cognitive-science
 - artificial-intelligence
+generalizes:
+- perceptron
 id: pkis:framework:connectionism
 knowledge_type: framework
 maturity: evolving
@@ -28,6 +30,9 @@ tags:
 - cognitive-science
 title: Connectionism
 understanding: 0
+uses:
+- distributed-representation
+- backpropagation
 ---
 
 ## Definition
@@ -47,4 +52,7 @@ The 1980s–1990s connectionist movement revived neural network research after t
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[backpropagation]] — uses
+- [[distributed-representation]] — uses
+- [[perceptron]] — generalizes: Connectionism generalizes beyond single-layer perceptrons to multi-layer networked systems.
 [To be populated during integration]

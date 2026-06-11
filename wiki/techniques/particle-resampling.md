@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- weight-degeneracy-sis
 component_scores:
   alternatives: null
   conditions: null
@@ -31,6 +33,9 @@ tags:
 - effective-sample-size
 title: Resampling Methods for Particle Filters
 understanding: 0
+uses:
+- path-degeneracy
+- effective-sample-size
 ---
 
 ## Definition
@@ -50,4 +55,7 @@ The choice of resampling scheme directly affects Monte Carlo variance; systemati
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[effective-sample-size]] — uses
+- [[path-degeneracy]] — uses: resampling trades weight degeneracy for path degeneracy
+- [[weight-degeneracy-sis]] — applies
 [To be populated during integration]

@@ -1,6 +1,9 @@
 ---
 aliases: []
 also_type: []
+analogous-to:
+- nu-svm
+- soft-margin-svm
 component_scores:
   alternatives: null
   conditions: null
@@ -9,12 +12,16 @@ component_scores:
   implementation: null
   operational_mechanism: null
   principled_mechanism: null
+contrasts-with:
+- kernel-ridge-regression
 coverage: 1
 date_created: '2026-06-09'
 date_updated: '2026-06-09'
 domain:
 - statistical-learning
 - optimization
+extends:
+- support-vector-machine
 id: pkis:technique:support-vector-regression
 knowledge_type: technique
 maturity: evolving
@@ -42,6 +49,10 @@ An adaptation of the support vector machine to quantitative-response regression 
 Solve the dual QP min over alpha_i, alpha*_i of epsilon sum (alpha*_i + alpha_i) - sum y_i(alpha*_i - alpha_i) + (1/2) sum_{i,i'} (alpha*_i - alpha_i)(alpha*_{i'} - alpha_{i'}) <x_i, x_{i'}> subject to 0 <= alpha_i, alpha*_i <= 1/lambda, sum (alpha*_i - alpha_i) = 0, and alpha_i alpha*_i = 0. Replace inner products by a kernel K for nonlinear regression. Two tuning parameters: epsilon (loss-function width, analogous to Huber's c) and lambda (regularization, set by cross-validation); both depend on the scale of y.
 
 ## Connections
+- [[kernel-ridge-regression]] — contrasts-with: SVR uses epsilon-insensitive loss giving sparse alpha; KRR uses L2 giving dense alpha
+- [[soft-margin-svm]] — analogous-to
+- [[nu-svm]] — analogous-to: nu-SVR is the nu-parameterisation of SVR
+- [[support-vector-machine]] — extends
 - [[the-kernel-trick]] — uses: SVR depends on inputs only through inner products, generalized via kernels
 - [[epsilon-insensitive-loss]] — uses: SVR is defined by minimizing the epsilon-insensitive loss
 - [[support-vector-machines]] — specializes: SVR adapts the SVM to quantitative-response regression

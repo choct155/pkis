@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+analogous-to:
+- sum-product-algorithm
 component_scores:
   alternatives: null
   conditions: null
@@ -15,6 +17,10 @@ date_updated: '2026-06-11'
 domain:
 - probabilistic-graphical-models
 - machine-learning
+extends:
+- max-product-algorithm
+generalizes:
+- viterbi-for-hmm
 id: pkis:technique:max-sum-algorithm
 knowledge_type: technique
 maturity: evolving
@@ -31,6 +37,8 @@ tags:
 - factor-graph
 title: Max-Sum Algorithm
 understanding: 0
+uses:
+- factor-graph
 ---
 
 ## Definition
@@ -50,4 +58,8 @@ Max-sum is the generalisation of the **Viterbi algorithm** to arbitrary tree fac
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[max-product-algorithm]] — extends
+- [[factor-graph]] — uses
+- [[viterbi-for-hmm]] — generalizes
+- [[sum-product-algorithm]] — analogous-to
 [To be populated during integration]

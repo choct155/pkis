@@ -21,6 +21,9 @@ id: pkis:concept:mcmc-mixing-time
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- mcmc
+- markov-chains
 related_concepts: []
 sources:
 - goodfellow-deeplearning-ch17
@@ -33,6 +36,13 @@ tags:
 - markov-chain
 title: MCMC Mixing and Mixing Time
 understanding: 0
+uses:
+- stochastic-transition-matrix-mcmc
+- burn-in-and-warmup
+- energy-barrier-mcmc
+- gelman-rubin-diagnostic
+- effective-sample-size
+- stationary-distribution
 ---
 
 ## Definition
@@ -51,4 +61,12 @@ For finite state chains, $t_{\text{mix}}$ scales as $\frac{1}{1 - |\lambda_2|}$ 
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[stationary-distribution]] — uses
+- [[markov-chains]] — prerequisite-of
+- [[effective-sample-size]] — uses
+- [[gelman-rubin-diagnostic]] — uses: Gelman-Rubin and similar diagnostics are heuristics for assessing mixing
+- [[energy-barrier-mcmc]] — uses: energy barriers are the primary cause of long mixing times
+- [[burn-in-and-warmup]] — uses: burn-in length must exceed mixing time for valid samples
+- [[mcmc]] — prerequisite-of: understanding mixing time is essential to diagnosing MCMC convergence
+- [[stochastic-transition-matrix-mcmc]] — uses: mixing time controlled by second eigenvalue of transition matrix
 [To be populated during integration]

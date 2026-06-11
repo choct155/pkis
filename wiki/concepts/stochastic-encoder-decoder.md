@@ -17,10 +17,16 @@ domain:
 - deep-learning
 - probabilistic-modelling
 - generative-models
+generalizes:
+- autoencoder
 id: pkis:concept:stochastic-encoder-decoder
+instantiates:
+- latent-variable-models
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- variational-autoencoder
 related_concepts: []
 sources:
 - goodfellow-deeplearning-ch14
@@ -32,6 +38,8 @@ tags:
 - VAE
 title: Stochastic Encoder-Decoder
 understanding: 0
+uses:
+- elbo
 ---
 
 ## Definition
@@ -46,4 +54,8 @@ The stochastic encoder-decoder view unifies autoencoders with probabilistic late
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[elbo]] — uses
+- [[latent-variable-models]] — instantiates
+- [[variational-autoencoder]] — prerequisite-of
+- [[autoencoder]] — generalizes
 [To be populated during integration]

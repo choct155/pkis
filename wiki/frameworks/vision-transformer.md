@@ -8,6 +8,8 @@ component_scores:
   purpose: null
   scope: null
   structure: null
+contrasts-with:
+- convolutional-neural-networks
 coverage: 1
 date_created: '2026-06-11'
 date_updated: '2026-06-11'
@@ -16,6 +18,8 @@ domain:
 - deep-learning
 - computer-vision
 id: pkis:framework:vision-transformer
+instantiates:
+- transformer-architecture
 knowledge_type: framework
 maturity: evolving
 needs_canonical_source: false
@@ -29,6 +33,9 @@ tags:
 - pretraining
 title: Vision Transformer (ViT)
 understanding: 0
+uses:
+- transfer-learning
+- sinusoidal-positional-encoding
 ---
 
 ## Definition
@@ -47,4 +54,8 @@ ViT demonstrates that the inductive biases of CNNs (locality, equivariance, pool
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[sinusoidal-positional-encoding]] — uses
+- [[transfer-learning]] — uses
+- [[convolutional-neural-networks]] — contrasts-with
+- [[transformer-architecture]] — instantiates
 [To be populated during integration]

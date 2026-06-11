@@ -1,6 +1,11 @@
 ---
 aliases: []
 also_type: []
+analogous-to:
+- simulated-annealing
+applies:
+- energy-barrier-mcmc
+- mcmc-mixing-time
 component_scores:
   alternatives: null
   conditions: null
@@ -31,6 +36,8 @@ tags:
 - mixing
 title: Tempered Transitions
 understanding: 0
+uses:
+- temperature-ebm
 ---
 
 ## Definition
@@ -49,4 +56,8 @@ A related technique runs chains at many temperatures simultaneously and proposes
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[mcmc-mixing-time]] — applies: tempering reduces effective mixing time for multimodal distributions
+- [[simulated-annealing]] — analogous-to: both use a cooling schedule; tempered transitions return to unit temperature
+- [[energy-barrier-mcmc]] — applies: designed to overcome energy barriers between modes
+- [[temperature-ebm]] — uses: temporarily raises temperature to cross energy barriers
 [To be populated during integration]

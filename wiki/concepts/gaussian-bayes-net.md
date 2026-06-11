@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+analogous-to:
+- structural-equation-models
 component_scores:
   application: null
   boundary: null
@@ -10,6 +12,8 @@ component_scores:
   prerequisites: null
   scope: null
   transfer: null
+contrasts-with:
+- gaussian-graphical-model
 coverage: 1
 date_created: '2026-06-11'
 date_updated: '2026-06-11'
@@ -17,12 +21,16 @@ domain:
 - probabilistic-graphical-models
 - statistics
 id: pkis:concept:gaussian-bayes-net
+instantiates:
+- multivariate-normal-model
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
 related_concepts: []
 sources:
 - murphy-pml2-advanced-ch04
+specializes:
+- bayesian-networks
 tags:
 - linear-Gaussian
 - structural-equation-model
@@ -30,6 +38,9 @@ tags:
 - DAG
 title: Gaussian Bayes Net (Directed Gaussian Graphical Model)
 understanding: 0
+uses:
+- gaussian-distribution
+- path-coefficient
 ---
 
 ## Definition
@@ -46,4 +57,10 @@ Gaussian Bayes nets unify linear structural equation models (SEMs) with probabil
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[gaussian-graphical-model]] — contrasts-with: Gaussian Bayes net is directed; Gaussian graphical model is undirected
+- [[multivariate-normal-model]] — instantiates
+- [[path-coefficient]] — uses
+- [[structural-equation-models]] — analogous-to
+- [[gaussian-distribution]] — uses
+- [[bayesian-networks]] — specializes
 [To be populated during integration]

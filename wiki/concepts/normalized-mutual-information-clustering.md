@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- clustering
 component_scores:
   application: null
   boundary: null
@@ -23,6 +25,8 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - murphy-pml1-intro-ch21
+specializes:
+- mutual-information
 tags:
 - clustering-evaluation
 - mutual-information
@@ -30,6 +34,8 @@ tags:
 - information-theory
 title: Normalized Mutual Information for Clustering
 understanding: 0
+uses:
+- entropy
 ---
 
 ## Definition
@@ -46,4 +52,7 @@ NMI provides a principled, information-theoretic measure of clustering quality r
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[entropy]] — uses
+- [[clustering]] — applies
+- [[mutual-information]] — specializes
 [To be populated during integration]

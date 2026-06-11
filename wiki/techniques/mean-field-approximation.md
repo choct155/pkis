@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+analogous-to:
+- ising-model
 component_scores:
   alternatives: 4
   conditions: 4
@@ -35,6 +37,8 @@ sources:
 - '[[blei-vi-review]]'
 - '[[ganguly-intro-vi]]'
 - '[[sjolund-parametric-vi]]'
+specializes:
+- variational-inference
 tags:
 - variational-methods
 - approximate-inference
@@ -46,11 +50,21 @@ title: Mean-Field Variational Approximation
 understanding: 3
 uses:
 - variational-free-energy
+- elbo
+- coordinate-ascent-vi
+- conditional-independence
+- kl-divergence
 ---
 
 A variational inference approach that assumes the variational posterior fully factorizes over the latent variables: q(z) = ∏_j q_j(z_j), with each factor governed independently; this independence assumption makes ELBO optimization tractable via coordinate ascent but can systematically underestimate posterior variance.
 
 ## Connections
+- [[kl-divergence]] — uses
+- [[conditional-independence]] — uses
+- [[ising-model]] — analogous-to
+- [[coordinate-ascent-vi]] — uses
+- [[elbo]] — uses
+- [[variational-inference]] — specializes
 - [[variational-free-energy]] — uses: Mean-field equations arise as the stationarity conditions of the variational free energy.
 - [[transformer-attention-mechanisms]] — contrasts-with: Attention is architecturally designed to recover inter-token correlations that mean field discards; see bridge note
 - [[belief-propagation]] — extends: Loopy belief propagation makes an implicit mean field approximation when applied to graphs with cycles

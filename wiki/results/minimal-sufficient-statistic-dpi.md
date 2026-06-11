@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+analogous-to:
+- fisher-neyman-factorization
 component_scores:
   conditions: null
   implications: null
@@ -13,6 +15,8 @@ date_updated: '2026-06-11'
 domain:
 - information-theory
 - statistics
+extends:
+- sufficient-statistics
 id: pkis:result:minimal-sufficient-statistic-dpi
 knowledge_type: result
 maturity: evolving
@@ -27,6 +31,9 @@ tags:
 - parameter-inference
 title: Minimal Sufficient Statistic via Data Processing Inequality
 understanding: 0
+uses:
+- data-processing-inequality
+- mutual-information
 ---
 
 ## Definition
@@ -43,4 +50,8 @@ The information-theoretic framing unifies the classical definition (Fisher–Ney
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[fisher-neyman-factorization]] — analogous-to
+- [[mutual-information]] — uses
+- [[sufficient-statistics]] — extends
+- [[data-processing-inequality]] — uses
 [To be populated during integration]

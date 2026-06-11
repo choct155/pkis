@@ -31,6 +31,7 @@ sources:
 - russell-norvig-aima-ch14
 specializes:
 - filtering-prediction-smoothing
+- viterbi-algorithm
 tags:
 - viterbi
 - most-likely-explanation
@@ -59,6 +60,7 @@ Time is linear in the sequence length t (like filtering), but unlike constant-sp
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[viterbi-algorithm]] — specializes
 - [[filtering-prediction-smoothing]] — specializes: Viterbi solves the most-likely-explanation task, one of the four canonical temporal inference tasks.
 - [[max-product-algorithm]] — instantiates: Viterbi is the max-product (max/sum) semiring version of the forward filtering recursion.
 - [[min-sum-algorithm]] — analogous-to: Same trellis dynamic program; the AIMA HMM most-likely-explanation framing is the probabilistic-temporal counterpart of the min-sum/Viterbi decoder.

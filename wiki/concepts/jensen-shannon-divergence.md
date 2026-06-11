@@ -24,6 +24,8 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - murphy-pml2-advanced-ch26
+specializes:
+- f-divergence
 tags:
 - divergence
 - GAN
@@ -31,6 +33,8 @@ tags:
 - symmetry
 title: Jensen-Shannon Divergence
 understanding: 0
+uses:
+- kl-divergence
 ---
 
 ## Definition
@@ -45,4 +49,6 @@ JSD is the natural divergence minimised by the original GAN with Bernoulli log-l
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[f-divergence]] — specializes
+- [[kl-divergence]] — uses: JSD is the average of two symmetrised KL terms to a mixture distribution.
 [To be populated during integration]

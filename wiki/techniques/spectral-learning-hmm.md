@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- hidden-markov-model
 component_scores:
   alternatives: null
   conditions: null
@@ -9,6 +11,8 @@ component_scores:
   implementation: null
   operational_mechanism: null
   principled_mechanism: null
+contrasts-with:
+- baum-welch-algorithm
 coverage: 1
 date_created: '2026-06-11'
 date_updated: '2026-06-11'
@@ -30,6 +34,10 @@ tags:
 - identifiability
 title: Spectral Learning for HMMs
 understanding: 0
+uses:
+- predictive-state-representations
+- singular-value-decomposition
+- tensor-decompositions
 ---
 
 ## Definition
@@ -46,4 +54,9 @@ Spectral methods provide globally consistent estimates free from local optima, i
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[baum-welch-algorithm]] — contrasts-with
+- [[tensor-decompositions]] — uses
+- [[singular-value-decomposition]] — uses
+- [[predictive-state-representations]] — uses
+- [[hidden-markov-model]] — applies
 [To be populated during integration]

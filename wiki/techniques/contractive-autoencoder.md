@@ -1,6 +1,11 @@
 ---
 aliases: []
 also_type: []
+analogous-to:
+- score-matching
+- denoising-autoencoder
+applies:
+- manifold-hypothesis
 component_scores:
   alternatives: null
   conditions: null
@@ -24,6 +29,8 @@ related_concepts: []
 sources:
 - goodfellow-deeplearning-ch14
 - murphy-pml1-intro-ch20
+specializes:
+- autoencoder
 tags:
 - Jacobian
 - manifold-tangent
@@ -32,6 +39,9 @@ tags:
 - contraction
 title: Contractive Autoencoder (CAE)
 understanding: 0
+uses:
+- gradient-and-jacobian
+- regularization
 ---
 
 ## Definition
@@ -48,4 +58,10 @@ The singular vectors of the Jacobian with the largest singular values estimate t
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[regularization]] — uses
+- [[gradient-and-jacobian]] — uses
+- [[manifold-hypothesis]] — applies
+- [[denoising-autoencoder]] — analogous-to: In the limit of small Gaussian noise, DAE training is equivalent to a contractive penalty on the reconstruction function
+- [[score-matching]] — analogous-to: Contractive penalty on f(x) is closely related to score matching objective
+- [[autoencoder]] — specializes
 [To be populated during integration]

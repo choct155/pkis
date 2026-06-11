@@ -23,6 +23,9 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - goodfellow-deeplearning-ch04
+specializes:
+- convex-optimization
+- continuous-optimization
 tags:
 - feasible-set
 - projected-gradient
@@ -31,6 +34,9 @@ tags:
 - active-constraint
 title: Constrained Optimization
 understanding: 0
+uses:
+- kkt-conditions
+- lagrangian-duality
 ---
 
 ## Definition
@@ -49,4 +55,8 @@ Constrained optimisation appears throughout ML: training SVMs (margin constraint
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[continuous-optimization]] — specializes
+- [[convex-optimization]] — specializes
+- [[lagrangian-duality]] — uses
+- [[kkt-conditions]] — uses
 [To be populated during integration]

@@ -16,12 +16,16 @@ domain:
 - machine-learning
 - statistics
 id: pkis:technique:gaussian-discriminant-analysis
+instantiates:
+- generative-classifier
 knowledge_type: technique
 maturity: evolving
 needs_canonical_source: false
 related_concepts: []
 sources:
 - murphy-pml1-intro-ch09
+specializes:
+- linear-discriminant-analysis
 tags:
 - classification
 - generative-model
@@ -30,6 +34,9 @@ tags:
 - MLE
 title: Gaussian Discriminant Analysis (GDA / QDA)
 understanding: 0
+uses:
+- multivariate-normal-model
+- maximum-likelihood-estimation
 ---
 
 ## Definition
@@ -48,4 +55,8 @@ GDA provides a principled generative account of linear and quadratic classifiers
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[generative-classifier]] — instantiates
+- [[maximum-likelihood-estimation]] — uses
+- [[linear-discriminant-analysis]] — specializes: LDA is the tied-covariance special case of GDA
+- [[multivariate-normal-model]] — uses
 [To be populated during integration]

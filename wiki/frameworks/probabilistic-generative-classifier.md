@@ -15,10 +15,16 @@ domain:
 - machine-learning
 - statistics
 - pattern-recognition
+generalizes:
+- naive-bayes-model
 id: pkis:framework:probabilistic-generative-classifier
+instantiates:
+- generative-vs-discriminative-models
 knowledge_type: framework
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- gaussian-lda-linear-boundary
 related_concepts: []
 sources:
 - bishop-prml-ch04
@@ -31,6 +37,11 @@ tags:
 - Gaussian-class-conditional
 title: Probabilistic Generative Classifier
 understanding: 0
+uses:
+- bayesian-inference
+- gaussian-distribution
+- logistic-sigmoid-logit
+- softmax-function
 ---
 
 ## Definition
@@ -47,4 +58,11 @@ The generative approach separates inference into modelling $p(\mathbf{x}|C_k)$ a
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[gaussian-lda-linear-boundary]] — prerequisite-of
+- [[naive-bayes-model]] — generalizes
+- [[softmax-function]] — uses
+- [[logistic-sigmoid-logit]] — uses
+- [[gaussian-distribution]] — uses
+- [[bayesian-inference]] — uses
+- [[generative-vs-discriminative-models]] — instantiates
 [To be populated during integration]

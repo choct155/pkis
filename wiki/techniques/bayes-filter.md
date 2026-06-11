@@ -16,6 +16,10 @@ domain:
 - machine-learning
 - statistics
 - robotics
+generalizes:
+- filtering-prediction-smoothing
+- hidden-markov-model
+- particle-filter
 id: pkis:technique:bayes-filter
 knowledge_type: technique
 maturity: evolving
@@ -31,6 +35,8 @@ tags:
 - belief-state
 title: Bayes Filter (Predict-Update Cycle)
 understanding: 0
+uses:
+- markov-chains
 ---
 
 ## Definition
@@ -46,4 +52,8 @@ The Bayes filter is the universal template for online state estimation. Special 
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[particle-filter]] — generalizes
+- [[hidden-markov-model]] — generalizes: HMM forward algorithm is a special case
+- [[markov-chains]] — uses
+- [[filtering-prediction-smoothing]] — generalizes
 [To be populated during integration]

@@ -29,6 +29,8 @@ tags:
 - stochastic-process
 title: Euler-Maruyama Integration
 understanding: 0
+uses:
+- brownian-motion
 ---
 
 ## Definition
@@ -45,4 +47,5 @@ Euler-Maruyama is the default numerical solver used to simulate and sample from 
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[brownian-motion]] — uses
 [To be populated during integration]

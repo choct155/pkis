@@ -1,6 +1,9 @@
 ---
 aliases: []
 also_type: []
+applies:
+- k-means-algorithm
+- gaussian-mixture-models
 component_scores:
   conditions: null
   implications: null
@@ -28,6 +31,9 @@ tags:
 - temperature-limit
 title: K-Means as a Limit of Gaussian Mixture EM
 understanding: 0
+uses:
+- em-monotone-likelihood-increase
+- responsibilities-mixture-models
 ---
 
 ## Definition
@@ -44,4 +50,8 @@ This derivation places K-means inside the probabilistic EM framework, clarifying
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[responsibilities-mixture-models]] — uses
+- [[em-monotone-likelihood-increase]] — uses
+- [[gaussian-mixture-models]] — applies
+- [[k-means-algorithm]] — applies
 [To be populated during integration]

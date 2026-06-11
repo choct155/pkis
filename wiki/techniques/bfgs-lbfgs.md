@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- logistic-regression
 component_scores:
   alternatives: null
   conditions: null
@@ -15,6 +17,8 @@ date_updated: '2026-06-11'
 domain:
 - optimization
 - machine-learning
+extends:
+- newtons-method-optimization
 id: pkis:technique:bfgs-lbfgs
 knowledge_type: technique
 maturity: evolving
@@ -30,6 +34,9 @@ tags:
 - L-BFGS
 title: BFGS and L-BFGS (Quasi-Newton Methods)
 understanding: 0
+uses:
+- line-search
+- low-rank-approximation
 ---
 
 ## Definition
@@ -46,4 +53,8 @@ L-BFGS is the de-facto standard second-order optimizer for batch ML problems (e.
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[logistic-regression]] — applies
+- [[low-rank-approximation]] — uses
+- [[line-search]] — uses
+- [[newtons-method-optimization]] — extends
 [To be populated during integration]

@@ -32,6 +32,9 @@ tags:
 - statistical-physics
 title: Temperature in Energy-Based Models
 understanding: 0
+uses:
+- boltzmann-machine
+- partition-function
 ---
 
 ## Definition
@@ -52,4 +55,6 @@ Phase-transition-like behaviour can occur at critical temperatures where the tem
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[partition-function]] — uses: normalisation constant Z(beta) depends on temperature
+- [[boltzmann-machine]] — uses: beta parameter originates from Boltzmann distribution in statistical physics
 [To be populated during integration]

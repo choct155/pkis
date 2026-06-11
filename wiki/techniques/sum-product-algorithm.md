@@ -1,8 +1,12 @@
 ---
 aliases: []
 also_type: []
+analogous-to:
+- variable-elimination
 applies:
 - trellis
+- dag-factorization
+- markov-random-field
 component_scores:
   alternatives: null
   conditions: null
@@ -17,7 +21,12 @@ date_updated: '2026-06-08'
 domain:
 - information-theory
 - bayesian-stats
+generalizes:
+- belief-propagation
+- forward-backward-algorithm
 id: pkis:technique:sum-product-algorithm
+instantiates:
+- message-passing
 knowledge_type: technique
 maturity: evolving
 needs_canonical_source: false
@@ -37,6 +46,7 @@ understanding: 0
 uses:
 - generating-functions
 - factor-graph
+- conditional-independence
 ---
 
 ## Definition
@@ -54,6 +64,13 @@ It is the unifying generalization of the forward-backward algorithm and of belie
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[markov-random-field]] — applies
+- [[dag-factorization]] — applies
+- [[conditional-independence]] — uses
+- [[variable-elimination]] — analogous-to
+- [[forward-backward-algorithm]] — generalizes
+- [[message-passing]] — instantiates
+- [[belief-propagation]] — generalizes
 - [[factor-graph]] — uses: Sum-product message rules are defined over the variable/factor nodes of a factor graph.
 - [[trellis]] — applies: Sum-product runs on the trellis to solve bitwise (marginal) decoding.
 - [[generating-functions]] — uses: Counting paths via weighted sums connects to generating-function bookkeeping of combinatorial counts.

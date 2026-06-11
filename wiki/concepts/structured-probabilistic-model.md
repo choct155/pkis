@@ -16,7 +16,13 @@ date_updated: '2026-06-11'
 domain:
 - machine-learning
 - probability-theory
+generalizes:
+- directed-graphical-models
+- undirected-graphical-models
 id: pkis:concept:structured-probabilistic-model
+instantiates:
+- probabilistic-graphical-models
+- bayesian-networks
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
@@ -31,6 +37,10 @@ tags:
 - Bayesian-network
 title: Structured Probabilistic Model (Graphical Model)
 understanding: 0
+uses:
+- conditional-independence
+- partition-function
+- latent-variable-models
 ---
 
 ## Definition
@@ -48,4 +58,11 @@ Graphical models provide a language for expressing independence assumptions in p
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[latent-variable-models]] — uses
+- [[partition-function]] — uses: normalizing constant Z in undirected models
+- [[bayesian-networks]] — instantiates
+- [[conditional-independence]] — uses
+- [[undirected-graphical-models]] — generalizes
+- [[directed-graphical-models]] — generalizes
+- [[probabilistic-graphical-models]] — instantiates
 [To be populated during integration]

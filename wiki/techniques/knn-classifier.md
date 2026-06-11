@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- open-set-recognition
 component_scores:
   alternatives: null
   conditions: null
@@ -16,6 +18,8 @@ domain:
 - machine-learning
 - classification
 id: pkis:technique:knn-classifier
+instantiates:
+- k-nearest-neighbors
 knowledge_type: technique
 maturity: evolving
 needs_canonical_source: false
@@ -29,6 +33,11 @@ tags:
 - nearest-neighbor
 title: K-Nearest Neighbor (KNN) Classifier
 understanding: 0
+uses:
+- curse-of-dimensionality
+- mahalanobis-distance
+- cover-hart-theorem
+- locality-sensitive-hashing
 ---
 
 ## Definition
@@ -46,4 +55,10 @@ Performance degrades in high dimensions (curse of dimensionality): the expected 
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[open-set-recognition]] — applies: KNN classifiers are naturally suited to open-set and incremental learning via gallery comparison
+- [[locality-sensitive-hashing]] — uses: LSH is the primary hashing-based speedup for approximate NN search
+- [[cover-hart-theorem]] — uses: Cover-Hart theorem provides the 2x Bayes error bound for KNN
+- [[k-nearest-neighbors]] — instantiates: knn-classifier is the classification instantiation of the general k-nearest-neighbors technique
+- [[mahalanobis-distance]] — uses: Mahalanobis distance is the standard configurable metric for KNN
+- [[curse-of-dimensionality]] — uses: curse of dimensionality is the primary failure mode of KNN in high dimensions
 [To be populated during integration]

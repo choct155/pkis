@@ -16,6 +16,8 @@ domain:
 - machine-learning
 - graph-learning
 id: pkis:technique:shallow-graph-embeddings
+instantiates:
+- graph-encoder-decoder-model
 knowledge_type: technique
 maturity: evolving
 needs_canonical_source: false
@@ -30,6 +32,9 @@ tags:
 - node2vec
 title: Shallow Graph Embeddings
 understanding: 0
+uses:
+- low-rank-matrix-approximation
+- transductive-vs-inductive-graph-learning
 ---
 
 ## Definition
@@ -47,4 +52,7 @@ Because node features $\mathbf{X}$ are not used in the encoder, shallow embeddin
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[transductive-vs-inductive-graph-learning]] — uses
+- [[low-rank-matrix-approximation]] — uses
+- [[graph-encoder-decoder-model]] — instantiates
 [To be populated during integration]

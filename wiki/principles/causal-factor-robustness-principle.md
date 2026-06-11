@@ -1,6 +1,9 @@
 ---
 aliases: []
 also_type: []
+applies:
+- distribution-shift
+- transfer-learning-domain-adaptation
 component_scores:
   implications: null
   justification: null
@@ -14,6 +17,8 @@ domain:
 - causal-inference
 - machine-learning
 id: pkis:principle:causal-factor-robustness-principle
+instantiates:
+- causal-mechanism-autonomy
 knowledge_type: principle
 maturity: evolving
 needs_canonical_source: false
@@ -29,6 +34,9 @@ tags:
 - disentanglement
 title: Causal-Factor Robustness Principle
 understanding: 0
+uses:
+- disentangled-representation
+- structural-causal-models
 ---
 
 ## Definition
@@ -41,4 +49,9 @@ Provides a formal justification for why disentangled, causal representations are
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[transfer-learning-domain-adaptation]] — applies
+- [[structural-causal-models]] — uses
+- [[causal-mechanism-autonomy]] — instantiates
+- [[distribution-shift]] — applies
+- [[disentangled-representation]] — uses
 [To be populated during integration]

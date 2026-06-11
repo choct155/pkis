@@ -1,6 +1,11 @@
 ---
 aliases: []
 also_type: []
+applies:
+- neural-language-model
+- word-embeddings
+- language-model
+- energy-based-model
 component_scores:
   alternatives: null
   conditions: null
@@ -9,6 +14,11 @@ component_scores:
   implementation: null
   operational_mechanism: null
   principled_mechanism: null
+contrasts-with:
+- hierarchical-softmax
+- partition-function
+- score-matching
+- pseudolikelihood
 coverage: 1
 date_created: '2026-06-11'
 date_updated: '2026-06-11'
@@ -16,6 +26,10 @@ domain:
 - statistics
 - deep-learning
 - NLP
+extends:
+- maximum-likelihood-estimation
+generalizes:
+- score-matching
 id: pkis:technique:noise-contrastive-estimation
 knowledge_type: technique
 maturity: evolving
@@ -33,6 +47,11 @@ tags:
 - contrastive
 title: Noise-Contrastive Estimation (NCE)
 understanding: 0
+uses:
+- importance-sampling
+- maximum-likelihood-estimation
+- logistic-regression
+- kl-divergence
 ---
 
 ## Definition
@@ -47,4 +66,18 @@ Provides an asymptotically consistent estimator that avoids the $O(|\mathcal{V}|
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[kl-divergence]] — uses: NCE minimizes KL between the noise/data classifier and the noise/model classifier
+- [[score-matching]] — generalizes: With perturbation noise distribution and appropriate parameterization, NCE recovers score matching
+- [[maximum-likelihood-estimation]] — extends: NCE provides an alternative to MLE that avoids MCMC and estimates Z_θ
+- [[energy-based-model]] — applies: NCE trains EBMs by binary classification between data and noise
+- [[language-model]] — applies
+- [[pseudolikelihood]] — contrasts-with
+- [[score-matching]] — contrasts-with
+- [[logistic-regression]] — uses
+- [[maximum-likelihood-estimation]] — uses
+- [[partition-function]] — contrasts-with
+- [[word-embeddings]] — applies
+- [[hierarchical-softmax]] — contrasts-with
+- [[neural-language-model]] — applies
+- [[importance-sampling]] — uses
 [To be populated during integration]

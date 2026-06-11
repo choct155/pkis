@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+analogous-to:
+- distribution-shift
 component_scores:
   application: null
   boundary: null
@@ -31,6 +33,9 @@ tags:
 - shallow-embeddings
 title: Transductive vs Inductive Graph Learning
 understanding: 0
+uses:
+- shallow-graph-embeddings
+- graph-sage
 ---
 
 ## Definition
@@ -45,4 +50,7 @@ Many real applications require inductive generalisation — predicting propertie
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[distribution-shift]] — analogous-to
+- [[graph-sage]] — uses
+- [[shallow-graph-embeddings]] — uses
 [To be populated during integration]

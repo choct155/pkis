@@ -9,6 +9,8 @@ component_scores:
   implementation: null
   operational_mechanism: null
   principled_mechanism: null
+contrasts-with:
+- graph-convolutional-network
 coverage: 1
 date_created: '2026-06-11'
 date_updated: '2026-06-11'
@@ -17,12 +19,16 @@ domain:
 - graph-learning
 - semi-supervised-learning
 id: pkis:technique:label-propagation-graph
+instantiates:
+- graph-encoder-decoder-model
 knowledge_type: technique
 maturity: evolving
 needs_canonical_source: false
 related_concepts: []
 sources:
 - murphy-pml1-intro-ch23
+specializes:
+- shallow-graph-embeddings
 tags:
 - semi-supervised
 - graph-smoothness
@@ -31,6 +37,8 @@ tags:
 - transductive
 title: Label Propagation on Graphs
 understanding: 0
+uses:
+- graph-laplacian
 ---
 
 ## Definition
@@ -47,4 +55,8 @@ Label propagation is one of the simplest and most effective semi-supervised grap
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[graph-convolutional-network]] — contrasts-with
+- [[shallow-graph-embeddings]] — specializes
+- [[graph-laplacian]] — uses
+- [[graph-encoder-decoder-model]] — instantiates
 [To be populated during integration]

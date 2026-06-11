@@ -16,6 +16,8 @@ domain:
 - machine-learning
 - deep-learning
 - bayesian-inference
+extends:
+- svi
 id: pkis:technique:amortized-vi
 knowledge_type: technique
 maturity: evolving
@@ -23,6 +25,8 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - murphy-pml2-advanced-ch10
+specializes:
+- amortized-inference
 tags:
 - amortized-inference
 - recognition-network
@@ -30,6 +34,9 @@ tags:
 - inference-compilation
 title: Amortized Variational Inference
 understanding: 0
+uses:
+- variational-autoencoder
+- reparameterization-trick
 ---
 
 ## Definition
@@ -44,4 +51,8 @@ Amortized VI is the inference half of the VAE (Kingma & Welling, 2014) and enabl
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[reparameterization-trick]] — uses: Amortized VI typically uses the reparameterization trick to backpropagate through the latent sampling step.
+- [[variational-autoencoder]] — uses: The VAE encoder is precisely an amortized inference network for the generative decoder model.
+- [[amortized-inference]] — specializes: Amortized VI is the variational inference instantiation of the broader amortized inference principle.
+- [[svi]] — extends: Amortized VI replaces the per-example inner optimization of SVI with a shared inference network.
 [To be populated during integration]

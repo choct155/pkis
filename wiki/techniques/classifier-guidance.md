@@ -29,6 +29,8 @@ tags:
 - classifier
 title: Classifier Guidance
 understanding: 0
+uses:
+- bayesian-inference
 ---
 
 ## Definition
@@ -48,4 +50,5 @@ Classifier guidance enables conditional generation from an **unconditionally tra
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[bayesian-inference]] — uses: Uses Bayes' rule to decompose the conditional score into unconditional score plus classifier gradient
 [To be populated during integration]

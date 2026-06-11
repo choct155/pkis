@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- polynomial-curve-fitting
 component_scores:
   conditions: null
   implications: null
@@ -14,7 +16,11 @@ domain:
 - statistics
 - machine-learning
 - decision-theory
+generalizes:
+- minkowski-loss
 id: pkis:result:optimal-regression-conditional-mean
+instantiates:
+- decision-theory-foundations
 knowledge_type: result
 maturity: evolving
 needs_canonical_source: false
@@ -29,6 +35,9 @@ tags:
 - decision-theory
 title: Optimal Regression Function is the Conditional Mean
 understanding: 0
+uses:
+- bias-variance-tradeoff
+- expectation-and-variance
 ---
 
 ## Definition
@@ -46,4 +55,9 @@ Establishes the probabilistic target for regression: any estimator's MSE can be 
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[polynomial-curve-fitting]] — applies
+- [[expectation-and-variance]] — uses
+- [[minkowski-loss]] — generalizes
+- [[bias-variance-tradeoff]] — uses
+- [[decision-theory-foundations]] — instantiates
 [To be populated during integration]

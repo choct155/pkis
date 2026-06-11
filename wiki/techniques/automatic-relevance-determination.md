@@ -1,6 +1,10 @@
 ---
 aliases: []
 also_type: []
+analogous-to:
+- sparse-pca
+- spike-and-slab
+- spike-and-slab-prior
 component_scores:
   alternatives: null
   conditions: null
@@ -9,6 +13,9 @@ component_scores:
   implementation: null
   operational_mechanism: null
   principled_mechanism: null
+contrasts-with:
+- lasso
+- empirical-risk-minimization
 coverage: 1
 date_created: '2026-06-11'
 date_updated: '2026-06-11'
@@ -31,6 +38,11 @@ tags:
 - feature-selection
 title: Automatic Relevance Determination (ARD)
 understanding: 0
+uses:
+- hyperprior
+- marginal-likelihood
+- em-algorithm
+- variational-inference
 ---
 
 ## Definition
@@ -47,4 +59,13 @@ ARD was introduced by MacKay and Neal in the context of neural networks and gene
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[variational-inference]] — uses
+- [[em-algorithm]] — uses
+- [[empirical-risk-minimization]] — contrasts-with
+- [[lasso]] — contrasts-with
+- [[spike-and-slab-prior]] — analogous-to
+- [[spike-and-slab]] — analogous-to: Both achieve sparsity via hyperprior mechanisms
+- [[sparse-pca]] — analogous-to
+- [[marginal-likelihood]] — uses
+- [[hyperprior]] — uses
 [To be populated during integration]

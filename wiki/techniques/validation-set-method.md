@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- overfitting-and-underfitting
 component_scores:
   alternatives: null
   conditions: null
@@ -15,6 +17,8 @@ date_updated: '2026-06-11'
 domain:
 - statistics
 - machine-learning
+generalizes:
+- cross-validation
 id: pkis:technique:validation-set-method
 knowledge_type: technique
 maturity: evolving
@@ -29,6 +33,9 @@ tags:
 - one-SE-rule
 title: Validation Set and Cross-Validation
 understanding: 0
+uses:
+- regularization
+- bias-variance-tradeoff
 ---
 
 ## Definition
@@ -46,4 +53,8 @@ The validation risk $R^{\text{val}}_\lambda = R_0(\hat{\theta}_\lambda(\mathcal{
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[bias-variance-tradeoff]] — uses
+- [[regularization]] — uses: Used to select regularisation strength lambda
+- [[overfitting-and-underfitting]] — applies
+- [[cross-validation]] — generalizes: CV generalises train/val split to K folds
 [To be populated during integration]

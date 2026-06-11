@@ -16,6 +16,8 @@ domain:
 - machine-learning
 - optimization
 - deep-learning
+extends:
+- adagrad
 id: pkis:technique:rmsprop
 knowledge_type: technique
 maturity: evolving
@@ -29,6 +31,8 @@ tags:
 - deep-learning
 title: RMSProp
 understanding: 0
+uses:
+- nesterov-momentum
 ---
 
 ## Definition
@@ -45,4 +49,6 @@ RMSProp is one of the most widely deployed optimisers for deep learning in pract
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[nesterov-momentum]] — uses: RMSProp+Nesterov is a common combination
+- [[adagrad]] — extends: replaces cumulative sum with exponential moving average
 [To be populated during integration]

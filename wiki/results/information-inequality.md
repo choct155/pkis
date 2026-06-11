@@ -14,9 +14,13 @@ domain:
 - information-theory
 - statistics
 id: pkis:result:information-inequality
+instantiates:
+- gibbs-inequality
 knowledge_type: result
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- elbo
 related_concepts: []
 sources:
 - murphy-pml2-advanced-ch05
@@ -28,6 +32,9 @@ tags:
 - foundational
 title: Information Inequality (Non-negativity of KL)
 understanding: 0
+uses:
+- kl-divergence
+- jensens-inequality
 ---
 
 ## Definition
@@ -48,4 +55,8 @@ Non-negativity of KL is one of the most-used inequalities in machine learning an
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[gibbs-inequality]] — instantiates
+- [[elbo]] — prerequisite-of
+- [[jensens-inequality]] — uses
+- [[kl-divergence]] — uses
 [To be populated during integration]

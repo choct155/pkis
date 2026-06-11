@@ -9,12 +9,16 @@ component_scores:
   implementation: null
   operational_mechanism: null
   principled_mechanism: null
+contrasts-with:
+- word-embeddings
 coverage: 1
 date_created: '2026-06-11'
 date_updated: '2026-06-11'
 domain:
 - nlp
 - information-retrieval
+extends:
+- bag-of-words-model
 id: pkis:technique:tf-idf
 knowledge_type: technique
 maturity: evolving
@@ -29,6 +33,8 @@ tags:
 - nlp
 title: TF-IDF Weighting
 understanding: 0
+uses:
+- one-hot-encoding
 ---
 
 ## Definition
@@ -43,4 +49,7 @@ Raw term frequencies give undue influence to stop words. TF-IDF produces a spars
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[word-embeddings]] — contrasts-with
+- [[one-hot-encoding]] — uses
+- [[bag-of-words-model]] — extends
 [To be populated during integration]

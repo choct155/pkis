@@ -14,6 +14,8 @@ date_created: '2026-06-11'
 date_updated: '2026-06-11'
 domain:
 - probabilistic-graphical-models
+extends:
+- loopy-belief-propagation
 id: pkis:technique:residual-belief-propagation
 knowledge_type: technique
 maturity: evolving
@@ -29,6 +31,8 @@ tags:
 - approximate-inference
 title: Residual Belief Propagation
 understanding: 0
+uses:
+- computation-tree-bp
 ---
 
 ## Definition
@@ -47,4 +51,6 @@ Residual BP (Elidan et al., 2006) converges more often and much faster than sync
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[computation-tree-bp]] — uses
+- [[loopy-belief-propagation]] — extends
 [To be populated during integration]

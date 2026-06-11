@@ -1,6 +1,9 @@
 ---
 aliases: []
 also_type: []
+applies:
+- low-rank-approximation
+- regularization
 component_scores:
   application: null
   boundary: null
@@ -21,9 +24,15 @@ id: pkis:concept:matrix-norms
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- condition-number
+- hutchinson-trace-estimator
 related_concepts: []
 sources:
 - murphy-pml1-intro-ch07
+specializes:
+- norm
+- linear-algebra
 tags:
 - Frobenius
 - nuclear-norm
@@ -33,6 +42,8 @@ tags:
 - low-rank
 title: Frobenius Norm and Matrix Norms
 understanding: 0
+uses:
+- singular-value-decomposition
 ---
 
 ## Definition
@@ -52,4 +63,11 @@ Matrix norms quantify approximation error in low-rank methods (SVD, PCA), condit
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[hutchinson-trace-estimator]] — prerequisite-of
+- [[condition-number]] — prerequisite-of
+- [[regularization]] — applies
+- [[low-rank-approximation]] — applies
+- [[singular-value-decomposition]] — uses
+- [[linear-algebra]] — specializes
+- [[norm]] — specializes
 [To be populated during integration]

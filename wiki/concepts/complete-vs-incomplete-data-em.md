@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+analogous-to:
+- missing-data-mechanisms
 component_scores:
   application: null
   boundary: null
@@ -21,6 +23,9 @@ id: pkis:concept:complete-vs-incomplete-data-em
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- em-algorithm
+- complete-vs-incomplete-data-em
 related_concepts: []
 sources:
 - bishop-prml-ch09
@@ -31,6 +36,8 @@ tags:
 - mixture-models
 title: Complete Data and Incomplete Data in EM
 understanding: 0
+uses:
+- latent-variable-models
 ---
 
 ## Definition
@@ -47,4 +54,8 @@ This dichotomy motivates the EM algorithm: because the complete data is unobserv
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[complete-vs-incomplete-data-em]] — prerequisite-of: self-reference removed — linking to em-algorithm instead
+- [[missing-data-mechanisms]] — analogous-to
+- [[latent-variable-models]] — uses
+- [[em-algorithm]] — prerequisite-of
 [To be populated during integration]

@@ -1,6 +1,10 @@
 ---
 aliases: []
 also_type: []
+analogous-to:
+- rand-index
+applies:
+- k-means-clustering
 component_scores:
   application: null
   boundary: null
@@ -44,4 +48,6 @@ Unlike reconstruction error (distortion), the silhouette score typically peaks a
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[rand-index]] — analogous-to: both are external or internal cluster quality measures
+- [[k-means-clustering]] — applies
 [To be populated during integration]

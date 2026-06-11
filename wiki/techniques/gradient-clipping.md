@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- vanishing-exploding-gradients-rnn
 component_scores:
   alternatives: null
   conditions: null
@@ -15,6 +17,8 @@ date_updated: '2026-06-11'
 domain:
 - deep-learning
 - optimization
+extends:
+- stochastic-gradient-descent
 id: pkis:technique:gradient-clipping
 knowledge_type: technique
 maturity: evolving
@@ -30,6 +34,8 @@ tags:
 - training-stability
 title: Gradient Clipping
 understanding: 0
+uses:
+- backpropagation-through-time
 ---
 
 ## Definition
@@ -44,4 +50,7 @@ RNN loss surfaces contain 'cliff' regions where the gradient norm spikes catastr
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[stochastic-gradient-descent]] — extends
+- [[backpropagation-through-time]] — uses
+- [[vanishing-exploding-gradients-rnn]] — applies: Addresses the exploding gradient aspect
 [To be populated during integration]

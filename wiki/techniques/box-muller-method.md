@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- gaussian-distribution
 component_scores:
   alternatives: null
   conditions: null
@@ -9,6 +11,8 @@ component_scores:
   implementation: null
   operational_mechanism: null
   principled_mechanism: null
+contrasts-with:
+- inverse-cdf-sampling
 coverage: 1
 date_created: '2026-06-11'
 date_updated: '2026-06-11'
@@ -30,6 +34,9 @@ tags:
 - exact-sampling
 title: Box-Muller Method
 understanding: 0
+uses:
+- change-of-variables-for-densities
+- cholesky-decomposition
 ---
 
 ## Definition
@@ -47,4 +54,8 @@ Because $\text{Cov}[Lx]=L\,\text{Cov}[x]\,L^T=\Sigma$, the Cholesky transform ma
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[inverse-cdf-sampling]] — contrasts-with: Box-Muller avoids the intractable Gaussian inverse CDF
+- [[cholesky-decomposition]] — uses
+- [[change-of-variables-for-densities]] — uses
+- [[gaussian-distribution]] — applies
 [To be populated during integration]

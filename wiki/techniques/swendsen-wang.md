@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- ising-model
 component_scores:
   alternatives: null
   conditions: null
@@ -16,6 +18,8 @@ domain:
 - statistics
 - physics
 - machine-learning
+extends:
+- gibbs-sampling
 id: pkis:technique:swendsen-wang
 knowledge_type: technique
 maturity: evolving
@@ -31,6 +35,9 @@ tags:
 - critical-slowing-down
 title: Swendsen-Wang Algorithm
 understanding: 0
+uses:
+- mcmc-mixing-time
+- phase-transition
 ---
 
 ## Definition
@@ -47,4 +54,8 @@ Gibbs sampling on Ising models suffers from critical slowing-down near the phase
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[phase-transition]] — uses
+- [[mcmc-mixing-time]] — uses
+- [[ising-model]] — applies
+- [[gibbs-sampling]] — extends
 [To be populated during integration]

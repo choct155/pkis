@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- generative-vs-discriminative-models
 component_scores:
   application: null
   boundary: null
@@ -18,12 +20,16 @@ domain:
 - kernel-methods
 - information-geometry
 id: pkis:concept:fisher-kernel
+instantiates:
+- kernel-construction-rules
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
 related_concepts: []
 sources:
 - bishop-prml-ch06
+specializes:
+- generative-model-kernels
 tags:
 - Fisher-kernel
 - generative-discriminative
@@ -32,6 +38,8 @@ tags:
 - score-function
 title: Fisher Kernel
 understanding: 0
+uses:
+- fisher-information
 ---
 
 ## Definition
@@ -53,4 +61,8 @@ Dropping $\mathbf{F}^{-1}$ gives the non-invariant inner-product kernel $k = g^T
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[generative-vs-discriminative-models]] — applies
+- [[generative-model-kernels]] — specializes
+- [[kernel-construction-rules]] — instantiates
+- [[fisher-information]] — uses
 [To be populated during integration]

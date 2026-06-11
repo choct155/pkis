@@ -16,6 +16,9 @@ date_updated: '2026-06-11'
 domain:
 - machine-learning
 - statistics
+generalizes:
+- hinge-loss
+- cross-entropy-loss
 id: pkis:concept:surrogate-loss
 knowledge_type: concept
 maturity: evolving
@@ -31,6 +34,11 @@ tags:
 - convex-optimisation
 title: Surrogate Loss Function
 understanding: 0
+uses:
+- empirical-risk-minimization
+- support-vector-machines
+- margin-maximum-margin-classifier
+- convex-set-and-function
 ---
 
 ## Definition
@@ -50,4 +58,10 @@ The margin $m = \tilde{y}\eta$ measures the confidence and correctness of a pred
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[convex-set-and-function]] — uses: Surrogates are convex upper bounds
+- [[margin-maximum-margin-classifier]] — uses
+- [[support-vector-machines]] — uses: SVMs use hinge-loss surrogate
+- [[empirical-risk-minimization]] — uses
+- [[cross-entropy-loss]] — generalizes: Log-loss is the cross-entropy surrogate for 0-1 loss
+- [[hinge-loss]] — generalizes
 [To be populated during integration]

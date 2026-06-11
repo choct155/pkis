@@ -1,6 +1,9 @@
 ---
 aliases: []
 also_type: []
+applies:
+- supervised-learning
+- unsupervised-learning
 component_scores:
   implications: null
   justification: null
@@ -26,6 +29,10 @@ tags:
 - taxonomy
 title: 'ML Algorithm Recipe: Dataset + Cost + Model + Optimizer'
 understanding: 0
+uses:
+- maximum-likelihood-estimation
+- regularization
+- minibatch-sgd
 ---
 
 ## Definition
@@ -45,4 +52,9 @@ This compositional view demystifies the proliferation of ML algorithms: most dif
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[minibatch-sgd]] — uses
+- [[regularization]] — uses
+- [[maximum-likelihood-estimation]] — uses
+- [[unsupervised-learning]] — applies
+- [[supervised-learning]] — applies
 [To be populated during integration]

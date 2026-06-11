@@ -16,6 +16,8 @@ date_updated: '2026-06-11'
 domain:
 - machine-learning
 - deep-learning
+generalizes:
+- relu
 id: pkis:concept:maxout-unit
 knowledge_type: concept
 maturity: evolving
@@ -23,6 +25,8 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - goodfellow-deeplearning-ch06
+specializes:
+- activation-functions
 tags:
 - activation-function
 - piecewise-linear
@@ -30,6 +34,8 @@ tags:
 - regularization
 title: Maxout Unit
 understanding: 0
+uses:
+- depth-efficiency-rectifier-networks
 ---
 
 ## Definition
@@ -44,4 +50,7 @@ A single maxout unit can implement ReLU, leaky ReLU, or absolute-value rectifica
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[depth-efficiency-rectifier-networks]] — uses
+- [[activation-functions]] — specializes
+- [[relu]] — generalizes
 [To be populated during integration]

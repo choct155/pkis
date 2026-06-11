@@ -1,6 +1,11 @@
 ---
 aliases: []
 also_type: []
+analogous-to:
+- central-limit-theorem
+- bernstein-von-mises-theorem
+applies:
+- maximum-likelihood-estimation
 component_scores:
   conditions: null
   implications: null
@@ -28,6 +33,10 @@ tags:
 - central-limit-theorem
 title: Asymptotic Normality of the MLE
 understanding: 0
+uses:
+- score-function
+- cramer-rao-bound
+- sampling-distribution
 ---
 
 ## Definition
@@ -44,4 +53,10 @@ This result justifies using the observed Hessian (or its expectation, the FIM) t
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[sampling-distribution]] — uses
+- [[cramer-rao-bound]] — uses
+- [[bernstein-von-mises-theorem]] — analogous-to
+- [[central-limit-theorem]] — analogous-to
+- [[maximum-likelihood-estimation]] — applies
+- [[score-function]] — uses
 [To be populated during integration]

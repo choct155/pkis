@@ -8,6 +8,8 @@ component_scores:
   purpose: null
   scope: null
   structure: null
+contrasts-with:
+- human-ai-collaboration-failure
 coverage: 1
 date_created: '2026-06-11'
 date_updated: '2026-06-11'
@@ -30,6 +32,9 @@ tags:
 - properties
 title: Interpretable ML Ecosystem Framework
 understanding: 0
+uses:
+- algorithmic-fairness
+- distribution-shift
 ---
 
 ## Definition
@@ -52,4 +57,7 @@ The framework makes explicit that *no universal metric of interpretability exist
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[human-ai-collaboration-failure]] — contrasts-with: The ecosystem framework aims to prevent human+ML collaboration failures through properly matched explanations.
+- [[distribution-shift]] — uses: Context specification includes potential distribution shift between training and deployment.
+- [[algorithmic-fairness]] — uses: Interpretable ML is one means toward fairness goals; the framework clarifies that fairness requires specifying context and end-task.
 [To be populated during integration]

@@ -17,9 +17,14 @@ domain:
 - probability-theory
 - statistics
 id: pkis:concept:pmf-and-pdf
+instantiates:
+- probability-distribution-relationships
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- exponential-family
+- bayesian-inference
 related_concepts: []
 sources:
 - murphy-pml2-advanced-ch02
@@ -31,6 +36,9 @@ tags:
 - probability-distribution
 title: Probability Mass Function and Probability Density Function
 understanding: 0
+uses:
+- probability-space
+- random-variable
 ---
 
 ## Definition
@@ -44,6 +52,11 @@ The **cumulative distribution function (CDF)** unifies both cases: $P_X(x) = \ma
 The PMF/PDF is the primary computational object for evaluating likelihoods, computing expectations, and specifying generative models; choosing the right functional form for a PMF or PDF is the central modeling decision in probabilistic machine learning.
 
 ### Connections
+- [[bayesian-inference]] — prerequisite-of
+- [[exponential-family]] — prerequisite-of
+- [[probability-distribution-relationships]] — instantiates
+- [[random-variable]] — uses
+- [[probability-space]] — uses
 For continuous $X$, the PDF is the Radon–Nikodym derivative of the probability measure with respect to Lebesgue measure, linking measure theory to the calculus-based formulas used in practice.
 
 ## Reading Path

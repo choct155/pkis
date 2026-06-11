@@ -17,6 +17,9 @@ date_updated: '2026-06-09'
 domain:
 - statistical-learning
 - optimization
+extends:
+- lasso
+- maximum-likelihood-estimation
 id: pkis:technique:graphical-lasso
 knowledge_type: technique
 maturity: evolving
@@ -35,6 +38,8 @@ understanding: 0
 uses:
 - lasso
 - convex-optimization
+- regularization
+- graphical-lasso-sparsity-tradeoff
 ---
 
 ## Definition
@@ -52,6 +57,10 @@ The algorithm cycles over all p variables until convergence; the diagonal of the
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[graphical-lasso-sparsity-tradeoff]] — uses
+- [[maximum-likelihood-estimation]] — extends
+- [[regularization]] — uses
+- [[lasso]] — extends
 - [[convex-optimization]] — uses: Maximizes the convex L1-penalized Gaussian log-likelihood.
 - [[lasso]] — uses: Each row/column update is solved as an ordinary lasso regression with W_11 in place of Z^T Z.
 - [[gaussian-graphical-model]] — applies: The graphical lasso estimates a sparse Gaussian graphical model's precision matrix.

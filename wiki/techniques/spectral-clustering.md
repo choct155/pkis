@@ -3,6 +3,9 @@ aliases: []
 also_type: []
 analogous-to:
 - kernel-pca
+- graph-neural-networks
+applies:
+- normalized-cut
 component_scores:
   alternatives: null
   conditions: null
@@ -25,6 +28,7 @@ sources:
 - hastie-esl-ch14
 specializes:
 - clustering
+- unsupervised-learning
 tags:
 - clustering
 - unsupervised-learning
@@ -45,6 +49,9 @@ A clustering generalization that finds non-convex groups (e.g. concentric circle
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[unsupervised-learning]] — specializes
+- [[graph-neural-networks]] — analogous-to: both exploit graph Laplacian structure
+- [[normalized-cut]] — applies: spectral clustering approximately solves the Ncut problem
 - [[the-kernel-trick]] — uses: similarity matrix is the radial-kernel gram matrix exp(−d²/c)
 - [[kernel-pca]] — analogous-to: Laplacian eigenproblem nearly matches kernel PCA on I−ÃK; both built from a radial-kernel gram matrix
 - [[k-means-clustering]] — uses: runs K-means on the rows of the Laplacian eigenvector matrix Z

@@ -1,6 +1,10 @@
 ---
 aliases: []
 also_type: []
+analogous-to:
+- receiver-operating-characteristic-curve
+applies:
+- generative-adversarial-network
 component_scores:
   application: null
   boundary: null
@@ -17,6 +21,8 @@ domain:
 - machine-learning
 - generative-models
 - evaluation
+extends:
+- frechet-inception-distance
 id: pkis:concept:generative-model-precision-recall
 knowledge_type: concept
 maturity: evolving
@@ -49,4 +55,7 @@ FID conflates fidelity and diversity into a single number, making it hard to dia
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[generative-adversarial-network]] — applies
+- [[receiver-operating-characteristic-curve]] — analogous-to
+- [[frechet-inception-distance]] — extends
 [To be populated during integration]

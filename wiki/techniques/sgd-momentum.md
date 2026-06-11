@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- vanishing-exploding-gradients
 component_scores:
   alternatives: null
   conditions: null
@@ -16,6 +18,8 @@ domain:
 - machine-learning
 - optimization
 - deep-learning
+extends:
+- minibatch-sgd
 id: pkis:technique:sgd-momentum
 knowledge_type: technique
 maturity: evolving
@@ -46,4 +50,6 @@ Momentum accelerates convergence through high-curvature ravines (common in deep 
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[vanishing-exploding-gradients]] — applies: momentum helps traverse high-curvature regions where gradients are noisy
+- [[minibatch-sgd]] — extends
 [To be populated during integration]

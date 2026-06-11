@@ -9,6 +9,8 @@ component_scores:
   implementation: null
   operational_mechanism: null
   principled_mechanism: null
+contrasts-with:
+- maximum-a-posteriori-estimation-map
 coverage: 1
 date_created: '2026-06-11'
 date_updated: '2026-06-11'
@@ -16,12 +18,16 @@ domain:
 - statistics
 - machine learning
 id: pkis:technique:mpm-estimate
+instantiates:
+- posterior-risk
 knowledge_type: technique
 maturity: evolving
 needs_canonical_source: false
 related_concepts: []
 sources:
 - murphy-pml2-advanced-ch34
+specializes:
+- bayesian-point-estimation
 tags:
 - Hamming loss
 - posterior marginals
@@ -30,6 +36,8 @@ tags:
 - MAP vs MPM
 title: Maximizer of Posterior Marginals (MPM Estimate)
 understanding: 0
+uses:
+- marginalization
 ---
 
 ## Definition
@@ -44,4 +52,8 @@ For discrete or structured parameters the MAP estimate can be isolated in probab
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[bayesian-point-estimation]] — specializes
+- [[marginalization]] — uses
+- [[maximum-a-posteriori-estimation-map]] — contrasts-with
+- [[posterior-risk]] — instantiates
 [To be populated during integration]

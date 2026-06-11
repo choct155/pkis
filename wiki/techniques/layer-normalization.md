@@ -9,6 +9,8 @@ component_scores:
   implementation: null
   operational_mechanism: null
   principled_mechanism: null
+contrasts-with:
+- batch-normalization
 coverage: 1
 date_created: '2026-06-11'
 date_updated: '2026-06-11'
@@ -29,6 +31,9 @@ tags:
 - geometry
 title: Layer Normalization
 understanding: 0
+uses:
+- transformer-attention-mechanisms
+- orthogonal-projection
 ---
 
 ## Definition
@@ -43,4 +48,7 @@ Layer normalization is the standard normalization choice in transformer architec
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[orthogonal-projection]] — uses: LayerNorm = projection onto mean-free unit sphere
+- [[transformer-attention-mechanisms]] — uses
+- [[batch-normalization]] — contrasts-with: layer norm computes statistics over feature dimension per example; batch norm over batch dimension
 [To be populated during integration]

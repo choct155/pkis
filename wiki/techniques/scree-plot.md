@@ -1,6 +1,9 @@
 ---
 aliases: []
 also_type: []
+applies:
+- principal-components-analysis
+- model-selection-problem
 component_scores:
   alternatives: null
   conditions: null
@@ -44,4 +47,6 @@ Scree plots are the standard diagnostic for choosing $L$ in PCA. When the knee i
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[model-selection-problem]] — applies
+- [[principal-components-analysis]] — applies
 [To be populated during integration]

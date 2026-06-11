@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- gaussian-distribution
 component_scores:
   application: null
   boundary: null
@@ -10,16 +12,26 @@ component_scores:
   prerequisites: null
   scope: null
   transfer: null
+contrasts-with:
+- kl-divergence
 coverage: 1
 date_created: '2026-06-11'
 date_updated: '2026-06-11'
 domain:
 - information-theory
 - probability-theory
+extends:
+- entropy
+generalizes:
+- entropy
 id: pkis:concept:differential-entropy
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- kl-divergence
+- mutual-information
+- continuous-channel-capacity
 related_concepts: []
 sources:
 - bishop-prml-ch01
@@ -32,6 +44,9 @@ tags:
 - information-theory
 title: Differential Entropy
 understanding: 0
+uses:
+- gaussian-maximum-entropy-characterization
+- conditional-entropy
 ---
 
 ## Definition
@@ -50,4 +65,13 @@ This underpins the Gaussian maximum entropy characterisation and the rationale f
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[kl-divergence]] — contrasts-with: KL is reparameterization-invariant; differential entropy is not
+- [[gaussian-distribution]] — applies
+- [[continuous-channel-capacity]] — prerequisite-of
+- [[entropy]] — generalizes
+- [[conditional-entropy]] — uses
+- [[mutual-information]] — prerequisite-of
+- [[kl-divergence]] — prerequisite-of
+- [[gaussian-maximum-entropy-characterization]] — uses
+- [[entropy]] — extends
 [To be populated during integration]

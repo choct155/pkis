@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+analogous-to:
+- kalman-filter
 component_scores:
   alternatives: null
   conditions: null
@@ -30,6 +32,8 @@ tags:
 - precision-matrix
 title: Information Form Kalman Filter
 understanding: 0
+uses:
+- exponential-family
 ---
 
 ## Definition
@@ -44,4 +48,6 @@ The information filter is preferable when (i) the observation dimension $N_y \gg
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[exponential-family]] — uses: uses natural parameters of the Gaussian
+- [[kalman-filter]] — analogous-to
 [To be populated during integration]

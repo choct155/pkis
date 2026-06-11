@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- curse-of-dimensionality
 component_scores:
   alternatives: null
   conditions: null
@@ -17,12 +19,17 @@ domain:
 - statistics
 - linear-algebra
 id: pkis:technique:principal-components-analysis
+instantiates:
+- low-rank-approximation
 knowledge_type: technique
 maturity: evolving
 needs_canonical_source: false
 related_concepts: []
 sources:
 - murphy-pml1-intro-ch20
+specializes:
+- unsupervised-learning
+- factor-analysis
 tags:
 - dimensionality-reduction
 - unsupervised-learning
@@ -31,6 +38,10 @@ tags:
 - reconstruction-error
 title: Principal Components Analysis (PCA)
 understanding: 0
+uses:
+- eigendecomposition
+- singular-value-decomposition
+- covariance-and-correlation
 ---
 
 ## Definition
@@ -45,4 +56,11 @@ PCA is the canonical baseline for linear dimensionality reduction: it is analyti
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[covariance-and-correlation]] — uses
+- [[curse-of-dimensionality]] — applies
+- [[factor-analysis]] — specializes
+- [[low-rank-approximation]] — instantiates
+- [[singular-value-decomposition]] — uses
+- [[eigendecomposition]] — uses
+- [[unsupervised-learning]] — specializes
 [To be populated during integration]

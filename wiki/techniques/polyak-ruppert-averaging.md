@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+analogous-to:
+- ridge-regression
 component_scores:
   alternatives: null
   conditions: null
@@ -15,6 +17,8 @@ date_updated: '2026-06-11'
 domain:
 - optimization
 - machine-learning
+extends:
+- stochastic-gradient-descent
 id: pkis:technique:polyak-ruppert-averaging
 knowledge_type: technique
 maturity: evolving
@@ -30,6 +34,8 @@ tags:
 - generalization
 title: Polyak-Ruppert Iterate Averaging
 understanding: 0
+uses:
+- learning-rate-schedule
 ---
 
 ## Definition
@@ -48,4 +54,7 @@ Iterate averaging is a free, post-hoc variance reduction technique for SGD. SWA 
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[learning-rate-schedule]] — uses
+- [[ridge-regression]] — analogous-to
+- [[stochastic-gradient-descent]] — extends
 [To be populated during integration]

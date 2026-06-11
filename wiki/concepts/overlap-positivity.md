@@ -20,6 +20,8 @@ id: pkis:concept:overlap-positivity
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- average-treatment-effect
 related_concepts: []
 sources:
 - murphy-pml2-advanced-ch36
@@ -31,6 +33,8 @@ tags:
 - overlap
 title: Overlap (Positivity) Condition
 understanding: 0
+uses:
+- propensity-score
 ---
 
 ## Definition
@@ -48,4 +52,6 @@ Overlap is a necessary condition for non-parametric identification of the ATE vi
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[propensity-score]] — uses: Overlap is checked via estimated propensity scores; violations manifest as extreme weights
+- [[average-treatment-effect]] — prerequisite-of: Overlap is required for non-parametric identification of the ATE
 [To be populated during integration]

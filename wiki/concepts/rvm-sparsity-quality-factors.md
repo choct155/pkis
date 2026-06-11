@@ -16,10 +16,14 @@ date_updated: '2026-06-11'
 domain:
 - machine-learning
 - bayesian-inference
+extends:
+- automatic-relevance-determination
 id: pkis:concept:rvm-sparsity-quality-factors
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- rvm-evidence-sparsity-result
 related_concepts: []
 sources:
 - bishop-prml-ch07
@@ -49,4 +53,6 @@ These factors provide a closed-form criterion for deciding, at each step of the 
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[automatic-relevance-determination]] — extends
+- [[rvm-evidence-sparsity-result]] — prerequisite-of
 [To be populated during integration]

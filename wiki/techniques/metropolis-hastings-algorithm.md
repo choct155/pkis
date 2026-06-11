@@ -9,6 +9,8 @@ component_scores:
   implementation: null
   operational_mechanism: null
   principled_mechanism: null
+contrasts-with:
+- importance-sampling
 coverage: 1
 date_created: '2026-06-11'
 date_updated: '2026-06-11'
@@ -23,6 +25,9 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - murphy-pml2-advanced-ch12
+specializes:
+- mcmc
+- metropolis-hastings
 tags:
 - mcmc
 - bayesian-inference
@@ -31,6 +36,10 @@ tags:
 - acceptance-rejection
 title: Metropolis-Hastings Algorithm
 understanding: 0
+uses:
+- detailed-balance
+- stationary-distribution
+- markov-chains
 ---
 
 ## Definition
@@ -48,4 +57,10 @@ Proposal validity requires $q(x'|x)>0$ for all $x'$ in the support of $p^*$. Sym
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[importance-sampling]] — contrasts-with: independence sampler is the MH analogue of importance sampling
+- [[metropolis-hastings]] — specializes: metropolis-hastings is the existing node; this new node provides the full algorithmic treatment
+- [[markov-chains]] — uses
+- [[stationary-distribution]] — uses
+- [[detailed-balance]] — uses
+- [[mcmc]] — specializes
 [To be populated during integration]

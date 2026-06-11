@@ -9,12 +9,16 @@ component_scores:
   implementation: null
   operational_mechanism: null
   principled_mechanism: null
+contrasts-with:
+- partial-least-squares
 coverage: 1
 date_created: '2026-06-11'
 date_updated: '2026-06-11'
 domain:
 - statistics
 - machine-learning
+extends:
+- principal-components-analysis
 id: pkis:technique:canonical-correlation-analysis
 knowledge_type: technique
 maturity: evolving
@@ -22,6 +26,8 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - murphy-pml1-intro-ch20
+specializes:
+- factor-analysis
 tags:
 - multi-view-learning
 - paired-data
@@ -44,4 +50,7 @@ CCA is the canonical method for discovering shared structure between two multiva
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[principal-components-analysis]] — extends
+- [[partial-least-squares]] — contrasts-with
+- [[factor-analysis]] — specializes
 [To be populated during integration]

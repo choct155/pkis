@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- normalizing-flows
 component_scores:
   alternatives: null
   conditions: null
@@ -9,6 +11,8 @@ component_scores:
   implementation: null
   operational_mechanism: null
   principled_mechanism: null
+contrasts-with:
+- language-model-perplexity
 coverage: 1
 date_created: '2026-06-11'
 date_updated: '2026-06-11'
@@ -31,6 +35,9 @@ tags:
 - discrete-data
 title: Uniform Dequantization
 understanding: 0
+uses:
+- elbo
+- jensens-inequality
 ---
 
 ## Definition
@@ -46,4 +53,8 @@ Without dequantization, a continuous density model can achieve unbounded log-lik
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[language-model-perplexity]] — contrasts-with: Discrete data needs dequantization for continuous models; perplexity used instead for text
+- [[jensens-inequality]] — uses
+- [[normalizing-flows]] — applies
+- [[elbo]] — uses: Dequantization lower bound is derived via Jensen's inequality / ELBO
 [To be populated during integration]

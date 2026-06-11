@@ -1,13 +1,26 @@
 ---
 aliases: []
 also_type: []
+analogous-to:
+- kernel-ridge-regression
+- kernel-regression-rl
+contrasts-with:
+- kernel-density-estimation
+- regularization
 coverage: 1
 date_created: 2026-05-20
 date_updated: '2026-06-08'
 domain:
 - bayesian-stats
 - statistical-learning
+extends:
+- dual-kernel-ridge-regression
+generalizes:
+- bayesian-linear-regression
+- linear-regression
 id: pkis:technique:gaussian-process-regression
+instantiates:
+- gaussian-process
 knowledge_type: technique
 maturity: settled
 related_concepts:
@@ -18,6 +31,8 @@ related_concepts:
 sources:
 - '[[kroese-statistical-modeling]]'
 - '[[kurz-hybrid-modeling-2022]]'
+specializes:
+- bayesian-nonparametric-models
 tags:
 - gaussian-process
 - nonparametric
@@ -30,11 +45,30 @@ uses:
 - marginal-likelihood
 - laplace-approximation
 - cross-validation
+- gram-matrix
+- covariance-function
+- mercer-kernel
+- posterior-predictive-distribution
+- reproducing-kernel-hilbert-space
 ---
 
 Gaussian Process Regression (GPR) is a nonparametric Bayesian regression method that places a Gaussian process prior over the function space — a collection of random variables where any finite subset is jointly Gaussian, defined by a mean function m(x) and covariance kernel k(x,x') — yielding exact closed-form posterior inference over functions given observed data.
 
 ## Connections
+- [[kernel-regression-rl]] — analogous-to
+- [[regularization]] — contrasts-with
+- [[linear-regression]] — generalizes
+- [[reproducing-kernel-hilbert-space]] — uses
+- [[bayesian-nonparametric-models]] — specializes
+- [[posterior-predictive-distribution]] — uses
+- [[kernel-ridge-regression]] — analogous-to: GP posterior mean equals kernel ridge regression prediction
+- [[mercer-kernel]] — uses
+- [[kernel-density-estimation]] — contrasts-with
+- [[covariance-function]] — uses
+- [[dual-kernel-ridge-regression]] — extends
+- [[bayesian-linear-regression]] — generalizes
+- [[gram-matrix]] — uses
+- [[gaussian-process]] — instantiates
 - [[cross-validation]] — uses: Leave-one-out CV predictions (lppd_loo) are computed cheaply via multivariate-Gaussian identities for model comparison.
 - [[laplace-approximation]] — uses: For non-Gaussian likelihoods the marginal likelihood and latent posterior are approximated by Laplace's method.
 - [[marginal-likelihood]] — uses: Kernel hyperparameters and noise variance are learned by maximizing/sampling the GP log marginal likelihood.

@@ -22,6 +22,10 @@ id: pkis:concept:graph-laplacian
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- multidimensional-scaling
+- graph-convolutional-network
+- label-propagation-graph
 related_concepts: []
 sources:
 - murphy-pml1-intro-ch23
@@ -33,6 +37,8 @@ tags:
 - GCN
 title: Graph Laplacian
 understanding: 0
+uses:
+- eigendecomposition
 ---
 
 ## Definition
@@ -51,4 +57,8 @@ The Laplacian appears throughout graph learning: Laplacian Eigenmaps use its eig
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[label-propagation-graph]] — prerequisite-of
+- [[graph-convolutional-network]] — prerequisite-of
+- [[multidimensional-scaling]] — prerequisite-of
+- [[eigendecomposition]] — uses
 [To be populated during integration]

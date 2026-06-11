@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+analogous-to:
+- fused-lasso
 component_scores:
   alternatives: null
   conditions: null
@@ -17,6 +19,8 @@ domain:
 - optimization
 extends:
 - lasso
+- lasso-regression
+- ridge-regression
 generalizes:
 - lasso
 id: pkis:technique:elastic-net
@@ -48,6 +52,9 @@ A regularized regression penalty (Zou and Hastie, 2005) that combines the L1 (la
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[fused-lasso]] — analogous-to
+- [[ridge-regression]] — extends
+- [[lasso-regression]] — extends
 - [[lasso]] — generalizes
 - [[regularization]] — uses: a combined L1/L2 regularization penalty
 - [[ridge-regression]] — uses: the L2 component is the ridge penalty

@@ -29,6 +29,19 @@ tags:
 - iterative-development
 title: Deep Learning Practical Design Methodology
 understanding: 0
+uses:
+- bias-variance-tradeoff
+- overfitting-and-underfitting
+- learning-curve-analysis
+- grid-search
+- random-search-hyperparameters
+- bayesian-optimization
+- precision-recall-f-score
+- coverage-selective-prediction
+- gradient-checking
+- fit-tiny-dataset-debug
+- activation-gradient-monitoring
+- early-stopping
 ---
 
 ## Definition
@@ -51,4 +64,16 @@ Random experimentation is expensive. A principled loop of measurement, diagnosis
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[early-stopping]] — uses
+- [[activation-gradient-monitoring]] — uses
+- [[fit-tiny-dataset-debug]] — uses
+- [[gradient-checking]] — uses
+- [[coverage-selective-prediction]] — uses
+- [[precision-recall-f-score]] — uses
+- [[bayesian-optimization]] — uses
+- [[random-search-hyperparameters]] — uses
+- [[grid-search]] — uses
+- [[learning-curve-analysis]] — uses
+- [[overfitting-and-underfitting]] — uses
+- [[bias-variance-tradeoff]] — uses
 [To be populated during integration]

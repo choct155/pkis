@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- hessian-matrix
 component_scores:
   application: null
   boundary: null
@@ -20,10 +22,17 @@ id: pkis:concept:positive-definite-matrix
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- covariance-function
+- gaussian-process
+- gaussian-distribution
+- condition-number
 related_concepts: []
 sources:
 - goodfellow-deeplearning-ch02
 - murphy-pml1-intro-ch07
+specializes:
+- linear-algebra
 tags:
 - positive definite
 - positive semidefinite
@@ -32,6 +41,10 @@ tags:
 - covariance
 title: Positive Definite and Positive Semidefinite Matrix
 understanding: 0
+uses:
+- eigendecomposition
+- cholesky-decomposition
+- convex-set-and-function
 ---
 
 ## Definition
@@ -48,4 +61,13 @@ Covariance matrices and kernel (Gram) matrices must be PSD. The Hessian of a los
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[condition-number]] — prerequisite-of
+- [[gaussian-distribution]] — prerequisite-of
+- [[convex-set-and-function]] — uses
+- [[cholesky-decomposition]] — uses
+- [[linear-algebra]] — specializes
+- [[gaussian-process]] — prerequisite-of
+- [[covariance-function]] — prerequisite-of
+- [[hessian-matrix]] — applies
+- [[eigendecomposition]] — uses
 [To be populated during integration]

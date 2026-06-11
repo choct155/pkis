@@ -16,6 +16,9 @@ date_updated: '2026-06-11'
 domain:
 - machine-learning
 - statistics
+generalizes:
+- generalized-linear-models
+- gaussian-process
 id: pkis:concept:predictive-model
 knowledge_type: concept
 maturity: evolving
@@ -23,6 +26,8 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - murphy-pml2-advanced-ch14
+specializes:
+- supervised-learning
 tags:
 - supervised-learning
 - discriminative
@@ -31,6 +36,9 @@ tags:
 - non-parametric
 title: Predictive Model (Discriminative / Regression)
 understanding: 0
+uses:
+- empirical-risk-minimization-erm
+- gibbs-posterior
 ---
 
 ## Definition
@@ -45,4 +53,9 @@ Predictive models are the central workhorse of supervised ML; the distinction be
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[gibbs-posterior]] — uses
+- [[empirical-risk-minimization-erm]] — uses
+- [[gaussian-process]] — generalizes
+- [[generalized-linear-models]] — generalizes
+- [[supervised-learning]] — specializes
 [To be populated during integration]

@@ -8,18 +8,26 @@ component_scores:
   purpose: null
   scope: null
   structure: null
+contrasts-with:
+- pretraining-and-fine-tuning
 coverage: 1
 date_created: '2026-06-11'
 date_updated: '2026-06-11'
 domain:
 - machine-learning
+extends:
+- domain-generalization
 id: pkis:framework:meta-learning
+instantiates:
+- hierarchical-bayesian-models
 knowledge_type: framework
 maturity: evolving
 needs_canonical_source: false
 related_concepts: []
 sources:
 - murphy-pml2-advanced-ch19
+specializes:
+- transfer-learning
 tags:
 - few-shot-learning
 - transfer-learning
@@ -46,4 +54,8 @@ Meta-learning and DG both involve training across multiple distributions, but me
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[pretraining-and-fine-tuning]] — contrasts-with
+- [[transfer-learning]] — specializes
+- [[hierarchical-bayesian-models]] — instantiates
+- [[domain-generalization]] — extends
 [To be populated during integration]

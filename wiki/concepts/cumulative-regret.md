@@ -24,6 +24,8 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - murphy-pml2-advanced-ch34
+specializes:
+- performance-measure
 tags:
 - regret
 - exploration-exploitation
@@ -32,6 +34,9 @@ tags:
 - performance measure
 title: Cumulative Regret
 understanding: 0
+uses:
+- exploration-exploitation-tradeoff
+- multi-armed-bandit
 ---
 
 ## Definition
@@ -46,4 +51,7 @@ Regret is the canonical metric for evaluating exploration-exploitation algorithm
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[performance-measure]] — specializes
+- [[multi-armed-bandit]] — uses
+- [[exploration-exploitation-tradeoff]] — uses
 [To be populated during integration]

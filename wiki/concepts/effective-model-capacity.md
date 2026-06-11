@@ -1,6 +1,10 @@
 ---
 aliases: []
 also_type: []
+analogous-to:
+- vc-dimension
+applies:
+- overfitting-and-underfitting
 component_scores:
   application: null
   boundary: null
@@ -31,6 +35,11 @@ tags:
 - U-shaped-curve
 title: Effective Model Capacity
 understanding: 0
+uses:
+- bias-variance-tradeoff
+- regularization
+- dropout
+- weight-decay-as-prior
 ---
 
 ## Definition
@@ -47,4 +56,10 @@ Manual hyperparameter tuning reduces to controlling effective capacity. The lear
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[weight-decay-as-prior]] — uses
+- [[dropout]] — uses: Dropout reduces effective capacity
+- [[overfitting-and-underfitting]] — applies
+- [[regularization]] — uses
+- [[bias-variance-tradeoff]] — uses
+- [[vc-dimension]] — analogous-to: VC dimension is a formal measure; effective capacity is the practitioner's operational concept
 [To be populated during integration]

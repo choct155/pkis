@@ -20,6 +20,9 @@ id: pkis:concept:logit-pre-activation
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- binary-logistic-regression
+- multinomial-logistic-regression
 related_concepts: []
 sources:
 - murphy-pml1-intro-ch10
@@ -31,6 +34,8 @@ tags:
 - numerical-stability
 title: Logit (Pre-activation)
 understanding: 0
+uses:
+- activation-functions
 ---
 
 ## Definition
@@ -45,4 +50,7 @@ Logits are the natural output space for linear models and neural network classif
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[activation-functions]] — uses
+- [[multinomial-logistic-regression]] — prerequisite-of
+- [[binary-logistic-regression]] — prerequisite-of
 [To be populated during integration]

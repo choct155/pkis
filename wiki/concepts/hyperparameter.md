@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- model-selection-problem
 component_scores:
   application: null
   boundary: null
@@ -18,6 +20,8 @@ domain:
 - bayesian-methods
 - statistics
 id: pkis:concept:hyperparameter
+instantiates:
+- hierarchical-bayesian-models
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
@@ -31,6 +35,9 @@ tags:
 - model-complexity
 title: Hyperparameter
 understanding: 0
+uses:
+- prior-likelihood-posterior
+- regularization
 ---
 
 ## Definition
@@ -45,4 +52,8 @@ Hyperparameters sit one level above ordinary parameters in the Bayesian hierarch
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[model-selection-problem]] — applies
+- [[regularization]] — uses
+- [[prior-likelihood-posterior]] — uses
+- [[hierarchical-bayesian-models]] — instantiates
 [To be populated during integration]

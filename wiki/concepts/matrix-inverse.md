@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- solving-linear-systems
 component_scores:
   application: null
   boundary: null
@@ -19,6 +21,8 @@ id: pkis:concept:matrix-inverse
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- linear-independence
 related_concepts: []
 sources:
 - goodfellow-deeplearning-ch02
@@ -29,6 +33,9 @@ tags:
 - linear system
 title: Matrix Inverse and Singular Matrix
 understanding: 0
+uses:
+- matrix-transpose
+- determinant
 ---
 
 ## Definition
@@ -43,4 +50,8 @@ Matrix inversion provides the closed-form solution $\mathbf{x} = \mathbf{A}^{-1}
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[linear-independence]] — prerequisite-of
+- [[determinant]] — uses
+- [[solving-linear-systems]] — applies
+- [[matrix-transpose]] — uses
 [To be populated during integration]

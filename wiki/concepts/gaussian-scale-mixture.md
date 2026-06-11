@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+analogous-to:
+- spike-and-slab-prior
 component_scores:
   application: null
   boundary: null
@@ -16,7 +18,14 @@ date_updated: '2026-06-11'
 domain:
 - statistics
 - bayesian-inference
+generalizes:
+- horseshoe-prior
+- t-distribution
+- student-t-as-gaussian-scale-mixture
+- spike-and-slab
 id: pkis:concept:gaussian-scale-mixture
+instantiates:
+- shrinkage-priors
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
@@ -24,6 +33,8 @@ related_concepts: []
 sources:
 - murphy-pml2-advanced-ch15
 - murphy-pml2-advanced-ch28
+specializes:
+- mixture-models
 tags:
 - heavy-tails
 - sparsity
@@ -32,6 +43,9 @@ tags:
 - horseshoe
 title: Gaussian Scale Mixture
 understanding: 0
+uses:
+- lasso
+- gaussian-distribution
 ---
 
 ## Definition
@@ -46,4 +60,13 @@ Gaussian scale mixtures (GSMs) enable tractable hierarchical inference: conditio
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[spike-and-slab]] — generalizes
+- [[student-t-as-gaussian-scale-mixture]] — generalizes
+- [[gaussian-distribution]] — uses
+- [[mixture-models]] — specializes
+- [[t-distribution]] — generalizes
+- [[lasso]] — uses: Laplace prior = GSM with Gamma mixing on variance
+- [[shrinkage-priors]] — instantiates
+- [[spike-and-slab-prior]] — analogous-to
+- [[horseshoe-prior]] — generalizes
 [To be populated during integration]

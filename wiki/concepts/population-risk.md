@@ -10,6 +10,8 @@ component_scores:
   prerequisites: null
   scope: null
   transfer: null
+contrasts-with:
+- empirical-risk-minimization
 coverage: 1
 date_created: '2026-06-11'
 date_updated: '2026-06-11'
@@ -20,9 +22,13 @@ id: pkis:concept:population-risk
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- generalization-gap
 related_concepts: []
 sources:
 - murphy-pml1-intro-ch01
+specializes:
+- expected-loss
 tags:
 - generalization
 - expected-loss
@@ -44,4 +50,7 @@ Population risk is the formal target of generalization. Empirical risk minimizat
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[generalization-gap]] — prerequisite-of
+- [[expected-loss]] — specializes
+- [[empirical-risk-minimization]] — contrasts-with
 [To be populated during integration]

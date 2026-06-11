@@ -1,6 +1,9 @@
 ---
 aliases: []
 also_type: []
+applies:
+- neural-networks
+- overfitting-and-underfitting
 component_scores:
   alternatives: null
   conditions: null
@@ -9,12 +12,17 @@ component_scores:
   implementation: null
   operational_mechanism: null
   principled_mechanism: null
+contrasts-with:
+- dropout
+- bayesian-model-averaging
 coverage: 1
 date_created: '2026-06-11'
 date_updated: '2026-06-11'
 domain:
 - deep-learning
 - model-efficiency
+extends:
+- ensemble-learning
 id: pkis:technique:model-compression
 knowledge_type: technique
 maturity: evolving
@@ -30,6 +38,8 @@ tags:
 - neural-networks
 title: Model Compression (Knowledge Distillation)
 understanding: 0
+uses:
+- regularization
 ---
 
 ## Definition
@@ -44,4 +54,10 @@ Enables deployment of large, accurate models on resource-constrained devices (ph
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[bayesian-model-averaging]] — contrasts-with
+- [[overfitting-and-underfitting]] — applies
+- [[dropout]] — contrasts-with
+- [[regularization]] — uses
+- [[ensemble-learning]] — extends
+- [[neural-networks]] — applies
 [To be populated during integration]

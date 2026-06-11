@@ -15,13 +15,21 @@ date_updated: '2026-06-11'
 domain:
 - machine-learning
 - statistics
+extends:
+- linear-regression
 id: pkis:technique:polynomial-feature-expansion
+instantiates:
+- overfitting-and-underfitting
+- bias-variance-tradeoff
 knowledge_type: technique
 maturity: evolving
 needs_canonical_source: false
 related_concepts: []
 sources:
 - murphy-pml1-intro-ch01
+specializes:
+- basis-function-models
+- feature-engineering
 tags:
 - feature-engineering
 - basis-functions
@@ -43,4 +51,9 @@ Polynomial expansion is the simplest instance of the basis-function / kernel tri
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[feature-engineering]] — specializes
+- [[bias-variance-tradeoff]] — instantiates
+- [[overfitting-and-underfitting]] — instantiates
+- [[linear-regression]] — extends
+- [[basis-function-models]] — specializes
 [To be populated during integration]

@@ -18,12 +18,16 @@ domain:
 - economics
 - AI
 id: pkis:concept:value-of-perfect-information
+instantiates:
+- statistical-decision-theory
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
 related_concepts: []
 sources:
 - murphy-pml2-advanced-ch34
+specializes:
+- value-of-information
 tags:
 - information value
 - influence diagram
@@ -31,6 +35,8 @@ tags:
 - experimental design
 title: Value of Perfect Information (VPI)
 understanding: 0
+uses:
+- influence-diagram
 ---
 
 ## Definition
@@ -45,4 +51,7 @@ VPI quantifies how much it is worth paying (in utility units) to acquire a measu
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[statistical-decision-theory]] — instantiates
+- [[value-of-information]] — specializes
+- [[influence-diagram]] — uses
 [To be populated during integration]

@@ -19,6 +19,8 @@ id: pkis:technique:triplet-loss
 knowledge_type: technique
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- n-pairs-loss
 related_concepts: []
 sources:
 - murphy-pml1-intro-ch16
@@ -30,6 +32,9 @@ tags:
 - anchor-positive-negative
 title: Triplet Loss
 understanding: 0
+uses:
+- hinge-loss
+- hard-negative-mining
 ---
 
 ## Definition
@@ -44,4 +49,7 @@ Triplet loss ties positive and negative pair optimization into a single objectiv
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[n-pairs-loss]] — prerequisite-of
+- [[hard-negative-mining]] — uses
+- [[hinge-loss]] — uses
 [To be populated during integration]

@@ -9,6 +9,7 @@ applies:
 - convolutional-code
 - hidden-markov-model
 - filtering-prediction-smoothing
+- state-space-model-sequential
 component_scores:
   alternatives: null
   conditions: null
@@ -44,6 +45,8 @@ title: Forward-Backward (BCJR) Algorithm
 understanding: 0
 uses:
 - trellis
+- d-separation
+- hmm-scaling-factors
 ---
 
 ## Definition
@@ -66,6 +69,9 @@ This is the exact, efficient route to per-bit soft outputs that drive iterative 
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[hmm-scaling-factors]] — uses
+- [[d-separation]] — uses
+- [[state-space-model-sequential]] — applies
 - [[filtering-prediction-smoothing]] — applies: Forward-backward realizes the filtering and smoothing inference tasks via forward and backward messages.
 - [[hidden-markov-model]] — applies: Forward-backward performs filtering and smoothing inference in HMMs via T/O matrix recursions.
 - [[convolutional-code]] — applies: The forward-backward (BCJR) algorithm computes per-bit posteriors on the convolutional trellis.

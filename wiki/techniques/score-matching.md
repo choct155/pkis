@@ -1,6 +1,11 @@
 ---
 aliases: []
 also_type: []
+analogous-to:
+- contrastive-divergence
+- fisher-information
+applies:
+- energy-based-model
 component_scores:
   alternatives: null
   conditions: null
@@ -9,6 +14,9 @@ component_scores:
   implementation: null
   operational_mechanism: null
   principled_mechanism: null
+contrasts-with:
+- maximum-likelihood-estimation
+- partition-function
 coverage: 1
 date_created: '2026-06-11'
 date_updated: '2026-06-11'
@@ -16,6 +24,8 @@ domain:
 - statistics
 - machine-learning
 - generative-models
+generalizes:
+- denoising-score-matching
 id: pkis:technique:score-matching
 knowledge_type: technique
 maturity: evolving
@@ -33,6 +43,11 @@ tags:
 - energy-based-model
 title: Score Matching
 understanding: 0
+uses:
+- score-function
+- information-theory
+- fisher-information
+- stein-score-function
 ---
 
 ## Definition
@@ -47,4 +62,14 @@ Score matching is a consistent estimator for a broad class of models where MLE i
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[fisher-information]] — analogous-to: Fisher divergence uses first-order score differences; Fisher information uses the squared score of the model
+- [[stein-score-function]] — uses
+- [[energy-based-model]] — applies: SM trains EBMs by matching score functions, avoiding the partition function
+- [[denoising-score-matching]] — generalizes
+- [[contrastive-divergence]] — analogous-to
+- [[fisher-information]] — uses
+- [[partition-function]] — contrasts-with
+- [[information-theory]] — uses
+- [[maximum-likelihood-estimation]] — contrasts-with
+- [[score-function]] — uses
 [To be populated during integration]

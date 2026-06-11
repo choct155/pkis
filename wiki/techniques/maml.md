@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+analogous-to:
+- value-of-information
 component_scores:
   alternatives: null
   conditions: null
@@ -17,6 +19,8 @@ domain:
 - meta-learning
 - few-shot-learning
 id: pkis:technique:maml
+instantiates:
+- hierarchical-bayesian-models
 knowledge_type: technique
 maturity: evolving
 needs_canonical_source: false
@@ -31,6 +35,8 @@ tags:
 - fast-adaptation
 title: Model-Agnostic Meta-Learning (MAML)
 understanding: 0
+uses:
+- gradient-descent
 ---
 
 ## Definition
@@ -45,4 +51,7 @@ MAML is equivalent to empirical Bayes with a Gaussian prior centred at $\xi$, pr
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[value-of-information]] — analogous-to: Meta-learning optimises for fast adaptation, analogously to maximising VOI per query in active learning.
+- [[gradient-descent]] — uses
+- [[hierarchical-bayesian-models]] — instantiates: MAML is equivalent to empirical Bayes MAP estimation with a Gaussian prior centred at ξ.
 [To be populated during integration]

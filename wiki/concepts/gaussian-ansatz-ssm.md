@@ -10,6 +10,8 @@ component_scores:
   prerequisites: null
   scope: null
   transfer: null
+contrasts-with:
+- variational-inference
 coverage: 1
 date_created: '2026-06-11'
 date_updated: '2026-06-11'
@@ -21,6 +23,9 @@ id: pkis:concept:gaussian-ansatz-ssm
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- kalman-filter
+- extended-kalman-filter
 related_concepts: []
 sources:
 - murphy-pml2-advanced-ch08
@@ -43,4 +48,7 @@ The Gaussian ansatz makes filtering and smoothing tractable in continuous state 
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[variational-inference]] — contrasts-with
+- [[extended-kalman-filter]] — prerequisite-of
+- [[kalman-filter]] — prerequisite-of
 [To be populated during integration]

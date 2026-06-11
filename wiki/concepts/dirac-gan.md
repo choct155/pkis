@@ -10,6 +10,8 @@ component_scores:
   prerequisites: null
   scope: null
   transfer: null
+contrasts-with:
+- gradient-descent
 coverage: 1
 date_created: '2026-06-11'
 date_updated: '2026-06-11'
@@ -18,6 +20,8 @@ domain:
 - optimization
 - game-theory
 id: pkis:concept:dirac-gan
+instantiates:
+- generative-adversarial-network-framework
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
@@ -32,6 +36,8 @@ tags:
 - Nash-equilibrium
 title: DiracGAN
 understanding: 0
+uses:
+- nash-equilibrium
 ---
 
 ## Definition
@@ -46,4 +52,7 @@ DiracGAN provides the simplest analytic proof that gradient descent does not con
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[nash-equilibrium]] — uses
+- [[gradient-descent]] — contrasts-with: DiracGAN shows gradient descent fails to converge in simple GAN settings.
+- [[generative-adversarial-network-framework]] — instantiates
 [To be populated during integration]

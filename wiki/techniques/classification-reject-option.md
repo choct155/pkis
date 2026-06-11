@@ -15,6 +15,8 @@ date_updated: '2026-06-11'
 domain:
 - machine-learning
 - decision-theory
+extends:
+- cost-sensitive-classification
 id: pkis:technique:classification-reject-option
 knowledge_type: technique
 maturity: evolving
@@ -30,6 +32,9 @@ tags:
 - confidence-threshold
 title: Classification with Reject Option (Chow's Rule)
 understanding: 0
+uses:
+- loss-function-posterior-expected-loss
+- calibration
 ---
 
 ## Definition
@@ -50,4 +55,7 @@ In safety-critical or high-stakes settings (medicine, finance, autonomous system
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[calibration]] — uses: Chow's rule requires well-calibrated posteriors to set the threshold meaningfully
+- [[loss-function-posterior-expected-loss]] — uses
+- [[cost-sensitive-classification]] — extends
 [To be populated during integration]

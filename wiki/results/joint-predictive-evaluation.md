@@ -1,6 +1,11 @@
 ---
 aliases: []
 also_type: []
+analogous-to:
+- expected-log-predictive-density
+applies:
+- aleatoric-vs-epistemic-uncertainty
+- multi-armed-bandit
 component_scores:
   conditions: null
   implications: null
@@ -14,6 +19,8 @@ domain:
 - machine-learning
 - bayesian-statistics
 - information-theory
+extends:
+- scoring-rules
 id: pkis:result:joint-predictive-evaluation
 knowledge_type: result
 maturity: evolving
@@ -29,6 +36,10 @@ tags:
 - KL-divergence
 title: Joint Predictive Evaluation via Environment-KL
 understanding: 0
+uses:
+- kl-divergence
+- mutual-information
+- bayesian-inference
 ---
 
 ## Definition
@@ -43,4 +54,11 @@ This result justifies evaluating **joint** (multi-step) predictive distributions
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[multi-armed-bandit]] — applies
+- [[expected-log-predictive-density]] — analogous-to
+- [[scoring-rules]] — extends
+- [[bayesian-inference]] — uses
+- [[aleatoric-vs-epistemic-uncertainty]] — applies
+- [[mutual-information]] — uses
+- [[kl-divergence]] — uses
 [To be populated during integration]

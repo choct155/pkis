@@ -15,7 +15,11 @@ domain:
 - deep-learning
 - gaussian-processes
 - bayesian-statistics
+extends:
+- gaussian-process-regression
 id: pkis:result:nn-gp-infinite-width-limit
+instantiates:
+- neural-network-gaussian-process-limit
 knowledge_type: result
 maturity: evolving
 needs_canonical_source: false
@@ -30,6 +34,9 @@ tags:
 - Bayesian-neural-network
 title: Neural Network to Gaussian Process in the Infinite-Width Limit
 understanding: 0
+uses:
+- bayesian-neural-networks
+- stationary-and-radial-kernels
 ---
 
 ## Definition
@@ -49,4 +56,8 @@ In the GP limit the multiple outputs become independent, losing the 'weight shar
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[stationary-and-radial-kernels]] — uses
+- [[neural-network-gaussian-process-limit]] — instantiates
+- [[bayesian-neural-networks]] — uses
+- [[gaussian-process-regression]] — extends
 [To be populated during integration]

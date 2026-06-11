@@ -17,6 +17,9 @@ domain:
 - statistics
 - machine-learning
 id: pkis:concept:beta-binomial-model
+instantiates:
+- conjugate-prior
+- bayesian-inference
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
@@ -31,6 +34,12 @@ tags:
 - add-one-smoothing
 title: Beta-Binomial Conjugate Model
 understanding: 0
+uses:
+- beta-distribution
+- map-estimation
+- posterior-predictive-distribution
+- sufficient-statistics
+- binomial-distribution
 ---
 
 ## Definition
@@ -48,4 +57,11 @@ The posterior predictive probability of the next coin toss being heads is $p(\ti
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[binomial-distribution]] — uses
+- [[sufficient-statistics]] — uses
+- [[posterior-predictive-distribution]] — uses
+- [[map-estimation]] — uses
+- [[bayesian-inference]] — instantiates
+- [[beta-distribution]] — uses
+- [[conjugate-prior]] — instantiates
 [To be populated during integration]

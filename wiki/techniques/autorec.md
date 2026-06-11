@@ -9,13 +9,19 @@ component_scores:
   implementation: null
   operational_mechanism: null
   principled_mechanism: null
+contrasts-with:
+- restricted-boltzmann-machine
 coverage: 1
 date_created: '2026-06-11'
 date_updated: '2026-06-11'
 domain:
 - machine-learning
 - recommender-systems
+extends:
+- matrix-factorization-recommender
 id: pkis:technique:autorec
+instantiates:
+- autoencoder
 knowledge_type: technique
 maturity: evolving
 needs_canonical_source: false
@@ -43,4 +49,7 @@ AutoRec shows that a single-hidden-layer autoencoder outperforms more complex mo
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[restricted-boltzmann-machine]] — contrasts-with
+- [[matrix-factorization-recommender]] — extends
+- [[autoencoder]] — instantiates
 [To be populated during integration]

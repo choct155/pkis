@@ -20,6 +20,8 @@ id: pkis:concept:scatter-matrices-lda
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- fishers-linear-discriminant-analysis
 related_concepts: []
 sources:
 - murphy-pml1-intro-ch09
@@ -30,6 +32,8 @@ tags:
 - supervised-learning
 title: Between-Class and Within-Class Scatter Matrices
 understanding: 0
+uses:
+- covariance-and-correlation
 ---
 
 ## Definition
@@ -45,4 +49,6 @@ These two matrices are the fundamental building blocks of Fisher's LDA and relat
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[covariance-and-correlation]] — uses
+- [[fishers-linear-discriminant-analysis]] — prerequisite-of
 [To be populated during integration]

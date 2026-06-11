@@ -15,9 +15,13 @@ domain:
 - statistics
 - machine-learning
 id: pkis:result:kl-nonnegativity-ml-equivalence
+instantiates:
+- kl-divergence
 knowledge_type: result
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- elbo
 related_concepts: []
 sources:
 - bishop-prml-ch01
@@ -29,6 +33,11 @@ tags:
 - convexity
 title: KL Divergence Non-negativity and Equivalence to Maximum Likelihood
 understanding: 0
+uses:
+- jensens-inequality
+- maximum-likelihood-estimation
+- mutual-information
+- likelihood-function
 ---
 
 ## Definition
@@ -46,4 +55,10 @@ Links information-theoretic model fitting with maximum likelihood estimation, mu
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[elbo]] — prerequisite-of
+- [[likelihood-function]] — uses
+- [[mutual-information]] — uses
+- [[maximum-likelihood-estimation]] — uses
+- [[jensens-inequality]] — uses
+- [[kl-divergence]] — instantiates
 [To be populated during integration]

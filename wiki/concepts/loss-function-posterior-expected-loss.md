@@ -18,12 +18,17 @@ domain:
 - statistics
 - machine-learning
 id: pkis:concept:loss-function-posterior-expected-loss
+instantiates:
+- expected-utility-theory
+- decision-theory-foundations
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
 related_concepts: []
 sources:
 - murphy-pml1-intro-ch05
+specializes:
+- expected-loss
 tags:
 - loss
 - risk
@@ -32,6 +37,9 @@ tags:
 - bayesian
 title: Loss Function and Posterior Expected Loss
 understanding: 0
+uses:
+- bayesian-inference
+- maximum-expected-utility-principle
 ---
 
 ## Definition
@@ -49,4 +57,9 @@ An equivalent formulation uses a utility function $U(h,a) = -\ell(h,a)$; the opt
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[expected-loss]] — specializes
+- [[decision-theory-foundations]] — instantiates
+- [[maximum-expected-utility-principle]] — uses
+- [[expected-utility-theory]] — instantiates
+- [[bayesian-inference]] — uses
 [To be populated during integration]

@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- vanishing-gradient-problem
 component_scores:
   application: null
   boundary: null
@@ -17,6 +19,8 @@ domain:
 - machine-learning
 - deep-learning
 - optimization
+extends:
+- generative-adversarial-network-framework
 id: pkis:concept:non-saturating-gan-loss
 knowledge_type: concept
 maturity: evolving
@@ -45,4 +49,6 @@ The non-saturating loss was introduced in the original GAN paper as a practical 
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[vanishing-gradient-problem]] — applies: Designed to avoid vanishing generator gradients when the discriminator is strong.
+- [[generative-adversarial-network-framework]] — extends
 [To be populated during integration]

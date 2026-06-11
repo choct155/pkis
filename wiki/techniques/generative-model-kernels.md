@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- generative-vs-discriminative-models
 component_scores:
   alternatives: null
   conditions: null
@@ -16,6 +18,8 @@ domain:
 - machine-learning
 - kernel-methods
 - probabilistic-modeling
+generalizes:
+- fisher-kernel
 id: pkis:technique:generative-model-kernels
 knowledge_type: technique
 maturity: evolving
@@ -31,6 +35,10 @@ tags:
 - generative-discriminative
 title: Generative-Model Kernels
 understanding: 0
+uses:
+- kernel-construction-rules
+- hidden-markov-model
+- mixture-models
 ---
 
 ## Definition
@@ -48,4 +56,9 @@ Generative models handle variable-length inputs, missing data, and structured do
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[generative-vs-discriminative-models]] — applies
+- [[fisher-kernel]] — generalizes
+- [[mixture-models]] — uses
+- [[hidden-markov-model]] — uses
+- [[kernel-construction-rules]] — uses
 [To be populated during integration]

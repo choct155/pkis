@@ -15,6 +15,10 @@ date_updated: '2026-06-11'
 domain:
 - machine-learning
 - generative-models
+extends:
+- normalizing-flows
+generalizes:
+- ddim-sampler
 id: pkis:technique:flow-matching
 knowledge_type: technique
 maturity: evolving
@@ -30,6 +34,8 @@ tags:
 - continuous-time
 title: Flow Matching
 understanding: 0
+uses:
+- continuous-optimization
 ---
 
 ## Definition
@@ -46,4 +52,7 @@ Flow matching generalises diffusion by allowing non-Gaussian source distribution
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[continuous-optimization]] — uses: Optimal-transport flow matching minimises transport cost
+- [[ddim-sampler]] — generalizes
+- [[normalizing-flows]] — extends
 [To be populated during integration]

@@ -19,9 +19,14 @@ id: pkis:concept:markov-blanket-dpgm
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- gibbs-sampler
+- mean-field-approximation
 related_concepts: []
 sources:
 - murphy-pml2-advanced-ch04
+specializes:
+- markov-blanket
 tags:
 - Gibbs-sampling
 - mean-field
@@ -29,6 +34,8 @@ tags:
 - local-computation
 title: Markov Blanket in Directed Graphical Models
 understanding: 0
+uses:
+- d-separation
 ---
 
 ## Definition
@@ -45,4 +52,8 @@ making the Markov blanket the minimal sufficient neighborhood for local computat
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[d-separation]] — uses
+- [[mean-field-approximation]] — prerequisite-of
+- [[gibbs-sampler]] — prerequisite-of
+- [[markov-blanket]] — specializes
 [To be populated during integration]

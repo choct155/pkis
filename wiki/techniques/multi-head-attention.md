@@ -15,7 +15,11 @@ date_updated: '2026-06-11'
 domain:
 - deep-learning
 - natural-language-processing
+extends:
+- scaled-dot-product-attention
 id: pkis:technique:multi-head-attention
+instantiates:
+- transformer-attention-mechanisms
 knowledge_type: technique
 maturity: evolving
 needs_canonical_source: false
@@ -43,4 +47,6 @@ Multiple heads allow the model to jointly attend to information from different r
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[transformer-attention-mechanisms]] — instantiates
+- [[scaled-dot-product-attention]] — extends
 [To be populated during integration]

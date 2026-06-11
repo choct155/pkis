@@ -17,6 +17,8 @@ domain:
 - causal-inference
 - statistics
 id: pkis:concept:causal-hierarchy
+instantiates:
+- ladder-of-causation
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
@@ -31,6 +33,10 @@ tags:
 - pearl
 title: Causal Hierarchy (Ladder of Causation)
 understanding: 0
+uses:
+- structural-causal-model
+- counterfactuals
+- potential-outcomes-notation
 ---
 
 ## Definition
@@ -52,4 +58,8 @@ The ATE $\mathbb{E}[Y(1)-Y(0)]$ lives at Level 2—it requires only marginal dis
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[potential-outcomes-notation]] — uses
+- [[counterfactuals]] — uses: Level 3 queries are counterfactual queries requiring joint distribution of potential outcomes
+- [[structural-causal-model]] — uses: All three levels of the hierarchy are defined within SCM formalism
+- [[ladder-of-causation]] — instantiates: Formal three-level hierarchy is the mathematical content of the ladder-of-causation principle
 [To be populated during integration]

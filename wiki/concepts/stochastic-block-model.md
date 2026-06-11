@@ -1,6 +1,10 @@
 ---
 aliases: []
 also_type: []
+analogous-to:
+- clustering
+applies:
+- community-detection
 component_scores:
   application: null
   boundary: null
@@ -18,12 +22,16 @@ domain:
 - network-science
 - statistics
 id: pkis:concept:stochastic-block-model
+instantiates:
+- latent-variable-models
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
 related_concepts: []
 sources:
 - murphy-pml2-advanced-ch30
+specializes:
+- mixture-models
 tags:
 - community-detection
 - latent-variable
@@ -47,4 +55,8 @@ The SBM is the workhorse latent variable model for graph clustering. It admits e
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[latent-variable-models]] — instantiates
+- [[clustering]] — analogous-to
+- [[community-detection]] — applies
+- [[mixture-models]] — specializes
 [To be populated during integration]

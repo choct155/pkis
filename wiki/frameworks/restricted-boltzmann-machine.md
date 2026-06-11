@@ -17,6 +17,8 @@ domain:
 - deep-learning
 - statistical-learning
 id: pkis:framework:restricted-boltzmann-machine
+instantiates:
+- undirected-graphical-models
 knowledge_type: framework
 maturity: evolving
 needs_canonical_source: false
@@ -26,6 +28,7 @@ sources:
 specializes:
 - boltzmann-machine
 - undirected-graphical-models
+- energy-based-model
 tags:
 - boltzmann-machine
 - hidden-units
@@ -37,6 +40,10 @@ title: Restricted Boltzmann Machine
 understanding: 0
 uses:
 - gibbs-sampler
+- distributed-representation
+- contrastive-divergence
+- free-energy-ebm
+- activation-functions
 ---
 
 ## Definition
@@ -50,6 +57,12 @@ Exact maximum-likelihood learning requires the gradient term E_Theta(X_j X_k), e
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[activation-functions]] — uses
+- [[free-energy-ebm]] — uses
+- [[contrastive-divergence]] — uses
+- [[distributed-representation]] — uses
+- [[undirected-graphical-models]] — instantiates
+- [[energy-based-model]] — specializes
 - [[multilayer-perceptron]] — contrasts-with: Same single-hidden-layer shape but undirected/generative joint-likelihood vs directed/discriminative conditional cross-entropy.
 - [[gibbs-sampler]] — uses: Block Gibbs sampling of whole layers exploits within-layer conditional independence.
 - [[undirected-graphical-models]] — specializes: An RBM is an undirected, energy-based graphical model over binary units.

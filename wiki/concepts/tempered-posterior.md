@@ -1,6 +1,10 @@
 ---
 aliases: []
 also_type: []
+analogous-to:
+- variational-free-energy
+applies:
+- bayesian-deep-learning
 component_scores:
   application: null
   boundary: null
@@ -31,6 +35,8 @@ tags:
 - misspecification
 title: Tempered / Cold Posterior
 understanding: 0
+uses:
+- kl-divergence
 ---
 
 ## Definition
@@ -46,4 +52,7 @@ In practice, BNN classifiers trained with softmax likelihoods often achieve bett
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[variational-free-energy]] — analogous-to: Generalised VI framework subsumes tempering as a special case of likelihood reweighting
+- [[kl-divergence]] — uses
+- [[bayesian-deep-learning]] — applies
 [To be populated during integration]

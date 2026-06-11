@@ -19,9 +19,13 @@ id: pkis:technique:levenberg-marquardt-hessian
 knowledge_type: technique
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- bayesian-neural-network-laplace
 related_concepts: []
 sources:
 - bishop-prml-ch05
+specializes:
+- hessian-matrix
 tags:
 - hessian
 - second-order
@@ -29,6 +33,9 @@ tags:
 - pruning
 title: Levenberg–Marquardt (Outer-Product) Hessian Approximation
 understanding: 0
+uses:
+- error-backpropagation
+- laplace-approximation
 ---
 
 ## Definition
@@ -47,4 +54,8 @@ Provides a tractable, positive semi-definite surrogate Hessian used in second-or
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[laplace-approximation]] — uses
+- [[bayesian-neural-network-laplace]] — prerequisite-of
+- [[error-backpropagation]] — uses
+- [[hessian-matrix]] — specializes
 [To be populated during integration]

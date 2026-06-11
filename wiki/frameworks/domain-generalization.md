@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- distribution-shift
 component_scores:
   application: null
   limits: null
@@ -8,6 +10,9 @@ component_scores:
   purpose: null
   scope: null
   structure: null
+contrasts-with:
+- multitask-learning
+- meta-learning
 coverage: 1
 date_created: '2026-06-11'
 date_updated: '2026-06-11'
@@ -27,6 +32,8 @@ tags:
 - out-of-distribution-generalization
 title: Domain Generalization
 understanding: 0
+uses:
+- hierarchical-bayesian-models
 ---
 
 ## Definition
@@ -42,4 +49,8 @@ Benchmark studies (DomainBed) have found that well-tuned ERM pooled across sourc
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[meta-learning]] — contrasts-with
+- [[hierarchical-bayesian-models]] — uses
+- [[multitask-learning]] — contrasts-with
+- [[distribution-shift]] — applies
 [To be populated during integration]

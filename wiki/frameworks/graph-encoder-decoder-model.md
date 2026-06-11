@@ -15,6 +15,9 @@ domain:
 - machine-learning
 - graph-learning
 - deep-learning
+generalizes:
+- node-embedding
+- graph-neural-networks
 id: pkis:framework:graph-encoder-decoder-model
 knowledge_type: framework
 maturity: evolving
@@ -29,6 +32,9 @@ tags:
 - GRL
 title: Graph Encoder-Decoder Model (GraphEDM)
 understanding: 0
+uses:
+- variational-autoencoder
+- elbo
 ---
 
 ## Definition
@@ -47,4 +53,8 @@ Having a single formal vocabulary lets practitioners compare methods by their ch
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[elbo]] — uses
+- [[variational-autoencoder]] — uses
+- [[graph-neural-networks]] — generalizes
+- [[node-embedding]] — generalizes
 [To be populated during integration]

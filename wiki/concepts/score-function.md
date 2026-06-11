@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+analogous-to:
+- kl-divergence
 component_scores:
   application: null
   boundary: null
@@ -18,6 +20,8 @@ domain:
 - information-theory
 - generative-models
 id: pkis:concept:score-function
+instantiates:
+- fisher-information
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
@@ -32,6 +36,13 @@ tags:
 - diffusion-models
 title: Score Function of a Distribution
 understanding: 0
+uses:
+- fisher-information
+- entropy
+- maximum-likelihood-estimation
+- exponential-family
+- gradient-and-jacobian
+- hessian-matrix
 ---
 
 ## Definition
@@ -46,4 +57,12 @@ Because the score does not require computing or differentiating the partition fu
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[hessian-matrix]] — uses
+- [[gradient-and-jacobian]] — uses
+- [[exponential-family]] — uses
+- [[maximum-likelihood-estimation]] — uses
+- [[fisher-information]] — instantiates: Fisher information is the covariance of the score
+- [[entropy]] — uses
+- [[fisher-information]] — uses: Fisher information is the variance of the score under the model
+- [[kl-divergence]] — analogous-to: Minimising KL and matching scores are related ways to fit distributions; score is gradient of log-density
 [To be populated during integration]

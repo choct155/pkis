@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+analogous-to:
+- kl-divergence
 component_scores:
   application: null
   boundary: null
@@ -17,6 +19,8 @@ domain:
 - statistics
 - machine-learning
 - probabilistic-inference
+extends:
+- importance-sampling
 id: pkis:concept:optimal-importance-sampling-distribution
 knowledge_type: concept
 maturity: evolving
@@ -48,4 +52,6 @@ Simple proposal distributions $q$ fail to track $p|f|$ in high dimensions, causi
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[kl-divergence]] — analogous-to: minimising IS variance is related to minimising a divergence between proposal and target
+- [[importance-sampling]] — extends: characterises the variance-minimising proposal for IS
 [To be populated during integration]

@@ -1,6 +1,9 @@
 ---
 aliases: []
 also_type: []
+applies:
+- gaussian-mixture-models
+- maximum-likelihood-estimation
 component_scores:
   application: null
   boundary: null
@@ -10,6 +13,8 @@ component_scores:
   prerequisites: null
   scope: null
   transfer: null
+contrasts-with:
+- variational-inference
 coverage: 1
 date_created: '2026-06-11'
 date_updated: '2026-06-11'
@@ -17,6 +22,8 @@ domain:
 - statistics
 - machine-learning
 id: pkis:concept:gmm-likelihood-singularities
+instantiates:
+- overfitting-and-underfitting
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
@@ -31,6 +38,8 @@ tags:
 - singularities
 title: Singularities in Gaussian Mixture Maximum Likelihood
 understanding: 0
+uses:
+- mixture-model-identifiability
 ---
 
 ## Definition
@@ -47,4 +56,9 @@ Singularities are a fundamental limitation of MLE for Gaussian mixtures; they ar
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[mixture-model-identifiability]] — uses
+- [[variational-inference]] — contrasts-with: Bayesian treatment resolves singularities via priors
+- [[overfitting-and-underfitting]] — instantiates
+- [[maximum-likelihood-estimation]] — applies
+- [[gaussian-mixture-models]] — applies
 [To be populated during integration]

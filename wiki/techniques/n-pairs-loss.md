@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+analogous-to:
+- mutual-information
 component_scores:
   alternatives: null
   conditions: null
@@ -17,6 +19,8 @@ domain:
 - representation-learning
 - self-supervised-learning
 id: pkis:technique:n-pairs-loss
+instantiates:
+- cross-entropy-loss
 knowledge_type: technique
 maturity: evolving
 needs_canonical_source: false
@@ -46,4 +50,6 @@ N-pairs loss provides a stronger learning signal than triplet loss by contrastin
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[mutual-information]] — analogous-to: InfoNCE is a lower bound on mutual information between views
+- [[cross-entropy-loss]] — instantiates: N-pairs loss is a softmax cross-entropy over positive vs. negative embeddings
 [To be populated during integration]

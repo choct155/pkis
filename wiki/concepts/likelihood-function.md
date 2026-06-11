@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- polynomial-curve-fitting
 component_scores:
   application: null
   boundary: null
@@ -10,6 +12,8 @@ component_scores:
   prerequisites: null
   scope: null
   transfer: null
+contrasts-with:
+- unbiasedness
 coverage: 1
 date_created: '2026-06-11'
 date_updated: '2026-06-11'
@@ -17,9 +21,14 @@ domain:
 - statistics
 - machine-learning
 id: pkis:concept:likelihood-function
+instantiates:
+- maximum-likelihood-estimation
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- prior-likelihood-posterior
+- bayesian-inference
 related_concepts: []
 sources:
 - bishop-prml-ch01
@@ -31,6 +40,8 @@ tags:
 - log-likelihood
 title: Likelihood Function and Maximum Likelihood Estimation
 understanding: 0
+uses:
+- kl-nonnegativity-ml-equivalence
 ---
 
 ## Definition
@@ -48,4 +59,10 @@ ML is the dominant frequentist point-estimation strategy. The sample variance es
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[unbiasedness]] — contrasts-with
+- [[polynomial-curve-fitting]] — applies
+- [[kl-nonnegativity-ml-equivalence]] — uses
+- [[bayesian-inference]] — prerequisite-of
+- [[prior-likelihood-posterior]] — prerequisite-of
+- [[maximum-likelihood-estimation]] — instantiates
 [To be populated during integration]

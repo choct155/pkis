@@ -1,6 +1,9 @@
 ---
 aliases: []
 also_type: []
+applies:
+- natural-gradient-descent
+- stochastic-vi
 component_scores:
   conditions: null
   implications: null
@@ -29,6 +32,9 @@ tags:
 - exponential-family
 title: Bonnet's Theorem and Price's Theorem
 understanding: 0
+uses:
+- gaussian-distribution
+- exponential-family
 ---
 
 ## Definition
@@ -50,4 +56,8 @@ Bonnet's and Price's theorems provide closed-form, analytically tractable natura
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[stochastic-vi]] — applies
+- [[exponential-family]] — uses
+- [[gaussian-distribution]] — uses
+- [[natural-gradient-descent]] — applies
 [To be populated during integration]

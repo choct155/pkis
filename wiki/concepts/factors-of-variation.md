@@ -22,6 +22,8 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - goodfellow-deeplearning-ch01
+specializes:
+- latent-variable-models
 tags:
 - disentanglement
 - latent-variables
@@ -46,4 +48,5 @@ Deep networks build hierarchical representations that progressively separate and
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[latent-variable-models]] — specializes: Factors of variation are the latent variables in a generative model of data.
 [To be populated during integration]

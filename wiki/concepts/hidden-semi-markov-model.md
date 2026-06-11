@@ -17,6 +17,8 @@ domain:
 - machine-learning
 - statistics
 - time-series
+extends:
+- hidden-markov-model
 id: pkis:concept:hidden-semi-markov-model
 knowledge_type: concept
 maturity: evolving
@@ -24,6 +26,8 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - murphy-pml2-advanced-ch29
+specializes:
+- generalized-semi-markov-process
 tags:
 - HMM
 - duration-modeling
@@ -31,6 +35,8 @@ tags:
 - semi-Markov
 title: Hidden Semi-Markov Model (HSMM)
 understanding: 0
+uses:
+- bayesian-online-changepoint-detection
 ---
 
 ## Definition
@@ -47,4 +53,7 @@ Standard HMMs impose geometric sojourn-time distributions, which is unrealistic 
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[bayesian-online-changepoint-detection]] — uses
+- [[generalized-semi-markov-process]] — specializes
+- [[hidden-markov-model]] — extends
 [To be populated during integration]

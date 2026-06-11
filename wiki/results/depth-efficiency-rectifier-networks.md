@@ -1,6 +1,9 @@
 ---
 aliases: []
 also_type: []
+applies:
+- relu
+- maxout-unit
 component_scores:
   conditions: null
   implications: null
@@ -14,6 +17,8 @@ domain:
 - machine-learning
 - deep-learning
 - complexity-theory
+extends:
+- universal-approximation-theorem-mlp
 id: pkis:result:depth-efficiency-rectifier-networks
 knowledge_type: result
 maturity: evolving
@@ -29,6 +34,8 @@ tags:
 - rectifier-network
 title: Depth-Efficiency of Rectifier Networks (Montufar et al.)
 understanding: 0
+uses:
+- inductive-bias
 ---
 
 ## Definition
@@ -43,4 +50,8 @@ This result provides a formal, complexity-theoretic justification for the empiri
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[inductive-bias]] — uses: Deep architecture encodes prior that functions compose simpler sub-functions.
+- [[maxout-unit]] — applies
+- [[relu]] — applies
+- [[universal-approximation-theorem-mlp]] — extends
 [To be populated during integration]

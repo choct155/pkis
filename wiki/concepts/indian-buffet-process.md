@@ -1,6 +1,10 @@
 ---
 aliases: []
 also_type: []
+analogous-to:
+- chinese-restaurant-process
+applies:
+- latent-variable-models
 component_scores:
   application: null
   boundary: null
@@ -17,7 +21,11 @@ domain:
 - machine-learning
 - statistics
 - probability
+generalizes:
+- factor-analysis
 id: pkis:concept:indian-buffet-process
+instantiates:
+- bayesian-nonparametric-models
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
@@ -46,4 +54,8 @@ The IBP serves as the prior in infinite latent feature models (e.g., infinite IC
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[factor-analysis]] — generalizes
+- [[latent-variable-models]] — applies
+- [[bayesian-nonparametric-models]] — instantiates
+- [[chinese-restaurant-process]] — analogous-to
 [To be populated during integration]

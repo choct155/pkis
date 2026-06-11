@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- clustering
 component_scores:
   application: null
   boundary: null
@@ -10,6 +12,8 @@ component_scores:
   prerequisites: null
   scope: null
   transfer: null
+contrasts-with:
+- rand-index
 coverage: 1
 date_created: '2026-06-11'
 date_updated: '2026-06-11'
@@ -42,4 +46,6 @@ Purity is a simple, interpretable external evaluation metric for clustering when
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[rand-index]] — contrasts-with: purity does not penalize number of clusters; ARI does
+- [[clustering]] — applies
 [To be populated during integration]

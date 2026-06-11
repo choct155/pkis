@@ -9,6 +9,8 @@ component_scores:
   implementation: null
   operational_mechanism: null
   principled_mechanism: null
+contrasts-with:
+- bayesian-inference
 coverage: 1
 date_created: '2026-06-11'
 date_updated: '2026-06-11'
@@ -23,6 +25,8 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - murphy-pml2-advanced-ch03
+specializes:
+- bootstrap
 tags:
 - bootstrap
 - sampling-distribution
@@ -31,6 +35,10 @@ tags:
 - uncertainty-quantification
 title: Bootstrap (Parametric and Non-Parametric)
 understanding: 0
+uses:
+- sampling-distribution
+- maximum-likelihood-estimation
+- asymptotic-normality-mle
 ---
 
 ## Definition
@@ -47,4 +55,9 @@ The bootstrap is model-agnostic and works when closed-form sampling distribution
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[bayesian-inference]] — contrasts-with: Bootstrap ≈ 'poor man's posterior' for weak priors
+- [[asymptotic-normality-mle]] — uses
+- [[maximum-likelihood-estimation]] — uses
+- [[sampling-distribution]] — uses
+- [[bootstrap]] — specializes
 [To be populated during integration]

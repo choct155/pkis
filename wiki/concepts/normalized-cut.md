@@ -31,6 +31,8 @@ tags:
 - combinatorial-optimization
 title: Normalized Cut (Graph Partitioning)
 understanding: 0
+uses:
+- spectral-clustering
 ---
 
 ## Definition
@@ -45,4 +47,5 @@ Ncut balances between small inter-cluster edge weight and large intra-cluster co
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[spectral-clustering]] — uses
 [To be populated during integration]

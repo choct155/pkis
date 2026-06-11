@@ -15,10 +15,14 @@ date_updated: '2026-06-11'
 domain:
 - machine-learning
 - decision-theory
+generalizes:
+- maximum-a-posteriori-estimation-map
 id: pkis:technique:cost-sensitive-classification
 knowledge_type: technique
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- classification-reject-option
 related_concepts: []
 sources:
 - murphy-pml1-intro-ch05
@@ -30,6 +34,10 @@ tags:
 - decision-rule
 title: Cost-Sensitive Classification
 understanding: 0
+uses:
+- loss-function-posterior-expected-loss
+- receiver-operating-characteristic-curve
+- class-confusion-matrix
 ---
 
 ## Definition
@@ -46,4 +54,9 @@ Most real classification tasks (medical diagnosis, fraud detection, autonomous d
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[class-confusion-matrix]] — uses
+- [[classification-reject-option]] — prerequisite-of
+- [[maximum-a-posteriori-estimation-map]] — generalizes
+- [[receiver-operating-characteristic-curve]] — uses: Threshold selection in cost-sensitive classification maps to points on the ROC curve
+- [[loss-function-posterior-expected-loss]] — uses
 [To be populated during integration]

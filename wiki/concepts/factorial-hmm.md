@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- blind-source-separation
 component_scores:
   application: null
   boundary: null
@@ -16,6 +18,8 @@ date_updated: '2026-06-11'
 domain:
 - machine-learning
 - statistics
+extends:
+- hidden-markov-model
 id: pkis:concept:factorial-hmm
 knowledge_type: concept
 maturity: evolving
@@ -30,6 +34,9 @@ tags:
 - approximate-inference
 title: Factorial HMM
 understanding: 0
+uses:
+- mean-field-approximation
+- explaining-away
 ---
 
 ## Definition
@@ -46,4 +53,8 @@ Factorial HMMs achieve exponential representational efficiency by factoring the 
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[blind-source-separation]] — applies
+- [[explaining-away]] — uses
+- [[mean-field-approximation]] — uses
+- [[hidden-markov-model]] — extends
 [To be populated during integration]

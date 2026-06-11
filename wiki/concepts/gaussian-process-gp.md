@@ -18,12 +18,17 @@ domain:
 - statistics
 - probability
 id: pkis:concept:gaussian-process-gp
+instantiates:
+- bayesian-inference
+- latent-variable-models
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
 related_concepts: []
 sources:
 - murphy-pml2-advanced-ch18
+specializes:
+- gaussian-process
 tags:
 - nonparametric
 - Bayesian
@@ -32,6 +37,10 @@ tags:
 - uncertainty-quantification
 title: Gaussian Process (GP)
 understanding: 0
+uses:
+- mercer-kernel
+- covariance-function
+- reproducing-kernel-hilbert-space
 ---
 
 ## Definition
@@ -48,4 +57,10 @@ GPs are the canonical Bayesian nonparametric model for supervised learning. They
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[reproducing-kernel-hilbert-space]] — uses
+- [[latent-variable-models]] — instantiates
+- [[bayesian-inference]] — instantiates
+- [[covariance-function]] — uses
+- [[mercer-kernel]] — uses: GP covariance function must be a Mercer kernel.
+- [[gaussian-process]] — specializes: Chapter 18 develops GP as a prior over functions; existing node covers the concept broadly.
 [To be populated during integration]

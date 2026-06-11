@@ -31,6 +31,9 @@ tags:
 - depth
 title: Receptive Field (CNNs)
 understanding: 0
+uses:
+- sparse-interactions-cnn
+- feature-detection-vision
 ---
 
 ## Definition
@@ -45,4 +48,6 @@ Receptive field size determines what spatial context a unit can use. Designing a
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[feature-detection-vision]] — uses
+- [[sparse-interactions-cnn]] — uses
 [To be populated during integration]

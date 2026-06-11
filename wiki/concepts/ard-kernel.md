@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+analogous-to:
+- lasso
 component_scores:
   application: null
   boundary: null
@@ -23,6 +25,8 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - murphy-pml1-intro-ch17
+specializes:
+- mercer-kernel
 tags:
 - ARD
 - automatic relevance determination
@@ -32,6 +36,8 @@ tags:
 - length scale
 title: ARD Kernel (Automatic Relevance Determination Kernel)
 understanding: 0
+uses:
+- gaussian-process-regression
 ---
 
 ## Definition
@@ -46,4 +52,7 @@ When the length scales $\{\ell_d\}$ are learned by marginal likelihood maximisat
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[lasso]] — analogous-to: Both perform implicit feature selection; ARD via length-scale marginalisation
+- [[gaussian-process-regression]] — uses
+- [[mercer-kernel]] — specializes
 [To be populated during integration]

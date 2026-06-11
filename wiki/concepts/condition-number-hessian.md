@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- gradient-descent
 component_scores:
   application: null
   boundary: null
@@ -30,6 +32,9 @@ tags:
 - gradient-descent
 title: Condition Number of Hessian
 understanding: 0
+uses:
+- hessian-matrix
+- strong-convexity
 ---
 
 ## Definition
@@ -50,4 +55,7 @@ The condition number is the fundamental quantity governing first-order optimizer
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[strong-convexity]] — uses
+- [[gradient-descent]] — applies
+- [[hessian-matrix]] — uses
 [To be populated during integration]

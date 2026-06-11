@@ -15,6 +15,9 @@ date_created: '2026-06-11'
 date_updated: '2026-06-11'
 domain:
 - machine-learning
+extends:
+- soft-margin-svm
+- support-vector-machine
 id: pkis:concept:nu-svm
 knowledge_type: concept
 maturity: evolving
@@ -46,4 +49,6 @@ The parameter $\nu$ has a direct and intuitive interpretation in terms of the da
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[support-vector-machine]] — extends
+- [[soft-margin-svm]] — extends
 [To be populated during integration]

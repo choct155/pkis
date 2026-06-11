@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- language-model
 component_scores:
   alternatives: null
   conditions: null
@@ -9,6 +11,9 @@ component_scores:
   implementation: null
   operational_mechanism: null
   principled_mechanism: null
+contrasts-with:
+- recurrent-neural-network
+- teacher-forcing
 coverage: 1
 date_created: '2026-06-11'
 date_updated: '2026-06-11'
@@ -16,7 +21,12 @@ domain:
 - machine-learning
 - deep-learning
 - sequence-models
+extends:
+- convolutional-neural-networks
 id: pkis:technique:causal-convolution
+instantiates:
+- autoregressive-model
+- autoregressive-model-arm
 knowledge_type: technique
 maturity: evolving
 needs_canonical_source: false
@@ -24,6 +34,8 @@ related_concepts: []
 sources:
 - murphy-pml1-intro-ch15
 - murphy-pml2-advanced-ch22
+specializes:
+- convolutional-neural-networks
 tags:
 - cnn
 - autoregressive
@@ -48,4 +60,11 @@ Causal convolutions provide a fully parallel training procedure (unlike RNNs) wh
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[autoregressive-model-arm]] — instantiates
+- [[convolutional-neural-networks]] — extends: Causal convolution is a CNN with a future-masking constraint
+- [[teacher-forcing]] — contrasts-with: Causal CNNs avoid teacher forcing's exposure bias by design
+- [[recurrent-neural-network]] — contrasts-with
+- [[language-model]] — applies
+- [[autoregressive-model]] — instantiates
+- [[convolutional-neural-networks]] — specializes
 [To be populated during integration]

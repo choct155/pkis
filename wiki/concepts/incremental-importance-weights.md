@@ -16,10 +16,14 @@ date_updated: '2026-06-11'
 domain:
 - statistics
 - machine-learning
+extends:
+- importance-sampling
 id: pkis:concept:incremental-importance-weights
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- particle-filter
 related_concepts: []
 sources:
 - murphy-pml2-advanced-ch13
@@ -43,4 +47,6 @@ Decomposing the weight update into increments enables the recursive weight compu
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[particle-filter]] — prerequisite-of
+- [[importance-sampling]] — extends
 [To be populated during integration]

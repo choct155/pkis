@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+analogous-to:
+- minimum-description-length
 component_scores:
   application: null
   boundary: null
@@ -10,6 +12,8 @@ component_scores:
   prerequisites: null
   scope: null
   transfer: null
+contrasts-with:
+- bayesian-information-criterion
 coverage: 1
 date_created: '2026-06-11'
 date_updated: '2026-06-11'
@@ -18,6 +22,9 @@ domain:
 - machine-learning
 - model-selection
 id: pkis:concept:akaike-information-criterion
+instantiates:
+- information-criteria
+- bias-variance-tradeoff
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
@@ -32,6 +39,8 @@ tags:
 - prediction
 title: Akaike Information Criterion (AIC)
 understanding: 0
+uses:
+- kl-divergence
 ---
 
 ## Definition
@@ -46,4 +55,9 @@ AIC penalises model complexity less heavily than BIC (the penalty is $2D_m$ vs $
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[bias-variance-tradeoff]] — instantiates
+- [[minimum-description-length]] — analogous-to
+- [[kl-divergence]] — uses: AIC is derived from KL divergence between true and fitted model
+- [[information-criteria]] — instantiates
+- [[bayesian-information-criterion]] — contrasts-with
 [To be populated during integration]

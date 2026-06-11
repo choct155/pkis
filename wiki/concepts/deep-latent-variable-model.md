@@ -17,12 +17,16 @@ domain:
 - machine-learning
 - probabilistic-modelling
 id: pkis:concept:deep-latent-variable-model
+instantiates:
+- intractable-posterior
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
 related_concepts: []
 sources:
 - murphy-pml2-advanced-ch21
+specializes:
+- latent-variable-models
 tags:
 - latent-variable
 - generative-model
@@ -31,6 +35,8 @@ tags:
 - intractable-likelihood
 title: Deep Latent Variable Model (DLVM)
 understanding: 0
+uses:
+- exponential-family
 ---
 
 ## Definition
@@ -45,4 +51,7 @@ DLVMs are the probabilistic backbone of VAEs and their many extensions. Because 
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[intractable-posterior]] — instantiates
+- [[exponential-family]] — uses
+- [[latent-variable-models]] — specializes
 [To be populated during integration]

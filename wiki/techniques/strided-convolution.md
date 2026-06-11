@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+analogous-to:
+- max-pooling
 component_scores:
   alternatives: null
   conditions: null
@@ -14,10 +16,14 @@ date_created: '2026-06-11'
 date_updated: '2026-06-11'
 domain:
 - deep-learning
+extends:
+- convolution-operation-nn
 id: pkis:technique:strided-convolution
 knowledge_type: technique
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- transpose-convolution
 related_concepts: []
 sources:
 - goodfellow-deeplearning-ch09
@@ -29,6 +35,8 @@ tags:
 - efficiency
 title: Strided Convolution
 understanding: 0
+uses:
+- zero-padding-cnn
 ---
 
 ## Definition
@@ -44,4 +52,8 @@ Stride $>1$ reduces spatial resolution and computational cost downstream, servin
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[zero-padding-cnn]] — uses
+- [[transpose-convolution]] — prerequisite-of
+- [[max-pooling]] — analogous-to: Both reduce spatial resolution; strided convolution learns the downsampling implicitly.
+- [[convolution-operation-nn]] — extends
 [To be populated during integration]

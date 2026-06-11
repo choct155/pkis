@@ -17,13 +17,19 @@ domain:
 - statistical-physics
 - probabilistic-graphical-models
 - bioinformatics
+generalizes:
+- ising-model
 id: pkis:concept:potts-model
+instantiates:
+- phase-transition
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
 related_concepts: []
 sources:
 - murphy-pml2-advanced-ch04
+specializes:
+- markov-random-field
 tags:
 - multi-label
 - image-segmentation
@@ -48,4 +54,7 @@ Potts models underlie direct coupling analysis (DCA) for protein contact-map pre
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[phase-transition]] — instantiates
+- [[ising-model]] — generalizes
+- [[markov-random-field]] — specializes
 [To be populated during integration]

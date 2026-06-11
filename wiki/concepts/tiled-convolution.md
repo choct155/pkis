@@ -15,6 +15,8 @@ date_created: '2026-06-11'
 date_updated: '2026-06-11'
 domain:
 - deep-learning
+extends:
+- convolution-operation-nn
 id: pkis:concept:tiled-convolution
 knowledge_type: concept
 maturity: evolving
@@ -22,6 +24,8 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - goodfellow-deeplearning-ch09
+specializes:
+- locally-connected-layer
 tags:
 - tiled convolution
 - parameter sharing
@@ -29,6 +33,8 @@ tags:
 - learned invariance
 title: Tiled Convolution
 understanding: 0
+uses:
+- max-pooling
 ---
 
 ## Definition
@@ -44,4 +50,7 @@ When combined with max-pooling, tiled convolution allows adjacent spatial positi
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[max-pooling]] — uses: Tiled conv + max-pool yields invariance to learned transformations.
+- [[locally-connected-layer]] — specializes
+- [[convolution-operation-nn]] — extends
 [To be populated during integration]

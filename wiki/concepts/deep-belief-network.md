@@ -18,6 +18,8 @@ domain:
 - probabilistic-graphical-models
 - generative-models
 id: pkis:concept:deep-belief-network
+instantiates:
+- directed-graphical-models
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
@@ -31,6 +33,11 @@ tags:
 - historical
 title: Deep Belief Network (DBN)
 understanding: 0
+uses:
+- restricted-boltzmann-machine
+- undirected-graphical-models
+- greedy-layer-wise-pretraining
+- elbo
 ---
 
 ## Definition
@@ -45,4 +52,9 @@ DBNs were among the first deep models to outperform kernel SVMs (on MNIST), igni
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[elbo]] — uses: Each greedy step approximately maximises a variational lower bound on log p(v).
+- [[greedy-layer-wise-pretraining]] — uses
+- [[undirected-graphical-models]] — uses: The top two layers of a DBN form an undirected (RBM) component.
+- [[directed-graphical-models]] — instantiates: DBN uses directed connections between all layer pairs except the top two.
+- [[restricted-boltzmann-machine]] — uses: DBN is built by stacking RBMs; parameters are copied directly from constituent RBMs.
 [To be populated during integration]

@@ -23,6 +23,8 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - murphy-pml2-advanced-ch19
+specializes:
+- distribution-shift
 tags:
 - distribution-shift
 - prevalence-shift
@@ -30,6 +32,8 @@ tags:
 - unsupervised-adaptation
 title: Label Shift (Prior Shift)
 understanding: 0
+uses:
+- causal-vs-anticausal-prediction
 ---
 
 ## Definition
@@ -47,4 +51,6 @@ Once $q(y)$ is estimated (e.g., via blackbox shift estimation), the posterior is
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[causal-vs-anticausal-prediction]] — uses
+- [[distribution-shift]] — specializes
 [To be populated during integration]

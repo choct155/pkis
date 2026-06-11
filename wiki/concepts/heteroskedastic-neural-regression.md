@@ -1,6 +1,9 @@
 ---
 aliases: []
 also_type: []
+applies:
+- uncertainty-quantification
+- calibration
 component_scores:
   application: null
   boundary: null
@@ -10,6 +13,8 @@ component_scores:
   prerequisites: null
   scope: null
   transfer: null
+contrasts-with:
+- bayesian-neural-networks
 coverage: 1
 date_created: '2026-06-11'
 date_updated: '2026-06-11'
@@ -18,6 +23,8 @@ domain:
 - statistics
 - deep-learning
 id: pkis:concept:heteroskedastic-neural-regression
+instantiates:
+- feedforward-neural-network
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
@@ -49,4 +56,8 @@ The model can represent data-generating processes in which both mean and varianc
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[calibration]] — applies
+- [[uncertainty-quantification]] — applies
+- [[bayesian-neural-networks]] — contrasts-with: Provides point-estimated input-dependent variance vs full posterior
+- [[feedforward-neural-network]] — instantiates
 [To be populated during integration]

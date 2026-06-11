@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- graphical-model-structure-learning
 component_scores:
   conditions: null
   implications: null
@@ -27,6 +29,8 @@ tags:
 - gaussian-graphical-model
 title: Graphical Lasso Sparsity–Accuracy Trade-off
 understanding: 0
+uses:
+- graphical-lasso
 ---
 
 ## Definition
@@ -46,4 +50,6 @@ This monotone relationship between $\lambda$ and sparsity makes the regularisati
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[graphical-model-structure-learning]] — applies
+- [[graphical-lasso]] — uses
 [To be populated during integration]

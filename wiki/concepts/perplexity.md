@@ -1,6 +1,9 @@
 ---
 aliases: []
 also_type: []
+applies:
+- language-model
+- n-gram-language-model
 component_scores:
   application: null
   boundary: null
@@ -17,6 +20,8 @@ domain:
 - information-theory
 - natural-language-processing
 id: pkis:concept:perplexity
+instantiates:
+- cross-entropy-loss
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
@@ -31,6 +36,11 @@ tags:
 - branching-factor
 title: Perplexity
 understanding: 0
+uses:
+- cross-entropy
+- entropy
+- binary-entropy-function
+- cross-entropy-loss
 ---
 
 ## Definition
@@ -47,4 +57,11 @@ Perplexity is the standard evaluation metric for language models: a model with p
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[cross-entropy-loss]] — uses
+- [[binary-entropy-function]] — uses
+- [[cross-entropy-loss]] — instantiates
+- [[n-gram-language-model]] — applies
+- [[language-model]] — applies
+- [[entropy]] — uses
+- [[cross-entropy]] — uses
 [To be populated during integration]

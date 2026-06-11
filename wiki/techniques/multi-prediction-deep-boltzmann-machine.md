@@ -9,6 +9,8 @@ component_scores:
   implementation: null
   operational_mechanism: null
   principled_mechanism: null
+contrasts-with:
+- centered-deep-boltzmann-machine
 coverage: 1
 date_created: '2026-06-11'
 date_updated: '2026-06-11'
@@ -16,6 +18,8 @@ domain:
 - deep-learning
 - generative-models
 - approximate-inference
+extends:
+- deep-boltzmann-machine
 id: pkis:technique:multi-prediction-deep-boltzmann-machine
 knowledge_type: technique
 maturity: evolving
@@ -30,6 +34,9 @@ tags:
 - missing-data
 title: Multi-Prediction Deep Boltzmann Machine (MP-DBM)
 understanding: 0
+uses:
+- mean-field-approximation
+- backpropagation
 ---
 
 ## Definition
@@ -44,4 +51,8 @@ MP-DBM enables joint training of DBMs (no greedy pretraining needed) and produce
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[centered-deep-boltzmann-machine]] — contrasts-with: MP-DBM prioritises inference accuracy; centered DBM prioritises likelihood/sample quality.
+- [[backpropagation]] — uses: Back-propagates through the unrolled mean-field inference graph.
+- [[mean-field-approximation]] — uses
+- [[deep-boltzmann-machine]] — extends
 [To be populated during integration]

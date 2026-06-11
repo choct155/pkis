@@ -18,9 +18,13 @@ domain:
 - statistics
 - machine-learning
 id: pkis:concept:hamiltonian-mechanics-sampling
+instantiates:
+- hamiltonian-classical-mechanics
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- detailed-balance
 related_concepts: []
 sources:
 - murphy-pml2-advanced-ch12
@@ -48,4 +52,6 @@ Hamiltonian flow is volume-preserving (Liouville's theorem) and time-reversible.
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[detailed-balance]] — prerequisite-of
+- [[hamiltonian-classical-mechanics]] — instantiates
 [To be populated during integration]

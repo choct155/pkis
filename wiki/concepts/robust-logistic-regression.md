@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- distribution-shift
 component_scores:
   application: null
   boundary: null
@@ -16,6 +18,9 @@ date_updated: '2026-06-11'
 domain:
 - machine-learning
 - statistics
+extends:
+- binary-logistic-regression
+- cross-entropy-loss
 id: pkis:concept:robust-logistic-regression
 knowledge_type: concept
 maturity: evolving
@@ -31,6 +36,8 @@ tags:
 - loss-function
 title: Robust Logistic Regression
 understanding: 0
+uses:
+- mixture-models
 ---
 
 ## Definition
@@ -45,4 +52,8 @@ Standard cross-entropy loss is unbounded, so a single confidently mislabelled ex
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[distribution-shift]] — applies
+- [[cross-entropy-loss]] — extends
+- [[mixture-models]] — uses
+- [[binary-logistic-regression]] — extends
 [To be populated during integration]

@@ -17,6 +17,8 @@ domain:
 - semi-supervised-learning
 - deep-learning
 id: pkis:technique:consistency-regularization
+instantiates:
+- semi-supervised-learning
 knowledge_type: technique
 maturity: evolving
 needs_canonical_source: false
@@ -31,6 +33,10 @@ tags:
 - perturbation
 title: Consistency Regularization
 understanding: 0
+uses:
+- data-augmentation
+- kl-divergence
+- adversarial-examples
 ---
 
 ## Definition
@@ -47,4 +53,8 @@ Consistency regularization formalises the **smoothness assumption**: a good clas
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[adversarial-examples]] — uses: Virtual adversarial training finds the input perturbation maximally changing the model output.
+- [[kl-divergence]] — uses: VAT uses KL divergence to find worst-case adversarial perturbation.
+- [[data-augmentation]] — uses
+- [[semi-supervised-learning]] — instantiates
 [To be populated during integration]

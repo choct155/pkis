@@ -28,6 +28,8 @@ tags:
 - closed-form
 title: RVM Evidence Optimisation and Sparsity Theorem
 understanding: 0
+uses:
+- marginal-likelihood
 ---
 
 ## Definition
@@ -45,4 +47,5 @@ This result (Faul and Tipping, 2002) provides a rigorous mathematical account of
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[marginal-likelihood]] — uses
 [To be populated during integration]

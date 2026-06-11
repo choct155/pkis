@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- robot-localization
 component_scores:
   alternatives: null
   conditions: null
@@ -16,7 +18,11 @@ domain:
 - machine-learning
 - signal-processing
 - robotics
+extends:
+- kalman-filter
 id: pkis:technique:extended-kalman-filter
+instantiates:
+- gaussian-ansatz-ssm
 knowledge_type: technique
 maturity: evolving
 needs_canonical_source: false
@@ -31,6 +37,9 @@ tags:
 - state-estimation
 title: Extended Kalman Filter (EKF)
 understanding: 0
+uses:
+- gradient-and-jacobian
+- taylor-series
 ---
 
 ## Definition
@@ -48,4 +57,9 @@ The EKF is the workhorse of nonlinear state estimation in robotics, navigation (
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[robot-localization]] — applies
+- [[gaussian-ansatz-ssm]] — instantiates
+- [[taylor-series]] — uses
+- [[gradient-and-jacobian]] — uses
+- [[kalman-filter]] — extends
 [To be populated during integration]

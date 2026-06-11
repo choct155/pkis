@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- determinant
 component_scores:
   conditions: null
   implications: null
@@ -27,6 +29,8 @@ tags:
 - planar-flow
 title: Weinstein–Aronszajn Identity (Matrix Determinant Lemma)
 understanding: 0
+uses:
+- low-rank-approximation
 ---
 
 ## Definition
@@ -40,4 +44,6 @@ When $M \ll D$, the right-hand side costs $O(M^3)$ instead of $O(D^3)$. In resid
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[low-rank-approximation]] — uses
+- [[determinant]] — applies
 [To be populated during integration]

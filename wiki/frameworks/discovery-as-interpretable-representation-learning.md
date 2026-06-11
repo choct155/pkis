@@ -15,7 +15,12 @@ domain:
 - machine-learning
 - statistics
 - probability
+generalizes:
+- supervised-learning
+- unsupervised-learning
 id: pkis:framework:discovery-as-interpretable-representation-learning
+instantiates:
+- prediction-generation-subroutines-discovery
 knowledge_type: framework
 maturity: evolving
 needs_canonical_source: false
@@ -30,6 +35,9 @@ tags:
 - representation-learning
 title: Discovery as Interpretable Representation Learning
 understanding: 0
+uses:
+- latent-variable-models
+- inverse-modeling-framework
 ---
 
 ## Definition
@@ -47,4 +55,9 @@ When the forward map $z \to x$ is many-to-one (perceptual aliasing), the inverse
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[prediction-generation-subroutines-discovery]] — instantiates
+- [[unsupervised-learning]] — generalizes
+- [[supervised-learning]] — generalizes
+- [[inverse-modeling-framework]] — uses
+- [[latent-variable-models]] — uses
 [To be populated during integration]

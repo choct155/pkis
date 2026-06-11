@@ -8,6 +8,8 @@ component_scores:
   purpose: null
   scope: null
   structure: null
+contrasts-with:
+- variational-autoencoder
 coverage: 1
 date_created: '2026-06-11'
 date_updated: '2026-06-11'
@@ -16,6 +18,8 @@ domain:
 - computer-vision
 - generative-models
 id: pkis:framework:pixelcnn
+instantiates:
+- autoregressive-model-arm
 knowledge_type: framework
 maturity: evolving
 needs_canonical_source: false
@@ -30,6 +34,8 @@ tags:
 - raster-scan
 title: PixelCNN (2-D Autoregressive Image Model)
 understanding: 0
+uses:
+- causal-convolution
 ---
 
 ## Definition
@@ -52,4 +58,7 @@ PixelCNN demonstrated that exact-likelihood autoregressive models can generate c
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[variational-autoencoder]] — contrasts-with: PixelCNN is an exact-likelihood model; VAE uses a variational bound
+- [[autoregressive-model-arm]] — instantiates
+- [[causal-convolution]] — uses: PixelCNN uses 2-D masked causal convolutions
 [To be populated during integration]

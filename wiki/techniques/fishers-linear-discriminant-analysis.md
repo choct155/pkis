@@ -9,13 +9,19 @@ component_scores:
   implementation: null
   operational_mechanism: null
   principled_mechanism: null
+contrasts-with:
+- principal-component-analysis
 coverage: 1
 date_created: '2026-06-11'
 date_updated: '2026-06-11'
 domain:
 - machine-learning
 - statistics
+extends:
+- linear-discriminant-analysis
 id: pkis:technique:fishers-linear-discriminant-analysis
+instantiates:
+- reduced-rank-lda
 knowledge_type: technique
 maturity: evolving
 needs_canonical_source: false
@@ -30,6 +36,10 @@ tags:
 - supervised
 title: Fisher's Linear Discriminant Analysis (FLDA)
 understanding: 0
+uses:
+- scatter-matrices-lda
+- eigendecomposition
+- low-rank-approximation
 ---
 
 ## Definition
@@ -49,4 +59,10 @@ The rank of $S_B$ is at most $C-1$, so FLDA can extract at most $K \le C-1$ disc
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[reduced-rank-lda]] — instantiates
+- [[low-rank-approximation]] — uses
+- [[eigendecomposition]] — uses
+- [[principal-component-analysis]] — contrasts-with: PCA is unsupervised; FLDA is supervised
+- [[linear-discriminant-analysis]] — extends
+- [[scatter-matrices-lda]] — uses
 [To be populated during integration]

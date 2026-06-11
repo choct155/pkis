@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- loopy-belief-propagation
 component_scores:
   application: null
   boundary: null
@@ -29,6 +31,8 @@ tags:
 - Bethe-approximation
 title: Computation Tree (Belief Propagation)
 understanding: 0
+uses:
+- probabilistic-graphical-models
 ---
 
 ## Definition
@@ -45,4 +49,6 @@ The computation tree provides the main theoretical lens for analysing loopy BP: 
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[probabilistic-graphical-models]] — uses
+- [[loopy-belief-propagation]] — applies
 [To be populated during integration]

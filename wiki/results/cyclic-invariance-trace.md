@@ -1,6 +1,10 @@
 ---
 aliases: []
 also_type: []
+analogous-to:
+- determinant
+applies:
+- lp-norms-frobenius
 component_scores:
   conditions: null
   implications: null
@@ -12,6 +16,8 @@ date_created: '2026-06-11'
 date_updated: '2026-06-11'
 domain:
 - linear-algebra
+extends:
+- trace
 id: pkis:result:cyclic-invariance-trace
 knowledge_type: result
 maturity: evolving
@@ -42,4 +48,7 @@ This identity is ubiquitous in matrix calculus: it lets analysts move factors in
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[lp-norms-frobenius]] — applies
+- [[determinant]] — analogous-to
+- [[trace]] — extends
 [To be populated during integration]

@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+analogous-to:
+- reparameterization-trick
 component_scores:
   application: null
   boundary: null
@@ -29,6 +31,8 @@ tags:
 - reparameterization
 title: Pushforward Distribution
 understanding: 0
+uses:
+- change-of-variables-for-densities
 ---
 
 ## Definition
@@ -43,4 +47,6 @@ The pushforward is the foundational concept underlying normalizing flows, import
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[reparameterization-trick]] — analogous-to
+- [[change-of-variables-for-densities]] — uses
 [To be populated during integration]

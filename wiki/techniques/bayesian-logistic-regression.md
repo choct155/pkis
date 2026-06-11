@@ -15,6 +15,8 @@ date_updated: '2026-06-11'
 domain:
 - Bayesian-inference
 - machine-learning
+extends:
+- logistic-regression
 id: pkis:technique:bayesian-logistic-regression
 knowledge_type: technique
 maturity: evolving
@@ -31,6 +33,12 @@ tags:
 - uncertainty-quantification
 title: Bayesian Logistic Regression (Laplace)
 understanding: 0
+uses:
+- laplace-approximation
+- probit-model
+- posterior-predictive-distribution
+- maximum-a-posteriori-estimation-map
+- regularization
 ---
 
 ## Definition
@@ -49,4 +57,10 @@ This framework regularises logistic regression against over-fitting on separable
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[regularization]] — uses: Gaussian prior is equivalent to L2 regularisation and prevents divergence on separable data
+- [[maximum-a-posteriori-estimation-map]] — uses
+- [[posterior-predictive-distribution]] — uses
+- [[probit-model]] — uses: Probit-Gaussian convolution approximates sigmoid-Gaussian integral for predictive distribution
+- [[laplace-approximation]] — uses
+- [[logistic-regression]] — extends
 [To be populated during integration]

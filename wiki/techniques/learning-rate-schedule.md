@@ -1,6 +1,9 @@
 ---
 aliases: []
 also_type: []
+applies:
+- stochastic-gradient-descent
+- gradient-descent
 component_scores:
   alternatives: null
   conditions: null
@@ -15,10 +18,14 @@ date_updated: '2026-06-11'
 domain:
 - optimization
 - deep-learning
+extends:
+- stochastic-gradient-descent
 id: pkis:technique:learning-rate-schedule
 knowledge_type: technique
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- polyak-ruppert-averaging
 related_concepts: []
 sources:
 - murphy-pml1-intro-ch08
@@ -51,4 +58,8 @@ The learning rate schedule is often the most impactful hyper-parameter in deep l
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[gradient-descent]] — applies
+- [[stochastic-gradient-descent]] — applies
+- [[polyak-ruppert-averaging]] — prerequisite-of
+- [[stochastic-gradient-descent]] — extends
 [To be populated during integration]

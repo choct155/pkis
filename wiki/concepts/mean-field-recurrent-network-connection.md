@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+analogous-to:
+- recurrent-neural-network
 component_scores:
   application: null
   boundary: null
@@ -17,7 +19,11 @@ domain:
 - machine-learning
 - deep-learning
 - probabilistic-inference
+extends:
+- mean-field-variational-inference
 id: pkis:concept:mean-field-recurrent-network-connection
+instantiates:
+- sparse-coding
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
@@ -32,6 +38,8 @@ tags:
 - LISTA
 title: Mean Field Fixed-Point Equations as Recurrent Networks
 understanding: 0
+uses:
+- explaining-away
 ---
 
 ## Definition
@@ -48,4 +56,8 @@ This connection reveals that inference in graphical models and computation in re
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[sparse-coding]] — instantiates
+- [[explaining-away]] — uses
+- [[recurrent-neural-network]] — analogous-to
+- [[mean-field-variational-inference]] — extends
 [To be populated during integration]

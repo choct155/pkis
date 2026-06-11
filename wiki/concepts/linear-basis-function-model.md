@@ -10,19 +10,27 @@ component_scores:
   prerequisites: null
   scope: null
   transfer: null
+contrasts-with:
+- curse-of-dimensionality
 coverage: 1
 date_created: '2026-06-11'
 date_updated: '2026-06-11'
 domain:
 - machine-learning
 - statistics
+generalizes:
+- linear-regression
 id: pkis:concept:linear-basis-function-model
+instantiates:
+- supervised-learning
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
 related_concepts: []
 sources:
 - bishop-prml-ch03
+specializes:
+- basis-function-models
 tags:
 - regression
 - basis-functions
@@ -30,6 +38,8 @@ tags:
 - linear-models
 title: Linear Basis Function Model
 understanding: 0
+uses:
+- activation-functions
 ---
 
 ## Definition
@@ -44,4 +54,9 @@ Linearity in $\mathbf{w}$ yields closed-form maximum-likelihood and MAP solution
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[activation-functions]] — uses: Sigmoidal and Gaussian basis functions are specific choices analogous to activation functions
+- [[curse-of-dimensionality]] — contrasts-with: Fixed basis functions suffer from exponential growth of required basis functions with input dimensionality
+- [[linear-regression]] — generalizes
+- [[basis-function-models]] — specializes
+- [[supervised-learning]] — instantiates
 [To be populated during integration]

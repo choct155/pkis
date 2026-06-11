@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- vanishing-exploding-gradients-rnn
 component_scores:
   application: null
   limits: null
@@ -14,6 +16,11 @@ date_updated: '2026-06-11'
 domain:
 - deep-learning
 - sequence-modeling
+extends:
+- lstm
+- leaky-units-multiscale-rnn
+generalizes:
+- gated-recurrent-unit
 id: pkis:framework:long-short-term-memory
 knowledge_type: framework
 maturity: evolving
@@ -29,6 +36,8 @@ tags:
 - LSTM
 title: Long Short-Term Memory (LSTM)
 understanding: 0
+uses:
+- backpropagation-through-time
 ---
 
 ## Definition
@@ -53,4 +62,9 @@ Greff et al. (2015) and Jozefowicz et al. (2015) show the forget gate is the mos
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[gated-recurrent-unit]] — generalizes
+- [[backpropagation-through-time]] — uses
+- [[leaky-units-multiscale-rnn]] — extends: LSTM generalises leaky units with context-dependent gating
+- [[vanishing-exploding-gradients-rnn]] — applies: LSTM solves the vanishing gradient problem via gated cell-state highway
+- [[lstm]] — extends: lstm existing node is a stub; this node provides full LSTM definition
 [To be populated during integration]

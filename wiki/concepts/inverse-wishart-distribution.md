@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+analogous-to:
+- dirichlet-distribution
 component_scores:
   application: null
   boundary: null
@@ -17,7 +19,11 @@ domain:
 - probability-theory
 - statistics
 - bayesian-inference
+extends:
+- wishart-distribution
 id: pkis:concept:inverse-wishart-distribution
+instantiates:
+- conjugate-prior
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
@@ -32,6 +38,8 @@ tags:
 - inverse-gamma-generalization
 title: Inverse Wishart Distribution
 understanding: 0
+uses:
+- multivariate-normal-model
 ---
 
 ## Definition
@@ -46,4 +54,8 @@ The inverse Wishart is the standard conjugate prior for the covariance matrix $\
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[dirichlet-distribution]] — analogous-to
+- [[multivariate-normal-model]] — uses
+- [[conjugate-prior]] — instantiates
+- [[wishart-distribution]] — extends
 [To be populated during integration]

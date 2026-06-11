@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- convolutional-neural-networks
 component_scores:
   application: null
   limits: null
@@ -15,6 +17,9 @@ domain:
 - machine-learning
 - deep-learning
 - representation-learning
+generalizes:
+- greedy-layer-wise-unsupervised-pretraining
+- zero-shot-learning
 id: pkis:framework:transfer-learning-domain-adaptation
 knowledge_type: framework
 maturity: evolving
@@ -31,6 +36,11 @@ tags:
 - multi-task
 title: Transfer Learning and Domain Adaptation
 understanding: 0
+uses:
+- distribution-shift
+- inductive-priors-representation-learning
+- disentangled-representation
+- pretraining-and-fine-tuning
 ---
 
 ## Definition
@@ -48,4 +58,11 @@ Transfer learning is the dominant paradigm for modern deep learning practice (Im
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[pretraining-and-fine-tuning]] — uses
+- [[convolutional-neural-networks]] — applies: ImageNet-pretrained convnets are a canonical instance
+- [[disentangled-representation]] — uses
+- [[inductive-priors-representation-learning]] — uses
+- [[distribution-shift]] — uses
+- [[zero-shot-learning]] — generalizes
+- [[greedy-layer-wise-unsupervised-pretraining]] — generalizes
 [To be populated during integration]

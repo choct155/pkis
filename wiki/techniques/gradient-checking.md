@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- backpropagation
 component_scores:
   alternatives: null
   conditions: null
@@ -9,6 +11,8 @@ component_scores:
   implementation: null
   operational_mechanism: null
   principled_mechanism: null
+contrasts-with:
+- automatic-differentiation
 coverage: 1
 date_created: '2026-06-11'
 date_updated: '2026-06-11'
@@ -30,6 +34,8 @@ tags:
 - backpropagation
 title: Gradient Checking (Finite-Difference Derivative Verification)
 understanding: 0
+uses:
+- gradient-and-jacobian
 ---
 
 ## Definition
@@ -49,4 +55,7 @@ Using complex perturbation $f(x + i\epsilon)$ avoids cancellation error and perm
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[gradient-and-jacobian]] — uses
+- [[automatic-differentiation]] — contrasts-with: Finite differences serve as a gold-standard check of AD outputs
+- [[backpropagation]] — applies: Used to verify correctness of backprop gradient computations
 [To be populated during integration]

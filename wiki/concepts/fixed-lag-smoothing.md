@@ -10,6 +10,8 @@ component_scores:
   prerequisites: null
   scope: null
   transfer: null
+contrasts-with:
+- kalman-rts-smoother
 coverage: 1
 date_created: '2026-06-11'
 date_updated: '2026-06-11'
@@ -17,6 +19,8 @@ domain:
 - signal-processing
 - machine-learning
 - statistics
+extends:
+- bayes-filter
 id: pkis:concept:fixed-lag-smoothing
 knowledge_type: concept
 maturity: evolving
@@ -45,4 +49,6 @@ Fixed-lag smoothing is practically important in real-time applications (e.g., sp
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[bayes-filter]] — extends
+- [[kalman-rts-smoother]] — contrasts-with
 [To be populated during integration]

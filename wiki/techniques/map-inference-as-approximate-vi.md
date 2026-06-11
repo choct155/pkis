@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- sparse-coding
 component_scores:
   alternatives: null
   conditions: null
@@ -9,6 +11,8 @@ component_scores:
   implementation: null
   operational_mechanism: null
   principled_mechanism: null
+contrasts-with:
+- mean-field-variational-inference
 coverage: 1
 date_created: '2026-06-11'
 date_updated: '2026-06-11'
@@ -16,12 +20,16 @@ domain:
 - machine-learning
 - probabilistic-inference
 id: pkis:technique:map-inference-as-approximate-vi
+instantiates:
+- inference-as-optimization
 knowledge_type: technique
 maturity: evolving
 needs_canonical_source: false
 related_concepts: []
 sources:
 - goodfellow-deeplearning-ch19
+specializes:
+- maximum-a-posteriori-estimation-map
 tags:
 - MAP
 - Dirac-distribution
@@ -30,6 +38,8 @@ tags:
 - latent-variables
 title: MAP Inference as Approximate Variational Inference
 understanding: 0
+uses:
+- elbo
 ---
 
 ## Definition
@@ -47,4 +57,9 @@ Because the Dirac distribution has differential entropy of $-\infty$, the ELBO l
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[mean-field-variational-inference]] — contrasts-with
+- [[sparse-coding]] — applies
+- [[elbo]] — uses
+- [[maximum-a-posteriori-estimation-map]] — specializes
+- [[inference-as-optimization]] — instantiates
 [To be populated during integration]

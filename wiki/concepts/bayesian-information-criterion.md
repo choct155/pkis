@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+analogous-to:
+- minimum-description-length
 component_scores:
   application: null
   boundary: null
@@ -10,6 +12,10 @@ component_scores:
   prerequisites: null
   scope: null
   transfer: null
+contrasts-with:
+- akaike-information-criterion
+- waic
+- deviance-information-criterion
 coverage: 1
 date_created: '2026-06-11'
 date_updated: '2026-06-11'
@@ -18,6 +24,9 @@ domain:
 - machine-learning
 - model-selection
 id: pkis:concept:bayesian-information-criterion
+instantiates:
+- bayesian-occams-razor
+- information-criteria
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
@@ -32,6 +41,9 @@ tags:
 - BIC
 title: Bayesian Information Criterion (BIC)
 understanding: 0
+uses:
+- marginal-likelihood
+- laplace-approximation
 ---
 
 ## Definition
@@ -48,4 +60,12 @@ BIC provides a tractable proxy for the log marginal likelihood and embodies Baye
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[deviance-information-criterion]] — contrasts-with
+- [[information-criteria]] — instantiates
+- [[laplace-approximation]] — uses
+- [[waic]] — contrasts-with
+- [[marginal-likelihood]] — uses
+- [[minimum-description-length]] — analogous-to
+- [[akaike-information-criterion]] — contrasts-with
+- [[bayesian-occams-razor]] — instantiates
 [To be populated during integration]

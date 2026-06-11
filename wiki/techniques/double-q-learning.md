@@ -3,6 +3,7 @@ aliases: []
 also_type: []
 applies:
 - maximization-bias
+- optimizers-curse
 component_scores:
   alternatives: null
   conditions: null
@@ -20,6 +21,8 @@ domain:
 extends:
 - q-learning
 id: pkis:technique:double-q-learning
+instantiates:
+- deep-q-network
 knowledge_type: technique
 maturity: evolving
 needs_canonical_source: false
@@ -51,6 +54,8 @@ Double learning doubles the memory requirement but does *not* increase computati
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[deep-q-network]] — instantiates: Double DQN applies double Q-learning to deep networks
+- [[optimizers-curse]] — applies
 - [[maximization-bias]] — applies: Double Q-learning exists specifically to eliminate maximization bias
 - [[q-learning]] — extends: applies double learning to Q-learning to remove maximization bias
 [To be populated during integration]

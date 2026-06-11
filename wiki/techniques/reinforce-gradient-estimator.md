@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- sigmoid-belief-network
 component_scores:
   alternatives: null
   conditions: null
@@ -9,6 +11,8 @@ component_scores:
   implementation: null
   operational_mechanism: null
   principled_mechanism: null
+contrasts-with:
+- reparameterization-trick
 coverage: 1
 date_created: '2026-06-11'
 date_updated: '2026-06-11'
@@ -18,6 +22,8 @@ domain:
 - reinforcement-learning
 - optimisation
 id: pkis:technique:reinforce-gradient-estimator
+instantiates:
+- policy-gradient-theorem
 knowledge_type: technique
 maturity: evolving
 needs_canonical_source: false
@@ -31,6 +37,8 @@ tags:
 - variance-reduction
 title: REINFORCE Gradient Estimator
 understanding: 0
+uses:
+- monte-carlo-estimator
 ---
 
 ## Definition
@@ -47,4 +55,8 @@ REINFORCE enables gradient-based training through discrete stochastic operations
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[monte-carlo-estimator]] — uses
+- [[sigmoid-belief-network]] — applies
+- [[reparameterization-trick]] — contrasts-with: Reparameterisation applies to continuous variables; REINFORCE targets discrete stochastic nodes.
+- [[policy-gradient-theorem]] — instantiates: REINFORCE is the score-function gradient estimator used in policy gradient RL.
 [To be populated during integration]

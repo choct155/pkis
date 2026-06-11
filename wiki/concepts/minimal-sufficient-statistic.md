@@ -23,6 +23,8 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - murphy-pml2-advanced-ch05
+specializes:
+- sufficient-statistics
 tags:
 - sufficient-statistic
 - data-compression
@@ -31,6 +33,11 @@ tags:
 - minimal
 title: Minimal Sufficient Statistic
 understanding: 0
+uses:
+- pitman-koopman-darmois-theorem
+- exponential-family
+- data-processing-inequality
+- mutual-information
 ---
 
 ## Definition
@@ -51,4 +58,9 @@ Minimal sufficient statistics identify the irreducible information content of da
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[mutual-information]] — uses: Sufficiency defined via I(θ;s(X)) = I(θ;X)
+- [[data-processing-inequality]] — uses
+- [[exponential-family]] — uses
+- [[pitman-koopman-darmois-theorem]] — uses
+- [[sufficient-statistics]] — specializes
 [To be populated during integration]

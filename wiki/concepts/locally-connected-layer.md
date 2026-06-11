@@ -15,6 +15,9 @@ date_created: '2026-06-11'
 date_updated: '2026-06-11'
 domain:
 - deep-learning
+generalizes:
+- convolution-operation-nn
+- tiled-convolution
 id: pkis:concept:locally-connected-layer
 knowledge_type: concept
 maturity: evolving
@@ -44,4 +47,6 @@ Locally connected layers are appropriate when spatial symmetry cannot be assumed
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[tiled-convolution]] — generalizes
+- [[convolution-operation-nn]] — generalizes: Removes parameter sharing, keeping local connectivity.
 [To be populated during integration]

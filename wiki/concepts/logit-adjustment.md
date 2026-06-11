@@ -1,6 +1,9 @@
 ---
 aliases: []
 also_type: []
+applies:
+- generalized-linear-model
+- algorithmic-fairness
 component_scores:
   application: null
   boundary: null
@@ -16,6 +19,8 @@ date_updated: '2026-06-11'
 domain:
 - machine-learning
 - statistics
+extends:
+- logistic-regression
 id: pkis:concept:logit-adjustment
 knowledge_type: concept
 maturity: evolving
@@ -49,4 +54,7 @@ Standard softmax cross-entropy training is dominated by frequent classes. Logit 
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[algorithmic-fairness]] — applies
+- [[generalized-linear-model]] — applies
+- [[logistic-regression]] — extends
 [To be populated during integration]

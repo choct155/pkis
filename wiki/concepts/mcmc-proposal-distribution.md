@@ -18,9 +18,14 @@ domain:
 - bayesian-computation
 - stochastic-processes
 id: pkis:concept:mcmc-proposal-distribution
+instantiates:
+- random-walk-metropolis
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- metropolis-hastings
+- hmc
 related_concepts: []
 sources:
 - murphy-pml2-advanced-ch07
@@ -32,6 +37,8 @@ tags:
 - acceptance-rejection
 title: Proposal Distribution (MCMC)
 understanding: 0
+uses:
+- mcmc
 ---
 
 ## Definition
@@ -46,4 +53,8 @@ The proposal determines mixing speed: too narrow and the chain explores slowly; 
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[mcmc]] — uses
+- [[hmc]] — prerequisite-of
+- [[random-walk-metropolis]] — instantiates
+- [[metropolis-hastings]] — prerequisite-of
 [To be populated during integration]

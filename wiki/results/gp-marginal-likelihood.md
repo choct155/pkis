@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+analogous-to:
+- information-criteria
 component_scores:
   conditions: null
   implications: null
@@ -15,12 +17,16 @@ domain:
 - Bayesian-inference
 - statistics
 id: pkis:result:gp-marginal-likelihood
+instantiates:
+- occam-factor
 knowledge_type: result
 maturity: evolving
 needs_canonical_source: false
 related_concepts: []
 sources:
 - murphy-pml2-advanced-ch18
+specializes:
+- marginal-likelihood
 tags:
 - marginal-likelihood
 - kernel-learning
@@ -29,6 +35,8 @@ tags:
 - GP
 title: GP Marginal Likelihood for Kernel Learning
 understanding: 0
+uses:
+- gaussian-process-gp
 ---
 
 ## Definition
@@ -45,4 +53,8 @@ The GP marginal likelihood is an instance of the Occam factor / evidence framewo
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[information-criteria]] — analogous-to
+- [[occam-factor]] — instantiates
+- [[marginal-likelihood]] — specializes
+- [[gaussian-process-gp]] — uses
 [To be populated during integration]

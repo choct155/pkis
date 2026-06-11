@@ -10,6 +10,9 @@ component_scores:
   prerequisites: null
   scope: null
   transfer: null
+contrasts-with:
+- bayes-factor
+- bayesian-p-value
 coverage: 1
 date_created: '2026-06-11'
 date_updated: '2026-06-11'
@@ -18,6 +21,8 @@ domain:
 - frequentist-statistics
 - hypothesis-testing
 id: pkis:concept:p-value-nhst
+instantiates:
+- hypothesis-testing
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
@@ -32,6 +37,9 @@ tags:
 - significance
 title: p-value and Null Hypothesis Significance Testing (NHST)
 understanding: 0
+uses:
+- sampling-distribution
+- frequentist-confidence-interval
 ---
 
 ## Definition
@@ -47,4 +55,9 @@ The p-value conflates $\Pr(\text{data}|H_0)$ with $\Pr(H_0|\text{data})$; the la
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[bayesian-p-value]] — contrasts-with
+- [[frequentist-confidence-interval]] — uses
+- [[sampling-distribution]] — uses
+- [[bayes-factor]] — contrasts-with
+- [[hypothesis-testing]] — instantiates
 [To be populated during integration]

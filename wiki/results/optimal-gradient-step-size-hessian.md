@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- gradient-descent
 component_scores:
   conditions: null
   implications: null
@@ -28,6 +30,10 @@ tags:
 - Hessian
 title: Optimal Gradient Descent Step Size from Hessian
 understanding: 0
+uses:
+- hessian-matrix
+- condition-number
+- taylor-series
 ---
 
 ## Definition
@@ -48,4 +54,8 @@ This result directly motivates adaptive learning-rate methods (AdaGrad, Adam) an
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[taylor-series]] — uses
+- [[condition-number]] — uses
+- [[gradient-descent]] — applies
+- [[hessian-matrix]] — uses
 [To be populated during integration]

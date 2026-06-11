@@ -16,7 +16,12 @@ date_updated: '2026-06-11'
 domain:
 - optimization
 - machine-learning
+generalizes:
+- lasso
+- elastic-net
 id: pkis:concept:composite-objective
+instantiates:
+- regularization
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
@@ -31,6 +36,8 @@ tags:
 - splitting
 title: Composite Objective (Smooth + Non-smooth)
 understanding: 0
+uses:
+- subgradient-subdifferential
 ---
 
 ## Definition
@@ -47,4 +54,8 @@ Most regularized ML objectives (LASSO, group-LASSO, elastic net) are composite. 
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[elastic-net]] — generalizes
+- [[lasso]] — generalizes
+- [[regularization]] — instantiates
+- [[subgradient-subdifferential]] — uses
 [To be populated during integration]

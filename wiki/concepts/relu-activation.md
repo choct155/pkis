@@ -1,6 +1,11 @@
 ---
 aliases: []
 also_type: []
+analogous-to:
+- dropout
+applies:
+- vanishing-exploding-gradients
+- vanishing-gradient-problem
 component_scores:
   application: null
   boundary: null
@@ -23,6 +28,8 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - murphy-pml1-intro-ch13
+specializes:
+- activation-functions
 tags:
 - activation-function
 - ReLU
@@ -54,4 +61,8 @@ The choice of activation function is one of the most impactful architectural dec
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[dropout]] — analogous-to: GELU motivates as soft dropout
+- [[vanishing-gradient-problem]] — applies
+- [[vanishing-exploding-gradients]] — applies
+- [[activation-functions]] — specializes
 [To be populated during integration]

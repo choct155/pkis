@@ -1,6 +1,10 @@
 ---
 aliases: []
 also_type: []
+analogous-to:
+- probability-mass-function
+applies:
+- random-variable
 component_scores:
   application: null
   boundary: null
@@ -20,9 +24,13 @@ id: pkis:concept:probability-density-function
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- change-of-variables-density
 related_concepts: []
 sources:
 - goodfellow-deeplearning-ch03
+specializes:
+- probability-theory
 tags:
 - continuous
 - distribution
@@ -44,4 +52,8 @@ PDFs underpin nearly all continuous probabilistic models in deep learning, from 
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[change-of-variables-density]] — prerequisite-of
+- [[probability-mass-function]] — analogous-to
+- [[probability-theory]] — specializes
+- [[random-variable]] — applies
 [To be populated during integration]

@@ -16,6 +16,8 @@ date_updated: '2026-06-11'
 domain:
 - optimization
 - machine-learning
+extends:
+- stationary-point-optimality-conditions
 id: pkis:concept:strong-convexity
 knowledge_type: concept
 maturity: evolving
@@ -23,6 +25,8 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - murphy-pml1-intro-ch08
+specializes:
+- convex-set-and-function
 tags:
 - convexity
 - condition-number
@@ -30,6 +34,8 @@ tags:
 - Hessian
 title: Strong Convexity
 understanding: 0
+uses:
+- condition-number-hessian
 ---
 
 ## Definition
@@ -49,4 +55,7 @@ The ratio $\kappa = L/m$ (Lipschitz constant of gradient divided by strong-conve
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[stationary-point-optimality-conditions]] — extends
+- [[condition-number-hessian]] — uses
+- [[convex-set-and-function]] — specializes
 [To be populated during integration]

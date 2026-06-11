@@ -19,6 +19,8 @@ id: pkis:concept:support-vectors
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- support-vector-machine
 related_concepts: []
 sources:
 - bishop-prml-ch07
@@ -29,6 +31,8 @@ tags:
 - KKT
 title: Support Vectors
 understanding: 0
+uses:
+- svm-dual-formulation
 ---
 
 ## Definition
@@ -44,4 +48,6 @@ Sparsity in support vectors is the central computational advantage of SVMs: afte
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[svm-dual-formulation]] — uses
+- [[support-vector-machine]] — prerequisite-of
 [To be populated during integration]

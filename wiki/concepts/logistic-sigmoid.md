@@ -17,7 +17,11 @@ domain:
 - probability-theory
 - machine-learning
 - deep-learning
+generalizes:
+- multinoulli-distribution
 id: pkis:concept:logistic-sigmoid
+instantiates:
+- activation-functions
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
@@ -31,6 +35,9 @@ tags:
 - saturation
 title: Logistic Sigmoid Function
 understanding: 0
+uses:
+- vanishing-gradient-problem
+- softplus-function
 ---
 
 ## Definition
@@ -48,4 +55,8 @@ The softplus function $\zeta(x)=\log(1+\exp(x))$ is the antiderivative of $\sigm
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[multinoulli-distribution]] — generalizes: sigmoid is the 2-class special case of softmax
+- [[softplus-function]] — uses: softplus is the antiderivative of sigmoid
+- [[vanishing-gradient-problem]] — uses: sigmoid saturation is a primary cause of vanishing gradients
+- [[activation-functions]] — instantiates
 [To be populated during integration]

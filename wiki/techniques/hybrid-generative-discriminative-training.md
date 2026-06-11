@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- semi-supervised-learning
 component_scores:
   alternatives: null
   conditions: null
@@ -16,6 +18,8 @@ domain:
 - machine-learning
 - supervised-learning
 - semi-supervised-learning
+extends:
+- generative-vs-discriminative-models
 id: pkis:technique:hybrid-generative-discriminative-training
 knowledge_type: technique
 maturity: evolving
@@ -31,6 +35,9 @@ tags:
 - objective-function
 title: Hybrid Generative–Discriminative Training
 understanding: 0
+uses:
+- gaussian-mixture-models
+- cross-entropy-loss
 ---
 
 ## Definition
@@ -45,4 +52,8 @@ Generative classifiers can handle missing features and enable semi-supervised le
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[semi-supervised-learning]] — applies
+- [[cross-entropy-loss]] — uses
+- [[gaussian-mixture-models]] — uses
+- [[generative-vs-discriminative-models]] — extends
 [To be populated during integration]

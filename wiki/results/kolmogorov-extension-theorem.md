@@ -17,6 +17,9 @@ id: pkis:result:kolmogorov-extension-theorem
 knowledge_type: result
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- stochastic-process-as-prior
+- gaussian-process
 related_concepts: []
 sources:
 - murphy-pml2-advanced-ch31
@@ -28,6 +31,8 @@ tags:
 - bayesian-nonparametric
 title: Kolmogorov Extension Theorem
 understanding: 0
+uses:
+- probability-theory
 ---
 
 ## Definition
@@ -42,4 +47,7 @@ The theorem justifies the entire programme of Bayesian nonparametrics: one only 
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[gaussian-process]] — prerequisite-of
+- [[stochastic-process-as-prior]] — prerequisite-of
+- [[probability-theory]] — uses
 [To be populated during integration]

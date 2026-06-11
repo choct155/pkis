@@ -14,13 +14,24 @@ date_updated: '2026-06-11'
 domain:
 - machine-learning
 - statistics
+extends:
+- pac-learning
+generalizes:
+- maximum-likelihood-estimation
+- maximum-a-posteriori-estimation-map
 id: pkis:framework:empirical-risk-minimization-erm
+instantiates:
+- empirical-risk-minimization
 knowledge_type: framework
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- overfitting-and-underfitting
 related_concepts: []
 sources:
 - murphy-pml2-advanced-ch14
+specializes:
+- structural-risk-minimization
 tags:
 - loss-function
 - regularisation
@@ -29,6 +40,8 @@ tags:
 - optimisation
 title: Empirical Risk Minimization (ERM)
 understanding: 0
+uses:
+- regularization
 ---
 
 ## Definition
@@ -46,4 +59,11 @@ Replacing the point-estimate in ERM with a distribution over parameters, and add
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[overfitting-and-underfitting]] — prerequisite-of
+- [[structural-risk-minimization]] — specializes
+- [[empirical-risk-minimization]] — instantiates: This node IS the canonical ERM concept — link to existing structural-risk-minimization node
+- [[pac-learning]] — extends
+- [[regularization]] — uses
+- [[maximum-a-posteriori-estimation-map]] — generalizes
+- [[maximum-likelihood-estimation]] — generalizes
 [To be populated during integration]

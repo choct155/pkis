@@ -33,6 +33,8 @@ tags:
 - mackay
 title: Monte Carlo Estimator
 understanding: 0
+uses:
+- importance-sampling
 ---
 
 ## Definition
@@ -52,6 +54,7 @@ This is the foundational promise of Monte Carlo: integration over thousand-dimen
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[importance-sampling]] — uses: importance sampling transforms the base MC estimator to reduce variance
 - [[numerical-vs-simulation-integration]] — specializes: The Monte Carlo sample-average estimator is the canonical simulation integration method.
 - [[mcmc]] — prerequisite-of: MCMC supplies the (correlated) samples plugged into the Monte Carlo estimator.
 - [[importance-sampling]] — prerequisite-of: Importance sampling is a reweighted variant of the basic Monte Carlo estimator.

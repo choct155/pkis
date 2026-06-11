@@ -7,12 +7,17 @@ component_scores:
   limitations: null
   proof_sketch: null
   statement: null
+contrasts-with:
+- maximum-likelihood-estimation
+- bayesian-inference
 coverage: 1
 date_created: '2026-06-11'
 date_updated: '2026-06-11'
 domain:
 - bayesian-inference
 - statistical-estimation
+extends:
+- maximum-a-posteriori-estimation-map
 id: pkis:result:map-reparameterisation-noninvariance
 knowledge_type: result
 maturity: evolving
@@ -28,6 +33,9 @@ tags:
 - point-estimation
 title: MAP Estimate Non-Invariance Under Reparameterisation
 understanding: 0
+uses:
+- change-of-variables-for-densities
+- laplace-approximation
 ---
 
 ## Definition
@@ -45,4 +53,9 @@ When computing posterior expectations $\mathbb{E}[g(\theta)|D]$, the change of v
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[laplace-approximation]] — uses
+- [[bayesian-inference]] — contrasts-with
+- [[maximum-likelihood-estimation]] — contrasts-with
+- [[change-of-variables-for-densities]] — uses
+- [[maximum-a-posteriori-estimation-map]] — extends
 [To be populated during integration]

@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+analogous-to:
+- gaussian-distribution
 component_scores:
   application: null
   boundary: null
@@ -44,4 +46,5 @@ The von Mises distribution is the canonical model for periodic/circular data suc
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[gaussian-distribution]] — analogous-to: Circular analogue; reduces to Gaussian for large concentration
 [To be populated during integration]

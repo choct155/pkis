@@ -20,6 +20,9 @@ id: pkis:concept:class-confusion-matrix
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- receiver-operating-characteristic-curve
+- precision-recall-curve
 related_concepts: []
 sources:
 - murphy-pml1-intro-ch05
@@ -32,6 +35,9 @@ tags:
 - recall
 title: Class Confusion Matrix
 understanding: 0
+uses:
+- false-discovery-rate
+- cost-sensitive-classification
 ---
 
 ## Definition
@@ -44,4 +50,8 @@ All standard binary classification metrics — accuracy, TPR, FPR, FDR, F-score,
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[cost-sensitive-classification]] — uses
+- [[false-discovery-rate]] — uses
+- [[precision-recall-curve]] — prerequisite-of
+- [[receiver-operating-characteristic-curve]] — prerequisite-of
 [To be populated during integration]

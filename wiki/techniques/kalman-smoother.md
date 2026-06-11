@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- linear-dynamical-system
 component_scores:
   alternatives: null
   conditions: null
@@ -16,7 +18,11 @@ domain:
 - signal-processing
 - machine-learning
 - control-theory
+extends:
+- kalman-filter
 id: pkis:technique:kalman-smoother
+instantiates:
+- filtering-prediction-smoothing
 knowledge_type: technique
 maturity: evolving
 needs_canonical_source: false
@@ -50,4 +56,7 @@ Forms the E step of EM for LDS parameter learning, providing the posterior momen
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[linear-dynamical-system]] — applies
+- [[filtering-prediction-smoothing]] — instantiates
+- [[kalman-filter]] — extends
 [To be populated during integration]

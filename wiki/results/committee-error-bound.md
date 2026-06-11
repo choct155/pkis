@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- committee-method
 component_scores:
   conditions: null
   implications: null
@@ -27,6 +29,9 @@ tags:
 - convex-loss
 title: Committee Error Bound
 understanding: 0
+uses:
+- jensens-inequality
+- bias-variance-tradeoff
 ---
 
 ## Definition
@@ -44,4 +49,7 @@ Write $y_{\text{COM}} = \frac{1}{M}\sum_m y_m$. By convexity of $L$, $L(y_{\text
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[bias-variance-tradeoff]] — uses
+- [[jensens-inequality]] — uses
+- [[committee-method]] — applies
 [To be populated during integration]

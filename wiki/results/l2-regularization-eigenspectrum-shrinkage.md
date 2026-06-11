@@ -31,6 +31,11 @@ tags:
 - ridge-regression
 title: L2 Regularization Eigenspectrum Shrinkage
 understanding: 0
+uses:
+- ridge-regression
+- hessian-matrix
+- eigendecomposition
+- weight-decay-as-prior
 ---
 
 ## Definition
@@ -48,4 +53,8 @@ This result gives a precise spectral interpretation of weight decay: it acts lik
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[weight-decay-as-prior]] — uses
+- [[eigendecomposition]] — uses
+- [[hessian-matrix]] — uses
+- [[ridge-regression]] — uses
 [To be populated during integration]

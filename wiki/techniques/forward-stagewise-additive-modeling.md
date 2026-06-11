@@ -30,6 +30,7 @@ title: Forward Stagewise Additive Modeling
 understanding: 0
 uses:
 - basis-function-models
+- forward-stagewise-additive-modeling
 ---
 
 ## Definition
@@ -39,6 +40,7 @@ uses:
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[forward-stagewise-additive-modeling]] — uses: self-referential: greedily appends components
 - [[adaboost]] — prerequisite-of
 - [[gradient-boosting]] — prerequisite-of
 - [[basis-function-models]] — uses

@@ -17,13 +17,20 @@ domain:
 - statistics
 - machine-learning
 - causal-inference
+generalizes:
+- latent-variable-models
 id: pkis:concept:data-generating-process
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- distribution-shift
+- identifiability-of-causal-effects
 related_concepts: []
 sources:
 - murphy-pml2-advanced-ch01
+specializes:
+- structural-causal-models
 tags:
 - ground-truth-distribution
 - generative-model
@@ -45,4 +52,8 @@ Distinguishing the DGP from the analyst's approximate model is central to unders
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[identifiability-of-causal-effects]] — prerequisite-of
+- [[distribution-shift]] — prerequisite-of
+- [[structural-causal-models]] — specializes
+- [[latent-variable-models]] — generalizes
 [To be populated during integration]

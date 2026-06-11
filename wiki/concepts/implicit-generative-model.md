@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+analogous-to:
+- approximate-bayesian-computation
 component_scores:
   application: null
   boundary: null
@@ -10,6 +12,9 @@ component_scores:
   prerequisites: null
   scope: null
   transfer: null
+contrasts-with:
+- variational-autoencoder
+- normalizing-flows
 coverage: 1
 date_created: '2026-06-11'
 date_updated: '2026-06-11'
@@ -21,6 +26,8 @@ id: pkis:concept:implicit-generative-model
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- generative-adversarial-network-framework
 related_concepts: []
 sources:
 - murphy-pml2-advanced-ch26
@@ -47,4 +54,8 @@ Implicit models are the natural language for mechanistic simulators (climate, ec
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[normalizing-flows]] — contrasts-with: Normalizing flows require invertible mappings and have a tractable likelihood; implicit models do not.
+- [[approximate-bayesian-computation]] — analogous-to: Both rely on likelihood-free inference by comparing simulated and observed data.
+- [[variational-autoencoder]] — contrasts-with: VAEs are explicit latent-variable models with a tractable ELBO; implicit models lack a likelihood.
+- [[generative-adversarial-network-framework]] — prerequisite-of
 [To be populated during integration]

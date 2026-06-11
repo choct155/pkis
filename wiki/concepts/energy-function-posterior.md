@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+analogous-to:
+- ising-model
 component_scores:
   application: null
   boundary: null
@@ -18,9 +20,13 @@ domain:
 - statistical-physics
 - probabilistic-modeling
 id: pkis:concept:energy-function-posterior
+instantiates:
+- partition-function
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- laplace-approximation
 related_concepts: []
 sources:
 - murphy-pml2-advanced-ch07
@@ -32,6 +38,9 @@ tags:
 - posterior
 title: Energy Function (Unnormalized Posterior)
 understanding: 0
+uses:
+- bayesian-inference
+- maximum-a-posteriori-estimation-map
 ---
 
 ## Definition
@@ -46,4 +55,9 @@ Expressing the posterior as $p(\theta|D) = e^{-\mathcal{E}(\theta)}/Z$ enables a
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[ising-model]] — analogous-to
+- [[maximum-a-posteriori-estimation-map]] — uses
+- [[laplace-approximation]] — prerequisite-of
+- [[partition-function]] — instantiates
+- [[bayesian-inference]] — uses
 [To be populated during integration]

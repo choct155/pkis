@@ -16,6 +16,8 @@ domain:
 - machine-learning
 - gaussian-processes
 - feature-selection
+extends:
+- gaussian-process-regression
 id: pkis:technique:ard-gaussian-process
 knowledge_type: technique
 maturity: evolving
@@ -32,6 +34,10 @@ tags:
 - marginal-likelihood
 title: Automatic Relevance Determination (ARD) in Gaussian Processes
 understanding: 0
+uses:
+- marginal-likelihood
+- stationary-and-radial-kernels
+- automatic-differentiation
 ---
 
 ## Definition
@@ -48,4 +54,8 @@ ARD provides automatic feature selection within the Bayesian kernel framework: n
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[automatic-differentiation]] — uses
+- [[stationary-and-radial-kernels]] — uses
+- [[marginal-likelihood]] — uses
+- [[gaussian-process-regression]] — extends
 [To be populated during integration]

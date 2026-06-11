@@ -17,6 +17,8 @@ domain:
 - deep-learning
 - computer-vision
 id: pkis:concept:translation-equivariance-invariance
+instantiates:
+- inductive-bias
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
@@ -31,6 +33,8 @@ tags:
 - image-classification
 title: Translation Equivariance and Invariance in CNNs
 understanding: 0
+uses:
+- pooling-layer
 ---
 
 ## Definition
@@ -45,4 +49,6 @@ The interplay between equivariance (convolution) and invariance (pooling) is the
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[inductive-bias]] — instantiates: Translation symmetry is encoded as an inductive bias via weight sharing and pooling
+- [[pooling-layer]] — uses: Max/average pooling achieves spatial invariance over the receptive field
 [To be populated during integration]

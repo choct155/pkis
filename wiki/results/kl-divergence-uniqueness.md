@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+analogous-to:
+- desiderata-of-plausible-reasoning
 component_scores:
   conditions: null
   implications: null
@@ -14,6 +16,10 @@ domain:
 - information-theory
 - statistics
 - machine-learning
+extends:
+- kl-divergence
+generalizes:
+- entropy
 id: pkis:result:kl-divergence-uniqueness
 knowledge_type: result
 maturity: evolving
@@ -29,6 +35,8 @@ tags:
 - relative-entropy
 title: KL Divergence Uniqueness Theorem
 understanding: 0
+uses:
+- jensens-inequality
 ---
 
 ## Definition
@@ -45,4 +53,8 @@ This axiomatic uniqueness result justifies KL divergence as the canonical measur
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[jensens-inequality]] — uses: Non-negativity proof uses Jensen's inequality
+- [[entropy]] — generalizes: Entropy is a special case of KL (divergence from uniform)
+- [[desiderata-of-plausible-reasoning]] — analogous-to: Both establish canonical quantities from short lists of rationality desiderata
+- [[kl-divergence]] — extends: Establishes the axiomatic uniqueness of KL divergence among information-gain measures
 [To be populated during integration]

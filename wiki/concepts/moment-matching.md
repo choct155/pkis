@@ -18,9 +18,13 @@ domain:
 - approximate-inference
 - information-theory
 id: pkis:concept:moment-matching
+instantiates:
+- zero-forcing-vs-zero-avoiding-kl
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- expectation-propagation
 related_concepts: []
 sources:
 - bishop-prml-ch10
@@ -32,6 +36,8 @@ tags:
 - KL-minimization
 title: Moment Matching Approximation
 understanding: 0
+uses:
+- exponential-family
 ---
 
 ## Definition
@@ -46,4 +52,7 @@ Provides the tractable computational step inside expectation propagation: instea
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[zero-forcing-vs-zero-avoiding-kl]] — instantiates
+- [[exponential-family]] — uses
+- [[expectation-propagation]] — prerequisite-of
 [To be populated during integration]

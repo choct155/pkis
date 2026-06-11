@@ -1,6 +1,12 @@
 ---
 aliases: []
 also_type: []
+analogous-to:
+- huffman-coding
+applies:
+- neural-language-model
+- language-model
+- n-gram-language-model
 component_scores:
   alternatives: null
   conditions: null
@@ -9,6 +15,8 @@ component_scores:
   implementation: null
   operational_mechanism: null
   principled_mechanism: null
+contrasts-with:
+- language-model-smoothing
 coverage: 1
 date_created: '2026-06-11'
 date_updated: '2026-06-11'
@@ -16,6 +24,8 @@ domain:
 - NLP
 - deep-learning
 - computational-efficiency
+extends:
+- multinomial-logistic-regression
 id: pkis:technique:hierarchical-softmax
 knowledge_type: technique
 maturity: evolving
@@ -32,6 +42,8 @@ tags:
 - NLP
 title: Hierarchical Softmax
 understanding: 0
+uses:
+- huffman-coding
 ---
 
 ## Definition
@@ -46,4 +58,11 @@ Addresses the computational bottleneck of large-vocabulary output layers in neur
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[n-gram-language-model]] — applies
+- [[language-model]] — applies
+- [[huffman-coding]] — uses
+- [[multinomial-logistic-regression]] — extends
+- [[huffman-coding]] — analogous-to
+- [[language-model-smoothing]] — contrasts-with
+- [[neural-language-model]] — applies
 [To be populated during integration]

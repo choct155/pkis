@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- generative-adversarial-network
 component_scores:
   application: null
   boundary: null
@@ -10,6 +12,8 @@ component_scores:
   prerequisites: null
   scope: null
   transfer: null
+contrasts-with:
+- generative-model-precision-recall
 coverage: 1
 date_created: '2026-06-11'
 date_updated: '2026-06-11'
@@ -17,6 +21,8 @@ domain:
 - machine-learning
 - generative-models
 - evaluation
+extends:
+- inception-score
 id: pkis:concept:frechet-inception-distance
 knowledge_type: concept
 maturity: evolving
@@ -33,6 +39,8 @@ tags:
 - FID
 title: Fréchet Inception Distance
 understanding: 0
+uses:
+- gaussian-distribution
 ---
 
 ## Definition
@@ -48,4 +56,8 @@ FID remains the dominant evaluation metric in image generation research. Unlike 
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[generative-model-precision-recall]] — contrasts-with: FID conflates quality and diversity; P/R separates them
+- [[generative-adversarial-network]] — applies
+- [[gaussian-distribution]] — uses
+- [[inception-score]] — extends: FID addresses IS's lack of comparison to real data
 [To be populated during integration]

@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- confounding
 component_scores:
   alternatives: null
   conditions: null
@@ -16,6 +18,8 @@ domain:
 - causal-inference
 - statistics
 id: pkis:technique:austen-plots
+instantiates:
+- sensitivity-analysis
 knowledge_type: technique
 maturity: evolving
 needs_canonical_source: false
@@ -30,6 +34,9 @@ tags:
 - bias
 title: Austen Plots for Sensitivity Analysis
 understanding: 0
+uses:
+- propensity-score
+- aiptw-double-ml
 ---
 
 ## Definition
@@ -48,4 +55,8 @@ Austen plots decouple sensitivity analysis from the observed-data modeling step:
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[aiptw-double-ml]] — uses: Austen plots are compatible with any ML-based estimator for Q and g
+- [[confounding]] — applies
+- [[propensity-score]] — uses
+- [[sensitivity-analysis]] — instantiates
 [To be populated during integration]

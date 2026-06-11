@@ -10,6 +10,8 @@ component_scores:
   prerequisites: null
   scope: null
   transfer: null
+contrasts-with:
+- vanishing-gradient-problem
 coverage: 1
 date_created: '2026-06-11'
 date_updated: '2026-06-11'
@@ -23,6 +25,8 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - goodfellow-deeplearning-ch06
+specializes:
+- activation-functions
 tags:
 - activation-function
 - ReLU
@@ -30,6 +34,10 @@ tags:
 - gradient-flow
 title: Rectified Linear Unit (ReLU)
 understanding: 0
+uses:
+- deep-feedforward-network
+- universal-approximation-theorem-mlp
+- depth-efficiency-rectifier-networks
 ---
 
 ## Definition
@@ -50,4 +58,9 @@ ReLU is the default hidden-unit activation in modern feedforward networks. Unlik
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[depth-efficiency-rectifier-networks]] — uses
+- [[universal-approximation-theorem-mlp]] — uses: Leshno et al. 1993 extended UAT to ReLU.
+- [[vanishing-gradient-problem]] — contrasts-with: ReLU avoids saturation-induced vanishing gradients for positive pre-activations.
+- [[deep-feedforward-network]] — uses
+- [[activation-functions]] — specializes
 [To be populated during integration]

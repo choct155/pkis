@@ -18,6 +18,10 @@ domain:
 - machine-learning
 - statistics
 id: pkis:concept:dag-factorization
+instantiates:
+- probabilistic-graphical-models
+- directed-graphical-models
+- bayesian-networks
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
@@ -32,6 +36,9 @@ tags:
 - directed-graph
 title: DAG Factorization (Directed Graphical Model)
 understanding: 0
+uses:
+- conditional-independence
+- product-rule
 ---
 
 ## Definition
@@ -50,4 +57,9 @@ For $M$ binary nodes with at most $p$ parents each, the naive $2^M - 1$ paramete
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[bayesian-networks]] — instantiates
+- [[product-rule]] — uses
+- [[conditional-independence]] — uses
+- [[directed-graphical-models]] — instantiates
+- [[probabilistic-graphical-models]] — instantiates
 [To be populated during integration]

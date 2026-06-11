@@ -1,11 +1,15 @@
 ---
 aliases: []
 also_type: []
+applies:
+- model-based-rl
 component_scores:
   implications: null
   justification: null
   statement: null
   violations: null
+contrasts-with:
+- physical-symbol-system-hypothesis
 coverage: 1
 date_created: '2026-06-11'
 date_updated: '2026-06-11'
@@ -17,6 +21,9 @@ id: pkis:principle:world-model-primacy
 knowledge_type: principle
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- common-sense-reasoning
+- four-tasks-probabilistic-ml
 related_concepts: []
 sources:
 - murphy-pml2-advanced-ch01
@@ -28,6 +35,9 @@ tags:
 - compositionality
 title: World-Model Primacy
 understanding: 0
+uses:
+- hierarchical-predictive-processing
+- mental-simulation
 ---
 
 ## Definition
@@ -46,4 +56,10 @@ Pure function-approximation (e.g., deep learning as 'glorified curve fitting') c
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[four-tasks-probabilistic-ml]] — prerequisite-of
+- [[physical-symbol-system-hypothesis]] — contrasts-with
+- [[common-sense-reasoning]] — prerequisite-of
+- [[mental-simulation]] — uses
+- [[model-based-rl]] — applies
+- [[hierarchical-predictive-processing]] — uses
 [To be populated during integration]

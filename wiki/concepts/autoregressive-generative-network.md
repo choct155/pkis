@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+analogous-to:
+- language-model
 component_scores:
   application: null
   boundary: null
@@ -17,7 +19,11 @@ domain:
 - deep-learning
 - generative-models
 - density-estimation
+generalizes:
+- sigmoid-belief-network
 id: pkis:concept:autoregressive-generative-network
+instantiates:
+- directed-graphical-models
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
@@ -32,6 +38,8 @@ tags:
 - density-estimation
 title: Auto-Regressive Generative Network (NADE / FVBN)
 understanding: 0
+uses:
+- chain-rule-multivariate
 ---
 
 ## Definition
@@ -46,4 +54,8 @@ Auto-regressive networks (FVBNs, NADE, PixelRNN, WaveNet) provide tractable exac
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[chain-rule-multivariate]] — uses
+- [[language-model]] — analogous-to: Autoregressive sequence models share the chain-rule factorisation structure.
+- [[sigmoid-belief-network]] — generalizes: FVBNs/NADE generalise logistic-regression-per-conditional to neural network conditionals.
+- [[directed-graphical-models]] — instantiates
 [To be populated during integration]

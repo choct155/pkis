@@ -10,6 +10,8 @@ component_scores:
   prerequisites: null
   scope: null
   transfer: null
+contrasts-with:
+- recurrent-neural-network
 coverage: 1
 date_created: '2026-06-11'
 date_updated: '2026-06-11'
@@ -21,6 +23,8 @@ id: pkis:concept:self-attention
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- transformer-architecture
 related_concepts: []
 sources:
 - murphy-pml1-intro-ch15
@@ -31,6 +35,9 @@ tags:
 - sequence
 title: Self-Attention
 understanding: 0
+uses:
+- scaled-dot-product-attention
+- contextual-word-embeddings
 ---
 
 ## Definition
@@ -47,4 +54,8 @@ Self-attention replaces recurrence as the primary mechanism for capturing intra-
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[contextual-word-embeddings]] — uses
+- [[recurrent-neural-network]] — contrasts-with: Self-attention achieves O(1) max path length vs O(n) for RNNs
+- [[transformer-architecture]] — prerequisite-of
+- [[scaled-dot-product-attention]] — uses
 [To be populated during integration]

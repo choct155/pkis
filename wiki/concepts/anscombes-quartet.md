@@ -10,6 +10,9 @@ component_scores:
   prerequisites: null
   scope: null
   transfer: null
+contrasts-with:
+- covariance-and-correlation
+- expectation-and-variance
 coverage: 1
 date_created: '2026-06-11'
 date_updated: '2026-06-11'
@@ -30,6 +33,8 @@ tags:
 - pedagogy
 title: Anscombe's Quartet
 understanding: 0
+uses:
+- density-estimation
 ---
 
 ## Definition
@@ -44,4 +49,7 @@ Anscombe's quartet is the canonical demonstration that summary statistics — me
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[density-estimation]] — uses
+- [[expectation-and-variance]] — contrasts-with
+- [[covariance-and-correlation]] — contrasts-with
 [To be populated during integration]

@@ -20,6 +20,8 @@ id: pkis:framework:inverse-modeling-framework
 knowledge_type: framework
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- well-posed-hypothesis-space
 related_concepts: []
 sources:
 - murphy-pml2-advanced-ch27
@@ -31,6 +33,12 @@ tags:
 - regularisation
 title: Inverse Modeling Framework
 understanding: 0
+uses:
+- bayesian-inference
+- latent-variable-models
+- maximum-a-posteriori-estimation-map
+- model-selection-problem
+- regularization
 ---
 
 ## Definition
@@ -50,4 +58,10 @@ Without priors or regularisation, inverse problems are generically ill-posed (no
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[well-posed-hypothesis-space]] — prerequisite-of
+- [[regularization]] — uses
+- [[model-selection-problem]] — uses
+- [[maximum-a-posteriori-estimation-map]] — uses
+- [[latent-variable-models]] — uses
+- [[bayesian-inference]] — uses
 [To be populated during integration]

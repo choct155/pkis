@@ -1,6 +1,9 @@
 ---
 aliases: []
 also_type: []
+applies:
+- deep-reinforcement-learning
+- neural-networks
 component_scores:
   alternatives: null
   conditions: null
@@ -15,6 +18,8 @@ date_updated: '2026-06-11'
 domain:
 - machine-learning
 - numerical-methods
+generalizes:
+- backpropagation
 id: pkis:technique:reverse-mode-ad
 knowledge_type: technique
 maturity: evolving
@@ -22,6 +27,8 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - murphy-pml2-advanced-ch06
+specializes:
+- automatic-differentiation
 tags:
 - autodiff
 - VJP
@@ -30,6 +37,9 @@ tags:
 - gradient
 title: Reverse-Mode Automatic Differentiation (Backpropagation)
 understanding: 0
+uses:
+- jvp-vjp
+- gradient-and-jacobian
 ---
 
 ## Definition
@@ -49,4 +59,10 @@ At fan-out nodes (a value used by multiple downstream operations), the backward 
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[neural-networks]] — applies
+- [[deep-reinforcement-learning]] — applies
+- [[gradient-and-jacobian]] — uses
+- [[backpropagation]] — generalizes
+- [[jvp-vjp]] — uses
+- [[automatic-differentiation]] — specializes
 [To be populated during integration]

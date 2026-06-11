@@ -16,7 +16,11 @@ date_updated: '2026-06-11'
 domain:
 - information-theory
 - machine-learning
+extends:
+- entropy
 id: pkis:concept:cross-entropy
+instantiates:
+- cross-entropy-loss
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
@@ -30,6 +34,11 @@ tags:
 - compression
 title: Cross Entropy
 understanding: 0
+uses:
+- kl-divergence
+- maximum-likelihood-estimation
+- source-coding-theorem
+- joint-entropy
 ---
 
 ## Definition
@@ -44,4 +53,10 @@ Cross entropy decomposes as $\mathbb{H}_{ce}(p,q) = \mathbb{H}(p) + D_{\mathrm{K
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[joint-entropy]] — uses
+- [[source-coding-theorem]] — uses
+- [[maximum-likelihood-estimation]] — uses
+- [[cross-entropy-loss]] — instantiates
+- [[kl-divergence]] — uses
+- [[entropy]] — extends
 [To be populated during integration]

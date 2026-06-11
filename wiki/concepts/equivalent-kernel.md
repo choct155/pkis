@@ -1,6 +1,10 @@
 ---
 aliases: []
 also_type: []
+analogous-to:
+- gaussian-process
+- the-kernel-trick
+- reproducing-kernel-hilbert-space
 component_scores:
   application: null
   boundary: null
@@ -17,6 +21,8 @@ domain:
 - machine-learning
 - statistics
 id: pkis:concept:equivalent-kernel
+instantiates:
+- covariance-function
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
@@ -30,6 +36,8 @@ tags:
 - bayesian-regression
 title: Equivalent Kernel (Smoother Matrix)
 understanding: 0
+uses:
+- bayesian-linear-regression-predictive
 ---
 
 ## Definition
@@ -46,4 +54,9 @@ Bridges parametric linear models and nonparametric kernel/Gaussian-process metho
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[reproducing-kernel-hilbert-space]] — analogous-to
+- [[covariance-function]] — instantiates
+- [[the-kernel-trick]] — analogous-to
+- [[gaussian-process]] — analogous-to
+- [[bayesian-linear-regression-predictive]] — uses
 [To be populated during integration]

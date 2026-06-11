@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- simultaneous-localization-and-mapping-slam
 component_scores:
   alternatives: null
   conditions: null
@@ -16,6 +18,10 @@ domain:
 - machine-learning
 - robotics
 - statistics
+extends:
+- particle-filter
+generalizes:
+- fastslam
 id: pkis:technique:rao-blackwellized-particle-filter
 knowledge_type: technique
 maturity: evolving
@@ -31,6 +37,8 @@ tags:
 - switching-dynamical-system
 title: Rao-Blackwellized Particle Filter (RBPF)
 understanding: 0
+uses:
+- kalman-filter
 ---
 
 ## Definition
@@ -44,4 +52,8 @@ By marginalising the continuous variables analytically, RBPF reduces the effecti
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[fastslam]] — generalizes
+- [[simultaneous-localization-and-mapping-slam]] — applies
+- [[kalman-filter]] — uses
+- [[particle-filter]] — extends
 [To be populated during integration]

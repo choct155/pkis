@@ -9,12 +9,16 @@ component_scores:
   implementation: null
   operational_mechanism: null
   principled_mechanism: null
+contrasts-with:
+- sgd-momentum
 coverage: 1
 date_created: '2026-06-11'
 date_updated: '2026-06-11'
 domain:
 - machine-learning
 - optimization
+extends:
+- minibatch-sgd
 id: pkis:technique:adagrad
 knowledge_type: technique
 maturity: evolving
@@ -44,4 +48,6 @@ AdaGrad has provably good regret bounds for online convex optimisation and is th
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[sgd-momentum]] — contrasts-with: adapts per-parameter rates rather than accumulating gradient direction
+- [[minibatch-sgd]] — extends
 [To be populated during integration]

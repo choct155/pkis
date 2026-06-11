@@ -10,12 +10,16 @@ component_scores:
   prerequisites: null
   scope: null
   transfer: null
+contrasts-with:
+- curse-of-dimensionality
 coverage: 1
 date_created: '2026-06-11'
 date_updated: '2026-06-11'
 domain:
 - information-theory
 - statistics
+extends:
+- mutual-information
 id: pkis:concept:maximal-information-coefficient
 knowledge_type: concept
 maturity: evolving
@@ -23,6 +27,8 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - murphy-pml1-intro-ch06
+specializes:
+- normalized-mutual-information
 tags:
 - mutual-information
 - nonparametric
@@ -47,4 +53,7 @@ MIC satisfies **equitability**: equally noisy relationships of any functional fo
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[curse-of-dimensionality]] — contrasts-with
+- [[normalized-mutual-information]] — specializes
+- [[mutual-information]] — extends
 [To be populated during integration]

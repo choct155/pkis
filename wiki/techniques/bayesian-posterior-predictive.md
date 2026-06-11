@@ -9,6 +9,8 @@ component_scores:
   implementation: null
   operational_mechanism: null
   principled_mechanism: null
+contrasts-with:
+- maximum-likelihood-estimation
 coverage: 1
 date_created: '2026-06-11'
 date_updated: '2026-06-11'
@@ -17,12 +19,16 @@ domain:
 - bayesian-methods
 - machine-learning
 id: pkis:technique:bayesian-posterior-predictive
+instantiates:
+- bayesian-inference
 knowledge_type: technique
 maturity: evolving
 needs_canonical_source: false
 related_concepts: []
 sources:
 - murphy-pml2-advanced-ch03
+specializes:
+- posterior-predictive-distribution
 tags:
 - posterior-predictive
 - marginalization
@@ -31,6 +37,10 @@ tags:
 - prediction
 title: Posterior Predictive Distribution (Bayesian)
 understanding: 0
+uses:
+- aleatoric-vs-epistemic-uncertainty
+- marginalization
+- beta-distribution
 ---
 
 ## Definition
@@ -48,4 +58,10 @@ Because epistemic uncertainty is retained in the predictive distribution, the po
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[beta-distribution]] — uses: Beta-Bernoulli posterior predictive = Laplace rule of succession
+- [[marginalization]] — uses
+- [[maximum-likelihood-estimation]] — contrasts-with
+- [[aleatoric-vs-epistemic-uncertainty]] — uses
+- [[posterior-predictive-distribution]] — specializes
+- [[bayesian-inference]] — instantiates
 [To be populated during integration]

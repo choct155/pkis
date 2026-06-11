@@ -15,7 +15,11 @@ date_updated: '2026-06-11'
 domain:
 - statistics
 - machine-learning
+generalizes:
+- pitman-yor-process
 id: pkis:technique:stick-breaking-construction
+instantiates:
+- dirichlet-process
 knowledge_type: technique
 maturity: evolving
 needs_canonical_source: false
@@ -30,6 +34,8 @@ tags:
 - nonparametric-bayes
 title: Stick-Breaking Construction
 understanding: 0
+uses:
+- beta-distribution
 ---
 
 ## Definition
@@ -48,4 +54,7 @@ The stick-breaking representation makes the Dirichlet process amenable to variat
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[pitman-yor-process]] — generalizes
+- [[beta-distribution]] — uses
+- [[dirichlet-process]] — instantiates
 [To be populated during integration]

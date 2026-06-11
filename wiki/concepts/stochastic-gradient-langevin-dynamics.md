@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- bayesian-inference
 component_scores:
   application: null
   boundary: null
@@ -17,6 +19,8 @@ domain:
 - statistics
 - machine-learning
 - deep-learning
+extends:
+- stochastic-gradient-descent
 id: pkis:concept:stochastic-gradient-langevin-dynamics
 knowledge_type: concept
 maturity: evolving
@@ -24,6 +28,8 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - murphy-pml2-advanced-ch12
+specializes:
+- langevin-monte-carlo
 tags:
 - mcmc
 - langevin
@@ -46,4 +52,7 @@ SGLD unifies stochastic optimisation and Bayesian posterior sampling: with decre
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[bayesian-inference]] — applies
+- [[stochastic-gradient-descent]] — extends
+- [[langevin-monte-carlo]] — specializes
 [To be populated during integration]

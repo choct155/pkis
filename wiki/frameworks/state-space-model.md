@@ -1,6 +1,10 @@
 ---
 aliases: []
 also_type: []
+analogous-to:
+- partially-observable-mdp
+applies:
+- filtering-prediction-smoothing
 component_scores:
   application: null
   limits: null
@@ -15,6 +19,9 @@ domain:
 - machine-learning
 - statistics
 - time-series
+generalizes:
+- hidden-markov-model
+- dynamic-bayesian-network
 id: pkis:framework:state-space-model
 knowledge_type: framework
 maturity: evolving
@@ -22,6 +29,8 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - murphy-pml2-advanced-ch29
+specializes:
+- latent-variable-models
 tags:
 - sequential-models
 - latent-variables
@@ -29,6 +38,9 @@ tags:
 - graphical-models
 title: State-Space Model (SSM)
 understanding: 0
+uses:
+- probabilistic-graphical-models
+- markov-chains
 ---
 
 ## Definition
@@ -49,4 +61,11 @@ SSMs unify a broad family of sequential models — HMMs, Kalman filters, particl
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[partially-observable-mdp]] — analogous-to
+- [[dynamic-bayesian-network]] — generalizes
+- [[latent-variable-models]] — specializes
+- [[filtering-prediction-smoothing]] — applies
+- [[markov-chains]] — uses
+- [[probabilistic-graphical-models]] — uses
+- [[hidden-markov-model]] — generalizes
 [To be populated during integration]

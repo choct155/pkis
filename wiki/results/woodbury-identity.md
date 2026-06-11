@@ -1,6 +1,10 @@
 ---
 aliases: []
 also_type: []
+applies:
+- bayesian-linear-regression
+- gaussian-process-regression
+- kalman-filter
 component_scores:
   conditions: null
   implications: null
@@ -21,6 +25,8 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - murphy-pml1-intro-ch07
+specializes:
+- solving-linear-systems
 tags:
 - matrix-inversion
 - rank-one-update
@@ -29,6 +35,8 @@ tags:
 - Bayesian-regression
 title: Sherman–Morrison–Woodbury Formula
 understanding: 0
+uses:
+- schur-complement
 ---
 
 ## Definition
@@ -45,4 +53,9 @@ In Bayesian linear regression and Gaussian processes, the posterior requires inv
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[solving-linear-systems]] — specializes
+- [[kalman-filter]] — applies
+- [[gaussian-process-regression]] — applies
+- [[bayesian-linear-regression]] — applies
+- [[schur-complement]] — uses
 [To be populated during integration]

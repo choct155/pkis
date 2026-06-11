@@ -1,6 +1,9 @@
 ---
 aliases: []
 also_type: []
+analogous-to:
+- autoencoder
+- elbo
 component_scores:
   alternatives: null
   conditions: null
@@ -16,10 +19,14 @@ domain:
 - machine-learning
 - deep-learning
 - probabilistic-graphical-models
+extends:
+- score-matching
 id: pkis:technique:denoising-score-matching
 knowledge_type: technique
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- diffusion-processes
 related_concepts: []
 sources:
 - goodfellow-deeplearning-ch18
@@ -33,6 +40,10 @@ tags:
 - energy-based-models
 title: Denoising Score Matching
 understanding: 0
+uses:
+- regularization
+- stein-score-function
+- gaussian-distribution
 ---
 
 ## Definition
@@ -47,4 +58,11 @@ DSM regularizes score matching against overfitting: without smoothing, a consist
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[gaussian-distribution]] — uses: Score of Gaussian kernel is (x - x̃)/σ², giving the closed-form target
+- [[elbo]] — analogous-to: Both provide tractable surrogates for intractable objectives: DSM for the Fisher divergence, ELBO for the log-likelihood
+- [[diffusion-processes]] — prerequisite-of: DSM is the direct training objective for score-based diffusion generative models
+- [[stein-score-function]] — uses
+- [[regularization]] — uses
+- [[autoencoder]] — analogous-to
+- [[score-matching]] — extends
 [To be populated during integration]

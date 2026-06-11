@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+analogous-to:
+- hinge-loss
 component_scores:
   application: null
   boundary: null
@@ -10,6 +12,9 @@ component_scores:
   prerequisites: null
   scope: null
   transfer: null
+contrasts-with:
+- cross-entropy-loss
+- hinge-loss
 coverage: 1
 date_created: '2026-06-11'
 date_updated: '2026-06-11'
@@ -31,6 +36,8 @@ tags:
 - classification
 title: Exponential Loss Function
 understanding: 0
+uses:
+- adaboost
 ---
 
 ## Definition
@@ -45,4 +52,8 @@ The exponential loss is the objective implicitly minimised by AdaBoost through s
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[hinge-loss]] — contrasts-with: both are margin-based surrogates for 0-1 loss
+- [[adaboost]] — uses
+- [[hinge-loss]] — analogous-to
+- [[cross-entropy-loss]] — contrasts-with
 [To be populated during integration]

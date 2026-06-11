@@ -8,6 +8,9 @@ component_scores:
   purpose: null
   scope: null
   structure: null
+contrasts-with:
+- gumbel-softmax
+- posterior-collapse
 coverage: 1
 date_created: '2026-06-11'
 date_updated: '2026-06-11'
@@ -15,6 +18,9 @@ domain:
 - machine-learning
 - generative-models
 - representation-learning
+extends:
+- variational-autoencoder
+- hierarchical-vae
 id: pkis:framework:vq-vae
 knowledge_type: framework
 maturity: evolving
@@ -31,6 +37,9 @@ tags:
 - image-generation
 title: VQ-VAE (Vector-Quantized VAE)
 understanding: 0
+uses:
+- vector-quantization
+- autoregressive-model
 ---
 
 ## Definition
@@ -51,4 +60,10 @@ VQ-VAE avoids posterior collapse (KL is constant under a uniform discrete prior)
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[posterior-collapse]] — contrasts-with: uniform discrete prior makes KL constant, avoiding collapse
+- [[autoregressive-model]] — uses: prior over discrete codes learned with PixelCNN or transformer
+- [[hierarchical-vae]] — extends: VQ-VAE-2 is a hierarchical extension
+- [[gumbel-softmax]] — contrasts-with: discrete VAE uses Gumbel-softmax instead of straight-through
+- [[vector-quantization]] — uses
+- [[variational-autoencoder]] — extends
 [To be populated during integration]

@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+analogous-to:
+- lda-logistic-regression-equivalence
 component_scores:
   application: null
   boundary: null
@@ -17,6 +19,9 @@ domain:
 - machine-learning
 - statistics
 id: pkis:concept:naive-bayes-assumption
+instantiates:
+- naive-bayes-model
+- generative-classifier
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
@@ -30,6 +35,8 @@ tags:
 - classification
 title: Naive Bayes Assumption
 understanding: 0
+uses:
+- conditional-independence
 ---
 
 ## Definition
@@ -47,4 +54,8 @@ When features are in the exponential family, the NBC posterior takes the softmax
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[lda-logistic-regression-equivalence]] — analogous-to: NBC also reduces to logistic regression form for exponential family features
+- [[generative-classifier]] — instantiates
+- [[conditional-independence]] — uses
+- [[naive-bayes-model]] — instantiates
 [To be populated during integration]

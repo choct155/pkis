@@ -19,6 +19,8 @@ domain:
 - statistical-learning
 - optimization
 - bayesian-stats
+generalizes:
+- linear-regression
 id: pkis:technique:iteratively-reweighted-least-squares
 knowledge_type: technique
 maturity: evolving
@@ -37,6 +39,8 @@ understanding: 0
 uses:
 - maximum-likelihood-estimation
 - hessian-matrix
+- glm-gradient-hessian
+- convex-optimization
 ---
 
 ## Definition
@@ -46,6 +50,9 @@ An algorithm for maximum-likelihood fitting of logistic regression (and GLMs gen
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[convex-optimization]] — uses
+- [[linear-regression]] — generalizes
+- [[glm-gradient-hessian]] — uses
 - [[generalized-linear-models]] — applies: IRLS is the general fitting procedure for the GLM family, of which logistic regression is a member
 - [[hessian-matrix]] — uses: Newton step uses the log-likelihood Hessian -X^T W X
 - [[maximum-likelihood-estimation]] — uses: solves the ML score equations via repeated Newton steps

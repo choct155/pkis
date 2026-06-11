@@ -1,6 +1,11 @@
 ---
 aliases: []
 also_type: []
+analogous-to:
+- variable-elimination
+applies:
+- markov-random-field
+- dag-factorization
 component_scores:
   alternatives: null
   conditions: null
@@ -36,6 +41,9 @@ tags:
 - cycles
 title: Junction Tree Algorithm
 understanding: 0
+uses:
+- sum-product-algorithm
+- moralization
 ---
 
 ## Definition
@@ -55,6 +63,11 @@ It delineates the boundary between exact and approximate inference: marginalizat
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[dag-factorization]] — applies
+- [[markov-random-field]] — applies
+- [[variable-elimination]] — analogous-to
+- [[moralization]] — uses
+- [[sum-product-algorithm]] — uses
 - [[variable-elimination]] — generalizes
 - [[belief-propagation]] — contrasts-with: Junction tree is exact-but-exponential-in-treewidth; loopy belief propagation is cheap-but-approximate on cyclic graphs.
 - [[sum-product-algorithm]] — extends: Restores exactness on cyclic graphs by clustering variables into a tree of clusters, then running a sum-product schedule.

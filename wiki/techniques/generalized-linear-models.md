@@ -10,6 +10,7 @@ domain:
 - bayesian-stats
 generalizes:
 - linear-regression
+- logistic-regression
 id: pkis:technique:generalized-linear-models
 knowledge_type: technique
 maturity: settled
@@ -21,6 +22,8 @@ related_concepts:
 sources:
 - '[[kroese-statistical-modeling]]'
 - '[[capretto-bambi-2022]]'
+specializes:
+- exponential-family
 tags:
 - glm
 - regression
@@ -33,11 +36,23 @@ understanding: 0
 uses:
 - link-function
 - laplace-approximation
+- link-function-mean-function
+- maximum-likelihood-estimation
+- glm-gradient-hessian
+- glm-deviance
+- generalized-linear-models
 ---
 
 Generalized Linear Models (GLMs) extend the normal linear model to non-Gaussian response distributions by specifying three components: a random component (response distribution from the exponential family), a systematic component (linear predictor η = Xβ), and a link function g relating E[Y|X] = μ to the linear predictor via g(μ) = η. Classification note: also_type framework because GLMs provide an organizing system of concepts for a broad class of regression models.
 
 ## Connections
+- [[generalized-linear-models]] — uses: self-link placeholder — remove
+- [[glm-deviance]] — uses
+- [[glm-gradient-hessian]] — uses
+- [[maximum-likelihood-estimation]] — uses
+- [[logistic-regression]] — generalizes
+- [[link-function-mean-function]] — uses
+- [[exponential-family]] — specializes: GLMs are conditional exponential family models with linear natural parameters
 - [[laplace-approximation]] — uses
 - [[link-function]] — uses
 - [[linear-regression]] — generalizes

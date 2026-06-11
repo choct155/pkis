@@ -1,6 +1,10 @@
 ---
 aliases: []
 also_type: []
+applies:
+- gaussian-distribution
+- variational-autoencoder
+- multivariate-normal-model
 component_scores:
   conditions: null
   implications: null
@@ -15,6 +19,8 @@ domain:
 - probability
 - machine-learning
 id: pkis:result:kl-divergence-gaussians
+instantiates:
+- kl-divergence
 knowledge_type: result
 maturity: evolving
 needs_canonical_source: false
@@ -44,4 +50,8 @@ This result is used throughout Bayesian inference, variational autoencoders (whe
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[multivariate-normal-model]] — applies
+- [[variational-autoencoder]] — applies
+- [[gaussian-distribution]] — applies
+- [[kl-divergence]] — instantiates
 [To be populated during integration]

@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- algorithmic-recourse
 component_scores:
   application: null
   boundary: null
@@ -18,12 +20,16 @@ domain:
 - interpretability
 - causal-inference
 id: pkis:concept:counterfactual-explanation
+instantiates:
+- counterfactuals
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
 related_concepts: []
 sources:
 - murphy-pml2-advanced-ch33
+specializes:
+- post-hoc-explanation
 tags:
 - interpretability
 - recourse
@@ -32,6 +38,8 @@ tags:
 - fairness
 title: Counterfactual Explanation
 understanding: 0
+uses:
+- causal-analysis
 ---
 
 ## Definition
@@ -47,4 +55,8 @@ Counterfactual explanations provide **actionable recourse**: a denied loan appli
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[causal-analysis]] — uses: Causal frameworks can be used to generate causally valid counterfactual explanations.
+- [[counterfactuals]] — instantiates: Algorithmic counterfactual explanations instantiate the broader philosophical notion of counterfactuals.
+- [[post-hoc-explanation]] — specializes
+- [[algorithmic-recourse]] — applies: Counterfactual explanations are the primary computational tool for providing recourse.
 [To be populated during integration]

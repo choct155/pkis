@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- beta-binomial-model
 component_scores:
   alternatives: null
   conditions: null
@@ -15,13 +17,20 @@ date_updated: '2026-06-11'
 domain:
 - statistics
 - machine-learning
+generalizes:
+- maximum-likelihood-estimation
 id: pkis:technique:map-estimation
+instantiates:
+- ridge-regression
+- weight-decay-as-prior
 knowledge_type: technique
 maturity: evolving
 needs_canonical_source: false
 related_concepts: []
 sources:
 - murphy-pml1-intro-ch04
+specializes:
+- bayesian-inference
 tags:
 - posterior-mode
 - regularisation
@@ -29,6 +38,9 @@ tags:
 - prior
 title: MAP Estimation
 understanding: 0
+uses:
+- conjugate-prior
+- regularization
 ---
 
 ## Definition
@@ -46,4 +58,11 @@ The regularised objective $\mathcal{L}(\theta;\lambda) = \text{NLL}(\theta) + \l
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[weight-decay-as-prior]] — instantiates
+- [[ridge-regression]] — instantiates: Ridge regression is MAP with Gaussian prior on weights
+- [[beta-binomial-model]] — applies
+- [[bayesian-inference]] — specializes: MAP is the mode of the posterior, a point approximation to full Bayesian inference
+- [[regularization]] — uses: MAP = NLL + log-prior penalty = regularised MLE
+- [[conjugate-prior]] — uses
+- [[maximum-likelihood-estimation]] — generalizes
 [To be populated during integration]

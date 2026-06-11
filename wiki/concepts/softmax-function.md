@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+analogous-to:
+- policy-parameterization-softmax
 component_scores:
   application: null
   boundary: null
@@ -16,15 +18,24 @@ date_updated: '2026-06-11'
 domain:
 - machine-learning
 - statistics
+generalizes:
+- logistic-sigmoid-logit
+- logistic-regression
 id: pkis:concept:softmax-function
+instantiates:
+- policy-parameterization-softmax
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- multinomial-logistic-regression
 related_concepts: []
 sources:
 - bishop-prml-ch04
 - murphy-pml1-intro-ch01
 - murphy-pml1-intro-ch02
+specializes:
+- activation-functions
 tags:
 - multiclass
 - normalized-exponential
@@ -32,6 +43,9 @@ tags:
 - canonical-link
 title: Softmax Function
 understanding: 0
+uses:
+- exponential-family
+- cross-entropy-loss
 ---
 
 ## Definition
@@ -46,4 +60,12 @@ Softmax is the canonical output layer for $K$-class probabilistic classifiers. C
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[multinomial-logistic-regression]] — prerequisite-of
+- [[activation-functions]] — specializes
+- [[policy-parameterization-softmax]] — instantiates
+- [[logistic-regression]] — generalizes
+- [[policy-parameterization-softmax]] — analogous-to
+- [[cross-entropy-loss]] — uses
+- [[exponential-family]] — uses
+- [[logistic-sigmoid-logit]] — generalizes
 [To be populated during integration]

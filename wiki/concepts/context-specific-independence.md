@@ -1,6 +1,9 @@
 ---
 aliases: []
 also_type: []
+applies:
+- probabilistic-graphical-models
+- bayesian-networks
 component_scores:
   application: null
   boundary: null
@@ -22,6 +25,8 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - goodfellow-deeplearning-ch16
+specializes:
+- conditional-independence
 tags:
 - conditional-independence
 - graphical-models
@@ -43,4 +48,7 @@ Context-specific independences cannot be captured by standard graph topology (ne
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[bayesian-networks]] — applies
+- [[probabilistic-graphical-models]] — applies
+- [[conditional-independence]] — specializes
 [To be populated during integration]

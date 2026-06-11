@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- statistical-decision-theory
 component_scores:
   alternatives: null
   conditions: null
@@ -9,6 +11,8 @@ component_scores:
   implementation: null
   operational_mechanism: null
   principled_mechanism: null
+contrasts-with:
+- maximum-a-posteriori-estimation-map
 coverage: 1
 date_created: '2026-06-11'
 date_updated: '2026-06-11'
@@ -16,6 +20,8 @@ domain:
 - machine learning
 - natural language processing
 id: pkis:technique:minimum-bayes-risk-decoding
+instantiates:
+- posterior-risk
 knowledge_type: technique
 maturity: evolving
 needs_canonical_source: false
@@ -30,6 +36,8 @@ tags:
 - posterior sampling
 title: Minimum Bayes Risk (MBR) Decoding
 understanding: 0
+uses:
+- monte-carlo-estimator
 ---
 
 ## Definition
@@ -46,4 +54,8 @@ MAP/greedy decoding optimises for the single most probable output, which can be 
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[maximum-a-posteriori-estimation-map]] — contrasts-with
+- [[monte-carlo-estimator]] — uses
+- [[statistical-decision-theory]] — applies
+- [[posterior-risk]] — instantiates
 [To be populated during integration]

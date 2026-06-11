@@ -1,6 +1,9 @@
 ---
 aliases: []
 also_type: []
+applies:
+- deep-learning
+- vanishing-gradient-problem
 component_scores:
   application: null
   boundary: null
@@ -24,6 +27,8 @@ related_concepts: []
 sources:
 - goodfellow-deeplearning-ch01
 - goodfellow-deeplearning-ch20
+specializes:
+- pretraining-and-fine-tuning
 tags:
 - pretraining
 - unsupervised-learning
@@ -31,6 +36,10 @@ tags:
 - deep-belief-networks
 title: Greedy Layer-Wise Pretraining
 understanding: 0
+uses:
+- autoencoder
+- restricted-boltzmann-machine
+- contrastive-divergence
 ---
 
 ## Definition
@@ -48,4 +57,10 @@ This technique launched the third wave of deep learning (ca. 2006) and populariz
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[contrastive-divergence]] — uses
+- [[vanishing-gradient-problem]] — applies: Pretraining was introduced specifically to address the vanishing gradient problem in deep networks.
+- [[pretraining-and-fine-tuning]] — specializes
+- [[restricted-boltzmann-machine]] — uses: RBMs are the other canonical building block for layer-wise pretraining (deep belief networks).
+- [[autoencoder]] — uses: Autoencoders are one of the building blocks used in layer-wise pretraining.
+- [[deep-learning]] — applies: Greedy layer-wise pretraining was the breakthrough that launched the third wave of deep learning.
 [To be populated during integration]

@@ -9,6 +9,8 @@ component_scores:
   implementation: null
   operational_mechanism: null
   principled_mechanism: null
+contrasts-with:
+- graph-sage
 coverage: 1
 date_created: '2026-06-11'
 date_updated: '2026-06-11'
@@ -20,9 +22,13 @@ id: pkis:technique:graph-convolutional-network
 knowledge_type: technique
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- variational-graph-auto-encoder
 related_concepts: []
 sources:
 - murphy-pml1-intro-ch23
+specializes:
+- message-passing-neural-networks
 tags:
 - spectral-graph-convolution
 - GCN
@@ -31,6 +37,9 @@ tags:
 - Kipf-Welling
 title: Graph Convolutional Network (GCN)
 understanding: 0
+uses:
+- graph-laplacian
+- eigendecomposition
 ---
 
 ## Definition
@@ -47,4 +56,9 @@ GCN achieved state-of-the-art semi-supervised node classification on citation ne
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[graph-sage]] — contrasts-with
+- [[variational-graph-auto-encoder]] — prerequisite-of
+- [[eigendecomposition]] — uses
+- [[graph-laplacian]] — uses
+- [[message-passing-neural-networks]] — specializes
 [To be populated during integration]

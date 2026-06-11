@@ -1,6 +1,10 @@
 ---
 aliases: []
 also_type: []
+analogous-to:
+- gaussian-process
+applies:
+- uncertainty-quantification
 component_scores:
   conditions: null
   implications: null
@@ -14,6 +18,8 @@ domain:
 - machine-learning
 - bayesian-statistics
 id: pkis:result:bayesian-linear-regression-predictive
+instantiates:
+- posterior-predictive-distribution
 knowledge_type: result
 maturity: evolving
 needs_canonical_source: false
@@ -27,6 +33,8 @@ tags:
 - bayesian-regression
 title: Bayesian Linear Regression Predictive Distribution
 understanding: 0
+uses:
+- bayesian-linear-regression-posterior
 ---
 
 ## Definition
@@ -45,4 +53,8 @@ Provides principled, input-dependent uncertainty estimates without held-out data
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[uncertainty-quantification]] — applies
+- [[gaussian-process]] — analogous-to: Equivalent kernel reveals the Gaussian process interpretation
+- [[posterior-predictive-distribution]] — instantiates
+- [[bayesian-linear-regression-posterior]] — uses
 [To be populated during integration]

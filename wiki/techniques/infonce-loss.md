@@ -9,6 +9,8 @@ component_scores:
   implementation: null
   operational_mechanism: null
   principled_mechanism: null
+contrasts-with:
+- exploration-exploitation-tradeoff
 coverage: 1
 date_created: '2026-06-11'
 date_updated: '2026-06-11'
@@ -17,12 +19,16 @@ domain:
 - representation-learning
 - information-theory
 id: pkis:technique:infonce-loss
+instantiates:
+- contrastive-representation-learning
 knowledge_type: technique
 maturity: evolving
 needs_canonical_source: false
 related_concepts: []
 sources:
 - murphy-pml2-advanced-ch32
+specializes:
+- cross-entropy-loss
 tags:
 - contrastive-learning
 - SimCLR
@@ -32,6 +38,8 @@ tags:
 - NT-Xent
 title: InfoNCE Loss
 understanding: 0
+uses:
+- mutual-information
 ---
 
 ## Definition
@@ -43,6 +51,10 @@ The loss equals the negative log probability that the positive example $x^+$ is 
 InfoNCE is the dominant training objective for contrastive representation learning (SimCLR, MoCo, CLIP). It avoids the margin hyperparameter of contrastive/triplet losses, naturally scales with the number of negatives, and has a clean information-theoretic interpretation as a lower bound on mutual information.
 
 ### Connections
+- [[exploration-exploitation-tradeoff]] — contrasts-with: Hard negative mining vs random negatives trades exploitation for exploration in the negative space
+- [[cross-entropy-loss]] — specializes
+- [[contrastive-representation-learning]] — instantiates
+- [[mutual-information]] — uses: I(X;Z) >= log M - L_InfoNCE
 Related to the multiclass N-pair loss; motivated by the InfoMax principle; used in SimCLR where the batch itself supplies negatives, and in MoCo where a memory queue supplies additional negatives.
 
 ## Reading Path

@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- semi-supervised-learning
 component_scores:
   alternatives: null
   conditions: null
@@ -17,6 +19,9 @@ domain:
 - deep-learning
 - regularization
 - robustness
+extends:
+- dataset-augmentation
+- tangent-propagation
 id: pkis:technique:adversarial-training-regularization
 knowledge_type: technique
 maturity: evolving
@@ -24,6 +29,8 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - goodfellow-deeplearning-ch07
+specializes:
+- regularization
 tags:
 - adversarial-training
 - adversarial-examples
@@ -33,6 +40,8 @@ tags:
 - local-constancy
 title: Adversarial Training
 understanding: 0
+uses:
+- adversarial-examples
 ---
 
 ## Definition
@@ -49,4 +58,9 @@ Purely linear models cannot resist adversarial perturbations; deep networks, wit
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[semi-supervised-learning]] — applies: Virtual adversarial examples enable semi-supervised training
+- [[tangent-propagation]] — extends
+- [[dataset-augmentation]] — extends: Adversarial training is dataset augmentation with adversarially chosen perturbations
+- [[regularization]] — specializes
+- [[adversarial-examples]] — uses
 [To be populated during integration]

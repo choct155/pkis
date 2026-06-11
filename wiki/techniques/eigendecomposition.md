@@ -23,6 +23,9 @@ tags:
 - linear-algebra
 title: Eigendecomposition
 understanding: 0
+uses:
+- positive-definite-matrix
+- orthogonal-matrix
 ---
 
 Factorization $A = PDP^{-1}$ of a diagonalizable square matrix into eigenvectors (columns of $P$) and eigenvalues (diagonal of $D$); restricted to symmetric positive definite matrices, becomes the spectral decomposition $A = PDP^T$ with orthonormal eigenvectors — the form underlying PCA's covariance decomposition.
@@ -33,4 +36,6 @@ Factorization $A = PDP^{-1}$ of a diagonalizable square matrix into eigenvectors
 - [[carrell-groups-matrices-vectors-ch09]] (unread) — Schur triangularization, normal matrix theorem, quadratic forms, polar decomposition
 
 ## Connections
+- [[orthogonal-matrix]] — uses
+- [[positive-definite-matrix]] — uses
 - [[matrix-decompositions]] — specializes

@@ -14,13 +14,19 @@ component_scores:
 contrasts-with:
 - variational-inference
 - laplace-approximation
+- mean-field-variational-inference
 coverage: 1
 date_created: '2026-06-09'
 date_updated: '2026-06-09'
 domain:
 - bayesian-stats
 - optimization
+generalizes:
+- belief-propagation
+- sum-product-algorithm
 id: pkis:technique:expectation-propagation
+instantiates:
+- alpha-divergence
 knowledge_type: technique
 maturity: evolving
 needs_canonical_source: false
@@ -38,6 +44,9 @@ understanding: 0
 uses:
 - exponential-family
 - kl-divergence
+- zero-forcing-vs-zero-avoiding-kl
+- moment-matching
+- factor-graph
 ---
 
 ## Definition
@@ -51,6 +60,13 @@ In the BDA3 bioassay logistic-regression example, EP shifts the normal approxima
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[mean-field-variational-inference]] — contrasts-with
+- [[factor-graph]] — uses
+- [[sum-product-algorithm]] — generalizes
+- [[belief-propagation]] — generalizes
+- [[moment-matching]] — uses
+- [[alpha-divergence]] — instantiates
+- [[zero-forcing-vs-zero-avoiding-kl]] — uses
 - [[laplace-approximation]] — contrasts-with: EP improves on the plain mode-centered curvature (Laplace) normal approximation by shifting toward posterior mass/skew, as in the BDA3 bioassay example.
 - [[intractable-posterior]] — applies: EP is a deterministic approximate-inference method for intractable posteriors, illustrated on logistic regression in BDA3.
 - [[kl-divergence]] — uses: EP's moment-matching projection minimizes a forward KL at each step; fractional/power EP generalizes to alpha-divergences (including KL and Hellinger).

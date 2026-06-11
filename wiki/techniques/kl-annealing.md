@@ -1,6 +1,9 @@
 ---
 aliases: []
 also_type: []
+applies:
+- variational-autoencoder
+- posterior-collapse
 component_scores:
   alternatives: null
   conditions: null
@@ -29,6 +32,8 @@ tags:
 - KL-regularisation
 title: KL Annealing
 understanding: 0
+uses:
+- beta-vae
 ---
 
 ## Definition
@@ -45,4 +50,7 @@ KL annealing is the most common practical solution to posterior collapse in VAEs
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[beta-vae]] — uses
+- [[posterior-collapse]] — applies
+- [[variational-autoencoder]] — applies
 [To be populated during integration]

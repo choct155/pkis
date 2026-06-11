@@ -16,12 +16,19 @@ date_updated: '2026-06-11'
 domain:
 - information-theory
 id: pkis:concept:self-information
+instantiates:
+- shannon-information-content
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- entropy
+- kl-divergence
 related_concepts: []
 sources:
 - goodfellow-deeplearning-ch03
+specializes:
+- information-theory
 tags:
 - surprisal
 - Shannon
@@ -43,4 +50,8 @@ Self-information is the atomic building block of Shannon's information theory. S
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[information-theory]] — specializes
+- [[kl-divergence]] — prerequisite-of
+- [[shannon-information-content]] — instantiates
+- [[entropy]] — prerequisite-of
 [To be populated during integration]

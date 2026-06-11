@@ -10,6 +10,9 @@ component_scores:
   prerequisites: null
   scope: null
   transfer: null
+contrasts-with:
+- data-driven-ai
+- machine-consciousness-and-qualia
 coverage: 1
 date_created: '2026-06-11'
 date_updated: '2026-06-11'
@@ -17,6 +20,9 @@ domain:
 - artificial-intelligence
 - knowledge-representation
 id: pkis:concept:knowledge-base-ai
+instantiates:
+- cyc-knowledge-base
+- knowledge-based-agent
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
@@ -47,4 +53,8 @@ Where the knowledge base approach requires human operators to specify all knowle
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[machine-consciousness-and-qualia]] — contrasts-with
+- [[knowledge-based-agent]] — instantiates
+- [[data-driven-ai]] — contrasts-with
+- [[cyc-knowledge-base]] — instantiates: Cyc is the flagship example of the knowledge base approach.
 [To be populated during integration]

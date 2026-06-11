@@ -10,6 +10,8 @@ component_scores:
   prerequisites: null
   scope: null
   transfer: null
+contrasts-with:
+- gaussian-distribution
 coverage: 1
 date_created: '2026-06-11'
 date_updated: '2026-06-11'
@@ -18,12 +20,16 @@ domain:
 - statistics
 - bayesian-inference
 id: pkis:concept:cauchy-distribution
+instantiates:
+- kurtosis-and-tail-behavior
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
 related_concepts: []
 sources:
 - murphy-pml2-advanced-ch02
+specializes:
+- t-distribution
 tags:
 - cauchy
 - heavy-tails
@@ -32,6 +38,8 @@ tags:
 - undefined-mean
 title: Cauchy Distribution
 understanding: 0
+uses:
+- weakly-informative-prior
 ---
 
 ## Definition
@@ -46,4 +54,8 @@ The Cauchy is the canonical example of a distribution with undefined moments; it
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[gaussian-distribution]] — contrasts-with
+- [[weakly-informative-prior]] — uses
+- [[kurtosis-and-tail-behavior]] — instantiates
+- [[t-distribution]] — specializes
 [To be populated during integration]

@@ -17,6 +17,9 @@ domain:
 - statistics
 - machine-learning
 - spatial-statistics
+generalizes:
+- poisson-process
+- poisson-regression
 id: pkis:concept:cox-process
 knowledge_type: concept
 maturity: evolving
@@ -24,6 +27,8 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - murphy-pml2-advanced-ch18
+specializes:
+- point-process
 tags:
 - point-process
 - Poisson
@@ -32,6 +37,8 @@ tags:
 - latent-variable
 title: Cox Process (Poisson GP)
 understanding: 0
+uses:
+- gaussian-process-gp
 ---
 
 ## Definition
@@ -47,4 +54,8 @@ Cox processes are the standard Bayesian nonparametric model for spatially or tem
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[poisson-regression]] — generalizes
+- [[point-process]] — specializes
+- [[gaussian-process-gp]] — uses
+- [[poisson-process]] — generalizes
 [To be populated during integration]

@@ -1,6 +1,12 @@
 ---
 aliases: []
 also_type: []
+analogous-to:
+- restricted-boltzmann-machine
+- contrastive-divergence
+applies:
+- score-matching
+- manifold-hypothesis
 component_scores:
   alternatives: null
   conditions: null
@@ -20,10 +26,15 @@ id: pkis:technique:denoising-autoencoder
 knowledge_type: technique
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- diffusion-processes
 related_concepts: []
 sources:
 - goodfellow-deeplearning-ch14
 - murphy-pml1-intro-ch20
+specializes:
+- autoencoder
+- overcomplete-autoencoder
 tags:
 - corruption
 - score-matching
@@ -32,6 +43,8 @@ tags:
 - noise-injection
 title: Denoising Autoencoder (DAE)
 understanding: 0
+uses:
+- regularization
 ---
 
 ## Definition
@@ -51,4 +64,12 @@ With Gaussian corruption $C(\tilde{x}|x)=\mathcal{N}(x, \sigma^2 I)$ and MSE rec
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[diffusion-processes]] — prerequisite-of
+- [[regularization]] — uses
+- [[contrastive-divergence]] — analogous-to: Bengio & Delalleau (2009): autoencoder gradient approximates contrastive divergence training of RBMs
+- [[overcomplete-autoencoder]] — specializes
+- [[restricted-boltzmann-machine]] — analogous-to: With Gaussian noise and sigmoidal units, DAE training is equivalent to denoising score matching of an RBM
+- [[manifold-hypothesis]] — applies
+- [[score-matching]] — applies: DAE reconstruction vector field estimates the score of the data distribution (Alain & Bengio, 2013)
+- [[autoencoder]] — specializes
 [To be populated during integration]

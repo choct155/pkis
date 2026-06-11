@@ -24,6 +24,8 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - bishop-prml-ch13
+specializes:
+- hidden-markov-model
 tags:
 - HMM
 - left-to-right
@@ -32,6 +34,8 @@ tags:
 - constrained
 title: Left-to-Right HMM
 understanding: 0
+uses:
+- hmm-parameters
 ---
 
 ## Definition
@@ -46,4 +50,6 @@ Critical for applications where the underlying process is inherently sequential 
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[hmm-parameters]] — uses
+- [[hidden-markov-model]] — specializes
 [To be populated during integration]

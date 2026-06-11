@@ -6,6 +6,8 @@ component_scores:
   justification: null
   statement: null
   violations: null
+contrasts-with:
+- neural-networks
 coverage: 1
 date_created: '2026-06-11'
 date_updated: '2026-06-11'
@@ -14,9 +16,13 @@ domain:
 - statistics
 - philosophy-of-science
 id: pkis:principle:prediction-generation-subroutines-discovery
+instantiates:
+- expressiveness-tractability-tradeoff
 knowledge_type: principle
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- discovery-as-interpretable-representation-learning
 related_concepts: []
 sources:
 - murphy-pml2-advanced-ch27
@@ -42,4 +48,7 @@ Models aimed at discovery must balance expressiveness (to capture true structure
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[neural-networks]] — contrasts-with
+- [[expressiveness-tractability-tradeoff]] — instantiates
+- [[discovery-as-interpretable-representation-learning]] — prerequisite-of
 [To be populated during integration]

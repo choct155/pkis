@@ -9,9 +9,19 @@ date_updated: 2026-05-20
 domain:
 - bayesian-stats
 - deep-learning
+extends:
+- factor-analysis
+generalizes:
+- autoencoder
 id: pkis:technique:variational-autoencoder
+instantiates:
+- variational-inference
+- deep-latent-variable-model
+- stochastic-vi
 knowledge_type: technique
 maturity: settled
+prerequisite-of:
+- diffusion-processes
 related_concepts:
 - '[[variational-inference]]'
 - '[[elbo]]'
@@ -24,6 +34,7 @@ sources:
 - '[[yellapragada-variational-bayes]]'
 specializes:
 - autoencoder
+- latent-variable-models
 tags:
 - variational-methods
 - generative-models
@@ -34,6 +45,12 @@ understanding: 0
 uses:
 - posterior-geometry-coordinate-systems
 - elbo
+- variational-inference
+- amortized-inference
+- reparameterization-trick
+- kl-divergence
+- neural-networks
+- gaussian-distribution
 ---
 
 A deep generative model (Kingma & Welling, 2013) that combines amortized variational inference with a neural network decoder: an encoder network q_φ(z|x) approximates the posterior over latent codes, a decoder p_θ(x|z) models the generative process, and both are trained jointly by maximizing the ELBO via the reparameterization trick; the ELBO objective decomposes into a reconstruction term E_q[log p(x|z)] minus a KL regularization term KL(q_φ(z|x)‖p(z)).
@@ -41,6 +58,19 @@ A deep generative model (Kingma & Welling, 2013) that combines amortized variati
 Classification note: assigned as technique but also qualifies as framework because it provides an architecture paradigm (encoder-decoder with latent code) that organizes many derivative models (β-VAE, VAE-GAN, VQ-VAE, hierarchical VAEs).
 
 ## Connections
+- [[stochastic-vi]] — instantiates
+- [[gaussian-distribution]] — uses: standard choice for prior and posterior
+- [[neural-networks]] — uses
+- [[deep-latent-variable-model]] — instantiates
+- [[latent-variable-models]] — specializes
+- [[variational-inference]] — instantiates
+- [[autoencoder]] — generalizes
+- [[diffusion-processes]] — prerequisite-of
+- [[kl-divergence]] — uses
+- [[reparameterization-trick]] — uses
+- [[factor-analysis]] — extends
+- [[amortized-inference]] — uses
+- [[variational-inference]] — uses
 - [[elbo]] — uses: training maximizes the evidence lower bound over encoder and decoder parameters
 - [[autoencoder]] — specializes: a VAE is an autoencoder whose encoder/decoder define a variational posterior and likelihood
 - [[posterior-geometry-coordinate-systems]] — uses: The VAE reparameterization trick is a coordinate transformation

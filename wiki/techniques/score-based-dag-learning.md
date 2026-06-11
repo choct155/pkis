@@ -1,6 +1,9 @@
 ---
 aliases: []
 also_type: []
+applies:
+- bayesian-networks
+- causal-discovery
 component_scores:
   alternatives: null
   conditions: null
@@ -9,6 +12,8 @@ component_scores:
   implementation: null
   operational_mechanism: null
   principled_mechanism: null
+contrasts-with:
+- constraint-based-structure-learning
 coverage: 1
 date_created: '2026-06-11'
 date_updated: '2026-06-11'
@@ -31,6 +36,9 @@ tags:
 - structure-learning
 title: Score-Based DAG Structure Learning
 understanding: 0
+uses:
+- information-criteria
+- markov-equivalence-class
 ---
 
 ## Definition
@@ -45,4 +53,9 @@ Score-based DAG learning is one of the two main paradigms for causal discovery (
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[constraint-based-structure-learning]] — contrasts-with
+- [[markov-equivalence-class]] — uses
+- [[causal-discovery]] — applies
+- [[information-criteria]] — uses
+- [[bayesian-networks]] — applies
 [To be populated during integration]

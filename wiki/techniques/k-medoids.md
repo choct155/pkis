@@ -15,6 +15,8 @@ date_updated: '2026-06-11'
 domain:
 - machine-learning
 - statistics
+generalizes:
+- k-means-clustering
 id: pkis:technique:k-medoids
 knowledge_type: technique
 maturity: evolving
@@ -22,6 +24,8 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - murphy-pml1-intro-ch21
+specializes:
+- clustering
 tags:
 - clustering
 - medoid
@@ -30,6 +34,8 @@ tags:
 - pairwise-distance
 title: K-medoids / PAM Algorithm
 understanding: 0
+uses:
+- cluster-dissimilarity-measures
 ---
 
 ## Definition
@@ -44,4 +50,7 @@ By working with pairwise distances rather than feature averages, K-medoids appli
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[cluster-dissimilarity-measures]] — uses
+- [[clustering]] — specializes
+- [[k-means-clustering]] — generalizes: K-medoids generalizes K-means to arbitrary dissimilarity matrices
 [To be populated during integration]

@@ -20,6 +20,9 @@ id: pkis:concept:weak-learner-boosting
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- gradient-boosting
+- adaboost
 related_concepts: []
 sources:
 - murphy-pml1-intro-ch18
@@ -31,6 +34,8 @@ tags:
 - strong-learner
 title: Weak Learner and Boosting Relationship
 understanding: 0
+uses:
+- pac-learning
 ---
 
 ## Definition
@@ -47,4 +52,7 @@ The weak-to-strong boosting theorem (Schapire 1990, Freund & Schapire 1996) is a
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[adaboost]] — prerequisite-of
+- [[gradient-boosting]] — prerequisite-of
+- [[pac-learning]] — uses
 [To be populated during integration]

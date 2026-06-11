@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- bayesian-inference
 component_scores:
   alternatives: null
   conditions: null
@@ -9,6 +11,8 @@ component_scores:
   implementation: null
   operational_mechanism: null
   principled_mechanism: null
+contrasts-with:
+- conjugate-prior
 coverage: 1
 date_created: '2026-06-11'
 date_updated: '2026-06-11'
@@ -16,6 +20,8 @@ domain:
 - bayesian-inference
 - computational-statistics
 id: pkis:technique:grid-approximation-posterior
+instantiates:
+- grid-approximation
 knowledge_type: technique
 maturity: evolving
 needs_canonical_source: false
@@ -29,6 +35,8 @@ tags:
 - posterior-approximation
 title: Grid Approximation (Posterior)
 understanding: 0
+uses:
+- curse-of-dimensionality
 ---
 
 ## Definition
@@ -46,4 +54,8 @@ Beyond ~3 parameters, grid approximation is replaced by MCMC, VI, or Laplace met
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[conjugate-prior]] — contrasts-with
+- [[grid-approximation]] — instantiates
+- [[curse-of-dimensionality]] — uses: Grid approximation fails due to exponential growth in grid points
+- [[bayesian-inference]] — applies
 [To be populated during integration]

@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- convolutional-neural-networks
 component_scores:
   application: null
   boundary: null
@@ -24,6 +26,8 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - goodfellow-deeplearning-ch07
+specializes:
+- regularization
 tags:
 - parameter-sharing
 - convolutional
@@ -32,6 +36,8 @@ tags:
 - weight-tying
 title: Parameter Sharing
 understanding: 0
+uses:
+- inductive-bias
 ---
 
 ## Definition
@@ -46,4 +52,7 @@ Parameter sharing is the mechanism behind convolutional neural networks and recu
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[inductive-bias]] — uses
+- [[convolutional-neural-networks]] — applies
+- [[regularization]] — specializes
 [To be populated during integration]

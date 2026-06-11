@@ -16,6 +16,8 @@ domain:
 - deep-learning
 - generative-models
 - optimisation
+extends:
+- deep-boltzmann-machine
 id: pkis:technique:centered-deep-boltzmann-machine
 knowledge_type: technique
 maturity: evolving
@@ -30,6 +32,8 @@ tags:
 - joint-training
 title: Centered Deep Boltzmann Machine
 understanding: 0
+uses:
+- hessian-matrix
 ---
 
 ## Definition
@@ -44,4 +48,6 @@ The centering trick (Montavon & Müller, 2012) is equivalent to the enhanced gra
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[hessian-matrix]] — uses: The centering reparameterisation improves Hessian conditioning.
+- [[deep-boltzmann-machine]] — extends
 [To be populated during integration]

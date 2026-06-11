@@ -15,6 +15,8 @@ domain:
 - deep-learning
 - computer-vision
 id: pkis:framework:object-detection-anchor-boxes
+instantiates:
+- object-detection
 knowledge_type: framework
 maturity: evolving
 needs_canonical_source: false
@@ -29,6 +31,9 @@ tags:
 - multi-task-learning
 title: Object Detection with Anchor Boxes
 understanding: 0
+uses:
+- convolutional-neural-network
+- encoder-decoder-unet
 ---
 
 ## Definition
@@ -51,4 +56,7 @@ Requires careful anchor design (scale, aspect ratio); largely superseded by anch
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[encoder-decoder-unet]] — uses: Feature pyramid networks built on encoder-decoder ideas feed anchor-based detectors
+- [[object-detection]] — instantiates: Anchor-box method is the dominant paradigm for object detection with CNNs
+- [[convolutional-neural-network]] — uses: CNN backbone extracts feature maps; detection heads attach to these features
 [To be populated during integration]

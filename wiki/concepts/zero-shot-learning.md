@@ -25,6 +25,8 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - goodfellow-deeplearning-ch15
+specializes:
+- transfer-learning-domain-adaptation
 tags:
 - zero-shot
 - few-shot
@@ -34,6 +36,11 @@ tags:
 - multimodal
 title: Zero-Shot Learning
 understanding: 0
+uses:
+- word-embeddings
+- distributed-representation
+- disentangled-representation
+- contextual-word-embeddings
 ---
 
 ## Definition
@@ -48,4 +55,9 @@ Zero-shot learning demonstrates that distributed representations can bind percep
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[contextual-word-embeddings]] — uses
+- [[disentangled-representation]] — uses
+- [[distributed-representation]] — uses
+- [[word-embeddings]] — uses
+- [[transfer-learning-domain-adaptation]] — specializes
 [To be populated during integration]

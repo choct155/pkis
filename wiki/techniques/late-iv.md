@@ -9,6 +9,8 @@ component_scores:
   implementation: null
   operational_mechanism: null
   principled_mechanism: null
+contrasts-with:
+- additive-unobserved-confounding
 coverage: 1
 date_created: '2026-06-11'
 date_updated: '2026-06-11'
@@ -17,6 +19,8 @@ domain:
 - econometrics
 - statistics
 id: pkis:technique:late-iv
+instantiates:
+- local-average-treatment-effect
 knowledge_type: technique
 maturity: evolving
 needs_canonical_source: false
@@ -31,6 +35,9 @@ tags:
 - causal-identification
 title: Local Average Treatment Effect (LATE) via IV
 understanding: 0
+uses:
+- instrumental-variables
+- aiptw-double-ml
 ---
 
 ## Definition
@@ -49,4 +56,8 @@ LATE extends IV identification to settings with heterogeneous treatment effects 
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[additive-unobserved-confounding]] — contrasts-with: LATE uses monotonicity while additive confounding uses no-interaction; both supplement IV assumptions
+- [[aiptw-double-ml]] — uses: Double-ML LATE estimator uses same cross-fitting and influence-function approach
+- [[local-average-treatment-effect]] — instantiates
+- [[instrumental-variables]] — uses
 [To be populated during integration]

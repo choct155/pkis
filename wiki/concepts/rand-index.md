@@ -1,6 +1,10 @@
 ---
 aliases: []
 also_type: []
+analogous-to:
+- normalized-mutual-information-clustering
+applies:
+- clustering
 component_scores:
   application: null
   boundary: null
@@ -46,4 +50,6 @@ The Rand index provides an interpretable fraction of correct pairwise clustering
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[normalized-mutual-information-clustering]] — analogous-to
+- [[clustering]] — applies
 [To be populated during integration]

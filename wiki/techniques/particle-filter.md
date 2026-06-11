@@ -3,8 +3,12 @@ aliases: []
 also_type: []
 applies:
 - dynamic-bayesian-network
+- state-space-model-sequential
+- robot-localization
 contrasts-with:
 - variational-inference
+- weight-degeneracy-sis
+- kalman-filter
 coverage: 1
 date_created: 2026-05-20
 date_updated: '2026-06-07'
@@ -12,7 +16,13 @@ domain:
 - bayesian-stats
 - state-space-models
 - time-series
+generalizes:
+- linear-dynamical-system
+- kalman-filter
+- hidden-markov-model
 id: pkis:technique:particle-filter
+instantiates:
+- filtering-prediction-smoothing
 knowledge_type: technique
 maturity: settled
 related_concepts: []
@@ -20,6 +30,7 @@ sources:
 - '[[binsbergen-term-structure-dsge-2011]]'
 specializes:
 - filtering-prediction-smoothing
+- sequential-monte-carlo
 tags:
 - sequential-monte-carlo
 - smc
@@ -34,6 +45,11 @@ title: Particle Filter (Sequential Monte Carlo)
 understanding: 0
 uses:
 - importance-resampling
+- importance-sampling
+- particle-resampling
+- path-degeneracy
+- incremental-importance-weights
+- effective-sample-size
 ---
 
 A sequential Monte Carlo algorithm that approximates the filtering distribution p(states_t | data_{1:t}) of a nonlinear, non-Gaussian state-space model by propagating a weighted empirical distribution of particles (state draws) through time using sequential importance resampling (SIR); at each step, particles are propagated through the state transition, reweighted by the likelihood of the new observation, and resampled to prevent weight degeneracy — producing a consistent Monte Carlo estimator of the likelihood function even when the Kalman filter is inapplicable due to model nonlinearity.
@@ -54,6 +70,20 @@ This distinction is load-bearing for the variational-graph-traversal hypothesis:
 Particle filters are to sequential inference what MCMC is to static inference. MCMC constructs a chain whose stationary distribution is the posterior over fixed parameters. Particle filters construct a weighted population whose empirical distribution approximates the sequential posterior at each time step as new observations arrive. Both are asymptotically exact given sufficient particles or chain length.
 
 ## Connections
+- [[effective-sample-size]] — uses
+- [[hidden-markov-model]] — generalizes
+- [[kalman-filter]] — contrasts-with: PF generalises Kalman filter to nonlinear/non-Gaussian SSMs
+- [[incremental-importance-weights]] — uses
+- [[path-degeneracy]] — uses: resampling introduces path degeneracy as a trade-off
+- [[weight-degeneracy-sis]] — contrasts-with: SISR solves weight degeneracy that plagues plain SIS
+- [[particle-resampling]] — uses
+- [[filtering-prediction-smoothing]] — instantiates
+- [[sequential-monte-carlo]] — specializes
+- [[robot-localization]] — applies
+- [[kalman-filter]] — generalizes
+- [[linear-dynamical-system]] — generalizes
+- [[importance-sampling]] — uses
+- [[state-space-model-sequential]] — applies
 - [[importance-resampling]] — uses: Particle filtering is sequential importance sampling with resampling to combat weight degeneracy.
 - [[filtering-prediction-smoothing]] — specializes: Particle filtering approximates the filtering task by a resampled weighted sample population.
 - [[dynamic-bayesian-network]] — applies: Particle filtering is the workhorse approximate-inference method for general (nonlinear, non-Gaussian, factored) DBNs.

@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- gaussian-maximum-entropy-characterization
 component_scores:
   alternatives: null
   conditions: null
@@ -30,6 +32,10 @@ tags:
 - Lagrangian
 title: Calculus of Variations for Probabilistic Inference
 understanding: 0
+uses:
+- variational-inference
+- lagrange-multipliers
+- entropy
 ---
 
 ## Definition
@@ -48,4 +54,8 @@ Calculus of variations removes the burden of guessing the parametric family of $
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[entropy]] — uses
+- [[gaussian-maximum-entropy-characterization]] — applies
+- [[lagrange-multipliers]] — uses
+- [[variational-inference]] — uses
 [To be populated during integration]

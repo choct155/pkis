@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+analogous-to:
+- mixture-models
 component_scores:
   application: null
   boundary: null
@@ -30,6 +32,9 @@ tags:
 - parameters
 title: HMM Transition and Emission Parameters
 understanding: 0
+uses:
+- hidden-markov-model
+- transition-matrix
 ---
 
 ## Definition
@@ -47,4 +52,7 @@ The clean separation of transition and emission parameters allows the Baum-Welch
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[mixture-models]] — analogous-to
+- [[transition-matrix]] — uses
+- [[hidden-markov-model]] — uses
 [To be populated during integration]

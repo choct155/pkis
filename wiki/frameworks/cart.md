@@ -15,9 +15,14 @@ domain:
 - machine-learning
 - statistics
 id: pkis:framework:cart
+instantiates:
+- decision-trees
 knowledge_type: framework
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- random-forests
+- gradient-boosting
 related_concepts: []
 sources:
 - bishop-prml-ch14
@@ -29,6 +34,11 @@ tags:
 - nonparametric
 title: CART (Classification and Regression Trees)
 understanding: 0
+uses:
+- gini-impurity
+- tree-pruning
+- regularization
+- cross-validation
 ---
 
 ## Definition
@@ -49,4 +59,11 @@ CART produces human-interpretable models via sequences of binary decisions, hand
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[gradient-boosting]] — prerequisite-of
+- [[random-forests]] — prerequisite-of
+- [[cross-validation]] — uses
+- [[regularization]] — uses
+- [[tree-pruning]] — uses
+- [[gini-impurity]] — uses
+- [[decision-trees]] — instantiates
 [To be populated during integration]

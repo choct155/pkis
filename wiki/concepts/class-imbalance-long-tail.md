@@ -1,6 +1,9 @@
 ---
 aliases: []
 also_type: []
+applies:
+- multinomial-logistic-regression
+- cross-entropy-loss
 component_scores:
   application: null
   boundary: null
@@ -47,4 +50,6 @@ Long-tail distributions are the norm in natural language, biology, and e-commerc
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[cross-entropy-loss]] — applies
+- [[multinomial-logistic-regression]] — applies
 [To be populated during integration]

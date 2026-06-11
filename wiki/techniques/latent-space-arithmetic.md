@@ -1,6 +1,10 @@
 ---
 aliases: []
 also_type: []
+analogous-to:
+- word-embeddings
+applies:
+- variational-autoencoder
 component_scores:
   alternatives: null
   conditions: null
@@ -16,6 +20,8 @@ domain:
 - machine-learning
 - representation-learning
 - generative-models
+extends:
+- latent-space-interpolation
 id: pkis:technique:latent-space-arithmetic
 knowledge_type: technique
 maturity: evolving
@@ -49,4 +55,7 @@ First demonstrated in word2vec (word analogy: king − man + woman ≈ queen) an
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[variational-autoencoder]] — applies
+- [[word-embeddings]] — analogous-to: Word2vec analogy task is the canonical example of latent arithmetic
+- [[latent-space-interpolation]] — extends
 [To be populated during integration]

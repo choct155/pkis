@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- convolutional-neural-networks
 component_scores:
   alternatives: null
   conditions: null
@@ -9,6 +11,8 @@ component_scores:
   implementation: null
   operational_mechanism: null
   principled_mechanism: null
+contrasts-with:
+- principal-component-analysis
 coverage: 1
 date_created: '2026-06-11'
 date_updated: '2026-06-11'
@@ -23,6 +27,8 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - goodfellow-deeplearning-ch12
+specializes:
+- feature-engineering
 tags:
 - normalisation
 - preprocessing
@@ -45,4 +51,7 @@ Reduces one major nuisance factor (global illumination / contrast variation) bef
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[feature-engineering]] — specializes
+- [[principal-component-analysis]] — contrasts-with
+- [[convolutional-neural-networks]] — applies
 [To be populated during integration]

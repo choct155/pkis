@@ -15,12 +15,16 @@ domain:
 - statistics
 - machine-learning
 id: pkis:result:bayes-rule-for-gaussians
+instantiates:
+- conjugate-prior
 knowledge_type: result
 maturity: evolving
 needs_canonical_source: false
 related_concepts: []
 sources:
 - murphy-pml1-intro-ch03
+specializes:
+- linear-gaussian-system
 tags:
 - conjugate-prior
 - gaussian
@@ -28,6 +32,9 @@ tags:
 - bayesian-inference
 title: Bayes Rule for Gaussians
 understanding: 0
+uses:
+- mvn-marginal-conditional
+- completing-the-square-multivariate
 ---
 
 ## Definition
@@ -46,4 +53,8 @@ This is the fundamental engine behind Kalman filtering, Gaussian process regress
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[completing-the-square-multivariate]] — uses
+- [[mvn-marginal-conditional]] — uses
+- [[conjugate-prior]] — instantiates
+- [[linear-gaussian-system]] — specializes
 [To be populated during integration]

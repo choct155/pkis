@@ -23,6 +23,8 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - murphy-pml2-advanced-ch29
+specializes:
+- hidden-markov-model
 tags:
 - HMM
 - bioinformatics
@@ -30,6 +32,9 @@ tags:
 - protein-families
 title: Profile HMM
 understanding: 0
+uses:
+- viterbi-for-hmm
+- forward-backward-algorithm
 ---
 
 ## Definition
@@ -48,4 +53,7 @@ Profile HMMs are the standard tool in bioinformatics for protein family modeling
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[forward-backward-algorithm]] — uses
+- [[viterbi-for-hmm]] — uses
+- [[hidden-markov-model]] — specializes
 [To be populated during integration]

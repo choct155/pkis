@@ -21,6 +21,8 @@ id: pkis:concept:kalman-innovation
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- kalman-filter
 related_concepts: []
 sources:
 - murphy-pml2-advanced-ch08
@@ -45,4 +47,5 @@ Innovations are the signal that drives all updates in the Kalman filter (and its
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[kalman-filter]] — prerequisite-of
 [To be populated during integration]

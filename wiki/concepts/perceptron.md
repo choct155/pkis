@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+analogous-to:
+- linear-regression
 component_scores:
   application: null
   boundary: null
@@ -16,9 +18,14 @@ date_updated: '2026-06-11'
 domain:
 - machine-learning
 id: pkis:concept:perceptron
+instantiates:
+- single-neuron-classifier
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- stochastic-gradient-descent
+- connectionism
 related_concepts: []
 sources:
 - goodfellow-deeplearning-ch01
@@ -29,6 +36,8 @@ tags:
 - history
 title: Perceptron
 understanding: 0
+uses:
+- linear-separability
 ---
 
 ## Definition
@@ -46,4 +55,9 @@ The contemporaneous ADALINE (Widrow & Hoff, 1960) used the same linear model but
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[linear-separability]] — uses: The perceptron convergence theorem applies only to linearly separable data.
+- [[connectionism]] — prerequisite-of
+- [[stochastic-gradient-descent]] — prerequisite-of: The ADALINE weight update rule is a special case of SGD.
+- [[linear-regression]] — analogous-to: ADALINE uses the same linear model as the perceptron but with regression output and MSE loss, precursor to SGD.
+- [[single-neuron-classifier]] — instantiates
 [To be populated during integration]

@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+analogous-to:
+- factor-graph
 component_scores:
   application: null
   boundary: null
@@ -20,6 +22,8 @@ id: pkis:concept:clique-potential
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- partition-function
 related_concepts: []
 sources:
 - goodfellow-deeplearning-ch16
@@ -31,6 +35,9 @@ tags:
 - partition-function
 title: Clique Potential (Factor in Undirected Models)
 understanding: 0
+uses:
+- undirected-graphical-models
+- hammersley-clifford-theorem
 ---
 
 ## Definition
@@ -45,4 +52,8 @@ Clique potentials are the fundamental building blocks of Markov random fields. T
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[factor-graph]] — analogous-to
+- [[hammersley-clifford-theorem]] — uses
+- [[partition-function]] — prerequisite-of
+- [[undirected-graphical-models]] — uses
 [To be populated during integration]

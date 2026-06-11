@@ -1,6 +1,10 @@
 ---
 aliases: []
 also_type: []
+analogous-to:
+- language-model-smoothing
+applies:
+- naive-bayes-assumption
 component_scores:
   alternatives: null
   conditions: null
@@ -31,6 +35,9 @@ tags:
 - zero-count-problem
 title: Laplace (Add-One) Smoothing
 understanding: 0
+uses:
+- dirichlet-distribution
+- conjugate-prior
 ---
 
 ## Definition
@@ -45,4 +52,8 @@ Zero empirical counts (unseen events) cause the MLE to assign zero probability t
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[conjugate-prior]] — uses
+- [[language-model-smoothing]] — analogous-to
+- [[dirichlet-distribution]] — uses
+- [[naive-bayes-assumption]] — applies
 [To be populated during integration]

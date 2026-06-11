@@ -16,6 +16,9 @@ date_updated: '2026-06-11'
 domain:
 - machine-learning
 - geometry
+generalizes:
+- autoencoder
+- variational-autoencoder
 id: pkis:concept:linear-manifold-pca
 knowledge_type: concept
 maturity: evolving
@@ -30,6 +33,10 @@ tags:
 - generative-models
 title: Linear Manifold Interpretation of PCA
 understanding: 0
+uses:
+- probabilistic-pca
+- principal-component-analysis
+- low-rank-approximation
 ---
 
 ## Definition
@@ -44,4 +51,9 @@ This interpretation connects PCA to the broader **manifold hypothesis** in deep 
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[variational-autoencoder]] — generalizes: VAE generalises to nonlinear manifolds
+- [[low-rank-approximation]] — uses
+- [[autoencoder]] — generalizes
+- [[principal-component-analysis]] — uses
+- [[probabilistic-pca]] — uses
 [To be populated during integration]

@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+analogous-to:
+- information-theory
 component_scores:
   application: null
   limits: null
@@ -15,6 +17,10 @@ domain:
 - machine-learning
 - statistics
 - probability
+generalizes:
+- supervised-learning
+- unsupervised-learning
+- empirical-risk-minimization
 id: pkis:framework:probabilistic-ml-framework
 knowledge_type: framework
 maturity: evolving
@@ -29,6 +35,10 @@ tags:
 - unifying-framework
 title: Probabilistic Machine Learning Framework
 understanding: 0
+uses:
+- bayesian-inference
+- decision-theory-foundations
+- maximum-likelihood-estimation
 ---
 
 ## Definition
@@ -43,4 +53,11 @@ By casting ML as probabilistic inference, every model choice becomes a statement
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[empirical-risk-minimization]] — generalizes
+- [[maximum-likelihood-estimation]] — uses
+- [[information-theory]] — analogous-to
+- [[decision-theory-foundations]] — uses
+- [[bayesian-inference]] — uses
+- [[unsupervised-learning]] — generalizes
+- [[supervised-learning]] — generalizes
 [To be populated during integration]

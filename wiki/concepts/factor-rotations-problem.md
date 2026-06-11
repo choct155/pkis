@@ -1,6 +1,9 @@
 ---
 aliases: []
 also_type: []
+analogous-to:
+- identifiability-of-mixtures
+- label-switching
 component_scores:
   application: null
   boundary: null
@@ -10,6 +13,8 @@ component_scores:
   prerequisites: null
   scope: null
   transfer: null
+contrasts-with:
+- independent-component-analysis
 coverage: 1
 date_created: '2026-06-11'
 date_updated: '2026-06-11'
@@ -44,4 +49,7 @@ This fundamental ambiguity means MLE or MAP estimates of $W$ are not interpretab
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[label-switching]] — analogous-to
+- [[independent-component-analysis]] — contrasts-with: Non-Gaussian priors in ICA resolve the rotation ambiguity
+- [[identifiability-of-mixtures]] — analogous-to
 [To be populated during integration]

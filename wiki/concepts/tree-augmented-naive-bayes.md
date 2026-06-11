@@ -16,6 +16,8 @@ date_updated: '2026-06-11'
 domain:
 - probabilistic-graphical-models
 - supervised-learning
+extends:
+- naive-bayes-model
 id: pkis:concept:tree-augmented-naive-bayes
 knowledge_type: concept
 maturity: evolving
@@ -23,6 +25,8 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - murphy-pml2-advanced-ch04
+specializes:
+- bayesian-networks
 tags:
 - naive-Bayes
 - tree-structure
@@ -30,6 +34,9 @@ tags:
 - conditional-independence
 title: Tree-Augmented Naive Bayes (TAN)
 understanding: 0
+uses:
+- conditional-independence
+- mutual-information
 ---
 
 ## Definition
@@ -46,4 +53,8 @@ TAN provides a sweet spot between fully factored naive Bayes and unconstrained d
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[mutual-information]] — uses: Maximum spanning tree on class-conditional MI determines tree structure
+- [[conditional-independence]] — uses
+- [[bayesian-networks]] — specializes
+- [[naive-bayes-model]] — extends
 [To be populated during integration]

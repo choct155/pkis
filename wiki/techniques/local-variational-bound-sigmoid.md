@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- logistic-regression
 component_scores:
   alternatives: null
   conditions: null
@@ -30,6 +32,11 @@ tags:
 - local-variational
 title: Local Variational Bound for Logistic Sigmoid
 understanding: 0
+uses:
+- convex-set-and-function
+- convex-conjugate
+- taylor-series
+- gaussian-distribution
 ---
 
 ## Definition
@@ -46,4 +53,9 @@ Converts an intractable logistic-likelihood integral $\int\sigma(\mathbf{w}^T\bo
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[gaussian-distribution]] — uses
+- [[taylor-series]] — uses
+- [[logistic-regression]] — applies
+- [[convex-conjugate]] — uses
+- [[convex-set-and-function]] — uses
 [To be populated during integration]

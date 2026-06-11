@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- manifold-hypothesis
 component_scores:
   application: null
   boundary: null
@@ -10,12 +12,17 @@ component_scores:
   prerequisites: null
   scope: null
   transfer: null
+contrasts-with:
+- undercomplete-autoencoder
+- overcomplete-autoencoder
 coverage: 1
 date_created: '2026-06-11'
 date_updated: '2026-06-11'
 domain:
 - deep-learning
 - representation-learning
+generalizes:
+- principal-component-analysis
 id: pkis:concept:undercomplete-autoencoder
 knowledge_type: concept
 maturity: evolving
@@ -23,6 +30,8 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - goodfellow-deeplearning-ch14
+specializes:
+- autoencoder
 tags:
 - bottleneck
 - dimensionality-reduction
@@ -46,4 +55,9 @@ Undercomplete autoencoders provide the simplest mechanism for manifold learning 
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[overcomplete-autoencoder]] — contrasts-with
+- [[undercomplete-autoencoder]] — contrasts-with: placeholder – see overcomplete link below
+- [[manifold-hypothesis]] — applies
+- [[principal-component-analysis]] — generalizes
+- [[autoencoder]] — specializes
 [To be populated during integration]

@@ -17,12 +17,16 @@ domain:
 - information-theory
 - approximate-inference
 id: pkis:concept:zero-forcing-vs-zero-avoiding-kl
+instantiates:
+- alpha-divergence
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
 related_concepts: []
 sources:
 - bishop-prml-ch10
+specializes:
+- kl-divergence
 tags:
 - KL-divergence
 - mode-seeking
@@ -46,4 +50,6 @@ This asymmetry directly determines whether an approximate inference algorithm (V
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[alpha-divergence]] — instantiates
+- [[kl-divergence]] — specializes
 [To be populated during integration]

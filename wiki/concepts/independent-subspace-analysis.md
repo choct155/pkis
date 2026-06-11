@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+analogous-to:
+- sparse-coding
 component_scores:
   application: null
   boundary: null
@@ -16,6 +18,8 @@ date_updated: '2026-06-11'
 domain:
 - machine-learning
 - computational-neuroscience
+extends:
+- independent-component-analysis
 id: pkis:concept:independent-subspace-analysis
 knowledge_type: concept
 maturity: evolving
@@ -47,4 +51,6 @@ ISA generalises ICA to learn structured, group-sparse representations that refle
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[sparse-coding]] — analogous-to
+- [[independent-component-analysis]] — extends
 [To be populated during integration]

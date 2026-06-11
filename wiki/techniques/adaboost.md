@@ -28,11 +28,15 @@ sources:
 - hastie-esl-ch10
 specializes:
 - ensemble-learning
+- forward-stagewise-additive-modeling
 tags: []
 title: AdaBoost
 understanding: 0
 uses:
 - decision-trees
+- exponential-loss
+- weak-learner-boosting
+- pac-learning
 ---
 
 ## Definition
@@ -42,6 +46,10 @@ uses:
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[pac-learning]] — uses: derived from PAC framework
+- [[weak-learner-boosting]] — uses
+- [[forward-stagewise-additive-modeling]] — specializes
+- [[exponential-loss]] — uses
 - [[gradient-boosting]] — contrasts-with
 - [[decision-trees]] — uses
 - [[forward-stagewise-additive-modeling]] — instantiates

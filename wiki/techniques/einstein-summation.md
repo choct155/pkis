@@ -1,6 +1,10 @@
 ---
 aliases: []
 also_type: []
+applies:
+- linear-algebra
+- transformer-attention-mechanisms
+- graph-neural-networks
 component_scores:
   alternatives: null
   conditions: null
@@ -48,4 +52,7 @@ Einsum is implemented in NumPy, PyTorch, TensorFlow, and JAX. It (i) makes compl
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[graph-neural-networks]] — applies
+- [[transformer-attention-mechanisms]] — applies
+- [[linear-algebra]] — applies
 [To be populated during integration]

@@ -16,7 +16,12 @@ date_updated: '2026-06-11'
 domain:
 - machine-learning
 - deep-learning
+generalizes:
+- neural-networks
+- multilayer-perceptron
 id: pkis:concept:deep-neural-network-computation-graph
+instantiates:
+- end-to-end-learning
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
@@ -30,6 +35,11 @@ tags:
 - deep-learning
 title: Deep Neural Network (DNN) as Differentiable Computation Graph
 understanding: 0
+uses:
+- automatic-differentiation
+- backpropagation
+- directed-graphical-models
+- variational-autoencoder
 ---
 
 ## Definition
@@ -44,4 +54,11 @@ This graph-based view unifies MLPs, CNNs, RNNs, and transformers under a single 
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[end-to-end-learning]] — instantiates
+- [[variational-autoencoder]] — uses: VAE uses a DNN as inference network to approximate the posterior
+- [[directed-graphical-models]] — uses: DNNs can parametrize CPDs in directed graphical models
+- [[multilayer-perceptron]] — generalizes
+- [[backpropagation]] — uses
+- [[automatic-differentiation]] — uses
+- [[neural-networks]] — generalizes
 [To be populated during integration]

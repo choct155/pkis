@@ -17,7 +17,11 @@ domain:
 - statistics
 - machine-learning
 - probability
+generalizes:
+- dirichlet-distribution
 id: pkis:concept:dirichlet-process
+instantiates:
+- bayesian-nonparametric-models
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
@@ -32,6 +36,10 @@ tags:
 - chinese-restaurant-process
 title: Dirichlet Process
 understanding: 0
+uses:
+- exchangeability
+- stick-breaking-construction
+- chinese-restaurant-process
 ---
 
 ## Definition
@@ -50,4 +58,9 @@ The DP allows clustering with an unbounded number of components: the posterior a
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[bayesian-nonparametric-models]] — instantiates
+- [[chinese-restaurant-process]] — uses
+- [[stick-breaking-construction]] — uses
+- [[exchangeability]] — uses
+- [[dirichlet-distribution]] — generalizes
 [To be populated during integration]

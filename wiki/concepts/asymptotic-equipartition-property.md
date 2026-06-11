@@ -16,10 +16,15 @@ date_updated: '2026-06-11'
 domain:
 - information-theory
 - statistics
+extends:
+- typical-set
 id: pkis:concept:asymptotic-equipartition-property
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- source-coding-theorem
+- jointly-typical-set
 related_concepts: []
 sources:
 - murphy-pml2-advanced-ch05
@@ -31,6 +36,9 @@ tags:
 - aep
 title: Asymptotic Equipartition Property (AEP)
 understanding: 0
+uses:
+- entropy
+- weak-law-of-large-numbers
 ---
 
 ## Definition
@@ -51,4 +59,9 @@ The AEP is the probabilistic foundation of Shannon's source coding theorem, just
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[jointly-typical-set]] — prerequisite-of
+- [[weak-law-of-large-numbers]] — uses
+- [[source-coding-theorem]] — prerequisite-of
+- [[entropy]] — uses
+- [[typical-set]] — extends: AEP provides the convergence result underlying the typical set definition
 [To be populated during integration]

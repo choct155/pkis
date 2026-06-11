@@ -42,6 +42,7 @@ uses:
 - bayesian-inference
 - maximum-likelihood-estimation
 - kernel-density-estimation
+- d-separation
 ---
 
 ## Definition
@@ -51,6 +52,7 @@ uses:
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[d-separation]] — uses: conditional independence of features given class label is read off the graph via d-separation
 - [[kernel-density-estimation]] — uses
 - [[density-estimation]] — applies
 - [[logistic-regression]] — contrasts-with

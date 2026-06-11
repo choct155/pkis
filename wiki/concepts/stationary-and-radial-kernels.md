@@ -18,12 +18,16 @@ domain:
 - kernel-methods
 - gaussian-processes
 id: pkis:concept:stationary-and-radial-kernels
+instantiates:
+- kernel-construction-rules
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
 related_concepts: []
 sources:
 - bishop-prml-ch06
+specializes:
+- covariance-function
 tags:
 - stationary-kernel
 - RBF
@@ -32,6 +36,8 @@ tags:
 - translation-invariance
 title: Stationary and Radial Basis Kernels
 understanding: 0
+uses:
+- gaussian-process
 ---
 
 ## Definition
@@ -50,4 +56,7 @@ Stationarity is a key modelling assumption: it implies the correlation between f
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[gaussian-process]] — uses
+- [[covariance-function]] — specializes
+- [[kernel-construction-rules]] — instantiates
 [To be populated during integration]

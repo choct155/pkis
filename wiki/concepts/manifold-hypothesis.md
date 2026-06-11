@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+analogous-to:
+- low-rank-approximation
 component_scores:
   application: null
   boundary: null
@@ -10,6 +12,8 @@ component_scores:
   prerequisites: null
   scope: null
   transfer: null
+contrasts-with:
+- curse-of-dimensionality
 coverage: 1
 date_created: '2026-06-11'
 date_updated: '2026-06-11'
@@ -17,10 +21,19 @@ domain:
 - machine-learning
 - geometry
 - representation-learning
+generalizes:
+- principal-component-analysis
 id: pkis:concept:manifold-hypothesis
+instantiates:
+- inductive-priors-representation-learning
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- latent-variable-models
+- two-step-latent-manifold-generative-modeling
+- spread-kl-divergence
+- deep-generative-model-taxonomy
 related_concepts: []
 sources:
 - goodfellow-deeplearning-ch14
@@ -33,6 +46,10 @@ tags:
 - dimensionality-reduction
 title: Manifold Hypothesis
 understanding: 0
+uses:
+- autoencoder
+- distributed-representation
+- density-estimation
 ---
 
 ## Definition
@@ -49,4 +66,15 @@ The manifold hypothesis provides the theoretical justification for dimensionalit
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[deep-generative-model-taxonomy]] — prerequisite-of
+- [[spread-kl-divergence]] — prerequisite-of
+- [[two-step-latent-manifold-generative-modeling]] — prerequisite-of
+- [[latent-variable-models]] — prerequisite-of: Justifies the use of low-dimensional latent variables
+- [[density-estimation]] — uses
+- [[distributed-representation]] — uses
+- [[inductive-priors-representation-learning]] — instantiates
+- [[autoencoder]] — uses: Autoencoders are designed to learn manifold structure
+- [[low-rank-approximation]] — analogous-to
+- [[principal-component-analysis]] — generalizes
+- [[curse-of-dimensionality]] — contrasts-with
 [To be populated during integration]

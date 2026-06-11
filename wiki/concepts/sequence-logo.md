@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- entropy
 component_scores:
   application: null
   boundary: null
@@ -31,6 +33,8 @@ tags:
 - sequence-motif
 title: Sequence Logo
 understanding: 0
+uses:
+- binary-entropy-function
 ---
 
 ## Definition
@@ -45,4 +49,6 @@ Sequence logos make evolutionary conservation immediately visible: tall, narrow 
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[binary-entropy-function]] — uses
+- [[entropy]] — applies
 [To be populated during integration]

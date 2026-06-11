@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- t-distribution
 component_scores:
   conditions: null
   implications: null
@@ -14,6 +16,8 @@ domain:
 - probability-theory
 - statistics
 id: pkis:result:student-t-as-gaussian-scale-mixture
+instantiates:
+- gaussian-scale-mixture
 knowledge_type: result
 maturity: evolving
 needs_canonical_source: false
@@ -28,6 +32,8 @@ tags:
 - robust-regression
 title: Student-t as a Gaussian Scale Mixture
 understanding: 0
+uses:
+- em-algorithm
 ---
 
 ## Definition
@@ -42,4 +48,7 @@ This representation (i) provides an interpretable derivation of the Student's he
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[em-algorithm]] — uses
+- [[t-distribution]] — applies
+- [[gaussian-scale-mixture]] — instantiates
 [To be populated during integration]

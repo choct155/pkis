@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- gibbs-sampler
 component_scores:
   alternatives: null
   conditions: null
@@ -15,6 +17,8 @@ date_updated: '2026-06-11'
 domain:
 - statistics
 - machine-learning
+extends:
+- rejection-sampling
 id: pkis:technique:adaptive-rejection-sampling
 knowledge_type: technique
 maturity: evolving
@@ -31,6 +35,10 @@ tags:
 - envelope-function
 title: Adaptive Rejection Sampling
 understanding: 0
+uses:
+- gibbs-sampling
+- metropolis-hastings
+- convex-set-and-function
 ---
 
 ## Definition
@@ -45,4 +53,9 @@ Adaptive rejection sampling removes the need to specify an analytic envelope by 
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[convex-set-and-function]] — uses: Requires log-concavity i.e. concave log-density
+- [[gibbs-sampler]] — applies
+- [[metropolis-hastings]] — uses: adaptive rejection Metropolis sampling adds MH step for non-log-concave targets
+- [[gibbs-sampling]] — uses: used as subroutine for sampling log-concave conditionals inside Gibbs
+- [[rejection-sampling]] — extends
 [To be populated during integration]

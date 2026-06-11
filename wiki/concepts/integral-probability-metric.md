@@ -10,6 +10,8 @@ component_scores:
   prerequisites: null
   scope: null
   transfer: null
+contrasts-with:
+- f-divergence
 coverage: 1
 date_created: '2026-06-11'
 date_updated: '2026-06-11'
@@ -17,6 +19,9 @@ domain:
 - statistics
 - machine-learning
 - functional-analysis
+generalizes:
+- wasserstein-distance
+- maximum-mean-discrepancy
 id: pkis:concept:integral-probability-metric
 knowledge_type: concept
 maturity: evolving
@@ -50,4 +55,7 @@ Unlike f-divergences, IPMs provide meaningful gradient signal even when $p$ and 
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[f-divergence]] — contrasts-with: IPMs use difference of expectations (smooth witnesses); f-divergences use ratios of densities.
+- [[maximum-mean-discrepancy]] — generalizes
+- [[wasserstein-distance]] — generalizes
 [To be populated during integration]

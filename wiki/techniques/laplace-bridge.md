@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- calibration
 component_scores:
   alternatives: null
   conditions: null
@@ -16,7 +18,11 @@ domain:
 - bayesian-inference
 - deep-learning
 - uncertainty-quantification
+extends:
+- laplace-approximation
 id: pkis:technique:laplace-bridge
+instantiates:
+- bayesian-deep-learning
 knowledge_type: technique
 maturity: evolving
 needs_canonical_source: false
@@ -31,6 +37,8 @@ tags:
 - post-processing
 title: Laplace Bridge Approximation
 understanding: 0
+uses:
+- dirichlet-distribution
 ---
 
 ## Definition
@@ -45,4 +53,8 @@ The Laplace bridge [Hobbhahn et al. 2022] provides a cheap, closed-form post-pro
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[calibration]] — applies
+- [[bayesian-deep-learning]] — instantiates
+- [[dirichlet-distribution]] — uses
+- [[laplace-approximation]] — extends
 [To be populated during integration]

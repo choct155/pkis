@@ -1,6 +1,9 @@
 ---
 aliases: []
 also_type: []
+applies:
+- elbo
+- variational-autoencoder
 component_scores:
   alternatives: null
   conditions: null
@@ -9,12 +12,16 @@ component_scores:
   implementation: null
   operational_mechanism: null
   principled_mechanism: null
+contrasts-with:
+- score-function-estimator
 coverage: 1
 date_created: '2026-06-11'
 date_updated: '2026-06-11'
 domain:
 - machine-learning
 - statistics
+extends:
+- reparameterization-trick
 id: pkis:technique:reparameterization-gradient
 knowledge_type: technique
 maturity: evolving
@@ -30,6 +37,8 @@ tags:
 - continuous-relaxation
 title: Reparameterization Gradient (Pathwise Derivative)
 understanding: 0
+uses:
+- monte-carlo-estimator
 ---
 
 ## Definition
@@ -49,4 +58,9 @@ The gradient inside the expectation uses the **total derivative** accounting for
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[monte-carlo-estimator]] — uses
+- [[variational-autoencoder]] — applies
+- [[elbo]] — applies
+- [[score-function-estimator]] — contrasts-with: lower variance but requires differentiable loss wrt z
+- [[reparameterization-trick]] — extends
 [To be populated during integration]

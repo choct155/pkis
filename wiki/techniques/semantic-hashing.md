@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- manifold-hypothesis
 component_scores:
   alternatives: null
   conditions: null
@@ -31,6 +33,9 @@ tags:
 - deep-autoencoder
 title: Semantic Hashing
 understanding: 0
+uses:
+- autoencoder
+- hash-function
 ---
 
 ## Definition
@@ -47,4 +52,7 @@ Semantic hashing brings learned representation to the scalability requirements o
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[manifold-hypothesis]] — applies
+- [[hash-function]] — uses
+- [[autoencoder]] — uses
 [To be populated during integration]

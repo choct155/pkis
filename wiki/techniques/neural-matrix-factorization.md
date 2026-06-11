@@ -1,6 +1,10 @@
 ---
 aliases: []
 also_type: []
+analogous-to:
+- factorization-machines
+applies:
+- implicit-feedback-recommendation
 component_scores:
   alternatives: null
   conditions: null
@@ -15,6 +19,8 @@ date_updated: '2026-06-11'
 domain:
 - machine-learning
 - recommender-systems
+extends:
+- matrix-factorization-recommender
 id: pkis:technique:neural-matrix-factorization
 knowledge_type: technique
 maturity: evolving
@@ -30,6 +36,8 @@ tags:
 - embedding
 title: Neural Matrix Factorization (NeuMF)
 understanding: 0
+uses:
+- multilayer-perceptron
 ---
 
 ## Definition
@@ -44,4 +52,8 @@ NeuMF empirically demonstrates that combining bilinear (memorisation) and MLP (g
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[implicit-feedback-recommendation]] — applies
+- [[factorization-machines]] — analogous-to
+- [[multilayer-perceptron]] — uses
+- [[matrix-factorization-recommender]] — extends
 [To be populated during integration]

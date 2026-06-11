@@ -10,6 +10,8 @@ component_scores:
   prerequisites: null
   scope: null
   transfer: null
+contrasts-with:
+- post-hoc-explanation
 coverage: 1
 date_created: '2026-06-11'
 date_updated: '2026-06-11'
@@ -17,7 +19,13 @@ domain:
 - machine-learning
 - interpretability
 - human-computer-interaction
+generalizes:
+- decision-trees
+- generalized-additive-model
+- lasso
 id: pkis:concept:inherently-interpretable-model
+instantiates:
+- interpretable-ml-ecosystem
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
@@ -32,6 +40,8 @@ tags:
 - rule-sets
 title: Inherently Interpretable Model
 understanding: 0
+uses:
+- regularization
 ---
 
 ## Definition
@@ -53,4 +63,10 @@ Inherently interpretable models eliminate the fidelity gap introduced by post-ho
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[regularization]] — uses: L1 and other sparsity-inducing regularizers are key to training sparse inherently interpretable models.
+- [[interpretable-ml-ecosystem]] — instantiates: When model = explanation, the ecosystem collapses the method/explanation distinction.
+- [[lasso]] — generalizes: Sparse linear models (lasso) are a canonical compact inherently interpretable class.
+- [[generalized-additive-model]] — generalizes: GAMs with small numbers of smooth component functions are inherently interpretable.
+- [[decision-trees]] — generalizes: Decision trees are a canonical example of an inherently interpretable model class.
+- [[post-hoc-explanation]] — contrasts-with: Inherently interpretable models need no surrogate; post-hoc methods approximate an already-trained model.
 [To be populated during integration]

@@ -18,9 +18,13 @@ domain:
 - machine-learning
 - statistics
 id: pkis:concept:chinese-restaurant-process
+instantiates:
+- dirichlet-process
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- dirichlet-process-mixture-model
 related_concepts: []
 sources:
 - murphy-pml2-advanced-ch31
@@ -32,6 +36,8 @@ tags:
 - polya-urn
 title: Chinese Restaurant Process
 understanding: 0
+uses:
+- exchangeability
 ---
 
 ## Definition
@@ -46,4 +52,7 @@ The CRP provides an exchangeable, computationally convenient representation of t
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[dirichlet-process-mixture-model]] — prerequisite-of
+- [[exchangeability]] — uses
+- [[dirichlet-process]] — instantiates
 [To be populated during integration]

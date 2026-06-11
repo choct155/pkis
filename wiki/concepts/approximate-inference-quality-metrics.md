@@ -1,6 +1,11 @@
 ---
 aliases: []
 also_type: []
+analogous-to:
+- cross-validation
+applies:
+- variational-inference
+- mcmc
 component_scores:
   application: null
   boundary: null
@@ -32,6 +37,10 @@ tags:
 - Bayesian-risk
 title: Approximate Inference Quality Metrics
 understanding: 0
+uses:
+- kl-divergence
+- expected-loss
+- posterior-predictive-check
 ---
 
 ## Definition
@@ -48,4 +57,10 @@ Because the "ground truth" posterior is usually unavailable, practitioners must 
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[posterior-predictive-check]] — uses
+- [[cross-validation]] — analogous-to
+- [[expected-loss]] — uses
+- [[kl-divergence]] — uses
+- [[mcmc]] — applies
+- [[variational-inference]] — applies
 [To be populated during integration]

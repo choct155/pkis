@@ -31,6 +31,11 @@ tags:
 - potential-outcomes
 title: Potential Outcomes and Counterfactual Notation
 understanding: 0
+uses:
+- counterfactuals
+- structural-causal-model
+- average-treatment-effect
+- causal-hierarchy
 ---
 
 ## Definition
@@ -49,4 +54,8 @@ Potential outcomes notation is mathematically equivalent to do-calculus for inte
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[causal-hierarchy]] — uses
+- [[average-treatment-effect]] — uses: ATE = E[Y(1)-Y(0)] in potential outcomes notation
+- [[structural-causal-model]] — uses: Potential outcomes Y_i(a) are defined via SCM noise replay
+- [[counterfactuals]] — uses
 [To be populated during integration]

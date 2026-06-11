@@ -14,6 +14,8 @@ date_updated: '2026-06-11'
 domain:
 - machine-learning
 - multimodal-learning
+extends:
+- variational-autoencoder
 id: pkis:framework:multimodal-vae
 knowledge_type: framework
 maturity: evolving
@@ -29,6 +31,8 @@ tags:
 - semi-supervised
 title: Multimodal VAE (MVAE)
 understanding: 0
+uses:
+- missing-data-mechanisms
 ---
 
 ## Definition
@@ -49,4 +53,6 @@ MVAEs enable learning across heterogeneous data types (e.g., images and text) wi
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[missing-data-mechanisms]] — uses
+- [[variational-autoencoder]] — extends
 [To be populated during integration]

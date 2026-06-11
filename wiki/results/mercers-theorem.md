@@ -29,6 +29,11 @@ tags:
 - GP
 title: Mercer's Theorem
 understanding: 0
+uses:
+- mercer-kernel
+- reproducing-kernel-hilbert-space
+- eigendecomposition
+- the-kernel-trick
 ---
 
 ## Definition
@@ -43,4 +48,8 @@ Mercer's theorem is the mathematical foundation of the kernel trick, RKHS theory
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[the-kernel-trick]] — uses
+- [[eigendecomposition]] — uses
+- [[reproducing-kernel-hilbert-space]] — uses
+- [[mercer-kernel]] — uses
 [To be populated during integration]

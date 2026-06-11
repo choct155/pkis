@@ -17,16 +17,24 @@ domain:
 - optimization
 - deep-learning
 - statistical-learning
+extends:
+- gradient-and-jacobian
 id: pkis:concept:hessian-matrix
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- critical-points-saddle-points
+- newtons-method-optimization
 related_concepts: []
 sources:
 - deisenroth-mml-ch05
 tags: []
 title: Hessian Matrix
 understanding: 0
+uses:
+- eigendecomposition
+- taylor-series
 ---
 
 ## Definition
@@ -49,4 +57,9 @@ Second-order optimization (Newton's method) preconditions the gradient by $\math
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[newtons-method-optimization]] — prerequisite-of
+- [[critical-points-saddle-points]] — prerequisite-of
+- [[taylor-series]] — uses
+- [[eigendecomposition]] — uses
+- [[gradient-and-jacobian]] — extends
 [To be populated during integration]

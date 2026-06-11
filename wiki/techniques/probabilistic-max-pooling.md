@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- deep-boltzmann-machine
 component_scores:
   alternatives: null
   conditions: null
@@ -16,6 +18,8 @@ domain:
 - deep-learning
 - convolutional-networks
 - energy-based-models
+extends:
+- restricted-boltzmann-machine
 id: pkis:technique:probabilistic-max-pooling
 knowledge_type: technique
 maturity: evolving
@@ -42,4 +46,6 @@ Probabilistic max pooling makes pooling tractable within the Boltzmann machine (
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[deep-boltzmann-machine]] — applies
+- [[restricted-boltzmann-machine]] — extends: Enables pooling in convolutional RBMs and deep Boltzmann machines.
 [To be populated during integration]

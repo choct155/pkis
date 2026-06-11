@@ -10,6 +10,8 @@ component_scores:
   prerequisites: null
   scope: null
   transfer: null
+contrasts-with:
+- selection-bias
 coverage: 1
 date_created: '2026-06-11'
 date_updated: '2026-06-11'
@@ -24,6 +26,8 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - murphy-pml2-advanced-ch19
+specializes:
+- distribution-shift
 tags:
 - distribution-shift
 - domain-adaptation
@@ -31,6 +35,8 @@ tags:
 - robustness
 title: Covariate Shift
 understanding: 0
+uses:
+- causal-vs-anticausal-prediction
 ---
 
 ## Definition
@@ -48,4 +54,7 @@ Covariate shift is one of four canonical shift types: the other three are concep
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[selection-bias]] — contrasts-with
+- [[causal-vs-anticausal-prediction]] — uses
+- [[distribution-shift]] — specializes
 [To be populated during integration]

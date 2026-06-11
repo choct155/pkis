@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- overdispersion
 component_scores:
   application: null
   boundary: null
@@ -16,7 +18,11 @@ date_updated: '2026-06-11'
 domain:
 - statistics
 - machine-learning
+extends:
+- poisson-regression
 id: pkis:concept:zero-inflated-poisson
+instantiates:
+- mixture-models
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
@@ -45,4 +51,7 @@ Excess zeros are ubiquitous in biostatistics (disease counts), genomics (read co
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[overdispersion]] — applies
+- [[mixture-models]] — instantiates
+- [[poisson-regression]] — extends
 [To be populated during integration]

@@ -16,7 +16,11 @@ date_updated: '2026-06-11'
 domain:
 - statistics
 - machine learning
+generalizes:
+- ordinary-least-squares
 id: pkis:concept:weighted-least-squares
+instantiates:
+- maximum-likelihood-estimation
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
@@ -29,6 +33,8 @@ tags:
 - MLE
 title: Weighted Least Squares (WLS)
 understanding: 0
+uses:
+- iteratively-reweighted-least-squares
 ---
 
 ## Definition
@@ -43,4 +49,7 @@ WLS generalises OLS to heteroskedastic settings and is a special case of general
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[maximum-likelihood-estimation]] — instantiates
+- [[iteratively-reweighted-least-squares]] — uses
+- [[ordinary-least-squares]] — generalizes
 [To be populated during integration]

@@ -17,6 +17,9 @@ domain:
 - deep-learning
 - bayesian-inference
 id: pkis:technique:reparameterized-vi
+instantiates:
+- reparameterization-trick
+- variational-inference-framework
 knowledge_type: technique
 maturity: evolving
 needs_canonical_source: false
@@ -30,6 +33,9 @@ tags:
 - continuous-latents
 title: Reparameterized Variational Inference
 understanding: 0
+uses:
+- cholesky-decomposition
+- monte-carlo-estimator
 ---
 
 ## Definition
@@ -44,4 +50,8 @@ Reparameterized VI (Kingma & Welling 2014; Rezende et al. 2014) yields low-varia
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[monte-carlo-estimator]] — uses: A single Monte Carlo sample from p(epsilon) provides an unbiased gradient estimate.
+- [[cholesky-decomposition]] — uses: Full-covariance Gaussian VI uses the Cholesky decomposition z = mu + L*epsilon.
+- [[variational-inference-framework]] — instantiates
+- [[reparameterization-trick]] — instantiates: Reparameterized VI is the application of the reparameterization trick to ELBO gradient estimation.
 [To be populated during integration]

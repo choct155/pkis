@@ -10,6 +10,8 @@ component_scores:
   prerequisites: null
   scope: null
   transfer: null
+contrasts-with:
+- gram-matrix
 coverage: 1
 date_created: '2026-06-11'
 date_updated: '2026-06-11'
@@ -21,9 +23,14 @@ id: pkis:concept:scatter-matrix
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- principal-component-analysis
+- linear-discriminant-analysis
 related_concepts: []
 sources:
 - murphy-pml1-intro-ch07
+specializes:
+- linear-algebra
 tags:
 - covariance
 - PCA
@@ -32,6 +39,8 @@ tags:
 - centering-matrix
 title: Scatter Matrix and Sum-of-Squares Matrix
 understanding: 0
+uses:
+- covariance-and-correlation
 ---
 
 ## Definition
@@ -48,4 +57,9 @@ Scatter matrices appear in linear discriminant analysis, PCA, canonical correlat
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[gram-matrix]] — contrasts-with
+- [[covariance-and-correlation]] — uses
+- [[linear-discriminant-analysis]] — prerequisite-of
+- [[principal-component-analysis]] — prerequisite-of
+- [[linear-algebra]] — specializes
 [To be populated during integration]

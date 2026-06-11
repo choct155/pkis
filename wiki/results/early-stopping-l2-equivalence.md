@@ -30,6 +30,11 @@ tags:
 - quadratic-approximation
 title: Early Stopping Equivalence to L2 Regularization
 understanding: 0
+uses:
+- early-stopping
+- ridge-regression
+- hessian-matrix
+- l2-regularization-eigenspectrum-shrinkage
 ---
 
 ## Definition
@@ -46,4 +51,8 @@ This result justifies early stopping as a principled regularizer with automatic 
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[l2-regularization-eigenspectrum-shrinkage]] — uses
+- [[hessian-matrix]] — uses
+- [[ridge-regression]] — uses
+- [[early-stopping]] — uses
 [To be populated during integration]

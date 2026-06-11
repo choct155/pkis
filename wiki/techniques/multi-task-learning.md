@@ -1,6 +1,11 @@
 ---
 aliases: []
 also_type: []
+analogous-to:
+- transfer-learning
+- partial-pooling-shrinkage
+applies:
+- neural-networks
 component_scores:
   alternatives: null
   conditions: null
@@ -23,6 +28,8 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - goodfellow-deeplearning-ch07
+specializes:
+- regularization
 tags:
 - multi-task-learning
 - shared-representation
@@ -31,6 +38,8 @@ tags:
 - generalization
 title: Multi-Task Learning
 understanding: 0
+uses:
+- inductive-bias
 ---
 
 ## Definition
@@ -46,4 +55,9 @@ Multi-task learning improves generalization when tasks share latent factors; the
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[partial-pooling-shrinkage]] — analogous-to: Both pool statistical strength across tasks/groups
+- [[neural-networks]] — applies
+- [[inductive-bias]] — uses
+- [[transfer-learning]] — analogous-to
+- [[regularization]] — specializes
 [To be populated during integration]

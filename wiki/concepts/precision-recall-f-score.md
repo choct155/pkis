@@ -1,6 +1,10 @@
 ---
 aliases: []
 also_type: []
+analogous-to:
+- false-discovery-rate
+applies:
+- hypothesis-testing
 component_scores:
   application: null
   boundary: null
@@ -10,6 +14,8 @@ component_scores:
   prerequisites: null
   scope: null
   transfer: null
+contrasts-with:
+- receiver-operating-characteristic-curve
 coverage: 1
 date_created: '2026-06-11'
 date_updated: '2026-06-11'
@@ -48,4 +54,7 @@ Accuracy is misleading on imbalanced datasets (e.g., a disease affecting 1-in-a-
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[hypothesis-testing]] — applies
+- [[false-discovery-rate]] — analogous-to: Precision = 1 - FDR; both measure the reliability of reported positives
+- [[receiver-operating-characteristic-curve]] — contrasts-with: PR curves are preferred over ROC curves for imbalanced datasets where the negative class dominates
 [To be populated during integration]

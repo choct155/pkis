@@ -10,6 +10,8 @@ component_scores:
   prerequisites: null
   scope: null
   transfer: null
+contrasts-with:
+- elbo
 coverage: 1
 date_created: '2026-06-11'
 date_updated: '2026-06-11'
@@ -24,6 +26,8 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - murphy-pml2-advanced-ch10
+specializes:
+- variational-free-energy
 tags:
 - variational-free-energy
 - ELBO
@@ -31,6 +35,8 @@ tags:
 - free-energy-principle
 title: Variational Free Energy
 understanding: 0
+uses:
+- entropy
 ---
 
 ## Definition
@@ -45,4 +51,7 @@ The physics framing connects VI to statistical mechanics (Helmholtz free energy 
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[entropy]] — uses: VFE = expected energy - entropy(q).
+- [[elbo]] — contrasts-with: VFE = -ELBO; they are negatives of each other and arise from physics vs. statistics perspectives.
+- [[variational-free-energy]] — specializes: The VFE node here is the ML/statistics formalization; existing node captures the broader concept.
 [To be populated during integration]

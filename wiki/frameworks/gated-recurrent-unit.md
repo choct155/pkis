@@ -1,6 +1,9 @@
 ---
 aliases: []
 also_type: []
+applies:
+- vanishing-exploding-gradients-rnn
+- vanishing-gradient-problem
 component_scores:
   application: null
   limits: null
@@ -8,12 +11,17 @@ component_scores:
   purpose: null
   scope: null
   structure: null
+contrasts-with:
+- long-short-term-memory-lstm
 coverage: 1
 date_created: '2026-06-11'
 date_updated: '2026-06-11'
 domain:
 - deep-learning
 - sequence-modeling
+extends:
+- leaky-units-multiscale-rnn
+- recurrent-neural-network
 id: pkis:framework:gated-recurrent-unit
 knowledge_type: framework
 maturity: evolving
@@ -22,6 +30,8 @@ related_concepts: []
 sources:
 - goodfellow-deeplearning-ch10
 - murphy-pml1-intro-ch15
+specializes:
+- long-short-term-memory
 tags:
 - gated-RNN
 - update-gate
@@ -30,6 +40,9 @@ tags:
 - GRU
 title: Gated Recurrent Unit (GRU)
 understanding: 0
+uses:
+- backpropagation-through-time
+- teacher-forcing
 ---
 
 ## Definition
@@ -47,4 +60,12 @@ GRUs have fewer parameters than LSTMs (no separate cell state or output gate) wh
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[teacher-forcing]] — uses
+- [[backpropagation-through-time]] — uses
+- [[vanishing-gradient-problem]] — applies: GRU's additive update gate addresses vanishing gradients
+- [[long-short-term-memory-lstm]] — contrasts-with: GRU is a simpler, later alternative to LSTM with fewer parameters
+- [[recurrent-neural-network]] — extends
+- [[vanishing-exploding-gradients-rnn]] — applies
+- [[leaky-units-multiscale-rnn]] — extends
+- [[long-short-term-memory]] — specializes
 [To be populated during integration]

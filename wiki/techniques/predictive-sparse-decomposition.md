@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+analogous-to:
+- variational-autoencoder
 component_scores:
   alternatives: null
   conditions: null
@@ -16,7 +18,11 @@ domain:
 - deep-learning
 - sparse-coding
 - representation-learning
+extends:
+- sparse-autoencoder
 id: pkis:technique:predictive-sparse-decomposition
+instantiates:
+- amortized-inference
 knowledge_type: technique
 maturity: evolving
 needs_canonical_source: false
@@ -46,4 +52,7 @@ PSD bridges the gap between sparse coding (iterative, expensive inference) and p
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[variational-autoencoder]] — analogous-to
+- [[amortized-inference]] — instantiates
+- [[sparse-autoencoder]] — extends
 [To be populated during integration]

@@ -1,6 +1,9 @@
 ---
 aliases: []
 also_type: []
+applies:
+- recurrent-neural-network
+- language-model
 component_scores:
   alternatives: null
   conditions: null
@@ -9,6 +12,8 @@ component_scores:
   implementation: null
   operational_mechanism: null
   principled_mechanism: null
+contrasts-with:
+- backpropagation-through-time
 coverage: 1
 date_created: '2026-06-11'
 date_updated: '2026-06-11'
@@ -31,6 +36,11 @@ tags:
 - maximum-likelihood
 title: Teacher Forcing
 understanding: 0
+uses:
+- maximum-likelihood-estimation
+- encoder-decoder-seq2seq
+- backpropagation-through-time
+- distribution-shift
 ---
 
 ## Definition
@@ -48,4 +58,11 @@ Exposure bias can hurt generation quality; scheduled sampling (Bengio et al., 20
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[distribution-shift]] — uses: Exposure bias is a train-test distribution mismatch caused by teacher forcing
+- [[language-model]] — applies
+- [[backpropagation-through-time]] — uses
+- [[encoder-decoder-seq2seq]] — uses
+- [[maximum-likelihood-estimation]] — uses
+- [[recurrent-neural-network]] — applies
+- [[backpropagation-through-time]] — contrasts-with: Teacher forcing avoids BPTT in output-recurrent models by decoupling time steps
 [To be populated during integration]

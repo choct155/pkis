@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- gaussian-mixture-models
 component_scores:
   application: null
   boundary: null
@@ -17,6 +19,8 @@ domain:
 - machine-learning
 - statistics
 - probabilistic-modeling
+generalizes:
+- k-means-algorithm
 id: pkis:concept:responsibilities-mixture-models
 knowledge_type: concept
 maturity: evolving
@@ -31,6 +35,10 @@ tags:
 - posterior-probabilities
 title: Responsibilities in Mixture Models
 understanding: 0
+uses:
+- em-algorithm
+- bayesian-inference
+- complete-vs-incomplete-data-em
 ---
 
 ## Definition
@@ -45,4 +53,9 @@ Responsibilities are the central output of the E step in EM for mixture models. 
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[complete-vs-incomplete-data-em]] — uses
+- [[k-means-algorithm]] — generalizes: soft responsibilities generalise the hard 0/1 K-means assignments
+- [[bayesian-inference]] — uses: responsibilities are posterior probabilities via Bayes theorem
+- [[em-algorithm]] — uses: responsibilities are computed in the E step and used in the M step
+- [[gaussian-mixture-models]] — applies
 [To be populated during integration]

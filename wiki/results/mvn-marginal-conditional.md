@@ -17,9 +17,13 @@ id: pkis:result:mvn-marginal-conditional
 knowledge_type: result
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- multiple-imputation
 related_concepts: []
 sources:
 - murphy-pml1-intro-ch03
+specializes:
+- multivariate-normal-model
 tags:
 - multivariate-gaussian
 - schur-complement
@@ -27,6 +31,10 @@ tags:
 - conditioning
 title: MVN Marginal and Conditional Distributions
 understanding: 0
+uses:
+- mahalanobis-distance
+- conditional-independence
+- marginalization
 ---
 
 ## Definition
@@ -45,4 +53,9 @@ This closed-form result is the engine behind Gaussian process regression, Kalman
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[multiple-imputation]] — prerequisite-of
+- [[marginalization]] — uses
+- [[conditional-independence]] — uses
+- [[mahalanobis-distance]] — uses
+- [[multivariate-normal-model]] — specializes
 [To be populated during integration]

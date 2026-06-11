@@ -1,6 +1,9 @@
 ---
 aliases: []
 also_type: []
+applies:
+- gaussian-mixture-model
+- mixture-models
 component_scores:
   application: null
   boundary: null
@@ -20,6 +23,8 @@ id: pkis:concept:cluster-responsibility
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- em-algorithm
 related_concepts: []
 sources:
 - murphy-pml1-intro-ch03
@@ -45,4 +50,7 @@ Responsibilities provide **soft clustering**: each point contributes to every cl
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[mixture-models]] — applies
+- [[em-algorithm]] — prerequisite-of
+- [[gaussian-mixture-model]] — applies
 [To be populated during integration]

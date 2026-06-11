@@ -15,7 +15,11 @@ date_updated: '2026-06-11'
 domain:
 - reinforcement-learning
 - control-theory
+generalizes:
+- linear-quadratic-regulator-lqr
 id: pkis:technique:model-predictive-control-rl
+instantiates:
+- model-based-rl
 knowledge_type: technique
 maturity: evolving
 needs_canonical_source: false
@@ -29,6 +33,11 @@ tags:
 - robotics
 title: Model Predictive Control for RL (MPC/Receding-Horizon Control)
 understanding: 0
+uses:
+- planning-rl
+- bellman-equation
+- pilco
+- monte-carlo-tree-search
 ---
 
 ## Definition
@@ -46,4 +55,10 @@ Special cases include LQG (linear dynamics, quadratic cost), differential dynami
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[monte-carlo-tree-search]] — uses: MCTS is a special case for discrete stochastic problems
+- [[linear-quadratic-regulator-lqr]] — generalizes
+- [[pilco]] — uses: GP-MPC combines GP dynamics with MPC
+- [[bellman-equation]] — uses
+- [[planning-rl]] — uses
+- [[model-based-rl]] — instantiates
 [To be populated during integration]

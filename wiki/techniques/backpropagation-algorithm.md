@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- deep-feedforward-network
 component_scores:
   alternatives: null
   conditions: null
@@ -17,12 +19,18 @@ domain:
 - deep-learning
 - numerical-methods
 id: pkis:technique:backpropagation-algorithm
+instantiates:
+- backpropagation
 knowledge_type: technique
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- gradient-descent
 related_concepts: []
 sources:
 - goodfellow-deeplearning-ch06
+specializes:
+- automatic-differentiation
 tags:
 - gradient-computation
 - chain-rule
@@ -31,6 +39,9 @@ tags:
 - dynamic-programming
 title: Backpropagation Algorithm
 understanding: 0
+uses:
+- computational-graph
+- chain-rule-multivariate
 ---
 
 ## Definition
@@ -47,4 +58,10 @@ Without backprop, gradient-based training of deep networks would require $O(|E|^
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[deep-feedforward-network]] — applies
+- [[gradient-descent]] — prerequisite-of
+- [[automatic-differentiation]] — specializes
+- [[chain-rule-multivariate]] — uses
+- [[computational-graph]] — uses
+- [[backpropagation]] — instantiates: Chapter formalizes backprop as efficient chain-rule evaluation on a DAG.
 [To be populated during integration]

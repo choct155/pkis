@@ -15,6 +15,8 @@ domain:
 - signal-processing
 - machine-learning
 id: pkis:result:ica-non-gaussian-identifiability
+instantiates:
+- identifiability-of-mixtures
 knowledge_type: result
 maturity: evolving
 needs_canonical_source: false
@@ -28,6 +30,9 @@ tags:
 - information-theory
 title: ICA Non-Gaussian Identifiability
 understanding: 0
+uses:
+- independent-component-analysis
+- gaussian-distribution
 ---
 
 ## Definition
@@ -43,4 +48,7 @@ PCA finds orthogonal directions maximising variance and decorrelates sources, bu
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[gaussian-distribution]] — uses
+- [[identifiability-of-mixtures]] — instantiates
+- [[independent-component-analysis]] — uses
 [To be populated during integration]

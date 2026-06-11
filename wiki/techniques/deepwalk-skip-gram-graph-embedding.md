@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+analogous-to:
+- word-embeddings
 component_scores:
   alternatives: null
   conditions: null
@@ -9,6 +11,8 @@ component_scores:
   implementation: null
   operational_mechanism: null
   principled_mechanism: null
+contrasts-with:
+- graph-sage
 coverage: 1
 date_created: '2026-06-11'
 date_updated: '2026-06-11'
@@ -23,6 +27,9 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - murphy-pml1-intro-ch23
+specializes:
+- shallow-graph-embeddings
+- node-embedding
 tags:
 - DeepWalk
 - node2vec
@@ -32,6 +39,9 @@ tags:
 - matrix-factorization
 title: DeepWalk / Skip-gram Graph Embeddings
 understanding: 0
+uses:
+- random-walk
+- low-rank-matrix-approximation
 ---
 
 ## Definition
@@ -52,4 +62,10 @@ DeepWalk (Perozzi et al. 2014) and its extension node2vec (Grover & Leskovec 201
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[node-embedding]] — specializes
+- [[graph-sage]] — contrasts-with
+- [[low-rank-matrix-approximation]] — uses
+- [[random-walk]] — uses
+- [[word-embeddings]] — analogous-to
+- [[shallow-graph-embeddings]] — specializes
 [To be populated during integration]

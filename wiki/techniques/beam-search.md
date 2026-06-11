@@ -1,6 +1,9 @@
 ---
 aliases: []
 also_type: []
+applies:
+- encoder-decoder-architecture
+- machine-translation
 component_scores:
   alternatives: null
   conditions: null
@@ -16,7 +19,11 @@ domain:
 - machine-learning
 - nlp
 - search
+generalizes:
+- greedy-best-first-search
 id: pkis:technique:beam-search
+instantiates:
+- beam-search-decoding
 knowledge_type: technique
 maturity: evolving
 needs_canonical_source: false
@@ -46,4 +53,8 @@ Greedy decoding is suboptimal because the locally best token at step $t$ may not
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[beam-search-decoding]] — instantiates
+- [[machine-translation]] — applies
+- [[greedy-best-first-search]] — generalizes
+- [[encoder-decoder-architecture]] — applies
 [To be populated during integration]

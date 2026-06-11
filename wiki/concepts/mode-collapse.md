@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- generative-adversarial-network-framework
 component_scores:
   application: null
   boundary: null
@@ -10,6 +12,8 @@ component_scores:
   prerequisites: null
   scope: null
   transfer: null
+contrasts-with:
+- mixture-models
 coverage: 1
 date_created: '2026-06-11'
 date_updated: '2026-06-11'
@@ -42,4 +46,6 @@ Mode collapse represents a fundamental underfitting of the learned distribution 
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[mixture-models]] — contrasts-with: Mode collapse is the failure to cover all mixture components of the data distribution.
+- [[generative-adversarial-network-framework]] — applies
 [To be populated during integration]

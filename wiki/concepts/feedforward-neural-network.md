@@ -16,10 +16,19 @@ date_updated: '2026-06-11'
 domain:
 - machine-learning
 - deep-learning
+generalizes:
+- convolutional-neural-networks
+- recurrent-neural-network
+- graph-neural-networks
 id: pkis:concept:feedforward-neural-network
+instantiates:
+- multilayer-perceptron
+- universal-approximation-theorem
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- deep-reinforcement-learning
 related_concepts: []
 sources:
 - murphy-pml1-intro-ch13
@@ -30,6 +39,9 @@ tags:
 - tabular-data
 title: Feedforward Neural Network (MLP)
 understanding: 0
+uses:
+- activation-functions
+- backpropagation
 ---
 
 ## Definition
@@ -49,4 +61,12 @@ MLPs are the canonical universal function approximator for fixed-dimensional (ta
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[graph-neural-networks]] — generalizes
+- [[recurrent-neural-network]] — generalizes
+- [[convolutional-neural-networks]] — generalizes
+- [[deep-reinforcement-learning]] — prerequisite-of
+- [[universal-approximation-theorem]] — instantiates
+- [[backpropagation]] — uses
+- [[activation-functions]] — uses
+- [[multilayer-perceptron]] — instantiates: MLP is the standard chain-structured FFNN
 [To be populated during integration]

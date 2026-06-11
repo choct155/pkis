@@ -10,6 +10,10 @@ component_scores:
   prerequisites: null
   scope: null
   transfer: null
+contrasts-with:
+- amortized-inference
+- variational-inference
+- variational-autoencoder
 coverage: 1
 date_created: '2026-06-11'
 date_updated: '2026-06-11'
@@ -30,6 +34,8 @@ tags:
 - variational-inference
 title: Non-Parametric Encoder (Optimisation-Based Inference)
 understanding: 0
+uses:
+- maximum-a-posteriori-estimation-map
 ---
 
 ## Definition
@@ -49,4 +55,8 @@ Variational autoencoders (VAEs) amortise this optimisation by training a recogni
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[maximum-a-posteriori-estimation-map]] — uses
+- [[variational-autoencoder]] — contrasts-with
+- [[variational-inference]] — contrasts-with
+- [[amortized-inference]] — contrasts-with
 [To be populated during integration]

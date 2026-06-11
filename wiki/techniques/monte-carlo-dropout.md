@@ -16,7 +16,12 @@ domain:
 - deep-learning
 - bayesian-inference
 - uncertainty-quantification
+extends:
+- dropout
 id: pkis:technique:monte-carlo-dropout
+instantiates:
+- bayesian-deep-learning
+- variational-inference
 knowledge_type: technique
 maturity: evolving
 needs_canonical_source: false
@@ -30,6 +35,8 @@ tags:
 - calibration
 title: Monte Carlo Dropout (MCD)
 understanding: 0
+uses:
+- elbo
 ---
 
 ## Definition
@@ -47,4 +54,8 @@ Because the implicit posterior never converges to the true posterior (units are 
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[elbo]] — uses
+- [[variational-inference]] — instantiates: Can be derived as VI under a mixture-of-delta posterior
+- [[dropout]] — extends: Applies dropout at test time rather than only during training
+- [[bayesian-deep-learning]] — instantiates
 [To be populated during integration]

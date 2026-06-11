@@ -6,6 +6,8 @@ component_scores:
   instances: null
   solution_landscape: null
   why_hard: null
+contrasts-with:
+- data-hunger
 coverage: 1
 date_created: '2026-06-11'
 date_updated: '2026-06-11'
@@ -28,6 +30,12 @@ tags:
 - data-scarce
 title: Statistical Efficiency / Data Efficiency
 understanding: 0
+uses:
+- vc-dimension
+- bias-variance-tradeoff
+- pac-learning
+- inductive-bias
+- cramer-rao-bound
 ---
 
 ## Definition
@@ -44,4 +52,10 @@ In data-scarce domains (medicine, robotics, rare events) large-scale scraping is
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[cramer-rao-bound]] — uses
+- [[data-hunger]] — contrasts-with
+- [[inductive-bias]] — uses
+- [[pac-learning]] — uses
+- [[bias-variance-tradeoff]] — uses
+- [[vc-dimension]] — uses
 [To be populated during integration]

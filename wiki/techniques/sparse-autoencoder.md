@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+analogous-to:
+- sparse-pca
 component_scores:
   alternatives: null
   conditions: null
@@ -16,12 +18,17 @@ domain:
 - deep-learning
 - representation-learning
 id: pkis:technique:sparse-autoencoder
+instantiates:
+- latent-variable-models
 knowledge_type: technique
 maturity: evolving
 needs_canonical_source: false
 related_concepts: []
 sources:
 - goodfellow-deeplearning-ch14
+specializes:
+- autoencoder
+- overcomplete-autoencoder
 tags:
 - sparsity
 - L1-regularization
@@ -30,6 +37,9 @@ tags:
 - generative-model
 title: Sparse Autoencoder
 understanding: 0
+uses:
+- regularization
+- lasso
 ---
 
 ## Definition
@@ -46,4 +56,10 @@ Sparse autoencoders are widely used for unsupervised feature pre-training. Inter
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[sparse-pca]] — analogous-to
+- [[overcomplete-autoencoder]] — specializes
+- [[latent-variable-models]] — instantiates
+- [[lasso]] — uses: L1 sparsity penalty on codes is equivalent to Laplace prior / LASSO-style shrinkage
+- [[regularization]] — uses
+- [[autoencoder]] — specializes
 [To be populated during integration]

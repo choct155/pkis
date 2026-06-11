@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- gaussian-process-regression
 component_scores:
   alternatives: null
   conditions: null
@@ -9,6 +11,8 @@ component_scores:
   implementation: null
   operational_mechanism: null
   principled_mechanism: null
+contrasts-with:
+- empirical-risk-minimization
 coverage: 1
 date_created: '2026-06-11'
 date_updated: '2026-06-11'
@@ -16,6 +20,8 @@ domain:
 - machine-learning
 - Bayesian-statistics
 id: pkis:technique:gp-marginal-likelihood-optimisation
+instantiates:
+- occam-factor
 knowledge_type: technique
 maturity: evolving
 needs_canonical_source: false
@@ -30,6 +36,9 @@ tags:
 - marginal likelihood
 title: GP Marginal Likelihood Maximisation (Empirical Bayes for Kernels)
 understanding: 0
+uses:
+- marginal-likelihood
+- ard-kernel
 ---
 
 ## Definition
@@ -46,4 +55,9 @@ Unlike cross-validation, marginal-likelihood optimisation is gradient-based ($O(
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[ard-kernel]] — uses
+- [[empirical-risk-minimization]] — contrasts-with: EB optimises marginal likelihood not training loss
+- [[occam-factor]] — instantiates
+- [[marginal-likelihood]] — uses
+- [[gaussian-process-regression]] — applies
 [To be populated during integration]

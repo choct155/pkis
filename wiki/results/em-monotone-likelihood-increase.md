@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- em-algorithm
 component_scores:
   conditions: null
   implications: null
@@ -18,6 +20,8 @@ id: pkis:result:em-monotone-likelihood-increase
 knowledge_type: result
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- variational-inference
 related_concepts: []
 sources:
 - bishop-prml-ch09
@@ -29,6 +33,10 @@ tags:
 - variational-inference
 title: EM Monotone Increase of Log-Likelihood
 understanding: 0
+uses:
+- kl-divergence
+- elbo
+- jensens-inequality
 ---
 
 ## Definition
@@ -47,4 +55,9 @@ This result provides the formal convergence guarantee for EM. It also reveals EM
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[jensens-inequality]] — uses
+- [[variational-inference]] — prerequisite-of
+- [[elbo]] — uses: L(q,theta) is the ELBO; EM convergence follows from KL >= 0
+- [[kl-divergence]] — uses
+- [[em-algorithm]] — applies
 [To be populated during integration]

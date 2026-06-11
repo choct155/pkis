@@ -20,9 +20,13 @@ id: pkis:concept:ergodicity-markov-chain-mcmc
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- metropolis-hastings
 related_concepts: []
 sources:
 - bishop-prml-ch11
+specializes:
+- markov-chains
 tags:
 - mcmc
 - markov-chains
@@ -31,6 +35,9 @@ tags:
 - detailed-balance
 title: Ergodicity of Markov Chains (MCMC)
 understanding: 0
+uses:
+- stationary-distribution
+- detailed-balance
 ---
 
 ## Definition
@@ -47,4 +54,8 @@ Ergodicity is the theoretical guarantee that MCMC samples eventually represent t
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[metropolis-hastings]] — prerequisite-of
+- [[detailed-balance]] — uses
+- [[stationary-distribution]] — uses
+- [[markov-chains]] — specializes
 [To be populated during integration]

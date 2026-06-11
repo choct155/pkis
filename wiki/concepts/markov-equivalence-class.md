@@ -31,6 +31,10 @@ tags:
 - v-structure
 title: Markov Equivalence Class (CPDAG)
 understanding: 0
+uses:
+- directed-graphical-models
+- identifiability-of-causal-effects
+- structural-causal-model
 ---
 
 ## Definition
@@ -43,4 +47,7 @@ From purely observational data, one can identify the SCM only up to its Markov e
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[structural-causal-model]] — uses
+- [[identifiability-of-causal-effects]] — uses
+- [[directed-graphical-models]] — uses
 [To be populated during integration]

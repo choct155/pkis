@@ -10,12 +10,16 @@ component_scores:
   prerequisites: null
   scope: null
   transfer: null
+contrasts-with:
+- random-walk-behaviour-mcmc
 coverage: 1
 date_created: '2026-06-11'
 date_updated: '2026-06-11'
 domain:
 - statistics
 - machine-learning
+extends:
+- gibbs-sampling
 id: pkis:concept:overrelaxation-mcmc
 knowledge_type: concept
 maturity: evolving
@@ -44,4 +48,6 @@ Overrelaxation reduces the random-walk character of Gibbs sampling in highly cor
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[random-walk-behaviour-mcmc]] — contrasts-with
+- [[gibbs-sampling]] — extends
 [To be populated during integration]

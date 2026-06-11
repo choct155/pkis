@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+analogous-to:
+- pseudo-labeling
 component_scores:
   alternatives: null
   conditions: null
@@ -17,6 +19,8 @@ domain:
 - semi-supervised-learning
 - information-theory
 id: pkis:technique:entropy-minimization-ssl
+instantiates:
+- semi-supervised-learning
 knowledge_type: technique
 maturity: evolving
 needs_canonical_source: false
@@ -31,6 +35,9 @@ tags:
 - low-data
 title: Entropy Minimization for Semi-Supervised Learning
 understanding: 0
+uses:
+- entropy
+- mutual-information
 ---
 
 ## Definition
@@ -46,4 +53,8 @@ Entropy minimization unifies several SSL objectives: online pseudo-labeling mini
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[pseudo-labeling]] — analogous-to: Online pseudo-labeling minimises cross-entropy to hard argmax target; entropy minimization uses soft target.
+- [[mutual-information]] — uses: Maximizing I(y;x) = entropy minimization term + marginal entropy maximization term.
+- [[entropy]] — uses
+- [[semi-supervised-learning]] — instantiates
 [To be populated during integration]

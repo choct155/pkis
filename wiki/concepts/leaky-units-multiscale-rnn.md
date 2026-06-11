@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- vanishing-exploding-gradients-rnn
 component_scores:
   application: null
   boundary: null
@@ -16,10 +18,14 @@ date_updated: '2026-06-11'
 domain:
 - deep-learning
 - sequence-modeling
+extends:
+- recurrent-neural-network
 id: pkis:concept:leaky-units-multiscale-rnn
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- long-short-term-memory
 related_concepts: []
 sources:
 - goodfellow-deeplearning-ch10
@@ -45,4 +51,7 @@ Leaky units are a continuous, differentiable precursor to LSTM gating (Mozer, 19
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[long-short-term-memory]] — prerequisite-of
+- [[vanishing-exploding-gradients-rnn]] — applies
+- [[recurrent-neural-network]] — extends
 [To be populated during integration]

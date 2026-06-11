@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- maximum-likelihood-estimation
 component_scores:
   alternatives: null
   conditions: null
@@ -16,10 +18,14 @@ domain:
 - statistics
 - machine-learning
 - optimisation
+generalizes:
+- incremental-sample-average-update
 id: pkis:technique:robbins-monro-algorithm
 knowledge_type: technique
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- stochastic-gradient-descent
 related_concepts: []
 sources:
 - bishop-prml-ch02
@@ -44,4 +50,7 @@ Applied to maximum likelihood, the algorithm processes one data point at a time:
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[incremental-sample-average-update]] — generalizes
+- [[maximum-likelihood-estimation]] — applies: Sequential MLE via score function updates
+- [[stochastic-gradient-descent]] — prerequisite-of
 [To be populated during integration]

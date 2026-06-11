@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+analogous-to:
+- binary-symmetric-channel
 component_scores:
   application: null
   boundary: null
@@ -17,6 +19,8 @@ domain:
 - natural-language-processing
 - information-theory
 id: pkis:concept:noisy-channel-spelling
+instantiates:
+- hidden-markov-model
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
@@ -30,6 +34,9 @@ tags:
 - language-model
 title: Noisy Channel Model (Spelling Correction)
 understanding: 0
+uses:
+- n-gram-language-model
+- language-model
 ---
 
 ## Definition
@@ -46,4 +53,8 @@ The noisy channel framework is a foundational NLP paradigm that cleanly separate
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[binary-symmetric-channel]] — analogous-to
+- [[language-model]] — uses
+- [[n-gram-language-model]] — uses
+- [[hidden-markov-model]] — instantiates
 [To be populated during integration]

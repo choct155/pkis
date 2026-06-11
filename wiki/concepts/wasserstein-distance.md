@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- generative-adversarial-network-framework
 component_scores:
   application: null
   boundary: null
@@ -10,6 +12,8 @@ component_scores:
   prerequisites: null
   scope: null
   transfer: null
+contrasts-with:
+- reproducing-kernel-hilbert-space
 coverage: 1
 date_created: '2026-06-11'
 date_updated: '2026-06-11'
@@ -24,6 +28,8 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - murphy-pml2-advanced-ch26
+specializes:
+- integral-probability-metric
 tags:
 - optimal-transport
 - Lipschitz
@@ -48,4 +54,7 @@ Wasserstein distance provides informative gradients even for distributions with 
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[generative-adversarial-network-framework]] — applies: WassersteinGAN replaces JSD with W1 to provide non-saturating gradients.
+- [[reproducing-kernel-hilbert-space]] — contrasts-with: Wasserstein uses 1-Lipschitz functions; MMD uses RKHS unit ball.
+- [[integral-probability-metric]] — specializes
 [To be populated during integration]

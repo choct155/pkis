@@ -17,6 +17,8 @@ domain:
 - machine-learning
 - statistics
 id: pkis:concept:generalization-error-training-error
+instantiates:
+- bias-variance-tradeoff
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
@@ -31,6 +33,10 @@ tags:
 - iid-assumption
 title: Generalization Error and Training Error
 understanding: 0
+uses:
+- overfitting-and-underfitting
+- data-generating-distribution
+- vc-dimension
 ---
 
 ## Definition
@@ -45,4 +51,8 @@ The gap between the two quantities is the primary diagnostic for underfitting vs
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[vc-dimension]] — uses
+- [[data-generating-distribution]] — uses
+- [[overfitting-and-underfitting]] — uses
+- [[bias-variance-tradeoff]] — instantiates
 [To be populated during integration]

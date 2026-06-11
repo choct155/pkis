@@ -27,11 +27,13 @@ title: Kullback-Leibler Divergence
 understanding: 0
 uses:
 - gibbs-inequality
+- self-information
 ---
 
 An asymmetric non-negative measure of the "extra information" required to encode samples from distribution P using a code optimized for distribution Q: DKL(P‖Q) = E_P[log(P/Q)] ≥ 0, with equality iff P = Q; in variational inference, the reverse KL(q‖p) is minimized (zero-forcing, mode-seeking) while the forward KL(p‖q) would be zero-avoiding but requires access to p.
 
 ## Connections
+- [[self-information]] — uses
 - [[gibbs-inequality]] — uses: Gibbs' inequality establishes the defining non-negativity of KL divergence.
 
 - [[variational-inference]] — used-by: VI minimizes reverse KL(q‖p(z|x)) as its objective; the ELBO equals log p(x) minus this KL

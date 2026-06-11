@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- intractable-posterior
 component_scores:
   application: null
   boundary: null
@@ -16,6 +18,8 @@ date_updated: '2026-06-11'
 domain:
 - machine-learning
 - probabilistic-inference
+extends:
+- variational-inference
 id: pkis:concept:variational-approximation-bias
 knowledge_type: concept
 maturity: evolving
@@ -30,6 +34,8 @@ tags:
 - model-identifiability
 title: Variational Approximation Bias (Self-Fulfilling Posteriors)
 understanding: 0
+uses:
+- mean-field-variational-inference
 ---
 
 ## Definition
@@ -45,4 +51,7 @@ Evaluating the ELBO gap on a trained model understates the harm from the variati
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[intractable-posterior]] — applies
+- [[variational-inference]] — extends
+- [[mean-field-variational-inference]] — uses
 [To be populated during integration]

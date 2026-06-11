@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- backdoor-criterion-causal
 component_scores:
   alternatives: null
   conditions: null
@@ -17,6 +19,8 @@ domain:
 - statistics
 - epidemiology
 id: pkis:technique:g-computation
+instantiates:
+- adjustment-formula-standardization
 knowledge_type: technique
 maturity: evolving
 needs_canonical_source: false
@@ -31,6 +35,8 @@ tags:
 - causal-estimation
 title: G-Computation (Outcome Model Adjustment)
 understanding: 0
+uses:
+- supervised-learning
 ---
 
 ## Definition
@@ -49,4 +55,7 @@ G-computation translates causal identification under the backdoor criterion into
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[supervised-learning]] — uses: Outcome model Q is fitted using any supervised learning method
+- [[backdoor-criterion-causal]] — applies
+- [[adjustment-formula-standardization]] — instantiates
 [To be populated during integration]

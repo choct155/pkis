@@ -17,6 +17,8 @@ domain:
 - machine-learning
 - algorithms
 - statistics
+generalizes:
+- monte-carlo-estimator
 id: pkis:concept:las-vegas-vs-monte-carlo-algorithms
 knowledge_type: concept
 maturity: evolving
@@ -46,4 +48,5 @@ This dichotomy clarifies when approximation is a design choice versus a necessit
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[monte-carlo-estimator]] — generalizes: Monte Carlo algorithms as a class encompass all Monte Carlo estimators
 [To be populated during integration]

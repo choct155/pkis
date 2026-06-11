@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- bayesian-model-comparison
 component_scores:
   conditions: null
   implications: null
@@ -15,6 +17,8 @@ domain:
 - Bayesian-inference
 - model-selection
 id: pkis:result:bic
+instantiates:
+- information-criteria
 knowledge_type: result
 maturity: evolving
 needs_canonical_source: false
@@ -29,6 +33,10 @@ tags:
 - marginal-likelihood
 title: BIC (Bayesian Information Criterion)
 understanding: 0
+uses:
+- laplace-approximation
+- marginal-likelihood
+- occam-factor
 ---
 
 ## Definition
@@ -43,4 +51,9 @@ BIC is a practical Bayesian model-selection score that does not require specifyi
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[bayesian-model-comparison]] — applies
+- [[occam-factor]] — uses
+- [[marginal-likelihood]] — uses
+- [[laplace-approximation]] — uses
+- [[information-criteria]] — instantiates
 [To be populated during integration]

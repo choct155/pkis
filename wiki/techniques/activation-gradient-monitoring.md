@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- vanishing-gradient-problem
 component_scores:
   alternatives: null
   conditions: null
@@ -9,6 +11,8 @@ component_scores:
   implementation: null
   operational_mechanism: null
   principled_mechanism: null
+contrasts-with:
+- batch-normalization
 coverage: 1
 date_created: '2026-06-11'
 date_updated: '2026-06-11'
@@ -30,6 +34,8 @@ tags:
 - training-diagnostics
 title: Activation and Gradient Histogram Monitoring
 understanding: 0
+uses:
+- backpropagation
 ---
 
 ## Definition
@@ -47,4 +53,7 @@ Histogram monitoring converts silent optimisation failures — dead neurons, gra
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[batch-normalization]] — contrasts-with: Batch norm mitigates the saturation patterns that monitoring reveals
+- [[backpropagation]] — uses
+- [[vanishing-gradient-problem]] — applies: Monitoring detects vanishing gradients before they derail training
 [To be populated during integration]

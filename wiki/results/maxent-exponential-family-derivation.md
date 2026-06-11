@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- exponential-family-distributions
 component_scores:
   conditions: null
   implications: null
@@ -15,6 +17,9 @@ domain:
 - probability
 - statistics
 id: pkis:result:maxent-exponential-family-derivation
+instantiates:
+- maximum-entropy-principle
+- exponential-family-ml-maxent-duality
 knowledge_type: result
 maturity: evolving
 needs_canonical_source: false
@@ -28,6 +33,9 @@ tags:
 - moment-constraints
 title: Maximum Entropy Derivation of the Exponential Family
 understanding: 0
+uses:
+- kl-divergence
+- lagrange-multipliers
 ---
 
 ## Definition
@@ -44,4 +52,9 @@ This result gives an information-theoretic justification for exponential familie
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[exponential-family-ml-maxent-duality]] — instantiates
+- [[lagrange-multipliers]] — uses
+- [[kl-divergence]] — uses
+- [[maximum-entropy-principle]] — instantiates
+- [[exponential-family-distributions]] — applies
 [To be populated during integration]

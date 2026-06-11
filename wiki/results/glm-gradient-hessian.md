@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- generalized-linear-models
 component_scores:
   conditions: null
   implications: null
@@ -18,6 +20,8 @@ id: pkis:result:glm-gradient-hessian
 knowledge_type: result
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- iteratively-reweighted-least-squares
 related_concepts: []
 sources:
 - murphy-pml1-intro-ch12
@@ -30,6 +34,9 @@ tags:
 - IRLS
 title: GLM Gradient and Hessian of NLL
 understanding: 0
+uses:
+- gradient-descent
+- fisher-information
 ---
 
 ## Definition
@@ -46,4 +53,8 @@ This single formula covers linear regression ($f(\eta)=\eta$, $f'=1$), logistic 
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[fisher-information]] — uses: Hessian equals Fisher information for canonical link GLMs
+- [[gradient-descent]] — uses
+- [[iteratively-reweighted-least-squares]] — prerequisite-of
+- [[generalized-linear-models]] — applies
 [To be populated during integration]

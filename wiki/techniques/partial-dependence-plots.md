@@ -17,6 +17,8 @@ domain:
 - interpretability
 - statistics
 id: pkis:technique:partial-dependence-plots
+instantiates:
+- partial-dependence
 knowledge_type: technique
 maturity: evolving
 needs_canonical_source: false
@@ -31,6 +33,9 @@ tags:
 - marginal-effect
 title: Partial Dependence Plots
 understanding: 0
+uses:
+- feature-importance-tree-ensembles
+- marginalization
 ---
 
 ## Definition
@@ -51,4 +56,7 @@ Partial dependence plots are a model-agnostic post-hoc interpretation tool, comm
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[marginalization]] — uses
+- [[feature-importance-tree-ensembles]] — uses: typically applied after identifying top features
+- [[partial-dependence]] — instantiates
 [To be populated during integration]

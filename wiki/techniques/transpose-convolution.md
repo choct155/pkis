@@ -29,6 +29,10 @@ tags:
 - gradient
 title: Transpose Convolution (Deconvolution)
 understanding: 0
+uses:
+- strided-convolution
+- backpropagation
+- autoencoder
 ---
 
 ## Definition
@@ -44,4 +48,7 @@ Transpose convolution is required for backpropagation through convolutional laye
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[autoencoder]] — uses
+- [[backpropagation]] — uses
+- [[strided-convolution]] — uses
 [To be populated during integration]

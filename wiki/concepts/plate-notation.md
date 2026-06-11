@@ -1,6 +1,12 @@
 ---
 aliases: []
 also_type: []
+applies:
+- dag-factorization
+- directed-graphical-models
+- probabilistic-graphical-models
+- bayesian-networks
+- hierarchical-bayesian-models
 component_scores:
   application: null
   boundary: null
@@ -16,6 +22,8 @@ date_updated: '2026-06-11'
 domain:
 - probabilistic-graphical-models
 - machine-learning
+extends:
+- bayesian-networks
 id: pkis:concept:plate-notation
 knowledge_type: concept
 maturity: evolving
@@ -33,6 +41,9 @@ tags:
 - replication
 title: Plate Notation
 understanding: 0
+uses:
+- hierarchical-bayesian-models
+- exchangeability
 ---
 
 ## Definition
@@ -47,4 +58,12 @@ Plate notation is the standard compact representation used throughout modern pro
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[bayesian-networks]] — extends
+- [[hierarchical-bayesian-models]] — applies
+- [[exchangeability]] — uses
+- [[bayesian-networks]] — applies
+- [[probabilistic-graphical-models]] — applies
+- [[hierarchical-bayesian-models]] — uses
+- [[directed-graphical-models]] — applies
+- [[dag-factorization]] — applies
 [To be populated during integration]

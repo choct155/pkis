@@ -16,6 +16,9 @@ domain:
 - statistics
 - machine-learning
 - physics
+extends:
+- metropolis-hastings-algorithm
+- hmc
 id: pkis:technique:hamiltonian-monte-carlo
 knowledge_type: technique
 maturity: evolving
@@ -23,6 +26,8 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - murphy-pml2-advanced-ch12
+specializes:
+- mcmc
 tags:
 - mcmc
 - hamiltonian-dynamics
@@ -31,6 +36,10 @@ tags:
 - bayesian-computation
 title: Hamiltonian Monte Carlo (HMC)
 understanding: 0
+uses:
+- leapfrog-integrator
+- hamiltonian-mechanics-sampling
+- no-u-turn-sampler
 ---
 
 ## Definition
@@ -50,4 +59,10 @@ By following gradient-guided trajectories in phase space, HMC makes large, nearl
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[mcmc]] — specializes
+- [[no-u-turn-sampler]] — uses
+- [[hmc]] — extends: hmc is the existing node; this provides the full HMC treatment
+- [[hamiltonian-mechanics-sampling]] — uses
+- [[leapfrog-integrator]] — uses
+- [[metropolis-hastings-algorithm]] — extends
 [To be populated during integration]

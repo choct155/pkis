@@ -23,6 +23,8 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - hastie-esl-ch05
+specializes:
+- reproducing-kernel-hilbert-space
 tags:
 - kernel-methods
 - regularization
@@ -34,6 +36,9 @@ uses:
 - regularization
 - representer-theorem
 - the-kernel-trick
+- mercer-kernel
+- mercers-theorem
+- inner-product
 ---
 
 ## Definition
@@ -45,6 +50,10 @@ The defining payoff is that although the criterion lives on an infinite-dimensio
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[inner-product]] — uses
+- [[mercers-theorem]] — uses
+- [[reproducing-kernel-hilbert-space]] — specializes: Already in existing nodes; this new node provides formal definition.
+- [[mercer-kernel]] — uses
 - [[gaussian-process-regression]] — analogous-to: Bayesian reading: f a zero-mean GP with prior covariance K; kernel-ridge fit = kriging
 - [[the-kernel-trick]] — uses: kernel property: only N² kernel evaluations, no explicit feature map
 - [[representer-theorem]] — uses: infinite-dimensional problem reduces to finite kernel expansion f=Σα_i K(·,x_i)

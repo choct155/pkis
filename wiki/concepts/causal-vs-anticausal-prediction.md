@@ -31,6 +31,9 @@ tags:
 - robustness
 title: Causal vs. Anticausal Prediction
 understanding: 0
+uses:
+- structural-causal-models
+- generative-vs-discriminative-models
 ---
 
 ## Definition
@@ -48,4 +51,6 @@ The causal direction determines which component of the joint distribution is sta
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[generative-vs-discriminative-models]] — uses
+- [[structural-causal-models]] — uses
 [To be populated during integration]

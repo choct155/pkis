@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+analogous-to:
+- wavelet-smoothing
 component_scores:
   application: null
   boundary: null
@@ -31,6 +33,8 @@ tags:
 - coordinate descent
 title: Soft Thresholding Operator
 understanding: 0
+uses:
+- lasso-regression
 ---
 
 ## Definition
@@ -45,4 +49,6 @@ Soft thresholding is the closed-form coordinate update for lasso: with orthonorm
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[wavelet-smoothing]] — analogous-to
+- [[lasso-regression]] — uses
 [To be populated during integration]

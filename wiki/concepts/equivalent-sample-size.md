@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+analogous-to:
+- partial-pooling-shrinkage
 component_scores:
   application: null
   boundary: null
@@ -31,6 +33,9 @@ tags:
 - beta-distribution
 title: Equivalent Sample Size (Prior Strength)
 understanding: 0
+uses:
+- conjugate-prior
+- beta-distribution
 ---
 
 ## Definition
@@ -45,4 +50,7 @@ The equivalent sample size provides an intuitive scale for setting hyperparamete
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[partial-pooling-shrinkage]] — analogous-to
+- [[beta-distribution]] — uses
+- [[conjugate-prior]] — uses
 [To be populated during integration]

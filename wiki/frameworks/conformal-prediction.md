@@ -1,6 +1,9 @@
 ---
 aliases: []
 also_type: []
+applies:
+- uncertainty-quantification
+- predictive-model
 component_scores:
   application: null
   limits: null
@@ -14,6 +17,8 @@ date_updated: '2026-06-11'
 domain:
 - machine-learning
 - statistics
+extends:
+- calibration
 id: pkis:framework:conformal-prediction
 knowledge_type: framework
 maturity: evolving
@@ -29,6 +34,8 @@ tags:
 - exchangeability
 title: Conformal Prediction
 understanding: 0
+uses:
+- exchangeability
 ---
 
 ## Definition
@@ -47,4 +54,8 @@ Conformal prediction is the leading framework for distribution-free, finite-samp
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[predictive-model]] — applies
+- [[calibration]] — extends
+- [[exchangeability]] — uses
+- [[uncertainty-quantification]] — applies
 [To be populated during integration]

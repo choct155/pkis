@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- restricted-boltzmann-machine
 component_scores:
   alternatives: null
   conditions: null
@@ -9,6 +11,8 @@ component_scores:
   implementation: null
   operational_mechanism: null
   principled_mechanism: null
+contrasts-with:
+- spurious-modes
 coverage: 1
 date_created: '2026-06-11'
 date_updated: '2026-06-11'
@@ -16,7 +20,11 @@ domain:
 - machine-learning
 - deep-learning
 - probabilistic-graphical-models
+extends:
+- contrastive-divergence
 id: pkis:technique:stochastic-maximum-likelihood-pcd
+instantiates:
+- positive-negative-phase-learning
 knowledge_type: technique
 maturity: evolving
 needs_canonical_source: false
@@ -31,6 +39,8 @@ tags:
 - training-algorithm
 title: Stochastic Maximum Likelihood / Persistent Contrastive Divergence
 understanding: 0
+uses:
+- gibbs-sampler
 ---
 
 ## Definition
@@ -45,4 +55,9 @@ SML/PCD avoids the spurious-mode failure mode of CD because persistent chains ca
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[restricted-boltzmann-machine]] — applies
+- [[gibbs-sampler]] — uses
+- [[spurious-modes]] — contrasts-with
+- [[contrastive-divergence]] — extends
+- [[positive-negative-phase-learning]] — instantiates
 [To be populated during integration]

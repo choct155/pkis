@@ -9,6 +9,8 @@ component_scores:
   implementation: null
   operational_mechanism: null
   principled_mechanism: null
+contrasts-with:
+- hmc
 coverage: 1
 date_created: '2026-06-11'
 date_updated: '2026-06-11'
@@ -16,6 +18,8 @@ domain:
 - statistics
 - machine-learning
 id: pkis:technique:likelihood-tempering-smc
+instantiates:
+- smc-sampler
 knowledge_type: technique
 maturity: evolving
 needs_canonical_source: false
@@ -30,6 +34,8 @@ tags:
 - adaptive
 title: Likelihood Tempering / Geometric Path SMC
 understanding: 0
+uses:
+- effective-sample-size
 ---
 
 ## Definition
@@ -46,4 +52,7 @@ Likelihood tempering is the workhorse schedule for SMC samplers in Bayesian stat
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[hmc]] — contrasts-with: SMC with tempering escapes local modes that trap HMC
+- [[effective-sample-size]] — uses
+- [[smc-sampler]] — instantiates
 [To be populated during integration]

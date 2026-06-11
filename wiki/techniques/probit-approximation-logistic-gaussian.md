@@ -1,6 +1,9 @@
 ---
 aliases: []
 also_type: []
+applies:
+- logistic-regression
+- posterior-predictive-distribution
 component_scores:
   alternatives: null
   conditions: null
@@ -30,6 +33,9 @@ tags:
 - probit
 title: Probit Approximation to Logistic-Gaussian Integral
 understanding: 0
+uses:
+- laplace-approximation
+- probit-model
 ---
 
 ## Definition
@@ -44,4 +50,8 @@ When the parameter posterior is approximated as Gaussian (e.g., via Laplace or E
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[probit-model]] — uses
+- [[posterior-predictive-distribution]] — applies
+- [[laplace-approximation]] — uses
+- [[logistic-regression]] — applies
 [To be populated during integration]

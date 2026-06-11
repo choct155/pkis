@@ -1,6 +1,11 @@
 ---
 aliases: []
 also_type: []
+analogous-to:
+- mean-field-approximation
+applies:
+- ising-model
+- gaussian-mixture-models
 component_scores:
   alternatives: null
   conditions: null
@@ -16,6 +21,11 @@ domain:
 - statistics
 - machine-learning
 - probability-theory
+extends:
+- overrelaxation-mcmc
+- gibbs-sampler
+generalizes:
+- data-augmentation-algorithm
 id: pkis:technique:gibbs-sampling
 knowledge_type: technique
 maturity: evolving
@@ -24,6 +34,9 @@ related_concepts: []
 sources:
 - bishop-prml-ch11
 - murphy-pml2-advanced-ch12
+specializes:
+- metropolis-hastings
+- metropolis-hastings-algorithm
 tags:
 - mcmc
 - posterior-sampling
@@ -31,6 +44,13 @@ tags:
 - markov-chain
 title: Gibbs Sampling
 understanding: 0
+uses:
+- markov-chains
+- detailed-balance
+- markov-blanket
+- adaptive-rejection-sampling
+- ergodicity-markov-chain-mcmc
+- full-joint-probability-distribution
 ---
 
 ## Definition
@@ -45,4 +65,18 @@ Gibbs sampling requires only the ability to sample from univariate (or low-dimen
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[mean-field-approximation]] — analogous-to: Gibbs update equation mirrors mean-field variational update
+- [[gaussian-mixture-models]] — applies
+- [[ising-model]] — applies
+- [[gibbs-sampler]] — extends: gibbs-sampler is the existing node
+- [[full-joint-probability-distribution]] — uses
+- [[metropolis-hastings-algorithm]] — specializes: Gibbs is MH with acceptance probability 1
+- [[data-augmentation-algorithm]] — generalizes
+- [[ergodicity-markov-chain-mcmc]] — uses
+- [[overrelaxation-mcmc]] — extends
+- [[adaptive-rejection-sampling]] — uses
+- [[markov-blanket]] — uses: conditionals in graphical models depend only on Markov blanket
+- [[detailed-balance]] — uses
+- [[markov-chains]] — uses
+- [[metropolis-hastings]] — specializes
 [To be populated during integration]

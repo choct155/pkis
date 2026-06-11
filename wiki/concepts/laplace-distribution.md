@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+analogous-to:
+- lasso
 component_scores:
   application: null
   boundary: null
@@ -10,6 +12,8 @@ component_scores:
   prerequisites: null
   scope: null
   transfer: null
+contrasts-with:
+- gaussian-distribution
 coverage: 1
 date_created: '2026-06-11'
 date_updated: '2026-06-11'
@@ -18,6 +22,8 @@ domain:
 - statistics
 - machine-learning
 id: pkis:concept:laplace-distribution
+instantiates:
+- kurtosis-and-tail-behavior
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
@@ -25,6 +31,8 @@ related_concepts: []
 sources:
 - goodfellow-deeplearning-ch03
 - murphy-pml2-advanced-ch02
+specializes:
+- exponential-family
 tags:
 - heavy-tails
 - L1
@@ -32,6 +40,10 @@ tags:
 - regularization
 title: Laplace Distribution
 understanding: 0
+uses:
+- probability-density-function
+- pmf-and-pdf
+- lasso
 ---
 
 ## Definition
@@ -46,4 +58,11 @@ Using the Laplace distribution as a likelihood is equivalent to optimizing the m
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[exponential-family]] — specializes
+- [[lasso]] — uses
+- [[kurtosis-and-tail-behavior]] — instantiates
+- [[pmf-and-pdf]] — uses
+- [[probability-density-function]] — uses
+- [[lasso]] — analogous-to: Laplace prior over weights yields lasso regularization
+- [[gaussian-distribution]] — contrasts-with: sharper peak, heavier tails; L1 vs L2 regularization analogy
 [To be populated during integration]

@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- neural-networks
 component_scores:
   application: null
   boundary: null
@@ -10,12 +12,17 @@ component_scores:
   prerequisites: null
   scope: null
   transfer: null
+contrasts-with:
+- gpu-accelerated-deep-learning
 coverage: 1
 date_created: '2026-06-11'
 date_updated: '2026-06-11'
 domain:
 - deep-learning
 - model-efficiency
+generalizes:
+- classifier-cascade
+- hierarchical-mixtures-of-experts
 id: pkis:concept:conditional-computation
 knowledge_type: concept
 maturity: evolving
@@ -45,4 +52,8 @@ Offers a route to scale model capacity without proportionally scaling inference 
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[gpu-accelerated-deep-learning]] — contrasts-with
+- [[hierarchical-mixtures-of-experts]] — generalizes
+- [[classifier-cascade]] — generalizes
+- [[neural-networks]] — applies
 [To be populated during integration]

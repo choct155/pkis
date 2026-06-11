@@ -16,6 +16,8 @@ domain:
 - deep-learning
 - distributed-computing
 - optimisation
+extends:
+- stochastic-gradient-descent
 id: pkis:technique:asynchronous-sgd
 knowledge_type: technique
 maturity: evolving
@@ -23,6 +25,8 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - goodfellow-deeplearning-ch12
+specializes:
+- gradient-descent
 tags:
 - distributed-training
 - parameter-server
@@ -31,6 +35,8 @@ tags:
 - parallel
 title: Asynchronous Stochastic Gradient Descent
 understanding: 0
+uses:
+- gpu-accelerated-deep-learning
 ---
 
 ## Definition
@@ -45,4 +51,7 @@ The primary strategy for training very large deep networks across many machines;
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[gpu-accelerated-deep-learning]] — uses
+- [[gradient-descent]] — specializes
+- [[stochastic-gradient-descent]] — extends
 [To be populated during integration]

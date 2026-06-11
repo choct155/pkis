@@ -16,7 +16,11 @@ domain:
 - deep-learning
 - bayesian-inference
 - optimisation
+extends:
+- laplace-approximation
 id: pkis:technique:swa-swag
+instantiates:
+- bayesian-deep-learning
 knowledge_type: technique
 maturity: evolving
 needs_canonical_source: false
@@ -31,6 +35,10 @@ tags:
 - Polyak-Ruppert
 title: Stochastic Weight Averaging (SWA) and SWAG
 understanding: 0
+uses:
+- stochastic-gradient-descent
+- mode-connectivity
+- effective-dimensionality-bnn
 ---
 
 ## Definition
@@ -45,4 +53,9 @@ SGD at a fixed learning rate implicitly samples from a Gaussian approximation to
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[effective-dimensionality-bnn]] — uses
+- [[mode-connectivity]] — uses: SWA finds a flat-basin centre along mode-connecting loss surface
+- [[laplace-approximation]] — extends: SWAG fits a Gaussian to the mode found by SWA, similar to Laplace but using SGD trajectory
+- [[stochastic-gradient-descent]] — uses: Collects iterates from SGD at fixed learning rate as posterior samples
+- [[bayesian-deep-learning]] — instantiates
 [To be populated during integration]

@@ -14,9 +14,13 @@ domain:
 - statistics
 - causal-inference
 id: pkis:problem:graphical-model-structure-learning
+instantiates:
+- model-selection-problem
 knowledge_type: problem
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- causal-discovery
 related_concepts: []
 sources:
 - murphy-pml2-advanced-ch30
@@ -27,6 +31,11 @@ tags:
 - causal-discovery
 title: Graphical Model Structure Learning
 understanding: 0
+uses:
+- probabilistic-graphical-models
+- graphical-lasso
+- score-based-dag-learning
+- constraint-based-structure-learning
 ---
 
 ## Definition
@@ -43,4 +52,10 @@ Structure learning is the enabling step for three high-value applications: (i) *
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[constraint-based-structure-learning]] — uses
+- [[score-based-dag-learning]] — uses
+- [[graphical-lasso]] — uses
+- [[model-selection-problem]] — instantiates
+- [[causal-discovery]] — prerequisite-of
+- [[probabilistic-graphical-models]] — uses
 [To be populated during integration]

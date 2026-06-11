@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+analogous-to:
+- hierarchical-task-network
 component_scores:
   application: null
   boundary: null
@@ -10,6 +12,8 @@ component_scores:
   prerequisites: null
   scope: null
   transfer: null
+contrasts-with:
+- probabilistic-context-free-grammar
 coverage: 1
 date_created: '2026-06-11'
 date_updated: '2026-06-11'
@@ -17,6 +21,10 @@ domain:
 - machine-learning
 - speech-processing
 - bioinformatics
+extends:
+- hidden-markov-model
+generalizes:
+- hidden-semi-markov-model
 id: pkis:concept:hierarchical-hmm
 knowledge_type: concept
 maturity: evolving
@@ -47,4 +55,8 @@ HHMMs model domains with natural hierarchical decomposition — speech (phonemes
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[hidden-semi-markov-model]] — generalizes
+- [[probabilistic-context-free-grammar]] — contrasts-with
+- [[hierarchical-task-network]] — analogous-to
+- [[hidden-markov-model]] — extends
 [To be populated during integration]

@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- gaussian-distribution
 component_scores:
   conditions: null
   implications: null
@@ -13,7 +15,11 @@ date_updated: '2026-06-11'
 domain:
 - information-theory
 - statistics
+generalizes:
+- covariance-and-correlation
 id: pkis:result:mi-gaussian-formula
+instantiates:
+- mutual-information
 knowledge_type: result
 maturity: evolving
 needs_canonical_source: false
@@ -27,6 +33,8 @@ tags:
 - closed-form
 title: Mutual Information for Jointly Gaussian Variables
 understanding: 0
+uses:
+- differential-entropy
 ---
 
 ## Definition
@@ -42,4 +50,8 @@ This closed-form result shows that mutual information strictly generalises Pears
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[differential-entropy]] — uses
+- [[covariance-and-correlation]] — generalizes
+- [[gaussian-distribution]] — applies
+- [[mutual-information]] — instantiates
 [To be populated during integration]

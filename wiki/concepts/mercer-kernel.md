@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+analogous-to:
+- covariance-function
 component_scores:
   application: null
   boundary: null
@@ -17,10 +19,16 @@ domain:
 - machine-learning
 - statistics
 - functional-analysis
+generalizes:
+- inner-product
 id: pkis:concept:mercer-kernel
+instantiates:
+- reproducing-kernel-hilbert-space
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- the-kernel-trick
 related_concepts: []
 sources:
 - murphy-pml1-intro-ch17
@@ -34,6 +42,12 @@ tags:
 - nonparametric
 title: Mercer Kernel (Positive Definite Kernel)
 understanding: 0
+uses:
+- gram-matrix
+- the-kernel-trick
+- mercers-theorem
+- reproducing-kernel-hilbert-space
+- inner-product
 ---
 
 ## Definition
@@ -55,4 +69,13 @@ By Mercer's theorem, every such kernel admits an implicit feature map $\phi$ suc
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[inner-product]] — uses
+- [[reproducing-kernel-hilbert-space]] — uses
+- [[mercers-theorem]] — uses
+- [[the-kernel-trick]] — uses
+- [[covariance-function]] — analogous-to
+- [[inner-product]] — generalizes
+- [[reproducing-kernel-hilbert-space]] — instantiates
+- [[gram-matrix]] — uses
+- [[the-kernel-trick]] — prerequisite-of
 [To be populated during integration]

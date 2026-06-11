@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- ridge-regression
 component_scores:
   conditions: null
   implications: null
@@ -29,6 +31,10 @@ tags:
 - degrees of freedom
 title: Ridge–PCA Shrinkage Connection
 understanding: 0
+uses:
+- principal-component-analysis
+- singular-value-decomposition
+- effective-degrees-of-freedom
 ---
 
 ## Definition
@@ -45,4 +51,8 @@ This result explains *why* ridge outperforms OLS: directions in which $\mathbf{X
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[effective-degrees-of-freedom]] — uses
+- [[singular-value-decomposition]] — uses
+- [[principal-component-analysis]] — uses
+- [[ridge-regression]] — applies
 [To be populated during integration]

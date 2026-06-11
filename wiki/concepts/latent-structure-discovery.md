@@ -18,12 +18,18 @@ domain:
 - unsupervised-learning
 - probabilistic-modelling
 id: pkis:concept:latent-structure-discovery
+instantiates:
+- mixture-models
+- variational-autoencoder
+- principal-component-analysis
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
 related_concepts: []
 sources:
 - murphy-pml2-advanced-ch01
+specializes:
+- latent-variable-models
 tags:
 - latent-variables
 - posterior-inference
@@ -32,6 +38,10 @@ tags:
 - unsupervised
 title: Latent Structure Discovery
 understanding: 0
+uses:
+- variational-inference
+- em-algorithm
+- posterior-predictive-distribution
 ---
 
 ## Definition
@@ -48,4 +58,11 @@ Scientific modelling, interpretability, and transfer learning all depend on disc
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[principal-component-analysis]] — instantiates
+- [[variational-autoencoder]] — instantiates
+- [[mixture-models]] — instantiates
+- [[posterior-predictive-distribution]] — uses
+- [[em-algorithm]] — uses
+- [[variational-inference]] — uses
+- [[latent-variable-models]] — specializes
 [To be populated during integration]

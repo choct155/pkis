@@ -1,6 +1,10 @@
 ---
 aliases: []
 also_type: []
+analogous-to:
+- algorithmic-fairness
+applies:
+- interpretable-ml-ecosystem
 component_scores:
   implications: null
   justification: null
@@ -44,4 +48,6 @@ This principle disciplines interpretability research: one cannot evaluate a new 
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[algorithmic-fairness]] — analogous-to: Both fields face impossibility results: no single metric satisfies all desiderata simultaneously.
+- [[interpretable-ml-ecosystem]] — applies
 [To be populated during integration]

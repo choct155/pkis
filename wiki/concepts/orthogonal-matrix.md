@@ -15,13 +15,19 @@ date_created: '2026-06-11'
 date_updated: '2026-06-11'
 domain:
 - linear-algebra
+generalizes:
+- rotation-matrix
 id: pkis:concept:orthogonal-matrix
+instantiates:
+- orthogonality
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
 related_concepts: []
 sources:
 - goodfellow-deeplearning-ch02
+specializes:
+- matrix-inverse
 tags:
 - orthogonal matrix
 - isometry
@@ -30,6 +36,8 @@ tags:
 - SVD
 title: Orthogonal Matrix
 understanding: 0
+uses:
+- matrix-transpose
 ---
 
 ## Definition
@@ -44,4 +52,8 @@ Orthogonal matrices appear as the $Q$ factor in eigendecomposition of symmetric 
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[rotation-matrix]] — generalizes
+- [[orthogonality]] — instantiates
+- [[matrix-inverse]] — specializes
+- [[matrix-transpose]] — uses
 [To be populated during integration]

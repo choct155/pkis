@@ -17,7 +17,11 @@ domain:
 - probability
 - statistics
 - machine-learning
+generalizes:
+- bernoulli-distribution
 id: pkis:concept:multinomial-distribution
+instantiates:
+- exponential-family-distribution
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
@@ -31,6 +35,9 @@ tags:
 - sufficient-statistics
 title: Multinomial Distribution
 understanding: 0
+uses:
+- dirichlet-distribution
+- sufficient-statistics
 ---
 
 ## Definition
@@ -45,4 +52,8 @@ The multinomial is the canonical likelihood for categorical data: document word 
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[sufficient-statistics]] — uses: Counts m_k are sufficient statistics for multinomial likelihood
+- [[exponential-family-distribution]] — instantiates: Natural parameters eta_k=log(mu_k), sufficient statistics m_k
+- [[dirichlet-distribution]] — uses: Dirichlet is conjugate prior for multinomial parameters
+- [[bernoulli-distribution]] — generalizes: Multinomial reduces to Bernoulli/Binomial for K=2
 [To be populated during integration]

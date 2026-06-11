@@ -15,13 +15,19 @@ domain:
 - machine-learning
 - statistics
 - signal-processing
+generalizes:
+- structural-time-series
 id: pkis:framework:linear-gaussian-ssm
+instantiates:
+- directed-graphical-models
 knowledge_type: framework
 maturity: evolving
 needs_canonical_source: false
 related_concepts: []
 sources:
 - murphy-pml2-advanced-ch08
+specializes:
+- state-space-models
 tags:
 - state-space-model
 - kalman
@@ -30,6 +36,9 @@ tags:
 - time-series
 title: Linear Gaussian State Space Model (LG-SSM)
 understanding: 0
+uses:
+- gaussian-distribution
+- multivariate-normal-model
 ---
 
 ## Definition
@@ -44,4 +53,9 @@ LG-SSMs are the canonical tractable SSM: they underlie the Kalman filter, Kalman
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[structural-time-series]] — generalizes
+- [[multivariate-normal-model]] — uses
+- [[directed-graphical-models]] — instantiates
+- [[gaussian-distribution]] — uses
+- [[state-space-models]] — specializes
 [To be populated during integration]

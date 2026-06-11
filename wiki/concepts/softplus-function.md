@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- gaussian-distribution
 component_scores:
   application: null
   boundary: null
@@ -17,6 +19,8 @@ domain:
 - machine-learning
 - deep-learning
 id: pkis:concept:softplus-function
+instantiates:
+- activation-functions
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
@@ -29,6 +33,8 @@ tags:
 - smooth-approximation
 title: Softplus Function
 understanding: 0
+uses:
+- logistic-sigmoid
 ---
 
 ## Definition
@@ -43,4 +49,7 @@ Softplus appears in probabilistic deep learning wherever a strictly positive qua
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[gaussian-distribution]] — applies: used to produce positive scale/precision parameters
+- [[activation-functions]] — instantiates
+- [[logistic-sigmoid]] — uses
 [To be populated during integration]

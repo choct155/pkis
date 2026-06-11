@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+analogous-to:
+- partial-dependence
 component_scores:
   application: null
   boundary: null
@@ -10,6 +12,8 @@ component_scores:
   prerequisites: null
   scope: null
   transfer: null
+contrasts-with:
+- human-ai-collaboration-failure
 coverage: 1
 date_created: '2026-06-11'
 date_updated: '2026-06-11'
@@ -23,6 +27,8 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - murphy-pml2-advanced-ch33
+specializes:
+- inherently-interpretable-model
 tags:
 - concept-bottleneck
 - interpretability
@@ -30,6 +36,8 @@ tags:
 - test-time-intervention
 title: Concept Bottleneck Model
 understanding: 0
+uses:
+- neural-networks
 ---
 
 ## Definition
@@ -46,4 +54,8 @@ CBMs enable *test-time concept intervention*: a clinician who knows that a patie
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[partial-dependence]] — analogous-to: Both expose intermediate model behavior with respect to interpretable summaries of input influence.
+- [[human-ai-collaboration-failure]] — contrasts-with: Test-time concept intervention supports effective human+AI teaming.
+- [[neural-networks]] — uses
+- [[inherently-interpretable-model]] — specializes: The g: C -> Y stage is interpretable; concept bottlenecks combine deep feature extraction with an interpretable decision layer.
 [To be populated during integration]

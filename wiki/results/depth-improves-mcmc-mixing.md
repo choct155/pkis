@@ -1,6 +1,10 @@
 ---
 aliases: []
 also_type: []
+applies:
+- mcmc-mixing-time
+- restricted-boltzmann-machine
+- latent-variable-models
 component_scores:
   conditions: null
   implications: null
@@ -29,6 +33,8 @@ tags:
 - representation-learning
 title: Depth Improves MCMC Mixing in Latent Variable Models
 understanding: 0
+uses:
+- mutual-information
 ---
 
 ## Definition
@@ -45,4 +51,8 @@ This result motivates using deep generative models (deep Boltzmann machines, VAE
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[mutual-information]] — uses: tension between high MI (good encoding) and high entropy (good mixing)
+- [[latent-variable-models]] — applies: deeper latent spaces have more uniform marginals, aiding mixing
+- [[restricted-boltzmann-machine]] — applies: result demonstrated on stacked RBMs and deep Boltzmann machines
+- [[mcmc-mixing-time]] — applies: deep representations empirically reduce mixing time
 [To be populated during integration]

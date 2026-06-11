@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+analogous-to:
+- bayesian-information-criterion
 component_scores:
   application: null
   boundary: null
@@ -18,6 +20,10 @@ domain:
 - statistics
 - machine-learning
 id: pkis:concept:minimum-description-length
+instantiates:
+- information-criteria
+- bayesian-occams-razor
+- compression-as-probabilistic-modelling
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
@@ -33,6 +39,9 @@ tags:
 - information-theory
 title: Minimum Description Length (MDL) Principle
 understanding: 0
+uses:
+- source-coding-theorem
+- essential-bit-content
 ---
 
 ## Definition
@@ -47,4 +56,10 @@ MDL provides an information-theoretic foundation for model selection that is ind
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[compression-as-probabilistic-modelling]] — instantiates
+- [[essential-bit-content]] — uses
+- [[bayesian-occams-razor]] — instantiates
+- [[source-coding-theorem]] — uses
+- [[bayesian-information-criterion]] — analogous-to
+- [[information-criteria]] — instantiates
 [To be populated during integration]

@@ -16,10 +16,14 @@ date_updated: '2026-06-11'
 domain:
 - machine-learning
 - kernel-methods
+extends:
+- the-kernel-trick
 id: pkis:concept:kernel-construction-rules
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- gaussian-process-regression
 related_concepts: []
 sources:
 - bishop-prml-ch06
@@ -30,6 +34,8 @@ tags:
 - closure
 title: Kernel Construction Rules (Closure Properties)
 understanding: 0
+uses:
+- gram-matrix
 ---
 
 ## Definition
@@ -50,4 +56,7 @@ The rules systematise 'kernel engineering': practitioners can compose stationary
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[gaussian-process-regression]] — prerequisite-of
+- [[the-kernel-trick]] — extends
+- [[gram-matrix]] — uses
 [To be populated during integration]

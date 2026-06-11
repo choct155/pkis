@@ -1,6 +1,11 @@
 ---
 aliases: []
 also_type: []
+applies:
+- logistic-regression
+- generalized-linear-models
+- binary-logistic-regression
+- multinomial-logistic-regression
 component_scores:
   alternatives: null
   conditions: null
@@ -9,6 +14,8 @@ component_scores:
   implementation: null
   operational_mechanism: null
   principled_mechanism: null
+contrasts-with:
+- gradient-descent
 coverage: 1
 date_created: '2026-06-11'
 date_updated: '2026-06-11'
@@ -24,6 +31,8 @@ related_concepts: []
 sources:
 - bishop-prml-ch04
 - murphy-pml1-intro-ch10
+specializes:
+- mm-algorithm
 tags:
 - Newton-Raphson
 - logistic-regression
@@ -33,6 +42,12 @@ tags:
 - second-order-optimisation
 title: Iterative Reweighted Least Squares (IRLS)
 understanding: 0
+uses:
+- hessian-matrix
+- solving-linear-systems
+- canonical-link-function
+- fisher-information
+- logistic-regression-nll-convexity
 ---
 
 ## Definition
@@ -52,4 +67,15 @@ IRLS is equivalent to Fisher scoring when the canonical link is used. The workin
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[logistic-regression-nll-convexity]] — uses
+- [[fisher-information]] — uses
+- [[mm-algorithm]] — specializes
+- [[multinomial-logistic-regression]] — applies
+- [[binary-logistic-regression]] — applies
+- [[canonical-link-function]] — uses
+- [[solving-linear-systems]] — uses: Each IRLS step solves a weighted normal equation
+- [[gradient-descent]] — contrasts-with: IRLS uses full second-order Newton-Raphson step, not first-order gradient
+- [[hessian-matrix]] — uses
+- [[generalized-linear-models]] — applies
+- [[logistic-regression]] — applies
 [To be populated during integration]

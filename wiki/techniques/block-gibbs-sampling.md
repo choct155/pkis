@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- restricted-boltzmann-machine
 component_scores:
   alternatives: null
   conditions: null
@@ -23,6 +25,8 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - goodfellow-deeplearning-ch17
+specializes:
+- gibbs-sampler
 tags:
 - gibbs-sampling
 - block-update
@@ -31,6 +35,9 @@ tags:
 - mcmc
 title: Block Gibbs Sampling
 understanding: 0
+uses:
+- conditional-independence
+- contrastive-divergence
 ---
 
 ## Definition
@@ -47,4 +54,8 @@ Block updates reduce autocorrelation between successive samples and can dramatic
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[contrastive-divergence]] — uses: CD in RBMs performs one or k steps of block Gibbs sampling
+- [[restricted-boltzmann-machine]] — applies: RBM bipartite structure enables exact block updates of all hidden or all visible units
+- [[conditional-independence]] — uses: requires the block to be conditionally independent given the rest
+- [[gibbs-sampler]] — specializes: updates a conditionally independent block in one step
 [To be populated during integration]

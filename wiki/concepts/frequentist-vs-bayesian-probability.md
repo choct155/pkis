@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+analogous-to:
+- physical-vs-epistemic-probability
 component_scores:
   application: null
   boundary: null
@@ -21,9 +23,13 @@ id: pkis:concept:frequentist-vs-bayesian-probability
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- bayesian-inference
 related_concepts: []
 sources:
 - goodfellow-deeplearning-ch03
+specializes:
+- probability-vs-frequency
 tags:
 - interpretation
 - Bayesian
@@ -31,6 +37,8 @@ tags:
 - epistemology
 title: Frequentist vs. Bayesian Probability
 understanding: 0
+uses:
+- probability-theory
 ---
 
 ## Definition
@@ -45,4 +53,8 @@ The distinction shapes the entire methodology of statistical inference. In deep 
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[probability-vs-frequency]] — specializes
+- [[physical-vs-epistemic-probability]] — analogous-to
+- [[probability-theory]] — uses
+- [[bayesian-inference]] — prerequisite-of
 [To be populated during integration]

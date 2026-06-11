@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- clustering
 component_scores:
   application: null
   boundary: null
@@ -17,13 +19,19 @@ domain:
 - machine-learning
 - statistics
 - probability
+generalizes:
+- k-means-clustering
 id: pkis:concept:gaussian-mixture-model
+instantiates:
+- probabilistic-graphical-models
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
 related_concepts: []
 sources:
 - murphy-pml1-intro-ch03
+specializes:
+- mixture-models
 tags:
 - clustering
 - density-estimation
@@ -31,6 +39,10 @@ tags:
 - EM-algorithm
 title: Gaussian Mixture Model
 understanding: 0
+uses:
+- gaussian-distribution
+- em-algorithm
+- cluster-responsibility
 ---
 
 ## Definition
@@ -47,4 +59,11 @@ GMMs are the canonical model for soft probabilistic clustering and density estim
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[probabilistic-graphical-models]] — instantiates
+- [[cluster-responsibility]] — uses
+- [[k-means-clustering]] — generalizes
+- [[clustering]] — applies
+- [[em-algorithm]] — uses
+- [[gaussian-distribution]] — uses
+- [[mixture-models]] — specializes
 [To be populated during integration]

@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- empirical-risk-minimization
 component_scores:
   application: null
   boundary: null
@@ -10,6 +12,8 @@ component_scores:
   prerequisites: null
   scope: null
   transfer: null
+contrasts-with:
+- overfitting-and-underfitting
 coverage: 1
 date_created: '2026-06-11'
 date_updated: '2026-06-11'
@@ -18,6 +22,9 @@ domain:
 - optimization
 - deep-learning
 id: pkis:concept:surrogate-loss-function
+instantiates:
+- cross-entropy-loss
+- hinge-loss
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
@@ -45,4 +52,8 @@ Surrogate losses are ubiquitous in deep learning: cross-entropy for classificati
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[hinge-loss]] — instantiates
+- [[overfitting-and-underfitting]] — contrasts-with: surrogates paired with early stopping prevent overfitting that pure ERM risks
+- [[cross-entropy-loss]] — instantiates: negative log-likelihood is the canonical surrogate for 0-1 loss
+- [[empirical-risk-minimization]] — applies: ERM with 0-1 loss is intractable; surrogate losses make ERM feasible
 [To be populated during integration]

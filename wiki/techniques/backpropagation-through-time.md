@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- recurrent-neural-network
 component_scores:
   alternatives: null
   conditions: null
@@ -15,14 +17,21 @@ date_updated: '2026-06-11'
 domain:
 - deep-learning
 - sequence-modeling
+extends:
+- backpropagation
 id: pkis:technique:backpropagation-through-time
 knowledge_type: technique
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- vanishing-exploding-gradients-rnn
+- gated-recurrent-unit
 related_concepts: []
 sources:
 - goodfellow-deeplearning-ch10
 - murphy-pml1-intro-ch15
+specializes:
+- backpropagation
 tags:
 - RNN
 - gradient
@@ -31,6 +40,10 @@ tags:
 - sequence
 title: Backpropagation Through Time (BPTT)
 understanding: 0
+uses:
+- rnn-unfolding
+- vanishing-gradient-problem
+- chain-rule-multivariate
 ---
 
 ## Definition
@@ -45,4 +58,12 @@ BPTT is the canonical training algorithm for RNNs. Its $O(\tau)$ time and memory
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[gated-recurrent-unit]] — prerequisite-of
+- [[chain-rule-multivariate]] — uses
+- [[vanishing-gradient-problem]] — uses: BPTT's product of Jacobians is the mechanistic cause of vanishing/exploding gradients in RNNs
+- [[backpropagation]] — extends
+- [[recurrent-neural-network]] — applies
+- [[vanishing-exploding-gradients-rnn]] — prerequisite-of
+- [[rnn-unfolding]] — uses
+- [[backpropagation]] — specializes
 [To be populated during integration]

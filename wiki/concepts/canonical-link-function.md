@@ -17,13 +17,21 @@ domain:
 - statistics
 - machine-learning
 id: pkis:concept:canonical-link-function
+instantiates:
+- logistic-sigmoid-logit
+- logistic-regression
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- irls
 related_concepts: []
 sources:
 - bishop-prml-ch04
 - murphy-pml1-intro-ch12
+specializes:
+- link-function
+- link-function-mean-function
 tags:
 - GLM
 - exponential-family
@@ -33,6 +41,9 @@ tags:
 - gradient-simplification
 title: Canonical Link Function
 understanding: 0
+uses:
+- generalized-linear-models
+- exponential-family
 ---
 
 ## Definition
@@ -49,4 +60,11 @@ Using a canonical link collapses the interaction between the activation function
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[logistic-regression]] — instantiates: Logit is the canonical link for Bernoulli/Binomial
+- [[link-function-mean-function]] — specializes
+- [[irls]] — prerequisite-of
+- [[logistic-sigmoid-logit]] — instantiates: Logistic link is canonical for Bernoulli GLM
+- [[link-function]] — specializes
+- [[exponential-family]] — uses
+- [[generalized-linear-models]] — uses
 [To be populated during integration]

@@ -16,6 +16,8 @@ date_updated: '2026-06-11'
 domain:
 - machine-learning
 - variational-inference
+extends:
+- variational-autoencoder
 id: pkis:concept:aggregated-posterior
 knowledge_type: concept
 maturity: evolving
@@ -30,6 +32,9 @@ tags:
 - InfoVAE
 title: Aggregated Posterior (Inference Marginal)
 understanding: 0
+uses:
+- elbo
+- kl-divergence
 ---
 
 ## Definition
@@ -44,4 +49,7 @@ The gap $D_{KL}(q_{D,\phi}(z)\|p_\theta(z))$ between the aggregated posterior an
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[kl-divergence]] — uses
+- [[elbo]] — uses
+- [[variational-autoencoder]] — extends
 [To be populated during integration]

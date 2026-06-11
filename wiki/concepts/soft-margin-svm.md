@@ -15,7 +15,12 @@ date_created: '2026-06-11'
 date_updated: '2026-06-11'
 domain:
 - machine-learning
+extends:
+- support-vector-machine
 id: pkis:concept:soft-margin-svm
+instantiates:
+- regularization
+- bias-variance-tradeoff
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
@@ -23,6 +28,8 @@ related_concepts: []
 sources:
 - bishop-prml-ch07
 - murphy-pml1-intro-ch17
+specializes:
+- support-vector-machine
 tags:
 - classification
 - slack-variables
@@ -31,6 +38,10 @@ tags:
 - svm
 title: Soft-Margin SVM and Slack Variables
 understanding: 0
+uses:
+- hinge-loss-svm
+- hinge-loss
+- regularization
 ---
 
 ## Definition
@@ -49,4 +60,11 @@ The hard-margin SVM is infeasible when classes are not linearly separable in fea
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[bias-variance-tradeoff]] — instantiates
+- [[regularization]] — uses
+- [[hinge-loss]] — uses
+- [[support-vector-machine]] — specializes
+- [[regularization]] — instantiates: C controls trade-off between margin and training error
+- [[hinge-loss-svm]] — uses
+- [[support-vector-machine]] — extends
 [To be populated during integration]

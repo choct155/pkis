@@ -33,6 +33,11 @@ tags:
 - emergent-capabilities
 title: Foundation Model
 understanding: 0
+uses:
+- transfer-learning
+- neural-scaling-laws
+- pretraining-and-fine-tuning
+- llm-hallucination
 ---
 
 ## Definition
@@ -47,4 +52,8 @@ Foundation models shift the AI development paradigm from training specialist mod
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[llm-hallucination]] — uses: LLM hallucination is a key failure mode of foundation models
+- [[pretraining-and-fine-tuning]] — uses
+- [[neural-scaling-laws]] — uses
+- [[transfer-learning]] — uses
 [To be populated during integration]

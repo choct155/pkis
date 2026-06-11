@@ -15,13 +15,20 @@ date_updated: '2026-06-11'
 domain:
 - machine-learning
 - statistics
+extends:
+- committee-method
+- adaboost
 id: pkis:technique:adaboost-algorithm
+instantiates:
+- forward-stagewise-additive-modeling
 knowledge_type: technique
 maturity: evolving
 needs_canonical_source: false
 related_concepts: []
 sources:
 - bishop-prml-ch14
+specializes:
+- ensemble-learning
 tags:
 - boosting
 - weak-learners
@@ -30,6 +37,8 @@ tags:
 - classification
 title: AdaBoost Algorithm
 understanding: 0
+uses:
+- exponential-loss
 ---
 
 ## Definition
@@ -49,4 +58,9 @@ AdaBoost is equivalent to the sequential (greedy) minimization of the *exponenti
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[adaboost]] — extends
+- [[forward-stagewise-additive-modeling]] — instantiates
+- [[exponential-loss]] — uses
+- [[ensemble-learning]] — specializes
+- [[committee-method]] — extends
 [To be populated during integration]

@@ -30,6 +30,9 @@ tags:
 - causality
 title: Spurious Correlations (Shortcut Features)
 understanding: 0
+uses:
+- distribution-shift
+- covariate-shift
 ---
 
 ## Definition
@@ -45,4 +48,6 @@ Methods to reduce reliance on spurious features include data augmentation, distr
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[covariate-shift]] — uses
+- [[distribution-shift]] — uses
 [To be populated during integration]

@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+analogous-to:
+- epsilon-insensitive-loss
 component_scores:
   alternatives: null
   conditions: null
@@ -9,6 +11,8 @@ component_scores:
   implementation: null
   operational_mechanism: null
   principled_mechanism: null
+contrasts-with:
+- bayesian-linear-regression
 coverage: 1
 date_created: '2026-06-11'
 date_updated: '2026-06-11'
@@ -22,6 +26,8 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - murphy-pml2-advanced-ch14
+specializes:
+- conformal-prediction
 tags:
 - prediction-intervals
 - quantile-regression
@@ -46,4 +52,7 @@ CQR inherits the distribution-free coverage guarantee of conformal prediction wh
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[bayesian-linear-regression]] — contrasts-with
+- [[epsilon-insensitive-loss]] — analogous-to
+- [[conformal-prediction]] — specializes
 [To be populated during integration]

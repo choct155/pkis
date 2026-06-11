@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- latent-variable-models
 component_scores:
   alternatives: null
   conditions: null
@@ -15,7 +17,11 @@ date_updated: '2026-06-11'
 domain:
 - machine-learning
 - Bayesian-inference
+extends:
+- em-algorithm
 id: pkis:technique:variational-em
+instantiates:
+- variational-gaussian-mixture
 knowledge_type: technique
 maturity: evolving
 needs_canonical_source: false
@@ -31,6 +37,12 @@ tags:
 - ELBO
 title: Variational Bayesian EM (VB-EM)
 understanding: 0
+uses:
+- mean-field-variational-inference
+- elbo
+- conjugate-prior
+- variational-inference-framework
+- maximum-likelihood-estimation
 ---
 
 ## Definition
@@ -51,4 +63,12 @@ Generalizes maximum-likelihood EM to a fully Bayesian treatment, automatically r
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[maximum-likelihood-estimation]] — uses: The M-step of variational EM maximizes the ELBO wrt model parameters, approximating MLE.
+- [[latent-variable-models]] — applies
+- [[variational-inference-framework]] — uses
+- [[variational-gaussian-mixture]] — instantiates
+- [[conjugate-prior]] — uses
+- [[elbo]] — uses
+- [[mean-field-variational-inference]] — uses
+- [[em-algorithm]] — extends
 [To be populated during integration]

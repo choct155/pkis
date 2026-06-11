@@ -16,10 +16,14 @@ date_updated: '2026-06-11'
 domain:
 - linear-algebra
 - deep-learning
+generalizes:
+- vector-space
 id: pkis:concept:tensor-multidimensional-array
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- matrix-decompositions
 related_concepts: []
 sources:
 - goodfellow-deeplearning-ch02
@@ -31,6 +35,8 @@ tags:
 - shape
 title: Tensor (Multi-dimensional Array)
 understanding: 0
+uses:
+- linear-algebra
 ---
 
 ## Definition
@@ -47,4 +53,7 @@ Deep learning frameworks (TensorFlow, PyTorch) treat tensors as the primitive da
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[matrix-decompositions]] — prerequisite-of
+- [[linear-algebra]] — uses
+- [[vector-space]] — generalizes
 [To be populated during integration]

@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+analogous-to:
+- transformer-attention-mechanisms
 component_scores:
   alternatives: null
   conditions: null
@@ -16,6 +18,8 @@ domain:
 - machine-learning
 - graph-learning
 - deep-learning
+extends:
+- graph-convolutional-network
 id: pkis:technique:graph-attention-network
 knowledge_type: technique
 maturity: evolving
@@ -23,6 +27,8 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - murphy-pml1-intro-ch23
+specializes:
+- message-passing-neural-networks
 tags:
 - attention
 - GAT
@@ -47,4 +53,7 @@ GAT is suitable for both transductive and inductive settings. Unlike GraphSAGE i
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[graph-convolutional-network]] — extends
+- [[transformer-attention-mechanisms]] — analogous-to
+- [[message-passing-neural-networks]] — specializes
 [To be populated during integration]

@@ -16,7 +16,14 @@ date_updated: '2026-06-11'
 domain:
 - machine-learning
 - interpretability
+generalizes:
+- lime-local-surrogate
+- saliency-map
+- shapley-feature-importance
+- counterfactual-explanation
 id: pkis:concept:post-hoc-explanation
+instantiates:
+- interpretable-ml-ecosystem
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
@@ -32,6 +39,8 @@ tags:
 - feature-importance
 title: Post-Hoc Explanation
 understanding: 0
+uses:
+- distribution-shift
 ---
 
 ## Definition
@@ -49,4 +58,10 @@ Post-hoc explanations can be adversarially manipulated: two perceptually indisti
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[distribution-shift]] — uses: Post-hoc explanations must account for whether explanation neighborhoods remain in-distribution.
+- [[counterfactual-explanation]] — generalizes
+- [[shapley-feature-importance]] — generalizes
+- [[saliency-map]] — generalizes
+- [[lime-local-surrogate]] — generalizes
+- [[interpretable-ml-ecosystem]] — instantiates
 [To be populated during integration]

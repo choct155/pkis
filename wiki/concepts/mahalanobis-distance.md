@@ -1,6 +1,11 @@
 ---
 aliases: []
 also_type: []
+analogous-to:
+- linear-discriminant-analysis
+applies:
+- gaussian-distribution
+- multivariate-normal-model
 component_scores:
   application: null
   boundary: null
@@ -21,6 +26,8 @@ id: pkis:concept:mahalanobis-distance
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- linear-discriminant-analysis
 related_concepts: []
 sources:
 - bishop-prml-ch02
@@ -33,6 +40,13 @@ tags:
 - discriminant-analysis
 title: Mahalanobis Distance
 understanding: 0
+uses:
+- gaussian-distribution
+- students-t-distribution
+- covariance-and-correlation
+- eigendecomposition
+- gaussian-mixture-model
+- inner-product
 ---
 
 ## Definition
@@ -47,4 +61,14 @@ The Mahalanobis distance appears in the exponent of any multivariate Gaussian an
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[linear-discriminant-analysis]] — analogous-to: LDA implicitly uses a Mahalanobis-like metric via pooled covariance
+- [[inner-product]] — uses: Mahalanobis distance is an inner product in the M-weighted space
+- [[gaussian-mixture-model]] — uses
+- [[eigendecomposition]] — uses
+- [[covariance-and-correlation]] — uses
+- [[multivariate-normal-model]] — applies
+- [[gaussian-distribution]] — applies
+- [[students-t-distribution]] — uses: Multivariate t parameterised via squared Mahalanobis distance
+- [[linear-discriminant-analysis]] — prerequisite-of
+- [[gaussian-distribution]] — uses
 [To be populated during integration]

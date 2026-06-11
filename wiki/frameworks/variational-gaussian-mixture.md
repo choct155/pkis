@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- bayesian-model-comparison
 component_scores:
   application: null
   limits: null
@@ -14,6 +16,8 @@ date_updated: '2026-06-11'
 domain:
 - machine-learning
 - Bayesian-inference
+extends:
+- gaussian-mixture-models
 id: pkis:framework:variational-gaussian-mixture
 knowledge_type: framework
 maturity: evolving
@@ -30,6 +34,12 @@ tags:
 - ELBO
 title: Variational Bayesian Mixture of Gaussians
 understanding: 0
+uses:
+- variational-em
+- dirichlet-distribution
+- conjugate-prior
+- induced-factorization
+- elbo
 ---
 
 ## Definition
@@ -47,4 +57,11 @@ Resolves the three main pathologies of ML-EM for Gaussians: (1) eliminates likel
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[bayesian-model-comparison]] — applies
+- [[elbo]] — uses
+- [[induced-factorization]] — uses
+- [[conjugate-prior]] — uses
+- [[dirichlet-distribution]] — uses
+- [[gaussian-mixture-models]] — extends
+- [[variational-em]] — uses
 [To be populated during integration]

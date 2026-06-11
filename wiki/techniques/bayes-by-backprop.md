@@ -9,6 +9,8 @@ component_scores:
   implementation: null
   operational_mechanism: null
   principled_mechanism: null
+contrasts-with:
+- monte-carlo-dropout
 coverage: 1
 date_created: '2026-06-11'
 date_updated: '2026-06-11'
@@ -17,12 +19,16 @@ domain:
 - deep-learning
 - variational-inference
 id: pkis:technique:bayes-by-backprop
+instantiates:
+- bayesian-deep-learning
 knowledge_type: technique
 maturity: evolving
 needs_canonical_source: false
 related_concepts: []
 sources:
 - murphy-pml2-advanced-ch17
+specializes:
+- variational-inference
 tags:
 - ELBO
 - reparameterisation-trick
@@ -31,6 +37,10 @@ tags:
 - weight-uncertainty
 title: Bayes by Backprop (BBB)
 understanding: 0
+uses:
+- elbo
+- reparameterization-trick
+- backpropagation
 ---
 
 ## Definition
@@ -45,4 +55,10 @@ BBB [Blundell et al. 2015] was the first practical large-scale variational BNN, 
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[monte-carlo-dropout]] — contrasts-with: BBB explicitly maintains a variational posterior; MCD uses implicit approximation via dropout
+- [[backpropagation]] — uses
+- [[reparameterization-trick]] — uses
+- [[elbo]] — uses
+- [[variational-inference]] — specializes
+- [[bayesian-deep-learning]] — instantiates
 [To be populated during integration]

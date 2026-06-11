@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- feed-forward-neural-network
 component_scores:
   alternatives: null
   conditions: null
@@ -16,6 +18,8 @@ domain:
 - machine-learning
 - bayesian-inference
 id: pkis:technique:bayesian-neural-network-laplace
+instantiates:
+- bayesian-neural-networks
 knowledge_type: technique
 maturity: evolving
 needs_canonical_source: false
@@ -29,6 +33,12 @@ tags:
 - evidence-framework
 title: Bayesian Neural Network via Laplace Approximation
 understanding: 0
+uses:
+- laplace-approximation
+- levenberg-marquardt-hessian
+- marginal-likelihood
+- weight-space-symmetry
+- maximum-a-posteriori-estimation-map
 ---
 
 ## Definition
@@ -51,4 +61,11 @@ Provides calibrated predictive uncertainty, automatic hyperparameter tuning, and
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[maximum-a-posteriori-estimation-map]] — uses
+- [[weight-space-symmetry]] — uses
+- [[feed-forward-neural-network]] — applies
+- [[marginal-likelihood]] — uses
+- [[levenberg-marquardt-hessian]] — uses
+- [[bayesian-neural-networks]] — instantiates
+- [[laplace-approximation]] — uses
 [To be populated during integration]

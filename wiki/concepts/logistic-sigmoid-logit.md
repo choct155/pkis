@@ -17,6 +17,8 @@ domain:
 - machine-learning
 - statistics
 id: pkis:concept:logistic-sigmoid-logit
+instantiates:
+- activation-functions
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
@@ -32,6 +34,10 @@ tags:
 - generalized-linear-model
 title: Logistic Sigmoid and Logit Function
 understanding: 0
+uses:
+- link-function
+- exponential-family
+- cross-entropy-loss
 ---
 
 ## Definition
@@ -46,4 +52,8 @@ The logistic sigmoid arises naturally from Bayes' theorem when class-conditional
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[cross-entropy-loss]] — uses: MLE under logistic sigmoid = minimisation of cross-entropy
+- [[exponential-family]] — uses: Logistic sigmoid arises as canonical inverse-link for Bernoulli family
+- [[link-function]] — uses
+- [[activation-functions]] — instantiates
 [To be populated during integration]

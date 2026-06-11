@@ -30,6 +30,8 @@ tags:
 - unsupervised-learning
 title: Dendrogram
 understanding: 0
+uses:
+- hierarchical-agglomerative-clustering
 ---
 
 ## Definition
@@ -44,4 +46,5 @@ Dendrograms let a practitioner defer the choice of the number of clusters $K$ un
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[hierarchical-agglomerative-clustering]] — uses
 [To be populated during integration]

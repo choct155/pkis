@@ -29,6 +29,11 @@ tags:
 - causal-discovery
 title: Graph Learning (Latent Variable & Structure Learning)
 understanding: 0
+uses:
+- latent-variable-models
+- probabilistic-graphical-models
+- graphical-model-structure-learning
+- stochastic-block-model
 ---
 
 ## Definition
@@ -45,4 +50,8 @@ Graph learning bridges probabilistic graphical models and network science: it en
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[stochastic-block-model]] — uses
+- [[graphical-model-structure-learning]] — uses
+- [[probabilistic-graphical-models]] — uses
+- [[latent-variable-models]] — uses
 [To be populated during integration]

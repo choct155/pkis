@@ -3,6 +3,7 @@ aliases: []
 also_type: []
 applies:
 - neural-networks
+- convolutional-neural-network
 component_scores:
   alternatives: null
   conditions: null
@@ -11,6 +12,8 @@ component_scores:
   implementation: null
   operational_mechanism: null
   principled_mechanism: null
+contrasts-with:
+- no-free-lunch-theorem
 coverage: 1
 date_created: '2026-06-09'
 date_updated: '2026-06-09'
@@ -33,6 +36,8 @@ tags:
 - model-selection
 title: Neural Architecture Search
 understanding: 0
+uses:
+- bayesian-optimization
 ---
 
 ## Definition
@@ -42,6 +47,9 @@ The automated exploration of the space of possible network architectures (depth,
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[no-free-lunch-theorem]] — contrasts-with: NAS searches for architectures that beat hand-designed baselines on specific tasks
+- [[convolutional-neural-network]] — applies: NAS automates design of CNN architectures
+- [[bayesian-optimization]] — uses: Bayesian optimization reduces the number of architecture evaluations needed
 - [[model-selection-problem]] — specializes: architecture search is hyperparameter/model selection over the architecture space
 - [[neural-networks]] — applies: automates selection of network depth, width, connectivity, and node types
 [To be populated during integration]

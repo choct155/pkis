@@ -1,6 +1,9 @@
 ---
 aliases: []
 also_type: []
+analogous-to:
+- the-kernel-trick
+- linear-function-approximation-rl
 component_scores:
   application: null
   limits: null
@@ -8,6 +11,8 @@ component_scores:
   purpose: null
   scope: null
   structure: null
+contrasts-with:
+- vanishing-exploding-gradients-rnn
 coverage: 1
 date_created: '2026-06-11'
 date_updated: '2026-06-11'
@@ -22,6 +27,8 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - goodfellow-deeplearning-ch10
+specializes:
+- recurrent-neural-network
 tags:
 - reservoir
 - spectral-radius
@@ -45,4 +52,8 @@ Reservoir computing makes training convex (linear output layer), avoiding BPTT a
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[linear-function-approximation-rl]] — analogous-to
+- [[the-kernel-trick]] — analogous-to: Both map input history to fixed-length feature vector for a linear classifier
+- [[vanishing-exploding-gradients-rnn]] — contrasts-with: ESNs avoid BPTT entirely by fixing recurrent weights
+- [[recurrent-neural-network]] — specializes
 [To be populated during integration]

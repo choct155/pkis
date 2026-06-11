@@ -8,13 +8,19 @@ component_scores:
   purpose: null
   scope: null
   structure: null
+contrasts-with:
+- curse-of-dimensionality
 coverage: 1
 date_created: '2026-06-11'
 date_updated: '2026-06-11'
 domain:
 - machine-learning
 - neural-networks
+generalizes:
+- basis-function-models
 id: pkis:framework:feed-forward-neural-network
+instantiates:
+- multilayer-perceptron
 knowledge_type: framework
 maturity: evolving
 needs_canonical_source: false
@@ -28,6 +34,10 @@ tags:
 - architecture
 title: Feed-Forward Neural Network (MLP)
 understanding: 0
+uses:
+- activation-functions
+- universal-approximation-theorem-nn
+- backpropagation
 ---
 
 ## Definition
@@ -51,4 +61,10 @@ Bias parameters are absorbed by appending a constant input $x_0=1$.
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[basis-function-models]] — generalizes
+- [[curse-of-dimensionality]] — contrasts-with
+- [[backpropagation]] — uses
+- [[universal-approximation-theorem-nn]] — uses
+- [[activation-functions]] — uses
+- [[multilayer-perceptron]] — instantiates
 [To be populated during integration]

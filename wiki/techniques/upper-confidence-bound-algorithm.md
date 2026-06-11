@@ -1,6 +1,9 @@
 ---
 aliases: []
 also_type: []
+applies:
+- contextual-bandit
+- exploration-exploitation-tradeoff
 component_scores:
   alternatives: null
   conditions: null
@@ -17,6 +20,8 @@ domain:
 - reinforcement learning
 - statistics
 id: pkis:technique:upper-confidence-bound-algorithm
+instantiates:
+- upper-confidence-bound
 knowledge_type: technique
 maturity: evolving
 needs_canonical_source: false
@@ -31,6 +36,8 @@ tags:
 - concentration inequality
 title: Upper Confidence Bound (UCB) Algorithm
 understanding: 0
+uses:
+- cumulative-regret
 ---
 
 ## Definition
@@ -48,4 +55,8 @@ UCB achieves near-optimal (logarithmic) cumulative regret in many bandit variant
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[cumulative-regret]] — uses
+- [[exploration-exploitation-tradeoff]] — applies
+- [[contextual-bandit]] — applies
+- [[upper-confidence-bound]] — instantiates
 [To be populated during integration]

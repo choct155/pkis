@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- vanishing-gradient-problem
 component_scores:
   alternatives: null
   conditions: null
@@ -14,6 +16,8 @@ date_created: '2026-06-09'
 date_updated: '2026-06-09'
 domain:
 - deep-learning
+extends:
+- recurrent-neural-network
 id: pkis:technique:long-short-term-memory-lstm
 knowledge_type: technique
 maturity: evolving
@@ -37,4 +41,6 @@ A recurrent architecture with gating units that mitigate the information-degrada
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[vanishing-gradient-problem]] — applies
+- [[recurrent-neural-network]] — extends
 [To be populated during integration]

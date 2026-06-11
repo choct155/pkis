@@ -16,13 +16,19 @@ date_updated: '2026-06-11'
 domain:
 - probabilistic-graphical-models
 - probability-theory
+generalizes:
+- markov-chains
 id: pkis:concept:ordered-markov-property
+instantiates:
+- bayesian-networks
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
 related_concepts: []
 sources:
 - murphy-pml2-advanced-ch04
+specializes:
+- d-separation
 tags:
 - DAG
 - conditional-independence
@@ -30,6 +36,8 @@ tags:
 - factorization
 title: Ordered Markov Property (DAGs)
 understanding: 0
+uses:
+- conditional-independence
 ---
 
 ## Definition
@@ -44,4 +52,8 @@ This property is the foundational justification for representing any joint distr
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[markov-chains]] — generalizes
+- [[d-separation]] — specializes
+- [[conditional-independence]] — uses
+- [[bayesian-networks]] — instantiates
 [To be populated during integration]

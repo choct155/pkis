@@ -20,6 +20,9 @@ id: pkis:concept:mode-connectivity
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- deep-ensembles
+- swa-swag
 related_concepts: []
 sources:
 - murphy-pml2-advanced-ch17
@@ -31,6 +34,8 @@ tags:
 - loss-surface
 title: Mode Connectivity
 understanding: 0
+uses:
+- effective-dimensionality-bnn
 ---
 
 ## Definition
@@ -43,4 +48,7 @@ Mode connectivity (Garipov et al. 2018) reveals that the DNN loss landscape is f
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[effective-dimensionality-bnn]] — uses
+- [[swa-swag]] — prerequisite-of
+- [[deep-ensembles]] — prerequisite-of
 [To be populated during integration]

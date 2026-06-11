@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- structural-breaks
 component_scores:
   application: null
   boundary: null
@@ -18,6 +20,8 @@ domain:
 - statistics
 - time-series
 - econometrics
+extends:
+- hidden-markov-model
 id: pkis:concept:autoregressive-hmm
 knowledge_type: concept
 maturity: evolving
@@ -25,6 +29,8 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - murphy-pml2-advanced-ch29
+specializes:
+- state-space-model
 tags:
 - HMM
 - autoregressive
@@ -32,6 +38,8 @@ tags:
 - time-series
 title: Autoregressive HMM (AR-HMM)
 understanding: 0
+uses:
+- autoregressive-model
 ---
 
 ## Definition
@@ -48,4 +56,8 @@ AR-HMMs overcome the conditional independence assumption of standard HMMs, allow
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[state-space-model]] — specializes
+- [[structural-breaks]] — applies
+- [[autoregressive-model]] — uses
+- [[hidden-markov-model]] — extends
 [To be populated during integration]

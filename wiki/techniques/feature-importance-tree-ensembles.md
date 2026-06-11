@@ -1,6 +1,9 @@
 ---
 aliases: []
 also_type: []
+applies:
+- random-forests
+- gradient-boosting
 component_scores:
   alternatives: null
   conditions: null
@@ -16,6 +19,8 @@ domain:
 - machine-learning
 - interpretability
 id: pkis:technique:feature-importance-tree-ensembles
+instantiates:
+- variable-importance-for-tree-ensembles
 knowledge_type: technique
 maturity: evolving
 needs_canonical_source: false
@@ -30,6 +35,8 @@ tags:
 - gradient-boosting
 title: Feature Importance for Tree Ensembles
 understanding: 0
+uses:
+- cart-decision-trees
 ---
 
 ## Definition
@@ -52,4 +59,8 @@ This measure provides a global, model-intrinsic summary of variable relevance th
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[cart-decision-trees]] — uses
+- [[gradient-boosting]] — applies
+- [[random-forests]] — applies
+- [[variable-importance-for-tree-ensembles]] — instantiates
 [To be populated during integration]

@@ -40,6 +40,7 @@ title: Gaussian Process
 understanding: 0
 uses:
 - generalized-linear-models
+- mercer-kernel
 ---
 
 ## Definition
@@ -58,6 +59,7 @@ Brownian motion, Wiener and Langevin processes, Kalman-filter models, and geosta
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[mercer-kernel]] — uses
 - [[generalized-linear-models]] — uses: For non-Gaussian data a latent GP feeds a GLM-style link/likelihood (location and optionally shape).
 - [[curse-of-dimensionality]] — contrasts-with: Centering a GP on a parametric mean function lets the posterior concentrate near it, mitigating the curse of dimensionality.
 - [[bayesian-neural-networks]] — contrasts-with: GPs place a prior directly on functions (a smoothing device); BNNs parameterize functions and can in principle do feature discovery.

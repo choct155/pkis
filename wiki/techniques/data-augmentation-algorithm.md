@@ -1,6 +1,10 @@
 ---
 aliases: []
 also_type: []
+analogous-to:
+- em-algorithm
+applies:
+- bayesian-inference
 component_scores:
   alternatives: null
   conditions: null
@@ -19,9 +23,13 @@ id: pkis:technique:data-augmentation-algorithm
 knowledge_type: technique
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- multiple-imputation
 related_concepts: []
 sources:
 - bishop-prml-ch11
+specializes:
+- gibbs-sampling
 tags:
 - bayesian
 - latent-variables
@@ -46,4 +54,8 @@ Data augmentation is the Bayesian counterpart to the EM algorithm: the I-step mi
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[bayesian-inference]] — applies
+- [[multiple-imputation]] — prerequisite-of
+- [[gibbs-sampling]] — specializes
+- [[em-algorithm]] — analogous-to
 [To be populated during integration]

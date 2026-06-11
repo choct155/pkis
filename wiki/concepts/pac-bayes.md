@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- bayesian-deep-learning
 component_scores:
   application: null
   boundary: null
@@ -10,6 +12,8 @@ component_scores:
   prerequisites: null
   scope: null
   transfer: null
+contrasts-with:
+- vc-dimension
 coverage: 1
 date_created: '2026-06-11'
 date_updated: '2026-06-11'
@@ -17,6 +21,8 @@ domain:
 - statistical-learning-theory
 - deep-learning
 - generalisation
+extends:
+- pac-learning
 id: pkis:concept:pac-bayes
 knowledge_type: concept
 maturity: evolving
@@ -31,6 +37,8 @@ tags:
 - stochastic-networks
 title: PAC-Bayes Generalisation Bounds
 understanding: 0
+uses:
+- kl-divergence
 ---
 
 ## Definition
@@ -44,4 +52,8 @@ PAC-Bayes [McAllester 1999] is one of the few frameworks that can yield provably
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[vc-dimension]] — contrasts-with: PAC-Bayes uses KL(Q||P) as complexity measure; VC theory uses combinatorial shattering dimension
+- [[bayesian-deep-learning]] — applies
+- [[kl-divergence]] — uses
+- [[pac-learning]] — extends
 [To be populated during integration]

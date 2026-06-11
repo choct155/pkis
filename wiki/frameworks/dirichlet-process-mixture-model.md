@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- clustering
 component_scores:
   application: null
   limits: null
@@ -14,6 +16,9 @@ date_updated: '2026-06-11'
 domain:
 - machine-learning
 - statistics
+generalizes:
+- mixture-models
+- gaussian-mixture-models
 id: pkis:framework:dirichlet-process-mixture-model
 knowledge_type: framework
 maturity: evolving
@@ -30,6 +35,9 @@ tags:
 - nonparametric-bayes
 title: Dirichlet Process Mixture Model
 understanding: 0
+uses:
+- dirichlet-process
+- chinese-restaurant-process
 ---
 
 ## Definition
@@ -48,4 +56,9 @@ DPMMs are the workhorse Bayesian nonparametric clustering model. They subsume fi
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[clustering]] — applies
+- [[gaussian-mixture-models]] — generalizes
+- [[mixture-models]] — generalizes
+- [[chinese-restaurant-process]] — uses
+- [[dirichlet-process]] — uses
 [To be populated during integration]

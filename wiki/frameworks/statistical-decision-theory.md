@@ -15,6 +15,8 @@ domain:
 - statistics
 - decision theory
 - machine learning
+extends:
+- wald-decision-theory
 id: pkis:framework:statistical-decision-theory
 knowledge_type: framework
 maturity: evolving
@@ -31,6 +33,12 @@ tags:
 - admissibility
 title: Statistical Decision Theory (Bayesian & Frequentist)
 understanding: 0
+uses:
+- bayesian-inference
+- expected-loss
+- admissibility
+- maximum-expected-utility-principle
+- minimax-criterion
 ---
 
 ## Definition
@@ -52,4 +60,10 @@ Unifies estimation, classification, regression, and sequential decisions under a
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[minimax-criterion]] — uses
+- [[maximum-expected-utility-principle]] — uses
+- [[wald-decision-theory]] — extends
+- [[admissibility]] — uses
+- [[expected-loss]] — uses
+- [[bayesian-inference]] — uses
 [To be populated during integration]

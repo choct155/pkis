@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- human-in-the-loop
 component_scores:
   application: null
   boundary: null
@@ -17,7 +19,11 @@ domain:
 - machine-learning
 - decision-theory
 - evaluation
+extends:
+- precision-recall-f-score
 id: pkis:concept:coverage-selective-prediction
+instantiates:
+- decision-theory-foundations
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
@@ -47,4 +53,7 @@ In high-stakes deployment (medical diagnosis, map transcription), it is preferab
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[decision-theory-foundations]] — instantiates: Abstention is a decision action with defined cost
+- [[human-in-the-loop]] — applies: Abstaining examples are routed to human operators
+- [[precision-recall-f-score]] — extends: Coverage adds the option to abstain, creating a three-way tradeoff among accuracy, precision/recall, and coverage
 [To be populated during integration]

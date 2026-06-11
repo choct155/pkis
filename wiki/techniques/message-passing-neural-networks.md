@@ -16,13 +16,21 @@ domain:
 - machine-learning
 - graph-learning
 - deep-learning
+generalizes:
+- graph-sage
+- graph-convolutional-network
+- graph-attention-network
 id: pkis:technique:message-passing-neural-networks
+instantiates:
+- graph-encoder-decoder-model
 knowledge_type: technique
 maturity: evolving
 needs_canonical_source: false
 related_concepts: []
 sources:
 - murphy-pml1-intro-ch23
+specializes:
+- graph-neural-networks
 tags:
 - GNN
 - message-passing
@@ -48,4 +56,9 @@ MPNN provides the canonical abstraction for supervised graph learning: it couple
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[graph-attention-network]] — generalizes
+- [[graph-convolutional-network]] — generalizes
+- [[graph-sage]] — generalizes
+- [[graph-encoder-decoder-model]] — instantiates
+- [[graph-neural-networks]] — specializes
 [To be populated during integration]

@@ -21,6 +21,9 @@ id: pkis:concept:computational-graph
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- backpropagation-algorithm
+- automatic-differentiation
 related_concepts: []
 sources:
 - goodfellow-deeplearning-ch06
@@ -45,4 +48,6 @@ Virtually all modern deep learning frameworks (TensorFlow, PyTorch, JAX) represe
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[automatic-differentiation]] — prerequisite-of
+- [[backpropagation-algorithm]] — prerequisite-of
 [To be populated during integration]

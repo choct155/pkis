@@ -20,11 +20,16 @@ instantiates:
 knowledge_type: framework
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- boltzmann-machine
 related_concepts: []
 sources:
 - mackay-itila-ch31
 specializes:
 - undirected-graphical-models
+- markov-random-field
+- hopfield-network
+- potts-model
 tags:
 - ising-model
 - statistical-physics
@@ -56,6 +61,10 @@ The Ising model is the canonical solvable system with a genuine phase transition
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[potts-model]] — specializes
+- [[hopfield-network]] — specializes: Hopfield network is a fully connected Ising model
+- [[boltzmann-machine]] — prerequisite-of
+- [[markov-random-field]] — specializes
 - [[exponential-family]] — uses: Ising MLE matches sufficient statistics to model expectations -- the standard exponential-family score equation.
 - [[iterative-proportional-fitting]] — uses: IPF performs cyclic coordinate descent on the Ising gradient equations to fit the discrete model.
 - [[undirected-graphical-models]] — specializes: An Ising model is a pairwise Markov random field over binary spins with energy = negative log potential.

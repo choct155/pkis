@@ -9,6 +9,9 @@ component_scores:
   implementation: null
   operational_mechanism: null
   principled_mechanism: null
+contrasts-with:
+- off-policy-importance-sampling-rl
+- gaussian-policy-continuous-actions
 coverage: 1
 date_created: '2026-06-11'
 date_updated: '2026-06-11'
@@ -19,9 +22,13 @@ id: pkis:technique:deterministic-policy-gradient
 knowledge_type: technique
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- deep-deterministic-policy-gradient
 related_concepts: []
 sources:
 - murphy-pml2-advanced-ch35
+specializes:
+- policy-gradient-theorem
 tags:
 - continuous-actions
 - off-policy
@@ -43,4 +50,8 @@ DPG (Silver et al. 2014) enables efficient gradient-based policy optimisation in
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[gaussian-policy-continuous-actions]] — contrasts-with
+- [[off-policy-importance-sampling-rl]] — contrasts-with
+- [[deep-deterministic-policy-gradient]] — prerequisite-of
+- [[policy-gradient-theorem]] — specializes
 [To be populated during integration]

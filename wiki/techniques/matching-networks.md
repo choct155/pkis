@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+analogous-to:
+- maml
 component_scores:
   alternatives: null
   conditions: null
@@ -16,6 +18,8 @@ domain:
 - machine-learning
 - few-shot-learning
 - meta-learning
+extends:
+- k-nearest-neighbors
 id: pkis:technique:matching-networks
 knowledge_type: technique
 maturity: evolving
@@ -31,6 +35,8 @@ tags:
 - in-context
 title: Matching Networks
 understanding: 0
+uses:
+- transformer-attention-mechanisms
 ---
 
 ## Definition
@@ -47,4 +53,7 @@ Matching networks pioneer the *episodic training* paradigm that aligns training 
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[k-nearest-neighbors]] — extends: Matching networks are learned, adaptive kNN with a context-sensitive similarity kernel.
+- [[transformer-attention-mechanisms]] — uses: The attention kernel a(x,xn;S) is an early instance of soft attention over a context set.
+- [[maml]] — analogous-to: Both are episodically trained few-shot methods; matching networks are metric-based, MAML is gradient-based.
 [To be populated during integration]

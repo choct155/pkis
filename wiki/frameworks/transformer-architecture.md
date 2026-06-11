@@ -1,6 +1,10 @@
 ---
 aliases: []
 also_type: []
+applies:
+- machine-translation
+- language-model
+- neural-scaling-laws
 component_scores:
   application: null
   limits: null
@@ -8,6 +12,9 @@ component_scores:
   purpose: null
   scope: null
   structure: null
+contrasts-with:
+- recurrent-neural-network
+- long-short-term-memory-lstm
 coverage: 1
 date_created: '2026-06-11'
 date_updated: '2026-06-11'
@@ -16,6 +23,9 @@ domain:
 - deep-learning
 - nlp
 id: pkis:framework:transformer-architecture
+instantiates:
+- encoder-decoder-architecture
+- sequence-to-sequence-model
 knowledge_type: framework
 maturity: evolving
 needs_canonical_source: false
@@ -30,6 +40,17 @@ tags:
 - seq2seq
 title: Transformer (Seq2Seq Attention Architecture)
 understanding: 0
+uses:
+- multi-headed-attention
+- sinusoidal-positional-encoding
+- batch-normalization
+- residual-network
+- multi-head-attention
+- layer-normalization
+- residual-skip-connection
+- language-model
+- contextual-word-embeddings
+- masked-language-modeling
 ---
 
 ## Definition
@@ -52,4 +73,21 @@ Transformers achieve $O(1)$ maximum path length between any two tokens (vs. $O(n
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[masked-language-modeling]] — uses
+- [[contextual-word-embeddings]] — uses
+- [[long-short-term-memory-lstm]] — contrasts-with
+- [[neural-scaling-laws]] — applies
+- [[language-model]] — uses
+- [[sequence-to-sequence-model]] — instantiates
+- [[residual-skip-connection]] — uses
+- [[layer-normalization]] — uses
+- [[multi-head-attention]] — uses
+- [[residual-network]] — uses
+- [[batch-normalization]] — uses: Transformer uses Layer Normalization (a variant)
+- [[language-model]] — applies
+- [[machine-translation]] — applies
+- [[recurrent-neural-network]] — contrasts-with
+- [[sinusoidal-positional-encoding]] — uses
+- [[multi-headed-attention]] — uses
+- [[encoder-decoder-architecture]] — instantiates
 [To be populated during integration]

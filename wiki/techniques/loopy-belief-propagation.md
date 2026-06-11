@@ -1,6 +1,13 @@
 ---
 aliases: []
 also_type: []
+analogous-to:
+- variational-free-energy
+applies:
+- undirected-graphical-models
+- turbo-code
+- sum-product-decoding-ldpc
+- gaussian-graphical-model
 component_scores:
   alternatives: null
   conditions: null
@@ -9,6 +16,10 @@ component_scores:
   implementation: null
   operational_mechanism: null
   principled_mechanism: null
+contrasts-with:
+- variational-inference
+- gibbs-sampler
+- mean-field-approximation
 coverage: 1
 date_created: '2026-06-11'
 date_updated: '2026-06-11'
@@ -16,7 +27,15 @@ domain:
 - probabilistic-graphical-models
 - information-theory
 - machine-learning
+extends:
+- sum-product-algorithm
+- belief-propagation
+- sum-product-algorithm-trees
 id: pkis:technique:loopy-belief-propagation
+instantiates:
+- sum-product-decoding-ldpc
+- iterative-turbo-decoding
+- belief-propagation
 knowledge_type: technique
 maturity: evolving
 needs_canonical_source: false
@@ -25,6 +44,9 @@ sources:
 - bishop-prml-ch08
 - goodfellow-deeplearning-ch16
 - murphy-pml2-advanced-ch09
+specializes:
+- message-passing
+- generalised-belief-propagation
 tags:
 - approximate-inference
 - message-passing
@@ -33,6 +55,11 @@ tags:
 - Bethe-approximation
 title: Loopy Belief Propagation
 understanding: 0
+uses:
+- sum-product-algorithm
+- variational-free-energy
+- computation-tree-bp
+- residual-belief-propagation
 ---
 
 ## Definition
@@ -50,4 +77,24 @@ Despite lacking theoretical guarantees, LBP achieves state-of-the-art performanc
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[gaussian-graphical-model]] — applies: GBP on Gaussians gives exact means
+- [[generalised-belief-propagation]] — specializes: GBP is a more accurate generalisation
+- [[residual-belief-propagation]] — uses
+- [[computation-tree-bp]] — uses
+- [[sum-product-decoding-ldpc]] — applies
+- [[turbo-code]] — applies
+- [[mean-field-approximation]] — contrasts-with
+- [[variational-free-energy]] — uses: LBP minimises the Bethe free energy
+- [[belief-propagation]] — instantiates
+- [[sum-product-algorithm-trees]] — extends
+- [[message-passing]] — specializes
+- [[gibbs-sampler]] — contrasts-with
+- [[variational-inference]] — contrasts-with
+- [[undirected-graphical-models]] — applies
+- [[sum-product-algorithm]] — uses
+- [[belief-propagation]] — extends
+- [[variational-free-energy]] — analogous-to
+- [[iterative-turbo-decoding]] — instantiates
+- [[sum-product-decoding-ldpc]] — instantiates
+- [[sum-product-algorithm]] — extends
 [To be populated during integration]

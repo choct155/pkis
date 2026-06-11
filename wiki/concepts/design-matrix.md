@@ -16,10 +16,16 @@ date_updated: '2026-06-11'
 domain:
 - machine-learning
 - statistics
+generalizes:
+- bag-of-words-model
 id: pkis:concept:design-matrix
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- normal-equations-pseudoinverse
+- bayesian-linear-regression-posterior
+- linear-regression
 related_concepts: []
 sources:
 - bishop-prml-ch03
@@ -32,6 +38,11 @@ tags:
 - gram-matrix
 title: Design Matrix
 understanding: 0
+uses:
+- linear-basis-function-model
+- linear-regression
+- supervised-learning
+- principal-component-analysis
 ---
 
 ## Definition
@@ -48,4 +59,12 @@ Centralises all data-dependent computation: the normal equations, the Bayesian p
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[bag-of-words-model]] — generalizes
+- [[linear-regression]] — prerequisite-of
+- [[principal-component-analysis]] — uses
+- [[supervised-learning]] — uses
+- [[linear-regression]] — uses
+- [[bayesian-linear-regression-posterior]] — prerequisite-of
+- [[normal-equations-pseudoinverse]] — prerequisite-of
+- [[linear-basis-function-model]] — uses
 [To be populated during integration]

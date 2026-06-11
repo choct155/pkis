@@ -1,6 +1,9 @@
 ---
 aliases: []
 also_type: []
+applies:
+- variational-inference
+- variational-autoencoder
 component_scores:
   conditions: null
   implications: null
@@ -14,6 +17,8 @@ domain:
 - information-theory
 - machine-learning
 - probabilistic-inference
+extends:
+- kl-divergence
 id: pkis:result:forward-vs-reverse-kl
 knowledge_type: result
 maturity: evolving
@@ -28,6 +33,10 @@ tags:
 - mode-covering
 title: Forward vs Reverse KL Divergence Asymmetry
 understanding: 0
+uses:
+- elbo
+- mean-field-approximation
+- jensens-inequality
 ---
 
 ## Definition
@@ -45,4 +54,10 @@ This asymmetry drives the difference between variational EM / mean-field VI (rev
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[jensens-inequality]] — uses
+- [[variational-autoencoder]] — applies
+- [[mean-field-approximation]] — uses
+- [[elbo]] — uses
+- [[variational-inference]] — applies
+- [[kl-divergence]] — extends
 [To be populated during integration]

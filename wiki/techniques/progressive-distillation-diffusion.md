@@ -29,6 +29,8 @@ tags:
 - inference-efficiency
 title: Progressive Distillation for Diffusion Models
 understanding: 0
+uses:
+- ddim-sampler
 ---
 
 ## Definition
@@ -48,4 +50,5 @@ Progressive distillation addresses the chief practical weakness of diffusion mod
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[ddim-sampler]] — uses: Teacher generates targets via DDIM deterministic steps
 [To be populated during integration]

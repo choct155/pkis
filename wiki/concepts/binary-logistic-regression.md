@@ -16,13 +16,19 @@ date_updated: '2026-06-11'
 domain:
 - machine-learning
 - statistics
+generalizes:
+- perceptron-learning-algorithm
 id: pkis:concept:binary-logistic-regression
+instantiates:
+- logistic-regression-nll-convexity
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
 related_concepts: []
 sources:
 - murphy-pml1-intro-ch10
+specializes:
+- logistic-regression
 tags:
 - classification
 - discriminative-model
@@ -31,6 +37,13 @@ tags:
 - decision-boundary
 title: Binary Logistic Regression
 understanding: 0
+uses:
+- logit-pre-activation
+- activation-functions
+- cross-entropy-loss
+- maximum-likelihood-estimation
+- linear-separability
+- irls
 ---
 
 ## Definition
@@ -45,4 +58,13 @@ Binary logistic regression is the canonical discriminative linear classifier: it
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[perceptron-learning-algorithm]] — generalizes
+- [[irls]] — uses
+- [[logistic-regression-nll-convexity]] — instantiates
+- [[linear-separability]] — uses
+- [[maximum-likelihood-estimation]] — uses
+- [[cross-entropy-loss]] — uses
+- [[activation-functions]] — uses
+- [[logit-pre-activation]] — uses
+- [[logistic-regression]] — specializes
 [To be populated during integration]

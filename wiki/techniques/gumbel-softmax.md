@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- variational-autoencoder
 component_scores:
   alternatives: null
   conditions: null
@@ -9,12 +11,17 @@ component_scores:
   implementation: null
   operational_mechanism: null
   principled_mechanism: null
+contrasts-with:
+- score-function-estimator
+- vq-vae
 coverage: 1
 date_created: '2026-06-11'
 date_updated: '2026-06-11'
 domain:
 - machine-learning
 - probabilistic-modeling
+extends:
+- reparameterization-trick
 id: pkis:technique:gumbel-softmax
 knowledge_type: technique
 maturity: evolving
@@ -31,6 +38,9 @@ tags:
 - temperature
 title: Gumbel-Softmax (Concrete Distribution)
 understanding: 0
+uses:
+- reparameterization-gradient
+- softmax-action-selection
 ---
 
 ## Definition
@@ -47,4 +57,10 @@ The Gumbel-softmax enables reparameterized gradients through categorical choices
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[vq-vae]] — contrasts-with
+- [[reparameterization-trick]] — extends
+- [[softmax-action-selection]] — uses
+- [[variational-autoencoder]] — applies
+- [[score-function-estimator]] — contrasts-with: Gumbel-softmax enables reparameterization for discrete vars instead
+- [[reparameterization-gradient]] — uses
 [To be populated during integration]

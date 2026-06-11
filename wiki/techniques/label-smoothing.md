@@ -1,6 +1,9 @@
 ---
 aliases: []
 also_type: []
+applies:
+- cross-entropy-loss
+- calibration
 component_scores:
   alternatives: null
   conditions: null
@@ -9,6 +12,8 @@ component_scores:
   implementation: null
   operational_mechanism: null
   principled_mechanism: null
+contrasts-with:
+- temperature-scaling
 coverage: 1
 date_created: '2026-06-11'
 date_updated: '2026-06-11'
@@ -17,6 +22,8 @@ domain:
 - deep-learning
 - regularization
 id: pkis:technique:label-smoothing
+instantiates:
+- regularization
 knowledge_type: technique
 maturity: evolving
 needs_canonical_source: false
@@ -24,6 +31,8 @@ related_concepts: []
 sources:
 - goodfellow-deeplearning-ch07
 - murphy-pml2-advanced-ch14
+specializes:
+- regularization
 tags:
 - label-smoothing
 - softmax
@@ -32,6 +41,9 @@ tags:
 - output-noise
 title: Label Smoothing
 understanding: 0
+uses:
+- maximum-likelihood-estimation
+- cross-entropy-loss
 ---
 
 ## Definition
@@ -49,4 +61,11 @@ A softmax classifier trained with hard targets and maximum likelihood can never 
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[temperature-scaling]] — contrasts-with
+- [[cross-entropy-loss]] — uses
+- [[calibration]] — applies
+- [[regularization]] — instantiates
+- [[maximum-likelihood-estimation]] — uses
+- [[regularization]] — specializes
+- [[cross-entropy-loss]] — applies
 [To be populated during integration]

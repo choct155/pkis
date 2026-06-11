@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- linear-basis-function-model
 component_scores:
   alternatives: null
   conditions: null
@@ -9,6 +11,8 @@ component_scores:
   implementation: null
   operational_mechanism: null
   principled_mechanism: null
+contrasts-with:
+- collinearity
 coverage: 1
 date_created: '2026-06-11'
 date_updated: '2026-06-11'
@@ -16,6 +20,9 @@ domain:
 - machine-learning
 - linear-algebra
 id: pkis:technique:normal-equations-pseudoinverse
+instantiates:
+- maximum-likelihood-estimation
+- gauss-markov-theorem
 knowledge_type: technique
 maturity: evolving
 needs_canonical_source: false
@@ -29,6 +36,10 @@ tags:
 - pseudoinverse
 title: Normal Equations and Moore-Penrose Pseudoinverse
 understanding: 0
+uses:
+- orthogonal-projection
+- singular-value-decomposition
+- design-matrix
 ---
 
 ## Definition
@@ -47,4 +58,11 @@ Provides a direct, non-iterative solution to regression; the pseudoinverse gener
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[collinearity]] — contrasts-with: Near-collinear basis vectors make the normal equations ill-conditioned
+- [[gauss-markov-theorem]] — instantiates
+- [[design-matrix]] — uses
+- [[singular-value-decomposition]] — uses: SVD is the numerically stable method to compute the pseudoinverse
+- [[orthogonal-projection]] — uses
+- [[maximum-likelihood-estimation]] — instantiates
+- [[linear-basis-function-model]] — applies
 [To be populated during integration]

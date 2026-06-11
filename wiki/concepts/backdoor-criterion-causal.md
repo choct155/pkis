@@ -17,6 +17,8 @@ domain:
 - causal-inference
 - statistics
 id: pkis:concept:backdoor-criterion-causal
+instantiates:
+- back-door-criterion
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
@@ -31,6 +33,10 @@ tags:
 - identification
 title: Backdoor Criterion
 understanding: 0
+uses:
+- d-separation
+- adjustment-formula-standardization
+- structural-causal-model
 ---
 
 ## Definition
@@ -49,4 +55,8 @@ The backdoor criterion gives a graphical, non-parametric sufficient condition fo
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[structural-causal-model]] — uses
+- [[adjustment-formula-standardization]] — uses: Backdoor adjustment formula is the identification result from the backdoor criterion
+- [[d-separation]] — uses
+- [[back-door-criterion]] — instantiates: Formal non-parametric statement of the backdoor criterion used in do-calculus
 [To be populated during integration]

@@ -17,9 +17,14 @@ domain:
 - probability-theory
 - measure-theory
 id: pkis:concept:probability-space
+instantiates:
+- probability-theory
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- random-variable
+- conditional-independence
 related_concepts: []
 sources:
 - murphy-pml2-advanced-ch02
@@ -31,6 +36,8 @@ tags:
 - foundations
 title: Probability Space
 understanding: 0
+uses:
+- kolmogorov-axioms
 ---
 
 ## Definition
@@ -45,4 +52,8 @@ Every probabilistic model—from simple coin flips to complex Bayesian networks�
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[conditional-independence]] — prerequisite-of
+- [[probability-theory]] — instantiates
+- [[random-variable]] — prerequisite-of
+- [[kolmogorov-axioms]] — uses
 [To be populated during integration]

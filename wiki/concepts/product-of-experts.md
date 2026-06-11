@@ -10,6 +10,8 @@ component_scores:
   prerequisites: null
   scope: null
   transfer: null
+contrasts-with:
+- mixture-models
 coverage: 1
 date_created: '2026-06-11'
 date_updated: '2026-06-11'
@@ -17,6 +19,8 @@ domain:
 - machine-learning
 - probabilistic-modeling
 id: pkis:concept:product-of-experts
+instantiates:
+- energy-based-model
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
@@ -44,4 +48,6 @@ PoE naturally implements conjunctive constraints: it can be used to generate dat
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[mixture-models]] — contrasts-with: PoE implements conjunction of constraints; mixture of experts implements disjunction
+- [[energy-based-model]] — instantiates: PoE is naturally expressed as an EBM with additive energies
 [To be populated during integration]

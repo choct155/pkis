@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- gaussian-process-gp
 component_scores:
   alternatives: null
   conditions: null
@@ -17,6 +19,9 @@ domain:
 - statistics
 - Bayesian-inference
 id: pkis:technique:gp-posterior-inference
+instantiates:
+- bayesian-inference
+- gaussian-process-regression
 knowledge_type: technique
 maturity: evolving
 needs_canonical_source: false
@@ -31,6 +36,9 @@ tags:
 - interpolation
 title: GP Posterior Inference (Gaussian Likelihood)
 understanding: 0
+uses:
+- gaussian-distribution
+- cholesky-decomposition
 ---
 
 ## Definition
@@ -49,4 +57,9 @@ This is the core inference algorithm for GP regression: exact, closed-form, and 
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[gaussian-process-regression]] — instantiates
+- [[bayesian-inference]] — instantiates
+- [[cholesky-decomposition]] — uses
+- [[gaussian-distribution]] — uses
+- [[gaussian-process-gp]] — applies
 [To be populated during integration]

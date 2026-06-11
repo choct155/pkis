@@ -8,6 +8,8 @@ component_scores:
   purpose: null
   scope: null
   structure: null
+contrasts-with:
+- end-to-end-learning
 coverage: 1
 date_created: '2026-06-11'
 date_updated: '2026-06-11'
@@ -16,6 +18,8 @@ domain:
 - speech-synthesis
 - generative-models
 id: pkis:framework:wavenet
+instantiates:
+- autoregressive-model-arm
 knowledge_type: framework
 maturity: evolving
 needs_canonical_source: false
@@ -31,6 +35,8 @@ tags:
 - autoregressive
 title: WaveNet (Dilated Causal CNN for Audio)
 understanding: 0
+uses:
+- causal-convolution
 ---
 
 ## Definition
@@ -45,4 +51,7 @@ WaveNet set the state of the art in text-to-speech at its introduction (2016), d
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[end-to-end-learning]] — contrasts-with: Tacotron is end-to-end (words→audio); WaveNet takes linguistic features as input
+- [[autoregressive-model-arm]] — instantiates
+- [[causal-convolution]] — uses
 [To be populated during integration]

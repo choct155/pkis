@@ -1,6 +1,10 @@
 ---
 aliases: []
 also_type: []
+analogous-to:
+- em-algorithm
+applies:
+- intractable-posterior
 component_scores:
   alternatives: null
   conditions: null
@@ -9,6 +13,8 @@ component_scores:
   implementation: null
   operational_mechanism: null
   principled_mechanism: null
+contrasts-with:
+- laplace-approximation
 coverage: 1
 date_created: '2026-06-11'
 date_updated: '2026-06-11'
@@ -16,7 +22,11 @@ domain:
 - machine-learning
 - Bayesian-inference
 - approximate-inference
+generalizes:
+- structured-variational-inference
 id: pkis:technique:mean-field-variational-inference
+instantiates:
+- inference-as-optimization
 knowledge_type: technique
 maturity: evolving
 needs_canonical_source: false
@@ -24,6 +34,10 @@ related_concepts: []
 sources:
 - bishop-prml-ch10
 - goodfellow-deeplearning-ch19
+specializes:
+- coordinate-ascent-vi
+- variational-inference
+- mean-field-approximation
 tags:
 - variational-inference
 - mean-field
@@ -32,6 +46,11 @@ tags:
 - factorized-approximation
 title: Mean-Field Variational Inference (Factorized VI)
 understanding: 0
+uses:
+- elbo
+- kl-divergence
+- zero-forcing-vs-zero-avoiding-kl
+- calculus-of-variations-inference
 ---
 
 ## Definition
@@ -49,4 +68,16 @@ Coordinate-ascent is guaranteed to converge because the ELBO is convex with resp
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[calculus-of-variations-inference]] — uses
+- [[structured-variational-inference]] — generalizes
+- [[mean-field-approximation]] — specializes
+- [[inference-as-optimization]] — instantiates
+- [[laplace-approximation]] — contrasts-with
+- [[zero-forcing-vs-zero-avoiding-kl]] — uses
+- [[em-algorithm]] — analogous-to
+- [[intractable-posterior]] — applies
+- [[variational-inference]] — specializes
+- [[coordinate-ascent-vi]] — specializes
+- [[kl-divergence]] — uses
+- [[elbo]] — uses
 [To be populated during integration]

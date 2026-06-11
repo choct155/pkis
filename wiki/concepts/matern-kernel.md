@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+analogous-to:
+- brownian-motion
 component_scores:
   application: null
   boundary: null
@@ -17,6 +19,8 @@ domain:
 - machine-learning
 - statistics
 - stochastic-processes
+generalizes:
+- brownian-motion
 id: pkis:concept:matern-kernel
 knowledge_type: concept
 maturity: evolving
@@ -25,6 +29,9 @@ related_concepts: []
 sources:
 - murphy-pml1-intro-ch17
 - murphy-pml2-advanced-ch18
+specializes:
+- mercer-kernel
+- stationary-kernel
 tags:
 - Matérn
 - kernel
@@ -33,6 +40,8 @@ tags:
 - Ornstein-Uhlenbeck
 title: Matérn Kernel
 understanding: 0
+uses:
+- gaussian-process-regression
 ---
 
 ## Definition
@@ -51,4 +60,9 @@ The squared-exponential kernel produces infinitely smooth functions, often an un
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[brownian-motion]] — generalizes: nu=1/2 gives Ornstein-Uhlenbeck, related to Brownian motion.
+- [[stationary-kernel]] — specializes
+- [[gaussian-process-regression]] — uses
+- [[brownian-motion]] — analogous-to: nu=1/2 Matérn corresponds to Ornstein-Uhlenbeck process
+- [[mercer-kernel]] — specializes
 [To be populated during integration]

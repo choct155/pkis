@@ -1,6 +1,9 @@
 ---
 aliases: []
 also_type: []
+applies:
+- robustness-distribution-shift
+- statistical-efficiency-learning
 component_scores:
   application: null
   limits: null
@@ -15,7 +18,11 @@ domain:
 - machine-learning
 - probabilistic-modelling
 - bayesian-inference
+generalizes:
+- model-based-rl
 id: pkis:framework:model-based-ml
+instantiates:
+- world-model-primacy
 knowledge_type: framework
 maturity: evolving
 needs_canonical_source: false
@@ -31,6 +38,13 @@ tags:
 - decision-making
 title: Model-Based Machine Learning (MBML)
 understanding: 0
+uses:
+- bayesian-inference
+- data-generating-process
+- four-tasks-probabilistic-ml
+- latent-variable-models
+- probabilistic-graphical-models
+- parsimony-in-representation-learning
 ---
 
 ## Definition
@@ -48,4 +62,14 @@ Four canonical task types follow from choosing different model families: (1) **p
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[model-based-rl]] — generalizes
+- [[parsimony-in-representation-learning]] — uses
+- [[world-model-primacy]] — instantiates
+- [[statistical-efficiency-learning]] — applies
+- [[robustness-distribution-shift]] — applies
+- [[probabilistic-graphical-models]] — uses
+- [[latent-variable-models]] — uses
+- [[four-tasks-probabilistic-ml]] — uses
+- [[data-generating-process]] — uses
+- [[bayesian-inference]] — uses
 [To be populated during integration]

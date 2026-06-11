@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- vanishing-exploding-gradients
 component_scores:
   alternatives: null
   conditions: null
@@ -16,6 +18,8 @@ domain:
 - machine-learning
 - deep-learning
 id: pkis:technique:xavier-initialization
+instantiates:
+- weight-initialization
 knowledge_type: technique
 maturity: evolving
 needs_canonical_source: false
@@ -29,6 +33,8 @@ tags:
 - variance
 title: Xavier / Glorot Initialization
 understanding: 0
+uses:
+- expectation-and-variance
 ---
 
 ## Definition
@@ -50,4 +56,7 @@ Poor initialization causes activations or gradients to explode or vanish before 
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[expectation-and-variance]] — uses
+- [[vanishing-exploding-gradients]] — applies
+- [[weight-initialization]] — instantiates
 [To be populated during integration]

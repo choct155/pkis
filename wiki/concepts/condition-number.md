@@ -1,6 +1,9 @@
 ---
 aliases: []
 also_type: []
+applies:
+- solving-linear-systems
+- gradient-descent
 component_scores:
   application: null
   boundary: null
@@ -21,10 +24,15 @@ id: pkis:concept:condition-number
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- numerical-underflow-overflow
+- first-order-vs-second-order-optimization
 related_concepts: []
 sources:
 - goodfellow-deeplearning-ch04
 - murphy-pml1-intro-ch07
+specializes:
+- linear-algebra
 tags:
 - ill-conditioned
 - eigenvalue
@@ -32,6 +40,11 @@ tags:
 - numerical-stability
 title: Condition Number
 understanding: 0
+uses:
+- hessian-matrix
+- eigendecomposition
+- singular-value-decomposition
+- positive-definite-matrix
 ---
 
 ## Definition
@@ -50,4 +63,13 @@ An ill-conditioned Hessian causes gradient descent to perform poorly: the optima
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[gradient-descent]] — applies
+- [[positive-definite-matrix]] — uses
+- [[solving-linear-systems]] — applies
+- [[singular-value-decomposition]] — uses
+- [[linear-algebra]] — specializes
+- [[first-order-vs-second-order-optimization]] — prerequisite-of
+- [[numerical-underflow-overflow]] — prerequisite-of
+- [[eigendecomposition]] — uses
+- [[hessian-matrix]] — uses
 [To be populated during integration]

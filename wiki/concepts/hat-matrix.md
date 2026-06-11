@@ -17,6 +17,8 @@ domain:
 - statistics
 - linear algebra
 id: pkis:concept:hat-matrix
+instantiates:
+- orthogonal-projection
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
@@ -30,6 +32,9 @@ tags:
 - OLS
 title: Hat Matrix (Projection Matrix)
 understanding: 0
+uses:
+- ordinary-least-squares
+- effective-degrees-of-freedom
 ---
 
 ## Definition
@@ -44,4 +49,7 @@ $H$ is symmetric and idempotent ($H^2 = H$). Its diagonal entries $h_{nn}$ are l
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[effective-degrees-of-freedom]] — uses
+- [[ordinary-least-squares]] — uses
+- [[orthogonal-projection]] — instantiates
 [To be populated during integration]

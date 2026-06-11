@@ -17,10 +17,14 @@ domain:
 - machine-learning
 - generative-models
 - information-theory
+extends:
+- kl-divergence
 id: pkis:concept:spread-kl-divergence
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- variational-autoencoder
 related_concepts: []
 sources:
 - murphy-pml2-advanced-ch20
@@ -32,6 +36,8 @@ tags:
 - generative-models
 title: Spread KL Divergence
 understanding: 0
+uses:
+- manifold-hypothesis
 ---
 
 ## Definition
@@ -48,4 +54,7 @@ The spread KL motivates the **delta-VAE**: a latent variable model $q(x) = \math
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[manifold-hypothesis]] — uses
+- [[variational-autoencoder]] — prerequisite-of: Motivates delta-VAE variant
+- [[kl-divergence]] — extends
 [To be populated during integration]

@@ -1,6 +1,10 @@
 ---
 aliases: []
 also_type: []
+analogous-to:
+- word-embeddings
+applies:
+- open-set-recognition
 component_scores:
   alternatives: null
   conditions: null
@@ -16,6 +20,9 @@ domain:
 - machine-learning
 - representation-learning
 - metric-learning
+generalizes:
+- large-margin-nearest-neighbor
+- mahalanobis-distance
 id: pkis:technique:deep-metric-learning
 knowledge_type: technique
 maturity: evolving
@@ -32,6 +39,12 @@ tags:
 - deep-learning
 title: Deep Metric Learning (DML)
 understanding: 0
+uses:
+- contrastive-loss-siamese
+- triplet-loss
+- n-pairs-loss
+- hard-negative-mining
+- transfer-learning
 ---
 
 ## Definition
@@ -47,4 +60,13 @@ Common objectives include contrastive loss (pairwise), triplet loss (anchor–po
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[word-embeddings]] — analogous-to: both learn low-dimensional semantic embeddings where geometry reflects similarity
+- [[transfer-learning]] — uses: DML typically fine-tunes a pretrained ImageNet model
+- [[open-set-recognition]] — applies
+- [[hard-negative-mining]] — uses
+- [[n-pairs-loss]] — uses
+- [[triplet-loss]] — uses
+- [[contrastive-loss-siamese]] — uses
+- [[mahalanobis-distance]] — generalizes: DML replaces the linear Mahalanobis metric with a DNN embedding followed by Euclidean/cosine distance
+- [[large-margin-nearest-neighbor]] — generalizes: DML extends linear metric learning to nonlinear DNN embeddings
 [To be populated during integration]

@@ -15,13 +15,20 @@ domain:
 - machine-learning
 - probabilistic-modeling
 - unsupervised-learning
+generalizes:
+- mixture-models
+- factor-analysis
 id: pkis:framework:latent-factor-models
 knowledge_type: framework
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- variational-autoencoder
 related_concepts: []
 sources:
 - murphy-pml2-advanced-ch28
+specializes:
+- latent-variable-models
 tags:
 - latent-variables
 - dimensionality-reduction
@@ -29,6 +36,9 @@ tags:
 - decoder
 title: Latent Factor Models
 understanding: 0
+uses:
+- exponential-family
+- generative-vs-discriminative-models
 ---
 
 ## Definition
@@ -43,4 +53,10 @@ Latent factor models provide a principled probabilistic language for dimensional
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[variational-autoencoder]] — prerequisite-of
+- [[factor-analysis]] — generalizes
+- [[mixture-models]] — generalizes
+- [[generative-vs-discriminative-models]] — uses
+- [[exponential-family]] — uses
+- [[latent-variable-models]] — specializes
 [To be populated during integration]

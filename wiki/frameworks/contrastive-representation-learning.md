@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+analogous-to:
+- word-embeddings
 component_scores:
   application: null
   limits: null
@@ -22,6 +24,8 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - murphy-pml2-advanced-ch32
+specializes:
+- self-supervised-learning
 tags:
 - SimCLR
 - MoCo
@@ -32,6 +36,8 @@ tags:
 - multiview
 title: Contrastive / Multiview Representation Learning
 understanding: 0
+uses:
+- infonce-loss
 ---
 
 ## Definition
@@ -51,4 +57,7 @@ BYOL, SimSiam, DINO, Barlow Twins, and VICReg eliminate explicit negatives and i
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[word-embeddings]] — analogous-to: Both learn geometry from co-occurrence/similarity structure
+- [[self-supervised-learning]] — specializes
+- [[infonce-loss]] — uses
 [To be populated during integration]

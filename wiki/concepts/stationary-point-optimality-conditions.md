@@ -23,6 +23,8 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - murphy-pml1-intro-ch08
+specializes:
+- continuous-optimization
 tags:
 - first-order
 - second-order
@@ -31,6 +33,9 @@ tags:
 - convergence
 title: Stationary Point and Optimality Conditions
 understanding: 0
+uses:
+- gradient-and-jacobian
+- hessian-matrix
 ---
 
 ## Definition
@@ -48,4 +53,7 @@ These conditions underpin every iterative optimizer: algorithms terminate when t
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[continuous-optimization]] — specializes
+- [[hessian-matrix]] — uses
+- [[gradient-and-jacobian]] — uses
 [To be populated during integration]

@@ -21,9 +21,13 @@ id: pkis:concept:observed-markov-chain
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- state-space-model-sequential
 related_concepts: []
 sources:
 - bishop-prml-ch13
+specializes:
+- markov-chains
 tags:
 - Markov
 - sequential
@@ -32,6 +36,8 @@ tags:
 - first-order
 title: Markov Chain (Observed, Higher-Order)
 understanding: 0
+uses:
+- conditional-independence
 ---
 
 ## Definition
@@ -46,4 +52,7 @@ Simplest non-i.i.d. sequential model; motivates the introduction of latent varia
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[conditional-independence]] — uses
+- [[markov-chains]] — specializes
+- [[state-space-model-sequential]] — prerequisite-of
 [To be populated during integration]

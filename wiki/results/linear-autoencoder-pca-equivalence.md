@@ -1,6 +1,9 @@
 ---
 aliases: []
 also_type: []
+applies:
+- principal-components-analysis
+- autoencoder
 component_scores:
   conditions: null
   implications: null
@@ -40,4 +43,6 @@ This result (Baldi & Hornik 1989; Krogh & Hertz 1995) establishes that PCA is th
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[autoencoder]] — applies
+- [[principal-components-analysis]] — applies
 [To be populated during integration]

@@ -15,6 +15,8 @@ domain:
 - machine-learning
 - generative-models
 - natural-language-processing
+generalizes:
+- masked-language-modeling
 id: pkis:framework:d3pm
 knowledge_type: framework
 maturity: evolving
@@ -29,6 +31,10 @@ tags:
 - masked-language-model
 title: Discrete Denoising Diffusion Probabilistic Model (D3PM)
 understanding: 0
+uses:
+- markov-chains
+- absorbing-markov-chain
+- elbo
 ---
 
 ## Definition
@@ -48,4 +54,8 @@ D3PM extends diffusion to text, semantic labels, and other discrete modalities. 
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[elbo]] — uses
+- [[absorbing-markov-chain]] — uses: The mask-token forward process is an absorbing Markov chain
+- [[masked-language-modeling]] — generalizes: BERT masked LM is a one-step D3PM with mask-absorbing and uniform transitions
+- [[markov-chains]] — uses
 [To be populated during integration]

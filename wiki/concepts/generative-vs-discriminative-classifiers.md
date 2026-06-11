@@ -31,6 +31,11 @@ tags:
 - discriminative
 title: Generative vs. Discriminative Classifiers
 understanding: 0
+uses:
+- generative-classifier
+- logistic-regression
+- distribution-shift
+- missing-data-mechanisms
 ---
 
 ## Definition
@@ -47,4 +52,8 @@ The two paradigms lead to identical functional forms (e.g., both LDA and logisti
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[missing-data-mechanisms]] — uses
+- [[distribution-shift]] — uses
+- [[logistic-regression]] — uses
+- [[generative-classifier]] — uses
 [To be populated during integration]

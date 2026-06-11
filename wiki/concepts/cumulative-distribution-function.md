@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- gaussian-distribution
 component_scores:
   application: null
   boundary: null
@@ -16,6 +18,8 @@ date_updated: '2026-06-11'
 domain:
 - probability-theory
 - statistics
+generalizes:
+- probability-mass-function
 id: pkis:concept:cumulative-distribution-function
 knowledge_type: concept
 maturity: evolving
@@ -31,6 +35,8 @@ tags:
 - fundamentals
 title: Cumulative Distribution Function (CDF)
 understanding: 0
+uses:
+- random-variable
 ---
 
 ## Definition
@@ -45,4 +51,7 @@ The CDF provides a unified representation for both discrete and continuous distr
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[gaussian-distribution]] — applies
+- [[probability-mass-function]] — generalizes
+- [[random-variable]] — uses
 [To be populated during integration]

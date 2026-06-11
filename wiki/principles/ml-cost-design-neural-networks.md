@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- deep-feedforward-network
 component_scores:
   implications: null
   justification: null
@@ -28,6 +30,9 @@ tags:
 - cross-entropy
 title: Maximum-Likelihood Cost Design for Neural Networks
 understanding: 0
+uses:
+- maximum-likelihood-estimation
+- cross-entropy-loss
 ---
 
 ## Definition
@@ -42,4 +47,7 @@ The log in the NLL undoes the exp present in sigmoid and softmax outputs, preser
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[deep-feedforward-network]] — applies
+- [[cross-entropy-loss]] — uses
+- [[maximum-likelihood-estimation]] — uses
 [To be populated during integration]

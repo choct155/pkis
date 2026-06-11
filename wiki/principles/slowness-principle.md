@@ -13,6 +13,8 @@ domain:
 - machine-learning
 - computational-neuroscience
 id: pkis:principle:slowness-principle
+instantiates:
+- inductive-bias
 knowledge_type: principle
 maturity: evolving
 needs_canonical_source: false
@@ -26,6 +28,8 @@ tags:
 - self-supervised-learning
 title: Slowness Principle
 understanding: 0
+uses:
+- regularization
 ---
 
 ## Definition
@@ -45,4 +49,6 @@ The principle can be too strong: it penalises rapidly changing but genuinely inf
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[regularization]] — uses
+- [[inductive-bias]] — instantiates
 [To be populated during integration]

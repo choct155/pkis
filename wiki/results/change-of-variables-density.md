@@ -14,10 +14,14 @@ domain:
 - probability-theory
 - statistics
 - machine-learning
+extends:
+- probability-density-function
 id: pkis:result:change-of-variables-density
 knowledge_type: result
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- normalizing-flows
 related_concepts: []
 sources:
 - goodfellow-deeplearning-ch03
@@ -28,6 +32,9 @@ tags:
 - density
 title: Change-of-Variables Formula for Probability Densities
 understanding: 0
+uses:
+- gradient-and-jacobian
+- determinant
 ---
 
 ## Definition
@@ -42,4 +49,8 @@ This formula is the foundation of **normalizing flows**: a sequence of invertibl
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[determinant]] — uses
+- [[gradient-and-jacobian]] — uses
+- [[normalizing-flows]] — prerequisite-of
+- [[probability-density-function]] — extends
 [To be populated during integration]

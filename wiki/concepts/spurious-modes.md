@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- undirected-graphical-models
 component_scores:
   application: null
   boundary: null
@@ -10,6 +12,8 @@ component_scores:
   prerequisites: null
   scope: null
   transfer: null
+contrasts-with:
+- stochastic-maximum-likelihood-pcd
 coverage: 1
 date_created: '2026-06-11'
 date_updated: '2026-06-11'
@@ -31,6 +35,8 @@ tags:
 - energy-based-models
 title: Spurious Modes in Generative Models
 understanding: 0
+uses:
+- contrastive-divergence
 ---
 
 ## Definition
@@ -43,4 +49,7 @@ Spurious modes are the canonical failure mode of Contrastive Divergence (CD): be
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[undirected-graphical-models]] — applies
+- [[stochastic-maximum-likelihood-pcd]] — contrasts-with
+- [[contrastive-divergence]] — uses
 [To be populated during integration]

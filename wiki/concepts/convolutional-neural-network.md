@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- optical-flow
 component_scores:
   application: null
   boundary: null
@@ -16,13 +18,19 @@ date_updated: '2026-06-11'
 domain:
 - deep-learning
 - computer-vision
+extends:
+- multilayer-perceptron
 id: pkis:concept:convolutional-neural-network
+instantiates:
+- toeplitz-matrices
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
 related_concepts: []
 sources:
 - murphy-pml1-intro-ch14
+specializes:
+- convolutional-neural-networks
 tags:
 - convolution
 - weight-sharing
@@ -30,6 +38,11 @@ tags:
 - image-classification
 title: Convolutional Neural Network (CNN)
 understanding: 0
+uses:
+- translation-equivariance-invariance
+- feature-detection-vision
+- inductive-bias
+- image-formation-model
 ---
 
 ## Definition
@@ -47,4 +60,12 @@ Filters are typically 3×3 or 5×5; multiple filters produce multiple channels; 
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[image-formation-model]] — uses: CNN filters model the linear filtering stage of the image formation pipeline
+- [[optical-flow]] — applies: CNNs are used for optical flow estimation (e.g., FlowNet)
+- [[convolutional-neural-networks]] — specializes: This node formalizes the architecture; convolutional-neural-networks is the existing tag
+- [[inductive-bias]] — uses: Local connectivity and weight sharing encode translation equivariance as a strong inductive bias
+- [[feature-detection-vision]] — uses: Each learned filter acts as a feature detector; output is a feature map
+- [[toeplitz-matrices]] — instantiates: The convolution operation is equivalent to multiplication by a Toeplitz-like (banded, sparse) matrix
+- [[translation-equivariance-invariance]] — uses: Weight sharing in convolution implements translation equivariance
+- [[multilayer-perceptron]] — extends: CNNs replace dense matrix-vector products with convolution, making MLPs a special case with full connectivity
 [To be populated during integration]

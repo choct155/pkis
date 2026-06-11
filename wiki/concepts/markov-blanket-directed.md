@@ -24,6 +24,8 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - bishop-prml-ch08
+specializes:
+- markov-blanket
 tags:
 - conditional-independence
 - local-computation
@@ -32,6 +34,9 @@ tags:
 - graphical-model
 title: Markov Blanket in Directed Graphs
 understanding: 0
+uses:
+- dag-factorization
+- d-separation
 ---
 
 ## Definition
@@ -51,4 +56,7 @@ The Markov blanket defines the local neighbourhood sufficient for all probabilis
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[d-separation]] — uses
+- [[markov-blanket]] — specializes
+- [[dag-factorization]] — uses
 [To be populated during integration]

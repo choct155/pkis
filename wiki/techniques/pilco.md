@@ -9,6 +9,8 @@ component_scores:
   implementation: null
   operational_mechanism: null
   principled_mechanism: null
+contrasts-with:
+- bayesian-neural-networks
 coverage: 1
 date_created: '2026-06-11'
 date_updated: '2026-06-11'
@@ -17,6 +19,8 @@ domain:
 - probabilistic-methods
 - robotics
 id: pkis:technique:pilco
+instantiates:
+- model-based-rl
 knowledge_type: technique
 maturity: evolving
 needs_canonical_source: false
@@ -30,6 +34,9 @@ tags:
 - continuous-control
 title: PILCO (Probabilistic Inference for Learning Control)
 understanding: 0
+uses:
+- gaussian-process
+- model-predictive-control-rl
 ---
 
 ## Definition
@@ -44,4 +51,8 @@ PILCO achieves extraordinary sample efficiency on continuous control tasks (e.g.
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[bayesian-neural-networks]] — contrasts-with
+- [[model-predictive-control-rl]] — uses
+- [[model-based-rl]] — instantiates
+- [[gaussian-process]] — uses
 [To be populated during integration]

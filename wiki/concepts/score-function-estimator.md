@@ -1,6 +1,10 @@
 ---
 aliases: []
 also_type: []
+applies:
+- policy-gradient-methods
+- stochastic-vi
+- elbo
 component_scores:
   application: null
   boundary: null
@@ -17,6 +21,8 @@ domain:
 - machine-learning
 - statistics
 - reinforcement-learning
+generalizes:
+- reinforce
 id: pkis:concept:score-function-estimator
 knowledge_type: concept
 maturity: evolving
@@ -32,6 +38,9 @@ tags:
 - variance-reduction
 title: Score Function Estimator (REINFORCE Gradient)
 understanding: 0
+uses:
+- fisher-information
+- monte-carlo-estimator
 ---
 
 ## Definition
@@ -48,4 +57,10 @@ SFE (also called the likelihood-ratio estimator or REINFORCE) is the workhorse g
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[elbo]] — applies
+- [[stochastic-vi]] — applies
+- [[policy-gradient-methods]] — applies
+- [[monte-carlo-estimator]] — uses
+- [[fisher-information]] — uses
+- [[reinforce]] — generalizes
 [To be populated during integration]

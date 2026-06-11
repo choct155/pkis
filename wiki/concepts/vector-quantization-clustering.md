@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+analogous-to:
+- source-coding-theorem
 component_scores:
   application: null
   boundary: null
@@ -31,6 +33,8 @@ tags:
 - rate-distortion
 title: Vector Quantization
 understanding: 0
+uses:
+- k-means-clustering
 ---
 
 ## Definition
@@ -47,4 +51,6 @@ VQ reveals the deep connection between clustering (K-means) and data compression
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[source-coding-theorem]] — analogous-to: connection between compression and density estimation
+- [[k-means-clustering]] — uses
 [To be populated during integration]

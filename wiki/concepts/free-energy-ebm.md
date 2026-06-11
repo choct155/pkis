@@ -1,6 +1,9 @@
 ---
 aliases: []
 also_type: []
+analogous-to:
+- variational-free-energy
+- elbo
 component_scores:
   application: null
   boundary: null
@@ -32,6 +35,9 @@ tags:
 - partition-function
 title: Free Energy (Latent Variable EBMs)
 understanding: 0
+uses:
+- energy-based-model
+- partition-function
 ---
 
 ## Definition
@@ -46,4 +52,8 @@ The free energy provides a tractable surrogate objective: if the sum over $h$ ca
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[partition-function]] — uses
+- [[elbo]] — analogous-to
+- [[variational-free-energy]] — analogous-to
+- [[energy-based-model]] — uses
 [To be populated during integration]

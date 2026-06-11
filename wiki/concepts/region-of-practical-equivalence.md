@@ -10,6 +10,9 @@ component_scores:
   prerequisites: null
   scope: null
   transfer: null
+contrasts-with:
+- hypothesis-testing
+- bayes-factor
 coverage: 1
 date_created: '2026-06-11'
 date_updated: '2026-06-11'
@@ -21,6 +24,8 @@ id: pkis:concept:region-of-practical-equivalence
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- bayesian-t-test
 related_concepts: []
 sources:
 - murphy-pml1-intro-ch05
@@ -51,4 +56,7 @@ The classical point null $H_0:\Delta=0$ is typically false by construction (any 
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[bayes-factor]] — contrasts-with
+- [[hypothesis-testing]] — contrasts-with
+- [[bayesian-t-test]] — prerequisite-of
 [To be populated during integration]

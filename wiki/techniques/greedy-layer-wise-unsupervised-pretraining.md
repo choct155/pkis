@@ -17,9 +17,15 @@ domain:
 - representation-learning
 - semi-supervised-learning
 id: pkis:technique:greedy-layer-wise-unsupervised-pretraining
+instantiates:
+- transfer-learning-domain-adaptation
+- pretraining-and-fine-tuning
+- inductive-priors-representation-learning
 knowledge_type: technique
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- deep-reinforcement-learning
 related_concepts: []
 sources:
 - goodfellow-deeplearning-ch15
@@ -32,6 +38,11 @@ tags:
 - historical
 title: Greedy Layer-Wise Unsupervised Pretraining
 understanding: 0
+uses:
+- restricted-boltzmann-machine
+- autoencoder
+- regularization
+- word-embeddings
 ---
 
 ## Definition
@@ -46,4 +57,12 @@ Historically enabled the first successful training of fully connected deep netwo
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[inductive-priors-representation-learning]] — instantiates
+- [[word-embeddings]] — uses: Especially beneficial for NLP where one-hot vectors convey no similarity
+- [[deep-reinforcement-learning]] — prerequisite-of: Historical enabler of deep architectures
+- [[regularization]] — uses: Acts as regularizer by constraining parameter initialisation to a favourable region
+- [[pretraining-and-fine-tuning]] — instantiates
+- [[transfer-learning-domain-adaptation]] — instantiates
+- [[autoencoder]] — uses
+- [[restricted-boltzmann-machine]] — uses
 [To be populated during integration]

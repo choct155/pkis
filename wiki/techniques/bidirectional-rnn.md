@@ -14,6 +14,8 @@ date_created: '2026-06-09'
 date_updated: '2026-06-09'
 domain:
 - deep-learning
+extends:
+- recurrent-neural-network
 id: pkis:technique:bidirectional-rnn
 knowledge_type: technique
 maturity: evolving
@@ -30,6 +32,8 @@ tags:
 - context
 title: Bidirectional RNN
 understanding: 0
+uses:
+- encoder-decoder-seq2seq
 ---
 
 ## Definition
@@ -39,5 +43,7 @@ A recurrent architecture that runs two RNNs over the input, one left-to-right an
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[encoder-decoder-seq2seq]] — uses: Bidirectional encoders are common in seq2seq models
+- [[recurrent-neural-network]] — extends
 - [[recurrent-neural-network]] — specializes
 [To be populated during integration]

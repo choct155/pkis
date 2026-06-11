@@ -14,6 +14,8 @@ domain:
 extends:
 - bagging
 id: pkis:technique:random-forests
+instantiates:
+- exploration-exploitation-tradeoff
 knowledge_type: technique
 maturity: settled
 related_concepts:
@@ -31,11 +33,16 @@ uses:
 - decision-trees
 - bootstrap
 - cross-validation
+- cart-decision-trees
+- feature-importance-tree-ensembles
 ---
 
 Ensemble of decorrelated decision trees, each trained on a bootstrap sample with random feature subsetting at each split, reducing the between-tree correlation and thus the variance of the ensemble's predictions.
 
 ## Connections
+- [[exploration-exploitation-tradeoff]] — instantiates: random feature subsampling trades bias for decorrelation
+- [[feature-importance-tree-ensembles]] — uses
+- [[cart-decision-trees]] — uses
 - [[cross-validation]] — uses
 - [[ridge-regression]] — analogous-to
 - [[k-nearest-neighbors]] — analogous-to

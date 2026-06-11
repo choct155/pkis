@@ -9,6 +9,9 @@ component_scores:
   implementation: null
   operational_mechanism: null
   principled_mechanism: null
+contrasts-with:
+- bayesian-optimization
+- grid-search
 coverage: 1
 date_created: '2026-06-11'
 date_updated: '2026-06-11'
@@ -29,6 +32,8 @@ tags:
 - Bergstra-Bengio
 title: Random Search for Hyperparameter Tuning
 understanding: 0
+uses:
+- cross-validation
 ---
 
 ## Definition
@@ -43,4 +48,7 @@ Random search is exponentially more sample-efficient than grid search when only 
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[cross-validation]] — uses
+- [[grid-search]] — contrasts-with
+- [[bayesian-optimization]] — contrasts-with
 [To be populated during integration]

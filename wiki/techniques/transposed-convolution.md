@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- encoder-decoder-unet
 component_scores:
   alternatives: null
   conditions: null
@@ -9,12 +11,16 @@ component_scores:
   implementation: null
   operational_mechanism: null
   principled_mechanism: null
+contrasts-with:
+- deconvolution
 coverage: 1
 date_created: '2026-06-11'
 date_updated: '2026-06-11'
 domain:
 - deep-learning
 - computer-vision
+extends:
+- convolutional-neural-network
 id: pkis:technique:transposed-convolution
 knowledge_type: technique
 maturity: evolving
@@ -48,4 +54,7 @@ Transposed convolution is the standard learned upsampling primitive in encoder�
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[deconvolution]] — contrasts-with: Transposed conv is often misnamed 'deconvolution'; true deconvolution inverts a known blur
+- [[encoder-decoder-unet]] — applies: Used in the decoder path for learned spatial upsampling
+- [[convolutional-neural-network]] — extends: Transposed conv is the adjoint (transpose) of the convolution matrix operator
 [To be populated during integration]

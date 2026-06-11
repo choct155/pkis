@@ -10,6 +10,8 @@ component_scores:
   prerequisites: null
   scope: null
   transfer: null
+contrasts-with:
+- identifiability-of-mixtures
 coverage: 1
 date_created: '2026-06-11'
 date_updated: '2026-06-11'
@@ -18,13 +20,21 @@ domain:
 - deep-learning
 - causal-inference
 id: pkis:concept:disentangled-representation
+instantiates:
+- inductive-priors-representation-learning
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- variational-autoencoder
+- generative-adversarial-network
 related_concepts: []
 sources:
 - goodfellow-deeplearning-ch15
 - murphy-pml2-advanced-ch21
+specializes:
+- latent-variable-models
+- distributed-representation
 tags:
 - disentanglement
 - causal-factors
@@ -33,6 +43,10 @@ tags:
 - robustness
 title: Disentangled Representation
 understanding: 0
+uses:
+- causal-factor-robustness-principle
+- beta-vae
+- mutual-information
 ---
 
 ## Definition
@@ -47,4 +61,13 @@ Disentangled representations simplify downstream tasks: if $y$ is one of the cau
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[identifiability-of-mixtures]] — contrasts-with: nonlinear LVMs are unidentifiable, making perfect disentanglement impossible
+- [[mutual-information]] — uses
+- [[beta-vae]] — uses
+- [[inductive-priors-representation-learning]] — instantiates
+- [[distributed-representation]] — specializes
+- [[generative-adversarial-network]] — prerequisite-of
+- [[variational-autoencoder]] — prerequisite-of
+- [[causal-factor-robustness-principle]] — uses
+- [[latent-variable-models]] — specializes
 [To be populated during integration]

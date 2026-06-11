@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- solving-linear-systems
 component_scores:
   application: null
   boundary: null
@@ -19,6 +21,8 @@ id: pkis:concept:column-space-and-span
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- matrix-inverse
 related_concepts: []
 sources:
 - goodfellow-deeplearning-ch02
@@ -30,6 +34,9 @@ tags:
 - solvability
 title: Column Space and Span
 understanding: 0
+uses:
+- linear-independence
+- basis-and-rank
 ---
 
 ## Definition
@@ -44,4 +51,8 @@ Understanding column space is essential for determining when a linear system is 
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[solving-linear-systems]] — applies
+- [[matrix-inverse]] — prerequisite-of
+- [[basis-and-rank]] — uses
+- [[linear-independence]] — uses
 [To be populated during integration]

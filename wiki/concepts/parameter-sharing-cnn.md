@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+analogous-to:
+- regularization
 component_scores:
   application: null
   boundary: null
@@ -29,6 +31,9 @@ tags:
 - parameter efficiency
 title: Parameter Sharing (CNNs)
 understanding: 0
+uses:
+- convolution-operation-nn
+- translation-equivariance
 ---
 
 ## Definition
@@ -43,4 +48,7 @@ Parameter sharing encodes translation equivariance as a hard constraint, dramati
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[regularization]] — analogous-to
+- [[translation-equivariance]] — uses
+- [[convolution-operation-nn]] — uses
 [To be populated during integration]

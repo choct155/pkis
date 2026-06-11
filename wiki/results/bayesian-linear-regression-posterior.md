@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- linear-basis-function-model
 component_scores:
   conditions: null
   implications: null
@@ -13,6 +15,11 @@ date_updated: '2026-06-11'
 domain:
 - machine-learning
 - bayesian-statistics
+extends:
+- bayesian-linear-regression
+generalizes:
+- normal-equations-pseudoinverse
+- ridge-regression
 id: pkis:result:bayesian-linear-regression-posterior
 knowledge_type: result
 maturity: evolving
@@ -27,6 +34,9 @@ tags:
 - sequential-learning
 title: Bayesian Linear Regression Posterior
 understanding: 0
+uses:
+- conjugate-prior
+- regularization
 ---
 
 ## Definition
@@ -45,4 +55,10 @@ Conjugate Gaussian analysis gives an *exact* closed-form posterior in a single p
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[regularization]] — uses
+- [[ridge-regression]] — generalizes: MAP with isotropic Gaussian prior equals ridge regression with λ = α/β
+- [[normal-equations-pseudoinverse]] — generalizes: MAP estimate recovers normal equations; full posterior also encodes uncertainty
+- [[bayesian-linear-regression]] — extends
+- [[conjugate-prior]] — uses
+- [[linear-basis-function-model]] — applies
 [To be populated during integration]

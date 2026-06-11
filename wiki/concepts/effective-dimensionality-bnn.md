@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+analogous-to:
+- effective-number-of-parameters
 component_scores:
   application: null
   boundary: null
@@ -32,6 +34,9 @@ tags:
 - model-complexity
 title: Effective Dimensionality of a Neural Network
 understanding: 0
+uses:
+- hessian-matrix
+- low-rank-approximation
 ---
 
 ## Definition
@@ -47,4 +52,7 @@ Although modern DNNs have millions of nominal parameters, their effective dimens
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[low-rank-approximation]] — uses
+- [[effective-number-of-parameters]] — analogous-to
+- [[hessian-matrix]] — uses
 [To be populated during integration]

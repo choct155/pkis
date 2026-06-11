@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+analogous-to:
+- gaussian-mixture-models
 component_scores:
   application: null
   boundary: null
@@ -18,9 +20,13 @@ domain:
 - machine-learning
 - probabilistic-modeling
 id: pkis:concept:mixture-of-bernoulli-distributions
+instantiates:
+- em-algorithm
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- hidden-markov-model
 related_concepts: []
 sources:
 - bishop-prml-ch09
@@ -32,6 +38,10 @@ tags:
 - Bernoulli
 title: Mixture of Bernoulli Distributions (Latent Class Analysis)
 understanding: 0
+uses:
+- beta-distribution
+- dirichlet-distribution
+- responsibilities-mixture-models
 ---
 
 ## Definition
@@ -50,4 +60,10 @@ Unlike the Gaussian mixture, the Bernoulli mixture likelihood is bounded above (
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[responsibilities-mixture-models]] — uses
+- [[hidden-markov-model]] — prerequisite-of: Bernoulli mixtures generalise to HMMs over discrete variables
+- [[dirichlet-distribution]] — uses: Dirichlet is conjugate prior for mixing coefficients
+- [[beta-distribution]] — uses: beta distribution is conjugate prior for Bernoulli parameters
+- [[em-algorithm]] — instantiates
+- [[gaussian-mixture-models]] — analogous-to: same EM structure but for binary data, no likelihood singularities
 [To be populated during integration]

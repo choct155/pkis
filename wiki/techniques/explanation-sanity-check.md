@@ -1,6 +1,10 @@
 ---
 aliases: []
 also_type: []
+applies:
+- explanation-fidelity
+- post-hoc-explanation
+- saliency-map
 component_scores:
   alternatives: null
   conditions: null
@@ -48,4 +52,7 @@ Sanity checks provide cheap, scalable pre-screening before expensive user studie
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[saliency-map]] — applies
+- [[post-hoc-explanation]] — applies
+- [[explanation-fidelity]] — applies
 [To be populated during integration]

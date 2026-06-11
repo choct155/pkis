@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+analogous-to:
+- markov-chains
 component_scores:
   alternatives: null
   conditions: null
@@ -17,6 +19,8 @@ domain:
 - semi-supervised-learning
 - graph-methods
 id: pkis:technique:label-propagation
+instantiates:
+- semi-supervised-learning
 knowledge_type: technique
 maturity: evolving
 needs_canonical_source: false
@@ -31,6 +35,8 @@ tags:
 - low-data
 title: Label Propagation on Graphs
 understanding: 0
+uses:
+- transition-matrix
 ---
 
 ## Definition
@@ -45,4 +51,7 @@ Label propagation operationalises the **manifold assumption** — nearby points 
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[markov-chains]] — analogous-to: Label propagation updates are equivalent to running a Markov chain on the similarity graph.
+- [[transition-matrix]] — uses
+- [[semi-supervised-learning]] — instantiates
 [To be populated during integration]

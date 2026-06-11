@@ -1,6 +1,10 @@
 ---
 aliases: []
 also_type: []
+analogous-to:
+- gradient-checking
+applies:
+- overfitting-and-underfitting
 component_scores:
   alternatives: null
   conditions: null
@@ -44,4 +48,6 @@ Many neural network bugs — wrong loss function, disabled gradients, mismatched
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[gradient-checking]] — analogous-to: Both are unit-test-style debugging strategies isolating a single component
+- [[overfitting-and-underfitting]] — applies: Deliberately causes overfitting to verify optimisation correctness
 [To be populated during integration]

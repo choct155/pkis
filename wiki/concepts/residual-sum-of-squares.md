@@ -29,6 +29,8 @@ tags:
 - loss function
 title: Residual Sum of Squares (RSS)
 understanding: 0
+uses:
+- r-squared
 ---
 
 ## Definition
@@ -43,4 +45,5 @@ RSS is the central training objective for linear regression and its penalised va
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[r-squared]] — uses
 [To be populated during integration]

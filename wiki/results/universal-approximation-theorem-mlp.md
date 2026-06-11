@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- deep-feedforward-network
 component_scores:
   conditions: null
   implications: null
@@ -18,9 +20,13 @@ id: pkis:result:universal-approximation-theorem-mlp
 knowledge_type: result
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- depth-efficiency-rectifier-networks
 related_concepts: []
 sources:
 - goodfellow-deeplearning-ch06
+specializes:
+- universal-approximation-theorem
 tags:
 - expressivity
 - depth
@@ -43,4 +49,7 @@ The theorem justifies using neural networks as general-purpose function approxim
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[depth-efficiency-rectifier-networks]] — prerequisite-of
+- [[deep-feedforward-network]] — applies
+- [[universal-approximation-theorem]] — specializes: Chapter version adds ReLU case and depth-efficiency context.
 [To be populated during integration]

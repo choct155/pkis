@@ -20,6 +20,8 @@ id: pkis:concept:numerical-underflow-overflow
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- numerically-stable-softmax
 related_concepts: []
 sources:
 - goodfellow-deeplearning-ch04
@@ -44,4 +46,5 @@ Softmax, log-softmax, and many probabilistic computations involve exponentials w
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[numerically-stable-softmax]] — prerequisite-of
 [To be populated during integration]

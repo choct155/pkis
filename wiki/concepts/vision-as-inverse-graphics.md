@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+analogous-to:
+- hierarchical-predictive-processing
 component_scores:
   application: null
   boundary: null
@@ -24,6 +26,8 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - murphy-pml2-advanced-ch27
+specializes:
+- inverse-modeling-framework
 tags:
 - inverse-problems
 - generative-models
@@ -32,6 +36,11 @@ tags:
 - perception
 title: Vision as Inverse Graphics (Analysis by Synthesis)
 understanding: 0
+uses:
+- perceptual-aliasing
+- maximum-a-posteriori-estimation-map
+- bayesian-inference
+- image-formation-model
 ---
 
 ## Definition
@@ -49,4 +58,10 @@ Because the forward rendering map is many-to-one (different scenes can produce t
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[hierarchical-predictive-processing]] — analogous-to
+- [[image-formation-model]] — uses
+- [[bayesian-inference]] — uses
+- [[maximum-a-posteriori-estimation-map]] — uses
+- [[perceptual-aliasing]] — uses
+- [[inverse-modeling-framework]] — specializes
 [To be populated during integration]

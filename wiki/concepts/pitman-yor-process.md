@@ -1,6 +1,9 @@
 ---
 aliases: []
 also_type: []
+applies:
+- zipf-mandelbrot-law
+- language-model
 component_scores:
   application: null
   boundary: null
@@ -17,6 +20,8 @@ domain:
 - statistics
 - machine-learning
 - probability
+generalizes:
+- dirichlet-process
 id: pkis:concept:pitman-yor-process
 knowledge_type: concept
 maturity: evolving
@@ -32,6 +37,8 @@ tags:
 - stick-breaking
 title: Pitman-Yor Process
 understanding: 0
+uses:
+- stick-breaking-construction
 ---
 
 ## Definition
@@ -48,4 +55,8 @@ The Pitman-Yor process generates power-law frequency distributions, making it a 
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[language-model]] — applies
+- [[zipf-mandelbrot-law]] — applies
+- [[stick-breaking-construction]] — uses
+- [[dirichlet-process]] — generalizes
 [To be populated during integration]

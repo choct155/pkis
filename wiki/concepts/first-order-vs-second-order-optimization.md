@@ -16,6 +16,9 @@ date_updated: '2026-06-11'
 domain:
 - optimization
 - machine-learning
+generalizes:
+- gradient-descent
+- newtons-method-optimization
 id: pkis:concept:first-order-vs-second-order-optimization
 knowledge_type: concept
 maturity: evolving
@@ -31,6 +34,8 @@ tags:
 - adaptive-learning-rate
 title: First-Order vs Second-Order Optimization
 understanding: 0
+uses:
+- hessian-matrix
 ---
 
 ## Definition
@@ -52,4 +57,7 @@ Most large-scale deep learning uses first-order methods because Hessian storage 
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[hessian-matrix]] — uses
+- [[newtons-method-optimization]] — generalizes
+- [[gradient-descent]] — generalizes
 [To be populated during integration]

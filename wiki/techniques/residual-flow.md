@@ -16,6 +16,8 @@ domain:
 - machine-learning
 - generative-models
 id: pkis:technique:residual-flow
+instantiates:
+- normalizing-flows
 knowledge_type: technique
 maturity: evolving
 needs_canonical_source: false
@@ -29,6 +31,10 @@ tags:
 - Hutchinson-estimator
 title: Residual Flow
 understanding: 0
+uses:
+- residual-network
+- hutchinson-trace-estimator
+- weinstein-aronszajn-identity
 ---
 
 ## Definition
@@ -43,4 +49,8 @@ Residual flows (e.g., **iResNet**) allow standard ResNet architectures to be use
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[weinstein-aronszajn-identity]] — uses
+- [[hutchinson-trace-estimator]] — uses
+- [[residual-network]] — uses
+- [[normalizing-flows]] — instantiates
 [To be populated during integration]

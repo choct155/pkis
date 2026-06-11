@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- neural-networks
 component_scores:
   alternatives: null
   conditions: null
@@ -22,6 +24,8 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - murphy-pml2-advanced-ch06
+specializes:
+- automatic-differentiation
 tags:
 - autodiff
 - JVP
@@ -29,6 +33,9 @@ tags:
 - differentiation
 title: Forward-Mode Automatic Differentiation
 understanding: 0
+uses:
+- jvp-vjp
+- gradient-and-jacobian
 ---
 
 ## Definition
@@ -45,4 +52,8 @@ Forward-mode is preferred when the input dimension $n$ is small relative to the 
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[neural-networks]] — applies
+- [[gradient-and-jacobian]] — uses
+- [[jvp-vjp]] — uses
+- [[automatic-differentiation]] — specializes
 [To be populated during integration]

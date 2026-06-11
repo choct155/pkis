@@ -17,10 +17,15 @@ domain:
 - probability
 - statistics
 - machine-learning
+extends:
+- exponential-family
 id: pkis:concept:exponential-family-distributions
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- generalized-linear-models
+- conjugate-prior
 related_concepts: []
 sources:
 - murphy-pml1-intro-ch03
@@ -31,6 +36,10 @@ tags:
 - generalized-linear-models
 title: Exponential Family
 understanding: 0
+uses:
+- sufficient-statistics
+- maximum-entropy-principle
+- partition-function
 ---
 
 ## Definition
@@ -51,4 +60,10 @@ $A(\boldsymbol{\eta})$ is convex, and its gradient and Hessian yield the mean an
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[partition-function]] — uses
+- [[conjugate-prior]] — prerequisite-of
+- [[generalized-linear-models]] — prerequisite-of
+- [[maximum-entropy-principle]] — uses
+- [[exponential-family]] — extends
+- [[sufficient-statistics]] — uses
 [To be populated during integration]

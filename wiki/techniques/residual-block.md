@@ -1,6 +1,11 @@
 ---
 aliases: []
 also_type: []
+applies:
+- vanishing-exploding-gradients
+- convolutional-neural-networks
+- convolutional-neural-network
+- vanishing-gradient-problem
 component_scores:
   alternatives: null
   conditions: null
@@ -15,6 +20,8 @@ date_updated: '2026-06-11'
 domain:
 - machine-learning
 - deep-learning
+extends:
+- feedforward-neural-network
 id: pkis:technique:residual-block
 knowledge_type: technique
 maturity: evolving
@@ -30,6 +37,9 @@ tags:
 - architecture
 title: Residual Block and Skip Connections
 understanding: 0
+uses:
+- batch-normalization
+- backpropagation
 ---
 
 ## Definition
@@ -46,4 +56,11 @@ Residual connections are the primary architectural fix for the vanishing-gradien
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[backpropagation]] — uses: Gradient flows both through skip connection and through the residual branch
+- [[batch-normalization]] — uses: Standard residual block is conv–BN–relu–conv–BN
+- [[vanishing-gradient-problem]] — applies: Skip connections provide direct gradient pathways to early layers
+- [[convolutional-neural-network]] — applies: Residual blocks are the fundamental building units of ResNet-class CNNs
+- [[convolutional-neural-networks]] — applies
+- [[vanishing-exploding-gradients]] — applies
+- [[feedforward-neural-network]] — extends
 [To be populated during integration]

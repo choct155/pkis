@@ -1,6 +1,11 @@
 ---
 aliases: []
 also_type: []
+analogous-to:
+- identifiability-of-mixtures
+applies:
+- feed-forward-neural-network
+- marginal-likelihood
 component_scores:
   application: null
   boundary: null
@@ -20,6 +25,8 @@ id: pkis:concept:weight-space-symmetry
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- bayesian-neural-network-laplace
 related_concepts: []
 sources:
 - bishop-prml-ch05
@@ -31,6 +38,9 @@ tags:
 - local-minima
 title: Weight-Space Symmetry in Neural Networks
 understanding: 0
+uses:
+- saddle-points-nn-optimization
+- glorot-initialization
 ---
 
 ## Definition
@@ -48,4 +58,10 @@ Symmetry inflates the number of equivalent local minima in the loss landscape, c
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[glorot-initialization]] — uses: random init breaks weight-space symmetry
+- [[identifiability-of-mixtures]] — analogous-to: label-switching in mixtures is the same permutation symmetry
+- [[saddle-points-nn-optimization]] — uses: symmetric minima create exponentially many equivalent critical points
+- [[marginal-likelihood]] — applies
+- [[bayesian-neural-network-laplace]] — prerequisite-of
+- [[feed-forward-neural-network]] — applies
 [To be populated during integration]

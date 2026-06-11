@@ -18,12 +18,16 @@ domain:
 - statistics
 - pattern-recognition
 id: pkis:concept:decision-regions-and-boundaries
+instantiates:
+- decision-theory-foundations
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
 related_concepts: []
 sources:
 - bishop-prml-ch01
+specializes:
+- optimal-separating-hyperplane
 tags:
 - classification
 - decision-boundary
@@ -31,6 +35,9 @@ tags:
 - reject-option
 title: Decision Regions and Decision Boundaries
 understanding: 0
+uses:
+- expected-loss
+- generative-discriminative-discriminant-taxonomy
 ---
 
 ## Definition
@@ -47,4 +54,8 @@ Decision regions provide the geometric vocabulary for all classifiers. Whether o
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[optimal-separating-hyperplane]] — specializes
+- [[generative-discriminative-discriminant-taxonomy]] — uses
+- [[expected-loss]] — uses
+- [[decision-theory-foundations]] — instantiates
 [To be populated during integration]

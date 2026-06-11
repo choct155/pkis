@@ -14,6 +14,8 @@ date_created: '2026-06-11'
 date_updated: '2026-06-11'
 domain:
 - optimization
+extends:
+- newtons-method-optimization
 id: pkis:technique:trust-region-optimization
 knowledge_type: technique
 maturity: evolving
@@ -21,6 +23,8 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - murphy-pml1-intro-ch08
+specializes:
+- continuous-optimization
 tags:
 - second-order
 - non-convex
@@ -29,6 +33,9 @@ tags:
 - regularization
 title: Trust-Region Optimization
 understanding: 0
+uses:
+- lagrangian-duality
+- convex-optimization
 ---
 
 ## Definition
@@ -49,4 +56,8 @@ Trust-region methods handle non-convex objectives (where Newton's method may asc
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[continuous-optimization]] — specializes
+- [[convex-optimization]] — uses
+- [[lagrangian-duality]] — uses
+- [[newtons-method-optimization]] — extends
 [To be populated during integration]

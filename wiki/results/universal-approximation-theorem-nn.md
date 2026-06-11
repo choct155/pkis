@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- feed-forward-neural-network
 component_scores:
   conditions: null
   implications: null
@@ -14,6 +16,8 @@ domain:
 - machine-learning
 - approximation-theory
 id: pkis:result:universal-approximation-theorem-nn
+instantiates:
+- universal-approximation-theorem
 knowledge_type: result
 maturity: evolving
 needs_canonical_source: false
@@ -42,4 +46,6 @@ Provides theoretical justification for neural networks as general-purpose functi
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[universal-approximation-theorem]] — instantiates
+- [[feed-forward-neural-network]] — applies
 [To be populated during integration]

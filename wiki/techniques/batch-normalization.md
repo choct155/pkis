@@ -1,8 +1,11 @@
 ---
 aliases: []
 also_type: []
+analogous-to:
+- bayesian-inference
 applies:
 - vanishing-gradient-problem
+- convolutional-neural-network
 component_scores:
   alternatives: null
   conditions: null
@@ -11,12 +14,18 @@ component_scores:
   implementation: null
   operational_mechanism: null
   principled_mechanism: null
+contrasts-with:
+- dropout
 coverage: 1
 date_created: '2026-06-09'
 date_updated: '2026-06-09'
 domain:
 - deep-learning
+extends:
+- deep-neural-network-computation-graph
 id: pkis:technique:batch-normalization
+instantiates:
+- regularization
 knowledge_type: technique
 maturity: evolving
 needs_canonical_source: false
@@ -41,6 +50,11 @@ A technique (Ioffe & Szegedy, 2015) that improves the convergence rate of stocha
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[dropout]] — contrasts-with: both are normalization/regularization strategies in DNNs
+- [[deep-neural-network-computation-graph]] — extends
+- [[bayesian-inference]] — analogous-to: BN has been shown to approximate a form of variational Bayesian inference [TAS18]
+- [[regularization]] — instantiates: BN acts as an implicit regularizer, shown to approximate Bayesian inference
+- [[convolutional-neural-network]] — applies: BN layers are inserted after convolutional layers in deep CNNs
 - [[vanishing-gradient-problem]] — applies: prevents layer standard deviations from decaying to zero, preserving signal propagation
 - [[stochastic-gradient-descent]] — uses: rescales per-minibatch activations to improve SGD convergence
 [To be populated during integration]

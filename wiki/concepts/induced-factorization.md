@@ -17,6 +17,8 @@ domain:
 - machine-learning
 - approximate-inference
 - probabilistic-graphical-models
+extends:
+- mean-field-variational-inference
 id: pkis:concept:induced-factorization
 knowledge_type: concept
 maturity: evolving
@@ -32,6 +34,9 @@ tags:
 - factorization
 title: Induced Factorization in Variational Inference
 understanding: 0
+uses:
+- d-separation
+- conditional-independence
 ---
 
 ## Definition
@@ -46,4 +51,7 @@ Reveals additional structure in the variational posterior that was not explicitl
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[mean-field-variational-inference]] — extends
+- [[conditional-independence]] — uses
+- [[d-separation]] — uses
 [To be populated during integration]

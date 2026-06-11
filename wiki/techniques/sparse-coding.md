@@ -1,6 +1,10 @@
 ---
 aliases: []
 also_type: []
+analogous-to:
+- independent-component-analysis
+applies:
+- unsupervised-learning
 component_scores:
   alternatives: null
   conditions: null
@@ -9,6 +13,9 @@ component_scores:
   implementation: null
   operational_mechanism: null
   principled_mechanism: null
+contrasts-with:
+- spike-and-slab
+- autoencoder
 coverage: 1
 date_created: '2026-06-11'
 date_updated: '2026-06-11'
@@ -17,6 +24,9 @@ domain:
 - neuroscience
 - signal-processing
 id: pkis:technique:sparse-coding
+instantiates:
+- latent-variable-models
+- mean-field-recurrent-network-connection
 knowledge_type: technique
 maturity: evolving
 needs_canonical_source: false
@@ -24,6 +34,8 @@ related_concepts: []
 sources:
 - goodfellow-deeplearning-ch13
 - goodfellow-deeplearning-ch19
+specializes:
+- linear-factor-model
 tags:
 - dictionary-learning
 - l1-regularization
@@ -32,6 +44,13 @@ tags:
 - natural-images
 title: Sparse Coding
 understanding: 0
+uses:
+- lasso
+- nonparametric-encoder
+- maximum-a-posteriori-estimation-map
+- map-inference-as-approximate-vi
+- explaining-away
+- regularization
 ---
 
 ## Definition
@@ -49,4 +68,17 @@ The non-parametric encoder is computationally expensive at test time and does no
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[regularization]] — uses
+- [[mean-field-recurrent-network-connection]] — instantiates
+- [[explaining-away]] — uses
+- [[latent-variable-models]] — instantiates
+- [[map-inference-as-approximate-vi]] — uses
+- [[unsupervised-learning]] — applies
+- [[autoencoder]] — contrasts-with
+- [[spike-and-slab]] — contrasts-with
+- [[independent-component-analysis]] — analogous-to
+- [[maximum-a-posteriori-estimation-map]] — uses
+- [[nonparametric-encoder]] — uses
+- [[lasso]] — uses
+- [[linear-factor-model]] — specializes
 [To be populated during integration]

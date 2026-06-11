@@ -15,7 +15,14 @@ domain:
 - machine-learning
 - probabilistic-modeling
 - generative-models
+generalizes:
+- markov-chains
+- recurrent-neural-network
+- hidden-markov-model
 id: pkis:framework:autoregressive-model-arm
+instantiates:
+- autoregressive-model
+- directed-graphical-models
 knowledge_type: framework
 maturity: evolving
 needs_canonical_source: false
@@ -30,6 +37,9 @@ tags:
 - density-estimation
 title: Autoregressive Model (ARM)
 understanding: 0
+uses:
+- chain-rule-multivariate
+- maximum-likelihood-estimation
 ---
 
 ## Definition
@@ -48,4 +58,11 @@ ARMs provide an exact, tractable likelihood for sequential data without requirin
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[directed-graphical-models]] — instantiates: ARM corresponds to a fully connected DAG with a fixed variable ordering
+- [[maximum-likelihood-estimation]] — uses: ARMs are trained by maximising the exact log-likelihood
+- [[hidden-markov-model]] — generalizes: HMM is an ARM where the past is compressed into a stochastic hidden state
+- [[recurrent-neural-network]] — generalizes: RNN is an ARM where the past is compressed into a deterministic hidden state
+- [[markov-chains]] — generalizes: Markov model is a first-order special case of an ARM
+- [[chain-rule-multivariate]] — uses: ARM factorisation directly applies the chain rule of probability
+- [[autoregressive-model]] — instantiates: Chapter 22 defines ARMs via the chain rule; autoregressive-model is the existing node for the concept
 [To be populated during integration]

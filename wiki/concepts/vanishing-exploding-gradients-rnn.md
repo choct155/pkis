@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- recurrent-neural-network
 component_scores:
   application: null
   boundary: null
@@ -18,6 +20,8 @@ domain:
 - optimization
 - sequence-modeling
 id: pkis:concept:vanishing-exploding-gradients-rnn
+instantiates:
+- vanishing-gradient-problem
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
@@ -32,6 +36,8 @@ tags:
 - long-term-dependencies
 title: Vanishing and Exploding Gradients in RNNs
 understanding: 0
+uses:
+- eigendecomposition
 ---
 
 ## Definition
@@ -49,4 +55,7 @@ Robustness to small perturbations (long-term memory storage) *requires* the netw
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[vanishing-gradient-problem]] — instantiates
+- [[eigendecomposition]] — uses
+- [[recurrent-neural-network]] — applies
 [To be populated during integration]

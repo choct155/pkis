@@ -9,12 +9,16 @@ component_scores:
   implementation: null
   operational_mechanism: null
   principled_mechanism: null
+contrasts-with:
+- negative-binomial-distribution
 coverage: 1
 date_created: '2026-06-09'
 date_updated: '2026-06-09'
 domain:
 - bayesian-stats
 id: pkis:technique:poisson-regression
+instantiates:
+- generalized-linear-models
 knowledge_type: technique
 maturity: evolving
 needs_canonical_source: false
@@ -35,6 +39,9 @@ understanding: 0
 uses:
 - link-function
 - poisson-process
+- canonical-link-function
+- glm-deviance
+- overdispersion
 ---
 
 ## Definition
@@ -53,6 +60,11 @@ Poisson regression is the default tool for events-per-exposure data — disease 
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[overdispersion]] — uses: Variance equals mean; overdispersion signals departure from Poisson assumption
+- [[negative-binomial-distribution]] — contrasts-with: Negative binomial extends Poisson regression to overdispersed counts
+- [[glm-deviance]] — uses
+- [[canonical-link-function]] — uses
+- [[generalized-linear-models]] — instantiates
 - [[poisson-process]] — uses
 - [[link-function]] — uses
 - [[generalized-linear-models]] — specializes

@@ -10,6 +10,8 @@ component_scores:
   prerequisites: null
   scope: null
   transfer: null
+contrasts-with:
+- unbiasedness
 coverage: 1
 date_created: '2026-06-11'
 date_updated: '2026-06-11'
@@ -31,6 +33,10 @@ tags:
 - unbiasedness
 title: Statistical Estimator Consistency
 understanding: 0
+uses:
+- maximum-likelihood-estimation
+- cramer-rao-bound
+- weak-law-of-large-numbers
 ---
 
 ## Definition
@@ -47,4 +53,8 @@ Consistency is the minimal large-sample guarantee for an estimator. Maximum like
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[weak-law-of-large-numbers]] — uses
+- [[cramer-rao-bound]] — uses
+- [[unbiasedness]] — contrasts-with
+- [[maximum-likelihood-estimation]] — uses
 [To be populated during integration]

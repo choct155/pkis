@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- deep-reinforcement-learning
 component_scores:
   alternatives: null
   conditions: null
@@ -16,6 +18,13 @@ domain:
 - machine-learning
 - optimization
 - deep-learning
+extends:
+- rmsprop
+- sgd-momentum
+- gradient-descent
+- stochastic-gradient-descent
+generalizes:
+- adagrad
 id: pkis:technique:adam-optimizer
 knowledge_type: technique
 maturity: evolving
@@ -31,6 +40,8 @@ tags:
 - deep-learning
 title: Adam Optimizer
 understanding: 0
+uses:
+- nesterov-accelerated-gradient
 ---
 
 ## Definition
@@ -48,4 +59,11 @@ Adam is currently the default optimiser for most deep learning research. Its bia
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[deep-reinforcement-learning]] — applies
+- [[stochastic-gradient-descent]] — extends
+- [[nesterov-accelerated-gradient]] — uses
+- [[gradient-descent]] — extends
+- [[adagrad]] — generalizes
+- [[sgd-momentum]] — extends: first moment estimate is a form of momentum
+- [[rmsprop]] — extends: Adam adds first-moment (momentum) term and bias correction to RMSProp
 [To be populated during integration]

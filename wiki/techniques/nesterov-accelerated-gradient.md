@@ -15,10 +15,14 @@ date_updated: '2026-06-11'
 domain:
 - optimization
 - machine-learning
+extends:
+- gradient-descent
 id: pkis:technique:nesterov-accelerated-gradient
 knowledge_type: technique
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- adam-optimizer
 related_concepts: []
 sources:
 - murphy-pml1-intro-ch08
@@ -29,6 +33,8 @@ tags:
 - first-order
 title: Nesterov Accelerated Gradient
 understanding: 0
+uses:
+- strong-convexity
 ---
 
 ## Definition
@@ -50,4 +56,7 @@ NAG is the theoretical gold-standard for first-order convex optimization, and th
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[adam-optimizer]] — prerequisite-of
+- [[strong-convexity]] — uses
+- [[gradient-descent]] — extends
 [To be populated during integration]

@@ -1,6 +1,9 @@
 ---
 aliases: []
 also_type: []
+applies:
+- undirected-graphical-models
+- maximum-likelihood-estimation
 component_scores:
   application: null
   boundary: null
@@ -17,7 +20,11 @@ domain:
 - machine-learning
 - probabilistic-graphical-models
 - deep-learning
+generalizes:
+- boltzmann-machine-learning-rule
 id: pkis:concept:positive-negative-phase-learning
+instantiates:
+- intractable-posterior
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
@@ -31,6 +38,8 @@ tags:
 - MCMC-training
 title: Positive and Negative Phase of Learning
 understanding: 0
+uses:
+- partition-function
 ---
 
 ## Definition
@@ -45,4 +54,9 @@ This decomposition is the foundation for all MCMC-based training algorithms for 
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[boltzmann-machine-learning-rule]] — generalizes
+- [[intractable-posterior]] — instantiates
+- [[maximum-likelihood-estimation]] — applies
+- [[undirected-graphical-models]] — applies
+- [[partition-function]] — uses
 [To be populated during integration]

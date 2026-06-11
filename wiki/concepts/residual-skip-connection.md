@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- vanishing-gradient-problem
 component_scores:
   application: null
   boundary: null
@@ -16,6 +18,9 @@ date_updated: '2026-06-11'
 domain:
 - deep-learning
 - neural-network-architecture
+extends:
+- deep-neural-network-computation-graph
+- convolutional-neural-networks
 id: pkis:concept:residual-skip-connection
 knowledge_type: concept
 maturity: evolving
@@ -30,6 +35,8 @@ tags:
 - architecture
 title: Residual (Skip) Connection
 understanding: 0
+uses:
+- activation-functions
 ---
 
 ## Definition
@@ -44,4 +51,8 @@ Deep networks suffer from vanishing/exploding signals and gradients. Skip connec
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[activation-functions]] — uses
+- [[convolutional-neural-networks]] — extends
+- [[vanishing-gradient-problem]] — applies: skip connections are a primary architectural solution to vanishing/exploding gradients
+- [[deep-neural-network-computation-graph]] — extends
 [To be populated during integration]

@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- post-hoc-explanation
 component_scores:
   application: null
   boundary: null
@@ -31,6 +33,8 @@ tags:
 - surrogate
 title: Explanation Fidelity (Faithfulness)
 understanding: 0
+uses:
+- explanation-sanity-check
 ---
 
 ## Definition
@@ -49,4 +53,6 @@ A low-fidelity explanation can mislead users into trusting a model that behaves 
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[explanation-sanity-check]] — uses: Sanity checks operationalize empirical tests of explanation fidelity.
+- [[post-hoc-explanation]] — applies: Fidelity is the primary quality criterion for post-hoc explanations.
 [To be populated during integration]

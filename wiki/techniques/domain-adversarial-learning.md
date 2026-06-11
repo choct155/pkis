@@ -1,6 +1,10 @@
 ---
 aliases: []
 also_type: []
+analogous-to:
+- generative-adversarial-network
+applies:
+- covariate-shift
 component_scores:
   alternatives: null
   conditions: null
@@ -9,6 +13,9 @@ component_scores:
   implementation: null
   operational_mechanism: null
   principled_mechanism: null
+contrasts-with:
+- importance-weighted-erm
+- pretraining-and-fine-tuning
 coverage: 1
 date_created: '2026-06-11'
 date_updated: '2026-06-11'
@@ -46,4 +53,8 @@ The domain classifier plays the role of the discriminator in a GAN, and the feat
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[pretraining-and-fine-tuning]] — contrasts-with
+- [[importance-weighted-erm]] — contrasts-with
+- [[generative-adversarial-network]] — analogous-to
+- [[covariate-shift]] — applies
 [To be populated during integration]

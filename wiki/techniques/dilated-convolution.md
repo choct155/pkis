@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- encoder-decoder-unet
 component_scores:
   alternatives: null
   conditions: null
@@ -15,6 +17,8 @@ date_updated: '2026-06-11'
 domain:
 - deep-learning
 - computer-vision
+extends:
+- convolutional-neural-network
 id: pkis:technique:dilated-convolution
 knowledge_type: technique
 maturity: evolving
@@ -46,4 +50,6 @@ Used in encoder paths of U-Net–style segmentation models; also central to Wave
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[encoder-decoder-unet]] — applies: Dilated convolution in the encoder captures wide context without downsampling
+- [[convolutional-neural-network]] — extends: Dilated conv generalizes standard conv with dilation rate r≥1
 [To be populated during integration]

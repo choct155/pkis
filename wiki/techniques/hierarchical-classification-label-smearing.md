@@ -9,6 +9,8 @@ component_scores:
   implementation: null
   operational_mechanism: null
   principled_mechanism: null
+contrasts-with:
+- hierarchical-softmax
 coverage: 1
 date_created: '2026-06-11'
 date_updated: '2026-06-11'
@@ -29,6 +31,8 @@ tags:
 - fine-grained-recognition
 title: Hierarchical Classification with Label Smearing
 understanding: 0
+uses:
+- multi-label-classification
 ---
 
 ## Definition
@@ -43,4 +47,6 @@ Hierarchical label structures arise in fine-grained recognition (species, produc
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[hierarchical-softmax]] — contrasts-with
+- [[multi-label-classification]] — uses
 [To be populated during integration]

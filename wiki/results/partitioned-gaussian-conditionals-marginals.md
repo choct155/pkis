@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- bayesian-inference
 component_scores:
   conditions: null
   implications: null
@@ -14,10 +16,14 @@ domain:
 - probability
 - statistics
 - machine-learning
+extends:
+- gaussian-distribution
 id: pkis:result:partitioned-gaussian-conditionals-marginals
 knowledge_type: result
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- kalman-filter
 related_concepts: []
 sources:
 - bishop-prml-ch02
@@ -28,6 +34,8 @@ tags:
 - bayesian-inference
 title: Partitioned Gaussian Conditionals and Marginals
 understanding: 0
+uses:
+- precision-matrix
 ---
 
 ## Definition
@@ -47,4 +55,8 @@ These identities underlie Kalman filtering, Gaussian process regression, linear 
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[kalman-filter]] — prerequisite-of
+- [[bayesian-inference]] — applies
+- [[precision-matrix]] — uses: Conditional covariance = Lambda_aa^{-1}
+- [[gaussian-distribution]] — extends
 [To be populated during integration]

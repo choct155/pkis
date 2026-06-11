@@ -15,10 +15,14 @@ date_updated: '2026-06-11'
 domain:
 - reinforcement-learning
 - optimization
+extends:
+- reinforce
 id: pkis:technique:trust-region-policy-optimization
 knowledge_type: technique
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- proximal-policy-optimization
 related_concepts: []
 sources:
 - murphy-pml2-advanced-ch35
@@ -29,6 +33,11 @@ tags:
 - policy-search
 title: Trust Region Policy Optimization (TRPO)
 understanding: 0
+uses:
+- natural-gradient
+- kl-divergence
+- policy-gradient-theorem
+- lagrangian-duality
 ---
 
 ## Definition
@@ -43,4 +52,10 @@ TRPO provides a monotonic improvement guarantee: each update provably does not d
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[lagrangian-duality]] — uses
+- [[reinforce]] — extends
+- [[proximal-policy-optimization]] — prerequisite-of
+- [[policy-gradient-theorem]] — uses
+- [[kl-divergence]] — uses
+- [[natural-gradient]] — uses
 [To be populated during integration]

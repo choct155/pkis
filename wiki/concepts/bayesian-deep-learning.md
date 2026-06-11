@@ -10,6 +10,8 @@ component_scores:
   prerequisites: null
   scope: null
   transfer: null
+contrasts-with:
+- deep-reinforcement-learning
 coverage: 1
 date_created: '2026-06-11'
 date_updated: '2026-06-11'
@@ -24,6 +26,8 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - murphy-pml2-advanced-ch17
+specializes:
+- bayesian-neural-networks
 tags:
 - BDL
 - posterior-predictive
@@ -31,6 +35,15 @@ tags:
 - underspecification
 title: Bayesian Deep Learning (BDL)
 understanding: 0
+uses:
+- bayesian-model-averaging
+- variational-inference
+- laplace-approximation
+- hmc
+- neural-network-gaussian-process-limit
+- weight-decay-as-prior
+- automatic-priors
+- transfer-learning
 ---
 
 ## Definition
@@ -48,4 +61,14 @@ Single-parameter (MAP/MLE) deep nets suffer from *underspecification*: many weig
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[transfer-learning]] — uses: Bayesian transfer learning uses posterior from D1 as prior for fine-tuning on D2
+- [[automatic-priors]] — uses: Empirical Bayes / evidence maximisation to learn prior hyperparameters
+- [[weight-decay-as-prior]] — uses: Gaussian weight prior corresponds to L2 regularisation / weight decay in MAP training
+- [[neural-network-gaussian-process-limit]] — uses: Infinite-width limit gives analytic prior over functions
+- [[deep-reinforcement-learning]] — contrasts-with: BDL is Bayesian inference over DNN weights; deep RL is a separate use of DNNs
+- [[hmc]] — uses
+- [[laplace-approximation]] — uses
+- [[variational-inference]] — uses
+- [[bayesian-model-averaging]] — uses: Posterior predictive is a Bayesian model average over DNN weights
+- [[bayesian-neural-networks]] — specializes
 [To be populated during integration]

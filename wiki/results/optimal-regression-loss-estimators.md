@@ -7,6 +7,9 @@ component_scores:
   limitations: null
   proof_sketch: null
   statement: null
+contrasts-with:
+- epsilon-insensitive-loss
+- hinge-loss
 coverage: 1
 date_created: '2026-06-11'
 date_updated: '2026-06-11'
@@ -14,6 +17,8 @@ domain:
 - statistics
 - machine-learning
 - decision-theory
+extends:
+- bayesian-point-estimation
 id: pkis:result:optimal-regression-loss-estimators
 knowledge_type: result
 maturity: evolving
@@ -30,6 +35,8 @@ tags:
 - robust-regression
 title: Optimal Regression Estimators Under Common Loss Functions
 understanding: 0
+uses:
+- loss-function-posterior-expected-loss
 ---
 
 ## Definition
@@ -50,4 +57,8 @@ This result gives the principled justification for reporting the **posterior mea
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[hinge-loss]] — contrasts-with
+- [[epsilon-insensitive-loss]] — contrasts-with
+- [[bayesian-point-estimation]] — extends
+- [[loss-function-posterior-expected-loss]] — uses
 [To be populated during integration]

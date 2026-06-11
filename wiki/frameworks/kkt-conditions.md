@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- constrained-optimization
 component_scores:
   application: null
   limits: null
@@ -18,9 +20,14 @@ id: pkis:framework:kkt-conditions
 knowledge_type: framework
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- support-vector-machines
+- optimal-separating-hyperplane
 related_concepts: []
 sources:
 - goodfellow-deeplearning-ch04
+specializes:
+- convex-optimization
 tags:
 - Lagrangian
 - constrained-optimization
@@ -29,6 +36,8 @@ tags:
 - SVM
 title: Karush–Kuhn–Tucker (KKT) Conditions
 understanding: 0
+uses:
+- lagrangian-duality
 ---
 
 ## Definition
@@ -53,4 +62,9 @@ KKT unifies equality and inequality constrained optimisation under a single fram
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[optimal-separating-hyperplane]] — prerequisite-of
+- [[support-vector-machines]] — prerequisite-of
+- [[convex-optimization]] — specializes
+- [[lagrangian-duality]] — uses
+- [[constrained-optimization]] — applies
 [To be populated during integration]

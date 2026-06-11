@@ -1,6 +1,9 @@
 ---
 aliases: []
 also_type: []
+applies:
+- support-vector-machine
+- svm-dual-formulation
 component_scores:
   alternatives: null
   conditions: null
@@ -43,4 +46,6 @@ Direct solution of the SVM QP over $N$ variables is $O(N^3)$ and requires $O(N^2
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[svm-dual-formulation]] — applies
+- [[support-vector-machine]] — applies
 [To be populated during integration]

@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- feed-forward-neural-network
 component_scores:
   alternatives: null
   conditions: null
@@ -15,7 +17,11 @@ date_updated: '2026-06-11'
 domain:
 - machine-learning
 - regularisation
+generalizes:
+- weight-decay-as-prior
 id: pkis:technique:soft-weight-sharing
+instantiates:
+- regularization
 knowledge_type: technique
 maturity: evolving
 needs_canonical_source: false
@@ -29,6 +35,9 @@ tags:
 - sparsity
 title: Soft Weight Sharing
 understanding: 0
+uses:
+- gaussian-mixture-models
+- em-algorithm
 ---
 
 ## Definition
@@ -45,4 +54,9 @@ Generalises hard weight-tying (as in convolutional networks) to any architecture
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[feed-forward-neural-network]] — applies
+- [[weight-decay-as-prior]] — generalizes
+- [[em-algorithm]] — uses
+- [[gaussian-mixture-models]] — uses
+- [[regularization]] — instantiates
 [To be populated during integration]

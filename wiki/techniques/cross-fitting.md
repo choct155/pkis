@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+analogous-to:
+- cross-validation
 component_scores:
   alternatives: null
   conditions: null
@@ -20,6 +22,8 @@ id: pkis:technique:cross-fitting
 knowledge_type: technique
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- aiptw-double-ml
 related_concepts: []
 sources:
 - murphy-pml2-advanced-ch36
@@ -51,4 +55,6 @@ Without sample splitting, empirical process terms can dominate and destroy the $
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[aiptw-double-ml]] — prerequisite-of
+- [[cross-validation]] — analogous-to: Both use K-fold data splitting but for different purposes (inference vs. model selection)
 [To be populated during integration]

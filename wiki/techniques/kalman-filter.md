@@ -1,6 +1,13 @@
 ---
 aliases: []
 also_type: []
+analogous-to:
+- forward-backward-algorithm
+applies:
+- linear-dynamical-system
+- linear-gaussian-ssm
+- simultaneous-localization-and-mapping-slam
+- robot-perception-state-estimation
 coverage: 5
 date_created: 2026-05-20
 date_updated: 2026-05-20
@@ -9,6 +16,8 @@ domain:
 - state-space-models
 - bayesian-stats
 id: pkis:technique:kalman-filter
+instantiates:
+- filtering-prediction-smoothing
 knowledge_type: technique
 maturity: settled
 related_concepts:
@@ -26,6 +35,7 @@ sources:
 specializes:
 - dynamic-bayesian-network
 - filtering-prediction-smoothing
+- bayes-filter
 tags:
 - state-space-models
 - sequential-inference
@@ -35,6 +45,11 @@ tags:
 - smoothing
 title: Kalman Filter
 understanding: 0
+uses:
+- gaussian-distribution
+- kalman-gain
+- kalman-innovation
+- cholesky-decomposition
 ---
 
 Recursive Bayesian estimation algorithm for linear Gaussian state-space models: given the current observation y_t, the Kalman filter produces the optimal (minimum mean-square-error) estimate of the latent state α_t by combining the prior prediction (from the transition equation) with the observation likelihood, yielding a Gaussian posterior that serves as the prior for the next step.
@@ -48,5 +63,16 @@ Recursive Bayesian estimation algorithm for linear Gaussian state-space models: 
 - [[kurz-hybrid-modeling-2022]] (unread) — Kalman filtering recognized as recursive Bayesian estimation and canonical hybrid model; Ensemble Kalman Filter used in weather forecasting with ~10^6 data points/hr and ~10^9 model states
 
 ## Connections
+- [[robot-perception-state-estimation]] — applies
+- [[simultaneous-localization-and-mapping-slam]] — applies
+- [[cholesky-decomposition]] — uses: square-root filter variant
+- [[kalman-innovation]] — uses
+- [[kalman-gain]] — uses
+- [[bayes-filter]] — specializes
+- [[linear-gaussian-ssm]] — applies
+- [[gaussian-distribution]] — uses
+- [[filtering-prediction-smoothing]] — instantiates
+- [[forward-backward-algorithm]] — analogous-to
+- [[linear-dynamical-system]] — applies
 - [[filtering-prediction-smoothing]] — specializes: Kalman filtering is the linear-Gaussian continuous-state instance of the general filtering/smoothing recursion.
 - [[dynamic-bayesian-network]] — specializes: A Kalman filter is a DBN with continuous variables and linear-Gaussian conditional distributions.

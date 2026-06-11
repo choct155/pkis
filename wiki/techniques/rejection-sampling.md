@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- gamma-distribution
 component_scores:
   alternatives: null
   conditions: null
@@ -18,10 +20,16 @@ date_updated: '2026-06-08'
 domain:
 - bayesian-stats
 - statistical-learning
+generalizes:
+- adaptive-rejection-sampling
 id: pkis:technique:rejection-sampling
+instantiates:
+- curse-of-dimensionality
 knowledge_type: technique
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- adaptive-rejection-sampling
 related_concepts: []
 sources:
 - mackay-itila-ch29
@@ -35,6 +43,10 @@ tags:
 - mackay
 title: Rejection Sampling
 understanding: 0
+uses:
+- monte-carlo-estimator
+- inverse-transform-sampling
+- monte-carlo-integration
 ---
 
 ## Definition
@@ -55,6 +67,13 @@ Rejection sampling is the gold standard in one dimension — exact and i.i.d. �
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[adaptive-rejection-sampling]] — prerequisite-of
+- [[monte-carlo-integration]] — uses
+- [[gamma-distribution]] — applies: Cauchy envelope used for Gamma(a,b) with a>1
+- [[curse-of-dimensionality]] — instantiates: acceptance rate decays exponentially with dimension
+- [[inverse-transform-sampling]] — uses: proposal samples are drawn using inverse-transform or other basic methods
+- [[adaptive-rejection-sampling]] — generalizes
+- [[monte-carlo-estimator]] — uses
 - [[numerical-vs-simulation-integration]] — specializes: Rejection sampling is a simulation (stochastic) integration method.
 - [[mcmc]] — contrasts-with: Rejection produces independent samples but fails exponentially in N; MCMC trades independence for tractable high-dimensional mixing.
 - [[importance-sampling]] — contrasts-with: Rejection sampling yields exact i.i.d. samples; importance sampling yields weighted, biased-at-finite-R estimates.

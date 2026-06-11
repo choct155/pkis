@@ -8,13 +8,21 @@ component_scores:
   purpose: null
   scope: null
   structure: null
+contrasts-with:
+- support-vector-machine
+- gaussian-process-regression
+- support-vector-machines
 coverage: 1
 date_created: '2026-06-11'
 date_updated: '2026-06-11'
 domain:
 - machine-learning
 - bayesian-inference
+extends:
+- bayesian-linear-regression
 id: pkis:framework:relevance-vector-machine
+instantiates:
+- hierarchical-bayesian-models
 knowledge_type: framework
 maturity: evolving
 needs_canonical_source: false
@@ -31,6 +39,16 @@ tags:
 - evidence-approximation
 title: Relevance Vector Machine (RVM)
 understanding: 0
+uses:
+- automatic-relevance-determination
+- marginal-likelihood
+- the-kernel-trick
+- laplace-approximation
+- rvm-evidence-sparsity-result
+- rvm-sparsity-quality-factors
+- mercer-kernel
+- ard-kernel
+- reproducing-kernel-hilbert-space
 ---
 
 ## Definition
@@ -47,4 +65,18 @@ The RVM avoids the main limitations of SVMs: it provides calibrated posterior pr
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[reproducing-kernel-hilbert-space]] — uses
+- [[support-vector-machines]] — contrasts-with
+- [[ard-kernel]] — uses
+- [[mercer-kernel]] — uses
+- [[gaussian-process-regression]] — contrasts-with: GP regression avoids overconfident extrapolation; RVM does not
+- [[rvm-sparsity-quality-factors]] — uses
+- [[rvm-evidence-sparsity-result]] — uses
+- [[hierarchical-bayesian-models]] — instantiates
+- [[laplace-approximation]] — uses: Used for RVM classification
+- [[the-kernel-trick]] — uses
+- [[marginal-likelihood]] — uses
+- [[bayesian-linear-regression]] — extends
+- [[automatic-relevance-determination]] — uses
+- [[support-vector-machine]] — contrasts-with
 [To be populated during integration]

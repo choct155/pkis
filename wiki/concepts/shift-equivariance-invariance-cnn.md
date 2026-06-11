@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- convolutional-neural-networks
 component_scores:
   application: null
   boundary: null
@@ -17,6 +19,8 @@ domain:
 - deep-learning
 - computer-vision
 id: pkis:concept:shift-equivariance-invariance-cnn
+instantiates:
+- inductive-bias
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
@@ -32,6 +36,9 @@ tags:
 - inductive-bias
 title: Shift Equivariance and Shift Invariance in CNNs
 understanding: 0
+uses:
+- symmetry-groups
+- pooling-layer
 ---
 
 ## Definition
@@ -46,4 +53,8 @@ Shift equivariance is why CNNs transfer a learned feature detector across all sp
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[pooling-layer]] — uses
+- [[symmetry-groups]] — uses
+- [[inductive-bias]] — instantiates
+- [[convolutional-neural-networks]] — applies
 [To be populated during integration]

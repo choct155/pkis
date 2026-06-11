@@ -31,6 +31,11 @@ tags:
 - lambda
 title: Regularisation Path
 understanding: 0
+uses:
+- lasso-regression
+- ridge-regression
+- least-angle-regression-lars
+- cross-validation
 ---
 
 ## Definition
@@ -45,4 +50,8 @@ For lasso, the regularisation path is piecewise linear in $\lambda$, meaning the
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[cross-validation]] — uses
+- [[least-angle-regression-lars]] — uses
+- [[ridge-regression]] — uses
+- [[lasso-regression]] — uses
 [To be populated during integration]

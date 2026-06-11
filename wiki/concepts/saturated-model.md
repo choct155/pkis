@@ -29,6 +29,8 @@ tags:
 - likelihood-ratio-test
 title: Saturated Model
 understanding: 0
+uses:
+- generalized-linear-models
 ---
 
 ## Definition
@@ -44,4 +46,5 @@ The saturated model serves as the reference ceiling for goodness-of-fit in all G
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[generalized-linear-models]] — uses
 [To be populated during integration]

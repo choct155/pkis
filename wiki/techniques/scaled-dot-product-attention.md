@@ -1,6 +1,9 @@
 ---
 aliases: []
 also_type: []
+analogous-to:
+- kernel-regression-rl
+- gaussian-process
 component_scores:
   alternatives: null
   conditions: null
@@ -20,10 +23,14 @@ id: pkis:technique:scaled-dot-product-attention
 knowledge_type: technique
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- multi-headed-attention
 related_concepts: []
 sources:
 - murphy-pml1-intro-ch15
 - murphy-pml2-advanced-ch16
+specializes:
+- transformer-attention-mechanisms
 tags:
 - attention
 - transformer
@@ -31,6 +38,10 @@ tags:
 - query-key-value
 title: Scaled Dot-Product Attention
 understanding: 0
+uses:
+- softmax-action-selection
+- inner-product
+- layer-normalization
 ---
 
 ## Definition
@@ -47,4 +58,11 @@ Scaled dot-product attention is the core computational primitive of the Transfor
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[layer-normalization]] — uses: LayerNorm stabilizes dot-product magnitudes entering attention
+- [[inner-product]] — uses
+- [[gaussian-process]] — analogous-to: attention is a parametric, differentiable analogue of kernel-based GP prediction
+- [[kernel-regression-rl]] — analogous-to: Non-parametric attention is equivalent to kernel regression with Gaussian kernel
+- [[multi-headed-attention]] — prerequisite-of
+- [[softmax-action-selection]] — uses
+- [[transformer-attention-mechanisms]] — specializes
 [To be populated during integration]

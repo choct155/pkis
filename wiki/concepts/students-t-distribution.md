@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- robust-inference
 component_scores:
   application: null
   boundary: null
@@ -10,6 +12,8 @@ component_scores:
   prerequisites: null
   scope: null
   transfer: null
+contrasts-with:
+- exponential-family-distribution
 coverage: 1
 date_created: '2026-06-11'
 date_updated: '2026-06-11'
@@ -17,7 +21,11 @@ domain:
 - probability
 - statistics
 - machine-learning
+generalizes:
+- gaussian-distribution
 id: pkis:concept:students-t-distribution
+instantiates:
+- t-distribution
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
@@ -31,6 +39,9 @@ tags:
 - degrees-of-freedom
 title: Student's t-Distribution
 understanding: 0
+uses:
+- gamma-distribution
+- em-algorithm
 ---
 
 ## Definition
@@ -45,4 +56,10 @@ The t-distribution has heavier tails than the Gaussian, giving it **robustness**
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[exponential-family-distribution]] — contrasts-with: t-distribution is NOT in the exponential family
+- [[em-algorithm]] — uses: EM via Gaussian-scale-mixture representation
+- [[robust-inference]] — applies: Heavy tails give robustness to outliers
+- [[gamma-distribution]] — uses: Gamma prior on precision marginalised to yield t
+- [[t-distribution]] — instantiates
+- [[gaussian-distribution]] — generalizes: Limit nu->inf recovers Gaussian
 [To be populated during integration]

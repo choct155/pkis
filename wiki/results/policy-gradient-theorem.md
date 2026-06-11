@@ -13,13 +13,20 @@ date_updated: '2026-06-09'
 domain:
 - reinforcement-learning
 - optimization
+generalizes:
+- deterministic-policy-gradient
 id: pkis:result:policy-gradient-theorem
+instantiates:
+- policy-gradient-methods
 knowledge_type: result
 maturity: evolving
 needs_canonical_source: false
 prerequisite-of:
 - reinforce
 - policy-gradient-methods
+- actor-critic
+- trust-region-policy-optimization
+- proximal-policy-optimization
 related_concepts: []
 sources:
 - sutton-policy-2018
@@ -30,6 +37,10 @@ tags:
 - theorem
 title: Policy Gradient Theorem
 understanding: 0
+uses:
+- return-and-discounting
+- action-value-function
+- markov-decision-processes
 ---
 
 ## Definition
@@ -50,6 +61,14 @@ This is the theoretical foundation for ALL policy-gradient algorithms (REINFORCE
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[markov-decision-processes]] — uses
+- [[action-value-function]] — uses
+- [[return-and-discounting]] — uses
+- [[deterministic-policy-gradient]] — generalizes
+- [[proximal-policy-optimization]] — prerequisite-of
+- [[trust-region-policy-optimization]] — prerequisite-of
+- [[actor-critic]] — prerequisite-of
+- [[policy-gradient-methods]] — instantiates
 - [[policy-gradient-methods]] — prerequisite-of: The theorem is the theoretical foundation underpinning every member algorithm of the framework.
 - [[reinforce]] — prerequisite-of: REINFORCE is derived directly from the policy gradient theorem by converting the action sum to an expectation and sampling.
 [To be populated during integration]

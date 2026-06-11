@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+analogous-to:
+- word-embeddings
 component_scores:
   alternatives: null
   conditions: null
@@ -15,6 +17,8 @@ date_updated: '2026-06-11'
 domain:
 - machine-learning
 - recommender-systems
+extends:
+- collaborative-filtering
 id: pkis:technique:matrix-factorization-recommender
 knowledge_type: technique
 maturity: evolving
@@ -30,6 +34,11 @@ tags:
 - netflix-prize
 title: Matrix Factorization for Recommendation
 understanding: 0
+uses:
+- low-rank-approximation
+- singular-value-decomposition
+- stochastic-gradient-descent
+- regularization
 ---
 
 ## Definition
@@ -48,4 +57,10 @@ Matrix factorisation (popularised by Simon Funk and the BellKor team during the 
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[word-embeddings]] — analogous-to
+- [[collaborative-filtering]] — extends
+- [[regularization]] — uses
+- [[stochastic-gradient-descent]] — uses
+- [[singular-value-decomposition]] — uses
+- [[low-rank-approximation]] — uses
 [To be populated during integration]

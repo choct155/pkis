@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- multinomial-logistic-regression
 component_scores:
   alternatives: null
   conditions: null
@@ -22,6 +24,8 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - murphy-pml1-intro-ch10
+specializes:
+- gradient-and-jacobian
 tags:
 - softmax
 - Jacobian
@@ -30,6 +34,8 @@ tags:
 - multiclass
 title: Softmax Jacobian
 understanding: 0
+uses:
+- backpropagation
 ---
 
 ## Definition
@@ -44,4 +50,7 @@ This identity is the core building block for deriving gradients through any soft
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[multinomial-logistic-regression]] — applies
+- [[backpropagation]] — uses
+- [[gradient-and-jacobian]] — specializes
 [To be populated during integration]

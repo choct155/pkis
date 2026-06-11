@@ -9,6 +9,8 @@ component_scores:
   implementation: null
   operational_mechanism: null
   principled_mechanism: null
+contrasts-with:
+- rejection-sampling
 coverage: 1
 date_created: '2026-06-11'
 date_updated: '2026-06-11'
@@ -19,6 +21,8 @@ id: pkis:technique:sampling-importance-resampling
 knowledge_type: technique
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- particle-filter
 related_concepts: []
 sources:
 - bishop-prml-ch11
@@ -29,6 +33,8 @@ tags:
 - particle-filter
 title: Sampling-Importance-Resampling (SIR)
 understanding: 0
+uses:
+- importance-sampling
 ---
 
 ## Definition
@@ -47,4 +53,7 @@ SIR is a principled alternative to rejection sampling that avoids the need to de
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[particle-filter]] — prerequisite-of
+- [[rejection-sampling]] — contrasts-with
+- [[importance-sampling]] — uses
 [To be populated during integration]

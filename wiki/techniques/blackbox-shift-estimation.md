@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- label-shift
 component_scores:
   alternatives: null
   conditions: null
@@ -9,6 +11,9 @@ component_scores:
   implementation: null
   operational_mechanism: null
   principled_mechanism: null
+contrasts-with:
+- importance-weighted-erm
+- maximum-likelihood-estimation
 coverage: 1
 date_created: '2026-06-11'
 date_updated: '2026-06-11'
@@ -46,4 +51,7 @@ The confusion matrix $C$ must be invertible (strongly-diagonal classifiers satis
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[maximum-likelihood-estimation]] — contrasts-with
+- [[importance-weighted-erm]] — contrasts-with
+- [[label-shift]] — applies
 [To be populated during integration]

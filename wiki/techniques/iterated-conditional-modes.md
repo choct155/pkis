@@ -1,6 +1,9 @@
 ---
 aliases: []
 also_type: []
+applies:
+- markov-random-field
+- ising-model
 component_scores:
   alternatives: null
   conditions: null
@@ -9,6 +12,8 @@ component_scores:
   implementation: null
   operational_mechanism: null
   principled_mechanism: null
+contrasts-with:
+- max-sum-algorithm
 coverage: 1
 date_created: '2026-06-11'
 date_updated: '2026-06-11'
@@ -47,4 +52,7 @@ ICM is computationally simple: each update requires only the local clique energi
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[max-sum-algorithm]] — contrasts-with
+- [[ising-model]] — applies
+- [[markov-random-field]] — applies
 [To be populated during integration]

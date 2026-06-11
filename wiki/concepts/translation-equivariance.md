@@ -17,9 +17,13 @@ domain:
 - deep-learning
 - mathematics
 id: pkis:concept:translation-equivariance
+instantiates:
+- symmetry-groups
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- parameter-sharing-cnn
 related_concepts: []
 sources:
 - goodfellow-deeplearning-ch09
@@ -45,4 +49,6 @@ Equivariance preserves spatial structure through the network, enabling each laye
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[parameter-sharing-cnn]] — prerequisite-of
+- [[symmetry-groups]] — instantiates
 [To be populated during integration]

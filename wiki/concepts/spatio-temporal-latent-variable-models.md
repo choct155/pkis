@@ -17,6 +17,9 @@ domain:
 - machine-learning
 - statistics
 - spatial-statistics
+extends:
+- latent-variable-models
+- state-space-models
 id: pkis:concept:spatio-temporal-latent-variable-models
 knowledge_type: concept
 maturity: evolving
@@ -24,6 +27,8 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - murphy-pml2-advanced-ch27
+specializes:
+- dynamic-bayesian-network
 tags:
 - spatiotemporal
 - latent-variables
@@ -32,6 +37,8 @@ tags:
 - discovery
 title: Spatio-Temporal Latent Variable Models
 understanding: 0
+uses:
+- gaussian-process
 ---
 
 ## Definition
@@ -46,4 +53,8 @@ Many real-world discovery tasks involve data with joint spatial and temporal str
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[gaussian-process]] — uses
+- [[dynamic-bayesian-network]] — specializes
+- [[state-space-models]] — extends
+- [[latent-variable-models]] — extends
 [To be populated during integration]

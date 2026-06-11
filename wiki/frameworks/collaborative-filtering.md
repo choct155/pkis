@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+analogous-to:
+- word-embeddings
 component_scores:
   application: null
   limits: null
@@ -15,9 +17,13 @@ domain:
 - machine-learning
 - recommender-systems
 id: pkis:framework:collaborative-filtering
+instantiates:
+- low-rank-matrix-approximation
 knowledge_type: framework
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- matrix-factorization-recommender
 related_concepts: []
 sources:
 - goodfellow-deeplearning-ch12
@@ -30,6 +36,10 @@ tags:
 - Netflix
 title: Collaborative Filtering with Latent Factor Models
 understanding: 0
+uses:
+- matrix-decompositions
+- singular-value-decomposition
+- restricted-boltzmann-machine
 ---
 
 ## Definition
@@ -46,4 +56,10 @@ The dominant paradigm for recommender systems; matrix factorisation won the Netf
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[matrix-factorization-recommender]] — prerequisite-of
+- [[low-rank-matrix-approximation]] — instantiates
+- [[restricted-boltzmann-machine]] — uses
+- [[word-embeddings]] — analogous-to
+- [[singular-value-decomposition]] — uses
+- [[matrix-decompositions]] — uses
 [To be populated during integration]

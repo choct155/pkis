@@ -31,6 +31,9 @@ tags:
 - gradient-descent
 title: Critical Points and Saddle Points
 understanding: 0
+uses:
+- gradient-descent
+- hessian-matrix
 ---
 
 ## Definition
@@ -52,4 +55,6 @@ Deep neural network loss surfaces are dominated by saddle points rather than poo
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[hessian-matrix]] — uses
+- [[gradient-descent]] — uses
 [To be populated during integration]

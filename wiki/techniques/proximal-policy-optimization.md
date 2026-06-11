@@ -22,6 +22,8 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - murphy-pml2-advanced-ch35
+specializes:
+- trust-region-policy-optimization
 tags:
 - clipped-objective
 - on-policy
@@ -29,6 +31,10 @@ tags:
 - LLM-alignment
 title: Proximal Policy Optimization (PPO)
 understanding: 0
+uses:
+- policy-gradient-theorem
+- generalized-advantage-estimation
+- importance-sampling
 ---
 
 ## Definition
@@ -43,4 +49,8 @@ PPO achieves performance competitive with TRPO while being substantially simpler
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[importance-sampling]] — uses
+- [[generalized-advantage-estimation]] — uses
+- [[policy-gradient-theorem]] — uses
+- [[trust-region-policy-optimization]] — specializes
 [To be populated during integration]

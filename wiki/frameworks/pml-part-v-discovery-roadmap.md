@@ -15,6 +15,8 @@ domain:
 - machine-learning
 - statistics
 id: pkis:framework:pml-part-v-discovery-roadmap
+instantiates:
+- discovery-as-interpretable-representation-learning
 knowledge_type: framework
 maturity: evolving
 needs_canonical_source: false
@@ -29,6 +31,10 @@ tags:
 - representation-learning
 title: 'Part V Roadmap: From Vectors to Graphs to Nonparametric Models'
 understanding: 0
+uses:
+- latent-variable-models
+- spatio-temporal-latent-variable-models
+- transfer-learning
 ---
 
 ## Definition
@@ -47,4 +53,8 @@ The roadmap clarifies how increasing structural complexity of data calls for ric
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[transfer-learning]] — uses
+- [[spatio-temporal-latent-variable-models]] — uses
+- [[latent-variable-models]] — uses
+- [[discovery-as-interpretable-representation-learning]] — instantiates
 [To be populated during integration]

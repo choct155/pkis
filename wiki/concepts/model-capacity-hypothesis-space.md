@@ -17,9 +17,13 @@ domain:
 - machine-learning
 - statistical-learning-theory
 id: pkis:concept:model-capacity-hypothesis-space
+instantiates:
+- bias-variance-tradeoff
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
+prerequisite-of:
+- regularization
 related_concepts: []
 sources:
 - goodfellow-deeplearning-ch05
@@ -31,6 +35,11 @@ tags:
 - underfitting
 title: Model Capacity and Hypothesis Space
 understanding: 0
+uses:
+- generalization-error-training-error
+- vc-dimension
+- overfitting-and-underfitting
+- no-free-lunch-theorem
 ---
 
 ## Definition
@@ -47,4 +56,10 @@ Capacity directly mediates the bias–variance tradeoff: too-low capacity causes
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[no-free-lunch-theorem]] — uses
+- [[overfitting-and-underfitting]] — uses
+- [[regularization]] — prerequisite-of
+- [[bias-variance-tradeoff]] — instantiates
+- [[vc-dimension]] — uses
+- [[generalization-error-training-error]] — uses
 [To be populated during integration]

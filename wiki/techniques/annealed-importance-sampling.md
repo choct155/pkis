@@ -1,6 +1,10 @@
 ---
 aliases: []
 also_type: []
+applies:
+- partition-function
+- restricted-boltzmann-machine
+- marginal-likelihood
 component_scores:
   alternatives: null
   conditions: null
@@ -9,6 +13,8 @@ component_scores:
   implementation: null
   operational_mechanism: null
   principled_mechanism: null
+contrasts-with:
+- bridge-sampling
 coverage: 1
 date_created: '2026-06-11'
 date_updated: '2026-06-11'
@@ -16,6 +22,9 @@ domain:
 - machine-learning
 - statistics
 - probabilistic-graphical-models
+extends:
+- importance-sampling
+- self-normalized-importance-sampling
 id: pkis:technique:annealed-importance-sampling
 knowledge_type: technique
 maturity: evolving
@@ -32,6 +41,9 @@ tags:
 - Monte-Carlo
 title: Annealed Importance Sampling (AIS)
 understanding: 0
+uses:
+- mcmc
+- kl-divergence
 ---
 
 ## Definition
@@ -46,4 +58,12 @@ AIS is the **standard method** for evaluating partition functions of undirected 
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[marginal-likelihood]] — applies
+- [[self-normalized-importance-sampling]] — extends
+- [[bridge-sampling]] — contrasts-with
+- [[kl-divergence]] — uses
+- [[restricted-boltzmann-machine]] — applies
+- [[mcmc]] — uses
+- [[partition-function]] — applies
+- [[importance-sampling]] — extends
 [To be populated during integration]

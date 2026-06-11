@@ -1,6 +1,10 @@
 ---
 aliases: []
 also_type: []
+analogous-to:
+- inverse-reinforcement-learning
+applies:
+- value-alignment-problem
 component_scores:
   alternatives: null
   conditions: null
@@ -16,6 +20,8 @@ domain:
 - reinforcement-learning
 - natural-language-processing
 - ai-alignment
+extends:
+- gpt-pretraining
 id: pkis:technique:reinforcement-learning-from-human-feedback
 knowledge_type: technique
 maturity: evolving
@@ -33,6 +39,8 @@ tags:
 - fine-tuning
 title: Reinforcement Learning from Human Feedback (RLHF)
 understanding: 0
+uses:
+- reinforcement-learning
 ---
 
 ## Definition
@@ -49,4 +57,8 @@ RLHF (introduced in InstructGPT / ChatGPT) is the dominant technique for alignin
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[inverse-reinforcement-learning]] — analogous-to: Both infer a reward from human behaviour/preferences
+- [[value-alignment-problem]] — applies: RLHF operationalises value alignment for LLMs
+- [[reinforcement-learning]] — uses
+- [[gpt-pretraining]] — extends: RLHF fine-tunes a GPT-style pre-trained model
 [To be populated during integration]
