@@ -16778,3 +16778,12 @@
 ## [2026-06-11] committed | technique
 - Committed: hierarchical-agglomerative-clustering → techniques/hierarchical-agglomerative-clustering.md
 - IRI: pkis:technique:hierarchical-agglomerative-clustering
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: dendrogram (id: f7ab2d05-b6bb-463c-9ac3-b101cd20cfd8)
+- Title: Dendrogram
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: dendrogram → concepts/dendrogram.md
+- IRI: pkis:concept:dendrogram
