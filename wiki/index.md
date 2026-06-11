@@ -290,6 +290,7 @@
 - [[liu-machine-unlearning-llm-2024]] — Rethinking Machine Unlearning for LLMs: post-training knowledge editing survey (deep-learning, ai-safety) (2026-05-20)
 
 ## Concepts
+- [[saddle-points-nn-optimization]] — Saddle Points in Neural Network Optimization (deep-learning, optimization, non-convex-optimization) (2026-06-11)
 - [[vanishing-exploding-gradients]] — Vanishing and Exploding Gradients (deep-learning, optimization, recurrent-networks) (2026-06-11)
 - [[surrogate-loss-function]] — Surrogate Loss Function (machine-learning, optimization, deep-learning) (2026-06-11)
 - [[representational-sparsity]] — Representational Sparsity (machine-learning, deep-learning, representation-learning, regularization) (2026-06-11)

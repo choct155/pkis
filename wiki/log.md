@@ -14042,3 +14042,12 @@
 ## [2026-06-11] committed | technique
 - Committed: conjugate-gradient-method → techniques/conjugate-gradient-method.md
 - IRI: pkis:technique:conjugate-gradient-method
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: saddle-points-nn-optimization (id: 7652687c-67be-4195-af98-3f842d120f50)
+- Title: Saddle Points in Neural Network Optimization
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: saddle-points-nn-optimization → concepts/saddle-points-nn-optimization.md
+- IRI: pkis:concept:saddle-points-nn-optimization
