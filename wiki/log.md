@@ -16697,3 +16697,12 @@
 ## [2026-06-11] committed | technique
 - Committed: matching-networks → techniques/matching-networks.md
 - IRI: pkis:technique:matching-networks
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: knowledge-distillation (id: f8baee43-09cc-4a95-aa04-20e83a2f7638)
+- Title: Knowledge Distillation
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: knowledge-distillation → concepts/knowledge-distillation.md
+- IRI: pkis:concept:knowledge-distillation
