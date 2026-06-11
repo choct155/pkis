@@ -290,6 +290,7 @@
 - [[liu-machine-unlearning-llm-2024]] — Rethinking Machine Unlearning for LLMs: post-training knowledge editing survey (deep-learning, ai-safety) (2026-05-20)
 
 ## Concepts
+- [[multinoulli-distribution]] — Multinoulli (Categorical) Distribution (probability-theory, machine-learning) (2026-06-11)
 - [[softplus-function]] — Softplus Function (machine-learning, deep-learning) (2026-06-11)
 - [[logistic-sigmoid]] — Logistic Sigmoid Function (probability-theory, machine-learning, deep-learning) (2026-06-11)
 - [[probability-density-function]] — Probability Density Function (PDF) (probability-theory, machine-learning) (2026-06-11)

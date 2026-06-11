@@ -13511,3 +13511,12 @@
 ## [2026-06-11] committed | concept
 - Committed: softplus-function → concepts/softplus-function.md
 - IRI: pkis:concept:softplus-function
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: multinoulli-distribution (id: 0684b187-5d76-4ec2-a4da-f26ed3dac253)
+- Title: Multinoulli (Categorical) Distribution
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: multinoulli-distribution → concepts/multinoulli-distribution.md
+- IRI: pkis:concept:multinoulli-distribution
