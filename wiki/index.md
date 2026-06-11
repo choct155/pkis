@@ -1472,6 +1472,7 @@
 - [[government-debt-valuation-equation]] — FTPL: price level determined by ratio of nominal debt to expected present value of future surpluses (macroeconomics) (2026-05-20)
 
 ## Frameworks
+- [[dl-practical-design-methodology]] — Deep Learning Practical Design Methodology (machine-learning, deep-learning, methodology) (2026-06-11)
 - [[echo-state-networks]] — Echo State Networks / Reservoir Computing (deep-learning, sequence-modeling, dynamical-systems) (2026-06-11)
 - [[gated-recurrent-unit]] — Gated Recurrent Unit (GRU) (deep-learning, sequence-modeling) (2026-06-11)
 - [[long-short-term-memory]] — Long Short-Term Memory (LSTM) (deep-learning, sequence-modeling) (2026-06-11)

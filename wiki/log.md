@@ -14339,3 +14339,12 @@
 ## [2026-06-11] committed | technique
 - Committed: fit-tiny-dataset-debug → techniques/fit-tiny-dataset-debug.md
 - IRI: pkis:technique:fit-tiny-dataset-debug
+
+## [2026-06-11] staged | node-stub (framework)
+- Staged: dl-practical-design-methodology (id: f311d826-37fe-408a-a6b0-ff8338bf28ec)
+- Title: Deep Learning Practical Design Methodology
+- needs_canonical_source: False
+
+## [2026-06-11] committed | framework
+- Committed: dl-practical-design-methodology → frameworks/dl-practical-design-methodology.md
+- IRI: pkis:framework:dl-practical-design-methodology
