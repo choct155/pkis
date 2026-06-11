@@ -15329,3 +15329,12 @@
 ## [2026-06-11] committed | technique
 - Committed: completing-the-square-multivariate → techniques/completing-the-square-multivariate.md
 - IRI: pkis:technique:completing-the-square-multivariate
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: sensor-fusion (id: 11fccf52-edb8-45ef-8172-fe5cb10b991c)
+- Title: Sensor Fusion
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: sensor-fusion → concepts/sensor-fusion.md
+- IRI: pkis:concept:sensor-fusion
