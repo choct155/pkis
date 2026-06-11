@@ -12449,3 +12449,12 @@
 ## [2026-06-11] committed | concept
 - Committed: canonical-link-function → concepts/canonical-link-function.md
 - IRI: pkis:concept:canonical-link-function
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: perceptron-algorithm (id: 3595a035-9901-4fe7-bfdc-91fa95ef89de)
+- Title: Perceptron Learning Algorithm
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: perceptron-algorithm → techniques/perceptron-algorithm.md
+- IRI: pkis:technique:perceptron-algorithm
