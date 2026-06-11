@@ -909,6 +909,7 @@
 - [[market-vs-hierarchy]] — Coase/Williamson: transactions governed by price signals (markets) vs. managerial direction (firms) (corporate-finance) (2026-05-20)
 
 ## Techniques
+- [[map-inference-as-approximate-vi]] — MAP Inference as Approximate Variational Inference (machine-learning, probabilistic-inference) (2026-06-11)
 - [[expectation-maximization]] — Expectation Maximization (EM) Algorithm (machine-learning, statistics, probabilistic-models) (2026-06-11)
 - [[bridge-sampling]] — Bridge Sampling (machine-learning, statistics, probabilistic-graphical-models) (2026-06-11)
 - [[annealed-importance-sampling]] — Annealed Importance Sampling (AIS) (machine-learning, statistics, probabilistic-graphical-models) (2026-06-11)

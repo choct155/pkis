@@ -14987,3 +14987,12 @@
 ## [2026-06-11] committed | technique
 - Committed: expectation-maximization → techniques/expectation-maximization.md
 - IRI: pkis:technique:expectation-maximization
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: map-inference-as-approximate-vi (id: 18443848-1ee5-4500-8f11-c7c013d78a92)
+- Title: MAP Inference as Approximate Variational Inference
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: map-inference-as-approximate-vi → techniques/map-inference-as-approximate-vi.md
+- IRI: pkis:technique:map-inference-as-approximate-vi
