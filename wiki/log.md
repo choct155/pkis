@@ -16922,3 +16922,12 @@
 ## [2026-06-11] committed | technique
 - Committed: neural-matrix-factorization → techniques/neural-matrix-factorization.md
 - IRI: pkis:technique:neural-matrix-factorization
+
+## [2026-06-11] staged | node-stub (problem)
+- Staged: cold-start-problem (id: be924f66-0f54-446a-9ba5-c78bfaf83100)
+- Title: Cold Start Problem
+- needs_canonical_source: False
+
+## [2026-06-11] committed | problem
+- Committed: cold-start-problem → problems/cold-start-problem.md
+- IRI: pkis:problem:cold-start-problem
