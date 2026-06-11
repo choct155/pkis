@@ -13979,3 +13979,12 @@
 ## [2026-06-11] committed | technique
 - Committed: sgd-momentum → techniques/sgd-momentum.md
 - IRI: pkis:technique:sgd-momentum
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: nesterov-momentum (id: 47fdb837-4994-4a00-b003-7698577c3222)
+- Title: Nesterov Momentum
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: nesterov-momentum → techniques/nesterov-momentum.md
+- IRI: pkis:technique:nesterov-momentum
