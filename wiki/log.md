@@ -18758,3 +18758,12 @@
 ## [2026-06-11] committed | framework
 - Committed: deep-generative-model-taxonomy → frameworks/deep-generative-model-taxonomy.md
 - IRI: pkis:framework:deep-generative-model-taxonomy
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: latent-space-interpolation (id: 860a11a5-d4bd-46db-bb30-2650a808460d)
+- Title: Latent Space Interpolation
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: latent-space-interpolation → concepts/latent-space-interpolation.md
+- IRI: pkis:concept:latent-space-interpolation
