@@ -19424,3 +19424,12 @@
 ## [2026-06-11] committed | framework
 - Committed: latent-factor-models → frameworks/latent-factor-models.md
 - IRI: pkis:framework:latent-factor-models
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: horseshoe-distribution (id: 5072d399-2a19-4ed1-a41f-116deeeb7e02)
+- Title: Horseshoe Distribution
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: horseshoe-distribution → concepts/horseshoe-distribution.md
+- IRI: pkis:concept:horseshoe-distribution
