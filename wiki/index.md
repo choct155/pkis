@@ -1548,6 +1548,7 @@
 - [[government-debt-valuation-equation]] — FTPL: price level determined by ratio of nominal debt to expected present value of future surpluses (macroeconomics) (2026-05-20)
 
 ## Frameworks
+- [[generative-adversarial-network-framework]] — Generative Adversarial Network (GAN) (deep-learning, generative-models, game-theory) (2026-06-11)
 - [[inductive-priors-representation-learning]] — Inductive Priors for Representation Learning (representation-learning, deep-learning, statistical-learning-theory) (2026-06-11)
 - [[transfer-learning-domain-adaptation]] — Transfer Learning and Domain Adaptation (machine-learning, deep-learning, representation-learning) (2026-06-11)
 - [[linear-factor-model]] — Linear Factor Model (machine-learning, statistics, probabilistic-modeling) (2026-06-11)

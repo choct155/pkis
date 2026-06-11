@@ -15086,3 +15086,12 @@
 ## [2026-06-11] committed | concept
 - Committed: variational-autoencoder-vae → concepts/variational-autoencoder-vae.md
 - IRI: pkis:concept:variational-autoencoder-vae
+
+## [2026-06-11] staged | node-stub (framework)
+- Staged: generative-adversarial-network-framework (id: 5eeea63e-1d37-4877-b4d2-6580db5d5f0a)
+- Title: Generative Adversarial Network (GAN)
+- needs_canonical_source: False
+
+## [2026-06-11] committed | framework
+- Committed: generative-adversarial-network-framework → frameworks/generative-adversarial-network-framework.md
+- IRI: pkis:framework:generative-adversarial-network-framework
