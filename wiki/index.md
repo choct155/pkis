@@ -880,6 +880,7 @@
 - [[market-vs-hierarchy]] — Coase/Williamson: transactions governed by price signals (markets) vs. managerial direction (firms) (corporate-finance) (2026-05-20)
 
 ## Techniques
+- [[global-contrast-normalization]] — Global Contrast Normalization (GCN) (computer-vision, deep-learning, preprocessing) (2026-06-11)
 - [[asynchronous-sgd]] — Asynchronous Stochastic Gradient Descent (deep-learning, distributed-computing, optimisation) (2026-06-11)
 - [[model-compression]] — Model Compression (Knowledge Distillation) (deep-learning, model-efficiency) (2026-06-11)
 - [[learning-curve-analysis]] — Learning Curve Analysis (machine-learning, data-collection) (2026-06-11)

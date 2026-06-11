@@ -14393,3 +14393,12 @@
 ## [2026-06-11] committed | technique
 - Committed: asynchronous-sgd → techniques/asynchronous-sgd.md
 - IRI: pkis:technique:asynchronous-sgd
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: global-contrast-normalization (id: 1f8a6b6b-e70d-488b-97c5-e2f358bbaeea)
+- Title: Global Contrast Normalization (GCN)
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: global-contrast-normalization → techniques/global-contrast-normalization.md
+- IRI: pkis:technique:global-contrast-normalization
