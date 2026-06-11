@@ -290,6 +290,7 @@
 - [[liu-machine-unlearning-llm-2024]] — Rethinking Machine Unlearning for LLMs: post-training knowledge editing survey (deep-learning, ai-safety) (2026-05-20)
 
 ## Concepts
+- [[factors-of-variation]] — Factors of Variation (machine-learning) (2026-06-11)
 - [[distributed-representation]] — Distributed Representation (machine-learning, cognitive-science) (2026-06-11)
 - [[representation-learning]] — Representation Learning (machine-learning) (2026-06-11)
 - [[tree-pruning]] — Tree Pruning (Cost-Complexity Pruning) (machine-learning, statistics) (2026-06-11)

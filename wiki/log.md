@@ -13313,3 +13313,12 @@
 ## [2026-06-11] committed | concept
 - Committed: distributed-representation → concepts/distributed-representation.md
 - IRI: pkis:concept:distributed-representation
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: factors-of-variation (id: 1b040f41-d966-4918-b5fe-3c3a738b0f74)
+- Title: Factors of Variation
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: factors-of-variation → concepts/factors-of-variation.md
+- IRI: pkis:concept:factors-of-variation
