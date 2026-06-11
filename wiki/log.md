@@ -12476,3 +12476,12 @@
 ## [2026-06-11] committed | technique
 - Committed: bayesian-logistic-regression → techniques/bayesian-logistic-regression.md
 - IRI: pkis:technique:bayesian-logistic-regression
+
+## [2026-06-11] staged | node-stub (framework)
+- Staged: feed-forward-neural-network (id: 27de3d05-4889-4fe5-8dfb-c5a8db1a9c8c)
+- Title: Feed-Forward Neural Network (MLP)
+- needs_canonical_source: False
+
+## [2026-06-11] committed | framework
+- Committed: feed-forward-neural-network → frameworks/feed-forward-neural-network.md
+- IRI: pkis:framework:feed-forward-neural-network
