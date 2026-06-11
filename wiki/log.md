@@ -16409,3 +16409,12 @@
 ## [2026-06-11] committed | framework
 - Committed: vision-transformer → frameworks/vision-transformer.md
 - IRI: pkis:framework:vision-transformer
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: knn-classifier (id: f802953a-b82b-4b81-bdcf-fe54b1c5c0ae)
+- Title: K-Nearest Neighbor (KNN) Classifier
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: knn-classifier → techniques/knn-classifier.md
+- IRI: pkis:technique:knn-classifier
