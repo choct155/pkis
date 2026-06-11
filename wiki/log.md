@@ -14519,3 +14519,12 @@
 ## [2026-06-11] committed | technique
 - Committed: sparse-coding → techniques/sparse-coding.md
 - IRI: pkis:technique:sparse-coding
+
+## [2026-06-11] staged | node-stub (principle)
+- Staged: slowness-principle (id: 2671256f-6329-468d-bfe7-d4f50277bfbb)
+- Title: Slowness Principle
+- needs_canonical_source: False
+
+## [2026-06-11] committed | principle
+- Committed: slowness-principle → principles/slowness-principle.md
+- IRI: pkis:principle:slowness-principle
