@@ -12296,3 +12296,12 @@
 ## [2026-06-11] committed | concept
 - Committed: exponential-family-distribution → concepts/exponential-family-distribution.md
 - IRI: pkis:concept:exponential-family-distribution
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: linear-basis-function-model (id: 02024a5c-f566-4fc3-8125-3ceccf2df15c)
+- Title: Linear Basis Function Model
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: linear-basis-function-model → concepts/linear-basis-function-model.md
+- IRI: pkis:concept:linear-basis-function-model
