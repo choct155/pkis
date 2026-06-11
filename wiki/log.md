@@ -16931,3 +16931,12 @@
 ## [2026-06-11] committed | problem
 - Committed: cold-start-problem → problems/cold-start-problem.md
 - IRI: pkis:problem:cold-start-problem
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: implicit-feedback-recommendation (id: 3ab70f25-27f7-4580-875d-4956d1ad5b09)
+- Title: Implicit Feedback in Recommendation
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: implicit-feedback-recommendation → concepts/implicit-feedback-recommendation.md
+- IRI: pkis:concept:implicit-feedback-recommendation
