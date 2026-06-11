@@ -15941,3 +15941,12 @@
 ## [2026-06-11] committed | result
 - Committed: lda-logistic-regression-equivalence → results/lda-logistic-regression-equivalence.md
 - IRI: pkis:result:lda-logistic-regression-equivalence
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: binary-logistic-regression (id: cf94be16-fa79-40f5-953d-30589f54f710)
+- Title: Binary Logistic Regression
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: binary-logistic-regression → concepts/binary-logistic-regression.md
+- IRI: pkis:concept:binary-logistic-regression
