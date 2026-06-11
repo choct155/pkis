@@ -14564,3 +14564,12 @@
 ## [2026-06-11] committed | concept
 - Committed: linear-manifold-pca → concepts/linear-manifold-pca.md
 - IRI: pkis:concept:linear-manifold-pca
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: independent-subspace-analysis (id: e5a9614e-8d6b-497a-8e1d-6f3b1d190ecb)
+- Title: Independent Subspace Analysis
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: independent-subspace-analysis → concepts/independent-subspace-analysis.md
+- IRI: pkis:concept:independent-subspace-analysis
