@@ -19838,3 +19838,12 @@
 ## [2026-06-11] committed | technique
 - Committed: byol → techniques/byol.md
 - IRI: pkis:technique:byol
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: linear-evaluation-protocol (id: 0490201b-8c32-4f1f-a967-e0a1f79b17fb)
+- Title: Linear Evaluation Protocol
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: linear-evaluation-protocol → concepts/linear-evaluation-protocol.md
+- IRI: pkis:concept:linear-evaluation-protocol
