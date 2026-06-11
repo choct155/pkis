@@ -15869,3 +15869,12 @@
 ## [2026-06-11] committed | technique
 - Committed: gaussian-discriminant-analysis → techniques/gaussian-discriminant-analysis.md
 - IRI: pkis:technique:gaussian-discriminant-analysis
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: regularised-discriminant-analysis (id: 76af60ab-f634-4567-b512-28a636fb8347)
+- Title: Regularised Discriminant Analysis (RDA)
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: regularised-discriminant-analysis → techniques/regularised-discriminant-analysis.md
+- IRI: pkis:technique:regularised-discriminant-analysis
