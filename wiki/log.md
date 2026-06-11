@@ -19073,3 +19073,12 @@
 ## [2026-06-11] committed | technique
 - Committed: residual-flow → techniques/residual-flow.md
 - IRI: pkis:technique:residual-flow
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: continuous-time-normalizing-flow (id: 2dd3cf1f-37a7-4dc8-b7e0-7da70f45b514)
+- Title: Continuous-Time Normalizing Flow (Neural ODE Flow)
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: continuous-time-normalizing-flow → techniques/continuous-time-normalizing-flow.md
+- IRI: pkis:technique:continuous-time-normalizing-flow
