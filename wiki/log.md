@@ -15626,3 +15626,12 @@
 ## [2026-06-11] committed | concept
 - Committed: maximal-information-coefficient → concepts/maximal-information-coefficient.md
 - IRI: pkis:concept:maximal-information-coefficient
+
+## [2026-06-11] staged | node-stub (result)
+- Staged: forward-vs-reverse-kl (id: 07fdc3b8-c8ef-4365-98cf-72ead07e832c)
+- Title: Forward vs Reverse KL Divergence Asymmetry
+- needs_canonical_source: False
+
+## [2026-06-11] committed | result
+- Committed: forward-vs-reverse-kl → results/forward-vs-reverse-kl.md
+- IRI: pkis:result:forward-vs-reverse-kl
