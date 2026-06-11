@@ -17750,3 +17750,12 @@
 ## [2026-06-11] committed | concept
 - Committed: kalman-gain → concepts/kalman-gain.md
 - IRI: pkis:concept:kalman-gain
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: kalman-innovation (id: cc234172-7fbe-43ea-bc08-906cdad89a22)
+- Title: Innovation (Measurement Residual)
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: kalman-innovation → concepts/kalman-innovation.md
+- IRI: pkis:concept:kalman-innovation
