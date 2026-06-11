@@ -15374,3 +15374,12 @@
 ## [2026-06-11] committed | concept
 - Committed: gaussian-mixture-model → concepts/gaussian-mixture-model.md
 - IRI: pkis:concept:gaussian-mixture-model
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: cluster-responsibility (id: 26fc1999-1f47-4ebd-87f6-2843697eb6d4)
+- Title: Cluster Responsibility (Soft Assignment)
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: cluster-responsibility → concepts/cluster-responsibility.md
+- IRI: pkis:concept:cluster-responsibility

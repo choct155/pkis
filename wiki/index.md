@@ -290,6 +290,7 @@
 - [[liu-machine-unlearning-llm-2024]] — Rethinking Machine Unlearning for LLMs: post-training knowledge editing survey (deep-learning, ai-safety) (2026-05-20)
 
 ## Concepts
+- [[cluster-responsibility]] — Cluster Responsibility (Soft Assignment) (machine-learning, statistics) (2026-06-11)
 - [[gaussian-mixture-model]] — Gaussian Mixture Model (machine-learning, statistics, probability) (2026-06-11)
 - [[exponential-family-distributions]] — Exponential Family (probability, statistics, machine-learning) (2026-06-11)
 - [[sensor-fusion]] — Sensor Fusion (robotics, signal-processing, statistics) (2026-06-11)
