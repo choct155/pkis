@@ -17912,3 +17912,12 @@
 ## [2026-06-11] committed | technique
 - Committed: amortized-vi → techniques/amortized-vi.md
 - IRI: pkis:technique:amortized-vi
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: bbvi (id: d120fa7a-ce8a-492e-8f11-8154caf04c42)
+- Title: Blackbox Variational Inference (BBVI)
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: bbvi → techniques/bbvi.md
+- IRI: pkis:technique:bbvi
