@@ -13925,3 +13925,12 @@
 ## [2026-06-11] committed | result
 - Committed: l2-regularization-eigenspectrum-shrinkage → results/l2-regularization-eigenspectrum-shrinkage.md
 - IRI: pkis:result:l2-regularization-eigenspectrum-shrinkage
+
+## [2026-06-11] staged | node-stub (result)
+- Staged: l1-sparsity-soft-thresholding (id: 279b44ab-263a-4829-a8ae-7561efe387f0)
+- Title: L1 Regularization Induces Sparsity via Soft Thresholding
+- needs_canonical_source: False
+
+## [2026-06-11] committed | result
+- Committed: l1-sparsity-soft-thresholding → results/l1-sparsity-soft-thresholding.md
+- IRI: pkis:result:l1-sparsity-soft-thresholding

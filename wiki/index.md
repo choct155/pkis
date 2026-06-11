@@ -1306,6 +1306,7 @@
 - [[constraint-propagation]] — Reducing a constraint satisfaction problem by iteratively eliminating inconsistent values from variable domains (knowledge-representation) (2026-05-20)
 
 ## Results
+- [[l1-sparsity-soft-thresholding]] — L1 Regularization Induces Sparsity via Soft Thresholding (machine-learning, optimization, statistics, regularization) (2026-06-11)
 - [[l2-regularization-eigenspectrum-shrinkage]] — L2 Regularization Eigenspectrum Shrinkage (machine-learning, optimization, linear-algebra, regularization) (2026-06-11)
 - [[early-stopping-l2-equivalence]] — Early Stopping Equivalence to L2 Regularization (machine-learning, deep-learning, optimization, regularization) (2026-06-11)
 - [[depth-efficiency-rectifier-networks]] — Depth-Efficiency of Rectifier Networks (Montufar et al.) (machine-learning, deep-learning, complexity-theory) (2026-06-11)
