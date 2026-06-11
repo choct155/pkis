@@ -18200,3 +18200,12 @@
 ## [2026-06-11] committed | technique
 - Committed: smc-abc → techniques/smc-abc.md
 - IRI: pkis:technique:smc-abc
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: predictive-model (id: d362338b-5d90-4637-a28b-a5344e0380c7)
+- Title: Predictive Model (Discriminative / Regression)
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: predictive-model → concepts/predictive-model.md
+- IRI: pkis:concept:predictive-model
