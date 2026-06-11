@@ -19136,3 +19136,12 @@
 ## [2026-06-11] committed | technique
 - Committed: sliced-score-matching → techniques/sliced-score-matching.md
 - IRI: pkis:technique:sliced-score-matching
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: stein-score-function (id: ecfc9b99-bd45-4b15-a7bc-6b3c22ddff22)
+- Title: Stein Score Function
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: stein-score-function → concepts/stein-score-function.md
+- IRI: pkis:concept:stein-score-function
