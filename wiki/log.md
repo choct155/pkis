@@ -12809,3 +12809,12 @@
 ## [2026-06-11] committed | concept
 - Committed: markov-blanket-directed → concepts/markov-blanket-directed.md
 - IRI: pkis:concept:markov-blanket-directed
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: linear-gaussian-graphical-model (id: 61f2e10b-2ec3-4522-b89a-d704fccf6e59)
+- Title: Linear-Gaussian Graphical Model
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: linear-gaussian-graphical-model → concepts/linear-gaussian-graphical-model.md
+- IRI: pkis:concept:linear-gaussian-graphical-model
