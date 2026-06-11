@@ -12629,3 +12629,12 @@
 ## [2026-06-11] committed | technique
 - Committed: nadaraya-watson-model → techniques/nadaraya-watson-model.md
 - IRI: pkis:technique:nadaraya-watson-model
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: gp-classification-laplace (id: 41278ade-7683-4d61-a4b2-9a2e6e379634)
+- Title: Gaussian Process Classification via Laplace Approximation
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: gp-classification-laplace → techniques/gp-classification-laplace.md
+- IRI: pkis:technique:gp-classification-laplace
