@@ -1102,6 +1102,7 @@
 - [[market-vs-hierarchy]] — Coase/Williamson: transactions governed by price signals (markets) vs. managerial direction (firms) (corporate-finance) (2026-05-20)
 
 ## Techniques
+- [[classifier-guidance]] — Classifier Guidance (machine-learning, generative-models) (2026-06-11)
 - [[euler-maruyama-integration]] — Euler-Maruyama Integration (numerical-methods, stochastic-processes) (2026-06-11)
 - [[progressive-distillation-diffusion]] — Progressive Distillation for Diffusion Models (machine-learning, generative-models) (2026-06-11)
 - [[flow-matching]] — Flow Matching (machine-learning, generative-models) (2026-06-11)

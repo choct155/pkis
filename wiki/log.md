@@ -19217,3 +19217,12 @@
 ## [2026-06-11] committed | result
 - Committed: andersons-reverse-sde → results/andersons-reverse-sde.md
 - IRI: pkis:result:andersons-reverse-sde
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: classifier-guidance (id: 575f57fe-01cf-4d44-85df-3da37e64305d)
+- Title: Classifier Guidance
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: classifier-guidance → techniques/classifier-guidance.md
+- IRI: pkis:technique:classifier-guidance
