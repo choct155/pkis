@@ -15518,3 +15518,12 @@
 ## [2026-06-11] committed | concept
 - Committed: class-confusion-matrix → concepts/class-confusion-matrix.md
 - IRI: pkis:concept:class-confusion-matrix
+
+## [2026-06-11] staged | node-stub (result)
+- Staged: optimal-regression-loss-estimators (id: 6cbf2f30-0b42-440e-b96d-12c04e8eae06)
+- Title: Optimal Regression Estimators Under Common Loss Functions
+- needs_canonical_source: False
+
+## [2026-06-11] committed | result
+- Committed: optimal-regression-loss-estimators → results/optimal-regression-loss-estimators.md
+- IRI: pkis:result:optimal-regression-loss-estimators
