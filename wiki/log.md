@@ -15608,3 +15608,12 @@
 ## [2026-06-11] committed | concept
 - Committed: perplexity → concepts/perplexity.md
 - IRI: pkis:concept:perplexity
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: normalized-mutual-information (id: 6d59145b-66f5-429c-89b7-e5383a7902df)
+- Title: Normalized Mutual Information
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: normalized-mutual-information → concepts/normalized-mutual-information.md
+- IRI: pkis:concept:normalized-mutual-information
