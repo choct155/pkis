@@ -14276,3 +14276,12 @@
 ## [2026-06-11] committed | concept
 - Committed: rnn-unfolding → concepts/rnn-unfolding.md
 - IRI: pkis:concept:rnn-unfolding
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: precision-recall-f-score (id: c09bc994-00a6-496b-a778-1a7dcabe8390)
+- Title: Precision, Recall, and F-Score
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: precision-recall-f-score → concepts/precision-recall-f-score.md
+- IRI: pkis:concept:precision-recall-f-score

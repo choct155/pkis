@@ -290,6 +290,7 @@
 - [[liu-machine-unlearning-llm-2024]] — Rethinking Machine Unlearning for LLMs: post-training knowledge editing survey (deep-learning, ai-safety) (2026-05-20)
 
 ## Concepts
+- [[precision-recall-f-score]] — Precision, Recall, and F-Score (machine-learning, statistics, evaluation) (2026-06-11)
 - [[rnn-unfolding]] — RNN Computational Graph Unfolding (deep-learning, sequence-modeling) (2026-06-11)
 - [[leaky-units-multiscale-rnn]] — Leaky Units and Multi-Scale RNN (deep-learning, sequence-modeling) (2026-06-11)
 - [[recursive-neural-network]] — Recursive Neural Network (Tree-Structured) (deep-learning, sequence-modeling, NLP) (2026-06-11)
