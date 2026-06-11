@@ -19775,3 +19775,12 @@
 ## [2026-06-11] committed | framework
 - Committed: contrastive-representation-learning → frameworks/contrastive-representation-learning.md
 - IRI: pkis:framework:contrastive-representation-learning
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: masked-autoencoder (id: 65194dbc-1652-4a9c-bb95-5488c5380db1)
+- Title: Masked Autoencoder (MAE)
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: masked-autoencoder → techniques/masked-autoencoder.md
+- IRI: pkis:technique:masked-autoencoder
