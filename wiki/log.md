@@ -16679,3 +16679,12 @@
 ## [2026-06-11] committed | technique
 - Committed: label-propagation → techniques/label-propagation.md
 - IRI: pkis:technique:label-propagation
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: maml (id: 62501b4e-fc27-48c8-8818-6c5ae1857dc5)
+- Title: Model-Agnostic Meta-Learning (MAML)
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: maml → techniques/maml.md
+- IRI: pkis:technique:maml
