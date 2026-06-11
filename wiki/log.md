@@ -15617,3 +15617,12 @@
 ## [2026-06-11] committed | concept
 - Committed: normalized-mutual-information → concepts/normalized-mutual-information.md
 - IRI: pkis:concept:normalized-mutual-information
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: maximal-information-coefficient (id: 9200aca0-c17a-4bb8-98e1-24b9a708d405)
+- Title: Maximal Information Coefficient (MIC)
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: maximal-information-coefficient → concepts/maximal-information-coefficient.md
+- IRI: pkis:concept:maximal-information-coefficient
