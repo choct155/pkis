@@ -18875,3 +18875,12 @@
 ## [2026-06-11] committed | framework
 - Committed: beta-vae → frameworks/beta-vae.md
 - IRI: pkis:framework:beta-vae
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: posterior-collapse (id: 385d2e74-b808-4fea-95e9-845d3d39849d)
+- Title: Posterior Collapse (Variational Pruning)
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: posterior-collapse → concepts/posterior-collapse.md
+- IRI: pkis:concept:posterior-collapse
