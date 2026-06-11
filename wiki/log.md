@@ -17336,3 +17336,12 @@
 ## [2026-06-11] committed | result
 - Committed: fim-exponential-family → results/fim-exponential-family.md
 - IRI: pkis:result:fim-exponential-family
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: ordered-markov-property (id: 8acf1542-e790-4fe8-9d7c-4f4022cbae39)
+- Title: Ordered Markov Property (DAGs)
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: ordered-markov-property → concepts/ordered-markov-property.md
+- IRI: pkis:concept:ordered-markov-property
