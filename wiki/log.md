@@ -13502,3 +13502,12 @@
 ## [2026-06-11] committed | concept
 - Committed: logistic-sigmoid → concepts/logistic-sigmoid.md
 - IRI: pkis:concept:logistic-sigmoid
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: softplus-function (id: 9e17b621-b004-4f11-9233-6e4e0e8bcaf0)
+- Title: Softplus Function
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: softplus-function → concepts/softplus-function.md
+- IRI: pkis:concept:softplus-function
