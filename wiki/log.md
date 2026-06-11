@@ -24737,3 +24737,12 @@
 ## [2026-06-11] committed | result
 - Committed: ebm-log-likelihood-gradient → results/ebm-log-likelihood-gradient.md
 - IRI: pkis:result:ebm-log-likelihood-gradient
+
+## [2026-06-11] staged | node-stub (framework)
+- Staged: ddpm (id: 43bb55c6-cb02-436b-8248-de92ed1ab69c)
+- Title: Denoising Diffusion Probabilistic Model (DDPM)
+- needs_canonical_source: False
+
+## [2026-06-11] committed | framework
+- Committed: ddpm → frameworks/ddpm.md
+- IRI: pkis:framework:ddpm
