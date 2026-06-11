@@ -13052,3 +13052,12 @@
 ## [2026-06-11] committed | technique
 - Committed: gibbs-sampling → techniques/gibbs-sampling.md
 - IRI: pkis:technique:gibbs-sampling
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: hybrid-monte-carlo (id: 176049a7-d481-4f9e-9ffc-cb317be1021a)
+- Title: Hybrid Monte Carlo (HMC)
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: hybrid-monte-carlo → techniques/hybrid-monte-carlo.md
+- IRI: pkis:technique:hybrid-monte-carlo
