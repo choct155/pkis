@@ -14168,3 +14168,12 @@
 ## [2026-06-11] committed | concept
 - Committed: separable-convolution-kernel → concepts/separable-convolution-kernel.md
 - IRI: pkis:concept:separable-convolution-kernel
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: transpose-convolution (id: 47c9d52b-6cc5-4ef2-a322-0bd77a9108e2)
+- Title: Transpose Convolution (Deconvolution)
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: transpose-convolution → techniques/transpose-convolution.md
+- IRI: pkis:technique:transpose-convolution
