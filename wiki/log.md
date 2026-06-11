@@ -17300,3 +17300,12 @@
 ## [2026-06-11] committed | technique
 - Committed: dirichlet-categorical-conjugate → techniques/dirichlet-categorical-conjugate.md
 - IRI: pkis:technique:dirichlet-categorical-conjugate
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: gaussian-gaussian-conjugate (id: 7007a5a7-ddf2-4e01-950a-2fc83ecd2a0f)
+- Title: Gaussian-Gaussian Conjugate Model (known variance)
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: gaussian-gaussian-conjugate → techniques/gaussian-gaussian-conjugate.md
+- IRI: pkis:technique:gaussian-gaussian-conjugate
