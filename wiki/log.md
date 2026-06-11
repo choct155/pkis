@@ -14555,3 +14555,12 @@
 ## [2026-06-11] committed | concept
 - Committed: nonparametric-encoder → concepts/nonparametric-encoder.md
 - IRI: pkis:concept:nonparametric-encoder
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: linear-manifold-pca (id: 48ca5e25-7f19-4eb6-9bd5-232e81706d59)
+- Title: Linear Manifold Interpretation of PCA
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: linear-manifold-pca → concepts/linear-manifold-pca.md
+- IRI: pkis:concept:linear-manifold-pca

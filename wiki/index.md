@@ -290,6 +290,7 @@
 - [[liu-machine-unlearning-llm-2024]] — Rethinking Machine Unlearning for LLMs: post-training knowledge editing survey (deep-learning, ai-safety) (2026-05-20)
 
 ## Concepts
+- [[linear-manifold-pca]] — Linear Manifold Interpretation of PCA (machine-learning, geometry) (2026-06-11)
 - [[nonparametric-encoder]] — Non-Parametric Encoder (Optimisation-Based Inference) (machine-learning, probabilistic-modeling) (2026-06-11)
 - [[conditional-computation]] — Conditional Computation (Dynamic Structure in Neural Networks) (deep-learning, model-efficiency) (2026-06-11)
 - [[contextual-bandit]] — Contextual Bandit (reinforcement-learning, machine-learning) (2026-06-11)
