@@ -15140,3 +15140,12 @@
 ## [2026-06-11] committed | concept
 - Committed: differentiable-generator-network → concepts/differentiable-generator-network.md
 - IRI: pkis:concept:differentiable-generator-network
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: maximum-mean-discrepancy-training (id: fb314294-a862-49c2-a0ab-d68eac61a3b5)
+- Title: Maximum Mean Discrepancy (MMD) Training
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: maximum-mean-discrepancy-training → techniques/maximum-mean-discrepancy-training.md
+- IRI: pkis:technique:maximum-mean-discrepancy-training

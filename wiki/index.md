@@ -917,6 +917,7 @@
 - [[market-vs-hierarchy]] — Coase/Williamson: transactions governed by price signals (markets) vs. managerial direction (firms) (corporate-finance) (2026-05-20)
 
 ## Techniques
+- [[maximum-mean-discrepancy-training]] — Maximum Mean Discrepancy (MMD) Training (deep-learning, generative-models, kernel-methods) (2026-06-11)
 - [[reinforce-gradient-estimator]] — REINFORCE Gradient Estimator (deep-learning, generative-models, reinforcement-learning, optimisation) (2026-06-11)
 - [[gaussian-bernoulli-rbm]] — Gaussian-Bernoulli RBM (deep-learning, generative-models, energy-based-models) (2026-06-11)
 - [[probabilistic-max-pooling]] — Probabilistic Max Pooling (deep-learning, convolutional-networks, energy-based-models) (2026-06-11)
