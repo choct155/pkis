@@ -1087,6 +1087,7 @@
 - [[market-vs-hierarchy]] — Coase/Williamson: transactions governed by price signals (markets) vs. managerial direction (firms) (corporate-finance) (2026-05-20)
 
 ## Techniques
+- [[latent-space-arithmetic]] — Latent Space Arithmetic (machine-learning, representation-learning, generative-models) (2026-06-11)
 - [[invariant-risk-minimization]] — Invariant Risk Minimization (IRM) (machine-learning, causality) (2026-06-11)
 - [[test-time-adaptation]] — Test-Time Adaptation (TTA) (machine-learning, deep-learning) (2026-06-11)
 - [[distributionally-robust-optimization]] — Distributionally Robust Optimization (DRO) (machine-learning, optimization, statistics) (2026-06-11)

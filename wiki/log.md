@@ -18767,3 +18767,12 @@
 ## [2026-06-11] committed | concept
 - Committed: latent-space-interpolation → concepts/latent-space-interpolation.md
 - IRI: pkis:concept:latent-space-interpolation
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: latent-space-arithmetic (id: 4ce0c95b-d78f-4bb0-ac38-176f4c01b956)
+- Title: Latent Space Arithmetic
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: latent-space-arithmetic → techniques/latent-space-arithmetic.md
+- IRI: pkis:technique:latent-space-arithmetic
