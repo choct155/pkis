@@ -15788,3 +15788,12 @@
 ## [2026-06-11] committed | technique
 - Committed: line-search → techniques/line-search.md
 - IRI: pkis:technique:line-search
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: condition-number-hessian (id: c463abfd-e69d-441a-a141-ae4a571ebb64)
+- Title: Condition Number of Hessian
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: condition-number-hessian → concepts/condition-number-hessian.md
+- IRI: pkis:concept:condition-number-hessian
