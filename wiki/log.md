@@ -16688,3 +16688,12 @@
 ## [2026-06-11] committed | technique
 - Committed: maml → techniques/maml.md
 - IRI: pkis:technique:maml
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: matching-networks (id: 91629970-acfb-4203-968e-93dba633f691)
+- Title: Matching Networks
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: matching-networks → techniques/matching-networks.md
+- IRI: pkis:technique:matching-networks

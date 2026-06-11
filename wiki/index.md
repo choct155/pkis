@@ -990,6 +990,7 @@
 - [[market-vs-hierarchy]] — Coase/Williamson: transactions governed by price signals (markets) vs. managerial direction (firms) (corporate-finance) (2026-05-20)
 
 ## Techniques
+- [[matching-networks]] — Matching Networks (machine-learning, few-shot-learning, meta-learning) (2026-06-11)
 - [[maml]] — Model-Agnostic Meta-Learning (MAML) (machine-learning, meta-learning, few-shot-learning) (2026-06-11)
 - [[label-propagation]] — Label Propagation on Graphs (machine-learning, semi-supervised-learning, graph-methods) (2026-06-11)
 - [[consistency-regularization]] — Consistency Regularization (machine-learning, semi-supervised-learning, deep-learning) (2026-06-11)
