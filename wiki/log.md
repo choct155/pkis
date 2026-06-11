@@ -17930,3 +17930,12 @@
 ## [2026-06-11] committed | concept
 - Committed: variational-free-energy-vfe → concepts/variational-free-energy-vfe.md
 - IRI: pkis:concept:variational-free-energy-vfe
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: amortization-gap (id: 5c50ed3b-d4df-4212-a04d-27bddb9e4089)
+- Title: Amortization Gap
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: amortization-gap → concepts/amortization-gap.md
+- IRI: pkis:concept:amortization-gap
