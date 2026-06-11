@@ -18929,3 +18929,12 @@
 ## [2026-06-11] committed | framework
 - Committed: vq-vae → frameworks/vq-vae.md
 - IRI: pkis:framework:vq-vae
+
+## [2026-06-11] staged | node-stub (framework)
+- Staged: multimodal-vae (id: 8c52e61b-9c65-4959-a589-f5b86012d31d)
+- Title: Multimodal VAE (MVAE)
+- needs_canonical_source: False
+
+## [2026-06-11] committed | framework
+- Committed: multimodal-vae → frameworks/multimodal-vae.md
+- IRI: pkis:framework:multimodal-vae

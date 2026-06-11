@@ -1937,6 +1937,7 @@
 - [[government-debt-valuation-equation]] — FTPL: price level determined by ratio of nominal debt to expected present value of future surpluses (macroeconomics) (2026-05-20)
 
 ## Frameworks
+- [[multimodal-vae]] — Multimodal VAE (MVAE) (machine-learning, multimodal-learning) (2026-06-11)
 - [[vq-vae]] — VQ-VAE (Vector-Quantized VAE) (machine-learning, generative-models, representation-learning) (2026-06-11)
 - [[hierarchical-vae]] — Hierarchical VAE (HVAE) (machine-learning, deep-learning, generative-models) (2026-06-11)
 - [[infovae]] — InfoVAE (machine-learning, variational-inference, information-theory) (2026-06-11)
