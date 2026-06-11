@@ -19352,3 +19352,12 @@
 ## [2026-06-11] committed | concept
 - Committed: dirac-gan → concepts/dirac-gan.md
 - IRI: pkis:concept:dirac-gan
+
+## [2026-06-11] staged | node-stub (framework)
+- Staged: discovery-as-interpretable-representation-learning (id: 54bded8f-861c-408e-9907-1c528ce4670c)
+- Title: Discovery as Interpretable Representation Learning
+- needs_canonical_source: False
+
+## [2026-06-11] committed | framework
+- Committed: discovery-as-interpretable-representation-learning → frameworks/discovery-as-interpretable-representation-learning.md
+- IRI: pkis:framework:discovery-as-interpretable-representation-learning
