@@ -19703,3 +19703,12 @@
 ## [2026-06-11] committed | concept
 - Committed: chinese-restaurant-process → concepts/chinese-restaurant-process.md
 - IRI: pkis:concept:chinese-restaurant-process
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: indian-buffet-process (id: 67c6f267-2bef-49ea-8bb1-c547079c34f2)
+- Title: Indian Buffet Process
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: indian-buffet-process → concepts/indian-buffet-process.md
+- IRI: pkis:concept:indian-buffet-process

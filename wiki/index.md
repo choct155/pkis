@@ -290,6 +290,7 @@
 - [[liu-machine-unlearning-llm-2024]] — Rethinking Machine Unlearning for LLMs: post-training knowledge editing survey (deep-learning, ai-safety) (2026-05-20)
 
 ## Concepts
+- [[indian-buffet-process]] — Indian Buffet Process (machine-learning, statistics, probability) (2026-06-11)
 - [[chinese-restaurant-process]] — Chinese Restaurant Process (probability, machine-learning, statistics) (2026-06-11)
 - [[dirichlet-process]] — Dirichlet Process (statistics, machine-learning, probability) (2026-06-11)
 - [[stochastic-process-as-prior]] — Stochastic Process as Prior (probability, machine-learning) (2026-06-11)
