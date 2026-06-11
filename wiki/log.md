@@ -17246,3 +17246,12 @@
 ## [2026-06-11] committed | technique
 - Committed: bayesian-posterior-predictive → techniques/bayesian-posterior-predictive.md
 - IRI: pkis:technique:bayesian-posterior-predictive
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: de-finetti-exchangeability (id: 1efdfb0c-e561-43f7-90f4-2a0e515582dd)
+- Title: Exchangeability (de Finetti)
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: de-finetti-exchangeability → concepts/de-finetti-exchangeability.md
+- IRI: pkis:concept:de-finetti-exchangeability
