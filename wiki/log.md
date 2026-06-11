@@ -17318,3 +17318,12 @@
 ## [2026-06-11] committed | concept
 - Committed: equivalent-sample-size → concepts/equivalent-sample-size.md
 - IRI: pkis:concept:equivalent-sample-size
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: frequentist-confidence-interval (id: 6d9ce41a-cd2d-4ac6-8406-a86b199f09bc)
+- Title: Frequentist Confidence Interval
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: frequentist-confidence-interval → concepts/frequentist-confidence-interval.md
+- IRI: pkis:concept:frequentist-confidence-interval
