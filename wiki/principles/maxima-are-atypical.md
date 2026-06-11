@@ -33,6 +33,8 @@ title: Maxima Are Atypical (Pitfalls of ML and MAP)
 understanding: 0
 uses:
 - typical-set
+illustrated-by:
+- typical-set-explainer
 ---
 
 ## Definition

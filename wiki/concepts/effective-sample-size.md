@@ -36,6 +36,8 @@ title: Effective Sample Size (MCMC)
 understanding: 0
 uses:
 - monte-carlo-estimator
+illustrated-by:
+- mcmc-trace-viz
 ---
 
 ## Definition

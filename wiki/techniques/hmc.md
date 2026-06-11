@@ -46,7 +46,9 @@ understanding: 2
 uses:
 - hamiltonian-classical-mechanics
 - typical-set
-viz: hmc
+illustrated-by:
+- typical-set-explainer
+- hmc-explainer
 ---
 
 ## Definition

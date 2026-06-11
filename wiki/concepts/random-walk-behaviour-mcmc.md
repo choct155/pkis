@@ -33,6 +33,9 @@ tags:
 - efficiency
 title: Random-Walk Behaviour in MCMC
 understanding: 0
+illustrated-by:
+- hmc-explainer
+- mcmc-trace-viz
 ---
 
 ## Definition

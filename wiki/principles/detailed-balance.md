@@ -34,6 +34,8 @@ tags:
 - mackay
 title: Detailed Balance
 understanding: 0
+illustrated-by:
+- mcmc-trace-viz
 ---
 
 ## Definition

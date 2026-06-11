@@ -35,6 +35,8 @@ title: Metropolis Algorithm
 understanding: 0
 uses:
 - log-scale-computation
+illustrated-by:
+- mcmc-trace-viz
 ---
 
 An MCMC algorithm for sampling from p(θ|Y) ∝ p(Y|θ)p(θ) by constructing a Markov chain via proposal-acceptance: propose θ* from a symmetric proposal q(θ*|θ^{(t)}), accept with probability min(1, p(θ*|Y)/p(θ^{(t)}|Y)), otherwise stay at θ^{(t)}. The chain's stationary distribution is the target posterior, with correctness guaranteed by detailed balance.

@@ -54,6 +54,8 @@ uses:
 - coordinate-ascent-vi
 - conditional-independence
 - kl-divergence
+illustrated-by:
+- typical-set-explainer
 ---
 
 A variational inference approach that assumes the variational posterior fully factorizes over the latent variables: q(z) = ∏_j q_j(z_j), with each factor governed independently; this independence assumption makes ELBO optimization tractable via coordinate ascent but can systematically underestimate posterior variance.

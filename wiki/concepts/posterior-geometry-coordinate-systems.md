@@ -36,6 +36,8 @@ tags:
 - change-of-variables
 title: Posterior Geometry and Coordinate Systems
 understanding: 0
+illustrated-by:
+- hmc-explainer
 ---
 
 ## Definition

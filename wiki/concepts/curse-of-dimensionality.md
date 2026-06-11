@@ -23,6 +23,8 @@ tags:
 - high-dimensional-statistics
 title: Curse of Dimensionality
 understanding: 0
+illustrated-by:
+- typical-set-explainer
 ---
 
 ## Reading Path

@@ -48,6 +48,8 @@ title: Gibbs Sampler
 understanding: 2
 uses:
 - markov-blanket
+illustrated-by:
+- mcmc-trace-viz
 ---
 
 An iterative MCMC algorithm for sampling from a multivariate posterior p(θ_1, ..., θ_d | Y) by cycling through the full conditional distributions: at step t+1, draw θ_i^{(t+1)} from p(θ_i | θ_{-i}^{(t)}, Y) for each i in sequence. Under regularity conditions, the generated chain is ergodic with the joint posterior as its stationary distribution.
