@@ -18236,3 +18236,12 @@
 ## [2026-06-11] committed | technique
 - Committed: expected-calibration-error → techniques/expected-calibration-error.md
 - IRI: pkis:technique:expected-calibration-error
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: temperature-scaling (id: 4430d26a-fbb6-4336-8ca7-637679dc3a8e)
+- Title: Temperature Scaling
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: temperature-scaling → techniques/temperature-scaling.md
+- IRI: pkis:technique:temperature-scaling
