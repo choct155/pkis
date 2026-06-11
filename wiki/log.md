@@ -15959,3 +15959,12 @@
 ## [2026-06-11] committed | result
 - Committed: logistic-regression-nll-convexity → results/logistic-regression-nll-convexity.md
 - IRI: pkis:result:logistic-regression-nll-convexity
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: softmax-jacobian (id: 6aaf0ce5-5bfd-409f-841e-d8b0c4820548)
+- Title: Softmax Jacobian
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: softmax-jacobian → techniques/softmax-jacobian.md
+- IRI: pkis:technique:softmax-jacobian
