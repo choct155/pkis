@@ -18281,3 +18281,12 @@
 ## [2026-06-11] committed | framework
 - Committed: generalized-linear-model → frameworks/generalized-linear-model.md
 - IRI: pkis:framework:generalized-linear-model
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: normal-inverse-gamma-prior (id: d004826b-90bd-4ee1-bda3-a6fc1bd23d71)
+- Title: Normal-Inverse-Gamma (NIG) Prior
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: normal-inverse-gamma-prior → concepts/normal-inverse-gamma-prior.md
+- IRI: pkis:concept:normal-inverse-gamma-prior

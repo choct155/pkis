@@ -290,6 +290,7 @@
 - [[liu-machine-unlearning-llm-2024]] — Rethinking Machine Unlearning for LLMs: post-training knowledge editing survey (deep-learning, ai-safety) (2026-05-20)
 
 ## Concepts
+- [[normal-inverse-gamma-prior]] — Normal-Inverse-Gamma (NIG) Prior (statistics, bayesian-inference) (2026-06-11)
 - [[predictive-model]] — Predictive Model (Discriminative / Regression) (machine-learning, statistics) (2026-06-11)
 - [[incremental-importance-weights]] — Incremental Importance Weights (statistics, machine-learning) (2026-06-11)
 - [[path-degeneracy]] — Path Degeneracy in Particle Filtering (statistics, machine-learning) (2026-06-11)
