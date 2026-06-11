@@ -18803,3 +18803,12 @@
 ## [2026-06-11] committed | concept
 - Committed: language-model-perplexity → concepts/language-model-perplexity.md
 - IRI: pkis:concept:language-model-perplexity
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: uniform-dequantization (id: 35b11d33-0e08-45de-a448-92ab35a8b034)
+- Title: Uniform Dequantization
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: uniform-dequantization → techniques/uniform-dequantization.md
+- IRI: pkis:technique:uniform-dequantization
