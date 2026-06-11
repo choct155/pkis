@@ -990,6 +990,7 @@
 - [[market-vs-hierarchy]] — Coase/Williamson: transactions governed by price signals (markets) vs. managerial direction (firms) (corporate-finance) (2026-05-20)
 
 ## Techniques
+- [[consistency-regularization]] — Consistency Regularization (machine-learning, semi-supervised-learning, deep-learning) (2026-06-11)
 - [[entropy-minimization-ssl]] — Entropy Minimization for Semi-Supervised Learning (machine-learning, semi-supervised-learning, information-theory) (2026-06-11)
 - [[pseudo-labeling]] — Pseudo-Labeling (Self-Training for SSL) (machine-learning, semi-supervised-learning) (2026-06-11)
 - [[clip]] — CLIP (Contrastive Language–Image Pre-training) (machine-learning, computer-vision, nlp, multimodal) (2026-06-11)

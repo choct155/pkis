@@ -16661,3 +16661,12 @@
 ## [2026-06-11] committed | technique
 - Committed: entropy-minimization-ssl → techniques/entropy-minimization-ssl.md
 - IRI: pkis:technique:entropy-minimization-ssl
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: consistency-regularization (id: 3dcff26f-2155-462e-a489-e0f814837afa)
+- Title: Consistency Regularization
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: consistency-regularization → techniques/consistency-regularization.md
+- IRI: pkis:technique:consistency-regularization
