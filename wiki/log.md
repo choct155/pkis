@@ -15149,3 +15149,12 @@
 ## [2026-06-11] committed | technique
 - Committed: maximum-mean-discrepancy-training → techniques/maximum-mean-discrepancy-training.md
 - IRI: pkis:technique:maximum-mean-discrepancy-training
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: autoregressive-generative-network (id: fa3241ca-2582-4380-9e56-aca42875b8ff)
+- Title: Auto-Regressive Generative Network (NADE / FVBN)
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: autoregressive-generative-network → concepts/autoregressive-generative-network.md
+- IRI: pkis:concept:autoregressive-generative-network
