@@ -18857,3 +18857,12 @@
 ## [2026-06-11] committed | concept
 - Committed: generative-design → concepts/generative-design.md
 - IRI: pkis:concept:generative-design
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: aggregated-posterior (id: 83ba4130-2ef4-4c64-8776-77f9402a3471)
+- Title: Aggregated Posterior (Inference Marginal)
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: aggregated-posterior → concepts/aggregated-posterior.md
+- IRI: pkis:concept:aggregated-posterior
