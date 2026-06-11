@@ -18704,3 +18704,12 @@
 ## [2026-06-11] committed | framework
 - Committed: multitask-learning → frameworks/multitask-learning.md
 - IRI: pkis:framework:multitask-learning
+
+## [2026-06-11] staged | node-stub (framework)
+- Staged: domain-generalization (id: c76e6578-2e22-494b-9051-ef7acffd81dd)
+- Title: Domain Generalization
+- needs_canonical_source: False
+
+## [2026-06-11] committed | framework
+- Committed: domain-generalization → frameworks/domain-generalization.md
+- IRI: pkis:framework:domain-generalization
