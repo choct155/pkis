@@ -13196,3 +13196,12 @@
 ## [2026-06-11] committed | concept
 - Committed: committee-method → concepts/committee-method.md
 - IRI: pkis:concept:committee-method
+
+## [2026-06-11] staged | node-stub (result)
+- Staged: committee-error-bound (id: d5b6e65a-cefa-44c2-a546-5870cd506e16)
+- Title: Committee Error Bound
+- needs_canonical_source: False
+
+## [2026-06-11] committed | result
+- Committed: committee-error-bound → results/committee-error-bound.md
+- IRI: pkis:result:committee-error-bound
