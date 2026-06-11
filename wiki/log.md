@@ -13781,3 +13781,12 @@
 ## [2026-06-11] committed | concept
 - Committed: deep-feedforward-network → concepts/deep-feedforward-network.md
 - IRI: pkis:concept:deep-feedforward-network
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: relu (id: 3ba1a506-a43a-4223-a340-c5f59f6774d8)
+- Title: Rectified Linear Unit (ReLU)
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: relu → concepts/relu.md
+- IRI: pkis:concept:relu
