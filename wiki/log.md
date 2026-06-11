@@ -16031,3 +16031,12 @@
 ## [2026-06-11] committed | technique
 - Committed: feature-standardisation → techniques/feature-standardisation.md
 - IRI: pkis:technique:feature-standardisation
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: ordinary-least-squares (id: c566d008-fd94-45b1-80d9-9c22bd77bb36)
+- Title: Ordinary Least Squares (OLS)
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: ordinary-least-squares → techniques/ordinary-least-squares.md
+- IRI: pkis:technique:ordinary-least-squares
