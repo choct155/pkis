@@ -12899,3 +12899,12 @@
 ## [2026-06-11] committed | concept
 - Committed: mixture-of-bernoulli-distributions → concepts/mixture-of-bernoulli-distributions.md
 - IRI: pkis:concept:mixture-of-bernoulli-distributions
+
+## [2026-06-11] staged | node-stub (result)
+- Staged: k-means-as-em-limit (id: 981a0c92-74d8-4f68-8cc3-5a14fbad8a85)
+- Title: K-Means as a Limit of Gaussian Mixture EM
+- needs_canonical_source: False
+
+## [2026-06-11] committed | result
+- Committed: k-means-as-em-limit → results/k-means-as-em-limit.md
+- IRI: pkis:result:k-means-as-em-limit
