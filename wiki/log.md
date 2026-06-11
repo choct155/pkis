@@ -13610,3 +13610,12 @@
 ## [2026-06-11] committed | concept
 - Committed: condition-number → concepts/condition-number.md
 - IRI: pkis:concept:condition-number
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: critical-points-saddle-points (id: 19caf60e-e412-4098-ae3a-b8ad6a30439c)
+- Title: Critical Points and Saddle Points
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: critical-points-saddle-points → concepts/critical-points-saddle-points.md
+- IRI: pkis:concept:critical-points-saddle-points

@@ -290,6 +290,7 @@
 - [[liu-machine-unlearning-llm-2024]] — Rethinking Machine Unlearning for LLMs: post-training knowledge editing survey (deep-learning, ai-safety) (2026-05-20)
 
 ## Concepts
+- [[critical-points-saddle-points]] — Critical Points and Saddle Points (optimization, machine-learning) (2026-06-11)
 - [[condition-number]] — Condition Number (numerical-computation, linear-algebra, optimization) (2026-06-11)
 - [[numerical-underflow-overflow]] — Numerical Underflow and Overflow (numerical-computation, machine-learning) (2026-06-11)
 - [[structured-probabilistic-model]] — Structured Probabilistic Model (Graphical Model) (machine-learning, probability-theory) (2026-06-11)
