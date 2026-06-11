@@ -20225,3 +20225,12 @@
 ## [2026-06-11] committed | concept
 - Committed: m-bias-bias-amplification → concepts/m-bias-bias-amplification.md
 - IRI: pkis:concept:m-bias-bias-amplification
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: potential-outcomes-notation (id: b145cb98-eba5-4fbe-bf59-6bd4b9ca58fb)
+- Title: Potential Outcomes and Counterfactual Notation
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: potential-outcomes-notation → concepts/potential-outcomes-notation.md
+- IRI: pkis:concept:potential-outcomes-notation
