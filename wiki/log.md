@@ -14411,3 +14411,12 @@
 ## [2026-06-11] committed | technique
 - Committed: local-contrast-normalization → techniques/local-contrast-normalization.md
 - IRI: pkis:technique:local-contrast-normalization
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: attention-mechanism (id: b80de8a0-613f-497a-be5b-b257b9195111)
+- Title: Attention Mechanism (Soft Alignment)
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: attention-mechanism → techniques/attention-mechanism.md
+- IRI: pkis:technique:attention-mechanism
