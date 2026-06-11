@@ -15347,3 +15347,12 @@
 ## [2026-06-11] committed | concept
 - Committed: exponential-family-distributions → concepts/exponential-family-distributions.md
 - IRI: pkis:concept:exponential-family-distributions
+
+## [2026-06-11] staged | node-stub (result)
+- Staged: log-partition-cumulant-generating (id: c277237b-c291-4603-8e6e-d1c831f2424c)
+- Title: Log Partition Function Generates Cumulants
+- needs_canonical_source: False
+
+## [2026-06-11] committed | result
+- Committed: log-partition-cumulant-generating → results/log-partition-cumulant-generating.md
+- IRI: pkis:result:log-partition-cumulant-generating

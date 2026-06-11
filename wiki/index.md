@@ -1443,6 +1443,7 @@
 - [[constraint-propagation]] — Reducing a constraint satisfaction problem by iteratively eliminating inconsistent values from variable domains (knowledge-representation) (2026-05-20)
 
 ## Results
+- [[log-partition-cumulant-generating]] — Log Partition Function Generates Cumulants (probability, statistics) (2026-06-11)
 - [[bayes-rule-for-gaussians]] — Bayes Rule for Gaussians (probability, statistics, machine-learning) (2026-06-11)
 - [[mvn-marginal-conditional]] — MVN Marginal and Conditional Distributions (probability, statistics) (2026-06-11)
 - [[depth-improves-mcmc-mixing]] — Depth Improves MCMC Mixing in Latent Variable Models (machine-learning, deep-learning, probabilistic-inference) (2026-06-11)
