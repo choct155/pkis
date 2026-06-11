@@ -13538,3 +13538,12 @@
 ## [2026-06-11] committed | concept
 - Committed: empirical-distribution → concepts/empirical-distribution.md
 - IRI: pkis:concept:empirical-distribution
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: laplace-distribution (id: e2271860-c253-4251-b7ce-b64995157a99)
+- Title: Laplace Distribution
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: laplace-distribution → concepts/laplace-distribution.md
+- IRI: pkis:concept:laplace-distribution

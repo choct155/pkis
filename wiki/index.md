@@ -290,6 +290,7 @@
 - [[liu-machine-unlearning-llm-2024]] — Rethinking Machine Unlearning for LLMs: post-training knowledge editing survey (deep-learning, ai-safety) (2026-05-20)
 
 ## Concepts
+- [[laplace-distribution]] — Laplace Distribution (probability-theory, statistics, machine-learning) (2026-06-11)
 - [[empirical-distribution]] — Empirical Distribution (statistics, machine-learning) (2026-06-11)
 - [[dirac-delta-distribution]] — Dirac Delta Distribution (probability-theory, machine-learning) (2026-06-11)
 - [[multinoulli-distribution]] — Multinoulli (Categorical) Distribution (probability-theory, machine-learning) (2026-06-11)
