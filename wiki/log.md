@@ -13133,3 +13133,12 @@
 ## [2026-06-11] committed | concept
 - Committed: hmm-parameters → concepts/hmm-parameters.md
 - IRI: pkis:concept:hmm-parameters
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: baum-welch-algorithm (id: be6865dc-e9f7-4517-8abc-badc6b55d480)
+- Title: Baum-Welch Algorithm (EM for HMM)
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: baum-welch-algorithm → techniques/baum-welch-algorithm.md
+- IRI: pkis:technique:baum-welch-algorithm
