@@ -14789,3 +14789,12 @@
 ## [2026-06-11] committed | concept
 - Committed: structure-learning → concepts/structure-learning.md
 - IRI: pkis:concept:structure-learning
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: context-specific-independence (id: c4da61ee-eff8-41a2-a440-89a7d2982805)
+- Title: Context-Specific Independence
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: context-specific-independence → concepts/context-specific-independence.md
+- IRI: pkis:concept:context-specific-independence
