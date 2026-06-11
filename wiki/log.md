@@ -18182,3 +18182,12 @@
 ## [2026-06-11] committed | technique
 - Committed: likelihood-tempering-smc → techniques/likelihood-tempering-smc.md
 - IRI: pkis:technique:likelihood-tempering-smc
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: data-tempering-ibis (id: 2a7c360f-dfd3-4053-b085-1a8dd2360637)
+- Title: Data Tempering / IBIS
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: data-tempering-ibis → techniques/data-tempering-ibis.md
+- IRI: pkis:technique:data-tempering-ibis
