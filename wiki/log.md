@@ -16103,3 +16103,12 @@
 ## [2026-06-11] committed | concept
 - Committed: regularization-path → concepts/regularization-path.md
 - IRI: pkis:concept:regularization-path
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: group-lasso (id: 351dbc76-e7f9-45d7-9053-b05610bf91f2)
+- Title: Group Lasso
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: group-lasso → techniques/group-lasso.md
+- IRI: pkis:technique:group-lasso

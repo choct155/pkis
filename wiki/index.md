@@ -971,6 +971,7 @@
 - [[market-vs-hierarchy]] — Coase/Williamson: transactions governed by price signals (markets) vs. managerial direction (firms) (corporate-finance) (2026-05-20)
 
 ## Techniques
+- [[group-lasso]] — Group Lasso (statistics, machine learning) (2026-06-11)
 - [[lasso-regression]] — Lasso Regression ($\ell_1$-Regularised Linear Regression) (statistics, machine learning) (2026-06-11)
 - [[ordinary-least-squares]] — Ordinary Least Squares (OLS) (statistics, machine learning) (2026-06-11)
 - [[feature-standardisation]] — Feature Standardisation (machine-learning, statistics) (2026-06-11)
