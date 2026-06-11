@@ -19955,3 +19955,12 @@
 ## [2026-06-11] committed | technique
 - Committed: explanation-sanity-check → techniques/explanation-sanity-check.md
 - IRI: pkis:technique:explanation-sanity-check
+
+## [2026-06-11] staged | node-stub (framework)
+- Staged: statistical-decision-theory (id: c02418c2-bd4b-4a3a-a3e4-4f9b396bcc30)
+- Title: Statistical Decision Theory (Bayesian & Frequentist)
+- needs_canonical_source: False
+
+## [2026-06-11] committed | framework
+- Committed: statistical-decision-theory → frameworks/statistical-decision-theory.md
+- IRI: pkis:framework:statistical-decision-theory
