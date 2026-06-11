@@ -13430,3 +13430,12 @@
 ## [2026-06-11] committed | concept
 - Committed: lp-norms-frobenius → concepts/lp-norms-frobenius.md
 - IRI: pkis:concept:lp-norms-frobenius
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: orthogonal-matrix (id: 0269aae6-e548-47eb-8ffc-512d88549320)
+- Title: Orthogonal Matrix
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: orthogonal-matrix → concepts/orthogonal-matrix.md
+- IRI: pkis:concept:orthogonal-matrix

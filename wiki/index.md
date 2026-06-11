@@ -290,6 +290,7 @@
 - [[liu-machine-unlearning-llm-2024]] — Rethinking Machine Unlearning for LLMs: post-training knowledge editing survey (deep-learning, ai-safety) (2026-05-20)
 
 ## Concepts
+- [[orthogonal-matrix]] — Orthogonal Matrix (linear-algebra) (2026-06-11)
 - [[lp-norms-frobenius]] — Lp Norms and Frobenius Norm (linear-algebra, machine-learning) (2026-06-11)
 - [[column-space-and-span]] — Column Space and Span (linear-algebra) (2026-06-11)
 - [[matrix-inverse]] — Matrix Inverse and Singular Matrix (linear-algebra) (2026-06-11)
