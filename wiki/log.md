@@ -14267,3 +14267,12 @@
 ## [2026-06-11] committed | concept
 - Committed: leaky-units-multiscale-rnn → concepts/leaky-units-multiscale-rnn.md
 - IRI: pkis:concept:leaky-units-multiscale-rnn
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: rnn-unfolding (id: 4ec1de59-35ae-4cad-9460-86adb19079ad)
+- Title: RNN Computational Graph Unfolding
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: rnn-unfolding → concepts/rnn-unfolding.md
+- IRI: pkis:concept:rnn-unfolding
