@@ -1368,6 +1368,7 @@
 - [[government-debt-valuation-equation]] — FTPL: price level determined by ratio of nominal debt to expected present value of future surpluses (macroeconomics) (2026-05-20)
 
 ## Frameworks
+- [[connectionism]] — Connectionism (cognitive-science, artificial-intelligence) (2026-06-11)
 - [[deep-learning]] — Deep Learning (machine-learning, artificial-intelligence) (2026-06-11)
 - [[mixtures-of-experts]] — Mixtures of Experts (machine-learning, statistics) (2026-06-11)
 - [[cart]] — CART (Classification and Regression Trees) (machine-learning, statistics) (2026-06-11)

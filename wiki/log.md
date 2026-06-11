@@ -13322,3 +13322,12 @@
 ## [2026-06-11] committed | concept
 - Committed: factors-of-variation → concepts/factors-of-variation.md
 - IRI: pkis:concept:factors-of-variation
+
+## [2026-06-11] staged | node-stub (framework)
+- Staged: connectionism (id: 1f5befe1-0686-4b69-9abe-c77ed70db128)
+- Title: Connectionism
+- needs_canonical_source: False
+
+## [2026-06-11] committed | framework
+- Committed: connectionism → frameworks/connectionism.md
+- IRI: pkis:framework:connectionism
