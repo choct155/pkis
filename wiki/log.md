@@ -17948,3 +17948,12 @@
 ## [2026-06-11] committed | technique
 - Committed: reparameterized-vi → techniques/reparameterized-vi.md
 - IRI: pkis:technique:reparameterized-vi
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: variational-bayes (id: 6d808f0f-c2c8-4c8b-a45f-abc03c6b2ea6)
+- Title: Variational Bayes
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: variational-bayes → concepts/variational-bayes.md
+- IRI: pkis:concept:variational-bayes

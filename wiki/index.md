@@ -290,6 +290,7 @@
 - [[liu-machine-unlearning-llm-2024]] — Rethinking Machine Unlearning for LLMs: post-training knowledge editing survey (deep-learning, ai-safety) (2026-05-20)
 
 ## Concepts
+- [[variational-bayes]] — Variational Bayes (machine-learning, bayesian-inference) (2026-06-11)
 - [[amortization-gap]] — Amortization Gap (machine-learning, bayesian-inference) (2026-06-11)
 - [[variational-free-energy-vfe]] — Variational Free Energy (machine-learning, bayesian-inference, physics) (2026-06-11)
 - [[mean-field-approximation-vi]] — Mean Field Approximation (Variational) (machine-learning, bayesian-inference) (2026-06-11)
