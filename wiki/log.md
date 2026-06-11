@@ -17822,3 +17822,12 @@
 ## [2026-06-11] committed | technique
 - Committed: sum-product-algorithm-trees → techniques/sum-product-algorithm-trees.md
 - IRI: pkis:technique:sum-product-algorithm-trees
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: max-product-belief-propagation (id: 28bd86ee-20d4-430f-a165-4775f24affd2)
+- Title: Max-Product Belief Propagation
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: max-product-belief-propagation → techniques/max-product-belief-propagation.md
+- IRI: pkis:technique:max-product-belief-propagation
