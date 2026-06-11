@@ -12854,3 +12854,12 @@
 ## [2026-06-11] committed | technique
 - Committed: k-means-algorithm → techniques/k-means-algorithm.md
 - IRI: pkis:technique:k-means-algorithm
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: responsibilities-mixture-models (id: c3703c39-ca99-44b9-96d4-74b0cf8e9514)
+- Title: Responsibilities in Mixture Models
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: responsibilities-mixture-models → concepts/responsibilities-mixture-models.md
+- IRI: pkis:concept:responsibilities-mixture-models

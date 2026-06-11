@@ -290,6 +290,7 @@
 - [[liu-machine-unlearning-llm-2024]] — Rethinking Machine Unlearning for LLMs: post-training knowledge editing survey (deep-learning, ai-safety) (2026-05-20)
 
 ## Concepts
+- [[responsibilities-mixture-models]] — Responsibilities in Mixture Models (machine-learning, statistics, probabilistic-modeling) (2026-06-11)
 - [[plate-notation]] — Plate Notation (probabilistic-graphical-models, machine-learning) (2026-06-11)
 - [[linear-gaussian-graphical-model]] — Linear-Gaussian Graphical Model (probabilistic-graphical-models, machine-learning, statistics) (2026-06-11)
 - [[markov-blanket-directed]] — Markov Blanket in Directed Graphs (probabilistic-graphical-models, machine-learning, statistics) (2026-06-11)
