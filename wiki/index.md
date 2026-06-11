@@ -290,6 +290,7 @@
 - [[liu-machine-unlearning-llm-2024]] — Rethinking Machine Unlearning for LLMs: post-training knowledge editing survey (deep-learning, ai-safety) (2026-05-20)
 
 ## Concepts
+- [[mercer-kernel]] — Mercer Kernel (Positive Definite Kernel) (machine-learning, statistics, functional-analysis) (2026-06-11)
 - [[hard-negative-mining]] — Hard Negative Mining (machine-learning, metric-learning) (2026-06-11)
 - [[open-set-recognition]] — Open-Set Recognition and Novelty Detection (machine-learning) (2026-06-11)
 - [[self-attention]] — Self-Attention (machine-learning, deep-learning, nlp) (2026-06-11)

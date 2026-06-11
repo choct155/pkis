@@ -16490,3 +16490,12 @@
 ## [2026-06-11] committed | concept
 - Committed: hard-negative-mining → concepts/hard-negative-mining.md
 - IRI: pkis:concept:hard-negative-mining
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: mercer-kernel (id: afe305c9-b3fd-4992-99c3-04be4ca091e8)
+- Title: Mercer Kernel (Positive Definite Kernel)
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: mercer-kernel → concepts/mercer-kernel.md
+- IRI: pkis:concept:mercer-kernel
