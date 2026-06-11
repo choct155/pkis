@@ -13970,3 +13970,12 @@
 ## [2026-06-11] committed | concept
 - Committed: surrogate-loss-function → concepts/surrogate-loss-function.md
 - IRI: pkis:concept:surrogate-loss-function
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: sgd-momentum (id: b67f08cd-9093-4497-9fa4-d3e83a42e3e3)
+- Title: SGD with Momentum
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: sgd-momentum → techniques/sgd-momentum.md
+- IRI: pkis:technique:sgd-momentum

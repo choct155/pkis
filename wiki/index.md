@@ -859,6 +859,7 @@
 - [[market-vs-hierarchy]] — Coase/Williamson: transactions governed by price signals (markets) vs. managerial direction (firms) (corporate-finance) (2026-05-20)
 
 ## Techniques
+- [[sgd-momentum]] — SGD with Momentum (machine-learning, optimization, deep-learning) (2026-06-11)
 - [[adversarial-training-regularization]] — Adversarial Training (machine-learning, deep-learning, regularization, robustness) (2026-06-11)
 - [[multi-task-learning]] — Multi-Task Learning (machine-learning, deep-learning, regularization) (2026-06-11)
 - [[dataset-augmentation]] — Dataset Augmentation (machine-learning, deep-learning, regularization, computer-vision) (2026-06-11)
