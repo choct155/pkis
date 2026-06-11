@@ -16265,3 +16265,12 @@
 ## [2026-06-11] committed | technique
 - Committed: dilated-convolution → techniques/dilated-convolution.md
 - IRI: pkis:technique:dilated-convolution
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: transposed-convolution (id: 63dae5b9-df74-421e-b87d-a850d131ef1c)
+- Title: Transposed Convolution (Deconvolution)
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: transposed-convolution → techniques/transposed-convolution.md
+- IRI: pkis:technique:transposed-convolution
