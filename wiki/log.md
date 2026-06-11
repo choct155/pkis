@@ -24746,3 +24746,12 @@
 ## [2026-06-11] committed | framework
 - Committed: ddpm → frameworks/ddpm.md
 - IRI: pkis:framework:ddpm
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: diffusion-noise-schedule (id: 609c470a-4ec5-4d38-89ef-3340dabf7b93)
+- Title: Diffusion Noise Schedule
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: diffusion-noise-schedule → concepts/diffusion-noise-schedule.md
+- IRI: pkis:concept:diffusion-noise-schedule
