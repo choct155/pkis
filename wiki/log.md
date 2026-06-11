@@ -12206,3 +12206,12 @@
 ## [2026-06-11] committed | concept
 - Committed: bernoulli-distribution → concepts/bernoulli-distribution.md
 - IRI: pkis:concept:bernoulli-distribution
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: multinomial-distribution (id: 89a19862-aedf-4a8d-87cc-84a85116f6b8)
+- Title: Multinomial Distribution
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: multinomial-distribution → concepts/multinomial-distribution.md
+- IRI: pkis:concept:multinomial-distribution
