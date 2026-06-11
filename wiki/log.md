@@ -17903,3 +17903,12 @@
 ## [2026-06-11] committed | technique
 - Committed: svi → techniques/svi.md
 - IRI: pkis:technique:svi
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: amortized-vi (id: 3eb5b411-41b6-4c2f-b6d0-1dd942b84cda)
+- Title: Amortized Variational Inference
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: amortized-vi → techniques/amortized-vi.md
+- IRI: pkis:technique:amortized-vi
