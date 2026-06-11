@@ -12971,3 +12971,12 @@
 ## [2026-06-11] committed | technique
 - Committed: variational-message-passing → techniques/variational-message-passing.md
 - IRI: pkis:technique:variational-message-passing
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: local-variational-bound-sigmoid (id: 70f989d9-ee33-4268-96e6-f1587ba4d2d3)
+- Title: Local Variational Bound for Logistic Sigmoid
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: local-variational-bound-sigmoid → techniques/local-variational-bound-sigmoid.md
+- IRI: pkis:technique:local-variational-bound-sigmoid

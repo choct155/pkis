@@ -797,6 +797,7 @@
 - [[market-vs-hierarchy]] — Coase/Williamson: transactions governed by price signals (markets) vs. managerial direction (firms) (corporate-finance) (2026-05-20)
 
 ## Techniques
+- [[local-variational-bound-sigmoid]] — Local Variational Bound for Logistic Sigmoid (machine-learning, approximate-inference) (2026-06-11)
 - [[variational-message-passing]] — Variational Message Passing (machine-learning, probabilistic-graphical-models) (2026-06-11)
 - [[variational-em]] — Variational Bayesian EM (VB-EM) (machine-learning, Bayesian-inference) (2026-06-11)
 - [[mean-field-variational-inference]] — Mean-Field Variational Inference (Factorized VI) (machine-learning, Bayesian-inference, approximate-inference) (2026-06-11)
