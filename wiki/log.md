@@ -12084,3 +12084,17 @@
 
 ## [2026-06-09] edit | edit_node
 - pkis:concept:typical-set: fields=[] sections=['Geometric face']
+
+## [2026-06-10] staged | source-stub
+- Staged: authprobe (id: fefc85b7-4ed6-4e01-a8de-28d6ed9fdf6b)
+- Title: __auth_probe__
+- Enrichment: minimal
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: polynomial-curve-fitting (id: 2954b69c-1e9f-4e78-b65d-33cbc43ae24f)
+- Title: Polynomial Curve Fitting
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: polynomial-curve-fitting → techniques/polynomial-curve-fitting.md
+- IRI: pkis:technique:polynomial-curve-fitting

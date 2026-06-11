@@ -752,6 +752,7 @@
 - [[market-vs-hierarchy]] — Coase/Williamson: transactions governed by price signals (markets) vs. managerial direction (firms) (corporate-finance) (2026-05-20)
 
 ## Techniques
+- [[polynomial-curve-fitting]] — Polynomial Curve Fitting (machine-learning, statistics) (2026-06-11)
 - [[fused-lasso]] — Fused Lasso (statistical-learning, optimization) (2026-06-09)
 - [[supervised-principal-components]] — Supervised Principal Components (statistical-learning) (2026-06-09)
 - [[regularized-discriminant-analysis]] — Regularized Discriminant Analysis (RDA) (statistical-learning) (2026-06-09)
