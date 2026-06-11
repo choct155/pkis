@@ -16364,3 +16364,12 @@
 ## [2026-06-11] committed | concept
 - Committed: self-attention → concepts/self-attention.md
 - IRI: pkis:concept:self-attention
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: sinusoidal-positional-encoding (id: 6bf03e9f-5bdb-420b-b49c-1d8c4fe3a14e)
+- Title: Positional Encoding (Sinusoidal)
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: sinusoidal-positional-encoding → techniques/sinusoidal-positional-encoding.md
+- IRI: pkis:technique:sinusoidal-positional-encoding
