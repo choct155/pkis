@@ -14447,3 +14447,12 @@
 ## [2026-06-11] committed | framework
 - Committed: collaborative-filtering → frameworks/collaborative-filtering.md
 - IRI: pkis:framework:collaborative-filtering
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: contextual-bandit (id: e42cd7c5-bdc7-4fb0-9caf-f1bce3905806)
+- Title: Contextual Bandit
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: contextual-bandit → concepts/contextual-bandit.md
+- IRI: pkis:concept:contextual-bandit
