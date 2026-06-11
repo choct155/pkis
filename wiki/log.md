@@ -14690,3 +14690,12 @@
 ## [2026-06-11] committed | concept
 - Committed: disentangled-representation → concepts/disentangled-representation.md
 - IRI: pkis:concept:disentangled-representation
+
+## [2026-06-11] staged | node-stub (framework)
+- Staged: transfer-learning-domain-adaptation (id: f2e5aacf-77eb-4fd3-8411-a28acb749e4e)
+- Title: Transfer Learning and Domain Adaptation
+- needs_canonical_source: False
+
+## [2026-06-11] committed | framework
+- Committed: transfer-learning-domain-adaptation → frameworks/transfer-learning-domain-adaptation.md
+- IRI: pkis:framework:transfer-learning-domain-adaptation
