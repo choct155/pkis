@@ -16751,3 +16751,12 @@
 ## [2026-06-11] committed | technique
 - Committed: canonical-correlation-analysis → techniques/canonical-correlation-analysis.md
 - IRI: pkis:technique:canonical-correlation-analysis
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: mixture-of-factor-analyzers (id: e5e4c6e8-0288-4073-9a18-982646848680)
+- Title: Mixture of Factor Analyzers (MFA)
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: mixture-of-factor-analyzers → techniques/mixture-of-factor-analyzers.md
+- IRI: pkis:technique:mixture-of-factor-analyzers

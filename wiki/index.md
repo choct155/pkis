@@ -992,6 +992,7 @@
 - [[market-vs-hierarchy]] — Coase/Williamson: transactions governed by price signals (markets) vs. managerial direction (firms) (corporate-finance) (2026-05-20)
 
 ## Techniques
+- [[mixture-of-factor-analyzers]] — Mixture of Factor Analyzers (MFA) (machine-learning, statistics) (2026-06-11)
 - [[canonical-correlation-analysis]] — Canonical Correlation Analysis (CCA) (statistics, machine-learning) (2026-06-11)
 - [[scree-plot]] — Scree Plot and Fraction of Variance Explained (machine-learning, statistics) (2026-06-11)
 - [[principal-components-analysis]] — Principal Components Analysis (PCA) (machine-learning, statistics, linear-algebra) (2026-06-11)
