@@ -12845,3 +12845,12 @@
 ## [2026-06-11] committed | technique
 - Committed: loopy-belief-propagation → techniques/loopy-belief-propagation.md
 - IRI: pkis:technique:loopy-belief-propagation
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: k-means-algorithm (id: 69d120b2-e527-4eb3-8b83-0dd9485bec81)
+- Title: K-Means Algorithm
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: k-means-algorithm → techniques/k-means-algorithm.md
+- IRI: pkis:technique:k-means-algorithm
