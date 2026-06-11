@@ -13961,3 +13961,12 @@
 ## [2026-06-11] committed | concept
 - Committed: representational-sparsity → concepts/representational-sparsity.md
 - IRI: pkis:concept:representational-sparsity
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: surrogate-loss-function (id: 0ed460c0-8475-46fa-8089-7f6486e45156)
+- Title: Surrogate Loss Function
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: surrogate-loss-function → concepts/surrogate-loss-function.md
+- IRI: pkis:concept:surrogate-loss-function
