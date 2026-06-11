@@ -15734,3 +15734,12 @@
 ## [2026-06-11] committed | technique
 - Committed: einstein-summation → techniques/einstein-summation.md
 - IRI: pkis:technique:einstein-summation
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: scatter-matrix (id: d429ed86-7217-46aa-82ed-71cfe135ca47)
+- Title: Scatter Matrix and Sum-of-Squares Matrix
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: scatter-matrix → concepts/scatter-matrix.md
+- IRI: pkis:concept:scatter-matrix
