@@ -16715,3 +16715,12 @@
 ## [2026-06-11] committed | concept
 - Committed: multi-instance-learning → concepts/multi-instance-learning.md
 - IRI: pkis:concept:multi-instance-learning
+
+## [2026-06-11] staged | node-stub (framework)
+- Staged: semi-supervised-learning (id: 78ea467e-a019-4bcf-8f48-9a0e8a44d8a7)
+- Title: Semi-Supervised Learning
+- needs_canonical_source: False
+
+## [2026-06-11] committed | framework
+- Committed: semi-supervised-learning → frameworks/semi-supervised-learning.md
+- IRI: pkis:framework:semi-supervised-learning

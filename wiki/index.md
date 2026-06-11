@@ -1720,6 +1720,7 @@
 - [[government-debt-valuation-equation]] — FTPL: price level determined by ratio of nominal debt to expected present value of future surpluses (macroeconomics) (2026-05-20)
 
 ## Frameworks
+- [[semi-supervised-learning]] — Semi-Supervised Learning (machine-learning) (2026-06-11)
 - [[cart-decision-trees]] — Classification and Regression Trees (CART) (machine-learning, statistics) (2026-06-11)
 - [[vision-transformer]] — Vision Transformer (ViT) (machine-learning, deep-learning, computer-vision) (2026-06-11)
 - [[transformer-architecture]] — Transformer (Seq2Seq Attention Architecture) (machine-learning, deep-learning, nlp) (2026-06-11)
