@@ -18938,3 +18938,12 @@
 ## [2026-06-11] committed | framework
 - Committed: multimodal-vae → frameworks/multimodal-vae.md
 - IRI: pkis:framework:multimodal-vae
+
+## [2026-06-11] staged | node-stub (framework)
+- Staged: semisupervised-vae (id: 0d2813e2-f5bd-4103-9bab-d464ca6bcf9b)
+- Title: Semisupervised VAE (M2 Model)
+- needs_canonical_source: False
+
+## [2026-06-11] committed | framework
+- Committed: semisupervised-vae → frameworks/semisupervised-vae.md
+- IRI: pkis:framework:semisupervised-vae
