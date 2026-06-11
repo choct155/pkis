@@ -18308,3 +18308,12 @@
 ## [2026-06-11] committed | concept
 - Committed: spike-and-slab-prior → concepts/spike-and-slab-prior.md
 - IRI: pkis:concept:spike-and-slab-prior
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: horseshoe-prior (id: f1169e8b-4307-4764-bfae-19ad1be228e6)
+- Title: Horseshoe Prior
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: horseshoe-prior → concepts/horseshoe-prior.md
+- IRI: pkis:concept:horseshoe-prior

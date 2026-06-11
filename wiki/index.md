@@ -290,6 +290,7 @@
 - [[liu-machine-unlearning-llm-2024]] — Rethinking Machine Unlearning for LLMs: post-training knowledge editing survey (deep-learning, ai-safety) (2026-05-20)
 
 ## Concepts
+- [[horseshoe-prior]] — Horseshoe Prior (statistics, bayesian-inference) (2026-06-11)
 - [[spike-and-slab-prior]] — Spike-and-Slab Prior (statistics, bayesian-inference) (2026-06-11)
 - [[zellners-g-prior]] — Zellner's g-Prior (statistics, bayesian-inference) (2026-06-11)
 - [[normal-inverse-gamma-prior]] — Normal-Inverse-Gamma (NIG) Prior (statistics, bayesian-inference) (2026-06-11)
