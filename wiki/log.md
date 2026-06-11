@@ -14942,3 +14942,12 @@
 ## [2026-06-11] committed | technique
 - Committed: denoising-score-matching → techniques/denoising-score-matching.md
 - IRI: pkis:technique:denoising-score-matching
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: annealed-importance-sampling (id: ea57e434-68a9-476a-8f63-f9ba6c5aaa01)
+- Title: Annealed Importance Sampling (AIS)
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: annealed-importance-sampling → techniques/annealed-importance-sampling.md
+- IRI: pkis:technique:annealed-importance-sampling
