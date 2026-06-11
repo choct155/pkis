@@ -19667,3 +19667,12 @@
 ## [2026-06-11] committed | concept
 - Committed: stochastic-process-as-prior → concepts/stochastic-process-as-prior.md
 - IRI: pkis:concept:stochastic-process-as-prior
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: dirichlet-process (id: 9814f7cd-043a-4ab2-abef-fd26a4f2859d)
+- Title: Dirichlet Process
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: dirichlet-process → concepts/dirichlet-process.md
+- IRI: pkis:concept:dirichlet-process
