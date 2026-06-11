@@ -13475,3 +13475,12 @@
 ## [2026-06-11] committed | technique
 - Committed: pca-linear-algebra-derivation → techniques/pca-linear-algebra-derivation.md
 - IRI: pkis:technique:pca-linear-algebra-derivation
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: probability-mass-function (id: 648f5761-9662-470b-85d4-75c8b8b11cb2)
+- Title: Probability Mass Function (PMF)
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: probability-mass-function → concepts/probability-mass-function.md
+- IRI: pkis:concept:probability-mass-function
