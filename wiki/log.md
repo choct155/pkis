@@ -13205,3 +13205,12 @@
 ## [2026-06-11] committed | result
 - Committed: committee-error-bound → results/committee-error-bound.md
 - IRI: pkis:result:committee-error-bound
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: adaboost-algorithm (id: aff46b36-7189-4ce9-9757-e6c5d238d509)
+- Title: AdaBoost Algorithm
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: adaboost-algorithm → techniques/adaboost-algorithm.md
+- IRI: pkis:technique:adaboost-algorithm
