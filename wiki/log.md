@@ -19685,3 +19685,12 @@
 ## [2026-06-11] committed | technique
 - Committed: stick-breaking-construction → techniques/stick-breaking-construction.md
 - IRI: pkis:technique:stick-breaking-construction
+
+## [2026-06-11] staged | node-stub (framework)
+- Staged: dirichlet-process-mixture-model (id: f0030be9-7100-42db-bf7f-0ed240bd1002)
+- Title: Dirichlet Process Mixture Model
+- needs_canonical_source: False
+
+## [2026-06-11] committed | framework
+- Committed: dirichlet-process-mixture-model → frameworks/dirichlet-process-mixture-model.md
+- IRI: pkis:framework:dirichlet-process-mixture-model
