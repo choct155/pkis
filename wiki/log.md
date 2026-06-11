@@ -15563,3 +15563,12 @@
 ## [2026-06-11] committed | concept
 - Committed: region-of-practical-equivalence → concepts/region-of-practical-equivalence.md
 - IRI: pkis:concept:region-of-practical-equivalence
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: bayesian-t-test (id: 5b9c8542-d457-46d7-a87e-b554edd3df01)
+- Title: Bayesian t-test (Paired Classifier Comparison)
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: bayesian-t-test → techniques/bayesian-t-test.md
+- IRI: pkis:technique:bayesian-t-test
