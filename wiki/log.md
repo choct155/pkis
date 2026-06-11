@@ -16886,3 +16886,12 @@
 ## [2026-06-11] committed | framework
 - Committed: probabilistic-matrix-factorization → frameworks/probabilistic-matrix-factorization.md
 - IRI: pkis:framework:probabilistic-matrix-factorization
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: bayesian-personalized-ranking (id: f36f152a-5540-4bd4-8bb4-39140b75b6b2)
+- Title: Bayesian Personalized Ranking (BPR)
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: bayesian-personalized-ranking → techniques/bayesian-personalized-ranking.md
+- IRI: pkis:technique:bayesian-personalized-ranking
