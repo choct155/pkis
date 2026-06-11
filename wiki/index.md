@@ -787,6 +787,7 @@
 - [[market-vs-hierarchy]] — Coase/Williamson: transactions governed by price signals (markets) vs. managerial direction (firms) (corporate-finance) (2026-05-20)
 
 ## Techniques
+- [[max-sum-algorithm]] — Max-Sum Algorithm (probabilistic-graphical-models, machine-learning) (2026-06-11)
 - [[automatic-relevance-determination]] — Automatic Relevance Determination (ARD) (machine-learning, bayesian-inference) (2026-06-11)
 - [[sequential-minimal-optimisation]] — Sequential Minimal Optimisation (SMO) (machine-learning, optimization) (2026-06-11)
 - [[svm-dual-formulation]] — SVM Dual Formulation (machine-learning, convex-optimization) (2026-06-11)

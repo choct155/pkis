@@ -12791,3 +12791,12 @@
 ## [2026-06-11] committed | concept
 - Committed: moralization → concepts/moralization.md
 - IRI: pkis:concept:moralization
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: max-sum-algorithm (id: 928583fe-7d2f-4c4e-bfb1-97aa720e1472)
+- Title: Max-Sum Algorithm
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: max-sum-algorithm → techniques/max-sum-algorithm.md
+- IRI: pkis:technique:max-sum-algorithm
