@@ -17066,3 +17066,12 @@
 ## [2026-06-11] committed | framework
 - Committed: model-based-ml → frameworks/model-based-ml.md
 - IRI: pkis:framework:model-based-ml
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: data-generating-process (id: 67847764-8328-429f-818d-9f2cf27fe2b8)
+- Title: Data-Generating Process (DGP)
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: data-generating-process → concepts/data-generating-process.md
+- IRI: pkis:concept:data-generating-process
