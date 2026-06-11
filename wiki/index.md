@@ -290,6 +290,7 @@
 - [[liu-machine-unlearning-llm-2024]] — Rethinking Machine Unlearning for LLMs: post-training knowledge editing survey (deep-learning, ai-safety) (2026-05-20)
 
 ## Concepts
+- [[score-based-generative-model]] — Score-Based Generative Model (SGM) (machine-learning, generative-models, information-theory) (2026-06-11)
 - [[diffusion-noise-schedule]] — Diffusion Noise Schedule (machine-learning, generative-models) (2026-06-11)
 - [[kernelized-stein-discrepancy]] — Kernelized Stein Discrepancy (KSD) (statistics, machine-learning, functional-analysis) (2026-06-11)
 - [[fisher-divergence]] — Fisher Divergence (statistics, information-theory, machine-learning) (2026-06-11)

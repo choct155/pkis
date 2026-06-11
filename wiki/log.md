@@ -24755,3 +24755,12 @@
 ## [2026-06-11] committed | concept
 - Committed: diffusion-noise-schedule → concepts/diffusion-noise-schedule.md
 - IRI: pkis:concept:diffusion-noise-schedule
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: score-based-generative-model (id: f0e72c9c-f6fd-438c-a94c-965d95fc7e75)
+- Title: Score-Based Generative Model (SGM)
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: score-based-generative-model → concepts/score-based-generative-model.md
+- IRI: pkis:concept:score-based-generative-model
