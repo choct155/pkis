@@ -19208,3 +19208,12 @@
 ## [2026-06-11] committed | technique
 - Committed: euler-maruyama-integration → techniques/euler-maruyama-integration.md
 - IRI: pkis:technique:euler-maruyama-integration
+
+## [2026-06-11] staged | node-stub (result)
+- Staged: andersons-reverse-sde (id: 913089a7-b302-41cb-8b4f-b635bc7f103c)
+- Title: Anderson's Reverse-Time SDE Theorem
+- needs_canonical_source: False
+
+## [2026-06-11] committed | result
+- Committed: andersons-reverse-sde → results/andersons-reverse-sde.md
+- IRI: pkis:result:andersons-reverse-sde

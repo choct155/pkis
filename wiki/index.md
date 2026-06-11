@@ -1799,6 +1799,7 @@
 - [[constraint-propagation]] — Reducing a constraint satisfaction problem by iteratively eliminating inconsistent values from variable domains (knowledge-representation) (2026-05-20)
 
 ## Results
+- [[andersons-reverse-sde]] — Anderson's Reverse-Time SDE Theorem (stochastic-processes, machine-learning, generative-models) (2026-06-11)
 - [[weinstein-aronszajn-identity]] — Weinstein–Aronszajn Identity (Matrix Determinant Lemma) (linear-algebra, machine-learning) (2026-06-11)
 - [[instantaneous-change-of-variables]] — Instantaneous Change-of-Variables Formula (Continuous Flows) (machine-learning, differential-equations) (2026-06-11)
 - [[mercers-theorem]] — Mercer's Theorem (functional-analysis, machine-learning, mathematics) (2026-06-11)
