@@ -16481,3 +16481,12 @@
 ## [2026-06-11] committed | concept
 - Committed: open-set-recognition → concepts/open-set-recognition.md
 - IRI: pkis:concept:open-set-recognition
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: hard-negative-mining (id: 5fff1437-b77b-4bd9-9bb4-bbdd833a4b13)
+- Title: Hard Negative Mining
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: hard-negative-mining → concepts/hard-negative-mining.md
+- IRI: pkis:concept:hard-negative-mining
