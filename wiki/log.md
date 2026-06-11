@@ -16643,3 +16643,12 @@
 ## [2026-06-11] committed | technique
 - Committed: clip → techniques/clip.md
 - IRI: pkis:technique:clip
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: pseudo-labeling (id: f84b269c-507e-42e9-822c-0f1d89971963)
+- Title: Pseudo-Labeling (Self-Training for SSL)
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: pseudo-labeling → techniques/pseudo-labeling.md
+- IRI: pkis:technique:pseudo-labeling
