@@ -16733,3 +16733,12 @@
 ## [2026-06-11] committed | technique
 - Committed: principal-components-analysis → techniques/principal-components-analysis.md
 - IRI: pkis:technique:principal-components-analysis
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: scree-plot (id: 2a2f683e-fad3-4a81-ae82-263cd7d229da)
+- Title: Scree Plot and Fraction of Variance Explained
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: scree-plot → techniques/scree-plot.md
+- IRI: pkis:technique:scree-plot
