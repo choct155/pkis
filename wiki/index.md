@@ -290,6 +290,7 @@
 - [[liu-machine-unlearning-llm-2024]] — Rethinking Machine Unlearning for LLMs: post-training knowledge editing survey (deep-learning, ai-safety) (2026-05-20)
 
 ## Concepts
+- [[score-function-estimator]] — Score Function Estimator (REINFORCE Gradient) (machine-learning, statistics, reinforcement-learning) (2026-06-11)
 - [[minimal-sufficient-statistic]] — Minimal Sufficient Statistic (statistics, information-theory) (2026-06-11)
 - [[jeffreys-conditionalization]] — Jeffrey's Conditionalization Rule (statistics, probability-theory, epistemology) (2026-06-11)
 - [[asymptotic-equipartition-property]] — Asymptotic Equipartition Property (AEP) (information-theory, statistics) (2026-06-11)

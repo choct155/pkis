@@ -17525,3 +17525,12 @@
 ## [2026-06-11] committed | technique
 - Committed: reverse-mode-ad → techniques/reverse-mode-ad.md
 - IRI: pkis:technique:reverse-mode-ad
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: score-function-estimator (id: be78a168-109e-447b-b94f-665c6ccda3bd)
+- Title: Score Function Estimator (REINFORCE Gradient)
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: score-function-estimator → concepts/score-function-estimator.md
+- IRI: pkis:concept:score-function-estimator
