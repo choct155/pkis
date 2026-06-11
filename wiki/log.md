@@ -19820,3 +19820,12 @@
 ## [2026-06-11] committed | concept
 - Committed: disentangled-representation-learning → concepts/disentangled-representation-learning.md
 - IRI: pkis:concept:disentangled-representation-learning
+
+## [2026-06-11] staged | node-stub (principle)
+- Staged: information-bottleneck-principle (id: bfaa1a89-aa20-418d-8598-569e84a661da)
+- Title: Information Bottleneck Principle
+- needs_canonical_source: False
+
+## [2026-06-11] committed | principle
+- Committed: information-bottleneck-principle → principles/information-bottleneck-principle.md
+- IRI: pkis:principle:information-bottleneck-principle
