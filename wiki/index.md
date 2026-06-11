@@ -1574,6 +1574,7 @@
 - [[llm-language-comprehension]] — The problem of whether LLMs genuinely comprehend language vs. pattern-match surface form (deep-learning, cognitive-science) (2026-05-20)
 
 ## Principles
+- [[ml-cost-design-neural-networks]] — Maximum-Likelihood Cost Design for Neural Networks (machine-learning, deep-learning, statistics) (2026-06-11)
 - [[ml-algorithm-recipe]] — ML Algorithm Recipe: Dataset + Cost + Model + Optimizer (machine-learning) (2026-06-11)
 - [[data-driven-ai]] — Data-Driven AI (Learning from Experience) (artificial-intelligence, machine-learning) (2026-06-11)
 - [[bet-on-sparsity]] — Bet on Sparsity Principle (statistical-learning) (2026-06-09)

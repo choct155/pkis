@@ -13835,3 +13835,12 @@
 ## [2026-06-11] committed | concept
 - Committed: computational-graph → concepts/computational-graph.md
 - IRI: pkis:concept:computational-graph
+
+## [2026-06-11] staged | node-stub (principle)
+- Staged: ml-cost-design-neural-networks (id: 67a5e873-ef6c-45f0-bae8-a5312a063fe1)
+- Title: Maximum-Likelihood Cost Design for Neural Networks
+- needs_canonical_source: False
+
+## [2026-06-11] committed | principle
+- Committed: ml-cost-design-neural-networks → principles/ml-cost-design-neural-networks.md
+- IRI: pkis:principle:ml-cost-design-neural-networks
