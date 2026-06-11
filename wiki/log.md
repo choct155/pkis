@@ -12872,3 +12872,12 @@
 ## [2026-06-11] committed | concept
 - Committed: complete-vs-incomplete-data-em → concepts/complete-vs-incomplete-data-em.md
 - IRI: pkis:concept:complete-vs-incomplete-data-em
+
+## [2026-06-11] staged | node-stub (result)
+- Staged: em-monotone-likelihood-increase (id: 80e93319-c46f-4c5f-a4b0-540124860cf7)
+- Title: EM Monotone Increase of Log-Likelihood
+- needs_canonical_source: False
+
+## [2026-06-11] committed | result
+- Committed: em-monotone-likelihood-increase → results/em-monotone-likelihood-increase.md
+- IRI: pkis:result:em-monotone-likelihood-increase
