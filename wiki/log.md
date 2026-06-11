@@ -14870,3 +14870,12 @@
 ## [2026-06-11] committed | technique
 - Committed: tempered-transitions → techniques/tempered-transitions.md
 - IRI: pkis:technique:tempered-transitions
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: energy-barrier-mcmc (id: 57adc3b7-e441-44a0-9128-d0479f0e3e4c)
+- Title: Energy Barrier and Mode Separation in MCMC
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: energy-barrier-mcmc → concepts/energy-barrier-mcmc.md
+- IRI: pkis:concept:energy-barrier-mcmc
