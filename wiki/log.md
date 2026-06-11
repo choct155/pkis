@@ -13079,3 +13079,12 @@
 ## [2026-06-11] committed | concept
 - Committed: ergodicity-markov-chain-mcmc → concepts/ergodicity-markov-chain-mcmc.md
 - IRI: pkis:concept:ergodicity-markov-chain-mcmc
+
+## [2026-06-11] staged | node-stub (result)
+- Staged: liouvilles-theorem (id: d900ec95-f165-4499-897b-d3c10357a3db)
+- Title: Liouville's Theorem (Phase-Space Volume Preservation)
+- needs_canonical_source: False
+
+## [2026-06-11] committed | result
+- Committed: liouvilles-theorem → results/liouvilles-theorem.md
+- IRI: pkis:result:liouvilles-theorem

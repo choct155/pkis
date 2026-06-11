@@ -1234,6 +1234,7 @@
 - [[constraint-propagation]] — Reducing a constraint satisfaction problem by iteratively eliminating inconsistent values from variable domains (knowledge-representation) (2026-05-20)
 
 ## Results
+- [[liouvilles-theorem]] — Liouville's Theorem (Phase-Space Volume Preservation) (physics, statistics) (2026-06-11)
 - [[k-means-as-em-limit]] — K-Means as a Limit of Gaussian Mixture EM (machine-learning, statistics) (2026-06-11)
 - [[em-monotone-likelihood-increase]] — EM Monotone Increase of Log-Likelihood (statistics, machine-learning, information-theory) (2026-06-11)
 - [[rvm-evidence-sparsity-result]] — RVM Evidence Optimisation and Sparsity Theorem (machine-learning, bayesian-inference) (2026-06-11)
