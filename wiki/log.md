@@ -18533,3 +18533,12 @@
 ## [2026-06-11] committed | concept
 - Committed: effective-dimensionality-bnn → concepts/effective-dimensionality-bnn.md
 - IRI: pkis:concept:effective-dimensionality-bnn
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: pac-bayes (id: 491c228b-eeb9-403a-a999-386f26e2a243)
+- Title: PAC-Bayes Generalisation Bounds
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: pac-bayes → concepts/pac-bayes.md
+- IRI: pkis:concept:pac-bayes
