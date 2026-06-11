@@ -12269,3 +12269,12 @@
 ## [2026-06-11] committed | concept
 - Committed: wishart-distribution → concepts/wishart-distribution.md
 - IRI: pkis:concept:wishart-distribution
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: robbins-monro-algorithm (id: 87ccd750-b3e0-47b7-b595-92c6636036bb)
+- Title: Robbins-Monro Algorithm
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: robbins-monro-algorithm → techniques/robbins-monro-algorithm.md
+- IRI: pkis:technique:robbins-monro-algorithm
