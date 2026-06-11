@@ -19397,3 +19397,12 @@
 ## [2026-06-11] committed | framework
 - Committed: inverse-modeling-framework → frameworks/inverse-modeling-framework.md
 - IRI: pkis:framework:inverse-modeling-framework
+
+## [2026-06-11] staged | node-stub (framework)
+- Staged: pml-part-v-discovery-roadmap (id: 40f9aeb4-b142-488c-a1f5-3c0fb51454c9)
+- Title: Part V Roadmap: From Vectors to Graphs to Nonparametric Models
+- needs_canonical_source: False
+
+## [2026-06-11] committed | framework
+- Committed: pml-part-v-discovery-roadmap → frameworks/pml-part-v-discovery-roadmap.md
+- IRI: pkis:framework:pml-part-v-discovery-roadmap
