@@ -17597,3 +17597,12 @@
 ## [2026-06-11] committed | technique
 - Committed: stl-estimator → techniques/stl-estimator.md
 - IRI: pkis:technique:stl-estimator
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: jvp-vjp (id: b00940ae-6c72-4b59-b693-4e4473641afc)
+- Title: Jacobian-Vector Product and Vector-Jacobian Product
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: jvp-vjp → concepts/jvp-vjp.md
+- IRI: pkis:concept:jvp-vjp

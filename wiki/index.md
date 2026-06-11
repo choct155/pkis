@@ -290,6 +290,7 @@
 - [[liu-machine-unlearning-llm-2024]] — Rethinking Machine Unlearning for LLMs: post-training knowledge editing survey (deep-learning, ai-safety) (2026-05-20)
 
 ## Concepts
+- [[jvp-vjp]] — Jacobian-Vector Product and Vector-Jacobian Product (machine-learning, numerical-methods, optimization) (2026-06-11)
 - [[score-function-estimator]] — Score Function Estimator (REINFORCE Gradient) (machine-learning, statistics, reinforcement-learning) (2026-06-11)
 - [[minimal-sufficient-statistic]] — Minimal Sufficient Statistic (statistics, information-theory) (2026-06-11)
 - [[jeffreys-conditionalization]] — Jeffrey's Conditionalization Rule (statistics, probability-theory, epistemology) (2026-06-11)
