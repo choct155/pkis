@@ -15212,3 +15212,12 @@
 ## [2026-06-11] committed | concept
 - Committed: generalization-gap → concepts/generalization-gap.md
 - IRI: pkis:concept:generalization-gap
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: one-hot-encoding (id: 7244b592-cc37-4468-860c-2011bd6efbd3)
+- Title: One-Hot Encoding
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: one-hot-encoding → techniques/one-hot-encoding.md
+- IRI: pkis:technique:one-hot-encoding
