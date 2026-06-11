@@ -16913,3 +16913,12 @@
 ## [2026-06-11] committed | technique
 - Committed: autorec → techniques/autorec.md
 - IRI: pkis:technique:autorec
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: neural-matrix-factorization (id: 67b0c1e6-7e79-4467-ae6b-69657cd56db0)
+- Title: Neural Matrix Factorization (NeuMF)
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: neural-matrix-factorization → techniques/neural-matrix-factorization.md
+- IRI: pkis:technique:neural-matrix-factorization
