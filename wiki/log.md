@@ -19010,3 +19010,12 @@
 ## [2026-06-11] committed | framework
 - Committed: gpt-pretraining → frameworks/gpt-pretraining.md
 - IRI: pkis:framework:gpt-pretraining
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: reinforcement-learning-from-human-feedback (id: 2f4ebfd7-7e9d-4567-885e-7b24dae0cb5c)
+- Title: Reinforcement Learning from Human Feedback (RLHF)
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: reinforcement-learning-from-human-feedback → techniques/reinforcement-learning-from-human-feedback.md
+- IRI: pkis:technique:reinforcement-learning-from-human-feedback
