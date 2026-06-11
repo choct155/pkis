@@ -15923,3 +15923,12 @@
 ## [2026-06-11] committed | technique
 - Committed: laplace-smoothing → techniques/laplace-smoothing.md
 - IRI: pkis:technique:laplace-smoothing
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: generative-vs-discriminative-classifiers (id: 6bbba6b0-61a8-4bfd-9345-f64385aed939)
+- Title: Generative vs. Discriminative Classifiers
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: generative-vs-discriminative-classifiers → concepts/generative-vs-discriminative-classifiers.md
+- IRI: pkis:concept:generative-vs-discriminative-classifiers

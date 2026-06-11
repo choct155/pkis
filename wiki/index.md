@@ -290,6 +290,7 @@
 - [[liu-machine-unlearning-llm-2024]] — Rethinking Machine Unlearning for LLMs: post-training knowledge editing survey (deep-learning, ai-safety) (2026-05-20)
 
 ## Concepts
+- [[generative-vs-discriminative-classifiers]] — Generative vs. Discriminative Classifiers (machine-learning, statistics) (2026-06-11)
 - [[naive-bayes-assumption]] — Naive Bayes Assumption (machine-learning, statistics) (2026-06-11)
 - [[scatter-matrices-lda]] — Between-Class and Within-Class Scatter Matrices (machine-learning, statistics) (2026-06-11)
 - [[condition-number-hessian]] — Condition Number of Hessian (optimization, linear-algebra) (2026-06-11)
