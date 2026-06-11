@@ -12674,3 +12674,12 @@
 ## [2026-06-11] committed | technique
 - Committed: support-vector-machine → techniques/support-vector-machine.md
 - IRI: pkis:technique:support-vector-machine
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: soft-margin-svm (id: 1e8ecfe1-6f41-4d79-a2a4-a0e9a8982f30)
+- Title: Soft-Margin SVM and Slack Variables
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: soft-margin-svm → concepts/soft-margin-svm.md
+- IRI: pkis:concept:soft-margin-svm
