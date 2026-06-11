@@ -18659,3 +18659,12 @@
 ## [2026-06-11] committed | technique
 - Committed: blackbox-shift-estimation → techniques/blackbox-shift-estimation.md
 - IRI: pkis:technique:blackbox-shift-estimation
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: domain-adversarial-learning (id: 67ee8511-29e3-4f58-817a-d71c76a94dc9)
+- Title: Domain Adversarial Learning
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: domain-adversarial-learning → techniques/domain-adversarial-learning.md
+- IRI: pkis:technique:domain-adversarial-learning
