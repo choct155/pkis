@@ -19586,3 +19586,12 @@
 ## [2026-06-11] committed | concept
 - Committed: stochastic-block-model → concepts/stochastic-block-model.md
 - IRI: pkis:concept:stochastic-block-model
+
+## [2026-06-11] staged | node-stub (problem)
+- Staged: graphical-model-structure-learning (id: b980f24a-8618-4445-979d-c5063b0286ad)
+- Title: Graphical Model Structure Learning
+- needs_canonical_source: False
+
+## [2026-06-11] committed | problem
+- Committed: graphical-model-structure-learning → problems/graphical-model-structure-learning.md
+- IRI: pkis:problem:graphical-model-structure-learning

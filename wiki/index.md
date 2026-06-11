@@ -2167,6 +2167,7 @@
 - [[broad-money-monetarism]] — Congdon's updated monetarism: broad money (M3/M4) drives nominal spending; emphasis on credit and asset prices (macroeconomics, monetary-economics) (2026-05-20)
 
 ## Problems
+- [[graphical-model-structure-learning]] — Graphical Model Structure Learning (machine-learning, statistics, causal-inference) (2026-06-11)
 - [[statistical-efficiency-learning]] — Statistical Efficiency / Data Efficiency (machine-learning, statistics, sample-complexity) (2026-06-11)
 - [[robustness-distribution-shift]] — Robustness to Distribution Shift (machine-learning, statistics, robust-ml) (2026-06-11)
 - [[cold-start-problem]] — Cold Start Problem (machine-learning, recommender-systems) (2026-06-11)
