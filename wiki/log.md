@@ -12710,3 +12710,12 @@
 ## [2026-06-11] committed | technique
 - Committed: sequential-minimal-optimisation → techniques/sequential-minimal-optimisation.md
 - IRI: pkis:technique:sequential-minimal-optimisation
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: support-vectors (id: 8764240e-660a-4067-a22f-55d0e9048271)
+- Title: Support Vectors
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: support-vectors → concepts/support-vectors.md
+- IRI: pkis:concept:support-vectors
