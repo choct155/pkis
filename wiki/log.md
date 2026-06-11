@@ -17309,3 +17309,12 @@
 ## [2026-06-11] committed | technique
 - Committed: gaussian-gaussian-conjugate → techniques/gaussian-gaussian-conjugate.md
 - IRI: pkis:technique:gaussian-gaussian-conjugate
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: equivalent-sample-size (id: 16969758-4147-4e66-8415-cfb0ecbf6f8f)
+- Title: Equivalent Sample Size (Prior Strength)
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: equivalent-sample-size → concepts/equivalent-sample-size.md
+- IRI: pkis:concept:equivalent-sample-size
