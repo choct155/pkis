@@ -16877,3 +16877,12 @@
 ## [2026-06-11] committed | technique
 - Committed: matrix-factorization-recommender → techniques/matrix-factorization-recommender.md
 - IRI: pkis:technique:matrix-factorization-recommender
+
+## [2026-06-11] staged | node-stub (framework)
+- Staged: probabilistic-matrix-factorization (id: 96ce4fad-52d2-4721-ba31-e383dbae3823)
+- Title: Probabilistic Matrix Factorization (PMF)
+- needs_canonical_source: False
+
+## [2026-06-11] committed | framework
+- Committed: probabilistic-matrix-factorization → frameworks/probabilistic-matrix-factorization.md
+- IRI: pkis:framework:probabilistic-matrix-factorization
