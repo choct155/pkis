@@ -14753,3 +14753,12 @@
 ## [2026-06-11] committed | concept
 - Committed: energy-based-model → concepts/energy-based-model.md
 - IRI: pkis:concept:energy-based-model
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: clique-potential (id: 15f92993-ec62-4f7f-8faf-4eb5f6b9bad7)
+- Title: Clique Potential (Factor in Undirected Models)
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: clique-potential → concepts/clique-potential.md
+- IRI: pkis:concept:clique-potential
