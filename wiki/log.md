@@ -13241,3 +13241,12 @@
 ## [2026-06-11] committed | concept
 - Committed: gini-impurity → concepts/gini-impurity.md
 - IRI: pkis:concept:gini-impurity
+
+## [2026-06-11] staged | node-stub (framework)
+- Staged: mixtures-of-experts (id: 9f297562-f5d4-400f-82ab-e25e895b6c5d)
+- Title: Mixtures of Experts
+- needs_canonical_source: False
+
+## [2026-06-11] committed | framework
+- Committed: mixtures-of-experts → frameworks/mixtures-of-experts.md
+- IRI: pkis:framework:mixtures-of-experts
