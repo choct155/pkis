@@ -18272,3 +18272,12 @@
 ## [2026-06-11] committed | result
 - Committed: joint-predictive-evaluation → results/joint-predictive-evaluation.md
 - IRI: pkis:result:joint-predictive-evaluation
+
+## [2026-06-11] staged | node-stub (framework)
+- Staged: generalized-linear-model (id: 50797057-60ca-4f07-a23e-2f10b04b4644)
+- Title: Generalized Linear Model (GLM)
+- needs_canonical_source: False
+
+## [2026-06-11] committed | framework
+- Committed: generalized-linear-model → frameworks/generalized-linear-model.md
+- IRI: pkis:framework:generalized-linear-model
