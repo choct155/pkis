@@ -16814,3 +16814,12 @@
 ## [2026-06-11] committed | concept
 - Committed: silhouette-coefficient → concepts/silhouette-coefficient.md
 - IRI: pkis:concept:silhouette-coefficient
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: rand-index (id: eb65325e-d45d-41fa-805a-63bbf66b1cb4)
+- Title: Rand Index and Adjusted Rand Index
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: rand-index → concepts/rand-index.md
+- IRI: pkis:concept:rand-index

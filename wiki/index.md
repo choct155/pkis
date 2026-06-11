@@ -290,6 +290,7 @@
 - [[liu-machine-unlearning-llm-2024]] — Rethinking Machine Unlearning for LLMs: post-training knowledge editing survey (deep-learning, ai-safety) (2026-05-20)
 
 ## Concepts
+- [[rand-index]] — Rand Index and Adjusted Rand Index (machine-learning, statistics) (2026-06-11)
 - [[silhouette-coefficient]] — Silhouette Coefficient (machine-learning, statistics) (2026-06-11)
 - [[dendrogram]] — Dendrogram (machine-learning, statistics) (2026-06-11)
 - [[multi-instance-learning]] — Multi-Instance Learning (machine-learning, weakly-supervised-learning) (2026-06-11)
