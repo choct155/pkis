@@ -290,6 +290,7 @@
 - [[liu-machine-unlearning-llm-2024]] — Rethinking Machine Unlearning for LLMs: post-training knowledge editing survey (deep-learning, ai-safety) (2026-05-20)
 
 ## Concepts
+- [[kurtosis-and-tail-behavior]] — Kurtosis and Tail Behavior (probability-theory, statistics) (2026-06-11)
 - [[categorical-and-multinomial-distributions]] — Categorical and Multinomial Distributions (probability-theory, statistics, machine-learning) (2026-06-11)
 - [[pmf-and-pdf]] — Probability Mass Function and Probability Density Function (probability-theory, statistics) (2026-06-11)
 - [[borel-sigma-field]] — Borel Sigma-Field (probability-theory, measure-theory) (2026-06-11)

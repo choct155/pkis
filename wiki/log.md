@@ -17165,3 +17165,12 @@
 ## [2026-06-11] committed | concept
 - Committed: categorical-and-multinomial-distributions → concepts/categorical-and-multinomial-distributions.md
 - IRI: pkis:concept:categorical-and-multinomial-distributions
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: kurtosis-and-tail-behavior (id: 2683c5ad-3ec3-4676-8126-1ec48821f268)
+- Title: Kurtosis and Tail Behavior
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: kurtosis-and-tail-behavior → concepts/kurtosis-and-tail-behavior.md
+- IRI: pkis:concept:kurtosis-and-tail-behavior
