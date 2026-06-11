@@ -19829,3 +19829,12 @@
 ## [2026-06-11] committed | principle
 - Committed: information-bottleneck-principle → principles/information-bottleneck-principle.md
 - IRI: pkis:principle:information-bottleneck-principle
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: byol (id: 48b315ba-0e5d-48b4-866c-7c32901e63a4)
+- Title: BYOL (Bootstrap Your Own Latents)
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: byol → techniques/byol.md
+- IRI: pkis:technique:byol
