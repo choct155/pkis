@@ -1110,6 +1110,7 @@
 - [[market-vs-hierarchy]] — Coase/Williamson: transactions governed by price signals (markets) vs. managerial direction (firms) (corporate-finance) (2026-05-20)
 
 ## Techniques
+- [[bidirectional-gan]] — Bidirectional GAN (BiGAN) (machine-learning, deep-learning, generative-modeling) (2026-06-11)
 - [[conditional-gan]] — Conditional GAN (machine-learning, deep-learning, generative-modeling) (2026-06-11)
 - [[classifier-guidance]] — Classifier Guidance (machine-learning, generative-models) (2026-06-11)
 - [[euler-maruyama-integration]] — Euler-Maruyama Integration (numerical-methods, stochastic-processes) (2026-06-11)

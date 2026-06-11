@@ -19307,3 +19307,12 @@
 ## [2026-06-11] committed | technique
 - Committed: conditional-gan → techniques/conditional-gan.md
 - IRI: pkis:technique:conditional-gan
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: bidirectional-gan (id: 4e8e5fc6-936a-4d04-9ae3-05761be6a760)
+- Title: Bidirectional GAN (BiGAN)
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: bidirectional-gan → techniques/bidirectional-gan.md
+- IRI: pkis:technique:bidirectional-gan
