@@ -24764,3 +24764,12 @@
 ## [2026-06-11] committed | concept
 - Committed: score-based-generative-model → concepts/score-based-generative-model.md
 - IRI: pkis:concept:score-based-generative-model
+
+## [2026-06-11] staged | node-stub (framework)
+- Staged: diffusion-sde-framework (id: ab2c0d5c-87f7-48b3-9c85-4f49308afe94)
+- Title: Stochastic Differential Equation (SDE) Framework for Diffusion
+- needs_canonical_source: False
+
+## [2026-06-11] committed | framework
+- Committed: diffusion-sde-framework → frameworks/diffusion-sde-framework.md
+- IRI: pkis:framework:diffusion-sde-framework

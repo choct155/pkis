@@ -2068,6 +2068,7 @@
 - [[government-debt-valuation-equation]] — FTPL: price level determined by ratio of nominal debt to expected present value of future surpluses (macroeconomics) (2026-05-20)
 
 ## Frameworks
+- [[diffusion-sde-framework]] — Stochastic Differential Equation (SDE) Framework for Diffusion (machine-learning, stochastic-processes, generative-models) (2026-06-11)
 - [[ddpm]] — Denoising Diffusion Probabilistic Model (DDPM) (machine-learning, generative-models, probabilistic-models) (2026-06-11)
 - [[ab-testing]] — A/B Testing (Test-and-Roll) (statistics, machine learning, business analytics) (2026-06-11)
 - [[influence-diagram]] — Influence Diagram (Decision Diagram) (decision theory, probabilistic graphical models, AI) (2026-06-11)
