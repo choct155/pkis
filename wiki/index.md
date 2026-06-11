@@ -290,6 +290,7 @@
 - [[liu-machine-unlearning-llm-2024]] — Rethinking Machine Unlearning for LLMs: post-training knowledge editing survey (deep-learning, ai-safety) (2026-05-20)
 
 ## Concepts
+- [[deep-latent-variable-model]] — Deep Latent Variable Model (DLVM) (machine-learning, probabilistic-modelling) (2026-06-11)
 - [[posterior-collapse]] — Posterior Collapse (Variational Pruning) (machine-learning, generative-models) (2026-06-11)
 - [[aggregated-posterior]] — Aggregated Posterior (Inference Marginal) (machine-learning, variational-inference) (2026-06-11)
 - [[generative-design]] — Generative Design (machine-learning, generative-models, applications) (2026-06-11)

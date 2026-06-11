@@ -18947,3 +18947,12 @@
 ## [2026-06-11] committed | framework
 - Committed: semisupervised-vae → frameworks/semisupervised-vae.md
 - IRI: pkis:framework:semisupervised-vae
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: deep-latent-variable-model (id: ea3a4f1a-48c4-430c-9c7a-58e36ceb3183)
+- Title: Deep Latent Variable Model (DLVM)
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: deep-latent-variable-model → concepts/deep-latent-variable-model.md
+- IRI: pkis:concept:deep-latent-variable-model
