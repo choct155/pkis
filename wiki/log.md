@@ -16580,3 +16580,12 @@
 ## [2026-06-11] committed | technique
 - Committed: xgboost → techniques/xgboost.md
 - IRI: pkis:technique:xgboost
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: feature-importance-tree-ensembles (id: b32ce961-1078-47f8-a0c3-4abd5d0d03cc)
+- Title: Feature Importance for Tree Ensembles
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: feature-importance-tree-ensembles → techniques/feature-importance-tree-ensembles.md
+- IRI: pkis:technique:feature-importance-tree-ensembles
