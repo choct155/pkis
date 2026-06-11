@@ -20063,3 +20063,12 @@
 ## [2026-06-11] committed | technique
 - Committed: generalized-advantage-estimation → techniques/generalized-advantage-estimation.md
 - IRI: pkis:technique:generalized-advantage-estimation
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: trust-region-policy-optimization (id: 429cdb47-f1fd-40ea-a874-b1991cf40fcd)
+- Title: Trust Region Policy Optimization (TRPO)
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: trust-region-policy-optimization → techniques/trust-region-policy-optimization.md
+- IRI: pkis:technique:trust-region-policy-optimization
