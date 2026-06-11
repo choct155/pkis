@@ -14888,3 +14888,12 @@
 ## [2026-06-11] committed | concept
 - Committed: temperature-ebm → concepts/temperature-ebm.md
 - IRI: pkis:concept:temperature-ebm
+
+## [2026-06-11] staged | node-stub (result)
+- Staged: depth-improves-mcmc-mixing (id: 04ecd8c8-3475-4442-a391-2bc76ef7f8d6)
+- Title: Depth Improves MCMC Mixing in Latent Variable Models
+- needs_canonical_source: False
+
+## [2026-06-11] committed | result
+- Committed: depth-improves-mcmc-mixing → results/depth-improves-mcmc-mixing.md
+- IRI: pkis:result:depth-improves-mcmc-mixing

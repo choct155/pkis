@@ -1398,6 +1398,7 @@
 - [[constraint-propagation]] — Reducing a constraint satisfaction problem by iteratively eliminating inconsistent values from variable domains (knowledge-representation) (2026-05-20)
 
 ## Results
+- [[depth-improves-mcmc-mixing]] — Depth Improves MCMC Mixing in Latent Variable Models (machine-learning, deep-learning, probabilistic-inference) (2026-06-11)
 - [[exponential-regions-distributed-representation]] — Exponential Regions from Distributed Binary Features (representation-learning, deep-learning, statistical-learning-theory) (2026-06-11)
 - [[pca-optimal-reconstruction-error]] — PCA Optimal Reconstruction Error (machine-learning, statistics) (2026-06-11)
 - [[ica-non-gaussian-identifiability]] — ICA Non-Gaussian Identifiability (statistics, signal-processing, machine-learning) (2026-06-11)
