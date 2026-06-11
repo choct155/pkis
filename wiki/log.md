@@ -14150,3 +14150,12 @@
 ## [2026-06-11] committed | concept
 - Committed: gabor-function → concepts/gabor-function.md
 - IRI: pkis:concept:gabor-function
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: simple-cells-complex-cells-v1 (id: 8e7d3c22-94e7-4415-bbba-84bd845c30c0)
+- Title: Simple Cells and Complex Cells (V1)
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: simple-cells-complex-cells-v1 → concepts/simple-cells-complex-cells-v1.md
+- IRI: pkis:concept:simple-cells-complex-cells-v1

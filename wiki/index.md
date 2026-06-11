@@ -290,6 +290,7 @@
 - [[liu-machine-unlearning-llm-2024]] — Rethinking Machine Unlearning for LLMs: post-training knowledge editing survey (deep-learning, ai-safety) (2026-05-20)
 
 ## Concepts
+- [[simple-cells-complex-cells-v1]] — Simple Cells and Complex Cells (V1) (neuroscience, deep-learning) (2026-06-11)
 - [[gabor-function]] — Gabor Function (Neuroscience / Vision) (neuroscience, computer-vision, deep-learning) (2026-06-11)
 - [[tiled-convolution]] — Tiled Convolution (deep-learning) (2026-06-11)
 - [[locally-connected-layer]] — Locally Connected Layer (Unshared Convolution) (deep-learning) (2026-06-11)
