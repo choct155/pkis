@@ -14600,3 +14600,12 @@
 ## [2026-06-11] committed | technique
 - Committed: denoising-autoencoder → techniques/denoising-autoencoder.md
 - IRI: pkis:technique:denoising-autoencoder
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: contractive-autoencoder (id: 18c944c2-e2d9-42cd-b409-1fd01e419222)
+- Title: Contractive Autoencoder (CAE)
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: contractive-autoencoder → techniques/contractive-autoencoder.md
+- IRI: pkis:technique:contractive-autoencoder
