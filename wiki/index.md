@@ -957,6 +957,7 @@
 - [[market-vs-hierarchy]] — Coase/Williamson: transactions governed by price signals (markets) vs. managerial direction (firms) (corporate-finance) (2026-05-20)
 
 ## Techniques
+- [[svrg]] — Stochastic Variance Reduced Gradient (SVRG) (optimization, machine-learning) (2026-06-11)
 - [[trust-region-optimization]] — Trust-Region Optimization (optimization) (2026-06-11)
 - [[bfgs-lbfgs]] — BFGS and L-BFGS (Quasi-Newton Methods) (optimization, machine-learning) (2026-06-11)
 - [[nesterov-accelerated-gradient]] — Nesterov Accelerated Gradient (optimization, machine-learning) (2026-06-11)

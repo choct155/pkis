@@ -15824,3 +15824,12 @@
 ## [2026-06-11] committed | technique
 - Committed: trust-region-optimization → techniques/trust-region-optimization.md
 - IRI: pkis:technique:trust-region-optimization
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: svrg (id: 91016e43-4fbf-4e14-8e78-8c9c80cc1c22)
+- Title: Stochastic Variance Reduced Gradient (SVRG)
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: svrg → techniques/svrg.md
+- IRI: pkis:technique:svrg
