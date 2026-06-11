@@ -20018,3 +20018,12 @@
 ## [2026-06-11] committed | framework
 - Committed: ab-testing → frameworks/ab-testing.md
 - IRI: pkis:framework:ab-testing
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: upper-confidence-bound-algorithm (id: 184ff71d-17fb-41b6-90dc-586c37d8596c)
+- Title: Upper Confidence Bound (UCB) Algorithm
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: upper-confidence-bound-algorithm → techniques/upper-confidence-bound-algorithm.md
+- IRI: pkis:technique:upper-confidence-bound-algorithm
