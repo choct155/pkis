@@ -290,6 +290,7 @@
 - [[liu-machine-unlearning-llm-2024]] — Rethinking Machine Unlearning for LLMs: post-training knowledge editing survey (deep-learning, ai-safety) (2026-05-20)
 
 ## Concepts
+- [[committee-method]] — Committee Method (Model Averaging) (machine-learning, statistics) (2026-06-11)
 - [[left-to-right-hmm]] — Left-to-Right HMM (machine-learning, speech-recognition, sequence-modeling) (2026-06-11)
 - [[hmm-scaling-factors]] — HMM Scaling Factors and Numerical Stability (machine-learning, numerical-methods) (2026-06-11)
 - [[observed-markov-chain]] — Markov Chain (Observed, Higher-Order) (probability-theory, time-series, machine-learning) (2026-06-11)

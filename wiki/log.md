@@ -13187,3 +13187,12 @@
 ## [2026-06-11] committed | concept
 - Committed: left-to-right-hmm → concepts/left-to-right-hmm.md
 - IRI: pkis:concept:left-to-right-hmm
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: committee-method (id: 11b4ac2e-9d42-4907-9415-f8df762dd7d2)
+- Title: Committee Method (Model Averaging)
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: committee-method → concepts/committee-method.md
+- IRI: pkis:concept:committee-method
