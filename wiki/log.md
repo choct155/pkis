@@ -14663,3 +14663,12 @@
 ## [2026-06-11] committed | concept
 - Committed: overcomplete-autoencoder → concepts/overcomplete-autoencoder.md
 - IRI: pkis:concept:overcomplete-autoencoder
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: stochastic-encoder-decoder (id: 66c357ab-71c4-4b6b-9751-e420744f369a)
+- Title: Stochastic Encoder-Decoder
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: stochastic-encoder-decoder → concepts/stochastic-encoder-decoder.md
+- IRI: pkis:concept:stochastic-encoder-decoder
