@@ -1083,6 +1083,7 @@
 - [[market-vs-hierarchy]] — Coase/Williamson: transactions governed by price signals (markets) vs. managerial direction (firms) (corporate-finance) (2026-05-20)
 
 ## Techniques
+- [[distributionally-robust-optimization]] — Distributionally Robust Optimization (DRO) (machine-learning, optimization, statistics) (2026-06-11)
 - [[domain-adversarial-learning]] — Domain Adversarial Learning (machine-learning, deep-learning) (2026-06-11)
 - [[blackbox-shift-estimation]] — Blackbox Shift Estimation (machine-learning, statistics) (2026-06-11)
 - [[importance-weighted-erm]] — Importance-Weighted Empirical Risk Minimization (machine-learning, statistics) (2026-06-11)

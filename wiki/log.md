@@ -18668,3 +18668,12 @@
 ## [2026-06-11] committed | technique
 - Committed: domain-adversarial-learning → techniques/domain-adversarial-learning.md
 - IRI: pkis:technique:domain-adversarial-learning
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: distributionally-robust-optimization (id: 74c21621-06a1-4fa0-be62-09fada8c38d9)
+- Title: Distributionally Robust Optimization (DRO)
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: distributionally-robust-optimization → techniques/distributionally-robust-optimization.md
+- IRI: pkis:technique:distributionally-robust-optimization
