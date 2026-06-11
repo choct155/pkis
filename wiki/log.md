@@ -16013,3 +16013,12 @@
 ## [2026-06-11] committed | concept
 - Committed: class-imbalance-long-tail → concepts/class-imbalance-long-tail.md
 - IRI: pkis:concept:class-imbalance-long-tail
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: logit-pre-activation (id: d1df5472-4be7-49d0-bace-0ba90f16fe65)
+- Title: Logit (Pre-activation)
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: logit-pre-activation → concepts/logit-pre-activation.md
+- IRI: pkis:concept:logit-pre-activation
