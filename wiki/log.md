@@ -13844,3 +13844,12 @@
 ## [2026-06-11] committed | principle
 - Committed: ml-cost-design-neural-networks → principles/ml-cost-design-neural-networks.md
 - IRI: pkis:principle:ml-cost-design-neural-networks
+
+## [2026-06-11] staged | node-stub (result)
+- Staged: depth-efficiency-rectifier-networks (id: 82f529fb-14ec-4c17-a70d-3abe899a7f7a)
+- Title: Depth-Efficiency of Rectifier Networks (Montufar et al.)
+- needs_canonical_source: False
+
+## [2026-06-11] committed | result
+- Committed: depth-efficiency-rectifier-networks → results/depth-efficiency-rectifier-networks.md
+- IRI: pkis:result:depth-efficiency-rectifier-networks

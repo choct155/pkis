@@ -1300,6 +1300,7 @@
 - [[constraint-propagation]] — Reducing a constraint satisfaction problem by iteratively eliminating inconsistent values from variable domains (knowledge-representation) (2026-05-20)
 
 ## Results
+- [[depth-efficiency-rectifier-networks]] — Depth-Efficiency of Rectifier Networks (Montufar et al.) (machine-learning, deep-learning, complexity-theory) (2026-06-11)
 - [[universal-approximation-theorem-mlp]] — Universal Approximation Theorem (Neural Networks) (machine-learning, deep-learning, approximation-theory) (2026-06-11)
 - [[map-as-regularized-mle]] — MAP Estimation as Regularized MLE (statistics, machine-learning, Bayesian-inference) (2026-06-11)
 - [[mle-as-kl-minimization]] — MLE as KL-Divergence Minimization (statistics, information-theory, machine-learning) (2026-06-11)
