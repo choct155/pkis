@@ -1159,6 +1159,7 @@
 - [[market-vs-hierarchy]] — Coase/Williamson: transactions governed by price signals (markets) vs. managerial direction (firms) (corporate-finance) (2026-05-20)
 
 ## Techniques
+- [[langevin-mcmc-ebm]] — Langevin MCMC for EBMs (machine-learning, statistics, probabilistic-modeling) (2026-06-11)
 - [[log-sum-exp-trick]] — Log-Sum-Exp (LSE) Trick (numerical-methods, machine-learning, probability-theory) (2026-06-11)
 - [[g-computation]] — G-Computation (Outcome Model Adjustment) (causal-inference, statistics, epidemiology) (2026-06-11)
 - [[austen-plots]] — Austen Plots for Sensitivity Analysis (causal-inference, statistics) (2026-06-11)

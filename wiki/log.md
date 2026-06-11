@@ -24701,3 +24701,12 @@
 ## [2026-06-11] committed | concept
 - Committed: law-of-total-expectation → concepts/law-of-total-expectation.md
 - IRI: pkis:concept:law-of-total-expectation
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: langevin-mcmc-ebm (id: 1a0be482-9b6b-42b9-8efe-70bc0024bfa8)
+- Title: Langevin MCMC for EBMs
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: langevin-mcmc-ebm → techniques/langevin-mcmc-ebm.md
+- IRI: pkis:technique:langevin-mcmc-ebm
