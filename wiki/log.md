@@ -20009,3 +20009,12 @@
 ## [2026-06-11] committed | concept
 - Committed: value-of-perfect-information → concepts/value-of-perfect-information.md
 - IRI: pkis:concept:value-of-perfect-information
+
+## [2026-06-11] staged | node-stub (framework)
+- Staged: ab-testing (id: 4cd214d0-71e2-4916-b2b7-ca2092ab6e3e)
+- Title: A/B Testing (Test-and-Roll)
+- needs_canonical_source: False
+
+## [2026-06-11] committed | framework
+- Committed: ab-testing → frameworks/ab-testing.md
+- IRI: pkis:framework:ab-testing
