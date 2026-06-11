@@ -17021,3 +17021,12 @@
 ## [2026-06-11] committed | technique
 - Committed: label-propagation-graph → techniques/label-propagation-graph.md
 - IRI: pkis:technique:label-propagation-graph
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: transductive-vs-inductive-graph-learning (id: 47ee24f4-26f2-4492-b125-c5f54e5e9ef3)
+- Title: Transductive vs Inductive Graph Learning
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: transductive-vs-inductive-graph-learning → concepts/transductive-vs-inductive-graph-learning.md
+- IRI: pkis:concept:transductive-vs-inductive-graph-learning
