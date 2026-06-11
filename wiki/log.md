@@ -13439,3 +13439,12 @@
 ## [2026-06-11] committed | concept
 - Committed: orthogonal-matrix → concepts/orthogonal-matrix.md
 - IRI: pkis:concept:orthogonal-matrix
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: positive-definite-matrix (id: dc1b2644-2164-4775-b85a-a35f9a80e124)
+- Title: Positive Definite and Positive Semidefinite Matrix
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: positive-definite-matrix → concepts/positive-definite-matrix.md
+- IRI: pkis:concept:positive-definite-matrix
