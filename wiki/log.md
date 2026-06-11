@@ -18110,3 +18110,12 @@
 ## [2026-06-11] committed | concept
 - Committed: data-driven-mcmc → concepts/data-driven-mcmc.md
 - IRI: pkis:concept:data-driven-mcmc
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: weight-degeneracy-sis (id: 27733b76-c292-404e-9d6c-72e5b168e796)
+- Title: Weight Degeneracy in Sequential Importance Sampling
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: weight-degeneracy-sis → concepts/weight-degeneracy-sis.md
+- IRI: pkis:concept:weight-degeneracy-sis
