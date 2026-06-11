@@ -16337,3 +16337,12 @@
 ## [2026-06-11] committed | concept
 - Committed: encoder-decoder-architecture → concepts/encoder-decoder-architecture.md
 - IRI: pkis:concept:encoder-decoder-architecture
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: scaled-dot-product-attention (id: 060c17b5-18c7-4447-a1a2-fc9d2fb465a0)
+- Title: Scaled Dot-Product Attention
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: scaled-dot-product-attention → techniques/scaled-dot-product-attention.md
+- IRI: pkis:technique:scaled-dot-product-attention
