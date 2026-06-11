@@ -12818,3 +12818,12 @@
 ## [2026-06-11] committed | concept
 - Committed: linear-gaussian-graphical-model → concepts/linear-gaussian-graphical-model.md
 - IRI: pkis:concept:linear-gaussian-graphical-model
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: plate-notation (id: acc9fb40-29de-4676-9ac9-5365a121d34f)
+- Title: Plate Notation
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: plate-notation → concepts/plate-notation.md
+- IRI: pkis:concept:plate-notation
