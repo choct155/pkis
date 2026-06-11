@@ -14231,3 +14231,12 @@
 ## [2026-06-11] committed | concept
 - Committed: vanishing-exploding-gradients-rnn → concepts/vanishing-exploding-gradients-rnn.md
 - IRI: pkis:concept:vanishing-exploding-gradients-rnn
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: gradient-clipping (id: af3da80d-6e49-4ae2-b14f-5ceb562dd4a5)
+- Title: Gradient Clipping
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: gradient-clipping → techniques/gradient-clipping.md
+- IRI: pkis:technique:gradient-clipping
