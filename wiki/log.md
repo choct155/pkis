@@ -17984,3 +17984,12 @@
 ## [2026-06-11] committed | technique
 - Committed: box-muller-method → techniques/box-muller-method.md
 - IRI: pkis:technique:box-muller-method
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: self-normalized-importance-sampling (id: 5654a38c-ec24-4b8f-88c8-e317976ce0a9)
+- Title: Self-Normalized Importance Sampling (SNIS)
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: self-normalized-importance-sampling → techniques/self-normalized-importance-sampling.md
+- IRI: pkis:technique:self-normalized-importance-sampling

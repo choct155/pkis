@@ -1050,6 +1050,7 @@
 - [[market-vs-hierarchy]] — Coase/Williamson: transactions governed by price signals (markets) vs. managerial direction (firms) (corporate-finance) (2026-05-20)
 
 ## Techniques
+- [[self-normalized-importance-sampling]] — Self-Normalized Importance Sampling (SNIS) (statistics, machine-learning, Bayesian-inference) (2026-06-11)
 - [[box-muller-method]] — Box-Muller Method (statistics, probability, simulation) (2026-06-11)
 - [[inverse-cdf-sampling]] — Inverse CDF Sampling (Inverse Probability Transform) (statistics, probability, simulation) (2026-06-11)
 - [[monte-carlo-integration]] — Monte Carlo Integration (statistics, machine-learning, numerical-methods) (2026-06-11)
