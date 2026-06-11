@@ -15914,3 +15914,12 @@
 ## [2026-06-11] committed | concept
 - Committed: naive-bayes-assumption → concepts/naive-bayes-assumption.md
 - IRI: pkis:concept:naive-bayes-assumption
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: laplace-smoothing (id: ed767527-b3a2-4164-bceb-dcace5b1662a)
+- Title: Laplace (Add-One) Smoothing
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: laplace-smoothing → techniques/laplace-smoothing.md
+- IRI: pkis:technique:laplace-smoothing

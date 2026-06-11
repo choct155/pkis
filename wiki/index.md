@@ -959,6 +959,7 @@
 - [[market-vs-hierarchy]] — Coase/Williamson: transactions governed by price signals (markets) vs. managerial direction (firms) (corporate-finance) (2026-05-20)
 
 ## Techniques
+- [[laplace-smoothing]] — Laplace (Add-One) Smoothing (machine-learning, statistics, natural-language-processing) (2026-06-11)
 - [[fishers-linear-discriminant-analysis]] — Fisher's Linear Discriminant Analysis (FLDA) (machine-learning, statistics) (2026-06-11)
 - [[nearest-centroid-classifier]] — Nearest Centroid Classifier (machine-learning) (2026-06-11)
 - [[regularised-discriminant-analysis]] — Regularised Discriminant Analysis (RDA) (machine-learning, statistics) (2026-06-11)
