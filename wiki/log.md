@@ -17183,3 +17183,12 @@
 ## [2026-06-11] committed | concept
 - Committed: cauchy-distribution → concepts/cauchy-distribution.md
 - IRI: pkis:concept:cauchy-distribution
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: pareto-distribution (id: f45d6085-b810-433b-aa52-a5bfd9ef56ea)
+- Title: Pareto Distribution and Power Laws
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: pareto-distribution → concepts/pareto-distribution.md
+- IRI: pkis:concept:pareto-distribution
