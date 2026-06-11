@@ -18587,3 +18587,12 @@
 ## [2026-06-11] committed | result
 - Committed: gp-marginal-likelihood → results/gp-marginal-likelihood.md
 - IRI: pkis:result:gp-marginal-likelihood
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: stationary-kernel (id: 1c201fc4-ed4b-4adc-917b-faae5a6ad57c)
+- Title: Stationary (Shift-Invariant) Kernel
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: stationary-kernel → concepts/stationary-kernel.md
+- IRI: pkis:concept:stationary-kernel
