@@ -20054,3 +20054,12 @@
 ## [2026-06-11] committed | concept
 - Committed: markov-decision-process-mdp → concepts/markov-decision-process-mdp.md
 - IRI: pkis:concept:markov-decision-process-mdp
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: generalized-advantage-estimation (id: 0530098e-7f30-4fe8-9540-27756696d785)
+- Title: Generalized Advantage Estimation (GAE)
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: generalized-advantage-estimation → techniques/generalized-advantage-estimation.md
+- IRI: pkis:technique:generalized-advantage-estimation
