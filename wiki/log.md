@@ -14582,3 +14582,12 @@
 ## [2026-06-11] committed | concept
 - Committed: undercomplete-autoencoder → concepts/undercomplete-autoencoder.md
 - IRI: pkis:concept:undercomplete-autoencoder
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: sparse-autoencoder (id: ce87c3ec-4433-498a-b3d2-2b246731b3b2)
+- Title: Sparse Autoencoder
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: sparse-autoencoder → techniques/sparse-autoencoder.md
+- IRI: pkis:technique:sparse-autoencoder
