@@ -17228,3 +17228,12 @@
 ## [2026-06-11] committed | concept
 - Committed: matrix-normal-distribution → concepts/matrix-normal-distribution.md
 - IRI: pkis:concept:matrix-normal-distribution
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: aleatoric-vs-epistemic-uncertainty (id: 2287af52-a7ef-425f-8c88-7a6ca0888e78)
+- Title: Aleatoric vs Epistemic Uncertainty
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: aleatoric-vs-epistemic-uncertainty → concepts/aleatoric-vs-epistemic-uncertainty.md
+- IRI: pkis:concept:aleatoric-vs-epistemic-uncertainty
