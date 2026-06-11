@@ -18893,3 +18893,12 @@
 ## [2026-06-11] committed | framework
 - Committed: infovae → frameworks/infovae.md
 - IRI: pkis:framework:infovae
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: kl-annealing (id: 2e26ff01-e609-45c3-9935-d777580d7c54)
+- Title: KL Annealing
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: kl-annealing → techniques/kl-annealing.md
+- IRI: pkis:technique:kl-annealing

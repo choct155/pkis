@@ -1095,6 +1095,7 @@
 - [[market-vs-hierarchy]] — Coase/Williamson: transactions governed by price signals (markets) vs. managerial direction (firms) (corporate-finance) (2026-05-20)
 
 ## Techniques
+- [[kl-annealing]] — KL Annealing (machine-learning, optimisation) (2026-06-11)
 - [[two-step-latent-manifold-generative-modeling]] — Two-Step Latent Manifold Generative Modeling (machine-learning, generative-models, representation-learning) (2026-06-11)
 - [[uniform-dequantization]] — Uniform Dequantization (machine-learning, generative-models, information-theory) (2026-06-11)
 - [[latent-space-arithmetic]] — Latent Space Arithmetic (machine-learning, representation-learning, generative-models) (2026-06-11)
