@@ -17057,3 +17057,12 @@
 ## [2026-06-11] committed | concept
 - Committed: geometric-deep-learning → concepts/geometric-deep-learning.md
 - IRI: pkis:concept:geometric-deep-learning
+
+## [2026-06-11] staged | node-stub (framework)
+- Staged: model-based-ml (id: 3c48a2cb-caf7-48f8-a5bf-27ebf4ec445d)
+- Title: Model-Based Machine Learning (MBML)
+- needs_canonical_source: False
+
+## [2026-06-11] committed | framework
+- Committed: model-based-ml → frameworks/model-based-ml.md
+- IRI: pkis:framework:model-based-ml
