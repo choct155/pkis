@@ -12512,3 +12512,12 @@
 ## [2026-06-11] committed | technique
 - Committed: error-backpropagation → techniques/error-backpropagation.md
 - IRI: pkis:technique:error-backpropagation
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: levenberg-marquardt-hessian (id: 26b2e805-3f1b-483c-81c1-9232246c4776)
+- Title: Levenberg–Marquardt (Outer-Product) Hessian Approximation
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: levenberg-marquardt-hessian → techniques/levenberg-marquardt-hessian.md
+- IRI: pkis:technique:levenberg-marquardt-hessian
