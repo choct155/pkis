@@ -19163,3 +19163,12 @@
 ## [2026-06-11] committed | technique
 - Committed: classifier-free-guidance → techniques/classifier-free-guidance.md
 - IRI: pkis:technique:classifier-free-guidance
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: ddim-sampler (id: 00885cd7-3f77-472f-9095-67e5e2895207)
+- Title: DDIM Sampler (Denoising Diffusion Implicit Model)
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: ddim-sampler → techniques/ddim-sampler.md
+- IRI: pkis:technique:ddim-sampler
