@@ -1643,6 +1643,7 @@
 - [[constraint-propagation]] — Reducing a constraint satisfaction problem by iteratively eliminating inconsistent values from variable domains (knowledge-representation) (2026-05-20)
 
 ## Results
+- [[information-inequality]] — Information Inequality (Non-negativity of KL) (information-theory, statistics) (2026-06-11)
 - [[pitman-koopman-darmois-theorem]] — Pitman-Koopman-Darmois Theorem (statistics, information-theory) (2026-06-11)
 - [[kl-fisher-information-connection]] — KL Divergence–Fisher Information Connection (information-theory, statistics, optimization) (2026-06-11)
 - [[kl-as-bregman-divergence]] — KL Divergence as Bregman Divergence (information-theory, optimization, statistics) (2026-06-11)

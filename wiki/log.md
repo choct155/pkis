@@ -17489,3 +17489,12 @@
 ## [2026-06-11] committed | concept
 - Committed: jeffreys-conditionalization → concepts/jeffreys-conditionalization.md
 - IRI: pkis:concept:jeffreys-conditionalization
+
+## [2026-06-11] staged | node-stub (result)
+- Staged: information-inequality (id: 8cf088eb-97e3-40aa-8c86-ff9fba31b684)
+- Title: Information Inequality (Non-negativity of KL)
+- needs_canonical_source: False
+
+## [2026-06-11] committed | result
+- Committed: information-inequality → results/information-inequality.md
+- IRI: pkis:result:information-inequality
