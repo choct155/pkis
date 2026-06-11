@@ -18425,3 +18425,12 @@
 ## [2026-06-11] committed | concept
 - Committed: implicit-layer → concepts/implicit-layer.md
 - IRI: pkis:concept:implicit-layer
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: hypernetwork (id: b37694b9-6b0a-4b09-b2f4-7e6b66a8e70e)
+- Title: Hypernetwork
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: hypernetwork → concepts/hypernetwork.md
+- IRI: pkis:concept:hypernetwork

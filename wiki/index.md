@@ -290,6 +290,7 @@
 - [[liu-machine-unlearning-llm-2024]] — Rethinking Machine Unlearning for LLMs: post-training knowledge editing survey (deep-learning, ai-safety) (2026-05-20)
 
 ## Concepts
+- [[hypernetwork]] — Hypernetwork (deep-learning, meta-learning) (2026-06-11)
 - [[implicit-layer]] — Implicit Layer (deep-learning, optimization) (2026-06-11)
 - [[film-feature-wise-linear-modulation]] — Feature-wise Linear Modulation (FiLM) (deep-learning, multimodal-learning) (2026-06-11)
 - [[autoencoder-dnn]] — Autoencoder (deep-learning, representation-learning, unsupervised-learning) (2026-06-11)
