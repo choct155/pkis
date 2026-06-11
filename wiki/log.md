@@ -16319,3 +16319,12 @@
 ## [2026-06-11] committed | concept
 - Committed: translation-equivariance-invariance → concepts/translation-equivariance-invariance.md
 - IRI: pkis:concept:translation-equivariance-invariance
+
+## [2026-06-11] staged | node-stub (framework)
+- Staged: object-detection-anchor-boxes (id: a2999faa-b36d-4c09-a4c3-399594819540)
+- Title: Object Detection with Anchor Boxes
+- needs_canonical_source: False
+
+## [2026-06-11] committed | framework
+- Committed: object-detection-anchor-boxes → frameworks/object-detection-anchor-boxes.md
+- IRI: pkis:framework:object-detection-anchor-boxes
