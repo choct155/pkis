@@ -12107,3 +12107,12 @@
 ## [2026-06-11] committed | concept
 - Committed: probability-density-change-of-variables → concepts/probability-density-change-of-variables.md
 - IRI: pkis:concept:probability-density-change-of-variables
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: likelihood-function (id: 08b3f009-097a-42ed-9e04-d385bd19611a)
+- Title: Likelihood Function and Maximum Likelihood Estimation
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: likelihood-function → concepts/likelihood-function.md
+- IRI: pkis:concept:likelihood-function
