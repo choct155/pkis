@@ -17624,3 +17624,12 @@
 ## [2026-06-11] committed | concept
 - Committed: energy-function-posterior → concepts/energy-function-posterior.md
 - IRI: pkis:concept:energy-function-posterior
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: grid-approximation-posterior (id: de98f475-d5f6-46c6-a748-33fe4680a765)
+- Title: Grid Approximation (Posterior)
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: grid-approximation-posterior → techniques/grid-approximation-posterior.md
+- IRI: pkis:technique:grid-approximation-posterior
