@@ -12737,3 +12737,12 @@
 ## [2026-06-11] committed | technique
 - Committed: automatic-relevance-determination → techniques/automatic-relevance-determination.md
 - IRI: pkis:technique:automatic-relevance-determination
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: rvm-sparsity-quality-factors (id: 6086351d-af0d-4b52-ad5d-c1cf683cee2e)
+- Title: Sparsity and Quality Factors in RVM
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: rvm-sparsity-quality-factors → concepts/rvm-sparsity-quality-factors.md
+- IRI: pkis:concept:rvm-sparsity-quality-factors
