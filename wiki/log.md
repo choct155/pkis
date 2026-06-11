@@ -13106,3 +13106,12 @@
 ## [2026-06-11] committed | concept
 - Committed: overrelaxation-mcmc → concepts/overrelaxation-mcmc.md
 - IRI: pkis:concept:overrelaxation-mcmc
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: state-space-model-sequential (id: 52909ad3-15f7-49dc-ab4f-8a3d0a8f789f)
+- Title: State Space Model (Sequential Latent Variable)
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: state-space-model-sequential → concepts/state-space-model-sequential.md
+- IRI: pkis:concept:state-space-model-sequential
