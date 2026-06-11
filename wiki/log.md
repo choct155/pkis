@@ -15221,3 +15221,12 @@
 ## [2026-06-11] committed | technique
 - Committed: one-hot-encoding → techniques/one-hot-encoding.md
 - IRI: pkis:technique:one-hot-encoding
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: tf-idf (id: f62f15b0-b037-4dee-9b89-2c1f1d3a5ca7)
+- Title: TF-IDF Weighting
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: tf-idf → techniques/tf-idf.md
+- IRI: pkis:technique:tf-idf
