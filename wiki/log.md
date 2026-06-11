@@ -18164,3 +18164,12 @@
 ## [2026-06-11] committed | technique
 - Committed: fastslam → techniques/fastslam.md
 - IRI: pkis:technique:fastslam
+
+## [2026-06-11] staged | node-stub (framework)
+- Staged: smc-sampler (id: f634c94b-a1c4-4939-864a-1ed66ff2a559)
+- Title: SMC Sampler
+- needs_canonical_source: False
+
+## [2026-06-11] committed | framework
+- Committed: smc-sampler → frameworks/smc-sampler.md
+- IRI: pkis:framework:smc-sampler
