@@ -1475,6 +1475,7 @@
 - [[constraint-propagation]] — Reducing a constraint satisfaction problem by iteratively eliminating inconsistent values from variable domains (knowledge-representation) (2026-05-20)
 
 ## Results
+- [[woodbury-identity]] — Sherman–Morrison–Woodbury Formula (linear-algebra, machine-learning, statistics) (2026-06-11)
 - [[minimal-sufficient-statistic-dpi]] — Minimal Sufficient Statistic via Data Processing Inequality (information-theory, statistics) (2026-06-11)
 - [[mi-gaussian-formula]] — Mutual Information for Jointly Gaussian Variables (information-theory, statistics) (2026-06-11)
 - [[kl-divergence-gaussians]] — KL Divergence Between Two Gaussians (information-theory, probability, machine-learning) (2026-06-11)

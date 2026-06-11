@@ -15707,3 +15707,12 @@
 ## [2026-06-11] committed | technique
 - Committed: schur-complement → techniques/schur-complement.md
 - IRI: pkis:technique:schur-complement
+
+## [2026-06-11] staged | node-stub (result)
+- Staged: woodbury-identity (id: 41bbb8bf-dd8a-489f-87a4-9d4712be10d0)
+- Title: Sherman–Morrison–Woodbury Formula
+- needs_canonical_source: False
+
+## [2026-06-11] committed | result
+- Committed: woodbury-identity → results/woodbury-identity.md
+- IRI: pkis:result:woodbury-identity
