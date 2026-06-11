@@ -20198,3 +20198,12 @@
 ## [2026-06-11] committed | technique
 - Committed: late-iv → techniques/late-iv.md
 - IRI: pkis:technique:late-iv
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: austen-plots (id: 9f0b4613-3aa3-4f01-8a82-ab23b129208c)
+- Title: Austen Plots for Sensitivity Analysis
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: austen-plots → techniques/austen-plots.md
+- IRI: pkis:technique:austen-plots
