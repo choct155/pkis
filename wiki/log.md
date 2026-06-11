@@ -15131,3 +15131,12 @@
 ## [2026-06-11] committed | technique
 - Committed: reinforce-gradient-estimator → techniques/reinforce-gradient-estimator.md
 - IRI: pkis:technique:reinforce-gradient-estimator
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: differentiable-generator-network (id: e22690a3-32c0-46f7-a491-ef920d625014)
+- Title: Differentiable Generator Network
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: differentiable-generator-network → concepts/differentiable-generator-network.md
+- IRI: pkis:concept:differentiable-generator-network

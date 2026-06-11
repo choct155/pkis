@@ -290,6 +290,7 @@
 - [[liu-machine-unlearning-llm-2024]] — Rethinking Machine Unlearning for LLMs: post-training knowledge editing survey (deep-learning, ai-safety) (2026-05-20)
 
 ## Concepts
+- [[differentiable-generator-network]] — Differentiable Generator Network (deep-learning, generative-models) (2026-06-11)
 - [[variational-autoencoder-vae]] — Variational Autoencoder (VAE) (deep-learning, generative-models, variational-inference) (2026-06-11)
 - [[deep-boltzmann-machine]] — Deep Boltzmann Machine (DBM) (deep-learning, probabilistic-graphical-models, generative-models) (2026-06-11)
 - [[deep-belief-network]] — Deep Belief Network (DBN) (deep-learning, probabilistic-graphical-models, generative-models) (2026-06-11)
