@@ -13997,3 +13997,12 @@
 ## [2026-06-11] committed | technique
 - Committed: adagrad → techniques/adagrad.md
 - IRI: pkis:technique:adagrad
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: rmsprop (id: 1bff695a-9300-4c9c-aeee-c652611c1d52)
+- Title: RMSProp
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: rmsprop → techniques/rmsprop.md
+- IRI: pkis:technique:rmsprop
