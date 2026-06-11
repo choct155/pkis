@@ -14033,3 +14033,12 @@
 ## [2026-06-11] committed | technique
 - Committed: glorot-initialization → techniques/glorot-initialization.md
 - IRI: pkis:technique:glorot-initialization
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: conjugate-gradient-method (id: 2930bbc2-eb09-4d44-873d-8a5196746ebf)
+- Title: Conjugate Gradient Method
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: conjugate-gradient-method → techniques/conjugate-gradient-method.md
+- IRI: pkis:technique:conjugate-gradient-method
