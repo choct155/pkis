@@ -16706,3 +16706,12 @@
 ## [2026-06-11] committed | concept
 - Committed: knowledge-distillation → concepts/knowledge-distillation.md
 - IRI: pkis:concept:knowledge-distillation
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: multi-instance-learning (id: 0c5e3587-675b-4e51-a1c8-23010c5fa0f9)
+- Title: Multi-Instance Learning
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: multi-instance-learning → concepts/multi-instance-learning.md
+- IRI: pkis:concept:multi-instance-learning
