@@ -12602,3 +12602,12 @@
 ## [2026-06-11] committed | concept
 - Committed: kernel-construction-rules → concepts/kernel-construction-rules.md
 - IRI: pkis:concept:kernel-construction-rules
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: stationary-and-radial-kernels (id: 7e72cc38-69e2-41d3-8094-db2bfb57fa85)
+- Title: Stationary and Radial Basis Kernels
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: stationary-and-radial-kernels → concepts/stationary-and-radial-kernels.md
+- IRI: pkis:concept:stationary-and-radial-kernels
