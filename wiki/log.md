@@ -17273,3 +17273,12 @@
 ## [2026-06-11] committed | result
 - Committed: asymptotic-normality-mle → results/asymptotic-normality-mle.md
 - IRI: pkis:result:asymptotic-normality-mle
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: bootstrap-sampling-distribution (id: 41b53a2c-e079-400b-b2cf-ec71680bf78d)
+- Title: Bootstrap (Parametric and Non-Parametric)
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: bootstrap-sampling-distribution → techniques/bootstrap-sampling-distribution.md
+- IRI: pkis:technique:bootstrap-sampling-distribution
