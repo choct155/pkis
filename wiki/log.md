@@ -18650,3 +18650,12 @@
 ## [2026-06-11] committed | technique
 - Committed: importance-weighted-erm → techniques/importance-weighted-erm.md
 - IRI: pkis:technique:importance-weighted-erm
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: blackbox-shift-estimation (id: a7ca49ca-a420-4b58-8bf0-5dfd82d5e493)
+- Title: Blackbox Shift Estimation
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: blackbox-shift-estimation → techniques/blackbox-shift-estimation.md
+- IRI: pkis:technique:blackbox-shift-estimation
