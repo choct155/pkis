@@ -17120,3 +17120,12 @@
 ## [2026-06-11] committed | principle
 - Committed: world-model-primacy → principles/world-model-primacy.md
 - IRI: pkis:principle:world-model-primacy
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: parsimony-in-representation-learning (id: 9e077c31-61f6-478d-8263-145a059b8921)
+- Title: Parsimony in Representation Learning
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: parsimony-in-representation-learning → concepts/parsimony-in-representation-learning.md
+- IRI: pkis:concept:parsimony-in-representation-learning
