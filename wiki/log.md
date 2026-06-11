@@ -12440,3 +12440,12 @@
 ## [2026-06-11] committed | framework
 - Committed: probabilistic-generative-classifier → frameworks/probabilistic-generative-classifier.md
 - IRI: pkis:framework:probabilistic-generative-classifier
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: canonical-link-function (id: e8450109-4d14-4ef9-8155-c75dbe8adfd6)
+- Title: Canonical Link Function
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: canonical-link-function → concepts/canonical-link-function.md
+- IRI: pkis:concept:canonical-link-function

@@ -290,6 +290,7 @@
 - [[liu-machine-unlearning-llm-2024]] — Rethinking Machine Unlearning for LLMs: post-training knowledge editing survey (deep-learning, ai-safety) (2026-05-20)
 
 ## Concepts
+- [[canonical-link-function]] — Canonical Link Function (statistics, machine-learning) (2026-06-11)
 - [[softmax-function]] — Softmax Function (machine-learning, statistics) (2026-06-11)
 - [[logistic-sigmoid-logit]] — Logistic Sigmoid and Logit Function (machine-learning, statistics) (2026-06-11)
 - [[design-matrix]] — Design Matrix (machine-learning, statistics) (2026-06-11)
