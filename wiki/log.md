@@ -14078,3 +14078,12 @@
 ## [2026-06-11] committed | concept
 - Committed: parameter-sharing-cnn → concepts/parameter-sharing-cnn.md
 - IRI: pkis:concept:parameter-sharing-cnn
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: translation-equivariance (id: b66c939f-43ec-449c-b013-bd34f6ffd7e9)
+- Title: Translation Equivariance
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: translation-equivariance → concepts/translation-equivariance.md
+- IRI: pkis:concept:translation-equivariance
