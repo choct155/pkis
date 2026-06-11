@@ -290,6 +290,7 @@
 - [[liu-machine-unlearning-llm-2024]] — Rethinking Machine Unlearning for LLMs: post-training knowledge editing survey (deep-learning, ai-safety) (2026-05-20)
 
 ## Concepts
+- [[exponential-family-distribution]] — Exponential Family (probability, statistics, information-theory) (2026-06-11)
 - [[mahalanobis-distance]] — Mahalanobis Distance (statistics, geometry, machine-learning) (2026-06-11)
 - [[wishart-distribution]] — Wishart Distribution (probability, statistics, bayesian-inference) (2026-06-11)
 - [[von-mises-distribution]] — Von Mises Distribution (probability, statistics) (2026-06-11)

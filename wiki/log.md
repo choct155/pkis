@@ -12287,3 +12287,12 @@
 ## [2026-06-11] committed | concept
 - Committed: mahalanobis-distance → concepts/mahalanobis-distance.md
 - IRI: pkis:concept:mahalanobis-distance
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: exponential-family-distribution (id: 2b17f290-4590-47ff-b349-d8acfb7ce649)
+- Title: Exponential Family
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: exponential-family-distribution → concepts/exponential-family-distribution.md
+- IRI: pkis:concept:exponential-family-distribution
