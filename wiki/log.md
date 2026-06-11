@@ -20126,3 +20126,12 @@
 ## [2026-06-11] committed | technique
 - Committed: count-based-exploration → techniques/count-based-exploration.md
 - IRI: pkis:technique:count-based-exploration
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: deterministic-policy-gradient (id: 5a68217c-a6d7-4849-88be-798927c196c1)
+- Title: Deterministic Policy Gradient (DPG)
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: deterministic-policy-gradient → techniques/deterministic-policy-gradient.md
+- IRI: pkis:technique:deterministic-policy-gradient
