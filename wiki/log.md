@@ -15932,3 +15932,12 @@
 ## [2026-06-11] committed | concept
 - Committed: generative-vs-discriminative-classifiers → concepts/generative-vs-discriminative-classifiers.md
 - IRI: pkis:concept:generative-vs-discriminative-classifiers
+
+## [2026-06-11] staged | node-stub (result)
+- Staged: lda-logistic-regression-equivalence (id: 84feebcf-e4c5-4ba5-b229-20eea475ebd8)
+- Title: LDA–Logistic Regression Equivalence
+- needs_canonical_source: False
+
+## [2026-06-11] committed | result
+- Committed: lda-logistic-regression-equivalence → results/lda-logistic-regression-equivalence.md
+- IRI: pkis:result:lda-logistic-regression-equivalence
