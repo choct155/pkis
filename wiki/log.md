@@ -17561,3 +17561,12 @@
 ## [2026-06-11] committed | technique
 - Committed: straight-through-estimator → techniques/straight-through-estimator.md
 - IRI: pkis:technique:straight-through-estimator
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: natural-gradient-descent (id: cd9306f6-1595-4585-881d-2302d3b9f901)
+- Title: Natural Gradient Descent
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: natural-gradient-descent → techniques/natural-gradient-descent.md
+- IRI: pkis:technique:natural-gradient-descent
