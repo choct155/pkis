@@ -14240,3 +14240,12 @@
 ## [2026-06-11] committed | technique
 - Committed: gradient-clipping → techniques/gradient-clipping.md
 - IRI: pkis:technique:gradient-clipping
+
+## [2026-06-11] staged | node-stub (framework)
+- Staged: echo-state-networks (id: 8dc28d62-db23-4225-975a-7ee9516f8ce6)
+- Title: Echo State Networks / Reservoir Computing
+- needs_canonical_source: False
+
+## [2026-06-11] committed | framework
+- Committed: echo-state-networks → frameworks/echo-state-networks.md
+- IRI: pkis:framework:echo-state-networks
