@@ -15725,3 +15725,12 @@
 ## [2026-06-11] committed | concept
 - Committed: kronecker-product → concepts/kronecker-product.md
 - IRI: pkis:concept:kronecker-product
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: einstein-summation (id: 34fd9677-b73a-4d95-83d1-323b65e3fe19)
+- Title: Einstein Summation Notation (Einsum)
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: einstein-summation → techniques/einstein-summation.md
+- IRI: pkis:technique:einstein-summation
