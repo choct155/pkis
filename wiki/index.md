@@ -1073,6 +1073,7 @@
 - [[market-vs-hierarchy]] — Coase/Williamson: transactions governed by price signals (markets) vs. managerial direction (firms) (corporate-finance) (2026-05-20)
 
 ## Techniques
+- [[bayes-by-backprop]] — Bayes by Backprop (BBB) (bayesian-inference, deep-learning, variational-inference) (2026-06-11)
 - [[generalized-gauss-newton]] — Generalized Gauss-Newton (GGN) Approximation (optimisation, bayesian-inference, deep-learning) (2026-06-11)
 - [[batch-ensemble]] — Batch Ensemble (deep-learning, ensemble-methods, efficiency) (2026-06-11)
 - [[deep-ensembles]] — Deep Ensembles (deep-learning, ensemble-methods, uncertainty-quantification) (2026-06-11)

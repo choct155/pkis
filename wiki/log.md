@@ -18497,3 +18497,12 @@
 ## [2026-06-11] committed | technique
 - Committed: generalized-gauss-newton → techniques/generalized-gauss-newton.md
 - IRI: pkis:technique:generalized-gauss-newton
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: bayes-by-backprop (id: 5e96b16a-1509-4777-99a2-0d9820d905b5)
+- Title: Bayes by Backprop (BBB)
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: bayes-by-backprop → techniques/bayes-by-backprop.md
+- IRI: pkis:technique:bayes-by-backprop
