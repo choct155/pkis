@@ -12422,3 +12422,12 @@
 ## [2026-06-11] committed | technique
 - Committed: irls → techniques/irls.md
 - IRI: pkis:technique:irls
+
+## [2026-06-11] staged | node-stub (result)
+- Staged: bic (id: bedfa3b4-26a4-4d82-afce-af92964f80a0)
+- Title: BIC (Bayesian Information Criterion)
+- needs_canonical_source: False
+
+## [2026-06-11] committed | result
+- Committed: bic → results/bic.md
+- IRI: pkis:result:bic
