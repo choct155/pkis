@@ -16652,3 +16652,12 @@
 ## [2026-06-11] committed | technique
 - Committed: pseudo-labeling → techniques/pseudo-labeling.md
 - IRI: pkis:technique:pseudo-labeling
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: entropy-minimization-ssl (id: 69ef631d-6a2c-463e-a067-7b391ad391c0)
+- Title: Entropy Minimization for Semi-Supervised Learning
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: entropy-minimization-ssl → techniques/entropy-minimization-ssl.md
+- IRI: pkis:technique:entropy-minimization-ssl
