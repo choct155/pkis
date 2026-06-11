@@ -1131,6 +1131,7 @@
 - [[market-vs-hierarchy]] — Coase/Williamson: transactions governed by price signals (markets) vs. managerial direction (firms) (corporate-finance) (2026-05-20)
 
 ## Techniques
+- [[stick-breaking-construction]] — Stick-Breaking Construction (statistics, machine-learning) (2026-06-11)
 - [[constraint-based-structure-learning]] — Constraint-Based Structure Learning (PC Algorithm) (causal-inference, statistics, machine-learning) (2026-06-11)
 - [[score-based-dag-learning]] — Score-Based DAG Structure Learning (causal-inference, machine-learning, statistics) (2026-06-11)
 - [[spectral-learning-hmm]] — Spectral Learning for HMMs (machine-learning, statistics) (2026-06-11)

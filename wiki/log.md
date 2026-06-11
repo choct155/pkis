@@ -19676,3 +19676,12 @@
 ## [2026-06-11] committed | concept
 - Committed: dirichlet-process → concepts/dirichlet-process.md
 - IRI: pkis:concept:dirichlet-process
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: stick-breaking-construction (id: 6a8ca4c1-e9d5-48a0-94c4-3494a8b702d2)
+- Title: Stick-Breaking Construction
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: stick-breaking-construction → techniques/stick-breaking-construction.md
+- IRI: pkis:technique:stick-breaking-construction
