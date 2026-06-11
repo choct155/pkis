@@ -16607,3 +16607,12 @@
 ## [2026-06-11] committed | concept
 - Committed: weak-learner-boosting → concepts/weak-learner-boosting.md
 - IRI: pkis:concept:weak-learner-boosting
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: transfer-learning-fine-tuning (id: 56b2a7fa-814a-4213-a9fc-18f55e01a390)
+- Title: Transfer Learning and Fine-Tuning
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: transfer-learning-fine-tuning → techniques/transfer-learning-fine-tuning.md
+- IRI: pkis:technique:transfer-learning-fine-tuning
