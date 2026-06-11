@@ -15581,3 +15581,12 @@
 ## [2026-06-11] committed | result
 - Committed: bayesian-occams-razor → results/bayesian-occams-razor.md
 - IRI: pkis:result:bayesian-occams-razor
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: binary-entropy-function (id: 7ba9f1c2-d0af-4c27-b317-6d9403337293)
+- Title: Binary Entropy Function
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: binary-entropy-function → concepts/binary-entropy-function.md
+- IRI: pkis:concept:binary-entropy-function
