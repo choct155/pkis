@@ -19640,3 +19640,12 @@
 ## [2026-06-11] committed | result
 - Committed: graphical-lasso-sparsity-tradeoff → results/graphical-lasso-sparsity-tradeoff.md
 - IRI: pkis:result:graphical-lasso-sparsity-tradeoff
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: structural-causal-model (id: db0b96b0-afd0-406f-81d0-c7493384585c)
+- Title: Structural Causal Model (SCM)
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: structural-causal-model → concepts/structural-causal-model.md
+- IRI: pkis:concept:structural-causal-model
