@@ -13394,3 +13394,12 @@
 ## [2026-06-11] committed | concept
 - Committed: tensor-multidimensional-array → concepts/tensor-multidimensional-array.md
 - IRI: pkis:concept:tensor-multidimensional-array
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: matrix-transpose (id: abd45622-d444-4176-af73-1fb0656148df)
+- Title: Matrix Transpose
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: matrix-transpose → concepts/matrix-transpose.md
+- IRI: pkis:concept:matrix-transpose
