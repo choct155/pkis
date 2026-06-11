@@ -999,6 +999,7 @@
 - [[market-vs-hierarchy]] — Coase/Williamson: transactions governed by price signals (markets) vs. managerial direction (firms) (corporate-finance) (2026-05-20)
 
 ## Techniques
+- [[matrix-factorization-recommender]] — Matrix Factorization for Recommendation (machine-learning, recommender-systems) (2026-06-11)
 - [[k-medoids]] — K-medoids / PAM Algorithm (machine-learning, statistics) (2026-06-11)
 - [[k-means-plus-plus]] — K-means++ Initialization (machine-learning) (2026-06-11)
 - [[hierarchical-agglomerative-clustering]] — Hierarchical Agglomerative Clustering (HAC) (machine-learning, statistics, unsupervised-learning) (2026-06-11)

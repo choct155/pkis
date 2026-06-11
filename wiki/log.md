@@ -16868,3 +16868,12 @@
 ## [2026-06-11] committed | problem
 - Committed: recommender-systems → problems/recommender-systems.md
 - IRI: pkis:problem:recommender-systems
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: matrix-factorization-recommender (id: 81eab15a-8393-4b0c-9d17-2dc653757c9b)
+- Title: Matrix Factorization for Recommendation
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: matrix-factorization-recommender → techniques/matrix-factorization-recommender.md
+- IRI: pkis:technique:matrix-factorization-recommender
