@@ -16976,3 +16976,12 @@
 ## [2026-06-11] committed | technique
 - Committed: hyperbolic-graph-embeddings → techniques/hyperbolic-graph-embeddings.md
 - IRI: pkis:technique:hyperbolic-graph-embeddings
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: message-passing-neural-networks (id: b90dc6f3-3b81-4e09-8fe2-25bca0d91a02)
+- Title: Message Passing Neural Networks (MPNN)
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: message-passing-neural-networks → techniques/message-passing-neural-networks.md
+- IRI: pkis:technique:message-passing-neural-networks
