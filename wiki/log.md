@@ -13700,3 +13700,12 @@
 ## [2026-06-11] committed | concept
 - Committed: bayes-error → concepts/bayes-error.md
 - IRI: pkis:concept:bayes-error
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: hyperparameters-validation-set (id: fed33c48-a66f-488a-8564-8c66f47bc366)
+- Title: Hyperparameters and Validation Set
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: hyperparameters-validation-set → concepts/hyperparameters-validation-set.md
+- IRI: pkis:concept:hyperparameters-validation-set
