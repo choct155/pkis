@@ -19262,3 +19262,12 @@
 ## [2026-06-11] committed | concept
 - Committed: integral-probability-metric → concepts/integral-probability-metric.md
 - IRI: pkis:concept:integral-probability-metric
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: wasserstein-distance (id: 3bfcdc17-fdef-484a-96ce-3991fb4cae83)
+- Title: Wasserstein Distance
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: wasserstein-distance → concepts/wasserstein-distance.md
+- IRI: pkis:concept:wasserstein-distance
