@@ -18380,3 +18380,12 @@
 ## [2026-06-11] committed | concept
 - Committed: residual-skip-connection → concepts/residual-skip-connection.md
 - IRI: pkis:concept:residual-skip-connection
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: layer-normalization (id: 22c665d5-9007-4fc9-ad4a-0fbe0766638e)
+- Title: Layer Normalization
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: layer-normalization → techniques/layer-normalization.md
+- IRI: pkis:technique:layer-normalization
