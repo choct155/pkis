@@ -13016,3 +13016,12 @@
 ## [2026-06-11] committed | technique
 - Committed: adaptive-rejection-sampling → techniques/adaptive-rejection-sampling.md
 - IRI: pkis:technique:adaptive-rejection-sampling
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: sampling-importance-resampling (id: e0f4c1f0-00ce-4236-9d00-601c6e8fc970)
+- Title: Sampling-Importance-Resampling (SIR)
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: sampling-importance-resampling → techniques/sampling-importance-resampling.md
+- IRI: pkis:technique:sampling-importance-resampling

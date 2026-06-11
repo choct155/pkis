@@ -799,6 +799,7 @@
 - [[market-vs-hierarchy]] — Coase/Williamson: transactions governed by price signals (markets) vs. managerial direction (firms) (corporate-finance) (2026-05-20)
 
 ## Techniques
+- [[sampling-importance-resampling]] — Sampling-Importance-Resampling (SIR) (statistics, machine-learning) (2026-06-11)
 - [[adaptive-rejection-sampling]] — Adaptive Rejection Sampling (statistics, machine-learning) (2026-06-11)
 - [[local-variational-bound-sigmoid]] — Local Variational Bound for Logistic Sigmoid (machine-learning, approximate-inference) (2026-06-11)
 - [[variational-message-passing]] — Variational Message Passing (machine-learning, probabilistic-graphical-models) (2026-06-11)
