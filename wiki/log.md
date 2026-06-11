@@ -17615,3 +17615,12 @@
 ## [2026-06-11] committed | framework
 - Committed: bayesian-inference-patterns → frameworks/bayesian-inference-patterns.md
 - IRI: pkis:framework:bayesian-inference-patterns
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: energy-function-posterior (id: aa831b9e-7607-401d-b252-ea4659fe46aa)
+- Title: Energy Function (Unnormalized Posterior)
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: energy-function-posterior → concepts/energy-function-posterior.md
+- IRI: pkis:concept:energy-function-posterior
