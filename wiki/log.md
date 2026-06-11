@@ -18974,3 +18974,12 @@
 ## [2026-06-11] committed | technique
 - Committed: nade-rnade → techniques/nade-rnade.md
 - IRI: pkis:technique:nade-rnade
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: made-masked-autoencoder (id: 48196c4f-70cb-4a18-a800-cdd0e1db37ba)
+- Title: MADE (Masked Autoencoder for Density Estimation)
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: made-masked-autoencoder → techniques/made-masked-autoencoder.md
+- IRI: pkis:technique:made-masked-autoencoder
