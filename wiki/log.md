@@ -16967,3 +16967,12 @@
 ## [2026-06-11] committed | technique
 - Committed: deepwalk-skip-gram-graph-embedding → techniques/deepwalk-skip-gram-graph-embedding.md
 - IRI: pkis:technique:deepwalk-skip-gram-graph-embedding
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: hyperbolic-graph-embeddings (id: ec498354-f2d1-4c0d-b4af-734b86beda25)
+- Title: Hyperbolic Graph Embeddings (Poincaré / Lorentz)
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: hyperbolic-graph-embeddings → techniques/hyperbolic-graph-embeddings.md
+- IRI: pkis:technique:hyperbolic-graph-embeddings
