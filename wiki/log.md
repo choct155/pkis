@@ -14546,3 +14546,12 @@
 ## [2026-06-11] committed | result
 - Committed: pca-optimal-reconstruction-error → results/pca-optimal-reconstruction-error.md
 - IRI: pkis:result:pca-optimal-reconstruction-error
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: nonparametric-encoder (id: c1733bf1-c20d-4730-a825-c81954c52648)
+- Title: Non-Parametric Encoder (Optimisation-Based Inference)
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: nonparametric-encoder → concepts/nonparametric-encoder.md
+- IRI: pkis:concept:nonparametric-encoder
