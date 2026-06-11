@@ -24683,3 +24683,12 @@
 ## [2026-06-11] committed | concept
 - Committed: sigmoid-logistic-function → concepts/sigmoid-logistic-function.md
 - IRI: pkis:concept:sigmoid-logistic-function
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: log-sum-exp-trick (id: a4a22ae6-b0a9-4c93-a784-b259d44b8374)
+- Title: Log-Sum-Exp (LSE) Trick
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: log-sum-exp-trick → techniques/log-sum-exp-trick.md
+- IRI: pkis:technique:log-sum-exp-trick
