@@ -17102,3 +17102,12 @@
 ## [2026-06-11] committed | framework
 - Committed: four-tasks-probabilistic-ml → frameworks/four-tasks-probabilistic-ml.md
 - IRI: pkis:framework:four-tasks-probabilistic-ml
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: latent-structure-discovery (id: c6474c17-08f8-4018-9c5b-580c332cec2b)
+- Title: Latent Structure Discovery
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: latent-structure-discovery → concepts/latent-structure-discovery.md
+- IRI: pkis:concept:latent-structure-discovery
