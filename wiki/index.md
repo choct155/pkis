@@ -980,6 +980,7 @@
 - [[market-vs-hierarchy]] — Coase/Williamson: transactions governed by price signals (markets) vs. managerial direction (firms) (corporate-finance) (2026-05-20)
 
 ## Techniques
+- [[activation-maximization]] — Activation Maximization (deep-learning, interpretability) (2026-06-11)
 - [[group-normalization]] — Group Normalization (deep-learning, optimization) (2026-06-11)
 - [[depthwise-separable-convolution]] — Depthwise Separable Convolution (deep-learning, computer-vision) (2026-06-11)
 - [[transposed-convolution]] — Transposed Convolution (Deconvolution) (deep-learning, computer-vision) (2026-06-11)

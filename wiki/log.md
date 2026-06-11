@@ -16301,3 +16301,12 @@
 ## [2026-06-11] committed | technique
 - Committed: group-normalization → techniques/group-normalization.md
 - IRI: pkis:technique:group-normalization
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: activation-maximization (id: 360b7f73-1f85-4316-b0bb-69578ecdb5aa)
+- Title: Activation Maximization
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: activation-maximization → techniques/activation-maximization.md
+- IRI: pkis:technique:activation-maximization
