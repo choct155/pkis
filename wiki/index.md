@@ -1979,6 +1979,7 @@
 - [[government-debt-valuation-equation]] — FTPL: price level determined by ratio of nominal debt to expected present value of future surpluses (macroeconomics) (2026-05-20)
 
 ## Frameworks
+- [[latent-factor-models]] — Latent Factor Models (machine-learning, probabilistic-modeling, unsupervised-learning) (2026-06-11)
 - [[pml-part-v-discovery-roadmap]] — Part V Roadmap: From Vectors to Graphs to Nonparametric Models (machine-learning, statistics) (2026-06-11)
 - [[inverse-modeling-framework]] — Inverse Modeling Framework (statistics, machine-learning, applied-mathematics, science) (2026-06-11)
 - [[discovery-as-interpretable-representation-learning]] — Discovery as Interpretable Representation Learning (machine-learning, statistics, probability) (2026-06-11)

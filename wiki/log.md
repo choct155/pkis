@@ -19415,3 +19415,12 @@
 ## [2026-06-11] committed | concept
 - Committed: spatio-temporal-latent-variable-models → concepts/spatio-temporal-latent-variable-models.md
 - IRI: pkis:concept:spatio-temporal-latent-variable-models
+
+## [2026-06-11] staged | node-stub (framework)
+- Staged: latent-factor-models (id: 1b2f39b5-7d3b-4547-acf5-65c6172a97c7)
+- Title: Latent Factor Models
+- needs_canonical_source: False
+
+## [2026-06-11] committed | framework
+- Committed: latent-factor-models → frameworks/latent-factor-models.md
+- IRI: pkis:framework:latent-factor-models
