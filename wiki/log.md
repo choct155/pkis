@@ -12404,3 +12404,12 @@
 ## [2026-06-11] committed | concept
 - Committed: logistic-sigmoid-logit → concepts/logistic-sigmoid-logit.md
 - IRI: pkis:concept:logistic-sigmoid-logit
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: softmax-function (id: ca969b39-dd91-43c5-87ca-d3649b7992e1)
+- Title: Softmax Function
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: softmax-function → concepts/softmax-function.md
+- IRI: pkis:concept:softmax-function
