@@ -18641,3 +18641,12 @@
 ## [2026-06-11] committed | concept
 - Committed: label-shift → concepts/label-shift.md
 - IRI: pkis:concept:label-shift
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: importance-weighted-erm (id: 3da8de6b-2c07-4703-8bc2-07d9c7598c77)
+- Title: Importance-Weighted Empirical Risk Minimization
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: importance-weighted-erm → techniques/importance-weighted-erm.md
+- IRI: pkis:technique:importance-weighted-erm
