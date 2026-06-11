@@ -14159,3 +14159,12 @@
 ## [2026-06-11] committed | concept
 - Committed: simple-cells-complex-cells-v1 → concepts/simple-cells-complex-cells-v1.md
 - IRI: pkis:concept:simple-cells-complex-cells-v1
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: separable-convolution-kernel (id: dba84f82-631d-4063-b8c8-d64b0e5aa5fb)
+- Title: Separable Convolution Kernel
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: separable-convolution-kernel → concepts/separable-convolution-kernel.md
+- IRI: pkis:concept:separable-convolution-kernel
