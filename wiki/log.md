@@ -13718,3 +13718,12 @@
 ## [2026-06-11] committed | concept
 - Committed: estimator-consistency → concepts/estimator-consistency.md
 - IRI: pkis:concept:estimator-consistency
+
+## [2026-06-11] staged | node-stub (result)
+- Staged: mle-as-kl-minimization (id: b17b1aef-bc7f-4624-b201-7ff87a00be03)
+- Title: MLE as KL-Divergence Minimization
+- needs_canonical_source: False
+
+## [2026-06-11] committed | result
+- Committed: mle-as-kl-minimization → results/mle-as-kl-minimization.md
+- IRI: pkis:result:mle-as-kl-minimization
