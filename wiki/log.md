@@ -14861,3 +14861,12 @@
 ## [2026-06-11] committed | technique
 - Committed: block-gibbs-sampling → techniques/block-gibbs-sampling.md
 - IRI: pkis:technique:block-gibbs-sampling
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: tempered-transitions (id: 094c23b8-2327-4927-bb5f-53cb8bd0c9a1)
+- Title: Tempered Transitions
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: tempered-transitions → techniques/tempered-transitions.md
+- IRI: pkis:technique:tempered-transitions
