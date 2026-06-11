@@ -19847,3 +19847,12 @@
 ## [2026-06-11] committed | concept
 - Committed: linear-evaluation-protocol → concepts/linear-evaluation-protocol.md
 - IRI: pkis:concept:linear-evaluation-protocol
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: inherently-interpretable-model (id: a22a9486-b476-475e-87a3-f95776a6f0c6)
+- Title: Inherently Interpretable Model
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: inherently-interpretable-model → concepts/inherently-interpretable-model.md
+- IRI: pkis:concept:inherently-interpretable-model
