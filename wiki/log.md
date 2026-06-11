@@ -17768,3 +17768,12 @@
 ## [2026-06-11] committed | concept
 - Committed: fixed-lag-smoothing → concepts/fixed-lag-smoothing.md
 - IRI: pkis:concept:fixed-lag-smoothing
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: information-filter (id: 0d2e16e7-5fd9-407f-adcf-074f823b26e4)
+- Title: Information Form Kalman Filter
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: information-filter → techniques/information-filter.md
+- IRI: pkis:technique:information-filter
