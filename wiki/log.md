@@ -15842,3 +15842,12 @@
 ## [2026-06-11] committed | technique
 - Committed: learning-rate-schedule → techniques/learning-rate-schedule.md
 - IRI: pkis:technique:learning-rate-schedule
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: polyak-ruppert-averaging (id: 807b888e-1f13-44e6-be48-1a377af82f7a)
+- Title: Polyak-Ruppert Iterate Averaging
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: polyak-ruppert-averaging → techniques/polyak-ruppert-averaging.md
+- IRI: pkis:technique:polyak-ruppert-averaging

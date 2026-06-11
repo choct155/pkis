@@ -957,6 +957,7 @@
 - [[market-vs-hierarchy]] — Coase/Williamson: transactions governed by price signals (markets) vs. managerial direction (firms) (corporate-finance) (2026-05-20)
 
 ## Techniques
+- [[polyak-ruppert-averaging]] — Polyak-Ruppert Iterate Averaging (optimization, machine-learning) (2026-06-11)
 - [[learning-rate-schedule]] — Learning Rate Schedule and Warmup (optimization, deep-learning) (2026-06-11)
 - [[svrg]] — Stochastic Variance Reduced Gradient (SVRG) (optimization, machine-learning) (2026-06-11)
 - [[trust-region-optimization]] — Trust-Region Optimization (optimization) (2026-06-11)
