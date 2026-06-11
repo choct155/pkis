@@ -15806,3 +15806,12 @@
 ## [2026-06-11] committed | technique
 - Committed: nesterov-accelerated-gradient → techniques/nesterov-accelerated-gradient.md
 - IRI: pkis:technique:nesterov-accelerated-gradient
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: bfgs-lbfgs (id: d296aded-c777-4cfe-8866-96b3570b31da)
+- Title: BFGS and L-BFGS (Quasi-Newton Methods)
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: bfgs-lbfgs → techniques/bfgs-lbfgs.md
+- IRI: pkis:technique:bfgs-lbfgs
