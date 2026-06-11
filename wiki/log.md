@@ -19244,3 +19244,12 @@
 ## [2026-06-11] committed | concept
 - Committed: jensen-shannon-divergence → concepts/jensen-shannon-divergence.md
 - IRI: pkis:concept:jensen-shannon-divergence
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: f-divergence (id: fe24c384-91da-47cd-a9a1-8c88ecf16297)
+- Title: f-Divergence
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: f-divergence → concepts/f-divergence.md
+- IRI: pkis:concept:f-divergence
