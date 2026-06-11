@@ -12620,3 +12620,12 @@
 ## [2026-06-11] committed | concept
 - Committed: fisher-kernel → concepts/fisher-kernel.md
 - IRI: pkis:concept:fisher-kernel
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: nadaraya-watson-model (id: 5fa03ee2-a83c-452c-bbb0-9f2ff8281ea6)
+- Title: Nadaraya–Watson Kernel Regression
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: nadaraya-watson-model → techniques/nadaraya-watson-model.md
+- IRI: pkis:technique:nadaraya-watson-model

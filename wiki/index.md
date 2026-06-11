@@ -779,6 +779,7 @@
 - [[market-vs-hierarchy]] — Coase/Williamson: transactions governed by price signals (markets) vs. managerial direction (firms) (corporate-finance) (2026-05-20)
 
 ## Techniques
+- [[nadaraya-watson-model]] — Nadaraya–Watson Kernel Regression (machine-learning, nonparametric-statistics, regression) (2026-06-11)
 - [[dual-kernel-ridge-regression]] — Dual Representation of Kernel Ridge Regression (machine-learning, kernel-methods, regression) (2026-06-11)
 - [[convolutional-neural-network-architecture]] — Convolutional Neural Network (machine-learning, computer-vision) (2026-06-11)
 - [[early-stopping]] — Early Stopping as Regularisation (machine-learning, optimisation) (2026-06-11)
