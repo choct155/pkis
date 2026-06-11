@@ -17147,3 +17147,12 @@
 ## [2026-06-11] committed | concept
 - Committed: borel-sigma-field → concepts/borel-sigma-field.md
 - IRI: pkis:concept:borel-sigma-field
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: pmf-and-pdf (id: 3afdf321-a520-4642-b2b2-4986b6787cf1)
+- Title: Probability Mass Function and Probability Density Function
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: pmf-and-pdf → concepts/pmf-and-pdf.md
+- IRI: pkis:concept:pmf-and-pdf
