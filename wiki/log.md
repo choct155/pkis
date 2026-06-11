@@ -14834,3 +14834,12 @@
 ## [2026-06-11] committed | concept
 - Committed: optimal-importance-sampling-distribution → concepts/optimal-importance-sampling-distribution.md
 - IRI: pkis:concept:optimal-importance-sampling-distribution
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: stochastic-transition-matrix-mcmc (id: 6cfb2fe4-483f-4b1e-ad42-247443c03768)
+- Title: Stochastic Transition Matrix (MCMC)
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: stochastic-transition-matrix-mcmc → concepts/stochastic-transition-matrix-mcmc.md
+- IRI: pkis:concept:stochastic-transition-matrix-mcmc

@@ -290,6 +290,7 @@
 - [[liu-machine-unlearning-llm-2024]] — Rethinking Machine Unlearning for LLMs: post-training knowledge editing survey (deep-learning, ai-safety) (2026-05-20)
 
 ## Concepts
+- [[stochastic-transition-matrix-mcmc]] — Stochastic Transition Matrix (MCMC) (probability-theory, linear-algebra, statistics) (2026-06-11)
 - [[optimal-importance-sampling-distribution]] — Optimal Importance Sampling Distribution (statistics, machine-learning, probabilistic-inference) (2026-06-11)
 - [[las-vegas-vs-monte-carlo-algorithms]] — Las Vegas vs Monte Carlo Algorithms (machine-learning, algorithms, statistics) (2026-06-11)
 - [[free-energy-ebm]] — Free Energy (Latent Variable EBMs) (probabilistic-graphical-models, deep-learning, statistical-physics) (2026-06-11)
