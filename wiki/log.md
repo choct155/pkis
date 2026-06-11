@@ -13754,3 +13754,12 @@
 ## [2026-06-11] committed | technique
 - Committed: minibatch-sgd → techniques/minibatch-sgd.md
 - IRI: pkis:technique:minibatch-sgd
+
+## [2026-06-11] staged | node-stub (principle)
+- Staged: ml-algorithm-recipe (id: 39af7fad-bdde-4d04-b74d-767d3fb64ab0)
+- Title: ML Algorithm Recipe: Dataset + Cost + Model + Optimizer
+- needs_canonical_source: False
+
+## [2026-06-11] committed | principle
+- Committed: ml-algorithm-recipe → principles/ml-algorithm-recipe.md
+- IRI: pkis:principle:ml-algorithm-recipe
