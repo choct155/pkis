@@ -13331,3 +13331,12 @@
 ## [2026-06-11] committed | framework
 - Committed: connectionism → frameworks/connectionism.md
 - IRI: pkis:framework:connectionism
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: knowledge-base-ai (id: fe740702-19c4-4dfb-9f4b-23f8637e8a9d)
+- Title: Knowledge Base Approach to AI
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: knowledge-base-ai → concepts/knowledge-base-ai.md
+- IRI: pkis:concept:knowledge-base-ai
