@@ -12521,3 +12521,12 @@
 ## [2026-06-11] committed | technique
 - Committed: levenberg-marquardt-hessian → techniques/levenberg-marquardt-hessian.md
 - IRI: pkis:technique:levenberg-marquardt-hessian
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: tangent-propagation (id: 2f543c14-33d9-495c-8328-4d9090b54e4f)
+- Title: Tangent Propagation
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: tangent-propagation → techniques/tangent-propagation.md
+- IRI: pkis:technique:tangent-propagation
