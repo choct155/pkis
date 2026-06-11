@@ -24710,3 +24710,12 @@
 ## [2026-06-11] committed | technique
 - Committed: langevin-mcmc-ebm → techniques/langevin-mcmc-ebm.md
 - IRI: pkis:technique:langevin-mcmc-ebm
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: fisher-divergence (id: 9496bd6c-2bad-4277-9094-a38948b12612)
+- Title: Fisher Divergence
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: fisher-divergence → concepts/fisher-divergence.md
+- IRI: pkis:concept:fisher-divergence
