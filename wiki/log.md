@@ -14951,3 +14951,12 @@
 ## [2026-06-11] committed | technique
 - Committed: annealed-importance-sampling → techniques/annealed-importance-sampling.md
 - IRI: pkis:technique:annealed-importance-sampling
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: bridge-sampling (id: 34b1e861-e219-41f2-ad72-ad65c77979a4)
+- Title: Bridge Sampling
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: bridge-sampling → techniques/bridge-sampling.md
+- IRI: pkis:technique:bridge-sampling
