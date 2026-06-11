@@ -24728,3 +24728,12 @@
 ## [2026-06-11] committed | concept
 - Committed: kernelized-stein-discrepancy → concepts/kernelized-stein-discrepancy.md
 - IRI: pkis:concept:kernelized-stein-discrepancy
+
+## [2026-06-11] staged | node-stub (result)
+- Staged: ebm-log-likelihood-gradient (id: ad3fe7b4-4000-4b34-89bc-ba894bea33d0)
+- Title: EBM Log-Likelihood Gradient Decomposition
+- needs_canonical_source: False
+
+## [2026-06-11] committed | result
+- Committed: ebm-log-likelihood-gradient → results/ebm-log-likelihood-gradient.md
+- IRI: pkis:result:ebm-log-likelihood-gradient

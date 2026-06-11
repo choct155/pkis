@@ -1898,6 +1898,7 @@
 - [[constraint-propagation]] — Reducing a constraint satisfaction problem by iteratively eliminating inconsistent values from variable domains (knowledge-representation) (2026-05-20)
 
 ## Results
+- [[ebm-log-likelihood-gradient]] — EBM Log-Likelihood Gradient Decomposition (machine-learning, statistics) (2026-06-11)
 - [[lai-robbins-lower-bound]] — Lai-Robbins Regret Lower Bound (statistics, machine learning, information theory) (2026-06-11)
 - [[kolmogorov-extension-theorem]] — Kolmogorov Extension Theorem (probability, mathematics) (2026-06-11)
 - [[graphical-lasso-sparsity-tradeoff]] — Graphical Lasso Sparsity–Accuracy Trade-off (statistics, machine-learning) (2026-06-11)
