@@ -16058,3 +16058,12 @@
 ## [2026-06-11] committed | concept
 - Committed: residual-sum-of-squares → concepts/residual-sum-of-squares.md
 - IRI: pkis:concept:residual-sum-of-squares
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: r-squared (id: 547a9452-accc-4d70-aa23-87f3e6f59da6)
+- Title: Coefficient of Determination ($R^2$)
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: r-squared → concepts/r-squared.md
+- IRI: pkis:concept:r-squared

@@ -290,6 +290,7 @@
 - [[liu-machine-unlearning-llm-2024]] — Rethinking Machine Unlearning for LLMs: post-training knowledge editing survey (deep-learning, ai-safety) (2026-05-20)
 
 ## Concepts
+- [[r-squared]] — Coefficient of Determination ($R^2$) (statistics) (2026-06-11)
 - [[residual-sum-of-squares]] — Residual Sum of Squares (RSS) (statistics, machine learning) (2026-06-11)
 - [[hat-matrix]] — Hat Matrix (Projection Matrix) (statistics, linear algebra) (2026-06-11)
 - [[logit-pre-activation]] — Logit (Pre-activation) (machine-learning, statistics) (2026-06-11)
