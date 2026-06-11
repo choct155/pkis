@@ -18155,3 +18155,12 @@
 ## [2026-06-11] committed | technique
 - Committed: rao-blackwellized-particle-filter → techniques/rao-blackwellized-particle-filter.md
 - IRI: pkis:technique:rao-blackwellized-particle-filter
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: fastslam (id: 62333639-2098-426e-bdf5-64be565c8d79)
+- Title: FastSLAM
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: fastslam → techniques/fastslam.md
+- IRI: pkis:technique:fastslam
