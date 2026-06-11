@@ -13142,3 +13142,12 @@
 ## [2026-06-11] committed | technique
 - Committed: baum-welch-algorithm → techniques/baum-welch-algorithm.md
 - IRI: pkis:technique:baum-welch-algorithm
+
+## [2026-06-11] staged | node-stub (framework)
+- Staged: linear-dynamical-system (id: 45d6fc26-459e-4599-bb18-1e64e538631f)
+- Title: Linear Dynamical System (Kalman Filter Model)
+- needs_canonical_source: False
+
+## [2026-06-11] committed | framework
+- Committed: linear-dynamical-system → frameworks/linear-dynamical-system.md
+- IRI: pkis:framework:linear-dynamical-system
