@@ -16157,3 +16157,12 @@
 ## [2026-06-11] committed | concept
 - Committed: glm-deviance → concepts/glm-deviance.md
 - IRI: pkis:concept:glm-deviance
+
+## [2026-06-11] staged | node-stub (result)
+- Staged: glm-gradient-hessian (id: b7cf7063-ccd1-4537-bb36-fa4fba554f20)
+- Title: GLM Gradient and Hessian of NLL
+- needs_canonical_source: False
+
+## [2026-06-11] committed | result
+- Committed: glm-gradient-hessian → results/glm-gradient-hessian.md
+- IRI: pkis:result:glm-gradient-hessian
