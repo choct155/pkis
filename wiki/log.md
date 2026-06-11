@@ -20099,3 +20099,12 @@
 ## [2026-06-11] committed | technique
 - Committed: model-predictive-control-rl → techniques/model-predictive-control-rl.md
 - IRI: pkis:technique:model-predictive-control-rl
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: pilco (id: 929880dc-08dc-4014-899f-75ef324fe676)
+- Title: PILCO (Probabilistic Inference for Learning Control)
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: pilco → techniques/pilco.md
+- IRI: pkis:technique:pilco
