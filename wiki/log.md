@@ -18614,3 +18614,12 @@
 ## [2026-06-11] committed | concept
 - Committed: semiparametric-gp → concepts/semiparametric-gp.md
 - IRI: pkis:concept:semiparametric-gp
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: cox-process (id: 34db381a-a538-4df8-ab64-71215735abfb)
+- Title: Cox Process (Poisson GP)
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: cox-process → concepts/cox-process.md
+- IRI: pkis:concept:cox-process
