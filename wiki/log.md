@@ -17219,3 +17219,12 @@
 ## [2026-06-11] committed | concept
 - Committed: von-mises-fisher-distribution → concepts/von-mises-fisher-distribution.md
 - IRI: pkis:concept:von-mises-fisher-distribution
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: matrix-normal-distribution (id: b6604e9d-9eda-4c1d-8ab5-22af1468c841)
+- Title: Matrix Normal Distribution
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: matrix-normal-distribution → concepts/matrix-normal-distribution.md
+- IRI: pkis:concept:matrix-normal-distribution
