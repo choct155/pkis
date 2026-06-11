@@ -17462,3 +17462,12 @@
 ## [2026-06-11] committed | concept
 - Committed: asymptotic-equipartition-property → concepts/asymptotic-equipartition-property.md
 - IRI: pkis:concept:asymptotic-equipartition-property
+
+## [2026-06-11] staged | node-stub (result)
+- Staged: kl-fisher-information-connection (id: b6c0eed3-3bc8-496e-9e60-84c8edd68ce3)
+- Title: KL Divergence–Fisher Information Connection
+- needs_canonical_source: False
+
+## [2026-06-11] committed | result
+- Committed: kl-fisher-information-connection → results/kl-fisher-information-connection.md
+- IRI: pkis:result:kl-fisher-information-connection

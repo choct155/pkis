@@ -1642,6 +1642,7 @@
 - [[constraint-propagation]] — Reducing a constraint satisfaction problem by iteratively eliminating inconsistent values from variable domains (knowledge-representation) (2026-05-20)
 
 ## Results
+- [[kl-fisher-information-connection]] — KL Divergence–Fisher Information Connection (information-theory, statistics, optimization) (2026-06-11)
 - [[kl-as-bregman-divergence]] — KL Divergence as Bregman Divergence (information-theory, optimization, statistics) (2026-06-11)
 - [[data-processing-inequality-kl]] — Data Processing Inequality (KL form) (information-theory, statistics) (2026-06-11)
 - [[compression-lemma-donsker-varadhan]] — Compression Lemma (Donsker-Varadhan Representation) (information-theory, machine-learning, statistics) (2026-06-11)
