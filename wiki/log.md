@@ -20216,3 +20216,12 @@
 ## [2026-06-11] committed | concept
 - Committed: backdoor-criterion-causal → concepts/backdoor-criterion-causal.md
 - IRI: pkis:concept:backdoor-criterion-causal
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: m-bias-bias-amplification (id: e69a6178-673d-4aa7-9e61-c80e5567f1ed)
+- Title: m-Bias and Bias Amplification
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: m-bias-bias-amplification → concepts/m-bias-bias-amplification.md
+- IRI: pkis:concept:m-bias-bias-amplification

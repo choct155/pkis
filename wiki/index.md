@@ -290,6 +290,7 @@
 - [[liu-machine-unlearning-llm-2024]] — Rethinking Machine Unlearning for LLMs: post-training knowledge editing survey (deep-learning, ai-safety) (2026-05-20)
 
 ## Concepts
+- [[m-bias-bias-amplification]] — m-Bias and Bias Amplification (causal-inference, statistics) (2026-06-11)
 - [[backdoor-criterion-causal]] — Backdoor Criterion (causal-inference, statistics) (2026-06-11)
 - [[overlap-positivity]] — Overlap (Positivity) Condition (causal-inference, statistics) (2026-06-11)
 - [[causal-hierarchy]] — Causal Hierarchy (Ladder of Causation) (causal-inference, statistics) (2026-06-11)
