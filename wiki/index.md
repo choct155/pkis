@@ -290,6 +290,7 @@
 - [[liu-machine-unlearning-llm-2024]] — Rethinking Machine Unlearning for LLMs: post-training knowledge editing survey (deep-learning, ai-safety) (2026-05-20)
 
 ## Concepts
+- [[zero-padding-cnn]] — Zero Padding (deep-learning) (2026-06-11)
 - [[receptive-field-cnn]] — Receptive Field (CNNs) (deep-learning, neuroscience) (2026-06-11)
 - [[translation-equivariance]] — Translation Equivariance (deep-learning, mathematics) (2026-06-11)
 - [[parameter-sharing-cnn]] — Parameter Sharing (CNNs) (deep-learning) (2026-06-11)

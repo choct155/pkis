@@ -14114,3 +14114,12 @@
 ## [2026-06-11] committed | technique
 - Committed: strided-convolution → techniques/strided-convolution.md
 - IRI: pkis:technique:strided-convolution
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: zero-padding-cnn (id: 225ce542-8c0d-46f0-b19a-9420b89885e5)
+- Title: Zero Padding
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: zero-padding-cnn → concepts/zero-padding-cnn.md
+- IRI: pkis:concept:zero-padding-cnn
