@@ -18884,3 +18884,12 @@
 ## [2026-06-11] committed | concept
 - Committed: posterior-collapse → concepts/posterior-collapse.md
 - IRI: pkis:concept:posterior-collapse
+
+## [2026-06-11] staged | node-stub (framework)
+- Staged: infovae (id: 376dcf73-1e8b-4075-b0a3-491881fafdb4)
+- Title: InfoVAE
+- needs_canonical_source: False
+
+## [2026-06-11] committed | framework
+- Committed: infovae → frameworks/infovae.md
+- IRI: pkis:framework:infovae

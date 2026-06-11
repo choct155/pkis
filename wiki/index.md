@@ -1935,6 +1935,7 @@
 - [[government-debt-valuation-equation]] — FTPL: price level determined by ratio of nominal debt to expected present value of future surpluses (macroeconomics) (2026-05-20)
 
 ## Frameworks
+- [[infovae]] — InfoVAE (machine-learning, variational-inference, information-theory) (2026-06-11)
 - [[beta-vae]] — β-VAE (machine-learning, representation-learning) (2026-06-11)
 - [[deep-generative-model-taxonomy]] — Deep Generative Model Taxonomy (machine-learning, generative-models) (2026-06-11)
 - [[meta-learning]] — Meta-Learning (machine-learning) (2026-06-11)
