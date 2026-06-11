@@ -19460,3 +19460,12 @@
 ## [2026-06-11] committed | concept
 - Committed: hard-vs-soft-clustering → concepts/hard-vs-soft-clustering.md
 - IRI: pkis:concept:hard-vs-soft-clustering
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: hybrid-generative-discriminative-training (id: 8da77752-705d-4735-b613-351e4ecbbd27)
+- Title: Hybrid Generative–Discriminative Training
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: hybrid-generative-discriminative-training → techniques/hybrid-generative-discriminative-training.md
+- IRI: pkis:technique:hybrid-generative-discriminative-training
