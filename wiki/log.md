@@ -16598,3 +16598,12 @@
 ## [2026-06-11] committed | technique
 - Committed: partial-dependence-plots → techniques/partial-dependence-plots.md
 - IRI: pkis:technique:partial-dependence-plots
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: weak-learner-boosting (id: 049396ae-df13-499b-846b-df110404ee6a)
+- Title: Weak Learner and Boosting Relationship
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: weak-learner-boosting → concepts/weak-learner-boosting.md
+- IRI: pkis:concept:weak-learner-boosting

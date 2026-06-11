@@ -290,6 +290,7 @@
 - [[liu-machine-unlearning-llm-2024]] — Rethinking Machine Unlearning for LLMs: post-training knowledge editing survey (deep-learning, ai-safety) (2026-05-20)
 
 ## Concepts
+- [[weak-learner-boosting]] — Weak Learner and Boosting Relationship (machine-learning, learning-theory) (2026-06-11)
 - [[ard-kernel]] — ARD Kernel (Automatic Relevance Determination Kernel) (machine-learning, Bayesian-statistics) (2026-06-11)
 - [[matern-kernel]] — Matérn Kernel (machine-learning, statistics, stochastic-processes) (2026-06-11)
 - [[mercer-kernel]] — Mercer Kernel (Positive Definite Kernel) (machine-learning, statistics, functional-analysis) (2026-06-11)
