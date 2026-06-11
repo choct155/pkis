@@ -956,6 +956,7 @@
 - [[market-vs-hierarchy]] — Coase/Williamson: transactions governed by price signals (markets) vs. managerial direction (firms) (corporate-finance) (2026-05-20)
 
 ## Techniques
+- [[line-search]] — Line Search (Exact and Armijo Backtracking) (optimization) (2026-06-11)
 - [[einstein-summation]] — Einstein Summation Notation (Einsum) (linear-algebra, machine-learning, deep-learning) (2026-06-11)
 - [[schur-complement]] — Schur Complement and Partitioned Matrix Inversion (linear-algebra, statistics, machine-learning) (2026-06-11)
 - [[hutchinson-trace-estimator]] — Hutchinson Trace Estimator (linear-algebra, numerical-methods, machine-learning) (2026-06-11)

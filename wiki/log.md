@@ -15779,3 +15779,12 @@
 ## [2026-06-11] committed | concept
 - Committed: composite-objective → concepts/composite-objective.md
 - IRI: pkis:concept:composite-objective
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: line-search (id: d6b0c89f-f39e-451b-a7a3-547862c01ef3)
+- Title: Line Search (Exact and Armijo Backtracking)
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: line-search → techniques/line-search.md
+- IRI: pkis:technique:line-search
