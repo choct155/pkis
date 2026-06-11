@@ -17210,3 +17210,12 @@
 ## [2026-06-11] committed | concept
 - Committed: inverse-wishart-distribution → concepts/inverse-wishart-distribution.md
 - IRI: pkis:concept:inverse-wishart-distribution
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: von-mises-fisher-distribution (id: 5f3ba5d9-8910-4d64-9058-3310afd80d42)
+- Title: Von Mises–Fisher Distribution
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: von-mises-fisher-distribution → concepts/von-mises-fisher-distribution.md
+- IRI: pkis:concept:von-mises-fisher-distribution
