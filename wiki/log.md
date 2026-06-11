@@ -17138,3 +17138,12 @@
 ## [2026-06-11] committed | concept
 - Committed: probability-space → concepts/probability-space.md
 - IRI: pkis:concept:probability-space
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: borel-sigma-field (id: 76844581-7f46-4f4c-bea8-33bba929fea1)
+- Title: Borel Sigma-Field
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: borel-sigma-field → concepts/borel-sigma-field.md
+- IRI: pkis:concept:borel-sigma-field
