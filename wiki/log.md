@@ -17426,3 +17426,12 @@
 ## [2026-06-11] committed | concept
 - Committed: forwards-vs-reverse-kl → concepts/forwards-vs-reverse-kl.md
 - IRI: pkis:concept:forwards-vs-reverse-kl
+
+## [2026-06-11] staged | node-stub (result)
+- Staged: compression-lemma-donsker-varadhan (id: b2fe1c5b-2b35-4b26-8755-25946c118401)
+- Title: Compression Lemma (Donsker-Varadhan Representation)
+- needs_canonical_source: False
+
+## [2026-06-11] committed | result
+- Committed: compression-lemma-donsker-varadhan → results/compression-lemma-donsker-varadhan.md
+- IRI: pkis:result:compression-lemma-donsker-varadhan
