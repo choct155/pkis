@@ -14645,3 +14645,12 @@
 ## [2026-06-11] committed | technique
 - Committed: semantic-hashing → techniques/semantic-hashing.md
 - IRI: pkis:technique:semantic-hashing
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: predictive-sparse-decomposition (id: bf17e61e-0782-4019-ab1d-51f11965a889)
+- Title: Predictive Sparse Decomposition (PSD)
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: predictive-sparse-decomposition → techniques/predictive-sparse-decomposition.md
+- IRI: pkis:technique:predictive-sparse-decomposition
