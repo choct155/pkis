@@ -16346,3 +16346,12 @@
 ## [2026-06-11] committed | technique
 - Committed: scaled-dot-product-attention → techniques/scaled-dot-product-attention.md
 - IRI: pkis:technique:scaled-dot-product-attention
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: multi-headed-attention (id: 5379c541-cc02-4ef3-8c12-f2c0354fe2cd)
+- Title: Multi-Headed Attention (MHA)
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: multi-headed-attention → concepts/multi-headed-attention.md
+- IRI: pkis:concept:multi-headed-attention
