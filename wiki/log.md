@@ -19721,3 +19721,12 @@
 ## [2026-06-11] committed | concept
 - Committed: pitman-yor-process → concepts/pitman-yor-process.md
 - IRI: pkis:concept:pitman-yor-process
+
+## [2026-06-11] staged | node-stub (framework)
+- Staged: hierarchical-dirichlet-process (id: edcbc9c1-9c38-455c-8efe-102398ee2b8c)
+- Title: Hierarchical Dirichlet Process
+- needs_canonical_source: False
+
+## [2026-06-11] committed | framework
+- Committed: hierarchical-dirichlet-process → frameworks/hierarchical-dirichlet-process.md
+- IRI: pkis:framework:hierarchical-dirichlet-process

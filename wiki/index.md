@@ -2007,6 +2007,7 @@
 - [[government-debt-valuation-equation]] — FTPL: price level determined by ratio of nominal debt to expected present value of future surpluses (macroeconomics) (2026-05-20)
 
 ## Frameworks
+- [[hierarchical-dirichlet-process]] — Hierarchical Dirichlet Process (machine-learning, statistics) (2026-06-11)
 - [[dirichlet-process-mixture-model]] — Dirichlet Process Mixture Model (machine-learning, statistics) (2026-06-11)
 - [[bayesian-nonparametric-models]] — Bayesian Nonparametric Models (machine-learning, statistics, probability) (2026-06-11)
 - [[graph-learning-framework]] — Graph Learning (Latent Variable & Structure Learning) (machine-learning, statistics, network-science) (2026-06-11)
