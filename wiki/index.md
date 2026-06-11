@@ -290,6 +290,7 @@
 - [[liu-machine-unlearning-llm-2024]] — Rethinking Machine Unlearning for LLMs: post-training knowledge editing survey (deep-learning, ai-safety) (2026-05-20)
 
 ## Concepts
+- [[gaussian-process-gp]] — Gaussian Process (GP) (machine-learning, statistics, probability) (2026-06-11)
 - [[pac-bayes]] — PAC-Bayes Generalisation Bounds (statistical-learning-theory, deep-learning, generalisation) (2026-06-11)
 - [[effective-dimensionality-bnn]] — Effective Dimensionality of a Neural Network (deep-learning, bayesian-inference, model-complexity) (2026-06-11)
 - [[mode-connectivity]] — Mode Connectivity (deep-learning, optimisation) (2026-06-11)

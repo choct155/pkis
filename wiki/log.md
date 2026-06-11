@@ -18560,3 +18560,12 @@
 ## [2026-06-11] committed | technique
 - Committed: laplace-bridge → techniques/laplace-bridge.md
 - IRI: pkis:technique:laplace-bridge
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: gaussian-process-gp (id: 4c40ec50-d068-4e2f-b52d-72dfeb031468)
+- Title: Gaussian Process (GP)
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: gaussian-process-gp → concepts/gaussian-process-gp.md
+- IRI: pkis:concept:gaussian-process-gp
