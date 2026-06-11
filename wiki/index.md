@@ -1077,6 +1077,7 @@
 - [[market-vs-hierarchy]] — Coase/Williamson: transactions governed by price signals (markets) vs. managerial direction (firms) (corporate-finance) (2026-05-20)
 
 ## Techniques
+- [[sngp]] — SNGP (Spectrally Normalized Gaussian Process) (deep-learning, uncertainty-quantification, gaussian-processes) (2026-06-11)
 - [[bayes-by-backprop]] — Bayes by Backprop (BBB) (bayesian-inference, deep-learning, variational-inference) (2026-06-11)
 - [[generalized-gauss-newton]] — Generalized Gauss-Newton (GGN) Approximation (optimisation, bayesian-inference, deep-learning) (2026-06-11)
 - [[batch-ensemble]] — Batch Ensemble (deep-learning, ensemble-methods, efficiency) (2026-06-11)

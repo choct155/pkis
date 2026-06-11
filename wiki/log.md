@@ -18542,3 +18542,12 @@
 ## [2026-06-11] committed | concept
 - Committed: pac-bayes → concepts/pac-bayes.md
 - IRI: pkis:concept:pac-bayes
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: sngp (id: 364bc08e-913c-4c5f-bf45-8126ad8ecf58)
+- Title: SNGP (Spectrally Normalized Gaussian Process)
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: sngp → techniques/sngp.md
+- IRI: pkis:technique:sngp
