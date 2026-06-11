@@ -15671,3 +15671,12 @@
 ## [2026-06-11] committed | result
 - Committed: minimal-sufficient-statistic-dpi → results/minimal-sufficient-statistic-dpi.md
 - IRI: pkis:result:minimal-sufficient-statistic-dpi
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: range-and-nullspace (id: c23da98f-8a38-4b2d-b2ac-247e58e5ddd5)
+- Title: Range and Nullspace of a Matrix
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: range-and-nullspace → concepts/range-and-nullspace.md
+- IRI: pkis:concept:range-and-nullspace
