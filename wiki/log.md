@@ -13367,3 +13367,12 @@
 ## [2026-06-11] committed | result
 - Committed: nn-size-doubling-trend → results/nn-size-doubling-trend.md
 - IRI: pkis:result:nn-size-doubling-trend
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: perceptron (id: 0bb0091c-7e9a-41df-bb84-2c7d49cfb3bd)
+- Title: Perceptron
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: perceptron → concepts/perceptron.md
+- IRI: pkis:concept:perceptron
