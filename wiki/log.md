@@ -17264,3 +17264,12 @@
 ## [2026-06-11] committed | concept
 - Committed: highest-posterior-density-region → concepts/highest-posterior-density-region.md
 - IRI: pkis:concept:highest-posterior-density-region
+
+## [2026-06-11] staged | node-stub (result)
+- Staged: asymptotic-normality-mle (id: 8faaf787-2b82-4f7a-bc77-fd96b45b4ba5)
+- Title: Asymptotic Normality of the MLE
+- needs_canonical_source: False
+
+## [2026-06-11] committed | result
+- Committed: asymptotic-normality-mle → results/asymptotic-normality-mle.md
+- IRI: pkis:result:asymptotic-normality-mle
