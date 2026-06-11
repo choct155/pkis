@@ -13088,3 +13088,12 @@
 ## [2026-06-11] committed | result
 - Committed: liouvilles-theorem → results/liouvilles-theorem.md
 - IRI: pkis:result:liouvilles-theorem
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: partition-function-chaining (id: 6d02068c-d03c-47b6-bf40-764bf43e01b2)
+- Title: Partition Function Estimation by Chaining
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: partition-function-chaining → techniques/partition-function-chaining.md
+- IRI: pkis:technique:partition-function-chaining
