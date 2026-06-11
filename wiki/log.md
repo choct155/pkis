@@ -19631,3 +19631,12 @@
 ## [2026-06-11] committed | concept
 - Committed: community-detection → concepts/community-detection.md
 - IRI: pkis:concept:community-detection
+
+## [2026-06-11] staged | node-stub (result)
+- Staged: graphical-lasso-sparsity-tradeoff (id: c4b60b7f-be2e-4a04-bc87-18dd5b3b65cf)
+- Title: Graphical Lasso Sparsity–Accuracy Trade-off
+- needs_canonical_source: False
+
+## [2026-06-11] committed | result
+- Committed: graphical-lasso-sparsity-tradeoff → results/graphical-lasso-sparsity-tradeoff.md
+- IRI: pkis:result:graphical-lasso-sparsity-tradeoff

@@ -1835,6 +1835,7 @@
 - [[constraint-propagation]] — Reducing a constraint satisfaction problem by iteratively eliminating inconsistent values from variable domains (knowledge-representation) (2026-05-20)
 
 ## Results
+- [[graphical-lasso-sparsity-tradeoff]] — Graphical Lasso Sparsity–Accuracy Trade-off (statistics, machine-learning) (2026-06-11)
 - [[student-t-as-gaussian-scale-mixture]] — Student-t as a Gaussian Scale Mixture (probability-theory, statistics) (2026-06-11)
 - [[gan-jsd-equivalence]] — GAN–Jensen-Shannon Divergence Equivalence (information-theory, machine-learning, game-theory) (2026-06-11)
 - [[andersons-reverse-sde]] — Anderson's Reverse-Time SDE Theorem (stochastic-processes, machine-learning, generative-models) (2026-06-11)
