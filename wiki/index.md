@@ -1035,6 +1035,7 @@
 - [[market-vs-hierarchy]] — Coase/Williamson: transactions governed by price signals (markets) vs. managerial direction (firms) (corporate-finance) (2026-05-20)
 
 ## Techniques
+- [[stl-estimator]] — Sticking-the-Landing (STL) Estimator (machine-learning, statistics) (2026-06-11)
 - [[kfac]] — KFAC (Kronecker-Factored Approximate Curvature) (machine-learning, optimization) (2026-06-11)
 - [[natural-gradient-descent]] — Natural Gradient Descent (machine-learning, optimization, information-geometry) (2026-06-11)
 - [[straight-through-estimator]] — Straight-Through Estimator (machine-learning, deep-learning) (2026-06-11)

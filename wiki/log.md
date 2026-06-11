@@ -17588,3 +17588,12 @@
 ## [2026-06-11] committed | result
 - Committed: bonnets-and-prices-theorem → results/bonnets-and-prices-theorem.md
 - IRI: pkis:result:bonnets-and-prices-theorem
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: stl-estimator (id: f7db7d0b-f683-4e18-9eb4-387d71cb69cd)
+- Title: Sticking-the-Landing (STL) Estimator
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: stl-estimator → techniques/stl-estimator.md
+- IRI: pkis:technique:stl-estimator
