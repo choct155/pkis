@@ -13340,3 +13340,12 @@
 ## [2026-06-11] committed | concept
 - Committed: knowledge-base-ai → concepts/knowledge-base-ai.md
 - IRI: pkis:concept:knowledge-base-ai
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: greedy-layer-wise-pretraining (id: 6d6e51f2-f149-4ea9-b153-f17f14f126ac)
+- Title: Greedy Layer-Wise Pretraining
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: greedy-layer-wise-pretraining → concepts/greedy-layer-wise-pretraining.md
+- IRI: pkis:concept:greedy-layer-wise-pretraining
