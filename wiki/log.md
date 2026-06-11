@@ -14141,3 +14141,12 @@
 ## [2026-06-11] committed | concept
 - Committed: tiled-convolution → concepts/tiled-convolution.md
 - IRI: pkis:concept:tiled-convolution
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: gabor-function (id: 019185ba-b8d1-44f1-93af-c45e2185747d)
+- Title: Gabor Function (Neuroscience / Vision)
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: gabor-function → concepts/gabor-function.md
+- IRI: pkis:concept:gabor-function
