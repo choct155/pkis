@@ -16040,3 +16040,12 @@
 ## [2026-06-11] committed | technique
 - Committed: ordinary-least-squares → techniques/ordinary-least-squares.md
 - IRI: pkis:technique:ordinary-least-squares
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: hat-matrix (id: dce5a3d9-7333-490b-8566-04e6475a8959)
+- Title: Hat Matrix (Projection Matrix)
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: hat-matrix → concepts/hat-matrix.md
+- IRI: pkis:concept:hat-matrix
