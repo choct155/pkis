@@ -18695,3 +18695,12 @@
 ## [2026-06-11] committed | technique
 - Committed: test-time-adaptation → techniques/test-time-adaptation.md
 - IRI: pkis:technique:test-time-adaptation
+
+## [2026-06-11] staged | node-stub (framework)
+- Staged: multitask-learning (id: dc8870e3-644d-4722-b670-381d1e43a33d)
+- Title: Multitask Learning
+- needs_canonical_source: False
+
+## [2026-06-11] committed | framework
+- Committed: multitask-learning → frameworks/multitask-learning.md
+- IRI: pkis:framework:multitask-learning
