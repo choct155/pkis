@@ -1271,6 +1271,7 @@
 - [[government-debt-valuation-equation]] — FTPL: price level determined by ratio of nominal debt to expected present value of future surpluses (macroeconomics) (2026-05-20)
 
 ## Frameworks
+- [[evidence-approximation]] — Evidence Approximation (Empirical Bayes for Linear Models) (machine-learning, bayesian-statistics) (2026-06-11)
 - [[generative-discriminative-discriminant-taxonomy]] — Generative vs Discriminative vs Discriminant-Function Approaches (machine-learning, statistics, pattern-recognition) (2026-06-11)
 - [[restricted-boltzmann-machine]] — Restricted Boltzmann Machine (deep-learning, statistical-learning) (2026-06-09)
 - [[gaussian-graphical-model]] — Gaussian Graphical Model (statistical-learning, bayesian-stats) (2026-06-09)

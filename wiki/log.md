@@ -12350,3 +12350,12 @@
 ## [2026-06-11] committed | concept
 - Committed: equivalent-kernel → concepts/equivalent-kernel.md
 - IRI: pkis:concept:equivalent-kernel
+
+## [2026-06-11] staged | node-stub (framework)
+- Staged: evidence-approximation (id: 32466ded-0788-4285-b102-67e9205f710b)
+- Title: Evidence Approximation (Empirical Bayes for Linear Models)
+- needs_canonical_source: False
+
+## [2026-06-11] committed | framework
+- Committed: evidence-approximation → frameworks/evidence-approximation.md
+- IRI: pkis:framework:evidence-approximation
