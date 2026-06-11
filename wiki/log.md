@@ -15986,3 +15986,12 @@
 ## [2026-06-11] committed | concept
 - Committed: robust-logistic-regression → concepts/robust-logistic-regression.md
 - IRI: pkis:concept:robust-logistic-regression
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: multi-label-classification (id: 2198cd46-75f1-4a9f-beb6-dea729435532)
+- Title: Multi-label Classification
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: multi-label-classification → concepts/multi-label-classification.md
+- IRI: pkis:concept:multi-label-classification
