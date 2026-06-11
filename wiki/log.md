@@ -17840,3 +17840,12 @@
 ## [2026-06-11] committed | concept
 - Committed: computation-tree-bp → concepts/computation-tree-bp.md
 - IRI: pkis:concept:computation-tree-bp
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: residual-belief-propagation (id: cfaf476f-aa1a-4ebc-b887-b9800e5534df)
+- Title: Residual Belief Propagation
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: residual-belief-propagation → techniques/residual-belief-propagation.md
+- IRI: pkis:technique:residual-belief-propagation

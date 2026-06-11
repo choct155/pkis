@@ -1045,6 +1045,7 @@
 - [[market-vs-hierarchy]] — Coase/Williamson: transactions governed by price signals (markets) vs. managerial direction (firms) (corporate-finance) (2026-05-20)
 
 ## Techniques
+- [[residual-belief-propagation]] — Residual Belief Propagation (probabilistic-graphical-models) (2026-06-11)
 - [[max-product-belief-propagation]] — Max-Product Belief Propagation (probabilistic-graphical-models, machine-learning) (2026-06-11)
 - [[sum-product-algorithm-trees]] — Sum-Product Algorithm on Trees (probabilistic-graphical-models, information-theory) (2026-06-11)
 - [[forwards-filtering-backwards-sampling]] — Forwards Filtering Backwards Sampling (FFBS) (probabilistic-graphical-models, machine-learning, Bayesian-statistics) (2026-06-11)
