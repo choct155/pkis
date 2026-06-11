@@ -984,6 +984,7 @@
 - [[market-vs-hierarchy]] — Coase/Williamson: transactions governed by price signals (markets) vs. managerial direction (firms) (corporate-finance) (2026-05-20)
 
 ## Techniques
+- [[causal-convolution]] — Causal (Masked) Convolution (machine-learning, deep-learning, sequence-models) (2026-06-11)
 - [[sinusoidal-positional-encoding]] — Positional Encoding (Sinusoidal) (machine-learning, deep-learning, nlp) (2026-06-11)
 - [[scaled-dot-product-attention]] — Scaled Dot-Product Attention (machine-learning, deep-learning, nlp) (2026-06-11)
 - [[activation-maximization]] — Activation Maximization (deep-learning, interpretability) (2026-06-11)

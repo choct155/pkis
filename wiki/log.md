@@ -16382,3 +16382,12 @@
 ## [2026-06-11] committed | framework
 - Committed: transformer-architecture → frameworks/transformer-architecture.md
 - IRI: pkis:framework:transformer-architecture
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: causal-convolution (id: 220cceb9-e068-43c1-a394-8c83fb37a7c1)
+- Title: Causal (Masked) Convolution
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: causal-convolution → techniques/causal-convolution.md
+- IRI: pkis:technique:causal-convolution
