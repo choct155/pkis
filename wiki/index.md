@@ -1790,6 +1790,7 @@
 - [[constraint-propagation]] — Reducing a constraint satisfaction problem by iteratively eliminating inconsistent values from variable domains (knowledge-representation) (2026-05-20)
 
 ## Results
+- [[weinstein-aronszajn-identity]] — Weinstein–Aronszajn Identity (Matrix Determinant Lemma) (linear-algebra, machine-learning) (2026-06-11)
 - [[instantaneous-change-of-variables]] — Instantaneous Change-of-Variables Formula (Continuous Flows) (machine-learning, differential-equations) (2026-06-11)
 - [[mercers-theorem]] — Mercer's Theorem (functional-analysis, machine-learning, mathematics) (2026-06-11)
 - [[gp-marginal-likelihood]] — GP Marginal Likelihood for Kernel Learning (machine-learning, Bayesian-inference, statistics) (2026-06-11)

@@ -19109,3 +19109,12 @@
 ## [2026-06-11] committed | concept
 - Committed: pushforward-distribution → concepts/pushforward-distribution.md
 - IRI: pkis:concept:pushforward-distribution
+
+## [2026-06-11] staged | node-stub (result)
+- Staged: weinstein-aronszajn-identity (id: cf44fabe-3bb5-408a-990c-0d2e0db1bae7)
+- Title: Weinstein–Aronszajn Identity (Matrix Determinant Lemma)
+- needs_canonical_source: False
+
+## [2026-06-11] committed | result
+- Committed: weinstein-aronszajn-identity → results/weinstein-aronszajn-identity.md
+- IRI: pkis:result:weinstein-aronszajn-identity
