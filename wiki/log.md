@@ -16571,3 +16571,12 @@
 ## [2026-06-11] committed | framework
 - Committed: cart-decision-trees → frameworks/cart-decision-trees.md
 - IRI: pkis:framework:cart-decision-trees
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: xgboost (id: fd33accb-3aaf-4831-89c9-e525370e2dc5)
+- Title: XGBoost
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: xgboost → techniques/xgboost.md
+- IRI: pkis:technique:xgboost
