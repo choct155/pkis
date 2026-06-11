@@ -16076,3 +16076,12 @@
 ## [2026-06-11] committed | concept
 - Committed: weighted-least-squares → concepts/weighted-least-squares.md
 - IRI: pkis:concept:weighted-least-squares
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: lasso-regression (id: 15990612-623e-4ede-96ca-182c1b384bd6)
+- Title: Lasso Regression ($\ell_1$-Regularised Linear Regression)
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: lasso-regression → techniques/lasso-regression.md
+- IRI: pkis:technique:lasso-regression
