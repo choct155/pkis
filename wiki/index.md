@@ -1487,6 +1487,7 @@
 - [[government-debt-valuation-equation]] — FTPL: price level determined by ratio of nominal debt to expected present value of future surpluses (macroeconomics) (2026-05-20)
 
 ## Frameworks
+- [[linear-factor-model]] — Linear Factor Model (machine-learning, statistics, probabilistic-modeling) (2026-06-11)
 - [[collaborative-filtering]] — Collaborative Filtering with Latent Factor Models (machine-learning, recommender-systems) (2026-06-11)
 - [[dl-practical-design-methodology]] — Deep Learning Practical Design Methodology (machine-learning, deep-learning, methodology) (2026-06-11)
 - [[echo-state-networks]] — Echo State Networks / Reservoir Computing (deep-learning, sequence-modeling, dynamical-systems) (2026-06-11)

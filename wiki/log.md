@@ -14492,3 +14492,12 @@
 ## [2026-06-11] committed | technique
 - Committed: gpu-accelerated-deep-learning → techniques/gpu-accelerated-deep-learning.md
 - IRI: pkis:technique:gpu-accelerated-deep-learning
+
+## [2026-06-11] staged | node-stub (framework)
+- Staged: linear-factor-model (id: dc3ef079-80ab-4787-878d-c3d0a6029020)
+- Title: Linear Factor Model
+- needs_canonical_source: False
+
+## [2026-06-11] committed | framework
+- Committed: linear-factor-model → frameworks/linear-factor-model.md
+- IRI: pkis:framework:linear-factor-model
