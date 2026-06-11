@@ -18596,3 +18596,12 @@
 ## [2026-06-11] committed | concept
 - Committed: stationary-kernel → concepts/stationary-kernel.md
 - IRI: pkis:concept:stationary-kernel
+
+## [2026-06-11] staged | node-stub (result)
+- Staged: mercers-theorem (id: fd110924-af7e-4367-871a-2a50123a5445)
+- Title: Mercer's Theorem
+- needs_canonical_source: False
+
+## [2026-06-11] committed | result
+- Committed: mercers-theorem → results/mercers-theorem.md
+- IRI: pkis:result:mercers-theorem
