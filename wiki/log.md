@@ -15311,3 +15311,12 @@
 ## [2026-06-11] committed | framework
 - Committed: linear-gaussian-system → frameworks/linear-gaussian-system.md
 - IRI: pkis:framework:linear-gaussian-system
+
+## [2026-06-11] staged | node-stub (result)
+- Staged: bayes-rule-for-gaussians (id: f298a8e8-65c8-4667-959e-1a5cfd43233e)
+- Title: Bayes Rule for Gaussians
+- needs_canonical_source: False
+
+## [2026-06-11] committed | result
+- Committed: bayes-rule-for-gaussians → results/bayes-rule-for-gaussians.md
+- IRI: pkis:result:bayes-rule-for-gaussians
