@@ -290,6 +290,7 @@
 - [[liu-machine-unlearning-llm-2024]] — Rethinking Machine Unlearning for LLMs: post-training knowledge editing survey (deep-learning, ai-safety) (2026-05-20)
 
 ## Concepts
+- [[hinge-loss-svm]] — Hinge Loss (machine-learning, statistics) (2026-06-11)
 - [[soft-margin-svm]] — Soft-Margin SVM and Slack Variables (machine-learning) (2026-06-11)
 - [[fisher-kernel]] — Fisher Kernel (machine-learning, kernel-methods, information-geometry) (2026-06-11)
 - [[stationary-and-radial-kernels]] — Stationary and Radial Basis Kernels (machine-learning, kernel-methods, gaussian-processes) (2026-06-11)

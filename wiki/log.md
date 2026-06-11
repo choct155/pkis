@@ -12683,3 +12683,12 @@
 ## [2026-06-11] committed | concept
 - Committed: soft-margin-svm → concepts/soft-margin-svm.md
 - IRI: pkis:concept:soft-margin-svm
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: hinge-loss-svm (id: 4a0c2823-3283-4618-abd5-15104b157258)
+- Title: Hinge Loss
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: hinge-loss-svm → concepts/hinge-loss-svm.md
+- IRI: pkis:concept:hinge-loss-svm
