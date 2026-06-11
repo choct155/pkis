@@ -18290,3 +18290,12 @@
 ## [2026-06-11] committed | concept
 - Committed: normal-inverse-gamma-prior → concepts/normal-inverse-gamma-prior.md
 - IRI: pkis:concept:normal-inverse-gamma-prior
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: zellners-g-prior (id: da58d2b3-979b-4685-a418-e72357cf4458)
+- Title: Zellner's g-Prior
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: zellners-g-prior → concepts/zellners-g-prior.md
+- IRI: pkis:concept:zellners-g-prior
