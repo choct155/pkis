@@ -14780,3 +14780,12 @@
 ## [2026-06-11] committed | concept
 - Committed: separation-undirected-graphical-models → concepts/separation-undirected-graphical-models.md
 - IRI: pkis:concept:separation-undirected-graphical-models
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: structure-learning (id: 53ea7a32-2bf2-469b-889a-747519962442)
+- Title: Structure Learning
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: structure-learning → concepts/structure-learning.md
+- IRI: pkis:concept:structure-learning
