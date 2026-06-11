@@ -12314,3 +12314,12 @@
 ## [2026-06-11] committed | technique
 - Committed: normal-equations-pseudoinverse → techniques/normal-equations-pseudoinverse.md
 - IRI: pkis:technique:normal-equations-pseudoinverse
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: lms-algorithm (id: e9bedc84-6340-412e-b430-ef6c976f19e6)
+- Title: LMS Algorithm (Least-Mean-Squares)
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: lms-algorithm → techniques/lms-algorithm.md
+- IRI: pkis:technique:lms-algorithm
