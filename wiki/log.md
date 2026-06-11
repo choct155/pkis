@@ -15689,3 +15689,12 @@
 ## [2026-06-11] committed | concept
 - Committed: matrix-norms → concepts/matrix-norms.md
 - IRI: pkis:concept:matrix-norms
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: hutchinson-trace-estimator (id: 21e51522-54f6-40ec-b0a8-ffe0ab42f912)
+- Title: Hutchinson Trace Estimator
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: hutchinson-trace-estimator → techniques/hutchinson-trace-estimator.md
+- IRI: pkis:technique:hutchinson-trace-estimator
