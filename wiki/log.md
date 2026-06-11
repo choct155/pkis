@@ -18794,3 +18794,12 @@
 ## [2026-06-11] committed | concept
 - Committed: frechet-inception-distance → concepts/frechet-inception-distance.md
 - IRI: pkis:concept:frechet-inception-distance
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: language-model-perplexity (id: 3f555db8-adbe-49b0-9e05-0497a9839c00)
+- Title: Perplexity of a Language Model
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: language-model-perplexity → concepts/language-model-perplexity.md
+- IRI: pkis:concept:language-model-perplexity
