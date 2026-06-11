@@ -18785,3 +18785,12 @@
 ## [2026-06-11] committed | concept
 - Committed: inception-score → concepts/inception-score.md
 - IRI: pkis:concept:inception-score
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: frechet-inception-distance (id: 65a3b094-8a8c-4075-b2fc-dabc408fe3ff)
+- Title: Fréchet Inception Distance
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: frechet-inception-distance → concepts/frechet-inception-distance.md
+- IRI: pkis:concept:frechet-inception-distance

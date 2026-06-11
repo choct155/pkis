@@ -290,6 +290,7 @@
 - [[liu-machine-unlearning-llm-2024]] — Rethinking Machine Unlearning for LLMs: post-training knowledge editing survey (deep-learning, ai-safety) (2026-05-20)
 
 ## Concepts
+- [[frechet-inception-distance]] — Fréchet Inception Distance (machine-learning, generative-models, evaluation) (2026-06-11)
 - [[inception-score]] — Inception Score (machine-learning, generative-models, evaluation) (2026-06-11)
 - [[latent-space-interpolation]] — Latent Space Interpolation (machine-learning, representation-learning, generative-models) (2026-06-11)
 - [[causal-vs-anticausal-prediction]] — Causal vs. Anticausal Prediction (machine-learning, causality, statistics) (2026-06-11)
