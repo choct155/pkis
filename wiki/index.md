@@ -290,6 +290,7 @@
 - [[liu-machine-unlearning-llm-2024]] — Rethinking Machine Unlearning for LLMs: post-training knowledge editing survey (deep-learning, ai-safety) (2026-05-20)
 
 ## Concepts
+- [[post-hoc-explanation]] — Post-Hoc Explanation (machine-learning, interpretability) (2026-06-11)
 - [[inherently-interpretable-model]] — Inherently Interpretable Model (machine-learning, interpretability, human-computer-interaction) (2026-06-11)
 - [[linear-evaluation-protocol]] — Linear Evaluation Protocol (machine-learning, representation-learning) (2026-06-11)
 - [[disentangled-representation-learning]] — Disentangled Representation Learning (machine-learning, representation-learning, generative-models) (2026-06-11)

@@ -19856,3 +19856,12 @@
 ## [2026-06-11] committed | concept
 - Committed: inherently-interpretable-model → concepts/inherently-interpretable-model.md
 - IRI: pkis:concept:inherently-interpretable-model
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: post-hoc-explanation (id: 6e3771c2-40d8-445a-903d-ce3a0e60cf81)
+- Title: Post-Hoc Explanation
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: post-hoc-explanation → concepts/post-hoc-explanation.md
+- IRI: pkis:concept:post-hoc-explanation
