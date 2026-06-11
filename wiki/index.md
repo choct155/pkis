@@ -290,6 +290,7 @@
 - [[liu-machine-unlearning-llm-2024]] — Rethinking Machine Unlearning for LLMs: post-training knowledge editing survey (deep-learning, ai-safety) (2026-05-20)
 
 ## Concepts
+- [[fisher-kernel]] — Fisher Kernel (machine-learning, kernel-methods, information-geometry) (2026-06-11)
 - [[stationary-and-radial-kernels]] — Stationary and Radial Basis Kernels (machine-learning, kernel-methods, gaussian-processes) (2026-06-11)
 - [[kernel-construction-rules]] — Kernel Construction Rules (Closure Properties) (machine-learning, kernel-methods) (2026-06-11)
 - [[gram-matrix]] — Gram Matrix (machine-learning, linear-algebra, kernel-methods) (2026-06-11)

@@ -12611,3 +12611,12 @@
 ## [2026-06-11] committed | concept
 - Committed: stationary-and-radial-kernels → concepts/stationary-and-radial-kernels.md
 - IRI: pkis:concept:stationary-and-radial-kernels
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: fisher-kernel (id: 5d00df2e-965b-42b2-8a44-82d8f37001c7)
+- Title: Fisher Kernel
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: fisher-kernel → concepts/fisher-kernel.md
+- IRI: pkis:concept:fisher-kernel
