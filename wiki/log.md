@@ -18578,3 +18578,12 @@
 ## [2026-06-11] committed | technique
 - Committed: gp-posterior-inference → techniques/gp-posterior-inference.md
 - IRI: pkis:technique:gp-posterior-inference
+
+## [2026-06-11] staged | node-stub (result)
+- Staged: gp-marginal-likelihood (id: bde78343-6238-4174-9bd9-c4e3ef51e485)
+- Title: GP Marginal Likelihood for Kernel Learning
+- needs_canonical_source: False
+
+## [2026-06-11] committed | result
+- Committed: gp-marginal-likelihood → results/gp-marginal-likelihood.md
+- IRI: pkis:result:gp-marginal-likelihood
