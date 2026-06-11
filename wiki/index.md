@@ -290,6 +290,7 @@
 - [[liu-machine-unlearning-llm-2024]] — Rethinking Machine Unlearning for LLMs: post-training knowledge editing survey (deep-learning, ai-safety) (2026-05-20)
 
 ## Concepts
+- [[mcmc-proposal-distribution]] — Proposal Distribution (MCMC) (MCMC, bayesian-computation, stochastic-processes) (2026-06-11)
 - [[energy-function-posterior]] — Energy Function (Unnormalized Posterior) (bayesian-inference, statistical-physics, probabilistic-modeling) (2026-06-11)
 - [[jvp-vjp]] — Jacobian-Vector Product and Vector-Jacobian Product (machine-learning, numerical-methods, optimization) (2026-06-11)
 - [[score-function-estimator]] — Score Function Estimator (REINFORCE Gradient) (machine-learning, statistics, reinforcement-learning) (2026-06-11)

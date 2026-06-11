@@ -17642,3 +17642,12 @@
 ## [2026-06-11] committed | technique
 - Committed: advi → techniques/advi.md
 - IRI: pkis:technique:advi
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: mcmc-proposal-distribution (id: 132381cb-dac7-4b97-9ca2-8eb81da7ed0f)
+- Title: Proposal Distribution (MCMC)
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: mcmc-proposal-distribution → concepts/mcmc-proposal-distribution.md
+- IRI: pkis:concept:mcmc-proposal-distribution
