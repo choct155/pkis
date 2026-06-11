@@ -17795,3 +17795,12 @@
 ## [2026-06-11] committed | concept
 - Committed: gaussian-ansatz-ssm → concepts/gaussian-ansatz-ssm.md
 - IRI: pkis:concept:gaussian-ansatz-ssm
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: forwards-backwards-algorithm (id: bfa1359a-8a92-4a8a-885d-c549e055b9c9)
+- Title: Forwards-Backwards Algorithm (HMM Smoothing)
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: forwards-backwards-algorithm → techniques/forwards-backwards-algorithm.md
+- IRI: pkis:technique:forwards-backwards-algorithm
