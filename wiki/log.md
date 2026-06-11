@@ -17345,3 +17345,12 @@
 ## [2026-06-11] committed | concept
 - Committed: ordered-markov-property → concepts/ordered-markov-property.md
 - IRI: pkis:concept:ordered-markov-property
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: markov-blanket-dpgm (id: a0aacd85-db7d-4b92-9735-e44c546417ce)
+- Title: Markov Blanket in Directed Graphical Models
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: markov-blanket-dpgm → concepts/markov-blanket-dpgm.md
+- IRI: pkis:concept:markov-blanket-dpgm
