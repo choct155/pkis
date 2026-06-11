@@ -12746,3 +12746,12 @@
 ## [2026-06-11] committed | concept
 - Committed: rvm-sparsity-quality-factors → concepts/rvm-sparsity-quality-factors.md
 - IRI: pkis:concept:rvm-sparsity-quality-factors
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: nu-svm (id: acf4bbb7-734a-4aaf-8a54-9a2a5f180552)
+- Title: ν-SVM
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: nu-svm → concepts/nu-svm.md
+- IRI: pkis:concept:nu-svm
