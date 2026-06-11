@@ -15482,3 +15482,12 @@
 ## [2026-06-11] committed | technique
 - Committed: cost-sensitive-classification → techniques/cost-sensitive-classification.md
 - IRI: pkis:technique:cost-sensitive-classification
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: classification-reject-option (id: c181b03d-9788-46a9-997f-e7ccb99efbe7)
+- Title: Classification with Reject Option (Chow's Rule)
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: classification-reject-option → techniques/classification-reject-option.md
+- IRI: pkis:technique:classification-reject-option
