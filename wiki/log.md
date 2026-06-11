@@ -17777,3 +17777,12 @@
 ## [2026-06-11] committed | technique
 - Committed: information-filter → techniques/information-filter.md
 - IRI: pkis:technique:information-filter
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: backwards-kalman-gain (id: 1d15c766-de3e-40c6-bb5d-01c1457a7916)
+- Title: Backwards Kalman Gain (Smoother Gain)
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: backwards-kalman-gain → concepts/backwards-kalman-gain.md
+- IRI: pkis:concept:backwards-kalman-gain
