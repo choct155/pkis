@@ -19046,3 +19046,12 @@
 ## [2026-06-11] committed | technique
 - Committed: coupling-layer → techniques/coupling-layer.md
 - IRI: pkis:technique:coupling-layer
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: autoregressive-flow (id: 012613ad-733b-4d16-b2eb-315db507c953)
+- Title: Autoregressive Flow
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: autoregressive-flow → techniques/autoregressive-flow.md
+- IRI: pkis:technique:autoregressive-flow
