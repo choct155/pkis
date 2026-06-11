@@ -16391,3 +16391,12 @@
 ## [2026-06-11] committed | technique
 - Committed: causal-convolution → techniques/causal-convolution.md
 - IRI: pkis:technique:causal-convolution
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: beam-search (id: 2a0ffd65-3f6b-43f5-9991-9a6bf0df0339)
+- Title: Beam Search Decoding
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: beam-search → techniques/beam-search.md
+- IRI: pkis:technique:beam-search
