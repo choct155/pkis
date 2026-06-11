@@ -16238,3 +16238,12 @@
 ## [2026-06-11] committed | concept
 - Committed: heteroskedastic-neural-regression → concepts/heteroskedastic-neural-regression.md
 - IRI: pkis:concept:heteroskedastic-neural-regression
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: data-parallelism-dnn (id: db4e6c99-9d47-40f9-9797-58f6cdef1571)
+- Title: Data Parallelism for DNN Training
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: data-parallelism-dnn → techniques/data-parallelism-dnn.md
+- IRI: pkis:technique:data-parallelism-dnn

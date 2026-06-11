@@ -979,6 +979,7 @@
 - [[market-vs-hierarchy]] — Coase/Williamson: transactions governed by price signals (markets) vs. managerial direction (firms) (corporate-finance) (2026-05-20)
 
 ## Techniques
+- [[data-parallelism-dnn]] — Data Parallelism for DNN Training (machine-learning, deep-learning, distributed-computing) (2026-06-11)
 - [[residual-block]] — Residual Block and Skip Connections (machine-learning, deep-learning) (2026-06-11)
 - [[xavier-initialization]] — Xavier / Glorot Initialization (machine-learning, deep-learning) (2026-06-11)
 - [[binomial-regression]] — Binomial Regression (statistics, machine-learning) (2026-06-11)
