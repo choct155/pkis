@@ -16769,3 +16769,12 @@
 ## [2026-06-11] committed | result
 - Committed: linear-autoencoder-pca-equivalence → results/linear-autoencoder-pca-equivalence.md
 - IRI: pkis:result:linear-autoencoder-pca-equivalence
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: hierarchical-agglomerative-clustering (id: c0eaa80a-9f32-40b5-9295-7a351f98da75)
+- Title: Hierarchical Agglomerative Clustering (HAC)
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: hierarchical-agglomerative-clustering → techniques/hierarchical-agglomerative-clustering.md
+- IRI: pkis:technique:hierarchical-agglomerative-clustering
