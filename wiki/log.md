@@ -17858,3 +17858,12 @@
 ## [2026-06-11] committed | technique
 - Committed: generalised-belief-propagation → techniques/generalised-belief-propagation.md
 - IRI: pkis:technique:generalised-belief-propagation
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: mpm-map-mpe-estimators (id: 8646a46b-6276-4483-b6e5-a68b0bf15cc4)
+- Title: MPM vs MAP vs MPE Estimators
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: mpm-map-mpe-estimators → concepts/mpm-map-mpe-estimators.md
+- IRI: pkis:concept:mpm-map-mpe-estimators
