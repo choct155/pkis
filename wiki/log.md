@@ -14006,3 +14006,12 @@
 ## [2026-06-11] committed | technique
 - Committed: rmsprop → techniques/rmsprop.md
 - IRI: pkis:technique:rmsprop
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: adam-optimizer (id: 7d47befe-6bae-4087-9e76-5ea5e00b5c73)
+- Title: Adam Optimizer
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: adam-optimizer → techniques/adam-optimizer.md
+- IRI: pkis:technique:adam-optimizer

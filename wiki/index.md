@@ -859,6 +859,7 @@
 - [[market-vs-hierarchy]] — Coase/Williamson: transactions governed by price signals (markets) vs. managerial direction (firms) (corporate-finance) (2026-05-20)
 
 ## Techniques
+- [[adam-optimizer]] — Adam Optimizer (machine-learning, optimization, deep-learning) (2026-06-11)
 - [[rmsprop]] — RMSProp (machine-learning, optimization, deep-learning) (2026-06-11)
 - [[adagrad]] — AdaGrad (machine-learning, optimization) (2026-06-11)
 - [[nesterov-momentum]] — Nesterov Momentum (machine-learning, optimization) (2026-06-11)
