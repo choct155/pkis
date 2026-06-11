@@ -16400,3 +16400,12 @@
 ## [2026-06-11] committed | technique
 - Committed: beam-search → techniques/beam-search.md
 - IRI: pkis:technique:beam-search
+
+## [2026-06-11] staged | node-stub (framework)
+- Staged: vision-transformer (id: c4256a3f-1be2-43fc-8f91-f0f4a1e95b58)
+- Title: Vision Transformer (ViT)
+- needs_canonical_source: False
+
+## [2026-06-11] committed | framework
+- Committed: vision-transformer → frameworks/vision-transformer.md
+- IRI: pkis:framework:vision-transformer
