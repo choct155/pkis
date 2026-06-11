@@ -290,6 +290,7 @@
 - [[liu-machine-unlearning-llm-2024]] — Rethinking Machine Unlearning for LLMs: post-training knowledge editing survey (deep-learning, ai-safety) (2026-05-20)
 
 ## Concepts
+- [[bma-vs-model-combination]] — Bayesian Model Averaging vs. Model Combination (machine-learning, statistics, Bayesian-inference) (2026-06-11)
 - [[gini-impurity]] — Gini Impurity Index (machine-learning, statistics) (2026-06-11)
 - [[exponential-loss]] — Exponential Loss Function (machine-learning, statistics) (2026-06-11)
 - [[committee-method]] — Committee Method (Model Averaging) (machine-learning, statistics) (2026-06-11)

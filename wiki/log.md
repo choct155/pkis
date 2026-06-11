@@ -13268,3 +13268,12 @@
 ## [2026-06-11] committed | result
 - Committed: adaboost-exponential-loss-equivalence → results/adaboost-exponential-loss-equivalence.md
 - IRI: pkis:result:adaboost-exponential-loss-equivalence
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: bma-vs-model-combination (id: 722ef4fe-1220-4ad7-9608-8e9a6db98a89)
+- Title: Bayesian Model Averaging vs. Model Combination
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: bma-vs-model-combination → concepts/bma-vs-model-combination.md
+- IRI: pkis:concept:bma-vs-model-combination
