@@ -19361,3 +19361,12 @@
 ## [2026-06-11] committed | framework
 - Committed: discovery-as-interpretable-representation-learning → frameworks/discovery-as-interpretable-representation-learning.md
 - IRI: pkis:framework:discovery-as-interpretable-representation-learning
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: vision-as-inverse-graphics (id: ee19b0f1-b49c-4737-923f-5f2b420ae426)
+- Title: Vision as Inverse Graphics (Analysis by Synthesis)
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: vision-as-inverse-graphics → concepts/vision-as-inverse-graphics.md
+- IRI: pkis:concept:vision-as-inverse-graphics
