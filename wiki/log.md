@@ -17678,3 +17678,12 @@
 ## [2026-06-11] committed | result
 - Committed: map-reparameterisation-noninvariance → results/map-reparameterisation-noninvariance.md
 - IRI: pkis:result:map-reparameterisation-noninvariance
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: random-walk-metropolis (id: abf97a8a-69b0-48fb-8799-4076bde1d57f)
+- Title: Random Walk Metropolis Algorithm
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: random-walk-metropolis → techniques/random-walk-metropolis.md
+- IRI: pkis:technique:random-walk-metropolis
