@@ -16175,3 +16175,12 @@
 ## [2026-06-11] committed | concept
 - Committed: complementary-log-log-link → concepts/complementary-log-log-link.md
 - IRI: pkis:concept:complementary-log-log-link
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: saturated-model (id: 089624c3-bf01-4cd6-bd1c-d93ff60d44e9)
+- Title: Saturated Model
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: saturated-model → concepts/saturated-model.md
+- IRI: pkis:concept:saturated-model
