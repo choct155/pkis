@@ -19253,3 +19253,12 @@
 ## [2026-06-11] committed | concept
 - Committed: f-divergence → concepts/f-divergence.md
 - IRI: pkis:concept:f-divergence
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: integral-probability-metric (id: 8e311233-6091-411e-b99c-d0a551ce23d2)
+- Title: Integral Probability Metric
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: integral-probability-metric → concepts/integral-probability-metric.md
+- IRI: pkis:concept:integral-probability-metric

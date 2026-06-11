@@ -290,6 +290,7 @@
 - [[liu-machine-unlearning-llm-2024]] — Rethinking Machine Unlearning for LLMs: post-training knowledge editing survey (deep-learning, ai-safety) (2026-05-20)
 
 ## Concepts
+- [[integral-probability-metric]] — Integral Probability Metric (statistics, machine-learning, functional-analysis) (2026-06-11)
 - [[f-divergence]] — f-Divergence (information-theory, statistics, machine-learning) (2026-06-11)
 - [[jensen-shannon-divergence]] — Jensen-Shannon Divergence (information-theory, statistics, machine-learning) (2026-06-11)
 - [[implicit-generative-model]] — Implicit Generative Model (machine-learning, probability-theory, generative-modeling) (2026-06-11)
