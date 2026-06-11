@@ -19793,3 +19793,12 @@
 ## [2026-06-11] committed | technique
 - Committed: svcca → techniques/svcca.md
 - IRI: pkis:technique:svcca
+
+## [2026-06-11] staged | node-stub (framework)
+- Staged: analysis-by-synthesis (id: 2376e7f8-1c56-4a11-8b94-5d7b8a4ac3d1)
+- Title: Analysis-by-Synthesis
+- needs_canonical_source: False
+
+## [2026-06-11] committed | framework
+- Committed: analysis-by-synthesis → frameworks/analysis-by-synthesis.md
+- IRI: pkis:framework:analysis-by-synthesis
