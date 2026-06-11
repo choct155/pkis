@@ -18353,3 +18353,12 @@
 ## [2026-06-11] committed | concept
 - Committed: logit-adjustment → concepts/logit-adjustment.md
 - IRI: pkis:concept:logit-adjustment
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: gaussian-scale-mixture (id: ff28ad93-74c0-4f29-841d-6291a373672a)
+- Title: Gaussian Scale Mixture
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: gaussian-scale-mixture → concepts/gaussian-scale-mixture.md
+- IRI: pkis:concept:gaussian-scale-mixture
