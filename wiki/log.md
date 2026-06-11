@@ -15752,3 +15752,12 @@
 ## [2026-06-11] committed | concept
 - Committed: stationary-point-optimality-conditions → concepts/stationary-point-optimality-conditions.md
 - IRI: pkis:concept:stationary-point-optimality-conditions
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: strong-convexity (id: 60981750-9775-4ab7-b2eb-7012ebd8eae8)
+- Title: Strong Convexity
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: strong-convexity → concepts/strong-convexity.md
+- IRI: pkis:concept:strong-convexity
