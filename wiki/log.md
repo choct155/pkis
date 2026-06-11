@@ -13232,3 +13232,12 @@
 ## [2026-06-11] committed | framework
 - Committed: cart → frameworks/cart.md
 - IRI: pkis:framework:cart
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: gini-impurity (id: dd7b29b0-5845-4db3-a016-401a1489202c)
+- Title: Gini Impurity Index
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: gini-impurity → concepts/gini-impurity.md
+- IRI: pkis:concept:gini-impurity
