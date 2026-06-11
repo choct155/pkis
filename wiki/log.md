@@ -13115,3 +13115,12 @@
 ## [2026-06-11] committed | concept
 - Committed: state-space-model-sequential → concepts/state-space-model-sequential.md
 - IRI: pkis:concept:state-space-model-sequential
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: viterbi-algorithm (id: 51a91b44-1880-4898-aecd-020d23eac004)
+- Title: Viterbi Algorithm
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: viterbi-algorithm → techniques/viterbi-algorithm.md
+- IRI: pkis:technique:viterbi-algorithm
