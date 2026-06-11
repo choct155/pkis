@@ -909,6 +909,7 @@
 - [[market-vs-hierarchy]] — Coase/Williamson: transactions governed by price signals (markets) vs. managerial direction (firms) (corporate-finance) (2026-05-20)
 
 ## Techniques
+- [[expectation-maximization]] — Expectation Maximization (EM) Algorithm (machine-learning, statistics, probabilistic-models) (2026-06-11)
 - [[bridge-sampling]] — Bridge Sampling (machine-learning, statistics, probabilistic-graphical-models) (2026-06-11)
 - [[annealed-importance-sampling]] — Annealed Importance Sampling (AIS) (machine-learning, statistics, probabilistic-graphical-models) (2026-06-11)
 - [[denoising-score-matching]] — Denoising Score Matching (machine-learning, deep-learning, probabilistic-graphical-models) (2026-06-11)

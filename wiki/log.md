@@ -14978,3 +14978,12 @@
 ## [2026-06-11] committed | concept
 - Committed: fast-pcd → concepts/fast-pcd.md
 - IRI: pkis:concept:fast-pcd
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: expectation-maximization (id: 18fad731-f4fe-4c95-8f0e-8a37c28d99c3)
+- Title: Expectation Maximization (EM) Algorithm
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: expectation-maximization → techniques/expectation-maximization.md
+- IRI: pkis:technique:expectation-maximization
