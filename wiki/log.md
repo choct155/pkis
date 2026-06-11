@@ -16562,3 +16562,12 @@
 ## [2026-06-11] committed | technique
 - Committed: platt-scaling → techniques/platt-scaling.md
 - IRI: pkis:technique:platt-scaling
+
+## [2026-06-11] staged | node-stub (framework)
+- Staged: cart-decision-trees (id: b45a56fe-0481-4b4a-bc12-56769142be64)
+- Title: Classification and Regression Trees (CART)
+- needs_canonical_source: False
+
+## [2026-06-11] committed | framework
+- Committed: cart-decision-trees → frameworks/cart-decision-trees.md
+- IRI: pkis:framework:cart-decision-trees
