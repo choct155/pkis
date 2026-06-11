@@ -15203,3 +15203,12 @@
 ## [2026-06-11] committed | concept
 - Committed: epistemic-vs-aleatoric-uncertainty → concepts/epistemic-vs-aleatoric-uncertainty.md
 - IRI: pkis:concept:epistemic-vs-aleatoric-uncertainty
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: generalization-gap (id: 232aa80e-f1ac-4643-94b6-a66ef7b004cd)
+- Title: Generalization Gap
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: generalization-gap → concepts/generalization-gap.md
+- IRI: pkis:concept:generalization-gap

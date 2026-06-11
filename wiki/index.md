@@ -290,6 +290,7 @@
 - [[liu-machine-unlearning-llm-2024]] — Rethinking Machine Unlearning for LLMs: post-training knowledge editing survey (deep-learning, ai-safety) (2026-05-20)
 
 ## Concepts
+- [[generalization-gap]] — Generalization Gap (machine-learning, statistical-learning-theory) (2026-06-11)
 - [[epistemic-vs-aleatoric-uncertainty]] — Epistemic vs Aleatoric Uncertainty (machine-learning, statistics, decision-theory) (2026-06-11)
 - [[sigmoid-belief-network]] — Sigmoid Belief Network (deep-learning, probabilistic-graphical-models, generative-models) (2026-06-11)
 - [[autoregressive-generative-network]] — Auto-Regressive Generative Network (NADE / FVBN) (deep-learning, generative-models, density-estimation) (2026-06-11)
