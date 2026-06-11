@@ -17732,3 +17732,12 @@
 ## [2026-06-11] committed | technique
 - Committed: ffbs-algorithm → techniques/ffbs-algorithm.md
 - IRI: pkis:technique:ffbs-algorithm
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: extended-kalman-filter (id: 6ed89544-039f-424d-bb3a-c5b5dfd72342)
+- Title: Extended Kalman Filter (EKF)
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: extended-kalman-filter → techniques/extended-kalman-filter.md
+- IRI: pkis:technique:extended-kalman-filter
