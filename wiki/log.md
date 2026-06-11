@@ -18056,3 +18056,12 @@
 ## [2026-06-11] committed | technique
 - Committed: langevin-monte-carlo → techniques/langevin-monte-carlo.md
 - IRI: pkis:technique:langevin-monte-carlo
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: collapsed-gibbs-sampler (id: c6cff8e5-71a7-40c0-b184-338053f3e16c)
+- Title: Collapsed Gibbs Sampler
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: collapsed-gibbs-sampler → techniques/collapsed-gibbs-sampler.md
+- IRI: pkis:technique:collapsed-gibbs-sampler
