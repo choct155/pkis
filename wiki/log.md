@@ -13664,3 +13664,12 @@
 ## [2026-06-11] committed | concept
 - Committed: constrained-optimization → concepts/constrained-optimization.md
 - IRI: pkis:concept:constrained-optimization
+
+## [2026-06-11] staged | node-stub (result)
+- Staged: optimal-gradient-step-size-hessian (id: bb23fedd-d635-44fe-acb6-8412281f1420)
+- Title: Optimal Gradient Descent Step Size from Hessian
+- needs_canonical_source: False
+
+## [2026-06-11] committed | result
+- Committed: optimal-gradient-step-size-hessian → results/optimal-gradient-step-size-hessian.md
+- IRI: pkis:result:optimal-gradient-step-size-hessian

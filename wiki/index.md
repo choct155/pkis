@@ -1286,6 +1286,7 @@
 - [[constraint-propagation]] — Reducing a constraint satisfaction problem by iteratively eliminating inconsistent values from variable domains (knowledge-representation) (2026-05-20)
 
 ## Results
+- [[optimal-gradient-step-size-hessian]] — Optimal Gradient Descent Step Size from Hessian (optimization, machine-learning) (2026-06-11)
 - [[change-of-variables-density]] — Change-of-Variables Formula for Probability Densities (probability-theory, statistics, machine-learning) (2026-06-11)
 - [[cyclic-invariance-trace]] — Cyclic Invariance of the Trace (linear-algebra) (2026-06-11)
 - [[nn-size-doubling-trend]] — Scaling Law: Neural Network Size Doubling (deep-learning, machine-learning) (2026-06-11)
