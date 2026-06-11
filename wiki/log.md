@@ -14375,3 +14375,12 @@
 ## [2026-06-11] committed | technique
 - Committed: learning-curve-analysis → techniques/learning-curve-analysis.md
 - IRI: pkis:technique:learning-curve-analysis
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: model-compression (id: e215d1b9-e278-4818-bf55-2e0187b7d633)
+- Title: Model Compression (Knowledge Distillation)
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: model-compression → techniques/model-compression.md
+- IRI: pkis:technique:model-compression
