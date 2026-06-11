@@ -14051,3 +14051,12 @@
 ## [2026-06-11] committed | concept
 - Committed: saddle-points-nn-optimization → concepts/saddle-points-nn-optimization.md
 - IRI: pkis:concept:saddle-points-nn-optimization
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: convolution-operation-nn (id: 517ad582-707d-4b7f-8660-051d4302d81d)
+- Title: Convolution Operation (Neural Networks)
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: convolution-operation-nn → concepts/convolution-operation-nn.md
+- IRI: pkis:concept:convolution-operation-nn
