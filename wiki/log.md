@@ -14609,3 +14609,12 @@
 ## [2026-06-11] committed | technique
 - Committed: contractive-autoencoder → techniques/contractive-autoencoder.md
 - IRI: pkis:technique:contractive-autoencoder
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: score-function (id: 6c295c6f-87a4-4cb7-b820-1fe37bfa3efb)
+- Title: Score Function of a Distribution
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: score-function → concepts/score-function.md
+- IRI: pkis:concept:score-function
