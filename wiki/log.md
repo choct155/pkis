@@ -16787,3 +16787,12 @@
 ## [2026-06-11] committed | concept
 - Committed: dendrogram → concepts/dendrogram.md
 - IRI: pkis:concept:dendrogram
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: k-means-plus-plus (id: 6942337d-1d28-442f-8d32-ba739afada85)
+- Title: K-means++ Initialization
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: k-means-plus-plus → techniques/k-means-plus-plus.md
+- IRI: pkis:technique:k-means-plus-plus
