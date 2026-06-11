@@ -18254,3 +18254,12 @@
 ## [2026-06-11] committed | framework
 - Committed: conformal-prediction → frameworks/conformal-prediction.md
 - IRI: pkis:framework:conformal-prediction
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: conformalized-quantile-regression (id: be92d316-99d9-476d-a165-e5378c017531)
+- Title: Conformalized Quantile Regression (CQR)
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: conformalized-quantile-regression → techniques/conformalized-quantile-regression.md
+- IRI: pkis:technique:conformalized-quantile-regression
