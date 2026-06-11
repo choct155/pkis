@@ -1000,6 +1000,7 @@
 - [[market-vs-hierarchy]] — Coase/Williamson: transactions governed by price signals (markets) vs. managerial direction (firms) (corporate-finance) (2026-05-20)
 
 ## Techniques
+- [[variational-graph-auto-encoder]] — Variational Graph Auto-Encoder (VGAE) (machine-learning, graph-learning, generative-models) (2026-06-11)
 - [[graph-attention-network]] — Graph Attention Network (GAT) (machine-learning, graph-learning, deep-learning) (2026-06-11)
 - [[graph-convolutional-network]] — Graph Convolutional Network (GCN) (machine-learning, graph-learning, deep-learning) (2026-06-11)
 - [[message-passing-neural-networks]] — Message Passing Neural Networks (MPNN) (machine-learning, graph-learning, deep-learning) (2026-06-11)

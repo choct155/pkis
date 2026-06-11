@@ -17003,3 +17003,12 @@
 ## [2026-06-11] committed | technique
 - Committed: graph-attention-network → techniques/graph-attention-network.md
 - IRI: pkis:technique:graph-attention-network
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: variational-graph-auto-encoder (id: 191e9706-c9b8-4452-b72e-9a15d304e98b)
+- Title: Variational Graph Auto-Encoder (VGAE)
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: variational-graph-auto-encoder → techniques/variational-graph-auto-encoder.md
+- IRI: pkis:technique:variational-graph-auto-encoder
