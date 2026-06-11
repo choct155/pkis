@@ -18137,3 +18137,12 @@
 ## [2026-06-11] committed | technique
 - Committed: particle-resampling → techniques/particle-resampling.md
 - IRI: pkis:technique:particle-resampling
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: incremental-importance-weights (id: dce67355-3d81-4435-bb80-8c35a9a419d7)
+- Title: Incremental Importance Weights
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: incremental-importance-weights → concepts/incremental-importance-weights.md
+- IRI: pkis:concept:incremental-importance-weights
