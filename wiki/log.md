@@ -13565,3 +13565,12 @@
 ## [2026-06-11] committed | concept
 - Committed: self-information → concepts/self-information.md
 - IRI: pkis:concept:self-information
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: frequentist-vs-bayesian-probability (id: 69efe7f9-ed1a-4d7d-bed3-2804a3219e94)
+- Title: Frequentist vs. Bayesian Probability
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: frequentist-vs-bayesian-probability → concepts/frequentist-vs-bayesian-probability.md
+- IRI: pkis:concept:frequentist-vs-bayesian-probability
