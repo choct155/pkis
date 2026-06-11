@@ -15113,3 +15113,12 @@
 ## [2026-06-11] committed | technique
 - Committed: probabilistic-max-pooling → techniques/probabilistic-max-pooling.md
 - IRI: pkis:technique:probabilistic-max-pooling
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: gaussian-bernoulli-rbm (id: db605dc6-6643-4b87-918a-3219ab1f9707)
+- Title: Gaussian-Bernoulli RBM
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: gaussian-bernoulli-rbm → techniques/gaussian-bernoulli-rbm.md
+- IRI: pkis:technique:gaussian-bernoulli-rbm
