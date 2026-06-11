@@ -1078,6 +1078,7 @@
 - [[market-vs-hierarchy]] — Coase/Williamson: transactions governed by price signals (markets) vs. managerial direction (firms) (corporate-finance) (2026-05-20)
 
 ## Techniques
+- [[gp-posterior-inference]] — GP Posterior Inference (Gaussian Likelihood) (machine-learning, statistics, Bayesian-inference) (2026-06-11)
 - [[laplace-bridge]] — Laplace Bridge Approximation (bayesian-inference, deep-learning, uncertainty-quantification) (2026-06-11)
 - [[sngp]] — SNGP (Spectrally Normalized Gaussian Process) (deep-learning, uncertainty-quantification, gaussian-processes) (2026-06-11)
 - [[bayes-by-backprop]] — Bayes by Backprop (BBB) (bayesian-inference, deep-learning, variational-inference) (2026-06-11)

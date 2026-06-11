@@ -18569,3 +18569,12 @@
 ## [2026-06-11] committed | concept
 - Committed: gaussian-process-gp → concepts/gaussian-process-gp.md
 - IRI: pkis:concept:gaussian-process-gp
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: gp-posterior-inference (id: 3d41ed30-b5c1-4c9b-b175-824f8e06c513)
+- Title: GP Posterior Inference (Gaussian Likelihood)
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: gp-posterior-inference → techniques/gp-posterior-inference.md
+- IRI: pkis:technique:gp-posterior-inference
