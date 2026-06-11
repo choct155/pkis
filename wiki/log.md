@@ -19190,3 +19190,12 @@
 ## [2026-06-11] committed | technique
 - Committed: progressive-distillation-diffusion → techniques/progressive-distillation-diffusion.md
 - IRI: pkis:technique:progressive-distillation-diffusion
+
+## [2026-06-11] staged | node-stub (framework)
+- Staged: d3pm (id: 34205e4b-5153-42d3-a2a4-ea133c605f94)
+- Title: Discrete Denoising Diffusion Probabilistic Model (D3PM)
+- needs_canonical_source: False
+
+## [2026-06-11] committed | framework
+- Committed: d3pm → frameworks/d3pm.md
+- IRI: pkis:framework:d3pm

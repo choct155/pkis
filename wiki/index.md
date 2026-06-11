@@ -1959,6 +1959,7 @@
 - [[government-debt-valuation-equation]] — FTPL: price level determined by ratio of nominal debt to expected present value of future surpluses (macroeconomics) (2026-05-20)
 
 ## Frameworks
+- [[d3pm]] — Discrete Denoising Diffusion Probabilistic Model (D3PM) (machine-learning, generative-models, natural-language-processing) (2026-06-11)
 - [[dall-e]] — DALL-E (Autoregressive Text-to-Image Generation) (deep-learning, computer-vision, generative-models, multimodal-learning) (2026-06-11)
 - [[gpt-pretraining]] — GPT / Large Language Model Pre-training (natural-language-processing, deep-learning, generative-models) (2026-06-11)
 - [[wavenet]] — WaveNet (Dilated Causal CNN for Audio) (deep-learning, speech-synthesis, generative-models) (2026-06-11)
