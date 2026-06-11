@@ -13583,3 +13583,12 @@
 ## [2026-06-11] committed | concept
 - Committed: structured-probabilistic-model → concepts/structured-probabilistic-model.md
 - IRI: pkis:concept:structured-probabilistic-model
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: numerical-underflow-overflow (id: c2457eed-4920-4355-afdd-e8059a275758)
+- Title: Numerical Underflow and Overflow
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: numerical-underflow-overflow → concepts/numerical-underflow-overflow.md
+- IRI: pkis:concept:numerical-underflow-overflow
