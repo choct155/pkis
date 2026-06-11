@@ -12413,3 +12413,12 @@
 ## [2026-06-11] committed | concept
 - Committed: softmax-function → concepts/softmax-function.md
 - IRI: pkis:concept:softmax-function
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: irls (id: 89b26c6d-c658-4c41-a776-3ddae2f7b931)
+- Title: Iterative Reweighted Least Squares (IRLS)
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: irls → techniques/irls.md
+- IRI: pkis:technique:irls

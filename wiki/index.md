@@ -773,6 +773,7 @@
 - [[market-vs-hierarchy]] — Coase/Williamson: transactions governed by price signals (markets) vs. managerial direction (firms) (corporate-finance) (2026-05-20)
 
 ## Techniques
+- [[irls]] — Iterative Reweighted Least Squares (IRLS) (machine-learning, statistics, optimisation) (2026-06-11)
 - [[fishers-linear-discriminant]] — Fisher's Linear Discriminant (machine-learning, statistics, pattern-recognition) (2026-06-11)
 - [[lms-algorithm]] — LMS Algorithm (Least-Mean-Squares) (machine-learning, signal-processing) (2026-06-11)
 - [[normal-equations-pseudoinverse]] — Normal Equations and Moore-Penrose Pseudoinverse (machine-learning, linear-algebra) (2026-06-11)
