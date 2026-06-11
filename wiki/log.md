@@ -12638,3 +12638,12 @@
 ## [2026-06-11] committed | technique
 - Committed: gp-classification-laplace → techniques/gp-classification-laplace.md
 - IRI: pkis:technique:gp-classification-laplace
+
+## [2026-06-11] staged | node-stub (result)
+- Staged: nn-gp-infinite-width-limit (id: 3f4e873c-cdcf-456c-a11c-13ce7fd503ad)
+- Title: Neural Network to Gaussian Process in the Infinite-Width Limit
+- needs_canonical_source: False
+
+## [2026-06-11] committed | result
+- Committed: nn-gp-infinite-width-limit → results/nn-gp-infinite-width-limit.md
+- IRI: pkis:result:nn-gp-infinite-width-limit
