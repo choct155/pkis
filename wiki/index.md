@@ -290,6 +290,7 @@
 - [[liu-machine-unlearning-llm-2024]] — Rethinking Machine Unlearning for LLMs: post-training knowledge editing survey (deep-learning, ai-safety) (2026-05-20)
 
 ## Concepts
+- [[overcomplete-autoencoder]] — Overcomplete Autoencoder (deep-learning, representation-learning) (2026-06-11)
 - [[manifold-hypothesis]] — Manifold Hypothesis (machine-learning, geometry, representation-learning) (2026-06-11)
 - [[score-function]] — Score Function of a Distribution (statistics, information-theory, generative-models) (2026-06-11)
 - [[undercomplete-autoencoder]] — Undercomplete Autoencoder (deep-learning, representation-learning) (2026-06-11)

@@ -14654,3 +14654,12 @@
 ## [2026-06-11] committed | technique
 - Committed: predictive-sparse-decomposition → techniques/predictive-sparse-decomposition.md
 - IRI: pkis:technique:predictive-sparse-decomposition
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: overcomplete-autoencoder (id: 3325d68e-c5d8-4bac-994d-9cb439475858)
+- Title: Overcomplete Autoencoder
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: overcomplete-autoencoder → concepts/overcomplete-autoencoder.md
+- IRI: pkis:concept:overcomplete-autoencoder
