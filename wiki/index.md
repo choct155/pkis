@@ -1335,6 +1335,7 @@
 - [[government-debt-valuation-equation]] — FTPL: price level determined by ratio of nominal debt to expected present value of future surpluses (macroeconomics) (2026-05-20)
 
 ## Frameworks
+- [[variational-gaussian-mixture]] — Variational Bayesian Mixture of Gaussians (machine-learning, Bayesian-inference) (2026-06-11)
 - [[generalized-em-algorithm]] — Generalized EM (GEM) Algorithm (machine-learning, statistics, optimisation) (2026-06-11)
 - [[relevance-vector-machine]] — Relevance Vector Machine (RVM) (machine-learning, bayesian-inference) (2026-06-11)
 - [[mixture-density-network]] — Mixture Density Network (machine-learning, probabilistic-models) (2026-06-11)

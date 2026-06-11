@@ -12980,3 +12980,12 @@
 ## [2026-06-11] committed | technique
 - Committed: local-variational-bound-sigmoid → techniques/local-variational-bound-sigmoid.md
 - IRI: pkis:technique:local-variational-bound-sigmoid
+
+## [2026-06-11] staged | node-stub (framework)
+- Staged: variational-gaussian-mixture (id: aeb8d9f2-37b2-41f2-a8f5-954eacdce0b2)
+- Title: Variational Bayesian Mixture of Gaussians
+- needs_canonical_source: False
+
+## [2026-06-11] committed | framework
+- Committed: variational-gaussian-mixture → frameworks/variational-gaussian-mixture.md
+- IRI: pkis:framework:variational-gaussian-mixture
