@@ -19379,3 +19379,12 @@
 ## [2026-06-11] committed | concept
 - Committed: perceptual-aliasing → concepts/perceptual-aliasing.md
 - IRI: pkis:concept:perceptual-aliasing
+
+## [2026-06-11] staged | node-stub (principle)
+- Staged: prediction-generation-subroutines-discovery (id: dbf6aeab-0835-424c-882f-93350ff7ba9b)
+- Title: Prediction and Generation as Subroutines of Discovery
+- needs_canonical_source: False
+
+## [2026-06-11] committed | principle
+- Committed: prediction-generation-subroutines-discovery → principles/prediction-generation-subroutines-discovery.md
+- IRI: pkis:principle:prediction-generation-subroutines-discovery
