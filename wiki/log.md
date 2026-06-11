@@ -14321,3 +14321,12 @@
 ## [2026-06-11] committed | technique
 - Committed: random-search-hyperparameters → techniques/random-search-hyperparameters.md
 - IRI: pkis:technique:random-search-hyperparameters
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: gradient-checking (id: 81c74cc9-f9b3-4550-a094-df0735d7eb86)
+- Title: Gradient Checking (Finite-Difference Derivative Verification)
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: gradient-checking → techniques/gradient-checking.md
+- IRI: pkis:technique:gradient-checking
