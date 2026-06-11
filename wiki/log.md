@@ -17174,3 +17174,12 @@
 ## [2026-06-11] committed | concept
 - Committed: kurtosis-and-tail-behavior → concepts/kurtosis-and-tail-behavior.md
 - IRI: pkis:concept:kurtosis-and-tail-behavior
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: cauchy-distribution (id: ec6a0e43-1a1f-4118-b119-afb27ab0b24d)
+- Title: Cauchy Distribution
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: cauchy-distribution → concepts/cauchy-distribution.md
+- IRI: pkis:concept:cauchy-distribution
