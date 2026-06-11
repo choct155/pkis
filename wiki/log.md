@@ -13871,3 +13871,12 @@
 ## [2026-06-11] committed | concept
 - Committed: heteroscedastic-neural-network → concepts/heteroscedastic-neural-network.md
 - IRI: pkis:concept:heteroscedastic-neural-network
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: dropout-regularization (id: 139774de-3980-4f24-8abc-df030a62fb3e)
+- Title: Dropout Regularization
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: dropout-regularization → techniques/dropout-regularization.md
+- IRI: pkis:technique:dropout-regularization
