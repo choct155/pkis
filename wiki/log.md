@@ -18902,3 +18902,12 @@
 ## [2026-06-11] committed | technique
 - Committed: kl-annealing → techniques/kl-annealing.md
 - IRI: pkis:technique:kl-annealing
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: free-bits (id: 58d12547-dcd8-4f77-b024-6725dde05b5d)
+- Title: Free Bits
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: free-bits → techniques/free-bits.md
+- IRI: pkis:technique:free-bits
