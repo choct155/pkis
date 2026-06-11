@@ -16436,3 +16436,12 @@
 ## [2026-06-11] committed | technique
 - Committed: deep-metric-learning → techniques/deep-metric-learning.md
 - IRI: pkis:technique:deep-metric-learning
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: contrastive-loss-siamese (id: 082984fc-2728-4541-b792-7ec0e091c01f)
+- Title: Contrastive Loss and Siamese Networks
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: contrastive-loss-siamese → techniques/contrastive-loss-siamese.md
+- IRI: pkis:technique:contrastive-loss-siamese
