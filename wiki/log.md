@@ -12953,3 +12953,12 @@
 ## [2026-06-11] committed | concept
 - Committed: alpha-divergence → concepts/alpha-divergence.md
 - IRI: pkis:concept:alpha-divergence
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: variational-em (id: 9fc4d2fc-510a-40ac-8af7-422905944574)
+- Title: Variational Bayesian EM (VB-EM)
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: variational-em → techniques/variational-em.md
+- IRI: pkis:technique:variational-em
