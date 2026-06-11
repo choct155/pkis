@@ -17417,3 +17417,12 @@
 ## [2026-06-11] committed | result
 - Committed: kl-divergence-uniqueness → results/kl-divergence-uniqueness.md
 - IRI: pkis:result:kl-divergence-uniqueness
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: forwards-vs-reverse-kl (id: 431b21ba-b312-482e-9bf9-a40ddfa53fcc)
+- Title: Forwards vs Reverse KL (M-projection vs I-projection)
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: forwards-vs-reverse-kl → concepts/forwards-vs-reverse-kl.md
+- IRI: pkis:concept:forwards-vs-reverse-kl
