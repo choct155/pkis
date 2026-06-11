@@ -17507,3 +17507,12 @@
 ## [2026-06-11] committed | concept
 - Committed: minimal-sufficient-statistic → concepts/minimal-sufficient-statistic.md
 - IRI: pkis:concept:minimal-sufficient-statistic
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: forward-mode-ad (id: 8bb4fdb4-f609-435b-8399-13674dede962)
+- Title: Forward-Mode Automatic Differentiation
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: forward-mode-ad → techniques/forward-mode-ad.md
+- IRI: pkis:technique:forward-mode-ad
