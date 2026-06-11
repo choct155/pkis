@@ -839,6 +839,7 @@
 - [[market-vs-hierarchy]] — Coase/Williamson: transactions governed by price signals (markets) vs. managerial direction (firms) (corporate-finance) (2026-05-20)
 
 ## Techniques
+- [[newtons-method-optimization]] — Newton's Method for Optimization (optimization, numerical-computation) (2026-06-11)
 - [[numerically-stable-softmax]] — Numerically Stable Softmax (numerical-computation, deep-learning) (2026-06-11)
 - [[pca-linear-algebra-derivation]] — Principal Component Analysis (Linear Algebra Derivation) (machine-learning, linear-algebra) (2026-06-11)
 - [[moore-penrose-pseudoinverse]] — Moore-Penrose Pseudoinverse (linear-algebra, machine-learning) (2026-06-11)

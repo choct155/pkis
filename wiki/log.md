@@ -13619,3 +13619,12 @@
 ## [2026-06-11] committed | concept
 - Committed: critical-points-saddle-points → concepts/critical-points-saddle-points.md
 - IRI: pkis:concept:critical-points-saddle-points
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: newtons-method-optimization (id: c4e85874-29bd-4d62-89d5-060b65794324)
+- Title: Newton's Method for Optimization
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: newtons-method-optimization → techniques/newtons-method-optimization.md
+- IRI: pkis:technique:newtons-method-optimization
