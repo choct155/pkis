@@ -14420,3 +14420,12 @@
 ## [2026-06-11] committed | technique
 - Committed: attention-mechanism → techniques/attention-mechanism.md
 - IRI: pkis:technique:attention-mechanism
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: hierarchical-softmax (id: db9bc961-b9fe-4917-9abf-d05537844dec)
+- Title: Hierarchical Softmax
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: hierarchical-softmax → techniques/hierarchical-softmax.md
+- IRI: pkis:technique:hierarchical-softmax
