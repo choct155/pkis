@@ -18362,3 +18362,12 @@
 ## [2026-06-11] committed | concept
 - Committed: gaussian-scale-mixture → concepts/gaussian-scale-mixture.md
 - IRI: pkis:concept:gaussian-scale-mixture
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: deep-neural-network-computation-graph (id: 362d2d37-be11-4d79-82be-f47f615bbcda)
+- Title: Deep Neural Network (DNN) as Differentiable Computation Graph
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: deep-neural-network-computation-graph → concepts/deep-neural-network-computation-graph.md
+- IRI: pkis:concept:deep-neural-network-computation-graph
