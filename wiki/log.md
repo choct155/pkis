@@ -17075,3 +17075,12 @@
 ## [2026-06-11] committed | concept
 - Committed: data-generating-process → concepts/data-generating-process.md
 - IRI: pkis:concept:data-generating-process
+
+## [2026-06-11] staged | node-stub (problem)
+- Staged: robustness-distribution-shift (id: d55e27e8-904e-44bd-be06-0bd49c29f683)
+- Title: Robustness to Distribution Shift
+- needs_canonical_source: False
+
+## [2026-06-11] committed | problem
+- Committed: robustness-distribution-shift → problems/robustness-distribution-shift.md
+- IRI: pkis:problem:robustness-distribution-shift

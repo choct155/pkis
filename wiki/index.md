@@ -1894,6 +1894,7 @@
 - [[broad-money-monetarism]] — Congdon's updated monetarism: broad money (M3/M4) drives nominal spending; emphasis on credit and asset prices (macroeconomics, monetary-economics) (2026-05-20)
 
 ## Problems
+- [[robustness-distribution-shift]] — Robustness to Distribution Shift (machine-learning, statistics, robust-ml) (2026-06-11)
 - [[cold-start-problem]] — Cold Start Problem (machine-learning, recommender-systems) (2026-06-11)
 - [[recommender-systems]] — Recommender Systems (machine-learning, information-retrieval) (2026-06-11)
 - [[motion-planning]] — Motion Planning (Piano Mover's Problem) (robotics, optimization) (2026-06-09)
