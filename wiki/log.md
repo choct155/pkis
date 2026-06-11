@@ -17453,3 +17453,12 @@
 ## [2026-06-11] committed | result
 - Committed: kl-as-bregman-divergence → results/kl-as-bregman-divergence.md
 - IRI: pkis:result:kl-as-bregman-divergence
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: asymptotic-equipartition-property (id: 41a39457-30cb-491d-826e-e074705a2b37)
+- Title: Asymptotic Equipartition Property (AEP)
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: asymptotic-equipartition-property → concepts/asymptotic-equipartition-property.md
+- IRI: pkis:concept:asymptotic-equipartition-property
