@@ -13898,3 +13898,12 @@
 ## [2026-06-11] committed | technique
 - Committed: label-smoothing → techniques/label-smoothing.md
 - IRI: pkis:technique:label-smoothing
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: parameter-sharing (id: c00a7352-518f-4094-97bd-889875120a74)
+- Title: Parameter Sharing
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: parameter-sharing → concepts/parameter-sharing.md
+- IRI: pkis:concept:parameter-sharing

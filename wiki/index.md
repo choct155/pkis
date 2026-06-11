@@ -290,6 +290,7 @@
 - [[liu-machine-unlearning-llm-2024]] — Rethinking Machine Unlearning for LLMs: post-training knowledge editing survey (deep-learning, ai-safety) (2026-05-20)
 
 ## Concepts
+- [[parameter-sharing]] — Parameter Sharing (machine-learning, deep-learning, regularization) (2026-06-11)
 - [[heteroscedastic-neural-network]] — Heteroscedastic Neural Network Model (machine-learning, deep-learning, probabilistic-modeling) (2026-06-11)
 - [[logit-neural-network]] — Logit (Neural Network) (machine-learning, deep-learning, statistics) (2026-06-11)
 - [[computational-graph]] — Computational Graph (machine-learning, computer-science, numerical-methods) (2026-06-11)
