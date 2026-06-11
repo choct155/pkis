@@ -18209,3 +18209,12 @@
 ## [2026-06-11] committed | concept
 - Committed: predictive-model → concepts/predictive-model.md
 - IRI: pkis:concept:predictive-model
+
+## [2026-06-11] staged | node-stub (framework)
+- Staged: empirical-risk-minimization-erm (id: ae175f04-8e00-4f8d-8d3b-a6de96068247)
+- Title: Empirical Risk Minimization (ERM)
+- needs_canonical_source: False
+
+## [2026-06-11] committed | framework
+- Committed: empirical-risk-minimization-erm → frameworks/empirical-risk-minimization-erm.md
+- IRI: pkis:framework:empirical-risk-minimization-erm
