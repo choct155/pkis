@@ -16616,3 +16616,12 @@
 ## [2026-06-11] committed | technique
 - Committed: transfer-learning-fine-tuning → techniques/transfer-learning-fine-tuning.md
 - IRI: pkis:technique:transfer-learning-fine-tuning
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: adapter-modules (id: 112e2bbc-817b-49b0-b1a6-08870c18b295)
+- Title: Adapter Modules
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: adapter-modules → techniques/adapter-modules.md
+- IRI: pkis:technique:adapter-modules
