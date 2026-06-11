@@ -18038,3 +18038,12 @@
 ## [2026-06-11] committed | technique
 - Committed: metropolis-hastings-algorithm → techniques/metropolis-hastings-algorithm.md
 - IRI: pkis:technique:metropolis-hastings-algorithm
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: hamiltonian-monte-carlo (id: ed9478ba-6760-402a-95a5-039bfb0831ae)
+- Title: Hamiltonian Monte Carlo (HMC)
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: hamiltonian-monte-carlo → techniques/hamiltonian-monte-carlo.md
+- IRI: pkis:technique:hamiltonian-monte-carlo
