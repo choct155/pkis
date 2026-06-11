@@ -799,6 +799,7 @@
 - [[market-vs-hierarchy]] — Coase/Williamson: transactions governed by price signals (markets) vs. managerial direction (firms) (corporate-finance) (2026-05-20)
 
 ## Techniques
+- [[gibbs-sampling]] — Gibbs Sampling (statistics, machine-learning, probability-theory) (2026-06-11)
 - [[data-augmentation-algorithm]] — Data Augmentation Algorithm (statistics, bayesian-inference) (2026-06-11)
 - [[monte-carlo-em]] — Monte Carlo EM Algorithm (statistics, machine-learning) (2026-06-11)
 - [[sampling-importance-resampling]] — Sampling-Importance-Resampling (SIR) (statistics, machine-learning) (2026-06-11)

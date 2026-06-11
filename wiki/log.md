@@ -13043,3 +13043,12 @@
 ## [2026-06-11] committed | technique
 - Committed: data-augmentation-algorithm → techniques/data-augmentation-algorithm.md
 - IRI: pkis:technique:data-augmentation-algorithm
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: gibbs-sampling (id: 273d57ec-9ae0-408f-9582-bdcfd4424cbb)
+- Title: Gibbs Sampling
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: gibbs-sampling → techniques/gibbs-sampling.md
+- IRI: pkis:technique:gibbs-sampling
