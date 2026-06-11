@@ -290,6 +290,7 @@
 - [[liu-machine-unlearning-llm-2024]] — Rethinking Machine Unlearning for LLMs: post-training knowledge editing survey (deep-learning, ai-safety) (2026-05-20)
 
 ## Concepts
+- [[precision-recall-curve]] — Precision–Recall Curve (machine-learning, information-retrieval, statistics) (2026-06-11)
 - [[loss-function-posterior-expected-loss]] — Loss Function and Posterior Expected Loss (decision-theory, statistics, machine-learning) (2026-06-11)
 - [[beta-binomial-model]] — Beta-Binomial Conjugate Model (statistics, machine-learning) (2026-06-11)
 - [[learning-curve]] — Learning Curve (machine-learning, statistics) (2026-06-11)

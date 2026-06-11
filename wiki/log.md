@@ -15491,3 +15491,12 @@
 ## [2026-06-11] committed | technique
 - Committed: classification-reject-option → techniques/classification-reject-option.md
 - IRI: pkis:technique:classification-reject-option
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: precision-recall-curve (id: 04588189-69d6-4a7c-8968-9d4d896ab3ed)
+- Title: Precision–Recall Curve
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: precision-recall-curve → concepts/precision-recall-curve.md
+- IRI: pkis:concept:precision-recall-curve
