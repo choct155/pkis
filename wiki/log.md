@@ -19928,3 +19928,12 @@
 ## [2026-06-11] committed | concept
 - Committed: concept-bottleneck-model → concepts/concept-bottleneck-model.md
 - IRI: pkis:concept:concept-bottleneck-model
+
+## [2026-06-11] staged | node-stub (problem)
+- Staged: algorithmic-recourse (id: bc2628a2-a10b-47c2-9bbd-e41ce9c67a99)
+- Title: Recourse in Automated Decision-Making
+- needs_canonical_source: False
+
+## [2026-06-11] committed | problem
+- Committed: algorithmic-recourse → problems/algorithmic-recourse.md
+- IRI: pkis:problem:algorithmic-recourse
