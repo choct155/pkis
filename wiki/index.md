@@ -1073,6 +1073,7 @@
 - [[market-vs-hierarchy]] — Coase/Williamson: transactions governed by price signals (markets) vs. managerial direction (firms) (corporate-finance) (2026-05-20)
 
 ## Techniques
+- [[swa-swag]] — Stochastic Weight Averaging (SWA) and SWAG (deep-learning, bayesian-inference, optimisation) (2026-06-11)
 - [[monte-carlo-dropout]] — Monte Carlo Dropout (MCD) (deep-learning, bayesian-inference, uncertainty-quantification) (2026-06-11)
 - [[multi-head-attention]] — Multi-Head Attention (MHA) (deep-learning, natural-language-processing) (2026-06-11)
 - [[layer-normalization]] — Layer Normalization (deep-learning, transformers) (2026-06-11)

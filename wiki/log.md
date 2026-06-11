@@ -18461,3 +18461,12 @@
 ## [2026-06-11] committed | technique
 - Committed: monte-carlo-dropout → techniques/monte-carlo-dropout.md
 - IRI: pkis:technique:monte-carlo-dropout
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: swa-swag (id: f9be75c7-face-4859-9363-4cf9b5e9efbb)
+- Title: Stochastic Weight Averaging (SWA) and SWAG
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: swa-swag → techniques/swa-swag.md
+- IRI: pkis:technique:swa-swag
