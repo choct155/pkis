@@ -17687,3 +17687,12 @@
 ## [2026-06-11] committed | technique
 - Committed: random-walk-metropolis → techniques/random-walk-metropolis.md
 - IRI: pkis:technique:random-walk-metropolis
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: approximate-inference-quality-metrics (id: 3d66bc0d-b8ff-43ac-838b-082fa58701d4)
+- Title: Approximate Inference Quality Metrics
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: approximate-inference-quality-metrics → concepts/approximate-inference-quality-metrics.md
+- IRI: pkis:concept:approximate-inference-quality-metrics
