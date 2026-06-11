@@ -12431,3 +12431,12 @@
 ## [2026-06-11] committed | result
 - Committed: bic → results/bic.md
 - IRI: pkis:result:bic
+
+## [2026-06-11] staged | node-stub (framework)
+- Staged: probabilistic-generative-classifier (id: 2f0964ba-6a04-41b9-86bd-f851cdc2d7a2)
+- Title: Probabilistic Generative Classifier
+- needs_canonical_source: False
+
+## [2026-06-11] committed | framework
+- Committed: probabilistic-generative-classifier → frameworks/probabilistic-generative-classifier.md
+- IRI: pkis:framework:probabilistic-generative-classifier
