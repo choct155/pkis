@@ -19919,3 +19919,12 @@
 ## [2026-06-11] committed | concept
 - Committed: lime-local-surrogate → concepts/lime-local-surrogate.md
 - IRI: pkis:concept:lime-local-surrogate
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: concept-bottleneck-model (id: ee1a9bbf-c2f0-44a9-b97b-668e8c88f078)
+- Title: Concept Bottleneck Model
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: concept-bottleneck-model → concepts/concept-bottleneck-model.md
+- IRI: pkis:concept:concept-bottleneck-model

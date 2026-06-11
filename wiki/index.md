@@ -290,6 +290,7 @@
 - [[liu-machine-unlearning-llm-2024]] — Rethinking Machine Unlearning for LLMs: post-training knowledge editing survey (deep-learning, ai-safety) (2026-05-20)
 
 ## Concepts
+- [[concept-bottleneck-model]] — Concept Bottleneck Model (machine-learning, interpretability) (2026-06-11)
 - [[lime-local-surrogate]] — Local Interpretable Model-Agnostic Explanations (LIME) (machine-learning, interpretability) (2026-06-11)
 - [[shapley-feature-importance]] — Shapley Feature Importance (machine-learning, interpretability, game-theory) (2026-06-11)
 - [[counterfactual-explanation]] — Counterfactual Explanation (machine-learning, interpretability, causal-inference) (2026-06-11)
