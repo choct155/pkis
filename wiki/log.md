@@ -24665,3 +24665,12 @@
 ## [2026-06-11] committed | concept
 - Committed: quantile-function → concepts/quantile-function.md
 - IRI: pkis:concept:quantile-function
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: categorical-distribution (id: bb6fb7e7-1738-4f52-a0ba-5617b193d89c)
+- Title: Categorical Distribution
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: categorical-distribution → concepts/categorical-distribution.md
+- IRI: pkis:concept:categorical-distribution
