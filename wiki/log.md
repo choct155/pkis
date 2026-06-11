@@ -14177,3 +14177,12 @@
 ## [2026-06-11] committed | technique
 - Committed: transpose-convolution → techniques/transpose-convolution.md
 - IRI: pkis:technique:transpose-convolution
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: backpropagation-through-time (id: 8573f209-81f5-493d-a51c-853109892d82)
+- Title: Backpropagation Through Time (BPTT)
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: backpropagation-through-time → techniques/backpropagation-through-time.md
+- IRI: pkis:technique:backpropagation-through-time
