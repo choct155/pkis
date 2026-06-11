@@ -13826,3 +13826,12 @@
 ## [2026-06-11] committed | technique
 - Committed: backpropagation-algorithm → techniques/backpropagation-algorithm.md
 - IRI: pkis:technique:backpropagation-algorithm
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: computational-graph (id: e70f472b-2a4d-416b-9bf9-ad16bde7308b)
+- Title: Computational Graph
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: computational-graph → concepts/computational-graph.md
+- IRI: pkis:concept:computational-graph
