@@ -16670,3 +16670,12 @@
 ## [2026-06-11] committed | technique
 - Committed: consistency-regularization → techniques/consistency-regularization.md
 - IRI: pkis:technique:consistency-regularization
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: label-propagation (id: a27a20bf-26ea-4822-8fa5-07fea41b6bf8)
+- Title: Label Propagation on Graphs
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: label-propagation → techniques/label-propagation.md
+- IRI: pkis:technique:label-propagation
