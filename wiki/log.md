@@ -19892,3 +19892,12 @@
 ## [2026-06-11] committed | concept
 - Committed: saliency-map → concepts/saliency-map.md
 - IRI: pkis:concept:saliency-map
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: counterfactual-explanation (id: 5a767d2d-efcb-4d8d-867a-ecde597fda18)
+- Title: Counterfactual Explanation
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: counterfactual-explanation → concepts/counterfactual-explanation.md
+- IRI: pkis:concept:counterfactual-explanation

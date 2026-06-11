@@ -290,6 +290,7 @@
 - [[liu-machine-unlearning-llm-2024]] — Rethinking Machine Unlearning for LLMs: post-training knowledge editing survey (deep-learning, ai-safety) (2026-05-20)
 
 ## Concepts
+- [[counterfactual-explanation]] — Counterfactual Explanation (machine-learning, interpretability, causal-inference) (2026-06-11)
 - [[saliency-map]] — Saliency Map (Attribution Map) (machine-learning, interpretability, computer-vision) (2026-06-11)
 - [[explanation-fidelity]] — Explanation Fidelity (Faithfulness) (machine-learning, interpretability) (2026-06-11)
 - [[post-hoc-explanation]] — Post-Hoc Explanation (machine-learning, interpretability) (2026-06-11)
