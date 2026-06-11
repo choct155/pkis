@@ -14996,3 +14996,12 @@
 ## [2026-06-11] committed | technique
 - Committed: map-inference-as-approximate-vi → techniques/map-inference-as-approximate-vi.md
 - IRI: pkis:technique:map-inference-as-approximate-vi
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: calculus-of-variations-inference (id: 0646ef55-ec8b-4336-aec5-1ffdba020cee)
+- Title: Calculus of Variations for Probabilistic Inference
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: calculus-of-variations-inference → techniques/calculus-of-variations-inference.md
+- IRI: pkis:technique:calculus-of-variations-inference
