@@ -17156,3 +17156,12 @@
 ## [2026-06-11] committed | concept
 - Committed: pmf-and-pdf → concepts/pmf-and-pdf.md
 - IRI: pkis:concept:pmf-and-pdf
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: categorical-and-multinomial-distributions (id: 776c253a-5e70-4aee-a772-c3c1da327918)
+- Title: Categorical and Multinomial Distributions
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: categorical-and-multinomial-distributions → concepts/categorical-and-multinomial-distributions.md
+- IRI: pkis:concept:categorical-and-multinomial-distributions
