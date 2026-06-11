@@ -14510,3 +14510,12 @@
 ## [2026-06-11] committed | technique
 - Committed: slow-feature-analysis → techniques/slow-feature-analysis.md
 - IRI: pkis:technique:slow-feature-analysis
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: sparse-coding (id: 74e1f666-9f1d-4b7c-b8e5-5871c04c7c39)
+- Title: Sparse Coding
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: sparse-coding → techniques/sparse-coding.md
+- IRI: pkis:technique:sparse-coding
