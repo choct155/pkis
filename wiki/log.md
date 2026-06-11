@@ -16535,3 +16535,12 @@
 ## [2026-06-11] committed | technique
 - Committed: kernel-ridge-regression → techniques/kernel-ridge-regression.md
 - IRI: pkis:technique:kernel-ridge-regression
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: matern-kernel (id: 491c8ded-1eda-4e27-b1c5-4d94b9da9a25)
+- Title: Matérn Kernel
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: matern-kernel → concepts/matern-kernel.md
+- IRI: pkis:concept:matern-kernel
