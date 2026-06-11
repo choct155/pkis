@@ -1063,6 +1063,7 @@
 - [[market-vs-hierarchy]] — Coase/Williamson: transactions governed by price signals (markets) vs. managerial direction (firms) (corporate-finance) (2026-05-20)
 
 ## Techniques
+- [[probit-approximation-logistic-gaussian]] — Probit Approximation to Logistic-Gaussian Integral (machine-learning, bayesian-inference) (2026-06-11)
 - [[conformalized-quantile-regression]] — Conformalized Quantile Regression (CQR) (machine-learning, statistics) (2026-06-11)
 - [[temperature-scaling]] — Temperature Scaling (machine-learning, deep-learning) (2026-06-11)
 - [[expected-calibration-error]] — Expected Calibration Error (ECE) and Reliability Diagram (machine-learning, statistics) (2026-06-11)

@@ -18335,3 +18335,12 @@
 ## [2026-06-11] committed | concept
 - Committed: matrix-normal-inverse-wishart → concepts/matrix-normal-inverse-wishart.md
 - IRI: pkis:concept:matrix-normal-inverse-wishart
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: probit-approximation-logistic-gaussian (id: 5a7bb681-9691-4296-b071-8ee2c5114a19)
+- Title: Probit Approximation to Logistic-Gaussian Integral
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: probit-approximation-logistic-gaussian → techniques/probit-approximation-logistic-gaussian.md
+- IRI: pkis:technique:probit-approximation-logistic-gaussian
