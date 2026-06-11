@@ -13646,3 +13646,12 @@
 ## [2026-06-11] committed | concept
 - Committed: lipschitz-continuity → concepts/lipschitz-continuity.md
 - IRI: pkis:concept:lipschitz-continuity
+
+## [2026-06-11] staged | node-stub (framework)
+- Staged: kkt-conditions (id: 020d125e-da6a-48f7-85e3-9682a2795eb5)
+- Title: Karush–Kuhn–Tucker (KKT) Conditions
+- needs_canonical_source: False
+
+## [2026-06-11] committed | framework
+- Committed: kkt-conditions → frameworks/kkt-conditions.md
+- IRI: pkis:framework:kkt-conditions
