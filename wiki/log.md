@@ -17390,3 +17390,12 @@
 ## [2026-06-11] committed | concept
 - Committed: potts-model → concepts/potts-model.md
 - IRI: pkis:concept:potts-model
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: tree-augmented-naive-bayes (id: 0f949c7f-e461-4078-b3e2-685fed29d39b)
+- Title: Tree-Augmented Naive Bayes (TAN)
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: tree-augmented-naive-bayes → concepts/tree-augmented-naive-bayes.md
+- IRI: pkis:concept:tree-augmented-naive-bayes
