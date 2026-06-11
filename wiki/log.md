@@ -17957,3 +17957,12 @@
 ## [2026-06-11] committed | concept
 - Committed: variational-bayes → concepts/variational-bayes.md
 - IRI: pkis:concept:variational-bayes
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: monte-carlo-integration (id: 3614811f-8387-47d1-9523-4c341843e019)
+- Title: Monte Carlo Integration
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: monte-carlo-integration → techniques/monte-carlo-integration.md
+- IRI: pkis:technique:monte-carlo-integration
