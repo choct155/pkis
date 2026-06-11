@@ -1057,6 +1057,7 @@
 - [[market-vs-hierarchy]] — Coase/Williamson: transactions governed by price signals (markets) vs. managerial direction (firms) (corporate-finance) (2026-05-20)
 
 ## Techniques
+- [[expected-calibration-error]] — Expected Calibration Error (ECE) and Reliability Diagram (machine-learning, statistics) (2026-06-11)
 - [[smc-abc]] — SMC-ABC (Approximate Bayesian Computation via SMC) (statistics, machine-learning, computational-biology) (2026-06-11)
 - [[data-tempering-ibis]] — Data Tempering / IBIS (statistics, machine-learning) (2026-06-11)
 - [[likelihood-tempering-smc]] — Likelihood Tempering / Geometric Path SMC (statistics, machine-learning) (2026-06-11)

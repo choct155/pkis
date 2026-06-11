@@ -18227,3 +18227,12 @@
 ## [2026-06-11] committed | framework
 - Committed: gibbs-posterior → frameworks/gibbs-posterior.md
 - IRI: pkis:framework:gibbs-posterior
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: expected-calibration-error (id: abdab636-054c-4392-8c39-d5f8683e9ccf)
+- Title: Expected Calibration Error (ECE) and Reliability Diagram
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: expected-calibration-error → techniques/expected-calibration-error.md
+- IRI: pkis:technique:expected-calibration-error
