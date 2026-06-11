@@ -13259,3 +13259,12 @@
 ## [2026-06-11] committed | technique
 - Committed: mixture-linear-regression-em → techniques/mixture-linear-regression-em.md
 - IRI: pkis:technique:mixture-linear-regression-em
+
+## [2026-06-11] staged | node-stub (result)
+- Staged: adaboost-exponential-loss-equivalence (id: dec3a9a8-a457-463b-bf99-0737977f3400)
+- Title: AdaBoost as Exponential-Loss Minimisation
+- needs_canonical_source: False
+
+## [2026-06-11] committed | result
+- Committed: adaboost-exponential-loss-equivalence → results/adaboost-exponential-loss-equivalence.md
+- IRI: pkis:result:adaboost-exponential-loss-equivalence
