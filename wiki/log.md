@@ -14258,3 +14258,12 @@
 ## [2026-06-11] committed | concept
 - Committed: recursive-neural-network → concepts/recursive-neural-network.md
 - IRI: pkis:concept:recursive-neural-network
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: leaky-units-multiscale-rnn (id: 5ca8ca49-2887-40b9-8b2a-c6575a9ed810)
+- Title: Leaky Units and Multi-Scale RNN
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: leaky-units-multiscale-rnn → concepts/leaky-units-multiscale-rnn.md
+- IRI: pkis:concept:leaky-units-multiscale-rnn
