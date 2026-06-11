@@ -18866,3 +18866,12 @@
 ## [2026-06-11] committed | concept
 - Committed: aggregated-posterior → concepts/aggregated-posterior.md
 - IRI: pkis:concept:aggregated-posterior
+
+## [2026-06-11] staged | node-stub (framework)
+- Staged: beta-vae (id: 1afff300-4138-4e9e-a4fd-c14339f76794)
+- Title: β-VAE
+- needs_canonical_source: False
+
+## [2026-06-11] committed | framework
+- Committed: beta-vae → frameworks/beta-vae.md
+- IRI: pkis:framework:beta-vae
