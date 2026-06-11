@@ -19019,3 +19019,12 @@
 ## [2026-06-11] committed | technique
 - Committed: reinforcement-learning-from-human-feedback → techniques/reinforcement-learning-from-human-feedback.md
 - IRI: pkis:technique:reinforcement-learning-from-human-feedback
+
+## [2026-06-11] staged | node-stub (framework)
+- Staged: dall-e (id: a49d2a1d-eb10-4c0a-9e3b-e6ae0d87b0b4)
+- Title: DALL-E (Autoregressive Text-to-Image Generation)
+- needs_canonical_source: False
+
+## [2026-06-11] committed | framework
+- Committed: dall-e → frameworks/dall-e.md
+- IRI: pkis:framework:dall-e
