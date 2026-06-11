@@ -19289,3 +19289,12 @@
 ## [2026-06-11] committed | concept
 - Committed: mode-collapse → concepts/mode-collapse.md
 - IRI: pkis:concept:mode-collapse
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: density-ratio-estimation (id: d4813f15-7b81-430b-861e-6c542478d5fc)
+- Title: Density Ratio Estimation
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: density-ratio-estimation → concepts/density-ratio-estimation.md
+- IRI: pkis:concept:density-ratio-estimation
