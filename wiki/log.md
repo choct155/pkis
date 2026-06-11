@@ -13034,3 +13034,12 @@
 ## [2026-06-11] committed | technique
 - Committed: monte-carlo-em → techniques/monte-carlo-em.md
 - IRI: pkis:technique:monte-carlo-em
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: data-augmentation-algorithm (id: 6bb6f15d-00fc-4293-b35b-121bd7054a31)
+- Title: Data Augmentation Algorithm
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: data-augmentation-algorithm → techniques/data-augmentation-algorithm.md
+- IRI: pkis:technique:data-augmentation-algorithm
