@@ -12179,3 +12179,12 @@
 ## [2026-06-11] committed | result
 - Committed: kl-nonnegativity-ml-equivalence → results/kl-nonnegativity-ml-equivalence.md
 - IRI: pkis:result:kl-nonnegativity-ml-equivalence
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: hyperparameter (id: 9ee22856-a4e7-4596-a960-95b267a866ae)
+- Title: Hyperparameter
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: hyperparameter → concepts/hyperparameter.md
+- IRI: pkis:concept:hyperparameter
