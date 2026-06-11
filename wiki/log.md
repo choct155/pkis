@@ -13061,3 +13061,12 @@
 ## [2026-06-11] committed | technique
 - Committed: hybrid-monte-carlo → techniques/hybrid-monte-carlo.md
 - IRI: pkis:technique:hybrid-monte-carlo
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: leapfrog-integrator (id: b7479687-af0b-4d44-91df-015c4db17012)
+- Title: Leapfrog Integrator
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: leapfrog-integrator → techniques/leapfrog-integrator.md
+- IRI: pkis:technique:leapfrog-integrator

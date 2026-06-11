@@ -799,6 +799,7 @@
 - [[market-vs-hierarchy]] — Coase/Williamson: transactions governed by price signals (markets) vs. managerial direction (firms) (corporate-finance) (2026-05-20)
 
 ## Techniques
+- [[leapfrog-integrator]] — Leapfrog Integrator (statistics, machine-learning, physics) (2026-06-11)
 - [[hybrid-monte-carlo]] — Hybrid Monte Carlo (HMC) (statistics, machine-learning, physics) (2026-06-11)
 - [[gibbs-sampling]] — Gibbs Sampling (statistics, machine-learning, probability-theory) (2026-06-11)
 - [[data-augmentation-algorithm]] — Data Augmentation Algorithm (statistics, bayesian-inference) (2026-06-11)
