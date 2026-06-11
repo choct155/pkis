@@ -1470,6 +1470,7 @@
 - [[constraint-propagation]] — Reducing a constraint satisfaction problem by iteratively eliminating inconsistent values from variable domains (knowledge-representation) (2026-05-20)
 
 ## Results
+- [[kl-divergence-gaussians]] — KL Divergence Between Two Gaussians (information-theory, probability, machine-learning) (2026-06-11)
 - [[forward-vs-reverse-kl]] — Forward vs Reverse KL Divergence Asymmetry (information-theory, machine-learning, probabilistic-inference) (2026-06-11)
 - [[bayesian-occams-razor]] — Bayesian Occam's Razor Effect (statistics, machine-learning, information-theory) (2026-06-11)
 - [[optimal-regression-loss-estimators]] — Optimal Regression Estimators Under Common Loss Functions (statistics, machine-learning, decision-theory) (2026-06-11)

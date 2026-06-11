@@ -15635,3 +15635,12 @@
 ## [2026-06-11] committed | result
 - Committed: forward-vs-reverse-kl → results/forward-vs-reverse-kl.md
 - IRI: pkis:result:forward-vs-reverse-kl
+
+## [2026-06-11] staged | node-stub (result)
+- Staged: kl-divergence-gaussians (id: 3d9fbf94-883d-4df4-879b-d29827c1e941)
+- Title: KL Divergence Between Two Gaussians
+- needs_canonical_source: False
+
+## [2026-06-11] committed | result
+- Committed: kl-divergence-gaussians → results/kl-divergence-gaussians.md
+- IRI: pkis:result:kl-divergence-gaussians
