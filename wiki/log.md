@@ -14573,3 +14573,12 @@
 ## [2026-06-11] committed | concept
 - Committed: independent-subspace-analysis → concepts/independent-subspace-analysis.md
 - IRI: pkis:concept:independent-subspace-analysis
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: undercomplete-autoencoder (id: ec6cb1b0-0593-4f77-935b-b5328624bda8)
+- Title: Undercomplete Autoencoder
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: undercomplete-autoencoder → concepts/undercomplete-autoencoder.md
+- IRI: pkis:concept:undercomplete-autoencoder
