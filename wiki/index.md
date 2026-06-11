@@ -290,6 +290,7 @@
 - [[liu-machine-unlearning-llm-2024]] — Rethinking Machine Unlearning for LLMs: post-training knowledge editing survey (deep-learning, ai-safety) (2026-05-20)
 
 ## Concepts
+- [[generative-model-precision-recall]] — Generative Model Precision and Recall (machine-learning, generative-models, evaluation) (2026-06-11)
 - [[language-model-perplexity]] — Perplexity of a Language Model (machine-learning, natural-language-processing, information-theory) (2026-06-11)
 - [[frechet-inception-distance]] — Fréchet Inception Distance (machine-learning, generative-models, evaluation) (2026-06-11)
 - [[inception-score]] — Inception Score (machine-learning, generative-models, evaluation) (2026-06-11)

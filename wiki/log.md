@@ -18812,3 +18812,12 @@
 ## [2026-06-11] committed | technique
 - Committed: uniform-dequantization → techniques/uniform-dequantization.md
 - IRI: pkis:technique:uniform-dequantization
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: generative-model-precision-recall (id: 2960470f-684b-45b3-a490-cde219a951ca)
+- Title: Generative Model Precision and Recall
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: generative-model-precision-recall → concepts/generative-model-precision-recall.md
+- IRI: pkis:concept:generative-model-precision-recall
