@@ -14222,3 +14222,12 @@
 ## [2026-06-11] committed | framework
 - Committed: gated-recurrent-unit → frameworks/gated-recurrent-unit.md
 - IRI: pkis:framework:gated-recurrent-unit
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: vanishing-exploding-gradients-rnn (id: dc7eea5c-84f8-4d9f-b781-d84723ba8af1)
+- Title: Vanishing and Exploding Gradients in RNNs
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: vanishing-exploding-gradients-rnn → concepts/vanishing-exploding-gradients-rnn.md
+- IRI: pkis:concept:vanishing-exploding-gradients-rnn

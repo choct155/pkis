@@ -290,6 +290,7 @@
 - [[liu-machine-unlearning-llm-2024]] — Rethinking Machine Unlearning for LLMs: post-training knowledge editing survey (deep-learning, ai-safety) (2026-05-20)
 
 ## Concepts
+- [[vanishing-exploding-gradients-rnn]] — Vanishing and Exploding Gradients in RNNs (deep-learning, optimization, sequence-modeling) (2026-06-11)
 - [[separable-convolution-kernel]] — Separable Convolution Kernel (deep-learning, signal-processing) (2026-06-11)
 - [[simple-cells-complex-cells-v1]] — Simple Cells and Complex Cells (V1) (neuroscience, deep-learning) (2026-06-11)
 - [[gabor-function]] — Gabor Function (Neuroscience / Vision) (neuroscience, computer-vision, deep-learning) (2026-06-11)
