@@ -15302,3 +15302,12 @@
 ## [2026-06-11] committed | result
 - Committed: mvn-marginal-conditional → results/mvn-marginal-conditional.md
 - IRI: pkis:result:mvn-marginal-conditional
+
+## [2026-06-11] staged | node-stub (framework)
+- Staged: linear-gaussian-system (id: 106ead9c-acdc-442c-a9af-d88b63202e15)
+- Title: Linear Gaussian System
+- needs_canonical_source: False
+
+## [2026-06-11] committed | framework
+- Committed: linear-gaussian-system → frameworks/linear-gaussian-system.md
+- IRI: pkis:framework:linear-gaussian-system

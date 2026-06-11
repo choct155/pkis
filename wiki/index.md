@@ -1570,6 +1570,7 @@
 - [[government-debt-valuation-equation]] — FTPL: price level determined by ratio of nominal debt to expected present value of future surpluses (macroeconomics) (2026-05-20)
 
 ## Frameworks
+- [[linear-gaussian-system]] — Linear Gaussian System (probability, statistics, machine-learning) (2026-06-11)
 - [[probabilistic-ml-framework]] — Probabilistic Machine Learning Framework (machine-learning, statistics, probability) (2026-06-11)
 - [[generative-adversarial-network-framework]] — Generative Adversarial Network (GAN) (deep-learning, generative-models, game-theory) (2026-06-11)
 - [[inductive-priors-representation-learning]] — Inductive Priors for Representation Learning (representation-learning, deep-learning, statistical-learning-theory) (2026-06-11)
