@@ -14105,3 +14105,12 @@
 ## [2026-06-11] committed | concept
 - Committed: receptive-field-cnn → concepts/receptive-field-cnn.md
 - IRI: pkis:concept:receptive-field-cnn
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: strided-convolution (id: 6c66830b-088f-43b5-8aee-946360ce96a5)
+- Title: Strided Convolution
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: strided-convolution → techniques/strided-convolution.md
+- IRI: pkis:technique:strided-convolution

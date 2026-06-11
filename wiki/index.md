@@ -866,6 +866,7 @@
 - [[market-vs-hierarchy]] — Coase/Williamson: transactions governed by price signals (markets) vs. managerial direction (firms) (corporate-finance) (2026-05-20)
 
 ## Techniques
+- [[strided-convolution]] — Strided Convolution (deep-learning) (2026-06-11)
 - [[max-pooling]] — Max Pooling (deep-learning) (2026-06-11)
 - [[conjugate-gradient-method]] — Conjugate Gradient Method (optimization, numerical-methods) (2026-06-11)
 - [[glorot-initialization]] — Glorot (Xavier) Initialization (deep-learning, optimization) (2026-06-11)
