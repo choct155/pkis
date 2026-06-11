@@ -290,6 +290,7 @@
 - [[liu-machine-unlearning-llm-2024]] — Rethinking Machine Unlearning for LLMs: post-training knowledge editing survey (deep-learning, ai-safety) (2026-05-20)
 
 ## Concepts
+- [[equivalent-kernel]] — Equivalent Kernel (Smoother Matrix) (machine-learning, statistics) (2026-06-11)
 - [[linear-basis-function-model]] — Linear Basis Function Model (machine-learning, statistics) (2026-06-11)
 - [[exponential-family-distribution]] — Exponential Family (probability, statistics, information-theory) (2026-06-11)
 - [[mahalanobis-distance]] — Mahalanobis Distance (statistics, geometry, machine-learning) (2026-06-11)

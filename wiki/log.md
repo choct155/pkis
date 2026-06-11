@@ -12341,3 +12341,12 @@
 ## [2026-06-11] committed | result
 - Committed: bayesian-linear-regression-predictive → results/bayesian-linear-regression-predictive.md
 - IRI: pkis:result:bayesian-linear-regression-predictive
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: equivalent-kernel (id: e21cbd75-697a-4e2b-90ba-2f8b6f82d3e8)
+- Title: Equivalent Kernel (Smoother Matrix)
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: equivalent-kernel → concepts/equivalent-kernel.md
+- IRI: pkis:concept:equivalent-kernel
