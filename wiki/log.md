@@ -14132,3 +14132,12 @@
 ## [2026-06-11] committed | concept
 - Committed: locally-connected-layer → concepts/locally-connected-layer.md
 - IRI: pkis:concept:locally-connected-layer
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: tiled-convolution (id: 192093ed-f813-448d-8f9a-c8a25c8e2d75)
+- Title: Tiled Convolution
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: tiled-convolution → concepts/tiled-convolution.md
+- IRI: pkis:concept:tiled-convolution
