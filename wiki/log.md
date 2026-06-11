@@ -20162,3 +20162,12 @@
 ## [2026-06-11] committed | technique
 - Committed: iptw-estimator → techniques/iptw-estimator.md
 - IRI: pkis:technique:iptw-estimator
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: aiptw-double-ml (id: 9dee5174-f573-4de6-bb5e-f5c8dfcb270f)
+- Title: Augmented IPTW / Double Machine Learning Estimator (AIPTW)
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: aiptw-double-ml → techniques/aiptw-double-ml.md
+- IRI: pkis:technique:aiptw-double-ml
