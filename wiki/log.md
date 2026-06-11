@@ -12530,3 +12530,12 @@
 ## [2026-06-11] committed | technique
 - Committed: tangent-propagation → techniques/tangent-propagation.md
 - IRI: pkis:technique:tangent-propagation
+
+## [2026-06-11] staged | node-stub (framework)
+- Staged: mixture-density-network (id: afac990f-8f77-42e6-85ab-b31d3e5c6c03)
+- Title: Mixture Density Network
+- needs_canonical_source: False
+
+## [2026-06-11] committed | framework
+- Committed: mixture-density-network → frameworks/mixture-density-network.md
+- IRI: pkis:framework:mixture-density-network
