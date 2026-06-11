@@ -931,6 +931,7 @@
 - [[market-vs-hierarchy]] — Coase/Williamson: transactions governed by price signals (markets) vs. managerial direction (firms) (corporate-finance) (2026-05-20)
 
 ## Techniques
+- [[shrinkage-covariance-estimation]] — Shrinkage Estimation of Covariance (statistics, machine-learning) (2026-06-11)
 - [[exponentially-weighted-moving-average]] — Exponentially Weighted Moving Average (EWMA) (statistics, machine-learning, signal-processing) (2026-06-11)
 - [[map-estimation]] — MAP Estimation (statistics, machine-learning) (2026-06-11)
 - [[completing-the-square-multivariate]] — Completing the Square (Multivariate) (mathematics, probability, statistics) (2026-06-11)

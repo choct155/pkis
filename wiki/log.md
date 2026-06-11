@@ -15410,3 +15410,12 @@
 ## [2026-06-11] committed | technique
 - Committed: exponentially-weighted-moving-average → techniques/exponentially-weighted-moving-average.md
 - IRI: pkis:technique:exponentially-weighted-moving-average
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: shrinkage-covariance-estimation (id: 253e1153-0a33-40b4-87a1-cf141b7a4278)
+- Title: Shrinkage Estimation of Covariance
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: shrinkage-covariance-estimation → techniques/shrinkage-covariance-estimation.md
+- IRI: pkis:technique:shrinkage-covariance-estimation
