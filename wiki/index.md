@@ -987,6 +987,7 @@
 - [[market-vs-hierarchy]] — Coase/Williamson: transactions governed by price signals (markets) vs. managerial direction (firms) (corporate-finance) (2026-05-20)
 
 ## Techniques
+- [[gp-marginal-likelihood-optimisation]] — GP Marginal Likelihood Maximisation (Empirical Bayes for Kernels) (machine-learning, Bayesian-statistics) (2026-06-11)
 - [[nadaraya-watson-estimator]] — Nadaraya–Watson Kernel Regression (statistics, machine-learning) (2026-06-11)
 - [[n-pairs-loss]] — N-Pairs Loss (InfoNCE / NT-Xent) (machine-learning, representation-learning, self-supervised-learning) (2026-06-11)
 - [[triplet-loss]] — Triplet Loss (machine-learning, representation-learning) (2026-06-11)

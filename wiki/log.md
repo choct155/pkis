@@ -16499,3 +16499,12 @@
 ## [2026-06-11] committed | concept
 - Committed: mercer-kernel → concepts/mercer-kernel.md
 - IRI: pkis:concept:mercer-kernel
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: gp-marginal-likelihood-optimisation (id: 21057d18-2da7-439e-8c11-9229f646e1bb)
+- Title: GP Marginal Likelihood Maximisation (Empirical Bayes for Kernels)
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: gp-marginal-likelihood-optimisation → techniques/gp-marginal-likelihood-optimisation.md
+- IRI: pkis:technique:gp-marginal-likelihood-optimisation
