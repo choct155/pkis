@@ -15770,3 +15770,12 @@
 ## [2026-06-11] committed | concept
 - Committed: subgradient-subdifferential → concepts/subgradient-subdifferential.md
 - IRI: pkis:concept:subgradient-subdifferential
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: composite-objective (id: 3afaf331-692a-40be-8c6d-fc90bcfbaef9)
+- Title: Composite Objective (Smooth + Non-smooth)
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: composite-objective → concepts/composite-objective.md
+- IRI: pkis:concept:composite-objective
