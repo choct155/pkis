@@ -16625,3 +16625,12 @@
 ## [2026-06-11] committed | technique
 - Committed: adapter-modules → techniques/adapter-modules.md
 - IRI: pkis:technique:adapter-modules
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: simclr (id: 23eb963c-b2b7-4be3-9ea3-98806a360e6a)
+- Title: SimCLR (Simple Contrastive Learning of Representations)
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: simclr → techniques/simclr.md
+- IRI: pkis:technique:simclr
