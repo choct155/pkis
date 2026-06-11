@@ -919,6 +919,7 @@
 - [[market-vs-hierarchy]] — Coase/Williamson: transactions governed by price signals (markets) vs. managerial direction (firms) (corporate-finance) (2026-05-20)
 
 ## Techniques
+- [[multi-prediction-deep-boltzmann-machine]] — Multi-Prediction Deep Boltzmann Machine (MP-DBM) (deep-learning, generative-models, approximate-inference) (2026-06-11)
 - [[centered-deep-boltzmann-machine]] — Centered Deep Boltzmann Machine (deep-learning, generative-models, optimisation) (2026-06-11)
 - [[maximum-mean-discrepancy-training]] — Maximum Mean Discrepancy (MMD) Training (deep-learning, generative-models, kernel-methods) (2026-06-11)
 - [[reinforce-gradient-estimator]] — REINFORCE Gradient Estimator (deep-learning, generative-models, reinforcement-learning, optimisation) (2026-06-11)

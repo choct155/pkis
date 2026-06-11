@@ -15176,3 +15176,12 @@
 ## [2026-06-11] committed | technique
 - Committed: centered-deep-boltzmann-machine → techniques/centered-deep-boltzmann-machine.md
 - IRI: pkis:technique:centered-deep-boltzmann-machine
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: multi-prediction-deep-boltzmann-machine (id: 49fb6e70-d039-4559-b523-638c4df4ec3a)
+- Title: Multi-Prediction Deep Boltzmann Machine (MP-DBM)
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: multi-prediction-deep-boltzmann-machine → techniques/multi-prediction-deep-boltzmann-machine.md
+- IRI: pkis:technique:multi-prediction-deep-boltzmann-machine
