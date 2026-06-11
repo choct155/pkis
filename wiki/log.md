@@ -20135,3 +20135,12 @@
 ## [2026-06-11] committed | technique
 - Committed: deterministic-policy-gradient → techniques/deterministic-policy-gradient.md
 - IRI: pkis:technique:deterministic-policy-gradient
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: causal-hierarchy (id: 902251ea-7b20-4da1-95e0-9253eb9fe45b)
+- Title: Causal Hierarchy (Ladder of Causation)
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: causal-hierarchy → concepts/causal-hierarchy.md
+- IRI: pkis:concept:causal-hierarchy

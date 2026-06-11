@@ -290,6 +290,7 @@
 - [[liu-machine-unlearning-llm-2024]] — Rethinking Machine Unlearning for LLMs: post-training knowledge editing survey (deep-learning, ai-safety) (2026-05-20)
 
 ## Concepts
+- [[causal-hierarchy]] — Causal Hierarchy (Ladder of Causation) (causal-inference, statistics) (2026-06-11)
 - [[markov-decision-process-mdp]] — Markov Decision Process (MDP) (reinforcement learning, AI, operations research) (2026-06-11)
 - [[cumulative-regret]] — Cumulative Regret (machine learning, reinforcement learning, statistics) (2026-06-11)
 - [[value-of-perfect-information]] — Value of Perfect Information (VPI) (decision theory, economics, AI) (2026-06-11)
