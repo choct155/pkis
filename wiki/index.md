@@ -290,6 +290,7 @@
 - [[liu-machine-unlearning-llm-2024]] — Rethinking Machine Unlearning for LLMs: post-training knowledge editing survey (deep-learning, ai-safety) (2026-05-20)
 
 ## Concepts
+- [[observed-markov-chain]] — Markov Chain (Observed, Higher-Order) (probability-theory, time-series, machine-learning) (2026-06-11)
 - [[hmm-parameters]] — HMM Transition and Emission Parameters (machine-learning, probabilistic-graphical-models) (2026-06-11)
 - [[state-space-model-sequential]] — State Space Model (Sequential Latent Variable) (machine-learning, probabilistic-graphical-models, time-series) (2026-06-11)
 - [[overrelaxation-mcmc]] — Overrelaxation (MCMC) (statistics, machine-learning) (2026-06-11)

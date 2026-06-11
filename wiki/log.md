@@ -13160,3 +13160,12 @@
 ## [2026-06-11] committed | technique
 - Committed: kalman-smoother → techniques/kalman-smoother.md
 - IRI: pkis:technique:kalman-smoother
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: observed-markov-chain (id: 5b4e69b6-af96-4c43-b449-49c2ad0f1896)
+- Title: Markov Chain (Observed, Higher-Order)
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: observed-markov-chain → concepts/observed-markov-chain.md
+- IRI: pkis:concept:observed-markov-chain
