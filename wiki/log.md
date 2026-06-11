@@ -20090,3 +20090,12 @@
 ## [2026-06-11] committed | technique
 - Committed: deep-deterministic-policy-gradient → techniques/deep-deterministic-policy-gradient.md
 - IRI: pkis:technique:deep-deterministic-policy-gradient
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: model-predictive-control-rl (id: 3a85121d-433a-4c26-ab6a-a5e336f361fb)
+- Title: Model Predictive Control for RL (MPC/Receding-Horizon Control)
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: model-predictive-control-rl → techniques/model-predictive-control-rl.md
+- IRI: pkis:technique:model-predictive-control-rl
