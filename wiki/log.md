@@ -12233,3 +12233,12 @@
 ## [2026-06-11] committed | result
 - Committed: partitioned-gaussian-conditionals-marginals → results/partitioned-gaussian-conditionals-marginals.md
 - IRI: pkis:result:partitioned-gaussian-conditionals-marginals
+
+## [2026-06-11] staged | node-stub (result)
+- Staged: linear-gaussian-model (id: 2b26d6fe-eddc-4f64-baba-ffebe501ce31)
+- Title: Linear-Gaussian Model: Marginal and Posterior
+- needs_canonical_source: False
+
+## [2026-06-11] committed | result
+- Committed: linear-gaussian-model → results/linear-gaussian-model.md
+- IRI: pkis:result:linear-gaussian-model
