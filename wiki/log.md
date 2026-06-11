@@ -15851,3 +15851,12 @@
 ## [2026-06-11] committed | technique
 - Committed: polyak-ruppert-averaging → techniques/polyak-ruppert-averaging.md
 - IRI: pkis:technique:polyak-ruppert-averaging
+
+## [2026-06-11] staged | node-stub (framework)
+- Staged: generative-classifier (id: 47ef288c-d6f1-4cfa-818b-02bcc83134f5)
+- Title: Generative Classifier
+- needs_canonical_source: False
+
+## [2026-06-11] committed | framework
+- Committed: generative-classifier → frameworks/generative-classifier.md
+- IRI: pkis:framework:generative-classifier
