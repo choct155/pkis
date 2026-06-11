@@ -15860,3 +15860,12 @@
 ## [2026-06-11] committed | framework
 - Committed: generative-classifier → frameworks/generative-classifier.md
 - IRI: pkis:framework:generative-classifier
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: gaussian-discriminant-analysis (id: 5347c8e8-c803-4ddb-b109-7eb12a20cd70)
+- Title: Gaussian Discriminant Analysis (GDA / QDA)
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: gaussian-discriminant-analysis → techniques/gaussian-discriminant-analysis.md
+- IRI: pkis:technique:gaussian-discriminant-analysis
