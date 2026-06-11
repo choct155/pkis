@@ -16418,3 +16418,12 @@
 ## [2026-06-11] committed | technique
 - Committed: knn-classifier → techniques/knn-classifier.md
 - IRI: pkis:technique:knn-classifier
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: large-margin-nearest-neighbor (id: b0744911-207d-4f12-ac77-3379a0a39a66)
+- Title: Large Margin Nearest Neighbor (LMNN)
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: large-margin-nearest-neighbor → techniques/large-margin-nearest-neighbor.md
+- IRI: pkis:technique:large-margin-nearest-neighbor
