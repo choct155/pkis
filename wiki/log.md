@@ -16202,3 +16202,12 @@
 ## [2026-06-11] committed | concept
 - Committed: autodiff → concepts/autodiff.md
 - IRI: pkis:concept:autodiff
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: xavier-initialization (id: 62f23a36-0eeb-40ce-a396-b9f28995270f)
+- Title: Xavier / Glorot Initialization
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: xavier-initialization → techniques/xavier-initialization.md
+- IRI: pkis:technique:xavier-initialization
