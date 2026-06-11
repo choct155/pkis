@@ -12485,3 +12485,12 @@
 ## [2026-06-11] committed | framework
 - Committed: feed-forward-neural-network → frameworks/feed-forward-neural-network.md
 - IRI: pkis:framework:feed-forward-neural-network
+
+## [2026-06-11] staged | node-stub (result)
+- Staged: universal-approximation-theorem-nn (id: f7056bbb-847a-4209-bee0-b81477cc1037)
+- Title: Universal Approximation Theorem (Neural Networks)
+- needs_canonical_source: False
+
+## [2026-06-11] committed | result
+- Committed: universal-approximation-theorem-nn → results/universal-approximation-theorem-nn.md
+- IRI: pkis:result:universal-approximation-theorem-nn
