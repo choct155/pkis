@@ -14087,3 +14087,12 @@
 ## [2026-06-11] committed | concept
 - Committed: translation-equivariance → concepts/translation-equivariance.md
 - IRI: pkis:concept:translation-equivariance
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: max-pooling (id: 4350c46a-8b9b-4f3c-978b-6772b9967883)
+- Title: Max Pooling
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: max-pooling → techniques/max-pooling.md
+- IRI: pkis:technique:max-pooling
