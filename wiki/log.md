@@ -14402,3 +14402,12 @@
 ## [2026-06-11] committed | technique
 - Committed: global-contrast-normalization → techniques/global-contrast-normalization.md
 - IRI: pkis:technique:global-contrast-normalization
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: local-contrast-normalization (id: f2a3e89b-e1f5-4081-8097-882cd4ce81d0)
+- Title: Local Contrast Normalization (LCN)
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: local-contrast-normalization → techniques/local-contrast-normalization.md
+- IRI: pkis:technique:local-contrast-normalization
