@@ -1150,6 +1150,7 @@
 - [[market-vs-hierarchy]] — Coase/Williamson: transactions governed by price signals (markets) vs. managerial direction (firms) (corporate-finance) (2026-05-20)
 
 ## Techniques
+- [[cross-fitting]] — Cross-Fitting for Causal Estimation (causal-inference, statistics, machine-learning) (2026-06-11)
 - [[aiptw-double-ml]] — Augmented IPTW / Double Machine Learning Estimator (AIPTW) (causal-inference, statistics, machine-learning) (2026-06-11)
 - [[iptw-estimator]] — Inverse Probability of Treatment Weighting (IPTW) (causal-inference, statistics) (2026-06-11)
 - [[deterministic-policy-gradient]] — Deterministic Policy Gradient (DPG) (reinforcement-learning, optimization) (2026-06-11)

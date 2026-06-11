@@ -20171,3 +20171,12 @@
 ## [2026-06-11] committed | technique
 - Committed: aiptw-double-ml → techniques/aiptw-double-ml.md
 - IRI: pkis:technique:aiptw-double-ml
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: cross-fitting (id: 375fd27d-087a-41f9-a848-d417bb5217f0)
+- Title: Cross-Fitting for Causal Estimation
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: cross-fitting → techniques/cross-fitting.md
+- IRI: pkis:technique:cross-fitting
