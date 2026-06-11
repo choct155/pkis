@@ -17849,3 +17849,12 @@
 ## [2026-06-11] committed | technique
 - Committed: residual-belief-propagation → techniques/residual-belief-propagation.md
 - IRI: pkis:technique:residual-belief-propagation
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: generalised-belief-propagation (id: 3bf9d7e6-523c-4d93-9f7e-7f45aa97d01f)
+- Title: Generalised Belief Propagation (Cluster Variational Method)
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: generalised-belief-propagation → techniques/generalised-belief-propagation.md
+- IRI: pkis:technique:generalised-belief-propagation
