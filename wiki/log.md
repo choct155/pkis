@@ -20081,3 +20081,12 @@
 ## [2026-06-11] committed | technique
 - Committed: proximal-policy-optimization → techniques/proximal-policy-optimization.md
 - IRI: pkis:technique:proximal-policy-optimization
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: deep-deterministic-policy-gradient (id: 33ee525d-3b32-4196-928c-09fcb312e7b3)
+- Title: Deep Deterministic Policy Gradient (DDPG)
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: deep-deterministic-policy-gradient → techniques/deep-deterministic-policy-gradient.md
+- IRI: pkis:technique:deep-deterministic-policy-gradient

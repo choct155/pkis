@@ -1148,6 +1148,7 @@
 - [[market-vs-hierarchy]] — Coase/Williamson: transactions governed by price signals (markets) vs. managerial direction (firms) (corporate-finance) (2026-05-20)
 
 ## Techniques
+- [[deep-deterministic-policy-gradient]] — Deep Deterministic Policy Gradient (DDPG) (reinforcement-learning) (2026-06-11)
 - [[proximal-policy-optimization]] — Proximal Policy Optimization (PPO) (reinforcement-learning, optimization) (2026-06-11)
 - [[trust-region-policy-optimization]] — Trust Region Policy Optimization (TRPO) (reinforcement-learning, optimization) (2026-06-11)
 - [[generalized-advantage-estimation]] — Generalized Advantage Estimation (GAE) (reinforcement-learning) (2026-06-11)
