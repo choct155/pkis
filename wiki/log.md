@@ -13727,3 +13727,12 @@
 ## [2026-06-11] committed | result
 - Committed: mle-as-kl-minimization → results/mle-as-kl-minimization.md
 - IRI: pkis:result:mle-as-kl-minimization
+
+## [2026-06-11] staged | node-stub (result)
+- Staged: map-as-regularized-mle (id: 7fa8b7ea-fb5c-4e9e-a435-1f14dd9bb5bc)
+- Title: MAP Estimation as Regularized MLE
+- needs_canonical_source: False
+
+## [2026-06-11] committed | result
+- Committed: map-as-regularized-mle → results/map-as-regularized-mle.md
+- IRI: pkis:result:map-as-regularized-mle
