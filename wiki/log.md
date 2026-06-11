@@ -14438,3 +14438,12 @@
 ## [2026-06-11] committed | technique
 - Committed: noise-contrastive-estimation → techniques/noise-contrastive-estimation.md
 - IRI: pkis:technique:noise-contrastive-estimation
+
+## [2026-06-11] staged | node-stub (framework)
+- Staged: collaborative-filtering (id: 0c6ebef3-733b-48f2-8ec3-63995a54aff4)
+- Title: Collaborative Filtering with Latent Factor Models
+- needs_canonical_source: False
+
+## [2026-06-11] committed | framework
+- Committed: collaborative-filtering → frameworks/collaborative-filtering.md
+- IRI: pkis:framework:collaborative-filtering
