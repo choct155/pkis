@@ -16229,3 +16229,12 @@
 ## [2026-06-11] committed | concept
 - Committed: relu-activation → concepts/relu-activation.md
 - IRI: pkis:concept:relu-activation
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: heteroskedastic-neural-regression (id: 6680fbfa-6b86-437d-872d-4b0592a36e7e)
+- Title: Heteroskedastic Regression with Neural Networks
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: heteroskedastic-neural-regression → concepts/heteroskedastic-neural-regression.md
+- IRI: pkis:concept:heteroskedastic-neural-regression
