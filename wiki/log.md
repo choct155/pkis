@@ -19406,3 +19406,12 @@
 ## [2026-06-11] committed | framework
 - Committed: pml-part-v-discovery-roadmap → frameworks/pml-part-v-discovery-roadmap.md
 - IRI: pkis:framework:pml-part-v-discovery-roadmap
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: spatio-temporal-latent-variable-models (id: e596cf70-0b9a-47bc-8c50-e5b436eea303)
+- Title: Spatio-Temporal Latent Variable Models
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: spatio-temporal-latent-variable-models → concepts/spatio-temporal-latent-variable-models.md
+- IRI: pkis:concept:spatio-temporal-latent-variable-models
