@@ -13097,3 +13097,12 @@
 ## [2026-06-11] committed | technique
 - Committed: partition-function-chaining → techniques/partition-function-chaining.md
 - IRI: pkis:technique:partition-function-chaining
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: overrelaxation-mcmc (id: 24d3cd8e-4435-46a2-8d72-d83744fc9b5a)
+- Title: Overrelaxation (MCMC)
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: overrelaxation-mcmc → concepts/overrelaxation-mcmc.md
+- IRI: pkis:concept:overrelaxation-mcmc
