@@ -19694,3 +19694,12 @@
 ## [2026-06-11] committed | framework
 - Committed: dirichlet-process-mixture-model → frameworks/dirichlet-process-mixture-model.md
 - IRI: pkis:framework:dirichlet-process-mixture-model
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: chinese-restaurant-process (id: 5b2ef090-6500-457b-9905-a64c2faffcec)
+- Title: Chinese Restaurant Process
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: chinese-restaurant-process → concepts/chinese-restaurant-process.md
+- IRI: pkis:concept:chinese-restaurant-process
