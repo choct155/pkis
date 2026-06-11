@@ -13349,3 +13349,12 @@
 ## [2026-06-11] committed | concept
 - Committed: greedy-layer-wise-pretraining → concepts/greedy-layer-wise-pretraining.md
 - IRI: pkis:concept:greedy-layer-wise-pretraining
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: rectified-linear-unit (id: 5a3bcfec-a131-4a9a-b521-c2e9934caae0)
+- Title: Rectified Linear Unit (ReLU)
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: rectified-linear-unit → concepts/rectified-linear-unit.md
+- IRI: pkis:concept:rectified-linear-unit
