@@ -19649,3 +19649,12 @@
 ## [2026-06-11] committed | concept
 - Committed: structural-causal-model → concepts/structural-causal-model.md
 - IRI: pkis:concept:structural-causal-model
+
+## [2026-06-11] staged | node-stub (framework)
+- Staged: bayesian-nonparametric-models (id: 0c382ab7-00bc-41da-b33e-049e7ff115d8)
+- Title: Bayesian Nonparametric Models
+- needs_canonical_source: False
+
+## [2026-06-11] committed | framework
+- Committed: bayesian-nonparametric-models → frameworks/bayesian-nonparametric-models.md
+- IRI: pkis:framework:bayesian-nonparametric-models
