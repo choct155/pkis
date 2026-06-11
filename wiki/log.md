@@ -19001,3 +19001,12 @@
 ## [2026-06-11] committed | framework
 - Committed: wavenet → frameworks/wavenet.md
 - IRI: pkis:framework:wavenet
+
+## [2026-06-11] staged | node-stub (framework)
+- Staged: gpt-pretraining (id: 420ad93f-f4a0-42e1-aa24-354ee7995bba)
+- Title: GPT / Large Language Model Pre-training
+- needs_canonical_source: False
+
+## [2026-06-11] committed | framework
+- Committed: gpt-pretraining → frameworks/gpt-pretraining.md
+- IRI: pkis:framework:gpt-pretraining

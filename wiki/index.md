@@ -1940,6 +1940,7 @@
 - [[government-debt-valuation-equation]] — FTPL: price level determined by ratio of nominal debt to expected present value of future surpluses (macroeconomics) (2026-05-20)
 
 ## Frameworks
+- [[gpt-pretraining]] — GPT / Large Language Model Pre-training (natural-language-processing, deep-learning, generative-models) (2026-06-11)
 - [[wavenet]] — WaveNet (Dilated Causal CNN for Audio) (deep-learning, speech-synthesis, generative-models) (2026-06-11)
 - [[pixelcnn]] — PixelCNN (2-D Autoregressive Image Model) (deep-learning, computer-vision, generative-models) (2026-06-11)
 - [[autoregressive-model-arm]] — Autoregressive Model (ARM) (machine-learning, probabilistic-modeling, generative-models) (2026-06-11)
