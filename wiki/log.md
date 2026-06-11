@@ -13808,3 +13808,12 @@
 ## [2026-06-11] committed | concept
 - Committed: maxout-unit → concepts/maxout-unit.md
 - IRI: pkis:concept:maxout-unit
+
+## [2026-06-11] staged | node-stub (result)
+- Staged: universal-approximation-theorem-mlp (id: 22e59e12-bca9-407d-ad9e-c3e048e99533)
+- Title: Universal Approximation Theorem (Neural Networks)
+- needs_canonical_source: False
+
+## [2026-06-11] committed | result
+- Committed: universal-approximation-theorem-mlp → results/universal-approximation-theorem-mlp.md
+- IRI: pkis:result:universal-approximation-theorem-mlp
