@@ -19514,3 +19514,12 @@
 ## [2026-06-11] committed | concept
 - Committed: hidden-semi-markov-model → concepts/hidden-semi-markov-model.md
 - IRI: pkis:concept:hidden-semi-markov-model
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: factorial-hmm (id: 6684b7c9-70da-4f07-ac6d-2faa3b68c733)
+- Title: Factorial HMM
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: factorial-hmm → concepts/factorial-hmm.md
+- IRI: pkis:concept:factorial-hmm

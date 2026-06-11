@@ -290,6 +290,7 @@
 - [[liu-machine-unlearning-llm-2024]] — Rethinking Machine Unlearning for LLMs: post-training knowledge editing survey (deep-learning, ai-safety) (2026-05-20)
 
 ## Concepts
+- [[factorial-hmm]] — Factorial HMM (machine-learning, statistics) (2026-06-11)
 - [[hidden-semi-markov-model]] — Hidden Semi-Markov Model (HSMM) (machine-learning, statistics, time-series) (2026-06-11)
 - [[autoregressive-hmm]] — Autoregressive HMM (AR-HMM) (machine-learning, statistics, time-series, econometrics) (2026-06-11)
 - [[bernoulli-mixture-model]] — Bernoulli Mixture Model (BMM) (machine-learning, unsupervised-learning) (2026-06-11)
