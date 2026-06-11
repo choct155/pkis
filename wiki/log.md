@@ -14798,3 +14798,12 @@
 ## [2026-06-11] committed | concept
 - Committed: context-specific-independence → concepts/context-specific-independence.md
 - IRI: pkis:concept:context-specific-independence
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: free-energy-ebm (id: f372b2a9-b6ad-4433-9ef0-5c0753946839)
+- Title: Free Energy (Latent Variable EBMs)
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: free-energy-ebm → concepts/free-energy-ebm.md
+- IRI: pkis:concept:free-energy-ebm

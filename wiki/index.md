@@ -290,6 +290,7 @@
 - [[liu-machine-unlearning-llm-2024]] — Rethinking Machine Unlearning for LLMs: post-training knowledge editing survey (deep-learning, ai-safety) (2026-05-20)
 
 ## Concepts
+- [[free-energy-ebm]] — Free Energy (Latent Variable EBMs) (probabilistic-graphical-models, deep-learning, statistical-physics) (2026-06-11)
 - [[context-specific-independence]] — Context-Specific Independence (probabilistic-graphical-models) (2026-06-11)
 - [[structure-learning]] — Structure Learning (probabilistic-graphical-models, machine-learning) (2026-06-11)
 - [[separation-undirected-graphical-models]] — Separation in Undirected Graphical Models (probabilistic-graphical-models) (2026-06-11)
