@@ -13628,3 +13628,12 @@
 ## [2026-06-11] committed | technique
 - Committed: newtons-method-optimization → techniques/newtons-method-optimization.md
 - IRI: pkis:technique:newtons-method-optimization
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: first-order-vs-second-order-optimization (id: b2c6db83-5bdf-418b-8fd5-6b46173bab69)
+- Title: First-Order vs Second-Order Optimization
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: first-order-vs-second-order-optimization → concepts/first-order-vs-second-order-optimization.md
+- IRI: pkis:concept:first-order-vs-second-order-optimization
