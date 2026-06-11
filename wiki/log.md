@@ -17885,3 +17885,12 @@
 ## [2026-06-11] committed | concept
 - Committed: mean-field-approximation-vi → concepts/mean-field-approximation-vi.md
 - IRI: pkis:concept:mean-field-approximation-vi
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: cavi (id: 16244061-d740-4977-a328-279a88dde55d)
+- Title: Coordinate Ascent Variational Inference (CAVI)
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: cavi → techniques/cavi.md
+- IRI: pkis:technique:cavi

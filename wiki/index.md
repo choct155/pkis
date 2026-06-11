@@ -1047,6 +1047,7 @@
 - [[market-vs-hierarchy]] — Coase/Williamson: transactions governed by price signals (markets) vs. managerial direction (firms) (corporate-finance) (2026-05-20)
 
 ## Techniques
+- [[cavi]] — Coordinate Ascent Variational Inference (CAVI) (machine-learning, bayesian-inference) (2026-06-11)
 - [[generalised-belief-propagation]] — Generalised Belief Propagation (Cluster Variational Method) (probabilistic-graphical-models, variational-inference) (2026-06-11)
 - [[residual-belief-propagation]] — Residual Belief Propagation (probabilistic-graphical-models) (2026-06-11)
 - [[max-product-belief-propagation]] — Max-Product Belief Propagation (probabilistic-graphical-models, machine-learning) (2026-06-11)
