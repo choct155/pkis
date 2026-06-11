@@ -17012,3 +17012,12 @@
 ## [2026-06-11] committed | technique
 - Committed: variational-graph-auto-encoder → techniques/variational-graph-auto-encoder.md
 - IRI: pkis:technique:variational-graph-auto-encoder
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: label-propagation-graph (id: 10abba9c-06f9-4e15-8675-c8ed92097c60)
+- Title: Label Propagation on Graphs
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: label-propagation-graph → techniques/label-propagation-graph.md
+- IRI: pkis:technique:label-propagation-graph
