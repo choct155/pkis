@@ -13151,3 +13151,12 @@
 ## [2026-06-11] committed | framework
 - Committed: linear-dynamical-system → frameworks/linear-dynamical-system.md
 - IRI: pkis:framework:linear-dynamical-system
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: kalman-smoother (id: 3b7a7469-b569-4992-acf3-649d1d7b241d)
+- Title: Kalman Smoother (RTS Smoother)
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: kalman-smoother → techniques/kalman-smoother.md
+- IRI: pkis:technique:kalman-smoother

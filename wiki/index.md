@@ -803,6 +803,7 @@
 - [[market-vs-hierarchy]] — Coase/Williamson: transactions governed by price signals (markets) vs. managerial direction (firms) (corporate-finance) (2026-05-20)
 
 ## Techniques
+- [[kalman-smoother]] — Kalman Smoother (RTS Smoother) (signal-processing, machine-learning, control-theory) (2026-06-11)
 - [[baum-welch-algorithm]] — Baum-Welch Algorithm (EM for HMM) (machine-learning, probabilistic-graphical-models) (2026-06-11)
 - [[viterbi-algorithm]] — Viterbi Algorithm (machine-learning, probabilistic-graphical-models, speech-recognition) (2026-06-11)
 - [[partition-function-chaining]] — Partition Function Estimation by Chaining (statistics, machine-learning) (2026-06-11)
