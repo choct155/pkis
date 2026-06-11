@@ -19442,3 +19442,12 @@
 ## [2026-06-11] committed | concept
 - Committed: factor-rotations-problem → concepts/factor-rotations-problem.md
 - IRI: pkis:concept:factor-rotations-problem
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: expected-patch-log-likelihood (id: acd30c33-5539-428a-9ca6-ea781781115c)
+- Title: Expected Patch Log Likelihood (EPLL)
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: expected-patch-log-likelihood → techniques/expected-patch-log-likelihood.md
+- IRI: pkis:technique:expected-patch-log-likelihood

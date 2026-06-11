@@ -1117,6 +1117,7 @@
 - [[market-vs-hierarchy]] — Coase/Williamson: transactions governed by price signals (markets) vs. managerial direction (firms) (corporate-finance) (2026-05-20)
 
 ## Techniques
+- [[expected-patch-log-likelihood]] — Expected Patch Log Likelihood (EPLL) (computer-vision, machine-learning, signal-processing) (2026-06-11)
 - [[generative-adversarial-imitation-learning]] — Generative Adversarial Imitation Learning (GAIL) (reinforcement-learning, imitation-learning, machine-learning) (2026-06-11)
 - [[bidirectional-gan]] — Bidirectional GAN (BiGAN) (machine-learning, deep-learning, generative-modeling) (2026-06-11)
 - [[conditional-gan]] — Conditional GAN (machine-learning, deep-learning, generative-modeling) (2026-06-11)
