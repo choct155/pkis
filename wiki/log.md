@@ -15896,3 +15896,12 @@
 ## [2026-06-11] committed | technique
 - Committed: fishers-linear-discriminant-analysis → techniques/fishers-linear-discriminant-analysis.md
 - IRI: pkis:technique:fishers-linear-discriminant-analysis
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: scatter-matrices-lda (id: 3a0c8b73-042d-44a9-b11b-2936a4854495)
+- Title: Between-Class and Within-Class Scatter Matrices
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: scatter-matrices-lda → concepts/scatter-matrices-lda.md
+- IRI: pkis:concept:scatter-matrices-lda

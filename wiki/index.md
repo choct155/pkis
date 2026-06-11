@@ -290,6 +290,7 @@
 - [[liu-machine-unlearning-llm-2024]] — Rethinking Machine Unlearning for LLMs: post-training knowledge editing survey (deep-learning, ai-safety) (2026-05-20)
 
 ## Concepts
+- [[scatter-matrices-lda]] — Between-Class and Within-Class Scatter Matrices (machine-learning, statistics) (2026-06-11)
 - [[condition-number-hessian]] — Condition Number of Hessian (optimization, linear-algebra) (2026-06-11)
 - [[composite-objective]] — Composite Objective (Smooth + Non-smooth) (optimization, machine-learning) (2026-06-11)
 - [[subgradient-subdifferential]] — Subgradient and Subdifferential (optimization, machine-learning) (2026-06-11)
