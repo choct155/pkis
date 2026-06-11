@@ -16463,3 +16463,12 @@
 ## [2026-06-11] committed | technique
 - Committed: n-pairs-loss → techniques/n-pairs-loss.md
 - IRI: pkis:technique:n-pairs-loss
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: nadaraya-watson-estimator (id: c8e2659e-e008-410d-a499-04fe7cbe8286)
+- Title: Nadaraya–Watson Kernel Regression
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: nadaraya-watson-estimator → techniques/nadaraya-watson-estimator.md
+- IRI: pkis:technique:nadaraya-watson-estimator
