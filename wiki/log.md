@@ -16472,3 +16472,12 @@
 ## [2026-06-11] committed | technique
 - Committed: nadaraya-watson-estimator → techniques/nadaraya-watson-estimator.md
 - IRI: pkis:technique:nadaraya-watson-estimator
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: open-set-recognition (id: 3c18915e-2fe6-4bf8-b88a-772de6b505b4)
+- Title: Open-Set Recognition and Novelty Detection
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: open-set-recognition → concepts/open-set-recognition.md
+- IRI: pkis:concept:open-set-recognition
