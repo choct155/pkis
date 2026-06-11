@@ -15545,3 +15545,12 @@
 ## [2026-06-11] committed | concept
 - Committed: akaike-information-criterion → concepts/akaike-information-criterion.md
 - IRI: pkis:concept:akaike-information-criterion
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: minimum-description-length (id: cfc1e9e6-8015-4fca-b679-0b492384fbf9)
+- Title: Minimum Description Length (MDL) Principle
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: minimum-description-length → concepts/minimum-description-length.md
+- IRI: pkis:concept:minimum-description-length
