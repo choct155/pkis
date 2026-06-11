@@ -18128,3 +18128,12 @@
 ## [2026-06-11] committed | concept
 - Committed: path-degeneracy → concepts/path-degeneracy.md
 - IRI: pkis:concept:path-degeneracy
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: particle-resampling (id: bb9c4a50-25f7-47d8-b665-158a877c1079)
+- Title: Resampling Methods for Particle Filters
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: particle-resampling → techniques/particle-resampling.md
+- IRI: pkis:technique:particle-resampling
