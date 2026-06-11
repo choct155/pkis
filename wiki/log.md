@@ -13376,3 +13376,12 @@
 ## [2026-06-11] committed | concept
 - Committed: perceptron → concepts/perceptron.md
 - IRI: pkis:concept:perceptron
+
+## [2026-06-11] staged | node-stub (principle)
+- Staged: data-driven-ai (id: b2002468-19cf-4642-b3a8-314e8ed12162)
+- Title: Data-Driven AI (Learning from Experience)
+- needs_canonical_source: False
+
+## [2026-06-11] committed | principle
+- Committed: data-driven-ai → principles/data-driven-ai.md
+- IRI: pkis:principle:data-driven-ai
