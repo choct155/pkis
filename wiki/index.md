@@ -1921,6 +1921,7 @@
 - [[government-debt-valuation-equation]] — FTPL: price level determined by ratio of nominal debt to expected present value of future surpluses (macroeconomics) (2026-05-20)
 
 ## Frameworks
+- [[meta-learning]] — Meta-Learning (machine-learning) (2026-06-11)
 - [[domain-generalization]] — Domain Generalization (machine-learning) (2026-06-11)
 - [[multitask-learning]] — Multitask Learning (machine-learning) (2026-06-11)
 - [[generalized-linear-model]] — Generalized Linear Model (GLM) (statistics, machine-learning) (2026-06-11)

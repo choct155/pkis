@@ -18722,3 +18722,12 @@
 ## [2026-06-11] committed | technique
 - Committed: invariant-risk-minimization → techniques/invariant-risk-minimization.md
 - IRI: pkis:technique:invariant-risk-minimization
+
+## [2026-06-11] staged | node-stub (framework)
+- Staged: meta-learning (id: 397e5a36-d375-4b3b-9cba-60e17678de10)
+- Title: Meta-Learning
+- needs_canonical_source: False
+
+## [2026-06-11] committed | framework
+- Committed: meta-learning → frameworks/meta-learning.md
+- IRI: pkis:framework:meta-learning
