@@ -13637,3 +13637,12 @@
 ## [2026-06-11] committed | concept
 - Committed: first-order-vs-second-order-optimization → concepts/first-order-vs-second-order-optimization.md
 - IRI: pkis:concept:first-order-vs-second-order-optimization
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: lipschitz-continuity (id: 50361c3c-333f-45a0-a19d-6cee393b3b3f)
+- Title: Lipschitz Continuity
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: lipschitz-continuity → concepts/lipschitz-continuity.md
+- IRI: pkis:concept:lipschitz-continuity
