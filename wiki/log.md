@@ -18479,3 +18479,12 @@
 ## [2026-06-11] committed | technique
 - Committed: deep-ensembles → techniques/deep-ensembles.md
 - IRI: pkis:technique:deep-ensembles
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: batch-ensemble (id: 59f9ceb1-6872-44b4-8d2d-4e14ab8cd31c)
+- Title: Batch Ensemble
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: batch-ensemble → techniques/batch-ensemble.md
+- IRI: pkis:technique:batch-ensemble

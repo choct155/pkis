@@ -1073,6 +1073,7 @@
 - [[market-vs-hierarchy]] — Coase/Williamson: transactions governed by price signals (markets) vs. managerial direction (firms) (corporate-finance) (2026-05-20)
 
 ## Techniques
+- [[batch-ensemble]] — Batch Ensemble (deep-learning, ensemble-methods, efficiency) (2026-06-11)
 - [[deep-ensembles]] — Deep Ensembles (deep-learning, ensemble-methods, uncertainty-quantification) (2026-06-11)
 - [[swa-swag]] — Stochastic Weight Averaging (SWA) and SWAG (deep-learning, bayesian-inference, optimisation) (2026-06-11)
 - [[monte-carlo-dropout]] — Monte Carlo Dropout (MCD) (deep-learning, bayesian-inference, uncertainty-quantification) (2026-06-11)
