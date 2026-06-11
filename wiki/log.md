@@ -15392,3 +15392,12 @@
 ## [2026-06-11] committed | concept
 - Committed: signal-to-noise-ratio-shrinkage → concepts/signal-to-noise-ratio-shrinkage.md
 - IRI: pkis:concept:signal-to-noise-ratio-shrinkage
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: map-estimation (id: 05a63aba-be25-45a4-aaf6-0c013bd2fa1d)
+- Title: MAP Estimation
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: map-estimation → techniques/map-estimation.md
+- IRI: pkis:technique:map-estimation

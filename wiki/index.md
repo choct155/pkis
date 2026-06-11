@@ -931,6 +931,7 @@
 - [[market-vs-hierarchy]] — Coase/Williamson: transactions governed by price signals (markets) vs. managerial direction (firms) (corporate-finance) (2026-05-20)
 
 ## Techniques
+- [[map-estimation]] — MAP Estimation (statistics, machine-learning) (2026-06-11)
 - [[completing-the-square-multivariate]] — Completing the Square (Multivariate) (mathematics, probability, statistics) (2026-06-11)
 - [[polynomial-feature-expansion]] — Polynomial Feature Expansion (machine-learning, statistics) (2026-06-11)
 - [[feature-crosses]] — Feature Crosses (machine-learning, feature-engineering) (2026-06-11)
