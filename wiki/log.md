@@ -13907,3 +13907,12 @@
 ## [2026-06-11] committed | concept
 - Committed: parameter-sharing → concepts/parameter-sharing.md
 - IRI: pkis:concept:parameter-sharing
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: dataset-augmentation (id: 427f0a62-c0e2-45c1-aa52-bc35e95f8c00)
+- Title: Dataset Augmentation
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: dataset-augmentation → techniques/dataset-augmentation.md
+- IRI: pkis:technique:dataset-augmentation

@@ -857,6 +857,7 @@
 - [[market-vs-hierarchy]] — Coase/Williamson: transactions governed by price signals (markets) vs. managerial direction (firms) (corporate-finance) (2026-05-20)
 
 ## Techniques
+- [[dataset-augmentation]] — Dataset Augmentation (machine-learning, deep-learning, regularization, computer-vision) (2026-06-11)
 - [[label-smoothing]] — Label Smoothing (machine-learning, deep-learning, regularization) (2026-06-11)
 - [[dropout-regularization]] — Dropout Regularization (machine-learning, deep-learning, regularization) (2026-06-11)
 - [[backpropagation-algorithm]] — Backpropagation Algorithm (machine-learning, deep-learning, numerical-methods) (2026-06-11)
