@@ -19064,3 +19064,12 @@
 ## [2026-06-11] committed | technique
 - Committed: inverse-autoregressive-flow → techniques/inverse-autoregressive-flow.md
 - IRI: pkis:technique:inverse-autoregressive-flow
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: residual-flow (id: ed0ef5e2-138a-46f0-aeb3-f65c1a7f4087)
+- Title: Residual Flow
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: residual-flow → techniques/residual-flow.md
+- IRI: pkis:technique:residual-flow

@@ -1097,6 +1097,7 @@
 - [[market-vs-hierarchy]] — Coase/Williamson: transactions governed by price signals (markets) vs. managerial direction (firms) (corporate-finance) (2026-05-20)
 
 ## Techniques
+- [[residual-flow]] — Residual Flow (machine-learning, generative-models) (2026-06-11)
 - [[inverse-autoregressive-flow]] — Inverse Autoregressive Flow (IAF) (machine-learning, variational-inference) (2026-06-11)
 - [[autoregressive-flow]] — Autoregressive Flow (machine-learning, generative-models) (2026-06-11)
 - [[coupling-layer]] — Coupling Layer (Coupling Flow) (machine-learning, generative-models) (2026-06-11)
