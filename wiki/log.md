@@ -13421,3 +13421,12 @@
 ## [2026-06-11] committed | concept
 - Committed: column-space-and-span → concepts/column-space-and-span.md
 - IRI: pkis:concept:column-space-and-span
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: lp-norms-frobenius (id: 8b535fac-6940-4952-a92c-7dcf46048842)
+- Title: Lp Norms and Frobenius Norm
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: lp-norms-frobenius → concepts/lp-norms-frobenius.md
+- IRI: pkis:concept:lp-norms-frobenius
