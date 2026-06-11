@@ -17381,3 +17381,12 @@
 ## [2026-06-11] committed | concept
 - Committed: sigmoid-belief-net → concepts/sigmoid-belief-net.md
 - IRI: pkis:concept:sigmoid-belief-net
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: potts-model (id: 11656d05-3e01-4b55-97c3-4ad0bb8f0de7)
+- Title: Potts Model
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: potts-model → concepts/potts-model.md
+- IRI: pkis:concept:potts-model

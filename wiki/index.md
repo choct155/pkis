@@ -290,6 +290,7 @@
 - [[liu-machine-unlearning-llm-2024]] — Rethinking Machine Unlearning for LLMs: post-training knowledge editing survey (deep-learning, ai-safety) (2026-05-20)
 
 ## Concepts
+- [[potts-model]] — Potts Model (statistical-physics, probabilistic-graphical-models, bioinformatics) (2026-06-11)
 - [[sigmoid-belief-net]] — Sigmoid Belief Net (probabilistic-graphical-models, deep-learning) (2026-06-11)
 - [[gaussian-bayes-net]] — Gaussian Bayes Net (Directed Gaussian Graphical Model) (probabilistic-graphical-models, statistics) (2026-06-11)
 - [[conditional-probability-table]] — Conditional Probability Table (CPT) (probabilistic-graphical-models, probability-theory) (2026-06-11)
