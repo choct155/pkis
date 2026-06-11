@@ -15122,3 +15122,12 @@
 ## [2026-06-11] committed | technique
 - Committed: gaussian-bernoulli-rbm → techniques/gaussian-bernoulli-rbm.md
 - IRI: pkis:technique:gaussian-bernoulli-rbm
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: reinforce-gradient-estimator (id: 15bb648a-2a3d-482a-ad20-2c4af75ced52)
+- Title: REINFORCE Gradient Estimator
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: reinforce-gradient-estimator → techniques/reinforce-gradient-estimator.md
+- IRI: pkis:technique:reinforce-gradient-estimator
