@@ -1134,6 +1134,7 @@
 - [[market-vs-hierarchy]] — Coase/Williamson: transactions governed by price signals (markets) vs. managerial direction (firms) (corporate-finance) (2026-05-20)
 
 ## Techniques
+- [[barlow-twins-loss]] — Barlow Twins Loss (machine-learning, self-supervised-learning, representation-learning) (2026-06-11)
 - [[svcca]] — Singular Vector CCA (SVCCA) (machine-learning, representation-learning, linear-algebra) (2026-06-11)
 - [[masked-autoencoder]] — Masked Autoencoder (MAE) (machine-learning, computer-vision, self-supervised-learning) (2026-06-11)
 - [[infonce-loss]] — InfoNCE Loss (machine-learning, representation-learning, information-theory) (2026-06-11)

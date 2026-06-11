@@ -19802,3 +19802,12 @@
 ## [2026-06-11] committed | framework
 - Committed: analysis-by-synthesis → frameworks/analysis-by-synthesis.md
 - IRI: pkis:framework:analysis-by-synthesis
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: barlow-twins-loss (id: 80b6b590-2022-44a4-ab41-8254c1171181)
+- Title: Barlow Twins Loss
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: barlow-twins-loss → techniques/barlow-twins-loss.md
+- IRI: pkis:technique:barlow-twins-loss
