@@ -14915,3 +14915,12 @@
 ## [2026-06-11] committed | technique
 - Committed: stochastic-maximum-likelihood-pcd → techniques/stochastic-maximum-likelihood-pcd.md
 - IRI: pkis:technique:stochastic-maximum-likelihood-pcd
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: pseudolikelihood (id: f252cfd7-0dd4-4460-8476-dc7c8d04e5f1)
+- Title: Pseudolikelihood
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: pseudolikelihood → techniques/pseudolikelihood.md
+- IRI: pkis:technique:pseudolikelihood

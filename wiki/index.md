@@ -907,6 +907,7 @@
 - [[market-vs-hierarchy]] — Coase/Williamson: transactions governed by price signals (markets) vs. managerial direction (firms) (corporate-finance) (2026-05-20)
 
 ## Techniques
+- [[pseudolikelihood]] — Pseudolikelihood (machine-learning, probabilistic-graphical-models, statistics) (2026-06-11)
 - [[stochastic-maximum-likelihood-pcd]] — Stochastic Maximum Likelihood / Persistent Contrastive Divergence (machine-learning, deep-learning, probabilistic-graphical-models) (2026-06-11)
 - [[tempered-transitions]] — Tempered Transitions (machine-learning, statistics, probabilistic-inference) (2026-06-11)
 - [[block-gibbs-sampling]] — Block Gibbs Sampling (machine-learning, statistics, probabilistic-inference) (2026-06-11)
