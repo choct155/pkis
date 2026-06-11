@@ -16148,3 +16148,12 @@
 ## [2026-06-11] committed | technique
 - Committed: binomial-regression → techniques/binomial-regression.md
 - IRI: pkis:technique:binomial-regression
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: glm-deviance (id: 587d19e3-2649-4038-a035-0e224660e621)
+- Title: Deviance (GLM)
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: glm-deviance → concepts/glm-deviance.md
+- IRI: pkis:concept:glm-deviance
