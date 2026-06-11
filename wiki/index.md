@@ -837,6 +837,7 @@
 - [[market-vs-hierarchy]] — Coase/Williamson: transactions governed by price signals (markets) vs. managerial direction (firms) (corporate-finance) (2026-05-20)
 
 ## Techniques
+- [[numerically-stable-softmax]] — Numerically Stable Softmax (numerical-computation, deep-learning) (2026-06-11)
 - [[pca-linear-algebra-derivation]] — Principal Component Analysis (Linear Algebra Derivation) (machine-learning, linear-algebra) (2026-06-11)
 - [[moore-penrose-pseudoinverse]] — Moore-Penrose Pseudoinverse (linear-algebra, machine-learning) (2026-06-11)
 - [[mixture-linear-regression-em]] — Mixture of Linear Regression Models (EM) (machine-learning, statistics) (2026-06-11)

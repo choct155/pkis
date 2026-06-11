@@ -13592,3 +13592,12 @@
 ## [2026-06-11] committed | concept
 - Committed: numerical-underflow-overflow → concepts/numerical-underflow-overflow.md
 - IRI: pkis:concept:numerical-underflow-overflow
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: numerically-stable-softmax (id: 2bf7f6e2-d2eb-4bcb-ab77-ae8f5d69cae3)
+- Title: Numerically Stable Softmax
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: numerically-stable-softmax → techniques/numerically-stable-softmax.md
+- IRI: pkis:technique:numerically-stable-softmax
