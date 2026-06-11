@@ -12890,3 +12890,12 @@
 ## [2026-06-11] committed | framework
 - Committed: generalized-em-algorithm → frameworks/generalized-em-algorithm.md
 - IRI: pkis:framework:generalized-em-algorithm
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: mixture-of-bernoulli-distributions (id: a5c0ede6-60c7-409c-85fb-c3b917d2413f)
+- Title: Mixture of Bernoulli Distributions (Latent Class Analysis)
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: mixture-of-bernoulli-distributions → concepts/mixture-of-bernoulli-distributions.md
+- IRI: pkis:concept:mixture-of-bernoulli-distributions
