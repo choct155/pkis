@@ -16517,3 +16517,12 @@
 ## [2026-06-11] committed | technique
 - Committed: sparse-gp-inducing-points → techniques/sparse-gp-inducing-points.md
 - IRI: pkis:technique:sparse-gp-inducing-points
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: random-fourier-features (id: 5dbd3de6-8e99-42af-b59a-4a3d0758f843)
+- Title: Random Fourier Features
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: random-fourier-features → techniques/random-fourier-features.md
+- IRI: pkis:technique:random-fourier-features
