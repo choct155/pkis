@@ -14015,3 +14015,12 @@
 ## [2026-06-11] committed | technique
 - Committed: adam-optimizer → techniques/adam-optimizer.md
 - IRI: pkis:technique:adam-optimizer
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: vanishing-exploding-gradients (id: 6fbdb89b-3944-4eec-91c1-2e96b5b66a8c)
+- Title: Vanishing and Exploding Gradients
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: vanishing-exploding-gradients → concepts/vanishing-exploding-gradients.md
+- IRI: pkis:concept:vanishing-exploding-gradients
