@@ -12575,3 +12575,12 @@
 ## [2026-06-11] committed | technique
 - Committed: convolutional-neural-network-architecture → techniques/convolutional-neural-network-architecture.md
 - IRI: pkis:technique:convolutional-neural-network-architecture
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: gram-matrix (id: 4a291b63-7b05-4c68-99b9-9d51be31a1d4)
+- Title: Gram Matrix
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: gram-matrix → concepts/gram-matrix.md
+- IRI: pkis:concept:gram-matrix
