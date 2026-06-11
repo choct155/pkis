@@ -17579,3 +17579,12 @@
 ## [2026-06-11] committed | technique
 - Committed: kfac → techniques/kfac.md
 - IRI: pkis:technique:kfac
+
+## [2026-06-11] staged | node-stub (result)
+- Staged: bonnets-and-prices-theorem (id: 929567f8-32dc-41a6-9197-486de1a9f169)
+- Title: Bonnet's Theorem and Price's Theorem
+- needs_canonical_source: False
+
+## [2026-06-11] committed | result
+- Committed: bonnets-and-prices-theorem → results/bonnets-and-prices-theorem.md
+- IRI: pkis:result:bonnets-and-prices-theorem
