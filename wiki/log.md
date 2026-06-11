@@ -18605,3 +18605,12 @@
 ## [2026-06-11] committed | result
 - Committed: mercers-theorem → results/mercers-theorem.md
 - IRI: pkis:result:mercers-theorem
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: semiparametric-gp (id: 84d0a1a8-bb08-48e8-914a-813af044dcab)
+- Title: Semiparametric GP
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: semiparametric-gp → concepts/semiparametric-gp.md
+- IRI: pkis:concept:semiparametric-gp
