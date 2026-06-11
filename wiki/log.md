@@ -16427,3 +16427,12 @@
 ## [2026-06-11] committed | technique
 - Committed: large-margin-nearest-neighbor → techniques/large-margin-nearest-neighbor.md
 - IRI: pkis:technique:large-margin-nearest-neighbor
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: deep-metric-learning (id: 69c6d188-d7f6-4eb8-adc7-4b0423472cf8)
+- Title: Deep Metric Learning (DML)
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: deep-metric-learning → techniques/deep-metric-learning.md
+- IRI: pkis:technique:deep-metric-learning

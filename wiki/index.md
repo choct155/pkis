@@ -984,6 +984,7 @@
 - [[market-vs-hierarchy]] — Coase/Williamson: transactions governed by price signals (markets) vs. managerial direction (firms) (corporate-finance) (2026-05-20)
 
 ## Techniques
+- [[deep-metric-learning]] — Deep Metric Learning (DML) (machine-learning, representation-learning, metric-learning) (2026-06-11)
 - [[large-margin-nearest-neighbor]] — Large Margin Nearest Neighbor (LMNN) (machine-learning, metric-learning) (2026-06-11)
 - [[knn-classifier]] — K-Nearest Neighbor (KNN) Classifier (machine-learning, classification) (2026-06-11)
 - [[beam-search]] — Beam Search Decoding (machine-learning, nlp, search) (2026-06-11)
