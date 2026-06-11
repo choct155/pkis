@@ -19784,3 +19784,12 @@
 ## [2026-06-11] committed | technique
 - Committed: masked-autoencoder → techniques/masked-autoencoder.md
 - IRI: pkis:technique:masked-autoencoder
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: svcca (id: e21af0b0-c46c-4a94-a952-e9f51f64c9b2)
+- Title: Singular Vector CCA (SVCCA)
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: svcca → techniques/svcca.md
+- IRI: pkis:technique:svcca
