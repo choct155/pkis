@@ -1717,6 +1717,7 @@
 - [[constraint-propagation]] — Reducing a constraint satisfaction problem by iteratively eliminating inconsistent values from variable domains (knowledge-representation) (2026-05-20)
 
 ## Results
+- [[joint-predictive-evaluation]] — Joint Predictive Evaluation via Environment-KL (machine-learning, bayesian-statistics, information-theory) (2026-06-11)
 - [[map-reparameterisation-noninvariance]] — MAP Estimate Non-Invariance Under Reparameterisation (bayesian-inference, statistical-estimation) (2026-06-11)
 - [[bonnets-and-prices-theorem]] — Bonnet's Theorem and Price's Theorem (statistics, optimization, machine-learning) (2026-06-11)
 - [[information-inequality]] — Information Inequality (Non-negativity of KL) (information-theory, statistics) (2026-06-11)

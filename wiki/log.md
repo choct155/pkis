@@ -18263,3 +18263,12 @@
 ## [2026-06-11] committed | technique
 - Committed: conformalized-quantile-regression → techniques/conformalized-quantile-regression.md
 - IRI: pkis:technique:conformalized-quantile-regression
+
+## [2026-06-11] staged | node-stub (result)
+- Staged: joint-predictive-evaluation (id: a73dc8dc-d5cf-4abc-b745-ba661bf99890)
+- Title: Joint Predictive Evaluation via Environment-KL
+- needs_canonical_source: False
+
+## [2026-06-11] committed | result
+- Committed: joint-predictive-evaluation → results/joint-predictive-evaluation.md
+- IRI: pkis:result:joint-predictive-evaluation
