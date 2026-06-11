@@ -17282,3 +17282,12 @@
 ## [2026-06-11] committed | technique
 - Committed: bootstrap-sampling-distribution → techniques/bootstrap-sampling-distribution.md
 - IRI: pkis:technique:bootstrap-sampling-distribution
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: p-value-nhst (id: 67fe75b0-1e93-40fc-b290-c44f97a14c2c)
+- Title: p-value and Null Hypothesis Significance Testing (NHST)
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: p-value-nhst → concepts/p-value-nhst.md
+- IRI: pkis:concept:p-value-nhst
