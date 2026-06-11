@@ -13691,3 +13691,12 @@
 ## [2026-06-11] committed | concept
 - Committed: model-capacity-hypothesis-space → concepts/model-capacity-hypothesis-space.md
 - IRI: pkis:concept:model-capacity-hypothesis-space
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: bayes-error (id: f0c77e2a-89a2-4364-9df0-c6805694a345)
+- Title: Bayes Error
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: bayes-error → concepts/bayes-error.md
+- IRI: pkis:concept:bayes-error
