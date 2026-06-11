@@ -19370,3 +19370,12 @@
 ## [2026-06-11] committed | concept
 - Committed: vision-as-inverse-graphics → concepts/vision-as-inverse-graphics.md
 - IRI: pkis:concept:vision-as-inverse-graphics
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: perceptual-aliasing (id: 64b00e77-ff5f-4007-81cb-40f77e17e5b2)
+- Title: Perceptual Aliasing
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: perceptual-aliasing → concepts/perceptual-aliasing.md
+- IRI: pkis:concept:perceptual-aliasing

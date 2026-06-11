@@ -290,6 +290,7 @@
 - [[liu-machine-unlearning-llm-2024]] — Rethinking Machine Unlearning for LLMs: post-training knowledge editing survey (deep-learning, ai-safety) (2026-05-20)
 
 ## Concepts
+- [[perceptual-aliasing]] — Perceptual Aliasing (robotics, computer-vision, machine-learning) (2026-06-11)
 - [[vision-as-inverse-graphics]] — Vision as Inverse Graphics (Analysis by Synthesis) (computer-vision, machine-learning, cognitive-science) (2026-06-11)
 - [[dirac-gan]] — DiracGAN (machine-learning, optimization, game-theory) (2026-06-11)
 - [[non-saturating-gan-loss]] — Non-Saturating GAN Loss (machine-learning, deep-learning, optimization) (2026-06-11)
