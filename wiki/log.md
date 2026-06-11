@@ -12881,3 +12881,12 @@
 ## [2026-06-11] committed | result
 - Committed: em-monotone-likelihood-increase → results/em-monotone-likelihood-increase.md
 - IRI: pkis:result:em-monotone-likelihood-increase
+
+## [2026-06-11] staged | node-stub (framework)
+- Staged: generalized-em-algorithm (id: 3d88738e-fff7-4950-a2ec-83871c3fffab)
+- Title: Generalized EM (GEM) Algorithm
+- needs_canonical_source: False
+
+## [2026-06-11] committed | framework
+- Committed: generalized-em-algorithm → frameworks/generalized-em-algorithm.md
+- IRI: pkis:framework:generalized-em-algorithm
