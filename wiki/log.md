@@ -17876,3 +17876,12 @@
 ## [2026-06-11] committed | framework
 - Committed: variational-inference-framework → frameworks/variational-inference-framework.md
 - IRI: pkis:framework:variational-inference-framework
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: mean-field-approximation-vi (id: 73f6e44b-a894-4dcd-aa89-1749db4ca758)
+- Title: Mean Field Approximation (Variational)
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: mean-field-approximation-vi → concepts/mean-field-approximation-vi.md
+- IRI: pkis:concept:mean-field-approximation-vi
