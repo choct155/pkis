@@ -15878,3 +15878,12 @@
 ## [2026-06-11] committed | technique
 - Committed: regularised-discriminant-analysis → techniques/regularised-discriminant-analysis.md
 - IRI: pkis:technique:regularised-discriminant-analysis
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: nearest-centroid-classifier (id: 573beb7f-fb1e-412f-aeaf-d0d12951ed12)
+- Title: Nearest Centroid Classifier
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: nearest-centroid-classifier → techniques/nearest-centroid-classifier.md
+- IRI: pkis:technique:nearest-centroid-classifier
