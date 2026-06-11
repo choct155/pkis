@@ -14330,3 +14330,12 @@
 ## [2026-06-11] committed | technique
 - Committed: gradient-checking → techniques/gradient-checking.md
 - IRI: pkis:technique:gradient-checking
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: fit-tiny-dataset-debug (id: 8a978183-1431-4190-9fef-4211c50181bf)
+- Title: Fit-a-Tiny-Dataset Debugging Test
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: fit-tiny-dataset-debug → techniques/fit-tiny-dataset-debug.md
+- IRI: pkis:technique:fit-tiny-dataset-debug
