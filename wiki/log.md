@@ -17516,3 +17516,12 @@
 ## [2026-06-11] committed | technique
 - Committed: forward-mode-ad → techniques/forward-mode-ad.md
 - IRI: pkis:technique:forward-mode-ad
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: reverse-mode-ad (id: 080e24f3-e464-4239-b79f-4353446ffc20)
+- Title: Reverse-Mode Automatic Differentiation (Backpropagation)
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: reverse-mode-ad → techniques/reverse-mode-ad.md
+- IRI: pkis:technique:reverse-mode-ad
