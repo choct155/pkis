@@ -19550,3 +19550,12 @@
 ## [2026-06-11] committed | technique
 - Committed: spectral-learning-hmm → techniques/spectral-learning-hmm.md
 - IRI: pkis:technique:spectral-learning-hmm
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: hierarchical-hmm (id: b89d3180-4f07-4aee-8b2a-9a6339a3415b)
+- Title: Hierarchical HMM (HHMM)
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: hierarchical-hmm → concepts/hierarchical-hmm.md
+- IRI: pkis:concept:hierarchical-hmm
