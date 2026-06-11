@@ -775,6 +775,7 @@
 - [[market-vs-hierarchy]] — Coase/Williamson: transactions governed by price signals (markets) vs. managerial direction (firms) (corporate-finance) (2026-05-20)
 
 ## Techniques
+- [[error-backpropagation]] — Error Backpropagation (machine-learning, numerical-methods) (2026-06-11)
 - [[bayesian-logistic-regression]] — Bayesian Logistic Regression (Laplace) (Bayesian-inference, machine-learning) (2026-06-11)
 - [[perceptron-algorithm]] — Perceptron Learning Algorithm (machine-learning, neural-networks) (2026-06-11)
 - [[irls]] — Iterative Reweighted Least Squares (IRLS) (machine-learning, statistics, optimisation) (2026-06-11)

@@ -12503,3 +12503,12 @@
 ## [2026-06-11] committed | concept
 - Committed: weight-space-symmetry → concepts/weight-space-symmetry.md
 - IRI: pkis:concept:weight-space-symmetry
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: error-backpropagation (id: dbe7d198-d019-4714-8341-77cb1003c36b)
+- Title: Error Backpropagation
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: error-backpropagation → techniques/error-backpropagation.md
+- IRI: pkis:technique:error-backpropagation
