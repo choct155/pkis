@@ -19028,3 +19028,12 @@
 ## [2026-06-11] committed | framework
 - Committed: dall-e → frameworks/dall-e.md
 - IRI: pkis:framework:dall-e
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: foundation-model (id: c4254125-11fe-4b71-aa0c-c1e136de150c)
+- Title: Foundation Model
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: foundation-model → concepts/foundation-model.md
+- IRI: pkis:concept:foundation-model
