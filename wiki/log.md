@@ -12278,3 +12278,12 @@
 ## [2026-06-11] committed | technique
 - Committed: robbins-monro-algorithm → techniques/robbins-monro-algorithm.md
 - IRI: pkis:technique:robbins-monro-algorithm
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: mahalanobis-distance (id: f4ac6a53-c37c-4268-8d53-cdc6dd2ffb47)
+- Title: Mahalanobis Distance
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: mahalanobis-distance → concepts/mahalanobis-distance.md
+- IRI: pkis:concept:mahalanobis-distance
