@@ -17804,3 +17804,12 @@
 ## [2026-06-11] committed | technique
 - Committed: forwards-backwards-algorithm → techniques/forwards-backwards-algorithm.md
 - IRI: pkis:technique:forwards-backwards-algorithm
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: forwards-filtering-backwards-sampling (id: 2f2309c5-f23d-4a1b-bb73-8f5ca3147b3f)
+- Title: Forwards Filtering Backwards Sampling (FFBS)
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: forwards-filtering-backwards-sampling → techniques/forwards-filtering-backwards-sampling.md
+- IRI: pkis:technique:forwards-filtering-backwards-sampling

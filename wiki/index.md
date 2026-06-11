@@ -1044,6 +1044,7 @@
 - [[market-vs-hierarchy]] — Coase/Williamson: transactions governed by price signals (markets) vs. managerial direction (firms) (corporate-finance) (2026-05-20)
 
 ## Techniques
+- [[forwards-filtering-backwards-sampling]] — Forwards Filtering Backwards Sampling (FFBS) (probabilistic-graphical-models, machine-learning, Bayesian-statistics) (2026-06-11)
 - [[forwards-backwards-algorithm]] — Forwards-Backwards Algorithm (HMM Smoothing) (probabilistic-graphical-models, machine-learning, statistics) (2026-06-11)
 - [[information-filter]] — Information Form Kalman Filter (signal-processing, statistics, machine-learning) (2026-06-11)
 - [[extended-kalman-filter]] — Extended Kalman Filter (EKF) (machine-learning, signal-processing, robotics) (2026-06-11)
