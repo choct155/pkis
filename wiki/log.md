@@ -19964,3 +19964,12 @@
 ## [2026-06-11] committed | framework
 - Committed: statistical-decision-theory → frameworks/statistical-decision-theory.md
 - IRI: pkis:framework:statistical-decision-theory
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: posterior-risk (id: b49b642e-f14c-4c9a-907f-497545d5bb02)
+- Title: Posterior Risk (Posterior Expected Loss)
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: posterior-risk → concepts/posterior-risk.md
+- IRI: pkis:concept:posterior-risk

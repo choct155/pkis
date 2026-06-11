@@ -290,6 +290,7 @@
 - [[liu-machine-unlearning-llm-2024]] — Rethinking Machine Unlearning for LLMs: post-training knowledge editing survey (deep-learning, ai-safety) (2026-05-20)
 
 ## Concepts
+- [[posterior-risk]] — Posterior Risk (Posterior Expected Loss) (statistics, decision theory) (2026-06-11)
 - [[concept-bottleneck-model]] — Concept Bottleneck Model (machine-learning, interpretability) (2026-06-11)
 - [[lime-local-surrogate]] — Local Interpretable Model-Agnostic Explanations (LIME) (machine-learning, interpretability) (2026-06-11)
 - [[shapley-feature-importance]] — Shapley Feature Importance (machine-learning, interpretability, game-theory) (2026-06-11)
