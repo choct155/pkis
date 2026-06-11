@@ -17048,3 +17048,12 @@
 ## [2026-06-11] committed | technique
 - Committed: deep-graph-infomax → techniques/deep-graph-infomax.md
 - IRI: pkis:technique:deep-graph-infomax
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: geometric-deep-learning (id: e3213e98-642c-4f91-a725-4efee534d7c5)
+- Title: Geometric Deep Learning
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: geometric-deep-learning → concepts/geometric-deep-learning.md
+- IRI: pkis:concept:geometric-deep-learning
