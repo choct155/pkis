@@ -17471,3 +17471,12 @@
 ## [2026-06-11] committed | result
 - Committed: kl-fisher-information-connection → results/kl-fisher-information-connection.md
 - IRI: pkis:result:kl-fisher-information-connection
+
+## [2026-06-11] staged | node-stub (result)
+- Staged: pitman-koopman-darmois-theorem (id: d5a5aeb5-3324-46aa-a288-a62cce11f0d5)
+- Title: Pitman-Koopman-Darmois Theorem
+- needs_canonical_source: False
+
+## [2026-06-11] committed | result
+- Committed: pitman-koopman-darmois-theorem → results/pitman-koopman-darmois-theorem.md
+- IRI: pkis:result:pitman-koopman-darmois-theorem
