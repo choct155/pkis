@@ -14249,3 +14249,12 @@
 ## [2026-06-11] committed | framework
 - Committed: echo-state-networks → frameworks/echo-state-networks.md
 - IRI: pkis:framework:echo-state-networks
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: recursive-neural-network (id: e2b0b6de-746b-4ab5-962e-718af6ea2d4e)
+- Title: Recursive Neural Network (Tree-Structured)
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: recursive-neural-network → concepts/recursive-neural-network.md
+- IRI: pkis:concept:recursive-neural-network
