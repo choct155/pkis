@@ -13493,3 +13493,12 @@
 ## [2026-06-11] committed | concept
 - Committed: probability-density-function → concepts/probability-density-function.md
 - IRI: pkis:concept:probability-density-function
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: logistic-sigmoid (id: 3d462e8c-3d34-452d-a776-eee7896e4695)
+- Title: Logistic Sigmoid Function
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: logistic-sigmoid → concepts/logistic-sigmoid.md
+- IRI: pkis:concept:logistic-sigmoid
