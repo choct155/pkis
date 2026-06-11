@@ -18317,3 +18317,12 @@
 ## [2026-06-11] committed | concept
 - Committed: horseshoe-prior → concepts/horseshoe-prior.md
 - IRI: pkis:concept:horseshoe-prior
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: zero-inflated-poisson (id: 0ffdbe4f-bacb-4382-b07c-20c3ce75c3aa)
+- Title: Zero-Inflated Poisson (ZIP) Model
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: zero-inflated-poisson → concepts/zero-inflated-poisson.md
+- IRI: pkis:concept:zero-inflated-poisson
