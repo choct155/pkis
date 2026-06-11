@@ -290,6 +290,7 @@
 - [[liu-machine-unlearning-llm-2024]] — Rethinking Machine Unlearning for LLMs: post-training knowledge editing survey (deep-learning, ai-safety) (2026-05-20)
 
 ## Concepts
+- [[autoregressive-hmm]] — Autoregressive HMM (AR-HMM) (machine-learning, statistics, time-series, econometrics) (2026-06-11)
 - [[bernoulli-mixture-model]] — Bernoulli Mixture Model (BMM) (machine-learning, unsupervised-learning) (2026-06-11)
 - [[hard-vs-soft-clustering]] — Hard vs. Soft Clustering (machine-learning, unsupervised-learning) (2026-06-11)
 - [[factor-rotations-problem]] — Factor Rotations Problem (statistics, machine-learning) (2026-06-11)

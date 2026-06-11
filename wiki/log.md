@@ -19496,3 +19496,12 @@
 ## [2026-06-11] committed | framework
 - Committed: state-space-model → frameworks/state-space-model.md
 - IRI: pkis:framework:state-space-model
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: autoregressive-hmm (id: 93e0eab2-125b-4176-a0b1-a29798b62d2b)
+- Title: Autoregressive HMM (AR-HMM)
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: autoregressive-hmm → concepts/autoregressive-hmm.md
+- IRI: pkis:concept:autoregressive-hmm
