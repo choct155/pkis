@@ -19604,3 +19604,12 @@
 ## [2026-06-11] committed | technique
 - Committed: score-based-dag-learning → techniques/score-based-dag-learning.md
 - IRI: pkis:technique:score-based-dag-learning
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: constraint-based-structure-learning (id: fa7a4383-df75-4dd6-9bdd-5cc8f37f8f7a)
+- Title: Constraint-Based Structure Learning (PC Algorithm)
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: constraint-based-structure-learning → techniques/constraint-based-structure-learning.md
+- IRI: pkis:technique:constraint-based-structure-learning
