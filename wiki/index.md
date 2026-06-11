@@ -290,6 +290,7 @@
 - [[liu-machine-unlearning-llm-2024]] — Rethinking Machine Unlearning for LLMs: post-training knowledge editing survey (deep-learning, ai-safety) (2026-05-20)
 
 ## Concepts
+- [[ergodicity-markov-chain-mcmc]] — Ergodicity of Markov Chains (MCMC) (statistics, probability-theory) (2026-06-11)
 - [[moment-matching]] — Moment Matching Approximation (statistics, approximate-inference, information-theory) (2026-06-11)
 - [[induced-factorization]] — Induced Factorization in Variational Inference (machine-learning, approximate-inference, probabilistic-graphical-models) (2026-06-11)
 - [[alpha-divergence]] — Alpha-Divergence Family (information-theory, approximate-inference) (2026-06-11)

@@ -13070,3 +13070,12 @@
 ## [2026-06-11] committed | technique
 - Committed: leapfrog-integrator → techniques/leapfrog-integrator.md
 - IRI: pkis:technique:leapfrog-integrator
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: ergodicity-markov-chain-mcmc (id: c82a612d-0cfb-4053-9799-c1b323a75e23)
+- Title: Ergodicity of Markov Chains (MCMC)
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: ergodicity-markov-chain-mcmc → concepts/ergodicity-markov-chain-mcmc.md
+- IRI: pkis:concept:ergodicity-markov-chain-mcmc
