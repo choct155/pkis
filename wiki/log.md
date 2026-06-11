@@ -18632,3 +18632,12 @@
 ## [2026-06-11] committed | concept
 - Committed: covariate-shift → concepts/covariate-shift.md
 - IRI: pkis:concept:covariate-shift
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: label-shift (id: 957a8f0e-b1cd-46c1-aeb3-5ff3f73f6bab)
+- Title: Label Shift (Prior Shift)
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: label-shift → concepts/label-shift.md
+- IRI: pkis:concept:label-shift
