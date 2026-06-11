@@ -290,6 +290,7 @@
 - [[liu-machine-unlearning-llm-2024]] — Rethinking Machine Unlearning for LLMs: post-training knowledge editing survey (deep-learning, ai-safety) (2026-05-20)
 
 ## Concepts
+- [[soft-thresholding]] — Soft Thresholding Operator (statistics, optimisation, signal processing) (2026-06-11)
 - [[weighted-least-squares]] — Weighted Least Squares (WLS) (statistics, machine learning) (2026-06-11)
 - [[r-squared]] — Coefficient of Determination ($R^2$) (statistics) (2026-06-11)
 - [[residual-sum-of-squares]] — Residual Sum of Squares (RSS) (statistics, machine learning) (2026-06-11)

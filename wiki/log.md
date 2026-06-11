@@ -16085,3 +16085,12 @@
 ## [2026-06-11] committed | technique
 - Committed: lasso-regression → techniques/lasso-regression.md
 - IRI: pkis:technique:lasso-regression
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: soft-thresholding (id: bc9e7b2e-d31a-4cb2-831a-53bfb69b2090)
+- Title: Soft Thresholding Operator
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: soft-thresholding → concepts/soft-thresholding.md
+- IRI: pkis:concept:soft-thresholding
