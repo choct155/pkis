@@ -14483,3 +14483,12 @@
 ## [2026-06-11] committed | technique
 - Committed: neural-language-model → techniques/neural-language-model.md
 - IRI: pkis:technique:neural-language-model
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: gpu-accelerated-deep-learning (id: 0373fed2-2a79-4661-bd5a-df97d2941eb7)
+- Title: GPU-Accelerated Deep Learning
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: gpu-accelerated-deep-learning → techniques/gpu-accelerated-deep-learning.md
+- IRI: pkis:technique:gpu-accelerated-deep-learning
