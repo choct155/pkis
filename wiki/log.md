@@ -15500,3 +15500,12 @@
 ## [2026-06-11] committed | concept
 - Committed: precision-recall-curve → concepts/precision-recall-curve.md
 - IRI: pkis:concept:precision-recall-curve
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: brier-score (id: 9e3def91-66af-4b39-b70c-de1f4a1c5f7e)
+- Title: Brier Score
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: brier-score → concepts/brier-score.md
+- IRI: pkis:concept:brier-score
