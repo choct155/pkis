@@ -1051,6 +1051,7 @@
 - [[market-vs-hierarchy]] — Coase/Williamson: transactions governed by price signals (markets) vs. managerial direction (firms) (corporate-finance) (2026-05-20)
 
 ## Techniques
+- [[riemann-manifold-hmc]] — Riemann Manifold HMC (RM-HMC) (statistics, machine-learning, differential-geometry) (2026-06-11)
 - [[swendsen-wang]] — Swendsen-Wang Algorithm (statistics, physics, machine-learning) (2026-06-11)
 - [[collapsed-gibbs-sampler]] — Collapsed Gibbs Sampler (statistics, machine-learning, probabilistic-graphical-models) (2026-06-11)
 - [[langevin-monte-carlo]] — Langevin Monte Carlo (MALA) (statistics, machine-learning) (2026-06-11)

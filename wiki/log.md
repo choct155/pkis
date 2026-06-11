@@ -18083,3 +18083,12 @@
 ## [2026-06-11] committed | concept
 - Committed: hamiltonian-mechanics-sampling → concepts/hamiltonian-mechanics-sampling.md
 - IRI: pkis:concept:hamiltonian-mechanics-sampling
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: riemann-manifold-hmc (id: 4601df41-3a24-4dec-8f49-8f229baab608)
+- Title: Riemann Manifold HMC (RM-HMC)
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: riemann-manifold-hmc → techniques/riemann-manifold-hmc.md
+- IRI: pkis:technique:riemann-manifold-hmc
