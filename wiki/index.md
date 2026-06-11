@@ -1152,6 +1152,7 @@
 - [[constraint-propagation]] — Reducing a constraint satisfaction problem by iteratively eliminating inconsistent values from variable domains (knowledge-representation) (2026-05-20)
 
 ## Results
+- [[optimal-regression-conditional-mean]] — Optimal Regression Function is the Conditional Mean (statistics, machine-learning, decision-theory) (2026-06-11)
 - [[hammersley-clifford-theorem]] — Hammersley-Clifford Theorem (statistical-learning, bayesian-stats) (2026-06-09)
 - [[cover-hart-theorem]] — Cover-Hart Theorem (1-Nearest-Neighbor Error Bound) (statistical-learning) (2026-06-09)
 - [[gauss-markov-theorem]] — Gauss-Markov Theorem (statistical-learning) (2026-06-09)

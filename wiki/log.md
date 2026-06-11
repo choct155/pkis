@@ -12152,3 +12152,12 @@
 ## [2026-06-11] committed | framework
 - Committed: generative-discriminative-discriminant-taxonomy → frameworks/generative-discriminative-discriminant-taxonomy.md
 - IRI: pkis:framework:generative-discriminative-discriminant-taxonomy
+
+## [2026-06-11] staged | node-stub (result)
+- Staged: optimal-regression-conditional-mean (id: 986ebf05-7651-4a8e-ba4c-849810bb1d49)
+- Title: Optimal Regression Function is the Conditional Mean
+- needs_canonical_source: False
+
+## [2026-06-11] committed | result
+- Committed: optimal-regression-conditional-mean → results/optimal-regression-conditional-mean.md
+- IRI: pkis:result:optimal-regression-conditional-mean
