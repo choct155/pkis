@@ -15446,3 +15446,12 @@
 ## [2026-06-11] committed | concept
 - Committed: surrogate-loss → concepts/surrogate-loss.md
 - IRI: pkis:concept:surrogate-loss
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: learning-curve (id: 2299fa35-c008-4e4b-9eb8-8f35ffd3d039)
+- Title: Learning Curve
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: learning-curve → concepts/learning-curve.md
+- IRI: pkis:concept:learning-curve
