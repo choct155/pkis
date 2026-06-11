@@ -904,6 +904,7 @@
 - [[market-vs-hierarchy]] — Coase/Williamson: transactions governed by price signals (markets) vs. managerial direction (firms) (corporate-finance) (2026-05-20)
 
 ## Techniques
+- [[block-gibbs-sampling]] — Block Gibbs Sampling (machine-learning, statistics, probabilistic-inference) (2026-06-11)
 - [[biased-importance-sampling]] — Biased Importance Sampling (Self-Normalised) (machine-learning, statistics, probabilistic-inference) (2026-06-11)
 - [[greedy-layer-wise-unsupervised-pretraining]] — Greedy Layer-Wise Unsupervised Pretraining (deep-learning, representation-learning, semi-supervised-learning) (2026-06-11)
 - [[predictive-sparse-decomposition]] — Predictive Sparse Decomposition (PSD) (deep-learning, sparse-coding, representation-learning) (2026-06-11)

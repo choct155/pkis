@@ -14852,3 +14852,12 @@
 ## [2026-06-11] committed | concept
 - Committed: mcmc-mixing-time → concepts/mcmc-mixing-time.md
 - IRI: pkis:concept:mcmc-mixing-time
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: block-gibbs-sampling (id: 1df198bf-2147-4004-9719-7c0f98acadee)
+- Title: Block Gibbs Sampling
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: block-gibbs-sampling → techniques/block-gibbs-sampling.md
+- IRI: pkis:technique:block-gibbs-sampling
