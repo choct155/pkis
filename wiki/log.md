@@ -15104,3 +15104,12 @@
 ## [2026-06-11] committed | technique
 - Committed: spike-and-slab-rbm → techniques/spike-and-slab-rbm.md
 - IRI: pkis:technique:spike-and-slab-rbm
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: probabilistic-max-pooling (id: 5bb2353c-635c-4feb-9ebe-4be6d9a47fe8)
+- Title: Probabilistic Max Pooling
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: probabilistic-max-pooling → techniques/probabilistic-max-pooling.md
+- IRI: pkis:technique:probabilistic-max-pooling

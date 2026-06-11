@@ -916,6 +916,7 @@
 - [[market-vs-hierarchy]] — Coase/Williamson: transactions governed by price signals (markets) vs. managerial direction (firms) (corporate-finance) (2026-05-20)
 
 ## Techniques
+- [[probabilistic-max-pooling]] — Probabilistic Max Pooling (deep-learning, convolutional-networks, energy-based-models) (2026-06-11)
 - [[spike-and-slab-rbm]] — Spike-and-Slab RBM (ssRBM) (deep-learning, generative-models, energy-based-models) (2026-06-11)
 - [[learned-approximate-inference]] — Learned Approximate Inference (Amortized Inference) (machine-learning, deep-learning, variational-methods) (2026-06-11)
 - [[wake-sleep-algorithm]] — Wake-Sleep Algorithm (machine-learning, deep-learning, neuroscience) (2026-06-11)
