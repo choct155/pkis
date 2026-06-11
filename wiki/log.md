@@ -17327,3 +17327,12 @@
 ## [2026-06-11] committed | concept
 - Committed: frequentist-confidence-interval → concepts/frequentist-confidence-interval.md
 - IRI: pkis:concept:frequentist-confidence-interval
+
+## [2026-06-11] staged | node-stub (result)
+- Staged: fim-exponential-family (id: 980c8543-085e-46ed-8ebf-f3a99f752242)
+- Title: FIM for Exponential Family: FIM equals Covariance of Sufficient Statistics
+- needs_canonical_source: False
+
+## [2026-06-11] committed | result
+- Committed: fim-exponential-family → results/fim-exponential-family.md
+- IRI: pkis:result:fim-exponential-family
