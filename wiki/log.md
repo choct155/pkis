@@ -17894,3 +17894,12 @@
 ## [2026-06-11] committed | technique
 - Committed: cavi → techniques/cavi.md
 - IRI: pkis:technique:cavi
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: svi (id: 4640b8ac-209b-4f2c-8eaf-e96715133f83)
+- Title: Stochastic Variational Inference (SVI)
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: svi → techniques/svi.md
+- IRI: pkis:technique:svi
