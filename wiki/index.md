@@ -989,6 +989,7 @@
 - [[market-vs-hierarchy]] — Coase/Williamson: transactions governed by price signals (markets) vs. managerial direction (firms) (corporate-finance) (2026-05-20)
 
 ## Techniques
+- [[platt-scaling]] — Platt Scaling (machine-learning) (2026-06-11)
 - [[kernel-ridge-regression]] — Kernel Ridge Regression (machine-learning, statistics) (2026-06-11)
 - [[random-fourier-features]] — Random Fourier Features (machine-learning, approximation-theory) (2026-06-11)
 - [[sparse-gp-inducing-points]] — Sparse GP via Inducing Points (machine-learning, Bayesian-statistics) (2026-06-11)

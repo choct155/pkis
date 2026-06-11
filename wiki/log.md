@@ -16553,3 +16553,12 @@
 ## [2026-06-11] committed | concept
 - Committed: ard-kernel → concepts/ard-kernel.md
 - IRI: pkis:concept:ard-kernel
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: platt-scaling (id: e6aa7f8b-0502-4590-9e13-7db12c89146d)
+- Title: Platt Scaling
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: platt-scaling → techniques/platt-scaling.md
+- IRI: pkis:technique:platt-scaling
