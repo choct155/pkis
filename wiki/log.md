@@ -12800,3 +12800,12 @@
 ## [2026-06-11] committed | technique
 - Committed: max-sum-algorithm → techniques/max-sum-algorithm.md
 - IRI: pkis:technique:max-sum-algorithm
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: markov-blanket-directed (id: cc225bf6-c427-4466-81e1-19ff6cd01082)
+- Title: Markov Blanket in Directed Graphs
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: markov-blanket-directed → concepts/markov-blanket-directed.md
+- IRI: pkis:concept:markov-blanket-directed
