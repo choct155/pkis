@@ -290,6 +290,7 @@
 - [[liu-machine-unlearning-llm-2024]] — Rethinking Machine Unlearning for LLMs: post-training knowledge editing survey (deep-learning, ai-safety) (2026-05-20)
 
 ## Concepts
+- [[encoder-decoder-architecture]] — Encoder–Decoder Architecture (machine-learning, deep-learning, nlp) (2026-06-11)
 - [[translation-equivariance-invariance]] — Translation Equivariance and Invariance in CNNs (deep-learning, computer-vision) (2026-06-11)
 - [[convolutional-neural-network]] — Convolutional Neural Network (CNN) (deep-learning, computer-vision) (2026-06-11)
 - [[heteroskedastic-neural-regression]] — Heteroskedastic Regression with Neural Networks (machine-learning, statistics, deep-learning) (2026-06-11)

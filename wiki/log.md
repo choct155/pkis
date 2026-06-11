@@ -16328,3 +16328,12 @@
 ## [2026-06-11] committed | framework
 - Committed: object-detection-anchor-boxes → frameworks/object-detection-anchor-boxes.md
 - IRI: pkis:framework:object-detection-anchor-boxes
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: encoder-decoder-architecture (id: 3180fdcf-718d-401f-9fac-33cc11472e79)
+- Title: Encoder–Decoder Architecture
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: encoder-decoder-architecture → concepts/encoder-decoder-architecture.md
+- IRI: pkis:concept:encoder-decoder-architecture
