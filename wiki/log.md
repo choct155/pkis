@@ -17498,3 +17498,12 @@
 ## [2026-06-11] committed | result
 - Committed: information-inequality → results/information-inequality.md
 - IRI: pkis:result:information-inequality
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: minimal-sufficient-statistic (id: d93850fe-c66b-49c9-a658-769788051546)
+- Title: Minimal Sufficient Statistic
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: minimal-sufficient-statistic → concepts/minimal-sufficient-statistic.md
+- IRI: pkis:concept:minimal-sufficient-statistic
