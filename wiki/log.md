@@ -20036,3 +20036,12 @@
 ## [2026-06-11] committed | result
 - Committed: lai-robbins-lower-bound → results/lai-robbins-lower-bound.md
 - IRI: pkis:result:lai-robbins-lower-bound
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: cumulative-regret (id: 8ec569e1-677e-4fad-8271-15feffda951b)
+- Title: Cumulative Regret
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: cumulative-regret → concepts/cumulative-regret.md
+- IRI: pkis:concept:cumulative-regret
