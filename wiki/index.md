@@ -790,6 +790,7 @@
 - [[market-vs-hierarchy]] — Coase/Williamson: transactions governed by price signals (markets) vs. managerial direction (firms) (corporate-finance) (2026-05-20)
 
 ## Techniques
+- [[loopy-belief-propagation]] — Loopy Belief Propagation (probabilistic-graphical-models, information-theory, machine-learning) (2026-06-11)
 - [[iterated-conditional-modes]] — Iterated Conditional Modes (ICM) (probabilistic-graphical-models, computer-vision, machine-learning) (2026-06-11)
 - [[max-sum-algorithm]] — Max-Sum Algorithm (probabilistic-graphical-models, machine-learning) (2026-06-11)
 - [[automatic-relevance-determination]] — Automatic Relevance Determination (ARD) (machine-learning, bayesian-inference) (2026-06-11)

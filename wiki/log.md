@@ -12836,3 +12836,12 @@
 ## [2026-06-11] committed | technique
 - Committed: iterated-conditional-modes → techniques/iterated-conditional-modes.md
 - IRI: pkis:technique:iterated-conditional-modes
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: loopy-belief-propagation (id: aa56dd5a-dcdf-4ffb-ab49-94ec9e5b71e1)
+- Title: Loopy Belief Propagation
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: loopy-belief-propagation → techniques/loopy-belief-propagation.md
+- IRI: pkis:technique:loopy-belief-propagation
