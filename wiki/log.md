@@ -15239,3 +15239,12 @@
 ## [2026-06-11] committed | technique
 - Committed: feature-crosses → techniques/feature-crosses.md
 - IRI: pkis:technique:feature-crosses
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: self-supervised-learning (id: cd584489-5c51-41ea-b75e-1f603da21833)
+- Title: Self-Supervised Learning
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: self-supervised-learning → concepts/self-supervised-learning.md
+- IRI: pkis:concept:self-supervised-learning
