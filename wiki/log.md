@@ -14060,3 +14060,12 @@
 ## [2026-06-11] committed | concept
 - Committed: convolution-operation-nn → concepts/convolution-operation-nn.md
 - IRI: pkis:concept:convolution-operation-nn
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: sparse-interactions-cnn (id: 91aa1bff-8f3a-4f8e-9626-a6fcfe358dc7)
+- Title: Sparse Interactions (CNNs)
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: sparse-interactions-cnn → concepts/sparse-interactions-cnn.md
+- IRI: pkis:concept:sparse-interactions-cnn
