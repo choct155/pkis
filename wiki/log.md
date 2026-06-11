@@ -20117,3 +20117,12 @@
 ## [2026-06-11] committed | technique
 - Committed: bayes-adaptive-mdp → techniques/bayes-adaptive-mdp.md
 - IRI: pkis:technique:bayes-adaptive-mdp
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: count-based-exploration (id: 4d1acaed-185e-4f71-8279-3b3825aab0d3)
+- Title: Count-Based Exploration with Intrinsic Bonus
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: count-based-exploration → techniques/count-based-exploration.md
+- IRI: pkis:technique:count-based-exploration

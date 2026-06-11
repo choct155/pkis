@@ -1148,6 +1148,7 @@
 - [[market-vs-hierarchy]] — Coase/Williamson: transactions governed by price signals (markets) vs. managerial direction (firms) (corporate-finance) (2026-05-20)
 
 ## Techniques
+- [[count-based-exploration]] — Count-Based Exploration with Intrinsic Bonus (reinforcement-learning) (2026-06-11)
 - [[bayes-adaptive-mdp]] — Bayes-Adaptive MDP (BAMDP) (reinforcement-learning, bayesian-methods) (2026-06-11)
 - [[pilco]] — PILCO (Probabilistic Inference for Learning Control) (reinforcement-learning, probabilistic-methods, robotics) (2026-06-11)
 - [[model-predictive-control-rl]] — Model Predictive Control for RL (MPC/Receding-Horizon Control) (reinforcement-learning, control-theory) (2026-06-11)
