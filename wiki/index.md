@@ -290,6 +290,7 @@
 - [[liu-machine-unlearning-llm-2024]] — Rethinking Machine Unlearning for LLMs: post-training knowledge editing survey (deep-learning, ai-safety) (2026-05-20)
 
 ## Concepts
+- [[hard-vs-soft-clustering]] — Hard vs. Soft Clustering (machine-learning, unsupervised-learning) (2026-06-11)
 - [[factor-rotations-problem]] — Factor Rotations Problem (statistics, machine-learning) (2026-06-11)
 - [[horseshoe-distribution]] — Horseshoe Distribution (bayesian-statistics, probability-theory) (2026-06-11)
 - [[spatio-temporal-latent-variable-models]] — Spatio-Temporal Latent Variable Models (machine-learning, statistics, spatial-statistics) (2026-06-11)

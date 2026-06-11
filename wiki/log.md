@@ -19451,3 +19451,12 @@
 ## [2026-06-11] committed | technique
 - Committed: expected-patch-log-likelihood → techniques/expected-patch-log-likelihood.md
 - IRI: pkis:technique:expected-patch-log-likelihood
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: hard-vs-soft-clustering (id: e0ad0a83-4c6b-4809-82a4-175f153197a7)
+- Title: Hard vs. Soft Clustering
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: hard-vs-soft-clustering → concepts/hard-vs-soft-clustering.md
+- IRI: pkis:concept:hard-vs-soft-clustering
