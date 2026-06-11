@@ -1670,6 +1670,7 @@
 - [[llm-language-comprehension]] — The problem of whether LLMs genuinely comprehend language vs. pattern-match surface form (deep-learning, cognitive-science) (2026-05-20)
 
 ## Principles
+- [[causal-factor-robustness-principle]] — Causal-Factor Robustness Principle (representation-learning, causal-inference, machine-learning) (2026-06-11)
 - [[slowness-principle]] — Slowness Principle (machine-learning, computational-neuroscience) (2026-06-11)
 - [[ml-cost-design-neural-networks]] — Maximum-Likelihood Cost Design for Neural Networks (machine-learning, deep-learning, statistics) (2026-06-11)
 - [[ml-algorithm-recipe]] — ML Algorithm Recipe: Dataset + Cost + Model + Optimizer (machine-learning) (2026-06-11)

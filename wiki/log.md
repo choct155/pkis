@@ -14717,3 +14717,12 @@
 ## [2026-06-11] committed | result
 - Committed: exponential-regions-distributed-representation → results/exponential-regions-distributed-representation.md
 - IRI: pkis:result:exponential-regions-distributed-representation
+
+## [2026-06-11] staged | node-stub (principle)
+- Staged: causal-factor-robustness-principle (id: 2686ab24-b9b4-433c-a9cb-1646e2d331f3)
+- Title: Causal-Factor Robustness Principle
+- needs_canonical_source: False
+
+## [2026-06-11] committed | principle
+- Committed: causal-factor-robustness-principle → principles/causal-factor-robustness-principle.md
+- IRI: pkis:principle:causal-factor-robustness-principle
