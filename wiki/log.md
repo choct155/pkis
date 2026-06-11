@@ -12161,3 +12161,12 @@
 ## [2026-06-11] committed | result
 - Committed: optimal-regression-conditional-mean → results/optimal-regression-conditional-mean.md
 - IRI: pkis:result:optimal-regression-conditional-mean
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: differential-entropy (id: f7b5c22a-0633-4745-8f07-0b724eb50197)
+- Title: Differential Entropy
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: differential-entropy → concepts/differential-entropy.md
+- IRI: pkis:concept:differential-entropy
