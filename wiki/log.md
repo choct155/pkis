@@ -18452,3 +18452,12 @@
 ## [2026-06-11] committed | concept
 - Committed: bayesian-deep-learning → concepts/bayesian-deep-learning.md
 - IRI: pkis:concept:bayesian-deep-learning
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: monte-carlo-dropout (id: 1a19c264-10a3-4892-9324-dcc57cb09f92)
+- Title: Monte Carlo Dropout (MCD)
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: monte-carlo-dropout → techniques/monte-carlo-dropout.md
+- IRI: pkis:technique:monte-carlo-dropout

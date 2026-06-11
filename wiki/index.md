@@ -1073,6 +1073,7 @@
 - [[market-vs-hierarchy]] — Coase/Williamson: transactions governed by price signals (markets) vs. managerial direction (firms) (corporate-finance) (2026-05-20)
 
 ## Techniques
+- [[monte-carlo-dropout]] — Monte Carlo Dropout (MCD) (deep-learning, bayesian-inference, uncertainty-quantification) (2026-06-11)
 - [[multi-head-attention]] — Multi-Head Attention (MHA) (deep-learning, natural-language-processing) (2026-06-11)
 - [[layer-normalization]] — Layer Normalization (deep-learning, transformers) (2026-06-11)
 - [[probit-approximation-logistic-gaussian]] — Probit Approximation to Logistic-Gaussian Integral (machine-learning, bayesian-inference) (2026-06-11)
