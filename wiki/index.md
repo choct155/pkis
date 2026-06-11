@@ -290,6 +290,7 @@
 - [[liu-machine-unlearning-llm-2024]] — Rethinking Machine Unlearning for LLMs: post-training knowledge editing survey (deep-learning, ai-safety) (2026-05-20)
 
 ## Concepts
+- [[complementary-log-log-link]] — Complementary Log-Log Link (statistics) (2026-06-11)
 - [[glm-deviance]] — Deviance (GLM) (statistics) (2026-06-11)
 - [[link-function-mean-function]] — Link Function and Mean Function (statistics) (2026-06-11)
 - [[regularization-path]] — Regularisation Path (statistics, machine learning) (2026-06-11)

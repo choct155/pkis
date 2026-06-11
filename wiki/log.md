@@ -16166,3 +16166,12 @@
 ## [2026-06-11] committed | result
 - Committed: glm-gradient-hessian → results/glm-gradient-hessian.md
 - IRI: pkis:result:glm-gradient-hessian
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: complementary-log-log-link (id: 851fa350-04af-43c2-8332-0df78376db8e)
+- Title: Complementary Log-Log Link
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: complementary-log-log-link → concepts/complementary-log-log-link.md
+- IRI: pkis:concept:complementary-log-log-link
