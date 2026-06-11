@@ -19901,3 +19901,12 @@
 ## [2026-06-11] committed | concept
 - Committed: counterfactual-explanation → concepts/counterfactual-explanation.md
 - IRI: pkis:concept:counterfactual-explanation
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: shapley-feature-importance (id: d0137a66-2710-4a21-a08f-6759602801cd)
+- Title: Shapley Feature Importance
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: shapley-feature-importance → concepts/shapley-feature-importance.md
+- IRI: pkis:concept:shapley-feature-importance
