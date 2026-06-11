@@ -17669,3 +17669,12 @@
 ## [2026-06-11] committed | principle
 - Committed: turning-the-bayesian-crank → principles/turning-the-bayesian-crank.md
 - IRI: pkis:principle:turning-the-bayesian-crank
+
+## [2026-06-11] staged | node-stub (result)
+- Staged: map-reparameterisation-noninvariance (id: 9d335782-b46f-453e-8ebd-e4439b542480)
+- Title: MAP Estimate Non-Invariance Under Reparameterisation
+- needs_canonical_source: False
+
+## [2026-06-11] committed | result
+- Committed: map-reparameterisation-noninvariance → results/map-reparameterisation-noninvariance.md
+- IRI: pkis:result:map-reparameterisation-noninvariance
