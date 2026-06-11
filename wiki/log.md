@@ -17354,3 +17354,12 @@
 ## [2026-06-11] committed | concept
 - Committed: markov-blanket-dpgm → concepts/markov-blanket-dpgm.md
 - IRI: pkis:concept:markov-blanket-dpgm
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: conditional-probability-table (id: 7f7816b8-d2b1-45f4-b2da-c60723b5c63b)
+- Title: Conditional Probability Table (CPT)
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: conditional-probability-table → concepts/conditional-probability-table.md
+- IRI: pkis:concept:conditional-probability-table
