@@ -1308,6 +1308,7 @@
 - [[government-debt-valuation-equation]] — FTPL: price level determined by ratio of nominal debt to expected present value of future surpluses (macroeconomics) (2026-05-20)
 
 ## Frameworks
+- [[relevance-vector-machine]] — Relevance Vector Machine (RVM) (machine-learning, bayesian-inference) (2026-06-11)
 - [[mixture-density-network]] — Mixture Density Network (machine-learning, probabilistic-models) (2026-06-11)
 - [[feed-forward-neural-network]] — Feed-Forward Neural Network (MLP) (machine-learning, neural-networks) (2026-06-11)
 - [[probabilistic-generative-classifier]] — Probabilistic Generative Classifier (machine-learning, statistics, pattern-recognition) (2026-06-11)

@@ -12719,3 +12719,12 @@
 ## [2026-06-11] committed | concept
 - Committed: support-vectors → concepts/support-vectors.md
 - IRI: pkis:concept:support-vectors
+
+## [2026-06-11] staged | node-stub (framework)
+- Staged: relevance-vector-machine (id: 295d12b6-a6d0-49ea-b851-7ddc185117ed)
+- Title: Relevance Vector Machine (RVM)
+- needs_canonical_source: False
+
+## [2026-06-11] committed | framework
+- Committed: relevance-vector-machine → frameworks/relevance-vector-machine.md
+- IRI: pkis:framework:relevance-vector-machine
