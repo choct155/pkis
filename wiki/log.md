@@ -13457,3 +13457,12 @@
 ## [2026-06-11] committed | technique
 - Committed: moore-penrose-pseudoinverse → techniques/moore-penrose-pseudoinverse.md
 - IRI: pkis:technique:moore-penrose-pseudoinverse
+
+## [2026-06-11] staged | node-stub (result)
+- Staged: cyclic-invariance-trace (id: 1e155368-7d22-4063-91f1-705deb677331)
+- Title: Cyclic Invariance of the Trace
+- needs_canonical_source: False
+
+## [2026-06-11] committed | result
+- Committed: cyclic-invariance-trace → results/cyclic-invariance-trace.md
+- IRI: pkis:result:cyclic-invariance-trace
