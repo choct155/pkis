@@ -1039,6 +1039,7 @@
 - [[market-vs-hierarchy]] — Coase/Williamson: transactions governed by price signals (markets) vs. managerial direction (firms) (corporate-finance) (2026-05-20)
 
 ## Techniques
+- [[bayes-filter]] — Bayes Filter (Predict-Update Cycle) (machine-learning, statistics, robotics) (2026-06-11)
 - [[kalman-rts-smoother]] — Kalman (RTS) Smoother (machine-learning, statistics, signal-processing) (2026-06-11)
 - [[random-walk-metropolis]] — Random Walk Metropolis Algorithm (MCMC, bayesian-computation) (2026-06-11)
 - [[advi]] — Automatic Differentiation Variational Inference (ADVI) (variational-inference, probabilistic-programming, automatic-differentiation) (2026-06-11)

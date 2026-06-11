@@ -17714,3 +17714,12 @@
 ## [2026-06-11] committed | technique
 - Committed: kalman-rts-smoother → techniques/kalman-rts-smoother.md
 - IRI: pkis:technique:kalman-rts-smoother
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: bayes-filter (id: 97bcd6f4-61a6-4177-b647-88433562c368)
+- Title: Bayes Filter (Predict-Update Cycle)
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: bayes-filter → techniques/bayes-filter.md
+- IRI: pkis:technique:bayes-filter
