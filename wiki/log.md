@@ -12458,3 +12458,12 @@
 ## [2026-06-11] committed | technique
 - Committed: perceptron-algorithm → techniques/perceptron-algorithm.md
 - IRI: pkis:technique:perceptron-algorithm
+
+## [2026-06-11] staged | node-stub (result)
+- Staged: gaussian-lda-linear-boundary (id: 7d5bfd62-1590-48b1-94f1-010364ff67bb)
+- Title: Gaussian Class-Conditional ⟹ Linear Decision Boundary
+- needs_canonical_source: False
+
+## [2026-06-11] committed | result
+- Committed: gaussian-lda-linear-boundary → results/gaussian-lda-linear-boundary.md
+- IRI: pkis:result:gaussian-lda-linear-boundary

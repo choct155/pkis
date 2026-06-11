@@ -1176,6 +1176,7 @@
 - [[constraint-propagation]] — Reducing a constraint satisfaction problem by iteratively eliminating inconsistent values from variable domains (knowledge-representation) (2026-05-20)
 
 ## Results
+- [[gaussian-lda-linear-boundary]] — Gaussian Class-Conditional ⟹ Linear Decision Boundary (machine-learning, statistics) (2026-06-11)
 - [[bic]] — BIC (Bayesian Information Criterion) (statistics, Bayesian-inference, model-selection) (2026-06-11)
 - [[bias-variance-decomposition]] — Bias-Variance Decomposition of Expected Squared Loss (machine-learning, statistics) (2026-06-11)
 - [[bayesian-linear-regression-predictive]] — Bayesian Linear Regression Predictive Distribution (machine-learning, bayesian-statistics) (2026-06-11)
