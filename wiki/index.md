@@ -921,6 +921,7 @@
 - [[market-vs-hierarchy]] — Coase/Williamson: transactions governed by price signals (markets) vs. managerial direction (firms) (corporate-finance) (2026-05-20)
 
 ## Techniques
+- [[feature-crosses]] — Feature Crosses (machine-learning, feature-engineering) (2026-06-11)
 - [[tf-idf]] — TF-IDF Weighting (nlp, information-retrieval) (2026-06-11)
 - [[one-hot-encoding]] — One-Hot Encoding (machine-learning, feature-engineering) (2026-06-11)
 - [[multi-prediction-deep-boltzmann-machine]] — Multi-Prediction Deep Boltzmann Machine (MP-DBM) (deep-learning, generative-models, approximate-inference) (2026-06-11)

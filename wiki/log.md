@@ -15230,3 +15230,12 @@
 ## [2026-06-11] committed | technique
 - Committed: tf-idf → techniques/tf-idf.md
 - IRI: pkis:technique:tf-idf
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: feature-crosses (id: 34470bcd-a7b6-4cbb-b532-461ab5e0b3ae)
+- Title: Feature Crosses
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: feature-crosses → techniques/feature-crosses.md
+- IRI: pkis:technique:feature-crosses
