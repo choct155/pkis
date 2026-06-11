@@ -14636,3 +14636,12 @@
 ## [2026-06-11] committed | concept
 - Committed: manifold-hypothesis → concepts/manifold-hypothesis.md
 - IRI: pkis:concept:manifold-hypothesis
+
+## [2026-06-11] staged | node-stub (technique)
+- Staged: semantic-hashing (id: 399b85bf-b421-4294-8043-c7edd819bfcc)
+- Title: Semantic Hashing
+- needs_canonical_source: False
+
+## [2026-06-11] committed | technique
+- Committed: semantic-hashing → techniques/semantic-hashing.md
+- IRI: pkis:technique:semantic-hashing
