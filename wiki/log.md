@@ -13709,3 +13709,12 @@
 ## [2026-06-11] committed | concept
 - Committed: hyperparameters-validation-set → concepts/hyperparameters-validation-set.md
 - IRI: pkis:concept:hyperparameters-validation-set
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: estimator-consistency (id: 791d7d54-5bad-4077-a872-d2a02a3bba1e)
+- Title: Statistical Estimator Consistency
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: estimator-consistency → concepts/estimator-consistency.md
+- IRI: pkis:concept:estimator-consistency
