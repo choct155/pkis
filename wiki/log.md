@@ -16049,3 +16049,12 @@
 ## [2026-06-11] committed | concept
 - Committed: hat-matrix → concepts/hat-matrix.md
 - IRI: pkis:concept:hat-matrix
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: residual-sum-of-squares (id: 46ec082d-ac84-4051-af90-12e459367d40)
+- Title: Residual Sum of Squares (RSS)
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: residual-sum-of-squares → concepts/residual-sum-of-squares.md
+- IRI: pkis:concept:residual-sum-of-squares
