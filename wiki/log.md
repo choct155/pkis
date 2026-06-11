@@ -16067,3 +16067,12 @@
 ## [2026-06-11] committed | concept
 - Committed: r-squared → concepts/r-squared.md
 - IRI: pkis:concept:r-squared
+
+## [2026-06-11] staged | node-stub (concept)
+- Staged: weighted-least-squares (id: 9677ebdb-d391-410f-9846-a8e2519eadff)
+- Title: Weighted Least Squares (WLS)
+- needs_canonical_source: False
+
+## [2026-06-11] committed | concept
+- Committed: weighted-least-squares → concepts/weighted-least-squares.md
+- IRI: pkis:concept:weighted-least-squares
