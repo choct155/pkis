@@ -291,6 +291,26 @@ body {
 .nav-icon  { font-size: 18px; line-height: 1; }
 .nav-label { font-family: var(--mono); font-size: 9px; letter-spacing: 0.08em; text-transform: uppercase; }
 
+/* "More" popover above the bottom nav (mobile only — hidden on desktop below). */
+.more-backdrop { position: fixed; inset: 0; z-index: 99; }
+.more-menu {
+  position: fixed; bottom: 52px; left: 0; right: 0;
+  max-width: 430px; margin: 0 auto;
+  background: var(--surface); border-top: 1px solid var(--border);
+  box-shadow: 0 -6px 16px rgba(0,0,0,0.35);
+  display: flex; z-index: 100;
+  animation: more-rise 0.15s ease-out;
+}
+@keyframes more-rise { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
+.more-item {
+  flex: 1; display: flex; flex-direction: column; align-items: center;
+  padding: 12px 0; gap: 4px; cursor: pointer; color: var(--muted);
+  user-select: none; transition: color 0.15s;
+}
+.more-item.active { color: var(--accent); }
+.more-icon  { font-size: 18px; line-height: 1; }
+.more-label { font-family: var(--mono); font-size: 9px; letter-spacing: 0.08em; text-transform: uppercase; }
+
 /* ── FAB ──────────────────────────────────────────────────────────────── */
 .fab {
   position: fixed; bottom: 72px; right: 20px;
@@ -819,13 +839,13 @@ body {
 /* ── RESPONSIVE: tablet / desktop ─────────────────────────────────────── */
 @media (min-width: 768px) {
   body { max-width: 760px; }
-  .bottom-nav, .sheet { max-width: 760px; }
+  .bottom-nav, .more-menu, .sheet { max-width: 760px; }
   .main { padding: 16px 24px; padding-bottom: 88px; }
   .fab { right: calc((100vw - 760px) / 2 + 20px); }
 }
 @media (min-width: 1100px) {
   body { max-width: 980px; }
-  .bottom-nav, .sheet { max-width: 980px; }
+  .bottom-nav, .more-menu, .sheet { max-width: 980px; }
   .main { padding: 20px 32px; padding-bottom: 96px; }
   .fab { right: calc((100vw - 980px) / 2 + 20px); }
   /* Two-column card flow on wide screens — sectioned lists stay readable */
@@ -1130,7 +1150,7 @@ body {
   }
   .sidebar::-webkit-scrollbar { width: 3px; }
   .sidebar::-webkit-scrollbar-thumb { background: var(--dim); border-radius: 2px; }
-  .bottom-nav { display: none; }
+  .bottom-nav, .more-menu, .more-backdrop { display: none; }
   .domain-strip { display: none; }    /* replaced by the sidebar domain tree */
   .main { padding-bottom: 24px; }     /* no fixed bottom-nav to clear */
   .fab { right: 24px; bottom: 24px; }
