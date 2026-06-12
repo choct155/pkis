@@ -19,8 +19,8 @@ _Last updated: 2026-06-12_
 | Semantic search | **live** | BM25 + bge-small dense, fused via RRF; embed cache gitignored |
 | Research clusters + frontier priority | **live** | all 12 clusters de-orphaned; frontier-driven priority |
 | Read+listen reader | **live** | LLM semantic narration of sources |
-| Proactive discovery | **partial** | frontier-gated OpenAlex MVP validated; inbox + feedback UI not yet built |
-| Documentation system (`docs/`) | **partial** | this doc set + `log_idea` + viewer Docs view (in progress) |
+| Proactive discovery | **live** | frontier-gated OpenAlex cite-graph, cron'd Mondays; inbox + accept/dismiss feedback + learned-prior loop all live (prior empty until first feedback) |
+| Documentation system (`docs/`) | **live** | 6 docs + `log_idea` + mobile-first viewer Docs view; deployed |
 
 ## Book knowledge coverage (Phase C)
 
@@ -44,8 +44,9 @@ have chapter stubs/nodes but may lack extracted reader text.
 
 ## Known issues
 
-- Discovery **inbox + feedback UI** not yet built — the durable signal/noise fix for
-  the discovery layer.
+- Discovery **learned prior is cold** — the inbox + feedback loop are live, but no
+  accept/dismiss decisions have been logged yet, so the per-signal prior is still
+  neutral. Warms up once feedback starts. (Acting is write-gated — sign in to use it.)
 - Git can diverge across the laptop and server checkouts of the one repo — both
   commit to `origin/main`, and the server auto-commits on every MCP write.
   Reconcilable: commit wanted changes, `git checkout --` for files origin already has,
@@ -55,14 +56,15 @@ have chapter stubs/nodes but may lack extracted reader text.
 
 ## Most recent session
 
-Documentation system: created `docs/` (ABOUT, ARCHITECTURE, USAGE, STATUS, DECISIONS,
-IDEAS) + manifest, the `log_idea` MCP write tool, docs read endpoints, and a
-mobile-first **Docs** view in the viewer. Absorbed and removed `PHASE_C_BRIEF.md`.
+Documentation system built **and deployed**: `docs/` (ABOUT, ARCHITECTURE, USAGE,
+STATUS, DECISIONS, IDEAS) + manifest, the `log_idea` MCP write tool, docs read
+endpoints, and a mobile-first **Docs** view; `PHASE_C_BRIEF.md` absorbed and removed.
+Then folded the mobile bottom-nav into a primary bar + "more" menu (acting on a logged
+idea). Corrected the discovery status below — its inbox/feedback/prior loop is live.
 
 ## Next priorities
 
-1. Deploy the documentation system (server + viewer build/rsync).
-2. Build the discovery **inbox + feedback UI**.
-3. Extract reader text for the six books lacking `paper_md` (prioritize Gelman /
+1. Start exercising discovery feedback (accept/dismiss) to warm the learned prior.
+2. Extract reader text for the six books lacking `paper_md` (prioritize Gelman /
    Deisenroth / Sutton — closest to existing clusters).
-4. Finish acquiring Goodfellow + Murphy PML; acquire Bishop PRML.
+3. Finish acquiring Goodfellow + Murphy PML; acquire Bishop PRML.
