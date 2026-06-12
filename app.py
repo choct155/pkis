@@ -187,6 +187,18 @@ MCP_PROTOCOL_VERSION = MCP_SUPPORTED_PROTOCOL_VERSIONS[0]
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
+# Fail loudly if web auth is on but the cookie key isn't a valid Fernet key. The
+# WorkOS Python SDK seals sessions with Fernet, so WORKOS_COOKIE_PASSWORD must be a
+# Fernet.generate_key() value (44-char base64) — NOT an arbitrary 32/64-char string
+# (WorkOS's generic ">=32 chars" guidance is for the Node SDK's iron-session).
+if WEB_AUTH_ENABLED:
+    try:
+        from cryptography.fernet import Fernet as _Fernet
+        _Fernet(WORKOS_COOKIE_PASSWORD)
+    except Exception as _e:  # noqa: BLE001
+        logger.error("WORKOS_COOKIE_PASSWORD is not a valid Fernet key (%s); web sign-in "
+                     "will silently fail. Generate one via Fernet.generate_key().", _e)
+
 app = Flask(__name__)
 app.config["MAX_CONTENT_LENGTH"] = 200 * 1024 * 1024  # 200 MB — matches nginx client_max_body_size
 anthropic_client = Anthropic(api_key=ANTHROPIC_API_KEY)
@@ -5885,28 +5897,26 @@ def pkis_api_auth_callback():
     state = request.args.get("state") or "/app/"
     dest = state if state.startswith("/app") else "/app/"
     try:
-        # workos 8.x: authenticate_with_code doesn't seal; mirror the SDK's own
-        # refresh() — a raw authenticate request with the session-seal param
-        # returns `sealed_session` in the exact shape load_sealed_session expects.
-        auth = _get_workos().request_raw(
-            method="post",
-            path=("user_management", "authenticate"),
-            body={
-                "grant_type": "authorization_code",
-                "client_id": WORKOS_CLIENT_ID,
-                "client_secret": WORKOS_API_KEY,
-                "code": code,
-                "session": {"seal_session": True, "cookie_password": WORKOS_COOKIE_PASSWORD},
-            },
+        # workos 8.x: authenticate_with_code returns the tokens; we seal the session
+        # CLIENT-SIDE with the SDK's own helper (Fernet, keyed by WORKOS_COOKIE_PASSWORD)
+        # so it round-trips exactly with load_sealed_session/unseal_data on every read.
+        # (The earlier request_raw seal_session approach never produced a usable cookie.)
+        from workos.session import seal_session_from_auth_response
+        res = _get_workos().user_management.authenticate_with_code(code=code)
+        sealed = seal_session_from_auth_response(
+            access_token=res.access_token,
+            refresh_token=res.refresh_token,
+            user=res.user.to_dict(),
+            impersonator=res.impersonator.to_dict() if res.impersonator is not None else None,
+            cookie_password=WORKOS_COOKIE_PASSWORD,
         )
-        sealed = auth.get("sealed_session") if isinstance(auth, dict) else None
         resp = make_response(redirect(dest))
-        if sealed:
-            resp.set_cookie(WEB_SESSION_COOKIE, sealed, max_age=30 * 24 * 3600,
-                            httponly=True, secure=True, samesite="Lax")
+        resp.set_cookie(WEB_SESSION_COOKIE, sealed, max_age=30 * 24 * 3600,
+                        httponly=True, secure=True, samesite="Lax")
+        logger.info("web sign-in OK: user=%s", getattr(res.user, "email", "?"))
         return resp
     except Exception as e:  # noqa: BLE001
-        logger.warning("auth callback failed: %s", e)
+        logger.warning("auth callback failed: %s", e, exc_info=True)
         return redirect("/app/?auth_error=1")
 
 
