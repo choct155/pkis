@@ -12,6 +12,8 @@ import type {
   DomainCount,
   ReaderPayload,
   Asset,
+  DocMeta,
+  Doc,
 } from '../types';
 
 const BASE = '/pkis-api';
@@ -124,6 +126,15 @@ export async function getDomains(): Promise<DomainCount[]> {
 // ── Assets (interactive explainers + visualizations) ──────────────────────
 export async function getAssets(kind?: string): Promise<Asset[]> {
   return post<Asset[]>('/assets', kind ? { kind } : {});
+}
+
+// ── Documentation ─────────────────────────────────────────────────────────
+export async function getDocs(): Promise<DocMeta[]> {
+  return post<DocMeta[]>('/docs');
+}
+
+export async function getDoc(key: string): Promise<Doc> {
+  return post<Doc>('/doc', { key });
 }
 
 // ── Research clusters ─────────────────────────────────────────────────────

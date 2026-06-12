@@ -1176,3 +1176,28 @@ body {
 @media (min-width: 900px) {
   .explainer-overlay-frame { max-width: 1120px; margin: 0 auto; }
 }
+
+/* ── Docs view ─────────────────────────────────────────────────────────── */
+.docs-view { padding: 4px 0 24px; }
+.docs-section { margin-bottom: 18px; }
+.docs-cat {
+  font-family: var(--mono); font-size: 11px; text-transform: uppercase;
+  letter-spacing: 0.08em; color: var(--muted); margin: 0 0 8px;
+}
+.docs-list { display: flex; flex-direction: column; gap: 6px; }
+.docs-item {
+  padding: 11px 13px; cursor: pointer;
+  display: flex; align-items: center; justify-content: space-between;
+}
+.docs-item::after { content: '›'; color: var(--dim); font-size: 16px; }
+.docs-item:hover { border-color: var(--accent); }
+.docs-item-title { color: var(--bright); font-size: 14px; }
+.docs-bar { margin-bottom: 12px; }
+.docs-back {
+  background: none; border: 1px solid var(--border); border-radius: var(--radius);
+  color: var(--muted); font-family: var(--mono); font-size: 12px;
+  padding: 6px 10px; cursor: pointer;
+}
+.docs-back:hover { color: var(--accent); border-color: var(--accent); }
+.docs-article { max-width: 760px; }
+@media (min-width: 900px) { .docs-article { margin: 0 auto; } }

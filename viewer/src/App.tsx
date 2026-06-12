@@ -19,6 +19,7 @@ import GraphView from './views/GraphView'
 import StagedView from './views/StagedView'
 import ExplainersView from './views/ExplainersView'
 import DiscoverView from './views/DiscoverView'
+import DocsView from './views/DocsView'
 import ReaderView from './views/ReaderView'
 import ExplainerOverlay from './components/ExplainerOverlay'
 
@@ -134,6 +135,7 @@ export default function App() {
                 {view === 'discover' && (
                   <DiscoverView onSelectNode={handleSelectNode} />
                 )}
+                {view === 'docs' && <DocsView />}
               </>
             )}
           </div>

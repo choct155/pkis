@@ -1,0 +1,23 @@
+{
+  "docs": [
+    { "key": "about",        "title": "About PKIS",          "category": "Overview",    "path": "docs/ABOUT.md" },
+    { "key": "readme",       "title": "README",              "category": "Overview",    "path": "README.md" },
+    { "key": "architecture", "title": "Architecture",        "category": "Overview",    "path": "docs/ARCHITECTURE.md" },
+
+    { "key": "usage",        "title": "Usage Guide",         "category": "Guide",       "path": "docs/USAGE.md" },
+
+    { "key": "status",       "title": "Status",              "category": "State",       "path": "docs/STATUS.md" },
+    { "key": "ideas",        "title": "Ideas",               "category": "State",       "path": "docs/IDEAS.md" },
+    { "key": "decisions",    "title": "Decisions",           "category": "State",       "path": "docs/DECISIONS.md" },
+
+    { "key": "schema",       "title": "Schema",              "category": "Reference",   "path": "SCHEMA.md" },
+    { "key": "mcp-access",   "title": "MCP Access Guide",    "category": "Reference",   "path": "MCP_ACCESS_GUIDE.md" },
+    { "key": "oauth",        "title": "OAuth Plan",          "category": "Reference",   "path": "OAUTH_PLAN.md" },
+    { "key": "impl-plan",    "title": "Implementation Plan", "category": "Reference",   "path": "PKIS_Wiki_Implementation_Plan.md" },
+
+    { "key": "librarian",    "title": "Librarian",           "category": "Agent roles", "path": "LIBRARIAN.md" },
+    { "key": "synthesizer",  "title": "Synthesizer",         "category": "Agent roles", "path": "SYNTHESIZER.md" },
+    { "key": "maintenance",  "title": "Maintenance",         "category": "Agent roles", "path": "MAINTENANCE.md" },
+    { "key": "hygienist",    "title": "Hygienist",           "category": "Agent roles", "path": "HYGIENIST.md" }
+  ]
+}

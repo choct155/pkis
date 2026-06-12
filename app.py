@@ -40,6 +40,11 @@ from anthropic import Anthropic
 WIKI_DIR = Path(os.environ.get("WIKI_DIR", "/home/pkis/pkis-wiki/wiki"))
 RAW_DIR = Path(os.environ.get("RAW_DIR", "/home/pkis/pkis-wiki/raw"))
 REPO_DIR = Path(os.environ.get("REPO_DIR", "/home/pkis/pkis-wiki"))
+# Repo root holding app.py + docs/ (today the SAME checkout as the wiki nodes — one
+# repo, github.com/choct155/pkis). .resolve() follows a symlinked app.py (prod:
+# /home/pkis/app.py -> /home/pkis/pkis-wiki/app.py) to the real repo root, so this
+# equals REPO_DIR in prod. Override DOCS_REPO_DIR if docs ever split into their own repo.
+DOCS_REPO_DIR = Path(os.environ.get("DOCS_REPO_DIR", str(Path(__file__).resolve().parent)))
 ANTHROPIC_API_KEY = os.environ.get("ANTHROPIC_API_KEY", "")
 
 # Semantic (dense) search. BM25 stays the precision anchor; embeddings add recall
@@ -2751,6 +2756,118 @@ def tool_add_connections(edges: list, commit_message: str = "") -> dict:
     }
 
 
+# ============================================================
+# Documentation system — docs/ lives in the MAIN repo (DOCS_REPO_DIR), which on the
+# server is DISTINCT from the wiki REPO_DIR the other write tools commit to. Reads are
+# surfaced in the viewer's Docs view; log_idea appends to docs/IDEAS.md.
+# ============================================================
+
+def _docs_manifest() -> list:
+    """Load docs/manifest.json — a list of {key, title, category, path} entries."""
+    try:
+        data = json.loads((DOCS_REPO_DIR / "docs" / "manifest.json").read_text())
+        return [d for d in data.get("docs", []) if d.get("key") and d.get("path")]
+    except Exception as e:
+        logger.warning(f"docs manifest unreadable: {e}")
+        return []
+
+
+def tool_list_docs() -> list:
+    """Return the docs manifest (key, title, category, path) for the viewer Docs nav.
+    `path` lets the viewer resolve relative cross-links (e.g. [..](USAGE.md)) to keys."""
+    return [{"key": d["key"], "title": d["title"],
+             "category": d.get("category", ""), "path": d["path"]}
+            for d in _docs_manifest()]
+
+
+def tool_get_doc(key: str) -> dict:
+    """Return one doc's markdown by manifest key. Manifest-gated: only files listed in
+    the manifest are readable, and the resolved path must stay within DOCS_REPO_DIR."""
+    entry = next((d for d in _docs_manifest() if d["key"] == key), None)
+    if not entry:
+        raise ValueError(f"unknown doc key: {key}")
+    base = DOCS_REPO_DIR.resolve()
+    path = (base / entry["path"]).resolve()
+    if base not in path.parents and path != base or not path.is_file():
+        raise ValueError(f"doc not found: {key}")
+    return {"key": key, "title": entry["title"],
+            "category": entry.get("category", ""), "markdown": path.read_text()}
+
+
+def _docs_repo_branch() -> str:
+    try:
+        r = subprocess.run(["git", "-C", str(DOCS_REPO_DIR), "rev-parse", "--abbrev-ref", "HEAD"],
+                           capture_output=True, text=True, timeout=10)
+        return r.stdout.strip() or "main"
+    except Exception:
+        return "main"
+
+
+def _commit_docs(paths, message) -> tuple:
+    """git add/commit/push the given paths in DOCS_REPO_DIR. Returns (sha, pushed).
+    Push failure is non-fatal (local commit retained), matching the wiki write tools."""
+    git_sha, git_pushed = "", False
+    try:
+        repo = str(DOCS_REPO_DIR)
+        subprocess.run(["git", "-C", repo, "add"] + [str(p) for p in paths],
+                       check=True, capture_output=True)
+        result = subprocess.run(["git", "-C", repo, "commit", "-m", message],
+                                check=True, capture_output=True, text=True)
+        m = re.search(r'\[.+? ([a-f0-9]{7,})\]', result.stdout)
+        git_sha = m.group(1) if m else result.stdout.strip()[:12]
+        try:
+            subprocess.run(["git", "-C", repo, "push"], check=True,
+                           capture_output=True, timeout=30)
+            git_pushed = True
+        except (subprocess.CalledProcessError, subprocess.TimeoutExpired) as pe:
+            logger.warning(f"docs push failed (local commit retained): {pe}")
+    except subprocess.CalledProcessError as e:
+        logger.error(f"docs commit failed: {getattr(e, 'stderr', e)}")
+    return git_sha, git_pushed
+
+
+def tool_log_idea(title: str, idea: str, source: str = "",
+                  relation_to_system: str = "", open_questions: str = "") -> dict:
+    """Append an idea to docs/IDEAS.md (newest-first) in the MAIN repo and commit+push.
+    Does NOT promote to DECISIONS.md — that stays a deliberate human action."""
+    title = (title or "").strip()
+    idea = (idea or "").strip()
+    if not title or not idea:
+        raise ValueError("title and idea are required")
+    source = (source or "").strip() or f"Claude Code: {_docs_repo_branch()}"
+    today = datetime.now(timezone.utc).strftime("%Y-%m-%d")
+
+    entry = (
+        f"## {title}\n"
+        f"**Date logged:** {today}\n"
+        f"**Source:** {source}\n"
+        f"**Idea:** {idea}\n"
+        f"**Relation to existing system:** {(relation_to_system or '').strip() or '—'}\n"
+        f"**Open questions:** {(open_questions or '').strip() or '—'}\n"
+        f"**Status:** open\n"
+    )
+
+    ideas_path = DOCS_REPO_DIR / "docs" / "IDEAS.md"
+    if not ideas_path.is_file():
+        raise ValueError("docs/IDEAS.md not found")
+    content = ideas_path.read_text()
+
+    # Prepend under the preamble: insert just after the '---' separator that closes
+    # the format block, so new entries land at the top of the list (newest-first).
+    marker = "\n---\n"
+    idx = content.find(marker)
+    if idx != -1:
+        cut = idx + len(marker)
+        new_content = content[:cut] + "\n" + entry + "\n" + content[cut:]
+    else:
+        new_content = content.rstrip() + "\n\n---\n\n" + entry
+    ideas_path.write_text(new_content)
+
+    git_sha, git_pushed = _commit_docs([ideas_path], f"[ideas] log: {title}")
+    return {"logged": title, "date": today, "entry": entry,
+            "git_commit": git_sha, "git_pushed": git_pushed}
+
+
 def tool_commit_staged_node(
     staged_id: str,
     edits: dict = None,
@@ -4870,6 +4987,12 @@ def tool_get_write_schema() -> dict:
                 "optional": ["source_iri", "reference", "priority", "reason"],
                 "notes": "priority is 'high' or 'normal'.",
             },
+            "log_idea": {
+                "appends": "a status:open entry to docs/IDEAS.md in the MAIN pkis repo (not the wiki)",
+                "required": ["title", "idea"],
+                "optional": ["source", "relation_to_system", "open_questions"],
+                "notes": "Newest-first. Does NOT promote to DECISIONS.md. source defaults to 'Claude Code: <branch>'.",
+            },
         },
         "two_phase_write": "create_* tools STAGE (review via get_staged_nodes, promote via commit_staged_node). edit_node and add_connections write LIVE immediately.",
     }
@@ -5048,6 +5171,21 @@ def _get_tools_list():
                     "origin": {"type": "string", "enum": ["voice-capture", "conversation", "reading", "spontaneous"], "default": "conversation"}
                 },
                 "required": ["rationale"]
+            }
+        },
+        {
+            "name": "log_idea",
+            "description": "Log a not-yet-decided idea to the project's docs/IDEAS.md from any chat or code session. Prepends a dated, status:open entry and commits to the main pkis repo (NOT the wiki). Does not promote to DECISIONS.md — that stays a deliberate human action. Use for ideas worth preserving but not yet committed to.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "title": {"type": "string", "description": "Short descriptive title"},
+                    "idea": {"type": "string", "description": "Description of the idea"},
+                    "source": {"type": "string", "description": "Session context, e.g. 'Claude chat: discovery layer'. Defaults to 'Claude Code: <branch>'."},
+                    "relation_to_system": {"type": "string", "description": "What it extends or replaces (optional)"},
+                    "open_questions": {"type": "string", "description": "What must be resolved before this can be decided (optional)"}
+                },
+                "required": ["title", "idea"]
             }
         },
         {
@@ -5496,6 +5634,13 @@ def dispatch_tool(tool_name: str, params: dict, req) -> any:
             edges=p["edges"],
             commit_message=p.get("commit_message", ""),
         ),
+        "log_idea": lambda p: tool_log_idea(
+            title=p["title"],
+            idea=p["idea"],
+            source=p.get("source", ""),
+            relation_to_system=p.get("relation_to_system", ""),
+            open_questions=p.get("open_questions", ""),
+        ),
         "commit_staged_node": lambda p: tool_commit_staged_node(
             staged_id=p["staged_id"],
             edits=p.get("edits"),
@@ -5686,6 +5831,29 @@ def pkis_api_explainers():
     # back-compat alias — explainer-kind assets only
     try:
         return _api_ok(tool_get_assets(kind="explainer"))
+    except Exception as e:
+        return _api_err(e, 500)
+
+
+@app.route("/pkis-api/docs", methods=["POST"])
+def pkis_api_docs():
+    # Manifest for the viewer Docs nav (keys, titles, categories).
+    try:
+        return _api_ok(tool_list_docs())
+    except Exception as e:
+        return _api_err(e, 500)
+
+
+@app.route("/pkis-api/doc", methods=["POST"])
+def pkis_api_doc():
+    b = _api_json()
+    key = b.get("key", "")
+    if not key:
+        return _api_err("key is required")
+    try:
+        return _api_ok(tool_get_doc(key))
+    except ValueError as e:
+        return _api_err(str(e), 404)
     except Exception as e:
         return _api_err(e, 500)
 

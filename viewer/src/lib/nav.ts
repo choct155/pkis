@@ -9,4 +9,5 @@ export const NAV_ITEMS: { view: View; icon: string; label: string }[] = [
   { view: 'staged',     icon: '⊞', label: 'staged' },
   { view: 'explainers', icon: '▦', label: 'explain' },
   { view: 'discover',   icon: '✦', label: 'discover' },
+  { view: 'docs',       icon: '▤', label: 'docs' },
 ]
