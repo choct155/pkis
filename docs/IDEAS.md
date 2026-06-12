@@ -24,7 +24,8 @@ Format:
 **Idea:** After adding the Docs view the bottom nav is 8 items, which is cramped on a phone. Consider keeping a primary set (browse, search, priority, graph) prominent and folding secondary views (staged, explainers, discover, docs) into a 'more' sheet or a second row.
 **Relation to existing system:** Extends the viewer nav (lib/nav.ts shared by BottomNav + Sidebar) introduced with the docs system.
 **Open questions:** Which views are primary vs secondary? Does a 'more' sheet hurt discoverability of discover/docs?
-**Status:** open
+**Resolution:** Primary = browse/clusters/priority/graph; secondary (staged/explainers/discover/docs) folded into a "more" popover above the bottom bar. Desktop sidebar unchanged.
+**Status:** adopted — implemented b0a00e27 ("more" menu)
 
 
 ## Discovery inbox + feedback UI
