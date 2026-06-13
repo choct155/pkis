@@ -1,5 +1,6 @@
 ---
 date_created: '2026-06-13'
+date_updated: '2026-06-13'
 id: pkis:bridge-note:bn-20260613-cq-the-concept-dependency-distribution
 integration_target: ''
 knowledge_type: bridge-note
@@ -46,6 +47,10 @@ rationale: 'C(q) — the concept dependency distribution induced by query q — 
 source_context: Conversation on tractable C(q) estimation for interactive example
   and pitch demonstration
 status: unreviewed
+tags:
+- c-q-estimation
+- strategy-ordering
+- corrected
 title: C(q) estimation — tractable strategy ordering for practical implementation
 ---
 

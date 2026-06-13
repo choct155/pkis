@@ -24936,3 +24936,6 @@
 ## [2026-06-13] committed | bridge-note
 - Committed: bn-20260613-cq-the-concept-dependency-distribution → bridge-notes/bn-20260613-cq-the-concept-dependency-distribution.md
 - IRI: pkis:bridge-note:bn-20260613-cq-the-concept-dependency-distribution
+
+## [2026-06-13] edit | edit_node
+- pkis:bridge-note:bn-20260613-cq-the-concept-dependency-distribution: fields=['tags'] sections=[]
