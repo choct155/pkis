@@ -24904,3 +24904,11 @@
 ## [2026-06-13] committed | bridge-note
 - Committed: bn-20260613-the-standard-engineer-objection-to → bridge-notes/bn-20260613-the-standard-engineer-objection-to.md
 - IRI: pkis:bridge-note:bn-20260613-the-standard-engineer-objection-to
+
+## [2026-06-13] staged | bridge-note
+- Staged: bn-20260613-the-existing-coveragepertoken-efficiency-formali (id: 0b50c287-17f5-434f-be79-2b7438367672)
+- Rationale: The existing coverage-per-token efficiency formalism captures node information content but not edge 
+
+## [2026-06-13] committed | bridge-note
+- Committed: bn-20260613-the-existing-coveragepertoken-efficiency-formali → bridge-notes/bn-20260613-the-existing-coveragepertoken-efficiency-formali.md
+- IRI: pkis:bridge-note:bn-20260613-the-existing-coveragepertoken-efficiency-formali
