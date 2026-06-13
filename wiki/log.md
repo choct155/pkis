@@ -24920,3 +24920,11 @@
 ## [2026-06-13] committed | bridge-note
 - Committed: bn-20260613-the-retrieval-efficiency-argument-has → bridge-notes/bn-20260613-the-retrieval-efficiency-argument-has.md
 - IRI: pkis:bridge-note:bn-20260613-the-retrieval-efficiency-argument-has
+
+## [2026-06-13] staged | bridge-note
+- Staged: bn-20260613-the-retrieval-efficiency-argument-has (id: 2e2ab790-0809-42c4-be35-9217eab6124d)
+- Rationale: The retrieval efficiency argument has been formalized in information-theoretic terms for concept nod
+
+## [2026-06-13] committed | bridge-note
+- Committed: bn-20260613-the-retrieval-efficiency-argument-has → bridge-notes/bn-20260613-the-retrieval-efficiency-argument-has.md
+- IRI: pkis:bridge-note:bn-20260613-the-retrieval-efficiency-argument-has

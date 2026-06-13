@@ -4,38 +4,38 @@ id: pkis:bridge-note:bn-20260613-the-retrieval-efficiency-argument-has
 integration_target: ''
 knowledge_type: bridge-note
 linked_nodes:
-- concept-typed-nodes-dominate-document-nodes-on-coverage
-- compositional-query-grounding
-- intensional-grounding
+- retrieval-inference-tradeoff
+- ontological-coverage-planning
 origin: conversation
 proposed_edge_type: extends
-rationale: 'The retrieval efficiency argument has been developed at the level of concept
-  nodes versus document nodes. But the full ontological representation has a second
-  stratum: the instance layer. A query may need not the concept of a company but a
-  specific company — Apple Inc., a specific fund, a specific filing. This is the knowledge
-  graph layer of named entities and their relationships, distinct from the conceptual
-  coverage layer. Instance coverage contributes to retrieval in a different way: concept
-  nodes answer "what is X" and "how does X relate to Y conceptually"; instance nodes
-  answer "which specific X satisfies these constraints" and "what are the properties
-  of this specific entity." Both layers contribute to query coverage C(q) but through
-  different mechanisms. The efficiency argument applies to both layers but the formalization
-  differs — instance retrieval is more like entity resolution and property lookup
-  than conceptual coverage accumulation. This layer is not yet formalized in the efficiency
-  argument and should be treated as a parallel extension alongside the edge information
-  content open problem.'
-source_context: Conversation on retrieval efficiency — ontological representation
-  beyond concept nodes
+rationale: 'The retrieval efficiency argument has been formalized in information-theoretic
+  terms for concept nodes versus document nodes. An analogous cost argument exists
+  for ontological representation broadly — not just concept nodes but the full ontological
+  stack including class definitions, property restrictions, and instance data. The
+  benefits of ontology from a cost perspective have not been formally derived in the
+  same way. Key dimensions: (1) entity resolution cost — ontological class definitions
+  reduce the inference cost of resolving ambiguous entity references; (2) property
+  constraint cost — OWL-RL property restrictions catch invalid assertions at validation
+  time rather than at query-time inference, shifting cost from repeated inference
+  to one-time schema definition; (3) instance retrieval cost — a structured instance
+  store with typed properties allows deterministic lookup where inference would otherwise
+  be required. Each of these has an amortization structure analogous to the concept
+  node argument: pay encoding cost once, recover it over query volume. Full derivation
+  is an open task — should parallel the concept node efficiency derivation once that
+  formalization is stable.'
+source_context: Conversation on retrieval efficiency — ontology cost benefits not
+  yet formalized
 status: unreviewed
-title: Instance layer as distinct graph stratum from concept layer
+title: Ontological representation cost benefits — open formal derivation parallel
+  to concept node efficiency
 ---
 
 ## Connection
-The retrieval efficiency argument has been developed at the level of concept nodes versus document nodes. But the full ontological representation has a second stratum: the instance layer. A query may need not the concept of a company but a specific company — Apple Inc., a specific fund, a specific filing. This is the knowledge graph layer of named entities and their relationships, distinct from the conceptual coverage layer. Instance coverage contributes to retrieval in a different way: concept nodes answer "what is X" and "how does X relate to Y conceptually"; instance nodes answer "which specific X satisfies these constraints" and "what are the properties of this specific entity." Both layers contribute to query coverage C(q) but through different mechanisms. The efficiency argument applies to both layers but the formalization differs — instance retrieval is more like entity resolution and property lookup than conceptual coverage accumulation. This layer is not yet formalized in the efficiency argument and should be treated as a parallel extension alongside the edge information content open problem.
+The retrieval efficiency argument has been formalized in information-theoretic terms for concept nodes versus document nodes. An analogous cost argument exists for ontological representation broadly — not just concept nodes but the full ontological stack including class definitions, property restrictions, and instance data. The benefits of ontology from a cost perspective have not been formally derived in the same way. Key dimensions: (1) entity resolution cost — ontological class definitions reduce the inference cost of resolving ambiguous entity references; (2) property constraint cost — OWL-RL property restrictions catch invalid assertions at validation time rather than at query-time inference, shifting cost from repeated inference to one-time schema definition; (3) instance retrieval cost — a structured instance store with typed properties allows deterministic lookup where inference would otherwise be required. Each of these has an amortization structure analogous to the concept node argument: pay encoding cost once, recover it over query volume. Full derivation is an open task — should parallel the concept node efficiency derivation once that formalization is stable.
 
 ## Nodes Involved
-- [[concept-typed-nodes-dominate-document-nodes-on-coverage]]
-- [[compositional-query-grounding]]
-- [[intensional-grounding]]
+- [[retrieval-inference-tradeoff]]
+- [[ontological-coverage-planning]]
 
 ## Integration Notes
 Pending review.
