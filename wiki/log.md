@@ -24896,3 +24896,11 @@
 ## [2026-06-13] committed | hypothesis
 - Committed: query-coverage-as-expected-mass-of-c-q-on-encoded-conce → hypotheses/query-coverage-as-expected-mass-of-c-q-on-encoded-conce.md
 - IRI: pkis:hypothesis:query-coverage-as-expected-mass-of-c-q-on-encoded-conce
+
+## [2026-06-13] staged | bridge-note
+- Staged: bn-20260613-the-standard-engineer-objection-to (id: b4986cbc-57a0-43f7-8de3-3a31d1f2aba2)
+- Rationale: The standard engineer objection to the document retrieval efficiency argument is that chunked embedd
+
+## [2026-06-13] committed | bridge-note
+- Committed: bn-20260613-the-standard-engineer-objection-to → bridge-notes/bn-20260613-the-standard-engineer-objection-to.md
+- IRI: pkis:bridge-note:bn-20260613-the-standard-engineer-objection-to

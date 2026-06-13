@@ -2419,6 +2419,7 @@
 ## Reading Queue
 
 ## Bridge Notes
+- [[bn-20260613-the-standard-engineer-objection-to]] — Document chunking is a partial efficiency improvement — not a solution to concept-boundary mismatch () (2026-06-13)
 - [[bn-20260613-beyond-whether-a-concept-is]] — Instantiation depth as second-order retrieval quality dimension () (2026-06-13)
 - [[bn-20260613-a-language-models-attention-mechanism]] — Graph edges as hardened attention weights — construction strategy from co-activation signal () (2026-06-13)
 - [[bn-20260607-a-recurring-failure-mode-across]] — Premature Concentration: A Cross-Domain Failure Mode () (2026-06-07)
