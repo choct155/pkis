@@ -24878,3 +24878,12 @@
 ## [2026-06-13] committed | hypothesis
 - Committed: graph-encoded-concept-dependencies-reduce-expected-infe → hypotheses/graph-encoded-concept-dependencies-reduce-expected-infe.md
 - IRI: pkis:hypothesis:graph-encoded-concept-dependencies-reduce-expected-infe
+
+## [2026-06-13] staged | hypothesis
+- Staged: concept-typed-nodes-dominate-document-nodes-on-coverage (id: 246ad1c5-a01c-4507-90b5-43d21592456c)
+- Title: Concept-Typed Nodes Dominate Document Nodes on Coverage-Per-Token Efficiency
+- Cluster: retrieval-inference-tradeoff
+
+## [2026-06-13] committed | hypothesis
+- Committed: concept-typed-nodes-dominate-document-nodes-on-coverage → hypotheses/concept-typed-nodes-dominate-document-nodes-on-coverage.md
+- IRI: pkis:hypothesis:concept-typed-nodes-dominate-document-nodes-on-coverage

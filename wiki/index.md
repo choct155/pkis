@@ -2388,6 +2388,7 @@
 - [[evaluation-infrastructure]] — Evaluation Infrastructure: domain-specific benchmark construction for ontology-augmented NED/NER and composite result quality (knowledge-representation) (2026-05-30)
 
 ## Hypotheses
+- [[concept-typed-nodes-dominate-document-nodes-on-coverage]] — Concept-Typed Nodes Dominate Document Nodes on Coverage-Per-Token Efficiency (knowledge-representation, bayesian-stats) (2026-06-13)
 - [[graph-encoded-concept-dependencies-reduce-expected-infe]] — Graph-Encoded Concept Dependencies Reduce Expected Inference Steps Required to Achieve Sufficient Query Coverage (knowledge-representation, bayesian-stats, deep-learning) (2026-06-13)
 - [[variational-graph-traversal]] — Variational Graph Traversal: Graph Path Inference as Approximate Posterior Estimation (bayesian-stats, knowledge-representation, deep-learning) (2026-06-07)
 - [[shadow-fragmentation-detection]] — Embedding Similarity Plus Structural Comparison Detects Near-Duplicate Concept Creation Before Fragmentation Compounds (deep-learning, knowledge-representation) (2026-06-01)
