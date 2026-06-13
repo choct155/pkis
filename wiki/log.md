@@ -24887,3 +24887,12 @@
 ## [2026-06-13] committed | hypothesis
 - Committed: concept-typed-nodes-dominate-document-nodes-on-coverage → hypotheses/concept-typed-nodes-dominate-document-nodes-on-coverage.md
 - IRI: pkis:hypothesis:concept-typed-nodes-dominate-document-nodes-on-coverage
+
+## [2026-06-13] staged | hypothesis
+- Staged: query-coverage-as-expected-mass-of-c-q-on-encoded-conce (id: ed29d7a7-0c8e-4106-87a8-809a2a0c8443)
+- Title: Query Coverage as Expected Mass of C(q) on Encoded Concept Nodes
+- Cluster: retrieval-inference-tradeoff
+
+## [2026-06-13] committed | hypothesis
+- Committed: query-coverage-as-expected-mass-of-c-q-on-encoded-conce → hypotheses/query-coverage-as-expected-mass-of-c-q-on-encoded-conce.md
+- IRI: pkis:hypothesis:query-coverage-as-expected-mass-of-c-q-on-encoded-conce
