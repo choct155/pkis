@@ -24939,3 +24939,11 @@
 
 ## [2026-06-13] edit | edit_node
 - pkis:bridge-note:bn-20260613-cq-the-concept-dependency-distribution: fields=['tags'] sections=[]
+
+## [2026-06-13] staged | bridge-note
+- Staged: bn-20260613-the-coveragepertoken-efficiency-argument-develop (id: 89d9a0f4-a46d-4db8-b4a5-a71d281fe7a0)
+- Rationale: The coverage-per-token efficiency argument developed for concept nodes extends structurally intact t
+
+## [2026-06-13] committed | bridge-note
+- Committed: bn-20260613-the-coveragepertoken-efficiency-argument-develop → bridge-notes/bn-20260613-the-coveragepertoken-efficiency-argument-develop.md
+- IRI: pkis:bridge-note:bn-20260613-the-coveragepertoken-efficiency-argument-develop
