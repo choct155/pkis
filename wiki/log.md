@@ -24869,3 +24869,12 @@
 ## [2026-06-13] committed | bridge-note
 - Committed: bn-20260613-beyond-whether-a-concept-is → bridge-notes/bn-20260613-beyond-whether-a-concept-is.md
 - IRI: pkis:bridge-note:bn-20260613-beyond-whether-a-concept-is
+
+## [2026-06-13] staged | hypothesis
+- Staged: graph-encoded-concept-dependencies-reduce-expected-infe (id: 88b2a9fc-7d25-4af8-b6fa-55363a249df3)
+- Title: Graph-Encoded Concept Dependencies Reduce Expected Inference Steps Required to Achieve Sufficient Query Coverage
+- Cluster: retrieval-inference-tradeoff
+
+## [2026-06-13] committed | hypothesis
+- Committed: graph-encoded-concept-dependencies-reduce-expected-infe → hypotheses/graph-encoded-concept-dependencies-reduce-expected-infe.md
+- IRI: pkis:hypothesis:graph-encoded-concept-dependencies-reduce-expected-infe
