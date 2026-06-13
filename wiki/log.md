@@ -24773,3 +24773,91 @@
 ## [2026-06-11] committed | framework
 - Committed: diffusion-sde-framework → frameworks/diffusion-sde-framework.md
 - IRI: pkis:framework:diffusion-sde-framework
+
+## [2026-06-11] edges | add_connections
+- cumulative-distribution-function —prerequisite-of→ quantile-function
+- quantile-function —uses→ cumulative-distribution-function
+- quantile-function —applies→ confidence-interval
+- quantile-function —applies→ credible-interval
+- quantile-function —prerequisite-of→ inverse-transform-sampling
+- quantile-function —instantiates→ gaussian-distribution
+- bernoulli-distribution —uses→ sigmoid-logistic-function
+- categorical-distribution —generalizes→ bernoulli-distribution
+- categorical-distribution —uses→ softmax-function
+- categorical-distribution —uses→ dirichlet-distribution
+- categorical-distribution —prerequisite-of→ multinomial-logistic-regression
+- categorical-distribution —instantiates→ exponential-family
+- softmax-function —applies→ categorical-distribution
+- softmax-function —generalizes→ sigmoid-logistic-function
+- softmax-function —uses→ log-sum-exp-trick
+- sigmoid-logistic-function —applies→ bernoulli-distribution
+- sigmoid-logistic-function —prerequisite-of→ logistic-regression
+- sigmoid-logistic-function —specializes→ softmax-function
+- sigmoid-logistic-function —instantiates→ link-function
+- sigmoid-logistic-function —instantiates→ activation-functions
+- log-sum-exp-trick —applies→ softmax-function
+- log-sum-exp-trick —applies→ cross-entropy-loss
+- log-sum-exp-trick —uses→ partition-function
+- log-sum-exp-trick —instantiates→ log-scale-computation
+- law-of-total-expectation —uses→ probability-theory
+- law-of-total-expectation —analogous-to→ law-of-total-variance
+- law-of-total-expectation —prerequisite-of→ em-algorithm
+- law-of-total-expectation —uses→ conditional-independence
+- law-of-total-expectation —uses→ sum-rule
+- law-of-total-expectation —applies→ mixture-models
+- multinomial-logistic-regression —uses→ categorical-distribution
+- contrastive-divergence —contrasts-with→ fisher-divergence
+- score-matching —uses→ fisher-divergence
+- denoising-score-matching —uses→ fisher-divergence
+- sliced-score-matching —uses→ fisher-divergence
+- langevin-mcmc-ebm —applies→ energy-based-model
+- langevin-mcmc-ebm —uses→ stein-score-function
+- langevin-mcmc-ebm —specializes→ mcmc
+- langevin-mcmc-ebm —uses→ contrastive-divergence
+- fisher-divergence —contrasts-with→ kl-divergence
+- fisher-divergence —uses→ score-matching
+- kernelized-stein-discrepancy —uses→ stein-score-function
+- kernelized-stein-discrepancy —uses→ reproducing-kernel-hilbert-space
+- kernelized-stein-discrepancy —generalizes→ score-matching
+- ebm-log-likelihood-gradient —applies→ energy-based-model
+- ebm-log-likelihood-gradient —uses→ maximum-likelihood-estimation
+- ebm-log-likelihood-gradient —uses→ monte-carlo-estimator
+- ebm-log-likelihood-gradient —prerequisite-of→ contrastive-divergence
+- ddpm —specializes→ variational-autoencoder
+- ddpm —uses→ elbo
+- ddpm —contrasts-with→ normalizing-flows
+- ddpm —uses→ diffusion-noise-schedule
+- ddpm —uses→ denoising-score-matching
+- ddpm —uses→ kl-divergence
+- score-based-generative-model —uses→ denoising-score-matching
+- score-based-generative-model —analogous-to→ ddpm
+- score-based-generative-model —uses→ diffusion-processes
+- score-based-generative-model —contrasts-with→ energy-based-model
+- diffusion-sde-framework —generalizes→ ddpm
+- diffusion-sde-framework —generalizes→ score-based-generative-model
+- diffusion-sde-framework —uses→ brownian-motion
+- diffusion-sde-framework —uses→ andersons-reverse-sde
+- diffusion-sde-framework —analogous-to→ normalizing-flows
+- diffusion-sde-framework —uses→ euler-maruyama-integration
+- andersons-reverse-sde —applies→ diffusion-sde-framework
+- andersons-reverse-sde —prerequisite-of→ score-based-generative-model
+- ddim-sampler —extends→ ddpm
+- ddim-sampler —instantiates→ diffusion-sde-framework
+- flow-matching —generalizes→ diffusion-sde-framework
+- progressive-distillation-diffusion —applies→ ddpm
+- d3pm —analogous-to→ ddpm
+- denoising-score-matching —prerequisite-of→ score-based-generative-model
+- denoising-score-matching —prerequisite-of→ ddpm
+- classifier-free-guidance —extends→ ddpm
+- classifier-guidance —extends→ ddpm
+- euler-maruyama-integration —applies→ diffusion-sde-framework
+- diffusion-noise-schedule —prerequisite-of→ ddpm
+- diffusion-noise-schedule —prerequisite-of→ diffusion-sde-framework
+
+## [2026-06-13] staged | bridge-note
+- Staged: bn-20260613-a-language-models-attention-mechanism (id: 76b1ed2f-aa57-40aa-8763-109d389108de)
+- Rationale: A language model's attention mechanism computes dynamic query-key similarity at inference time for e
+
+## [2026-06-13] committed | bridge-note
+- Committed: bn-20260613-a-language-models-attention-mechanism → bridge-notes/bn-20260613-a-language-models-attention-mechanism.md
+- IRI: pkis:bridge-note:bn-20260613-a-language-models-attention-mechanism

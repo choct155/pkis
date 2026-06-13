@@ -2416,6 +2416,7 @@
 ## Reading Queue
 
 ## Bridge Notes
+- [[bn-20260613-a-language-models-attention-mechanism]] — Graph edges as hardened attention weights — construction strategy from co-activation signal () (2026-06-13)
 - [[bn-20260607-a-recurring-failure-mode-across]] — Premature Concentration: A Cross-Domain Failure Mode () (2026-06-07)
 - [[bn-20260607-every-inference-algorithm-targeting-a]] — Epistemological Anchors: What Keeps Each Inference Algorithm on Track () (2026-06-07)
 - [[bn-20260605-mean-field-approximation-achieves-tractability]] — Attention as deliberate recovery of correlations that mean field discards () (2026-06-05)
