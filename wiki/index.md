@@ -2419,6 +2419,7 @@
 ## Reading Queue
 
 ## Bridge Notes
+- [[bn-20260613-cq-the-concept-dependency-distribution]] — C(q) estimation — tractable strategy ordering for practical implementation () (2026-06-13)
 - [[bn-20260613-the-retrieval-efficiency-argument-has]] — Ontological representation cost benefits — open formal derivation parallel to concept node efficiency () (2026-06-13)
 - [[bn-20260613-the-retrieval-efficiency-argument-has]] — Instance layer as distinct graph stratum from concept layer () (2026-06-13)
 - [[bn-20260613-the-existing-coveragepertoken-efficiency-formali]] — Edge information content — directionality and typed predicates as open formalization problem () (2026-06-13)

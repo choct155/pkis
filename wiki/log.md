@@ -24928,3 +24928,11 @@
 ## [2026-06-13] committed | bridge-note
 - Committed: bn-20260613-the-retrieval-efficiency-argument-has → bridge-notes/bn-20260613-the-retrieval-efficiency-argument-has.md
 - IRI: pkis:bridge-note:bn-20260613-the-retrieval-efficiency-argument-has
+
+## [2026-06-13] staged | bridge-note
+- Staged: bn-20260613-cq-the-concept-dependency-distribution (id: 7ec2247b-6613-4509-8b33-1e32692d724c)
+- Rationale: C(q) — the concept dependency distribution induced by query q — is not directly computable but can b
+
+## [2026-06-13] committed | bridge-note
+- Committed: bn-20260613-cq-the-concept-dependency-distribution → bridge-notes/bn-20260613-cq-the-concept-dependency-distribution.md
+- IRI: pkis:bridge-note:bn-20260613-cq-the-concept-dependency-distribution
