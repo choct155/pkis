@@ -24912,3 +24912,11 @@
 ## [2026-06-13] committed | bridge-note
 - Committed: bn-20260613-the-existing-coveragepertoken-efficiency-formali → bridge-notes/bn-20260613-the-existing-coveragepertoken-efficiency-formali.md
 - IRI: pkis:bridge-note:bn-20260613-the-existing-coveragepertoken-efficiency-formali
+
+## [2026-06-13] staged | bridge-note
+- Staged: bn-20260613-the-retrieval-efficiency-argument-has (id: a603a3ce-a742-4869-be82-e87d3c3e9766)
+- Rationale: The retrieval efficiency argument has been developed at the level of concept nodes versus document n
+
+## [2026-06-13] committed | bridge-note
+- Committed: bn-20260613-the-retrieval-efficiency-argument-has → bridge-notes/bn-20260613-the-retrieval-efficiency-argument-has.md
+- IRI: pkis:bridge-note:bn-20260613-the-retrieval-efficiency-argument-has
