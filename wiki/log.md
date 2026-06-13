@@ -24861,3 +24861,11 @@
 ## [2026-06-13] committed | bridge-note
 - Committed: bn-20260613-a-language-models-attention-mechanism → bridge-notes/bn-20260613-a-language-models-attention-mechanism.md
 - IRI: pkis:bridge-note:bn-20260613-a-language-models-attention-mechanism
+
+## [2026-06-13] staged | bridge-note
+- Staged: bn-20260613-beyond-whether-a-concept-is (id: 38b7a9c9-8858-40f0-8cd0-d8bac6ddaf83)
+- Rationale: Beyond whether a concept is referenced in retrieved content (coverage, first-order), there is a seco
+
+## [2026-06-13] committed | bridge-note
+- Committed: bn-20260613-beyond-whether-a-concept-is → bridge-notes/bn-20260613-beyond-whether-a-concept-is.md
+- IRI: pkis:bridge-note:bn-20260613-beyond-whether-a-concept-is
