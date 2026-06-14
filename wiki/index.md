@@ -1,6 +1,7 @@
 # PKIS Wiki Index
 
 ## Sources
+- [[gruninger-methodology-1995]] — Methodology for the Design and Evaluation of Ontologies () (2026-06-14)
 - [[ganter-formal-1999]] — Formal Concept Analysis: Mathematical Foundations () (2026-06-14)
 - [[yang-hotpotqa-2018]] — HotpotQA: A Dataset for Diverse, Explainable Multi-hop Question Answering () (2026-06-07)
 - [[ho-constructing-2020]] — Constructing A Multi-hop QA Dataset for Comprehensive Evaluation of Reasoning Steps (2WikiMultiHopQA) () (2026-06-07)

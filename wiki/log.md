@@ -25011,3 +25011,12 @@
 ## [2026-06-14] committed | source
 - Committed: ganter-formal-1999 → sources/ganter-formal-1999.md
 - IRI: pkis:source:ganter-formal-1999
+
+## [2026-06-14] staged | source-stub
+- Staged: gruninger-methodology-1995 (id: ec7c1d57-3136-43d1-a60a-6c21dde1bb34)
+- Title: Methodology for the Design and Evaluation of Ontologies
+- Enrichment: minimal
+
+## [2026-06-14] committed | source
+- Committed: gruninger-methodology-1995 → sources/gruninger-methodology-1995.md
+- IRI: pkis:source:gruninger-methodology-1995
