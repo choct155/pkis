@@ -1,6 +1,7 @@
 # PKIS Wiki Index
 
 ## Sources
+- [[shimizu-modular-2023]] — Modular Ontology Modeling () (2026-06-14)
 - [[gruninger-methodology-1995]] — Methodology for the Design and Evaluation of Ontologies () (2026-06-14)
 - [[ganter-formal-1999]] — Formal Concept Analysis: Mathematical Foundations () (2026-06-14)
 - [[yang-hotpotqa-2018]] — HotpotQA: A Dataset for Diverse, Explainable Multi-hop Question Answering () (2026-06-07)

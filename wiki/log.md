@@ -25020,3 +25020,12 @@
 ## [2026-06-14] committed | source
 - Committed: gruninger-methodology-1995 → sources/gruninger-methodology-1995.md
 - IRI: pkis:source:gruninger-methodology-1995
+
+## [2026-06-14] staged | source-stub
+- Staged: shimizu-modular-2023 (id: 53faf121-13e3-48fe-a051-5d4aff0e6843)
+- Title: Modular Ontology Modeling
+- Enrichment: minimal
+
+## [2026-06-14] committed | source
+- Committed: shimizu-modular-2023 → sources/shimizu-modular-2023.md
+- IRI: pkis:source:shimizu-modular-2023
