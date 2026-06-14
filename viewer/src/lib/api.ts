@@ -233,28 +233,6 @@ export async function uploadDocument(
   return post('/upload-document', { filename, content_b64, slug, push_to_readwise });
 }
 
-// ── Save URL ──────────────────────────────────────────────────────────────
-export async function saveUrl(
-  url: string,
-  slug?: string,
-  push_to_readwise = true
-): Promise<unknown> {
-  return post('/save-url', { url, slug, push_to_readwise });
-}
-
-// ── Rebuild graph ─────────────────────────────────────────────────────────
-export async function rebuildGraph(): Promise<unknown> {
-  return post('/rebuild-graph');
-}
-
-// ── Detect concepts ───────────────────────────────────────────────────────
-export async function detectConcepts(
-  text: string,
-  threshold = 0.6
-): Promise<unknown> {
-  return post('/detect-concepts', { text, threshold });
-}
-
 // ── Proactive discovery ───────────────────────────────────────────────────
 export async function getDiscovery(
   status: 'pending' | 'accepted' | 'dismissed' = 'pending',
