@@ -25002,3 +25002,12 @@
 ## [2026-06-14] committed | bridge-note
 - Committed: bn-20260614-both-the-amortization-argument-and → bridge-notes/bn-20260614-both-the-amortization-argument-and.md
 - IRI: pkis:bridge-note:bn-20260614-both-the-amortization-argument-and
+
+## [2026-06-14] staged | source-stub
+- Staged: ganter-formal-1999 (id: c939fb87-8969-4938-a37b-c3a60e99d149)
+- Title: Formal Concept Analysis: Mathematical Foundations
+- Enrichment: minimal
+
+## [2026-06-14] committed | source
+- Committed: ganter-formal-1999 → sources/ganter-formal-1999.md
+- IRI: pkis:source:ganter-formal-1999
