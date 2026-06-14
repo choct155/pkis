@@ -1,6 +1,7 @@
 # PKIS Wiki Index
 
 ## Sources
+- [[giglou-llms4ol-2024]] — LLMs4OL 2024 Overview: The 1st Large Language Models for Ontology Learning Challenge () (2026-06-14)
 - [[shimizu-modular-2023]] — Modular Ontology Modeling () (2026-06-14)
 - [[gruninger-methodology-1995]] — Methodology for the Design and Evaluation of Ontologies () (2026-06-14)
 - [[ganter-formal-1999]] — Formal Concept Analysis: Mathematical Foundations () (2026-06-14)

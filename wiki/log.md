@@ -25029,3 +25029,12 @@
 ## [2026-06-14] committed | source
 - Committed: shimizu-modular-2023 → sources/shimizu-modular-2023.md
 - IRI: pkis:source:shimizu-modular-2023
+
+## [2026-06-14] staged | source-stub
+- Staged: giglou-llms4ol-2024 (id: 3b3fab80-c4f5-449f-b860-bb8043125f58)
+- Title: LLMs4OL 2024 Overview: The 1st Large Language Models for Ontology Learning Challenge
+- Enrichment: full
+
+## [2026-06-14] committed | source
+- Committed: giglou-llms4ol-2024 → sources/giglou-llms4ol-2024.md
+- IRI: pkis:source:giglou-llms4ol-2024
