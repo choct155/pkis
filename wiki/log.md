@@ -24947,3 +24947,18 @@
 ## [2026-06-13] committed | bridge-note
 - Committed: bn-20260613-the-coveragepertoken-efficiency-argument-develop → bridge-notes/bn-20260613-the-coveragepertoken-efficiency-argument-develop.md
 - IRI: pkis:bridge-note:bn-20260613-the-coveragepertoken-efficiency-argument-develop
+
+## [2026-06-14] edges | add_connections
+- pkis:source:cote-visual-intro-information-theory-2022 —illustrated-by→ entropy
+- pkis:source:cote-visual-intro-information-theory-2022 —illustrated-by→ mutual-information
+- pkis:source:cote-visual-intro-information-theory-2022 —illustrated-by→ conditional-entropy
+- pkis:source:cote-visual-intro-information-theory-2022 —illustrated-by→ chain-rule-for-entropy
+- pkis:source:cote-visual-intro-information-theory-2022 —illustrated-by→ joint-entropy
+
+## [2026-06-14] staged | bridge-note
+- Staged: bn-20260614-edge-traversal-frequency-and-node (id: 0a7d6d17-e0cd-41f7-bc57-6d53549262ce)
+- Rationale: Edge traversal frequency and node contribution to answer quality are distinct quantities that requir
+
+## [2026-06-14] committed | bridge-note
+- Committed: bn-20260614-edge-traversal-frequency-and-node → bridge-notes/bn-20260614-edge-traversal-frequency-and-node.md
+- IRI: pkis:bridge-note:bn-20260614-edge-traversal-frequency-and-node
