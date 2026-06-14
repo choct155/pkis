@@ -94,6 +94,26 @@ the whole app. Low effort, real protection.
 `WRITE_TOOLS`. Align the description (and confirm the tier).
 **Why:** minor surface-hygiene; cheap to fix while B5 touches the same area.
 
+### B10 — Dedupe reading priority: queue captures, frontier prioritizes  ❓⬜  ·  M  ·  after IKS ok
+**What:** the flat reading queue's coarse `high/normal` tag duplicates the
+continuous priority the concept frontier already computes. Keep the queue as a
+pre-ingestion **capture inbox** (the frontier can't see un-ingested sources), but
+demote the manual tag to a capture-time hint and derive queued-item ordering from
+the frontier + reading graph once a source is ingested.
+**Why:** two parallel priority signals that can disagree — the same de-dup smell
+as the dual write surfaces. **Product decision** — logged to `docs/IDEAS.md`
+(2026-06-14); needs your call before implementing.
+
+### B11 — Close the loud-push race window (operational)  ⬜  ·  S  ·  soon
+**What:** the server pulls `origin/main` every 15 min (cron) + restarts on change.
+After an external push to `main` (me, CI) there's a ≤15-min window where a
+production write commits on the server's stale HEAD, fails to push, and now —
+post loud-push — **raises** instead of silently diverging. Mitigate by making the
+write path `pull --rebase` before push (auto-reconcile the happy path), and/or
+shortening the sync cron.
+**Why:** the loud-raise design (correctly) stopped hiding divergence, but exposed
+this narrow availability edge. Audit §7 Seam C / Seam D.
+
 ---
 
 ## C. Decisions needed from you

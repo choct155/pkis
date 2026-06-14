@@ -18,6 +18,15 @@ Format:
 
 ---
 
+## Reading queue vs. concept frontier — dedupe the priority signal
+**Date logged:** 2026-06-14
+**Source:** Claude Code: main (code-review engagement)
+**Idea:** The flat reading queue (`queue.md`, coarse high/normal tags via add_to_queue / get_reading_queue) and `get_concept_frontier` are partly redundant — but only partly. They rank *different objects*: the queue ranks **sources you flagged to read**; the frontier ranks **concepts the graph says are under-developed** (a continuous priority_score). The frontier can only prioritize what's already modeled, so the queue is irreplaceable as the **pre-ingestion capture inbox** (add_to_queue even accepts a free-text reference that isn't a node). The genuinely redundant piece is the manual `high/normal` tag — a coarse, hand-maintained duplicate of the frontier's computed score. Proposal: keep the queue as a capture inbox; demote the priority tag to a capture-time hint that only matters *before* ingestion; once a queued source is ingested, derive its ordering from the frontier + reading graph (a queued paper floats up by how much it advances a high-priority frontier concept). One prioritizer (frontier), one capture surface (queue).
+**Relation to existing system:** Touches the reading-priority surfaces — queue.md, tool_add_to_queue / tool_get_reading_queue, the viewer queue/priority views, tool_get_concept_frontier, tool_get_reading_graph (scope=queue_only), the Librarian's queue-drain and the Auditor's queue-hygiene check. A de-duplication in the spirit of consolidating the dual write surfaces and the copy-pasted git logic.
+**Open questions:** Is the capture-time tag worth keeping at all, or fully derive from the frontier? How to order pre-ingestion captures with no graph signal yet? Does folding queue ordering into the frontier complicate the viewer's queue view?
+**Status:** open
+
+
 ## Group viewer nav as it grows (8+ items crowd the mobile bottom-nav)
 **Date logged:** 2026-06-12
 **Source:** Claude Code: main
