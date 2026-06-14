@@ -24962,3 +24962,12 @@
 ## [2026-06-14] committed | bridge-note
 - Committed: bn-20260614-edge-traversal-frequency-and-node → bridge-notes/bn-20260614-edge-traversal-frequency-and-node.md
 - IRI: pkis:bridge-note:bn-20260614-edge-traversal-frequency-and-node
+
+## [2026-06-14] staged | node-stub (framework)
+- Staged: continuous-hardening-mixture-framework (id: c5411bf6-b4fe-4c3a-b86b-89f3ad9a3ef4)
+- Title: Continuous Hardening Mixture Framework
+- needs_canonical_source: True
+
+## [2026-06-14] committed | framework
+- Committed: continuous-hardening-mixture-framework → frameworks/continuous-hardening-mixture-framework.md
+- IRI: pkis:framework:continuous-hardening-mixture-framework
