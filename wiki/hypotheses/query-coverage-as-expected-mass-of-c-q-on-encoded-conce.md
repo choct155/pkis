@@ -11,6 +11,8 @@ domain:
 evidence_nodes: []
 id: pkis:hypothesis:query-coverage-as-expected-mass-of-c-q-on-encoded-conce
 iks_link: null
+illustrated-by:
+- gruninger-methodology-1995
 knowledge_type: hypothesis
 origin: research-program
 research_program_cluster: retrieval-inference-tradeoff
@@ -52,4 +54,5 @@ Qualitative: the PE multiple example demonstrates that C(q) for even a simple fi
 How do we estimate P(c|q) in practice — is this a learned distribution or derived from semantic distance? What is the right sufficiency threshold ε for organizational QA tasks? How does Coverage(q, G) degrade gracefully when G has gaps — does the model recover the missing mass from world knowledge reliably?
 
 ## Connections
+- [[gruninger-methodology-1995]] — illustrated-by: C(q) distribution is the probabilistic generalization of the competency question set — Gruninger & Fox provides formal grounding.
 - [[retrieval-inference-tradeoff]] — belongs-to: constituent hypothesis of the retrieval-inference-tradeoff cluster

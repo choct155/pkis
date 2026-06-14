@@ -15,6 +15,9 @@ domain:
 - knowledge-representation
 - bayesian-stats
 id: pkis:framework:continuous-hardening-mixture-framework
+illustrated-by:
+- shimizu-modular-2023
+- giglou-llms4ol-2024
 knowledge_type: framework
 maturity: evolving
 needs_canonical_source: true
@@ -78,6 +81,8 @@ Applies wherever a system transitions from inference-based to structure-based op
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[giglou-llms4ol-2024]] — illustrated-by: Empirically confirms LLM boundary decision failure rates — supports ontologist-as-boundary-arbitrator positioning.
+- [[shimizu-modular-2023]] — illustrated-by: Inseparability criterion provides formal self-containment test for nodes — prerequisite for meaningful hardening decisions.
 [To be populated during integration]
 
 ## Needs Canonical Source

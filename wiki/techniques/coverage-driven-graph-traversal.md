@@ -16,6 +16,8 @@ domain:
 - knowledge-representation
 - bayesian-stats
 id: pkis:technique:coverage-driven-graph-traversal
+illustrated-by:
+- gruninger-methodology-1995
 knowledge_type: technique
 linked_nodes: []
 maturity: evolving
@@ -98,6 +100,7 @@ The ranking function R is itself an amortized quantity. At construction time, en
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[gruninger-methodology-1995]] — illustrated-by: Competency questions define traversal termination criterion: coverage of all CQs maps onto the sufficiency threshold epsilon.
 [To be populated during integration]
 
 ## Needs Canonical Source

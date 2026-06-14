@@ -1,6 +1,9 @@
 ---
 date_created: '2026-06-14'
 id: pkis:bridge-note:bn-20260614-both-the-amortization-argument-and
+illustrated-by:
+- ganter-formal-1999
+- giglou-llms4ol-2024
 integration_target: ''
 knowledge_type: bridge-note
 linked_nodes:
@@ -81,3 +84,7 @@ The separation between Candidate B (edge reliability scoring via Reliability(τ)
 
 ## Integration Notes
 Pending review.
+
+## Connections
+- [[giglou-llms4ol-2024]] — illustrated-by: LLMs4OL boundary task failure motivates the instantiation depth precondition — shallow LLM-generated nodes are the failure mode the bridge note describes.
+- [[ganter-formal-1999]] — illustrated-by: FCA closure operators provide the formal criterion for concept node completeness — the missing precondition the bridge note identifies.
