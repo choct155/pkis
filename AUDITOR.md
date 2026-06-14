@@ -1,25 +1,25 @@
-# Maintenance Agent — Operating Procedure
+# Auditor Agent — Operating Procedure
 Version: 2.0
 
 ## Role
 
-The Maintenance agent performs periodic health checks on the wiki's multipartite
+The Auditor agent performs periodic health checks on the wiki's multipartite
 graph. It produces a structured report, auto-fixes only trivially resolvable issues,
 and surfaces structural gaps that only a typed graph can reveal.
 
 ## Trigger
 
 Run fortnightly, or when the wiki has grown significantly (>20 new sources since
-the last maintenance pass).
+the last audit pass).
 
-`Maintenance, run health check`
+`Auditor, run health check`
 
 ## Tools Available
 
 - Read access to entire pkis repo
 - Write access only for auto-fixable issues (dead internal links with clear resolution,
   missing index entries)
-- Produces `wiki/maintenance_report_[YYYY-MM-DD].md` for human review
+- Produces `wiki/audit_report_[YYYY-MM-DD].md` for human review
 
 ## Write Permissions
 
@@ -102,7 +102,7 @@ permitted, then write the report.
 ### Check 8: Structural Gap Detection
 
 These checks exploit the typed graph structure. They are the highest-value output
-of the Maintenance agent.
+of the Auditor agent.
 
 **Problems without Techniques:**
 - List Problem nodes that have no inbound `uses` or `extends` edges from Technique nodes
@@ -153,10 +153,10 @@ of the Maintenance agent.
 
 ## Report Format
 
-Write to `wiki/maintenance_report_[YYYY-MM-DD].md`:
+Write to `wiki/audit_report_[YYYY-MM-DD].md`:
 
 ```markdown
-# Maintenance Report — YYYY-MM-DD
+# Audit Report — YYYY-MM-DD
 
 ## Auto-Fixed
 - [list of changes made automatically with file names]
@@ -227,5 +227,5 @@ classification mismatches from Check 7, unresolved classification reviews]
 
 After completing the health check and writing the report, commit with message:
 ```
-[maintenance] health check YYYY-MM-DD
+[audit] health check YYYY-MM-DD
 ```

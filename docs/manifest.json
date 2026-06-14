@@ -17,7 +17,8 @@
 
     { "key": "librarian",    "title": "Librarian",           "category": "Agent roles", "path": "LIBRARIAN.md" },
     { "key": "synthesizer",  "title": "Synthesizer",         "category": "Agent roles", "path": "SYNTHESIZER.md" },
-    { "key": "maintenance",  "title": "Maintenance",         "category": "Agent roles", "path": "MAINTENANCE.md" },
-    { "key": "hygienist",    "title": "Hygienist",           "category": "Agent roles", "path": "HYGIENIST.md" }
+    { "key": "auditor",      "title": "Auditor",             "category": "Agent roles", "path": "AUDITOR.md" },
+    { "key": "hygienist",    "title": "Hygienist",           "category": "Agent roles", "path": "HYGIENIST.md" },
+    { "key": "architect",    "title": "Architect",           "category": "Agent roles", "path": "ARCHITECT.md" }
   ]
 }

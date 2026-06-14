@@ -123,7 +123,7 @@ tags: [linear-algebra, probability-theory, measure-theory, graph-theory,
 ```
 
 Tags are **open vocabulary** — agents may introduce new tags freely. But the Librarian
-must check existing tags across the wiki before coining a new one, and the Maintenance
+must check existing tags across the wiki before coining a new one, and the Auditor
 agent flags near-duplicates.
 
 **Tags vs. nodes:** Tags are navigational markers. If a tag keeps appearing on many
@@ -359,7 +359,7 @@ This registry enables string-based concept resolution without LLM involvement.
 
 **Schema violation:** Any node missing an `id` field in frontmatter is a
 schema violation. The Librarian must assign an IRI at node creation time.
-The Maintenance agent flags any node without `id`.
+The Auditor agent flags any node without `id`.
 
 ---
 
@@ -759,7 +759,7 @@ status: active | dormant | resolved | superseded
 origin: research-program | organic | iks-derived
 hypotheses: []              # list of hypothesis node slugs — many-to-many
 cross_cluster_dependencies: []  # slugs of clusters this one depends on
-frontier_hypotheses: []     # computed by Maintenance agent — hypotheses addressable given current PKIS coverage
+frontier_hypotheses: []     # computed by Auditor agent — hypotheses addressable given current PKIS coverage
 ---
 ```
 

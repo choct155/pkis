@@ -81,14 +81,15 @@ deliberate human action.
 
 ## The agents
 
-Invoke a maintenance agent in a Claude Code session by name:
+Invoke an agent in a Claude Code session by name:
 
 | Agent | Invoke with | Does |
 |---|---|---|
 | **Librarian** | `Librarian, ingest [source]` | Ingests sources → structured, sourced nodes |
 | **Synthesizer** | `Synthesizer, work on [concept/domain]` | Deepens nodes, draws cross-domain edges |
-| **Maintenance** | `Maintenance, run health check` | Link integrity, orphan detection, health |
+| **Auditor** | `Auditor, run health check` | Link integrity, orphan detection, structural gaps |
 | **Hygienist** | (see `HYGIENIST.md`) | Convention/cleanliness passes |
+| **Architect** | `Architect, refresh the overview` | Keeps architecture docs + product overview true to the code |
 
 ## The weekend-integration loop
 

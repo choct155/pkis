@@ -11,7 +11,8 @@ pkis/
 ├── SCHEMA.md          # Global conventions (read this first)
 ├── LIBRARIAN.md       # Librarian agent operating procedure
 ├── SYNTHESIZER.md     # Synthesizer agent operating procedure
-├── MAINTENANCE.md     # Maintenance agent operating procedure
+├── AUDITOR.md         # Auditor agent operating procedure (graph-integrity audits)
+├── ARCHITECT.md       # Architect agent operating procedure (system architecture docs)
 │
 ├── raw/
 │   ├── clippings/     # Markdown from Obsidian Web Clipper
@@ -32,7 +33,8 @@ pkis/
 |-------|------|---------|
 | Librarian | Ingests source materials, creates structured entries | `Librarian, ingest [source]` |
 | Synthesizer | Deepens concept notes, draws cross-domain connections | `Synthesizer, work on [concept/domain]` |
-| Maintenance | Periodic health checks, link integrity, orphan detection | `Maintenance, run health check` |
+| Auditor | Periodic graph-integrity audits: link integrity, orphan detection, structural gaps | `Auditor, run health check` |
+| Architect | Keeps system-architecture docs + product overview true to the code | `Architect, refresh the overview` |
 
 ## Domains
 

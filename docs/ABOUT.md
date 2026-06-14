@@ -33,7 +33,7 @@ by **sources**, and every change is **version-controlled markdown** in git.
   device (phone included) lands in an inbox; a deliberate integration pass promotes
   raw captures into structured, sourced, connected nodes.
 - **Agent-maintained, human-directed.** Specialized agents (Librarian, Synthesizer,
-  Maintenance, Hygienist) do the mechanical work — ingest, enrichment, link
+  Auditor, Hygienist) do the mechanical work — ingest, enrichment, link
   integrity, orphan detection. The human sets direction and makes the judgment calls.
 - **Sourced by default.** A node created before its canonical source exists is
   flagged `needs_canonical_source`; the system actively suggests references.
