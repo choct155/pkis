@@ -1163,6 +1163,7 @@
 - [[market-vs-hierarchy]] — Coase/Williamson: transactions governed by price signals (markets) vs. managerial direction (firms) (corporate-finance) (2026-05-20)
 
 ## Techniques
+- [[coverage-driven-graph-traversal]] — Coverage-Driven Graph Traversal with Pluggable Ranking (knowledge-representation, bayesian-stats) (2026-06-14)
 - [[langevin-mcmc-ebm]] — Langevin MCMC for EBMs (machine-learning, statistics, probabilistic-modeling) (2026-06-11)
 - [[log-sum-exp-trick]] — Log-Sum-Exp (LSE) Trick (numerical-methods, machine-learning, probability-theory) (2026-06-11)
 - [[g-computation]] — G-Computation (Outcome Model Adjustment) (causal-inference, statistics, epidemiology) (2026-06-11)

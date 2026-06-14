@@ -24971,3 +24971,12 @@
 ## [2026-06-14] committed | framework
 - Committed: continuous-hardening-mixture-framework → frameworks/continuous-hardening-mixture-framework.md
 - IRI: pkis:framework:continuous-hardening-mixture-framework
+
+## [2026-06-14] staged | node-stub (technique)
+- Staged: coverage-driven-graph-traversal (id: 19f4a298-dfd5-413d-905b-c31649fcdac1)
+- Title: Coverage-Driven Graph Traversal with Pluggable Ranking
+- needs_canonical_source: True
+
+## [2026-06-14] committed | technique
+- Committed: coverage-driven-graph-traversal → techniques/coverage-driven-graph-traversal.md
+- IRI: pkis:technique:coverage-driven-graph-traversal
