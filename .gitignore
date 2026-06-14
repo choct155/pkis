@@ -211,6 +211,10 @@ cython_debug/
 # Marimo
 marimo/_static/
 marimo/_lsp/
+
+# PKIS book-ingest configs — per-book chapter/page setup consumed by
+# tools/book_setup.py; regenerated per book, not source of truth.
+/*_config.json
 __marimo__/
 
 # Claude Code local session files
