@@ -24983,3 +24983,6 @@
 
 ## [2026-06-14] edit | edit_node
 - pkis:bridge-note:bn-20260613-the-existing-coveragepertoken-efficiency-formali: fields=['title', 'status'] sections=[]
+
+## [2026-06-14] edit | edit_node
+- pkis:bridge-note:bn-20260613-cq-the-concept-dependency-distribution: fields=['rationale'] sections=[]
