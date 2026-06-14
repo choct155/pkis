@@ -2073,6 +2073,7 @@
 - [[government-debt-valuation-equation]] — FTPL: price level determined by ratio of nominal debt to expected present value of future surpluses (macroeconomics) (2026-05-20)
 
 ## Frameworks
+- [[ontologist-positioning-hardening-stack]] — Ontologist Positioning in the Continuous Hardening Stack (knowledge-representation) (2026-06-14)
 - [[continuous-hardening-mixture-framework]] — Continuous Hardening Mixture Framework (knowledge-representation, bayesian-stats) (2026-06-14)
 - [[diffusion-sde-framework]] — Stochastic Differential Equation (SDE) Framework for Diffusion (machine-learning, stochastic-processes, generative-models) (2026-06-11)
 - [[ddpm]] — Denoising Diffusion Probabilistic Model (DDPM) (machine-learning, generative-models, probabilistic-models) (2026-06-11)

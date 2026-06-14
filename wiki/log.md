@@ -25038,3 +25038,22 @@
 ## [2026-06-14] committed | source
 - Committed: giglou-llms4ol-2024 → sources/giglou-llms4ol-2024.md
 - IRI: pkis:source:giglou-llms4ol-2024
+
+## [2026-06-14] edges | add_connections
+
+## [2026-06-14] edges | add_connections
+- pkis:bridge-note:bn-20260614-both-the-amortization-argument-and —illustrated-by→ ganter-formal-1999
+- pkis:technique:coverage-driven-graph-traversal —illustrated-by→ gruninger-methodology-1995
+- pkis:hypothesis:query-coverage-as-expected-mass-of-c-q-on-encoded-conce —illustrated-by→ gruninger-methodology-1995
+- pkis:framework:continuous-hardening-mixture-framework —illustrated-by→ shimizu-modular-2023
+- pkis:framework:continuous-hardening-mixture-framework —illustrated-by→ giglou-llms4ol-2024
+- pkis:bridge-note:bn-20260614-both-the-amortization-argument-and —illustrated-by→ giglou-llms4ol-2024
+
+## [2026-06-14] staged | node-stub (framework)
+- Staged: ontologist-positioning-hardening-stack (id: 23d2b3ed-2994-4e14-9421-54976a1f18eb)
+- Title: Ontologist Positioning in the Continuous Hardening Stack
+- needs_canonical_source: True
+
+## [2026-06-14] committed | framework
+- Committed: ontologist-positioning-hardening-stack → frameworks/ontologist-positioning-hardening-stack.md
+- IRI: pkis:framework:ontologist-positioning-hardening-stack
