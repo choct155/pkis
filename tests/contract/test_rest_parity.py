@@ -9,6 +9,7 @@ auth-coverage invariant statically (no server needed) and stub the behavioral
 parity check.
 """
 
+import json
 import re
 
 import pytest
@@ -87,15 +88,36 @@ def test_write_gate_inventory_is_frozen(appmod):
     )
 
 
+def _shape(v):
+    """Structural fingerprint: type + (for dicts) sorted keys + (for lists) the
+    shape of the first element. Enough to catch REST/MCP surface divergence
+    without asserting exact values."""
+    if isinstance(v, list):
+        return ("list", _shape(v[0]) if v else None)
+    if isinstance(v, dict):
+        return ("dict", tuple(sorted(v.keys())))
+    return type(v).__name__
+
+
 @pytest.mark.contract
-@pytest.mark.parametrize("rest_path,mcp_tool", [
-    ("/pkis-api/search", "search_wiki"),
-    ("/pkis-api/node", "get_node"),
-    ("/pkis-api/related", "get_related"),
-    ("/pkis-api/frontier", "get_concept_frontier"),
+@pytest.mark.parametrize("rest_path,mcp_tool,payload,mcp_extract", [
+    ("/pkis-api/search", "search_wiki", {"query": "entropy"}, lambda m: m),
+    ("/pkis-api/node", "get_node", {"iri": "pkis:concept:entropy"}, lambda m: m),
+    ("/pkis-api/related", "get_related", {"iri": "pkis:concept:entropy"}, lambda m: m),
+    # frontier: the REST route INTENTIONALLY unwraps to just the results list
+    # (params are MCP-only — app.py:5839). Encode that asymmetry explicitly so the
+    # guard still catches *unintended* drift while allowing the documented one.
+    ("/pkis-api/frontier", "get_concept_frontier", {}, lambda m: m["results"]),
 ])
-def test_rest_and_mcp_return_same_shape(client, rest_path, mcp_tool):
-    """STUB: for a logically identical call, the REST route and the MCP tool must
-    return the same result shape (they call the same tool_* function; this guards
-    against the two surfaces diverging in argument handling or wrapping)."""
-    pytest.skip("Phase-2 stub — implement REST vs MCP shape-equality assertions")
+def test_rest_and_mcp_return_same_shape(client, rest_path, mcp_tool, payload, mcp_extract):
+    """REST routes and their MCP twins call the same tool_* function. For most the
+    response is identical; where a REST route deliberately reshapes for the viewer,
+    the extractor encodes that documented relationship so the guard still catches
+    unintended divergence."""
+    rest = client.post(rest_path, json=payload).get_json()
+    mcp_raw = client.post("/mcp", json={
+        "jsonrpc": "2.0", "id": 1, "method": "tools/call",
+        "params": {"name": mcp_tool, "arguments": payload},
+    }).get_json()
+    mcp = mcp_extract(json.loads(mcp_raw["result"]["content"][0]["text"]))
+    assert _shape(rest) == _shape(mcp), f"{rest_path} vs {mcp_tool}: {_shape(rest)} != {_shape(mcp)}"

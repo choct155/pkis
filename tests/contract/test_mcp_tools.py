@@ -174,11 +174,47 @@ def test_get_sourceless_stubs_returns_flagged_node(client):
 # One test per advertised read + write tool, asserting canonical input → shape.
 # --------------------------------------------------------------------------- #
 
-ADVERTISED_READ = [
-    "search_wiki", "get_node", "detect_concepts", "get_related",
-    "get_reading_queue", "get_concept_frontier", "get_reading_graph",
-    "get_staged_nodes", "get_transcript_queue", "list_documents",
+# ── Read-tool contracts: canonical input → documented shape (IMPLEMENTED) ──
+
+def _has(d, *keys):
+    return isinstance(d, dict) and all(k in d for k in keys)
+
+
+# (tool, arguments, validator) against the session fixture wiki (4 seeded nodes).
+READ_CONTRACT_CASES = [
+    ("search_wiki", {"query": "entropy"},
+     lambda r: isinstance(r, list) and (not r or _has(r[0], "iri", "canonical_title", "score"))),
+    ("get_node", {"iri": "pkis:concept:entropy"},
+     lambda r: _has(r, "iri") and r["iri"] == "pkis:concept:entropy"),
+    ("detect_concepts", {"text": "Bayesian inference updates beliefs with evidence."},
+     lambda r: isinstance(r, list)),
+    ("get_related", {"iri": "pkis:concept:entropy"},
+     lambda r: isinstance(r, list)),
+    ("get_reading_queue", {},
+     lambda r: isinstance(r, list)),
+    ("get_concept_frontier", {},
+     lambda r: _has(r, "params", "results") and isinstance(r["results"], list)),
+    ("get_reading_graph", {},
+     lambda r: isinstance(r, dict)),
+    ("get_staged_nodes", {},
+     lambda r: isinstance(r, list)),
+    ("get_transcript_queue", {},
+     lambda r: isinstance(r, list)),
+    ("list_documents", {},
+     lambda r: isinstance(r, list)),
 ]
+
+
+@pytest.mark.contract
+@pytest.mark.parametrize("tool,args,check", READ_CONTRACT_CASES, ids=[c[0] for c in READ_CONTRACT_CASES])
+def test_read_tool_contract(client, tool, args, check):
+    """Each advertised read tool: canonical valid input → documented response
+    shape. Read tools need no auth; they run against the session fixture wiki."""
+    result = _call_tool(client, tool, args)
+    assert check(result), f"{tool} returned unexpected shape: {result!r}"
+
+
+# ── Write-tool contracts: STILL STUBBED (next B1 increment; needs auth + mocks) ──
 
 ADVERTISED_WRITE = [
     "create_bridge_note", "create_source_stub", "create_node_stub",
@@ -189,18 +225,9 @@ ADVERTISED_WRITE = [
 
 
 @pytest.mark.contract
-@pytest.mark.parametrize("tool", ADVERTISED_READ)
-def test_read_tool_contract(client, tool):
-    """STUB: call `tool` with canonical valid input and assert the documented
-    response shape + required fields. Read tools need no auth, so they run against
-    the session fixture directly."""
-    pytest.skip("Phase-2 stub — implement per-tool canonical input + shape assertions")
-
-
-@pytest.mark.contract
 @pytest.mark.parametrize("tool", ADVERTISED_WRITE)
 def test_write_tool_contract(client, isolated_wiki, tool):
-    """STUB: with write auth granted (static WRITE_KEY via monkeypatch) and an
-    isolated wiki, call `tool` with canonical input and assert the response shape.
-    Asserts the *contract*, not the git side effects (those are Seam C)."""
-    pytest.skip("Phase-2 stub — implement per-tool canonical input + shape assertions")
+    """STUB (B1 increment 2): with write auth granted and an isolated wiki, call
+    `tool` with canonical input and assert the response shape. The 3 network write
+    tools (save_url_source/upload_document/save_podcast_source) mock the boundary."""
+    pytest.skip("B1 increment 2 — write-tool contracts pending")

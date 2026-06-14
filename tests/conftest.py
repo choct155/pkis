@@ -145,6 +145,20 @@ init_git_repo(_SESSION_REPO, with_remote=True)
 import app as _app  # noqa: E402  (must follow env setup + fixture build)
 
 
+# Force LLM-using tools (e.g. detect_concepts) down their deterministic fallback
+# path so the hermetic suite never touches the Anthropic API. Those tools catch
+# broad exceptions and degrade to BM25, so raising here keeps the contract intact
+# while guaranteeing no network call.
+class _NoNetworkAnthropic:
+    class messages:
+        @staticmethod
+        def create(*_a, **_k):
+            raise RuntimeError("anthropic disabled in tests")
+
+
+_app.anthropic_client = _NoNetworkAnthropic()
+
+
 @pytest.fixture(scope="session", autouse=True)
 def _cleanup_session_root():
     yield

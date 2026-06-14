@@ -44,7 +44,10 @@ def test_edge_weights_are_normalized_range(appmod):
 
 @pytest.mark.unit
 def test_hybrid_search_finds_seeded_term(appmod, isolated_wiki):
-    """STUB: hybrid_search('entropy') over the fixture wiki should surface the
-    entropy node near the top. BM25-only (semantic disabled in tests), so this is
-    deterministic. Assert presence, not an exact rank."""
-    pytest.skip("Phase-2 stub — assert seeded node appears in hybrid_search results")
+    """hybrid_search('entropy') over the fixture wiki surfaces the entropy node.
+    BM25-only (semantic disabled in tests), so this is deterministic. Asserts
+    presence, not an exact rank."""
+    appmod._bm25_index = None  # force rebuild against the isolated wiki
+    results = appmod.hybrid_search("entropy", max_results=10)
+    iris = {r["iri"] for r in results}
+    assert "pkis:concept:entropy" in iris

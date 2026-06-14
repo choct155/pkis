@@ -64,7 +64,17 @@ def test_load_node_shape(appmod, isolated_wiki):
 
 @pytest.mark.unit
 def test_alias_collision_detection(appmod, isolated_wiki):
-    """STUB: build_alias_registry + tool_check_alias_collision must flag a surface
-    form that maps to multiple canonical nodes. Seed two nodes sharing an alias
-    and assert the collision is reported."""
-    pytest.skip("Phase-2 stub — seed colliding aliases and assert detection")
+    """tool_check_alias_collision must surface a query that matches the aliases of
+    multiple distinct nodes (the near-duplicate-alias hazard the Auditor flags)."""
+    isolated_wiki.write_node("concepts", "gibbs-sampling",
+                             id="pkis:concept:gibbs-sampling", title="Gibbs Sampling",
+                             aliases=["MCMC sampling"])
+    isolated_wiki.write_node("techniques", "metropolis-hastings",
+                             id="pkis:technique:metropolis-hastings", title="Metropolis-Hastings",
+                             aliases=["MCMC method"])
+    appmod._node_cache = {}
+    appmod._alias_registry = {}  # force registry rebuild against the isolated wiki
+
+    res = appmod.tool_check_alias_collision("MCMC")
+    iris = {c["iri"] for c in res["collision_candidates"]}
+    assert {"pkis:concept:gibbs-sampling", "pkis:technique:metropolis-hastings"} <= iris
