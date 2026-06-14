@@ -160,6 +160,19 @@ class OAuthChallenge(PermissionError):
     """Unauthorized write while OAuth is enabled and caller is anonymous —
     triggers a 401 + WWW-Authenticate so the connector starts the OAuth flow."""
 
+
+class GitPushError(RuntimeError):
+    """A local commit succeeded but `git push` failed. Raised LOUDLY so a write
+    is never silently left diverging from origin (the 'sneaky divergence' that
+    swallowed push failures used to cause). The local commit is RETAINED — no
+    work is lost — and `.diagnostics` carries the divergence snapshot plus a
+    recommended remediation. Reconcile via tools/reconcile_push.py (a deliberate,
+    confirmed step), never automatically inside a request."""
+
+    def __init__(self, message: str, diagnostics: dict):
+        super().__init__(message)
+        self.diagnostics = diagnostics
+
 # Document store + Readwise integration
 DOCS_DIR          = Path(os.environ.get("DOCS_DIR", "/home/pkis/docs"))
 DOCS_BASE_URL     = os.environ.get("DOCS_BASE_URL", "https://pkis.dev/docs")
@@ -2631,24 +2644,8 @@ def tool_edit_node(
     except Exception:
         pass
 
-    git_sha, git_pushed = "", False
-    try:
-        repo_dir = str(REPO_DIR)
-        subprocess.run(["git", "-C", repo_dir, "add", str(path), str(log_path)],
-                       check=True, capture_output=True)
-        msg = commit_message or f"[mcp-edit] {iri_final}"
-        result = subprocess.run(["git", "-C", repo_dir, "commit", "-m", msg],
-                                check=True, capture_output=True, text=True)
-        m = re.search(r'\[.+? ([a-f0-9]{7,})\]', result.stdout)
-        git_sha = m.group(1) if m else result.stdout.strip()[:12]
-        try:
-            subprocess.run(["git", "-C", repo_dir, "push"], check=True,
-                           capture_output=True, timeout=30)
-            git_pushed = True
-        except (subprocess.CalledProcessError, subprocess.TimeoutExpired) as pe:
-            logger.warning(f"edit_node push failed (local commit retained): {pe}")
-    except subprocess.CalledProcessError as e:
-        logger.error(f"edit_node commit failed: {e.stderr}")
+    msg = commit_message or f"[mcp-edit] {iri_final}"
+    git = _git_commit_and_push([path, log_path], msg)
 
     return {
         "status": "edited",
@@ -2656,8 +2653,8 @@ def tool_edit_node(
         "path": str(rel),
         "frontmatter_updated": list(frontmatter_updates),
         "sections_updated": list(section_updates),
-        "git_commit": git_sha,
-        "git_pushed": git_pushed,
+        "git_commit": git["sha"],
+        "git_pushed": git["pushed"],
         "url": f"https://github.com/choct155/pkis/blob/main/wiki/{rel}",
     }
 
@@ -2730,25 +2727,10 @@ def tool_add_connections(edges: list, commit_message: str = "") -> dict:
     _graph = None
 
     added = [r for r in results if r["status"] == "added"]
-    git_sha, git_pushed = "", False
+    git = {"sha": "", "pushed": False}
     if modified_paths:
-        try:
-            repo_dir = str(REPO_DIR)
-            subprocess.run(["git", "-C", repo_dir, "add"] + list(modified_paths),
-                           check=True, capture_output=True)
-            msg = commit_message or f"[mcp-edge] add {len(added)} connection(s)"
-            result = subprocess.run(["git", "-C", repo_dir, "commit", "-m", msg],
-                                    check=True, capture_output=True, text=True)
-            m = re.search(r'\[.+? ([a-f0-9]{7,})\]', result.stdout)
-            git_sha = m.group(1) if m else result.stdout.strip()[:12]
-            try:
-                subprocess.run(["git", "-C", repo_dir, "push"], check=True,
-                               capture_output=True, timeout=30)
-                git_pushed = True
-            except (subprocess.CalledProcessError, subprocess.TimeoutExpired) as pe:
-                logger.warning(f"edge push failed (local commit retained): {pe}")
-        except subprocess.CalledProcessError as e:
-            logger.error(f"edge commit failed: {e.stderr}")
+        msg = commit_message or f"[mcp-edge] add {len(added)} connection(s)"
+        git = _git_commit_and_push(list(modified_paths), msg)
 
     try:
         with open(WIKI_DIR / "log.md", "a") as lf:
@@ -2762,8 +2744,8 @@ def tool_add_connections(edges: list, commit_message: str = "") -> dict:
         "added": len(added),
         "skipped": len([r for r in results if r["status"] == "already-present"]),
         "errors": len([r for r in results if r["status"] == "error"]),
-        "git_commit": git_sha,
-        "git_pushed": git_pushed,
+        "git_commit": git["sha"],
+        "git_pushed": git["pushed"],
         "results": results,
     }
 
@@ -2817,25 +2799,10 @@ def _docs_repo_branch() -> str:
 
 def _commit_docs(paths, message) -> tuple:
     """git add/commit/push the given paths in DOCS_REPO_DIR. Returns (sha, pushed).
-    Push failure is non-fatal (local commit retained), matching the wiki write tools."""
-    git_sha, git_pushed = "", False
-    try:
-        repo = str(DOCS_REPO_DIR)
-        subprocess.run(["git", "-C", repo, "add"] + [str(p) for p in paths],
-                       check=True, capture_output=True)
-        result = subprocess.run(["git", "-C", repo, "commit", "-m", message],
-                                check=True, capture_output=True, text=True)
-        m = re.search(r'\[.+? ([a-f0-9]{7,})\]', result.stdout)
-        git_sha = m.group(1) if m else result.stdout.strip()[:12]
-        try:
-            subprocess.run(["git", "-C", repo, "push"], check=True,
-                           capture_output=True, timeout=30)
-            git_pushed = True
-        except (subprocess.CalledProcessError, subprocess.TimeoutExpired) as pe:
-            logger.warning(f"docs push failed (local commit retained): {pe}")
-    except subprocess.CalledProcessError as e:
-        logger.error(f"docs commit failed: {getattr(e, 'stderr', e)}")
-    return git_sha, git_pushed
+    Routes through the single _git_commit_and_push path, so a push failure raises
+    GitPushError (loud) rather than silently retaining a diverging local commit."""
+    git = _git_commit_and_push(paths, message, repo_dir=DOCS_REPO_DIR)
+    return git["sha"], git["pushed"]
 
 
 def tool_log_idea(title: str, idea: str, source: str = "",
@@ -3000,35 +2967,17 @@ def tool_commit_staged_node(
             f"- IRI: {iri}\n"
         )
 
-    # Git commit and push
-    git_sha = ""
-    git_pushed = False
-    try:
-        repo_dir = str(REPO_DIR)
-        files_to_add = [str(target_path), str(index_path), str(log_path)]
-        subprocess.run(["git", "-C", repo_dir, "add"] + files_to_add, check=True, capture_output=True)
-        result = subprocess.run(
-            ["git", "-C", repo_dir, "commit", "-m",
-             f"[mcp-commit] {knowledge_type}: {fm.get('title', slug)[:60]}"],
-            check=True, capture_output=True, text=True
-        )
-        sha_match = re.search(r'\[.+? ([a-f0-9]{7,})\]', result.stdout)
-        git_sha = sha_match.group(1) if sha_match else result.stdout.strip()[:12]
-        logger.info(f"Git committed locally: {git_sha}")
-        try:
-            subprocess.run(["git", "-C", repo_dir, "push"], check=True, capture_output=True, timeout=30)
-            git_pushed = True
-            logger.info(f"Git pushed: {git_sha}")
-        except (subprocess.CalledProcessError, subprocess.TimeoutExpired) as push_err:
-            logger.warning(f"Git push failed (local commit retained): {push_err}")
-    except subprocess.CalledProcessError as e:
-        logger.error(f"Git commit failed: {e.stderr.decode() if isinstance(e.stderr, bytes) else e.stderr}")
+    # Git commit and push — single consolidated path; loud (GitPushError) on push failure.
+    git = _git_commit_and_push(
+        [target_path, index_path, log_path],
+        f"[mcp-commit] {knowledge_type}: {fm.get('title', slug)[:60]}",
+    )
 
     return {
         "status": "committed",
         "iri": iri,
-        "git_commit": git_sha,
-        "git_pushed": git_pushed,
+        "git_commit": git["sha"],
+        "git_pushed": git["pushed"],
         "url": f"https://github.com/choct155/pkis/blob/main/wiki/{folder}/{slug}.md",
     }
 
@@ -3345,27 +3294,99 @@ def _update_source_frontmatter(slug: str, updates: dict) -> bool:
         return False
 
 
-def _git_commit_files(files: list, message: str) -> str:
-    """Stage, commit, and push a list of file paths. Returns SHA or ''."""
-    git_sha = ""
+def _current_branch(repo: str) -> str:
+    r = subprocess.run(["git", "-C", repo, "rev-parse", "--abbrev-ref", "HEAD"],
+                       capture_output=True, text=True)
+    return r.stdout.strip() or "main"
+
+
+def _git_push_diagnostics(repo: str, branch: str, sha: str, message: str) -> dict:
+    """Read-only divergence snapshot after a failed push: ahead/behind counts,
+    the diverging commits each way, a --stat diff, and a recommended remediation.
+    Never mutates the repo (a fetch is read-only)."""
+    def _run(args):
+        return subprocess.run(["git", "-C", repo] + args, capture_output=True, text=True)
+
+    remote_ref = f"origin/{branch}"
+    fetch = _run(["fetch", "origin", branch])
+    behind = ahead = None
+    counts = _run(["rev-list", "--left-right", "--count", f"{remote_ref}...HEAD"])
+    if counts.returncode == 0 and len(counts.stdout.split()) == 2:
+        behind, ahead = (int(x) for x in counts.stdout.split())
+    local_unpushed = _run(["log", "--oneline", f"{remote_ref}..HEAD"]).stdout.strip()
+    remote_only = _run(["log", "--oneline", f"HEAD..{remote_ref}"]).stdout.strip()
+    diffstat = _run(["diff", "--stat", f"{remote_ref}...HEAD"]).stdout.strip()
+
+    if fetch.returncode != 0:
+        rec = ("remote unreachable (fetch failed) — the commit is retained locally; "
+               "retry the push when connectivity returns. Inspect with "
+               "`tools/reconcile_push.py`.")
+    elif behind and ahead:
+        rec = (f"history diverged (local +{ahead}, origin +{behind}) — review the "
+               f"origin-only commits, then `tools/reconcile_push.py --confirm` to "
+               f"rebase local onto origin and re-push.")
+    elif ahead and not behind:
+        rec = ("origin is not ahead — push likely failed on network / lock / hook. "
+               "Retry with `tools/reconcile_push.py` (inspect first; --confirm to push).")
+    else:
+        rec = "push failed — run `tools/reconcile_push.py` to inspect and reconcile."
+
+    return {
+        "repo": repo, "branch": branch, "sha": sha, "commit_message": message,
+        "fetch_ok": fetch.returncode == 0, "behind": behind, "ahead": ahead,
+        "local_unpushed": local_unpushed, "remote_only": remote_only,
+        "diffstat": diffstat, "push_error": "", "recommendation": rec,
+    }
+
+
+def _git_commit_and_push(files: list, message: str, repo_dir=None) -> dict:
+    """THE single git-write path for every write tool (Seam C consolidation).
+
+    Stages `files`, commits, and pushes in `repo_dir` (default REPO_DIR). Returns
+    {"committed": bool, "sha": str, "pushed": True}; an idempotent write with no
+    changes returns committed=False, pushed=True (nothing to send).
+
+    Raises GitPushError if the commit succeeds but the push fails: the local
+    commit is RETAINED and the error carries divergence diagnostics + a
+    recommendation. No write path swallows a push failure anymore."""
+    repo = str(repo_dir or REPO_DIR)
+    subprocess.run(["git", "-C", repo, "add"] + [str(f) for f in files],
+                   check=True, capture_output=True)
+
+    commit = subprocess.run(["git", "-C", repo, "commit", "-m", message],
+                            capture_output=True, text=True)
+    if commit.returncode != 0:
+        blob = (commit.stdout + commit.stderr).lower()
+        if "nothing to commit" in blob or "no changes added" in blob:
+            return {"committed": False, "sha": "", "pushed": True}
+        raise RuntimeError(f"git commit failed: {commit.stderr.strip() or commit.stdout.strip()}")
+
+    m = re.search(r'\[.+? ([a-f0-9]{7,})\]', commit.stdout)
+    sha = m.group(1) if m else commit.stdout.strip()[:12]
+
     try:
-        subprocess.run(
-            ["git", "-C", str(REPO_DIR), "add"] + [str(f) for f in files],
-            check=True, capture_output=True
-        )
-        result = subprocess.run(
-            ["git", "-C", str(REPO_DIR), "commit", "-m", message],
-            check=True, capture_output=True, text=True
-        )
-        m = re.search(r'\[.+? ([a-f0-9]{7,})\]', result.stdout)
-        git_sha = m.group(1) if m else result.stdout.strip()[:12]
-        subprocess.run(
-            ["git", "-C", str(REPO_DIR), "push"],
-            check=True, capture_output=True, timeout=30
-        )
-    except Exception as e:
-        logger.error(f"Git commit failed: {e}")
-    return git_sha
+        push = subprocess.run(["git", "-C", repo, "push"],
+                              capture_output=True, text=True, timeout=60)
+        push_ok, push_err = push.returncode == 0, push.stderr.strip()
+    except subprocess.TimeoutExpired:
+        push_ok, push_err = False, "push timed out after 60s"
+
+    if not push_ok:
+        diag = _git_push_diagnostics(repo, _current_branch(repo), sha, message)
+        diag["push_error"] = push_err
+        logger.error("git push failed in %s (sha=%s): %s | %s",
+                     repo, sha, push_err, diag["recommendation"])
+        raise GitPushError(
+            f"commit {sha} retained locally but push failed: {diag['recommendation']}",
+            diag)
+    return {"committed": True, "sha": sha, "pushed": True}
+
+
+def _git_commit_files(files: list, message: str) -> str:
+    """Back-compat wrapper over _git_commit_and_push: returns the commit SHA
+    ('' if nothing to commit). A push failure now raises GitPushError (loud)
+    instead of silently returning ''."""
+    return _git_commit_and_push(files, message)["sha"]
 
 
 def _append_reading_notes(source_slug: str, text: str, note: str,
@@ -5495,15 +5516,16 @@ def mcp_endpoint(session=None):
         return jsonify({"result": None, "error": str(e)}), 500
 
 
-def dispatch_tool(tool_name: str, params: dict, req) -> any:
-    """Dispatch tool call to implementation."""
+# ============================================================
+# Tool registry — the single source of truth for MCP dispatch.
+# Lifted out of dispatch_tool() so the surface is introspectable (contract
+# tests, manifest cross-checks) and ready for the planned app.py split into a
+# dedicated mcp module. Tiers: READ = open to all; TRUSTED = is_trusted;
+# WRITE = is_write_authorized. Each value is `lambda params: tool_*(...)`.
+# ============================================================
 
-    # Rebuild caches if another worker committed a write since this one last built,
-    # so search/discovery reflects new content without a service restart.
-    ensure_fresh()
-
-    # Read-only tools — available to all clients
-    read_tools = {
+# Read-only tools — available to all clients
+READ_TOOLS = {
         "get_write_schema": lambda p: tool_get_write_schema(),
         "resolve_concept": lambda p: tool_resolve_concept(p["surface_form"]),
         "resolve_or_detect": lambda p: {
@@ -5569,8 +5591,8 @@ def dispatch_tool(tool_name: str, params: dict, req) -> any:
         "get_concept_operational_load": lambda p: tool_get_concept_operational_load(p["iri"]),
     }
 
-    # Trusted-only tools — require PKIS_TRUSTED_TOKEN
-    trusted_tools = {
+# Trusted-only tools — require PKIS_TRUSTED_TOKEN
+TRUSTED_TOOLS = {
         "register_operational_reference": lambda p: tool_register_operational_reference(
             p["operational_node_id"],
             p["iri"],
@@ -5585,8 +5607,8 @@ def dispatch_tool(tool_name: str, params: dict, req) -> any:
         ),
     }
 
-    # Write tools — require PKIS_MCP_WRITE_KEY
-    write_tools = {
+# Write tools — require PKIS_MCP_WRITE_KEY
+WRITE_TOOLS = {
         "create_bridge_note": lambda p: tool_create_bridge_note(
             rationale=p["rationale"],
             title=p.get("title", ""),
@@ -5678,16 +5700,33 @@ def dispatch_tool(tool_name: str, params: dict, req) -> any:
         ),
     }
 
-    if tool_name in read_tools:
-        return read_tools[tool_name](params)
-    elif tool_name in trusted_tools:
+# Combined views for introspection (contract tests + manifest cross-checks).
+DISPATCHABLE_TOOLS = {**READ_TOOLS, **TRUSTED_TOOLS, **WRITE_TOOLS}
+TOOL_TIERS = {
+    **{n: "read" for n in READ_TOOLS},
+    **{n: "trusted" for n in TRUSTED_TOOLS},
+    **{n: "write" for n in WRITE_TOOLS},
+}
+
+
+def dispatch_tool(tool_name: str, params: dict, req) -> any:
+    """Dispatch an MCP tool call to its implementation, gating by tier. The tool
+    tables live at module scope (READ_TOOLS / TRUSTED_TOOLS / WRITE_TOOLS) so the
+    surface is introspectable and ready for the app.py split."""
+    # Rebuild caches if another worker committed a write since this one last
+    # built, so search/discovery reflects new content without a service restart.
+    ensure_fresh()
+
+    if tool_name in READ_TOOLS:
+        return READ_TOOLS[tool_name](params)
+    elif tool_name in TRUSTED_TOOLS:
         if not is_trusted(req):
             raise gate_error(req, "trusted")
-        return trusted_tools[tool_name](params)
-    elif tool_name in write_tools:
+        return TRUSTED_TOOLS[tool_name](params)
+    elif tool_name in WRITE_TOOLS:
         if not is_write_authorized(req):
             raise gate_error(req, "write")
-        return write_tools[tool_name](params)
+        return WRITE_TOOLS[tool_name](params)
     else:
         raise ValueError(f"Unknown tool: {tool_name}")
 
