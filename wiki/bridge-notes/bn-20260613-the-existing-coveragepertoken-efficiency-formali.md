@@ -1,5 +1,6 @@
 ---
 date_created: '2026-06-13'
+date_updated: '2026-06-14'
 id: pkis:bridge-note:bn-20260613-the-existing-coveragepertoken-efficiency-formali
 integration_target: ''
 knowledge_type: bridge-note
@@ -34,9 +35,9 @@ rationale: "The existing coverage-per-token efficiency formalism captures node i
   the empirical lift of typed edges over untyped co-occurrence."
 source_context: Conversation on retrieval efficiency explainer — edge value formalization
   as open problem
-status: unreviewed
-title: Edge information content — directionality and typed predicates as open formalization
-  problem
+status: partially-resolved
+title: Edge information content — directionality, typed predicates, and traversal
+  ranking
 ---
 
 ## Connection

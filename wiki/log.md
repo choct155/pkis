@@ -24980,3 +24980,6 @@
 ## [2026-06-14] committed | technique
 - Committed: coverage-driven-graph-traversal → techniques/coverage-driven-graph-traversal.md
 - IRI: pkis:technique:coverage-driven-graph-traversal
+
+## [2026-06-14] edit | edit_node
+- pkis:bridge-note:bn-20260613-the-existing-coveragepertoken-efficiency-formali: fields=['title', 'status'] sections=[]
