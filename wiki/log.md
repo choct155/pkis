@@ -24986,3 +24986,11 @@
 
 ## [2026-06-14] edit | edit_node
 - pkis:bridge-note:bn-20260613-cq-the-concept-dependency-distribution: fields=['rationale'] sections=[]
+
+## [2026-06-14] staged | bridge-note
+- Staged: bn-20260614-reliability-is-the-shared-empirical (id: 17635e70-6e88-4599-92ba-b9f9757322aa)
+- Rationale: Reliability(τ) is the shared empirical primitive connecting coverage-driven traversal and the contin
+
+## [2026-06-14] committed | bridge-note
+- Committed: bn-20260614-reliability-is-the-shared-empirical → bridge-notes/bn-20260614-reliability-is-the-shared-empirical.md
+- IRI: pkis:bridge-note:bn-20260614-reliability-is-the-shared-empirical
