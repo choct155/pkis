@@ -1,0 +1,50 @@
+name: tests
+
+# Runs the hermetic pytest suite (fixture wiki + fixture git repo; no network,
+# no live server). INTENTIONALLY non-blocking: do NOT add this as a required
+# status check on `main` — the live PKIS server pushes wiki-content commits
+# directly to main, and a required check would block those automated pushes.
+#
+# Triggers:
+#  - push / PR that touches code or tests (path-filtered, so the server's
+#    hundreds of wiki/ content commits don't spin up CI)
+#  - weekly, as a backstop full run (Mondays, matching the discovery cron)
+on:
+  push:
+    paths:
+      - 'app.py'
+      - 'tools/**'
+      - 'scripts/**'
+      - 'tests/**'
+      - 'pyproject.toml'
+      - '.github/workflows/test.yml'
+  pull_request:
+    paths:
+      - 'app.py'
+      - 'tools/**'
+      - 'scripts/**'
+      - 'tests/**'
+      - 'pyproject.toml'
+      - '.github/workflows/test.yml'
+  schedule:
+    - cron: '0 6 * * 1'   # 06:00 UTC Mondays — weekly backstop
+  workflow_dispatch: {}   # allow manual runs
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false           # one suite failing shouldn't hide the others
+      matrix:
+        suite: [contract, integration, unit]
+    name: ${{ matrix.suite }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install (base + dev; no [semantic] — tests force BM25-only)
+        run: pip install -e ".[dev]"
+      - name: Run ${{ matrix.suite }} tests
+        # `-m "not live"` excludes any network/live-server tests by default.
+        run: pytest "tests/${{ matrix.suite }}" -m "not live" -v
