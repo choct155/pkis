@@ -1,0 +1,54 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+# PKIS is a flat single-module Flask app (app.py) plus standalone scripts under
+# tools/ and scripts/. There is no package tree; we expose app.py as a top-level
+# py-module so `pip install -e .` makes `import app` work for the test suite.
+[project]
+name = "pkis"
+version = "0.1.0"
+description = "Personal Knowledge Integration System — MCP wiki server (app.py) + viewer."
+requires-python = ">=3.10"
+
+# Base runtime: the deps app.py imports unconditionally at module load. Heavy or
+# env-gated deps live in the optional extras below so the app boots in a minimal
+# environment (mirrors the lazy-import design in app.py: sentence-transformers,
+# jwt, and workos are imported only when their feature is configured).
+dependencies = [
+    "flask",
+    "pyyaml",
+    "python-frontmatter",
+    "networkx",
+    "numpy",
+    "rank-bm25",
+    "anthropic",
+]
+
+[project.optional-dependencies]
+# Dense semantic search (BM25 stays the precision anchor; this adds recall).
+# Pulls torch — heavy. App degrades to BM25-only without it (app.py:63-67).
+semantic = ["sentence-transformers"]
+# OAuth (MCP resource server) + WorkOS web sign-in. Dormant unless the matching
+# env is set (app.py:124-156); cryptography validates the Fernet cookie key.
+oauth = ["PyJWT[crypto]", "workos", "cryptography"]
+# Read+listen reader pipeline (tools/reader_build.py and friends).
+reader = ["beautifulsoup4", "pypdf", "lameenc"]
+# One-shot Google Drive book import (tools/import_drive_books.py).
+ingest = ["gdown"]
+# Test + dev tooling.
+dev = ["pytest"]
+
+[tool.setuptools]
+py-modules = ["app"]
+
+[tool.pytest.ini_options]
+# Tests live under tests/; markers below keep network/live-server tests opt-in so
+# the default `pytest` run is hermetic (fixture wiki + fixture git repo only).
+testpaths = ["tests"]
+markers = [
+    "live: hits a live server or external API (pkis.dev, arXiv, OpenAlex, etc.); skipped by default in CI. Run explicitly with `-m live`.",
+    "contract: asserts the observable MCP/REST tool contract (shape + required fields), not internal behavior.",
+    "integration: exercises a real seam (git round-trip, auth path, queue) against the fixture environment.",
+    "unit: pure-function logic over fixtures (IRI resolution, RRF fusion, etc.).",
+]
