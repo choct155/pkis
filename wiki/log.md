@@ -24994,3 +24994,11 @@
 ## [2026-06-14] committed | bridge-note
 - Committed: bn-20260614-reliability-is-the-shared-empirical → bridge-notes/bn-20260614-reliability-is-the-shared-empirical.md
 - IRI: pkis:bridge-note:bn-20260614-reliability-is-the-shared-empirical
+
+## [2026-06-14] staged | bridge-note
+- Staged: bn-20260614-both-the-amortization-argument-and (id: e494d5bc-b943-4a8a-89ed-2c7316547c08)
+- Rationale: Both the amortization argument and the coverage-driven traversal algorithm implicitly assume node co
+
+## [2026-06-14] committed | bridge-note
+- Committed: bn-20260614-both-the-amortization-argument-and → bridge-notes/bn-20260614-both-the-amortization-argument-and.md
+- IRI: pkis:bridge-note:bn-20260614-both-the-amortization-argument-and
