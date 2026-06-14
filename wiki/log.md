@@ -25057,3 +25057,12 @@
 ## [2026-06-14] committed | framework
 - Committed: ontologist-positioning-hardening-stack → frameworks/ontologist-positioning-hardening-stack.md
 - IRI: pkis:framework:ontologist-positioning-hardening-stack
+
+## [2026-06-14] staged | node-stub (problem)
+- Staged: concept-boundary-finding-problem (id: 41f540d1-67de-4c49-a0c0-cf4195fee433)
+- Title: Concept Boundary Finding Problem
+- needs_canonical_source: False
+
+## [2026-06-14] committed | problem
+- Committed: concept-boundary-finding-problem → problems/concept-boundary-finding-problem.md
+- IRI: pkis:problem:concept-boundary-finding-problem

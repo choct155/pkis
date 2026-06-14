@@ -2258,6 +2258,7 @@
 - [[broad-money-monetarism]] — Congdon's updated monetarism: broad money (M3/M4) drives nominal spending; emphasis on credit and asset prices (macroeconomics, monetary-economics) (2026-05-20)
 
 ## Problems
+- [[concept-boundary-finding-problem]] — Concept Boundary Finding Problem (knowledge-representation) (2026-06-14)
 - [[algorithmic-recourse]] — Recourse in Automated Decision-Making (machine-learning, interpretability, fairness, law) (2026-06-11)
 - [[graphical-model-structure-learning]] — Graphical Model Structure Learning (machine-learning, statistics, causal-inference) (2026-06-11)
 - [[statistical-efficiency-learning]] — Statistical Efficiency / Data Efficiency (machine-learning, statistics, sample-complexity) (2026-06-11)
