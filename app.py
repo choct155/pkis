@@ -5393,6 +5393,81 @@ def _get_tools_list():
             "name": "get_transcript_queue",
             "description": "List podcast episodes queued for Whisper transcription — no transcript was automatically found when they were saved.",
             "inputSchema": {"type": "object", "properties": {}}
+        },
+        # ── Promoted hidden→advertised (B5, 2026-06-15). `search_wiki_index` and
+        # `get_node_stub` remain reachable-but-unadvertised pending a decision. ──
+        {
+            "name": "resolve_or_detect",
+            "description": "Resolve a phrase to a canonical IRI AND detect implicitly-present concepts in one call. Returns {registry, detected}.",
+            "inputSchema": {"type": "object", "properties": {
+                "text": {"type": "string"}, "threshold": {"type": "number", "default": 0.7}
+            }, "required": ["text"]}
+        },
+        {
+            "name": "get_clusters",
+            "description": "List research-program clusters with their hypotheses, status, and dependencies.",
+            "inputSchema": {"type": "object", "properties": {}}
+        },
+        {
+            "name": "get_cluster_priorities",
+            "description": "Frontier coverage gaps grouped by research cluster, with the effective cluster-proximity weight params.",
+            "inputSchema": {"type": "object", "properties": {}}
+        },
+        {
+            "name": "get_index",
+            "description": "Browse the wiki catalog, optionally filtered by domain, node_type, and/or cluster.",
+            "inputSchema": {"type": "object", "properties": {
+                "domain": {"type": "string"}, "node_type": {"type": "string"}, "cluster": {"type": "string"}
+            }}
+        },
+        {
+            "name": "get_dependency_chain",
+            "description": "Return the transitive prerequisite chain for a node (what must be understood first), ordered by depth.",
+            "inputSchema": {"type": "object", "properties": {"iri": {"type": "string"}}, "required": ["iri"]}
+        },
+        {
+            "name": "get_assets",
+            "description": "List interactive explainer / visualization assets, optionally filtered by kind.",
+            "inputSchema": {"type": "object", "properties": {"kind": {"type": "string"}}}
+        },
+        {
+            "name": "check_alias_collision",
+            "description": "Check whether a surface form collides with existing aliases across the wiki before coining a new one.",
+            "inputSchema": {"type": "object", "properties": {"surface_form": {"type": "string"}}, "required": ["surface_form"]}
+        },
+        {
+            "name": "get_operational_references",
+            "description": "List external operational-system references registered against a wiki node IRI.",
+            "inputSchema": {"type": "object", "properties": {"iri": {"type": "string"}}, "required": ["iri"]}
+        },
+        {
+            "name": "get_concept_operational_load",
+            "description": "Report how heavily a concept is referenced by external operational systems (operational load).",
+            "inputSchema": {"type": "object", "properties": {"iri": {"type": "string"}}, "required": ["iri"]}
+        },
+        {
+            "name": "build_reader",
+            "description": "Build the read+listen reader payload (narrated sections + audio + sync map) for a source slug. Write-tier.",
+            "inputSchema": {"type": "object", "properties": {
+                "slug": {"type": "string"}, "arxiv_id": {"type": "string"}
+            }, "required": ["slug"]}
+        },
+        {
+            "name": "register_operational_reference",
+            "description": "Register an external operational-system node as referencing a PKIS IRI (trusted tier; mnemon operational layer).",
+            "inputSchema": {"type": "object", "properties": {
+                "operational_node_id": {"type": "string"}, "iri": {"type": "string"},
+                "confidence_class": {"type": "string"}, "source_system": {"type": "string", "default": "mnemon"}
+            }, "required": ["operational_node_id", "iri", "confidence_class"]}
+        },
+        {
+            "name": "log_operation",
+            "description": "Log an operational event against affected PKIS IRIs (trusted tier; mnemon operational layer).",
+            "inputSchema": {"type": "object", "properties": {
+                "operation_type": {"type": "string"},
+                "affected_iris": {"type": "array", "items": {"type": "string"}},
+                "summary": {"type": "string"}, "agent": {"type": "string"}
+            }, "required": ["operation_type"]}
         }
     ]
 

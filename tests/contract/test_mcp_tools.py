@@ -38,13 +38,10 @@ def _dispatchable_names(appmod) -> set:
 # Phase-1 audit (§2.2). Freezing this set turns any NEW accidental hidden tool
 # into a test failure. Per decision D-2, the two "mnemon" trusted-tier tools are
 # slated to become advertised in Phase 3 — see test_mnemon_tools_should_be_advertised.
-KNOWN_HIDDEN = {
-    "build_reader", "check_alias_collision", "get_assets", "get_cluster_priorities",
-    "get_clusters", "get_concept_operational_load", "get_dependency_chain",
-    "get_index", "get_node_stub", "get_operational_references",
-    "log_operation", "register_operational_reference", "resolve_or_detect",
-    "search_wiki_index",
-}
+# After B5 only two tools stay reachable-but-unadvertised (decision pending —
+# possible external callers we can't confirm; not removed). The other 12 former
+# hidden tools were advertised.
+KNOWN_HIDDEN = {"search_wiki_index", "get_node_stub"}
 
 
 # --------------------------------------------------------------------------- #
@@ -72,12 +69,8 @@ def test_hidden_tool_set_is_frozen(appmod):
 
 
 @pytest.mark.contract
-@pytest.mark.xfail(reason="D-2: mnemon trusted tier is to be advertised in Phase 3; "
-                          "this guards that work and flips to pass once done.",
-                   strict=True)
-def test_mnemon_tools_should_be_advertised(appmod):
-    """Decision D-2 keeps the mnemon trusted tier and promotes it to advertised.
-    Until Phase 3 does that, this is an expected failure that documents the gap."""
+def test_mnemon_tools_are_advertised(appmod):
+    """Decision D-2: the mnemon trusted tier is kept and advertised (done in B5)."""
     advertised = _advertised_names(appmod)
     assert {"register_operational_reference", "log_operation"} <= advertised
 
@@ -109,7 +102,7 @@ def test_tools_list_is_well_formed(client):
     object — the schema is what MCP clients build their call UIs from."""
     result = _rpc(client, "tools/list").get_json()["result"]
     tools = result["tools"]
-    assert len(tools) == 28, "advertised tool count changed — update the contract baseline intentionally"
+    assert len(tools) == 40, "advertised tool count changed — update the contract baseline intentionally"
     for t in tools:
         assert t["name"]
         assert t["description"]
