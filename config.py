@@ -43,7 +43,7 @@ SEMANTIC_SEARCH = os.environ.get("PKIS_SEMANTIC_SEARCH", "1") != "0"
 KNOWLEDGE_DIRS = [
     "concepts", "techniques", "results",
     "frameworks", "problems", "principles", "sources",
-    "hypotheses", "clusters", "assets", "bridge-notes"
+    "hypotheses", "clusters", "assets", "bridge-notes", "discovery"
 ]
 
 FOLDER_TO_TYPE = {
@@ -58,6 +58,7 @@ FOLDER_TO_TYPE = {
     "clusters":    "research-cluster",
     "assets":      "asset",
     "bridge-notes": "bridge-note",
+    "discovery":   "discovery-stub",
 }
 
 TYPE_TO_FOLDER = {v: k for k, v in FOLDER_TO_TYPE.items()}

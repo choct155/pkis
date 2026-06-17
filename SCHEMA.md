@@ -336,6 +336,7 @@ where `{health_type}` is the singular form of the node's canonical type:
 | `clusters/` | `research-cluster` | `pkis:research-cluster:` |
 | `assets/` | `asset` | `pkis:asset:` |
 | `bridge-notes/` | `bridge-note` | `pkis:bridge-note:` |
+| `discovery/` | `discovery-stub` | `pkis:discovery-stub:` |
 
 **Examples:**
 - `pkis:concept:variational-inference`
@@ -406,6 +407,37 @@ status: unread          # unread | in-progress | read
 date_added: YYYY-MM-DD
 date_read: ""           # YYYY-MM-DD — set automatically by Readwise webhook on finish/archive
 concepts: []            # wikilinks to knowledge nodes this source covers
+---
+```
+
+### Discovery Stub (`wiki/discovery/`)
+
+Lightweight placeholder for a source seen during discovery — potentially relevant,
+not yet worth full ingest. **Max two concept links, no Reading Path, no Key
+Extractions** (the `rationale` is the only substantive content). Promoted to a full
+source node via Librarian ingest (a deliberate human decision); the stub is never
+deleted — just marked `promoted: true`. Indexed under a `## Discovery` section in
+`wiki/index.md`; the PWA discovery view reads `wiki/discovery/` filtered to
+`promoted: false`. (Agent Roster v2.)
+
+```yaml
+---
+id: "pkis:discovery-stub:{slug}"   # assigned at creation; never changed
+aliases: []
+title: ""
+authors: ""
+year:
+type: paper | book | book-chapter | article | talk | unknown
+domain: []
+tags: []
+source_url: ""          # URL if available; null otherwise
+knowledge_type: discovery-stub
+status: parked          # always parked until promoted (not unread/in-progress/read)
+date_added: YYYY-MM-DD
+rationale: ""           # why this source might be relevant — one to three sentences
+primary_concepts: []    # max two wikilinks — the concepts that make this potentially relevant
+promoted: false         # set true when promoted to a full source node; never delete the stub
+promoted_to: ""         # wikilink to the full source node after promotion; null until promoted
 ---
 ```
 
