@@ -43,8 +43,10 @@ from anthropic import Anthropic
 # B2 split (incremental): pure helpers carved out to store.py; re-imported so the
 # rest of app.py and every `import app` consumer keep referencing them unchanged.
 from store import slug_from_path, iri_from_slug, parse_iri
-# External-API metadata fetchers carved out to adapters.py (stdlib-only, no app deps).
-from adapters import _fetch_arxiv_metadata, _fetch_crossref_metadata, _search_semantic_scholar
+# External-API adapters carved out to adapters.py; `import *` (driven by adapters'
+# __all__) binds the underscore-named fetchers as app globals, so callers resolve
+# them and the contract-test monkeypatches still land.
+from adapters import *  # noqa: F401,F403
 
 # ============================================================
 # Configuration — all constants extracted to config.py (B2 split); re-imported
@@ -2883,155 +2885,6 @@ def _is_file_url(url: str) -> bool:
     """True when the URL path ends with a storable file extension."""
     path = urllib.parse.urlparse(url).path.lower()
     return any(path.endswith(ext) for ext in ALLOWED_DOC_EXTENSIONS)
-
-
-def _detect_readwise_category(url: str) -> str:
-    """Infer the best Readwise category from URL patterns."""
-    u = url.lower()
-    if any(d in u for d in ("youtube.com/watch", "youtu.be/", "vimeo.com/")):
-        return "video"
-    if any(d in u for d in ("twitter.com/", "x.com/")):
-        return "tweet"
-    if any(d in u for d in ("substack.com", "mailchimp.com", "beehiiv.com")):
-        return "email"
-    return "article"
-
-
-# Maps Readwise category → PKIS wiki source type
-_CATEGORY_TO_WIKI_TYPE = {
-    "article": "article",
-    "video":   "talk",
-    "tweet":   "article",
-    "email":   "article",
-    "pdf":     "paper",
-    "epub":    "book",
-}
-
-
-def _fetch_url_metadata(url: str) -> dict:
-    """
-    Best-effort title/author extraction from a URL.
-    Tries YouTube oEmbed first; falls back to HTML <title> and Open Graph tags.
-    Returns dict with keys: title, author, source_type (maps to wiki type).
-    """
-    # YouTube oEmbed
-    if "youtube.com/watch" in url or "youtu.be/" in url:
-        try:
-            oembed = (f"https://www.youtube.com/oembed"
-                      f"?url={urllib.parse.quote(url, safe='')}&format=json")
-            req = urllib.request.Request(oembed, headers={"User-Agent": "PKIS/1.0"})
-            with urllib.request.urlopen(req, timeout=10) as r:
-                data = json.loads(r.read())
-            return {
-                "title":       data.get("title", ""),
-                "author":      data.get("author_name", ""),
-                "source_type": "talk",
-            }
-        except Exception:
-            pass
-
-    # Generic HTML meta / Open Graph
-    try:
-        req = urllib.request.Request(url, headers={"User-Agent": "PKIS/1.0"})
-        with urllib.request.urlopen(req, timeout=10) as r:
-            html = r.read(30_000).decode("utf-8", errors="replace")
-
-        title = ""
-        author = ""
-
-        # OG title → <title> fallback
-        m = re.search(
-            r'<meta[^>]+property=["\']og:title["\'][^>]+content=["\']([^"\'<]+)',
-            html, re.I)
-        if m:
-            title = m.group(1).strip()
-        if not title:
-            m = re.search(r'<title[^>]*>([^<]+)</title>', html, re.I)
-            if m:
-                title = re.sub(r'\s+', ' ', m.group(1)).strip()
-
-        # meta author → OG site_name fallback
-        m = re.search(
-            r'<meta[^>]+name=["\']author["\'][^>]+content=["\']([^"\'<]+)',
-            html, re.I)
-        if m:
-            author = m.group(1).strip()
-        if not author:
-            m = re.search(
-                r'<meta[^>]+property=["\']og:site_name["\'][^>]+content=["\']([^"\'<]+)',
-                html, re.I)
-            if m:
-                author = m.group(1).strip()
-
-        return {"title": title, "author": author, "source_type": "article"}
-    except Exception:
-        pass
-
-    return {"title": "", "author": "", "source_type": "article"}
-
-
-def _readwise_save(doc_url: str, title: str = "", author: str = "",
-                   slug: str = "", abstract: str = "",
-                   year: int = None, arxiv_id: str = "",
-                   category: str = "", html: str = "") -> dict:
-    """
-    Push a document to Readwise Reader. Returns Readwise response dict.
-
-    Priority order for push_url / category:
-      1. arxiv_id provided → ar5iv HTML URL, category: article
-      2. category explicitly provided → doc_url pushed as-is with that category
-      3. fallback → doc_url, category: pdf
-
-    Full metadata (title, author, summary, published_date) is sent in all cases.
-    """
-    if not READWISE_TOKEN:
-        return {"error": "READWISE_TOKEN not configured"}
-
-    tags = [f"pkis:source:{slug}"] if slug else []
-
-    if arxiv_id:
-        push_url      = f"https://ar5iv.org/abs/{arxiv_id}"
-        category      = "article"
-        notes         = f"VPS copy: {doc_url}" if doc_url else ""
-    elif category:
-        push_url      = doc_url
-        notes         = ""
-    else:
-        push_url      = doc_url
-        category      = "pdf"
-        notes         = ""
-
-    payload: dict = {
-        "url":      push_url,
-        "location": "new",   # "new" = Inbox; "later" = Later shelf (not visible in inbox)
-        "category": category,
-    }
-    if title:    payload["title"]          = title
-    if author:   payload["author"]         = author
-    if tags:     payload["tags"]           = tags
-    if abstract: payload["summary"]        = abstract[:600]
-    if year:     payload["published_date"] = f"{year}-01-01T00:00:00+00:00"
-    if notes:    payload["notes"]          = notes
-    if html:
-        payload["html"]             = html[:50_000]  # Readwise cap ~50 KB
-        payload["should_clean_html"] = False
-
-    try:
-        data = json.dumps(payload).encode()
-        req = urllib.request.Request(
-            "https://readwise.io/api/v3/save/",
-            data=data,
-            headers={
-                "Authorization": f"Token {READWISE_TOKEN}",
-                "Content-Type":  "application/json",
-            },
-            method="POST",
-        )
-        with urllib.request.urlopen(req, timeout=15) as resp:
-            return json.loads(resp.read())
-    except Exception as e:
-        logger.error(f"Readwise save failed: {e}")
-        return {"error": str(e)}
 
 
 def _find_source_by_readwise_id(readwise_id: str) -> Optional[str]:
