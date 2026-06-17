@@ -42,7 +42,7 @@ from anthropic import Anthropic
 
 # B2 split (incremental): pure helpers carved out to store.py; re-imported so the
 # rest of app.py and every `import app` consumer keep referencing them unchanged.
-from store import slug_from_path, iri_from_slug, parse_iri
+from store import slug_from_path, iri_from_slug, parse_iri, WikiStore
 # External-API adapters carved out to adapters.py; `import *` (driven by adapters'
 # __all__) binds the underscore-named fetchers as app globals, so callers resolve
 # them and the contract-test monkeypatches still land.
@@ -111,8 +111,9 @@ anthropic_client = Anthropic(api_key=ANTHROPIC_API_KEY)
 # In-memory caches (invalidated on git pull via /refresh)
 # ============================================================
 
-_alias_registry: dict = {}
-_node_cache: dict = {}
+# Node + alias caches now live on the injected WikiStore (option-C DI). The
+# remaining caches (graph, BM25, embeddings) migrate in later C increments.
+STORE = WikiStore(WIKI_DIR)
 _graph: Optional[nx.DiGraph] = None
 _bm25_index = None
 _bm25_corpus: list = []
@@ -179,95 +180,27 @@ def ensure_fresh():
 
 
 
-def find_node_path(slug: str) -> Optional[Path]:
-    """Find the file path for a slug, searching all knowledge dirs."""
-    for kdir in KNOWLEDGE_DIRS:
-        p = WIKI_DIR / kdir / f"{slug}.md"
-        if p.exists():
-            return p
-    return None
+# Thin wrappers over the injected WikiStore (option-C DI) — these keep every
+# existing call site unchanged while the node-loading logic + caches live on STORE.
+
+def find_node_path(slug):
+    return STORE.find_node_path(slug)
 
 
-def find_node_path_by_iri(iri: str) -> Optional[Path]:
-    """Resolve an IRI to a file path."""
-    _, node_type, slug = parse_iri(iri)
-    if not slug:
-        return None
-    # Try the typed directory first (using TYPE_TO_FOLDER for correct mapping)
-    folder = TYPE_TO_FOLDER.get(node_type, node_type) if node_type else None
-    if folder:
-        p = WIKI_DIR / folder / f"{slug}.md"
-        if p.exists():
-            return p
-    # Fall back to searching all dirs
-    return find_node_path(slug)
+def find_node_path_by_iri(iri):
+    return STORE.find_node_path_by_iri(iri)
 
 
-def load_node(path: Path) -> dict:
-    """Load and parse a wiki node file."""
-    if str(path) in _node_cache:
-        return _node_cache[str(path)]
-
-    try:
-        post = frontmatter.load(str(path))
-        node_type = path.parent.name
-        slug = path.stem
-
-        # Generate IRI if not in frontmatter
-        iri = post.metadata.get("id") or iri_from_slug(node_type, slug)
-
-        result = {
-            "iri": iri,
-            "slug": slug,
-            "node_type": node_type,
-            "path": str(path),
-            "frontmatter": dict(post.metadata),
-            "content": post.content,
-            "title": post.metadata.get("title", slug),
-            "domain": post.metadata.get("domain", []),
-            "aliases": post.metadata.get("aliases", []),
-            "coverage": post.metadata.get("coverage", 0),
-            "understanding": post.metadata.get("understanding", 0),
-            "confidence": post.metadata.get("confidence", 0),
-            "date_updated": post.metadata.get("date_updated", ""),
-        }
-        _node_cache[str(path)] = result
-        return result
-    except Exception as e:
-        logger.error(f"Error loading {path}: {e}")
-        return {}
+def load_node(path):
+    return STORE.load_node(path)
 
 
-def load_all_nodes() -> list:
-    """Load all wiki nodes across all knowledge directories."""
-    nodes = []
-    for kdir in KNOWLEDGE_DIRS:
-        dir_path = WIKI_DIR / kdir
-        if not dir_path.exists():
-            continue
-        for md_file in dir_path.glob("*.md"):
-            node = load_node(md_file)
-            if node:
-                nodes.append(node)
-    return nodes
+def load_all_nodes():
+    return STORE.load_all_nodes()
 
 
-def build_alias_registry() -> dict:
-    """Build flat alias → IRI registry from all node frontmatter."""
-    registry = {}
-    nodes = load_all_nodes()
-    for node in nodes:
-        iri = node["iri"]
-        # Register canonical title
-        title = node.get("title", "")
-        if title:
-            registry[title.lower()] = iri
-        # Register slug
-        registry[node["slug"].lower()] = iri
-        # Register all aliases
-        for alias in node.get("aliases", []):
-            registry[alias.lower()] = iri
-    return registry
+def build_alias_registry():
+    return STORE.build_alias_registry()
 
 
 def build_graph() -> nx.DiGraph:
@@ -443,23 +376,20 @@ def vector_search(query: str, max_results: int = 30) -> list:
 
 def refresh_caches():
     """Invalidate and rebuild all caches."""
-    global _alias_registry, _node_cache, _graph, _bm25_index
-    _node_cache = {}
-    _alias_registry = build_alias_registry()
+    global _graph, _bm25_index
+    STORE.invalidate_nodes()
     _graph = build_graph()
     build_bm25_index()
     build_embedding_index()
-    logger.info(f"Caches refreshed: {len(_alias_registry)} aliases, "
+    aliases = STORE.get_alias_registry()
+    logger.info(f"Caches refreshed: {len(aliases)} aliases, "
                 f"{_graph.number_of_nodes()} nodes, "
                 f"{_graph.number_of_edges()} edges, "
                 f"semantic={'on' if _semantic_enabled() else 'off'}")
 
 
-def get_alias_registry() -> dict:
-    global _alias_registry
-    if not _alias_registry:
-        _alias_registry = build_alias_registry()
-    return _alias_registry
+def get_alias_registry():
+    return STORE.get_alias_registry()
 
 
 def get_graph() -> nx.DiGraph:
@@ -2398,8 +2328,8 @@ def tool_edit_node(
     path.write_text(frontmatter.dumps(new_post))
 
     # Invalidate caches so the next read/graph reflects the edit
-    global _node_cache, _graph
-    _node_cache = {}
+    STORE.invalidate_nodes()
+    global _graph
     _graph = None
 
     iri_final = fm.get("id") or iri or iri_from_slug(path.parent.name, path.stem)
@@ -2493,8 +2423,8 @@ def tool_add_connections(edges: list, commit_message: str = "") -> dict:
                             "predicate": predicate, "status": "error", "error": str(ex)})
 
     # Invalidate caches so the next graph read reflects the new edges
-    global _node_cache, _graph
-    _node_cache = {}
+    STORE.invalidate_nodes()
+    global _graph
     _graph = None
 
     added = [r for r in results if r["status"] == "added"]
@@ -2702,8 +2632,7 @@ def tool_commit_staged_node(
     staged_file.unlink()
 
     # Invalidate node cache
-    global _node_cache
-    _node_cache = {}
+    STORE.invalidate_nodes()
 
     # Update index.md
     section_map = {
@@ -3178,8 +3107,7 @@ def _auto_create_source_node(slug: str, filename: str,
     )
 
     # Invalidate node cache so subsequent lookups see the new node
-    global _node_cache
-    _node_cache = {}
+    STORE.invalidate_nodes()
 
     enrichment = "arxiv" if arxiv_id and metadata.get("title") else "minimal"
     logger.info(f"Auto-created source node {slug} (enrichment={enrichment})")
@@ -3438,8 +3366,7 @@ def tool_save_url_source(
     dest.write_text(
         f"---\n{yaml.dump(fm, default_flow_style=False, allow_unicode=True)}---\n\n{body}"
     )
-    global _node_cache
-    _node_cache = {}
+    STORE.invalidate_nodes()
 
     # ── Readwise push ─────────────────────────────────────────────────────────
     readwise_result: dict = {}
@@ -3705,8 +3632,7 @@ def tool_save_podcast_source(
     dest.write_text(
         f"---\n{yaml.dump(fm, default_flow_style=False, allow_unicode=True)}---\n\n{body}"
     )
-    global _node_cache
-    _node_cache = {}
+    STORE.invalidate_nodes()
 
     # ── Whisper queue if no transcript ────────────────────────────────────────
     if not transcript_segments:

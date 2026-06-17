@@ -174,7 +174,7 @@ def appmod():
 @pytest.fixture()
 def client(appmod):
     """Flask test client. Reset per-test caches so reads reflect current disk."""
-    appmod._node_cache = {}
+    appmod.STORE.invalidate_nodes()  # node + alias caches (option-C WikiStore)
     appmod._graph = None
     appmod._bm25_index = None
     return appmod.app.test_client()
@@ -198,7 +198,9 @@ def isolated_wiki(appmod, monkeypatch, tmp_path):
     monkeypatch.setattr(appmod, "REPO_DIR", repo)
     monkeypatch.setattr(appmod, "DOCS_REPO_DIR", repo)
     monkeypatch.setattr(appmod, "STAGING_DIR", wiki / "staging")
-    appmod._node_cache = {}
+    # Option-C DI: the node-loading layer reads STORE.wiki_dir, not the app global.
+    monkeypatch.setattr(appmod.STORE, "wiki_dir", wiki)
+    appmod.STORE.invalidate_nodes()
     appmod._graph = None
     appmod._bm25_index = None
 
