@@ -43,6 +43,14 @@ def test_edge_weights_are_normalized_range(appmod):
 
 
 @pytest.mark.unit
+def test_search_wiki_index_finds_seeded_term(appmod, isolated_wiki):
+    """search_wiki_index (BM25-only hidden tool) uses STORE's bm25 cache after C-1c."""
+    appmod.STORE.invalidate_search()
+    iris = {r["iri"] for r in appmod.tool_search_wiki_index("entropy")}
+    assert "pkis:concept:entropy" in iris
+
+
+@pytest.mark.unit
 def test_hybrid_search_finds_seeded_term(appmod, isolated_wiki):
     """hybrid_search('entropy') over the fixture wiki surfaces the entropy node.
     BM25-only (semantic disabled in tests), so this is deterministic. Asserts

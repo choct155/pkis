@@ -42,7 +42,7 @@ from anthropic import Anthropic
 
 # B2 split (incremental): pure helpers carved out to store.py; re-imported so the
 # rest of app.py and every `import app` consumer keep referencing them unchanged.
-from store import slug_from_path, iri_from_slug, parse_iri, WikiStore
+from store import slug_from_path, iri_from_slug, parse_iri, rrf_score, WikiStore
 # External-API adapters carved out to adapters.py; `import *` (driven by adapters'
 # __all__) binds the underscore-named fetchers as app globals, so callers resolve
 # them and the contract-test monkeypatches still land.
@@ -113,18 +113,9 @@ anthropic_client = Anthropic(api_key=ANTHROPIC_API_KEY)
 
 # Node + alias caches now live on the injected WikiStore (option-C DI). The
 # remaining caches (graph, BM25, embeddings) migrate in later C increments.
-STORE = WikiStore(WIKI_DIR)
-_bm25_index = None
-_bm25_corpus: list = []
-_bm25_slugs: list = []
-
-# Dense-vector index (parallel arrays: _embed_matrix[i] is the unit vector for
-# _embed_slugs[i]). Model is lazy-loaded once per worker. Vectors are persisted
-# to EMBED_CACHE_PATH keyed by a content hash, so restarts don't re-encode and a
-# committed write only re-encodes the nodes that actually changed.
-_embed_model = None
-_embed_matrix = None      # np.ndarray (N, dim), L2-normalized, float32
-_embed_slugs: list = []
+# The WikiStore now owns the node, alias, graph, BM25 and embedding caches
+# (option-C DI). semantic_enabled = config flag AND the sentence-transformers probe.
+STORE = WikiStore(WIKI_DIR, semantic_enabled=(SEMANTIC_SEARCH and _ST_AVAILABLE))
 
 # Cross-worker cache freshness. Each gunicorn worker holds its own in-memory
 # caches, so a write handled by one worker leaves the others stale (and writes
@@ -206,132 +197,39 @@ def build_graph():
     return STORE.build_graph()
 
 
+# Search-layer wrappers over the injected WikiStore (option-C DI). The embedding
+# internals (_get_embed_model/_embed_text/_load_/_save_embed_cache) are now private
+# to WikiStore.
+
 def build_bm25_index():
-    """Build BM25 keyword index over all node content."""
-    global _bm25_index, _bm25_corpus, _bm25_slugs
-    nodes = load_all_nodes()
-    corpus = []
-    slugs = []
-    for node in nodes:
-        text = f"{node['title']} {node.get('content', '')} {' '.join(node.get('aliases', []))}"
-        tokens = text.lower().split()
-        corpus.append(tokens)
-        slugs.append(node["iri"])
-    _bm25_index = BM25Okapi(corpus)
-    _bm25_corpus = corpus
-    _bm25_slugs = slugs
+    return STORE.build_bm25_index()
 
 
-def _semantic_enabled() -> bool:
-    return SEMANTIC_SEARCH and _ST_AVAILABLE
-
-
-def _get_embed_model():
-    """Lazy-load the sentence-transformer once per worker (CPU)."""
-    global _embed_model
-    if _embed_model is None:
-        from sentence_transformers import SentenceTransformer
-        logger.info(f"Loading embedding model {EMBED_MODEL_NAME} ...")
-        _embed_model = SentenceTransformer(EMBED_MODEL_NAME, device="cpu")
-    return _embed_model
-
-
-def _embed_text(node: dict) -> str:
-    """Front-load the most discriminating signal (title, aliases) before the body;
-    the body tail past the model's token window is truncated by the encoder."""
-    title = node.get("title", "") or ""
-    aliases = " ".join(node.get("aliases", []) or [])
-    content = node.get("content", "") or ""
-    return f"{title}\n{aliases}\n{content}".strip()
-
-
-def _load_embed_cache() -> dict:
-    """hash -> vector, from the persisted npz. Empty on any miss/corruption."""
-    if not EMBED_CACHE_PATH.exists():
-        return {}
-    try:
-        data = np.load(EMBED_CACHE_PATH, allow_pickle=False)
-        hashes, vectors = data["hashes"], data["vectors"]
-        return {str(h): vectors[i] for i, h in enumerate(hashes)}
-    except Exception as e:
-        logger.warning(f"embed cache load failed ({e}); rebuilding from scratch")
-        return {}
-
-
-def _save_embed_cache(cache: dict, current_hashes: list):
-    """Persist only the vectors for the current corpus (prunes deleted nodes)."""
-    keep = list(dict.fromkeys(current_hashes))
-    if not keep:
-        return
-    try:
-        np.savez(
-            EMBED_CACHE_PATH,
-            hashes=np.array(keep),
-            vectors=np.vstack([cache[h] for h in keep]).astype(np.float32),
-        )
-    except Exception as e:
-        logger.warning(f"embed cache save failed: {e}")
+def _semantic_enabled():
+    return STORE._semantic_enabled()
 
 
 def build_embedding_index():
-    """Build the dense index over all nodes, reusing cached vectors for unchanged
-    content and only encoding what's new. No-op (clears index) when semantic
-    search is disabled or the ML dep is absent."""
-    global _embed_matrix, _embed_slugs
-    if not _semantic_enabled():
-        _embed_matrix, _embed_slugs = None, []
-        return
-
-    nodes = load_all_nodes()
-    texts = [_embed_text(n) for n in nodes]
-    hashes = [hashlib.sha1(t.encode("utf-8")).hexdigest() for t in texts]
-    iris = [n["iri"] for n in nodes]
-
-    cache = _load_embed_cache()
-    missing = [i for i, h in enumerate(hashes) if h not in cache]
-    if missing:
-        model = _get_embed_model()
-        vecs = model.encode(
-            [texts[i] for i in missing],
-            normalize_embeddings=True,
-            batch_size=64,
-            show_progress_bar=False,
-        )
-        for j, i in enumerate(missing):
-            cache[hashes[i]] = np.asarray(vecs[j], dtype=np.float32)
-        logger.info(f"Embedded {len(missing)} new/changed nodes "
-                    f"({len(nodes) - len(missing)} reused from cache)")
-
-    _embed_matrix = np.vstack([cache[h] for h in hashes]).astype(np.float32)
-    _embed_slugs = iris
-    _save_embed_cache(cache, hashes)
+    return STORE.build_embedding_index()
 
 
-def vector_search(query: str, max_results: int = 30) -> list:
-    """Cosine ranking over the dense index. Returns [(iri, score), ...].
-    Brute-force dot product (vectors are unit-norm) — trivial at this corpus size."""
-    if not _semantic_enabled() or _embed_matrix is None or not _embed_slugs:
-        return []
-    model = _get_embed_model()
-    q = model.encode([EMBED_QUERY_PREFIX + query], normalize_embeddings=True)[0]
-    sims = _embed_matrix @ np.asarray(q, dtype=np.float32)
-    top = np.argsort(-sims)[:max_results]
-    return [(_embed_slugs[i], float(sims[i])) for i in top]
+def vector_search(query, max_results=30):
+    return STORE.vector_search(query, max_results=max_results)
 
 
 def refresh_caches():
     """Invalidate and rebuild all caches."""
-    global _bm25_index
     STORE.invalidate_nodes()
     STORE.invalidate_graph()
+    STORE.invalidate_search()
     g = STORE.get_graph()
-    build_bm25_index()
-    build_embedding_index()
+    STORE.build_bm25_index()
+    STORE.build_embedding_index()
     aliases = STORE.get_alias_registry()
     logger.info(f"Caches refreshed: {len(aliases)} aliases, "
                 f"{g.number_of_nodes()} nodes, "
                 f"{g.number_of_edges()} edges, "
-                f"semantic={'on' if _semantic_enabled() else 'off'}")
+                f"semantic={'on' if STORE._semantic_enabled() else 'off'}")
 
 
 def get_alias_registry():
@@ -346,89 +244,8 @@ def structural_candidates(seed_iri, edge_types=None, max_hops=2):
     return STORE.structural_candidates(seed_iri, edge_types=edge_types, max_hops=max_hops)
 
 
-def rrf_score(rank: int, k: int = 60) -> float:
-    return 1.0 / (k + rank)
-
-
-def hybrid_search(query: str, domains=None, node_types=None, max_results=10) -> list:
-    """Hybrid BM25 + structural search with RRF fusion."""
-    global _bm25_index, _bm25_slugs
-
-    if _bm25_index is None:
-        build_bm25_index()
-    # The REST search route doesn't go through dispatch_tool's ensure_fresh(), so a
-    # worker serving only REST traffic would never build the dense index and would
-    # silently fall back to BM25-only. Build it lazily here too (loads instantly
-    # from the persisted cache; no re-encode).
-    if _semantic_enabled() and _embed_matrix is None:
-        build_embedding_index()
-
-    # BM25 semantic ranking
-    tokens = query.lower().split()
-    bm25_scores = _bm25_index.get_scores(tokens)
-    bm25_ranked = sorted(
-        enumerate(bm25_scores),
-        key=lambda x: x[1],
-        reverse=True
-    )[:max_results * 3]
-
-    # Build RRF score map. BM25 contributes one ranked list; the dense retriever
-    # contributes a second. Reciprocal-rank fusion blends them so exact-term hits
-    # (BM25) and paraphrase/semantic hits (embeddings) reinforce each other without
-    # either needing calibrated score scales.
-    rrf_scores = {}
-    for rank, (idx, score) in enumerate(bm25_ranked):
-        iri = _bm25_slugs[idx]
-        rrf_scores[iri] = rrf_scores.get(iri, 0) + rrf_score(rank)
-
-    for rank, (iri, _sim) in enumerate(vector_search(query, max_results=max_results * 3)):
-        rrf_scores[iri] = rrf_scores.get(iri, 0) + rrf_score(rank)
-
-    # Apply filters
-    all_nodes = load_all_nodes()
-    node_map = {n["iri"]: n for n in all_nodes}
-
-    results = []
-    seen = set()
-    for iri, score in sorted(rrf_scores.items(), key=lambda x: x[1], reverse=True):
-        if iri in seen:
-            continue
-        seen.add(iri)
-        node = node_map.get(iri)
-        if not node:
-            continue
-        if domains and not any(d in node.get("domain", []) for d in domains):
-            continue
-        if node_types and node.get("node_type") not in node_types:
-            continue
-        # Anatomy assessment counts for component_scores
-        # node["node_type"] is the folder name; map to singular for COMPONENT_SCORES_BY_TYPE
-        node_type_key = FOLDER_TO_TYPE.get(node["node_type"], node["node_type"])
-        components = COMPONENT_SCORES_BY_TYPE.get(node_type_key)
-        anatomy_total = len(components) if components else 0
-        anatomy_assessed = 0
-        if components:
-            cs = node.get("frontmatter", {}).get("component_scores") or {}
-            anatomy_assessed = sum(1 for c in components if cs.get(c) is not None)
-
-        results.append({
-            "iri": iri,
-            "canonical_title": node["title"],
-            # singular knowledge type (folder name is plural) — keeps the viewer's
-            # type filtering + colored badges consistent across search/index/frontier.
-            "node_type": FOLDER_TO_TYPE.get(node["node_type"], node["node_type"]),
-            "domain": node["domain"],
-            "score": score,
-            "excerpt": node["content"][:300] if node.get("content") else "",
-            "coverage": node["coverage"],
-            "understanding": node["understanding"],
-            "anatomy_assessed": anatomy_assessed,
-            "anatomy_total": anatomy_total,
-        })
-        if len(results) >= max_results:
-            break
-
-    return results
+def hybrid_search(query, domains=None, node_types=None, max_results=10):
+    return STORE.hybrid_search(query, domains=domains, node_types=node_types, max_results=max_results)
 
 
 def _bearer(req) -> str:
@@ -655,8 +472,8 @@ def tool_resolve_concept(surface_form: str) -> dict:
 
 def tool_detect_concepts(text: str, threshold: float = 0.7) -> list:
     """Detect PKIS concepts in arbitrary text using BM25 + LLM judgment."""
-    if _bm25_index is None:
-        build_bm25_index()
+    if STORE._bm25_index is None:
+        STORE.build_bm25_index()
 
     # BM25 pass to get candidates
     candidates = hybrid_search(text, max_results=10)
@@ -807,17 +624,17 @@ def tool_search_wiki(query: str, domains=None, node_types=None, max_results=10) 
 
 def tool_search_wiki_index(query: str) -> list:
     """Fast keyword-only index scan, no LLM involvement."""
-    if _bm25_index is None:
-        build_bm25_index()
+    if STORE._bm25_index is None:
+        STORE.build_bm25_index()
     tokens = query.lower().split()
-    scores = _bm25_index.get_scores(tokens)
+    scores = STORE._bm25_index.get_scores(tokens)
     ranked = sorted(enumerate(scores), key=lambda x: x[1], reverse=True)[:20]
     all_nodes = {n["iri"]: n for n in load_all_nodes()}
     results = []
     for idx, score in ranked:
         if score <= 0:
             continue
-        iri = _bm25_slugs[idx]
+        iri = STORE._bm25_slugs[idx]
         node = all_nodes.get(iri, {})
         content = node.get("content", "")
         first_line = content.split("\n")[0].strip() if content else ""
@@ -5571,7 +5388,7 @@ if __name__ == "__main__":
             sys.exit(1)
         logger.info("Building embedding index offline...")
         build_embedding_index()
-        print(f"Embedding index built: {len(_embed_slugs)} nodes -> {EMBED_CACHE_PATH}")
+        print(f"Embedding index built: {len(STORE._embed_slugs)} nodes -> {EMBED_CACHE_PATH}")
         sys.exit(0)
 
     # Build caches on startup
