@@ -115,53 +115,15 @@ anthropic_client = Anthropic(api_key=ANTHROPIC_API_KEY)
 # remaining caches (graph, BM25, embeddings) migrate in later C increments.
 # The WikiStore now owns the node, alias, graph, BM25 and embedding caches
 # (option-C DI). semantic_enabled = config flag AND the sentence-transformers probe.
-STORE = WikiStore(WIKI_DIR, semantic_enabled=(SEMANTIC_SEARCH and _ST_AVAILABLE))
-
-# Cross-worker cache freshness. Each gunicorn worker holds its own in-memory
-# caches, so a write handled by one worker leaves the others stale (and writes
-# never rebuilt the BM25 index at all) — new nodes were invisible to search until
-# a restart. We use the git HEAD commit sha as a content signature: every live
-# write commits, so HEAD changes; a worker rebuilds its caches lazily when its
-# built generation falls behind. Result: writes are searchable everywhere with no
-# restart. (Staged-only creates don't commit, so they don't trigger a rebuild.)
-_cache_gen: Optional[str] = None
+STORE = WikiStore(WIKI_DIR, repo_dir=REPO_DIR, semantic_enabled=(SEMANTIC_SEARCH and _ST_AVAILABLE))
 
 
-def _content_signature() -> str:
-    """Live-content signature = git HEAD sha of REPO_DIR (changes on every
-    committed write). Empty string if it can't be read — in which case we leave
-    caches as-is rather than rebuild on every call."""
-    try:
-        head = (REPO_DIR / ".git" / "HEAD").read_text().strip()
-        if head.startswith("ref:"):
-            ref = head.split(" ", 1)[1].strip()
-            ref_path = REPO_DIR / ".git" / ref
-            if ref_path.exists():
-                return ref_path.read_text().strip()
-            packed = REPO_DIR / ".git" / "packed-refs"
-            if packed.exists():
-                for line in packed.read_text().splitlines():
-                    parts = line.split()
-                    if len(parts) == 2 and parts[1] == ref:
-                        return parts[0]
-            return ""
-        return head  # detached HEAD: the line itself is the sha
-    except Exception:
-        return ""
+def _content_signature():
+    return STORE.content_signature()
 
 
 def ensure_fresh():
-    """Rebuild this worker's caches if live content changed since it last built
-    (cross-worker invalidation via the git HEAD signature). Cheap when unchanged
-    (one small file read + string compare)."""
-    global _cache_gen
-    sig = _content_signature()
-    if sig and sig != _cache_gen:
-        try:
-            refresh_caches()
-            _cache_gen = sig
-        except Exception as e:
-            logger.warning(f"ensure_fresh rebuild failed: {e}")
+    return STORE.ensure_fresh()
 
 
 # ============================================================
@@ -219,17 +181,7 @@ def vector_search(query, max_results=30):
 
 def refresh_caches():
     """Invalidate and rebuild all caches."""
-    STORE.invalidate_nodes()
-    STORE.invalidate_graph()
-    STORE.invalidate_search()
-    g = STORE.get_graph()
-    STORE.build_bm25_index()
-    STORE.build_embedding_index()
-    aliases = STORE.get_alias_registry()
-    logger.info(f"Caches refreshed: {len(aliases)} aliases, "
-                f"{g.number_of_nodes()} nodes, "
-                f"{g.number_of_edges()} edges, "
-                f"semantic={'on' if STORE._semantic_enabled() else 'off'}")
+    return STORE.refresh()
 
 
 def get_alias_registry():

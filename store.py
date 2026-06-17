@@ -55,8 +55,12 @@ class WikiStore:
     ~95 existing call sites are unchanged; cache-clear sites call STORE.invalidate*().
     Static config (KNOWLEDGE_DIRS / TYPE_TO_FOLDER) is read live from config."""
 
-    def __init__(self, wiki_dir, semantic_enabled=False):
+    def __init__(self, wiki_dir, repo_dir=None, semantic_enabled=False):
         self.wiki_dir = Path(wiki_dir)
+        # repo_dir is injected (tests monkeypatch it) — content_signature reads its
+        # git HEAD. Defaults to the wiki's parent (prod layout: repo/wiki).
+        self.repo_dir = Path(repo_dir) if repo_dir is not None else Path(wiki_dir).parent
+        self._cache_gen = None
         self._node_cache: dict = {}
         self._alias_registry: dict = {}
         self._graph = None
@@ -402,3 +406,51 @@ class WikiStore:
             if len(results) >= max_results:
                 break
         return results
+
+    # ── Freshness: git-HEAD-signature cross-worker cache invalidation (C-1d) ──
+
+    def content_signature(self):
+        """Live-content signature = git HEAD sha of repo_dir (changes on every
+        committed write). Empty string if unreadable — caller leaves caches as-is."""
+        try:
+            head = (self.repo_dir / ".git" / "HEAD").read_text().strip()
+            if head.startswith("ref:"):
+                ref = head.split(" ", 1)[1].strip()
+                ref_path = self.repo_dir / ".git" / ref
+                if ref_path.exists():
+                    return ref_path.read_text().strip()
+                packed = self.repo_dir / ".git" / "packed-refs"
+                if packed.exists():
+                    for line in packed.read_text().splitlines():
+                        parts = line.split()
+                        if len(parts) == 2 and parts[1] == ref:
+                            return parts[0]
+                return ""
+            return head  # detached HEAD: the line itself is the sha
+        except Exception:
+            return ""
+
+    def refresh(self):
+        """Invalidate and rebuild all caches."""
+        self.invalidate_nodes()
+        self.invalidate_graph()
+        self.invalidate_search()
+        g = self.get_graph()
+        self.build_bm25_index()
+        self.build_embedding_index()
+        aliases = self.get_alias_registry()
+        logger.info(f"Caches refreshed: {len(aliases)} aliases, "
+                    f"{g.number_of_nodes()} nodes, "
+                    f"{g.number_of_edges()} edges, "
+                    f"semantic={'on' if self._semantic_enabled() else 'off'}")
+
+    def ensure_fresh(self):
+        """Rebuild this worker's caches if live content changed since it last built
+        (cross-worker invalidation via the git HEAD signature). Cheap when unchanged."""
+        sig = self.content_signature()
+        if sig and sig != self._cache_gen:
+            try:
+                self.refresh()
+                self._cache_gen = sig
+            except Exception as e:
+                logger.warning(f"ensure_fresh rebuild failed: {e}")
