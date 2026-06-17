@@ -198,13 +198,12 @@ def isolated_wiki(appmod, monkeypatch, tmp_path):
     monkeypatch.setattr(appmod, "REPO_DIR", repo)
     monkeypatch.setattr(appmod, "DOCS_REPO_DIR", repo)
     monkeypatch.setattr(appmod, "STAGING_DIR", wiki / "staging")
-    # Option-C DI: the store reads STORE.wiki_dir / STORE.repo_dir, not app globals.
-    monkeypatch.setattr(appmod.STORE, "wiki_dir", wiki)
-    monkeypatch.setattr(appmod.STORE, "repo_dir", repo)
-    appmod.STORE._cache_gen = None  # so ensure_fresh re-detects this repo's HEAD
-    appmod.STORE.invalidate_nodes()
-    appmod.STORE.invalidate_graph()
-    appmod.STORE.invalidate_search()
+    # Option-C DI payoff: give this test its OWN store pointed at the fixture —
+    # a fresh instance has empty caches + _cache_gen=None, so no monkeypatch-and-
+    # invalidate dance. app.py functions resolve appmod.STORE at call time, so they
+    # transparently use it. (Tools still read the app/config WIKI_DIR globals for
+    # write-paths, hence those monkeypatches above remain.)
+    monkeypatch.setattr(appmod, "STORE", appmod.WikiStore(wiki, repo_dir=repo, semantic_enabled=False))
 
     class _Env:
         pass
