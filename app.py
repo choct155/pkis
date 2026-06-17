@@ -10,6 +10,13 @@ Wiki source: /home/pkis/pkis-wiki/wiki/
 """
 
 import os
+import sys
+# B2 split: make sibling split-modules (store.py, …) importable regardless of the
+# process CWD. On the server app.py is a symlink (/home/pkis/app.py ->
+# pkis-wiki/app.py) and gunicorn's WorkingDirectory is /home/pkis, so realpath
+# resolves to the real package dir; locally this is a harmless no-op.
+sys.path.insert(0, os.path.dirname(os.path.realpath(__file__)))
+
 import re
 import json
 import glob
@@ -32,6 +39,10 @@ from rank_bm25 import BM25Okapi
 from functools import wraps
 from flask import Flask, request, jsonify, Response, send_from_directory, g, redirect, make_response
 from anthropic import Anthropic
+
+# B2 split (incremental): pure helpers carved out to store.py; re-imported so the
+# rest of app.py and every `import app` consumer keep referencing them unchanged.
+from store import slug_from_path, iri_from_slug, parse_iri
 
 # ============================================================
 # Configuration
@@ -286,21 +297,6 @@ def ensure_fresh():
 # Core helpers
 # ============================================================
 
-def slug_from_path(path: Path) -> str:
-    return path.stem
-
-
-def iri_from_slug(node_type: str, slug: str) -> str:
-    """Generate a stable IRI from node type and slug."""
-    return f"pkis:{node_type}:{slug}"
-
-
-def parse_iri(iri: str) -> tuple:
-    """Parse IRI into (namespace, node_type, slug)."""
-    parts = iri.split(":")
-    if len(parts) >= 3:
-        return parts[0], parts[1], parts[2]
-    return None, None, None
 
 
 def find_node_path(slug: str) -> Optional[Path]:
