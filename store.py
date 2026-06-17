@@ -11,9 +11,11 @@ in a later increment, once the canonical paths are relocated to share one source
 """
 
 import logging
+import re
 from pathlib import Path
 
 import frontmatter
+import networkx as nx
 
 import config
 
@@ -49,11 +51,16 @@ class WikiStore:
         self.wiki_dir = Path(wiki_dir)
         self._node_cache: dict = {}
         self._alias_registry: dict = {}
+        self._graph = None
 
     def invalidate_nodes(self):
         """Drop the node + alias caches — call after any write that changes nodes."""
         self._node_cache = {}
         self._alias_registry = {}
+
+    def invalidate_graph(self):
+        """Drop the cached graph — call after a write that changes typed edges."""
+        self._graph = None
 
     def find_node_path(self, slug):
         """Find the file path for a slug, searching all knowledge dirs."""
@@ -135,3 +142,92 @@ class WikiStore:
         if not self._alias_registry:
             self._alias_registry = self.build_alias_registry()
         return self._alias_registry
+
+    def build_graph(self):
+        """Build NetworkX graph from wiki wikilinks and typed edges."""
+        G = nx.DiGraph()
+        nodes = self.load_all_nodes()
+
+        for node in nodes:
+            G.add_node(node["iri"], **{
+                "slug": node["slug"],
+                "title": node["title"],
+                "node_type": node["node_type"],
+                "domain": node["domain"],
+                "coverage": node["coverage"],
+            })
+
+        wikilink_pattern = re.compile(r'\[\[([^\]|]+)(?:\|[^\]]+)?\]\]')
+        for node in nodes:
+            content = node.get("content", "")
+            fm = node.get("frontmatter", {})
+
+            for edge_type in config.EDGE_WEIGHTS.keys():
+                targets = fm.get(edge_type.replace("-", "_"), []) or \
+                          fm.get(edge_type, [])
+                if isinstance(targets, str):
+                    targets = [targets]
+                for target in targets:
+                    target_slug = target.strip("[]").split("|")[0]
+                    target_path = self.find_node_path(target_slug)
+                    if target_path:
+                        target_node = self.load_node(target_path)
+                        if target_node:
+                            G.add_edge(
+                                node["iri"],
+                                target_node["iri"],
+                                edge_type=edge_type,
+                                weight=config.EDGE_WEIGHTS[edge_type],
+                            )
+
+            for match in wikilink_pattern.finditer(content):
+                target_slug = match.group(1).strip()
+                target_path = self.find_node_path(target_slug)
+                if target_path:
+                    target_node = self.load_node(target_path)
+                    if target_node and target_node["iri"] != node["iri"]:
+                        if not G.has_edge(node["iri"], target_node["iri"]):
+                            G.add_edge(
+                                node["iri"],
+                                target_node["iri"],
+                                edge_type="related",
+                                weight=0.3,
+                            )
+        return G
+
+    def get_graph(self):
+        if self._graph is None:
+            self._graph = self.build_graph()
+        return self._graph
+
+    def structural_candidates(self, seed_iri, edge_types=None, max_hops=2):
+        """Return structurally connected nodes with weighted scores."""
+        G = self.get_graph()
+        if seed_iri not in G:
+            return []
+        candidates = []
+        visited = {seed_iri}
+
+        def traverse(node_iri, depth):
+            if depth > max_hops:
+                return
+            for neighbor in G.successors(node_iri):
+                if neighbor in visited:
+                    continue
+                visited.add(neighbor)
+                edge_data = G.get_edge_data(node_iri, neighbor) or {}
+                etype = edge_data.get("edge_type", "related")
+                if edge_types and etype not in edge_types:
+                    continue
+                weight = config.EDGE_WEIGHTS.get(etype, 0.3)
+                effective_weight = weight * (0.7 ** (depth - 1))
+                candidates.append({
+                    "iri": neighbor,
+                    "edge_type": etype,
+                    "weight": effective_weight,
+                    "hop_count": depth,
+                })
+                traverse(neighbor, depth + 1)
+
+        traverse(seed_iri, 1)
+        return sorted(candidates, key=lambda x: x["weight"], reverse=True)

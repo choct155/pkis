@@ -175,7 +175,7 @@ def appmod():
 def client(appmod):
     """Flask test client. Reset per-test caches so reads reflect current disk."""
     appmod.STORE.invalidate_nodes()  # node + alias caches (option-C WikiStore)
-    appmod._graph = None
+    appmod.STORE.invalidate_graph()
     appmod._bm25_index = None
     return appmod.app.test_client()
 
@@ -201,7 +201,7 @@ def isolated_wiki(appmod, monkeypatch, tmp_path):
     # Option-C DI: the node-loading layer reads STORE.wiki_dir, not the app global.
     monkeypatch.setattr(appmod.STORE, "wiki_dir", wiki)
     appmod.STORE.invalidate_nodes()
-    appmod._graph = None
+    appmod.STORE.invalidate_graph()
     appmod._bm25_index = None
 
     class _Env:

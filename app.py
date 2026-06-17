@@ -114,7 +114,6 @@ anthropic_client = Anthropic(api_key=ANTHROPIC_API_KEY)
 # Node + alias caches now live on the injected WikiStore (option-C DI). The
 # remaining caches (graph, BM25, embeddings) migrate in later C increments.
 STORE = WikiStore(WIKI_DIR)
-_graph: Optional[nx.DiGraph] = None
 _bm25_index = None
 _bm25_corpus: list = []
 _bm25_slugs: list = []
@@ -203,62 +202,8 @@ def build_alias_registry():
     return STORE.build_alias_registry()
 
 
-def build_graph() -> nx.DiGraph:
-    """Build NetworkX graph from wiki wikilinks and typed edges."""
-    G = nx.DiGraph()
-    nodes = load_all_nodes()
-
-    for node in nodes:
-        G.add_node(node["iri"], **{
-            "slug": node["slug"],
-            "title": node["title"],
-            "node_type": node["node_type"],
-            "domain": node["domain"],
-            "coverage": node["coverage"],
-        })
-
-    # Parse wikilinks from content to build edges
-    wikilink_pattern = re.compile(r'\[\[([^\]|]+)(?:\|[^\]]+)?\]\]')
-    for node in nodes:
-        content = node.get("content", "")
-        # Also check frontmatter for typed relationships
-        fm = node.get("frontmatter", {})
-
-        # Extract edges from typed relationship fields
-        for edge_type in EDGE_WEIGHTS.keys():
-            targets = fm.get(edge_type.replace("-", "_"), []) or \
-                      fm.get(edge_type, [])
-            if isinstance(targets, str):
-                targets = [targets]
-            for target in targets:
-                target_slug = target.strip("[]").split("|")[0]
-                target_path = find_node_path(target_slug)
-                if target_path:
-                    target_node = load_node(target_path)
-                    if target_node:
-                        G.add_edge(
-                            node["iri"],
-                            target_node["iri"],
-                            edge_type=edge_type,
-                            weight=EDGE_WEIGHTS[edge_type]
-                        )
-
-        # Extract edges from raw wikilinks
-        for match in wikilink_pattern.finditer(content):
-            target_slug = match.group(1).strip()
-            target_path = find_node_path(target_slug)
-            if target_path:
-                target_node = load_node(target_path)
-                if target_node and target_node["iri"] != node["iri"]:
-                    if not G.has_edge(node["iri"], target_node["iri"]):
-                        G.add_edge(
-                            node["iri"],
-                            target_node["iri"],
-                            edge_type="related",
-                            weight=0.3
-                        )
-
-    return G
+def build_graph():
+    return STORE.build_graph()
 
 
 def build_bm25_index():
@@ -376,15 +321,16 @@ def vector_search(query: str, max_results: int = 30) -> list:
 
 def refresh_caches():
     """Invalidate and rebuild all caches."""
-    global _graph, _bm25_index
+    global _bm25_index
     STORE.invalidate_nodes()
-    _graph = build_graph()
+    STORE.invalidate_graph()
+    g = STORE.get_graph()
     build_bm25_index()
     build_embedding_index()
     aliases = STORE.get_alias_registry()
     logger.info(f"Caches refreshed: {len(aliases)} aliases, "
-                f"{_graph.number_of_nodes()} nodes, "
-                f"{_graph.number_of_edges()} edges, "
+                f"{g.number_of_nodes()} nodes, "
+                f"{g.number_of_edges()} edges, "
                 f"semantic={'on' if _semantic_enabled() else 'off'}")
 
 
@@ -392,46 +338,12 @@ def get_alias_registry():
     return STORE.get_alias_registry()
 
 
-def get_graph() -> nx.DiGraph:
-    global _graph
-    if _graph is None:
-        _graph = build_graph()
-    return _graph
+def get_graph():
+    return STORE.get_graph()
 
 
-def structural_candidates(seed_iri: str, edge_types=None, max_hops=2) -> list:
-    """Return structurally connected nodes with weighted scores."""
-    G = get_graph()
-    if seed_iri not in G:
-        return []
-
-    candidates = []
-    visited = {seed_iri}
-
-    def traverse(node_iri, depth):
-        if depth > max_hops:
-            return
-        for neighbor in G.successors(node_iri):
-            if neighbor in visited:
-                continue
-            visited.add(neighbor)
-            edge_data = G.get_edge_data(node_iri, neighbor) or {}
-            etype = edge_data.get("edge_type", "related")
-            if edge_types and etype not in edge_types:
-                continue
-            weight = EDGE_WEIGHTS.get(etype, 0.3)
-            # Decay weight by depth
-            effective_weight = weight * (0.7 ** (depth - 1))
-            candidates.append({
-                "iri": neighbor,
-                "edge_type": etype,
-                "weight": effective_weight,
-                "hop_count": depth
-            })
-            traverse(neighbor, depth + 1)
-
-    traverse(seed_iri, 1)
-    return sorted(candidates, key=lambda x: x["weight"], reverse=True)
+def structural_candidates(seed_iri, edge_types=None, max_hops=2):
+    return STORE.structural_candidates(seed_iri, edge_types=edge_types, max_hops=max_hops)
 
 
 def rrf_score(rank: int, k: int = 60) -> float:
@@ -2329,8 +2241,7 @@ def tool_edit_node(
 
     # Invalidate caches so the next read/graph reflects the edit
     STORE.invalidate_nodes()
-    global _graph
-    _graph = None
+    STORE.invalidate_graph()
 
     iri_final = fm.get("id") or iri or iri_from_slug(path.parent.name, path.stem)
     rel = path.relative_to(WIKI_DIR)
@@ -2424,8 +2335,7 @@ def tool_add_connections(edges: list, commit_message: str = "") -> dict:
 
     # Invalidate caches so the next graph read reflects the new edges
     STORE.invalidate_nodes()
-    global _graph
-    _graph = None
+    STORE.invalidate_graph()
 
     added = [r for r in results if r["status"] == "added"]
     git = {"sha": "", "pushed": False}

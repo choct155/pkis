@@ -41,3 +41,15 @@ def test_wikistore_is_injected_not_global(appmod, isolated_wiki):
     s = appmod.WikiStore(isolated_wiki.wiki)
     s.load_node(s.find_node_path("entropy"))
     assert s._node_cache and s is not appmod.STORE
+
+
+@pytest.mark.unit
+def test_wikistore_graph_caches_then_invalidates(appmod, isolated_wiki):
+    """C-1b: the graph cache lives on the store and invalidate_graph() clears it,
+    then get_graph() rebuilds from disk (non-destructive)."""
+    s = appmod.WikiStore(isolated_wiki.wiki)
+    g = s.get_graph()
+    assert s._graph is not None and g.number_of_nodes() >= 1
+    s.invalidate_graph()
+    assert s._graph is None
+    assert s.get_graph().number_of_nodes() >= 1
