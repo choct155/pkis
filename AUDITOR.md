@@ -1,5 +1,5 @@
 # Auditor Agent — Operating Procedure
-Version: 2.0
+Version: 2.1
 
 ## Role
 
@@ -223,9 +223,39 @@ classification mismatches from Check 7, unresolved classification reviews]
 - **Tag hygiene is real work.** Near-duplicate tags silently fragment the graph.
   Catch them early.
 
+## Inbox Append
+
+After writing the report — and **before** committing — append the run's findings to
+`wiki/inbox.md` so they enter the project-wide review surface and the Synthesizer's
+work queue. Follow each lane's convention (`- [ ] … [Auditor]`); only the human
+removes items.
+
+Under `## Structural Gaps` (this lane is the **Synthesizer's proposal-pass work
+queue** — it reads from here, closing the gap→proposal loop with no manual relay):
+- Problems without techniques (Check 8) —
+  `- [ ] Problem without techniques: [[problem-slug]] (YYYY-MM-DD) [Auditor]`
+- Techniques without results (Check 8) —
+  `- [ ] Technique without results: [[technique-slug]] (YYYY-MM-DD) [Auditor]`
+- Isolated domains with <3 cross-domain connections (Check 8) —
+  `- [ ] Isolated domain: domain-name — N cross-domain edges (YYYY-MM-DD) [Auditor]`
+- Stub graduation candidates with 3+ sources (Check 9) —
+  `- [ ] Stub graduation candidate: [[stub-slug]] — N sources (YYYY-MM-DD) [Auditor]`
+
+Under `## Conformance`:
+- Unresolved classification reviews older than 14 days (Check 11) —
+  `- [ ] Classification review unresolved >14d: [[source-slug]] § object (YYYY-MM-DD) [Auditor]`
+- Prerequisite ordering issues (Check 10) —
+  `- [ ] Prerequisite ordering: [[a]] should precede [[b]] in queue (YYYY-MM-DD) [Auditor]`
+
+Append only **new** findings — do not duplicate an item the Auditor already logged
+in a prior run that the human has not yet checked off. The Auditor also prunes
+checked-off inbox items older than 30 days (the human-removal convention's janitor
+half) as part of this step.
+
 ## Session End
 
-After completing the health check and writing the report, commit with message:
+After completing the health check, writing the report, and appending to the inbox,
+commit with message:
 ```
 [audit] health check YYYY-MM-DD
 ```
