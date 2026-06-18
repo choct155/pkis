@@ -24,7 +24,7 @@ hand-edited.
 - `usage.py` — Comptroller cost model + best-effort `log_usage`
 - `paths.py` — single source of truth for repo + operational filesystem paths (B4)
 - `tools/` — operational scripts (discovery, reader, ingest, reconcile, comptroller)
-- `tests/` — hermetic pytest suite (107 tests: unit / integration / contract), `-m "not live"` default
+- `tests/` — hermetic pytest suite (113 tests: unit / integration / contract), `-m "not live"` default; viewer has vitest (`api.ts` contract)
 
 ## Schema Summary
 Node types (12): concept, technique, result, framework, problem, principle, source,
