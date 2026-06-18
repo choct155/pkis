@@ -1,0 +1,61 @@
+/* ════════════════════════════════════════════════════════════════════════
+   PKIS Design Tokens — the canonical source of truth.
+   Three surface skins, one red through-line (Floply #E5484D).
+
+     Browse / app shell   → Floply        (dark, dense, red)        .pkis-floply
+     Node detail (.sheet) → Technical Mfg (dark, ruled, mono meta)  .pkis-technical
+     Explainer            → Hex Notebook  (light, dot-grid, red)    .pkis-hex
+
+   The live viewer (viewer/src/index.css :root) uses the Floply set as its base
+   and scopes the Technical set to .sheet. Standalone explainers
+   (wiki/assets/viz/*.html) use the Hex set. Keep this file and those in sync.
+   ════════════════════════════════════════════════════════════════════════ */
+
+/* ── Floply — browse / app shell (the scanning surface) ─────────────────── */
+.pkis-floply{
+  --bg:#111111; --surface:#1A1A1A; --raised:#222222; --elev:#222222;
+  --border:#2E2E2E; --border-strong:#3A3A3A; --muted:#888888; --text:#EDEDED; --bright:#FFFFFF;
+  --accent:#E5484D;            /* the through-line — interactive/brand red */
+  --accent-mute:#e5484d2b;
+  --radius:10px;
+  --sans:'Inter',system-ui,sans-serif; --mono:'IBM Plex Mono',monospace;
+  /* character: dense, heavy headings (700–800), elevation by background step (no card borders) */
+}
+
+/* ── Technical Manuscript — node detail (the reading surface) ───────────── */
+.pkis-technical{
+  --bg:#141417; --surface:#1C1C21; --raised:#232329; --elev:#232329;
+  --border:#2C2C34; --border-strong:#3A3A44; --muted:#8A8A95; --text:#E2E2E8; --bright:#FFFFFF;
+  --accent:#E5484D;            /* Floply red, not the original slate-blue */
+  --accent-mute:#e5484d24;
+  --radius:5px;
+  --sans:'Inter',system-ui,sans-serif; --mono:'IBM Plex Mono',monospace;
+  /* character: ruled section dividers, monospace metadata (IRI, coverage, predicates), medium leading */
+}
+
+/* ── Hex Notebook — explainers (the study surface) ─────────────────────── */
+.pkis-hex{
+  --bg:#F7F7F5; --surface:#FFFFFF; --raised:#F0F0EE; --elev:#F0F0EE;
+  --border:#E0E0DC; --border-strong:#CFCFC9; --muted:#666666; --text:#1A1A1A; --bright:#000000;
+  --accent:#E5484D;            /* Floply red, not Hex's original blue */
+  --accent-mute:#e5484d1c; --code-bg:#F3F3F0;
+  --radius:8px;
+  --sans:'Inter',system-ui,sans-serif; --mono:'IBM Plex Mono',monospace;
+  /* character: LIGHT; dot-grid ground, prominent code blocks, generous reading leading.
+     Dark canvas-based viz panels are allowed as embedded "instrument" figures. */
+}
+
+/* Dot-grid ground for the Hex study surface. */
+.pkis-hex.dotgrid, .pkis-hex .dotgrid{
+  background-color:var(--bg);
+  background-image:radial-gradient(circle,#dadad5 1px,transparent 1px);
+  background-size:20px 20px;
+}
+
+/* Semantic node-type colors — FUNCTIONAL, preserved across all skins. Red is the
+   interactive accent; these stay as category indicators and must not be replaced
+   by red. (Values match the live viewer.) */
+.pkis-floply, .pkis-technical, .pkis-hex{
+  --concept:#4f8ef7; --technique:#34c97a; --result:#f5a623; --framework:#b06af5;
+  --problem:#e85c5c; --principle:#4ecdc4; --source:#a8b3be; --asset:#c98ad9;
+}
