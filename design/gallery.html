@@ -1,0 +1,254 @@
+<!doctype html>
+<html lang="en" data-theme="ink">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>PKIS — Design Gallery</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
+<style>
+/* ── Theme tokens ───────────────────────────────────────────────────────── */
+:root{
+  --bg:#fcfcfd; --surface:#ffffff; --ink:#1a1a2e; --muted:#5a5a72; --faint:#8a8aa0;
+  --accent:#6a6ad6; --accent2:#d77757; --rule:#e6e6ef; --chip:#f1f1f9;
+  --radius:10px; --shadow:0 1px 2px rgba(20,20,50,.05),0 4px 16px rgba(20,20,50,.05);
+  --fhead:"Source Serif 4",Georgia,serif; --fbody:system-ui,-apple-system,"Segoe UI",sans-serif;
+  --fmono:ui-monospace,"JetBrains Mono",Menlo,monospace; --feel:"Quiet Ink — light editorial; reads like an essay with figures.";
+}
+html[data-theme="instrument"]{
+  --bg:#0d0f16; --surface:#161a24; --ink:#e7eaf3; --muted:#9aa3b8; --faint:#6b748c;
+  --accent:#34d399; --accent2:#fbbf24; --rule:#232838; --chip:#1d2230;
+  --radius:8px; --shadow:0 0 0 1px rgba(255,255,255,.03);
+  --fhead:"JetBrains Mono",monospace; --fbody:"Inter",system-ui,sans-serif;
+  --fmono:"JetBrains Mono",monospace; --feel:"Instrument — dark technical; dense, panel-like, for dynamics & simulation.";
+}
+html[data-theme="paper"]{
+  --bg:#f7f3ec; --surface:#fffdf8; --ink:#2c2620; --muted:#6b5f50; --faint:#9a8c78;
+  --accent:#c2570f; --accent2:#2f7d76; --rule:#e7ddcd; --chip:#f0e8da;
+  --radius:6px; --shadow:0 1px 2px rgba(80,60,30,.06);
+  --fhead:"Fraunces",Georgia,serif; --fbody:"Inter",system-ui,sans-serif;
+  --fmono:ui-monospace,Menlo,monospace; --feel:"Warm Paper — warm academic; higher contrast, bookish headings.";
+}
+html[data-theme="minimal"]{
+  --bg:#ffffff; --surface:#ffffff; --ink:#0f172a; --muted:#64748b; --faint:#94a3b8;
+  --accent:#2563eb; --accent2:#0ea5e9; --rule:#eef2f7; --chip:#f4f7fb;
+  --radius:14px; --shadow:0 1px 2px rgba(15,23,42,.04),0 8px 24px rgba(15,23,42,.04);
+  --fhead:"Inter",system-ui,sans-serif; --fbody:"Inter",system-ui,sans-serif;
+  --fmono:ui-monospace,Menlo,monospace; --feel:"Cool Minimal — near-white, single blue accent, generous whitespace.";
+}
+
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--fbody);
+     font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased;transition:background .2s,color .2s}
+.wrap{max-width:880px;margin:0 auto;padding:1rem 1.1rem 6rem}
+h1,h2,h3{font-family:var(--fhead);line-height:1.15}
+a{color:var(--accent)}
+.mono{font-family:var(--fmono)}
+
+/* ── Theme switcher (sticky) ────────────────────────────────────────────── */
+.switch{position:sticky;top:0;z-index:10;background:color-mix(in srgb,var(--bg) 88%,transparent);
+        backdrop-filter:blur(8px);border-bottom:1px solid var(--rule);padding:.6rem 1.1rem;margin:0 -1.1rem 1.2rem}
+.switch-inner{max-width:880px;margin:0 auto;display:flex;gap:.4rem;flex-wrap:wrap;align-items:center}
+.switch b{font-family:var(--fhead);font-size:.95rem;margin-right:.4rem}
+.tab{font:inherit;font-size:.82rem;font-weight:600;cursor:pointer;padding:.35rem .7rem;border-radius:99px;
+     border:1px solid var(--rule);background:var(--surface);color:var(--muted)}
+.tab[aria-pressed="true"]{background:var(--accent);color:#fff;border-color:var(--accent)}
+.feel{font-size:.82rem;color:var(--muted);margin:.5rem 0 0;width:100%}
+
+.seclabel{font-family:var(--fmono);font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;
+          color:var(--faint);margin:2.4rem 0 .7rem;border-top:1px solid var(--rule);padding-top:.8rem}
+
+/* ── Tokens ─────────────────────────────────────────────────────────────── */
+.swatches{display:flex;gap:.5rem;flex-wrap:wrap}
+.sw{width:64px;text-align:center;font-size:.62rem;color:var(--muted)}
+.sw .chip{height:42px;border-radius:8px;border:1px solid var(--rule);margin-bottom:.25rem}
+.type-scale>*{margin:.25rem 0}
+
+/* ── Viewer surfaces ────────────────────────────────────────────────────── */
+.appbar{display:flex;align-items:center;justify-content:space-between;background:var(--surface);
+        border:1px solid var(--rule);border-radius:var(--radius);padding:.7rem .9rem;box-shadow:var(--shadow)}
+.appbar .brand{font-family:var(--fhead);font-weight:600}
+.appbar .nav{display:flex;gap:.3rem}
+.appbar .nav span{font-size:.78rem;color:var(--muted);padding:.25rem .55rem;border-radius:8px}
+.appbar .nav span.on{background:var(--chip);color:var(--ink);font-weight:600}
+.stats{display:flex;gap:.6rem;margin:.9rem 0}
+.stat{flex:1;background:var(--surface);border:1px solid var(--rule);border-radius:var(--radius);
+      padding:.7rem;text-align:center;box-shadow:var(--shadow)}
+.stat b{display:block;font-family:var(--fhead);font-size:1.5rem;color:var(--accent)}
+.stat span{font-size:.7rem;color:var(--muted);text-transform:uppercase;letter-spacing:.06em}
+.search{display:flex;gap:.5rem;margin:.9rem 0}
+.search input{flex:1;font:inherit;padding:.6rem .8rem;border:1px solid var(--rule);border-radius:var(--radius);
+              background:var(--surface);color:var(--ink)}
+.search button{font:inherit;font-weight:600;padding:.6rem 1rem;border:none;border-radius:var(--radius);
+               background:var(--accent);color:#fff;cursor:pointer}
+
+.card{background:var(--surface);border:1px solid var(--rule);border-radius:var(--radius);
+      padding:.9rem 1rem;margin:.7rem 0;box-shadow:var(--shadow)}
+.card .top{display:flex;justify-content:space-between;align-items:baseline;gap:.5rem}
+.card .title{font-family:var(--fhead);font-weight:600;font-size:1.05rem}
+.chiptag{font-family:var(--fmono);font-size:.66rem;padding:.12rem .5rem;border-radius:99px;
+         background:var(--chip);color:var(--accent);font-weight:700;white-space:nowrap}
+.metrics{display:flex;gap:1.1rem;margin:.6rem 0 .3rem;font-size:.74rem;color:var(--muted)}
+.bar{height:6px;width:80px;background:var(--rule);border-radius:3px;overflow:hidden;display:inline-block;vertical-align:middle;margin-left:.4rem}
+.bar i{display:block;height:100%;background:var(--accent)}
+.bar.u i{background:var(--accent2)}
+.domains{display:flex;gap:.35rem;flex-wrap:wrap;margin-top:.5rem}
+.domains span{font-size:.68rem;color:var(--muted);background:var(--chip);padding:.1rem .5rem;border-radius:6px}
+.queue{display:flex;align-items:center;gap:.6rem;background:var(--surface);border:1px solid var(--rule);
+       border-radius:var(--radius);padding:.6rem .8rem;margin:.45rem 0}
+.dot{width:9px;height:9px;border-radius:99px;background:var(--accent2);flex:none}
+.queue .r{font-size:.78rem;color:var(--muted)}
+.staged{display:flex;align-items:center;gap:.5rem;background:color-mix(in srgb,var(--accent2) 12%,var(--surface));
+        border:1px solid color-mix(in srgb,var(--accent2) 30%,var(--rule));border-radius:var(--radius);
+        padding:.55rem .8rem;font-size:.82rem;color:var(--ink);margin:.6rem 0}
+
+/* ── Explainer primitives ───────────────────────────────────────────────── */
+.exp h2{font-size:1.35rem;margin:1.6rem 0 .3rem}
+.exp .sub{color:var(--muted);margin:0 0 1rem}
+.fig{background:var(--surface);border:1px solid var(--rule);border-radius:var(--radius);
+     padding:1rem;margin:1.1rem 0;box-shadow:var(--shadow)}
+.fig svg{display:block;width:100%;height:120px}
+.controls{display:flex;gap:1.2rem;flex-wrap:wrap;align-items:center;margin:.4rem 0;font-size:.85rem;color:var(--muted)}
+.controls label{display:flex;flex-direction:column;gap:.2rem}
+.controls output{font-family:var(--fmono);color:var(--accent2);font-weight:700}
+input[type=range]{accent-color:var(--accent);width:160px}
+.note{background:color-mix(in srgb,var(--accent) 8%,var(--surface));border-left:3px solid var(--accent);
+      padding:.7rem 1rem;border-radius:0 8px 8px 0;margin:1.1rem 0;font-size:.92rem}
+details.deriv{border-left:3px solid var(--accent);background:color-mix(in srgb,var(--accent) 6%,var(--surface));
+              border-radius:0 8px 8px 0;padding:0 1rem;margin:1rem 0}
+details.deriv summary{cursor:pointer;font-style:italic;color:var(--accent);padding:.55rem 0;font-size:.9rem;list-style:none}
+.math{font-family:var(--fmono);background:var(--chip);padding:.55rem .8rem;border-radius:8px;text-align:center;color:var(--ink);margin:.8rem 0}
+table.dt{border-collapse:collapse;width:100%;font-size:.8rem;margin:.6rem 0}
+table.dt th{font-family:var(--fmono);text-transform:uppercase;letter-spacing:.05em;font-size:.64rem;
+            color:var(--faint);text-align:left;padding:.35rem .5rem;border-bottom:1px solid var(--rule)}
+table.dt td{padding:.3rem .5rem;border-bottom:1px solid var(--rule);font-variant-numeric:tabular-nums}
+.foot{margin-top:3rem;color:var(--faint);font-size:.78rem;border-top:1px solid var(--rule);padding-top:1rem}
+</style>
+</head>
+<body>
+<div class="switch">
+  <div class="switch-inner">
+    <b>Direction:</b>
+    <button class="tab" data-t="ink" aria-pressed="true">Quiet Ink</button>
+    <button class="tab" data-t="paper" aria-pressed="false">Warm Paper</button>
+    <button class="tab" data-t="minimal" aria-pressed="false">Cool Minimal</button>
+    <button class="tab" data-t="instrument" aria-pressed="false">Instrument</button>
+    <p class="feel" id="feel"></p>
+  </div>
+</div>
+
+<div class="wrap">
+  <h1 style="margin:.2rem 0 .2rem">PKIS Design Gallery</h1>
+  <p style="color:var(--muted);margin:0 0 .4rem">
+    One set of real components, four design directions. Flip the tabs above. Tell me
+    what to keep from each — palette, type, density, accents — and I'll converge them
+    into a single system (tokens → viewer + explainers + docs/overview).</p>
+
+  <!-- TOKENS -->
+  <div class="seclabel">Tokens · palette + type</div>
+  <div class="swatches">
+    <div class="sw"><div class="chip" style="background:var(--bg)"></div>bg</div>
+    <div class="sw"><div class="chip" style="background:var(--surface)"></div>surface</div>
+    <div class="sw"><div class="chip" style="background:var(--ink)"></div>ink</div>
+    <div class="sw"><div class="chip" style="background:var(--muted)"></div>muted</div>
+    <div class="sw"><div class="chip" style="background:var(--accent)"></div>accent</div>
+    <div class="sw"><div class="chip" style="background:var(--accent2)"></div>accent2</div>
+    <div class="sw"><div class="chip" style="background:var(--chip)"></div>chip</div>
+  </div>
+  <div class="type-scale" style="margin-top:1rem">
+    <h2 style="margin:.2rem 0">Heading — Fraunces / Serif / Mono per theme</h2>
+    <p style="margin:.1rem 0">Body text in the theme's body face. The quick brown fox reads a posterior.</p>
+    <p class="mono" style="margin:.1rem 0;font-size:.85rem">mono 0123456789 — coverage 4/5 · understanding 3/5</p>
+  </div>
+
+  <!-- VIEWER -->
+  <div class="seclabel">Viewer · app surfaces</div>
+  <div class="appbar">
+    <span class="brand">PKIS</span>
+    <span class="nav"><span class="on">browse</span><span>clusters</span><span>priority</span><span>graph</span></span>
+  </div>
+  <div class="stats">
+    <div class="stat"><b>2807</b><span>nodes</span></div>
+    <div class="stat"><b>561</b><span>sources</span></div>
+    <div class="stat"><b>12</b><span>clusters</span></div>
+  </div>
+  <div class="search">
+    <input placeholder="search the wiki — concepts, techniques, results…" />
+    <button>search</button>
+  </div>
+  <div class="staged"><span class="dot"></span> 3 staged nodes awaiting review</div>
+
+  <div class="card">
+    <div class="top"><span class="title">Variational Inference</span><span class="chiptag">technique</span></div>
+    <div class="metrics">
+      coverage<span class="bar"><i style="width:80%"></i></span>
+      understanding<span class="bar u"><i style="width:60%"></i></span>
+    </div>
+    <p style="margin:.3rem 0;color:var(--muted);font-size:.88rem">Approximate a posterior by optimizing a simpler family to be close in KL divergence — turning inference into optimization.</p>
+    <div class="domains"><span>bayesian-stats</span><span>optimization</span><span>deep-learning</span></div>
+  </div>
+
+  <div class="queue"><span class="dot"></span><div><div style="font-weight:600;font-size:.9rem">forecasting-theory-and-practice</div><div class="r">fills frontier gap “Directed Graphical Models”; sim 0.70</div></div></div>
+  <div class="queue"><span class="dot" style="background:var(--accent)"></span><div><div style="font-weight:600;font-size:.9rem">kalmannet-neural-aided-filtering</div><div class="r">frontier score 6.1 · cites your seeds</div></div></div>
+
+  <!-- EXPLAINER -->
+  <div class="seclabel">Explainer · primitives</div>
+  <div class="exp">
+    <h2>Typical Sets — where the probability lives</h2>
+    <p class="sub">Why, in high dimensions, almost all the mass sits in a thin shell away from the mode.</p>
+    <p>In one dimension the mode is where you'd bet. Add dimensions and the volume of that
+       neighborhood collapses faster than its density grows — so the <i>typical set</i>, not the
+       peak, is where samples actually fall.</p>
+    <div class="fig">
+      <svg viewBox="0 0 400 120" preserveAspectRatio="none" id="chart"></svg>
+      <div class="controls">
+        <label>dimension <output id="dout">30</output>
+          <input type="range" min="1" max="200" value="30" id="dim"></label>
+        <span>mass in shell: <b style="color:var(--accent2)" id="mass">0.91</b></span>
+      </div>
+    </div>
+    <div class="math">p(x) · Vol(shell) &nbsp;peaks away from&nbsp; argmax p(x)</div>
+    <div class="note">The mode is a measure-zero trap: high density, vanishing volume. Sampling targets the product, not the peak.</div>
+    <details class="deriv"><summary>derivation — radius of the typical shell</summary>
+      <p style="font-size:.88rem;color:var(--muted)">For an isotropic Gaussian the radial density ∝ rⁿ⁻¹·e^(−r²/2); maximizing gives r* ≈ √n…</p></details>
+    <table class="dt">
+      <tr><th>sequence</th><th>p</th><th>−log p</th></tr>
+      <tr><td class="mono">0101101001</td><td>0.0009</td><td>10.1</td></tr>
+      <tr><td class="mono">1111111111</td><td>0.0010</td><td> 9.9</td></tr>
+    </table>
+  </div>
+
+  <p class="foot">PKIS design gallery · exploratory · not wired into the app. Switch directions above; your picks become the single design system.</p>
+</div>
+
+<script>
+const feel = document.getElementById('feel');
+function applyTheme(t){
+  document.documentElement.dataset.theme = t;
+  document.querySelectorAll('.tab').forEach(b=>b.setAttribute('aria-pressed', String(b.dataset.t===t)));
+  feel.textContent = getComputedStyle(document.documentElement).getPropertyValue('--feel').replace(/^\s*"|"\s*$/g,'');
+}
+document.querySelectorAll('.tab').forEach(b=>b.addEventListener('click',()=>applyTheme(b.dataset.t)));
+applyTheme('ink');
+
+// tiny live chart: a shell that thickens/shifts with dimension
+const dim=document.getElementById('dim'), dout=document.getElementById('dout'),
+      mass=document.getElementById('mass'), svg=document.getElementById('chart');
+function draw(){
+  const n=+dim.value; dout.textContent=n;
+  mass.textContent=(1-Math.exp(-n/22)).toFixed(2);
+  const acc=getComputedStyle(document.documentElement).getPropertyValue('--accent').trim();
+  const acc2=getComputedStyle(document.documentElement).getPropertyValue('--accent2').trim();
+  const mu=200, sd=Math.max(6,120/Math.sqrt(n))*1.4, pts=[];
+  for(let x=0;x<=400;x+=4){const y=110-95*Math.exp(-((x-mu)**2)/(2*sd*sd));pts.push(x+','+y);}
+  svg.innerHTML=`<polyline points="${pts.join(' ')}" fill="none" stroke="${acc}" stroke-width="2"/>`+
+    `<line x1="200" y1="15" x2="200" y2="115" stroke="${acc2}" stroke-width="1.5" stroke-dasharray="3 3"/>`+
+    `<text x="206" y="24" font-size="9" fill="${acc2}" font-family="monospace">mode</text>`;
+}
+dim.addEventListener('input',draw); draw();
+const _orig=applyTheme; // redraw chart colors on theme change
+document.querySelectorAll('.tab').forEach(b=>b.addEventListener('click',draw));
+</script>
+</body>
+</html>
