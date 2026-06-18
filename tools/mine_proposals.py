@@ -24,6 +24,17 @@ import time
 
 import anthropic
 
+# Comptroller accounting (best-effort). Bootstrap repo root so `usage` imports; no-op
+# if unavailable so mining never breaks.
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.realpath(__file__))))
+try:
+    from usage import log_usage
+    from config import USAGE_DB_PATH
+except Exception:  # pragma: no cover - defensive
+    def log_usage(*_a, **_k):
+        return False
+    USAGE_DB_PATH = None
+
 WIKI = "/home/pkis/pkis-wiki/wiki"
 READER = f"{WIKI}/reader"
 PROPOSALS = "/home/pkis/proposals"
@@ -112,9 +123,12 @@ def call(messages, system):
     delay = 15
     for attempt in range(7):
         try:
-            return client.messages.create(
+            resp = client.messages.create(
                 model=MODEL, max_tokens=MAX_TOKENS, system=system, messages=messages,
                 tools=[TOOL], tool_choice={"type": "tool", "name": "submit_proposal"})
+            log_usage(USAGE_DB_PATH, resp, origin="pkis-mine-proposals", project="pkis",
+                      attributes={"script": "mine_proposals"})
+            return resp
         except anthropic.RateLimitError:
             print(f"    429 — backoff {delay}s", flush=True)
             time.sleep(delay); delay = min(delay * 2, 240)

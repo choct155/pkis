@@ -37,6 +37,7 @@ if os.path.exists(_envfile):
 from bs4 import BeautifulSoup, NavigableString, Tag
 
 import app  # reuse anthropic_client, tool_get_related, load_node, find_node_path_by_iri, WIKI_DIR, DOCS_DIR
+from usage import log_usage  # Comptroller accounting (best-effort; app's bootstrap put repo root on path)
 
 MODEL = "claude-sonnet-4-6"               # narration: quality-critical
 EXTRACT_MODEL = os.environ.get("EXTRACT_MODEL", "claude-haiku-4-5")  # PDF/HTML transcription: cheap, mechanical
@@ -85,6 +86,9 @@ def _create(**kw):
                 acc[0] += getattr(u, "input_tokens", 0); acc[1] += getattr(u, "output_tokens", 0)
             except Exception:
                 pass
+            # Comptroller accounting (best-effort; never raises).
+            log_usage(app.USAGE_DB_PATH, resp, origin="pkis-reader", project="pkis",
+                      attributes={"script": "reader_build"})
             return resp
         except Exception as e:
             last = e
