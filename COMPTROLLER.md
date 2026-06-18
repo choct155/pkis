@@ -1,10 +1,25 @@
 # Comptroller — Operating Procedure
-Version: 1.0
+Version: 1.1
 
-> **Status:** this document is the specification. The usage store, the `log_usage`
-> instrumentation in `app.py`, the reporting script, and the cron schedule are built
-> in **Roster Build Order Phase 4** (code + infra). Until then this file is the
-> design of record; nothing here is live yet.
+> **Status: LIVE (Phase 4 deployed 2026-06-18).** Built and deployed:
+> `usage.py` (the store + cost model + best-effort `log_usage`), `tools/comptroller.py`
+> (the reporting CLI), `log_usage` wired into the MCP server's one Anthropic call
+> site (`tool_detect_concepts`), the SQLite store seeded on the VPS, and the
+> daily/weekly/monthly report crons.
+>
+> **Two deviations from the original spec, by deployment constraint:**
+> 1. **Store path is `/home/pkis/usage/usage.sqlite`, not `/var/pkis/usage/…`** —
+>    passwordless sudo on the VPS is `systemctl`-only, and the `pkis` user owns
+>    `/home/pkis`, so the store lives there (no `/var` sudo needed). The schema and
+>    behavior are otherwise exactly as specified.
+> 2. **The scheduled threshold→inbox alert is deferred.** The report crons run
+>    **report-only**, writing to `/home/pkis/usage/` (outside the wiki git repo).
+>    They do **not** pass `--inbox`, because the 15-minute deploy cron does a plain
+>    `git pull` that a dirty working tree would break. Enabling the inbox alert on a
+>    schedule needs a safe commit/push path (a flock'd add+commit+push, or routing
+>    the alert through the MCP write surface). Until then, the alert fires only on a
+>    **manual** `Comptroller, report weekly --inbox …` run, where a human owns the
+>    commit. The CLI fully supports it (`maybe_alert_inbox`, tested).
 
 ## Role
 
@@ -42,7 +57,8 @@ the cost computed at emission time.
 
 ## Data Architecture
 
-**Usage store:** SQLite at `/var/pkis/usage/usage.sqlite` on the Hetzner VPS.
+**Usage store:** SQLite at `/home/pkis/usage/usage.sqlite` on the Hetzner VPS
+(config key `PKIS_USAGE_DB` / `config.USAGE_DB_PATH`).
 
 Three tables:
 
@@ -160,7 +176,7 @@ manually on Anthropic price changes; the Comptroller reads them at report time o
 
 ## Report Format
 
-Write to `/var/pkis/usage/comptroller_report_YYYY-MM-DD.md`:
+Write to `/home/pkis/usage/comptroller_report_YYYY-MM-DD.md`:
 
 ```markdown
 # Comptroller Report — YYYY-MM-DD [daily|weekly|monthly]
@@ -203,13 +219,23 @@ and configuration**, not an LLM agent procedure. The on-demand `Comptroller, rep
 invocation may be triggered from a Claude Code session, which calls the script and
 relays its output.
 
-### Phase 4 build checklist (forward reference)
+### Phase 4 build checklist (delivered 2026-06-18)
 
-When Phase 4 lands, it must deliver:
-1. `tools/comptroller.py` — init/seed, `compute_cost`, ingest (Claude Code file),
-   the report generators, and the threshold-alert inbox append.
-2. `log_usage` (+ `compute_cost`) wired into the MCP server's LLM-calling handlers
-   in `app.py`, best-effort and non-fatal — added the test-gated, preflight-gated,
-   deploy-verified way (this IS a code change to `app.py`).
-3. `/var/pkis/usage/` created on the VPS, store initialized, pricing seeded.
-4. cron entries for the daily/weekly/monthly passes.
+1. ✅ `usage.py` — store schema, `compute_cost` (sonnet/opus/haiku families),
+   idempotent `seed_pricing`, best-effort `log_usage`, and report query helpers
+   (`events_between` / `aggregate` / `total_cost`). 8 unit tests.
+2. ✅ `tools/comptroller.py` — `init` (seed) + `report {daily|weekly|monthly|ytd}`
+   with window math, by-origin/model/project breakdowns, and the (manual-only for
+   now) threshold→inbox alert. 7 tests.
+3. ✅ `log_usage` wired into the MCP server's one Anthropic call site
+   (`tool_detect_concepts`), best-effort and non-fatal — test-gated (2 integration
+   tests), preflight-gated, deploy-verified (40 tools, health ok).
+4. ✅ `/home/pkis/usage/` created on the VPS, store initialized + pricing seeded.
+5. ✅ cron entries for the daily / weekly / monthly report passes (report-only;
+   see the Status note for the deferred inbox alert).
+
+**Not yet delivered (future):** the Claude Code usage-file ingest (secondary
+origin, session-dedup), the scheduled inbox alert (needs a safe commit path), and
+per-call-site instrumentation of the `tools/` scripts (`reader_build.py`,
+`discovery_openalex.py`, `mine_proposals.py`) — each would log under its own
+`origin`.
