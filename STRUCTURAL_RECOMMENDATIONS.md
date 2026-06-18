@@ -29,7 +29,7 @@ anything the split depends on is "before IKS" too.
 
 ## B. Ranked pending recommendations
 
-### B1 — Finish the Phase-2 contract-test fill  🔄  ·  M  ·  before IKS
+### B1 — Finish the Phase-2 contract-test fill  ✅  ·  M  ·  before IKS
 **What:** flesh out the 39 documented stubs (23 per-tool contracts, REST/MCP
 parity, auth/cache/staging seams, 2 units); mock-at-boundary for the 3 network
 write tools.
@@ -37,7 +37,10 @@ write tools.
 the observable MCP/REST surface so B2 can move code across module boundaries
 without silently changing behavior. **This is the gate for B2.**
 
-### B2 — Split `app.py` into modules  ⬜  ·  L  ·  before IKS  *(the headline)*
+### B2 — Split `app.py` into modules  ✅  ·  L  ·  before IKS  *(the headline)*
+**Done:** `config.py`, `store.py` (DI'd `WikiStore` caches), `adapters.py`,
+`usage.py`, `paths.py` extracted; `app.py` ~6,467→~5,660 lines; suite hermetic.
+Flat-modules-with-shim form (D-③); package promotion (C-3) deferred — see below.
 **What:** decompose the 6,467-line monolith into
 `config / store / graph / search / auth / persistence / mcp / rest / adapters`,
 **incrementally** — one module at a time, each extraction behind the green
@@ -66,7 +69,10 @@ place and contract-locked — not worth a literal dispatch merge:
 Routing REST literally through `dispatch_tool` would add JSON-RPC-envelope
 indirection to REST handlers for zero benefit. Closed as intent-met.
 
-### B4 — `paths.py` / `PKIS_ROOT` for `tools/` + `scripts/`  ⬜  ·  M  ·  before IKS
+### B4 — `paths.py` / `PKIS_ROOT` for `tools/` + `scripts/`  ✅  ·  M  ·  before IKS
+**Done (2026-06-18):** `paths.py` is the SSOT (repo + operational paths,
+env-overridable, `bootstrap()`); adopted by touched scripts. Model-ID centralization
+(`claude-sonnet-4-6` etc.) NOT yet done — folded into B6.
 **What:** derive the `/home/pkis/...` absolute paths from one env-rooted module;
 centralize the scattered model IDs (`claude-sonnet-4-6`, `claude-haiku-4-5`) and
 the embed-model name.
@@ -74,7 +80,10 @@ the embed-model name.
 (audit F-3, §5.2). Unblocks testing the scripts and is a prerequisite for ever
 running them in CI.
 
-### B5 — Resolve the 14 hidden tools  ❓⬜  ·  S  ·  before IKS
+### B5 — Resolve the 14 hidden tools  ✅ (mostly)  ·  S  ·  before IKS
+**Done:** 12 advertised (now 40 live); mnemon tier advertised. **Left per your
+call:** `search_wiki_index` + `get_node_stub` stay dispatchable-but-hidden (possible
+external callers; you said leave them).
 **What:** for each dispatchable-but-unadvertised tool, **advertise** it (add to
 `_get_tools_list`) or **remove** it from dispatch. Mnemon tier
 (`register_operational_reference`, `log_operation`) → advertise, per D-2 (the
