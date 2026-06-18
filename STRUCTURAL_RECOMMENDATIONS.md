@@ -45,13 +45,26 @@ contract tests, `import app` preserved at every step (a thin shim re-exports).
 **Why:** the single biggest coupling reduction; IKS will reuse these surfaces, so
 clean seams now save compounding integration cost later. Depends on B1.
 
-### B3 — Unify the two write surfaces  ⬜  ·  M  ·  before IKS (with B2)
+### B3 — Unify the two write surfaces  ✅ (intent met)  ·  M  ·  before IKS (with B2)
 **What:** route REST `/pkis-api/*` writes and MCP writes through **one** gated
 dispatch path instead of two parallel copies with different auth plumbing
 (`@require_write` vs in-dispatch `is_write_authorized`).
 **Why:** removes a whole class of drift (a write route added to one surface but
 not the other). Natural to do as the `mcp`/`rest` modules are carved out in B2.
 Audit §7 Seam B.
+**Verdict (2026-06-18, reconsidered):** the *valuable* unification is already in
+place and contract-locked — not worth a literal dispatch merge:
+- **Auth: one predicate.** Both `require_write` (REST decorator) and the MCP
+  dispatch (`app.py` ~4578) delegate to the single `is_write_authorized(req)`. No
+  parallel auth plumbing remains.
+- **Logic: one implementation.** The 10 REST write routes are thin wrappers that
+  call the same `tool_*` functions the MCP path dispatches (e.g. `tool_build_reader`,
+  `tool_commit_staged_node`, `tool_discovery_act`) — not a second copy.
+- **Drift: test-locked.** `tests/contract/test_rest_parity.py` freezes the
+  write-gate inventory (`test_write_gate_inventory_is_frozen`), asserts every write
+  route is gated, no read route is, and REST/MCP return the same shape.
+Routing REST literally through `dispatch_tool` would add JSON-RPC-envelope
+indirection to REST handlers for zero benefit. Closed as intent-met.
 
 ### B4 — `paths.py` / `PKIS_ROOT` for `tools/` + `scripts/`  ⬜  ·  M  ·  before IKS
 **What:** derive the `/home/pkis/...` absolute paths from one env-rooted module;
@@ -134,6 +147,15 @@ These are the items I can't resolve from the code or sensible defaults:
   them? The server imports `app` and runs gunicorn from its checkout, so either
   works if `import app` stays valid — but the package form is cleaner long-term.
   I lean **flat-modules-with-shim first** (smaller deploy risk), package later.
+  **Verdict (2026-06-18, C-3 reconsidered): keep flat; do NOT promote to a `pkis/`
+  package now.** B2 already delivered the value that mattered — `config.py`,
+  `store.py` (DI'd caches), `adapters.py`, `usage.py`, `paths.py` are clean modules;
+  the cache-coupling and untestability that made `app.py` unwieldy are resolved, and
+  the suite is hermetic. A `pkis/` package would only add namespacing while putting
+  the proven server entrypoint at risk (`app:app` under gunicorn from
+  `/home/pkis` with a symlinked `app.py`; `tools/reader_build.py` does `import app`
+  + 7 internals; the realpath bootstrap already broke prod once). Risk > value with
+  B2 done. Revisit only if a second top-level app/package ever shares this checkout.
 
 ---
 
