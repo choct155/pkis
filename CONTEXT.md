@@ -22,8 +22,9 @@ hand-edited.
 - `store.py` — `WikiStore`, the dependency-injected cache/graph/search container
 - `adapters.py` — external-API fetchers (arXiv, Crossref, Readwise, podcasts)
 - `usage.py` — Comptroller cost model + best-effort `log_usage`
+- `paths.py` — single source of truth for repo + operational filesystem paths (B4)
 - `tools/` — operational scripts (discovery, reader, ingest, reconcile, comptroller)
-- `tests/` — hermetic pytest suite (96 tests: unit / integration / contract), `-m "not live"` default
+- `tests/` — hermetic pytest suite (107 tests: unit / integration / contract), `-m "not live"` default
 
 ## Schema Summary
 Node types (12): concept, technique, result, framework, problem, principle, source,
@@ -35,9 +36,9 @@ Epistemic status: coverage (agent-assessed), understanding (human-only), maturit
 IRI form: `pkis:{type}:{slug}` as the first frontmatter field.
 
 ## Corpus Size (this generation)
-~2,793 nodes: concepts 926, techniques 760, sources 561, frameworks 194, results
-171, principles 82, problems 42, hypotheses 28, bridge-notes 14, clusters 12,
-assets 3, discovery-stubs 0.
+~2,807 nodes: concepts 926, techniques 760, sources 561, frameworks 194, results
+171, principles 82, problems 42, hypotheses 28, discovery-stubs 15, bridge-notes 14,
+clusters 12, assets 3.
 
 ## Active Research Context
 Hypothesis clusters (12): composite-credibility, compositional-query-grounding,
@@ -69,11 +70,11 @@ proposal-pass work queue.
 - ARS↔IKS: strict.
 
 ## Recent Structural Changes (last 8)
-- bcbb094d docs(roster/phase4): COMPTROLLER.md LIVE; reconcile to deployed reality
+- 26563298 docs(structural): reconsider B3 (intent-met) + C-3 (deferred)
+- a0531e1b feat(comptroller): scheduled budget alert via queue file + Auditor fold-in
+- 3ca54352 feat(roster/phase1c): 15 discovery-stub nodes from discovery_inbox.json
+- 3219907b feat(comptroller): Claude Code transcript ingest (dedup by requestId)
+- f617b394 feat(B4): paths.py SSOT + instrument tools/ scripts for cost tracking
+- ddaf985e feat(roster/phase5): generate CONTEXT.md
+- bcbb094d docs(roster/phase4): COMPTROLLER.md LIVE
 - fefe5d6a feat(roster/phase4): wire log_usage into the MCP server + config
-- a861a1d6 feat(roster/phase4): usage.py — Comptroller accounting module
-- ea25ebe8 docs(roster/phase3): create COMPTROLLER.md
-- 9ef1d4bf docs(roster/phase3): Architect v1.1 — merged spec (CONTEXT.md + consistency)
-- 57edd8c6 docs(roster/phase2): Synthesizer v2.1 — Mode 5 proposal pass
-- 4da86618 docs(roster/phase2): Auditor v2.1 — inbox append
-- 1a6f36c4 docs(roster/phase2): Librarian v3.1 — park path + inbox integration
