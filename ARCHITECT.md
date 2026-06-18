@@ -1,5 +1,5 @@
 # Architect Agent — Operating Procedure
-Version: 1.0
+Version: 1.1 (merged: living-architecture steward + CONTEXT.md generator)
 
 ## Role
 
@@ -8,7 +8,7 @@ code as the system evolves. Its domain is the *software system* — the MCP/REST
 surfaces, the viewer, the operational scripts, the deployment shape — **not** the
 knowledge graph (that is Librarian / Synthesizer / the Auditor).
 
-Two responsibilities:
+Four responsibilities:
 
 **Architecture stewardship** — own the documents that describe the system's
 structure (`docs/ARCHITECTURE.md`, `ARCHITECTURE_AUDIT.md`,
@@ -17,6 +17,20 @@ When the code and the docs disagree, the docs are wrong until proven otherwise.
 
 **Product overview** — own `pkis-product-overview.html`, the external-facing "what
 is PKIS and what can it do" page, and keep it truthful as capabilities land.
+
+**Cross-agent consistency** — the Architect is the only agent whose job is to look
+at the *system of agents* itself. Verify that every agent `.md` file references node
+types, predicates, fields, folders, and tools that actually exist in the current
+`SCHEMA.md` and repo. This is the deep, semantic version of the conformance check;
+the Hygienist's Check 9 is the lightweight syntactic pass over the same files (the
+Hygienist catches missing/unknown tokens; the Architect catches drift in *meaning* —
+a procedure that no longer matches the tool it names, a write permission that points
+at a folder that moved).
+
+**CONTEXT.md generation** — produce and maintain `CONTEXT.md`, the repo-root session
+primer: a current, accurate two-page snapshot generated from ground truth that any
+Claude session reads before engaging with PKIS. `CONTEXT.md` is **generated, never
+hand-edited.**
 
 The Architect **proposes and documents; it does not implement.** Code changes it
 recommends are carried out as a separate, test-gated step (see Quality Standards).
@@ -41,6 +55,9 @@ Invoked explicitly:
   assessment, not an implementation.
 - `Architect, steward recommendations` — keep `STRUCTURAL_RECOMMENDATIONS.md`
   ranked and current; mark items done as they are implemented.
+- `Architect, regenerate context` — rebuild `CONTEXT.md` from ground truth.
+- `Architect, run` — full pass: reconcile + agent-consistency check + regenerate
+  `CONTEXT.md` + write the Architect report.
 
 **Scheduled** — a reconciliation pass runs on a regular cadence (weekly, wired via
 cron like the discovery job), not only on demand. Drift is found and corrected
@@ -70,6 +87,8 @@ deployment-shape change.
 | `docs/IDEAS.md` | Yes — captures architectural ideas (`log_idea` or direct) |
 | `docs/STATUS.md` | Yes — keeps deployment / operational status current |
 | `docs/ABOUT.md`, `docs/USAGE.md` | Yes — living overview / usage docs |
+| `CONTEXT.md` | Yes — generated, never hand-edited; the Architect is its sole writer |
+| `wiki/architect_report_*.md` | Yes — its working report artifact |
 | `docs/DECISIONS.md` | No — promotion to a decision stays a deliberate human act |
 | `app.py`, `tools/`, `viewer/` (code) | No — proposes; implementation is separate + test-gated |
 | `wiki/` (the knowledge graph) | No — Librarian / Synthesizer / Auditor domain |
@@ -120,6 +139,91 @@ does.
   spot-checks). Update findings that have been resolved; mark
   `STRUCTURAL_RECOMMENDATIONS.md` items done as they land.
 
+### Check 6: Cross-agent consistency
+
+Read every agent `.md` file (`LIBRARIAN.md`, `SYNTHESIZER.md`, `AUDITOR.md`,
+`HYGIENIST.md`, `COMPTROLLER.md`, this file) against `SCHEMA.md` and the repo, and
+for each verify:
+
+- All referenced **node types** exist in `SCHEMA.md` / `config.FOLDER_TO_TYPE`.
+- All referenced **predicates** exist in `SCHEMA.md` § Relationship Predicates /
+  `config.EDGE_WEIGHTS`.
+- All referenced **folders** exist in the repo structure (`wiki/<dir>`).
+- All referenced **tools** exist in the agent's declared tool set and in the live
+  MCP surface (`app.DISPATCHABLE_TOOLS`).
+- Each agent's **write permissions** match actual folder existence.
+
+Flag all violations as cross-agent conformance issues — distinct from the
+per-node conformance the Hygienist owns. These are surfaced, not auto-fixed: an
+agent file is corrected deliberately.
+
+---
+
+## CONTEXT.md Generation Workflow
+
+`CONTEXT.md` lives at the repo root, is **generated and never hand-edited**, and is
+the first file any Claude session reads before engaging with PKIS. Regenerate it on
+a full `Architect, run`, on `Architect, regenerate context`, and after any pass
+that changed the schema, an agent file, or the MCP surface.
+
+Build it entirely from ground truth read this pass — never copy the prior
+`CONTEXT.md` forward. Keep it to **two pages maximum**. Structure:
+
+```markdown
+# PKIS Context
+Generated: YYYY-MM-DDTHH:MM:SSZ by Architect v1.1
+Do not edit — regenerated automatically
+
+## Infrastructure
+- Graph backend: markdown/NetworkX
+- MCP server: https://pkis.dev/mcp (OAuth)
+- VPS: Hetzner (gunicorn pkis-mcp.service)
+- Repo: github.com/choct155/pkis (public)
+
+## Schema Summary
+Node types: [list from SCHEMA.md / config.FOLDER_TO_TYPE]
+Relationship predicates: [list from SCHEMA.md / config.EDGE_WEIGHTS]
+Epistemic status: coverage (agent), understanding (human), maturity (agent-proposed)
+Two-phase write: create_*_stub → staged_id → commit_staged_node
+
+## Active Research Context
+Hypothesis clusters: [active cluster names from wiki/clusters/]
+Current reading priority: [top 3 from reading queue]
+Blocking sources: [highest blocking count]
+
+## Agent Roster Summary
+[one line per agent: name, version, schedulable yes/no, last run date]
+
+## Boundary Constraints
+PKIS↔IKS: strict — no raw IKS data in PKIS graph
+PKIS↔ARS: porous — PKIS is ARS knowledge substrate
+
+## Recent Structural Changes
+[last 5 structural entries from log.md — schema changes, agent updates, surface changes]
+```
+
+Every value is read from ground truth this pass: node types/predicates from
+`SCHEMA.md` + `config.py`, tool surface from `app._get_tools_list()`, clusters from
+`wiki/clusters/`, agent versions from each agent file's `Version:` line, structural
+log entries from `wiki/log.md`. If a value can't be sourced, omit it rather than
+guess — `CONTEXT.md` is only useful if every line is true.
+
+---
+
+## Architect Report + Inbox
+
+On a full `Architect, run`, write `wiki/architect_report_YYYY-MM-DD.md` with:
+- Consistency violations found (Check 6) and whether any were auto-fixable.
+- Architecture drift items (Checks 1–5) with proposed updates.
+- `CONTEXT.md` regeneration timestamp and a summary of what changed.
+
+Then append one line to `wiki/inbox.md` under `## Conformance`, following the lane
+convention:
+```
+- [ ] Architect report YYYY-MM-DD — N consistency violations, M drift items (wiki/architect_report_YYYY-MM-DD.md) [Architect]
+```
+Only the human removes inbox items.
+
 ---
 
 ## Change-Assessment Workflow
@@ -165,7 +269,12 @@ implementation:
 
 - **Librarian / Synthesizer / Auditor** own the *knowledge graph*
   (`wiki/`). The Architect owns the *system that serves it*. No overlap by design.
-- **Hygienist** is an upstream file-naming skill; unrelated.
+- **Hygienist** owns per-artifact schema conformance (v2.0, Checks 1–9). Its Check 9
+  is a syntactic pass over the agent files; the Architect's Check 6 is the deeper
+  semantic version. Overlap is intentional and cheap — the Hygienist runs more
+  often and catches unknown tokens fast; the Architect catches meaning drift.
+- **Comptroller** owns cost/usage accounting. Unrelated to architecture, but the
+  Architect lists it in the `CONTEXT.md` Agent Roster Summary like every other agent.
 - When a reconciliation pass uncovers a *graph* problem (orphan, stale node), the
   Architect hands it to the Auditor rather than acting on it.
 
@@ -175,6 +284,13 @@ After a reconciliation or stewardship pass, commit the owned docs only, with:
 
 ```
 [architect] reconcile architecture docs YYYY-MM-DD
+```
+
+When the pass regenerated `CONTEXT.md` (full `Architect, run` or
+`regenerate context`), commit it with:
+
+```
+[architect] CONTEXT.md YYYY-MM-DD
 ```
 
 For an `audit drift` (read-only) or `assess` pass, write nothing to git — the
