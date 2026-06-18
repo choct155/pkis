@@ -121,6 +121,21 @@ def test_log_usage_is_best_effort_never_raises():
 # --------------------------------------------------------------------------- #
 
 @pytest.mark.unit
+def test_insert_event_explicit_timestamp_and_dedup_keys(tmp_path):
+    db = tmp_path / "usage.sqlite"
+    usage.seed_pricing(db)
+    usage.insert_event(db, emitted_at="2026-06-14T10:00:00Z", origin="claude-code",
+                       project="proj", model="claude-sonnet-4-6",
+                       input_tokens=1000, output_tokens=500,
+                       attributes={"dedup_key": "req-1"})
+    events = usage.events_between(db, "1970-01-01", "2999-01-01")
+    assert len(events) == 1 and events[0]["emitted_at"] == "2026-06-14T10:00:00Z"
+    assert events[0]["computed_cost_usd"] == pytest.approx(0.0105)
+    assert usage.existing_dedup_keys(db, "claude-code") == {"req-1"}
+    assert usage.existing_dedup_keys(db, "pkis-mcp") == set()
+
+
+@pytest.mark.unit
 def test_aggregate_and_total(tmp_path):
     db = tmp_path / "usage.sqlite"
     usage.seed_pricing(db)

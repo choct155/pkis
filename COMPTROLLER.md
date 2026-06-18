@@ -132,13 +132,27 @@ def log_usage(response, origin="pkis-mcp", project="pkis", attributes=None):
 so that a failure to log (locked DB, disk full) is swallowed and logged to stderr,
 not propagated to the MCP response. Accounting is best-effort; serving is not.
 
-### Claude Code (secondary, partial)
+### Claude Code (secondary) — DELIVERED
 
-Claude Code makes API calls through its own internals. On each run the Comptroller
-checks for a local usage file (`~/.claude/usage.json` or equivalent) on the machine
-where Claude Code runs; if present it ingests new entries, **deduplicating by session
-ID**. If absent, Claude Code usage is carried only as an estimated line item based on
-observed session patterns (and labelled `(estimated)` in reports).
+Claude Code records per-turn usage (full token fields + model + timestamp) in its
+**session transcripts** at `~/.claude/projects/<proj>/<session>.jsonl` — there is no
+single `usage.json`. The `ingest-claude-code` subcommand walks those transcripts and
+inserts one `usage_events` row per assistant turn, **deduplicating by `requestId`**
+(one API request = one billing event; the same message re-serialized across
+transcript lines collapses to one). Re-runs are idempotent. `origin='claude-code'`,
+`project` = basename of the turn's `cwd`.
+
+```
+python3 tools/comptroller.py ingest-claude-code --db <store> [--projects-dir ~/.claude/projects]
+```
+
+**Cross-machine caveat:** transcripts live where Claude Code *runs* (a workstation),
+while the canonical store is on the VPS. The ingest writes to whichever `--db` you
+point it at; **syncing a workstation's Claude Code costs into the VPS store is not
+yet automated** (run it locally against a local store, or ship rows over — out of
+scope for now). Because the user is on the Max Plan, Claude Code's computed cost is
+the *notional API-equivalent value* (it accrues to the variable line), not
+out-of-pocket spend on top of the fixed subscription.
 
 ### Future call sites (IKS pipeline, ARS)
 
@@ -234,8 +248,11 @@ relays its output.
 5. ✅ cron entries for the daily / weekly / monthly report passes (report-only;
    see the Status note for the deferred inbox alert).
 
-**Not yet delivered (future):** the Claude Code usage-file ingest (secondary
-origin, session-dedup), the scheduled inbox alert (needs a safe commit path), and
-per-call-site instrumentation of the `tools/` scripts (`reader_build.py`,
-`discovery_openalex.py`, `mine_proposals.py`) — each would log under its own
-`origin`.
+6. ✅ Claude Code transcript ingest (`ingest-claude-code`, dedup by `requestId`) —
+   verified against real transcripts (7.6k turns); see the cross-machine caveat above.
+7. ✅ `tools/` script instrumentation — `reader_build` (`pkis-reader`),
+   `discovery_openalex` (`pkis-discovery`), `mine_proposals` (`pkis-mine-proposals`)
+   now call best-effort `log_usage` at their Anthropic call sites.
+
+**Not yet delivered (future):** the scheduled inbox alert (needs a safe commit path
+— see the Status note) and automated workstation→VPS sync of Claude Code costs.

@@ -186,6 +186,32 @@ def _utcnow_iso() -> str:
     return datetime.now(timezone.utc).isoformat()
 
 
+def insert_event(db_path, *, emitted_at, origin, project, model,
+                 input_tokens, output_tokens, cache_read_tokens=0,
+                 cache_write_tokens=0, attributes=None) -> None:
+    """Low-level insert of one usage_event with explicit timestamp + token counts.
+    Computes cost from the store's current rates. Used by log_usage (live calls,
+    now-stamped) and by the Claude Code transcript ingest (historical, ts from the
+    transcript). Raises on failure — callers decide whether to swallow."""
+    rates = get_config(db_path)  # also ensures the store exists
+    cost = compute_cost(model, input_tokens, output_tokens,
+                        cache_read_tokens, cache_write_tokens, rates)
+    conn = _connect(db_path)
+    try:
+        conn.execute(
+            """INSERT INTO usage_events
+               (emitted_at, origin, project, model, input_tokens, output_tokens,
+                cache_read_tokens, cache_write_tokens, computed_cost_usd, attributes)
+               VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)""",
+            (emitted_at, origin, project, model, int(input_tokens or 0),
+             int(output_tokens or 0), int(cache_read_tokens or 0),
+             int(cache_write_tokens or 0), cost, json.dumps(attributes or {})),
+        )
+        conn.commit()
+    finally:
+        conn.close()
+
+
 def log_usage(db_path, response, origin="pkis-mcp", project="pkis",
               attributes=None) -> bool:
     """Record one API call's usage. BEST-EFFORT: any failure is swallowed and
@@ -196,32 +222,40 @@ def log_usage(db_path, response, origin="pkis-mcp", project="pkis",
     """
     try:
         usage = getattr(response, "usage", None)
-        model = getattr(response, "model", "") or ""
-        in_tok = int(getattr(usage, "input_tokens", 0) or 0)
-        out_tok = int(getattr(usage, "output_tokens", 0) or 0)
-        cache_read = int(getattr(usage, "cache_read_input_tokens", 0) or 0)
-        cache_write = int(getattr(usage, "cache_creation_input_tokens", 0) or 0)
-
-        rates = get_config(db_path)  # also ensures the store exists
-        cost = compute_cost(model, in_tok, out_tok, cache_read, cache_write, rates)
-
-        conn = _connect(db_path)
-        try:
-            conn.execute(
-                """INSERT INTO usage_events
-                   (emitted_at, origin, project, model, input_tokens, output_tokens,
-                    cache_read_tokens, cache_write_tokens, computed_cost_usd, attributes)
-                   VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)""",
-                (_utcnow_iso(), origin, project, model, in_tok, out_tok,
-                 cache_read, cache_write, cost, json.dumps(attributes or {})),
-            )
-            conn.commit()
-        finally:
-            conn.close()
+        insert_event(
+            db_path,
+            emitted_at=_utcnow_iso(),
+            origin=origin, project=project,
+            model=getattr(response, "model", "") or "",
+            input_tokens=getattr(usage, "input_tokens", 0) or 0,
+            output_tokens=getattr(usage, "output_tokens", 0) or 0,
+            cache_read_tokens=getattr(usage, "cache_read_input_tokens", 0) or 0,
+            cache_write_tokens=getattr(usage, "cache_creation_input_tokens", 0) or 0,
+            attributes=attributes,
+        )
         return True
     except Exception as e:  # noqa: BLE001 — best-effort by design
         logger.warning("log_usage failed (non-fatal): %s", e)
         return False
+
+
+def existing_dedup_keys(db_path, origin):
+    """Return the set of attributes.dedup_key values already stored for `origin`
+    (used by the Claude Code ingest to skip already-imported turns)."""
+    conn = _connect(db_path)
+    try:
+        keys = set()
+        for r in conn.execute(
+                "SELECT attributes FROM usage_events WHERE origin = ?", (origin,)):
+            try:
+                k = json.loads(r["attributes"] or "{}").get("dedup_key")
+            except Exception:
+                k = None
+            if k:
+                keys.add(k)
+        return keys
+    finally:
+        conn.close()
 
 
 # --------------------------------------------------------------------------- #

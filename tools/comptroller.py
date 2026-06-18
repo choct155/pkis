@@ -19,6 +19,8 @@ Run on the VPS as e.g.:
 """
 
 import argparse
+import glob
+import json
 import os
 import sys
 from datetime import datetime, timedelta, timezone
@@ -189,6 +191,66 @@ def _append_under_heading(path, heading, line):
 
 
 # --------------------------------------------------------------------------- #
+# Claude Code transcript ingest (secondary origin)
+# --------------------------------------------------------------------------- #
+
+def ingest_claude_code(db_path, projects_dir):
+    """Ingest per-turn usage from Claude Code session transcripts
+    (~/.claude/projects/<proj>/<session>.jsonl). Each assistant turn carries a
+    `requestId` (one API call) used as the dedup key, so re-runs are idempotent.
+
+    NOTE (cross-machine): transcripts live where Claude Code RUNS (a workstation),
+    while the canonical store is on the VPS. Run this against whichever store you
+    want Claude Code costs in; syncing the two stores is out of scope. Returns
+    (ingested, skipped).
+    """
+    usage.init_store(db_path)
+    seen = usage.existing_dedup_keys(db_path, "claude-code")
+    ingested = skipped = 0
+    for fp in glob.glob(os.path.join(projects_dir, "**", "*.jsonl"), recursive=True):
+        try:
+            fh = open(fp, encoding="utf-8")
+        except OSError:
+            continue
+        with fh:
+            for line in fh:
+                try:
+                    d = json.loads(line)
+                except Exception:
+                    continue
+                if d.get("type") != "assistant":
+                    continue
+                msg = d.get("message") or {}
+                u = msg.get("usage") or {}
+                if not u:
+                    continue
+                key = d.get("requestId") or d.get("uuid")
+                if not key or key in seen:
+                    skipped += 1
+                    continue
+                seen.add(key)
+                cwd = d.get("cwd") or ""
+                project = os.path.basename(cwd) or "claude-code"
+                try:
+                    usage.insert_event(
+                        db_path,
+                        emitted_at=d.get("timestamp") or "",
+                        origin="claude-code", project=project,
+                        model=msg.get("model", "") or "",
+                        input_tokens=u.get("input_tokens", 0),
+                        output_tokens=u.get("output_tokens", 0),
+                        cache_read_tokens=u.get("cache_read_input_tokens", 0),
+                        cache_write_tokens=u.get("cache_creation_input_tokens", 0),
+                        attributes={"dedup_key": key,
+                                    "session": d.get("sessionId"), "cwd": cwd},
+                    )
+                    ingested += 1
+                except Exception:
+                    skipped += 1
+    return ingested, skipped
+
+
+# --------------------------------------------------------------------------- #
 # CLI
 # --------------------------------------------------------------------------- #
 
@@ -201,6 +263,12 @@ def main(argv=None):
 
     pi = sub.add_parser("init", help="create + seed the usage store")
     pi.add_argument("--db", default=DEFAULT_DB)
+
+    pg = sub.add_parser("ingest-claude-code",
+                        help="import Claude Code session-transcript usage (dedup by requestId)")
+    pg.add_argument("--db", default=DEFAULT_DB)
+    pg.add_argument("--projects-dir",
+                    default=os.path.expanduser("~/.claude/projects"))
 
     pr = sub.add_parser("report", help="render a cost report")
     pr.add_argument("window", choices=["daily", "weekly", "monthly", "ytd"])
@@ -216,6 +284,11 @@ def main(argv=None):
     if args.cmd == "init":
         usage.seed_pricing(args.db)
         print(f"initialized usage store at {args.db}")
+        return 0
+
+    if args.cmd == "ingest-claude-code":
+        ingested, skipped = ingest_claude_code(args.db, args.projects_dir)
+        print(f"ingested {ingested} Claude Code turns ({skipped} skipped/dup) into {args.db}")
         return 0
 
     if args.cmd == "report":

@@ -126,6 +126,44 @@ def test_alert_is_idempotent_and_silent_under_threshold(tmp_path):
 # CLI end-to-end
 # --------------------------------------------------------------------------- #
 
+def _write_transcript(path, turns):
+    import json
+    with open(path, "w", encoding="utf-8") as fh:
+        for t in turns:
+            fh.write(json.dumps(t) + "\n")
+
+
+def _turn(request_id, model="claude-sonnet-4-6", inp=1000, out=500,
+          ts="2026-06-14T10:00:00Z", cwd="/home/u/proj"):
+    return {"type": "assistant", "requestId": request_id, "uuid": request_id + "-u",
+            "sessionId": "sess1", "timestamp": ts, "cwd": cwd,
+            "message": {"model": model, "usage": {
+                "input_tokens": inp, "output_tokens": out,
+                "cache_read_input_tokens": 0, "cache_creation_input_tokens": 0}}}
+
+
+@pytest.mark.unit
+def test_ingest_claude_code_dedups_and_skips_non_assistant(tmp_path):
+    db = tmp_path / "usage.sqlite"
+    usage.seed_pricing(db)
+    proj = tmp_path / "projects" / "p1"
+    proj.mkdir(parents=True)
+    _write_transcript(proj / "s1.jsonl", [
+        _turn("req-a"), _turn("req-b"),
+        {"type": "user", "message": {"content": "hi"}},          # skipped: not assistant
+        {"type": "assistant", "message": {"model": "x"}},          # skipped: no usage
+    ])
+    ing, _ = comptroller.ingest_claude_code(db, str(tmp_path / "projects"))
+    assert ing == 2
+    events = usage.events_between(db, "1970-01-01", "2999-01-01")
+    assert len(events) == 2
+    assert all(e["origin"] == "claude-code" and e["project"] == "proj" for e in events)
+    # Re-ingest is idempotent (dedup by requestId).
+    ing2, skipped2 = comptroller.ingest_claude_code(db, str(tmp_path / "projects"))
+    assert ing2 == 0 and skipped2 >= 2
+    assert len(usage.events_between(db, "1970-01-01", "2999-01-01")) == 2
+
+
 @pytest.mark.unit
 def test_cli_init_then_report(tmp_path):
     db = tmp_path / "usage.sqlite"
