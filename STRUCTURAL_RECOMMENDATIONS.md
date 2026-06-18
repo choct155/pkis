@@ -97,7 +97,13 @@ payloads → one config value.
 **Why:** low urgency, but any fork/multi-tenant or repo move breaks the returned
 `url` fields today (audit §5.1).
 
-### B7 — Separate operational vs. one-shot scripts  ⬜  ·  S  ·  anytime
+### B7 — Separate operational vs. one-shot scripts  ✅ (as manifest)  ·  S  ·  anytime
+**Done (2026-06-18):** delivered as `tools/README.md` — a classification manifest
+(🔴 load-bearing / 🟡 supporting / ⚪ one-shot) rather than an `ops/`+`oneshot/`
+physical split. Rationale: too many scripts are referenced by path (`app.py`, VPS
+crontab, `discovery_cron.sh`, build shell scripts, tests), so relocating is high-churn
+for an organizational gain — the manifest gives the "safe to change?" signal at zero
+breakage risk. Physical split remains available if ever wanted.
 **What:** split `tools/` into `tools/ops/` (load-bearing: `reader_build`,
 `discovery_openalex`, `mine_proposals`, `mackay_phasec_driver`, `fill_missing`)
 vs. `tools/oneshot/` (book ingest, backfills); document which are wired to
