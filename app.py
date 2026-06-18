@@ -461,7 +461,7 @@ Only include candidates with confidence >= {threshold}."""
 
     try:
         response = anthropic_client.messages.create(
-            model="claude-sonnet-4-20250514",
+            model=CONCEPT_DETECT_MODEL,
             max_tokens=500,
             messages=[{"role": "user", "content": prompt}]
         )
@@ -1523,7 +1523,7 @@ Pending review.
         "staged_at": ts_str,
         "slug": staged_path.stem,
         "resolution_candidates": resolution_candidates,
-        "review_url": f"https://github.com/choct155/pkis/blob/main/wiki/staging/{staged_path.name}",
+        "review_url": f"{REPO_WEB_BASE}/blob/main/wiki/staging/{staged_path.name}",
     }
 
 
@@ -1673,7 +1673,7 @@ def tool_create_source_stub(
         "enrichment_status": enrichment_status,
         "fields_populated": fields_populated,
         "connection_candidates": connection_candidates[:5],
-        "review_url": f"https://github.com/choct155/pkis/blob/main/wiki/staging/{staged_path.name}",
+        "review_url": f"{REPO_WEB_BASE}/blob/main/wiki/staging/{staged_path.name}",
     }
 
 
@@ -1835,7 +1835,7 @@ def tool_create_node_stub(
             "internal": internal_suggestions,
             "external": external_suggestions,
         } if needs_source else {},
-        "review_url": f"https://github.com/choct155/pkis/blob/main/wiki/staging/{staged_path.name}",
+        "review_url": f"{REPO_WEB_BASE}/blob/main/wiki/staging/{staged_path.name}",
     }
 
 
@@ -1952,7 +1952,7 @@ def tool_create_hypothesis(
         "iri": f"pkis:hypothesis:{slug}",
         "knowledge_type": "hypothesis",
         "cluster": cluster_slug,
-        "review_url": f"https://github.com/choct155/pkis/blob/main/wiki/staging/{staged_path.name}",
+        "review_url": f"{REPO_WEB_BASE}/blob/main/wiki/staging/{staged_path.name}",
     }
 
 
@@ -2043,7 +2043,7 @@ def tool_edit_node(
         "sections_updated": list(section_updates),
         "git_commit": git["sha"],
         "git_pushed": git["pushed"],
-        "url": f"https://github.com/choct155/pkis/blob/main/wiki/{rel}",
+        "url": f"{REPO_WEB_BASE}/blob/main/wiki/{rel}",
     }
 
 
@@ -2364,7 +2364,7 @@ def tool_commit_staged_node(
         "iri": iri,
         "git_commit": git["sha"],
         "git_pushed": git["pushed"],
-        "url": f"https://github.com/choct155/pkis/blob/main/wiki/{folder}/{slug}.md",
+        "url": f"{REPO_WEB_BASE}/blob/main/wiki/{folder}/{slug}.md",
     }
 
 
@@ -2399,7 +2399,7 @@ def tool_get_staged_nodes(
                 "title": fm.get("title", staged_file.stem),
                 "review_status": fm.get("review_status", "pending"),
                 "description": first_line,
-                "review_url": f"https://github.com/choct155/pkis/blob/main/wiki/staging/{staged_file.name}",
+                "review_url": f"{REPO_WEB_BASE}/blob/main/wiki/staging/{staged_file.name}",
             })
         except Exception as e:
             logger.error(f"Error reading staged file {staged_file}: {e}")
@@ -2600,22 +2600,53 @@ def _git_commit_and_push(files: list, message: str, repo_dir=None) -> dict:
 
     m = re.search(r'\[.+? ([a-f0-9]{7,})\]', commit.stdout)
     sha = m.group(1) if m else commit.stdout.strip()[:12]
+    branch = _current_branch(repo)
 
-    try:
-        push = subprocess.run(["git", "-C", repo, "push"],
-                              capture_output=True, text=True, timeout=60)
-        push_ok, push_err = push.returncode == 0, push.stderr.strip()
-    except subprocess.TimeoutExpired:
-        push_ok, push_err = False, "push timed out after 60s"
+    def _push():
+        try:
+            p = subprocess.run(["git", "-C", repo, "push"],
+                               capture_output=True, text=True, timeout=60)
+            return p.returncode == 0, p.stderr.strip()
+        except subprocess.TimeoutExpired:
+            return False, "push timed out after 60s"
+
+    push_ok, push_err = _push()
+
+    # B11 — auto-reconcile the benign race. The server pulls origin/main on a 15-min
+    # cron; an external push (me, CI) moves the remote, so a production write commits
+    # on a stale HEAD and the first push is rejected (non-fast-forward). When the
+    # changes are disjoint (the common case — wiki nodes vs docs), a `pull --rebase`
+    # replays our one commit cleanly and the retry succeeds. Only a GENUINE conflict
+    # (or repeated failure) still raises GitPushError, preserving the loud-divergence
+    # guarantee. This is the happy-path version of tools/reconcile_push.py --confirm.
+    if not push_ok and ("fetch first" in push_err.lower()
+                        or "non-fast-forward" in push_err.lower()
+                        or "rejected" in push_err.lower()):
+        rebased = subprocess.run(["git", "-C", repo, "pull", "--rebase", "origin", branch],
+                                 capture_output=True, text=True, timeout=120)
+        if rebased.returncode == 0:
+            logger.info("git push race auto-reconciled via pull --rebase in %s", repo)
+            push_ok, push_err = _push()
+        else:
+            # Conflict or no-upstream: abort the half-done rebase so the local commit
+            # is left clean + retained for tools/reconcile_push.py, then fall through to raise.
+            subprocess.run(["git", "-C", repo, "rebase", "--abort"],
+                           capture_output=True, text=True)
+            push_err = f"pull --rebase failed (genuine divergence): {rebased.stderr.strip() or rebased.stdout.strip()}"
 
     if not push_ok:
-        diag = _git_push_diagnostics(repo, _current_branch(repo), sha, message)
+        diag = _git_push_diagnostics(repo, branch, sha, message)
         diag["push_error"] = push_err
         logger.error("git push failed in %s (sha=%s): %s | %s",
                      repo, sha, push_err, diag["recommendation"])
         raise GitPushError(
             f"commit {sha} retained locally but push failed: {diag['recommendation']}",
             diag)
+    # A rebase rewrites the commit hash; report the post-push HEAD.
+    head = subprocess.run(["git", "-C", repo, "rev-parse", "--short", "HEAD"],
+                          capture_output=True, text=True)
+    if head.returncode == 0 and head.stdout.strip():
+        sha = head.stdout.strip()
     return {"committed": True, "sha": sha, "pushed": True}
 
 
@@ -3905,7 +3936,7 @@ def _get_tools_list():
         },
         {
             "name": "set_priority_config",
-            "description": "Set, reset, or report the DEFAULT cluster-proximity weight used by get_concept_frontier for every call without an explicit override. reset=true restores the built-in default (2.0); cluster_proximity_weight=<n> persists <n> as the new default for all calls; passing neither reports the current default. Persisted to a config file (survives restarts, shared across workers). Returns the resulting weight and its source.",
+            "description": "WRITE-authorized config tool. Sets or resets the DEFAULT cluster-proximity weight used by get_concept_frontier for every call without an explicit override (it persists to a config file shared across workers, hence write-tier even when only reporting). reset=true restores the built-in default (2.0); cluster_proximity_weight=<n> persists <n> as the new default for all calls; passing neither reports the current default. Returns the resulting weight and its source.",
             "inputSchema": {"type": "object", "properties": {
                 "cluster_proximity_weight": {"type": "number", "description": "New default weight to persist for all calls"},
                 "reset": {"type": "boolean", "default": False, "description": "Restore the built-in default (2.0) by removing the persisted config"}

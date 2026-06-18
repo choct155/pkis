@@ -132,6 +132,18 @@ PODCAST_INDEX_SECRET = os.environ.get("PODCAST_INDEX_SECRET", "")
 LISTEN_NOTES_KEY     = os.environ.get("LISTEN_NOTES_KEY", "")
 PODCHASER_KEY        = os.environ.get("PODCHASER_KEY", "")
 
+# Repo web base for review_url / url fields in write-tool return payloads (B6).
+# One value so a fork / repo move doesn't break the returned links.
+REPO_WEB_BASE = os.environ.get("PKIS_REPO_WEB_BASE", "https://github.com/choct155/pkis").rstrip("/")
+
+# Model IDs (B6 centralization — were scattered as literals across app.py + tools/).
+# Env-overridable; the tools import these so there is one place to bump a model.
+CONCEPT_DETECT_MODEL = os.environ.get("PKIS_CONCEPT_DETECT_MODEL", "claude-sonnet-4-20250514")
+NARRATION_MODEL      = os.environ.get("PKIS_NARRATION_MODEL", "claude-sonnet-4-6")
+EXTRACT_MODEL        = os.environ.get("PKIS_EXTRACT_MODEL", "claude-haiku-4-5")
+RATIONALE_MODEL      = os.environ.get("PKIS_RATIONALE_MODEL", "claude-sonnet-4-6")
+PROPOSAL_MODEL       = os.environ.get("PKIS_PROPOSAL_MODEL", "claude-sonnet-4-6")
+
 # Comptroller usage store (Roster Phase 4). SQLite under /home/pkis (pkis owns it —
 # avoids the /var/pkis sudo the roster's spec assumed; passwordless sudo is
 # systemctl-only here). log_usage writes here best-effort; tools/comptroller.py reads it.

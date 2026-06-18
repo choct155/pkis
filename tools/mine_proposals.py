@@ -29,16 +29,17 @@ import anthropic
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.realpath(__file__))))
 try:
     from usage import log_usage
-    from config import USAGE_DB_PATH
+    from config import USAGE_DB_PATH, PROPOSAL_MODEL
 except Exception:  # pragma: no cover - defensive
     def log_usage(*_a, **_k):
         return False
     USAGE_DB_PATH = None
+    PROPOSAL_MODEL = "claude-sonnet-4-6"
 
 WIKI = "/home/pkis/pkis-wiki/wiki"
 READER = f"{WIKI}/reader"
 PROPOSALS = "/home/pkis/proposals"
-MODEL = "claude-sonnet-4-6"
+MODEL = PROPOSAL_MODEL
 MAX_TOKENS = 12000
 KNOWLEDGE_DIRS = ["concepts", "techniques", "results", "frameworks", "problems", "principles"]
 

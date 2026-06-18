@@ -41,13 +41,12 @@ import numpy as np
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.realpath(__file__))))
 try:
     from usage import log_usage
-    from config import USAGE_DB_PATH
+    from config import USAGE_DB_PATH, RATIONALE_MODEL
 except Exception:  # pragma: no cover - defensive
     def log_usage(*_a, **_k):
         return False
     USAGE_DB_PATH = None
-
-RATIONALE_MODEL = "claude-sonnet-4-6"   # the rationale is the centrepiece — quality matters
+    RATIONALE_MODEL = "claude-sonnet-4-6"   # the rationale is the centrepiece — quality matters
 RATIONALE_TOOL = {
     "name": "rationale",
     "description": "Explain, for a researcher curating a personal ML/stats knowledge base, "

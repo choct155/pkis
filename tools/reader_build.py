@@ -39,8 +39,8 @@ from bs4 import BeautifulSoup, NavigableString, Tag
 import app  # reuse anthropic_client, tool_get_related, load_node, find_node_path_by_iri, WIKI_DIR, DOCS_DIR
 from usage import log_usage  # Comptroller accounting (best-effort; app's bootstrap put repo root on path)
 
-MODEL = "claude-sonnet-4-6"               # narration: quality-critical
-EXTRACT_MODEL = os.environ.get("EXTRACT_MODEL", "claude-haiku-4-5")  # PDF/HTML transcription: cheap, mechanical
+MODEL = app.NARRATION_MODEL               # narration: quality-critical (B6: centralized in config)
+EXTRACT_MODEL = app.EXTRACT_MODEL         # PDF/HTML transcription: cheap, mechanical (PKIS_EXTRACT_MODEL)
 SKIP_TITLES = ("references", "acknowledg", "appendix", "bibliography", "supplementary")
 ARXIV_RE = re.compile(r"arxiv\.org/(?:abs|pdf)/([0-9]+\.[0-9]+)")
 

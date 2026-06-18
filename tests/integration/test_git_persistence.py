@@ -118,6 +118,66 @@ def test_edit_node_raises_loudly_on_push_failure_and_retains_commit(appmod, isol
 
 
 @pytest.mark.integration
+def _advance_remote(isolated_wiki, tmp_path, *, rel_path, content):
+    """Clone the bare remote, commit a change at rel_path, push it — so the main
+    repo's origin/main is now AHEAD by one commit (the B11 race precondition)."""
+    clone = tmp_path / "remote-mover"
+    subprocess.run(["git", "clone", "-q", str(isolated_wiki.remote), str(clone)],
+                   check=True, capture_output=True)
+    subprocess.run(["git", "-C", str(clone), "config", "user.email", "m@x.local"], check=True)
+    subprocess.run(["git", "-C", str(clone), "config", "user.name", "Mover"], check=True)
+    f = clone / rel_path
+    f.parent.mkdir(parents=True, exist_ok=True)
+    f.write_text(content)
+    subprocess.run(["git", "-C", str(clone), "add", "-A"], check=True, capture_output=True)
+    subprocess.run(["git", "-C", str(clone), "commit", "-q", "-m", "remote: advance"],
+                   check=True, capture_output=True)
+    subprocess.run(["git", "-C", str(clone), "push", "-q", "origin", "HEAD"],
+                   check=True, capture_output=True)
+
+
+@pytest.mark.integration
+def test_push_race_auto_reconciles_disjoint_change(appmod, isolated_wiki, tmp_path):
+    """B11: when the remote moved with a DISJOINT change (the common 15-min-cron
+    race), a rejected push is auto-healed by pull --rebase + retry — no raise."""
+    # Remote advances on a different file than the write touches.
+    _advance_remote(isolated_wiki, tmp_path,
+                    rel_path="OTHER.md", content="remote-only edit\n")
+    p = isolated_wiki.wiki / "concepts" / "entropy.md"
+    p.write_text(p.read_text() + "\nlocal disjoint edit.\n")
+
+    res = appmod._git_commit_and_push([p], "test: disjoint write during race")
+    assert res["committed"] is True and res["pushed"] is True
+
+    # Remote now has BOTH our commit and the mover's file (clean rebase + push).
+    log = subprocess.run(["git", "-C", str(isolated_wiki.remote), "log", "--oneline"],
+                         capture_output=True, text=True).stdout
+    assert "disjoint write during race" in log and "remote: advance" in log
+
+
+@pytest.mark.integration
+def test_push_race_genuine_conflict_still_raises(appmod, isolated_wiki, tmp_path):
+    """B11 guard: a CONFLICTING remote change (same file) is NOT silently merged —
+    pull --rebase fails, the rebase is aborted, and GitPushError is raised with the
+    local commit retained (the loud-divergence guarantee survives)."""
+    _advance_remote(isolated_wiki, tmp_path,
+                    rel_path="wiki/concepts/entropy.md", content="REMOTE rewrite of entropy\n")
+    p = isolated_wiki.wiki / "concepts" / "entropy.md"
+    p.write_text("LOCAL rewrite of entropy\n")
+
+    with pytest.raises(appmod.GitPushError):
+        appmod._git_commit_and_push([p], "test: conflicting write during race")
+
+    # No rebase left in progress; the local commit is retained (HEAD is our commit).
+    status = subprocess.run(["git", "-C", str(isolated_wiki.repo), "status", "--porcelain=2", "--branch"],
+                            capture_output=True, text=True).stdout
+    assert "rebase" not in status.lower()
+    head_msg = subprocess.run(["git", "-C", str(isolated_wiki.repo), "log", "-1", "--pretty=%s"],
+                              capture_output=True, text=True).stdout
+    assert "conflicting write during race" in head_msg
+
+
+@pytest.mark.integration
 def test_push_is_centralized_to_one_helper(appmod):
     """After consolidation, _git_commit_and_push is the ONLY site that runs
     `git push`. Guards against a new write path reintroducing its own (silent)
