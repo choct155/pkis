@@ -3760,6 +3760,13 @@ def health():
     return jsonify({"status": "ok", "wiki_dir": str(WIKI_DIR)})
 
 
+@app.route("/app", methods=["GET"])
+def app_redirect():
+    """Redirect the no-trailing-slash form to /app/ (nginx serves the viewer at the
+    /app/ alias, so a bare /app would otherwise fall through to a Flask 404)."""
+    return redirect("/app/", code=301)
+
+
 @app.route("/refresh", methods=["POST"])
 def refresh():
     """Called by git webhook or cron to invalidate caches."""

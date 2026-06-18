@@ -121,3 +121,12 @@ def test_rest_and_mcp_return_same_shape(client, rest_path, mcp_tool, payload, mc
     }).get_json()
     mcp = mcp_extract(json.loads(mcp_raw["result"]["content"][0]["text"]))
     assert _shape(rest) == _shape(mcp), f"{rest_path} vs {mcp_tool}: {_shape(rest)} != {_shape(mcp)}"
+
+
+@pytest.mark.contract
+def test_app_bare_redirects_to_trailing_slash(client):
+    """/app (no slash) must 301 to /app/ — nginx only serves the /app/ alias, so a
+    bare /app would otherwise fall through to a Flask 404."""
+    r = client.get("/app")
+    assert r.status_code == 301
+    assert r.headers["Location"].endswith("/app/")
