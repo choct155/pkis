@@ -1,5 +1,5 @@
 # Synthesizer Agent — Operating Procedure
-Version: 2.0
+Version: 2.1
 
 ## Role
 
@@ -391,6 +391,84 @@ Action: move from wiki/concepts/ to wiki/techniques/, update all wikilinks
 ```
 
 Wait for approval before moving files.
+
+---
+
+## Mode 5: Periodic Proposal Pass (async)
+
+**Invoked:** `Synthesizer, run proposal pass` — or on schedule (see Schedulable
+below).
+
+Unlike Modes 1–4, this mode runs **without a synchronous conversation and without
+immediate human approval**. It produces a structured proposal document and exits;
+the human reviews and approves asynchronously, then triggers execution separately.
+This is the loop-closing counterpart to the Auditor: the Auditor flags gaps into
+`wiki/inbox.md § ## Structural Gaps`, and this pass reads that lane as its work
+queue.
+
+### Procedure
+
+1. **Read the work queue.** Read `wiki/inbox.md § ## Structural Gaps` for
+   Auditor-flagged items (problems without techniques, techniques without results,
+   isolated domains, stub graduation candidates).
+2. **Connection discovery.** Run Mode 2 connection discovery across the **two
+   domains with the lowest cross-domain edge counts** (from the most recent Auditor
+   report's `## Graph Health` / `## Structural Gaps` metrics).
+3. **Graduation candidates.** Identify the **top 5 stub graduation candidates**
+   (stubs with 3+ sources, per Auditor Check 9).
+4. **Draft deepening proposals.** For each graduation candidate, draft a deepening
+   proposal using the appropriate template (Mode 1 templates above). Do not write to
+   the live node — draft into the proposal document only.
+5. **Write the proposal document** to `wiki/proposals/synthesizer-YYYY-MM-DD.md`
+   (format below).
+6. **Append to the inbox** under `## Proposals`, following the lane convention:
+   `- [ ] Synthesizer proposal pass YYYY-MM-DD — N proposals (wiki/proposals/synthesizer-YYYY-MM-DD.md) [Synthesizer]`
+7. **Commit:** `[synthesizer] proposal pass YYYY-MM-DD`
+
+### Proposal document format
+
+```markdown
+# Synthesizer Proposal Pass — YYYY-MM-DD
+
+## Connection Proposals
+[ranked list per Mode 2 format]
+[APPROVE / REJECT / DEFER — human marks inline]
+
+## Deepening Proposals
+### [[node-slug]] (technique)
+[full draft per the appropriate Mode 1 template]
+[APPROVE / REJECT / DEFER — human marks inline]
+
+## Structural Gap Responses
+[responses to Auditor-flagged gaps from § Structural Gaps]
+```
+
+Each proposal carries an inline `APPROVE / REJECT / DEFER` marker the human edits in
+place — no synchronous back-and-forth.
+
+### Executing approved proposals
+
+**Invoked:** `Synthesizer, execute proposals YYYY-MM-DD`
+
+Reads `wiki/proposals/synthesizer-YYYY-MM-DD.md` and:
+- For each item marked **APPROVE** — execute it (write the node / add the
+  connection) in document order, then commit.
+- For each item marked **REJECT** — log it to `wiki/log.md` (with the reason if the
+  human supplied one) and do not execute.
+- For each item marked **DEFER** — leave it in the proposal document untouched, so
+  the next pass can reconsider it.
+
+Commit: `[synthesizer] execute proposals YYYY-MM-DD — N applied, M rejected, K deferred`
+
+Approval is **always** manual: the proposal pass never executes its own proposals in
+the same run. Generation and execution are two separate invocations.
+
+### Schedulable
+
+The proposal pass (generation only, step 1–7) can run unattended. Recommended
+cadence: **weekly**. Trigger via cron on the Hetzner VPS calling the Claude Code
+CLI, or manually. Execution (`execute proposals`) is never scheduled — it always
+follows a human marking the document.
 
 ---
 
