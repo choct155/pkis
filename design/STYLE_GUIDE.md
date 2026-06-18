@@ -53,6 +53,12 @@ colors are taxonomy. Never collapse one into the other.
 - **Viz panels may be dark** when the content needs it (canvas instruments like the
   HMC dynamics figures) — a dark "instrument card" embedded in the light page is a
   sanctioned pattern, not a violation.
+- **Exception — full-dark instrument explainers.** `hmc.html` is an end-to-end
+  canvas instrument whose visualizations rely on a tightly-coupled semantic palette
+  (cyan = HMC path, red = random-walk, green/amber for diagnostics). It stays dark
+  with its native palette rather than being forced light/red — recoloring would break
+  the legend↔canvas correspondence. New explainers should follow Hex-red; reach for a
+  full-dark instrument only when the piece is essentially all-simulation like hmc.
 
 ## Type
 - One family, **Inter**, across all surfaces (weights 400–800). Headings are heavy
