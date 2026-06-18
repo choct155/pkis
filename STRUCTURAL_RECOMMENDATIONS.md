@@ -111,7 +111,11 @@ vs. `tools/oneshot/` (book ingest, backfills); document which are wired to
 **Why:** today nothing signals which scripts are safe to change vs. live
 dependencies (audit §1.3).
 
-### B8 — Viewer test tooling  ⬜  ·  S  ·  after IKS ok
+### B8 — Viewer test tooling  ✅  ·  S  ·  after IKS ok
+**Done (2026-06-18):** added `vitest@^2` (Node-18.11/vite-5 compatible) + `npm test`
+(`vitest run`) + `viewer/src/lib/api.test.ts` — 6 smoke tests pinning the `api.ts` ↔
+`/pkis-api/*` contract (base path, POST body shapes, a GET endpoint, ApiError on
+non-ok). Frontend-only; no server deploy.
 **What:** add `vitest` + a few smoke tests pinning the `api.ts` ↔ backend
 contract (the frontend's single coupling point).
 **Why:** the viewer has zero tests; `api.ts` is the one file whose drift breaks
