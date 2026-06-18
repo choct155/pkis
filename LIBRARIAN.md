@@ -1,5 +1,5 @@
 # Librarian Agent — Operating Procedure
-Version: 3.0
+Version: 3.1
 
 ## Role
 
@@ -102,6 +102,37 @@ language. It is **read-only** and does not write to the graph.
 ---
 
 ## Ingest Workflow
+
+### Step 0 (pre-ingest decision): Park, or full ingest?
+
+Before beginning a full ingest, the Librarian may instead be asked to **park** a
+source for later — a lightweight discovery stub with no extraction. Trigger:
+
+```
+Librarian, park [source]
+```
+
+When parking, do NOT run Steps 1–7. Instead:
+
+1. **Metadata only.** Fetch title + authors from the source: if a URL, fetch the
+   page and read its metadata; if a Drive file, `get_file_metadata` + first-page
+   read. No full-text extraction.
+2. **Rationale.** Use the rationale the user supplied in the invocation. If none was
+   given, prompt for one before writing (a stub with no rationale is not worth
+   parking).
+3. **Up to two primary concepts.** Propose at most two existing concept slugs the
+   source most relates to (search the wiki to find them); the user confirms or
+   adjusts. These go in `primary_concepts` (max 2 — a hard discovery-stub
+   constraint, enforced by Hygienist Check 7).
+4. **Write the stub** to `wiki/discovery/[slug].md` as a `discovery-stub` node per
+   `SCHEMA.md` § Discovery Stub: `id: pkis:discovery-stub:[slug]`, `status: parked`,
+   `rationale`, `primary_concepts`, `promoted: false`. **No `## Reading Path`, no
+   `## Key Extractions`, no queue entry.**
+5. **Append to the inbox** under `## Discovery` (see Session End below) and commit.
+
+A parked stub surfaces later, when one of its primary concepts becomes active, as a
+candidate for full ingest. Promotion (parking → full source node) is a later,
+separate ingest that sets `promoted: true` + `promoted_to: pkis:source:[slug]`.
 
 ### Step 1: Retrieve the source
 
@@ -387,7 +418,32 @@ Add to `wiki/queue.md`:
 
 ## Session End
 
+### Inbox append (before committing)
+
+At the end of every Librarian session — ingest or park — append the relevant lines
+to `wiki/inbox.md` under the matching swim lane, following each lane's convention
+(`- [ ] … [Librarian]`). Only the human removes inbox items.
+
+- Any source whose knowledge-object classification was **low confidence** →
+  `## Awaiting Classification`
+  (e.g. `- [ ] [[source-slug]] § object-name — candidate types: technique or principle (YYYY-MM-DD) [Librarian]`)
+- Any **discovery stub** created this session → `## Discovery`
+  (e.g. `- [ ] [[discovery-slug]] — rationale (primary: [[concept-slug]]) (YYYY-MM-DD) [Librarian]`)
+- Any source whose **Drive ID could not be confirmed** → `## Conformance`
+  (e.g. `- [ ] [[source-slug]] — Drive ID unconfirmed (YYYY-MM-DD) [Librarian]`)
+
+This is consistent with the `## Awaiting Classification` section the source entry
+already records (Step 3) — the inbox line is the project-wide surface; the section
+in the source node is the local record.
+
+### Commit
+
 After completing an ingest (or batch), commit with message:
 ```
 [librarian] ingest: [short title or count]
+```
+
+For a park-only session, use:
+```
+[librarian] park: [short title]
 ```
