@@ -132,6 +132,11 @@ PODCAST_INDEX_SECRET = os.environ.get("PODCAST_INDEX_SECRET", "")
 LISTEN_NOTES_KEY     = os.environ.get("LISTEN_NOTES_KEY", "")
 PODCHASER_KEY        = os.environ.get("PODCHASER_KEY", "")
 
+# Comptroller usage store (Roster Phase 4). SQLite under /home/pkis (pkis owns it —
+# avoids the /var/pkis sudo the roster's spec assumed; passwordless sudo is
+# systemctl-only here). log_usage writes here best-effort; tools/comptroller.py reads it.
+USAGE_DB_PATH = Path(os.environ.get("PKIS_USAGE_DB", "/home/pkis/usage/usage.sqlite"))
+
 # MCP JSON-RPC 2.0 Streamable HTTP transport constants
 JSONRPC_VERSION = "2.0"
 MCP_SUPPORTED_PROTOCOL_VERSIONS = ["2025-06-18", "2025-03-26", "2024-11-05"]

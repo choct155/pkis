@@ -49,6 +49,9 @@ os.environ["REPO_DIR"] = str(_SESSION_REPO)
 os.environ["DOCS_REPO_DIR"] = str(_SESSION_REPO)
 os.environ["STAGING_DIR"] = str(_SESSION_WIKI / "staging")
 os.environ["ANTHROPIC_API_KEY"] = "sk-test-not-a-real-key"
+# Comptroller usage store: point at the session tmp dir so log_usage (best-effort)
+# never writes to /home/pkis during tests.
+os.environ["PKIS_USAGE_DB"] = str(_SESSION_ROOT / "usage" / "usage.sqlite")
 # Force BM25-only: deterministic, and avoids pulling torch into the test env.
 os.environ["PKIS_SEMANTIC_SEARCH"] = "0"
 # Ensure auth subsystems are DORMANT for the default suite (Seam E tests opt in

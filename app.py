@@ -43,6 +43,9 @@ from anthropic import Anthropic
 # B2 split (incremental): pure helpers carved out to store.py; re-imported so the
 # rest of app.py and every `import app` consumer keep referencing them unchanged.
 from store import slug_from_path, iri_from_slug, parse_iri, rrf_score, WikiStore
+# Comptroller usage accounting (Roster Phase 4). log_usage is BEST-EFFORT — it never
+# raises, so a logging failure cannot break a tool call. Writes to config.USAGE_DB_PATH.
+from usage import log_usage
 # External-API adapters carved out to adapters.py; `import *` (driven by adapters'
 # __all__) binds the underscore-named fetchers as app globals, so callers resolve
 # them and the contract-test monkeypatches still land.
@@ -462,6 +465,10 @@ Only include candidates with confidence >= {threshold}."""
             max_tokens=500,
             messages=[{"role": "user", "content": prompt}]
         )
+        # Comptroller accounting (best-effort; never raises). USAGE_DB_PATH is bound
+        # from config via import *; resolved as an app global at call time.
+        log_usage(USAGE_DB_PATH, response, origin="pkis-mcp", project="pkis",
+                  attributes={"tool": "detect_concepts"})
         result_text = response.content[0].text.strip()
         # Strip markdown fences if present
         result_text = re.sub(r'^```json\s*|\s*```$', '', result_text, flags=re.MULTILINE)
