@@ -77,7 +77,7 @@ export default function PriorityView({ onSelectNode }: Props) {
               className="queue-item"
               onClick={() => onSelectNode(`pkis:source:${item.slug}`)}
             >
-              <div className={`queue-priority prio-${item.priority}`} />
+              <div className={`queue-priority prio-${item.hint ?? 'normal'}`} />
               <div className="queue-info">
                 <div className="queue-title">{item.slug}</div>
                 {item.reason && <div className="queue-reason">{item.reason}</div>}

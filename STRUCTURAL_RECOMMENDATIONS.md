@@ -126,7 +126,16 @@ the whole app. Low effort, real protection.
 `WRITE_TOOLS`. Align the description (and confirm the tier).
 **Why:** minor surface-hygiene; cheap to fix while B5 touches the same area.
 
-### B10 — Dedupe reading priority: queue captures, frontier prioritizes  ❓⬜  ·  M  ·  after IKS ok
+### B10 — Dedupe reading priority: queue captures, frontier prioritizes  ✅  ·  M  ·  after IKS ok
+**Done (2026-06-18, owner chose "demote manual tag fully"):** the queue is now a
+flat pre-ingestion capture inbox; `get_reading_queue` orders items by their subject's
+concept-frontier `priority_score` (un-ingested captures → `frontier_score: null`,
+sorted last by capture order). The manual high/normal tag is demoted to an
+informational `hint`; `add_to_queue` records it inline (`(hint: high)`) + a
+`(captured: DATE)` stamp instead of a `### High`/`### Normal` section. Legacy
+section-format queue.md still parses (section → hint), so no server migration needed.
+Viewer `QueueItem` + Browse/Priority views updated to the new shape. Shared
+`_compute_frontier` feeds both the frontier tool and the queue ordering. +4 tests.
 **What:** the flat reading queue's coarse `high/normal` tag duplicates the
 continuous priority the concept frontier already computes. Keep the queue as a
 pre-ingestion **capture inbox** (the frontier can't see un-ingested sources), but

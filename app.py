@@ -698,58 +698,90 @@ def tool_get_dependency_chain(iri: str) -> list:
 
 
 def tool_get_reading_queue(priority=None) -> list:
+    """Reading queue as a pre-ingestion CAPTURE inbox (B10). Ordering is derived from
+    the concept frontier — a queued item's priority is its subject's frontier
+    priority_score — NOT the old manual high/normal tag, which is now only a
+    capture-time `hint`. Items whose subject the frontier can't see (un-ingested, the
+    common case) carry frontier_score=None and sort after scored items, by capture
+    order. `priority` arg still filters by the recorded hint for back-compat.
+
+    Parses BOTH the new flat format and the legacy `### High`/`### Normal` sections
+    (the section becomes the item's hint), so old queue.md files keep working."""
     queue_path = WIKI_DIR / "queue.md"
     if not queue_path.exists():
         return []
 
-    content = queue_path.read_text()
+    scores = _frontier_score_by_slug()
     items = []
-    current_priority = "normal"
+    section_hint = None  # legacy section → hint
+    for line in queue_path.read_text().split("\n"):
+        s = line.strip()
+        if s.startswith("### High"):
+            section_hint = "high"; continue
+        if s.startswith("### Normal"):
+            section_hint = "normal"; continue
+        if s.startswith("## "):
+            section_hint = None; continue
+        if not s.startswith("- [ ]"):
+            continue
+        m = re.match(r'- \[ \] (?:\[\[([^\]]+)\]\]|([^—]+?))(?:\s*—\s*(.+))?$', s)
+        if not m:
+            continue
+        slug = (m.group(1) or m.group(2) or "").strip()
+        tail = (m.group(3) or "").strip()
+        # Pull an inline `(hint: high)` and `(captured: YYYY-MM-DD)` out of the tail.
+        hint = section_hint
+        hm = re.search(r'\(hint:\s*(high|normal)\)', tail)
+        if hm:
+            hint = hm.group(1)
+        cm = re.search(r'\(captured:\s*([0-9-]+)\)', tail)
+        captured = cm.group(1) if cm else None
+        reason = re.sub(r'\s*\((?:hint|captured):[^)]*\)', '', tail).strip()
+        if priority and (hint or "normal") != priority.lower():
+            continue
+        items.append({
+            "slug": slug,
+            "reason": reason,
+            "hint": hint,                       # demoted manual tag (informational)
+            "captured": captured,
+            "frontier_score": scores.get(slug),  # primary ordering signal; None if unseen
+            "capture_order": len(items),
+        })
 
-    for line in content.split("\n"):
-        if line.startswith("### High"):
-            current_priority = "high"
-        elif line.startswith("### Normal"):
-            current_priority = "normal"
-        elif line.startswith("- [ ]"):
-            if priority and current_priority != priority.lower():
-                continue
-            # Parse: - [ ] [[slug]] — reason
-            match = re.match(r'- \[ \] \[\[([^\]]+)\]\](?:\s*—\s*(.+))?', line)
-            if match:
-                slug = match.group(1)
-                reason = match.group(2) or ""
-                items.append({
-                    "slug": slug,
-                    "priority": current_priority,
-                    "reason": reason.strip()
-                })
-
+    # Frontier score drives ordering; un-ingested (None) fall to the back in capture order.
+    items.sort(key=lambda it: (it["frontier_score"] is not None,
+                               it["frontier_score"] or 0.0,
+                               -it["capture_order"]),
+               reverse=True)
+    for it in items:
+        it.pop("capture_order", None)
     return items
 
 
 def tool_add_to_queue(source_iri=None, reference=None, reason="", priority="normal") -> dict:
+    """Capture a source into the reading queue (a flat, pre-ingestion inbox — B10).
+    Ordering is the frontier's job (see get_reading_queue); `priority` is recorded
+    only as a capture-time `hint`, no longer a High/Normal section."""
     queue_path = WIKI_DIR / "queue.md"
     if not queue_path.exists():
-        queue_path.write_text("# Reading Queue\n\n### High\n\n### Normal\n")
+        queue_path.write_text("# Reading Queue\n\nCapture inbox — ordering is derived "
+                              "from the concept frontier (see get_reading_queue).\n\n## Queue\n")
 
     content = queue_path.read_text()
+    if "## Queue" not in content:  # legacy file (### High/### Normal) → add a flat section
+        content += "\n## Queue\n"
 
-    if source_iri:
-        _, _, slug = parse_iri(source_iri)
-        entry = f"- [ ] [[{slug}]] — {reason}"
-    else:
-        entry = f"- [ ] {reference} — {reason}"
+    target = source_iri and f"[[{parse_iri(source_iri)[2]}]]" or reference
+    captured = datetime.now(timezone.utc).date().isoformat()
+    annot = f" (captured: {captured})"
+    if priority and priority.lower() == "high":
+        annot += " (hint: high)"
+    entry = f"- [ ] {target} — {reason}{annot}"
 
-    section = "### High" if priority.lower() == "high" else "### Normal"
-
-    if section in content:
-        content = content.replace(section, f"{section}\n{entry}")
-    else:
-        content += f"\n{section}\n{entry}\n"
-
+    # Append under the flat ## Queue section.
+    content = content.replace("## Queue", f"## Queue\n{entry}", 1)
     queue_path.write_text(content)
-    return {"success": True, "entry": entry, "priority": priority}
+    return {"success": True, "entry": entry, "priority": priority, "hint": priority}
 
 
 # How strongly proximity to an active research-cluster frontier boosts reading priority.
@@ -842,46 +874,7 @@ def tool_get_concept_frontier(cluster_proximity_weight: float = None) -> dict:
     persisted default (set_priority_config) or the built-in default is used. The returned object
     reports the effective weight and its source under `params`."""
     eff_weight, weight_source = _effective_proximity_weight(cluster_proximity_weight)
-
-    nodes = load_all_nodes()
-    G = get_graph()
-
-    anchors = _active_frontier_anchors(nodes)
-    proximity = _cluster_proximity_map(G, anchors)
-
-    results = []
-    for node in nodes:
-        iri = node["iri"]
-        coverage = node.get("coverage", 0)
-        understanding = node.get("understanding", 0)
-
-        # Count inbound edges as proxy for centrality
-        inbound_count = G.in_degree(iri) if iri in G else 0
-        cluster_proximity = proximity.get(iri, 0.0)
-
-        # Priority: centrality + coverage/understanding gaps + cluster-frontier proximity
-        priority_score = (
-            (inbound_count * 0.5)
-            + ((5 - coverage) * 0.3)
-            + ((5 - understanding) * 0.2)
-            + (cluster_proximity * eff_weight)
-        )
-
-        results.append({
-            "iri": iri,
-            "canonical_title": node["title"],
-            "coverage": coverage,
-            "understanding": understanding,
-            "inbound_refs": inbound_count,
-            "cluster_proximity": round(cluster_proximity, 3),
-            "priority_score": round(priority_score, 3),
-            # node_type: singular knowledge type (frontmatter), falling back to folder→type.
-            # Needed so the viewer can filter the frontier by type (folder name would be plural).
-            "node_type": node.get("frontmatter", {}).get("knowledge_type")
-                         or FOLDER_TO_TYPE.get(node.get("node_type", ""), node.get("node_type", "")),
-            "domain": node.get("domain", []),
-        })
-
+    results, anchors = _compute_frontier(eff_weight)
     ranked = sorted(results, key=lambda x: x["priority_score"], reverse=True)[:20]
     return {
         "params": {
@@ -892,6 +885,57 @@ def tool_get_concept_frontier(cluster_proximity_weight: float = None) -> dict:
         },
         "results": ranked,
     }
+
+
+def _compute_frontier(eff_weight: float):
+    """Score every node for reading priority (centrality + coverage/understanding
+    gaps + cluster-frontier proximity). Returns (results_list, anchors). Shared by
+    get_concept_frontier (top-20) and the reading queue (B10: queued items are
+    ordered by their subject's frontier score)."""
+    nodes = load_all_nodes()
+    G = get_graph()
+    anchors = _active_frontier_anchors(nodes)
+    proximity = _cluster_proximity_map(G, anchors)
+
+    results = []
+    for node in nodes:
+        iri = node["iri"]
+        coverage = node.get("coverage", 0)
+        understanding = node.get("understanding", 0)
+        inbound_count = G.in_degree(iri) if iri in G else 0
+        cluster_proximity = proximity.get(iri, 0.0)
+        priority_score = (
+            (inbound_count * 0.5)
+            + ((5 - coverage) * 0.3)
+            + ((5 - understanding) * 0.2)
+            + (cluster_proximity * eff_weight)
+        )
+        results.append({
+            "iri": iri,
+            "canonical_title": node["title"],
+            "coverage": coverage,
+            "understanding": understanding,
+            "inbound_refs": inbound_count,
+            "cluster_proximity": round(cluster_proximity, 3),
+            "priority_score": round(priority_score, 3),
+            "node_type": node.get("frontmatter", {}).get("knowledge_type")
+                         or FOLDER_TO_TYPE.get(node.get("node_type", ""), node.get("node_type", "")),
+            "domain": node.get("domain", []),
+        })
+    return results, anchors
+
+
+def _frontier_score_by_slug() -> dict:
+    """{slug: priority_score} over all nodes, for ordering queued items by their
+    subject's frontier priority. Empty scores degrade to capture-order in the queue."""
+    eff_weight, _ = _effective_proximity_weight(None)
+    results, _ = _compute_frontier(eff_weight)
+    out = {}
+    for r in results:
+        _, _, slug = parse_iri(r["iri"])
+        if slug:
+            out[slug] = r["priority_score"]
+    return out
 
 
 def tool_set_priority_config(cluster_proximity_weight: float = None, reset: bool = False) -> dict:

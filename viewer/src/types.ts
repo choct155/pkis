@@ -167,8 +167,13 @@ export interface FrontierNode {
 // ── Queue item (from get_reading_queue) ──────────────────────────────────
 export interface QueueItem {
   slug: string;
-  priority: 'high' | 'normal';
   reason: string;
+  // B10: ordering is derived from the concept frontier; the manual high/normal tag
+  // is demoted to an informational capture-time hint. The backend returns items
+  // already ordered by frontier_score (un-ingested captures: null, sorted last).
+  hint: 'high' | 'normal' | null;
+  frontier_score: number | null;
+  captured: string | null;
 }
 
 // ── Staged node (from get_staged_nodes) ──────────────────────────────────

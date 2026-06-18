@@ -99,10 +99,9 @@ export default function BrowseView({ typeFilter, domainFilter, clusterFilter, on
   }
 
   // ── Default (home) mode: frontier + queue ───────────────────────────────
-  const prioritizedQueue = [...queue].sort((a, b) =>
-    a.priority === 'high' && b.priority !== 'high' ? -1 :
-    b.priority === 'high' && a.priority !== 'high' ? 1 : 0
-  ).slice(0, 5)
+  // B10: the backend already orders the queue by frontier priority_score, so just
+  // take the top of the returned order (no manual high/normal re-sort).
+  const prioritizedQueue = queue.slice(0, 5)
 
   return (
     <div>
@@ -137,7 +136,7 @@ export default function BrowseView({ typeFilter, domainFilter, clusterFilter, on
           <div className="section-label">reading queue</div>
           {prioritizedQueue.map((item, i) => (
             <div key={i} className="queue-item" onClick={() => onNavigate('priority')}>
-              <div className={`queue-priority prio-${item.priority}`} />
+              <div className={`queue-priority prio-${item.hint ?? 'normal'}`} />
               <div className="queue-info">
                 <div className="queue-title">{item.slug}</div>
                 {item.reason && <div className="queue-reason">{item.reason}</div>}
