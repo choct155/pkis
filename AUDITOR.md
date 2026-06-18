@@ -247,6 +247,23 @@ Under `## Conformance`:
 - Prerequisite ordering issues (Check 10) —
   `- [ ] Prerequisite ordering: [[a]] should precede [[b]] in queue (YYYY-MM-DD) [Auditor]`
 
+### Fold in pending Comptroller budget alerts
+
+The Comptroller is intentionally not a repo writer (single-pusher discipline — see
+COMPTROLLER.md). When its weekly run crosses the budget threshold it appends an
+alert line to a queue file **outside** the git repo:
+`/home/pkis/usage/budget_alerts.md`. As part of this same inbox step, the Auditor
+folds those pending lines in:
+
+1. If `/home/pkis/usage/budget_alerts.md` exists and has lines not already in
+   `wiki/inbox.md`, append each new line verbatim under the `## Budget` swim lane
+   (they already carry the `[Comptroller]` tag and `- [ ]` form).
+2. Truncate the queue file back to just its header (the lines now live in the
+   inbox, which the Auditor commits + pushes this run).
+
+This is the mechanism, not a "remember to relay" — a budget alert reaches the inbox
+on the next Auditor run with no second pusher touching the repo.
+
 Append only **new** findings — do not duplicate an item the Auditor already logged
 in a prior run that the human has not yet checked off. The Auditor also prunes
 checked-off inbox items older than 30 days (the human-removal convention's janitor

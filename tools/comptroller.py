@@ -142,9 +142,23 @@ def render_report(db_path, kind, now, *, report_date=None):
 # Inbox budget alert
 # --------------------------------------------------------------------------- #
 
-def maybe_alert_inbox(inbox_path, summary, threshold_frac=0.5):
-    """If weekly variable cost exceeds threshold_frac * monthly fixed budget, append
-    a line to wiki/inbox.md under ## Budget. Returns the line appended, or None."""
+def _alert_line(summary, threshold):
+    return (f"- [ ] Weekly variable cost ${summary['variable']:.2f} — exceeds "
+            f"threshold ${threshold:.2f} ({summary['report_date']}) [Comptroller]")
+
+
+def maybe_alert(summary, threshold_frac=0.5, *, inbox_path=None, queue_path=None):
+    """If weekly variable cost exceeds threshold_frac * monthly fixed budget, emit a
+    budget-alert line. Returns the line (or None).
+
+    Two delivery modes, both safe w.r.t. the deploy cron's `git pull`:
+      * queue_path (DEFAULT, single-pusher): append to a file OUTSIDE the git repo
+        (e.g. /home/pkis/usage/budget_alerts.md). The Auditor folds pending lines
+        into wiki/inbox.md ## Budget on its next run, via its own commit+push — so
+        the Comptroller never touches the repo and there is no second pusher.
+      * inbox_path (manual use): append straight into wiki/inbox.md ## Budget. Only
+        for an interactive run where a human owns the resulting commit.
+    """
     if summary["kind"] != "weekly":
         return None
     budget = summary.get("fixed_monthly", 0.0)
@@ -153,10 +167,31 @@ def maybe_alert_inbox(inbox_path, summary, threshold_frac=0.5):
     threshold = threshold_frac * budget
     if summary["variable"] <= threshold:
         return None
-    line = (f"- [ ] Weekly variable cost ${summary['variable']:.2f} — exceeds "
-            f"threshold ${threshold:.2f} ({summary['report_date']}) [Comptroller]")
-    _append_under_heading(inbox_path, "## Budget", line)
+    line = _alert_line(summary, threshold)
+    if queue_path:
+        _append_queue(queue_path, line)
+    if inbox_path:
+        _append_under_heading(inbox_path, "## Budget", line)
     return line
+
+
+def _append_queue(queue_path, line):
+    """Append a line to the alert queue file (plain append; idempotent on exact line)."""
+    existing = ""
+    if os.path.exists(queue_path):
+        with open(queue_path, encoding="utf-8") as fh:
+            existing = fh.read()
+    if line in existing:
+        return
+    os.makedirs(os.path.dirname(queue_path) or ".", exist_ok=True)
+    header = "" if existing else "# Comptroller budget alerts (pending fold-in by Auditor → inbox ## Budget)\n\n"
+    with open(queue_path, "a", encoding="utf-8") as fh:
+        fh.write(header + line + "\n")
+
+
+# Back-compat alias (older callers / tests).
+def maybe_alert_inbox(inbox_path, summary, threshold_frac=0.5):
+    return maybe_alert(summary, threshold_frac, inbox_path=inbox_path)
 
 
 def _append_under_heading(path, heading, line):
@@ -274,7 +309,10 @@ def main(argv=None):
     pr.add_argument("window", choices=["daily", "weekly", "monthly", "ytd"])
     pr.add_argument("--db", default=DEFAULT_DB)
     pr.add_argument("--out", default=None, help="dir to write comptroller_report_*.md")
-    pr.add_argument("--inbox", default=None, help="wiki/inbox.md for budget alerts")
+    pr.add_argument("--inbox", default=None,
+                    help="wiki/inbox.md — append alert directly (manual use; human owns the commit)")
+    pr.add_argument("--alert-queue", default=None,
+                    help="file OUTSIDE the repo for budget alerts; Auditor folds into inbox (scheduled use)")
     pr.add_argument("--threshold-frac", type=float, default=0.5)
     pr.add_argument("--print", action="store_true", dest="to_stdout",
                     help="print the report to stdout (for on-demand invocation)")
@@ -301,10 +339,11 @@ def main(argv=None):
             with open(fname, "w", encoding="utf-8") as fh:
                 fh.write(report)
             print(f"wrote {fname}")
-        if args.inbox:
-            alerted = maybe_alert_inbox(args.inbox, summary, args.threshold_frac)
+        if args.inbox or args.alert_queue:
+            alerted = maybe_alert(summary, args.threshold_frac,
+                                  inbox_path=args.inbox, queue_path=args.alert_queue)
             if alerted:
-                print(f"budget alert appended to {args.inbox}")
+                print(f"budget alert emitted -> {args.alert_queue or args.inbox}")
         if args.to_stdout or not args.out:
             print(report)
         return 0

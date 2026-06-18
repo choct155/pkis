@@ -12,14 +12,15 @@ Version: 1.1
 >    passwordless sudo on the VPS is `systemctl`-only, and the `pkis` user owns
 >    `/home/pkis`, so the store lives there (no `/var` sudo needed). The schema and
 >    behavior are otherwise exactly as specified.
-> 2. **The scheduled threshold→inbox alert is deferred.** The report crons run
->    **report-only**, writing to `/home/pkis/usage/` (outside the wiki git repo).
->    They do **not** pass `--inbox`, because the 15-minute deploy cron does a plain
->    `git pull` that a dirty working tree would break. Enabling the inbox alert on a
->    schedule needs a safe commit/push path (a flock'd add+commit+push, or routing
->    the alert through the MCP write surface). Until then, the alert fires only on a
->    **manual** `Comptroller, report weekly --inbox …` run, where a human owns the
->    commit. The CLI fully supports it (`maybe_alert_inbox`, tested).
+> 2. **The scheduled threshold→inbox alert uses a queue file (single-pusher).** A
+>    naive `--inbox` write from the cron would leave a dirty working tree and break
+>    the 15-minute deploy cron's plain `git pull`. Instead the weekly cron passes
+>    `--alert-queue /home/pkis/usage/budget_alerts.md` — a file **outside** the git
+>    repo. The **Auditor** folds pending lines into `wiki/inbox.md` ## Budget on its
+>    next run, via its own commit+push (see AUDITOR.md § Fold in pending Comptroller
+>    budget alerts). So the Comptroller never touches the repo and there is no second
+>    pusher — the alert reaches the inbox on the next Auditor run. The direct
+>    `--inbox` path remains for manual/interactive runs where a human owns the commit.
 
 ## Role
 
@@ -254,5 +255,7 @@ relays its output.
    `discovery_openalex` (`pkis-discovery`), `mine_proposals` (`pkis-mine-proposals`)
    now call best-effort `log_usage` at their Anthropic call sites.
 
-**Not yet delivered (future):** the scheduled inbox alert (needs a safe commit path
-— see the Status note) and automated workstation→VPS sync of Claude Code costs.
+8. ✅ Scheduled budget alert via queue file + Auditor fold-in (single-pusher; see
+   the Status note and AUDITOR.md). The weekly cron uses `--alert-queue`.
+
+**Not yet delivered (future):** automated workstation→VPS sync of Claude Code costs.

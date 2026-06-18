@@ -122,6 +122,23 @@ def test_alert_is_idempotent_and_silent_under_threshold(tmp_path):
     assert comptroller.maybe_alert_inbox(inbox, under, 0.5) is None
 
 
+@pytest.mark.unit
+def test_alert_queue_mode_writes_outside_repo_and_is_idempotent(tmp_path):
+    queue = tmp_path / "usage" / "budget_alerts.md"
+    over = {"kind": "weekly", "variable": 60.0, "fixed_monthly": 100.0,
+            "report_date": "2026-06-14"}
+    line = comptroller.maybe_alert(over, 0.5, queue_path=str(queue))
+    assert line and queue.exists()
+    text = queue.read_text()
+    assert "pending fold-in by Auditor" in text and line in text
+    comptroller.maybe_alert(over, 0.5, queue_path=str(queue))  # no dup
+    assert queue.read_text().count("Weekly variable cost") == 1
+    # Under threshold or non-weekly: nothing emitted.
+    assert comptroller.maybe_alert(
+        {"kind": "daily", "variable": 999, "fixed_monthly": 100,
+         "report_date": "x"}, 0.5, queue_path=str(queue)) is None
+
+
 # --------------------------------------------------------------------------- #
 # CLI end-to-end
 # --------------------------------------------------------------------------- #
