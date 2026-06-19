@@ -895,6 +895,13 @@ body {
 /* Like the graph: own full-height main with no padding, so the message list
    scrolls internally and the composer pins to the bottom. */
 .main-ask { padding: 0; overflow: hidden; }
+/* The fixed bottom-nav (<900px) overlays the bottom ~54px+safe-area of the
+   viewport. .ask-view fills .main, so without this its composer would sit
+   BEHIND the nav (the "no input box" bug). Reserve the nav's height here so the
+   whole ask column — composer included — ends just above it. */
+@media (max-width: 899px) {
+  .main-ask { padding-bottom: calc(56px + env(safe-area-inset-bottom)); }
+}
 .ask-view { display: flex; flex-direction: column; height: 100%; min-height: 0; }
 .ask-scroll {
   flex: 1; overflow-y: auto; min-height: 0;
@@ -961,7 +968,7 @@ body {
 /* Composer */
 .ask-composer {
   display: flex; align-items: flex-end; gap: 8px;
-  padding: 10px 16px calc(10px + env(safe-area-inset-bottom));
+  padding: 10px 16px;
   border-top: 1px solid var(--border); background: var(--bg);
 }
 .ask-input {
@@ -977,11 +984,6 @@ body {
   font-size: 17px; line-height: 1; display: flex; align-items: center; justify-content: center;
 }
 .ask-send:disabled { background: var(--dim); cursor: default; }
-
-/* On mobile the bottom-nav sits below the composer; lift the composer above it. */
-@media (max-width: 759px) {
-  .ask-composer { padding-bottom: calc(64px + env(safe-area-inset-bottom)); }
-}
 
 /* ── Cited-source rows (readability affordance) ───────────────────────── */
 .source-row { align-items: center; }

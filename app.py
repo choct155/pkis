@@ -4756,14 +4756,17 @@ def pkis_api_search():
 _ASK_MAX_MESSAGES = 40
 _ASK_MAX_CHARS = 8000
 
-# Per-IP rate limit. Env-tunable so it can be loosened/tightened without a code
-# change. This is a COST SAFETY NET, not security: it's in-process, so with N
-# gunicorn workers the effective ceiling is ~N× these numbers (each worker keeps
-# its own window). Good enough to stop a script from running up an unbounded
-# bill; a hard guarantee would need a shared store (or the sign-in gate).
+# Per-IP rate limit — three nested windows: burst (min), session (hour), and a
+# daily cap. Env-tunable so it can be loosened/tightened without a code change.
+# This is a COST SAFETY NET, not security: it's in-process, so with N gunicorn
+# workers the effective ceiling is ~N× these numbers (each worker keeps its own
+# window). The service runs 2 workers, so these per-worker defaults give an
+# effective ceiling of ≈16/min, 50/hr, 100/day per IP. A hard guarantee would
+# need a shared store (or the sign-in gate).
 _ASK_RATE_PER_MIN = int(os.environ.get("PKIS_ASK_RATE_PER_MIN", "8"))
-_ASK_RATE_PER_HOUR = int(os.environ.get("PKIS_ASK_RATE_PER_HOUR", "40"))
-_ask_hits = {}                 # ip -> list[monotonic timestamps] within the last hour
+_ASK_RATE_PER_HOUR = int(os.environ.get("PKIS_ASK_RATE_PER_HOUR", "25"))
+_ASK_RATE_PER_DAY = int(os.environ.get("PKIS_ASK_RATE_PER_DAY", "50"))
+_ask_hits = {}                 # ip -> list[monotonic timestamps] within the last day
 _ask_hits_lock = threading.Lock()
 
 
@@ -4777,26 +4780,27 @@ def _client_ip(req):
 
 
 def _ask_rate_check(ip):
-    """Sliding-window throttle. Returns (ok, retry_after_seconds). Prunes the
-    caller's window to the last hour and opportunistically sweeps idle IPs so the
-    map can't grow without bound."""
+    """Sliding-window throttle over min / hour / day windows. Returns
+    (ok, retry_after_seconds). Prunes the caller's window to the last day and
+    opportunistically sweeps idle IPs so the map can't grow without bound."""
     now = time.monotonic()
-    hour_ago, min_ago = now - 3600, now - 60
+    day_ago, hour_ago, min_ago = now - 86400, now - 3600, now - 60
     with _ask_hits_lock:
         if len(_ask_hits) > 4096:  # cheap stale-IP sweep
-            for k in [k for k, v in _ask_hits.items() if not v or v[-1] < hour_ago]:
+            for k in [k for k, v in _ask_hits.items() if not v or v[-1] < day_ago]:
                 _ask_hits.pop(k, None)
-        hits = [t for t in _ask_hits.get(ip, ()) if t > hour_ago]
-        if len(hits) >= _ASK_RATE_PER_HOUR:
-            _ask_hits[ip] = hits
-            return False, int(hits[0] + 3600 - now) + 1
-        recent = sum(1 for t in hits if t > min_ago)
-        if recent >= _ASK_RATE_PER_MIN:
-            _ask_hits[ip] = hits
-            oldest_in_min = min(t for t in hits if t > min_ago)
-            return False, int(oldest_in_min + 60 - now) + 1
-        hits.append(now)
+        hits = [t for t in _ask_hits.get(ip, ()) if t > day_ago]
         _ask_hits[ip] = hits
+        # Check coarsest-first so Retry-After reflects the binding limit.
+        for window, span, cap in (
+            (day_ago, 86400, _ASK_RATE_PER_DAY),
+            (hour_ago, 3600, _ASK_RATE_PER_HOUR),
+            (min_ago, 60, _ASK_RATE_PER_MIN),
+        ):
+            in_window = [t for t in hits if t > window]
+            if len(in_window) >= cap:
+                return False, int(min(in_window) + span - now) + 1
+        hits.append(now)
         return True, 0
 
 
