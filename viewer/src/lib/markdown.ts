@@ -32,9 +32,12 @@ export function renderMarkdown(md: string): string {
 
   let html = marked.parse(protected_) as string
   placeholders.forEach((p, i) => {
+    // Use a replacement FUNCTION, not the string `p`: math like `$1\times…` would
+    // otherwise have its `$1` interpreted as capture-group 1 ("INLINE"), corrupting
+    // the formula and desyncing the `$` delimiters. A function inserts `p` verbatim.
     html = html.replace(
       new RegExp(`%%MATH_(BLOCK|INLINE)_${i}%%`, 'g'),
-      p
+      () => p
     )
   })
   return html
