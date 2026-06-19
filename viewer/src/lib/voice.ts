@@ -23,22 +23,20 @@ export function cleanForSpeech(md: string): string {
   return t
 }
 
-// Rebuild the full transcript from a SpeechRecognition results list. Stateless by
-// design (called fresh each event, never accumulating across events) AND tolerant
-// of Android Chrome, which emits the in-progress utterance as MULTIPLE cumulative
-// interim entries ("so", "so I", "so I have", …). The rule that handles both the
-// well-behaved case and Android's: concatenate only the FINALIZED segments, and
-// for the interim take just the latest entry (overwrite, never append). Appending
-// the interim entries is what produced the "soso Iso I have…" recursion.
+// The current utterance's text from a SpeechRecognition results list.
+//
+// Hard-won: Android Chrome emits ONE spoken utterance as many cumulative
+// snapshots ("okay", "okay I", "okay I have", …) AND marks each FINAL. So any
+// strategy that concatenates results — whether all of them, or just the finalized
+// ones — sums those snapshots into the "okay okay I okay I have…" pile-up. The
+// only robust rule is to NEVER concatenate: each result is a cumulative snapshot,
+// so the LAST one is the most complete. Paired with single-utterance recognition
+// (continuous=false in the hook), the last result is always the right answer; the
+// caller appends across mic taps for longer input.
 export function assembleTranscript(results: ArrayLike<any>): string {
-  let final = ''
-  let interim = ''
-  for (let i = 0; i < results.length; i++) {
-    const seg = results[i][0].transcript
-    if (results[i].isFinal) final += seg + ' '
-    else interim = seg
-  }
-  return (final + interim).replace(/\s+/g, ' ').trim()
+  if (!results || !results.length) return ''
+  const last = results[results.length - 1]
+  return String((last && last[0] && last[0].transcript) || '').replace(/\s+/g, ' ').trim()
 }
 
 // ── Voice input (speech-to-text) ───────────────────────────────────────────
@@ -61,7 +59,10 @@ export function useSpeechInput(onTranscript: (text: string) => void) {
     const rec = new SR()
     rec.lang = 'en-US'
     rec.interimResults = true
-    rec.continuous = true
+    // Single-utterance: continuous mode on Android finalizes every interim
+    // snapshot into the results log, which no de-dup survives. One utterance per
+    // tap keeps "last result" authoritative; the caller appends across taps.
+    rec.continuous = false
     // Rebuild the FULL transcript from e.results every event (it's the cumulative
     // source of truth). Never accumulate across events with +=: Android Chrome
     // re-fires already-finalized results, and appending them produces the classic

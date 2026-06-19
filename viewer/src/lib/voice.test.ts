@@ -5,39 +5,38 @@ import { cleanForSpeech, assembleTranscript } from './voice'
 const R = (...segs: Array<[string, boolean]>) =>
   segs.map(([transcript, isFinal]) => ({ 0: { transcript }, isFinal, length: 1 }))
 
-describe('assembleTranscript (accumulation-bug regression)', () => {
-  it('returns the transcript verbatim for a single interim result', () => {
+describe('assembleTranscript (takes the latest snapshot, never concatenates)', () => {
+  it('returns a single result verbatim', () => {
     expect(assembleTranscript(R(['so', false]))).toBe('so')
   })
 
-  it('THE BUG: cumulative interim snapshots as separate entries must NOT concatenate', () => {
-    // Android Chrome's actual emission for one spoken utterance — each entry is a
-    // growing snapshot, none final. Must return the latest, not "soso Iso I have…".
+  it('THE BUG: cumulative snapshots marked final must NOT pile up — latest wins', () => {
+    // Android Chrome's real emission for one utterance: growing snapshots, each
+    // flagged final. Must return "okay I have a question", not "okay okay I okay…".
     const results = R(
-      ['so', false], ['so I', false], ['so I have', false],
-      ['so I have a', false], ['so I have a question', false],
+      ['okay', true], ['okay I', true], ['okay I have', true],
+      ['okay I have a', true], ['okay I have a question', true],
     )
+    expect(assembleTranscript(results)).toBe('okay I have a question')
+  })
+
+  it('same with interim snapshots', () => {
+    const results = R(['so', false], ['so I', false], ['so I have a question', false])
     expect(assembleTranscript(results)).toBe('so I have a question')
   })
 
-  it('is stateless across events — re-firing the SAME results does not double', () => {
+  it('is stateless — re-firing the same results does not change the answer', () => {
     const ev = R(['so I have a question', true])
     expect(assembleTranscript(ev)).toBe('so I have a question')
     expect(assembleTranscript(ev)).toBe('so I have a question')
   })
 
-  it('concatenates multiple FINALIZED segments with spacing', () => {
-    expect(assembleTranscript(R(['hello', true], ['world', true], ['there', false])))
-      .toBe('hello world there')
+  it('trims and collapses whitespace of the latest snapshot', () => {
+    expect(assembleTranscript(R(['  okay   I  have a question  ', true]))).toBe('okay I have a question')
   })
 
-  it('concatenates a finalized segment with the following interim cleanly', () => {
-    expect(assembleTranscript(R(['so I have a question', true], [' about entropy', false])))
-      .toBe('so I have a question about entropy')
-  })
-
-  it('collapses whitespace from segment joins', () => {
-    expect(assembleTranscript(R(['hello  ', true], ['  world', false]))).toBe('hello world')
+  it('returns empty string for an empty list', () => {
+    expect(assembleTranscript([])).toBe('')
   })
 })
 
