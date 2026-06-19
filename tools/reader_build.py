@@ -545,7 +545,7 @@ def main():
     args = sys.argv[1:]
     if not args:
         print(__doc__); sys.exit(1)
-    STAGES = ("extract", "narrate", "full", "revoice")
+    STAGES = ("extract", "narrate", "full", "revoice", "voice")
     # back-compat: <arxiv_id> <slug> [stage] [max]
     forced_arxiv = None
     if re.match(r"^\d+\.\d+$", args[0]) and len(args) >= 2 and args[1] not in STAGES:
@@ -561,12 +561,23 @@ def main():
         revoice(slug)
         return
 
-    print(f"routing {slug} …")
-    segs, title = route_segments(slug, max_seg, forced_arxiv=forced_arxiv)
-    title = os.environ.get("READER_TITLE") or title  # per-chapter title override for book splits
-    print(f"extracted {len(segs)} segments — title={title!r}")
-    for s in segs:
-        print(f"  [{s['id']}] {s['title']}  ({len(s['paper_md'])} chars)")
+    if stage == "voice":
+        # Narrate + TTS an already-extracted reader (payload.json has paper_md but no
+        # audio) WITHOUT re-reading the PDF or re-segmenting — far cheaper/faster than
+        # `full` (no Haiku extraction) and it preserves the existing segmentation.
+        outdir = os.environ.get("OUTDIR", str(app.WIKI_DIR / "reader" / slug))
+        with open(os.path.join(outdir, "payload.json")) as f:
+            _pl = json.load(f)
+        segs = _pl.get("sections", [])
+        title = os.environ.get("READER_TITLE") or _pl.get("title", slug)
+        print(f"voicing {slug} from existing payload — {len(segs)} sections, title={title!r}")
+    else:
+        print(f"routing {slug} …")
+        segs, title = route_segments(slug, max_seg, forced_arxiv=forced_arxiv)
+        title = os.environ.get("READER_TITLE") or title  # per-chapter title override for book splits
+        print(f"extracted {len(segs)} segments — title={title!r}")
+        for s in segs:
+            print(f"  [{s['id']}] {s['title']}  ({len(s['paper_md'])} chars)")
 
     if stage == "extract":
         # Persist the extracted text as a payload.json (sections only, no
