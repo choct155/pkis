@@ -1,15 +1,17 @@
 import { useEffect, useRef, useState } from 'react'
-import type { AskMessage, Citation } from '../types'
-import { ask, resolveSlug } from '../lib/api'
+import type { AskMessage, AskResponse, Citation } from '../types'
+import { askStream, resolveSlug, ApiError } from '../lib/api'
 import { renderMarkdown } from '../lib/markdown'
 import { renderMath } from '../lib/katex'
 
 // A chat turn carries the wire fields (role, content) plus, for assistant turns,
-// the structured citations and a small meta line. We strip the extras before
-// sending the conversation back to the stateless /ask endpoint.
+// streaming state, structured citations, and a small meta line. We strip the
+// extras before sending the conversation back to the stateless endpoint.
 interface Turn extends AskMessage {
   citations?: Citation[]
   meta?: { model: string; turns: number }
+  streaming?: boolean
+  status?: string
   error?: boolean
 }
 
@@ -19,9 +21,10 @@ const EXAMPLES = [
   'What do I need to understand before tackling variational inference?',
 ]
 
-// Render an assistant answer: markdown + KaTeX, with [[wikilinks]] wired to open
-// the referenced node (resolve slug → IRI → DetailSheet). Mirrors DetailSheet's
-// MarkdownBody so cited nodes behave identically everywhere.
+// Render a FINAL assistant answer: markdown + KaTeX, with [[wikilinks]] wired to
+// open the referenced node. Mirrors DetailSheet's MarkdownBody so cited nodes
+// behave identically everywhere. (While streaming we render plain text instead —
+// re-parsing markdown+math on every token would be wasteful and flicker.)
 function Answer({ md, onOpen }: { md: string; onOpen: (iri: string) => void }) {
   const ref = useRef<HTMLDivElement>(null)
   const html = renderMarkdown(md)
@@ -49,6 +52,15 @@ function Answer({ md, onOpen }: { md: string; onOpen: (iri: string) => void }) {
   return <div ref={ref} className="body-text" dangerouslySetInnerHTML={{ __html: html }} />
 }
 
+function Thinking({ label }: { label: string }) {
+  return (
+    <div className="ask-thinking">
+      <span className="ask-dot" /><span className="ask-dot" /><span className="ask-dot" />
+      <span className="ask-thinking-label">{label}</span>
+    </div>
+  )
+}
+
 interface Props {
   onSelectNode: (iri: string) => void
 }
@@ -59,35 +71,45 @@ export default function AskView({ onSelectNode }: Props) {
   const [loading, setLoading] = useState(false)
   const scrollRef = useRef<HTMLDivElement>(null)
 
-  // Keep the latest turn in view as the conversation grows.
+  // Keep the latest turn in view as the conversation grows / streams.
   useEffect(() => {
     scrollRef.current?.scrollTo({ top: scrollRef.current.scrollHeight, behavior: 'smooth' })
-  }, [turns, loading])
+  }, [turns])
+
+  // Patch the in-flight (last) assistant turn.
+  const patchLast = (fn: (t: Turn) => Turn) =>
+    setTurns((prev) => {
+      const copy = [...prev]
+      copy[copy.length - 1] = fn(copy[copy.length - 1])
+      return copy
+    })
 
   const send = async (text: string) => {
     const q = text.trim()
     if (!q || loading) return
-    const userTurn: Turn = { role: 'user', content: q }
-    const next = [...turns, userTurn]
-    setTurns(next)
+    const base = [...turns, { role: 'user', content: q } as Turn]
+    setTurns([...base, { role: 'assistant', content: '', streaming: true }])
     setInput('')
     setLoading(true)
+    // Send only the wire fields; the server is stateless and re-reads history.
+    const wire: AskMessage[] = base.map(({ role, content }) => ({ role, content }))
     try {
-      // Send only the wire fields; the server is stateless and re-reads history.
-      const wire: AskMessage[] = next.map(({ role, content }) => ({ role, content }))
-      const res = await ask(wire)
-      setTurns((t) => [...t, {
-        role: 'assistant',
-        content: res.answer,
-        citations: res.citations,
-        meta: { model: res.model, turns: res.turns },
-      }])
+      await askStream(wire, {
+        // A tool turn started — discard any pre-tool narration, show the status.
+        onStatus: (status) => patchLast((t) => ({ ...t, status, content: '' })),
+        onDelta: (chunk) => patchLast((t) => ({ ...t, status: undefined, content: t.content + chunk })),
+        onDone: (res: AskResponse) =>
+          patchLast((t) => ({
+            ...t, content: res.answer, citations: res.citations,
+            meta: { model: res.model, turns: res.turns }, streaming: false, status: undefined,
+          })),
+        onError: (msg) => patchLast((t) => ({ ...t, content: msg, error: true, streaming: false })),
+      })
     } catch (e) {
-      setTurns((t) => [...t, {
-        role: 'assistant',
-        content: e instanceof Error ? e.message : 'Something went wrong.',
-        error: true,
-      }])
+      const msg = e instanceof ApiError && e.status === 429
+        ? 'You’ve hit the rate limit — give it a minute and try again.'
+        : e instanceof Error ? e.message : 'Something went wrong.'
+      patchLast((t) => ({ ...t, content: msg, error: true, streaming: false }))
     } finally {
       setLoading(false)
     }
@@ -131,6 +153,13 @@ export default function AskView({ onSelectNode }: Props) {
               <div key={i} className="ask-turn ask-assistant">
                 {t.error ? (
                   <div className="ask-error">{t.content}</div>
+                ) : t.streaming ? (
+                  <>
+                    {t.status && <Thinking label={t.status} />}
+                    {t.content
+                      ? <div className="ask-streaming body-text">{t.content}</div>
+                      : !t.status && <Thinking label="searching the graph…" />}
+                  </>
                 ) : (
                   <>
                     <Answer md={t.content} onOpen={onSelectNode} />
@@ -154,14 +183,6 @@ export default function AskView({ onSelectNode }: Props) {
               </div>
             )
           )
-        )}
-        {loading && (
-          <div className="ask-turn ask-assistant">
-            <div className="ask-thinking">
-              <span className="ask-dot" /><span className="ask-dot" /><span className="ask-dot" />
-              <span className="ask-thinking-label">searching the graph…</span>
-            </div>
-          </div>
         )}
       </div>
 

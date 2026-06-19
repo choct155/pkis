@@ -57,6 +57,53 @@ export async function ask(messages: AskMessage[]): Promise<AskResponse> {
   return post<AskResponse>('/ask', { messages });
 }
 
+// Streaming ask over SSE. The server forwards engine events as `data:` frames:
+//   status → a tool turn began (drop any partial answer shown this turn)
+//   delta  → a chunk of answer text
+//   done   → final payload (answer, citations, …)
+//   error  → a server-side failure
+// Returns when the stream completes. Throws ApiError on a non-OK response
+// (e.g. 429 rate-limit) so the caller can surface the message.
+export interface AskStreamHandlers {
+  onStatus?: (text: string) => void;
+  onDelta?: (text: string) => void;
+  onDone?: (res: AskResponse) => void;
+  onError?: (message: string) => void;
+}
+export async function askStream(messages: AskMessage[], h: AskStreamHandlers): Promise<void> {
+  const res = await fetch(`${BASE}/ask/stream`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ messages }),
+  });
+  if (!res.ok || !res.body) {
+    const err = await res.json().catch(() => ({ error: res.statusText }));
+    throw new ApiError((err as { error?: string }).error ?? res.statusText, res.status);
+  }
+  const reader = res.body.getReader();
+  const dec = new TextDecoder();
+  let buf = '';
+  for (;;) {
+    const { value, done } = await reader.read();
+    if (done) break;
+    buf += dec.decode(value, { stream: true });
+    let i: number;
+    // SSE frames are separated by a blank line.
+    while ((i = buf.indexOf('\n\n')) >= 0) {
+      const frame = buf.slice(0, i);
+      buf = buf.slice(i + 2);
+      const line = frame.split('\n').find((l) => l.startsWith('data:'));
+      if (!line) continue;
+      let ev: { type: string; text?: string; error?: string } & Partial<AskResponse>;
+      try { ev = JSON.parse(line.slice(5).trim()); } catch { continue; }
+      if (ev.type === 'status') h.onStatus?.(ev.text ?? '');
+      else if (ev.type === 'delta') h.onDelta?.(ev.text ?? '');
+      else if (ev.type === 'done') h.onDone?.(ev as AskResponse);
+      else if (ev.type === 'error') h.onError?.(ev.error ?? 'stream error');
+    }
+  }
+}
+
 // ── Node ──────────────────────────────────────────────────────────────────
 export async function getNode(iri: string): Promise<FullNode> {
   return post<FullNode>('/node', { iri });

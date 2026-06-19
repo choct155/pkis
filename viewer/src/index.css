@@ -920,6 +920,8 @@ body {
 }
 .ask-assistant { align-items: stretch; }
 .ask-assistant .body-text { font-size: 14px; }
+/* Live token stream before final markdown render — keep newlines, no reflow. */
+.ask-streaming { white-space: pre-wrap; }
 .ask-error {
   color: var(--red); font-family: var(--mono); font-size: 12px;
   border: 1px solid var(--border); border-radius: var(--radius);

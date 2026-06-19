@@ -39,7 +39,7 @@ import networkx as nx
 import numpy as np
 from rank_bm25 import BM25Okapi
 from functools import wraps
-from flask import Flask, request, jsonify, Response, send_from_directory, g, redirect, make_response
+from flask import Flask, request, jsonify, Response, send_from_directory, g, redirect, make_response, stream_with_context
 from anthropic import Anthropic
 
 # B2 split (incremental): pure helpers carved out to store.py; re-imported so the
@@ -4804,41 +4804,32 @@ def _ask_rate_check(ip):
         return True, 0
 
 
-@app.route("/pkis-api/ask", methods=["POST"])
-def pkis_api_ask():
-    """Natural-language ask over the graph. Stateless + multi-turn: the client
-    sends the full conversation each call.
-
-    Body: {"messages": [{"role":"user"|"assistant","content": str}, …]}
-          — or {"question": str, "messages": [...prior...]} as a convenience.
-    Returns: {answer, citations:[{slug,iri,title}], surfaced, tier, model,
-              turns, usage}. Everyone gets read+traversal; owner tier is
-              surfaced for forthcoming agentic writes."""
+def _ask_prepare():
+    """Shared validation + throttle for the ask endpoints. Returns
+    (clean_messages, tier, None) on success, or (None, None, response) where
+    `response` is the error/429 to return immediately."""
     b = _api_json()
     messages = b.get("messages") or []
     question = (b.get("question") or "").strip()
     if question:
         messages = list(messages) + [{"role": "user", "content": question}]
 
-    # Validate / sanitise — this is a public, model-backed surface.
     if not isinstance(messages, list) or not messages:
-        return _api_err("messages (or question) is required")
+        return None, None, _api_err("messages (or question) is required")
     if len(messages) > _ASK_MAX_MESSAGES:
         messages = messages[-_ASK_MAX_MESSAGES:]
     clean = []
     for m in messages:
         if not isinstance(m, dict):
             continue
-        role = m.get("role")
-        content = m.get("content")
+        role, content = m.get("role"), m.get("content")
         if role not in ("user", "assistant") or not isinstance(content, str):
             continue
         clean.append({"role": role, "content": content[:_ASK_MAX_CHARS]})
     if not clean or clean[-1]["role"] != "user":
-        return _api_err("conversation must end with a user message")
+        return None, None, _api_err("conversation must end with a user message")
 
     tier = "owner" if is_owner(request) else "reader"
-
     # Throttle anonymous/reader callers; signed-in writers and the owner are
     # trusted and bypass it (they bear the cost knowingly).
     if not is_write_authorized(request):
@@ -4846,8 +4837,23 @@ def pkis_api_ask():
         if not ok:
             resp = jsonify({"error": "rate limit — too many questions, try again shortly"})
             resp.headers["Retry-After"] = str(retry_after)
-            return resp, 429
+            return None, None, (resp, 429)
+    return clean, tier, None
 
+
+@app.route("/pkis-api/ask", methods=["POST"])
+def pkis_api_ask():
+    """Natural-language ask over the graph (non-streaming JSON). Stateless +
+    multi-turn: the client sends the full conversation each call.
+
+    Body: {"messages": [{"role":"user"|"assistant","content": str}, …]}
+          — or {"question": str, "messages": [...prior...]} as a convenience.
+    Returns: {answer, citations:[{slug,iri,title}], surfaced, tier, model,
+              turns, usage}. The viewer uses /pkis-api/ask/stream; this JSON form
+              backs the future MCP ask_pkis tool and non-streaming clients."""
+    clean, tier, err = _ask_prepare()
+    if err is not None:
+        return err
     try:
         result = ask.run_ask(clean, tier=tier)
         result["tier"] = tier
@@ -4855,6 +4861,31 @@ def pkis_api_ask():
     except Exception as e:
         logger.error(f"ask error: {e}", exc_info=True)
         return _api_err(e, 500)
+
+
+@app.route("/pkis-api/ask/stream", methods=["POST"])
+def pkis_api_ask_stream():
+    """Streaming (SSE) ask — the engine's events forwarded as `data:` frames so
+    the viewer can render the answer token-by-token. Event shapes match
+    ask._ask_events: {type:status|delta|done|error, …}. `tier` is folded into the
+    done frame."""
+    clean, tier, err = _ask_prepare()
+    if err is not None:
+        return err
+
+    def gen():
+        try:
+            for ev in ask._ask_events(clean, tier=tier):
+                if ev.get("type") == "done":
+                    ev["tier"] = tier
+                yield f"data: {json.dumps(ev)}\n\n"
+        except Exception as e:
+            logger.error(f"ask stream error: {e}", exc_info=True)
+            yield f"data: {json.dumps({'type': 'error', 'error': str(e)})}\n\n"
+
+    return Response(stream_with_context(gen()), mimetype="text/event-stream",
+                    headers={"Cache-Control": "no-cache",
+                             "X-Accel-Buffering": "no"})  # tell nginx not to buffer SSE
 
 
 @app.route("/pkis-api/node", methods=["POST"])

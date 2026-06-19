@@ -36,6 +36,12 @@ MAX_TOOL_TURNS = 8
 # few fat nodes don't blow the context (and cost) of the loop.
 _NODE_CONTENT_CAP = 8000
 
+# Eager retrieval: before the first model call we run the same hybrid search the
+# model would call and inject the top-K nodes into the prompt. On a small graph
+# this is cheap and collapses most questions from ~3 serial model calls to one —
+# the number of serial calls is what dominates wall-clock latency.
+PRELOAD_K = 8
+
 SYSTEM_PROMPT = """\
 You are the assistant for PKIS — a personal knowledge graph of interconnected \
 markdown "nodes" (concepts, techniques, sources, hypotheses, …) spanning \
@@ -43,12 +49,17 @@ probability, machine learning, causal inference, information theory and related 
 fields. The user is a technical expert; be precise and concise, and do not \
 over-explain fundamentals.
 
-Your job: answer questions **strictly from the graph**. You have tools to search \
-and traverse it. Always retrieve before answering — never answer from your own \
-prior knowledge alone. Typical flow: `search_wiki` to find entry nodes, \
-`get_node` to read them, then `get_related` / `get_dependency_chain` to follow \
-edges for multi-hop questions ("how does X connect to Y?", "what does X \
-depend on?").
+Your job: answer questions **strictly from the graph**. The most relevant nodes \
+for the question are usually PRELOADED for you under "Relevant nodes already \
+retrieved" — read those first and answer directly from them when they suffice \
+(no tool call needed). Reach for tools only when the preloaded set is \
+insufficient: `get_node` to read a node's full body, `get_related` / \
+`get_dependency_chain` to follow edges for multi-hop questions ("how does X \
+connect to Y?", "what does X depend on?"), or `search_wiki` to find nodes the \
+preload missed. Never answer from your own prior knowledge alone.
+
+When you do decide to use a tool, call it immediately — do not write any \
+explanatory text before the tool call.
 
 Grounding rules:
 - Cite every substantive claim with the `[[slug]]` of the node it came from, \
@@ -234,91 +245,153 @@ def _build_citations(answer, surfaced):
     return citations
 
 
-def run_ask(messages, tier="reader", model=DEFAULT_MODEL, max_tool_turns=MAX_TOOL_TURNS):
-    """Run one agentic ask turn.
+def _system_blocks():
+    """System as a cacheable block: the static prompt + tool schemas form a stable
+    prefix across every request, so a `cache_control` breakpoint here turns the
+    ~1.5k-token system+tools prefill into a cache read on calls 2..N."""
+    return [{"type": "text", "text": SYSTEM_PROMPT, "cache_control": {"type": "ephemeral"}}]
 
-    Args:
-        messages: full conversation so far, Anthropic message dicts
-            ([{role, content}, …]). The caller owns multi-turn state.
-        tier: "reader" (default) or "owner". Reserved for the later
-            agentic-write phase; today both tiers get the read tools only.
-        model: override the default model.
-        max_tool_turns: backstop on tool-use iterations.
 
-    Returns dict: {answer, citations, surfaced, model, turns, usage}.
+def _mark_cache(convo):
+    """Keep exactly one moving message-level cache breakpoint on the latest
+    message, so each tool turn re-reads the prior (cached) prefix and only writes
+    the new delta. Clearing older breakpoints keeps us within the 4-breakpoint
+    limit. Only list-content messages (tool_result / preloaded) are markable."""
+    for m in convo:
+        c = m.get("content")
+        if isinstance(c, list):
+            for blk in c:
+                if isinstance(blk, dict):
+                    blk.pop("cache_control", None)
+    last = convo[-1].get("content")
+    if isinstance(last, list) and last and isinstance(last[-1], dict):
+        last[-1]["cache_control"] = {"type": "ephemeral"}
+
+
+def _preload_block(question, surfaced):
+    """Run the hybrid search the model would otherwise call, and format the top-K
+    hits as a context block. Records their IRIs so citations resolve even if the
+    model never calls get_node on them. Returns None when nothing is found."""
+    import app
+    results = _enrich_search_results(app.tool_search_wiki(question, max_results=PRELOAD_K) or [])
+    if not results:
+        return None
+    lines = ["Relevant nodes already retrieved from the graph for this question "
+             "(cite by [[slug]]; call get_node for a node's full body if you need more):", ""]
+    for r in results:
+        surfaced.add(r.get("iri"))
+        dom = ", ".join(r.get("domain") or []) or "—"
+        lines.append(f"- [[{r['slug']}]] · {r.get('node_type','?')} · {dom}\n  {(r.get('excerpt') or '').strip()}")
+    return "\n".join(lines)
+
+
+_STATUS = {
+    "search_wiki": "searching the graph…",
+    "get_node": "reading nodes…",
+    "get_related": "following connections…",
+    "get_dependency_chain": "tracing prerequisites…",
+}
+
+
+def _ask_events(messages, tier="reader", model=DEFAULT_MODEL, max_tool_turns=MAX_TOOL_TURNS):
+    """The single engine implementation, as a generator of events. Both the
+    streaming endpoint (forwards events as SSE) and run_ask (drains them) use it.
+
+    Events:
+      {"type":"status","text":…}  a tool-use turn started; the client should
+                                  discard any partial answer streamed this turn
+                                  (pre-tool narration) and show the status.
+      {"type":"delta","text":…}   a chunk of answer text.
+      {"type":"done", …}          final payload: answer, citations, surfaced,
+                                  model, turns, usage.
+
+    Every model call is streamed so the final answer reaches the client token by
+    token. Preload (eager retrieval) collapses most questions to a single call.
     """
     import app
 
-    convo = list(messages)
+    convo = [dict(m) for m in messages]
     surfaced = set()
     in_tokens = out_tokens = 0
     turns = 0
+    system = _system_blocks()
 
-    def _account(resp):
-        """Record this call's tokens for the running total AND in the Comptroller
-        usage ledger (best-effort — log_usage never raises)."""
+    # Eager retrieval on the latest question → inject as a context block ahead of it.
+    if convo and convo[-1].get("role") == "user" and isinstance(convo[-1].get("content"), str):
+        q = convo[-1]["content"]
+        block = _preload_block(q, surfaced)
+        if block:
+            convo[-1] = {"role": "user", "content": [
+                {"type": "text", "text": block},
+                {"type": "text", "text": q},
+            ]}
+
+    def _account(final):
         nonlocal in_tokens, out_tokens
-        in_tokens += resp.usage.input_tokens
-        out_tokens += resp.usage.output_tokens
-        app.log_usage(app.USAGE_DB_PATH, resp, origin="pkis-ask", project="pkis",
+        in_tokens += final.usage.input_tokens
+        out_tokens += final.usage.output_tokens
+        app.log_usage(app.USAGE_DB_PATH, final, origin="pkis-ask", project="pkis",
                       attributes={"surface": "ask", "tier": tier})
 
-    while True:
-        resp = app.anthropic_client.messages.create(
-            model=model,
-            max_tokens=2048,
-            system=SYSTEM_PROMPT,
-            tools=READ_TOOL_SCHEMAS,
-            messages=convo,
-        )
-        _account(resp)
-
-        if resp.stop_reason != "tool_use":
-            answer = "".join(b.text for b in resp.content if getattr(b, "type", None) == "text")
-            return {
-                "answer": answer,
+    def _done(answer):
+        return {"type": "done", "answer": answer,
                 "citations": _build_citations(answer, surfaced),
-                "surfaced": sorted(surfaced),
-                "model": model,
-                "turns": turns,
-                "usage": {"input_tokens": in_tokens, "output_tokens": out_tokens},
-            }
+                "surfaced": sorted(surfaced), "model": model, "turns": turns,
+                "usage": {"input_tokens": in_tokens, "output_tokens": out_tokens}}
 
+    while True:
+        _mark_cache(convo)
+        use_tools = turns < max_tool_turns
+        parts = []
+        kwargs = dict(model=model, max_tokens=2048, system=system, messages=convo)
+        if use_tools:
+            kwargs["tools"] = READ_TOOL_SCHEMAS
+        with app.anthropic_client.messages.stream(**kwargs) as stream:
+            for event in stream:
+                if (event.type == "content_block_delta"
+                        and getattr(event.delta, "type", None) == "text_delta"):
+                    parts.append(event.delta.text)
+                    yield {"type": "delta", "text": event.delta.text}
+            final = stream.get_final_message()
+        _account(final)
+
+        if final.stop_reason != "tool_use":
+            answer = "".join(parts) or "".join(
+                b.text for b in final.content if getattr(b, "type", None) == "text")
+            yield _done(answer)
+            return
+
+        # Tool-use turn: the streamed `parts` (if any) were pre-tool narration —
+        # the status event tells the client to drop them.
         turns += 1
-        # Echo the assistant's tool_use turn, then answer each tool_use block.
-        convo.append({"role": "assistant", "content": resp.content})
+        names = [b.name for b in final.content if getattr(b, "type", None) == "tool_use"]
+        yield {"type": "status", "text": _STATUS.get(names[0] if names else "", "consulting the graph…")}
+        convo.append({"role": "assistant", "content": final.content})
         tool_results = []
-        for block in resp.content:
+        for block in final.content:
             if getattr(block, "type", None) != "tool_use":
                 continue
             try:
                 result = _execute_tool(block.name, block.input or {}, surfaced)
             except Exception as e:  # never let one bad tool call kill the turn
                 result = {"error": f"{type(e).__name__}: {e}"}
-            tool_results.append({
-                "type": "tool_result",
-                "tool_use_id": block.id,
-                "content": app.json.dumps(result, default=str),
-            })
+            tool_results.append({"type": "tool_result", "tool_use_id": block.id,
+                                 "content": app.json.dumps(result, default=str)})
         convo.append({"role": "user", "content": tool_results})
-
         if turns >= max_tool_turns:
-            # Force a final synthesis from what we have rather than looping forever.
-            convo.append({
-                "role": "user",
-                "content": "Tool budget reached — answer now from what you've gathered, "
-                           "citing the relevant [[slug]] nodes, and note any gaps.",
-            })
-            resp = app.anthropic_client.messages.create(
-                model=model, max_tokens=2048, system=SYSTEM_PROMPT, messages=convo,
-            )
-            _account(resp)
-            answer = "".join(b.text for b in resp.content if getattr(b, "type", None) == "text")
-            return {
-                "answer": answer,
-                "citations": _build_citations(answer, surfaced),
-                "surfaced": sorted(surfaced),
-                "model": model,
-                "turns": turns,
-                "usage": {"input_tokens": in_tokens, "output_tokens": out_tokens},
-            }
+            # Next iteration runs WITHOUT tools (use_tools False) → forces a final
+            # streamed synthesis from what's gathered.
+            convo.append({"role": "user", "content":
+                          "Tool budget reached — answer now from what you've gathered, "
+                          "citing the relevant [[slug]] nodes, and note any gaps."})
+
+
+def run_ask(messages, tier="reader", model=DEFAULT_MODEL, max_tool_turns=MAX_TOOL_TURNS):
+    """Non-streaming convenience wrapper (used by the JSON endpoint and the future
+    MCP tool): drain the event stream and return the final payload dict
+    {answer, citations, surfaced, model, turns, usage}."""
+    done = None
+    for ev in _ask_events(messages, tier=tier, model=model, max_tool_turns=max_tool_turns):
+        if ev["type"] == "done":
+            done = ev
+    return {k: v for k, v in (done or {}).items() if k != "type"}
