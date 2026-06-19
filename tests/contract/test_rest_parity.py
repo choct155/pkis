@@ -144,3 +144,14 @@ def test_resolve_slug_to_iri(client):
     batch = client.post("/pkis-api/resolve",
                         json={"slugs": ["entropy", "no-such-node-xyz"]}).get_json()
     assert batch["map"] == {"entropy": "pkis:concept:entropy", "no-such-node-xyz": None}
+
+
+@pytest.mark.contract
+def test_source_status(client):
+    """/pkis-api/source-status reports readability so the viewer can offer a 'read'
+    affordance and dim un-ingested sources. The fixture source mackay-itila has a
+    source_url; a dangling slug resolves to iri=None / not readable."""
+    r = client.post("/pkis-api/source-status",
+                    json={"slugs": ["mackay-itila", "no-such-source"]}).get_json()["map"]
+    assert r["mackay-itila"]["iri"] == "pkis:source:mackay-itila"
+    assert r["no-such-source"] == {"iri": None, "readable": False, "read_url": None, "has_reader": False}

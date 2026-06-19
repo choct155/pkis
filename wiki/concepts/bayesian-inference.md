@@ -21,6 +21,8 @@ maturity: evolving
 needs_canonical_source: false
 related_concepts: []
 sources:
+- '[[mackay-itila-ch02]]'
+- '[[gelman-bda3-ch01]]'
 - '[[kroese-statistical-modeling-ch08]]'
 specializes:
 - plausible-reasoning
@@ -36,14 +38,17 @@ understanding: 0
 Inference that treats unknown quantities as random variables and updates beliefs via Bayes' rule, yielding posterior distributions rather than point estimates. Foundational to the program's truth-discovery, calibration, and intent-posterior framings.
 
 ## Reading Path
-- [[kroese-statistical-modeling-ch08]] — canonical source
+- [[mackay-itila-ch02]] — primary readable source: Probability, Entropy, and Inference (forward vs inverse probability) [orientation]
+- [[gelman-bda3-ch01]] — readable: Bayesian inference + the hemophilia odds example [integration]
+- [[kroese-statistical-modeling-ch08]] — canonical reference (not yet ingested) [integration]
 
 ## Connections
 - [[plausible-reasoning]] — specializes
 [To be populated during integration]
 
 ## Needs Canonical Source
-Resolved — canonical source(s) attached above.
+Readable primaries attached (MacKay ITILA ch.2; Gelman BDA3 ch.1). The originally
+referenced canonical (Kroese, Statistical Modeling ch.8) is not yet ingested.
 
 ## Forward vs inverse probability
 MacKay frames inference as **inverse probability**: given a generative (forward) model $P(d\mid\theta)$, compute $P(\theta\mid d)$ via Bayes' theorem,

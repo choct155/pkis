@@ -68,6 +68,21 @@ export async function resolveSlugs(slugs: string[]): Promise<Record<string, stri
   return r.map ?? {};
 }
 
+export interface SourceStatus {
+  iri: string | null;      // null = not ingested (dangling)
+  readable: boolean;
+  read_url: string | null; // external url or in-app PDF path
+  has_reader: boolean;
+}
+
+// Readability of cited sources → so the viewer can offer a 'read' link and dim
+// un-ingested sources. One round-trip per node's source list.
+export async function sourceStatus(slugs: string[]): Promise<Record<string, SourceStatus>> {
+  if (!slugs.length) return {};
+  const r = await post<{ map: Record<string, SourceStatus> }>('/source-status', { slugs });
+  return r.map ?? {};
+}
+
 // ── Related ───────────────────────────────────────────────────────────────
 export async function getRelated(
   iri: string,

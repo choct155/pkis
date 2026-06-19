@@ -4769,6 +4769,45 @@ def pkis_api_resolve():
         return _api_err(e, 500)
 
 
+def _source_status(slug):
+    """For a cited source slug: does its node exist, is it readable, and where.
+    read_url priority: external source_url → derived split PDF → doc_path PDF.
+    (A reader payload also counts as readable via the in-app reader: has_reader.)"""
+    s = (slug or "").strip().lstrip("/")
+    st = {"iri": None, "readable": False, "read_url": None, "has_reader": False}
+    if not s:
+        return st
+    path = find_node_path(s)
+    if not path:
+        return st                      # dangling — not ingested
+    node = load_node(path) or {}
+    st["iri"] = node.get("iri")
+    fm = node.get("frontmatter", {}) or {}
+    su = (fm.get("source_url") or "").strip()
+    dp = (fm.get("doc_path") or "").strip()
+    if su:
+        st.update(readable=True, read_url=su)
+    elif (DOCS_DIR / "sources" / s / f"{s}.pdf").exists():
+        st.update(readable=True, read_url=f"/docs/sources/{s}/{s}.pdf")
+    elif dp:
+        st.update(readable=True, read_url="/docs/" + dp.lstrip("/"))
+    st["has_reader"] = (WIKI_DIR / "reader" / s).exists()
+    if st["has_reader"]:
+        st["readable"] = True
+    return st
+
+
+@app.route("/pkis-api/source-status", methods=["POST"])
+def pkis_api_source_status():
+    """Readability of cited sources, so the viewer can offer a 'read' affordance and
+    dim un-ingested ones. {"slugs": [...]} → {"map": {slug: {iri, readable, read_url, has_reader}}}."""
+    slugs = _api_json().get("slugs") or []
+    try:
+        return _api_ok({"map": {s: _source_status(s) for s in slugs if (s or "").strip()}})
+    except Exception as e:
+        return _api_err(e, 500)
+
+
 @app.route("/pkis-api/related", methods=["POST"])
 def pkis_api_related():
     b = _api_json()

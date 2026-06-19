@@ -24,6 +24,10 @@ Bridge notes and staged nodes awaiting commit or discard.
 Auditor-flagged gaps for Synthesizer attention.
 <!-- - [ ] Problem without techniques: [[problem-slug]] (date flagged) [Auditor] -->
 <!-- - [ ] Isolated domain: domain-name — N cross-domain edges (date flagged) [Auditor] -->
+- [ ] Dead canonical sources: 13 concept/technique nodes cite an un-ingested book as their ONLY source — surface the readable sources they cite, or ingest the book (2026-06-19) [Auditor]
+  - 12 causal-inference nodes (average-treatment-effect, local-average-treatment-effect, selection-bias, collider-bias, omitted-variable-bias, propensity-score, identification-strategy, fixed-effects-estimator, difference-in-differences, regression-discontinuity, synthetic-control, instrumental-variables, matching-estimators) all cite the dangling `[[cunningham-causal-inference-mixtape]]` → ingest the Mixtape OR repoint to readable alternatives
+  - [[bayesian-inference]] cited the dead `[[kroese-statistical-modeling-ch08]]` → FIXED 2026-06-19 (now cites readable [[mackay-itila-ch02]] + [[gelman-bda3-ch01]]); use as the pattern
+- [ ] Source-capture sweep: prose in many nodes cites readable ingested books (MacKay, BDA3, …) that never made it into the `sources`/Reading Path — Synthesizer pass to capture cited readable sources into structured sources corpus-wide (2026-06-19) [Auditor]
 
 ## Awaiting Classification
 Sources with low-confidence knowledge-object classifications pending human decision.

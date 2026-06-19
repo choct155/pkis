@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
-import { getNode, resolveSlug, resolveSlugs } from '../lib/api'
+import { getNode, resolveSlug, resolveSlugs, sourceStatus } from '../lib/api'
+import type { SourceStatus } from '../lib/api'
 import { renderMarkdown } from '../lib/markdown'
 import { renderMath } from '../lib/katex'
 import type { FullNode, NodeType, RelatedNode, ReadingPathItem } from '../types'
@@ -244,17 +245,44 @@ function SourceBlock({ fm, title, iri }: { fm: Record<string, unknown>; title: s
   )
 }
 
-// Sources this (non-source) node cites — navigable to each source node.
+// Sources this (non-source) node cites — navigable, with a 'read' affordance when
+// the source is actually readable, and dimmed when it isn't ingested yet.
 function SourcesList({ sources, onNavigate }: { sources: string[]; onNavigate: (iri: string) => void }) {
+  const slugs = sources.map(wikilinkSlug)
+  const [status, setStatus] = useState<Record<string, SourceStatus>>({})
+  useEffect(() => {
+    let cancelled = false
+    sourceStatus([...new Set(slugs)])
+      .then((m) => { if (!cancelled) setStatus(m) })
+      .catch(() => { /* leave un-annotated on error */ })
+    return () => { cancelled = true }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [slugs.join('|')])
+
   return (
     <div className="body-section">
       <div className="body-section-title">sources to read</div>
       {sources.map((ref) => {
         const slug = wikilinkSlug(ref)
+        const st = status[slug]
+        const dangling = st ? st.iri === null : false
         return (
-          <div key={slug} className="conn-item" onClick={() => onNavigate(`pkis:source:${slug}`)}>
-            <span className="conn-predicate">source</span>
+          <div
+            key={slug}
+            className={`conn-item source-row${dangling ? ' dangling' : ''}`}
+            onClick={() => { if (st?.iri) onNavigate(st.iri) }}
+          >
+            <span className="conn-predicate">{dangling ? 'not ingested' : 'source'}</span>
             <div className="conn-detail"><div className="conn-target">{slug}</div></div>
+            {st?.readable && st.read_url && (
+              <a
+                className="read-link"
+                href={st.read_url}
+                target="_blank"
+                rel="noreferrer"
+                onClick={(e) => e.stopPropagation()}
+              >▶ read</a>
+            )}
           </div>
         )
       })}
