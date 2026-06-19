@@ -17,7 +17,7 @@ related_concepts:
 - - - sutva
 - - - structural-causal-models
 sources:
-- - - cunningham-causal-inference-mixtape
+- "[[cunningham-causal-inference-mixtape]]"
 tags:
 - causal-inference
 - rubin

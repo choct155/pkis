@@ -7,7 +7,8 @@ also_type: [framework]
 domain: [causal-analysis]
 tags: [causal-inference, identification, research-design, econometrics, credibility-revolution]
 related_concepts: [[[potential-outcomes-framework]], [[selection-bias]], [[regression-discontinuity]], [[instrumental-variables]], [[difference-in-differences]], [[synthetic-control]], [[matching-estimators]]]
-sources: [[[cunningham-causal-inference-mixtape]]]
+sources:
+- "[[cunningham-causal-inference-mixtape]]"
 date_created: 2026-05-20
 date_updated: 2026-05-20
 coverage: 1

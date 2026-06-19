@@ -7,7 +7,8 @@ also_type: []
 domain: [causal-analysis]
 tags: [did, parallel-trends, two-way-fixed-effects, panel-data, pre-trends, natural-experiment, policy-evaluation]
 related_concepts: [[[identification-strategy]], [[parallel-trends]], [[fixed-effects-estimator]], [[selection-bias]], [[potential-outcomes-framework]]]
-sources: [[[cunningham-causal-inference-mixtape]]]
+sources:
+- "[[cunningham-causal-inference-mixtape]]"
 date_created: 2026-05-20
 date_updated: 2026-05-20
 coverage: 1

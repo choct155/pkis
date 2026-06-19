@@ -7,7 +7,8 @@ also_type: []
 domain: [causal-analysis]
 tags: [matching, propensity-score, covariate-balance, selection-on-observables, nearest-neighbor, subclassification, overlap]
 related_concepts: [[[propensity-score]], [[identification-strategy]], [[selection-bias]], [[average-treatment-effect]], [[potential-outcomes-framework]]]
-sources: [[[cunningham-causal-inference-mixtape]]]
+sources:
+- "[[cunningham-causal-inference-mixtape]]"
 date_created: 2026-05-20
 date_updated: 2026-05-20
 coverage: 1

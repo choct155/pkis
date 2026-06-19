@@ -7,7 +7,9 @@ also_type: []
 domain: [causal-analysis]
 tags: [causal-inference, selection-on-observables, selection-on-unobservables, confounding, observational-studies]
 related_concepts: [[[potential-outcomes-framework]], [[average-treatment-effect]], [[confounding]], [[omitted-variable-bias]], [[identification-strategy]]]
-sources: [[[cunningham-causal-inference-mixtape]], malkiel-emh-critics-2003]
+sources:
+- "[[cunningham-causal-inference-mixtape]]"
+- "[[malkiel-emh-critics-2003]]"
 date_created: 2026-05-20
 date_updated: 2026-05-20
 coverage: 2

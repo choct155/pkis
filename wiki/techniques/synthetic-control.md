@@ -7,7 +7,8 @@ also_type: []
 domain: [causal-analysis]
 tags: [synthetic-control, comparative-case-studies, donor-pool, placebo-tests, abadie, single-treated-unit, pre-treatment-fit]
 related_concepts: [[[identification-strategy]], [[difference-in-differences]], [[matching-estimators]], [[potential-outcomes-framework]], [[counterfactuals]]]
-sources: [[[cunningham-causal-inference-mixtape]]]
+sources:
+- "[[cunningham-causal-inference-mixtape]]"
 date_created: 2026-05-20
 date_updated: 2026-05-20
 coverage: 1

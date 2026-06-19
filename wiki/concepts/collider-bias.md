@@ -18,7 +18,7 @@ related_concepts:
 - - - d-separation
 - - - identification-strategy
 sources:
-- - - cunningham-causal-inference-mixtape
+- "[[cunningham-causal-inference-mixtape]]"
 tags:
 - dag
 - collider

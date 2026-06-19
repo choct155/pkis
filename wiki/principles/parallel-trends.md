@@ -7,7 +7,8 @@ also_type: []
 domain: [causal-analysis]
 tags: [difference-in-differences, did, identifying-assumption, counterfactual, panel-data, pre-trends-test]
 related_concepts: [[[difference-in-differences]], [[potential-outcomes-framework]], [[selection-bias]], [[identification-strategy]]]
-sources: [[[cunningham-causal-inference-mixtape]]]
+sources:
+- "[[cunningham-causal-inference-mixtape]]"
 date_created: 2026-05-20
 date_updated: 2026-05-20
 coverage: 1

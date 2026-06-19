@@ -17,7 +17,7 @@ related_concepts:
 - - - potential-outcomes-framework
 - - - average-treatment-effect
 sources:
-- - - cunningham-causal-inference-mixtape
+- "[[cunningham-causal-inference-mixtape]]"
 specializes:
 - ignorability
 tags:

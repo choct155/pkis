@@ -7,7 +7,8 @@ also_type: []
 domain: [causal-analysis]
 tags: [rdd, sharp-rdd, fuzzy-rdd, running-variable, threshold, local-linear-regression, bandwidth, mccrary-test, natural-experiment]
 related_concepts: [[[identification-strategy]], [[local-average-treatment-effect]], [[instrumental-variables]], [[potential-outcomes-framework]]]
-sources: [[[cunningham-causal-inference-mixtape]]]
+sources:
+- "[[cunningham-causal-inference-mixtape]]"
 date_created: 2026-05-20
 date_updated: 2026-05-20
 coverage: 1

@@ -7,7 +7,8 @@ also_type: []
 domain: [causal-analysis]
 tags: [causal-inference, late, iv, compliers, instrumental-variables, heterogeneous-treatment-effects]
 related_concepts: [[[average-treatment-effect]], [[instrumental-variables]], [[potential-outcomes-framework]], [[regression-discontinuity]]]
-sources: [[[cunningham-causal-inference-mixtape]]]
+sources:
+- "[[cunningham-causal-inference-mixtape]]"
 date_created: 2026-05-20
 date_updated: 2026-05-20
 coverage: 1

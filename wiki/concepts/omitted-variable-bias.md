@@ -7,7 +7,8 @@ also_type: []
 domain: [causal-analysis]
 tags: [regression, bias, confounding, endogeneity, ols, econometrics]
 related_concepts: [[[selection-bias]], [[confounding]], [[identification-strategy]], [[collider-bias]], [[directed-graphical-models]]]
-sources: [[[cunningham-causal-inference-mixtape]]]
+sources:
+- "[[cunningham-causal-inference-mixtape]]"
 date_created: 2026-05-20
 date_updated: 2026-05-20
 coverage: 1

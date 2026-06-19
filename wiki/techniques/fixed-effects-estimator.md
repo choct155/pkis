@@ -7,7 +7,8 @@ also_type: []
 domain: [causal-analysis]
 tags: [panel-data, within-estimator, demeaning, unobserved-heterogeneity, two-way-fixed-effects, first-differences]
 related_concepts: [[[difference-in-differences]], [[identification-strategy]], [[selection-bias]], [[omitted-variable-bias]]]
-sources: [[[cunningham-causal-inference-mixtape]]]
+sources:
+- "[[cunningham-causal-inference-mixtape]]"
 date_created: 2026-05-20
 date_updated: 2026-05-20
 coverage: 1
