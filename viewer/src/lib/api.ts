@@ -14,6 +14,8 @@ import type {
   Asset,
   DocMeta,
   Doc,
+  AskMessage,
+  AskResponse,
 } from '../types';
 
 const BASE = '/pkis-api';
@@ -46,6 +48,13 @@ export async function searchWiki(
   options: { domains?: string[]; node_types?: string[]; max_results?: number } = {}
 ): Promise<SearchResult[]> {
   return post<SearchResult[]>('/search', { query, ...options });
+}
+
+// ── Ask (natural-language Q&A + graph traversal over the wiki) ────────────
+// Stateless + multi-turn: send the full conversation each call. The server
+// runs the shared "ask brain" (retrieve → traverse → cited synthesis).
+export async function ask(messages: AskMessage[]): Promise<AskResponse> {
+  return post<AskResponse>('/ask', { messages });
 }
 
 // ── Node ──────────────────────────────────────────────────────────────────

@@ -11,6 +11,8 @@ Wiki source: /home/pkis/pkis-wiki/wiki/
 
 import os
 import sys
+import time
+import threading
 # B2 split: make sibling split-modules (store.py, …) importable regardless of the
 # process CWD. On the server app.py is a symlink (/home/pkis/app.py ->
 # pkis-wiki/app.py) and gunicorn's WorkingDirectory is /home/pkis, so realpath
@@ -43,6 +45,10 @@ from anthropic import Anthropic
 # B2 split (incremental): pure helpers carved out to store.py; re-imported so the
 # rest of app.py and every `import app` consumer keep referencing them unchanged.
 from store import slug_from_path, iri_from_slug, parse_iri, rrf_score, WikiStore
+# The shared natural-language "ask brain" (retrieve → traverse → cited synthesis).
+# ask.py imports `app` lazily inside its functions, so this top-level import is
+# not circular. Reused by /pkis-api/ask and (later) the ask_pkis MCP tool.
+import ask
 # Comptroller usage accounting (Roster Phase 4). log_usage is BEST-EFFORT — it never
 # raises, so a logging failure cannot break a tool call. Writes to config.USAGE_DB_PATH.
 from usage import log_usage
@@ -4741,6 +4747,109 @@ def pkis_api_search():
             max_results=b.get("max_results", 10),
         ))
     except Exception as e:
+        return _api_err(e, 500)
+
+
+# Bounds on the public ask endpoint: reads are open, so this route reaches the
+# paid model API anonymously. Per-request caps keep a single ask cheap; the
+# per-IP throttle below caps how fast one caller can spend.
+_ASK_MAX_MESSAGES = 40
+_ASK_MAX_CHARS = 8000
+
+# Per-IP rate limit. Env-tunable so it can be loosened/tightened without a code
+# change. This is a COST SAFETY NET, not security: it's in-process, so with N
+# gunicorn workers the effective ceiling is ~N× these numbers (each worker keeps
+# its own window). Good enough to stop a script from running up an unbounded
+# bill; a hard guarantee would need a shared store (or the sign-in gate).
+_ASK_RATE_PER_MIN = int(os.environ.get("PKIS_ASK_RATE_PER_MIN", "8"))
+_ASK_RATE_PER_HOUR = int(os.environ.get("PKIS_ASK_RATE_PER_HOUR", "40"))
+_ask_hits = {}                 # ip -> list[monotonic timestamps] within the last hour
+_ask_hits_lock = threading.Lock()
+
+
+def _client_ip(req):
+    """Real client IP behind nginx: first hop of X-Forwarded-For, else remote_addr.
+    (Gunicorn sees 127.0.0.1, so remote_addr alone would lump everyone together.)"""
+    xff = req.headers.get("X-Forwarded-For", "")
+    if xff:
+        return xff.split(",")[0].strip()
+    return req.remote_addr or "unknown"
+
+
+def _ask_rate_check(ip):
+    """Sliding-window throttle. Returns (ok, retry_after_seconds). Prunes the
+    caller's window to the last hour and opportunistically sweeps idle IPs so the
+    map can't grow without bound."""
+    now = time.monotonic()
+    hour_ago, min_ago = now - 3600, now - 60
+    with _ask_hits_lock:
+        if len(_ask_hits) > 4096:  # cheap stale-IP sweep
+            for k in [k for k, v in _ask_hits.items() if not v or v[-1] < hour_ago]:
+                _ask_hits.pop(k, None)
+        hits = [t for t in _ask_hits.get(ip, ()) if t > hour_ago]
+        if len(hits) >= _ASK_RATE_PER_HOUR:
+            _ask_hits[ip] = hits
+            return False, int(hits[0] + 3600 - now) + 1
+        recent = sum(1 for t in hits if t > min_ago)
+        if recent >= _ASK_RATE_PER_MIN:
+            _ask_hits[ip] = hits
+            oldest_in_min = min(t for t in hits if t > min_ago)
+            return False, int(oldest_in_min + 60 - now) + 1
+        hits.append(now)
+        _ask_hits[ip] = hits
+        return True, 0
+
+
+@app.route("/pkis-api/ask", methods=["POST"])
+def pkis_api_ask():
+    """Natural-language ask over the graph. Stateless + multi-turn: the client
+    sends the full conversation each call.
+
+    Body: {"messages": [{"role":"user"|"assistant","content": str}, …]}
+          — or {"question": str, "messages": [...prior...]} as a convenience.
+    Returns: {answer, citations:[{slug,iri,title}], surfaced, tier, model,
+              turns, usage}. Everyone gets read+traversal; owner tier is
+              surfaced for forthcoming agentic writes."""
+    b = _api_json()
+    messages = b.get("messages") or []
+    question = (b.get("question") or "").strip()
+    if question:
+        messages = list(messages) + [{"role": "user", "content": question}]
+
+    # Validate / sanitise — this is a public, model-backed surface.
+    if not isinstance(messages, list) or not messages:
+        return _api_err("messages (or question) is required")
+    if len(messages) > _ASK_MAX_MESSAGES:
+        messages = messages[-_ASK_MAX_MESSAGES:]
+    clean = []
+    for m in messages:
+        if not isinstance(m, dict):
+            continue
+        role = m.get("role")
+        content = m.get("content")
+        if role not in ("user", "assistant") or not isinstance(content, str):
+            continue
+        clean.append({"role": role, "content": content[:_ASK_MAX_CHARS]})
+    if not clean or clean[-1]["role"] != "user":
+        return _api_err("conversation must end with a user message")
+
+    tier = "owner" if is_owner(request) else "reader"
+
+    # Throttle anonymous/reader callers; signed-in writers and the owner are
+    # trusted and bypass it (they bear the cost knowingly).
+    if not is_write_authorized(request):
+        ok, retry_after = _ask_rate_check(_client_ip(request))
+        if not ok:
+            resp = jsonify({"error": "rate limit — too many questions, try again shortly"})
+            resp.headers["Retry-After"] = str(retry_after)
+            return resp, 429
+
+    try:
+        result = ask.run_ask(clean, tier=tier)
+        result["tier"] = tier
+        return _api_ok(result)
+    except Exception as e:
+        logger.error(f"ask error: {e}", exc_info=True)
         return _api_err(e, 500)
 
 

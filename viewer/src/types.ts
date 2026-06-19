@@ -10,7 +10,27 @@ export type NodeType =
 
 export type Maturity = 'settled' | 'evolving' | 'contested' | 'historical';
 
-export type View = 'browse' | 'clusters' | 'priority' | 'graph' | 'staged' | 'explainers' | 'discover' | 'docs' | 'inbox';
+export type View = 'browse' | 'clusters' | 'priority' | 'graph' | 'staged' | 'explainers' | 'discover' | 'docs' | 'inbox' | 'ask';
+
+// ── Natural-language ask (from /pkis-api/ask) ─────────────────────────────
+export interface AskMessage {
+  role: 'user' | 'assistant';
+  content: string;
+}
+export interface Citation {
+  slug: string;
+  iri: string;
+  title: string;
+}
+export interface AskResponse {
+  answer: string;
+  citations: Citation[];
+  surfaced: string[];
+  tier: 'reader' | 'owner';
+  model: string;
+  turns: number;
+  usage: { input_tokens: number; output_tokens: number };
+}
 
 // ── Documentation (from /pkis-api/docs and /pkis-api/doc) ─────────────────
 export interface DocMeta {

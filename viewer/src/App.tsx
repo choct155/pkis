@@ -21,6 +21,7 @@ import ExplainersView from './views/ExplainersView'
 import DiscoverView from './views/DiscoverView'
 import DocsView from './views/DocsView'
 import InboxView from './views/InboxView'
+import AskView from './views/AskView'
 import ReaderView from './views/ReaderView'
 import ExplainerOverlay from './components/ExplainerOverlay'
 
@@ -101,7 +102,11 @@ export default function App() {
             />
           )}
 
-          <div className={view === 'graph' && !showSearch ? 'main main-graph' : 'main'}>
+          <div className={
+            !showSearch && view === 'graph' ? 'main main-graph'
+            : !showSearch && view === 'ask' ? 'main main-ask'
+            : 'main'
+          }>
             {showSearch ? (
               <SearchResults
                 results={searchResults!}
@@ -142,6 +147,7 @@ export default function App() {
                   <DiscoverView onSelectNode={handleSelectNode} />
                 )}
                 {view === 'docs' && <DocsView />}
+                {view === 'ask' && <AskView onSelectNode={handleSelectNode} />}
                 {view === 'inbox' && isOwner && <InboxView onSelectNode={handleSelectNode} />}
               </>
             )}
@@ -150,7 +156,7 @@ export default function App() {
       </div>
 
       <BottomNav active={view} onNavigate={setView} isOwner={isOwner} />
-      <Fab onClick={() => setCaptureOpen(true)} />
+      {view !== 'ask' && <Fab onClick={() => setCaptureOpen(true)} />}
 
       {selectedIri && (
         <DetailSheet

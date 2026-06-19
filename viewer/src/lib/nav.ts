@@ -12,6 +12,7 @@ export interface NavItem {
 // `group` drives the mobile split: primary items sit in the bottom bar, secondary
 // items fold into the "more" menu. The desktop Sidebar shows them all (NAV_ITEMS).
 export const NAV_ITEMS: NavItem[] = [
+  { view: 'ask',        icon: '✧', label: 'ask',      group: 'primary' },
   { view: 'browse',     icon: '◈', label: 'browse',   group: 'primary' },
   { view: 'clusters',   icon: '◎', label: 'clusters', group: 'primary' },
   { view: 'priority',   icon: '▲', label: 'priority', group: 'primary' },

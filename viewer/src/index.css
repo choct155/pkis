@@ -891,6 +891,98 @@ body {
 .main-graph { padding: 0 0 52px; }
 .main-graph .graph-view-wrap { height: 100%; }
 
+/* ── ASK (natural-language Q&A) ───────────────────────────────────────── */
+/* Like the graph: own full-height main with no padding, so the message list
+   scrolls internally and the composer pins to the bottom. */
+.main-ask { padding: 0; overflow: hidden; }
+.ask-view { display: flex; flex-direction: column; height: 100%; min-height: 0; }
+.ask-scroll {
+  flex: 1; overflow-y: auto; min-height: 0;
+  padding: 16px 16px 8px;
+  display: flex; flex-direction: column; gap: 16px;
+}
+.ask-scroll::-webkit-scrollbar { width: 3px; }
+.ask-scroll::-webkit-scrollbar-thumb { background: var(--dim); border-radius: 2px; }
+
+.ask-turn { display: flex; flex-direction: column; max-width: 100%; }
+.ask-user { align-items: flex-end; }
+.ask-bubble {
+  background: var(--accent); color: #fff;
+  padding: 9px 13px; border-radius: var(--radius) var(--radius) 2px var(--radius);
+  max-width: 85%; font-size: 14px; line-height: 1.45; white-space: pre-wrap;
+}
+.ask-assistant { align-items: stretch; }
+.ask-assistant .body-text { font-size: 14px; }
+.ask-error {
+  color: var(--red); font-family: var(--mono); font-size: 12px;
+  border: 1px solid var(--border); border-radius: var(--radius);
+  padding: 10px 12px; background: var(--surface);
+}
+
+.ask-citations {
+  display: flex; flex-wrap: wrap; align-items: center; gap: 6px;
+  margin-top: 10px; padding-top: 10px; border-top: 1px solid var(--border);
+}
+.ask-cite-label {
+  font-family: var(--mono); font-size: 9px; letter-spacing: 0.08em;
+  text-transform: uppercase; color: var(--muted); margin-right: 2px;
+}
+.ask-cite {
+  font-family: var(--mono); font-size: 11px; color: var(--source);
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: 999px; padding: 3px 10px; cursor: pointer;
+  max-width: 240px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+}
+.ask-cite:hover { border-color: var(--accent); color: var(--text); }
+
+.ask-thinking { display: flex; align-items: center; gap: 6px; padding: 4px 2px; }
+.ask-dot {
+  width: 5px; height: 5px; border-radius: 50%; background: var(--muted);
+  animation: ask-pulse 1.2s infinite ease-in-out;
+}
+.ask-dot:nth-child(2) { animation-delay: 0.2s; }
+.ask-dot:nth-child(3) { animation-delay: 0.4s; }
+.ask-thinking-label { font-family: var(--mono); font-size: 11px; color: var(--muted); margin-left: 4px; }
+@keyframes ask-pulse { 0%, 60%, 100% { opacity: 0.25; } 30% { opacity: 1; } }
+
+/* Empty state */
+.ask-empty { margin: auto; text-align: center; max-width: 460px; padding: 24px 8px; }
+.ask-empty-glyph { font-size: 34px; color: var(--accent); }
+.ask-empty-title { font-size: 18px; margin: 10px 0 6px; color: var(--bright); }
+.ask-empty-sub { font-size: 13px; line-height: 1.5; color: var(--muted); margin: 0 0 18px; }
+.ask-examples { display: flex; flex-direction: column; gap: 8px; }
+.ask-example {
+  text-align: left; font-size: 13px; color: var(--text);
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: var(--radius); padding: 10px 12px; cursor: pointer; line-height: 1.4;
+}
+.ask-example:hover { border-color: var(--accent); }
+
+/* Composer */
+.ask-composer {
+  display: flex; align-items: flex-end; gap: 8px;
+  padding: 10px 16px calc(10px + env(safe-area-inset-bottom));
+  border-top: 1px solid var(--border); background: var(--bg);
+}
+.ask-input {
+  flex: 1; resize: none; max-height: 160px;
+  background: var(--surface); color: var(--text);
+  border: 1px solid var(--border); border-radius: var(--radius);
+  padding: 10px 12px; font-family: var(--sans); font-size: 14px; line-height: 1.4;
+}
+.ask-input:focus { outline: none; border-color: var(--accent); }
+.ask-send {
+  flex: none; width: 38px; height: 38px; border-radius: 50%;
+  background: var(--accent); color: #fff; border: none; cursor: pointer;
+  font-size: 17px; line-height: 1; display: flex; align-items: center; justify-content: center;
+}
+.ask-send:disabled { background: var(--dim); cursor: default; }
+
+/* On mobile the bottom-nav sits below the composer; lift the composer above it. */
+@media (max-width: 759px) {
+  .ask-composer { padding-bottom: calc(64px + env(safe-area-inset-bottom)); }
+}
+
 /* ── Cited-source rows (readability affordance) ───────────────────────── */
 .source-row { align-items: center; }
 .source-row .read-link {
