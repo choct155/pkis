@@ -24,13 +24,21 @@ export function cleanForSpeech(md: string): string {
 }
 
 // Rebuild the full transcript from a SpeechRecognition results list. Stateless by
-// design — called fresh each event so re-fired/repeated results can't accumulate
-// (the "so so I so I have…" bug). `results` is array-like; each entry's [0]
-// alternative holds the transcript.
+// design (called fresh each event, never accumulating across events) AND tolerant
+// of Android Chrome, which emits the in-progress utterance as MULTIPLE cumulative
+// interim entries ("so", "so I", "so I have", …). The rule that handles both the
+// well-behaved case and Android's: concatenate only the FINALIZED segments, and
+// for the interim take just the latest entry (overwrite, never append). Appending
+// the interim entries is what produced the "soso Iso I have…" recursion.
 export function assembleTranscript(results: ArrayLike<any>): string {
-  let t = ''
-  for (let i = 0; i < results.length; i++) t += results[i][0].transcript
-  return t.replace(/\s+/g, ' ').trim()
+  let final = ''
+  let interim = ''
+  for (let i = 0; i < results.length; i++) {
+    const seg = results[i][0].transcript
+    if (results[i].isFinal) final += seg + ' '
+    else interim = seg
+  }
+  return (final + interim).replace(/\s+/g, ' ').trim()
 }
 
 // ── Voice input (speech-to-text) ───────────────────────────────────────────

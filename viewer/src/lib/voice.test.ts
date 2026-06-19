@@ -10,11 +10,25 @@ describe('assembleTranscript (accumulation-bug regression)', () => {
     expect(assembleTranscript(R(['so', false]))).toBe('so')
   })
 
+  it('THE BUG: cumulative interim snapshots as separate entries must NOT concatenate', () => {
+    // Android Chrome's actual emission for one spoken utterance — each entry is a
+    // growing snapshot, none final. Must return the latest, not "soso Iso I have…".
+    const results = R(
+      ['so', false], ['so I', false], ['so I have', false],
+      ['so I have a', false], ['so I have a question', false],
+    )
+    expect(assembleTranscript(results)).toBe('so I have a question')
+  })
+
   it('is stateless across events — re-firing the SAME results does not double', () => {
     const ev = R(['so I have a question', true])
-    // Android Chrome re-fires finalized results; calling repeatedly must not grow.
     expect(assembleTranscript(ev)).toBe('so I have a question')
     expect(assembleTranscript(ev)).toBe('so I have a question')
+  })
+
+  it('concatenates multiple FINALIZED segments with spacing', () => {
+    expect(assembleTranscript(R(['hello', true], ['world', true], ['there', false])))
+      .toBe('hello world there')
   })
 
   it('concatenates a finalized segment with the following interim cleanly', () => {
