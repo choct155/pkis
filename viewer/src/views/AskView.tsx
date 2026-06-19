@@ -86,6 +86,16 @@ export default function AskView({ onSelectNode, signedIn, onSignIn }: Props) {
   const [autoRead, setAutoRead] = useState(false)
   const [speakingIdx, setSpeakingIdx] = useState<number | null>(null)
   const scrollRef = useRef<HTMLDivElement>(null)
+  const inputRef = useRef<HTMLTextAreaElement>(null)
+
+  // Auto-grow the composer with its content (typed or dictated), up to a cap;
+  // beyond that it scrolls internally. Runs on every input change incl. clears.
+  useEffect(() => {
+    const el = inputRef.current
+    if (!el) return
+    el.style.height = 'auto'
+    el.style.height = `${Math.min(el.scrollHeight, 200)}px`
+  }, [input])
 
   // Voice out (readout) + voice in (dictation). Both browser-native; the buttons
   // hide themselves where unsupported.
@@ -327,12 +337,13 @@ export default function AskView({ onSelectNode, signedIn, onSignIn }: Props) {
           >🎤</button>
         )}
         <textarea
+          ref={inputRef}
           className="ask-input"
           value={input}
           onChange={(e) => setInput(e.target.value)}
           onKeyDown={onKeyDown}
           placeholder={voice.listening ? 'Listening…' : 'Ask anything about your knowledge…'}
-          rows={1}
+          rows={2}
         />
         <button className="ask-send" disabled={!input.trim() || loading}
           onClick={() => send(input)} aria-label="Send">↑</button>
