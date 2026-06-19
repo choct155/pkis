@@ -6,6 +6,7 @@ import {
 } from '../lib/api'
 import { renderMarkdown } from '../lib/markdown'
 import { renderMath } from '../lib/katex'
+import { useSpeech, useSpeechInput } from '../lib/voice'
 
 // A chat turn carries the wire fields (role, content) plus, for assistant turns,
 // streaming state, structured citations, and a small meta line.
@@ -82,7 +83,26 @@ export default function AskView({ onSelectNode, signedIn, onSignIn }: Props) {
   const [convId, setConvId] = useState<string | null>(null)
   const [history, setHistory] = useState<ConversationSummary[]>([])
   const [historyOpen, setHistoryOpen] = useState(false)
+  const [autoRead, setAutoRead] = useState(false)
+  const [speakingIdx, setSpeakingIdx] = useState<number | null>(null)
   const scrollRef = useRef<HTMLDivElement>(null)
+
+  // Voice out (readout) + voice in (dictation). Both browser-native; the buttons
+  // hide themselves where unsupported.
+  const speech = useSpeech()
+  useEffect(() => { if (!speech.speaking) setSpeakingIdx(null) }, [speech.speaking])
+  const inputBaseRef = useRef('')
+  const voice = useSpeechInput((t) =>
+    setInput((inputBaseRef.current ? inputBaseRef.current + ' ' : '') + t))
+  const toggleMic = () => {
+    if (voice.listening) { voice.stop(); return }
+    inputBaseRef.current = input
+    voice.start()
+  }
+  const toggleListen = (idx: number, text: string) => {
+    if (speakingIdx === idx) { speech.stop(); setSpeakingIdx(null); return }
+    speech.speak(text); setSpeakingIdx(idx)
+  }
 
   useEffect(() => {
     scrollRef.current?.scrollTo({ top: scrollRef.current.scrollHeight, behavior: 'smooth' })
@@ -132,6 +152,9 @@ export default function AskView({ onSelectNode, signedIn, onSignIn }: Props) {
             { role: 'assistant', content: res.answer, citations: res.citations,
               meta: { model: res.model, turns: res.turns } },
           ])
+          // Hands-free: read the finished answer aloud. (The assistant turn sits
+          // at index base.length once appended.)
+          if (autoRead && speech.supported) { speech.speak(res.answer); setSpeakingIdx(base.length) }
         },
         onError: (msg) => patchLast((t) => ({ ...t, content: msg, error: true, streaming: false })),
       })
@@ -177,14 +200,27 @@ export default function AskView({ onSelectNode, signedIn, onSignIn }: Props) {
 
   return (
     <div className="ask-view">
-      {signedIn && (
+      {(signedIn || speech.supported) && (
         <div className="ask-toolbar">
-          <button className="ask-tool-btn" onClick={() => setHistoryOpen(true)} aria-label="History">
-            ☰ history
-          </button>
-          {!empty && (
-            <button className="ask-tool-btn" onClick={newChat} aria-label="New chat">
-              ＋ new
+          <div className="ask-toolbar-grp">
+            {signedIn && (
+              <button className="ask-tool-btn" onClick={() => setHistoryOpen(true)} aria-label="History">
+                ☰ history
+              </button>
+            )}
+            {signedIn && !empty && (
+              <button className="ask-tool-btn" onClick={newChat} aria-label="New chat">
+                ＋ new
+              </button>
+            )}
+          </div>
+          {speech.supported && (
+            <button
+              className={`ask-tool-btn${autoRead ? ' active' : ''}`}
+              onClick={() => { const n = !autoRead; setAutoRead(n); if (!n) { speech.stop(); setSpeakingIdx(null) } }}
+              aria-label="Auto-read responses"
+            >
+              🔊 {autoRead ? 'auto-read on' : 'auto-read'}
             </button>
           )}
         </div>
@@ -225,15 +261,22 @@ export default function AskView({ onSelectNode, signedIn, onSignIn }: Props) {
                 ) : (
                   <>
                     <Answer md={t.content} onOpen={onSelectNode} />
-                    {t.citations && t.citations.length > 0 && (
-                      <div className="ask-citations">
-                        <span className="ask-cite-label">sources</span>
-                        {t.citations.map((c) => (
-                          <button key={c.iri} className="ask-cite" title={c.iri}
-                            onClick={() => onSelectNode(c.iri)}>{c.title}</button>
-                        ))}
-                      </div>
-                    )}
+                    <div className="ask-answer-foot">
+                      {t.citations && t.citations.length > 0 && (
+                        <div className="ask-citations">
+                          <span className="ask-cite-label">sources</span>
+                          {t.citations.map((c) => (
+                            <button key={c.iri} className="ask-cite" title={c.iri}
+                              onClick={() => onSelectNode(c.iri)}>{c.title}</button>
+                          ))}
+                        </div>
+                      )}
+                      {speech.supported && t.content && (
+                        <button className="ask-listen" onClick={() => toggleListen(i, t.content)}>
+                          {speakingIdx === i ? '■ stop' : '▶ listen'}
+                        </button>
+                      )}
+                    </div>
                   </>
                 )}
               </div>
@@ -275,12 +318,20 @@ export default function AskView({ onSelectNode, signedIn, onSignIn }: Props) {
       )}
 
       <div className="ask-composer">
+        {voice.supported && (
+          <button
+            className={`ask-mic${voice.listening ? ' listening' : ''}`}
+            onClick={toggleMic}
+            aria-label={voice.listening ? 'Stop dictation' : 'Dictate'}
+            title={voice.listening ? 'Stop' : 'Speak your question'}
+          >🎤</button>
+        )}
         <textarea
           className="ask-input"
           value={input}
           onChange={(e) => setInput(e.target.value)}
           onKeyDown={onKeyDown}
-          placeholder="Ask anything about your knowledge…"
+          placeholder={voice.listening ? 'Listening…' : 'Ask anything about your knowledge…'}
           rows={1}
         />
         <button className="ask-send" disabled={!input.trim() || loading}
