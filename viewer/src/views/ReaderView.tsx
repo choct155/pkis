@@ -13,6 +13,7 @@ interface Props {
 }
 
 function fmt(t: number): string {
+  if (!Number.isFinite(t)) return '0:00'
   const m = Math.floor(t / 60), s = Math.floor(t % 60)
   return `${m}:${s.toString().padStart(2, '0')}`
 }
@@ -223,6 +224,7 @@ export default function ReaderView({ slug, onClose }: Props) {
   }
 
   const hasPdf = !!pdfUrl
+  const hasAudio = !!payload.audio_url
   // Active section drives both the highlight and the PDF page; fall back to the
   // first section before playback has set one (so "note this section" still works).
   const curSection = payload.sections.find((s) => s.id === curId) ?? payload.sections[0]
@@ -280,24 +282,30 @@ export default function ReaderView({ slug, onClose }: Props) {
         )}
       </div>
 
-      <div className="reader-controls">
-        <audio
-          ref={audioRef}
-          src={audioSrc}
-          onTimeUpdate={onTime}
-          onPlay={() => setPlaying(true)}
-          onPause={() => setPlaying(false)}
-          preload="auto"
-        />
-        <button className="reader-play" onClick={toggle}>{playing ? '⏸' : '▶'}</button>
-        <span className="reader-time">{fmt(time)}</span>
-        <input
-          className="reader-scrub" type="range" min={0} max={payload.total_duration} step={1}
-          value={time} onChange={(e) => seek(Number(e.target.value))}
-        />
-        <span className="reader-time">{fmt(payload.total_duration)}</span>
-        <button className="reader-rate" onClick={() => setRate((r) => (r >= 2 ? 0.75 : Math.round((r + 0.25) * 100) / 100))}>{rate}×</button>
-      </div>
+      {hasAudio ? (
+        <div className="reader-controls">
+          <audio
+            ref={audioRef}
+            src={audioSrc}
+            onTimeUpdate={onTime}
+            onPlay={() => setPlaying(true)}
+            onPause={() => setPlaying(false)}
+            preload="auto"
+          />
+          <button className="reader-play" onClick={toggle}>{playing ? '⏸' : '▶'}</button>
+          <span className="reader-time">{fmt(time)}</span>
+          <input
+            className="reader-scrub" type="range" min={0} max={payload.total_duration || 0} step={1}
+            value={time} onChange={(e) => seek(Number(e.target.value))}
+          />
+          <span className="reader-time">{fmt(payload.total_duration)}</span>
+          <button className="reader-rate" onClick={() => setRate((r) => (r >= 2 ? 0.75 : Math.round((r + 0.25) * 100) / 100))}>{rate}×</button>
+        </div>
+      ) : (
+        <div className="reader-controls reader-controls-empty">
+          narration not generated for this chapter yet — read the PDF above, or open the original
+        </div>
+      )}
 
       {sel && (
         <div className="reader-annot">

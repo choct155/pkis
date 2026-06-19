@@ -29,6 +29,8 @@ Auditor-flagged gaps for Synthesizer attention.
 - [ ] Broken node: `wiki/sources/jaynes-probability-ch10.md` has malformed YAML frontmatter (won't parse → won't load into the graph) — needs a manual fix (2026-06-19) [Hygienist]
 - [ ] Source-capture sweep: prose in many nodes cites readable ingested books (MacKay, BDA3, …) that never made it into the structured `sources`/Reading Path — Synthesizer pass to capture cited readable sources corpus-wide. Exemplar done: [[bayesian-inference]] enriched 2026-06-19 with readable [[mackay-itila-ch02]] + [[gelman-bda3-ch01]] (its prior sole source, the kroese ch.8 stub, has no readable text) (2026-06-19) [Auditor]
 
+- [ ] Reader narration audio gap: 215 of 311 reader chapters have NO narration audio (TTS only run for ~96 — mackay, betancourt, early bishop). Missing across bishop-prml, deisenroth-mml, gelman-bda3, goodfellow-deeplearning, jaynes, murphy-pml1/pml2, pearl-causality, resnick, russell-norvig-aima, sutton. The reader now shows a graceful "narration not generated" notice (2026-06-19) instead of a dead player. Building = reader_build TTS run (significant API/TTS cost via tools/reader_build.py) — decide which books to prioritize (2026-06-19) [owner decision]
+
 ## Awaiting Classification
 Sources with low-confidence knowledge-object classifications pending human decision.
 <!-- - [ ] [[source-slug]] § object-name — candidate types: technique or principle (date flagged) [Librarian] -->

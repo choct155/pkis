@@ -956,6 +956,10 @@ body {
   padding: 10px 16px calc(10px + env(safe-area-inset-bottom));
   border-top: 1px solid var(--border); background: var(--surface);
 }
+.reader-controls-empty {
+  justify-content: center; text-align: center; font-size: 12px;
+  color: var(--muted); line-height: 1.4;
+}
 .reader-play {
   width: 40px; height: 40px; border-radius: 50%; flex-shrink: 0;
   background: var(--accent); color: #fff; border: none; font-size: 16px; cursor: pointer;
