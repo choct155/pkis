@@ -12,12 +12,12 @@ id: pkis:concept:propensity-score
 knowledge_type: concept
 maturity: settled
 related_concepts:
-- - - matching-estimators
-- - - selection-bias
-- - - potential-outcomes-framework
-- - - average-treatment-effect
+- '[[matching-estimators]]'
+- '[[selection-bias]]'
+- '[[potential-outcomes-framework]]'
+- '[[average-treatment-effect]]'
 sources:
-- "[[cunningham-causal-inference-mixtape]]"
+- '[[cunningham-causal-inference-mixtape]]'
 specializes:
 - ignorability
 tags:

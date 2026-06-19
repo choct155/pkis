@@ -1,19 +1,33 @@
 ---
-id: "pkis:technique:regression-discontinuity"
 aliases: []
-title: "Regression Discontinuity"
-knowledge_type: technique
 also_type: []
-domain: [causal-analysis]
-tags: [rdd, sharp-rdd, fuzzy-rdd, running-variable, threshold, local-linear-regression, bandwidth, mccrary-test, natural-experiment]
-related_concepts: [[[identification-strategy]], [[local-average-treatment-effect]], [[instrumental-variables]], [[potential-outcomes-framework]]]
-sources:
-- "[[cunningham-causal-inference-mixtape]]"
+coverage: 1
 date_created: 2026-05-20
 date_updated: 2026-05-20
-coverage: 1
-understanding: 0
+domain:
+- causal-analysis
+id: pkis:technique:regression-discontinuity
+knowledge_type: technique
 maturity: settled
+related_concepts:
+- '[[identification-strategy]]'
+- '[[local-average-treatment-effect]]'
+- '[[instrumental-variables]]'
+- '[[potential-outcomes-framework]]'
+sources:
+- '[[cunningham-causal-inference-mixtape]]'
+tags:
+- rdd
+- sharp-rdd
+- fuzzy-rdd
+- running-variable
+- threshold
+- local-linear-regression
+- bandwidth
+- mccrary-test
+- natural-experiment
+title: Regression Discontinuity
+understanding: 0
 ---
 
 Regression discontinuity (RDD) identifies causal effects by exploiting a discontinuous jump in treatment assignment at a known threshold of a running variable; sharp RDD (deterministic assignment) identifies the ATE at the threshold, fuzzy RDD (probabilistic jump) identifies LATE via an IV-like first stage — validity requires continuity of potential outcomes at the threshold and no manipulation of the running variable.

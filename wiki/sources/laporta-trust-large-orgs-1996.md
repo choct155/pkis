@@ -1,18 +1,27 @@
 ---
-id: "pkis:source:laporta-trust-large-orgs-1996"
 aliases: []
-title: "Trust in Large Organizations"
-authors: "Rafael La Porta, Florencio Lopez-de-Silanes, Andrei Shleifer, Robert W. Vishny"
-year: 1996
-type: paper
-domain: [organizational-theory]
-tags: [social-capital, trust, cross-country-evidence, institutional-economics, cooperative-game-theory]
-source_url: ""
-drive_id: "1spNDIEydBh--Mg5Cm_jGGpERPx5Mvvv0"
-drive_path: "PKIS/sources/papers/Trust in Large Organizations.pdf"
-status: unread
+authors: Rafael La Porta, Florencio Lopez-de-Silanes, Andrei Shleifer, Robert W. Vishny
+concepts:
+- '[[social-capital]]'
+- '[[organizational-trust]]'
+- '[[horizontal-networks]]'
 date_added: 2026-05-20
-concepts: [[social-capital], [organizational-trust], [horizontal-networks]]
+domain:
+- organizational-theory
+drive_id: 1spNDIEydBh--Mg5Cm_jGGpERPx5Mvvv0
+drive_path: PKIS/sources/papers/Trust in Large Organizations.pdf
+id: pkis:source:laporta-trust-large-orgs-1996
+source_url: ''
+status: unread
+tags:
+- social-capital
+- trust
+- cross-country-evidence
+- institutional-economics
+- cooperative-game-theory
+title: Trust in Large Organizations
+type: paper
+year: 1996
 ---
 
 ## Summary

@@ -12,13 +12,13 @@ instantiates:
 knowledge_type: concept
 maturity: settled
 related_concepts:
-- - - confounding
-- - - directed-graphical-models
-- - - selection-bias
-- - - d-separation
-- - - identification-strategy
+- '[[confounding]]'
+- '[[directed-graphical-models]]'
+- '[[selection-bias]]'
+- '[[d-separation]]'
+- '[[identification-strategy]]'
 sources:
-- "[[cunningham-causal-inference-mixtape]]"
+- '[[cunningham-causal-inference-mixtape]]'
 tags:
 - dag
 - collider

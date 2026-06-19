@@ -1,18 +1,28 @@
 ---
-id: "pkis:source:sapienza-understanding-trust-2007"
 aliases: []
-title: "Understanding Trust"
-authors: "Paola Sapienza, Anna Toldra, Luigi Zingales"
-year: 2007
-type: paper
-domain: [organizational-theory]
-tags: [trust, experimental-economics, behavioral-economics, survey-methodology, trust-game]
-source_url: "http://ssrn.com/abstract=1010223"
-drive_id: "18K7fSs2Zf_Vc0jtHAnKjbvX0r2HoVRjN"
-drive_path: "PKIS/sources/papers/Understanding Trust.pdf"
-status: unread
+authors: Paola Sapienza, Anna Toldra, Luigi Zingales
+concepts:
+- '[[trust-decomposition]]'
+- '[[belief-based-trust]]'
+- '[[preference-based-trust]]'
+- '[[trust-game-methodology]]'
 date_added: 2026-05-20
-concepts: [[trust-decomposition], [belief-based-trust], [preference-based-trust], [trust-game-methodology]]
+domain:
+- organizational-theory
+drive_id: 18K7fSs2Zf_Vc0jtHAnKjbvX0r2HoVRjN
+drive_path: PKIS/sources/papers/Understanding Trust.pdf
+id: pkis:source:sapienza-understanding-trust-2007
+source_url: http://ssrn.com/abstract=1010223
+status: unread
+tags:
+- trust
+- experimental-economics
+- behavioral-economics
+- survey-methodology
+- trust-game
+title: Understanding Trust
+type: paper
+year: 2007
 ---
 
 ## Summary

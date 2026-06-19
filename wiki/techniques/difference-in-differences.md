@@ -1,19 +1,32 @@
 ---
-id: "pkis:technique:difference-in-differences"
 aliases: []
-title: "Difference-in-Differences"
-knowledge_type: technique
 also_type: []
-domain: [causal-analysis]
-tags: [did, parallel-trends, two-way-fixed-effects, panel-data, pre-trends, natural-experiment, policy-evaluation]
-related_concepts: [[[identification-strategy]], [[parallel-trends]], [[fixed-effects-estimator]], [[selection-bias]], [[potential-outcomes-framework]]]
-sources:
-- "[[cunningham-causal-inference-mixtape]]"
+coverage: 1
 date_created: 2026-05-20
 date_updated: 2026-05-20
-coverage: 1
-understanding: 0
+domain:
+- causal-analysis
+id: pkis:technique:difference-in-differences
+knowledge_type: technique
 maturity: settled
+related_concepts:
+- '[[identification-strategy]]'
+- '[[parallel-trends]]'
+- '[[fixed-effects-estimator]]'
+- '[[selection-bias]]'
+- '[[potential-outcomes-framework]]'
+sources:
+- '[[cunningham-causal-inference-mixtape]]'
+tags:
+- did
+- parallel-trends
+- two-way-fixed-effects
+- panel-data
+- pre-trends
+- natural-experiment
+- policy-evaluation
+title: Difference-in-Differences
+understanding: 0
 ---
 
 Difference-in-differences (DiD) identifies causal effects by comparing the pre-post change in outcomes for a treated group to the pre-post change for an untreated group; identification relies on the parallel trends assumption (treated and control groups would have had the same outcome trend absent treatment); typically implemented via two-way fixed effects regression.

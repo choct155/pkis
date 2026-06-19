@@ -10,12 +10,12 @@ id: pkis:concept:average-treatment-effect
 knowledge_type: concept
 maturity: settled
 related_concepts:
-- - - potential-outcomes-framework
-- - - selection-bias
-- - - local-average-treatment-effect
-- - - counterfactuals
+- '[[potential-outcomes-framework]]'
+- '[[selection-bias]]'
+- '[[local-average-treatment-effect]]'
+- '[[counterfactuals]]'
 sources:
-- "[[cunningham-causal-inference-mixtape]]"
+- '[[cunningham-causal-inference-mixtape]]'
 tags:
 - causal-inference
 - ate

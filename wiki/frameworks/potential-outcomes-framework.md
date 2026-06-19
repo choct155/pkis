@@ -11,13 +11,13 @@ id: pkis:framework:potential-outcomes-framework
 knowledge_type: framework
 maturity: settled
 related_concepts:
-- - - counterfactuals
-- - - average-treatment-effect
-- - - selection-bias
-- - - sutva
-- - - structural-causal-models
+- '[[counterfactuals]]'
+- '[[average-treatment-effect]]'
+- '[[selection-bias]]'
+- '[[sutva]]'
+- '[[structural-causal-models]]'
 sources:
-- "[[cunningham-causal-inference-mixtape]]"
+- '[[cunningham-causal-inference-mixtape]]'
 tags:
 - causal-inference
 - rubin

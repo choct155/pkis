@@ -30,7 +30,7 @@ The second pillar covers the development of empirical asset pricing from the CAP
 - [[value-premium]] (result, high) — high book-to-market stocks earn higher average returns than low book-to-market stocks
 - [[size-effect]] (result, high) — small-capitalization stocks earn higher average returns than large-capitalization stocks, unexplained by CAPM beta
 - [[fama-macbeth-procedure]] (technique, high) — period-by-period cross-section regressions with time-series averaging of slopes to handle residual cross-correlation
-- [[capm]] (framework, high) — capital asset pricing model: expected returns linear in market beta
+- [[capital-asset-pricing-model]] (framework, high) — capital asset pricing model: expected returns linear in market beta
 
 ## Key Extractions
 
@@ -51,7 +51,7 @@ The second pillar covers the development of empirical asset pricing from the CAP
 - [[efficient-markets-hypothesis]] — grounds: the EMH grounds all tests of asset pricing; this paper is its most authoritative retrospective defense
 - [[joint-hypothesis-problem]] — concept: this paper is the definitive exposition of why EMH is always tested jointly with an equilibrium model
 - [[identification-strategy]] — concept: the joint hypothesis problem is an identification problem — you cannot separately identify the efficiency component from the model component
-- [[capm]] — contrasts-with/extends: the three-factor model extends CAPM by adding size and value factors
+- [[capital-asset-pricing-model]] — contrasts-with/extends: the three-factor model extends CAPM by adding size and value factors
 - [[value-premium]] — the paper surveys and defends risk-based interpretations of the value premium
 - [[structural-causal-models]] — concept: Fama's insistence on an equilibrium model before testing efficiency parallels the identification requirement in causal inference
 - [[potential-outcomes-framework]] — concept: the behavioral finance challenge to EMH is implicitly a counterfactual argument about what returns "would have been" under efficiency

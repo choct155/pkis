@@ -1,18 +1,31 @@
 ---
-id: "pkis:source:simon-admin-decision-making-1965"
 aliases: []
-title: "Administrative Decision Making"
-authors: "Herbert A. Simon"
-year: 1965
-type: paper
-domain: [organizational-theory]
-tags: [bounded-rationality, satisficing, decision-theory, operations-research, heuristics, computer-simulation, organizational-behavior]
-source_url: ""
-drive_id: "1GbkhgO-n6zKerFY6X53ocdVgfqRM83iL"
-drive_path: "PKIS/sources/papers/Administrative Decision Making.pdf"
-status: unread
+authors: Herbert A. Simon
+concepts:
+- '[[bounded-rationality]]'
+- '[[satisficing]]'
+- '[[evocation-attention]]'
+- '[[programmed-vs-unprogrammed-decisions]]'
+- '[[decision-premise]]'
 date_added: 2026-05-20
-concepts: [[bounded-rationality], [satisficing], [evocation-attention], [programmed-vs-unprogrammed-decisions], [decision-premise]]
+domain:
+- organizational-theory
+drive_id: 1GbkhgO-n6zKerFY6X53ocdVgfqRM83iL
+drive_path: PKIS/sources/papers/Administrative Decision Making.pdf
+id: pkis:source:simon-admin-decision-making-1965
+source_url: ''
+status: unread
+tags:
+- bounded-rationality
+- satisficing
+- decision-theory
+- operations-research
+- heuristics
+- computer-simulation
+- organizational-behavior
+title: Administrative Decision Making
+type: paper
+year: 1965
 ---
 
 ## Summary

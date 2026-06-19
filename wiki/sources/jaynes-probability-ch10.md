@@ -13,7 +13,7 @@ tags:
 - bayesian
 - probability-theory
 - jaynes-probability
-title: 'Ch. 10 — Physics of 'Random Experiments''
+title: "Ch. 10 — Physics of 'Random Experiments'"
 type: chapter
 understanding: 0
 year: 2003

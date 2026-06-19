@@ -1,20 +1,48 @@
 ---
-id: "pkis:source:cunningham-causal-inference-mixtape"
-aliases: ["Causal Inference: The Mixtape", "Mixtape"]
-title: "Causal Inference: The Mixtape"
-authors: "Scott Cunningham"
-year: 2021
-type: book
-domain: [causal-analysis, bayesian-stats]
-tags: [causal-inference, potential-outcomes, dag, identification, econometrics, program-evaluation, observational-studies]
-source_url: "https://mixtape.scunning.com"
-drive_id: "1J37BkobL19FmHZvmV8GSRzH9gHmy4QtP"
-drive_path: "PKIS/sources/books/cunningham-causal-inference-mixtape.pdf"
-isbn: "978-0-300-25168-5"
-toc_source: "manual"
-status: unread
+aliases:
+- 'Causal Inference: The Mixtape'
+- Mixtape
+authors: Scott Cunningham
+concepts:
+- '[[potential-outcomes-framework]]'
+- '[[average-treatment-effect]]'
+- '[[selection-bias]]'
+- '[[regression-discontinuity]]'
+- '[[instrumental-variables]]'
+- '[[difference-in-differences]]'
+- '[[synthetic-control]]'
+- '[[matching-estimators]]'
+- '[[propensity-score]]'
+- '[[parallel-trends]]'
+- '[[local-average-treatment-effect]]'
+- '[[collider-bias]]'
+- '[[identification-strategy]]'
+- '[[counterfactuals]]'
+- '[[confounding]]'
+- '[[directed-graphical-models]]'
+- '[[structural-causal-models]]'
 date_added: 2026-05-20
-concepts: [[[potential-outcomes-framework]], [[average-treatment-effect]], [[selection-bias]], [[regression-discontinuity]], [[instrumental-variables]], [[difference-in-differences]], [[synthetic-control]], [[matching-estimators]], [[propensity-score]], [[parallel-trends]], [[local-average-treatment-effect]], [[collider-bias]], [[identification-strategy]], [[counterfactuals]], [[confounding]], [[directed-graphical-models]], [[structural-causal-models]]]
+domain:
+- causal-analysis
+- bayesian-stats
+drive_id: 1J37BkobL19FmHZvmV8GSRzH9gHmy4QtP
+drive_path: PKIS/sources/books/cunningham-causal-inference-mixtape.pdf
+id: pkis:source:cunningham-causal-inference-mixtape
+isbn: 978-0-300-25168-5
+source_url: https://mixtape.scunning.com
+status: unread
+tags:
+- causal-inference
+- potential-outcomes
+- dag
+- identification
+- econometrics
+- program-evaluation
+- observational-studies
+title: 'Causal Inference: The Mixtape'
+toc_source: manual
+type: book
+year: 2021
 ---
 
 ## Summary
@@ -42,7 +70,7 @@ A distinctive feature is Cunningham's use of hip-hop epigraphs throughout, reinf
 - [[collider-bias]] (concept, high) — Conditioning on a variable that is caused by both treatment and outcome opens spurious paths
 - [[omitted-variable-bias]] (concept, high) — Bias from excluding a confounder correlated with both treatment and outcome
 - [[sutva]] (principle, moderate — could be concept) — Stable Unit Treatment Value Assumption: no interference between units, one version of treatment
-- [[backdoor-criterion]] (concept, moderate — could be technique) — Pearl's graphical condition identifying sufficient adjustment sets for causal identification
+- [[back-door-criterion]] (concept, moderate — could be technique) — Pearl's graphical condition identifying sufficient adjustment sets for causal identification
 - [[counterfactuals]] (concept, existing) — Already in wiki from pearl-causality ingest
 - [[confounding]] (concept, existing) — Already in wiki from pearl-causality ingest
 - [[directed-graphical-models]] (framework, existing) — Already in wiki
