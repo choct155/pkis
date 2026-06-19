@@ -4740,20 +4740,31 @@ def pkis_api_node():
         return _api_err(e, 500)
 
 
+def _resolve_one(slug):
+    s = (slug or "").strip().lstrip("/")
+    if not s:
+        return None
+    path = find_node_path(s)
+    if not path:
+        return None
+    node = load_node(path)
+    return (node or {}).get("iri")
+
+
 @app.route("/pkis-api/resolve", methods=["POST"])
 def pkis_api_resolve():
-    """Resolve a bare node slug (from a body [[wikilink]]) to its canonical IRI so
-    the viewer can navigate to it. Returns {"iri": null} if no such node exists
-    (a dangling wikilink)."""
-    slug = (_api_json().get("slug", "") or "").strip().lstrip("/")
-    if not slug:
-        return _api_err("slug is required")
+    """Resolve bare node slug(s) (from body [[wikilinks]]) to canonical IRIs so the
+    viewer can navigate and dim danglers. Single: {"slug": s} → {"iri": iri|null}.
+    Batch: {"slugs": [...]} → {"map": {slug: iri|null}}. null = no such node."""
+    b = _api_json()
+    slugs = b.get("slugs")
     try:
-        path = find_node_path(slug)
-        if not path:
-            return _api_ok({"iri": None})
-        node = load_node(path)
-        return _api_ok({"iri": (node or {}).get("iri")})
+        if isinstance(slugs, list):
+            return _api_ok({"map": {s: _resolve_one(s) for s in slugs if (s or "").strip()}})
+        slug = (b.get("slug", "") or "").strip()
+        if not slug:
+            return _api_err("slug or slugs is required")
+        return _api_ok({"iri": _resolve_one(slug)})
     except Exception as e:
         return _api_err(e, 500)
 

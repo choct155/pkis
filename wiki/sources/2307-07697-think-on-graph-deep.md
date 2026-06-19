@@ -13,12 +13,10 @@ id: pkis:source:2307-07697-think-on-graph-deep
 isbn: ''
 parent_book: ''
 readwise_id: ''
-source_url: '[2307.07697] Think-on-Graph: Deep and Responsible Reasoning of Large
-  Language Model on Knowledge Graph https://share.google/fgwAYRgox8dYYJvsi'
+source_url: 'https://arxiv.org/abs/2307.07697'
 status: unread
 tags: []
-title: '[2307.07697] Think-on-Graph: Deep and Responsible Reasoning of Large Language
-  Model on Knowledge Graph https://share.google/fgwAYRgox8dYYJvsi'
+title: 'Think-on-Graph: Deep and Responsible Reasoning of Large Language Model on Knowledge Graph'
 toc_source: ''
 type: article
 year: null

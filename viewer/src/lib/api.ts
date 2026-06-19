@@ -60,6 +60,14 @@ export async function resolveSlug(slug: string): Promise<string | null> {
   return r.iri ?? null;
 }
 
+// Batch-resolve many slugs at once → {slug: iri|null}. Used to dim dangling
+// wikilinks with a single round-trip per node body.
+export async function resolveSlugs(slugs: string[]): Promise<Record<string, string | null>> {
+  if (!slugs.length) return {};
+  const r = await post<{ map: Record<string, string | null> }>('/resolve', { slugs });
+  return r.map ?? {};
+}
+
 // ── Related ───────────────────────────────────────────────────────────────
 export async function getRelated(
   iri: string,

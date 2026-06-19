@@ -438,6 +438,11 @@ body {
 .body-text a.wikilink {
   text-decoration-style: dotted; cursor: pointer;
 }
+/* Dangling wikilink — points at a node that doesn't exist yet. Dimmed + inert. */
+.body-text a.wikilink.dangling {
+  color: var(--muted); cursor: default; text-decoration-style: dotted;
+  text-decoration-color: var(--dim);
+}
 
 /* ── VIZ PANEL ────────────────────────────────────────────────────────── */
 .viz-toggle {

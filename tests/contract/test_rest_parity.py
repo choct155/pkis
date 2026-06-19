@@ -140,3 +140,7 @@ def test_resolve_slug_to_iri(client):
     assert r["iri"] == "pkis:concept:entropy"
     miss = client.post("/pkis-api/resolve", json={"slug": "no-such-node-xyz"}).get_json()
     assert miss["iri"] is None
+    # Batch form: a map of slug -> iri|null (used to dim dangling wikilinks).
+    batch = client.post("/pkis-api/resolve",
+                        json={"slugs": ["entropy", "no-such-node-xyz"]}).get_json()
+    assert batch["map"] == {"entropy": "pkis:concept:entropy", "no-such-node-xyz": None}

@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
-import { getNode, resolveSlug } from '../lib/api'
+import { getNode, resolveSlug, resolveSlugs } from '../lib/api'
 import { renderMarkdown } from '../lib/markdown'
 import { renderMath } from '../lib/katex'
 import type { FullNode, NodeType, RelatedNode, ReadingPathItem } from '../types'
@@ -42,16 +42,32 @@ function MarkdownBody({ md, onWiki }: { md: string; onWiki: (slug: string) => vo
     })
     // Internal [[wikilinks]] (no href) navigate in-app: resolve slug → IRI.
     const cleanups: Array<() => void> = []
-    ref.current?.querySelectorAll('a.wikilink').forEach((a) => {
+    const wikis = Array.from(
+      ref.current?.querySelectorAll('a.wikilink') ?? []
+    ) as HTMLElement[]
+    wikis.forEach((a) => {
       const handler = (e: Event) => {
         e.preventDefault()
-        const slug = (a as HTMLElement).dataset.slug
+        const slug = a.dataset.slug
         if (slug) onWiki(slug)
       }
       a.addEventListener('click', handler)
       cleanups.push(() => a.removeEventListener('click', handler))
     })
-    return () => cleanups.forEach((fn) => fn())
+    // One batch round-trip to dim wikilinks that point at no node yet (dangling).
+    const slugs = [...new Set(wikis.map((a) => a.dataset.slug).filter(Boolean) as string[])]
+    let cancelled = false
+    if (slugs.length) {
+      resolveSlugs(slugs)
+        .then((map) => {
+          if (cancelled) return
+          wikis.forEach((a) => {
+            if (a.dataset.slug && map[a.dataset.slug] == null) a.classList.add('dangling')
+          })
+        })
+        .catch(() => { /* leave links un-dimmed on error */ })
+    }
+    return () => { cancelled = true; cleanups.forEach((fn) => fn()) }
   }, [md, onWiki])
   return (
     <div
