@@ -147,7 +147,13 @@ export default function App() {
                   <DiscoverView onSelectNode={handleSelectNode} />
                 )}
                 {view === 'docs' && <DocsView />}
-                {view === 'ask' && <AskView onSelectNode={handleSelectNode} />}
+                {view === 'ask' && (
+                  <AskView
+                    onSelectNode={handleSelectNode}
+                    signedIn={auth.authenticated}
+                    onSignIn={signIn}
+                  />
+                )}
                 {view === 'inbox' && isOwner && <InboxView onSelectNode={handleSelectNode} />}
               </>
             )}

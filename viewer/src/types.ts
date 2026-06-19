@@ -32,6 +32,27 @@ export interface AskResponse {
   usage: { input_tokens: number; output_tokens: number };
 }
 
+// A persisted chat turn (the subset we store/recall — no streaming flags).
+export interface AskTurn {
+  role: 'user' | 'assistant';
+  content: string;
+  citations?: Citation[];
+  meta?: { model: string; turns: number };
+}
+export interface ConversationSummary {
+  id: string;
+  title: string;
+  created_at: string;
+  updated_at: string;
+  turn_count: number;
+  anchor: { type: string; ref: string } | null;
+  deleted: boolean;
+}
+export interface ConversationFull extends ConversationSummary {
+  messages: AskTurn[];
+  artifact: string | null;
+}
+
 // ── Documentation (from /pkis-api/docs and /pkis-api/doc) ─────────────────
 export interface DocMeta {
   key: string;

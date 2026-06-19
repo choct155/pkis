@@ -1,12 +1,14 @@
 import { useEffect, useRef, useState } from 'react'
-import type { AskMessage, AskResponse, Citation } from '../types'
-import { askStream, resolveSlug, ApiError } from '../lib/api'
+import type { AskMessage, AskResponse, AskTurn, Citation, ConversationSummary } from '../types'
+import {
+  askStream, resolveSlug, ApiError,
+  listConversations, getConversation, saveConversation, deleteConversation, renameConversation,
+} from '../lib/api'
 import { renderMarkdown } from '../lib/markdown'
 import { renderMath } from '../lib/katex'
 
 // A chat turn carries the wire fields (role, content) plus, for assistant turns,
-// streaming state, structured citations, and a small meta line. We strip the
-// extras before sending the conversation back to the stateless endpoint.
+// streaming state, structured citations, and a small meta line.
 interface Turn extends AskMessage {
   citations?: Citation[]
   meta?: { model: string; turns: number }
@@ -21,18 +23,24 @@ const EXAMPLES = [
   'What do I need to understand before tackling variational inference?',
 ]
 
-// Render a FINAL assistant answer: markdown + KaTeX, with [[wikilinks]] wired to
-// open the referenced node. Mirrors DetailSheet's MarkdownBody so cited nodes
-// behave identically everywhere. (While streaming we render plain text instead —
-// re-parsing markdown+math on every token would be wasteful and flicker.)
+function relTime(iso: string): string {
+  const d = (Date.now() - new Date(iso).getTime()) / 1000
+  if (d < 60) return 'just now'
+  if (d < 3600) return `${Math.floor(d / 60)}m ago`
+  if (d < 86400) return `${Math.floor(d / 3600)}h ago`
+  if (d < 604800) return `${Math.floor(d / 86400)}d ago`
+  return new Date(iso).toLocaleDateString()
+}
+
+// Render a FINAL assistant answer: markdown + KaTeX, [[wikilinks]] open the node.
+// (While streaming we render plain text — re-parsing markdown per token flickers.)
 function Answer({ md, onOpen }: { md: string; onOpen: (iri: string) => void }) {
   const ref = useRef<HTMLDivElement>(null)
   const html = renderMarkdown(md)
   useEffect(() => {
     renderMath(ref.current)
     ref.current?.querySelectorAll('a[href]').forEach((a) => {
-      a.setAttribute('target', '_blank')
-      a.setAttribute('rel', 'noreferrer')
+      a.setAttribute('target', '_blank'); a.setAttribute('rel', 'noreferrer')
     })
     const cleanups: Array<() => void> = []
     const wikis = Array.from(ref.current?.querySelectorAll('a.wikilink') ?? []) as HTMLElement[]
@@ -63,26 +71,43 @@ function Thinking({ label }: { label: string }) {
 
 interface Props {
   onSelectNode: (iri: string) => void
+  signedIn: boolean
+  onSignIn: () => void
 }
 
-export default function AskView({ onSelectNode }: Props) {
+export default function AskView({ onSelectNode, signedIn, onSignIn }: Props) {
   const [turns, setTurns] = useState<Turn[]>([])
   const [input, setInput] = useState('')
   const [loading, setLoading] = useState(false)
+  const [convId, setConvId] = useState<string | null>(null)
+  const [history, setHistory] = useState<ConversationSummary[]>([])
+  const [historyOpen, setHistoryOpen] = useState(false)
   const scrollRef = useRef<HTMLDivElement>(null)
 
-  // Keep the latest turn in view as the conversation grows / streams.
   useEffect(() => {
     scrollRef.current?.scrollTo({ top: scrollRef.current.scrollHeight, behavior: 'smooth' })
   }, [turns])
 
-  // Patch the in-flight (last) assistant turn.
+  const refreshHistory = () => {
+    if (signedIn) listConversations().then(setHistory).catch(() => { /* leave as-is */ })
+  }
+  useEffect(() => { if (historyOpen) refreshHistory() }, [historyOpen]) // eslint-disable-line
+
   const patchLast = (fn: (t: Turn) => Turn) =>
     setTurns((prev) => {
       const copy = [...prev]
       copy[copy.length - 1] = fn(copy[copy.length - 1])
       return copy
     })
+
+  // Auto-save the completed exchange (signed-in only). Creates the conversation
+  // on first save, then updates in place; the server keeps the latest state.
+  const persist = (clean: AskTurn[]) => {
+    if (!signedIn || !clean.length) return
+    saveConversation(clean, convId)
+      .then((r) => { if (!convId) setConvId(r.id); refreshHistory() })
+      .catch(() => { /* a failed save never blocks the chat */ })
+  }
 
   const send = async (text: string) => {
     const q = text.trim()
@@ -91,18 +116,23 @@ export default function AskView({ onSelectNode }: Props) {
     setTurns([...base, { role: 'assistant', content: '', streaming: true }])
     setInput('')
     setLoading(true)
-    // Send only the wire fields; the server is stateless and re-reads history.
     const wire: AskMessage[] = base.map(({ role, content }) => ({ role, content }))
     try {
       await askStream(wire, {
-        // A tool turn started — discard any pre-tool narration, show the status.
         onStatus: (status) => patchLast((t) => ({ ...t, status, content: '' })),
         onDelta: (chunk) => patchLast((t) => ({ ...t, status: undefined, content: t.content + chunk })),
-        onDone: (res: AskResponse) =>
+        onDone: (res: AskResponse) => {
           patchLast((t) => ({
             ...t, content: res.answer, citations: res.citations,
             meta: { model: res.model, turns: res.turns }, streaming: false, status: undefined,
-          })),
+          }))
+          // Persist the finalized exchange (strip streaming-only fields).
+          persist([
+            ...base.map(({ role, content, citations, meta }) => ({ role, content, citations, meta })),
+            { role: 'assistant', content: res.answer, citations: res.citations,
+              meta: { model: res.model, turns: res.turns } },
+          ])
+        },
         onError: (msg) => patchLast((t) => ({ ...t, content: msg, error: true, streaming: false })),
       })
     } catch (e) {
@@ -115,17 +145,51 @@ export default function AskView({ onSelectNode }: Props) {
     }
   }
 
+  const newChat = () => { setTurns([]); setConvId(null); setHistoryOpen(false) }
+
+  const openConversation = async (id: string) => {
+    try {
+      const c = await getConversation(id)
+      setTurns(c.messages.map((m) => ({ ...m })))
+      setConvId(id)
+      setHistoryOpen(false)
+    } catch { /* ignore */ }
+  }
+
+  const removeConversation = async (id: string) => {
+    await deleteConversation(id).catch(() => {})
+    if (id === convId) newChat()
+    refreshHistory()
+  }
+
+  const renameConv = async (c: ConversationSummary) => {
+    const t = window.prompt('Rename conversation', c.title)
+    if (t == null) return
+    await renameConversation(c.id, t.trim() || 'Untitled').catch(() => {})
+    refreshHistory()
+  }
+
   const onKeyDown = (e: React.KeyboardEvent<HTMLTextAreaElement>) => {
-    if (e.key === 'Enter' && !e.shiftKey) {
-      e.preventDefault()
-      send(input)
-    }
+    if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); send(input) }
   }
 
   const empty = turns.length === 0
 
   return (
     <div className="ask-view">
+      {signedIn && (
+        <div className="ask-toolbar">
+          <button className="ask-tool-btn" onClick={() => setHistoryOpen(true)} aria-label="History">
+            ☰ history
+          </button>
+          {!empty && (
+            <button className="ask-tool-btn" onClick={newChat} aria-label="New chat">
+              ＋ new
+            </button>
+          )}
+        </div>
+      )}
+
       <div className="ask-scroll" ref={scrollRef}>
         {empty ? (
           <div className="ask-empty">
@@ -137,9 +201,7 @@ export default function AskView({ onSelectNode }: Props) {
             </p>
             <div className="ask-examples">
               {EXAMPLES.map((ex) => (
-                <button key={ex} className="ask-example" onClick={() => send(ex)}>
-                  {ex}
-                </button>
+                <button key={ex} className="ask-example" onClick={() => send(ex)}>{ex}</button>
               ))}
             </div>
           </div>
@@ -167,14 +229,8 @@ export default function AskView({ onSelectNode }: Props) {
                       <div className="ask-citations">
                         <span className="ask-cite-label">sources</span>
                         {t.citations.map((c) => (
-                          <button
-                            key={c.iri}
-                            className="ask-cite"
-                            title={c.iri}
-                            onClick={() => onSelectNode(c.iri)}
-                          >
-                            {c.title}
-                          </button>
+                          <button key={c.iri} className="ask-cite" title={c.iri}
+                            onClick={() => onSelectNode(c.iri)}>{c.title}</button>
                         ))}
                       </div>
                     )}
@@ -184,7 +240,39 @@ export default function AskView({ onSelectNode }: Props) {
             )
           )
         )}
+        {/* Sign-in nudge: only once there's something worth saving. */}
+        {!signedIn && !empty && (
+          <button className="ask-signin-hint" onClick={onSignIn}>
+            Sign in to save this conversation →
+          </button>
+        )}
       </div>
+
+      {historyOpen && (
+        <>
+          <div className="ask-history-backdrop" onClick={() => setHistoryOpen(false)} />
+          <div className="ask-history">
+            <div className="ask-history-head">
+              <span>Conversations</span>
+              <button className="ask-tool-btn" onClick={() => setHistoryOpen(false)}>✕</button>
+            </div>
+            {history.length === 0 ? (
+              <div className="ask-history-empty">No saved conversations yet.</div>
+            ) : (
+              history.map((c) => (
+                <div key={c.id} className={`ask-history-item${c.id === convId ? ' active' : ''}`}>
+                  <button className="ask-history-open" onClick={() => openConversation(c.id)}>
+                    <div className="ask-history-title">{c.title}</div>
+                    <div className="ask-history-meta">{c.turn_count} · {relTime(c.updated_at)}</div>
+                  </button>
+                  <button className="ask-history-act" title="Rename" onClick={() => renameConv(c)}>✎</button>
+                  <button className="ask-history-act" title="Delete" onClick={() => removeConversation(c.id)}>✕</button>
+                </div>
+              ))
+            )}
+          </div>
+        </>
+      )}
 
       <div className="ask-composer">
         <textarea
@@ -195,14 +283,8 @@ export default function AskView({ onSelectNode }: Props) {
           placeholder="Ask anything about your knowledge…"
           rows={1}
         />
-        <button
-          className="ask-send"
-          disabled={!input.trim() || loading}
-          onClick={() => send(input)}
-          aria-label="Send"
-        >
-          ↑
-        </button>
+        <button className="ask-send" disabled={!input.trim() || loading}
+          onClick={() => send(input)} aria-label="Send">↑</button>
       </div>
     </div>
   )

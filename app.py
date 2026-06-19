@@ -49,6 +49,9 @@ from store import slug_from_path, iri_from_slug, parse_iri, rrf_score, WikiStore
 # ask.py imports `app` lazily inside its functions, so this top-level import is
 # not circular. Reused by /pkis-api/ask and (later) the ask_pkis MCP tool.
 import ask
+# Per-user persistence for ask conversations (auto-saved, versioned). Pure stdlib,
+# no back-reference to app.
+import conversations
 # Comptroller usage accounting (Roster Phase 4). log_usage is BEST-EFFORT — it never
 # raises, so a logging failure cannot break a tool call. Writes to config.USAGE_DB_PATH.
 from usage import log_usage
@@ -4886,6 +4889,90 @@ def pkis_api_ask_stream():
     return Response(stream_with_context(gen()), mimetype="text/event-stream",
                     headers={"Cache-Control": "no-cache",
                              "X-Accel-Buffering": "no"})  # tell nginx not to buffer SSE
+
+
+# ── Conversation persistence (signed-in, per-user) ─────────────────────────
+# Auto-saved latest state; the store self-inits lazily on first use (the default
+# path only exists on the server). Document versioning will live on the studio
+# artifact, not on chat turns.
+CONVERSATIONS_DB = Path(os.environ.get(
+    "PKIS_CONVERSATIONS_DB", "/home/pkis/conversations/conversations.sqlite"))
+_CONV_MAX_TURNS = 500  # generous guard on a single stored conversation
+
+
+def _conv_sub(req):
+    """The signed-in user's id (WorkOS sub) from a web sealed session or an OAuth
+    bearer, else None. Conversations are private to this sub."""
+    ident = web_identity(req) or oauth_identity(req)
+    return ident[0] if ident else None
+
+
+@app.route("/pkis-api/conversations", methods=["GET"])
+def pkis_api_conversations_list():
+    sub = _conv_sub(request)
+    if not sub:
+        return jsonify({"error": "sign in required"}), 401
+    try:
+        return _api_ok({"conversations": conversations.list_for_user(CONVERSATIONS_DB, sub)})
+    except Exception as e:
+        return _api_err(e, 500)
+
+
+@app.route("/pkis-api/conversations", methods=["POST"])
+def pkis_api_conversations_save():
+    """Auto-save (create or update) the signed-in user's conversation, appending a
+    version snapshot. Body: {id?, messages, title?, anchor?, artifact?}."""
+    sub = _conv_sub(request)
+    if not sub:
+        return jsonify({"error": "sign in required"}), 401
+    b = _api_json()
+    messages = b.get("messages")
+    if not isinstance(messages, list) or not messages:
+        return _api_err("messages is required")
+    if len(messages) > _CONV_MAX_TURNS:
+        messages = messages[-_CONV_MAX_TURNS:]
+    try:
+        return _api_ok(conversations.save(
+            CONVERSATIONS_DB, sub, conv_id=b.get("id"), messages=messages,
+            title=b.get("title"), anchor=b.get("anchor"), artifact=b.get("artifact")))
+    except PermissionError as e:
+        return jsonify({"error": str(e)}), 403
+    except Exception as e:
+        return _api_err(e, 500)
+
+
+@app.route("/pkis-api/conversation/<cid>", methods=["GET"])
+def pkis_api_conversation_get(cid):
+    sub = _conv_sub(request)
+    if not sub:
+        return jsonify({"error": "sign in required"}), 401
+    c = conversations.get(CONVERSATIONS_DB, sub, cid)
+    if not c:
+        return _api_err("conversation not found", 404)
+    return _api_ok(c)
+
+
+@app.route("/pkis-api/conversation/<cid>/rename", methods=["POST"])
+def pkis_api_conversation_rename(cid):
+    sub = _conv_sub(request)
+    if not sub:
+        return jsonify({"error": "sign in required"}), 401
+    title = (_api_json().get("title") or "").strip()
+    if not conversations.rename(CONVERSATIONS_DB, sub, cid, title):
+        return _api_err("conversation not found", 404)
+    return _api_ok({"ok": True, "title": title or "Untitled"})
+
+
+@app.route("/pkis-api/conversation/<cid>/delete", methods=["POST"])
+def pkis_api_conversation_delete(cid):
+    """Soft delete (recoverable). Body {deleted: false} undeletes."""
+    sub = _conv_sub(request)
+    if not sub:
+        return jsonify({"error": "sign in required"}), 401
+    deleted = _api_json().get("deleted", True)
+    if not conversations.set_deleted(CONVERSATIONS_DB, sub, cid, bool(deleted)):
+        return _api_err("conversation not found", 404)
+    return _api_ok({"ok": True, "deleted": bool(deleted)})
 
 
 @app.route("/pkis-api/node", methods=["POST"])

@@ -902,7 +902,59 @@ body {
 @media (max-width: 899px) {
   .main-ask { padding-bottom: calc(56px + env(safe-area-inset-bottom)); }
 }
-.ask-view { display: flex; flex-direction: column; height: 100%; min-height: 0; }
+.ask-view { display: flex; flex-direction: column; height: 100%; min-height: 0; position: relative; }
+
+/* Toolbar (signed-in): history + new chat. */
+.ask-toolbar {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 6px 12px; border-bottom: 1px solid var(--border); gap: 8px;
+}
+.ask-tool-btn {
+  font-family: var(--mono); font-size: 11px; color: var(--muted);
+  background: none; border: none; cursor: pointer; padding: 4px 6px;
+}
+.ask-tool-btn:hover { color: var(--text); }
+
+/* Sign-in nudge in the message flow. */
+.ask-signin-hint {
+  align-self: flex-start; font-family: var(--mono); font-size: 11px;
+  color: var(--accent); background: none; border: 1px dashed var(--border);
+  border-radius: var(--radius); padding: 6px 10px; cursor: pointer; margin-top: 4px;
+}
+
+/* History drawer — slides over the message area; backdrop dismisses. */
+.ask-history-backdrop { position: absolute; inset: 0; background: rgba(0,0,0,0.45); z-index: 20; }
+.ask-history {
+  position: absolute; top: 0; left: 0; bottom: 0; z-index: 21;
+  width: 86%; max-width: 340px; background: var(--surface);
+  border-right: 1px solid var(--border); display: flex; flex-direction: column;
+  overflow-y: auto;
+}
+.ask-history-head {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 12px 14px; border-bottom: 1px solid var(--border);
+  font-family: var(--mono); font-size: 12px; color: var(--text);
+  position: sticky; top: 0; background: var(--surface);
+}
+.ask-history-empty { padding: 20px 14px; color: var(--muted); font-size: 13px; }
+.ask-history-item {
+  display: flex; align-items: stretch; border-bottom: 1px solid var(--border);
+}
+.ask-history-item.active { background: var(--raised); }
+.ask-history-open {
+  flex: 1; text-align: left; background: none; border: none; cursor: pointer;
+  padding: 10px 12px; min-width: 0;
+}
+.ask-history-title {
+  font-size: 13px; color: var(--text); white-space: nowrap;
+  overflow: hidden; text-overflow: ellipsis;
+}
+.ask-history-meta { font-family: var(--mono); font-size: 10px; color: var(--muted); margin-top: 3px; }
+.ask-history-act {
+  flex: none; width: 34px; background: none; border: none; border-left: 1px solid var(--border);
+  color: var(--muted); cursor: pointer; font-size: 12px;
+}
+.ask-history-act:hover { color: var(--accent); }
 .ask-scroll {
   flex: 1; overflow-y: auto; min-height: 0;
   padding: 16px 16px 8px;

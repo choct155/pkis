@@ -16,6 +16,9 @@ import type {
   Doc,
   AskMessage,
   AskResponse,
+  AskTurn,
+  ConversationSummary,
+  ConversationFull,
 } from '../types';
 
 const BASE = '/pkis-api';
@@ -35,6 +38,15 @@ async function post<T>(path: string, body: Record<string, unknown> = {}): Promis
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(body),
   });
+  if (!res.ok) {
+    const err = await res.json().catch(() => ({ error: res.statusText }));
+    throw new ApiError((err as { error?: string }).error ?? res.statusText, res.status);
+  }
+  return res.json() as Promise<T>;
+}
+
+async function get<T>(path: string): Promise<T> {
+  const res = await fetch(`${BASE}${path}`, { method: 'GET' });
   if (!res.ok) {
     const err = await res.json().catch(() => ({ error: res.statusText }));
     throw new ApiError((err as { error?: string }).error ?? res.statusText, res.status);
@@ -102,6 +114,27 @@ export async function askStream(messages: AskMessage[], h: AskStreamHandlers): P
       else if (ev.type === 'error') h.onError?.(ev.error ?? 'stream error');
     }
   }
+}
+
+// ── Conversation persistence (signed-in, per-user) ────────────────────────
+export async function listConversations(): Promise<ConversationSummary[]> {
+  const r = await get<{ conversations: ConversationSummary[] }>('/conversations');
+  return r.conversations ?? [];
+}
+export async function getConversation(id: string): Promise<ConversationFull> {
+  return get<ConversationFull>(`/conversation/${id}`);
+}
+// Auto-save (create or update). Returns the (possibly new) id.
+export async function saveConversation(
+  messages: AskTurn[], id?: string | null, title?: string,
+): Promise<{ id: string; title: string; created: boolean }> {
+  return post('/conversations', { id: id ?? undefined, messages, title });
+}
+export async function renameConversation(id: string, title: string): Promise<void> {
+  await post(`/conversation/${id}/rename`, { title });
+}
+export async function deleteConversation(id: string, deleted = true): Promise<void> {
+  await post(`/conversation/${id}/delete`, { deleted });
 }
 
 // ── Node ──────────────────────────────────────────────────────────────────
