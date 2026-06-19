@@ -254,6 +254,17 @@ export async function getAuth(): Promise<AuthState> {
   }
 }
 
+// Owner-only administrative inbox (wiki/inbox.md). Throws ApiError(401/403) if the
+// caller isn't the owner — the session cookie carries the role.
+export async function getInbox(): Promise<{ markdown: string }> {
+  const r = await fetch(`${BASE}/inbox`, { credentials: 'same-origin' });
+  if (!r.ok) {
+    const err = await r.json().catch(() => ({ error: r.statusText }));
+    throw new ApiError((err as { error?: string }).error ?? r.statusText, r.status);
+  }
+  return r.json() as Promise<{ markdown: string }>;
+}
+
 export async function logout(): Promise<void> {
   await fetch(`${BASE}/auth/logout`, { method: 'POST', credentials: 'same-origin' });
 }

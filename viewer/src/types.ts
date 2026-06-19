@@ -10,7 +10,7 @@ export type NodeType =
 
 export type Maturity = 'settled' | 'evolving' | 'contested' | 'historical';
 
-export type View = 'browse' | 'clusters' | 'priority' | 'graph' | 'staged' | 'explainers' | 'discover' | 'docs';
+export type View = 'browse' | 'clusters' | 'priority' | 'graph' | 'staged' | 'explainers' | 'discover' | 'docs' | 'inbox';
 
 // ── Documentation (from /pkis-api/docs and /pkis-api/doc) ─────────────────
 export interface DocMeta {

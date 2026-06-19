@@ -155,3 +155,12 @@ def test_source_status(client):
                     json={"slugs": ["mackay-itila", "no-such-source"]}).get_json()["map"]
     assert r["mackay-itila"]["iri"] == "pkis:source:mackay-itila"
     assert r["no-such-source"] == {"iri": None, "readable": False, "read_url": None, "has_reader": False}
+
+
+@pytest.mark.contract
+def test_inbox_is_owner_gated(client):
+    """The administrative inbox must NOT be open — anonymous (auth dormant in tests)
+    gets 401, never the inbox markdown."""
+    r = client.get("/pkis-api/inbox")
+    assert r.status_code in (401, 403)
+    assert "markdown" not in (r.get_json() or {})

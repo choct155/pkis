@@ -1294,3 +1294,27 @@ body {
 .docs-back:hover { color: var(--accent); border-color: var(--accent); }
 .docs-article { max-width: 760px; }
 @media (min-width: 900px) { .docs-article { margin: 0 auto; } }
+
+/* ── INBOX (owner-only administrative view) ───────────────────────────────── */
+.inbox-view { padding-bottom: 8px; }
+.inbox-head { display: flex; align-items: baseline; gap: 10px; margin: 4px 2px 14px; }
+.inbox-title { font-family: var(--sans); font-size: 20px; font-weight: 700; color: var(--bright); }
+.inbox-count { font-family: var(--mono); font-size: 11px; color: var(--muted); }
+.inbox-lane {
+  background: var(--raised); border: 1px solid var(--border); border-radius: var(--radius);
+  padding: 12px 14px; margin-bottom: 10px;
+}
+.inbox-lane.empty { opacity: 0.55; }
+.inbox-lane-head { display: flex; align-items: center; gap: 8px; margin-bottom: 4px; }
+.inbox-lane-title {
+  font-family: var(--mono); font-size: 11px; font-weight: 600; letter-spacing: 0.08em;
+  text-transform: uppercase; color: var(--muted);
+}
+.inbox-lane-badge {
+  font-family: var(--mono); font-size: 10px; font-weight: 700; color: #fff;
+  background: var(--accent); border-radius: 99px; padding: 1px 7px; min-width: 18px; text-align: center;
+}
+.inbox-lane-body { font-size: 13px; line-height: 1.55; color: var(--text); }
+.inbox-lane-body ul { margin: 4px 0; padding-left: 18px; }
+.inbox-lane-body li { margin: 4px 0; }
+.inbox-lane.empty .inbox-lane-body { font-style: italic; color: var(--muted); }

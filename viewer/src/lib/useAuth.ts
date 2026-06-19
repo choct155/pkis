@@ -25,5 +25,6 @@ export function useAuth() {
   }, [refresh])
 
   const canWrite = auth.authenticated && (auth.role === 'owner' || auth.role === 'writer')
-  return { auth, loaded, canWrite, refresh, signIn, signOut }
+  const isOwner = auth.authenticated && auth.role === 'owner'   // gates the admin inbox
+  return { auth, loaded, canWrite, isOwner, refresh, signIn, signOut }
 }

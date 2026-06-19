@@ -379,6 +379,19 @@ def is_write_authorized(req) -> bool:
     return bool(wident and wident[1] in ("owner", "writer"))
 
 
+def is_owner(req) -> bool:
+    """Owner tier — gates ADMINISTRATIVE surfaces (the inbox). Static TRUSTED_TOKEN,
+    an OAuth 'owner', or a web sealed session with the 'owner' role. Note: 'writer'
+    does NOT qualify — the inbox is owner-only."""
+    if TRUSTED_TOKEN and _bearer(req) == TRUSTED_TOKEN:
+        return True
+    ident = oauth_identity(req)
+    if ident and ident[1] == "owner":
+        return True
+    wident = web_identity(req)
+    return bool(wident and wident[1] == "owner")
+
+
 def gate_error(req, tier: str) -> PermissionError:
     """Pick the right error for an unauthorized gated tool: a 401 OAuthChallenge
     when OAuth is on and the caller is anonymous (so the connector starts the
@@ -4961,6 +4974,21 @@ def pkis_api_auth_callback():
     except Exception as e:  # noqa: BLE001
         logger.warning("auth callback failed: %s", e, exc_info=True)
         return redirect("/app/?auth_error=1")
+
+
+@app.route("/pkis-api/inbox", methods=["GET"])
+def pkis_api_inbox():
+    """OWNER-ONLY administrative inbox (wiki/inbox.md) — the unified review surface.
+    401 if anonymous, 403 if signed in without the owner role (e.g. a 'writer' or
+    another user). Returns the raw markdown; the viewer parses swim lanes."""
+    if not is_owner(request):
+        anon = (web_identity(request) is None
+                and oauth_identity(request) is None
+                and not _has_static_key(request))
+        return (jsonify({"error": "sign in required"}), 401) if anon \
+            else (jsonify({"error": "owner only — this surface is administrative"}), 403)
+    path = WIKI_DIR / "inbox.md"
+    return _api_ok({"markdown": path.read_text(encoding="utf-8") if path.exists() else ""})
 
 
 @app.route("/pkis-api/auth/me", methods=["GET"])

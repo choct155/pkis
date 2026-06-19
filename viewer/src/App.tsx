@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import type { View, NodeType, SearchResult } from './types'
 import { useAuth } from './lib/useAuth'
 import TopBar from './components/TopBar'
@@ -20,6 +20,7 @@ import StagedView from './views/StagedView'
 import ExplainersView from './views/ExplainersView'
 import DiscoverView from './views/DiscoverView'
 import DocsView from './views/DocsView'
+import InboxView from './views/InboxView'
 import ReaderView from './views/ReaderView'
 import ExplainerOverlay from './components/ExplainerOverlay'
 
@@ -34,7 +35,11 @@ export default function App() {
   const [searchResults, setSearchResults] = useState<SearchResult[] | null>(null)
   const [readerSlug, setReaderSlug] = useState<string | null>(null)
   const [explainer, setExplainer] = useState<{ slug: string; title?: string } | null>(null)
-  const { auth, canWrite, signIn, signOut } = useAuth()
+  const { auth, canWrite, isOwner, signIn, signOut } = useAuth()
+
+  // Owner-only views: if the inbox is open and the user isn't (or is no longer) the
+  // owner — e.g. they signed out — fall back to browse.
+  useEffect(() => { if (view === 'inbox' && !isOwner) setView('browse') }, [view, isOwner])
 
   const openExplainer = (slug: string, title?: string) => setExplainer({ slug, title })
 
@@ -64,6 +69,7 @@ export default function App() {
         <Sidebar
           view={view}
           onNavigate={setView}
+          isOwner={isOwner}
           domainFilter={domainFilter}
           onDomain={handleDomain}
           clusterFilter={clusterFilter}
@@ -136,13 +142,14 @@ export default function App() {
                   <DiscoverView onSelectNode={handleSelectNode} />
                 )}
                 {view === 'docs' && <DocsView />}
+                {view === 'inbox' && isOwner && <InboxView onSelectNode={handleSelectNode} />}
               </>
             )}
           </div>
         </div>
       </div>
 
-      <BottomNav active={view} onNavigate={setView} />
+      <BottomNav active={view} onNavigate={setView} isOwner={isOwner} />
       <Fab onClick={() => setCaptureOpen(true)} />
 
       {selectedIri && (

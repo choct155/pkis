@@ -5,6 +5,7 @@ export interface NavItem {
   icon: string
   label: string
   group: 'primary' | 'secondary'
+  admin?: boolean   // owner-only (administrative) — hidden unless role === 'owner'
 }
 
 // Shared by BottomNav (mobile) and Sidebar (desktop) so the nav set stays DRY.
@@ -19,7 +20,11 @@ export const NAV_ITEMS: NavItem[] = [
   { view: 'explainers', icon: '▦', label: 'explain',  group: 'secondary' },
   { view: 'discover',   icon: '✦', label: 'discover', group: 'secondary' },
   { view: 'docs',       icon: '▤', label: 'docs',     group: 'secondary' },
+  { view: 'inbox',      icon: '✉', label: 'inbox',    group: 'secondary', admin: true },
 ]
 
 export const PRIMARY_NAV = NAV_ITEMS.filter((n) => n.group === 'primary')
 export const SECONDARY_NAV = NAV_ITEMS.filter((n) => n.group === 'secondary')
+
+// Nav items visible to the current user — admin (owner-only) items hidden otherwise.
+export const navFor = (isOwner: boolean) => NAV_ITEMS.filter((n) => !n.admin || isOwner)
