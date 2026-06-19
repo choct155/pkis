@@ -984,10 +984,13 @@ body {
 .ask-history-act:hover { color: var(--accent); }
 .ask-history-act.shared { color: var(--green); }            /* a live link exists */
 .ask-history-act.revoke:hover { color: var(--red); }
-.ask-share-toast {
-  margin: 8px 12px; padding: 7px 10px; border-radius: var(--radius);
+/* Floating share feedback — visible whether or not the history drawer is open. */
+.ask-toast {
+  position: absolute; top: 12px; left: 50%; transform: translateX(-50%); z-index: 30;
+  padding: 8px 14px; border-radius: 999px;
   background: var(--raised); border: 1px solid var(--border);
-  font-family: var(--mono); font-size: 11px; color: var(--green); text-align: center;
+  font-family: var(--mono); font-size: 11px; color: var(--green);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.4);
 }
 
 /* ── Public share view (/app/?s=<token>) ──────────────────────────────────── */

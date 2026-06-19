@@ -205,10 +205,10 @@ export default function AskView({ onSelectNode, signedIn, onSignIn }: Props) {
   }
 
   const [shareMsg, setShareMsg] = useState<string | null>(null)
-  const shareConversation = async (c: ConversationSummary) => {
+  const doShareConversation = async (id: string, title: string) => {
     try {
-      const { url } = await createShare('conversation', c.id)
-      const r = await shareLink(url, c.title)               // native sheet → clipboard fallback
+      const { url } = await createShare('conversation', id)
+      const r = await shareLink(url, title)                 // native sheet → clipboard fallback
       if (r === 'cancelled') return
       setShareMsg(r === 'copied' ? 'Link copied' : r === 'shared' ? 'Shared' : 'Share failed')
     } catch {
@@ -217,6 +217,10 @@ export default function AskView({ onSelectNode, signedIn, onSignIn }: Props) {
     setTimeout(() => setShareMsg(null), 2200)
     refreshHistory()   // pick up the now-shared badge
   }
+  const shareConversation = (c: ConversationSummary) => doShareConversation(c.id, c.title)
+  // Title for the share sheet when sharing the open chat: its first question.
+  const currentTitle = () =>
+    turns.find((t) => t.role === 'user')?.content?.slice(0, 70) || 'PKIS conversation'
   const revokeConversationShare = async (c: ConversationSummary) => {
     if (!c.share_token || !window.confirm('Revoke this link? Anyone who has it will lose access.')) return
     await revokeShare(c.share_token).catch(() => {})
@@ -233,6 +237,7 @@ export default function AskView({ onSelectNode, signedIn, onSignIn }: Props) {
 
   return (
     <div className="ask-view">
+      {shareMsg && <div className="ask-toast">{shareMsg}</div>}
       {(signedIn || speech.supported) && (
         <div className="ask-toolbar">
           <div className="ask-toolbar-grp">
@@ -244,6 +249,12 @@ export default function AskView({ onSelectNode, signedIn, onSignIn }: Props) {
             {signedIn && !empty && (
               <button className="ask-tool-btn" onClick={newChat} aria-label="New chat">
                 ＋ new
+              </button>
+            )}
+            {signedIn && convId && (
+              <button className="ask-tool-btn" onClick={() => doShareConversation(convId, currentTitle())}
+                aria-label="Share this conversation" title="Share this conversation">
+                ↗ share
               </button>
             )}
           </div>
@@ -332,7 +343,6 @@ export default function AskView({ onSelectNode, signedIn, onSignIn }: Props) {
               <span>Conversations</span>
               <button className="ask-tool-btn" onClick={() => setHistoryOpen(false)}>✕</button>
             </div>
-            {shareMsg && <div className="ask-share-toast">{shareMsg}</div>}
             {history.length === 0 ? (
               <div className="ask-history-empty">No saved conversations yet.</div>
             ) : (
