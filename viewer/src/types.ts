@@ -53,6 +53,14 @@ export interface ConversationFull extends ConversationSummary {
   artifact: string | null;
 }
 
+// Public read-only content behind a capability link (/app/?s=<token>).
+export interface SharedContent {
+  kind: 'conversation';
+  title: string;
+  messages: AskTurn[];
+  updated_at: string;
+}
+
 // ── Documentation (from /pkis-api/docs and /pkis-api/doc) ─────────────────
 export interface DocMeta {
   key: string;

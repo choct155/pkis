@@ -52,6 +52,8 @@ import ask
 # Per-user persistence for ask conversations (auto-saved, versioned). Pure stdlib,
 # no back-reference to app.
 import conversations
+# Capability-link sharing (token → owned item, public read-only). Pure stdlib.
+import shares
 # Comptroller usage accounting (Roster Phase 4). log_usage is BEST-EFFORT — it never
 # raises, so a logging failure cannot break a tool call. Writes to config.USAGE_DB_PATH.
 from usage import log_usage
@@ -4973,6 +4975,62 @@ def pkis_api_conversation_delete(cid):
     if not conversations.set_deleted(CONVERSATIONS_DB, sub, cid, bool(deleted)):
         return _api_err("conversation not found", 404)
     return _api_ok({"ok": True, "deleted": bool(deleted)})
+
+
+# ── Capability-link sharing (mint owner-only; resolve public, read-only) ────
+SHARES_DB = Path(os.environ.get("PKIS_SHARES_DB", "/home/pkis/conversations/shares.sqlite"))
+
+
+def _share_owns(sub, kind, ref):
+    """Does this signed-in user own the item they're trying to share?"""
+    if kind == "conversation":
+        c = conversations.get(CONVERSATIONS_DB, sub, ref)
+        return bool(c and not c.get("deleted"))
+    return False
+
+
+@app.route("/pkis-api/share", methods=["POST"])
+def pkis_api_share_create():
+    """Owner mints (or reuses) a read-only capability link for an owned item.
+    Body: {kind, ref}. Returns {token, url, created}."""
+    sub = _conv_sub(request)
+    if not sub:
+        return jsonify({"error": "sign in required"}), 401
+    b = _api_json()
+    kind, ref = b.get("kind"), b.get("ref")
+    if kind not in ("conversation",):           # nodes/docs reuse this later
+        return _api_err("unsupported share kind")
+    if not ref or not _share_owns(sub, kind, ref):
+        return _api_err("item not found or not yours", 404)
+    res = shares.mint(SHARES_DB, sub, kind, ref)
+    res["url"] = f"/app/?s={res['token']}"
+    return _api_ok(res)
+
+
+@app.route("/pkis-api/share/<token>/revoke", methods=["POST"])
+def pkis_api_share_revoke(token):
+    sub = _conv_sub(request)
+    if not sub:
+        return jsonify({"error": "sign in required"}), 401
+    if not shares.revoke(SHARES_DB, sub, token):
+        return _api_err("share not found", 404)
+    return _api_ok({"ok": True})
+
+
+@app.route("/pkis-api/share/<token>", methods=["GET"])
+def pkis_api_share_resolve(token):
+    """PUBLIC, no auth: a valid token returns the shared item's read-only content.
+    Returns only the content (title + messages) — never the owner's identity."""
+    sh = shares.resolve(SHARES_DB, token)
+    if not sh:
+        return _api_err("share not found or revoked", 404)
+    if sh["kind"] == "conversation":
+        c = conversations.get(CONVERSATIONS_DB, sh["owner_sub"], sh["ref"])
+        if not c or c.get("deleted"):
+            return _api_err("shared item is no longer available", 404)
+        return _api_ok({"kind": "conversation", "title": c["title"],
+                        "messages": c["messages"], "updated_at": c["updated_at"]})
+    return _api_err("unsupported share kind", 400)
 
 
 @app.route("/pkis-api/node", methods=["POST"])

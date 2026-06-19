@@ -3,7 +3,9 @@ import type { AskMessage, AskResponse, AskTurn, Citation, ConversationSummary } 
 import {
   askStream, resolveSlug, ApiError,
   listConversations, getConversation, saveConversation, deleteConversation, renameConversation,
+  createShare,
 } from '../lib/api'
+import { shareLink } from '../lib/share'
 import { renderMarkdown } from '../lib/markdown'
 import { renderMath } from '../lib/katex'
 import { useSpeech, useSpeechInput } from '../lib/voice'
@@ -202,6 +204,19 @@ export default function AskView({ onSelectNode, signedIn, onSignIn }: Props) {
     refreshHistory()
   }
 
+  const [shareMsg, setShareMsg] = useState<string | null>(null)
+  const shareConversation = async (c: ConversationSummary) => {
+    try {
+      const { url } = await createShare('conversation', c.id)
+      const r = await shareLink(url, c.title)               // native sheet → clipboard fallback
+      if (r === 'cancelled') return
+      setShareMsg(r === 'copied' ? 'Link copied' : r === 'shared' ? 'Shared' : 'Share failed')
+    } catch {
+      setShareMsg('Share failed')
+    }
+    setTimeout(() => setShareMsg(null), 2200)
+  }
+
   const onKeyDown = (e: React.KeyboardEvent<HTMLTextAreaElement>) => {
     if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); send(input) }
   }
@@ -309,6 +324,7 @@ export default function AskView({ onSelectNode, signedIn, onSignIn }: Props) {
               <span>Conversations</span>
               <button className="ask-tool-btn" onClick={() => setHistoryOpen(false)}>✕</button>
             </div>
+            {shareMsg && <div className="ask-share-toast">{shareMsg}</div>}
             {history.length === 0 ? (
               <div className="ask-history-empty">No saved conversations yet.</div>
             ) : (
@@ -318,6 +334,7 @@ export default function AskView({ onSelectNode, signedIn, onSignIn }: Props) {
                     <div className="ask-history-title">{c.title}</div>
                     <div className="ask-history-meta">{c.turn_count} · {relTime(c.updated_at)}</div>
                   </button>
+                  <button className="ask-history-act" title="Share" onClick={() => shareConversation(c)}>↗</button>
                   <button className="ask-history-act" title="Rename" onClick={() => renameConv(c)}>✎</button>
                   <button className="ask-history-act" title="Delete" onClick={() => removeConversation(c.id)}>✕</button>
                 </div>

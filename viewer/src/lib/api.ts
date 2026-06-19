@@ -19,6 +19,7 @@ import type {
   AskTurn,
   ConversationSummary,
   ConversationFull,
+  SharedContent,
 } from '../types';
 
 const BASE = '/pkis-api';
@@ -135,6 +136,19 @@ export async function renameConversation(id: string, title: string): Promise<voi
 }
 export async function deleteConversation(id: string, deleted = true): Promise<void> {
   await post(`/conversation/${id}/delete`, { deleted });
+}
+
+// ── Sharing (capability links) ────────────────────────────────────────────
+// Mint (or reuse) a read-only public link for an owned item. Returns { token, url }.
+export async function createShare(kind: string, ref: string): Promise<{ token: string; url: string; created: boolean }> {
+  return post('/share', { kind, ref });
+}
+export async function revokeShare(token: string): Promise<void> {
+  await post(`/share/${token}/revoke`, {});
+}
+// Public, no-auth: resolve a share token to its read-only content.
+export async function getShared(token: string): Promise<SharedContent> {
+  return get(`/share/${token}`);
 }
 
 // ── Node ──────────────────────────────────────────────────────────────────
