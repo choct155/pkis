@@ -130,3 +130,13 @@ def test_app_bare_redirects_to_trailing_slash(client):
     r = client.get("/app")
     assert r.status_code == 301
     assert r.headers["Location"].endswith("/app/")
+
+
+@pytest.mark.contract
+def test_resolve_slug_to_iri(client):
+    """/pkis-api/resolve turns a bare slug (from a body [[wikilink]]) into its IRI,
+    and returns iri=None for a dangling link."""
+    r = client.post("/pkis-api/resolve", json={"slug": "entropy"}).get_json()
+    assert r["iri"] == "pkis:concept:entropy"
+    miss = client.post("/pkis-api/resolve", json={"slug": "no-such-node-xyz"}).get_json()
+    assert miss["iri"] is None

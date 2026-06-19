@@ -433,6 +433,11 @@ body {
   color: var(--accent); text-decoration: underline;
   text-underline-offset: 2px;
 }
+/* Internal [[wikilinks]] — no href, navigate in-app; dotted underline tells them
+   apart from external links. */
+.body-text a.wikilink {
+  text-decoration-style: dotted; cursor: pointer;
+}
 
 /* ── VIZ PANEL ────────────────────────────────────────────────────────── */
 .viz-toggle {

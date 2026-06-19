@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
-import { getNode } from '../lib/api'
+import { getNode, resolveSlug } from '../lib/api'
 import { renderMarkdown } from '../lib/markdown'
 import { renderMath } from '../lib/katex'
 import type { FullNode, NodeType, RelatedNode, ReadingPathItem } from '../types'
@@ -29,18 +29,30 @@ function Pips({ count, filled, variant, sheet }: {
   )
 }
 
-function MarkdownBody({ md }: { md: string }) {
+function MarkdownBody({ md, onWiki }: { md: string; onWiki: (slug: string) => void }) {
   const ref = useRef<HTMLDivElement>(null)
   const html = renderMarkdown(md)
   useEffect(() => {
     renderMath(ref.current)
-    // Open body links (e.g. explainer URLs) in a new tab instead of
+    // Open external body links (e.g. explainer URLs) in a new tab instead of
     // navigating away from the PWA.
     ref.current?.querySelectorAll('a[href]').forEach((a) => {
       a.setAttribute('target', '_blank')
       a.setAttribute('rel', 'noreferrer')
     })
-  }, [md])
+    // Internal [[wikilinks]] (no href) navigate in-app: resolve slug → IRI.
+    const cleanups: Array<() => void> = []
+    ref.current?.querySelectorAll('a.wikilink').forEach((a) => {
+      const handler = (e: Event) => {
+        e.preventDefault()
+        const slug = (a as HTMLElement).dataset.slug
+        if (slug) onWiki(slug)
+      }
+      a.addEventListener('click', handler)
+      cleanups.push(() => a.removeEventListener('click', handler))
+    })
+    return () => cleanups.forEach((fn) => fn())
+  }, [md, onWiki])
   return (
     <div
       ref={ref}
@@ -363,7 +375,10 @@ export default function DetailSheet({ iri, onClose, onNavigate, onEdit, onGraph,
               {/* Full node body — every section, with its own ## headings */}
               {fullBody && (
                 <div className="body-section">
-                  <MarkdownBody md={fullBody} />
+                  <MarkdownBody
+                    md={fullBody}
+                    onWiki={(slug) => resolveSlug(slug).then((target) => target && onNavigate(target))}
+                  />
                 </div>
               )}
 

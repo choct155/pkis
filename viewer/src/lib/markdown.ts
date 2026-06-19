@@ -18,6 +18,18 @@ export function renderMarkdown(md: string): string {
     return `%%MATH_INLINE_${placeholders.length - 1}%%`
   })
 
+  // Obsidian-style internal links: [[slug]] or [[slug|label]] → an in-app anchor
+  // (no href; the viewer resolves data-slug → IRI and navigates). marked doesn't
+  // understand this syntax, so without this it renders as dead literal text.
+  protected_ = protected_.replace(
+    /\[\[([^\]|\n]+?)(?:\|([^\]\n]+?))?\]\]/g,
+    (_m, slug, label) => {
+      const s = String(slug).trim().replace(/"/g, '')
+      const text = String(label ?? slug).trim()
+      return `<a class="wikilink" data-slug="${s}">${text}</a>`
+    }
+  )
+
   let html = marked.parse(protected_) as string
   placeholders.forEach((p, i) => {
     html = html.replace(

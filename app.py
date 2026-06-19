@@ -4740,6 +4740,24 @@ def pkis_api_node():
         return _api_err(e, 500)
 
 
+@app.route("/pkis-api/resolve", methods=["POST"])
+def pkis_api_resolve():
+    """Resolve a bare node slug (from a body [[wikilink]]) to its canonical IRI so
+    the viewer can navigate to it. Returns {"iri": null} if no such node exists
+    (a dangling wikilink)."""
+    slug = (_api_json().get("slug", "") or "").strip().lstrip("/")
+    if not slug:
+        return _api_err("slug is required")
+    try:
+        path = find_node_path(slug)
+        if not path:
+            return _api_ok({"iri": None})
+        node = load_node(path)
+        return _api_ok({"iri": (node or {}).get("iri")})
+    except Exception as e:
+        return _api_err(e, 500)
+
+
 @app.route("/pkis-api/related", methods=["POST"])
 def pkis_api_related():
     b = _api_json()

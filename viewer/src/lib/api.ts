@@ -53,6 +53,13 @@ export async function getNode(iri: string): Promise<FullNode> {
   return post<FullNode>('/node', { iri });
 }
 
+// Resolve a bare node slug (from a body [[wikilink]]) to its canonical IRI.
+// Returns null for a dangling link (no such node).
+export async function resolveSlug(slug: string): Promise<string | null> {
+  const r = await post<{ iri: string | null }>('/resolve', { slug });
+  return r.iri ?? null;
+}
+
 // ── Related ───────────────────────────────────────────────────────────────
 export async function getRelated(
   iri: string,
