@@ -30,6 +30,7 @@ export default function BrowseView({ typeFilter, domainFilter, clusterFilter, on
   const [queue, setQueue]     = useState<QueueItem[]>([])
   const [stagedCount, setStagedCount] = useState(0)
   const [loadingMain, setLoadingMain] = useState(true)
+  const [loadErr, setLoadErr] = useState(false)
   const [indexNodes, setIndexNodes] = useState<IndexNode[]>([])
   const [loadingIndex, setLoadingIndex] = useState(false)
 
@@ -44,7 +45,7 @@ export default function BrowseView({ typeFilter, domainFilter, clusterFilter, on
         setHealth(h); setFrontier(f); setQueue(q); setStagedCount(s.length)
         setLoadingMain(false)
       })
-      .catch(() => { if (!cancelled) setLoadingMain(false) })
+      .catch(() => { if (!cancelled) { setLoadErr(true); setLoadingMain(false) } })
     return () => { cancelled = true }
   }, [])
 
@@ -114,6 +115,8 @@ export default function BrowseView({ typeFilter, domainFilter, clusterFilter, on
 
       {loadingMain ? (
         <div className="loading-row"><div className="loading-spinner" /> loading stats…</div>
+      ) : loadErr ? (
+        <div className="empty-state">couldn’t reach the server — pull to refresh</div>
       ) : health && (
         <div className="stats-row">
           <div className="stat-card"><span className="stat-value">{health.total_nodes}</span><span className="stat-label">nodes</span></div>

@@ -304,14 +304,22 @@ export default function DetailSheet({ iri, onClose, onNavigate, onEdit, onGraph,
   const [node, setNode] = useState<FullNode | null>(null)
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
+  const [toast, setToast] = useState<string | null>(null)
 
   useEffect(() => {
     let cancelled = false
     setLoading(true)
     setError(null)
     setNode(null)
-    getNode(iri).then((n: FullNode) => {
-      if (!cancelled) { setNode(n); setLoading(false) }
+    getNode(iri).then((n: FullNode & { error?: string }) => {
+      if (cancelled) return
+      // The backend returns 200 + {error} (and no frontmatter) for a missing node —
+      // treat that as an error instead of rendering a blank shell titled with the IRI.
+      if (n?.error || !n?.frontmatter) {
+        setError(n?.error || `Node not found: ${iri}`); setLoading(false)
+      } else {
+        setNode(n); setLoading(false)
+      }
     }).catch((e: unknown) => {
       if (!cancelled) { setError(String(e)); setLoading(false) }
     })
@@ -376,6 +384,7 @@ export default function DetailSheet({ iri, onClose, onNavigate, onEdit, onGraph,
 
   return (
     <div className="sheet-overlay open">
+      {toast && <div className="toast">{toast}</div>}
       <div className="sheet-backdrop" onClick={onClose} />
       <div className="sheet">
         <div className="sheet-handle" />
@@ -421,7 +430,10 @@ export default function DetailSheet({ iri, onClose, onNavigate, onEdit, onGraph,
                 <div className="body-section">
                   <MarkdownBody
                     md={fullBody}
-                    onWiki={(slug) => resolveSlug(slug).then((target) => target && onNavigate(target))}
+                    onWiki={(slug) => resolveSlug(slug).then((target) => {
+                      if (target) onNavigate(target)
+                      else { setToast('“' + slug + '” isn’t a node yet'); setTimeout(() => setToast(null), 1800) }
+                    })}
                   />
                 </div>
               )}

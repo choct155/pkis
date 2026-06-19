@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
-import { getNode, commitStaged } from '../lib/api'
+import { getNode, editNode } from '../lib/api'
 import { renderMarkdown } from '../lib/markdown'
 import { renderMath } from '../lib/katex'
 import type { FullNode, NodeType } from '../types'
@@ -58,10 +58,10 @@ export default function EditSheet({ iri, onClose }: Props) {
   const handleSave = async () => {
     setSaving(true); setError(null)
     try {
-      await commitStaged('', 'edit', {
-        understanding,
-        body,
-        viz: vizSlug || undefined,
+      await editNode(iri, {
+        frontmatter_updates: { understanding, viz: vizSlug || null },
+        content: body,
+        commit_message: 'viewer: edit node',
       })
       setSuccess(true)
       setTimeout(onClose, 1200)

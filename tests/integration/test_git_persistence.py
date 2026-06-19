@@ -185,3 +185,20 @@ def test_push_is_centralized_to_one_helper(appmod):
     src = open(appmod.__file__).read()
     push_sites = re.findall(r'"git",\s*"-C",[^\]]*?"push"', src)
     assert len(push_sites) == 1, f"expected exactly one `git push` site, found {len(push_sites)}"
+
+
+@pytest.mark.integration
+def test_edit_node_full_body_and_frontmatter(appmod, isolated_wiki):
+    """The viewer edit path: tool_edit_node replaces the full body + a frontmatter
+    field, then commits. (Was broken: the viewer mis-routed to staged/commit.)"""
+    res = appmod.tool_edit_node(
+        iri="pkis:concept:entropy",
+        frontmatter_updates={"understanding": 4},
+        content="## Definition\n\nEdited via the viewer.\n",
+        commit_message="test: edit entropy",
+    )
+    assert res["status"] == "edited" and res["git_pushed"] is True
+    import frontmatter as _fm
+    p = _fm.load(str(isolated_wiki.wiki / "concepts" / "entropy.md"))
+    assert p["understanding"] == 4
+    assert "Edited via the viewer." in p.content

@@ -11,16 +11,17 @@ export default function DocsView() {
   const [manifest, setManifest] = useState<DocMeta[] | null>(null)
   const [selected, setSelected] = useState<string | null>(null)
   const [doc, setDoc] = useState<Doc | null>(null)
-  const [err, setErr] = useState<string | null>(null)
+  const [err, setErr] = useState<string | null>(null)        // fatal: manifest failed
+  const [docErr, setDocErr] = useState<string | null>(null)  // scoped: one doc failed
 
   useEffect(() => {
     getDocs().then(setManifest).catch((e) => setErr(String(e)))
   }, [])
 
   useEffect(() => {
-    if (!selected) { setDoc(null); return }
-    setDoc(null)
-    getDoc(selected).then(setDoc).catch((e) => setErr(String(e)))
+    if (!selected) { setDoc(null); setDocErr(null); return }
+    setDoc(null); setDocErr(null)
+    getDoc(selected).then(setDoc).catch((e) => setDocErr(String(e)))
   }, [selected])
 
   // filename (e.g. "USAGE.md") → manifest key, for resolving cross-links.
@@ -50,7 +51,9 @@ export default function DocsView() {
         <div className="docs-bar">
           <button className="docs-back" onClick={() => setSelected(null)}>← all docs</button>
         </div>
-        {!doc ? (
+        {docErr ? (
+          <div className="empty-state">Couldn’t load this doc: {docErr}</div>
+        ) : !doc ? (
           <div className="empty-state">Loading…</div>
         ) : (
           <article className="docs-article">

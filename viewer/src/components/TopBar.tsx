@@ -27,7 +27,14 @@ export default function TopBar({ onResults, onNavigate, activeView, auth, onSign
       debounceRef.current = setTimeout(async () => {
         setSearching(true)
         try {
-          const results = await searchWiki(val.trim(), { max_results: 20 })
+          let results
+          try {
+            results = await searchWiki(val.trim(), { max_results: 20 })
+          } catch {
+            // one retry — a transient blip shouldn't masquerade as "no results"
+            await new Promise((r) => setTimeout(r, 400))
+            results = await searchWiki(val.trim(), { max_results: 20 })
+          }
           onResults(results)
         } catch {
           onResults([])

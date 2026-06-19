@@ -2020,18 +2020,21 @@ def tool_edit_node(
     slug: str = "",
     frontmatter_updates: dict = None,
     section_updates: dict = None,
+    content: str = None,
     commit_message: str = "",
 ) -> dict:
-    """Edit a LIVE node's frontmatter fields and/or named body sections, then commit + push.
+    """Edit a LIVE node's frontmatter fields and/or body, then commit + push.
     - frontmatter_updates: {field: value} merged into frontmatter (a null value deletes the field).
     - section_updates: {"Section Title": "new markdown body"} — replaces the body under that
       `## Section Title` heading, or appends the section if absent.
+    - content: if provided, REPLACES the entire body (used by the viewer's edit sheet, which
+      edits the whole markdown). Mutually exclusive in spirit with section_updates.
     Covers what add_connections cannot (e.g. a cluster's frontier_hypotheses + Current Frontier).
     date_updated is bumped automatically."""
     frontmatter_updates = frontmatter_updates or {}
     section_updates = section_updates or {}
-    if not frontmatter_updates and not section_updates:
-        raise ValueError("nothing to edit: provide frontmatter_updates and/or section_updates")
+    if not frontmatter_updates and not section_updates and content is None:
+        raise ValueError("nothing to edit: provide frontmatter_updates, section_updates, and/or content")
 
     path = None
     if iri:
@@ -2043,7 +2046,7 @@ def tool_edit_node(
 
     post = frontmatter.load(str(path))
     fm = dict(post.metadata)
-    content = post.content
+    body = post.content if content is None else content   # full-body replace when content given
 
     for k, v in frontmatter_updates.items():
         if v is None:
@@ -2052,11 +2055,11 @@ def tool_edit_node(
             fm[k] = v
 
     for title, body_text in section_updates.items():
-        content = _replace_section(content, title, body_text)
+        body = _replace_section(body, title, body_text)
 
     fm["date_updated"] = datetime.now(timezone.utc).strftime("%Y-%m-%d")
 
-    new_post = frontmatter.Post(content, **fm)
+    new_post = frontmatter.Post(body, **fm)
     path.write_text(frontmatter.dumps(new_post))
 
     # Invalidate caches so the next read/graph reflects the edit
@@ -5193,6 +5196,30 @@ def pkis_api_staged_commit():
             action=b.get("action", "commit"),
             edits=b.get("edits"),
             confirmed_links=b.get("confirmed_links"),
+        ))
+    except ValueError as e:
+        return _api_err(e, 404)
+    except Exception as e:
+        return _api_err(e, 500)
+
+
+@app.route("/pkis-api/edit", methods=["POST"])
+@require_write
+def pkis_api_edit():
+    """Edit a LIVE node from the viewer's edit sheet — frontmatter fields and/or the
+    full body — then commit + push. (The old viewer path mis-routed to staged/commit
+    with an empty staged_id and always 400'd.)"""
+    b = _api_json()
+    iri = b.get("iri", "")
+    if not iri:
+        return _api_err("iri is required")
+    try:
+        return _api_ok(tool_edit_node(
+            iri=iri,
+            frontmatter_updates=b.get("frontmatter_updates") or {},
+            section_updates=b.get("section_updates") or {},
+            content=b.get("content"),
+            commit_message=b.get("commit_message", "viewer: edit node"),
         ))
     except ValueError as e:
         return _api_err(e, 404)

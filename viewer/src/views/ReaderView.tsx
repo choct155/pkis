@@ -66,15 +66,19 @@ export default function ReaderView({ slug, onClose }: Props) {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [slug])
 
-  // Poll while a build is in progress.
+  // Poll while a build is in progress — with a bounded number of attempts so a
+  // server outage (status returns 'unknown') ends in an error state, not a forever-spinner.
   useEffect(() => {
     if (phase !== 'building') return
     let cancelled = false
+    let attempts = 0
     const iv = setInterval(async () => {
       const s = await getReaderStatus(slug)
       if (cancelled) return
+      attempts += 1
       if (s.state === 'ready') { clearInterval(iv); await loadPayload() }
       else if (s.state === 'error') { clearInterval(iv); setPhase('error') }
+      else if (attempts >= 150) { clearInterval(iv); setPhase('error') }  // ~10 min ceiling
     }, 4000)
     return () => { cancelled = true; clearInterval(iv) }
     // eslint-disable-next-line react-hooks/exhaustive-deps

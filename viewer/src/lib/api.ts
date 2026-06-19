@@ -141,10 +141,11 @@ export async function buildReader(slug: string): Promise<{ status: string; slug:
 export async function getReaderStatus(slug: string): Promise<{ state: string }> {
   try {
     const r = await fetch(`/pkis-api/reader/${slug}/status`);
-    if (!r.ok) return { state: 'none' };
+    if (r.status === 404) return { state: 'none' };          // genuinely not built
+    if (!r.ok) return { state: 'unknown' };                  // 5xx / outage — not "none"
     return (await r.json()) as { state: string };
   } catch {
-    return { state: 'none' };
+    return { state: 'unknown' };                             // network error — retryable
   }
 }
 
@@ -185,6 +186,14 @@ export async function getStagedNodes(
 }
 
 // ── Commit staged ─────────────────────────────────────────────────────────
+// Edit a LIVE node (frontmatter fields and/or full body), commit + push. Write-gated.
+export async function editNode(
+  iri: string,
+  opts: { frontmatter_updates?: Record<string, unknown>; content?: string; commit_message?: string }
+): Promise<{ status: string; git_pushed?: boolean }> {
+  return post('/edit', { iri, ...opts });
+}
+
 export async function commitStaged(
   staged_id: string,
   action: string,

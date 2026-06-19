@@ -97,6 +97,7 @@ export default function GraphView({ focusIri, onSelectNode }: Props) {
   const cyRef = useRef<any>(null)
   const [edgeFilter, setEdgeFilter] = useState('all')
   const [loading, setLoading] = useState(true)
+  const [loadError, setLoadError] = useState(false)
 
   useEffect(() => {
     let cancelled = false
@@ -108,7 +109,7 @@ export default function GraphView({ focusIri, onSelectNode }: Props) {
         cytoscapeLib = (cyMod.default ?? cyMod) as unknown as CyFactory
       }
 
-      setLoading(true)
+      setLoading(true); setLoadError(false)
 
       const elements: { data: Record<string, unknown> }[] = []
       const nodeSet = new Set<string>()
@@ -150,7 +151,7 @@ export default function GraphView({ focusIri, onSelectNode }: Props) {
           })
         }
       } catch {
-        // fallback — empty graph
+        if (!cancelled) setLoadError(true)
       }
 
       if (cancelled || !containerRef.current) return
@@ -245,6 +246,12 @@ export default function GraphView({ focusIri, onSelectNode }: Props) {
           <div className="loading-row">
             <div className="loading-spinner" /> building graph…
           </div>
+        </div>
+      )}
+      {!loading && loadError && (
+        <div style={{ position: 'absolute', inset: 0, display: 'flex', alignItems: 'center',
+                      justifyContent: 'center', zIndex: 5 }}>
+          <div className="empty-state">couldn’t load the graph — pull to refresh</div>
         </div>
       )}
       <div ref={containerRef} id="cy" style={{ width: '100%', height: '100%' }} />
