@@ -23,6 +23,16 @@ export function cleanForSpeech(md: string): string {
   return t
 }
 
+// Rebuild the full transcript from a SpeechRecognition results list. Stateless by
+// design — called fresh each event so re-fired/repeated results can't accumulate
+// (the "so so I so I have…" bug). `results` is array-like; each entry's [0]
+// alternative holds the transcript.
+export function assembleTranscript(results: ArrayLike<any>): string {
+  let t = ''
+  for (let i = 0; i < results.length; i++) t += results[i][0].transcript
+  return t.replace(/\s+/g, ' ').trim()
+}
+
 // ── Voice input (speech-to-text) ───────────────────────────────────────────
 // onTranscript fires with the full transcript so far (final + interim) so the
 // caller can live-fill the composer; we never auto-send (STT errs, user edits).
@@ -33,7 +43,6 @@ export function useSpeechInput(onTranscript: (text: string) => void) {
   const supported = !!SR
   const [listening, setListening] = useState(false)
   const recRef = useRef<any>(null)
-  const finalRef = useRef('')
   const cbRef = useRef(onTranscript)
   cbRef.current = onTranscript
 
@@ -45,16 +54,11 @@ export function useSpeechInput(onTranscript: (text: string) => void) {
     rec.lang = 'en-US'
     rec.interimResults = true
     rec.continuous = true
-    finalRef.current = ''
-    rec.onresult = (e: any) => {
-      let interim = ''
-      for (let i = e.resultIndex; i < e.results.length; i++) {
-        const r = e.results[i]
-        if (r.isFinal) finalRef.current += r[0].transcript
-        else interim += r[0].transcript
-      }
-      cbRef.current((finalRef.current + interim).trim())
-    }
+    // Rebuild the FULL transcript from e.results every event (it's the cumulative
+    // source of truth). Never accumulate across events with +=: Android Chrome
+    // re-fires already-finalized results, and appending them produces the classic
+    // "so so I so I have…" recursion.
+    rec.onresult = (e: any) => { cbRef.current(assembleTranscript(e.results)) }
     rec.onerror = () => { setListening(false) }
     rec.onend = () => { setListening(false); recRef.current = null }
     recRef.current = rec

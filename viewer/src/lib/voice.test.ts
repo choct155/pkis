@@ -1,5 +1,31 @@
 import { describe, it, expect } from 'vitest'
-import { cleanForSpeech } from './voice'
+import { cleanForSpeech, assembleTranscript } from './voice'
+
+// Simulate a SpeechRecognition results list: each result is [{transcript}] + isFinal.
+const R = (...segs: Array<[string, boolean]>) =>
+  segs.map(([transcript, isFinal]) => ({ 0: { transcript }, isFinal, length: 1 }))
+
+describe('assembleTranscript (accumulation-bug regression)', () => {
+  it('returns the transcript verbatim for a single interim result', () => {
+    expect(assembleTranscript(R(['so', false]))).toBe('so')
+  })
+
+  it('is stateless across events — re-firing the SAME results does not double', () => {
+    const ev = R(['so I have a question', true])
+    // Android Chrome re-fires finalized results; calling repeatedly must not grow.
+    expect(assembleTranscript(ev)).toBe('so I have a question')
+    expect(assembleTranscript(ev)).toBe('so I have a question')
+  })
+
+  it('concatenates a finalized segment with the following interim cleanly', () => {
+    expect(assembleTranscript(R(['so I have a question', true], [' about entropy', false])))
+      .toBe('so I have a question about entropy')
+  })
+
+  it('collapses whitespace from segment joins', () => {
+    expect(assembleTranscript(R(['hello  ', true], ['  world', false]))).toBe('hello world')
+  })
+})
 
 describe('cleanForSpeech', () => {
   it('humanizes wikilinks (dashes → spaces, label wins)', () => {
