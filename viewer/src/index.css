@@ -982,6 +982,8 @@ body {
   color: var(--muted); cursor: pointer; font-size: 12px;
 }
 .ask-history-act:hover { color: var(--accent); }
+.ask-history-act.shared { color: var(--green); }            /* a live link exists */
+.ask-history-act.revoke:hover { color: var(--red); }
 .ask-share-toast {
   margin: 8px 12px; padding: 7px 10px; border-radius: var(--radius);
   background: var(--raised); border: 1px solid var(--border);

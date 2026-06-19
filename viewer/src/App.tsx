@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import type { View, NodeType, SearchResult } from './types'
+import { resolveSlug } from './lib/api'
 import { useAuth } from './lib/useAuth'
 import TopBar from './components/TopBar'
 import FilterStrip from './components/FilterStrip'
@@ -41,6 +42,13 @@ export default function App() {
   // Owner-only views: if the inbox is open and the user isn't (or is no longer) the
   // owner — e.g. they signed out — fall back to browse.
   useEffect(() => { if (view === 'inbox' && !isOwner) setView('browse') }, [view, isOwner])
+
+  // Node permalink: /app/?n=<slug> opens that node's detail on load (public — no
+  // auth needed; the graph is read-open). This is what a shared node link hits.
+  useEffect(() => {
+    const slug = new URLSearchParams(window.location.search).get('n')
+    if (slug) resolveSlug(slug).then((iri) => { if (iri) setSelectedIri(iri) }).catch(() => {})
+  }, [])
 
   const openExplainer = (slug: string, title?: string) => setExplainer({ slug, title })
 

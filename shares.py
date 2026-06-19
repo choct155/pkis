@@ -142,3 +142,19 @@ def active_token_for(db_path, owner_sub, kind, ref) -> str:
         return None
     finally:
         conn.close()
+
+
+def active_map_for_owner(db_path, owner_sub, kind) -> dict:
+    """{ref: token} for all of this owner's active shares of a kind — lets a list
+    view annotate shared state in a single query (vs one lookup per item)."""
+    _ensure(db_path)
+    conn = _connect(db_path)
+    try:
+        out = {}
+        for r in conn.execute(
+            "SELECT * FROM shares WHERE owner_sub=? AND kind=?", (owner_sub, kind)).fetchall():
+            if _active(r) and r["ref"] not in out:
+                out[r["ref"]] = r["token"]
+        return out
+    finally:
+        conn.close()

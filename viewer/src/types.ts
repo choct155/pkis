@@ -47,6 +47,8 @@ export interface ConversationSummary {
   turn_count: number;
   anchor: { type: string; ref: string } | null;
   deleted: boolean;
+  shared?: boolean;
+  share_token?: string | null;
 }
 export interface ConversationFull extends ConversationSummary {
   messages: AskTurn[];

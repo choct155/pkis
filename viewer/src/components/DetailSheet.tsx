@@ -3,6 +3,7 @@ import { getNode, resolveSlug, resolveSlugs, sourceStatus } from '../lib/api'
 import type { SourceStatus } from '../lib/api'
 import { renderMarkdown } from '../lib/markdown'
 import { renderMath } from '../lib/katex'
+import { shareLink } from '../lib/share'
 import type { FullNode, NodeType, RelatedNode, ReadingPathItem } from '../types'
 import { TypeBadge, MaturityBadge } from './NodeCard'
 import GraphMini from './GraphMini'
@@ -506,6 +507,8 @@ export default function DetailSheet({ iri, onClose, onNavigate, onEdit, onGraph,
           {isSource && (
             <div className="action-btn" onClick={() => onListen(iri.split(':').pop() || '')}>▶ listen</div>
           )}
+          <div className="action-btn"
+            onClick={() => { void shareLink(`/app/?n=${iri.split(':').pop()}`, title) }}>↗ share</div>
           <div className="action-btn" onClick={onGraph}>⬡ graph</div>
           <div className="action-btn primary" onClick={onEdit}>✎ edit</div>
         </div>

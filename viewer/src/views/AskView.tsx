@@ -3,7 +3,7 @@ import type { AskMessage, AskResponse, AskTurn, Citation, ConversationSummary } 
 import {
   askStream, resolveSlug, ApiError,
   listConversations, getConversation, saveConversation, deleteConversation, renameConversation,
-  createShare,
+  createShare, revokeShare,
 } from '../lib/api'
 import { shareLink } from '../lib/share'
 import { renderMarkdown } from '../lib/markdown'
@@ -215,6 +215,14 @@ export default function AskView({ onSelectNode, signedIn, onSignIn }: Props) {
       setShareMsg('Share failed')
     }
     setTimeout(() => setShareMsg(null), 2200)
+    refreshHistory()   // pick up the now-shared badge
+  }
+  const revokeConversationShare = async (c: ConversationSummary) => {
+    if (!c.share_token || !window.confirm('Revoke this link? Anyone who has it will lose access.')) return
+    await revokeShare(c.share_token).catch(() => {})
+    setShareMsg('Link revoked')
+    setTimeout(() => setShareMsg(null), 2200)
+    refreshHistory()
   }
 
   const onKeyDown = (e: React.KeyboardEvent<HTMLTextAreaElement>) => {
@@ -334,7 +342,13 @@ export default function AskView({ onSelectNode, signedIn, onSignIn }: Props) {
                     <div className="ask-history-title">{c.title}</div>
                     <div className="ask-history-meta">{c.turn_count} · {relTime(c.updated_at)}</div>
                   </button>
-                  <button className="ask-history-act" title="Share" onClick={() => shareConversation(c)}>↗</button>
+                  <button className={`ask-history-act${c.shared ? ' shared' : ''}`}
+                    title={c.shared ? 'Shared — tap to share again' : 'Share'}
+                    onClick={() => shareConversation(c)}>↗</button>
+                  {c.shared && (
+                    <button className="ask-history-act revoke" title="Revoke link"
+                      onClick={() => revokeConversationShare(c)}>⊘</button>
+                  )}
                   <button className="ask-history-act" title="Rename" onClick={() => renameConv(c)}>✎</button>
                   <button className="ask-history-act" title="Delete" onClick={() => removeConversation(c.id)}>✕</button>
                 </div>

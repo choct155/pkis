@@ -4915,7 +4915,14 @@ def pkis_api_conversations_list():
     if not sub:
         return jsonify({"error": "sign in required"}), 401
     try:
-        return _api_ok({"conversations": conversations.list_for_user(CONVERSATIONS_DB, sub)})
+        convs = conversations.list_for_user(CONVERSATIONS_DB, sub)
+        # Annotate share state in one query so the history view can show a "shared"
+        # badge + offer revoke without a lookup per row.
+        shared = shares.active_map_for_owner(SHARES_DB, sub, "conversation")
+        for c in convs:
+            c["share_token"] = shared.get(c["id"])
+            c["shared"] = bool(c["share_token"])
+        return _api_ok({"conversations": convs})
     except Exception as e:
         return _api_err(e, 500)
 
