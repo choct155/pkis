@@ -31,6 +31,9 @@ Auditor-flagged gaps for Synthesizer attention.
 
 - [ ] Reader narration audio gap: 215 of 311 reader chapters have NO narration audio (TTS only run for ~96 — mackay, betancourt, early bishop). Missing across bishop-prml, deisenroth-mml, gelman-bda3, goodfellow-deeplearning, jaynes, murphy-pml1/pml2, pearl-causality, resnick, russell-norvig-aima, sutton. The reader now shows a graceful "narration not generated" notice (2026-06-19) instead of a dead player. Building = reader_build TTS run (significant API/TTS cost via tools/reader_build.py) — decide which books to prioritize (2026-06-19) [owner decision]
 
+- [ ] 89 concept stubs auto-created 2026-06-19 (UX review) from dangling references — all carry `needs_classification: true` + `maturity: stub`. Synthesizer: deepen; Hygienist: verify type (some are techniques/principles/results mis-defaulted to concept). They de-dangled ~100 dead internal links (finance/econ, behavioral-econ, causal). (2026-06-19) [Synthesizer]
+- [ ] 2 malformed prose wikilinks (descriptive text inside `[[...]]`) in bridge notes bn-20260531-nedner-is-the-task-under and bn-20260531-the-umbrella-thesis-claims-ontological — fix the link form (2026-06-19) [Hygienist]
+
 ## Awaiting Classification
 Sources with low-confidence knowledge-object classifications pending human decision.
 <!-- - [ ] [[source-slug]] § object-name — candidate types: technique or principle (date flagged) [Librarian] -->
