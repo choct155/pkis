@@ -40,8 +40,16 @@ export function assembleTranscript(results: ArrayLike<any>): string {
 }
 
 // ── Voice input (speech-to-text) ───────────────────────────────────────────
-// onTranscript fires with the full transcript so far (final + interim) so the
-// caller can live-fill the composer; we never auto-send (STT errs, user edits).
+// "Hold-to-dictate": records until the user stops OR a long silence elapses.
+//
+// We keep recognition SINGLE-utterance (continuous=false) — the only mode where
+// "latest result" survives Android's snapshot-finalization — and AUTO-RESTART it
+// on each end. Each session yields one clean utterance (assembleTranscript), which
+// we COMMIT once to an accumulator; the live transcript is committed + current.
+// Short speaking pauses just trigger a restart; SILENCE_MS of true quiet (or a
+// tap) ends it. onTranscript fires with the full dictation; we never auto-send.
+const SILENCE_MS = 8000
+
 export function useSpeechInput(onTranscript: (text: string) => void) {
   const SR = typeof window !== 'undefined'
     ? ((window as any).SpeechRecognition || (window as any).webkitSpeechRecognition)
@@ -49,33 +57,69 @@ export function useSpeechInput(onTranscript: (text: string) => void) {
   const supported = !!SR
   const [listening, setListening] = useState(false)
   const recRef = useRef<any>(null)
+  const committedRef = useRef('')   // finalized utterances this dictation
+  const currentRef = useRef('')     // current session's latest snapshot
+  const stoppingRef = useRef(false) // user (or silence) asked to end
+  const silenceRef = useRef<any>(null)
   const cbRef = useRef(onTranscript)
   cbRef.current = onTranscript
 
-  const stop = useCallback(() => { try { recRef.current?.stop() } catch { /* ignore */ } }, [])
+  const emit = () =>
+    cbRef.current((committedRef.current + ' ' + currentRef.current).replace(/\s+/g, ' ').trim())
+  const clearSilence = () => { if (silenceRef.current) { clearTimeout(silenceRef.current); silenceRef.current = null } }
 
-  const start = useCallback(() => {
-    if (!supported || recRef.current) return
+  // stop() and startSession() reference each other via refs so they stay stable
+  // and never capture stale state across the auto-restart cycle.
+  const stopRef = useRef<() => void>(() => {})
+  const startRef = useRef<() => void>(() => {})
+
+  stopRef.current = () => {
+    stoppingRef.current = true
+    clearSilence()
+    if (recRef.current) { try { recRef.current.stop() } catch { /* ignore */ } }
+    else { setListening(false); emit() }   // ended during the restart gap
+  }
+  const armSilence = () => { clearSilence(); silenceRef.current = setTimeout(() => stopRef.current(), SILENCE_MS) }
+
+  startRef.current = () => {
+    if (!SR) return
     const rec = new SR()
     rec.lang = 'en-US'
     rec.interimResults = true
-    // Single-utterance: continuous mode on Android finalizes every interim
-    // snapshot into the results log, which no de-dup survives. One utterance per
-    // tap keeps "last result" authoritative; the caller appends across taps.
     rec.continuous = false
-    // Rebuild the FULL transcript from e.results every event (it's the cumulative
-    // source of truth). Never accumulate across events with +=: Android Chrome
-    // re-fires already-finalized results, and appending them produces the classic
-    // "so so I so I have…" recursion.
-    rec.onresult = (e: any) => { cbRef.current(assembleTranscript(e.results)) }
-    rec.onerror = () => { setListening(false) }
-    rec.onend = () => { setListening(false); recRef.current = null }
+    rec.onresult = (e: any) => { currentRef.current = assembleTranscript(e.results); emit(); armSilence() }
+    rec.onerror = () => { /* onend decides: restart or stop */ }
+    rec.onend = () => {
+      if (currentRef.current) {
+        committedRef.current = (committedRef.current + ' ' + currentRef.current).replace(/\s+/g, ' ').trim()
+        currentRef.current = ''
+      }
+      recRef.current = null
+      if (stoppingRef.current) { clearSilence(); setListening(false); emit() }
+      else setTimeout(() => { if (!stoppingRef.current) startRef.current() }, 250) // let Android tear down first
+    }
     recRef.current = rec
-    setListening(true)
-    try { rec.start() } catch { setListening(false); recRef.current = null }
-  }, [SR, supported])
+    try { rec.start() } catch { recRef.current = null }
+  }
 
-  useEffect(() => () => { try { recRef.current?.abort?.() } catch { /* ignore */ } }, [])
+  const start = useCallback(() => {
+    if (!supported || recRef.current || listening) return
+    committedRef.current = ''
+    currentRef.current = ''
+    stoppingRef.current = false
+    setListening(true)
+    armSilence()
+    startRef.current()
+  }, [supported, listening])
+
+  const stop = useCallback(() => stopRef.current(), [])
+
+  useEffect(() => () => {
+    stoppingRef.current = true
+    clearSilence()
+    try { recRef.current?.abort?.() } catch { /* ignore */ }
+  }, [])
+
   return { supported, listening, start, stop }
 }
 
