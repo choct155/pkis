@@ -12,7 +12,7 @@ component_scores:
   transfer: null
 coverage: 1
 date_created: '2026-06-09'
-date_updated: '2026-06-09'
+date_updated: '2026-06-20'
 domain:
 - statistical-learning
 id: pkis:concept:stopping-time
@@ -24,6 +24,7 @@ prerequisite-of:
 related_concepts: []
 sources:
 - resnick-stochastic-processes-ch01
+- lange-applied-probability-ch10
 tags:
 - probability-theory
 - stochastic-processes
