@@ -25769,3 +25769,6 @@
 
 ## [2026-06-20] edit | edit_node
 - pkis:concept:bias-variance-tradeoff: fields=['sources'] sections=[]
+
+## [2026-06-20] edit | edit_node
+- pkis:technique:eigendecomposition: fields=['sources'] sections=[]
