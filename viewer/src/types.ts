@@ -215,12 +215,14 @@ export interface FrontierNode {
   maturity?: Maturity;
 }
 
-// A frontier-gap concept a source advances ("why read it is load-bearing").
+// A concept a source informs. is_gap marks an active-cluster frontier gap
+// (load-bearing); cluster is set only then.
 export interface QueueServes {
   concept: string;
   concept_iri: string;
   coverage: number;
-  cluster: string;
+  is_gap?: boolean;
+  cluster?: string | null;
 }
 
 // ── Queue item (from get_reading_queue / cluster-priorities) ──────────────

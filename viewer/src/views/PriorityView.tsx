@@ -51,21 +51,26 @@ export default function PriorityView({ onSelectNode }: Props) {
   )
 }
 
-// "Why read it": the gap concept(s) it advances → else the capture reason.
+// "Why read it": the concept(s) it informs (frontier gaps flagged) → else reason.
 function Why({ item }: { item: QueueItem }) {
   const serves = item.serves || []
+  const more = serves.length > 1 ? <span className="qrow-more"> +{serves.length - 1} more</span> : null
   if (serves.length) {
     const s = serves[0]
-    return (
-      <div className="qrow-why">
-        advances <span className="qrow-concept">{s.concept}</span>
-        <span className="qrow-cov"> (cov {s.coverage})</span> for <span className="qrow-cluster">{s.cluster}</span>
-        {serves.length > 1 && <span className="qrow-more"> +{serves.length - 1} more</span>}
-      </div>
-    )
+    if (s.is_gap) {
+      return (
+        <div className="qrow-why">
+          advances <span className="qrow-concept">{s.concept}</span>
+          <span className="qrow-cov"> (cov {s.coverage})</span>
+          {s.cluster && <> — frontier gap in <span className="qrow-cluster">{s.cluster}</span></>}
+          {more}
+        </div>
+      )
+    }
+    return <div className="qrow-why">informs <span className="qrow-concept">{s.concept}</span>{more}</div>
   }
   if (item.reason) return <div className="qrow-why muted">{item.reason}</div>
-  return <div className="qrow-why muted">captured — not yet linked to a frontier gap</div>
+  return <div className="qrow-why muted">captured — not yet linked to a concept</div>
 }
 
 // Relevance from the frontier priority score, normalized to the queue's top score.

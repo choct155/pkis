@@ -205,15 +205,15 @@ function SourceRelevancePanel({ slug, onNavigate }: { slug: string; onNavigate: 
         research relevance{rel.frontier_score != null && <span className="rel-score"> · priority {rel.frontier_score}</span>}
       </div>
       {rel.serves.length === 0 ? (
-        <div className="rel-empty">In the reading queue by frontier score; not yet linked to a specific gap concept.</div>
+        <div className="rel-empty">Not yet linked to any concept — a Librarian pass will connect it to the concepts it supports.</div>
       ) : (
         <div className="rel-list">
-          <div className="rel-why">Reading this advances these frontier gaps:</div>
+          <div className="rel-why">Reading this informs:</div>
           {rel.serves.map((s) => (
-            <div key={s.concept_iri} className="rel-row" onClick={() => onNavigate(s.concept_iri)}>
+            <div key={s.concept_iri} className={`rel-row${s.is_gap ? ' gap' : ''}`} onClick={() => onNavigate(s.concept_iri)}>
               <span className="rel-concept">{s.concept}</span>
               <span className="rel-cov">coverage {s.coverage}</span>
-              <span className="rel-cluster">{s.cluster}</span>
+              {s.is_gap && s.cluster && <span className="rel-cluster">⚡ frontier gap · {s.cluster}</span>}
             </div>
           ))}
         </div>

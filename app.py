@@ -1058,12 +1058,11 @@ def _norm_source_ref(ref) -> str:
     return s.strip().lstrip("/")
 
 
-def _serves_from(nodes, G, by_iri) -> dict:
-    """{source_slug: [{concept, concept_iri, coverage, cluster}]} — for each source,
-    the frontier-gap concepts (of active clusters) that cite it via their `sources`.
-    This is the 'why read it is load-bearing' linkage behind the Priority queue and
-    the source research-relevance panel."""
-    out = {}
+def _active_cluster_gaps(nodes, G, by_iri) -> dict:
+    """{concept_iri: cluster_title} for the coverage-gap concepts of ACTIVE clusters
+    (frontier-hypothesis dependencies). Used to flag which concepts are load-bearing
+    for live research."""
+    gaps = {}
     clusters = [n for n in nodes
                 if n.get("frontmatter", {}).get("knowledge_type") == "research-cluster"
                 and n.get("frontmatter", {}).get("status") == "active"]
@@ -1074,29 +1073,43 @@ def _serves_from(nodes, G, by_iri) -> dict:
             hp = find_node_path(h_slug)
             if not hp:
                 continue
-            hn = load_node(hp)
-            for _u, v, d in G.edges(hn["iri"], data=True):
+            for _u, v, d in G.edges(load_node(hp)["iri"], data=True):
                 if d.get("edge_type") == "related":
                     continue
                 tn = by_iri.get(v)
-                if not tn:
-                    continue
-                kt = tn.get("frontmatter", {}).get("knowledge_type", "")
-                if kt in ("research-cluster", "hypothesis"):
-                    continue
-                for sref in (tn.get("frontmatter", {}).get("sources") or []):
-                    sslug = _norm_source_ref(sref)
-                    if sslug:
-                        out.setdefault(sslug, []).append({
-                            "concept": tn["title"], "concept_iri": v,
-                            "coverage": tn.get("coverage", 0), "cluster": ctitle,
-                        })
-    for k, lst in out.items():        # dedupe, lowest-coverage (biggest gap) first
+                if tn and tn.get("frontmatter", {}).get("knowledge_type", "") not in ("research-cluster", "hypothesis"):
+                    gaps.setdefault(v, ctitle)
+    return gaps
+
+
+_CONCEPT_KINDS = ("concept", "technique", "result", "principle", "framework", "problem")
+
+
+def _source_concept_map(nodes, G, by_iri) -> dict:
+    """{source_slug: [{concept, concept_iri, coverage, is_gap, cluster}]} — every
+    concept that cites a source via its `sources`, i.e. what reading it informs.
+    Concepts that are active-cluster frontier gaps are flagged is_gap (+cluster) and
+    sorted first (the load-bearing ones). This drives the Priority 'why read it' and
+    the source research-relevance panel."""
+    gaps = _active_cluster_gaps(nodes, G, by_iri)
+    out = {}
+    for cn in nodes:
+        if cn.get("frontmatter", {}).get("knowledge_type", "") not in _CONCEPT_KINDS:
+            continue
+        for sref in (cn.get("frontmatter", {}).get("sources") or []):
+            sslug = _norm_source_ref(sref)
+            if not sslug:
+                continue
+            out.setdefault(sslug, []).append({
+                "concept": cn["title"], "concept_iri": cn["iri"],
+                "coverage": cn.get("coverage", 0),
+                "is_gap": cn["iri"] in gaps, "cluster": gaps.get(cn["iri"]),
+            })
+    for k, lst in out.items():        # dedupe; gaps first, then lowest-coverage
         seen, uniq = set(), []
-        for it in sorted(lst, key=lambda x: x["coverage"]):
-            key = (it["concept_iri"], it["cluster"])
-            if key not in seen:
-                seen.add(key)
+        for it in sorted(lst, key=lambda x: (not x["is_gap"], x["coverage"])):
+            if it["concept_iri"] not in seen:
+                seen.add(it["concept_iri"])
                 uniq.append(it)
         out[k] = uniq
     return out
@@ -1104,11 +1117,11 @@ def _serves_from(nodes, G, by_iri) -> dict:
 
 def _source_relevance(slug: str) -> dict:
     """Standalone (loads nodes/graph) — the research-relevance of one source for the
-    detail panel: the gap concepts it serves + its frontier priority score."""
+    detail panel: the concepts it informs (gaps flagged) + its frontier score."""
     nodes = load_all_nodes()
     G = get_graph()
     by_iri = {n["iri"]: n for n in nodes}
-    serves = _serves_from(nodes, G, by_iri).get(slug, [])
+    serves = _source_concept_map(nodes, G, by_iri).get(slug, [])
     return {"slug": slug, "serves": serves, "frontier_score": _frontier_score_by_slug().get(slug)}
 
 
@@ -1158,7 +1171,7 @@ def tool_get_cluster_priorities() -> dict:
         })
     # Enrich the reading queue with the "why read it" linkage (reuse the nodes/graph
     # already loaded above) + the real source title.
-    serves_map = _serves_from(nodes, G, by_iri)
+    serves_map = _source_concept_map(nodes, G, by_iri)
     rq = tool_get_reading_queue()
     for item in rq:
         sp = find_node_path(item["slug"])
