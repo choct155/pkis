@@ -1,18 +1,35 @@
 ---
-id: "pkis:technique:tensor-decompositions"
 aliases: []
-title: "Tensor Decompositions"
-knowledge_type: technique
 also_type: []
-domain: [optimization, statistical-learning]
-tags: [linear-algebra, tensors, low-rank, tucker, cp-decomposition, tensor-train, kronecker-products, dimensionality-reduction]
-related_concepts: ["[[structured-matrices]]", "[[singular-value-decomposition]]", "[[matrix-decompositions]]", "[[principal-component-analysis]]", "[[curse-of-dimensionality]]"]
-sources: ["[[benzi-hidden-structure-matrices]]"]
-date_created: 2026-05-20
-date_updated: 2026-05-20
 coverage: 1
-understanding: 0
+date_created: 2026-05-20
+date_updated: '2026-06-20'
+domain:
+- optimization
+- statistical-learning
+id: pkis:technique:tensor-decompositions
+knowledge_type: technique
 maturity: evolving
+related_concepts:
+- '[[structured-matrices]]'
+- '[[singular-value-decomposition]]'
+- '[[matrix-decompositions]]'
+- '[[principal-component-analysis]]'
+- '[[curse-of-dimensionality]]'
+sources:
+- '[[benzi-hidden-structure-matrices]]'
+- benzi-hidden-structure-matrices-ch01
+tags:
+- linear-algebra
+- tensors
+- low-rank
+- tucker
+- cp-decomposition
+- tensor-train
+- kronecker-products
+- dimensionality-reduction
+title: Tensor Decompositions
+understanding: 0
 ---
 
 Generalizations of matrix factorizations (especially SVD) to multi-dimensional arrays (tensors), enabling compact representations that scale with the number of modes d rather than exponentially with mode dimensions n.
