@@ -1,22 +1,32 @@
 ---
-id: "pkis:concept:linear-algebraic-groups"
 aliases: []
-title: "Linear Algebraic Groups"
-knowledge_type: concept
-also_type: [framework]
-domain: [statistical-learning, optimization]
-tags: [abstract-algebra, group-theory, algebraic-geometry, representation-theory]
-related_concepts:
-  - "[[group-theory]]"
-  - "[[symmetry-groups]]"
-  - "[[linear-algebra]]"
-sources:
-  - "[[carrell-groups-matrices-vectors]]"
-date_created: 2026-05-20
-date_updated: 2026-05-20
+also_type:
+- framework
 coverage: 1
-understanding: 0
+date_created: 2026-05-20
+date_updated: '2026-06-20'
+domain:
+- statistical-learning
+- optimization
+id: pkis:concept:linear-algebraic-groups
+knowledge_type: concept
 maturity: settled
+related_concepts:
+- '[[group-theory]]'
+- '[[symmetry-groups]]'
+- '[[linear-algebra]]'
+sources:
+- '[[carrell-groups-matrices-vectors]]'
+- benzi-hidden-structure-matrices-ch05
+- carrell-groups-matrices-vectors-ch04
+- carrell-groups-matrices-vectors-ch12
+tags:
+- abstract-algebra
+- group-theory
+- algebraic-geometry
+- representation-theory
+title: Linear Algebraic Groups
+understanding: 0
 ---
 
 Linear algebraic groups are groups defined as subgroups of GL(n,F) cut out by polynomial equations, including the classical groups (GL, SL, O, Sp, U); their structure theory (reductive vs. semisimple, Borel subgroups, Weyl group, Bruhat decomposition, flag varieties) bridges abstract algebra, algebraic geometry, and representation theory.
