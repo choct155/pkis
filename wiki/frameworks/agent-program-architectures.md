@@ -12,7 +12,7 @@ component_scores:
   structure: null
 coverage: 1
 date_created: '2026-06-09'
-date_updated: '2026-06-09'
+date_updated: '2026-06-20'
 domain:
 - agentic-ai
 - reinforcement-learning
@@ -23,6 +23,13 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - russell-norvig-aima-ch02
+- gulli-agentic-design-patterns-ch02
+- gulli-agentic-design-patterns-ch06
+- gulli-agentic-design-patterns-ch23
+- gulli-agentic-design-patterns-ch24
+- gulli-agentic-design-patterns-ch25
+- gulli-agentic-design-patterns-ch26
+- gulli-agentic-design-patterns-ch28
 tags:
 - agent
 - agent-program
