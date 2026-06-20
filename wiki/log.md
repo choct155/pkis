@@ -26141,3 +26141,6 @@
 
 ## [2026-06-20] edit | edit_node
 - pkis:concept:branching-processes: fields=['sources'] sections=[]
+
+## [2026-06-20] edit | edit_node
+- pkis:concept:probability-generating-function: fields=['sources'] sections=[]
