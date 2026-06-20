@@ -23,8 +23,14 @@ DOCS_SOURCES = "/home/pkis/docs/sources"
 WIKI_SOURCES = "/home/pkis/pkis-wiki/wiki/sources"
 
 
+_LIGATURES = {"ﬀ": "ff", "ﬁ": "fi", "ﬂ": "fl", "ﬃ": "ffi", "ﬄ": "ffl", "ﬅ": "ft", "ﬆ": "st"}
+
+
 def _norm(s):
-    return re.sub(r"[^a-z0-9]+", "", (s or "").lower())
+    s = s or ""
+    for lig, rep in _LIGATURES.items():
+        s = s.replace(lig, rep)
+    return re.sub(r"[^a-z0-9]+", "", s.lower())
 
 
 def chapter_nodes(book_slug):
@@ -55,43 +61,65 @@ def main():
     import pypdf
     book_slug = sys.argv[1]
     mode = sys.argv[2] if len(sys.argv) > 2 else "plan"
+    # --anchor "<substring>": for books whose chapter titles are common words that
+    # recur book-wide (title search is hopeless), detect opener pages by a per-chapter
+    # boilerplate line instead (e.g. Springer's "under exclusive license to springer")
+    # and align them sequentially to the chapter titles.
+    anchor = None
+    if "--anchor" in sys.argv:
+        anchor = sys.argv[sys.argv.index("--anchor") + 1].lower()
     chapters = chapter_nodes(book_slug)
     if not chapters:
         print(f"no chapter nodes found for {book_slug}"); sys.exit(2)
     reader = pypdf.PdfReader(os.path.join(BOOKS, book_slug + ".pdf"))
     n = len(reader.pages)
-    heads = [_norm((reader.pages[i].extract_text() or "")[:220]) for i in range(n)]
     keys = [(_norm(t)[:14] or None) for _, t in chapters]
 
-    # TOC region: the (early) pages that mention 3+ distinct chapter titles at once.
-    toc_end = -1
-    for i in range(min(70, n)):
-        hits = sum(1 for k in keys if k and k in heads[i])
-        if hits >= 3:
-            toc_end = i
-    body_start = toc_end + 1
+    if anchor:
+        # Opener pages = those carrying the boilerplate; walk them in order and assign
+        # each to the next chapter whose title appears on it (skips front/back matter).
+        full = [(reader.pages[i].extract_text() or "") for i in range(n)]
+        cand = [i for i in range(n) if anchor in full[i].lower()]
+        openers, ci = [[num, title, None] for num, title in chapters], 0
+        for p in cand:
+            if ci >= len(chapters):
+                break
+            page_norm = _norm(full[p])
+            if keys[ci] and keys[ci] in page_norm:
+                openers[ci][2] = p
+                ci += 1
+        toc_end = -1
+    else:
+        heads = [_norm((reader.pages[i].extract_text() or "")[:280]) for i in range(n)]
+        # TOC region: the (early) pages that mention 3+ distinct chapter titles at once.
+        toc_end = -1
+        for i in range(min(70, n)):
+            hits = sum(1 for k in keys if k and k in heads[i])
+            if hits >= 3:
+                toc_end = i
+        body_start = toc_end + 1
 
-    # Locate each chapter's opener, monotonically increasing. Prefer a page whose
-    # head says "Chapter <n> <title>", then title-at-very-top, then title anywhere.
-    openers, cur = [], body_start
-    for (num, title), k in zip(chapters, keys):
-        found = None
-        if k:
-            chap_key = "chapter" + str(num) + k
-            for i in range(cur, n):
-                if chap_key in heads[i][:90]:
-                    found = i; break
-            if found is None:
+        # Locate each chapter's opener, monotonically increasing. Prefer a page whose
+        # head says "Chapter <n> <title>", then title-at-very-top, then title anywhere.
+        openers, cur = [], body_start
+        for (num, title), k in zip(chapters, keys):
+            found = None
+            if k:
+                chap_key = "chapter" + str(num) + k
                 for i in range(cur, n):
-                    if k in heads[i][:80]:
+                    if chap_key in heads[i][:90]:
                         found = i; break
-            if found is None:
-                for i in range(cur, n):
-                    if k in heads[i]:
-                        found = i; break
-        openers.append([num, title, found])
-        if found is not None:
-            cur = found + 1
+                if found is None:
+                    for i in range(cur, n):
+                        if k in heads[i][:80]:
+                            found = i; break
+                if found is None:
+                    for i in range(cur, n):
+                        if k in heads[i]:
+                            found = i; break
+            openers.append([num, title, found])
+            if found is not None:
+                cur = found + 1
 
     # Fill any gaps (unfound openers) by interpolation so a single miss doesn't sink
     # the whole book; flagged in the printout.
@@ -103,7 +131,8 @@ def main():
     back = None
     last_op = located[-1][2]
     for i in range(last_op + 1, n):
-        if heads[i][:40].startswith(("references", "bibliography")):
+        h = _norm((reader.pages[i].extract_text() or "")[:40])
+        if h.startswith(("references", "bibliography")):
             back = i; break
 
     rows = []
