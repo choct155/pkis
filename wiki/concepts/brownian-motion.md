@@ -29,6 +29,7 @@ related_concepts: []
 sources:
 - resnick-stochastic-processes-ch06
 - resnick-stochastic-processes
+- lange-applied-probability-ch11
 specializes:
 - diffusion-processes
 tags:
