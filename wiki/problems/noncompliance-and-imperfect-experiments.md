@@ -10,7 +10,7 @@ contrasts-with:
 - local-average-treatment-effect
 coverage: 1
 date_created: '2026-06-09'
-date_updated: '2026-06-09'
+date_updated: '2026-06-20'
 domain:
 - causal-analysis
 id: pkis:problem:noncompliance-and-imperfect-experiments
@@ -20,6 +20,7 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - pearl-causality-ch08
+- cunningham-causal-inference-mixtape-ch08
 tags:
 - noncompliance
 - imperfect-compliance

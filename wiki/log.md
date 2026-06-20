@@ -25802,3 +25802,6 @@
 
 ## [2026-06-20] edit | edit_node
 - pkis:concept:local-average-treatment-effect: fields=['sources'] sections=[]
+
+## [2026-06-20] edit | edit_node
+- pkis:problem:noncompliance-and-imperfect-experiments: fields=['sources'] sections=[]
