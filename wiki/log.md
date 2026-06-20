@@ -25610,3 +25610,6 @@
 
 ## [2026-06-20] edit | edit_node
 - pkis:concept:gaussian-process-gp: fields=['sources'] sections=[]
+
+## [2026-06-20] edit | edit_node
+- pkis:technique:nadaraya-watson-estimator: fields=['sources'] sections=[]
