@@ -1,18 +1,31 @@
 ---
-id: "pkis:technique:human-in-the-loop"
 aliases: []
-title: "Human-in-the-Loop"
-knowledge_type: technique
-also_type: [principle]
-domain: [deep-learning]
-tags: [llm, agentic-ai, safety, human-oversight, agent-control]
-related_concepts: []
-sources: ["[[gulli-agentic-design-patterns]]", "[[miehling-agentic-systems-theory-2025]]", "[[afroogh-task-driven-human-ai-2025]]"]
-date_created: 2026-05-20
-date_updated: 2026-05-20
+also_type:
+- principle
 coverage: 3
-understanding: 0
+date_created: 2026-05-20
+date_updated: '2026-06-20'
+domain:
+- deep-learning
+id: pkis:technique:human-in-the-loop
+knowledge_type: technique
 maturity: evolving
+related_concepts: []
+sources:
+- '[[gulli-agentic-design-patterns]]'
+- '[[miehling-agentic-systems-theory-2025]]'
+- '[[afroogh-task-driven-human-ai-2025]]'
+- gulli-agentic-design-patterns-ch12
+- gulli-agentic-design-patterns-ch13
+- gulli-agentic-design-patterns-ch18
+tags:
+- llm
+- agentic-ai
+- safety
+- human-oversight
+- agent-control
+title: Human-in-the-Loop
+understanding: 0
 ---
 
 An agent design pattern that inserts defined human review and approval checkpoints into otherwise autonomous workflows — enabling human judgment to validate, redirect, or veto agent actions at critical decision points before irreversible consequences occur.
