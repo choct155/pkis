@@ -32,6 +32,9 @@ sources:
 - '[[kroese-statistical-modeling]]'
 - '[[lange-applied-probability]]'
 - bishop-prml
+- kroese-statistical-modeling-ch06
+- lange-applied-probability-ch16
+- tanner-tools-statistical-inference-ch04
 specializes:
 - mm-algorithm
 tags:
