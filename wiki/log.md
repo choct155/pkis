@@ -25066,3 +25066,11 @@
 ## [2026-06-14] committed | problem
 - Committed: concept-boundary-finding-problem → problems/concept-boundary-finding-problem.md
 - IRI: pkis:problem:concept-boundary-finding-problem
+
+## [2026-06-20] staged | bridge-note
+- Staged: bn-20260620-organizational-context-for-ontologist-positionin (id: 17a46df5-4210-4645-b7b4-53f8b22aa252)
+- Rationale: Organizational context for ontologist positioning at a private markets data organization. Three grou
+
+## [2026-06-20] committed | bridge-note
+- Committed: bn-20260620-organizational-context-for-ontologist-positionin → bridge-notes/bn-20260620-organizational-context-for-ontologist-positionin.md
+- IRI: pkis:bridge-note:bn-20260620-organizational-context-for-ontologist-positionin

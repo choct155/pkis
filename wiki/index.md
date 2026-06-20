@@ -2427,6 +2427,7 @@
 ## Reading Queue
 
 ## Bridge Notes
+- [[bn-20260620-organizational-context-for-ontologist-positionin]] — Ontologist positioning — organizational context and change management constraints () (2026-06-20)
 - [[bn-20260614-both-the-amortization-argument-and]] — Instantiation depth as shared precondition for amortization and traversal efficiency claims () (2026-06-14)
 - [[bn-20260614-reliability-is-the-shared-empirical]] — Reliability(τ) — shared empirical primitive bridging traversal ranking and amortization hardening () (2026-06-14)
 - [[bn-20260614-edge-traversal-frequency-and-node]] — Edge contribution attribution — two-tier measurement strategy () (2026-06-14)
