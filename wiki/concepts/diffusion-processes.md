@@ -18,6 +18,8 @@ related_concepts:
 sources:
 - '[[lange-applied-probability]]'
 - resnick-stochastic-processes
+- lange-applied-probability-ch11
+- lange-applied-probability-ch13
 tags:
 - stochastic-processes
 - brownian-motion

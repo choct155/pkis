@@ -26063,3 +26063,6 @@
 
 ## [2026-06-20] edit | edit_node
 - pkis:result:product-rule: fields=['sources'] sections=[]
+
+## [2026-06-20] edit | edit_node
+- pkis:concept:diffusion-processes: fields=['sources'] sections=[]
