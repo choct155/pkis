@@ -25262,3 +25262,6 @@
 
 ## [2026-06-20] edit | edit_node
 - pkis:concept:diffusion-processes: fields=['sources'] sections=[]
+
+## [2026-06-20] edit | edit_node
+- pkis:concept:random-walk: fields=['sources'] sections=[]
