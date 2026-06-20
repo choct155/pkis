@@ -1,18 +1,30 @@
 ---
-id: "pkis:technique:in-context-learning"
 aliases: []
-title: "In-Context Learning"
-knowledge_type: technique
-also_type: [concept]
-domain: [deep-learning]
-tags: [llm, prompting, few-shot, chain-of-thought]
-related_concepts: [graph-rag, neural-networks]
-sources: ["[[zhang-graphrag-survey]]", "[[radhakrishnan-datagemma-2024]]", "[[kim-financial-statement-llm-2024]]"]
-date_created: 2026-05-20
-date_updated: 2026-05-20
+also_type:
+- concept
 coverage: 1
-understanding: 0
+date_created: 2026-05-20
+date_updated: '2026-06-20'
+domain:
+- deep-learning
+id: pkis:technique:in-context-learning
+knowledge_type: technique
 maturity: evolving
+related_concepts:
+- graph-rag
+- neural-networks
+sources:
+- '[[zhang-graphrag-survey]]'
+- '[[radhakrishnan-datagemma-2024]]'
+- '[[kim-financial-statement-llm-2024]]'
+- share-thinkongraph
+tags:
+- llm
+- prompting
+- few-shot
+- chain-of-thought
+title: In-Context Learning
+understanding: 0
 ---
 
 A prompting strategy that elicits task-specific behavior from a frozen LLM by providing examples or structured instructions in the input context — without updating model weights — enabling few-shot and zero-shot generalization; in GraphRAG, used to integrate graph-retrieved knowledge via Graph-enhanced Chain-of-Thought and Collaborative KG Refinement.
