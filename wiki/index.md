@@ -1,6 +1,7 @@
 # PKIS Wiki Index
 
 ## Sources
+- [[kwiatkowski-do-2024]] — Do RAG Systems Cover What Matters? Evaluating and Optimizing Responses with Sub-Question Coverage () (2026-06-20)
 - [[ru-ragchecker-2024]] — RAGChecker: A Fine-Grained Framework for Diagnosing Retrieval-Augmented Generation () (2026-06-20)
 - [[edge-from-2024]] — From Local to Global: A Graph RAG Approach to Query-Focused Summarization () (2026-06-20)
 - [[rau-revisiting-2026]] — Revisiting RAG Retrievers: An Information Theoretic Benchmark (MIGRASCOPE) () (2026-06-20)

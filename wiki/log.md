@@ -25169,3 +25169,12 @@
 ## [2026-06-20] committed | source
 - Committed: ru-ragchecker-2024 → sources/ru-ragchecker-2024.md
 - IRI: pkis:source:ru-ragchecker-2024
+
+## [2026-06-20] staged | source-stub
+- Staged: kwiatkowski-do-2024 (id: 60ed18dd-f702-4a2a-9586-2ddd983e3377)
+- Title: Do RAG Systems Cover What Matters? Evaluating and Optimizing Responses with Sub-Question Coverage
+- Enrichment: full
+
+## [2026-06-20] committed | source
+- Committed: kwiatkowski-do-2024 → sources/kwiatkowski-do-2024.md
+- IRI: pkis:source:kwiatkowski-do-2024
