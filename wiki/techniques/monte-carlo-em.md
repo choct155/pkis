@@ -15,7 +15,7 @@ contrasts-with:
 - data-augmentation-algorithm
 coverage: 1
 date_created: '2026-06-11'
-date_updated: '2026-06-11'
+date_updated: '2026-06-20'
 domain:
 - statistics
 - machine-learning
@@ -28,6 +28,7 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - bishop-prml-ch11
+- tanner-tools-statistical-inference-ch04
 tags:
 - em-algorithm
 - monte-carlo

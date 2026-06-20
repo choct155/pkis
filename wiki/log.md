@@ -25988,3 +25988,6 @@
 
 ## [2026-06-20] edit | edit_node
 - pkis:technique:expectation-maximization: fields=['sources'] sections=[]
+
+## [2026-06-20] edit | edit_node
+- pkis:technique:monte-carlo-em: fields=['sources'] sections=[]
