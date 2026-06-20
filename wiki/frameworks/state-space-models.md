@@ -1,18 +1,35 @@
 ---
-id: "pkis:framework:state-space-models"
 aliases: []
-title: "State-Space Models"
-knowledge_type: framework
 also_type: []
-domain: [time-series, state-space-models, bayesian-stats]
-tags: [latent-variables, dynamic-linear-models, hidden-markov-models, linear-gaussian, sequential-inference]
-related_concepts: ["[[kalman-filter]]", "[[structural-time-series]]", "[[dynamic-factor-models]]", "[[directed-graphical-models]]"]
-sources: ["[[duncan-mskf-seemingly-unrelated-1993]]", "[[scott-varian-nowcasting-2013a]]", "[[scott-varian-bsts-2014]]", "[[kroese-statistical-modeling]]"]
-date_created: 2026-05-20
-date_updated: 2026-05-20
 coverage: 4
-understanding: 0
+date_created: 2026-05-20
+date_updated: '2026-06-20'
+domain:
+- time-series
+- state-space-models
+- bayesian-stats
+id: pkis:framework:state-space-models
+knowledge_type: framework
 maturity: settled
+related_concepts:
+- '[[kalman-filter]]'
+- '[[structural-time-series]]'
+- '[[dynamic-factor-models]]'
+- '[[directed-graphical-models]]'
+sources:
+- '[[duncan-mskf-seemingly-unrelated-1993]]'
+- '[[scott-varian-nowcasting-2013a]]'
+- '[[scott-varian-bsts-2014]]'
+- '[[kroese-statistical-modeling]]'
+- kroese-statistical-modeling-ch13
+tags:
+- latent-variables
+- dynamic-linear-models
+- hidden-markov-models
+- linear-gaussian
+- sequential-inference
+title: State-Space Models
+understanding: 0
 ---
 
 A general framework for models of sequential data where observed outputs y_t are generated from unobserved latent states α_t, which evolve through time according to a Markovian transition distribution. In the linear-Gaussian special case (Dynamic Linear Model), both the observation equation y_t = Z_t^T α_t + ε_t and the transition equation α_{t+1} = T_t α_t + R_t η_t are linear with Gaussian noise, making the Kalman filter the optimal exact inference algorithm. A very large class of time series models — including all ARIMA and VARMA models — can be expressed in state-space form.
