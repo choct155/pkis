@@ -3,7 +3,7 @@ aliases: []
 also_type: []
 coverage: 4
 date_created: 2026-05-20
-date_updated: 2026-05-20
+date_updated: '2026-06-20'
 domain:
 - knowledge-representation
 extends:
@@ -23,6 +23,12 @@ sources:
 - '[[allemang-semantic-web]]'
 - '[[delong-nsai-kg-survey-2024]]'
 - '[[luong-ontology-constrained-neural-2026]]'
+- allemang-semantic-web-ch11
+- allemang-semantic-web-ch12
+- allemang-semantic-web-ch15
+- cimiano-ontology-nlp-ch02
+- cimiano-ontology-nlp-ch07
+- cimiano-ontology-nlp-ch08
 specializes:
 - first-order-logic
 tags:
