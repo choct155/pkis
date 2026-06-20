@@ -25128,3 +25128,35 @@
 ## [2026-06-20] committed | source
 - Committed: edge-from-2024 → sources/edge-from-2024.md
 - IRI: pkis:source:edge-from-2024
+
+## [2026-06-20] committed | bridge-note
+- Committed: bn-20260531-thinkongraph-sun-et-al-iclr → bridge-notes/bn-20260531-thinkongraph-sun-et-al-iclr.md
+- IRI: pkis:bridge-note:bn-20260531-thinkongraph-sun-et-al-iclr
+
+## [2026-06-20] committed | bridge-note
+- Committed: bn-20260531-banf-tripartitegraphrag-ontology-concepts-entity → bridge-notes/bn-20260531-banf-tripartitegraphrag-ontology-concepts-entity.md
+- IRI: pkis:bridge-note:bn-20260531-banf-tripartitegraphrag-ontology-concepts-entity
+
+## [2026-06-20] committed | bridge-note
+- Committed: bn-20260531-luong-et-al-present-a → bridge-notes/bn-20260531-luong-et-al-present-a.md
+- IRI: pkis:bridge-note:bn-20260531-luong-et-al-present-a
+
+## [2026-06-20] committed | bridge-note
+- Committed: bn-20260531-the-vsscale-hypothesis-is-a → bridge-notes/bn-20260531-the-vsscale-hypothesis-is-a.md
+- IRI: pkis:bridge-note:bn-20260531-the-vsscale-hypothesis-is-a
+
+## [2026-06-20] committed | bridge-note
+- Committed: bn-20260531-knowledgegraphconstruction-is-the-existing-techn → bridge-notes/bn-20260531-knowledgegraphconstruction-is-the-existing-techn.md
+- IRI: pkis:bridge-note:bn-20260531-knowledgegraphconstruction-is-the-existing-techn
+
+## [2026-06-20] committed | bridge-note
+- Committed: bn-20260531-explicit-intensional-structure-ontological-class → bridge-notes/bn-20260531-explicit-intensional-structure-ontological-class.md
+- IRI: pkis:bridge-note:bn-20260531-explicit-intensional-structure-ontological-class
+
+## [2026-06-20] committed | bridge-note
+- Committed: bn-20260531-the-umbrella-thesis-claims-ontological → bridge-notes/bn-20260531-the-umbrella-thesis-claims-ontological.md
+- IRI: pkis:bridge-note:bn-20260531-the-umbrella-thesis-claims-ontological
+
+## [2026-06-20] committed | bridge-note
+- Committed: bn-20260531-nedner-is-the-task-under → bridge-notes/bn-20260531-nedner-is-the-task-under.md
+- IRI: pkis:bridge-note:bn-20260531-nedner-is-the-task-under

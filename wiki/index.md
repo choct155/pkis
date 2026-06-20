@@ -2433,6 +2433,14 @@
 ## Reading Queue
 
 ## Bridge Notes
+- [[bn-20260531-nedner-is-the-task-under]] — Named Entity Disambiguation is prerequisite-of the Intensional Grounding cluster and its hypotheses () (2026-06-20)
+- [[bn-20260531-the-umbrella-thesis-claims-ontological]] — Intensional Grounding and the NED-accuracy hypothesis use Transformer Attention Mechanisms () (2026-06-20)
+- [[bn-20260531-explicit-intensional-structure-ontological-class]] — Intensional Grounding and NED-accuracy use Formal Ontology as the intensional structure () (2026-06-20)
+- [[bn-20260531-knowledgegraphconstruction-is-the-existing-techn]] — Intensional Grounding uses Knowledge Graph Construction (NER/entity recognition) () (2026-06-20)
+- [[bn-20260531-the-vsscale-hypothesis-is-a]] — The vs-scale hypothesis contrasts-with Neural Scaling Laws () (2026-06-20)
+- [[bn-20260531-luong-et-al-present-a]] — Luong (Ontology-Constrained Neural Reasoning) instantiates the vs-scale mechanism () (2026-06-20)
+- [[bn-20260531-banf-tripartitegraphrag-ontology-concepts-entity]] — Banf and Cimiano sources instantiate ontology-grounded entity interpretation for the cluster () (2026-06-20)
+- [[bn-20260531-thinkongraph-sun-et-al-iclr]] — Think-on-Graph (Sun 2023) instantiates evidence for the NED-accuracy hypothesis () (2026-06-20)
 - [[bn-20260620-organizational-context-for-ontologist-positionin]] — Ontologist positioning — organizational context and change management constraints () (2026-06-20)
 - [[bn-20260614-both-the-amortization-argument-and]] — Instantiation depth as shared precondition for amortization and traversal efficiency claims () (2026-06-14)
 - [[bn-20260614-reliability-is-the-shared-empirical]] — Reliability(τ) — shared empirical primitive bridging traversal ranking and amortization hardening () (2026-06-14)
