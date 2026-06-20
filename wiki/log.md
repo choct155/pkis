@@ -25160,3 +25160,39 @@
 ## [2026-06-20] committed | bridge-note
 - Committed: bn-20260531-nedner-is-the-task-under → bridge-notes/bn-20260531-nedner-is-the-task-under.md
 - IRI: pkis:bridge-note:bn-20260531-nedner-is-the-task-under
+
+## [2026-06-20] staged | source-stub
+- Staged: ru-ragchecker-2024 (id: c6777973-742e-42b0-b057-2ec0a1096f25)
+- Title: RAGChecker: A Fine-Grained Framework for Diagnosing Retrieval-Augmented Generation
+- Enrichment: full
+
+## [2026-06-20] committed | source
+- Committed: ru-ragchecker-2024 → sources/ru-ragchecker-2024.md
+- IRI: pkis:source:ru-ragchecker-2024
+
+## [2026-06-20] staged | source-stub
+- Staged: kwiatkowski-do-2024 (id: 60ed18dd-f702-4a2a-9586-2ddd983e3377)
+- Title: Do RAG Systems Cover What Matters? Evaluating and Optimizing Responses with Sub-Question Coverage
+- Enrichment: full
+
+## [2026-06-20] committed | source
+- Committed: kwiatkowski-do-2024 → sources/kwiatkowski-do-2024.md
+- IRI: pkis:source:kwiatkowski-do-2024
+
+## [2026-06-20] staged | source-stub
+- Staged: gao-retrievalaugmented-2025 (id: ea00ec22-a008-44b8-befd-c1546755e407)
+- Title: Retrieval-Augmented Generation: A Comprehensive Survey of Architectures, Enhancements, and Robustness Frontiers
+- Enrichment: full
+
+## [2026-06-20] committed | source
+- Committed: gao-retrievalaugmented-2025 → sources/gao-retrievalaugmented-2025.md
+- IRI: pkis:source:gao-retrievalaugmented-2025
+
+## [2026-06-20] staged | source-stub
+- Staged: procko-from-2026 (id: 2d827868-ecce-4506-858c-c434f1a0265d)
+- Title: From Vectors to Knowledge Graphs: A Comprehensive Analysis of Modern Retrieval-Augmented Generation Architectures
+- Enrichment: minimal
+
+## [2026-06-20] committed | source
+- Committed: procko-from-2026 → sources/procko-from-2026.md
+- IRI: pkis:source:procko-from-2026
