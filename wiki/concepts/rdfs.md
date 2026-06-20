@@ -1,18 +1,39 @@
 ---
-id: "pkis:concept:rdfs"
-aliases: ["RDFS"]
-title: "RDF Schema (RDFS)"
-knowledge_type: concept
+aliases:
+- RDFS
 also_type: []
-domain: [knowledge-representation]
-tags: [semantic-web, rdf, schema, subclass, subproperty, domain-range, w3c-standard, ontology]
-related_concepts: ["[[rdf]]", "[[owl]]", "[[ontology-reasoning]]", "[[sparql]]"]
-sources: ["[[allemang-semantic-web]]"]
-date_created: 2026-05-20
-date_updated: 2026-05-20
 coverage: 1
-understanding: 0
+date_created: 2026-05-20
+date_updated: '2026-06-20'
+domain:
+- knowledge-representation
+id: pkis:concept:rdfs
+knowledge_type: concept
 maturity: settled
+related_concepts:
+- '[[rdf]]'
+- '[[owl]]'
+- '[[ontology-reasoning]]'
+- '[[sparql]]'
+sources:
+- '[[allemang-semantic-web]]'
+- allemang-semantic-web-ch07
+- allemang-semantic-web-ch08
+- allemang-semantic-web-ch09
+- allemang-semantic-web-ch10
+- allemang-semantic-web-ch11
+- allemang-semantic-web-ch16
+tags:
+- semantic-web
+- rdf
+- schema
+- subclass
+- subproperty
+- domain-range
+- w3c-standard
+- ontology
+title: RDF Schema (RDFS)
+understanding: 0
 ---
 
 W3C standard schema layer built on top of RDF that adds class and property hierarchies: `rdfs:subClassOf` (inheritance between classes), `rdfs:subPropertyOf` (inheritance between properties), `rdfs:domain` (constraining the type of a property's subject), and `rdfs:range` (constraining the type of a property's object). RDFS inference rules propagate type information through these hierarchies, enabling a reasoner to infer that an individual is a member of a superclass given membership in a subclass.
