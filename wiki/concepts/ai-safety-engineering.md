@@ -14,7 +14,7 @@ component_scores:
   transfer: null
 coverage: 1
 date_created: '2026-06-09'
-date_updated: '2026-06-09'
+date_updated: '2026-06-20'
 domain:
 - ai-safety
 - deep-learning
@@ -27,6 +27,7 @@ prerequisite-of:
 related_concepts: []
 sources:
 - russell-norvig-aima-ch27
+- gulli-agentic-design-patterns-ch18
 tags: []
 title: AI Safety Engineering
 understanding: 0
