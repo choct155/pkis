@@ -26201,3 +26201,6 @@
 
 ## [2026-06-20] edit | edit_node
 - pkis:result:exponential-family-ml-maxent-duality: fields=['sources'] sections=[]
+
+## [2026-06-20] edit | edit_node
+- pkis:result:entropy-concentration-theorem: fields=['sources'] sections=[]
