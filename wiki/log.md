@@ -25742,3 +25742,6 @@
 
 ## [2026-06-20] edit | edit_node
 - pkis:technique:laplace-approximation: fields=['sources'] sections=[]
+
+## [2026-06-20] edit | edit_node
+- pkis:concept:gaussian-distribution: fields=['sources'] sections=[]

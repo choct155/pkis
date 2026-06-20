@@ -3,7 +3,7 @@ aliases: []
 also_type: []
 coverage: 1
 date_created: 2026-05-20
-date_updated: '2026-06-08'
+date_updated: '2026-06-20'
 domain:
 - bayesian-stats
 - statistical-learning
@@ -23,6 +23,8 @@ sources:
 - '[[deisenroth-mml]]'
 - '[[capretto-bambi-2022]]'
 - '[[kurz-hybrid-modeling-2022]]'
+- kroese-statistical-modeling-ch03
+- tanner-tools-statistical-inference-ch02
 tags:
 - probability-theory
 title: Gaussian Distribution
