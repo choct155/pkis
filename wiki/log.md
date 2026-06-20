@@ -26168,3 +26168,6 @@
 
 ## [2026-06-20] edit | edit_node
 - pkis:concept:poisson-process: fields=['sources'] sections=[]
+
+## [2026-06-20] edit | edit_node
+- pkis:concept:thinning-and-superposition: fields=['sources'] sections=[]
