@@ -25,6 +25,7 @@ sources:
 - bishop-prml
 - gelman-bda3
 - murphy-pml1-intro
+- kroese-statistical-modeling-ch10
 specializes:
 - exponential-family
 tags:

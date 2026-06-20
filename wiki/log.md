@@ -25538,3 +25538,6 @@
 
 ## [2026-06-20] edit | edit_node
 - pkis:concept:rdf: fields=['sources'] sections=[]
+
+## [2026-06-20] edit | edit_node
+- pkis:technique:generalized-linear-models: fields=['sources'] sections=[]
