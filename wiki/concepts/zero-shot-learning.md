@@ -12,7 +12,7 @@ component_scores:
   transfer: null
 coverage: 1
 date_created: '2026-06-11'
-date_updated: '2026-06-11'
+date_updated: '2026-06-20'
 domain:
 - machine-learning
 - representation-learning
@@ -25,6 +25,7 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - goodfellow-deeplearning-ch15
+- gulli-agentic-design-patterns-ch22
 specializes:
 - transfer-learning-domain-adaptation
 tags:
