@@ -14,7 +14,7 @@ component_scores:
   transfer: null
 coverage: 1
 date_created: '2026-06-09'
-date_updated: '2026-06-09'
+date_updated: '2026-06-20'
 domain:
 - statistical-learning
 id: pkis:concept:random-sum-compound-distribution
@@ -24,6 +24,7 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - resnick-stochastic-processes-ch01
+- lange-applied-probability-ch09
 tags:
 - probability-theory
 - stochastic-processes

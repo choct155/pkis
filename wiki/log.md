@@ -26144,3 +26144,6 @@
 
 ## [2026-06-20] edit | edit_node
 - pkis:concept:probability-generating-function: fields=['sources'] sections=[]
+
+## [2026-06-20] edit | edit_node
+- pkis:concept:random-sum-compound-distribution: fields=['sources'] sections=[]
