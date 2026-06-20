@@ -8,7 +8,7 @@ contrasts-with:
 - rejection-sampling
 coverage: 3
 date_created: 2026-05-20
-date_updated: '2026-06-08'
+date_updated: '2026-06-20'
 domain:
 - bayesian-stats
 - statistical-learning
@@ -28,6 +28,7 @@ sources:
 - '[[tanner-tools-statistical-inference]]'
 - '[[kroese-statistical-modeling]]'
 - '[[lange-applied-probability]]'
+- tanner-tools-statistical-inference-ch03
 specializes:
 - numerical-vs-simulation-integration
 tags:
