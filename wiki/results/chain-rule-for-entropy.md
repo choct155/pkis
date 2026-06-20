@@ -9,7 +9,7 @@ component_scores:
   statement: null
 coverage: 1
 date_created: '2026-06-08'
-date_updated: '2026-06-08'
+date_updated: '2026-06-20'
 domain:
 - information-theory
 id: pkis:result:chain-rule-for-entropy
@@ -19,6 +19,7 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - mackay-itila-ch08
+- cote-visual-intro-information-theory-2022
 tags:
 - entropy
 - chain-rule
