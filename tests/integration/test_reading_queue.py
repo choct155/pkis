@@ -58,3 +58,28 @@ def test_priority_filter_matches_recorded_hint(appmod, isolated_wiki):
     high = appmod.tool_get_reading_queue(priority="high")
     assert all((it["hint"] or "normal") == "high" for it in high)
     assert any(it["hint"] == "high" for it in high)
+
+
+@pytest.mark.integration
+def test_duplicate_captures_collapse_to_richest(appmod, isolated_wiki):
+    # An append-log queue.md with the same slug captured 3× — two terse, one rich.
+    (isolated_wiki.wiki / "queue.md").write_text(
+        "# Reading Queue\n\n## Queue\n"
+        "- [ ] [[entropy]] — terse\n"
+        "- [ ] [[entropy]] — a much longer and more informative reason\n"
+        "- [ ] [[entropy]] — terse\n")
+    appmod.STORE.invalidate_nodes(); appmod.STORE.invalidate_graph()
+    q = appmod.tool_get_reading_queue()
+    rows = [it for it in q if it["slug"] == "entropy"]
+    assert len(rows) == 1                                   # collapsed
+    assert rows[0]["reason"] == "a much longer and more informative reason"
+
+
+@pytest.mark.integration
+def test_add_to_queue_is_idempotent_for_same_source(appmod, isolated_wiki):
+    first = appmod.tool_add_to_queue(source_iri="pkis:concept:entropy", reason="first")
+    again = appmod.tool_add_to_queue(source_iri="pkis:concept:entropy", reason="dup")
+    assert first.get("entry") and again.get("skipped") == "already queued"
+    # Only one checkbox line for the source was written.
+    text = (isolated_wiki.wiki / "queue.md").read_text()
+    assert text.count("[[entropy]]") == 1

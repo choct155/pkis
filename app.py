@@ -772,6 +772,27 @@ def tool_get_reading_queue(priority=None) -> list:
             "capture_order": len(items),
         })
 
+    # Collapse duplicate captures of the same slug (the queue is an append log, so the
+    # same source can be recorded more than once). Keep the richest entry: prefer a
+    # 'high' hint, then the longest reason, then the earliest capture; always carry the
+    # earliest capture_order forward so unscored items keep a stable order.
+    by_slug = {}
+    for it in items:
+        if not it["slug"]:
+            continue
+        prev = by_slug.get(it["slug"])
+        if prev is None:
+            by_slug[it["slug"]] = it
+            continue
+        earliest = min(prev["capture_order"], it["capture_order"])
+        better = (((it.get("hint") == "high") - (prev.get("hint") == "high"))
+                  or (len(it.get("reason") or "") - len(prev.get("reason") or ""))
+                  or (prev["capture_order"] - it["capture_order"]))
+        winner = it if better > 0 else prev
+        winner["capture_order"] = earliest
+        by_slug[it["slug"]] = winner
+    items = list(by_slug.values())
+
     # Frontier score drives ordering; un-ingested (None) fall to the back in capture order.
     items.sort(key=lambda it: (it["frontier_score"] is not None,
                                it["frontier_score"] or 0.0,
@@ -796,6 +817,12 @@ def tool_add_to_queue(source_iri=None, reference=None, reason="", priority="norm
         content += "\n## Queue\n"
 
     target = source_iri and f"[[{parse_iri(source_iri)[2]}]]" or reference
+    # Idempotent capture: if this source is already queued, don't append a duplicate
+    # (the queue is an append log; re-capturing the same source used to compound it).
+    slug_check = source_iri and parse_iri(source_iri)[2] or (reference or "")
+    if slug_check and re.search(r'- \[ \].*' + re.escape(slug_check), content):
+        return {"success": True, "entry": None, "skipped": "already queued",
+                "priority": priority, "hint": priority}
     captured = datetime.now(timezone.utc).date().isoformat()
     annot = f" (captured: {captured})"
     if priority and priority.lower() == "high":
