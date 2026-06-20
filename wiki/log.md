@@ -25607,3 +25607,6 @@
 
 ## [2026-06-20] edit | edit_node
 - pkis:framework:bayesian-nonparametric-models: fields=['sources'] sections=[]
+
+## [2026-06-20] edit | edit_node
+- pkis:concept:gaussian-process-gp: fields=['sources'] sections=[]
