@@ -1,18 +1,34 @@
 ---
-id: "pkis:framework:lexicalized-tree-adjoining-grammar"
 aliases: []
-title: "Lexicalized Tree Adjoining Grammar"
-knowledge_type: framework
-also_type: [technique]
-domain: [knowledge-representation, symbolic-subsymbolic]
-tags: [grammar, natural-language-processing, syntax, ltag, formal-grammar, parsing]
-related_concepts: [discourse-representation-theory, ontology-lexicon, semantic-parsing]
-sources: ["[[cimiano-ontology-nlp]]", "[[murphy-llm-linguistic-structure-2025]]"]
-date_created: 2026-05-20
-date_updated: 2026-05-20
+also_type:
+- technique
 coverage: 2
-understanding: 0
+date_created: 2026-05-20
+date_updated: '2026-06-20'
+domain:
+- knowledge-representation
+- symbolic-subsymbolic
+id: pkis:framework:lexicalized-tree-adjoining-grammar
+knowledge_type: framework
 maturity: settled
+related_concepts:
+- discourse-representation-theory
+- ontology-lexicon
+- semantic-parsing
+sources:
+- '[[cimiano-ontology-nlp]]'
+- '[[murphy-llm-linguistic-structure-2025]]'
+- cimiano-ontology-nlp-ch03
+- cimiano-ontology-nlp-ch05
+tags:
+- grammar
+- natural-language-processing
+- syntax
+- ltag
+- formal-grammar
+- parsing
+title: Lexicalized Tree Adjoining Grammar
+understanding: 0
 ---
 
 Lexicalized Tree Adjoining Grammar (LTAG) is a grammar formalism in which every elementary structure is a tree anchored to a lexical item; trees combine via substitution and adjunction operations, enabling mildly context-sensitive syntactic representation used here as the syntactic backbone for ontology-aligned parsing.
