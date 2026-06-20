@@ -6,7 +6,7 @@ applies:
 - feedforward-neural-network
 coverage: 4
 date_created: 2026-05-20
-date_updated: '2026-06-08'
+date_updated: '2026-06-20'
 domain:
 - deep-learning
 - statistical-learning
@@ -25,6 +25,8 @@ sources:
 - '[[nielsen-nndl]]'
 - '[[liu-kan-2024]]'
 - '[[marcus-dl-critical-appraisal-2018]]'
+- nielsen-nndl-ch02
+- nielsen-nndl-ch03
 specializes:
 - autodiff
 tags:
