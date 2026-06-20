@@ -25128,3 +25128,7 @@
 ## [2026-06-20] committed | source
 - Committed: edge-from-2024 → sources/edge-from-2024.md
 - IRI: pkis:source:edge-from-2024
+
+## [2026-06-20] committed | bridge-note
+- Committed: bn-20260531-thinkongraph-sun-et-al-iclr → bridge-notes/bn-20260531-thinkongraph-sun-et-al-iclr.md
+- IRI: pkis:bridge-note:bn-20260531-thinkongraph-sun-et-al-iclr
