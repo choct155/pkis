@@ -40,6 +40,7 @@ sources:
 - '[[pearl-reverend-bayes-1982]]'
 - bishop-prml
 - kucukelbir-automatic-2016
+- tanner-tools-statistical-inference-ch01
 tags:
 - variational-methods
 - approximate-inference
