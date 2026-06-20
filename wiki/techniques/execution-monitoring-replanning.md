@@ -11,7 +11,7 @@ component_scores:
   principled_mechanism: null
 coverage: 1
 date_created: '2026-06-09'
-date_updated: '2026-06-09'
+date_updated: '2026-06-20'
 domain:
 - optimization
 - symbolic-subsymbolic
@@ -25,6 +25,10 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - russell-norvig-aima-ch11
+- gulli-agentic-design-patterns-ch06
+- gulli-agentic-design-patterns-ch11
+- gulli-agentic-design-patterns-ch12
+- gulli-agentic-design-patterns-ch19
 tags:
 - planning
 - replanning
