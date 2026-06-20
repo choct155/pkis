@@ -25544,3 +25544,6 @@
 
 ## [2026-06-20] edit | edit_node
 - pkis:framework:generalized-linear-model: fields=['sources'] sections=[]
+
+## [2026-06-20] edit | edit_node
+- pkis:concept:link-function: fields=['sources'] sections=[]

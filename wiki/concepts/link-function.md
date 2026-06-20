@@ -12,7 +12,7 @@ component_scores:
   transfer: null
 coverage: 1
 date_created: '2026-06-09'
-date_updated: '2026-06-09'
+date_updated: '2026-06-20'
 domain:
 - bayesian-stats
 id: pkis:concept:link-function
@@ -24,6 +24,7 @@ prerequisite-of:
 related_concepts: []
 sources:
 - gelman-bda3-ch16
+- kroese-statistical-modeling-ch10
 tags:
 - glm
 - link-function
