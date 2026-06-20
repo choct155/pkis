@@ -15,7 +15,7 @@ component_scores:
   transfer: null
 coverage: 0
 date_created: '2026-06-07'
-date_updated: '2026-06-07'
+date_updated: '2026-06-20'
 domain:
 - knowledge-representation
 - deep-learning
@@ -24,7 +24,10 @@ knowledge_type: concept
 maturity: evolving
 needs_canonical_source: true
 related_concepts: []
-sources: []
+sources:
+- allemang-semantic-web-ch02
+- allemang-semantic-web-ch12
+- allemang-semantic-web-ch16
 tags:
 - knowledge-graphs
 - ontology

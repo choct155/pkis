@@ -25631,3 +25631,6 @@
 
 ## [2026-06-20] edit | edit_node
 - pkis:technique:backpropagation-algorithm: fields=['sources'] sections=[]
+
+## [2026-06-20] edit | edit_node
+- pkis:concept:graph-schema-expressivity: fields=['sources'] sections=[]
