@@ -3,7 +3,7 @@ aliases: []
 also_type: []
 coverage: 2
 date_created: 2026-05-20
-date_updated: 2026-05-20
+date_updated: '2026-06-20'
 domain:
 - statistical-learning
 extends:
@@ -20,6 +20,10 @@ related_concepts:
 sources:
 - '[[deisenroth-mml]]'
 - '[[carrell-groups-matrices-vectors]]'
+- carrell-groups-matrices-vectors-ch06
+- carrell-groups-matrices-vectors-ch07
+- carrell-groups-matrices-vectors-ch08
+- carrell-groups-matrices-vectors-ch09
 tags:
 - mathematical-foundations
 - linear-algebra
