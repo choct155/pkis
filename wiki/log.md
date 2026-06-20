@@ -25772,3 +25772,6 @@
 
 ## [2026-06-20] edit | edit_node
 - pkis:technique:eigendecomposition: fields=['sources'] sections=[]
+
+## [2026-06-20] edit | edit_node
+- pkis:concept:positive-definite-matrix: fields=['sources'] sections=[]
