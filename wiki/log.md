@@ -26177,3 +26177,6 @@
 
 ## [2026-06-20] edit | edit_node
 - pkis:result:poisson-order-statistic-property: fields=['sources'] sections=[]
+
+## [2026-06-20] edit | edit_node
+- pkis:technique:laplace-functional: fields=['sources'] sections=[]
