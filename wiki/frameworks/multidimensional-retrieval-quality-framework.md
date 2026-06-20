@@ -20,7 +20,10 @@ linked_nodes: []
 maturity: evolving
 needs_canonical_source: true
 related_concepts: []
-sources: []
+sources:
+- kwiatkowski-do-2024
+- rau-revisiting-2026
+- saadfalcon-ares-2024
 tags:
 - retrieval
 - evaluation
