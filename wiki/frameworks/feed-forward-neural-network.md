@@ -12,7 +12,7 @@ contrasts-with:
 - curse-of-dimensionality
 coverage: 1
 date_created: '2026-06-11'
-date_updated: '2026-06-11'
+date_updated: '2026-06-20'
 domain:
 - machine-learning
 - neural-networks
@@ -27,6 +27,7 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - bishop-prml-ch05
+- nielsen-nndl-ch04
 tags:
 - mlp
 - universal-approximation
