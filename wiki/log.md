@@ -25187,3 +25187,12 @@
 ## [2026-06-20] committed | source
 - Committed: gao-retrievalaugmented-2025 → sources/gao-retrievalaugmented-2025.md
 - IRI: pkis:source:gao-retrievalaugmented-2025
+
+## [2026-06-20] staged | source-stub
+- Staged: procko-from-2026 (id: 2d827868-ecce-4506-858c-c434f1a0265d)
+- Title: From Vectors to Knowledge Graphs: A Comprehensive Analysis of Modern Retrieval-Augmented Generation Architectures
+- Enrichment: minimal
+
+## [2026-06-20] committed | source
+- Committed: procko-from-2026 → sources/procko-from-2026.md
+- IRI: pkis:source:procko-from-2026
