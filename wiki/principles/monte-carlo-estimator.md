@@ -8,7 +8,7 @@ component_scores:
   violations: null
 coverage: 1
 date_created: '2026-06-08'
-date_updated: '2026-06-08'
+date_updated: '2026-06-20'
 domain:
 - bayesian-stats
 - statistical-learning
@@ -22,6 +22,7 @@ prerequisite-of:
 related_concepts: []
 sources:
 - mackay-itila-ch29
+- kroese-statistical-modeling-ch07
 specializes:
 - numerical-vs-simulation-integration
 tags:

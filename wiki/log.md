@@ -26051,3 +26051,6 @@
 
 ## [2026-06-20] edit | edit_node
 - pkis:technique:metropolis-hastings-algorithm: fields=['sources'] sections=[]
+
+## [2026-06-20] edit | edit_node
+- pkis:principle:monte-carlo-estimator: fields=['sources'] sections=[]
