@@ -25865,3 +25865,6 @@
 
 ## [2026-06-20] edit | edit_node
 - pkis:concept:curse-of-dimensionality: fields=['sources'] sections=[]
+
+## [2026-06-20] edit | edit_node
+- pkis:technique:ridge-regression: fields=['sources'] sections=[]

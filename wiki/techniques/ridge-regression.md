@@ -9,7 +9,7 @@ contrasts-with:
 - gauss-markov-theorem
 coverage: 1
 date_created: 2026-05-20
-date_updated: 2026-05-20
+date_updated: '2026-06-20'
 domain:
 - statistical-learning
 - optimization
@@ -28,6 +28,7 @@ related_concepts:
 - '[[bayesian-linear-regression]]'
 sources:
 - '[[kroese-statistical-modeling]]'
+- kroese-statistical-modeling-ch09
 tags:
 - regularization
 - l2-penalty
