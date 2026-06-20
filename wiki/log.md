@@ -25901,3 +25901,6 @@
 
 ## [2026-06-20] edit | edit_node
 - pkis:framework:state-space-models: fields=['sources'] sections=[]
+
+## [2026-06-20] edit | edit_node
+- pkis:technique:kalman-filter: fields=['sources'] sections=[]

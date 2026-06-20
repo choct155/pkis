@@ -10,7 +10,7 @@ applies:
 - robot-perception-state-estimation
 coverage: 5
 date_created: 2026-05-20
-date_updated: 2026-05-20
+date_updated: '2026-06-20'
 domain:
 - time-series
 - state-space-models
@@ -32,6 +32,7 @@ sources:
 - '[[stock-watson-leading-indicators-1992]]'
 - '[[kroese-statistical-modeling]]'
 - '[[kurz-hybrid-modeling-2022]]'
+- kroese-statistical-modeling-ch13
 specializes:
 - dynamic-bayesian-network
 - filtering-prediction-smoothing
