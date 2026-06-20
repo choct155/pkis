@@ -6,7 +6,7 @@ applies:
 - gaussian-distribution
 coverage: 1
 date_created: 2026-05-20
-date_updated: '2026-06-08'
+date_updated: '2026-06-20'
 domain:
 - statistical-learning
 - bayesian-stats
@@ -20,6 +20,8 @@ related_concepts:
 - '[[logistic-regression]]'
 sources:
 - '[[kroese-statistical-modeling]]'
+- kroese-statistical-modeling-ch06
+- tanner-tools-statistical-inference-ch02
 specializes:
 - maximum-a-posteriori-estimation-map
 - empirical-risk-minimization
