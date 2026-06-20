@@ -26135,3 +26135,6 @@
 
 ## [2026-06-20] edit | edit_node
 - pkis:concept:counterfactuals: fields=['sources'] sections=[]
+
+## [2026-06-20] edit | edit_node
+- pkis:concept:strong-ignorability: fields=['sources'] sections=[]

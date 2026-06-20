@@ -16,7 +16,7 @@ contrasts-with:
 - ignorability
 coverage: 1
 date_created: '2026-06-09'
-date_updated: '2026-06-09'
+date_updated: '2026-06-20'
 domain:
 - causal-analysis
 - bayesian-stats
@@ -27,6 +27,7 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - pearl-causality-ch11
+- cunningham-causal-inference-mixtape-ch05
 specializes:
 - confounding
 tags:
