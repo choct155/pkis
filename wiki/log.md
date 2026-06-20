@@ -26374,3 +26374,12 @@
 ## [2026-06-20] committed | source
 - Committed: angelopoulos-ppi-2023 → sources/angelopoulos-ppi-2023.md
 - IRI: pkis:source:angelopoulos-ppi-2023
+
+## [2026-06-20] staged | node-stub (framework)
+- Staged: llm-as-judge-silver-gold-ppi-framework (id: 416bd86c-4eb9-4a83-80f5-3c60f46d3a6a)
+- Title: LLM-as-Judge Silver/Gold Calibration Framework (PPI)
+- needs_canonical_source: False
+
+## [2026-06-20] committed | framework
+- Committed: llm-as-judge-silver-gold-ppi-framework → frameworks/llm-as-judge-silver-gold-ppi-framework.md
+- IRI: pkis:framework:llm-as-judge-silver-gold-ppi-framework
