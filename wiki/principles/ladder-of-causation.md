@@ -8,7 +8,7 @@ component_scores:
   violations: null
 coverage: 1
 date_created: '2026-06-09'
-date_updated: '2026-06-09'
+date_updated: '2026-06-20'
 domain:
 - causal-analysis
 id: pkis:principle:ladder-of-causation
@@ -18,6 +18,7 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - pearl-causality-ch01
+- cunningham-causal-inference-mixtape-ch01
 tags:
 - causality
 - causal-hierarchy
