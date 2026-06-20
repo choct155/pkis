@@ -11,7 +11,7 @@ component_scores:
   principled_mechanism: null
 coverage: 1
 date_created: '2026-06-09'
-date_updated: '2026-06-09'
+date_updated: '2026-06-20'
 domain:
 - optimization
 - statistical-learning
@@ -23,6 +23,7 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - deisenroth-mml-ch07
+- nielsen-nndl-ch03
 tags: []
 title: Stochastic Gradient Descent (SGD)
 understanding: 0
