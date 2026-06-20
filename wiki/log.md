@@ -26213,3 +26213,6 @@
 
 ## [2026-06-20] edit | edit_node
 - pkis:concept:identification-strategy: fields=['sources'] sections=[]
+
+## [2026-06-20] edit | edit_node
+- pkis:concept:omitted-variable-bias: fields=['sources'] sections=[]
