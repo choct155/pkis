@@ -16,7 +16,7 @@ component_scores:
   principled_mechanism: null
 coverage: 1
 date_created: '2026-06-11'
-date_updated: '2026-06-11'
+date_updated: '2026-06-20'
 domain:
 - statistics
 - machine-learning
@@ -34,6 +34,8 @@ related_concepts: []
 sources:
 - bishop-prml-ch11
 - murphy-pml2-advanced-ch12
+- kroese-statistical-modeling-ch13
+- lange-applied-probability-ch07
 specializes:
 - metropolis-hastings
 - metropolis-hastings-algorithm
