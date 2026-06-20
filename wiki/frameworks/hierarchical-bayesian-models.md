@@ -18,6 +18,7 @@ related_concepts:
 sources:
 - '[[capretto-bambi-2022]]'
 - gelman-bda3
+- kroese-statistical-modeling-ch12
 specializes:
 - bayesian-inference
 tags:
