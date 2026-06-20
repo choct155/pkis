@@ -1,18 +1,45 @@
 ---
-id: "pkis:concept:formal-ontology"
 aliases: []
-title: "Formal Ontology"
-knowledge_type: concept
 also_type: []
-domain: [knowledge-representation]
-tags: [ontology, description-logic, owl, rdf, formal-semantics, knowledge-representation, semantic-web]
-related_concepts: [rdf, description-logic, knowledge-graph, linked-open-data, ontology-reasoning]
-sources: ["[[cimiano-ontology-nlp]]", "[[kg-evaluation-bloomberg-2024]]", "[[sequeda-kg-benchmark-llm-2023]]", "[[sequeda-kg-trust-llm-2025]]", "[[luong-ontology-constrained-neural-2026]]", "[[forbus-qp-motion-1982]]"]
-date_created: 2026-05-20
-date_updated: 2026-05-20
 coverage: 6
-understanding: 0
+date_created: 2026-05-20
+date_updated: '2026-06-20'
+domain:
+- knowledge-representation
+id: pkis:concept:formal-ontology
+knowledge_type: concept
 maturity: settled
+related_concepts:
+- rdf
+- description-logic
+- knowledge-graph
+- linked-open-data
+- ontology-reasoning
+sources:
+- '[[cimiano-ontology-nlp]]'
+- '[[kg-evaluation-bloomberg-2024]]'
+- '[[sequeda-kg-benchmark-llm-2023]]'
+- '[[sequeda-kg-trust-llm-2025]]'
+- '[[luong-ontology-constrained-neural-2026]]'
+- '[[forbus-qp-motion-1982]]'
+- allemang-semantic-web-ch13
+- allemang-semantic-web-ch14
+- allemang-semantic-web-ch15
+- cimiano-ontology-nlp-ch01
+- cimiano-ontology-nlp-ch02
+- cimiano-ontology-nlp-ch06
+- cimiano-ontology-nlp-ch07
+- cimiano-ontology-nlp-ch10
+tags:
+- ontology
+- description-logic
+- owl
+- rdf
+- formal-semantics
+- knowledge-representation
+- semantic-web
+title: Formal Ontology
+understanding: 0
 ---
 
 A formal ontology is an explicit, machine-readable logical theory that defines the vocabulary of a domain and, through axioms, rules out unintended interpretations — such that the theory's models correspond precisely to situations possible within the target conceptualization (Guarino's definition).
