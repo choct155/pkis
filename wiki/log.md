@@ -26356,3 +26356,12 @@
 ## [2026-06-20] committed | bridge-note
 - Committed: bn-20260620-the-multidimensional-retrieval-quality-framework → bridge-notes/bn-20260620-the-multidimensional-retrieval-quality-framework.md
 - IRI: pkis:bridge-note:bn-20260620-the-multidimensional-retrieval-quality-framework
+
+## [2026-06-20] staged | source-stub
+- Staged: angelopoulos-predictionpowered-2023 (id: 17abfa20-ccc3-4335-96e7-20ebd4f1394b)
+- Title: Prediction-Powered Inference
+- Enrichment: minimal
+
+## [2026-06-20] committed | source
+- Committed: angelopoulos-predictionpowered-2023 → sources/angelopoulos-predictionpowered-2023.md
+- IRI: pkis:source:angelopoulos-predictionpowered-2023
