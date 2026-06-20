@@ -73,22 +73,39 @@ def parse_toc(reader, scan=50):
 
 
 def calibrate_offset(reader, chapters, ptexts):
-    """Find PDF-index = printed_page + offset, by locating chapter titles in the body."""
-    body_lo = 0
-    # body starts after the front matter; search from a bit past the TOC
+    """Find offset where PDF-index = printed_page + offset.
+
+    Anchors on BODY chapter openers, not bare title text — a plain title substring
+    also matches the table of contents and the index, which yields a wildly wrong
+    (often negative) offset. We score each chapter against several opener shapes a
+    real chapter-start page takes — "Chapter 1 Systems and Models", "1 Systems and
+    Models", or a running header like "2 | Chapter 1 Systems and Models" — collect a
+    candidate offset per chapter, and return the modal value. Front matter always
+    pushes the body later, so a correct offset is non-negative; negative candidates
+    are dropped as TOC/index false positives.
+    """
+    npages = len(reader.pages)
     offsets = []
-    for num, title, pg in chapters[:6]:
-        target = _norm(title)
-        for i in range(15, len(reader.pages)):
-            # Search a wide window: some PDFs (e.g. MacKay) prefix every page with a
-            # recurring copyright/watermark line that pushes the title past a short slice.
-            head = _norm(ptexts.get(i, "")[:800])
-            if target and target[:18] in head:
+    for num, title, pg in chapters[:8]:
+        t = _norm(title)[:14]
+        if not t:
+            continue
+        ns = str(num)
+        # opener shapes, in priority order — all anchored at the head of the page
+        openers = ("chapter" + ns + t, ns + t)
+        for i in range(8, npages):
+            head = _norm(ptexts.get(i, "")[:120])
+            hit = (
+                any(head.startswith(o) for o in openers)
+                # running header: "<printed> | Chapter <n> <title>"
+                or ("chapter" + ns + t) in head[:60]
+            )
+            if hit and (i - pg) >= 0:
                 offsets.append(i - pg)
                 break
     if not offsets:
         return None
-    # take the most common offset (robust to a stray miss)
+    # modal offset, robust to a stray chapter-opener miss
     return max(set(offsets), key=offsets.count)
 
 
