@@ -14,7 +14,7 @@ component_scores:
   transfer: null
 coverage: 1
 date_created: '2026-06-11'
-date_updated: '2026-06-11'
+date_updated: '2026-06-20'
 domain:
 - statistics
 id: pkis:concept:glm-deviance
@@ -24,6 +24,7 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - murphy-pml1-intro-ch12
+- kroese-statistical-modeling-ch10
 tags:
 - GLM
 - goodness-of-fit
