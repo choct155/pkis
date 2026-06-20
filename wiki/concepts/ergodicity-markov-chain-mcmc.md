@@ -12,7 +12,7 @@ component_scores:
   transfer: null
 coverage: 1
 date_created: '2026-06-11'
-date_updated: '2026-06-11'
+date_updated: '2026-06-20'
 domain:
 - statistics
 - probability-theory
@@ -25,6 +25,7 @@ prerequisite-of:
 related_concepts: []
 sources:
 - bishop-prml-ch11
+- betancourt-short-2021
 specializes:
 - markov-chains
 tags:

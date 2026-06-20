@@ -25430,3 +25430,6 @@
 
 ## [2026-06-20] edit | edit_node
 - pkis:technique:newtons-method-optimization: fields=['sources'] sections=[]
+
+## [2026-06-20] edit | edit_node
+- pkis:concept:ergodicity-markov-chain-mcmc: fields=['sources'] sections=[]
