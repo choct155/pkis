@@ -25,6 +25,8 @@ related_concepts: []
 sources:
 - resnick-stochastic-processes-ch04
 - resnick-stochastic-processes
+- cassandras-des-intro-ch08
+- lange-applied-probability-ch06
 tags:
 - stochastic-processes
 - point-processes
