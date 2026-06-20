@@ -4,7 +4,7 @@ also_type:
 - concept
 coverage: 1
 date_created: 2026-05-20
-date_updated: 2026-05-20
+date_updated: '2026-06-20'
 domain:
 - causal-analysis
 id: pkis:framework:potential-outcomes-framework
@@ -18,6 +18,8 @@ related_concepts:
 - '[[structural-causal-models]]'
 sources:
 - '[[cunningham-causal-inference-mixtape]]'
+- cunningham-causal-inference-mixtape-ch05
+- cunningham-causal-inference-mixtape-ch12
 tags:
 - causal-inference
 - rubin
