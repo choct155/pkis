@@ -10,7 +10,7 @@ contrasts-with:
 - neural-networks
 coverage: 1
 date_created: '2026-06-11'
-date_updated: '2026-06-11'
+date_updated: '2026-06-20'
 domain:
 - machine-learning
 - statistics
@@ -26,6 +26,7 @@ prerequisite-of:
 related_concepts: []
 sources:
 - murphy-pml2-advanced-ch27
+- gulli-agentic-design-patterns-ch21
 tags:
 - interpretability
 - discovery
