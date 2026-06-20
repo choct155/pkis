@@ -18,7 +18,7 @@ contrasts-with:
 - variational-inference
 coverage: 2
 date_created: 2026-05-20
-date_updated: '2026-06-08'
+date_updated: '2026-06-20'
 domain:
 - bayesian-stats
 id: pkis:technique:laplace-approximation
@@ -37,6 +37,9 @@ score_date: '2026-06-07'
 sources:
 - '[[tanner-tools-statistical-inference]]'
 - '[[lange-applied-probability]]'
+- lange-applied-probability-ch12
+- tanner-tools-statistical-inference-ch02
+- tanner-tools-statistical-inference-ch03
 tags:
 - posterior-approximation
 - normal-approximation
