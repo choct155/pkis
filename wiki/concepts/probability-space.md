@@ -12,7 +12,7 @@ component_scores:
   transfer: null
 coverage: 1
 date_created: '2026-06-11'
-date_updated: '2026-06-11'
+date_updated: '2026-06-20'
 domain:
 - probability-theory
 - measure-theory
@@ -28,6 +28,9 @@ prerequisite-of:
 related_concepts: []
 sources:
 - murphy-pml2-advanced-ch02
+- cunningham-causal-inference-mixtape-ch02
+- kroese-statistical-modeling-ch01
+- lange-applied-probability-ch01
 tags:
 - probability
 - measure-theory
