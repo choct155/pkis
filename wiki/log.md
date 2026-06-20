@@ -25244,3 +25244,6 @@
 
 ## [2026-06-20] edit | edit_node
 - pkis:concept:knowledge-graph: fields=['sources'] sections=[]
+
+## [2026-06-20] edit | edit_node
+- pkis:concept:multi-hop-reasoning: fields=['sources'] sections=[]
