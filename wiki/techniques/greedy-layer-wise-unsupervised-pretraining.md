@@ -11,7 +11,7 @@ component_scores:
   principled_mechanism: null
 coverage: 1
 date_created: '2026-06-11'
-date_updated: '2026-06-11'
+date_updated: '2026-06-20'
 domain:
 - deep-learning
 - representation-learning
@@ -29,6 +29,7 @@ prerequisite-of:
 related_concepts: []
 sources:
 - goodfellow-deeplearning-ch15
+- goodfellow-deeplearning
 tags:
 - pretraining
 - unsupervised
