@@ -3,7 +3,7 @@ aliases: []
 also_type: []
 coverage: 1
 date_created: 2026-05-20
-date_updated: 2026-05-20
+date_updated: '2026-06-20'
 domain:
 - bayesian-stats
 id: pkis:concept:branching-processes
@@ -15,6 +15,7 @@ related_concepts:
 - '[[generating-functions]]'
 sources:
 - '[[lange-applied-probability]]'
+- lange-applied-probability-ch09
 tags:
 - stochastic-processes
 - probability-theory
