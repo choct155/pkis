@@ -7,10 +7,12 @@ contrasts-with:
 - gibbs-sampler
 coverage: 3
 date_created: 2026-05-20
-date_updated: '2026-06-08'
+date_updated: '2026-06-20'
 domain:
 - bayesian-stats
 id: pkis:technique:metropolis-algorithm
+illustrated-by:
+- mcmc-trace-viz
 knowledge_type: technique
 maturity: settled
 related_concepts:
@@ -22,6 +24,7 @@ sources:
 - '[[tanner-tools-statistical-inference]]'
 - '[[kroese-statistical-modeling]]'
 - '[[lange-applied-probability]]'
+- tanner-tools-statistical-inference-ch06
 specializes:
 - mcmc
 tags:
@@ -35,8 +38,6 @@ title: Metropolis Algorithm
 understanding: 0
 uses:
 - log-scale-computation
-illustrated-by:
-- mcmc-trace-viz
 ---
 
 An MCMC algorithm for sampling from p(θ|Y) ∝ p(Y|θ)p(θ) by constructing a Markov chain via proposal-acceptance: propose θ* from a symmetric proposal q(θ*|θ^{(t)}), accept with probability min(1, p(θ*|Y)/p(θ^{(t)}|Y)), otherwise stay at θ^{(t)}. The chain's stationary distribution is the target posterior, with correctness guaranteed by detailed balance.

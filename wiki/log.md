@@ -26330,3 +26330,6 @@
 
 ## [2026-06-20] edit | edit_node
 - pkis:principle:ladder-of-causation: fields=['sources'] sections=[]
+
+## [2026-06-20] edit | edit_node
+- pkis:technique:metropolis-algorithm: fields=['sources'] sections=[]
