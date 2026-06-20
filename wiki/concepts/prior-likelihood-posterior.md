@@ -32,6 +32,8 @@ related_concepts: []
 sources:
 - bishop-prml-ch01
 - betancourt-bayeshist
+- cunningham-causal-inference-mixtape-ch02
+- tanner-tools-statistical-inference-ch02
 tags:
 - bayesian
 - prior

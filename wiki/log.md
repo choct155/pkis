@@ -25691,3 +25691,6 @@
 
 ## [2026-06-20] edit | edit_node
 - pkis:concept:probability-space: fields=['sources'] sections=[]
+
+## [2026-06-20] edit | edit_node
+- pkis:concept:prior-likelihood-posterior: fields=['sources'] sections=[]
