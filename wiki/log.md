@@ -25178,3 +25178,12 @@
 ## [2026-06-20] committed | source
 - Committed: kwiatkowski-do-2024 → sources/kwiatkowski-do-2024.md
 - IRI: pkis:source:kwiatkowski-do-2024
+
+## [2026-06-20] staged | source-stub
+- Staged: gao-retrievalaugmented-2025 (id: ea00ec22-a008-44b8-befd-c1546755e407)
+- Title: Retrieval-Augmented Generation: A Comprehensive Survey of Architectures, Enhancements, and Robustness Frontiers
+- Enrichment: full
+
+## [2026-06-20] committed | source
+- Committed: gao-retrievalaugmented-2025 → sources/gao-retrievalaugmented-2025.md
+- IRI: pkis:source:gao-retrievalaugmented-2025
