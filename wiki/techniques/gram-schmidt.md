@@ -13,7 +13,7 @@ component_scores:
   principled_mechanism: null
 coverage: 1
 date_created: '2026-06-09'
-date_updated: '2026-06-09'
+date_updated: '2026-06-20'
 domain:
 - statistical-learning
 id: pkis:technique:gram-schmidt
@@ -23,6 +23,7 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - deisenroth-mml-ch03
+- carrell-groups-matrices-vectors-ch06
 tags:
 - mathematical-foundations
 - linear-algebra
