@@ -1,18 +1,32 @@
 ---
-id: "pkis:concept:ontology-quality-dimensions"
 aliases: []
-title: "Ontology Quality Dimensions"
-knowledge_type: concept
 also_type: []
-domain: [knowledge-representation]
-tags: [ontology, knowledge-graphs, evaluation, quality, completeness, accuracy, consistency, fitness-for-purpose]
-related_concepts: [formal-ontology, knowledge-graph, competency-questions]
-sources: ["[[kg-evaluation-bloomberg-2024]]"]
-date_created: 2026-05-20
-date_updated: 2026-05-20
 coverage: 1
-understanding: 0
+date_created: 2026-05-20
+date_updated: '2026-06-20'
+domain:
+- knowledge-representation
+id: pkis:concept:ontology-quality-dimensions
+knowledge_type: concept
 maturity: evolving
+related_concepts:
+- formal-ontology
+- knowledge-graph
+- competency-questions
+sources:
+- '[[kg-evaluation-bloomberg-2024]]'
+- allemang-semantic-web-ch14
+tags:
+- ontology
+- knowledge-graphs
+- evaluation
+- quality
+- completeness
+- accuracy
+- consistency
+- fitness-for-purpose
+title: Ontology Quality Dimensions
+understanding: 0
 ---
 
 The recognized dimensions along which an ontology or knowledge graph can be evaluated: accuracy, completeness, conciseness, adaptability, clarity, computational efficiency, and consistency — each assessable via gold-standard comparison, corpus comparison, task-based, or structural-criteria methods.
