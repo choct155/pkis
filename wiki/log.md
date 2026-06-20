@@ -26365,3 +26365,12 @@
 ## [2026-06-20] committed | source
 - Committed: angelopoulos-predictionpowered-2023 → sources/angelopoulos-predictionpowered-2023.md
 - IRI: pkis:source:angelopoulos-predictionpowered-2023
+
+## [2026-06-20] staged | source-stub
+- Staged: angelopoulos-ppi-2023 (id: 929d309e-728d-4c53-94cd-da9c0a5df0ff)
+- Title: PPI++: Efficient Prediction-Powered Inference
+- Enrichment: full
+
+## [2026-06-20] committed | source
+- Committed: angelopoulos-ppi-2023 → sources/angelopoulos-ppi-2023.md
+- IRI: pkis:source:angelopoulos-ppi-2023

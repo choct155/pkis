@@ -1,6 +1,7 @@
 # PKIS Wiki Index
 
 ## Sources
+- [[angelopoulos-ppi-2023]] — PPI++: Efficient Prediction-Powered Inference () (2026-06-20)
 - [[angelopoulos-predictionpowered-2023]] — Prediction-Powered Inference () (2026-06-20)
 - [[procko-from-2026]] — From Vectors to Knowledge Graphs: A Comprehensive Analysis of Modern Retrieval-Augmented Generation Architectures () (2026-06-20)
 - [[gao-retrievalaugmented-2025]] — Retrieval-Augmented Generation: A Comprehensive Survey of Architectures, Enhancements, and Robustness Frontiers () (2026-06-20)
