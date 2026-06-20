@@ -25535,3 +25535,6 @@
 
 ## [2026-06-20] edit | edit_node
 - pkis:framework:owl: fields=['sources'] sections=[]
+
+## [2026-06-20] edit | edit_node
+- pkis:concept:rdf: fields=['sources'] sections=[]
