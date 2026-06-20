@@ -26312,3 +26312,6 @@
 
 ## [2026-06-20] edit | edit_node
 - pkis:concept:pmf-and-pdf: fields=['sources'] sections=[]
+
+## [2026-06-20] edit | edit_node
+- pkis:concept:cumulative-distribution-function: fields=['sources'] sections=[]
