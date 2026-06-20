@@ -12,7 +12,7 @@ component_scores:
   transfer: null
 coverage: 1
 date_created: '2026-06-09'
-date_updated: '2026-06-09'
+date_updated: '2026-06-20'
 domain:
 - agentic-ai
 - reinforcement-learning
@@ -23,6 +23,8 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - russell-norvig-aima-ch02
+- gulli-agentic-design-patterns-ch11
+- gulli-agentic-design-patterns-ch19
 tags:
 - agent
 - objective
