@@ -25820,3 +25820,6 @@
 
 ## [2026-06-20] edit | edit_node
 - pkis:framework:skos: fields=['sources'] sections=[]
+
+## [2026-06-20] edit | edit_node
+- pkis:technique:fixed-effects-estimator: fields=['sources'] sections=[]
