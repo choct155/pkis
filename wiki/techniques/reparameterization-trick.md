@@ -1,18 +1,32 @@
 ---
-id: "pkis:technique:reparameterization-trick"
 aliases: []
-title: "Reparameterization Trick"
-knowledge_type: technique
 also_type: []
-domain: [bayesian-stats, deep-learning, optimization]
-tags: [variational-methods, stochastic-optimization, deep-learning, automatic-differentiation]
-related_concepts: ["[[variational-inference]]", "[[elbo]]", "[[amortized-inference]]", "[[automatic-differentiation]]"]
-sources: ["[[sjolund-parametric-vi]]", "[[yellapragada-variational-bayes]]"]
-date_created: 2026-05-20
-date_updated: 2026-05-20
 coverage: 2
-understanding: 0
+date_created: 2026-05-20
+date_updated: '2026-06-20'
+domain:
+- bayesian-stats
+- deep-learning
+- optimization
+id: pkis:technique:reparameterization-trick
+knowledge_type: technique
 maturity: settled
+related_concepts:
+- '[[variational-inference]]'
+- '[[elbo]]'
+- '[[amortized-inference]]'
+- '[[automatic-differentiation]]'
+sources:
+- '[[sjolund-parametric-vi]]'
+- '[[yellapragada-variational-bayes]]'
+- mohamed-monte-2020
+tags:
+- variational-methods
+- stochastic-optimization
+- deep-learning
+- automatic-differentiation
+title: Reparameterization Trick
+understanding: 0
 ---
 
 A gradient estimation method that reformulates a random variable z ~ q_β(z) as a deterministic transformation z = g_β(ε) of a noise variable ε ~ p(ε) with no parameters, moving the parameter dependence outside the expectation and enabling standard backpropagation to compute ∇_β E_q[f(z)] = E_ε[∇_β f(g_β(ε))] with low variance; the canonical example is z = μ + σ·ε for Gaussian q.

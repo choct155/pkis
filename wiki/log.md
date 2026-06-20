@@ -25316,3 +25316,6 @@
 
 ## [2026-06-20] edit | edit_node
 - pkis:technique:reparameterized-vi: fields=['sources'] sections=[]
+
+## [2026-06-20] edit | edit_node
+- pkis:technique:reparameterization-trick: fields=['sources'] sections=[]
