@@ -18,6 +18,7 @@ sources:
 - '[[radhakrishnan-datagemma-2024]]'
 - '[[kim-financial-statement-llm-2024]]'
 - share-thinkongraph
+- gulli-agentic-design-patterns-ch22
 tags:
 - llm
 - prompting
