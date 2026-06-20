@@ -25132,3 +25132,7 @@
 ## [2026-06-20] committed | bridge-note
 - Committed: bn-20260531-thinkongraph-sun-et-al-iclr → bridge-notes/bn-20260531-thinkongraph-sun-et-al-iclr.md
 - IRI: pkis:bridge-note:bn-20260531-thinkongraph-sun-et-al-iclr
+
+## [2026-06-20] committed | bridge-note
+- Committed: bn-20260531-banf-tripartitegraphrag-ontology-concepts-entity → bridge-notes/bn-20260531-banf-tripartitegraphrag-ontology-concepts-entity.md
+- IRI: pkis:bridge-note:bn-20260531-banf-tripartitegraphrag-ontology-concepts-entity

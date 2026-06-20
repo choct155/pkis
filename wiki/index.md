@@ -2433,6 +2433,7 @@
 ## Reading Queue
 
 ## Bridge Notes
+- [[bn-20260531-banf-tripartitegraphrag-ontology-concepts-entity]] — Banf and Cimiano sources instantiate ontology-grounded entity interpretation for the cluster () (2026-06-20)
 - [[bn-20260531-thinkongraph-sun-et-al-iclr]] — Think-on-Graph (Sun 2023) instantiates evidence for the NED-accuracy hypothesis () (2026-06-20)
 - [[bn-20260620-organizational-context-for-ontologist-positionin]] — Ontologist positioning — organizational context and change management constraints () (2026-06-20)
 - [[bn-20260614-both-the-amortization-argument-and]] — Instantiation depth as shared precondition for amortization and traversal efficiency claims () (2026-06-14)
