@@ -8,7 +8,6 @@ import DomainStrip from './components/DomainStrip'
 import Sidebar from './components/Sidebar'
 import NavDrawer from './components/NavDrawer'
 import FacetBar from './components/FacetBar'
-import BottomNav from './components/BottomNav'
 import Fab from './components/Fab'
 import DetailSheet from './components/DetailSheet'
 import CaptureSheet from './components/CaptureSheet'
@@ -136,6 +135,7 @@ export default function App() {
             onSignOut={signOut}
             onMenu={() => setDrawerOpen(true)}
             hidden={topHidden}
+            view={view}
           />
           {showFilter && <FilterStrip active={typeFilter} onChange={setTypeFilter} />}
           {view === 'browse' && !showSearch && (
@@ -214,6 +214,8 @@ export default function App() {
         open={drawerOpen}
         onClose={() => setDrawerOpen(false)}
         view={view}
+        onNavigate={navigate}
+        isOwner={isOwner}
         domainFilter={domainFilter}
         onDomain={handleDomain}
         clusterFilter={clusterFilter}
@@ -224,7 +226,6 @@ export default function App() {
         onDocSelect={setDocKey}
       />
 
-      <BottomNav active={view} onNavigate={navigate} isOwner={isOwner} />
       {view !== 'ask' && <Fab onClick={() => setCaptureOpen(true)} />}
 
       {selectedIri && (

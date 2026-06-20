@@ -4,26 +4,21 @@ export interface NavItem {
   view: View
   icon: string
   label: string
-  group: 'primary' | 'secondary'
   admin?: boolean   // owner-only (administrative) — hidden unless role === 'owner'
 }
 
-// Shared by BottomNav (mobile) and Sidebar (desktop) so the nav set stays DRY.
-// `group` drives the mobile split: primary items sit in the bottom bar, secondary
-// items fold into the "more" menu. The desktop Sidebar shows them all (NAV_ITEMS).
+// The view set, shared by the desktop Sidebar and the mobile NavDrawer so nav
+// stays DRY. `ask` is intentionally NOT here — it lives as a quick icon in the
+// TopBar (next to search), since it's the most-reached action.
 export const NAV_ITEMS: NavItem[] = [
-  { view: 'ask',        icon: '✧', label: 'ask',      group: 'primary' },
-  { view: 'browse',     icon: '◈', label: 'browse',   group: 'primary' },
-  { view: 'clusters',   icon: '◎', label: 'clusters', group: 'primary' },
-  { view: 'priority',   icon: '▲', label: 'priority', group: 'primary' },
-  { view: 'graph',      icon: '⬡', label: 'graph',    group: 'primary' },
-  { view: 'explainers', icon: '▦', label: 'explain',  group: 'secondary' },
-  { view: 'docs',       icon: '▤', label: 'docs',     group: 'secondary' },
-  { view: 'inbox',      icon: '✉', label: 'inbox',    group: 'secondary', admin: true },
+  { view: 'browse',     icon: '◈', label: 'browse',   },
+  { view: 'clusters',   icon: '◎', label: 'clusters', },
+  { view: 'priority',   icon: '▲', label: 'priority', },
+  { view: 'graph',      icon: '⬡', label: 'graph',    },
+  { view: 'explainers', icon: '▦', label: 'explain',  },
+  { view: 'docs',       icon: '▤', label: 'docs',     },
+  { view: 'inbox',      icon: '✉', label: 'inbox',    admin: true },
 ]
-
-export const PRIMARY_NAV = NAV_ITEMS.filter((n) => n.group === 'primary')
-export const SECONDARY_NAV = NAV_ITEMS.filter((n) => n.group === 'secondary')
 
 // Nav items visible to the current user — admin (owner-only) items hidden otherwise.
 export const navFor = (isOwner: boolean) => NAV_ITEMS.filter((n) => !n.admin || isOwner)

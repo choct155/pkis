@@ -10,9 +10,10 @@ interface Props {
   onSignOut: () => void
   onMenu: () => void   // open the mobile nav drawer (hamburger; mobile only)
   hidden: boolean      // auto-hide on scroll-down (mobile only; CSS-gated)
+  view: View           // for the Ask button's active state
 }
 
-export default function TopBar({ onResults, onNavigate, auth, onSignIn, onSignOut, onMenu, hidden }: Props) {
+export default function TopBar({ onResults, onNavigate, auth, onSignIn, onSignOut, onMenu, hidden, view }: Props) {
   const [query, setQuery] = useState('')
   const [searching, setSearching] = useState(false)
   const debounceRef = useRef<ReturnType<typeof setTimeout> | null>(null)
@@ -69,6 +70,15 @@ export default function TopBar({ onResults, onNavigate, auth, onSignIn, onSignOu
           onKeyDown={(e) => e.key === 'Escape' && handleChange('')}
         />
       </div>
+      <button
+        className={`topbar-ask${view === 'ask' ? ' active' : ''}`}
+        onClick={() => onNavigate('ask')}
+        title="Ask"
+        aria-label="Ask"
+      >
+        <span className="topbar-ask-icon">✧</span>
+        <span className="topbar-ask-label">ask</span>
+      </button>
       {auth.authenticated ? (
         <div
           className="account-btn"
