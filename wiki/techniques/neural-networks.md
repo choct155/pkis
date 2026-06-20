@@ -4,7 +4,7 @@ also_type:
 - framework
 coverage: 3
 date_created: 2026-05-20
-date_updated: '2026-06-08'
+date_updated: '2026-06-20'
 domain:
 - deep-learning
 - statistical-learning
@@ -18,6 +18,8 @@ sources:
 - '[[hastie-esl]]'
 - '[[nielsen-nndl]]'
 - '[[marcus-dl-critical-appraisal-2018]]'
+- nielsen-nndl-ch01
+- nielsen-nndl-ch03
 tags:
 - optimization
 - linear-algebra
