@@ -25322,3 +25322,6 @@
 
 ## [2026-06-20] edit | edit_node
 - pkis:framework:policy-gradient-methods: fields=['sources'] sections=[]
+
+## [2026-06-20] edit | edit_node
+- pkis:concept:multinomial-logistic-regression: fields=['sources'] sections=[]
