@@ -1,6 +1,7 @@
 # PKIS Wiki Index
 
 ## Sources
+- [[edge-from-2024]] — From Local to Global: A Graph RAG Approach to Query-Focused Summarization () (2026-06-20)
 - [[rau-revisiting-2026]] — Revisiting RAG Retrievers: An Information Theoretic Benchmark (MIGRASCOPE) () (2026-06-20)
 - [[saadfalcon-ares-2024]] — ARES: An Automated Evaluation Framework for Retrieval-Augmented Generation Systems () (2026-06-20)
 - [[es-ragas-2024]] — RAGAS: Automated Evaluation of Retrieval Augmented Generation () (2026-06-20)

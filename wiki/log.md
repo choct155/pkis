@@ -25119,3 +25119,12 @@
 ## [2026-06-20] committed | source
 - Committed: rau-revisiting-2026 → sources/rau-revisiting-2026.md
 - IRI: pkis:source:rau-revisiting-2026
+
+## [2026-06-20] staged | source-stub
+- Staged: edge-from-2024 (id: 2c06d475-ab58-4e6d-8ce5-d6098526c5fa)
+- Title: From Local to Global: A Graph RAG Approach to Query-Focused Summarization
+- Enrichment: full
+
+## [2026-06-20] committed | source
+- Committed: edge-from-2024 → sources/edge-from-2024.md
+- IRI: pkis:source:edge-from-2024
