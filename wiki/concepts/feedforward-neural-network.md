@@ -12,7 +12,7 @@ component_scores:
   transfer: null
 coverage: 1
 date_created: '2026-06-11'
-date_updated: '2026-06-11'
+date_updated: '2026-06-20'
 domain:
 - machine-learning
 - deep-learning
@@ -32,6 +32,8 @@ prerequisite-of:
 related_concepts: []
 sources:
 - murphy-pml1-intro-ch13
+- nielsen-nndl-ch01
+- nielsen-nndl-ch04
 tags:
 - neural-networks
 - deep-learning

@@ -25829,3 +25829,6 @@
 
 ## [2026-06-20] edit | edit_node
 - pkis:concept:abstract-algebra-fields: fields=['sources'] sections=[]
+
+## [2026-06-20] edit | edit_node
+- pkis:concept:feedforward-neural-network: fields=['sources'] sections=[]
