@@ -26267,3 +26267,6 @@
 
 ## [2026-06-20] edit | edit_node
 - pkis:result:universal-approximation-theorem: fields=['sources'] sections=[]
+
+## [2026-06-20] edit | edit_node
+- pkis:result:universal-approximation-theorem-mlp: fields=['sources'] sections=[]
