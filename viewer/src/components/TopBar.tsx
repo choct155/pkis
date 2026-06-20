@@ -8,9 +8,11 @@ interface Props {
   auth: AuthState
   onSignIn: () => void
   onSignOut: () => void
+  onMenu: () => void   // open the mobile nav drawer (hamburger; mobile only)
+  hidden: boolean      // auto-hide on scroll-down (mobile only; CSS-gated)
 }
 
-export default function TopBar({ onResults, onNavigate, auth, onSignIn, onSignOut }: Props) {
+export default function TopBar({ onResults, onNavigate, auth, onSignIn, onSignOut, onMenu, hidden }: Props) {
   const [query, setQuery] = useState('')
   const [searching, setSearching] = useState(false)
   const debounceRef = useRef<ReturnType<typeof setTimeout> | null>(null)
@@ -53,7 +55,8 @@ export default function TopBar({ onResults, onNavigate, auth, onSignIn, onSignOu
   }
 
   return (
-    <div className="topbar">
+    <div className={`topbar${hidden ? ' topbar--hidden' : ''}`}>
+      <button className="topbar-menu" onClick={onMenu} title="Menu" aria-label="Open menu">☰</button>
       <div className="topbar-logo" onClick={handleHome} title="Home" role="button">PKIS</div>
       <div className="search-wrap">
         <span className="search-icon">{searching ? '⟳' : '⌕'}</span>

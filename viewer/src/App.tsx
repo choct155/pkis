@@ -1,11 +1,12 @@
-import { useState, useEffect } from 'react'
-import type { View, NodeType, SearchResult } from './types'
-import { resolveSlug } from './lib/api'
+import { useState, useEffect, useRef } from 'react'
+import type { View, NodeType, SearchResult, DocMeta } from './types'
+import { resolveSlug, getDocs } from './lib/api'
 import { useAuth } from './lib/useAuth'
 import TopBar from './components/TopBar'
 import FilterStrip from './components/FilterStrip'
 import DomainStrip from './components/DomainStrip'
 import Sidebar from './components/Sidebar'
+import NavDrawer from './components/NavDrawer'
 import FacetBar from './components/FacetBar'
 import BottomNav from './components/BottomNav'
 import Fab from './components/Fab'
@@ -35,7 +36,21 @@ export default function App() {
   const [searchResults, setSearchResults] = useState<SearchResult[] | null>(null)
   const [readerSlug, setReaderSlug] = useState<string | null>(null)
   const [explainer, setExplainer] = useState<{ slug: string; title?: string } | null>(null)
+  // Mobile nav drawer + docs state (lifted so the drawer can host the doc tree).
+  const [drawerOpen, setDrawerOpen] = useState(false)
+  const [docManifest, setDocManifest] = useState<DocMeta[] | null>(null)
+  const [docKey, setDocKey] = useState<string | null>(null)
+  const [topHidden, setTopHidden] = useState(false)   // auto-hide TopBar on scroll
+  const lastScroll = useRef(0)
   const { auth, canWrite, isOwner, signIn, signOut } = useAuth()
+
+  // Load the docs manifest once; default to the first doc so Docs never opens empty.
+  useEffect(() => {
+    getDocs().then((m) => {
+      setDocManifest(m)
+      setDocKey((k) => k ?? (m.length ? m[0].key : null))
+    }).catch(() => {})
+  }, [])
 
   // Owner-only views: if the inbox is open and the user isn't (or is no longer) the
   // owner — e.g. they signed out — fall back to browse.
@@ -86,6 +101,18 @@ export default function App() {
     return () => document.body.classList.remove('body-docs')
   }, [view, showSearch])
 
+  // Switching view (or surfacing search) should always re-reveal the TopBar.
+  useEffect(() => { setTopHidden(false); lastScroll.current = 0 }, [view, showSearch])
+
+  // Auto-hide the TopBar while scrolling down inside the main column; reveal it on
+  // any upward scroll. Mobile-only in effect — the CSS no-ops it at ≥900px.
+  const onMainScroll = (e: React.UIEvent<HTMLDivElement>) => {
+    const y = e.currentTarget.scrollTop
+    if (y > lastScroll.current && y > 72) setTopHidden(true)
+    else if (y < lastScroll.current) setTopHidden(false)
+    lastScroll.current = y
+  }
+
   return (
     <>
       <div className="app-shell">
@@ -107,6 +134,8 @@ export default function App() {
             auth={auth}
             onSignIn={signIn}
             onSignOut={signOut}
+            onMenu={() => setDrawerOpen(true)}
+            hidden={topHidden}
           />
           {showFilter && <FilterStrip active={typeFilter} onChange={setTypeFilter} />}
           {view === 'browse' && !showSearch && (
@@ -123,11 +152,13 @@ export default function App() {
             />
           )}
 
-          <div className={
-            !showSearch && view === 'graph' ? 'main main-graph'
-            : !showSearch && view === 'ask' ? 'main main-ask'
-            : 'main'
-          }>
+          <div
+            onScroll={onMainScroll}
+            className={
+              !showSearch && view === 'graph' ? 'main main-graph'
+              : !showSearch && view === 'ask' ? 'main main-ask'
+              : 'main'
+            }>
             {showSearch ? (
               <SearchResults
                 results={searchResults!}
@@ -162,7 +193,9 @@ export default function App() {
                 {view === 'explainers' && (
                   <ExplainersView onSelectNode={handleSelectNode} onOpenExplainer={openExplainer} />
                 )}
-                {view === 'docs' && <DocsView />}
+                {view === 'docs' && (
+                  <DocsView manifest={docManifest} selected={docKey} onSelect={setDocKey} />
+                )}
                 {view === 'ask' && (
                   <AskView
                     onSelectNode={handleSelectNode}
@@ -176,6 +209,20 @@ export default function App() {
           </div>
         </div>
       </div>
+
+      <NavDrawer
+        open={drawerOpen}
+        onClose={() => setDrawerOpen(false)}
+        view={view}
+        domainFilter={domainFilter}
+        onDomain={handleDomain}
+        clusterFilter={clusterFilter}
+        onCluster={handleCluster}
+        onClusterAgenda={() => { setView('clusters'); setSearchResults(null) }}
+        docManifest={docManifest}
+        docKey={docKey}
+        onDocSelect={setDocKey}
+      />
 
       <BottomNav active={view} onNavigate={navigate} isOwner={isOwner} />
       {view !== 'ask' && <Fab onClick={() => setCaptureOpen(true)} />}
