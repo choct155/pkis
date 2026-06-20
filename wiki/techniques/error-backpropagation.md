@@ -13,7 +13,7 @@ component_scores:
   principled_mechanism: null
 coverage: 1
 date_created: '2026-06-11'
-date_updated: '2026-06-11'
+date_updated: '2026-06-20'
 domain:
 - machine-learning
 - numerical-methods
@@ -30,6 +30,7 @@ prerequisite-of:
 related_concepts: []
 sources:
 - bishop-prml-ch05
+- nielsen-nndl-ch02
 specializes:
 - automatic-differentiation
 tags:
