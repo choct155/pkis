@@ -25136,3 +25136,7 @@
 ## [2026-06-20] committed | bridge-note
 - Committed: bn-20260531-banf-tripartitegraphrag-ontology-concepts-entity → bridge-notes/bn-20260531-banf-tripartitegraphrag-ontology-concepts-entity.md
 - IRI: pkis:bridge-note:bn-20260531-banf-tripartitegraphrag-ontology-concepts-entity
+
+## [2026-06-20] committed | bridge-note
+- Committed: bn-20260531-luong-et-al-present-a → bridge-notes/bn-20260531-luong-et-al-present-a.md
+- IRI: pkis:bridge-note:bn-20260531-luong-et-al-present-a
