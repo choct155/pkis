@@ -11,7 +11,7 @@ applies:
 - density-estimation
 coverage: 4
 date_created: 2026-05-20
-date_updated: '2026-06-08'
+date_updated: '2026-06-20'
 domain:
 - bayesian-stats
 - statistical-learning
@@ -34,6 +34,8 @@ sources:
 - '[[blei-vi-review]]'
 - '[[ganguly-intro-vi]]'
 - '[[kroese-statistical-modeling]]'
+- bishop-prml
+- gelman-bda3
 specializes:
 - mixture-models
 tags:
