@@ -4,7 +4,7 @@ also_type:
 - framework
 coverage: 3
 date_created: 2026-05-20
-date_updated: '2026-06-09'
+date_updated: '2026-06-20'
 domain:
 - bayesian-stats
 - statistical-learning
@@ -22,6 +22,8 @@ sources:
 - '[[deisenroth-mml]]'
 - '[[kroese-statistical-modeling]]'
 - '[[lange-applied-probability]]'
+- betancourt-bayeshist
+- jaynes-probability
 tags:
 - mathematical-foundations
 - measure-theory
