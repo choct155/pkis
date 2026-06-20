@@ -25409,3 +25409,6 @@
 
 ## [2026-06-20] edit | edit_node
 - pkis:framework:state-space-search: fields=['sources'] sections=[]
+
+## [2026-06-20] edit | edit_node
+- pkis:framework:deep-learning: fields=['sources'] sections=[]
