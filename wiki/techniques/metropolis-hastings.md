@@ -13,7 +13,7 @@ component_scores:
   principled_mechanism: null
 coverage: 1
 date_created: '2026-06-09'
-date_updated: '2026-06-09'
+date_updated: '2026-06-20'
 domain:
 - bayesian-stats
 generalizes:
@@ -26,6 +26,7 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - gelman-bda3-ch11
+- lange-applied-probability-ch07
 specializes:
 - mcmc
 tags:

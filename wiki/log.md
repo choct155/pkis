@@ -26072,3 +26072,6 @@
 
 ## [2026-06-20] edit | edit_node
 - pkis:technique:euler-maruyama-integration: fields=['sources'] sections=[]
+
+## [2026-06-20] edit | edit_node
+- pkis:technique:metropolis-hastings: fields=['sources'] sections=[]
