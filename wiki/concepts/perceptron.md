@@ -14,7 +14,7 @@ component_scores:
   transfer: null
 coverage: 1
 date_created: '2026-06-11'
-date_updated: '2026-06-11'
+date_updated: '2026-06-20'
 domain:
 - machine-learning
 id: pkis:concept:perceptron
@@ -29,6 +29,7 @@ prerequisite-of:
 related_concepts: []
 sources:
 - goodfellow-deeplearning-ch01
+- nielsen-nndl-ch01
 tags:
 - linear-classifier
 - online-learning

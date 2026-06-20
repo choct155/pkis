@@ -25841,3 +25841,6 @@
 
 ## [2026-06-20] edit | edit_node
 - pkis:concept:logistic-sigmoid-logit: fields=['sources'] sections=[]
+
+## [2026-06-20] edit | edit_node
+- pkis:concept:perceptron: fields=['sources'] sections=[]
