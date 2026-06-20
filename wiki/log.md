@@ -25586,3 +25586,6 @@
 
 ## [2026-06-20] edit | edit_node
 - pkis:technique:backpropagation: fields=['sources'] sections=[]
+
+## [2026-06-20] edit | edit_node
+- pkis:concept:regularization: fields=['sources'] sections=[]

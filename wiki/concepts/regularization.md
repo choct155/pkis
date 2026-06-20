@@ -3,7 +3,7 @@ aliases: []
 also_type: []
 coverage: 3
 date_created: 2026-05-20
-date_updated: '2026-06-08'
+date_updated: '2026-06-20'
 domain:
 - statistical-learning
 - optimization
@@ -16,6 +16,7 @@ sources:
 - '[[hastie-esl]]'
 - '[[nielsen-nndl]]'
 - '[[kroese-statistical-modeling]]'
+- nielsen-nndl-ch03
 tags:
 - linear-algebra
 - model-selection
