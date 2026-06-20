@@ -25673,3 +25673,6 @@
 
 ## [2026-06-20] edit | edit_node
 - pkis:concept:structured-matrices: fields=['sources'] sections=[]
+
+## [2026-06-20] edit | edit_node
+- pkis:concept:transition-matrix: fields=['sources'] sections=[]
