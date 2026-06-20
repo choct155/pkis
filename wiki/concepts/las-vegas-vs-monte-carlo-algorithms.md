@@ -12,7 +12,7 @@ component_scores:
   transfer: null
 coverage: 1
 date_created: '2026-06-11'
-date_updated: '2026-06-11'
+date_updated: '2026-06-20'
 domain:
 - machine-learning
 - algorithms
@@ -26,6 +26,7 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - goodfellow-deeplearning-ch17
+- tanner-tools-statistical-inference-ch01
 tags:
 - randomized-algorithms
 - monte-carlo
