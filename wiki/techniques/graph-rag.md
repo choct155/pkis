@@ -1,18 +1,47 @@
 ---
-id: "pkis:technique:graph-rag"
 aliases: []
-title: "Graph Retrieval-Augmented Generation"
-knowledge_type: technique
-also_type: [framework]
-domain: [knowledge-representation, deep-learning, symbolic-subsymbolic]
-tags: [rag, knowledge-graphs, llm, graph-theory, multi-hop, information-retrieval]
-related_concepts: [retrieval-augmented-generation, knowledge-graph, multi-hop-reasoning, graph-neural-networks, knowledge-graph-construction, in-context-learning]
-sources: ["[[zhang-graphrag-survey]]", "[[gulli-agentic-design-patterns]]", "[[banf-tripartite-graphrag]]", "[[cheng-cograg]]", "[[barron-legal-rag-nmf]]", "[[sequeda-kg-benchmark-llm-2023]]"]
-date_created: 2026-05-20
-date_updated: 2026-05-20
+also_type:
+- framework
 coverage: 6
-understanding: 0
+date_created: 2026-05-20
+date_updated: '2026-06-20'
+domain:
+- knowledge-representation
+- deep-learning
+- symbolic-subsymbolic
+id: pkis:technique:graph-rag
+knowledge_type: technique
 maturity: evolving
+related_concepts:
+- retrieval-augmented-generation
+- knowledge-graph
+- multi-hop-reasoning
+- graph-neural-networks
+- knowledge-graph-construction
+- in-context-learning
+sources:
+- '[[zhang-graphrag-survey]]'
+- '[[gulli-agentic-design-patterns]]'
+- '[[banf-tripartite-graphrag]]'
+- '[[cheng-cograg]]'
+- '[[barron-legal-rag-nmf]]'
+- '[[sequeda-kg-benchmark-llm-2023]]'
+- 2307-07697-think-on-graph-deep
+- arxivorg-thinkongraph
+- edge-from-2024
+- feng-cypherbench-2024
+- procko-from-2026
+- share-thinkongraph
+- share-thinkongraph-1
+tags:
+- rag
+- knowledge-graphs
+- llm
+- graph-theory
+- multi-hop
+- information-retrieval
+title: Graph Retrieval-Augmented Generation
+understanding: 0
 ---
 
 ## Reading Path

@@ -25235,3 +25235,6 @@
 
 ## [2026-06-20] edit | edit_node
 - pkis:technique:variational-inference: fields=['sources'] sections=[]
+
+## [2026-06-20] edit | edit_node
+- pkis:technique:graph-rag: fields=['sources'] sections=[]
