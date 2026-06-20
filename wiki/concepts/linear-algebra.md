@@ -4,7 +4,7 @@ also_type:
 - framework
 coverage: 2
 date_created: 2026-05-20
-date_updated: '2026-06-09'
+date_updated: '2026-06-20'
 domain:
 - statistical-learning
 - bayesian-stats
@@ -21,6 +21,14 @@ related_concepts:
 sources:
 - '[[deisenroth-mml]]'
 - '[[carrell-groups-matrices-vectors]]'
+- benzi-hidden-structure-matrices-ch05
+- carrell-groups-matrices-vectors-ch03
+- carrell-groups-matrices-vectors-ch04
+- carrell-groups-matrices-vectors-ch06
+- carrell-groups-matrices-vectors-ch07
+- carrell-groups-matrices-vectors-ch08
+- carrell-groups-matrices-vectors-ch10
+- carrell-groups-matrices-vectors-ch12
 tags:
 - mathematical-foundations
 title: Linear Algebra
