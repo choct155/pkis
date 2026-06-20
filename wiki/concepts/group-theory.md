@@ -3,7 +3,7 @@ aliases: []
 also_type: []
 coverage: 1
 date_created: 2026-05-20
-date_updated: 2026-05-20
+date_updated: '2026-06-20'
 domain:
 - statistical-learning
 - optimization
@@ -20,6 +20,11 @@ related_concepts:
 - '[[linear-algebraic-groups]]'
 sources:
 - '[[carrell-groups-matrices-vectors]]'
+- benzi-hidden-structure-matrices-ch05
+- carrell-groups-matrices-vectors-ch02
+- carrell-groups-matrices-vectors-ch07
+- carrell-groups-matrices-vectors-ch11
+- carrell-groups-matrices-vectors-ch12
 tags:
 - abstract-algebra
 - mathematical-foundations
