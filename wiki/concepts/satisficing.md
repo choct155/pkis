@@ -18,6 +18,7 @@ related_concepts:
 sources:
 - cyert-behavioral-theory-firm-1959
 - gavetti-behavioral-theory-firm-2012
+- gulli-agentic-design-patterns-ch20
 tags:
 - bounded-rationality
 - Simon
