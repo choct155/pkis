@@ -26102,3 +26102,6 @@
 
 ## [2026-06-20] edit | edit_node
 - pkis:technique:huffman-coding: fields=['sources'] sections=[]
+
+## [2026-06-20] edit | edit_node
+- pkis:technique:prompt-chaining: fields=['sources'] sections=[]
