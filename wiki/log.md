@@ -25805,3 +25805,6 @@
 
 ## [2026-06-20] edit | edit_node
 - pkis:problem:noncompliance-and-imperfect-experiments: fields=['sources'] sections=[]
+
+## [2026-06-20] edit | edit_node
+- pkis:result:ergodic-theorem-markov: fields=['sources'] sections=[]

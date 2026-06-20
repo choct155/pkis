@@ -22,6 +22,7 @@ related_concepts: []
 sources:
 - resnick-stochastic-processes-ch02
 - betancourt-short-2021
+- cassandras-des-intro-ch07
 tags:
 - stochastic-processes
 - markov-property
