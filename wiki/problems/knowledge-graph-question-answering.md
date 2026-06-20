@@ -30,6 +30,8 @@ sources:
 - wu-stark-2024
 - yih-the-2016
 - zhang-variational-2018
+- cimiano-ontology-nlp-ch09
+- gulli-agentic-design-patterns-ch14
 tags:
 - knowledge-graphs
 - multi-hop
