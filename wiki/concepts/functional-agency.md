@@ -5,7 +5,7 @@ analogous-to:
 - agent-program-architectures
 coverage: 1
 date_created: 2026-05-20
-date_updated: 2026-05-20
+date_updated: '2026-06-20'
 domain:
 - agentic-ai
 id: pkis:concept:functional-agency
@@ -14,6 +14,7 @@ maturity: evolving
 related_concepts: []
 sources:
 - '[[miehling-agentic-systems-theory-2025]]'
+- gulli-agentic-design-patterns-ch04
 tags:
 - agentic-ai
 - agency
