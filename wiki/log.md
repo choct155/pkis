@@ -26285,3 +26285,6 @@
 
 ## [2026-06-20] edit | edit_node
 - pkis:framework:the-bernoulli-urn: fields=['sources'] sections=[]
+
+## [2026-06-20] edit | edit_node
+- pkis:concept:sampling-with-and-without-replacement: fields=['sources'] sections=[]
