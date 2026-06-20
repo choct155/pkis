@@ -36,6 +36,8 @@ sources:
 - saadfalcon-ares-2024
 - share-thinkongraph-1
 - wu-stark-2024
+- gulli-agentic-design-patterns-ch14
+- gulli-agentic-design-patterns-ch22
 tags:
 - llm
 - information-retrieval
