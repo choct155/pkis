@@ -25889,3 +25889,6 @@
 
 ## [2026-06-20] edit | edit_node
 - pkis:principle:parallel-trends: fields=['sources'] sections=[]
+
+## [2026-06-20] edit | edit_node
+- pkis:technique:perturbation-analysis: fields=['sources'] sections=[]
