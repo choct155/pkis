@@ -11,7 +11,7 @@ component_scores:
   statement: null
 coverage: 1
 date_created: '2026-06-08'
-date_updated: '2026-06-08'
+date_updated: '2026-06-20'
 domain:
 - statistical-learning
 id: pkis:result:exponential-family-ml-maxent-duality
@@ -23,6 +23,7 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - mackay-itila-ch22
+- lange-applied-probability-ch16
 specializes:
 - maximum-likelihood-estimation
 tags:
