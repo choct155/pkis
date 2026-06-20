@@ -3,7 +3,7 @@ aliases: []
 also_type: []
 coverage: 1
 date_created: 2026-05-20
-date_updated: 2026-05-20
+date_updated: '2026-06-20'
 domain:
 - causal-analysis
 id: pkis:technique:difference-in-differences
@@ -17,6 +17,8 @@ related_concepts:
 - '[[potential-outcomes-framework]]'
 sources:
 - '[[cunningham-causal-inference-mixtape]]'
+- cunningham-causal-inference-mixtape-ch09
+- cunningham-causal-inference-mixtape-ch10
 tags:
 - did
 - parallel-trends

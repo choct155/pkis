@@ -25823,3 +25823,6 @@
 
 ## [2026-06-20] edit | edit_node
 - pkis:technique:fixed-effects-estimator: fields=['sources'] sections=[]
+
+## [2026-06-20] edit | edit_node
+- pkis:technique:difference-in-differences: fields=['sources'] sections=[]
