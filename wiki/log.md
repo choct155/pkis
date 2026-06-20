@@ -25907,3 +25907,6 @@
 
 ## [2026-06-20] edit | edit_node
 - pkis:framework:structural-time-series: fields=['sources'] sections=[]
+
+## [2026-06-20] edit | edit_node
+- pkis:framework:linear-gaussian-ssm: fields=['sources'] sections=[]
