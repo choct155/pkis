@@ -25541,3 +25541,6 @@
 
 ## [2026-06-20] edit | edit_node
 - pkis:technique:generalized-linear-models: fields=['sources'] sections=[]
+
+## [2026-06-20] edit | edit_node
+- pkis:framework:generalized-linear-model: fields=['sources'] sections=[]
