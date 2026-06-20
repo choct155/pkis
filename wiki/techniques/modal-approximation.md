@@ -11,7 +11,7 @@ component_scores:
   principled_mechanism: null
 coverage: 1
 date_created: '2026-06-09'
-date_updated: '2026-06-09'
+date_updated: '2026-06-20'
 domain:
 - bayesian-stats
 - optimization
@@ -24,6 +24,7 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - gelman-bda3-ch13
+- tanner-tools-statistical-inference-ch03
 tags:
 - posterior-approximation
 - mode-finding
