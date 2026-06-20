@@ -26300,3 +26300,6 @@
 
 ## [2026-06-20] edit | edit_node
 - pkis:concept:stopping-time: fields=['sources'] sections=[]
+
+## [2026-06-20] edit | edit_node
+- pkis:result:walds-identity: fields=['sources'] sections=[]
