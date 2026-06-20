@@ -26204,3 +26204,6 @@
 
 ## [2026-06-20] edit | edit_node
 - pkis:result:entropy-concentration-theorem: fields=['sources'] sections=[]
+
+## [2026-06-20] edit | edit_node
+- pkis:principle:maximum-entropy-principle: fields=['sources'] sections=[]

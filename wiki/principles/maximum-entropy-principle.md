@@ -8,7 +8,7 @@ component_scores:
   violations: null
 coverage: 1
 date_created: '2026-06-09'
-date_updated: '2026-06-09'
+date_updated: '2026-06-20'
 domain:
 - bayesian-stats
 - information-theory
@@ -23,6 +23,7 @@ sources:
 - jaynes-probability-ch09
 - jaynes-probability-ch11
 - jaynes-probability-ch22
+- lange-applied-probability-ch16
 specializes:
 - exponential-family
 tags:
