@@ -79,6 +79,13 @@ export default function App() {
   const facetActive = typeFilter !== 'all' || domainFilter !== 'all' || clusterFilter !== 'all'
   const showFacetBar = view === 'browse' && !showSearch && facetActive
 
+  // The Docs view runs a three-pane (tree / article / TOC) layout that wants more
+  // room than the app's default body clamp. Widen the shell only while docs is up.
+  useEffect(() => {
+    document.body.classList.toggle('body-docs', view === 'docs' && !showSearch)
+    return () => document.body.classList.remove('body-docs')
+  }, [view, showSearch])
+
   return (
     <>
       <div className="app-shell">
