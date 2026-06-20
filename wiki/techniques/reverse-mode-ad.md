@@ -14,7 +14,7 @@ component_scores:
   principled_mechanism: null
 coverage: 1
 date_created: '2026-06-11'
-date_updated: '2026-06-11'
+date_updated: '2026-06-20'
 domain:
 - machine-learning
 - numerical-methods
@@ -27,6 +27,7 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - murphy-pml2-advanced-ch06
+- nielsen-nndl-ch02
 specializes:
 - automatic-differentiation
 tags:
