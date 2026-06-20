@@ -5,13 +5,12 @@ import type { SearchResult, View } from '../types'
 interface Props {
   onResults: (results: SearchResult[] | null) => void
   onNavigate: (view: View) => void
-  activeView: View
   auth: AuthState
   onSignIn: () => void
   onSignOut: () => void
 }
 
-export default function TopBar({ onResults, onNavigate, activeView, auth, onSignIn, onSignOut }: Props) {
+export default function TopBar({ onResults, onNavigate, auth, onSignIn, onSignOut }: Props) {
   const [query, setQuery] = useState('')
   const [searching, setSearching] = useState(false)
   const debounceRef = useRef<ReturnType<typeof setTimeout> | null>(null)
@@ -66,13 +65,6 @@ export default function TopBar({ onResults, onNavigate, activeView, auth, onSign
           onChange={(e) => handleChange(e.target.value)}
           onKeyDown={(e) => e.key === 'Escape' && handleChange('')}
         />
-      </div>
-      <div
-        className={`icon-btn${activeView === 'graph' ? ' active' : ''}`}
-        onClick={() => onNavigate(activeView === 'graph' ? 'browse' : 'graph')}
-        title="Graph view"
-      >
-        ⬡
       </div>
       {auth.authenticated ? (
         <div

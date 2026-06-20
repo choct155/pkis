@@ -52,6 +52,15 @@ export default function App() {
 
   const handleSelectNode = (iri: string) => setSelectedIri(iri)
 
+  // Navigating must also dismiss any open overlay (a node detail sheet or active
+  // search results) — otherwise the view changes UNDERNEATH the sheet, which keeps
+  // covering the screen, and the nav button looks like it failed.
+  const navigate = (v: View) => {
+    setSelectedIri(null)
+    setSearchResults(null)
+    setView(v)
+  }
+
   const handleNavigateToGraph = () => {
     setView('graph')
     setSelectedIri(null)
@@ -75,7 +84,7 @@ export default function App() {
       <div className="app-shell">
         <Sidebar
           view={view}
-          onNavigate={setView}
+          onNavigate={navigate}
           isOwner={isOwner}
           domainFilter={domainFilter}
           onDomain={handleDomain}
@@ -87,8 +96,7 @@ export default function App() {
         <div className="content-col">
           <TopBar
             onResults={setSearchResults}
-            onNavigate={setView}
-            activeView={view}
+            onNavigate={navigate}
             auth={auth}
             onSignIn={signIn}
             onSignOut={signOut}
@@ -127,7 +135,7 @@ export default function App() {
                     domainFilter={domainFilter}
                     clusterFilter={clusterFilter}
                     onSelectNode={handleSelectNode}
-                    onNavigate={setView}
+                    onNavigate={navigate}
                     isOwner={isOwner}
                   />
                 )}
@@ -162,7 +170,7 @@ export default function App() {
         </div>
       </div>
 
-      <BottomNav active={view} onNavigate={setView} isOwner={isOwner} />
+      <BottomNav active={view} onNavigate={navigate} isOwner={isOwner} />
       {view !== 'ask' && <Fab onClick={() => setCaptureOpen(true)} />}
 
       {selectedIri && (
