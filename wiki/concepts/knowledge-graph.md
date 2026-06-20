@@ -38,6 +38,9 @@ sources:
 - wu-stark-2024
 - yih-the-2016
 - zhang-variational-2018
+- allemang-semantic-web-ch04
+- allemang-semantic-web-ch16
+- cimiano-ontology-nlp-ch09
 tags:
 - rdf
 - linked-data
