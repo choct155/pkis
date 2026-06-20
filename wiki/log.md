@@ -25160,3 +25160,12 @@
 ## [2026-06-20] committed | bridge-note
 - Committed: bn-20260531-nedner-is-the-task-under → bridge-notes/bn-20260531-nedner-is-the-task-under.md
 - IRI: pkis:bridge-note:bn-20260531-nedner-is-the-task-under
+
+## [2026-06-20] staged | source-stub
+- Staged: ru-ragchecker-2024 (id: c6777973-742e-42b0-b057-2ec0a1096f25)
+- Title: RAGChecker: A Fine-Grained Framework for Diagnosing Retrieval-Augmented Generation
+- Enrichment: full
+
+## [2026-06-20] committed | source
+- Committed: ru-ragchecker-2024 → sources/ru-ragchecker-2024.md
+- IRI: pkis:source:ru-ragchecker-2024
