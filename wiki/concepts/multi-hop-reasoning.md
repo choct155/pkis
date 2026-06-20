@@ -25,6 +25,7 @@ sources:
 - talmor-the-2018
 - yang-hotpotqa-2018
 - zhang-variational-2018
+- gulli-agentic-design-patterns-ch17
 tags:
 - knowledge-graphs
 - inference
