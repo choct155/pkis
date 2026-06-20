@@ -25328,3 +25328,6 @@
 
 ## [2026-06-20] edit | edit_node
 - pkis:concept:binary-logistic-regression: fields=['sources'] sections=[]
+
+## [2026-06-20] edit | edit_node
+- pkis:technique:irls: fields=['sources'] sections=[]
