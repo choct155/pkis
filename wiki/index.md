@@ -2397,6 +2397,7 @@
 - [[evaluation-infrastructure]] — Evaluation Infrastructure: domain-specific benchmark construction for ontology-augmented NED/NER and composite result quality (knowledge-representation) (2026-05-30)
 
 ## Hypotheses
+- [[graph-retrieval-dominates-vector-search-concept-specifi]] — Graph retrieval dominates vector similarity search for concept-specific queries () (2026-06-20)
 - [[query-coverage-as-expected-mass-of-c-q-on-encoded-conce]] — Query Coverage as Expected Mass of C(q) on Encoded Concept Nodes (knowledge-representation, bayesian-stats) (2026-06-13)
 - [[concept-typed-nodes-dominate-document-nodes-on-coverage]] — Concept-Typed Nodes Dominate Document Nodes on Coverage-Per-Token Efficiency (knowledge-representation, bayesian-stats) (2026-06-13)
 - [[graph-encoded-concept-dependencies-reduce-expected-infe]] — Graph-Encoded Concept Dependencies Reduce Expected Inference Steps Required to Achieve Sufficient Query Coverage (knowledge-representation, bayesian-stats, deep-learning) (2026-06-13)

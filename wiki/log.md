@@ -25083,3 +25083,12 @@
 ## [2026-06-20] committed | framework
 - Committed: multidimensional-retrieval-quality-framework → frameworks/multidimensional-retrieval-quality-framework.md
 - IRI: pkis:framework:multidimensional-retrieval-quality-framework
+
+## [2026-06-20] staged | hypothesis
+- Staged: graph-retrieval-dominates-vector-search-concept-specifi (id: e8cb1989-f781-48e3-94c9-c6e6d1e839c0)
+- Title: Graph retrieval dominates vector similarity search for concept-specific queries
+- Cluster: (none)
+
+## [2026-06-20] committed | hypothesis
+- Committed: graph-retrieval-dominates-vector-search-concept-specifi → hypotheses/graph-retrieval-dominates-vector-search-concept-specifi.md
+- IRI: pkis:hypothesis:graph-retrieval-dominates-vector-search-concept-specifi
