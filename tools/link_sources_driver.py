@@ -43,8 +43,8 @@ PROMPT = """You are the PKIS Librarian. Decide which knowledge-graph CONCEPTS a 
 genuinely supports — i.e. the source provides direct evidence for, substantially \
 covers, or is a primary reference for that concept. Be CONSERVATIVE: only include a \
 concept when the connection is specific and real. It is better to omit a weak match \
-than to assert a spurious one. Most sources support 1-4 concepts; some support none \
-of the candidates.
+than to assert a spurious one. A paper typically supports 1-4 concepts and a book \
+chapter 2-8; some support none of the candidates.
 
 SOURCE
 title: {title}
@@ -57,7 +57,10 @@ Return ONLY a JSON array of the `id`s of the concepts this source genuinely supp
 (e.g. ["pkis:concept:foo","pkis:technique:bar"]). Empty array if none fit."""
 
 
-def unlinked_standalone_sources():
+def unlinked_sources(chapters=False):
+    """Unlinked sources to process. chapters=False → standalone papers/books (no
+    parent_book); chapters=True → book chapters (parent_book set, matched on their
+    topical title + summary)."""
     nodes = app.load_all_nodes()
     concepts = [n for n in nodes if n.get("frontmatter", {}).get("knowledge_type") in
                 ("concept", "technique", "result", "principle", "framework", "problem")]
@@ -69,7 +72,8 @@ def unlinked_standalone_sources():
     for n in nodes:
         if n.get("node_type") != "sources":
             continue
-        if n.get("frontmatter", {}).get("parent_book"):   # chapter — skip (granularity)
+        is_chapter = bool(n.get("frontmatter", {}).get("parent_book"))
+        if is_chapter != chapters:
             continue
         if n["slug"] in referenced:
             continue
@@ -102,6 +106,7 @@ def confirm_concepts(source, candidates):
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--dry-run", action="store_true")
+    ap.add_argument("--chapters", action="store_true", help="process book chapters (parent_book)")
     ap.add_argument("--limit", type=int, default=0)
     args = ap.parse_args()
 
@@ -109,7 +114,7 @@ def main():
     if os.path.exists(STATE_PATH):
         state = json.loads(open(STATE_PATH).read())
 
-    sources = unlinked_standalone_sources()
+    sources = unlinked_sources(chapters=args.chapters)
     if args.limit:
         sources = sources[:args.limit]
     print(f"{len(sources)} unlinked standalone sources to consider"
