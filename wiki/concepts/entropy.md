@@ -17,6 +17,7 @@ related_concepts:
 sources:
 - '[[lange-applied-probability]]'
 - cote-visual-intro-information-theory-2022
+- lange-applied-probability-ch16
 tags:
 - information-theory
 - shannon-entropy
