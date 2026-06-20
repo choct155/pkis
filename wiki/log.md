@@ -25796,3 +25796,6 @@
 
 ## [2026-06-20] edit | edit_node
 - pkis:concept:two-stage-least-squares: fields=['sources'] sections=[]
+
+## [2026-06-20] edit | edit_node
+- pkis:technique:late-iv: fields=['sources'] sections=[]
