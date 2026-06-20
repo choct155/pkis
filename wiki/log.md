@@ -25778,3 +25778,6 @@
 
 ## [2026-06-20] edit | edit_node
 - pkis:technique:completing-the-square-multivariate: fields=['sources'] sections=[]
+
+## [2026-06-20] edit | edit_node
+- pkis:problem:job-shop-scheduling: fields=['sources'] sections=[]
