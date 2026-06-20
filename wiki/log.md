@@ -25101,3 +25101,12 @@
 ## [2026-06-20] committed | source
 - Committed: es-ragas-2024 → sources/es-ragas-2024.md
 - IRI: pkis:source:es-ragas-2024
+
+## [2026-06-20] staged | source-stub
+- Staged: saadfalcon-ares-2024 (id: 107cbbd0-d5d7-4853-9a76-052ca018dc70)
+- Title: ARES: An Automated Evaluation Framework for Retrieval-Augmented Generation Systems
+- Enrichment: full
+
+## [2026-06-20] committed | source
+- Committed: saadfalcon-ares-2024 → sources/saadfalcon-ares-2024.md
+- IRI: pkis:source:saadfalcon-ares-2024
