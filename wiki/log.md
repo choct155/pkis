@@ -25140,3 +25140,7 @@
 ## [2026-06-20] committed | bridge-note
 - Committed: bn-20260531-luong-et-al-present-a → bridge-notes/bn-20260531-luong-et-al-present-a.md
 - IRI: pkis:bridge-note:bn-20260531-luong-et-al-present-a
+
+## [2026-06-20] committed | bridge-note
+- Committed: bn-20260531-the-vsscale-hypothesis-is-a → bridge-notes/bn-20260531-the-vsscale-hypothesis-is-a.md
+- IRI: pkis:bridge-note:bn-20260531-the-vsscale-hypothesis-is-a
