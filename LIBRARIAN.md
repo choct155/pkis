@@ -1,9 +1,9 @@
 # Librarian Agent — Operating Procedure
-Version: 3.1
+Version: 3.2
 
 ## Role
 
-The Librarian operates in two modes:
+The Librarian operates in three modes:
 
 **Ingest Mode** — ingests new source materials into the wiki. Creates structured
 source entries, classifies knowledge objects by type, creates stubs in the appropriate
@@ -11,6 +11,12 @@ folders, updates the index and log, and populates the reading queue.
 
 **Interrogation Mode** — answers structural questions about the source dependency
 graph in natural language. Read-only; does not write to the graph.
+
+**Linking Mode** — a batch *backfill* that connects already-ingested sources to the
+concepts they support, so the corpus stays fully cross-linked over time. Ingest
+links each new source forward as it arrives (Step 3.3); Linking Mode is how the
+Librarian sweeps the *existing* corpus for sources that were never linked (or whose
+concepts arrived later).
 
 ## Trigger
 
@@ -61,7 +67,8 @@ paths are not.
 | `wiki/log.md` | Yes — append only |
 | `wiki/queue.md` | Yes — add items only |
 | `raw/clippings/` | Yes — save web-clipped markdown |
-| Existing non-stub nodes | No — Synthesizer's domain |
+| Existing non-stub nodes — body/semantics | No — Synthesizer's domain |
+| Existing non-stub nodes — `sources:` frontmatter | Yes — append source links (Ingest Step 3.3, Linking Mode) |
 
 ---
 
@@ -98,6 +105,46 @@ language. It is **read-only** and does not write to the graph.
   → Load all bridge notes with `status: unreviewed`; for each, run `search_wiki`
   against the rationale text; propose top 3 linked node candidates; present for
   human confirmation before updating the bridge note
+
+---
+
+## Linking Mode (backfill)
+
+Why it matters: a source is "load-bearing" only insofar as concepts cite it. The
+viewer's Priority queue ("why read it") and a source's **research-relevance panel**
+are computed by inverting each concept's `sources:` frontmatter (`_source_concept_map`
+in `app.py`). A source that no concept lists reads as "captured — not yet linked"
+and carries no rationale. Linking Mode closes that gap across the whole corpus.
+
+**Tool:** `tools/link_sources_driver.py`. For each unlinked source it semantically
+retrieves candidate concepts, has a cheap model (Haiku) **conservatively** confirm
+which the source genuinely supports, and appends the source to those concepts'
+`sources:` via `tool_edit_node` (the sanctioned write path — correct YAML, commit,
+push). Conservative by design: omit weak matches rather than assert spurious ones
+(a paper supports ~1–4 concepts, a book chapter ~2–8; some support none).
+
+**Run it (on the server, in the app venv — it needs the Anthropic key + writes to
+the live checkout):**
+
+```
+# always dry-run first to eyeball match quality — no writes:
+python tools/link_sources_driver.py --dry-run --limit 10
+python tools/link_sources_driver.py                 # standalone papers/books (no parent_book)
+python tools/link_sources_driver.py --chapters      # book chapters (matched on title + 1-line summary)
+```
+
+Resumable via `tools/.link_sources_state.json` (gitignored). Chapters are matched
+on their topical title + summary because their node bodies are thin and reader
+payloads usually don't exist yet.
+
+**MANDATORY after a run — refresh the server.** The driver commits *externally* to
+the wiki repo, so the running gunicorn keeps serving STALE nodes until refreshed.
+`POST /refresh` only reaches one of the two workers; do a full
+`sudo systemctl restart pkis-mcp` so **both** workers reload (drops the claude.ai
+connector once). Verify with `/pkis-api/source-relevance` for a just-linked source.
+
+**When to run:** after a batch ingest, and periodically as a sweep. The driver
+re-scans for *currently* unlinked sources each run, so it's safe to re-run anytime.
 
 ---
 
