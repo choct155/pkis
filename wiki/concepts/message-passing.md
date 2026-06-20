@@ -12,7 +12,7 @@ component_scores:
   transfer: null
 coverage: 1
 date_created: '2026-06-08'
-date_updated: '2026-06-08'
+date_updated: '2026-06-20'
 domain:
 - information-theory
 - bayesian-stats
@@ -26,6 +26,7 @@ prerequisite-of:
 related_concepts: []
 sources:
 - mackay-itila-ch16
+- gulli-agentic-design-patterns-ch15
 tags:
 - message-passing
 - graph-theory
