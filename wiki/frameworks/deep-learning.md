@@ -27,6 +27,7 @@ related_concepts: []
 sources:
 - goodfellow-deeplearning-ch01
 - goodfellow-deeplearning
+- nielsen-nndl-ch06
 specializes:
 - neural-networks
 tags:
