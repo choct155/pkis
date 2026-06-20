@@ -2433,6 +2433,7 @@
 ## Reading Queue
 
 ## Bridge Notes
+- [[bn-20260531-explicit-intensional-structure-ontological-class]] — Intensional Grounding and NED-accuracy use Formal Ontology as the intensional structure () (2026-06-20)
 - [[bn-20260531-knowledgegraphconstruction-is-the-existing-techn]] — Intensional Grounding uses Knowledge Graph Construction (NER/entity recognition) () (2026-06-20)
 - [[bn-20260531-the-vsscale-hypothesis-is-a]] — The vs-scale hypothesis contrasts-with Neural Scaling Laws () (2026-06-20)
 - [[bn-20260531-luong-et-al-present-a]] — Luong (Ontology-Constrained Neural Reasoning) instantiates the vs-scale mechanism () (2026-06-20)
