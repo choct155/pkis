@@ -26156,3 +26156,6 @@
 
 ## [2026-06-20] edit | edit_node
 - pkis:concept:generalized-semi-markov-process: fields=['sources'] sections=[]
+
+## [2026-06-20] edit | edit_node
+- pkis:principle:td-vs-mc-vs-dp: fields=['sources'] sections=[]
