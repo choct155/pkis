@@ -3,7 +3,7 @@ aliases: []
 also_type: []
 coverage: 1
 date_created: 2026-05-20
-date_updated: 2026-05-20
+date_updated: '2026-06-20'
 domain:
 - bayesian-stats
 extends:
@@ -24,6 +24,8 @@ related_concepts:
 - '[[conjugate-prior]]'
 sources:
 - '[[tanner-tools-statistical-inference]]'
+- tanner-tools-statistical-inference-ch05
+- tanner-tools-statistical-inference-ch06
 tags:
 - posterior-sampling
 - latent-variables
