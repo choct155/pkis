@@ -25152,3 +25152,7 @@
 ## [2026-06-20] committed | bridge-note
 - Committed: bn-20260531-explicit-intensional-structure-ontological-class → bridge-notes/bn-20260531-explicit-intensional-structure-ontological-class.md
 - IRI: pkis:bridge-note:bn-20260531-explicit-intensional-structure-ontological-class
+
+## [2026-06-20] committed | bridge-note
+- Committed: bn-20260531-the-umbrella-thesis-claims-ontological → bridge-notes/bn-20260531-the-umbrella-thesis-claims-ontological.md
+- IRI: pkis:bridge-note:bn-20260531-the-umbrella-thesis-claims-ontological
