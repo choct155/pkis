@@ -25196,3 +25196,6 @@
 ## [2026-06-20] committed | source
 - Committed: procko-from-2026 → sources/procko-from-2026.md
 - IRI: pkis:source:procko-from-2026
+
+## [2026-06-20] edit | edit_node
+- pkis:technique:retrieval-augmented-generation: fields=['sources'] sections=[]

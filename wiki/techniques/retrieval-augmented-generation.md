@@ -1,18 +1,48 @@
 ---
-id: "pkis:technique:retrieval-augmented-generation"
 aliases: []
-title: "Retrieval-Augmented Generation"
-knowledge_type: technique
-also_type: [framework]
-domain: [knowledge-representation, deep-learning]
-tags: [llm, information-retrieval, rag, vector-databases]
-related_concepts: [knowledge-graph, graph-rag]
-sources: ["[[zhang-graphrag-survey]]", "[[gulli-agentic-design-patterns]]", "[[barron-legal-rag-nmf]]", "[[baldazzi-soft-ontological-reasoning]]", "[[cheng-cograg]]", "[[banf-tripartite-graphrag]]", "[[sequeda-kg-benchmark-llm-2023]]", "[[sequeda-kg-trust-llm-2025]]", "[[radhakrishnan-datagemma-2024]]"]
-date_created: 2026-05-20
-date_updated: 2026-05-20
+also_type:
+- framework
 coverage: 9
-understanding: 0
+date_created: 2026-05-20
+date_updated: '2026-06-20'
+domain:
+- knowledge-representation
+- deep-learning
+id: pkis:technique:retrieval-augmented-generation
+knowledge_type: technique
 maturity: evolving
+related_concepts:
+- knowledge-graph
+- graph-rag
+sources:
+- '[[zhang-graphrag-survey]]'
+- '[[gulli-agentic-design-patterns]]'
+- '[[barron-legal-rag-nmf]]'
+- '[[baldazzi-soft-ontological-reasoning]]'
+- '[[cheng-cograg]]'
+- '[[banf-tripartite-graphrag]]'
+- '[[sequeda-kg-benchmark-llm-2023]]'
+- '[[sequeda-kg-trust-llm-2025]]'
+- '[[radhakrishnan-datagemma-2024]]'
+- arxivorg-thinkongraph
+- edge-from-2024
+- es-ragas-2024
+- feng-cypherbench-2024
+- gao-retrievalaugmented-2025
+- kwiatkowski-do-2024
+- procko-from-2026
+- rau-revisiting-2026
+- ru-ragchecker-2024
+- saadfalcon-ares-2024
+- share-thinkongraph-1
+- wu-stark-2024
+tags:
+- llm
+- information-retrieval
+- rag
+- vector-databases
+title: Retrieval-Augmented Generation
+understanding: 0
 ---
 
 ## Reading Path
