@@ -1525,7 +1525,9 @@ body {
    Mobile (base): single column. The tree is a slide-in drawer toggled by the
    mobile bar; the in-page TOC is hidden (headings are reachable by scrolling).
    ≥900px: a three-pane flex row with sticky tree + TOC flanking the article. */
-.docs-shell { display: flex; align-items: flex-start; gap: 0; }
+/* Mobile: single column (the tree is a fixed drawer, out of flow). The flex
+   row only kicks in at ≥900px — see below. */
+.docs-shell { display: block; }
 
 /* Mobile bar: drawer toggle + current doc title. */
 .docs-mobilebar {
@@ -1598,7 +1600,7 @@ body {
      panes breathe; the article keeps a comfortable reading measure. */
   body.body-docs { max-width: 1360px; }
 
-  .docs-shell { gap: 28px; }
+  .docs-shell { display: flex; align-items: flex-start; gap: 28px; }
   .docs-mobilebar { display: none; }
 
   /* Tree becomes an in-flow sticky rail; drop the drawer styling. */
