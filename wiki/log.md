@@ -26036,3 +26036,6 @@
 
 ## [2026-06-20] edit | edit_node
 - pkis:concept:probability-density-change-of-variables: fields=['sources'] sections=[]
+
+## [2026-06-20] edit | edit_node
+- pkis:concept:multinomial-distribution: fields=['sources'] sections=[]
