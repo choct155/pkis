@@ -29,6 +29,7 @@ sources:
 - bishop-prml
 - li-forecaster-pearl-causality-2023
 - murphy-pml2-advanced
+- cunningham-causal-inference-mixtape-ch04
 tags:
 - probability-theory
 - graph-theory
