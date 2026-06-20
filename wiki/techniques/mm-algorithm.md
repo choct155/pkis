@@ -8,7 +8,7 @@ contrasts-with:
 - iteratively-reweighted-least-squares
 coverage: 1
 date_created: 2026-05-20
-date_updated: 2026-05-20
+date_updated: '2026-06-20'
 domain:
 - optimization
 - bayesian-stats
@@ -23,6 +23,7 @@ related_concepts:
 - '[[continuous-optimization]]'
 sources:
 - '[[lange-applied-probability]]'
+- lange-applied-probability-ch03
 tags:
 - optimization
 - em-algorithm

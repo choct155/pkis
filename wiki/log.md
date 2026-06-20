@@ -25970,3 +25970,6 @@
 
 ## [2026-06-20] edit | edit_node
 - pkis:framework:contract-net-protocol: fields=['sources'] sections=[]
+
+## [2026-06-20] edit | edit_node
+- pkis:technique:mm-algorithm: fields=['sources'] sections=[]
