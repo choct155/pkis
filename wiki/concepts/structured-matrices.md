@@ -1,18 +1,38 @@
 ---
-id: "pkis:concept:structured-matrices"
 aliases: []
-title: "Structured Matrices"
-knowledge_type: concept
 also_type: []
-domain: [optimization, statistical-learning]
-tags: [linear-algebra, numerical-methods, toeplitz, low-rank, hierarchical-matrices, displacement-rank, tensors]
-related_concepts: ["[[matrix-decompositions]]", "[[singular-value-decomposition]]", "[[linear-algebra]]", "[[toeplitz-matrices]]", "[[hierarchical-low-rank-matrices]]", "[[tensor-decompositions]]"]
-sources: ["[[benzi-hidden-structure-matrices]]"]
-date_created: 2026-05-20
-date_updated: 2026-05-20
 coverage: 1
-understanding: 0
+date_created: 2026-05-20
+date_updated: '2026-06-20'
+domain:
+- optimization
+- statistical-learning
+id: pkis:concept:structured-matrices
+knowledge_type: concept
 maturity: settled
+related_concepts:
+- '[[matrix-decompositions]]'
+- '[[singular-value-decomposition]]'
+- '[[linear-algebra]]'
+- '[[toeplitz-matrices]]'
+- '[[hierarchical-low-rank-matrices]]'
+- '[[tensor-decompositions]]'
+sources:
+- '[[benzi-hidden-structure-matrices]]'
+- benzi-hidden-structure-matrices-ch01
+- benzi-hidden-structure-matrices-ch02
+- benzi-hidden-structure-matrices-ch03
+- benzi-hidden-structure-matrices-ch04
+tags:
+- linear-algebra
+- numerical-methods
+- toeplitz
+- low-rank
+- hierarchical-matrices
+- displacement-rank
+- tensors
+title: Structured Matrices
+understanding: 0
 ---
 
 Matrices possessing non-obvious structural properties — such as constant diagonals (Toeplitz), low-rank off-diagonal blocks (hierarchical/H-matrices), displacement-rank characterizations (Cauchy-like), decay patterns, or group symmetries — that enable sub-quadratic algorithms for matrix-vector products, factorizations, and function evaluations compared to generic O(n²) or O(n³) methods.
