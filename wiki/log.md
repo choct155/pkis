@@ -26219,3 +26219,6 @@
 
 ## [2026-06-20] edit | edit_node
 - pkis:technique:ordinary-least-squares: fields=['sources'] sections=[]
+
+## [2026-06-20] edit | edit_node
+- pkis:concept:causal-analysis: fields=['sources'] sections=[]

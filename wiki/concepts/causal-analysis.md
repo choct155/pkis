@@ -12,7 +12,7 @@ component_scores:
   transfer: null
 coverage: 1
 date_created: '2026-06-01'
-date_updated: '2026-06-02'
+date_updated: '2026-06-20'
 domain:
 - bayesian-stats
 id: pkis:concept:causal-analysis
@@ -22,6 +22,7 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - '[[pearl-causality-ch03]]'
+- cunningham-causal-inference-mixtape-ch03
 tags:
 - causal-inference
 - identification
