@@ -25271,3 +25271,6 @@
 
 ## [2026-06-20] edit | edit_node
 - pkis:concept:brownian-motion: fields=['sources'] sections=[]
+
+## [2026-06-20] edit | edit_node
+- pkis:concept:point-process: fields=['sources'] sections=[]
