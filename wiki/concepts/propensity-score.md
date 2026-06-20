@@ -5,7 +5,7 @@ applies:
 - adjustment-formula-standardization
 coverage: 1
 date_created: 2026-05-20
-date_updated: 2026-05-20
+date_updated: '2026-06-20'
 domain:
 - causal-analysis
 id: pkis:concept:propensity-score
@@ -18,6 +18,7 @@ related_concepts:
 - '[[average-treatment-effect]]'
 sources:
 - '[[cunningham-causal-inference-mixtape]]'
+- cunningham-causal-inference-mixtape-ch06
 specializes:
 - ignorability
 tags:
