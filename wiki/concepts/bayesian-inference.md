@@ -12,7 +12,7 @@ component_scores:
   transfer: null
 coverage: 1
 date_created: '2026-06-01'
-date_updated: '2026-06-09'
+date_updated: '2026-06-20'
 domain:
 - bayesian-stats
 id: pkis:concept:bayesian-inference
@@ -24,6 +24,7 @@ sources:
 - '[[mackay-itila-ch02]]'
 - '[[gelman-bda3-ch01]]'
 - '[[kroese-statistical-modeling-ch08]]'
+- cunningham-causal-inference-mixtape-ch02
 specializes:
 - plausible-reasoning
 tags:
