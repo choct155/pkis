@@ -1,18 +1,32 @@
 ---
-id: "pkis:technique:tool-use"
 aliases: []
-title: "Tool Use (Function Calling)"
-knowledge_type: technique
 also_type: []
-domain: [deep-learning]
-tags: [llm, agentic-ai, function-calling, api-integration, tool-use]
-related_concepts: []
-sources: ["[[gulli-agentic-design-patterns]]", "[[radhakrishnan-datagemma-2024]]"]
-date_created: 2026-05-20
-date_updated: 2026-05-20
 coverage: 1
-understanding: 0
+date_created: 2026-05-20
+date_updated: '2026-06-20'
+domain:
+- deep-learning
+id: pkis:technique:tool-use
+knowledge_type: technique
 maturity: evolving
+related_concepts: []
+sources:
+- '[[gulli-agentic-design-patterns]]'
+- '[[radhakrishnan-datagemma-2024]]'
+- gulli-agentic-design-patterns-ch05
+- gulli-agentic-design-patterns-ch10
+- gulli-agentic-design-patterns-ch21
+- gulli-agentic-design-patterns-ch24
+- gulli-agentic-design-patterns-ch25
+- gulli-agentic-design-patterns-ch26
+tags:
+- llm
+- agentic-ai
+- function-calling
+- api-integration
+- tool-use
+title: Tool Use (Function Calling)
+understanding: 0
 ---
 
 The agent pattern in which an LLM is given a set of callable external tools (functions, APIs, databases, code executors, search engines) and learns to invoke them with structured arguments to retrieve information or take actions beyond text generation — extending the agent's effective capability to the full space of available services.
