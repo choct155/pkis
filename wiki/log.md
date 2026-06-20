@@ -25835,3 +25835,6 @@
 
 ## [2026-06-20] edit | edit_node
 - pkis:concept:multilayer-perceptron: fields=['sources'] sections=[]
+
+## [2026-06-20] edit | edit_node
+- pkis:concept:single-neuron-classifier: fields=['sources'] sections=[]
