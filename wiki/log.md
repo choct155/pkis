@@ -25319,3 +25319,6 @@
 
 ## [2026-06-20] edit | edit_node
 - pkis:technique:reparameterization-trick: fields=['sources'] sections=[]
+
+## [2026-06-20] edit | edit_node
+- pkis:framework:policy-gradient-methods: fields=['sources'] sections=[]

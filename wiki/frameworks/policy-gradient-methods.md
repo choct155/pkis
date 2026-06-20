@@ -12,7 +12,7 @@ contrasts-with:
 - markov-decision-processes
 coverage: 1
 date_created: '2026-06-09'
-date_updated: '2026-06-09'
+date_updated: '2026-06-20'
 domain:
 - reinforcement-learning
 - optimization
@@ -26,6 +26,7 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - sutton-policy-2018
+- mohamed-monte-2020
 tags:
 - policy-gradient
 - stochastic-gradient-ascent
