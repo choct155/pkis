@@ -13,7 +13,7 @@ contrasts-with:
 - tangent-propagation
 coverage: 1
 date_created: '2026-06-11'
-date_updated: '2026-06-11'
+date_updated: '2026-06-20'
 domain:
 - machine-learning
 - computer-vision
@@ -26,6 +26,7 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - bishop-prml-ch05
+- nielsen-nndl-ch06
 specializes:
 - feed-forward-neural-network
 tags:
