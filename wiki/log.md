@@ -25156,3 +25156,7 @@
 ## [2026-06-20] committed | bridge-note
 - Committed: bn-20260531-the-umbrella-thesis-claims-ontological → bridge-notes/bn-20260531-the-umbrella-thesis-claims-ontological.md
 - IRI: pkis:bridge-note:bn-20260531-the-umbrella-thesis-claims-ontological
+
+## [2026-06-20] committed | bridge-note
+- Committed: bn-20260531-nedner-is-the-task-under → bridge-notes/bn-20260531-nedner-is-the-task-under.md
+- IRI: pkis:bridge-note:bn-20260531-nedner-is-the-task-under
