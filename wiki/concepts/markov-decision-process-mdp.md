@@ -30,6 +30,7 @@ related_concepts: []
 sources:
 - murphy-pml2-advanced-ch34
 - sutton-reinforcement-2018
+- cassandras-des-intro-ch09
 specializes:
 - influence-diagram
 tags:

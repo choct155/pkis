@@ -25943,3 +25943,6 @@
 
 ## [2026-06-20] edit | edit_node
 - pkis:framework:markov-decision-processes: fields=['sources'] sections=[]
+
+## [2026-06-20] edit | edit_node
+- pkis:concept:markov-decision-process-mdp: fields=['sources'] sections=[]
