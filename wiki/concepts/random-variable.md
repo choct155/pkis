@@ -12,7 +12,7 @@ component_scores:
   transfer: null
 coverage: 1
 date_created: '2026-06-09'
-date_updated: '2026-06-09'
+date_updated: '2026-06-20'
 domain:
 - bayesian-stats
 - statistical-learning
@@ -23,6 +23,7 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - deisenroth-mml-ch06
+- kroese-statistical-modeling-ch02
 tags: []
 title: Random Variable
 understanding: 0
