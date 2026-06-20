@@ -13,7 +13,7 @@ contrasts-with:
 - rejection-sampling
 coverage: 1
 date_created: '2026-06-11'
-date_updated: '2026-06-11'
+date_updated: '2026-06-20'
 domain:
 - statistics
 - machine-learning
@@ -26,6 +26,7 @@ prerequisite-of:
 related_concepts: []
 sources:
 - bishop-prml-ch11
+- tanner-tools-statistical-inference-ch05
 tags:
 - monte-carlo
 - resampling
