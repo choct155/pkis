@@ -25760,3 +25760,6 @@
 
 ## [2026-06-20] edit | edit_node
 - pkis:framework:interval-algebra: fields=['sources'] sections=[]
+
+## [2026-06-20] edit | edit_node
+- pkis:concept:exchangeability: fields=['sources'] sections=[]

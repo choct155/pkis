@@ -12,7 +12,7 @@ component_scores:
   transfer: null
 coverage: 1
 date_created: '2026-06-09'
-date_updated: '2026-06-09'
+date_updated: '2026-06-20'
 domain:
 - bayesian-stats
 generalizes:
@@ -28,6 +28,7 @@ related_concepts: []
 sources:
 - gelman-bda3-ch01
 - gelman-bda3-ch05
+- kroese-statistical-modeling-ch04
 tags:
 - bayesian
 - de-finetti
