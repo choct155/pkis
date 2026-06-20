@@ -29,6 +29,7 @@ related_concepts: []
 sources:
 - bishop-prml-ch11
 - gelman-bda3
+- tanner-tools-statistical-inference-ch05
 specializes:
 - gibbs-sampling
 tags:
