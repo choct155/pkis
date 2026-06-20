@@ -5,7 +5,7 @@
 - [ ] [[kroese-statistical-modeling-ch07]] — Covers MCMC + Gibbs (presents Gibbs as a special case of MH — supports the epistemological-anchors bridge note). Formal treatment to elevate understanding on mcmc and gibbs-sampler after today's session.
 - [ ] [[blei-vi-review]] — Gateway node for the VI cluster (highest lb). Formal VI treatment needed to elevate understanding on variational-inference, coordinate-ascent-vi, mean-field-approximation after today's intuition-level session. Read alongside Mohamed et al.
 - [ ] [[sutton-policy-2018]] — IMMEDIATE after Mohamed et al. Policy gradient theorem + REINFORCE are the RL-side foundation for variational-graph-traversal. Prereq: ELBO mechanics (solid) + Mohamed score function estimator. Unlocks actor-critic, maximum-entropy RL.
-- [ ] [[mohamed-monte-2020]] — IMMEDIATE. Score function estimator is the mathematical bridge between the VI cluster and the new RL cluster. Prerequisite for Sutton-Barto Ch13; unblocks the RL side of the variational-graph-traversal hypothesis. Resolves the RL-foundations gap from the 2026-06-07 session.
+- [ ] [[mohamed-monte-2020]] — IMMEDIATE. Score function estimator is the mathematical bridge between the VI cluster and the new RL cluster. Prerequisite for Sutton-Barto Ch13; unblocks the RL side of the variational-graph-traversal hypothesis. Resolves the RL-foundations gap from the 2026-06-07 session. (new — from batch ingest 2026-05-20)
 - [ ] [[allemang-semantic-web-ch03]] — primary RDF treatment; deepens [[rdf]], [[linked-data-principles]], and forms the foundation for all downstream Semantic Web chapters; needed before reading any OWL/RDFS chapters
 - [ ] [[allemang-semantic-web-ch07]] — RDFS primary treatment; deepens [[rdfs]] and [[ontology-reasoning]]; prerequisite reading for ch08 and ch11
 - [ ] [[allemang-semantic-web-ch05]] — SPARQL comprehensive treatment; deepens [[sparql]] with CONSTRUCT rules and federation; directly relevant to [[ontology-reasoning]] and [[knowledge-graph]] work
@@ -29,11 +29,8 @@
 - [ ] [[cunningham-causal-inference-mixtape-ch05]] — potential outcomes chapter; deepens [[potential-outcomes-framework]], [[average-treatment-effect]], [[selection-bias]]
 - [ ] [[cunningham-causal-inference-mixtape-ch04]] — DAG chapter; deepens [[collider-bias]], [[confounding]], [[structural-causal-models]], [[d-separation]] from practitioner angle
 - [ ] [[cunningham-causal-inference-mixtape-ch08]] — IV/LATE chapter; deepens [[instrumental-variables]], [[local-average-treatment-effect]]
-- [ ] [[kroese-statistical-modeling-ch07]] — deepens [[mcmc]], [[gibbs-sampler]], [[metropolis-algorithm]], [[bootstrap]], [[kernel-density-estimation]] in unified Monte Carlo treatment
 - [ ] [[kroese-statistical-modeling-ch06]] — primary treatment of [[maximum-likelihood-estimation]] with Fisher information and Cramér-Rao; deepens [[em-algorithm]]
 - [ ] [[kroese-statistical-modeling-ch10]] — primary treatment of [[generalized-linear-models]] with logit/probit/Poisson
-
-### Normal
 - [ ] [[yang-hotpotqa-2018]] — HotpotQA — background/literature context only (text-based multi-hop, not graph-based). Less directly relevant to VGT but appears constantly in related work.
 - [ ] [[ho-constructing-2020]] — 2WikiMultiHopQA — most important benchmark for path-quality evaluation. Path overlap metric directly tests whether VGT recovers ground-truth paths more efficiently than heuristic beam search.
 - [ ] [[zhang-variational-2018]] — MetaQA — controlled depth analysis (1/2/3-hop). Useful for ablation on the ELBO plateau as convergence criterion across difficulty levels.
@@ -42,7 +39,7 @@
 - [ ] [[feng-cypherbench-2024]] — CypherBench — most directly applicable benchmark for IKS Neo4j LPG traversal. NL-to-Cypher over typed property graphs. Read alongside graph-schema-expressivity work.
 - [ ] [[wu-stark-2024]] — STaRK — most relevant benchmark for IKS domain context. Hybrid structured-unstructured retrieval across scientific/e-commerce/medical. Lower contamination than Freebase. Read after KGQA fundamentals (WebQSP, CWQ).
 - [ ] [[betancourt-hmcgeometric]] — Formal geometric (symplectic) treatment of HMC. Read after the conceptual intro. Supports the hamiltonian-classical-mechanics concept node and why leapfrog (symplecticity) is the right integrator. Not blocking.
-- [ ] [[sun-thinkongraph-2023]] — Empirical baseline for the variational-graph-traversal hypothesis. Read after policy-gradient foundations. Not blocking — hypothesis can be formalized first — but required before empirical comparison.
+- [ ] [[sun-thinkongraph-2023]] — Empirical baseline for the variational-graph-traversal hypothesis. Read after policy-gradient foundations. Not blocking — hypothesis can be formalized first — but required before empirical comparison. (new — from batch ingest 2026-05-20)
 - [ ] [[gulli-agentic-design-patterns-ch14]] — covers standard RAG, GraphRAG, and Agentic RAG; directly deepens [[retrieval-augmented-generation]] and [[graph-rag]] with practical pattern framing
 - [ ] [[gulli-agentic-design-patterns-ch07]] — multi-agent collaboration patterns; seeds [[multi-agent-systems]] node
 - [ ] [[zhang-graphrag-survey]] — deep-read: survey is ingested as stub; retrieval techniques taxonomy (§V) and integration methods (§VI) connect directly to [[graph-neural-networks]], [[in-context-learning]], and [[knowledge-graph-construction]] nodes that need fleshing out
@@ -54,7 +51,6 @@
 - [ ] [[pearl-causality-ch01]] — d-separation foundations; deepens [[d-separation]] and [[directed-graphical-models]] with Pearl's original treatment
 - [ ] [[pearl-causality-ch06]] — Simpson's paradox resolution; deepens [[confounding]] with the canonical worked example
 - [ ] [[domingos-useful-things]] — short paper (~8 pages); §4 deepens [[inductive-bias]], §10 clarifies BMA vs. ensembles distinction in [[ensemble-learning]]; §13 connects statistical ML to [[confounding]] and [[do-calculus]]
-- [ ] [[blei-vi-review]] — canonical statistical treatment of VI; complete CAVI derivation, exponential family theory, SVI; deepens [[em-algorithm]], [[gaussian-mixture-models]], [[directed-graphical-models]]
 - [ ] [[scott-varian-bsts-2014]] — full BSTS paper; deepens [[kalman-filter]], [[spike-and-slab]], [[structural-time-series]], [[bayesian-model-averaging]] with complete derivations and two worked examples
 - [ ] [[hamilton-graphsage]] — foundational inductive GNN; deepens [[graph-neural-networks]], [[node-embedding]], [[graph-rag]]; high cross-domain connectivity
 - [ ] [[liu-symagent]] — neurosymbolic self-learning agent; deepens [[neurosymbolic-ai]], [[agentic-systems]], [[knowledge-graph-question-answering]]
@@ -70,31 +66,12 @@
 - [ ] [[cunningham-causal-inference-mixtape-ch10]] — DiD chapter; deepens [[difference-in-differences]], [[parallel-trends]]; Card-Krueger canonical application
 - [ ] [[cunningham-causal-inference-mixtape-ch11]] — Synthetic control; deepens [[synthetic-control]]; Abadie methodology and Prop 99 application
 - [ ] [[kroese-statistical-modeling-ch11]] — primary treatment of [[gaussian-process-regression]] and [[kernel-density-estimation]]; covers regression splines and RKHS connection
-
-### High
-- [ ] [[betancourt-hmc]] — Conceptual introduction to HMC. Focus: typical-set motivation, geometric argument for why HMC beats random-walk samplers. Directly supports the new hmc technique node; prereq for understanding divergent transitions + non-centered parameterization formally.
-- [ ] [[kroese-statistical-modeling-ch07]] — Covers MCMC + Gibbs (presents Gibbs as a special case of MH — supports the epistemological-anchors bridge note). Formal treatment to elevate understanding on mcmc and gibbs-sampler after today's session.
-- [ ] [[blei-vi-review]] — Gateway node for the VI cluster (highest lb). Formal VI treatment needed to elevate understanding on variational-inference, coordinate-ascent-vi, mean-field-approximation after today's intuition-level session. Read alongside Mohamed et al.
-- [ ] [[sutton-policy-2018]] — IMMEDIATE after Mohamed et al. Policy gradient theorem + REINFORCE are the RL-side foundation for variational-graph-traversal. Prereq: ELBO mechanics (solid) + Mohamed score function estimator. Unlocks actor-critic, maximum-entropy RL.
-- [ ] [[mohamed-monte-2020]] — IMMEDIATE. Score function estimator is the mathematical bridge between the VI cluster and the new RL cluster. Prerequisite for Sutton-Barto Ch13; unblocks the RL side of the variational-graph-traversal hypothesis. Resolves the RL-foundations gap from the 2026-06-07 session. (new — from batch ingest 2026-05-20)
 - [ ] [[coase-nature-firm-1937]] — foundational: introduces [[transaction-cost-theory]] and [[market-vs-hierarchy]]; 4+ nodes depend on this paper
 - [ ] [[modigliani-miller-cost-capital-1958]] — foundational: establishes [[modigliani-miller-theorem]] and [[irrelevance-propositions]]; cornerstone of corporate finance
-- [ ] [[sargent-sims-business-cycle-1977]] — already ingested in prior session; foundational VAR paper; deepens [[var-models]] and [[dynamic-factor-models]]
 - [ ] [[binsbergen-term-structure-dsge-2011]] — deepens [[dsge-models]], [[recursive-preferences]], [[stochastic-discount-factor]], [[bond-risk-premium]]
 - [ ] [[belle-future-neurosymbolic-2025]] — broad survey deepening [[neurosymbolic-ai]] with historical and prospective framing
 - [ ] [[dentella-ai-language-comprehension-2024]] — empirical challenge to LLM language understanding; deepens [[compositionality]], [[llm-language-comprehension]]
 - [ ] [[lenat-marcus-cyc-trustworthy-2023]] — deepens [[neurosymbolic-ai]], [[formal-ontology]], [[knowledge-graph]]; trustworthy AI framing
-
-### Normal
-- [ ] [[yang-hotpotqa-2018]] — HotpotQA — background/literature context only (text-based multi-hop, not graph-based). Less directly relevant to VGT but appears constantly in related work.
-- [ ] [[ho-constructing-2020]] — 2WikiMultiHopQA — most important benchmark for path-quality evaluation. Path overlap metric directly tests whether VGT recovers ground-truth paths more efficiently than heuristic beam search.
-- [ ] [[zhang-variational-2018]] — MetaQA — controlled depth analysis (1/2/3-hop). Useful for ablation on the ELBO plateau as convergence criterion across difficulty levels.
-- [ ] [[talmor-the-2018]] — ComplexWebQuestions (CWQ) — primary hard benchmark for VGT evaluation. Up to 4-hop; where the ELBO plateau convergence criterion will show most differentiation.
-- [ ] [[yih-the-2016]] — WebQSP — sanity-check benchmark for the VGT hypothesis. Read before running experiments. 1-2 hop; establishes the method works at all.
-- [ ] [[feng-cypherbench-2024]] — CypherBench — most directly applicable benchmark for IKS Neo4j LPG traversal. NL-to-Cypher over typed property graphs. Read alongside graph-schema-expressivity work.
-- [ ] [[wu-stark-2024]] — STaRK — most relevant benchmark for IKS domain context. Hybrid structured-unstructured retrieval across scientific/e-commerce/medical. Lower contamination than Freebase. Read after KGQA fundamentals (WebQSP, CWQ).
-- [ ] [[betancourt-hmcgeometric]] — Formal geometric (symplectic) treatment of HMC. Read after the conceptual intro. Supports the hamiltonian-classical-mechanics concept node and why leapfrog (symplecticity) is the right integrator. Not blocking.
-- [ ] [[sun-thinkongraph-2023]] — Empirical baseline for the variational-graph-traversal hypothesis. Read after policy-gradient foundations. Not blocking — hypothesis can be formalized first — but required before empirical comparison. (new — from batch ingest 2026-05-20)
 - [ ] [[fama-two-pillars-2013]] — Nobel lecture: deepens [[efficient-market-hypothesis]], [[risk-premium-structure]], [[stochastic-discount-factor]]
 - [ ] [[bernanke-financial-intermediation-2022]] — Nobel lecture: deepens [[bank-run]], [[maturity-transformation]], [[credit-channel]], [[delegated-monitoring]]
 - [ ] [[wray-modern-money-1998]] — deepens [[modern-money-theory]], [[chartalism]], [[employer-of-last-resort]], [[state-theory-of-money]]
@@ -106,3 +83,9 @@
 - [ ] [[marcus-dl-critical-appraisal-2018]] — deepens [[inductive-bias]], [[compositionality]], [[adversarial-examples]]; important critique of deep learning
 - [ ] [[capretto-bambi-2022]] — deepens [[bayesian-linear-regression]], Bambi API; practical Bayesian workflow paper
 - [ ] [[sequeda-kg-benchmark-llm-2023]] — enterprise KG+LLM evaluation; deepens [[knowledge-graph-question-answering]]
+
+### Normal
+
+### High
+
+### Normal
