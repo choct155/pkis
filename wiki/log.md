@@ -25919,3 +25919,6 @@
 
 ## [2026-06-20] edit | edit_node
 - pkis:framework:state-space-model: fields=['sources'] sections=[]
+
+## [2026-06-20] edit | edit_node
+- pkis:concept:state-space-model-sequential: fields=['sources'] sections=[]
