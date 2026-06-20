@@ -13,7 +13,7 @@ contrasts-with:
 - negative-binomial-distribution
 coverage: 1
 date_created: '2026-06-09'
-date_updated: '2026-06-09'
+date_updated: '2026-06-20'
 domain:
 - bayesian-stats
 id: pkis:technique:poisson-regression
@@ -25,6 +25,7 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - gelman-bda3-ch16
+- kroese-statistical-modeling-ch10
 specializes:
 - generalized-linear-models
 tags:
