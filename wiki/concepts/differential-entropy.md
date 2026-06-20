@@ -16,7 +16,7 @@ contrasts-with:
 - kl-divergence
 coverage: 1
 date_created: '2026-06-11'
-date_updated: '2026-06-11'
+date_updated: '2026-06-20'
 domain:
 - information-theory
 - probability-theory
@@ -37,6 +37,7 @@ sources:
 - bishop-prml-ch01
 - murphy-pml1-intro-ch06
 - murphy-pml2-advanced-ch05
+- lange-applied-probability-ch16
 tags:
 - continuous-entropy
 - Gaussian

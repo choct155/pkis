@@ -26195,3 +26195,6 @@
 
 ## [2026-06-20] edit | edit_node
 - pkis:result:gaussian-maximum-entropy-characterization: fields=['sources'] sections=[]
+
+## [2026-06-20] edit | edit_node
+- pkis:concept:differential-entropy: fields=['sources'] sections=[]
