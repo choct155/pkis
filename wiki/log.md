@@ -25826,3 +25826,6 @@
 
 ## [2026-06-20] edit | edit_node
 - pkis:technique:difference-in-differences: fields=['sources'] sections=[]
+
+## [2026-06-20] edit | edit_node
+- pkis:concept:abstract-algebra-fields: fields=['sources'] sections=[]

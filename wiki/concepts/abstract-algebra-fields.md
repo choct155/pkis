@@ -1,22 +1,29 @@
 ---
-id: "pkis:concept:abstract-algebra-fields"
 aliases: []
-title: "Fields (Abstract Algebra)"
-knowledge_type: concept
 also_type: []
-domain: [statistical-learning, optimization]
-tags: [abstract-algebra, mathematical-foundations, group-theory]
-related_concepts:
-  - "[[group-theory]]"
-  - "[[linear-algebra]]"
-  - "[[probability-theory]]"
-sources:
-  - "[[carrell-groups-matrices-vectors]]"
-date_created: 2026-05-20
-date_updated: 2026-05-20
 coverage: 1
-understanding: 0
+date_created: 2026-05-20
+date_updated: '2026-06-20'
+domain:
+- statistical-learning
+- optimization
+id: pkis:concept:abstract-algebra-fields
+knowledge_type: concept
 maturity: settled
+related_concepts:
+- '[[group-theory]]'
+- '[[linear-algebra]]'
+- '[[probability-theory]]'
+sources:
+- '[[carrell-groups-matrices-vectors]]'
+- carrell-groups-matrices-vectors-ch02
+- carrell-groups-matrices-vectors-ch12
+tags:
+- abstract-algebra
+- mathematical-foundations
+- group-theory
+title: Fields (Abstract Algebra)
+understanding: 0
 ---
 
 A field is an algebraic structure (F, +, ·) where (F, +) is an abelian group, (F \ {0}, ·) is an abelian group, and multiplication distributes over addition; examples include the rationals Q, reals R, complex numbers C, and finite Galois fields F_p, and fields are the scalars over which vector spaces are defined.
