@@ -26318,3 +26318,6 @@
 
 ## [2026-06-20] edit | edit_node
 - pkis:result:kolmogorov-forward-backward-equations: fields=['sources'] sections=[]
+
+## [2026-06-20] edit | edit_node
+- pkis:concept:generator-matrix-q-matrix: fields=['sources'] sections=[]
