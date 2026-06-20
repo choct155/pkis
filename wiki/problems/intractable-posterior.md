@@ -1,18 +1,30 @@
 ---
-id: "pkis:problem:intractable-posterior"
 aliases: []
-title: "Intractable Posterior Inference"
-knowledge_type: problem
 also_type: []
-domain: [bayesian-stats]
-tags: [probability-theory, approximate-inference, variational-methods]
-related_concepts: ["[[variational-inference]]", "[[probability-theory]]", "[[directed-graphical-models]]"]
-sources: ["[[blei-vi-review]]", "[[ganguly-intro-vi]]", "[[sjolund-parametric-vi]]", "[[kroese-statistical-modeling]]"]
-date_created: 2026-05-20
-date_updated: 2026-05-20
 coverage: 4
-understanding: 0
+date_created: 2026-05-20
+date_updated: '2026-06-20'
+domain:
+- bayesian-stats
+id: pkis:problem:intractable-posterior
+knowledge_type: problem
 maturity: settled
+related_concepts:
+- '[[variational-inference]]'
+- '[[probability-theory]]'
+- '[[directed-graphical-models]]'
+sources:
+- '[[blei-vi-review]]'
+- '[[ganguly-intro-vi]]'
+- '[[sjolund-parametric-vi]]'
+- '[[kroese-statistical-modeling]]'
+- bishop-prml
+tags:
+- probability-theory
+- approximate-inference
+- variational-methods
+title: Intractable Posterior Inference
+understanding: 0
 ---
 
 The core challenge of Bayesian statistics: computing the posterior p(z|x) = p(x,z)/p(x) requires evaluating the marginal likelihood p(x) = ∫ p(x|z)p(z)dz, which is intractable for most interesting models because the integral is over all configurations of latent variables and has no closed form; this intractability motivates both MCMC sampling and variational inference as approximate inference strategies.
