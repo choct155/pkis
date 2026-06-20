@@ -25364,3 +25364,6 @@
 
 ## [2026-06-20] edit | edit_node
 - pkis:concept:organizational-learning: fields=['sources'] sections=[]
+
+## [2026-06-20] edit | edit_node
+- pkis:framework:behavioral-theory-of-the-firm: fields=['sources'] sections=[]
