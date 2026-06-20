@@ -25355,3 +25355,6 @@
 
 ## [2026-06-20] edit | edit_node
 - pkis:result:source-coding-theorem: fields=['sources'] sections=[]
+
+## [2026-06-20] edit | edit_node
+- pkis:concept:aspiration-level: fields=['sources'] sections=[]
