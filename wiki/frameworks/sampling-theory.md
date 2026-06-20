@@ -13,7 +13,7 @@ contrasts-with:
 - likelihood-principle
 coverage: 1
 date_created: '2026-06-08'
-date_updated: '2026-06-08'
+date_updated: '2026-06-20'
 domain:
 - bayesian-stats
 id: pkis:framework:sampling-theory
@@ -23,6 +23,8 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - mackay-itila-ch37
+- cunningham-causal-inference-mixtape-ch02
+- kroese-statistical-modeling-ch05
 tags:
 - frequentist
 - p-value
