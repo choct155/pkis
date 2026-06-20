@@ -5,7 +5,7 @@ contrasts-with:
 - information-criteria
 coverage: 2
 date_created: 2026-05-20
-date_updated: 2026-05-20
+date_updated: '2026-06-20'
 domain:
 - statistical-learning
 id: pkis:technique:cross-validation
@@ -19,6 +19,7 @@ related_concepts:
 sources:
 - '[[hastie-esl]]'
 - '[[kroese-statistical-modeling]]'
+- kroese-statistical-modeling-ch05
 tags:
 - model-selection
 - probability-theory
