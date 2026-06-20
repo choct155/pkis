@@ -8,7 +8,7 @@ component_scores:
   violations: null
 coverage: 1
 date_created: '2026-06-09'
-date_updated: '2026-06-09'
+date_updated: '2026-06-20'
 domain:
 - bayesian-stats
 id: pkis:principle:desiderata-of-plausible-reasoning
@@ -20,6 +20,7 @@ prerequisite-of:
 related_concepts: []
 sources:
 - jaynes-probability-ch01
+- jaynes-probability
 tags:
 - desiderata
 - cox
