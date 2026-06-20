@@ -25862,3 +25862,6 @@
 
 ## [2026-06-20] edit | edit_node
 - pkis:concept:kronecker-product: fields=['sources'] sections=[]
+
+## [2026-06-20] edit | edit_node
+- pkis:concept:curse-of-dimensionality: fields=['sources'] sections=[]

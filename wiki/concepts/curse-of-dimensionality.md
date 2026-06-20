@@ -5,10 +5,12 @@ contrasts-with:
 - exact-inference-by-complete-enumeration
 coverage: 2
 date_created: 2026-05-20
-date_updated: '2026-06-08'
+date_updated: '2026-06-20'
 domain:
 - statistical-learning
 id: pkis:concept:curse-of-dimensionality
+illustrated-by:
+- typical-set-explainer
 knowledge_type: concept
 maturity: settled
 related_concepts:
@@ -18,13 +20,12 @@ sources:
 - '[[hastie-esl]]'
 - '[[domingos-useful-things]]'
 - '[[liu-kan-2024]]'
+- benzi-hidden-structure-matrices-ch01
 tags:
 - probability-theory
 - high-dimensional-statistics
 title: Curse of Dimensionality
 understanding: 0
-illustrated-by:
-- typical-set-explainer
 ---
 
 ## Reading Path
