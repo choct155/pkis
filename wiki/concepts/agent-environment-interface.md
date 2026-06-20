@@ -12,7 +12,7 @@ component_scores:
   transfer: null
 coverage: 1
 date_created: '2026-06-09'
-date_updated: '2026-06-09'
+date_updated: '2026-06-20'
 domain:
 - reinforcement-learning
 id: pkis:concept:agent-environment-interface
@@ -24,6 +24,8 @@ prerequisite-of:
 related_concepts: []
 sources:
 - sutton-reinforcement-2018-ch01
+- gulli-agentic-design-patterns-ch10
+- gulli-agentic-design-patterns-ch23
 tags:
 - agent
 - environment

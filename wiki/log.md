@@ -25958,3 +25958,6 @@
 
 ## [2026-06-20] edit | edit_node
 - pkis:concept:optimal-policy: fields=['sources'] sections=[]
+
+## [2026-06-20] edit | edit_node
+- pkis:concept:agent-environment-interface: fields=['sources'] sections=[]
