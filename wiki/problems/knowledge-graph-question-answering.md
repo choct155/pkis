@@ -1,18 +1,44 @@
 ---
-id: "pkis:problem:knowledge-graph-question-answering"
-aliases: ["KGQA"]
-title: "Knowledge Graph Question Answering (KGQA)"
-knowledge_type: problem
+aliases:
+- KGQA
 also_type: []
-domain: [knowledge-representation, deep-learning]
-tags: [knowledge-graphs, multi-hop, question-answering, llm, benchmark, natural-language-understanding]
-related_concepts: [knowledge-graph, multi-hop-reasoning, graph-rag, retrieval-augmented-generation]
-sources: ["[[cheng-cograg]]", "[[liu-symagent]]", "[[cimiano-ontology-nlp]]", "[[kg-evaluation-bloomberg-2024]]", "[[sequeda-kg-benchmark-llm-2023]]", "[[sequeda-kg-trust-llm-2025]]", "[[radhakrishnan-datagemma-2024]]"]
-date_created: 2026-05-20
-date_updated: 2026-05-20
 coverage: 7
-understanding: 0
+date_created: 2026-05-20
+date_updated: '2026-06-20'
+domain:
+- knowledge-representation
+- deep-learning
+id: pkis:problem:knowledge-graph-question-answering
+knowledge_type: problem
 maturity: evolving
+related_concepts:
+- knowledge-graph
+- multi-hop-reasoning
+- graph-rag
+- retrieval-augmented-generation
+sources:
+- '[[cheng-cograg]]'
+- '[[liu-symagent]]'
+- '[[cimiano-ontology-nlp]]'
+- '[[kg-evaluation-bloomberg-2024]]'
+- '[[sequeda-kg-benchmark-llm-2023]]'
+- '[[sequeda-kg-trust-llm-2025]]'
+- '[[radhakrishnan-datagemma-2024]]'
+- feng-cypherbench-2024
+- ho-constructing-2020
+- talmor-the-2018
+- wu-stark-2024
+- yih-the-2016
+- zhang-variational-2018
+tags:
+- knowledge-graphs
+- multi-hop
+- question-answering
+- llm
+- benchmark
+- natural-language-understanding
+title: Knowledge Graph Question Answering (KGQA)
+understanding: 0
 ---
 
 The problem of answering natural language questions by traversing and reasoning over structured knowledge graphs, requiring multi-hop relational inference, entity linking, and often tolerance for KG incompleteness; benchmarked on datasets such as WebQSP, CWQ, HotpotQA, and MetaQA.
