@@ -11,7 +11,7 @@ component_scores:
   principled_mechanism: null
 coverage: 1
 date_created: '2026-06-09'
-date_updated: '2026-06-09'
+date_updated: '2026-06-20'
 domain:
 - optimization
 - deep-learning
@@ -24,6 +24,7 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - sutton-reinforcement-2018-ch08
+- gulli-agentic-design-patterns-ch20
 tags:
 - reinforcement-learning
 - planning
