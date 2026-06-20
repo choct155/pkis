@@ -117,7 +117,8 @@ def main():
     sources = unlinked_sources(chapters=args.chapters)
     if args.limit:
         sources = sources[:args.limit]
-    print(f"{len(sources)} unlinked standalone sources to consider"
+    kind = "book chapters" if args.chapters else "standalone sources"
+    print(f"{len(sources)} unlinked {kind} to consider"
           f"{' (DRY RUN)' if args.dry_run else ''}\n")
 
     # concept_iri -> set(source_slug) to append
