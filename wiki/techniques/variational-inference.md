@@ -14,7 +14,7 @@ contrasts-with:
 - expectation-propagation
 coverage: 4
 date_created: 2026-05-20
-date_updated: '2026-06-07'
+date_updated: '2026-06-20'
 domain:
 - bayesian-stats
 - optimization
@@ -38,6 +38,8 @@ sources:
 - '[[sjolund-parametric-vi]]'
 - '[[yellapragada-variational-bayes]]'
 - '[[pearl-reverend-bayes-1982]]'
+- bishop-prml
+- kucukelbir-automatic-2016
 tags:
 - variational-methods
 - approximate-inference
