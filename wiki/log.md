@@ -25229,3 +25229,6 @@
 
 ## [2026-06-20] edit | edit_node
 - pkis:technique:gaussian-process-regression: fields=['sources'] sections=[]
+
+## [2026-06-20] edit | edit_node
+- pkis:technique:em-algorithm: fields=['sources'] sections=[]
