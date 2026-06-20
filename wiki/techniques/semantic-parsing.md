@@ -22,6 +22,10 @@ sources:
 - '[[cimiano-ontology-nlp]]'
 - '[[sequeda-kg-benchmark-llm-2023]]'
 - yih-the-2016
+- cimiano-ontology-nlp-ch01
+- cimiano-ontology-nlp-ch06
+- cimiano-ontology-nlp-ch09
+- cimiano-ontology-nlp-ch10
 tags:
 - natural-language-processing
 - sparql
