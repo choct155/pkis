@@ -25144,3 +25144,7 @@
 ## [2026-06-20] committed | bridge-note
 - Committed: bn-20260531-the-vsscale-hypothesis-is-a → bridge-notes/bn-20260531-the-vsscale-hypothesis-is-a.md
 - IRI: pkis:bridge-note:bn-20260531-the-vsscale-hypothesis-is-a
+
+## [2026-06-20] committed | bridge-note
+- Committed: bn-20260531-knowledgegraphconstruction-is-the-existing-techn → bridge-notes/bn-20260531-knowledgegraphconstruction-is-the-existing-techn.md
+- IRI: pkis:bridge-note:bn-20260531-knowledgegraphconstruction-is-the-existing-techn
