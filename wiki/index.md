@@ -2437,6 +2437,7 @@
 ## Reading Queue
 
 ## Bridge Notes
+- [[bn-20260620-the-multidimensional-retrieval-quality-framework]] — C(q) estimation — Gödelian incompleteness as a tracked parameter, not a blocker () (2026-06-20)
 - [[bn-20260531-nedner-is-the-task-under]] — Named Entity Disambiguation is prerequisite-of the Intensional Grounding cluster and its hypotheses () (2026-06-20)
 - [[bn-20260531-the-umbrella-thesis-claims-ontological]] — Intensional Grounding and the NED-accuracy hypothesis use Transformer Attention Mechanisms () (2026-06-20)
 - [[bn-20260531-explicit-intensional-structure-ontological-class]] — Intensional Grounding and NED-accuracy use Formal Ontology as the intensional structure () (2026-06-20)

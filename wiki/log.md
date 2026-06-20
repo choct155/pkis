@@ -26348,3 +26348,11 @@
 
 ## [2026-06-20] edit | edit_node
 - pkis:result:reflection-principle: fields=['sources'] sections=[]
+
+## [2026-06-20] staged | bridge-note
+- Staged: bn-20260620-the-multidimensional-retrieval-quality-framework (id: 8823896f-492a-4047-ac1c-c6e2e45a6249)
+- Rationale: The multidimensional retrieval quality framework depends on C(q) — the distribution over concept dep
+
+## [2026-06-20] committed | bridge-note
+- Committed: bn-20260620-the-multidimensional-retrieval-quality-framework → bridge-notes/bn-20260620-the-multidimensional-retrieval-quality-framework.md
+- IRI: pkis:bridge-note:bn-20260620-the-multidimensional-retrieval-quality-framework
