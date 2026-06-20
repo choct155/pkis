@@ -25313,3 +25313,6 @@
 
 ## [2026-06-20] edit | edit_node
 - pkis:technique:reinforce-gradient-estimator: fields=['sources'] sections=[]
+
+## [2026-06-20] edit | edit_node
+- pkis:technique:reparameterized-vi: fields=['sources'] sections=[]
