@@ -3,7 +3,7 @@ aliases: []
 also_type: []
 coverage: 1
 date_created: 2026-05-20
-date_updated: 2026-05-20
+date_updated: '2026-06-20'
 domain:
 - causal-analysis
 id: pkis:technique:synthetic-control
@@ -17,6 +17,7 @@ related_concepts:
 - '[[counterfactuals]]'
 sources:
 - '[[cunningham-causal-inference-mixtape]]'
+- cunningham-causal-inference-mixtape-ch11
 tags:
 - synthetic-control
 - comparative-case-studies
