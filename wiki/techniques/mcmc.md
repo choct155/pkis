@@ -37,6 +37,9 @@ sources:
 - '[[capretto-bambi-2022]]'
 - '[[kurz-hybrid-modeling-2022]]'
 - betancourt-short-2021
+- kroese-statistical-modeling-ch07
+- lange-applied-probability-ch07
+- tanner-tools-statistical-inference-ch06
 specializes:
 - numerical-vs-simulation-integration
 tags:

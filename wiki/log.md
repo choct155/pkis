@@ -26045,3 +26045,6 @@
 
 ## [2026-06-20] edit | edit_node
 - pkis:technique:bootstrap-sampling-distribution: fields=['sources'] sections=[]
+
+## [2026-06-20] edit | edit_node
+- pkis:technique:mcmc: fields=['sources'] sections=[]
