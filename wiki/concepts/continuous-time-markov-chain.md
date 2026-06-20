@@ -27,6 +27,10 @@ related_concepts: []
 sources:
 - resnick-stochastic-processes-ch05
 - resnick-stochastic-processes
+- cassandras-des-intro-ch06
+- cassandras-des-intro-ch07
+- cassandras-des-intro-ch08
+- lange-applied-probability-ch08
 specializes:
 - markov-chains
 tags:
