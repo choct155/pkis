@@ -15,7 +15,7 @@ contrasts-with:
 - arithmetic-coding
 coverage: 1
 date_created: '2026-06-08'
-date_updated: '2026-06-08'
+date_updated: '2026-06-20'
 domain:
 - information-theory
 id: pkis:technique:huffman-coding
@@ -28,6 +28,7 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - mackay-itila-ch05
+- lange-applied-probability-ch05
 tags:
 - symbol-codes
 - prefix-code
