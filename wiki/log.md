@@ -26060,3 +26060,6 @@
 
 ## [2026-06-20] edit | edit_node
 - pkis:framework:kolmogorov-axioms: fields=['sources'] sections=[]
+
+## [2026-06-20] edit | edit_node
+- pkis:result:product-rule: fields=['sources'] sections=[]
