@@ -25703,3 +25703,6 @@
 
 ## [2026-06-20] edit | edit_node
 - pkis:concept:analytic-geometry: fields=['sources'] sections=[]
+
+## [2026-06-20] edit | edit_node
+- pkis:concept:symmetry-groups: fields=['sources'] sections=[]

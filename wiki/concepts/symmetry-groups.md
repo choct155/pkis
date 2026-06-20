@@ -1,22 +1,32 @@
 ---
-id: "pkis:concept:symmetry-groups"
 aliases: []
-title: "Symmetry Groups"
-knowledge_type: concept
 also_type: []
-domain: [statistical-learning, optimization]
-tags: [abstract-algebra, group-theory, geometry, symmetry]
-related_concepts:
-  - "[[group-theory]]"
-  - "[[linear-algebraic-groups]]"
-  - "[[analytic-geometry]]"
-sources:
-  - "[[carrell-groups-matrices-vectors]]"
-date_created: 2026-05-20
-date_updated: 2026-05-20
 coverage: 1
-understanding: 0
+date_created: 2026-05-20
+date_updated: '2026-06-20'
+domain:
+- statistical-learning
+- optimization
+id: pkis:concept:symmetry-groups
+knowledge_type: concept
 maturity: settled
+related_concepts:
+- '[[group-theory]]'
+- '[[linear-algebraic-groups]]'
+- '[[analytic-geometry]]'
+sources:
+- '[[carrell-groups-matrices-vectors]]'
+- benzi-hidden-structure-matrices-ch05
+- carrell-groups-matrices-vectors-ch07
+- carrell-groups-matrices-vectors-ch08
+- carrell-groups-matrices-vectors-ch11
+tags:
+- abstract-algebra
+- group-theory
+- geometry
+- symmetry
+title: Symmetry Groups
+understanding: 0
 ---
 
 Symmetry groups are groups whose elements are the symmetries of a geometric or combinatorial object — transformations that leave the object invariant — including rotation groups (SO(n)), orthogonal groups (O(n)), dihedral groups, and the finite subgroups of SO(3,R) associated with the Platonic solids.
