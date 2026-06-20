@@ -1,18 +1,30 @@
 ---
-id: "pkis:concept:bias-variance-tradeoff"
 aliases: []
-title: "Bias-Variance Tradeoff"
-knowledge_type: concept
 also_type: []
-domain: [statistical-learning]
-tags: [model-selection, probability-theory]
-related_concepts: ["[[inductive-bias]]", "[[regularization]]", "[[model-selection-problem]]"]
-sources: ["[[hastie-esl]]", "[[domingos-useful-things]]", "[[castle-model-selection-algorithms]]", "[[kroese-statistical-modeling]]", "[[liu-kan-2024]]"]
-date_created: 2026-05-20
-date_updated: 2026-05-20
 coverage: 4
-understanding: 0
+date_created: 2026-05-20
+date_updated: '2026-06-20'
+domain:
+- statistical-learning
+id: pkis:concept:bias-variance-tradeoff
+knowledge_type: concept
 maturity: settled
+related_concepts:
+- '[[inductive-bias]]'
+- '[[regularization]]'
+- '[[model-selection-problem]]'
+sources:
+- '[[hastie-esl]]'
+- '[[domingos-useful-things]]'
+- '[[castle-model-selection-algorithms]]'
+- '[[kroese-statistical-modeling]]'
+- '[[liu-kan-2024]]'
+- kroese-statistical-modeling-ch04
+tags:
+- model-selection
+- probability-theory
+title: Bias-Variance Tradeoff
+understanding: 0
 ---
 
 ## Reading Path
