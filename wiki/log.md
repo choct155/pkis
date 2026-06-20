@@ -25577,3 +25577,6 @@
 
 ## [2026-06-20] edit | edit_node
 - pkis:technique:neural-networks: fields=['sources'] sections=[]
+
+## [2026-06-20] edit | edit_node
+- pkis:concept:cross-entropy-loss: fields=['sources'] sections=[]

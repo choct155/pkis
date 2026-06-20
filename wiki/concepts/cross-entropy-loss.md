@@ -3,7 +3,7 @@ aliases: []
 also_type: []
 coverage: 1
 date_created: 2026-05-20
-date_updated: 2026-05-20
+date_updated: '2026-06-20'
 domain:
 - deep-learning
 - optimization
@@ -18,6 +18,7 @@ related_concepts:
 - '[[kl-divergence]]'
 sources:
 - '[[nielsen-nndl]]'
+- nielsen-nndl-ch03
 tags:
 - information-theory
 - loss-functions
