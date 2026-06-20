@@ -26279,3 +26279,6 @@
 
 ## [2026-06-20] edit | edit_node
 - pkis:concept:activation-functions: fields=['sources'] sections=[]
+
+## [2026-06-20] edit | edit_node
+- pkis:concept:emergence-in-agentic-systems: fields=['sources'] sections=[]
