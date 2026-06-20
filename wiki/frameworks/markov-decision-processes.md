@@ -3,7 +3,7 @@ aliases: []
 also_type: []
 coverage: 1
 date_created: 2026-05-20
-date_updated: '2026-06-09'
+date_updated: '2026-06-20'
 domain:
 - formal-methods
 - systems-theory
@@ -21,6 +21,7 @@ related_concepts:
 - state-space-models
 sources:
 - '[[cassandras-des-intro]]'
+- sutton-reinforcement-2018
 tags:
 - markov-decision-processes
 - dynamic-programming

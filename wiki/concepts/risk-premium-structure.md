@@ -1,18 +1,32 @@
 ---
-id: "pkis:concept:risk-premium-structure"
 aliases: []
-title: "Risk Premium Structure"
-knowledge_type: concept
-also_type: [framework]
-domain: [corporate-finance]
-tags: [asset-pricing, factor-models, risk, return, value-premium, momentum]
-related_concepts: [capital-asset-pricing-model, alpha-beta-decomposition, active-management-puzzle, efficient-market-hypothesis]
-sources: [cochrane-finance-function-2013]
-date_created: 2026-05-20
-date_updated: 2026-05-20
+also_type:
+- framework
 coverage: 1
-understanding: 0
+date_created: 2026-05-20
+date_updated: '2026-06-20'
+domain:
+- corporate-finance
+id: pkis:concept:risk-premium-structure
+knowledge_type: concept
 maturity: evolving
+related_concepts:
+- capital-asset-pricing-model
+- alpha-beta-decomposition
+- active-management-puzzle
+- efficient-market-hypothesis
+sources:
+- cochrane-finance-function-2013
+- fama-french-value-premium-2020
+tags:
+- asset-pricing
+- factor-models
+- risk
+- return
+- value-premium
+- momentum
+title: Risk Premium Structure
+understanding: 0
 ---
 
 The multi-dimensional structure of systematic risk premiums beyond CAPM's single market beta, including value, momentum, carry, liquidity, and volatility premiums, which represent compensation for distinct sources of systematic risk that active investment strategies may legitimately access and package for investors.

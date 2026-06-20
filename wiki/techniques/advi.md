@@ -16,7 +16,7 @@ contrasts-with:
 - normalizing-flows
 coverage: 1
 date_created: '2026-06-11'
-date_updated: '2026-06-11'
+date_updated: '2026-06-20'
 domain:
 - variational-inference
 - probabilistic-programming
@@ -33,6 +33,7 @@ related_concepts: []
 sources:
 - murphy-pml2-advanced-ch07
 - murphy-pml2-advanced-ch10
+- kucukelbir-automatic-2016
 specializes:
 - variational-inference
 tags:

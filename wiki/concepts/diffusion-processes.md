@@ -4,7 +4,7 @@ also_type:
 - framework
 coverage: 1
 date_created: 2026-05-20
-date_updated: 2026-05-20
+date_updated: '2026-06-20'
 domain:
 - bayesian-stats
 - state-space-models
@@ -17,6 +17,7 @@ related_concepts:
 - '[[state-space-models]]'
 sources:
 - '[[lange-applied-probability]]'
+- resnick-stochastic-processes
 tags:
 - stochastic-processes
 - brownian-motion

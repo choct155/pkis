@@ -10,7 +10,7 @@ contrasts-with:
 - random-variable
 coverage: 1
 date_created: '2026-06-09'
-date_updated: '2026-06-09'
+date_updated: '2026-06-20'
 domain:
 - bayesian-stats
 - information-theory
@@ -23,6 +23,7 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - jaynes-probability-ch10
+- jaynes-probability
 tags:
 - jaynes
 - foundations-of-probability

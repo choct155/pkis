@@ -1,18 +1,33 @@
 ---
-id: "pkis:concept:aspiration-level"
 aliases: []
-title: "Aspiration Level"
-knowledge_type: concept
 also_type: []
-domain: [organizational-theory]
-tags: [bounded-rationality, satisficing, goals, adaptive-expectations, behavioral-economics, Carnegie-school, decision-making]
-related_concepts: [satisficing, bounded-rationality, organizational-learning, organizational-slack, behavioral-theory-of-the-firm]
-sources: [cyert-behavioral-theory-firm-1959]
-date_created: 2026-05-20
-date_updated: 2026-05-20
 coverage: 1
-understanding: 0
+date_created: 2026-05-20
+date_updated: '2026-06-20'
+domain:
+- organizational-theory
+id: pkis:concept:aspiration-level
+knowledge_type: concept
 maturity: settled
+related_concepts:
+- satisficing
+- bounded-rationality
+- organizational-learning
+- organizational-slack
+- behavioral-theory-of-the-firm
+sources:
+- cyert-behavioral-theory-firm-1959
+- gavetti-behavioral-theory-firm-2012
+tags:
+- bounded-rationality
+- satisficing
+- goals
+- adaptive-expectations
+- behavioral-economics
+- Carnegie-school
+- decision-making
+title: Aspiration Level
+understanding: 0
 ---
 
 An aspiration level is the target performance threshold an organisation uses to evaluate outcomes as satisfactory or unsatisfactory; it is endogenous and adaptive — adjusted upward when performance consistently exceeds it and downward when consistently fails — and serves as the trigger for organisational search and re-examination in the behavioral theory of the firm.

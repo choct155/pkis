@@ -3,7 +3,7 @@ aliases: []
 also_type: []
 coverage: 1
 date_created: 2026-05-20
-date_updated: '2026-06-08'
+date_updated: '2026-06-20'
 domain:
 - information-theory
 - bayesian-stats
@@ -16,6 +16,7 @@ related_concepts:
 - '[[elbo]]'
 sources:
 - '[[lange-applied-probability]]'
+- cote-visual-intro-information-theory-2022
 tags:
 - information-theory
 - shannon-entropy

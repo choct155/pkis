@@ -13,7 +13,7 @@ contrasts-with:
 - kernel-ridge-regression
 coverage: 1
 date_created: '2026-06-11'
-date_updated: '2026-06-11'
+date_updated: '2026-06-20'
 domain:
 - machine-learning
 - statistical-learning-theory
@@ -32,6 +32,7 @@ related_concepts: []
 sources:
 - bishop-prml-ch07
 - murphy-pml1-intro-ch17
+- bishop-prml
 specializes:
 - optimal-separating-hyperplane
 tags:

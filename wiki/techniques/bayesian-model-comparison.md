@@ -17,7 +17,7 @@ contrasts-with:
 - information-criteria
 coverage: 1
 date_created: '2026-06-08'
-date_updated: '2026-06-08'
+date_updated: '2026-06-20'
 domain:
 - bayesian-stats
 generalizes:
@@ -31,6 +31,7 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - mackay-itila-ch03
+- betancourt-bayeshist
 tags:
 - posterior-odds
 - bayes-factor

@@ -16,7 +16,7 @@ contrasts-with:
 - multi-label-classification
 coverage: 1
 date_created: '2026-06-11'
-date_updated: '2026-06-11'
+date_updated: '2026-06-20'
 domain:
 - machine-learning
 - statistics
@@ -35,6 +35,7 @@ related_concepts: []
 sources:
 - murphy-pml1-intro-ch02
 - murphy-pml1-intro-ch10
+- murphy-pml1-intro
 tags:
 - classification
 - softmax

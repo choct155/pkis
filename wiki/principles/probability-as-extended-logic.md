@@ -12,7 +12,7 @@ contrasts-with:
 - comparative-probability
 coverage: 1
 date_created: '2026-06-09'
-date_updated: '2026-06-09'
+date_updated: '2026-06-20'
 domain:
 - bayesian-stats
 - information-theory
@@ -27,6 +27,7 @@ related_concepts: []
 sources:
 - jaynes-probability-ch02
 - jaynes-probability-appA
+- jaynes-probability
 tags:
 - foundations
 - bayesian-philosophy

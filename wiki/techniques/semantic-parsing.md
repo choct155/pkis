@@ -5,7 +5,7 @@ applies:
 - probabilistic-context-free-grammar
 coverage: 2
 date_created: 2026-05-20
-date_updated: 2026-05-20
+date_updated: '2026-06-20'
 domain:
 - knowledge-representation
 - symbolic-subsymbolic
@@ -21,6 +21,7 @@ related_concepts:
 sources:
 - '[[cimiano-ontology-nlp]]'
 - '[[sequeda-kg-benchmark-llm-2023]]'
+- yih-the-2016
 tags:
 - natural-language-processing
 - sparql

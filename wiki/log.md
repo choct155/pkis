@@ -25196,3 +25196,258 @@
 ## [2026-06-20] committed | source
 - Committed: procko-from-2026 → sources/procko-from-2026.md
 - IRI: pkis:source:procko-from-2026
+
+## [2026-06-20] edit | edit_node
+- pkis:technique:retrieval-augmented-generation: fields=['sources'] sections=[]
+
+## [2026-06-20] edit | edit_node
+- pkis:concept:confounding: fields=['sources'] sections=[]
+
+## [2026-06-20] edit | edit_node
+- pkis:framework:directed-graphical-models: fields=['sources'] sections=[]
+
+## [2026-06-20] edit | edit_node
+- pkis:concept:counterfactuals: fields=['sources'] sections=[]
+
+## [2026-06-20] edit | edit_node
+- pkis:framework:structural-causal-models: fields=['sources'] sections=[]
+
+## [2026-06-20] edit | edit_node
+- pkis:technique:gaussian-mixture-models: fields=['sources'] sections=[]
+
+## [2026-06-20] edit | edit_node
+- pkis:framework:model-based-ml: fields=['sources'] sections=[]
+
+## [2026-06-20] edit | edit_node
+- pkis:technique:support-vector-machine: fields=['sources'] sections=[]
+
+## [2026-06-20] edit | edit_node
+- pkis:problem:intractable-posterior: fields=['sources'] sections=[]
+
+## [2026-06-20] edit | edit_node
+- pkis:technique:generalized-linear-models: fields=['sources'] sections=[]
+
+## [2026-06-20] edit | edit_node
+- pkis:technique:gaussian-process-regression: fields=['sources'] sections=[]
+
+## [2026-06-20] edit | edit_node
+- pkis:technique:em-algorithm: fields=['sources'] sections=[]
+
+## [2026-06-20] edit | edit_node
+- pkis:technique:variational-inference: fields=['sources'] sections=[]
+
+## [2026-06-20] edit | edit_node
+- pkis:technique:graph-rag: fields=['sources'] sections=[]
+
+## [2026-06-20] edit | edit_node
+- pkis:technique:knowledge-graph-traversal: fields=['sources'] sections=[]
+
+## [2026-06-20] edit | edit_node
+- pkis:concept:knowledge-graph: fields=['sources'] sections=[]
+
+## [2026-06-20] edit | edit_node
+- pkis:concept:multi-hop-reasoning: fields=['sources'] sections=[]
+
+## [2026-06-20] edit | edit_node
+- pkis:technique:in-context-learning: fields=['sources'] sections=[]
+
+## [2026-06-20] edit | edit_node
+- pkis:technique:named-entity-disambiguation: fields=['sources'] sections=[]
+
+## [2026-06-20] edit | edit_node
+- pkis:technique:knowledge-graph-embedding: fields=['sources'] sections=[]
+
+## [2026-06-20] edit | edit_node
+- pkis:concept:markov-chains: fields=['sources'] sections=[]
+
+## [2026-06-20] edit | edit_node
+- pkis:concept:diffusion-processes: fields=['sources'] sections=[]
+
+## [2026-06-20] edit | edit_node
+- pkis:concept:random-walk: fields=['sources'] sections=[]
+
+## [2026-06-20] edit | edit_node
+- pkis:concept:continuous-time-markov-chain: fields=['sources'] sections=[]
+
+## [2026-06-20] edit | edit_node
+- pkis:concept:brownian-motion: fields=['sources'] sections=[]
+
+## [2026-06-20] edit | edit_node
+- pkis:concept:point-process: fields=['sources'] sections=[]
+
+## [2026-06-20] edit | edit_node
+- pkis:framework:markov-decision-processes: fields=['sources'] sections=[]
+
+## [2026-06-20] edit | edit_node
+- pkis:concept:markov-decision-process-mdp: fields=['sources'] sections=[]
+
+## [2026-06-20] edit | edit_node
+- pkis:concept:the-deadly-triad: fields=['sources'] sections=[]
+
+## [2026-06-20] edit | edit_node
+- pkis:technique:bayesian-model-comparison: fields=['sources'] sections=[]
+
+## [2026-06-20] edit | edit_node
+- pkis:concept:probability-theory: fields=['sources'] sections=[]
+
+## [2026-06-20] edit | edit_node
+- pkis:framework:evidence-framework: fields=['sources'] sections=[]
+
+## [2026-06-20] edit | edit_node
+- pkis:concept:prior-likelihood-posterior: fields=['sources'] sections=[]
+
+## [2026-06-20] edit | edit_node
+- pkis:framework:multidimensional-retrieval-quality-framework: fields=['sources'] sections=[]
+
+## [2026-06-20] edit | edit_node
+- pkis:technique:knowledge-graph-construction: fields=['sources'] sections=[]
+
+## [2026-06-20] edit | edit_node
+- pkis:concept:score-function-estimator: fields=['sources'] sections=[]
+
+## [2026-06-20] edit | edit_node
+- pkis:technique:reinforce: fields=['sources'] sections=[]
+
+## [2026-06-20] edit | edit_node
+- pkis:technique:reparameterization-gradient: fields=['sources'] sections=[]
+
+## [2026-06-20] edit | edit_node
+- pkis:technique:reinforce-gradient-estimator: fields=['sources'] sections=[]
+
+## [2026-06-20] edit | edit_node
+- pkis:technique:reparameterized-vi: fields=['sources'] sections=[]
+
+## [2026-06-20] edit | edit_node
+- pkis:technique:reparameterization-trick: fields=['sources'] sections=[]
+
+## [2026-06-20] edit | edit_node
+- pkis:framework:policy-gradient-methods: fields=['sources'] sections=[]
+
+## [2026-06-20] edit | edit_node
+- pkis:concept:multinomial-logistic-regression: fields=['sources'] sections=[]
+
+## [2026-06-20] edit | edit_node
+- pkis:concept:binary-logistic-regression: fields=['sources'] sections=[]
+
+## [2026-06-20] edit | edit_node
+- pkis:technique:irls: fields=['sources'] sections=[]
+
+## [2026-06-20] edit | edit_node
+- pkis:problem:knowledge-graph-question-answering: fields=['sources'] sections=[]
+
+## [2026-06-20] edit | edit_node
+- pkis:concept:risk-premium-structure: fields=['sources'] sections=[]
+
+## [2026-06-20] edit | edit_node
+- pkis:concept:mutual-information: fields=['sources'] sections=[]
+
+## [2026-06-20] edit | edit_node
+- pkis:result:chain-rule-for-entropy: fields=['sources'] sections=[]
+
+## [2026-06-20] edit | edit_node
+- pkis:concept:channel-capacity: fields=['sources'] sections=[]
+
+## [2026-06-20] edit | edit_node
+- pkis:concept:entropy: fields=['sources'] sections=[]
+
+## [2026-06-20] edit | edit_node
+- pkis:concept:information-theory: fields=['sources'] sections=[]
+
+## [2026-06-20] edit | edit_node
+- pkis:result:source-coding-theorem: fields=['sources'] sections=[]
+
+## [2026-06-20] edit | edit_node
+- pkis:concept:aspiration-level: fields=['sources'] sections=[]
+
+## [2026-06-20] edit | edit_node
+- pkis:concept:satisficing: fields=['sources'] sections=[]
+
+## [2026-06-20] edit | edit_node
+- pkis:concept:organizational-learning: fields=['sources'] sections=[]
+
+## [2026-06-20] edit | edit_node
+- pkis:framework:behavioral-theory-of-the-firm: fields=['sources'] sections=[]
+
+## [2026-06-20] edit | edit_node
+- pkis:principle:probability-as-extended-logic: fields=['sources'] sections=[]
+
+## [2026-06-20] edit | edit_node
+- pkis:principle:desiderata-of-plausible-reasoning: fields=['sources'] sections=[]
+
+## [2026-06-20] edit | edit_node
+- pkis:concept:plausible-reasoning: fields=['sources'] sections=[]
+
+## [2026-06-20] edit | edit_node
+- pkis:principle:physical-vs-epistemic-probability: fields=['sources'] sections=[]
+
+## [2026-06-20] edit | edit_node
+- pkis:concept:task-oriented-dialog-systems: fields=['sources'] sections=[]
+
+## [2026-06-20] edit | edit_node
+- pkis:concept:dialog-evaluation-framework: fields=['sources'] sections=[]
+
+## [2026-06-20] edit | edit_node
+- pkis:concept:interaction-quality-score: fields=['sources'] sections=[]
+
+## [2026-06-20] edit | edit_node
+- pkis:concept:acqi-taxonomy: fields=['sources'] sections=[]
+
+## [2026-06-20] edit | edit_node
+- pkis:technique:bayesian-model-checking: fields=['sources'] sections=[]
+
+## [2026-06-20] edit | edit_node
+- pkis:framework:hierarchical-bayesian-models: fields=['sources'] sections=[]
+
+## [2026-06-20] edit | edit_node
+- pkis:technique:bayesian-decision-analysis: fields=['sources'] sections=[]
+
+## [2026-06-20] edit | edit_node
+- pkis:technique:bayesian-model-averaging: fields=['sources'] sections=[]
+
+## [2026-06-20] edit | edit_node
+- pkis:technique:data-augmentation-algorithm: fields=['sources'] sections=[]
+
+## [2026-06-20] edit | edit_node
+- pkis:framework:state-space-search: fields=['sources'] sections=[]
+
+## [2026-06-20] edit | edit_node
+- pkis:framework:deep-learning: fields=['sources'] sections=[]
+
+## [2026-06-20] edit | edit_node
+- pkis:framework:dl-practical-design-methodology: fields=['sources'] sections=[]
+
+## [2026-06-20] edit | edit_node
+- pkis:concept:deep-feedforward-network: fields=['sources'] sections=[]
+
+## [2026-06-20] edit | edit_node
+- pkis:concept:greedy-layer-wise-pretraining: fields=['sources'] sections=[]
+
+## [2026-06-20] edit | edit_node
+- pkis:technique:greedy-layer-wise-unsupervised-pretraining: fields=['sources'] sections=[]
+
+## [2026-06-20] edit | edit_node
+- pkis:technique:adversarial-training-regularization: fields=['sources'] sections=[]
+
+## [2026-06-20] edit | edit_node
+- pkis:technique:newtons-method-optimization: fields=['sources'] sections=[]
+
+## [2026-06-20] edit | edit_node
+- pkis:concept:ergodicity-markov-chain-mcmc: fields=['sources'] sections=[]
+
+## [2026-06-20] edit | edit_node
+- pkis:result:ergodic-theorem-markov: fields=['sources'] sections=[]
+
+## [2026-06-20] edit | edit_node
+- pkis:technique:mcmc: fields=['sources'] sections=[]
+
+## [2026-06-20] edit | edit_node
+- pkis:technique:semantic-parsing: fields=['sources'] sections=[]
+
+## [2026-06-20] edit | edit_node
+- pkis:technique:advi: fields=['sources'] sections=[]
+
+## [2026-06-20] edit | edit_node
+- pkis:framework:variational-inference-framework: fields=['sources'] sections=[]
+
+## [2026-06-20] edit | edit_node
+- pkis:technique:bbvi: fields=['sources'] sections=[]

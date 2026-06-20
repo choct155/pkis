@@ -1,18 +1,39 @@
 ---
-id: "pkis:framework:directed-graphical-models"
 aliases: []
-title: "Directed Graphical Models (Bayesian Networks)"
-knowledge_type: framework
 also_type: []
-domain: [bayesian-stats, knowledge-representation, causal-analysis]
-tags: [probability-theory, graph-theory]
-related_concepts: ["[[probability-theory]]", "[[undirected-graphical-models]]", "[[structural-causal-models]]", "[[d-separation]]"]
-sources: ["[[deisenroth-mml]]", "[[pearl-causality]]", "[[blei-vi-review]]", "[[cunningham-causal-inference-mixtape]]", "[[kroese-statistical-modeling]]", "[[pearl-reverend-bayes-1982]]", "[[capretto-bambi-2022]]", "[[kurz-hybrid-modeling-2022]]", "[[davis-marcus-simulation-cognitive-2015]]"]
-date_created: 2026-05-20
-date_updated: 2026-05-20
 coverage: 6
-understanding: 0
+date_created: 2026-05-20
+date_updated: '2026-06-20'
+domain:
+- bayesian-stats
+- knowledge-representation
+- causal-analysis
+id: pkis:framework:directed-graphical-models
+knowledge_type: framework
 maturity: settled
+related_concepts:
+- '[[probability-theory]]'
+- '[[undirected-graphical-models]]'
+- '[[structural-causal-models]]'
+- '[[d-separation]]'
+sources:
+- '[[deisenroth-mml]]'
+- '[[pearl-causality]]'
+- '[[blei-vi-review]]'
+- '[[cunningham-causal-inference-mixtape]]'
+- '[[kroese-statistical-modeling]]'
+- '[[pearl-reverend-bayes-1982]]'
+- '[[capretto-bambi-2022]]'
+- '[[kurz-hybrid-modeling-2022]]'
+- '[[davis-marcus-simulation-cognitive-2015]]'
+- bishop-prml
+- li-forecaster-pearl-causality-2023
+- murphy-pml2-advanced
+tags:
+- probability-theory
+- graph-theory
+title: Directed Graphical Models (Bayesian Networks)
+understanding: 0
 ---
 
 ## Reading Path

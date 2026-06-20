@@ -15,10 +15,13 @@ component_scores:
   principled_mechanism: 4
 coverage: 2
 date_created: 2026-05-20
-date_updated: '2026-06-08'
+date_updated: '2026-06-20'
 domain:
 - bayesian-stats
 id: pkis:technique:mcmc
+illustrated-by:
+- hmc-explainer
+- mcmc-trace-viz
 knowledge_type: technique
 maturity: settled
 related_concepts:
@@ -33,6 +36,7 @@ sources:
 - '[[kroese-statistical-modeling]]'
 - '[[capretto-bambi-2022]]'
 - '[[kurz-hybrid-modeling-2022]]'
+- betancourt-short-2021
 specializes:
 - numerical-vs-simulation-integration
 tags:
@@ -45,9 +49,6 @@ title: Markov Chain Monte Carlo (MCMC)
 understanding: 2
 uses:
 - posterior-geometry-coordinate-systems
-illustrated-by:
-- hmc-explainer
-- mcmc-trace-viz
 ---
 
 A class of algorithms that construct a Markov chain whose stationary distribution is the target distribution (typically a posterior), enabling sampling from intractable distributions by running the chain until convergence; the Metropolis-Hastings and Gibbs sampler are the foundational instances.

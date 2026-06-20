@@ -3,7 +3,7 @@ aliases: []
 also_type: []
 coverage: 3
 date_created: 2026-05-20
-date_updated: '2026-06-08'
+date_updated: '2026-06-20'
 domain:
 - bayesian-stats
 - forecasting
@@ -19,6 +19,7 @@ sources:
 - '[[steel-bma-forecasting-2011]]'
 - '[[scott-varian-nowcasting-2013a]]'
 - '[[scott-varian-bsts-2014]]'
+- gelman-bda3
 tags:
 - model-uncertainty
 - variable-selection

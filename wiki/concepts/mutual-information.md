@@ -16,7 +16,7 @@ contrasts-with:
 - conditional-independence
 coverage: 1
 date_created: '2026-06-08'
-date_updated: '2026-06-08'
+date_updated: '2026-06-20'
 domain:
 - information-theory
 id: pkis:concept:mutual-information
@@ -30,6 +30,7 @@ related_concepts: []
 sources:
 - mackay-itila-ch08
 - mackay-itila-ch09
+- cote-visual-intro-information-theory-2022
 specializes:
 - kl-divergence
 tags:

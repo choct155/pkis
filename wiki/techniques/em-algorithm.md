@@ -12,7 +12,7 @@ applies:
 - model-selection-problem
 coverage: 10
 date_created: 2026-05-20
-date_updated: '2026-06-08'
+date_updated: '2026-06-20'
 domain:
 - statistical-learning
 - bayesian-stats
@@ -31,6 +31,7 @@ sources:
 - '[[tanner-tools-statistical-inference]]'
 - '[[kroese-statistical-modeling]]'
 - '[[lange-applied-probability]]'
+- bishop-prml
 specializes:
 - mm-algorithm
 tags:

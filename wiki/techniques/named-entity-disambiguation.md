@@ -16,7 +16,7 @@ component_scores:
   principled_mechanism: null
 coverage: 1
 date_created: '2026-05-31'
-date_updated: '2026-05-31'
+date_updated: '2026-06-20'
 domain:
 - knowledge-representation
 - deep-learning
@@ -28,6 +28,7 @@ related_concepts: []
 sources:
 - sun-thinkongraph-2023
 - wu-thinkongraph-2025
+- cetoli-named-2018
 tags:
 - named-entity-disambiguation
 - entity-resolution

@@ -16,7 +16,7 @@ contrasts-with:
 - hypothesis-testing
 coverage: 1
 date_created: '2026-06-09'
-date_updated: '2026-06-09'
+date_updated: '2026-06-20'
 domain:
 - bayesian-stats
 - statistical-learning
@@ -27,6 +27,7 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - gelman-bda3-ch06
+- gelman-bda3
 tags:
 - model-checking
 - model-criticism

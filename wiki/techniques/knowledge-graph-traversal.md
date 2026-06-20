@@ -11,7 +11,7 @@ component_scores:
   principled_mechanism: null
 coverage: 1
 date_created: '2026-06-01'
-date_updated: '2026-06-01'
+date_updated: '2026-06-20'
 domain:
 - knowledge-representation
 id: pkis:technique:knowledge-graph-traversal
@@ -22,6 +22,11 @@ related_concepts: []
 sources:
 - sun-thinkongraph-2023
 - wu-thinkongraph-2025
+- 2307-07697-think-on-graph-deep
+- arxivorg-thinkongraph
+- share-thinkongraph
+- share-thinkongraph-1
+- zhang-variational-2018
 tags:
 - knowledge-graph
 - multi-hop

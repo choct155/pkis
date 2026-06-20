@@ -12,7 +12,7 @@ component_scores:
   transfer: null
 coverage: 1
 date_created: '2026-06-01'
-date_updated: '2026-06-02'
+date_updated: '2026-06-20'
 domain:
 - bayesian-stats
 id: pkis:concept:information-theory
@@ -22,6 +22,7 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - '[[mackay-itila]]'
+- cote-visual-intro-information-theory-2022
 tags:
 - entropy
 - information

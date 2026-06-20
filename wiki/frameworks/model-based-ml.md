@@ -13,7 +13,7 @@ component_scores:
   structure: null
 coverage: 1
 date_created: '2026-06-11'
-date_updated: '2026-06-11'
+date_updated: '2026-06-20'
 domain:
 - machine-learning
 - probabilistic-modelling
@@ -29,6 +29,7 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - murphy-pml2-advanced-ch01
+- bishop-prml
 tags:
 - data-generating-process
 - probabilistic-models

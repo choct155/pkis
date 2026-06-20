@@ -1,18 +1,51 @@
 ---
-id: "pkis:concept:knowledge-graph"
 aliases: []
-title: "Knowledge Graph"
-knowledge_type: concept
-also_type: [framework]
-domain: [knowledge-representation]
-tags: [rdf, linked-data, semantic-web, graph-databases, ontology]
-related_concepts: []
-sources: ["[[papadaki-rdf-analytics-survey]]", "[[zhang-graphrag-survey]]", "[[banf-tripartite-graphrag]]", "[[barron-legal-rag-nmf]]", "[[cheng-cograg]]", "[[baldazzi-soft-ontological-reasoning]]", "[[liu-symagent]]", "[[hamilton-graphsage]]", "[[allemang-semantic-web]]", "[[cimiano-ontology-nlp]]", "[[kg-evaluation-bloomberg-2024]]", "[[sequeda-kg-benchmark-llm-2023]]", "[[sequeda-kg-trust-llm-2025]]", "[[sheth-neurosymbolic-why-2023]]", "[[delong-nsai-kg-survey-2024]]", "[[belle-future-neurosymbolic-2025]]", "[[lenat-marcus-cyc-trustworthy-2023]]", "[[radhakrishnan-datagemma-2024]]"]
-date_created: 2026-05-20
-date_updated: 2026-05-20
+also_type:
+- framework
 coverage: 17
-understanding: 0
+date_created: 2026-05-20
+date_updated: '2026-06-20'
+domain:
+- knowledge-representation
+id: pkis:concept:knowledge-graph
+knowledge_type: concept
 maturity: evolving
+related_concepts: []
+sources:
+- '[[papadaki-rdf-analytics-survey]]'
+- '[[zhang-graphrag-survey]]'
+- '[[banf-tripartite-graphrag]]'
+- '[[barron-legal-rag-nmf]]'
+- '[[cheng-cograg]]'
+- '[[baldazzi-soft-ontological-reasoning]]'
+- '[[liu-symagent]]'
+- '[[hamilton-graphsage]]'
+- '[[allemang-semantic-web]]'
+- '[[cimiano-ontology-nlp]]'
+- '[[kg-evaluation-bloomberg-2024]]'
+- '[[sequeda-kg-benchmark-llm-2023]]'
+- '[[sequeda-kg-trust-llm-2025]]'
+- '[[sheth-neurosymbolic-why-2023]]'
+- '[[delong-nsai-kg-survey-2024]]'
+- '[[belle-future-neurosymbolic-2025]]'
+- '[[lenat-marcus-cyc-trustworthy-2023]]'
+- '[[radhakrishnan-datagemma-2024]]'
+- 2307-07697-think-on-graph-deep
+- edge-from-2024
+- feng-cypherbench-2024
+- ho-constructing-2020
+- share-thinkongraph
+- wu-stark-2024
+- yih-the-2016
+- zhang-variational-2018
+tags:
+- rdf
+- linked-data
+- semantic-web
+- graph-databases
+- ontology
+title: Knowledge Graph
+understanding: 0
 ---
 
 A graph-structured data model that aggregates and integrates heterogeneous data from multiple sources under a unified schema, enabling browsing, querying, question answering, and analytics over a single coherent representation; typically expressed in RDF or property graph formats and populated from structured, semi-structured, and unstructured sources.

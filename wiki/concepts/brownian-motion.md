@@ -12,7 +12,7 @@ component_scores:
   transfer: null
 coverage: 1
 date_created: '2026-06-09'
-date_updated: '2026-06-09'
+date_updated: '2026-06-20'
 domain:
 - bayesian-stats
 - statistical-learning
@@ -28,6 +28,7 @@ prerequisite-of:
 related_concepts: []
 sources:
 - resnick-stochastic-processes-ch06
+- resnick-stochastic-processes
 specializes:
 - diffusion-processes
 tags:

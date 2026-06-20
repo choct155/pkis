@@ -1,18 +1,32 @@
 ---
-id: "pkis:technique:knowledge-graph-construction"
 aliases: []
-title: "Knowledge Graph Construction"
-knowledge_type: technique
 also_type: []
-domain: [knowledge-representation, symbolic-subsymbolic]
-tags: [knowledge-graphs, information-extraction, oie, nlp, llm]
-related_concepts: [knowledge-graph, graph-rag, rdf]
-sources: ["[[zhang-graphrag-survey]]", "[[barron-legal-rag-nmf]]", "[[liu-symagent]]"]
-date_created: 2026-05-20
-date_updated: 2026-05-20
 coverage: 3
-understanding: 0
+date_created: 2026-05-20
+date_updated: '2026-06-20'
+domain:
+- knowledge-representation
+- symbolic-subsymbolic
+id: pkis:technique:knowledge-graph-construction
+knowledge_type: technique
 maturity: evolving
+related_concepts:
+- knowledge-graph
+- graph-rag
+- rdf
+sources:
+- '[[zhang-graphrag-survey]]'
+- '[[barron-legal-rag-nmf]]'
+- '[[liu-symagent]]'
+- edge-from-2024
+tags:
+- knowledge-graphs
+- information-extraction
+- oie
+- nlp
+- llm
+title: Knowledge Graph Construction
+understanding: 0
 ---
 
 The automated process of transforming unstructured text corpora into structured knowledge graphs via entity recognition, relation extraction, and coreference resolution — using either classical Open Information Extraction (OIE) pipelines or LLM-based extraction — producing nodes (entities/concepts) and typed edges (relations) that can be queried or reasoned over.

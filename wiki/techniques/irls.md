@@ -18,7 +18,7 @@ contrasts-with:
 - gradient-descent
 coverage: 1
 date_created: '2026-06-11'
-date_updated: '2026-06-11'
+date_updated: '2026-06-20'
 domain:
 - machine-learning
 - statistics
@@ -31,6 +31,7 @@ related_concepts: []
 sources:
 - bishop-prml-ch04
 - murphy-pml1-intro-ch10
+- murphy-pml1-intro
 specializes:
 - mm-algorithm
 tags:

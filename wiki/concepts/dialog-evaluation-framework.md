@@ -2,12 +2,15 @@
 aliases: []
 coverage: 0
 date_created: '2026-06-19'
+date_updated: '2026-06-20'
 domain: []
 id: pkis:concept:dialog-evaluation-framework
 knowledge_type: concept
 maturity: stub
 needs_canonical_source: true
 needs_classification: true
+sources:
+- higgins-acqi-dialog-2024
 tags: []
 title: Dialog Evaluation Framework
 understanding: 0

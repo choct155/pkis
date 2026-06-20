@@ -9,7 +9,7 @@ component_scores:
   statement: null
 coverage: 1
 date_created: '2026-06-08'
-date_updated: '2026-06-08'
+date_updated: '2026-06-20'
 domain:
 - information-theory
 - statistical-learning
@@ -20,6 +20,7 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - mackay-itila-ch04
+- cote-visual-intro-information-theory-2022
 tags:
 - source-coding
 - data-compression
