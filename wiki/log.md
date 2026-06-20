@@ -26383,3 +26383,12 @@
 ## [2026-06-20] committed | framework
 - Committed: llm-as-judge-silver-gold-ppi-framework → frameworks/llm-as-judge-silver-gold-ppi-framework.md
 - IRI: pkis:framework:llm-as-judge-silver-gold-ppi-framework
+
+## [2026-06-20] staged | node-stub (framework)
+- Staged: passive-instrumentation-quality-measurement (id: ef5bcc9f-04ba-44c2-a243-d4e2a4994a32)
+- Title: Passive Instrumentation Strategy for Quality Measurement
+- needs_canonical_source: False
+
+## [2026-06-20] committed | framework
+- Committed: passive-instrumentation-quality-measurement → frameworks/passive-instrumentation-quality-measurement.md
+- IRI: pkis:framework:passive-instrumentation-quality-measurement
