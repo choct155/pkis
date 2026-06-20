@@ -13,7 +13,7 @@ component_scores:
   principled_mechanism: null
 coverage: 1
 date_created: '2026-06-11'
-date_updated: '2026-06-11'
+date_updated: '2026-06-20'
 domain:
 - causal-inference
 - econometrics
@@ -25,6 +25,7 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - murphy-pml2-advanced-ch36
+- cunningham-causal-inference-mixtape-ch10
 tags:
 - panel-data
 - parallel-trends
