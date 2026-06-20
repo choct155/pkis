@@ -26150,3 +26150,6 @@
 
 ## [2026-06-20] edit | edit_node
 - pkis:framework:lexicalized-tree-adjoining-grammar: fields=['sources'] sections=[]
+
+## [2026-06-20] edit | edit_node
+- pkis:technique:trajectory-sampling: fields=['sources'] sections=[]
