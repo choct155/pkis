@@ -26,6 +26,8 @@ related_concepts: []
 sources:
 - bishop-prml-ch11
 - betancourt-short-2021
+- cassandras-des-intro-ch07
+- lange-applied-probability-ch07
 specializes:
 - markov-chains
 tags:
