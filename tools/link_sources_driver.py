@@ -22,6 +22,17 @@ import os
 import sys
 
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.realpath(__file__))))
+
+# Load the service env (ANTHROPIC_API_KEY etc.) BEFORE importing app — app builds
+# the Anthropic client at import time, so the key must be present first.
+_envfile = os.environ.get("PKIS_ENV", "/home/pkis/.env")
+if os.path.exists(_envfile):
+    for _line in open(_envfile):
+        _line = _line.strip()
+        if _line and not _line.startswith("#") and "=" in _line:
+            _k, _v = _line.split("=", 1)
+            os.environ.setdefault(_k.strip(), _v.strip().strip('"').strip("'"))
+
 import app  # noqa: E402
 
 MODEL = "claude-haiku-4-5"
