@@ -4,7 +4,7 @@ also_type:
 - framework
 coverage: 3
 date_created: 2026-05-20
-date_updated: 2026-05-20
+date_updated: '2026-06-20'
 domain:
 - statistical-learning
 extends:
@@ -23,6 +23,13 @@ sources:
 - '[[deisenroth-mml]]'
 - '[[benzi-hidden-structure-matrices]]'
 - '[[carrell-groups-matrices-vectors]]'
+- benzi-hidden-structure-matrices-ch02
+- benzi-hidden-structure-matrices-ch04
+- benzi-hidden-structure-matrices-ch05
+- carrell-groups-matrices-vectors-ch04
+- carrell-groups-matrices-vectors-ch08
+- carrell-groups-matrices-vectors-ch09
+- carrell-groups-matrices-vectors-ch10
 tags:
 - linear-algebra
 - mathematical-foundations
