@@ -26174,3 +26174,6 @@
 
 ## [2026-06-20] edit | edit_node
 - pkis:concept:marked-point-process: fields=['sources'] sections=[]
+
+## [2026-06-20] edit | edit_node
+- pkis:result:poisson-order-statistic-property: fields=['sources'] sections=[]
