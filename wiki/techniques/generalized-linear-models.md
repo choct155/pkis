@@ -4,7 +4,7 @@ also_type:
 - framework
 coverage: 1
 date_created: 2026-05-20
-date_updated: 2026-05-20
+date_updated: '2026-06-20'
 domain:
 - statistical-learning
 - bayesian-stats
@@ -22,6 +22,9 @@ related_concepts:
 sources:
 - '[[kroese-statistical-modeling]]'
 - '[[capretto-bambi-2022]]'
+- bishop-prml
+- gelman-bda3
+- murphy-pml1-intro
 specializes:
 - exponential-family
 tags:
