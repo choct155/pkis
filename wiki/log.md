@@ -25529,3 +25529,6 @@
 
 ## [2026-06-20] edit | edit_node
 - pkis:framework:semantic-web: fields=['sources'] sections=[]
+
+## [2026-06-20] edit | edit_node
+- pkis:concept:linked-open-data: fields=['sources'] sections=[]

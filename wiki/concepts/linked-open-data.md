@@ -1,18 +1,31 @@
 ---
-id: "pkis:concept:linked-open-data"
-aliases: ["LOD"]
-title: "Linked Open Data (LOD)"
-knowledge_type: concept
+aliases:
+- LOD
 also_type: []
-domain: [knowledge-representation]
-tags: [semantic-web, rdf, open-data, uri, web-of-data]
-related_concepts: []
-sources: ["[[papadaki-rdf-analytics-survey]]", "[[allemang-semantic-web]]", "[[cimiano-ontology-nlp]]"]
-date_created: 2026-05-20
-date_updated: 2026-05-20
 coverage: 3
-understanding: 0
+date_created: 2026-05-20
+date_updated: '2026-06-20'
+domain:
+- knowledge-representation
+id: pkis:concept:linked-open-data
+knowledge_type: concept
 maturity: settled
+related_concepts: []
+sources:
+- '[[papadaki-rdf-analytics-survey]]'
+- '[[allemang-semantic-web]]'
+- '[[cimiano-ontology-nlp]]'
+- allemang-semantic-web-ch09
+- allemang-semantic-web-ch13
+- allemang-semantic-web-ch16
+tags:
+- semantic-web
+- rdf
+- open-data
+- uri
+- web-of-data
+title: Linked Open Data (LOD)
+understanding: 0
 ---
 
 Publishing paradigm for making structured data available on the Web using RDF, with URIs as global identifiers and HTTP dereferenceability enabling cross-dataset links; the LOD Cloud aggregates thousands of interconnected RDF datasets (DBpedia, Wikidata, domain-specific KGs), enabling quality analytics such as coverage, connectivity, and power-law distribution analysis at global scale.
