@@ -1,18 +1,27 @@
 ---
-id: "pkis:concept:embodied-cognition"
 aliases: []
-title: "Embodied Cognition"
-knowledge_type: concept
 also_type: []
-domain: [agentic-ai, deep-learning]
-tags: [agentic-ai, cognitive-science, embodiment, multimodal-learning, developmental-psychology]
-related_concepts: []
-sources: ["[[miehling-agentic-systems-theory-2025]]"]
-date_created: 2026-05-20
-date_updated: 2026-05-20
 coverage: 1
-understanding: 0
+date_created: 2026-05-20
+date_updated: '2026-06-20'
+domain:
+- agentic-ai
+- deep-learning
+id: pkis:concept:embodied-cognition
+knowledge_type: concept
 maturity: settled
+related_concepts: []
+sources:
+- '[[miehling-agentic-systems-theory-2025]]'
+- gulli-agentic-design-patterns-ch23
+tags:
+- agentic-ai
+- cognitive-science
+- embodiment
+- multimodal-learning
+- developmental-psychology
+title: Embodied Cognition
+understanding: 0
 ---
 
 The principle, originating in cognitive science and developmental psychology (Merleau-Ponty, Varela), that cognitive processes are fundamentally shaped by sensorimotor interaction with the environment rather than being purely abstract internal computations — applied to agentic AI, this implies that tool-mediated interaction with the environment can enhance an agent's representational and reasoning capabilities beyond what pretraining alone provides.

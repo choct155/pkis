@@ -25961,3 +25961,6 @@
 
 ## [2026-06-20] edit | edit_node
 - pkis:concept:agent-environment-interface: fields=['sources'] sections=[]
+
+## [2026-06-20] edit | edit_node
+- pkis:concept:embodied-cognition: fields=['sources'] sections=[]
