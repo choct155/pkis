@@ -25667,3 +25667,6 @@
 
 ## [2026-06-20] edit | edit_node
 - pkis:concept:overlap-positivity: fields=['sources'] sections=[]
+
+## [2026-06-20] edit | edit_node
+- pkis:concept:toeplitz-matrices: fields=['sources'] sections=[]
