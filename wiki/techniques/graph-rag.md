@@ -33,6 +33,7 @@ sources:
 - procko-from-2026
 - share-thinkongraph
 - share-thinkongraph-1
+- gulli-agentic-design-patterns-ch14
 tags:
 - rag
 - knowledge-graphs
