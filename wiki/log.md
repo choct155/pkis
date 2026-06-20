@@ -26288,3 +26288,6 @@
 
 ## [2026-06-20] edit | edit_node
 - pkis:concept:sampling-with-and-without-replacement: fields=['sources'] sections=[]
+
+## [2026-06-20] edit | edit_node
+- pkis:concept:chinese-restaurant-process: fields=['sources'] sections=[]

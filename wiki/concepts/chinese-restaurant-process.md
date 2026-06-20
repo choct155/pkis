@@ -12,7 +12,7 @@ component_scores:
   transfer: null
 coverage: 1
 date_created: '2026-06-11'
-date_updated: '2026-06-11'
+date_updated: '2026-06-20'
 domain:
 - probability
 - machine-learning
@@ -28,6 +28,7 @@ prerequisite-of:
 related_concepts: []
 sources:
 - murphy-pml2-advanced-ch31
+- lange-applied-probability-ch04
 tags:
 - dirichlet-process
 - partition
