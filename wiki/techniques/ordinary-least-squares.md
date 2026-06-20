@@ -14,7 +14,7 @@ contrasts-with:
 - collinearity
 coverage: 1
 date_created: '2026-06-11'
-date_updated: '2026-06-11'
+date_updated: '2026-06-20'
 domain:
 - statistics
 - machine learning
@@ -28,6 +28,7 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - murphy-pml1-intro-ch11
+- cunningham-causal-inference-mixtape-ch03
 tags:
 - linear regression
 - least squares

@@ -26216,3 +26216,6 @@
 
 ## [2026-06-20] edit | edit_node
 - pkis:concept:omitted-variable-bias: fields=['sources'] sections=[]
+
+## [2026-06-20] edit | edit_node
+- pkis:technique:ordinary-least-squares: fields=['sources'] sections=[]
