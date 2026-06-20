@@ -3,7 +3,7 @@ aliases: []
 also_type: []
 coverage: 1
 date_created: 2026-05-20
-date_updated: 2026-05-20
+date_updated: '2026-06-20'
 domain:
 - bayesian-stats
 id: pkis:concept:poisson-process
@@ -18,6 +18,8 @@ related_concepts:
 - '[[markov-chains]]'
 sources:
 - '[[lange-applied-probability]]'
+- cassandras-des-intro-ch06
+- lange-applied-probability-ch06
 tags:
 - stochastic-processes
 - probability-theory
