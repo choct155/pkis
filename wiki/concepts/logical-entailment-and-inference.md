@@ -12,7 +12,7 @@ component_scores:
   transfer: null
 coverage: 1
 date_created: '2026-06-09'
-date_updated: '2026-06-09'
+date_updated: '2026-06-20'
 domain:
 - knowledge-representation
 - symbolic-subsymbolic
@@ -25,6 +25,7 @@ prerequisite-of:
 related_concepts: []
 sources:
 - russell-norvig-aima-ch07
+- allemang-semantic-web-ch06
 tags:
 - entailment
 - model-checking
