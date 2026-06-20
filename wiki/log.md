@@ -25307,3 +25307,6 @@
 
 ## [2026-06-20] edit | edit_node
 - pkis:technique:reinforce: fields=['sources'] sections=[]
+
+## [2026-06-20] edit | edit_node
+- pkis:technique:reparameterization-gradient: fields=['sources'] sections=[]
