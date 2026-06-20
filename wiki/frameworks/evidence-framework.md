@@ -12,7 +12,7 @@ component_scores:
   structure: null
 coverage: 1
 date_created: '2026-06-08'
-date_updated: '2026-06-08'
+date_updated: '2026-06-20'
 domain:
 - bayesian-stats
 id: pkis:framework:evidence-framework
@@ -22,6 +22,7 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - mackay-itila-ch28
+- betancourt-bayeshist
 tags:
 - model-comparison
 - marginal-likelihood
