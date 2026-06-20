@@ -14,7 +14,7 @@ contrasts-with:
 - bayesian-inference
 coverage: 1
 date_created: '2026-06-09'
-date_updated: '2026-06-09'
+date_updated: '2026-06-20'
 domain:
 - bayesian-stats
 id: pkis:concept:sampling-distribution
@@ -24,6 +24,7 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - jaynes-probability-ch03
+- cunningham-causal-inference-mixtape-ch02
 tags:
 - jaynes
 - scientific-inference
