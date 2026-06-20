@@ -25580,3 +25580,6 @@
 
 ## [2026-06-20] edit | edit_node
 - pkis:concept:cross-entropy-loss: fields=['sources'] sections=[]
+
+## [2026-06-20] edit | edit_node
+- pkis:technique:gradient-descent: fields=['sources'] sections=[]

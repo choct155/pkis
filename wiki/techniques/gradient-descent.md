@@ -1,18 +1,30 @@
 ---
-id: "pkis:technique:gradient-descent"
 aliases: []
-title: "Gradient Descent"
-knowledge_type: technique
 also_type: []
-domain: [optimization, statistical-learning, deep-learning]
-tags: [calculus, optimization]
-related_concepts: ["[[vector-calculus]]", "[[continuous-optimization]]", "[[convex-optimization]]", "[[gradient-boosting]]"]
-sources: ["[[deisenroth-mml]]", "[[liu-kan-2024]]"]
-date_created: 2026-05-20
-date_updated: 2026-05-20
 coverage: 1
-understanding: 0
+date_created: 2026-05-20
+date_updated: '2026-06-20'
+domain:
+- optimization
+- statistical-learning
+- deep-learning
+id: pkis:technique:gradient-descent
+knowledge_type: technique
 maturity: settled
+related_concepts:
+- '[[vector-calculus]]'
+- '[[continuous-optimization]]'
+- '[[convex-optimization]]'
+- '[[gradient-boosting]]'
+sources:
+- '[[deisenroth-mml]]'
+- '[[liu-kan-2024]]'
+- nielsen-nndl-ch03
+tags:
+- calculus
+- optimization
+title: Gradient Descent
+understanding: 0
 ---
 
 Iterative first-order optimization method that moves in the direction of the negative gradient of the objective function with step size (learning rate) $\alpha$: $\theta_{t+1} = \theta_t - \alpha \nabla_\theta \mathcal{L}(\theta_t)$; the workhorse of ML training, with variants (SGD, Adam, momentum) dominating practice.
