@@ -15,7 +15,7 @@ component_scores:
   transfer: null
 coverage: 1
 date_created: '2026-06-11'
-date_updated: '2026-06-11'
+date_updated: '2026-06-20'
 domain:
 - deep-learning
 - optimization
@@ -33,6 +33,7 @@ related_concepts: []
 sources:
 - goodfellow-deeplearning-ch08
 - murphy-pml1-intro-ch13
+- nielsen-nndl-ch05
 tags:
 - gradients
 - deep-learning
