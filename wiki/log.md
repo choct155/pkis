@@ -25074,3 +25074,12 @@
 ## [2026-06-20] committed | bridge-note
 - Committed: bn-20260620-organizational-context-for-ontologist-positionin → bridge-notes/bn-20260620-organizational-context-for-ontologist-positionin.md
 - IRI: pkis:bridge-note:bn-20260620-organizational-context-for-ontologist-positionin
+
+## [2026-06-20] staged | node-stub (framework)
+- Staged: multidimensional-retrieval-quality-framework (id: 2d5c4b6b-ed00-4cb7-81dc-cc71e960a691)
+- Title: Multidimensional Retrieval Quality Framework
+- needs_canonical_source: True
+
+## [2026-06-20] committed | framework
+- Committed: multidimensional-retrieval-quality-framework → frameworks/multidimensional-retrieval-quality-framework.md
+- IRI: pkis:framework:multidimensional-retrieval-quality-framework
