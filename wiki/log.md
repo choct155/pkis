@@ -25343,3 +25343,6 @@
 
 ## [2026-06-20] edit | edit_node
 - pkis:result:chain-rule-for-entropy: fields=['sources'] sections=[]
+
+## [2026-06-20] edit | edit_node
+- pkis:concept:channel-capacity: fields=['sources'] sections=[]
