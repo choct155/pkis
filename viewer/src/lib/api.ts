@@ -277,6 +277,9 @@ export async function getClusters(): Promise<Cluster[]> {
 }
 
 // ── Cluster priorities (frontier gaps grouped by cluster) ─────────────────
+export async function getSourceRelevance(slug: string): Promise<import('../types').SourceRelevance> {
+  return post('/source-relevance', { slug });
+}
 export async function getClusterPriorities(): Promise<ClusterPriorities> {
   return post<ClusterPriorities>('/cluster-priorities');
 }

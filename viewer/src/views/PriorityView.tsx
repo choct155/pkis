@@ -1,15 +1,18 @@
 import { useEffect, useState } from 'react'
 import { getClusterPriorities } from '../lib/api'
-import type { ClusterPriorities } from '../types'
+import type { ClusterPriorities, QueueItem } from '../types'
 
 interface Props {
   onSelectNode: (iri: string) => void
 }
 
+// Priority = the ranked reading queue. Each source leads with WHY it's worth
+// reading (the frontier-gap concepts/clusters it advances, or its capture reason)
+// and a relevance bar from its frontier priority score. The by-cluster gap
+// breakdown lives in the Clusters tab now.
 export default function PriorityView({ onSelectNode }: Props) {
   const [data, setData] = useState<ClusterPriorities | null>(null)
   const [loading, setLoading] = useState(true)
-  const [collapsed, setCollapsed] = useState<Record<string, boolean>>({})
 
   useEffect(() => {
     let cancelled = false
@@ -20,83 +23,58 @@ export default function PriorityView({ onSelectNode }: Props) {
     return () => { cancelled = true }
   }, [])
 
-  if (loading) {
-    return (
-      <div className="loading-row">
-        <div className="loading-spinner" /> loading priority…
-      </div>
-    )
-  }
-  if (!data) {
-    return <div className="empty-state">could not load priorities</div>
-  }
+  if (loading) return <div className="loading-row"><div className="loading-spinner" /> loading priority…</div>
+  if (!data) return <div className="empty-state">could not load priorities</div>
 
-  const toggle = (slug: string) => setCollapsed((c) => ({ ...c, [slug]: !c[slug] }))
+  const queue = data.reading_queue
+  const maxScore = Math.max(1, ...queue.map((q) => q.frontier_score || 0))
 
   return (
     <div>
       <div className="priority-caption">
-        reading priority by research cluster — coverage gaps blocking each frontier
-        <span className="priority-weight">
-          proximity weight {data.params.cluster_proximity_weight} · {data.params.weight_source}
-        </span>
+        reading queue — ordered by research priority (which frontier gaps each source fills)
       </div>
 
-      {data.clusters.map((g) => {
-        const isCollapsed = collapsed[g.cluster_slug]
-        return (
-          <div key={g.cluster_slug} className="prio-group">
-            <div className="prio-group-head" onClick={() => toggle(g.cluster_slug)}>
-              <span className="prio-caret">{isCollapsed ? '▸' : '▾'}</span>
-              <span className="prio-cluster-title">{g.cluster_title}</span>
-              {g.lead_hypothesis && (
-                <span className="prio-lead">lead: {g.lead_hypothesis.replace(g.cluster_slug + '-', '')}</span>
-              )}
-              <span className="prio-gap-count">{g.gaps.length}</span>
-            </div>
-            {!isCollapsed && g.gaps.map((gap) => (
-              <div key={gap.iri} className="gap-row" onClick={() => onSelectNode(gap.iri)}>
-                <span className="card-type">{gap.type}</span>
-                <span className="gap-title">{gap.title}</span>
-                <CovBar coverage={gap.coverage} />
-              </div>
-            ))}
-            {!isCollapsed && g.gaps.length === 0 && (
-              <div className="gap-empty">no materialized dependencies</div>
-            )}
-          </div>
-        )
-      })}
+      {queue.length === 0 && <div className="empty-state">reading queue is empty</div>}
 
-      {data.reading_queue.length > 0 && (
-        <>
-          <div className="section-label">reading queue · sources · {data.reading_queue.length}</div>
-          {data.reading_queue.slice(0, 30).map((item, i) => (
-            <div
-              key={i}
-              className="queue-item"
-              onClick={() => onSelectNode(`pkis:source:${item.slug}`)}
-            >
-              <div className={`queue-priority prio-${item.hint ?? 'normal'}`} />
-              <div className="queue-info">
-                <div className="queue-title">{item.slug}</div>
-                {item.reason && <div className="queue-reason">{item.reason}</div>}
-              </div>
-              <div className="queue-action">read →</div>
-            </div>
-          ))}
-        </>
-      )}
+      {queue.map((item, i) => (
+        <div key={i} className="qrow" onClick={() => onSelectNode(`pkis:source:${item.slug}`)}>
+          <RelevanceBar score={item.frontier_score} max={maxScore} />
+          <div className="qrow-body">
+            <div className="qrow-title">{item.title_full || item.slug}</div>
+            <Why item={item} />
+          </div>
+          <div className="qrow-go">read →</div>
+        </div>
+      ))}
     </div>
   )
 }
 
-function CovBar({ coverage }: { coverage: number }) {
-  const pct = Math.min(100, (coverage / 6) * 100)
-  const tone = coverage <= 1 ? 'gap-low' : coverage <= 3 ? 'gap-mid' : 'gap-ok'
+// "Why read it": the gap concept(s) it advances → else the capture reason.
+function Why({ item }: { item: QueueItem }) {
+  const serves = item.serves || []
+  if (serves.length) {
+    const s = serves[0]
+    return (
+      <div className="qrow-why">
+        advances <span className="qrow-concept">{s.concept}</span>
+        <span className="qrow-cov"> (cov {s.coverage})</span> for <span className="qrow-cluster">{s.cluster}</span>
+        {serves.length > 1 && <span className="qrow-more"> +{serves.length - 1} more</span>}
+      </div>
+    )
+  }
+  if (item.reason) return <div className="qrow-why muted">{item.reason}</div>
+  return <div className="qrow-why muted">captured — not yet linked to a frontier gap</div>
+}
+
+// Relevance from the frontier priority score, normalized to the queue's top score.
+function RelevanceBar({ score, max }: { score: number | null; max: number }) {
+  if (score == null) return <div className="qrel none" title="captured, not yet scored" />
+  const pct = Math.max(8, Math.round((score / max) * 100))
   return (
-    <span className={`cov-bar ${tone}`} title={`coverage ${coverage}`}>
-      <span className="cov-bar-fill" style={{ width: `${pct}%` }} />
-    </span>
+    <div className="qrel" title={`research priority score ${score}`}>
+      <div className="qrel-track"><div className="qrel-fill" style={{ height: `${pct}%` }} /></div>
+    </div>
   )
 }

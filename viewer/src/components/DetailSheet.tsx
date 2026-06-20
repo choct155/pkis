@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
-import { getNode, resolveSlug, resolveSlugs, sourceStatus } from '../lib/api'
+import { getNode, resolveSlug, resolveSlugs, sourceStatus, getSourceRelevance } from '../lib/api'
 import type { SourceStatus } from '../lib/api'
+import type { SourceRelevance } from '../types'
 import { renderMarkdown } from '../lib/markdown'
 import { renderMath } from '../lib/katex'
 import { shareLink } from '../lib/share'
@@ -192,6 +193,35 @@ function ParentBookNav({ parentBook, onNavigate }: {
 }
 
 // Citation + open-this-source links, shown when the node IS a source.
+// "Research relevance" for a source: the frontier-gap concepts it advances (the
+// "why am I reading this"). Quiet if the source isn't linked to any gap yet.
+function SourceRelevancePanel({ slug, onNavigate }: { slug: string; onNavigate: (iri: string) => void }) {
+  const [rel, setRel] = useState<SourceRelevance | null>(null)
+  useEffect(() => { getSourceRelevance(slug).then(setRel).catch(() => {}) }, [slug])
+  if (!rel || (!rel.serves.length && rel.frontier_score == null)) return null
+  return (
+    <div className="body-section relevance-section">
+      <div className="body-section-label">
+        research relevance{rel.frontier_score != null && <span className="rel-score"> · priority {rel.frontier_score}</span>}
+      </div>
+      {rel.serves.length === 0 ? (
+        <div className="rel-empty">In the reading queue by frontier score; not yet linked to a specific gap concept.</div>
+      ) : (
+        <div className="rel-list">
+          <div className="rel-why">Reading this advances these frontier gaps:</div>
+          {rel.serves.map((s) => (
+            <div key={s.concept_iri} className="rel-row" onClick={() => onNavigate(s.concept_iri)}>
+              <span className="rel-concept">{s.concept}</span>
+              <span className="rel-cov">coverage {s.coverage}</span>
+              <span className="rel-cluster">{s.cluster}</span>
+            </div>
+          ))}
+        </div>
+      )}
+    </div>
+  )
+}
+
 function SourceBlock({ fm, title, iri }: { fm: Record<string, unknown>; title: string; iri: string }) {
   const sourceUrl = (fm.source_url as string) || (fm.url as string) || ''
   const docPath   = (fm.doc_path as string) || ''
@@ -446,6 +476,9 @@ export default function DetailSheet({ iri, onClose, onNavigate, onEdit, onGraph,
 
               {/* Source citation + links (when this node is a source) */}
               {isSource && fm && <SourceBlock fm={fm as Record<string, unknown>} title={title} iri={iri} />}
+
+              {/* Why read it: the frontier-gap concepts this source advances. */}
+              {isSource && <SourceRelevancePanel slug={iri.split(':').pop() || ''} onNavigate={onNavigate} />}
 
               {/* Explainers & visualizations: viz-kind inline, explainer-kind as
                   a full-screen link (cramming a full HTML page inline is unreadable). */}

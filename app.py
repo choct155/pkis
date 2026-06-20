@@ -1046,6 +1046,72 @@ def tool_get_clusters() -> list:
     return sorted(out, key=lambda x: x["slug"])
 
 
+def _norm_source_ref(ref) -> str:
+    """A concept's `sources` entry may be a bare slug, a [[wikilink]], or an IRI —
+    normalise to the source slug."""
+    s = str(ref or "").strip()
+    if s.startswith("[[") and s.endswith("]]"):
+        s = s[2:-2]
+    s = s.split("|")[0].strip()
+    if ":" in s:
+        s = s.split(":")[-1]
+    return s.strip().lstrip("/")
+
+
+def _serves_from(nodes, G, by_iri) -> dict:
+    """{source_slug: [{concept, concept_iri, coverage, cluster}]} — for each source,
+    the frontier-gap concepts (of active clusters) that cite it via their `sources`.
+    This is the 'why read it is load-bearing' linkage behind the Priority queue and
+    the source research-relevance panel."""
+    out = {}
+    clusters = [n for n in nodes
+                if n.get("frontmatter", {}).get("knowledge_type") == "research-cluster"
+                and n.get("frontmatter", {}).get("status") == "active"]
+    for c in clusters:
+        fm = c["frontmatter"]
+        ctitle = fm.get("title", c["slug"])
+        for h_slug in (fm.get("frontier_hypotheses") or []):
+            hp = find_node_path(h_slug)
+            if not hp:
+                continue
+            hn = load_node(hp)
+            for _u, v, d in G.edges(hn["iri"], data=True):
+                if d.get("edge_type") == "related":
+                    continue
+                tn = by_iri.get(v)
+                if not tn:
+                    continue
+                kt = tn.get("frontmatter", {}).get("knowledge_type", "")
+                if kt in ("research-cluster", "hypothesis"):
+                    continue
+                for sref in (tn.get("frontmatter", {}).get("sources") or []):
+                    sslug = _norm_source_ref(sref)
+                    if sslug:
+                        out.setdefault(sslug, []).append({
+                            "concept": tn["title"], "concept_iri": v,
+                            "coverage": tn.get("coverage", 0), "cluster": ctitle,
+                        })
+    for k, lst in out.items():        # dedupe, lowest-coverage (biggest gap) first
+        seen, uniq = set(), []
+        for it in sorted(lst, key=lambda x: x["coverage"]):
+            key = (it["concept_iri"], it["cluster"])
+            if key not in seen:
+                seen.add(key)
+                uniq.append(it)
+        out[k] = uniq
+    return out
+
+
+def _source_relevance(slug: str) -> dict:
+    """Standalone (loads nodes/graph) — the research-relevance of one source for the
+    detail panel: the gap concepts it serves + its frontier priority score."""
+    nodes = load_all_nodes()
+    G = get_graph()
+    by_iri = {n["iri"]: n for n in nodes}
+    serves = _serves_from(nodes, G, by_iri).get(slug, [])
+    return {"slug": slug, "serves": serves, "frontier_score": _frontier_score_by_slug().get(slug)}
+
+
 def tool_get_cluster_priorities() -> dict:
     """Concept-centric reading priority: for each ACTIVE cluster, the concept/technique/result
     nodes its frontier hypotheses depend on (coverage gaps surface first), plus the source reading
@@ -1090,10 +1156,18 @@ def tool_get_cluster_priorities() -> dict:
             "lead_hypothesis": frontier[0] if frontier else None,
             "frontier_hypotheses": frontier, "gaps": gaps,
         })
+    # Enrich the reading queue with the "why read it" linkage (reuse the nodes/graph
+    # already loaded above) + the real source title.
+    serves_map = _serves_from(nodes, G, by_iri)
+    rq = tool_get_reading_queue()
+    for item in rq:
+        sp = find_node_path(item["slug"])
+        item["title_full"] = (load_node(sp) or {}).get("title") if sp else None
+        item["serves"] = serves_map.get(item["slug"], [])[:3]
     return {
         "params": {"cluster_proximity_weight": eff_w, "weight_source": src},
         "clusters": sorted(groups, key=lambda x: x["cluster_slug"]),
-        "reading_queue": tool_get_reading_queue(),
+        "reading_queue": rq,
     }
 
 
@@ -5319,6 +5393,19 @@ def pkis_api_auth_logout():
 def pkis_api_cluster_priorities():
     try:
         return _api_ok(tool_get_cluster_priorities())
+    except Exception as e:
+        return _api_err(e, 500)
+
+
+@app.route("/pkis-api/source-relevance", methods=["POST"])
+def pkis_api_source_relevance():
+    """Why a source is worth reading: the frontier-gap concepts it serves + its
+    priority score. Powers the 'research relevance' panel on a source's detail."""
+    slug = (_api_json().get("slug") or "").strip().lstrip("/")
+    if not slug:
+        return _api_err("slug is required")
+    try:
+        return _api_ok(_source_relevance(slug))
     except Exception as e:
         return _api_err(e, 500)
 

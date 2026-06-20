@@ -845,6 +845,41 @@ body {
   padding: 4px 0 12px; display: flex; flex-direction: column; gap: 4px;
 }
 .priority-weight { font-family: var(--mono); font-size: 10px; color: var(--dim); }
+
+/* ── Priority reading queue (rationale + relevance) ───────────────────────── */
+.qrow {
+  display: flex; align-items: stretch; gap: 11px;
+  padding: 11px 12px; margin-bottom: 8px;
+  background: var(--raised); border: 1px solid var(--border); border-radius: var(--radius); cursor: pointer;
+}
+.qrow:hover { border-color: var(--accent); }
+.qrow-body { flex: 1; min-width: 0; }
+.qrow-title { font-size: 14px; font-weight: 600; color: var(--bright); line-height: 1.35; }
+.qrow-why { font-size: 12px; line-height: 1.45; color: var(--text); margin-top: 4px; }
+.qrow-why.muted { color: var(--muted); }
+.qrow-concept { color: var(--concept); font-weight: 600; }
+.qrow-cov { font-family: var(--mono); font-size: 10px; color: var(--amber); }
+.qrow-cluster { color: var(--framework); }
+.qrow-more { font-family: var(--mono); font-size: 10px; color: var(--muted); }
+.qrow-go { align-self: center; font-family: var(--mono); font-size: 11px; color: var(--muted); white-space: nowrap; }
+/* Relevance bar: vertical fill keyed to the queue's top priority score. */
+.qrel { flex: none; width: 5px; display: flex; align-items: stretch; }
+.qrel.none { background: repeating-linear-gradient(45deg, var(--dim) 0 2px, transparent 2px 4px); border-radius: 3px; }
+.qrel-track { flex: 1; background: var(--dim); border-radius: 3px; position: relative; overflow: hidden; }
+.qrel-fill { position: absolute; bottom: 0; left: 0; right: 0; background: var(--accent); }
+
+/* Source research-relevance panel (in DetailSheet) */
+.relevance-section .rel-score { font-family: var(--mono); font-size: 10px; color: var(--amber); }
+.rel-empty { font-size: 12px; color: var(--muted); line-height: 1.5; }
+.rel-why { font-size: 12px; color: var(--muted); margin-bottom: 6px; }
+.rel-row {
+  display: flex; flex-wrap: wrap; align-items: baseline; gap: 8px;
+  padding: 7px 0; border-top: 1px solid var(--border); cursor: pointer;
+}
+.rel-row:hover .rel-concept { color: var(--accent); }
+.rel-concept { font-size: 13px; font-weight: 600; color: var(--concept); }
+.rel-cov { font-family: var(--mono); font-size: 10px; color: var(--amber); }
+.rel-cluster { font-family: var(--mono); font-size: 10px; color: var(--framework); margin-left: auto; }
 .prio-group { margin-bottom: 10px; }
 .prio-group-head {
   display: flex; align-items: center; gap: 8px; cursor: pointer;

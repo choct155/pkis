@@ -90,6 +90,7 @@ function ClusterDetail({ cluster, onBack, onSelectNode, onDomain, onBrowseCluste
     <div className="cluster-detail">
       <div className="cluster-detail-bar">
         <div className="cluster-back" onClick={onBack}>← clusters</div>
+        <span className="cluster-browse" onClick={() => onSelectNode(cluster.iri)}>open cluster node →</span>
         <span className="cluster-browse" onClick={() => onBrowseCluster(cluster.slug)}>browse nodes →</span>
       </div>
       <h2 className="cluster-detail-title">{cluster.title}</h2>

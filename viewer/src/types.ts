@@ -215,7 +215,15 @@ export interface FrontierNode {
   maturity?: Maturity;
 }
 
-// ── Queue item (from get_reading_queue) ──────────────────────────────────
+// A frontier-gap concept a source advances ("why read it is load-bearing").
+export interface QueueServes {
+  concept: string;
+  concept_iri: string;
+  coverage: number;
+  cluster: string;
+}
+
+// ── Queue item (from get_reading_queue / cluster-priorities) ──────────────
 export interface QueueItem {
   slug: string;
   reason: string;
@@ -225,6 +233,15 @@ export interface QueueItem {
   hint: 'high' | 'normal' | null;
   frontier_score: number | null;
   captured: string | null;
+  title_full?: string | null;   // real source title (cluster-priorities enrichment)
+  serves?: QueueServes[];        // gap concepts/clusters it advances
+}
+
+// ── Source research relevance (from /pkis-api/source-relevance) ───────────
+export interface SourceRelevance {
+  slug: string;
+  serves: QueueServes[];
+  frontier_score: number | null;
 }
 
 // ── Staged node (from get_staged_nodes) ──────────────────────────────────
