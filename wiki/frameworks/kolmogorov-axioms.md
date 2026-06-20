@@ -12,7 +12,7 @@ contrasts-with:
 - de-finetti-coherence
 coverage: 1
 date_created: '2026-06-09'
-date_updated: '2026-06-09'
+date_updated: '2026-06-20'
 domain:
 - bayesian-stats
 - statistical-learning
@@ -23,6 +23,8 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - jaynes-probability-appA
+- kroese-statistical-modeling-ch01
+- lange-applied-probability-ch01
 specializes:
 - probability-theory
 tags:
