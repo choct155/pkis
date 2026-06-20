@@ -1,18 +1,32 @@
 ---
-id: "pkis:technique:model-checking"
 aliases: []
-title: "Model Checking"
-knowledge_type: technique
 also_type: []
-domain: [formal-methods, systems-theory]
-tags: [model-checking, formal-verification, temporal-logic, automata-theory, state-space-exploration, reachability]
-related_concepts: [discrete-event-systems, finite-automata, temporal-logic, supervisory-control]
-sources: ["[[cassandras-des-intro]]"]
-date_created: 2026-05-20
-date_updated: 2026-05-20
 coverage: 1
-understanding: 0
+date_created: 2026-05-20
+date_updated: '2026-06-20'
+domain:
+- formal-methods
+- systems-theory
+id: pkis:technique:model-checking
+knowledge_type: technique
 maturity: settled
+related_concepts:
+- discrete-event-systems
+- finite-automata
+- temporal-logic
+- supervisory-control
+sources:
+- '[[cassandras-des-intro]]'
+- cassandras-des-intro-ch02
+tags:
+- model-checking
+- formal-verification
+- temporal-logic
+- automata-theory
+- state-space-exploration
+- reachability
+title: Model Checking
+understanding: 0
 ---
 
 Model checking is an automated formal verification technique that takes a finite-state model (automaton) of a system and a temporal-logic specification, and decides by exhaustive state-space exploration whether the model satisfies the specification; in DES, it is used to verify safety, liveness, and security (opacity) properties of controlled automata models.
