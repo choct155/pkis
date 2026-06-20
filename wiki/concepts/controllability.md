@@ -1,18 +1,31 @@
 ---
-id: "pkis:concept:controllability"
 aliases: []
-title: "Controllability (DES)"
-knowledge_type: concept
 also_type: []
-domain: [formal-methods, systems-theory]
-tags: [supervisory-control, ramadge-wonham, formal-languages, automata-theory, discrete-event-systems]
-related_concepts: [discrete-event-systems, supervisory-control, finite-automata]
-sources: ["[[cassandras-des-intro]]"]
-date_created: 2026-05-20
-date_updated: 2026-05-20
 coverage: 1
-understanding: 0
+date_created: 2026-05-20
+date_updated: '2026-06-20'
+domain:
+- formal-methods
+- systems-theory
+id: pkis:concept:controllability
+knowledge_type: concept
 maturity: settled
+related_concepts:
+- discrete-event-systems
+- supervisory-control
+- finite-automata
+sources:
+- '[[cassandras-des-intro]]'
+- cassandras-des-intro-ch03
+- cassandras-des-intro-ch04
+tags:
+- supervisory-control
+- ramadge-wonham
+- formal-languages
+- automata-theory
+- discrete-event-systems
+title: Controllability (DES)
+understanding: 0
 ---
 
 In the Ramadge-Wonham supervisory control framework, a language K is controllable with respect to a plant language L and set of uncontrollable events Σ_uc if for every string s in the prefix-closure of K and every uncontrollable event σ_u such that sσ_u ∈ L, we have sσ_u ∈ the prefix-closure of K — meaning uncontrollable transitions cannot be prevented from leading out of the desired behavior.
