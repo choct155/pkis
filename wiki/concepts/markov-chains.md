@@ -19,6 +19,12 @@ sources:
 - '[[cassandras-des-intro]]'
 - betancourt-short-2021
 - resnick-stochastic-processes
+- benzi-hidden-structure-matrices-ch02
+- cassandras-des-intro-ch07
+- cassandras-des-intro-ch08
+- lange-applied-probability-ch07
+- lange-applied-probability-ch08
+- lange-applied-probability-ch13
 tags:
 - stochastic-processes
 - probability-theory
