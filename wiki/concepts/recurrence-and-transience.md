@@ -12,7 +12,7 @@ component_scores:
   transfer: null
 coverage: 1
 date_created: '2026-06-09'
-date_updated: '2026-06-09'
+date_updated: '2026-06-20'
 domain:
 - bayesian-stats
 id: pkis:concept:recurrence-and-transience
@@ -22,6 +22,7 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - resnick-stochastic-processes-ch02
+- cassandras-des-intro-ch07
 tags:
 - stochastic-processes
 - markov-property
