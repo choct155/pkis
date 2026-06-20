@@ -25066,3 +25066,65 @@
 ## [2026-06-14] committed | problem
 - Committed: concept-boundary-finding-problem → problems/concept-boundary-finding-problem.md
 - IRI: pkis:problem:concept-boundary-finding-problem
+
+## [2026-06-20] staged | bridge-note
+- Staged: bn-20260620-organizational-context-for-ontologist-positionin (id: 17a46df5-4210-4645-b7b4-53f8b22aa252)
+- Rationale: Organizational context for ontologist positioning at a private markets data organization. Three grou
+
+## [2026-06-20] committed | bridge-note
+- Committed: bn-20260620-organizational-context-for-ontologist-positionin → bridge-notes/bn-20260620-organizational-context-for-ontologist-positionin.md
+- IRI: pkis:bridge-note:bn-20260620-organizational-context-for-ontologist-positionin
+
+## [2026-06-20] staged | node-stub (framework)
+- Staged: multidimensional-retrieval-quality-framework (id: 2d5c4b6b-ed00-4cb7-81dc-cc71e960a691)
+- Title: Multidimensional Retrieval Quality Framework
+- needs_canonical_source: True
+
+## [2026-06-20] committed | framework
+- Committed: multidimensional-retrieval-quality-framework → frameworks/multidimensional-retrieval-quality-framework.md
+- IRI: pkis:framework:multidimensional-retrieval-quality-framework
+
+## [2026-06-20] staged | hypothesis
+- Staged: graph-retrieval-dominates-vector-search-concept-specifi (id: e8cb1989-f781-48e3-94c9-c6e6d1e839c0)
+- Title: Graph retrieval dominates vector similarity search for concept-specific queries
+- Cluster: (none)
+
+## [2026-06-20] committed | hypothesis
+- Committed: graph-retrieval-dominates-vector-search-concept-specifi → hypotheses/graph-retrieval-dominates-vector-search-concept-specifi.md
+- IRI: pkis:hypothesis:graph-retrieval-dominates-vector-search-concept-specifi
+
+## [2026-06-20] staged | source-stub
+- Staged: es-ragas-2024 (id: f1668fe7-fa83-4d46-9143-6343c9de0c52)
+- Title: RAGAS: Automated Evaluation of Retrieval Augmented Generation
+- Enrichment: full
+
+## [2026-06-20] committed | source
+- Committed: es-ragas-2024 → sources/es-ragas-2024.md
+- IRI: pkis:source:es-ragas-2024
+
+## [2026-06-20] staged | source-stub
+- Staged: saadfalcon-ares-2024 (id: 107cbbd0-d5d7-4853-9a76-052ca018dc70)
+- Title: ARES: An Automated Evaluation Framework for Retrieval-Augmented Generation Systems
+- Enrichment: full
+
+## [2026-06-20] committed | source
+- Committed: saadfalcon-ares-2024 → sources/saadfalcon-ares-2024.md
+- IRI: pkis:source:saadfalcon-ares-2024
+
+## [2026-06-20] staged | source-stub
+- Staged: rau-revisiting-2026 (id: 7e2f088d-d9ee-4749-bf6f-755bce1544b3)
+- Title: Revisiting RAG Retrievers: An Information Theoretic Benchmark (MIGRASCOPE)
+- Enrichment: full
+
+## [2026-06-20] committed | source
+- Committed: rau-revisiting-2026 → sources/rau-revisiting-2026.md
+- IRI: pkis:source:rau-revisiting-2026
+
+## [2026-06-20] staged | source-stub
+- Staged: edge-from-2024 (id: 2c06d475-ab58-4e6d-8ce5-d6098526c5fa)
+- Title: From Local to Global: A Graph RAG Approach to Query-Focused Summarization
+- Enrichment: full
+
+## [2026-06-20] committed | source
+- Committed: edge-from-2024 → sources/edge-from-2024.md
+- IRI: pkis:source:edge-from-2024

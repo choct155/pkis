@@ -1,6 +1,10 @@
 # PKIS Wiki Index
 
 ## Sources
+- [[edge-from-2024]] — From Local to Global: A Graph RAG Approach to Query-Focused Summarization () (2026-06-20)
+- [[rau-revisiting-2026]] — Revisiting RAG Retrievers: An Information Theoretic Benchmark (MIGRASCOPE) () (2026-06-20)
+- [[saadfalcon-ares-2024]] — ARES: An Automated Evaluation Framework for Retrieval-Augmented Generation Systems () (2026-06-20)
+- [[es-ragas-2024]] — RAGAS: Automated Evaluation of Retrieval Augmented Generation () (2026-06-20)
 - [[giglou-llms4ol-2024]] — LLMs4OL 2024 Overview: The 1st Large Language Models for Ontology Learning Challenge () (2026-06-14)
 - [[shimizu-modular-2023]] — Modular Ontology Modeling () (2026-06-14)
 - [[gruninger-methodology-1995]] — Methodology for the Design and Evaluation of Ontologies () (2026-06-14)
@@ -2073,6 +2077,7 @@
 - [[government-debt-valuation-equation]] — FTPL: price level determined by ratio of nominal debt to expected present value of future surpluses (macroeconomics) (2026-05-20)
 
 ## Frameworks
+- [[multidimensional-retrieval-quality-framework]] — Multidimensional Retrieval Quality Framework (knowledge-representation, bayesian-stats) (2026-06-20)
 - [[ontologist-positioning-hardening-stack]] — Ontologist Positioning in the Continuous Hardening Stack (knowledge-representation) (2026-06-14)
 - [[continuous-hardening-mixture-framework]] — Continuous Hardening Mixture Framework (knowledge-representation, bayesian-stats) (2026-06-14)
 - [[diffusion-sde-framework]] — Stochastic Differential Equation (SDE) Framework for Diffusion (machine-learning, stochastic-processes, generative-models) (2026-06-11)
@@ -2396,6 +2401,7 @@
 - [[evaluation-infrastructure]] — Evaluation Infrastructure: domain-specific benchmark construction for ontology-augmented NED/NER and composite result quality (knowledge-representation) (2026-05-30)
 
 ## Hypotheses
+- [[graph-retrieval-dominates-vector-search-concept-specifi]] — Graph retrieval dominates vector similarity search for concept-specific queries () (2026-06-20)
 - [[query-coverage-as-expected-mass-of-c-q-on-encoded-conce]] — Query Coverage as Expected Mass of C(q) on Encoded Concept Nodes (knowledge-representation, bayesian-stats) (2026-06-13)
 - [[concept-typed-nodes-dominate-document-nodes-on-coverage]] — Concept-Typed Nodes Dominate Document Nodes on Coverage-Per-Token Efficiency (knowledge-representation, bayesian-stats) (2026-06-13)
 - [[graph-encoded-concept-dependencies-reduce-expected-infe]] — Graph-Encoded Concept Dependencies Reduce Expected Inference Steps Required to Achieve Sufficient Query Coverage (knowledge-representation, bayesian-stats, deep-learning) (2026-06-13)
@@ -2427,6 +2433,7 @@
 ## Reading Queue
 
 ## Bridge Notes
+- [[bn-20260620-organizational-context-for-ontologist-positionin]] — Ontologist positioning — organizational context and change management constraints () (2026-06-20)
 - [[bn-20260614-both-the-amortization-argument-and]] — Instantiation depth as shared precondition for amortization and traversal efficiency claims () (2026-06-14)
 - [[bn-20260614-reliability-is-the-shared-empirical]] — Reliability(τ) — shared empirical primitive bridging traversal ranking and amortization hardening () (2026-06-14)
 - [[bn-20260614-edge-traversal-frequency-and-node]] — Edge contribution attribution — two-tier measurement strategy () (2026-06-14)
