@@ -9,7 +9,7 @@ applies:
 - image-formation-model
 coverage: 2
 date_created: 2026-05-20
-date_updated: 2026-05-20
+date_updated: '2026-06-20'
 domain:
 - deep-learning
 generalizes:
@@ -26,6 +26,7 @@ related_concepts:
 sources:
 - '[[nielsen-nndl]]'
 - '[[marcus-dl-critical-appraisal-2018]]'
+- nielsen-nndl-ch06
 tags:
 - neural-networks
 - image-recognition
