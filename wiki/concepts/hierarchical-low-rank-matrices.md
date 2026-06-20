@@ -1,18 +1,32 @@
 ---
-id: "pkis:concept:hierarchical-low-rank-matrices"
 aliases: []
-title: "Hierarchical Low-Rank Matrices"
-knowledge_type: concept
 also_type: []
-domain: [optimization]
-tags: [linear-algebra, numerical-pde, h-matrices, low-rank, boundary-element-methods, structured-matrices]
-related_concepts: ["[[structured-matrices]]", "[[matrix-decompositions]]", "[[singular-value-decomposition]]", "[[regularization]]"]
-sources: ["[[benzi-hidden-structure-matrices]]"]
-date_created: 2026-05-20
-date_updated: 2026-05-20
 coverage: 1
-understanding: 0
+date_created: 2026-05-20
+date_updated: '2026-06-20'
+domain:
+- optimization
+id: pkis:concept:hierarchical-low-rank-matrices
+knowledge_type: concept
 maturity: settled
+related_concepts:
+- '[[structured-matrices]]'
+- '[[matrix-decompositions]]'
+- '[[singular-value-decomposition]]'
+- '[[regularization]]'
+sources:
+- '[[benzi-hidden-structure-matrices]]'
+- benzi-hidden-structure-matrices-ch03
+- benzi-hidden-structure-matrices-ch04
+tags:
+- linear-algebra
+- numerical-pde
+- h-matrices
+- low-rank
+- boundary-element-methods
+- structured-matrices
+title: Hierarchical Low-Rank Matrices
+understanding: 0
 ---
 
 A class of structured matrices (H-matrices) in which off-diagonal blocks have low numerical rank due to the smoothness of the underlying integral kernel or Green's function, enabling O(n log² n) complexity for matrix-vector products and approximate LU factorizations instead of O(n²) and O(n³) respectively.
