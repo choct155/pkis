@@ -1,18 +1,36 @@
 ---
-id: "pkis:framework:skos"
-aliases: ["Simple Knowledge Organization System"]
-title: "SKOS (Simple Knowledge Organization System)"
-knowledge_type: framework
-also_type: [concept]
-domain: [knowledge-representation]
-tags: [semantic-web, controlled-vocabulary, thesaurus, taxonomy, rdfs, w3c-standard, knowledge-organization]
-related_concepts: ["[[rdf]]", "[[rdfs]]", "[[owl]]", "[[linked-open-data]]", "[[ontology-reasoning]]"]
-sources: ["[[allemang-semantic-web]]", "[[kg-evaluation-bloomberg-2024]]"]
-date_created: 2026-05-20
-date_updated: 2026-05-20
+aliases:
+- Simple Knowledge Organization System
+also_type:
+- concept
 coverage: 2
-understanding: 0
+date_created: 2026-05-20
+date_updated: '2026-06-20'
+domain:
+- knowledge-representation
+id: pkis:framework:skos
+knowledge_type: framework
 maturity: settled
+related_concepts:
+- '[[rdf]]'
+- '[[rdfs]]'
+- '[[owl]]'
+- '[[linked-open-data]]'
+- '[[ontology-reasoning]]'
+sources:
+- '[[allemang-semantic-web]]'
+- '[[kg-evaluation-bloomberg-2024]]'
+- allemang-semantic-web-ch10
+tags:
+- semantic-web
+- controlled-vocabulary
+- thesaurus
+- taxonomy
+- rdfs
+- w3c-standard
+- knowledge-organization
+title: SKOS (Simple Knowledge Organization System)
+understanding: 0
 ---
 
 W3C standard for representing controlled vocabularies, thesauri, and classification schemes in RDF without the heavyweight machinery of OWL class-instance modeling. Core constructs: `skos:Concept` (a unit of meaning), `skos:ConceptScheme` (a collection of concepts), hierarchical relations (`skos:broader`, `skos:narrower`), associative relation (`skos:related`), labeling properties (`skos:prefLabel`, `skos:altLabel`, `skos:hiddenLabel`), and documentation properties (`skos:scopeNote`, `skos:definition`, `skos:example`). SKOS treats concepts as individuals (not classes), making it complementary to rather than competing with OWL. High-profile deployments include the Library of Congress Subject Headings, Europeana, and DBpedia categories.
