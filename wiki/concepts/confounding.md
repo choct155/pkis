@@ -23,6 +23,8 @@ sources:
 - '[[pearl-causality]]'
 - '[[cunningham-causal-inference-mixtape]]'
 - li-forecaster-pearl-causality-2023
+- cunningham-causal-inference-mixtape-ch03
+- cunningham-causal-inference-mixtape-ch04
 tags:
 - causality
 - causal-inference
