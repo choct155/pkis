@@ -25799,3 +25799,6 @@
 
 ## [2026-06-20] edit | edit_node
 - pkis:technique:late-iv: fields=['sources'] sections=[]
+
+## [2026-06-20] edit | edit_node
+- pkis:concept:local-average-treatment-effect: fields=['sources'] sections=[]

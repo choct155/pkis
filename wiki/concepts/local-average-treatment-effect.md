@@ -3,7 +3,7 @@ aliases: []
 also_type: []
 coverage: 1
 date_created: 2026-05-20
-date_updated: 2026-05-20
+date_updated: '2026-06-20'
 domain:
 - causal-analysis
 id: pkis:concept:local-average-treatment-effect
@@ -16,6 +16,8 @@ related_concepts:
 - '[[regression-discontinuity]]'
 sources:
 - '[[cunningham-causal-inference-mixtape]]'
+- cunningham-causal-inference-mixtape-ch07
+- cunningham-causal-inference-mixtape-ch08
 tags:
 - causal-inference
 - late
