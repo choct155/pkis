@@ -11,7 +11,7 @@ component_scores:
   statement: null
 coverage: 1
 date_created: '2026-06-09'
-date_updated: '2026-06-09'
+date_updated: '2026-06-20'
 domain:
 - bayesian-stats
 - information-theory
@@ -23,6 +23,7 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - jaynes-probability-ch07
+- lange-applied-probability-ch16
 specializes:
 - exponential-family-ml-maxent-duality
 tags:
