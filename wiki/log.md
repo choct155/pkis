@@ -25511,3 +25511,6 @@
 
 ## [2026-06-20] edit | edit_node
 - pkis:framework:bayesian-networks: fields=['sources'] sections=[]
+
+## [2026-06-20] edit | edit_node
+- pkis:concept:dag-factorization: fields=['sources'] sections=[]

@@ -12,7 +12,7 @@ component_scores:
   transfer: null
 coverage: 1
 date_created: '2026-06-11'
-date_updated: '2026-06-11'
+date_updated: '2026-06-20'
 domain:
 - probabilistic-graphical-models
 - machine-learning
@@ -28,6 +28,7 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - bishop-prml-ch08
+- cunningham-causal-inference-mixtape-ch04
 tags:
 - Bayesian-network
 - factorization
