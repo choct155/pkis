@@ -26222,3 +26222,6 @@
 
 ## [2026-06-20] edit | edit_node
 - pkis:concept:causal-analysis: fields=['sources'] sections=[]
+
+## [2026-06-20] edit | edit_node
+- pkis:principle:physical-symbol-system-hypothesis: fields=['sources'] sections=[]

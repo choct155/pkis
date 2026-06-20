@@ -10,7 +10,7 @@ contrasts-with:
 - system-1-system-2-thinking
 coverage: 1
 date_created: '2026-06-09'
-date_updated: '2026-06-09'
+date_updated: '2026-06-20'
 domain:
 - knowledge-representation
 id: pkis:principle:physical-symbol-system-hypothesis
@@ -22,6 +22,7 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - russell-norvig-aima-ch01
+- nielsen-nndl-appA
 tags:
 - ai-foundations
 - symbolic-ai
