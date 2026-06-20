@@ -25601,3 +25601,6 @@
 
 ## [2026-06-20] edit | edit_node
 - pkis:principle:expressiveness-tractability-tradeoff: fields=['sources'] sections=[]
+
+## [2026-06-20] edit | edit_node
+- pkis:technique:gaussian-process-regression: fields=['sources'] sections=[]

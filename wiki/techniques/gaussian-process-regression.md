@@ -32,6 +32,7 @@ sources:
 - '[[kroese-statistical-modeling]]'
 - '[[kurz-hybrid-modeling-2022]]'
 - bishop-prml
+- kroese-statistical-modeling-ch11
 specializes:
 - bayesian-nonparametric-models
 tags:
