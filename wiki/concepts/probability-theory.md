@@ -24,6 +24,11 @@ sources:
 - '[[lange-applied-probability]]'
 - betancourt-bayeshist
 - jaynes-probability
+- cunningham-causal-inference-mixtape-ch02
+- kroese-statistical-modeling-ch01
+- kroese-statistical-modeling-ch02
+- lange-applied-probability-ch01
+- lange-applied-probability-ch15
 tags:
 - mathematical-foundations
 - measure-theory
