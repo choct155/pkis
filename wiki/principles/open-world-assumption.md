@@ -1,18 +1,36 @@
 ---
-id: "pkis:principle:open-world-assumption"
 aliases: []
-title: "Open World Assumption"
-knowledge_type: principle
 also_type: []
-domain: [knowledge-representation]
-tags: [semantic-web, epistemology, owl, rdf, open-world, closed-world, logic, database-theory]
-related_concepts: ["[[rdf]]", "[[owl]]", "[[rdfs]]", "[[ontology-reasoning]]", "[[description-logic]]"]
-sources: ["[[allemang-semantic-web]]"]
-date_created: 2026-05-20
-date_updated: 2026-05-20
 coverage: 1
-understanding: 0
+date_created: 2026-05-20
+date_updated: '2026-06-20'
+domain:
+- knowledge-representation
+id: pkis:principle:open-world-assumption
+knowledge_type: principle
 maturity: settled
+related_concepts:
+- '[[rdf]]'
+- '[[owl]]'
+- '[[rdfs]]'
+- '[[ontology-reasoning]]'
+- '[[description-logic]]'
+sources:
+- '[[allemang-semantic-web]]'
+- allemang-semantic-web-ch01
+- allemang-semantic-web-ch11
+- allemang-semantic-web-ch14
+tags:
+- semantic-web
+- epistemology
+- owl
+- rdf
+- open-world
+- closed-world
+- logic
+- database-theory
+title: Open World Assumption
+understanding: 0
 ---
 
 The epistemic stance that absence of information does not constitute evidence of falsity: if a fact is not asserted in the knowledge base, it may still be true — it is simply unknown. Contrasts with the Closed World Assumption (CWA) of relational databases and Prolog, where everything not known to be true is assumed false. In the Semantic Web / RDF / OWL context, the OWA reflects the open nature of the Web: at any time, new triples about any URI may be published by anyone. This fundamentally shapes ontology modeling — a query returning no results does not mean the answer is "no," but rather "not known." The OWA forces modelers to be explicit about what they assert, rather than relying on absence as a substitute for negation.

@@ -25727,3 +25727,6 @@
 
 ## [2026-06-20] edit | edit_node
 - pkis:principle:linked-data-principles: fields=['sources'] sections=[]
+
+## [2026-06-20] edit | edit_node
+- pkis:principle:open-world-assumption: fields=['sources'] sections=[]
