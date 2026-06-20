@@ -13,7 +13,7 @@ component_scores:
   principled_mechanism: null
 coverage: 1
 date_created: '2026-06-11'
-date_updated: '2026-06-11'
+date_updated: '2026-06-20'
 domain:
 - mathematics
 - probability
@@ -28,6 +28,7 @@ prerequisite-of:
 related_concepts: []
 sources:
 - murphy-pml1-intro-ch03
+- carrell-groups-matrices-vectors-ch09
 tags:
 - algebra
 - gaussian

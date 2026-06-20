@@ -25775,3 +25775,6 @@
 
 ## [2026-06-20] edit | edit_node
 - pkis:concept:positive-definite-matrix: fields=['sources'] sections=[]
+
+## [2026-06-20] edit | edit_node
+- pkis:technique:completing-the-square-multivariate: fields=['sources'] sections=[]
