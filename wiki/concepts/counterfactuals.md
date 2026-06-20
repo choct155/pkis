@@ -23,6 +23,7 @@ sources:
 - '[[pearl-causality]]'
 - '[[cunningham-causal-inference-mixtape]]'
 - li-forecaster-pearl-causality-2023
+- cunningham-causal-inference-mixtape-ch05
 specializes:
 - structural-causal-models
 tags:
