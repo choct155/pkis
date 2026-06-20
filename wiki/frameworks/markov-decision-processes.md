@@ -22,6 +22,7 @@ related_concepts:
 sources:
 - '[[cassandras-des-intro]]'
 - sutton-reinforcement-2018
+- cassandras-des-intro-ch09
 tags:
 - markov-decision-processes
 - dynamic-programming

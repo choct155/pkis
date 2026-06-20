@@ -25940,3 +25940,6 @@
 
 ## [2026-06-20] edit | edit_node
 - pkis:framework:petri-nets: fields=['sources'] sections=[]
+
+## [2026-06-20] edit | edit_node
+- pkis:framework:markov-decision-processes: fields=['sources'] sections=[]
