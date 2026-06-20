@@ -12,7 +12,7 @@ component_scores:
   transfer: null
 coverage: 1
 date_created: '2026-06-09'
-date_updated: '2026-06-09'
+date_updated: '2026-06-20'
 domain:
 - statistical-learning
 id: pkis:concept:inner-product
@@ -25,6 +25,7 @@ prerequisite-of:
 related_concepts: []
 sources:
 - deisenroth-mml-ch03
+- carrell-groups-matrices-vectors-ch06
 specializes:
 - linear-algebra
 tags:
