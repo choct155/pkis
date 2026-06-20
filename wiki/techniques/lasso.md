@@ -3,7 +3,7 @@ aliases: []
 also_type: []
 coverage: 3
 date_created: 2026-05-20
-date_updated: 2026-05-20
+date_updated: '2026-06-20'
 domain:
 - statistical-learning
 id: pkis:technique:lasso
@@ -16,6 +16,7 @@ sources:
 - '[[hastie-esl]]'
 - '[[friedman-rulefit-2005]]'
 - '[[kroese-statistical-modeling]]'
+- kroese-statistical-modeling-ch09
 tags:
 - linear-algebra
 - regularization
