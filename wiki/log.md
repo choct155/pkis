@@ -25880,3 +25880,6 @@
 
 ## [2026-06-20] edit | edit_node
 - pkis:concept:regularization-path: fields=['sources'] sections=[]
+
+## [2026-06-20] edit | edit_node
+- pkis:concept:metacognition-in-ai: fields=['sources'] sections=[]
