@@ -17,9 +17,7 @@ export const NAV_ITEMS: NavItem[] = [
   { view: 'clusters',   icon: '◎', label: 'clusters', group: 'primary' },
   { view: 'priority',   icon: '▲', label: 'priority', group: 'primary' },
   { view: 'graph',      icon: '⬡', label: 'graph',    group: 'primary' },
-  { view: 'staged',     icon: '⊞', label: 'staged',   group: 'secondary' },
   { view: 'explainers', icon: '▦', label: 'explain',  group: 'secondary' },
-  { view: 'discover',   icon: '✦', label: 'discover', group: 'secondary' },
   { view: 'docs',       icon: '▤', label: 'docs',     group: 'secondary' },
   { view: 'inbox',      icon: '✉', label: 'inbox',    group: 'secondary', admin: true },
 ]

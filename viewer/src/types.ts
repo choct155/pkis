@@ -10,7 +10,7 @@ export type NodeType =
 
 export type Maturity = 'settled' | 'evolving' | 'contested' | 'historical';
 
-export type View = 'browse' | 'clusters' | 'priority' | 'graph' | 'staged' | 'explainers' | 'discover' | 'docs' | 'inbox' | 'ask';
+export type View = 'browse' | 'clusters' | 'priority' | 'graph' | 'explainers' | 'docs' | 'inbox' | 'ask';
 
 // ── Natural-language ask (from /pkis-api/ask) ─────────────────────────────
 export interface AskMessage {
@@ -228,6 +228,11 @@ export interface QueueItem {
 }
 
 // ── Staged node (from get_staged_nodes) ──────────────────────────────────
+export interface StagedLink {
+  ref: string;            // the slug/fuzzy-ref the bridge note recorded
+  iri: string | null;     // resolved canonical IRI, or null if it doesn't exist
+  exists: boolean;
+}
 export interface StagedNode {
   staged_id: string;
   slug: string;
@@ -238,6 +243,10 @@ export interface StagedNode {
   review_status: string;
   description: string;
   review_url: string;
+  // Bridge-note review context (empty for other staged types):
+  rationale?: string;
+  proposed_edge_type?: string;
+  links?: StagedLink[];
 }
 
 // ── Research clusters (from get_clusters) ─────────────────────────────────

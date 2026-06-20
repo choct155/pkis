@@ -1,6 +1,8 @@
 import { useEffect, useRef, useState } from 'react'
 import { getInbox, resolveSlug, ApiError } from '../lib/api'
 import { renderMarkdown } from '../lib/markdown'
+import StagedSection from './StagedSection'
+import DiscoverView from './DiscoverView'
 
 interface Lane { title: string; body: string; open: number; done: number }
 
@@ -43,9 +45,14 @@ function LaneBody({ md, onSelectNode }: { md: string; onSelectNode: (iri: string
   return <div ref={ref} className="inbox-lane-body body-text" dangerouslySetInnerHTML={{ __html: html }} />
 }
 
+// The consolidated review hub: LIVE staged (bridge notes/stubs) + LIVE discovery
+// candidates, plus the agent-written inbox.md swim-lanes (proposals, gaps, …).
+// Everything that needs the owner's attention in one place.
 export default function InboxView({ onSelectNode }: { onSelectNode: (iri: string) => void }) {
   const [lanes, setLanes] = useState<Lane[] | null>(null)
   const [err, setErr] = useState<string | null>(null)
+  const [toast, setToast] = useState<string | null>(null)
+  const showToast = (m: string) => { setToast(m); setTimeout(() => setToast(null), 2200) }
 
   useEffect(() => {
     let cancelled = false
@@ -61,24 +68,35 @@ export default function InboxView({ onSelectNode }: { onSelectNode: (iri: string
   }, [])
 
   if (err) return <div className="empty-state">{err}</div>
-  if (!lanes) return <div className="loading-row"><div className="loading-spinner" /> loading inbox…</div>
 
-  const totalOpen = lanes.reduce((n, l) => n + l.open, 0)
+  // The md lanes are the slowest; render the live sections immediately and let
+  // the lanes fill in. (Auth errors short-circuit above.)
+  const liveLanes = (lanes || []).filter((l) => l.open > 0)
   return (
     <div className="inbox-view">
       <div className="inbox-head">
         <span className="inbox-title">Inbox</span>
-        <span className="inbox-count">{totalOpen} open · admin</span>
+        <span className="inbox-count">review · owner</span>
       </div>
-      {lanes.map((l) => (
-        <div key={l.title} className={`inbox-lane${l.open === 0 ? ' empty' : ''}`}>
-          <div className="inbox-lane-head">
-            <span className="inbox-lane-title">{l.title}</span>
-            {l.open > 0 && <span className="inbox-lane-badge">{l.open}</span>}
+
+      {/* Live review queues */}
+      <StagedSection onSelectNode={onSelectNode} onToast={showToast} />
+      <DiscoverView onSelectNode={onSelectNode} embedded />
+
+      {/* Agent-written swim-lanes (only the non-empty ones). */}
+      {lanes === null
+        ? <div className="loading-row"><div className="loading-spinner" /> loading lanes…</div>
+        : liveLanes.map((l) => (
+          <div key={l.title} className="inbox-section">
+            <div className="inbox-section-head">
+              <span className="inbox-section-title">{l.title}</span>
+              <span className="inbox-section-count">{l.open}</span>
+            </div>
+            <LaneBody md={l.body} onSelectNode={onSelectNode} />
           </div>
-          <LaneBody md={l.body} onSelectNode={onSelectNode} />
-        </div>
-      ))}
+        ))}
+
+      {toast && <div className="toast">{toast}</div>}
     </div>
   )
 }

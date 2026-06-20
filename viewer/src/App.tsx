@@ -17,9 +17,7 @@ import BrowseView from './views/BrowseView'
 import ClustersView from './views/ClustersView'
 import PriorityView from './views/PriorityView'
 import GraphView from './views/GraphView'
-import StagedView from './views/StagedView'
 import ExplainersView from './views/ExplainersView'
-import DiscoverView from './views/DiscoverView'
 import DocsView from './views/DocsView'
 import InboxView from './views/InboxView'
 import AskView from './views/AskView'
@@ -130,6 +128,7 @@ export default function App() {
                     clusterFilter={clusterFilter}
                     onSelectNode={handleSelectNode}
                     onNavigate={setView}
+                    isOwner={isOwner}
                   />
                 )}
                 {view === 'clusters' && (
@@ -145,14 +144,8 @@ export default function App() {
                 {view === 'graph' && (
                   <GraphView focusIri={selectedIri} onSelectNode={handleSelectNode} />
                 )}
-                {view === 'staged' && (
-                  <StagedView onSelectNode={handleSelectNode} />
-                )}
                 {view === 'explainers' && (
                   <ExplainersView onSelectNode={handleSelectNode} onOpenExplainer={openExplainer} />
-                )}
-                {view === 'discover' && (
-                  <DiscoverView onSelectNode={handleSelectNode} />
                 )}
                 {view === 'docs' && <DocsView />}
                 {view === 'ask' && (

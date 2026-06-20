@@ -2461,6 +2461,15 @@ def tool_get_staged_nodes(
             if staged_by and fm.get("staged_by") != staged_by:
                 continue
             first_line = post.content.strip().split("\n")[0].lstrip("#").strip()[:200] if post.content.strip() else ""
+            # Bridge-note review context: resolve each referenced node so the inbox
+            # can show why the note exists AND which links exist vs. need resolving
+            # (the "node shows as not existing" confusion). Cheap — staged sets are
+            # small and this is just a path lookup per ref, no search.
+            links = []
+            for ref in (fm.get("linked_nodes") or []):
+                p = find_node_path(ref)
+                iri = (load_node(p) or {}).get("iri") if p else None
+                links.append({"ref": ref, "iri": iri, "exists": bool(iri)})
             results.append({
                 "staged_id": fm.get("staged_id"),
                 "slug": staged_file.stem,
@@ -2470,6 +2479,9 @@ def tool_get_staged_nodes(
                 "title": fm.get("title", staged_file.stem),
                 "review_status": fm.get("review_status", "pending"),
                 "description": first_line,
+                "rationale": fm.get("rationale", ""),
+                "proposed_edge_type": fm.get("proposed_edge_type") or fm.get("edge_type") or "related",
+                "links": links,
                 "review_url": f"{REPO_WEB_BASE}/blob/main/wiki/staging/{staged_file.name}",
             })
         except Exception as e:

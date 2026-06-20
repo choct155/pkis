@@ -11,6 +11,7 @@ interface Props {
   clusterFilter: string
   onSelectNode: (iri: string) => void
   onNavigate: (v: View) => void
+  isOwner: boolean
 }
 
 const TYPE_ORDER = ['concept', 'technique', 'result', 'framework', 'problem',
@@ -24,7 +25,7 @@ function asCard(n: IndexNode): SearchResult {
   }
 }
 
-export default function BrowseView({ typeFilter, domainFilter, clusterFilter, onSelectNode, onNavigate }: Props) {
+export default function BrowseView({ typeFilter, domainFilter, clusterFilter, onSelectNode, onNavigate, isOwner }: Props) {
   const [health, setHealth]   = useState<HealthMetrics | null>(null)
   const [frontier, setFrontier] = useState<FrontierNode[]>([])
   const [queue, setQueue]     = useState<QueueItem[]>([])
@@ -106,10 +107,10 @@ export default function BrowseView({ typeFilter, domainFilter, clusterFilter, on
 
   return (
     <div>
-      {stagedCount > 0 && (
-        <div className="staged-badge" onClick={() => onNavigate('staged')}>
+      {isOwner && stagedCount > 0 && (
+        <div className="staged-badge" onClick={() => onNavigate('inbox')}>
           <div className="staged-dot" />
-          {stagedCount} staged node{stagedCount > 1 ? 's' : ''} awaiting review
+          {stagedCount} item{stagedCount > 1 ? 's' : ''} to review — open inbox
         </div>
       )}
 

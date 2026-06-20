@@ -301,7 +301,7 @@ export async function commitStaged(
   staged_id: string,
   action: string,
   edits?: Record<string, unknown>,
-  confirmed_links?: unknown[]
+  confirmed_links?: Record<string, string>   // {fuzzy_ref: canonical_iri}
 ): Promise<unknown> {
   return post('/staged/commit', { staged_id, action, edits, confirmed_links });
 }

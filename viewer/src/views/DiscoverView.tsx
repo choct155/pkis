@@ -5,11 +5,12 @@ import DiscoverDetailSheet from '../components/DiscoverDetailSheet'
 
 interface Props {
   onSelectNode: (iri: string) => void
+  embedded?: boolean   // inside the consolidated inbox: section header, hide when empty
 }
 
 const DISMISS_CHIPS = ['too applied', 'off-topic', 'already know', 'low quality']
 
-export default function DiscoverView({ onSelectNode }: Props) {
+export default function DiscoverView({ onSelectNode, embedded }: Props) {
   const [inbox, setInbox] = useState<DiscoveryInbox | null>(null)
   const [loading, setLoading] = useState(true)
   const [busy, setBusy] = useState<string | null>(null)
@@ -45,24 +46,35 @@ export default function DiscoverView({ onSelectNode }: Props) {
   }
 
   if (loading) {
+    if (embedded) return null
     return <div className="loading-row"><div className="loading-spinner" /> loading discovery inbox…</div>
   }
 
   const cands = inbox?.candidates ?? []
   const counts = inbox?.counts ?? {}
 
-  return (
-    <div>
-      <div className="discover-head">
-        <div className="section-label" style={{ margin: 0 }}>discover · frontier-matched reads</div>
-        <div className="discover-sub">
-          {counts.accepted ? `${counts.accepted} accepted · ` : ''}
-          {counts.dismissed ? `${counts.dismissed} dismissed · ` : ''}
-          {inbox?.generated_at ? `updated ${inbox.generated_at.slice(0, 10)}` : ''}
-        </div>
-      </div>
+  // Embedded in the inbox: stay quiet when there's nothing to triage.
+  if (embedded && cands.length === 0) return null
 
-      {cands.length === 0 && (
+  return (
+    <div className={embedded ? 'inbox-section' : undefined}>
+      {embedded ? (
+        <div className="inbox-section-head">
+          <span className="inbox-section-title">Discovery</span>
+          <span className="inbox-section-count">{cands.length}</span>
+        </div>
+      ) : (
+        <div className="discover-head">
+          <div className="section-label" style={{ margin: 0 }}>discover · frontier-matched reads</div>
+          <div className="discover-sub">
+            {counts.accepted ? `${counts.accepted} accepted · ` : ''}
+            {counts.dismissed ? `${counts.dismissed} dismissed · ` : ''}
+            {inbox?.generated_at ? `updated ${inbox.generated_at.slice(0, 10)}` : ''}
+          </div>
+        </div>
+      )}
+
+      {!embedded && cands.length === 0 && (
         <div className="empty-state">
           inbox empty — discovery runs weekly and surfaces papers that fill your current frontier gaps.
         </div>

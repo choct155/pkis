@@ -1534,3 +1534,65 @@ body {
 .inbox-lane-body ul { margin: 4px 0; padding-left: 18px; }
 .inbox-lane-body li { margin: 4px 0; }
 .inbox-lane.empty .inbox-lane-body { font-style: italic; color: var(--muted); }
+
+/* ── Consolidated inbox: sections (staged / discovery / agent lanes) ──────── */
+.inbox-section { margin-bottom: 18px; }
+.inbox-section-head { display: flex; align-items: center; gap: 8px; margin: 0 2px 8px; }
+.inbox-section-title {
+  font-family: var(--mono); font-size: 12px; font-weight: 700; letter-spacing: 0.06em;
+  text-transform: uppercase; color: var(--text);
+}
+.inbox-section-count {
+  font-family: var(--mono); font-size: 10px; font-weight: 700; color: #fff;
+  background: var(--accent); border-radius: 99px; padding: 1px 7px; min-width: 18px; text-align: center;
+}
+
+/* Staged / bridge-note review cards */
+.type-badge {
+  font-family: var(--mono); font-size: 9px; font-weight: 600; letter-spacing: 0.04em;
+  padding: 2px 7px; border-radius: 99px; text-transform: lowercase;
+  background: var(--dim); color: var(--muted); white-space: nowrap;
+}
+.staged-card {
+  background: var(--raised); border: 1px solid var(--border); border-radius: var(--radius);
+  padding: 12px 14px; margin-bottom: 10px;
+}
+.staged-card-head { display: flex; align-items: center; gap: 8px; }
+.staged-card-title { font-size: 14px; font-weight: 600; color: var(--bright); line-height: 1.35; }
+.staged-card-meta { font-family: var(--mono); font-size: 10px; color: var(--muted); margin-top: 4px; }
+.staged-rationale {
+  font-size: 13px; line-height: 1.5; color: var(--text); margin: 8px 0;
+  padding-left: 10px; border-left: 2px solid var(--border);
+}
+.staged-links { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; margin: 8px 0; }
+.staged-links-label {
+  font-family: var(--mono); font-size: 9px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted);
+}
+.staged-link {
+  font-family: var(--mono); font-size: 11px; border-radius: 99px; padding: 3px 9px;
+  border: 1px solid var(--border); background: var(--surface); cursor: default;
+}
+.staged-link.ok { color: var(--green); cursor: pointer; }
+.staged-link.ok:hover { border-color: var(--green); }
+.staged-link.missing { color: var(--amber); border-color: var(--amber); }
+.staged-edge { font-family: var(--mono); font-size: 10px; color: var(--muted); }
+.staged-actions { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
+.staged-actions .action-btn { font-size: 12px; }
+
+/* Inline resolution picker for missing links */
+.staged-resolve {
+  margin-top: 10px; padding: 10px; border: 1px dashed var(--amber);
+  border-radius: var(--radius); background: var(--surface);
+}
+.staged-resolve-head { font-size: 12px; color: var(--amber); margin-bottom: 8px; }
+.resolve-row { margin-bottom: 10px; }
+.resolve-ref { font-family: var(--mono); font-size: 12px; color: var(--text); margin-bottom: 5px; }
+.resolve-cands { display: flex; flex-wrap: wrap; gap: 6px; }
+.resolve-cand {
+  font-size: 11px; color: var(--text); background: var(--raised);
+  border: 1px solid var(--border); border-radius: var(--radius); padding: 5px 9px; cursor: pointer; text-align: left;
+}
+.resolve-cand:hover { border-color: var(--accent); }
+.resolve-cand.on { border-color: var(--green); color: var(--green); }
+.resolve-cand.unlink { font-family: var(--mono); color: var(--muted); }
+.resolve-cand.unlink.on { border-color: var(--muted); color: var(--muted); }
