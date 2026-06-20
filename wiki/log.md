@@ -25253,3 +25253,6 @@
 
 ## [2026-06-20] edit | edit_node
 - pkis:technique:named-entity-disambiguation: fields=['sources'] sections=[]
+
+## [2026-06-20] edit | edit_node
+- pkis:technique:knowledge-graph-embedding: fields=['sources'] sections=[]
