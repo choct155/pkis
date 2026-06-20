@@ -1,18 +1,50 @@
 ---
-id: "pkis:framework:owl"
-aliases: ["Web Ontology Language"]
-title: "OWL (Web Ontology Language)"
-knowledge_type: framework
-also_type: [concept]
-domain: [knowledge-representation]
-tags: [semantic-web, ontology, description-logic, owl2, rdfs, w3c-standard, reasoning, expressivity]
-related_concepts: ["[[rdfs]]", "[[rdf]]", "[[description-logic]]", "[[ontology-reasoning]]", "[[sparql]]", "[[skos]]"]
-sources: ["[[allemang-semantic-web]]", "[[sequeda-kg-benchmark-llm-2023]]", "[[sequeda-kg-trust-llm-2025]]"]
-date_created: 2026-05-20
-date_updated: 2026-05-20
+aliases:
+- Web Ontology Language
+also_type:
+- concept
 coverage: 3
-understanding: 0
+date_created: 2026-05-20
+date_updated: '2026-06-20'
+domain:
+- knowledge-representation
+id: pkis:framework:owl
+knowledge_type: framework
 maturity: settled
+related_concepts:
+- '[[rdfs]]'
+- '[[rdf]]'
+- '[[description-logic]]'
+- '[[ontology-reasoning]]'
+- '[[sparql]]'
+- '[[skos]]'
+sources:
+- '[[allemang-semantic-web]]'
+- '[[sequeda-kg-benchmark-llm-2023]]'
+- '[[sequeda-kg-trust-llm-2025]]'
+- allemang-semantic-web-ch02
+- allemang-semantic-web-ch08
+- allemang-semantic-web-ch09
+- allemang-semantic-web-ch10
+- allemang-semantic-web-ch11
+- allemang-semantic-web-ch12
+- allemang-semantic-web-ch13
+- allemang-semantic-web-ch14
+- allemang-semantic-web-ch15
+- allemang-semantic-web-ch16
+- cimiano-ontology-nlp-ch02
+- cimiano-ontology-nlp-ch10
+tags:
+- semantic-web
+- ontology
+- description-logic
+- owl2
+- rdfs
+- w3c-standard
+- reasoning
+- expressivity
+title: OWL (Web Ontology Language)
+understanding: 0
 ---
 
 W3C standard ontology language extending RDFS with richer expressiveness grounded in Description Logic. OWL provides: property characteristics (owl:inverseOf, owl:SymmetricProperty, owl:TransitiveProperty, owl:FunctionalProperty), class expressions (owl:intersectionOf, owl:unionOf, owl:complementOf, owl:oneOf), property restrictions (owl:allValuesFrom, owl:someValuesFrom), cardinality constraints, and individual identity (owl:sameAs, owl:differentFrom). OWL 2 introduced profiles (EL, QL, RL) that trade expressivity for tractable reasoning. The tradeoff between expressivity and computational complexity is the central design tension: OWL Full is undecidable; OWL DL is decidable but EXPTIME-complete; OWL 2 RL is polynomial and implementable via SPARQL rules.
