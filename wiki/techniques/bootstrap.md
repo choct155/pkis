@@ -7,7 +7,7 @@ applies:
 - model-selection-problem
 coverage: 1
 date_created: 2026-05-20
-date_updated: 2026-05-20
+date_updated: '2026-06-20'
 domain:
 - statistical-learning
 id: pkis:technique:bootstrap
@@ -19,6 +19,7 @@ related_concepts:
 - '[[hypothesis-testing]]'
 sources:
 - '[[kroese-statistical-modeling]]'
+- kroese-statistical-modeling-ch07
 tags:
 - resampling
 - monte-carlo

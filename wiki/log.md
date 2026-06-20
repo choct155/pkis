@@ -26039,3 +26039,6 @@
 
 ## [2026-06-20] edit | edit_node
 - pkis:concept:multinomial-distribution: fields=['sources'] sections=[]
+
+## [2026-06-20] edit | edit_node
+- pkis:technique:bootstrap: fields=['sources'] sections=[]
