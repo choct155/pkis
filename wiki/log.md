@@ -25092,3 +25092,12 @@
 ## [2026-06-20] committed | hypothesis
 - Committed: graph-retrieval-dominates-vector-search-concept-specifi → hypotheses/graph-retrieval-dominates-vector-search-concept-specifi.md
 - IRI: pkis:hypothesis:graph-retrieval-dominates-vector-search-concept-specifi
+
+## [2026-06-20] staged | source-stub
+- Staged: es-ragas-2024 (id: f1668fe7-fa83-4d46-9143-6343c9de0c52)
+- Title: RAGAS: Automated Evaluation of Retrieval Augmented Generation
+- Enrichment: full
+
+## [2026-06-20] committed | source
+- Committed: es-ragas-2024 → sources/es-ragas-2024.md
+- IRI: pkis:source:es-ragas-2024
