@@ -6,7 +6,7 @@ applies:
 - negative-binomial-distribution
 coverage: 1
 date_created: 2026-05-20
-date_updated: 2026-05-20
+date_updated: '2026-06-20'
 domain:
 - bayesian-stats
 id: pkis:technique:generating-functions
@@ -17,6 +17,9 @@ related_concepts:
 - '[[branching-processes]]'
 sources:
 - '[[lange-applied-probability]]'
+- kroese-statistical-modeling-ch02
+- lange-applied-probability-ch09
+- lange-applied-probability-ch12
 tags:
 - probability-theory
 - moment-generating-functions
