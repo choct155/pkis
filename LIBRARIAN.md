@@ -146,6 +146,13 @@ connector once). Verify with `/pkis-api/source-relevance` for a just-linked sour
 **When to run:** after a batch ingest, and periodically as a sweep. The driver
 re-scans for *currently* unlinked sources each run, so it's safe to re-run anytime.
 
+**Automated** — `tools/link_sources_cron.sh` is wired into the server crontab
+(weekly, Mon 05:00, before the discovery run). It clears the resume-state, runs
+both modes, and restarts the service **only if it actually added links** (so quiet
+weeks don't drop the connector). It's idempotent — running it never double-links
+(already-linked sources are excluded). Logs to `/home/pkis/link_sources_cron.log`.
+To run a manual sweep: `bash /home/pkis/pkis-wiki/tools/link_sources_cron.sh`.
+
 ---
 
 ## Ingest Workflow
