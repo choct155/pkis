@@ -4,7 +4,7 @@ also_type:
 - concept
 coverage: 3
 date_created: 2026-05-20
-date_updated: 2026-05-20
+date_updated: '2026-06-20'
 domain:
 - deep-learning
 - symbolic-subsymbolic
@@ -16,6 +16,16 @@ sources:
 - '[[gulli-agentic-design-patterns]]'
 - '[[liu-symagent]]'
 - '[[miehling-agentic-systems-theory-2025]]'
+- gulli-agentic-design-patterns-ch05
+- gulli-agentic-design-patterns-ch07
+- gulli-agentic-design-patterns-ch08
+- gulli-agentic-design-patterns-ch10
+- gulli-agentic-design-patterns-ch21
+- gulli-agentic-design-patterns-ch23
+- gulli-agentic-design-patterns-ch24
+- gulli-agentic-design-patterns-ch26
+- gulli-agentic-design-patterns-ch28
+- gulli-agentic-design-patterns-ch29
 specializes:
 - rational-agent
 tags:
