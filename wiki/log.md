@@ -25643,3 +25643,6 @@
 
 ## [2026-06-20] edit | edit_node
 - pkis:concept:discrete-event-systems: fields=['sources'] sections=[]
+
+## [2026-06-20] edit | edit_node
+- pkis:framework:supervisory-control: fields=['sources'] sections=[]
