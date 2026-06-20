@@ -25110,3 +25110,12 @@
 ## [2026-06-20] committed | source
 - Committed: saadfalcon-ares-2024 → sources/saadfalcon-ares-2024.md
 - IRI: pkis:source:saadfalcon-ares-2024
+
+## [2026-06-20] staged | source-stub
+- Staged: rau-revisiting-2026 (id: 7e2f088d-d9ee-4749-bf6f-755bce1544b3)
+- Title: Revisiting RAG Retrievers: An Information Theoretic Benchmark (MIGRASCOPE)
+- Enrichment: full
+
+## [2026-06-20] committed | source
+- Committed: rau-revisiting-2026 → sources/rau-revisiting-2026.md
+- IRI: pkis:source:rau-revisiting-2026

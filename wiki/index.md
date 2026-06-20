@@ -1,6 +1,7 @@
 # PKIS Wiki Index
 
 ## Sources
+- [[rau-revisiting-2026]] — Revisiting RAG Retrievers: An Information Theoretic Benchmark (MIGRASCOPE) () (2026-06-20)
 - [[saadfalcon-ares-2024]] — ARES: An Automated Evaluation Framework for Retrieval-Augmented Generation Systems () (2026-06-20)
 - [[es-ragas-2024]] — RAGAS: Automated Evaluation of Retrieval Augmented Generation () (2026-06-20)
 - [[giglou-llms4ol-2024]] — LLMs4OL 2024 Overview: The 1st Large Language Models for Ontology Learning Challenge () (2026-06-14)
