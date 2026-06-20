@@ -26246,3 +26246,6 @@
 
 ## [2026-06-20] edit | edit_node
 - pkis:concept:fisher-information: fields=['sources'] sections=[]
+
+## [2026-06-20] edit | edit_node
+- pkis:result:asymptotic-normality-mle: fields=['sources'] sections=[]
