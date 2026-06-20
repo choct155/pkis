@@ -30,6 +30,7 @@ related_concepts: []
 sources:
 - goodfellow-deeplearning-ch06
 - goodfellow-deeplearning
+- nielsen-nndl-ch06
 tags:
 - feedforward
 - MLP
