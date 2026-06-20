@@ -233,3 +233,6 @@ priority_config.json
 
 # Generated reader payloads (audio + json)
 wiki/reader/
+
+# librarian linking driver resume-state
+tools/.link_sources_state.json
