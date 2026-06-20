@@ -25298,3 +25298,6 @@
 
 ## [2026-06-20] edit | edit_node
 - pkis:framework:multidimensional-retrieval-quality-framework: fields=['sources'] sections=[]
+
+## [2026-06-20] edit | edit_node
+- pkis:technique:knowledge-graph-construction: fields=['sources'] sections=[]
