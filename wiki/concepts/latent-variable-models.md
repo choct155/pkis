@@ -12,7 +12,7 @@ component_scores:
   transfer: null
 coverage: 1
 date_created: '2026-06-08'
-date_updated: '2026-06-08'
+date_updated: '2026-06-20'
 domain:
 - statistical-learning
 - bayesian-stats
@@ -23,6 +23,7 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - mackay-itila-ch34
+- bishop-prml-ch12
 tags:
 - generative-model
 - latent-variables

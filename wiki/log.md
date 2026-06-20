@@ -26261,3 +26261,6 @@
 
 ## [2026-06-20] edit | edit_node
 - pkis:principle:scaling-hypothesis: fields=['sources'] sections=[]
+
+## [2026-06-20] edit | edit_node
+- pkis:concept:latent-variable-models: fields=['sources'] sections=[]
