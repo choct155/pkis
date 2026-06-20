@@ -3,7 +3,7 @@ aliases: []
 also_type: []
 coverage: 1
 date_created: 2026-05-20
-date_updated: 2026-05-20
+date_updated: '2026-06-20'
 domain:
 - statistical-learning
 - optimization
@@ -18,6 +18,8 @@ related_concepts:
 - '[[matrix-decompositions]]'
 sources:
 - '[[carrell-groups-matrices-vectors]]'
+- carrell-groups-matrices-vectors-ch08
+- carrell-groups-matrices-vectors-ch10
 tags:
 - linear-algebra
 - matrix-theory
