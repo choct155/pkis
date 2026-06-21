@@ -26481,3 +26481,6 @@
 
 ## [2026-06-21] edit | edit_node
 - pkis:source:angelopoulos-predictionpowered-2023: fields=['source_url', 'status', 'priority'] sections=[]
+
+## [2026-06-21] edit | edit_node
+- pkis:source:angelopoulos-ppi-2023: fields=['priority', 'source_url', 'status'] sections=[]
