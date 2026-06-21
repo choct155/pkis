@@ -20,6 +20,15 @@ Format:
 
 ## Register new explainers as PKIS assets and create explainer roadmap
 **Date logged:** 2026-06-21
+**Source:** Claude Code: main
+**Idea:** Three HTML explainers built in Claude.ai need registering in the PKIS asset system and deploying to the viz serving directory. Also create EXPLAINER_ROADMAP.md in pkis/docs/. Full task brief in conversation — pass to Claude Code.
+**Relation to existing system:** —
+**Open questions:** —
+**Status:** open
+
+
+## Register new explainers as PKIS assets and create explainer roadmap
+**Date logged:** 2026-06-21
 **Source:** Claude.ai session — session date June 21 2026
 **Idea:** Three HTML explainers built in Claude.ai sessions need to be registered in the PKIS asset system and the HTML files deployed to the viz serving directory. Additionally create EXPLAINER_ROADMAP.md in pkis/docs/ tracking planned explainers. Full task brief and code prompt in conversation context — pass to Claude Code.
 **Relation to existing system:** Asset registry, explainer infrastructure, position paper scaffolding
