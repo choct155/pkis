@@ -28,6 +28,8 @@ understanding: 0
 uses:
 - shannon-information-content
 - self-information
+illustrated-by:
+- mi-estimation-explainer
 ---
 
 Shannon entropy H(X) = −∑ p_i log p_i measures the average uncertainty (or information content) of a random variable; maximum entropy distributions under moment constraints are exponential families, and entropy connects information theory, statistical mechanics, and Bayesian inference.

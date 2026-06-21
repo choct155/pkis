@@ -13,6 +13,7 @@ id: pkis:hypothesis:query-coverage-as-expected-mass-of-c-q-on-encoded-conce
 iks_link: null
 illustrated-by:
 - gruninger-methodology-1995
+- knowledge-infrastructure-explainer
 knowledge_type: hypothesis
 origin: research-program
 research_program_cluster: retrieval-inference-tradeoff

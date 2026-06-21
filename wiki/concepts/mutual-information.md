@@ -44,6 +44,8 @@ uses:
 - conditional-entropy
 - gibbs-inequality
 - entropy
+illustrated-by:
+- mi-estimation-explainer
 ---
 
 ## Definition

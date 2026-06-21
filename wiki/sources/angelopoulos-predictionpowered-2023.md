@@ -15,6 +15,8 @@ tags: []
 title: Prediction-Powered Inference
 type: paper
 year: 2023
+illustrated-by:
+- accuracy-calibration-explainer
 ---
 
 ## Summary

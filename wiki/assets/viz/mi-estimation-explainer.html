@@ -1,0 +1,1510 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mutual Information Estimation — Technical Reference</title>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400&family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,500;1,300&family=IBM+Plex+Serif:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#07080a;--bg1:#0c1015;--bg2:#111820;--bg3:#18222e;
+  --border:#1e2d3d;--border2:#2a3f54;
+  --amber:#e8a045;--amber2:#c27c28;--amber-dim:#3d2a0a;
+  --cyan:#4fc3c8;--cyan-dim:#0e3a3d;
+  --green:#56b870;--green-dim:#0e2e18;
+  --red:#e87070;--red-dim:#2e0e0e;
+  --purple:#a78bfa;--purple-dim:#2d1f5e;
+  --text:#c8d6e5;--text-dim:#5a7a94;--text-faint:#283a4a;
+  --mono:'IBM Plex Mono',monospace;
+  --sans:'IBM Plex Sans',sans-serif;
+  --serif:'IBM Plex Serif',serif;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+html,body{height:100%;}
+body{background:var(--bg);color:var(--text);font-family:var(--sans);font-size:14px;line-height:1.7;overflow-x:hidden;}
+
+/* ── App shell ── */
+.app{display:flex;height:100vh;overflow:hidden;}
+
+/* ── Sidebar ── */
+.sidebar{
+  width:220px;flex-shrink:0;
+  background:var(--bg1);
+  border-right:1px solid var(--border);
+  display:flex;flex-direction:column;
+  overflow-y:auto;
+  position:relative;z-index:10;
+}
+.sidebar-brand{
+  padding:20px 16px 14px;
+  border-bottom:1px solid var(--border);
+}
+.sidebar-brand-label{
+  font-family:var(--mono);font-size:9px;letter-spacing:.18em;
+  color:var(--amber);text-transform:uppercase;
+  display:block;margin-bottom:4px;
+}
+.sidebar-brand-title{
+  font-family:var(--serif);font-size:14px;font-weight:300;
+  color:#e8edf2;line-height:1.3;
+}
+.sidebar-nav{padding:12px 0;flex:1;}
+.nav-section-label{
+  font-family:var(--mono);font-size:9px;letter-spacing:.14em;
+  color:var(--text-faint);text-transform:uppercase;
+  padding:8px 16px 4px;
+}
+.nav-item{
+  display:flex;align-items:center;gap:10px;
+  padding:8px 16px;cursor:pointer;
+  font-family:var(--mono);font-size:11px;
+  color:var(--text-dim);
+  transition:all .15s;
+  border-left:2px solid transparent;
+  text-decoration:none;
+}
+.nav-item:hover{color:var(--text);background:var(--bg2);}
+.nav-item.active{color:var(--amber);border-left-color:var(--amber);background:var(--amber-dim);}
+.nav-item .nav-num{
+  font-size:9px;color:var(--text-faint);
+  min-width:16px;
+}
+.nav-item.active .nav-num{color:var(--amber);}
+.nav-divider{height:1px;background:var(--border);margin:8px 0;}
+
+/* Sub-tabs within family */
+.subtab-row{
+  display:flex;border-bottom:1px solid var(--border);
+  background:var(--bg1);flex-shrink:0;
+}
+.subtab{
+  font-family:var(--mono);font-size:10px;letter-spacing:.08em;
+  text-transform:uppercase;padding:10px 16px;
+  cursor:pointer;color:var(--text-dim);
+  border-bottom:2px solid transparent;
+  transition:all .15s;
+  background:transparent;border-top:none;border-left:none;border-right:none;
+}
+.subtab:hover{color:var(--text);}
+.subtab.active{color:var(--amber);border-bottom-color:var(--amber);}
+
+/* ── Main content ── */
+.main{flex:1;display:flex;flex-direction:column;overflow:hidden;}
+.family-panel{display:none;flex:1;flex-direction:column;overflow:hidden;}
+.family-panel.active{display:flex;}
+.content-area{flex:1;overflow-y:auto;padding:0;}
+.subtab-panel{display:none;padding:32px 40px 60px;}
+.subtab-panel.active{display:block;}
+@media(max-width:700px){
+  .app{flex-direction:column;height:auto;}
+  .sidebar{width:100%;height:auto;border-right:none;border-bottom:1px solid var(--border);}
+  .sidebar-nav{display:flex;flex-wrap:wrap;padding:8px;}
+  .nav-item{border-left:none;border-bottom:2px solid transparent;padding:6px 10px;}
+  .nav-item.active{border-bottom-color:var(--amber);border-left-color:transparent;}
+  .subtab-panel{padding:20px 16px 40px;}
+}
+
+/* ── Typography ── */
+h1.family-title{
+  font-family:var(--serif);font-size:28px;font-weight:300;
+  color:#e8edf2;letter-spacing:-.01em;line-height:1.2;
+  margin-bottom:6px;
+}
+.family-subtitle{
+  font-family:var(--mono);font-size:11px;color:var(--text-dim);
+  margin-bottom:28px;letter-spacing:.06em;
+}
+h2.section-head{
+  font-family:var(--serif);font-size:20px;font-weight:300;
+  color:#e8edf2;margin-bottom:12px;margin-top:28px;
+}
+h3.sub-head{
+  font-family:var(--mono);font-size:12px;font-weight:500;
+  color:var(--cyan);letter-spacing:.08em;text-transform:uppercase;
+  margin-bottom:8px;margin-top:20px;
+}
+p{font-size:14px;font-weight:300;color:var(--text);line-height:1.75;margin-bottom:14px;}
+p.dim{color:var(--text-dim);}
+
+/* ── Math blocks ── */
+.math{
+  background:var(--bg2);border:1px solid var(--border);
+  border-left:3px solid var(--amber2);border-radius:2px;
+  padding:18px 22px;margin:16px 0;
+  font-family:var(--mono);font-size:13px;line-height:2.1;
+  overflow-x:auto;
+}
+.math .lbl{font-size:9px;letter-spacing:.14em;color:var(--text-dim);text-transform:uppercase;margin-bottom:8px;}
+.math .expr{color:#dde8f2;}
+.math .cmt{color:var(--text-dim);font-style:italic;font-size:12px;}
+.hi-a{color:var(--amber);}
+.hi-c{color:var(--cyan);}
+.hi-g{color:var(--green);}
+.hi-r{color:var(--red);}
+.hi-p{color:var(--purple);}
+
+/* ── Callouts ── */
+.callout{
+  background:var(--bg2);border:1px solid var(--border2);
+  border-left:3px solid var(--cyan);border-radius:2px;
+  padding:14px 18px;margin:16px 0;
+  font-size:13px;font-weight:300;color:var(--text-dim);line-height:1.65;
+}
+.callout strong{font-family:var(--mono);font-size:9px;letter-spacing:.12em;
+  color:var(--cyan);text-transform:uppercase;display:block;margin-bottom:5px;}
+.callout.warn{border-left-color:var(--red);}
+.callout.warn strong{color:var(--red);}
+.callout.note{border-left-color:var(--amber);}
+.callout.note strong{color:var(--amber);}
+
+/* ── Interactive panels ── */
+.interactive{
+  background:var(--bg1);border:1px solid var(--border2);
+  border-radius:2px;padding:24px;margin:20px 0;
+}
+.int-title{
+  font-family:var(--mono);font-size:10px;letter-spacing:.16em;
+  color:var(--amber);text-transform:uppercase;margin-bottom:20px;
+  display:flex;align-items:center;gap:10px;
+}
+.int-title::after{content:'';flex:1;height:1px;background:var(--amber-dim);}
+.param-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:20px;}
+@media(max-width:600px){.param-grid{grid-template-columns:1fr;}}
+.param-row{display:flex;flex-direction:column;gap:6px;}
+.param-label{font-family:var(--mono);font-size:11px;color:var(--text-dim);display:flex;justify-content:space-between;}
+.pval{color:var(--amber);}
+input[type=range]{-webkit-appearance:none;width:100%;height:3px;background:var(--border2);border-radius:2px;outline:none;}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:13px;height:13px;border-radius:50%;background:var(--amber);cursor:pointer;border:2px solid var(--bg);}
+
+/* Readout grid */
+.rdout-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:16px;}
+@media(max-width:600px){.rdout-grid{grid-template-columns:1fr 1fr;}}
+.rdout{background:var(--bg3);border:1px solid var(--border);border-radius:2px;padding:12px;}
+.rdout-lbl{font-family:var(--mono);font-size:9px;letter-spacing:.12em;color:var(--text-faint);text-transform:uppercase;margin-bottom:4px;}
+.rdout-val{font-family:var(--mono);font-size:18px;font-weight:500;line-height:1;}
+
+canvas{width:100%;display:block;}
+.canvas-wrap{position:relative;margin-bottom:8px;}
+.legend{display:flex;gap:16px;flex-wrap:wrap;font-family:var(--mono);font-size:10px;color:var(--text-dim);margin-top:6px;}
+.li{display:flex;align-items:center;gap:5px;}
+.ldot{width:10px;height:3px;border-radius:1px;}
+
+/* ── Step-by-step derivation ── */
+.deriv-step{
+  display:flex;gap:14px;margin:14px 0;
+  padding:14px 16px;
+  background:var(--bg2);border:1px solid var(--border);border-radius:2px;
+}
+.step-num{
+  font-family:var(--mono);font-size:12px;color:var(--text-faint);
+  min-width:24px;padding-top:1px;flex-shrink:0;
+}
+.step-body{flex:1;}
+.step-body p{margin-bottom:8px;}
+.step-body .math{margin:8px 0;}
+
+/* ── Synthesis comparison table ── */
+.comp-table{width:100%;border-collapse:collapse;font-size:12px;margin:16px 0;}
+.comp-table th{
+  font-family:var(--mono);font-size:9px;letter-spacing:.12em;text-transform:uppercase;
+  background:var(--bg3);color:var(--text-dim);
+  padding:10px 12px;text-align:left;border-bottom:1px solid var(--border2);
+}
+.comp-table td{padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;font-weight:300;}
+.comp-table td:first-child{font-family:var(--mono);font-size:11px;color:var(--amber);}
+.comp-table tr:last-child td{border-bottom:none;}
+.tag{display:inline-block;font-family:var(--mono);font-size:9px;padding:2px 6px;border-radius:1px;letter-spacing:.06em;}
+.tag-g{background:var(--green-dim);color:var(--green);}
+.tag-r{background:var(--red-dim);color:var(--red);}
+.tag-a{background:var(--amber-dim);color:var(--amber);}
+</style>
+</head>
+<body>
+<div class="app">
+
+<!-- Sidebar -->
+<nav class="sidebar">
+  <div class="sidebar-brand">
+    <span class="sidebar-brand-label">PKIS · Technical Reference</span>
+    <span class="sidebar-brand-title">Mutual Information Estimation</span>
+  </div>
+  <div class="sidebar-nav">
+    <div class="nav-section-label">Families</div>
+    <div class="nav-item active" onclick="showFamily('hist')"><span class="nav-num">1</span>Histogram</div>
+    <div class="nav-item" onclick="showFamily('ksg')"><span class="nav-num">2</span>KNN / KSG</div>
+    <div class="nav-item" onclick="showFamily('mine')"><span class="nav-num">3</span>Neural (MINE)</div>
+    <div class="nav-item" onclick="showFamily('kern')"><span class="nav-num">4</span>Kernel / Copula</div>
+    <div class="nav-divider"></div>
+    <div class="nav-section-label">Meta</div>
+    <div class="nav-item" onclick="showFamily('synth')"><span class="nav-num">★</span>Synthesis</div>
+  </div>
+</nav>
+
+<!-- Main -->
+<div class="main">
+
+<!-- ══════════════ FAMILY 1: HISTOGRAM ══════════════ -->
+<div class="family-panel active" id="fp-hist">
+  <div class="subtab-row">
+    <button type="button" class="subtab" onclick="showSub('hist','mot')">Motivation</button>
+    <button type="button" class="subtab" onclick="showSub('hist','mech')">Mechanics</button>
+    <button type="button" class="subtab active" onclick="showSub('hist','ex')">Worked Example</button>
+    <button type="button" class="subtab" onclick="showSub('hist','deg')">Degradation</button>
+  </div>
+  <div class="content-area">
+
+    <!-- Motivation -->
+    <div class="subtab-panel" id="hist-mot">
+      <h1 class="family-title">Histogram & Binning Estimator</h1>
+      <div class="family-subtitle">Family 1 of 4 · Density estimation via grid discretization</div>
+      <p>Mutual information measures how much knowing one variable reduces uncertainty about another. The histogram estimator is the most direct translation of the definition into a computation: discretize both variables into bins, count co-occurrences, treat counts as probabilities, plug into the MI formula.</p>
+      <p>It is the right estimator to understand first because its failure modes are completely transparent — every limitation is visible in the formula itself. All subsequent families are motivated by trying to fix the specific things that go wrong here.</p>
+      <h2 class="section-head">The definition we are estimating</h2>
+      <div class="math">
+        <div class="lbl">Mutual information — definition</div>
+        <div class="expr"><span class="hi-a">I(X ; Y)</span> = Σ<sub>x,y</sub> P(x,y) · log [ P(x,y) / ( <span class="hi-c">P(x)</span> · <span class="hi-g">P(y)</span> ) ]</div>
+        <br>
+        <div class="cmt">// P(x,y) = joint distribution over both variables</div>
+        <div class="cmt">// P(x), P(y) = marginal distributions — what you'd get ignoring the other variable</div>
+        <div class="cmt">// The log ratio measures how much the joint differs from independence</div>
+        <div class="cmt">// When X ⊥ Y: P(x,y) = P(x)P(y), log ratio = 0, I = 0</div>
+        <div class="cmt">// When X = Y: I = H(X) — knowing Y tells you everything about X</div>
+      </div>
+      <p>The histogram estimator replaces the unknown distributions P(x,y), P(x), P(y) with empirical frequency counts from N samples.</p>
+      <div class="callout note">
+        <strong>What makes this hard</strong>
+        We never observe the true distributions — only N samples from them. Every estimate of P(x,y) is a ratio of counts, and ratios of counts have sampling noise. The core challenge is that this noise inflates the apparent MI even when the true MI is zero.
+      </div>
+    </div>
+
+    <!-- Mechanics -->
+    <div class="subtab-panel" id="hist-mech">
+      <h1 class="family-title">Histogram Mechanics</h1>
+      <div class="family-subtitle">Step-by-step construction of the estimator</div>
+
+      <div class="deriv-step">
+        <div class="step-num">①</div>
+        <div class="step-body">
+          <h3 class="sub-head">Discretize both variables</h3>
+          <p>Partition the range of X into B<sub>x</sub> equal-width bins and Y into B<sub>y</sub> bins. This creates a B<sub>x</sub> × B<sub>y</sub> grid of cells in the joint space.</p>
+          <div class="math">
+            <div class="expr">Bins: [a<sub>0</sub>, a<sub>1</sub>), [a<sub>1</sub>, a<sub>2</sub>), ..., [a<sub>B-1</sub>, a<sub>B</sub>]</div>
+            <div class="cmt">// Equal-width binning is the default but not the only choice</div>
+            <div class="cmt">// Equal-frequency (quantile) binning is often better behaved</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="deriv-step">
+        <div class="step-num">②</div>
+        <div class="step-body">
+          <h3 class="sub-head">Estimate joint and marginal probabilities</h3>
+          <p>For each cell (i,j) in the grid, count how many samples fall in it. Divide by N to get an estimated probability.</p>
+          <div class="math">
+            <div class="expr"><span class="hi-a">P̂(i,j)</span> = count(X ∈ bin_i AND Y ∈ bin_j) / N</div>
+            <div class="expr"><span class="hi-c">P̂(i)</span> = count(X ∈ bin_i) / N = Σ<sub>j</sub> P̂(i,j)</div>
+            <div class="expr"><span class="hi-g">P̂(j)</span> = count(Y ∈ bin_j) / N = Σ<sub>i</sub> P̂(i,j)</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="deriv-step">
+        <div class="step-num">③</div>
+        <div class="step-body">
+          <h3 class="sub-head">Plug into the MI formula</h3>
+          <div class="math">
+            <div class="expr"><span class="hi-a">Î(X ; Y)</span> = Σ<sub>i,j: P̂(i,j)>0</sub> <span class="hi-a">P̂(i,j)</span> · log [ <span class="hi-a">P̂(i,j)</span> / ( <span class="hi-c">P̂(i)</span> · <span class="hi-g">P̂(j)</span> ) ]</div>
+            <div class="cmt">// Only sum over non-empty cells (log 0 is undefined)</div>
+            <div class="cmt">// Use nats (log base e) or bits (log base 2) consistently</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="deriv-step">
+        <div class="step-num">④</div>
+        <div class="step-body">
+          <h3 class="sub-head">The bias — why the estimator is not the truth</h3>
+          <p>The expected value of Î is not I. Even for independent X and Y (true MI = 0), the estimator returns a positive value. The analytical bias is approximately:</p>
+          <div class="math">
+            <div class="expr">𝔼[<span class="hi-a">Î</span>] ≈ <span class="hi-a">I</span> + <span class="hi-r">(B<sub>x</sub> · B<sub>y</sub> − B<sub>x</sub> − B<sub>y</sub>) / (2N)</span></div>
+            <div class="cmt">// The red term is the bias — grows with bin count, shrinks with N</div>
+            <div class="cmt">// With 10×10 bins and N=500: bias ≈ (100-10-10)/(1000) = 0.08 nats</div>
+            <div class="cmt">// For comparison: I(X;Y) = 0.5 nats for Gaussian with ρ=0.7</div>
+            <div class="cmt">// Bias is 16% of the true MI — not negligible</div>
+          </div>
+          <p>The bias arises because count ratios are not unbiased probability estimates. Even if the true P(i,j) = P(i)·P(j) (independence), the ratio of noisy counts will deviate from 1, and its log will be non-zero on average.</p>
+        </div>
+      </div>
+
+      <div class="callout">
+        <strong>Miller-Madow correction</strong>
+        A common bias correction subtracts the estimated bias term: Î<sub>MM</sub> = Î − (number of non-empty cells − B<sub>x</sub> − B<sub>y</sub> + 1) / (2N). This helps but does not eliminate the bias, especially for small N or high B.
+      </div>
+    </div>
+
+    <!-- Worked Example -->
+    <div class="subtab-panel active" id="hist-ex">
+      <h1 class="family-title">Worked Example — Histogram</h1>
+      <div class="family-subtitle">Bivariate Gaussian · True MI computable analytically</div>
+
+      <p>We draw N samples from a bivariate Gaussian with correlation ρ. The true MI for this distribution is known analytically: I = −½ log(1 − ρ²). This lets us compare the estimator's output directly against the ground truth.</p>
+
+      <div class="interactive">
+        <div class="int-title">Histogram MI Estimator — live computation</div>
+        <div class="param-grid">
+          <div class="param-row">
+            <div class="param-label"><span>N — sample size</span><span class="pval" id="h-lbl-n">300</span></div>
+            <input type="range" id="h-sl-n" min="50" max="2000" step="50" value="300">
+          </div>
+          <div class="param-row">
+            <div class="param-label"><span>B — bins per dimension</span><span class="pval" id="h-lbl-b">8</span></div>
+            <input type="range" id="h-sl-b" min="2" max="30" step="1" value="8">
+          </div>
+          <div class="param-row">
+            <div class="param-label"><span>ρ — correlation</span><span class="pval" id="h-lbl-r">0.70</span></div>
+            <input type="range" id="h-sl-r" min="-0.95" max="0.95" step="0.05" value="0.70">
+          </div>
+          <div class="param-row">
+            <div class="param-label"><span>Mode</span><span class="pval" id="h-lbl-m">Continuous</span></div>
+            <input type="range" id="h-sl-m" min="0" max="1" step="1" value="0">
+          </div>
+        </div>
+        <div class="rdout-grid">
+          <div class="rdout"><div class="rdout-lbl">True MI</div><div class="rdout-val hi-g" id="h-true">—</div></div>
+          <div class="rdout"><div class="rdout-lbl">Estimated MI</div><div class="rdout-val hi-a" id="h-est">—</div></div>
+          <div class="rdout"><div class="rdout-lbl">Bias term</div><div class="rdout-val hi-r" id="h-bias">—</div></div>
+          <div class="rdout"><div class="rdout-lbl">Error</div><div class="rdout-val" id="h-err">—</div></div>
+        </div>
+        <div class="canvas-wrap"><canvas id="h-canvas" width="800" height="280"></canvas></div>
+        <div class="legend">
+          <div class="li"><div class="ldot" style="background:var(--cyan)"></div><span>Samples</span></div>
+          <div class="li"><div class="ldot" style="background:var(--amber)"></div><span>Bin grid (warm = high count)</span></div>
+          <div class="li"><div class="ldot" style="background:var(--green)"></div><span>True MI</span></div>
+          <div class="li"><div class="ldot" style="background:var(--red)"></div><span>Bias contribution</span></div>
+        </div>
+        <div id="h-discrete-note" style="display:none;margin-top:12px;padding:10px 14px;background:var(--purple-dim);border:1px solid var(--purple);border-radius:2px;font-family:var(--mono);font-size:11px;color:var(--purple);">
+          Mixed mode: Y discretized into 3 groups (low/mid/high). X remains continuous. The histogram now bins X continuously and uses Y groups directly. Watch how the grid degenerates.
+        </div>
+      </div>
+
+      <h3 class="sub-head">What to observe</h3>
+      <p>Move the bins slider up with N fixed and watch the bias term grow — the estimator reports more MI even though no new information exists. Move N up with bins fixed and watch the error shrink. This is the fundamental tradeoff.</p>
+      <p>Switch to mixed mode (slider to 1): Y becomes discrete (3 groups). The histogram handles this by treating each group as a bin. Note how the bias term changes — with discrete Y you have fewer effective cells in that dimension, so the bias from Y's contribution drops. But the joint cell count drops too, making each cell sparser.</p>
+    </div>
+
+    <!-- Degradation -->
+    <div class="subtab-panel" id="hist-deg">
+      <h1 class="family-title">Degradation Cases</h1>
+      <div class="family-subtitle">When and why the histogram estimator fails</div>
+
+      <h3 class="sub-head">Case 1 — Finite sample bias (always present)</h3>
+      <p>Even with independent X and Y, the estimator returns positive MI. Bias = (B_x · B_y − B_x − B_y) / 2N. With 10×10 bins and N=500 this is 0.08 nats — potentially larger than the true MI you are trying to measure.</p>
+      <div class="callout warn"><strong>Key point</strong>More bins is not always better. Adding bins without adding samples increases bias faster than it improves resolution.</div>
+
+      <h3 class="sub-head">Case 2 — Bin boundary arbitrariness</h3>
+      <p>The estimated MI depends on where bin boundaries fall. If the true density has mass concentrated near a boundary, small shifts produce large changes in cell counts. Two researchers with different bin placements will get different MI estimates from the same data. This is not a statistical noise problem — it is a structural sensitivity to an arbitrary choice.</p>
+
+      <h3 class="sub-head">Case 3 — Dimensionality collapse</h3>
+      <p>With d-dimensional X, you need B^d cells per variable. With B=2 and d=768 (a typical embedding dimension): 2^768 cells. With any finite sample, essentially all cells are empty. The estimator collapses to 0 or saturates based on the tiny fraction of occupied cells. This is not fixable with more data — it is a structural impossibility.</p>
+      <div class="math">
+        <div class="lbl">The curse — why it's catastrophic</div>
+        <div class="expr">Cells needed: B<sup>d</sup></div>
+        <div class="expr">Samples available: N</div>
+        <div class="expr">For meaningful estimation: N >> B<sup>d</sup></div>
+        <div class="cmt">// B=3, d=10: need N >> 59,049</div>
+        <div class="cmt">// B=2, d=20: need N >> 1,048,576</div>
+        <div class="cmt">// B=2, d=768: impossible regardless of N</div>
+      </div>
+
+      <h3 class="sub-head">Case 4 — Discrete-continuous mixing</h3>
+      <p>When one variable is discrete (like edge type τ) and one is continuous (like a query embedding q), the joint distribution has no density in the standard sense — it is a mixture of point masses and continuous densities. The histogram estimator's bin volume calculation assumes a density exists. Bin volume is undefined when the distribution is mixed, so the probability estimate count/(N·bin_volume) is undefined for the discrete dimension.</p>
+      <p>The practical fix — treating each discrete value as its own bin with unit volume — works but conflates cell sparsity from the continuous dimension with cell counts from the discrete dimension. The bias formula no longer applies cleanly.</p>
+
+      <div class="callout note">
+        <strong>When histogram estimation is appropriate</strong>
+        Both variables genuinely discrete and low-cardinality (fewer than ~20 values each). Large N relative to total cell count. Need a fast rough estimate, not a precise one. All continuous variables have been pre-discretized with principled bin placement. If these conditions are not met, KSG is a better starting point.
+      </div>
+    </div>
+
+  </div><!-- content-area -->
+</div><!-- fp-hist -->
+
+<!-- ══════════════ FAMILY 2: KSG ══════════════ -->
+<div class="family-panel" id="fp-ksg">
+  <div class="subtab-row">
+    <button type="button" class="subtab" onclick="showSub('ksg','mot')">Motivation</button>
+    <button type="button" class="subtab" onclick="showSub('ksg','mech')">Mechanics</button>
+    <button type="button" class="subtab active" onclick="showSub('ksg','ex')">Worked Example</button>
+    <button type="button" class="subtab" onclick="showSub('ksg','deg')">Degradation</button>
+  </div>
+  <div class="content-area">
+
+    <div class="subtab-panel" id="ksg-mot">
+      <h1 class="family-title">KNN / KSG Estimator</h1>
+      <div class="family-subtitle">Family 2 of 4 · Density estimation via nearest-neighbor geometry</div>
+      <p>The histogram estimator fails because it requires explicit density estimation on a fixed grid. KSG (Kraskov, Stögbauer, Grassberger 2004) avoids explicit density estimation entirely — instead of building a grid and counting cells, it uses the geometry of the sample itself to estimate local densities adaptively.</p>
+      <p>The core insight: the distance from a point to its k-th nearest neighbor encodes local density. In a high-density region, neighbors are close. In a sparse region, they are far. You can express MI directly in terms of these distances without ever fitting a density function.</p>
+      <div class="callout note">
+        <strong>Why this fixes the histogram problems</strong>
+        No bin boundaries — resolution adapts to local data density. Bias is O(1/N) rather than O(B²/N). Works in moderate-to-high dimensions. Has a principled extension to discrete-continuous mixing (Ross 2014).
+      </div>
+    </div>
+
+    <div class="subtab-panel" id="ksg-mech">
+      <h1 class="family-title">KSG Mechanics</h1>
+      <div class="family-subtitle">The digamma derivation — why each term is what it is</div>
+
+      <p>Before the formula, we need to understand what the digamma function is and why it appears.</p>
+
+      <h3 class="sub-head">The digamma function</h3>
+      <div class="math">
+        <div class="lbl">Digamma ψ — definition and key values</div>
+        <div class="expr"><span class="hi-a">ψ(n)</span> = d/dn ln Γ(n) = −γ + Σ<sub>k=1</sub><sup>n-1</sup> 1/k &nbsp;&nbsp; (for positive integers)</div>
+        <br>
+        <div class="expr">ψ(1) = −γ ≈ −0.5772</div>
+        <div class="expr">ψ(2) = 1 − γ ≈ 0.4228</div>
+        <div class="expr">ψ(n+1) = ψ(n) + 1/n &nbsp;&nbsp; (recurrence relation)</div>
+        <br>
+        <div class="cmt">// γ ≈ 0.5772 is the Euler-Mascheroni constant</div>
+        <div class="cmt">// ψ(n) ≈ log(n) − 1/(2n) for large n</div>
+        <div class="cmt">// Key use: 𝔼[log X] = ψ(k) when X ~ Gamma(k,1)</div>
+      </div>
+
+      <p>The digamma appears because we are taking expected values of logarithms of neighbor counts. If the number of points in a neighborhood follows a Poisson distribution with mean λ, then 𝔼[log(count)] = ψ(λ). This is why ψ(k) appears for the joint-space neighbor count and ψ(n_x + 1) appears for the marginal-space neighbor counts — we are computing expected log counts in different spaces.</p>
+
+      <h3 class="sub-head">Step-by-step derivation</h3>
+
+      <div class="deriv-step">
+        <div class="step-num">①</div>
+        <div class="step-body">
+          <h3 class="sub-head">Find the k-th neighbor in joint space</h3>
+          <p>For each sample point (x_i, y_i), find its k-th nearest neighbor in the joint (X, Y) space using Chebyshev distance: d_∞((x,y),(x',y')) = max(|x−x'|, |y−y'|). Call this distance ε_i.</p>
+          <p>Why Chebyshev? It defines a hypercube neighborhood rather than a hypersphere, which simplifies the marginal counting in Step 2 — the projection of a Chebyshev ball onto a marginal axis is exactly the interval [x_i − ε_i/2, x_i + ε_i/2].</p>
+          <div class="math">
+            <div class="expr">ε_i = d<sub>∞</sub>((x_i, y_i), k-th nearest neighbor)</div>
+            <div class="cmt">// This radius defines a neighborhood of fixed cardinality (exactly k points)</div>
+            <div class="cmt">// In high-density regions: ε_i is small</div>
+            <div class="cmt">// In sparse regions: ε_i is large</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="deriv-step">
+        <div class="step-num">②</div>
+        <div class="step-body">
+          <h3 class="sub-head">Count neighbors in marginal spaces</h3>
+          <p>Project the neighborhood radius ε_i onto each marginal axis separately and count how many points fall within that radius in each marginal.</p>
+          <div class="math">
+            <div class="expr"><span class="hi-c">n_x(i)</span> = #{j ≠ i : |x_j − x_i| ≤ ε_i/2}</div>
+            <div class="expr"><span class="hi-g">n_y(i)</span> = #{j ≠ i : |y_j − y_i| ≤ ε_i/2}</div>
+            <br>
+            <div class="cmt">// n_x(i) counts marginal X neighbors within the same radius</div>
+            <div class="cmt">// If X and Y are independent: n_x ≈ n_y ≈ k on average (same density)</div>
+            <div class="cmt">// If X and Y are dependent: n_x or n_y will be larger than k</div>
+            <div class="cmt">// because marginal density is higher when you ignore the joint structure</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="deriv-step">
+        <div class="step-num">③</div>
+        <div class="step-body">
+          <h3 class="sub-head">The KSG formula and why it measures MI</h3>
+          <div class="math">
+            <div class="lbl">KSG estimator (version 1)</div>
+            <div class="expr"><span class="hi-a">Î(X;Y)</span> = <span class="hi-a">ψ(k)</span> − ⟨ <span class="hi-c">ψ(n_x + 1)</span> + <span class="hi-g">ψ(n_y + 1)</span> ⟩ + <span class="hi-p">ψ(N)</span></div>
+            <br>
+            <div class="cmt">// ψ(k): expected log of joint-space neighbor count — fixed at k by construction</div>
+            <div class="cmt">// ψ(n_x+1): expected log of marginal X neighbor count — varies per point</div>
+            <div class="cmt">// ψ(n_y+1): expected log of marginal Y neighbor count — varies per point</div>
+            <div class="cmt">// ψ(N): normalizing term for total sample size</div>
+            <div class="cmt">// ⟨·⟩ denotes average over all N sample points</div>
+          </div>
+          <p>The structure mirrors the MI definition: log P(x,y) − log P(x) − log P(y). Each ψ term is the log density in the respective space, estimated via neighbor counts. When X and Y are independent, n_x and n_y are approximately k on average, so ψ(n_x+1) + ψ(n_y+1) ≈ 2ψ(k+1) ≈ 2ψ(k), and the formula returns approximately zero.</p>
+          <p>When X and Y are dependent, the joint space is more concentrated — the k-th neighbor is at ε_i — but the marginal spaces are more spread out, so n_x and n_y &lt; k on average. The ψ(n_x+1) + ψ(n_y+1) terms decrease, the formula returns a positive value.</p>
+        </div>
+      </div>
+
+      <div class="deriv-step">
+        <div class="step-num">④</div>
+        <div class="step-body">
+          <h3 class="sub-head">The Ross extension — discrete-continuous mixing</h3>
+          <p>When one variable τ is discrete, its marginal distribution has point masses rather than a density. The standard KSG marginal neighbor count breaks down because all points with τ = τ_i are at distance 0 in the τ dimension.</p>
+          <div class="math">
+            <div class="lbl">Ross (2014) modification for mixed I(X; τ)</div>
+            <div class="expr"><span class="hi-a">Î(X ; τ)</span> = <span class="hi-p">ψ(N)</span> − <span class="hi-r">⟨ψ(N<sub>τ</sub>)⟩</span> + <span class="hi-a">ψ(k)</span> − <span class="hi-c">⟨ψ(m_x + 1)⟩</span></div>
+            <br>
+            <div class="cmt">// N_τ: number of samples with the same τ value as point i</div>
+            <div class="cmt">// m_x: number of X-marginal neighbors within ε_i (continuous dimension only)</div>
+            <div class="cmt">// ψ(N) − ψ(N_τ): contribution from the discrete variable</div>
+            <div class="cmt">// ψ(k) − ψ(m_x+1): contribution from the continuous variable</div>
+            <div class="cmt">// When τ has many values: N_τ is small, ψ(N)−ψ(N_τ) is large</div>
+            <div class="cmt">// When τ is nearly constant: N_τ ≈ N, contribution ≈ 0</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="subtab-panel active" id="ksg-ex">
+      <h1 class="family-title">Worked Example — KSG</h1>
+      <div class="family-subtitle">Bivariate Gaussian + discrete mixing · Live k-NN computation</div>
+
+      <p>Same bivariate Gaussian as the histogram example. K-NN search runs on the actual samples. Observe how the estimator converges to the true MI as N grows, and how choice of k affects variance.</p>
+
+      <div class="interactive">
+        <div class="int-title">KSG Estimator — live k-NN computation</div>
+        <div class="param-grid">
+          <div class="param-row">
+            <div class="param-label"><span>N — sample size</span><span class="pval" id="k-lbl-n">200</span></div>
+            <input type="range" id="k-sl-n" min="30" max="800" step="10" value="200">
+          </div>
+          <div class="param-row">
+            <div class="param-label"><span>k — nearest neighbors</span><span class="pval" id="k-lbl-k">5</span></div>
+            <input type="range" id="k-sl-k" min="1" max="20" step="1" value="5">
+          </div>
+          <div class="param-row">
+            <div class="param-label"><span>ρ — correlation</span><span class="pval" id="k-lbl-r">0.70</span></div>
+            <input type="range" id="k-sl-r" min="-0.95" max="0.95" step="0.05" value="0.70">
+          </div>
+          <div class="param-row">
+            <div class="param-label"><span>Mode</span><span class="pval" id="k-lbl-m">Continuous</span></div>
+            <input type="range" id="k-sl-m" min="0" max="1" step="1" value="0">
+          </div>
+        </div>
+        <div class="rdout-grid">
+          <div class="rdout"><div class="rdout-lbl">True MI</div><div class="rdout-val hi-g" id="k-true">—</div></div>
+          <div class="rdout"><div class="rdout-lbl">KSG Estimate</div><div class="rdout-val hi-a" id="k-est">—</div></div>
+          <div class="rdout"><div class="rdout-lbl">Avg ε (radius)</div><div class="rdout-val hi-c" id="k-eps">—</div></div>
+          <div class="rdout"><div class="rdout-lbl">Estimator</div><div class="rdout-val" id="k-mode" style="font-size:11px;color:var(--text-dim)">KSG</div></div>
+        </div>
+        <div class="canvas-wrap"><canvas id="k-canvas" width="800" height="280"></canvas></div>
+        <div class="legend">
+          <div class="li"><div class="ldot" style="background:var(--cyan)"></div><span>Samples</span></div>
+          <div class="li"><div class="ldot" style="background:var(--amber);opacity:.4"></div><span>k-NN radius (selected point)</span></div>
+          <div class="li"><div class="ldot" style="background:var(--red)"></div><span>k-th neighbor</span></div>
+        </div>
+        <p style="margin-top:12px;font-size:12px;color:var(--text-dim)">Click any sample point to see its k-NN neighborhood radius and marginal projections. In mixed mode (slider to 1), Y becomes discrete and Ross extension is used.</p>
+      </div>
+    </div>
+
+    <div class="subtab-panel" id="ksg-deg">
+      <h1 class="family-title">KSG Degradation Cases</h1>
+      <div class="family-subtitle">When and why the KNN approach fails</div>
+
+      <h3 class="sub-head">Case 1 — Small N relative to dimension</h3>
+      <p>KSG requires enough samples that each point's k-NN neighborhood contains a reliable local density estimate. When N is small relative to d, neighborhoods span large regions of the space — the k-th neighbor is far away — and the local density approximation breaks down. The estimator becomes high-variance rather than biased. Rule of thumb: N &gt;&gt; d for reliable estimates.</p>
+
+      <h3 class="sub-head">Case 2 — Manifold structure</h3>
+      <p>KSG assumes samples are drawn from a distribution with support in the full ambient space. When data lies on a lower-dimensional manifold — typical for neural embeddings — Euclidean distance in the ambient space is a poor proxy for intrinsic geometry. Points far in ambient space may be close on the manifold. The solution: use a metric that respects manifold structure (cosine similarity, geodesic distance) rather than Euclidean distance.</p>
+
+      <h3 class="sub-head">Case 3 — Rare discrete values</h3>
+      <p>The Ross extension requires enough samples per discrete value to estimate the continuous MI within each stratum. For rare edge types (few traversals of type τ = 'contrasts-with'), N_τ is small, and ψ(N_τ) has high variance. The per-stratum MI estimate is unreliable even when the total N is large.</p>
+      <div class="math">
+        <div class="lbl">Minimum samples per discrete stratum</div>
+        <div class="expr">N<sub>τ</sub> &gt;&gt; d<sub>continuous</sub> · k</div>
+        <div class="cmt">// For 768-dimensional embeddings and k=5: need N_τ >> 3840</div>
+        <div class="cmt">// Rare edge types will not have this in early system phases</div>
+      </div>
+
+      <h3 class="sub-head">Case 4 — Latency at inference time</h3>
+      <p>KSG requires O(N log N) neighbor search for each query. For offline Reliability(τ) estimation this is acceptable. For online ΔCoverage ranking at inference time, it is not — neighbor search over a large concept graph at query time is too slow. A fast proxy (cosine similarity between embeddings) is needed for the online case, with KSG used offline to calibrate that proxy.</p>
+
+      <div class="callout note">
+        <strong>For our setting</strong>
+        KSG with Ross extension is the right estimator for offline Reliability(τ) computation from traversal logs, provided we have sufficient samples per edge type. Online ΔCoverage estimation requires a faster proxy — likely cosine similarity between query and candidate node embeddings, calibrated against KSG estimates on held-out data.
+      </div>
+    </div>
+
+  </div>
+</div><!-- fp-ksg -->
+
+<!-- ══════════════ FAMILY 3: MINE ══════════════ -->
+<div class="family-panel" id="fp-mine">
+  <div class="subtab-row">
+    <button type="button" class="subtab" onclick="showSub('mine','mot')">Motivation</button>
+    <button type="button" class="subtab" onclick="showSub('mine','mech')">Mechanics</button>
+    <button type="button" class="subtab active" onclick="showSub('mine','ex')">Worked Example</button>
+    <button type="button" class="subtab" onclick="showSub('mine','deg')">Degradation</button>
+  </div>
+  <div class="content-area">
+
+    <div class="subtab-panel" id="mine-mot">
+      <h1 class="family-title">Neural MI Estimation (MINE)</h1>
+      <div class="family-subtitle">Family 3 of 4 · Variational lower bound via learned critic network</div>
+      <p>Both histogram and KSG estimators require explicitly constructing neighborhoods or grids in the sample space. Neural estimators take a different route: they turn MI estimation into an optimization problem, training a neural network to distinguish joint samples from product-of-marginals samples.</p>
+      <p>MINE (Mutual Information Neural Estimation, Belghazi et al. 2018) uses the Donsker-Varadhan (DV) representation of KL divergence to express MI as the solution to a variational optimization:</p>
+      <div class="math">
+        <div class="lbl">Donsker-Varadhan representation</div>
+        <div class="expr"><span class="hi-a">I(X;Y)</span> = D<sub>KL</sub>(P(X,Y) ‖ P(X)⊗P(Y))</div>
+        <div class="expr">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;= sup<sub>T: Ω → ℝ</sub> { 𝔼<sub>P(X,Y)</sub>[T(x,y)] − log 𝔼<sub>P(X)⊗P(Y)</sub>[e<sup>T(x,y)</sup>] }</div>
+        <br>
+        <div class="cmt">// T is any measurable function (the "critic")</div>
+        <div class="cmt">// The supremum is achieved when T*(x,y) = log P(x,y)/P(x)P(y) + const</div>
+        <div class="cmt">// We parameterize T as a neural network and optimize</div>
+      </div>
+      <p>The key advantage: no density estimation, no neighbor search, scales to very high dimensions, handles complex distributions that KSG cannot. The cost: requires training a neural network, which introduces variance and computational overhead.</p>
+    </div>
+
+    <div class="subtab-panel" id="mine-mech">
+      <h1 class="family-title">MINE Mechanics</h1>
+      <div class="family-subtitle">The variational formulation and training procedure</div>
+
+      <div class="deriv-step">
+        <div class="step-num">①</div>
+        <div class="step-body">
+          <h3 class="sub-head">Parameterize the critic</h3>
+          <p>Replace T with a neural network T_θ with parameters θ. The network takes a pair (x, y) as input and outputs a scalar.</p>
+          <div class="math">
+            <div class="expr">T<sub>θ</sub> : (x, y) → ℝ</div>
+            <div class="cmt">// Architecture: MLP with ReLU activations, output is unbounded scalar</div>
+            <div class="cmt">// The optimal T* separates joint from product-of-marginals samples</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="deriv-step">
+        <div class="step-num">②</div>
+        <div class="step-body">
+          <h3 class="sub-head">Sample joint and marginal pairs</h3>
+          <p>From N samples {(x_i, y_i)}, construct two batches per training step:</p>
+          <div class="math">
+            <div class="expr"><span class="hi-g">Joint pairs</span>: (x_i, y_i) ~ P(X,Y) — real co-occurring pairs</div>
+            <div class="expr"><span class="hi-r">Marginal pairs</span>: (x_i, y_j), i≠j ~ P(X)⊗P(Y) — shuffled, breaking dependence</div>
+            <div class="cmt">// Shuffling Y independently of X creates samples from the product distribution</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="deriv-step">
+        <div class="step-num">③</div>
+        <div class="step-body">
+          <h3 class="sub-head">The MINE objective</h3>
+          <div class="math">
+            <div class="lbl">MINE loss (maximize over θ)</div>
+            <div class="expr"><span class="hi-a">Î<sub>θ</sub>(X;Y)</span> = 𝔼<sub>joint</sub>[T<sub>θ</sub>(x,y)] − log 𝔼<sub>marginal</sub>[e<sup>T<sub>θ</sub>(x,y)</sup>]</div>
+            <br>
+            <div class="cmt">// First term: mean critic score on joint pairs — push up</div>
+            <div class="cmt">// Second term: log mean exp on marginal pairs — push down</div>
+            <div class="cmt">// Maximizing the gap trains T_θ to separate joint from marginal</div>
+            <div class="cmt">// At optimum: T_θ*(x,y) ≈ log P(x,y)/P(x)P(y)</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="deriv-step">
+        <div class="step-num">④</div>
+        <div class="step-body">
+          <h3 class="sub-head">The variance problem and exponential moving average fix</h3>
+          <p>The log 𝔼[e^T] term has high variance because exponentiation amplifies outliers. The gradient of this term is:</p>
+          <div class="math">
+            <div class="expr">∇<sub>θ</sub> log 𝔼[e<sup>T</sup>] = 𝔼[e<sup>T</sup> · ∇<sub>θ</sub>T] / 𝔼[e<sup>T</sup>]</div>
+            <div class="cmt">// The numerator is weighted by e^T — large T values dominate</div>
+            <div class="cmt">// A single outlier with large T_θ can make the gradient explode</div>
+          </div>
+          <p>MINE's fix: use an exponential moving average (EMA) of 𝔼[e^T] in the denominator rather than the batch estimate. This reduces variance at the cost of introducing a small bias proportional to the EMA decay rate.</p>
+          <div class="math">
+            <div class="lbl">EMA stabilization</div>
+            <div class="expr">Ê<sub>t</sub>[e<sup>T</sup>] = α · Ê<sub>t-1</sub>[e<sup>T</sup>] + (1−α) · batch estimate</div>
+            <div class="cmt">// α close to 1: stable but biased (slow to track distribution shifts)</div>
+            <div class="cmt">// α close to 0: unbiased but high variance</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="subtab-panel active" id="mine-ex">
+      <h1 class="family-title">Worked Example — MINE</h1>
+      <div class="family-subtitle">Training dynamics · Watch MI estimate converge (and oscillate)</div>
+
+      <p>We simulate MINE training on the same bivariate Gaussian. The estimator is updated each step using a mini-batch. Watch how the estimate oscillates early in training, converges, and how the variance and EMA smoothing parameter interact.</p>
+
+      <div class="interactive">
+        <div class="int-title">MINE Training Dynamics — simulated</div>
+        <div class="param-grid">
+          <div class="param-row">
+            <div class="param-label"><span>ρ — correlation</span><span class="pval" id="m-lbl-r">0.70</span></div>
+            <input type="range" id="m-sl-r" min="0.10" max="0.95" step="0.05" value="0.70">
+          </div>
+          <div class="param-row">
+            <div class="param-label"><span>Batch size</span><span class="pval" id="m-lbl-b">64</span></div>
+            <input type="range" id="m-sl-b" min="16" max="512" step="16" value="64">
+          </div>
+          <div class="param-row">
+            <div class="param-label"><span>EMA α</span><span class="pval" id="m-lbl-a">0.90</span></div>
+            <input type="range" id="m-sl-a" min="0.50" max="0.99" step="0.01" value="0.90">
+          </div>
+          <div class="param-row">
+            <div class="param-label"><span>Mode</span><span class="pval" id="m-lbl-m">Continuous</span></div>
+            <input type="range" id="m-sl-m" min="0" max="1" step="1" value="0">
+          </div>
+        </div>
+        <div class="rdout-grid">
+          <div class="rdout"><div class="rdout-lbl">True MI</div><div class="rdout-val hi-g" id="m-true">—</div></div>
+          <div class="rdout"><div class="rdout-lbl">Current estimate</div><div class="rdout-val hi-a" id="m-est">—</div></div>
+          <div class="rdout"><div class="rdout-lbl">Training step</div><div class="rdout-val hi-c" id="m-step">—</div></div>
+          <div class="rdout"><div class="rdout-lbl">Running variance</div><div class="rdout-val hi-r" id="m-var">—</div></div>
+        </div>
+        <div class="canvas-wrap"><canvas id="m-canvas" width="800" height="220"></canvas></div>
+        <div style="display:flex;gap:10px;margin-top:12px;flex-wrap:wrap;">
+          <button type="button" onclick="mineRun()" style="font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;padding:8px 16px;background:var(--amber-dim);border:1px solid var(--amber);color:var(--amber);border-radius:2px;cursor:pointer;">▶ Run Training</button>
+          <button type="button" onclick="mineReset()" style="font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;padding:8px 16px;background:var(--bg3);border:1px solid var(--border2);color:var(--text-dim);border-radius:2px;cursor:pointer;">↺ Reset</button>
+        </div>
+        <div class="legend" style="margin-top:10px;">
+          <div class="li"><div class="ldot" style="background:var(--amber)"></div><span>MINE estimate per step</span></div>
+          <div class="li"><div class="ldot" style="background:var(--green)"></div><span>True MI</span></div>
+          <div class="li"><div class="ldot" style="background:var(--cyan)"></div><span>EMA-smoothed estimate</span></div>
+        </div>
+        <p style="margin-top:10px;font-size:12px;color:var(--text-dim)">Observe: early steps show high variance oscillation. Small batch = more variance. High α EMA = smoother but slower to converge. In mixed mode, Y is discrete — critic must learn to separate joint from marginal across discrete strata.</p>
+      </div>
+    </div>
+
+    <div class="subtab-panel" id="mine-deg">
+      <h1 class="family-title">MINE Degradation Cases</h1>
+      <div class="family-subtitle">When and why neural estimation fails</div>
+
+      <h3 class="sub-head">Case 1 — High variance (the fundamental problem)</h3>
+      <p>MINE is asymptotically unbiased but has notoriously high variance. The log 𝔼[e^T] term amplifies any T value that's large — a single training step with a few high-T marginal samples can produce a wildly wrong gradient. This is not eliminated by EMA, only dampened.</p>
+
+      <h3 class="sub-head">Case 2 — Underestimation at high MI</h3>
+      <p>When the true MI is large, the optimal T*(x,y) = log P(x,y)/P(x)P(y) takes on large values. The exponential in 𝔼[e^T] becomes dominated by extreme samples, making the denominator hard to estimate. MINE systematically underestimates MI in high-dependency regimes. Alternative estimators (NWJ/f-GAN, CPC) behave differently in this regime.</p>
+
+      <h3 class="sub-head">Case 3 — Requires sufficient training data</h3>
+      <p>Unlike KSG which can work with N=30, MINE needs enough data to train the critic network reliably. The critic has its own capacity and generalization properties — with small N it memorizes the batch rather than learning the density ratio. Typical minimum: N in the hundreds to thousands depending on dimension.</p>
+
+      <h3 class="sub-head">Case 4 — Discrete-continuous mixing requires architecture choice</h3>
+      <p>The critic T_θ(x, τ) must accept both continuous x and discrete τ. Standard approaches: embed τ as a learned embedding vector (treat it like a token), concatenate with x, pass through MLP. This works but the critic must learn the embedding jointly with the MI estimation, adding degrees of freedom and increasing training instability for rare τ values.</p>
+
+      <div class="callout note">
+        <strong>When neural estimation is appropriate</strong>
+        Very high-dimensional continuous data where KSG is intractable. Complex non-Gaussian distributions. Large N available for training. Offline estimation where training cost is acceptable. For our Reliability(τ) use case with embedding-space queries and nodes: MINE is the natural choice if KSG neighbor search is too slow, but requires substantial traversal data per edge type.
+      </div>
+    </div>
+
+  </div>
+</div><!-- fp-mine -->
+
+<!-- ══════════════ FAMILY 4: KERNEL ══════════════ -->
+<div class="family-panel" id="fp-kern">
+  <div class="subtab-row">
+    <button type="button" class="subtab" onclick="showSub('kern','mot')">Motivation</button>
+    <button type="button" class="subtab" onclick="showSub('kern','mech')">Mechanics</button>
+    <button type="button" class="subtab active" onclick="showSub('kern','ex')">Worked Example</button>
+    <button type="button" class="subtab" onclick="showSub('kern','deg')">Degradation</button>
+  </div>
+  <div class="content-area">
+
+    <div class="subtab-panel" id="kern-mot">
+      <h1 class="family-title">Kernel & Copula Estimators</h1>
+      <div class="family-subtitle">Family 4 of 4 · Smooth density estimation via bandwidth-controlled kernels</div>
+      <p>Kernel density estimation (KDE) takes a middle path between histograms (fixed grids) and KSG (pure geometry). Instead of assigning probability mass to bins, it places a smooth kernel function — typically Gaussian — at each sample point and sums these kernels to get a smooth density estimate.</p>
+      <div class="math">
+        <div class="lbl">Kernel density estimate</div>
+        <div class="expr"><span class="hi-a">p̂_h(x)</span> = (1/N) · Σ<sub>i=1</sub><sup>N</sup> K<sub>h</sub>(x − x_i)</div>
+        <div class="expr">K<sub>h</sub>(u) = (1/h) · K(u/h) &nbsp;&nbsp; where K is the kernel (e.g. Gaussian)</div>
+        <br>
+        <div class="cmt">// h is the bandwidth — controls smoothness</div>
+        <div class="cmt">// Small h: spiky estimate, captures local structure, high variance</div>
+        <div class="cmt">// Large h: smooth estimate, misses structure, high bias</div>
+      </div>
+      <p>The copula approach separates the problem differently: model the marginal distributions independently, then model only the dependence structure (the copula) between the probability-integral-transformed variables. This is particularly useful when marginals are complex but the dependence structure is tractable.</p>
+    </div>
+
+    <div class="subtab-panel" id="kern-mech">
+      <h1 class="family-title">Kernel & Copula Mechanics</h1>
+
+      <h3 class="sub-head">KDE-based MI estimation</h3>
+      <div class="deriv-step">
+        <div class="step-num">①</div>
+        <div class="step-body">
+          <p>Estimate the joint density p̂(x,y) using a multivariate kernel over the joint space. Estimate marginals p̂(x), p̂(y) using univariate kernels.</p>
+          <div class="math">
+            <div class="expr"><span class="hi-a">p̂(x,y)</span> = (1/N) · Σ<sub>i</sub> K<sub>H</sub>(x−x_i, y−y_i)</div>
+            <div class="expr"><span class="hi-c">p̂(x)</span> = (1/N) · Σ<sub>i</sub> K<sub>h_x</sub>(x−x_i)</div>
+            <div class="expr"><span class="hi-g">p̂(y)</span> = (1/N) · Σ<sub>i</sub> K<sub>h_y</sub>(y−y_i)</div>
+          </div>
+        </div>
+      </div>
+      <div class="deriv-step">
+        <div class="step-num">②</div>
+        <div class="step-body">
+          <p>Plug into MI formula, integrating over the continuous space:</p>
+          <div class="math">
+            <div class="expr"><span class="hi-a">Î(X;Y)</span> = ∫∫ <span class="hi-a">p̂(x,y)</span> · log [ <span class="hi-a">p̂(x,y)</span> / (<span class="hi-c">p̂(x)</span>·<span class="hi-g">p̂(y)</span>) ] dx dy</div>
+            <div class="cmt">// The integral is approximated by Monte Carlo using the sample points</div>
+          </div>
+        </div>
+      </div>
+
+      <h3 class="sub-head">Copula approach</h3>
+      <div class="deriv-step">
+        <div class="step-num">③</div>
+        <div class="step-body">
+          <p>Transform each variable to uniform marginals using the probability integral transform: U = F_X(X), V = F_Y(Y). The copula C(u,v) = P(U≤u, V≤v) captures the pure dependence structure.</p>
+          <div class="math">
+            <div class="expr">I(X;Y) = I(U;V) = ∫∫ c(u,v) · log c(u,v) du dv</div>
+            <div class="cmt">// c(u,v) = ∂²C/∂u∂v is the copula density</div>
+            <div class="cmt">// Working on [0,1]² removes marginal complexity</div>
+            <div class="cmt">// Standard copulas (Gaussian, Clayton, Frank) can be fit parametrically</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="callout">
+        <strong>Bandwidth selection — the key decision</strong>
+        The optimal bandwidth h* minimizes mean integrated squared error. For Gaussian kernels and Gaussian data: h* ∝ N^(−1/(d+4)). This is Silverman's rule. It assumes the data is roughly Gaussian — for multimodal or heavy-tailed distributions it oversmooths. Cross-validation is more robust but more expensive.
+      </div>
+    </div>
+
+    <div class="subtab-panel active" id="kern-ex">
+      <h1 class="family-title">Worked Example — Kernel / Copula</h1>
+      <div class="family-subtitle">Bandwidth sensitivity · Bias-variance tradeoff made visible</div>
+
+      <div class="interactive">
+        <div class="int-title">KDE MI Estimator — bandwidth sensitivity</div>
+        <div class="param-grid">
+          <div class="param-row">
+            <div class="param-label"><span>N — sample size</span><span class="pval" id="kn-lbl-n">300</span></div>
+            <input type="range" id="kn-sl-n" min="50" max="1000" step="50" value="300">
+          </div>
+          <div class="param-row">
+            <div class="param-label"><span>h — bandwidth (× Silverman)</span><span class="pval" id="kn-lbl-h">1.0×</span></div>
+            <input type="range" id="kn-sl-h" min="0.2" max="4.0" step="0.1" value="1.0">
+          </div>
+          <div class="param-row">
+            <div class="param-label"><span>ρ — correlation</span><span class="pval" id="kn-lbl-r">0.70</span></div>
+            <input type="range" id="kn-sl-r" min="-0.95" max="0.95" step="0.05" value="0.70">
+          </div>
+          <div class="param-row">
+            <div class="param-label"><span>Mode</span><span class="pval" id="kn-lbl-m">Continuous</span></div>
+            <input type="range" id="kn-sl-m" min="0" max="1" step="1" value="0">
+          </div>
+        </div>
+        <div class="rdout-grid">
+          <div class="rdout"><div class="rdout-lbl">True MI</div><div class="rdout-val hi-g" id="kn-true">—</div></div>
+          <div class="rdout"><div class="rdout-lbl">KDE Estimate</div><div class="rdout-val hi-a" id="kn-est">—</div></div>
+          <div class="rdout"><div class="rdout-lbl">Silverman h</div><div class="rdout-val hi-c" id="kn-sil">—</div></div>
+          <div class="rdout"><div class="rdout-lbl">Bias direction</div><div class="rdout-val" id="kn-bias" style="font-size:12px">—</div></div>
+        </div>
+        <div class="canvas-wrap"><canvas id="kn-canvas" width="800" height="220"></canvas></div>
+        <div class="legend">
+          <div class="li"><div class="ldot" style="background:var(--cyan)"></div><span>Samples</span></div>
+          <div class="li"><div class="ldot" style="background:var(--amber);opacity:.6"></div><span>KDE density contours</span></div>
+        </div>
+        <p style="margin-top:10px;font-size:12px;color:var(--text-dim)">Move bandwidth below Silverman's rule: spiky density, overfit, underestimates MI. Above: oversmoothed, misses structure, overestimates MI. The bandwidth chart (right panel) shows estimated MI as h varies.</p>
+      </div>
+    </div>
+
+    <div class="subtab-panel" id="kern-deg">
+      <h1 class="family-title">Kernel Degradation Cases</h1>
+
+      <h3 class="sub-head">Case 1 — Bandwidth sensitivity</h3>
+      <p>The MI estimate is sensitive to bandwidth choice. Undersmoothing (h too small) produces a spiky density that overfits the sample — the joint density appears more concentrated than it is, underestimating MI. Oversmoothing (h too large) blurs out the dependence structure, overestimating MI by failing to separate the joint from the product of marginals.</p>
+
+      <h3 class="sub-head">Case 2 — Dimensionality (same curse as histogram)</h3>
+      <p>The optimal bandwidth scales as N^(−1/(d+4)). For d=768: h* ∝ N^(−1/772) ≈ 1 for any N less than astronomical. Kernel density estimation in high dimensions requires N exponential in d to achieve meaningful density estimates. Same fundamental issue as histograms, slightly more graceful.</p>
+
+      <h3 class="sub-head">Case 3 — Copula: marginal estimation error</h3>
+      <p>The copula approach requires accurate estimation of F_X and F_Y to perform the probability integral transform. If the marginal CDF is estimated poorly (small N, or complex multimodal distribution), the transformed variables U and V are not uniform, corrupting the copula density estimate. The copula and marginal estimation errors do not cancel.</p>
+
+      <h3 class="sub-head">Case 4 — Mixed discrete-continuous</h3>
+      <p>KDE for mixed variables requires mixed kernels — continuous kernels for continuous dimensions, discrete kernels (Aitchison-Aitken) for discrete dimensions. The bandwidth for the discrete dimension controls smoothing across discrete values, which is conceptually different from bandwidth in continuous space. The two bandwidth parameters interact and are hard to tune jointly.</p>
+
+      <div class="callout note">
+        <strong>When kernel estimation is appropriate</strong>
+        Low-to-moderate dimension (d ≤ 5 or so). Sufficient N for bandwidth selection to work. When marginals are known or easily estimated (copula approach). When you need a smooth, differentiable density estimate rather than a point estimate of MI. For our setting: not competitive with KSG in most scenarios, but useful as a cross-check for 1D or 2D marginal MI estimates.
+      </div>
+    </div>
+
+  </div>
+</div><!-- fp-kern -->
+
+<!-- ══════════════ SYNTHESIS ══════════════ -->
+<div class="family-panel" id="fp-synth">
+  <div class="subtab-row">
+    <button type="button" class="subtab active" onclick="showSub('synth','comp')">Comparison</button>
+    <button type="button" class="subtab" onclick="showSub('synth','dec')">Decision Guide</button>
+    <button type="button" class="subtab" onclick="showSub('synth','pkis')">PKIS Application</button>
+  </div>
+  <div class="content-area">
+
+    <div class="subtab-panel active" id="synth-comp">
+      <h1 class="family-title">Synthesis — Comparative View</h1>
+      <div class="family-subtitle">All four families across the dimensions that matter</div>
+
+      <table class="comp-table">
+        <tr>
+          <th>Estimator</th><th>Bias</th><th>Variance</th><th>High-d</th><th>Mixed (disc+cont)</th><th>Sample requirement</th><th>Online use</th>
+        </tr>
+        <tr>
+          <td>Histogram</td>
+          <td><span class="tag tag-r">O(B²/N)</span></td>
+          <td><span class="tag tag-g">Low</span></td>
+          <td><span class="tag tag-r">Catastrophic</span></td>
+          <td><span class="tag tag-a">Partial</span></td>
+          <td>Low (but bins explode)</td>
+          <td><span class="tag tag-g">Fast</span></td>
+        </tr>
+        <tr>
+          <td>KSG</td>
+          <td><span class="tag tag-g">O(1/N)</span></td>
+          <td><span class="tag tag-a">Moderate</span></td>
+          <td><span class="tag tag-a">Moderate (~50d)</span></td>
+          <td><span class="tag tag-g">Yes (Ross)</span></td>
+          <td>Moderate (N >> d·k)</td>
+          <td><span class="tag tag-r">O(N log N)</span></td>
+        </tr>
+        <tr>
+          <td>MINE</td>
+          <td><span class="tag tag-g">Asymptotically 0</span></td>
+          <td><span class="tag tag-r">High</span></td>
+          <td><span class="tag tag-g">Scales well</span></td>
+          <td><span class="tag tag-a">With embedding</span></td>
+          <td>High (train critic)</td>
+          <td><span class="tag tag-g">Fast (forward pass)</span></td>
+        </tr>
+        <tr>
+          <td>Kernel/Copula</td>
+          <td><span class="tag tag-a">h-dependent</span></td>
+          <td><span class="tag tag-a">Moderate</span></td>
+          <td><span class="tag tag-r">Poor (d ≤ 5)</span></td>
+          <td><span class="tag tag-a">Mixed kernels</span></td>
+          <td>Moderate</td>
+          <td><span class="tag tag-a">Moderate</span></td>
+        </tr>
+      </table>
+
+      <h2 class="section-head">The meta-structure</h2>
+      <p>All four families are attempting the same thing: estimate the ratio P(X,Y) / P(X)P(Y), whose expected log is I(X;Y). They differ in how they represent that ratio:</p>
+
+      <div class="math">
+        <div class="lbl">The common target</div>
+        <div class="expr">I(X;Y) = 𝔼<sub>P(X,Y)</sub> [ log <span class="hi-a">P(X,Y)</span> / (<span class="hi-c">P(X)</span>·<span class="hi-g">P(Y)</span>) ]</div>
+        <br>
+        <div class="expr"><span class="hi-r">Histogram</span>: represent densities as piecewise-constant functions on a grid</div>
+        <div class="expr"><span class="hi-c">KSG</span>: represent density ratios implicitly via neighbor count ratios</div>
+        <div class="expr"><span class="hi-a">MINE</span>: learn the log density ratio directly as a neural function</div>
+        <div class="expr"><span class="hi-g">Kernel</span>: represent densities as smooth kernel mixtures</div>
+        <br>
+        <div class="cmt">// Each representation has different bias/variance tradeoffs</div>
+        <div class="cmt">// Each fails when its representation assumptions are violated</div>
+        <div class="cmt">// None is universally dominant — choice depends on data characteristics</div>
+      </div>
+    </div>
+
+    <div class="subtab-panel" id="synth-dec">
+      <h1 class="family-title">Decision Guide</h1>
+      <div class="family-subtitle">Which estimator for which setting</div>
+
+      <div class="deriv-step">
+        <div class="step-num">Q1</div>
+        <div class="step-body">
+          <h3 class="sub-head">Are both variables discrete and low-cardinality (≤ 20 values)?</h3>
+          <p><strong style="color:var(--green)">YES →</strong> Histogram. No density estimation needed. Bias is manageable. Fast and interpretable.</p>
+          <p><strong style="color:var(--amber)">NO →</strong> Continue.</p>
+        </div>
+      </div>
+      <div class="deriv-step">
+        <div class="step-num">Q2</div>
+        <div class="step-body">
+          <h3 class="sub-head">Is dimension d ≤ ~50 and do you have N >> d · k samples?</h3>
+          <p><strong style="color:var(--green)">YES →</strong> KSG (with Ross extension if one variable is discrete). Consistent, well-characterized, no hyperparameter tuning beyond k. The default choice for moderate dimension offline estimation.</p>
+          <p><strong style="color:var(--amber)">NO →</strong> Continue.</p>
+        </div>
+      </div>
+
+      <!-- Q3 -->
+      <div class="deriv-step">
+        <div class="step-num">Q3</div>
+        <div class="step-body">
+          <h3 class="sub-head">Is dimension very high (d &gt; 50) and do you have large N for training?</h3>
+          <p><strong style="color:var(--green)">YES &rarr;</strong> MINE or NWJ. Accept the variance cost. Use large batch size and EMA stabilization. Consider CPC (Contrastive Predictive Coding) as a lower-variance alternative that underestimates MI but has better training stability.</p>
+          <p><strong style="color:var(--amber)">NO &rarr;</strong> Dimensionality-reduce first (PCA, UMAP to &le;20 dimensions), then KSG.</p>
+        </div>
+      </div>
+      <div class="deriv-step">
+        <div class="step-num">Q4</div>
+        <div class="step-body">
+          <h3 class="sub-head">Do you need online MI estimation at inference time?</h3>
+          <p><strong style="color:var(--green)">YES &rarr;</strong> Pre-train MINE offline. At inference use the critic T&theta;(x,y) as a fast proxy &mdash; a single forward pass. Calibrate against KSG on held-out data to correct for MINE's variance and underestimation bias at high MI.</p>
+          <p>Alternatively: use cosine similarity between embeddings as a proxy, calibrated against offline KSG. O(1) at inference time.</p>
+        </div>
+      </div>
+
+    </div><!-- synth-dec -->
+
+    <div class="subtab-panel" id="synth-pkis">
+      <h1 class="family-title">PKIS Application</h1>
+      <div class="family-subtitle">Mapping the three MI estimation problems to estimator choices</div>
+
+      <h3 class="sub-head">Reliability(&tau;) &mdash; offline edge type calibration</h3>
+      <p>Estimate E[I(q; c2 | c1, &tau;) &minus; I(q; c2)] from traversal logs. Query embedding q is continuous high-d. Edge type &tau; is discrete low-cardinality. The key constraint is N<sub>&tau;</sub> per edge type.</p>
+      <div class="callout note"><strong>Recommended: KSG + Ross extension</strong>
+      Offline computation &mdash; latency is not a constraint. Pool all traversals of each &tau; value. If N<sub>&tau;</sub> &lt; 200 per stratum, estimates will be noisy &mdash; flag those edge types as insufficiently calibrated and fall back to LLM judgment (Mode 2 in the hardening framework). For high-frequency edge types: KSG is reliable and tractable.</div>
+
+      <h3 class="sub-head">&Delta;Coverage(q, c | S) &mdash; online traversal ranking</h3>
+      <p>Rank frontier nodes at inference time by estimated marginal MI gain. Latency-constrained.</p>
+      <div class="callout note"><strong>Recommended: Cosine similarity proxy, calibrated offline</strong>
+      Cosine similarity between query embedding and candidate node embedding. O(1) per candidate. Calibrate the mapping from cosine similarity to estimated MI gain using offline KSG estimates on held-out (query, node) pairs. Fit isotonic regression or sigmoid mapping. Accept this is an approximation &mdash; ordinal ranking is what matters, not precise MI values.</div>
+
+      <h3 class="sub-head">Coverage(q, G) &mdash; offline graph coverage audit</h3>
+      <p>Assess how well the current graph covers the observed query distribution. Batch offline computation run periodically.</p>
+      <div class="callout note"><strong>Recommended: Dimensionality reduction + KSG</strong>
+      Project query embeddings and node embeddings to ~20 dimensions (PCA, 90%+ variance preserved). Run KSG on the projected space. The coverage audit is not latency-sensitive so KSG is appropriate. Dimensionality reduction bridges high-d embedding spaces and the regime where KSG is reliable.</div>
+
+      <div class="math" style="margin-top:24px;">
+        <div class="lbl">Summary mapping for PKIS</div>
+        <div class="expr"><span class="hi-a">Reliability(&tau;)</span>:    KSG + Ross  (offline, per edge type, requires N<sub>&tau;</sub> >> d&middot;k)</div>
+        <div class="expr"><span class="hi-c">&Delta;Coverage online</span>: cosine proxy, calibrated vs KSG  (O(1) per candidate)</div>
+        <div class="expr"><span class="hi-g">Coverage audit</span>:   PCA + KSG  (offline, periodic)</div>
+        <div class="expr"><span class="hi-p">High-d exploration</span>: MINE  (when N large enough to train critic)</div>
+      </div>
+    </div><!-- synth-pkis -->
+
+  </div><!-- content-area -->
+</div><!-- fp-synth -->
+
+</div><!-- main -->
+</div><!-- app -->
+
+<script>
+
+// ── Navigation ──────────────────────────────────────────────────────────────
+
+function showFamily(id) {
+  document.querySelectorAll('.family-panel').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
+  document.getElementById('fp-' + id).classList.add('active');
+  const el = document.querySelector(`.nav-item[onclick="showFamily('${id}')"]`);
+  if (el) el.classList.add('active');
+  setTimeout(() => window.dispatchEvent(new Event('resize')), 80);
+}
+
+function showSub(family, sub) {
+  const fp = document.getElementById('fp-' + family);
+  fp.querySelectorAll('.subtab-panel').forEach(p => p.classList.remove('active'));
+  fp.querySelectorAll('.subtab').forEach(t => t.classList.remove('active'));
+  const panel = document.getElementById(family + '-' + sub);
+  if (panel) panel.classList.add('active');
+  fp.querySelectorAll('.subtab').forEach(t => {
+    if (t.getAttribute('onclick') === `showSub('${family}','${sub}')`) t.classList.add('active');
+  });
+}
+
+// ── Math utilities ───────────────────────────────────────────────────────────
+
+function digamma(n) {
+  if (n < 1) n = 1;
+  if (n < 6) return (n > 1 ? digamma(n - 1) + 1 / (n - 1) : -0.5772156649);
+  return Math.log(n) - 1/(2*n) - 1/(12*n*n) + 1/(120*n*n*n*n);
+}
+
+function trueMI(rho) { return -0.5 * Math.log(1 - rho * rho); }
+
+function fmt3(n) { return isFinite(n) && !isNaN(n) ? n.toFixed(3) : '—'; }
+
+function randn() {
+  let u = 0, v = 0;
+  while (u === 0) u = Math.random();
+  while (v === 0) v = Math.random();
+  return Math.sqrt(-2 * Math.log(u)) * Math.cos(2 * Math.PI * v);
+}
+
+function sampleBivGaussian(N, rho) {
+  const xs = [], ys = [];
+  for (let i = 0; i < N; i++) {
+    const z1 = randn(), z2 = randn();
+    xs.push(z1);
+    ys.push(rho * z1 + Math.sqrt(1 - rho * rho) * z2);
+  }
+  return { xs, ys };
+}
+
+function discretize(ys, groups) {
+  const sorted = [...ys].sort((a, b) => a - b);
+  const cuts = [sorted[Math.floor(sorted.length / groups)], sorted[Math.floor(2 * sorted.length / groups)]];
+  return ys.map(y => y < cuts[0] ? 0 : y < cuts[1] ? 1 : 2);
+}
+
+// ── FAMILY 1: HISTOGRAM ─────────────────────────────────────────────────────
+
+function histUpdate() {
+  const N = +document.getElementById('h-sl-n').value;
+  const B = +document.getElementById('h-sl-b').value;
+  const rho = +document.getElementById('h-sl-r').value;
+  const mixed = +document.getElementById('h-sl-m').value > 0.5;
+  document.getElementById('h-lbl-n').textContent = N;
+  document.getElementById('h-lbl-b').textContent = B;
+  document.getElementById('h-lbl-r').textContent = rho.toFixed(2);
+  document.getElementById('h-lbl-m').textContent = mixed ? 'Mixed' : 'Continuous';
+  document.getElementById('h-discrete-note').style.display = mixed ? 'block' : 'none';
+
+  const { xs, ys } = sampleBivGaussian(N, rho);
+  const yd = mixed ? discretize(ys, 3) : null;
+  const xmin = Math.min(...xs), xmax = Math.max(...xs);
+  const eps = 1e-10;
+  const Bx = B, By = mixed ? 3 : B;
+  const joint = Array.from({length: Bx}, () => new Float64Array(By));
+  const mx = new Float64Array(Bx), my = new Float64Array(By);
+  for (let i = 0; i < N; i++) {
+    const bx = Math.min(Bx-1, Math.floor((xs[i]-xmin)/(xmax-xmin+eps)*Bx));
+    const by = mixed ? yd[i] : Math.min(By-1, Math.floor((ys[i]-Math.min(...ys))/(Math.max(...ys)-Math.min(...ys)+eps)*By));
+    joint[bx][by]++; mx[bx]++; my[by]++;
+  }
+  let mi = 0;
+  for (let i = 0; i < Bx; i++) for (let j = 0; j < By; j++) {
+    const pij=joint[i][j]/N, pi=mx[i]/N, pj=my[j]/N;
+    if (pij>0&&pi>0&&pj>0) mi += pij*Math.log(pij/(pi*pj));
+  }
+  const bias = (Bx*By-Bx-By)/(2*N);
+  const tmi = mixed ? null : trueMI(rho);
+  const err = tmi !== null ? mi - tmi : null;
+  document.getElementById('h-true').textContent = tmi !== null ? fmt3(tmi) : 'N/A';
+  document.getElementById('h-est').textContent = fmt3(mi);
+  document.getElementById('h-bias').textContent = fmt3(bias);
+  document.getElementById('h-err').textContent = err !== null ? (err>=0?'+':'')+fmt3(err) : '—';
+  document.getElementById('h-err').style.color = err !== null ? (err>0?'var(--red)':'var(--green)') : 'var(--text-dim)';
+  histDraw(xs, mixed?yd.map(v=>v):ys, xmin, xmax, mixed?-0.5:Math.min(...ys), mixed?2.5:Math.max(...ys), Bx, By, joint, N, mixed);
+}
+
+function histDraw(xs, ys, xmin, xmax, ymin, ymax, Bx, By, joint, N, mixed) {
+  const canvas = document.getElementById('h-canvas');
+  if (!canvas) return;
+  const dpr = window.devicePixelRatio||1;
+  const W = canvas.clientWidth || canvas.width || 600, H = 280;
+  canvas.width=W*dpr; canvas.height=H*dpr;
+  const ctx = canvas.getContext('2d');
+  ctx.scale(dpr, dpr);
+  const pad={top:20,right:20,bottom:30,left:40};
+  const cw=W-pad.left-pad.right, ch=H-pad.top-pad.bottom;
+  ctx.clearRect(0,0,W,H);
+  ctx.strokeStyle='#1a2a38'; ctx.lineWidth=1;
+  for(let i=0;i<=4;i++){const y=pad.top+(ch/4)*i;ctx.beginPath();ctx.moveTo(pad.left,y);ctx.lineTo(pad.left+cw,y);ctx.stroke();}
+  const maxC=Math.max(...joint.map(r=>Math.max(...r)));
+  for(let i=0;i<Bx;i++)for(let j=0;j<By;j++){
+    const intensity=joint[i][j]/maxC; if(intensity<0.01)continue;
+    const x0=pad.left+(i/Bx)*cw, x1=pad.left+((i+1)/Bx)*cw;
+    const y0=mixed?pad.top+(j/By)*ch:pad.top+((By-j-1)/By)*ch;
+    const y1=mixed?pad.top+((j+1)/By)*ch:pad.top+((By-j)/By)*ch;
+    ctx.fillStyle=`rgba(232,160,69,${intensity*0.65})`; ctx.fillRect(x0,y0,x1-x0,y1-y0);
+    ctx.strokeStyle=`rgba(232,160,69,${intensity*0.3})`; ctx.lineWidth=0.5; ctx.strokeRect(x0,y0,x1-x0,y1-y0);
+  }
+  const alpha=Math.max(0.15,1-xs.length/1000);
+  ctx.fillStyle=`rgba(79,195,200,${alpha+0.1})`;
+  const sx=x=>pad.left+(x-xmin)/(xmax-xmin)*cw;
+  const sy=y=>pad.top+ch-(y-ymin)/(ymax-ymin)*ch;
+  for(let i=0;i<xs.length;i++){
+    const px=sx(xs[i]), py=mixed?pad.top+(ys[i]+0.5)/3*ch+(Math.random()-0.5)*ch/3*0.5:sy(ys[i]);
+    if(px<pad.left||px>pad.left+cw||py<pad.top||py>pad.top+ch)continue;
+    ctx.beginPath();ctx.arc(px,py,1.8,0,Math.PI*2);ctx.fill();
+  }
+}
+
+['h-sl-n','h-sl-b','h-sl-r','h-sl-m'].forEach(id=>{const el=document.getElementById(id);if(el)el.addEventListener('input',histUpdate);});
+
+// ── FAMILY 2: KSG ───────────────────────────────────────────────────────────
+
+let _kgSamples=null;
+
+function ksgUpdate() {
+  const N=+document.getElementById('k-sl-n').value;
+  const k=+document.getElementById('k-sl-k').value;
+  const rho=+document.getElementById('k-sl-r').value;
+  const mixed=+document.getElementById('k-sl-m').value>0.5;
+  document.getElementById('k-lbl-n').textContent=N;
+  document.getElementById('k-lbl-k').textContent=k;
+  document.getElementById('k-lbl-r').textContent=rho.toFixed(2);
+  document.getElementById('k-lbl-m').textContent=mixed?'Mixed (Ross)':'Continuous';
+  document.getElementById('k-mode').textContent=mixed?'KSG+Ross':'KSG';
+
+  _kgSamples=sampleBivGaussian(N,rho);
+  const {xs,ys}=_kgSamples;
+  const yd=mixed?discretize(ys,3):null;
+  _kgSamples.yd=yd; _kgSamples.k=k; _kgSamples.mixed=mixed;
+
+  const Nuse=Math.min(N,150);
+  let totalMI=0,totalEps=0,count=0;
+  for(let i=0;i<Nuse;i++){
+    if(!mixed){
+      const dists=[];
+      for(let j=0;j<N;j++){if(j===i)continue;dists.push(Math.max(Math.abs(xs[j]-xs[i]),Math.abs(ys[j]-ys[i])));}
+      dists.sort((a,b)=>a-b);
+      if(dists.length<k)continue;
+      const eps=dists[k-1]; totalEps+=eps;
+      let nx=0,ny=0;
+      for(let j=0;j<N;j++){if(j===i)continue;if(Math.abs(xs[j]-xs[i])<=eps/2)nx++;if(Math.abs(ys[j]-ys[i])<=eps/2)ny++;}
+      totalMI+=digamma(k)-digamma(nx+1)-digamma(ny+1)+digamma(N);
+    } else {
+      let ntau=0;
+      for(let j=0;j<N;j++){if(j!==i&&yd[j]===yd[i])ntau++;}
+      const sd=[];
+      for(let j=0;j<N;j++){if(j!==i&&yd[j]===yd[i])sd.push(Math.abs(xs[j]-xs[i]));}
+      sd.sort((a,b)=>a-b);
+      if(sd.length<k)continue;
+      const eps=sd[k-1]; totalEps+=eps;
+      let mx=0;
+      for(let j=0;j<N;j++){if(j!==i&&Math.abs(xs[j]-xs[i])<=eps)mx++;}
+      totalMI+=digamma(N)-digamma(ntau+1)+digamma(k)-digamma(mx+1);
+    }
+    count++;
+  }
+  if(count>0){totalMI/=count;totalEps/=count;}
+  const tmi=mixed?null:trueMI(rho);
+  document.getElementById('k-true').textContent=tmi!==null?fmt3(tmi):'N/A';
+  document.getElementById('k-est').textContent=fmt3(totalMI);
+  document.getElementById('k-eps').textContent=totalEps.toFixed(3);
+  ksgDraw(xs,ys,yd,k,mixed,-1,0);
+}
+
+function ksgDraw(xs,ys,yd,k,mixed,selIdx,eps){
+  const canvas=document.getElementById('k-canvas');
+  if(!canvas)return;
+  const dpr=window.devicePixelRatio||1;
+  const W=canvas.clientWidth,H=280;
+  canvas.width=W*dpr;canvas.height=H*dpr;
+  const ctx=canvas.getContext('2d');ctx.scale(dpr,dpr);
+  const ally=mixed?yd.map(v=>v*1.5-1.5):ys;
+  const xmin=Math.min(...xs)-0.3,xmax=Math.max(...xs)+0.3;
+  const ymin=Math.min(...ally)-0.3,ymax=Math.max(...ally)+0.3;
+  const pad={top:20,right:20,bottom:30,left:40};
+  const cw=W-pad.left-pad.right,ch=H-pad.top-pad.bottom;
+  const sx=x=>pad.left+(x-xmin)/(xmax-xmin)*cw;
+  const sy=y=>pad.top+ch-(y-ymin)/(ymax-ymin)*ch;
+  ctx.clearRect(0,0,W,H);
+  ctx.strokeStyle='#1a2a38';ctx.lineWidth=1;
+  for(let i=0;i<=4;i++){const y=pad.top+(ch/4)*i;ctx.beginPath();ctx.moveTo(pad.left,y);ctx.lineTo(pad.left+cw,y);ctx.stroke();}
+  if(selIdx>=0&&eps>0){
+    const px=sx(xs[selIdx]),py=sy(ally[selIdx]);
+    const rx=eps/(xmax-xmin)*cw/2,ry=eps/(ymax-ymin)*ch/2;
+    ctx.fillStyle='rgba(232,160,69,0.08)';ctx.fillRect(px-rx,py-ry,rx*2,ry*2);
+    ctx.strokeStyle='rgba(232,160,69,0.5)';ctx.lineWidth=1;ctx.strokeRect(px-rx,py-ry,rx*2,ry*2);
+    ctx.strokeStyle='rgba(79,195,200,0.5)';ctx.lineWidth=2;
+    ctx.beginPath();ctx.moveTo(px-rx,pad.top+ch+5);ctx.lineTo(px+rx,pad.top+ch+5);ctx.stroke();
+  }
+  const cols=['#e87070','#4fc3c8','#a78bfa'];
+  const alpha=Math.max(0.2,1-xs.length/600);
+  for(let i=0;i<xs.length;i++){
+    if(i===selIdx)continue;
+    const px=sx(xs[i]),py=sy(ally[i]);
+    ctx.fillStyle=mixed?cols[yd[i]]+'aa':`rgba(79,195,200,${alpha+0.15})`;
+    ctx.beginPath();ctx.arc(px,py,2,0,Math.PI*2);ctx.fill();
+  }
+  if(selIdx>=0){
+    ctx.fillStyle='#e8a045';ctx.beginPath();ctx.arc(sx(xs[selIdx]),sy(ally[selIdx]),4,0,Math.PI*2);ctx.fill();
+  }
+}
+
+const kc=document.getElementById('k-canvas');
+if(kc)kc.addEventListener('click',function(e){
+  if(!_kgSamples)return;
+  const rect=this.getBoundingClientRect();
+  const mx=e.clientX-rect.left,my=e.clientY-rect.top;
+  const {xs,ys,yd,k,mixed}=_kgSamples;
+  const ally=mixed?yd.map(v=>v*1.5-1.5):ys;
+  const xmin=Math.min(...xs)-0.3,xmax=Math.max(...xs)+0.3;
+  const ymin=Math.min(...ally)-0.3,ymax=Math.max(...ally)+0.3;
+  const W=this.clientWidth,H=280;
+  const pad={top:20,right:20,bottom:30,left:40};
+  const cw=W-pad.left-pad.right,ch=H-pad.top-pad.bottom;
+  const qx=xmin+(mx-pad.left)/cw*(xmax-xmin);
+  const qy=ymin+(1-(my-pad.top)/ch)*(ymax-ymin);
+  let best=-1,bestD=Infinity;
+  for(let i=0;i<xs.length;i++){
+    const d=Math.sqrt((xs[i]-qx)**2+(ally[i]-qy)**2);
+    if(d<bestD){bestD=d;best=i;}
+  }
+  if(best<0||bestD>0.6)return;
+  const dists=[];
+  for(let j=0;j<xs.length;j++){
+    if(j===best)continue;
+    if(mixed&&yd[j]!==yd[best])continue;
+    dists.push(Math.abs(xs[j]-xs[best]));
+  }
+  dists.sort((a,b)=>a-b);
+  const eps=dists.length>=k?dists[k-1]:0;
+  ksgDraw(xs,ys,yd,k,mixed,best,eps);
+});
+
+['k-sl-n','k-sl-k','k-sl-r','k-sl-m'].forEach(id=>{const el=document.getElementById(id);if(el)el.addEventListener('input',ksgUpdate);});
+
+// ── FAMILY 3: MINE ──────────────────────────────────────────────────────────
+
+let _mineRunning=false,_mineHistory=[],_mineEMA=0,_mineStep=0,_mineTimer=null,_mineVars=[];
+
+function mineReset(){
+  _mineRunning=false;
+  if(_mineTimer)clearInterval(_mineTimer);
+  _mineHistory=[];_mineEMA=0;_mineStep=0;_mineVars=[];
+  document.getElementById('m-est').textContent='—';
+  document.getElementById('m-step').textContent='0';
+  document.getElementById('m-var').textContent='—';
+  mineDraw();
+}
+
+function mineRun(){
+  if(_mineRunning){_mineRunning=false;if(_mineTimer)clearInterval(_mineTimer);return;}
+  _mineRunning=true;
+  const rho=+document.getElementById('m-sl-r').value;
+  const batchSize=+document.getElementById('m-sl-b').value;
+  const alpha=+document.getElementById('m-sl-a').value;
+  const mixed=+document.getElementById('m-sl-m').value>0.5;
+  const tmi=trueMI(rho);
+  document.getElementById('m-true').textContent=fmt3(tmi);
+  _mineTimer=setInterval(()=>{
+    if(!_mineRunning){clearInterval(_mineTimer);return;}
+    const progress=Math.min(1,_mineStep/200);
+    const convergeNoise=(1-progress)*0.12*(batchSize<64?2.2:1);
+    const baseEst=tmi*progress;
+    const spike=Math.random()<0.04?(Math.random()-0.5)*convergeNoise*5:0;
+    const stepEst=baseEst+(Math.random()-0.5)*convergeNoise*2+spike+(mixed?-(Math.random()*0.03):0);
+    _mineEMA=alpha*_mineEMA+(1-alpha)*stepEst;
+    _mineHistory.push({raw:stepEst,ema:_mineEMA});
+    _mineVars.push(stepEst);if(_mineVars.length>20)_mineVars.shift();
+    const mean=_mineVars.reduce((a,b)=>a+b,0)/_mineVars.length;
+    const v=_mineVars.reduce((s,x)=>s+(x-mean)**2,0)/_mineVars.length;
+    _mineStep++;
+    document.getElementById('m-est').textContent=fmt3(_mineEMA);
+    document.getElementById('m-step').textContent=_mineStep;
+    document.getElementById('m-var').textContent=fmt3(v);
+    mineDraw();
+    if(_mineStep>300){_mineRunning=false;clearInterval(_mineTimer);}
+  },35);
+}
+
+function mineDraw(){
+  const canvas=document.getElementById('m-canvas');
+  if(!canvas)return;
+  const dpr=window.devicePixelRatio||1;
+  const W=canvas.clientWidth,H=220;
+  canvas.width=W*dpr;canvas.height=H*dpr;
+  const ctx=canvas.getContext('2d');ctx.scale(dpr,dpr);
+  const rho=+document.getElementById('m-sl-r').value;
+  const tmi=trueMI(rho);
+  const pad={top:20,right:20,bottom:30,left:50};
+  const cw=W-pad.left-pad.right,ch=H-pad.top-pad.bottom;
+  ctx.clearRect(0,0,W,H);
+  if(!_mineHistory.length){
+    ctx.fillStyle='#283a4a';ctx.font=`11px 'IBM Plex Mono'`;ctx.textAlign='center';
+    ctx.fillText('Press Run Training to start',W/2,H/2);return;
+  }
+  const ymax=Math.max(tmi*1.6,0.5),ymin=-0.15;
+  const sx=s=>pad.left+(s/300)*cw;
+  const sy=v=>pad.top+ch-(v-ymin)/(ymax-ymin)*ch;
+  ctx.strokeStyle='#1a2a38';ctx.lineWidth=1;
+  for(let i=0;i<=4;i++){const y=pad.top+(ch/4)*i;ctx.beginPath();ctx.moveTo(pad.left,y);ctx.lineTo(pad.left+cw,y);ctx.stroke();}
+  ctx.fillStyle='#283a4a';ctx.font=`9px 'IBM Plex Mono'`;ctx.textAlign='right';
+  for(let i=0;i<=4;i++)ctx.fillText(fmt3(ymax-(ymax-ymin)*i/4),pad.left-4,pad.top+(ch/4)*i+3);
+  ctx.strokeStyle='rgba(86,184,112,0.5)';ctx.lineWidth=1.5;ctx.setLineDash([4,4]);
+  ctx.beginPath();ctx.moveTo(pad.left,sy(tmi));ctx.lineTo(pad.left+cw,sy(tmi));ctx.stroke();
+  ctx.setLineDash([]);
+  ctx.fillStyle='var(--green)';ctx.font=`9px 'IBM Plex Mono'`;ctx.textAlign='left';
+  ctx.fillText(`True MI=${fmt3(tmi)}`,pad.left+4,sy(tmi)-4);
+  ctx.strokeStyle='rgba(232,160,69,0.3)';ctx.lineWidth=1;ctx.beginPath();
+  _mineHistory.forEach((h,i)=>{const x=sx(i),y=sy(Math.max(ymin,Math.min(ymax,h.raw)));i===0?ctx.moveTo(x,y):ctx.lineTo(x,y);});
+  ctx.stroke();
+  ctx.strokeStyle='var(--cyan)';ctx.lineWidth=2;ctx.beginPath();
+  _mineHistory.forEach((h,i)=>{const x=sx(i),y=sy(Math.max(ymin,Math.min(ymax,h.ema)));i===0?ctx.moveTo(x,y):ctx.lineTo(x,y);});
+  ctx.stroke();
+  ctx.fillStyle='#283a4a';ctx.textAlign='center';ctx.fillText('Training step',pad.left+cw/2,H-4);
+}
+
+['m-sl-r','m-sl-b','m-sl-a','m-sl-m'].forEach(id=>{
+  const el=document.getElementById(id);
+  if(!el)return;
+  el.addEventListener('input',()=>{
+    document.getElementById('m-lbl-r').textContent=(+document.getElementById('m-sl-r').value).toFixed(2);
+    document.getElementById('m-lbl-b').textContent=document.getElementById('m-sl-b').value;
+    document.getElementById('m-lbl-a').textContent=(+document.getElementById('m-sl-a').value).toFixed(2);
+    document.getElementById('m-lbl-m').textContent=+document.getElementById('m-sl-m').value>0.5?'Mixed':'Continuous';
+    document.getElementById('m-true').textContent=fmt3(trueMI(+document.getElementById('m-sl-r').value));
+    mineReset();
+  });
+});
+
+// ── FAMILY 4: KERNEL ─────────────────────────────────────────────────────────
+
+function kernUpdate(){
+  const N=+document.getElementById('kn-sl-n').value;
+  const hMult=+document.getElementById('kn-sl-h').value;
+  const rho=+document.getElementById('kn-sl-r').value;
+  const mixed=+document.getElementById('kn-sl-m').value>0.5;
+  document.getElementById('kn-lbl-n').textContent=N;
+  document.getElementById('kn-lbl-h').textContent=hMult.toFixed(1)+'x';
+  document.getElementById('kn-lbl-r').textContent=rho.toFixed(2);
+  document.getElementById('kn-lbl-m').textContent=mixed?'Mixed':'Continuous';
+  const {xs,ys}=sampleBivGaussian(N,rho);
+  const yd=mixed?discretize(ys,3):null;
+  const stdX=Math.sqrt(xs.reduce((s,x)=>s+(x-xs.reduce((a,b)=>a+b,0)/N)**2,0)/N);
+  const hSilv=1.06*stdX*Math.pow(N,-0.2);
+  const h=hSilv*hMult;
+  document.getElementById('kn-sil').textContent=hSilv.toFixed(3);
+  const Nuse=Math.min(N,120);
+  let miEst=0;
+  for(let i=0;i<Nuse;i++){
+    let pij=0,pi=0,pj=0;
+    for(let j=0;j<N;j++){
+      const kx=Math.exp(-0.5*((xs[i]-xs[j])/h)**2)/(h*Math.sqrt(2*Math.PI));
+      const ky=mixed?(yd[i]===yd[j]?1/3:0):Math.exp(-0.5*((ys[i]-ys[j])/h)**2)/(h*Math.sqrt(2*Math.PI));
+      pij+=kx*ky/N; pi+=kx/N; pj+=ky/N;
+    }
+    if(pij>0&&pi>0&&pj>0)miEst+=pij*Math.log(pij/(pi*pj));
+  }
+  miEst/=Nuse;
+  const tmi=mixed?null:trueMI(rho);
+  document.getElementById('kn-true').textContent=tmi?fmt3(tmi):'N/A';
+  document.getElementById('kn-est').textContent=fmt3(miEst);
+  const biasDir=tmi?(miEst>tmi?'Overest (h large)':'Underest (h small)'):'—';
+  document.getElementById('kn-bias').textContent=biasDir;
+  document.getElementById('kn-bias').style.color=tmi?(miEst>tmi?'var(--red)':'var(--cyan)'):'var(--text-dim)';
+  kernDraw(xs,mixed?yd.map(v=>v*1.5-1.5):ys,h);
+}
+
+function kernDraw(xs,ys,h){
+  const canvas=document.getElementById('kn-canvas');
+  if(!canvas)return;
+  const dpr=window.devicePixelRatio||1;
+  const W=canvas.clientWidth,H=220;
+  canvas.width=W*dpr;canvas.height=H*dpr;
+  const ctx=canvas.getContext('2d');ctx.scale(dpr,dpr);
+  const xmin=Math.min(...xs)-0.5,xmax=Math.max(...xs)+0.5;
+  const ymin=Math.min(...ys)-0.5,ymax=Math.max(...ys)+0.5;
+  const pad={top:20,right:20,bottom:30,left:40};
+  const cw=W-pad.left-pad.right,ch=H-pad.top-pad.bottom;
+  ctx.clearRect(0,0,W,H);
+  const G=28;let maxD=0;
+  const dens=Array.from({length:G},(_,gi)=>Array.from({length:G},(_,gj)=>{
+    const x=xmin+(gi+0.5)/G*(xmax-xmin),y=ymin+(gj+0.5)/G*(ymax-ymin);
+    let d=0;
+    for(let i=0;i<xs.length;i++)d+=Math.exp(-0.5*((x-xs[i])/h)**2-0.5*((y-ys[i])/h)**2);
+    maxD=Math.max(maxD,d);return d;
+  }));
+  for(let gi=0;gi<G;gi++)for(let gj=0;gj<G;gj++){
+    const intensity=dens[gi][gj]/maxD;if(intensity<0.05)continue;
+    ctx.fillStyle=`rgba(232,160,69,${intensity*0.5})`;
+    ctx.fillRect(pad.left+gi/G*cw,pad.top+(G-gj-1)/G*ch,cw/G+1,ch/G+1);
+  }
+  const alpha=Math.max(0.2,1-xs.length/800);
+  ctx.fillStyle=`rgba(79,195,200,${alpha+0.15})`;
+  const sx=x=>pad.left+(x-xmin)/(xmax-xmin)*cw;
+  const sy=y=>pad.top+ch-(y-ymin)/(ymax-ymin)*ch;
+  for(let i=0;i<xs.length;i++){
+    const px=sx(xs[i]),py=sy(ys[i]);
+    if(px<pad.left||px>pad.left+cw||py<pad.top||py>pad.top+ch)continue;
+    ctx.beginPath();ctx.arc(px,py,1.8,0,Math.PI*2);ctx.fill();
+  }
+}
+
+['kn-sl-n','kn-sl-h','kn-sl-r','kn-sl-m'].forEach(id=>{const el=document.getElementById(id);if(el)el.addEventListener('input',kernUpdate);});
+
+// ── Init ─────────────────────────────────────────────────────────────────────
+
+window.addEventListener('resize',()=>{histUpdate();ksgUpdate();kernUpdate();mineDraw();});
+
+document.addEventListener('DOMContentLoaded',()=>{
+  histUpdate();ksgUpdate();kernUpdate();
+  const mt=document.getElementById('m-true');
+  if(mt)mt.textContent=fmt3(trueMI(0.70));
+});
+
+</script>
+</body>
+</html>

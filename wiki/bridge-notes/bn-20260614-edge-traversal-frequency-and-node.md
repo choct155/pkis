@@ -44,6 +44,8 @@ source_context: Conversation on edge information content formalization — measu
   architecture for contribution attribution
 status: unreviewed
 title: Edge contribution attribution — two-tier measurement strategy
+illustrated-by:
+- mi-estimation-explainer
 ---
 
 ## Connection

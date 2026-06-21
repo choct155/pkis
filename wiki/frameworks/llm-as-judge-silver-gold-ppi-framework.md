@@ -34,6 +34,9 @@ tags:
 - continuous-assessment
 title: LLM-as-Judge Silver/Gold Calibration Framework (PPI)
 understanding: 0
+illustrated-by:
+- mi-estimation-explainer
+- accuracy-calibration-explainer
 ---
 
 ## Definition

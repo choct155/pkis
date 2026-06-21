@@ -18,6 +18,7 @@ domain:
 id: pkis:technique:coverage-driven-graph-traversal
 illustrated-by:
 - gruninger-methodology-1995
+- knowledge-infrastructure-explainer
 knowledge_type: technique
 linked_nodes: []
 maturity: evolving

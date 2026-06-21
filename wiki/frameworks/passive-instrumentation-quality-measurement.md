@@ -33,6 +33,8 @@ tags:
 - cost-reduction
 title: Passive Instrumentation Strategy for Quality Measurement
 understanding: 0
+illustrated-by:
+- accuracy-calibration-explainer
 ---
 
 ## Definition

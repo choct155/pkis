@@ -1,0 +1,3110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Knowledge Infrastructure for AI — Complete Guide</title>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,300;0,400;0,500;1,300&family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,500;1,300&family=IBM+Plex+Serif:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0;}
+#topnav{position:fixed;top:0;left:0;right:0;z-index:9000;background:rgba(8,9,11,0.97);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid #1e2d3d;display:flex;align-items:center;height:52px;padding:0 28px;gap:3px;}
+.nav-brand{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.18em;color:#e8a045;text-transform:uppercase;margin-right:20px;white-space:nowrap;flex-shrink:0;}
+.nav-sep{width:1px;height:20px;background:#1e2d3d;margin-right:16px;flex-shrink:0;}
+.nav-btn{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.12em;text-transform:uppercase;padding:6px 14px;border-radius:2px;cursor:pointer;border:1px solid transparent;background:transparent;color:#5a7a94;transition:all 0.18s;white-space:nowrap;flex-shrink:0;}
+.nav-btn:hover{color:#c8d6e5;border-color:#2a3f54;}
+.nav-btn.nav-active{color:#e8a045;border-color:#7a5020;background:rgba(232,160,69,0.08);}
+.nav-spacer{flex:1;}
+.nav-tag{font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:0.1em;color:#2e4a5e;text-transform:uppercase;display:none;}
+@media(min-width:700px){.nav-tag{display:block;}}
+#panel-host{margin-top:52px;}
+.bundle-panel{display:none;}
+.bundle-panel.bp-active{display:block;}
+.go-deeper-wrap{padding:0 48px;margin-top:0;}
+@media(max-width:700px){.go-deeper-wrap{padding:0 20px;}}
+.go-deeper-btn{display:inline-flex;align-items:center;gap:8px;font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.12em;text-transform:uppercase;padding:10px 18px;border-radius:2px;cursor:pointer;border:1px solid #7a5020;background:rgba(232,160,69,0.08);color:#e8a045;transition:all 0.18s;margin:4px 4px 0 0;}
+.go-deeper-btn:hover{background:rgba(232,160,69,0.15);border-color:#e8a045;}
+.go-deeper-btn.gd-cyan{border-color:#1e5558;background:rgba(79,195,200,0.08);color:#4fc3c8;}
+.go-deeper-btn.gd-cyan:hover{background:rgba(79,195,200,0.15);border-color:#4fc3c8;}
+</style>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bg:       #08090b;
+  --bg1:      #0d1117;
+  --bg2:      #111820;
+  --bg3:      #18222e;
+  --border:   #1e2d3d;
+  --border2:  #28404f;
+  --amber:    #e8a045;
+  --amber2:   #c27c28;
+  --amber-dim:#3d2a0a;
+  --cyan:     #4fc3c8;
+  --cyan-dim: #0e3a3d;
+  --green:    #56b870;
+  --green-dim:#0e2e18;
+  --red:      #d9534f;
+  --red-dim:  #2e0e0e;
+  --text:     #c8d6e5;
+  --text-dim: #5a7a94;
+  --text-faint:#283a4a;
+  --mono:     'IBM Plex Mono', monospace;
+  --serif:    'IBM Plex Serif', serif;
+  --sans:     'IBM Plex Sans', sans-serif;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--sans);
+  font-size: 15px;
+  line-height: 1.7;
+  overflow-x: hidden;
+}
+
+/* ── Hero ── */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 80px 48px;
+  position: relative;
+  border-bottom: 1px solid var(--border);
+  overflow: hidden;
+}
+
+.hero-grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(79,195,200,0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(79,195,200,0.03) 1px, transparent 1px);
+  background-size: 48px 48px;
+  pointer-events: none;
+}
+
+.hero-badge {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.22em;
+  color: var(--amber);
+  text-transform: uppercase;
+  margin-bottom: 32px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.hero-badge::before {
+  content: '';
+  width: 32px;
+  height: 1px;
+  background: var(--amber);
+}
+
+.hero-title {
+  font-family: var(--serif);
+  font-size: clamp(36px, 6vw, 72px);
+  font-weight: 300;
+  line-height: 1.1;
+  color: #e8edf2;
+  max-width: 820px;
+  margin-bottom: 24px;
+  letter-spacing: -0.02em;
+}
+.hero-title em {
+  font-style: italic;
+  color: var(--amber);
+}
+
+.hero-sub {
+  font-size: 18px;
+  font-weight: 300;
+  color: var(--text-dim);
+  max-width: 600px;
+  margin-bottom: 56px;
+  line-height: 1.6;
+}
+
+.hero-stats {
+  display: flex;
+  gap: 48px;
+  flex-wrap: wrap;
+}
+@media (max-width: 700px) { .hero-stats { gap: 24px; } .stat-val { font-size: 24px; } .hero-sub { margin-bottom: 32px; } }
+.stat {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.stat-val {
+  font-family: var(--mono);
+  font-size: 32px;
+  font-weight: 500;
+  color: var(--cyan);
+  line-height: 1;
+}
+.stat-label {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  color: var(--text-dim);
+  text-transform: uppercase;
+}
+
+/* ── Shell ── */
+.shell { max-width: 960px; margin: 0 auto; padding: 0 48px; }
+@media (max-width: 700px) { .shell { padding: 0 16px; } .hero { padding: 32px 16px; min-height: auto; } }
+
+/* ── Section chrome ── */
+.section {
+  padding: 80px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.section-eyebrow {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  color: var(--text-faint);
+  text-transform: uppercase;
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.section-eyebrow::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--border);
+}
+
+.section-title {
+  font-family: var(--serif);
+  font-size: clamp(24px, 4vw, 40px);
+  font-weight: 300;
+  color: #e8edf2;
+  line-height: 1.2;
+  margin-bottom: 20px;
+  letter-spacing: -0.01em;
+}
+
+.section-lead {
+  font-size: 16px;
+  font-weight: 300;
+  color: var(--text-dim);
+  max-width: 680px;
+  line-height: 1.75;
+  margin-bottom: 48px;
+}
+
+p {
+  font-size: 15px;
+  font-weight: 300;
+  color: var(--text);
+  line-height: 1.75;
+  margin-bottom: 16px;
+}
+
+/* ── Stage cards ── */
+.stages {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  margin: 40px 0;
+}
+
+.stage-card {
+  background: var(--bg1);
+  border: 1px solid var(--border);
+  border-radius: 2px;
+  overflow: hidden;
+  transition: border-color 0.2s;
+  cursor: pointer;
+}
+.stage-card:hover { border-color: var(--border2); }
+.stage-card.active { border-color: var(--amber2); }
+
+.stage-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 16px;
+  user-select: none;
+  flex-wrap: wrap;
+}
+@media (max-width: 600px) { .stage-pill { display: none; } .stage-header { gap: 8px; padding: 12px 14px; } }
+
+.stage-num {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  color: var(--text-faint);
+  min-width: 32px;
+}
+
+.stage-name {
+  flex: 1;
+  font-family: var(--mono);
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text);
+}
+.stage-card.active .stage-name { color: var(--amber); }
+
+.stage-pill {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  padding: 3px 10px;
+  border-radius: 20px;
+  text-transform: uppercase;
+}
+.pill-red    { background: var(--red-dim);   color: var(--red);   border: 1px solid rgba(217,83,79,0.2); }
+.pill-amber  { background: var(--amber-dim); color: var(--amber); border: 1px solid rgba(232,160,69,0.2); }
+.pill-cyan   { background: var(--cyan-dim);  color: var(--cyan);  border: 1px solid rgba(79,195,200,0.2); }
+.pill-green  { background: var(--green-dim); color: var(--green); border: 1px solid rgba(86,184,112,0.2); }
+
+.stage-chevron {
+  font-size: 12px;
+  color: var(--text-faint);
+  transition: transform 0.2s;
+}
+.stage-card.active .stage-chevron { transform: rotate(90deg); color: var(--amber); }
+
+.stage-body {
+  display: none;
+  padding: 0 24px 24px;
+  border-top: 1px solid var(--border);
+}
+.stage-card.active .stage-body { display: block; }
+
+.stage-desc {
+  font-size: 14px;
+  font-weight: 300;
+  color: var(--text-dim);
+  line-height: 1.7;
+  margin: 16px 0 20px;
+}
+
+.stage-metrics {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin-bottom: 20px;
+}
+@media (max-width: 600px) { .stage-metrics { grid-template-columns: 1fr 1fr; } }
+
+.metric {
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: 2px;
+  padding: 12px 14px;
+}
+.metric-label {
+  font-family: var(--mono);
+  font-size: 9px;
+  letter-spacing: 0.14em;
+  color: var(--text-faint);
+  text-transform: uppercase;
+  margin-bottom: 5px;
+}
+.metric-val {
+  font-family: var(--mono);
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 1;
+}
+
+/* ── Objection cards ── */
+.objections { margin: 40px 0; }
+.obj-title {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  color: var(--text-faint);
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+.obj-card {
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: 2px;
+  margin-bottom: 8px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: border-color 0.2s;
+}
+.obj-card:hover { border-color: var(--border2); }
+.obj-card.open { border-color: var(--border2); }
+
+.obj-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 18px;
+  user-select: none;
+}
+.obj-icon {
+  font-family: var(--mono);
+  font-size: 13px;
+  color: var(--amber);
+  min-width: 20px;
+}
+.obj-question {
+  flex: 1;
+  font-size: 13px;
+  font-weight: 400;
+  color: var(--text);
+}
+.obj-arrow {
+  font-size: 11px;
+  color: var(--text-faint);
+  transition: transform 0.2s;
+}
+.obj-card.open .obj-arrow { transform: rotate(90deg); }
+
+.obj-body {
+  display: none;
+  padding: 0 18px 16px 52px;
+  border-top: 1px solid var(--border);
+}
+.obj-card.open .obj-body { display: block; }
+.obj-body p { font-size: 13px; margin-top: 12px; color: var(--text-dim); }
+.obj-verdict {
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--amber);
+  margin-top: 10px;
+  padding: 8px 12px;
+  background: var(--amber-dim);
+  border-left: 2px solid var(--amber);
+  border-radius: 1px;
+}
+
+/* ── Cost curve ── */
+.cost-panel {
+  background: var(--bg1);
+  border: 1px solid var(--border2);
+  border-radius: 2px;
+  padding: 28px;
+  margin: 40px 0;
+}
+.cost-title {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  color: var(--amber);
+  text-transform: uppercase;
+  margin-bottom: 6px;
+  display: flex; align-items: center; gap: 10px;
+}
+.cost-title::after { content:''; flex:1; height:1px; background:var(--amber-dim); }
+.cost-desc {
+  font-size: 13px;
+  font-weight: 300;
+  color: var(--text-dim);
+  margin-bottom: 20px;
+}
+.param-row {
+  display: flex; flex-direction: column; gap: 6px; margin-bottom: 16px;
+}
+.param-label {
+  font-family: var(--mono); font-size: 11px;
+  color: var(--text-dim);
+  display: flex; justify-content: space-between;
+}
+.param-label .pval { color: var(--amber); }
+input[type=range] {
+  -webkit-appearance: none; width: 100%; height: 3px;
+  background: var(--border2); border-radius: 2px; outline: none;
+}
+input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none; width: 14px; height: 14px;
+  border-radius: 50%; background: var(--amber);
+  cursor: pointer; border: 2px solid var(--bg);
+}
+canvas { width: 100%; height: 200px; display: block; margin-top: 12px; }
+.chart-legend {
+  display: flex; gap: 20px; margin-top: 10px; flex-wrap: wrap;
+  font-family: var(--mono); font-size: 11px; color: var(--text-dim);
+}
+.legend-item { display: flex; align-items: center; gap: 6px; }
+.legend-dot { width: 12px; height: 3px; border-radius: 1px; }
+
+.readout-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin-bottom: 20px;
+}
+.rdout {
+  background: var(--bg3);
+  border: 1px solid var(--border);
+  border-radius: 2px;
+  padding: 12px 14px;
+}
+.rdout-label {
+  font-family: var(--mono); font-size: 9px;
+  letter-spacing: 0.12em; color: var(--text-faint);
+  text-transform: uppercase; margin-bottom: 5px;
+}
+.rdout-val {
+  font-family: var(--mono); font-size: 18px;
+  font-weight: 500; line-height: 1;
+}
+
+/* ── Layer summary ── */
+.layers {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin: 40px 0;
+}
+@media (max-width: 600px) { .layers { grid-template-columns: 1fr; } }
+
+.layer-card {
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: 2px;
+  padding: 20px;
+}
+.layer-tag {
+  font-family: var(--mono);
+  font-size: 9px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  display: inline-block;
+  padding: 3px 8px;
+  border-radius: 20px;
+}
+.layer-title {
+  font-family: var(--mono);
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 8px;
+  color: #e8edf2;
+}
+.layer-body {
+  font-size: 13px;
+  font-weight: 300;
+  color: var(--text-dim);
+  line-height: 1.6;
+}
+.layer-examples {
+  margin-top: 12px;
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--text-faint);
+}
+.layer-examples span {
+  display: inline-block;
+  background: var(--bg3);
+  border: 1px solid var(--border);
+  border-radius: 2px;
+  padding: 2px 6px;
+  margin: 2px 2px 2px 0;
+}
+
+/* ── Principle cards ── */
+.principles {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin: 40px 0;
+}
+.principle {
+  display: flex;
+  gap: 20px;
+  padding: 20px 24px;
+  background: var(--bg1);
+  border: 1px solid var(--border);
+  border-radius: 2px;
+  border-left: 3px solid var(--amber2);
+}
+.principle-num {
+  font-family: var(--mono);
+  font-size: 24px;
+  font-weight: 300;
+  color: var(--text-faint);
+  min-width: 32px;
+  padding-top: 2px;
+  line-height: 1;
+}
+.principle-body {}
+.principle-title {
+  font-family: var(--mono);
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--amber);
+  margin-bottom: 6px;
+}
+.principle-text {
+  font-size: 14px;
+  font-weight: 300;
+  color: var(--text-dim);
+  line-height: 1.65;
+}
+
+/* ── CTA ── */
+.cta-section {
+  padding: 80px 0;
+  text-align: center;
+}
+.cta-title {
+  font-family: var(--serif);
+  font-size: 32px;
+  font-weight: 300;
+  color: #e8edf2;
+  margin-bottom: 16px;
+}
+.cta-links {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-top: 32px;
+}
+.cta-btn {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 12px 24px;
+  border-radius: 2px;
+  cursor: pointer;
+  border: 1px solid var(--border2);
+  background: var(--bg2);
+  color: var(--text-dim);
+  transition: all 0.2s;
+}
+.cta-btn:hover { border-color: var(--amber); color: var(--amber); }
+.cta-btn.primary { border-color: var(--amber); color: var(--amber); background: var(--amber-dim); }
+.cta-btn.primary:hover { background: rgba(232,160,69,0.15); }
+</style>
+<style>
+  :root {
+    --bg:        #0a0c0f;
+    --bg1:       #0f1318;
+    --bg2:       #141920;
+    --bg3:       #1c2330;
+    --border:    #1e2d3d;
+    --border2:   #2a3f54;
+    --amber:     #e8a045;
+    --amber-dim: #7a5020;
+    --cyan:      #4fc3c8;
+    --cyan-dim:  #1e5558;
+    --green:     #5cb85c;
+    --green-dim: #1e3d1e;
+    --red:       #c0392b;
+    --red-dim:   #3d1010;
+    --text:      #c8d6e5;
+    --text-dim:  #5a7a94;
+    --text-faint:#2e4a5e;
+    --mono:      'IBM Plex Mono', monospace;
+    --sans:      'IBM Plex Sans', sans-serif;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--sans);
+    font-size: 14px;
+    line-height: 1.7;
+    min-height: 100vh;
+  }
+
+  /* ── Layout ── */
+  .shell {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 48px 32px 96px;
+  }
+
+  /* ── Header ── */
+  .doc-eyebrow {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.18em;
+    color: var(--amber);
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .doc-eyebrow::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--amber-dim);
+  }
+
+  h1 {
+    font-family: var(--mono);
+    font-size: 22px;
+    font-weight: 500;
+    color: #e8edf2;
+    letter-spacing: -0.02em;
+    line-height: 1.3;
+    margin-bottom: 10px;
+  }
+
+  .doc-meta {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--text-dim);
+    margin-bottom: 48px;
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+  }
+  .doc-meta span { display: flex; align-items: center; gap: 6px; }
+  .doc-meta .dot { width: 5px; height: 5px; border-radius: 50%; background: var(--amber); }
+
+  /* ── Sections ── */
+  .section {
+    margin-bottom: 56px;
+    border-left: 2px solid var(--border);
+    padding-left: 28px;
+    position: relative;
+  }
+  .section::before {
+    content: attr(data-n);
+    font-family: var(--mono);
+    font-size: 10px;
+    color: var(--text-faint);
+    position: absolute;
+    left: -40px;
+    top: 4px;
+    width: 28px;
+    text-align: right;
+    letter-spacing: 0.05em;
+  }
+
+  .section-title {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    color: var(--cyan);
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+
+  p {
+    color: var(--text);
+    font-size: 14px;
+    line-height: 1.75;
+    margin-bottom: 14px;
+    font-weight: 300;
+  }
+
+  /* ── Math blocks ── */
+  .math-block {
+    background: var(--bg2);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--amber-dim);
+    border-radius: 2px;
+    padding: 20px 24px;
+    margin: 20px 0;
+    font-family: var(--mono);
+    font-size: 13px;
+    line-height: 2;
+    overflow-x: auto;
+    position: relative;
+  }
+  .math-block .label {
+    font-size: 10px;
+    color: var(--text-dim);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+  .math-block .expr {
+    color: #dde8f2;
+  }
+  .math-block .comment {
+    color: var(--text-dim);
+    font-style: italic;
+    font-size: 12px;
+  }
+  .hi-amber { color: var(--amber); }
+  .hi-cyan  { color: var(--cyan); }
+  .hi-green { color: var(--green); }
+  .hi-red   { color: #e87070; }
+
+  /* ── Definition table ── */
+  .def-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-family: var(--mono);
+    font-size: 12px;
+  }
+  .def-table tr { border-bottom: 1px solid var(--border); }
+  .def-table tr:last-child { border-bottom: none; }
+  .def-table td { padding: 10px 14px; vertical-align: top; }
+  .def-table td:first-child {
+    color: var(--amber);
+    white-space: nowrap;
+    width: 160px;
+  }
+  .def-table td:last-child {
+    color: var(--text);
+    font-family: var(--sans);
+    font-size: 13px;
+    font-weight: 300;
+  }
+
+  /* ── Callout ── */
+  .callout {
+    background: var(--bg2);
+    border: 1px solid var(--border2);
+    border-left: 3px solid var(--cyan);
+    border-radius: 2px;
+    padding: 16px 20px;
+    margin: 20px 0;
+    font-size: 13px;
+    font-weight: 300;
+    color: #aac8df;
+  }
+  .callout strong {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    color: var(--cyan);
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 6px;
+  }
+
+  .callout-warn {
+    border-left-color: var(--amber);
+  }
+  .callout-warn strong { color: var(--amber); }
+
+  /* ── Interactive panel ── */
+  .interactive {
+    background: var(--bg1);
+    border: 1px solid var(--border2);
+    border-radius: 3px;
+    padding: 28px;
+    margin: 28px 0;
+  }
+  .interactive-title {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.16em;
+    color: var(--amber);
+    text-transform: uppercase;
+    margin-bottom: 24px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .interactive-title::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--amber-dim);
+  }
+
+  .param-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-bottom: 28px;
+  }
+  @media (max-width: 600px) { .param-grid { grid-template-columns: 1fr; } }
+
+  .param-row {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .param-label {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--text-dim);
+    display: flex;
+    justify-content: space-between;
+  }
+  .param-label .val {
+    color: var(--amber);
+    font-weight: 500;
+  }
+  input[type=range] {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 3px;
+    background: var(--border2);
+    border-radius: 2px;
+    outline: none;
+  }
+  input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: var(--amber);
+    cursor: pointer;
+    border: 2px solid var(--bg);
+  }
+  input[type=range]::-webkit-slider-thumb:hover { background: #f0b860; }
+
+  /* ── Output readouts ── */
+  .readout-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin-bottom: 24px;
+  }
+  @media (max-width: 600px) { .readout-grid { grid-template-columns: 1fr 1fr; } }
+
+  .readout {
+    background: var(--bg3);
+    border: 1px solid var(--border);
+    border-radius: 2px;
+    padding: 14px 16px;
+  }
+  .readout-label {
+    font-family: var(--mono);
+    font-size: 9px;
+    letter-spacing: 0.14em;
+    color: var(--text-faint);
+    text-transform: uppercase;
+    margin-bottom: 6px;
+  }
+  .readout-value {
+    font-family: var(--mono);
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 1;
+  }
+  .readout-unit {
+    font-family: var(--mono);
+    font-size: 10px;
+    color: var(--text-dim);
+    margin-top: 4px;
+  }
+
+  /* ── Canvas chart ── */
+  .chart-wrap {
+    position: relative;
+    margin-top: 8px;
+  }
+  canvas {
+    width: 100%;
+    height: 240px;
+    display: block;
+  }
+  .chart-legend {
+    display: flex;
+    gap: 20px;
+    margin-top: 10px;
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--text-dim);
+  }
+  .legend-item { display: flex; align-items: center; gap: 6px; }
+  .legend-dot { width: 10px; height: 3px; border-radius: 1px; }
+
+  /* ── Proof step ── */
+  .proof-step {
+    display: flex;
+    gap: 16px;
+    margin: 16px 0;
+    align-items: flex-start;
+  }
+  .step-num {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--text-faint);
+    min-width: 28px;
+    padding-top: 2px;
+  }
+  .step-body { flex: 1; }
+
+  /* ── Divider ── */
+  .divider {
+    border: none;
+    border-top: 1px solid var(--border);
+    margin: 40px 0;
+  }
+
+  /* ── Open question tag ── */
+  .open-q {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-family: var(--mono);
+    font-size: 10px;
+    color: var(--amber);
+    background: rgba(232, 160, 69, 0.08);
+    border: 1px solid var(--amber-dim);
+    border-radius: 2px;
+    padding: 3px 8px;
+    margin: 4px 4px 4px 0;
+    cursor: default;
+  }
+  .open-q::before { content: '⊙'; }
+
+</style>
+<style>
+:root {
+  --bg:#0a0c0f; --bg1:#0f1318; --bg2:#141920; --bg3:#1c2330;
+  --border:#1e2d3d; --border2:#2a3f54;
+  --amber:#e8a045; --amber-dim:#7a5020;
+  --cyan:#4fc3c8; --cyan-dim:#1e5558;
+  --green:#5cb85c; --green-dim:#1e3d1e;
+  --red:#e87070; --red-dim:#3d1010;
+  --purple:#a78bfa; --purple-dim:#2d1f5e;
+  --text:#c8d6e5; --text-dim:#5a7a94; --text-faint:#2e4a5e;
+  --mono:'IBM Plex Mono',monospace; --sans:'IBM Plex Sans',sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{background:var(--bg);color:var(--text);font-family:var(--sans);font-size:14px;line-height:1.7;}
+.shell{max-width:1040px;margin:0 auto;padding:48px 32px 96px;}
+@media(max-width:700px){.shell{padding:32px 16px 64px;}}
+
+/* Header */
+.eyebrow{font-family:var(--mono);font-size:10px;letter-spacing:.18em;color:var(--amber);text-transform:uppercase;margin-bottom:20px;display:flex;align-items:center;gap:12px;}
+.eyebrow::after{content:'';flex:1;height:1px;background:var(--amber-dim);}
+h1{font-family:var(--mono);font-size:20px;font-weight:500;color:#e8edf2;letter-spacing:-.02em;margin-bottom:8px;}
+.doc-meta{font-family:var(--mono);font-size:11px;color:var(--text-dim);margin-bottom:12px;}
+.query-box{background:var(--bg2);border:1px solid var(--border2);border-left:3px solid var(--cyan);border-radius:2px;padding:16px 20px;margin-bottom:32px;}
+.query-box .ql{font-size:9px;letter-spacing:.16em;color:var(--cyan);text-transform:uppercase;margin-bottom:6px;font-family:var(--mono);}
+.query-text{color:#dde8f2;font-size:14px;line-height:1.5;}
+
+/* Tab navigation */
+.tab-nav{display:flex;gap:2px;margin-bottom:0;border-bottom:1px solid var(--border);}
+.tab-btn{font-family:var(--mono);font-size:10px;letter-spacing:.08em;text-transform:uppercase;padding:8px 12px;background:var(--bg1);border:1px solid var(--border);border-bottom:none;border-radius:2px 2px 0 0;cursor:pointer;color:var(--text-dim);transition:all .2s;}
+@media(max-width:540px){
+  .tab-nav{display:grid;grid-template-columns:1fr 1fr;gap:2px;border-bottom:1px solid var(--border);}
+  .tab-btn{border-bottom:1px solid var(--border);border-radius:2px;font-size:9px;padding:7px 8px;letter-spacing:.06em;}
+  .tab-btn.active-stage0,.tab-btn.active-obj,.tab-btn.active-stage1,.tab-btn.active-stage2{border-bottom:2px solid var(--amber);border-radius:2px;}
+}
+.tab-btn:hover{color:var(--text);border-color:var(--border2);}
+.tab-btn.active-stage0{color:var(--red);border-color:var(--red-dim);background:rgba(232,112,112,.06);}
+.tab-btn.active-obj{color:var(--amber);border-color:var(--amber-dim);background:rgba(232,160,69,.06);}
+.tab-btn.active-stage1{color:var(--cyan);border-color:var(--cyan-dim);background:rgba(79,195,200,.06);}
+.tab-btn.active-stage2{color:var(--purple);border-color:var(--purple-dim);background:rgba(167,139,250,.06);}
+
+/* Tab panels */
+.tab-panel{display:none;background:var(--bg1);border:1px solid var(--border);border-top:none;border-radius:0 0 2px 2px;padding:24px;}
+.tab-panel.active{display:block;}
+
+/* Two-column layout */
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:20px;}
+@media(max-width:700px){.cols{grid-template-columns:1fr;}}
+
+/* Column heads */
+.col-head{font-family:var(--mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;padding:8px 12px;border-radius:2px 2px 0 0;margin-bottom:0;}
+.ch-doc{background:rgba(232,112,112,.1);color:var(--red);border:1px solid rgba(232,112,112,.2);}
+.ch-graph{background:rgba(79,195,200,.08);color:var(--cyan);border:1px solid rgba(79,195,200,.2);}
+.ch-instance{background:rgba(167,139,250,.08);color:var(--purple);border:1px solid rgba(167,139,250,.2);}
+.col-body{border:1px solid var(--border);border-top:none;border-radius:0 0 2px 2px;min-height:280px;}
+
+/* C(q) bars */
+.cq-section{padding:12px 14px 14px;}
+.cq-stitle{font-family:var(--mono);font-size:9px;letter-spacing:.14em;color:var(--text-faint);text-transform:uppercase;margin-bottom:10px;}
+.cq-row{display:flex;align-items:center;gap:8px;margin-bottom:7px;}
+.cq-label{font-family:var(--mono);font-size:10px;color:var(--text-dim);width:160px;flex-shrink:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+.cq-bar-wrap{flex:1;background:var(--bg3);height:14px;border-radius:1px;position:relative;}
+.cq-bar{height:100%;border-radius:1px;transition:width .4s;}
+.cq-val{font-family:var(--mono);font-size:10px;width:32px;text-align:right;flex-shrink:0;}
+
+/* Retrieval steps */
+.steps-wrap{padding:0 12px 12px;}
+.rstep{display:flex;gap:8px;align-items:flex-start;padding:9px 10px;margin-bottom:5px;border-radius:2px;border:1px solid var(--border);background:var(--bg2);cursor:pointer;transition:border-color .2s;}
+.rstep:hover{border-color:var(--border2);}
+.rstep.act-doc{border-color:rgba(232,112,112,.4);background:rgba(232,112,112,.04);}
+.rstep.act-graph{border-color:rgba(79,195,200,.4);background:rgba(79,195,200,.04);}
+.rstep.act-inst{border-color:rgba(167,139,250,.4);background:rgba(167,139,250,.04);}
+.rnum{font-family:var(--mono);font-size:10px;color:var(--text-faint);min-width:16px;padding-top:1px;}
+.rcontent{flex:1;}
+.rname{font-family:var(--mono);font-size:11px;color:var(--text);margin-bottom:2px;}
+.rdesc{font-size:11px;font-weight:300;color:var(--text-dim);line-height:1.5;}
+.rcov{font-family:var(--mono);font-size:10px;color:var(--green);margin-top:3px;}
+.rwaste{font-family:var(--mono);font-size:10px;color:rgba(232,112,112,.7);margin-top:2px;}
+.rtok{font-family:var(--mono);font-size:11px;flex-shrink:0;padding-top:1px;}
+
+/* Coverage meters */
+.meter-section{padding:10px 12px 12px;border-top:1px solid var(--border);}
+.meter-stitle{font-family:var(--mono);font-size:9px;letter-spacing:.12em;color:var(--text-faint);text-transform:uppercase;margin-bottom:8px;}
+.meter-row{display:flex;align-items:center;gap:8px;margin-bottom:5px;}
+.meter-name{font-family:var(--mono);font-size:10px;color:var(--text-dim);width:76px;flex-shrink:0;}
+.meter-bar-wrap{flex:1;background:var(--bg3);height:11px;border-radius:1px;}
+.meter-bar{height:100%;border-radius:1px;transition:width .5s;}
+.meter-val{font-family:var(--mono);font-size:10px;width:36px;text-align:right;}
+.meter-total{border-top:1px solid var(--border);margin-top:6px;padding-top:6px;font-family:var(--mono);font-size:11px;display:flex;justify-content:space-between;}
+
+/* Summary readouts */
+.summary{background:var(--bg2);border:1px solid var(--border2);border-radius:2px;padding:20px;margin-bottom:16px;}
+.sum-title{font-family:var(--mono);font-size:10px;letter-spacing:.14em;color:var(--amber);text-transform:uppercase;margin-bottom:16px;display:flex;align-items:center;gap:8px;}
+.sum-title::after{content:'';flex:1;height:1px;background:var(--amber-dim);}
+.rdout-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:14px;}
+@media(max-width:700px){.rdout-grid{grid-template-columns:1fr 1fr;}}
+.rdout{background:var(--bg3);border:1px solid var(--border);border-radius:2px;padding:12px;}
+.rlabel{font-family:var(--mono);font-size:9px;letter-spacing:.12em;color:var(--text-faint);text-transform:uppercase;margin-bottom:4px;}
+.rval{font-family:var(--mono);font-size:20px;font-weight:500;line-height:1;}
+.runit{font-family:var(--mono);font-size:10px;color:var(--text-dim);margin-top:3px;}
+.insight{background:rgba(92,184,92,.05);border:1px solid rgba(92,184,92,.15);border-left:3px solid var(--green);border-radius:2px;padding:12px 16px;font-size:12px;font-weight:300;color:#9ecf9e;line-height:1.6;}
+.insight strong{font-family:var(--mono);font-size:9px;letter-spacing:.1em;color:var(--green);text-transform:uppercase;display:block;margin-bottom:4px;}
+
+/* Amortization */
+.amort{background:var(--bg2);border:1px solid var(--border2);border-radius:2px;padding:20px;margin-bottom:16px;}
+.amort-title{font-family:var(--mono);font-size:10px;letter-spacing:.14em;color:var(--amber);text-transform:uppercase;margin-bottom:12px;display:flex;align-items:center;gap:8px;}
+.amort-title::after{content:'';flex:1;height:1px;background:var(--amber-dim);}
+.param-row{display:flex;flex-direction:column;gap:5px;margin-bottom:14px;}
+.param-label{font-family:var(--mono);font-size:11px;color:var(--text-dim);display:flex;justify-content:space-between;}
+.pval{color:var(--amber);}
+input[type=range]{-webkit-appearance:none;width:100%;height:3px;background:var(--border2);border-radius:2px;outline:none;}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:13px;height:13px;border-radius:50%;background:var(--amber);cursor:pointer;border:2px solid var(--bg);}
+canvas{width:100%;height:200px;display:block;margin-top:10px;}
+.legend{display:flex;gap:16px;margin-top:8px;flex-wrap:wrap;font-family:var(--mono);font-size:10px;color:var(--text-dim);}
+.ldot{width:10px;height:3px;border-radius:1px;}
+.li{display:flex;align-items:center;gap:5px;}
+
+/* Objection panels */
+.obj-card{background:var(--bg2);border:1px solid var(--border);border-radius:2px;margin-bottom:8px;cursor:pointer;}
+.obj-card:hover{border-color:var(--border2);}
+.obj-card.open{border-color:var(--border2);}
+.obj-header{display:flex;align-items:center;gap:12px;padding:12px 16px;user-select:none;}
+.obj-icon{font-family:var(--mono);font-size:12px;color:var(--amber);min-width:18px;}
+.obj-q{flex:1;font-size:13px;color:var(--text);}
+.obj-arr{font-size:10px;color:var(--text-faint);transition:transform .2s;}
+.obj-card.open .obj-arr{transform:rotate(90deg);}
+.obj-body{display:none;padding:0 16px 14px 46px;border-top:1px solid var(--border);}
+.obj-card.open .obj-body{display:block;}
+.obj-body p{font-size:12px;font-weight:300;color:var(--text-dim);line-height:1.65;margin-top:10px;}
+.obj-verdict{font-family:var(--mono);font-size:10px;color:var(--amber);margin-top:8px;padding:7px 10px;background:var(--amber-dim);border-left:2px solid var(--amber);border-radius:1px;}
+
+/* CQ distribution panel */
+#cq-global{padding:0 0 24px;}
+</style>
+
+<style>
+/* ── Mobile responsive additions ── */
+@media (max-width: 480px) {
+  .readout-grid { grid-template-columns: 1fr 1fr !important; }
+  .rdout-grid   { grid-template-columns: 1fr 1fr !important; }
+  .param-grid   { grid-template-columns: 1fr !important; }
+  .cols         { grid-template-columns: 1fr !important; }
+  #cq-global > div { grid-template-columns: 1fr !important; }
+  .layers       { grid-template-columns: 1fr !important; }
+  .stage-metrics{ grid-template-columns: 1fr 1fr; }
+  .def-table td:first-child { width: 120px; font-size: 10px; }
+  .math-block   { font-size: 11px; padding: 14px 12px; overflow-x: auto; }
+  .section      { padding: 40px 0; }
+  .cost-panel   { padding: 16px; }
+  .interactive  { padding: 16px; }
+  .summary      { padding: 14px; }
+  .amort        { padding: 14px; }
+  .shell        { padding: 0 14px; }
+}
+@media (max-width: 700px) {
+  .readout-grid { grid-template-columns: 1fr 1fr; }
+  .rdout-grid   { grid-template-columns: 1fr 1fr; }
+  .cols         { grid-template-columns: 1fr; }
+  #cq-global > div { grid-template-columns: 1fr; }
+  .layers       { grid-template-columns: 1fr; }
+  .math-block   { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+}
+
+/* ── CSS scoping: canonical rules ── */
+/* Prevent p rule from general cascading into technical/example */
+#panel-technical p, #panel-example p {
+  font-size: 14px;
+  font-weight: 300;
+  color: var(--text-dim);
+  line-height: 1.75;
+  margin-bottom: 14px;
+}
+/* Prevent canvas rule collisions */
+#panel-general canvas { width: 100%; height: 200px; display: block; }
+#panel-technical canvas { width: 100%; height: 240px; display: block; }
+#panel-example canvas { width: 100%; height: 200px; display: block; }
+
+/* ── ARIA / focus styles ── */
+.nav-btn:focus-visible,
+.tab-btn:focus-visible,
+.stage-header:focus-visible,
+.obj-header:focus-visible,
+.go-deeper-btn:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--amber, #e8a045);
+  outline-offset: 2px;
+}
+
+/* ── Resize listener fix: resize handlers are additive — 
+   cap canvas min-height on tiny screens ── */
+@media (max-width: 380px) {
+  canvas { min-height: 160px !important; }
+  .tab-btn { font-size: 9px; padding: 6px 8px; }
+}
+</style>
+</head>
+<style>
+/* ════════════════════════════════════════════════════
+   RESPONSIVE FIXES — overrides panel CSS for mobile
+   ════════════════════════════════════════════════════ */
+
+/* ── Nav: mobile — scroll horizontally, don't overflow ── */
+@media (max-width: 640px) {
+  #topnav {
+    padding: 0 8px;
+    gap: 2px;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    flex-shrink: 0;
+  }
+  #topnav::-webkit-scrollbar { display: none; }
+  .nav-brand { display: none; }
+  .nav-sep { display: none; }
+  .nav-btn { 
+    font-size: 9px; 
+    padding: 0 12px; 
+    letter-spacing: 0.06em;
+    flex-shrink: 0;
+    align-self: stretch;
+    display: flex;
+    align-items: center;
+    min-height: 44px;
+  }
+  .nav-tag { display: none !important; }
+  .nav-spacer { display: none; }
+}
+
+/* ── Hero: don't force full viewport height ── */
+.hero { min-height: auto !important; padding: 56px 24px 48px !important; }
+@media (min-width: 900px) {
+  .hero { min-height: 70vh !important; padding: 80px 48px !important; }
+}
+
+/* ── Stage header: handle pill wrapping gracefully ── */
+@media (max-width: 640px) {
+  .stage-header {
+    flex-wrap: nowrap !important;
+    gap: 8px !important;
+    padding: 12px 14px !important;
+    align-items: center !important;
+  }
+  .stage-num { min-width: auto; flex-shrink: 0; }
+  .stage-name { font-size: 11px !important; flex: 1 1 0; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .stage-pill { display: none !important; }
+  .stage-chevron { flex-shrink: 0; margin-left: 4px; }
+  .stage-body { padding: 0 14px 14px !important; }
+  .stage-metrics { grid-template-columns: 1fr 1fr !important; }
+}
+
+/* ── Shell: unified padding ── */
+@media (max-width: 700px) {
+  .shell { padding: 0 16px !important; }
+  .hero .shell, .section .shell { padding-left: 16px !important; padding-right: 16px !important; }
+}
+@media (max-width: 700px) {
+  .shell { max-width: 100% !important; }
+}
+
+/* ── Hero title size ── */
+@media (max-width: 480px) {
+  .hero-title { font-size: 28px !important; }
+  .hero-sub { font-size: 15px !important; }
+  .hero-stats { gap: 24px !important; }
+  .stat-val { font-size: 24px !important; }
+}
+
+/* ── Section padding ── */
+@media (max-width: 640px) {
+  .section { padding: 48px 0 !important; }
+  .section-title { font-size: 22px !important; }
+  .section-lead { font-size: 14px !important; }
+}
+
+/* ── Go-deeper buttons: wrap properly ── */
+.go-deeper-wrap {
+  padding: 0 48px !important;
+  margin-top: 16px !important;
+  margin-bottom: 8px !important;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+@media (max-width: 700px) {
+  .go-deeper-wrap { padding: 0 16px !important; }
+  .go-deeper-btn { font-size: 9px !important; padding: 12px 14px !important; min-height: 44px !important; }
+}
+
+/* ── Layers grid ── */
+@media (max-width: 640px) {
+  .layers { grid-template-columns: 1fr !important; }
+}
+
+/* ── Cost panel param grid ── */
+@media (max-width: 640px) {
+  .cost-panel > div[style*="grid"] { grid-template-columns: 1fr !important; }
+}
+
+/* ── Principles: don't crush on narrow ── */
+@media (max-width: 500px) {
+  .principle { flex-direction: column; gap: 8px; }
+  .principle-num { font-size: 18px; }
+}
+
+/* ── Technical: math-block horizontal scroll ── */
+.math-block {
+  overflow-x: auto !important;
+  -webkit-overflow-scrolling: touch;
+}
+@media (max-width: 640px) {
+  .math-block { font-size: 11px !important; padding: 14px 16px !important; }
+  .def-table td { padding: 8px 10px !important; }
+  .def-table td:first-child { width: 100px !important; font-size: 11px !important; }
+  .section[data-n] { padding-left: 12px !important; }
+  .section[data-n]::before { display: none !important; }
+  .interactive { padding: 16px !important; }
+  .param-grid { grid-template-columns: 1fr !important; }
+  .readout-grid { grid-template-columns: 1fr 1fr !important; }
+}
+
+/* ── Example: tab nav scroll on mobile ── */
+.tab-nav {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  flex-wrap: nowrap !important;
+  padding-bottom: 0;
+}
+.tab-nav::-webkit-scrollbar { display: none; }
+@media (max-width: 640px) {
+  .tab-btn { font-size: 9px !important; padding: 8px 12px !important; white-space: nowrap; }
+  .tab-panel { padding: 16px !important; }
+  .cols { grid-template-columns: 1fr !important; }
+  .col-head { font-size: 9px !important; }
+  .rstep { padding: 7px 8px !important; }
+  .rname { font-size: 10px !important; }
+  .rdesc { font-size: 10px !important; }
+  .rdout-grid { grid-template-columns: 1fr 1fr !important; }
+  .amort { padding: 14px !important; }
+  .sum-title { font-size: 9px !important; }
+  .rval { font-size: 16px !important; }
+  .cq-label { width: 110px !important; font-size: 9px !important; }
+  .meter-name { width: 56px !important; font-size: 9px !important; }
+}
+
+/* ── Canvas: always fill container ── */
+canvas {
+  width: 100% !important;
+  height: 180px !important;
+  display: block !important;
+}
+@media (max-width: 500px) {
+  canvas { height: 150px !important; }
+}
+
+/* ── Summary insight box ── */
+@media (max-width: 640px) {
+  .insight { font-size: 11px !important; padding: 10px 12px !important; }
+  .obj-body { padding: 0 12px 12px 32px !important; }
+  .obj-body p { font-size: 11px !important; }
+  .obj-verdict { font-size: 10px !important; }
+}
+
+/* ── Stage 0 "what system has to do" panel ── */
+@media (max-width: 640px) {
+  #panel-s0 .col-body[style*="padding"] { padding: 12px !important; }
+  #panel-s0 .col-body p { font-size: 11px !important; }
+}
+
+/* ── General: callout boxes ── */
+@media (max-width: 640px) {
+  .callout { font-size: 12px !important; padding: 12px 14px !important; }
+}
+
+/* ── Technical: proof steps ── */
+@media (max-width: 640px) {
+  .proof-step { gap: 8px; }
+  .step-num { min-width: 20px; }
+}
+</style>
+<body>
+<nav id="topnav" role="navigation" aria-label="Section navigation">
+  <span class="nav-brand">Knowledge Infrastructure</span>
+  <div class="nav-sep"></div>
+  <button type="button" class="nav-btn nav-active" id="navbtn-general"   onclick="showPanel('general')" aria-selected="true"  aria-controls="panel-general">Overview</button>
+  <button type="button" class="nav-btn"            id="navbtn-technical" onclick="showPanel('technical')" aria-selected="false" aria-controls="panel-technical">Technical Derivation</button>
+  <button type="button" class="nav-btn"            id="navbtn-example"   onclick="showPanel('example')" aria-selected="false" aria-controls="panel-example">Interactive Example</button>
+  <div class="nav-spacer"></div>
+  <span class="nav-tag">Private Markets &middot; AI Knowledge Infrastructure</span>
+</nav>
+<div id="panel-host">
+<div role="region" class="bundle-panel bp-active" id="panel-general"><!-- Hero -->
+<section class="hero">
+  <div class="hero-grid"></div>
+  <div style="max-width:960px;margin:0 auto;width:100%;position:relative;">
+    <div class="hero-badge">Knowledge Infrastructure · Private Markets</div>
+    <h1 class="hero-title">The cost of asking the same question <em>twice.</em></h1>
+    <p class="hero-sub">Every time your AI system synthesizes an answer without encoded structure, it pays the same cost. No memory, no compounding, no ceiling on spend. There is a better architecture — and the economics are not subtle.</p>
+    <div class="hero-stats">
+      <div class="stat">
+        <div class="stat-val" id="hero-ratio">—</div>
+        <div class="stat-label">Efficiency ratio<br>graph vs. document</div>
+      </div>
+      <div class="stat">
+        <div class="stat-val" id="hero-nstar">—</div>
+        <div class="stat-label">Queries to<br>break even</div>
+      </div>
+      <div class="stat">
+        <div class="stat-val">∞</div>
+        <div class="stat-label">Cost ceiling<br>unstructured inference</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- §1 The problem -->
+<section class="section">
+  <div class="shell">
+    <div class="section-eyebrow">The problem</div>
+    <h2 class="section-title">Your AI system is paying full price on every question.</h2>
+    <p class="section-lead">Document retrieval and inference-time synthesis work. The problem is they never get cheaper. Each answer costs the same as the last — full document consumption, full synthesis, no memory of the work done.</p>
+
+    <p>Consider a question any analyst in your organization might ask: <em style="color:var(--amber)">"What was the reported NAV for Carlyle's flagship buyout fund last quarter, and how does that compare to their disclosed fair value methodology?"</em></p>
+
+    <p>That question requires understanding what NAV is and how it's calculated, what fair value methodology means under ASC 820, how Carlyle's specific fund reports it, and what the actual reported figure was. Without structure, your system retrieves several documents, reads most of each, synthesizes the conceptual connections at inference time, and returns an answer. Next week, someone asks a related question. The system does it again — same documents, same synthesis, same cost.</p>
+
+    <p>Nothing compounded. Nothing was remembered. You paid twice.</p>
+
+    <!-- Stage progression -->
+    <div class="stages" id="stages">
+
+      <div class="stage-card" id="stage0">
+        <div class="stage-header" tabindex="0" role="button" onclick="G_toggleStage('stage0')">
+          <span class="stage-num">Stage 0</span>
+          <span class="stage-name">Documents only — Infer everything</span>
+          <span class="stage-pill pill-red">Current state for most</span>
+          <span class="stage-chevron">▶</span>
+        </div>
+        <div class="stage-body">
+          <p class="stage-desc">All knowledge lives in documents. Every question requires the system to retrieve several documents, consume their full content, and synthesize the answer at inference time. Cost is linear with query volume. Nothing compounds. The system is as expensive on query 10,000 as it was on query 1.</p>
+          <div class="stage-metrics">
+            <div class="metric">
+              <div class="metric-label">Per-query cost</div>
+              <div class="metric-val" style="color:var(--red)">Full</div>
+            </div>
+            <div class="metric">
+              <div class="metric-label">Compounds over time</div>
+              <div class="metric-val" style="color:var(--red)">No</div>
+            </div>
+            <div class="metric">
+              <div class="metric-label">Cost ceiling</div>
+              <div class="metric-val" style="color:var(--red)">None</div>
+            </div>
+          </div>
+          <p style="font-size:13px;color:var(--text-dim);line-height:1.6">For the Carlyle NAV query: three or more documents retrieved and consumed in full. The system reads fund reporting guidelines, fair value accounting standards, and a fund-specific LP memo — most of each document is irrelevant to the question. Synthesis happens fresh every time.</p>
+        </div>
+      </div>
+
+      <div class="stage-card" id="stage1">
+        <div class="stage-header" tabindex="0" role="button" onclick="G_toggleStage('stage1')">
+          <span class="stage-num">Stage 1</span>
+          <span class="stage-name">Concept graph — Harden the conceptual layer</span>
+          <span class="stage-pill pill-amber">Tractable first step</span>
+          <span class="stage-chevron">▶</span>
+        </div>
+        <div class="stage-body">
+          <p class="stage-desc">Concepts that appear repeatedly across queries get encoded as structured nodes: NAV methodology, fair value estimation, mark-to-market lag, vintage effects. When a question involves these concepts, the system retrieves them directly — no document scanning required. Synthesis cost drops for the growing share of questions the concept layer covers.</p>
+          <div class="stage-metrics">
+            <div class="metric">
+              <div class="metric-label">Per-query cost</div>
+              <div class="metric-val" style="color:var(--amber)">Reduced</div>
+            </div>
+            <div class="metric">
+              <div class="metric-label">Compounds over time</div>
+              <div class="metric-val" style="color:var(--amber)">Yes</div>
+            </div>
+            <div class="metric">
+              <div class="metric-label">Construction cost</div>
+              <div class="metric-val" style="color:var(--amber)">One-time</div>
+            </div>
+          </div>
+          <p style="font-size:13px;color:var(--text-dim);line-height:1.6">For the Carlyle NAV query: the conceptual dependencies — NAV methodology, ASC 820 fair value hierarchy, mark-to-market treatment — are retrieved directly from concept nodes. The system doesn't need to scan any document to understand what fair value methodology means or how NAV is calculated. That work was done once.</p>
+        </div>
+      </div>
+
+      <div class="stage-card" id="stage2">
+        <div class="stage-header" tabindex="0" role="button" onclick="G_toggleStage('stage2')">
+          <span class="stage-num">Stage 2</span>
+          <span class="stage-name">Instance graph — Harden the factual layer</span>
+          <span class="stage-pill pill-cyan">Full architecture</span>
+          <span class="stage-chevron">▶</span>
+        </div>
+        <div class="stage-body">
+          <p class="stage-desc">Specific entities — funds, GPs, LPs, portfolio companies — get canonical identities. Their properties and relationships are encoded: Carlyle Group's flagship buyout fund, its Q3 2024 reported NAV, its disclosed fair value methodology. Fact retrieval becomes a lookup, not a document scan. The same entity is recognized consistently regardless of how it's named across documents.</p>
+          <div class="stage-metrics">
+            <div class="metric">
+              <div class="metric-label">Per-query cost</div>
+              <div class="metric-val" style="color:var(--cyan)">Minimal</div>
+            </div>
+            <div class="metric">
+              <div class="metric-label">Entity consistency</div>
+              <div class="metric-val" style="color:var(--cyan)">Enforced</div>
+            </div>
+            <div class="metric">
+              <div class="metric-label">Full query coverage</div>
+              <div class="metric-val" style="color:var(--cyan)">Yes</div>
+            </div>
+          </div>
+          <p style="font-size:13px;color:var(--text-dim);line-height:1.6">For the Carlyle NAV query: the instance graph knows Carlyle Group, knows its CCP V fund, and has the Q3 2024 reported NAV stored as a structured fact. The answer to "what was the NAV" is a lookup — no document required. The answer to "how does that compare to their methodology" uses the concept layer. Both layers work together on a single query.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- §2 Objections -->
+<section class="section">
+  <div class="shell">
+    <div class="section-eyebrow">Common objections</div>
+    <h2 class="section-title">We already do something like this.</h2>
+    <p class="section-lead">Most organizations have taken steps to improve retrieval. Each step helps — but each leaves a residual gap that only structure resolves.</p>
+
+    <div class="objections">
+      <div class="obj-title">Anticipated pushback — click to expand</div>
+
+      <div class="obj-card" id="obj1">
+        <div class="obj-header" tabindex="0" role="button" onclick="G_toggleObj('obj1')">
+          <span class="obj-icon">Q</span>
+          <span class="obj-question">"We use chunked embeddings, not full documents. Doesn't that solve the token waste problem?"</span>
+          <span class="obj-arrow">▶</span>
+        </div>
+        <div class="obj-body">
+          <p>Chunking improves things. A smaller chunk costs fewer tokens to retrieve and process, so the efficiency ratio improves. But chunk boundaries are determined by token count or sentence windows — not by concept boundaries. A chunk might contain half an explanation of fair value methodology and half a discussion of reporting timelines. The embedding captures a blend. The system still pays for irrelevant content within each chunk, and still has to synthesize across chunks at inference time.</p>
+          <p>More importantly: chunks don't know what they contain. Two chunks discussing NAV methodology in different documents have no structural link. The system has to rediscover that connection on every query. A concept node makes that connection once.</p>
+          <div class="obj-verdict">Verdict: Chunking narrows the efficiency gap but doesn't close it. The fundamental mismatch — chunk granularity vs. concept granularity — persists.</div>
+        </div>
+      </div>
+
+      <div class="obj-card" id="obj2">
+        <div class="obj-header" tabindex="0" role="button" onclick="G_toggleObj('obj2')">
+          <span class="obj-icon">Q</span>
+          <span class="obj-question">"We have a Solr index with document-level metadata. That's fast retrieval already."</span>
+          <span class="obj-arrow">▶</span>
+        </div>
+        <div class="obj-body">
+          <p>A metadata index is fast retrieval to the right document. But document-level metadata — issuer, document type, date received, fund name — answers "which document?" not "what does this document say about X?" The conceptual content of the document is still locked inside it. Once you retrieve the document, you're back to full synthesis.</p>
+          <p>Metadata indexing solves the navigation problem, not the coverage problem. You still pay full inference cost on every question that requires understanding the document's content, not just locating it.</p>
+          <div class="obj-verdict">Verdict: Metadata indexing is a retrieval filter, not a knowledge representation. It gets you to the document faster but doesn't reduce what you pay once you're there.</div>
+        </div>
+      </div>
+
+      <div class="obj-card" id="obj3">
+        <div class="obj-header" tabindex="0" role="button" onclick="G_toggleObj('obj3')">
+          <span class="obj-icon">Q</span>
+          <span class="obj-question">"What if we enrich our document metadata with concept and entity references from a shared vocabulary?"</span>
+          <span class="obj-arrow">▶</span>
+        </div>
+        <div class="obj-body">
+          <p>This is the closest partial solution and it moves the needle meaningfully. If documents are tagged with canonical concept identifiers, you can retrieve by concept without scanning document content. That addresses the navigation problem for concepts, not just administrative metadata.</p>
+          <p>But enriched metadata is still set membership: this document mentions {NAV methodology, fair value, vintage effects}. It tells you the concepts are present but nothing about how they relate. Is NAV methodology a prerequisite for understanding fair value here, or a consequence? Is the fair value discussion explanatory or merely referential? The relationship is lost.</p>
+          <p>Without directed typed relationships between concepts, you can't traverse dependency chains. You can't say "to answer this question, you need to understand X before Y." You get better recall, not better reasoning about what to retrieve next.</p>
+          <div class="obj-verdict">Verdict: Enriched metadata is the best document-centric approach and is worth doing. It still lacks directionality and typed relationships — the information content of graph edges is not recoverable from tags.</div>
+        </div>
+      </div>
+
+      <div class="obj-card" id="obj4">
+        <div class="obj-header" tabindex="0" role="button" onclick="G_toggleObj('obj4')">
+          <span class="obj-icon">Q</span>
+          <span class="obj-question">"Bigger models handle synthesis better. Why invest in structure when the models keep improving?"</span>
+          <span class="obj-arrow">▶</span>
+        </div>
+        <div class="obj-body">
+          <p>Better models improve synthesis quality. They don't change the fundamental cost structure: every query pays full inference cost, synthesis is repeated from scratch, nothing compounds. A 10x better model at the same query volume costs the same as a 1x model — it's just more accurate at the full price.</p>
+          <p>Structure and model quality are complements, not substitutes. Structure reduces the work the model has to do at inference time. A better model on top of good structure is strictly better than a better model on top of no structure — and cheaper per answer.</p>
+          <div class="obj-verdict">Verdict: Model improvement is not an architectural substitute. Better models reduce error rates on synthesis; structure reduces the number of times synthesis is needed.</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- §3 The two layers -->
+<section class="section">
+  <div class="shell">
+    <div class="section-eyebrow">The architecture</div>
+    <h2 class="section-title">Two separable layers. Independent value. Compounding returns.</h2>
+    <p class="section-lead">The concept and instance layers address different parts of the query space. Each can be implemented independently. Together they cover the full range of questions your organization asks.</p>
+
+    <div class="layers">
+      <div class="layer-card" style="border-top:3px solid var(--amber)">
+        <span class="layer-tag" style="background:var(--amber-dim);color:var(--amber);border:1px solid rgba(232,160,69,0.2)">Layer 1 — Concept graph</span>
+        <div class="layer-title">What things are and how they relate</div>
+        <div class="layer-body">Encodes definitions, methodologies, frameworks, and the typed relationships between them. Answers conceptual questions without document retrieval. Prerequisite relationships are explicit: understanding fair value requires understanding Level 2/3 inputs.</div>
+        <div class="layer-examples">
+          <div style="margin-top:8px;margin-bottom:4px;color:var(--text-faint);font-size:9px;letter-spacing:0.12em;text-transform:uppercase;">Example nodes</div>
+          <span>NAV methodology</span>
+          <span>Fair value (ASC 820)</span>
+          <span>Mark-to-market lag</span>
+          <span>Vintage effects</span>
+          <span>Illiquidity premium</span>
+        </div>
+      </div>
+
+      <div class="layer-card" style="border-top:3px solid var(--cyan)">
+        <span class="layer-tag" style="background:var(--cyan-dim);color:var(--cyan);border:1px solid rgba(79,195,200,0.2)">Layer 2 — Instance graph</span>
+        <div class="layer-title">Who specific entities are and what they hold</div>
+        <div class="layer-body">Encodes canonical entity identities, their properties, and their relationships. Resolves the same entity across different naming conventions. Answers factual questions as structured lookups rather than document scans.</div>
+        <div class="layer-examples">
+          <div style="margin-top:8px;margin-bottom:4px;color:var(--text-faint);font-size:9px;letter-spacing:0.12em;text-transform:uppercase;">Example nodes</div>
+          <span>Carlyle Group [GP]</span>
+          <span>CCP V [Fund]</span>
+          <span>JPMorgan AM [LP]</span>
+          <span>NAV Q3 2024: $4.2B</span>
+          <span>Commitment: $200M</span>
+        </div>
+      </div>
+    </div>
+
+    <p>The two layers answer different questions. "What is NAV methodology?" — concept layer. "What was Carlyle Fund V's reported NAV last quarter?" — instance layer. "How does Carlyle's fair value methodology affect their reported NAV?" — both layers, traversed together. The query scope determines which layers are needed. Both can be queried independently.</p>
+
+    <p>Critically, the layers are also separable in implementation. Building the concept layer first delivers immediate value on conceptual questions and establishes the vocabulary that makes the instance layer more precise. The instance layer builds on that foundation — but it doesn't require it. Either can be implemented first based on where the highest query volume sits.</p>
+  </div>
+</section>
+
+<!-- §4 Cost model -->
+<section class="section">
+  <div class="shell">
+    <div class="section-eyebrow">The economics</div>
+    <h2 class="section-title">Structure is an investment with a computable return.</h2>
+    <p class="section-lead">Graph construction is a one-time cost per knowledge unit. Every query after the break-even point is pure savings. The crossover happens earlier than most organizations expect.</p>
+
+    <div class="cost-panel">
+      <div class="cost-title">Break-even explorer</div>
+      <p class="cost-desc">Adjust the parameters to match your organization's query volume and infrastructure costs. The crossover point N* is where cumulative graph retrieval cost — including construction — falls below cumulative document retrieval cost.</p>
+
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:20px;">
+        <div>
+          <div class="param-row">
+            <div class="param-label">
+              <span>Avg. tokens per document retrieval</span>
+              <span class="pval" id="lbl-td2">2500</span>
+            </div>
+            <input type="range" id="sl-td2" min="500" max="8000" step="100" value="2500">
+          </div>
+          <div class="param-row">
+            <div class="param-label">
+              <span>Avg. tokens per concept node</span>
+              <span class="pval" id="lbl-tc2">220</span>
+            </div>
+            <input type="range" id="sl-tc2" min="50" max="800" step="50" value="220">
+          </div>
+        </div>
+        <div>
+          <div class="param-row">
+            <div class="param-label">
+              <span>Construction cost per node (tokens)</span>
+              <span class="pval" id="lbl-kc2">1400</span>
+            </div>
+            <input type="range" id="sl-kc2" min="200" max="6000" step="100" value="1400">
+          </div>
+          <div class="param-row">
+            <div class="param-label">
+              <span>Concept nodes per typical query</span>
+              <span class="pval" id="lbl-k2">4</span>
+            </div>
+            <input type="range" id="sl-k2" min="1" max="12" step="1" value="4">
+          </div>
+        </div>
+      </div>
+
+      <div class="readout-row">
+        <div class="rdout">
+          <div class="rdout-label">Break-even N*</div>
+          <div class="rdout-val" id="r-nstar2" style="color:var(--amber)">—</div>
+        </div>
+        <div class="rdout">
+          <div class="rdout-label">Savings @ 5k queries</div>
+          <div class="rdout-val" id="r-s5k" style="color:var(--green)">—</div>
+        </div>
+        <div class="rdout">
+          <div class="rdout-label">Efficiency ratio</div>
+          <div class="rdout-val" id="r-ratio2" style="color:var(--cyan)">—</div>
+        </div>
+      </div>
+
+      <canvas id="chart2" width="900" height="200"></canvas>
+      <div class="chart-legend">
+        <div class="legend-item"><div class="legend-dot" style="background:#d9534f"></div><span>Document retrieval (cumulative)</span></div>
+        <div class="legend-item"><div class="legend-dot" style="background:#4fc3c8"></div><span>Graph retrieval + construction (cumulative)</span></div>
+        <div class="legend-item"><div class="legend-dot" style="background:#e8a045;opacity:0.5"></div><span>Break-even N*</span></div>
+      </div>
+    </div>
+
+    <p>The break-even point depends on construction cost per node and your query volume. At conservative estimates — 2,500 tokens per document retrieval, 220 tokens per concept node, 1,400 tokens to construct a node — the system breaks even in under 20 queries per node. Most organizations ask hundreds of questions per concept per month.</p>
+
+    <p>The instance layer has a similar break-even structure but with higher construction cost and higher per-query savings — fact retrieval replaces not just document consumption but also the extraction and normalization work that happens every time the same entity appears in a different document.</p>
+  </div>
+</section>
+
+<!-- §5 Principles -->
+<section class="section">
+  <div class="shell">
+    <div class="section-eyebrow">Design principles</div>
+    <h2 class="section-title">Three principles that guide the build.</h2>
+
+    <div class="principles">
+      <div class="principle">
+        <div class="principle-num">1</div>
+        <div class="principle-body">
+          <div class="principle-title">Harden what gets used, not what seems important</div>
+          <div class="principle-text">The signal for what to encode is query frequency, not perceived conceptual centrality. Build structure where your organization's questions land repeatedly. Let inference handle the long tail. The graph grows where the demand is.</div>
+        </div>
+      </div>
+      <div class="principle">
+        <div class="principle-num">2</div>
+        <div class="principle-body">
+          <div class="principle-title">Separate what something is from what it is called</div>
+          <div class="principle-text">Canonical entity identity is the foundation of the instance layer. JPMorgan Asset Management, JPMorgan AM, and a specific JPMorgan line of business are one entity or three, depending on whether you've resolved it. Without canonical identity, every query over entity relationships returns incomplete and inconsistent results.</div>
+        </div>
+      </div>
+      <div class="principle">
+        <div class="principle-num">3</div>
+        <div class="principle-body">
+          <div class="principle-title">Structure and inference are complements, not competitors</div>
+          <div class="principle-text">The goal is not to replace model inference with structure. It is to reserve inference for the questions that genuinely require it, and let structure handle everything else. The model's job becomes synthesis over a well-prepared substrate, not reconstruction of relationships it should have been able to look up.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <div class="shell">
+    <div class="cta-title">The argument runs deeper.</div>
+    <p style="color:var(--text-dim);max-width:540px;margin:0 auto;font-size:14px;font-weight:300;line-height:1.7">The efficiency claim is grounded in information theory and has a formal derivation. The interactive example walks through the Carlyle NAV query step by step — concept retrieval, instance retrieval, and the residual gap that document-based approaches leave.</p>
+    <div class="cta-links">
+      <button type="button" class="cta-btn primary" onclick="showPanel('technical')">Technical derivation →</button>
+      <button type="button" class="cta-btn" onclick="showPanel('example')">Interactive example →</button>
+    </div>
+  </div>
+</section></div>
+<div role="region" class="bundle-panel" id="panel-technical"><div class="shell">
+
+  <div class="doc-eyebrow">Formal Derivation · Retrieval-Inference Tradeoff Cluster</div>
+  <h1>Coverage-Per-Token Efficiency:<br>Concept Graph vs. Document Retrieval</h1>
+  <div class="doc-meta">
+    <span><span class="dot"></span>PKIS Research Program</span>
+    <span><span class="dot"></span>v0.1 · June 2026</span>
+    <span><span class="dot"></span>Status: staged hypothesis</span>
+  </div>
+  <div style="background:var(--bg2);border:1px solid var(--border);border-left:3px solid var(--text-dim);border-radius:2px;padding:12px 18px;margin-bottom:40px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;">
+    <span style="font-size:13px;font-weight:300;color:var(--text-dim);">New to entropy, mutual information, or amortized inference?</span>
+    <a href="#further-reading-tech" style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:var(--cyan);text-decoration:none;white-space:nowrap;flex-shrink:0;" onclick="document.getElementById('further-reading-tech').scrollIntoView({behavior:'smooth'});return false;">Background reading ↓</a>
+  </div>
+
+
+
+  <!-- §1 Primitives -->
+  <div class="section" data-n="§1">
+    <div class="section-title">Primitives</div>
+    <p>
+      We establish the formal objects required for the derivation. All subsequent results follow from these definitions.
+    </p>
+
+    <table class="def-table">
+      <tr>
+        <td>q</td>
+        <td>A natural language query posed to the system.</td>
+      </tr>
+      <tr>
+        <td>𝒞</td>
+        <td>The universe of all concepts — both those encoded in the graph and those recoverable only from world knowledge.</td>
+      </tr>
+      <tr>
+        <td>C(q)</td>
+        <td>A probability distribution over 𝒞 induced by q. P(c | q) is the weight of concept c in answering q — the fraction of q's information need attributable to c. Formally: Σ<sub>c ∈ 𝒞</sub> P(c | q) = 1.</td>
+      </tr>
+      <tr>
+        <td>G</td>
+        <td>A multipartite knowledge graph whose nodes include typed concept nodes, source nodes, and relational edges.</td>
+      </tr>
+      <tr>
+        <td>n</td>
+        <td>A retrieved node — either a concept node c ∈ G or a document node d ∈ G.</td>
+      </tr>
+      <tr>
+        <td>tokens(n)</td>
+        <td>The token cost of consuming node n — proportional to its length in the context window.</td>
+      </tr>
+      <tr>
+        <td>I(q&nbsp;;&nbsp;n)</td>
+        <td>The mutual information between query q and node n: the expected reduction in uncertainty about C(q) obtained by retrieving n.</td>
+      </tr>
+      <tr>
+        <td>H(q&nbsp;|&nbsp;S)</td>
+        <td>Residual entropy about q given retrieved set S — how much of C(q) remains uncovered.</td>
+      </tr>
+      <tr>
+        <td>ε</td>
+        <td>Sufficiency threshold: retrieval terminates when marginal information gain ΔI(q ; n | S) &lt; ε.</td>
+      </tr>
+      <tr>
+        <td>K<sub>c</sub></td>
+        <td>Graph construction cost per concept node — token cost of encoding a concept node at integration time.</td>
+      </tr>
+      <tr>
+        <td>N</td>
+        <td>Query volume — number of queries over the amortization horizon.</td>
+      </tr>
+    </table>
+
+    <div class="callout">
+      <strong>Note on C(q)</strong>
+      C(q) is not directly observable. In practice it is approximated via semantic bridging — mapping query tokens to candidate concept nodes by embedding-space distance. This approximation problem is treated as separable from the coverage computation and deferred. The derivation below conditions on a well-estimated C(q).
+    </div>
+  </div>
+
+  <!-- §2 Coverage -->
+  <div class="section" data-n="§2">
+    <div class="section-title">Coverage of a Query by a Node Set</div>
+
+    <p>
+      Define the <em>coverage</em> of query q by graph G as the expected mass of C(q) that falls on encoded nodes:
+    </p>
+
+    <div class="math-block">
+      <div class="label">Definition — Coverage</div>
+      <div class="expr">
+        <span class="hi-cyan">Coverage(q, G)</span> = Σ<sub>c ∈ G</sub> <span class="hi-amber">P(c | q)</span> · <span class="hi-green">𝟙[c ∈ G]</span>
+      </div>
+      <br>
+      <div class="comment">// Each concept node is a Bernoulli trial against C(q).</div>
+      <div class="comment">// Mass on un-encoded concepts must be recovered at inference time — at full model cost.</div>
+    </div>
+
+    <p>
+      Retrieval proceeds greedily by marginal information gain. Given a retrieved set S, the marginal gain from adding node n is:
+    </p>
+
+    <div class="math-block">
+      <div class="label">Marginal Information Gain</div>
+      <div class="expr">
+        <span class="hi-cyan">ΔI(q ; n | S)</span> = I(q ; n, S) − I(q ; S)
+      </div>
+      <br>
+      <div class="comment">// Add nodes in descending order of ΔI until ΔI &lt; ε.</div>
+      <div class="comment">// ε is the sufficiency threshold — a design parameter.</div>
+    </div>
+
+    <p>
+      The retrieved set S* at termination satisfies H(q | S*) &lt; ε. Any mass of C(q) not covered by S* is handled at synthesis time — either recovered from model world knowledge or lost.
+    </p>
+  </div>
+
+  <!-- §3 Document retrieval -->
+  <div class="section" data-n="§3">
+    <div class="section-title">Document Retrieval: The Token Waste Problem</div>
+
+    <p>
+      A document d is a multi-concept artifact. Its information content spans many concepts simultaneously:
+    </p>
+
+    <div class="math-block">
+      <div class="label">Document information structure</div>
+      <div class="expr">
+        P(k | d) = distribution over knowledge units contained in d
+      </div>
+      <br>
+      <div class="comment">// P(k | d) is broad: most knowledge units in d are irrelevant to q.</div>
+      <div class="comment">// But tokens(d) is paid in full regardless of relevance.</div>
+    </div>
+
+    <p>
+      The mutual information between q and document d decomposes as:
+    </p>
+
+    <div class="math-block">
+      <div class="label">Document mutual information</div>
+      <div class="expr">
+        I(q ; d) = <span class="hi-green">I(q ; d)<sub>relevant</sub></span> + <span class="hi-red">I(q ; d)<sub>irrelevant</sub></span>
+      </div>
+      <br>
+      <div class="comment">// Only the relevant portion contributes to Coverage(q, G).</div>
+      <div class="comment">// The irrelevant portion costs tokens but yields zero mutual information with q.</div>
+    </div>
+
+    <p>
+      Define the <strong>relevance ratio</strong> of document d with respect to query q:
+    </p>
+
+    <div class="math-block">
+      <div class="label">Relevance ratio</div>
+      <div class="expr">
+        <span class="hi-amber">ρ(q, d)</span> = I(q ; d)<sub>relevant</sub> / tokens(d)
+      </div>
+      <br>
+      <div class="comment">// ρ is structurally low for documents: purpose-built artifacts with broad scope.</div>
+      <div class="comment">// ρ → 0 as document length increases and query scope narrows.</div>
+    </div>
+
+    <div class="callout callout-warn">
+      <strong>Structural failure mode</strong>
+      Even when a document contains the relevant concept, the token cost is paid at document scale, not concept scale. The coverage obtained does not scale with token expenditure. This is not a model quality problem — it is an architectural mismatch between document granularity and query granularity.
+    </div>
+  </div>
+
+  <!-- §4 Concept graph retrieval -->
+  <div class="section" data-n="§4">
+    <div class="section-title">Concept Graph Retrieval: Efficiency by Construction</div>
+
+    <p>
+      A concept node c is scoped to a single knowledge unit by design. Its information structure is narrow:
+    </p>
+
+    <div class="math-block">
+      <div class="label">Concept node information structure</div>
+      <div class="expr">
+        P(k | c) ≈ δ<sub>k=c</sub>
+      </div>
+      <br>
+      <div class="comment">// Approximately a point mass on the concept it encodes.</div>
+      <div class="comment">// I(q ; c) is high when c ∈ support(C(q)), near zero otherwise.</div>
+    </div>
+
+    <p>
+      Define the <strong>coverage-per-token efficiency</strong> for a retrieved node n:
+    </p>
+
+    <div class="math-block">
+      <div class="label">Definition — Retrieval Efficiency</div>
+      <div class="expr">
+        <span class="hi-cyan">Eff(q, n)</span> = <span class="hi-amber">I(q ; n)</span> / <span class="hi-green">tokens(n)</span>
+      </div>
+      <br>
+      <div class="comment">// Mutual information gain per token consumed.</div>
+    </div>
+
+    <p>
+      The architectural claim follows directly from the information structures of c and d:
+    </p>
+
+    <div class="math-block">
+      <div class="label">Efficiency dominance</div>
+      <div class="expr">
+        𝔼[<span class="hi-cyan">Eff(q, c)</span>] &gt; 𝔼[<span class="hi-red">Eff(q, d)</span>]
+      </div>
+      <br>
+      <div class="comment">// Because: I(q ; c) ≈ I(q ; d|relevant) — comparable signal</div>
+      <div class="comment">// But:     tokens(c) &lt;&lt; tokens(d)            — far lower cost</div>
+      <div class="comment">// The gap widens as doc length ↑ and query scope ↓.</div>
+    </div>
+  </div>
+
+  <!-- §5 Amortization -->
+  <div class="section" data-n="§5">
+    <div class="section-title">Amortization: Lower Bound on Cumulative Savings</div>
+
+    <p>
+      Graph construction is a one-time cost per concept node. Query-time retrieval is a per-query cost. The amortization result shows the crossover at which accumulated efficiency savings recover construction cost.
+    </p>
+
+    <p>
+      Let a query q require coverage of k concept nodes from G. Define the per-query token costs:
+    </p>
+
+    <div class="math-block">
+      <div class="label">Per-query token cost</div>
+      <div class="expr">
+        <span class="hi-red">Cost<sub>doc</sub>(q)</span>  = k · <span class="hi-red">T<sub>d</sub></span>     <span class="comment">  // k documents retrieved, each at full doc length</span>
+      </div>
+      <div class="expr">
+        <span class="hi-cyan">Cost<sub>graph</sub>(q)</span> = k · <span class="hi-cyan">T<sub>c</sub></span>     <span class="comment">  // k concept nodes retrieved, each scoped</span>
+      </div>
+      <br>
+      <div class="comment">// T_d = avg document tokens. T_c = avg concept node tokens. T_d &gt;&gt; T_c.</div>
+    </div>
+
+    <p>
+      The per-query savings from graph retrieval versus document retrieval:
+    </p>
+
+    <div class="math-block">
+      <div class="label">Per-query savings</div>
+      <div class="expr">
+        <span class="hi-green">Δ(q)</span> = k · (<span class="hi-red">T<sub>d</sub></span> − <span class="hi-cyan">T<sub>c</sub></span>)
+      </div>
+    </div>
+
+    <p>
+      Cumulative savings across N queries, against total construction cost for k concept nodes:
+    </p>
+
+    <div class="math-block">
+      <div class="label">Cumulative savings vs. construction cost</div>
+      <div class="expr">
+        <span class="hi-green">Savings(N)</span> = N · k · (<span class="hi-red">T<sub>d</sub></span> − <span class="hi-cyan">T<sub>c</sub></span>) − k · <span class="hi-amber">K<sub>c</sub></span>
+      </div>
+      <br>
+      <div class="comment">// Construction cost: k nodes × K_c tokens each (paid once).</div>
+      <div class="comment">// Crossover at N* = K_c / (T_d − T_c).</div>
+    </div>
+
+    <div class="math-block">
+      <div class="label">Crossover query volume</div>
+      <div class="expr">
+        <span class="hi-amber">N*</span> = <span class="hi-amber">K<sub>c</sub></span> / (<span class="hi-red">T<sub>d</sub></span> − <span class="hi-cyan">T<sub>c</sub></span>)
+      </div>
+      <br>
+      <div class="comment">// For N &gt; N*: graph retrieval is strictly cheaper in cumulative terms.</div>
+      <div class="comment">// This is a LOWER BOUND — does not yet include dependency chain savings.</div>
+    </div>
+
+    <div class="callout">
+      <strong>Lower bound interpretation</strong>
+      This calculation assumes no dependency chain benefit — concept nodes are retrieved independently with no graph traversal. The actual savings are strictly higher once pre-encoded concept dependencies are accounted for (see open extension). The crossover N* is therefore an upper bound on when the architecture pays off.
+    </div>
+
+    <!-- ── Interactive panel ── -->
+    <div class="interactive">
+      <div class="interactive-title">Parameter Explorer — Amortization Crossover</div>
+
+      <div class="param-grid">
+        <div class="param-row">
+          <div class="param-label">
+            <span>T<sub>d</sub> — avg document tokens</span>
+            <span class="val" id="lbl-td">2000</span>
+          </div>
+          <input type="range" id="sl-td" min="500" max="8000" step="100" value="2000">
+        </div>
+        <div class="param-row">
+          <div class="param-label">
+            <span>T<sub>c</sub> — avg concept node tokens</span>
+            <span class="val" id="lbl-tc">200</span>
+          </div>
+          <input type="range" id="sl-tc" min="50" max="800" step="50" value="200">
+        </div>
+        <div class="param-row">
+          <div class="param-label">
+            <span>K<sub>c</sub> — construction cost / node</span>
+            <span class="val" id="lbl-kc">1500</span>
+          </div>
+          <input type="range" id="sl-kc" min="200" max="6000" step="100" value="1500">
+        </div>
+        <div class="param-row">
+          <div class="param-label">
+            <span>k — concept nodes per query</span>
+            <span class="val" id="lbl-k">4</span>
+          </div>
+          <input type="range" id="sl-k" min="1" max="12" step="1" value="4">
+        </div>
+      </div>
+
+      <div class="readout-grid">
+        <div class="readout">
+          <div class="readout-label">Crossover N*</div>
+          <div class="readout-value hi-amber" id="out-nstar">—</div>
+          <div class="readout-unit">queries</div>
+        </div>
+        <div class="readout">
+          <div class="readout-label">Savings @ 1k queries</div>
+          <div class="readout-value hi-green" id="out-s1k">—</div>
+          <div class="readout-unit">tokens</div>
+        </div>
+        <div class="readout">
+          <div class="readout-label">Savings @ 10k queries</div>
+          <div class="readout-value hi-green" id="out-s10k">—</div>
+          <div class="readout-unit">tokens</div>
+        </div>
+        <div class="readout">
+          <div class="readout-label">Efficiency ratio</div>
+          <div class="readout-value hi-cyan" id="out-ratio">—</div>
+          <div class="readout-unit">Eff(c) / Eff(d)</div>
+        </div>
+        <div class="readout">
+          <div class="readout-label">Per-query savings</div>
+          <div class="readout-value hi-green" id="out-pq">—</div>
+          <div class="readout-unit">tokens / query</div>
+        </div>
+        <div class="readout">
+          <div class="readout-label">Construction cost</div>
+          <div class="readout-value hi-amber" id="out-cc">—</div>
+          <div class="readout-unit">tokens (one-time)</div>
+        </div>
+      </div>
+
+      <div class="chart-wrap">
+        <canvas id="chart" width="900" height="240"></canvas>
+        <div class="chart-legend">
+          <div class="legend-item">
+            <div class="legend-dot" style="background:#c0392b"></div>
+            <span>Document retrieval (cumulative)</span>
+          </div>
+          <div class="legend-item">
+            <div class="legend-dot" style="background:#4fc3c8"></div>
+            <span>Graph retrieval + construction (cumulative)</span>
+          </div>
+          <div class="legend-item">
+            <div class="legend-dot" style="background:#e8a045; opacity:0.5"></div>
+            <span>Crossover N*</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- §6 Proof of dominance -->
+  <div class="section" data-n="§6">
+    <div class="section-title">Proof Sketch: Efficiency Dominance</div>
+
+    <div class="proof-step">
+      <div class="step-num">(i)</div>
+      <div class="step-body">
+        <p>
+          A concept node c encodes a single knowledge unit by construction. Therefore tokens(c) = T<sub>c</sub> where T<sub>c</sub> is bounded and small — proportional to the depth of a single concept explanation.
+        </p>
+      </div>
+    </div>
+    <div class="proof-step">
+      <div class="step-num">(ii)</div>
+      <div class="step-body">
+        <p>
+          When c ∈ support(C(q)), I(q ; c) ≈ P(c | q) · H(c) — the full information content of concept c, weighted by its contribution to answering q. When c ∉ support(C(q)), I(q ; c) ≈ 0.
+        </p>
+      </div>
+    </div>
+    <div class="proof-step">
+      <div class="step-num">(iii)</div>
+      <div class="step-body">
+        <p>
+          A document d contains many knowledge units. Its token cost T<sub>d</sub> is paid in full regardless of which knowledge units are relevant to q. The relevant fraction ρ(q, d) = I(q ; d)<sub>relevant</sub> / tokens(d) satisfies ρ → 0 as document length grows and query scope narrows.
+        </p>
+      </div>
+    </div>
+    <div class="proof-step">
+      <div class="step-num">(iv)</div>
+      <div class="step-body">
+        <p>
+          In expectation across the query distribution, I(q ; c) ≈ I(q ; d)<sub>relevant</sub> when d contains c — both recover the same relevant signal. But tokens(c) ≪ tokens(d). Therefore:
+        </p>
+        <div class="math-block">
+          <div class="expr">
+            𝔼[Eff(q, c)] = 𝔼[I(q ; c)] / T<sub>c</sub> &gt; 𝔼[I(q ; d)<sub>relevant</sub>] / T<sub>d</sub> = 𝔼[Eff(q, d)]   □
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- §7 Objection rebuttals -->
+  <div class="section" data-n="§7">
+
+    <div class="section-title">Formal Rebuttals to Partial Solutions</div>
+
+    <p>Three partial solutions are commonly proposed as alternatives to the concept graph architecture. Each is absorbed into the existing formalism.</p>
+
+    <div class="callout callout-warn">
+      <strong>Objection 1 — Document chunking</strong>
+      A chunk is a document with smaller tokens(n). Define T<sub>ch</sub> = average chunk size where T<sub>c</sub> &lt; T<sub>ch</sub> &lt; T<sub>d</sub>. The efficiency ratio Eff(q, chunk) = I(q; chunk) / T<sub>ch</sub> improves over Eff(q, document). However, chunk boundaries are determined by token count or sentence windows — not by concept boundaries. Therefore P(k | chunk) remains diffuse: a chunk may contain partial concept explanation blended with irrelevant content. The dominance result Eff(q, c) &gt; Eff(q, chunk) holds because tokens(c) is bounded by concept scope while I(q; chunk) &lt; I(q; c) due to dilution. The efficiency gap narrows but does not close. Chunking is a document-side improvement that does not address the fundamental granularity mismatch.
+    </div>
+
+    <div class="callout callout-warn">
+      <strong>Objection 2 — Solr / metadata index</strong>
+      A metadata index resolves the navigation problem — get to the right document faster — but does not address coverage-per-token efficiency. Once the document is retrieved, the full token cost T<sub>d</sub> is still paid. Formally: the metadata index reduces retrieval latency but does not change I(q; d) or tokens(d). Eff(q, d) is unchanged. The index is a retrieval filter, not a knowledge representation.
+    </div>
+
+    <div class="callout callout-warn">
+      <strong>Objection 3 — Enriched document metadata with concept/instance references</strong>
+      If documents are tagged with canonical concept identifiers, Coverage(q, G) improves because documents can be retrieved by concept membership rather than keyword. This is the best document-centric approach. However, set membership {c₁, c₂, c₃} encodes presence but not structure. Two failures follow: (1) <em>directionality is lost</em> — prerequisite-of relationships between c₁ and c₂ are not representable in a tag set; the system cannot traverse dependency chains or rank retrieval order by conceptual dependency. (2) <em>edge information content is lost</em> — the typed predicate τ in an edge (c₁, τ, c₂) carries conditional information I(q; c₂ | c₁, τ) − I(q; c₂) that is strictly greater than zero for well-typed graphs. Tag-based approaches discard this lift entirely. Enriched metadata improves recall; it does not recover the information content of typed directed edges.
+    </div>
+  </div>
+
+  <!-- §8 Instance layer extension -->
+  <div class="section" data-n="§8">
+    <div class="section-title">Extension: Instance Layer Efficiency</div>
+
+    <p>
+      The concept layer addresses queries over knowledge units — what things are and how they relate. A second, separable layer addresses queries over instances — specific entities, their properties, and their relationships. The efficiency argument extends structurally intact.
+    </p>
+
+    <p>
+      Define an instance query as one that induces a distribution I(q) over specific entities and properties: not "what is NAV methodology" but "what was Carlyle CCP V's reported NAV at Q3 2024." Define an instance node as a typed entity with canonical identity and encoded properties.
+    </p>
+
+    <div class="math-block">
+      <div class="label">Instance layer efficiency</div>
+      <div class="expr">
+        <span class="hi-cyan">Eff(q, instance node)</span> = I(q ; instance node) / tokens(instance node)
+      </div>
+      <br>
+      <div class="comment">// By the same argument: I(q ; instance node) ≈ I(q ; d)<sub>relevant</sub> when d contains the entity</div>
+      <div class="comment">// But tokens(instance node) &lt;&lt; tokens(d) — a structured fact is far smaller than the document containing it</div>
+      <div class="comment">// Therefore Eff(q, instance node) &gt; Eff(q, d) by the same mechanism as the concept layer</div>
+    </div>
+
+    <p>
+      The entity resolution problem is the instance-layer analog of semantic bridging at the concept layer. "JPMorgan," "JPMorgan AM," "JPMorgan Asset Management," and a specific JPMorgan line of business are one entity or several, depending on canonical resolution. Without canonical instance nodes, queries over entity relationships return incomplete and inconsistent results — the same entity contributes to C(q) under multiple surface forms with no structural link.
+    </p>
+
+    <div class="callout">
+      <strong>Two-layer coverage</strong>
+      The full coverage of query q decomposes into conceptual coverage Coverage(q, G<sub>concept</sub>) and instance coverage Coverage(q, G<sub>instance</sub>). Both are required for queries that have both conceptual dependencies (what is NAV methodology?) and instance dependencies (what was fund X's NAV?). The layers are separable — each delivers independent efficiency gains — and composable — together they cover the full query space without redundancy.
+    </div>
+
+    <p>
+      <span class="open-q">open: instance construction cost</span>
+      Instance graphs have higher construction cost per node (entity extraction, canonical resolution, deduplication, incremental refresh) and higher volatility than concept graphs. The amortization crossover N* differs. Full derivation is an open task.
+    </p>
+
+    <p>
+      <span class="open-q">dependency chains</span>
+      Pre-encoded concept dependencies reduce expected inference steps E[I<sub>G</sub>(q)] versus E[I<sub>0</sub>(q)]. Savings compound with chain depth.
+    </p>
+    <p>
+      <span class="open-q">instantiation depth</span>
+      H(c | d) — residual uncertainty about concept c after reading document d — is positive even when d contains c. A concept node drives H(c | node) → 0 by construction.
+    </p>
+    <p>
+      <span class="open-q">C(q) approximation</span>
+      The semantic bridging step is separable. Tractable estimation strategies in priority order: (1) LLM decomposition — day-one available, highest cost; (2) embedding similarity — cheap once infrastructure exists; (3) historical traversal patterns — near-zero cost as query logs accumulate. Cost of C(q) estimation decreases monotonically as the system matures.
+    </p>
+  <!-- Further Reading -->
+  <div id="further-reading-tech" style="margin-top:48px;padding-top:32px;border-top:1px solid var(--border);">
+    <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.16em;color:var(--text-dim);text-transform:uppercase;margin-bottom:20px;">Further reading — concepts used in this derivation</div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;">
+      <a href="https://arxiv.org/html/2206.07867v2" target="_blank" rel="noopener" style="display:flex;flex-direction:column;gap:4px;padding:12px 14px;background:var(--bg2);border:1px solid var(--border);border-radius:2px;text-decoration:none;transition:border-color 0.2s;" onmouseover="this.style.borderColor='var(--cyan)'" onmouseout="this.style.borderColor='var(--border)'">
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--cyan);">Entropy &amp; Mutual Information</span>
+        <span style="font-size:11px;font-weight:300;color:var(--text-dim);">Visual introduction — Côté et al. (2022). Covers H(X), I(X;Y), and H(X|Y) with diagrams from first principles. Assumes basic probability only.</span>
+      </a>
+      <a href="https://en.wikipedia.org/wiki/Mutual_information" target="_blank" rel="noopener" style="display:flex;flex-direction:column;gap:4px;padding:12px 14px;background:var(--bg2);border:1px solid var(--border);border-radius:2px;text-decoration:none;transition:border-color 0.2s;" onmouseover="this.style.borderColor='var(--cyan)'" onmouseout="this.style.borderColor='var(--border)'">
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--cyan);">Mutual Information I(X;Y) — reference</span>
+        <span style="font-size:11px;font-weight:300;color:var(--text-dim);">Wikipedia. Precise definition: how much knowing X reduces uncertainty about Y. Includes worked examples and relationship to entropy.</span>
+      </a>
+      <a href="https://en.wikipedia.org/wiki/Conditional_entropy" target="_blank" rel="noopener" style="display:flex;flex-direction:column;gap:4px;padding:12px 14px;background:var(--bg2);border:1px solid var(--border);border-radius:2px;text-decoration:none;transition:border-color 0.2s;" onmouseover="this.style.borderColor='var(--cyan)'" onmouseout="this.style.borderColor='var(--border)'">
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--cyan);">Conditional Entropy H(X|Y) — reference</span>
+        <span style="font-size:11px;font-weight:300;color:var(--text-dim);">Wikipedia. Uncertainty remaining about X after observing Y — used in §2 (coverage sufficiency) and §8 (instantiation depth).</span>
+      </a>
+      <a href="https://www.beren.io/2022-09-25-Deconfusing-direct-vs-amortized-optimization/" target="_blank" rel="noopener" style="display:flex;flex-direction:column;gap:4px;padding:12px 14px;background:var(--bg2);border:1px solid var(--border);border-radius:2px;text-decoration:none;transition:border-color 0.2s;" onmouseover="this.style.borderColor='var(--cyan)'" onmouseout="this.style.borderColor='var(--border)'">
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--cyan);">Amortized Inference — intuition</span>
+        <span style="font-size:11px;font-weight:300;color:var(--text-dim);">Beren's Blog: "Deconfusing direct vs amortised optimization." Plain-language explanation of the pay-once-reap-many-times structure underlying §5.</span>
+      </a>
+      <a href="https://www.youtube.com/watch?v=eJIp_mgVLwE" target="_blank" rel="noopener" style="display:flex;flex-direction:column;gap:4px;padding:12px 14px;background:var(--bg2);border:1px solid var(--border);border-radius:2px;text-decoration:none;transition:border-color 0.2s;" onmouseover="this.style.borderColor='var(--cyan)'" onmouseout="this.style.borderColor='var(--border)'">
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--cyan);">Mutual Information — video</span>
+        <span style="font-size:11px;font-weight:300;color:var(--text-dim);">StatQuest with Josh Starmer. 14-minute visual walkthrough, no prerequisites. Best entry point if the Wikipedia definition is unfamiliar.</span>
+      </a>
+      <a href="https://en.wikipedia.org/wiki/Probability_distribution" target="_blank" rel="noopener" style="display:flex;flex-direction:column;gap:4px;padding:12px 14px;background:var(--bg2);border:1px solid var(--border);border-radius:2px;text-decoration:none;transition:border-color 0.2s;" onmouseover="this.style.borderColor='var(--cyan)'" onmouseout="this.style.borderColor='var(--border)'">
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--cyan);">Probability Distribution P(x)</span>
+        <span style="font-size:11px;font-weight:300;color:var(--text-dim);">Wikipedia. Used throughout as C(q) — the distribution of concept dependencies induced by a query. Links to discrete and continuous variants.</span>
+      </a>
+    </div>
+  </div>
+
+  </div>
+
+</div></div>
+<div role="region" class="bundle-panel" id="panel-example"><div class="shell">
+
+<div class="eyebrow">Mechanistic Example · Three-Stage Retrieval</div>
+<h1>The Carlyle NAV Query — Concept &amp; Instance Retrieval</h1>
+<div class="doc-meta">Applies: Eff(q,n) = I(q;n)/tokens(n) · Coverage(q,G) = Σ P(c|q)·𝟙[c∈G]</div>
+
+<div class="query-box">
+  <div class="ql">Query q</div>
+  <div class="query-text">"What was the reported NAV for Carlyle's flagship buyout fund in the most recent quarter, and how does that compare to the fair value methodology they disclosed?"</div>
+</div>
+
+<!-- C(q) global -->
+<div id="cq-global"></div>
+
+<!-- Tab nav -->
+<div class="tab-nav">
+  <button type="button" class="tab-btn" id="btn-s0" onclick="showTab('s0')">Stage 0 — Infer</button>
+  <button type="button" class="tab-btn" id="btn-obj" onclick="showTab('obj')">Objections</button>
+  <button type="button" class="tab-btn" id="btn-s1" onclick="showTab('s1')">Stage 1 — Concept</button>
+  <button type="button" class="tab-btn" id="btn-s2" onclick="showTab('s2')">Stage 2 — Instance</button>
+</div>
+
+<!-- Stage 0 -->
+<div class="tab-panel" id="panel-s0">
+  <p style="font-size:13px;font-weight:300;color:var(--text-dim);margin-bottom:20px;line-height:1.7">No encoded structure. The system retrieves documents by keyword or embedding similarity and synthesizes the full answer at inference time. Every query pays full price. Click a retrieval step to see what concepts it covers — and what it misses.</p>
+  <div class="cols">
+    <div>
+      <div class="col-head ch-doc">Documents retrieved</div>
+      <div class="col-body" id="s0-steps-wrap">
+        <div class="steps-wrap" id="s0-steps"></div>
+        <div class="meter-section">
+          <div class="meter-stitle">Cumulative C(q) coverage</div>
+          <div id="s0-meters"></div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class="col-head ch-doc" style="background:rgba(232,112,112,.04);color:var(--text-faint)">What the system has to do</div>
+      <div class="col-body" style="padding:14px;font-size:12px;font-weight:300;color:var(--text-dim);line-height:1.7;">
+        <p style="margin-bottom:10px">After retrieving the documents, the model must:</p>
+        <p style="margin-bottom:8px">① Identify which parts of each document are relevant to the query — scanning content the system paid for but doesn't need.</p>
+        <p style="margin-bottom:8px">② Reconstruct what NAV methodology means from passages spread across multiple documents, without a canonical definition anywhere.</p>
+        <p style="margin-bottom:8px">③ Connect fair value methodology to NAV — a relationship that must be inferred rather than traversed.</p>
+        <p style="margin-bottom:8px">④ Find the specific Q3 2024 figure — buried in an LP memo, not explicitly labeled.</p>
+        <p style="margin-bottom:16px">⑤ Reconcile "Carlyle Group," "Carlyle CCP V," and "Carlyle Capital Partners" into the correct fund entity.</p>
+        <div style="font-family:var(--mono);font-size:10px;color:var(--red);background:var(--red-dim);border-left:2px solid var(--red);padding:8px 10px;border-radius:1px;">All of this happens at inference time, every time, at full token cost — with no guarantee of consistency across queries.</div>
+      </div>
+    </div>
+  </div>
+  <div class="summary" id="s0-summary"></div>
+</div>
+
+<!-- Objections -->
+<div class="tab-panel" id="panel-obj">
+  <p style="font-size:13px;font-weight:300;color:var(--text-dim);margin-bottom:20px;line-height:1.7">Three common improvements over Stage 0. Each moves the needle — and each leaves a residual gap that only typed graph structure closes.</p>
+
+  <div class="obj-card" id="obj-chunk">
+    <div class="obj-header" tabindex="0" role="button" onclick="toggleObjEx('obj-chunk')">
+      <span class="obj-icon">①</span>
+      <span class="obj-q">"We use chunked embeddings — that solves the token waste problem."</span>
+      <span class="obj-arr">▶</span>
+    </div>
+    <div class="obj-body">
+      <p>Chunking improves the token cost denominator: a chunk of ~400 tokens costs far less than a 3,000-token document. Efficiency improves. But chunk boundaries are fixed by token count, not concept boundaries. The chunk containing "NAV methodology" may also contain half a paragraph about reporting timelines. P(k|chunk) is still diffuse.</p>
+      <p>More critically: two chunks discussing NAV methodology in different documents have no structural link. The system rediscovers that connection at inference time on every query. A concept node makes it once.</p>
+      <div class="obj-verdict">Moves the needle: ✓ Lower token cost per retrieval unit. Gap remains: chunk granularity ≠ concept granularity. The efficiency ratio improves but does not converge to the concept node case.</div>
+    </div>
+  </div>
+
+  <div class="obj-card" id="obj-solr">
+    <div class="obj-header" tabindex="0" role="button" onclick="toggleObjEx('obj-solr')">
+      <span class="obj-icon">②</span>
+      <span class="obj-q">"We have a Solr/metadata index — fast retrieval to the right document."</span>
+      <span class="obj-arr">▶</span>
+    </div>
+    <div class="obj-body">
+      <p>A metadata index solves navigation: get to the right document faster. Typical fields: issuer, document type, date received, fund name. This reduces retrieval latency but does not change what happens once the document is retrieved. You still pay full synthesis cost on the document's content.</p>
+      <p>For this query: a Solr index gets you to the Carlyle LP memo faster. It does not tell you what NAV methodology means, how fair value relates to it, or what Carlyle's Q3 2024 figure was. You're still synthesizing from scratch.</p>
+      <div class="obj-verdict">Moves the needle: ✓ Faster navigation to relevant documents. Gap remains: retrieval filter is not knowledge representation. Synthesis cost is unchanged.</div>
+    </div>
+  </div>
+
+  <div class="obj-card" id="obj-enrich">
+    <div class="obj-header" tabindex="0" role="button" onclick="toggleObjEx('obj-enrich')">
+      <span class="obj-icon">③</span>
+      <span class="obj-q">"What if we tag documents with canonical concept and entity references?"</span>
+      <span class="obj-arr">▶</span>
+    </div>
+    <div class="obj-body">
+      <p>This is the strongest document-centric approach. Tagging documents with canonical concept identifiers {NAV methodology, fair value (ASC 820), vintage effects} enables concept-based retrieval without content scanning. Recall improves meaningfully.</p>
+      <p>But set membership tells you concepts are present — not how they relate. "NAV methodology" and "fair value estimation" are both in the tag set, but the system doesn't know that understanding fair value is a prerequisite for understanding how NAV is reported. That relationship is only in the graph.</p>
+      <p>Entity tags face the same problem: "Carlyle Group," "Carlyle CCP V," and "CCP V" may all be tagged but without canonical entity resolution, queries over entity relationships return inconsistent results.</p>
+      <div class="obj-verdict">Moves the needle: ✓ Better recall via concept-based retrieval. Gap remains: no directionality, no typed relationships, no dependency structure, no entity canonicalization. Graph information content is not recoverable from tags.</div>
+    </div>
+  </div>
+
+  <div style="margin-top:24px;padding:16px;background:var(--bg2);border:1px solid var(--border);border-radius:2px;border-left:3px solid var(--cyan);">
+    <div style="font-family:var(--mono);font-size:9px;letter-spacing:.14em;color:var(--cyan);text-transform:uppercase;margin-bottom:8px;">The residual gap</div>
+    <p style="font-size:13px;font-weight:300;color:var(--text-dim);line-height:1.65">All three partial solutions improve retrieval without closing the architectural gap. Chunking reduces token waste. Metadata indexing speeds navigation. Enriched tags improve recall. None of them encode concept dependencies, typed relationships, or canonical entity identity. That is what Stage 1 and Stage 2 provide.</p>
+  </div>
+</div>
+
+<!-- Stage 1 -->
+<div class="tab-panel" id="panel-s1">
+  <p style="font-size:13px;font-weight:300;color:var(--text-dim);margin-bottom:20px;line-height:1.7">Concept nodes cover the conceptual dependency layer of the query. Click a retrieval step to see which concepts it covers and how precisely. The concept graph handles "what is X and how does X relate to Y" — document retrieval handles the rest.</p>
+  <div class="cols">
+    <div>
+      <div class="col-head ch-doc">Document retrieval (baseline)</div>
+      <div class="col-body">
+        <div class="steps-wrap" id="s1-doc-steps"></div>
+        <div class="meter-section">
+          <div class="meter-stitle">Cumulative C(q) coverage</div>
+          <div id="s1-doc-meters"></div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class="col-head ch-graph">Concept graph retrieval</div>
+      <div class="col-body">
+        <div class="steps-wrap" id="s1-graph-steps"></div>
+        <div class="meter-section">
+          <div class="meter-stitle">Cumulative C(q) coverage</div>
+          <div id="s1-graph-meters"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="summary" id="s1-summary"></div>
+  <div class="amort" id="s1-amort">
+    <div class="amort-title">Amortization — concept layer</div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;">
+      <div>
+        <div class="param-row">
+          <div class="param-label"><span>Construction cost / node (tokens)</span><span class="pval" id="lbl-kc1">1400</span></div>
+          <input type="range" id="sl-kc1" min="200" max="5000" step="100" value="1400">
+        </div>
+      </div>
+      <div>
+        <div class="param-row">
+          <div class="param-label"><span>Query volume (monthly)</span><span class="pval" id="lbl-qv1">500</span></div>
+          <input type="range" id="sl-qv1" min="50" max="5000" step="50" value="500">
+        </div>
+      </div>
+    </div>
+    <canvas id="chart-s1" width="900" height="200"></canvas>
+    <div class="legend">
+      <div class="li"><div class="ldot" style="background:#e87070"></div><span>Document retrieval</span></div>
+      <div class="li"><div class="ldot" style="background:#4fc3c8"></div><span>Concept graph + construction</span></div>
+      <div class="li"><div class="ldot" style="background:#e8a045;opacity:.5"></div><span>Break-even N*</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- Stage 2 -->
+<div class="tab-panel" id="panel-s2">
+  <p style="font-size:13px;font-weight:300;color:var(--text-dim);margin-bottom:20px;line-height:1.7">The instance graph adds canonical entity identity and structured fact storage. "What was Carlyle CCP V's Q3 2024 NAV?" becomes a lookup — no document required. The concept layer handles the methodological question; the instance layer handles the factual question. Both layers work on this single query.</p>
+  <div class="cols">
+    <div>
+      <div class="col-head ch-graph">Concept graph — methodological layer</div>
+      <div class="col-body">
+        <div class="steps-wrap" id="s2-concept-steps"></div>
+        <div class="meter-section">
+          <div class="meter-stitle">Conceptual C(q) coverage</div>
+          <div id="s2-concept-meters"></div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class="col-head ch-instance">Instance graph — factual layer</div>
+      <div class="col-body">
+        <div class="steps-wrap" id="s2-instance-steps"></div>
+        <div class="meter-section">
+          <div class="meter-stitle">Instance I(q) coverage</div>
+          <div id="s2-instance-meters"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="summary" id="s2-summary"></div>
+  <div style="background:var(--bg2);border:1px solid var(--border);border-radius:2px;padding:16px 20px;margin-bottom:16px;border-left:3px solid var(--purple);">
+    <div style="font-family:var(--mono);font-size:9px;letter-spacing:.14em;color:var(--purple);text-transform:uppercase;margin-bottom:8px;">Entity resolution benefit</div>
+    <p style="font-size:12px;font-weight:300;color:var(--text-dim);line-height:1.65">Without canonical instance nodes, "Carlyle Group," "Carlyle Capital Partners," "CCP V," and "Carlyle's flagship fund" may resolve to different or incomplete entity records. The instance graph enforces canonical identity: one node, one identity, all properties attached. Queries over fund relationships return consistent results regardless of how the entity is named in the source document.</p>
+  </div>
+  <div class="amort" id="s2-amort">
+    <div class="amort-title">Amortization — both layers combined</div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;">
+      <div>
+        <div class="param-row">
+          <div class="param-label"><span>Instance construction cost / node</span><span class="pval" id="lbl-kci">2200</span></div>
+          <input type="range" id="sl-kci" min="500" max="8000" step="100" value="2200">
+        </div>
+      </div>
+      <div>
+        <div class="param-row">
+          <div class="param-label"><span>Query volume (monthly)</span><span class="pval" id="lbl-qvi">500</span></div>
+          <input type="range" id="sl-qvi" min="50" max="5000" step="50" value="500">
+        </div>
+      </div>
+    </div>
+    <canvas id="chart-s2" width="900" height="200"></canvas>
+    <div class="legend">
+      <div class="li"><div class="ldot" style="background:#e87070"></div><span>Document retrieval (both query types)</span></div>
+      <div class="li"><div class="ldot" style="background:#4fc3c8"></div><span>Concept layer</span></div>
+      <div class="li"><div class="ldot" style="background:#a78bfa"></div><span>Concept + Instance layers</span></div>
+    </div>
+  </div>
+</div>
+
+</div><!-- /shell --></div>
+</div>
+<script>
+const _inited={};
+function showPanel(id,anchor){
+  ['general','technical','example'].forEach(p=>{
+    document.getElementById('panel-'+p).classList.toggle('bp-active',p===id);
+    const btn=document.getElementById('navbtn-'+p);
+    btn.classList.toggle('nav-active',p===id);
+    btn.setAttribute('aria-selected',p===id?'true':'false');
+  });
+  window.scrollTo(0,0);
+  if(!_inited[id]){
+    _inited[id]=true;
+    if(id==='general'  &&typeof _initG==='function')_initG();
+    if(id==='technical'&&typeof _initT==='function')_initT();
+    if(id==='example'  &&typeof _initE==='function')_initE();
+  }
+  if(anchor)setTimeout(()=>{const el=document.getElementById(anchor);if(el)el.scrollIntoView({behavior:'smooth',block:'start'});},80);
+  setTimeout(()=>window.dispatchEvent(new Event('resize')),120);
+}
+// Keyboard: Enter/Space on focusable accordion items
+document.addEventListener('keydown', e => {
+  if(e.key==='Enter'||e.key===' '){
+    const el=e.target;
+    if(el.classList.contains('stage-header')) { e.preventDefault(); el.click(); }
+    if(el.classList.contains('obj-header'))   { e.preventDefault(); el.click(); }
+  }
+});</script>
+<script>// ── Stage accordion ──────────────────────────────────────────────────────────
+function G_toggleStage(id) {
+  const card = document.getElementById(id);
+  const wasActive = card.classList.contains('active');
+  document.querySelectorAll('.stage-card').forEach(c => c.classList.remove('active'));
+  if (!wasActive) card.classList.add('active');
+}
+
+// ── Objection accordion ───────────────────────────────────────────────────────
+function G_toggleObj(id) {
+  const card = document.getElementById(id);
+  card.classList.toggle('open');
+}
+
+// ── Cost chart ────────────────────────────────────────────────────────────────
+function G_fmt(n) {
+  if (Math.abs(n) >= 1e6) return (n/1e6).toFixed(1)+'M';
+  if (Math.abs(n) >= 1e3) return (n/1e3).toFixed(1)+'k';
+  if (n > 0 && n < 1) return '<1';
+  return n.toFixed(0);
+}
+
+function G_updateCost() {
+  const Td = +document.getElementById('sl-td2').value;
+  const Tc = +document.getElementById('sl-tc2').value;
+  const Kc = +document.getElementById('sl-kc2').value;
+  const k  = +document.getElementById('sl-k2').value;
+
+  document.getElementById('lbl-td2').textContent = Td;
+  document.getElementById('lbl-tc2').textContent = Tc;
+  document.getElementById('lbl-kc2').textContent = Kc;
+  document.getElementById('lbl-k2').textContent  = k;
+
+  const perQ = k * (Td - Tc);
+  const cc   = k * Kc;
+  const nstar = perQ > 0 ? cc / perQ : Infinity;
+  const s5k  = 5000 * perQ - cc;
+  const ratio = Tc > 0 ? (Td / Tc).toFixed(1) : '∞';
+
+  document.getElementById('r-nstar2').textContent = isFinite(nstar) ? G_fmt(nstar) : '∞';
+  document.getElementById('r-s5k').textContent    = G_fmt(s5k);
+  document.getElementById('r-ratio2').textContent = ratio + '×';
+  document.getElementById('r-s5k').style.color = s5k >= 0 ? 'var(--green)' : 'var(--red)';
+
+  // Hero stats
+  document.getElementById('hero-ratio').textContent = ratio + '×';
+  document.getElementById('hero-nstar').textContent = isFinite(nstar) ? G_fmt(nstar) : '∞';
+
+  G_drawChart(Td, Tc, Kc, k, nstar);
+}
+
+function G_drawChart(Td, Tc, Kc, k, nstar) {
+  const canvas = document.getElementById('chart2');
+  const dpr = window.devicePixelRatio || 1;
+  const W = canvas.clientWidth, H = canvas.clientHeight;
+  canvas.width = W*dpr; canvas.height = H*dpr;
+  const ctx = canvas.getContext('2d');
+  ctx.scale(dpr, dpr);
+
+  const pad = {top:16, right:20, bottom:28, left:56};
+  const cw = W-pad.left-pad.right, ch = H-pad.top-pad.bottom;
+  ctx.clearRect(0,0,W,H);
+
+  const Nmax = Math.max(isFinite(nstar)?nstar*3:300, 300);
+  const pts = 300;
+  let ymax = 0;
+  const docPts=[], gphPts=[];
+  for(let i=0;i<=pts;i++){
+    const N=(i/pts)*Nmax;
+    const doc=N*k*Td, gph=k*Kc+N*k*Tc;
+    docPts.push({N,y:doc}); gphPts.push({N,y:gph});
+    ymax=Math.max(ymax,doc,gph);
+  }
+  const xS=N=>pad.left+(N/Nmax)*cw;
+  const yS=y=>pad.top+ch-(y/ymax)*ch;
+
+  // Grid
+  ctx.strokeStyle='#1a2a38'; ctx.lineWidth=1;
+  for(let i=0;i<=4;i++){
+    const y=pad.top+(ch/4)*i;
+    ctx.beginPath(); ctx.moveTo(pad.left,y); ctx.lineTo(pad.left+cw,y); ctx.stroke();
+  }
+
+  // Labels
+  ctx.fillStyle='#2e4a5e'; ctx.font=`10px 'IBM Plex Mono'`;
+  ctx.textAlign='right';
+  for(let i=0;i<=4;i++) ctx.fillText(G_fmt((ymax/4)*(4-i)),pad.left-5,pad.top+(ch/4)*i+4);
+  ctx.textAlign='center';
+  for(let i=0;i<=4;i++) ctx.fillText(G_fmt((Nmax/4)*i),pad.left+(cw/4)*i,pad.top+ch+18);
+
+  // Doc line
+  ctx.beginPath(); ctx.strokeStyle='#d9534f'; ctx.lineWidth=2;
+  docPts.forEach((p,i)=>i?ctx.lineTo(xS(p.N),yS(p.y)):ctx.moveTo(xS(p.N),yS(p.y)));
+  ctx.stroke();
+
+  // Graph line
+  ctx.beginPath(); ctx.strokeStyle='#4fc3c8'; ctx.lineWidth=2;
+  gphPts.forEach((p,i)=>i?ctx.lineTo(xS(p.N),yS(p.y)):ctx.moveTo(xS(p.N),yS(p.y)));
+  ctx.stroke();
+
+  // Crossover
+  if(isFinite(nstar)&&nstar<Nmax){
+    const xN=xS(nstar);
+    ctx.beginPath(); ctx.strokeStyle='rgba(232,160,69,0.45)';
+    ctx.lineWidth=1; ctx.setLineDash([4,4]);
+    ctx.moveTo(xN,pad.top); ctx.lineTo(xN,pad.top+ch); ctx.stroke();
+    ctx.setLineDash([]);
+    ctx.fillStyle='rgba(232,160,69,0.8)';
+    ctx.font=`10px 'IBM Plex Mono'`; ctx.textAlign='left';
+    ctx.fillText(`N* = ${G_fmt(nstar)}`,xN+5,pad.top+12);
+  }
+}
+
+
+
+
+// Open first stage by default
+function _initG(){
+  ['sl-td2','sl-tc2','sl-kc2','sl-k2'].forEach(id=>{const el=document.getElementById(id);if(el)el.addEventListener('input',G_updateCost);});
+  if(!window._G_resize){window._G_resize=true;window.addEventListener('resize',G_updateCost);}
+  G_toggleStage('stage0');
+  G_updateCost();
+  document.querySelectorAll('#panel-general .cta-btn').forEach(btn=>{
+    const t=btn.textContent.trim();
+    if(t.includes('Technical')||t.includes('derivation'))btn.onclick=()=>showPanel('technical');
+    else if(t.includes('example')||t.includes('Interactive'))btn.onclick=()=>showPanel('example');
+  });
+  function ins(el,html){if(!el)return;const w=document.createElement('div');w.className='go-deeper-wrap';w.innerHTML=html;el.parentNode.insertBefore(w,el.nextSibling);}
+  ins(document.querySelector('#panel-general .stages'),'<button type="button" class="go-deeper-btn gd-cyan" onclick="showPanel(\'example\')">&#x2192; See the stages on a real query</button>');
+  ins(document.querySelector('#panel-general .objections'),'<button type="button" class="go-deeper-btn" onclick="showPanel(\'technical\')">&#x2192; Formal objection rebuttals in the derivation</button>');
+  ins(document.querySelector('#panel-general .cost-panel'),'<button type="button" class="go-deeper-btn" onclick="showPanel(\'technical\')">&#x2192; Full amortization derivation</button><button type="button" class="go-deeper-btn gd-cyan" onclick="showPanel(\'example\')">&#x2192; Amortization on a real query</button>');
+  ins(document.querySelector('#panel-general .layers'),'<button type="button" class="go-deeper-btn gd-cyan" onclick="showPanel(\'example\');setTimeout(()=>showTab(\'s2\'),200)">&#x2192; Concept + instance layers on the Carlyle query</button>');
+}</script>
+<script>const $ = id => document.getElementById(id);
+
+  function T_fmt(n) {
+    if (Math.abs(n) >= 1e6) return (n/1e6).toFixed(1) + 'M';
+    if (Math.abs(n) >= 1e3) return (n/1e3).toFixed(1) + 'k';
+    if (n > 0 && n < 1) return '<1';
+    return n.toFixed(0);
+  }
+
+  function T_update() {
+    const Td = +$('sl-td').value;
+    const Tc = +$('sl-tc').value;
+    const Kc = +$('sl-kc').value;
+    const k  = +$('sl-k').value;
+
+    $('lbl-td').textContent = Td;
+    $('lbl-tc').textContent = Tc;
+    $('lbl-kc').textContent = Kc;
+    $('lbl-k').textContent  = k;
+
+    const perQ   = k * (Td - Tc);
+    const cc     = k * Kc;
+    const nstar  = perQ > 0 ? cc / perQ : Infinity;
+    const s1k    = 1000 * perQ - cc;
+    const s10k   = 10000 * perQ - cc;
+    const ratio  = Tc > 0 ? (Td / Tc).toFixed(1) : '∞';
+
+    $('out-nstar').textContent = isFinite(nstar) ? T_fmt(nstar) : '∞';
+    $('out-s1k').textContent   = T_fmt(s1k);
+    $('out-s10k').textContent  = T_fmt(s10k);
+    $('out-ratio').textContent = ratio + '×';
+    $('out-pq').textContent    = T_fmt(perQ);
+    $('out-cc').textContent    = T_fmt(cc);
+
+    // color savings
+    [$('out-s1k'), $('out-s10k')].forEach(el => {
+      el.style.color = parseFloat(el.textContent) >= 0 ? 'var(--green)' : 'var(--red)';
+    });
+
+    T_drawChart(Td, Tc, Kc, k, nstar);
+  }
+
+  function T_drawChart(Td, Tc, Kc, k, nstar) {
+    const canvas = $('chart');
+    const dpr    = window.devicePixelRatio || 1;
+    const W      = canvas.clientWidth;
+    const H      = canvas.clientHeight;
+    canvas.width  = W * dpr;
+    canvas.height = H * dpr;
+    const ctx    = canvas.getContext('2d');
+    ctx.scale(dpr, dpr);
+
+    const pad = { top: 20, right: 24, bottom: 32, left: 64 };
+    const cw  = W - pad.left - pad.right;
+    const ch  = H - pad.top  - pad.bottom;
+
+    ctx.clearRect(0, 0, W, H);
+
+    // range
+    const Nmax   = Math.max(isFinite(nstar) ? nstar * 3 : 200, 200);
+    const pts    = 300;
+    const docPts = [], gphPts = [];
+    let ymax = 0;
+
+    for (let i = 0; i <= pts; i++) {
+      const N    = (i / pts) * Nmax;
+      const doc  = N * k * Td;
+      const gph  = k * Kc + N * k * Tc;
+      docPts.push({ N, y: doc });
+      gphPts.push({ N, y: gph });
+      ymax = Math.max(ymax, doc, gph);
+    }
+
+    const xS = N => pad.left + (N / Nmax) * cw;
+    const yS = y => pad.top  + ch - (y / ymax) * ch;
+
+    // grid
+    ctx.strokeStyle = '#1c2a38';
+    ctx.lineWidth   = 1;
+    for (let i = 0; i <= 4; i++) {
+      const y = pad.top + (ch / 4) * i;
+      ctx.beginPath(); ctx.moveTo(pad.left, y); ctx.lineTo(pad.left + cw, y); ctx.stroke();
+    }
+    for (let i = 0; i <= 4; i++) {
+      const x = pad.left + (cw / 4) * i;
+      ctx.beginPath(); ctx.moveTo(x, pad.top); ctx.lineTo(x, pad.top + ch); ctx.stroke();
+    }
+
+    // axes labels
+    ctx.fillStyle   = '#3a5a74';
+    ctx.font        = `10px 'IBM Plex Mono'`;
+    ctx.textAlign   = 'right';
+    for (let i = 0; i <= 4; i++) {
+      const v = (ymax / 4) * (4 - i);
+      const y = pad.top + (ch / 4) * i;
+      ctx.fillText(T_fmt(v), pad.left - 6, y + 4);
+    }
+    ctx.textAlign = 'center';
+    for (let i = 0; i <= 4; i++) {
+      const v = (Nmax / 4) * i;
+      const x = pad.left + (cw / 4) * i;
+      ctx.fillText(T_fmt(v), x, pad.top + ch + 18);
+    }
+
+    // axis labels
+    ctx.save();
+    ctx.fillStyle = '#3a5a74';
+    ctx.font = `10px 'IBM Plex Mono'`;
+    ctx.translate(14, pad.top + ch / 2);
+    ctx.rotate(-Math.PI / 2);
+    ctx.textAlign = 'center';
+    ctx.fillText('cumulative tokens', 0, 0);
+    ctx.restore();
+    ctx.fillStyle = '#3a5a74';
+    ctx.font = `10px 'IBM Plex Mono'`;
+    ctx.textAlign = 'center';
+    ctx.fillText('query volume N', pad.left + cw / 2, H - 2);
+
+    // doc line
+    ctx.beginPath();
+    ctx.strokeStyle = '#c0392b';
+    ctx.lineWidth   = 2;
+    docPts.forEach((p, i) => i === 0 ? ctx.moveTo(xS(p.N), yS(p.y)) : ctx.lineTo(xS(p.N), yS(p.y)));
+    ctx.stroke();
+
+    // graph line
+    ctx.beginPath();
+    ctx.strokeStyle = '#4fc3c8';
+    ctx.lineWidth   = 2;
+    gphPts.forEach((p, i) => i === 0 ? ctx.moveTo(xS(p.N), yS(p.y)) : ctx.lineTo(xS(p.N), yS(p.y)));
+    ctx.stroke();
+
+    // crossover
+    if (isFinite(nstar) && nstar < Nmax) {
+      const xN = xS(nstar);
+      ctx.beginPath();
+      ctx.strokeStyle = 'rgba(232,160,69,0.5)';
+      ctx.lineWidth   = 1;
+      ctx.setLineDash([4, 4]);
+      ctx.moveTo(xN, pad.top);
+      ctx.lineTo(xN, pad.top + ch);
+      ctx.stroke();
+      ctx.setLineDash([]);
+
+      ctx.fillStyle = 'rgba(232,160,69,0.85)';
+      ctx.font      = `10px 'IBM Plex Mono'`;
+      ctx.textAlign = 'left';
+      ctx.fillText(`N* = ${T_fmt(nstar)}`, xN + 5, pad.top + 14);
+    }
+  }
+function _initT(){
+  const $=id=>document.getElementById(id);
+  ['sl-td','sl-tc','sl-kc','sl-k'].forEach(id=>{const el=$(id);if(el)el.addEventListener('input',T_update);});
+  if(!window._T_resize){window._T_resize=true;window.addEventListener('resize',T_update);}
+  T_update();
+}</script>
+<script>// ── Data ──────────────────────────────────────────────────────────────────────
+
+const concepts = [
+  {id:'nav',   label:'NAV methodology',       pq:.22, color:'#4fc3c8'},
+  {id:'fv',    label:'Fair value (ASC 820)',   pq:.18, color:'#7ec8e3'},
+  {id:'mark',  label:'Mark-to-market lag',     pq:.14, color:'#ffd6a5'},
+  {id:'illiq', label:'Illiquidity premium',    pq:.12, color:'#b5ead7'},
+  {id:'disc',  label:'Discount rate dynamics', pq:.10, color:'#c9b1ff'},
+];
+// Instance query dependencies
+const instances = [
+  {id:'fund',  label:'Carlyle CCP V [entity]',       pq:.35, color:'#a78bfa'},
+  {id:'nav_val',label:'Q3 2024 NAV: $4.2B',          pq:.35, color:'#c4b5fd'},
+  {id:'meth',  label:'Disclosed FV methodology',     pq:.30, color:'#ddd6fe'},
+];
+
+const docSteps = [
+  {name:'ILPA Fund Reporting Guidelines',desc:'Covers NAV methodology and mark-to-market treatment. Discount rates referenced but not defined.',tokens:3100,covers:{nav:.80,mark:.65,disc:.20},waste:.68},
+  {name:'ASC 820 Fair Value Standard',desc:'Fair value hierarchy Levels 1–3. Illiquidity adjustments in footnotes. Vintage context absent.',tokens:2700,covers:{fv:.78,illiq:.25},waste:.72},
+  {name:'Carlyle CCP V LP Memo (Q3 2024)',desc:'Fund-specific reporting. NAV figure buried in table on page 11. Methodology reference only.',tokens:4200,covers:{nav:.12,fv:.15,mark:.20,fund:.30,nav_val:.40,meth:.25},waste:.78},
+];
+
+const graphSteps = [
+  {name:'pkis:concept:nav-methodology',desc:'Complete: definition, GP discretion, relationship to fair value, reporting standards.',tokens:260,covers:{nav:.95},waste:0},
+  {name:'pkis:concept:fair-value-asc-820',desc:'Full hierarchy: Level 1–3 inputs, illiquidity adjustments, auditor treatment.',tokens:240,covers:{fv:.92,illiq:.65},waste:0},
+  {name:'pkis:concept:mark-to-market-lag',desc:'Appraisal smoothing, quarterly cycles, lagged beta, systematic patterns.',tokens:190,covers:{mark:.90,disc:.38},waste:0},
+  {name:'pkis:concept:discount-rate-dynamics',desc:'Risk-free rate components, credit spread treatment, PE-specific adjustments.',tokens:180,covers:{disc:.70},waste:0},
+];
+
+const instanceSteps = [
+  {name:'inst:entity:carlyle-ccp-v',desc:'Canonical fund entity. Vintage 2019. Carlyle Group GP. $18.5B committed capital. 47 portfolio companies.',tokens:120,covers:{fund:.95},waste:0,color:'#a78bfa'},
+  {name:'inst:fact:carlyle-ccpv-nav-q3-2024',desc:'Reported NAV: $4.2B (Q3 2024). Source: Q3 LP report, p.11. Verified against audited schedule.',tokens:80,covers:{nav_val:.95},waste:0,color:'#c4b5fd'},
+  {name:'inst:fact:carlyle-ccpv-fv-methodology',desc:'Fair value methodology disclosure: Level 3 inputs, EV/EBITDA multiple approach, quarterly independent valuation.',tokens:95,covers:{meth:.90},waste:0,color:'#ddd6fe'},
+];
+
+// Combined concept steps for Stage 2 left panel (same as Stage 1)
+const s2ConceptSteps = graphSteps.slice(0,3); // first 3 are sufficient for concept layer
+
+// ── CQ Distribution ───────────────────────────────────────────────────────────
+
+function renderCQGlobal(highlightedConcepts, highlightedInstances) {
+  const container = document.getElementById('cq-global');
+  container.innerHTML = `
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:24px;">
+      <div style="background:var(--bg2);border:1px solid var(--border);border-radius:2px;padding:14px;">
+        <div style="font-family:var(--mono);font-size:9px;letter-spacing:.14em;color:var(--text-faint);text-transform:uppercase;margin-bottom:10px;">C(q) — Conceptual dependencies</div>
+        ${concepts.map(c=>{
+          const op = !highlightedConcepts || highlightedConcepts[c.id] ? 1 : 0.2;
+          return `<div style="display:flex;align-items:center;gap:8px;margin-bottom:7px;opacity:${op}">
+            <div style="font-family:var(--mono);font-size:10px;color:var(--text-dim);width:160px;flex-shrink:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">${c.label}</div>
+            <div style="flex:1;background:var(--bg3);height:12px;border-radius:1px;">
+              <div style="width:${c.pq*100*3}%;max-width:100%;height:100%;background:${c.color}33;border:1px solid ${c.color}66;border-radius:1px;"></div>
+            </div>
+            <div style="font-family:var(--mono);font-size:10px;color:${c.color};width:30px;text-align:right;">${Math.round(c.pq*100)}%</div>
+          </div>`;
+        }).join('')}
+      </div>
+      <div style="background:var(--bg2);border:1px solid var(--border);border-radius:2px;padding:14px;">
+        <div style="font-family:var(--mono);font-size:9px;letter-spacing:.14em;color:var(--text-faint);text-transform:uppercase;margin-bottom:10px;">I(q) — Instance dependencies</div>
+        ${instances.map(c=>{
+          const op = !highlightedInstances || highlightedInstances[c.id] ? 1 : 0.2;
+          return `<div style="display:flex;align-items:center;gap:8px;margin-bottom:7px;opacity:${op}">
+            <div style="font-family:var(--mono);font-size:10px;color:var(--text-dim);width:160px;flex-shrink:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">${c.label}</div>
+            <div style="flex:1;background:var(--bg3);height:12px;border-radius:1px;">
+              <div style="width:${c.pq*100*2.5}%;max-width:100%;height:100%;background:${c.color}33;border:1px solid ${c.color}66;border-radius:1px;"></div>
+            </div>
+            <div style="font-family:var(--mono);font-size:10px;color:${c.color};width:30px;text-align:right;">${Math.round(c.pq*100)}%</div>
+          </div>`;
+        }).join('')}
+      </div>
+    </div>`;
+}
+
+// ── Generic renderers ─────────────────────────────────────────────────────────
+
+function cumulativeCoverage(steps, conceptSet) {
+  const acc={};
+  conceptSet.forEach(c=>acc[c.id]=0);
+  return steps.map(s=>{
+    Object.entries(s.covers).forEach(([id,v])=>{
+      if(acc[id]!==undefined) acc[id]=Math.min(1,acc[id]+v);
+    });
+    return Object.fromEntries(conceptSet.map(c=>[c.id,acc[c.id]]));
+  });
+}
+
+function renderSteps(steps, containerId, side, cumCov, conceptSet, hlFn) {
+  const container=document.getElementById(containerId);
+  if(!container)return;
+  container.innerHTML='';
+  steps.forEach((s,i)=>{
+    const el=document.createElement('div');
+    el.className='rstep';
+    const covNames=Object.keys(s.covers)
+      .map(id=>conceptSet.find(c=>c.id===id)?.label).filter(Boolean).join(', ');
+    const wasteT=Math.round(s.tokens*(s.waste||0));
+    const tokColor = side==='doc'?'var(--red)':side==='inst'?'var(--purple)':'var(--cyan)';
+    el.innerHTML=`
+      <div class="rnum">${i+1}</div>
+      <div class="rcontent">
+        <div class="rname">${s.name}</div>
+        <div class="rdesc">${s.desc}</div>
+        <div class="rcov">Covers: ${covNames||'—'}</div>
+        ${side==='doc'&&wasteT>0?`<div class="rwaste">~${wasteT.toLocaleString()} irrelevant tokens (~${Math.round((s.waste||0)*100)}% waste)</div>`:''}
+      </div>
+      <div class="rtok" style="color:${tokColor}">${s.tokens.toLocaleString()}<br><span style="font-size:9px;color:var(--text-faint)">tokens</span></div>`;
+    el.addEventListener('click',()=>{
+      container.querySelectorAll('.rstep').forEach(e=>e.classList.remove(`act-${side}`));
+      el.classList.add(`act-${side}`);
+      if(hlFn) hlFn(s.covers);
+    });
+    container.appendChild(el);
+  });
+}
+
+function renderMeters(cumCov, containerId, side, conceptSet) {
+  const container=document.getElementById(containerId);
+  if(!container)return;
+  container.innerHTML='';
+  const final=cumCov[cumCov.length-1];
+  const barColor=side==='doc'?'rgba(232,112,112,.5)':side==='inst'?'rgba(167,139,250,.5)':'rgba(79,195,200,.5)';
+  const valColor=side==='doc'?'var(--red)':side==='inst'?'var(--purple)':'var(--cyan)';
+  conceptSet.forEach(c=>{
+    const v=final[c.id]||0;
+    const row=document.createElement('div');
+    row.className='meter-row';
+    row.innerHTML=`
+      <div class="meter-name">${c.label.split(' ')[0]}</div>
+      <div class="meter-bar-wrap"><div class="meter-bar" style="width:${v*100}%;background:${barColor}"></div></div>
+      <div class="meter-val" style="color:${valColor}">${Math.round(v*100)}%</div>`;
+    container.appendChild(row);
+  });
+  const totalCov=conceptSet.reduce((s,c)=>s+c.pq*(final[c.id]||0),0);
+  const tot=document.createElement('div');
+  tot.className='meter-total';
+  tot.innerHTML=`<span style="color:var(--text-faint)">Total coverage</span><span style="color:${valColor};font-weight:500">${Math.round(totalCov*100)}%</span>`;
+  container.appendChild(tot);
+  return totalCov;
+}
+
+function renderSummaryBox(containerId, docTok, graphTok, docCov, graphCov, extra) {
+  const container=document.getElementById(containerId);
+  if(!container)return;
+  const ratio=(graphCov/graphTok)/(docCov/docTok);
+  const waste=docSteps.reduce((s,d)=>s+Math.round(d.tokens*(d.waste||0)),0);
+  container.innerHTML=`
+    <div class="sum-title">Efficiency comparison</div>
+    <div class="rdout-grid">
+      <div class="rdout"><div class="rlabel">Doc tokens</div><div class="rval" style="color:var(--red)">${docTok.toLocaleString()}</div><div class="runit">total</div></div>
+      <div class="rdout"><div class="rlabel">Graph tokens</div><div class="rval" style="color:var(--cyan)">${graphTok.toLocaleString()}</div><div class="runit">total</div></div>
+      <div class="rdout"><div class="rlabel">Efficiency ratio</div><div class="rval" style="color:var(--amber)">${ratio.toFixed(1)}×</div><div class="runit">graph / doc</div></div>
+      <div class="rdout"><div class="rlabel">Token waste (doc)</div><div class="rval" style="color:var(--red)">${waste.toLocaleString()}</div><div class="runit">irrelevant</div></div>
+    </div>
+    ${extra||''}`;
+}
+
+// ── Amort chart ───────────────────────────────────────────────────────────────
+
+function E_fmt(n){
+  if(Math.abs(n)>=1e6)return(n/1e6).toFixed(1)+'M';
+  if(Math.abs(n)>=1e3)return(n/1e3).toFixed(1)+'k';
+  if(n>0&&n<1)return'<1';
+  return n.toFixed(0);
+}
+
+function drawAmort(canvasId, curves, Nmax) {
+  const canvas=document.getElementById(canvasId);
+  if(!canvas)return;
+  const dpr=window.devicePixelRatio||1;
+  const W=canvas.clientWidth,H=canvas.clientHeight;
+  canvas.width=W*dpr;canvas.height=H*dpr;
+  const ctx=canvas.getContext('2d');
+  ctx.scale(dpr,dpr);
+  const pad={top:16,right:20,bottom:28,left:52};
+  const cw=W-pad.left-pad.right,ch=H-pad.top-pad.bottom;
+  ctx.clearRect(0,0,W,H);
+
+  const pts=300;
+  let ymax=0;
+  const allPts=curves.map(({perQ,fixed})=>{
+    const ps=[];
+    for(let i=0;i<=pts;i++){const N=(i/pts)*Nmax;ps.push({N,y:fixed+N*perQ});}
+    ps.forEach(p=>ymax=Math.max(ymax,p.y));
+    return ps;
+  });
+
+  const xS=N=>pad.left+(N/Nmax)*cw;
+  const yS=y=>pad.top+ch-(y/ymax)*ch;
+
+  ctx.strokeStyle='#1a2a38';ctx.lineWidth=1;
+  for(let i=0;i<=4;i++){
+    const y=pad.top+(ch/4)*i;
+    ctx.beginPath();ctx.moveTo(pad.left,y);ctx.lineTo(pad.left+cw,y);ctx.stroke();
+  }
+  ctx.fillStyle='#2e4a5e';ctx.font=`10px 'IBM Plex Mono'`;
+  ctx.textAlign='right';
+  for(let i=0;i<=4;i++)ctx.fillText(E_fmt((ymax/4)*(4-i)),pad.left-5,pad.top+(ch/4)*i+4);
+  ctx.textAlign='center';
+  for(let i=0;i<=4;i++)ctx.fillText(E_fmt((Nmax/4)*i),pad.left+(cw/4)*i,pad.top+ch+18);
+
+  curves.forEach(({perQ,fixed,color,dash},ci)=>{
+    ctx.beginPath();ctx.strokeStyle=color;ctx.lineWidth=2;
+    if(dash)ctx.setLineDash([4,4]);else ctx.setLineDash([]);
+    allPts[ci].forEach((p,i)=>i?ctx.lineTo(xS(p.N),yS(p.y)):ctx.moveTo(xS(p.N),yS(p.y)));
+    ctx.stroke();ctx.setLineDash([]);
+
+    // crossover with first curve
+    if(ci>0){
+      const ref=curves[0];
+      const denom=ref.perQ-perQ;
+      if(denom>0){
+        const nstar=(fixed-ref.fixed)/denom;
+        if(nstar>0&&nstar<Nmax){
+          const xN=xS(nstar);
+          ctx.beginPath();ctx.strokeStyle='rgba(232,160,69,.4)';
+          ctx.lineWidth=1;ctx.setLineDash([4,4]);
+          ctx.moveTo(xN,pad.top);ctx.lineTo(xN,pad.top+ch);ctx.stroke();
+          ctx.setLineDash([]);
+          ctx.fillStyle='rgba(232,160,69,.8)';
+          ctx.font=`10px 'IBM Plex Mono'`;ctx.textAlign='left';
+          ctx.fillText(`N*=${E_fmt(nstar)}`,xN+4,pad.top+12+(ci-1)*14);
+        }
+      }
+    }
+  });
+}
+
+// ── Tab switching ─────────────────────────────────────────────────────────────
+
+const tabs={
+  s0:{btn:'btn-s0',panel:'panel-s0',cls:'active-stage0'},
+  obj:{btn:'btn-obj',panel:'panel-obj',cls:'active-obj'},
+  s1:{btn:'btn-s1',panel:'panel-s1',cls:'active-stage1'},
+  s2:{btn:'btn-s2',panel:'panel-s2',cls:'active-stage2'},
+};
+
+function showTab(id){
+  Object.entries(tabs).forEach(([k,v])=>{
+    document.getElementById(v.btn).classList.remove(v.cls);
+    document.getElementById(v.panel).classList.remove('active');
+  });
+  document.getElementById(tabs[id].btn).classList.add(tabs[id].cls);
+  document.getElementById(tabs[id].panel).classList.add('active');
+  setTimeout(()=>window.dispatchEvent(new Event('resize')),50);
+}
+
+function toggleObjEx(id){document.getElementById(id).classList.toggle('open');}
+
+// ── Stage 0 init ──────────────────────────────────────────────────────────────
+
+function initS0(){
+  const cumCov=cumulativeCoverage(docSteps,concepts);
+  renderSteps(docSteps,'s0-steps','doc',cumCov,concepts,(covers)=>renderCQGlobal(covers,null));
+  const docCov=renderMeters(cumCov,'s0-meters','doc',concepts);
+  const docTok=docSteps.reduce((s,d)=>s+d.tokens,0);
+  renderSummaryBox('s0-summary',docTok,docTok,docCov,docCov,`
+    <div class="insight"><strong>Stage 0 read-out</strong>
+    ${docTok.toLocaleString()} tokens consumed. ${Math.round(docCov*100)}% conceptual coverage.
+    No instance facts retrieved — the fund entity and Q3 NAV figure require a human to find them in the LP memo.
+    This cost is paid every time the question is asked.</div>`);
+}
+
+// ── Stage 1 init ──────────────────────────────────────────────────────────────
+
+function initS1(){
+  const docCumCov=cumulativeCoverage(docSteps,concepts);
+  const graphCumCov=cumulativeCoverage(graphSteps,concepts);
+  renderSteps(docSteps,'s1-doc-steps','doc',docCumCov,concepts,(covers)=>renderCQGlobal(covers,null));
+  renderSteps(graphSteps,'s1-graph-steps','graph',graphCumCov,concepts,(covers)=>renderCQGlobal(covers,null));
+  const docCov=renderMeters(docCumCov,'s1-doc-meters','doc',concepts);
+  const graphCov=renderMeters(graphCumCov,'s1-graph-meters','graph',concepts);
+  const docTok=docSteps.reduce((s,d)=>s+d.tokens,0);
+  const graphTok=graphSteps.reduce((s,d)=>s+d.tokens,0);
+  const ratio=(graphCov/graphTok)/(docCov/docTok);
+  renderSummaryBox('s1-summary',docTok,graphTok,docCov,graphCov,`
+    <div class="insight"><strong>Stage 1 read-out</strong>
+    Concept graph retrieval achieves ${Math.round(graphCov*100)}% conceptual coverage
+    using ${graphTok.toLocaleString()} tokens vs ${docTok.toLocaleString()} for documents.
+    Efficiency ratio: ${ratio.toFixed(1)}× — the concept layer is ${ratio.toFixed(1)} times more efficient per token of mutual information gained.
+    Instance facts (NAV figure, entity identity) still require document lookup — that is Stage 2's job.</div>`);
+  updateS1Amort();
+}
+
+function updateS1Amort(){
+  const Kc=+document.getElementById('sl-kc1').value;
+  const qv=+document.getElementById('sl-qv1').value;
+  document.getElementById('lbl-kc1').textContent=Kc;
+  document.getElementById('lbl-qv1').textContent=qv;
+  const docTok=docSteps.reduce((s,d)=>s+d.tokens,0);
+  const graphTok=graphSteps.reduce((s,d)=>s+d.tokens,0);
+  const cc=graphSteps.length*Kc;
+  const Nmax=Math.max(qv*6,300);
+  drawAmort('chart-s1',[
+    {perQ:docTok,fixed:0,color:'#e87070'},
+    {perQ:graphTok,fixed:cc,color:'#4fc3c8'},
+  ],Nmax);
+}
+
+// ── Stage 2 init ──────────────────────────────────────────────────────────────
+
+function initS2(){
+  // Concept side (left) — same as stage 1 graph steps but just first 3
+  const concCumCov=cumulativeCoverage(s2ConceptSteps,concepts);
+  renderSteps(s2ConceptSteps,'s2-concept-steps','graph',concCumCov,concepts,(covers)=>renderCQGlobal(covers,null));
+  renderMeters(concCumCov,'s2-concept-meters','graph',concepts);
+
+  // Instance side (right)
+  const instCumCov=cumulativeCoverage(instanceSteps,instances);
+  renderSteps(instanceSteps,'s2-instance-steps','inst',instCumCov,instances,(covers)=>renderCQGlobal(null,covers));
+  renderMeters(instCumCov,'s2-instance-meters','inst',instances);
+
+  const concTok=s2ConceptSteps.reduce((s,d)=>s+d.tokens,0);
+  const instTok=instanceSteps.reduce((s,d)=>s+d.tokens,0);
+  const totalGraphTok=concTok+instTok;
+  const docTok=docSteps.reduce((s,d)=>s+d.tokens,0);
+  const docCov=docSteps.reduce((s,d,i)=>{
+    const cumCov=cumulativeCoverage(docSteps,concepts);
+    return cumCov[cumCov.length-1];
+  },{}); // get final cumulative
+  const docCovVal=cumulativeCoverage(docSteps,concepts).slice(-1)[0];
+  const docTotalCov=concepts.reduce((s,c)=>s+c.pq*(docCovVal[c.id]||0),0);
+  const ratio=((0.9/totalGraphTok)/(docTotalCov/docTok));
+
+  document.getElementById('s2-summary').innerHTML=`
+    <div class="sum-title">Combined layer efficiency</div>
+    <div class="rdout-grid">
+      <div class="rdout"><div class="rlabel">Doc tokens (both Qs)</div><div class="rval" style="color:var(--red)">${(docTok*1.4).toFixed(0).replace(/\B(?=(\d{3})+(?!\d))/g,',')}~</div><div class="runit">conceptual + factual</div></div>
+      <div class="rdout"><div class="rlabel">Graph tokens (both)</div><div class="rval" style="color:var(--cyan)">${totalGraphTok.toLocaleString()}</div><div class="runit">concept + instance</div></div>
+      <div class="rdout"><div class="rlabel">Full query coverage</div><div class="rval" style="color:var(--green)">Yes</div><div class="runit">concept + instance</div></div>
+      <div class="rdout"><div class="rlabel">Entity consistency</div><div class="rval" style="color:var(--purple)">Enforced</div><div class="runit">canonical IRI</div></div>
+    </div>
+    <div class="insight"><strong>Stage 2 read-out</strong>
+    The concept layer answers "what is NAV methodology and how does fair value relate to it" — ${concTok} tokens.
+    The instance layer answers "what was Carlyle CCP V's Q3 2024 NAV" — ${instTok} tokens as a direct lookup.
+    Together they cover the full query in ${totalGraphTok.toLocaleString()} tokens vs ~${Math.round(docTok*1.4).toLocaleString()} tokens of document synthesis.
+    The NAV figure is exact and auditable: source document reference attached to the instance node.</div>`;
+  updateS2Amort();
+}
+
+function updateS2Amort(){
+  const Kci=+document.getElementById('sl-kci').value;
+  const qvi=+document.getElementById('sl-qvi').value;
+  document.getElementById('lbl-kci').textContent=Kci;
+  document.getElementById('lbl-qvi').textContent=qvi;
+  const docTok=docSteps.reduce((s,d)=>s+d.tokens,0);
+  const graphTok=graphSteps.reduce((s,d)=>s+d.tokens,0);
+  const instTok=instanceSteps.reduce((s,d)=>s+d.tokens,0);
+  const ccConcept=graphSteps.length*1400;
+  const ccInst=instanceSteps.length*Kci;
+  const Nmax=Math.max(qvi*6,300);
+  drawAmort('chart-s2',[
+    {perQ:docTok,fixed:0,color:'#e87070'},
+    {perQ:graphTok,fixed:ccConcept,color:'#4fc3c8'},
+    {perQ:graphTok+instTok,fixed:ccConcept+ccInst,color:'#a78bfa'},
+  ],Nmax);
+}
+
+// ── Init ──────────────────────────────────────────────────────────────────────
+
+function _initE(){
+  renderCQGlobal(null,null);
+  initS0();initS1();initS2();
+  showTab('s0');
+  document.getElementById('sl-kc1')?.addEventListener('input',updateS1Amort);
+  document.getElementById('sl-qv1')?.addEventListener('input',updateS1Amort);
+  document.getElementById('sl-kci')?.addEventListener('input',updateS2Amort);
+  document.getElementById('sl-qvi')?.addEventListener('input',updateS2Amort);
+  if(!window._E_resize){window._E_resize=true;window.addEventListener('resize',()=>{updateS1Amort();updateS2Amort();});}
+}</script>
+<script>document.addEventListener('DOMContentLoaded',()=>{_inited['general']=true;_initG();});</script>
+</body>
+</html>

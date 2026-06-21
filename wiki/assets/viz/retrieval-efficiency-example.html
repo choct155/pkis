@@ -1,0 +1,721 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Retrieval Efficiency — Carlyle NAV Query</title>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,300;0,400;0,500;1,300&family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg:#0a0c0f; --bg1:#0f1318; --bg2:#141920; --bg3:#1c2330;
+  --border:#1e2d3d; --border2:#2a3f54;
+  --amber:#e8a045; --amber-dim:#7a5020;
+  --cyan:#4fc3c8; --cyan-dim:#1e5558;
+  --green:#5cb85c; --green-dim:#1e3d1e;
+  --red:#e87070; --red-dim:#3d1010;
+  --purple:#a78bfa; --purple-dim:#2d1f5e;
+  --text:#c8d6e5; --text-dim:#5a7a94; --text-faint:#2e4a5e;
+  --mono:'IBM Plex Mono',monospace; --sans:'IBM Plex Sans',sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{background:var(--bg);color:var(--text);font-family:var(--sans);font-size:14px;line-height:1.7;}
+.shell{max-width:1040px;margin:0 auto;padding:48px 32px 96px;}
+@media(max-width:700px){.shell{padding:32px 16px 64px;}}
+
+/* Header */
+.eyebrow{font-family:var(--mono);font-size:10px;letter-spacing:.18em;color:var(--amber);text-transform:uppercase;margin-bottom:20px;display:flex;align-items:center;gap:12px;}
+.eyebrow::after{content:'';flex:1;height:1px;background:var(--amber-dim);}
+h1{font-family:var(--mono);font-size:20px;font-weight:500;color:#e8edf2;letter-spacing:-.02em;margin-bottom:8px;}
+.doc-meta{font-family:var(--mono);font-size:11px;color:var(--text-dim);margin-bottom:12px;}
+.query-box{background:var(--bg2);border:1px solid var(--border2);border-left:3px solid var(--cyan);border-radius:2px;padding:16px 20px;margin-bottom:32px;}
+.query-box .ql{font-size:9px;letter-spacing:.16em;color:var(--cyan);text-transform:uppercase;margin-bottom:6px;font-family:var(--mono);}
+.query-text{color:#dde8f2;font-size:14px;line-height:1.5;}
+
+/* Tab navigation */
+.tab-nav{display:flex;gap:2px;margin-bottom:0;border-bottom:1px solid var(--border);}
+.tab-btn{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;padding:10px 18px;background:var(--bg1);border:1px solid var(--border);border-bottom:none;border-radius:2px 2px 0 0;cursor:pointer;color:var(--text-dim);transition:all .2s;white-space:nowrap;}
+.tab-btn:hover{color:var(--text);border-color:var(--border2);}
+.tab-btn.active-stage0{color:var(--red);border-color:var(--red-dim);background:rgba(232,112,112,.06);}
+.tab-btn.active-obj{color:var(--amber);border-color:var(--amber-dim);background:rgba(232,160,69,.06);}
+.tab-btn.active-stage1{color:var(--cyan);border-color:var(--cyan-dim);background:rgba(79,195,200,.06);}
+.tab-btn.active-stage2{color:var(--purple);border-color:var(--purple-dim);background:rgba(167,139,250,.06);}
+
+/* Tab panels */
+.tab-panel{display:none;background:var(--bg1);border:1px solid var(--border);border-top:none;border-radius:0 0 2px 2px;padding:24px;}
+.tab-panel.active{display:block;}
+
+/* Two-column layout */
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:20px;}
+@media(max-width:700px){.cols{grid-template-columns:1fr;}}
+
+/* Column heads */
+.col-head{font-family:var(--mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;padding:8px 12px;border-radius:2px 2px 0 0;margin-bottom:0;}
+.ch-doc{background:rgba(232,112,112,.1);color:var(--red);border:1px solid rgba(232,112,112,.2);}
+.ch-graph{background:rgba(79,195,200,.08);color:var(--cyan);border:1px solid rgba(79,195,200,.2);}
+.ch-instance{background:rgba(167,139,250,.08);color:var(--purple);border:1px solid rgba(167,139,250,.2);}
+.col-body{border:1px solid var(--border);border-top:none;border-radius:0 0 2px 2px;min-height:280px;}
+
+/* C(q) bars */
+.cq-section{padding:12px 14px 14px;}
+.cq-stitle{font-family:var(--mono);font-size:9px;letter-spacing:.14em;color:var(--text-faint);text-transform:uppercase;margin-bottom:10px;}
+.cq-row{display:flex;align-items:center;gap:8px;margin-bottom:7px;}
+.cq-label{font-family:var(--mono);font-size:10px;color:var(--text-dim);width:160px;flex-shrink:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+.cq-bar-wrap{flex:1;background:var(--bg3);height:14px;border-radius:1px;position:relative;}
+.cq-bar{height:100%;border-radius:1px;transition:width .4s;}
+.cq-val{font-family:var(--mono);font-size:10px;width:32px;text-align:right;flex-shrink:0;}
+
+/* Retrieval steps */
+.steps-wrap{padding:0 12px 12px;}
+.rstep{display:flex;gap:8px;align-items:flex-start;padding:9px 10px;margin-bottom:5px;border-radius:2px;border:1px solid var(--border);background:var(--bg2);cursor:pointer;transition:border-color .2s;}
+.rstep:hover{border-color:var(--border2);}
+.rstep.act-doc{border-color:rgba(232,112,112,.4);background:rgba(232,112,112,.04);}
+.rstep.act-graph{border-color:rgba(79,195,200,.4);background:rgba(79,195,200,.04);}
+.rstep.act-inst{border-color:rgba(167,139,250,.4);background:rgba(167,139,250,.04);}
+.rnum{font-family:var(--mono);font-size:10px;color:var(--text-faint);min-width:16px;padding-top:1px;}
+.rcontent{flex:1;}
+.rname{font-family:var(--mono);font-size:11px;color:var(--text);margin-bottom:2px;}
+.rdesc{font-size:11px;font-weight:300;color:var(--text-dim);line-height:1.5;}
+.rcov{font-family:var(--mono);font-size:10px;color:var(--green);margin-top:3px;}
+.rwaste{font-family:var(--mono);font-size:10px;color:rgba(232,112,112,.7);margin-top:2px;}
+.rtok{font-family:var(--mono);font-size:11px;flex-shrink:0;padding-top:1px;}
+
+/* Coverage meters */
+.meter-section{padding:10px 12px 12px;border-top:1px solid var(--border);}
+.meter-stitle{font-family:var(--mono);font-size:9px;letter-spacing:.12em;color:var(--text-faint);text-transform:uppercase;margin-bottom:8px;}
+.meter-row{display:flex;align-items:center;gap:8px;margin-bottom:5px;}
+.meter-name{font-family:var(--mono);font-size:10px;color:var(--text-dim);width:76px;flex-shrink:0;}
+.meter-bar-wrap{flex:1;background:var(--bg3);height:11px;border-radius:1px;}
+.meter-bar{height:100%;border-radius:1px;transition:width .5s;}
+.meter-val{font-family:var(--mono);font-size:10px;width:36px;text-align:right;}
+.meter-total{border-top:1px solid var(--border);margin-top:6px;padding-top:6px;font-family:var(--mono);font-size:11px;display:flex;justify-content:space-between;}
+
+/* Summary readouts */
+.summary{background:var(--bg2);border:1px solid var(--border2);border-radius:2px;padding:20px;margin-bottom:16px;}
+.sum-title{font-family:var(--mono);font-size:10px;letter-spacing:.14em;color:var(--amber);text-transform:uppercase;margin-bottom:16px;display:flex;align-items:center;gap:8px;}
+.sum-title::after{content:'';flex:1;height:1px;background:var(--amber-dim);}
+.rdout-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:14px;}
+@media(max-width:700px){.rdout-grid{grid-template-columns:1fr 1fr;}}
+.rdout{background:var(--bg3);border:1px solid var(--border);border-radius:2px;padding:12px;}
+.rlabel{font-family:var(--mono);font-size:9px;letter-spacing:.12em;color:var(--text-faint);text-transform:uppercase;margin-bottom:4px;}
+.rval{font-family:var(--mono);font-size:20px;font-weight:500;line-height:1;}
+.runit{font-family:var(--mono);font-size:10px;color:var(--text-dim);margin-top:3px;}
+.insight{background:rgba(92,184,92,.05);border:1px solid rgba(92,184,92,.15);border-left:3px solid var(--green);border-radius:2px;padding:12px 16px;font-size:12px;font-weight:300;color:#9ecf9e;line-height:1.6;}
+.insight strong{font-family:var(--mono);font-size:9px;letter-spacing:.1em;color:var(--green);text-transform:uppercase;display:block;margin-bottom:4px;}
+
+/* Amortization */
+.amort{background:var(--bg2);border:1px solid var(--border2);border-radius:2px;padding:20px;margin-bottom:16px;}
+.amort-title{font-family:var(--mono);font-size:10px;letter-spacing:.14em;color:var(--amber);text-transform:uppercase;margin-bottom:12px;display:flex;align-items:center;gap:8px;}
+.amort-title::after{content:'';flex:1;height:1px;background:var(--amber-dim);}
+.param-row{display:flex;flex-direction:column;gap:5px;margin-bottom:14px;}
+.param-label{font-family:var(--mono);font-size:11px;color:var(--text-dim);display:flex;justify-content:space-between;}
+.pval{color:var(--amber);}
+input[type=range]{-webkit-appearance:none;width:100%;height:3px;background:var(--border2);border-radius:2px;outline:none;}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:13px;height:13px;border-radius:50%;background:var(--amber);cursor:pointer;border:2px solid var(--bg);}
+canvas{width:100%;height:200px;display:block;margin-top:10px;}
+.legend{display:flex;gap:16px;margin-top:8px;flex-wrap:wrap;font-family:var(--mono);font-size:10px;color:var(--text-dim);}
+.ldot{width:10px;height:3px;border-radius:1px;}
+.li{display:flex;align-items:center;gap:5px;}
+
+/* Objection panels */
+.obj-card{background:var(--bg2);border:1px solid var(--border);border-radius:2px;margin-bottom:8px;cursor:pointer;}
+.obj-card:hover{border-color:var(--border2);}
+.obj-card.open{border-color:var(--border2);}
+.obj-header{display:flex;align-items:center;gap:12px;padding:12px 16px;user-select:none;}
+.obj-icon{font-family:var(--mono);font-size:12px;color:var(--amber);min-width:18px;}
+.obj-q{flex:1;font-size:13px;color:var(--text);}
+.obj-arr{font-size:10px;color:var(--text-faint);transition:transform .2s;}
+.obj-card.open .obj-arr{transform:rotate(90deg);}
+.obj-body{display:none;padding:0 16px 14px 46px;border-top:1px solid var(--border);}
+.obj-card.open .obj-body{display:block;}
+.obj-body p{font-size:12px;font-weight:300;color:var(--text-dim);line-height:1.65;margin-top:10px;}
+.obj-verdict{font-family:var(--mono);font-size:10px;color:var(--amber);margin-top:8px;padding:7px 10px;background:var(--amber-dim);border-left:2px solid var(--amber);border-radius:1px;}
+
+/* CQ distribution panel */
+#cq-global{padding:0 0 24px;}
+</style>
+</head>
+<body>
+<div class="shell">
+
+<div class="eyebrow">Mechanistic Example · Three-Stage Retrieval</div>
+<h1>The Carlyle NAV Query — Concept &amp; Instance Retrieval</h1>
+<div class="doc-meta">Applies: Eff(q,n) = I(q;n)/tokens(n) · Coverage(q,G) = Σ P(c|q)·𝟙[c∈G]</div>
+
+<div class="query-box">
+  <div class="ql">Query q</div>
+  <div class="query-text">"What was the reported NAV for Carlyle's flagship buyout fund in the most recent quarter, and how does that compare to the fair value methodology they disclosed?"</div>
+</div>
+
+<!-- C(q) global -->
+<div id="cq-global"></div>
+
+<!-- Tab nav -->
+<div class="tab-nav">
+  <button class="tab-btn" id="btn-s0" onclick="showTab('s0')">Stage 0 — Infer everything</button>
+  <button class="tab-btn" id="btn-obj" onclick="showTab('obj')">Objections</button>
+  <button class="tab-btn" id="btn-s1" onclick="showTab('s1')">Stage 1 — Concept graph</button>
+  <button class="tab-btn" id="btn-s2" onclick="showTab('s2')">Stage 2 — Instance graph</button>
+</div>
+
+<!-- Stage 0 -->
+<div class="tab-panel" id="panel-s0">
+  <p style="font-size:13px;font-weight:300;color:var(--text-dim);margin-bottom:20px;line-height:1.7">No encoded structure. The system retrieves documents by keyword or embedding similarity and synthesizes the full answer at inference time. Every query pays full price. Click a retrieval step to see what concepts it covers — and what it misses.</p>
+  <div class="cols">
+    <div>
+      <div class="col-head ch-doc">Documents retrieved</div>
+      <div class="col-body" id="s0-steps-wrap">
+        <div class="steps-wrap" id="s0-steps"></div>
+        <div class="meter-section">
+          <div class="meter-stitle">Cumulative C(q) coverage</div>
+          <div id="s0-meters"></div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class="col-head ch-doc" style="background:rgba(232,112,112,.04);color:var(--text-faint)">What the system has to do</div>
+      <div class="col-body" style="padding:14px;font-size:12px;font-weight:300;color:var(--text-dim);line-height:1.7;">
+        <p style="margin-bottom:10px">After retrieving the documents, the model must:</p>
+        <p style="margin-bottom:8px">① Identify which parts of each document are relevant to the query — scanning content the system paid for but doesn't need.</p>
+        <p style="margin-bottom:8px">② Reconstruct what NAV methodology means from passages spread across multiple documents, without a canonical definition anywhere.</p>
+        <p style="margin-bottom:8px">③ Connect fair value methodology to NAV — a relationship that must be inferred rather than traversed.</p>
+        <p style="margin-bottom:8px">④ Find the specific Q3 2024 figure — buried in an LP memo, not explicitly labeled.</p>
+        <p style="margin-bottom:16px">⑤ Reconcile "Carlyle Group," "Carlyle CCP V," and "Carlyle Capital Partners" into the correct fund entity.</p>
+        <div style="font-family:var(--mono);font-size:10px;color:var(--red);background:var(--red-dim);border-left:2px solid var(--red);padding:8px 10px;border-radius:1px;">All of this happens at inference time, every time, at full token cost — with no guarantee of consistency across queries.</div>
+      </div>
+    </div>
+  </div>
+  <div class="summary" id="s0-summary"></div>
+</div>
+
+<!-- Objections -->
+<div class="tab-panel" id="panel-obj">
+  <p style="font-size:13px;font-weight:300;color:var(--text-dim);margin-bottom:20px;line-height:1.7">Three common improvements over Stage 0. Each moves the needle — and each leaves a residual gap that only typed graph structure closes.</p>
+
+  <div class="obj-card" id="obj-chunk">
+    <div class="obj-header" onclick="toggleObjEx('obj-chunk')">
+      <span class="obj-icon">①</span>
+      <span class="obj-q">"We use chunked embeddings — that solves the token waste problem."</span>
+      <span class="obj-arr">▶</span>
+    </div>
+    <div class="obj-body">
+      <p>Chunking improves the token cost denominator: a chunk of ~400 tokens costs far less than a 3,000-token document. Efficiency improves. But chunk boundaries are fixed by token count, not concept boundaries. The chunk containing "NAV methodology" may also contain half a paragraph about reporting timelines. P(k|chunk) is still diffuse.</p>
+      <p>More critically: two chunks discussing NAV methodology in different documents have no structural link. The system rediscovers that connection at inference time on every query. A concept node makes it once.</p>
+      <div class="obj-verdict">Moves the needle: ✓ Lower token cost per retrieval unit. Gap remains: chunk granularity ≠ concept granularity. The efficiency ratio improves but does not converge to the concept node case.</div>
+    </div>
+  </div>
+
+  <div class="obj-card" id="obj-solr">
+    <div class="obj-header" onclick="toggleObjEx('obj-solr')">
+      <span class="obj-icon">②</span>
+      <span class="obj-q">"We have a Solr/metadata index — fast retrieval to the right document."</span>
+      <span class="obj-arr">▶</span>
+    </div>
+    <div class="obj-body">
+      <p>A metadata index solves navigation: get to the right document faster. Typical fields: issuer, document type, date received, fund name. This reduces retrieval latency but does not change what happens once the document is retrieved. You still pay full synthesis cost on the document's content.</p>
+      <p>For this query: a Solr index gets you to the Carlyle LP memo faster. It does not tell you what NAV methodology means, how fair value relates to it, or what Carlyle's Q3 2024 figure was. You're still synthesizing from scratch.</p>
+      <div class="obj-verdict">Moves the needle: ✓ Faster navigation to relevant documents. Gap remains: retrieval filter is not knowledge representation. Synthesis cost is unchanged.</div>
+    </div>
+  </div>
+
+  <div class="obj-card" id="obj-enrich">
+    <div class="obj-header" onclick="toggleObjEx('obj-enrich')">
+      <span class="obj-icon">③</span>
+      <span class="obj-q">"What if we tag documents with canonical concept and entity references?"</span>
+      <span class="obj-arr">▶</span>
+    </div>
+    <div class="obj-body">
+      <p>This is the strongest document-centric approach. Tagging documents with canonical concept identifiers {NAV methodology, fair value (ASC 820), vintage effects} enables concept-based retrieval without content scanning. Recall improves meaningfully.</p>
+      <p>But set membership tells you concepts are present — not how they relate. "NAV methodology" and "fair value estimation" are both in the tag set, but the system doesn't know that understanding fair value is a prerequisite for understanding how NAV is reported. That relationship is only in the graph.</p>
+      <p>Entity tags face the same problem: "Carlyle Group," "Carlyle CCP V," and "CCP V" may all be tagged but without canonical entity resolution, queries over entity relationships return inconsistent results.</p>
+      <div class="obj-verdict">Moves the needle: ✓ Better recall via concept-based retrieval. Gap remains: no directionality, no typed relationships, no dependency structure, no entity canonicalization. Graph information content is not recoverable from tags.</div>
+    </div>
+  </div>
+
+  <div style="margin-top:24px;padding:16px;background:var(--bg2);border:1px solid var(--border);border-radius:2px;border-left:3px solid var(--cyan);">
+    <div style="font-family:var(--mono);font-size:9px;letter-spacing:.14em;color:var(--cyan);text-transform:uppercase;margin-bottom:8px;">The residual gap</div>
+    <p style="font-size:13px;font-weight:300;color:var(--text-dim);line-height:1.65">All three partial solutions improve retrieval without closing the architectural gap. Chunking reduces token waste. Metadata indexing speeds navigation. Enriched tags improve recall. None of them encode concept dependencies, typed relationships, or canonical entity identity. That is what Stage 1 and Stage 2 provide.</p>
+  </div>
+</div>
+
+<!-- Stage 1 -->
+<div class="tab-panel" id="panel-s1">
+  <p style="font-size:13px;font-weight:300;color:var(--text-dim);margin-bottom:20px;line-height:1.7">Concept nodes cover the conceptual dependency layer of the query. Click a retrieval step to see which concepts it covers and how precisely. The concept graph handles "what is X and how does X relate to Y" — document retrieval handles the rest.</p>
+  <div class="cols">
+    <div>
+      <div class="col-head ch-doc">Document retrieval (baseline)</div>
+      <div class="col-body">
+        <div class="steps-wrap" id="s1-doc-steps"></div>
+        <div class="meter-section">
+          <div class="meter-stitle">Cumulative C(q) coverage</div>
+          <div id="s1-doc-meters"></div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class="col-head ch-graph">Concept graph retrieval</div>
+      <div class="col-body">
+        <div class="steps-wrap" id="s1-graph-steps"></div>
+        <div class="meter-section">
+          <div class="meter-stitle">Cumulative C(q) coverage</div>
+          <div id="s1-graph-meters"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="summary" id="s1-summary"></div>
+  <div class="amort" id="s1-amort">
+    <div class="amort-title">Amortization — concept layer</div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;">
+      <div>
+        <div class="param-row">
+          <div class="param-label"><span>Construction cost / node (tokens)</span><span class="pval" id="lbl-kc1">1400</span></div>
+          <input type="range" id="sl-kc1" min="200" max="5000" step="100" value="1400">
+        </div>
+      </div>
+      <div>
+        <div class="param-row">
+          <div class="param-label"><span>Query volume (monthly)</span><span class="pval" id="lbl-qv1">500</span></div>
+          <input type="range" id="sl-qv1" min="50" max="5000" step="50" value="500">
+        </div>
+      </div>
+    </div>
+    <canvas id="chart-s1" width="900" height="200"></canvas>
+    <div class="legend">
+      <div class="li"><div class="ldot" style="background:#e87070"></div><span>Document retrieval</span></div>
+      <div class="li"><div class="ldot" style="background:#4fc3c8"></div><span>Concept graph + construction</span></div>
+      <div class="li"><div class="ldot" style="background:#e8a045;opacity:.5"></div><span>Break-even N*</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- Stage 2 -->
+<div class="tab-panel" id="panel-s2">
+  <p style="font-size:13px;font-weight:300;color:var(--text-dim);margin-bottom:20px;line-height:1.7">The instance graph adds canonical entity identity and structured fact storage. "What was Carlyle CCP V's Q3 2024 NAV?" becomes a lookup — no document required. The concept layer handles the methodological question; the instance layer handles the factual question. Both layers work on this single query.</p>
+  <div class="cols">
+    <div>
+      <div class="col-head ch-graph">Concept graph — methodological layer</div>
+      <div class="col-body">
+        <div class="steps-wrap" id="s2-concept-steps"></div>
+        <div class="meter-section">
+          <div class="meter-stitle">Conceptual C(q) coverage</div>
+          <div id="s2-concept-meters"></div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class="col-head ch-instance">Instance graph — factual layer</div>
+      <div class="col-body">
+        <div class="steps-wrap" id="s2-instance-steps"></div>
+        <div class="meter-section">
+          <div class="meter-stitle">Instance I(q) coverage</div>
+          <div id="s2-instance-meters"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="summary" id="s2-summary"></div>
+  <div style="background:var(--bg2);border:1px solid var(--border);border-radius:2px;padding:16px 20px;margin-bottom:16px;border-left:3px solid var(--purple);">
+    <div style="font-family:var(--mono);font-size:9px;letter-spacing:.14em;color:var(--purple);text-transform:uppercase;margin-bottom:8px;">Entity resolution benefit</div>
+    <p style="font-size:12px;font-weight:300;color:var(--text-dim);line-height:1.65">Without canonical instance nodes, "Carlyle Group," "Carlyle Capital Partners," "CCP V," and "Carlyle's flagship fund" may resolve to different or incomplete entity records. The instance graph enforces canonical identity: one node, one identity, all properties attached. Queries over fund relationships return consistent results regardless of how the entity is named in the source document.</p>
+  </div>
+  <div class="amort" id="s2-amort">
+    <div class="amort-title">Amortization — both layers combined</div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;">
+      <div>
+        <div class="param-row">
+          <div class="param-label"><span>Instance construction cost / node</span><span class="pval" id="lbl-kci">2200</span></div>
+          <input type="range" id="sl-kci" min="500" max="8000" step="100" value="2200">
+        </div>
+      </div>
+      <div>
+        <div class="param-row">
+          <div class="param-label"><span>Query volume (monthly)</span><span class="pval" id="lbl-qvi">500</span></div>
+          <input type="range" id="sl-qvi" min="50" max="5000" step="50" value="500">
+        </div>
+      </div>
+    </div>
+    <canvas id="chart-s2" width="900" height="200"></canvas>
+    <div class="legend">
+      <div class="li"><div class="ldot" style="background:#e87070"></div><span>Document retrieval (both query types)</span></div>
+      <div class="li"><div class="ldot" style="background:#4fc3c8"></div><span>Concept layer</span></div>
+      <div class="li"><div class="ldot" style="background:#a78bfa"></div><span>Concept + Instance layers</span></div>
+    </div>
+  </div>
+</div>
+
+</div><!-- /shell -->
+<script>
+// ── Data ──────────────────────────────────────────────────────────────────────
+
+const concepts = [
+  {id:'nav',   label:'NAV methodology',       pq:.22, color:'#4fc3c8'},
+  {id:'fv',    label:'Fair value (ASC 820)',   pq:.18, color:'#7ec8e3'},
+  {id:'mark',  label:'Mark-to-market lag',     pq:.14, color:'#ffd6a5'},
+  {id:'illiq', label:'Illiquidity premium',    pq:.12, color:'#b5ead7'},
+  {id:'disc',  label:'Discount rate dynamics', pq:.10, color:'#c9b1ff'},
+];
+// Instance query dependencies
+const instances = [
+  {id:'fund',  label:'Carlyle CCP V [entity]',       pq:.35, color:'#a78bfa'},
+  {id:'nav_val',label:'Q3 2024 NAV: $4.2B',          pq:.35, color:'#c4b5fd'},
+  {id:'meth',  label:'Disclosed FV methodology',     pq:.30, color:'#ddd6fe'},
+];
+
+const docSteps = [
+  {name:'ILPA Fund Reporting Guidelines',desc:'Covers NAV methodology and mark-to-market treatment. Discount rates referenced but not defined.',tokens:3100,covers:{nav:.80,mark:.65,disc:.20},waste:.68},
+  {name:'ASC 820 Fair Value Standard',desc:'Fair value hierarchy Levels 1–3. Illiquidity adjustments in footnotes. Vintage context absent.',tokens:2700,covers:{fv:.78,illiq:.25},waste:.72},
+  {name:'Carlyle CCP V LP Memo (Q3 2024)',desc:'Fund-specific reporting. NAV figure buried in table on page 11. Methodology reference only.',tokens:4200,covers:{nav:.12,fv:.15,mark:.20,fund:.30,nav_val:.40,meth:.25},waste:.78},
+];
+
+const graphSteps = [
+  {name:'pkis:concept:nav-methodology',desc:'Complete: definition, GP discretion, relationship to fair value, reporting standards.',tokens:260,covers:{nav:.95},waste:0},
+  {name:'pkis:concept:fair-value-asc-820',desc:'Full hierarchy: Level 1–3 inputs, illiquidity adjustments, auditor treatment.',tokens:240,covers:{fv:.92,illiq:.65},waste:0},
+  {name:'pkis:concept:mark-to-market-lag',desc:'Appraisal smoothing, quarterly cycles, lagged beta, systematic patterns.',tokens:190,covers:{mark:.90,disc:.38},waste:0},
+  {name:'pkis:concept:discount-rate-dynamics',desc:'Risk-free rate components, credit spread treatment, PE-specific adjustments.',tokens:180,covers:{disc:.70},waste:0},
+];
+
+const instanceSteps = [
+  {name:'inst:entity:carlyle-ccp-v',desc:'Canonical fund entity. Vintage 2019. Carlyle Group GP. $18.5B committed capital. 47 portfolio companies.',tokens:120,covers:{fund:.95},waste:0,color:'#a78bfa'},
+  {name:'inst:fact:carlyle-ccpv-nav-q3-2024',desc:'Reported NAV: $4.2B (Q3 2024). Source: Q3 LP report, p.11. Verified against audited schedule.',tokens:80,covers:{nav_val:.95},waste:0,color:'#c4b5fd'},
+  {name:'inst:fact:carlyle-ccpv-fv-methodology',desc:'Fair value methodology disclosure: Level 3 inputs, EV/EBITDA multiple approach, quarterly independent valuation.',tokens:95,covers:{meth:.90},waste:0,color:'#ddd6fe'},
+];
+
+// Combined concept steps for Stage 2 left panel (same as Stage 1)
+const s2ConceptSteps = graphSteps.slice(0,3); // first 3 are sufficient for concept layer
+
+// ── CQ Distribution ───────────────────────────────────────────────────────────
+
+function renderCQGlobal(highlightedConcepts, highlightedInstances) {
+  const container = document.getElementById('cq-global');
+  container.innerHTML = `
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:24px;">
+      <div style="background:var(--bg2);border:1px solid var(--border);border-radius:2px;padding:14px;">
+        <div style="font-family:var(--mono);font-size:9px;letter-spacing:.14em;color:var(--text-faint);text-transform:uppercase;margin-bottom:10px;">C(q) — Conceptual dependencies</div>
+        ${concepts.map(c=>{
+          const op = !highlightedConcepts || highlightedConcepts[c.id] ? 1 : 0.2;
+          return `<div style="display:flex;align-items:center;gap:8px;margin-bottom:7px;opacity:${op}">
+            <div style="font-family:var(--mono);font-size:10px;color:var(--text-dim);width:160px;flex-shrink:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">${c.label}</div>
+            <div style="flex:1;background:var(--bg3);height:12px;border-radius:1px;">
+              <div style="width:${c.pq*100*3}%;max-width:100%;height:100%;background:${c.color}33;border:1px solid ${c.color}66;border-radius:1px;"></div>
+            </div>
+            <div style="font-family:var(--mono);font-size:10px;color:${c.color};width:30px;text-align:right;">${Math.round(c.pq*100)}%</div>
+          </div>`;
+        }).join('')}
+      </div>
+      <div style="background:var(--bg2);border:1px solid var(--border);border-radius:2px;padding:14px;">
+        <div style="font-family:var(--mono);font-size:9px;letter-spacing:.14em;color:var(--text-faint);text-transform:uppercase;margin-bottom:10px;">I(q) — Instance dependencies</div>
+        ${instances.map(c=>{
+          const op = !highlightedInstances || highlightedInstances[c.id] ? 1 : 0.2;
+          return `<div style="display:flex;align-items:center;gap:8px;margin-bottom:7px;opacity:${op}">
+            <div style="font-family:var(--mono);font-size:10px;color:var(--text-dim);width:160px;flex-shrink:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">${c.label}</div>
+            <div style="flex:1;background:var(--bg3);height:12px;border-radius:1px;">
+              <div style="width:${c.pq*100*2.5}%;max-width:100%;height:100%;background:${c.color}33;border:1px solid ${c.color}66;border-radius:1px;"></div>
+            </div>
+            <div style="font-family:var(--mono);font-size:10px;color:${c.color};width:30px;text-align:right;">${Math.round(c.pq*100)}%</div>
+          </div>`;
+        }).join('')}
+      </div>
+    </div>`;
+}
+
+// ── Generic renderers ─────────────────────────────────────────────────────────
+
+function cumulativeCoverage(steps, conceptSet) {
+  const acc={};
+  conceptSet.forEach(c=>acc[c.id]=0);
+  return steps.map(s=>{
+    Object.entries(s.covers).forEach(([id,v])=>{
+      if(acc[id]!==undefined) acc[id]=Math.min(1,acc[id]+v);
+    });
+    return Object.fromEntries(conceptSet.map(c=>[c.id,acc[c.id]]));
+  });
+}
+
+function renderSteps(steps, containerId, side, cumCov, conceptSet, hlFn) {
+  const container=document.getElementById(containerId);
+  if(!container)return;
+  container.innerHTML='';
+  steps.forEach((s,i)=>{
+    const el=document.createElement('div');
+    el.className='rstep';
+    const covNames=Object.keys(s.covers)
+      .map(id=>conceptSet.find(c=>c.id===id)?.label).filter(Boolean).join(', ');
+    const wasteT=Math.round(s.tokens*(s.waste||0));
+    const tokColor = side==='doc'?'var(--red)':side==='inst'?'var(--purple)':'var(--cyan)';
+    el.innerHTML=`
+      <div class="rnum">${i+1}</div>
+      <div class="rcontent">
+        <div class="rname">${s.name}</div>
+        <div class="rdesc">${s.desc}</div>
+        <div class="rcov">Covers: ${covNames||'—'}</div>
+        ${side==='doc'&&wasteT>0?`<div class="rwaste">~${wasteT.toLocaleString()} irrelevant tokens (~${Math.round((s.waste||0)*100)}% waste)</div>`:''}
+      </div>
+      <div class="rtok" style="color:${tokColor}">${s.tokens.toLocaleString()}<br><span style="font-size:9px;color:var(--text-faint)">tokens</span></div>`;
+    el.addEventListener('click',()=>{
+      container.querySelectorAll('.rstep').forEach(e=>e.classList.remove(`act-${side}`));
+      el.classList.add(`act-${side}`);
+      if(hlFn) hlFn(s.covers);
+    });
+    container.appendChild(el);
+  });
+}
+
+function renderMeters(cumCov, containerId, side, conceptSet) {
+  const container=document.getElementById(containerId);
+  if(!container)return;
+  container.innerHTML='';
+  const final=cumCov[cumCov.length-1];
+  const barColor=side==='doc'?'rgba(232,112,112,.5)':side==='inst'?'rgba(167,139,250,.5)':'rgba(79,195,200,.5)';
+  const valColor=side==='doc'?'var(--red)':side==='inst'?'var(--purple)':'var(--cyan)';
+  conceptSet.forEach(c=>{
+    const v=final[c.id]||0;
+    const row=document.createElement('div');
+    row.className='meter-row';
+    row.innerHTML=`
+      <div class="meter-name">${c.label.split(' ')[0]}</div>
+      <div class="meter-bar-wrap"><div class="meter-bar" style="width:${v*100}%;background:${barColor}"></div></div>
+      <div class="meter-val" style="color:${valColor}">${Math.round(v*100)}%</div>`;
+    container.appendChild(row);
+  });
+  const totalCov=conceptSet.reduce((s,c)=>s+c.pq*(final[c.id]||0),0);
+  const tot=document.createElement('div');
+  tot.className='meter-total';
+  tot.innerHTML=`<span style="color:var(--text-faint)">Total coverage</span><span style="color:${valColor};font-weight:500">${Math.round(totalCov*100)}%</span>`;
+  container.appendChild(tot);
+  return totalCov;
+}
+
+function renderSummaryBox(containerId, docTok, graphTok, docCov, graphCov, extra) {
+  const container=document.getElementById(containerId);
+  if(!container)return;
+  const ratio=(graphCov/graphTok)/(docCov/docTok);
+  const waste=docSteps.reduce((s,d)=>s+Math.round(d.tokens*(d.waste||0)),0);
+  container.innerHTML=`
+    <div class="sum-title">Efficiency comparison</div>
+    <div class="rdout-grid">
+      <div class="rdout"><div class="rlabel">Doc tokens</div><div class="rval" style="color:var(--red)">${docTok.toLocaleString()}</div><div class="runit">total</div></div>
+      <div class="rdout"><div class="rlabel">Graph tokens</div><div class="rval" style="color:var(--cyan)">${graphTok.toLocaleString()}</div><div class="runit">total</div></div>
+      <div class="rdout"><div class="rlabel">Efficiency ratio</div><div class="rval" style="color:var(--amber)">${ratio.toFixed(1)}×</div><div class="runit">graph / doc</div></div>
+      <div class="rdout"><div class="rlabel">Token waste (doc)</div><div class="rval" style="color:var(--red)">${waste.toLocaleString()}</div><div class="runit">irrelevant</div></div>
+    </div>
+    ${extra||''}`;
+}
+
+// ── Amort chart ───────────────────────────────────────────────────────────────
+
+function fmt(n){
+  if(Math.abs(n)>=1e6)return(n/1e6).toFixed(1)+'M';
+  if(Math.abs(n)>=1e3)return(n/1e3).toFixed(1)+'k';
+  return n.toFixed(0);
+}
+
+function drawAmort(canvasId, curves, Nmax) {
+  const canvas=document.getElementById(canvasId);
+  if(!canvas)return;
+  const dpr=window.devicePixelRatio||1;
+  const W=canvas.clientWidth,H=canvas.clientHeight;
+  canvas.width=W*dpr;canvas.height=H*dpr;
+  const ctx=canvas.getContext('2d');
+  ctx.scale(dpr,dpr);
+  const pad={top:16,right:20,bottom:28,left:52};
+  const cw=W-pad.left-pad.right,ch=H-pad.top-pad.bottom;
+  ctx.clearRect(0,0,W,H);
+
+  const pts=300;
+  let ymax=0;
+  const allPts=curves.map(({perQ,fixed})=>{
+    const ps=[];
+    for(let i=0;i<=pts;i++){const N=(i/pts)*Nmax;ps.push({N,y:fixed+N*perQ});}
+    ps.forEach(p=>ymax=Math.max(ymax,p.y));
+    return ps;
+  });
+
+  const xS=N=>pad.left+(N/Nmax)*cw;
+  const yS=y=>pad.top+ch-(y/ymax)*ch;
+
+  ctx.strokeStyle='#1a2a38';ctx.lineWidth=1;
+  for(let i=0;i<=4;i++){
+    const y=pad.top+(ch/4)*i;
+    ctx.beginPath();ctx.moveTo(pad.left,y);ctx.lineTo(pad.left+cw,y);ctx.stroke();
+  }
+  ctx.fillStyle='#2e4a5e';ctx.font=`10px 'IBM Plex Mono'`;
+  ctx.textAlign='right';
+  for(let i=0;i<=4;i++)ctx.fillText(fmt((ymax/4)*(4-i)),pad.left-5,pad.top+(ch/4)*i+4);
+  ctx.textAlign='center';
+  for(let i=0;i<=4;i++)ctx.fillText(fmt((Nmax/4)*i),pad.left+(cw/4)*i,pad.top+ch+18);
+
+  curves.forEach(({perQ,fixed,color,dash},ci)=>{
+    ctx.beginPath();ctx.strokeStyle=color;ctx.lineWidth=2;
+    if(dash)ctx.setLineDash([4,4]);else ctx.setLineDash([]);
+    allPts[ci].forEach((p,i)=>i?ctx.lineTo(xS(p.N),yS(p.y)):ctx.moveTo(xS(p.N),yS(p.y)));
+    ctx.stroke();ctx.setLineDash([]);
+
+    // crossover with first curve
+    if(ci>0){
+      const ref=curves[0];
+      const denom=ref.perQ-perQ;
+      if(denom>0){
+        const nstar=(fixed-ref.fixed)/denom;
+        if(nstar>0&&nstar<Nmax){
+          const xN=xS(nstar);
+          ctx.beginPath();ctx.strokeStyle='rgba(232,160,69,.4)';
+          ctx.lineWidth=1;ctx.setLineDash([4,4]);
+          ctx.moveTo(xN,pad.top);ctx.lineTo(xN,pad.top+ch);ctx.stroke();
+          ctx.setLineDash([]);
+          ctx.fillStyle='rgba(232,160,69,.8)';
+          ctx.font=`10px 'IBM Plex Mono'`;ctx.textAlign='left';
+          ctx.fillText(`N*=${fmt(nstar)}`,xN+4,pad.top+12+(ci-1)*14);
+        }
+      }
+    }
+  });
+}
+
+// ── Tab switching ─────────────────────────────────────────────────────────────
+
+const tabs={
+  s0:{btn:'btn-s0',panel:'panel-s0',cls:'active-stage0'},
+  obj:{btn:'btn-obj',panel:'panel-obj',cls:'active-obj'},
+  s1:{btn:'btn-s1',panel:'panel-s1',cls:'active-stage1'},
+  s2:{btn:'btn-s2',panel:'panel-s2',cls:'active-stage2'},
+};
+
+function showTab(id){
+  Object.entries(tabs).forEach(([k,v])=>{
+    document.getElementById(v.btn).classList.remove(v.cls);
+    document.getElementById(v.panel).classList.remove('active');
+  });
+  document.getElementById(tabs[id].btn).classList.add(tabs[id].cls);
+  document.getElementById(tabs[id].panel).classList.add('active');
+  setTimeout(()=>window.dispatchEvent(new Event('resize')),50);
+}
+
+function toggleObjEx(id){document.getElementById(id).classList.toggle('open');}
+
+// ── Stage 0 init ──────────────────────────────────────────────────────────────
+
+function initS0(){
+  const cumCov=cumulativeCoverage(docSteps,concepts);
+  renderSteps(docSteps,'s0-steps','doc',cumCov,concepts,(covers)=>renderCQGlobal(covers,null));
+  const docCov=renderMeters(cumCov,'s0-meters','doc',concepts);
+  const docTok=docSteps.reduce((s,d)=>s+d.tokens,0);
+  renderSummaryBox('s0-summary',docTok,docTok,docCov,docCov,`
+    <div class="insight"><strong>Stage 0 read-out</strong>
+    ${docTok.toLocaleString()} tokens consumed. ${Math.round(docCov*100)}% conceptual coverage.
+    No instance facts retrieved — the fund entity and Q3 NAV figure require a human to find them in the LP memo.
+    This cost is paid every time the question is asked.</div>`);
+}
+
+// ── Stage 1 init ──────────────────────────────────────────────────────────────
+
+function initS1(){
+  const docCumCov=cumulativeCoverage(docSteps,concepts);
+  const graphCumCov=cumulativeCoverage(graphSteps,concepts);
+  renderSteps(docSteps,'s1-doc-steps','doc',docCumCov,concepts,(covers)=>renderCQGlobal(covers,null));
+  renderSteps(graphSteps,'s1-graph-steps','graph',graphCumCov,concepts,(covers)=>renderCQGlobal(covers,null));
+  const docCov=renderMeters(docCumCov,'s1-doc-meters','doc',concepts);
+  const graphCov=renderMeters(graphCumCov,'s1-graph-meters','graph',concepts);
+  const docTok=docSteps.reduce((s,d)=>s+d.tokens,0);
+  const graphTok=graphSteps.reduce((s,d)=>s+d.tokens,0);
+  const ratio=(graphCov/graphTok)/(docCov/docTok);
+  renderSummaryBox('s1-summary',docTok,graphTok,docCov,graphCov,`
+    <div class="insight"><strong>Stage 1 read-out</strong>
+    Concept graph retrieval achieves ${Math.round(graphCov*100)}% conceptual coverage
+    using ${graphTok.toLocaleString()} tokens vs ${docTok.toLocaleString()} for documents.
+    Efficiency ratio: ${ratio.toFixed(1)}× — the concept layer is ${ratio.toFixed(1)} times more efficient per token of mutual information gained.
+    Instance facts (NAV figure, entity identity) still require document lookup — that is Stage 2's job.</div>`);
+  updateS1Amort();
+}
+
+function updateS1Amort(){
+  const Kc=+document.getElementById('sl-kc1').value;
+  const qv=+document.getElementById('sl-qv1').value;
+  document.getElementById('lbl-kc1').textContent=Kc;
+  document.getElementById('lbl-qv1').textContent=qv;
+  const docTok=docSteps.reduce((s,d)=>s+d.tokens,0);
+  const graphTok=graphSteps.reduce((s,d)=>s+d.tokens,0);
+  const cc=graphSteps.length*Kc;
+  const Nmax=Math.max(qv*6,300);
+  drawAmort('chart-s1',[
+    {perQ:docTok,fixed:0,color:'#e87070'},
+    {perQ:graphTok,fixed:cc,color:'#4fc3c8'},
+  ],Nmax);
+}
+
+// ── Stage 2 init ──────────────────────────────────────────────────────────────
+
+function initS2(){
+  // Concept side (left) — same as stage 1 graph steps but just first 3
+  const concCumCov=cumulativeCoverage(s2ConceptSteps,concepts);
+  renderSteps(s2ConceptSteps,'s2-concept-steps','graph',concCumCov,concepts,(covers)=>renderCQGlobal(covers,null));
+  renderMeters(concCumCov,'s2-concept-meters','graph',concepts);
+
+  // Instance side (right)
+  const instCumCov=cumulativeCoverage(instanceSteps,instances);
+  renderSteps(instanceSteps,'s2-instance-steps','inst',instCumCov,instances,(covers)=>renderCQGlobal(null,covers));
+  renderMeters(instCumCov,'s2-instance-meters','inst',instances);
+
+  const concTok=s2ConceptSteps.reduce((s,d)=>s+d.tokens,0);
+  const instTok=instanceSteps.reduce((s,d)=>s+d.tokens,0);
+  const totalGraphTok=concTok+instTok;
+  const docTok=docSteps.reduce((s,d)=>s+d.tokens,0);
+  const docCov=docSteps.reduce((s,d,i)=>{
+    const cumCov=cumulativeCoverage(docSteps,concepts);
+    return cumCov[cumCov.length-1];
+  },{}); // get final cumulative
+  const docCovVal=cumulativeCoverage(docSteps,concepts).slice(-1)[0];
+  const docTotalCov=concepts.reduce((s,c)=>s+c.pq*(docCovVal[c.id]||0),0);
+  const ratio=((0.9/totalGraphTok)/(docTotalCov/docTok));
+
+  document.getElementById('s2-summary').innerHTML=`
+    <div class="sum-title">Combined layer efficiency</div>
+    <div class="rdout-grid">
+      <div class="rdout"><div class="rlabel">Doc tokens (both Qs)</div><div class="rval" style="color:var(--red)">${(docTok*1.4).toFixed(0).replace(/\B(?=(\d{3})+(?!\d))/g,',')}~</div><div class="runit">conceptual + factual</div></div>
+      <div class="rdout"><div class="rlabel">Graph tokens (both)</div><div class="rval" style="color:var(--cyan)">${totalGraphTok.toLocaleString()}</div><div class="runit">concept + instance</div></div>
+      <div class="rdout"><div class="rlabel">Full query coverage</div><div class="rval" style="color:var(--green)">Yes</div><div class="runit">concept + instance</div></div>
+      <div class="rdout"><div class="rlabel">Entity consistency</div><div class="rval" style="color:var(--purple)">Enforced</div><div class="runit">canonical IRI</div></div>
+    </div>
+    <div class="insight"><strong>Stage 2 read-out</strong>
+    The concept layer answers "what is NAV methodology and how does fair value relate to it" — ${concTok} tokens.
+    The instance layer answers "what was Carlyle CCP V's Q3 2024 NAV" — ${instTok} tokens as a direct lookup.
+    Together they cover the full query in ${totalGraphTok.toLocaleString()} tokens vs ~${Math.round(docTok*1.4).toLocaleString()} tokens of document synthesis.
+    The NAV figure is exact and auditable: source document reference attached to the instance node.</div>`;
+  updateS2Amort();
+}
+
+function updateS2Amort(){
+  const Kci=+document.getElementById('sl-kci').value;
+  const qvi=+document.getElementById('sl-qvi').value;
+  document.getElementById('lbl-kci').textContent=Kci;
+  document.getElementById('lbl-qvi').textContent=qvi;
+  const docTok=docSteps.reduce((s,d)=>s+d.tokens,0);
+  const graphTok=graphSteps.reduce((s,d)=>s+d.tokens,0);
+  const instTok=instanceSteps.reduce((s,d)=>s+d.tokens,0);
+  const ccConcept=graphSteps.length*1400;
+  const ccInst=instanceSteps.length*Kci;
+  const Nmax=Math.max(qvi*6,300);
+  drawAmort('chart-s2',[
+    {perQ:docTok,fixed:0,color:'#e87070'},
+    {perQ:graphTok,fixed:ccConcept,color:'#4fc3c8'},
+    {perQ:graphTok+instTok,fixed:ccConcept+ccInst,color:'#a78bfa'},
+  ],Nmax);
+}
+
+// ── Init ──────────────────────────────────────────────────────────────────────
+
+document.addEventListener('DOMContentLoaded',()=>{
+  renderCQGlobal(null,null);
+  initS0(); initS1(); initS2();
+  showTab('s0');
+
+  document.getElementById('sl-kc1').addEventListener('input',updateS1Amort);
+  document.getElementById('sl-qv1').addEventListener('input',updateS1Amort);
+  document.getElementById('sl-kci').addEventListener('input',updateS2Amort);
+  document.getElementById('sl-qvi').addEventListener('input',updateS2Amort);
+  window.addEventListener('resize',()=>{
+    updateS1Amort();updateS2Amort();
+  });
+});
+</script>
+</body>
+</html>

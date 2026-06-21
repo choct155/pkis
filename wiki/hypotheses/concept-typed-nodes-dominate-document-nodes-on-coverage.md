@@ -32,6 +32,10 @@ tags:
 - concept-nodes
 - cost-model
 title: Concept-Typed Nodes Dominate Document Nodes on Coverage-Per-Token Efficiency
+illustrated-by:
+- knowledge-infrastructure-explainer
+- retrieval-efficiency-example
+- retrieval-efficiency-explainer
 ---
 
 ## Formal Statement

@@ -18,6 +18,7 @@ id: pkis:framework:continuous-hardening-mixture-framework
 illustrated-by:
 - shimizu-modular-2023
 - giglou-llms4ol-2024
+- knowledge-infrastructure-explainer
 knowledge_type: framework
 maturity: evolving
 needs_canonical_source: true

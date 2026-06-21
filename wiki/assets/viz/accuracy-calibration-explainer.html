@@ -1,0 +1,913 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Accuracy Estimation — Silver/Gold Calibration</title>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,300;0,400;0,500;1,300&family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,500;1,300&family=IBM+Plex+Serif:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#07080a;--bg1:#0c1015;--bg2:#111820;--bg3:#18222e;
+  --border:#1e2d3d;--border2:#2a3f54;
+  --amber:#e8a045;--amber2:#c27c28;--amber-dim:#3d2a0a;
+  --cyan:#4fc3c8;--cyan-dim:#0e3a3d;
+  --green:#56b870;--green-dim:#0e2e18;
+  --red:#e87070;--red-dim:#2e0e0e;
+  --purple:#a78bfa;--purple-dim:#2d1f5e;
+  --text:#c8d6e5;--text-dim:#5a7a94;--text-faint:#283a4a;
+  --mono:'IBM Plex Mono',monospace;
+  --sans:'IBM Plex Sans',sans-serif;
+  --serif:'IBM Plex Serif',serif;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{background:var(--bg);color:var(--text);font-family:var(--sans);font-size:14px;line-height:1.7;padding:0 0 80px;}
+
+.page-header{
+  padding:40px 48px 32px;
+  border-bottom:1px solid var(--border);
+  max-width:1100px;margin:0 auto;
+}
+.eyebrow{font-family:var(--mono);font-size:9px;letter-spacing:.18em;color:var(--amber);text-transform:uppercase;margin-bottom:8px;}
+h1{font-family:var(--serif);font-size:32px;font-weight:300;color:#e8edf2;margin-bottom:6px;}
+.subtitle{font-family:var(--mono);font-size:11px;color:var(--text-dim);letter-spacing:.06em;}
+
+.stage{max-width:1100px;margin:0 auto;padding:40px 48px;}
+.stage+.stage{border-top:1px solid var(--border);}
+@media(max-width:700px){.stage,.page-header{padding:24px 16px;}}
+
+.stage-label{
+  font-family:var(--mono);font-size:9px;letter-spacing:.18em;
+  color:var(--text-faint);text-transform:uppercase;margin-bottom:6px;
+}
+h2{font-family:var(--serif);font-size:22px;font-weight:300;color:#e8edf2;margin-bottom:16px;}
+h3{font-family:var(--mono);font-size:11px;font-weight:500;color:var(--cyan);letter-spacing:.1em;text-transform:uppercase;margin-bottom:8px;margin-top:20px;}
+p{font-size:13px;font-weight:300;color:var(--text);line-height:1.75;margin-bottom:12px;}
+
+.math{
+  background:var(--bg2);border:1px solid var(--border);
+  border-left:3px solid var(--amber2);border-radius:2px;
+  padding:16px 20px;margin:16px 0;
+  font-family:var(--mono);font-size:12px;line-height:2;
+  overflow-x:auto;
+}
+.math .lbl{font-size:9px;letter-spacing:.14em;color:var(--text-dim);text-transform:uppercase;margin-bottom:6px;}
+.hi-a{color:var(--amber);}
+.hi-c{color:var(--cyan);}
+.hi-g{color:var(--green);}
+.hi-r{color:var(--red);}
+.hi-p{color:var(--purple);}
+.cmt{color:var(--text-faint);font-size:11px;font-style:italic;}
+
+.callout{
+  background:var(--bg2);border:1px solid var(--border2);
+  border-left:3px solid var(--cyan);border-radius:2px;
+  padding:12px 16px;margin:14px 0;
+  font-size:12px;font-weight:300;color:var(--text-dim);line-height:1.6;
+}
+.callout strong{font-family:var(--mono);font-size:9px;letter-spacing:.12em;color:var(--cyan);text-transform:uppercase;display:block;margin-bottom:4px;}
+.callout.warn{border-left-color:var(--red);}
+.callout.warn strong{color:var(--red);}
+.callout.note{border-left-color:var(--amber);}
+.callout.note strong{color:var(--amber);}
+
+/* ── Interactive panels ── */
+.interactive{
+  background:var(--bg1);border:1px solid var(--border2);
+  border-radius:2px;padding:24px;margin:20px 0;
+}
+.int-title{
+  font-family:var(--mono);font-size:10px;letter-spacing:.16em;
+  color:var(--amber);text-transform:uppercase;margin-bottom:20px;
+  display:flex;align-items:center;gap:10px;
+}
+.int-title::after{content:'';flex:1;height:1px;background:var(--amber-dim);}
+
+/* Confusion matrix */
+.cm-wrap{display:flex;gap:24px;flex-wrap:wrap;align-items:flex-start;}
+.cm-table{border-collapse:collapse;flex-shrink:0;}
+.cm-table td,.cm-table th{
+  width:110px;height:80px;text-align:center;vertical-align:middle;
+  border:1px solid var(--border2);font-family:var(--mono);
+}
+.cm-table .cm-header{
+  background:var(--bg2);font-size:9px;letter-spacing:.12em;
+  color:var(--text-dim);text-transform:uppercase;height:32px;
+}
+.cm-table .cm-side{
+  background:var(--bg2);font-size:9px;letter-spacing:.12em;
+  color:var(--text-dim);text-transform:uppercase;width:80px;
+}
+.cm-cell{cursor:pointer;transition:background .15s;}
+.cm-cell.tp{background:rgba(86,184,112,.15);}
+.cm-cell.tn{background:rgba(86,184,112,.08);}
+.cm-cell.fp{background:rgba(232,112,112,.12);}
+.cm-cell.fn{background:rgba(232,112,112,.08);}
+.cm-cell:hover{filter:brightness(1.3);}
+.cm-count{font-size:22px;font-weight:500;color:#e8edf2;display:block;}
+.cm-rate{font-size:10px;color:var(--text-dim);display:block;margin-top:2px;}
+.cm-label{font-size:9px;letter-spacing:.1em;text-transform:uppercase;display:block;margin-top:2px;}
+
+.cm-controls{display:flex;flex-direction:column;gap:10px;min-width:180px;}
+.ctrl-row{display:flex;flex-direction:column;gap:4px;}
+.ctrl-label{font-family:var(--mono);font-size:10px;color:var(--text-dim);display:flex;justify-content:space-between;}
+.ctrl-val{font-family:var(--mono);font-size:11px;}
+input[type=range]{-webkit-appearance:none;width:100%;height:3px;background:var(--border2);border-radius:2px;outline:none;}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:12px;height:12px;border-radius:50%;background:var(--amber);cursor:pointer;border:2px solid var(--bg);}
+
+/* Derived rates panel */
+.rates-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:16px 0;}
+@media(max-width:600px){.rates-grid{grid-template-columns:1fr 1fr;}}
+.rate-card{background:var(--bg3);border:1px solid var(--border);border-radius:2px;padding:12px;}
+.rate-lbl{font-family:var(--mono);font-size:9px;letter-spacing:.1em;color:var(--text-faint);text-transform:uppercase;margin-bottom:4px;}
+.rate-val{font-family:var(--mono);font-size:20px;font-weight:500;}
+
+/* Prevalence panel */
+.prev-panel{background:var(--bg2);border:1px solid var(--border);border-radius:2px;padding:20px;margin:16px 0;}
+.prev-equation{
+  font-family:var(--mono);font-size:13px;line-height:2.2;
+  display:flex;flex-direction:column;gap:4px;
+}
+.prev-row{display:flex;align-items:center;gap:12px;flex-wrap:wrap;}
+.prev-lhs{min-width:100px;color:var(--purple);}
+.prev-rhs{color:var(--text);}
+.prev-result{
+  font-size:32px;font-weight:500;color:var(--purple);
+  font-family:var(--mono);margin-top:8px;
+}
+.prev-ci{font-size:11px;color:var(--text-dim);font-family:var(--mono);}
+
+/* Gold observations stage */
+.gold-layout{display:grid;grid-template-columns:1fr 1fr;gap:24px;}
+@media(max-width:700px){.gold-layout{grid-template-columns:1fr;}}
+
+.obs-stream{display:flex;flex-direction:column;gap:6px;max-height:320px;overflow-y:auto;}
+.obs-item{
+  display:flex;align-items:center;gap:10px;
+  padding:8px 12px;
+  background:var(--bg2);border:1px solid var(--border);border-radius:2px;
+  font-family:var(--mono);font-size:11px;
+}
+.obs-badge{
+  width:24px;height:24px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  font-size:10px;font-weight:500;flex-shrink:0;
+}
+.badge-tp{background:rgba(86,184,112,.2);color:var(--green);}
+.badge-tn{background:rgba(86,184,112,.1);color:var(--green);}
+.badge-fp{background:rgba(232,112,112,.2);color:var(--red);}
+.badge-fn{background:rgba(232,112,112,.1);color:var(--red);}
+.obs-desc{flex:1;color:var(--text-dim);}
+.obs-new{border-color:var(--amber);}
+
+.add-btn{
+  font-family:var(--mono);font-size:10px;letter-spacing:.1em;
+  text-transform:uppercase;padding:8px 16px;
+  background:var(--amber-dim);border:1px solid var(--amber);
+  color:var(--amber);border-radius:2px;cursor:pointer;
+  transition:all .15s;margin-right:8px;
+}
+.add-btn:hover{background:rgba(232,160,69,.2);}
+.add-btn:disabled{opacity:.4;cursor:not-allowed;}
+.reset-btn{
+  font-family:var(--mono);font-size:10px;letter-spacing:.1em;
+  text-transform:uppercase;padding:8px 16px;
+  background:var(--bg3);border:1px solid var(--border2);
+  color:var(--text-dim);border-radius:2px;cursor:pointer;
+}
+.obs-type-sel{
+  font-family:var(--mono);font-size:10px;
+  background:var(--bg2);border:1px solid var(--border2);
+  color:var(--text);padding:6px 10px;border-radius:2px;
+  cursor:pointer;margin-right:8px;
+}
+
+canvas{width:100%;display:block;}
+
+/* Summary bar */
+.summary-bar{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:10px;
+  margin:16px 0;
+}
+@media(max-width:600px){.summary-bar{grid-template-columns:1fr;}}
+.sum-card{
+  background:var(--bg3);border:1px solid var(--border);
+  border-radius:2px;padding:14px;
+}
+.sum-lbl{font-family:var(--mono);font-size:9px;letter-spacing:.1em;color:var(--text-faint);text-transform:uppercase;margin-bottom:4px;}
+.sum-val{font-family:var(--mono);font-size:22px;font-weight:500;}
+.sum-ci{font-family:var(--mono);font-size:9px;color:var(--text-dim);margin-top:3px;}
+</style>
+</head>
+<body>
+
+<div class="page-header">
+  <div class="eyebrow">PKIS · Measurement Strategy</div>
+  <h1>Accuracy Estimation via Silver/Gold Calibration</h1>
+  <div class="subtitle">Binary extraction judgment · Bayesian confusion matrix · Debiased prevalence estimation</div>
+</div>
+
+<!-- ── STAGE 1: CONFUSION MATRIX ── -->
+<div class="stage">
+  <div class="stage-label">Stage 1 of 3</div>
+  <h2>The Confusion Matrix — What the LLM Actually Does</h2>
+
+  <p>The LLM renders a binary judgment on each extraction: correct (L=1) or incorrect (L=0). The true accuracy A is the latent variable we want to estimate. The confusion matrix records how often L agrees with A across all four possible outcomes.</p>
+
+  <div class="math">
+    <div class="lbl">The four cells — adjust the sliders to explore</div>
+    <span class="hi-g">TP</span>: L=1, A=1 — LLM correctly calls a correct extraction correct (true positive)<br>
+    <span class="hi-r">FP</span>: L=1, A=0 — LLM incorrectly calls a wrong extraction correct (false positive)<br>
+    <span class="hi-r">FN</span>: L=0, A=1 — LLM incorrectly calls a correct extraction wrong (false negative)<br>
+    <span class="hi-g">TN</span>: L=0, A=0 — LLM correctly calls a wrong extraction wrong (true negative)
+  </div>
+
+  <div class="interactive">
+    <div class="int-title">Silver sample — 1,000 LLM judgments</div>
+    <div class="cm-wrap">
+      <div>
+        <table class="cm-table">
+          <tr>
+            <td class="cm-side" style="background:var(--bg);border:none;"></td>
+            <th class="cm-header" colspan="2" style="color:var(--text-dim)">True Accuracy A</th>
+          </tr>
+          <tr>
+            <td class="cm-side" style="background:var(--bg);border:none;"></td>
+            <th class="cm-header" style="color:var(--green)">A = 1 (correct)</th>
+            <th class="cm-header" style="color:var(--red)">A = 0 (wrong)</th>
+          </tr>
+          <tr>
+            <th class="cm-side" rowspan="2" style="writing-mode:vertical-rl;text-orientation:mixed;transform:rotate(180deg);height:160px;color:var(--text-dim)">LLM L</th>
+            <td class="cm-cell tp" id="cell-tp">
+              <span class="cm-count" id="cnt-tp">−</span>
+              <span class="cm-rate hi-g" id="rate-tp">−</span>
+              <span class="cm-label" style="color:var(--green)">True Positive</span>
+            </td>
+            <td class="cm-cell fp" id="cell-fp">
+              <span class="cm-count" id="cnt-fp">−</span>
+              <span class="cm-rate hi-r" id="rate-fp">−</span>
+              <span class="cm-label" style="color:var(--red)">False Positive</span>
+            </td>
+          </tr>
+          <tr>
+            <td class="cm-cell fn" id="cell-fn">
+              <span class="cm-count" id="cnt-fn">−</span>
+              <span class="cm-rate hi-r" id="rate-fn">−</span>
+              <span class="cm-label" style="color:var(--red)">False Negative</span>
+            </td>
+            <td class="cm-cell tn" id="cell-tn">
+              <span class="cm-count" id="cnt-tn">−</span>
+              <span class="cm-rate hi-g" id="rate-tn">−</span>
+              <span class="cm-label" style="color:var(--green)">True Negative</span>
+            </td>
+          </tr>
+        </table>
+        <div style="margin-top:8px;font-family:var(--mono);font-size:10px;color:var(--text-faint);">N = 1,000 silver judgments</div>
+      </div>
+
+      <div class="cm-controls">
+        <div class="ctrl-row">
+          <div class="ctrl-label"><span>True prevalence p (A=1)</span><span class="ctrl-val hi-p" id="lbl-p">0.75</span></div>
+          <input type="range" id="sl-p" min="0.3" max="0.95" step="0.01" value="0.75">
+          <div style="font-family:var(--mono);font-size:9px;color:var(--text-faint);">Fraction of extractions that are truly correct</div>
+        </div>
+        <div class="ctrl-row">
+          <div class="ctrl-label"><span>Sensitivity (TPR)</span><span class="ctrl-val hi-g" id="lbl-sens">0.875</span></div>
+          <input type="range" id="sl-sens" min="0.4" max="0.99" step="0.01" value="0.875">
+          <div style="font-family:var(--mono);font-size:9px;color:var(--text-faint);">P(L=1 | A=1) — LLM catches correct extractions</div>
+        </div>
+        <div class="ctrl-row">
+          <div class="ctrl-label"><span>Specificity (TNR)</span><span class="ctrl-val hi-g" id="lbl-spec">0.50</span></div>
+          <input type="range" id="sl-spec" min="0.2" max="0.95" step="0.01" value="0.50">
+          <div style="font-family:var(--mono);font-size:9px;color:var(--text-faint);">P(L=0 | A=0) — LLM catches wrong extractions</div>
+        </div>
+      </div>
+    </div>
+
+    <h3 style="margin-top:20px;">Derived rates</h3>
+    <div class="rates-grid">
+      <div class="rate-card">
+        <div class="rate-lbl">LLM overall accuracy</div>
+        <div class="rate-val hi-a" id="llm-acc">—</div>
+      </div>
+      <div class="rate-card">
+        <div class="rate-lbl">False positive rate</div>
+        <div class="rate-val hi-r" id="fpr">—</div>
+      </div>
+      <div class="rate-card">
+        <div class="rate-lbl">False negative rate</div>
+        <div class="rate-val hi-r" id="fnr">—</div>
+      </div>
+      <div class="rate-card">
+        <div class="rate-lbl">LLM positive rate P̂(L=1)</div>
+        <div class="rate-val hi-c" id="lpr">—</div>
+      </div>
+    </div>
+
+    <div class="callout note">
+      <strong>Key observation</strong>
+      The LLM's overall accuracy of 75% is a marginal — it conflates sensitivity and specificity weighted by true prevalence p. Two different confusion matrices can produce the same 75% overall accuracy with very different error structures. You cannot recover p from the silver sample alone.
+    </div>
+  </div>
+</div>
+
+<!-- ── STAGE 2: PREVALENCE ESTIMATION ── -->
+<div class="stage">
+  <div class="stage-label">Stage 2 of 3</div>
+  <h2>Prevalence Estimation — Debiasing with the Gold Sample</h2>
+
+  <p>The gold sample gives you empirical estimates of sensitivity and specificity. With those in hand, you can invert the confusion matrix to recover the true prevalence p̂ — the fraction of extractions that are actually correct.</p>
+
+  <div class="math">
+    <div class="lbl">The prevalence estimation formula — derivation</div>
+    <span class="cmt">// Observe: P(L=1) = P(L=1|A=1)·P(A=1) + P(L=1|A=0)·P(A=0)</span><br>
+    <span class="cmt">// Substitute: P(A=0) = 1 − p, P(L=1|A=0) = 1 − specificity</span><br>
+    P̂(L=1) = <span class="hi-g">sensitivity</span> · p + (1 − <span class="hi-g">specificity</span>) · (1 − p)<br>
+    <span class="cmt">// Rearrange for p:</span><br>
+    <span class="hi-p">p̂</span> = ( P̂(L=1) − (1 − <span class="hi-g">specificity</span>) ) / ( <span class="hi-g">sensitivity</span> − (1 − <span class="hi-g">specificity</span>) )<br>
+    <span class="cmt">// Equivalently:</span><br>
+    <span class="hi-p">p̂</span> = ( P̂(L=1) − <span class="hi-r">FPR</span> ) / ( <span class="hi-g">TPR</span> − <span class="hi-r">FPR</span> )<br>
+    <span class="cmt">// This is the standard roc-based prevalence estimator</span>
+  </div>
+
+  <div class="interactive">
+    <div class="int-title">Prevalence estimation — live computation</div>
+    <div class="prev-panel">
+      <div class="prev-equation">
+        <div class="prev-row">
+          <span class="prev-lhs">P̂(L=1)</span>
+          <span class="prev-rhs">= <span id="pe-lpr">—</span> &nbsp;<span class="cmt">(observed LLM positive rate from silver sample)</span></span>
+        </div>
+        <div class="prev-row">
+          <span class="prev-lhs">FPR</span>
+          <span class="prev-rhs">= 1 − specificity = <span id="pe-fpr" class="hi-r">—</span></span>
+        </div>
+        <div class="prev-row">
+          <span class="prev-lhs">TPR</span>
+          <span class="prev-rhs">= sensitivity = <span id="pe-tpr" class="hi-g">—</span></span>
+        </div>
+        <div class="prev-row" style="border-top:1px solid var(--border);padding-top:12px;margin-top:8px;">
+          <span class="prev-lhs">p̂</span>
+          <span class="prev-rhs">= ( <span id="pe-lpr2">—</span> − <span id="pe-fpr2" class="hi-r">—</span> ) / ( <span id="pe-tpr2" class="hi-g">—</span> − <span id="pe-fpr3" class="hi-r">—</span> )</span>
+        </div>
+      </div>
+      <div class="prev-result" id="prev-result">—</div>
+      <div class="prev-ci" id="prev-note">True p = <span id="prev-true">—</span> &nbsp;|&nbsp; Error = <span id="prev-err">—</span></div>
+    </div>
+
+    <div class="callout warn">
+      <strong>The identification problem</strong>
+      This formula requires knowing the true sensitivity and specificity — which come from the gold sample. If the gold sample is too small, the confusion matrix estimates are noisy, and the prevalence estimate inherits that noise. This is what we fix in Stage 3.
+    </div>
+  </div>
+</div>
+
+<!-- ── STAGE 3: BAYESIAN UPDATING ── -->
+<div class="stage">
+  <div class="stage-label">Stage 3 of 3</div>
+  <h2>Bayesian Updating — How Each Gold Observation Shifts Your Uncertainty</h2>
+
+  <p>Before seeing any gold observations, you have prior uncertainty over sensitivity and specificity. Each gold observation — a human judgment H on a case where you also have L — updates your posterior beliefs about those parameters. Watch the distributions sharpen as you add observations.</p>
+
+  <p>We model sensitivity ~ Beta(α_s, β_s) and specificity ~ Beta(α_q, β_q). The Beta distribution is the natural conjugate prior for a Bernoulli success probability. Each concordant or discordant observation updates the relevant Beta parameters.</p>
+
+  <div class="math">
+    <div class="lbl">Bayesian update rules — Beta conjugate model</div>
+    <span class="cmt">// Prior: sensitivity ~ Beta(α_s, β_s), specificity ~ Beta(α_q, β_q)</span><br>
+    <span class="cmt">// Observation types and their updates:</span><br>
+    <span class="hi-g">TP</span>: H=1, L=1 &nbsp;→&nbsp; α_s += 1 &nbsp;<span class="cmt">(confirms LLM caught a correct extraction)</span><br>
+    <span class="hi-r">FN</span>: H=1, L=0 &nbsp;→&nbsp; β_s += 1 &nbsp;<span class="cmt">(LLM missed a correct extraction → sensitivity failure)</span><br>
+    <span class="hi-g">TN</span>: H=0, L=0 &nbsp;→&nbsp; α_q += 1 &nbsp;<span class="cmt">(confirms LLM caught a wrong extraction)</span><br>
+    <span class="hi-r">FP</span>: H=0, L=1 &nbsp;→&nbsp; β_q += 1 &nbsp;<span class="cmt">(LLM passed a wrong extraction → specificity failure)</span><br>
+    <br>
+    <span class="cmt">// Posterior mean: E[sensitivity] = α_s / (α_s + β_s)</span><br>
+    <span class="cmt">// Posterior variance: Var[sensitivity] = α_s·β_s / [(α_s+β_s)²·(α_s+β_s+1)]</span><br>
+    <span class="cmt">// 95% credible interval via Beta quantiles</span>
+  </div>
+
+  <div class="interactive">
+    <div class="int-title">Gold observations — add one at a time</div>
+
+    <div style="margin-bottom:16px;display:flex;align-items:center;flex-wrap:wrap;gap:8px;">
+      <select class="obs-type-sel" id="obs-type">
+        <option value="TP">TP: H=1, L=1 (LLM correct on correct)</option>
+        <option value="FP">FP: H=0, L=1 (LLM wrong — false positive)</option>
+        <option value="FN">FN: H=1, L=0 (LLM wrong — false negative)</option>
+        <option value="TN">TN: H=0, L=0 (LLM correct on wrong)</option>
+      </select>
+      <button type="button" class="add-btn" id="add-obs-btn" onclick="addObservation()">+ Add Gold Observation</button>
+      <button type="button" class="add-btn" id="add-random-btn" onclick="addRandom()">+ Add Random (from prior)</button>
+      <button type="button" class="reset-btn" onclick="resetObs()">↺ Reset</button>
+      <span id="obs-count" style="font-family:var(--mono);font-size:11px;color:var(--text-dim);margin-left:8px;">0 gold observations</span>
+    </div>
+
+    <div class="gold-layout">
+      <!-- Left: observation stream -->
+      <div>
+        <h3>Observation log</h3>
+        <div class="obs-stream" id="obs-stream">
+          <div style="font-family:var(--mono);font-size:11px;color:var(--text-faint);padding:8px;">No gold observations yet — add one above</div>
+        </div>
+      </div>
+
+      <!-- Right: posterior summary -->
+      <div>
+        <h3>Posterior parameters</h3>
+        <div class="summary-bar" style="grid-template-columns:1fr 1fr 1fr;">
+          <div class="sum-card">
+            <div class="sum-lbl">E[sensitivity]</div>
+            <div class="sum-val hi-g" id="post-sens">—</div>
+            <div class="sum-ci" id="post-sens-ci">—</div>
+          </div>
+          <div class="sum-card">
+            <div class="sum-lbl">E[specificity]</div>
+            <div class="sum-val hi-g" id="post-spec">—</div>
+            <div class="sum-ci" id="post-spec-ci">—</div>
+          </div>
+          <div class="sum-card">
+            <div class="sum-lbl">Debiased p̂</div>
+            <div class="sum-val hi-p" id="post-prev">—</div>
+            <div class="sum-ci" id="post-prev-ci">—</div>
+          </div>
+        </div>
+        <div class="sum-card" style="margin-top:10px;">
+          <div class="sum-lbl">Information gained (bits)</div>
+          <div class="sum-val hi-a" id="info-gained">0.000</div>
+          <div class="sum-ci">Reduction in uncertainty about sensitivity + specificity</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Posterior distribution curves -->
+    <h3 style="margin-top:24px;">Posterior distributions over confusion matrix parameters</h3>
+    <p style="font-size:12px;color:var(--text-dim);">Watch uncertainty collapse as gold observations accumulate. Discordant observations (FP, FN) narrow the tails most — they are the most informative about the LLM's error structure.</p>
+    <div class="canvas-wrap"><canvas id="beta-canvas" height="260"></canvas></div>
+    <div style="display:flex;gap:16px;flex-wrap:wrap;font-family:var(--mono);font-size:10px;color:var(--text-dim);margin-top:6px;">
+      <div style="display:flex;align-items:center;gap:5px;"><div style="width:24px;height:3px;background:var(--green);border-radius:1px;"></div><span>Sensitivity posterior</span></div>
+      <div style="display:flex;align-items:center;gap:5px;"><div style="width:24px;height:3px;background:var(--cyan);border-radius:1px;"></div><span>Specificity posterior</span></div>
+      <div style="display:flex;align-items:center;gap:5px;"><div style="width:24px;height:3px;background:var(--amber);border-radius:1px;stroke-dasharray:4;"></div><span>True values (dashed)</span></div>
+    </div>
+
+    <!-- Precision vs N chart -->
+    <h3 style="margin-top:28px;">95% credible interval width vs gold sample size</h3>
+    <p style="font-size:12px;color:var(--text-dim);">How many gold observations do you need to achieve a given precision on p̂? The width of the 95% CI on p̂ as a function of N_gold.</p>
+    <div class="canvas-wrap"><canvas id="precision-canvas" height="180"></canvas></div>
+    <div style="font-family:var(--mono);font-size:10px;color:var(--text-dim);margin-top:4px;">
+      <span style="color:var(--amber);">★</span> marks your current N_gold &nbsp;|&nbsp;
+      <span id="current-precision-txt">Add gold observations to see your current precision</span>
+    </div>
+
+    <div class="callout note" style="margin-top:20px;">
+      <strong>The discordant observation insight</strong>
+      FP and FN observations are disproportionately informative. They directly constrain the error cells of the confusion matrix — the cells you know least about. A gold sample that happens to contain only TP and TN observations gives you almost no information about the failure modes, even if N_gold is large. Stratified sampling that deliberately seeks discordant cases is more efficient than random sampling.
+    </div>
+  </div>
+</div>
+
+<script>
+// ── State ─────────────────────────────────────────────────────────────────────
+const N_SILVER = 1000;
+
+// Bayesian state — Beta priors (weakly informative)
+let state = {
+  p: 0.75, sens: 0.875, spec: 0.50,
+  // Beta params for sensitivity and specificity
+  as: 2, bs: 2,   // sensitivity ~ Beta(as,bs) prior
+  aq: 2, bq: 2,   // specificity ~ Beta(aq,bq) prior
+  observations: [],
+  initialEntropy: null
+};
+
+// ── Beta distribution utilities ───────────────────────────────────────────────
+function betaPDF(x, a, b) {
+  if (x <= 0 || x >= 1) return 0;
+  // log scale for numerical stability
+  const logB = logGamma(a) + logGamma(b) - logGamma(a + b);
+  return Math.exp((a-1)*Math.log(x) + (b-1)*Math.log(1-x) - logB);
+}
+
+function logGamma(z) {
+  // Stirling approximation
+  if (z < 0.5) return Math.log(Math.PI / Math.sin(Math.PI * z)) - logGamma(1 - z);
+  z -= 1;
+  const g = 7;
+  const c = [0.99999999999980993,676.5203681218851,-1259.1392167224028,
+    771.32342877765313,-176.61502916214059,12.507343278686905,
+    -0.13857109526572012,9.9843695780195716e-6,1.5056327351493116e-7];
+  let x = c[0];
+  for (let i = 1; i < g+2; i++) x += c[i]/(z+i);
+  const t = z + g + 0.5;
+  return 0.5*Math.log(2*Math.PI) + (z+0.5)*Math.log(t) - t + Math.log(x);
+}
+
+function betaMean(a, b) { return a / (a + b); }
+function betaVar(a, b) { return (a*b) / ((a+b)*(a+b)*(a+b+1)); }
+function betaStd(a, b) { return Math.sqrt(betaVar(a, b)); }
+
+// Beta quantile via bisection (for 95% CI)
+function betaQuantile(p, a, b) {
+  let lo = 0, hi = 1;
+  for (let i = 0; i < 60; i++) {
+    const mid = (lo + hi) / 2;
+    if (betaCDF(mid, a, b) < p) lo = mid; else hi = mid;
+  }
+  return (lo + hi) / 2;
+}
+
+function betaCDF(x, a, b) {
+  // Regularized incomplete beta via continued fraction (Numerical Recipes)
+  if (x <= 0) return 0;
+  if (x >= 1) return 1;
+  const lbeta = logGamma(a) + logGamma(b) - logGamma(a + b);
+  const logx = Math.log(x), log1mx = Math.log(1-x);
+  const front = Math.exp(a*logx + b*log1mx - lbeta);
+  if (x < (a+1)/(a+b+2)) return front * betaCF(x,a,b) / a;
+  return 1 - front * betaCF(1-x,b,a) / b;
+}
+
+function betaCF(x, a, b) {
+  const MAXIT = 200, EPS = 3e-7;
+  let qab = a+b, qap = a+1, qam = a-1;
+  let c = 1, d = 1 - qab*x/qap;
+  if (Math.abs(d) < 1e-30) d = 1e-30;
+  d = 1/d; let h = d;
+  for (let m = 1; m <= MAXIT; m++) {
+    const m2 = 2*m;
+    let aa = m*(b-m)*x / ((qam+m2)*(a+m2));
+    d = 1 + aa*d; if (Math.abs(d)<1e-30) d=1e-30;
+    c = 1 + aa/c; if (Math.abs(c)<1e-30) c=1e-30;
+    d = 1/d; h *= d*c;
+    aa = -(a+m)*(qab+m)*x / ((a+m2)*(qap+m2));
+    d = 1+aa*d; if(Math.abs(d)<1e-30)d=1e-30;
+    c = 1+aa/c; if(Math.abs(c)<1e-30)c=1e-30;
+    d=1/d; const del=d*c; h*=del;
+    if (Math.abs(del-1) < EPS) break;
+  }
+  return h;
+}
+
+// Beta entropy (for information gain computation)
+function betaEntropy(a, b) {
+  return logGamma(a) + logGamma(b) - logGamma(a+b) - (a-1)*(digamma(a)-digamma(a+b)) - (b-1)*(digamma(b)-digamma(a+b));
+}
+function digamma(n) {
+  if(n<6) return (n>1?digamma(n-1)+1/(n-1):-0.5772156649);
+  return Math.log(n)-1/(2*n)-1/(12*n*n)+1/(120*n*n*n*n);
+}
+
+// ── Confusion matrix display ─────────────────────────────────────────────────
+function updateCM() {
+  const p = +document.getElementById('sl-p').value;
+  const sens = +document.getElementById('sl-sens').value;
+  const spec = +document.getElementById('sl-spec').value;
+  state.p = p; state.sens = sens; state.spec = spec;
+
+  document.getElementById('lbl-p').textContent = p.toFixed(2);
+  document.getElementById('lbl-sens').textContent = sens.toFixed(3);
+  document.getElementById('lbl-spec').textContent = spec.toFixed(3);
+
+  const N = N_SILVER;
+  const tp = Math.round(p * sens * N);
+  const fn = Math.round(p * (1-sens) * N);
+  const fp = Math.round((1-p) * (1-spec) * N);
+  const tn = Math.round((1-p) * spec * N);
+
+  document.getElementById('cnt-tp').textContent = tp;
+  document.getElementById('cnt-fn').textContent = fn;
+  document.getElementById('cnt-fp').textContent = fp;
+  document.getElementById('cnt-tn').textContent = tn;
+
+  document.getElementById('rate-tp').textContent = 'TPR=' + sens.toFixed(3);
+  document.getElementById('rate-fn').textContent = 'FNR=' + (1-sens).toFixed(3);
+  document.getElementById('rate-fp').textContent = 'FPR=' + (1-spec).toFixed(3);
+  document.getElementById('rate-tn').textContent = 'TNR=' + spec.toFixed(3);
+
+  const fpr = 1-spec, fnr = 1-sens;
+  const lpr = sens*p + fpr*(1-p);
+  const acc = (tp+tn)/N;
+
+  document.getElementById('llm-acc').textContent = (acc*100).toFixed(1)+'%';
+  document.getElementById('fpr').textContent = (fpr*100).toFixed(1)+'%';
+  document.getElementById('fnr').textContent = (fnr*100).toFixed(1)+'%';
+  document.getElementById('lpr').textContent = (lpr*100).toFixed(1)+'%';
+
+  // Stage 2 prevalence
+  document.getElementById('pe-lpr').textContent = lpr.toFixed(3);
+  document.getElementById('pe-lpr2').textContent = lpr.toFixed(3);
+  document.getElementById('pe-fpr').textContent = fpr.toFixed(3);
+  document.getElementById('pe-fpr2').textContent = fpr.toFixed(3);
+  document.getElementById('pe-fpr3').textContent = fpr.toFixed(3);
+  document.getElementById('pe-tpr').textContent = sens.toFixed(3);
+  document.getElementById('pe-tpr2').textContent = sens.toFixed(3);
+
+  const denom = sens - fpr;
+  const prev_est = denom > 0.001 ? (lpr - fpr) / denom : NaN;
+  document.getElementById('prev-result').textContent = isFinite(prev_est) ? 'p̂ = ' + prev_est.toFixed(3) : 'Undefined (sens ≈ FPR)';
+  document.getElementById('prev-true').textContent = p.toFixed(3);
+  document.getElementById('prev-err').textContent = isFinite(prev_est) ? (prev_est - p > 0 ? '+':'') + (prev_est-p).toFixed(4) : '—';
+
+  updatePosteriorDisplay();
+  updatePrecisionChart();
+}
+
+// ── Posterior display ─────────────────────────────────────────────────────────
+function updatePosteriorDisplay() {
+  const {as, bs, aq, bq, observations} = state;
+  const e_sens = betaMean(as, bs);
+  const e_spec = betaMean(aq, bq);
+  const ci_s = [betaQuantile(0.025,as,bs), betaQuantile(0.975,as,bs)];
+  const ci_q = [betaQuantile(0.025,aq,bq), betaQuantile(0.975,aq,bq)];
+
+  document.getElementById('post-sens').textContent = e_sens.toFixed(3);
+  document.getElementById('post-spec').textContent = e_spec.toFixed(3);
+  document.getElementById('post-sens-ci').textContent = '95% CI: ['+ci_s[0].toFixed(3)+', '+ci_s[1].toFixed(3)+']';
+  document.getElementById('post-spec-ci').textContent = '95% CI: ['+ci_q[0].toFixed(3)+', '+ci_q[1].toFixed(3)+']';
+
+  // Debiased p̂ from posterior means
+  const fpr_post = 1 - e_spec;
+  const lpr = +document.getElementById('pe-lpr').textContent || state.sens*state.p + (1-state.spec)*(1-state.p);
+  const denom = e_sens - fpr_post;
+  const p_post = denom > 0.001 ? (lpr - fpr_post) / denom : NaN;
+  const p_clamped = Math.max(0, Math.min(1, p_post)); document.getElementById('post-prev').textContent = isFinite(p_post) ? p_clamped.toFixed(3) : '—';
+
+  // CI on prevalence via delta method (approximate)
+  if (isFinite(p_post) && observations.length > 0) {
+    const std_sens = betaStd(as, bs);
+    const std_spec = betaStd(aq, bq);
+    const dp_dsens = (1 - lpr + fpr_post * 0) / (denom * denom); // simplified
+    const dp_dspec = (lpr - e_sens) / (denom * denom);
+    const var_p = dp_dsens*dp_dsens*betaVar(as,bs) + dp_dspec*dp_dspec*betaVar(aq,bq);
+    const std_p = Math.sqrt(Math.abs(var_p));
+    const ci_str = '±'+(1.96*std_p).toFixed(3)+' (approx 95%)';
+    const oob = p_post < 0 || p_post > 1 ? ' ⚠ unstable — add more obs' : '';
+    document.getElementById('post-prev-ci').textContent = ci_str + oob;
+  } else {
+    document.getElementById('post-prev-ci').textContent = 'Add gold observations';
+  }
+
+  // Information gained
+  if (state.initialEntropy !== null) {
+    const currentH = betaEntropy(as,bs) + betaEntropy(aq,bq);
+    const gained = (state.initialEntropy - currentH) / Math.log(2); // bits
+    document.getElementById('info-gained').textContent = Math.max(0,gained).toFixed(3);
+  }
+
+  document.getElementById('obs-count').textContent = observations.length + ' gold observation' + (observations.length!==1?'s':'');
+  drawBetaCanvas();
+}
+
+// ── Beta distribution canvas ─────────────────────────────────────────────────
+function drawBetaCanvas() {
+  const canvas = document.getElementById('beta-canvas');
+  const dpr = window.devicePixelRatio||1;
+  const W = canvas.clientWidth||800, H = 260;
+  canvas.width=W*dpr; canvas.height=H*dpr;
+  const ctx = canvas.getContext('2d'); ctx.scale(dpr,dpr);
+  const {as,bs,aq,bq} = state;
+  const pad = {top:20,right:20,bottom:36,left:50};
+  const cw=W-pad.left-pad.right, ch=H-pad.top-pad.bottom;
+  ctx.clearRect(0,0,W,H);
+
+  // Grid
+  ctx.strokeStyle='#1a2a38'; ctx.lineWidth=1;
+  for(let i=0;i<=4;i++){const y=pad.top+(ch/4)*i;ctx.beginPath();ctx.moveTo(pad.left,y);ctx.lineTo(pad.left+cw,y);ctx.stroke();}
+
+  // X axis ticks
+  ctx.fillStyle='#283a4a'; ctx.font="9px 'IBM Plex Mono'"; ctx.textAlign='center';
+  for(let t=0;t<=10;t++){
+    const x=pad.left+(t/10)*cw;
+    ctx.fillText((t/10).toFixed(1), x, H-4);
+    ctx.beginPath();ctx.strokeStyle='#1a2a38';ctx.moveTo(x,pad.top+ch);ctx.lineTo(x,pad.top+ch+4);ctx.stroke();
+  }
+
+  // Compute PDFs
+  const N_pts = 200;
+  const pts_s=[], pts_q=[];
+  let maxY = 0;
+  for(let i=0;i<=N_pts;i++){
+    const x=(i+0.5)/(N_pts+1);
+    const ys=betaPDF(x,as,bs), yq=betaPDF(x,aq,bq);
+    pts_s.push({x,y:ys}); pts_q.push({x,y:yq});
+    maxY=Math.max(maxY,ys,yq);
+  }
+  if(maxY<0.01)maxY=10;
+
+  // Draw fills
+  function drawFill(pts, color) {
+    ctx.beginPath();
+    ctx.moveTo(pad.left, pad.top+ch);
+    pts.forEach(({x,y})=>{
+      const px=pad.left+x*cw, py=pad.top+ch-Math.min(y/maxY,1)*ch;
+      ctx.lineTo(px,py);
+    });
+    ctx.lineTo(pad.left+cw, pad.top+ch);
+    ctx.closePath();
+    ctx.fillStyle=color;
+    ctx.fill();
+  }
+  drawFill(pts_s, 'rgba(86,184,112,0.10)');
+  drawFill(pts_q, 'rgba(79,195,200,0.10)');
+
+  // Draw lines
+  function drawLine(pts, color, lw) {
+    ctx.beginPath(); ctx.strokeStyle=color; ctx.lineWidth=lw;
+    pts.forEach(({x,y},i)=>{
+      const px=pad.left+x*cw, py=pad.top+ch-Math.min(y/maxY,1)*ch;
+      i===0?ctx.moveTo(px,py):ctx.lineTo(px,py);
+    });
+    ctx.stroke();
+  }
+  drawLine(pts_s, 'var(--green)', 2);
+  drawLine(pts_q, 'var(--cyan)', 2);
+
+  // True value markers
+  function drawTrue(val, color) {
+    const px=pad.left+val*cw;
+    ctx.strokeStyle=color; ctx.lineWidth=1.5; ctx.setLineDash([4,3]);
+    ctx.beginPath();ctx.moveTo(px,pad.top);ctx.lineTo(px,pad.top+ch);ctx.stroke();
+    ctx.setLineDash([]);
+  }
+  drawTrue(state.sens, 'rgba(86,184,112,0.6)');
+  drawTrue(state.spec, 'rgba(79,195,200,0.6)');
+
+  // Y axis labels
+  ctx.fillStyle='#283a4a'; ctx.textAlign='right'; ctx.font="9px 'IBM Plex Mono'";
+  for(let i=0;i<=4;i++){
+    ctx.fillText((maxY*(1-i/4)).toFixed(1), pad.left-4, pad.top+(ch/4)*i+3);
+  }
+
+  // Posterior mean markers
+  const ms=betaMean(as,bs), mq=betaMean(aq,bq);
+  [ms,'var(--green)',[as,bs]], [mq,'var(--cyan)',[aq,bq]];
+  [[ms,'var(--green)'],[mq,'var(--cyan)']].forEach(([val,col])=>{
+    const px=pad.left+val*cw;
+    ctx.strokeStyle=col; ctx.lineWidth=2; ctx.setLineDash([]);
+    ctx.beginPath();ctx.arc(px,pad.top+ch,5,0,Math.PI*2);ctx.stroke();
+  });
+
+  // Credible interval shading
+  [[as,bs,'rgba(86,184,112,0.15)'],[aq,bq,'rgba(79,195,200,0.12)']].forEach(([a,b,col])=>{
+    const lo=betaQuantile(0.025,a,b), hi=betaQuantile(0.975,a,b);
+    ctx.fillStyle=col;
+    ctx.fillRect(pad.left+lo*cw, pad.top, (hi-lo)*cw, ch);
+  });
+
+  // Label
+  ctx.fillStyle='var(--green)'; ctx.font="9px 'IBM Plex Mono'"; ctx.textAlign='left';
+  ctx.fillText('Sensitivity', pad.left+4, pad.top+12);
+  ctx.fillStyle='var(--cyan)';
+  ctx.fillText('Specificity', pad.left+4, pad.top+24);
+  ctx.fillStyle='var(--text-faint)'; ctx.textAlign='center';
+  ctx.fillText('Parameter value (0 → 1)', pad.left+cw/2, H-18);
+}
+
+// ── Precision chart ───────────────────────────────────────────────────────────
+function updatePrecisionChart() {
+  const canvas = document.getElementById('precision-canvas');
+  const dpr = window.devicePixelRatio||1;
+  const W = canvas.clientWidth||800, H = 180;
+  canvas.width=W*dpr; canvas.height=H*dpr;
+  const ctx=canvas.getContext('2d'); ctx.scale(dpr,dpr);
+  const pad={top:20,right:20,bottom:36,left:60};
+  const cw=W-pad.left-pad.right, ch=H-pad.top-pad.bottom;
+  ctx.clearRect(0,0,W,H);
+
+  // Grid
+  ctx.strokeStyle='#1a2a38'; ctx.lineWidth=1;
+  for(let i=0;i<=4;i++){const y=pad.top+(ch/4)*i;ctx.beginPath();ctx.moveTo(pad.left,y);ctx.lineTo(pad.left+cw,y);ctx.stroke();}
+
+  // Simulate CI width vs N for current prior
+  const Nmax=50, pts=[];
+  for(let n=1;n<=Nmax;n++){
+    // Expected CI width after n observations drawn from true distribution
+    // Approximate: for Beta(a+n*p, b+n*(1-p)) sensitivity
+    const sens_true=state.sens, spec_true=state.spec, p_true=state.p;
+    // Expected TP, FN, FP, TN per gold observation
+    const exp_tp=p_true*sens_true, exp_fn=p_true*(1-sens_true);
+    const exp_fp=(1-p_true)*(1-spec_true), exp_tn=(1-p_true)*spec_true;
+    const as_n=2+n*exp_tp, bs_n=2+n*exp_fn;
+    const aq_n=2+n*exp_tn, bq_n=2+n*exp_fp;
+    const ci_s=betaQuantile(0.975,as_n,bs_n)-betaQuantile(0.025,as_n,bs_n);
+    const ci_q=betaQuantile(0.975,aq_n,bq_n)-betaQuantile(0.025,aq_n,bq_n);
+    // CI on p̂ (approx via delta method)
+    const e_s=betaMean(as_n,bs_n), e_q=betaMean(aq_n,bq_n);
+    const lpr=sens_true*p_true+(1-spec_true)*(1-p_true);
+    const fpr_e=1-e_q, denom=e_s-fpr_e;
+    const var_s=betaVar(as_n,bs_n), var_q=betaVar(aq_n,bq_n);
+    const dpdS=denom>0.001?1/denom:10, dpdQ=denom>0.001?(lpr-e_s)/(denom*denom):10;
+    const ci_p=denom>0.001?1.96*2*Math.sqrt(Math.abs(dpdS*dpdS*var_s+dpdQ*dpdQ*var_q)):0.5;
+    pts.push({n, ci_p:Math.min(ci_p,1), ci_s, ci_q});
+  }
+
+  const maxCI=Math.max(...pts.map(p=>p.ci_p),0.1);
+  const sx=n=>pad.left+((n-1)/(Nmax-1))*cw;
+  const sy=v=>pad.top+ch-Math.min(v/maxCI,1)*ch;
+
+  // Draw p̂ CI width
+  ctx.strokeStyle='var(--purple)'; ctx.lineWidth=2;
+  ctx.beginPath();
+  pts.forEach(({n,ci_p},i)=>{i===0?ctx.moveTo(sx(n),sy(ci_p)):ctx.lineTo(sx(n),sy(ci_p));});
+  ctx.stroke();
+
+  // Mark current N
+  const curN=state.observations.length;
+  if(curN>0&&curN<=Nmax){
+    const curCI=pts[curN-1].ci_p;
+    const px=sx(curN), py=sy(curCI);
+    ctx.fillStyle='var(--amber)';
+    ctx.beginPath();ctx.arc(px,py,5,0,Math.PI*2);ctx.fill();
+    ctx.fillStyle='var(--amber)'; ctx.font="9px 'IBM Plex Mono'"; ctx.textAlign='left';
+    ctx.fillText('N='+curN+' (±'+curCI.toFixed(3)+')',px+8,py+4);
+    document.getElementById('current-precision-txt').textContent=
+      'At N='+curN+' gold obs: 95% CI on p̂ width ≈ ±'+curCI.toFixed(3);
+  }
+
+  // Axis labels
+  ctx.fillStyle='#283a4a'; ctx.font="9px 'IBM Plex Mono'"; ctx.textAlign='center';
+  for(let t=0;t<=Nmax;t+=10){ctx.fillText(t,sx(t||1),H-4);}
+  ctx.fillText('N_gold (number of gold observations)',pad.left+cw/2,H-16);
+  ctx.textAlign='right';
+  for(let i=0;i<=4;i++){ctx.fillText((maxCI*(1-i/4)).toFixed(2),pad.left-4,pad.top+(ch/4)*i+3);}
+  ctx.save();ctx.translate(12,pad.top+ch/2);ctx.rotate(-Math.PI/2);
+  ctx.fillStyle='#283a4a';ctx.textAlign='center';
+  ctx.fillText('95% CI width on p̂',0,0);
+  ctx.restore();
+}
+
+// ── Gold observation management ───────────────────────────────────────────────
+const OBS_LABELS={
+  TP:{label:'TP',desc:'H=1, L=1 — LLM correct on a correct extraction',cls:'badge-tp',update:'s+'},
+  FN:{label:'FN',desc:'H=1, L=0 — LLM missed a correct extraction',cls:'badge-fn',update:'s-'},
+  FP:{label:'FP',desc:'H=0, L=1 — LLM passed a wrong extraction',cls:'badge-fp',update:'q-'},
+  TN:{label:'TN',desc:'H=0, L=0 — LLM correct on a wrong extraction',cls:'badge-tn',update:'q+'},
+};
+
+function addObservation() {
+  const type=document.getElementById('obs-type').value;
+  addObs(type);
+}
+
+function addRandom() {
+  // Sample from the true distribution
+  const r=Math.random();
+  const p=state.p, s=state.sens, sp=state.spec;
+  let type;
+  const tp=p*s, fn=p*(1-s), fp=(1-p)*(1-sp), tn=(1-p)*sp;
+  if(r<tp)type='TP';
+  else if(r<tp+fn)type='FN';
+  else if(r<tp+fn+fp)type='FP';
+  else type='TN';
+  addObs(type);
+}
+
+function addObs(type) {
+  // Record initial entropy before first update
+  if(state.initialEntropy===null){
+    state.initialEntropy=betaEntropy(state.as,state.bs)+betaEntropy(state.aq,state.bq);
+  }
+
+  const info=OBS_LABELS[type];
+  state.observations.push(type);
+
+  // Update Beta parameters
+  if(type==='TP')state.as++;
+  else if(type==='FN')state.bs++;
+  else if(type==='TN')state.aq++;
+  else if(type==='FP')state.bq++;
+
+  // Add to stream
+  const stream=document.getElementById('obs-stream');
+  const n=state.observations.length;
+  if(n===1)stream.innerHTML='';
+  const item=document.createElement('div');
+  item.className='obs-item obs-new';
+  item.innerHTML='<div class="obs-badge '+info.cls+'">'+info.label+'</div>'+
+    '<span class="obs-desc">#'+n+': '+info.desc+'</span>'+
+    '<span style="font-family:var(--mono);font-size:10px;color:var(--text-faint);">'+(info.update==='s+'?'α_s+1':info.update==='s-'?'β_s+1':info.update==='q+'?'α_q+1':'β_q+1')+'</span>';
+  stream.insertBefore(item,stream.firstChild);
+  setTimeout(()=>item.classList.remove('obs-new'),500);
+
+  updatePosteriorDisplay();
+  updatePrecisionChart();
+}
+
+function resetObs() {
+  state.as=2;state.bs=2;state.aq=2;state.bq=2;
+  state.observations=[];state.initialEntropy=null;
+  document.getElementById('obs-stream').innerHTML='<div style="font-family:var(--mono);font-size:11px;color:var(--text-faint);padding:8px;">No gold observations yet — add one above</div>';
+  document.getElementById('info-gained').textContent='0.000';
+  document.getElementById('current-precision-txt').textContent='Add gold observations to see your current precision';
+  updatePosteriorDisplay();
+  updatePrecisionChart();
+}
+
+// ── Init ─────────────────────────────────────────────────────────────────────
+['sl-p','sl-sens','sl-spec'].forEach(id=>document.getElementById(id).addEventListener('input',updateCM));
+window.addEventListener('resize',()=>{updateCM();});
+document.addEventListener('DOMContentLoaded',()=>{
+  updateCM();
+  updatePosteriorDisplay();
+  updatePrecisionChart();
+});
+</script>
+</body>
+</html>
