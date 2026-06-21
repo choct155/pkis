@@ -26450,3 +26450,7 @@
 ## [2026-06-21] committed | source
 - Committed: betancourt-a-2018 → sources/betancourt-a-2018.md
 - IRI: pkis:source:betancourt-a-2018
+
+## [2026-06-21] committed | source
+- Committed: livingstone-on-2016 → sources/livingstone-on-2016.md
+- IRI: pkis:source:livingstone-on-2016
