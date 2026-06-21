@@ -3,20 +3,22 @@ aliases: []
 authors: Angelopoulos, A.N., Bates, S., Fannjiang, C., Jordan, M.I., Zrnic, T.
 concepts: []
 date_added: '2026-06-20'
+date_updated: '2026-06-21'
 doi: ''
 domain: []
 drive_id: ''
 drive_path: ''
 id: pkis:source:angelopoulos-predictionpowered-2023
+illustrated-by:
+- accuracy-calibration-explainer
 linked_nodes: []
-source_url: https://www.science.org/doi/10.1126/science.adi6000
+priority: high
+source_url: https://arxiv.org/abs/2301.09633
 status: unread
 tags: []
 title: Prediction-Powered Inference
 type: paper
 year: 2023
-illustrated-by:
-- accuracy-calibration-explainer
 ---
 
 ## Summary

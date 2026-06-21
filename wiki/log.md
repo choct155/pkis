@@ -26458,3 +26458,26 @@
 ## [2026-06-21] committed | source
 - Committed: talts-validating-2018 → sources/talts-validating-2018.md
 - IRI: pkis:source:talts-validating-2018
+
+## [2026-06-21] staged | source-stub
+- Staged: jospin-handson-2022 (id: 11447d26-a584-48ad-8423-033681f1f10b)
+- Title: Hands-On Bayesian Neural Networks—A Tutorial for Deep Learning Users
+- Enrichment: partial
+
+## [2026-06-21] staged | source-stub
+- Staged: bommasani-on-2021 (id: 1d8246f0-fbd2-4af7-ad81-a306fd86b27c)
+- Title: On the Opportunities and Risks of Foundation Models
+- Enrichment: full
+
+## [2026-06-21] staged | source-stub
+- Staged: petropoulos-forecasting-2022 (id: e868cc5b-9da6-4a95-a436-1c608fe2e95d)
+- Title: Forecasting: theory and practice
+- Enrichment: partial
+
+## [2026-06-21] staged | source-stub
+- Staged: kruschke-bayesian-2021 (id: caf01a26-b553-41be-944b-42588bc5b914)
+- Title: Bayesian Analysis Reporting Guidelines
+- Enrichment: full
+
+## [2026-06-21] edit | edit_node
+- pkis:source:angelopoulos-predictionpowered-2023: fields=['source_url', 'status', 'priority'] sections=[]
