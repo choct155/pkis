@@ -37,12 +37,15 @@ export default function NavDrawer({
       <aside className={`nav-drawer${open ? ' open' : ''}`}>
         <div className="sidebar-logo">PKIS</div>
 
+        {/* View / facet actions navigate, which itself closes the drawer and
+            rewinds its history entry — so they must NOT also call onClose. Only
+            the backdrop and doc selection (which doesn't navigate) close here. */}
         <nav className="sidebar-nav">
           {navFor(isOwner).map(({ view: v, icon, label }) => (
             <div
               key={v}
               className={`sidebar-nav-item${view === v ? ' active' : ''}`}
-              onClick={() => { onNavigate(v); onClose() }}
+              onClick={() => onNavigate(v)}
             >
               <span className="sidebar-nav-icon">{icon}</span>
               <span className="sidebar-nav-label">{label}</span>
@@ -61,11 +64,11 @@ export default function NavDrawer({
           </div>
         )}
 
-        <DomainTree active={domainFilter} onChange={(d) => { onDomain(d); onClose() }} />
+        <DomainTree active={domainFilter} onChange={onDomain} />
         <ClusterList
           active={clusterFilter}
-          onChange={(s) => { onCluster(s); onClose() }}
-          onAgenda={() => { onClusterAgenda(); onClose() }}
+          onChange={onCluster}
+          onAgenda={onClusterAgenda}
         />
       </aside>
     </>

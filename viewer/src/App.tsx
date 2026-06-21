@@ -41,6 +41,10 @@ export default function App() {
   const [docKey, setDocKey] = useState<string | null>(null)
   const [topHidden, setTopHidden] = useState(false)   // auto-hide TopBar on scroll
   const lastScroll = useRef(0)
+  // Back-gesture integration: a stack of "closers" for the currently-open
+  // dismissible layers (sheets, overlays, drawer), top = last. Each open pushes
+  // a browser history entry; the system back gesture / button pops the top one.
+  const backStack = useRef<Array<() => void>>([])
   const { auth, canWrite, isOwner, signIn, signOut } = useAuth()
 
   // Load the docs manifest once; default to the first doc so Docs never opens empty.
@@ -55,34 +59,63 @@ export default function App() {
   // owner — e.g. they signed out — fall back to browse.
   useEffect(() => { if (view === 'inbox' && !isOwner) setView('browse') }, [view, isOwner])
 
+  // Open a dismissible layer: run `setState` to show it and push a history entry
+  // whose closer reverses it, so the back gesture pops it. Skips the push if the
+  // layer is already open (avoids a stray "dead" back press).
+  const openLayer = (alreadyOpen: boolean, show: () => void, close: () => void) => {
+    show()
+    if (!alreadyOpen) {
+      backStack.current.push(close)
+      window.history.pushState({ d: backStack.current.length }, '')
+    }
+  }
+
+  // Dismiss the top layer from a UI control (close button / backdrop) by routing
+  // through history.back(), so the popstate handler does the actual close — the
+  // exact same path as a real back gesture. No-op if nothing is open.
+  const back = () => { if (backStack.current.length) window.history.back() }
+
+  // The system back gesture / button fires popstate: close the top layer.
+  useEffect(() => {
+    const onPop = () => { backStack.current.pop()?.() }
+    window.addEventListener('popstate', onPop)
+    return () => window.removeEventListener('popstate', onPop)
+  }, [])
+
   // Node permalink: /app/?n=<slug> opens that node's detail on load (public — no
   // auth needed; the graph is read-open). This is what a shared node link hits.
   useEffect(() => {
     const slug = new URLSearchParams(window.location.search).get('n')
-    if (slug) resolveSlug(slug).then((iri) => { if (iri) setSelectedIri(iri) }).catch(() => {})
+    if (slug) resolveSlug(slug).then((iri) => {
+      if (iri) openLayer(false, () => setSelectedIri(iri), () => setSelectedIri(null))
+    }).catch(() => {})
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
-  const openExplainer = (slug: string, title?: string) => setExplainer({ slug, title })
+  const openExplainer = (slug: string, title?: string) =>
+    openLayer(!!explainer, () => setExplainer({ slug, title }), () => setExplainer(null))
 
-  const handleSelectNode = (iri: string) => setSelectedIri(iri)
+  const handleSelectNode = (iri: string) =>
+    openLayer(!!selectedIri, () => setSelectedIri(iri), () => setSelectedIri(null))
 
-  // Navigating must also dismiss any open overlay (a node detail sheet or active
-  // search results) — otherwise the view changes UNDERNEATH the sheet, which keeps
-  // covering the screen, and the nav button looks like it failed.
+  // Navigate to a top-level view: collapse every open layer (closing them and
+  // rewinding their history entries in one step) so the view changes cleanly and
+  // the back stack stays in sync, then switch.
   const navigate = (v: View) => {
-    setSelectedIri(null)
+    const depth = backStack.current.length
+    backStack.current = []
+    setSelectedIri(null); setEditIri(null); setExplainer(null)
+    setReaderSlug(null); setCaptureOpen(false); setDrawerOpen(false)
     setSearchResults(null)
     setView(v)
+    if (depth) window.history.go(-depth)
   }
 
-  const handleNavigateToGraph = () => {
-    setView('graph')
-    setSelectedIri(null)
-  }
+  const handleNavigateToGraph = () => navigate('graph')
 
   // Selecting a domain or cluster (from the sidebar or a cluster cross-link)
   // applies it as a browse facet and surfaces the faceted browse.
-  const browseWith = (apply: () => void) => { apply(); setView('browse'); setSearchResults(null) }
+  const browseWith = (apply: () => void) => { apply(); navigate('browse') }
   const handleDomain = (d: string) => browseWith(() => setDomainFilter(d))
   const handleCluster = (slug: string) => browseWith(() => setClusterFilter(slug))
 
@@ -133,7 +166,7 @@ export default function App() {
             auth={auth}
             onSignIn={signIn}
             onSignOut={signOut}
-            onMenu={() => setDrawerOpen(true)}
+            onMenu={() => openLayer(drawerOpen, () => setDrawerOpen(true), () => setDrawerOpen(false))}
             hidden={topHidden}
             view={view}
           />
@@ -212,7 +245,7 @@ export default function App() {
 
       <NavDrawer
         open={drawerOpen}
-        onClose={() => setDrawerOpen(false)}
+        onClose={back}
         view={view}
         onNavigate={navigate}
         isOwner={isOwner}
@@ -220,42 +253,44 @@ export default function App() {
         onDomain={handleDomain}
         clusterFilter={clusterFilter}
         onCluster={handleCluster}
-        onClusterAgenda={() => { setView('clusters'); setSearchResults(null) }}
+        onClusterAgenda={() => navigate('clusters')}
         docManifest={docManifest}
         docKey={docKey}
         onDocSelect={setDocKey}
       />
 
-      {view !== 'ask' && <Fab onClick={() => setCaptureOpen(true)} />}
+      {view !== 'ask' && (
+        <Fab onClick={() => openLayer(captureOpen, () => setCaptureOpen(true), () => setCaptureOpen(false))} />
+      )}
 
       {selectedIri && (
         <DetailSheet
           iri={selectedIri}
-          onClose={() => setSelectedIri(null)}
+          onClose={back}
           onNavigate={(iri) => setSelectedIri(iri)}
-          onEdit={() => setEditIri(selectedIri)}
+          onEdit={() => openLayer(!!editIri, () => setEditIri(selectedIri), () => setEditIri(null))}
           onGraph={handleNavigateToGraph}
-          onListen={(slug) => setReaderSlug(slug)}
+          onListen={(slug) => openLayer(!!readerSlug, () => setReaderSlug(slug), () => setReaderSlug(null))}
           onOpenExplainer={openExplainer}
         />
       )}
 
       {readerSlug && (
-        <ReaderView slug={readerSlug} onClose={() => setReaderSlug(null)} />
+        <ReaderView slug={readerSlug} onClose={back} />
       )}
 
       {explainer && (
-        <ExplainerOverlay slug={explainer.slug} title={explainer.title} onClose={() => setExplainer(null)} />
+        <ExplainerOverlay slug={explainer.slug} title={explainer.title} onClose={back} />
       )}
 
       {captureOpen && (
-        <CaptureSheet onClose={() => setCaptureOpen(false)} canWrite={canWrite} onSignIn={signIn} />
+        <CaptureSheet onClose={back} canWrite={canWrite} onSignIn={signIn} />
       )}
 
       {editIri && (
         <EditSheet
           iri={editIri}
-          onClose={() => setEditIri(null)}
+          onClose={back}
         />
       )}
     </>
