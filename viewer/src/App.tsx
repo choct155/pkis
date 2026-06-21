@@ -6,6 +6,8 @@ import TopBar from './components/TopBar'
 import FilterStrip from './components/FilterStrip'
 import DomainStrip from './components/DomainStrip'
 import Sidebar from './components/Sidebar'
+import RightRail from './components/RightRail'
+import { useRecent } from './lib/useRecent'
 import NavDrawer from './components/NavDrawer'
 import FacetBar from './components/FacetBar'
 import Fab from './components/Fab'
@@ -50,6 +52,7 @@ export default function App() {
   const sheetBase = useRef<number | null>(null)    // stack depth when the node sheet opened
   const popTarget = useRef<number | null>(null)    // target depth for a chained "close sheet" unwind
   const { auth, canWrite, isOwner, signIn, signOut } = useAuth()
+  const recent = useRecent()
 
   // Load the docs manifest once; default to the first doc so Docs never opens empty.
   useEffect(() => {
@@ -288,6 +291,13 @@ export default function App() {
             )}
           </div>
         </div>
+
+        <RightRail
+          recent={recent.items}
+          onSelectNode={handleSelectNode}
+          onCluster={handleCluster}
+          onAgenda={() => navigate('clusters')}
+        />
       </div>
 
       <NavDrawer
@@ -319,6 +329,7 @@ export default function App() {
           onGraph={handleNavigateToGraph}
           onListen={(slug) => advance(() => setReaderSlug(slug))}
           onOpenExplainer={openExplainer}
+          onView={recent.record}
         />
       )}
 

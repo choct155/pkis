@@ -329,9 +329,10 @@ interface Props {
   onGraph: () => void
   onListen: (slug: string) => void
   onOpenExplainer: (slug: string, title?: string) => void
+  onView?: (iri: string, title: string) => void
 }
 
-export default function DetailSheet({ iri, onClose, onNavigate, onEdit, onGraph, onListen, onOpenExplainer }: Props) {
+export default function DetailSheet({ iri, onClose, onNavigate, onEdit, onGraph, onListen, onOpenExplainer, onView }: Props) {
   const [node, setNode] = useState<FullNode | null>(null)
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
@@ -350,6 +351,7 @@ export default function DetailSheet({ iri, onClose, onNavigate, onEdit, onGraph,
         setError(n?.error || `Node not found: ${iri}`); setLoading(false)
       } else {
         setNode(n); setLoading(false)
+        onView?.(iri, n.frontmatter?.title ?? iri)   // feed the desktop "recently viewed" rail
       }
     }).catch((e: unknown) => {
       if (!cancelled) { setError(String(e)); setLoading(false) }

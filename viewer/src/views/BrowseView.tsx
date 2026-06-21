@@ -92,7 +92,9 @@ export default function BrowseView({ typeFilter, domainFilter, clusterFilter, on
           groups.map(([type, ns]) => (
             <div key={type || 'flat'}>
               {type && <div className="group-label">{type} · {ns.length}</div>}
-              {ns.map((n) => <NodeCard key={n.iri} node={asCard(n)} onClick={onSelectNode} />)}
+              <div className="card-grid">
+                {ns.map((n) => <NodeCard key={n.iri} node={asCard(n)} onClick={onSelectNode} />)}
+              </div>
             </div>
           ))
         )}
@@ -126,30 +128,37 @@ export default function BrowseView({ typeFilter, domainFilter, clusterFilter, on
         </div>
       )}
 
-      <div className="section-label">frontier — needs attention</div>
-      {frontier.length === 0 ? (
-        <div className="empty-state">nothing on the frontier</div>
-      ) : (
-        frontier.slice(0, 8).map((n) => <NodeCard key={n.iri} node={n} onClick={onSelectNode} />)
-      )}
+      {/* On wide desktop these two sit side-by-side (.browse-home-grid → 2 cols);
+          on tablet/phone the grid collapses to one column and they stack as before. */}
+      <div className="browse-home-grid">
+        <section className="browse-col">
+          <div className="section-label">frontier — needs attention</div>
+          {frontier.length === 0 ? (
+            <div className="empty-state">nothing on the frontier</div>
+          ) : (
+            frontier.slice(0, 8).map((n) => <NodeCard key={n.iri} node={n} onClick={onSelectNode} />)
+          )}
+          <div className="browse-hint">tap a type or domain chip above to browse all matching nodes</div>
+        </section>
 
-      <div className="browse-hint">tap a type or domain chip above to browse all matching nodes</div>
-
-      {prioritizedQueue.length > 0 && (
-        <>
+        <section className="browse-col">
           <div className="section-label">reading queue</div>
-          {prioritizedQueue.map((item, i) => (
-            <div key={i} className="queue-item" onClick={() => onNavigate('priority')}>
-              <div className={`queue-priority prio-${item.hint ?? 'normal'}`} />
-              <div className="queue-info">
-                <div className="queue-title">{item.slug}</div>
-                {item.reason && <div className="queue-reason">{item.reason}</div>}
+          {prioritizedQueue.length === 0 ? (
+            <div className="empty-state">queue is empty</div>
+          ) : (
+            prioritizedQueue.map((item, i) => (
+              <div key={i} className="queue-item" onClick={() => onNavigate('priority')}>
+                <div className={`queue-priority prio-${item.hint ?? 'normal'}`} />
+                <div className="queue-info">
+                  <div className="queue-title">{item.slug}</div>
+                  {item.reason && <div className="queue-reason">{item.reason}</div>}
+                </div>
+                <div className="queue-action">read →</div>
               </div>
-              <div className="queue-action">read →</div>
-            </div>
-          ))}
-        </>
-      )}
+            ))
+          )}
+        </section>
+      </div>
     </div>
   )
 }

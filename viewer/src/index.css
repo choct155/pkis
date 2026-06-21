@@ -1434,6 +1434,38 @@ body {
 .cluster-row:hover { background: var(--raised); color: var(--text); }
 .cluster-row.active { color: var(--accent); background: rgba(229,72,77,0.10); }
 
+/* ── DESKTOP CONTEXT RAIL + WIDE-LAYOUT GRIDS ──────────────────────────────
+   Base = single-column / hidden, so phone + tablet are unchanged. The grids
+   become multi-column and the rail appears only at the ≥1280px breakpoint. */
+.browse-home-grid { display: block; }
+.card-grid        { display: block; }
+.right-rail       { display: none; }
+
+.rail-section + .rail-section { border-top: 1px solid var(--border); }
+.rail-section-label {
+  font-family: var(--mono); font-size: 9px; letter-spacing: 0.12em;
+  text-transform: uppercase; color: var(--muted); padding: 14px 16px 8px;
+  display: flex; align-items: center; justify-content: space-between;
+}
+.rail-section-action { color: var(--accent); cursor: pointer; text-transform: none; letter-spacing: 0.02em; }
+.rail-section-action:hover { text-decoration: underline; }
+.rail-agenda-item { padding: 6px 16px; cursor: pointer; border-left: 2px solid transparent; }
+.rail-agenda-item:hover { background: var(--raised); border-left-color: var(--accent); }
+.rail-agenda-title {
+  font-size: 12px; color: var(--text); font-weight: 500;
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+.rail-agenda-frontier {
+  font-size: 11px; color: var(--muted); line-height: 1.35; margin-top: 2px;
+  display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;
+}
+.rail-recent-item {
+  padding: 5px 16px; cursor: pointer; color: var(--muted); font-size: 12px;
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+.rail-recent-item:hover { background: var(--raised); color: var(--text); }
+.rail-empty { padding: 4px 16px 10px; color: var(--dim); font-size: 11px; line-height: 1.4; }
+
 /* facet bar — active filter pills (all breakpoints) */
 .facet-bar {
   display: flex; flex-wrap: wrap; align-items: center; gap: 6px;
@@ -1475,6 +1507,39 @@ body {
   .domain-strip { display: none; }    /* replaced by the sidebar domain tree */
   .main { padding-bottom: 24px; }     /* no fixed bottom-nav to clear */
   .fab { right: 24px; bottom: 24px; }
+}
+
+/* ── WIDE DESKTOP (≥1280px): use the real estate ───────────────────────────
+   Widen the centered shell, reveal the right context rail, and split the
+   landing into two columns + flow card lists into a grid. Below 1280px none
+   of this applies, so phone/tablet keep the single-column capped layout. */
+@media (min-width: 1280px) {
+  body { max-width: 1560px; }
+  .right-rail {
+    display: flex; flex-direction: column; width: 270px; flex-shrink: 0;
+    border-left: 1px solid var(--border); overflow-y: auto; padding-bottom: 24px;
+  }
+  .right-rail::-webkit-scrollbar { width: 3px; }
+  .right-rail::-webkit-scrollbar-thumb { background: var(--dim); border-radius: 2px; }
+
+  /* landing: frontier (wider) beside the reading queue */
+  .browse-home-grid {
+    display: grid; grid-template-columns: 3fr 2fr; gap: 28px; align-items: start;
+  }
+  .browse-col { min-width: 0; }
+
+  /* faceted browse: cards flow two-up instead of one giant column */
+  .card-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 10px; align-items: start;
+  }
+  /* keep the FAB clear of the rail */
+  .fab { right: 294px; }
+}
+
+/* Very wide monitors: let it breathe a little more, but cap so text columns
+   never stretch to an unreadable measure. */
+@media (min-width: 1800px) {
+  body { max-width: 1760px; }
 }
 
 /* ── EXPLAINER LINK (DetailSheet, kind=explainer) + FULL-SCREEN OVERLAY ──── */
