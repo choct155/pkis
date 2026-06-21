@@ -1452,7 +1452,10 @@ def tool_get_assets(kind: str = None) -> list:
             "kind": k,
             "viz": viz,
             "viz_title": _viz_title(viz) if viz else title,
-            "viz_url": f"/pkis-api/viz/{viz}.html" if viz else None,
+            # An explicit `viz_url` in frontmatter promotes a Tier-2 dynamic
+            # explainer (Flask-backed, e.g. /pkis-api/x/<name>/); otherwise derive
+            # the static-file URL from `viz`.
+            "viz_url": n.get("viz_url") or (f"/pkis-api/viz/{viz}.html" if viz else None),
             "domain": n.get("domain", []),
             "illustrates": illustrates,
             "excerpt": (n.get("content") or "").strip()[:200],
@@ -5968,6 +5971,20 @@ def pkis_api_viz(filename):
         return _api_err("Invalid path"), 400
     viz_dir = WIKI_DIR / "assets" / "viz"
     return send_from_directory(str(viz_dir), filename)
+
+
+# Tier-2 dynamic explainers (Flask-backed, /pkis-api/x/<name>/). Optional + best
+# effort: a load failure must never take down the main app.
+try:
+    import explainer_x
+    explainer_x.register(
+        app,
+        is_write_authorized=globals().get("is_write_authorized"),
+        log_usage=globals().get("log_usage"),
+    )
+    logger.info("dynamic-explainer blueprint mounted at /pkis-api/x")
+except Exception as _ex:
+    logger.warning(f"dynamic-explainer blueprint not loaded: {_ex}")
 
 
 # ============================================================

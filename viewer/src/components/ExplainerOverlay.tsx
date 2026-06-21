@@ -11,7 +11,11 @@ interface Props {
 // raw page out to a new tab. Esc closes.
 export default function ExplainerOverlay({ slug, title, onClose }: Props) {
   const [t, setT] = useState(title || 'Explainer')
-  const url = `/pkis-api/viz/${slug}.html`
+  // Cache-bust token: bumping it re-pulls the latest published explainer (the
+  // iframe is keyed on it, so it remounts). Lets you watch edits land in PKIS
+  // context after `explainer_publish.sh`, without closing/reopening the overlay.
+  const [bust, setBust] = useState(0)
+  const url = `/pkis-api/viz/${slug}.html${bust ? `?v=${bust}` : ''}`
 
   useEffect(() => {
     const onMsg = (e: MessageEvent) => {
@@ -30,10 +34,12 @@ export default function ExplainerOverlay({ slug, title, onClose }: Props) {
     <div className="explainer-overlay">
       <div className="explainer-overlay-bar">
         <span className="explainer-overlay-title">{title || t}</span>
+        <button className="explainer-overlay-pop" onClick={() => setBust(Date.now())} title="Reload latest (re-pull after publishing)">⟳</button>
         <a className="explainer-overlay-pop" href={url} target="_blank" rel="noreferrer" title="Open in new tab">↗</a>
         <button className="explainer-overlay-close" onClick={onClose} title="Close (Esc)">✕</button>
       </div>
       <iframe
+        key={bust}
         className="explainer-overlay-frame"
         src={url}
         sandbox="allow-scripts allow-popups"
