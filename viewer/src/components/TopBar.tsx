@@ -51,7 +51,8 @@ export default function TopBar({ onResults, onNavigate, auth, onSignIn, onSignOu
   const handleHome = () => {
     setQuery('')
     if (debounceRef.current) clearTimeout(debounceRef.current)
-    onResults(null)
+    // navigate('browse') clears search itself — calling onResults(null) here too
+    // would mix a history.back() with navigate's pushState (a back/forward race).
     onNavigate('browse')
   }
 

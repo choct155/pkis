@@ -41,10 +41,14 @@ export default function App() {
   const [docKey, setDocKey] = useState<string | null>(null)
   const [topHidden, setTopHidden] = useState(false)   // auto-hide TopBar on scroll
   const lastScroll = useRef(0)
-  // Back-gesture integration: a stack of "closers" for the currently-open
-  // dismissible layers (sheets, overlays, drawer), top = last. Each open pushes
-  // a browser history entry; the system back gesture / button pops the top one.
-  const backStack = useRef<Array<() => void>>([])
+  // Back-gesture integration. PKIS is an SPA, so we mirror navigation into the
+  // browser history: every forward step snapshots the prior navigable state and
+  // pushes a history entry; the back gesture/button pops it and restores that
+  // snapshot. Back thus retraces the path — node→node, view→view, search — and
+  // only exits the app once the stack is empty.
+  const histStack = useRef<Array<() => void>>([])  // restorers, top = last
+  const sheetBase = useRef<number | null>(null)    // stack depth when the node sheet opened
+  const popTarget = useRef<number | null>(null)    // target depth for a chained "close sheet" unwind
   const { auth, canWrite, isOwner, signIn, signOut } = useAuth()
 
   // Load the docs manifest once; default to the first doc so Docs never opens empty.
@@ -59,65 +63,108 @@ export default function App() {
   // owner — e.g. they signed out — fall back to browse.
   useEffect(() => { if (view === 'inbox' && !isOwner) setView('browse') }, [view, isOwner])
 
-  // Open a dismissible layer: run `setState` to show it and push a history entry
-  // whose closer reverses it, so the back gesture pops it. Skips the push if the
-  // layer is already open (avoids a stray "dead" back press).
-  const openLayer = (alreadyOpen: boolean, show: () => void, close: () => void) => {
-    show()
-    if (!alreadyOpen) {
-      backStack.current.push(close)
-      window.history.pushState({ d: backStack.current.length }, '')
+  // Capture the current navigable state as a restorer. Running it returns the app
+  // to exactly this state (closing/reopening sheets, restoring view + node + search).
+  // The nav drawer is excluded — it's transient and always restored closed.
+  const snapshot = () => {
+    const s = { view, selectedIri, readerSlug, explainer, editIri, captureOpen, search: searchResults }
+    return () => {
+      setView(s.view); setSelectedIri(s.selectedIri); setReaderSlug(s.readerSlug)
+      setExplainer(s.explainer); setEditIri(s.editIri); setCaptureOpen(s.captureOpen)
+      setSearchResults(s.search); setDrawerOpen(false)
     }
   }
 
-  // Dismiss the top layer from a UI control (close button / backdrop) by routing
-  // through history.back(), so the popstate handler does the actual close — the
-  // exact same path as a real back gesture. No-op if nothing is open.
-  const back = () => { if (backStack.current.length) window.history.back() }
+  // A forward step: remember how to return to the current state, then apply the
+  // change. When the drawer is open, reuse its history entry instead of stacking a
+  // new one — picking from the drawer is one logical step, not two.
+  const advance = (apply: () => void, reuseDrawerEntry = false) => {
+    if (!(reuseDrawerEntry && drawerOpen && histStack.current.length)) {
+      histStack.current.push(snapshot())
+      window.history.pushState({ d: histStack.current.length }, '')
+    }
+    apply()
+  }
 
-  // The system back gesture / button fires popstate: close the top layer.
+  // The back gesture/button (or a programmatic unwind) fires popstate: pop one
+  // entry. During a chained "close whole sheet" unwind we skip the intermediate
+  // restores and only apply the final one.
   useEffect(() => {
-    const onPop = () => { backStack.current.pop()?.() }
+    const onPop = () => {
+      const restore = histStack.current.pop()
+      if (popTarget.current != null && histStack.current.length > popTarget.current) {
+        window.history.back()   // keep unwinding
+        return
+      }
+      popTarget.current = null
+      restore?.()
+    }
     window.addEventListener('popstate', onPop)
     return () => window.removeEventListener('popstate', onPop)
   }, [])
+
+  // Clear the node-sheet marker once the sheet is fully closed.
+  useEffect(() => { if (!selectedIri) sheetBase.current = null }, [selectedIri])
+
+  // Dismiss the top layer via history (shared by close buttons and the gesture).
+  const back = () => { if (histStack.current.length) window.history.back() }
+
+  // Fully close the node sheet, collapsing its entire node-path back to the view.
+  const closeSheet = () => {
+    if (sheetBase.current == null || histStack.current.length <= sheetBase.current) { back(); return }
+    popTarget.current = sheetBase.current
+    sheetBase.current = null
+    window.history.back()
+  }
 
   // Node permalink: /app/?n=<slug> opens that node's detail on load (public — no
   // auth needed; the graph is read-open). This is what a shared node link hits.
   useEffect(() => {
     const slug = new URLSearchParams(window.location.search).get('n')
     if (slug) resolveSlug(slug).then((iri) => {
-      if (iri) openLayer(false, () => setSelectedIri(iri), () => setSelectedIri(null))
+      if (iri) { sheetBase.current = histStack.current.length; advance(() => setSelectedIri(iri)) }
     }).catch(() => {})
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   const openExplainer = (slug: string, title?: string) =>
-    openLayer(!!explainer, () => setExplainer({ slug, title }), () => setExplainer(null))
+    advance(() => setExplainer({ slug, title }))
 
-  const handleSelectNode = (iri: string) =>
-    openLayer(!!selectedIri, () => setSelectedIri(iri), () => setSelectedIri(null))
+  // Open a node, or follow a link within the sheet — each is a forward step, so
+  // the back gesture retraces the node path. Mark where a fresh sheet began.
+  const handleSelectNode = (iri: string) => {
+    if (!selectedIri) sheetBase.current = histStack.current.length
+    advance(() => setSelectedIri(iri))
+  }
 
-  // Navigate to a top-level view: collapse every open layer (closing them and
-  // rewinding their history entries in one step) so the view changes cleanly and
-  // the back stack stays in sync, then switch.
+  // Navigate to a top-level view; back returns to the previous view. Skip the
+  // no-op case (tapping the current view with nothing open) to avoid dead entries.
   const navigate = (v: View) => {
-    const depth = backStack.current.length
-    backStack.current = []
-    setSelectedIri(null); setEditIri(null); setExplainer(null)
-    setReaderSlug(null); setCaptureOpen(false); setDrawerOpen(false)
-    setSearchResults(null)
-    setView(v)
-    if (depth) window.history.go(-depth)
+    if (v === view && !drawerOpen && !selectedIri && !searchResults
+        && !readerSlug && !explainer && !editIri && !captureOpen) return
+    advance(() => {
+      setView(v); setSelectedIri(null); setEditIri(null); setExplainer(null)
+      setReaderSlug(null); setCaptureOpen(false); setDrawerOpen(false); setSearchResults(null)
+    }, true)
   }
 
   const handleNavigateToGraph = () => navigate('graph')
 
-  // Selecting a domain or cluster (from the sidebar or a cluster cross-link)
-  // applies it as a browse facet and surfaces the faceted browse.
-  const browseWith = (apply: () => void) => { apply(); navigate('browse') }
+  // Selecting a domain or cluster applies it as a browse facet (a forward step).
+  const browseWith = (apply: () => void) =>
+    advance(() => {
+      apply(); setView('browse'); setSelectedIri(null); setSearchResults(null); setDrawerOpen(false)
+    }, true)
   const handleDomain = (d: string) => browseWith(() => setDomainFilter(d))
   const handleCluster = (slug: string) => browseWith(() => setClusterFilter(slug))
+
+  // Search results are a layer too: the first results push an entry (back clears
+  // search); clearing the box consumes it; subsequent keystrokes just update.
+  const handleResults = (r: SearchResult[] | null) => {
+    if (r !== null && searchResults === null) advance(() => setSearchResults(r))
+    else if (r === null && searchResults !== null) back()
+    else setSearchResults(r)
+  }
 
   // Search is global: when there are results, show them over any view.
   const showSearch = searchResults !== null
@@ -156,17 +203,17 @@ export default function App() {
           onDomain={handleDomain}
           clusterFilter={clusterFilter}
           onCluster={handleCluster}
-          onClusterAgenda={() => setView('clusters')}
+          onClusterAgenda={() => navigate('clusters')}
         />
 
         <div className="content-col">
           <TopBar
-            onResults={setSearchResults}
+            onResults={handleResults}
             onNavigate={navigate}
             auth={auth}
             onSignIn={signIn}
             onSignOut={signOut}
-            onMenu={() => openLayer(drawerOpen, () => setDrawerOpen(true), () => setDrawerOpen(false))}
+            onMenu={() => advance(() => setDrawerOpen(true))}
             hidden={topHidden}
             view={view}
           />
@@ -260,17 +307,17 @@ export default function App() {
       />
 
       {view !== 'ask' && (
-        <Fab onClick={() => openLayer(captureOpen, () => setCaptureOpen(true), () => setCaptureOpen(false))} />
+        <Fab onClick={() => advance(() => setCaptureOpen(true))} />
       )}
 
       {selectedIri && (
         <DetailSheet
           iri={selectedIri}
-          onClose={back}
-          onNavigate={(iri) => setSelectedIri(iri)}
-          onEdit={() => openLayer(!!editIri, () => setEditIri(selectedIri), () => setEditIri(null))}
+          onClose={closeSheet}
+          onNavigate={handleSelectNode}
+          onEdit={() => advance(() => setEditIri(selectedIri))}
           onGraph={handleNavigateToGraph}
-          onListen={(slug) => openLayer(!!readerSlug, () => setReaderSlug(slug), () => setReaderSlug(null))}
+          onListen={(slug) => advance(() => setReaderSlug(slug))}
           onOpenExplainer={openExplainer}
         />
       )}
