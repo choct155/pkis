@@ -26454,3 +26454,7 @@
 ## [2026-06-21] committed | source
 - Committed: livingstone-on-2016 → sources/livingstone-on-2016.md
 - IRI: pkis:source:livingstone-on-2016
+
+## [2026-06-21] committed | source
+- Committed: talts-validating-2018 → sources/talts-validating-2018.md
+- IRI: pkis:source:talts-validating-2018
