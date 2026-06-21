@@ -37,6 +37,10 @@ async function post<T>(path: string, body: Record<string, unknown> = {}): Promis
   const res = await fetch(`${BASE}${path}`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
+    // Send the sealed-session cookie so write routes (require_write) see the
+    // signed-in identity — without this the server treats the call as anonymous
+    // ("sign in required") even when the user is logged in.
+    credentials: 'same-origin',
     body: JSON.stringify(body),
   });
   if (!res.ok) {
@@ -47,7 +51,7 @@ async function post<T>(path: string, body: Record<string, unknown> = {}): Promis
 }
 
 async function get<T>(path: string): Promise<T> {
-  const res = await fetch(`${BASE}${path}`, { method: 'GET' });
+  const res = await fetch(`${BASE}${path}`, { method: 'GET', credentials: 'same-origin' });
   if (!res.ok) {
     const err = await res.json().catch(() => ({ error: res.statusText }));
     throw new ApiError((err as { error?: string }).error ?? res.statusText, res.status);
@@ -87,6 +91,7 @@ export async function askStream(messages: AskMessage[], h: AskStreamHandlers): P
   const res = await fetch(`${BASE}/ask/stream`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
+    credentials: 'same-origin',
     body: JSON.stringify({ messages }),
   });
   if (!res.ok || !res.body) {

@@ -316,7 +316,7 @@ export default function App() {
         onDocSelect={setDocKey}
       />
 
-      {view !== 'ask' && (
+      {canWrite && view !== 'ask' && (
         <Fab onClick={() => advance(() => setCaptureOpen(true))} />
       )}
 

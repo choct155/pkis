@@ -331,13 +331,21 @@ body {
   position: fixed; bottom: calc(24px + env(safe-area-inset-bottom)); right: 20px;
   width: 48px; height: 48px; border-radius: 50%;
   background: var(--accent); color: #fff;
-  display: flex; align-items: center; justify-content: center;
+  display: flex; align-items: center; justify-content: center; gap: 7px;
   font-size: 22px; cursor: pointer;
   box-shadow: 0 4px 16px rgba(229,72,77,0.4);
   transition: transform 0.15s, box-shadow 0.15s;
   z-index: 99; border: none; line-height: 1;
 }
 .fab:hover { transform: scale(1.06); }
+.fab-icon { font-size: 22px; }
+.fab-label { display: none; font-family: var(--mono); font-size: 13px; letter-spacing: 0.04em; }
+/* On desktop, expand to a labeled pill so it reads as an action, not a bare "+". */
+@media (min-width: 900px) {
+  .fab { width: auto; height: 44px; border-radius: 22px; padding: 0 18px 0 15px; }
+  .fab-icon { font-size: 18px; }
+  .fab-label { display: inline; }
+}
 
 /* ── OVERLAY / SHEET BASE ─────────────────────────────────────────────── */
 .sheet-overlay {
