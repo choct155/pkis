@@ -15,7 +15,7 @@ export const NAV_ITEMS: NavItem[] = [
   { view: 'clusters',   icon: '◎', label: 'clusters', },
   { view: 'priority',   icon: '▲', label: 'priority', },
   { view: 'graph',      icon: '⬡', label: 'graph',    },
-  { view: 'explainers', icon: '▦', label: 'explain',  },
+  { view: 'explainers', icon: '▦', label: 'assets',   },
   { view: 'docs',       icon: '▤', label: 'docs',     },
   { view: 'inbox',      icon: '✉', label: 'inbox',    admin: true },
 ]

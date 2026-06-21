@@ -1495,20 +1495,24 @@ def _viz_title(slug: str) -> str:
 
 
 def tool_get_assets(kind: str = None) -> list:
-    """Asset nodes — interactive explainers and self-contained visualizations —
-    optionally filtered by `kind` ('explainer' | 'visualization'). Powers the
-    viewer's gallery and is MCP-retrievable; the full node is available via
-    get_node. `illustrates` = how many nodes link here via `illustrated-by`."""
+    """Asset nodes — anything the owner authors. `format` is how it renders:
+    'interactive' (an HTML `viz:` — explainers/visualizations) or 'writing' (the
+    node's markdown body — e.g. a position-paper). `kind` is the open genre
+    (controlled by wiki/asset_kinds.json), optionally used to filter. Powers the
+    viewer's Assets gallery; the full node (incl. prose body) is in get_node.
+    `illustrates` = how many nodes link here via `illustrated-by`."""
     G = get_graph()
     out = []
     for n in load_all_nodes():
         if n.get("node_type") != "assets":
             continue
         fm = n.get("frontmatter", {})
-        k = fm.get("kind") or "explainer"       # default unknown HTML → explainer (link)
+        viz = fm.get("viz")
+        k = fm.get("kind") or ("explainer" if viz else "writing")
         if kind and k != kind:
             continue
-        viz = fm.get("viz")
+        # `format` is explicit when set; otherwise inferred (a viz ⇒ interactive).
+        fmt = fm.get("format") or ("interactive" if viz else "writing")
         iri = n["iri"]
         illustrates = 0
         if iri in G:
@@ -1521,11 +1525,12 @@ def tool_get_assets(kind: str = None) -> list:
             "iri": iri,
             "title": title,
             "kind": k,
-            "viz": viz,
+            "format": fmt,
+            "viz": viz or "",
             "viz_title": _viz_title(viz) if viz else title,
             # An explicit `viz_url` in frontmatter promotes a Tier-2 dynamic
             # explainer (Flask-backed, e.g. /pkis-api/x/<name>/); otherwise derive
-            # the static-file URL from `viz`.
+            # the static-file URL from `viz`. Writing assets have no viz_url.
             "viz_url": n.get("viz_url") or (f"/pkis-api/viz/{viz}.html" if viz else None),
             "domain": n.get("domain", []),
             "illustrates": illustrates,

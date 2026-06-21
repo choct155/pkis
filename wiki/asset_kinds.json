@@ -1,0 +1,12 @@
+{
+  "_doc": "Controlled-but-expandable vocabulary for an asset's `kind` (genre). An ASSET is anything the owner authors (alone or with Claude); a SOURCE is others' work. `format` is how it renders (system-level, closed); `kind` is what it is (human-level, open). Adding a new kind is DELIBERATE: it must not duplicate/overlap an existing kind here, nor shadow a node knowledge_type (concept, technique, result, framework, problem, principle, source, hypothesis, bridge-note, research-cluster, discovery-stub). When introducing a kind, add it here with a one-line definition. Audit drift with: tools/audit_asset_kinds.py.",
+  "formats": {
+    "interactive": "Rendered as a self-contained HTML artifact (a `viz:` file under wiki/assets/viz/).",
+    "writing": "Rendered as prose (the node's markdown body) in the reader."
+  },
+  "kinds": {
+    "explainer":      { "format": "interactive", "definition": "Interactive HTML teaching artifact; opens full-screen in the reader." },
+    "visualization":  { "format": "interactive", "definition": "Self-contained interactive widget; renders inline." },
+    "position-paper": { "format": "writing",     "definition": "Long-form argued prose advancing a thesis or strategy." }
+  }
+}

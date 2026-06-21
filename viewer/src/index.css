@@ -1591,6 +1591,11 @@ body {
   .explainer-overlay-frame { max-width: 1120px; margin: 0 auto; }
 }
 
+/* Writing assets (format: writing) — prose read inside the overlay chrome. */
+.writing-overlay-scroll { flex: 1; width: 100%; overflow-y: auto; min-height: 0; }
+.writing-article { max-width: 760px; margin: 0 auto; padding: 20px 16px calc(64px + env(safe-area-inset-bottom)); }
+@media (min-width: 900px) { .writing-article { padding: 28px 24px 80px; } }
+
 /* ── Docs view — MkDocs-style tree / article / TOC ─────────────────────────
    Mobile (base): single column. The doc tree lives in the global nav drawer
    (see .nav-drawer); the in-page TOC is hidden (headings reachable by scroll).

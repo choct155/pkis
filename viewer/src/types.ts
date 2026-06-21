@@ -110,14 +110,18 @@ export interface DiscoveryInbox {
   candidates: DiscoveryCandidate[];
 }
 
-// ── Asset (from get_assets) — explainers & visualizations ─────────────────
+// ── Asset (from get_assets) — anything the owner authors ──────────────────
+// `format` = how it renders: 'interactive' (HTML viz) | 'writing' (prose body).
+// `kind` = open genre (governed by wiki/asset_kinds.json): explainer,
+// visualization, position-paper, … filter the gallery by it.
 export type AssetKind = 'explainer' | 'visualization';
 export interface Asset {
   iri: string;
   title: string;
   kind: AssetKind | string;
-  viz: string;          // viz slug -> /pkis-api/viz/<slug>.html
-  viz_title: string;    // the explainer's own <title>
+  format: 'interactive' | 'writing' | string;
+  viz: string;          // viz slug -> /pkis-api/viz/<slug>.html (interactive only)
+  viz_title: string;    // the explainer's own <title> (or node title for writing)
   viz_url: string | null;
   domain: string[];
   illustrates: number;  // how many nodes link here via illustrated-by

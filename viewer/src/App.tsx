@@ -25,6 +25,7 @@ import InboxView from './views/InboxView'
 import AskView from './views/AskView'
 import ReaderView from './views/ReaderView'
 import ExplainerOverlay from './components/ExplainerOverlay'
+import WritingOverlay from './components/WritingOverlay'
 
 export default function App() {
   const [view, setView]               = useState<View>('browse')
@@ -37,6 +38,7 @@ export default function App() {
   const [searchResults, setSearchResults] = useState<SearchResult[] | null>(null)
   const [readerSlug, setReaderSlug] = useState<string | null>(null)
   const [explainer, setExplainer] = useState<{ slug: string; title?: string } | null>(null)
+  const [writing, setWriting] = useState<{ iri: string; title?: string } | null>(null)
   // Mobile nav drawer + docs state (lifted so the drawer can host the doc tree).
   const [drawerOpen, setDrawerOpen] = useState(false)
   const [docManifest, setDocManifest] = useState<DocMeta[] | null>(null)
@@ -70,10 +72,10 @@ export default function App() {
   // to exactly this state (closing/reopening sheets, restoring view + node + search).
   // The nav drawer is excluded — it's transient and always restored closed.
   const snapshot = () => {
-    const s = { view, selectedIri, readerSlug, explainer, editIri, captureOpen, search: searchResults }
+    const s = { view, selectedIri, readerSlug, explainer, writing, editIri, captureOpen, search: searchResults }
     return () => {
       setView(s.view); setSelectedIri(s.selectedIri); setReaderSlug(s.readerSlug)
-      setExplainer(s.explainer); setEditIri(s.editIri); setCaptureOpen(s.captureOpen)
+      setExplainer(s.explainer); setWriting(s.writing); setEditIri(s.editIri); setCaptureOpen(s.captureOpen)
       setSearchResults(s.search); setDrawerOpen(false)
     }
   }
@@ -144,9 +146,9 @@ export default function App() {
   // no-op case (tapping the current view with nothing open) to avoid dead entries.
   const navigate = (v: View) => {
     if (v === view && !drawerOpen && !selectedIri && !searchResults
-        && !readerSlug && !explainer && !editIri && !captureOpen) return
+        && !readerSlug && !explainer && !writing && !editIri && !captureOpen) return
     advance(() => {
-      setView(v); setSelectedIri(null); setEditIri(null); setExplainer(null)
+      setView(v); setSelectedIri(null); setEditIri(null); setExplainer(null); setWriting(null)
       setReaderSlug(null); setCaptureOpen(false); setDrawerOpen(false); setSearchResults(null)
     }, true)
   }
@@ -274,7 +276,12 @@ export default function App() {
                   <GraphView focusIri={selectedIri} onSelectNode={handleSelectNode} />
                 )}
                 {view === 'explainers' && (
-                  <ExplainersView onSelectNode={handleSelectNode} onOpenExplainer={openExplainer} />
+                  <ExplainersView
+                    onSelectNode={handleSelectNode}
+                    onOpenExplainer={openExplainer}
+                    onOpenWriting={(iri, title) =>
+                      advance(() => setWriting({ iri, title }))}
+                  />
                 )}
                 {view === 'docs' && (
                   <DocsView manifest={docManifest} selected={docKey} onSelect={setDocKey} />
@@ -339,6 +346,10 @@ export default function App() {
 
       {explainer && (
         <ExplainerOverlay slug={explainer.slug} title={explainer.title} onClose={back} />
+      )}
+
+      {writing && (
+        <WritingOverlay iri={writing.iri} title={writing.title} onClose={back} />
       )}
 
       {captureOpen && (
