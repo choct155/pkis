@@ -26431,3 +26431,22 @@
 ## [2026-06-21] committed | source
 - Committed: betancourt-a-2021 → sources/betancourt-a-2021.md
 - IRI: pkis:source:betancourt-a-2021
+
+## [2026-06-21] staged | source-stub
+- Staged: talts-validating-2018 (id: 3bdb963e-5a1f-40a8-915a-586728b69e87)
+- Title: Validating Bayesian Inference Algorithms with Simulation-Based Calibration
+- Enrichment: full
+
+## [2026-06-21] staged | source-stub
+- Staged: livingstone-on-2016 (id: 4d514eff-1d15-4633-ba20-5dd55ddb1655)
+- Title: On the Geometric Ergodicity of Hamiltonian Monte Carlo
+- Enrichment: full
+
+## [2026-06-21] staged | source-stub
+- Staged: betancourt-a-2018 (id: 5b6a17ad-89b7-4fc5-9a8a-0bf304bdc809)
+- Title: A Geometric Theory of Higher-Order Automatic Differentiation
+- Enrichment: full
+
+## [2026-06-21] committed | source
+- Committed: betancourt-a-2018 → sources/betancourt-a-2018.md
+- IRI: pkis:source:betancourt-a-2018

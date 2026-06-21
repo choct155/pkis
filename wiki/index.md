@@ -1,6 +1,7 @@
 # PKIS Wiki Index
 
 ## Sources
+- [[betancourt-a-2018]] — A Geometric Theory of Higher-Order Automatic Differentiation () (2026-06-21)
 - [[betancourt-a-2021]] — A Short Review of Ergodicity and Convergence of Markov chain Monte Carlo Estimators () (2026-06-21)
 - [[margossian-efficient-2021]] — Efficient Automatic Differentiation of Implicit Functions () (2026-06-21)
 - [[neal-mcmc-2012]] — MCMC using Hamiltonian dynamics () (2026-06-21)
