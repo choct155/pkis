@@ -26395,3 +26395,21 @@
 
 ## [2026-06-21] edit | edit_node
 - pkis:source:graph-transformation-position-paper: fields=['title', 'authors', 'year', 'status', 'priority'] sections=['Summary', 'Key Knowledge Objects', 'Connection Candidates']
+
+## [2026-06-21] edges | add_connections
+- pkis:source:graph-transformation-position-paper —uses→ continuous-hardening-mixture-framework
+- pkis:source:graph-transformation-position-paper —uses→ multidimensional-retrieval-quality-framework
+- pkis:source:graph-transformation-position-paper —uses→ concept-typed-nodes-dominate-document-nodes-on-coverage
+- pkis:source:graph-transformation-position-paper —uses→ llm-as-judge-silver-gold-ppi-framework
+- pkis:source:graph-transformation-position-paper —uses→ passive-instrumentation-quality-measurement
+- pkis:source:graph-transformation-position-paper —uses→ graph-retrieval-dominates-vector-search-concept-specifi
+- pkis:source:graph-transformation-position-paper —uses→ ontologist-positioning-hardening-stack
+
+## [2026-06-21] staged | source-stub
+- Staged: neal-mcmc-2012 (id: 6bc18bb5-13ba-42b3-b724-66bbd2c95f32)
+- Title: MCMC using Hamiltonian dynamics
+- Enrichment: full
+
+## [2026-06-21] committed | source
+- Committed: neal-mcmc-2012 → sources/neal-mcmc-2012.md
+- IRI: pkis:source:neal-mcmc-2012
