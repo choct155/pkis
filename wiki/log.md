@@ -26413,3 +26413,17 @@
 ## [2026-06-21] committed | source
 - Committed: neal-mcmc-2012 → sources/neal-mcmc-2012.md
 - IRI: pkis:source:neal-mcmc-2012
+
+## [2026-06-21] staged | source-stub
+- Staged: betancourt-a-2021 (id: b71498c8-6006-4850-aff1-09153761790e)
+- Title: A Short Review of Ergodicity and Convergence of Markov chain Monte Carlo Estimators
+- Enrichment: full
+
+## [2026-06-21] staged | source-stub
+- Staged: margossian-efficient-2021 (id: c69a370c-c6ac-4780-a62a-5e9f545ff3ae)
+- Title: Efficient Automatic Differentiation of Implicit Functions
+- Enrichment: full
+
+## [2026-06-21] committed | source
+- Committed: margossian-efficient-2021 → sources/margossian-efficient-2021.md
+- IRI: pkis:source:margossian-efficient-2021
