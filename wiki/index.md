@@ -1,6 +1,7 @@
 # PKIS Wiki Index
 
 ## Sources
+- [[betancourt-a-2021]] — A Short Review of Ergodicity and Convergence of Markov chain Monte Carlo Estimators () (2026-06-21)
 - [[margossian-efficient-2021]] — Efficient Automatic Differentiation of Implicit Functions () (2026-06-21)
 - [[neal-mcmc-2012]] — MCMC using Hamiltonian dynamics () (2026-06-21)
 - [[angelopoulos-ppi-2023]] — PPI++: Efficient Prediction-Powered Inference () (2026-06-20)
