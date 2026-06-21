@@ -21,6 +21,14 @@ tags: []
 title: The Knowledge Graph as Compounding Infrastructure
 toc_source: ''
 type: paper
+uses:
+- continuous-hardening-mixture-framework
+- multidimensional-retrieval-quality-framework
+- concept-typed-nodes-dominate-document-nodes-on-coverage
+- llm-as-judge-silver-gold-ppi-framework
+- passive-instrumentation-quality-measurement
+- graph-retrieval-dominates-vector-search-concept-specifi
+- ontologist-positioning-hardening-stack
 year: 2026
 ---
 
@@ -35,3 +43,12 @@ Five core arguments: (1) amortization result — Eff(q,n) = I(q;n)/tokens(n) dom
 
 ## Connection Candidates
 pkis:framework:continuous-hardening-mixture-framework, pkis:framework:multidimensional-retrieval-quality-framework, pkis:hypothesis:concept-typed-nodes-dominate-document-nodes-on-coverage, pkis:framework:llm-as-judge-silver-gold-ppi-framework, pkis:framework:passive-instrumentation-quality-measurement, pkis:hypothesis:graph-retrieval-dominates-vector-search-concept-specifi, pkis:framework:ontologist-positioning-hardening-stack
+
+## Connections
+- [[ontologist-positioning-hardening-stack]] — uses: Section 7.2 — KG and QMI connection
+- [[graph-retrieval-dominates-vector-search-concept-specifi]] — uses: Section 5.2 — computable comparisons
+- [[passive-instrumentation-quality-measurement]] — uses: Section 3.5 — passive instrumentation
+- [[llm-as-judge-silver-gold-ppi-framework]] — uses: Section 3.4 — cost reduction mechanism
+- [[concept-typed-nodes-dominate-document-nodes-on-coverage]] — uses: Section 2.1 — amortization result
+- [[multidimensional-retrieval-quality-framework]] — uses: Section 3 — quality measurement argument
+- [[continuous-hardening-mixture-framework]] — uses: Section 2.2 — hardening trajectory as mathematical consequence of architecture
