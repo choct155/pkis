@@ -26392,3 +26392,6 @@
 ## [2026-06-20] committed | framework
 - Committed: passive-instrumentation-quality-measurement → frameworks/passive-instrumentation-quality-measurement.md
 - IRI: pkis:framework:passive-instrumentation-quality-measurement
+
+## [2026-06-21] edit | edit_node
+- pkis:source:graph-transformation-position-paper: fields=['title', 'authors', 'year', 'status', 'priority'] sections=['Summary', 'Key Knowledge Objects', 'Connection Candidates']
