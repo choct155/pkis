@@ -10,6 +10,7 @@ Wiki source: /home/pkis/pkis-wiki/wiki/
 """
 
 import os
+import sqlite3
 import sys
 import time
 import threading
@@ -295,43 +296,81 @@ def _get_workos():
     return _workos_client
 
 
-# Refresh coalescing. WorkOS refresh tokens are SINGLE-USE (rotated on each
-# refresh). When the access token expires, a burst of concurrent requests
-# carrying the same cookie would each call session.refresh() with that one
-# refresh token — the first wins, the rest come back unauthenticated, silently
-# logging the user out of those requests (e.g. the inbox 401 while /auth/me and a
-# write succeeded). We coalesce: the first refresh for a given cookie is shared
-# (under a lock) with every concurrent/closely-following request bearing that same
-# cookie, so the token is spent exactly once. Requires a single worker process
-# (gunicorn --workers 1 --threads N) for the cache+lock to cover all requests.
-_REFRESH_LOCK = threading.Lock()
-_REFRESH_CACHE: dict = {}          # sha256(cookie) -> (auth_result, sealed_new, monotonic_ts)
-_REFRESH_TTL = 60.0                 # seconds a shared refresh result stays reusable
+# Refresh coalescing (cross-process). WorkOS refresh tokens are SINGLE-USE
+# (rotated on each refresh). When the access token expires, a burst of concurrent
+# requests carrying the same cookie would each call session.refresh() with that
+# one token — the first wins, the rest come back unauthenticated, silently logging
+# the user out of those requests (e.g. an inbox 401 while /auth/me and a write
+# succeeded). We serialize per cookie through a small SQLite cache (works across
+# gunicorn workers): the first refresh writes the new sealed cookie + resolved
+# identity; concurrent/closely-following requests with the same cookie reuse it
+# instead of spending the already-rotated token again.
+AUTH_REFRESH_DB = Path(os.environ.get(
+    "PKIS_AUTH_REFRESH_DB", "/home/pkis/conversations/auth_refresh.sqlite"))
+_REFRESH_TTL = 90.0  # seconds a shared refresh result stays reusable
+
+
+def _refresh_db():
+    AUTH_REFRESH_DB.parent.mkdir(parents=True, exist_ok=True)
+    conn = sqlite3.connect(str(AUTH_REFRESH_DB), timeout=6)
+    conn.execute("PRAGMA journal_mode=WAL;")
+    conn.execute("PRAGMA busy_timeout=6000;")
+    conn.execute("CREATE TABLE IF NOT EXISTS refresh_cache ("
+                 "cookie_hash TEXT PRIMARY KEY, sealed TEXT, sub TEXT, role TEXT, ts REAL)")
+    return conn
+
+
+def _identity_from_user(user) -> Optional[tuple]:
+    """(sub-or-email, role) from a WorkOS user object, role via the allowlist."""
+    sub = email = ""
+    if user is not None:
+        sub = (getattr(user, "id", None)
+               or (user.get("id") if isinstance(user, dict) else "") or "").strip()
+        email = (getattr(user, "email", None)
+                 or (user.get("email") if isinstance(user, dict) else "") or "").strip().lower()
+    if not (sub or email):
+        return None
+    roles = _load_roles()
+    return (sub or email, roles.get(email) or roles.get(sub) or "reader")
 
 
 def _coalesced_refresh(cookie: str, session):
-    """Refresh a sealed session, sharing the result across concurrent requests that
-    carry the same (old) cookie. Returns (auth_result, new_sealed_cookie) or
-    (None, None) if the refresh genuinely failed (true sign-out)."""
+    """Refresh a sealed session, serialized per cookie across processes via SQLite
+    so the single-use token is spent once. Returns (identity, new_sealed_cookie),
+    or (None, None) on genuine failure (true sign-out)."""
     key = hashlib.sha256(cookie.encode()).hexdigest()
-    now = time.monotonic()
-    with _REFRESH_LOCK:
-        hit = _REFRESH_CACHE.get(key)
-        if hit and (now - hit[2]) < _REFRESH_TTL:
-            return hit[0], hit[1]
+    now = time.time()
+    conn = _refresh_db()
+    try:
+        conn.execute("BEGIN IMMEDIATE")  # serialize refreshers; only contends with other refreshers
+        row = conn.execute(
+            "SELECT sealed, sub, role, ts FROM refresh_cache WHERE cookie_hash=?",
+            (key,)).fetchone()
+        if row and (now - row[3]) < _REFRESH_TTL:
+            conn.commit()
+            return (row[1], row[2]), row[0]
         try:
             ref = session.refresh(cookie_password=WORKOS_COOKIE_PASSWORD)
         except Exception as e:  # noqa: BLE001
+            conn.rollback()
             logger.info("web session refresh failed: %s", e)
             return None, None
         if not getattr(ref, "authenticated", False):
+            conn.rollback()
             return None, None
         sealed = getattr(ref, "sealed_session", None)
-        _REFRESH_CACHE[key] = (ref, sealed, now)
-        # opportunistic prune of expired entries (low-traffic app → stays tiny)
-        for k in [k for k, v in _REFRESH_CACHE.items() if now - v[2] > _REFRESH_TTL]:
-            _REFRESH_CACHE.pop(k, None)
-        return ref, sealed
+        identity = _identity_from_user(getattr(ref, "user", None))
+        if identity is None:
+            conn.rollback()
+            return None, None
+        conn.execute(
+            "INSERT OR REPLACE INTO refresh_cache (cookie_hash, sealed, sub, role, ts) "
+            "VALUES (?,?,?,?,?)", (key, sealed, identity[0], identity[1], now))
+        conn.execute("DELETE FROM refresh_cache WHERE ts < ?", (now - _REFRESH_TTL,))
+        conn.commit()
+        return identity, sealed
+    finally:
+        conn.close()
 
 
 @app.before_request
@@ -352,27 +391,20 @@ def _load_web_session():
         session = _get_workos().user_management.load_sealed_session(
             session_data=cookie, cookie_password=WORKOS_COOKIE_PASSWORD)
         res = session.authenticate()
-        if not getattr(res, "authenticated", False):
-            # access token expired → refresh transparently, coalescing concurrent
-            # refreshes of this cookie so the single-use token is spent exactly once
-            res, sealed = _coalesced_refresh(cookie, session)
-            if res is None:
-                return
-            g.refreshed_session = sealed
-        user = getattr(res, "user", None)
-        sub = email = ""
-        if user is not None:
-            sub = (getattr(user, "id", None)
-                   or (user.get("id") if isinstance(user, dict) else "") or "").strip()
-            email = (getattr(user, "email", None)
-                     or (user.get("email") if isinstance(user, dict) else "") or "").strip().lower()
-        if sub or email:
-            roles = _load_roles()
+        if getattr(res, "authenticated", False):
             # Match by email OR sub (web sealed session has the email claim that the
             # MCP access token lacks) → an allowlisted email works regardless of which
             # login method's sub the web flow produces.
-            role = roles.get(email) or roles.get(sub) or "reader"
-            g.web_identity = (sub or email, role)
+            g.web_identity = _identity_from_user(getattr(res, "user", None))
+        else:
+            # access token expired → refresh transparently, coalescing concurrent
+            # refreshes of this cookie so the single-use token is spent exactly once
+            identity, sealed = _coalesced_refresh(cookie, session)
+            if identity is None:
+                return
+            g.web_identity = identity
+            if sealed:
+                g.refreshed_session = sealed
     except Exception as e:  # noqa: BLE001 — any failure = treat as signed out
         logger.info("web session auth failed: %s", e)
 
