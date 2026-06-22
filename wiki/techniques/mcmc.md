@@ -15,7 +15,7 @@ component_scores:
   principled_mechanism: 4
 coverage: 2
 date_created: 2026-05-20
-date_updated: '2026-06-20'
+date_updated: '2026-06-22'
 domain:
 - bayesian-stats
 id: pkis:technique:mcmc
@@ -40,6 +40,7 @@ sources:
 - kroese-statistical-modeling-ch07
 - lange-applied-probability-ch07
 - tanner-tools-statistical-inference-ch06
+- betancourt-a-2021
 specializes:
 - numerical-vs-simulation-integration
 tags:
