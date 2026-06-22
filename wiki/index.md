@@ -1,6 +1,7 @@
 # PKIS Wiki Index
 
 ## Sources
+- [[bommasani-on-2021]] — On the Opportunities and Risks of Foundation Models () (2026-06-22)
 - [[petropoulos-forecasting-2022]] — Forecasting: theory and practice () (2026-06-22)
 - [[kruschke-bayesian-2021]] — Bayesian Analysis Reporting Guidelines () (2026-06-22)
 - [[talts-validating-2018]] — Validating Bayesian Inference Algorithms with Simulation-Based Calibration () (2026-06-21)

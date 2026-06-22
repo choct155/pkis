@@ -26576,3 +26576,7 @@
 ## [2026-06-22] committed | source
 - Committed: petropoulos-forecasting-2022 → sources/petropoulos-forecasting-2022.md
 - IRI: pkis:source:petropoulos-forecasting-2022
+
+## [2026-06-22] committed | source
+- Committed: bommasani-on-2021 → sources/bommasani-on-2021.md
+- IRI: pkis:source:bommasani-on-2021
