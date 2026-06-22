@@ -26499,3 +26499,6 @@
 
 ## [2026-06-22] edit | edit_node
 - pkis:technique:reverse-mode-ad: fields=['sources'] sections=[]
+
+## [2026-06-22] edit | edit_node
+- pkis:framework:llm-as-judge-silver-gold-ppi-framework: fields=['sources'] sections=[]

@@ -10,11 +10,14 @@ component_scores:
   structure: null
 coverage: 1
 date_created: '2026-06-20'
-date_updated: '2026-06-20'
+date_updated: '2026-06-22'
 domain:
 - bayesian-stats
 - knowledge-representation
 id: pkis:framework:llm-as-judge-silver-gold-ppi-framework
+illustrated-by:
+- mi-estimation-explainer
+- accuracy-calibration-explainer
 knowledge_type: framework
 linked_nodes: []
 maturity: evolving
@@ -24,6 +27,8 @@ sources:
 - angelopoulos-predictionpowered-2023
 - angelopoulos-ppi-2023
 - saadfalcon-ares-2024
+- angelopoulos-ppi-plus-2023
+- angelopoulos-prediction-powered-inference-2023
 tags:
 - evaluation
 - LLM-judge
@@ -34,9 +39,6 @@ tags:
 - continuous-assessment
 title: LLM-as-Judge Silver/Gold Calibration Framework (PPI)
 understanding: 0
-illustrated-by:
-- mi-estimation-explainer
-- accuracy-calibration-explainer
 ---
 
 ## Definition
