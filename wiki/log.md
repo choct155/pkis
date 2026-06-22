@@ -26565,3 +26565,6 @@
 
 ## [2026-06-22] edit | edit_node
 - pkis:concept:probability-theory: fields=['sources'] sections=[]
+
+## [2026-06-22] edit | edit_node
+- pkis:principle:symmetry-as-positive-knowledge: fields=['sources'] sections=[]

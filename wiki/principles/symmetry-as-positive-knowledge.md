@@ -8,7 +8,7 @@ component_scores:
   violations: null
 coverage: 1
 date_created: '2026-06-09'
-date_updated: '2026-06-09'
+date_updated: '2026-06-22'
 domain:
 - bayesian-stats
 - information-theory
@@ -21,6 +21,7 @@ prerequisite-of:
 related_concepts: []
 sources:
 - jaynes-probability-ch10
+- lange-applied-probability-ch02
 specializes:
 - noninformative-prior
 tags:
