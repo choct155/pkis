@@ -26511,3 +26511,6 @@
 
 ## [2026-06-22] edit | edit_node
 - pkis:technique:hamiltonian-monte-carlo: fields=['sources'] sections=[]
+
+## [2026-06-22] edit | edit_node
+- pkis:concept:hamiltonian-mechanics-sampling: fields=['sources'] sections=[]

@@ -12,7 +12,7 @@ component_scores:
   transfer: null
 coverage: 1
 date_created: '2026-06-11'
-date_updated: '2026-06-11'
+date_updated: '2026-06-22'
 domain:
 - physics
 - statistics
@@ -28,6 +28,8 @@ prerequisite-of:
 related_concepts: []
 sources:
 - murphy-pml2-advanced-ch12
+- livingstone-on-2016
+- neal-mcmc-2012
 tags:
 - hamiltonian-dynamics
 - phase-space
