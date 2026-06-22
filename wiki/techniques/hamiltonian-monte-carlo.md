@@ -11,7 +11,7 @@ component_scores:
   principled_mechanism: null
 coverage: 1
 date_created: '2026-06-11'
-date_updated: '2026-06-11'
+date_updated: '2026-06-22'
 domain:
 - statistics
 - machine-learning
@@ -26,6 +26,8 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - murphy-pml2-advanced-ch12
+- livingstone-on-2016
+- neal-mcmc-2012
 specializes:
 - mcmc
 tags:

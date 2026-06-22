@@ -26508,3 +26508,6 @@
 
 ## [2026-06-22] edit | edit_node
 - pkis:technique:hmc: fields=['sources'] sections=[]
+
+## [2026-06-22] edit | edit_node
+- pkis:technique:hamiltonian-monte-carlo: fields=['sources'] sections=[]
