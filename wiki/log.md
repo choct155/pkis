@@ -26526,3 +26526,6 @@
 
 ## [2026-06-22] edit | edit_node
 - pkis:technique:metropolis-algorithm: fields=['sources'] sections=[]
+
+## [2026-06-22] edit | edit_node
+- pkis:technique:fake-data-simulation: fields=['sources'] sections=[]

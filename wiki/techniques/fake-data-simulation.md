@@ -13,7 +13,7 @@ component_scores:
   principled_mechanism: null
 coverage: 1
 date_created: '2026-06-09'
-date_updated: '2026-06-09'
+date_updated: '2026-06-22'
 domain:
 - bayesian-stats
 - statistical-learning
@@ -24,6 +24,7 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - gelman-bda3-ch10
+- talts-validating-2018
 tags:
 - debugging
 - model-checking
