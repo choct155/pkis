@@ -14,7 +14,7 @@ contrasts-with:
 - likelihood-principle
 coverage: 1
 date_created: '2026-06-09'
-date_updated: '2026-06-09'
+date_updated: '2026-06-22'
 domain:
 - bayesian-stats
 - statistical-learning
@@ -30,6 +30,7 @@ related_concepts: []
 sources:
 - gelman-bda3-ch06
 - gelman-bda3-ch14
+- talts-validating-2018
 tags:
 - posterior-predictive
 - model-checking
