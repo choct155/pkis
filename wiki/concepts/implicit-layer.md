@@ -12,7 +12,7 @@ component_scores:
   transfer: null
 coverage: 1
 date_created: '2026-06-11'
-date_updated: '2026-06-11'
+date_updated: '2026-06-22'
 domain:
 - deep-learning
 - optimization
@@ -27,6 +27,7 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - murphy-pml2-advanced-ch16
+- margossian-efficient-2021
 tags:
 - implicit-differentiation
 - deep-equilibrium
