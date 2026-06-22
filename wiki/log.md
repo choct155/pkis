@@ -26538,3 +26538,6 @@
 
 ## [2026-06-22] edit | edit_node
 - pkis:concept:confidence-interval: fields=['sources'] sections=[]
+
+## [2026-06-22] edit | edit_node
+- pkis:concept:supervised-learning: fields=['sources'] sections=[]

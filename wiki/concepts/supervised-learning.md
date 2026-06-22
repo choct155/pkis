@@ -12,7 +12,7 @@ component_scores:
   transfer: null
 coverage: 1
 date_created: '2026-06-09'
-date_updated: '2026-06-09'
+date_updated: '2026-06-22'
 domain:
 - statistical-learning
 id: pkis:concept:supervised-learning
@@ -22,6 +22,7 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - russell-norvig-aima-ch19
+- angelopoulos-prediction-powered-inference-2023
 tags: []
 title: Supervised Learning
 understanding: 0
