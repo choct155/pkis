@@ -12,11 +12,14 @@ component_scores:
   transfer: null
 coverage: 1
 date_created: '2026-06-08'
-date_updated: '2026-06-08'
+date_updated: '2026-06-22'
 domain:
 - bayesian-stats
 - statistical-learning
 id: pkis:concept:random-walk-behaviour-mcmc
+illustrated-by:
+- hmc-explainer
+- mcmc-trace-viz
 knowledge_type: concept
 maturity: evolving
 needs_canonical_source: false
@@ -25,6 +28,7 @@ prerequisite-of:
 related_concepts: []
 sources:
 - mackay-itila-ch30
+- neal-mcmc-2012
 tags:
 - MCMC
 - mixing
@@ -33,9 +37,6 @@ tags:
 - efficiency
 title: Random-Walk Behaviour in MCMC
 understanding: 0
-illustrated-by:
-- hmc-explainer
-- mcmc-trace-viz
 ---
 
 ## Definition
