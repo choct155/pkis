@@ -12,7 +12,7 @@ component_scores:
   transfer: null
 coverage: 1
 date_created: '2026-06-08'
-date_updated: '2026-06-20'
+date_updated: '2026-06-22'
 domain:
 - bayesian-stats
 id: pkis:concept:confidence-interval
@@ -26,6 +26,7 @@ sources:
 - mackay-itila-ch37
 - cassandras-des-intro-ch10
 - kroese-statistical-modeling-ch05
+- angelopoulos-prediction-powered-inference-2023
 tags:
 - frequentist
 - coverage

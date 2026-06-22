@@ -26535,3 +26535,6 @@
 
 ## [2026-06-22] edit | edit_node
 - pkis:technique:posterior-predictive-check: fields=['sources'] sections=[]
+
+## [2026-06-22] edit | edit_node
+- pkis:concept:confidence-interval: fields=['sources'] sections=[]
