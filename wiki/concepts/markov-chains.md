@@ -4,7 +4,7 @@ also_type:
 - framework
 coverage: 2
 date_created: 2026-05-20
-date_updated: '2026-06-20'
+date_updated: '2026-06-22'
 domain:
 - bayesian-stats
 id: pkis:concept:markov-chains
@@ -25,6 +25,8 @@ sources:
 - lange-applied-probability-ch07
 - lange-applied-probability-ch08
 - lange-applied-probability-ch13
+- betancourt-a-2021
+- livingstone-on-2016
 tags:
 - stochastic-processes
 - probability-theory
