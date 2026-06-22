@@ -10,7 +10,7 @@ contrasts-with:
 - data-hunger
 coverage: 1
 date_created: '2026-06-11'
-date_updated: '2026-06-11'
+date_updated: '2026-06-22'
 domain:
 - machine-learning
 - statistics
@@ -22,6 +22,7 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - murphy-pml2-advanced-ch01
+- angelopoulos-ppi-plus-2023
 tags:
 - sample-complexity
 - few-shot
