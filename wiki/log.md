@@ -26523,3 +26523,6 @@
 
 ## [2026-06-22] edit | edit_node
 - pkis:concept:random-walk-behaviour-mcmc: fields=['sources'] sections=[]
+
+## [2026-06-22] edit | edit_node
+- pkis:technique:metropolis-algorithm: fields=['sources'] sections=[]

@@ -7,7 +7,7 @@ contrasts-with:
 - gibbs-sampler
 coverage: 3
 date_created: 2026-05-20
-date_updated: '2026-06-20'
+date_updated: '2026-06-22'
 domain:
 - bayesian-stats
 id: pkis:technique:metropolis-algorithm
@@ -25,6 +25,7 @@ sources:
 - '[[kroese-statistical-modeling]]'
 - '[[lange-applied-probability]]'
 - tanner-tools-statistical-inference-ch06
+- neal-mcmc-2012
 specializes:
 - mcmc
 tags:
