@@ -26568,3 +26568,7 @@
 
 ## [2026-06-22] edit | edit_node
 - pkis:principle:symmetry-as-positive-knowledge: fields=['sources'] sections=[]
+
+## [2026-06-22] committed | source
+- Committed: kruschke-bayesian-2021 → sources/kruschke-bayesian-2021.md
+- IRI: pkis:source:kruschke-bayesian-2021

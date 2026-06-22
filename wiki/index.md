@@ -1,6 +1,7 @@
 # PKIS Wiki Index
 
 ## Sources
+- [[kruschke-bayesian-2021]] — Bayesian Analysis Reporting Guidelines () (2026-06-22)
 - [[talts-validating-2018]] — Validating Bayesian Inference Algorithms with Simulation-Based Calibration () (2026-06-21)
 - [[livingstone-on-2016]] — On the Geometric Ergodicity of Hamiltonian Monte Carlo () (2026-06-21)
 - [[betancourt-a-2018]] — A Geometric Theory of Higher-Order Automatic Differentiation () (2026-06-21)
