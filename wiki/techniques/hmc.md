@@ -16,13 +16,16 @@ contrasts-with:
 - gibbs-sampler
 coverage: 1
 date_created: '2026-06-07'
-date_updated: '2026-06-08'
+date_updated: '2026-06-22'
 domain:
 - bayesian-stats
 - optimization
 extends:
 - mcmc
 id: pkis:technique:hmc
+illustrated-by:
+- typical-set-explainer
+- hmc-explainer
 knowledge_type: technique
 maturity: evolving
 needs_canonical_source: false
@@ -31,6 +34,8 @@ score_date: '2026-06-07'
 sources:
 - betancourt-hmc
 - betancourt-hmcgeometric
+- livingstone-on-2016
+- neal-mcmc-2012
 tags:
 - MCMC
 - posterior-sampling
@@ -46,9 +51,6 @@ understanding: 2
 uses:
 - hamiltonian-classical-mechanics
 - typical-set
-illustrated-by:
-- typical-set-explainer
-- hmc-explainer
 ---
 
 ## Definition

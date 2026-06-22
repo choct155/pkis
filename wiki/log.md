@@ -26505,3 +26505,6 @@
 
 ## [2026-06-22] edit | edit_node
 - pkis:problem:statistical-efficiency-learning: fields=['sources'] sections=[]
+
+## [2026-06-22] edit | edit_node
+- pkis:technique:hmc: fields=['sources'] sections=[]
