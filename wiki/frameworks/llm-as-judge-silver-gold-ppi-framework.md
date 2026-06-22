@@ -24,11 +24,9 @@ maturity: evolving
 needs_canonical_source: false
 related_concepts: []
 sources:
-- angelopoulos-predictionpowered-2023
-- angelopoulos-ppi-2023
-- saadfalcon-ares-2024
-- angelopoulos-ppi-plus-2023
 - angelopoulos-prediction-powered-inference-2023
+- angelopoulos-ppi-plus-2023
+- saadfalcon-ares-2024
 tags:
 - evaluation
 - LLM-judge

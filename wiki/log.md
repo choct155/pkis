@@ -26358,22 +26358,22 @@
 - IRI: pkis:bridge-note:bn-20260620-the-multidimensional-retrieval-quality-framework
 
 ## [2026-06-20] staged | source-stub
-- Staged: angelopoulos-predictionpowered-2023 (id: 17abfa20-ccc3-4335-96e7-20ebd4f1394b)
+- Staged: angelopoulos-prediction-powered-inference-2023 (id: 17abfa20-ccc3-4335-96e7-20ebd4f1394b)
 - Title: Prediction-Powered Inference
 - Enrichment: minimal
 
 ## [2026-06-20] committed | source
-- Committed: angelopoulos-predictionpowered-2023 → sources/angelopoulos-predictionpowered-2023.md
-- IRI: pkis:source:angelopoulos-predictionpowered-2023
+- Committed: angelopoulos-prediction-powered-inference-2023 → sources/angelopoulos-prediction-powered-inference-2023.md
+- IRI: pkis:source:angelopoulos-prediction-powered-inference-2023
 
 ## [2026-06-20] staged | source-stub
-- Staged: angelopoulos-ppi-2023 (id: 929d309e-728d-4c53-94cd-da9c0a5df0ff)
+- Staged: angelopoulos-ppi-plus-2023 (id: 929d309e-728d-4c53-94cd-da9c0a5df0ff)
 - Title: PPI++: Efficient Prediction-Powered Inference
 - Enrichment: full
 
 ## [2026-06-20] committed | source
-- Committed: angelopoulos-ppi-2023 → sources/angelopoulos-ppi-2023.md
-- IRI: pkis:source:angelopoulos-ppi-2023
+- Committed: angelopoulos-ppi-plus-2023 → sources/angelopoulos-ppi-plus-2023.md
+- IRI: pkis:source:angelopoulos-ppi-plus-2023
 
 ## [2026-06-20] staged | node-stub (framework)
 - Staged: llm-as-judge-silver-gold-ppi-framework (id: 416bd86c-4eb9-4a83-80f5-3c60f46d3a6a)
@@ -26480,10 +26480,10 @@
 - Enrichment: full
 
 ## [2026-06-21] edit | edit_node
-- pkis:source:angelopoulos-predictionpowered-2023: fields=['source_url', 'status', 'priority'] sections=[]
+- pkis:source:angelopoulos-prediction-powered-inference-2023: fields=['source_url', 'status', 'priority'] sections=[]
 
 ## [2026-06-21] edit | edit_node
-- pkis:source:angelopoulos-ppi-2023: fields=['priority', 'source_url', 'status'] sections=[]
+- pkis:source:angelopoulos-ppi-plus-2023: fields=['priority', 'source_url', 'status'] sections=[]
 
 ## [2026-06-22] edit | edit_node
 - pkis:concept:autodiff: fields=['sources'] sections=[]
