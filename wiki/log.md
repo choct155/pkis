@@ -26550,3 +26550,6 @@
 
 ## [2026-06-22] edit | edit_node
 - pkis:concept:implicit-layer: fields=['sources'] sections=[]
+
+## [2026-06-22] edit | edit_node
+- pkis:result:ergodic-theorem-markov: fields=['sources'] sections=[]
