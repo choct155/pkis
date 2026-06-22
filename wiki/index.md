@@ -1,6 +1,7 @@
 # PKIS Wiki Index
 
 ## Sources
+- [[petropoulos-forecasting-2022]] — Forecasting: theory and practice () (2026-06-22)
 - [[kruschke-bayesian-2021]] — Bayesian Analysis Reporting Guidelines () (2026-06-22)
 - [[talts-validating-2018]] — Validating Bayesian Inference Algorithms with Simulation-Based Calibration () (2026-06-21)
 - [[livingstone-on-2016]] — On the Geometric Ergodicity of Hamiltonian Monte Carlo () (2026-06-21)

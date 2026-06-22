@@ -26572,3 +26572,7 @@
 ## [2026-06-22] committed | source
 - Committed: kruschke-bayesian-2021 → sources/kruschke-bayesian-2021.md
 - IRI: pkis:source:kruschke-bayesian-2021
+
+## [2026-06-22] committed | source
+- Committed: petropoulos-forecasting-2022 → sources/petropoulos-forecasting-2022.md
+- IRI: pkis:source:petropoulos-forecasting-2022
