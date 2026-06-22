@@ -12,7 +12,7 @@ contrasts-with:
 - hypothesis-testing
 coverage: 1
 date_created: '2026-06-09'
-date_updated: '2026-06-09'
+date_updated: '2026-06-22'
 domain:
 - bayesian-stats
 id: pkis:principle:frequentist-evaluation-of-bayesian-methods
@@ -22,6 +22,8 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - gelman-bda3-ch04
+- angelopoulos-prediction-powered-inference-2023
+- talts-validating-2018
 tags:
 - operating-characteristics
 - coverage

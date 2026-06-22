@@ -26529,3 +26529,6 @@
 
 ## [2026-06-22] edit | edit_node
 - pkis:technique:fake-data-simulation: fields=['sources'] sections=[]
+
+## [2026-06-22] edit | edit_node
+- pkis:principle:frequentist-evaluation-of-bayesian-methods: fields=['sources'] sections=[]
