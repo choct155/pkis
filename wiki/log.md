@@ -26541,3 +26541,6 @@
 
 ## [2026-06-22] edit | edit_node
 - pkis:concept:supervised-learning: fields=['sources'] sections=[]
+
+## [2026-06-22] edit | edit_node
+- pkis:concept:ergodicity-markov-chain-mcmc: fields=['sources'] sections=[]

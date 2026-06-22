@@ -12,7 +12,7 @@ component_scores:
   transfer: null
 coverage: 1
 date_created: '2026-06-11'
-date_updated: '2026-06-20'
+date_updated: '2026-06-22'
 domain:
 - statistics
 - probability-theory
@@ -28,6 +28,8 @@ sources:
 - betancourt-short-2021
 - cassandras-des-intro-ch07
 - lange-applied-probability-ch07
+- betancourt-a-2021
+- livingstone-on-2016
 specializes:
 - markov-chains
 tags:
