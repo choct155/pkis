@@ -12,7 +12,7 @@ component_scores:
   transfer: null
 coverage: 1
 date_created: '2026-06-11'
-date_updated: '2026-06-11'
+date_updated: '2026-06-22'
 domain:
 - MCMC
 - bayesian-computation
@@ -29,6 +29,7 @@ prerequisite-of:
 related_concepts: []
 sources:
 - murphy-pml2-advanced-ch07
+- neal-mcmc-2012
 tags:
 - proposal
 - Metropolis-Hastings

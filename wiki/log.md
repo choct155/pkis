@@ -26514,3 +26514,6 @@
 
 ## [2026-06-22] edit | edit_node
 - pkis:concept:hamiltonian-mechanics-sampling: fields=['sources'] sections=[]
+
+## [2026-06-22] edit | edit_node
+- pkis:concept:mcmc-proposal-distribution: fields=['sources'] sections=[]
