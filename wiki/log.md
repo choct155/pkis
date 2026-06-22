@@ -26493,3 +26493,6 @@
 
 ## [2026-06-22] edit | edit_node
 - pkis:concept:vector-calculus: fields=['sources'] sections=[]
+
+## [2026-06-22] edit | edit_node
+- pkis:technique:forward-mode-ad: fields=['sources'] sections=[]
