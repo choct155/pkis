@@ -12,7 +12,7 @@ component_scores:
   transfer: null
 coverage: 1
 date_created: '2026-06-09'
-date_updated: '2026-06-09'
+date_updated: '2026-06-22'
 domain:
 - bayesian-stats
 - statistical-learning
@@ -23,6 +23,7 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - deisenroth-mml-ch06
+- lange-applied-probability-ch02
 tags: []
 title: Expectation and Variance
 understanding: 0
