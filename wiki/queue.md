@@ -1,6 +1,8 @@
 # Reading Queue
 
 ### High
+- [ ] [[angelopoulos-ppi-plus-2023]] — PRODUCTION variant of PPI. Read SECOND. Adds the lambda power-tuning coefficient that adapts to predictor quality and GUARANTEES you are never worse than gold-only inference.
+- [ ] [[angelopoulos-prediction-powered-inference-2023]] — FOUNDATIONAL PPI estimator + theoretical argument. Read FIRST. Debiases ML-predicted labels with a small gold sample to give valid CIs — the rigorous backbone for the silver/gold calibration explainer (Stage 4).
 - [ ] [[betancourt-hmc]] — Conceptual introduction to HMC. Focus: typical-set motivation, geometric argument for why HMC beats random-walk samplers. Directly supports the new hmc technique node; prereq for understanding divergent transitions + non-centered parameterization formally.
 - [ ] [[kroese-statistical-modeling-ch07]] — Covers MCMC + Gibbs (presents Gibbs as a special case of MH — supports the epistemological-anchors bridge note). Formal treatment to elevate understanding on mcmc and gibbs-sampler after today's session.
 - [ ] [[blei-vi-review]] — Gateway node for the VI cluster (highest lb). Formal VI treatment needed to elevate understanding on variational-inference, coordinate-ascent-vi, mean-field-approximation after today's intuition-level session. Read alongside Mohamed et al.
@@ -89,3 +91,11 @@
 ### High
 
 ### Normal
+
+## Queue
+- [ ] None —  (captured: 2026-06-21)
+- [ ] None —  (captured: 2026-06-21)
+- [ ] kruschke-bayesian-2021 — fills frontier gap “Directed Graphical Models (Bayesian Networks)” (coverage 6/5, understanding 0/5); sim 0.73; cites your “Variational Inference: A Review for Statisticians”; Nature Human Behaviour 2021, cited 409× (captured: 2026-06-21)
+- [ ] petropoulos-forecasting-2022 — fills frontier gap “Directed Graphical Models (Bayesian Networks)” (coverage 6/5, understanding 0/5); sim 0.70; cites your “Variational Inference: A Review for Statisticians”; BOA (University of Milano-Bicocca) 2022, cited 824× (captured: 2026-06-21)
+- [ ] bommasani-on-2021 — fills frontier gap “Neural Networks (Feedforward)” (coverage 3/5, understanding 0/5); sim 0.73; cites your “Neural Discrete Representation Learning (VQ-VAE)”; arXiv (Cornell University) 2021, cited 2183× (captured: 2026-06-21)
+- [ ] jospin-handson-2022 — fills frontier gap “Neural Networks (Feedforward)” (coverage 3/5, understanding 0/5); sim 0.75; cites your “Variational Inference: A Review for Statisticians”; IEEE Computational Intelligence Magazine 2022, cited 820× (captured: 2026-06-21)
