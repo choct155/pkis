@@ -4,7 +4,7 @@ also_type:
 - framework
 coverage: 3
 date_created: 2026-05-20
-date_updated: '2026-06-20'
+date_updated: '2026-06-22'
 domain:
 - bayesian-stats
 - statistical-learning
@@ -29,6 +29,7 @@ sources:
 - kroese-statistical-modeling-ch02
 - lange-applied-probability-ch01
 - lange-applied-probability-ch15
+- lange-applied-probability-ch02
 tags:
 - mathematical-foundations
 - measure-theory
