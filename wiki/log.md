@@ -26484,3 +26484,6 @@
 
 ## [2026-06-21] edit | edit_node
 - pkis:source:angelopoulos-ppi-2023: fields=['priority', 'source_url', 'status'] sections=[]
+
+## [2026-06-22] edit | edit_node
+- pkis:concept:autodiff: fields=['sources'] sections=[]

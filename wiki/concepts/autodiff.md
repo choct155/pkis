@@ -12,7 +12,7 @@ component_scores:
   transfer: null
 coverage: 1
 date_created: '2026-06-11'
-date_updated: '2026-06-11'
+date_updated: '2026-06-22'
 domain:
 - machine-learning
 - deep-learning
@@ -28,6 +28,8 @@ prerequisite-of:
 related_concepts: []
 sources:
 - murphy-pml1-intro-ch13
+- betancourt-a-2018
+- margossian-efficient-2021
 tags:
 - gradient
 - computation-graph
