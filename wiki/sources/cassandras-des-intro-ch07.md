@@ -1,7 +1,8 @@
 ---
+abbrev: "DES"
 id: "pkis:source:cassandras-des-intro-ch07"
 aliases: []
-title: "Ch. 7 — Markov Chains"
+title: "[DES Cassandras & Lafortune] Ch. 7 — Markov Chains"
 authors: "Christos G. Cassandras, Stéphane Lafortune"
 year: 2021
 type: book-chapter

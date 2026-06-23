@@ -1,7 +1,8 @@
 ---
+abbrev: "AppProb"
 id: "pkis:source:lange-applied-probability-ch09"
 aliases: []
-title: "Ch. 9 — Branching Processes"
+title: "[AppProb Lange] Ch. 9 — Branching Processes"
 authors: "Kenneth Lange"
 year: 2024
 type: book-chapter

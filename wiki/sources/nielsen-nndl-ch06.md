@@ -1,7 +1,8 @@
 ---
+abbrev: "NNDL"
 id: "pkis:source:nielsen-nndl-ch06"
 aliases: []
-title: "Ch. 6 — Deep learning"
+title: "[NNDL Nielsen] Ch. 6 — Deep learning"
 authors: "Michael A. Nielsen"
 year: 2015
 type: book-chapter

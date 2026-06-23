@@ -1,4 +1,5 @@
 ---
+abbrev: "PML2"
 aliases: []
 authors: Kevin P. Murphy
 coverage: 0
@@ -16,7 +17,7 @@ tags:
 - bayesian
 - inference
 - textbook
-title: "Ch. 34 \u2014 Decision making under uncertainty"
+title: "[PML2 Murphy] Ch. 34 — Decision making under uncertainty"
 type: chapter
 understanding: 0
 year: 2023

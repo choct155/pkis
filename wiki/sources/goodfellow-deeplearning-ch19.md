@@ -1,4 +1,5 @@
 ---
+abbrev: "DLB"
 aliases: []
 authors: Ian Goodfellow, Yoshua Bengio, Aaron Courville
 coverage: 0
@@ -14,7 +15,7 @@ tags:
 - neural-networks
 - representation-learning
 - textbook
-title: "Ch. 19 \u2014 Approximate Inference"
+title: "[DLB Goodfellow et al] Ch. 19 — Approximate Inference"
 type: chapter
 understanding: 0
 year: 2016

@@ -1,4 +1,5 @@
 ---
+abbrev: "ITILA"
 aliases: []
 authors: David J. C. MacKay
 coverage: 0
@@ -13,7 +14,7 @@ status: unread
 tags:
 - information-theory
 - mackay-itila
-title: Ch. 21 — Exact Inference by Complete Enumeration
+title: "[ITILA MacKay] Ch. 21 — Exact Inference by Complete Enumeration"
 type: chapter
 understanding: 0
 year: 2003

@@ -1,7 +1,8 @@
 ---
+abbrev: "SWWO"
 id: "pkis:source:allemang-semantic-web-ch13"
 aliases: []
-title: "Ch. 13 — Ontologies on the Web — Putting it all together"
+title: "[SWWO Allemang & Hendler] Ch. 13 — Ontologies on the Web — Putting it all together"
 authors: "Dean Allemang, Jim Hendler"
 year: 2011
 type: book-chapter

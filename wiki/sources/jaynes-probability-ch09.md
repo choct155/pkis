@@ -1,4 +1,5 @@
 ---
+abbrev: "PTLoS"
 aliases: []
 authors: E. T. Jaynes
 coverage: 0
@@ -13,7 +14,7 @@ tags:
 - bayesian
 - probability-theory
 - jaynes-probability
-title: 'Ch. 9 — Repetitive Experiments: Probability and Frequency'
+title: "[PTLoS Jaynes] Ch. 9 — Repetitive Experiments: Probability and Frequency"
 type: chapter
 understanding: 0
 year: 2003

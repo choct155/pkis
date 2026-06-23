@@ -1,7 +1,8 @@
 ---
+abbrev: "ESL"
 id: "pkis:source:hastie-esl-ch04"
 aliases: []
-title: "Ch. 4 — Linear Methods for Classification"
+title: "[ESL Hastie et al] Ch. 4 — Linear Methods for Classification"
 authors: "Trevor Hastie, Robert Tibshirani, Jerome Friedman"
 year: 2009
 type: book-chapter

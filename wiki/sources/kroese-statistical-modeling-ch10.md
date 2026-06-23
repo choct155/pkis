@@ -1,7 +1,8 @@
 ---
+abbrev: "SMC"
 id: "pkis:source:kroese-statistical-modeling-ch10"
 aliases: []
-title: "Ch. 10 — Generalized Linear Models"
+title: "[SMC Chan & Kroese] Ch. 10 — Generalized Linear Models"
 authors: ["Joshua C.C. Chan", "Dirk P. Kroese"]
 year: 2025
 type: book-chapter

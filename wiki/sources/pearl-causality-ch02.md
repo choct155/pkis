@@ -1,7 +1,8 @@
 ---
+abbrev: "Causality"
 id: "pkis:source:pearl-causality-ch02"
 aliases: []
-title: "Causality Ch. 2: A Theory of Inferred Causation"
+title: "[Causality] Causality Ch. 2: A Theory of Inferred Causation"
 knowledge_type: source
 source_type: book-chapter
 parent_book: "[[pearl-causality]]"

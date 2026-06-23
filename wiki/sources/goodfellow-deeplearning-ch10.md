@@ -1,4 +1,5 @@
 ---
+abbrev: "DLB"
 aliases: []
 authors: Ian Goodfellow, Yoshua Bengio, Aaron Courville
 coverage: 0
@@ -14,7 +15,7 @@ tags:
 - neural-networks
 - representation-learning
 - textbook
-title: "Ch. 10 \u2014 Sequence Modeling: Recurrent and Recursive Nets"
+title: "[DLB Goodfellow et al] Ch. 10 — Sequence Modeling: Recurrent and Recursive Nets"
 type: chapter
 understanding: 0
 year: 2016

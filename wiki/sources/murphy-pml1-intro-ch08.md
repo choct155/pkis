@@ -1,4 +1,5 @@
 ---
+abbrev: "PML1"
 aliases: []
 authors: Kevin P. Murphy
 coverage: 0
@@ -16,7 +17,7 @@ tags:
 - bayesian
 - deep-learning
 - textbook
-title: "Ch. 08 \u2014 Optimization"
+title: "[PML1 Murphy] Ch. 08 — Optimization"
 type: chapter
 understanding: 0
 year: 2022

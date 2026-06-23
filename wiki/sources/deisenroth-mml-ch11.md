@@ -1,7 +1,8 @@
 ---
+abbrev: "MML"
 id: "pkis:source:deisenroth-mml-ch11"
 aliases: []
-title: "Ch. 11 — Density Estimation with Gaussian Mixture Models"
+title: "[MML Deisenroth et al] Ch. 11 — Density Estimation with Gaussian Mixture Models"
 authors: "Marc Peter Deisenroth, A. Aldo Faisal, Cheng Soon Ong"
 year: 2020
 type: book-chapter

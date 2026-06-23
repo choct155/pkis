@@ -1,4 +1,5 @@
 ---
+abbrev: "Mixtape"
 aliases: []
 authors: Scott Cunningham
 chapter: 11
@@ -18,7 +19,7 @@ tags:
 - placebo-tests
 - donor-pool
 - abadie
-title: Ch. 11 — Synthetic Control
+title: "[Mixtape Cunningham] Ch. 11 — Synthetic Control"
 type: book-chapter
 year: 2021
 ---

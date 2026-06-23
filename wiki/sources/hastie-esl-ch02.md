@@ -1,7 +1,8 @@
 ---
+abbrev: "ESL"
 id: "pkis:source:hastie-esl-ch02"
 aliases: []
-title: "Ch. 2 — Overview of Supervised Learning"
+title: "[ESL Hastie et al] Ch. 2 — Overview of Supervised Learning"
 authors: "Trevor Hastie, Robert Tibshirani, Jerome Friedman"
 year: 2009
 type: book-chapter

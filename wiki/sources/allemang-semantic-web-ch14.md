@@ -1,7 +1,8 @@
 ---
+abbrev: "SWWO"
 id: "pkis:source:allemang-semantic-web-ch14"
 aliases: []
-title: "Ch. 14 — Good and bad modeling practices"
+title: "[SWWO Allemang & Hendler] Ch. 14 — Good and bad modeling practices"
 authors: "Dean Allemang, Jim Hendler"
 year: 2011
 type: book-chapter

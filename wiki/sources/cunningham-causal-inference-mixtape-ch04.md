@@ -1,4 +1,5 @@
 ---
+abbrev: "Mixtape"
 aliases: []
 authors: Scott Cunningham
 chapter: 4
@@ -24,7 +25,7 @@ tags:
 - confounding
 - identification
 - pearl
-title: Ch. 4 — Directed Acyclical Graphs
+title: "[Mixtape Cunningham] Ch. 4 — Directed Acyclical Graphs"
 type: book-chapter
 year: 2021
 ---

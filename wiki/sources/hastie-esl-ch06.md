@@ -1,7 +1,8 @@
 ---
+abbrev: "ESL"
 id: "pkis:source:hastie-esl-ch06"
 aliases: []
-title: "Ch. 6 — Kernel Smoothing Methods"
+title: "[ESL Hastie et al] Ch. 6 — Kernel Smoothing Methods"
 authors: "Trevor Hastie, Robert Tibshirani, Jerome Friedman"
 year: 2009
 type: book-chapter

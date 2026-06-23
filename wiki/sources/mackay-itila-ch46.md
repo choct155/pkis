@@ -1,4 +1,5 @@
 ---
+abbrev: "ITILA"
 aliases: []
 authors: David J. C. MacKay
 coverage: 0
@@ -12,7 +13,7 @@ status: unread
 tags:
 - information-theory
 - mackay-itila
-title: Ch. 46 — Deconvolution
+title: "[ITILA MacKay] Ch. 46 — Deconvolution"
 type: chapter
 understanding: 0
 year: 2003

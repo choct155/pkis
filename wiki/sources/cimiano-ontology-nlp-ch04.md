@@ -1,7 +1,8 @@
 ---
+abbrev: "OBI"
 id: "pkis:source:cimiano-ontology-nlp-ch04"
 aliases: []
-title: "Ch. 4 — Ontology Lexica"
+title: "[OBI Cimiano et al] Ch. 4 — Ontology Lexica"
 authors: "Philipp Cimiano, Christina Unger, John McCrae"
 year: 2014
 type: book-chapter

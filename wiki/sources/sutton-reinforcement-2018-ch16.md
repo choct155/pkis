@@ -1,4 +1,5 @@
 ---
+abbrev: "RL"
 applies:
 - markov-decision-processes
 - random-forests
@@ -19,7 +20,7 @@ parent_book: pkis:source:sutton-reinforcement-2018
 status: unread
 tags:
 - sutton-reinforcement-2018
-title: Ch. 16 — Applications and Case Studies
+title: "[RL Sutton & Barto] Ch. 16 — Applications and Case Studies"
 type: chapter
 understanding: 0
 year: 2018

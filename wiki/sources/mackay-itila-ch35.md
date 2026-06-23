@@ -1,4 +1,5 @@
 ---
+abbrev: "ITILA"
 aliases: []
 authors: David J. C. MacKay
 coverage: 0
@@ -13,7 +14,7 @@ status: unread
 tags:
 - information-theory
 - mackay-itila
-title: Ch. 35 — Random Inference Topics
+title: "[ITILA MacKay] Ch. 35 — Random Inference Topics"
 type: chapter
 understanding: 0
 year: 2003

@@ -1,7 +1,8 @@
 ---
+abbrev: "TSI"
 id: "pkis:source:tanner-tools-statistical-inference-ch03"
 aliases: []
-title: "Ch. 3 — Nonnormal Approximations to Likelihoods and to Posteriors"
+title: "[TSI Tanner] Ch. 3 — Nonnormal Approximations to Likelihoods and to Posteriors"
 authors: ["Martin A. Tanner"]
 year: 1993
 type: book-chapter

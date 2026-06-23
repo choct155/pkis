@@ -1,4 +1,5 @@
 ---
+abbrev: "PRML"
 aliases: []
 authors: Christopher M. Bishop
 coverage: 0
@@ -14,7 +15,7 @@ tags:
 - bayesian
 - pattern-recognition
 - textbook
-title: "Ch. 07 \u2014 Sparse Kernel Machines"
+title: "[PRML Bishop] Ch. 07 — Sparse Kernel Machines"
 type: chapter
 understanding: 0
 year: 2006

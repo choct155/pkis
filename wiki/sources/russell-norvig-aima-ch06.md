@@ -1,4 +1,5 @@
 ---
+abbrev: "AIMA"
 authors: Stuart Russell, Peter Norvig
 coverage: 0
 domain:
@@ -11,7 +12,7 @@ parent_book: pkis:source:russell-norvig-aima
 status: unread
 tags:
 - russell-norvig-aima
-title: Ch. 6 — Constraint Satisfaction Problems
+title: "[AIMA Russell & Norvig] Ch. 6 — Constraint Satisfaction Problems"
 type: chapter
 understanding: 0
 year: 2020

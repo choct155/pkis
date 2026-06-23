@@ -1,7 +1,8 @@
 ---
+abbrev: "OBI"
 id: "pkis:source:cimiano-ontology-nlp-ch01"
 aliases: []
-title: "Ch. 1 — Introduction"
+title: "[OBI Cimiano et al] Ch. 1 — Introduction"
 authors: "Philipp Cimiano, Christina Unger, John McCrae"
 year: 2014
 type: book-chapter

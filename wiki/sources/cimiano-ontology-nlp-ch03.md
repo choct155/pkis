@@ -1,7 +1,8 @@
 ---
+abbrev: "OBI"
 id: "pkis:source:cimiano-ontology-nlp-ch03"
 aliases: []
-title: "Ch. 3 — Linguistic Formalisms"
+title: "[OBI Cimiano et al] Ch. 3 — Linguistic Formalisms"
 authors: "Philipp Cimiano, Christina Unger, John McCrae"
 year: 2014
 type: book-chapter

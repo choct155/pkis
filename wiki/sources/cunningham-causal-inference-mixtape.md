@@ -1,4 +1,5 @@
 ---
+abbrev: "Mixtape"
 aliases:
 - 'Causal Inference: The Mixtape'
 - Mixtape
@@ -39,7 +40,7 @@ tags:
 - econometrics
 - program-evaluation
 - observational-studies
-title: 'Causal Inference: The Mixtape'
+title: "[Mixtape Cunningham] Causal Inference: The Mixtape"
 toc_source: manual
 type: book
 year: 2021
@@ -104,22 +105,18 @@ A distinctive feature is Cunningham's use of hip-hop epigraphs throughout, reinf
 - [[omitted-variable-bias]] (if new node created) — prerequisite-of: understanding OVB is prerequisite for understanding why each strategy works
 
 ## Chapters
-
-| Ch | Stub | Title |
-|---|---|---|
-| 1 | [[cunningham-causal-inference-mixtape-ch01]] | Introduction |
-| 2 | [[cunningham-causal-inference-mixtape-ch02]] | Probability Theory and Statistics Review |
-| 3 | [[cunningham-causal-inference-mixtape-ch03]] | Properties of Regression |
-| 4 | [[cunningham-causal-inference-mixtape-ch04]] | Directed Acyclical Graphs |
-| 5 | [[cunningham-causal-inference-mixtape-ch05]] | Potential Outcomes Causal Model |
-| 6 | [[cunningham-causal-inference-mixtape-ch06]] | Matching and Subclassification |
-| 7 | [[cunningham-causal-inference-mixtape-ch07]] | Regression Discontinuity |
-| 8 | [[cunningham-causal-inference-mixtape-ch08]] | Instrumental Variables |
-| 9 | [[cunningham-causal-inference-mixtape-ch09]] | Panel Data |
-| 10 | [[cunningham-causal-inference-mixtape-ch10]] | Differences-in-Differences |
-| 11 | [[cunningham-causal-inference-mixtape-ch11]] | Synthetic Control |
-| 12 | [[cunningham-causal-inference-mixtape-ch12]] | Conclusion |
-
+- [[cunningham-causal-inference-mixtape-ch01]] — Ch. 1 — Introduction
+- [[cunningham-causal-inference-mixtape-ch02]] — Ch. 2 — Probability Theory and Statistics Review
+- [[cunningham-causal-inference-mixtape-ch03]] — Ch. 3 — Properties of Regression
+- [[cunningham-causal-inference-mixtape-ch04]] — Ch. 4 — Directed Acyclical Graphs
+- [[cunningham-causal-inference-mixtape-ch05]] — Ch. 5 — Potential Outcomes Causal Model
+- [[cunningham-causal-inference-mixtape-ch06]] — Ch. 6 — Matching and Subclassification
+- [[cunningham-causal-inference-mixtape-ch07]] — Ch. 7 — Regression Discontinuity
+- [[cunningham-causal-inference-mixtape-ch08]] — Ch. 8 — Instrumental Variables
+- [[cunningham-causal-inference-mixtape-ch09]] — Ch. 9 — Panel Data
+- [[cunningham-causal-inference-mixtape-ch10]] — Ch. 10 — Differences-in-Differences
+- [[cunningham-causal-inference-mixtape-ch11]] — Ch. 11 — Synthetic Control
+- [[cunningham-causal-inference-mixtape-ch12]] — Ch. 12 — Conclusion
 ## Awaiting Classification
 
 - **sutva** — candidate types: principle or concept

@@ -1,7 +1,8 @@
 ---
+abbrev: "Causality"
 id: "pkis:source:pearl-causality-ch10"
 aliases: []
-title: "Causality Ch. 10: The Actual Cause"
+title: "[Causality] Causality Ch. 10: The Actual Cause"
 knowledge_type: source
 source_type: book-chapter
 parent_book: "[[pearl-causality]]"

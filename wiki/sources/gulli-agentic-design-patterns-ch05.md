@@ -1,7 +1,8 @@
 ---
+abbrev: "ADP"
 id: "pkis:source:gulli-agentic-design-patterns-ch05"
 aliases: []
-title: "Ch. 5 — Tool Use (Function Calling)"
+title: "[ADP Gullí] Ch. 5 — Tool Use (Function Calling)"
 authors: "Antonio Gullí"
 year: 2025
 type: book-chapter

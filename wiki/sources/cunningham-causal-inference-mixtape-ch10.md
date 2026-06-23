@@ -1,4 +1,5 @@
 ---
+abbrev: "Mixtape"
 aliases: []
 authors: Scott Cunningham
 chapter: 10
@@ -20,7 +21,7 @@ tags:
 - two-way-fixed-effects
 - card-krueger
 - pre-trends-test
-title: Ch. 10 — Differences-in-Differences
+title: "[Mixtape Cunningham] Ch. 10 — Differences-in-Differences"
 type: book-chapter
 year: 2021
 ---

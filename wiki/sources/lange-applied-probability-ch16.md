@@ -1,7 +1,8 @@
 ---
+abbrev: "AppProb"
 id: "pkis:source:lange-applied-probability-ch16"
 aliases: []
-title: "Ch. 16 — Entropy"
+title: "[AppProb Lange] Ch. 16 — Entropy"
 authors: "Kenneth Lange"
 year: 2024
 type: book-chapter

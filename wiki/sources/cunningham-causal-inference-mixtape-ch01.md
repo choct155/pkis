@@ -1,7 +1,8 @@
 ---
+abbrev: "Mixtape"
 id: "pkis:source:cunningham-causal-inference-mixtape-ch01"
 aliases: []
-title: "Ch. 1 — Introduction"
+title: "[Mixtape Cunningham] Ch. 1 — Introduction"
 authors: "Scott Cunningham"
 year: 2021
 type: book-chapter

@@ -1,7 +1,8 @@
 ---
+abbrev: "Mixtape"
 id: "pkis:source:cunningham-causal-inference-mixtape-ch12"
 aliases: []
-title: "Ch. 12 — Conclusion"
+title: "[Mixtape Cunningham] Ch. 12 — Conclusion"
 authors: "Scott Cunningham"
 year: 2021
 type: book-chapter

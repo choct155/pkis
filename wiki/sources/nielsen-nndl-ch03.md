@@ -1,7 +1,8 @@
 ---
+abbrev: "NNDL"
 id: "pkis:source:nielsen-nndl-ch03"
 aliases: []
-title: "Ch. 3 — Improving the way neural networks learn"
+title: "[NNDL Nielsen] Ch. 3 — Improving the way neural networks learn"
 authors: "Michael A. Nielsen"
 year: 2015
 type: book-chapter

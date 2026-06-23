@@ -1,7 +1,8 @@
 ---
+abbrev: "SWWO"
 id: "pkis:source:allemang-semantic-web"
 aliases: ["Semantic Web for the Working Ontologist"]
-title: "Semantic Web for the Working Ontologist, 2nd Ed."
+title: "[SWWO Allemang & Hendler] Semantic Web for the Working Ontologist, 2nd Ed."
 authors: "Dean Allemang, Jim Hendler"
 year: 2011
 type: book
@@ -81,22 +82,19 @@ The central organizing metaphor is the "working ontologist" who must navigate th
 - [[open-world-assumption]] — grounds: OWA is the foundational epistemic principle distinguishing Semantic Web from relational and Prolog-style systems
 
 ## Chapters
-
-| Ch | Stub | Title |
-|---|---|---|
-| 1 | [[allemang-semantic-web-ch01]] | What is the Semantic Web? |
-| 2 | [[allemang-semantic-web-ch02]] | Semantic modeling |
-| 3 | [[allemang-semantic-web-ch03]] | RDF — The basis of the Semantic Web |
-| 4 | [[allemang-semantic-web-ch04]] | Semantic Web application architecture |
-| 5 | [[allemang-semantic-web-ch05]] | Querying the Semantic Web — SPARQL |
-| 6 | [[allemang-semantic-web-ch06]] | RDF and inferencing |
-| 7 | [[allemang-semantic-web-ch07]] | RDF schema |
-| 8 | [[allemang-semantic-web-ch08]] | RDFS-Plus |
-| 9 | [[allemang-semantic-web-ch09]] | Using RDFS-Plus in the wild |
-| 10 | [[allemang-semantic-web-ch10]] | SKOS — Managing vocabularies with RDFS-Plus |
-| 11 | [[allemang-semantic-web-ch11]] | Basic OWL |
-| 12 | [[allemang-semantic-web-ch12]] | Counting and sets in OWL |
-| 13 | [[allemang-semantic-web-ch13]] | Ontologies on the Web — Putting it all together |
-| 14 | [[allemang-semantic-web-ch14]] | Good and bad modeling practices |
-| 15 | [[allemang-semantic-web-ch15]] | Expert modeling in OWL |
-| 16 | [[allemang-semantic-web-ch16]] | Conclusions |
+- [[allemang-semantic-web-ch01]] — Ch. 1 — What is the Semantic Web?
+- [[allemang-semantic-web-ch02]] — Ch. 2 — Semantic modeling
+- [[allemang-semantic-web-ch03]] — Ch. 3 — RDF — The basis of the Semantic Web
+- [[allemang-semantic-web-ch04]] — Ch. 4 — Semantic Web application architecture
+- [[allemang-semantic-web-ch05]] — Ch. 5 — Querying the Semantic Web — SPARQL
+- [[allemang-semantic-web-ch06]] — Ch. 6 — RDF and inferencing
+- [[allemang-semantic-web-ch07]] — Ch. 7 — RDF schema
+- [[allemang-semantic-web-ch08]] — Ch. 8 — RDFS-Plus
+- [[allemang-semantic-web-ch09]] — Ch. 9 — Using RDFS-Plus in the wild
+- [[allemang-semantic-web-ch10]] — Ch. 10 — SKOS — Managing vocabularies with RDFS-Plus
+- [[allemang-semantic-web-ch11]] — Ch. 11 — Basic OWL
+- [[allemang-semantic-web-ch12]] — Ch. 12 — Counting and sets in OWL
+- [[allemang-semantic-web-ch13]] — Ch. 13 — Ontologies on the Web — Putting it all together
+- [[allemang-semantic-web-ch14]] — Ch. 14 — Good and bad modeling practices
+- [[allemang-semantic-web-ch15]] — Ch. 15 — Expert modeling in OWL
+- [[allemang-semantic-web-ch16]] — Ch. 16 — Conclusions

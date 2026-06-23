@@ -1,7 +1,8 @@
 ---
+abbrev: "ADP"
 id: "pkis:source:gulli-agentic-design-patterns-ch28"
 aliases: []
-title: "Ch. 28 — Coding Agents"
+title: "[ADP Gullí] Ch. 28 — Coding Agents"
 authors: "Antonio Gullí"
 year: 2025
 type: book-chapter

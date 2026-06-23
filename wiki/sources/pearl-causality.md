@@ -1,7 +1,8 @@
 ---
+abbrev: "Causality"
 id: "pkis:source:pearl-causality"
 aliases: ["Causality (Pearl)", "Pearl Causality"]
-title: "Causality: Models, Reasoning, and Inference (2nd ed.)"
+title: "[Causality Pearl] Causality: Models, Reasoning, and Inference (2nd ed.)"
 knowledge_type: source
 source_type: book
 authors: ["Judea Pearl"]
@@ -37,18 +38,15 @@ Foundational monograph unifying probabilistic and causal reasoning through Struc
 5. **Simpson's paradox resolution**: Pearl shows the paradox dissolves when causal structure is made explicit — whether to aggregate or stratify depends on which variable is the confounder vs. the collider, not on any purely statistical criterion.
 
 ## Chapters
-
-| # | Title | Stub |
-|---|-------|------|
-| 1 | Introduction to Probabilities, Graphs, and Causal Models | [[pearl-causality-ch01]] |
-| 2 | A Theory of Inferred Causation | [[pearl-causality-ch02]] |
-| 3 | Causal Diagrams and the Identification of Causal Effects | [[pearl-causality-ch03]] |
-| 4 | Actions, Plans, and Direct Effects | [[pearl-causality-ch04]] |
-| 5 | Causality and Structural Models in Social Science and Economics | [[pearl-causality-ch05]] |
-| 6 | Simpson's Paradox, Confounding, and Collapsibility | [[pearl-causality-ch06]] |
-| 7 | The Logic of Structure-Based Counterfactuals | [[pearl-causality-ch07]] |
-| 8 | Imperfect Experiments: Bounding Effects and Counterfactuals | [[pearl-causality-ch08]] |
-| 9 | Probability of Causation: Interpretation and Identification | [[pearl-causality-ch09]] |
-| 10 | The Actual Cause | [[pearl-causality-ch10]] |
-| 11 | Reflections, Elaborations, and Discussions with Readers | [[pearl-causality-ch11]] |
-| — | Epilogue: The Art and Science of Cause and Effect | [[pearl-causality-epilogue]] |
+- [[pearl-causality-ch01]] — Causality Ch. 1: Introduction to Probabilities, Graphs, and Causal Models
+- [[pearl-causality-ch02]] — Causality Ch. 2: A Theory of Inferred Causation
+- [[pearl-causality-ch03]] — Causality Ch. 3: Causal Diagrams and the Identification of Causal Effects
+- [[pearl-causality-ch04]] — Causality Ch. 4: Actions, Plans, and Direct Effects
+- [[pearl-causality-ch05]] — Causality Ch. 5: Causality and Structural Models in Social Science and Economics
+- [[pearl-causality-ch06]] — Causality Ch. 6: Simpson's Paradox, Confounding, and Collapsibility
+- [[pearl-causality-ch07]] — Causality Ch. 7: The Logic of Structure-Based Counterfactuals
+- [[pearl-causality-ch08]] — Causality Ch. 8: Imperfect Experiments: Bounding Effects and Counterfactuals
+- [[pearl-causality-ch09]] — Causality Ch. 9: Probability of Causation: Interpretation and Identification
+- [[pearl-causality-ch10]] — Causality Ch. 10: The Actual Cause
+- [[pearl-causality-ch11]] — Causality Ch. 11: Reflections, Elaborations, and Discussions with Readers
+- [[pearl-causality-epilogue]] — Causality Epilogue: The Art and Science of Cause and Effect

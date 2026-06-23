@@ -1,7 +1,8 @@
 ---
+abbrev: "Causality"
 id: "pkis:source:pearl-causality-ch11"
 aliases: []
-title: "Causality Ch. 11: Reflections, Elaborations, and Discussions with Readers"
+title: "[Causality] Causality Ch. 11: Reflections, Elaborations, and Discussions with Readers"
 knowledge_type: source
 source_type: book-chapter
 parent_book: "[[pearl-causality]]"

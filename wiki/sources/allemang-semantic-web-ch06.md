@@ -1,7 +1,8 @@
 ---
+abbrev: "SWWO"
 id: "pkis:source:allemang-semantic-web-ch06"
 aliases: []
-title: "Ch. 6 — RDF and inferencing"
+title: "[SWWO Allemang & Hendler] Ch. 6 — RDF and inferencing"
 authors: "Dean Allemang, Jim Hendler"
 year: 2011
 type: book-chapter

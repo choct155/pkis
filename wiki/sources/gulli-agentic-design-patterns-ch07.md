@@ -1,7 +1,8 @@
 ---
+abbrev: "ADP"
 id: "pkis:source:gulli-agentic-design-patterns-ch07"
 aliases: []
-title: "Ch. 7 — Multi-Agent Collaboration"
+title: "[ADP Gullí] Ch. 7 — Multi-Agent Collaboration"
 authors: "Antonio Gullí"
 year: 2025
 type: book-chapter

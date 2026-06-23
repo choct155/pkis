@@ -1,4 +1,5 @@
 ---
+abbrev: "DLB"
 aliases: []
 authors: Ian Goodfellow, Yoshua Bengio, Aaron Courville
 coverage: 0
@@ -14,7 +15,7 @@ tags:
 - neural-networks
 - representation-learning
 - textbook
-title: "Ch. 06 \u2014 Deep Feedforward Networks"
+title: "[DLB Goodfellow et al] Ch. 06 — Deep Feedforward Networks"
 type: chapter
 understanding: 0
 year: 2016

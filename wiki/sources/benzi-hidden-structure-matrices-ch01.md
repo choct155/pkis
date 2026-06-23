@@ -1,7 +1,8 @@
 ---
+abbrev: "HSMC"
 id: "pkis:source:benzi-hidden-structure-matrices-ch01"
 aliases: []
-title: "Ch. 1 — Structured Matrix Problems from Tensors"
+title: "[HSMC Loan] Ch. 1 — Structured Matrix Problems from Tensors"
 authors: ["Charles F. Van Loan"]
 year: 2016
 type: book-chapter

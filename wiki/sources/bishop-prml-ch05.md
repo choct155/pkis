@@ -1,4 +1,5 @@
 ---
+abbrev: "PRML"
 aliases: []
 authors: Christopher M. Bishop
 coverage: 0
@@ -14,7 +15,7 @@ tags:
 - bayesian
 - pattern-recognition
 - textbook
-title: "Ch. 05 \u2014 Neural Networks"
+title: "[PRML Bishop] Ch. 05 — Neural Networks"
 type: chapter
 understanding: 0
 year: 2006

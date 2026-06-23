@@ -1,7 +1,8 @@
 ---
+abbrev: "TSI"
 id: "pkis:source:tanner-tools-statistical-inference"
 aliases: []
-title: "Tools for Statistical Inference: Methods for the Exploration of Posterior Distributions and Likelihood Functions"
+title: "[TSI Tanner] Tools for Statistical Inference: Methods for the Exploration of Posterior Distributions and Likelihood Functions"
 authors: ["Martin A. Tanner"]
 year: 1993
 type: book
@@ -26,16 +27,12 @@ Central to the book is the data augmentation principle: by augmenting observed d
 The second edition (1993) adds the Metropolis algorithm and convergence assessment methods for Markov chain algorithms (Gibbs stopper, control variates). The final chapter illustrates the Gibbs sampler in the conditional (frequentist) inference paradigm via saddlepoint approximations, demonstrating applicability beyond Bayesian settings. Worked examples include censored regression (Stanford heart transplant data), rat growth data, Poisson change-point detection, and generalized linear models with random effects.
 
 ## Chapters
-
-| Ch | Stub | Title |
-|---|---|---|
-| 1 | [[tanner-tools-statistical-inference-ch01]] | Introduction |
-| 2 | [[tanner-tools-statistical-inference-ch02]] | Normal Approximations to Likelihoods and Posteriors |
-| 3 | [[tanner-tools-statistical-inference-ch03]] | Nonnormal Approximations (Laplace, Importance Sampling) |
-| 4 | [[tanner-tools-statistical-inference-ch04]] | The EM Algorithm |
-| 5 | [[tanner-tools-statistical-inference-ch05]] | The Data Augmentation Algorithm |
-| 6 | [[tanner-tools-statistical-inference-ch06]] | Markov Chain Monte Carlo: Gibbs Sampler and Metropolis |
-
+- [[tanner-tools-statistical-inference-ch01]] — Ch. 1 — Introduction
+- [[tanner-tools-statistical-inference-ch02]] — Ch. 2 — Normal Approximations to Likelihoods and to Posteriors
+- [[tanner-tools-statistical-inference-ch03]] — Ch. 3 — Nonnormal Approximations to Likelihoods and to Posteriors
+- [[tanner-tools-statistical-inference-ch04]] — Ch. 4 — The EM Algorithm
+- [[tanner-tools-statistical-inference-ch05]] — Ch. 5 — The Data Augmentation Algorithm
+- [[tanner-tools-statistical-inference-ch06]] — Ch. 6 — Markov Chain Monte Carlo: The Gibbs Sampler and the Metropolis Algorithm
 ## Key Knowledge Objects
 
 - [[data-augmentation]] (technique, high) — introducing latent variables to simplify posterior sampling; two-component version of Gibbs sampler

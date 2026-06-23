@@ -1,7 +1,8 @@
 ---
+abbrev: "ESL"
 id: "pkis:source:hastie-esl-ch08"
 aliases: []
-title: "Ch. 8 — Model Inference and Averaging"
+title: "[ESL Hastie et al] Ch. 8 — Model Inference and Averaging"
 authors: "Trevor Hastie, Robert Tibshirani, Jerome Friedman"
 year: 2009
 type: book-chapter

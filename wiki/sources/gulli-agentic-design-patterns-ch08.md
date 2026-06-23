@@ -1,7 +1,8 @@
 ---
+abbrev: "ADP"
 id: "pkis:source:gulli-agentic-design-patterns-ch08"
 aliases: []
-title: "Ch. 8 — Memory Management"
+title: "[ADP Gullí] Ch. 8 — Memory Management"
 authors: "Antonio Gullí"
 year: 2025
 type: book-chapter

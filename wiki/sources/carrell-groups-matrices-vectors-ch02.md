@@ -1,7 +1,8 @@
 ---
+abbrev: "GMVS"
 id: "pkis:source:carrell-groups-matrices-vectors-ch02"
 aliases: []
-title: "Ch. 2 — Groups and Fields: The Two Fundamental Notions of Algebra"
+title: "[GMVS Carrell] Ch. 2 — Groups and Fields: The Two Fundamental Notions of Algebra"
 authors: "James B. Carrell"
 year: 2017
 type: book-chapter

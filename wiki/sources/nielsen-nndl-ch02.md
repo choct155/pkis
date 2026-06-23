@@ -1,7 +1,8 @@
 ---
+abbrev: "NNDL"
 id: "pkis:source:nielsen-nndl-ch02"
 aliases: []
-title: "Ch. 2 — How the backpropagation algorithm works"
+title: "[NNDL Nielsen] Ch. 2 — How the backpropagation algorithm works"
 authors: "Michael A. Nielsen"
 year: 2015
 type: book-chapter

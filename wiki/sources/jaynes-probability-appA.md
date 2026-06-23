@@ -1,4 +1,5 @@
 ---
+abbrev: "PTLoS"
 aliases: []
 authors: E. T. Jaynes
 coverage: 0
@@ -13,7 +14,7 @@ tags:
 - bayesian
 - probability-theory
 - jaynes-probability
-title: 'App. A — Other Approaches to Probability Theory'
+title: "[PTLoS Jaynes] App. A — Other Approaches to Probability Theory"
 type: chapter
 understanding: 0
 year: 2003

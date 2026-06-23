@@ -1,7 +1,8 @@
 ---
+abbrev: "HSMC"
 id: "pkis:source:benzi-hidden-structure-matrices-ch04"
 aliases: []
-title: "Ch. 4 — Localization in Matrix Computations: Theory and Applications"
+title: "[HSMC Benzi] Ch. 4 — Localization in Matrix Computations: Theory and Applications"
 authors: ["Michele Benzi"]
 year: 2016
 type: book-chapter

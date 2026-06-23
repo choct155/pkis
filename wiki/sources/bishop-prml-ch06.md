@@ -1,4 +1,5 @@
 ---
+abbrev: "PRML"
 aliases: []
 authors: Christopher M. Bishop
 coverage: 0
@@ -14,7 +15,7 @@ tags:
 - bayesian
 - pattern-recognition
 - textbook
-title: "Ch. 06 \u2014 Kernel Methods"
+title: "[PRML Bishop] Ch. 06 — Kernel Methods"
 type: chapter
 understanding: 0
 year: 2006

@@ -1,7 +1,8 @@
 ---
+abbrev: "GMVS"
 id: "pkis:source:carrell-groups-matrices-vectors-ch06"
 aliases: []
-title: "Ch. 6 — Vector Spaces"
+title: "[GMVS Carrell] Ch. 6 — Vector Spaces"
 authors: "James B. Carrell"
 year: 2017
 type: book-chapter

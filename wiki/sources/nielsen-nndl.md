@@ -1,7 +1,8 @@
 ---
+abbrev: "NNDL"
 id: "pkis:source:nielsen-nndl"
 aliases: ["NNDL", "Neural Networks and Deep Learning"]
-title: "Neural Networks and Deep Learning"
+title: "[NNDL Nielsen] Neural Networks and Deep Learning"
 authors: "Michael A. Nielsen"
 year: 2015
 type: book
@@ -79,13 +80,10 @@ The book's strength is conceptual depth over breadth: every technique is motivat
 - [[bias-variance-tradeoff]] — grounds: regularization choices in Ch. 3 are motivated by the bias-variance tradeoff
 
 ## Chapters
-
-| Ch | Stub | Title |
-|---|---|---|
-| 1 | [[nielsen-nndl-ch01]] | Using neural nets to recognize handwritten digits |
-| 2 | [[nielsen-nndl-ch02]] | How the backpropagation algorithm works |
-| 3 | [[nielsen-nndl-ch03]] | Improving the way neural networks learn |
-| 4 | [[nielsen-nndl-ch04]] | A visual proof that neural nets can compute any function |
-| 5 | [[nielsen-nndl-ch05]] | Why are deep neural networks hard to train? |
-| 6 | [[nielsen-nndl-ch06]] | Deep learning |
-| A | [[nielsen-nndl-appA]] | Is there a simple algorithm for intelligence? |
+- [[nielsen-nndl-ch01]] — Ch. 1 — Using neural nets to recognize handwritten digits
+- [[nielsen-nndl-ch02]] — Ch. 2 — How the backpropagation algorithm works
+- [[nielsen-nndl-ch03]] — Ch. 3 — Improving the way neural networks learn
+- [[nielsen-nndl-ch04]] — Ch. 4 — A visual proof that neural nets can compute any function
+- [[nielsen-nndl-ch05]] — Ch. 5 — Why are deep neural networks hard to train?
+- [[nielsen-nndl-ch06]] — Ch. 6 — Deep learning
+- [[nielsen-nndl-appA]] — Appendix A — Is there a simple algorithm for intelligence?

@@ -1,4 +1,5 @@
 ---
+abbrev: "DLB"
 aliases: []
 authors: Ian Goodfellow, Yoshua Bengio, Aaron Courville
 coverage: 0
@@ -14,7 +15,7 @@ tags:
 - neural-networks
 - representation-learning
 - textbook
-title: "Ch. 04 \u2014 Numerical Computation"
+title: "[DLB Goodfellow et al] Ch. 04 — Numerical Computation"
 type: chapter
 understanding: 0
 year: 2016

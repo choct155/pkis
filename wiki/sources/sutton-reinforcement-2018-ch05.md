@@ -1,4 +1,5 @@
 ---
+abbrev: "RL"
 authors: Richard S. Sutton, Andrew G. Barto
 coverage: 0
 domain:
@@ -10,7 +11,7 @@ parent_book: pkis:source:sutton-reinforcement-2018
 status: unread
 tags:
 - sutton-reinforcement-2018
-title: Ch. 5 — Monte Carlo Methods
+title: "[RL Sutton & Barto] Ch. 5 — Monte Carlo Methods"
 type: chapter
 understanding: 0
 year: 2018

@@ -1,7 +1,8 @@
 ---
+abbrev: "AppProb"
 id: "pkis:source:lange-applied-probability-ch01"
 aliases: []
-title: "Ch. 1 — Basic Notions of Probability Theory"
+title: "[AppProb Lange] Ch. 1 — Basic Notions of Probability Theory"
 authors: "Kenneth Lange"
 year: 2024
 type: book-chapter

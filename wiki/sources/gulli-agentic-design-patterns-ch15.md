@@ -1,7 +1,8 @@
 ---
+abbrev: "ADP"
 id: "pkis:source:gulli-agentic-design-patterns-ch15"
 aliases: []
-title: "Ch. 15 — Inter-Agent Communication (A2A)"
+title: "[ADP Gullí] Ch. 15 — Inter-Agent Communication (A2A)"
 authors: "Antonio Gullí"
 year: 2025
 type: book-chapter

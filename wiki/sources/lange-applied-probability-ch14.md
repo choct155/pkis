@@ -1,7 +1,8 @@
 ---
+abbrev: "AppProb"
 id: "pkis:source:lange-applied-probability-ch14"
 aliases: []
-title: "Ch. 14 — Poisson Approximation"
+title: "[AppProb Lange] Ch. 14 — Poisson Approximation"
 authors: "Kenneth Lange"
 year: 2024
 type: book-chapter

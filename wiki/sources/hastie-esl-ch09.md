@@ -1,7 +1,8 @@
 ---
+abbrev: "ESL"
 id: "pkis:source:hastie-esl-ch09"
 aliases: []
-title: "Ch. 9 — Additive Models, Trees, and Related Methods"
+title: "[ESL Hastie et al] Ch. 9 — Additive Models, Trees, and Related Methods"
 authors: "Trevor Hastie, Robert Tibshirani, Jerome Friedman"
 year: 2009
 type: book-chapter

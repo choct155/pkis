@@ -1,7 +1,8 @@
 ---
+abbrev: "ADP"
 id: "pkis:source:gulli-agentic-design-patterns-ch13"
 aliases: []
-title: "Ch. 13 — Human-in-the-Loop"
+title: "[ADP Gullí] Ch. 13 — Human-in-the-Loop"
 authors: "Antonio Gullí"
 year: 2025
 type: book-chapter

@@ -1,7 +1,8 @@
 ---
+abbrev: "GMVS"
 id: "pkis:source:carrell-groups-matrices-vectors-ch07"
 aliases: []
-title: "Ch. 7 — Linear Mappings"
+title: "[GMVS Carrell] Ch. 7 — Linear Mappings"
 authors: "James B. Carrell"
 year: 2017
 type: book-chapter

@@ -1,7 +1,8 @@
 ---
+abbrev: "AppProb"
 id: "pkis:source:lange-applied-probability-ch06"
 aliases: []
-title: "Ch. 6 — Poisson Processes"
+title: "[AppProb Lange] Ch. 6 — Poisson Processes"
 authors: "Kenneth Lange"
 year: 2024
 type: book-chapter

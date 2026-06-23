@@ -1,7 +1,8 @@
 ---
+abbrev: "GMVS"
 id: "pkis:source:carrell-groups-matrices-vectors-ch12"
 aliases: []
-title: "Ch. 12 — Linear Algebraic Groups: an Introduction"
+title: "[GMVS Carrell] Ch. 12 — Linear Algebraic Groups: an Introduction"
 authors: "James B. Carrell"
 year: 2017
 type: book-chapter

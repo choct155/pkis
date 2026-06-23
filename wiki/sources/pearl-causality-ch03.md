@@ -1,7 +1,8 @@
 ---
+abbrev: "Causality"
 id: "pkis:source:pearl-causality-ch03"
 aliases: []
-title: "Causality Ch. 3: Causal Diagrams and the Identification of Causal Effects"
+title: "[Causality] Causality Ch. 3: Causal Diagrams and the Identification of Causal Effects"
 knowledge_type: source
 source_type: book-chapter
 parent_book: "[[pearl-causality]]"

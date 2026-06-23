@@ -1,4 +1,5 @@
 ---
+abbrev: "ITILA"
 aliases: []
 authors: David J. C. MacKay
 coverage: 0
@@ -12,7 +13,7 @@ status: unread
 tags:
 - information-theory
 - mackay-itila
-title: Ch. 40 — Capacity of a Single Neuron
+title: "[ITILA MacKay] Ch. 40 — Capacity of a Single Neuron"
 type: chapter
 understanding: 0
 year: 2003

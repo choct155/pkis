@@ -1,7 +1,8 @@
 ---
+abbrev: "Causality"
 id: "pkis:source:pearl-causality-ch01"
 aliases: []
-title: "Causality Ch. 1: Introduction to Probabilities, Graphs, and Causal Models"
+title: "[Causality] Causality Ch. 1: Introduction to Probabilities, Graphs, and Causal Models"
 knowledge_type: source
 source_type: book-chapter
 parent_book: "[[pearl-causality]]"

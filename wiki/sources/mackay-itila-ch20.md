@@ -1,4 +1,5 @@
 ---
+abbrev: "ITILA"
 aliases: []
 authors: David J. C. MacKay
 coverage: 0
@@ -13,7 +14,7 @@ status: unread
 tags:
 - information-theory
 - mackay-itila
-title: 'Ch. 20 — An Example Inference Task: Clustering'
+title: "[ITILA MacKay] Ch. 20 — An Example Inference Task: Clustering"
 type: chapter
 understanding: 0
 year: 2003

@@ -1,7 +1,8 @@
 ---
+abbrev: "AppProb"
 id: "pkis:source:lange-applied-probability-ch15"
 aliases: []
-title: "Ch. 15 — Number Theory"
+title: "[AppProb Lange] Ch. 15 — Number Theory"
 authors: "Kenneth Lange"
 year: 2024
 type: book-chapter

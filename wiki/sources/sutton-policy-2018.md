@@ -1,4 +1,5 @@
 ---
+abbrev: "RL"
 aliases: []
 authors: Richard S. Sutton, Andrew G. Barto
 concepts: []
@@ -25,7 +26,7 @@ tags:
 - actor-critic
 - variance-reduction
 - baseline
-title: Policy Gradient Methods (Sutton & Barto Ch. 13)
+title: "[RL Sutton & Barto] Policy Gradient Methods (Sutton & Barto Ch. 13)"
 type: paper
 year: 2018
 ---

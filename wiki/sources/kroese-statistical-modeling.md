@@ -1,7 +1,8 @@
 ---
+abbrev: "SMC"
 id: "pkis:source:kroese-statistical-modeling"
 aliases: ["Statistical Modeling and Simulation (Kroese)"]
-title: "Statistical Modeling and Computation, 2nd ed."
+title: "[SMC Chan & Kroese] Statistical Modeling and Computation, 2nd ed."
 authors: ["Joshua C.C. Chan", "Dirk P. Kroese"]
 year: 2025
 type: book
@@ -30,23 +31,19 @@ Part III (Chapters 9–13) addresses advanced models. Chapter 9 covers shrinkage
 The 2nd edition adds two new chapters (shrinkage/regularization and nonparametric methods), switches from MATLAB to Julia, and adds a statistical learning section. A Julia Primer appendix and Mathematical Supplement (proofs) are included.
 
 ## Chapters
-
-| Ch | Stub | Title |
-|---|---|---|
-| 1 | [[kroese-statistical-modeling-ch01]] | Probability Models |
-| 2 | [[kroese-statistical-modeling-ch02]] | Random Variables and Probability Distributions |
-| 3 | [[kroese-statistical-modeling-ch03]] | Joint Distributions |
-| 4 | [[kroese-statistical-modeling-ch04]] | Common Statistical Models |
-| 5 | [[kroese-statistical-modeling-ch05]] | Statistical Inference |
-| 6 | [[kroese-statistical-modeling-ch06]] | Likelihood |
-| 7 | [[kroese-statistical-modeling-ch07]] | Monte Carlo Sampling |
-| 8 | [[kroese-statistical-modeling-ch08]] | Bayesian Inference |
-| 9 | [[kroese-statistical-modeling-ch09]] | Shrinkage and Regularization |
-| 10 | [[kroese-statistical-modeling-ch10]] | Generalized Linear Models |
-| 11 | [[kroese-statistical-modeling-ch11]] | Nonparametric Methods |
-| 12 | [[kroese-statistical-modeling-ch12]] | Dependent Data Models |
-| 13 | [[kroese-statistical-modeling-ch13]] | State Space Models |
-
+- [[kroese-statistical-modeling-ch01]] — Ch. 1 — Probability Models
+- [[kroese-statistical-modeling-ch02]] — Ch. 2 — Random Variables and Probability Distributions
+- [[kroese-statistical-modeling-ch03]] — Ch. 3 — Joint Distributions
+- [[kroese-statistical-modeling-ch04]] — Ch. 4 — Common Statistical Models
+- [[kroese-statistical-modeling-ch05]] — Ch. 5 — Statistical Inference
+- [[kroese-statistical-modeling-ch06]] — Ch. 6 — Likelihood
+- [[kroese-statistical-modeling-ch07]] — Ch. 7 — Monte Carlo Sampling
+- [[kroese-statistical-modeling-ch08]] — Ch. 8 — Bayesian Inference
+- [[kroese-statistical-modeling-ch09]] — Ch. 9 — Shrinkage and Regularization
+- [[kroese-statistical-modeling-ch10]] — Ch. 10 — Generalized Linear Models
+- [[kroese-statistical-modeling-ch11]] — Ch. 11 — Nonparametric Methods
+- [[kroese-statistical-modeling-ch12]] — Ch. 12 — Dependent Data Models
+- [[kroese-statistical-modeling-ch13]] — Ch. 13 — State Space Models
 ## Key Knowledge Objects
 
 - [[maximum-likelihood-estimation]] (technique, high) — MLE with score functions, Fisher information, Cramér-Rao bound, and asymptotic properties

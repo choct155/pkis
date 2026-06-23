@@ -1,7 +1,8 @@
 ---
+abbrev: "SWWO"
 id: "pkis:source:allemang-semantic-web-ch04"
 aliases: []
-title: "Ch. 4 — Semantic Web application architecture"
+title: "[SWWO Allemang & Hendler] Ch. 4 — Semantic Web application architecture"
 authors: "Dean Allemang, Jim Hendler"
 year: 2011
 type: book-chapter

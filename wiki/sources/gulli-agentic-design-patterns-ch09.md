@@ -1,7 +1,8 @@
 ---
+abbrev: "ADP"
 id: "pkis:source:gulli-agentic-design-patterns-ch09"
 aliases: []
-title: "Ch. 9 — Learning and Adaptation"
+title: "[ADP Gullí] Ch. 9 — Learning and Adaptation"
 authors: "Antonio Gullí"
 year: 2025
 type: book-chapter

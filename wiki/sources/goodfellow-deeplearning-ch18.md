@@ -1,4 +1,5 @@
 ---
+abbrev: "DLB"
 aliases: []
 authors: Ian Goodfellow, Yoshua Bengio, Aaron Courville
 coverage: 0
@@ -14,7 +15,7 @@ tags:
 - neural-networks
 - representation-learning
 - textbook
-title: "Ch. 18 \u2014 Confronting the Partition Function"
+title: "[DLB Goodfellow et al] Ch. 18 — Confronting the Partition Function"
 type: chapter
 understanding: 0
 year: 2016

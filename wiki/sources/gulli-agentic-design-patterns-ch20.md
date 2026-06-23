@@ -1,7 +1,8 @@
 ---
+abbrev: "ADP"
 id: "pkis:source:gulli-agentic-design-patterns-ch20"
 aliases: []
-title: "Ch. 20 — Prioritization"
+title: "[ADP Gullí] Ch. 20 — Prioritization"
 authors: "Antonio Gullí"
 year: 2025
 type: book-chapter

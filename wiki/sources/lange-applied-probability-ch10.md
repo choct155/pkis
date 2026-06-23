@@ -1,7 +1,8 @@
 ---
+abbrev: "AppProb"
 id: "pkis:source:lange-applied-probability-ch10"
 aliases: []
-title: "Ch. 10 — Martingales"
+title: "[AppProb Lange] Ch. 10 — Martingales"
 authors: "Kenneth Lange"
 year: 2024
 type: book-chapter

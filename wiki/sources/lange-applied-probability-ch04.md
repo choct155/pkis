@@ -1,7 +1,8 @@
 ---
+abbrev: "AppProb"
 id: "pkis:source:lange-applied-probability-ch04"
 aliases: []
-title: "Ch. 4 — Combinatorics"
+title: "[AppProb Lange] Ch. 4 — Combinatorics"
 authors: "Kenneth Lange"
 year: 2024
 type: book-chapter

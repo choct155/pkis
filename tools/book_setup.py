@@ -14,6 +14,9 @@ and /home/pkis/proposals/<slug>_map.json  {"<slug>-chNN":[start,end], ...}
 """
 import json, os, sys
 
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from book_labels import title_prefix, abbrev_for  # noqa: E402
+
 SRC = "/home/pkis/pkis-wiki/wiki/sources"
 MAPDIR = "/home/pkis/proposals"
 cfg = json.load(open(sys.argv[1]))
@@ -23,8 +26,18 @@ tags = "\n".join(f"- {t}" for t in cfg.get("tags", []))
 aliases = "\n".join(f"- {a}" for a in cfg.get("alias", [])) or "[]"
 alias_block = ("aliases:\n" + aliases) if cfg.get("alias") else "aliases: []"
 
+# Visible [ABBREV Author] tag — see book_labels. Config may supply "abbrev";
+# otherwise it falls back to the ABBREV registry (empty -> author-only tag).
+ab = abbrev_for(slug, cfg.get("abbrev"))
+prefix = title_prefix(slug, cfg["authors"], ab)
+abbrev_line = f"abbrev: {json.dumps(ab, ensure_ascii=False)}\n" if ab else ""
+
+
+def ch_label(chnn):
+    return chnn.replace("ch", "Ch. ").replace("app", "App. ") if chnn.startswith(("ch", "app")) else chnn
+
 book = f"""---
-{alias_block}
+{abbrev_line}{alias_block}
 authors: {cfg['authors']}
 coverage: 0
 domain:
@@ -36,7 +49,7 @@ source_url: {cfg.get('source_url','')}
 status: unread
 tags:
 {tags}
-title: {json.dumps(cfg['title'])}
+title: {json.dumps(prefix + cfg['title'], ensure_ascii=False)}
 toc_source: document
 type: book
 understanding: 0
@@ -49,14 +62,14 @@ year: {cfg.get('year','')}
 ## Chapters
 """
 for chnn, title, *_ in cfg["chapters"]:
-    book += f"- [[{slug}-{chnn}]] — {title}\n"
+    book += f"- [[{slug}-{chnn}]] — {ch_label(chnn)} — {title}\n"
 os.makedirs(SRC, exist_ok=True)
 open(os.path.join(SRC, f"{slug}.md"), "w").write(book)
 
 def chapter_md(chnn, title):
-    label = chnn.replace("ch", "Ch. ").replace("app", "App. ") if chnn.startswith(("ch", "app")) else chnn
+    label = ch_label(chnn)
     return f"""---
-aliases: []
+{abbrev_line}aliases: []
 authors: {cfg['authors']}
 coverage: 0
 domain:
@@ -67,7 +80,7 @@ parent_book: pkis:source:{slug}
 status: unread
 tags:
 {tags}
-title: {json.dumps(f'{label} — {title}')}
+title: {json.dumps(prefix + f'{label} — {title}', ensure_ascii=False)}
 type: chapter
 understanding: 0
 year: {cfg.get('year','')}

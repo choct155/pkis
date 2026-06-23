@@ -1,7 +1,8 @@
 ---
+abbrev: "DES"
 id: "pkis:source:cassandras-des-intro-ch01"
 aliases: []
-title: "Ch. 1 — Systems and Models"
+title: "[DES Cassandras & Lafortune] Ch. 1 — Systems and Models"
 authors: "Christos G. Cassandras, Stéphane Lafortune"
 year: 2021
 type: book-chapter

@@ -1,7 +1,8 @@
 ---
+abbrev: "ESL"
 id: "pkis:source:hastie-esl-ch14"
 aliases: []
-title: "Ch. 14 — Unsupervised Learning"
+title: "[ESL Hastie et al] Ch. 14 — Unsupervised Learning"
 authors: "Trevor Hastie, Robert Tibshirani, Jerome Friedman"
 year: 2009
 type: book-chapter

@@ -1,7 +1,8 @@
 ---
+abbrev: "SMC"
 id: "pkis:source:kroese-statistical-modeling-ch09"
 aliases: []
-title: "Ch. 9 — Shrinkage and Regularization"
+title: "[SMC Chan & Kroese] Ch. 9 — Shrinkage and Regularization"
 authors: ["Joshua C.C. Chan", "Dirk P. Kroese"]
 year: 2025
 type: book-chapter

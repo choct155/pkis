@@ -1,7 +1,8 @@
 ---
+abbrev: "SMC"
 id: "pkis:source:kroese-statistical-modeling-ch11"
 aliases: []
-title: "Ch. 11 — Nonparametric Methods"
+title: "[SMC Chan & Kroese] Ch. 11 — Nonparametric Methods"
 authors: ["Joshua C.C. Chan", "Dirk P. Kroese"]
 year: 2025
 type: book-chapter

@@ -1,4 +1,5 @@
 ---
+abbrev: "Mixtape"
 aliases: []
 authors: Scott Cunningham
 chapter: 5
@@ -24,7 +25,7 @@ tags:
 - selection-bias
 - randomization
 - experiments
-title: Ch. 5 — Potential Outcomes Causal Model
+title: "[Mixtape Cunningham] Ch. 5 — Potential Outcomes Causal Model"
 type: book-chapter
 year: 2021
 ---

@@ -1,7 +1,8 @@
 ---
+abbrev: "GMVS"
 id: "pkis:source:carrell-groups-matrices-vectors"
 aliases: ["Groups, Matrices, and Vector Spaces"]
-title: "Groups, Matrices, and Vector Spaces: A Group Theoretic Approach to Linear Algebra"
+title: "[GMVS Carrell] Groups, Matrices, and Vector Spaces: A Group Theoretic Approach to Linear Algebra"
 authors: "James B. Carrell"
 year: 2017
 type: book
@@ -89,18 +90,15 @@ The book bridges two domains that are typically taught separately: it makes the 
   - What makes this hard: Ch. 12 only introduces the threshold ideas (Maschke's theorem, linearly reductive groups); the book does not develop the full machinery. A stub would mostly point forward. Creating a node now is warranted by bridge warrant (connects group theory to ML applications in equivariant networks) but the type is genuinely uncertain.
 
 ## Chapters
-
-| Ch | Stub | Title |
-|---|---|---|
-| 1 | [[carrell-groups-matrices-vectors-ch01]] | Preliminaries |
-| 2 | [[carrell-groups-matrices-vectors-ch02]] | Groups and Fields: The Two Fundamental Notions of Algebra |
-| 3 | [[carrell-groups-matrices-vectors-ch03]] | Matrices |
-| 4 | [[carrell-groups-matrices-vectors-ch04]] | Matrix Inverses, Matrix Groups and the LPDU Decomposition |
-| 5 | [[carrell-groups-matrices-vectors-ch05]] | An Introduction to the Theory of Determinants |
-| 6 | [[carrell-groups-matrices-vectors-ch06]] | Vector Spaces |
-| 7 | [[carrell-groups-matrices-vectors-ch07]] | Linear Mappings |
-| 8 | [[carrell-groups-matrices-vectors-ch08]] | Eigentheory |
-| 9 | [[carrell-groups-matrices-vectors-ch09]] | Unitary Diagonalization and Quadratic Forms |
-| 10 | [[carrell-groups-matrices-vectors-ch10]] | The Structure Theory of Linear Mappings |
-| 11 | [[carrell-groups-matrices-vectors-ch11]] | Theorems on Group Theory |
-| 12 | [[carrell-groups-matrices-vectors-ch12]] | Linear Algebraic Groups: an Introduction |
+- [[carrell-groups-matrices-vectors-ch01]] — Ch. 1 — Preliminaries
+- [[carrell-groups-matrices-vectors-ch02]] — Ch. 2 — Groups and Fields: The Two Fundamental Notions of Algebra
+- [[carrell-groups-matrices-vectors-ch03]] — Ch. 3 — Matrices
+- [[carrell-groups-matrices-vectors-ch04]] — Ch. 4 — Matrix Inverses, Matrix Groups and the LPDU Decomposition
+- [[carrell-groups-matrices-vectors-ch05]] — Ch. 5 — An Introduction to the Theory of Determinants
+- [[carrell-groups-matrices-vectors-ch06]] — Ch. 6 — Vector Spaces
+- [[carrell-groups-matrices-vectors-ch07]] — Ch. 7 — Linear Mappings
+- [[carrell-groups-matrices-vectors-ch08]] — Ch. 8 — Eigentheory
+- [[carrell-groups-matrices-vectors-ch09]] — Ch. 9 — Unitary Diagonalization and Quadratic Forms
+- [[carrell-groups-matrices-vectors-ch10]] — Ch. 10 — The Structure Theory of Linear Mappings
+- [[carrell-groups-matrices-vectors-ch11]] — Ch. 11 — Theorems on Group Theory
+- [[carrell-groups-matrices-vectors-ch12]] — Ch. 12 — Linear Algebraic Groups: an Introduction

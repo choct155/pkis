@@ -1,4 +1,5 @@
 ---
+abbrev: "PML1"
 aliases: []
 authors: Kevin P. Murphy
 coverage: 0
@@ -16,7 +17,7 @@ tags:
 - bayesian
 - deep-learning
 - textbook
-title: "Ch. 06 \u2014 Information Theory"
+title: "[PML1 Murphy] Ch. 06 — Information Theory"
 type: chapter
 understanding: 0
 year: 2022

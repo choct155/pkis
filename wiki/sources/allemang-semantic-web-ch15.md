@@ -1,7 +1,8 @@
 ---
+abbrev: "SWWO"
 id: "pkis:source:allemang-semantic-web-ch15"
 aliases: []
-title: "Ch. 15 — Expert modeling in OWL"
+title: "[SWWO Allemang & Hendler] Ch. 15 — Expert modeling in OWL"
 authors: "Dean Allemang, Jim Hendler"
 year: 2011
 type: book-chapter

@@ -1,7 +1,8 @@
 ---
+abbrev: "SMC"
 id: "pkis:source:kroese-statistical-modeling-ch13"
 aliases: []
-title: "Ch. 13 — State Space Models"
+title: "[SMC Chan & Kroese] Ch. 13 — State Space Models"
 authors: ["Joshua C.C. Chan", "Dirk P. Kroese"]
 year: 2025
 type: book-chapter

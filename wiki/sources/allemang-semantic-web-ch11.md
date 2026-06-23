@@ -1,7 +1,8 @@
 ---
+abbrev: "SWWO"
 id: "pkis:source:allemang-semantic-web-ch11"
 aliases: []
-title: "Ch. 11 — Basic OWL"
+title: "[SWWO Allemang & Hendler] Ch. 11 — Basic OWL"
 authors: "Dean Allemang, Jim Hendler"
 year: 2011
 type: book-chapter

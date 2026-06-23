@@ -1,4 +1,5 @@
 ---
+abbrev: "Mixtape"
 aliases: []
 authors: Scott Cunningham
 chapter: 9
@@ -19,7 +20,7 @@ tags:
 - first-differences
 - unobserved-heterogeneity
 - two-way-fixed-effects
-title: Ch. 9 — Panel Data
+title: "[Mixtape Cunningham] Ch. 9 — Panel Data"
 type: book-chapter
 year: 2021
 ---

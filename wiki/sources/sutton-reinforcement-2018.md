@@ -1,4 +1,5 @@
 ---
+abbrev: "RL"
 aliases: []
 authors: Richard S. Sutton, Andrew G. Barto
 concepts: []
@@ -19,7 +20,7 @@ tags:
 - value-function
 - policy-gradient
 - temporal-difference
-title: 'Reinforcement Learning: An Introduction (2nd ed.)'
+title: "[RL Sutton & Barto] Reinforcement Learning: An Introduction (2nd ed.)"
 type: paper
 year: 2018
 ---
@@ -39,3 +40,22 @@ Sutton and Barto (2018). Canonical RL textbook. Covers MDPs, dynamic programming
 - pkis:source:carrell-groups-matrices-vectors-ch12
 - pkis:source:pearl-causality-ch01
 - pkis:source:carrell-groups-matrices-vectors-ch05
+
+## Chapters
+- [[sutton-reinforcement-2018-ch01]] — Ch. 1 — Introduction
+- [[sutton-reinforcement-2018-ch02]] — Ch. 2 — Multi-armed Bandits
+- [[sutton-reinforcement-2018-ch03]] — Ch. 3 — Finite Markov Decision Processes
+- [[sutton-reinforcement-2018-ch04]] — Ch. 4 — Dynamic Programming
+- [[sutton-reinforcement-2018-ch05]] — Ch. 5 — Monte Carlo Methods
+- [[sutton-reinforcement-2018-ch06]] — Ch. 6 — Temporal-Difference Learning
+- [[sutton-reinforcement-2018-ch07]] — Ch. 7 — n-step Bootstrapping
+- [[sutton-reinforcement-2018-ch08]] — Ch. 8 — Planning and Learning with Tabular Methods
+- [[sutton-reinforcement-2018-ch09]] — Ch. 9 — On-policy Prediction with Approximation
+- [[sutton-reinforcement-2018-ch10]] — Ch. 10 — On-policy Control with Approximation
+- [[sutton-reinforcement-2018-ch11]] — Ch. 11 — Off-policy Methods with Approximation
+- [[sutton-reinforcement-2018-ch12]] — Ch. 12 — Eligibility Traces
+- [[sutton-reinforcement-2018-ch14]] — Ch. 14 — Psychology
+- [[sutton-reinforcement-2018-ch15]] — Ch. 15 — Neuroscience
+- [[sutton-reinforcement-2018-ch16]] — Ch. 16 — Applications and Case Studies
+- [[sutton-reinforcement-2018-ch17]] — Ch. 17 — Frontiers
+- [[sutton-policy-2018]] — Policy Gradient Methods (Sutton & Barto Ch. 13)

@@ -1,4 +1,5 @@
 ---
+abbrev: "PTLoS"
 aliases: []
 authors: E. T. Jaynes
 contrasts-with:
@@ -15,7 +16,7 @@ tags:
 - bayesian
 - probability-theory
 - jaynes-probability
-title: Ch. 17 — Principles and Pathology of Orthodox Statistics
+title: "[PTLoS Jaynes] Ch. 17 — Principles and Pathology of Orthodox Statistics"
 type: chapter
 understanding: 0
 year: 2003

@@ -1,7 +1,8 @@
 ---
+abbrev: "SWWO"
 id: "pkis:source:allemang-semantic-web-ch08"
 aliases: []
-title: "Ch. 8 — RDFS-Plus"
+title: "[SWWO Allemang & Hendler] Ch. 8 — RDFS-Plus"
 authors: "Dean Allemang, Jim Hendler"
 year: 2011
 type: book-chapter

@@ -277,11 +277,24 @@ class WikiStore:
         return self._embed_model
 
     @staticmethod
+    def _index_meta(node):
+        """Searchable bibliographic metadata (abbrev, authors, year) from
+        frontmatter. Lets queries like 'mackay monte carlo' or 'gelman 2013'
+        match source nodes whose title shows only a short author tag."""
+        fm = node.get("frontmatter", {}) or {}
+        authors = fm.get("authors", "") or ""
+        if isinstance(authors, (list, tuple)):
+            authors = " ".join(str(a) for a in authors)
+        parts = [str(fm.get("abbrev", "") or ""), str(authors), str(fm.get("year", "") or "")]
+        return " ".join(p for p in parts if p).strip()
+
+    @staticmethod
     def _embed_text(node):
         title = node.get("title", "") or ""
         aliases = " ".join(node.get("aliases", []) or [])
+        meta = WikiStore._index_meta(node)
         content = node.get("content", "") or ""
-        return f"{title}\n{aliases}\n{content}".strip()
+        return f"{title}\n{meta}\n{aliases}\n{content}".strip()
 
     def _load_embed_cache(self):
         if not config.EMBED_CACHE_PATH.exists():
@@ -311,7 +324,7 @@ class WikiStore:
         nodes = self.load_all_nodes()
         corpus, slugs = [], []
         for node in nodes:
-            text = f"{node['title']} {node.get('content', '')} {' '.join(node.get('aliases', []))}"
+            text = f"{node['title']} {self._index_meta(node)} {node.get('content', '')} {' '.join(node.get('aliases', []))}"
             corpus.append(text.lower().split())
             slugs.append(node["iri"])
         self._bm25_index = BM25Okapi(corpus)

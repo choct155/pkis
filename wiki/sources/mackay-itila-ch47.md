@@ -1,4 +1,5 @@
 ---
+abbrev: "ITILA"
 aliases: []
 authors: David J. C. MacKay
 coverage: 0
@@ -11,7 +12,7 @@ status: unread
 tags:
 - information-theory
 - mackay-itila
-title: Ch. 47 — Low-Density Parity-Check Codes
+title: "[ITILA MacKay] Ch. 47 — Low-Density Parity-Check Codes"
 type: chapter
 understanding: 0
 year: 2003

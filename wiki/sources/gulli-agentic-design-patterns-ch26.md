@@ -1,7 +1,8 @@
 ---
+abbrev: "ADP"
 id: "pkis:source:gulli-agentic-design-patterns-ch26"
 aliases: []
-title: "Ch. 26 — AI Agents on the CLI"
+title: "[ADP Gullí] Ch. 26 — AI Agents on the CLI"
 authors: "Antonio Gullí"
 year: 2025
 type: book-chapter

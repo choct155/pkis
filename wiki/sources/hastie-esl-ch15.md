@@ -1,7 +1,8 @@
 ---
+abbrev: "ESL"
 id: "pkis:source:hastie-esl-ch15"
 aliases: []
-title: "Ch. 15 — Random Forests"
+title: "[ESL Hastie et al] Ch. 15 — Random Forests"
 authors: "Trevor Hastie, Robert Tibshirani, Jerome Friedman"
 year: 2009
 type: book-chapter

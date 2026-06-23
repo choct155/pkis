@@ -1,7 +1,8 @@
 ---
+abbrev: "ADP"
 id: "pkis:source:gulli-agentic-design-patterns-ch03"
 aliases: []
-title: "Ch. 3 — Parallelization"
+title: "[ADP Gullí] Ch. 3 — Parallelization"
 authors: "Antonio Gullí"
 year: 2025
 type: book-chapter

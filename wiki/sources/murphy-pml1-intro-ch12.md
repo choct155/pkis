@@ -1,4 +1,5 @@
 ---
+abbrev: "PML1"
 aliases: []
 authors: Kevin P. Murphy
 coverage: 0
@@ -16,7 +17,7 @@ tags:
 - bayesian
 - deep-learning
 - textbook
-title: "Ch. 12 \u2014 Generalized Linear Models"
+title: "[PML1 Murphy] Ch. 12 — Generalized Linear Models"
 type: chapter
 understanding: 0
 year: 2022

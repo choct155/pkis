@@ -1,4 +1,5 @@
 ---
+abbrev: "PML2"
 aliases: []
 authors: Kevin P. Murphy
 coverage: 0
@@ -16,7 +17,7 @@ tags:
 - bayesian
 - inference
 - textbook
-title: "Ch. 36 \u2014 Causality"
+title: "[PML2 Murphy] Ch. 36 — Causality"
 type: chapter
 understanding: 0
 year: 2023

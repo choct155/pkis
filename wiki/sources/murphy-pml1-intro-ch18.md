@@ -1,4 +1,5 @@
 ---
+abbrev: "PML1"
 aliases: []
 authors: Kevin P. Murphy
 coverage: 0
@@ -16,7 +17,7 @@ tags:
 - bayesian
 - deep-learning
 - textbook
-title: "Ch. 18 \u2014 Trees, Forests, Bagging, and Boosting"
+title: "[PML1 Murphy] Ch. 18 — Trees, Forests, Bagging, and Boosting"
 type: chapter
 understanding: 0
 year: 2022

@@ -1,7 +1,8 @@
 ---
+abbrev: "AppProb"
 id: "pkis:source:lange-applied-probability"
 aliases: ["Applied Probability (Lange)"]
-title: "Applied Probability (Third Edition)"
+title: "[AppProb Lange] Applied Probability (Third Edition)"
 authors: "Kenneth Lange"
 year: 2024
 type: book
@@ -94,22 +95,19 @@ The book is notable for its emphasis on computation: Julia code is provided, sto
   - What makes this hard: the chapter covers both the theorem and its application as an estimation strategy
 
 ## Chapters
-
-| Ch | Stub | Title |
-|---|---|---|
-| 1 | [[lange-applied-probability-ch01]] | Basic Notions of Probability Theory |
-| 2 | [[lange-applied-probability-ch02]] | Calculation of Expectations |
-| 3 | [[lange-applied-probability-ch03]] | Convexity, Optimization, and Inequalities |
-| 4 | [[lange-applied-probability-ch04]] | Combinatorics |
-| 5 | [[lange-applied-probability-ch05]] | Combinatorial Optimization |
-| 6 | [[lange-applied-probability-ch06]] | Poisson Processes |
-| 7 | [[lange-applied-probability-ch07]] | Discrete-Time Markov Chains |
-| 8 | [[lange-applied-probability-ch08]] | Continuous-Time Markov Chains |
-| 9 | [[lange-applied-probability-ch09]] | Branching Processes |
-| 10 | [[lange-applied-probability-ch10]] | Martingales |
-| 11 | [[lange-applied-probability-ch11]] | Diffusion Processes |
-| 12 | [[lange-applied-probability-ch12]] | Asymptotic Methods |
-| 13 | [[lange-applied-probability-ch13]] | Numerical Methods |
-| 14 | [[lange-applied-probability-ch14]] | Poisson Approximation |
-| 15 | [[lange-applied-probability-ch15]] | Number Theory |
-| 16 | [[lange-applied-probability-ch16]] | Entropy |
+- [[lange-applied-probability-ch01]] — Ch. 1 — Basic Notions of Probability Theory
+- [[lange-applied-probability-ch02]] — Ch. 2 — Calculation of Expectations
+- [[lange-applied-probability-ch03]] — Ch. 3 — Convexity, Optimization, and Inequalities
+- [[lange-applied-probability-ch04]] — Ch. 4 — Combinatorics
+- [[lange-applied-probability-ch05]] — Ch. 5 — Combinatorial Optimization
+- [[lange-applied-probability-ch06]] — Ch. 6 — Poisson Processes
+- [[lange-applied-probability-ch07]] — Ch. 7 — Discrete-Time Markov Chains
+- [[lange-applied-probability-ch08]] — Ch. 8 — Continuous-Time Markov Chains
+- [[lange-applied-probability-ch09]] — Ch. 9 — Branching Processes
+- [[lange-applied-probability-ch10]] — Ch. 10 — Martingales
+- [[lange-applied-probability-ch11]] — Ch. 11 — Diffusion Processes
+- [[lange-applied-probability-ch12]] — Ch. 12 — Asymptotic Methods
+- [[lange-applied-probability-ch13]] — Ch. 13 — Numerical Methods
+- [[lange-applied-probability-ch14]] — Ch. 14 — Poisson Approximation
+- [[lange-applied-probability-ch15]] — Ch. 15 — Number Theory
+- [[lange-applied-probability-ch16]] — Ch. 16 — Entropy

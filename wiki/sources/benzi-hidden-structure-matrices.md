@@ -1,7 +1,8 @@
 ---
+abbrev: "HSMC"
 id: "pkis:source:benzi-hidden-structure-matrices"
 aliases: []
-title: "Exploiting Hidden Structure in Matrix Computations: Algorithms and Applications"
+title: "[HSMC Benzi et al] Exploiting Hidden Structure in Matrix Computations: Algorithms and Applications"
 authors: ["Michele Benzi", "Dario Bini", "Daniel Kressner", "Hans Munthe-Kaas", "Charles Van Loan"]
 year: 2016
 type: book
@@ -26,15 +27,11 @@ Charles Van Loan covers structured matrix computations arising from tensors: Kro
 Together the chapters provide a systematic survey of how structure — Toeplitz, Hankel, low-rank, hierarchical, symmetric, group-equivariant — can be detected and exploited in algorithms for matrix equations, eigenproblems, and function evaluations.
 
 ## Chapters
-
-| Ch | Stub | Title |
-|---|---|---|
-| 1 | [[benzi-hidden-structure-matrices-ch01]] | Structured Matrix Problems from Tensors (Van Loan) |
-| 2 | [[benzi-hidden-structure-matrices-ch02]] | Matrix Structures in Queuing Models (Bini) |
-| 3 | [[benzi-hidden-structure-matrices-ch03]] | Matrices with Hierarchical Low-Rank Structures (Ballani & Kressner) |
-| 4 | [[benzi-hidden-structure-matrices-ch04]] | Localization in Matrix Computations: Theory and Applications (Benzi) |
-| 5 | [[benzi-hidden-structure-matrices-ch05]] | Groups and Symmetries in Numerical Linear Algebra (Munthe-Kaas) |
-
+- [[benzi-hidden-structure-matrices-ch01]] — Ch. 1 — Structured Matrix Problems from Tensors
+- [[benzi-hidden-structure-matrices-ch02]] — Ch. 2 — Matrix Structures in Queuing Models
+- [[benzi-hidden-structure-matrices-ch03]] — Ch. 3 — Matrices with Hierarchical Low-Rank Structures
+- [[benzi-hidden-structure-matrices-ch04]] — Ch. 4 — Localization in Matrix Computations: Theory and Applications
+- [[benzi-hidden-structure-matrices-ch05]] — Ch. 5 — Groups and Symmetries in Numerical Linear Algebra
 ## Key Knowledge Objects
 
 - [[structured-matrices]] (concept, high) — matrices with non-obvious structural properties enabling sub-quadratic algorithms; includes Toeplitz, low-rank, hierarchical, displacement-rank types

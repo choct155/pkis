@@ -1,7 +1,8 @@
 ---
+abbrev: "DES"
 id: "pkis:source:cassandras-des-intro-ch04"
 aliases: []
-title: "Ch. 4 — Petri Nets"
+title: "[DES Cassandras & Lafortune] Ch. 4 — Petri Nets"
 authors: "Christos G. Cassandras, Stéphane Lafortune"
 year: 2021
 type: book-chapter

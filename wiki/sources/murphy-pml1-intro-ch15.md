@@ -1,4 +1,5 @@
 ---
+abbrev: "PML1"
 aliases: []
 authors: Kevin P. Murphy
 coverage: 0
@@ -16,7 +17,7 @@ tags:
 - bayesian
 - deep-learning
 - textbook
-title: "Ch. 15 \u2014 Neural Networks for Sequences"
+title: "[PML1 Murphy] Ch. 15 — Neural Networks for Sequences"
 type: chapter
 understanding: 0
 year: 2022

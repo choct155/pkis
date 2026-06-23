@@ -1,4 +1,5 @@
 ---
+abbrev: "ITILA"
 aliases: []
 authors: David J. C. MacKay
 coverage: 0
@@ -13,7 +14,7 @@ status: unread
 tags:
 - information-theory
 - mackay-itila
-title: Ch. 34 — Independent Component Analysis and Latent Variable Modelling
+title: "[ITILA MacKay] Ch. 34 — Independent Component Analysis and Latent Variable Modelling"
 type: chapter
 understanding: 0
 year: 2003

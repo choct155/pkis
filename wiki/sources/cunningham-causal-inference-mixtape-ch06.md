@@ -1,4 +1,5 @@
 ---
+abbrev: "Mixtape"
 aliases: []
 authors: Scott Cunningham
 chapter: 6
@@ -21,7 +22,7 @@ tags:
 - selection-on-observables
 - observational-studies
 - lalonde
-title: Ch. 6 — Matching and Subclassification
+title: "[Mixtape Cunningham] Ch. 6 — Matching and Subclassification"
 type: book-chapter
 year: 2021
 ---

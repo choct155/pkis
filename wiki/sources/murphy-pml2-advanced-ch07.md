@@ -1,4 +1,5 @@
 ---
+abbrev: "PML2"
 aliases: []
 authors: Kevin P. Murphy
 coverage: 0
@@ -16,7 +17,7 @@ tags:
 - bayesian
 - inference
 - textbook
-title: "Ch. 07 \u2014 Inference algorithms: an overview"
+title: "[PML2 Murphy] Ch. 07 — Inference algorithms: an overview"
 type: chapter
 understanding: 0
 year: 2023

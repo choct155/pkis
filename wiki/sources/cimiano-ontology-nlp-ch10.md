@@ -1,7 +1,8 @@
 ---
+abbrev: "OBI"
 id: "pkis:source:cimiano-ontology-nlp-ch10"
 aliases: []
-title: "Ch. 10 — Conclusion"
+title: "[OBI Cimiano et al] Ch. 10 — Conclusion"
 authors: "Philipp Cimiano, Christina Unger, John McCrae"
 year: 2014
 type: book-chapter

@@ -1,7 +1,8 @@
 ---
+abbrev: "Causality"
 id: "pkis:source:pearl-causality-ch07"
 aliases: []
-title: "Causality Ch. 7: The Logic of Structure-Based Counterfactuals"
+title: "[Causality] Causality Ch. 7: The Logic of Structure-Based Counterfactuals"
 knowledge_type: source
 source_type: book-chapter
 parent_book: "[[pearl-causality]]"

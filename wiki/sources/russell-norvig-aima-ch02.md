@@ -1,4 +1,5 @@
 ---
+abbrev: "AIMA"
 authors: Stuart Russell, Peter Norvig
 coverage: 0
 domain:
@@ -11,7 +12,7 @@ parent_book: pkis:source:russell-norvig-aima
 status: unread
 tags:
 - russell-norvig-aima
-title: Ch. 2 — Intelligent Agents
+title: "[AIMA Russell & Norvig] Ch. 2 — Intelligent Agents"
 type: chapter
 understanding: 0
 year: 2020

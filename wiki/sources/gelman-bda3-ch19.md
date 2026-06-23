@@ -1,4 +1,5 @@
 ---
+abbrev: "BDA3"
 authors: Andrew Gelman, John B. Carlin, Hal S. Stern, David B. Dunson, Aki Vehtari,
   Donald B. Rubin
 coverage: 0
@@ -14,7 +15,7 @@ parent_book: pkis:source:gelman-bda3
 status: unread
 tags:
 - gelman-bda3
-title: Ch. 19 — Parametric nonlinear models
+title: "[BDA3 Gelman et al] Ch. 19 — Parametric nonlinear models"
 type: chapter
 understanding: 0
 year: 2013

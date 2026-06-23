@@ -1,4 +1,5 @@
 ---
+abbrev: "Mixtape"
 aliases: []
 authors: Scott Cunningham
 chapter: 7
@@ -22,7 +23,7 @@ tags:
 - local-average-treatment-effect
 - bandwidth
 - mccrary-test
-title: Ch. 7 — Regression Discontinuity
+title: "[Mixtape Cunningham] Ch. 7 — Regression Discontinuity"
 type: book-chapter
 year: 2021
 ---

@@ -1,4 +1,5 @@
 ---
+abbrev: "PRML"
 aliases: []
 authors: Christopher M. Bishop
 coverage: 0
@@ -14,7 +15,7 @@ tags:
 - bayesian
 - pattern-recognition
 - textbook
-title: "Ch. 01 \u2014 Introduction"
+title: "[PRML Bishop] Ch. 01 — Introduction"
 type: chapter
 understanding: 0
 year: 2006

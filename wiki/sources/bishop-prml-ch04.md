@@ -1,4 +1,5 @@
 ---
+abbrev: "PRML"
 aliases: []
 authors: Christopher M. Bishop
 coverage: 0
@@ -14,7 +15,7 @@ tags:
 - bayesian
 - pattern-recognition
 - textbook
-title: "Ch. 04 \u2014 Linear Models for Classification"
+title: "[PRML Bishop] Ch. 04 — Linear Models for Classification"
 type: chapter
 understanding: 0
 year: 2006

@@ -1,7 +1,8 @@
 ---
+abbrev: "ADP"
 id: "pkis:source:gulli-agentic-design-patterns-ch29"
 aliases: []
-title: "Ch. 29 — Conclusion"
+title: "[ADP Gullí] Ch. 29 — Conclusion"
 authors: "Antonio Gullí"
 year: 2025
 type: book-chapter

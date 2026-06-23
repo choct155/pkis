@@ -1,4 +1,5 @@
 ---
+abbrev: "PML2"
 aliases: []
 authors: Kevin P. Murphy
 coverage: 0
@@ -16,7 +17,7 @@ tags:
 - bayesian
 - inference
 - textbook
-title: "Ch. 11 \u2014 Monte Carlo methods"
+title: "[PML2 Murphy] Ch. 11 — Monte Carlo methods"
 type: chapter
 understanding: 0
 year: 2023

@@ -1,7 +1,8 @@
 ---
+abbrev: "Causality"
 id: "pkis:source:pearl-causality-ch05"
 aliases: []
-title: "Causality Ch. 5: Causality and Structural Models in Social Science and Economics"
+title: "[Causality] Causality Ch. 5: Causality and Structural Models in Social Science and Economics"
 knowledge_type: source
 source_type: book-chapter
 parent_book: "[[pearl-causality]]"

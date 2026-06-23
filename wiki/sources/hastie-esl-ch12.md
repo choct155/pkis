@@ -1,7 +1,8 @@
 ---
+abbrev: "ESL"
 id: "pkis:source:hastie-esl-ch12"
 aliases: []
-title: "Ch. 12 — Support Vector Machines and Flexible Discriminants"
+title: "[ESL Hastie et al] Ch. 12 — Support Vector Machines and Flexible Discriminants"
 authors: "Trevor Hastie, Robert Tibshirani, Jerome Friedman"
 year: 2009
 type: book-chapter

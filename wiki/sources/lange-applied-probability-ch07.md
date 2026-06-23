@@ -1,7 +1,8 @@
 ---
+abbrev: "AppProb"
 id: "pkis:source:lange-applied-probability-ch07"
 aliases: []
-title: "Ch. 7 — Discrete-Time Markov Chains"
+title: "[AppProb Lange] Ch. 7 — Discrete-Time Markov Chains"
 authors: "Kenneth Lange"
 year: 2024
 type: book-chapter

@@ -1,4 +1,5 @@
 ---
+abbrev: "Mixtape"
 aliases: []
 authors: Scott Cunningham
 chapter: 8
@@ -21,7 +22,7 @@ tags:
 - exclusion-restriction
 - relevance
 - compliers
-title: Ch. 8 — Instrumental Variables
+title: "[Mixtape Cunningham] Ch. 8 — Instrumental Variables"
 type: book-chapter
 year: 2021
 ---

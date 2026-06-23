@@ -1,4 +1,5 @@
 ---
+abbrev: "PRML"
 aliases: []
 authors: Christopher M. Bishop
 coverage: 0
@@ -14,7 +15,7 @@ tags:
 - bayesian
 - pattern-recognition
 - textbook
-title: "Ch. 09 \u2014 Mixture Models and EM"
+title: "[PRML Bishop] Ch. 09 — Mixture Models and EM"
 type: chapter
 understanding: 0
 year: 2006

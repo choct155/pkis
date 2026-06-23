@@ -1,4 +1,5 @@
 ---
+abbrev: "PTLoS"
 aliases: []
 authors: E. T. Jaynes
 coverage: 0
@@ -13,7 +14,7 @@ tags:
 - bayesian
 - probability-theory
 - jaynes-probability
-title: "Ch. 10 — Physics of 'Random Experiments'"
+title: "[PTLoS Jaynes] Ch. 10 — Physics of 'Random Experiments'"
 type: chapter
 understanding: 0
 year: 2003

@@ -1,7 +1,8 @@
 ---
+abbrev: "GMVS"
 id: "pkis:source:carrell-groups-matrices-vectors-ch11"
 aliases: []
-title: "Ch. 11 — Theorems on Group Theory"
+title: "[GMVS Carrell] Ch. 11 — Theorems on Group Theory"
 authors: "James B. Carrell"
 year: 2017
 type: book-chapter

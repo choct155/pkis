@@ -1,4 +1,5 @@
 ---
+abbrev: "ITILA"
 aliases: []
 authors: David J. C. MacKay
 coverage: 0
@@ -12,7 +13,7 @@ status: unread
 tags:
 - information-theory
 - mackay-itila
-title: Ch. 42 — Hopfield Networks
+title: "[ITILA MacKay] Ch. 42 — Hopfield Networks"
 type: chapter
 understanding: 0
 year: 2003

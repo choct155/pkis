@@ -1,7 +1,8 @@
 ---
+abbrev: "ADP"
 id: "pkis:source:gulli-agentic-design-patterns-ch12"
 aliases: []
-title: "Ch. 12 — Exception Handling and Recovery"
+title: "[ADP Gullí] Ch. 12 — Exception Handling and Recovery"
 authors: "Antonio Gullí"
 year: 2025
 type: book-chapter

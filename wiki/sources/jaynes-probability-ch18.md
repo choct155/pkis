@@ -1,4 +1,5 @@
 ---
+abbrev: "PTLoS"
 aliases: []
 authors: E. T. Jaynes
 coverage: 0
@@ -13,7 +14,7 @@ tags:
 - bayesian
 - probability-theory
 - jaynes-probability
-title: 'Ch. 18 — The Ap-Distribution and Rule of Succession'
+title: "[PTLoS Jaynes] Ch. 18 — The Ap-Distribution and Rule of Succession"
 type: chapter
 understanding: 0
 year: 2003

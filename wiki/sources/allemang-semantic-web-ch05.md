@@ -1,7 +1,8 @@
 ---
+abbrev: "SWWO"
 id: "pkis:source:allemang-semantic-web-ch05"
 aliases: []
-title: "Ch. 5 — Querying the Semantic Web — SPARQL"
+title: "[SWWO Allemang & Hendler] Ch. 5 — Querying the Semantic Web — SPARQL"
 authors: "Dean Allemang, Jim Hendler"
 year: 2011
 type: book-chapter

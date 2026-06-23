@@ -1,4 +1,5 @@
 ---
+abbrev: "Mixtape"
 aliases: []
 authors: Scott Cunningham
 chapter: 3
@@ -18,7 +19,7 @@ tags:
 - omitted-variable-bias
 - econometrics
 - identification
-title: Ch. 3 — Properties of Regression
+title: "[Mixtape Cunningham] Ch. 3 — Properties of Regression"
 type: book-chapter
 year: 2021
 ---

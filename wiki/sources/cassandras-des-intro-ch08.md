@@ -1,7 +1,8 @@
 ---
+abbrev: "DES"
 id: "pkis:source:cassandras-des-intro-ch08"
 aliases: []
-title: "Ch. 8 — Introduction to Queueing Theory"
+title: "[DES Cassandras & Lafortune] Ch. 8 — Introduction to Queueing Theory"
 authors: "Christos G. Cassandras, Stéphane Lafortune"
 year: 2021
 type: book-chapter

@@ -1,4 +1,5 @@
 ---
+abbrev: "PRML"
 aliases: []
 authors: Christopher M. Bishop
 coverage: 0
@@ -14,7 +15,7 @@ tags:
 - bayesian
 - pattern-recognition
 - textbook
-title: "Ch. 10 \u2014 Approximate Inference"
+title: "[PRML Bishop] Ch. 10 — Approximate Inference"
 type: chapter
 understanding: 0
 year: 2006

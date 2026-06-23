@@ -1,7 +1,8 @@
 ---
+abbrev: "ADP"
 id: "pkis:source:gulli-agentic-design-patterns"
 aliases: ["Agentic Design Patterns"]
-title: "Agentic Design Patterns: A Hands-On Guide to Building Intelligent Systems"
+title: "[ADP Gullí] Agentic Design Patterns: A Hands-On Guide to Building Intelligent Systems"
 authors: "Antonio Gullí"
 year: 2025
 type: book
@@ -78,35 +79,32 @@ Part II (Ch. 22–29) provides supplementary material: advanced prompting techni
 - [[prompt-chaining]] prerequisite-of [[multi-agent-systems]]: structured prompt sequences are a primitive that agent orchestration builds on
 
 ## Chapters
-
-| Ch | Stub | Title |
-|---|---|---|
-| 1 | [[gulli-agentic-design-patterns-ch01]] | Prompt Chaining |
-| 2 | [[gulli-agentic-design-patterns-ch02]] | Routing |
-| 3 | [[gulli-agentic-design-patterns-ch03]] | Parallelization |
-| 4 | [[gulli-agentic-design-patterns-ch04]] | Reflection |
-| 5 | [[gulli-agentic-design-patterns-ch05]] | Tool Use (Function Calling) |
-| 6 | [[gulli-agentic-design-patterns-ch06]] | Planning |
-| 7 | [[gulli-agentic-design-patterns-ch07]] | Multi-Agent Collaboration |
-| 8 | [[gulli-agentic-design-patterns-ch08]] | Memory Management |
-| 9 | [[gulli-agentic-design-patterns-ch09]] | Learning and Adaptation |
-| 10 | [[gulli-agentic-design-patterns-ch10]] | Model Context Protocol |
-| 11 | [[gulli-agentic-design-patterns-ch11]] | Goal Setting and Monitoring |
-| 12 | [[gulli-agentic-design-patterns-ch12]] | Exception Handling and Recovery |
-| 13 | [[gulli-agentic-design-patterns-ch13]] | Human-in-the-Loop |
-| 14 | [[gulli-agentic-design-patterns-ch14]] | Knowledge Retrieval (RAG) |
-| 15 | [[gulli-agentic-design-patterns-ch15]] | Inter-Agent Communication (A2A) |
-| 16 | [[gulli-agentic-design-patterns-ch16]] | Resource-Aware Optimization |
-| 17 | [[gulli-agentic-design-patterns-ch17]] | Reasoning Techniques |
-| 18 | [[gulli-agentic-design-patterns-ch18]] | Guardrails/Safety Patterns |
-| 19 | [[gulli-agentic-design-patterns-ch19]] | Evaluation and Monitoring |
-| 20 | [[gulli-agentic-design-patterns-ch20]] | Prioritization |
-| 21 | [[gulli-agentic-design-patterns-ch21]] | Exploration and Discovery |
-| 22 | [[gulli-agentic-design-patterns-ch22]] | Advanced Prompting Techniques |
-| 23 | [[gulli-agentic-design-patterns-ch23]] | AI Agentic Interactions: From GUI to Real World Environment |
-| 24 | [[gulli-agentic-design-patterns-ch24]] | A Quick Overview of Agentic Frameworks |
-| 25 | [[gulli-agentic-design-patterns-ch25]] | Building an Agent with AgentSpace |
-| 26 | [[gulli-agentic-design-patterns-ch26]] | AI Agents on the CLI |
-| 27 | [[gulli-agentic-design-patterns-ch27]] | Under the Hood: An Inside Look at the Agents' Reasoning Engines |
-| 28 | [[gulli-agentic-design-patterns-ch28]] | Coding Agents |
-| 29 | [[gulli-agentic-design-patterns-ch29]] | Conclusion |
+- [[gulli-agentic-design-patterns-ch01]] — Ch. 1 — Prompt Chaining
+- [[gulli-agentic-design-patterns-ch02]] — Ch. 2 — Routing
+- [[gulli-agentic-design-patterns-ch03]] — Ch. 3 — Parallelization
+- [[gulli-agentic-design-patterns-ch04]] — Ch. 4 — Reflection
+- [[gulli-agentic-design-patterns-ch05]] — Ch. 5 — Tool Use (Function Calling)
+- [[gulli-agentic-design-patterns-ch06]] — Ch. 6 — Planning
+- [[gulli-agentic-design-patterns-ch07]] — Ch. 7 — Multi-Agent Collaboration
+- [[gulli-agentic-design-patterns-ch08]] — Ch. 8 — Memory Management
+- [[gulli-agentic-design-patterns-ch09]] — Ch. 9 — Learning and Adaptation
+- [[gulli-agentic-design-patterns-ch10]] — Ch. 10 — Model Context Protocol
+- [[gulli-agentic-design-patterns-ch11]] — Ch. 11 — Goal Setting and Monitoring
+- [[gulli-agentic-design-patterns-ch12]] — Ch. 12 — Exception Handling and Recovery
+- [[gulli-agentic-design-patterns-ch13]] — Ch. 13 — Human-in-the-Loop
+- [[gulli-agentic-design-patterns-ch14]] — Ch. 14 — Knowledge Retrieval (RAG)
+- [[gulli-agentic-design-patterns-ch15]] — Ch. 15 — Inter-Agent Communication (A2A)
+- [[gulli-agentic-design-patterns-ch16]] — Ch. 16 — Resource-Aware Optimization
+- [[gulli-agentic-design-patterns-ch17]] — Ch. 17 — Reasoning Techniques
+- [[gulli-agentic-design-patterns-ch18]] — Ch. 18 — Guardrails/Safety Patterns
+- [[gulli-agentic-design-patterns-ch19]] — Ch. 19 — Evaluation and Monitoring
+- [[gulli-agentic-design-patterns-ch20]] — Ch. 20 — Prioritization
+- [[gulli-agentic-design-patterns-ch21]] — Ch. 21 — Exploration and Discovery
+- [[gulli-agentic-design-patterns-ch22]] — Ch. 22 — Advanced Prompting Techniques
+- [[gulli-agentic-design-patterns-ch23]] — Ch. 23 — AI Agentic Interactions: From GUI to Real World Environment
+- [[gulli-agentic-design-patterns-ch24]] — Ch. 24 — A Quick Overview of Agentic Frameworks
+- [[gulli-agentic-design-patterns-ch25]] — Ch. 25 — Building an Agent with AgentSpace
+- [[gulli-agentic-design-patterns-ch26]] — Ch. 26 — AI Agents on the CLI
+- [[gulli-agentic-design-patterns-ch27]] — Ch. 27 — Under the Hood: An Inside Look at the Agents Reasoning Engines
+- [[gulli-agentic-design-patterns-ch28]] — Ch. 28 — Coding Agents
+- [[gulli-agentic-design-patterns-ch29]] — Ch. 29 — Conclusion

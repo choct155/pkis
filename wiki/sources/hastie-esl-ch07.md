@@ -1,7 +1,8 @@
 ---
+abbrev: "ESL"
 id: "pkis:source:hastie-esl-ch07"
 aliases: []
-title: "Ch. 7 — Model Assessment and Selection"
+title: "[ESL Hastie et al] Ch. 7 — Model Assessment and Selection"
 authors: "Trevor Hastie, Robert Tibshirani, Jerome Friedman"
 year: 2009
 type: book-chapter

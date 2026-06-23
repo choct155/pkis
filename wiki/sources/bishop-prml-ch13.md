@@ -1,4 +1,5 @@
 ---
+abbrev: "PRML"
 aliases: []
 authors: Christopher M. Bishop
 coverage: 0
@@ -14,7 +15,7 @@ tags:
 - bayesian
 - pattern-recognition
 - textbook
-title: "Ch. 13 \u2014 Sequential Data"
+title: "[PRML Bishop] Ch. 13 — Sequential Data"
 type: chapter
 understanding: 0
 year: 2006

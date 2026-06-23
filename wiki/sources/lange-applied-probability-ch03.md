@@ -1,7 +1,8 @@
 ---
+abbrev: "AppProb"
 id: "pkis:source:lange-applied-probability-ch03"
 aliases: []
-title: "Ch. 3 — Convexity, Optimization, and Inequalities"
+title: "[AppProb Lange] Ch. 3 — Convexity, Optimization, and Inequalities"
 authors: "Kenneth Lange"
 year: 2024
 type: book-chapter

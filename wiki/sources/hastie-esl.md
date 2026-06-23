@@ -1,7 +1,8 @@
 ---
+abbrev: "ESL"
 id: "pkis:source:hastie-esl"
 aliases: ["ESL", "Elements of Statistical Learning"]
-title: "The Elements of Statistical Learning: Data Mining, Inference, and Prediction (2nd Edition)"
+title: "[ESL Hastie et al] The Elements of Statistical Learning: Data Mining, Inference, and Prediction (2nd Edition)"
 authors: "Trevor Hastie, Robert Tibshirani, Jerome Friedman"
 year: 2009
 type: book
@@ -79,28 +80,24 @@ Hastie, Tibshirani, and Friedman are co-developers of several methods covered (n
 7. The "bet on sparsity" principle: in high dimensions, use L1-type methods that assume sparsity. If the truth is sparse, you win. If the truth is dense, no method will work well in high dimensions anyway, so you lose nothing. (Ch. 16)
 
 ## Chapters
-
-| Ch | Stub | Title |
-|---|---|---|
-| 1 | [[hastie-esl-ch01]] | Introduction |
-| 2 | [[hastie-esl-ch02]] | Overview of Supervised Learning |
-| 3 | [[hastie-esl-ch03]] | Linear Methods for Regression |
-| 4 | [[hastie-esl-ch04]] | Linear Methods for Classification |
-| 5 | [[hastie-esl-ch05]] | Basis Expansions and Regularization |
-| 6 | [[hastie-esl-ch06]] | Kernel Smoothing Methods |
-| 7 | [[hastie-esl-ch07]] | Model Assessment and Selection |
-| 8 | [[hastie-esl-ch08]] | Model Inference and Averaging |
-| 9 | [[hastie-esl-ch09]] | Additive Models, Trees, and Related Methods |
-| 10 | [[hastie-esl-ch10]] | Boosting and Additive Trees |
-| 11 | [[hastie-esl-ch11]] | Neural Networks |
-| 12 | [[hastie-esl-ch12]] | Support Vector Machines and Flexible Discriminants |
-| 13 | [[hastie-esl-ch13]] | Prototype Methods and Nearest-Neighbors |
-| 14 | [[hastie-esl-ch14]] | Unsupervised Learning |
-| 15 | [[hastie-esl-ch15]] | Random Forests |
-| 16 | [[hastie-esl-ch16]] | Ensemble Learning |
-| 17 | [[hastie-esl-ch17]] | Undirected Graphical Models |
-| 18 | [[hastie-esl-ch18]] | High-Dimensional Problems: p >> N |
-
+- [[hastie-esl-ch01]] — Ch. 1 — Introduction
+- [[hastie-esl-ch02]] — Ch. 2 — Overview of Supervised Learning
+- [[hastie-esl-ch03]] — Ch. 3 — Linear Methods for Regression
+- [[hastie-esl-ch04]] — Ch. 4 — Linear Methods for Classification
+- [[hastie-esl-ch05]] — Ch. 5 — Basis Expansions and Regularization
+- [[hastie-esl-ch06]] — Ch. 6 — Kernel Smoothing Methods
+- [[hastie-esl-ch07]] — Ch. 7 — Model Assessment and Selection
+- [[hastie-esl-ch08]] — Ch. 8 — Model Inference and Averaging
+- [[hastie-esl-ch09]] — Ch. 9 — Additive Models, Trees, and Related Methods
+- [[hastie-esl-ch10]] — Ch. 10 — Boosting and Additive Trees
+- [[hastie-esl-ch11]] — Ch. 11 — Neural Networks
+- [[hastie-esl-ch12]] — Ch. 12 — Support Vector Machines and Flexible Discriminants
+- [[hastie-esl-ch13]] — Ch. 13 — Prototype Methods and Nearest-Neighbors
+- [[hastie-esl-ch14]] — Ch. 14 — Unsupervised Learning
+- [[hastie-esl-ch15]] — Ch. 15 — Random Forests
+- [[hastie-esl-ch16]] — Ch. 16 — Ensemble Learning
+- [[hastie-esl-ch17]] — Ch. 17 — Undirected Graphical Models
+- [[hastie-esl-ch18]] — Ch. 18 — High-Dimensional Problems: p >> N
 ## Connection Candidates
 
 - [[bayes-theorem]] (result) — Ch. 8 Bayesian methods build on this; potential `prerequisite-of` edge

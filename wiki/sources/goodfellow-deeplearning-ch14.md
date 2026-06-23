@@ -1,4 +1,5 @@
 ---
+abbrev: "DLB"
 aliases: []
 authors: Ian Goodfellow, Yoshua Bengio, Aaron Courville
 coverage: 0
@@ -14,7 +15,7 @@ tags:
 - neural-networks
 - representation-learning
 - textbook
-title: "Ch. 14 \u2014 Autoencoders"
+title: "[DLB Goodfellow et al] Ch. 14 — Autoencoders"
 type: chapter
 understanding: 0
 year: 2016

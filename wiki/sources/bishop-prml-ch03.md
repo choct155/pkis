@@ -1,4 +1,5 @@
 ---
+abbrev: "PRML"
 aliases: []
 authors: Christopher M. Bishop
 coverage: 0
@@ -14,7 +15,7 @@ tags:
 - bayesian
 - pattern-recognition
 - textbook
-title: "Ch. 03 \u2014 Linear Models for Regression"
+title: "[PRML Bishop] Ch. 03 — Linear Models for Regression"
 type: chapter
 understanding: 0
 year: 2006

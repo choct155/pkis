@@ -1,7 +1,8 @@
 ---
+abbrev: "OBI"
 id: "pkis:source:cimiano-ontology-nlp"
 aliases: ["Ontology-Based Interpretation of Natural Language"]
-title: "Ontology-Based Interpretation of Natural Language"
+title: "[OBI Cimiano et al] Ontology-Based Interpretation of Natural Language"
 authors: "Philipp Cimiano, Christina Unger, John McCrae"
 year: 2014
 type: book
@@ -56,19 +57,16 @@ A worked application throughout is a question answering system over RDF/SPARQL d
 7. **Guarino's formal definition of ontology:** An ontology is "a logical theory accounting for the intended meaning of a formal vocabulary, i.e., its ontological commitment to a particular conceptualization of the world." Crucially, an ontology rules out *unintended* model-theoretic interpretations — its models should correspond precisely to situations possible within the target conceptualization. (ch2, §2.1)
 
 ## Chapters
-| Ch | Stub | Title |
-|---|---|---|
-| 1 | [[cimiano-ontology-nlp-ch01]] | Introduction |
-| 2 | [[cimiano-ontology-nlp-ch02]] | Ontologies |
-| 3 | [[cimiano-ontology-nlp-ch03]] | Linguistic Formalisms |
-| 4 | [[cimiano-ontology-nlp-ch04]] | Ontology Lexica |
-| 5 | [[cimiano-ontology-nlp-ch05]] | Grammar Generation |
-| 6 | [[cimiano-ontology-nlp-ch06]] | Putting Everything Together |
-| 7 | [[cimiano-ontology-nlp-ch07]] | Ontological Reasoning for Ambiguity Resolution |
-| 8 | [[cimiano-ontology-nlp-ch08]] | Temporal Interpretation |
-| 9 | [[cimiano-ontology-nlp-ch09]] | Ontology-Based Interpretation for Question Answering |
-| 10 | [[cimiano-ontology-nlp-ch10]] | Conclusion |
-
+- [[cimiano-ontology-nlp-ch01]] — Ch. 1 — Introduction
+- [[cimiano-ontology-nlp-ch02]] — Ch. 2 — Ontologies
+- [[cimiano-ontology-nlp-ch03]] — Ch. 3 — Linguistic Formalisms
+- [[cimiano-ontology-nlp-ch04]] — Ch. 4 — Ontology Lexica
+- [[cimiano-ontology-nlp-ch05]] — Ch. 5 — Grammar Generation
+- [[cimiano-ontology-nlp-ch06]] — Ch. 6 — Putting Everything Together
+- [[cimiano-ontology-nlp-ch07]] — Ch. 7 — Ontological Reasoning for Ambiguity Resolution
+- [[cimiano-ontology-nlp-ch08]] — Ch. 8 — Temporal Interpretation
+- [[cimiano-ontology-nlp-ch09]] — Ch. 9 — Ontology-Based Interpretation for Question Answering
+- [[cimiano-ontology-nlp-ch10]] — Ch. 10 — Conclusion
 ## Connection Candidates
 
 - [[ontology-reasoning]] — extends: this book extends the basic Datalog/chase view of ontological reasoning to DL-based OWL reasoning for disambiguation; the reasoner here is a tableau-based DL reasoner rather than a Datalog chase engine

@@ -1,7 +1,8 @@
 ---
+abbrev: "ESL"
 id: "pkis:source:hastie-esl-ch17"
 aliases: []
-title: "Ch. 17 — Undirected Graphical Models"
+title: "[ESL Hastie et al] Ch. 17 — Undirected Graphical Models"
 authors: "Trevor Hastie, Robert Tibshirani, Jerome Friedman"
 year: 2009
 type: book-chapter

@@ -1,7 +1,8 @@
 ---
+abbrev: "SMC"
 id: "pkis:source:kroese-statistical-modeling-ch07"
 aliases: []
-title: "Ch. 7 — Monte Carlo Sampling"
+title: "[SMC Chan & Kroese] Ch. 7 — Monte Carlo Sampling"
 authors: ["Joshua C.C. Chan", "Dirk P. Kroese"]
 year: 2025
 type: book-chapter

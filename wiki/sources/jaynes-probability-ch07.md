@@ -1,4 +1,5 @@
 ---
+abbrev: "PTLoS"
 aliases: []
 authors: E. T. Jaynes
 coverage: 0
@@ -13,7 +14,7 @@ tags:
 - bayesian
 - probability-theory
 - jaynes-probability
-title: 'Ch. 7 — The Central, Gaussian or Normal Distribution'
+title: "[PTLoS Jaynes] Ch. 7 — The Central, Gaussian or Normal Distribution"
 type: chapter
 understanding: 0
 year: 2003

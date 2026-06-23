@@ -1,7 +1,8 @@
 ---
+abbrev: "OBI"
 id: "pkis:source:cimiano-ontology-nlp-ch08"
 aliases: []
-title: "Ch. 8 — Temporal Interpretation"
+title: "[OBI Cimiano et al] Ch. 8 — Temporal Interpretation"
 authors: "Philipp Cimiano, Christina Unger, John McCrae"
 year: 2014
 type: book-chapter

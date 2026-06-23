@@ -1,7 +1,8 @@
 ---
+abbrev: "ADP"
 id: "pkis:source:gulli-agentic-design-patterns-ch11"
 aliases: []
-title: "Ch. 11 — Goal Setting and Monitoring"
+title: "[ADP Gullí] Ch. 11 — Goal Setting and Monitoring"
 authors: "Antonio Gullí"
 year: 2025
 type: book-chapter

@@ -1,4 +1,5 @@
 ---
+abbrev: "DLB"
 aliases: []
 authors: Ian Goodfellow, Yoshua Bengio, Aaron Courville
 coverage: 0
@@ -14,7 +15,7 @@ tags:
 - neural-networks
 - representation-learning
 - textbook
-title: "Ch. 11 \u2014 Practical Methodology"
+title: "[DLB Goodfellow et al] Ch. 11 — Practical Methodology"
 type: chapter
 understanding: 0
 year: 2016

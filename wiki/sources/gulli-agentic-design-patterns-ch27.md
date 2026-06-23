@@ -1,7 +1,8 @@
 ---
+abbrev: "ADP"
 id: "pkis:source:gulli-agentic-design-patterns-ch27"
 aliases: []
-title: "Ch. 27 — Under the Hood: An Inside Look at the Agents Reasoning Engines"
+title: "[ADP Gullí] Ch. 27 — Under the Hood: An Inside Look at the Agents Reasoning Engines"
 authors: "Antonio Gullí"
 year: 2025
 type: book-chapter

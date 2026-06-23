@@ -1,7 +1,8 @@
 ---
+abbrev: "AppProb"
 id: "pkis:source:lange-applied-probability-ch13"
 aliases: []
-title: "Ch. 13 — Numerical Methods"
+title: "[AppProb Lange] Ch. 13 — Numerical Methods"
 authors: "Kenneth Lange"
 year: 2024
 type: book-chapter

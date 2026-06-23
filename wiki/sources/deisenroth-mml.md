@@ -1,7 +1,8 @@
 ---
+abbrev: "MML"
 id: "pkis:source:deisenroth-mml"
 aliases: ["MML", "Mathematics for Machine Learning"]
-title: "Mathematics for Machine Learning"
+title: "[MML Deisenroth et al] Mathematics for Machine Learning"
 authors: "Marc Peter Deisenroth, A. Aldo Faisal, Cheng Soon Ong"
 year: 2020
 type: book
@@ -92,22 +93,18 @@ The book is complementary to ESL — where ESL gives broad coverage of methods, 
 6. Empirical risk minimization (ERM) is the formal framework underlying supervised learning: minimize the empirical loss over training data as a surrogate for true risk (expected loss). The choice of loss function and hypothesis class determines the method. (Ch 8.2)
 
 ## Chapters
-
-| Ch | Stub | Title |
-|---|---|---|
-| 1 | [[deisenroth-mml-ch01]] | Introduction and Motivation |
-| 2 | [[deisenroth-mml-ch02]] | Linear Algebra |
-| 3 | [[deisenroth-mml-ch03]] | Analytic Geometry |
-| 4 | [[deisenroth-mml-ch04]] | Matrix Decompositions |
-| 5 | [[deisenroth-mml-ch05]] | Vector Calculus |
-| 6 | [[deisenroth-mml-ch06]] | Probability and Distributions |
-| 7 | [[deisenroth-mml-ch07]] | Continuous Optimization |
-| 8 | [[deisenroth-mml-ch08]] | When Models Meet Data |
-| 9 | [[deisenroth-mml-ch09]] | Linear Regression |
-| 10 | [[deisenroth-mml-ch10]] | Dimensionality Reduction with PCA |
-| 11 | [[deisenroth-mml-ch11]] | Density Estimation with Gaussian Mixture Models |
-| 12 | [[deisenroth-mml-ch12]] | Classification with Support Vector Machines |
-
+- [[deisenroth-mml-ch01]] — Ch. 1 — Introduction and Motivation
+- [[deisenroth-mml-ch02]] — Ch. 2 — Linear Algebra
+- [[deisenroth-mml-ch03]] — Ch. 3 — Analytic Geometry
+- [[deisenroth-mml-ch04]] — Ch. 4 — Matrix Decompositions
+- [[deisenroth-mml-ch05]] — Ch. 5 — Vector Calculus
+- [[deisenroth-mml-ch06]] — Ch. 6 — Probability and Distributions
+- [[deisenroth-mml-ch07]] — Ch. 7 — Continuous Optimization
+- [[deisenroth-mml-ch08]] — Ch. 8 — When Models Meet Data
+- [[deisenroth-mml-ch09]] — Ch. 9 — Linear Regression
+- [[deisenroth-mml-ch10]] — Ch. 10 — Dimensionality Reduction with PCA
+- [[deisenroth-mml-ch11]] — Ch. 11 — Density Estimation with Gaussian Mixture Models
+- [[deisenroth-mml-ch12]] — Ch. 12 — Classification with Support Vector Machines
 ## Connection Candidates
 
 - [[hastie-esl]] — strongly complementary: MML provides the mathematical justification for methods ESL describes. Synthesizer should draw explicit `grounds` edges from MML's math nodes to ESL's method nodes.

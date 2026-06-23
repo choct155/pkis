@@ -1,4 +1,5 @@
 ---
+abbrev: "ITILA"
 aliases: []
 authors: David J. C. MacKay
 coverage: 0
@@ -12,7 +13,7 @@ status: unread
 tags:
 - information-theory
 - mackay-itila
-title: Ch. 11 — Error-Correcting Codes and Real Channels
+title: "[ITILA MacKay] Ch. 11 — Error-Correcting Codes and Real Channels"
 type: chapter
 understanding: 0
 year: 2003

@@ -1,4 +1,5 @@
 ---
+abbrev: "ASP"
 authors: Sidney Resnick
 coverage: 0
 domain:
@@ -10,7 +11,7 @@ parent_book: pkis:source:resnick-stochastic-processes
 status: unread
 tags:
 - resnick-stochastic-processes
-title: Ch. 4 — Point Processes
+title: "[ASP Resnick] Ch. 4 — Point Processes"
 type: chapter
 understanding: 0
 year: 1992

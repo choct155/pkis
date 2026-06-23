@@ -1,4 +1,5 @@
 ---
+abbrev: "PTLoS"
 aliases: []
 authors: E. T. Jaynes
 coverage: 0
@@ -13,7 +14,7 @@ tags:
 - bayesian
 - probability-theory
 - jaynes-probability
-title: 'Ch. 4 — Elementary Hypothesis Testing'
+title: "[PTLoS Jaynes] Ch. 4 — Elementary Hypothesis Testing"
 type: chapter
 understanding: 0
 year: 2003

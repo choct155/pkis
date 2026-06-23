@@ -1,4 +1,5 @@
 ---
+abbrev: "PML1"
 aliases: []
 authors: Kevin P. Murphy
 coverage: 0
@@ -16,7 +17,7 @@ tags:
 - bayesian
 - deep-learning
 - textbook
-title: "Ch. 05 \u2014 Decision Theory"
+title: "[PML1 Murphy] Ch. 05 — Decision Theory"
 type: chapter
 understanding: 0
 year: 2022

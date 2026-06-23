@@ -1,7 +1,8 @@
 ---
+abbrev: "Causality"
 id: "pkis:source:pearl-causality-ch09"
 aliases: []
-title: "Causality Ch. 9: Probability of Causation: Interpretation and Identification"
+title: "[Causality] Causality Ch. 9: Probability of Causation: Interpretation and Identification"
 knowledge_type: source
 source_type: book-chapter
 parent_book: "[[pearl-causality]]"

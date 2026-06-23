@@ -1,7 +1,8 @@
 ---
+abbrev: "ADP"
 id: "pkis:source:gulli-agentic-design-patterns-ch16"
 aliases: []
-title: "Ch. 16 — Resource-Aware Optimization"
+title: "[ADP Gullí] Ch. 16 — Resource-Aware Optimization"
 authors: "Antonio Gullí"
 year: 2025
 type: book-chapter

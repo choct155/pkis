@@ -1,4 +1,5 @@
 ---
+abbrev: "DLB"
 aliases: []
 authors: Ian Goodfellow, Yoshua Bengio, Aaron Courville
 coverage: 0
@@ -14,7 +15,7 @@ tags:
 - neural-networks
 - representation-learning
 - textbook
-title: "Ch. 17 \u2014 Monte Carlo Methods"
+title: "[DLB Goodfellow et al] Ch. 17 — Monte Carlo Methods"
 type: chapter
 understanding: 0
 year: 2016

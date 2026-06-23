@@ -1,7 +1,8 @@
 ---
+abbrev: "ADP"
 id: "pkis:source:gulli-agentic-design-patterns-ch19"
 aliases: []
-title: "Ch. 19 — Evaluation and Monitoring"
+title: "[ADP Gullí] Ch. 19 — Evaluation and Monitoring"
 authors: "Antonio Gullí"
 year: 2025
 type: book-chapter

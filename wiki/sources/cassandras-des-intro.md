@@ -1,7 +1,8 @@
 ---
+abbrev: "DES"
 id: "pkis:source:cassandras-des-intro"
 aliases: ["Introduction to Discrete Event Systems", "Cassandras DES"]
-title: "Introduction to Discrete Event Systems (Third Edition)"
+title: "[DES Cassandras & Lafortune] Introduction to Discrete Event Systems (Third Edition)"
 authors: "Christos G. Cassandras, Stéphane Lafortune"
 year: 2021
 type: book
@@ -86,17 +87,14 @@ The third edition adds new material on labeled transition systems, opacity, mode
 - [[kalman-filter]] — both Kalman filtering and DES state estimation involve partially-observed stochastic processes; `contrasts-with` (continuous vs. discrete state)
 
 ## Chapters
-
-| Ch | Stub | Title |
-|---|---|---|
-| 1 | [[cassandras-des-intro-ch01]] | Systems and Models |
-| 2 | [[cassandras-des-intro-ch02]] | Languages and Automata |
-| 3 | [[cassandras-des-intro-ch03]] | Supervisory Control |
-| 4 | [[cassandras-des-intro-ch04]] | Petri Nets |
-| 5 | [[cassandras-des-intro-ch05]] | Timed and Hybrid Models |
-| 6 | [[cassandras-des-intro-ch06]] | Stochastic Timed Automata |
-| 7 | [[cassandras-des-intro-ch07]] | Markov Chains |
-| 8 | [[cassandras-des-intro-ch08]] | Introduction to Queueing Theory |
-| 9 | [[cassandras-des-intro-ch09]] | Controlled Markov Chains |
-| 10 | [[cassandras-des-intro-ch10]] | Introduction to Discrete-Event Simulation |
-| 11 | [[cassandras-des-intro-ch11]] | Sensitivity Analysis and Concurrent Estimation |
+- [[cassandras-des-intro-ch01]] — Ch. 1 — Systems and Models
+- [[cassandras-des-intro-ch02]] — Ch. 2 — Languages and Automata
+- [[cassandras-des-intro-ch03]] — Ch. 3 — Supervisory Control
+- [[cassandras-des-intro-ch04]] — Ch. 4 — Petri Nets
+- [[cassandras-des-intro-ch05]] — Ch. 5 — Timed and Hybrid Models
+- [[cassandras-des-intro-ch06]] — Ch. 6 — Stochastic Timed Automata
+- [[cassandras-des-intro-ch07]] — Ch. 7 — Markov Chains
+- [[cassandras-des-intro-ch08]] — Ch. 8 — Introduction to Queueing Theory
+- [[cassandras-des-intro-ch09]] — Ch. 9 — Controlled Markov Chains
+- [[cassandras-des-intro-ch10]] — Ch. 10 — Introduction to Discrete-Event Simulation
+- [[cassandras-des-intro-ch11]] — Ch. 11 — Sensitivity Analysis and Concurrent Estimation
