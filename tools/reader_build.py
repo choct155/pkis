@@ -488,18 +488,28 @@ def concat_wavs(paths, out):
 
 
 def encode_mp3(wav_path, mp3_path, bitrate=64):
-    """Encode a wav to mp3 with lameenc (no ffmpeg). ~64 kbps mono speech ≈ 0.5 MB/min."""
+    """Encode a wav to mp3 with lameenc (no ffmpeg). ~64 kbps mono speech ≈ 0.5 MB/min.
+
+    Streams the WAV through the encoder in ~10s chunks so peak memory stays bounded
+    regardless of length. Loading the whole PCM at once (readframes(getnframes()) +
+    encode(pcm)) OOM-killed the VPS on a 60+ min full-paper narration — hundreds of
+    MB of PCM plus the encoder's output buffer."""
     import lameenc
     with wave.open(wav_path, "rb") as w:
         ch, sr = w.getnchannels(), w.getframerate()
-        pcm = w.readframes(w.getnframes())
-    enc = lameenc.Encoder()
-    enc.set_bit_rate(bitrate)
-    enc.set_in_sample_rate(sr)
-    enc.set_channels(ch)
-    enc.set_quality(3)
-    with open(mp3_path, "wb") as f:
-        f.write(enc.encode(pcm) + enc.flush())
+        enc = lameenc.Encoder()
+        enc.set_bit_rate(bitrate)
+        enc.set_in_sample_rate(sr)
+        enc.set_channels(ch)
+        enc.set_quality(3)
+        chunk_frames = sr * 10  # ~10 seconds of audio per pass
+        with open(mp3_path, "wb") as f:
+            while True:
+                frames = w.readframes(chunk_frames)
+                if not frames:
+                    break
+                f.write(enc.encode(frames))
+            f.write(enc.flush())
 
 
 def revoice(slug):
