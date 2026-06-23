@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PPI — The Formal Estimator Behind Silver/Gold</title>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400;500&family=IBM+Plex+Sans:wght@300;400;500&family=IBM+Plex+Serif:wght@300;400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#07080a;--bg1:#0c1015;--bg2:#111820;--bg3:#18222e;--border:#1e2d3d;--border2:#2a3f54;
+  --amber:#e8a045;--amber2:#c27c28;--amber-dim:#3d2a0a;--cyan:#4fc3c8;--green:#56b870;--red:#e87070;--purple:#a78bfa;--orange:#f97316;
+  --text:#c8d6e5;--text-dim:#5a7a94;--text-faint:#283a4a;--mono:'IBM Plex Mono',monospace;--sans:'IBM Plex Sans',sans-serif;--serif:'IBM Plex Serif',serif;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{background:var(--bg);color:var(--text);font-family:var(--sans);font-size:14px;line-height:1.7;padding:0 0 80px;}
+.page-header{padding:40px 48px 28px;border-bottom:1px solid var(--border);max-width:1100px;margin:0 auto;}
+.eyebrow{font-family:var(--mono);font-size:9px;letter-spacing:.18em;color:var(--amber);text-transform:uppercase;margin-bottom:8px;}
+h1{font-family:var(--serif);font-size:30px;font-weight:300;color:#e8edf2;margin-bottom:6px;}
+.subtitle{font-family:var(--mono);font-size:11px;color:var(--text-dim);letter-spacing:.05em;}
+.stage{max-width:1100px;margin:0 auto;padding:36px 48px;}
+.stage+.stage{border-top:1px solid var(--border);}
+@media(max-width:700px){.stage,.page-header{padding:24px 16px;}}
+.stage-label{font-family:var(--mono);font-size:9px;letter-spacing:.18em;color:var(--text-faint);text-transform:uppercase;margin-bottom:6px;}
+h2{font-family:var(--serif);font-size:21px;font-weight:300;color:#e8edf2;margin-bottom:14px;}
+h3{font-family:var(--mono);font-size:11px;font-weight:500;color:var(--cyan);letter-spacing:.1em;text-transform:uppercase;margin:20px 0 8px;}
+p{font-size:13px;font-weight:300;line-height:1.75;margin-bottom:12px;}
+.math{background:var(--bg2);border:1px solid var(--border);border-left:3px solid var(--amber2);padding:14px 18px;margin:14px 0;font-family:var(--mono);font-size:12px;line-height:1.9;overflow-x:auto;}
+.math .lbl{font-size:9px;letter-spacing:.14em;color:var(--text-dim);text-transform:uppercase;margin-bottom:6px;}
+.cmt{color:var(--text-faint);font-style:italic;}
+.hi-g{color:var(--green);}.hi-c{color:var(--cyan);}.hi-r{color:var(--red);}.hi-p{color:var(--purple);}.hi-a{color:var(--amber);}.hi-o{color:var(--orange);}
+.callout{background:var(--bg2);border:1px solid var(--border2);border-left:3px solid var(--cyan);padding:12px 16px;margin:14px 0;font-size:12px;font-weight:300;color:var(--text-dim);line-height:1.6;}
+.callout strong{font-family:var(--mono);font-size:9px;letter-spacing:.12em;color:var(--cyan);text-transform:uppercase;display:block;margin-bottom:4px;}
+.callout.warn{border-left-color:var(--red);}.callout.warn strong{color:var(--red);}
+.callout.note{border-left-color:var(--amber);}.callout.note strong{color:var(--amber);}
+.callout.ok{border-left-color:var(--green);}.callout.ok strong{color:var(--green);}
+.interactive{background:var(--bg1);border:1px solid var(--border2);padding:22px;margin:18px 0;}
+.int-title{font-family:var(--mono);font-size:10px;letter-spacing:.16em;color:var(--amber);text-transform:uppercase;margin-bottom:18px;display:flex;align-items:center;gap:10px;}
+.int-title::after{content:'';flex:1;height:1px;background:var(--amber-dim);}
+.two-col{display:grid;grid-template-columns:240px 1fr;gap:24px;align-items:start;}
+@media(max-width:700px){.two-col{grid-template-columns:1fr;}}
+.ctrl-row{display:flex;flex-direction:column;gap:4px;margin-bottom:12px;}
+.ctrl-label{font-family:var(--mono);font-size:10px;color:var(--text-dim);display:flex;justify-content:space-between;}
+.ctrl-val{font-family:var(--mono);font-size:11px;}
+input[type=range]{-webkit-appearance:none;width:100%;height:3px;background:var(--border2);border-radius:2px;outline:none;}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:12px;height:12px;border-radius:50%;background:var(--amber);cursor:pointer;border:2px solid var(--bg);}
+.sum-grid{display:grid;gap:10px;grid-template-columns:1fr 1fr 1fr;}
+.sum-card{background:var(--bg3);border:1px solid var(--border);padding:11px 13px;}
+.sum-lbl{font-family:var(--mono);font-size:9px;letter-spacing:.1em;color:var(--text-faint);text-transform:uppercase;margin-bottom:3px;}
+.sum-val{font-family:var(--mono);font-size:20px;font-weight:500;}
+.sum-sub{font-size:10px;color:var(--text-dim);margin-top:2px;line-height:1.4;}
+canvas{width:100%;display:block;}
+.legend{display:flex;gap:16px;flex-wrap:wrap;font-family:var(--mono);font-size:10px;color:var(--text-dim);margin-top:6px;}
+.legend span{display:flex;align-items:center;gap:5px;}.bar{width:18px;height:2px;}
+</style>
+</head>
+<body>
+
+<div class="page-header">
+  <div class="eyebrow">PKIS · Measurement Strategy · Tab 3 of 3</div>
+  <h1>PPI — The Formal Estimator, and the λ That Never Loses</h1>
+  <div class="subtitle">Prediction-Powered Inference · the rectifier · PPI++ power-tuning · never worse than gold</div>
+</div>
+
+<!-- STAGE 1: the rectifier -->
+<div class="stage">
+  <div class="stage-label">Stage 1 · What you already built</div>
+  <h2>The PPI Rectifier — Your Debiasing, Named</h2>
+
+  <p>Prediction-Powered Inference (Angelopoulos, Bates, Fannjiang, Jordan, Zrnic, <em>Science</em> 2023) is the formal frequentist framework for exactly the move Tabs 1–2 make: estimate a quantity from a large pile of cheap predictions, then correct it with a small trusted sample. The estimand here is the accuracy p; the "silver" predictor is the LLM judgment L; the gold is the human label Y.</p>
+
+  <div class="math">
+    <div class="lbl">The PPI estimator — silver estimate, minus its measured bias on the gold</div>
+    p̂<sub>PPI</sub> = <span class="hi-a">(1/N) Σ<sub>silver</sub> L<sub>i</sub></span> − [ <span class="hi-r">(1/n) Σ<sub>gold</sub> L<sub>j</sub></span> − <span class="hi-g">(1/n) Σ<sub>gold</sub> Y<sub>j</sub></span> ]<br>
+    <span class="cmt">// silver mean over everything, minus the rectifier Δ = E[L − Y] measured on the gold subset</span>
+  </div>
+
+  <p>The bracketed term is the <em>rectifier</em>: the LLM's average over-/under-statement, estimated on the cases where you have ground truth. Tab 1's confusion-matrix inversion p̂ = (P(L=1) − FPR)/(TPR − FPR) is this same correction written through the rates instead of the means — algebraically the same debiasing, which is why PPI is the literature your framework already lives in.</p>
+
+  <div class="callout note">
+    <strong>The link to separation</strong>
+    The covariance that makes the silver useful is Cov(L, Y) = p(1−p)·(TPR − FPR). The very same separation TPR − FPR that governed Tab 1's break-even and Tab 2's correlation gain is what gives PPI its power. When it collapses, so does everything.
+  </div>
+</div>
+
+<!-- STAGE 2: PPI++ lambda -->
+<div class="stage">
+  <div class="stage-label">Stage 2 · The fix for "not always worth it"</div>
+  <h2>PPI++ — Power-Tuning λ, and the Guarantee You're Never Worse Than Gold</h2>
+
+  <p>Plain PPI has a failure mode — the one your Recap flagged as <em>"the overlay is not always worth it."</em> When the judge is weak, the rectifier is noisier than the thing it corrects, and PPI can be <strong>worse</strong> than just hand-labeling the gold. PPI++ (Angelopoulos, Duchi, Zrnic 2023) closes that gap with a single coefficient λ that down-weights the silver by exactly how much it deserves:</p>
+
+  <div class="math">
+    <div class="lbl">PPI++ — one tuning coefficient λ ∈ [0, 1]</div>
+    p̂<sub>λ</sub> = <span class="hi-a">λ·(1/N) Σ<sub>silver</sub> L<sub>i</sub></span> + (1/n) Σ<sub>gold</sub> ( <span class="hi-g">Y<sub>j</sub></span> − <span class="hi-a">λ·L<sub>j</sub></span> )<br>
+    λ* = Cov(L, Y) / [ Var(L)·(1 + n/N) ] &nbsp;&nbsp;<span class="cmt">// the variance-minimizing weight</span><br>
+    <span class="cmt">// λ = 0 → gold-only.  λ = 1 → plain PPI.  λ* → optimal, and never worse than gold-only.</span>
+  </div>
+
+  <p>Because λ = 0 recovers the gold-only estimator and λ* is chosen to <em>minimize</em> variance, PPI++ is provably at least as good as gold-only — for any judge quality. When separation collapses, λ* slides to 0 and PPI++ gracefully becomes gold-only. Your break-even caveat becomes: <em>with λ-tuning, there is no break-even — the hybrid never loses.</em></p>
+
+  <div class="interactive">
+    <div class="int-title">CI width: gold-only vs plain PPI vs PPI++ — sweep judge quality</div>
+    <div class="two-col">
+      <div>
+        <div class="ctrl-row"><div class="ctrl-label"><span class="hi-g">true TPR</span><span class="ctrl-val hi-g" id="p-tpr">0.90</span></div><input type="range" id="rp-tpr" min="0.5" max="0.99" step="0.01" value="0.90"></div>
+        <div class="ctrl-row"><div class="ctrl-label"><span class="hi-c">true TNR</span><span class="ctrl-val hi-c" id="p-tnr">0.80</span></div><input type="range" id="rp-tnr" min="0.5" max="0.99" step="0.01" value="0.80"></div>
+        <div class="ctrl-row"><div class="ctrl-label"><span class="hi-p">prevalence p</span><span class="ctrl-val hi-p" id="p-p">0.75</span></div><input type="range" id="rp-p" min="0.3" max="0.95" step="0.01" value="0.75"></div>
+        <div class="ctrl-row"><div class="ctrl-label"><span class="hi-a">N gold</span><span class="ctrl-val hi-a" id="p-n">50</span></div><input type="range" id="rp-n" min="10" max="200" step="5" value="50"></div>
+        <div class="ctrl-row"><div class="ctrl-label"><span>N silver</span><span class="ctrl-val" id="p-ns">2000</span></div><input type="range" id="rp-ns" min="200" max="10000" step="200" value="2000"></div>
+      </div>
+      <div>
+        <div class="sum-grid">
+          <div class="sum-card"><div class="sum-lbl">gold-only ±CI</div><div class="sum-val" style="color:var(--text-dim);" id="p-gold">—</div></div>
+          <div class="sum-card"><div class="sum-lbl">plain PPI ±CI</div><div class="sum-val hi-r" id="p-ppi">—</div><div class="sum-sub" id="p-ppi-sub"></div></div>
+          <div class="sum-card"><div class="sum-lbl">PPI++ ±CI (λ*)</div><div class="sum-val hi-g" id="p-ppipp">—</div><div class="sum-sub" id="p-lam"></div></div>
+        </div>
+        <h3>CI width vs judge separation (TPR − FPR)</h3>
+        <canvas id="p-canvas" height="240"></canvas>
+        <div class="legend">
+          <span><div class="bar" style="background:var(--text-dim);"></div>gold-only</span>
+          <span><div class="bar" style="background:var(--red);"></div>plain PPI (λ=1)</span>
+          <span><div class="bar" style="background:var(--green);"></div>PPI++ (λ*)</span>
+        </div>
+      </div>
+    </div>
+    <div class="callout ok" style="margin-top:16px;">
+      <strong>Read the crossover</strong>
+      The red curve (plain PPI) rises <em>above</em> the grey gold-only line when separation is small — that is PPI losing to hand-labeling, your break-even made literal. The green curve (PPI++) never crosses above grey: λ* protects it. To the right, where the judge is strong, both PPI variants beat gold-only handily.
+    </div>
+  </div>
+</div>
+
+<!-- STAGE 3: blindspot / connections -->
+<div class="stage">
+  <div class="stage-label">Stage 3 · Where it still needs you</div>
+  <h2>The Blindspot, and How the Three Tabs Fit</h2>
+
+  <p>PPI corrects a <em>scalar</em> bias. It cannot, on its own, see a symmetric judge — one whose false positives and false negatives cancel in the mean. The rectifier reads zero; the estimate looks unbiased while the judge is useless. The confusion-matrix view (Tab 1) and the joint model (Tab 2) catch this by construction, because they track the cells, not just the net. The separation TPR − FPR is the quantity to monitor, and it is the same quantity λ* keys off.</p>
+
+  <div class="callout">
+    <strong>The arc across the three tabs</strong>
+    Tab 1 builds the confusion-matrix inversion (the rectifier, through the rates). Tab 2 adds the correlational prior that buys gold from shared judge capability. Tab 3 names the formal estimator and adds λ-tuning — the guarantee that the hybrid is never worse than gold. Remaining work, where you take over: extending λ* to the confusion-matrix estimand directly, rather than the mean.
+  </div>
+</div>
+
+<script>
+const COL={dim:"#5a7a94",red:"#e87070",green:"#56b870",amber:"#e8a045",grid:"#16222e",ax:"#3a5572"};
+const Z=1.96;
+// moments of (L = LLM judgment, Y = correct) from the confusion matrix
+function moments(tpr,tnr,p){
+  const fpr=1-tnr, lpr=tpr*p+fpr*(1-p);
+  return {varY:p*(1-p), varL:lpr*(1-lpr), cov:p*(1-p)*(tpr-fpr), lpr, fpr};
+}
+function lambdaStar(m,n,N){ return m.varL>0 ? Math.max(0,Math.min(1, m.cov/(m.varL*(1+n/N)))) : 0; }
+function varGold(m,n){ return m.varY/n; }
+function varPPI(m,lam,n,N){ // Var(λ·meanL_silver) + Var(Y − λL)_gold /n
+  return lam*lam*m.varL/N + (m.varY - 2*lam*m.cov + lam*lam*m.varL)/n;
+}
+const halfCI=v=>Z*Math.sqrt(Math.max(v,0));
+
+function updatePPI(){
+  const tpr=+rp_tpr.value,tnr=+rp_tnr.value,p=+rp_p.value,n=+rp_n.value,N=+rp_ns.value;
+  p_tpr.textContent=tpr.toFixed(2);p_tnr.textContent=tnr.toFixed(2);p_p.textContent=p.toFixed(2);p_n.textContent=n;p_ns.textContent=N;
+  const m=moments(tpr,tnr,p);
+  const lam=lambdaStar(m,n,N);
+  const cg=halfCI(varGold(m,n)), c1=halfCI(varPPI(m,1,n,N)), cs=halfCI(varPPI(m,lam,n,N));
+  p_gold.textContent="±"+cg.toFixed(3);
+  p_ppi.textContent="±"+c1.toFixed(3);
+  p_ppi.style.color = c1>cg ? COL.red : COL.green;
+  p_ppi_sub.textContent = c1>cg ? "worse than gold ✗" : "beats gold";
+  p_ppipp.textContent="±"+cs.toFixed(3);
+  p_lam.textContent="λ* = "+lam.toFixed(2);
+  drawCurve(tpr,tnr,p,n,N);
+}
+
+function drawCurve(tpr,tnr,p,n,N){
+  const cv=document.getElementById("p-canvas"),dpr=window.devicePixelRatio||1,W=cv.clientWidth||820,H=240;
+  cv.width=W*dpr;cv.height=H*dpr;cv.style.height=H+"px";const ctx=cv.getContext("2d");ctx.setTransform(dpr,0,0,dpr,0,0);
+  const pad={t:14,r:14,b:34,l:52},cw=W-pad.l-pad.r,ch=H-pad.t-pad.b;ctx.clearRect(0,0,W,H);
+  // sweep separation s = TPR-FPR from 0.02..0.9 by varying TNR at fixed TPR (FPR=1-TNR)
+  const gs=[],p1=[],ps=[],seps=[];
+  for(let k=0;k<=60;k++){
+    const s=0.02+k/60*0.88; const fpr=Math.max(0.001,tpr-s); const tnrk=1-fpr;
+    const m=moments(tpr,tnrk,p); const lam=lambdaStar(m,n,N);
+    seps.push(s); gs.push(halfCI(varGold(m,n))*2); p1.push(halfCI(varPPI(m,1,n,N))*2); ps.push(halfCI(varPPI(m,lam,n,N))*2);
+  }
+  const maxY=Math.max(...gs,...p1,...ps,0.05);
+  ctx.strokeStyle=COL.grid;ctx.lineWidth=1;for(let i=0;i<=4;i++){const y=pad.t+ch/4*i;ctx.beginPath();ctx.moveTo(pad.l,y);ctx.lineTo(pad.l+cw,y);ctx.stroke();}
+  const sx=s=>pad.l+(s-0.02)/0.88*cw, sy=v=>pad.t+ch-Math.min(v/maxY,1)*ch;
+  const line=(arr,c)=>{ctx.strokeStyle=c;ctx.lineWidth=2;ctx.beginPath();arr.forEach((v,i)=>{i?ctx.lineTo(sx(seps[i]),sy(v)):ctx.moveTo(sx(seps[i]),sy(v));});ctx.stroke();};
+  line(gs,COL.dim);line(p1,COL.red);line(ps,COL.green);
+  ctx.fillStyle=COL.ax;ctx.font="9px IBM Plex Mono";ctx.textAlign="center";
+  for(let s=0;s<=0.9;s+=0.2)ctx.fillText(s.toFixed(1),sx(Math.max(0.02,s)),H-4);
+  ctx.fillText("separation TPR − FPR",pad.l+cw/2,H-18);
+  ctx.textAlign="right";for(let i=0;i<=4;i++)ctx.fillText((maxY*(1-i/4)).toFixed(2),pad.l-4,pad.t+ch/4*i+3);
+  ctx.save();ctx.translate(11,pad.t+ch/2);ctx.rotate(-Math.PI/2);ctx.textAlign="center";ctx.fillText("95% CI width on p̂",0,0);ctx.restore();
+}
+
+const rp_tpr=document.getElementById("rp-tpr"),rp_tnr=document.getElementById("rp-tnr"),rp_p=document.getElementById("rp-p"),rp_n=document.getElementById("rp-n"),rp_ns=document.getElementById("rp-ns");
+const p_tpr=document.getElementById("p-tpr"),p_tnr=document.getElementById("p-tnr"),p_p=document.getElementById("p-p"),p_n=document.getElementById("p-n"),p_ns=document.getElementById("p-ns");
+const p_gold=document.getElementById("p-gold"),p_ppi=document.getElementById("p-ppi"),p_ppi_sub=document.getElementById("p-ppi-sub"),p_ppipp=document.getElementById("p-ppipp"),p_lam=document.getElementById("p-lam");
+[rp_tpr,rp_tnr,rp_p,rp_n,rp_ns].forEach(el=>el.addEventListener("input",updatePPI));
+updatePPI();
+</script>
+</body>
+</html>
