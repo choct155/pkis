@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Joint Confusion-Matrix Model — Flat vs Correlated Prior</title>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400;500&family=IBM+Plex+Sans:wght@300;400;500&family=IBM+Plex+Serif:wght@300;400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#07080a;--bg1:#0c1015;--bg2:#111820;--bg3:#18222e;
+  --border:#1e2d3d;--border2:#2a3f54;
+  --amber:#e8a045;--amber2:#c27c28;--amber-dim:#3d2a0a;
+  --cyan:#4fc3c8;--green:#56b870;--red:#e87070;--purple:#a78bfa;--orange:#f97316;
+  --text:#c8d6e5;--text-dim:#5a7a94;--text-faint:#283a4a;
+  --mono:'IBM Plex Mono',monospace;--sans:'IBM Plex Sans',sans-serif;--serif:'IBM Plex Serif',serif;
+}
+/* canvas-resolvable color constants (NEVER use var() in ctx.*Style — canvas can't parse it) */
+*{box-sizing:border-box;margin:0;padding:0;}
+body{background:var(--bg);color:var(--text);font-family:var(--sans);font-size:14px;line-height:1.7;padding:0 0 80px;}
+.page-header{padding:40px 48px 28px;border-bottom:1px solid var(--border);max-width:1100px;margin:0 auto;}
+.eyebrow{font-family:var(--mono);font-size:9px;letter-spacing:.18em;color:var(--amber);text-transform:uppercase;margin-bottom:8px;}
+h1{font-family:var(--serif);font-size:30px;font-weight:300;color:#e8edf2;margin-bottom:6px;}
+.subtitle{font-family:var(--mono);font-size:11px;color:var(--text-dim);letter-spacing:.05em;}
+.stage{max-width:1100px;margin:0 auto;padding:36px 48px;}
+.stage+.stage{border-top:1px solid var(--border);}
+@media(max-width:700px){.stage,.page-header{padding:24px 16px;}}
+.stage-label{font-family:var(--mono);font-size:9px;letter-spacing:.18em;color:var(--text-faint);text-transform:uppercase;margin-bottom:6px;}
+h2{font-family:var(--serif);font-size:21px;font-weight:300;color:#e8edf2;margin-bottom:14px;}
+h3{font-family:var(--mono);font-size:11px;font-weight:500;color:var(--cyan);letter-spacing:.1em;text-transform:uppercase;margin:20px 0 8px;}
+p{font-size:13px;font-weight:300;line-height:1.75;margin-bottom:12px;}
+.math{background:var(--bg2);border:1px solid var(--border);border-left:3px solid var(--amber2);padding:14px 18px;margin:14px 0;font-family:var(--mono);font-size:12px;line-height:1.9;overflow-x:auto;}
+.math .lbl{font-size:9px;letter-spacing:.14em;color:var(--text-dim);text-transform:uppercase;margin-bottom:6px;}
+.cmt{color:var(--text-faint);font-style:italic;}
+.hi-g{color:var(--green);}.hi-c{color:var(--cyan);}.hi-r{color:var(--red);}.hi-p{color:var(--purple);}.hi-a{color:var(--amber);}.hi-o{color:var(--orange);}
+.callout{background:var(--bg2);border:1px solid var(--border2);border-left:3px solid var(--cyan);padding:12px 16px;margin:14px 0;font-size:12px;font-weight:300;color:var(--text-dim);line-height:1.6;}
+.callout strong{font-family:var(--mono);font-size:9px;letter-spacing:.12em;color:var(--cyan);text-transform:uppercase;display:block;margin-bottom:4px;}
+.callout.warn{border-left-color:var(--red);}.callout.warn strong{color:var(--red);}
+.callout.note{border-left-color:var(--amber);}.callout.note strong{color:var(--amber);}
+.callout.ok{border-left-color:var(--green);}.callout.ok strong{color:var(--green);}
+.interactive{background:var(--bg1);border:1px solid var(--border2);padding:22px;margin:18px 0;}
+.int-title{font-family:var(--mono);font-size:10px;letter-spacing:.16em;color:var(--amber);text-transform:uppercase;margin-bottom:18px;display:flex;align-items:center;gap:10px;}
+.int-title::after{content:'';flex:1;height:1px;background:var(--amber-dim);}
+.two-col{display:grid;grid-template-columns:240px 1fr;gap:24px;align-items:start;}
+@media(max-width:700px){.two-col{grid-template-columns:1fr;}}
+.ctrl-row{display:flex;flex-direction:column;gap:4px;margin-bottom:12px;}
+.ctrl-label{font-family:var(--mono);font-size:10px;color:var(--text-dim);display:flex;justify-content:space-between;}
+.ctrl-val{font-family:var(--mono);font-size:11px;}
+input[type=range]{-webkit-appearance:none;width:100%;height:3px;background:var(--border2);border-radius:2px;outline:none;}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:12px;height:12px;border-radius:50%;background:var(--amber);cursor:pointer;border:2px solid var(--bg);}
+.sum-grid{display:grid;gap:10px;}
+.sum-card{background:var(--bg3);border:1px solid var(--border);padding:11px 13px;}
+.sum-lbl{font-family:var(--mono);font-size:9px;letter-spacing:.1em;color:var(--text-faint);text-transform:uppercase;margin-bottom:3px;}
+.sum-val{font-family:var(--mono);font-size:21px;font-weight:500;}
+.sum-sub{font-size:10px;color:var(--text-dim);margin-top:2px;line-height:1.4;}
+canvas{width:100%;display:block;}
+.legend{display:flex;gap:16px;flex-wrap:wrap;font-family:var(--mono);font-size:10px;color:var(--text-dim);margin-top:6px;}
+.legend span{display:flex;align-items:center;gap:5px;}
+.dot{width:8px;height:8px;border-radius:50%;}.bar{width:18px;height:2px;}
+</style>
+</head>
+<body>
+
+<div class="page-header">
+  <div class="eyebrow">PKIS · Measurement Strategy · Tab 2 of 3</div>
+  <h1>Leveraging Covariance Across the Confusion Matrix</h1>
+  <div class="subtitle">Why a flat joint model buys nothing · Putting the correlation in the prior · Gold saved by ρ</div>
+</div>
+
+<!-- ── PART A: THE FLAT JOINT MODEL DEGENERATES ── -->
+<div class="stage">
+  <div class="stage-label">Part A · The tempting mistake</div>
+  <h2>A Flat Joint Dirichlet Is Exactly the Independent Model</h2>
+
+  <p>It is tempting to think that modeling all four confusion-matrix cells <em>jointly</em> — one Dirichlet over (π<sub>TP</sub>, π<sub>FP</sub>, π<sub>FN</sub>, π<sub>TN</sub>) instead of two separate Betas — automatically captures the correlation between the true-positive rate and the true-negative rate. It does not. With a flat Dirichlet, the joint model is <em>mathematically identical</em> to the independent one.</p>
+
+  <p>The reason is a structural property of the Dirichlet. Recover the rates the natural way — TPR from the cells where A=1, TNR from the cells where A=0:</p>
+
+  <div class="math">
+    <div class="lbl">Recovering the rates from the joint posterior</div>
+    (π<sub>TP</sub>, π<sub>FP</sub>, π<sub>FN</sub>, π<sub>TN</sub>) ~ Dirichlet(1+n<sub>TP</sub>, 1+n<sub>FP</sub>, 1+n<sub>FN</sub>, 1+n<sub>TN</sub>)<br>
+    <span class="hi-g">TPR</span> = π<sub>TP</sub> / (π<sub>TP</sub> + π<sub>FN</sub>) &nbsp;&nbsp;<span class="cmt">// ratio within group A=1 = {TP, FN}</span><br>
+    <span class="hi-c">TNR</span> = π<sub>TN</sub> / (π<sub>TN</sub> + π<sub>FP</sub>) &nbsp;&nbsp;<span class="cmt">// ratio within group A=0 = {TN, FP}</span>
+  </div>
+
+  <p>By the Dirichlet's <strong>aggregation / neutrality</strong> property — the same additivity that makes coarse- and fine-grained Bayesian inferences consistent — partitioning the cells into the two groups makes the within-group ratios <strong>mutually independent</strong>, and each one is exactly the Beta posterior you would have written down on its own:</p>
+
+  <div class="math">
+    <div class="lbl">Neutrality → the joint model factorizes</div>
+    <span class="hi-g">TPR</span> ~ Beta(1+n<sub>TP</sub>, 1+n<sub>FN</sub>) &nbsp;&nbsp;⊥&nbsp;&nbsp; <span class="hi-c">TNR</span> ~ Beta(1+n<sub>TN</sub>, 1+n<sub>FP</sub>)<br>
+    Cov(<span class="hi-g">TPR</span>, <span class="hi-c">TNR</span>) = 0 &nbsp;&nbsp;&nbsp;<span class="cmt">// not assumed — forced, by the flat Dirichlet's structure</span>
+  </div>
+
+  <div class="callout note">
+    <strong>The real point</strong>
+    A flat prior has no parameter that represents the dependence between the rates — so there is nothing to estimate and nothing to exploit. There is no meat there. The covariance the prose wants is a property of the <em>prior</em>, and a flat prior has set it to zero. Below: the joint cloud lands exactly on the independent cloud, and the correlation reads ≈ 0.
+  </div>
+
+  <div class="interactive">
+    <div class="int-title">Flat joint Dirichlet vs independent Betas — set the gold counts</div>
+    <div class="two-col">
+      <div>
+        <div class="ctrl-row"><div class="ctrl-label"><span class="hi-g">TP count</span><span class="ctrl-val hi-g" id="a-tp">16</span></div><input type="range" id="ra-tp" min="0" max="60" value="16"></div>
+        <div class="ctrl-row"><div class="ctrl-label"><span class="hi-r">FN count</span><span class="ctrl-val hi-r" id="a-fn">2</span></div><input type="range" id="ra-fn" min="0" max="60" value="2"></div>
+        <div class="ctrl-row"><div class="ctrl-label"><span class="hi-r">FP count</span><span class="ctrl-val hi-r" id="a-fp">3</span></div><input type="range" id="ra-fp" min="0" max="60" value="3"></div>
+        <div class="ctrl-row"><div class="ctrl-label"><span class="hi-c">TN count</span><span class="ctrl-val hi-c" id="a-tn">3</span></div><input type="range" id="ra-tn" min="0" max="60" value="3"></div>
+        <div class="sum-card" style="margin-top:8px;">
+          <div class="sum-lbl">Posterior Cor(TPR, TNR)</div>
+          <div class="sum-val hi-o" id="a-corr">—</div>
+          <div class="sum-sub">≈ 0 up to Monte-Carlo noise. The flat joint model carries no correlation.</div>
+        </div>
+      </div>
+      <div>
+        <h3 style="margin-top:0;">Joint posterior cloud — the two models coincide</h3>
+        <canvas id="a-scatter" height="300"></canvas>
+        <div class="legend">
+          <span><div class="dot" style="background:var(--orange);opacity:.6;"></div>flat joint Dirichlet</span>
+          <span><div class="dot" style="background:var(--text-dim);opacity:.6;"></div>independent Betas</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ── PART B: PUT THE CORRELATION IN THE PRIOR ── -->
+<div class="stage">
+  <div class="stage-label">Part B · The real lever</div>
+  <h2>An Explicit Correlational Prior — Where the Gold Savings Come From</h2>
+
+  <p>The prose was right about the <em>mechanism</em>: the same LLM, on the same documents, drives both error rates, so a capable judge tends to have high TPR <em>and</em> high TNR together. To use that, you have to write it down — put the dependence in the prior, where it can actually do work.</p>
+
+  <p>Place a correlated prior on the rates through their log-odds — a shared-capability latent with correlation ρ:</p>
+
+  <div class="math">
+    <div class="lbl">Logistic-normal prior with correlation ρ (keeps the multinomial/Dirichlet likelihood)</div>
+    ( logit <span class="hi-g">TPR</span>, logit <span class="hi-c">TNR</span> ) ~ Normal( μ, Σ ),&nbsp;&nbsp; Σ = σ²·[[1, ρ],[ρ, 1]]<br>
+    likelihood: &nbsp; n<sub>TP</sub> ~ Binom(n<sub>TP</sub>+n<sub>FN</sub>, <span class="hi-g">TPR</span>) &nbsp;·&nbsp; n<sub>TN</sub> ~ Binom(n<sub>TN</sub>+n<sub>FP</sub>, <span class="hi-c">TNR</span>)<br>
+    <span class="cmt">// ρ = 0 → exactly the independent model (Part A). ρ &gt; 0 → gold in one group informs the other.</span>
+  </div>
+
+  <p>Now ρ is a real, estimable parameter. When prevalence is high you collect almost all your gold in the A=1 group, starving the TNR estimate — but with ρ&gt;0 the well-measured TPR pulls TNR along through the prior. That is the gold saving: the cross-information the flat model threw away.</p>
+
+  <div class="interactive">
+    <div class="int-title">Correlated prior — watch the cloud tilt and the CI tighten as ρ rises</div>
+    <div class="two-col">
+      <div>
+        <div class="ctrl-row"><div class="ctrl-label"><span class="hi-o">prior correlation ρ</span><span class="ctrl-val hi-o" id="b-rho">0.80</span></div><input type="range" id="rb-rho" min="0" max="0.95" step="0.05" value="0.80"></div>
+        <div class="ctrl-row"><div class="ctrl-label"><span class="hi-g">true TPR</span><span class="ctrl-val hi-g" id="b-tpr">0.90</span></div><input type="range" id="rb-tpr" min="0.5" max="0.99" step="0.01" value="0.90"></div>
+        <div class="ctrl-row"><div class="ctrl-label"><span class="hi-c">true TNR</span><span class="ctrl-val hi-c" id="b-tnr">0.85</span></div><input type="range" id="rb-tnr" min="0.5" max="0.99" step="0.01" value="0.85"></div>
+        <div class="ctrl-row"><div class="ctrl-label"><span class="hi-p">true prevalence p</span><span class="ctrl-val hi-p" id="b-p">0.80</span></div><input type="range" id="rb-p" min="0.3" max="0.95" step="0.01" value="0.80"></div>
+        <div class="ctrl-row"><div class="ctrl-label"><span class="hi-a">N gold</span><span class="ctrl-val hi-a" id="b-n">40</span></div><input type="range" id="rb-n" min="10" max="200" step="5" value="40"></div>
+      </div>
+      <div>
+        <div class="sum-grid" style="grid-template-columns:1fr 1fr;">
+          <div class="sum-card"><div class="sum-lbl">p̂ CI width — ρ correlated</div><div class="sum-val hi-o" id="b-ciw">—</div></div>
+          <div class="sum-card"><div class="sum-lbl">p̂ CI width — independent</div><div class="sum-val" style="color:var(--text-dim);" id="b-ciw0">—</div></div>
+          <div class="sum-card"><div class="sum-lbl">CI width reduction</div><div class="sum-val hi-g" id="b-red">—</div><div class="sum-sub">from the correlated prior at this N</div></div>
+          <div class="sum-card"><div class="sum-lbl">Effective gold multiplier</div><div class="sum-val hi-a" id="b-mult">—</div><div class="sum-sub">≈ gold the independent model would need to match</div></div>
+        </div>
+        <h3>Joint posterior — correlated (tilted) vs independent (axis-aligned)</h3>
+        <canvas id="b-scatter" height="280"></canvas>
+        <div class="legend">
+          <span><div class="dot" style="background:var(--orange);opacity:.6;"></div>correlated prior (ρ)</span>
+          <span><div class="dot" style="background:var(--text-dim);opacity:.6;"></div>independent (ρ=0)</span>
+          <span><div class="bar" style="background:var(--amber);"></div>true rates</span>
+        </div>
+      </div>
+    </div>
+    <div class="callout ok" style="margin-top:16px;">
+      <strong>What ρ buys</strong>
+      The correlated cloud is a tilted ellipse — knowing one rate constrains the other — and its marginals are narrower than the independent cloud, most visibly on whichever rate the gold sample starves. Push ρ to 0 and the two clouds coincide (Part A). Push prevalence toward the extremes, where one group is data-starved, and the gold saving grows: the prior correlation is doing the work the flat model couldn't.
+    </div>
+  </div>
+</div>
+
+<script>
+// ── fast samplers ──────────────────────────────────────────────────────────
+function randn(){let u=0,v=0;while(u===0)u=Math.random();while(v===0)v=Math.random();return Math.sqrt(-2*Math.log(u))*Math.cos(2*Math.PI*v);}
+function sampleGamma(a){ // Marsaglia–Tsang
+  if(a<1) return sampleGamma(1+a)*Math.pow(Math.random(),1/a);
+  const d=a-1/3,c=1/Math.sqrt(9*d);
+  while(true){let x,v;do{x=randn();v=1+c*x;}while(v<=0);v=v*v*v;const u=Math.random();
+    if(u<1-0.0331*x*x*x*x)return d*v;if(Math.log(u)<0.5*x*x+d*(1-v+Math.log(v)))return d*v;}
+}
+function sampleBeta(a,b){const x=sampleGamma(a),y=sampleGamma(b);return x/(x+y);} // fast: no bisection
+function mean(a){return a.reduce((s,v)=>s+v,0)/a.length;}
+function std(a){const m=mean(a);return Math.sqrt(a.reduce((s,v)=>s+(v-m)*(v-m),0)/a.length);}
+function corr(a,b){const ma=mean(a),mb=mean(b),sa=std(a),sb=std(b);if(sa===0||sb===0)return 0;
+  return a.reduce((s,v,i)=>s+(v-ma)*(b[i]-mb),0)/(a.length*sa*sb);}
+function pct(arr,p){const s=[...arr].sort((x,y)=>x-y);const i=(p/100)*(s.length-1),lo=Math.floor(i),hi=Math.ceil(i);return s[lo]+(s[hi]-s[lo])*(i-lo);}
+const sig=x=>1/(1+Math.exp(-x)), logit=q=>Math.log(q/(1-q));
+const COL={orange:"#f97316",dim:"#5a7a94",amber:"#e8a045",grid:"#16222e",ax:"#3a5572"};
+const N_MC=1200;
+
+// ── PART A: flat Dirichlet ≡ independent Betas ─────────────────────────────
+function updateA(){
+  const ntp=+ra_tp.value,nfn=+ra_fn.value,nfp=+ra_fp.value,ntn=+ra_tn.value;
+  a_tp.textContent=ntp;a_fn.textContent=nfn;a_fp.textContent=nfp;a_tn.textContent=ntn;
+  const jT=[],jN=[],iT=[],iN=[];
+  for(let i=0;i<N_MC;i++){
+    // flat Dirichlet(1+n) via 4 gammas, then within-group ratios
+    const gTP=sampleGamma(1+ntp),gFN=sampleGamma(1+nfn),gFP=sampleGamma(1+nfp),gTN=sampleGamma(1+ntn);
+    jT.push(gTP/(gTP+gFN)); jN.push(gTN/(gTN+gFP));
+    // independent Betas with the SAME effective posterior
+    iT.push(sampleBeta(1+ntp,1+nfn)); iN.push(sampleBeta(1+ntn,1+nfp));
+  }
+  a_corr.textContent=corr(jT,jN).toFixed(3);
+  scatter("a-scatter",[{t:iT,n:iN,c:COL.dim},{t:jT,n:jN,c:COL.orange}],null,null,300);
+}
+
+// ── PART B: correlated logistic-normal prior, grid posterior ───────────────
+function gridPosterior(rho,tpr,tnr,p,N){
+  // expected gold cell counts at the true rates
+  const fpr=1-tnr;
+  const cTP=N*p*tpr, cFN=N*p*(1-tpr), cTN=N*(1-p)*tnr, cFP=N*(1-p)*fpr;
+  const SIG=1.6, mu=0; // weak prior centred at rate 0.5 (logit 0)
+  const G=70, lo=-6, hi=6, step=(hi-lo)/(G-1);
+  const xs=[]; for(let i=0;i<G;i++) xs.push(lo+i*step);
+  const inv=1/(1-rho*rho);
+  // build unnormalised log-posterior on the (logitTPR,logitTNR) grid
+  const grid=[]; let mx=-1e300;
+  for(let i=0;i<G;i++){
+    const x=xs[i], T=sig(x), llT=cTP*Math.log(T)+cFN*Math.log(1-T);
+    const row=[];
+    for(let j=0;j<G;j++){
+      const y=xs[j], Ny=sig(y), llN=cTN*Math.log(Ny)+cFP*Math.log(1-Ny);
+      const zx=(x-mu)/SIG, zy=(y-mu)/SIG;
+      const lp=-0.5*inv*(zx*zx-2*rho*zx*zy+zy*zy); // bivariate-normal log-prior (corr rho)
+      const v=lp+llT+llN; row.push(v); if(v>mx)mx=v;
+    }
+    grid.push(row);
+  }
+  // normalise + collect samples by weight (systematic: emit cells proportional to mass)
+  let Z=0; for(let i=0;i<G;i++)for(let j=0;j<G;j++){grid[i][j]=Math.exp(grid[i][j]-mx);Z+=grid[i][j];}
+  const Ts=[],Ns=[],phats=[];
+  const lpr=tpr*p+fpr*(1-p); // silver positive rate at truth
+  // weighted resample ~1500 draws from the grid (+ small within-cell jitter)
+  const draws=1500;
+  let acc=0,target=Z/draws,k=0;
+  for(let i=0;i<G;i++)for(let j=0;j<G;j++){
+    acc+=grid[i][j];
+    while(acc>=target && k<draws){
+      const T=sig(xs[i]+(Math.random()-0.5)*step), Ny=sig(xs[j]+(Math.random()-0.5)*step);
+      Ts.push(T); Ns.push(Ny);
+      const f=1-Ny, sep=T-f;
+      if(Math.abs(sep)>0.02) phats.push(Math.min(Math.max((lpr-f)/sep,-0.5),1.5));
+      acc-=target; k++;
+    }
+  }
+  return {Ts,Ns,phats};
+}
+function updateB(){
+  const rho=+rb_rho.value,tpr=+rb_tpr.value,tnr=+rb_tnr.value,p=+rb_p.value,N=+rb_n.value;
+  b_rho.textContent=rho.toFixed(2);b_tpr.textContent=tpr.toFixed(2);b_tnr.textContent=tnr.toFixed(2);
+  b_p.textContent=p.toFixed(2);b_n.textContent=N;
+  const cor=gridPosterior(rho,tpr,tnr,p,N);
+  const ind=gridPosterior(0,tpr,tnr,p,N);
+  const ciw=cor.phats.length>20?pct(cor.phats,97.5)-pct(cor.phats,2.5):NaN;
+  const ciw0=ind.phats.length>20?pct(ind.phats,97.5)-pct(ind.phats,2.5):NaN;
+  b_ciw.textContent=isFinite(ciw)?ciw.toFixed(3):"—";
+  b_ciw0.textContent=isFinite(ciw0)?ciw0.toFixed(3):"—";
+  const red=(isFinite(ciw)&&isFinite(ciw0)&&ciw0>0)?Math.max(0,(ciw0-ciw)/ciw0*100):0;
+  b_red.textContent=red.toFixed(0)+"%";
+  // CI width ∝ 1/sqrt(N_eff); width ratio r → effective gold multiplier ≈ (1/r)^2
+  const r=(isFinite(ciw)&&isFinite(ciw0)&&ciw>0)?ciw0/ciw:1;
+  b_mult.textContent=(r*r).toFixed(2)+"×";
+  scatter("b-scatter",[{t:ind.Ts,n:ind.Ns,c:COL.dim},{t:cor.Ts,n:cor.Ns,c:COL.orange}],tpr,tnr,280);
+}
+
+// ── shared scatter (hex colors only — never var() on a canvas) ─────────────
+function scatter(id,layers,trueT,trueN,H){
+  const cv=document.getElementById(id),dpr=window.devicePixelRatio||1;
+  const W=cv.clientWidth||820;cv.width=W*dpr;cv.height=H*dpr;cv.style.height=H+"px";
+  const ctx=cv.getContext("2d");ctx.setTransform(dpr,0,0,dpr,0,0);
+  const pad={t:14,r:14,b:34,l:42},cw=W-pad.l-pad.r,ch=H-pad.t-pad.b;
+  ctx.clearRect(0,0,W,H);
+  ctx.strokeStyle=COL.grid;ctx.lineWidth=1;
+  for(let i=0;i<=4;i++){const x=pad.l+i/4*cw,y=pad.t+i/4*ch;
+    ctx.beginPath();ctx.moveTo(x,pad.t);ctx.lineTo(x,pad.t+ch);ctx.stroke();
+    ctx.beginPath();ctx.moveTo(pad.l,y);ctx.lineTo(pad.l+cw,y);ctx.stroke();}
+  const px=v=>pad.l+v*cw, py=v=>pad.t+(1-v)*ch;
+  layers.forEach(L=>{ctx.fillStyle=L.c+"99";L.t.forEach((t,i)=>{ctx.beginPath();ctx.arc(px(t),py(L.n[i]),1.8,0,7);ctx.fill();});});
+  if(trueT!=null){ctx.strokeStyle=COL.amber;ctx.lineWidth=1.4;ctx.setLineDash([4,3]);
+    ctx.beginPath();ctx.moveTo(px(trueT),pad.t);ctx.lineTo(px(trueT),pad.t+ch);ctx.stroke();
+    ctx.beginPath();ctx.moveTo(pad.l,py(trueN));ctx.lineTo(pad.l+cw,py(trueN));ctx.stroke();ctx.setLineDash([]);}
+  ctx.fillStyle=COL.ax;ctx.font="9px IBM Plex Mono";ctx.textAlign="center";
+  for(let i=0;i<=4;i++)ctx.fillText((i/4).toFixed(2),px(i/4),pad.t+ch+13);
+  ctx.fillText("TPR →",pad.l+cw/2,H-2);ctx.textAlign="right";
+  for(let i=0;i<=4;i++)ctx.fillText((i/4).toFixed(2),pad.l-4,py(i/4)+3);
+  ctx.save();ctx.translate(10,pad.t+ch/2);ctx.rotate(-Math.PI/2);ctx.textAlign="center";ctx.fillText("TNR →",0,0);ctx.restore();
+}
+
+// wire up
+["ra-tp","ra-fn","ra-fp","ra-tn"].forEach(id=>document.getElementById(id).addEventListener("input",updateA));
+["rb-rho","rb-tpr","rb-tnr","rb-p","rb-n"].forEach(id=>document.getElementById(id).addEventListener("input",updateB));
+// short id aliases used above
+const ra_tp=document.getElementById("ra-tp"),ra_fn=document.getElementById("ra-fn"),ra_fp=document.getElementById("ra-fp"),ra_tn=document.getElementById("ra-tn");
+const a_tp=document.getElementById("a-tp"),a_fn=document.getElementById("a-fn"),a_fp=document.getElementById("a-fp"),a_tn=document.getElementById("a-tn"),a_corr=document.getElementById("a-corr");
+const rb_rho=document.getElementById("rb-rho"),rb_tpr=document.getElementById("rb-tpr"),rb_tnr=document.getElementById("rb-tnr"),rb_p=document.getElementById("rb-p"),rb_n=document.getElementById("rb-n");
+const b_rho=document.getElementById("b-rho"),b_tpr=document.getElementById("b-tpr"),b_tnr=document.getElementById("b-tnr"),b_p=document.getElementById("b-p"),b_n=document.getElementById("b-n");
+const b_ciw=document.getElementById("b-ciw"),b_ciw0=document.getElementById("b-ciw0"),b_red=document.getElementById("b-red"),b_mult=document.getElementById("b-mult");
+updateA();updateB();
+</script>
+</body>
+</html>
