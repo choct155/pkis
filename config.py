@@ -149,6 +149,18 @@ PROPOSAL_MODEL       = os.environ.get("PKIS_PROPOSAL_MODEL", "claude-sonnet-4-6"
 # systemctl-only here). log_usage writes here best-effort; tools/comptroller.py reads it.
 USAGE_DB_PATH = Path(os.environ.get("PKIS_USAGE_DB", "/home/pkis/usage/usage.sqlite"))
 
+# Retrieval lab (C-1e). Named search profiles persist as JSON (mirrors
+# priority_config.json; the `_config.json` suffix is gitignored). Experiment runs
+# log to an append-only SQLite store (gitignored; runtime data, not committed).
+SEARCH_PROFILES_PATH = Path(os.environ.get(
+    "PKIS_SEARCH_PROFILES", str(REPO_DIR / "search_profile_config.json")))
+# Cross-encoder reranker model (lazy-loaded). MiniLM is small (~80MB) and fast on
+# CPU; BAAI/bge-reranker-base is a heavier, higher-quality option. Per-profile
+# override via reranker_params.cross_encoder.model.
+CROSS_ENCODER_MODEL = os.environ.get("PKIS_CROSS_ENCODER", "cross-encoder/ms-marco-MiniLM-L-6-v2")
+EXPERIMENT_DB_PATH = Path(os.environ.get(
+    "PKIS_EXPERIMENT_DB", str(REPO_DIR / ".experiments.sqlite")))
+
 # MCP JSON-RPC 2.0 Streamable HTTP transport constants
 JSONRPC_VERSION = "2.0"
 MCP_SUPPORTED_PROTOCOL_VERSIONS = ["2025-06-18", "2025-03-26", "2024-11-05"]

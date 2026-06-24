@@ -46,6 +46,9 @@ from anthropic import Anthropic
 # B2 split (incremental): pure helpers carved out to store.py; re-imported so the
 # rest of app.py and every `import app` consumer keep referencing them unchanged.
 from store import slug_from_path, iri_from_slug, parse_iri, rrf_score, WikiStore
+from store import merge_search_profile, DEFAULT_SEARCH_PROFILE
+import experiments
+import metrics
 # The shared natural-language "ask brain" (retrieve → traverse → cited synthesis).
 # ask.py imports `app` lazily inside its functions, so this top-level import is
 # not circular. Reused by /pkis-api/ask and (later) the ask_pkis MCP tool.
@@ -672,8 +675,139 @@ def tool_get_node_stub(iri: str) -> dict:
     }
 
 
-def tool_search_wiki(query: str, domains=None, node_types=None, max_results=10) -> list:
-    return hybrid_search(query, domains=domains, node_types=node_types, max_results=max_results)
+# ── Retrieval lab: search profiles + instrumented runs (C-1e) ──
+# A SearchProfile is a (possibly partial) toggle bundle; STORE.search merges it
+# over DEFAULT_SEARCH_PROFILE. Named profiles persist to SEARCH_PROFILES_PATH
+# (mirrors priority_config: read-per-call, worker-safe), overlaid on builtins.
+
+BUILTIN_SEARCH_PROFILES = {
+    "default":       {"name": "default"},
+    "lexical_only":  {"name": "lexical_only", "retrievers": {"lexical": True, "dense": False}},
+    "dense_only":    {"name": "dense_only",   "retrievers": {"lexical": False, "dense": True}},
+    "rerank":        {"name": "rerank",       "rerankers": ["cross_encoder"]},
+    "graph_rerank":  {"name": "graph_rerank", "rerankers": ["graph"]},
+}
+
+
+def _persisted_search_profiles() -> dict:
+    try:
+        if SEARCH_PROFILES_PATH.exists():
+            return json.loads(SEARCH_PROFILES_PATH.read_text()) or {}
+    except Exception as ex:
+        logger.warning(f"search profiles read failed: {ex}")
+    return {}
+
+
+def search_profiles() -> dict:
+    """All known named profiles — builtins overlaid with persisted ones."""
+    out = dict(BUILTIN_SEARCH_PROFILES)
+    out.update(_persisted_search_profiles())
+    return out
+
+
+def resolve_search_profile(profile):
+    """profile: None | name(str) | inline(dict) -> (raw_profile_dict, source).
+    The raw dict is merged over DEFAULT_SEARCH_PROFILE inside STORE.search."""
+    if profile is None:
+        return BUILTIN_SEARCH_PROFILES["default"], "default"
+    if isinstance(profile, str):
+        profs = search_profiles()
+        if profile in profs:
+            return profs[profile], f"named:{profile}"
+        logger.warning(f"unknown search profile '{profile}'; using default")
+        return BUILTIN_SEARCH_PROFILES["default"], "default"
+    if isinstance(profile, dict):
+        return profile, "inline"
+    return BUILTIN_SEARCH_PROFILES["default"], "default"
+
+
+def tool_search_wiki(query: str, domains=None, node_types=None, max_results=10,
+                     profile=None, trace=None) -> list:
+    prof, _src = resolve_search_profile(profile)
+    return STORE.search(query, profile=prof, trace=trace, domains=domains,
+                        node_types=node_types, max_results=max_results)
+
+
+def _result_vectors(result_iris):
+    """Stack dense vectors for result IRIs from the embedding index, or None when
+    semantic search is off (so redundancy/diversity is simply skipped)."""
+    if STORE._embed_matrix is None or not STORE._embed_slugs:
+        return None
+    idx = {iri: i for i, iri in enumerate(STORE._embed_slugs)}
+    rows = [STORE._embed_matrix[idx[i]] for i in result_iris if i in idx]
+    return np.vstack(rows) if rows else None
+
+
+def run_search(query, profile=None, max_results=10, comparison_id=None,
+               with_metrics=True, log=True):
+    """One instrumented search run: execute the profile, time retrieval vs. metric
+    evaluation separately, compute the cheap reference-free metrics, and (best-
+    effort) persist an experiment row. Returns the lab column dict."""
+    prof, source = resolve_search_profile(profile)
+    trace = {}
+    t0 = time.perf_counter()
+    results = STORE.search(query, profile=prof, trace=trace, max_results=max_results)
+    retrieval_ms = round((time.perf_counter() - t0) * 1000, 3)
+
+    metrics_out, eval_ms = {}, 0.0
+    if with_metrics:
+        te = time.perf_counter()
+        iris = [r["iri"] for r in results]
+        try:
+            metrics_out = metrics.cheap_metrics(iris, _result_vectors(iris), STORE.get_graph())
+        except Exception as ex:  # metrics must never break a search
+            logger.warning(f"search metric computation failed: {ex}")
+        eval_ms = round((time.perf_counter() - te) * 1000, 3)
+
+    profile_name = (prof.get("name") if isinstance(prof, dict) else None) or source
+    column = {
+        "profile_name": profile_name,
+        "results": results,
+        "trace": trace,
+        "metrics": metrics_out,
+        "retrieval_ms": retrieval_ms,
+        "eval_ms": eval_ms,
+    }
+    if log:
+        experiments.log_experiment(EXPERIMENT_DB_PATH, {
+            "comparison_id": comparison_id,
+            "paradigm": "search",
+            "query": query,
+            "profile_name": profile_name,
+            "profile": merge_search_profile(prof),
+            "corpus_head": _content_signature(),
+            "n_results": len(results),
+            "retrieval_ms": retrieval_ms,
+            "eval_ms": eval_ms,
+            "eval_cost_usd": 0.0,
+            "total_cost_usd": 0.0,
+            "metrics": metrics_out,
+            "trace": trace.get("stages", []),
+            "payload": {"results": [
+                {"iri": r["iri"], "title": r["canonical_title"], "score": r["score"]}
+                for r in results
+            ]},
+        })
+    return column
+
+
+def tool_set_search_profile(name: str, profile: dict = None, reset: bool = False) -> dict:
+    """WRITE-authorized: persist (or remove) a NAMED search profile to a config
+    file shared across workers. reset=true deletes it; profile=<dict> saves it;
+    neither reports the current resolved profile. Mirrors set_priority_config."""
+    profs = _persisted_search_profiles()
+    if reset:
+        profs.pop(name, None)
+        SEARCH_PROFILES_PATH.write_text(json.dumps(profs, indent=2))
+        return {"ok": True, "removed": name, "profiles": sorted(search_profiles().keys())}
+    if profile is None:
+        return {"name": name, "profile": search_profiles().get(name),
+                "known": sorted(search_profiles().keys())}
+    prof = dict(profile)
+    prof["name"] = name
+    profs[name] = prof
+    SEARCH_PROFILES_PATH.write_text(json.dumps(profs, indent=2))
+    return {"ok": True, "saved": name, "profile": prof}
 
 
 def tool_search_wiki_index(query: str) -> list:
@@ -4226,6 +4360,15 @@ def _get_tools_list():
             }}
         },
         {
+            "name": "set_search_profile",
+            "description": "WRITE-authorized config tool for the retrieval lab. Persists or removes a NAMED search profile (a toggle bundle: retrievers, fusion, rerankers, filters) to a config file shared across workers. profile=<object> saves it under <name>; reset=true deletes it; passing only <name> reports the resolved profile and lists known profiles. Profiles are then selectable by name in /pkis-api/search and /search/compare.",
+            "inputSchema": {"type": "object", "properties": {
+                "name": {"type": "string", "description": "Profile name to save/remove/report"},
+                "profile": {"type": "object", "description": "Partial profile to persist (merged over the default at search time); omit to report"},
+                "reset": {"type": "boolean", "default": False, "description": "Remove the named persisted profile"}
+            }, "required": ["name"]}
+        },
+        {
             "name": "get_health_metrics",
             "description": "Get summary health statistics for the wiki.",
             "inputSchema": {"type": "object", "properties": {}}
@@ -4828,6 +4971,11 @@ WRITE_TOOLS = {
             cluster_proximity_weight=p.get("cluster_proximity_weight"),
             reset=p.get("reset", False),
         ),
+        "set_search_profile": lambda p: tool_set_search_profile(
+            name=p["name"],
+            profile=p.get("profile"),
+            reset=p.get("reset", False),
+        ),
         "build_reader": lambda p: tool_build_reader(slug=p["slug"], arxiv_id=p.get("arxiv_id")),
         "add_connections": lambda p: tool_add_connections(
             edges=p["edges"],
@@ -4950,11 +5098,48 @@ def _api_err(e, code=400):
 def pkis_api_search():
     b = _api_json()
     try:
+        # Response stays a plain SearchResult[] (back-compat with the Browse box).
+        # An optional `profile` (named or inline) selects a non-default pipeline.
         return _api_ok(tool_search_wiki(
             query=b.get("query", ""),
             domains=b.get("domains"),
             node_types=b.get("node_types"),
             max_results=b.get("max_results", 10),
+            profile=b.get("profile"),
+        ))
+    except Exception as e:
+        return _api_err(e, 500)
+
+
+@app.route("/pkis-api/search/compare", methods=["POST"])
+def pkis_api_search_compare():
+    """Run one query through N profiles for the lab. Returns a column per profile
+    (results + per-stage trace + metrics + retrieval/eval latency) and logs each
+    to the experiment store under a shared comparison_id."""
+    b = _api_json()
+    query = b.get("query", "")
+    profiles = b.get("profiles") or ["default"]
+    max_results = b.get("max_results", 10)
+    log = b.get("log", True)
+    try:
+        cid = uuid.uuid4().hex[:12]
+        columns = [run_search(query, profile=p, max_results=max_results,
+                              comparison_id=cid, log=log) for p in profiles]
+        return _api_ok({"comparison_id": cid, "query": query, "columns": columns})
+    except Exception as e:
+        return _api_err(e, 500)
+
+
+@app.route("/pkis-api/experiments", methods=["GET"])
+def pkis_api_experiments():
+    """List recent logged experiments (most recent first). Filter by comparison_id
+    or paradigm; ?limit=N caps the count."""
+    try:
+        return _api_ok(experiments.list_experiments(
+            EXPERIMENT_DB_PATH,
+            limit=int(request.args.get("limit", 50)),
+            comparison_id=request.args.get("comparison_id"),
+            paradigm=request.args.get("paradigm"),
         ))
     except Exception as e:
         return _api_err(e, 500)

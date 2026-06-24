@@ -10,9 +10,11 @@ Node loading + alias resolution (which depend on the mutable WIKI_DIR) move here
 in a later increment, once the canonical paths are relocated to share one source.
 """
 
+import copy
 import hashlib
 import logging
 import re
+import time
 from pathlib import Path
 
 import frontmatter
@@ -28,6 +30,37 @@ logger = logging.getLogger(__name__)
 def rrf_score(rank, k: int = 60) -> float:
     """Reciprocal-rank fusion weight (pure)."""
     return 1.0 / (k + rank)
+
+
+# Baseline search profile — reproduces the pre-pipeline hybrid_search behavior
+# exactly (lexical + dense, RRF k=60, 3x candidate pool, no rerankers/transforms).
+# app.py layers named/user profiles on top via search_profiles.json; partial
+# profiles are shallow-merged over this default by merge_search_profile().
+DEFAULT_SEARCH_PROFILE = {
+    "name": "default",
+    "transforms": {"hyde": False, "alias_expansion": False},
+    "retrievers": {"lexical": True, "dense": True},
+    "fusion": {"method": "rrf", "k": 60},
+    "rerankers": [],            # ordered: e.g. ["cross_encoder", "graph"]
+    "filters": {"domains": None, "node_types": None},
+    "candidate_multiplier": 3,  # candidate pool = max_results * this, per retriever
+    "deep_metrics": False,
+}
+
+
+def merge_search_profile(profile):
+    """Shallow-merge a (possibly partial) profile over DEFAULT_SEARCH_PROFILE.
+    Nested dicts (transforms/retrievers/fusion/filters) merge per-key; everything
+    else replaces. Returns a fresh dict — never mutates the default or the input."""
+    base = copy.deepcopy(DEFAULT_SEARCH_PROFILE)
+    if not profile:
+        return base
+    for key, val in profile.items():
+        if isinstance(val, dict) and isinstance(base.get(key), dict):
+            base[key].update(val)
+        else:
+            base[key] = val
+    return base
 
 
 def slug_from_path(path: Path) -> str:
@@ -74,6 +107,8 @@ class WikiStore:
         self._embed_model = None
         self._embed_matrix = None
         self._embed_slugs: list = []
+        self._cross_encoder = None
+        self._cross_encoder_name = None
 
     def invalidate_nodes(self):
         """Drop the node + alias caches — call after any write that changes nodes."""
@@ -366,30 +401,90 @@ class WikiStore:
         top = np.argsort(-sims)[:max_results]
         return [(self._embed_slugs[i], float(sims[i])) for i in top]
 
-    def hybrid_search(self, query, domains=None, node_types=None, max_results=10):
-        """Hybrid BM25 + dense search with RRF fusion."""
+    # ── Staged, profile-driven search pipeline (C-1e) ──
+    # transform → retrieve (lexical/dense) → fuse (RRF) → rerank → filter+assemble.
+    # Each stage is independently toggled by a SearchProfile and timed into `trace`,
+    # so the lab can compare capabilities and measure their efficiency cost.
+
+    def _timed(self, trace, name, kind, fn):
+        """Run fn(), append a {name,kind,ms,n_out} record to trace.stages."""
+        t0 = time.perf_counter()
+        out = fn()
+        ms = (time.perf_counter() - t0) * 1000.0
+        if trace is not None:
+            n_out = len(out) if hasattr(out, "__len__") else None
+            trace.setdefault("stages", []).append(
+                {"name": name, "kind": kind, "ms": round(ms, 3), "n_out": n_out}
+            )
+        return out
+
+    def _retrieve_lexical(self, query, k):
         if self._bm25_index is None:
             self.build_bm25_index()
+        scores = self._bm25_index.get_scores(query.lower().split())
+        ranked = sorted(enumerate(scores), key=lambda x: x[1], reverse=True)[:k]
+        return [(self._bm25_slugs[i], float(s)) for i, s in ranked]
+
+    def _retrieve_dense(self, query, k):
         if self._semantic_enabled() and self._embed_matrix is None:
             self.build_embedding_index()
+        return self.vector_search(query, max_results=k)
 
-        tokens = query.lower().split()
-        bm25_scores = self._bm25_index.get_scores(tokens)
-        bm25_ranked = sorted(enumerate(bm25_scores), key=lambda x: x[1], reverse=True)[:max_results * 3]
+    @staticmethod
+    def _fuse_rrf(candidate_lists, k=60):
+        rrf = {}
+        for lst in candidate_lists:
+            for rank, (iri, _s) in enumerate(lst):
+                rrf[iri] = rrf.get(iri, 0.0) + rrf_score(rank, k)
+        return sorted(rrf.items(), key=lambda x: x[1], reverse=True)
 
-        rrf_scores = {}
-        for rank, (idx, _score) in enumerate(bm25_ranked):
-            iri = self._bm25_slugs[idx]
-            rrf_scores[iri] = rrf_scores.get(iri, 0) + rrf_score(rank)
-        for rank, (iri, _sim) in enumerate(self.vector_search(query, max_results=max_results * 3)):
-            rrf_scores[iri] = rrf_scores.get(iri, 0) + rrf_score(rank)
+    def _apply_reranker(self, name, query, fused, node_map, prof):
+        """Dispatch to _rerank_<name>(query, fused, node_map, prof). Each reranker
+        takes and returns a [(iri, score), ...] list. Unknown names are skipped."""
+        fn = getattr(self, f"_rerank_{name}", None)
+        if fn is None:
+            logger.warning(f"unknown reranker '{name}'; skipping")
+            return fused
+        return fn(query, fused, node_map, prof)
 
-        node_map = {n["iri"]: n for n in self.load_all_nodes()}
-        results, seen = [], set()
-        for iri, score in sorted(rrf_scores.items(), key=lambda x: x[1], reverse=True):
-            if iri in seen:
+    def _get_cross_encoder(self, model_name):
+        if self._cross_encoder is None or self._cross_encoder_name != model_name:
+            from sentence_transformers import CrossEncoder  # lazy: optional dep
+            logger.info(f"Loading cross-encoder {model_name} ...")
+            self._cross_encoder = CrossEncoder(model_name, device="cpu")
+            self._cross_encoder_name = model_name
+        return self._cross_encoder
+
+    def _rerank_cross_encoder(self, query, fused, node_map, prof):
+        """Re-score the top-N fused candidates with a cross-encoder (query+doc read
+        jointly — far more precise than bi-encoder cosine), reorder them, and keep
+        the un-reranked tail beneath. Head scores become the cross-encoder logit;
+        order (not absolute score) is what the assembler consumes."""
+        params = (prof.get("reranker_params") or {}).get("cross_encoder", {})
+        model_name = params.get("model", config.CROSS_ENCODER_MODEL)
+        top_n = int(params.get("top_n", 30))
+        head = fused[:top_n]
+        if not head:
+            return fused
+        try:
+            ce = self._get_cross_encoder(model_name)
+        except Exception as ex:  # dep missing / load failure → degrade to fused order
+            logger.warning(f"cross-encoder unavailable ({ex}); skipping rerank")
+            return fused
+        pairs, iris = [], []
+        for iri, _s in head:
+            node = node_map.get(iri)
+            if not node:
                 continue
-            seen.add(iri)
+            pairs.append((query, f"{node.get('title', '')} {(node.get('content') or '')[:500]}"))
+            iris.append(iri)
+        scores = ce.predict(pairs)
+        reranked = sorted(zip(iris, (float(s) for s in scores)), key=lambda x: x[1], reverse=True)
+        return reranked + fused[top_n:]
+
+    def _assemble(self, fused, node_map, domains, node_types, max_results):
+        results = []
+        for iri, score in fused:
             node = node_map.get(iri)
             if not node:
                 continue
@@ -407,7 +502,7 @@ class WikiStore:
             results.append({
                 "iri": iri,
                 "canonical_title": node["title"],
-                "node_type": config.FOLDER_TO_TYPE.get(node["node_type"], node["node_type"]),
+                "node_type": node_type_key,
                 "domain": node["domain"],
                 "score": score,
                 "excerpt": node["content"][:300] if node.get("content") else "",
@@ -419,6 +514,47 @@ class WikiStore:
             if len(results) >= max_results:
                 break
         return results
+
+    def search(self, query, profile=None, trace=None, domains=None,
+               node_types=None, max_results=10):
+        """Profile-driven staged search. `profile` is a (possibly partial) dict;
+        `trace` (if a dict is passed) accumulates per-stage timing. Explicit
+        domains/node_types args override the profile's filters (back-compat)."""
+        prof = merge_search_profile(profile)
+        f_domains = domains if domains is not None else prof["filters"].get("domains")
+        f_node_types = node_types if node_types is not None else prof["filters"].get("node_types")
+        k = max_results * int(prof.get("candidate_multiplier", 3))
+
+        eff_query = query  # query transforms (HyDE / expansion) land here in a later phase
+
+        cand_lists = []
+        if prof["retrievers"].get("lexical", True):
+            cand_lists.append(self._timed(trace, "retrieve:lexical", "retriever",
+                                          lambda: self._retrieve_lexical(eff_query, k)))
+        if prof["retrievers"].get("dense", True):
+            cand_lists.append(self._timed(trace, "retrieve:dense", "retriever",
+                                          lambda: self._retrieve_dense(eff_query, k)))
+
+        fused = self._timed(trace, "fuse:rrf", "fusion",
+                            lambda: self._fuse_rrf(cand_lists, prof["fusion"].get("k", 60)))
+
+        node_map = {n["iri"]: n for n in self.load_all_nodes()}
+        for rname in prof.get("rerankers", []):
+            fused = self._timed(trace, f"rerank:{rname}", "reranker",
+                                lambda rn=rname, fl=fused: self._apply_reranker(rn, eff_query, fl, node_map, prof))
+
+        results = self._timed(trace, "assemble", "assemble",
+                              lambda: self._assemble(fused, node_map, f_domains, f_node_types, max_results))
+        if trace is not None:
+            trace["profile"] = prof.get("name", "custom")
+            trace["query"] = query
+        return results
+
+    def hybrid_search(self, query, domains=None, node_types=None, max_results=10):
+        """Back-compat shim — the default profile reproduces the original
+        BM25 + dense → RRF behavior exactly. Existing call sites are unchanged."""
+        return self.search(query, profile=None, trace=None, domains=domains,
+                           node_types=node_types, max_results=max_results)
 
     # ── Freshness: git-HEAD-signature cross-worker cache invalidation (C-1d) ──
 

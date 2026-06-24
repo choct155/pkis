@@ -236,3 +236,6 @@ wiki/reader/
 
 # librarian linking driver resume-state
 tools/.link_sources_state.json
+
+# Retrieval lab runtime data (not committed)
+.experiments.sqlite*
