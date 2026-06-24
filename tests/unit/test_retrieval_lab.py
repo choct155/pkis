@@ -145,6 +145,28 @@ def test_experiment_store_roundtrip(tmp_path):
 
 
 @pytest.mark.unit
+def test_query_log_dedup_and_listing(tmp_path):
+    db = tmp_path / "exp.sqlite"
+    assert experiments.log_query(db, "Monte Carlo Error", paradigm="search")
+    assert experiments.log_query(db, "  monte carlo   error ", paradigm="ask")  # normalizes → same row
+    experiments.log_query(db, "bayesian inference")
+    assert experiments.log_query(db, "x") is False    # too short, ignored
+    qs = {q["query_norm"]: q for q in experiments.list_queries(db)}
+    assert qs["monte carlo error"]["count"] == 2       # deduped + counted
+    assert qs["monte carlo error"]["paradigm"] == "ask"  # last paradigm wins
+    assert "bayesian inference" in qs
+
+
+@pytest.mark.unit
+def test_feedback_roundtrip(tmp_path):
+    db = tmp_path / "exp.sqlite"
+    fid = experiments.log_feedback(db, {"query": "q", "chosen_profile": "rerank", "rating": "up"})
+    assert fid is not None
+    rows = experiments.list_feedback(db)
+    assert rows[0]["chosen_profile"] == "rerank" and rows[0]["rating"] == "up"
+
+
+@pytest.mark.unit
 def test_run_search_returns_column(appmod, isolated_wiki):
     col = appmod.run_search("entropy", profile="lexical_only", max_results=3, log=False)
     assert col["profile_name"] == "lexical_only"

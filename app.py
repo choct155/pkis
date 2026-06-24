@@ -817,6 +817,16 @@ def tool_set_search_profile(name: str, profile: dict = None, reset: bool = False
     return {"ok": True, "saved": name, "profile": prof}
 
 
+def _maybe_capture_query(query, paradigm):
+    """Owner-only, best-effort: append a deliberate query to the standing test set
+    (the nightly eval replays it against every profile). Never breaks the request."""
+    try:
+        if query and is_owner(request):
+            experiments.log_query(EXPERIMENT_DB_PATH, query, paradigm=paradigm, source="owner")
+    except Exception:  # noqa: BLE001
+        pass
+
+
 def tool_search_wiki_index(query: str) -> list:
     """Fast keyword-only index scan, no LLM involvement."""
     if STORE._bm25_index is None:
@@ -5107,6 +5117,10 @@ def pkis_api_search():
     try:
         # Response stays a plain SearchResult[] (back-compat with the Browse box).
         # An optional `profile` (named or inline) selects a non-default pipeline.
+        # `capture: true` marks this as a deliberate query for the standing test
+        # set — the as-you-type Browse box omits it, so prefixes aren't logged.
+        if b.get("capture"):
+            _maybe_capture_query(b.get("query", ""), "search")
         return _api_ok(tool_search_wiki(
             query=b.get("query", ""),
             domains=b.get("domains"),
@@ -5129,6 +5143,7 @@ def pkis_api_search_compare():
     max_results = b.get("max_results", 10)
     log = b.get("log", True)
     try:
+        _maybe_capture_query(query, "search")  # a compare is always a deliberate query
         cid = uuid.uuid4().hex[:12]
         columns = [run_search(query, profile=p, max_results=max_results,
                               comparison_id=cid, log=log) for p in profiles]
@@ -5148,6 +5163,40 @@ def pkis_api_experiments():
             comparison_id=request.args.get("comparison_id"),
             paradigm=request.args.get("paradigm"),
         ))
+    except Exception as e:
+        return _api_err(e, 500)
+
+
+@app.route("/pkis-api/queries", methods=["GET"])
+def pkis_api_queries():
+    """Owner-only: the standing test set (deliberate queries captured from use)."""
+    if not is_owner(request):
+        return _api_err("owner only", 403)
+    try:
+        return _api_ok(experiments.list_queries(
+            EXPERIMENT_DB_PATH, limit=int(request.args.get("limit", 1000))))
+    except Exception as e:
+        return _api_err(e, 500)
+
+
+@app.route("/pkis-api/feedback", methods=["POST"])
+def pkis_api_feedback():
+    """Owner-only feedback tap — the supervised target for winner determination.
+    Body: {query, comparison_id?, paradigm?, chosen_profile?, chosen_iri?, rating?, notes?}."""
+    if not is_owner(request):
+        return _api_err("owner only", 403)
+    b = _api_json()
+    try:
+        fid = experiments.log_feedback(EXPERIMENT_DB_PATH, {
+            "query": b.get("query"),
+            "comparison_id": b.get("comparison_id"),
+            "paradigm": b.get("paradigm", "search"),
+            "chosen_profile": b.get("chosen_profile"),
+            "chosen_iri": b.get("chosen_iri"),
+            "rating": b.get("rating"),
+            "notes": b.get("notes"),
+        })
+        return _api_ok({"ok": fid is not None, "id": fid})
     except Exception as e:
         return _api_err(e, 500)
 
@@ -5256,6 +5305,7 @@ def pkis_api_ask():
     clean, tier, err = _ask_prepare()
     if err is not None:
         return err
+    _maybe_capture_query(clean[-1]["content"], "ask")  # owner asks → standing test set
     try:
         result = ask.run_ask(clean, tier=tier)
         result["tier"] = tier
@@ -5274,6 +5324,7 @@ def pkis_api_ask_stream():
     clean, tier, err = _ask_prepare()
     if err is not None:
         return err
+    _maybe_capture_query(clean[-1]["content"], "ask")  # owner asks → standing test set
 
     def gen():
         try:

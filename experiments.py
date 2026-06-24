@@ -42,6 +42,33 @@ CREATE TABLE IF NOT EXISTS experiments (
 );
 CREATE INDEX IF NOT EXISTS idx_exp_emitted ON experiments(emitted_at);
 CREATE INDEX IF NOT EXISTS idx_exp_comparison ON experiments(comparison_id);
+
+-- Standing-eval loop (C-1f). Every deliberate owner query becomes a test case;
+-- the nightly runner replays the whole set through the profile suite.
+CREATE TABLE IF NOT EXISTS query_log (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    query_norm TEXT UNIQUE NOT NULL,
+    query TEXT NOT NULL,
+    paradigm TEXT,
+    source TEXT,
+    count INTEGER DEFAULT 1,
+    first_seen TIMESTAMP,
+    last_seen TIMESTAMP
+);
+
+-- Feedback tap — the supervised target. Winner verdicts are held until feedback
+-- exists, so nightly metrics stay descriptive until these rows accumulate.
+CREATE TABLE IF NOT EXISTS feedback (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    emitted_at TIMESTAMP NOT NULL,
+    query TEXT,
+    comparison_id TEXT,
+    paradigm TEXT,
+    chosen_profile TEXT,
+    chosen_iri TEXT,
+    rating TEXT,
+    notes TEXT
+);
 """
 
 _JSON_FIELDS = ("profile", "metrics", "trace", "payload")
@@ -109,6 +136,92 @@ def _row_to_dict(row) -> dict:
             except Exception:
                 pass
     return d
+
+
+def _normalize_query(q: str) -> str:
+    return " ".join((q or "").lower().split())
+
+
+def log_query(db_path, query, paradigm="search", source="owner"):
+    """Upsert a deliberate query into the standing test set (deduped on normalized
+    text; increments count + last_seen on repeat). BEST-EFFORT. Returns True on a
+    write. Short/empty queries are ignored."""
+    norm = _normalize_query(query)
+    if len(norm) < 2:
+        return False
+    try:
+        init_store(db_path)
+        now = _utcnow_iso()
+        conn = _connect(db_path)
+        try:
+            conn.execute(
+                """INSERT INTO query_log (query_norm, query, paradigm, source, count, first_seen, last_seen)
+                   VALUES (?, ?, ?, ?, 1, ?, ?)
+                   ON CONFLICT(query_norm) DO UPDATE SET
+                       count = count + 1, last_seen = excluded.last_seen,
+                       paradigm = excluded.paradigm""",
+                (norm, query.strip(), paradigm, source, now, now),
+            )
+            conn.commit()
+            return True
+        finally:
+            conn.close()
+    except Exception as e:  # noqa: BLE001
+        logger.warning("log_query failed (non-fatal): %s", e)
+        return False
+
+
+def list_queries(db_path, limit=1000, paradigm=None) -> list:
+    """The standing test set — distinct queries, most-used / most-recent first."""
+    init_store(db_path)
+    where, params = "", []
+    if paradigm:
+        where = " WHERE paradigm = ?"
+        params.append(paradigm)
+    conn = _connect(db_path)
+    try:
+        rows = conn.execute(
+            f"SELECT * FROM query_log{where} ORDER BY count DESC, last_seen DESC LIMIT ?",
+            (*params, int(limit)),
+        ).fetchall()
+        return [dict(r) for r in rows]
+    finally:
+        conn.close()
+
+
+def log_feedback(db_path, record: dict):
+    """Record one feedback signal (owner verdict on a query/comparison). BEST-EFFORT."""
+    try:
+        init_store(db_path)
+        r = dict(record)
+        r.setdefault("emitted_at", _utcnow_iso())
+        cols = ("emitted_at", "query", "comparison_id", "paradigm",
+                "chosen_profile", "chosen_iri", "rating", "notes")
+        conn = _connect(db_path)
+        try:
+            cur = conn.execute(
+                f"INSERT INTO feedback ({','.join(cols)}) VALUES ({','.join('?' for _ in cols)})",
+                tuple(r.get(c) for c in cols),
+            )
+            conn.commit()
+            return cur.lastrowid
+        finally:
+            conn.close()
+    except Exception as e:  # noqa: BLE001
+        logger.warning("log_feedback failed (non-fatal): %s", e)
+        return None
+
+
+def list_feedback(db_path, limit=200) -> list:
+    init_store(db_path)
+    conn = _connect(db_path)
+    try:
+        rows = conn.execute(
+            "SELECT * FROM feedback ORDER BY id DESC LIMIT ?", (int(limit),)
+        ).fetchall()
+        return [dict(r) for r in rows]
+    finally:
+        conn.close()
 
 
 def list_experiments(db_path, limit=50, comparison_id=None, paradigm=None) -> list:
