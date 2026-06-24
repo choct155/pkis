@@ -324,7 +324,14 @@ def _refresh_db():
 
 
 def _identity_from_user(user) -> Optional[tuple]:
-    """(sub-or-email, role) from a WorkOS user object, role via the allowlist."""
+    """(stable-id, role) from a WorkOS user object, role via the allowlist.
+
+    The stable id is the EMAIL when present, falling back to the WorkOS sub. Email
+    is the durable per-person anchor; the WorkOS `sub` (user id) is login-method
+    specific, so the same person signing in via a different connection gets a
+    different sub. Keying user-owned data (conversations, shares) on the sub
+    therefore fragmented it across logins. Email-first matches oauth_identity() and
+    keeps a user's history continuous regardless of how they signed in this time."""
     sub = email = ""
     if user is not None:
         sub = (getattr(user, "id", None)
@@ -334,7 +341,7 @@ def _identity_from_user(user) -> Optional[tuple]:
     if not (sub or email):
         return None
     roles = _load_roles()
-    return (sub or email, roles.get(email) or roles.get(sub) or "reader")
+    return (email or sub, roles.get(email) or roles.get(sub) or "reader")
 
 
 def _coalesced_refresh(cookie: str, session):
