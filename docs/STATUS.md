@@ -4,67 +4,71 @@ The single canonical snapshot of current build state. Changes frequently — upd
 after every build session. This is not a design doc (see [`ARCHITECTURE.md`](ARCHITECTURE.md))
 or a decision record (see [`DECISIONS.md`](DECISIONS.md)).
 
-_Last updated: 2026-06-12_
+_Last updated: 2026-06-24_
 
 ## Component status
 
 | Component | Status | Notes |
 |---|---|---|
-| PKIS-MCP server (`app.py`) | **live** | MCP + `/pkis-api/*` + docs/webhook/health on `pkis.dev` |
-| Knowledge graph (`pkis-wiki`) | **live** | ~1,675 nodes / ~4,372 edges |
-| Viewer PWA (`pkis.dev/app`) | **live** | browse/clusters/priority/graph/staged/explainers/discover/reader; full node body renders |
+| PKIS-MCP server (`app.py`) | **live** | MCP (41 tools) + `/pkis-api/*` + docs/webhook/health on `pkis.dev`; gunicorn `pkis-mcp.service` |
+| Knowledge graph (`pkis-wiki`) | **live** | ~2,940 nodes |
+| Viewer PWA (`pkis.dev/app`) | **live** | mobile-first; **wide-desktop dashboard** (≥1280px: widened shell + right context rail = agenda + recently-viewed; 2-col browse) |
 | MCP write tools | **live** | stub/edge/hypothesis/bridge/source/edit; auto-commit+push, cache auto-refresh |
-| OAuth (WorkOS AuthKit) | **live** | authenticated claude.ai writes; allowlist by WorkOS `sub` |
-| claude.ai connector reads | **live** | 404 root-cause fixed; users reconnect once after the fix |
-| Semantic search | **live** | BM25 + bge-small dense, fused via RRF; embed cache gitignored |
-| Research clusters + frontier priority | **live** | all 12 clusters de-orphaned; frontier-driven priority |
-| Read+listen reader | **live** | LLM semantic narration of sources |
-| Proactive discovery | **live** | frontier-gated OpenAlex cite-graph, cron'd Mondays; inbox + accept/dismiss feedback + learned-prior loop all live (prior empty until first feedback) |
-| Documentation system (`docs/`) | **live** | 6 docs + `log_idea` + mobile-first viewer Docs view; deployed |
+| Auth (WorkOS AuthKit) | **live** | OAuth (claude.ai/MCP) + web sealed session; **identity keyed on email** (stable across login methods, fixed 2026-06-24); allowlist by email OR sub; single-use-refresh race coalesced |
+| Ask (NL Q&A) | **live** | shared `ask.py` engine + `/pkis-api/ask` + viewer Ask tab; read-only Q&A+traversal, IP-throttled; **conversation persistence** (auto-save, signed-in), voice I/O, capability-link sharing |
+| Inbox (owner review hub) | **live** | consolidated staged + discovery + agent lanes; owner-only; bridge-note review + inline link-resolution |
+| Semantic search | **live** | BM25 + bge-small dense fused via RRF; instrumented profile-driven pipeline + cross-encoder rerank; standing-eval loop (owner query capture + nightly runner); embed cache gitignored |
+| Research clusters + frontier priority | **live** | all 12 clusters de-orphaned; frontier-driven priority; Priority = ranked reading queue w/ rationale |
+| Read+listen reader | **live** | LLM semantic narration + section-synced chapter PDF; mp3 encoder streamed (long-narration OOM fixed) |
+| Proactive discovery | **live** | frontier-gated OpenAlex cite-graph, cron'd Mondays; inbox + accept/dismiss feedback + learned-prior loop (prior still cold until feedback logged) |
+| Documentation system (`docs/`) | **live** | 6 docs + `log_idea` + viewer Docs view |
+| Explainers | **live** | HTML explainers as `asset` nodes; desktop live-edit loop (live-reload + git snapshot + in-app ⟳ preview); **Tier-2 dynamic-explainer Flask blueprint** scaffold (`/pkis-api/x/<name>/`) |
+| Comptroller (cost) | **live** | `usage.py` SQLite at `/home/pkis/usage`; per-origin cost; narration logs as `pkis-reader` |
 
-## Book knowledge coverage (Phase C)
+## Source / narration coverage
 
-All eight acquired books mined into the graph (coverage layer done; reader text
-varies). Reader `paper_md` built for MacKay (all 50 ch) and Hastie ESL; the other six
-have chapter stubs/nodes but may lack extracted reader text.
+All 11 backlog books **split into per-chapter PDFs** (136 chapters) and 50 papers
+downloaded — all viewable. **~371 chapters narrated**; the remaining backlog
+narration is **in flight** (resumable `backlog_build.sh`: Haiku extract → Sonnet
+voice → Piper TTS), guarded by a self-healing watchdog (`narration_watchdog.sh`,
+cron */15) that auto-pauses on API-credit exhaustion and auto-resumes.
 
-| Book | slug |
-|---|---|
-| MacKay ITILA | `mackay-itila` |
-| Hastie ESL | `hastie-esl` |
-| Russell & Norvig AIMA | `russell-norvig-aima` |
-| Gelman BDA3 | `gelman-bda3` |
-| Sutton & Barto RL | `sutton-reinforcement-2018` |
-| Deisenroth MML | `deisenroth-mml` |
-| Pearl Causality | `pearl-causality` |
-| Resnick Stochastic Processes | `resnick-stochastic-processes` |
+Books split: cassandras-des-intro, tanner, cimiano, gulli (29 ch, Springer-anchor
+split), cunningham, carrell, allemang, kroese, nielsen, benzi, lange — plus the
+earlier Phase-C set (MacKay, Hastie ESL, AIMA, Gelman, Sutton, Deisenroth, Pearl,
+Resnick, Goodfellow, Murphy PML 1&2, Jaynes).
 
-**In acquisition:** Goodfellow (Deep Learning, HTML-only), Murphy PML vol. 1 & 2
-(ingest configs staged). **Still unacquired:** Bishop PRML.
+## Active workstream — calibration explainers
+
+A 3-tab calibration explainer (`accuracy-calibration-tabs.html`, iframe-tab shell):
+Tab 1 = pristine silver/gold explainer; Tab 2 = covariance/Dirichlet (flat joint
+Dirichlet degenerates to independent Betas → correlated prior is the real lever);
+Tab 3 = PPI (rectifier + PPI++ λ "never worse than gold"). PPI/PPI++ source nodes
+ingested + narrated. Local-only until published.
 
 ## Known issues
 
-- Discovery **learned prior is cold** — the inbox + feedback loop are live, but no
-  accept/dismiss decisions have been logged yet, so the per-signal prior is still
-  neutral. Warms up once feedback starts. (Acting is write-gated — sign in to use it.)
+- Discovery **learned prior is cold** — inbox + feedback loop live, but no
+  accept/dismiss decisions logged yet, so the per-signal prior is neutral.
 - Git can diverge across the laptop and server checkouts of the one repo — both
-  commit to `origin/main`, and the server auto-commits on every MCP write.
-  Reconcilable: commit wanted changes, `git checkout --` for files origin already has,
-  `git pull --no-rebase`, push.
+  commit to `origin/main`, server auto-commits on every MCP write. Reconcilable
+  (commit / `git checkout --` / `pull` / push).
 - An `app.py` restart drops the claude.ai connector (users must reconnect) —
   minimize restarts; content changes don't need one (cache auto-refresh).
 
-## Most recent session
+## Most recent session (2026-06-24)
 
-Documentation system built **and deployed**: `docs/` (ABOUT, ARCHITECTURE, USAGE,
-STATUS, DECISIONS, IDEAS) + manifest, the `log_idea` MCP write tool, docs read
-endpoints, and a mobile-first **Docs** view; `PHASE_C_BRIEF.md` absorbed and removed.
-Then folded the mobile bottom-nav into a primary bar + "more" menu (acting on a logged
-idea). Corrected the discovery status below — its inbox/feedback/prior loop is live.
+Fixed conversation-history loss (web identity now email-first, 3 stranded chats
+migrated). Built the desktop dashboard layout + context rail; the explainer
+live-edit workflow + Tier-2 dynamic-explainer blueprint; the 3-tab calibration
+explainer (corrected the Dirichlet covariance model, added a PPI tab). Ran the
+source backlog (download + per-chapter split + narration, in flight) with a
+self-healing watchdog. Deduped the reading queue + idempotent capture.
 
 ## Next priorities
 
-1. Start exercising discovery feedback (accept/dismiss) to warm the learned prior.
-2. Extract reader text for the six books lacking `paper_md` (prioritize Gelman /
-   Deisenroth / Sutton — closest to existing clusters).
-3. Finish acquiring Goodfellow + Murphy PML; acquire Bishop PRML.
+1. Let the backlog narration finish (multi-day; watchdog-guarded).
+2. Publish the calibration tabs + register as a PKIS asset node.
+3. Start exercising discovery feedback to warm the learned prior.
+4. Architect automation (daily cron + post-deploy hook) so this doc stops
+   drifting — wired this session.
