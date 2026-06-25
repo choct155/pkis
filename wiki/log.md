@@ -26608,3 +26608,7 @@
 ## [2026-06-25] committed | technique
 - Committed: dense-passage-retrieval → techniques/dense-passage-retrieval.md
 - IRI: pkis:technique:dense-passage-retrieval
+
+## [2026-06-25] committed | technique
+- Committed: reciprocal-rank-fusion → techniques/reciprocal-rank-fusion.md
+- IRI: pkis:technique:reciprocal-rank-fusion
