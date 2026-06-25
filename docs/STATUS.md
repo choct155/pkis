@@ -11,8 +11,8 @@ _Last updated: 2026-06-25_
 | Component | Status | Notes |
 |---|---|---|
 | PKIS-MCP server (`app.py`) | **live** | MCP (41 tools) + `/pkis-api/*` + docs/webhook/health on `pkis.dev`; gunicorn `pkis-mcp.service` |
-| Knowledge graph (`pkis-wiki`) | **live** | ~2,940 nodes |
-| Viewer PWA (`pkis.dev/app`) | **live** | mobile-first; **wide-desktop dashboard** (≥1280px: widened shell + right context rail = agenda + recently-viewed; 2-col browse); **retrieval lab view** (side-by-side search-regime comparison) |
+| Knowledge graph (`pkis-wiki`) | **live** | ~2,944 nodes |
+| Viewer PWA (`pkis.dev/app`) | **live** | mobile-first; **wide-desktop dashboard** (≥1280px: widened shell + right context rail = agenda + recently-viewed; 2-col browse); **retrieval lab view** (side-by-side search-regime comparison + unified retrieve/answer ask panel) |
 | MCP write tools | **live** | stub/edge/hypothesis/bridge/source/edit; auto-commit+push, cache auto-refresh |
 | Auth (WorkOS AuthKit) | **live** | OAuth (claude.ai/MCP) + web sealed session; **identity keyed on email** (stable across login methods, fixed 2026-06-24); allowlist by email OR sub; single-use-refresh race coalesced |
 | Ask (NL Q&A) | **live** | shared `ask.py` engine + `/pkis-api/ask` + viewer Ask tab; read-only Q&A+traversal, IP-throttled; **conversation persistence** (auto-save, signed-in), voice I/O, capability-link sharing |
@@ -58,9 +58,12 @@ ingested + narrated. Local-only until published.
 
 ## Most recent session (2026-06-25)
 
-Added a **retrieval lab view** to the viewer: side-by-side comparison of search
-regimes (BM25, dense, fused RRF, reranked), making it easy to inspect and
-contrast result sets for any query without leaving the app.
+Extended the **retrieval lab**: added the **ask side** (unified retrieve/answer
+comparison panel) alongside the existing search-regime comparison. Wired
+**graph-aware retrieval method nodes** into the retrieval-quality neighborhood.
+Ingested four retrieval technique nodes via MCP: **Dense Passage Retrieval**,
+**Reciprocal Rank Fusion**, **Cross-Encoder Reranking**, and **Personalized
+PageRank for Retrieval** (+4 nodes → 2,944 total).
 
 ## Next priorities
 
