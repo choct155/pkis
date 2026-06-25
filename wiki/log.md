@@ -26612,3 +26612,7 @@
 ## [2026-06-25] committed | technique
 - Committed: reciprocal-rank-fusion → techniques/reciprocal-rank-fusion.md
 - IRI: pkis:technique:reciprocal-rank-fusion
+
+## [2026-06-25] committed | technique
+- Committed: cross-encoder-reranking → techniques/cross-encoder-reranking.md
+- IRI: pkis:technique:cross-encoder-reranking
