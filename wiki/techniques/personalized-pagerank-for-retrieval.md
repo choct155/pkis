@@ -11,6 +11,8 @@ component_scores:
   implementation: null
   operational_mechanism: null
   principled_mechanism: null
+contrasts-with:
+- dense-passage-retrieval
 coverage: 0
 date_created: '2026-06-25'
 date_updated: '2026-06-25'
@@ -18,6 +20,8 @@ domain:
 - knowledge-representation
 - machine-learning
 id: pkis:technique:personalized-pagerank-for-retrieval
+instantiates:
+- coverage-driven-graph-traversal
 knowledge_type: technique
 maturity: evolving
 needs_canonical_source: true
@@ -40,6 +44,8 @@ Graph-based ranking that scores nodes by the stationary distribution of a random
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[dense-passage-retrieval]] — contrasts-with: structural relevance propagated over typed edges vs independent surface-embedding similarity
+- [[coverage-driven-graph-traversal]] — instantiates: PPR is a concrete pluggable ranking function R over the typed knowledge graph
 [To be populated during integration]
 
 ## Needs Canonical Source

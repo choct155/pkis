@@ -11,6 +11,8 @@ component_scores:
   implementation: null
   operational_mechanism: null
   principled_mechanism: null
+contrasts-with:
+- coverage-driven-graph-traversal
 coverage: 0
 date_created: '2026-06-25'
 date_updated: '2026-06-25'
@@ -39,6 +41,7 @@ Retrieval by semantic similarity in a learned embedding space: a bi-encoder maps
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[coverage-driven-graph-traversal]] — contrasts-with: the framework's vector-search vs graph-traversal axis: semantic proximity vs typed-edge reachability
 [To be populated during integration]
 
 ## Needs Canonical Source

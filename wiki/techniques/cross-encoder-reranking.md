@@ -15,6 +15,8 @@ date_updated: '2026-06-25'
 domain:
 - machine-learning
 - knowledge-representation
+extends:
+- dense-passage-retrieval
 id: pkis:technique:cross-encoder-reranking
 knowledge_type: technique
 maturity: evolving
@@ -37,6 +39,7 @@ A second-stage retrieval refinement that re-scores a candidate set by feeding ea
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[dense-passage-retrieval]] — extends: reranks the bi-encoder's top-k candidate set with joint query-document scoring
 [To be populated during integration]
 
 ## Needs Canonical Source

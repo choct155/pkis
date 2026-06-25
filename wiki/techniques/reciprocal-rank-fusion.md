@@ -29,6 +29,8 @@ tags:
 - hybrid-search
 title: Reciprocal Rank Fusion
 understanding: 0
+uses:
+- dense-passage-retrieval
 ---
 
 ## Definition
@@ -38,6 +40,7 @@ A rank-aggregation method that merges several ranked candidate lists into one by
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[dense-passage-retrieval]] — uses: RRF fuses dense retrieval (with lexical) by rank position, needing no score calibration
 [To be populated during integration]
 
 ## Needs Canonical Source
