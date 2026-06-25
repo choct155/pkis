@@ -26616,3 +26616,7 @@
 ## [2026-06-25] committed | technique
 - Committed: cross-encoder-reranking → techniques/cross-encoder-reranking.md
 - IRI: pkis:technique:cross-encoder-reranking
+
+## [2026-06-25] committed | technique
+- Committed: personalized-pagerank-for-retrieval → techniques/personalized-pagerank-for-retrieval.md
+- IRI: pkis:technique:personalized-pagerank-for-retrieval

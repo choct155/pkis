@@ -1187,6 +1187,7 @@
 - [[market-vs-hierarchy]] — Coase/Williamson: transactions governed by price signals (markets) vs. managerial direction (firms) (corporate-finance) (2026-05-20)
 
 ## Techniques
+- [[personalized-pagerank-for-retrieval]] — Personalized PageRank for Retrieval (knowledge-representation, machine-learning) (2026-06-25)
 - [[cross-encoder-reranking]] — Cross-Encoder Reranking (machine-learning, knowledge-representation) (2026-06-25)
 - [[reciprocal-rank-fusion]] — Reciprocal Rank Fusion (machine-learning, knowledge-representation) (2026-06-25)
 - [[dense-passage-retrieval]] — Dense Passage Retrieval (machine-learning, knowledge-representation) (2026-06-25)
