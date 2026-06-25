@@ -23,6 +23,7 @@ import ExplainersView from './views/ExplainersView'
 import DocsView from './views/DocsView'
 import InboxView from './views/InboxView'
 import AskView from './views/AskView'
+import LabView from './views/LabView'
 import ReaderView from './views/ReaderView'
 import ExplainerOverlay from './components/ExplainerOverlay'
 import WritingOverlay from './components/WritingOverlay'
@@ -66,7 +67,7 @@ export default function App() {
 
   // Owner-only views: if the inbox is open and the user isn't (or is no longer) the
   // owner — e.g. they signed out — fall back to browse.
-  useEffect(() => { if (view === 'inbox' && !isOwner) setView('browse') }, [view, isOwner])
+  useEffect(() => { if ((view === 'inbox' || view === 'lab') && !isOwner) setView('browse') }, [view, isOwner])
 
   // Capture the current navigable state as a restorer. Running it returns the app
   // to exactly this state (closing/reopening sheets, restoring view + node + search).
@@ -294,6 +295,7 @@ export default function App() {
                   />
                 )}
                 {view === 'inbox' && isOwner && <InboxView onSelectNode={handleSelectNode} />}
+                {view === 'lab' && isOwner && <LabView onSelectNode={handleSelectNode} />}
               </>
             )}
           </div>

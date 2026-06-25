@@ -25,15 +25,22 @@ def sh(*args, cwd=REPO):
     return subprocess.run(args, cwd=cwd, capture_output=True, text=True).stdout.strip()
 
 
-def ground_truth():
+def ground_truth(force=False):
     nodes = len([f for f in glob.glob(f"{WIKI}/**/*.md", recursive=True)
                  if "/reader/" not in f and os.path.basename(f) not in
                  ("index.md", "log.md", "queue.md", "inbox.md")])
     narrated = len(glob.glob(f"{WIKI}/reader/*/audio.mp3"))
     cur = open(STATUS).read()
     m = re.search(r"_Last updated:\s*([0-9-]+)_", cur)
-    since = m.group(1) if m else "2026-06-01"
-    log = sh("git", "log", f"--since={since}", "--pretty=- %s", "--no-merges")
+    since = m.group(1) if m else "?"
+    # Commits SINCE STATUS.md was last changed — a precise range (not --since=<date>,
+    # which drops same-day commits and would make the post-deploy hook a no-op).
+    if force:
+        rng = "HEAD~40..HEAD"
+    else:
+        last = sh("git", "log", "-1", "--format=%H", "--", "docs/STATUS.md")
+        rng = f"{last}..HEAD" if last else "HEAD~40..HEAD"
+    log = sh("git", "log", rng, "--pretty=- %s", "--no-merges")
     log = "\n".join(log.splitlines()[:80])
     return cur, nodes, narrated, since, log
 
@@ -67,9 +74,9 @@ def reconcile(cur, nodes, narrated, since, log, today):
 
 def main():
     dry = "--dry" in sys.argv
-    # today must be passed in (no Date.now in headless determinism concerns); use system date here
+    force = "--force" in sys.argv
     today = datetime.date.today().isoformat()
-    cur, nodes, narrated, since, log = ground_truth()
+    cur, nodes, narrated, since, log = ground_truth(force=force)
     if not log.strip():
         print("no commits since last STATUS update — nothing to reconcile"); return
     new = reconcile(cur, nodes, narrated, since, log, today)

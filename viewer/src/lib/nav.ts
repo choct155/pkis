@@ -18,6 +18,7 @@ export const NAV_ITEMS: NavItem[] = [
   { view: 'explainers', icon: '▦', label: 'assets',   },
   { view: 'docs',       icon: '▤', label: 'docs',     },
   { view: 'inbox',      icon: '✉', label: 'inbox',    admin: true },
+  { view: 'lab',        icon: '⚗', label: 'lab',      admin: true },
 ]
 
 // Nav items visible to the current user — admin (owner-only) items hidden otherwise.

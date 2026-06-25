@@ -20,6 +20,8 @@ import type {
   ConversationSummary,
   ConversationFull,
   SharedContent,
+  CompareResponse,
+  QueryLogItem,
 } from '../types';
 
 const BASE = '/pkis-api';
@@ -65,6 +67,32 @@ export async function searchWiki(
   options: { domains?: string[]; node_types?: string[]; max_results?: number } = {}
 ): Promise<SearchResult[]> {
   return post<SearchResult[]>('/search', { query, ...options });
+}
+
+// ── Retrieval lab ─────────────────────────────────────────────────────────
+// Run one query through N profiles; each column carries results + per-stage
+// trace + metrics + latency. The query is captured to the owner test set.
+export async function searchCompare(
+  query: string,
+  profiles: Array<string | Record<string, unknown>>,
+  opts: { max_results?: number } = {}
+): Promise<CompareResponse> {
+  return post<CompareResponse>('/search/compare', {
+    query, profiles, max_results: opts.max_results ?? 10,
+  });
+}
+
+// Feedback tap — the supervised "which regime won" signal (owner-only).
+export async function sendFeedback(body: {
+  query?: string; comparison_id?: string; paradigm?: string;
+  chosen_profile?: string; chosen_iri?: string; rating?: string; notes?: string;
+}): Promise<{ ok: boolean; id: number | null }> {
+  return post('/feedback', body);
+}
+
+// The standing test set — deliberate owner queries (owner-only).
+export async function listQueries(limit = 200): Promise<QueryLogItem[]> {
+  return get<QueryLogItem[]>(`/queries?limit=${limit}`);
 }
 
 // ── Ask (natural-language Q&A + graph traversal over the wiki) ────────────

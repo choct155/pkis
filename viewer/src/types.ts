@@ -10,7 +10,7 @@ export type NodeType =
 
 export type Maturity = 'settled' | 'evolving' | 'contested' | 'historical';
 
-export type View = 'browse' | 'clusters' | 'priority' | 'graph' | 'explainers' | 'docs' | 'inbox' | 'ask';
+export type View = 'browse' | 'clusters' | 'priority' | 'graph' | 'explainers' | 'docs' | 'inbox' | 'ask' | 'lab';
 
 // ── Natural-language ask (from /pkis-api/ask) ─────────────────────────────
 export interface AskMessage {
@@ -140,6 +140,41 @@ export interface SearchResult {
   score?: number;
   maturity?: Maturity;
   tags?: string[];
+}
+
+// ── Retrieval lab (search profile comparison + metrics) ───────────────────
+export interface TraceStage {
+  name: string;
+  kind: string;
+  ms: number;
+  n_out: number | null;
+}
+export interface SearchMetrics {
+  coherence?: number;
+  n_components?: number;
+  n_in_graph?: number;
+  redundancy?: number;
+  diversity?: number;
+}
+export interface CompareColumn {
+  profile_name: string;
+  results: SearchResult[];
+  trace: { stages: TraceStage[]; profile?: string; query?: string };
+  metrics: SearchMetrics;
+  retrieval_ms: number;
+  eval_ms: number;
+}
+export interface CompareResponse {
+  comparison_id: string;
+  query: string;
+  columns: CompareColumn[];
+}
+export interface QueryLogItem {
+  query: string;
+  query_norm: string;
+  paradigm: string;
+  count: number;
+  last_seen: string;
 }
 
 // ── Full node (from get_node) ─────────────────────────────────────────────
