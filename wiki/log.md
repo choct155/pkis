@@ -26584,3 +26584,27 @@
 ## [2026-06-22] committed | source
 - Committed: jospin-handson-2022 → sources/jospin-handson-2022.md
 - IRI: pkis:source:jospin-handson-2022
+
+## [2026-06-25] staged | node-stub (technique)
+- Staged: dense-passage-retrieval (id: e00aee4e-d211-45ed-8f90-02ffd24d73be)
+- Title: Dense Passage Retrieval
+- needs_canonical_source: True
+
+## [2026-06-25] staged | node-stub (technique)
+- Staged: reciprocal-rank-fusion (id: d785ec5c-1386-4ee9-b0a4-1e952a930092)
+- Title: Reciprocal Rank Fusion
+- needs_canonical_source: True
+
+## [2026-06-25] staged | node-stub (technique)
+- Staged: cross-encoder-reranking (id: 1ac9a4a0-e610-45eb-bb23-cc446446c0c2)
+- Title: Cross-Encoder Reranking
+- needs_canonical_source: True
+
+## [2026-06-25] staged | node-stub (technique)
+- Staged: personalized-pagerank-for-retrieval (id: 466e649e-79cc-4bfc-9256-7c273994d582)
+- Title: Personalized PageRank for Retrieval
+- needs_canonical_source: True
+
+## [2026-06-25] committed | technique
+- Committed: dense-passage-retrieval → techniques/dense-passage-retrieval.md
+- IRI: pkis:technique:dense-passage-retrieval
