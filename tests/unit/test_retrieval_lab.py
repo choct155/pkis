@@ -145,6 +145,42 @@ def test_experiment_store_roundtrip(tmp_path):
 
 
 @pytest.mark.unit
+def test_personalized_pagerank_boosts_connected_node(appmod):
+    g = nx.DiGraph()
+    g.add_edge("s", "x", weight=1.0)
+    g.add_edge("x", "s", weight=1.0)
+    g.add_node("z")  # isolated
+    store = appmod.STORE
+    store._ppr_out = None
+    try:
+        ppr = store._personalized_pagerank(g, {"s": 1.0}, alpha=0.85)
+        assert ppr["x"] > ppr["z"]   # a seed's neighbour beats an isolated node
+        assert ppr["s"] > 0
+    finally:
+        store._ppr_out = None  # don't leak the toy adjacency to other tests
+
+
+@pytest.mark.unit
+def test_graph_rerank_runs_and_blend_zero_is_baseline(appmod, isolated_wiki):
+    base = [r["iri"] for r in appmod.STORE.search("entropy", max_results=5)]
+    trace = {}
+    g = appmod.STORE.search("entropy", profile={"rerankers": ["graph"]}, trace=trace, max_results=5)
+    assert any(s["name"] == "rerank:graph" for s in trace["stages"])
+    assert isinstance(g, list)
+    # blend=0 → pure first-stage order, so identical to the baseline (scale-free check)
+    b0 = [r["iri"] for r in appmod.STORE.search(
+        "entropy", profile={"rerankers": ["graph"], "reranker_params": {"graph": {"blend": 0.0}}}, max_results=5)]
+    assert b0 == base
+
+
+@pytest.mark.unit
+def test_path_between_resolves_and_self_connects(appmod, isolated_wiki):
+    assert appmod._resolve_anchor("entropy") == "pkis:concept:entropy"
+    r = appmod.tool_path_between("entropy", "entropy")
+    assert r["connected"] and r["a"]["iri"] == r["b"]["iri"] == "pkis:concept:entropy"
+
+
+@pytest.mark.unit
 def test_query_log_dedup_and_listing(tmp_path):
     db = tmp_path / "exp.sqlite"
     assert experiments.log_query(db, "Monte Carlo Error", paradigm="search")

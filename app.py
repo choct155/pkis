@@ -5226,6 +5226,60 @@ def pkis_api_search_compare():
         return _api_err(e, 500)
 
 
+def _resolve_anchor(ref):
+    """Resolve a path-query endpoint (IRI, slug, or free text) to a graph node IRI:
+    exact IRI → slug lookup → top search hit."""
+    if not ref:
+        return None
+    G = get_graph()
+    if G.has_node(ref):
+        return ref
+    path = find_node_path(str(ref).strip().lower().replace(" ", "-"))
+    if path:
+        iri = (load_node(path) or {}).get("iri")
+        if iri and G.has_node(iri):
+            return iri
+    res = tool_search_wiki(ref, max_results=1)
+    return res[0]["iri"] if res else None
+
+
+def tool_path_between(a, b, max_paths=3):
+    """Relationship query: the shortest typed-edge path(s) between two nodes and
+    their common neighbours. Endpoints are resolved from IRI/slug/free text."""
+    G = get_graph()
+    ia, ib = _resolve_anchor(a), _resolve_anchor(b)
+    title = lambda i: G.nodes.get(i, {}).get("title", i)  # noqa: E731
+    if not ia or not ib:
+        return {"error": "could not resolve both endpoints", "a": a, "b": b}
+    out = {"a": {"ref": a, "iri": ia, "title": title(ia)},
+           "b": {"ref": b, "iri": ib, "title": title(ib)},
+           "connected": False, "paths": [], "common": []}
+    if ia == ib:
+        out["connected"] = True
+        out["paths"] = [[{"iri": ia, "title": title(ia)}]]
+        return out
+    UG = G.to_undirected()
+    if UG.has_node(ia) and UG.has_node(ib) and nx.has_path(UG, ia, ib):
+        out["connected"] = True
+        for p in nx.all_shortest_paths(UG, ia, ib):
+            out["paths"].append([{"iri": n, "title": title(n)} for n in p])
+            if len(out["paths"]) >= max_paths:
+                break
+        common = set(UG.neighbors(ia)) & set(UG.neighbors(ib))
+        out["common"] = [{"iri": n, "title": title(n)} for n in list(common)[:12]]
+    return out
+
+
+@app.route("/pkis-api/path", methods=["POST"])
+def pkis_api_path():
+    """Relationship/path query between two nodes (read-open, like get_related)."""
+    b = _api_json()
+    try:
+        return _api_ok(tool_path_between(b.get("a", ""), b.get("b", "")))
+    except Exception as e:
+        return _api_err(e, 500)
+
+
 @app.route("/pkis-api/experiments", methods=["GET"])
 def pkis_api_experiments():
     """List recent logged experiments (most recent first). Filter by comparison_id

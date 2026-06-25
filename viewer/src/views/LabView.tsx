@@ -2,13 +2,13 @@ import { useEffect, useState } from 'react'
 import type { CompareResponse, AskCompareResponse, QueryLogItem } from '../types'
 import { searchCompare, askCompare, sendFeedback, listQueries } from '../lib/api'
 
-// The isolation/standing profiles the lab compares. graph_rerank is held back
-// until the graph reranker lands (P5) so it isn't an inert duplicate of hybrid.
+// The isolation/standing profiles the lab compares.
 const PROFILES: { key: string; label: string; color: string }[] = [
   { key: 'lexical_only', label: 'lexical', color: 'var(--concept)' },
   { key: 'dense_only', label: 'dense', color: 'var(--technique)' },
   { key: 'default', label: 'hybrid', color: 'var(--framework)' },
   { key: 'rerank', label: '+rerank', color: 'var(--result)' },
+  { key: 'graph_rerank', label: '+graph', color: 'var(--principle)' },
 ]
 const ASK_CAP = 3  // answer mode fires one LLM call per profile
 

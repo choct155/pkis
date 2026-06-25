@@ -109,6 +109,7 @@ class WikiStore:
         self._embed_slugs: list = []
         self._cross_encoder = None
         self._cross_encoder_name = None
+        self._ppr_out = None  # cached row-normalized out-adjacency for graph rerank
 
     def invalidate_nodes(self):
         """Drop the node + alias caches — call after any write that changes nodes."""
@@ -118,6 +119,7 @@ class WikiStore:
     def invalidate_graph(self):
         """Drop the cached graph — call after a write that changes typed edges."""
         self._graph = None
+        self._ppr_out = None
 
     def invalidate_search(self):
         """Drop the BM25 + dense indexes (rebuilt lazily / on refresh). Keeps the
@@ -481,6 +483,71 @@ class WikiStore:
         scores = ce.predict(pairs)
         reranked = sorted(zip(iris, (float(s) for s in scores)), key=lambda x: x[1], reverse=True)
         return reranked + fused[top_n:]
+
+    def _ppr_adjacency(self, G):
+        """Row-normalized, edge-weighted out-adjacency {u: [(v, p), ...]} cached
+        off the graph (rebuilt only when the graph is invalidated)."""
+        if self._ppr_out is None:
+            out = {}
+            for u in G.nodes():
+                ws = [(v, float((G.get_edge_data(u, v) or {}).get("weight", 1.0))) for v in G.successors(u)]
+                s = sum(w for _, w in ws)
+                out[u] = [(v, w / s) for v, w in ws] if s else []
+            self._ppr_out = out
+        return self._ppr_out
+
+    def _personalized_pagerank(self, G, pers, alpha=0.85, iters=50, tol=1e-6):
+        """Edge-weighted personalized PageRank by power iteration — pure dict, no
+        scipy. `pers` is the teleport distribution (seed → weight, summing to 1).
+        Dangling nodes redistribute mass to the teleport set. Returns {node: score}."""
+        out = self._ppr_adjacency(G)
+        nodes = list(out.keys())
+        dangling = [n for n in nodes if not out[n]]
+        r = {n: pers.get(n, 0.0) for n in nodes}
+        for _ in range(iters):
+            dmass = alpha * sum(r[n] for n in dangling)
+            nr = {n: (1 - alpha + dmass) * pers.get(n, 0.0) for n in nodes}
+            for u in nodes:
+                ru = r[u]
+                if ru and out[u]:
+                    a_ru = alpha * ru
+                    for v, w in out[u]:
+                        nr[v] += a_ru * w
+            if sum(abs(nr[n] - r[n]) for n in nodes) < tol:
+                return nr
+            r = nr
+        return r
+
+    def _rerank_graph(self, query, fused, node_map, prof):
+        """Spreading-activation rerank: run personalized PageRank over the typed
+        graph, teleporting back to the fused candidates (weighted by their fused
+        score). A candidate well-connected to the other strong hits gets boosted
+        even if its own text matched weakly. Blend PPR with the first-stage score
+        (rank-normalized, scale-free) and reorder; un-ranked tail kept beneath."""
+        params = (prof.get("reranker_params") or {}).get("graph", {})
+        alpha = float(params.get("alpha", 0.85))
+        beta = float(params.get("blend", 0.5))   # weight on PPR vs first-stage
+        top_n = int(params.get("top_n", 50))
+        if not fused:
+            return fused
+        head = fused[:top_n]
+        G = self.get_graph()
+        seeds = {iri: sc for iri, sc in head if G.has_node(iri) and sc > 0}
+        if not seeds:
+            return fused
+        tot = sum(seeds.values()) or 1.0
+        pers = {i: s / tot for i, s in seeds.items()}
+        try:
+            ppr = self._personalized_pagerank(G, pers, alpha=alpha)
+        except Exception as e:  # degrade to fused order on any failure
+            logger.warning(f"graph rerank failed ({e}); skipping")
+            return fused
+        fmax = max((sc for _, sc in head), default=1.0) or 1.0
+        pmax = max((ppr.get(iri, 0.0) for iri, _ in head), default=1.0) or 1.0
+        blended = [(iri, beta * (ppr.get(iri, 0.0) / pmax) + (1 - beta) * (sc / fmax))
+                   for iri, sc in head]
+        blended.sort(key=lambda x: x[1], reverse=True)
+        return blended + fused[top_n:]
 
     def _assemble(self, fused, node_map, domains, node_types, max_results):
         results = []
