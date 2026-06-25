@@ -4,7 +4,7 @@ The single canonical snapshot of current build state. Changes frequently — upd
 after every build session. This is not a design doc (see [`ARCHITECTURE.md`](ARCHITECTURE.md))
 or a decision record (see [`DECISIONS.md`](DECISIONS.md)).
 
-_Last updated: 2026-06-24_
+_Last updated: 2026-06-25_
 
 ## Component status
 
@@ -12,7 +12,7 @@ _Last updated: 2026-06-24_
 |---|---|---|
 | PKIS-MCP server (`app.py`) | **live** | MCP (41 tools) + `/pkis-api/*` + docs/webhook/health on `pkis.dev`; gunicorn `pkis-mcp.service` |
 | Knowledge graph (`pkis-wiki`) | **live** | ~2,940 nodes |
-| Viewer PWA (`pkis.dev/app`) | **live** | mobile-first; **wide-desktop dashboard** (≥1280px: widened shell + right context rail = agenda + recently-viewed; 2-col browse) |
+| Viewer PWA (`pkis.dev/app`) | **live** | mobile-first; **wide-desktop dashboard** (≥1280px: widened shell + right context rail = agenda + recently-viewed; 2-col browse); **retrieval lab view** (side-by-side search-regime comparison) |
 | MCP write tools | **live** | stub/edge/hypothesis/bridge/source/edit; auto-commit+push, cache auto-refresh |
 | Auth (WorkOS AuthKit) | **live** | OAuth (claude.ai/MCP) + web sealed session; **identity keyed on email** (stable across login methods, fixed 2026-06-24); allowlist by email OR sub; single-use-refresh race coalesced |
 | Ask (NL Q&A) | **live** | shared `ask.py` engine + `/pkis-api/ask` + viewer Ask tab; read-only Q&A+traversal, IP-throttled; **conversation persistence** (auto-save, signed-in), voice I/O, capability-link sharing |
@@ -56,14 +56,11 @@ ingested + narrated. Local-only until published.
 - An `app.py` restart drops the claude.ai connector (users must reconnect) —
   minimize restarts; content changes don't need one (cache auto-refresh).
 
-## Most recent session (2026-06-24)
+## Most recent session (2026-06-25)
 
-Fixed conversation-history loss (web identity now email-first, 3 stranded chats
-migrated). Built the desktop dashboard layout + context rail; the explainer
-live-edit workflow + Tier-2 dynamic-explainer blueprint; the 3-tab calibration
-explainer (corrected the Dirichlet covariance model, added a PPI tab). Ran the
-source backlog (download + per-chapter split + narration, in flight) with a
-self-healing watchdog. Deduped the reading queue + idempotent capture.
+Added a **retrieval lab view** to the viewer: side-by-side comparison of search
+regimes (BM25, dense, fused RRF, reranked), making it easy to inspect and
+contrast result sets for any query without leaving the app.
 
 ## Next priorities
 
@@ -71,4 +68,4 @@ self-healing watchdog. Deduped the reading queue + idempotent capture.
 2. Publish the calibration tabs + register as a PKIS asset node.
 3. Start exercising discovery feedback to warm the learned prior.
 4. Architect automation (daily cron + post-deploy hook) so this doc stops
-   drifting — wired this session.
+   drifting.
