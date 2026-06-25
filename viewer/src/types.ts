@@ -110,6 +110,22 @@ export interface DiscoveryInbox {
   candidates: DiscoveryCandidate[];
 }
 
+// Architect doc-drift items — one atomic anchor→replacement edit each.
+export interface DocsDriftItem {
+  id: string;
+  doc: string;
+  title: string;
+  rationale: string;
+  anchor: string;
+  replacement: string;
+  status?: string;
+}
+export interface DocsDriftInbox {
+  generated_at: string | null;
+  counts: Record<string, number>;
+  items: DocsDriftItem[];
+}
+
 // ── Asset (from get_assets) — anything the owner authors ──────────────────
 // `format` = how it renders: 'interactive' (HTML viz) | 'writing' (prose body).
 // `kind` = open genre (governed by wiki/asset_kinds.json): explainer,

@@ -3,6 +3,7 @@ import { getInbox, resolveSlug, ApiError } from '../lib/api'
 import { renderMarkdown } from '../lib/markdown'
 import StagedSection from './StagedSection'
 import DiscoverView from './DiscoverView'
+import DocsDriftSection from './DocsDriftSection'
 
 interface Lane { title: string; body: string; open: number; done: number }
 
@@ -82,6 +83,7 @@ export default function InboxView({ onSelectNode }: { onSelectNode: (iri: string
       {/* Live review queues */}
       <StagedSection onSelectNode={onSelectNode} onToast={showToast} />
       <DiscoverView onSelectNode={onSelectNode} embedded />
+      <DocsDriftSection onToast={showToast} />
 
       {/* Agent-written swim-lanes (only the non-empty ones). */}
       {lanes === null

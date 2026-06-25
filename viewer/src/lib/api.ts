@@ -448,3 +448,16 @@ export async function discoveryAct(
 ): Promise<{ action: string; source_slug?: string; queued?: boolean }> {
   return post('/discovery/act', { id, action, reason_chip, note });
 }
+
+// ── Architect doc-drift review (owner-only) ───────────────────────────────
+export async function getDocsDrift(
+  status: 'pending' | 'accepted' | 'dismissed' = 'pending'
+): Promise<import('../types').DocsDriftInbox> {
+  return post('/docs-drift', { status });
+}
+export async function docsDriftAct(
+  id: string,
+  action: 'accept' | 'dismiss'
+): Promise<{ action: string; id: string; sha?: string; committed?: boolean }> {
+  return post('/docs-drift/act', { id, action });
+}
