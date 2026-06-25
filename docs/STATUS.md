@@ -10,7 +10,7 @@ _Last updated: 2026-06-25_
 
 | Component | Status | Notes |
 |---|---|---|
-| PKIS-MCP server (`app.py`) | **live** | MCP (41 tools) + `/pkis-api/*` + docs/webhook/health on `pkis.dev`; gunicorn `pkis-mcp.service` |
+| PKIS-MCP server (`app.py`) | **live** | MCP (41 tools) + `/pkis-api/*` + docs/webhook/health on `pkis.dev`; gunicorn `pkis-mcp.service`; corrupted `!=` in docs-drift anchor check repaired (broke import) |
 | Knowledge graph (`pkis-wiki`) | **live** | ~2,944 nodes |
 | Viewer PWA (`pkis.dev/app`) | **live** | mobile-first; **wide-desktop dashboard** (≥1280px: widened shell + right context rail = agenda + recently-viewed; 2-col browse); **retrieval lab view** (side-by-side search-regime comparison + unified retrieve/answer ask panel) |
 | MCP write tools | **live** | stub/edge/hypothesis/bridge/source/edit; auto-commit+push, cache auto-refresh |
@@ -58,12 +58,9 @@ ingested + narrated. Local-only until published.
 
 ## Most recent session (2026-06-25)
 
-Extended the **retrieval lab**: added the **ask side** (unified retrieve/answer
-comparison panel) alongside the existing search-regime comparison. Wired
-**graph-aware retrieval method nodes** into the retrieval-quality neighborhood.
-Ingested four retrieval technique nodes via MCP: **Dense Passage Retrieval**,
-**Reciprocal Rank Fusion**, **Cross-Encoder Reranking**, and **Personalized
-PageRank for Retrieval** (+4 nodes → 2,944 total).
+Hotfix: repaired a corrupted `!=` operator in the docs-drift anchor check in
+`app.py` that was breaking import. No graph or feature changes; node count and
+narration coverage hold at 2,944 nodes / 371 chapters.
 
 ## Next priorities
 
