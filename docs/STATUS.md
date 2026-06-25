@@ -16,7 +16,7 @@ _Last updated: 2026-06-25_
 | MCP write tools | **live** | stub/edge/hypothesis/bridge/source/edit; auto-commit+push, cache auto-refresh |
 | Auth (WorkOS AuthKit) | **live** | OAuth (claude.ai/MCP) + web sealed session; **identity keyed on email** (stable across login methods, fixed 2026-06-24); allowlist by email OR sub; single-use-refresh race coalesced |
 | Ask (NL Q&A) | **live** | shared `ask.py` engine + `/pkis-api/ask` + viewer Ask tab; read-only Q&A+traversal, IP-throttled; **conversation persistence** (auto-save, signed-in), voice I/O, capability-link sharing |
-| Inbox (owner review hub) | **live** | consolidated staged + discovery + agent lanes; owner-only; bridge-note review + inline link-resolution |
+| Inbox (owner review hub) | **live** | consolidated staged + discovery + agent lanes; owner-only; bridge-note review + inline link-resolution; **doc-drift lane** (accept/dismiss atomic edits to STATUS.md and other docs) |
 | Semantic search | **live** | BM25 + bge-small dense fused via RRF; instrumented profile-driven pipeline + cross-encoder rerank; standing-eval loop (owner query capture + nightly runner); embed cache gitignored |
 | Research clusters + frontier priority | **live** | all 12 clusters de-orphaned; frontier-driven priority; Priority = ranked reading queue w/ rationale |
 | Read+listen reader | **live** | LLM semantic narration + section-synced chapter PDF; mp3 encoder streamed (long-narration OOM fixed) |
@@ -58,14 +58,15 @@ ingested + narrated. Local-only until published.
 
 ## Most recent session (2026-06-25)
 
-Hotfix: repaired a corrupted `!=` operator in the docs-drift anchor check in
-`app.py` that was breaking import. No graph or feature changes; node count and
-narration coverage hold at 2,944 nodes / 371 chapters.
+Added a **doc-drift inbox lane** to the architect workflow: the inbox now surfaces
+atomic proposed edits to `docs/` files (including STATUS.md) for owner accept/dismiss,
+closing the loop between automated drift detection and human review. No graph or
+narration changes; counts hold at 2,944 nodes / 371 chapters.
 
 ## Next priorities
 
 1. Let the backlog narration finish (multi-day; watchdog-guarded).
 2. Publish the calibration tabs + register as a PKIS asset node.
 3. Start exercising discovery feedback to warm the learned prior.
-4. Architect automation (daily cron + post-deploy hook) so this doc stops
-   drifting.
+4. Log the first doc-drift accept/dismiss decisions to validate the new inbox lane.
+5. Architect automation (daily cron + post-deploy hook) so this doc stops drifting further.
