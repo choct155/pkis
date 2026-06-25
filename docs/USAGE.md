@@ -21,6 +21,7 @@ Open `pkis.dev/app` (installable as a PWA — "Add to Home Screen" on phone). Na
 - **graph** — the typed-edge graph, focusable on a node.
 - **staged** — nodes awaiting review/promotion.
 - **explainers** — interactive explainers + visualizations.
+- **reader** — read+listen reader (semantic narration of a source; available per slug).
 - **discover** — proactively surfaced candidate sources.
 - **docs** — this documentation set (what you're reading).
 
