@@ -19,7 +19,7 @@ _Last updated: 2026-06-25_
 | Inbox (owner review hub) | **live** | consolidated staged + discovery + agent lanes; owner-only; bridge-note review + inline link-resolution; **doc-drift lane** (accept/dismiss atomic edits to STATUS.md and other docs) |
 | Semantic search | **live** | BM25 + bge-small dense fused via RRF; instrumented profile-driven pipeline + cross-encoder rerank; **graph rerank** (personalized PageRank); path/relationship queries; standing-eval loop (owner query capture + nightly runner); embed cache gitignored |
 | Research clusters + frontier priority | **live** | all 12 clusters de-orphaned; frontier-driven priority; Priority = ranked reading queue w/ rationale |
-| Read+listen reader | **live** | LLM semantic narration + section-synced chapter PDF; mp3 encoder streamed (long-narration OOM fixed) |
+| Read+listen reader | **live** | LLM semantic narration + section-synced chapter PDF; mp3 encoder streamed (long-narration OOM fixed); **resilient TTS** — Piper-unvoiceable segments skipped rather than aborting the build |
 | Proactive discovery | **live** | frontier-gated OpenAlex cite-graph, cron'd Mondays; inbox + accept/dismiss feedback + learned-prior loop (prior still cold until feedback logged) |
 | Documentation system (`docs/`) | **live** | 6 docs + `log_idea` + viewer Docs view |
 | Explainers | **live** | HTML explainers as `asset` nodes; desktop live-edit loop (live-reload + git snapshot + in-app ⟳ preview); **Tier-2 dynamic-explainer Flask blueprint** scaffold (`/pkis-api/x/<name>/`) |
@@ -28,7 +28,7 @@ _Last updated: 2026-06-25_
 ## Source / narration coverage
 
 All 11 backlog books **split into per-chapter PDFs** (136 chapters) and 50 papers
-downloaded — all viewable. **~371 chapters narrated**; the remaining backlog
+downloaded — all viewable. **~373 chapters narrated**; the remaining backlog
 narration is **in flight** (resumable `backlog_build.sh`: Haiku extract → Sonnet
 voice → Piper TTS), guarded by a self-healing watchdog (`narration_watchdog.sh`,
 cron */15) that auto-pauses on API-credit exhaustion and auto-resumes.
@@ -58,10 +58,10 @@ ingested + narrated. Local-only until published.
 
 ## Most recent session (2026-06-25)
 
-Added **graph rerank** to the semantic search pipeline: personalized PageRank
-re-scores retrieval candidates using graph structure, and the lab now supports
-path/relationship queries. No graph or narration count changes; holds at 2,944
-nodes / 371 chapters.
+Hardened the TTS pipeline: the reader now skips any Piper-unvoiceable segment
+rather than aborting the entire narration build, making backlog runs more
+resilient to edge-case segments. Chapter count ticks up to 373; graph holds at
+2,944 nodes.
 
 ## Next priorities
 
