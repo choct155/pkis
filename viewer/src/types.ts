@@ -176,6 +176,24 @@ export interface QueryLogItem {
   count: number;
   last_seen: string;
 }
+export interface AskColumn {
+  profile_name: string;
+  answer: string;
+  citations: Citation[];
+  surfaced: string[];
+  metrics: { groundedness?: number | null };
+  latency_ms: number;
+  eval_ms: number;
+  cost_usd: number | null;
+  usage: { input_tokens?: number; output_tokens?: number };
+  turns: number | null;
+  model: string;
+}
+export interface AskCompareResponse {
+  comparison_id: string;
+  query: string;
+  columns: AskColumn[];
+}
 
 // ── Full node (from get_node) ─────────────────────────────────────────────
 export interface NodeFrontmatter {

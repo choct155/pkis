@@ -22,6 +22,7 @@ import type {
   SharedContent,
   CompareResponse,
   QueryLogItem,
+  AskCompareResponse,
 } from '../types';
 
 const BASE = '/pkis-api';
@@ -93,6 +94,15 @@ export async function sendFeedback(body: {
 // The standing test set — deliberate owner queries (owner-only).
 export async function listQueries(limit = 200): Promise<QueryLogItem[]> {
   return get<QueryLogItem[]>(`/queries?limit=${limit}`);
+}
+
+// Answer one question under N retrieval profiles (owner-only, capped — each is
+// an LLM call). Columns carry the answer, citations, groundedness, latency, cost.
+export async function askCompare(
+  question: string,
+  profiles: Array<string | Record<string, unknown>>
+): Promise<AskCompareResponse> {
+  return post<AskCompareResponse>('/ask/compare', { question, profiles });
 }
 
 // ── Ask (natural-language Q&A + graph traversal over the wiki) ────────────

@@ -60,7 +60,7 @@ import conversations
 import shares
 # Comptroller usage accounting (Roster Phase 4). log_usage is BEST-EFFORT — it never
 # raises, so a logging failure cannot break a tool call. Writes to config.USAGE_DB_PATH.
-from usage import log_usage
+from usage import log_usage, compute_cost, get_config
 # External-API adapters carved out to adapters.py; `import *` (driven by adapters'
 # __all__) binds the underscore-named fetchers as app globals, so callers resolve
 # them and the contract-test monkeypatches still land.
@@ -825,6 +825,80 @@ def _maybe_capture_query(query, paradigm):
             experiments.log_query(EXPERIMENT_DB_PATH, query, paradigm=paradigm, source="owner")
     except Exception:  # noqa: BLE001
         pass
+
+
+def _ask_groundedness(answer, surfaced):
+    """Embedding-alignment proxy for groundedness: for each answer sentence, the
+    max cosine to any surfaced node's vector, averaged. None when semantic search
+    is off or there's nothing to compare."""
+    ev = _result_vectors(list(surfaced or []))
+    if ev is None or not answer:
+        return {"groundedness": None}
+    try:
+        model = STORE._get_embed_model()
+    except Exception:
+        return {"groundedness": None}
+    sents = [s.strip() for s in re.split(r"(?<=[.!?])\s+", answer) if len(s.strip()) > 15]
+    if not sents:
+        return {"groundedness": None}
+    av = np.asarray(model.encode(sents, normalize_embeddings=True), dtype=np.float32)
+    return metrics.groundedness(av, ev)
+
+
+def _ask_cost(model_name, usage):
+    rates = None
+    try:
+        rates = get_config(USAGE_DB_PATH)
+    except Exception:
+        pass  # fall back to compute_cost's built-in default rates
+    try:
+        return compute_cost(model_name, usage.get("input_tokens", 0),
+                           usage.get("output_tokens", 0), rates=rates)
+    except Exception:
+        return None
+
+
+def run_ask_experiment(messages, profile=None, comparison_id=None, query=None, log=True):
+    """One instrumented ask run under a retrieval profile: synthesize the answer,
+    score its groundedness against the surfaced nodes, tally token cost + latency,
+    and (best-effort) log an ask-paradigm experiment row. Returns the lab column."""
+    prof, source = resolve_search_profile(profile)
+    profile_name = (prof.get("name") if isinstance(prof, dict) else None) or source
+    t0 = time.perf_counter()
+    result = ask.run_ask(messages, tier="owner", profile=prof)
+    latency_ms = round((time.perf_counter() - t0) * 1000, 3)
+    te = time.perf_counter()
+    gmetrics = _ask_groundedness(result.get("answer", ""), result.get("surfaced", []))
+    eval_ms = round((time.perf_counter() - te) * 1000, 3)
+    usage = result.get("usage", {}) or {}
+    cost = _ask_cost(result.get("model"), usage)
+    column = {
+        "profile_name": profile_name,
+        "answer": result.get("answer", ""),
+        "citations": result.get("citations", []),
+        "surfaced": result.get("surfaced", []),
+        "metrics": gmetrics,
+        "latency_ms": latency_ms,
+        "eval_ms": eval_ms,
+        "cost_usd": cost,
+        "usage": usage,
+        "turns": result.get("turns"),
+        "model": result.get("model"),
+    }
+    if log:
+        experiments.log_experiment(EXPERIMENT_DB_PATH, {
+            "comparison_id": comparison_id, "paradigm": "ask",
+            "query": query or "", "profile_name": profile_name,
+            "profile": merge_search_profile(prof), "corpus_head": _content_signature(),
+            "n_results": len(result.get("surfaced", []) or []),
+            "retrieval_ms": latency_ms, "eval_ms": eval_ms,
+            "eval_cost_usd": 0.0, "total_cost_usd": cost or 0.0,
+            "metrics": gmetrics, "trace": [],
+            "payload": {"answer": result.get("answer", ""),
+                        "citations": result.get("citations", []),
+                        "surfaced": result.get("surfaced", [])},
+        })
+    return column
 
 
 def tool_search_wiki_index(query: str) -> list:
@@ -5341,6 +5415,31 @@ def pkis_api_ask_stream():
                              "X-Accel-Buffering": "no"})  # tell nginx not to buffer SSE
 
 
+@app.route("/pkis-api/ask/compare", methods=["POST"])
+def pkis_api_ask_compare():
+    """Owner-only lab endpoint: answer one question under N retrieval profiles
+    (capped — each is a full LLM call) and return a column per profile with the
+    answer, citations, groundedness, latency, and token cost. Logs ask-paradigm
+    experiments under a shared comparison_id; the query joins the test set."""
+    if not is_owner(request):
+        return _api_err("owner only", 403)
+    clean, _tier, err = _ask_prepare()
+    if err is not None:
+        return err
+    b = _api_json()
+    profiles = (b.get("profiles") or ["default"])[:3]   # hard cap — LLM cost
+    query = clean[-1]["content"]
+    _maybe_capture_query(query, "ask")
+    try:
+        cid = uuid.uuid4().hex[:12]
+        columns = [run_ask_experiment(clean, profile=p, comparison_id=cid, query=query)
+                   for p in profiles]
+        return _api_ok({"comparison_id": cid, "query": query, "columns": columns})
+    except Exception as e:
+        logger.error(f"ask compare error: {e}", exc_info=True)
+        return _api_err(e, 500)
+
+
 # ── Conversation persistence (signed-in, per-user) ─────────────────────────
 # Auto-saved latest state; the store self-inits lazily on first use (the default
 # path only exists on the server). Document versioning will live on the studio
@@ -6210,6 +6309,103 @@ def pkis_api_discovery_act():
         return _api_ok(tool_discovery_act(
             cand_id=b.get("id"), action=b.get("action", ""),
             note=b.get("note", ""), reason_chip=b.get("reason_chip", "")))
+    except ValueError as e:
+        return _api_err(e)
+    except Exception as e:
+        return _api_err(e, 500)
+
+
+# ── Architect doc-drift review (owner-only) — atomic, individually-acceptable items.
+# The fortnightly audit (tools/architect_audit.py) writes drift items here; each is a
+# single anchor→replacement edit to a living doc. Accept applies just that one edit
+# and commits it; dismiss records the decision so it won't resurface.
+DRIFT_INBOX = Path(os.environ.get("PKIS_DRIFT_PATH", "/home/pkis/architect_drift.json"))
+_DRIFT_DOCS = ("docs/ARCHITECTURE.md", "docs/ABOUT.md", "docs/USAGE.md")
+
+
+def _drift_load():
+    if DRIFT_INBOX.exists():
+        try:
+            return json.loads(DRIFT_INBOX.read_text())
+        except Exception:
+            pass
+    return {"items": []}
+
+
+def _drift_save(data):
+    DRIFT_INBOX.write_text(json.dumps(data, ensure_ascii=False, indent=2))
+
+
+def tool_docs_drift_list(status="pending"):
+    data = _drift_load()
+    all_items = data.get("items", [])
+    counts = {}
+    for x in all_items:
+        s = x.get("status", "pending"); counts[s] = counts.get(s, 0) + 1
+    items = [x for x in all_items if x.get("status", "pending") == status] if status else all_items
+    return {"generated_at": data.get("generated_at"), "counts": counts, "items": items}
+
+
+def tool_docs_drift_act(item_id, action):
+    if action not in ("accept", "dismiss"):
+        raise ValueError("action must be 'accept' or 'dismiss'")
+    data = _drift_load()
+    it = next((x for x in data.get("items", []) if x.get("id") == item_id), None)
+    if not it:
+        raise ValueError(f"drift item not found: {item_id}")
+    if it.get("status") in ("accepted", "dismissed"):
+        return {"action": action, "id": item_id, "already": it["status"]}
+    result = {"action": action, "id": item_id}
+    if action == "accept":
+        doc_rel = it.get("doc", "")
+        if doc_rel not in _DRIFT_DOCS:
+            raise ValueError("doc not in the auditable set")
+        path = REPO_DIR / doc_rel
+        text = path.read_text()
+        anchor = it.get("anchor", "")
+        if not anchor or text.count(anchor) \!= 1:
+            it["status"] = "stale"
+            it["decided_at"] = datetime.now(timezone.utc).isoformat()
+            _drift_save(data)
+            raise ValueError("anchor no longer uniquely present - doc changed; item marked stale")
+        path.write_text(text.replace(anchor, it.get("replacement", ""), 1))
+        gp = _git_commit_and_push([str(path)], f"docs(architect): {it.get('title', 'apply drift fix')}")
+        result["sha"] = gp.get("sha"); result["committed"] = gp.get("committed")
+    it["status"] = "accepted" if action == "accept" else "dismissed"
+    it["decided_at"] = datetime.now(timezone.utc).isoformat()
+    _drift_save(data)
+    return result
+
+
+def _owner_gate(req):
+    """None if the requester is the owner, else a (json, code) error response."""
+    if is_owner(req):
+        return None
+    anon = (web_identity(req) is None and oauth_identity(req) is None and not _has_static_key(req))
+    return (jsonify({"error": "sign in required"}), 401) if anon \
+        else (jsonify({"error": "owner only - this surface is administrative"}), 403)
+
+
+@app.route("/pkis-api/docs-drift", methods=["POST"])
+def pkis_api_docs_drift():
+    gate = _owner_gate(request)
+    if gate:
+        return gate
+    b = _api_json()
+    try:
+        return _api_ok(tool_docs_drift_list(status=b.get("status", "pending")))
+    except Exception as e:
+        return _api_err(e, 500)
+
+
+@app.route("/pkis-api/docs-drift/act", methods=["POST"])
+def pkis_api_docs_drift_act():
+    gate = _owner_gate(request)
+    if gate:
+        return gate
+    b = _api_json()
+    try:
+        return _api_ok(tool_docs_drift_act(b.get("id"), b.get("action", "")))
     except ValueError as e:
         return _api_err(e)
     except Exception as e:

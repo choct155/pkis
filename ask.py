@@ -160,14 +160,15 @@ def _enrich_search_results(results):
     return results
 
 
-def _execute_tool(name, args, surfaced):
+def _execute_tool(name, args, surfaced, profile=None):
     """Run one read tool, recording every iri it surfaces so we can build a
     reliable citation set even if the model's inline [[...]] are imperfect.
-    Returns a JSON-serialisable result for the tool_result block."""
+    Returns a JSON-serialisable result for the tool_result block. `profile`
+    selects the retrieval regime for search_wiki (the lab's ask comparison)."""
     import app
 
     if name == "search_wiki":
-        res = app.tool_search_wiki(args["query"], max_results=args.get("max_results", 8))
+        res = app.tool_search_wiki(args["query"], max_results=args.get("max_results", 8), profile=profile)
         res = _enrich_search_results(res or [])
         for r in res:
             surfaced.add(r.get("iri"))
@@ -268,12 +269,13 @@ def _mark_cache(convo):
         last[-1]["cache_control"] = {"type": "ephemeral"}
 
 
-def _preload_block(question, surfaced):
+def _preload_block(question, surfaced, profile=None):
     """Run the hybrid search the model would otherwise call, and format the top-K
     hits as a context block. Records their IRIs so citations resolve even if the
-    model never calls get_node on them. Returns None when nothing is found."""
+    model never calls get_node on them. Returns None when nothing is found.
+    `profile` selects the retrieval regime (the lab's ask comparison)."""
     import app
-    results = _enrich_search_results(app.tool_search_wiki(question, max_results=PRELOAD_K) or [])
+    results = _enrich_search_results(app.tool_search_wiki(question, max_results=PRELOAD_K, profile=profile) or [])
     if not results:
         return None
     lines = ["Relevant nodes already retrieved from the graph for this question "
@@ -293,7 +295,7 @@ _STATUS = {
 }
 
 
-def _ask_events(messages, tier="reader", model=DEFAULT_MODEL, max_tool_turns=MAX_TOOL_TURNS):
+def _ask_events(messages, tier="reader", model=DEFAULT_MODEL, max_tool_turns=MAX_TOOL_TURNS, profile=None):
     """The single engine implementation, as a generator of events. Both the
     streaming endpoint (forwards events as SSE) and run_ask (drains them) use it.
 
@@ -319,7 +321,7 @@ def _ask_events(messages, tier="reader", model=DEFAULT_MODEL, max_tool_turns=MAX
     # Eager retrieval on the latest question → inject as a context block ahead of it.
     if convo and convo[-1].get("role") == "user" and isinstance(convo[-1].get("content"), str):
         q = convo[-1]["content"]
-        block = _preload_block(q, surfaced)
+        block = _preload_block(q, surfaced, profile)
         if block:
             convo[-1] = {"role": "user", "content": [
                 {"type": "text", "text": block},
@@ -372,7 +374,7 @@ def _ask_events(messages, tier="reader", model=DEFAULT_MODEL, max_tool_turns=MAX
             if getattr(block, "type", None) != "tool_use":
                 continue
             try:
-                result = _execute_tool(block.name, block.input or {}, surfaced)
+                result = _execute_tool(block.name, block.input or {}, surfaced, profile)
             except Exception as e:  # never let one bad tool call kill the turn
                 result = {"error": f"{type(e).__name__}: {e}"}
             tool_results.append({"type": "tool_result", "tool_use_id": block.id,
@@ -386,12 +388,13 @@ def _ask_events(messages, tier="reader", model=DEFAULT_MODEL, max_tool_turns=MAX
                           "citing the relevant [[slug]] nodes, and note any gaps."})
 
 
-def run_ask(messages, tier="reader", model=DEFAULT_MODEL, max_tool_turns=MAX_TOOL_TURNS):
+def run_ask(messages, tier="reader", model=DEFAULT_MODEL, max_tool_turns=MAX_TOOL_TURNS, profile=None):
     """Non-streaming convenience wrapper (used by the JSON endpoint and the future
     MCP tool): drain the event stream and return the final payload dict
-    {answer, citations, surfaced, model, turns, usage}."""
+    {answer, citations, surfaced, model, turns, usage}. `profile` selects the
+    retrieval regime used for the answer (the lab's ask comparison)."""
     done = None
-    for ev in _ask_events(messages, tier=tier, model=model, max_tool_turns=max_tool_turns):
+    for ev in _ask_events(messages, tier=tier, model=model, max_tool_turns=max_tool_turns, profile=profile):
         if ev["type"] == "done":
             done = ev
     return {k: v for k, v in (done or {}).items() if k != "type"}

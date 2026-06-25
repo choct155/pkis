@@ -1878,3 +1878,20 @@ body {
 .lab-rtype.t-problem { color: var(--problem); }
 .lab-rtype.t-source { color: var(--source); }
 .lab-rtype.t-asset { color: var(--asset); }
+
+/* lab — mode toggle + answer columns */
+.lab-mode { display: flex; align-items: center; gap: 6px; }
+.lab-mode-btn {
+  background: transparent; border: 1px solid var(--border); color: var(--muted);
+  border-radius: 6px; padding: 4px 14px; font-family: var(--mono); font-size: 12px; cursor: pointer;
+}
+.lab-mode-btn.on { background: var(--accent); color: #fff; border-color: var(--accent); }
+.lab-mode-note { font-size: 10px; color: var(--dim); font-family: var(--mono); }
+.lab-answer { font-size: 13px; line-height: 1.5; color: var(--text); white-space: pre-wrap; margin-bottom: 8px; }
+.lab-cites { display: flex; flex-wrap: wrap; gap: 4px; }
+.lab-cite {
+  background: var(--bg); border: 1px solid var(--border); color: var(--concept);
+  border-radius: 6px; padding: 2px 8px; font-size: 11px; cursor: pointer;
+  max-width: 100%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+}
+.lab-cite:hover { border-color: var(--concept); }
