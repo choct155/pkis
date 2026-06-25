@@ -6363,7 +6363,7 @@ def tool_docs_drift_act(item_id, action):
         path = REPO_DIR / doc_rel
         text = path.read_text()
         anchor = it.get("anchor", "")
-        if not anchor or text.count(anchor) \!= 1:
+        if not anchor or text.count(anchor) != 1:
             it["status"] = "stale"
             it["decided_at"] = datetime.now(timezone.utc).isoformat()
             _drift_save(data)
