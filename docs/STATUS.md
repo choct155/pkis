@@ -13,7 +13,7 @@ _Last updated: 2026-06-25_
 | PKIS-MCP server (`app.py`) | **live** | MCP (41 tools) + `/pkis-api/*` + docs/webhook/health on `pkis.dev`; gunicorn `pkis-mcp.service`; corrupted `!=` in docs-drift anchor check repaired (broke import) |
 | Knowledge graph (`pkis-wiki`) | **live** | ~2,944 nodes |
 | Viewer PWA (`pkis.dev/app`) | **live** | mobile-first; **wide-desktop dashboard** (≥1280px: widened shell + right context rail = agenda + recently-viewed; 2-col browse); **retrieval lab view** (side-by-side search-regime comparison + unified retrieve/answer ask panel) |
-| MCP write tools | **live** | stub/edge/hypothesis/bridge/source/edit; auto-commit+push, cache auto-refresh |
+| MCP write tools | **live** | stub/edge/hypothesis/bridge/source/edit; auto-commit+push, cache auto-refresh; `add_to_queue` correctly classified as READ tier (was mislabelled write in docs) |
 | Auth (WorkOS AuthKit) | **live** | OAuth (claude.ai/MCP) + web sealed session; **identity keyed on email** (stable across login methods, fixed 2026-06-24); allowlist by email OR sub; single-use-refresh race coalesced |
 | Ask (NL Q&A) | **live** | shared `ask.py` engine + `/pkis-api/ask` + viewer Ask tab; read-only Q&A+traversal, IP-throttled; **conversation persistence** (auto-save, signed-in), voice I/O, capability-link sharing |
 | Inbox (owner review hub) | **live** | consolidated staged + discovery + agent lanes; owner-only; bridge-note review + inline link-resolution; **doc-drift lane** (accept/dismiss atomic edits to STATUS.md and other docs) |
@@ -58,10 +58,9 @@ ingested + narrated. Local-only until published.
 
 ## Most recent session (2026-06-25)
 
-Added a **doc-drift inbox lane** to the architect workflow: the inbox now surfaces
-atomic proposed edits to `docs/` files (including STATUS.md) for owner accept/dismiss,
-closing the loop between automated drift detection and human review. No graph or
-narration changes; counts hold at 2,944 nodes / 371 chapters.
+Corrected a documentation error: `add_to_queue` was listed as a write-tier MCP tool
+but is a read-tier operation — tool classification in architect docs updated
+accordingly. No graph or narration changes; counts hold at 2,944 nodes / 371 chapters.
 
 ## Next priorities
 
