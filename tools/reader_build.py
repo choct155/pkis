@@ -633,19 +633,41 @@ def main():
     outdir = os.environ.get("OUTDIR", str(app.WIKI_DIR / "reader" / slug))
     os.makedirs(outdir, exist_ok=True)
     tmp = tempfile.mkdtemp()
+    def _voice(text, wav):
+        """Voice one segment, resilient to Piper choking on a single segment. Tries
+        the text as-is, then with non-printable/exotic chars stripped (the usual cause
+        of a phonemizer crash on math-heavy papers). Returns the completed process or
+        None — a single bad segment must NOT abort the whole (often hour-long) build."""
+        cleaned = re.sub(r"[^\x09\x0a\x0d\x20-\x7e]", " ", text or "")
+        cleaned = re.sub(r"[ \t]+", " ", cleaned).strip()
+        for variant in (text, cleaned):
+            if not (variant or "").strip():
+                continue
+            pr = subprocess.run([piper, "--model", model, "--output_file", wav],
+                                input=variant, text=True, capture_output=True)
+            if pr.returncode == 0 and os.path.exists(wav) and os.path.getsize(wav) > 44:
+                return pr
+        return None
+
     try:
         wavs, meta, t = [], [], 0.0
+        skipped = 0
         for s in segs:
             wav = os.path.join(tmp, f"{s['id']}.wav")
-            p = subprocess.run([piper, "--model", model, "--output_file", wav],
-                               input=s["narration"], text=True, capture_output=True)
-            if p.returncode != 0:
-                raise RuntimeError(f"piper failed {s['id']}: {p.stderr[:300]}")
+            pr = _voice(s["narration"], wav)
+            if pr is None:
+                skipped += 1
+                print(f"  tts [{s['id']}] SKIPPED — piper could not voice this segment")
+                continue
             d = wav_duration(wav); wavs.append(wav)
             meta.append({"id": s["id"], "title": s["title"], "paper_md": s["paper_md"],
                          "narration": s["narration"], "t_start": round(t, 2), "t_end": round(t + d, 2)})
             t += d
             print(f"  tts [{s['id']}] {d:.1f}s -> {t:.1f}s")
+        if not wavs:
+            raise RuntimeError("piper voiced 0 of %d segments — nothing to assemble" % len(segs))
+        if skipped:
+            print(f"  (skipped {skipped}/{len(segs)} segments piper could not voice)")
         tmp_wav = os.path.join(tmp, "full.wav")
         concat_wavs(wavs, tmp_wav)
         encode_mp3(tmp_wav, os.path.join(outdir, "audio.mp3"))
