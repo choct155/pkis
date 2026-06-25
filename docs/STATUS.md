@@ -17,7 +17,7 @@ _Last updated: 2026-06-25_
 | Auth (WorkOS AuthKit) | **live** | OAuth (claude.ai/MCP) + web sealed session; **identity keyed on email** (stable across login methods, fixed 2026-06-24); allowlist by email OR sub; single-use-refresh race coalesced |
 | Ask (NL Q&A) | **live** | shared `ask.py` engine + `/pkis-api/ask` + viewer Ask tab; read-only Q&A+traversal, IP-throttled; **conversation persistence** (auto-save, signed-in), voice I/O, capability-link sharing |
 | Inbox (owner review hub) | **live** | consolidated staged + discovery + agent lanes; owner-only; bridge-note review + inline link-resolution; **doc-drift lane** (accept/dismiss atomic edits to STATUS.md and other docs) |
-| Semantic search | **live** | BM25 + bge-small dense fused via RRF; instrumented profile-driven pipeline + cross-encoder rerank; standing-eval loop (owner query capture + nightly runner); embed cache gitignored |
+| Semantic search | **live** | BM25 + bge-small dense fused via RRF; instrumented profile-driven pipeline + cross-encoder rerank; **graph rerank** (personalized PageRank); path/relationship queries; standing-eval loop (owner query capture + nightly runner); embed cache gitignored |
 | Research clusters + frontier priority | **live** | all 12 clusters de-orphaned; frontier-driven priority; Priority = ranked reading queue w/ rationale |
 | Read+listen reader | **live** | LLM semantic narration + section-synced chapter PDF; mp3 encoder streamed (long-narration OOM fixed) |
 | Proactive discovery | **live** | frontier-gated OpenAlex cite-graph, cron'd Mondays; inbox + accept/dismiss feedback + learned-prior loop (prior still cold until feedback logged) |
@@ -58,9 +58,10 @@ ingested + narrated. Local-only until published.
 
 ## Most recent session (2026-06-25)
 
-Corrected a documentation error: `add_to_queue` was listed as a write-tier MCP tool
-but is a read-tier operation — tool classification in architect docs updated
-accordingly. No graph or narration changes; counts hold at 2,944 nodes / 371 chapters.
+Added **graph rerank** to the semantic search pipeline: personalized PageRank
+re-scores retrieval candidates using graph structure, and the lab now supports
+path/relationship queries. No graph or narration count changes; holds at 2,944
+nodes / 371 chapters.
 
 ## Next priorities
 
