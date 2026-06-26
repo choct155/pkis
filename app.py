@@ -745,8 +745,35 @@ def _result_vectors(result_iris):
     return np.vstack(rows) if rows else None
 
 
+def _estimate_cq(query):
+    """C(q) estimation (the coverage-driven-traversal technique's 'Mode 1'): an
+    LLM decomposes the query into the concept set a complete answer must cover,
+    each resolved to a graph node IRI. The one LLM call gates the deep metrics, so
+    it's computed ONCE per comparison and reused across profiles. Returns cq IRIs."""
+    prompt = ("List the core concepts a complete answer to this query must cover. "
+              "Return ONLY a JSON array of 3-7 short concept names, no prose.\n\n"
+              f"Query: {query}")
+    try:
+        resp = anthropic_client.messages.create(
+            model=EXTRACT_MODEL, max_tokens=200,
+            messages=[{"role": "user", "content": prompt}])
+        log_usage(USAGE_DB_PATH, resp, origin="pkis-mcp", project="pkis",
+                  attributes={"surface": "deep-metrics"})
+        txt = resp.content[0].text
+        names = json.loads(txt[txt.find("["):txt.rfind("]") + 1])
+    except Exception as e:  # deep metrics simply absent if C(q) can't be formed
+        logger.warning(f"C(q) estimation failed: {e}")
+        return []
+    cq = []
+    for nm in (names or [])[:8]:
+        res = tool_search_wiki(str(nm), max_results=1)
+        if res:
+            cq.append(res[0]["iri"])
+    return list(dict.fromkeys(cq))
+
+
 def run_search(query, profile=None, max_results=10, comparison_id=None,
-               with_metrics=True, log=True):
+               with_metrics=True, log=True, deep_cq=None):
     """One instrumented search run: execute the profile, time retrieval vs. metric
     evaluation separately, compute the cheap reference-free metrics, and (best-
     effort) persist an experiment row. Returns the lab column dict."""
@@ -762,6 +789,9 @@ def run_search(query, profile=None, max_results=10, comparison_id=None,
         iris = [r["iri"] for r in results]
         try:
             metrics_out = metrics.cheap_metrics(iris, _result_vectors(iris), STORE.get_graph())
+            if deep_cq:  # C(q)-dependent dims (precomputed C(q) reused across profiles)
+                toks = sum(len(r.get("excerpt") or "") for r in results) / 4.0
+                metrics_out.update(metrics.deep_metrics(deep_cq, iris, STORE.get_graph(), toks))
         except Exception as ex:  # metrics must never break a search
             logger.warning(f"search metric computation failed: {ex}")
         eval_ms = round((time.perf_counter() - te) * 1000, 3)
@@ -5218,9 +5248,12 @@ def pkis_api_search_compare():
     log = b.get("log", True)
     try:
         _maybe_capture_query(query, "search")  # a compare is always a deliberate query
+        # C(q) for the deep metrics is query-dependent only — compute it ONCE here
+        # (one LLM call) and reuse across every profile column.
+        deep_cq = _estimate_cq(query) if b.get("deep") else None
         cid = uuid.uuid4().hex[:12]
         columns = [run_search(query, profile=p, max_results=max_results,
-                              comparison_id=cid, log=log) for p in profiles]
+                              comparison_id=cid, log=log, deep_cq=deep_cq) for p in profiles]
         return _api_ok({"comparison_id": cid, "query": query, "columns": columns})
     except Exception as e:
         return _api_err(e, 500)

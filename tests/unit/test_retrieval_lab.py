@@ -174,6 +174,22 @@ def test_graph_rerank_runs_and_blend_zero_is_baseline(appmod, isolated_wiki):
 
 
 @pytest.mark.unit
+def test_deep_metrics_coverage_and_relevance():
+    g = nx.DiGraph()
+    g.add_edge("a", "b", edge_type="uses")   # a—b connected; c isolated
+    g.add_node("c")
+    g.add_node("far")
+    # C(q) = {a, c}; retrieved S = {a}. a is covered (in S); c is not (not in S/neighbours).
+    dm = metrics.deep_metrics(["a", "c"], ["a"], g, result_tokens=500)
+    assert dm["coverage"] == 0.5 and dm["cq_size"] == 2
+    # 'a' is reachable from anchor 'a' within depth → structural relevance 1.0
+    assert dm["structural_relevance"] == 1.0
+    # 'b' is covered via neighbour-of-S even though not in S
+    assert metrics.deep_metrics(["b"], ["a"], g, 500)["coverage"] == 1.0
+    assert metrics.deep_metrics([], ["a"], g, 500) == {}   # no C(q) → no deep metrics
+
+
+@pytest.mark.unit
 def test_path_between_resolves_and_self_connects(appmod, isolated_wiki):
     assert appmod._resolve_anchor("entropy") == "pkis:concept:entropy"
     r = appmod.tool_path_between("entropy", "entropy")

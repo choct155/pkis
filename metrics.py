@@ -80,6 +80,40 @@ def groundedness(answer_vecs, evidence_vecs):
     return {"groundedness": float(per_unit.mean()), "per_unit": [float(x) for x in per_unit]}
 
 
+def deep_metrics(cq_iris, result_iris, graph, result_tokens, depth=2):
+    """The C(q)-dependent framework dims (1 Coverage, 2 Concision, 7 Structural
+    Relevance), given an estimated concept set C(q) for the query.
+
+    - Coverage = fraction of C(q) concepts present in S or directly referenced by it
+      (a concept counts as covered if it's in the retrieved set or a graph neighbour
+      of one). Σ_c 𝟙[c ∈ S ∪ N(S)] / |C(q)|.
+    - Concision = Coverage / tokens(S), reported per 1k tokens. (tokens(S) is the
+      caller's token estimate; with capped excerpts this is approximate and mostly
+      tracks coverage — refine with full node content later.)
+    - Structural relevance = fraction of S reachable from any C(q) anchor within
+      `depth` typed-edge hops.
+    """
+    if not cq_iris:
+        return {}
+    s_set = set(result_iris)
+    neigh = set()
+    for s in result_iris:
+        if graph.has_node(s):
+            neigh.update(graph.successors(s))
+            neigh.update(graph.predecessors(s))
+    covered = sum(1 for c in cq_iris if c in s_set or c in neigh)
+    coverage = covered / len(cq_iris)
+    concision = coverage / (max(float(result_tokens), 1.0) / 1000.0)
+    UG = graph.to_undirected()
+    reach = set()
+    for a in cq_iris:
+        if UG.has_node(a):
+            reach.update(nx.single_source_shortest_path_length(UG, a, cutoff=depth).keys())
+    rel = (sum(1 for s in result_iris if s in reach) / len(result_iris)) if result_iris else 0.0
+    return {"coverage": round(coverage, 3), "concision_per_1k": round(concision, 3),
+            "structural_relevance": round(rel, 3), "cq_size": len(cq_iris)}
+
+
 def cheap_metrics(result_iris, result_vecs, graph):
     """Convenience bundle for the search paradigm: structural coherence over the
     graph + redundancy/diversity over result embeddings. (Groundedness applies to

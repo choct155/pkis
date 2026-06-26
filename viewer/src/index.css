@@ -1926,3 +1926,21 @@ body {
   max-width: 100%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
 }
 .lab-cite:hover { border-color: var(--concept); }
+
+/* lab — deep metrics + path mode */
+.lab-deep { display: flex; align-items: center; gap: 4px; font-family: var(--mono); font-size: 11px; color: var(--muted); cursor: pointer; }
+.lab-deep input { accent-color: var(--accent); cursor: pointer; }
+.lab-metric.deep span { color: var(--principle); }
+.lab-metric.deep b { color: var(--principle); }
+
+.lab-path { margin-top: 14px; background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 12px; }
+.lab-path-head { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; margin-bottom: 10px; }
+.lab-path-arrow { color: var(--muted); }
+.lab-path-status { font-family: var(--mono); font-size: 11px; margin-left: auto; }
+.lab-path-status.ok { color: var(--green); }
+.lab-path-status.no { color: var(--muted); }
+.lab-path-chain { display: flex; flex-wrap: wrap; align-items: center; gap: 4px; margin: 6px 0; }
+.lab-path-step { display: inline-flex; align-items: center; gap: 4px; }
+.lab-path-node { display: inline-flex; width: auto; border: 1px solid var(--border); border-radius: 6px; padding: 4px 8px; font-size: 12px; }
+.lab-path-sep { color: var(--accent); }
+.lab-path-common { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; margin-top: 10px; padding-top: 8px; border-top: 1px solid var(--border); }

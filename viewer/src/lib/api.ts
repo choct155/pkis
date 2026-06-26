@@ -23,6 +23,7 @@ import type {
   CompareResponse,
   QueryLogItem,
   AskCompareResponse,
+  PathResponse,
 } from '../types';
 
 const BASE = '/pkis-api';
@@ -76,11 +77,16 @@ export async function searchWiki(
 export async function searchCompare(
   query: string,
   profiles: Array<string | Record<string, unknown>>,
-  opts: { max_results?: number } = {}
+  opts: { max_results?: number; deep?: boolean } = {}
 ): Promise<CompareResponse> {
   return post<CompareResponse>('/search/compare', {
-    query, profiles, max_results: opts.max_results ?? 10,
+    query, profiles, max_results: opts.max_results ?? 10, deep: opts.deep ?? false,
   });
+}
+
+// Relationship/path query — shortest typed-edge path(s) + common neighbours.
+export async function pathBetween(a: string, b: string): Promise<PathResponse> {
+  return post<PathResponse>('/path', { a, b });
 }
 
 // Feedback tap — the supervised "which regime won" signal (owner-only).

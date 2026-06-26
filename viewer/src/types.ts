@@ -171,6 +171,11 @@ export interface SearchMetrics {
   n_in_graph?: number;
   redundancy?: number;
   diversity?: number;
+  // deep (C(q)-dependent) metrics — present only when deep mode was requested
+  coverage?: number;
+  concision_per_1k?: number;
+  structural_relevance?: number;
+  cq_size?: number;
 }
 export interface CompareColumn {
   profile_name: string;
@@ -209,6 +214,15 @@ export interface AskCompareResponse {
   comparison_id: string;
   query: string;
   columns: AskColumn[];
+}
+export interface PathNode { iri: string; title: string }
+export interface PathResponse {
+  a: { ref: string; iri: string; title: string };
+  b: { ref: string; iri: string; title: string };
+  connected: boolean;
+  paths: PathNode[][];
+  common: PathNode[];
+  error?: string;
 }
 
 // ── Full node (from get_node) ─────────────────────────────────────────────
