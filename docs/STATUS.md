@@ -4,20 +4,21 @@ The single canonical snapshot of current build state. Changes frequently — upd
 after every build session. This is not a design doc (see [`ARCHITECTURE.md`](ARCHITECTURE.md))
 or a decision record (see [`DECISIONS.md`](DECISIONS.md)).
 
-_Last updated: 2026-06-25_
+_Last updated: 2026-06-26_
 
 ## Component status
 
 | Component | Status | Notes |
 |---|---|---|
 | PKIS-MCP server (`app.py`) | **live** | MCP (41 tools) + `/pkis-api/*` + docs/webhook/health on `pkis.dev`; gunicorn `pkis-mcp.service`; corrupted `!=` in docs-drift anchor check repaired (broke import) |
-| Knowledge graph (`pkis-wiki`) | **live** | ~2,944 nodes |
-| Viewer PWA (`pkis.dev/app`) | **live** | mobile-first; **wide-desktop dashboard** (≥1280px: widened shell + right context rail = agenda + recently-viewed; 2-col browse); **retrieval lab view** (side-by-side search-regime comparison + unified retrieve/answer ask panel) |
+| Knowledge graph (`pkis-wiki`) | **live** | ~2,945 nodes |
+| Viewer PWA (`pkis.dev/app`) | **live** | mobile-first; **wide-desktop dashboard** (≥1280px: widened shell + right context rail = agenda + recently-viewed; 2-col browse); **retrieval lab view** (side-by-side search-regime comparison + unified retrieve/answer ask panel); **path-mode UI** in lab (visualise relationship paths between nodes) |
 | MCP write tools | **live** | stub/edge/hypothesis/bridge/source/edit; auto-commit+push, cache auto-refresh; `add_to_queue` correctly classified as READ tier (was mislabelled write in docs) |
 | Auth (WorkOS AuthKit) | **live** | OAuth (claude.ai/MCP) + web sealed session; **identity keyed on email** (stable across login methods, fixed 2026-06-24); allowlist by email OR sub; single-use-refresh race coalesced |
 | Ask (NL Q&A) | **live** | shared `ask.py` engine + `/pkis-api/ask` + viewer Ask tab; read-only Q&A+traversal, IP-throttled; **conversation persistence** (auto-save, signed-in), voice I/O, capability-link sharing |
 | Inbox (owner review hub) | **live** | consolidated staged + discovery + agent lanes; owner-only; bridge-note review + inline link-resolution; **doc-drift lane** (accept/dismiss atomic edits to STATUS.md and other docs) |
 | Semantic search | **live** | BM25 + bge-small dense fused via RRF; instrumented profile-driven pipeline + cross-encoder rerank; **graph rerank** (personalized PageRank); path/relationship queries; standing-eval loop (owner query capture + nightly runner); embed cache gitignored |
+| Retrieval lab deep metrics | **live** | **P4 metrics** — C(q) coverage, concision, relevance — computed per search regime; exposed in lab view alongside path-mode UI |
 | Research clusters + frontier priority | **live** | all 12 clusters de-orphaned; frontier-driven priority; Priority = ranked reading queue w/ rationale |
 | Read+listen reader | **live** | LLM semantic narration + section-synced chapter PDF; mp3 encoder streamed (long-narration OOM fixed); **resilient TTS** — Piper-unvoiceable segments skipped rather than aborting the build |
 | Proactive discovery | **live** | frontier-gated OpenAlex cite-graph, cron'd Mondays; inbox + accept/dismiss feedback + learned-prior loop (prior still cold until feedback logged) |
@@ -28,7 +29,7 @@ _Last updated: 2026-06-25_
 ## Source / narration coverage
 
 All 11 backlog books **split into per-chapter PDFs** (136 chapters) and 50 papers
-downloaded — all viewable. **~373 chapters narrated**; the remaining backlog
+downloaded — all viewable. **~374 chapters narrated**; the remaining backlog
 narration is **in flight** (resumable `backlog_build.sh`: Haiku extract → Sonnet
 voice → Piper TTS), guarded by a self-healing watchdog (`narration_watchdog.sh`,
 cron */15) that auto-pauses on API-credit exhaustion and auto-resumes.
@@ -56,12 +57,12 @@ ingested + narrated. Local-only until published.
 - An `app.py` restart drops the claude.ai connector (users must reconnect) —
   minimize restarts; content changes don't need one (cache auto-refresh).
 
-## Most recent session (2026-06-25)
+## Most recent session (2026-06-26)
 
-Hardened the TTS pipeline: the reader now skips any Piper-unvoiceable segment
-rather than aborting the entire narration build, making backlog runs more
-resilient to edge-case segments. Chapter count ticks up to 373; graph holds at
-2,944 nodes.
+Added P4 deep metrics (C(q) coverage, concision, relevance) to the retrieval lab,
+computed per search regime and surfaced in the lab view. Extended the lab UI with
+path-mode — users can now visualise relationship paths between nodes alongside
+regime comparison. Graph ticks up one node to 2,945; narration reaches 374 chapters.
 
 ## Next priorities
 
