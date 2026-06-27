@@ -11,7 +11,7 @@ component_scores:
   principled_mechanism: null
 coverage: 1
 date_created: '2026-06-09'
-date_updated: '2026-06-20'
+date_updated: '2026-06-27'
 domain:
 - bayesian-stats
 generalizes:
@@ -24,6 +24,7 @@ related_concepts: []
 sources:
 - gelman-bda3-ch09
 - gelman-bda3
+- kruschke-bayesian-2021
 specializes:
 - decision-theory-foundations
 tags:

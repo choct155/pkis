@@ -26644,3 +26644,6 @@
 
 ## [2026-06-27] edit | edit_node
 - pkis:technique:bayesian-model-checking: fields=['sources'] sections=[]
+
+## [2026-06-27] edit | edit_node
+- pkis:technique:bayesian-decision-analysis: fields=['sources'] sections=[]
