@@ -4,6 +4,7 @@ import { renderMarkdown } from '../lib/markdown'
 import StagedSection from './StagedSection'
 import DiscoverView from './DiscoverView'
 import DocsDriftSection from './DocsDriftSection'
+import GraphGapsSection from './GraphGapsSection'
 
 interface Lane { title: string; body: string; open: number; done: number }
 
@@ -84,6 +85,7 @@ export default function InboxView({ onSelectNode }: { onSelectNode: (iri: string
       <StagedSection onSelectNode={onSelectNode} onToast={showToast} />
       <DiscoverView onSelectNode={onSelectNode} embedded />
       <DocsDriftSection onToast={showToast} />
+      <GraphGapsSection onSelectNode={onSelectNode} onToast={showToast} />
 
       {/* Agent-written swim-lanes (only the non-empty ones). */}
       {lanes === null

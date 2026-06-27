@@ -1355,6 +1355,36 @@ body {
 .drift-btn.dismiss { color: var(--muted); }
 .drift-btn.dismiss:hover { background: var(--raised); color: var(--text); }
 .drift-btn:disabled { opacity: .5; cursor: default; }
+
+/* ── Graph-gaps cards (inbox lane): orphan + editable suggested edges ─────── */
+.gap-card { background: var(--raised); border: 1px solid var(--border); border-radius: var(--radius); padding: 12px 14px; margin-bottom: 10px; }
+.gap-titlerow { display: flex; align-items: center; gap: 8px; margin-bottom: 9px; flex-wrap: wrap; }
+.gap-type { font-family: var(--mono); font-size: 10px; color: var(--muted); background: var(--surface); border: 1px solid var(--border); border-radius: 3px; padding: 1px 6px; }
+.gap-title { font-size: 13px; font-weight: 500; color: var(--bright); cursor: pointer; }
+.gap-title:hover { color: var(--accent); }
+.gap-orphan { font-family: var(--mono); font-size: 10px; color: var(--dim); margin-left: auto; }
+.gap-edges { display: flex; flex-direction: column; gap: 6px; margin-bottom: 9px; }
+.gap-edge { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; }
+.gap-subj { font-family: var(--mono); font-size: 11px; color: var(--green); flex-shrink: 0; }
+.gap-pred, .gap-target {
+  font-family: var(--mono); font-size: 11px; background: var(--bg); color: var(--text);
+  border: 1px solid var(--border); border-radius: 5px; padding: 4px 7px; outline: none;
+}
+.gap-pred { color: var(--accent); }
+.gap-target { flex: 1; min-width: 120px; }
+.gap-target::placeholder { color: var(--dim); }
+.gap-rm { color: var(--muted); cursor: pointer; font-size: 15px; padding: 0 4px; flex-shrink: 0; }
+.gap-rm:hover { color: var(--red); }
+.gap-add { font-family: var(--mono); font-size: 10px; color: var(--accent); cursor: pointer; align-self: flex-start; }
+.gap-add:hover { text-decoration: underline; }
+.gap-actions { display: flex; gap: 8px; }
+.gap-btn { font-family: var(--mono); font-size: 11px; padding: 5px 13px; border-radius: 6px; cursor: pointer; border: 1px solid var(--border); background: var(--surface); color: var(--text); }
+.gap-btn.approve { border-color: rgba(52,201,122,0.4); color: var(--green); }
+.gap-btn.approve:hover { background: rgba(52,201,122,0.12); }
+.gap-btn.dismiss { color: var(--muted); }
+.gap-btn.dismiss:hover { background: var(--raised); color: var(--text); }
+.gap-btn:disabled { opacity: .5; cursor: default; }
+
 .discover-bar { position: absolute; left: 0; top: 0; height: 3px; width: 100%; background: var(--border); }
 .discover-bar-fill { height: 100%; background: var(--accent); }
 .discover-title { font-size: 14px; font-weight: 500; color: var(--bright); line-height: 1.35; margin-top: 4px; }

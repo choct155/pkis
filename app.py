@@ -6499,6 +6499,90 @@ def pkis_api_docs_drift_act():
         return _api_err(e, 500)
 
 
+# ── Graph-gaps review (owner-only) — orphaned concept-side nodes + SUGGESTED typed
+# edges. The fortnightly audit (tools/graph_audit.py) writes editable suggestions here;
+# the inbox lets the owner edit the {target, predicate} edges then approve (applies via
+# add_connections) or dismiss. Mirrors docs-drift, but the suggestions are editable.
+GRAPH_GAPS = Path(os.environ.get("PKIS_GRAPH_GAPS_PATH", "/home/pkis/graph_gaps.json"))
+
+
+def _gaps_load():
+    if GRAPH_GAPS.exists():
+        try:
+            return json.loads(GRAPH_GAPS.read_text())
+        except Exception:
+            pass
+    return {"items": []}
+
+
+def _gaps_save(data):
+    GRAPH_GAPS.write_text(json.dumps(data, ensure_ascii=False, indent=2))
+
+
+def tool_graph_gaps_list(status="pending"):
+    data = _gaps_load()
+    alli = data.get("items", [])
+    counts = {}
+    for x in alli:
+        s = x.get("status", "pending"); counts[s] = counts.get(s, 0) + 1
+    items = [x for x in alli if x.get("status", "pending") == status] if status else alli
+    # surface the valid predicate vocabulary so the editor can offer a dropdown
+    return {"counts": counts, "items": items, "predicates": list(EDGE_WEIGHTS.keys())}
+
+
+def tool_graph_gaps_act(item_id, action, edges=None):
+    if action not in ("accept", "dismiss"):
+        raise ValueError("action must be 'accept' or 'dismiss'")
+    data = _gaps_load()
+    it = next((x for x in data.get("items", []) if x.get("id") == item_id), None)
+    if not it:
+        raise ValueError(f"gap item not found: {item_id}")
+    if it.get("status") in ("accepted", "dismissed"):
+        return {"action": action, "id": item_id, "already": it["status"]}
+    result = {"action": action, "id": item_id}
+    if action == "accept":
+        # use the owner's (possibly edited) edges if provided, else the suggestions
+        use = edges if edges else it.get("suggestions", [])
+        use = [e for e in use if e.get("target") and e.get("predicate")]
+        if not use:
+            raise ValueError("no edges to apply — add at least one (target + predicate)")
+        ec = [{"subject": it["iri"], "target": e["target"], "predicate": e["predicate"],
+               "note": "graph-gaps: wire orphan"} for e in use]
+        r = tool_add_connections(ec, commit_message=f"graph: wire orphan {it.get('slug','')} ({len(ec)} edge(s))")
+        result["added"] = [x for x in r.get("results", []) if x.get("status") == "added"]
+        result["errors"] = [x for x in r.get("results", []) if x.get("status") == "error"]
+    it["status"] = "accepted" if action == "accept" else "dismissed"
+    it["decided_at"] = datetime.now(timezone.utc).isoformat()
+    _gaps_save(data)
+    return result
+
+
+@app.route("/pkis-api/graph-gaps", methods=["POST"])
+def pkis_api_graph_gaps():
+    gate = _owner_gate(request)
+    if gate:
+        return gate
+    b = _api_json()
+    try:
+        return _api_ok(tool_graph_gaps_list(status=b.get("status", "pending")))
+    except Exception as e:
+        return _api_err(e, 500)
+
+
+@app.route("/pkis-api/graph-gaps/act", methods=["POST"])
+def pkis_api_graph_gaps_act():
+    gate = _owner_gate(request)
+    if gate:
+        return gate
+    b = _api_json()
+    try:
+        return _api_ok(tool_graph_gaps_act(b.get("id"), b.get("action", ""), edges=b.get("edges")))
+    except ValueError as e:
+        return _api_err(e)
+    except Exception as e:
+        return _api_err(e, 500)
+
+
 @app.route("/pkis-api/upload-document", methods=["POST"])
 @require_write
 def pkis_api_upload_document():

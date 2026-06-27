@@ -126,6 +126,23 @@ export interface DocsDriftInbox {
   items: DocsDriftItem[];
 }
 
+// Graph-gaps: orphaned concept-side nodes + editable suggested typed edges.
+export interface GraphGapEdge { target: string; predicate: string; target_title?: string }
+export interface GraphGapItem {
+  id: string;
+  iri: string;
+  slug: string;
+  title: string;
+  node_type: string;
+  suggestions: GraphGapEdge[];
+  status?: string;
+}
+export interface GraphGapInbox {
+  counts: Record<string, number>;
+  items: GraphGapItem[];
+  predicates: string[];
+}
+
 // ── Asset (from get_assets) — anything the owner authors ──────────────────
 // `format` = how it renders: 'interactive' (HTML viz) | 'writing' (prose body).
 // `kind` = open genre (governed by wiki/asset_kinds.json): explainer,

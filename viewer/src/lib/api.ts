@@ -467,3 +467,17 @@ export async function docsDriftAct(
 ): Promise<{ action: string; id: string; sha?: string; committed?: boolean }> {
   return post('/docs-drift/act', { id, action });
 }
+
+// ── Graph-gaps review (owner-only) ────────────────────────────────────────
+export async function getGraphGaps(
+  status: 'pending' | 'accepted' | 'dismissed' = 'pending'
+): Promise<import('../types').GraphGapInbox> {
+  return post('/graph-gaps', { status });
+}
+export async function graphGapsAct(
+  id: string,
+  action: 'accept' | 'dismiss',
+  edges?: import('../types').GraphGapEdge[]
+): Promise<{ action: string; id: string; added?: unknown[]; errors?: unknown[] }> {
+  return post('/graph-gaps/act', { id, action, edges });
+}
