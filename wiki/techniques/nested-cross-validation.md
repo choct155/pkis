@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- overfitting-and-underfitting
 component_scores:
   alternatives: null
   conditions: null
@@ -36,4 +38,5 @@ understanding: 0
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[overfitting-and-underfitting]] — applies: graph-gaps: wire orphan
 [To be populated during integration]
