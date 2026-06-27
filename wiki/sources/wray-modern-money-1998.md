@@ -4,7 +4,7 @@ aliases: []
 title: "Modern Money"
 authors: "L. Randall Wray"
 year: 1998
-type: paper
+type: book
 domain: [macroeconomics, monetary-economics]
 tags: [chartalism, fiscal-policy, monetary-policy, functional-finance, MMT, fiat-money, government-deficits]
 source_url: ""
