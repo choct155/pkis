@@ -46,16 +46,3 @@ Schema violations and convention issues.
 ## Budget
 Cost alerts from the Comptroller.
 <!-- - [ ] Weekly variable cost $XX.XX — exceeds threshold (date) -->
-
-## Graph gaps
-
-Orphaned concept-side nodes — zero graph edges. Wire each into the graph (accept a suggested link or set your own typed predicate via add_connections).
-
-- [ ] [[game-theory-in-finance]] (concepts) — suggest linking to: game-theory, market-microstructure
-- [ ] [[technological-unemployment]] (concepts) — suggest linking to: automation, labor-economics
-- [ ] [[parameter-estimation-vs-bayesian-inference]] (principles) — suggest linking to: bayesian-inference, maximum-likelihood-estimation, frequentist-inference
-- [ ] [[concept-boundary-finding-problem]] (problems) — suggest linking to: concept, ontology, knowledge-graph
-- [ ] [[godels-incompleteness-theorem]] (results) — suggest linking to: review and link to the nearest concepts
-- [ ] [[truncated-factorization-g-formula]] (results) — suggest linking to: causal-inference, do-calculus, structural-causal-model
-- [ ] [[nested-cross-validation]] (techniques) — suggest linking to: cross-validation, model-selection, hyperparameter-tuning
-- [ ] [[power-iteration]] (techniques) — suggest linking to: eigenvectors/eigenvalues, dominant-eigenvector, PageRank
