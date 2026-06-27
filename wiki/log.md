@@ -26620,3 +26620,18 @@
 ## [2026-06-25] committed | technique
 - Committed: personalized-pagerank-for-retrieval → techniques/personalized-pagerank-for-retrieval.md
 - IRI: pkis:technique:personalized-pagerank-for-retrieval
+
+## [2026-06-25] edges | add_connections
+- reciprocal-rank-fusion —uses→ dense-passage-retrieval
+- cross-encoder-reranking —extends→ dense-passage-retrieval
+- personalized-pagerank-for-retrieval —instantiates→ coverage-driven-graph-traversal
+- personalized-pagerank-for-retrieval —contrasts-with→ dense-passage-retrieval
+- dense-passage-retrieval —contrasts-with→ coverage-driven-graph-traversal
+
+## [2026-06-25] staged | source-stub
+- Staged: tang-dream-2026 (id: 51e2d073-7022-4f5d-a3cc-0301dfb7df9d)
+- Title: DREAM: Dense Retrieval Embeddings via Autoregressive Modeling
+- Enrichment: full
+
+## [2026-06-27] edit | edit_node
+- pkis:concept:foundation-model: fields=['sources'] sections=[]

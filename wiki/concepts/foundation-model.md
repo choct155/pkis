@@ -12,7 +12,7 @@ component_scores:
   transfer: null
 coverage: 1
 date_created: '2026-06-11'
-date_updated: '2026-06-11'
+date_updated: '2026-06-27'
 domain:
 - machine-learning
 - natural-language-processing
@@ -24,6 +24,7 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - murphy-pml2-advanced-ch22
+- bommasani-on-2021
 tags:
 - foundation-model
 - pre-training
