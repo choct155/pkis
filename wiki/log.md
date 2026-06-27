@@ -26641,3 +26641,6 @@
 
 ## [2026-06-27] edit | edit_node
 - pkis:concept:bayesian-neural-networks: fields=['sources'] sections=[]
+
+## [2026-06-27] edit | edit_node
+- pkis:technique:bayesian-model-checking: fields=['sources'] sections=[]
