@@ -5,7 +5,7 @@ contrasts-with:
 - maxima-are-atypical
 coverage: 1
 date_created: 2026-05-20
-date_updated: '2026-06-08'
+date_updated: '2026-06-27'
 domain:
 - bayesian-stats
 - deep-learning
@@ -20,6 +20,7 @@ related_concepts:
 - '[[probability-theory]]'
 sources:
 - '[[yellapragada-variational-bayes]]'
+- jospin-handson-2022
 tags:
 - variational-methods
 - approximate-inference
