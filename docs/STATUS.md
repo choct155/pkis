@@ -4,19 +4,19 @@ The single canonical snapshot of current build state. Changes frequently — upd
 after every build session. This is not a design doc (see [`ARCHITECTURE.md`](ARCHITECTURE.md))
 or a decision record (see [`DECISIONS.md`](DECISIONS.md)).
 
-_Last updated: 2026-06-26_
+_Last updated: 2026-06-27_
 
 ## Component status
 
 | Component | Status | Notes |
 |---|---|---|
 | PKIS-MCP server (`app.py`) | **live** | MCP (41 tools) + `/pkis-api/*` + docs/webhook/health on `pkis.dev`; gunicorn `pkis-mcp.service`; corrupted `!=` in docs-drift anchor check repaired (broke import) |
-| Knowledge graph (`pkis-wiki`) | **live** | ~2,945 nodes |
+| Knowledge graph (`pkis-wiki`) | **live** | ~2,938 nodes (7 junk orphans deleted — schema-field-name artifacts + malformed source stub; 5 source links added; wray-modern-money-1998 reclassified paper→book) |
 | Viewer PWA (`pkis.dev/app`) | **live** | mobile-first; **wide-desktop dashboard** (≥1280px: widened shell + right context rail = agenda + recently-viewed; 2-col browse); **retrieval lab view** (side-by-side search-regime comparison + unified retrieve/answer ask panel); **path-mode UI** in lab (visualise relationship paths between nodes) |
 | MCP write tools | **live** | stub/edge/hypothesis/bridge/source/edit; auto-commit+push, cache auto-refresh; `add_to_queue` correctly classified as READ tier (was mislabelled write in docs) |
 | Auth (WorkOS AuthKit) | **live** | OAuth (claude.ai/MCP) + web sealed session; **identity keyed on email** (stable across login methods, fixed 2026-06-24); allowlist by email OR sub; single-use-refresh race coalesced |
 | Ask (NL Q&A) | **live** | shared `ask.py` engine + `/pkis-api/ask` + viewer Ask tab; read-only Q&A+traversal, IP-throttled; **conversation persistence** (auto-save, signed-in), voice I/O, capability-link sharing |
-| Inbox (owner review hub) | **live** | consolidated staged + discovery + agent lanes; owner-only; bridge-note review + inline link-resolution; **doc-drift lane** (accept/dismiss atomic edits to STATUS.md and other docs) |
+| Inbox (owner review hub) | **live** | consolidated staged + discovery + agent lanes; owner-only; bridge-note review + inline link-resolution; **doc-drift lane** (accept/dismiss atomic edits to STATUS.md and other docs); **Graph gaps lane** (live inbox lane — orphan concepts with editable suggested edges; 8 orphan concept-side nodes currently queued for review) |
 | Semantic search | **live** | BM25 + bge-small dense fused via RRF; instrumented profile-driven pipeline + cross-encoder rerank; **graph rerank** (personalized PageRank); path/relationship queries; standing-eval loop (owner query capture + nightly runner); embed cache gitignored |
 | Retrieval lab deep metrics | **live** | **P4 metrics** — C(q) coverage, concision, relevance — computed per search regime; exposed in lab view alongside path-mode UI |
 | Research clusters + frontier priority | **live** | all 12 clusters de-orphaned; frontier-driven priority; Priority = ranked reading queue w/ rationale |
@@ -29,7 +29,7 @@ _Last updated: 2026-06-26_
 ## Source / narration coverage
 
 All 11 backlog books **split into per-chapter PDFs** (136 chapters) and 50 papers
-downloaded — all viewable. **~374 chapters narrated**; the remaining backlog
+downloaded — all viewable. **~380 chapters narrated**; the remaining backlog
 narration is **in flight** (resumable `backlog_build.sh`: Haiku extract → Sonnet
 voice → Piper TTS), guarded by a self-healing watchdog (`narration_watchdog.sh`,
 cron */15) that auto-pauses on API-credit exhaustion and auto-resumes.
@@ -57,17 +57,21 @@ ingested + narrated. Local-only until published.
 - An `app.py` restart drops the claude.ai connector (users must reconnect) —
   minimize restarts; content changes don't need one (cache auto-refresh).
 
-## Most recent session (2026-06-26)
+## Most recent session (2026-06-27)
 
-Added P4 deep metrics (C(q) coverage, concision, relevance) to the retrieval lab,
-computed per search regime and surfaced in the lab view. Extended the lab UI with
-path-mode — users can now visualise relationship paths between nodes alongside
-regime comparison. Graph ticks up one node to 2,945; narration reaches 374 chapters.
+Graph hygiene pass: deleted 7 junk orphan nodes (schema-field-name artifacts +
+malformed source stub), bringing the node count to ~2,938. Linked 5 sources to
+Bayesian-cluster concepts (bayesian-decision-analysis, bayesian-model-checking,
+bayesian-neural-networks, bayesian-deep-learning, foundation-model). Reclassified
+wray-modern-money-1998 from paper to book. Inbox extended with a live **Graph gaps
+lane** — surfaces orphan concept-side nodes with editable suggested edges for owner
+review (8 currently queued). Narration reaches 380 chapters.
 
 ## Next priorities
 
 1. Let the backlog narration finish (multi-day; watchdog-guarded).
-2. Publish the calibration tabs + register as a PKIS asset node.
-3. Start exercising discovery feedback to warm the learned prior.
-4. Log the first doc-drift accept/dismiss decisions to validate the new inbox lane.
-5. Architect automation (daily cron + post-deploy hook) so this doc stops drifting further.
+2. Review and resolve the 8 orphan nodes in the new Graph gaps inbox lane.
+3. Publish the calibration tabs + register as a PKIS asset node.
+4. Start exercising discovery feedback to warm the learned prior.
+5. Log the first doc-drift accept/dismiss decisions to validate that inbox lane.
+6. Architect automation (daily cron + post-deploy hook) so this doc stops drifting further.
