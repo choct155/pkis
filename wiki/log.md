@@ -26647,3 +26647,20 @@
 
 ## [2026-06-27] edit | edit_node
 - pkis:technique:bayesian-decision-analysis: fields=['sources'] sections=[]
+
+## [2026-06-27] edges | add_connections
+- pkis:technique:nested-cross-validation —applies→ overfitting-and-underfitting
+
+## [2026-06-28] staged | node-stub (framework)
+- Staged: musical-preference-ontology (id: 5d9eb154-c77f-4a35-bea2-92f4745f58e3)
+- Title: Musical Preference Ontology
+- needs_canonical_source: True
+
+## [2026-06-28] staged | node-stub (framework)
+- Staged: musical-preference-ontology-1 (id: 9faa03dc-2be8-4692-b9ee-cd9f323e5ca8)
+- Title: Musical Preference Ontology
+- needs_canonical_source: True
+
+## [2026-06-28] committed | framework
+- Committed: musical-preference-ontology-1 → frameworks/musical-preference-ontology-1.md
+- IRI: pkis:framework:musical-preference-ontology-1
