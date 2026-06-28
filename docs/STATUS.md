@@ -4,14 +4,14 @@ The single canonical snapshot of current build state. Changes frequently — upd
 after every build session. This is not a design doc (see [`ARCHITECTURE.md`](ARCHITECTURE.md))
 or a decision record (see [`DECISIONS.md`](DECISIONS.md)).
 
-_Last updated: 2026-06-27_
+_Last updated: 2026-06-28_
 
 ## Component status
 
 | Component | Status | Notes |
 |---|---|---|
 | PKIS-MCP server (`app.py`) | **live** | MCP (41 tools) + `/pkis-api/*` + docs/webhook/health on `pkis.dev`; gunicorn `pkis-mcp.service`; corrupted `!=` in docs-drift anchor check repaired (broke import) |
-| Knowledge graph (`pkis-wiki`) | **live** | ~2,938 nodes (7 junk orphans deleted — schema-field-name artifacts + malformed source stub; 5 source links added; wray-modern-money-1998 reclassified paper→book) |
+| Knowledge graph (`pkis-wiki`) | **live** | 2,938 nodes; orphan nested-cross-validation wired (1 edge added from Graph gaps lane) |
 | Viewer PWA (`pkis.dev/app`) | **live** | mobile-first; **wide-desktop dashboard** (≥1280px: widened shell + right context rail = agenda + recently-viewed; 2-col browse); **retrieval lab view** (side-by-side search-regime comparison + unified retrieve/answer ask panel); **path-mode UI** in lab (visualise relationship paths between nodes) |
 | MCP write tools | **live** | stub/edge/hypothesis/bridge/source/edit; auto-commit+push, cache auto-refresh; `add_to_queue` correctly classified as READ tier (was mislabelled write in docs) |
 | Auth (WorkOS AuthKit) | **live** | OAuth (claude.ai/MCP) + web sealed session; **identity keyed on email** (stable across login methods, fixed 2026-06-24); allowlist by email OR sub; single-use-refresh race coalesced |
@@ -29,7 +29,7 @@ _Last updated: 2026-06-27_
 ## Source / narration coverage
 
 All 11 backlog books **split into per-chapter PDFs** (136 chapters) and 50 papers
-downloaded — all viewable. **~380 chapters narrated**; the remaining backlog
+downloaded — all viewable. **~444 chapters narrated**; the remaining backlog
 narration is **in flight** (resumable `backlog_build.sh`: Haiku extract → Sonnet
 voice → Piper TTS), guarded by a self-healing watchdog (`narration_watchdog.sh`,
 cron */15) that auto-pauses on API-credit exhaustion and auto-resumes.
@@ -57,20 +57,16 @@ ingested + narrated. Local-only until published.
 - An `app.py` restart drops the claude.ai connector (users must reconnect) —
   minimize restarts; content changes don't need one (cache auto-refresh).
 
-## Most recent session (2026-06-27)
+## Most recent session (2026-06-28)
 
-Graph hygiene pass: deleted 7 junk orphan nodes (schema-field-name artifacts +
-malformed source stub), bringing the node count to ~2,938. Linked 5 sources to
-Bayesian-cluster concepts (bayesian-decision-analysis, bayesian-model-checking,
-bayesian-neural-networks, bayesian-deep-learning, foundation-model). Reclassified
-wray-modern-money-1998 from paper to book. Inbox extended with a live **Graph gaps
-lane** — surfaces orphan concept-side nodes with editable suggested edges for owner
-review (8 currently queued). Narration reaches 380 chapters.
+Graph gaps lane yielded first resolved item: orphan node `nested-cross-validation`
+wired with 1 edge, reducing the queue from 8. Narration count advances to 444
+chapters (up from ~380).
 
 ## Next priorities
 
 1. Let the backlog narration finish (multi-day; watchdog-guarded).
-2. Review and resolve the 8 orphan nodes in the new Graph gaps inbox lane.
+2. Review and resolve the remaining orphan nodes in the Graph gaps inbox lane.
 3. Publish the calibration tabs + register as a PKIS asset node.
 4. Start exercising discovery feedback to warm the learned prior.
 5. Log the first doc-drift accept/dismiss decisions to validate that inbox lane.
