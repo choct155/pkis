@@ -18,6 +18,15 @@ Format:
 
 ---
 
+## OpGraph Strategist — multi-agent strategic council
+**Date logged:** 2026-06-29
+**Source:** Claude chat: OpGraph agent roster design session
+**Idea:** The Strategist agent role in OpGraph may eventually evolve beyond a single reasoning agent into a multi-agent "strategic council" — multiple agents or personas with different stances, frameworks, or priorities debating a question or decision. Different agents could represent different analytical lenses (risk-focused, opportunity-focused, stakeholder-focused) or even simulate the positions of key people in the portfolio. The user directs the council, observes the debate, and uses it to pressure-test a decision or surface blind spots before committing.
+**Relation to existing system:** Extends the OpGraph Strategist agent role. Potentially draws on Person and Role nodes in OpGraph to ground personas in real stakeholder positions. Conceptually adjacent to multi-agent debate frameworks in the AI literature.
+**Open questions:** What's the right number of council members? How do personas get defined — user-specified, graph-derived from real stakeholders, or archetype-based? How does the output get captured back into OpGraph as a Decision or Commitment? Does this require a multi-agent LangGraph architecture (separate subgraphs per persona) or can it be simulated with a single model and structured prompting?
+**Status:** open
+
+
 ## Register new explainers as PKIS assets and create explainer roadmap
 **Date logged:** 2026-06-21
 **Source:** Claude Code: main
