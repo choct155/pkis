@@ -3,7 +3,7 @@ aliases: []
 cluster_membership:
 - intensional-grounding
 date_created: 2026-05-30
-date_updated: '2026-06-07'
+date_updated: '2026-06-30'
 dependent_nodes:
 - node: '[[named-entity-disambiguation]]'
   node_type: technique
@@ -44,10 +44,14 @@ Token-to-ontological-class distance — measured as the semantic distance betwee
 If ontological structure operates through attention weight redistribution, then the degree to which a token is already semantically proximate to its correct ontological class in the model's representation should predict whether the model resolves it correctly. This is a clean, testable operationalization of the umbrella thesis.
 
 ## Current Evidence
-Indirect support from Think-on-Graph (Sun et al., ICLR 2024) showing KG traversal improves multi-hop entity resolution. Direct measurement of token-to-class distance as a predictor variable has not been published.
+Experimental platform identified: OpGraph (a private, local operational-graph system) is being instrumented as the live test bed. Design: every Librarian capture draft that requires human correction in the review workbench produces a single ground-truth label per entity mention. Six resolution strategies are then run as parallel offline voters against the same historical utterances and that single ground truth, decoupled from the live operational resolution path (which uses a separate fast default-or-waterfall policy for production use, informed by but not blocking on the comparative results). Ground truth is established once per mention; all strategies are scored against it asynchronously, which keeps the comparative program off the synchronous capture path — important while running CPU-only pending a GPU upgrade.
+
+The six strategies under comparison, in increasing order of reliance on intensional/structural signal vs. lexical signal: (1) alias lookup — exact/fuzzy match against a maintained alias registry (lexical/extensional baseline); (2) fuzzy string similarity (Levenshtein/Jaro-Winkler) — lexical, generalizes slightly beyond exact alias match; (3) structural/graph priors — using existing edges, roles, and organizational context as evidence (the most direct operationalization of intensional/ontological-class distance); (4) vector/embedding similarity — semantic but not explicitly ontological; (5) LLM-as-resolver — given mention, context, and a candidate shortlist, ask a local model to resolve; (6) implicit instantiation from context/co-occurrence — inferring entity identity (or, in the hardest variant, inferring that an entity exists at all) from contextual and co-occurrence signal without requiring an explicit alias or lexical match, particularly for indirect referring expressions ("my boss", "the budget owner") that have no lexical overlap with any stored alias.
+
+Strategy (6) carries particular priority: a colleague holds the explicit prior that context/co-occurrence-driven implicit instantiation will outperform alias-based resolution specifically, motivating early instrumentation to test this empirically rather than letting the disagreement sit unresolved. Strategies (3) and (6) are the most direct tests of this hypothesis's core claim (intensional/structural signal predicts resolution accuracy); (1) and (2) serve as the lexical/extensional baseline the hypothesis predicts will underperform, particularly on indirect referring expressions where lexical methods cannot work in principle.
 
 ## Open Questions
-How to operationalize token-to-ontological-class distance in a way that is independent of the NED system being evaluated. What distance metric is most appropriate in the embedding space.
+Comparative design questions raised during OpGraph instrumentation: (1) Is implicit instantiation (strategy 6) limited to resolving a mention to an EXISTING entity via context, or does it extend to inferring that an entity exists at all with no explicit mention? The latter is a distinct and harder capability (entity creation from implicit signal, not just entity resolution) — needs to be scoped explicitly before scoring, since conflating the two would muddy the comparison. (2) How is ground truth established for mentions where even the human reviewer is uncertain which existing entity is meant — does this produce a discard category, a soft/probabilistic label, or a forced choice? (3) Stratify comparison by mention type (explicit named mention vs. indirect referring expression) since the hypothesis predicts the lexical/intensional gap should be largest specifically for indirect expressions — confirm this stratification is built into the scoring design from the start rather than added post hoc. (4) Need an explicit owner/process for collecting, organizing, and analyzing this comparative data on an ongoing basis — not just one-off scoring runs (see new Lab Assistant agent role, both in OpGraph and as a PKIS Lab Mode counterpart).
 
 ## Connections
 - [[formal-ontology]] — uses: Ontological class definitions are the independent variable; the [[ontology]] reference resolves to the materialized formal-ontology node.

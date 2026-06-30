@@ -26664,3 +26664,14 @@
 ## [2026-06-28] committed | framework
 - Committed: musical-preference-ontology-1 → frameworks/musical-preference-ontology-1.md
 - IRI: pkis:framework:musical-preference-ontology-1
+
+## [2026-06-30] staged | hypothesis
+- Staged: implicit-instantiation-from-context-outperforms-alias-b (id: db578342-7a09-4e28-815c-ea5958664000)
+- Title: Implicit Instantiation from Context Outperforms Alias-Based Resolution
+- Cluster: intensional-grounding
+
+## [2026-06-30] discarded | hypothesis
+- Discarded: implicit-instantiation-from-context-outperforms-alias-b (id: db578342-7a09-4e28-815c-ea5958664000)
+
+## [2026-06-30] edit | edit_node
+- pkis:hypothesis:intensional-grounding-ned-accuracy: fields=[] sections=['Current Evidence', 'Open Questions']
