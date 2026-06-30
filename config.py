@@ -118,6 +118,23 @@ WORKOS_REDIRECT_URI   = os.environ.get("WORKOS_REDIRECT_URI", "https://pkis.dev/
 WEB_AUTH_ENABLED      = bool(WORKOS_API_KEY and WORKOS_CLIENT_ID and WORKOS_COOKIE_PASSWORD)
 WEB_SESSION_COOKIE    = "wos_session"
 
+# ============================================================
+# Native-app auth (Capacitor APK). After a WorkOS login completes at the existing
+# web callback, PKIS mints its OWN opaque bearer tokens and hands them to the app
+# over a one-time code on the `com.pkis.app://` deep link (the WebView is served
+# from https://localhost, so the cookie/redirect web flow can't reach it). The app
+# stores the refresh token in the Android Keystore behind biometric unlock. These
+# tokens are PKIS-owned (not WorkOS JWTs), so validation needs no IdP round-trip.
+# DORMANT unless WorkOS web auth is configured (login depends on it).
+# ============================================================
+NATIVE_APP_SCHEME   = os.environ.get("PKIS_NATIVE_APP_SCHEME", "com.pkis.app")
+NATIVE_TOKEN_DB     = Path(os.environ.get(
+    "PKIS_NATIVE_TOKEN_DB", "/home/pkis/conversations/native_tokens.sqlite"))
+NATIVE_ACCESS_TTL   = int(os.environ.get("PKIS_NATIVE_ACCESS_TTL", str(3600)))            # 1 hour
+NATIVE_REFRESH_TTL  = int(os.environ.get("PKIS_NATIVE_REFRESH_TTL", str(60 * 24 * 3600))) # 60 days
+NATIVE_CODE_TTL     = int(os.environ.get("PKIS_NATIVE_CODE_TTL", str(300)))               # one-time code / pending state: 5 min
+NATIVE_AUTH_ENABLED = WEB_AUTH_ENABLED
+
 # Document store + Readwise integration
 DOCS_DIR          = Path(os.environ.get("DOCS_DIR", "/home/pkis/docs"))
 DOCS_BASE_URL     = os.environ.get("DOCS_BASE_URL", "https://pkis.dev/docs")

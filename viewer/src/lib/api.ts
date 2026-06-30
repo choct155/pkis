@@ -26,7 +26,10 @@ import type {
   PathResponse,
 } from '../types';
 
-const BASE = '/pkis-api';
+import { API_BASE } from './base';
+import { authHeader, isNative, refreshAccessToken, signOutNative } from './nativeAuth';
+
+const BASE = API_BASE;
 
 export class ApiError extends Error {
   status: number;
@@ -37,16 +40,22 @@ export class ApiError extends Error {
   }
 }
 
-async function post<T>(path: string, body: Record<string, unknown> = {}): Promise<T> {
-  const res = await fetch(`${BASE}${path}`, {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    // Send the sealed-session cookie so write routes (require_write) see the
-    // signed-in identity — without this the server treats the call as anonymous
-    // ("sign in required") even when the user is logged in.
+// Centralized request: attaches the native bearer (no-op on web, where the cookie
+// rides via credentials), and on a 401 in native mode refreshes the access token
+// once and retries — so a silently-expired token heals without bouncing the user.
+async function request<T>(path: string, init: RequestInit): Promise<T> {
+  const send = () => fetch(`${BASE}${path}`, {
+    ...init,
+    // Send the sealed-session cookie (web) AND the bearer (native) so write routes
+    // (require_write) see the signed-in identity; without either the server treats
+    // the call as anonymous even when the user is logged in.
+    headers: { ...(init.headers ?? {}), ...authHeader() },
     credentials: 'same-origin',
-    body: JSON.stringify(body),
   });
+  let res = await send();
+  if (res.status === 401 && isNative() && await refreshAccessToken()) {
+    res = await send();
+  }
   if (!res.ok) {
     const err = await res.json().catch(() => ({ error: res.statusText }));
     throw new ApiError((err as { error?: string }).error ?? res.statusText, res.status);
@@ -54,13 +63,16 @@ async function post<T>(path: string, body: Record<string, unknown> = {}): Promis
   return res.json() as Promise<T>;
 }
 
+async function post<T>(path: string, body: Record<string, unknown> = {}): Promise<T> {
+  return request<T>(path, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(body),
+  });
+}
+
 async function get<T>(path: string): Promise<T> {
-  const res = await fetch(`${BASE}${path}`, { method: 'GET', credentials: 'same-origin' });
-  if (!res.ok) {
-    const err = await res.json().catch(() => ({ error: res.statusText }));
-    throw new ApiError((err as { error?: string }).error ?? res.statusText, res.status);
-  }
-  return res.json() as Promise<T>;
+  return request<T>(path, { method: 'GET' });
 }
 
 // ── Search ────────────────────────────────────────────────────────────────
@@ -134,7 +146,7 @@ export interface AskStreamHandlers {
 export async function askStream(messages: AskMessage[], h: AskStreamHandlers): Promise<void> {
   const res = await fetch(`${BASE}/ask/stream`, {
     method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
+    headers: { 'Content-Type': 'application/json', ...authHeader() },
     credentials: 'same-origin',
     body: JSON.stringify({ messages }),
   });
@@ -292,7 +304,7 @@ export async function buildReader(slug: string): Promise<{ status: string; slug:
 
 export async function getReaderStatus(slug: string): Promise<{ state: string }> {
   try {
-    const r = await fetch(`/pkis-api/reader/${slug}/status`);
+    const r = await fetch(`${BASE}/reader/${slug}/status`, { headers: authHeader() });
     if (r.status === 404) return { state: 'none' };          // genuinely not built
     if (!r.ok) return { state: 'unknown' };                  // 5xx / outage — not "none"
     return (await r.json()) as { state: string };
@@ -401,7 +413,7 @@ export interface AuthState { authenticated: boolean; user_id?: string; role: str
 
 export async function getAuth(): Promise<AuthState> {
   try {
-    const r = await fetch(`${BASE}/auth/me`, { credentials: 'same-origin' });
+    const r = await fetch(`${BASE}/auth/me`, { credentials: 'same-origin', headers: authHeader() });
     if (!r.ok) return { authenticated: false, role: 'reader' };
     return (await r.json()) as AuthState;
   } catch {
@@ -412,7 +424,7 @@ export async function getAuth(): Promise<AuthState> {
 // Owner-only administrative inbox (wiki/inbox.md). Throws ApiError(401/403) if the
 // caller isn't the owner — the session cookie carries the role.
 export async function getInbox(): Promise<{ markdown: string }> {
-  const r = await fetch(`${BASE}/inbox`, { credentials: 'same-origin' });
+  const r = await fetch(`${BASE}/inbox`, { credentials: 'same-origin', headers: authHeader() });
   if (!r.ok) {
     const err = await r.json().catch(() => ({ error: r.statusText }));
     throw new ApiError((err as { error?: string }).error ?? r.statusText, r.status);
@@ -421,6 +433,11 @@ export async function getInbox(): Promise<{ markdown: string }> {
 }
 
 export async function logout(): Promise<void> {
+  // Native: revoke the bearer + clear stored refresh token. Web: drop the cookie.
+  if (isNative()) {
+    await signOutNative();
+    return;
+  }
   await fetch(`${BASE}/auth/logout`, { method: 'POST', credentials: 'same-origin' });
 }
 

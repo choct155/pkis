@@ -1,9 +1,11 @@
 import { useState, useEffect, useCallback } from 'react'
 import { getAuth, logout as apiLogout, signInUrl, type AuthState } from './api'
+import { isNative, signInNative, restoreNativeSession, initNativeAuthListener } from './nativeAuth'
 
-// Web sign-in state. The backend refreshes the sealed session transparently, so
-// the frontend never handles tokens — it just reflects /auth/me and offers a
-// (silent-SSO) sign-in redirect. The user authenticates at most once.
+// Sign-in state. On web the backend refreshes the sealed session transparently and
+// the frontend just reflects /auth/me. On native (Capacitor APK) the same /auth/me
+// reflects the PKIS bearer token: we restore a stored session on launch and drive
+// sign-in through the system-browser PKCE flow (see nativeAuth.ts).
 export function useAuth() {
   const [auth, setAuth] = useState<AuthState>({ authenticated: false, role: 'reader' })
   const [loaded, setLoaded] = useState(false)
@@ -13,10 +15,27 @@ export function useAuth() {
     setLoaded(true)
   }, [])
 
-  useEffect(() => { refresh() }, [refresh])
+  useEffect(() => {
+    let cancelled = false
+    async function boot() {
+      if (isNative()) {
+        // Deep-link handler fires after a fresh sign-in; restore any stored session
+        // before reflecting state so a returning user lands signed-in.
+        initNativeAuthListener(() => { void refresh() })
+        await restoreNativeSession()
+      }
+      if (!cancelled) await refresh()
+    }
+    void boot()
+    return () => { cancelled = true }
+  }, [refresh])
 
   const signIn = useCallback(() => {
-    window.location.href = signInUrl(window.location.pathname || '/app/')
+    if (isNative()) {
+      void signInNative()   // completion arrives via the deep-link listener → refresh()
+    } else {
+      window.location.href = signInUrl(window.location.pathname || '/app/')
+    }
   }, [])
 
   const signOut = useCallback(async () => {
