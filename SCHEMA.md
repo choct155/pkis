@@ -197,6 +197,7 @@ object nodes.
 | `grounds` | Subject provides epistemic or theoretical foundation for object | — |
 | `equivalent-in-context` | Subject and object are the same idea under different names in different domains | (symmetric) |
 | `commonly-confused-with` | Subject and object appear similar but differ in important ways | (symmetric) |
+| `evidence-for` | Subject (a Finding) is empirical evidence bearing on object (a Hypothesis) | — |
 
 ### Interpretation Table
 
@@ -337,6 +338,7 @@ where `{health_type}` is the singular form of the node's canonical type:
 | `assets/` | `asset` | `pkis:asset:` |
 | `bridge-notes/` | `bridge-note` | `pkis:bridge-note:` |
 | `discovery/` | `discovery-stub` | `pkis:discovery-stub:` |
+| `findings/` | `finding` | `pkis:finding:` |
 
 **Examples:**
 - `pkis:concept:variational-inference`
@@ -863,6 +865,47 @@ integration_target: ""  # wikilink to target node for promotion; null if unknown
 ```
 
 **Body sections:** `## Connection`, `## Nodes Involved`, `## Integration Notes`
+
+---
+
+### Finding Node (`wiki/findings/`)
+
+A Finding is a **scrubbed, aggregate empirical result** produced by an external
+experimental system (initially OpGraph) and accepted into PKIS as evidence bearing on
+a hypothesis. Findings are created only by the MCP `create_finding_stub` endpoint — a
+narrow, content-restricted inbound gate — never manually. PKIS validates only the
+schema and that `evidence-for` resolves to a live hypothesis; it never recomputes or
+verifies the statistics, and never reaches back toward the producing system. The human
+staging review is the content gate (it confirms the finding carries no identifying
+content). No `component_scores`.
+
+```yaml
+---
+id: "pkis:finding:{slug}"      # auto-assigned at creation; never changed
+aliases: []
+title: ""
+knowledge_type: finding
+domain: []                      # inherited from the target hypothesis
+tags: []                        # e.g. [opgraph, structural_priors]
+date_created: YYYY-MM-DD
+date_updated: YYYY-MM-DD
+maturity: evolving
+finding_id: ""                  # uuid from the producing system
+generated_at: ""               # ISO 8601 — when the producing system computed it
+summary: ""                     # plain-language, already scrubbed by the producer
+statistics: {}                  # aggregate stats only (strategy, metric, value, n, CI, ...)
+stratification: {}              # structural/methodological strata only (e.g. mention_type)
+source_system: ""              # producing system, e.g. 'opgraph'
+source_run_id: ""              # analysis-run reference in the producing system
+source_log_date_range: []      # [start_date, end_date]
+evidence-for: []               # [hypothesis-slug] — typed edge Finding -> Hypothesis
+---
+```
+
+**Body sections:** `## Summary`, `## Statistics`, `## Provenance`, `## Connections`
+
+The target hypothesis's `## Current Evidence` section is **not** auto-updated — that
+synthesis stays human-curated (or a future, separately-staged Lab Assistant step).
 
 ---
 

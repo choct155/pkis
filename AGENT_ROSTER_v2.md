@@ -52,6 +52,7 @@ attention are surfaced.
 | Maintenance | Structural graph health checks | Yes (fortnightly) | Minimal auto-fix only | No |
 | Architect | Project self-knowledge, CONTEXT.md, architecture drift | Yes (post-structural-change or weekly) | CONTEXT.md and architecture doc only | No |
 | Comptroller | API cost tracking and budget reporting | Yes (daily/weekly) | Usage store only | No |
+| Lab Assistant | Descriptive monitoring of research data; accepts scrubbed external findings | Yes (daily monitor) | No — JSONL store + inbox flags; findings land in staging | Yes (finding intake) |
 
 ### Shared Artifacts
 

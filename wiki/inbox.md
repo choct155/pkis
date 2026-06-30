@@ -46,3 +46,7 @@ Schema violations and convention issues.
 ## Budget
 Cost alerts from the Comptroller.
 <!-- - [ ] Weekly variable cost $XX.XX — exceeds threshold (date) -->
+
+## Lab
+Descriptive drift flags from the Lab Assistant (idle clusters, stuck staged nodes, hypothesis-status swings). Descriptive only — the human decides what they warrant.
+<!-- - [ ] Cluster `x` idle 30d (date) -->

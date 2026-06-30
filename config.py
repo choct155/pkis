@@ -43,7 +43,8 @@ SEMANTIC_SEARCH = os.environ.get("PKIS_SEMANTIC_SEARCH", "1") != "0"
 KNOWLEDGE_DIRS = [
     "concepts", "techniques", "results",
     "frameworks", "problems", "principles", "sources",
-    "hypotheses", "clusters", "assets", "bridge-notes", "discovery"
+    "hypotheses", "clusters", "assets", "bridge-notes", "discovery",
+    "findings",
 ]
 
 FOLDER_TO_TYPE = {
@@ -59,6 +60,7 @@ FOLDER_TO_TYPE = {
     "assets":      "asset",
     "bridge-notes": "bridge-note",
     "discovery":   "discovery-stub",
+    "findings":    "finding",
 }
 
 TYPE_TO_FOLDER = {v: k for k, v in FOLDER_TO_TYPE.items()}
@@ -87,6 +89,7 @@ EDGE_WEIGHTS = {
     "contrasts-with": 0.2,
     "analogous-to": 0.3,  # structural analogy across domains (same structure, different mechanism)
     "illustrated-by": 0.3,  # subject is illustrated/explained by an asset (interactive explainer/viz)
+    "evidence-for": 0.5,  # a Finding node is empirical evidence bearing on a Hypothesis (Finding -> Hypothesis)
 }
 
 # Trusted client token — set via env var in production

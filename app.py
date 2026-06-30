@@ -2026,6 +2026,32 @@ def tool_get_health_metrics() -> dict:
     }
 
 
+def _lab_monitor_mod():
+    """Lazy-load tools/lab_monitor.py (kept decoupled from app for cheap scheduling)."""
+    tools_dir = os.path.join(os.path.dirname(os.path.realpath(__file__)), "tools")
+    if tools_dir not in sys.path:
+        sys.path.insert(0, tools_dir)
+    import lab_monitor
+    return lab_monitor
+
+
+def tool_get_lab_report() -> dict:
+    """The PKIS Lab Assistant's known analytical access point: a DESCRIPTIVE snapshot
+    of the wiki's research-data health (node counts, coverage, hypothesis-status
+    distribution, cluster staleness, staged-node throughput) computed live, plus drift
+    flags vs the most recent stored monitoring snapshot. Read-only and descriptive — it
+    never evaluates hypotheses, changes research state, or asserts causality."""
+    lm = _lab_monitor_mod()
+    snapshot = lm.compute_snapshot(WIKI_DIR, REPO_DIR)
+    lab_dir = Path(os.environ.get("PKIS_LAB_DIR", "/home/pkis/lab"))
+    prev = lm.load_previous(lab_dir)
+    return {
+        "snapshot": snapshot,
+        "drift_flags": lm.detect_drift(prev, snapshot),
+        "previous_snapshot_at": (prev or {}).get("generated_at"),
+    }
+
+
 def tool_get_sourceless_stubs() -> list:
     """List live knowledge nodes flagged needs_canonical_source: true.
 
@@ -2665,6 +2691,160 @@ def tool_create_hypothesis(
         "iri": f"pkis:hypothesis:{slug}",
         "knowledge_type": "hypothesis",
         "cluster": cluster_slug,
+        "review_url": f"{REPO_WEB_BASE}/blob/main/wiki/staging/{staged_path.name}",
+    }
+
+
+def tool_create_finding_stub(
+    finding_id: str = "",
+    generated_at: str = "",
+    hypothesis_ref: str = "",
+    summary: str = "",
+    statistics: dict = None,
+    stratification: dict = None,
+    source_pointer: dict = None,
+    slug: str = "",
+) -> dict:
+    """Accept a SCRUBBED, AGGREGATE finding object produced by an external experimental
+    system (initially OpGraph) and stage it as a `finding` node attached to a live PKIS
+    hypothesis via an `evidence-for` edge. This is a narrow, content-restricted inbound
+    gate — PKIS stays unaware of the producing system beyond "accept an object matching
+    this schema."
+
+    Trust boundary (deliberate): PKIS validates ONLY (a) schema conformance and (b) that
+    `hypothesis_ref` resolves to an existing LIVE hypothesis. It does NOT recompute or
+    verify the statistics, and does NOT scrub for identifying content — the producer is
+    responsible for scrubbing (it alone holds the entity registry), and the human staging
+    review is the actual content gate. Promote via commit_staged_node (lands in
+    wiki/findings/)."""
+    statistics = statistics or {}
+    stratification = stratification or {}
+    source_pointer = source_pointer or {}
+
+    # ---- (a) schema conformance ----
+    missing = [f for f, v in (
+        ("finding_id", finding_id), ("generated_at", generated_at),
+        ("hypothesis_ref", hypothesis_ref), ("summary", summary),
+    ) if not v]
+    if missing:
+        raise ValueError(f"finding object missing required field(s): {', '.join(missing)}")
+    if not isinstance(statistics, dict) or not statistics:
+        raise ValueError("statistics must be a non-empty object")
+    if not isinstance(stratification, dict):
+        raise ValueError("stratification must be an object")
+    if not isinstance(source_pointer, dict) or not source_pointer.get("system"):
+        raise ValueError("source_pointer must be an object with at least a 'system' field")
+
+    # ---- (b) hypothesis_ref must resolve to a LIVE hypothesis ----
+    try:
+        _ns, _ntype, hyp_slug = parse_iri(hypothesis_ref)
+    except Exception:
+        raise ValueError(f"hypothesis_ref is not a valid IRI: {hypothesis_ref!r}")
+    if _ntype != "hypothesis":
+        raise ValueError(f"hypothesis_ref must be a hypothesis IRI (pkis:hypothesis:...); got {hypothesis_ref!r}")
+    hyp_path = find_node_path_by_iri(hypothesis_ref)
+    if not hyp_path:
+        raise ValueError(f"hypothesis_ref does not resolve to a live node: {hypothesis_ref}")
+    # inherit domain from the target hypothesis so the finding shares its facets
+    try:
+        hyp_domain = frontmatter.load(str(hyp_path)).metadata.get("domain", []) or []
+    except Exception:
+        hyp_domain = []
+
+    # ---- slug: deterministic + collision-safe ----
+    strategy = str(statistics.get("strategy", "")).strip()
+    metric = str(statistics.get("metric", "")).strip()
+    gen_date = (generated_at or "")[:10]
+    base = "-".join(p for p in ["finding", hyp_slug, strategy, metric, gen_date] if p)
+    base_slug = re.sub(r'[^a-z0-9]+', '-', base.lower()).strip('-')[:70] or "finding-stub"
+    slug = slug or base_slug
+    counter = 1
+    while (STAGING_DIR / f"{slug}.md").exists() or find_node_path(slug):
+        slug = f"{base_slug}-{counter}"
+        counter += 1
+
+    staged_id = str(uuid.uuid4())
+    now = datetime.now(timezone.utc)
+    ts_str = now.strftime("%Y-%m-%dT%H:%M:%SZ")
+    date_str = now.strftime("%Y-%m-%d")
+
+    comparison = str(statistics.get("comparison_strategy", "")).strip()
+    title_core = f"{strategy} vs {comparison}" if (strategy and comparison) else (strategy or "result")
+    title = f"Finding: {title_core}{f' — {metric}' if metric else ''}"
+    source_system = source_pointer.get("system", "")
+    tags = [t for t in [source_system, strategy] if t]
+
+    fm = {
+        "staged_at": ts_str,
+        "staged_by": "mcp-create-finding-stub",
+        "staged_id": staged_id,
+        "review_status": "pending",
+        "proposed_edges": [],
+        "id": f"pkis:finding:{slug}",
+        "aliases": [],
+        "title": title,
+        "knowledge_type": "finding",
+        "domain": hyp_domain,
+        "tags": tags,
+        "date_created": date_str,
+        "date_updated": date_str,
+        "maturity": "evolving",
+        "finding_id": finding_id,
+        "generated_at": generated_at,
+        "summary": summary,
+        "statistics": statistics,
+        "stratification": stratification,
+        "source_system": source_system,
+        "source_run_id": source_pointer.get("run_id", ""),
+        "source_log_date_range": source_pointer.get("log_date_range", []),
+        "evidence-for": [hyp_slug],
+    }
+
+    stats_lines = "\n".join(f"- **{k}**: {v}" for k, v in statistics.items()) or "[none]"
+    strat_lines = "\n".join(f"- **{k}**: {v}" for k, v in stratification.items()) or "[none]"
+    body = f"""## Summary
+{summary}
+
+## Statistics
+{stats_lines}
+
+**Stratification:**
+{strat_lines}
+
+## Provenance
+- **Source system:** {source_system or '[unknown]'}
+- **Run ID:** {source_pointer.get('run_id', '') or '[none]'}
+- **Log date range:** {source_pointer.get('log_date_range', []) or '[none]'}
+- **Generated at:** {generated_at}
+- **Finding ID:** {finding_id}
+
+PKIS validated only the schema and that the target hypothesis is live; it did not
+recompute or verify these statistics. Trust is established at human staging review.
+
+## Connections
+- [[{hyp_slug}]] — evidence-for: empirical evidence bearing on this hypothesis
+"""
+
+    STAGING_DIR.mkdir(parents=True, exist_ok=True)
+    staged_path = STAGING_DIR / f"{slug}.md"
+    staged_path.write_text(f"---\n{yaml.dump(fm, default_flow_style=False, allow_unicode=True, sort_keys=False)}---\n\n{body}")
+
+    log_path = WIKI_DIR / "log.md"
+    with open(log_path, "a") as lf:
+        lf.write(
+            f"\n## [{date_str}] staged | finding\n"
+            f"- Staged: {slug} (id: {staged_id})\n"
+            f"- Evidence for: {hyp_slug}\n"
+            f"- Source: {source_system or '(unknown)'} run {source_pointer.get('run_id', '') or '(none)'}\n"
+        )
+
+    return {
+        "staged_id": staged_id,
+        "staged_at": ts_str,
+        "slug": slug,
+        "iri": f"pkis:finding:{slug}",
+        "knowledge_type": "finding",
+        "hypothesis_ref": hypothesis_ref,
         "review_url": f"{REPO_WEB_BASE}/blob/main/wiki/staging/{staged_path.name}",
     }
 
@@ -4506,6 +4686,7 @@ def tool_get_write_schema() -> dict:
             "contrasts-with": "subject is meaningfully opposed/compared to target",
             "analogous-to": "subject is structurally analogous to target (same structure, different mechanism/domain)",
             "illustrated-by": "subject is illustrated/explained by target (an interactive asset: explainer or visualization)",
+            "evidence-for": "subject (a finding) is empirical evidence bearing on target (a hypothesis)",
         },
         "node_frontmatter_fields": {
             "title": "str (required)",
@@ -4539,6 +4720,12 @@ def tool_get_write_schema() -> dict:
                 "required": ["title"],
                 "optional": ["slug", "domain", "tags", "formal_statement", "motivation", "current_evidence", "open_questions", "aliases", "cluster", "role", "dependent_nodes"],
                 "notes": "No connections param — use add_connections after commit.",
+            },
+            "create_finding_stub": {
+                "creates": "staged finding node (evidence-for a live hypothesis), from a scrubbed external aggregate result",
+                "required": ["finding_id", "generated_at", "hypothesis_ref", "summary", "statistics", "source_pointer"],
+                "optional": ["stratification", "slug"],
+                "notes": "Inbound gate. Validates schema + that hypothesis_ref resolves to a live hypothesis ONLY; never recomputes stats, never scrubs content (producer scrubs; human review is the gate). domain inherited from the hypothesis.",
             },
             "create_bridge_note": {
                 "creates": "staged bridge note linking >=2 nodes",
@@ -4692,6 +4879,11 @@ def _get_tools_list():
             "inputSchema": {"type": "object", "properties": {}}
         },
         {
+            "name": "get_lab_report",
+            "description": "PKIS Lab Assistant descriptive report: a live snapshot of research-data health (node counts, coverage, hypothesis-status distribution, cluster staleness, staged-node throughput) plus drift flags vs the last stored monitoring snapshot. Descriptive only — never evaluates hypotheses or changes research state.",
+            "inputSchema": {"type": "object", "properties": {}}
+        },
+        {
             "name": "get_sourceless_stubs",
             "description": "List live knowledge nodes flagged needs_canonical_source — stubs created before a canonical source was attached. Each carries any reference suggestions captured at creation so a source can be found and attached.",
             "inputSchema": {"type": "object", "properties": {}}
@@ -4831,6 +5023,24 @@ def _get_tools_list():
             }
         },
         {
+            "name": "create_finding_stub",
+            "description": "Accept a SCRUBBED, AGGREGATE finding object from an external experimental system (initially OpGraph) and stage it as a `finding` node attached to a live PKIS hypothesis via an `evidence-for` edge. Narrow inbound gate: PKIS validates only schema conformance and that hypothesis_ref resolves to a live hypothesis — it never recomputes/verifies the statistics and never scrubs for identifying content (the producer scrubs; human staging review is the content gate). Promote with commit_staged_node; lands in wiki/findings/.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "finding_id": {"type": "string", "description": "UUID of the finding in the producing system"},
+                    "generated_at": {"type": "string", "description": "ISO 8601 timestamp when the producer computed the finding"},
+                    "hypothesis_ref": {"type": "string", "description": "IRI of the live PKIS hypothesis this is evidence for, e.g. pkis:hypothesis:intensional-grounding-ned-accuracy"},
+                    "summary": {"type": "string", "description": "Plain-language, already-scrubbed summary"},
+                    "statistics": {"type": "object", "description": "Aggregate statistics only (e.g. strategy, comparison_strategy, metric, value, comparison_value, n, confidence_interval)"},
+                    "stratification": {"type": "object", "description": "Structural/methodological strata only (e.g. mention_type) — never content-identifying"},
+                    "source_pointer": {"type": "object", "description": "{system, run_id, log_date_range} — a citation back to the producer, not a reproduction of its data"},
+                    "slug": {"type": "string", "description": "Optional explicit slug; derived otherwise"}
+                },
+                "required": ["finding_id", "generated_at", "hypothesis_ref", "summary", "statistics", "source_pointer"]
+            }
+        },
+        {
             "name": "edit_node",
             "description": "Edit a LIVE node's frontmatter fields and/or named body sections, then commit + push. frontmatter_updates merges {field: value} into frontmatter (null value deletes a field); section_updates replaces the body under each `## Section Title` (or appends the section if absent). Covers what add_connections cannot — e.g. setting a cluster's frontier_hypotheses and rewriting its Current Frontier. date_updated is bumped automatically.",
             "inputSchema": {
@@ -4857,7 +5067,7 @@ def _get_tools_list():
                             "properties": {
                                 "subject": {"type": "string", "description": "IRI or slug of the node the edge originates from"},
                                 "target": {"type": "string", "description": "IRI or slug of the node the edge points to (must be live)"},
-                                "predicate": {"type": "string", "enum": ["prerequisite-of", "uses", "specializes", "generalizes", "extends", "applies", "instantiates", "contrasts-with", "analogous-to", "illustrated-by"]},
+                                "predicate": {"type": "string", "enum": ["prerequisite-of", "uses", "specializes", "generalizes", "extends", "applies", "instantiates", "contrasts-with", "analogous-to", "illustrated-by", "evidence-for"]},
                                 "note": {"type": "string", "description": "One-sentence rationale for the connection"}
                             },
                             "required": ["subject", "target", "predicate"]
@@ -5202,6 +5412,7 @@ READ_TOOLS = {
             cluster=p.get("cluster")
         ),
         "get_health_metrics": lambda p: tool_get_health_metrics(),
+        "get_lab_report": lambda p: tool_get_lab_report(),
         "get_sourceless_stubs": lambda p: tool_get_sourceless_stubs(),
         # Read-only: lists pending staged nodes (no mutation). In READ tier so it
         # works from the claude.ai connector (anonymous reads).
@@ -5276,6 +5487,16 @@ WRITE_TOOLS = {
             open_questions=p.get("open_questions", ""),
             dependent_nodes=p.get("dependent_nodes"),
             aliases=p.get("aliases"),
+            slug=p.get("slug", ""),
+        ),
+        "create_finding_stub": lambda p: tool_create_finding_stub(
+            finding_id=p.get("finding_id", ""),
+            generated_at=p.get("generated_at", ""),
+            hypothesis_ref=p.get("hypothesis_ref", ""),
+            summary=p.get("summary", ""),
+            statistics=p.get("statistics"),
+            stratification=p.get("stratification"),
+            source_pointer=p.get("source_pointer"),
             slug=p.get("slug", ""),
         ),
         "edit_node": lambda p: tool_edit_node(
