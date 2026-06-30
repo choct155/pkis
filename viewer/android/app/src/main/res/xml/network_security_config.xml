@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Allow cleartext (plain HTTP) ONLY to the PKIS backend on dev hosts. Android 9+
+  (targetSdk 36) blocks cleartext by default; in dev the app talks to Flask over
+  http://<workstation>:5000, so those hosts are whitelisted here while everything
+  else (e.g. https://pkis.dev in prod) stays HTTPS-only. Update the IP if the
+  workstation address changes, then rebuild. Capacitor does NOT regenerate this on
+  `cap sync`, so the edit persists.
+-->
+<network-security-config>
+    <domain-config cleartextTrafficPermitted="true">
+        <domain includeSubdomains="false">10.0.2.2</domain>        <!-- Android emulator → host loopback -->
+        <domain includeSubdomains="false">localhost</domain>
+        <domain includeSubdomains="false">100.119.73.83</domain>   <!-- workstation Tailscale IP -->
+        <domain includeSubdomains="false">192.168.68.64</domain>   <!-- workstation LAN IP -->
+    </domain-config>
+</network-security-config>

@@ -10,6 +10,8 @@ Wiki source: /home/pkis/pkis-wiki/wiki/
 """
 
 import os
+import base64
+import secrets
 import sqlite3
 import sys
 import time
@@ -383,6 +385,176 @@ def _coalesced_refresh(cookie: str, session):
         conn.close()
 
 
+# ============================================================
+# Native-app bearer tokens (Capacitor APK). PKIS mints these AFTER a WorkOS login
+# (the web callback hands the app a one-time code over the com.pkis.app:// deep
+# link; the app exchanges it here for an access+refresh pair, binding the exchange
+# with PKCE so only the app instance that started the flow can redeem it). Tokens
+# are opaque random strings, persisted only as SHA-256 hashes — the plaintext is
+# never stored. Role is resolved LIVE from the allowlist at validation time, so
+# allowlist edits and revocation take effect immediately. Mirrors the _refresh_db
+# SQLite pattern. DORMANT unless NATIVE_AUTH_ENABLED (WorkOS web auth configured).
+# ============================================================
+
+def _hash_token(tok: str) -> str:
+    return hashlib.sha256(tok.encode()).hexdigest()
+
+
+def _pkce_challenge(verifier: str) -> str:
+    """S256 PKCE: base64url(sha256(verifier)) without padding (RFC 7636)."""
+    digest = hashlib.sha256(verifier.encode()).digest()
+    return base64.urlsafe_b64encode(digest).rstrip(b"=").decode()
+
+
+def _native_db():
+    NATIVE_TOKEN_DB.parent.mkdir(parents=True, exist_ok=True)
+    conn = sqlite3.connect(str(NATIVE_TOKEN_DB), timeout=6)
+    conn.execute("PRAGMA journal_mode=WAL;")
+    conn.execute("PRAGMA busy_timeout=6000;")
+    conn.execute("CREATE TABLE IF NOT EXISTS native_pending ("
+                 "state TEXT PRIMARY KEY, challenge TEXT, ts REAL)")
+    conn.execute("CREATE TABLE IF NOT EXISTS native_codes ("
+                 "code_hash TEXT PRIMARY KEY, email TEXT, challenge TEXT, ts REAL)")
+    conn.execute("CREATE TABLE IF NOT EXISTS native_tokens ("
+                 "access_hash TEXT PRIMARY KEY, refresh_hash TEXT UNIQUE, email TEXT, "
+                 "issued REAL, access_exp REAL, refresh_exp REAL, revoked INTEGER DEFAULT 0)")
+    return conn
+
+
+def _native_register_challenge(challenge: str) -> str:
+    """Store a PKCE challenge under a fresh state nonce (carried through WorkOS as
+    `native:<nonce>`); return the nonce. Garbage-collects stale pending rows."""
+    nonce = secrets.token_urlsafe(24)
+    now = time.time()
+    conn = _native_db()
+    try:
+        conn.execute("INSERT INTO native_pending (state, challenge, ts) VALUES (?,?,?)",
+                     (nonce, challenge, now))
+        conn.execute("DELETE FROM native_pending WHERE ts < ?", (now - NATIVE_CODE_TTL,))
+        conn.commit()
+    finally:
+        conn.close()
+    return nonce
+
+
+def _native_consume_challenge(nonce: str) -> Optional[str]:
+    """Pop (one-time) the PKCE challenge for a pending nonce, or None if missing/expired."""
+    now = time.time()
+    conn = _native_db()
+    try:
+        conn.execute("BEGIN IMMEDIATE")
+        row = conn.execute("SELECT challenge, ts FROM native_pending WHERE state=?",
+                           (nonce,)).fetchone()
+        conn.execute("DELETE FROM native_pending WHERE state=?", (nonce,))
+        conn.commit()
+        if not row or (now - row[1]) > NATIVE_CODE_TTL:
+            return None
+        return row[0]
+    finally:
+        conn.close()
+
+
+def _native_issue_code(email: str, challenge: str) -> str:
+    """Mint a one-time auth code bound to (email, PKCE challenge); return the plaintext."""
+    code = secrets.token_urlsafe(32)
+    now = time.time()
+    conn = _native_db()
+    try:
+        conn.execute("INSERT INTO native_codes (code_hash, email, challenge, ts) VALUES (?,?,?,?)",
+                     (_hash_token(code), email, challenge, now))
+        conn.execute("DELETE FROM native_codes WHERE ts < ?", (now - NATIVE_CODE_TTL,))
+        conn.commit()
+    finally:
+        conn.close()
+    return code
+
+
+def _native_mint(conn, email: str) -> tuple:
+    """Insert a fresh access+refresh pair for `email` on an open connection; return
+    (access_plaintext, refresh_plaintext, access_exp)."""
+    now = time.time()
+    access = secrets.token_urlsafe(32)
+    refresh = secrets.token_urlsafe(32)
+    a_exp = now + NATIVE_ACCESS_TTL
+    conn.execute(
+        "INSERT INTO native_tokens (access_hash, refresh_hash, email, issued, "
+        "access_exp, refresh_exp, revoked) VALUES (?,?,?,?,?,?,0)",
+        (_hash_token(access), _hash_token(refresh), email, now, a_exp, now + NATIVE_REFRESH_TTL))
+    return access, refresh, a_exp
+
+
+def _native_redeem_code(code: str, verifier: str) -> Optional[tuple]:
+    """Validate a one-time code + PKCE verifier; on success mint a token pair and
+    return (access, refresh, access_exp). One-time: the code is consumed either way."""
+    now = time.time()
+    expected = _pkce_challenge(verifier)
+    conn = _native_db()
+    try:
+        conn.execute("BEGIN IMMEDIATE")
+        row = conn.execute("SELECT email, challenge, ts FROM native_codes WHERE code_hash=?",
+                           (_hash_token(code),)).fetchone()
+        conn.execute("DELETE FROM native_codes WHERE code_hash=?", (_hash_token(code),))
+        if not row or (now - row[2]) > NATIVE_CODE_TTL or not secrets.compare_digest(row[1], expected):
+            conn.commit()
+            return None
+        out = _native_mint(conn, row[0])
+        conn.commit()
+        return out
+    finally:
+        conn.close()
+
+
+def _native_rotate(refresh: str) -> Optional[tuple]:
+    """Rotate a valid (unexpired, not revoked) refresh token: revoke the old row and
+    mint a new pair for the same email. Returns (access, refresh, access_exp) or None."""
+    now = time.time()
+    conn = _native_db()
+    try:
+        conn.execute("BEGIN IMMEDIATE")
+        row = conn.execute(
+            "SELECT email, refresh_exp, revoked FROM native_tokens WHERE refresh_hash=?",
+            (_hash_token(refresh),)).fetchone()
+        if not row or row[2] or row[1] < now:
+            conn.commit()
+            return None
+        conn.execute("UPDATE native_tokens SET revoked=1 WHERE refresh_hash=?",
+                     (_hash_token(refresh),))
+        out = _native_mint(conn, row[0])
+        # prune fully-dead rows (refresh expired, or revoked + access also expired)
+        conn.execute("DELETE FROM native_tokens WHERE refresh_exp < ? OR (revoked=1 AND access_exp < ?)",
+                     (now, now))
+        conn.commit()
+        return out
+    finally:
+        conn.close()
+
+
+def _native_resolve(access: str) -> Optional[str]:
+    """Email for a valid (unexpired, not revoked) native access token, else None."""
+    now = time.time()
+    conn = _native_db()
+    try:
+        row = conn.execute(
+            "SELECT email, access_exp, revoked FROM native_tokens WHERE access_hash=?",
+            (_hash_token(access),)).fetchone()
+        if not row or row[2] or row[1] < now:
+            return None
+        return row[0]
+    finally:
+        conn.close()
+
+
+def _native_revoke(access: str) -> None:
+    """Revoke the token row for an access token (logout). Idempotent."""
+    conn = _native_db()
+    try:
+        conn.execute("UPDATE native_tokens SET revoked=1 WHERE access_hash=?",
+                     (_hash_token(access),))
+        conn.commit()
+    finally:
+        conn.close()
+
+
 @app.before_request
 def _load_web_session():
     """Populate g.web_identity = (sub, role) from the sealed-session cookie, with
@@ -434,6 +606,23 @@ def web_identity(req=None) -> Optional[tuple]:
     return getattr(g, "web_identity", None)
 
 
+def native_identity(req):
+    """(email, role) for a valid native-app bearer access token, else None. No-op
+    when native auth is off or the bearer is a static key. Role is resolved LIVE
+    from the allowlist, so revocation + role edits apply immediately. This is the
+    native-client analogue of web_identity (an interactive user session), so it is
+    wired into the same gates web_identity is — NOT into is_trusted (the M2M tier)."""
+    if not NATIVE_AUTH_ENABLED:
+        return None
+    tok = _bearer(req)
+    if not tok or tok == WRITE_KEY or tok == TRUSTED_TOKEN:
+        return None
+    email = _native_resolve(tok)
+    if not email:
+        return None
+    return (email, _role_for_email(email))
+
+
 def require_write(fn):
     """Gate a REST write route: 401 if not signed in, 403 if signed in but lacking
     write role. The MCP dispatch path gates itself and is unaffected. The static
@@ -444,6 +633,7 @@ def require_write(fn):
             return fn(*args, **kwargs)
         anon = (web_identity(request) is None
                 and oauth_identity(request) is None
+                and native_identity(request) is None
                 and not _has_static_key(request))
         if anon:
             return jsonify({"error": "sign in required"}), 401
@@ -461,27 +651,34 @@ def is_trusted(req) -> bool:
 
 def is_write_authorized(req) -> bool:
     """Write tier: static WRITE_KEY, an OAuth 'owner'/'writer' (Bearer JWT, MCP),
-    or a signed-in web 'owner'/'writer' (sealed session)."""
+    a signed-in web 'owner'/'writer' (sealed session), or a native-app
+    'owner'/'writer' (bearer access token)."""
     if WRITE_KEY and _bearer(req) == WRITE_KEY:
         return True
     ident = oauth_identity(req)
     if ident and ident[1] in ("owner", "writer"):
         return True
     wident = web_identity(req)
-    return bool(wident and wident[1] in ("owner", "writer"))
+    if wident and wident[1] in ("owner", "writer"):
+        return True
+    nident = native_identity(req)
+    return bool(nident and nident[1] in ("owner", "writer"))
 
 
 def is_owner(req) -> bool:
     """Owner tier — gates ADMINISTRATIVE surfaces (the inbox). Static TRUSTED_TOKEN,
-    an OAuth 'owner', or a web sealed session with the 'owner' role. Note: 'writer'
-    does NOT qualify — the inbox is owner-only."""
+    an OAuth 'owner', a web sealed session with the 'owner' role, or a native-app
+    'owner'. Note: 'writer' does NOT qualify — the inbox is owner-only."""
     if TRUSTED_TOKEN and _bearer(req) == TRUSTED_TOKEN:
         return True
     ident = oauth_identity(req)
     if ident and ident[1] == "owner":
         return True
     wident = web_identity(req)
-    return bool(wident and wident[1] == "owner")
+    if wident and wident[1] == "owner":
+        return True
+    nident = native_identity(req)
+    return bool(nident and nident[1] == "owner")
 
 
 def gate_error(req, tier: str) -> PermissionError:
@@ -5881,14 +6078,29 @@ def pkis_api_auth_callback():
     if not code:
         return jsonify({"error": "missing code"}), 400
     state = request.args.get("state") or "/app/"
+    # Native (Capacitor) sign-in carries `state = "native:<nonce>"`. Instead of
+    # sealing a cookie (the APK's WebView can't receive one), we hand the app a
+    # one-time code over the com.pkis.app:// deep link, which it redeems at
+    # /auth/native/token for a PKIS bearer pair. Falls back to the web flow.
+    native_nonce = state[len("native:"):] if state.startswith("native:") else None
     dest = state if state.startswith("/app") else "/app/"
     try:
+        res = _get_workos().user_management.authenticate_with_code(code=code)
+        if native_nonce is not None:
+            cb = f"{NATIVE_APP_SCHEME}://auth-callback"
+            challenge = _native_consume_challenge(native_nonce)
+            identity = _identity_from_user(getattr(res, "user", None))
+            if not challenge or not identity:
+                logger.warning("native sign-in: %s", "expired/unknown state" if not challenge else "no identity")
+                return redirect(f"{cb}?error={'expired' if not challenge else 'identity'}")
+            auth_code = _native_issue_code(identity[0], challenge)
+            logger.info("native sign-in OK: user=%s", getattr(res.user, "email", "?"))
+            return redirect(f"{cb}?code={urllib.parse.quote(auth_code)}")
         # workos 8.x: authenticate_with_code returns the tokens; we seal the session
         # CLIENT-SIDE with the SDK's own helper (Fernet, keyed by WORKOS_COOKIE_PASSWORD)
         # so it round-trips exactly with load_sealed_session/unseal_data on every read.
         # (The earlier request_raw seal_session approach never produced a usable cookie.)
         from workos.session import seal_session_from_auth_response
-        res = _get_workos().user_management.authenticate_with_code(code=code)
         sealed = seal_session_from_auth_response(
             access_token=res.access_token,
             refresh_token=res.refresh_token,
@@ -5914,6 +6126,7 @@ def pkis_api_inbox():
     if not is_owner(request):
         anon = (web_identity(request) is None
                 and oauth_identity(request) is None
+                and native_identity(request) is None
                 and not _has_static_key(request))
         return (jsonify({"error": "sign in required"}), 401) if anon \
             else (jsonify({"error": "owner only — this surface is administrative"}), 403)
@@ -5923,7 +6136,8 @@ def pkis_api_inbox():
 
 @app.route("/pkis-api/auth/me", methods=["GET"])
 def pkis_api_auth_me():
-    ident = web_identity(request)
+    # Web sealed-session OR native bearer token — both resolve to (id, role).
+    ident = web_identity(request) or native_identity(request)
     if not ident:
         return jsonify({"authenticated": False, "role": "reader"})
     sub, role = ident
@@ -5935,6 +6149,73 @@ def pkis_api_auth_logout():
     resp = make_response(jsonify({"ok": True}))
     resp.delete_cookie(WEB_SESSION_COOKIE)
     return resp
+
+
+# ── Native-app sign-in (Capacitor APK; PKIS-minted bearer tokens) ─────────────
+@app.route("/pkis-api/auth/native/start", methods=["GET"])
+def pkis_api_auth_native_start():
+    """Begin native sign-in. The app passes a PKCE `challenge` (S256); we stash it
+    under a nonce carried through WorkOS as `state=native:<nonce>`, then redirect to
+    the WorkOS hosted login. After login, /auth/callback hands the app a one-time
+    code on the com.pkis.app:// deep link."""
+    if not NATIVE_AUTH_ENABLED:
+        return jsonify({"error": "native auth not configured"}), 503
+    challenge = request.args.get("challenge", "")
+    if not challenge:
+        return jsonify({"error": "missing challenge"}), 400
+    try:
+        nonce = _native_register_challenge(challenge)
+        url = _get_workos().user_management.get_authorization_url(
+            provider="authkit",
+            redirect_uri=WORKOS_REDIRECT_URI,
+            state=f"native:{nonce}",
+        )
+        return redirect(url)
+    except Exception as e:
+        return _api_err(e, 500)
+
+
+@app.route("/pkis-api/auth/native/token", methods=["POST"])
+def pkis_api_auth_native_token():
+    """Exchange a one-time auth code + PKCE verifier for a PKIS bearer pair."""
+    if not NATIVE_AUTH_ENABLED:
+        return jsonify({"error": "native auth not configured"}), 503
+    b = request.get_json(silent=True) or {}
+    code, verifier = b.get("code", ""), b.get("verifier", "")
+    if not code or not verifier:
+        return jsonify({"error": "missing code or verifier"}), 400
+    out = _native_redeem_code(code, verifier)
+    if not out:
+        return jsonify({"error": "invalid or expired code"}), 401
+    access, refresh, access_exp = out
+    return jsonify({"access_token": access, "refresh_token": refresh,
+                    "expires_in": int(access_exp - time.time())})
+
+
+@app.route("/pkis-api/auth/native/refresh", methods=["POST"])
+def pkis_api_auth_native_refresh():
+    """Rotate a refresh token for a fresh access+refresh pair (old refresh revoked)."""
+    if not NATIVE_AUTH_ENABLED:
+        return jsonify({"error": "native auth not configured"}), 503
+    b = request.get_json(silent=True) or {}
+    refresh = b.get("refresh_token", "")
+    if not refresh:
+        return jsonify({"error": "missing refresh_token"}), 400
+    out = _native_rotate(refresh)
+    if not out:
+        return jsonify({"error": "invalid or expired refresh_token"}), 401
+    access, new_refresh, access_exp = out
+    return jsonify({"access_token": access, "refresh_token": new_refresh,
+                    "expires_in": int(access_exp - time.time())})
+
+
+@app.route("/pkis-api/auth/native/logout", methods=["POST"])
+def pkis_api_auth_native_logout():
+    """Revoke the presented native access token (best-effort; idempotent)."""
+    tok = _bearer(request)
+    if tok:
+        _native_revoke(tok)
+    return jsonify({"ok": True})
 
 
 @app.route("/pkis-api/cluster-priorities", methods=["POST"])
