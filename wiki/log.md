@@ -26684,3 +26684,7 @@
 ## [2026-07-04] committed | resource
 - Committed: openwiki → resources/openwiki.md
 - IRI: pkis:resource:openwiki
+
+## [2026-07-04] committed | framework
+- Committed: musical-preference-ontology → frameworks/musical-preference-ontology.md
+- IRI: pkis:framework:musical-preference-ontology

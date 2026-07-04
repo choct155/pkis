@@ -2098,6 +2098,7 @@
 - [[government-debt-valuation-equation]] — FTPL: price level determined by ratio of nominal debt to expected present value of future surpluses (macroeconomics) (2026-05-20)
 
 ## Frameworks
+- [[musical-preference-ontology]] — Musical Preference Ontology (knowledge-representation, personal-epistemology, music) (2026-07-04)
 - [[musical-preference-ontology-1]] — Musical Preference Ontology (knowledge-representation, personal-epistemology, music) (2026-06-28)
 - [[passive-instrumentation-quality-measurement]] — Passive Instrumentation Strategy for Quality Measurement (bayesian-stats, knowledge-representation) (2026-06-20)
 - [[llm-as-judge-silver-gold-ppi-framework]] — LLM-as-Judge Silver/Gold Calibration Framework (PPI) (bayesian-stats, knowledge-representation) (2026-06-20)
