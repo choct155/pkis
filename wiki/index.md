@@ -1,6 +1,7 @@
 # PKIS Wiki Index
 
 ## Sources
+- [[tang-dream-2026]] — DREAM: Dense Retrieval Embeddings via Autoregressive Modeling () (2026-07-04)
 - [[openwiki]] — OpenWiki (knowledge-representation, symbolic-subsymbolic) (2026-07-04)
 - [[tang-dream-2026]] — DREAM: Dense Retrieval Embeddings via Autoregressive Modeling () (2026-07-04)
 - [[jospin-handson-2022]] — Hands-On Bayesian Neural Networks—A Tutorial for Deep Learning Users () (2026-06-22)
