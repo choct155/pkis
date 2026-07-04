@@ -26675,3 +26675,7 @@
 
 ## [2026-06-30] edit | edit_node
 - pkis:hypothesis:intensional-grounding-ned-accuracy: fields=[] sections=['Current Evidence', 'Open Questions']
+
+## [2026-07-04] committed | framework
+- Committed: musical-preference-ontology → frameworks/musical-preference-ontology.md
+- IRI: pkis:framework:musical-preference-ontology
