@@ -26675,3 +26675,12 @@
 
 ## [2026-06-30] edit | edit_node
 - pkis:hypothesis:intensional-grounding-ned-accuracy: fields=[] sections=['Current Evidence', 'Open Questions']
+
+## [2026-07-04] staged | resource
+- Staged: openwiki (id: 4437f350-161d-483b-9ea6-f5fb7feb3f35)
+- URL: https://github.com/langchain-ai/openwiki
+- Type: tool | status: active
+
+## [2026-07-04] committed | resource
+- Committed: openwiki → resources/openwiki.md
+- IRI: pkis:resource:openwiki
