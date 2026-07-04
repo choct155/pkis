@@ -1,6 +1,7 @@
 # PKIS Wiki Index
 
 ## Sources
+- [[tang-dream-2026]] — DREAM: Dense Retrieval Embeddings via Autoregressive Modeling () (2026-07-04)
 - [[jospin-handson-2022]] — Hands-On Bayesian Neural Networks—A Tutorial for Deep Learning Users () (2026-06-22)
 - [[bommasani-on-2021]] — On the Opportunities and Risks of Foundation Models () (2026-06-22)
 - [[petropoulos-forecasting-2022]] — Forecasting: theory and practice () (2026-06-22)
