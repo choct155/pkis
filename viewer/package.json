@@ -12,7 +12,7 @@
     "build:native": "CAP_BUILD=1 vite build",
     "cap:sync": "CAP_BUILD=1 vite build && cap sync android",
     "cap:open": "cap open android",
-    "apk": "VITE_API_BASE_URL=https://pkis.dev CAP_BUILD=1 vite build && cap sync android && cd android && ./gradlew assembleDebug",
+    "apk": "VITE_API_BASE_URL=https://pkis.clowderpack.dev CAP_BUILD=1 vite build && cap sync android && cd android && ./gradlew assembleDebug",
     "apk:dev": "VITE_API_BASE_URL=http://10.0.2.2:5000 CAP_BUILD=1 vite build && cap sync android && cd android && ./gradlew assembleDebug"
   },
   "dependencies": {
@@ -28,7 +28,8 @@
     "marked": "^12.0.0",
     "pdfjs-dist": "^3.11.174",
     "react": "^18.3.1",
-    "react-dom": "^18.3.1"
+    "react-dom": "^18.3.1",
+    "send-intent": "^7.0.0"
   },
   "devDependencies": {
     "@types/cytoscape": "^3.21.9",

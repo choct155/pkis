@@ -44,7 +44,7 @@ KNOWLEDGE_DIRS = [
     "concepts", "techniques", "results",
     "frameworks", "problems", "principles", "sources",
     "hypotheses", "clusters", "assets", "bridge-notes", "discovery",
-    "findings",
+    "findings", "resources",
 ]
 
 FOLDER_TO_TYPE = {
@@ -61,6 +61,7 @@ FOLDER_TO_TYPE = {
     "bridge-notes": "bridge-note",
     "discovery":   "discovery-stub",
     "findings":    "finding",
+    "resources":   "resource",
 }
 
 TYPE_TO_FOLDER = {v: k for k, v in FOLDER_TO_TYPE.items()}
@@ -90,6 +91,8 @@ EDGE_WEIGHTS = {
     "analogous-to": 0.3,  # structural analogy across domains (same structure, different mechanism)
     "illustrated-by": 0.3,  # subject is illustrated/explained by an asset (interactive explainer/viz)
     "evidence-for": 0.5,  # a Finding node is empirical evidence bearing on a Hypothesis (Finding -> Hypothesis)
+    "implemented-by": 0.6,  # a concept/technique is concretely realized by a Resource (subject -> resource)
+    "superseded-by": 0.5,  # a Resource has been replaced/made obsolete by another Resource (resource -> resource)
 }
 
 # Trusted client token — set via env var in production
@@ -137,6 +140,12 @@ NATIVE_ACCESS_TTL   = int(os.environ.get("PKIS_NATIVE_ACCESS_TTL", str(3600)))  
 NATIVE_REFRESH_TTL  = int(os.environ.get("PKIS_NATIVE_REFRESH_TTL", str(60 * 24 * 3600))) # 60 days
 NATIVE_CODE_TTL     = int(os.environ.get("PKIS_NATIVE_CODE_TTL", str(300)))               # one-time code / pending state: 5 min
 NATIVE_AUTH_ENABLED = WEB_AUTH_ENABLED
+
+# Built viewer SPA (Vite `npm run build`, base '/app/'). On the VPS nginx served this
+# at /app/; on the workstation gunicorn serves it directly (see serve_app in app.py).
+# Override with PKIS_VIEWER_DIST if the build lives elsewhere.
+VIEWER_DIST = Path(os.environ.get(
+    "PKIS_VIEWER_DIST", str(Path(__file__).resolve().parent / "viewer" / "app" / "dist")))
 
 # Document store + Readwise integration
 DOCS_DIR          = Path(os.environ.get("DOCS_DIR", "/home/pkis/docs"))

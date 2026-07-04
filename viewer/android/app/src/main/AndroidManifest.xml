@@ -34,6 +34,17 @@
                 <data android:scheme="com.pkis.app" android:host="auth-callback" />
             </intent-filter>
 
+            <!-- Share target: appear on the Android share sheet for links, text, and
+                 PDFs. The send-intent plugin delivers the payload to JS, which routes
+                 it to the ShareIngest review card (see src/main.tsx). -->
+            <intent-filter>
+                <action android:name="android.intent.action.SEND" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <data android:mimeType="text/plain" />
+                <data android:mimeType="application/pdf" />
+                <data android:mimeType="image/*" />
+            </intent-filter>
+
         </activity>
 
         <provider

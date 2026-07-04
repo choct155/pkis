@@ -2849,6 +2849,116 @@ recompute or verify these statistics. Trust is established at human staging revi
     }
 
 
+RESOURCE_TYPE_VOCAB = ["library", "tool", "platform", "dataset", "documentation", "service"]
+RESOURCE_STATUS_VOCAB = ["active", "unmaintained", "deprecated", "archived"]
+
+
+def tool_create_resource_stub(
+    title: str = "",
+    resource_url: str = "",
+    resource_type: str = "",
+    status: str = "active",
+    last_evaluated: str = "",
+    technological_scope: list = None,
+    domain: list = None,
+    tags: list = None,
+    definition: str = "",
+    summary: str = "",
+    relationship_candidates: str = "",
+    aliases: list = None,
+    slug: str = "",
+) -> dict:
+    """Stage a `resource` node — an external tool, library, platform, dataset,
+    documentation site, or service with a development/maintenance lifecycle. A resource
+    is epistemically distinct from a `source`: it backs "this exists and does X", not
+    "this claim is established". The URL is taken AS-IS — no CrossRef/arXiv/Semantic
+    Scholar enrichment. Operational deployment lives in OpGraph, not here. Body carries
+    ## Summary + ## Relationship Candidates (never ## Key Concepts). Promote via
+    commit_staged_node (lands in wiki/resources/)."""
+    if not title:
+        raise ValueError("title is required")
+    if not resource_url:
+        raise ValueError("resource_url is required for a resource")
+    resource_type = (resource_type or "").strip()
+    if resource_type and resource_type not in RESOURCE_TYPE_VOCAB:
+        raise ValueError(f"resource_type must be one of {RESOURCE_TYPE_VOCAB}; got {resource_type!r}")
+    status = (status or "active").strip()
+    if status not in RESOURCE_STATUS_VOCAB:
+        raise ValueError(f"status must be one of {RESOURCE_STATUS_VOCAB}; got {status!r}")
+
+    domain = domain or []
+    tags = tags or []
+    aliases = aliases or []
+    technological_scope = technological_scope or []
+
+    now = datetime.now(timezone.utc)
+    ts_str = now.strftime("%Y-%m-%dT%H:%M:%SZ")
+    date_str = now.strftime("%Y-%m-%d")
+    last_evaluated = last_evaluated or date_str
+
+    base = slug or title
+    base_slug = re.sub(r'[^a-z0-9]+', '-', base.lower()).strip('-')[:60] or "resource-stub"
+    slug = base_slug
+    counter = 1
+    while (STAGING_DIR / f"{slug}.md").exists() or find_node_path(slug):
+        slug = f"{base_slug}-{counter}"
+        counter += 1
+
+    staged_id = str(uuid.uuid4())
+    fm = {
+        "staged_at": ts_str,
+        "staged_by": "mcp-create-resource-stub",
+        "staged_id": staged_id,
+        "review_status": "pending",
+        "proposed_edges": [],
+        "id": f"pkis:resource:{slug}",
+        "aliases": aliases,
+        "title": title,
+        "knowledge_type": "resource",
+        "domain": domain,
+        "tags": tags,
+        "date_created": date_str,
+        "date_updated": date_str,
+        "maturity": "evolving",
+        "resource_url": resource_url,
+        "resource_type": resource_type or None,
+        "status": status,
+        "last_evaluated": last_evaluated,
+        "technological_scope": technological_scope,
+        "understanding": 0,
+    }
+
+    body = f"""## Summary
+{summary or definition or '[To be filled — what it does, the problem it solves, dependencies, caveats]'}
+
+## Relationship Candidates
+{relationship_candidates or '[To be populated — which concepts/techniques this implements or applies; resources it depends on or competes with]'}
+"""
+
+    STAGING_DIR.mkdir(parents=True, exist_ok=True)
+    staged_path = STAGING_DIR / f"{slug}.md"
+    staged_path.write_text(f"---\n{yaml.dump(fm, default_flow_style=False, allow_unicode=True, sort_keys=False)}---\n\n{body}")
+
+    log_path = WIKI_DIR / "log.md"
+    with open(log_path, "a") as lf:
+        lf.write(
+            f"\n## [{date_str}] staged | resource\n"
+            f"- Staged: {slug} (id: {staged_id})\n"
+            f"- URL: {resource_url}\n"
+            f"- Type: {resource_type or '(unset)'} | status: {status}\n"
+        )
+
+    return {
+        "staged_id": staged_id,
+        "staged_at": ts_str,
+        "slug": slug,
+        "iri": f"pkis:resource:{slug}",
+        "knowledge_type": "resource",
+        "resource_url": resource_url,
+        "review_url": f"{REPO_WEB_BASE}/blob/main/wiki/staging/{staged_path.name}",
+    }
+
+
 def _replace_section(content: str, section_title: str, new_body: str) -> str:
     """Replace the body under a `## section_title` heading (up to the next `## ` or EOF).
     Append the section if it does not already exist."""
@@ -4626,9 +4736,20 @@ def health():
 
 @app.route("/app", methods=["GET"])
 def app_redirect():
-    """Redirect the no-trailing-slash form to /app/ (nginx serves the viewer at the
-    /app/ alias, so a bare /app would otherwise fall through to a Flask 404)."""
+    """Redirect the no-trailing-slash form to /app/."""
     return redirect("/app/", code=301)
+
+
+@app.route("/app/", defaults={"path": ""}, methods=["GET"])
+@app.route("/app/<path:path>", methods=["GET"])
+def serve_app(path):
+    """Serve the built viewer SPA at /app/. On the VPS this was nginx's job; on the
+    workstation gunicorn serves it directly from VIEWER_DIST. Real asset files are
+    served as-is; unknown paths fall back to index.html so client-side routing works."""
+    dist = VIEWER_DIST
+    if path and (dist / path).is_file():
+        return send_from_directory(str(dist), path)
+    return send_from_directory(str(dist), "index.html")
 
 
 @app.route("/refresh", methods=["POST"])
@@ -4673,6 +4794,8 @@ def tool_get_write_schema() -> dict:
             "source": "Paper/book/chapter — create_source_stub (auto-enriched, staged).",
             "hypothesis": "Research-program hypothesis — create_hypothesis.",
             "bridge-note": "Cross-node insight linking >=2 nodes — create_bridge_note.",
+            "finding": "Scrubbed external aggregate result — create_finding_stub (evidence-for a hypothesis).",
+            "resource": "External tool/library/platform/docs/dataset/service with a lifecycle — create_resource_stub.",
         },
         "edge_predicates": dict(EDGE_WEIGHTS),
         "edge_predicate_definitions": {
@@ -4687,6 +4810,8 @@ def tool_get_write_schema() -> dict:
             "analogous-to": "subject is structurally analogous to target (same structure, different mechanism/domain)",
             "illustrated-by": "subject is illustrated/explained by target (an interactive asset: explainer or visualization)",
             "evidence-for": "subject (a finding) is empirical evidence bearing on target (a hypothesis)",
+            "implemented-by": "subject (a concept/technique) is concretely realized by target (a resource)",
+            "superseded-by": "subject (a resource) has been replaced or made obsolete by target (a resource)",
         },
         "node_frontmatter_fields": {
             "title": "str (required)",
@@ -4726,6 +4851,12 @@ def tool_get_write_schema() -> dict:
                 "required": ["finding_id", "generated_at", "hypothesis_ref", "summary", "statistics", "source_pointer"],
                 "optional": ["stratification", "slug"],
                 "notes": "Inbound gate. Validates schema + that hypothesis_ref resolves to a live hypothesis ONLY; never recomputes stats, never scrubs content (producer scrubs; human review is the gate). domain inherited from the hypothesis.",
+            },
+            "create_resource_stub": {
+                "creates": "staged resource node (external tool/library/platform/docs/dataset/service with a lifecycle)",
+                "required": ["title", "resource_url"],
+                "optional": ["resource_type", "status", "last_evaluated", "technological_scope", "domain", "tags", "summary", "relationship_candidates", "aliases", "slug"],
+                "notes": "URL taken as-is, no enrichment. resource_type ∈ {library,tool,platform,dataset,documentation,service}; status ∈ {active,unmaintained,deprecated,archived}. Body: ## Summary + ## Relationship Candidates (no ## Key Concepts). Deployment lives in OpGraph, not PKIS.",
             },
             "create_bridge_note": {
                 "creates": "staged bridge note linking >=2 nodes",
@@ -5041,6 +5172,29 @@ def _get_tools_list():
             }
         },
         {
+            "name": "create_resource_stub",
+            "description": "Stage a `resource` node — an external tool, library, platform, dataset, documentation site, or service with a development/maintenance lifecycle. Epistemically distinct from a source: a resource backs 'this exists and does X', not 'this claim is established'. The URL is taken AS-IS (no CrossRef/arXiv/Semantic Scholar enrichment). Body carries ## Summary + ## Relationship Candidates (never ## Key Concepts). Operational deployment lives in OpGraph, not PKIS. Promote with commit_staged_node; lands in wiki/resources/.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "title": {"type": "string"},
+                    "resource_url": {"type": "string", "description": "Canonical URL — required; taken as-is"},
+                    "resource_type": {"type": "string", "enum": ["library", "tool", "platform", "dataset", "documentation", "service"]},
+                    "status": {"type": "string", "enum": ["active", "unmaintained", "deprecated", "archived"], "default": "active"},
+                    "last_evaluated": {"type": "string", "description": "ISO date you last assessed it; defaults to ingest date"},
+                    "technological_scope": {"type": "array", "items": {"type": "string"}, "description": "Free tags: language, framework, stack"},
+                    "domain": {"type": "array", "items": {"type": "string"}},
+                    "tags": {"type": "array", "items": {"type": "string"}},
+                    "summary": {"type": "string", "description": "Body for ## Summary (what it does, problem solved, dependencies, caveats)"},
+                    "relationship_candidates": {"type": "string", "description": "Body for ## Relationship Candidates"},
+                    "definition": {"type": "string", "description": "Short description; seeds ## Summary if summary omitted"},
+                    "aliases": {"type": "array", "items": {"type": "string"}},
+                    "slug": {"type": "string", "description": "Optional explicit slug; derived from title otherwise"}
+                },
+                "required": ["title", "resource_url"]
+            }
+        },
+        {
             "name": "edit_node",
             "description": "Edit a LIVE node's frontmatter fields and/or named body sections, then commit + push. frontmatter_updates merges {field: value} into frontmatter (null value deletes a field); section_updates replaces the body under each `## Section Title` (or appends the section if absent). Covers what add_connections cannot — e.g. setting a cluster's frontier_hypotheses and rewriting its Current Frontier. date_updated is bumped automatically.",
             "inputSchema": {
@@ -5067,7 +5221,7 @@ def _get_tools_list():
                             "properties": {
                                 "subject": {"type": "string", "description": "IRI or slug of the node the edge originates from"},
                                 "target": {"type": "string", "description": "IRI or slug of the node the edge points to (must be live)"},
-                                "predicate": {"type": "string", "enum": ["prerequisite-of", "uses", "specializes", "generalizes", "extends", "applies", "instantiates", "contrasts-with", "analogous-to", "illustrated-by", "evidence-for"]},
+                                "predicate": {"type": "string", "enum": ["prerequisite-of", "uses", "specializes", "generalizes", "extends", "applies", "instantiates", "contrasts-with", "analogous-to", "illustrated-by", "evidence-for", "implemented-by", "superseded-by"]},
                                 "note": {"type": "string", "description": "One-sentence rationale for the connection"}
                             },
                             "required": ["subject", "target", "predicate"]
@@ -5497,6 +5651,21 @@ WRITE_TOOLS = {
             statistics=p.get("statistics"),
             stratification=p.get("stratification"),
             source_pointer=p.get("source_pointer"),
+            slug=p.get("slug", ""),
+        ),
+        "create_resource_stub": lambda p: tool_create_resource_stub(
+            title=p.get("title", ""),
+            resource_url=p.get("resource_url", ""),
+            resource_type=p.get("resource_type", ""),
+            status=p.get("status", "active"),
+            last_evaluated=p.get("last_evaluated", ""),
+            technological_scope=p.get("technological_scope"),
+            domain=p.get("domain"),
+            tags=p.get("tags"),
+            definition=p.get("definition", ""),
+            summary=p.get("summary", ""),
+            relationship_candidates=p.get("relationship_candidates", ""),
+            aliases=p.get("aliases"),
             slug=p.get("slug", ""),
         ),
         "edit_node": lambda p: tool_edit_node(
@@ -6731,6 +6900,33 @@ def pkis_api_source_stub():
             year=b.get("year"),
             notes=b.get("notes", ""),
             priority=b.get("priority", "normal"),
+        ))
+    except ValueError as e:
+        return _api_err(e)
+    except Exception as e:
+        return _api_err(e, 500)
+
+
+@app.route("/pkis-api/resource-stub", methods=["POST"])
+@require_write
+def pkis_api_resource_stub():
+    """Stage a resource node from the viewer (e.g. the share-target review card)."""
+    b = _api_json()
+    try:
+        return _api_ok(tool_create_resource_stub(
+            title=b.get("title", ""),
+            resource_url=b.get("resource_url", ""),
+            resource_type=b.get("resource_type", ""),
+            status=b.get("status", "active"),
+            last_evaluated=b.get("last_evaluated", ""),
+            technological_scope=b.get("technological_scope"),
+            domain=b.get("domain"),
+            tags=b.get("tags"),
+            definition=b.get("definition", ""),
+            summary=b.get("summary", ""),
+            relationship_candidates=b.get("relationship_candidates", ""),
+            aliases=b.get("aliases"),
+            slug=b.get("slug", ""),
         ))
     except ValueError as e:
         return _api_err(e)

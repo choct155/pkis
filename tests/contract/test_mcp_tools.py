@@ -102,7 +102,7 @@ def test_tools_list_is_well_formed(client):
     object — the schema is what MCP clients build their call UIs from."""
     result = _rpc(client, "tools/list").get_json()["result"]
     tools = result["tools"]
-    assert len(tools) == 43, "advertised tool count changed — update the contract baseline intentionally"
+    assert len(tools) == 44, "advertised tool count changed — update the contract baseline intentionally"
     for t in tools:
         assert t["name"]
         assert t["description"]

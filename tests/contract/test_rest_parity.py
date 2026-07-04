@@ -48,7 +48,7 @@ EXPECTED_WRITE_ROUTES = {
     "/pkis-api/reader-build", "/pkis-api/reader-annotate", "/pkis-api/staged/commit",
     "/pkis-api/bridge-note", "/pkis-api/source-stub", "/pkis-api/queue/add",
     "/pkis-api/discovery/act", "/pkis-api/upload-document", "/pkis-api/save-url",
-    "/pkis-api/rebuild-graph", "/pkis-api/edit",
+    "/pkis-api/rebuild-graph", "/pkis-api/edit", "/pkis-api/resource-stub",
 }
 
 # Read routes that must stay open (no write gate) — a regression to gated here

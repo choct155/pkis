@@ -16,10 +16,6 @@ Items parked for potential future ingest. Review when a primary concept becomes 
 Synthesizer proposals ready for review and approval.
 <!-- - [ ] Synthesizer proposal pass YYYY-MM-DD — N proposals (wiki/proposals/synthesizer-YYYY-MM-DD.md) -->
 
-## Staged
-Bridge notes and staged nodes awaiting commit or discard.
-<!-- - [ ] [[staged-id]] — title (date staged) [MCP] -->
-
 ## Structural Gaps
 Auditor-flagged gaps for Synthesizer attention.
 <!-- - [ ] Problem without techniques: [[problem-slug]] (date flagged) [Auditor] -->

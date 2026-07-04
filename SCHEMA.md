@@ -198,6 +198,8 @@ object nodes.
 | `equivalent-in-context` | Subject and object are the same idea under different names in different domains | (symmetric) |
 | `commonly-confused-with` | Subject and object appear similar but differ in important ways | (symmetric) |
 | `evidence-for` | Subject (a Finding) is empirical evidence bearing on object (a Hypothesis) | — |
+| `implemented-by` | Subject (a concept/technique) is concretely realized by object (a Resource) | — |
+| `superseded-by` | Subject (a Resource) has been replaced or made obsolete by object (a Resource) | — |
 
 ### Interpretation Table
 
@@ -339,6 +341,7 @@ where `{health_type}` is the singular form of the node's canonical type:
 | `bridge-notes/` | `bridge-note` | `pkis:bridge-note:` |
 | `discovery/` | `discovery-stub` | `pkis:discovery-stub:` |
 | `findings/` | `finding` | `pkis:finding:` |
+| `resources/` | `resource` | `pkis:resource:` |
 
 **Examples:**
 - `pkis:concept:variational-inference`
@@ -906,6 +909,52 @@ evidence-for: []               # [hypothesis-slug] — typed edge Finding -> Hyp
 
 The target hypothesis's `## Current Evidence` section is **not** auto-updated — that
 synthesis stays human-curated (or a future, separately-staged Lab Assistant step).
+
+---
+
+### Resource Node (`wiki/resources/`)
+
+A Resource is an **external tool, library, platform, dataset, documentation site, or
+service** — anything with a development / maintenance / deprecation lifecycle. It is
+epistemically distinct from a `source`: a resource backs *"this exists and does X"*,
+not *"this claim is established"*. Its operational deployment is tracked in OpGraph,
+**not** here — PKIS records what a resource *is*, not decisions about using it.
+Created via the `create_resource_stub` endpoint (URL is taken as-is; no CrossRef /
+arXiv / Semantic Scholar enrichment). No `component_scores`.
+
+```yaml
+---
+id: "pkis:resource:{slug}"     # auto-assigned at creation; never changed
+aliases: []
+title: ""
+knowledge_type: resource
+domain: []
+tags: []
+date_created: YYYY-MM-DD
+date_updated: YYYY-MM-DD
+maturity: evolving
+resource_url: ""               # canonical URL — REQUIRED for resources
+resource_type: ""              # library | tool | platform | dataset | documentation | service
+status: active                 # active | unmaintained | deprecated | archived
+last_evaluated: YYYY-MM-DD      # when you last assessed it (defaults to ingest date)
+technological_scope: []        # free tags: language, framework, stack
+understanding: 0
+---
+```
+
+**Body sections:** `## Summary` (what it does, the problem it solves, dependencies,
+caveats), `## Relationship Candidates` (which concepts/techniques it implements or
+applies; resources it depends on or competes with). **No** `## Key Concepts` (that is
+for academic sources).
+
+**Edges:** a concept/technique → resource via `implemented-by`; resource → resource
+dependency via `uses`; resource → resource replacement via `superseded-by`.
+
+**Evidential weight (convention).** A resource is weaker evidence than a peer-reviewed
+source. For maturity, treat it as roughly `0.4` of a source and `bridge-note` as `0.3`
+— and as a hard convention, **resource citations alone must not push a concept to
+`maturity: settled`**. (PKIS `maturity` is self-assessed, not computed, so this is a
+discipline for the Synthesizer and human reviewers, not an automatic calculation.)
 
 ---
 

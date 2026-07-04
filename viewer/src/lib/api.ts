@@ -394,6 +394,16 @@ export async function createSourceStub(
   return post('/source-stub', { title, url, notes, authors, year, doi, priority });
 }
 
+// ── Resource stub (share-target ingestion) ────────────────────────────────
+export interface StagedRef { staged_id: string; slug: string; iri: string }
+export async function createResourceStub(body: {
+  title: string; resource_url: string; resource_type?: string; status?: string;
+  domain?: string[]; tags?: string[]; summary?: string;
+  relationship_candidates?: string; technological_scope?: string[];
+}): Promise<StagedRef> {
+  return post<StagedRef>('/resource-stub', body);
+}
+
 // ── Queue ─────────────────────────────────────────────────────────────────
 export async function getReadingQueue(): Promise<QueueItem[]> {
   return post<QueueItem[]>('/queue');

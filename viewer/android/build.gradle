@@ -24,6 +24,21 @@ allprojects {
     }
 }
 
+// Force every Android subproject (Capacitor plugins included) up to the app's
+// compileSdk. send-intent pins compileSdkVersion 35, but the androidx libraries
+// Capacitor 8 brings in (core 1.17, activity 1.11) require 36 — without this the
+// plugin's AAR-metadata check fails the build. Survives `npm install` because it
+// lives in the committed native project, not node_modules.
+subprojects {
+    afterEvaluate { project ->
+        if (project.hasProperty('android')) {
+            project.android {
+                compileSdkVersion rootProject.ext.compileSdkVersion
+            }
+        }
+    }
+}
+
 task clean(type: Delete) {
     delete rootProject.buildDir
 }

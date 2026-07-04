@@ -188,6 +188,52 @@ A parked stub surfaces later, when one of its primary concepts becomes active, a
 candidate for full ingest. Promotion (parking → full source node) is a later,
 separate ingest that sets `promoted: true` + `promoted_to: pkis:source:[slug]`.
 
+### Step 0b (classify): source, or resource?
+
+Before Step 1, decide what kind of thing the target is:
+
+- A **source** (paper, book, article, blog post) → continue with Steps 1–7 below.
+- A **resource** (tool, library, platform, docs site, dataset, service) → use the
+  **Resource Ingestion Path** below instead.
+
+Resource signals: a GitHub/GitLab repo, a PyPI/npm/crates.io/pkg.go.dev page, a
+readthedocs or docs site, or any URL the user has explicitly called a tool or library.
+When genuinely uncertain, ask before proceeding.
+
+#### Resource Ingestion Path
+
+Resources are epistemically distinct from sources — a resource backs *"this exists and
+does X"*, not *"this claim is established"* — and their **operational deployment lives in
+OpGraph, not PKIS**. Record what the resource *is*, never whether or where it's deployed.
+
+**R1 — Fetch basic metadata.** Retrieve the URL and extract: project name/title, a
+one-paragraph description (README / About / page meta), the `resource_type` (controlled
+vocab: `library | tool | platform | dataset | documentation | service`),
+`technological_scope` tags (languages, frameworks), and maintenance signals (last
+commit/push date, explicit deprecation/archive notices, issue-tracker activity). **Do NOT
+call CrossRef, arXiv, or Semantic Scholar** — the URL is ground truth. For a code repo,
+the host API (e.g. `api.github.com/repos/{org}/{name}` → `description`, `language`,
+`archived`, `pushed_at`) gives this directly. Classify by what the thing *does*: a CLI
+that generates docs is a `tool`, not `documentation`.
+
+**R2 — Create the resource stub.** Call **`create_resource_stub`** (NOT `create_node_stub`)
+with all available fields, `last_evaluated` = today, and `status` = `active` unless the
+maintenance signals say otherwise. Write a 100–200 word `## Summary` (what it does, the
+problem it solves, dependencies/requirements, notable caveats visible at evaluation time).
+Write `## Relationship Candidates` (which existing concept/technique nodes it implements
+or applies; other resources it depends on or competes with). **Do NOT write `## Key
+Concepts`** — that is for academic sources.
+
+**R3 — Propose connections (after commit).** Call `add_connections` for each confirmed
+candidate: `implemented-by` (concept/technique → resource), `uses` (resource → resource
+dependency), `superseded-by` (resource → resource, only when the replacement is clear).
+Do **not** speculatively create concept stubs from a resource ingest — note any implied
+missing concept in `## Relationship Candidates` for the Synthesizer to act on separately.
+
+**R4 — Index + log.** Add the resource under a `## Resources` section in `index.md`
+(create the section if absent) and append to `log.md`. **Do NOT add resources to the
+reading queue** — they are not read linearly.
+
 ### Step 1: Retrieve the source
 
 **If URL:**
