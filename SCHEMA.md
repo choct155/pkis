@@ -180,9 +180,11 @@ Source nodes do not carry `component_scores` — sources are references, not sub
 
 ## Relationship Predicates
 
-Eight core predicates connect nodes across the graph. Each predicate has a general
-meaning, but its specific interpretation depends on the types of the subject and
-object nodes.
+The graph supports **13 typed predicates** — the set in `config.EDGE_WEIGHTS`, which is
+the runtime registry the graph builder reads and `add_connections` validates against.
+Each has a general meaning whose specific interpretation depends on the subject and
+object node types. (This table is the documented mirror of `config.EDGE_WEIGHTS`; keep
+them in sync.)
 
 ### Predicate Definitions
 
@@ -192,14 +194,22 @@ object nodes.
 | `generalizes` | Subject is a more general version of object | `specializes` |
 | `prerequisite-of` | Subject must be understood before object | — |
 | `uses` | Subject employs or operates on object | `used-by` |
-| `contrasts-with` | Subject and object are alternatives or in tension | (symmetric) |
+| `applies` | Subject applies object to a domain or problem | — |
+| `instantiates` | Subject is a concrete instance of object | — |
 | `extends` | Subject builds upon object, adding capability | — |
-| `grounds` | Subject provides epistemic or theoretical foundation for object | — |
-| `equivalent-in-context` | Subject and object are the same idea under different names in different domains | (symmetric) |
-| `commonly-confused-with` | Subject and object appear similar but differ in important ways | (symmetric) |
+| `contrasts-with` | Subject and object are alternatives or in tension | (symmetric) |
+| `analogous-to` | Subject is structurally analogous to object (same structure, different mechanism/domain) | (symmetric) |
+| `illustrated-by` | Subject is illustrated/explained by object (an interactive asset) | — |
 | `evidence-for` | Subject (a Finding) is empirical evidence bearing on object (a Hypothesis) | — |
 | `implemented-by` | Subject (a concept/technique) is concretely realized by object (a Resource) | — |
 | `superseded-by` | Subject (a Resource) has been replaced or made obsolete by object (a Resource) | — |
+
+**Proposed (not yet implemented).** These read well but are **not** in `config.EDGE_WEIGHTS`,
+so the graph builder ignores them and `add_connections` rejects them — using them in
+frontmatter today has no effect. Add them to `EDGE_WEIGHTS` (with a weight) before use:
+`grounds` (epistemic/theoretical foundation for object), `equivalent-in-context` (same
+idea under different names across domains, symmetric), `commonly-confused-with` (appear
+similar but differ, symmetric).
 
 ### Interpretation Table
 

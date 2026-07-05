@@ -1,0 +1,16 @@
+# Non-code paths kept OUT of the OpenWiki code map (rsync --exclude-from).
+# PKIS's code map documents the Python backend + tools + tests only — the wiki/ knowledge
+# graph (2,900+ nodes) is CONTENT, not code, and must never be fed to OpenWiki.
+wiki/
+raw/
+docs/
+viewer/
+.venv/
+.git/
+openwiki/
+__pycache__/
+node_modules/
+*.sqlite
+*.sqlite-*
+*.npz
+*.log

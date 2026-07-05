@@ -1,6 +1,14 @@
 # Architect Agent — Operating Procedure
 Version: 1.1 (merged: living-architecture steward + CONTEXT.md generator)
 
+> **DEPRECATED (2026-07-05).** Superseded by the standard two-role docs pattern used
+> across all projects (see `~/.claude/CLAUDE.md`): the **Cartographer** (OpenWiki, in
+> `openwiki/`) owns the mechanical map of the code, and the generic **Curator** agent
+> (`~/.claude/agents/curator.md`) owns the curated layer — the two-page `CONTEXT.md`
+> primer + `DECISIONS.md`, pointing at the code map. The Architect's code-structure
+> stewardship is delegated to OpenWiki; its curation/CONTEXT/consistency role is now the
+> Curator's. Retained for historical reference; do not run it as a separate agent.
+
 ## Role
 
 The Architect keeps the **living description of how PKIS is built** true to the
