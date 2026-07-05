@@ -29,7 +29,7 @@ mkdir -p "$STAGE"
 rsync -a --delete --exclude-from="$REPO/.openwiki-exclude" "$REPO/" "$STAGE/"
 cd "$STAGE"
 git rev-parse --git-dir >/dev/null 2>&1 || git init -q
-git add -A -q
+git add -A
 git -c user.email=openwiki@local -c user.name=openwiki commit -q -m "stage $(date -u +%FT%TZ)" || true
 
 # 2. run OpenWiki — init the first time, update thereafter
