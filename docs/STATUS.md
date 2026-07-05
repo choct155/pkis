@@ -23,7 +23,8 @@ _Last updated: 2026-07-05_
 | Research clusters + frontier priority | **live** | all 12 clusters de-orphaned; frontier-driven priority queue |
 | Read+listen reader | **live** | LLM semantic narration + section-synced chapter PDF; resilient TTS (Piper-unvoiceable segments skipped); mp3 encoder streamed; **494 chapters narrated** |
 | Proactive discovery | **live** | frontier-gated OpenAlex cite-graph, cron'd Mondays; inbox + accept/dismiss feedback + learned-prior loop (prior still cold) |
-| Documentation system (`docs/`) | **live** | 6 docs + `log_idea` + viewer Docs view; music-preference-profile doc auto-added via doc-store; **OpenWiki cartographer adopted; Architect role retired; predicate drift fixed** |
+| Documentation system (`docs/`) | **live** | 6 docs + `log_idea` + viewer Docs view; music-preference-profile doc auto-added via doc-store; **OpenWiki cartographer adopted; Architect role retired; predicate drift fixed**; CONTEXT.md regenerated from ground truth |
+| OpenWiki refresh driver | **live** | rebase-retry push logic added; concurrent-writer safe |
 | Explainers | **live** | HTML explainers as `asset` nodes; desktop live-edit loop; Tier-2 dynamic-explainer Flask blueprint scaffold (`/pkis-api/x/<name>/`) |
 | Comptroller (cost) | **live** | `usage.py` SQLite at `/home/pkis/usage`; per-origin cost; narration logs as `pkis-reader` |
 | Ideas log | **live** | `log_idea` tool; entry: OpGraph Strategist — multi-agent strategic council |
@@ -62,15 +63,16 @@ ingested + narrated. Local-only until published.
   accept/dismiss decisions logged yet, so the per-signal prior is neutral.
 - Git can diverge across the laptop and server checkouts of the one repo — both
   commit to `origin/main`, server auto-commits on every MCP write. Reconcilable
-  (commit / `git checkout --` / `pull` / push).
+  (commit / `git checkout --` / `pull` / push). OpenWiki refresh driver now uses
+  rebase-retry to mitigate concurrent-writer conflicts.
 - An `app.py` restart drops the claude.ai connector (users must reconnect) —
   minimize restarts; content changes don't need one (cache auto-refresh).
 
 ## Most recent session (2026-07-05)
 
-Documentation housekeeping: OpenWiki cartographer role adopted, Architect role
-retired, and predicate drift corrected across docs. Narrated chapter count confirmed
-at 494. Node count holds at 2,943.
+Hardened the OpenWiki refresh driver with rebase-retry push logic to eliminate
+concurrent-writer push failures. Regenerated CONTEXT.md from ground truth via the
+Curator. Node count holds at 2,943; narrated chapters confirmed at 494.
 
 ## Next priorities
 
