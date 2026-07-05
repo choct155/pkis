@@ -14,3 +14,29 @@ node_modules/
 *.sqlite-*
 *.npz
 *.log
+# Secrets never enter the staging copy OpenWiki reads.
+.env
+.env.*
+# Binary / image / media / font files break OpenWiki (base64 document media_type error).
+*.svg
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.ico
+*.webp
+*.pdf
+*.woff
+*.woff2
+*.ttf
+*.eot
+*.mp4
+*.mov
+*.zip
+*.gz
+*.parquet
+# HTML/notebooks: OpenWiki base64-attaches these as documents (media_type != pdf → 400).
+*.html
+*.htm
+*.ipynb
+package-lock.json
