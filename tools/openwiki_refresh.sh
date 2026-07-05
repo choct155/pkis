@@ -48,5 +48,11 @@ if git diff --cached --quiet; then
   echo "openwiki_refresh: no doc changes for $REPO"
 else
   git commit -q -m "docs(openwiki): refresh code map $(date -u +%F)"
-  git push -q origin HEAD 2>&1 | tail -3 || echo "openwiki_refresh: push failed (commit retained)" >&2
+  # The workstation has several processes pushing to the same branch; retry with rebase
+  # so a concurrent push (non-fast-forward) doesn't strand the docs commit locally.
+  BR="$(git rev-parse --abbrev-ref HEAD)"
+  for attempt in 1 2 3; do
+    if git push -q origin HEAD 2>/dev/null; then break; fi
+    git pull --rebase -q origin "$BR" 2>/dev/null || { echo "openwiki_refresh: rebase failed (commit retained)" >&2; break; }
+  done
 fi
