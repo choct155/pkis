@@ -24,7 +24,7 @@ _Last updated: 2026-07-05_
 | Read+listen reader | **live** | LLM semantic narration + section-synced chapter PDF; resilient TTS (Piper-unvoiceable segments skipped); mp3 encoder streamed; **494 chapters narrated** |
 | Proactive discovery | **live** | frontier-gated OpenAlex cite-graph, cron'd Mondays; inbox + accept/dismiss feedback + learned-prior loop (prior still cold) |
 | Documentation system (`docs/`) | **live** | 6 docs + `log_idea` + viewer Docs view; music-preference-profile doc auto-added via doc-store; **OpenWiki cartographer adopted; Architect role retired; predicate drift fixed**; CONTEXT.md regenerated from ground truth |
-| OpenWiki refresh driver | **live** | rebase-retry push logic added; concurrent-writer safe |
+| OpenWiki refresh driver | **live** | rebase-retry push logic added; concurrent-writer safe; fixed `git add` staging step (removed invalid `-q` flag) |
 | Explainers | **live** | HTML explainers as `asset` nodes; desktop live-edit loop; Tier-2 dynamic-explainer Flask blueprint scaffold (`/pkis-api/x/<name>/`) |
 | Comptroller (cost) | **live** | `usage.py` SQLite at `/home/pkis/usage`; per-origin cost; narration logs as `pkis-reader` |
 | Ideas log | **live** | `log_idea` tool; entry: OpGraph Strategist — multi-agent strategic council |
@@ -70,9 +70,9 @@ ingested + narrated. Local-only until published.
 
 ## Most recent session (2026-07-05)
 
-Hardened the OpenWiki refresh driver with rebase-retry push logic to eliminate
-concurrent-writer push failures. Regenerated CONTEXT.md from ground truth via the
-Curator. Node count holds at 2,943; narrated chapters confirmed at 494.
+Fixed a latent bug in the OpenWiki refresh driver: `git add` does not accept a `-q`
+flag, which was silently breaking the staging step. Patched. Node count holds at
+2,943; narrated chapters confirmed at 494.
 
 ## Next priorities
 
