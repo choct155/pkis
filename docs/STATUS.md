@@ -11,31 +11,30 @@ _Last updated: 2026-07-05_
 | Component | Status | Notes |
 |---|---|---|
 | PKIS-MCP server (`app.py`) | **live** | MCP (41 tools) + `/pkis-api/*` + docs/webhook/health on `pkis.dev`; gunicorn `pkis-mcp.service`; pinned deps in `requirements.txt` added for fresh-clone setup; architect/graph/link tools marked executable |
-| Knowledge graph (`pkis-wiki`) | **live** | 2,943 nodes (+5 since 2026-06-28); new source: DREAM (Dense Retrieval Embeddings via Autoregressive Modeling); new framework: Musical Preference Ontology; new resource: OpenWiki; music-preference-profile doc auto-created |
+| Knowledge graph (`pkis-wiki`) | **live** | 2,943 nodes; new source: DREAM; new framework: Musical Preference Ontology; new resource: OpenWiki; music-preference-profile doc auto-created |
 | Viewer PWA (`pkis.dev/app`) | **live** | mobile-first; wide-desktop dashboard (≥1280px); retrieval lab view (side-by-side regimes + unified retrieve/answer panel); path-mode UI; **native Capacitor APK** with WorkOS bearer auth + biometric unlock |
 | MCP write tools | **live** | stub/edge/hypothesis/bridge/source/edit; auto-commit+push, cache auto-refresh |
 | Auth (WorkOS AuthKit) | **live** | OAuth (claude.ai/MCP) + web sealed session; identity keyed on email; allowlist by email OR sub; single-use-refresh race coalesced; WorkOS dep added to resource node + public serving layer |
 | Ask (NL Q&A) | **live** | shared `ask.py` engine + `/pkis-api/ask` + viewer Ask tab; conversation persistence, voice I/O, capability-link sharing |
-| Inbox (owner review hub) | **live** | consolidated staged + discovery + agent lanes; **finding intake** added (Parts A+B); **lab-assistant cron inbox push** made divergence-safe; doc-drift lane; Graph gaps lane |
-| Lab Assistant | **live** | **finding intake + descriptive Lab Assistant (Parts A+B)** shipped; cron inbox push divergence-safe |
+| Inbox (owner review hub) | **live** | consolidated staged + discovery + agent lanes; finding intake (Parts A+B); lab-assistant cron inbox push divergence-safe; doc-drift lane; Graph gaps lane |
+| Lab Assistant | **live** | finding intake + descriptive Lab Assistant (Parts A+B) shipped; cron inbox push divergence-safe |
 | Semantic search | **live** | BM25 + bge-small dense fused via RRF; graph rerank (personalized PageRank); path/relationship queries; standing-eval loop; **OpGraph designated as live NED/NER experimental platform** with six resolution strategies operationalizing the intensional-grounding-ned-accuracy hypothesis |
 | Retrieval lab deep metrics | **live** | P4 metrics (C(q) coverage, concision, relevance) per search regime; lab view + path-mode UI |
 | Research clusters + frontier priority | **live** | all 12 clusters de-orphaned; frontier-driven priority queue |
-| Read+listen reader | **live** | LLM semantic narration + section-synced chapter PDF; resilient TTS (Piper-unvoiceable segments skipped); mp3 encoder streamed |
+| Read+listen reader | **live** | LLM semantic narration + section-synced chapter PDF; resilient TTS (Piper-unvoiceable segments skipped); mp3 encoder streamed; **494 chapters narrated** |
 | Proactive discovery | **live** | frontier-gated OpenAlex cite-graph, cron'd Mondays; inbox + accept/dismiss feedback + learned-prior loop (prior still cold) |
-| Documentation system (`docs/`) | **live** | 6 docs + `log_idea` + viewer Docs view; music-preference-profile doc auto-added via doc-store |
+| Documentation system (`docs/`) | **live** | 6 docs + `log_idea` + viewer Docs view; music-preference-profile doc auto-added via doc-store; **OpenWiki cartographer adopted; Architect role retired; predicate drift fixed** |
 | Explainers | **live** | HTML explainers as `asset` nodes; desktop live-edit loop; Tier-2 dynamic-explainer Flask blueprint scaffold (`/pkis-api/x/<name>/`) |
 | Comptroller (cost) | **live** | `usage.py` SQLite at `/home/pkis/usage`; per-origin cost; narration logs as `pkis-reader` |
-| Ideas log | **live** | `log_idea` tool; new entry: OpGraph Strategist — multi-agent strategic council |
+| Ideas log | **live** | `log_idea` tool; entry: OpGraph Strategist — multi-agent strategic council |
 
 ## Source / narration coverage
 
 All 11 backlog books **split into per-chapter PDFs** (136 chapters) and 50 papers
-downloaded — all viewable. **0 chapters narrated** (count reset/unconfirmed since
-last update — watchdog-guarded backlog build in flight); the remaining backlog
-narration is **in flight** (resumable `backlog_build.sh`: Haiku extract → Sonnet
-voice → Piper TTS), guarded by a self-healing watchdog (`narration_watchdog.sh`,
-cron */15) that auto-pauses on API-credit exhaustion and auto-resumes.
+downloaded — all viewable. **494 chapters narrated**; resumable `backlog_build.sh`
+(Haiku extract → Sonnet voice → Piper TTS), guarded by a self-healing watchdog
+(`narration_watchdog.sh`, cron */15) that auto-pauses on API-credit exhaustion and
+auto-resumes.
 
 Books split: cassandras-des-intro, tanner, cimiano, gulli (29 ch, Springer-anchor
 split), cunningham, carrell, allemang, kroese, nielsen, benzi, lange — plus the
@@ -66,27 +65,18 @@ ingested + narrated. Local-only until published.
   (commit / `git checkout --` / `pull` / push).
 - An `app.py` restart drops the claude.ai connector (users must reconnect) —
   minimize restarts; content changes don't need one (cache auto-refresh).
-- Narrated chapter count unconfirmed in live counts (showing 0); watchdog status
-  should be verified.
 
 ## Most recent session (2026-07-05)
 
-Node count advanced to 2,943 (+5). Key additions: DREAM source node, Musical
-Preference Ontology framework (multiple commits consolidated), OpenWiki resource,
-music-preference-profile doc (auto-created via doc-store). Native Capacitor APK
-shipped with WorkOS bearer auth and biometric unlock. Lab Assistant finding intake
-(Parts A+B) landed; cron inbox push made divergence-safe. OpGraph designated as
-live NED/NER experimental platform with a six-strategy instrumentation plan
-operationalizing the intensional-grounding-ned-accuracy hypothesis. Ideas log
-received OpGraph Strategist (multi-agent strategic council). Housekeeping: pinned
-`requirements.txt` added, tool scripts marked executable.
+Documentation housekeeping: OpenWiki cartographer role adopted, Architect role
+retired, and predicate drift corrected across docs. Narrated chapter count confirmed
+at 494. Node count holds at 2,943.
 
 ## Next priorities
 
-1. Verify narration watchdog status and confirm actual narrated chapter count.
-2. Review and resolve remaining orphan nodes in the Graph gaps inbox lane.
-3. Publish the calibration tabs + register as a PKIS asset node.
-4. Start exercising discovery feedback to warm the learned prior.
-5. Begin OpGraph NED/NER instrumentation — baseline measurements for the six resolution strategies.
-6. Log the first doc-drift accept/dismiss decisions to validate that inbox lane.
-7. Architect automation (daily cron + post-deploy hook) so this doc stops drifting further.
+1. Review and resolve remaining orphan nodes in the Graph gaps inbox lane.
+2. Publish the calibration tabs + register as a PKIS asset node.
+3. Start exercising discovery feedback to warm the learned prior.
+4. Begin OpGraph NED/NER instrumentation — baseline measurements for the six resolution strategies.
+5. Log the first doc-drift accept/dismiss decisions to validate that inbox lane.
+6. Automate STATUS.md updates (daily cron + post-deploy hook) so this doc stops drifting.
