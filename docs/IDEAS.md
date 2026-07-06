@@ -57,7 +57,7 @@ Format:
 ## Register new explainers as PKIS assets + set up explainer roadmap
 **Date logged:** 2026-06-21
 **Source:** Claude.ai session — June 2026 research session
-**Idea:** Three explainers built in Claude.ai sessions need to be registered in the PKIS asset system and their HTML files deployed to the viz serving directory so they appear in the PWA at pkis.dev/app/. A fourth task is creating an EXPLAINER_ROADMAP.md in pkis/docs/ tracking planned explainers not yet built. Full Claude Code brief with asset frontmatter, HTML file locations, and roadmap spec is in the Claude Code brief attached to this session.
+**Idea:** Three explainers built in Claude.ai sessions need to be registered in the PKIS asset system and their HTML files deployed to the viz serving directory so they appear in the PWA at pkis.clowderpack.dev/app/. A fourth task is creating an EXPLAINER_ROADMAP.md in pkis/docs/ tracking planned explainers not yet built. Full Claude Code brief with asset frontmatter, HTML file locations, and roadmap spec is in the Claude Code brief attached to this session.
 **Relation to existing system:** Extends the asset registry. New explainers are: knowledge_infrastructure_bundle.html (covers amortization + hardening), mi_estimation_explainer.html (covers MI estimation families), accuracy_calibration_explainer.html (covers silver/gold calibration + NHPP revision model). Roadmap tracks four planned explainers: hardening trajectory, quality framework, passive instrumentation, retrieval comparison (blocked on intelligent layer results).
 **Open questions:** Check existing HMC/Typical Sets asset frontmatter for canonical directory structure and viz serving path before writing new frontmatter files.
 **Status:** open

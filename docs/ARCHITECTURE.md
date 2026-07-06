@@ -9,9 +9,9 @@ file; when build *status* changes, update [`STATUS.md`](STATUS.md).
 
 | Component | What it is | Canonical doc |
 |---|---|---|
-| **PKIS-MCP server** | `app.py` — one Flask app serving three surfaces: the MCP tool API (`/mcp`), the viewer REST API (`/pkis-api/*`), and docs/webhook/health endpoints. Runs on `pkis.dev` (gunicorn). | [`MCP_ACCESS_GUIDE.md`](MCP_ACCESS_GUIDE.md), [`SCHEMA.md`](SCHEMA.md) |
+| **PKIS-MCP server** | `app.py` — one Flask app serving three surfaces: the MCP tool API (`/mcp`), the viewer REST API (`/pkis-api/*`), and docs/webhook/health endpoints. Runs on `pkis.clowderpack.dev` (gunicorn). | [`MCP_ACCESS_GUIDE.md`](MCP_ACCESS_GUIDE.md), [`SCHEMA.md`](SCHEMA.md) |
 | **pkis-wiki repo** | The knowledge graph itself — one markdown file per node under `wiki/`, plus `index.md`, `log.md`, `queue.md`. Git is the source of truth. | [`SCHEMA.md`](SCHEMA.md) |
-| **Viewer PWA** | React/Vite app at `pkis.dev/app` — mobile-first browse / search / clusters / priority / graph / staged / explainers / discover / reader / **docs**. | — |
+| **Viewer PWA** | React/Vite app at `pkis.clowderpack.dev/app` — mobile-first browse / search / clusters / priority / graph / staged / explainers / discover / reader / **docs**. | — |
 | **Agents** | Operating procedures for the agent roles. | [`LIBRARIAN.md`](LIBRARIAN.md), [`SYNTHESIZER.md`](SYNTHESIZER.md), [`AUDITOR.md`](AUDITOR.md), [`HYGIENIST.md`](HYGIENIST.md), [`ARCHITECT.md`](ARCHITECT.md) |
 | **Auth** | Reads open; writes gated by a static key (Claude Code) or OAuth identity (claude.ai), WorkOS AuthKit. | [`MCP_ACCESS_GUIDE.md`](MCP_ACCESS_GUIDE.md), [`OAUTH_PLAN.md`](OAUTH_PLAN.md) |
 | **Plan** | The original phased build-out. | [`PKIS_Wiki_Implementation_Plan.md`](PKIS_Wiki_Implementation_Plan.md) |

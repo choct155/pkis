@@ -2,7 +2,7 @@
 
 > Status: **PLAN ONLY — not implemented.** This document scopes the work to
 > replace the single shared `PKIS_MCP_WRITE_KEY` with real per-user
-> authentication + authorization, so that the `https://pkis.dev/mcp` URL can be
+> authentication + authorization, so that the `https://pkis.clowderpack.dev/mcp` URL can be
 > shared safely.
 >
 > Companion doc: [`MCP_ACCESS_GUIDE.md`](./MCP_ACCESS_GUIDE.md) — how users
@@ -34,7 +34,7 @@ This is the flow we must support. Numbers map to the MCP Authorization spec
 (rev. 2025-06-18), which builds on OAuth 2.1.
 
 ```
-claude.ai (client)                    pkis.dev (our server = Resource Server)        Authorization Server
+claude.ai (client)                    pkis.clowderpack.dev (our server = Resource Server)        Authorization Server
    |                                       |                                              |
    |  1. POST /mcp  (no token)             |                                              |
    |-------------------------------------->|                                              |
@@ -102,7 +102,7 @@ free tiers: **Stytch**, **WorkOS AuthKit**, **Auth0** (DCR is a toggle),
 
 1. DCR on the free tier (non-negotiable).
 2. Google social login + email OTP (so colleagues need no new account).
-3. Lets you set the token **audience** to `https://pkis.dev/mcp` (RFC 8707) so a
+3. Lets you set the token **audience** to `https://pkis.clowderpack.dev/mcp` (RFC 8707) so a
    token minted for some *other* app can't be replayed against us.
 4. Exposes a JWKS URL for stateless signature verification.
 
@@ -136,7 +136,7 @@ IdP's free tier doesn't help us — so confirming "DCR on the free tier" is a
 Phase-0 gate, not an afterthought.
 
 Other cost notes:
-- **No new infrastructure** — OAuth adds no servers; we already run pkis.dev.
+- **No new infrastructure** — OAuth adds no servers; we already run pkis.clowderpack.dev.
 - **Self-hosting the AS (Architecture B) is also $0 in software** — its cost is
   entirely the 4–7 days of build + indefinite maintenance. That's the whole
   reason the managed path wins: same $0, minus the days.
@@ -193,7 +193,7 @@ Our server stays a **Resource Server**. Three additions:
    returns a tiny static JSON pointing at the IdP:
    ```json
    {
-     "resource": "https://pkis.dev/mcp",
+     "resource": "https://pkis.clowderpack.dev/mcp",
      "authorization_servers": ["https://<your-idp-issuer>"],
      "bearer_methods_supported": ["header"]
    }
@@ -202,7 +202,7 @@ Our server stays a **Resource Server**. Three additions:
 2. **401 challenge** — when `/mcp` is called for a write tool without a valid
    token, respond `401` with:
    ```
-   WWW-Authenticate: Bearer resource_metadata="https://pkis.dev/.well-known/oauth-protected-resource"
+   WWW-Authenticate: Bearer resource_metadata="https://pkis.clowderpack.dev/.well-known/oauth-protected-resource"
    ```
    (This is the trigger that makes claude.ai start the flow. Getting the header
    byte-exact matters — a malformed challenge means the connector silently stays
@@ -257,7 +257,7 @@ codebase. Calendar time is longer (IdP signup, claude.ai round-trips).
 | **1. Protected Resource Metadata + 401 challenge** | Add `/.well-known/oauth-protected-resource` route; emit correct `WWW-Authenticate` on unauthorized writes. Verify with `curl`. | **2–3 h** |
 | **2. Token validation** | Add `PyJWT[crypto]`; implement `verify_jwt` (JWKS fetch + cache + TTL, verify sig/iss/aud/exp); unit tests for valid / expired / wrong-aud / wrong-iss / bad-sig. | **4–6 h** |
 | **3. Authz wiring** | `authorize_request` helper; role allowlist file + loader (config-file pattern); thread identity into `dispatch_tool`; map roles → read/write/trusted tiers; keep static-key fallback (§6). | **3–5 h** |
-| **4. End-to-end with MCP Inspector** | Run `@modelcontextprotocol/inspector` against `pkis.dev/mcp`, complete the real OAuth flow, confirm read-as-reader / write-as-writer / 403-as-reader. | **2–4 h** |
+| **4. End-to-end with MCP Inspector** | Run `@modelcontextprotocol/inspector` against `pkis.clowderpack.dev/mcp`, complete the real OAuth flow, confirm read-as-reader / write-as-writer / 403-as-reader. | **2–4 h** |
 | **5. claude.ai mobile + desktop** | Add the connector on the phone, log in, confirm a real bridge-note write. Confirm desktop Claude Code still writes via the legacy key. | **1–2 h** |
 | **6. Deploy & docs** | nginx check that `/.well-known/*` reaches Flask; new env vars (`PKIS_OAUTH_ISSUER`, `PKIS_OAUTH_AUDIENCE`, `PKIS_ROLES_PATH`); `pip install` in the venv; restart; finalize `MCP_ACCESS_GUIDE.md`. | **2–3 h** |
 | | **Total (Architecture A)** | **~16–27 h → 2–4 focused days** |
@@ -305,7 +305,7 @@ codebase. Calendar time is longer (IdP signup, claude.ai round-trips).
 - **nginx:** confirm `location /.well-known/` proxies to Flask (not served as
   static / intercepted). One-line check during Phase 6.
 - **New env** on the host service unit: `PKIS_OAUTH_ISSUER`,
-  `PKIS_OAUTH_AUDIENCE` (= `https://pkis.dev/mcp`), `PKIS_ROLES_PATH`.
+  `PKIS_OAUTH_AUDIENCE` (= `https://pkis.clowderpack.dev/mcp`), `PKIS_ROLES_PATH`.
 - **Dep:** `pip install "PyJWT[crypto]"` into `/home/pkis/venv`.
 - **Ship:** scp `app.py` through the symlink, `sudo systemctl restart pkis-mcp.service`.
 - **Rollback:** revert `app.py`, restart. Because the static key path is
@@ -319,7 +319,7 @@ codebase. Calendar time is longer (IdP signup, claude.ai round-trips).
 2. **Opaque vs JWT tokens** — if the IdP issues opaque tokens, swap local JWT
    verify for introspection (RFC 7662). Small, but confirm in Phase 0.
 3. **Audience binding** — set the resource/audience so a token for another app
-   can't be replayed against `pkis.dev/mcp` (RFC 8707).
+   can't be replayed against `pkis.clowderpack.dev/mcp` (RFC 8707).
 4. **`WWW-Authenticate` exactness** — a malformed challenge = connector silently
    stays read-only. Test with Inspector before blaming claude.ai.
 5. **Redirect URI allowlist** — the IdP must allow claude.ai's connector

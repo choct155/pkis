@@ -129,7 +129,7 @@ does.
 
 ### Check 3: Operational + deployment shape
 
-- Confirm the docs' account of the deployment (gunicorn on pkis.dev, the wiki
+- Confirm the docs' account of the deployment (gunicorn on pkis.clowderpack.dev, the wiki
   repo, the cron jobs, the reader pipeline, discovery) matches the scripts in
   `tools/` and `scripts/` and the env/config in `app.py`.
 - Flag operational scripts that exist but are undocumented, or documented but
@@ -184,7 +184,7 @@ Do not edit — regenerated automatically
 
 ## Infrastructure
 - Graph backend: markdown/NetworkX
-- MCP server: https://pkis.dev/mcp (OAuth)
+- MCP server: https://pkis.clowderpack.dev/mcp (OAuth)
 - VPS: Hetzner (gunicorn pkis-mcp.service)
 - Repo: github.com/choct155/pkis (public)
 

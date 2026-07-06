@@ -11,7 +11,7 @@ unified by a single red through-line (`#E5484D`). The aesthetic maps to the
 | Explainer | **Hex Notebook** — light, dot-grid | deep study | `.pkis-hex` |
 
 Canonical token values: [`design/tokens.css`](./tokens.css). Live reference (all three
-assembled): `pkis.dev/app/composed.html` (source: `design/pkis_composed.html`).
+assembled): `pkis.clowderpack.dev/app/composed.html` (source: `design/pkis_composed.html`).
 
 ## The red through-line
 

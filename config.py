@@ -108,12 +108,12 @@ WRITE_KEY = os.environ.get("PKIS_MCP_WRITE_KEY", "")
 # OAuth (MCP Resource Server) — DORMANT until PKIS_OAUTH_ISSUER is set.
 # ============================================================
 OAUTH_ISSUER   = os.environ.get("PKIS_OAUTH_ISSUER", "").rstrip("/")
-OAUTH_AUDIENCE = os.environ.get("PKIS_OAUTH_AUDIENCE", "https://pkis.dev/mcp")
+OAUTH_AUDIENCE = os.environ.get("PKIS_OAUTH_AUDIENCE", "https://pkis.clowderpack.dev/mcp")
 OAUTH_JWKS_URL = os.environ.get("PKIS_OAUTH_JWKS_URL", "") or (
     OAUTH_ISSUER + "/.well-known/jwks.json" if OAUTH_ISSUER else "")
 OAUTH_ALGS     = [a.strip() for a in os.environ.get("PKIS_OAUTH_ALGS", "RS256").split(",") if a.strip()]
 ROLES_PATH     = os.environ.get("PKIS_ROLES_PATH", "")
-PUBLIC_BASE    = os.environ.get("PKIS_PUBLIC_BASE", "https://pkis.dev").rstrip("/")
+PUBLIC_BASE    = os.environ.get("PKIS_PUBLIC_BASE", "https://pkis.clowderpack.dev").rstrip("/")
 OAUTH_ENABLED  = bool(OAUTH_ISSUER and OAUTH_JWKS_URL)
 
 # ============================================================
@@ -123,7 +123,7 @@ OAUTH_ENABLED  = bool(OAUTH_ISSUER and OAUTH_JWKS_URL)
 WORKOS_API_KEY        = os.environ.get("WORKOS_API_KEY", "")
 WORKOS_CLIENT_ID      = os.environ.get("WORKOS_CLIENT_ID", "")
 WORKOS_COOKIE_PASSWORD = os.environ.get("WORKOS_COOKIE_PASSWORD", "")
-WORKOS_REDIRECT_URI   = os.environ.get("WORKOS_REDIRECT_URI", "https://pkis.dev/pkis-api/auth/callback")
+WORKOS_REDIRECT_URI   = os.environ.get("WORKOS_REDIRECT_URI", "https://pkis.clowderpack.dev/pkis-api/auth/callback")
 WEB_AUTH_ENABLED      = bool(WORKOS_API_KEY and WORKOS_CLIENT_ID and WORKOS_COOKIE_PASSWORD)
 WEB_SESSION_COOKIE    = "wos_session"
 
@@ -152,7 +152,7 @@ VIEWER_DIST = Path(os.environ.get(
 
 # Document store + Readwise integration
 DOCS_DIR          = Path(os.environ.get("DOCS_DIR", "/home/pkis/docs"))
-DOCS_BASE_URL     = os.environ.get("DOCS_BASE_URL", "https://pkis.dev/docs")
+DOCS_BASE_URL     = os.environ.get("DOCS_BASE_URL", "https://pkis.clowderpack.dev/docs")
 READWISE_TOKEN    = os.environ.get("READWISE_TOKEN", "")
 READWISE_WEBHOOK_SECRET = os.environ.get("READWISE_WEBHOOK_SECRET", "")
 DOCS_USERNAME     = os.environ.get("DOCS_USERNAME", "")

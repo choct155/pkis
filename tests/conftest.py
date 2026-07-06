@@ -4,7 +4,7 @@ PKIS test harness — fixture wiki + fixture git repo, fully hermetic.
 Phase-2 scaffold (see ARCHITECTURE_AUDIT.md §7, §9). This file is the prerequisite
 the audit calls out: it builds a throwaway wiki + git repo in a tmp dir and points
 app.py's WIKI_DIR / REPO_DIR / STAGING_DIR at it BEFORE importing app, so the whole
-suite runs without touching /home/pkis or the live pkis.dev server.
+suite runs without touching /home/pkis or the live pkis.clowderpack.dev server.
 
 Two import-time facts about app.py this harness has to work around (both recorded
 in the audit):

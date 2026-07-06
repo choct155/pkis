@@ -5,7 +5,7 @@ Implements the full PKIS MCP API as defined in the system design.
 Serves the pkis-wiki repository as a knowledge service accessible
 from Claude.ai, Claude Code, and any MCP-compatible client.
 
-Deployed to: https://pkis.dev
+Deployed to: https://pkis.clowderpack.dev
 Wiki source: /home/pkis/pkis-wiki/wiki/
 """
 

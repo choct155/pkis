@@ -16,7 +16,7 @@ surface.
 PKIS is a single 6,467-line Flask module (`app.py`) serving **three distinct
 surfaces** from one process, plus a React/Vite PWA (`viewer/`) and a loose
 collection of operational/one-shot Python scripts (`tools/`, `scripts/`). It is
-functional and in production at `pkis.dev`. There are no known active bugs.
+functional and in production at `pkis.clowderpack.dev`. There are no known active bugs.
 
 The structural risks that matter most for the upcoming IKS build, in priority
 order:

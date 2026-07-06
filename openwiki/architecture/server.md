@@ -2,7 +2,7 @@
 
 `app.py` (~7,400 lines) is a Flask application that serves the wiki through
 **three parallel surfaces backed by one shared tool layer**. It's deployed at
-`https://pkis.dev`, reading wiki markdown from `WIKI_DIR` (`config.py`).
+`https://pkis.clowderpack.dev`, reading wiki markdown from `WIKI_DIR` (`config.py`).
 
 ## Three API surfaces, one tool layer
 

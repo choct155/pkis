@@ -311,7 +311,7 @@ def _podcast_index_auth_headers() -> dict:
         (PODCAST_INDEX_KEY + PODCAST_INDEX_SECRET + ts).encode("utf-8")
     ).hexdigest()
     return {
-        "User-Agent":    "PKIS/1.0 (+https://pkis.dev)",
+        "User-Agent":    "PKIS/1.0 (+https://pkis.clowderpack.dev)",
         "X-Auth-Key":    PODCAST_INDEX_KEY,
         "X-Auth-Date":   ts,
         "Authorization": auth_hash,

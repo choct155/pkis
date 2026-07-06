@@ -52,7 +52,7 @@ Climb only as high as a given explainer forces you to.
 `viz_url: /pkis-api/x/<name>/` instead of `viz: <slug>`. It rides the existing
 `/pkis-api/*` proxy (no nginx change) and reuses the app's WorkOS auth + Comptroller
 logging via the hooks passed to `explainer_x.register(...)`. Verify the scaffold:
-`curl https://pkis.dev/pkis-api/x/sample/`.
+`curl https://pkis.clowderpack.dev/pkis-api/x/sample/`.
 
 ## Deploy notes
 

@@ -19,7 +19,7 @@ Four markers, defined in `pyproject.toml`:
   required fields), not internal behavior.
 - `integration` — exercises a real seam (git round-trip, auth path, staging
   queue) against the fixture environment.
-- `live` — hits a live server or external API (pkis.dev, arXiv, OpenAlex,
+- `live` — hits a live server or external API (pkis.clowderpack.dev, arXiv, OpenAlex,
   etc.); **skipped by default**, run explicitly with `pytest -m live`.
 
 Default `pytest` runs are fully hermetic (fixture wiki + fixture git repo

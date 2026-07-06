@@ -47,7 +47,7 @@ py-modules = ["app"]
 # the default `pytest` run is hermetic (fixture wiki + fixture git repo only).
 testpaths = ["tests"]
 markers = [
-    "live: hits a live server or external API (pkis.dev, arXiv, OpenAlex, etc.); skipped by default in CI. Run explicitly with `-m live`.",
+    "live: hits a live server or external API (pkis.clowderpack.dev, arXiv, OpenAlex, etc.); skipped by default in CI. Run explicitly with `-m live`.",
     "contract: asserts the observable MCP/REST tool contract (shape + required fields), not internal behavior.",
     "integration: exercises a real seam (git round-trip, auth path, queue) against the fixture environment.",
     "unit: pure-function logic over fixtures (IRI resolution, RRF fusion, etc.).",

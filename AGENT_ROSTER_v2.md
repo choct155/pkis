@@ -467,7 +467,7 @@ Do not edit — regenerated automatically
 
 ## Infrastructure
 - Graph backend: markdown/NetworkX
-- MCP server: https://pkis.dev/mcp (OAuth)
+- MCP server: https://pkis.clowderpack.dev/mcp (OAuth)
 - VPS: Hetzner CX51 (8 vCPU, 32GB RAM)
 - Repo: github.com/choct155/pkis (public)
 - Docker networks: pkis-network (PKIS), iks-network (IKS — separate)

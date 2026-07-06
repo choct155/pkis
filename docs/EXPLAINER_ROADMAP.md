@@ -3,7 +3,7 @@
 Tracks planned and in-progress explainers for the PKIS knowledge base.
 Update this file directly or via Claude.ai sessions.
 
-## Registered (live in pkis.dev/app/)
+## Registered (live in pkis.clowderpack.dev/app/)
 
 | Asset IRI | Title | Kind |
 |---|---|---|
@@ -31,7 +31,7 @@ Update this file directly or via Claude.ai sessions.
 2. Copy to the viz serving directory as `<slug>.html`
 3. Create `wiki/assets/<slug>.md` with canonical frontmatter (see hmc-explainer.md)
 4. Add `illustrated-by` edges from the relevant wiki nodes via MCP `add_connections`
-5. Commit and push — asset appears in pkis.dev/app/ immediately
+5. Commit and push — asset appears in pkis.clowderpack.dev/app/ immediately
 6. Update this roadmap table
 
 ## Style guide
