@@ -15,7 +15,7 @@ contrasts-with:
 - coverage-driven-graph-traversal
 coverage: 0
 date_created: '2026-06-25'
-date_updated: '2026-06-25'
+date_updated: '2026-07-06'
 domain:
 - machine-learning
 - knowledge-representation
@@ -24,7 +24,8 @@ knowledge_type: technique
 maturity: evolving
 needs_canonical_source: true
 related_concepts: []
-sources: []
+sources:
+- tang-dream-2026
 tags:
 - retrieval
 - embeddings
