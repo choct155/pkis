@@ -7,12 +7,12 @@ from your phone.
 
 | Surface | Best for | Where |
 |---|---|---|
-| **Viewer PWA** | Browsing, searching, reading, capturing — especially on mobile | `https://pkis.dev/app` |
-| **MCP (via Claude)** | Asking questions in chat, and authoring/editing nodes | `https://pkis.dev/mcp` |
+| **Viewer PWA** | Browsing, searching, reading, capturing — especially on mobile | `https://pkis.clowderpack.dev/app` |
+| **MCP (via Claude)** | Asking questions in chat, and authoring/editing nodes | `https://pkis.clowderpack.dev/mcp` |
 
 ## Reading & browsing (viewer)
 
-Open `pkis.dev/app` (installable as a PWA — "Add to Home Screen" on phone). Nav:
+Open `pkis.clowderpack.dev/app` (installable as a PWA — "Add to Home Screen" on phone). Nav:
 
 - **browse** — all nodes, filterable by type / domain / cluster.
 - **search** — hybrid keyword + semantic search (top bar).
@@ -43,7 +43,7 @@ steps. In short:
 
 - **Claude Code (desktop):** configured in `~/.claude.json` with a Bearer key —
   reads *and* writes.
-- **claude.ai (mobile/web):** add a custom connector to `https://pkis.dev/mcp` —
+- **claude.ai (mobile/web):** add a custom connector to `https://pkis.clowderpack.dev/mcp` —
   reads anonymously; writes after OAuth sign-in (if you're on the allowlist).
 
 ## Authoring & editing (MCP write tools)

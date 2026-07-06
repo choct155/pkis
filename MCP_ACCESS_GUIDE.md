@@ -3,7 +3,7 @@
 How to connect to the PKIS knowledge wiki from Claude, what you can do once
 connected, and how access is controlled.
 
-> **Server:** `https://pkis.dev/mcp` (Streamable HTTP MCP transport)
+> **Server:** `https://pkis.clowderpack.dev/mcp` (Streamable HTTP MCP transport)
 > **Reads are open. Writes require authorization.**
 >
 > This guide documents both the **current** auth model and the **planned** OAuth
@@ -40,7 +40,7 @@ lands — see the plan):
 // ~/.claude.json  →  projects → <pkis project path> → mcpServers
 "pkis-wiki": {
   "type": "http",
-  "url": "https://pkis.dev/mcp",
+  "url": "https://pkis.clowderpack.dev/mcp",
   "headers": { "Authorization": "Bearer <PKIS_MCP_WRITE_KEY>" }
 }
 ```
@@ -56,10 +56,10 @@ In the Claude app, add a **custom connector**:
 
 1. Settings → **Connectors** → **Add custom connector**
 2. Name: `pkis-wiki`
-3. URL: `https://pkis.dev/mcp`
+3. URL: `https://pkis.clowderpack.dev/mcp`
 4. Save, then enable it in a chat's tools.
 
-Add the bare URL `https://pkis.dev/mcp`. This works for **reads** on mobile and
+Add the bare URL `https://pkis.clowderpack.dev/mcp`. This works for **reads** on mobile and
 is safe to share with colleagues — it carries no secret and write tools stay
 gated.
 
@@ -81,7 +81,7 @@ authenticated mobile writes require the real OAuth flow — see
 ### C. Other MCP clients
 
 Any Streamable-HTTP MCP client works for reads by pointing at
-`https://pkis.dev/mcp`. For writes it must send either the static Bearer token
+`https://pkis.clowderpack.dev/mcp`. For writes it must send either the static Bearer token
 (if you have it) or, post-OAuth, a valid OAuth access token.
 
 ---
