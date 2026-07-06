@@ -14,7 +14,7 @@ _Last updated: 2026-07-06_
 | Knowledge graph (`pkis-wiki`) | **live** | 2,943 nodes; new source: DREAM; new framework: Musical Preference Ontology; new resource: OpenWiki; music-preference-profile doc auto-created; **dense-passage-retrieval technique node linked to 1 source** |
 | Viewer PWA (`pkis.dev/app`) | **live** | mobile-first; wide-desktop dashboard (≥1280px); retrieval lab view (side-by-side regimes + unified retrieve/answer panel); path-mode UI; **native Capacitor APK** with WorkOS bearer auth + biometric unlock |
 | MCP write tools | **live** | stub/edge/hypothesis/bridge/source/edit; auto-commit+push, cache auto-refresh |
-| Auth (WorkOS AuthKit) | **live** | OAuth (claude.ai/MCP) + web sealed session; identity keyed on email; allowlist by email OR sub; single-use-refresh race coalesced; WorkOS dep added to resource node + public serving layer |
+| Auth (WorkOS AuthKit) | **live** | OAuth (claude.ai/MCP) + web sealed session; identity keyed on email; allowlist by email OR sub; single-use-refresh race coalesced; WorkOS dep added to resource node + public serving layer; **opaque-token fallback via OIDC userinfo for MCP writes** |
 | Ask (NL Q&A) | **live** | shared `ask.py` engine + `/pkis-api/ask` + viewer Ask tab; conversation persistence, voice I/O, capability-link sharing |
 | Inbox (owner review hub) | **live** | consolidated staged + discovery + agent lanes; finding intake (Parts A+B); lab-assistant cron inbox push divergence-safe; doc-drift lane; Graph gaps lane |
 | Lab Assistant | **live** | finding intake + descriptive Lab Assistant (Parts A+B) shipped; cron inbox push divergence-safe |
@@ -70,11 +70,9 @@ ingested + narrated. Local-only until published.
 
 ## Most recent session (2026-07-06)
 
-Added `get_openwiki` read-only MCP tool (tool count 41 → 42) exposing the openwiki/
-code map to MCP clients. Fixed the OpenWiki code-map staging filter to exclude
-binaries, images, HTML, and `.env` files — preventing noise and secrets from
-entering the code map. Linked 1 source to the `pkis:technique:dense-passage-retrieval`
-node via the librarian. Node count holds at 2,943; narrated chapters confirmed at 494.
+Added opaque-token fallback via OIDC userinfo endpoint for MCP write authorization,
+covering auth flows where the bearer token is opaque rather than a verifiable JWT.
+Node count holds at 2,943; narrated chapters confirmed at 494.
 
 ## Next priorities
 
