@@ -4,14 +4,14 @@ The single canonical snapshot of current build state. Changes frequently — upd
 after every build session. This is not a design doc (see [`ARCHITECTURE.md`](ARCHITECTURE.md))
 or a decision record (see [`DECISIONS.md`](DECISIONS.md)).
 
-_Last updated: 2026-07-05_
+_Last updated: 2026-07-06_
 
 ## Component status
 
 | Component | Status | Notes |
 |---|---|---|
-| PKIS-MCP server (`app.py`) | **live** | MCP (41 tools) + `/pkis-api/*` + docs/webhook/health on `pkis.dev`; gunicorn `pkis-mcp.service`; pinned deps in `requirements.txt` added for fresh-clone setup; architect/graph/link tools marked executable |
-| Knowledge graph (`pkis-wiki`) | **live** | 2,943 nodes; new source: DREAM; new framework: Musical Preference Ontology; new resource: OpenWiki; music-preference-profile doc auto-created |
+| PKIS-MCP server (`app.py`) | **live** | MCP (42 tools) + `/pkis-api/*` + docs/webhook/health on `pkis.dev`; gunicorn `pkis-mcp.service`; pinned deps in `requirements.txt`; architect/graph/link tools marked executable; **`get_openwiki` read-only tool added exposing the openwiki/ code map** |
+| Knowledge graph (`pkis-wiki`) | **live** | 2,943 nodes; new source: DREAM; new framework: Musical Preference Ontology; new resource: OpenWiki; music-preference-profile doc auto-created; **dense-passage-retrieval technique node linked to 1 source** |
 | Viewer PWA (`pkis.dev/app`) | **live** | mobile-first; wide-desktop dashboard (≥1280px); retrieval lab view (side-by-side regimes + unified retrieve/answer panel); path-mode UI; **native Capacitor APK** with WorkOS bearer auth + biometric unlock |
 | MCP write tools | **live** | stub/edge/hypothesis/bridge/source/edit; auto-commit+push, cache auto-refresh |
 | Auth (WorkOS AuthKit) | **live** | OAuth (claude.ai/MCP) + web sealed session; identity keyed on email; allowlist by email OR sub; single-use-refresh race coalesced; WorkOS dep added to resource node + public serving layer |
@@ -24,7 +24,7 @@ _Last updated: 2026-07-05_
 | Read+listen reader | **live** | LLM semantic narration + section-synced chapter PDF; resilient TTS (Piper-unvoiceable segments skipped); mp3 encoder streamed; **494 chapters narrated** |
 | Proactive discovery | **live** | frontier-gated OpenAlex cite-graph, cron'd Mondays; inbox + accept/dismiss feedback + learned-prior loop (prior still cold) |
 | Documentation system (`docs/`) | **live** | 6 docs + `log_idea` + viewer Docs view; music-preference-profile doc auto-added via doc-store; **OpenWiki cartographer adopted; Architect role retired; predicate drift fixed**; CONTEXT.md regenerated from ground truth |
-| OpenWiki refresh driver | **live** | rebase-retry push logic added; concurrent-writer safe; fixed `git add` staging step (removed invalid `-q` flag) |
+| OpenWiki refresh driver | **live** | rebase-retry push logic; concurrent-writer safe; `git add` staging fix; **binaries/images/HTML/.env now excluded from code-map staging** |
 | Explainers | **live** | HTML explainers as `asset` nodes; desktop live-edit loop; Tier-2 dynamic-explainer Flask blueprint scaffold (`/pkis-api/x/<name>/`) |
 | Comptroller (cost) | **live** | `usage.py` SQLite at `/home/pkis/usage`; per-origin cost; narration logs as `pkis-reader` |
 | Ideas log | **live** | `log_idea` tool; entry: OpGraph Strategist — multi-agent strategic council |
@@ -68,11 +68,13 @@ ingested + narrated. Local-only until published.
 - An `app.py` restart drops the claude.ai connector (users must reconnect) —
   minimize restarts; content changes don't need one (cache auto-refresh).
 
-## Most recent session (2026-07-05)
+## Most recent session (2026-07-06)
 
-Fixed a latent bug in the OpenWiki refresh driver: `git add` does not accept a `-q`
-flag, which was silently breaking the staging step. Patched. Node count holds at
-2,943; narrated chapters confirmed at 494.
+Added `get_openwiki` read-only MCP tool (tool count 41 → 42) exposing the openwiki/
+code map to MCP clients. Fixed the OpenWiki code-map staging filter to exclude
+binaries, images, HTML, and `.env` files — preventing noise and secrets from
+entering the code map. Linked 1 source to the `pkis:technique:dense-passage-retrieval`
+node via the librarian. Node count holds at 2,943; narrated chapters confirmed at 494.
 
 ## Next priorities
 
