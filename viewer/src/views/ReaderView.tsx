@@ -1,5 +1,6 @@
 import { lazy, Suspense, useEffect, useRef, useState } from 'react'
 import { getReader, saveReaderAnnotation, buildReader, getReaderStatus } from '../lib/api'
+import { API_ORIGIN } from '../lib/base'
 import { renderMarkdown } from '../lib/markdown'
 import { renderMath } from '../lib/katex'
 import type { ReaderPayload } from '../types'
@@ -95,9 +96,12 @@ export default function ReaderView({ slug, onClose }: Props) {
     let obj = ''
     let cancelled = false
     ;(async () => {
+      // Absolutize against the host origin so the native app doesn't resolve it against
+      // capacitor://localhost (the reader audio route is public — no auth needed).
+      const src = API_ORIGIN + payload.audio_url
       try {
         const cache = await caches.open('pkis-reader-audio')
-        const hit = await cache.match(payload.audio_url)
+        const hit = await cache.match(src)
         if (hit) {
           const b = await hit.blob()
           obj = URL.createObjectURL(b)
@@ -105,7 +109,7 @@ export default function ReaderView({ slug, onClose }: Props) {
           return
         }
       } catch { /* no cache API */ }
-      if (!cancelled) setAudioSrc(payload.audio_url)
+      if (!cancelled) setAudioSrc(src)
     })()
     return () => { cancelled = true; if (obj) URL.revokeObjectURL(obj) }
   }, [payload])
@@ -118,7 +122,7 @@ export default function ReaderView({ slug, onClose }: Props) {
   // the convention and only show the link when the file is actually served.
   useEffect(() => {
     let cancelled = false
-    const url = `/docs/sources/${slug}/${slug}.pdf`
+    const url = API_ORIGIN + `/docs/sources/${slug}/${slug}.pdf`
     setPdfUrl('')
     fetch(url, { method: 'HEAD' })
       .then((r) => { if (!cancelled && r.ok) setPdfUrl(url) })
@@ -165,7 +169,7 @@ export default function ReaderView({ slug, onClose }: Props) {
   const saveOffline = async () => {
     if (!payload) return
     showToast('saving for offline…')
-    try { const c = await caches.open('pkis-reader-audio'); await c.add(payload.audio_url); showToast('saved for offline ✓') }
+    try { const c = await caches.open('pkis-reader-audio'); await c.add(API_ORIGIN + payload.audio_url); showToast('saved for offline ✓') }
     catch { showToast('offline save failed') }
   }
 
