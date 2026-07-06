@@ -18,6 +18,15 @@ Format:
 
 ---
 
+## Write path test
+**Date logged:** 2026-07-06
+**Source:** Claude chat: write path validation
+**Idea:** MCP write connectivity test from Claude.ai chat. Discard.
+**Relation to existing system:** —
+**Open questions:** —
+**Status:** open
+
+
 ## OpGraph Strategist — multi-agent strategic council
 **Date logged:** 2026-06-29
 **Source:** Claude chat: OpGraph agent roster design session
