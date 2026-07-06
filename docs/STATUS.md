@@ -21,7 +21,7 @@ _Last updated: 2026-07-06_
 | Semantic search | **live** | BM25 + bge-small dense fused via RRF; graph rerank (personalized PageRank); path/relationship queries; standing-eval loop; **OpGraph designated as live NED/NER experimental platform** with six resolution strategies operationalizing the intensional-grounding-ned-accuracy hypothesis |
 | Retrieval lab deep metrics | **live** | P4 metrics (C(q) coverage, concision, relevance) per search regime; lab view + path-mode UI |
 | Research clusters + frontier priority | **live** | all 12 clusters de-orphaned; frontier-driven priority queue |
-| Read+listen reader | **live** | LLM semantic narration + section-synced chapter PDF; resilient TTS (Piper-unvoiceable segments skipped); mp3 encoder streamed; **494 chapters narrated** |
+| Read+listen reader | **live** | LLM semantic narration + section-synced chapter PDF; resilient TTS (Piper-unvoiceable segments skipped); mp3 encoder streamed; **494 chapters narrated**; **narration audio/PDF URLs absolutized for native app** |
 | Proactive discovery | **live** | frontier-gated OpenAlex cite-graph, cron'd Mondays; inbox + accept/dismiss feedback + learned-prior loop (prior still cold) |
 | Documentation system (`docs/`) | **live** | 6 docs + `log_idea` + viewer Docs view; music-preference-profile doc auto-added via doc-store; **OpenWiki cartographer adopted; Architect role retired; predicate drift fixed**; CONTEXT.md regenerated from ground truth |
 | OpenWiki refresh driver | **live** | rebase-retry push logic; concurrent-writer safe; `git add` staging fix; **binaries/images/HTML/.env now excluded from code-map staging** |
@@ -70,9 +70,10 @@ ingested + narrated. Local-only until published.
 
 ## Most recent session (2026-07-06)
 
-Added opaque-token fallback via OIDC userinfo endpoint for MCP write authorization,
-covering auth flows where the bearer token is opaque rather than a verifiable JWT.
-Node count holds at 2,943; narrated chapters confirmed at 494.
+Fixed narration audio and chapter PDF URLs in the reader: paths are now absolutized
+so the native Capacitor APK resolves them correctly (previously broke in the app
+context where relative URLs have no valid base). No graph or narration count changes;
+node count holds at 2,943; narrated chapters confirmed at 494.
 
 ## Next priorities
 
