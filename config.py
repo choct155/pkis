@@ -24,6 +24,9 @@ REPO_DIR = Path(os.environ.get("REPO_DIR", "/home/pkis/pkis-wiki"))
 # /home/pkis/app.py -> /home/pkis/pkis-wiki/app.py) to the real repo root, so this
 # equals REPO_DIR in prod. Override DOCS_REPO_DIR if docs ever split into their own repo.
 DOCS_REPO_DIR = Path(os.environ.get("DOCS_REPO_DIR", str(Path(__file__).resolve().parent)))
+# Generated OpenWiki code map — lives at <repo>/openwiki (same checkout as app.py +
+# docs/, so it hangs off DOCS_REPO_DIR). Exposed read-only over MCP via get_openwiki.
+OPENWIKI_DIR = Path(os.environ.get("OPENWIKI_DIR", str(DOCS_REPO_DIR / "openwiki")))
 ANTHROPIC_API_KEY = os.environ.get("ANTHROPIC_API_KEY", "")
 
 # Semantic (dense) search. BM25 stays the precision anchor; embeddings add recall

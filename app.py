@@ -3181,6 +3181,43 @@ def tool_get_doc(key: str) -> dict:
             "category": entry.get("category", ""), "markdown": path.read_text()}
 
 
+def _openwiki_pages() -> list:
+    """All markdown page paths under OPENWIKI_DIR, as sorted repo-relative-to-openwiki
+    strings (e.g. 'architecture/server.md', 'testing.md'). Dotfiles are skipped."""
+    base = OPENWIKI_DIR.resolve()
+    if not base.is_dir():
+        return []
+    return sorted(
+        str(p.relative_to(base))
+        for p in base.rglob("*.md")
+        if p.is_file() and not any(part.startswith(".") for part in p.relative_to(base).parts)
+    )
+
+
+def tool_get_openwiki(page: str = None) -> dict:
+    """Read the generated OpenWiki code map (read-only). With no `page`, return
+    quickstart.md plus the list of all available page paths under openwiki/. With a
+    `page`, return that page's markdown. Path-restricted to OPENWIKI_DIR: the resolved
+    path must stay inside it (no '..', no absolute escapes)."""
+    base = OPENWIKI_DIR.resolve()
+    page = (page or "").strip()
+
+    if not page:
+        quickstart = base / "quickstart.md"
+        markdown = quickstart.read_text() if quickstart.is_file() else ""
+        return {"page": "quickstart.md", "markdown": markdown, "pages": _openwiki_pages()}
+
+    # Reject absolute paths outright; resolve the rest under the openwiki base and
+    # confirm containment so traversal ('../', symlink escapes) can't read outside it.
+    if Path(page).is_absolute():
+        raise ValueError(f"invalid openwiki page: {page}")
+    path = (base / page).resolve()
+    if not (path == base or base in path.parents) or not path.is_file():
+        raise ValueError(f"openwiki page not found: {page}")
+    return {"page": str(path.relative_to(base)), "markdown": path.read_text(),
+            "pages": _openwiki_pages()}
+
+
 def _docs_repo_branch() -> str:
     try:
         r = subprocess.run(["git", "-C", str(DOCS_REPO_DIR), "rev-parse", "--abbrev-ref", "HEAD"],
@@ -5336,6 +5373,11 @@ def _get_tools_list():
             }}
         },
         {
+            "name": "get_openwiki",
+            "description": "Read the generated OpenWiki code map (read-only). Omit `page` to get quickstart.md plus the list of all available page paths (e.g. 'architecture/server.md', 'testing.md'); pass a `page` path to fetch that page's markdown. Path-restricted to openwiki/.",
+            "inputSchema": {"type": "object", "properties": {"page": {"type": "string"}}}
+        },
+        {
             "name": "get_dependency_chain",
             "description": "Return the transitive prerequisite chain for a node (what must be understood first), ordered by depth.",
             "inputSchema": {"type": "object", "properties": {"iri": {"type": "string"}}, "required": ["iri"]}
@@ -5566,6 +5608,7 @@ READ_TOOLS = {
             cluster=p.get("cluster")
         ),
         "get_health_metrics": lambda p: tool_get_health_metrics(),
+        "get_openwiki": lambda p: tool_get_openwiki(page=p.get("page")),
         "get_lab_report": lambda p: tool_get_lab_report(),
         "get_sourceless_stubs": lambda p: tool_get_sourceless_stubs(),
         # Read-only: lists pending staged nodes (no mutation). In READ tier so it

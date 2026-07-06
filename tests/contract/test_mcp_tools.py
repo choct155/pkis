@@ -102,7 +102,7 @@ def test_tools_list_is_well_formed(client):
     object — the schema is what MCP clients build their call UIs from."""
     result = _rpc(client, "tools/list").get_json()["result"]
     tools = result["tools"]
-    assert len(tools) == 44, "advertised tool count changed — update the contract baseline intentionally"
+    assert len(tools) == 45, "advertised tool count changed — update the contract baseline intentionally"
     for t in tools:
         assert t["name"]
         assert t["description"]
@@ -162,6 +162,44 @@ def test_get_sourceless_stubs_returns_flagged_node(client):
     out = _call_tool(client, "get_sourceless_stubs")
     iris = {n.get("iri") for n in out}
     assert "pkis:concept:sourceless-example" in iris
+
+
+@pytest.fixture
+def openwiki_dir(appmod, monkeypatch, tmp_path):
+    """A seeded openwiki/ tree with a quickstart + a nested page, pointed to by
+    appmod.OPENWIKI_DIR (resolved at call time as an app-module global)."""
+    ow = tmp_path / "openwiki"
+    (ow / "architecture").mkdir(parents=True)
+    (ow / "quickstart.md").write_text("# PKIS Quickstart\n\nthe map starts here.\n")
+    (ow / "architecture" / "server.md").write_text("# Server\n\nthe server page.\n")
+    (ow / "testing.md").write_text("# Testing\n\nthe testing page.\n")
+    monkeypatch.setattr(appmod, "OPENWIKI_DIR", ow)
+    return ow
+
+
+@pytest.mark.contract
+def test_get_openwiki_no_page_returns_quickstart_and_listing(client, openwiki_dir):
+    out = _call_tool(client, "get_openwiki")
+    assert out["page"] == "quickstart.md"
+    assert "the map starts here" in out["markdown"]
+    assert set(out["pages"]) == {"quickstart.md", "architecture/server.md", "testing.md"}
+
+
+@pytest.mark.contract
+def test_get_openwiki_valid_page_returns_that_page(client, openwiki_dir):
+    out = _call_tool(client, "get_openwiki", {"page": "architecture/server.md"})
+    assert out["page"] == "architecture/server.md"
+    assert "the server page" in out["markdown"]
+
+
+@pytest.mark.contract
+@pytest.mark.parametrize("bad", ["../config.py", "../../etc/passwd", "/etc/passwd", "nope.md"])
+def test_get_openwiki_rejects_traversal_and_missing(client, openwiki_dir, bad):
+    r = _rpc(client, "tools/call", {"name": "get_openwiki", "arguments": {"page": bad}})
+    payload = r.get_json()
+    # Either a JSON-RPC error or a tool error result — never a leaked file body.
+    is_error = payload.get("error") is not None or payload.get("result", {}).get("isError")
+    assert is_error, f"expected rejection for {bad!r}, got {payload!r}"
 
 
 # --------------------------------------------------------------------------- #
