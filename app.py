@@ -270,6 +270,33 @@ def _role_for_email(email: str) -> str:
     return _load_roles().get((email or "").lower(), "reader")
 
 
+_userinfo_cache: dict = {}  # opaque access token -> (claims, expiry_ts)
+
+
+def _userinfo_claims(tok: str) -> dict:
+    """Resolve an opaque access token to OIDC claims via AuthKit's userinfo
+    endpoint — the fallback when a bearer isn't a decodable JWT (WorkOS AuthKit
+    can hand MCP clients opaque access tokens). Cached briefly to avoid a
+    userinfo round-trip on every request."""
+    import time
+
+    import requests
+
+    now = time.time()
+    hit = _userinfo_cache.get(tok)
+    if hit and hit[1] > now:
+        return hit[0]
+    r = requests.get(
+        OAUTH_ISSUER + "/oauth2/userinfo",
+        headers={"Authorization": f"Bearer {tok}"},
+        timeout=6,
+    )
+    r.raise_for_status()
+    claims = r.json()
+    _userinfo_cache[tok] = (claims, now + 300)
+    return claims
+
+
 def oauth_identity(req):
     """Return (email, role) for a valid OAuth JWT, else None. No-op when OAuth off
     or when the bearer is the static key (handled by the static-key path)."""
@@ -281,8 +308,14 @@ def oauth_identity(req):
     try:
         claims = verify_jwt(tok)
     except Exception as e:  # noqa: BLE001
-        logger.info("OAuth JWT rejected: %s", e)
-        return None
+        # Not a decodable JWT (e.g. AuthKit issued an opaque access token) — fall
+        # back to OIDC userinfo introspection so opaque bearers still resolve.
+        try:
+            claims = _userinfo_claims(tok)
+            logger.info("OAuth identity via userinfo (opaque token)")
+        except Exception as e2:  # noqa: BLE001
+            logger.info("OAuth token rejected: jwt=%s userinfo=%s", e, e2)
+            return None
     email = (claims.get("email") or "").lower()
     sub = (claims.get("sub") or "").strip()
     roles = _load_roles()
