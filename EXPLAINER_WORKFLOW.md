@@ -20,7 +20,7 @@ server-backed one.
                 │                                                      │
   Claude Code ──┴─ edits ─▶ wiki/assets/viz/<slug>.html ─ live-reload ─▶ browser tab
                                        │
-                          explainer_publish.sh ──▶ pkis.dev  ──▶  ⟳ in PKIS overlay
+                          explainer_publish.sh ──▶ local wiki  ──▶  ⟳ in PKIS overlay
 ```
 
 1. **Live preview** — `bash tools/explainer_serve.sh [port]` serves the viz dir
@@ -33,7 +33,7 @@ server-backed one.
    `git checkout <sha> -- wiki/assets/viz/<slug>.html`; squash-merge to `main` when
    done so history stays clean.
 4. **Publish** — `bash tools/explainer_publish.sh` commits, pushes, and rsyncs the
-   viz dir to pkis.dev. Then hit **⟳** in the PKIS explainer overlay to re-pull the
+   viz dir to local wiki. Then hit **⟳** in the PKIS explainer overlay to re-pull the
    live version in context (no close/reopen).
 
 ## Static → server-side: the graduated model
