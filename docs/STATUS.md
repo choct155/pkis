@@ -4,7 +4,7 @@ The single canonical snapshot of current build state. Changes frequently — upd
 after every build session. This is not a design doc (see [`ARCHITECTURE.md`](ARCHITECTURE.md))
 or a decision record (see [`DECISIONS.md`](DECISIONS.md)).
 
-_Last updated: 2026-07-06_
+_Last updated: 2026-07-07_
 
 ## Component status
 
@@ -25,7 +25,7 @@ _Last updated: 2026-07-06_
 | Proactive discovery | **live** | frontier-gated OpenAlex cite-graph, cron'd Mondays; inbox + accept/dismiss feedback + learned-prior loop (prior still cold) |
 | Documentation system (`docs/`) | **live** | 6 docs + `log_idea` + viewer Docs view; music-preference-profile doc auto-added via doc-store; **OpenWiki cartographer adopted; Architect role retired; predicate drift fixed**; CONTEXT.md regenerated from ground truth |
 | OpenWiki refresh driver | **live** | rebase-retry push logic; concurrent-writer safe; `git add` staging fix; **binaries/images/HTML/.env now excluded from code-map staging** |
-| Explainers | **live** | HTML explainers as `asset` nodes; desktop live-edit loop; Tier-2 dynamic-explainer Flask blueprint scaffold (`/pkis-api/x/<name>/`) |
+| Explainers | **live** | HTML explainers as `asset` nodes; desktop live-edit loop; Tier-2 dynamic-explainer Flask blueprint scaffold (`/pkis-api/x/<name>/`); **viz now published to local serving copy (retired VPS path removed)** |
 | Comptroller (cost) | **live** | `usage.py` SQLite at `/home/pkis/usage`; per-origin cost; narration logs as `pkis-reader` |
 | Ideas log | **live** | `log_idea` tool; entry: OpGraph Strategist — multi-agent strategic council |
 
@@ -68,12 +68,11 @@ ingested + narrated. Local-only until published.
 - An `app.py` restart drops the claude.ai connector (users must reconnect) —
   minimize restarts; content changes don't need one (cache auto-refresh).
 
-## Most recent session (2026-07-06)
+## Most recent session (2026-07-07)
 
-Fixed narration audio and chapter PDF URLs in the reader: paths are now absolutized
-so the native Capacitor APK resolves them correctly (previously broke in the app
-context where relative URLs have no valid base). No graph or narration count changes;
-node count holds at 2,943; narrated chapters confirmed at 494.
+Fixed explainer publish target: viz output was being written to the retired VPS path
+rather than the local serving copy. No graph or narration changes; node count holds
+at 2,943; narrated chapters confirmed at 494.
 
 ## Next priorities
 
