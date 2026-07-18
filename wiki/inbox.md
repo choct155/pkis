@@ -44,5 +44,18 @@ Cost alerts from the Comptroller.
 <!-- - [ ] Weekly variable cost $XX.XX — exceeds threshold (date) -->
 
 ## Lab
+- [2026-07-18] Cluster `composite-credibility` idle 47d (>= 28d).
+- [2026-07-18] Cluster `compositional-query-grounding` idle 47d (>= 28d).
+- [2026-07-18] Cluster `embedding-ontology-alignment` idle 47d (>= 28d).
+- [2026-07-18] Cluster `evaluation-infrastructure` idle 47d (>= 28d).
+- [2026-07-18] Cluster `intensional-grounding` idle 47d (>= 28d).
+- [2026-07-18] Cluster `learned-symbol-grounding` idle 47d (>= 28d).
+- [2026-07-18] Cluster `model-evolution` idle 47d (>= 28d).
+- [2026-07-18] Cluster `ontological-coverage-planning` idle 47d (>= 28d).
+- [2026-07-18] Cluster `parsed-intent-calibration` idle 47d (>= 28d).
+- [2026-07-18] Cluster `research-instrumentation` idle 47d (>= 28d).
+- [2026-07-18] Cluster `retrieval-inference-tradeoff` idle 47d (>= 28d).
+- [2026-07-18] Cluster `structured-validation-truth-discovery` idle 47d (>= 28d).
+- [2026-07-18] A staged node has waited 22.2d for review (>= 7d).
 Descriptive drift flags from the Lab Assistant (idle clusters, stuck staged nodes, hypothesis-status swings). Descriptive only — the human decides what they warrant.
 <!-- - [ ] Cluster `x` idle 30d (date) -->
