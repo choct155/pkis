@@ -78,7 +78,7 @@ Fusion. The dense index (`.embed_cache.npz`) is **derived and gitignored** and m
 ## External integrations
 
 - **Readwise Reader** — source capture + webhook (`/readwise/webhook`).
-- **Google Drive** — binary source PDFs under `PKIS/sources/`, never committed.
+- **Google Drive** — `drive_id`/`drive_path` frontmatter fields are reserved as placeholders; no active Drive integration is implemented.
 - **GitHub** — version control + backlog (Issues), referencing `IDEAS.md` by title.
 - **Anthropic API** — extraction/narration pipelines (Librarian ingest, reader).
 
