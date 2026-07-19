@@ -3,6 +3,8 @@ aliases:
 - music taste framework
 - music exploration framework
 also_type: []
+applies:
+- recommender-systems
 component_scores:
   application: null
   limits: null
@@ -23,6 +25,8 @@ maturity: evolving
 needs_canonical_source: true
 related_concepts: []
 sources: []
+specializes:
+- preference-elicitation
 tags:
 - music
 - ontology
@@ -32,6 +36,8 @@ tags:
 - discovery
 title: Musical Preference Ontology
 understanding: 0
+uses:
+- learning-agent-architecture
 ---
 
 ## Definition
@@ -41,6 +47,9 @@ A lightweight personal ontology for articulating musical preference with enough 
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[learning-agent-architecture]] — uses: graph-gaps: wire orphan
+- [[preference-elicitation]] — specializes: graph-gaps: wire orphan
+- [[recommender-systems]] — applies: graph-gaps: wire orphan
 [To be populated during integration]
 
 ## Needs Canonical Source
