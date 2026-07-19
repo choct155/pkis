@@ -14,12 +14,16 @@ domain:
 - causal-analysis
 - bayesian-stats
 id: pkis:result:truncated-factorization-g-formula
+implemented-by:
+- power-iteration
 knowledge_type: result
 maturity: evolving
 needs_canonical_source: false
 related_concepts: []
 sources:
 - pearl-causality-ch03
+specializes:
+- low-rank-approximation
 tags:
 - causality
 - interventions
@@ -37,4 +41,6 @@ understanding: 0
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[power-iteration]] — implemented-by: graph-gaps: wire orphan
+- [[low-rank-approximation]] — specializes: graph-gaps: wire orphan
 [To be populated during integration]
