@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+applies:
+- ontologist-positioning-hardening-stack
 component_scores:
   formulation: null
   instances: null
@@ -11,6 +13,8 @@ date_created: '2026-06-14'
 date_updated: '2026-06-14'
 domain:
 - knowledge-representation
+evidence-for:
+- multidimensional-retrieval-quality-framework
 id: pkis:problem:concept-boundary-finding-problem
 knowledge_type: problem
 linked_nodes: []
@@ -31,6 +35,8 @@ tags:
 - competency-questions
 title: Concept Boundary Finding Problem
 understanding: 0
+uses:
+- graph-schema-expressivity
 ---
 
 ## Definition
@@ -74,4 +80,7 @@ The minimum scope of a concept node is the content required to answer all compet
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[graph-schema-expressivity]] — uses: graph-gaps: wire orphan
+- [[multidimensional-retrieval-quality-framework]] — evidence-for: graph-gaps: wire orphan
+- [[ontologist-positioning-hardening-stack]] — applies: graph-gaps: wire orphan
 [To be populated during integration]
