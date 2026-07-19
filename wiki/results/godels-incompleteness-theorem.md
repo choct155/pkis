@@ -1,6 +1,8 @@
 ---
 aliases: []
 also_type: []
+analogous-to:
+- herbrands-theorem
 component_scores:
   conditions: null
   implications: null
@@ -26,6 +28,8 @@ tags:
 - russell-norvig-aima
 title: Goedel's Incompleteness Theorem
 understanding: 0
+uses:
+- logical-entailment-and-inference
 ---
 
 ## Definition
@@ -35,4 +39,6 @@ Goedel's result that, once first-order logic is extended with the mathematical-i
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[herbrands-theorem]] — analogous-to: graph-gaps: wire orphan
+- [[logical-entailment-and-inference]] — uses: graph-gaps: wire orphan
 [To be populated during integration]
