@@ -51,7 +51,9 @@ nodes is a deliberate pass, not automatic.
 **MCP write → commit → visible**
 ```
 write tool ─▶ stage/edit markdown ─▶ git commit + push (wiki repo)
-                                      └─▶ cache auto-refresh (git-HEAD signature)
+                                      └─▶ cache auto-refresh on next dispatch
+                                          (every tool call checks git HEAD sha
+                                           via ensure_fresh; rebuilds if changed)
 ```
 New content is searchable immediately — no service restart. A restart is needed only
 for `app.py` code changes, and it **drops the claude.ai connector** (user reconnects).
