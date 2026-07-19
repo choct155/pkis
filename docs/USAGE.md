@@ -59,7 +59,7 @@ Typical flow:
    `create_source_stub` / `create_hypothesis` / `create_bridge_note`. These **stage** a node.
 3. **`commit_staged_node`** — promote the staged node to live.
 4. **`add_connections`** — wire typed edges to existing live nodes.
-5. **`edit_node`** — enrich a live node's frontmatter or body sections later.
+5. **`edit_node`** — enrich a live node's frontmatter or named body sections (`section_updates`), or replace the entire body (`content`). Also used by the viewer's edit sheet.
 
 Each write auto-commits, pushes, and refreshes the search cache — new content is
 findable immediately, no restart.
