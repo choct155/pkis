@@ -73,9 +73,7 @@ Wiki-as-filter; fit-dominant ranking. Surfaces in the viewer's `discover` view.
 ## Semantic search
 
 Hybrid retrieval: BM25 keyword + bge-small dense vectors, fused via Reciprocal Rank
-Fusion. The dense index (`.embed_cache.npz`) is **derived and gitignored** — the git
-HEAD sha is its freshness signature, so it must never enter version control. Built
-offline at deploy.
+Fusion. The dense index (`.embed_cache.npz`) is **derived and gitignored** and must never enter version control. Built offline at deploy. The git HEAD sha is the freshness signature for **all** caches (nodes, graph, BM25, and embeddings) — `ensure_fresh()` rebuilds every worker's caches automatically when the HEAD changes.
 
 ## External integrations
 
