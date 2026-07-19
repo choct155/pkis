@@ -6,6 +6,8 @@ component_scores:
   justification: null
   statement: null
   violations: null
+contrasts-with:
+- probability-vs-frequency
 coverage: 1
 date_created: '2026-06-09'
 date_updated: '2026-06-09'
@@ -19,6 +21,8 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - deisenroth-mml-ch08
+specializes:
+- maximum-a-posteriori-estimation-map
 tags:
 - point-estimate
 - posterior
@@ -35,4 +39,6 @@ understanding: 0
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[probability-vs-frequency]] — contrasts-with: graph-gaps: wire orphan
+- [[maximum-a-posteriori-estimation-map]] — specializes: graph-gaps: wire orphan
 [To be populated during integration]
