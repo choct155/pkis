@@ -18,6 +18,8 @@ domain:
 - personal-epistemology
 - music
 id: pkis:framework:musical-preference-ontology-1
+instantiates:
+- exploration-exploitation-tradeoff
 knowledge_type: framework
 maturity: evolving
 needs_canonical_source: true
@@ -33,6 +35,8 @@ tags:
 - mcmc-analogy
 title: Musical Preference Ontology
 understanding: 0
+uses:
+- preference-elicitation
 ---
 
 ## Definition
@@ -58,6 +62,8 @@ Mastery legibility is highest in: rap/hip-hop, West African music, spiritual/ava
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[exploration-exploitation-tradeoff]] — instantiates: graph-gaps: wire orphan
+- [[preference-elicitation]] — uses: graph-gaps: wire orphan
 [To be populated during integration]
 
 ## Needs Canonical Source
