@@ -28,6 +28,8 @@ tags:
 - eigenvalues
 title: Power Iteration
 understanding: 0
+uses:
+- low-rank-approximation
 ---
 
 ## Definition
@@ -37,4 +39,5 @@ understanding: 0
 [To be populated when a canonical source is attached]
 
 ## Connections
+- [[low-rank-approximation]] — uses: graph-gaps: wire orphan
 [To be populated during integration]
