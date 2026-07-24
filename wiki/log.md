@@ -26795,3 +26795,7 @@
 ## [2026-07-24] committed | source
 - Committed: rueden-informed-2021 → sources/rueden-informed-2021.md
 - IRI: pkis:source:rueden-informed-2021
+
+## [2026-07-24] committed | source
+- Committed: abdar-a-2021 → sources/abdar-a-2021.md
+- IRI: pkis:source:abdar-a-2021

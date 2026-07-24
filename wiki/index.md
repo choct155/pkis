@@ -1,6 +1,7 @@
 # PKIS Wiki Index
 
 ## Sources
+- [[abdar-a-2021]] — A review of uncertainty quantification in deep learning: Techniques, applications and challenges () (2026-07-24)
 - [[rueden-informed-2021]] — Informed Machine Learning - A Taxonomy and Survey of Integrating Prior Knowledge into Learning Systems () (2026-07-24)
 - [[timilsina-semisupervised-2021]] — Semi-supervised regression using diffusion on graphs () (2026-07-24)
 - [[mathdeeppdf]] — math-deep.pdf https://share.google/dGHmXzMpGvQPztVVh () (2026-07-24)
