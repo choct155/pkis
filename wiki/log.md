@@ -26767,3 +26767,7 @@
 ## [2026-07-24] committed | source
 - Committed: chang-amortized-2024 → sources/chang-amortized-2024.md
 - IRI: pkis:source:chang-amortized-2024
+
+## [2026-07-24] committed | source
+- Committed: hassan-efficient-2025 → sources/hassan-efficient-2025.md
+- IRI: pkis:source:hassan-efficient-2025
