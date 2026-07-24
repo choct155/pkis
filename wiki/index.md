@@ -1,6 +1,7 @@
 # PKIS Wiki Index
 
 ## Sources
+- [[rueden-informed-2021]] — Informed Machine Learning - A Taxonomy and Survey of Integrating Prior Knowledge into Learning Systems () (2026-07-24)
 - [[timilsina-semisupervised-2021]] — Semi-supervised regression using diffusion on graphs () (2026-07-24)
 - [[mathdeeppdf]] — math-deep.pdf https://share.google/dGHmXzMpGvQPztVVh () (2026-07-24)
 - [[proofslambdawpdf]] — proofslambda-w.pdf https://share.google/yjXKtvqD20u2GdLqD () (2026-07-24)

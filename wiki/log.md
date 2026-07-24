@@ -26791,3 +26791,7 @@
 ## [2026-07-24] committed | source
 - Committed: timilsina-semisupervised-2021 → sources/timilsina-semisupervised-2021.md
 - IRI: pkis:source:timilsina-semisupervised-2021
+
+## [2026-07-24] committed | source
+- Committed: rueden-informed-2021 → sources/rueden-informed-2021.md
+- IRI: pkis:source:rueden-informed-2021
