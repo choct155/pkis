@@ -1,6 +1,7 @@
 # PKIS Wiki Index
 
 ## Sources
+- [[timilsina-semisupervised-2021]] — Semi-supervised regression using diffusion on graphs () (2026-07-24)
 - [[mathdeeppdf]] — math-deep.pdf https://share.google/dGHmXzMpGvQPztVVh () (2026-07-24)
 - [[proofslambdawpdf]] — proofslambda-w.pdf https://share.google/yjXKtvqD20u2GdLqD () (2026-07-24)
 - [[tang-dream-2026]] — DREAM: Dense Retrieval Embeddings via Autoregressive Modeling () (2026-07-24)

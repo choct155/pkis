@@ -26787,3 +26787,7 @@
 ## [2026-07-24] committed | source
 - Committed: mathdeeppdf → sources/mathdeeppdf.md
 - IRI: pkis:source:mathdeeppdf
+
+## [2026-07-24] committed | source
+- Committed: timilsina-semisupervised-2021 → sources/timilsina-semisupervised-2021.md
+- IRI: pkis:source:timilsina-semisupervised-2021
