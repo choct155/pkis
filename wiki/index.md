@@ -1,6 +1,7 @@
 # PKIS Wiki Index
 
 ## Sources
+- [[yang-priorguide-2025]] — PriorGuide: Test-Time Prior Adaptation for Simulation-Based Inference () (2026-07-24)
 - [[mikkola-scorebased-2025]] — Score-Based Density Estimation from Pairwise Comparisons () (2026-07-24)
 - [[huang-aline-2025]] — ALINE: Joint Amortization for Bayesian Inference and Active Data Acquisition () (2026-07-24)
 - [[huang-amortized-2024]] — Amortized Bayesian Experimental Design for Decision-Making () (2026-07-24)

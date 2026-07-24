@@ -26755,3 +26755,7 @@
 ## [2026-07-24] committed | source
 - Committed: mikkola-scorebased-2025 → sources/mikkola-scorebased-2025.md
 - IRI: pkis:source:mikkola-scorebased-2025
+
+## [2026-07-24] committed | source
+- Committed: yang-priorguide-2025 → sources/yang-priorguide-2025.md
+- IRI: pkis:source:yang-priorguide-2025
