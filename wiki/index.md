@@ -1,6 +1,7 @@
 # PKIS Wiki Index
 
 ## Sources
+- [[tang-dream-2026]] — DREAM: Dense Retrieval Embeddings via Autoregressive Modeling () (2026-07-24)
 - [[httpswwwspheronnetworkblogaiinferencecosteconomics2026]] —  () (2026-07-24)
 - [[hassan-efficient-2025]] — Efficient Autoregressive Inference for Transformer Probabilistic Models () (2026-07-24)
 - [[chang-amortized-2024]] — Amortized Probabilistic Conditioning for Optimization, Simulation and Inference () (2026-07-24)
