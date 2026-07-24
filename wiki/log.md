@@ -26807,3 +26807,7 @@
 ## [2026-07-24] committed | source
 - Committed: borsos-audiolm-2023 → sources/borsos-audiolm-2023.md
 - IRI: pkis:source:borsos-audiolm-2023
+
+## [2026-07-24] committed | source
+- Committed: revach-kalmannet-2022 → sources/revach-kalmannet-2022.md
+- IRI: pkis:source:revach-kalmannet-2022

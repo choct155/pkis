@@ -1,6 +1,7 @@
 # PKIS Wiki Index
 
 ## Sources
+- [[revach-kalmannet-2022]] — KalmanNet: Neural Network Aided Kalman Filtering for Partially Known Dynamics () (2026-07-24)
 - [[borsos-audiolm-2023]] — AudioLM: A Language Modeling Approach to Audio Generation () (2026-07-24)
 - [[wang-learning-2022]] — Learning to Prompt for Continual Learning () (2026-07-24)
 - [[abdar-a-2021]] — A review of uncertainty quantification in deep learning: Techniques, applications and challenges () (2026-07-24)
