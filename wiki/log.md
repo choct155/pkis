@@ -26779,3 +26779,7 @@
 ## [2026-07-24] committed | source
 - Committed: tang-dream-2026 → sources/tang-dream-2026.md
 - IRI: pkis:source:tang-dream-2026
+
+## [2026-07-24] committed | source
+- Committed: proofslambdawpdf → sources/proofslambdawpdf.md
+- IRI: pkis:source:proofslambdawpdf

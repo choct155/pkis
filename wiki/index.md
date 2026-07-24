@@ -1,6 +1,7 @@
 # PKIS Wiki Index
 
 ## Sources
+- [[proofslambdawpdf]] — proofslambda-w.pdf https://share.google/yjXKtvqD20u2GdLqD () (2026-07-24)
 - [[tang-dream-2026]] — DREAM: Dense Retrieval Embeddings via Autoregressive Modeling () (2026-07-24)
 - [[httpswwwspheronnetworkblogaiinferencecosteconomics2026]] —  () (2026-07-24)
 - [[hassan-efficient-2025]] — Efficient Autoregressive Inference for Transformer Probabilistic Models () (2026-07-24)
