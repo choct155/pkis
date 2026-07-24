@@ -1,6 +1,7 @@
 # PKIS Wiki Index
 
 ## Sources
+- [[httpswwwspheronnetworkblogaiinferencecosteconomics2026]] —  () (2026-07-24)
 - [[hassan-efficient-2025]] — Efficient Autoregressive Inference for Transformer Probabilistic Models () (2026-07-24)
 - [[chang-amortized-2024]] — Amortized Probabilistic Conditioning for Optimization, Simulation and Inference () (2026-07-24)
 - [[li-amortized-2024]] — Amortized Bayesian Workflow () (2026-07-24)

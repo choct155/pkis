@@ -26771,3 +26771,7 @@
 ## [2026-07-24] committed | source
 - Committed: hassan-efficient-2025 → sources/hassan-efficient-2025.md
 - IRI: pkis:source:hassan-efficient-2025
+
+## [2026-07-24] committed | source
+- Committed: httpswwwspheronnetworkblogaiinferencecosteconomics2026 → sources/httpswwwspheronnetworkblogaiinferencecosteconomics2026.md
+- IRI: pkis:source:httpswwwspheronnetworkblogaiinferencecosteconomics2026
