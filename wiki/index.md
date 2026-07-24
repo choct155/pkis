@@ -1,6 +1,7 @@
 # PKIS Wiki Index
 
 ## Sources
+- [[borsos-audiolm-2023]] — AudioLM: A Language Modeling Approach to Audio Generation () (2026-07-24)
 - [[wang-learning-2022]] — Learning to Prompt for Continual Learning () (2026-07-24)
 - [[abdar-a-2021]] — A review of uncertainty quantification in deep learning: Techniques, applications and challenges () (2026-07-24)
 - [[rueden-informed-2021]] — Informed Machine Learning - A Taxonomy and Survey of Integrating Prior Knowledge into Learning Systems () (2026-07-24)

@@ -26803,3 +26803,7 @@
 ## [2026-07-24] committed | source
 - Committed: wang-learning-2022 → sources/wang-learning-2022.md
 - IRI: pkis:source:wang-learning-2022
+
+## [2026-07-24] committed | source
+- Committed: borsos-audiolm-2023 → sources/borsos-audiolm-2023.md
+- IRI: pkis:source:borsos-audiolm-2023
