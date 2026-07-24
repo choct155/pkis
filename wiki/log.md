@@ -26763,3 +26763,7 @@
 ## [2026-07-24] committed | source
 - Committed: li-amortized-2024 → sources/li-amortized-2024.md
 - IRI: pkis:source:li-amortized-2024
+
+## [2026-07-24] committed | source
+- Committed: chang-amortized-2024 → sources/chang-amortized-2024.md
+- IRI: pkis:source:chang-amortized-2024

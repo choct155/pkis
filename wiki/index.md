@@ -1,6 +1,7 @@
 # PKIS Wiki Index
 
 ## Sources
+- [[chang-amortized-2024]] — Amortized Probabilistic Conditioning for Optimization, Simulation and Inference () (2026-07-24)
 - [[li-amortized-2024]] — Amortized Bayesian Workflow () (2026-07-24)
 - [[yang-priorguide-2025]] — PriorGuide: Test-Time Prior Adaptation for Simulation-Based Inference () (2026-07-24)
 - [[mikkola-scorebased-2025]] — Score-Based Density Estimation from Pairwise Comparisons () (2026-07-24)
