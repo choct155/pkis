@@ -1,6 +1,7 @@
 # PKIS Wiki Index
 
 ## Sources
+- [[huang-amortized-2024]] — Amortized Bayesian Experimental Design for Decision-Making () (2026-07-24)
 - [[tang-dream-2026]] — DREAM: Dense Retrieval Embeddings via Autoregressive Modeling () (2026-07-19)
 - [[tang-dream-2026]] — DREAM: Dense Retrieval Embeddings via Autoregressive Modeling () (2026-07-04)
 - [[openwiki]] — OpenWiki (knowledge-representation, symbolic-subsymbolic) (2026-07-04)

@@ -26703,3 +26703,47 @@
 ## [2026-07-19] committed | source
 - Committed: tang-dream-2026 → sources/tang-dream-2026.md
 - IRI: pkis:source:tang-dream-2026
+
+## [2026-07-24] staged | source-stub
+- Staged: httpswwwspheronnetworkblogaiinferencecosteconomics2026 (id: 2db6ae2d-93be-4f01-8897-605cc095f832)
+- Title: (unknown)
+- Enrichment: minimal
+
+## [2026-07-24] staged | source-stub
+- Staged: hassan-efficient-2025 (id: 5f15d035-a645-47bb-a71b-2ee5d343af85)
+- Title: Efficient Autoregressive Inference for Transformer Probabilistic Models
+- Enrichment: full
+
+## [2026-07-24] staged | source-stub
+- Staged: chang-amortized-2024 (id: 4bb3c4e1-c2d7-4797-a3db-54b3c4ebb55a)
+- Title: Amortized Probabilistic Conditioning for Optimization, Simulation and Inference
+- Enrichment: full
+
+## [2026-07-24] staged | source-stub
+- Staged: li-amortized-2024 (id: 134b1efb-7345-46b9-8c8a-f7c228c42939)
+- Title: Amortized Bayesian Workflow
+- Enrichment: full
+
+## [2026-07-24] staged | source-stub
+- Staged: yang-priorguide-2025 (id: cb29da18-117a-4351-8565-cdbe5d9f0138)
+- Title: PriorGuide: Test-Time Prior Adaptation for Simulation-Based Inference
+- Enrichment: full
+
+## [2026-07-24] staged | source-stub
+- Staged: mikkola-scorebased-2025 (id: 8a129080-22f8-436f-9fbb-841b522cb8a1)
+- Title: Score-Based Density Estimation from Pairwise Comparisons
+- Enrichment: full
+
+## [2026-07-24] staged | source-stub
+- Staged: huang-aline-2025 (id: 046f0f22-a084-4185-836b-bd6b82fa6777)
+- Title: ALINE: Joint Amortization for Bayesian Inference and Active Data Acquisition
+- Enrichment: full
+
+## [2026-07-24] staged | source-stub
+- Staged: huang-amortized-2024 (id: 0d83be01-72c0-4fc3-aa8a-4e8d0cf65de2)
+- Title: Amortized Bayesian Experimental Design for Decision-Making
+- Enrichment: full
+
+## [2026-07-24] committed | source
+- Committed: huang-amortized-2024 → sources/huang-amortized-2024.md
+- IRI: pkis:source:huang-amortized-2024
