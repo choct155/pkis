@@ -26759,3 +26759,7 @@
 ## [2026-07-24] committed | source
 - Committed: yang-priorguide-2025 → sources/yang-priorguide-2025.md
 - IRI: pkis:source:yang-priorguide-2025
+
+## [2026-07-24] committed | source
+- Committed: li-amortized-2024 → sources/li-amortized-2024.md
+- IRI: pkis:source:li-amortized-2024
