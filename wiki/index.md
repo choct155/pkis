@@ -1,6 +1,7 @@
 # PKIS Wiki Index
 
 ## Sources
+- [[huang-aline-2025]] — ALINE: Joint Amortization for Bayesian Inference and Active Data Acquisition () (2026-07-24)
 - [[huang-amortized-2024]] — Amortized Bayesian Experimental Design for Decision-Making () (2026-07-24)
 - [[tang-dream-2026]] — DREAM: Dense Retrieval Embeddings via Autoregressive Modeling () (2026-07-19)
 - [[tang-dream-2026]] — DREAM: Dense Retrieval Embeddings via Autoregressive Modeling () (2026-07-04)

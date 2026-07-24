@@ -26747,3 +26747,7 @@
 ## [2026-07-24] committed | source
 - Committed: huang-amortized-2024 → sources/huang-amortized-2024.md
 - IRI: pkis:source:huang-amortized-2024
+
+## [2026-07-24] committed | source
+- Committed: huang-aline-2025 → sources/huang-aline-2025.md
+- IRI: pkis:source:huang-aline-2025
