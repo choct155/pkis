@@ -26799,3 +26799,7 @@
 ## [2026-07-24] committed | source
 - Committed: abdar-a-2021 → sources/abdar-a-2021.md
 - IRI: pkis:source:abdar-a-2021
+
+## [2026-07-24] committed | source
+- Committed: wang-learning-2022 → sources/wang-learning-2022.md
+- IRI: pkis:source:wang-learning-2022
