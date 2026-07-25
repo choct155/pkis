@@ -26818,3 +26818,6 @@
 
 ## [2026-07-25] edit | edit_node
 - pkis:source:belle-future-neurosymbolic-2025: fields=['understanding', 'viz'] sections=[]
+
+## [2026-07-25] edit | edit_node
+- pkis:source:sequeda-kg-benchmark-llm-2023: fields=['understanding', 'viz'] sections=[]

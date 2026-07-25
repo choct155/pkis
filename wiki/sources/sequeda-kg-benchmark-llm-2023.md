@@ -1,18 +1,47 @@
 ---
-id: "pkis:source:sequeda-kg-benchmark-llm-2023"
 aliases: []
-title: "A Benchmark to Understand the Role of Knowledge Graphs on Large Language Model's Accuracy for Question Answering on Enterprise SQL Databases"
-authors: "Juan F. Sequeda, Dean Allemang, Bryon Jacob"
-year: 2023
-type: paper
-domain: [knowledge-representation, deep-learning]
-tags: [knowledge-graphs, llm, question-answering, text-to-sql, sparql, benchmark, enterprise-data, ontology, r2rml, owl, accuracy, hallucination, gpt-4]
-source_url: ""
-drive_id: "1UU3sRe8QaDPbct9kddNyIo29v6WfKmMt"
-drive_path: "PKIS/sources/papers/A Benchmark to Understand the Role of Knowledge Graphs on Large Language Model's Accuracy for Question Answering on Enterprise SQL Databases - Sequeda, Allemang.pdf"
-status: unread
+authors: Juan F. Sequeda, Dean Allemang, Bryon Jacob
+concepts:
+- '[[knowledge-graph-question-answering]]'
+- '[[text-to-sql]]'
+- '[[r2rml]]'
+- '[[sparql]]'
+- '[[owl]]'
+- '[[retrieval-augmented-generation]]'
+- '[[knowledge-graph]]'
+- '[[formal-ontology]]'
+- '[[llm-hallucination]]'
 date_added: 2026-05-20
-concepts: ["[[knowledge-graph-question-answering]]", "[[text-to-sql]]", "[[r2rml]]", "[[sparql]]", "[[owl]]", "[[retrieval-augmented-generation]]", "[[knowledge-graph]]", "[[formal-ontology]]", "[[llm-hallucination]]"]
+date_updated: '2026-07-25'
+domain:
+- knowledge-representation
+- deep-learning
+drive_id: 1UU3sRe8QaDPbct9kddNyIo29v6WfKmMt
+drive_path: PKIS/sources/papers/A Benchmark to Understand the Role of Knowledge Graphs
+  on Large Language Model's Accuracy for Question Answering on Enterprise SQL Databases
+  - Sequeda, Allemang.pdf
+id: pkis:source:sequeda-kg-benchmark-llm-2023
+source_url: ''
+status: unread
+tags:
+- knowledge-graphs
+- llm
+- question-answering
+- text-to-sql
+- sparql
+- benchmark
+- enterprise-data
+- ontology
+- r2rml
+- owl
+- accuracy
+- hallucination
+- gpt-4
+title: A Benchmark to Understand the Role of Knowledge Graphs on Large Language Model's
+  Accuracy for Question Answering on Enterprise SQL Databases
+type: paper
+understanding: 4
+year: 2023
 ---
 
 ## Summary
