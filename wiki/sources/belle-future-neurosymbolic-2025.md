@@ -1,18 +1,41 @@
 ---
-id: "pkis:source:belle-future-neurosymbolic-2025"
 aliases: []
-title: "The Future Is Neuro-Symbolic: Where Has It Been, and Where Is It Going?"
-authors: "Vaishak Belle, Gary Marcus"
-year: 2025
-type: paper
-domain: [symbolic-subsymbolic, deep-learning, knowledge-representation]
-tags: [neurosymbolic, survey, llm, scaling-hypothesis, statistical-relational-learning, program-induction, probabilistic-logic, alphageometry, alphaproof, system-1-system-2, history-of-ai]
-source_url: ""
-drive_id: "1yZ0R0o5tyotEbvXRbKw_5GaXcXl67ZYT"
-drive_path: "PKIS/sources/papers/The Future Is Neuro-Symbolic - Where Has It Been, and Where Is It Going - Belle, Marcus.pdf"
-status: unread
+authors: Vaishak Belle, Gary Marcus
+concepts:
+- '[[neurosymbolic-ai]]'
+- '[[statistical-relational-learning]]'
+- '[[system-1-system-2-thinking]]'
+- '[[scaling-hypothesis]]'
+- '[[program-induction]]'
+- '[[deep-probabilistic-logic-programming]]'
 date_added: 2026-05-20
-concepts: ["[[neurosymbolic-ai]]", "[[statistical-relational-learning]]", "[[system-1-system-2-thinking]]", "[[scaling-hypothesis]]", "[[program-induction]]", "[[deep-probabilistic-logic-programming]]"]
+date_updated: '2026-07-25'
+domain:
+- symbolic-subsymbolic
+- deep-learning
+- knowledge-representation
+drive_id: 1yZ0R0o5tyotEbvXRbKw_5GaXcXl67ZYT
+drive_path: PKIS/sources/papers/The Future Is Neuro-Symbolic - Where Has It Been,
+  and Where Is It Going - Belle, Marcus.pdf
+id: pkis:source:belle-future-neurosymbolic-2025
+source_url: ''
+status: unread
+tags:
+- neurosymbolic
+- survey
+- llm
+- scaling-hypothesis
+- statistical-relational-learning
+- program-induction
+- probabilistic-logic
+- alphageometry
+- alphaproof
+- system-1-system-2
+- history-of-ai
+title: 'The Future Is Neuro-Symbolic: Where Has It Been, and Where Is It Going?'
+type: paper
+understanding: 3
+year: 2025
 ---
 
 ## Summary

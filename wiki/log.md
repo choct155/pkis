@@ -26815,3 +26815,6 @@
 ## [2026-07-25] committed | source
 - Committed: tang-dream-2026 → sources/tang-dream-2026.md
 - IRI: pkis:source:tang-dream-2026
+
+## [2026-07-25] edit | edit_node
+- pkis:source:belle-future-neurosymbolic-2025: fields=['understanding', 'viz'] sections=[]
