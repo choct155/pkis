@@ -1,6 +1,7 @@
 # PKIS Wiki Index
 
 ## Sources
+- [[tang-dream-2026]] — DREAM: Dense Retrieval Embeddings via Autoregressive Modeling () (2026-07-25)
 - [[revach-kalmannet-2022]] — KalmanNet: Neural Network Aided Kalman Filtering for Partially Known Dynamics () (2026-07-24)
 - [[borsos-audiolm-2023]] — AudioLM: A Language Modeling Approach to Audio Generation () (2026-07-24)
 - [[wang-learning-2022]] — Learning to Prompt for Continual Learning () (2026-07-24)

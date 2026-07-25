@@ -26811,3 +26811,7 @@
 ## [2026-07-24] committed | source
 - Committed: revach-kalmannet-2022 → sources/revach-kalmannet-2022.md
 - IRI: pkis:source:revach-kalmannet-2022
+
+## [2026-07-25] committed | source
+- Committed: tang-dream-2026 → sources/tang-dream-2026.md
+- IRI: pkis:source:tang-dream-2026
