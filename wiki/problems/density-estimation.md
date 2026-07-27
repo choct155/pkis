@@ -10,7 +10,7 @@ contrasts-with:
 - model-selection-problem
 coverage: 1
 date_created: '2026-06-09'
-date_updated: '2026-06-09'
+date_updated: '2026-07-27'
 domain:
 - statistical-learning
 - bayesian-stats
@@ -23,6 +23,7 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - russell-norvig-aima-ch20
+- mikkola-scorebased-2025
 tags:
 - unsupervised-learning
 - probability-model

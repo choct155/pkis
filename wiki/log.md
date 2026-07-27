@@ -26821,3 +26821,6 @@
 
 ## [2026-07-25] edit | edit_node
 - pkis:source:sequeda-kg-benchmark-llm-2023: fields=['understanding', 'viz'] sections=[]
+
+## [2026-07-27] edit | edit_node
+- pkis:problem:density-estimation: fields=['sources'] sections=[]
