@@ -26827,3 +26827,6 @@
 
 ## [2026-07-27] edit | edit_node
 - pkis:concept:density-ratio-estimation: fields=['sources'] sections=[]
+
+## [2026-07-27] edit | edit_node
+- pkis:technique:learned-approximate-inference: fields=['sources'] sections=[]
