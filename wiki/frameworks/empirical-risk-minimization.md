@@ -6,7 +6,7 @@ contrasts-with:
 - bias-variance-tradeoff
 coverage: 2
 date_created: 2026-05-20
-date_updated: '2026-06-09'
+date_updated: '2026-07-27'
 domain:
 - statistical-learning
 id: pkis:framework:empirical-risk-minimization
@@ -22,6 +22,7 @@ sources:
 - '[[deisenroth-mml]]'
 - '[[domingos-useful-things]]'
 - '[[liu-kan-2024]]'
+- deisenroth-mml-ch01
 tags:
 - probability-theory
 - optimization
