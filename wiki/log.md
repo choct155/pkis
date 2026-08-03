@@ -26930,3 +26930,7 @@
 ## [2026-08-03] committed | source
 - Committed: habermann-amortized-2024 → sources/habermann-amortized-2024.md
 - IRI: pkis:source:habermann-amortized-2024
+
+## [2026-08-03] committed | source
+- Committed: li-amortized-2024-1 → sources/li-amortized-2024-1.md
+- IRI: pkis:source:li-amortized-2024-1

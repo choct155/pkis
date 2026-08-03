@@ -1,6 +1,7 @@
 # PKIS Wiki Index
 
 ## Sources
+- [[li-amortized-2024-1]] — Amortized Bayesian Workflow () (2026-08-03)
 - [[habermann-amortized-2024]] — Amortized Bayesian Multilevel Models () (2026-08-03)
 - [[bockting-simulationbased-2023]] — Simulation-Based Prior Knowledge Elicitation for Parametric Bayesian Models () (2026-08-03)
 - [[radev-bayesflow-2023]] — BayesFlow: Amortized Bayesian Workflows With Neural Networks () (2026-08-03)
