@@ -26954,3 +26954,6 @@
 ## [2026-08-03] committed | source
 - Committed: brkner-simulations-2025 → sources/brkner-simulations-2025.md
 - IRI: pkis:source:brkner-simulations-2025
+
+## [2026-08-03] edit | edit_node
+- pkis:source:belle-future-neurosymbolic-2025: fields=['understanding', 'viz'] sections=[]

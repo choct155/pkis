@@ -9,7 +9,7 @@ concepts:
 - '[[program-induction]]'
 - '[[deep-probabilistic-logic-programming]]'
 date_added: 2026-05-20
-date_updated: '2026-07-25'
+date_updated: '2026-08-03'
 domain:
 - symbolic-subsymbolic
 - deep-learning
