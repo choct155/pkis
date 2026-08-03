@@ -26938,3 +26938,7 @@
 ## [2026-08-03] committed | source
 - Committed: arruda-diffusion-2025-1 → sources/arruda-diffusion-2025-1.md
 - IRI: pkis:source:arruda-diffusion-2025-1
+
+## [2026-08-03] committed | source
+- Committed: bracher-jadai-2025 → sources/bracher-jadai-2025.md
+- IRI: pkis:source:bracher-jadai-2025
