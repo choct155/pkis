@@ -26942,3 +26942,7 @@
 ## [2026-08-03] committed | source
 - Committed: bracher-jadai-2025 → sources/bracher-jadai-2025.md
 - IRI: pkis:source:bracher-jadai-2025
+
+## [2026-08-03] committed | source
+- Committed: brkner-simulations-2025-1 → sources/brkner-simulations-2025-1.md
+- IRI: pkis:source:brkner-simulations-2025-1

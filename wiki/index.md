@@ -1,6 +1,7 @@
 # PKIS Wiki Index
 
 ## Sources
+- [[brkner-simulations-2025-1]] — Simulations in Statistical Workflows () (2026-08-03)
 - [[bracher-jadai-2025]] — JADAI: Jointly Amortizing Adaptive Design and Bayesian Inference () (2026-08-03)
 - [[arruda-diffusion-2025-1]] — Diffusion Models in Simulation-Based Inference: A Tutorial Review () (2026-08-03)
 - [[li-amortized-2024-1]] — Amortized Bayesian Workflow () (2026-08-03)
