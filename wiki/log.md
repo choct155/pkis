@@ -26926,3 +26926,7 @@
 ## [2026-08-03] committed | source
 - Committed: bockting-simulationbased-2023 → sources/bockting-simulationbased-2023.md
 - IRI: pkis:source:bockting-simulationbased-2023
+
+## [2026-08-03] committed | source
+- Committed: habermann-amortized-2024 → sources/habermann-amortized-2024.md
+- IRI: pkis:source:habermann-amortized-2024
