@@ -1,6 +1,7 @@
 # PKIS Wiki Index
 
 ## Sources
+- [[brkner-simulations-2025]] — Simulations in Statistical Workflows () (2026-08-03)
 - [[serret-understanding-2026]] — Understanding Transformers and Attention Mechanisms: An Introduction for Applied Mathematicians () (2026-08-03)
 - [[brkner-simulations-2025-1]] — Simulations in Statistical Workflows () (2026-08-03)
 - [[bracher-jadai-2025]] — JADAI: Jointly Amortizing Adaptive Design and Bayesian Inference () (2026-08-03)

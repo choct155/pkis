@@ -26950,3 +26950,7 @@
 ## [2026-08-03] committed | source
 - Committed: serret-understanding-2026 → sources/serret-understanding-2026.md
 - IRI: pkis:source:serret-understanding-2026
+
+## [2026-08-03] committed | source
+- Committed: brkner-simulations-2025 → sources/brkner-simulations-2025.md
+- IRI: pkis:source:brkner-simulations-2025
