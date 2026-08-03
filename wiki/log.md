@@ -26845,3 +26845,15 @@
 ## [2026-08-03] committed | source
 - Committed: arruda-diffusion-2025 → sources/arruda-diffusion-2025.md
 - IRI: pkis:source:arruda-diffusion-2025
+
+## [2026-08-03] discarded | unknown
+- Discarded: 260400965v1pdf (id: d263058e-1835-43d4-8e96-a468846278eb)
+
+## [2026-08-03] staged | source-stub
+- Staged: 260400965 (id: 63a1b882-1ca3-427e-9e13-5a6459ce2ac2)
+- Title: [2604.00965] Understanding Transformers and Attention Mechanisms: An Introduction for Applied Mathematicians https://share.google/HBCIg0eDDtBO5XZ4K
+- Enrichment: minimal
+
+## [2026-08-03] committed | source
+- Committed: tang-dream-2026 → sources/tang-dream-2026.md
+- IRI: pkis:source:tang-dream-2026
