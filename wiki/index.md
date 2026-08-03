@@ -1,6 +1,7 @@
 # PKIS Wiki Index
 
 ## Sources
+- [[ding-a-2023]] — A First Course in Causal Inference () (2026-08-03)
 - [[tang-dream-2026]] — DREAM: Dense Retrieval Embeddings via Autoregressive Modeling () (2026-08-03)
 - [[arruda-diffusion-2025]] — Diffusion Models in Simulation-Based Inference: A Tutorial Review () (2026-08-03)
 - [[tang-dream-2026]] — DREAM: Dense Retrieval Embeddings via Autoregressive Modeling () (2026-07-25)

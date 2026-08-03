@@ -26857,3 +26857,64 @@
 ## [2026-08-03] committed | source
 - Committed: tang-dream-2026 → sources/tang-dream-2026.md
 - IRI: pkis:source:tang-dream-2026
+
+## [2026-08-03] staged | source-stub
+- Staged: serret-understanding-2026 (id: 553cd419-c45f-44ba-9a5d-96675d339bf9)
+- Title: Understanding Transformers and Attention Mechanisms: An Introduction for Applied Mathematicians
+- Enrichment: full
+
+## [2026-08-03] staged | source-stub
+- Staged: brkner-simulations-2025-1 (id: b6565381-0aa7-4286-865b-b97d469bd003)
+- Title: Simulations in Statistical Workflows
+- Enrichment: full
+
+## [2026-08-03] staged | source-stub
+- Staged: bracher-jadai-2025 (id: faf9ea96-ad1b-4cd5-9854-8193f9f0799f)
+- Title: JADAI: Jointly Amortizing Adaptive Design and Bayesian Inference
+- Enrichment: full
+
+## [2026-08-03] staged | source-stub
+- Staged: arruda-diffusion-2025-1 (id: 001aae2a-db11-483c-986b-078c24667f01)
+- Title: Diffusion Models in Simulation-Based Inference: A Tutorial Review
+- Enrichment: full
+
+## [2026-08-03] staged | source-stub
+- Staged: li-amortized-2024-1 (id: b630d041-3de9-4a08-b14c-4b8a806a31de)
+- Title: Amortized Bayesian Workflow
+- Enrichment: full
+
+## [2026-08-03] staged | source-stub
+- Staged: habermann-amortized-2024 (id: 652c8916-5d2e-4c05-a2e1-4235020fccde)
+- Title: Amortized Bayesian Multilevel Models
+- Enrichment: full
+
+## [2026-08-03] discarded | unknown
+- Discarded: httpswwwnaturecomarticless41598024680907 (id: ad328e8b-1909-48c2-9fca-2e5f836a0683)
+
+## [2026-08-03] discarded | unknown
+- Discarded: httpsarxivorgabs251222999 (id: b8efeea1-d076-4f15-95bd-8d3f4bdba636)
+
+## [2026-08-03] discarded | unknown
+- Discarded: 260400965 (id: 63a1b882-1ca3-427e-9e13-5a6459ce2ac2)
+
+## [2026-08-03] staged | source-stub
+- Staged: bockting-simulationbased-2023 (id: 41610e39-ceab-4c1e-9f52-93667ca44012)
+- Title: Simulation-Based Prior Knowledge Elicitation for Parametric Bayesian Models
+- Enrichment: full
+
+## [2026-08-03] staged | source-stub
+- Staged: radev-bayesflow-2023 (id: 7866a8db-8fcf-4fc9-8453-e97996742c27)
+- Title: BayesFlow: Amortized Bayesian Workflows With Neural Networks
+- Enrichment: full
+
+## [2026-08-03] staged | source-stub
+- Staged: ding-a-2023 (id: 94ff3aa6-0097-4f6f-a784-4a1a1fcbd14a)
+- Title: A First Course in Causal Inference
+- Enrichment: full
+
+## [2026-08-03] discarded | unknown
+- Discarded: 230518793 (id: 2140e0dc-745e-4e3a-8b6c-73c6fe79ea2f)
+
+## [2026-08-03] committed | source
+- Committed: ding-a-2023 → sources/ding-a-2023.md
+- IRI: pkis:source:ding-a-2023
