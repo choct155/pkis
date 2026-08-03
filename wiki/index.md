@@ -1,6 +1,7 @@
 # PKIS Wiki Index
 
 ## Sources
+- [[arruda-diffusion-2025]] — Diffusion Models in Simulation-Based Inference: A Tutorial Review () (2026-08-03)
 - [[tang-dream-2026]] — DREAM: Dense Retrieval Embeddings via Autoregressive Modeling () (2026-07-25)
 - [[revach-kalmannet-2022]] — KalmanNet: Neural Network Aided Kalman Filtering for Partially Known Dynamics () (2026-07-24)
 - [[borsos-audiolm-2023]] — AudioLM: A Language Modeling Approach to Audio Generation () (2026-07-24)

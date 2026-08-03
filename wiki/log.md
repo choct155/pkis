@@ -26836,3 +26836,12 @@
 
 ## [2026-07-27] edit | edit_node
 - pkis:framework:empirical-risk-minimization: fields=['sources'] sections=[]
+
+## [2026-08-03] staged | source-stub
+- Staged: 260400965v1pdf (id: d263058e-1835-43d4-8e96-a468846278eb)
+- Title: 2604.00965v1.pdf https://share.google/PgCTZvRxJGVpSTc9m
+- Enrichment: minimal
+
+## [2026-08-03] committed | source
+- Committed: arruda-diffusion-2025 → sources/arruda-diffusion-2025.md
+- IRI: pkis:source:arruda-diffusion-2025
