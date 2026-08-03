@@ -1,6 +1,7 @@
 # PKIS Wiki Index
 
 ## Sources
+- [[bockting-simulationbased-2023]] — Simulation-Based Prior Knowledge Elicitation for Parametric Bayesian Models () (2026-08-03)
 - [[radev-bayesflow-2023]] — BayesFlow: Amortized Bayesian Workflows With Neural Networks () (2026-08-03)
 - [[ding-a-2023]] — A First Course in Causal Inference () (2026-08-03)
 - [[tang-dream-2026]] — DREAM: Dense Retrieval Embeddings via Autoregressive Modeling () (2026-08-03)

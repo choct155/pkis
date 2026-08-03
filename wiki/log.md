@@ -26922,3 +26922,7 @@
 ## [2026-08-03] committed | source
 - Committed: radev-bayesflow-2023 → sources/radev-bayesflow-2023.md
 - IRI: pkis:source:radev-bayesflow-2023
+
+## [2026-08-03] committed | source
+- Committed: bockting-simulationbased-2023 → sources/bockting-simulationbased-2023.md
+- IRI: pkis:source:bockting-simulationbased-2023
