@@ -26918,3 +26918,7 @@
 ## [2026-08-03] committed | source
 - Committed: ding-a-2023 → sources/ding-a-2023.md
 - IRI: pkis:source:ding-a-2023
+
+## [2026-08-03] committed | source
+- Committed: radev-bayesflow-2023 → sources/radev-bayesflow-2023.md
+- IRI: pkis:source:radev-bayesflow-2023
