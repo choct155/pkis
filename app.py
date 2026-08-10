@@ -3345,6 +3345,14 @@ def tool_commit_staged_node(
                 f"\n## [{datetime.now(timezone.utc).strftime('%Y-%m-%d')}] discarded | {fm.get('knowledge_type', 'unknown')}\n"
                 f"- Discarded: {staged_file.stem} (id: {staged_id})\n"
             )
+        # Commit the removal when the staged file was tracked in git, so a staged
+        # copy that ever landed in HEAD can't be restored on the next server reset
+        # and re-surface in the inbox. (See the promote path below for the full
+        # regression note.)
+        discard_files = [log_path]
+        if _git_tracked(staged_file):
+            discard_files.append(staged_file)
+        _git_commit_and_push(discard_files, f"[mcp-commit] discard staged: {staged_file.stem}")
         return {"status": "discarded", "staged_id": staged_id}
 
     # Apply field-level edits
@@ -3430,8 +3438,16 @@ def tool_commit_staged_node(
         )
 
     # Git commit and push — single consolidated path; loud (GitPushError) on push failure.
+    # Include the staged file's REMOVAL when it was tracked in git: a staged copy
+    # that ever landed in HEAD (e.g. swept in by a broad `git add -A` checkpoint)
+    # would otherwise be restored on the next server reset/redeploy and re-surface
+    # in the inbox as "needs approval" — the item you keep re-approving. Staging
+    # files are normally disk-only (untracked), so this is a no-op in the common case.
+    commit_files = [target_path, index_path, log_path]
+    if _git_tracked(staged_file):
+        commit_files.append(staged_file)
     git = _git_commit_and_push(
-        [target_path, index_path, log_path],
+        commit_files,
         f"[mcp-commit] {knowledge_type}: {fm.get('title', slug)[:60]}",
     )
 
@@ -3662,6 +3678,16 @@ def _git_push_diagnostics(repo: str, branch: str, sha: str, message: str) -> dic
         "local_unpushed": local_unpushed, "remote_only": remote_only,
         "diffstat": diffstat, "push_error": "", "recommendation": rec,
     }
+
+
+def _git_tracked(path, repo_dir=None) -> bool:
+    """True if `path` is tracked in git (in the index/HEAD), so staging its
+    deletion in a commit is valid. False for untracked paths — staged nodes are
+    normally disk-only, and `git add`-ing an untracked+absent pathspec errors."""
+    repo = str(repo_dir or REPO_DIR)
+    r = subprocess.run(["git", "-C", repo, "ls-files", "--error-unmatch", str(path)],
+                       capture_output=True)
+    return r.returncode == 0
 
 
 def _git_commit_and_push(files: list, message: str, repo_dir=None) -> dict:
