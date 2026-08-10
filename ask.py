@@ -312,6 +312,12 @@ def _ask_events(messages, tier="reader", model=DEFAULT_MODEL, max_tool_turns=MAX
     """
     import app
 
+    # Emit a liveness frame immediately, before eager retrieval or the first model
+    # call, so the client leaves its silent initial placeholder and any proxy
+    # flushes the SSE stream. Without this the user can stare at a frozen
+    # "searching the graph…" with no signal the request is even alive.
+    yield {"type": "status", "text": "searching the graph…"}
+
     convo = [dict(m) for m in messages]
     surfaced = set()
     in_tokens = out_tokens = 0

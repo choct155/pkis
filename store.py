@@ -13,7 +13,9 @@ in a later increment, once the canonical paths are relocated to share one source
 import copy
 import hashlib
 import logging
+import os
 import re
+import threading
 import time
 from pathlib import Path
 
@@ -107,6 +109,10 @@ class WikiStore:
         self._embed_model = None
         self._embed_matrix = None
         self._embed_slugs: list = []
+        # Single-flight guard so a cold dense build runs in ONE background thread,
+        # never on (or blocking) a request thread. See _ensure_embedding_index_async.
+        self._embed_lock = threading.Lock()
+        self._embed_building = False
         self._cross_encoder = None
         self._cross_encoder_name = None
         self._ppr_out = None  # cached row-normalized out-adjacency for graph rerank
@@ -308,6 +314,10 @@ class WikiStore:
     def _get_embed_model(self):
         """Lazy-load the sentence-transformer once per worker (CPU)."""
         if self._embed_model is None:
+            # Bound HF Hub downloads so a cold model on a network stall fails fast
+            # (the caller degrades to BM25) rather than hanging the build thread
+            # indefinitely. Only affects the first, uncached load.
+            os.environ.setdefault("HF_HUB_DOWNLOAD_TIMEOUT", "30")
             from sentence_transformers import SentenceTransformer
             logger.info(f"Loading embedding model {config.EMBED_MODEL_NAME} ...")
             self._embed_model = SentenceTransformer(config.EMBED_MODEL_NAME, device="cpu")
@@ -390,9 +400,36 @@ class WikiStore:
                 cache[hashes[i]] = np.asarray(vecs[j], dtype=np.float32)
             logger.info(f"Embedded {len(missing)} new/changed nodes "
                         f"({len(nodes) - len(missing)} reused from cache)")
-        self._embed_matrix = np.vstack([cache[h] for h in hashes]).astype(np.float32)
+        # Assign slugs BEFORE the matrix so a concurrent reader in vector_search
+        # never sees a fresh matrix paired with stale slugs (the None-matrix guard
+        # covers the reverse window). CPython attribute writes are atomic.
         self._embed_slugs = iris
+        self._embed_matrix = np.vstack([cache[h] for h in hashes]).astype(np.float32)
         self._save_embed_cache(cache, hashes)
+
+    def _ensure_embedding_index_async(self):
+        """Build the dense index in a background thread (single-flight). Request
+        paths call THIS instead of build_embedding_index() so a cold build — model
+        download (~minutes, or an unbounded hang on a network stall) plus a full
+        corpus encode — never blocks or freezes a user request. vector_search
+        returns [] until the matrix is ready, so search degrades cleanly to BM25 in
+        the meantime and RRF fusion is unaffected."""
+        if not self._semantic_enabled() or self._embed_matrix is not None:
+            return
+        with self._embed_lock:
+            if self._embed_building or self._embed_matrix is not None:
+                return
+            self._embed_building = True
+
+        def _run():
+            try:
+                self.build_embedding_index()
+            except Exception as e:  # a failed build must not wedge future attempts
+                logger.warning(f"background embedding build failed: {e}")
+            finally:
+                self._embed_building = False
+
+        threading.Thread(target=_run, name="pkis-embed-index", daemon=True).start()
 
     def vector_search(self, query, max_results=30):
         if not self._semantic_enabled() or self._embed_matrix is None or not self._embed_slugs:
@@ -428,8 +465,12 @@ class WikiStore:
         return [(self._bm25_slugs[i], float(s)) for i, s in ranked]
 
     def _retrieve_dense(self, query, k):
+        # Cold dense index → build in the BACKGROUND and serve lexical-only this
+        # request. Building here synchronously used to freeze the first ask/search
+        # on a fresh worker (model download + full-corpus encode, no timeout) — the
+        # "searching the graph…" hang. vector_search returns [] until it's ready.
         if self._semantic_enabled() and self._embed_matrix is None:
-            self.build_embedding_index()
+            self._ensure_embedding_index_async()
         return self.vector_search(query, max_results=k)
 
     @staticmethod
