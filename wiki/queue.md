@@ -93,8 +93,6 @@
 ### Normal
 
 ## Queue
-- [ ] None —  (captured: 2026-06-21)
-- [ ] None —  (captured: 2026-06-21)
 - [ ] kruschke-bayesian-2021 — fills frontier gap “Directed Graphical Models (Bayesian Networks)” (coverage 6/5, understanding 0/5); sim 0.73; cites your “Variational Inference: A Review for Statisticians”; Nature Human Behaviour 2021, cited 409× (captured: 2026-06-21)
 - [ ] petropoulos-forecasting-2022 — fills frontier gap “Directed Graphical Models (Bayesian Networks)” (coverage 6/5, understanding 0/5); sim 0.70; cites your “Variational Inference: A Review for Statisticians”; BOA (University of Milano-Bicocca) 2022, cited 824× (captured: 2026-06-21)
 - [ ] bommasani-on-2021 — fills frontier gap “Neural Networks (Feedforward)” (coverage 3/5, understanding 0/5); sim 0.73; cites your “Neural Discrete Representation Learning (VQ-VAE)”; arXiv (Cornell University) 2021, cited 2183× (captured: 2026-06-21)
