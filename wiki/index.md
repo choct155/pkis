@@ -1,6 +1,7 @@
 # PKIS Wiki Index
 
 ## Sources
+- [[grinberg-an-2023]] — An introduction to graph theory () (2026-08-14)
 - [[tang-dream-2026]] — DREAM: Dense Retrieval Embeddings via Autoregressive Modeling () (2026-08-10)
 - [[brkner-simulations-2025]] — Simulations in Statistical Workflows () (2026-08-03)
 - [[serret-understanding-2026]] — Understanding Transformers and Attention Mechanisms: An Introduction for Applied Mathematicians () (2026-08-03)

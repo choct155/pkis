@@ -26961,3 +26961,12 @@
 ## [2026-08-10] committed | source
 - Committed: tang-dream-2026 → sources/tang-dream-2026.md
 - IRI: pkis:source:tang-dream-2026
+
+## [2026-08-14] staged | source-stub
+- Staged: grinberg-an-2023 (id: 9e068ee2-ea3a-473d-aa79-b37c3bd5c08d)
+- Title: An introduction to graph theory
+- Enrichment: full
+
+## [2026-08-14] committed | source
+- Committed: grinberg-an-2023 → sources/grinberg-an-2023.md
+- IRI: pkis:source:grinberg-an-2023
