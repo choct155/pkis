@@ -4,28 +4,28 @@ The single canonical snapshot of current build state. Changes frequently — upd
 after every build session. This is not a design doc (see [`ARCHITECTURE.md`](ARCHITECTURE.md))
 or a decision record (see [`DECISIONS.md`](DECISIONS.md)).
 
-_Last updated: 2026-07-07_
+_Last updated: 2026-08-16_
 
 ## Component status
 
 | Component | Status | Notes |
 |---|---|---|
-| PKIS-MCP server (`app.py`) | **live** | MCP (42 tools) + `/pkis-api/*` + docs/webhook/health on `pkis.clowderpack.dev`; gunicorn `pkis-mcp.service`; pinned deps in `requirements.txt`; architect/graph/link tools marked executable; **`get_openwiki` read-only tool added exposing the openwiki/ code map** |
-| Knowledge graph (`pkis-wiki`) | **live** | 2,943 nodes; new source: DREAM; new framework: Musical Preference Ontology; new resource: OpenWiki; music-preference-profile doc auto-created; **dense-passage-retrieval technique node linked to 1 source** |
-| Viewer PWA (`pkis.clowderpack.dev/app`) | **live** | mobile-first; wide-desktop dashboard (≥1280px); retrieval lab view (side-by-side regimes + unified retrieve/answer panel); path-mode UI; **native Capacitor APK** with WorkOS bearer auth + biometric unlock |
-| MCP write tools | **live** | stub/edge/hypothesis/bridge/source/edit; auto-commit+push, cache auto-refresh |
-| Auth (WorkOS AuthKit) | **live** | OAuth (claude.ai/MCP) + web sealed session; identity keyed on email; allowlist by email OR sub; single-use-refresh race coalesced; WorkOS dep added to resource node + public serving layer; **opaque-token fallback via OIDC userinfo for MCP writes** |
-| Ask (NL Q&A) | **live** | shared `ask.py` engine + `/pkis-api/ask` + viewer Ask tab; conversation persistence, voice I/O, capability-link sharing |
-| Inbox (owner review hub) | **live** | consolidated staged + discovery + agent lanes; finding intake (Parts A+B); lab-assistant cron inbox push divergence-safe; doc-drift lane; Graph gaps lane |
-| Lab Assistant | **live** | finding intake + descriptive Lab Assistant (Parts A+B) shipped; cron inbox push divergence-safe |
-| Semantic search | **live** | BM25 + bge-small dense fused via RRF; graph rerank (personalized PageRank); path/relationship queries; standing-eval loop; **OpGraph designated as live NED/NER experimental platform** with six resolution strategies operationalizing the intensional-grounding-ned-accuracy hypothesis |
+| PKIS-MCP server (`app.py`) | **live** | MCP (42 tools) + `/pkis-api/*` + docs/webhook/health on `pkis.clowderpack.dev`; gunicorn `pkis-mcp.service`; pinned deps in `requirements.txt`; architect/graph/link tools marked executable; `get_openwiki` read-only tool exposing openwiki/ code map |
+| Knowledge graph (`pkis-wiki`) | **live** | **2,967 nodes**; large ingest wave: amortized inference / SBI / BayesFlow / DREAM / causal inference cluster; 8 orphan nodes wired (parameter-estimation-vs-bayesian-inference, concept-boundary-finding-problem, musical-preference-ontology x2, godels-incompleteness-theorem, truncated-factorization-g-formula, power-iteration, game-theory-in-finance); duplicates removed + source_graph.json rebuilt; librarian linked 5 nodes to new sources |
+| Viewer PWA (`pkis.clowderpack.dev/app`) | **live** | mobile-first; wide-desktop dashboard (≥1280px); retrieval lab view; path-mode UI; native Capacitor APK with WorkOS bearer auth + biometric unlock; **edit-node action added** |
+| MCP write tools | **live** | stub/edge/hypothesis/bridge/source/edit; auto-commit+push, cache auto-refresh; **`save_url_source` and `save_podcast_source` documented in authoring tools; `edit_node content=` parameter clarified** |
+| Auth (WorkOS AuthKit) | **live** | OAuth (claude.ai/MCP) + web sealed session; identity keyed on email; allowlist by email OR sub; single-use-refresh race coalesced; opaque-token fallback via OIDC userinfo for MCP writes |
+| Ask (NL Q&A) | **live** | shared `ask.py` engine + `/pkis-api/ask` + viewer Ask tab; conversation persistence, voice I/O, capability-link sharing; **'searching the graph…' freeze fixed — dense index now built in background** |
+| Inbox (owner review hub) | **live** | consolidated staged + discovery + agent lanes; finding intake (Parts A+B); lab-assistant cron inbox push divergence-safe; doc-drift lane; Graph gaps lane; **staged-file removal now committed on promote/discard** |
+| Lab Assistant | **live** | finding intake + descriptive Lab Assistant (Parts A+B) shipped; cron inbox push divergence-safe; drift-flag runs 2026-07-18 and 2026-08-01 processed |
+| Semantic search | **live** | BM25 + bge-small dense fused via RRF; graph rerank (personalized PageRank); path/relationship queries; standing-eval loop; OpGraph designated as live NED/NER experimental platform with six resolution strategies operationalizing the intensional-grounding-ned-accuracy hypothesis; **semantic search model name corrected in docs** |
 | Retrieval lab deep metrics | **live** | P4 metrics (C(q) coverage, concision, relevance) per search regime; lab view + path-mode UI |
 | Research clusters + frontier priority | **live** | all 12 clusters de-orphaned; frontier-driven priority queue |
-| Read+listen reader | **live** | LLM semantic narration + section-synced chapter PDF; resilient TTS (Piper-unvoiceable segments skipped); mp3 encoder streamed; **494 chapters narrated**; **narration audio/PDF URLs absolutized for native app** |
+| Read+listen reader | **live** | LLM semantic narration + section-synced chapter PDF; resilient TTS (Piper-unvoiceable segments skipped); mp3 encoder streamed; **494 chapters narrated**; narration audio/PDF URLs absolutized for native app; **real narration-build failure reason now surfaced in reader** |
 | Proactive discovery | **live** | frontier-gated OpenAlex cite-graph, cron'd Mondays; inbox + accept/dismiss feedback + learned-prior loop (prior still cold) |
-| Documentation system (`docs/`) | **live** | 6 docs + `log_idea` + viewer Docs view; music-preference-profile doc auto-added via doc-store; **OpenWiki cartographer adopted; Architect role retired; predicate drift fixed**; CONTEXT.md regenerated from ground truth |
-| OpenWiki refresh driver | **live** | rebase-retry push logic; concurrent-writer safe; `git add` staging fix; **binaries/images/HTML/.env now excluded from code-map staging** |
-| Explainers | **live** | HTML explainers as `asset` nodes; desktop live-edit loop; Tier-2 dynamic-explainer Flask blueprint scaffold (`/pkis-api/x/<name>/`); **viz now published to local serving copy (retired VPS path removed)** |
+| Documentation system (`docs/`) | **live** | 6 docs + `log_idea` + viewer Docs view; OpenWiki cartographer adopted; Architect role retired; predicate drift fixed; CONTEXT.md regenerated from ground truth; **Google Drive integration removed; MCP write auto-refresh mechanism clarified** |
+| OpenWiki refresh driver | **live** | rebase-retry push logic; concurrent-writer safe; `git add` staging fix; binaries/images/HTML/.env excluded from code-map staging |
+| Explainers | **live** | HTML explainers as `asset` nodes; desktop live-edit loop; Tier-2 dynamic-explainer Flask blueprint scaffold (`/pkis-api/x/<name>/`); viz published to local serving copy |
 | Comptroller (cost) | **live** | `usage.py` SQLite at `/home/pkis/usage`; per-origin cost; narration logs as `pkis-reader` |
 | Ideas log | **live** | `log_idea` tool; entry: OpGraph Strategist — multi-agent strategic council |
 
@@ -68,17 +68,26 @@ ingested + narrated. Local-only until published.
 - An `app.py` restart drops the claude.ai connector (users must reconnect) —
   minimize restarts; content changes don't need one (cache auto-refresh).
 
-## Most recent session (2026-07-07)
+## Most recent session (2026-08-16)
 
-Fixed explainer publish target: viz output was being written to the retired VPS path
-rather than the local serving copy. No graph or narration changes; node count holds
-at 2,943; narrated chapters confirmed at 494.
+Large ingest and cleanup wave since July 7. Key changes: 24+ sources ingested
+(amortized Bayesian inference / SBI / BayesFlow cluster, DREAM x multiple, causal
+inference, graph theory, transformers, UQ, KalmanNet, AudioLM, math/lambda-calculus
+references); 3 Aug-3 duplicate sources and 2 None queue entries removed;
+source_graph.json rebuilt. Eight orphan nodes wired into the graph. Ask engine
+freeze fixed (dense index now background-built). Reader now surfaces real
+narration-build failure reasons. Staged-file removal correctly committed on
+promote/discard. Viewer gains edit-node action. Authoring-tools docs updated
+(save_url_source, save_podcast_source, edit_node content= parameter, MCP
+auto-refresh clarification, semantic search model name corrected, Google Drive
+integration removed). Librarian linked 5 nodes to new sources. Node count: 2,943 →
+**2,967**; narrated chapters hold at **494**.
 
 ## Next priorities
 
-1. Review and resolve remaining orphan nodes in the Graph gaps inbox lane.
-2. Publish the calibration tabs + register as a PKIS asset node.
-3. Start exercising discovery feedback to warm the learned prior.
-4. Begin OpGraph NED/NER instrumentation — baseline measurements for the six resolution strategies.
-5. Log the first doc-drift accept/dismiss decisions to validate that inbox lane.
+1. Publish the calibration tabs + register as a PKIS asset node.
+2. Start exercising discovery feedback to warm the learned prior.
+3. Begin OpGraph NED/NER instrumentation — baseline measurements for the six resolution strategies.
+4. Log the first doc-drift accept/dismiss decisions to validate that inbox lane.
+5. Continue narration build to push chapter count beyond 494.
 6. Automate STATUS.md updates (daily cron + post-deploy hook) so this doc stops drifting.
