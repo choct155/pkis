@@ -21,7 +21,7 @@ _Last updated: 2026-08-16_
 | Semantic search | **live** | BM25 + bge-small dense fused via RRF; graph rerank (personalized PageRank); path/relationship queries; standing-eval loop; OpGraph designated as live NED/NER experimental platform with six resolution strategies operationalizing the intensional-grounding-ned-accuracy hypothesis; **semantic search model name corrected in docs** |
 | Retrieval lab deep metrics | **live** | P4 metrics (C(q) coverage, concision, relevance) per search regime; lab view + path-mode UI |
 | Research clusters + frontier priority | **live** | all 12 clusters de-orphaned; frontier-driven priority queue |
-| Read+listen reader | **live** | LLM semantic narration + section-synced chapter PDF; resilient TTS (Piper-unvoiceable segments skipped); mp3 encoder streamed; **494 chapters narrated**; narration audio/PDF URLs absolutized for native app; **real narration-build failure reason now surfaced in reader** |
+| Read+listen reader | **live** | LLM semantic narration + section-synced chapter PDF; resilient TTS (Piper-unvoiceable segments skipped); mp3 encoder streamed; **494 chapters narrated**; narration audio/PDF URLs absolutized for native app; **real narration-build failure reason now surfaced in reader**; **narration-build coverage extended: CLI + endpoint + viewer view** |
 | Proactive discovery | **live** | frontier-gated OpenAlex cite-graph, cron'd Mondays; inbox + accept/dismiss feedback + learned-prior loop (prior still cold) |
 | Documentation system (`docs/`) | **live** | 6 docs + `log_idea` + viewer Docs view; OpenWiki cartographer adopted; Architect role retired; predicate drift fixed; CONTEXT.md regenerated from ground truth; **Google Drive integration removed; MCP write auto-refresh mechanism clarified** |
 | OpenWiki refresh driver | **live** | rebase-retry push logic; concurrent-writer safe; `git add` staging fix; binaries/images/HTML/.env excluded from code-map staging |
@@ -70,18 +70,10 @@ ingested + narrated. Local-only until published.
 
 ## Most recent session (2026-08-16)
 
-Large ingest and cleanup wave since July 7. Key changes: 24+ sources ingested
-(amortized Bayesian inference / SBI / BayesFlow cluster, DREAM x multiple, causal
-inference, graph theory, transformers, UQ, KalmanNet, AudioLM, math/lambda-calculus
-references); 3 Aug-3 duplicate sources and 2 None queue entries removed;
-source_graph.json rebuilt. Eight orphan nodes wired into the graph. Ask engine
-freeze fixed (dense index now background-built). Reader now surfaces real
-narration-build failure reasons. Staged-file removal correctly committed on
-promote/discard. Viewer gains edit-node action. Authoring-tools docs updated
-(save_url_source, save_podcast_source, edit_node content= parameter, MCP
-auto-refresh clarification, semantic search model name corrected, Google Drive
-integration removed). Librarian linked 5 nodes to new sources. Node count: 2,943 →
-**2,967**; narrated chapters hold at **494**.
+Narration-build coverage extended across all three surfaces: CLI, the `/pkis-api/`
+endpoint, and the viewer view — so build status and failure reasons are uniformly
+visible regardless of how narration is invoked. Node count and chapter count hold at
+**2,967** and **494** respectively.
 
 ## Next priorities
 
