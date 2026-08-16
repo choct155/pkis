@@ -302,6 +302,10 @@ export async function buildReader(slug: string): Promise<{ status: string; slug:
   return post('/reader-build', { slug });
 }
 
+export async function getReaderCoverage(): Promise<import('../types').ReaderCoverage> {
+  return post<import('../types').ReaderCoverage>('/reader/coverage');
+}
+
 export async function getReaderStatus(slug: string): Promise<{ state: string; detail?: string }> {
   try {
     const r = await fetch(`${BASE}/reader/${slug}/status`, { headers: authHeader() });

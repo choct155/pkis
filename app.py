@@ -6773,6 +6773,54 @@ def pkis_api_reader_status(slug):
     return _api_ok({"state": "none"})
 
 
+def _reader_state_for(slug: str) -> str:
+    d = READER_DIR / slug
+    if (d / "payload.json").exists():
+        return "ready"
+    sp = d / "status.json"
+    if sp.exists():
+        try:
+            return json.loads(sp.read_text()).get("state", "unknown")
+        except Exception:
+            return "unknown"
+    return "none"
+
+
+@app.route("/pkis-api/reader/coverage", methods=["GET", "POST"])
+def pkis_api_reader_coverage():
+    """Narration-build coverage across the source corpus — powers the viewer's
+    coverage panel so the owner always knows what's narrated and what isn't.
+    Uses the cached node store; reader state is read from READER_DIR. Books/chapter
+    splits narrate on demand, so they're excluded from the 'outstanding' backlog."""
+    ensure_fresh()
+    arxiv = re.compile(r"arxiv\.org/(?:abs|pdf)/[0-9]+\.[0-9]+")
+    chapter = re.compile(r"-ch\d+$|-(epilogue|intro|appendix)$")
+    by_state, outstanding, total = {}, [], 0
+    for node in load_all_nodes():
+        iri = node.get("iri", "")
+        if ":source:" not in iri:
+            continue
+        total += 1
+        slug = iri.split(":")[-1]
+        fm = node.get("frontmatter", {}) or {}
+        url = str(fm.get("source_url") or fm.get("url") or "")
+        docs = DOCS_DIR / "sources" / slug
+        narratable = bool(arxiv.search(url)) or (docs.is_dir() and any(docs.glob("*.pdf")))
+        state = _reader_state_for(slug)
+        by_state[state] = by_state.get(state, 0) + 1
+        if narratable and not chapter.search(slug) and state != "ready":
+            outstanding.append({"slug": slug, "state": state,
+                                "title": str(fm.get("title") or slug)[:70]})
+    outstanding.sort(key=lambda r: (r["state"], r["slug"]))
+    return _api_ok({
+        "total_sources": total,
+        "ready": by_state.get("ready", 0),
+        "by_state": by_state,
+        "outstanding_count": len(outstanding),
+        "outstanding": outstanding,
+    })
+
+
 def _maybe_autobuild_reader(slug: str) -> None:
     """Auto-build a reader when a *paper* lands in the source directory (frontier-driven intent).
     Papers process immediately; books are on-demand. Gate: arXiv URL or an uploaded doc-store PDF

@@ -10,7 +10,15 @@ export type NodeType =
 
 export type Maturity = 'settled' | 'evolving' | 'contested' | 'historical';
 
-export type View = 'browse' | 'clusters' | 'priority' | 'graph' | 'explainers' | 'docs' | 'inbox' | 'ask' | 'lab';
+export type View = 'browse' | 'clusters' | 'priority' | 'graph' | 'explainers' | 'docs' | 'inbox' | 'ask' | 'lab' | 'coverage';
+
+export interface ReaderCoverage {
+  total_sources: number;
+  ready: number;
+  by_state: Record<string, number>;
+  outstanding_count: number;
+  outstanding: { slug: string; state: string; title: string }[];
+}
 
 // ── Natural-language ask (from /pkis-api/ask) ─────────────────────────────
 export interface AskMessage {
