@@ -6831,9 +6831,13 @@ def tool_build_reader(slug: str, arxiv_id: str = None) -> dict:
     env.setdefault("PIPER_MODEL", "/home/pkis/piper_dist/voices/en_GB-cori-high.onnx")
     env["LD_LIBRARY_PATH"] = "/home/pkis/piper_dist/piper:" + env.get("LD_LIBRARY_PATH", "")
     env["OUTDIR"] = str(d)
-    # slug-driven: the builder loads the source node and routes internally
+    # slug-driven: the builder loads the source node and routes internally. On
+    # failure the builder writes a CLASSIFIED error (with a `detail` reason) to
+    # status.json itself; only fall back to a bare error if it died before doing so
+    # (so the reason — e.g. "API credit balance too low" — reaches the viewer).
     cmd = (f'{py} {script} {slug} full > {d}/build.log 2>&1 '
            f'&& echo \'{{"state":"ready"}}\' > {d}/status.json '
+           f'|| grep -q \'"state":"error"\' {d}/status.json 2>/dev/null '
            f'|| echo \'{{"state":"error"}}\' > {d}/status.json')
     subprocess.Popen(["bash", "-c", cmd], env=env, start_new_session=True,
                      stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)

@@ -22,6 +22,7 @@ function fmt(t: number): string {
 export default function ReaderView({ slug, onClose }: Props) {
   const [payload, setPayload] = useState<ReaderPayload | null>(null)
   const [phase, setPhase] = useState<'loading' | 'ready' | 'absent' | 'building' | 'error'>('loading')
+  const [errDetail, setErrDetail] = useState<string | null>(null)   // why a build failed (from status.json)
   const [curId, setCurId] = useState('')
   const [playing, setPlaying] = useState(false)
   const [rate, setRate] = useState(1)
@@ -56,7 +57,7 @@ export default function ReaderView({ slug, onClose }: Props) {
       const s = await getReaderStatus(slug)
       if (cancelled) return
       if (s.state === 'building') setPhase('building')
-      else if (s.state === 'error') setPhase('error')
+      else if (s.state === 'error') { setErrDetail(s.detail ?? null); setPhase('error') }
       else {
         const c = localStorage.getItem(`reader:${slug}`)
         if (c) { setPayload(JSON.parse(c)); setPhase('ready') }
@@ -78,7 +79,7 @@ export default function ReaderView({ slug, onClose }: Props) {
       if (cancelled) return
       attempts += 1
       if (s.state === 'ready') { clearInterval(iv); await loadPayload() }
-      else if (s.state === 'error') { clearInterval(iv); setPhase('error') }
+      else if (s.state === 'error') { clearInterval(iv); setErrDetail(s.detail ?? null); setPhase('error') }
       else if (attempts >= 150) { clearInterval(iv); setPhase('error') }  // ~10 min ceiling
     }, 4000)
     return () => { cancelled = true; clearInterval(iv) }
@@ -86,6 +87,7 @@ export default function ReaderView({ slug, onClose }: Props) {
   }, [phase, slug])
 
   const startBuild = async () => {
+    setErrDetail(null)
     setPhase('building')
     try { await buildReader(slug) } catch { setPhase('error') }
   }
@@ -222,7 +224,9 @@ export default function ReaderView({ slug, onClose }: Props) {
           )}
           {phase === 'error' && (
             <>
-              <div className="reader-gate-note">Narration build failed (is this an arXiv source?).</div>
+              <div className="reader-gate-note">
+                {errDetail || 'Narration build failed (is this an arXiv source?).'}
+              </div>
               <button className="cap-submit" onClick={startBuild}>retry build →</button>
             </>
           )}

@@ -302,12 +302,12 @@ export async function buildReader(slug: string): Promise<{ status: string; slug:
   return post('/reader-build', { slug });
 }
 
-export async function getReaderStatus(slug: string): Promise<{ state: string }> {
+export async function getReaderStatus(slug: string): Promise<{ state: string; detail?: string }> {
   try {
     const r = await fetch(`${BASE}/reader/${slug}/status`, { headers: authHeader() });
     if (r.status === 404) return { state: 'none' };          // genuinely not built
     if (!r.ok) return { state: 'unknown' };                  // 5xx / outage — not "none"
-    return (await r.json()) as { state: string };
+    return (await r.json()) as { state: string; detail?: string };
   } catch {
     return { state: 'unknown' };                             // network error — retryable
   }

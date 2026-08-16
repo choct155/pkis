@@ -687,5 +687,36 @@ def main():
         shutil.rmtree(tmp, ignore_errors=True)
 
 
+def _classify_error(e):
+    """Turn a build exception into a short, human-actionable reason for the reader
+    UI. Without this the viewer only knew 'build failed' and guessed 'is this an
+    arXiv source?' — which misdiagnosed billing/rate-limit failures for real time."""
+    msg = str(e)
+    low = msg.lower()
+    if "credit balance is too low" in low:
+        return "Anthropic API credit balance too low — add credits, then retry."
+    if "rate_limit" in low or "rate limit" in low or "429" in low:
+        return "Anthropic API rate-limited — wait a moment and retry."
+    if "overloaded" in low or "529" in low:
+        return "Anthropic API overloaded — retry shortly."
+    if any(t in low for t in ("connection", "timed out", "timeout", "temporarily unavailable")):
+        return "Network error fetching the paper or reaching the API — retry."
+    return f"{type(e).__name__}: {msg[:180]}"
+
+
 if __name__ == "__main__":
-    main()
+    # Own the failure status: on any exception, write a classified reason to
+    # OUTDIR/status.json so the viewer shows WHY (credits, rate limit, network…)
+    # instead of a misleading generic guess. Then re-raise so the exit code is
+    # non-zero and the caller's fallback still applies.
+    _outdir = os.environ.get("OUTDIR")
+    try:
+        main()
+    except Exception as e:
+        if _outdir:
+            try:
+                with open(os.path.join(_outdir, "status.json"), "w") as _sf:
+                    json.dump({"state": "error", "detail": _classify_error(e)}, _sf)
+            except Exception:
+                pass
+        raise
