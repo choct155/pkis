@@ -26973,3 +26973,6 @@
 
 ## [2026-08-17] edit | edit_node
 - pkis:framework:transformer-architecture: fields=['sources'] sections=[]
+
+## [2026-08-17] edit | edit_node
+- pkis:technique:scaled-dot-product-attention: fields=['sources'] sections=[]

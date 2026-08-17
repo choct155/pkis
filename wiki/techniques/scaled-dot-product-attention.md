@@ -14,7 +14,7 @@ component_scores:
   principled_mechanism: null
 coverage: 1
 date_created: '2026-06-11'
-date_updated: '2026-06-11'
+date_updated: '2026-08-17'
 domain:
 - machine-learning
 - deep-learning
@@ -29,6 +29,7 @@ related_concepts: []
 sources:
 - murphy-pml1-intro-ch15
 - murphy-pml2-advanced-ch16
+- serret-understanding-2026
 specializes:
 - transformer-attention-mechanisms
 tags:
