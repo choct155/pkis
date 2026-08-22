@@ -329,13 +329,21 @@ def pdf_route(pdf_path, max_seg):
         ctitle, sections = _extract_pdf_doc(base64.standard_b64encode(data).decode(),
                                             "Extract this document per the rules.")
         return _segs_from_sections(sections, max_seg), _collapse(ctitle)
-    title, merged = "", []
+    title, merged, chunk_fails = "", [], 0
     for idx, (lo, hi, cdata) in enumerate(chunks):
         instr = (f"This is pages {lo}-{hi} of a {npages}-page document. Extract the sections that "
                  "appear on these pages. A section may begin before or continue past this chunk — "
                  "extract whatever of it is present here.")
-        ctitle, sections = _extract_pdf_doc(base64.standard_b64encode(cdata).decode(), instr)
-        if idx == 0:
+        try:
+            ctitle, sections = _extract_pdf_doc(base64.standard_b64encode(cdata).decode(), instr)
+        except Exception as e:
+            # A single chunk failing (content-filter block, transient API error) must
+            # not sink the whole document — skip it and keep the rest. main() aborts
+            # anyway if this leaves zero sections, so a total failure still surfaces.
+            chunk_fails += 1
+            print(f"  WARN chunk p{lo}-{hi} extraction failed: {type(e).__name__}: {str(e)[:120]} — skipping")
+            continue
+        if idx == 0 or not title:
             title = _collapse(ctitle)
         added = 0
         for sec in sections:
@@ -349,6 +357,9 @@ def pdf_route(pdf_path, max_seg):
             else:
                 merged.append({"title": st, "markdown": md}); added += 1
         print(f"  chunk p{lo}-{hi}: +{added} new sections (total {len(merged)})")
+    if chunk_fails:
+        print(f"  {chunk_fails}/{len(chunks)} chunk(s) skipped (extraction unavailable) — "
+              f"{len(merged)} sections recovered")
     return _segs_from_sections(merged, max_seg), title
 
 
