@@ -471,6 +471,30 @@ def narrate(seg, ctx):
     return _resp_text(resp)
 
 
+def narrate_segments(segs, ctx):
+    """Narrate every section, resilient to a SINGLE section failing — a content-filter
+    block (e.g. some MMT text) or a transient API error on one section must not abort
+    an hour-long build. On failure we fall back to the raw section text so the section
+    is still voiced. We abort ONLY if EVERY section fails (a real outage / credit
+    problem), preserving that signal instead of shipping an empty build. Sets
+    seg['narration'] in place and returns the number of fallbacks used."""
+    fails = 0
+    for s in segs:
+        try:
+            s["narration"] = narrate(s, ctx)
+            print(f"  narrated [{s['id']}] ({len(s['narration'])} chars)")
+        except Exception as e:
+            fails += 1
+            s["narration"] = (s.get("paper_md") or s.get("title") or "").strip()
+            print(f"  WARN narrate failed [{s['id']}]: {type(e).__name__}: {str(e)[:120]} — raw-text fallback")
+    if segs and fails == len(segs):
+        raise RuntimeError(f"narration failed for all {len(segs)} sections "
+                           f"— aborting (likely API outage or credit balance)")
+    if fails:
+        print(f"  {fails}/{len(segs)} section(s) used raw-text fallback (narration unavailable)")
+    return fails
+
+
 # ── TTS (Piper) ───────────────────────────────────────────────────────────
 def wav_duration(path):
     with wave.open(path, "rb") as w:
@@ -618,9 +642,7 @@ def main():
     ctx = pkis_context(source_iri)
     print(f"\nPKIS context: {len(ctx)} related nodes")
 
-    for s in segs:
-        s["narration"] = narrate(s, ctx)
-        print(f"  narrated [{s['id']}] ({len(s['narration'])} chars)")
+    narrate_segments(segs, ctx)
 
     if stage == "narrate":
         for s in segs[:3]:
