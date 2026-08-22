@@ -65,7 +65,9 @@ export default function VizPanel({ slug }: Props) {
               ref={iframeRef}
               className="viz-iframe"
               src={`/pkis-api/viz/${slug}.html`}
-              sandbox="allow-scripts"
+              // First-party owner-authored viz from our own origin; allow-same-origin
+              // is required so ones using storage / same-origin fetch actually run.
+              sandbox="allow-scripts allow-same-origin"
               title={title}
             />
           </div>

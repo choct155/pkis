@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useState } from 'react'
 import type { Asset } from '../types'
 import { getAssets } from '../lib/api'
+import { shareLink } from '../lib/share'
 
 interface Props {
   onSelectNode: (iri: string) => void
@@ -22,6 +23,16 @@ export default function ExplainersView({ onSelectNode, onOpenExplainer, onOpenWr
   const [items, setItems] = useState<Asset[] | null>(null)
   const [err, setErr] = useState<string | null>(null)
   const [kind, setKind] = useState<string>('all')
+  const [toast, setToast] = useState<string | null>(null)
+
+  const shareAsset = async (x: Asset) => {
+    if (!x.viz_url) return
+    // The /pkis-api/viz endpoint is public, so this link works for colleagues who
+    // aren't signed in. Native share sheet on mobile → clipboard fallback.
+    const r = await shareLink(x.viz_url, x.viz_title)
+    setToast(r === 'shared' ? 'Shared' : r === 'copied' ? 'Link copied' : r === 'failed' ? 'Could not share' : null)
+    if (r !== 'cancelled') setTimeout(() => setToast(null), 2000)
+  }
 
   useEffect(() => {
     getAssets().then(setItems).catch((e) => setErr(String(e)))
@@ -47,6 +58,7 @@ export default function ExplainersView({ onSelectNode, onOpenExplainer, onOpenWr
 
   return (
     <div className="explainers-view">
+      {toast && <div className="explainer-toast">{toast}</div>}
       <div className="filter-strip">
         {kinds.map((k) => (
           <div
@@ -87,16 +99,10 @@ export default function ExplainersView({ onSelectNode, onOpenExplainer, onOpenWr
                 </div>
               </div>
               {x.viz_url && (
-                <a
-                  className="explainer-open"
-                  href={x.viz_url}
-                  target="_blank"
-                  rel="noreferrer"
-                  onClick={(e) => e.stopPropagation()}
-                  title="Open in new tab"
-                >
-                  ↗
-                </a>
+                <div className="explainer-actions" onClick={(e) => e.stopPropagation()}>
+                  <button className="explainer-open" onClick={() => shareAsset(x)} title="Share link">↗</button>
+                  <a className="explainer-open" href={x.viz_url} download={`${x.viz}.html`} title="Download HTML">⤓</a>
+                </div>
               )}
             </div>
           ))}

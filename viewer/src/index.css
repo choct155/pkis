@@ -2007,3 +2007,13 @@ body {
   padding: 4px 10px; cursor: pointer; font-size: 0.8rem; white-space: nowrap; }
 .cov-build:disabled { background: var(--surface); color: var(--muted); cursor: default; }
 .cov-empty { color: var(--muted); padding: 24px 0; text-align: center; }
+
+/* ── Asset share/download affordances ────────────────────────────────────── */
+.explainer-actions { display: flex; gap: 4px; align-items: center; }
+.explainer-toast, .explainer-overlay-toast {
+  position: absolute; top: 12px; left: 50%; transform: translateX(-50%);
+  background: var(--surface); color: var(--text); border: 1px solid var(--border);
+  border-radius: 6px; padding: 6px 14px; font-size: 0.85rem; z-index: 50;
+  box-shadow: 0 2px 12px rgba(0,0,0,.4);
+}
+.explainer-overlay-toast { top: 52px; }
