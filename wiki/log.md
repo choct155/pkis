@@ -26980,3 +26980,7 @@
 ## [2026-08-25] committed | source
 - Committed: bright-matrix-2025 → sources/bright-matrix-2025.md
 - IRI: pkis:source:bright-matrix-2025
+
+## [2026-08-25] committed | source
+- Committed: petersen-mathematical-2024 → sources/petersen-mathematical-2024.md
+- IRI: pkis:source:petersen-mathematical-2024
