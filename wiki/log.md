@@ -26976,3 +26976,7 @@
 
 ## [2026-08-17] edit | edit_node
 - pkis:technique:scaled-dot-product-attention: fields=['sources'] sections=[]
+
+## [2026-08-25] committed | source
+- Committed: bright-matrix-2025 → sources/bright-matrix-2025.md
+- IRI: pkis:source:bright-matrix-2025

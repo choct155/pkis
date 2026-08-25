@@ -1,6 +1,7 @@
 # PKIS Wiki Index
 
 ## Sources
+- [[bright-matrix-2025]] — Matrix Calculus (for Machine Learning and Beyond) () (2026-08-25)
 - [[grinberg-an-2023]] — An introduction to graph theory () (2026-08-14)
 - [[tang-dream-2026]] — DREAM: Dense Retrieval Embeddings via Autoregressive Modeling () (2026-08-10)
 - [[brkner-simulations-2025]] — Simulations in Statistical Workflows () (2026-08-03)
