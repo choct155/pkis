@@ -15,7 +15,7 @@ _Last updated: 2026-08-27_
 | Viewer PWA (`pkis.clowderpack.dev/app`) | **live** | mobile-first; wide-desktop dashboard (≥1280px); retrieval lab view; path-mode UI; native Capacitor APK with WorkOS bearer auth + biometric unlock; **edit-node action added**; **explainers now render, download, and share correctly on mobile** |
 | MCP write tools | **live** | stub/edge/hypothesis/bridge/source/edit; auto-commit+push, cache auto-refresh; `save_url_source` and `save_podcast_source` documented in authoring tools; `edit_node content=` parameter clarified |
 | Auth (WorkOS AuthKit) | **live** | OAuth (claude.ai/MCP) + web sealed session; identity keyed on email; allowlist by email OR sub; single-use-refresh race coalesced; opaque-token fallback via OIDC userinfo for MCP writes |
-| Ask (NL Q&A) | **live** | shared `ask.py` engine + `/pkis-api/ask` + viewer Ask tab; conversation persistence, voice I/O, capability-link sharing; clearer progress indicators + graceful recovery on interrupted queries |
+| Ask (NL Q&A) | **live** | shared `ask.py` engine + `/pkis-api/ask` + viewer Ask tab; conversation persistence, voice I/O, capability-link sharing; clearer progress indicators + graceful recovery on interrupted queries; **serial round-trips cut (~24s→~15s on real queries)** |
 | Inbox (owner review hub) | **live** | consolidated staged + discovery + agent lanes; finding intake (Parts A+B); lab-assistant cron inbox push divergence-safe; doc-drift lane; Graph gaps lane; staged-file removal now committed on promote/discard |
 | Lab Assistant | **live** | finding intake + descriptive Lab Assistant (Parts A+B) shipped; cron inbox push divergence-safe; drift-flag runs 2026-07-18 and 2026-08-01 processed |
 | Semantic search | **live** | BM25 + bge-small dense fused via RRF; graph rerank (personalized PageRank); path/relationship queries; standing-eval loop; OpGraph designated as live NED/NER experimental platform with six resolution strategies operationalizing the intensional-grounding-ned-accuracy hypothesis; semantic search model name corrected in docs |
@@ -75,13 +75,11 @@ ingested + narrated. Local-only until published.
 
 ## Most recent session (2026-08-27)
 
-Four areas of work since 2026-08-22. (1) **Ask resilience**: clearer progress
-indicators and graceful recovery when a query is interrupted mid-flight. (2) **Doc-store
-ingestion**: two Acemoglu-Restrepo labour-economics papers auto-created and added.
-(3) **MCP source commits**: Mathematical Theory of Deep Learning and Matrix Calculus
-(for ML and Beyond) ingested as source nodes; node count rises to **2,971**. (4)
-**Deploy tooling**: one-command deploy script (build + embeddings + graceful reload)
-landed, replacing the previous manual sequence.
+Single focused change on top of the earlier 2026-08-27 session work. (1) **Ask
+latency**: serial round-trips in `ask.py` parallelised, cutting wall-clock query
+time from ~24s to ~15s on real queries. No functional or API changes; all existing
+Ask features (conversation persistence, voice I/O, capability-link sharing, progress
+indicators) unchanged.
 
 ## Next priorities
 
