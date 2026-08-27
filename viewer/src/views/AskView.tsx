@@ -18,6 +18,8 @@ interface Turn extends AskMessage {
   streaming?: boolean
   status?: string
   error?: boolean
+  interrupted?: boolean   // connection dropped (e.g. app backgrounded) — offer retry
+  startedAt?: number      // when this answer started streaming, for an elapsed timer
 }
 
 const EXAMPLES = [
@@ -63,11 +65,20 @@ function Answer({ md, onOpen }: { md: string; onOpen: (iri: string) => void }) {
   return <div ref={ref} className="body-text" dangerouslySetInnerHTML={{ __html: html }} />
 }
 
-function Thinking({ label }: { label: string }) {
+function Thinking({ label, since }: { label: string; since?: number }) {
+  // Tick every second so the label carries a live elapsed count — the ask can take
+  // ~20s, and a moving timer is the difference between "working" and "frozen".
+  const [, setTick] = useState(0)
+  useEffect(() => {
+    if (!since) return
+    const iv = setInterval(() => setTick((t) => t + 1), 1000)
+    return () => clearInterval(iv)
+  }, [since])
+  const secs = since ? Math.floor((Date.now() - since) / 1000) : 0
   return (
     <div className="ask-thinking">
       <span className="ask-dot" /><span className="ask-dot" /><span className="ask-dot" />
-      <span className="ask-thinking-label">{label}</span>
+      <span className="ask-thinking-label">{label}{since && secs >= 2 ? ` · ${secs}s` : ''}</span>
     </div>
   )
 }
@@ -141,12 +152,19 @@ export default function AskView({ onSelectNode, signedIn, onSignIn }: Props) {
       .catch(() => { /* a failed save never blocks the chat */ })
   }
 
-  const send = async (text: string) => {
-    const q = text.trim()
-    if (!q || loading) return
-    const base = [...turns, { role: 'user', content: q } as Turn]
-    setTurns([...base, { role: 'assistant', content: '', streaming: true }])
-    setInput('')
+  // A dropped SSE — the app was backgrounded, the tab was hidden, or the network
+  // blipped — surfaces as a socket/abort error, not a server failure. Detect it so
+  // we can show a calm "interrupted, tap retry" instead of a raw "Software caused
+  // connection abort". hiddenRef records whether the page went hidden mid-stream.
+  const hiddenRef = useRef(false)
+  const isInterrupt = (msg: string) =>
+    hiddenRef.current || /abort|connection|network|failed to fetch|load failed|the operation was/i.test(msg)
+
+  // Stream an answer for a conversation whose LAST turn is the user question.
+  // Shared by send() and retry() so retry re-runs without duplicating the bubble.
+  const streamAnswer = async (base: Turn[]) => {
+    hiddenRef.current = false
+    setTurns([...base, { role: 'assistant', content: '', streaming: true, startedAt: Date.now() }])
     setLoading(true)
     const wire: AskMessage[] = base.map(({ role, content }) => ({ role, content }))
     try {
@@ -158,27 +176,50 @@ export default function AskView({ onSelectNode, signedIn, onSignIn }: Props) {
             ...t, content: res.answer, citations: res.citations,
             meta: { model: res.model, turns: res.turns }, streaming: false, status: undefined,
           }))
-          // Persist the finalized exchange (strip streaming-only fields).
           persist([
             ...base.map(({ role, content, citations, meta }) => ({ role, content, citations, meta })),
             { role: 'assistant', content: res.answer, citations: res.citations,
               meta: { model: res.model, turns: res.turns } },
           ])
-          // Hands-free: read the finished answer aloud. (The assistant turn sits
-          // at index base.length once appended.)
           if (autoRead && speech.supported) { speech.speak(res.answer); setSpeakingIdx(base.length) }
         },
-        onError: (msg) => patchLast((t) => ({ ...t, content: msg, error: true, streaming: false })),
+        onError: (msg) => patchLast((t) => ({ ...t, content: msg, error: true, interrupted: isInterrupt(msg), streaming: false })),
       })
     } catch (e) {
       const msg = e instanceof ApiError && e.status === 429
         ? 'You’ve hit the rate limit — give it a minute and try again.'
         : e instanceof Error ? e.message : 'Something went wrong.'
-      patchLast((t) => ({ ...t, content: msg, error: true, streaming: false }))
+      const rateLimited = e instanceof ApiError && e.status === 429
+      patchLast((t) => ({ ...t, content: msg, error: true, interrupted: !rateLimited && isInterrupt(msg), streaming: false }))
     } finally {
       setLoading(false)
     }
   }
+
+  const send = (text: string) => {
+    const q = text.trim()
+    if (!q || loading) return
+    setInput('')
+    streamAnswer([...turns, { role: 'user', content: q } as Turn])
+  }
+
+  // Re-run the last question in place: drop the failed assistant turn, keep the
+  // conversation through the user's question, and stream a fresh answer.
+  const retry = () => {
+    if (loading) return
+    let base = turns
+    if (base.length && base[base.length - 1].role === 'assistant') base = base.slice(0, -1)
+    if (!base.length || base[base.length - 1].role !== 'user') return
+    streamAnswer(base)
+  }
+
+  // If the page is hidden while a stream is in flight, remember it — the abort that
+  // follows is a navigation/background drop, not a server error.
+  useEffect(() => {
+    const onVis = () => { if (document.hidden && loading) hiddenRef.current = true }
+    document.addEventListener('visibilitychange', onVis)
+    return () => document.removeEventListener('visibilitychange', onVis)
+  }, [loading])
 
   const newChat = () => { setTurns([]); setConvId(null); setHistoryOpen(false) }
 
@@ -294,13 +335,18 @@ export default function AskView({ onSelectNode, signedIn, onSignIn }: Props) {
             ) : (
               <div key={i} className="ask-turn ask-assistant">
                 {t.error ? (
-                  <div className="ask-error">{t.content}</div>
+                  <div className={`ask-error${t.interrupted ? ' ask-interrupted' : ''}`}>
+                    <div>{t.interrupted
+                      ? 'Connection interrupted — you may have switched away or lost signal. Your question is still here.'
+                      : t.content}</div>
+                    <button className="ask-retry" onClick={retry} disabled={loading}>↻ retry</button>
+                  </div>
                 ) : t.streaming ? (
                   <>
-                    {t.status && <Thinking label={t.status} />}
+                    {t.status && <Thinking label={t.status} since={t.startedAt} />}
                     {t.content
                       ? <div className="ask-streaming body-text">{t.content}</div>
-                      : !t.status && <Thinking label="searching the graph…" />}
+                      : !t.status && <Thinking label="searching the graph…" since={t.startedAt} />}
                   </>
                 ) : (
                   <>

@@ -373,7 +373,10 @@ def _ask_events(messages, tier="reader", model=DEFAULT_MODEL, max_tool_turns=MAX
         # the status event tells the client to drop them.
         turns += 1
         names = [b.name for b in final.content if getattr(b, "type", None) == "tool_use"]
-        yield {"type": "status", "text": _STATUS.get(names[0] if names else "", "consulting the graph…")}
+        # Suffix the step number so repeated tool turns read as PROGRESS ("step 2",
+        # "step 3") rather than the same "searching the graph…" that feels stuck.
+        base = _STATUS.get(names[0] if names else "", "consulting the graph…")
+        yield {"type": "status", "text": base if turns == 1 else f"{base} · step {turns}"}
         convo.append({"role": "assistant", "content": final.content})
         tool_results = []
         for block in final.content:
