@@ -4844,8 +4844,21 @@ def serve_app(path):
     served as-is; unknown paths fall back to index.html so client-side routing works."""
     dist = VIEWER_DIST
     if path and (dist / path).is_file():
-        return send_from_directory(str(dist), path)
-    return send_from_directory(str(dist), "index.html")
+        resp = send_from_directory(str(dist), path)
+        # Hashed asset filenames are immutable — let clients cache them hard so only
+        # index.html (below) is ever re-fetched.
+        if "/assets/" in path or path.startswith("assets/"):
+            resp.headers["Cache-Control"] = "public, max-age=31536000, immutable"
+        return resp
+    # index.html (and SPA fallback) must NEVER be cached: it names the current asset
+    # hashes, so a stale copy pins the whole app to an old bundle — exactly the
+    # "my phone shows old behaviour after a deploy" symptom. no-store forces a fresh
+    # fetch every load even through aggressive mobile/WebView caches.
+    resp = send_from_directory(str(dist), "index.html")
+    resp.headers["Cache-Control"] = "no-store, no-cache, must-revalidate, max-age=0"
+    resp.headers["Pragma"] = "no-cache"
+    resp.headers["Expires"] = "0"
+    return resp
 
 
 @app.route("/refresh", methods=["POST"])

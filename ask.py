@@ -32,7 +32,7 @@ DEFAULT_MODEL = "claude-sonnet-4-6"
 # a backstop against a model that keeps searching without answering. Lowered from 8
 # to 5: each extra turn is a serial model round-trip (~2–3s) and 8 mostly served
 # pathological loops, not real answers — the wider preload below covers the rest.
-MAX_TOOL_TURNS = 5
+MAX_TOOL_TURNS = 4
 
 # A single node's body can be large; cap what we feed back per get_node call so a
 # few fat nodes don't blow the context (and cost) of the loop.
@@ -361,7 +361,10 @@ def _ask_events(messages, tier="reader", model=DEFAULT_MODEL, max_tool_turns=MAX
         _mark_cache(convo)
         use_tools = turns < max_tool_turns
         parts = []
-        kwargs = dict(model=model, max_tokens=2048, system=system, messages=convo)
+        # 1200 (was 2048) caps the final synthesis: a near-max answer streams for
+        # ~20s on mobile and reads as a hang. 1200 tokens is plenty for a grounded
+        # graph answer and roughly halves worst-case generation time.
+        kwargs = dict(model=model, max_tokens=1200, system=system, messages=convo)
         if use_tools:
             kwargs["tools"] = READ_TOOL_SCHEMAS
         with app.anthropic_client.messages.stream(**kwargs) as stream:
