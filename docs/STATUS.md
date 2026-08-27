@@ -4,28 +4,29 @@ The single canonical snapshot of current build state. Changes frequently — upd
 after every build session. This is not a design doc (see [`ARCHITECTURE.md`](ARCHITECTURE.md))
 or a decision record (see [`DECISIONS.md`](DECISIONS.md)).
 
-_Last updated: 2026-08-22_
+_Last updated: 2026-08-27_
 
 ## Component status
 
 | Component | Status | Notes |
 |---|---|---|
 | PKIS-MCP server (`app.py`) | **live** | MCP (42 tools) + `/pkis-api/*` + docs/webhook/health on `pkis.clowderpack.dev`; gunicorn `pkis-mcp.service`; pinned deps in `requirements.txt`; architect/graph/link tools marked executable; `get_openwiki` read-only tool exposing openwiki/ code map |
-| Knowledge graph (`pkis-wiki`) | **live** | **2,967 nodes**; large ingest wave: amortized inference / SBI / BayesFlow / DREAM / causal inference cluster; 8 orphan nodes wired; duplicates removed + source_graph.json rebuilt; librarian linked sources to `pkis:technique:scaled-dot-product-attention` and `pkis:framework:transformer-architecture` |
+| Knowledge graph (`pkis-wiki`) | **live** | **2,971 nodes**; new sources ingested: Acemoglu-Restrepo 2019 (automation + new tasks) and 2018 (race between man and machine) via doc-store; MCP-committed sources: Mathematical Theory of Deep Learning, Matrix Calculus (for ML and Beyond) |
 | Viewer PWA (`pkis.clowderpack.dev/app`) | **live** | mobile-first; wide-desktop dashboard (≥1280px); retrieval lab view; path-mode UI; native Capacitor APK with WorkOS bearer auth + biometric unlock; **edit-node action added**; **explainers now render, download, and share correctly on mobile** |
 | MCP write tools | **live** | stub/edge/hypothesis/bridge/source/edit; auto-commit+push, cache auto-refresh; `save_url_source` and `save_podcast_source` documented in authoring tools; `edit_node content=` parameter clarified |
 | Auth (WorkOS AuthKit) | **live** | OAuth (claude.ai/MCP) + web sealed session; identity keyed on email; allowlist by email OR sub; single-use-refresh race coalesced; opaque-token fallback via OIDC userinfo for MCP writes |
-| Ask (NL Q&A) | **live** | shared `ask.py` engine + `/pkis-api/ask` + viewer Ask tab; conversation persistence, voice I/O, capability-link sharing; 'searching the graph…' freeze fixed — dense index now built in background |
+| Ask (NL Q&A) | **live** | shared `ask.py` engine + `/pkis-api/ask` + viewer Ask tab; conversation persistence, voice I/O, capability-link sharing; clearer progress indicators + graceful recovery on interrupted queries |
 | Inbox (owner review hub) | **live** | consolidated staged + discovery + agent lanes; finding intake (Parts A+B); lab-assistant cron inbox push divergence-safe; doc-drift lane; Graph gaps lane; staged-file removal now committed on promote/discard |
 | Lab Assistant | **live** | finding intake + descriptive Lab Assistant (Parts A+B) shipped; cron inbox push divergence-safe; drift-flag runs 2026-07-18 and 2026-08-01 processed |
 | Semantic search | **live** | BM25 + bge-small dense fused via RRF; graph rerank (personalized PageRank); path/relationship queries; standing-eval loop; OpGraph designated as live NED/NER experimental platform with six resolution strategies operationalizing the intensional-grounding-ned-accuracy hypothesis; semantic search model name corrected in docs |
 | Retrieval lab deep metrics | **live** | P4 metrics (C(q) coverage, concision, relevance) per search regime; lab view + path-mode UI |
 | Research clusters + frontier priority | **live** | all 12 clusters de-orphaned; frontier-driven priority queue |
-| Read+listen reader | **live** | LLM semantic narration + section-synced chapter PDF; resilient TTS (Piper-unvoiceable segments skipped); mp3 encoder streamed; **494 chapters narrated**; narration audio/PDF URLs absolutized for native app; real narration-build failure reason surfaced; **content-filtered PDF chunks and failing sections no longer abort extraction or narration builds** |
+| Read+listen reader | **live** | LLM semantic narration + section-synced chapter PDF; resilient TTS (Piper-unvoiceable segments skipped); mp3 encoder streamed; **494 chapters narrated**; narration audio/PDF URLs absolutized for native app; real narration-build failure reason surfaced; content-filtered PDF chunks and failing sections no longer abort extraction or narration builds |
 | Proactive discovery | **live** | frontier-gated OpenAlex cite-graph, cron'd Mondays; inbox + accept/dismiss feedback + learned-prior loop (prior still cold) |
 | Documentation system (`docs/`) | **live** | 6 docs + `log_idea` + viewer Docs view; OpenWiki cartographer adopted; predicate drift fixed; CONTEXT.md regenerated from ground truth; Google Drive integration removed; MCP write auto-refresh mechanism clarified |
 | OpenWiki refresh driver | **live** | rebase-retry push logic; concurrent-writer safe; `git add` staging fix; binaries/images/HTML/.env excluded from code-map staging |
-| Explainers | **live** | HTML explainers as `asset` nodes; desktop live-edit loop; Tier-2 dynamic-explainer Flask blueprint scaffold (`/pkis-api/x/<name>/`); viz published to local serving copy; **render/download/share fixed esp. on mobile** |
+| Explainers | **live** | HTML explainers as `asset` nodes; desktop live-edit loop; Tier-2 dynamic-explainer Flask blueprint scaffold (`/pkis-api/x/<name>/`); viz published to local serving copy; render/download/share fixed esp. on mobile |
+| Deploy | **live** | one-command deploy script: build + embeddings + graceful reload |
 | Comptroller (cost) | **live** | `usage.py` SQLite at `/home/pkis/usage`; per-origin cost; narration logs as `pkis-reader` |
 | Ideas log | **live** | `log_idea` tool; entry: OpGraph Strategist — multi-agent strategic council |
 
@@ -41,6 +42,10 @@ Books split: cassandras-des-intro, tanner, cimiano, gulli (29 ch, Springer-ancho
 split), cunningham, carrell, allemang, kroese, nielsen, benzi, lange — plus the
 earlier Phase-C set (MacKay, Hastie ESL, AIMA, Gelman, Sutton, Deisenroth, Pearl,
 Resnick, Goodfellow, Murphy PML 1&2, Jaynes).
+
+Doc-store additions this cycle: Acemoglu-Restrepo 2019 (automation and new tasks),
+Acemoglu-Restrepo 2018 (race between man and machine). MCP-committed book sources:
+Mathematical Theory of Deep Learning; Matrix Calculus (for ML and Beyond).
 
 ## Active workstream — OpGraph as NED/NER experimental platform
 
@@ -68,14 +73,15 @@ ingested + narrated. Local-only until published.
 - An `app.py` restart drops the claude.ai connector (users must reconnect) —
   minimize restarts; content changes don't need one (cache auto-refresh).
 
-## Most recent session (2026-08-22)
+## Most recent session (2026-08-27)
 
-Two reader resilience fixes: content-filtered PDF chunks no longer abort extraction,
-and a single failing section no longer aborts an entire narration build. Explainer
-assets fixed for mobile — render, download, and share all work correctly. Librarian
-linked two new sources: one to `pkis:technique:scaled-dot-product-attention`, one to
-`pkis:framework:transformer-architecture`. Node count holds at **2,967**; narrated
-chapters hold at **494**.
+Four areas of work since 2026-08-22. (1) **Ask resilience**: clearer progress
+indicators and graceful recovery when a query is interrupted mid-flight. (2) **Doc-store
+ingestion**: two Acemoglu-Restrepo labour-economics papers auto-created and added.
+(3) **MCP source commits**: Mathematical Theory of Deep Learning and Matrix Calculus
+(for ML and Beyond) ingested as source nodes; node count rises to **2,971**. (4)
+**Deploy tooling**: one-command deploy script (build + embeddings + graceful reload)
+landed, replacing the previous manual sequence.
 
 ## Next priorities
 
