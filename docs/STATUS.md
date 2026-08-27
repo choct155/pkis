@@ -10,15 +10,15 @@ _Last updated: 2026-08-27_
 
 | Component | Status | Notes |
 |---|---|---|
-| PKIS-MCP server (`app.py`) | **live** | MCP (42 tools) + `/pkis-api/*` + docs/webhook/health on `pkis.clowderpack.dev`; gunicorn `pkis-mcp.service`; pinned deps in `requirements.txt`; architect/graph/link tools marked executable; `get_openwiki` read-only tool exposing openwiki/ code map |
+| PKIS-MCP server (`app.py`) | **live** | MCP (42 tools) + `/pkis-api/*` + docs/webhook/health on `pkis.clowderpack.dev`; gunicorn `pkis-mcp.service`; pinned deps in `requirements.txt`; architect/graph/link tools marked executable; `get_openwiki` read-only tool exposing openwiki/ code map; `index.html` served `no-store` to eliminate stale-shell fetches; ask caps tightened to reduce latency tail |
 | Knowledge graph (`pkis-wiki`) | **live** | **2,971 nodes**; new sources ingested: Acemoglu-Restrepo 2019 (automation + new tasks) and 2018 (race between man and machine) via doc-store; MCP-committed sources: Mathematical Theory of Deep Learning, Matrix Calculus (for ML and Beyond) |
 | Viewer PWA (`pkis.clowderpack.dev/app`) | **live** | mobile-first; wide-desktop dashboard (≥1280px); retrieval lab view; path-mode UI; native Capacitor APK with WorkOS bearer auth + biometric unlock; **edit-node action added**; **explainers now render, download, and share correctly on mobile** |
 | MCP write tools | **live** | stub/edge/hypothesis/bridge/source/edit; auto-commit+push, cache auto-refresh; `save_url_source` and `save_podcast_source` documented in authoring tools; `edit_node content=` parameter clarified |
 | Auth (WorkOS AuthKit) | **live** | OAuth (claude.ai/MCP) + web sealed session; identity keyed on email; allowlist by email OR sub; single-use-refresh race coalesced; opaque-token fallback via OIDC userinfo for MCP writes |
-| Ask (NL Q&A) | **live** | shared `ask.py` engine + `/pkis-api/ask` + viewer Ask tab; conversation persistence, voice I/O, capability-link sharing; clearer progress indicators + graceful recovery on interrupted queries; **serial round-trips cut (~24s→~15s on real queries)** |
+| Ask (NL Q&A) | **live** | shared `ask.py` engine + `/pkis-api/ask` + viewer Ask tab; conversation persistence, voice I/O, capability-link sharing; clearer progress indicators + graceful recovery on interrupted queries; serial round-trips parallelised (~24s→~15s); ask caps tightened further this session |
 | Inbox (owner review hub) | **live** | consolidated staged + discovery + agent lanes; finding intake (Parts A+B); lab-assistant cron inbox push divergence-safe; doc-drift lane; Graph gaps lane; staged-file removal now committed on promote/discard |
 | Lab Assistant | **live** | finding intake + descriptive Lab Assistant (Parts A+B) shipped; cron inbox push divergence-safe; drift-flag runs 2026-07-18 and 2026-08-01 processed |
-| Semantic search | **live** | BM25 + bge-small dense fused via RRF; graph rerank (personalized PageRank); path/relationship queries; standing-eval loop; OpGraph designated as live NED/NER experimental platform with six resolution strategies operationalizing the intensional-grounding-ned-accuracy hypothesis; semantic search model name corrected in docs |
+| Semantic search | **live** | BM25 + bge-small dense fused via RRF; `sentence-transformers` + CPU torch added to `requirements.txt` this session (enables semantic search without GPU); graph rerank (personalized PageRank); path/relationship queries; standing-eval loop; OpGraph designated as live NED/NER experimental platform with six resolution strategies operationalizing the intensional-grounding-ned-accuracy hypothesis; semantic search model name corrected in docs |
 | Retrieval lab deep metrics | **live** | P4 metrics (C(q) coverage, concision, relevance) per search regime; lab view + path-mode UI |
 | Research clusters + frontier priority | **live** | all 12 clusters de-orphaned; frontier-driven priority queue |
 | Read+listen reader | **live** | LLM semantic narration + section-synced chapter PDF; resilient TTS (Piper-unvoiceable segments skipped); mp3 encoder streamed; **494 chapters narrated**; narration audio/PDF URLs absolutized for native app; real narration-build failure reason surfaced; content-filtered PDF chunks and failing sections no longer abort extraction or narration builds |
@@ -75,11 +75,12 @@ ingested + narrated. Local-only until published.
 
 ## Most recent session (2026-08-27)
 
-Single focused change on top of the earlier 2026-08-27 session work. (1) **Ask
-latency**: serial round-trips in `ask.py` parallelised, cutting wall-clock query
-time from ~24s to ~15s on real queries. No functional or API changes; all existing
-Ask features (conversation persistence, voice I/O, capability-link sharing, progress
-indicators) unchanged.
+Two infrastructure fixes. (1) **Stale-shell elimination**: `index.html` now served
+with `Cache-Control: no-store` so clients always fetch the current shell rather than
+serving a cached version after deploys. (2) **Semantic search deps**: added
+`sentence-transformers` and CPU-only torch to `requirements.txt`, making the dense
+retrieval path self-contained without a GPU dependency. Ask caps also tightened to
+reduce latency tail further, building on the parallelisation work from the same date.
 
 ## Next priorities
 
