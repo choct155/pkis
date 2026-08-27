@@ -28,9 +28,11 @@ import re
 # discovery/reader pipelines.
 DEFAULT_MODEL = "claude-sonnet-4-6"
 
-# Bounds on the agentic loop. Most questions resolve in 1–3 tool turns; the cap
-# is a backstop against a model that keeps searching without answering.
-MAX_TOOL_TURNS = 8
+# Bounds on the agentic loop. Most questions resolve in 1–3 tool turns; the cap is
+# a backstop against a model that keeps searching without answering. Lowered from 8
+# to 5: each extra turn is a serial model round-trip (~2–3s) and 8 mostly served
+# pathological loops, not real answers — the wider preload below covers the rest.
+MAX_TOOL_TURNS = 5
 
 # A single node's body can be large; cap what we feed back per get_node call so a
 # few fat nodes don't blow the context (and cost) of the loop.
@@ -39,8 +41,10 @@ _NODE_CONTENT_CAP = 8000
 # Eager retrieval: before the first model call we run the same hybrid search the
 # model would call and inject the top-K nodes into the prompt. On a small graph
 # this is cheap and collapses most questions from ~3 serial model calls to one —
-# the number of serial calls is what dominates wall-clock latency.
-PRELOAD_K = 8
+# the number of serial calls is what dominates wall-clock latency. Raised 8→12: a
+# wider preload lets more questions (esp. "what do I have on X" overviews) answer in
+# a single call instead of paying extra serial search round-trips.
+PRELOAD_K = 12
 
 SYSTEM_PROMPT = """\
 You are the assistant for PKIS — a personal knowledge graph of interconnected \
@@ -57,6 +61,12 @@ insufficient: `get_node` to read a node's full body, `get_related` / \
 `get_dependency_chain` to follow edges for multi-hop questions ("how does X \
 connect to Y?", "what does X depend on?"), or `search_wiki` to find nodes the \
 preload missed. Never answer from your own prior knowledge alone.
+
+Be decisive about tools — each call is a serial round-trip that the user waits on. \
+For broad "what do I have on X" / overview / inventory questions, the preloaded set \
+is almost always enough: synthesize from it in ONE turn and do not issue further \
+searches unless a specific named node you need is clearly absent. Prefer one \
+`get_related`/`get_dependency_chain` traversal over several `search_wiki` calls.
 
 When you do decide to use a tool, call it immediately — do not write any \
 explanatory text before the tool call.
