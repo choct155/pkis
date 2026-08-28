@@ -1,6 +1,7 @@
 # PKIS Wiki Index
 
 ## Sources
+- [[chang-amortized-2024-1]] — Amortized Probabilistic Conditioning for Optimization, Simulation and Inference () (2026-08-28)
 - [[petersen-mathematical-2024]] — Mathematical theory of deep learning () (2026-08-25)
 - [[bright-matrix-2025]] — Matrix Calculus (for Machine Learning and Beyond) () (2026-08-25)
 - [[grinberg-an-2023]] — An introduction to graph theory () (2026-08-14)

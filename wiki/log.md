@@ -26984,3 +26984,37 @@
 ## [2026-08-25] committed | source
 - Committed: petersen-mathematical-2024 → sources/petersen-mathematical-2024.md
 - IRI: pkis:source:petersen-mathematical-2024
+
+## [2026-08-28] staged | source-stub
+- Staged: httpsarxivorghtml250803865v2 (id: 36e1192f-32ad-4ad4-94bf-057db4f4ef42)
+- Title: (unknown)
+- Enrichment: minimal
+
+## [2026-08-28] staged | source-stub
+- Staged: httpsarxivorghtml260525480v2 (id: 33480b8f-876a-48b8-8dd4-07ab48a3e78a)
+- Title: (unknown)
+- Enrichment: minimal
+
+## [2026-08-28] staged | source-stub
+- Staged: httpsarxivorghtml260321613v1 (id: 2ca7a82c-1dfb-4865-a792-3c35f01aa637)
+- Title: (unknown)
+- Enrichment: minimal
+
+## [2026-08-28] staged | source-stub
+- Staged: yang-priorguide-2025-1 (id: 8586d8bb-23fb-437a-bc81-a6be4038ad89)
+- Title: PriorGuide: Test-Time Prior Adaptation for Simulation-Based Inference
+- Enrichment: full
+
+## [2026-08-28] staged | source-stub
+- Staged: chang-amortized-2024-1 (id: 39616be1-4d26-4498-8ebe-09e4459cf84f)
+- Title: Amortized Probabilistic Conditioning for Optimization, Simulation and Inference
+- Enrichment: full
+
+## [2026-08-28] staged | source-stub
+- Staged: httpsdistillpub2020bayesianoptimization (id: e5d84b26-35d2-4c4b-b60e-52eab2238d3f)
+- Title: (unknown)
+- Enrichment: minimal
+
+## [2026-08-28] committed | source
+- Committed: chang-amortized-2024-1 → sources/chang-amortized-2024-1.md
+- IRI: pkis:source:chang-amortized-2024-1
