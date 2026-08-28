@@ -1,6 +1,7 @@
 # PKIS Wiki Index
 
 ## Sources
+- [[yang-priorguide-2025-1]] — PriorGuide: Test-Time Prior Adaptation for Simulation-Based Inference () (2026-08-28)
 - [[chang-amortized-2024-1]] — Amortized Probabilistic Conditioning for Optimization, Simulation and Inference () (2026-08-28)
 - [[petersen-mathematical-2024]] — Mathematical theory of deep learning () (2026-08-25)
 - [[bright-matrix-2025]] — Matrix Calculus (for Machine Learning and Beyond) () (2026-08-25)

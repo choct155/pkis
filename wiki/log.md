@@ -27018,3 +27018,7 @@
 ## [2026-08-28] committed | source
 - Committed: chang-amortized-2024-1 → sources/chang-amortized-2024-1.md
 - IRI: pkis:source:chang-amortized-2024-1
+
+## [2026-08-28] committed | source
+- Committed: yang-priorguide-2025-1 → sources/yang-priorguide-2025-1.md
+- IRI: pkis:source:yang-priorguide-2025-1
