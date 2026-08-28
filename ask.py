@@ -21,12 +21,20 @@ wiring its route, so importing ``app`` at module load would be circular. By call
 time both modules are fully initialised and ``import app`` is a cached lookup.
 """
 
+import os
 import re
 
 # Sonnet is the default per the build decision — fast and cheap enough for an
 # interactive loop, strong enough for retrieve+synthesise. Matches the
 # discovery/reader pipelines.
 DEFAULT_MODEL = "claude-sonnet-4-6"
+
+# Two-model split (env-tunable — change a value + reload, no code edit/rebuild):
+# a fast/cheap model drives the tool-use RETRIEVAL turns; a stronger model writes
+# the final SYNTHESIS. Read at call time so a .env change picks up on the next
+# gunicorn reload. Set both to the same id to fall back to the original one-model
+# loop (streams the answer inline, no extra call).
+DEFAULT_RETRIEVAL_MODEL = "claude-haiku-4-5"
 
 # Bounds on the agentic loop. Most questions resolve in 1–3 tool turns; the cap is
 # a backstop against a model that keeps searching without answering. Lowered from 8
@@ -334,6 +342,12 @@ def _ask_events(messages, tier="reader", model=DEFAULT_MODEL, max_tool_turns=MAX
     turns = 0
     system = _system_blocks()
 
+    # Two-model split — fast model gathers, strong model synthesizes. `two_phase`
+    # is False when both resolve to the same id (single-loop, answer streamed inline).
+    retrieval_model = os.environ.get("PKIS_ASK_RETRIEVAL_MODEL") or DEFAULT_RETRIEVAL_MODEL
+    synthesis_model = os.environ.get("PKIS_ASK_SYNTHESIS_MODEL") or model
+    two_phase = retrieval_model != synthesis_model
+
     # Eager retrieval on the latest question → inject as a context block ahead of it.
     if convo and convo[-1].get("role") == "user" and isinstance(convo[-1].get("content"), str):
         q = convo[-1]["content"]
@@ -354,17 +368,23 @@ def _ask_events(messages, tier="reader", model=DEFAULT_MODEL, max_tool_turns=MAX
     def _done(answer):
         return {"type": "done", "answer": answer,
                 "citations": _build_citations(answer, surfaced),
-                "surfaced": sorted(surfaced), "model": model, "turns": turns,
+                "surfaced": sorted(surfaced), "model": synthesis_model, "turns": turns,
                 "usage": {"input_tokens": in_tokens, "output_tokens": out_tokens}}
 
+    # ── Retrieval: gather context via tool turns. In two-phase mode the fast model
+    # drives this and its prose is NOT streamed (the strong model writes the answer
+    # below); in single-model mode the gather model's own answer is final and streams
+    # inline, and the loop returns without a second call. ──
     while True:
         _mark_cache(convo)
         use_tools = turns < max_tool_turns
+        gather_model = retrieval_model if use_tools else synthesis_model
+        stream_deltas = (not two_phase) or (not use_tools)
         parts = []
-        # 1200 (was 2048) caps the final synthesis: a near-max answer streams for
-        # ~20s on mobile and reads as a hang. 1200 tokens is plenty for a grounded
-        # graph answer and roughly halves worst-case generation time.
-        kwargs = dict(model=model, max_tokens=1200, system=system, messages=convo)
+        # 1200 (was 2048) caps a near-max answer that would stream ~20s on mobile and
+        # read as a hang; plenty for a grounded graph answer. Tool turns stop at the
+        # tool call regardless, so the cap only bites on synthesis.
+        kwargs = dict(model=gather_model, max_tokens=1200, system=system, messages=convo)
         if use_tools:
             kwargs["tools"] = READ_TOOL_SCHEMAS
         with app.anthropic_client.messages.stream(**kwargs) as stream:
@@ -372,11 +392,14 @@ def _ask_events(messages, tier="reader", model=DEFAULT_MODEL, max_tool_turns=MAX
                 if (event.type == "content_block_delta"
                         and getattr(event.delta, "type", None) == "text_delta"):
                     parts.append(event.delta.text)
-                    yield {"type": "delta", "text": event.delta.text}
+                    if stream_deltas:
+                        yield {"type": "delta", "text": event.delta.text}
             final = stream.get_final_message()
         _account(final)
 
         if final.stop_reason != "tool_use":
+            if two_phase and use_tools:
+                break   # fast model finished gathering → synthesize with the strong model
             answer = "".join(parts) or "".join(
                 b.text for b in final.content if getattr(b, "type", None) == "text")
             yield _done(answer)
@@ -403,11 +426,36 @@ def _ask_events(messages, tier="reader", model=DEFAULT_MODEL, max_tool_turns=MAX
                                  "content": app.json.dumps(result, default=str)})
         convo.append({"role": "user", "content": tool_results})
         if turns >= max_tool_turns:
-            # Next iteration runs WITHOUT tools (use_tools False) → forces a final
+            if two_phase:
+                break   # tool budget spent → synthesize with the strong model
+            # single-model: next iteration runs WITHOUT tools → forces a final
             # streamed synthesis from what's gathered.
             convo.append({"role": "user", "content":
                           "Tool budget reached — answer now from what you've gathered, "
                           "citing the relevant [[slug]] nodes, and note any gaps."})
+
+    # ── Synthesis (two-phase only): the strong model writes the answer from the
+    # gathered context — no tools, streamed token-by-token. ──
+    yield {"type": "status", "text": "composing the answer…"}
+    convo.append({"role": "user", "content":
+                  "Using only the retrieved nodes above, answer the question now. Cite each "
+                  "claim with its [[slug]]; if the graph lacks what's needed, say so briefly "
+                  "and note the gap."})
+    _mark_cache(convo)
+    parts = []
+    with app.anthropic_client.messages.stream(
+            model=synthesis_model, max_tokens=1200, system=system, messages=convo) as stream:
+        for event in stream:
+            if (event.type == "content_block_delta"
+                    and getattr(event.delta, "type", None) == "text_delta"):
+                parts.append(event.delta.text)
+                yield {"type": "delta", "text": event.delta.text}
+        final = stream.get_final_message()
+    _account(final)
+    answer = "".join(parts) or "".join(
+        b.text for b in final.content if getattr(b, "type", None) == "text")
+    yield _done(answer)
+    return
 
 
 def run_ask(messages, tier="reader", model=DEFAULT_MODEL, max_tool_turns=MAX_TOOL_TURNS, profile=None):
