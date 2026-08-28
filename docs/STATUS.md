@@ -4,25 +4,26 @@ The single canonical snapshot of current build state. Changes frequently — upd
 after every build session. This is not a design doc (see [`ARCHITECTURE.md`](ARCHITECTURE.md))
 or a decision record (see [`DECISIONS.md`](DECISIONS.md)).
 
-_Last updated: 2026-08-27_
+_Last updated: 2026-08-28_
 
 ## Component status
 
 | Component | Status | Notes |
 |---|---|---|
 | PKIS-MCP server (`app.py`) | **live** | MCP (42 tools) + `/pkis-api/*` + docs/webhook/health on `pkis.clowderpack.dev`; gunicorn `pkis-mcp.service`; pinned deps in `requirements.txt`; architect/graph/link tools marked executable; `get_openwiki` read-only tool exposing openwiki/ code map; `index.html` served `no-store` to eliminate stale-shell fetches; ask caps tightened to reduce latency tail |
-| Knowledge graph (`pkis-wiki`) | **live** | **2,971 nodes**; new sources ingested: Acemoglu-Restrepo 2019 (automation + new tasks) and 2018 (race between man and machine) via doc-store; MCP-committed sources: Mathematical Theory of Deep Learning, Matrix Calculus (for ML and Beyond) |
+| Knowledge graph (`pkis-wiki`) | **live** | **2,974 nodes**; new sources MCP-committed: PriorGuide (test-time prior adaptation for SBI), Amortized Probabilistic Conditioning for Optimization/Simulation; doc-store auto-added one PDF asset |
 | Viewer PWA (`pkis.clowderpack.dev/app`) | **live** | mobile-first; wide-desktop dashboard (≥1280px); retrieval lab view; path-mode UI; native Capacitor APK with WorkOS bearer auth + biometric unlock; **edit-node action added**; **explainers now render, download, and share correctly on mobile** |
 | MCP write tools | **live** | stub/edge/hypothesis/bridge/source/edit; auto-commit+push, cache auto-refresh; `save_url_source` and `save_podcast_source` documented in authoring tools; `edit_node content=` parameter clarified |
 | Auth (WorkOS AuthKit) | **live** | OAuth (claude.ai/MCP) + web sealed session; identity keyed on email; allowlist by email OR sub; single-use-refresh race coalesced; opaque-token fallback via OIDC userinfo for MCP writes |
-| Ask (NL Q&A) | **live** | shared `ask.py` engine + `/pkis-api/ask` + viewer Ask tab; conversation persistence, voice I/O, capability-link sharing; clearer progress indicators + graceful recovery on interrupted queries; serial round-trips parallelised (~24s→~15s); ask caps tightened further this session |
+| Ask (NL Q&A) | **live** | shared `ask.py` engine + `/pkis-api/ask` + viewer Ask tab; **two-model split: fast retrieval model + strong synthesis model (~2× faster)**; conversation persistence, voice I/O, capability-link sharing; clearer progress indicators + graceful recovery on interrupted queries; serial round-trips parallelised (~24s→~15s); ask caps tightened |
 | Inbox (owner review hub) | **live** | consolidated staged + discovery + agent lanes; finding intake (Parts A+B); lab-assistant cron inbox push divergence-safe; doc-drift lane; Graph gaps lane; staged-file removal now committed on promote/discard |
 | Lab Assistant | **live** | finding intake + descriptive Lab Assistant (Parts A+B) shipped; cron inbox push divergence-safe; drift-flag runs 2026-07-18 and 2026-08-01 processed |
-| Semantic search | **live** | BM25 + bge-small dense fused via RRF; `sentence-transformers` + CPU torch added to `requirements.txt` this session (enables semantic search without GPU); graph rerank (personalized PageRank); path/relationship queries; standing-eval loop; OpGraph designated as live NED/NER experimental platform with six resolution strategies operationalizing the intensional-grounding-ned-accuracy hypothesis; semantic search model name corrected in docs |
+| Semantic search | **live** | BM25 + bge-small dense fused via RRF; `sentence-transformers` + CPU torch in `requirements.txt`; graph rerank (personalized PageRank); path/relationship queries; standing-eval loop; OpGraph designated as live NED/NER experimental platform with six resolution strategies operationalizing the intensional-grounding-ned-accuracy hypothesis |
 | Retrieval lab deep metrics | **live** | P4 metrics (C(q) coverage, concision, relevance) per search regime; lab view + path-mode UI |
 | Research clusters + frontier priority | **live** | all 12 clusters de-orphaned; frontier-driven priority queue |
 | Read+listen reader | **live** | LLM semantic narration + section-synced chapter PDF; resilient TTS (Piper-unvoiceable segments skipped); mp3 encoder streamed; **494 chapters narrated**; narration audio/PDF URLs absolutized for native app; real narration-build failure reason surfaced; content-filtered PDF chunks and failing sections no longer abort extraction or narration builds |
 | Proactive discovery | **live** | frontier-gated OpenAlex cite-graph, cron'd Mondays; inbox + accept/dismiss feedback + learned-prior loop (prior still cold) |
+| Ingest pipeline | **live** | **now enriches non-arXiv web sources** (blogs, distill.pub, docs pages) in addition to arXiv/PDF paths |
 | Documentation system (`docs/`) | **live** | 6 docs + `log_idea` + viewer Docs view; OpenWiki cartographer adopted; predicate drift fixed; CONTEXT.md regenerated from ground truth; Google Drive integration removed; MCP write auto-refresh mechanism clarified |
 | OpenWiki refresh driver | **live** | rebase-retry push logic; concurrent-writer safe; `git add` staging fix; binaries/images/HTML/.env excluded from code-map staging |
 | Explainers | **live** | HTML explainers as `asset` nodes; desktop live-edit loop; Tier-2 dynamic-explainer Flask blueprint scaffold (`/pkis-api/x/<name>/`); viz published to local serving copy; render/download/share fixed esp. on mobile |
@@ -44,8 +45,10 @@ earlier Phase-C set (MacKay, Hastie ESL, AIMA, Gelman, Sutton, Deisenroth, Pearl
 Resnick, Goodfellow, Murphy PML 1&2, Jaynes).
 
 Doc-store additions this cycle: Acemoglu-Restrepo 2019 (automation and new tasks),
-Acemoglu-Restrepo 2018 (race between man and machine). MCP-committed book sources:
-Mathematical Theory of Deep Learning; Matrix Calculus (for ML and Beyond).
+Acemoglu-Restrepo 2018 (race between man and machine). MCP-committed sources:
+Mathematical Theory of Deep Learning; Matrix Calculus (for ML and Beyond);
+PriorGuide (test-time prior adaptation for SBI); Amortized Probabilistic Conditioning
+for Optimization, Simulation, and Inference.
 
 ## Active workstream — OpGraph as NED/NER experimental platform
 
@@ -73,14 +76,16 @@ ingested + narrated. Local-only until published.
 - An `app.py` restart drops the claude.ai connector (users must reconnect) —
   minimize restarts; content changes don't need one (cache auto-refresh).
 
-## Most recent session (2026-08-27)
+## Most recent session (2026-08-28)
 
-Two infrastructure fixes. (1) **Stale-shell elimination**: `index.html` now served
-with `Cache-Control: no-store` so clients always fetch the current shell rather than
-serving a cached version after deploys. (2) **Semantic search deps**: added
-`sentence-transformers` and CPU-only torch to `requirements.txt`, making the dense
-retrieval path self-contained without a GPU dependency. Ask caps also tightened to
-reduce latency tail further, building on the parallelisation work from the same date.
+Three improvements landed. (1) **Ingest enrichment**: non-arXiv web sources (blogs,
+distill.pub, documentation pages) now go through the same enrichment pipeline as
+arXiv/PDF sources. (2) **Ask two-model split**: retrieval and synthesis now use
+separate models sized for each task, cutting end-to-end ask latency roughly in half
+relative to the single-model path. (3) **Two SBI sources committed**: PriorGuide
+(test-time prior adaptation for simulation-based inference) and Amortized Probabilistic
+Conditioning for Optimization, Simulation, and Inference added via MCP; one additional
+PDF auto-registered by the doc-store. Node count moved from 2,971 → 2,974.
 
 ## Next priorities
 
