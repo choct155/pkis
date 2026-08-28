@@ -194,34 +194,40 @@ def _fetch_url_metadata(url: str) -> dict:
     try:
         req = urllib.request.Request(url, headers={"User-Agent": "PKIS/1.0"})
         with urllib.request.urlopen(req, timeout=10) as r:
-            html = r.read(30_000).decode("utf-8", errors="replace")
+            html = r.read(200_000).decode("utf-8", errors="replace")
 
         title = ""
         author = ""
 
-        # OG title → <title> fallback
-        m = re.search(
-            r'<meta[^>]+property=["\']og:title["\'][^>]+content=["\']([^"\'<]+)',
-            html, re.I)
-        if m:
-            title = m.group(1).strip()
+        # Scholarly citation_title → OG title → <title> fallback
+        for pat in (r'<meta[^>]+name=["\']citation_title["\'][^>]+content=["\']([^"\'<]+)',
+                    r'<meta[^>]+property=["\']og:title["\'][^>]+content=["\']([^"\'<]+)'):
+            m = re.search(pat, html, re.I)
+            if m:
+                title = m.group(1).strip()
+                break
         if not title:
             m = re.search(r'<title[^>]*>([^<]+)</title>', html, re.I)
             if m:
                 title = re.sub(r'\s+', ' ', m.group(1)).strip()
 
-        # meta author → OG site_name fallback
-        m = re.search(
-            r'<meta[^>]+name=["\']author["\'][^>]+content=["\']([^"\'<]+)',
-            html, re.I)
-        if m:
-            author = m.group(1).strip()
-        if not author:
-            m = re.search(
-                r'<meta[^>]+property=["\']og:site_name["\'][^>]+content=["\']([^"\'<]+)',
-                html, re.I)
+        # Highwire citation_author (one tag per author) → meta author → OG site_name.
+        # Real bylines beat the site name — distill.pub etc. put authors in citation_author.
+        cites = [re.sub(r'\s+', ' ', c.strip())
+                 for c in re.findall(r'<meta[^>]+name=["\']citation_author["\'][^>]+content=["\']([^"\'<]+)',
+                                     html, re.I)]
+        cites = [c for c in dict.fromkeys(cites) if c]
+        if cites:
+            author = ", ".join(cites)
+        else:
+            m = re.search(r'<meta[^>]+name=["\']author["\'][^>]+content=["\']([^"\'<]+)', html, re.I)
             if m:
                 author = m.group(1).strip()
+            else:
+                m = re.search(r'<meta[^>]+property=["\']og:site_name["\'][^>]+content=["\']([^"\'<]+)',
+                              html, re.I)
+                if m:
+                    author = m.group(1).strip()
 
         return {"title": title, "author": author, "source_type": "article"}
     except Exception:

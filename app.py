@@ -23,6 +23,7 @@ import threading
 sys.path.insert(0, os.path.dirname(os.path.realpath(__file__)))
 
 import re
+import html
 import json
 import glob
 import uuid
@@ -2299,6 +2300,57 @@ Pending review.
     }
 
 
+def _fetch_webpage_metadata(url: str) -> dict:
+    """Best-effort metadata for a generic web article — a blog post, distill.pub
+    essay, docs page, talk write-up — anything that is neither arXiv nor a resolvable
+    DOI. Fetches the page and reads Highwire `citation_*` tags, Open Graph, standard
+    <meta>, and <title>. Returns any subset of {title, authors, abstract, year,
+    source_type}; {} on any failure (so the caller just falls back to a bare URL)."""
+    try:
+        import urllib.request
+        req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0 (PKIS ingest)"})
+        with urllib.request.urlopen(req, timeout=15) as resp:
+            raw = resp.read(600_000)  # the <head> we need sits near the top; cap the read
+            charset = resp.headers.get_content_charset() or "utf-8"
+        head = raw.decode(charset, errors="replace")[:200_000]
+    except Exception as e:
+        logger.info("web metadata fetch failed for %s: %s", url, e)
+        return {}
+
+    def _meta(*names):
+        out = []
+        for name in names:
+            for attr in ("name", "property"):
+                for tag in re.finditer(rf'<meta\b[^>]*\b{attr}=["\']{re.escape(name)}["\'][^>]*>',
+                                       head, re.I):
+                    cm = re.search(r'\bcontent=["\']([^"\']*)["\']', tag.group(0), re.I)
+                    if cm and cm.group(1).strip():
+                        out.append(html.unescape(cm.group(1).strip()))
+        return out
+
+    md = {"source_type": "article"}
+    title = (_meta("citation_title") or _meta("og:title") or [""])[0]
+    if not title:
+        tm = re.search(r'<title[^>]*>(.*?)</title>', head, re.I | re.S)
+        if tm:
+            title = html.unescape(re.sub(r'\s+', ' ', tm.group(1)).strip())
+    if title:
+        md["title"] = title[:300]
+    authors = _meta("citation_author") or _meta("author", "article:author")
+    authors = [a for a in dict.fromkeys(authors) if a and not a.lower().startswith("http")]
+    if authors:
+        md["authors"] = ", ".join(authors)[:400]
+    abstract = (_meta("citation_abstract") or _meta("description", "og:description") or [""])[0]
+    if abstract:
+        md["abstract"] = abstract[:2000]
+    date = (_meta("citation_publication_date", "citation_date", "article:published_time",
+                  "og:updated_time") or [""])[0]
+    ym = re.search(r'(19|20)\d{2}', date)
+    if ym:
+        md["year"] = int(ym.group(0))
+    return md if md.get("title") else {}
+
+
 def tool_create_source_stub(
     title: str = "",
     url: str = "",
@@ -2308,7 +2360,10 @@ def tool_create_source_stub(
     notes: str = "",
     priority: str = "normal"
 ) -> dict:
-    """Create a source stub in staging with automated metadata enrichment."""
+    """Create a source stub in staging with automated metadata enrichment.
+    Enrichment order: arXiv → CrossRef (DOI) → generic web page (title/meta tags) →
+    minimal. So a non-arXiv URL (blog, distill.pub, docs) becomes a titled,
+    attributed, summarised source rather than a bare link."""
     if not any([title, url, doi]):
         raise ValueError("At least one of title, url, or doi must be provided")
 
@@ -2332,6 +2387,16 @@ def tool_create_source_stub(
         metadata = _fetch_crossref_metadata(doi)
         if metadata.get("title"):
             enrichment_status = "full" if metadata.get("abstract") else "partial"
+
+    # Generic web-page fallback — blogs, distill.pub, docs, talks: anything neither
+    # arXiv nor a resolvable DOI. Read the page's <title>/<meta> so a shared URL is a
+    # real source (title, authors, summary) instead of a bare link. The reader/
+    # narration pipeline already handles http sources, so these become narratable too.
+    if not metadata.get("title") and url and url.lower().startswith(("http://", "https://")):
+        web = _fetch_webpage_metadata(url)
+        if web.get("title"):
+            metadata = web
+            enrichment_status = "full" if web.get("abstract") else "partial"
 
     # Merge caller-provided fields (override enriched values)
     if title:
