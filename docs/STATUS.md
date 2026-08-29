@@ -4,7 +4,7 @@ The single canonical snapshot of current build state. Changes frequently — upd
 after every build session. This is not a design doc (see [`ARCHITECTURE.md`](ARCHITECTURE.md))
 or a decision record (see [`DECISIONS.md`](DECISIONS.md)).
 
-_Last updated: 2026-08-28_
+_Last updated: 2026-08-29_
 
 ## Component status
 
@@ -15,7 +15,7 @@ _Last updated: 2026-08-28_
 | Viewer PWA (`pkis.clowderpack.dev/app`) | **live** | mobile-first; wide-desktop dashboard (≥1280px); retrieval lab view; path-mode UI; native Capacitor APK with WorkOS bearer auth + biometric unlock; **edit-node action added**; **explainers now render, download, and share correctly on mobile** |
 | MCP write tools | **live** | stub/edge/hypothesis/bridge/source/edit; auto-commit+push, cache auto-refresh; `save_url_source` and `save_podcast_source` documented in authoring tools; `edit_node content=` parameter clarified |
 | Auth (WorkOS AuthKit) | **live** | OAuth (claude.ai/MCP) + web sealed session; identity keyed on email; allowlist by email OR sub; single-use-refresh race coalesced; opaque-token fallback via OIDC userinfo for MCP writes |
-| Ask (NL Q&A) | **live** | shared `ask.py` engine + `/pkis-api/ask` + viewer Ask tab; **two-model split: fast retrieval model + strong synthesis model (~2× faster)**; conversation persistence, voice I/O, capability-link sharing; clearer progress indicators + graceful recovery on interrupted queries; serial round-trips parallelised (~24s→~15s); ask caps tightened |
+| Ask (NL Q&A) | **live** | shared `ask.py` engine + `/pkis-api/ask` + viewer Ask tab; **two-model split: fast retrieval model + strong synthesis model (~2× faster)**; conversation persistence, voice I/O, capability-link sharing; clearer progress indicators + graceful recovery on interrupted queries; serial round-trips parallelised (~24s→~15s); ask caps tightened; **answer now rendered even when trailing 'done' frame is lost** |
 | Inbox (owner review hub) | **live** | consolidated staged + discovery + agent lanes; finding intake (Parts A+B); lab-assistant cron inbox push divergence-safe; doc-drift lane; Graph gaps lane; staged-file removal now committed on promote/discard |
 | Lab Assistant | **live** | finding intake + descriptive Lab Assistant (Parts A+B) shipped; cron inbox push divergence-safe; drift-flag runs 2026-07-18 and 2026-08-01 processed |
 | Semantic search | **live** | BM25 + bge-small dense fused via RRF; `sentence-transformers` + CPU torch in `requirements.txt`; graph rerank (personalized PageRank); path/relationship queries; standing-eval loop; OpGraph designated as live NED/NER experimental platform with six resolution strategies operationalizing the intensional-grounding-ned-accuracy hypothesis |
@@ -76,16 +76,11 @@ ingested + narrated. Local-only until published.
 - An `app.py` restart drops the claude.ai connector (users must reconnect) —
   minimize restarts; content changes don't need one (cache auto-refresh).
 
-## Most recent session (2026-08-28)
+## Most recent session (2026-08-29)
 
-Three improvements landed. (1) **Ingest enrichment**: non-arXiv web sources (blogs,
-distill.pub, documentation pages) now go through the same enrichment pipeline as
-arXiv/PDF sources. (2) **Ask two-model split**: retrieval and synthesis now use
-separate models sized for each task, cutting end-to-end ask latency roughly in half
-relative to the single-model path. (3) **Two SBI sources committed**: PriorGuide
-(test-time prior adaptation for simulation-based inference) and Amortized Probabilistic
-Conditioning for Optimization, Simulation, and Inference added via MCP; one additional
-PDF auto-registered by the doc-store. Node count moved from 2,971 → 2,974.
+One fix landed. **Ask resilience**: the answer is now rendered even when the trailing
+`done` frame is dropped in transit — previously a lost final frame left the viewer
+showing no result despite a completed synthesis.
 
 ## Next priorities
 
