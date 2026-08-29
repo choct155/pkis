@@ -167,11 +167,14 @@ export default function AskView({ onSelectNode, signedIn, onSignIn }: Props) {
     setTurns([...base, { role: 'assistant', content: '', streaming: true, startedAt: Date.now() }])
     setLoading(true)
     const wire: AskMessage[] = base.map(({ role, content }) => ({ role, content }))
+    let settled = false          // did we get a terminal `done`/`error` frame?
+    let acc = ''                 // answer text accumulated from deltas (for the fallback)
     try {
       await askStream(wire, {
-        onStatus: (status) => patchLast((t) => ({ ...t, status, content: '' })),
-        onDelta: (chunk) => patchLast((t) => ({ ...t, status: undefined, content: t.content + chunk })),
+        onStatus: (status) => { acc = ''; patchLast((t) => ({ ...t, status, content: '' })) },
+        onDelta: (chunk) => { acc += chunk; patchLast((t) => ({ ...t, status: undefined, content: t.content + chunk })) },
         onDone: (res: AskResponse) => {
+          settled = true
           patchLast((t) => ({
             ...t, content: res.answer, citations: res.citations,
             meta: { model: res.model, turns: res.turns }, streaming: false, status: undefined,
@@ -183,9 +186,26 @@ export default function AskView({ onSelectNode, signedIn, onSignIn }: Props) {
           ])
           if (autoRead && speech.supported) { speech.speak(res.answer); setSpeakingIdx(base.length) }
         },
-        onError: (msg) => patchLast((t) => ({ ...t, content: msg, error: true, interrupted: isInterrupt(msg), streaming: false })),
+        onError: (msg) => { settled = true; patchLast((t) => ({ ...t, content: msg, error: true, interrupted: isInterrupt(msg), streaming: false })) },
       })
+      // The stream closed WITHOUT a terminal frame — behind a proxy (Cloudflare
+      // tunnel) the trailing `done` can be dropped after the text has streamed,
+      // which would leave the turn stuck in the raw plain-text streaming view. Flip
+      // it to the rendered answer using the text we already have (markdown + links).
+      if (!settled) {
+        if (acc.trim()) {
+          patchLast((t) => (t.streaming ? { ...t, streaming: false, status: undefined } : t))
+          persist([...base.map(({ role, content, citations, meta }) => ({ role, content, citations, meta })),
+                   { role: 'assistant', content: acc }])
+          if (autoRead && speech.supported) { speech.speak(acc); setSpeakingIdx(base.length) }
+        } else {
+          patchLast((t) => (t.streaming
+            ? { ...t, content: 'No response came back — tap retry.', error: true, interrupted: true, streaming: false }
+            : t))
+        }
+      }
     } catch (e) {
+      settled = true
       const msg = e instanceof ApiError && e.status === 429
         ? 'You’ve hit the rate limit — give it a minute and try again.'
         : e instanceof Error ? e.message : 'Something went wrong.'
