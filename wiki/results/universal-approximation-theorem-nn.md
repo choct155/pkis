@@ -11,7 +11,7 @@ component_scores:
   statement: null
 coverage: 1
 date_created: '2026-06-11'
-date_updated: '2026-06-20'
+date_updated: '2026-08-31'
 domain:
 - machine-learning
 - approximation-theory
@@ -25,6 +25,7 @@ related_concepts: []
 sources:
 - bishop-prml-ch05
 - nielsen-nndl-ch04
+- petersen-mathematical-2024
 tags:
 - expressiveness
 - neural-networks
