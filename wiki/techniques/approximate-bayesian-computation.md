@@ -13,7 +13,7 @@ component_scores:
   principled_mechanism: null
 coverage: 1
 date_created: '2026-06-09'
-date_updated: '2026-06-09'
+date_updated: '2026-08-31'
 domain:
 - bayesian-stats
 id: pkis:technique:approximate-bayesian-computation
@@ -23,6 +23,7 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - gelman-bda3-ch13
+- yang-priorguide-2025-1
 tags:
 - likelihood-free
 - simulation-based-inference
