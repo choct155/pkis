@@ -11,7 +11,7 @@ component_scores:
   principled_mechanism: null
 coverage: 1
 date_created: '2026-06-09'
-date_updated: '2026-06-20'
+date_updated: '2026-08-31'
 domain:
 - optimization
 - deep-learning
@@ -24,6 +24,7 @@ related_concepts: []
 sources:
 - deisenroth-mml-ch05
 - nielsen-nndl-ch02
+- bright-matrix-2025
 tags: []
 title: Chain Rule (Multivariate)
 understanding: 0

@@ -27064,3 +27064,6 @@
 
 ## [2026-08-31] edit | edit_node
 - pkis:concept:vector-calculus: fields=['sources'] sections=[]
+
+## [2026-08-31] edit | edit_node
+- pkis:technique:chain-rule-multivariate: fields=['sources'] sections=[]
