@@ -27121,3 +27121,6 @@
 
 ## [2026-08-31] edit | edit_node
 - pkis:concept:robot-perception-state-estimation: fields=['sources'] sections=[]
+
+## [2026-08-31] edit | edit_node
+- pkis:concept:filtering-prediction-smoothing: fields=['sources'] sections=[]
