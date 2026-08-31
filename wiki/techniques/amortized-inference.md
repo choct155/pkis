@@ -1,18 +1,36 @@
 ---
-id: "pkis:technique:amortized-inference"
 aliases: []
-title: "Amortized Variational Inference"
-knowledge_type: technique
 also_type: []
-domain: [bayesian-stats, deep-learning, optimization]
-tags: [variational-methods, approximate-inference, deep-learning, stochastic-optimization]
-related_concepts: ["[[variational-inference]]", "[[variational-autoencoder]]", "[[reparameterization-trick]]", "[[neural-networks]]"]
-sources: ["[[sjolund-parametric-vi]]", "[[yellapragada-variational-bayes]]"]
-date_created: 2026-05-20
-date_updated: 2026-05-20
 coverage: 2
-understanding: 0
+date_created: 2026-05-20
+date_updated: '2026-08-31'
+domain:
+- bayesian-stats
+- deep-learning
+- optimization
+id: pkis:technique:amortized-inference
+knowledge_type: technique
 maturity: settled
+related_concepts:
+- '[[variational-inference]]'
+- '[[variational-autoencoder]]'
+- '[[reparameterization-trick]]'
+- '[[neural-networks]]'
+sources:
+- '[[sjolund-parametric-vi]]'
+- '[[yellapragada-variational-bayes]]'
+- bracher-jadai-2025
+- chang-amortized-2024
+- chang-amortized-2024-1
+- huang-aline-2025
+- yang-priorguide-2025-1
+tags:
+- variational-methods
+- approximate-inference
+- deep-learning
+- stochastic-optimization
+title: Amortized Variational Inference
+understanding: 0
 ---
 
 A technique for scalable variational inference that replaces per-datapoint optimization of local variational parameters with a shared neural network (the inference network or encoder) trained to predict those parameters from the data point; the inference network Λ_θ(x_i) = ϕ_i amortizes the cost of inference over all data, enabling mini-batch SGD and making VI feasible for large datasets.
