@@ -3,7 +3,7 @@ aliases: []
 also_type: []
 coverage: 1
 date_created: 2026-05-20
-date_updated: '2026-06-20'
+date_updated: '2026-08-31'
 domain:
 - bayesian-stats
 id: pkis:framework:hierarchical-bayesian-models
@@ -19,6 +19,7 @@ sources:
 - '[[capretto-bambi-2022]]'
 - gelman-bda3
 - kroese-statistical-modeling-ch12
+- habermann-amortized-2024
 specializes:
 - bayesian-inference
 tags:

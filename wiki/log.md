@@ -27043,3 +27043,6 @@
 
 ## [2026-08-31] edit | edit_node
 - pkis:framework:multilevel-regression: fields=['sources'] sections=[]
+
+## [2026-08-31] edit | edit_node
+- pkis:framework:hierarchical-bayesian-models: fields=['sources'] sections=[]
