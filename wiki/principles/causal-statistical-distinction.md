@@ -8,7 +8,7 @@ component_scores:
   violations: null
 coverage: 1
 date_created: '2026-06-09'
-date_updated: '2026-06-20'
+date_updated: '2026-08-31'
 domain:
 - causal-analysis
 - bayesian-stats
@@ -23,6 +23,7 @@ related_concepts: []
 sources:
 - pearl-causality-ch11
 - cunningham-causal-inference-mixtape-ch01
+- ding-a-2023
 tags:
 - causality
 - pearl
