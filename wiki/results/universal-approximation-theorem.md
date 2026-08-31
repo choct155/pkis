@@ -7,7 +7,7 @@ contrasts-with:
 - vc-dimension
 coverage: 2
 date_created: 2026-05-20
-date_updated: '2026-06-20'
+date_updated: '2026-08-31'
 domain:
 - deep-learning
 generalizes:
@@ -24,6 +24,7 @@ sources:
 - '[[liu-kan-2024]]'
 - '[[marcus-dl-critical-appraisal-2018]]'
 - nielsen-nndl-ch04
+- petersen-mathematical-2024
 tags:
 - approximation-theory
 - neural-networks
