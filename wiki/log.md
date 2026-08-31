@@ -27106,3 +27106,6 @@
 
 ## [2026-08-31] edit | edit_node
 - pkis:technique:ddim-sampler: fields=['sources'] sections=[]
+
+## [2026-08-31] edit | edit_node
+- pkis:framework:ddpm: fields=['sources'] sections=[]
