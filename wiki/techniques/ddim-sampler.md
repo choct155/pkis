@@ -11,7 +11,7 @@ component_scores:
   principled_mechanism: null
 coverage: 1
 date_created: '2026-06-11'
-date_updated: '2026-06-11'
+date_updated: '2026-08-31'
 domain:
 - machine-learning
 - generative-models
@@ -26,6 +26,7 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - murphy-pml2-advanced-ch25
+- arruda-diffusion-2025
 tags:
 - diffusion
 - fast-sampling
