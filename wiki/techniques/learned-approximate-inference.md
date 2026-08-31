@@ -13,7 +13,7 @@ contrasts-with:
 - mean-field-variational-inference
 coverage: 1
 date_created: '2026-06-11'
-date_updated: '2026-07-27'
+date_updated: '2026-08-31'
 domain:
 - machine-learning
 - deep-learning
@@ -30,6 +30,12 @@ related_concepts: []
 sources:
 - goodfellow-deeplearning-ch19
 - li-amortized-2024
+- bracher-jadai-2025
+- chang-amortized-2024-1
+- hassan-efficient-2025
+- huang-aline-2025
+- yang-priorguide-2025
+- yang-priorguide-2025-1
 specializes:
 - amortized-inference
 tags:
