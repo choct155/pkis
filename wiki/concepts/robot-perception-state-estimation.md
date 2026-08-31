@@ -12,7 +12,7 @@ component_scores:
   transfer: null
 coverage: 1
 date_created: '2026-06-09'
-date_updated: '2026-06-09'
+date_updated: '2026-08-31'
 domain:
 - robotics
 - state-space-models
@@ -23,6 +23,7 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - russell-norvig-aima-ch26
+- revach-kalmannet-2022
 tags:
 - robotics
 - perception
