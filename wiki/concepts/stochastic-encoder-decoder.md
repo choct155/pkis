@@ -12,7 +12,7 @@ component_scores:
   transfer: null
 coverage: 1
 date_created: '2026-06-11'
-date_updated: '2026-06-11'
+date_updated: '2026-08-31'
 domain:
 - deep-learning
 - probabilistic-modelling
@@ -30,6 +30,7 @@ prerequisite-of:
 related_concepts: []
 sources:
 - goodfellow-deeplearning-ch14
+- chang-amortized-2024
 tags:
 - stochastic
 - latent-variable
