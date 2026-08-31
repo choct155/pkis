@@ -12,7 +12,7 @@ component_scores:
   transfer: null
 coverage: 1
 date_created: '2026-06-11'
-date_updated: '2026-06-11'
+date_updated: '2026-08-31'
 domain:
 - machine-learning
 - numerical-methods
@@ -27,6 +27,7 @@ prerequisite-of:
 related_concepts: []
 sources:
 - murphy-pml2-advanced-ch06
+- bright-matrix-2025
 tags:
 - autodiff
 - Jacobian
