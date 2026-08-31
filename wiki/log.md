@@ -27022,3 +27022,6 @@
 ## [2026-08-28] committed | source
 - Committed: yang-priorguide-2025-1 → sources/yang-priorguide-2025-1.md
 - IRI: pkis:source:yang-priorguide-2025-1
+
+## [2026-08-31] edit | edit_node
+- pkis:result:universal-approximation-theorem-mlp: fields=['sources'] sections=[]
