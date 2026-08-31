@@ -11,7 +11,7 @@ component_scores:
   principled_mechanism: null
 coverage: 1
 date_created: '2026-06-09'
-date_updated: '2026-06-20'
+date_updated: '2026-08-31'
 domain:
 - deep-learning
 - statistical-learning
@@ -23,6 +23,7 @@ related_concepts: []
 sources:
 - russell-norvig-aima-ch21
 - kroese-statistical-modeling-ch12
+- hassan-efficient-2025
 specializes:
 - bayesian-networks
 tags:
