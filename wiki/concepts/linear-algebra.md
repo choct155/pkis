@@ -4,7 +4,7 @@ also_type:
 - framework
 coverage: 2
 date_created: 2026-05-20
-date_updated: '2026-06-20'
+date_updated: '2026-08-31'
 domain:
 - statistical-learning
 - bayesian-stats
@@ -29,6 +29,7 @@ sources:
 - carrell-groups-matrices-vectors-ch08
 - carrell-groups-matrices-vectors-ch10
 - carrell-groups-matrices-vectors-ch12
+- bright-matrix-2025
 tags:
 - mathematical-foundations
 title: Linear Algebra
