@@ -27070,3 +27070,6 @@
 
 ## [2026-08-31] edit | edit_node
 - pkis:concept:linear-algebra: fields=['sources'] sections=[]
+
+## [2026-08-31] edit | edit_node
+- pkis:technique:automatic-differentiation: fields=['sources'] sections=[]

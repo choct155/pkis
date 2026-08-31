@@ -3,7 +3,7 @@ aliases: []
 also_type: []
 coverage: 1
 date_created: 2026-05-20
-date_updated: '2026-06-22'
+date_updated: '2026-08-31'
 domain:
 - deep-learning
 - optimization
@@ -19,6 +19,7 @@ sources:
 - '[[liu-kan-2024]]'
 - betancourt-a-2018
 - margossian-efficient-2021
+- bright-matrix-2025
 tags:
 - calculus
 - computational-methods
