@@ -27037,3 +27037,6 @@
 
 ## [2026-08-31] edit | edit_node
 - pkis:framework:feed-forward-neural-network: fields=['sources'] sections=[]
+
+## [2026-08-31] edit | edit_node
+- pkis:concept:deep-neural-network-computation-graph: fields=['sources'] sections=[]

@@ -12,7 +12,7 @@ component_scores:
   transfer: null
 coverage: 1
 date_created: '2026-06-11'
-date_updated: '2026-06-11'
+date_updated: '2026-08-31'
 domain:
 - machine-learning
 - deep-learning
@@ -28,6 +28,7 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - murphy-pml2-advanced-ch16
+- petersen-mathematical-2024
 tags:
 - neural-networks
 - computation-graph
