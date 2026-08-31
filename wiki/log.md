@@ -27097,3 +27097,6 @@
 
 ## [2026-08-31] edit | edit_node
 - pkis:principle:causal-statistical-distinction: fields=['sources'] sections=[]
+
+## [2026-08-31] edit | edit_node
+- pkis:technique:bayesian-decision-analysis: fields=['sources'] sections=[]
