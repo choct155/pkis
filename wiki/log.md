@@ -27079,3 +27079,6 @@
 
 ## [2026-08-31] edit | edit_node
 - pkis:concept:prior-likelihood-posterior: fields=['sources'] sections=[]
+
+## [2026-08-31] edit | edit_node
+- pkis:problem:intractable-posterior: fields=['sources'] sections=[]

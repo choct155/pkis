@@ -3,7 +3,7 @@ aliases: []
 also_type: []
 coverage: 4
 date_created: 2026-05-20
-date_updated: '2026-06-20'
+date_updated: '2026-08-31'
 domain:
 - bayesian-stats
 id: pkis:problem:intractable-posterior
@@ -19,6 +19,9 @@ sources:
 - '[[sjolund-parametric-vi]]'
 - '[[kroese-statistical-modeling]]'
 - bishop-prml
+- arruda-diffusion-2025
+- bracher-jadai-2025
+- yang-priorguide-2025-1
 tags:
 - probability-theory
 - approximate-inference
