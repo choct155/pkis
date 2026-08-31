@@ -14,7 +14,7 @@ contrasts-with:
 - likelihood-principle
 coverage: 1
 date_created: '2026-06-09'
-date_updated: '2026-06-09'
+date_updated: '2026-08-31'
 domain:
 - bayesian-stats
 - causal-analysis
@@ -26,6 +26,7 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - gelman-bda3-ch08
+- huang-amortized-2024
 tags:
 - study-design
 - survey-sampling
