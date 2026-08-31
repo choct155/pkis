@@ -27091,3 +27091,6 @@
 
 ## [2026-08-31] edit | edit_node
 - pkis:technique:approximate-bayesian-computation: fields=['sources'] sections=[]
+
+## [2026-08-31] edit | edit_node
+- pkis:principle:turning-the-bayesian-crank: fields=['sources'] sections=[]

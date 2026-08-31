@@ -8,7 +8,7 @@ component_scores:
   violations: null
 coverage: 1
 date_created: '2026-06-11'
-date_updated: '2026-06-11'
+date_updated: '2026-08-31'
 domain:
 - bayesian-inference
 - probabilistic-programming
@@ -22,6 +22,7 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - murphy-pml2-advanced-ch07
+- bockting-simulationbased-2023
 tags:
 - bayesian-workflow
 - inference-engine
