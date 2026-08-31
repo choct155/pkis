@@ -10,7 +10,7 @@ component_scores:
   structure: null
 coverage: 1
 date_created: '2026-06-11'
-date_updated: '2026-06-20'
+date_updated: '2026-08-31'
 domain:
 - machine-learning
 - probabilistic-modeling
@@ -30,6 +30,7 @@ related_concepts: []
 sources:
 - murphy-pml2-advanced-ch22
 - kroese-statistical-modeling-ch12
+- hassan-efficient-2025
 tags:
 - autoregressive
 - generative-model
