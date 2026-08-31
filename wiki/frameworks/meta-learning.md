@@ -12,7 +12,7 @@ contrasts-with:
 - pretraining-and-fine-tuning
 coverage: 1
 date_created: '2026-06-11'
-date_updated: '2026-06-11'
+date_updated: '2026-08-31'
 domain:
 - machine-learning
 extends:
@@ -26,6 +26,8 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - murphy-pml2-advanced-ch19
+- chang-amortized-2024
+- chang-amortized-2024-1
 specializes:
 - transfer-learning
 tags:
