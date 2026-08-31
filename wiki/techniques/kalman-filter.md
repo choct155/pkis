@@ -10,7 +10,7 @@ applies:
 - robot-perception-state-estimation
 coverage: 5
 date_created: 2026-05-20
-date_updated: '2026-06-20'
+date_updated: '2026-08-31'
 domain:
 - time-series
 - state-space-models
@@ -33,6 +33,7 @@ sources:
 - '[[kroese-statistical-modeling]]'
 - '[[kurz-hybrid-modeling-2022]]'
 - kroese-statistical-modeling-ch13
+- revach-kalmannet-2022
 specializes:
 - dynamic-bayesian-network
 - filtering-prediction-smoothing

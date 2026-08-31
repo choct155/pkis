@@ -27112,3 +27112,6 @@
 
 ## [2026-08-31] edit | edit_node
 - pkis:concept:stochastic-encoder-decoder: fields=['sources'] sections=[]
+
+## [2026-08-31] edit | edit_node
+- pkis:technique:kalman-filter: fields=['sources'] sections=[]
