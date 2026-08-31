@@ -10,7 +10,7 @@ component_scores:
   structure: null
 coverage: 1
 date_created: '2026-06-09'
-date_updated: '2026-06-09'
+date_updated: '2026-08-31'
 domain:
 - bayesian-stats
 - statistical-learning
@@ -23,6 +23,7 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - gelman-bda3-ch15
+- habermann-amortized-2024
 specializes:
 - hierarchical-bayesian-models
 tags:
