@@ -3,7 +3,7 @@ aliases: []
 also_type: []
 coverage: 1
 date_created: 2026-05-20
-date_updated: '2026-06-22'
+date_updated: '2026-08-31'
 domain:
 - statistical-learning
 - optimization
@@ -21,6 +21,7 @@ related_concepts:
 sources:
 - '[[deisenroth-mml]]'
 - betancourt-a-2018
+- bright-matrix-2025
 tags:
 - mathematical-foundations
 - calculus
