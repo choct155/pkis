@@ -27049,3 +27049,6 @@
 
 ## [2026-08-31] edit | edit_node
 - pkis:technique:amortized-inference: fields=['sources'] sections=[]
+
+## [2026-08-31] edit | edit_node
+- pkis:technique:amortized-vi: fields=['sources'] sections=[]

@@ -11,7 +11,7 @@ component_scores:
   principled_mechanism: null
 coverage: 1
 date_created: '2026-06-11'
-date_updated: '2026-07-27'
+date_updated: '2026-08-31'
 domain:
 - machine-learning
 - deep-learning
@@ -26,6 +26,13 @@ related_concepts: []
 sources:
 - murphy-pml2-advanced-ch10
 - li-amortized-2024
+- bracher-jadai-2025
+- chang-amortized-2024
+- chang-amortized-2024-1
+- hassan-efficient-2025
+- huang-aline-2025
+- huang-amortized-2024
+- yang-priorguide-2025
 specializes:
 - amortized-inference
 tags:
