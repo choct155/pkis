@@ -12,7 +12,7 @@ component_scores:
   transfer: null
 coverage: 1
 date_created: '2026-06-11'
-date_updated: '2026-06-20'
+date_updated: '2026-08-31'
 domain:
 - statistics
 - machine-learning
@@ -34,6 +34,9 @@ sources:
 - betancourt-bayeshist
 - cunningham-causal-inference-mixtape-ch02
 - tanner-tools-statistical-inference-ch02
+- bockting-simulationbased-2023
+- radev-bayesflow-2023
+- yang-priorguide-2025-1
 tags:
 - bayesian
 - prior
