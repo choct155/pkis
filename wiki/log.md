@@ -27058,3 +27058,6 @@
 
 ## [2026-08-31] edit | edit_node
 - pkis:framework:meta-learning: fields=['sources'] sections=[]
+
+## [2026-08-31] edit | edit_node
+- pkis:framework:semi-supervised-learning: fields=['sources'] sections=[]

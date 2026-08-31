@@ -10,7 +10,7 @@ component_scores:
   structure: null
 coverage: 1
 date_created: '2026-06-11'
-date_updated: '2026-06-11'
+date_updated: '2026-08-31'
 domain:
 - machine-learning
 extends:
@@ -23,6 +23,7 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - murphy-pml1-intro-ch19
+- timilsina-semisupervised-2021
 tags:
 - low-data
 - cluster-assumption
