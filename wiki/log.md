@@ -27124,3 +27124,7 @@
 
 ## [2026-08-31] edit | edit_node
 - pkis:concept:filtering-prediction-smoothing: fields=['sources'] sections=[]
+
+## [2026-09-07] committed | source
+- Committed: ho-language-2026 → sources/ho-language-2026.md
+- IRI: pkis:source:ho-language-2026
