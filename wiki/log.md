@@ -27128,3 +27128,7 @@
 ## [2026-09-07] committed | source
 - Committed: ho-language-2026 → sources/ho-language-2026.md
 - IRI: pkis:source:ho-language-2026
+
+## [2026-09-07] committed | source
+- Committed: lu-a-2026 → sources/lu-a-2026.md
+- IRI: pkis:source:lu-a-2026

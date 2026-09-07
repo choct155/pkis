@@ -1,6 +1,7 @@
 # PKIS Wiki Index
 
 ## Sources
+- [[lu-a-2026]] — A Mathematical Introduction to Diffusion Models () (2026-09-07)
 - [[ho-language-2026]] — Language Models Can Control Their Own Attention () (2026-09-07)
 - [[yang-priorguide-2025-1]] — PriorGuide: Test-Time Prior Adaptation for Simulation-Based Inference () (2026-08-28)
 - [[chang-amortized-2024-1]] — Amortized Probabilistic Conditioning for Optimization, Simulation and Inference () (2026-08-28)
