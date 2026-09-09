@@ -1,16 +1,16 @@
 ---
-id: pkis:asset:graph-transformation-position-paper
-knowledge_type: asset
-kind: position-paper
-format: writing
-title: The Knowledge Graph as Compounding Infrastructure
-status: draft-evolving
-priority: high
+date_created: '2026-06-21'
+date_updated: '2026-09-09'
 domain:
 - knowledge-representation
-date_created: '2026-06-21'
-date_updated: '2026-06-21'
+format: writing
+id: pkis:asset:graph-transformation-position-paper
+kind: position-paper
+knowledge_type: asset
+priority: high
+status: draft-evolving
 tags: []
+title: The Knowledge Graph as Compounding Infrastructure
 uses:
 - continuous-hardening-mixture-framework
 - multidimensional-retrieval-quality-framework
@@ -213,6 +213,7 @@ The compounding is not a hope. It is the mathematical consequence of the hardeni
 
 ## 7. The Organizational Argument
 
+
 ### 7.1 Why the Incremental Case Has Been Losing
 
 The incremental case for knowledge graphs has been losing not because it is wrong but because it asks for a non-incremental investment to produce incremental returns. The organization sees a large upfront cost (graph construction, ontologist time, schema design) and a stream of small future benefits (slightly better queries, slightly better interoperability). The math on that trade is unattractive when the discount rate on future benefits is high — and in a fast-moving AI product environment, the discount rate is very high.
@@ -225,21 +226,22 @@ The measurement infrastructure — the quality framework, the passive instrument
 
 This is also the organizational argument for connecting KG and QMI. The knowledge graph produces the measurement substrate. QMI produces the measurement methodology. Neither group can fully realize the value of their work without the other. The intelligent layer project is the concrete substrate on which this connection can be demonstrated.
 
-### 7.3 Who Needs to Move
+### 7.3 How the Argument Lands for Different Readers
 
-The argument needs to land differently with different audiences:
+The argument lands differently for different readers:
 
 **AI engineers**: the graph is composable with the existing LLM infrastructure as a structured retrieval layer. The cold start fallback means it can be integrated incrementally. The quality differential is measurable on a held-out query sample. This is a technical credibility argument.
 
 **Finance**: inference cost per query, amortization schedule, annotation cost reduction, crossover points. All of these are computable from current operational data. This is a cost model argument.
 
-**Executive sponsors**: the graph is infrastructure that compounds. It is not a project with a completion date — it is a system that improves continuously. The value per dollar invested rises over time. This is a strategic framing argument.
+**Sponsors**: the graph is infrastructure that compounds. It is not a project with a completion date — it is a system that improves continuously. The value per dollar invested rises over time. This is a strategic framing argument.
 
-**Peer engineering managers**: the graph reduces coordination overhead by making requirements computable from query demand rather than extractable from domain expert interviews. It makes quality measurement automatable rather than requiring annotation campaigns. This is a workflow efficiency argument.
+**Engineering managers**: the graph reduces coordination overhead by making requirements computable from query demand rather than extractable from domain expert interviews. It makes quality measurement automatable rather than requiring annotation campaigns. This is a workflow efficiency argument.
 
 ---
 
 ## 8. Open Questions and Next Steps
+
 
 The argument in this paper is assembled from formal results that are at varying stages of development. The following are the open threads most important to close before this paper is ready for broad circulation:
 
@@ -249,7 +251,7 @@ The argument in this paper is assembled from formal results that are at varying 
 
 **The retrieval comparison experiment**: the hypothesis that graph retrieval dominates vector similarity search for concept-specific queries needs to be tested. The intelligent layer project is the experimental substrate. The experimental design is specified in the graph retrieval dominance hypothesis node.
 
-**The organizational change management case**: the argument for connecting KG and QMI, and for communicating measurement instrumentation requirements to application development teams, needs a concrete implementation plan. The goal-setting exercise currently underway is the opportunity to do this without forcing a structural reorganization.
+**The KG–QMI collaboration plan**: the argument for connecting KG and QMI, and for communicating measurement instrumentation requirements to application development teams, needs a concrete implementation plan.
 
 ---
 

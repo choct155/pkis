@@ -27132,3 +27132,6 @@
 ## [2026-09-07] committed | source
 - Committed: lu-a-2026 → sources/lu-a-2026.md
 - IRI: pkis:source:lu-a-2026
+
+## [2026-09-09] edit | edit_node
+- pkis:asset:graph-transformation-position-paper: fields=[] sections=['7. The Organizational Argument', '8. Open Questions and Next Steps']
