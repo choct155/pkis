@@ -53,3 +53,33 @@ def test_wikistore_graph_caches_then_invalidates(appmod, isolated_wiki):
     s.invalidate_graph()
     assert s._graph is None
     assert s.get_graph().number_of_nodes() >= 1
+
+
+@pytest.mark.unit
+def test_load_node_revalidates_on_mtime(appmod, isolated_wiki):
+    """A node edited on disk is re-read on the next load, with no invalidate call.
+
+    This is the multi-worker case: gunicorn's other worker never sees the
+    invalidate_nodes() that the writing worker ran, so without an mtime check it
+    would serve the pre-edit node until something restarted it.
+    """
+    s = appmod.WikiStore(isolated_wiki.wiki)
+    p = s.find_node_path("entropy")
+    assert "REVISED" not in s.load_node(p)["content"]
+
+    # Stand in for the *other* worker's write: touch the file behind this
+    # store's back, leaving its cache untouched.
+    p.write_text(p.read_text() + "\n\nREVISED\n")
+
+    assert "REVISED" in s.load_node(p)["content"]
+
+
+@pytest.mark.unit
+def test_load_node_serves_cache_when_file_is_unchanged(appmod, isolated_wiki):
+    """The revalidation is a cache check, not a cache defeat — an untouched file
+    is parsed once and served from memory after that."""
+    s = appmod.WikiStore(isolated_wiki.wiki)
+    p = s.find_node_path("entropy")
+
+    first = s.load_node(p)
+    assert s.load_node(p) is first            # same object → no re-parse

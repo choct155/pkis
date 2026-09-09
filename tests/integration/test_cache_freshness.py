@@ -38,3 +38,36 @@ def test_staged_only_create_does_not_bump_signature(appmod, isolated_wiki):
     appmod.tool_create_node_stub(knowledge_type="concept", title="Staged Only",
                                  suggest_sources=False)
     assert appmod._content_signature() == before  # staging doesn't commit
+
+
+@pytest.mark.integration
+def test_viewer_api_request_refreshes_stale_caches(appmod, client, isolated_wiki):
+    """A /pkis-api/ read rebuilds caches that a *different* worker's commit left
+    stale. Asserts on the cache generation rather than on search results, because
+    a single-process test rebuilds lazily anyway — only the generation shows that
+    the before_request hook itself ran."""
+    appmod.ensure_fresh()
+    appmod.tool_edit_node(
+        slug="entropy",
+        section_updates={"Definition": "Contains the rare marker token QQBEFOREREQ."},
+        commit_message="test: before_request freshness",
+    )
+    # Stand in for the worker that never saw the write: it holds the generation it
+    # last built at, which the commit has now moved past.
+    appmod.STORE._cache_gen = "stale-generation"
+
+    client.post("/pkis-api/index", json={})
+
+    assert appmod.STORE._cache_gen == appmod._content_signature()
+    hits = appmod.hybrid_search("QQBEFOREREQ", max_results=10)
+    assert "pkis:concept:entropy" in {h["iri"] for h in hits}
+
+
+@pytest.mark.integration
+def test_auth_endpoints_skip_the_freshness_rebuild(appmod, client, isolated_wiki):
+    """Auth runs on every page load and reads no wiki content — it must not pay
+    for (or trigger) a cache rebuild."""
+    appmod.ensure_fresh()
+    appmod.STORE._cache_gen = "stale-generation"
+    client.get("/pkis-api/auth/me")
+    assert appmod.STORE._cache_gen == "stale-generation"  # untouched

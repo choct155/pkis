@@ -157,9 +157,26 @@ class WikiStore:
         return self.find_node_path(slug)
 
     def load_node(self, path):
-        """Load and parse a wiki node file (cached by path)."""
-        if str(path) in self._node_cache:
-            return self._node_cache[str(path)]
+        """Load and parse a wiki node file (cached by path, revalidated on mtime).
+
+        The mtime check is what keeps the cache correct across gunicorn workers.
+        A write invalidates only the caches of the worker that served it, so a
+        sibling worker would otherwise keep serving the pre-edit node until
+        something restarted it — and because requests round-robin, the same read
+        would flip between old and new content. Revalidating on each read costs
+        one stat and needs no cross-worker coordination, and it also catches
+        edits that never go through a write tool (a git pull, a hand edit).
+        """
+        key = str(path)
+        try:
+            mtime = os.stat(path).st_mtime_ns
+        except OSError:
+            mtime = None
+        cached = self._node_cache.get(key)
+        # A missing mtime (stat failed) falls through to the load below, which
+        # reports the real error rather than serving a possibly-stale hit.
+        if cached is not None and mtime is not None and cached[0] == mtime:
+            return cached[1]
         try:
             post = frontmatter.load(str(path))
             node_type = path.parent.name
@@ -180,7 +197,7 @@ class WikiStore:
                 "confidence": post.metadata.get("confidence", 0),
                 "date_updated": post.metadata.get("date_updated", ""),
             }
-            self._node_cache[str(path)] = result
+            self._node_cache[key] = (mtime, result)
             return result
         except Exception as e:
             logger.error(f"Error loading {path}: {e}")

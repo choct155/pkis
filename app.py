@@ -625,6 +625,34 @@ def _load_web_session():
         logger.info("web session auth failed: %s", e)
 
 
+@app.before_request
+def _ensure_content_fresh():
+    """Rebuild this worker's derived caches when another worker committed a write
+    since this one last built.
+
+    gunicorn runs multiple workers, and a write invalidates only the caches of the
+    worker that served it — so without this a viewer read can be answered from a
+    pre-edit graph or search index, flipping between old and new content as
+    requests round-robin between workers. The MCP dispatcher already does this;
+    this extends the same guarantee to the viewer's REST surface.
+
+    Node bodies are revalidated per read on mtime (WikiStore.load_node), so what
+    this covers is the derived state: the graph and the BM25 / embedding indexes.
+    Cheap when nothing changed (one git-HEAD read); the rebuild cost is paid once
+    per worker per commit.
+    """
+    path = request.path
+    if not path.startswith("/pkis-api/"):
+        return
+    # Auth endpoints run on every page load and touch no wiki content.
+    if path.startswith("/pkis-api/auth/"):
+        return
+    try:
+        ensure_fresh()
+    except Exception as e:  # noqa: BLE001 — freshness is best-effort, never fatal
+        logger.warning("ensure_fresh (before_request) failed: %s", e)
+
+
 @app.after_request
 def _persist_refreshed_session(resp):
     sealed = getattr(g, "refreshed_session", None)
