@@ -4,18 +4,18 @@ The single canonical snapshot of current build state. Changes frequently — upd
 after every build session. This is not a design doc (see [`ARCHITECTURE.md`](ARCHITECTURE.md))
 or a decision record (see [`DECISIONS.md`](DECISIONS.md)).
 
-_Last updated: 2026-08-29_
+_Last updated: 2026-09-09_
 
 ## Component status
 
 | Component | Status | Notes |
 |---|---|---|
 | PKIS-MCP server (`app.py`) | **live** | MCP (42 tools) + `/pkis-api/*` + docs/webhook/health on `pkis.clowderpack.dev`; gunicorn `pkis-mcp.service`; pinned deps in `requirements.txt`; architect/graph/link tools marked executable; `get_openwiki` read-only tool exposing openwiki/ code map; `index.html` served `no-store` to eliminate stale-shell fetches; ask caps tightened to reduce latency tail |
-| Knowledge graph (`pkis-wiki`) | **live** | **2,974 nodes**; new sources MCP-committed: PriorGuide (test-time prior adaptation for SBI), Amortized Probabilistic Conditioning for Optimization/Simulation; doc-store auto-added one PDF asset |
-| Viewer PWA (`pkis.clowderpack.dev/app`) | **live** | mobile-first; wide-desktop dashboard (≥1280px); retrieval lab view; path-mode UI; native Capacitor APK with WorkOS bearer auth + biometric unlock; **edit-node action added**; **explainers now render, download, and share correctly on mobile** |
-| MCP write tools | **live** | stub/edge/hypothesis/bridge/source/edit; auto-commit+push, cache auto-refresh; `save_url_source` and `save_podcast_source` documented in authoring tools; `edit_node content=` parameter clarified |
+| Knowledge graph (`pkis-wiki`) | **live** | **2,978 nodes**; MCP-committed sources: A Mathematical Introduction to Diffusion Models, Language Models Can Control Their Own Attention; doc-store added terminalist-bloombergs-last-stand + terminalist-bloombergx27s; 40+ librarian link-ops across diffusion, Bayesian inference, amortized VI, autoregressive, Kalman/state-estimation, autodiff, and deep-learning nodes |
+| Viewer PWA (`pkis.clowderpack.dev/app`) | **live** | mobile-first; wide-desktop dashboard (≥1280px); retrieval lab view; path-mode UI; native Capacitor APK with WorkOS bearer auth + biometric unlock; **edit-node action added**; **explainers now render, download, and share correctly on mobile**; **native app now loads UI from live server URL — per-frontend APK rebuilds eliminated** |
+| MCP write tools | **live** | stub/edge/hypothesis/bridge/source/edit; auto-commit+push, cache auto-refresh; `save_url_source` and `save_podcast_source` documented in authoring tools; `edit_node content=` parameter clarified; **cross-worker cache staleness fixed; reload + download added to writing assets** |
 | Auth (WorkOS AuthKit) | **live** | OAuth (claude.ai/MCP) + web sealed session; identity keyed on email; allowlist by email OR sub; single-use-refresh race coalesced; opaque-token fallback via OIDC userinfo for MCP writes |
-| Ask (NL Q&A) | **live** | shared `ask.py` engine + `/pkis-api/ask` + viewer Ask tab; **two-model split: fast retrieval model + strong synthesis model (~2× faster)**; conversation persistence, voice I/O, capability-link sharing; clearer progress indicators + graceful recovery on interrupted queries; serial round-trips parallelised (~24s→~15s); ask caps tightened; **answer now rendered even when trailing 'done' frame is lost** |
+| Ask (NL Q&A) | **live** | shared `ask.py` engine + `/pkis-api/ask` + viewer Ask tab; two-model split: fast retrieval model + strong synthesis model (~2× faster); conversation persistence, voice I/O, capability-link sharing; clearer progress indicators + graceful recovery on interrupted queries; serial round-trips parallelised (~24s→~15s); ask caps tightened; answer now rendered even when trailing 'done' frame is lost |
 | Inbox (owner review hub) | **live** | consolidated staged + discovery + agent lanes; finding intake (Parts A+B); lab-assistant cron inbox push divergence-safe; doc-drift lane; Graph gaps lane; staged-file removal now committed on promote/discard |
 | Lab Assistant | **live** | finding intake + descriptive Lab Assistant (Parts A+B) shipped; cron inbox push divergence-safe; drift-flag runs 2026-07-18 and 2026-08-01 processed |
 | Semantic search | **live** | BM25 + bge-small dense fused via RRF; `sentence-transformers` + CPU torch in `requirements.txt`; graph rerank (personalized PageRank); path/relationship queries; standing-eval loop; OpGraph designated as live NED/NER experimental platform with six resolution strategies operationalizing the intensional-grounding-ned-accuracy hypothesis |
@@ -23,8 +23,8 @@ _Last updated: 2026-08-29_
 | Research clusters + frontier priority | **live** | all 12 clusters de-orphaned; frontier-driven priority queue |
 | Read+listen reader | **live** | LLM semantic narration + section-synced chapter PDF; resilient TTS (Piper-unvoiceable segments skipped); mp3 encoder streamed; **494 chapters narrated**; narration audio/PDF URLs absolutized for native app; real narration-build failure reason surfaced; content-filtered PDF chunks and failing sections no longer abort extraction or narration builds |
 | Proactive discovery | **live** | frontier-gated OpenAlex cite-graph, cron'd Mondays; inbox + accept/dismiss feedback + learned-prior loop (prior still cold) |
-| Ingest pipeline | **live** | **now enriches non-arXiv web sources** (blogs, distill.pub, docs pages) in addition to arXiv/PDF paths |
-| Documentation system (`docs/`) | **live** | 6 docs + `log_idea` + viewer Docs view; OpenWiki cartographer adopted; predicate drift fixed; CONTEXT.md regenerated from ground truth; Google Drive integration removed; MCP write auto-refresh mechanism clarified |
+| Ingest pipeline | **live** | enriches non-arXiv web sources (blogs, distill.pub, docs pages) in addition to arXiv/PDF paths |
+| Documentation system (`docs/`) | **live** | 6 docs + `log_idea` + viewer Docs view; OpenWiki cartographer adopted; predicate drift fixed; CONTEXT.md regenerated from ground truth; Google Drive integration removed; MCP write auto-refresh mechanism clarified; **position paper updated: related explainers + cited nodes + external sources linked; org-change framing removed; §7.3 retitled for mixed audience** |
 | OpenWiki refresh driver | **live** | rebase-retry push logic; concurrent-writer safe; `git add` staging fix; binaries/images/HTML/.env excluded from code-map staging |
 | Explainers | **live** | HTML explainers as `asset` nodes; desktop live-edit loop; Tier-2 dynamic-explainer Flask blueprint scaffold (`/pkis-api/x/<name>/`); viz published to local serving copy; render/download/share fixed esp. on mobile |
 | Deploy | **live** | one-command deploy script: build + embeddings + graceful reload |
@@ -44,11 +44,20 @@ split), cunningham, carrell, allemang, kroese, nielsen, benzi, lange — plus th
 earlier Phase-C set (MacKay, Hastie ESL, AIMA, Gelman, Sutton, Deisenroth, Pearl,
 Resnick, Goodfellow, Murphy PML 1&2, Jaynes).
 
-Doc-store additions this cycle: Acemoglu-Restrepo 2019 (automation and new tasks),
-Acemoglu-Restrepo 2018 (race between man and machine). MCP-committed sources:
-Mathematical Theory of Deep Learning; Matrix Calculus (for ML and Beyond);
-PriorGuide (test-time prior adaptation for SBI); Amortized Probabilistic Conditioning
-for Optimization, Simulation, and Inference.
+Doc-store additions this cycle: terminalist-bloombergs-last-stand, terminalist-bloombergx27s.
+MCP-committed sources: A Mathematical Introduction to Diffusion Models; Language Models
+Can Control Their Own Attention. Librarian linked 40+ sources across diffusion model
+nodes (DDPM, DDIM, stochastic encoder-decoder), Bayesian inference nodes (intractable
+posterior, prior/likelihood/posterior, approximate Bayesian computation, Bayesian
+decision analysis, causal-statistical distinction, turning-the-Bayesian-crank),
+amortized inference nodes (amortized VI, learned approximate inference, amortized
+inference), autoregressive nodes (ARM framework, autoregressive technique), state
+estimation nodes (Kalman filter, filtering/prediction/smoothing, robot perception),
+autodiff nodes (automatic differentiation, chain rule multivariate, JVP/VJP, vector
+calculus, linear algebra), and deep learning nodes (feed-forward NN, deep learning,
+deep NN computation graph, universal approximation theorems ×3), plus meta-learning,
+semi-supervised learning, hierarchical Bayesian models, multilevel regression, and
+recurrent neural networks.
 
 ## Active workstream — OpGraph as NED/NER experimental platform
 
@@ -76,11 +85,17 @@ ingested + narrated. Local-only until published.
 - An `app.py` restart drops the claude.ai connector (users must reconnect) —
   minimize restarts; content changes don't need one (cache auto-refresh).
 
-## Most recent session (2026-08-29)
+## Most recent session (2026-09-09)
 
-One fix landed. **Ask resilience**: the answer is now rendered even when the trailing
-`done` frame is dropped in transit — previously a lost final frame left the viewer
-showing no result despite a completed synthesis.
+Infrastructure and graph-coverage sprint. **Native app**: UI now loads from the live
+server URL, eliminating per-frontend APK rebuilds on content changes. **MCP cache**:
+cross-worker cache staleness fixed; reload + download added to writing assets.
+**Position paper**: linked to related explainers, cited nodes, and external sources;
+org-change framing removed; §7.3 retitled for a mixed audience. **Graph sources**:
+two new MCP-committed sources (diffusion models, LLM attention control); two URL
+sources doc-stored (terminalist Bloomberg pieces); 40+ librarian link-ops wiring
+existing sources into diffusion, Bayesian, amortized inference, autoregressive,
+state-estimation, autodiff, and deep-learning nodes. Node count moved 2,974 → 2,978.
 
 ## Next priorities
 
