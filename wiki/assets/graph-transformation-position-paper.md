@@ -24,10 +24,11 @@ uses:
 # The Knowledge Graph as Compounding Infrastructure
 ## A Position Paper on Cost Structure, Quality Measurement, and Analytical Architecture for AI-Powered Data Products
 
+
 **Status:** Draft v0.1 — evolving  
 **Author:** Marvin (with Claude)  
 **Last updated:** June 2026  
-**Related explainers:** knowledge_infrastructure_bundle.html · accuracy_calibration_explainer.html · mi_estimation_explainer.html
+**Related explainers:** [Knowledge Infrastructure for AI — Complete Guide](https://pkis.clowderpack.dev/pkis-api/viz/knowledge-infrastructure-bundle.html) · [Accuracy Estimation — Silver/Gold Calibration](https://pkis.clowderpack.dev/pkis-api/viz/accuracy-calibration-explainer.html) · [Mutual Information Estimation — Technical Reference](https://pkis.clowderpack.dev/pkis-api/viz/mi-estimation-explainer.html)
 
 ---
 
@@ -257,20 +258,31 @@ The argument in this paper is assembled from formal results that are at varying 
 
 ## References and Related Nodes
 
+
 This paper draws on the following nodes in the PKIS wiki. Each can be retrieved for the full formal treatment of the relevant concept.
 
 | Concept | PKIS node |
 |---|---|
-| Coverage-per-token efficiency | `pkis:hypothesis:concept-typed-nodes-dominate-document-nodes-on-coverage` |
-| C(q) as query coverage distribution | `pkis:hypothesis:query-coverage-as-expected-mass-of-c-q-on-encoded-conce` |
-| Continuous hardening mixture framework | `pkis:framework:continuous-hardening-mixture-framework` |
-| Coverage-driven graph traversal | `pkis:technique:coverage-driven-graph-traversal` |
-| Multidimensional retrieval quality framework | `pkis:framework:multidimensional-retrieval-quality-framework` |
-| Graph retrieval dominance hypothesis | `pkis:hypothesis:graph-retrieval-dominates-vector-search-concept-specifi` |
-| LLM-as-judge silver/gold PPI framework | `pkis:framework:llm-as-judge-silver-gold-ppi-framework` |
-| Passive instrumentation strategy | `pkis:framework:passive-instrumentation-quality-measurement` |
-| Ontologist positioning in hardening stack | `pkis:framework:ontologist-positioning-hardening-stack` |
-| C(q) Gödel bridge note | `pkis:bridge-note:bn-20260620-the-multidimensional-retrieval-quality-framework` |
+| Coverage-per-token efficiency | [[concept-typed-nodes-dominate-document-nodes-on-coverage]] |
+| C(q) as query coverage distribution | [[query-coverage-as-expected-mass-of-c-q-on-encoded-conce]] |
+| Continuous hardening mixture framework | [[continuous-hardening-mixture-framework]] |
+| Coverage-driven graph traversal | [[coverage-driven-graph-traversal]] |
+| Multidimensional retrieval quality framework | [[multidimensional-retrieval-quality-framework]] |
+| Graph retrieval dominance hypothesis | [[graph-retrieval-dominates-vector-search-concept-specifi]] |
+| LLM-as-judge silver/gold PPI framework | [[llm-as-judge-silver-gold-ppi-framework]] |
+| Passive instrumentation strategy | [[passive-instrumentation-quality-measurement]] |
+| Ontologist positioning in hardening stack | [[ontologist-positioning-hardening-stack]] |
+| C(q) Gödel bridge note | [[bn-20260620-the-multidimensional-retrieval-quality-framework]] |
+
+### External Sources
+
+The formal results above rest on the following published work.
+
+- Angelopoulos, Bates, Fannjiang, Jordan & Zrnic (2023). [Prediction-Powered Inference](https://arxiv.org/abs/2301.09633).
+- Angelopoulos, Duchi & Zrnic (2023). [PPI++: Efficient Prediction-Powered Inference](https://arxiv.org/abs/2311.01453).
+- Saad-Falcon, Khattab, Potts & Zaharia (2024). [ARES: An Automated Evaluation Framework for Retrieval-Augmented Generation Systems](https://arxiv.org/abs/2311.09476).
+- Kwiatkowski et al. (2024). [Do RAG Systems Cover What Matters? Evaluating and Optimizing Responses with Sub-Question Coverage](https://arxiv.org/abs/2410.15531).
+- Rau et al. (2026). [Revisiting RAG Retrievers: An Information Theoretic Benchmark (MIGRASCOPE)](https://arxiv.org/abs/2602.21553).
 
 ---
 

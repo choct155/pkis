@@ -27135,3 +27135,6 @@
 
 ## [2026-09-09] edit | edit_node
 - pkis:asset:graph-transformation-position-paper: fields=[] sections=['7. The Organizational Argument', '8. Open Questions and Next Steps']
+
+## [2026-09-09] edit | edit_node
+- pkis:asset:graph-transformation-position-paper: fields=[] sections=['A Position Paper on Cost Structure, Quality Measurement, and Analytical Architecture for AI-Powered Data Products', 'References and Related Nodes']
