@@ -27138,3 +27138,12 @@
 
 ## [2026-09-09] edit | edit_node
 - pkis:asset:graph-transformation-position-paper: fields=[] sections=['A Position Paper on Cost Structure, Quality Measurement, and Analytical Architecture for AI-Powered Data Products', 'References and Related Nodes']
+
+## [2026-09-10] staged | source-stub
+- Staged: how (id: 1a044ecd-5343-4923-8f07-dbb30fad94b5)
+- Title: How to Manage AI Token Costs in the Enterprise: The 2026 Playbook
+- Enrichment: full
+
+## [2026-09-10] committed | source
+- Committed: how → sources/how.md
+- IRI: pkis:source:how
