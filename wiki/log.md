@@ -27171,3 +27171,6 @@
 
 ## [2026-09-14] edit | edit_node
 - pkis:technique:ddim-sampler: fields=['sources'] sections=[]
+
+## [2026-09-14] edit | edit_node
+- pkis:technique:classifier-guidance: fields=['sources'] sections=[]
