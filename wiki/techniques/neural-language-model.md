@@ -15,7 +15,7 @@ contrasts-with:
 - n-gram-language-model
 coverage: 1
 date_created: '2026-06-11'
-date_updated: '2026-06-11'
+date_updated: '2026-09-14'
 domain:
 - NLP
 - deep-learning
@@ -28,6 +28,7 @@ prerequisite-of:
 related_concepts: []
 sources:
 - goodfellow-deeplearning-ch12
+- ho-language-2026
 specializes:
 - language-model
 tags:
