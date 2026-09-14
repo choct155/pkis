@@ -12,7 +12,7 @@ component_scores:
   structure: null
 coverage: 1
 date_created: '2026-06-11'
-date_updated: '2026-06-20'
+date_updated: '2026-09-14'
 domain:
 - machine-learning
 - stochastic-processes
@@ -28,6 +28,7 @@ related_concepts: []
 sources:
 - murphy-pml2-advanced-ch25
 - lange-applied-probability-ch13
+- lu-a-2026
 tags:
 - SDE
 - ODE

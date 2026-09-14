@@ -27165,3 +27165,6 @@
 
 ## [2026-09-14] edit | edit_node
 - pkis:technique:neural-language-model: fields=['sources'] sections=[]
+
+## [2026-09-14] edit | edit_node
+- pkis:framework:diffusion-sde-framework: fields=['sources'] sections=[]
