@@ -27159,3 +27159,6 @@
 
 ## [2026-09-10] discarded | unknown
 - Discarded: httpsarxivorghtml250803865v2 (id: 36e1192f-32ad-4ad4-94bf-057db4f4ef42)
+
+## [2026-09-14] edit | edit_node
+- pkis:technique:attention-mechanism: fields=['sources'] sections=[]
