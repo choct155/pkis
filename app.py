@@ -644,8 +644,9 @@ def _ensure_content_fresh():
     path = request.path
     if not path.startswith("/pkis-api/"):
         return
-    # Auth endpoints run on every page load and touch no wiki content.
-    if path.startswith("/pkis-api/auth/"):
+    # Auth endpoints run on every page load and touch no wiki content; a
+    # published export is a static file fetched by recipients, not by the app.
+    if path.startswith("/pkis-api/auth/") or path.startswith("/pkis-api/export/"):
         return
     try:
         ensure_fresh()
@@ -7615,6 +7616,52 @@ def pkis_api_viz(filename):
         return _api_err("Invalid path"), 400
     viz_dir = WIKI_DIR / "assets" / "viz"
     return send_from_directory(str(viz_dir), filename)
+
+
+# ── Standalone document exports ───────────────────────────────────────────
+# The viewer builds a self-contained HTML export of a writing asset (the document
+# plus the nodes it cites). The Android app is a Capacitor WebView with no
+# DownloadListener, so it cannot save that file locally at all — publishing it
+# here and sharing the URL is the one route that works on every platform, and a
+# link is usually what the recipient wanted anyway.
+EXPORTS_DIR = Path(os.environ.get("PKIS_EXPORTS_DIR", str(DOCS_DIR.parent / "exports")))
+EXPORT_MAX_BYTES = 8 * 1024 * 1024
+
+
+@app.route("/pkis-api/export", methods=["POST"])
+def pkis_api_export_create():
+    """Owner publishes a generated standalone export; returns its public URL.
+
+    Write-gated: this writes a file that is then served, unauthenticated, from the
+    app's own origin — the same trust model as wiki/assets/viz, where the owner is
+    likewise the only author."""
+    if not is_write_authorized(request):
+        return _api_err("write access required", 403)
+    b = _api_json()
+    doc = b.get("html") or ""
+    if not doc:
+        return _api_err("html is required")
+    if len(doc.encode("utf-8")) > EXPORT_MAX_BYTES:
+        return _api_err("export too large", 413)
+    slug = re.sub(r"[^a-z0-9-]", "", (b.get("slug") or "document").lower())[:80] or "document"
+    EXPORTS_DIR.mkdir(parents=True, exist_ok=True)
+    # Content-addressed: re-exporting an unchanged document reuses its URL rather
+    # than littering the directory with near-identical copies, and an edited
+    # document gets a new one instead of silently mutating a link already sent.
+    name = f"{slug}-{hashlib.sha256(doc.encode('utf-8')).hexdigest()[:12]}.html"
+    (EXPORTS_DIR / name).write_text(doc, encoding="utf-8")
+    logger.info("published export %s (%d bytes)", name, len(doc))
+    return _api_ok({"name": name, "url": f"/pkis-api/export/{name}"})
+
+
+@app.route("/pkis-api/export/<name>", methods=["GET"])
+def pkis_api_export_get(name):
+    """PUBLIC, no auth: serve a published export so a recipient can open the link."""
+    if "/" in name or ".." in name or not name.endswith(".html"):
+        return _api_err("Invalid path", 400)
+    if not (EXPORTS_DIR / name).is_file():
+        return _api_err("export not found", 404)
+    return send_from_directory(str(EXPORTS_DIR), name)
 
 
 # Tier-2 dynamic explainers (Flask-backed, /pkis-api/x/<name>/). Optional + best

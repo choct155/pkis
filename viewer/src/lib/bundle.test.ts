@@ -12,10 +12,15 @@ import { buildStandaloneHtml, buildAppendices } from './bundle'
 vi.mock('./api', () => ({
   resolveSlugs: vi.fn(),
   getNode: vi.fn(),
+  publishExport: vi.fn(),
 }))
 vi.mock('./katex', () => ({ renderMath: vi.fn() }))
+vi.mock('./nativeAuth', () => ({ isNative: vi.fn(() => false) }))
+vi.mock('./share', () => ({ shareLink: vi.fn() }))
 
-import { resolveSlugs, getNode } from './api'
+import { resolveSlugs, getNode, publishExport } from './api'
+import { isNative } from './nativeAuth'
+import { shareLink } from './share'
 
 const NODES: Record<string, { title: string; body: string; sources?: string[] }> = {
   'coverage-driven-graph-traversal': {
@@ -193,6 +198,60 @@ describe('saveFile', () => {
       const before = document.querySelectorAll('a').length
       await saveFile('paper.html', 'x')
       expect(document.querySelectorAll('a').length).toBe(before)
+    } finally { click.mockRestore(); vi.unstubAllGlobals() }
+  })
+})
+
+
+describe('deliverExport — getting the export to the user on each platform', () => {
+  const afterNative = () => { vi.unstubAllGlobals(); vi.mocked(isNative).mockReturnValue(false) }
+
+  it('publishes and shares a LINK in the native app, which cannot save files at all', async () => {
+    const { deliverExport } = await import('./bundle')
+    vi.mocked(isNative).mockReturnValue(true)
+    vi.mocked(publishExport).mockResolvedValue('/pkis-api/export/paper-abc123.html')
+    vi.mocked(shareLink).mockResolvedValue('shared')
+    vi.stubGlobal('navigator', { canShare: () => false })
+    const click = vi.spyOn(HTMLAnchorElement.prototype, 'click').mockImplementation(() => {})
+    try {
+      const r = await deliverExport('paper', 'Paper', '<p>x</p>')
+      expect(r).toEqual({ how: 'shared', url: '/pkis-api/export/paper-abc123.html' })
+      // The WebView silently ignores this, so it must never be attempted there.
+      expect(click).not.toHaveBeenCalled()
+      expect(vi.mocked(publishExport).mock.calls[0][0]).toBe('paper')
+    } finally { click.mockRestore(); afterNative() }
+  })
+
+  it('reports a copied link when there is no share sheet to take it', async () => {
+    const { deliverExport } = await import('./bundle')
+    vi.mocked(isNative).mockReturnValue(true)
+    vi.mocked(publishExport).mockResolvedValue('/pkis-api/export/p.html')
+    vi.mocked(shareLink).mockResolvedValue('copied')
+    vi.stubGlobal('navigator', { canShare: () => false })
+    try {
+      expect((await deliverExport('paper', 'Paper', 'x')).how).toBe('copied')
+    } finally { afterNative() }
+  })
+
+  it('never claims success when publishing fails', async () => {
+    const { deliverExport } = await import('./bundle')
+    vi.mocked(isNative).mockReturnValue(true)
+    vi.mocked(publishExport).mockRejectedValue(new Error('offline'))
+    vi.stubGlobal('navigator', { canShare: () => false })
+    try {
+      expect((await deliverExport('paper', 'Paper', 'x')).how).toBe('failed')
+    } finally { afterNative() }
+  })
+
+  it('downloads on the web instead of publishing anything', async () => {
+    const { deliverExport } = await import('./bundle')
+    vi.stubGlobal('URL', { createObjectURL: () => 'blob:x', revokeObjectURL: () => {} })
+    vi.stubGlobal('navigator', { canShare: () => false })
+    const click = vi.spyOn(HTMLAnchorElement.prototype, 'click').mockImplementation(() => {})
+    vi.mocked(publishExport).mockClear()
+    try {
+      expect((await deliverExport('paper', 'Paper', 'x')).how).toBe('downloaded')
+      expect(publishExport).not.toHaveBeenCalled()
     } finally { click.mockRestore(); vi.unstubAllGlobals() }
   })
 })

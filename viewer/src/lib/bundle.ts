@@ -10,9 +10,11 @@
 //
 // One level deep, deliberately: transitive closure would pull in most of the
 // wiki and bury the argument the document is making.
-import { getNode, resolveSlugs } from './api'
+import { getNode, resolveSlugs, publishExport } from './api'
 import { renderMarkdown } from './markdown'
 import { renderMath } from './katex'
+import { isNative } from './nativeAuth'
+import { shareLink } from './share'
 
 const IRI_RE = /pkis:[a-z-]+:[a-z0-9][a-z0-9-]*/gi
 
@@ -195,7 +197,7 @@ img { max-width: 100% }
 }
 `
 
-export type SaveResult = 'shared' | 'downloaded' | 'cancelled' | 'failed'
+export type SaveResult = 'shared' | 'downloaded' | 'cancelled' | 'failed' | 'unsupported'
 
 /**
  * Hand a generated file to the user, by whichever route the platform actually
@@ -229,6 +231,9 @@ export async function saveFile(
       // Anything else: fall through and try a plain download.
     }
   }
+  // The native WebView has no download handler: the click below would do
+  // nothing and we'd have no way to tell, so never claim a save we can't make.
+  if (isNative()) return 'unsupported'
   try {
     const url = URL.createObjectURL(new Blob([content], { type }))
     const a = document.createElement('a')
@@ -243,6 +248,35 @@ export async function saveFile(
     return 'downloaded'
   } catch {
     return 'failed'
+  }
+}
+
+export type DeliverResult = 'shared' | 'copied' | 'downloaded' | 'cancelled' | 'failed'
+
+/**
+ * Get a finished export to the user by whatever route their platform actually
+ * supports, and never report success we cannot stand behind.
+ *
+ * Order matters. A real file is best where it can be had, so the OS share sheet
+ * and the desktop download come first. Where neither exists — the Android app —
+ * the export is published to a public URL and the LINK is shared instead. That
+ * is also the better artifact for this document's purpose: a recipient with no
+ * PKIS account can open a link on any device, where an 83KB attachment is
+ * something they have to keep.
+ */
+export async function deliverExport(
+  slug: string, title: string, html: string,
+): Promise<{ how: DeliverResult; url?: string }> {
+  const saved = await saveFile(`${slug}.html`, html)
+  if (saved !== 'unsupported') return { how: saved as DeliverResult }
+
+  try {
+    const url = await publishExport(slug, html)
+    const shared = await shareLink(url, title)
+    if (shared === 'failed') return { how: 'failed', url }
+    return { how: shared === 'shared' ? 'shared' : shared === 'copied' ? 'copied' : 'cancelled', url }
+  } catch {
+    return { how: 'failed' }
   }
 }
 

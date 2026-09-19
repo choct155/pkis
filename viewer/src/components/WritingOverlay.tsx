@@ -2,7 +2,7 @@ import { useCallback, useEffect, useRef, useState } from 'react'
 import { getNode } from '../lib/api'
 import { renderMarkdown } from '../lib/markdown'
 import { renderMath } from '../lib/katex'
-import { buildStandaloneHtml, saveFile } from '../lib/bundle'
+import { buildStandaloneHtml, deliverExport } from '../lib/bundle'
 
 interface Props {
   iri: string
@@ -58,18 +58,20 @@ export default function WritingOverlay({ iri, title, onClose }: Props) {
     setSaving(true)
     try {
       const html = await buildStandaloneHtml(t, article)
-      const how = await saveFile(`${iri.split(':').pop() || 'document'}.html`, html)
-      // Say which route the file actually took — on a platform where the save
-      // is silent, an unlabelled no-op is indistinguishable from a broken button.
+      const { how } = await deliverExport(iri.split(':').pop() || 'document', t, html)
+      // Name the route the export actually took. Where a platform completes
+      // silently, an unlabelled no-op is indistinguishable from a broken button
+      // — which is exactly how the first version of this was reported.
       if (how !== 'cancelled') {
-        setToast(how === 'shared' ? 'Shared'
-          : how === 'downloaded' ? 'Saved to your downloads'
-          : 'Could not save the file')
-        setTimeout(() => setToast(null), 2500)
+        setToast(how === 'downloaded' ? 'Saved to your downloads'
+          : how === 'shared' ? 'Shared'
+          : how === 'copied' ? 'Link copied'
+          : 'Could not save or share the export')
+        setTimeout(() => setToast(null), 3000)
       }
-    } catch (e) {
-      setToast('Download failed')
-      setTimeout(() => setToast(null), 2500)
+    } catch {
+      setToast('Export failed')
+      setTimeout(() => setToast(null), 3000)
     } finally {
       setSaving(false)
     }

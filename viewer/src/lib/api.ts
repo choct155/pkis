@@ -217,6 +217,14 @@ export async function getNode(iri: string): Promise<FullNode> {
   return post<FullNode>('/node', { iri });
 }
 
+// Publish a generated standalone export; returns its public, no-auth URL. Used
+// where the platform can't save a file locally (the native WebView) and on
+// demand for sharing, since a link works for a recipient with no PKIS account.
+export async function publishExport(slug: string, html: string): Promise<string> {
+  const r = await post<{ url: string }>('/export', { slug, html });
+  return r.url;
+}
+
 // Resolve a bare node slug (from a body [[wikilink]]) to its canonical IRI.
 // Returns null for a dangling link (no such node).
 export async function resolveSlug(slug: string): Promise<string | null> {
