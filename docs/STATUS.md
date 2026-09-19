@@ -12,7 +12,7 @@ _Last updated: 2026-09-19_
 |---|---|---|
 | PKIS-MCP server (`app.py`) | **live** | MCP (42 tools) + `/pkis-api/*` + docs/webhook/health on `pkis.clowderpack.dev`; gunicorn `pkis-mcp.service`; pinned deps in `requirements.txt`; architect/graph/link tools marked executable; `get_openwiki` read-only tool exposing openwiki/ code map; `index.html` served `no-store` to eliminate stale-shell fetches; ask caps tightened to reduce latency tail |
 | Knowledge graph (`pkis-wiki`) | **live** | **2,979 nodes**; librarian linked 5 additional sources into classifier-guidance, ddim-sampler, diffusion-sde-framework, neural-language-model, and attention-mechanism nodes; 4 staged sources discarded (arXiv + distill.pub); new enterprise AI token-cost source committed |
-| Viewer PWA (`pkis.clowderpack.dev/app`) | **live** | mobile-first; wide-desktop dashboard (≥1280px); retrieval lab view; path-mode UI; native Capacitor APK with WorkOS bearer auth + biometric unlock; **edit-node action added**; **explainers now render, download, and share correctly on mobile**; **native app now loads UI from live server URL — per-frontend APK rebuilds eliminated**; exports routed through OS share sheet where direct downloads are unavailable |
+| Viewer PWA (`pkis.clowderpack.dev/app`) | **live** | mobile-first; wide-desktop dashboard (≥1280px); retrieval lab view; path-mode UI; native Capacitor APK with WorkOS bearer auth + biometric unlock; **edit-node action added**; **explainers now render, download, and share correctly on mobile**; **native app now loads UI from live server URL — per-frontend APK rebuilds eliminated**; exports routed through OS share sheet where direct downloads are unavailable; **publish exports routed to a link target on platforms that cannot save files directly** |
 | MCP write tools | **live** | stub/edge/hypothesis/bridge/source/edit; auto-commit+push, cache auto-refresh; `save_url_source` and `save_podcast_source` documented in authoring tools; `edit_node content=` parameter clarified; cross-worker cache staleness fixed; reload + download added to writing assets; **referenced nodes now bundled into writing-asset HTML export** |
 | Auth (WorkOS AuthKit) | **live** | OAuth (claude.ai/MCP) + web sealed session; identity keyed on email; allowlist by email OR sub; single-use-refresh race coalesced; opaque-token fallback via OIDC userinfo for MCP writes |
 | Ask (NL Q&A) | **live** | shared `ask.py` engine + `/pkis-api/ask` + viewer Ask tab; two-model split: fast retrieval model + strong synthesis model (~2× faster); conversation persistence, voice I/O, capability-link sharing; clearer progress indicators + graceful recovery on interrupted queries; serial round-trips parallelised (~24s→~15s); ask caps tightened; answer now rendered even when trailing 'done' frame is lost |
@@ -26,7 +26,7 @@ _Last updated: 2026-09-19_
 | Ingest pipeline | **live** | enriches non-arXiv web sources (blogs, distill.pub, docs pages) in addition to arXiv/PDF paths |
 | Documentation system (`docs/`) | **live** | 6 docs + `log_idea` + viewer Docs view; OpenWiki cartographer adopted; predicate drift fixed; CONTEXT.md regenerated from ground truth; Google Drive integration removed; MCP write auto-refresh mechanism clarified; position paper updated: related explainers + cited nodes + external sources linked; org-change framing removed; §7.3 retitled for mixed audience |
 | OpenWiki refresh driver | **live** | rebase-retry push logic; concurrent-writer safe; `git add` staging fix; binaries/images/HTML/.env excluded from code-map staging |
-| Explainers | **live** | HTML explainers as `asset` nodes; desktop live-edit loop; Tier-2 dynamic-explainer Flask blueprint scaffold (`/pkis-api/x/<name>/`); viz published to local serving copy; render/download/share fixed esp. on mobile; **referenced nodes bundled into writing-asset HTML export**; export falls back to OS share sheet where browser downloads are blocked |
+| Explainers | **live** | HTML explainers as `asset` nodes; desktop live-edit loop; Tier-2 dynamic-explainer Flask blueprint scaffold (`/pkis-api/x/<name>/`); viz published to local serving copy; render/download/share fixed esp. on mobile; **referenced nodes bundled into writing-asset HTML export**; **publish export now routes to a link on platforms where the browser cannot save files** |
 | Deploy | **live** | one-command deploy script: build + embeddings + graceful reload |
 | Comptroller (cost) | **live** | `usage.py` SQLite at `/home/pkis/usage`; per-origin cost; narration logs as `pkis-reader` |
 | Ideas log | **live** | `log_idea` tool; entry: OpGraph Strategist — multi-agent strategic council |
@@ -79,11 +79,11 @@ ingested + narrated. Local-only until published.
 
 ## Most recent session (2026-09-19)
 
-Export reliability polish. **Share-sheet export**: writing-asset and explainer
-exports now route through the OS share sheet on platforms where direct browser
-downloads are unavailable (e.g. iOS/Android WebView), ensuring users can always
-get exported HTML off the device. No graph or narration changes this micro-session;
-node count and chapter count hold at 2,979 / 494.
+Export reliability micro-patch. **Publish-to-link export**: on platforms where the
+browser or WebView cannot save a file directly (e.g. certain iOS/Android contexts),
+exports now publish to a link the user can open or share — complementing the
+existing OS share-sheet route. No graph or narration changes; node count and chapter
+count hold at 2,979 / 494.
 
 ## Next priorities
 
