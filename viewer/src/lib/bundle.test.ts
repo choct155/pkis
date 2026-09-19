@@ -129,53 +129,70 @@ describe('buildStandaloneHtml', () => {
 })
 
 describe('saveFile', () => {
-  it('clicks an anchor that is attached to the document, and keeps the blob alive', async () => {
-    const { saveFile } = await import('./bundle')
-    const created: string[] = []
-    const revoked: string[] = []
+  const stubUrl = () => {
+    const created: string[] = [], revoked: string[] = []
     vi.stubGlobal('URL', {
-      createObjectURL: (_b: Blob) => { const u = `blob:stub-${created.length}`; created.push(u); return u },
+      createObjectURL: () => { const u = `blob:stub-${created.length}`; created.push(u); return u },
       revokeObjectURL: (u: string) => { revoked.push(u) },
     })
+    return { created, revoked }
+  }
 
-    // Capture whether the anchor was in the document AT click time — a detached
-    // anchor is the failure mode where nothing visible happens at all.
+  it('uses the OS share sheet when the platform offers it — the only route that works in the Android app', async () => {
+    const { saveFile } = await import('./bundle')
+    const share = vi.fn().mockResolvedValue(undefined)
+    vi.stubGlobal('navigator', { canShare: () => true, share })
+    try {
+      expect(await saveFile('paper.html', '<p>hi</p>')).toBe('shared')
+      const arg = share.mock.calls[0][0]
+      expect(arg.files[0].name).toBe('paper.html')
+    } finally { vi.unstubAllGlobals() }
+  })
+
+  it('treats a dismissed share sheet as a choice, not a failure to retry as a download', async () => {
+    const { saveFile } = await import('./bundle')
+    const err = Object.assign(new Error('x'), { name: 'AbortError' })
+    vi.stubGlobal('navigator', { canShare: () => true, share: vi.fn().mockRejectedValue(err) })
+    const click = vi.spyOn(HTMLAnchorElement.prototype, 'click').mockImplementation(() => {})
+    try {
+      expect(await saveFile('paper.html', 'x')).toBe('cancelled')
+      expect(click).not.toHaveBeenCalled()
+    } finally { click.mockRestore(); vi.unstubAllGlobals() }
+  })
+
+  it('falls back to a download, from an attached anchor, keeping the blob alive', async () => {
+    const { saveFile } = await import('./bundle')
+    const { created, revoked } = stubUrl()
+    vi.stubGlobal('navigator', { canShare: () => false })
     let attachedAtClick: boolean | null = null
     let downloadAttr: string | null = null
-    const click = vi.spyOn(HTMLAnchorElement.prototype, 'click').mockImplementation(function (this: HTMLAnchorElement) {
-      attachedAtClick = document.body.contains(this)
-      downloadAttr = this.getAttribute('download')
-    })
-
+    const click = vi.spyOn(HTMLAnchorElement.prototype, 'click')
+      .mockImplementation(function (this: HTMLAnchorElement) {
+        attachedAtClick = document.body.contains(this)
+        downloadAttr = this.getAttribute('download')
+      })
     vi.useFakeTimers()
     try {
-      saveFile('paper.html', '<p>hi</p>')
-      expect(click).toHaveBeenCalledOnce()
-      expect(attachedAtClick).toBe(true)
+      expect(await saveFile('paper.html', '<p>hi</p>')).toBe('downloaded')
+      expect(attachedAtClick).toBe(true)          // a detached anchor is silently ignored
       expect(downloadAttr).toBe('paper.html')
-
-      // Revoking synchronously can cancel the save before the bytes are read.
-      expect(revoked).toEqual([])
+      expect(revoked).toEqual([])                 // revoking now can cancel the save
       vi.runAllTimers()
       expect(revoked).toEqual(created)
     } finally {
-      vi.useRealTimers()
-      click.mockRestore()
-      vi.unstubAllGlobals()
+      vi.useRealTimers(); click.mockRestore(); vi.unstubAllGlobals()
     }
   })
 
   it('leaves no stray anchor behind in the document', async () => {
     const { saveFile } = await import('./bundle')
-    vi.stubGlobal('URL', { createObjectURL: () => 'blob:x', revokeObjectURL: () => {} })
+    stubUrl()
+    vi.stubGlobal('navigator', { canShare: () => false })
     const click = vi.spyOn(HTMLAnchorElement.prototype, 'click').mockImplementation(() => {})
     try {
       const before = document.querySelectorAll('a').length
-      saveFile('paper.html', 'x')
+      await saveFile('paper.html', 'x')
       expect(document.querySelectorAll('a').length).toBe(before)
-    } finally {
-      click.mockRestore()
-      vi.unstubAllGlobals()
-    }
+    } finally { click.mockRestore(); vi.unstubAllGlobals() }
   })
 })

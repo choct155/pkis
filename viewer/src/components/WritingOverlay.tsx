@@ -58,9 +58,15 @@ export default function WritingOverlay({ iri, title, onClose }: Props) {
     setSaving(true)
     try {
       const html = await buildStandaloneHtml(t, article)
-      saveFile(`${iri.split(':').pop() || 'document'}.html`, html)
-      setToast('Downloaded')
-      setTimeout(() => setToast(null), 2500)
+      const how = await saveFile(`${iri.split(':').pop() || 'document'}.html`, html)
+      // Say which route the file actually took — on a platform where the save
+      // is silent, an unlabelled no-op is indistinguishable from a broken button.
+      if (how !== 'cancelled') {
+        setToast(how === 'shared' ? 'Shared'
+          : how === 'downloaded' ? 'Saved to your downloads'
+          : 'Could not save the file')
+        setTimeout(() => setToast(null), 2500)
+      }
     } catch (e) {
       setToast('Download failed')
       setTimeout(() => setToast(null), 2500)

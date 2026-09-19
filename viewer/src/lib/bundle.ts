@@ -195,28 +195,55 @@ img { max-width: 100% }
 }
 `
 
+export type SaveResult = 'shared' | 'downloaded' | 'cancelled' | 'failed'
+
 /**
- * Hand a generated file to the browser.
+ * Hand a generated file to the user, by whichever route the platform actually
+ * supports.
  *
- * Two details here are what make a download actually happen, and getting either
- * wrong looks exactly like the button doing nothing:
- *  - the anchor must be IN the document when clicked; several browsers ignore a
- *    click on a detached one;
+ * The Android app is a Capacitor WebView with no DownloadListener, so a blob
+ * `<a download>` there does nothing at all — no file, no error, no prompt. The
+ * OS share sheet is the route that works natively (it can save to Files/Drive
+ * or send the document onward), so try that first wherever it is offered.
+ *
+ * The download fallback has two details that decide whether it works at all,
+ * and getting either wrong also looks like the button doing nothing:
+ *  - the anchor must be IN the document when clicked; several browsers ignore
+ *    a click on a detached one;
  *  - the object URL must outlive the click. Revoking it on the next line can
  *    cancel the save before the browser has read the blob, and the larger the
- *    file the more reliably it loses that race.
+ *    file the more reliably the revoke wins that race.
  */
-export function saveFile(filename: string, content: string, type = 'text/html'): void {
-  const url = URL.createObjectURL(new Blob([content], { type }))
-  const a = document.createElement('a')
-  a.href = url
-  a.download = filename
-  a.rel = 'noopener'
-  a.style.display = 'none'
-  document.body.appendChild(a)
-  a.click()
-  a.remove()
-  setTimeout(() => URL.revokeObjectURL(url), 30_000)
+export async function saveFile(
+  filename: string, content: string, type = 'text/html',
+): Promise<SaveResult> {
+  const file = new File([content], filename, { type })
+  if (typeof navigator !== 'undefined' && navigator.canShare?.({ files: [file] })) {
+    try {
+      await navigator.share({ files: [file], title: filename })
+      return 'shared'
+    } catch (e) {
+      // Dismissing the sheet is a choice, not a failure — don't then quietly
+      // download the file behind the user's back.
+      if ((e as { name?: string })?.name === 'AbortError') return 'cancelled'
+      // Anything else: fall through and try a plain download.
+    }
+  }
+  try {
+    const url = URL.createObjectURL(new Blob([content], { type }))
+    const a = document.createElement('a')
+    a.href = url
+    a.download = filename
+    a.rel = 'noopener'
+    a.style.display = 'none'
+    document.body.appendChild(a)
+    a.click()
+    a.remove()
+    setTimeout(() => URL.revokeObjectURL(url), 30_000)
+    return 'downloaded'
+  } catch {
+    return 'failed'
+  }
 }
 
 /** Render the open document plus its referenced nodes into one standalone file. */
