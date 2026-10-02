@@ -27174,3 +27174,12 @@
 
 ## [2026-09-14] edit | edit_node
 - pkis:technique:classifier-guidance: fields=['sources'] sections=[]
+
+## [2026-10-02] staged | source-stub
+- Staged: ros-large-2025 (id: 830f6624-c4a1-4cc9-b646-9eae2415e914)
+- Title: Large Language Models for Combinatorial Optimization: A Systematic Review
+- Enrichment: full
+
+## [2026-10-02] committed | source
+- Committed: ros-large-2025 → sources/ros-large-2025.md
+- IRI: pkis:source:ros-large-2025

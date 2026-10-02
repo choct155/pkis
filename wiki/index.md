@@ -1,6 +1,7 @@
 # PKIS Wiki Index
 
 ## Sources
+- [[ros-large-2025]] — Large Language Models for Combinatorial Optimization: A Systematic Review () (2026-10-02)
 - [[how]] — How to Manage AI Token Costs in the Enterprise: The 2026 Playbook () (2026-09-10)
 - [[lu-a-2026]] — A Mathematical Introduction to Diffusion Models () (2026-09-07)
 - [[ho-language-2026]] — Language Models Can Control Their Own Attention () (2026-09-07)
