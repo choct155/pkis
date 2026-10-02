@@ -1,6 +1,7 @@
 # PKIS Wiki Index
 
 ## Sources
+- [[iyengar-the-2025]] — The future of BPO services is Services-as-Software, turning hours into outcomes () (2026-10-02)
 - [[garraldabarrio-knowledgecentric-2026]] — Knowledge-Centric Information Systems () (2026-10-02)
 - [[ros-large-2025]] — Large Language Models for Combinatorial Optimization: A Systematic Review () (2026-10-02)
 - [[how]] — How to Manage AI Token Costs in the Enterprise: The 2026 Playbook () (2026-09-10)

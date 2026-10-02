@@ -27187,3 +27187,7 @@
 ## [2026-10-02] committed | source
 - Committed: garraldabarrio-knowledgecentric-2026 → sources/garraldabarrio-knowledgecentric-2026.md
 - IRI: pkis:source:garraldabarrio-knowledgecentric-2026
+
+## [2026-10-02] committed | source
+- Committed: iyengar-the-2025 → sources/iyengar-the-2025.md
+- IRI: pkis:source:iyengar-the-2025
