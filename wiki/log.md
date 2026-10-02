@@ -27183,3 +27183,7 @@
 ## [2026-10-02] committed | source
 - Committed: ros-large-2025 → sources/ros-large-2025.md
 - IRI: pkis:source:ros-large-2025
+
+## [2026-10-02] committed | source
+- Committed: garraldabarrio-knowledgecentric-2026 → sources/garraldabarrio-knowledgecentric-2026.md
+- IRI: pkis:source:garraldabarrio-knowledgecentric-2026
