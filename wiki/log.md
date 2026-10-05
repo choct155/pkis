@@ -27191,3 +27191,6 @@
 ## [2026-10-02] committed | source
 - Committed: iyengar-the-2025 → sources/iyengar-the-2025.md
 - IRI: pkis:source:iyengar-the-2025
+
+## [2026-10-05] edit | edit_node
+- pkis:concept:knowledge-base-ai: fields=['sources'] sections=[]

@@ -15,7 +15,7 @@ contrasts-with:
 - machine-consciousness-and-qualia
 coverage: 1
 date_created: '2026-06-11'
-date_updated: '2026-06-11'
+date_updated: '2026-10-05'
 domain:
 - artificial-intelligence
 - knowledge-representation
@@ -29,6 +29,7 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - goodfellow-deeplearning-ch01
+- garraldabarrio-knowledgecentric-2026
 tags:
 - cyc
 - formal-knowledge
