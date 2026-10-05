@@ -27194,3 +27194,6 @@
 
 ## [2026-10-05] edit | edit_node
 - pkis:concept:knowledge-base-ai: fields=['sources'] sections=[]
+
+## [2026-10-05] edit | edit_node
+- pkis:technique:graph-rag: fields=['sources'] sections=[]

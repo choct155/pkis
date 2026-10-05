@@ -4,7 +4,7 @@ also_type:
 - framework
 coverage: 6
 date_created: 2026-05-20
-date_updated: '2026-06-20'
+date_updated: '2026-10-05'
 domain:
 - knowledge-representation
 - deep-learning
@@ -34,6 +34,7 @@ sources:
 - share-thinkongraph
 - share-thinkongraph-1
 - gulli-agentic-design-patterns-ch14
+- garraldabarrio-knowledgecentric-2026
 tags:
 - rag
 - knowledge-graphs
