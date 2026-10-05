@@ -12,7 +12,7 @@ component_scores:
   structure: null
 coverage: 1
 date_created: '2026-06-09'
-date_updated: '2026-06-20'
+date_updated: '2026-10-05'
 domain:
 - knowledge-representation
 - symbolic-subsymbolic
@@ -24,6 +24,7 @@ related_concepts: []
 sources:
 - russell-norvig-aima-ch07
 - gulli-agentic-design-patterns-ch14
+- garraldabarrio-knowledgecentric-2026
 tags:
 - agents
 - declarative
