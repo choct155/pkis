@@ -27446,3 +27446,7 @@
 ## [2026-10-08] committed | blog
 - Committed: rush-the-2018 → sources/rush-the-2018.md
 - IRI: pkis:source:rush-the-2018
+
+## [2026-10-08] committed | source
+- Committed: bahdanau-neural-2014 → sources/bahdanau-neural-2014.md
+- IRI: pkis:source:bahdanau-neural-2014

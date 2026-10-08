@@ -1,6 +1,7 @@
 # PKIS Wiki Index
 
 ## Sources
+- [[bahdanau-neural-2014]] — Neural Machine Translation by Jointly Learning to Align and Translate (deep-learning) (2026-10-08)
 - [[rush-the-2018]] — The Annotated Transformer (deep-learning) (2026-10-08)
 - [[amodei-deep-2015]] — Deep Speech 2: End-to-End Speech Recognition in English and Mandarin (deep-learning) (2026-10-08)
 - [[zaremba-recurrent-2014]] — Recurrent Neural Network Regularization (deep-learning) (2026-10-08)
