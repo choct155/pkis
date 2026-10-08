@@ -27442,3 +27442,7 @@
 ## [2026-10-08] committed | source
 - Committed: amodei-deep-2015 → sources/amodei-deep-2015.md
 - IRI: pkis:source:amodei-deep-2015
+
+## [2026-10-08] committed | blog
+- Committed: rush-the-2018 → sources/rush-the-2018.md
+- IRI: pkis:source:rush-the-2018
