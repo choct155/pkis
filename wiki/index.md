@@ -1,6 +1,7 @@
 # PKIS Wiki Index
 
 ## Sources
+- [[hinton-keeping-1993]] — Keeping Neural Networks Simple by Minimizing the Description Length of the Weights (deep-learning, information-theory) (2026-10-08)
 - [[grunwald-a-2004]] — A Tutorial Introduction to the Minimum Description Length Principle (information-theory) (2026-10-08)
 - [[shen-kolmogorov-2017]] — Kolmogorov Complexity and Algorithmic Randomness (information-theory) (2026-10-08)
 - [[aaronson-the-2011]] — The First Law of Complexodynamics (information-theory) (2026-10-08)

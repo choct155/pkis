@@ -27502,3 +27502,7 @@
 ## [2026-10-08] committed | source
 - Committed: grunwald-a-2004 → sources/grunwald-a-2004.md
 - IRI: pkis:source:grunwald-a-2004
+
+## [2026-10-08] committed | source
+- Committed: hinton-keeping-1993 → sources/hinton-keeping-1993.md
+- IRI: pkis:source:hinton-keeping-1993
