@@ -1,6 +1,7 @@
 # PKIS Wiki Index
 
 ## Sources
+- [[he-deep-2015]] — Deep Residual Learning for Image Recognition (deep-learning) (2026-10-08)
 - [[krizhevsky-imagenet-2012]] — ImageNet Classification with Deep Convolutional Neural Networks (deep-learning) (2026-10-08)
 - [[al-attention-2017]] — Attention Is All You Need (deep-learning) (2026-10-08)
 - [[iyengar-the-2025]] — The future of BPO services is Services-as-Software, turning hours into outcomes () (2026-10-02)

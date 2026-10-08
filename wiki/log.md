@@ -27410,3 +27410,7 @@
 ## [2026-10-08] committed | source
 - Committed: krizhevsky-imagenet-2012 → sources/krizhevsky-imagenet-2012.md
 - IRI: pkis:source:krizhevsky-imagenet-2012
+
+## [2026-10-08] committed | source
+- Committed: he-deep-2015 → sources/he-deep-2015.md
+- IRI: pkis:source:he-deep-2015
