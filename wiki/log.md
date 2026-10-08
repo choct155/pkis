@@ -27422,3 +27422,7 @@
 ## [2026-10-08] committed | source
 - Committed: yu-multiscale-2016 → sources/yu-multiscale-2016.md
 - IRI: pkis:source:yu-multiscale-2016
+
+## [2026-10-08] committed | course
+- Committed: li-stanford-2015 → sources/li-stanford-2015.md
+- IRI: pkis:source:li-stanford-2015
