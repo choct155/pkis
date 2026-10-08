@@ -27458,3 +27458,7 @@
 ## [2026-10-08] committed | source
 - Committed: graves-neural-2014 → sources/graves-neural-2014.md
 - IRI: pkis:source:graves-neural-2014
+
+## [2026-10-08] committed | source
+- Committed: vinyals-order-2015 → sources/vinyals-order-2015.md
+- IRI: pkis:source:vinyals-order-2015
