@@ -1,6 +1,7 @@
 # PKIS Wiki Index
 
 ## Sources
+- [[vinyals-pointer-2015]] — Pointer Networks (deep-learning) (2026-10-08)
 - [[bahdanau-neural-2014]] — Neural Machine Translation by Jointly Learning to Align and Translate (deep-learning) (2026-10-08)
 - [[rush-the-2018]] — The Annotated Transformer (deep-learning) (2026-10-08)
 - [[amodei-deep-2015]] — Deep Speech 2: End-to-End Speech Recognition in English and Mandarin (deep-learning) (2026-10-08)

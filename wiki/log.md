@@ -27450,3 +27450,7 @@
 ## [2026-10-08] committed | source
 - Committed: bahdanau-neural-2014 → sources/bahdanau-neural-2014.md
 - IRI: pkis:source:bahdanau-neural-2014
+
+## [2026-10-08] committed | source
+- Committed: vinyals-pointer-2015 → sources/vinyals-pointer-2015.md
+- IRI: pkis:source:vinyals-pointer-2015
