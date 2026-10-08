@@ -1,6 +1,7 @@
 # PKIS Wiki Index
 
 ## Sources
+- [[chen-variational-2016]] — Variational Lossy Autoencoder (deep-learning) (2026-10-08)
 - [[huang-gpipe-2019]] — GPipe: Easy Scaling with Micro-Batch Pipeline Parallelism (deep-learning) (2026-10-08)
 - [[kaplan-scaling-2020]] — Scaling Laws for Neural Language Models (deep-learning) (2026-10-08)
 - [[vinyals-order-2015]] — Order Matters: Sequence to Sequence for Sets (deep-learning) (2026-10-08)

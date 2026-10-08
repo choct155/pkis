@@ -27470,3 +27470,7 @@
 ## [2026-10-08] committed | source
 - Committed: huang-gpipe-2019 → sources/huang-gpipe-2019.md
 - IRI: pkis:source:huang-gpipe-2019
+
+## [2026-10-08] committed | source
+- Committed: chen-variational-2016 → sources/chen-variational-2016.md
+- IRI: pkis:source:chen-variational-2016
