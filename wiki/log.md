@@ -27430,3 +27430,7 @@
 ## [2026-10-08] committed | blog
 - Committed: karpathy-the-2015 → sources/karpathy-the-2015.md
 - IRI: pkis:source:karpathy-the-2015
+
+## [2026-10-08] committed | blog
+- Committed: olah-understanding-2015 → sources/olah-understanding-2015.md
+- IRI: pkis:source:olah-understanding-2015
