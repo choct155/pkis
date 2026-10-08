@@ -1,6 +1,7 @@
 # PKIS Wiki Index
 
 ## Sources
+- [[karpathy-the-2015]] — The Unreasonable Effectiveness of Recurrent Neural Networks (deep-learning) (2026-10-08)
 - [[li-stanford-2015]] — Stanford CS231n: Convolutional Neural Networks for Visual Recognition (deep-learning) (2026-10-08)
 - [[yu-multiscale-2016]] — Multi-Scale Context Aggregation by Dilated Convolutions (deep-learning) (2026-10-08)
 - [[he-identity-2016]] — Identity Mappings in Deep Residual Networks (deep-learning) (2026-10-08)

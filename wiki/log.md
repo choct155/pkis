@@ -27426,3 +27426,7 @@
 ## [2026-10-08] committed | course
 - Committed: li-stanford-2015 → sources/li-stanford-2015.md
 - IRI: pkis:source:li-stanford-2015
+
+## [2026-10-08] committed | blog
+- Committed: karpathy-the-2015 → sources/karpathy-the-2015.md
+- IRI: pkis:source:karpathy-the-2015
