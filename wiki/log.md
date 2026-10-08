@@ -27360,3 +27360,6 @@
 
 ## [2026-10-08] discarded | unknown
 - Discarded: al-neural-2017 (id: d1eb3d08-6119-4b37-bde5-0c09891724ac)
+
+## [2026-10-08] discarded | unknown
+- Discarded: al-relational-2018 (id: daa4d92f-55a8-472e-bfd1-ffd79af76356)
