@@ -6,6 +6,7 @@ collection_chapter: 2
 collection_order: 1
 concepts: []
 date_added: '2026-10-08'
+doc_path: sources/krizhevsky-imagenet-2012/krizhevsky-imagenet-2012.pdf
 doi: ''
 domain:
 - deep-learning
