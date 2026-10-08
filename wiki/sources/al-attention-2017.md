@@ -6,13 +6,14 @@ collection_chapter: 5
 collection_order: 10
 concepts: []
 date_added: '2026-10-08'
+date_updated: '2026-10-08'
 doi: ''
 domain:
 - deep-learning
 drive_id: ''
 drive_path: ''
 id: pkis:source:al-attention-2017
-slug: vaswani-attention-2017
+slug: al-attention-2017
 source_url: https://arxiv.org/abs/1706.03762
 status: unread
 tags:

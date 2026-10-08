@@ -27339,3 +27339,6 @@
 ## [2026-10-08] committed | source
 - Committed: al-attention-2017 → sources/al-attention-2017.md
 - IRI: pkis:source:al-attention-2017
+
+## [2026-10-08] edit | edit_node
+- pkis:source:al-attention-2017: fields=['slug'] sections=[]
