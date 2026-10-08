@@ -27466,3 +27466,7 @@
 ## [2026-10-08] committed | source
 - Committed: kaplan-scaling-2020 → sources/kaplan-scaling-2020.md
 - IRI: pkis:source:kaplan-scaling-2020
+
+## [2026-10-08] committed | source
+- Committed: huang-gpipe-2019 → sources/huang-gpipe-2019.md
+- IRI: pkis:source:huang-gpipe-2019
