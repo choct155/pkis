@@ -1,6 +1,7 @@
 # PKIS Wiki Index
 
 ## Sources
+- [[santoro-relational-2018]] — Relational Recurrent Neural Networks (deep-learning, symbolic-subsymbolic) (2026-10-08)
 - [[gilmer-neural-2017]] — Neural Message Passing for Quantum Chemistry (deep-learning) (2026-10-08)
 - [[santoro-a-2017]] — A Simple Neural Network Module for Relational Reasoning (deep-learning, symbolic-subsymbolic) (2026-10-08)
 - [[chen-variational-2016]] — Variational Lossy Autoencoder (deep-learning) (2026-10-08)

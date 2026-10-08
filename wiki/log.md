@@ -27482,3 +27482,7 @@
 ## [2026-10-08] committed | source
 - Committed: gilmer-neural-2017 → sources/gilmer-neural-2017.md
 - IRI: pkis:source:gilmer-neural-2017
+
+## [2026-10-08] committed | source
+- Committed: santoro-relational-2018 → sources/santoro-relational-2018.md
+- IRI: pkis:source:santoro-relational-2018
