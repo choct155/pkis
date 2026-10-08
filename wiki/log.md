@@ -27366,3 +27366,47 @@
 
 ## [2026-10-08] discarded | unknown
 - Discarded: grnwald-a-2004 (id: 4d25f88d-3cf2-462d-9136-9c8384f1b0b0)
+
+## [2026-10-08] staged | source-stub
+- Staged: amodei-deep-2015 (id: 82fd303d-bf1d-425e-95a7-3037a30967f5)
+- Title: Deep Speech 2: End-to-End Speech Recognition in English and Mandarin
+- Enrichment: full
+
+## [2026-10-08] staged | source-stub
+- Staged: kaplan-scaling-2020 (id: 1c3e1cfa-57e2-482d-8b55-3dc9efb74ea5)
+- Title: Scaling Laws for Neural Language Models
+- Enrichment: full
+
+## [2026-10-08] staged | source-stub
+- Staged: huang-gpipe-2019 (id: 06e7c09f-1afa-428f-8828-30b57ebf0e29)
+- Title: GPipe: Easy Scaling with Micro-Batch Pipeline Parallelism
+- Enrichment: full
+
+## [2026-10-08] staged | source-stub
+- Staged: chen-variational-2016 (id: 3dbca448-e9a1-461d-b18e-ff14d5de98d6)
+- Title: Variational Lossy Autoencoder
+- Enrichment: full
+
+## [2026-10-08] staged | source-stub
+- Staged: santoro-a-2017 (id: 65582c41-3e55-4430-b4bc-3a5e2abdb0cb)
+- Title: A Simple Neural Network Module for Relational Reasoning
+- Enrichment: full
+
+## [2026-10-08] staged | source-stub
+- Staged: gilmer-neural-2017 (id: 1f246876-0b84-4f71-aefb-767ab6e75533)
+- Title: Neural Message Passing for Quantum Chemistry
+- Enrichment: full
+
+## [2026-10-08] staged | source-stub
+- Staged: santoro-relational-2018 (id: 5537d17b-4bc1-4261-aac2-f7fa02cacad5)
+- Title: Relational Recurrent Neural Networks
+- Enrichment: full
+
+## [2026-10-08] staged | source-stub
+- Staged: grunwald-a-2004 (id: 14a0953c-290a-4cea-b498-bdc915ae94dd)
+- Title: A Tutorial Introduction to the Minimum Description Length Principle
+- Enrichment: full
+
+## [2026-10-08] committed | source
+- Committed: krizhevsky-imagenet-2012 → sources/krizhevsky-imagenet-2012.md
+- IRI: pkis:source:krizhevsky-imagenet-2012
