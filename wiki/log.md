@@ -27486,3 +27486,7 @@
 ## [2026-10-08] committed | source
 - Committed: santoro-relational-2018 → sources/santoro-relational-2018.md
 - IRI: pkis:source:santoro-relational-2018
+
+## [2026-10-08] committed | source
+- Committed: aaronson-quantifying-2014 → sources/aaronson-quantifying-2014.md
+- IRI: pkis:source:aaronson-quantifying-2014

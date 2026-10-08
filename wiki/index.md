@@ -1,6 +1,7 @@
 # PKIS Wiki Index
 
 ## Sources
+- [[aaronson-quantifying-2014]] — Quantifying the Rise and Fall of Complexity in Closed Systems: The Coffee Automaton (information-theory) (2026-10-08)
 - [[santoro-relational-2018]] — Relational Recurrent Neural Networks (deep-learning, symbolic-subsymbolic) (2026-10-08)
 - [[gilmer-neural-2017]] — Neural Message Passing for Quantum Chemistry (deep-learning) (2026-10-08)
 - [[santoro-a-2017]] — A Simple Neural Network Module for Relational Reasoning (deep-learning, symbolic-subsymbolic) (2026-10-08)
