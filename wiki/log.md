@@ -27474,3 +27474,7 @@
 ## [2026-10-08] committed | source
 - Committed: chen-variational-2016 → sources/chen-variational-2016.md
 - IRI: pkis:source:chen-variational-2016
+
+## [2026-10-08] committed | source
+- Committed: santoro-a-2017 → sources/santoro-a-2017.md
+- IRI: pkis:source:santoro-a-2017
