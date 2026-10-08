@@ -27342,3 +27342,6 @@
 
 ## [2026-10-08] edit | edit_node
 - pkis:source:al-attention-2017: fields=['slug'] sections=[]
+
+## [2026-10-08] discarded | unknown
+- Discarded: al-deep-2015 (id: a09a6a11-4d31-49b2-ae45-f742851de326)
