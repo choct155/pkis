@@ -27494,3 +27494,7 @@
 ## [2026-10-08] committed | blog
 - Committed: aaronson-the-2011 → sources/aaronson-the-2011.md
 - IRI: pkis:source:aaronson-the-2011
+
+## [2026-10-08] committed | source
+- Committed: shen-kolmogorov-2017 → sources/shen-kolmogorov-2017.md
+- IRI: pkis:source:shen-kolmogorov-2017
