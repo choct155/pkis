@@ -27434,3 +27434,7 @@
 ## [2026-10-08] committed | blog
 - Committed: olah-understanding-2015 → sources/olah-understanding-2015.md
 - IRI: pkis:source:olah-understanding-2015
+
+## [2026-10-08] committed | source
+- Committed: zaremba-recurrent-2014 → sources/zaremba-recurrent-2014.md
+- IRI: pkis:source:zaremba-recurrent-2014
