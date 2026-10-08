@@ -1,6 +1,7 @@
 # PKIS Wiki Index
 
 ## Sources
+- [[yu-multiscale-2016]] — Multi-Scale Context Aggregation by Dilated Convolutions (deep-learning) (2026-10-08)
 - [[he-identity-2016]] — Identity Mappings in Deep Residual Networks (deep-learning) (2026-10-08)
 - [[he-deep-2015]] — Deep Residual Learning for Image Recognition (deep-learning) (2026-10-08)
 - [[krizhevsky-imagenet-2012]] — ImageNet Classification with Deep Convolutional Neural Networks (deep-learning) (2026-10-08)

@@ -27418,3 +27418,7 @@
 ## [2026-10-08] committed | source
 - Committed: he-identity-2016 → sources/he-identity-2016.md
 - IRI: pkis:source:he-identity-2016
+
+## [2026-10-08] committed | source
+- Committed: yu-multiscale-2016 → sources/yu-multiscale-2016.md
+- IRI: pkis:source:yu-multiscale-2016
