@@ -27462,3 +27462,7 @@
 ## [2026-10-08] committed | source
 - Committed: vinyals-order-2015 → sources/vinyals-order-2015.md
 - IRI: pkis:source:vinyals-order-2015
+
+## [2026-10-08] committed | source
+- Committed: kaplan-scaling-2020 → sources/kaplan-scaling-2020.md
+- IRI: pkis:source:kaplan-scaling-2020

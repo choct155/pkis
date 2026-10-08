@@ -1,6 +1,7 @@
 # PKIS Wiki Index
 
 ## Sources
+- [[kaplan-scaling-2020]] — Scaling Laws for Neural Language Models (deep-learning) (2026-10-08)
 - [[vinyals-order-2015]] — Order Matters: Sequence to Sequence for Sets (deep-learning) (2026-10-08)
 - [[graves-neural-2014]] — Neural Turing Machines (deep-learning) (2026-10-08)
 - [[vinyals-pointer-2015]] — Pointer Networks (deep-learning) (2026-10-08)
