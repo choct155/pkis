@@ -27454,3 +27454,7 @@
 ## [2026-10-08] committed | source
 - Committed: vinyals-pointer-2015 → sources/vinyals-pointer-2015.md
 - IRI: pkis:source:vinyals-pointer-2015
+
+## [2026-10-08] committed | source
+- Committed: graves-neural-2014 → sources/graves-neural-2014.md
+- IRI: pkis:source:graves-neural-2014
