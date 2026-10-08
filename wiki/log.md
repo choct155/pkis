@@ -27490,3 +27490,7 @@
 ## [2026-10-08] committed | source
 - Committed: aaronson-quantifying-2014 → sources/aaronson-quantifying-2014.md
 - IRI: pkis:source:aaronson-quantifying-2014
+
+## [2026-10-08] committed | blog
+- Committed: aaronson-the-2011 → sources/aaronson-the-2011.md
+- IRI: pkis:source:aaronson-the-2011
