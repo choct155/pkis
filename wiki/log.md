@@ -27438,3 +27438,7 @@
 ## [2026-10-08] committed | source
 - Committed: zaremba-recurrent-2014 → sources/zaremba-recurrent-2014.md
 - IRI: pkis:source:zaremba-recurrent-2014
+
+## [2026-10-08] committed | source
+- Committed: amodei-deep-2015 → sources/amodei-deep-2015.md
+- IRI: pkis:source:amodei-deep-2015

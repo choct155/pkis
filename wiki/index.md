@@ -1,6 +1,7 @@
 # PKIS Wiki Index
 
 ## Sources
+- [[amodei-deep-2015]] — Deep Speech 2: End-to-End Speech Recognition in English and Mandarin (deep-learning) (2026-10-08)
 - [[zaremba-recurrent-2014]] — Recurrent Neural Network Regularization (deep-learning) (2026-10-08)
 - [[olah-understanding-2015]] — Understanding LSTM Networks (deep-learning) (2026-10-08)
 - [[karpathy-the-2015]] — The Unreasonable Effectiveness of Recurrent Neural Networks (deep-learning) (2026-10-08)
