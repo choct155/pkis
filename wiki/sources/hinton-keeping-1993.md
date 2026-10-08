@@ -6,6 +6,7 @@ collection_chapter: 8
 collection_order: 26
 concepts: []
 date_added: '2026-10-08'
+doc_path: sources/hinton-keeping-1993/hinton-keeping-1993.pdf
 doi: 10.1145/168304.168306
 domain:
 - deep-learning
