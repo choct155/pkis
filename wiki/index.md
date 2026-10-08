@@ -1,6 +1,7 @@
 # PKIS Wiki Index
 
 ## Sources
+- [[grunwald-a-2004]] — A Tutorial Introduction to the Minimum Description Length Principle (information-theory) (2026-10-08)
 - [[shen-kolmogorov-2017]] — Kolmogorov Complexity and Algorithmic Randomness (information-theory) (2026-10-08)
 - [[aaronson-the-2011]] — The First Law of Complexodynamics (information-theory) (2026-10-08)
 - [[aaronson-quantifying-2014]] — Quantifying the Rise and Fall of Complexity in Closed Systems: The Coffee Automaton (information-theory) (2026-10-08)

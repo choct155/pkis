@@ -27498,3 +27498,7 @@
 ## [2026-10-08] committed | source
 - Committed: shen-kolmogorov-2017 → sources/shen-kolmogorov-2017.md
 - IRI: pkis:source:shen-kolmogorov-2017
+
+## [2026-10-08] committed | source
+- Committed: grunwald-a-2004 → sources/grunwald-a-2004.md
+- IRI: pkis:source:grunwald-a-2004
