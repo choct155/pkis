@@ -27510,3 +27510,6 @@
 ## [2026-10-08] committed | thesis
 - Committed: legg-machine-2008 → sources/legg-machine-2008.md
 - IRI: pkis:source:legg-machine-2008
+
+## [2026-10-08] edit | edit_node
+- pkis:source:sutskever-s-list: fields=['aliases', 'authors', 'domain', 'isbn', 'tags', 'title', 'type', 'year'] sections=['Reading Order', 'Summary']
