@@ -27200,3 +27200,142 @@
 
 ## [2026-10-05] edit | edit_node
 - pkis:framework:knowledge-based-agent: fields=['sources'] sections=[]
+
+## [2026-10-08] staged | source-stub
+- Staged: krizhevsky-imagenet-2012 (id: e9652a19-aedc-46ae-bbe0-cc0b39e65193)
+- Title: ImageNet Classification with Deep Convolutional Neural Networks
+- Enrichment: partial
+
+## [2026-10-08] staged | source-stub
+- Staged: he-deep-2015 (id: a5409429-2015-4d7c-b628-61dc1b3b5fb1)
+- Title: Deep Residual Learning for Image Recognition
+- Enrichment: full
+
+## [2026-10-08] staged | source-stub
+- Staged: he-identity-2016 (id: 7bbd142d-e07e-4018-9789-8078c143099e)
+- Title: Identity Mappings in Deep Residual Networks
+- Enrichment: full
+
+## [2026-10-08] staged | source-stub
+- Staged: yu-multiscale-2016 (id: 6cc499b2-5553-4b94-bf83-d13d344d2439)
+- Title: Multi-Scale Context Aggregation by Dilated Convolutions
+- Enrichment: full
+
+## [2026-10-08] staged | source-stub
+- Staged: li-stanford-2015 (id: 81455556-c8be-4e90-b2aa-28fdc8891f34)
+- Title: Stanford CS231n: Convolutional Neural Networks for Visual Recognition
+- Enrichment: full
+
+## [2026-10-08] staged | source-stub
+- Staged: karpathy-the-2015 (id: deaaa43b-84e2-40f0-b866-bf5de05ba6df)
+- Title: The Unreasonable Effectiveness of Recurrent Neural Networks
+- Enrichment: full
+
+## [2026-10-08] staged | source-stub
+- Staged: olah-understanding-2015 (id: a1e21c46-e605-4372-8cf2-cc5fa61579ca)
+- Title: Understanding LSTM Networks
+- Enrichment: partial
+
+## [2026-10-08] staged | source-stub
+- Staged: zaremba-recurrent-2014 (id: 33b3ad11-c10f-4195-9936-6ae484c25515)
+- Title: Recurrent Neural Network Regularization
+- Enrichment: full
+
+## [2026-10-08] staged | source-stub
+- Staged: al-deep-2015 (id: a09a6a11-4d31-49b2-ae45-f742851de326)
+- Title: Deep Speech 2: End-to-End Speech Recognition in English and Mandarin
+- Enrichment: full
+
+## [2026-10-08] staged | source-stub
+- Staged: al-attention-2017 (id: 1b0e1872-f912-408e-bf60-e9589e67d7cb)
+- Title: Attention Is All You Need
+- Enrichment: full
+
+## [2026-10-08] staged | source-stub
+- Staged: rush-the-2018 (id: 509c821c-b82b-4146-93cb-fd94bcf9b555)
+- Title: The Annotated Transformer
+- Enrichment: full
+
+## [2026-10-08] staged | source-stub
+- Staged: bahdanau-neural-2014 (id: a994fe36-e6f8-41f3-a5f8-8bc172eae369)
+- Title: Neural Machine Translation by Jointly Learning to Align and Translate
+- Enrichment: full
+
+## [2026-10-08] staged | source-stub
+- Staged: vinyals-pointer-2015 (id: 2fb10924-6d34-4211-923c-bb03ef104935)
+- Title: Pointer Networks
+- Enrichment: full
+
+## [2026-10-08] staged | source-stub
+- Staged: graves-neural-2014 (id: 3c6f0dd3-5344-4db2-9f1b-37b2eea1edcd)
+- Title: Neural Turing Machines
+- Enrichment: full
+
+## [2026-10-08] staged | source-stub
+- Staged: vinyals-order-2015 (id: 654d0325-7e30-4c7d-9fd3-1e78437341d9)
+- Title: Order Matters: Sequence to Sequence for Sets
+- Enrichment: full
+
+## [2026-10-08] staged | source-stub
+- Staged: al-scaling-2020 (id: 2c2a270b-8924-446f-942a-60832b94f19e)
+- Title: Scaling Laws for Neural Language Models
+- Enrichment: full
+
+## [2026-10-08] staged | source-stub
+- Staged: al-gpipe-2019 (id: ff774d25-a98d-4267-9c0b-6bc90726b0c9)
+- Title: GPipe: Easy Scaling with Micro-Batch Pipeline Parallelism
+- Enrichment: full
+
+## [2026-10-08] staged | source-stub
+- Staged: al-variational-2016 (id: b26d1591-f38d-4552-972c-41ce1cd1a666)
+- Title: Variational Lossy Autoencoder
+- Enrichment: full
+
+## [2026-10-08] staged | source-stub
+- Staged: al-a-2017 (id: 8f51ba73-9b82-4743-8f79-8d2d5f6e576e)
+- Title: A Simple Neural Network Module for Relational Reasoning
+- Enrichment: full
+
+## [2026-10-08] staged | source-stub
+- Staged: al-neural-2017 (id: d1eb3d08-6119-4b37-bde5-0c09891724ac)
+- Title: Neural Message Passing for Quantum Chemistry
+- Enrichment: full
+
+## [2026-10-08] staged | source-stub
+- Staged: al-relational-2018 (id: daa4d92f-55a8-472e-bfd1-ffd79af76356)
+- Title: Relational Recurrent Neural Networks
+- Enrichment: full
+
+## [2026-10-08] staged | source-stub
+- Staged: aaronson-quantifying-2014 (id: 76fc0347-bdf9-4d33-839b-10059cea7dd9)
+- Title: Quantifying the Rise and Fall of Complexity in Closed Systems: The Coffee Automaton
+- Enrichment: full
+
+## [2026-10-08] staged | source-stub
+- Staged: aaronson-the-2011 (id: 2dc2a3fb-d2b5-4e61-8f74-ed5b31f41efe)
+- Title: The First Law of Complexodynamics
+- Enrichment: full
+
+## [2026-10-08] staged | source-stub
+- Staged: shen-kolmogorov-2017 (id: 862fcbf8-a81d-41b4-b779-7a8c8771083f)
+- Title: Kolmogorov Complexity and Algorithmic Randomness
+- Enrichment: partial
+
+## [2026-10-08] staged | source-stub
+- Staged: grnwald-a-2004 (id: 4d25f88d-3cf2-462d-9136-9c8384f1b0b0)
+- Title: A Tutorial Introduction to the Minimum Description Length Principle
+- Enrichment: full
+
+## [2026-10-08] staged | source-stub
+- Staged: hinton-keeping-1993 (id: f7fd4c3f-cbc4-44db-944b-53bcd34b1306)
+- Title: Keeping Neural Networks Simple by Minimizing the Description Length of the Weights
+- Enrichment: partial
+
+## [2026-10-08] staged | source-stub
+- Staged: legg-machine-2008 (id: 64afc479-017d-4c77-9202-9d4f39847c41)
+- Title: Machine Super Intelligence
+- Enrichment: minimal
+
+## [2026-10-08] committed | source
+- Committed: al-attention-2017 → sources/al-attention-2017.md
+- IRI: pkis:source:al-attention-2017

@@ -1,6 +1,7 @@
 # PKIS Wiki Index
 
 ## Sources
+- [[al-attention-2017]] — Attention Is All You Need (deep-learning) (2026-10-08)
 - [[iyengar-the-2025]] — The future of BPO services is Services-as-Software, turning hours into outcomes () (2026-10-02)
 - [[garraldabarrio-knowledgecentric-2026]] — Knowledge-Centric Information Systems () (2026-10-02)
 - [[ros-large-2025]] — Large Language Models for Combinatorial Optimization: A Systematic Review () (2026-10-02)
