@@ -1,6 +1,7 @@
 # PKIS Wiki Index
 
 ## Sources
+- [[he-identity-2016]] — Identity Mappings in Deep Residual Networks (deep-learning) (2026-10-08)
 - [[he-deep-2015]] — Deep Residual Learning for Image Recognition (deep-learning) (2026-10-08)
 - [[krizhevsky-imagenet-2012]] — ImageNet Classification with Deep Convolutional Neural Networks (deep-learning) (2026-10-08)
 - [[al-attention-2017]] — Attention Is All You Need (deep-learning) (2026-10-08)

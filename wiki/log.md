@@ -27414,3 +27414,7 @@
 ## [2026-10-08] committed | source
 - Committed: he-deep-2015 → sources/he-deep-2015.md
 - IRI: pkis:source:he-deep-2015
+
+## [2026-10-08] committed | source
+- Committed: he-identity-2016 → sources/he-identity-2016.md
+- IRI: pkis:source:he-identity-2016
