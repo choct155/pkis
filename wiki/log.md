@@ -27522,3 +27522,6 @@
 
 ## [2026-10-12] edit | edit_node
 - pkis:technique:dropout: fields=['sources'] sections=[]
+
+## [2026-10-12] edit | edit_node
+- pkis:technique:lstm: fields=['sources'] sections=[]

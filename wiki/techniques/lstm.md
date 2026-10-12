@@ -15,7 +15,7 @@ contrasts-with:
 - transformer-attention-mechanisms
 coverage: 1
 date_created: '2026-06-09'
-date_updated: '2026-06-09'
+date_updated: '2026-10-12'
 domain:
 - deep-learning
 id: pkis:technique:lstm
@@ -25,6 +25,7 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - russell-norvig-aima-ch21
+- zaremba-recurrent-2014
 specializes:
 - recurrent-neural-network
 tags:
