@@ -27552,3 +27552,6 @@
 
 ## [2026-10-12] edit | edit_node
 - pkis:concept:self-attention: fields=['sources'] sections=[]
+
+## [2026-10-12] edit | edit_node
+- pkis:framework:transformer-architecture: fields=['sources'] sections=[]

@@ -17,7 +17,7 @@ contrasts-with:
 - long-short-term-memory-lstm
 coverage: 1
 date_created: '2026-06-11'
-date_updated: '2026-08-17'
+date_updated: '2026-10-12'
 domain:
 - machine-learning
 - deep-learning
@@ -34,6 +34,7 @@ sources:
 - murphy-pml1-intro-ch15
 - murphy-pml2-advanced-ch16
 - serret-understanding-2026
+- al-attention-2017
 tags:
 - architecture
 - attention
