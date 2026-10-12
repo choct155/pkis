@@ -27537,3 +27537,6 @@
 
 ## [2026-10-12] edit | edit_node
 - pkis:technique:residual-network: fields=['sources'] sections=[]
+
+## [2026-10-12] edit | edit_node
+- pkis:framework:deep-learning: fields=['sources'] sections=[]
