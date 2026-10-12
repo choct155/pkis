@@ -17,7 +17,7 @@ contrasts-with:
 - recurrent-neural-network
 coverage: 1
 date_created: '2026-05-31'
-date_updated: '2026-05-31'
+date_updated: '2026-10-12'
 domain:
 - deep-learning
 extends:
@@ -29,6 +29,7 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - soydaner-attention-2022
+- al-attention-2017
 tags:
 - attention
 - transformers
