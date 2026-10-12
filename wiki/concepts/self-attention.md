@@ -14,7 +14,7 @@ contrasts-with:
 - recurrent-neural-network
 coverage: 1
 date_created: '2026-06-11'
-date_updated: '2026-06-11'
+date_updated: '2026-10-12'
 domain:
 - machine-learning
 - deep-learning
@@ -28,6 +28,7 @@ prerequisite-of:
 related_concepts: []
 sources:
 - murphy-pml1-intro-ch15
+- al-attention-2017
 tags:
 - transformer
 - attention

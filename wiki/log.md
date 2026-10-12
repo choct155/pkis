@@ -27549,3 +27549,6 @@
 
 ## [2026-10-12] edit | edit_node
 - pkis:technique:attention-mechanism: fields=['sources'] sections=[]
+
+## [2026-10-12] edit | edit_node
+- pkis:concept:self-attention: fields=['sources'] sections=[]
