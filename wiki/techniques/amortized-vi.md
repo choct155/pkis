@@ -11,7 +11,7 @@ component_scores:
   principled_mechanism: null
 coverage: 1
 date_created: '2026-06-11'
-date_updated: '2026-08-31'
+date_updated: '2026-10-12'
 domain:
 - machine-learning
 - deep-learning
@@ -33,6 +33,7 @@ sources:
 - huang-aline-2025
 - huang-amortized-2024
 - yang-priorguide-2025
+- chen-variational-2016
 specializes:
 - amortized-inference
 tags:
