@@ -27612,3 +27612,6 @@
 
 ## [2026-10-12] edit | edit_node
 - pkis:concept:associative-memory: fields=['sources'] sections=[]
+
+## [2026-10-12] edit | edit_node
+- pkis:concept:neural-scaling-laws: fields=['sources'] sections=[]
