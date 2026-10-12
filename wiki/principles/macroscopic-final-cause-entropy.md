@@ -8,7 +8,7 @@ component_scores:
   violations: null
 coverage: 1
 date_created: '2026-06-09'
-date_updated: '2026-06-09'
+date_updated: '2026-10-12'
 domain:
 - bayesian-stats
 - information-theory
@@ -19,6 +19,7 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - jaynes-probability-ch20
+- aaronson-quantifying-2014
 tags:
 - maximum-entropy
 - teleology

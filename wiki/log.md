@@ -27588,3 +27588,6 @@
 
 ## [2026-10-12] edit | edit_node
 - pkis:technique:message-passing-neural-networks: fields=['sources'] sections=[]
+
+## [2026-10-12] edit | edit_node
+- pkis:principle:macroscopic-final-cause-entropy: fields=['sources'] sections=[]
