@@ -4,7 +4,7 @@ aliases:
 also_type: []
 coverage: 7
 date_created: 2026-05-20
-date_updated: '2026-06-20'
+date_updated: '2026-10-12'
 domain:
 - knowledge-representation
 - deep-learning
@@ -32,6 +32,7 @@ sources:
 - zhang-variational-2018
 - cimiano-ontology-nlp-ch09
 - gulli-agentic-design-patterns-ch14
+- santoro-a-2017
 tags:
 - knowledge-graphs
 - multi-hop
