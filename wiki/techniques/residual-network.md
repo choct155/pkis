@@ -13,7 +13,7 @@ component_scores:
   principled_mechanism: null
 coverage: 1
 date_created: '2026-06-09'
-date_updated: '2026-06-09'
+date_updated: '2026-10-12'
 domain:
 - deep-learning
 id: pkis:technique:residual-network
@@ -23,6 +23,8 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - russell-norvig-aima-ch21
+- he-deep-2015
+- he-identity-2016
 tags:
 - very-deep-networks
 - skip-connections
