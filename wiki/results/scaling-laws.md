@@ -9,7 +9,7 @@ component_scores:
   statement: null
 coverage: 1
 date_created: '2026-06-01'
-date_updated: '2026-06-01'
+date_updated: '2026-10-12'
 domain:
 - deep-learning
 id: pkis:result:scaling-laws
@@ -19,6 +19,7 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - bayless-neurosymbolic-2025
+- kaplan-scaling-2020
 tags:
 - scaling-laws
 - compute-efficiency
