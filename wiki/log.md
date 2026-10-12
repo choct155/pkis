@@ -27585,3 +27585,6 @@
 
 ## [2026-10-12] edit | edit_node
 - pkis:technique:amortized-vi: fields=['sources'] sections=[]
+
+## [2026-10-12] edit | edit_node
+- pkis:technique:message-passing-neural-networks: fields=['sources'] sections=[]
