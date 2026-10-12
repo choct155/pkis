@@ -11,7 +11,7 @@ component_scores:
   principled_mechanism: null
 coverage: 1
 date_created: '2026-06-09'
-date_updated: '2026-06-09'
+date_updated: '2026-10-12'
 domain:
 - deep-learning
 - knowledge-representation
@@ -22,6 +22,8 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - russell-norvig-aima-ch23
+- al-attention-2017
+- bahdanau-neural-2014
 tags:
 - nlp
 - translation
