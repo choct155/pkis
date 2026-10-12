@@ -27603,3 +27603,6 @@
 
 ## [2026-10-12] edit | edit_node
 - pkis:concept:convolutional-neural-network: fields=['sources'] sections=[]
+
+## [2026-10-12] edit | edit_node
+- pkis:technique:gpu-accelerated-deep-learning: fields=['sources'] sections=[]

@@ -13,7 +13,7 @@ component_scores:
   principled_mechanism: null
 coverage: 1
 date_created: '2026-06-11'
-date_updated: '2026-06-11'
+date_updated: '2026-10-12'
 domain:
 - deep-learning
 - hardware
@@ -27,6 +27,7 @@ prerequisite-of:
 related_concepts: []
 sources:
 - goodfellow-deeplearning-ch12
+- huang-gpipe-2019
 tags:
 - GPU
 - CUDA
