@@ -15,7 +15,7 @@ contrasts-with:
 - multilayer-perceptron
 coverage: 1
 date_created: '2026-06-09'
-date_updated: '2026-08-31'
+date_updated: '2026-10-12'
 domain:
 - deep-learning
 id: pkis:technique:recurrent-neural-network
@@ -29,6 +29,8 @@ sources:
 - russell-norvig-aima-ch21
 - russell-norvig-aima-ch24
 - revach-kalmannet-2022
+- santoro-relational-2018
+- zaremba-recurrent-2014
 tags:
 - sequential-data
 - internal-state

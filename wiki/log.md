@@ -27513,3 +27513,6 @@
 
 ## [2026-10-08] edit | edit_node
 - pkis:source:sutskever-s-list: fields=['aliases', 'authors', 'domain', 'isbn', 'tags', 'title', 'type', 'year'] sections=['Reading Order', 'Summary']
+
+## [2026-10-12] edit | edit_node
+- pkis:technique:recurrent-neural-network: fields=['sources'] sections=[]
