@@ -14,7 +14,7 @@ component_scores:
   transfer: null
 coverage: 1
 date_created: '2026-06-11'
-date_updated: '2026-06-11'
+date_updated: '2026-10-12'
 domain:
 - deep-learning
 - neural-network-architecture
@@ -28,6 +28,7 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - murphy-pml2-advanced-ch16
+- he-identity-2016
 tags:
 - ResNet
 - skip-connection

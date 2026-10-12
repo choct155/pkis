@@ -27531,3 +27531,6 @@
 
 ## [2026-10-12] edit | edit_node
 - pkis:technique:residual-block: fields=['sources'] sections=[]
+
+## [2026-10-12] edit | edit_node
+- pkis:concept:residual-skip-connection: fields=['sources'] sections=[]
