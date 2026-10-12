@@ -12,7 +12,7 @@ component_scores:
   transfer: null
 coverage: 1
 date_created: '2026-06-11'
-date_updated: '2026-06-11'
+date_updated: '2026-10-12'
 domain:
 - deep-learning
 - generative-models
@@ -27,6 +27,7 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - goodfellow-deeplearning-ch20
+- chen-variational-2016
 tags:
 - generative-model
 - latent-variable
