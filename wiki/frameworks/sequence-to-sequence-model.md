@@ -12,7 +12,7 @@ component_scores:
   structure: null
 coverage: 1
 date_created: '2026-06-09'
-date_updated: '2026-06-09'
+date_updated: '2026-10-12'
 domain:
 - deep-learning
 id: pkis:framework:sequence-to-sequence-model
@@ -22,6 +22,9 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - russell-norvig-aima-ch24
+- al-attention-2017
+- vinyals-order-2015
+- vinyals-pointer-2015
 tags:
 - nlp
 - machine-translation
