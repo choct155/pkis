@@ -27576,3 +27576,6 @@
 
 ## [2026-10-12] edit | edit_node
 - pkis:technique:variational-autoencoder: fields=['sources'] sections=[]
+
+## [2026-10-12] edit | edit_node
+- pkis:concept:autoencoder-dnn: fields=['sources'] sections=[]
