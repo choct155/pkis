@@ -13,7 +13,7 @@ contrasts-with:
 - posterior-collapse
 coverage: 1
 date_created: '2026-06-11'
-date_updated: '2026-06-11'
+date_updated: '2026-10-12'
 domain:
 - machine-learning
 - generative-models
@@ -28,6 +28,7 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - murphy-pml2-advanced-ch21
+- borsos-audiolm-2023
 tags:
 - VAE
 - discrete-latent
