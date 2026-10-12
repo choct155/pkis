@@ -3,7 +3,7 @@ aliases: []
 also_type: []
 coverage: 4
 date_created: 2026-05-20
-date_updated: '2026-06-20'
+date_updated: '2026-10-12'
 domain:
 - knowledge-representation
 - symbolic-subsymbolic
@@ -26,6 +26,7 @@ sources:
 - yang-hotpotqa-2018
 - zhang-variational-2018
 - gulli-agentic-design-patterns-ch17
+- santoro-a-2017
 tags:
 - knowledge-graphs
 - inference
