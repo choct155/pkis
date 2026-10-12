@@ -12,7 +12,7 @@ component_scores:
   structure: null
 coverage: 1
 date_created: '2026-06-11'
-date_updated: '2026-06-11'
+date_updated: '2026-10-12'
 domain:
 - deep-learning
 - sequence-modeling
@@ -29,6 +29,8 @@ related_concepts: []
 sources:
 - goodfellow-deeplearning-ch10
 - goodfellow-deeplearning-ch12
+- al-attention-2017
+- vinyals-order-2015
 tags:
 - RNN
 - machine-translation
