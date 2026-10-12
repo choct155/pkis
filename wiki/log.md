@@ -27597,3 +27597,6 @@
 
 ## [2026-10-12] edit | edit_node
 - pkis:technique:convolutional-neural-network-architecture: fields=['sources'] sections=[]
+
+## [2026-10-12] edit | edit_node
+- pkis:technique:convolutional-neural-networks: fields=['sources'] sections=[]
