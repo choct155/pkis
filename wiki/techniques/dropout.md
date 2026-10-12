@@ -9,7 +9,7 @@ applies:
 - overfitting-and-underfitting
 coverage: 1
 date_created: 2026-05-20
-date_updated: 2026-05-20
+date_updated: '2026-10-12'
 domain:
 - deep-learning
 - optimization
@@ -24,6 +24,7 @@ related_concepts:
 - '[[bias-variance-tradeoff]]'
 sources:
 - '[[nielsen-nndl]]'
+- zaremba-recurrent-2014
 tags:
 - regularization
 - neural-networks
