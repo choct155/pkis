@@ -3,7 +3,7 @@ aliases: []
 also_type: []
 coverage: 1
 date_created: 2026-05-20
-date_updated: '2026-06-20'
+date_updated: '2026-10-12'
 domain:
 - deep-learning
 - symbolic-subsymbolic
@@ -17,6 +17,7 @@ related_concepts:
 sources:
 - '[[belle-future-neurosymbolic-2025]]'
 - gulli-agentic-design-patterns-ch17
+- kaplan-scaling-2020
 tags:
 - llm
 - scaling-laws
