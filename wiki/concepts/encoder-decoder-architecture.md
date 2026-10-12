@@ -14,7 +14,7 @@ component_scores:
   transfer: null
 coverage: 1
 date_created: '2026-06-11'
-date_updated: '2026-06-11'
+date_updated: '2026-10-12'
 domain:
 - machine-learning
 - deep-learning
@@ -28,6 +28,9 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - murphy-pml1-intro-ch15
+- al-attention-2017
+- bahdanau-neural-2014
+- vinyals-pointer-2015
 tags:
 - seq2seq
 - machine-translation
