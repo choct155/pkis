@@ -12,7 +12,7 @@ component_scores:
   transfer: null
 coverage: 1
 date_created: '2026-06-08'
-date_updated: '2026-06-08'
+date_updated: '2026-10-12'
 domain:
 - deep-learning
 - statistical-learning
@@ -25,6 +25,7 @@ prerequisite-of:
 related_concepts: []
 sources:
 - mackay-itila-ch42
+- graves-neural-2014
 tags:
 - associative-memory
 - content-addressable-memory
