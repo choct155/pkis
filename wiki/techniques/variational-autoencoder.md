@@ -5,7 +5,7 @@ also_type:
 - framework
 coverage: 3
 date_created: 2026-05-20
-date_updated: 2026-05-20
+date_updated: '2026-10-12'
 domain:
 - bayesian-stats
 - deep-learning
@@ -32,6 +32,7 @@ sources:
 - '[[ganguly-intro-vi]]'
 - '[[sjolund-parametric-vi]]'
 - '[[yellapragada-variational-bayes]]'
+- chen-variational-2016
 specializes:
 - autoencoder
 - latent-variable-models
