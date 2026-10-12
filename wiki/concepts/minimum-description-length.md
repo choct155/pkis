@@ -14,7 +14,7 @@ component_scores:
   transfer: null
 coverage: 1
 date_created: '2026-06-11'
-date_updated: '2026-06-11'
+date_updated: '2026-10-12'
 domain:
 - information-theory
 - statistics
@@ -30,6 +30,7 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - murphy-pml1-intro-ch05
+- grunwald-a-2004
 tags:
 - model-selection
 - compression
