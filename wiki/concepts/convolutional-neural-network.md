@@ -14,7 +14,7 @@ component_scores:
   transfer: null
 coverage: 1
 date_created: '2026-06-11'
-date_updated: '2026-06-20'
+date_updated: '2026-10-12'
 domain:
 - deep-learning
 - computer-vision
@@ -30,6 +30,7 @@ related_concepts: []
 sources:
 - murphy-pml1-intro-ch14
 - nielsen-nndl-ch06
+- yu-multiscale-2016
 specializes:
 - convolutional-neural-networks
 tags:
