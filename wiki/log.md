@@ -27546,3 +27546,6 @@
 
 ## [2026-10-12] edit | edit_node
 - pkis:framework:sequence-to-sequence-model: fields=['sources'] sections=[]
+
+## [2026-10-12] edit | edit_node
+- pkis:technique:attention-mechanism: fields=['sources'] sections=[]

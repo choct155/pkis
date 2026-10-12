@@ -13,7 +13,7 @@ component_scores:
   principled_mechanism: null
 coverage: 1
 date_created: '2026-06-11'
-date_updated: '2026-09-14'
+date_updated: '2026-10-12'
 domain:
 - deep-learning
 - NLP
@@ -30,6 +30,7 @@ related_concepts: []
 sources:
 - goodfellow-deeplearning-ch12
 - ho-language-2026
+- al-attention-2017
 tags:
 - alignment
 - machine-translation
