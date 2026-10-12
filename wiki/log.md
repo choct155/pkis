@@ -27567,3 +27567,6 @@
 
 ## [2026-10-12] edit | edit_node
 - pkis:framework:encoder-decoder-seq2seq: fields=['sources'] sections=[]
+
+## [2026-10-12] edit | edit_node
+- pkis:principle:end-to-end-learning: fields=['sources'] sections=[]
