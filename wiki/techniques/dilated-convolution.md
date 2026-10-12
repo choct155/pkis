@@ -13,7 +13,7 @@ component_scores:
   principled_mechanism: null
 coverage: 1
 date_created: '2026-06-11'
-date_updated: '2026-06-11'
+date_updated: '2026-10-12'
 domain:
 - deep-learning
 - computer-vision
@@ -26,6 +26,7 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - murphy-pml1-intro-ch14
+- yu-multiscale-2016
 tags:
 - atrous-convolution
 - receptive-field

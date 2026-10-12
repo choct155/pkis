@@ -27591,3 +27591,6 @@
 
 ## [2026-10-12] edit | edit_node
 - pkis:principle:macroscopic-final-cause-entropy: fields=['sources'] sections=[]
+
+## [2026-10-12] edit | edit_node
+- pkis:technique:dilated-convolution: fields=['sources'] sections=[]
