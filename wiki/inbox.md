@@ -44,6 +44,18 @@ Cost alerts from the Comptroller.
 <!-- - [ ] Weekly variable cost $XX.XX — exceeds threshold (date) -->
 
 ## Lab
+- [2026-10-18] Cluster `composite-credibility` idle 139d (>= 28d).
+- [2026-10-18] Cluster `compositional-query-grounding` idle 139d (>= 28d).
+- [2026-10-18] Cluster `embedding-ontology-alignment` idle 139d (>= 28d).
+- [2026-10-18] Cluster `evaluation-infrastructure` idle 139d (>= 28d).
+- [2026-10-18] Cluster `intensional-grounding` idle 139d (>= 28d).
+- [2026-10-18] Cluster `learned-symbol-grounding` idle 139d (>= 28d).
+- [2026-10-18] Cluster `model-evolution` idle 139d (>= 28d).
+- [2026-10-18] Cluster `ontological-coverage-planning` idle 139d (>= 28d).
+- [2026-10-18] Cluster `parsed-intent-calibration` idle 139d (>= 28d).
+- [2026-10-18] Cluster `research-instrumentation` idle 139d (>= 28d).
+- [2026-10-18] Cluster `retrieval-inference-tradeoff` idle 139d (>= 28d).
+- [2026-10-18] Cluster `structured-validation-truth-discovery` idle 139d (>= 28d).
 - [2026-08-01] Cluster `composite-credibility` idle 61d (>= 28d).
 - [2026-08-01] Cluster `compositional-query-grounding` idle 61d (>= 28d).
 - [2026-08-01] Cluster `embedding-ontology-alignment` idle 61d (>= 28d).
