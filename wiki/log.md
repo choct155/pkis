@@ -27630,3 +27630,7 @@
 
 ## [2026-10-12] edit | edit_node
 - pkis:problem:knowledge-graph-question-answering: fields=['sources'] sections=[]
+
+## [2026-10-31] committed | source
+- Committed: rabanser-towards-2026 → sources/rabanser-towards-2026.md
+- IRI: pkis:source:rabanser-towards-2026
