@@ -27634,3 +27634,6 @@
 ## [2026-10-31] committed | source
 - Committed: rabanser-towards-2026 → sources/rabanser-towards-2026.md
 - IRI: pkis:source:rabanser-towards-2026
+
+## [2026-11-02] edit | edit_node
+- pkis:framework:agent-program-architectures: fields=['sources'] sections=[]

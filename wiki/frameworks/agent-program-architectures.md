@@ -12,7 +12,7 @@ component_scores:
   structure: null
 coverage: 1
 date_created: '2026-06-09'
-date_updated: '2026-06-20'
+date_updated: '2026-11-02'
 domain:
 - agentic-ai
 - reinforcement-learning
@@ -30,6 +30,7 @@ sources:
 - gulli-agentic-design-patterns-ch25
 - gulli-agentic-design-patterns-ch26
 - gulli-agentic-design-patterns-ch28
+- rabanser-towards-2026
 tags:
 - agent
 - agent-program
