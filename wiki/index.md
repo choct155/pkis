@@ -1,6 +1,7 @@
 # PKIS Wiki Index
 
 ## Sources
+- [[petropoulos-operational-2023]] — Operational Research: Methods and Applications () (2026-11-03)
 - [[dai-pystoned-2021]] — pyStoNED: A Python Package for Convex Regression and Frontier Estimation () (2026-11-03)
 - [[kuosmanen-paradoxes-2025]] — Paradoxes of the public sector productivity measurement () (2026-11-03)
 - [[bols-data-2026]] — Data envelopment analysis with common-denominator ratio variables: An application to education with methodological extensions () (2026-11-03)

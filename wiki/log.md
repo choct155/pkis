@@ -27693,3 +27693,7 @@
 ## [2026-11-03] committed | source
 - Committed: dai-pystoned-2021 → sources/dai-pystoned-2021.md
 - IRI: pkis:source:dai-pystoned-2021
+
+## [2026-11-03] committed | source
+- Committed: petropoulos-operational-2023 → sources/petropoulos-operational-2023.md
+- IRI: pkis:source:petropoulos-operational-2023

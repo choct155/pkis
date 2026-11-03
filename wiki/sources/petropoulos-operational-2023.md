@@ -16,35 +16,36 @@ authors: Fotios Petropoulos, Gilbert Laporte, Emel Aktas, Sibel A. Alumur, Claud
   Thielen, Paolo Toth, Greet Vanden Berghe, Christos Vasilakis, Vikrant Vaze, Daniele
   Vigo, Kai Virtanen, Xun Wang, Rafał Weron, Leroy White, Tom Van Woensel, Mike Yearworth,
   E. Alper Yıldırım, Georges Zaccour, Xuying Zhao
-chapter: null
 concepts: []
 date_added: '2026-11-02'
-date_read: ''
-doc_path: sources/petropoulos-operational-2023/petropoulos-operational-2023.pdf
+doi: ''
 domain: []
 drive_id: ''
 drive_path: ''
 id: pkis:source:petropoulos-operational-2023
-isbn: ''
-parent_book: ''
-readwise_id: 01m6depy2cxwz9n5shqf011jt5
 source_url: https://arxiv.org/abs/2303.14217
 status: unread
 tags: []
 title: 'Operational Research: Methods and Applications'
-toc_source: ''
 type: paper
 year: 2023
 ---
 
 ## Summary
-Throughout its history, Operational Research has evolved to include a variety of methods, models and algorithms that have been applied to a diverse and wide range of contexts. This encyclopedic article consists of two main sections: methods and applications. The first aims to summarise the up-to-date knowledge and provide an overview of the state-of-the-art methods and key developments in the various subdomains of the field. The second offers a wide-ranging list of areas where Operational Research has been applied. The article is meant to be read in a nonlinear fashion. It should be used as a …
+Throughout its history, Operational Research has evolved to include a variety of methods, models and algorithms that have been applied to a diverse and wide range of contexts. This encyclopedic article consists of two main sections: methods and applications. The first aims to summarise the up-to-date knowledge and provide an overview of the state-of-the-art methods and key developments in the various subdomains of the field. The second offers a wide-ranging list of areas where Operational Resear
 
 ## Key Knowledge Objects
-[To be identified during Librarian ingest]
+[To be identified during ingest]
 
 ## Key Extractions
-[To be identified during Librarian ingest]
+[To be identified during ingest]
 
 ## Connection Candidates
-[To be identified during Librarian ingest]
+- pkis:framework:prototype-methods
+- pkis:source:soydaner-attention-2022
+- pkis:source:brkner-simulations-2025
+- pkis:source:serret-understanding-2026
+- pkis:research-cluster:research-instrumentation
+
+## Notes
+KPI framework reading library — encyclopaedic OR review (DEA, queueing, forecasting); best free OR reference.
