@@ -27745,3 +27745,7 @@
 ## [2026-11-03] committed | source
 - Committed: mahzoon-indicator-2023 → sources/mahzoon-indicator-2023.md
 - IRI: pkis:source:mahzoon-indicator-2023
+
+## [2026-11-03] committed | source
+- Committed: majka-the-2025 → sources/majka-the-2025.md
+- IRI: pkis:source:majka-the-2025
