@@ -1,6 +1,7 @@
 # PKIS Wiki Index
 
 ## Sources
+- [[asanjarani-a-2020]] — A Survey of Parameter and State Estimation in Queues () (2026-11-03)
 - [[jia-experimentation-2026]] — Experimentation for Different Scheduling Policies on Queues: Mixed Differences-in-Q Estimators Based on Little's Law () (2026-11-03)
 - [[bournassenko-on-2025]] — On Queueing Theory for Large-Scale CI/CD Pipelines Optimization () (2026-11-03)
 - [[heath-a-2015]] — A Review of Methods for the Analysis of the Expected Value of Information () (2026-11-03)
