@@ -27721,3 +27721,7 @@
 ## [2026-11-03] committed | source
 - Committed: matoni-how-2025 → sources/matoni-how-2025.md
 - IRI: pkis:source:matoni-how-2025
+
+## [2026-11-03] committed | source
+- Committed: ehrlinger-a-2019 → sources/ehrlinger-a-2019.md
+- IRI: pkis:source:ehrlinger-a-2019

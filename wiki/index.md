@@ -1,6 +1,7 @@
 # PKIS Wiki Index
 
 ## Sources
+- [[ehrlinger-a-2019]] — A Survey of Data Quality Measurement and Monitoring Tools () (2026-11-03)
 - [[matoni-how-2025]] — How to Define the Quality of Data? A Feature-Based Literature Survey () (2026-11-03)
 - [[zhou-a-2024]] — A Survey on Data Quality Dimensions and Tools for Machine Learning () (2026-11-03)
 - [[hiniduma-data-2024]] — Data Readiness for AI: A 360-Degree Survey () (2026-11-03)
