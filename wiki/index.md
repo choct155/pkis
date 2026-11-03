@@ -1,6 +1,7 @@
 # PKIS Wiki Index
 
 ## Sources
+- [[heath-a-2015]] — A Review of Methods for the Analysis of the Expected Value of Information () (2026-11-03)
 - [[heath-calculating-2017]] — Calculating the Expected Value of Sample Information using Efficient Nested Monte Carlo: A Tutorial () (2026-11-03)
 - [[langtry-value-2023]] — Value of Information Analysis for rationalising information gathering in building energy analysis () (2026-11-03)
 - [[akinlotan-beyond-2023]] — Beyond expected values: Making environmental decisions using value of information analysis when measurement outcome matters () (2026-11-03)
