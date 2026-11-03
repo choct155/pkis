@@ -27673,3 +27673,7 @@
 ## [2026-11-03] committed | source
 - Committed: bournassenko-on-2025 → sources/bournassenko-on-2025.md
 - IRI: pkis:source:bournassenko-on-2025
+
+## [2026-11-03] committed | source
+- Committed: jia-experimentation-2026 → sources/jia-experimentation-2026.md
+- IRI: pkis:source:jia-experimentation-2026
