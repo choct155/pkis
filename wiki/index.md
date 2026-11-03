@@ -1,6 +1,7 @@
 # PKIS Wiki Index
 
 ## Sources
+- [[bournassenko-on-2025]] — On Queueing Theory for Large-Scale CI/CD Pipelines Optimization () (2026-11-03)
 - [[heath-a-2015]] — A Review of Methods for the Analysis of the Expected Value of Information () (2026-11-03)
 - [[heath-calculating-2017]] — Calculating the Expected Value of Sample Information using Efficient Nested Monte Carlo: A Tutorial () (2026-11-03)
 - [[langtry-value-2023]] — Value of Information Analysis for rationalising information gathering in building energy analysis () (2026-11-03)

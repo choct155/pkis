@@ -1,35 +1,36 @@
 ---
 aliases: []
-authors: ''
-chapter: null
+authors: Bournassenko, Grégory
 concepts: []
 date_added: '2026-11-02'
-date_read: ''
-doc_path: sources/bournassenko-on-2025/bournassenko-on-2025.pdf
+doi: ''
 domain: []
 drive_id: ''
 drive_path: ''
 id: pkis:source:bournassenko-on-2025
-isbn: ''
-parent_book: ''
-readwise_id: 01m6der55wj3pe7z2d3vgy5rae
 source_url: https://arxiv.org/abs/2504.18705
 status: unread
 tags: []
-title: Bournassenko On 2025
-toc_source: ''
-type: paper
-year: null
+title: On Queueing Theory for Large-Scale CI/CD Pipelines Optimization
+type: article
+year: 2025
 ---
 
 ## Summary
-[To be filled by Librarian ingest]
+Continuous Integration and Continuous Deployment (CI/CD) pipelines are central to modern software development. In large organizations, the high volume of builds and tests creates bottlenecks, especially under shared infrastructure. This article proposes a modeling framework based on queueing theory to optimize large-scale CI/CD workflows. We formalize the system using classical $M/M/c$ queueing models and discuss strategies to minimize delays and infrastructure costs. Our approach integrates the
 
 ## Key Knowledge Objects
-[To be identified during Librarian ingest]
+[To be identified during ingest]
 
 ## Key Extractions
-[To be identified during Librarian ingest]
+[To be identified during ingest]
 
 ## Connection Candidates
-[To be identified during Librarian ingest]
+- pkis:framework:queueing-theory
+- pkis:source:cassandras-des-intro-ch08
+- pkis:source:cassandras-des-intro
+- pkis:source:cassandras-des-intro-ch09
+- pkis:asset:knowledge-infrastructure-explainer
+
+## Notes
+KPI framework reading library — queueing theory applied to CI/CD pipelines (analogue).

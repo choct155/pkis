@@ -27669,3 +27669,7 @@
 ## [2026-11-03] committed | source
 - Committed: heath-a-2015 → sources/heath-a-2015.md
 - IRI: pkis:source:heath-a-2015
+
+## [2026-11-03] committed | source
+- Committed: bournassenko-on-2025 → sources/bournassenko-on-2025.md
+- IRI: pkis:source:bournassenko-on-2025
