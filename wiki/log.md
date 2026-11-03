@@ -27705,3 +27705,7 @@
 ## [2026-11-03] committed | source
 - Committed: shankar-towards-2021 → sources/shankar-towards-2021.md
 - IRI: pkis:source:shankar-towards-2021
+
+## [2026-11-03] committed | source
+- Committed: mcmahon-a-2016 → sources/mcmahon-a-2016.md
+- IRI: pkis:source:mcmahon-a-2016

@@ -1,6 +1,7 @@
 # PKIS Wiki Index
 
 ## Sources
+- [[mcmahon-a-2016]] — A novel framework for assessing metadata quality in epidemiological and public health research settings () (2026-11-03)
 - [[shankar-towards-2021]] — Towards Observability for Production Machine Learning Pipelines () (2026-11-03)
 - [[polyzotis-what-2021]] — What can Data-Centric AI Learn from Data and ML Engineering? () (2026-11-03)
 - [[petropoulos-operational-2023]] — Operational Research: Methods and Applications () (2026-11-03)
