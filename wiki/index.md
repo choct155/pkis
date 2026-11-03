@@ -1,6 +1,7 @@
 # PKIS Wiki Index
 
 ## Sources
+- [[lou-private-2023]] — Private Experimentation, Data Truncation, and Verifiable Disclosure () (2026-11-03)
 - [[shishkin-withholding-2022]] — Withholding Verifiable Information () (2026-11-03)
 - [[foidl-data-2023]] — Data Pipeline Quality: Influencing Factors, Root Causes of Data-related Issues, and Processing Problem Areas for Developers () (2026-11-03)
 - [[ehrlinger-a-2019]] — A Survey of Data Quality Measurement and Monitoring Tools () (2026-11-03)

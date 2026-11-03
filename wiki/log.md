@@ -27733,3 +27733,7 @@
 ## [2026-11-03] committed | source
 - Committed: shishkin-withholding-2022 → sources/shishkin-withholding-2022.md
 - IRI: pkis:source:shishkin-withholding-2022
+
+## [2026-11-03] committed | source
+- Committed: lou-private-2023 → sources/lou-private-2023.md
+- IRI: pkis:source:lou-private-2023
