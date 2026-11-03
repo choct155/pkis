@@ -27701,3 +27701,7 @@
 ## [2026-11-03] committed | source
 - Committed: polyzotis-what-2021 → sources/polyzotis-what-2021.md
 - IRI: pkis:source:polyzotis-what-2021
+
+## [2026-11-03] committed | source
+- Committed: shankar-towards-2021 → sources/shankar-towards-2021.md
+- IRI: pkis:source:shankar-towards-2021
