@@ -27681,3 +27681,7 @@
 ## [2026-11-03] committed | source
 - Committed: asanjarani-a-2020 → sources/asanjarani-a-2020.md
 - IRI: pkis:source:asanjarani-a-2020
+
+## [2026-11-03] committed | source
+- Committed: bols-data-2026 → sources/bols-data-2026.md
+- IRI: pkis:source:bols-data-2026
