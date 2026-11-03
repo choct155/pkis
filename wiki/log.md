@@ -27645,3 +27645,7 @@
 ## [2026-11-03] committed | source
 - Committed: flyvbjerg-top-2022 → sources/flyvbjerg-top-2022.md
 - IRI: pkis:source:flyvbjerg-top-2022
+
+## [2026-11-03] committed | source
+- Committed: flyvbjerg-quality-2013 → sources/flyvbjerg-quality-2013.md
+- IRI: pkis:source:flyvbjerg-quality-2013

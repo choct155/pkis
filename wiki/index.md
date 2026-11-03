@@ -1,6 +1,7 @@
 # PKIS Wiki Index
 
 ## Sources
+- [[flyvbjerg-quality-2013]] — Quality Control and Due Diligence in Project Management: Getting Decisions Right by Taking the Outside View () (2026-11-03)
 - [[flyvbjerg-top-2022]] — Top Ten Behavioral Biases in Project Management: An Overview () (2026-11-03)
 - [[mcandrew-aggregating-2019]] — Aggregating predictions from experts: a scoping review of statistical methods, experiments, and applications () (2026-11-03)
 - [[rabanser-towards-2026]] — Towards a Science of AI Reliability  () (2026-10-31)
