@@ -27685,3 +27685,7 @@
 ## [2026-11-03] committed | source
 - Committed: bols-data-2026 → sources/bols-data-2026.md
 - IRI: pkis:source:bols-data-2026
+
+## [2026-11-03] committed | source
+- Committed: kuosmanen-paradoxes-2025 → sources/kuosmanen-paradoxes-2025.md
+- IRI: pkis:source:kuosmanen-paradoxes-2025
