@@ -1,35 +1,38 @@
 ---
 aliases: []
-authors: ''
-chapter: null
+authors: McAndrew, Thomas, Wattanachit, Nutcha, Gibson, G. Casey, Reich, Nicholas
+  G.
 concepts: []
 date_added: '2026-11-02'
-date_read: ''
-doc_path: sources/mcandrew-aggregating-2019/mcandrew-aggregating-2019.pdf
+doi: ''
 domain: []
 drive_id: ''
 drive_path: ''
 id: pkis:source:mcandrew-aggregating-2019
-isbn: ''
-parent_book: ''
-readwise_id: 01m6desgpxyzvd9xv7cg1t1q5x
 source_url: https://arxiv.org/abs/1912.11409
 status: unread
 tags: []
-title: Mcandrew Aggregating 2019
-toc_source: ''
-type: paper
-year: null
+title: 'Aggregating predictions from experts: a scoping review of statistical methods,
+  experiments, and applications'
+type: article
+year: 2019
 ---
 
 ## Summary
-[To be filled by Librarian ingest]
+Forecasts support decision making in a variety of applications. Statistical models can produce accurate forecasts given abundant training data, but when data is sparse, rapidly changing, or unavailable, statistical models may not be able to make accurate predictions. Expert judgmental forecasts---models that combine expert-generated predictions into a single forecast---can make predictions when training data is limited by relying on expert intuition to take the place of concrete training data. R
 
 ## Key Knowledge Objects
-[To be identified during Librarian ingest]
+[To be identified during ingest]
 
 ## Key Extractions
-[To be identified during Librarian ingest]
+[To be identified during ingest]
 
 ## Connection Candidates
-[To be identified during Librarian ingest]
+- pkis:source:angelopoulos-prediction-powered-inference-2023
+- pkis:technique:stacking
+- pkis:principle:regression-to-the-mean
+- pkis:technique:bumping
+- pkis:framework:mixtures-of-experts
+
+## Notes
+KPI framework reading library — aggregating expert predictions review.

@@ -1,6 +1,7 @@
 # PKIS Wiki Index
 
 ## Sources
+- [[mcandrew-aggregating-2019]] — Aggregating predictions from experts: a scoping review of statistical methods, experiments, and applications () (2026-11-03)
 - [[rabanser-towards-2026]] — Towards a Science of AI Reliability  () (2026-10-31)
 - [[legg-machine-2008]] — Machine Super Intelligence (reinforcement-learning, information-theory) (2026-10-08)
 - [[hinton-keeping-1993]] — Keeping Neural Networks Simple by Minimizing the Description Length of the Weights (deep-learning, information-theory) (2026-10-08)

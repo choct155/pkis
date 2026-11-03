@@ -27637,3 +27637,7 @@
 
 ## [2026-11-02] edit | edit_node
 - pkis:framework:agent-program-architectures: fields=['sources'] sections=[]
+
+## [2026-11-03] committed | source
+- Committed: mcandrew-aggregating-2019 → sources/mcandrew-aggregating-2019.md
+- IRI: pkis:source:mcandrew-aggregating-2019
