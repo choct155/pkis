@@ -27649,3 +27649,7 @@
 ## [2026-11-03] committed | source
 - Committed: flyvbjerg-quality-2013 → sources/flyvbjerg-quality-2013.md
 - IRI: pkis:source:flyvbjerg-quality-2013
+
+## [2026-11-03] committed | source
+- Committed: flyvbjerg-from-2013 → sources/flyvbjerg-from-2013.md
+- IRI: pkis:source:flyvbjerg-from-2013
