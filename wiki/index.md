@@ -1,6 +1,7 @@
 # PKIS Wiki Index
 
 ## Sources
+- [[mahzoon-indicator-2023]] — Indicator Choice in Pay-for-Performance () (2026-11-03)
 - [[zuo-learning-2024]] — Learning Under Moral Hazard with Instrumental Regression and Generalized Method of Moments () (2026-11-03)
 - [[lou-private-2023]] — Private Experimentation, Data Truncation, and Verifiable Disclosure () (2026-11-03)
 - [[shishkin-withholding-2022]] — Withholding Verifiable Information () (2026-11-03)
