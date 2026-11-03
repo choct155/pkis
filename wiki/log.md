@@ -27725,3 +27725,7 @@
 ## [2026-11-03] committed | source
 - Committed: ehrlinger-a-2019 → sources/ehrlinger-a-2019.md
 - IRI: pkis:source:ehrlinger-a-2019
+
+## [2026-11-03] committed | source
+- Committed: foidl-data-2023 → sources/foidl-data-2023.md
+- IRI: pkis:source:foidl-data-2023
