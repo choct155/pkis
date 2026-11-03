@@ -27753,3 +27753,7 @@
 ## [2026-11-03] committed | source
 - Committed: elmhamdi-on-2024 → sources/elmhamdi-on-2024.md
 - IRI: pkis:source:elmhamdi-on-2024
+
+## [2026-11-03] committed | source
+- Committed: thomas-the-2020 → sources/thomas-the-2020.md
+- IRI: pkis:source:thomas-the-2020

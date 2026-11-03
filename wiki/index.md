@@ -1,6 +1,7 @@
 # PKIS Wiki Index
 
 ## Sources
+- [[thomas-the-2020]] — The Problem with Metrics is a Fundamental Problem for AI () (2026-11-03)
 - [[elmhamdi-on-2024]] — On Goodhart's law, with an application to value alignment () (2026-11-03)
 - [[majka-the-2025]] — The Strong, Weak and Benign Goodhart's law. An independence-free and paradigm-agnostic formalisation () (2026-11-03)
 - [[mahzoon-indicator-2023]] — Indicator Choice in Pay-for-Performance () (2026-11-03)
