@@ -27757,3 +27757,7 @@
 ## [2026-11-03] committed | source
 - Committed: thomas-the-2020 → sources/thomas-the-2020.md
 - IRI: pkis:source:thomas-the-2020
+
+## [2026-11-03] committed | source
+- Committed: manheim-categorizing-2018 → sources/manheim-categorizing-2018.md
+- IRI: pkis:source:manheim-categorizing-2018
