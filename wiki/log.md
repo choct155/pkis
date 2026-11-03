@@ -27641,3 +27641,7 @@
 ## [2026-11-03] committed | source
 - Committed: mcandrew-aggregating-2019 → sources/mcandrew-aggregating-2019.md
 - IRI: pkis:source:mcandrew-aggregating-2019
+
+## [2026-11-03] committed | source
+- Committed: flyvbjerg-top-2022 → sources/flyvbjerg-top-2022.md
+- IRI: pkis:source:flyvbjerg-top-2022
