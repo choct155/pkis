@@ -27737,3 +27737,7 @@
 ## [2026-11-03] committed | source
 - Committed: lou-private-2023 → sources/lou-private-2023.md
 - IRI: pkis:source:lou-private-2023
+
+## [2026-11-03] committed | source
+- Committed: zuo-learning-2024 → sources/zuo-learning-2024.md
+- IRI: pkis:source:zuo-learning-2024
