@@ -27779,3 +27779,6 @@
 
 ## [2026-11-09] edit | edit_node
 - pkis:concept:expected-utility-theory: fields=['sources'] sections=[]
+
+## [2026-11-09] edit | edit_node
+- pkis:framework:behavioral-theory-of-the-firm: fields=['sources'] sections=[]

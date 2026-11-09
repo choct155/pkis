@@ -3,7 +3,7 @@ aliases: []
 also_type: []
 coverage: 1
 date_created: 2026-05-20
-date_updated: '2026-06-20'
+date_updated: '2026-11-09'
 domain:
 - organizational-theory
 id: pkis:framework:behavioral-theory-of-the-firm
@@ -19,6 +19,7 @@ related_concepts:
 sources:
 - cyert-behavioral-theory-firm-1959
 - gavetti-behavioral-theory-firm-2012
+- flyvbjerg-top-2022
 tags:
 - Carnegie-school
 - Cyert
