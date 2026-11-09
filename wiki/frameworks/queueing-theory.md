@@ -3,7 +3,7 @@ aliases: []
 also_type: []
 coverage: 1
 date_created: 2026-05-20
-date_updated: '2026-06-20'
+date_updated: '2026-11-09'
 domain:
 - formal-methods
 - systems-theory
@@ -19,6 +19,8 @@ sources:
 - '[[cassandras-des-intro]]'
 - benzi-hidden-structure-matrices-ch02
 - cassandras-des-intro-ch08
+- asanjarani-a-2020
+- jia-experimentation-2026
 tags:
 - queueing-theory
 - little-law
