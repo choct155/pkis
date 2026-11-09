@@ -1,18 +1,31 @@
 ---
-id: "pkis:technique:feature-engineering"
 aliases: []
-title: "Feature Engineering"
-knowledge_type: technique
 also_type: []
-domain: [statistical-learning]
-tags: [features, representation, data-preprocessing, domain-knowledge, information-gain]
-related_concepts: ["[[inductive-bias]]", "[[curse-of-dimensionality]]", "[[empirical-risk-minimization]]", "[[principal-component-analysis]]", "[[regularization]]"]
-sources: ["[[domingos-useful-things]]"]
-date_created: 2026-05-20
-date_updated: 2026-05-20
 coverage: 1
-understanding: 0
+date_created: 2026-05-20
+date_updated: '2026-11-09'
+domain:
+- statistical-learning
+id: pkis:technique:feature-engineering
+knowledge_type: technique
 maturity: evolving
+related_concepts:
+- '[[inductive-bias]]'
+- '[[curse-of-dimensionality]]'
+- '[[empirical-risk-minimization]]'
+- '[[principal-component-analysis]]'
+- '[[regularization]]'
+sources:
+- '[[domingos-useful-things]]'
+- polyzotis-what-2021
+tags:
+- features
+- representation
+- data-preprocessing
+- domain-knowledge
+- information-gain
+title: Feature Engineering
+understanding: 0
 ---
 
 ## Reading Path
