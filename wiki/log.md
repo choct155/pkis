@@ -27830,3 +27830,6 @@
 
 ## [2026-11-09] edit | edit_node
 - pkis:framework:passive-instrumentation-quality-measurement: fields=['sources'] sections=[]
+
+## [2026-11-09] edit | edit_node
+- pkis:concept:linked-open-data: fields=['sources'] sections=[]

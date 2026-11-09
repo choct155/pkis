@@ -4,7 +4,7 @@ aliases:
 also_type: []
 coverage: 3
 date_created: 2026-05-20
-date_updated: '2026-06-20'
+date_updated: '2026-11-09'
 domain:
 - knowledge-representation
 id: pkis:concept:linked-open-data
@@ -18,6 +18,7 @@ sources:
 - allemang-semantic-web-ch09
 - allemang-semantic-web-ch13
 - allemang-semantic-web-ch16
+- ehrlinger-a-2019
 tags:
 - semantic-web
 - rdf
