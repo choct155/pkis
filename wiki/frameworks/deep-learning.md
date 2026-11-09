@@ -10,7 +10,7 @@ component_scores:
   structure: null
 coverage: 1
 date_created: '2026-06-11'
-date_updated: '2026-10-12'
+date_updated: '2026-11-09'
 domain:
 - machine-learning
 - artificial-intelligence
@@ -30,6 +30,7 @@ sources:
 - nielsen-nndl-ch06
 - petersen-mathematical-2024
 - he-deep-2015
+- amodei-deep-2015
 specializes:
 - neural-networks
 tags:
