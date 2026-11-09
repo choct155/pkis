@@ -13,7 +13,7 @@ contrasts-with:
 - gittins-index
 coverage: 1
 date_created: '2026-06-11'
-date_updated: '2026-06-11'
+date_updated: '2026-11-09'
 domain:
 - statistics
 - machine learning
@@ -28,6 +28,7 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - murphy-pml2-advanced-ch34
+- jia-experimentation-2026
 specializes:
 - multi-armed-bandit
 tags:
