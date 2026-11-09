@@ -10,11 +10,13 @@ component_scores:
   structure: null
 coverage: 1
 date_created: '2026-06-20'
-date_updated: '2026-06-20'
+date_updated: '2026-11-09'
 domain:
 - bayesian-stats
 - knowledge-representation
 id: pkis:framework:passive-instrumentation-quality-measurement
+illustrated-by:
+- accuracy-calibration-explainer
 knowledge_type: framework
 linked_nodes: []
 maturity: evolving
@@ -23,6 +25,7 @@ related_concepts: []
 sources:
 - angelopoulos-prediction-powered-inference-2023
 - angelopoulos-ppi-plus-2023
+- ehrlinger-a-2019
 tags:
 - measurement
 - instrumentation
@@ -33,8 +36,6 @@ tags:
 - cost-reduction
 title: Passive Instrumentation Strategy for Quality Measurement
 understanding: 0
-illustrated-by:
-- accuracy-calibration-explainer
 ---
 
 ## Definition
