@@ -12,7 +12,7 @@ component_scores:
   transfer: null
 coverage: 1
 date_created: '2026-06-09'
-date_updated: '2026-06-09'
+date_updated: '2026-11-09'
 domain:
 - bayesian-stats
 id: pkis:concept:institutional-decision-analysis
@@ -22,6 +22,7 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - gelman-bda3-ch09
+- flyvbjerg-quality-2013
 specializes:
 - bayesian-decision-analysis
 tags:
