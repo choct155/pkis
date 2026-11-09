@@ -3,7 +3,7 @@ aliases: []
 also_type: []
 coverage: 1
 date_created: 2026-05-20
-date_updated: '2026-06-20'
+date_updated: '2026-11-09'
 domain:
 - knowledge-representation
 id: pkis:concept:ontology-quality-dimensions
@@ -16,6 +16,7 @@ related_concepts:
 sources:
 - '[[kg-evaluation-bloomberg-2024]]'
 - allemang-semantic-web-ch14
+- matoni-how-2025
 tags:
 - ontology
 - knowledge-graphs
