@@ -12,7 +12,7 @@ contrasts-with:
 - cart
 coverage: 1
 date_created: '2026-06-11'
-date_updated: '2026-06-11'
+date_updated: '2026-11-09'
 domain:
 - machine-learning
 - statistics
@@ -30,6 +30,7 @@ prerequisite-of:
 related_concepts: []
 sources:
 - bishop-prml-ch14
+- mcandrew-aggregating-2019
 tags:
 - mixture-model
 - gating-network

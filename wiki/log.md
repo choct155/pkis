@@ -27794,3 +27794,6 @@
 
 ## [2026-11-09] edit | edit_node
 - pkis:technique:feature-engineering: fields=['sources'] sections=[]
+
+## [2026-11-09] edit | edit_node
+- pkis:framework:mixtures-of-experts: fields=['sources'] sections=[]
