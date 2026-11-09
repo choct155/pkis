@@ -10,7 +10,7 @@ component_scores:
   structure: null
 coverage: 1
 date_created: '2026-06-09'
-date_updated: '2026-06-09'
+date_updated: '2026-11-09'
 domain:
 - multi-agent-systems
 - decision-theory
@@ -23,6 +23,7 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - russell-norvig-aima-ch18
+- shishkin-withholding-2022
 tags:
 - game-tree
 - imperfect-information
