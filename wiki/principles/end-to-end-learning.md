@@ -8,7 +8,7 @@ component_scores:
   violations: null
 coverage: 1
 date_created: '2026-06-09'
-date_updated: '2026-10-12'
+date_updated: '2026-11-09'
 domain:
 - deep-learning
 id: pkis:principle:end-to-end-learning
@@ -19,6 +19,7 @@ related_concepts: []
 sources:
 - russell-norvig-aima-ch21
 - bahdanau-neural-2014
+- amodei-deep-2015
 tags:
 - system-design
 - automatic-differentiation

@@ -27761,3 +27761,6 @@
 ## [2026-11-03] committed | source
 - Committed: manheim-categorizing-2018 → sources/manheim-categorizing-2018.md
 - IRI: pkis:source:manheim-categorizing-2018
+
+## [2026-11-09] edit | edit_node
+- pkis:principle:end-to-end-learning: fields=['sources'] sections=[]
