@@ -27839,3 +27839,6 @@
 
 ## [2026-11-09] edit | edit_node
 - pkis:problem:value-alignment-problem: fields=['sources'] sections=[]
+
+## [2026-11-09] edit | edit_node
+- pkis:principle:information-loss-from-data-preprocessing: fields=['sources'] sections=[]

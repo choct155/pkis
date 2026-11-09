@@ -10,7 +10,7 @@ component_scores:
   violations: null
 coverage: 1
 date_created: '2026-06-09'
-date_updated: '2026-06-09'
+date_updated: '2026-11-09'
 domain:
 - bayesian-stats
 - time-series
@@ -21,6 +21,7 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - jaynes-probability-ch17
+- foidl-data-2023
 tags:
 - detrending
 - seasonal-adjustment
