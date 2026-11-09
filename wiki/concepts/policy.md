@@ -12,7 +12,7 @@ component_scores:
   transfer: null
 coverage: 1
 date_created: '2026-06-09'
-date_updated: '2026-06-20'
+date_updated: '2026-11-09'
 domain:
 - reinforcement-learning
 id: pkis:concept:policy
@@ -25,6 +25,7 @@ related_concepts: []
 sources:
 - sutton-reinforcement-2018-ch01
 - gulli-agentic-design-patterns-ch09
+- zuo-learning-2024
 tags:
 - policy
 - agent
