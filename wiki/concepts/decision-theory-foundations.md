@@ -12,7 +12,7 @@ component_scores:
   transfer: null
 coverage: 1
 date_created: '2026-06-01'
-date_updated: '2026-06-08'
+date_updated: '2026-11-09'
 domain:
 - bayesian-stats
 id: pkis:concept:decision-theory-foundations
@@ -22,6 +22,7 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - '[[berger-statistical-1985]]'
+- mahzoon-indicator-2023
 tags:
 - decision-theory
 - expected-utility

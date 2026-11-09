@@ -27818,3 +27818,6 @@
 
 ## [2026-11-09] edit | edit_node
 - pkis:framework:game-theory: fields=['sources'] sections=[]
+
+## [2026-11-09] edit | edit_node
+- pkis:concept:decision-theory-foundations: fields=['sources'] sections=[]
