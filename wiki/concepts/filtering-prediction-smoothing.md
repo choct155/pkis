@@ -12,7 +12,7 @@ component_scores:
   transfer: null
 coverage: 1
 date_created: '2026-06-09'
-date_updated: '2026-08-31'
+date_updated: '2026-11-09'
 domain:
 - bayesian-stats
 - state-space-models
@@ -25,6 +25,7 @@ related_concepts: []
 sources:
 - russell-norvig-aima-ch14
 - revach-kalmannet-2022
+- asanjarani-a-2020
 tags:
 - filtering
 - state-estimation
