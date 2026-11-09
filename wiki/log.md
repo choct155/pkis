@@ -27812,3 +27812,6 @@
 
 ## [2026-11-09] edit | edit_node
 - pkis:framework:wald-decision-theory: fields=['sources'] sections=[]
+
+## [2026-11-09] edit | edit_node
+- pkis:concept:probability-theory: fields=['sources'] sections=[]
