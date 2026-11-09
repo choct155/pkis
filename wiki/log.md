@@ -27851,3 +27851,6 @@
 
 ## [2026-11-09] edit | edit_node
 - pkis:technique:capital-budgeting: fields=['sources'] sections=[]
+
+## [2026-11-09] edit | edit_node
+- pkis:concept:asymmetric-information-in-finance: fields=['sources'] sections=[]

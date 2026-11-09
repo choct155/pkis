@@ -1,18 +1,31 @@
 ---
-id: "pkis:concept:asymmetric-information-in-finance"
 aliases: []
-title: "Asymmetric Information in Finance"
-knowledge_type: concept
 also_type: []
-domain: [corporate-finance]
-tags: [information-economics, adverse-selection, moral-hazard, signaling, contract-theory]
-related_concepts: [agency-costs, trade-off-theory, modigliani-miller-theorem, separation-of-ownership-and-control]
-sources: [pagano-mm-cornerstone-2005, jensen-smith-corp-finance-history-1984]
-date_created: 2026-05-20
-date_updated: 2026-05-20
 coverage: 2
-understanding: 0
+date_created: 2026-05-20
+date_updated: '2026-11-09'
+domain:
+- corporate-finance
+id: pkis:concept:asymmetric-information-in-finance
+knowledge_type: concept
 maturity: settled
+related_concepts:
+- agency-costs
+- trade-off-theory
+- modigliani-miller-theorem
+- separation-of-ownership-and-control
+sources:
+- pagano-mm-cornerstone-2005
+- jensen-smith-corp-finance-history-1984
+- flyvbjerg-quality-2013
+tags:
+- information-economics
+- adverse-selection
+- moral-hazard
+- signaling
+- contract-theory
+title: Asymmetric Information in Finance
+understanding: 0
 ---
 
 The condition in financial markets where managers or insiders have private information that external investors lack, creating adverse selection (mispricing due to hidden type) and moral hazard (suboptimal actions due to hidden action) problems that break the MM irrelevance results and motivate most of modern corporate finance theory.
