@@ -27842,3 +27842,6 @@
 
 ## [2026-11-09] edit | edit_node
 - pkis:principle:information-loss-from-data-preprocessing: fields=['sources'] sections=[]
+
+## [2026-11-09] edit | edit_node
+- pkis:concept:borel-kolmogorov-paradox: fields=['sources'] sections=[]

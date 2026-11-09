@@ -12,7 +12,7 @@ component_scores:
   transfer: null
 coverage: 1
 date_created: '2026-06-09'
-date_updated: '2026-06-09'
+date_updated: '2026-11-09'
 domain:
 - bayesian-stats
 id: pkis:concept:borel-kolmogorov-paradox
@@ -22,6 +22,8 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - jaynes-probability-ch15
+- elmhamdi-on-2024
+- majka-the-2025
 tags:
 - jaynes
 - measure-zero
