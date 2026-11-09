@@ -12,7 +12,7 @@ contrasts-with:
 - curse-of-dimensionality
 coverage: 1
 date_created: '2026-06-09'
-date_updated: '2026-06-09'
+date_updated: '2026-11-09'
 domain:
 - statistical-learning
 id: pkis:principle:structured-regression-and-restricted-estimators
@@ -24,6 +24,7 @@ prerequisite-of:
 related_concepts: []
 sources:
 - hastie-esl-ch02
+- dai-pystoned-2021
 tags:
 - function-approximation
 - model-complexity
