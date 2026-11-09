@@ -12,7 +12,7 @@ component_scores:
   transfer: null
 coverage: 1
 date_created: '2026-06-08'
-date_updated: '2026-06-08'
+date_updated: '2026-11-09'
 domain:
 - bayesian-stats
 id: pkis:concept:value-of-information
@@ -24,6 +24,10 @@ prerequisite-of:
 related_concepts: []
 sources:
 - mackay-itila-ch36
+- akinlotan-beyond-2023
+- heath-a-2015
+- heath-calculating-2017
+- langtry-value-2023
 specializes:
 - decision-theory-foundations
 tags:

@@ -27767,3 +27767,6 @@
 
 ## [2026-11-09] edit | edit_node
 - pkis:framework:deep-learning: fields=['sources'] sections=[]
+
+## [2026-11-09] edit | edit_node
+- pkis:concept:value-of-information: fields=['sources'] sections=[]
