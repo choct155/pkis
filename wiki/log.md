@@ -27848,3 +27848,6 @@
 
 ## [2026-11-09] edit | edit_node
 - pkis:concept:institutional-decision-analysis: fields=['sources'] sections=[]
+
+## [2026-11-09] edit | edit_node
+- pkis:technique:capital-budgeting: fields=['sources'] sections=[]
