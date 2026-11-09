@@ -1,18 +1,30 @@
 ---
-id: "pkis:framework:ensemble-learning"
 aliases: []
-title: "Ensemble Learning"
-knowledge_type: framework
-also_type: [concept]
-domain: [statistical-learning]
-tags: [ensemble-methods, model-selection]
-related_concepts: ["[[bias-variance-tradeoff]]", "[[gradient-boosting]]", "[[random-forests]]"]
-sources: ["[[hastie-esl]]", "[[domingos-useful-things]]", "[[castle-model-selection-algorithms]]", "[[friedman-rulefit-2005]]"]
-date_created: 2026-05-20
-date_updated: 2026-05-20
+also_type:
+- concept
 coverage: 4
-understanding: 0
+date_created: 2026-05-20
+date_updated: '2026-11-09'
+domain:
+- statistical-learning
+id: pkis:framework:ensemble-learning
+knowledge_type: framework
 maturity: settled
+related_concepts:
+- '[[bias-variance-tradeoff]]'
+- '[[gradient-boosting]]'
+- '[[random-forests]]'
+sources:
+- '[[hastie-esl]]'
+- '[[domingos-useful-things]]'
+- '[[castle-model-selection-algorithms]]'
+- '[[friedman-rulefit-2005]]'
+- mcandrew-aggregating-2019
+tags:
+- ensemble-methods
+- model-selection
+title: Ensemble Learning
+understanding: 0
 ---
 
 ## Reading Path
