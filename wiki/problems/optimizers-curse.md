@@ -12,7 +12,7 @@ contrasts-with:
 - maximum-expected-utility-principle
 coverage: 1
 date_created: '2026-06-09'
-date_updated: '2026-06-09'
+date_updated: '2026-11-09'
 domain:
 - bayesian-stats
 id: pkis:problem:optimizers-curse
@@ -22,6 +22,8 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - russell-norvig-aima-ch16
+- flyvbjerg-from-2013
+- manheim-categorizing-2018
 tags:
 - decision-theory
 - selection-bias
