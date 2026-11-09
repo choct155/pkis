@@ -10,7 +10,7 @@ component_scores:
   structure: null
 coverage: 0
 date_created: '2026-06-20'
-date_updated: '2026-06-20'
+date_updated: '2026-11-09'
 domain:
 - knowledge-representation
 - bayesian-stats
@@ -24,6 +24,7 @@ sources:
 - kwiatkowski-do-2024
 - rau-revisiting-2026
 - saadfalcon-ares-2024
+- matoni-how-2025
 tags:
 - retrieval
 - evaluation
