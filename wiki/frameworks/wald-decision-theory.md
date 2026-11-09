@@ -10,7 +10,7 @@ component_scores:
   structure: null
 coverage: 1
 date_created: '2026-06-09'
-date_updated: '2026-06-09'
+date_updated: '2026-11-09'
 domain:
 - bayesian-stats
 id: pkis:framework:wald-decision-theory
@@ -20,6 +20,7 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - jaynes-probability-ch13
+- flyvbjerg-from-2013
 specializes:
 - decision-theory-foundations
 tags:

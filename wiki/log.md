@@ -27809,3 +27809,6 @@
 
 ## [2026-11-09] edit | edit_node
 - pkis:problem:optimizers-curse: fields=['sources'] sections=[]
+
+## [2026-11-09] edit | edit_node
+- pkis:framework:wald-decision-theory: fields=['sources'] sections=[]
