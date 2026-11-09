@@ -27788,3 +27788,6 @@
 
 ## [2026-11-09] edit | edit_node
 - pkis:concept:filtering-prediction-smoothing: fields=['sources'] sections=[]
+
+## [2026-11-09] edit | edit_node
+- pkis:principle:data-driven-ai: fields=['sources'] sections=[]

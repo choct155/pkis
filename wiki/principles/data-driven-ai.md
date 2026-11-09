@@ -10,7 +10,7 @@ contrasts-with:
 - knowledge-base-ai
 coverage: 1
 date_created: '2026-06-11'
-date_updated: '2026-06-11'
+date_updated: '2026-11-09'
 domain:
 - artificial-intelligence
 - machine-learning
@@ -21,6 +21,7 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - goodfellow-deeplearning-ch01
+- polyzotis-what-2021
 tags:
 - empirical-risk
 - machine-learning
