@@ -10,7 +10,7 @@ contrasts-with:
 - four-approaches-to-ai
 coverage: 1
 date_created: '2026-06-09'
-date_updated: '2026-06-09'
+date_updated: '2026-11-09'
 domain:
 - knowledge-representation
 id: pkis:problem:value-alignment-problem
@@ -20,6 +20,7 @@ needs_canonical_source: false
 related_concepts: []
 sources:
 - russell-norvig-aima-ch01
+- thomas-the-2020
 tags:
 - ai-safety
 - ai-foundations
